@@ -10,7 +10,7 @@ src/lib/supabase/        Tạo client cho trình duyệt/server
 src/lib/validation/      Kiểm tra dữ liệu nhập
 supabase/migrations/     Bảng, index, RLS, hàm chấm điểm
 supabase/seed.sql        Nội dung học gốc; không thêm tiến độ giả cho học viên
-tests/                  Kiểm tra đầu vào và nghiệp vụ nhỏ
+tests/                  Kiểm tra đầu vào, nghiệp vụ và migration/RLS bằng PGlite
 .github/workflows/      CI cho typecheck, lint, test, build
 ```
 
@@ -36,7 +36,7 @@ Chưa cấu hình Supabase và đã tắt demo thì giao diện hiển thị tr�
 
 ## Triển khai tiếp theo
 
-1. Tạo project Supabase, chạy migration và seed; kiểm tra RLS bằng hai tài khoản riêng.
-2. Nâng CMS để chỉnh vocabulary, preview bài nháp trước khi xuất bản và nhập nội dung hàng loạt.
+1. Tạo project Supabase, chạy migration và seed; kiểm tra Auth/PostgREST và RLS bằng hai tài khoản riêng trên dịch vụ thật.
+2. Nâng CMS để preview bài nháp trước khi xuất bản và nhập nội dung hàng loạt.
 3. Lưu bản ghi Speaking trong R2 private; mở rộng nội dung từng stage và kiểm tra trên thiết bị di động.
 4. Thêm E2E auth/planner/exercise và cơ chế email/AI nếu thực sự cần.

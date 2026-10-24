@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/browser";
+import { VocabularyEditor } from "./vocabulary-editor";
 
 type Lesson = { id: string; slug: string; title: string; published: boolean };
 type Block = { id: string; kind: string; body: string; sort_order: number };
@@ -78,6 +79,7 @@ export function LessonContentEditor({ lessons }: { lessons: Lesson[] }) {
       <h3>Questions and answer keys</h3>
       {questions.map((question) => <div className="admin-row" key={question.id}><div><strong>{question.prompt}</strong><small>{question.options.length} options · correct: {question.correct_index + 1}</small></div><div><button className="button subtle" onClick={() => { setQuestionId(question.id); setSlug(question.slug); setPrompt(question.prompt); setOptions(question.options.join("\n")); setCorrect(question.correct_index); setExplanation(question.explanation); }}>Edit</button><button className="button subtle" onClick={() => void remove("exercise_questions", question.id)}>Delete</button></div></div>)}
       <form className="admin-content-form" onSubmit={saveQuestion}><h4>{questionId ? "Edit question" : "Add question"}</h4><label>Question slug<input required pattern="[a-z0-9-]+" value={slug} onChange={(e) => setSlug(e.target.value)} /></label><label>Prompt<input required minLength={3} value={prompt} onChange={(e) => setPrompt(e.target.value)} /></label><label>Options, one per line<textarea required value={options} onChange={(e) => setOptions(e.target.value)} /></label><label>Correct option (1–6)<input type="number" min={1} max={6} value={correct + 1} onChange={(e) => setCorrect(Number(e.target.value) - 1)} /></label><label>Explanation<textarea value={explanation} onChange={(e) => setExplanation(e.target.value)} /></label><div><button className="button primary" disabled={busy}>{questionId ? "Save question" : "Add question"}</button>{questionId && <button type="button" className="button subtle" onClick={resetQuestion}>Cancel edit</button>}</div></form>
+      <VocabularyEditor lessonId={lessonId} />
     </>}
     {error && <p role="alert" className="form-error">{error}</p>}
   </section>;

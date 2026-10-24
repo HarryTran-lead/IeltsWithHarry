@@ -2824,4 +2824,5 @@ h3 {
 .admin-content-form input, .admin-content-form select, .admin-content-form textarea, .admin-select select { border: 1px solid #d8e4ed; border-radius: 10px; padding: .7rem; background: #fff; }
 .admin-content-form textarea { min-height: 90px; resize: vertical; }
 .admin-content-form > div { display: flex; gap: .5rem; }
+.admin-vocabulary { border-top: 1px solid #edf1f5; margin-top: 1.5rem; padding-top: 1rem; }
 @media (max-width: 680px) { .admin-heading, .admin-row { flex-direction: column; align-items: stretch; } }

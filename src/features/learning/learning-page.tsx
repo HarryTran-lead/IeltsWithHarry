@@ -905,7 +905,6 @@ function ProgressPage() {
           <div className="attempt-list">
             {attempts
               .slice()
-              .reverse()
               .map((attempt) => (
                 <div key={attempt.id}>
                   <span>{attempt.lesson.replaceAll("-", " ")}</span>

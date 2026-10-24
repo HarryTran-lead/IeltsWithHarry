@@ -65,7 +65,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
         } catch { /* Ignore damaged local demo data. */ }
       } else if (supabase) {
         const [taskResult, attemptResult, profileResult, draftResult] = await Promise.all([
-          supabase.from("study_tasks").select("*").order("due_date").order("sort_order"),
+          supabase.from("study_tasks").select("*").order("sort_order").order("due_date"),
           supabase.from("exercise_attempts").select("id,lesson_slug,score,total,submitted_at").order("submitted_at", { ascending: false }).limit(100),
           supabase.from("profiles").select("daily_goal").single(),
           supabase.from("writing_drafts").select("body").eq("lesson_slug", "writing-technology").maybeSingle(),
@@ -100,7 +100,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
     addTask: async (task) => perform(async () => {
       const valid = taskSchema.parse(task);
       if (demoMode) { setTasks((current) => [...current, { ...valid, id: crypto.randomUUID() }]); return; }
-      const { data, error } = await supabase!.from("study_tasks").insert(toRow(valid)).select("*").single();
+      const { data, error } = await supabase!.from("study_tasks").insert({ ...toRow(valid), sort_order: tasks.length }).select("*").single();
       if (error) throw error;
       setTasks((current) => [...current, toTask(data as TaskRow)]);
     }),

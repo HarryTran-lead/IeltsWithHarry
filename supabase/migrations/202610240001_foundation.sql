@@ -1,5 +1,4 @@
 -- Apply with Supabase CLI or the SQL editor. All learner records are scoped by RLS.
-create extension if not exists pgcrypto;
 
 create table public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
@@ -179,7 +178,7 @@ grant update(display_name, timezone, daily_goal) on public.profiles to authentic
 grant insert(title, skill, due_date, due_time, priority, completed, sort_order, lesson_slug) on public.study_tasks to authenticated;
 grant update(title, skill, due_date, due_time, priority, completed, sort_order, lesson_slug) on public.study_tasks to authenticated;
 grant delete on public.study_tasks to authenticated;
-grant insert(user_id, lesson_slug, body) on public.writing_drafts to authenticated;
+grant insert(user_id, lesson_slug, body, updated_at) on public.writing_drafts to authenticated;
 grant update(user_id, lesson_slug, body, updated_at) on public.writing_drafts to authenticated;
 grant delete on public.writing_drafts to authenticated;
 grant select, insert, update, delete on public.exercise_answer_keys to authenticated;

@@ -58,7 +58,7 @@ After the admin user registers, grant the role in the Supabase SQL editor as a p
 insert into public.admin_users(user_id) values ('USER_UUID');
 ```
 
-The `/admin` route checks the signed-in account on the server and uses `is_admin()` in the database. Only admins can change curriculum rows. Course, unit and lesson records can be drafted, renamed, published, unpublished and deleted. The lesson editor can add/edit/delete content blocks and questions; answer keys are saved in the same database transaction as questions. The published course catalog is visible at `/courses`; published lesson content and exercises load from the database at `/app/lesson/[slug]`.
+The `/admin` route checks the signed-in account on the server and uses `is_admin()` in the database. Only admins can change curriculum rows. Course, unit and lesson records can be drafted, renamed, published, unpublished and deleted. The lesson editor can add/edit/delete content blocks, questions and vocabulary entries; answer keys are saved in the same database transaction as questions. The published course catalog is visible at `/courses`; published lesson content and exercises load from the database at `/app/lesson/[slug]`.
 
 ## Security model
 
@@ -77,7 +77,7 @@ npm run test
 npm run build
 ```
 
-The tests cover task/date, goal, draft and answer input validation. Database migration and RLS isolation need a connected Supabase project and must be tested before switching the public deployment to live mode.
+The tests cover task/date, goal, draft and answer input validation. A local PGlite test also applies the PostgreSQL migration and seed, then checks exercise grading, learner isolation, unpublished content and admin permissions. The Auth and PostgREST flow still needs verification against a connected Supabase project before switching the public deployment to live mode.
 
 ## Deploy on Vercel
 
@@ -89,4 +89,4 @@ The existing Vercel preview can stay in explicit demo mode while backend setup i
 
 Working: dashboard, planner CRUD and sorting, sample vocabulary/grammar/reading/listening/writing/speaking interactions, local demo persistence, auth integration, user-scoped cloud persistence, server-side exercise grading, published course/lesson reading and admin curriculum/block/question CRUD.
 
-Deferred: full 1.0–7.0+ curriculum, admin vocabulary editing and draft preview, R2 media uploads and private speaking recordings, automated email reminders, AI feedback, production XP/streak awards and RLS integration tests. Browser narration is a sample Listening aid; a licensed recorded audio library is a later content task. Demo sample activities remain fixed authored content; published database lessons use the separate lesson reader.
+Deferred: full 1.0–7.0+ curriculum, admin draft preview, R2 media uploads and private speaking recordings, automated email reminders, AI feedback, production XP/streak awards and live Supabase integration tests. Browser narration is a sample Listening aid; a licensed recorded audio library is a later content task. Demo sample activities remain fixed authored content; published database lessons use the separate lesson reader.
