@@ -209,7 +209,9 @@ begin
   insert into public.exercise_attempts(user_id, lesson_slug, score, total, answers)
   values (v_user, p_lesson_slug, v_score, v_total, p_answers);
   update public.study_tasks set completed = true
-  where user_id = v_user and lesson_slug = p_lesson_slug and completed = false;
+  where id = (select id from public.study_tasks
+    where user_id = v_user and lesson_slug = p_lesson_slug and completed = false
+    order by due_date, sort_order, created_at limit 1);
   select jsonb_agg(jsonb_build_object('slug', q.slug, 'correctIndex', k.correct_index, 'explanation', k.explanation) order by q.sort_order)
   into v_result from public.exercise_questions q join public.exercise_answer_keys k on k.question_id = q.id
   where q.lesson_id = v_lesson.id;

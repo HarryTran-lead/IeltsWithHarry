@@ -39,7 +39,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" | "forgot" | "re
     <h1>{titles[mode]}</h1>
     {inactive ? <div className="card public-message">
       <p>{demoMode ? "Local demo mode is enabled. Accounts are available after Supabase is configured." : "Account setup is waiting for a Supabase project."}</p>
-      <Link href="/app/dashboard" className="button primary">Open demo →</Link>
+      {demoMode && <Link href="/app/dashboard" className="button primary">Open demo →</Link>}
     </div> : <div className="card public-message">
       <form onSubmit={submit} className="auth-form">
         {mode === "register" && <label>Display name<input required maxLength={80} value={name} onChange={(e) => setName(e.target.value)} /></label>}

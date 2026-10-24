@@ -6,7 +6,7 @@ import { demoMode, supabaseConfigured } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function AdminPage() {
-  if (demoMode || !supabaseConfigured) return <main className="admin-notice"><Card className="card"><h1>Admin CMS requires Supabase</h1><p>Configure a project and grant an admin account before managing content.</p><Link href="/app/dashboard" className="button primary">Back to demo →</Link></Card></main>;
+  if (demoMode || !supabaseConfigured) return <main className="admin-notice"><Card className="card"><h1>Admin CMS requires Supabase</h1><p>Configure a project and grant an admin account before managing content.</p>{demoMode && <Link href="/app/dashboard" className="button primary">Back to demo →</Link>}</Card></main>;
   const supabase = await createClient();
   const { data: claims } = await supabase.auth.getClaims();
   if (!claims?.claims) redirect("/login");

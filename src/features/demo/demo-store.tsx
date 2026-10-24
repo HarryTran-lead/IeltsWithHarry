@@ -4,6 +4,7 @@ import { type Attempt, type StudyTask, seedTasks, todayISO } from "@/lib/demo-da
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { dailyGoalSchema, draftSchema, exerciseAnswersSchema, taskSchema } from "@/lib/validation/study";
+import { completeNextLinkedTask } from "@/lib/learning-progress";
 
 type Grade = { score: number; total: number; review?: { slug: string; correctIndex: number; explanation: string }[] };
 type StoreState = {
@@ -139,7 +140,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
           grade = result.data as Grade;
         }
         setAttempts((current) => [{ id: crypto.randomUUID(), lesson, score: grade.score, total: grade.total, date: todayISO() }, ...current]);
-        setTasks((current) => current.map((task) => task.lesson === lesson ? { ...task, completed: true } : task));
+        setTasks((current) => completeNextLinkedTask(current, lesson));
       });
       return grade;
     },
