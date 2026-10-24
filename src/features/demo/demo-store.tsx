@@ -76,7 +76,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
           setTasks((taskResult.data as TaskRow[]).map(toTask));
           setAttempts((attemptResult.data ?? []).map((row) => ({
             id: row.id, lesson: row.lesson_slug, score: row.score,
-            total: row.total, date: row.submitted_at.slice(0, 10),
+            total: row.total, date: row.submitted_at.slice(0, 10), submittedAt: row.submitted_at,
           })));
           setGoalValue(profileResult.data.daily_goal);
           setDraft(draftResult.data?.body ?? "");
@@ -139,7 +139,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
           if (result.error) throw result.error;
           grade = result.data as Grade;
         }
-        setAttempts((current) => [{ id: crypto.randomUUID(), lesson, score: grade.score, total: grade.total, date: todayISO() }, ...current]);
+        setAttempts((current) => [{ id: crypto.randomUUID(), lesson, score: grade.score, total: grade.total, date: todayISO(), submittedAt: new Date().toISOString() }, ...current]);
         setTasks((current) => completeNextLinkedTask(current, lesson));
       });
       return grade;

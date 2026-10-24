@@ -12,6 +12,7 @@ src/features/dashboard/  Learner dashboard
 src/features/planner/    Task list, filters and task form
 src/features/learning/   Sample activities and database-backed lesson reader
 src/features/admin/      Curriculum editor
+src/features/notebook/   Floating quick notebook and learning timeline
 src/features/demo/       Shared learner store with explicit demo/live adapters
 src/lib/supabase/        Browser and server clients
 src/lib/validation/      Input schemas
@@ -35,10 +36,12 @@ npm run dev
 
 Open `http://localhost:3000/app/dashboard`. Demo tasks, attempts, goal and Writing draft stay in this browser's localStorage. Seeded tasks, XP, streaks and stages are clearly sample data. No account is created in demo mode.
 
+The floating **Sổ tay** button opens quick note and vocabulary capture on learning pages. `/app/notebook` lets learners search, edit, delete and export saved entries, and review learning-page visits plus submitted practice. Demo notebook data stays in localStorage on this browser. On a configured live account, entries and visits use the second Supabase migration and user-scoped RLS.
+
 ## Enable real accounts and persistence
 
 1. Create a Supabase project. In **Authentication → URL Configuration**, set the Site URL and allow redirects for your local URL (`http://localhost:3000/auth/callback`, `http://localhost:3000/reset-password`) and production domain. Configure email delivery and confirmation policy for your release.
-2. Run `supabase/migrations/202610240001_foundation.sql` in the Supabase SQL editor. Then run `supabase/seed.sql`. Or use the Supabase CLI migration workflow after linking the project. **Do not run a linked database reset on a project containing user data.**
+2. Run `supabase/migrations/202610240001_foundation.sql` and then `supabase/migrations/202610240002_notebook.sql` in the Supabase SQL editor. Then run `supabase/seed.sql`. Or use the Supabase CLI migration workflow after linking the project. **Do not run a linked database reset on a project containing user data.**
 3. Set the following in `.env.local`:
 
 ```dotenv
@@ -63,7 +66,7 @@ The `/admin` route checks the signed-in account on the server and uses `is_admin
 
 ## Security model
 
-- Profiles, tasks, attempts and drafts use user-scoped RLS. Direct insert/update of scored attempts is not granted to learners.
+- Profiles, tasks, attempts, drafts, notebook entries and study visits use user-scoped RLS. Direct insert/update of scored attempts is not granted to learners.
 - Answer keys live in a separate RLS-protected table and are never sent with published question queries. `submit_exercise` checks the authenticated user, grades against database keys, stores the attempt and completes linked tasks in one transaction.
 - Admin membership is managed through SQL by the project owner; the browser cannot grant itself admin access.
 - Auth pages use Supabase Auth. Student and admin pages recheck authentication server-side. Next.js Proxy refreshes auth cookies.
@@ -78,7 +81,7 @@ npm run test
 npm run build
 ```
 
-The tests cover task/date, goal, draft and answer input validation. A local PGlite test also applies the PostgreSQL migration and seed, then checks exercise grading, learner isolation, unpublished content and admin permissions. The Auth and PostgREST flow still needs verification against a connected Supabase project before switching the public deployment to live mode.
+The tests cover task/date, goal, draft, notebook and answer input validation. A local PGlite test applies both PostgreSQL migrations and the seed, then checks exercise grading, learner isolation (including notebook data), unpublished content and admin permissions. The Auth and PostgREST flow still needs verification against a connected Supabase project before switching the public deployment to live mode.
 
 ## Deploy on Vercel
 
@@ -88,6 +91,6 @@ The existing Vercel preview can stay in explicit demo mode while backend setup i
 
 ## Current scope and deferred work
 
-Working: dashboard, planner CRUD and sorting, sample vocabulary/grammar/reading/listening/writing/speaking interactions, authored JSON Content Lab preview for all six skills, local demo persistence, auth integration, user-scoped cloud persistence, server-side exercise grading, published course/lesson reading and admin curriculum/block/question/vocabulary CRUD.
+Working: dashboard, planner CRUD and sorting, sample vocabulary/grammar/reading/listening/writing/speaking interactions, authored JSON Content Lab preview for all six skills, floating notebook for notes and vocabulary, learning visit/practice timeline, local demo persistence, auth integration, user-scoped cloud persistence, server-side exercise grading, published course/lesson reading and admin curriculum/block/question/vocabulary CRUD.
 
 Deferred: full 1.0–7.0+ curriculum, admin draft preview, R2 media uploads and private speaking recordings, automated email reminders, AI feedback, production XP/streak awards and live Supabase integration tests. Browser narration is a sample Listening aid; a licensed recorded audio library is a later content task. Demo sample activities remain fixed authored content; published database lessons use the separate lesson reader.

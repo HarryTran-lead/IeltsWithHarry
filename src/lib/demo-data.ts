@@ -23,6 +23,7 @@ export type Attempt = {
   score: number;
   total: number;
   date: string;
+  submittedAt?: string;
 };
 export type Stage = {
   id: string;

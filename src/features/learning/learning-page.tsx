@@ -17,6 +17,7 @@ import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
 import { SettingsPage } from "@/features/auth/settings-page";
+import { useNotebook } from "@/features/notebook/notebook-store";
 
 const modules = [
   {
@@ -245,10 +246,12 @@ function ExerciseResult({
 }
 
 function VocabularyPage() {
+  const { entries, addEntry, removeEntry, error: notebookError } = useNotebook();
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
-  const [saved, setSaved] = useState<string[]>([]);
   const card = vocabulary[index];
+  const savedEntry = entries.find((entry) => entry.kind === "word" && entry.title === card.word && entry.sourcePath === "/app/vocabulary");
+  const savedCount = entries.filter((entry) => entry.kind === "word" && entry.sourcePath === "/app/vocabulary").length;
   return (
     <div className="content-page">
       <PageIntro
@@ -297,15 +300,9 @@ function VocabularyPage() {
           <div className="flash-actions">
             <button
               className="button subtle"
-              onClick={() =>
-                setSaved((current) =>
-                  current.includes(card.word)
-                    ? current.filter((word) => word !== card.word)
-                    : [...current, card.word],
-                )
-              }
+              onClick={async () => { try { if (savedEntry) await removeEntry(savedEntry.id); else await addEntry({ kind: "word", title: card.word, body: "", meaningVi: card.meaning, example: card.example }); } catch { /* Notebook shows the error. */ } }}
             >
-              {saved.includes(card.word) ? "★ Saved" : "☆ Save word"}
+              {savedEntry ? "★ Đã lưu vào sổ" : "☆ Lưu vào sổ tay"}
             </button>
             <button
               className="button primary"
@@ -324,11 +321,11 @@ function VocabularyPage() {
             Read the example aloud, then make one sentence about your own life.
           </p>
           <hr />
-          <strong>{saved.length} saved words</strong>
+          <strong>{savedCount} từ đã lưu từ bài này</strong>
           <p>
-            Saved words remain in this page during your current visit. Spaced
-            review will arrive with accounts.
+            Từ đã lưu nằm trong Sổ tay. Bạn có thể mở lại từ bất kỳ trang học nào.
           </p>
+          {notebookError && <p className="form-error" role="alert">{notebookError}</p>}
         </aside>
       </div>
     </div>

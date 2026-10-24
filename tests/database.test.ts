@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 
 const migration = readFileSync(resolve("supabase/migrations/202610240001_foundation.sql"), "utf8");
+const notebookMigration = readFileSync(resolve("supabase/migrations/202610240002_notebook.sql"), "utf8");
 const seed = readFileSync(resolve("supabase/seed.sql"), "utf8");
 
 describe("PostgreSQL foundation", () => {
@@ -23,6 +24,7 @@ describe("PostgreSQL foundation", () => {
       `);
       await db.exec(migration);
       await db.exec(seed);
+      await db.exec(notebookMigration);
       const stages = await db.query<{ count: number }>("select count(*)::integer as count from public.learning_stages");
       expect(stages.rows[0].count).toBe(7);
       const questions = await db.query<{ count: number }>("select count(*)::integer as count from public.exercise_questions");
@@ -39,6 +41,14 @@ describe("PostgreSQL foundation", () => {
         values ('Read a passage','Reading','2026-10-24','reading-city-gardens') returning id;
       `);
       const taskId = task.rows[0].id;
+      await db.query(`insert into public.notebook_entries(kind,title,body,source_path)
+        values ('note','My study note','Review useful phrases','/app/reading')`);
+      await db.query(`insert into public.notebook_entries(kind,title,meaning_vi,source_path)
+        values ('word','device','thiết bị','/app/vocabulary')`);
+      await db.query(`insert into public.study_visits(path,title)
+        values ('/app/reading','Luyện Reading')`);
+      await expect(db.query(`insert into public.notebook_entries(kind,title,body)
+        values ('note','Empty note','')`)).rejects.toThrow();
       expect((await db.query("select * from public.exercise_answer_keys")).rows).toEqual([]);
       await expect(db.query(`insert into public.exercise_attempts(lesson_slug,score,total,answers)
         values ('reading-city-gardens',3,3,'{}')`)).rejects.toThrow();
@@ -60,6 +70,10 @@ describe("PostgreSQL foundation", () => {
       expect((await db.query("select * from public.study_tasks")).rows).toEqual([]);
       expect((await db.query("select * from public.exercise_attempts")).rows).toEqual([]);
       expect((await db.query("select * from public.writing_drafts")).rows).toEqual([]);
+      expect((await db.query("select * from public.notebook_entries")).rows).toEqual([]);
+      expect((await db.query("select * from public.study_visits")).rows).toEqual([]);
+      await expect(db.query(`insert into public.notebook_entries(user_id,kind,title,body)
+        values ($1,'note','Borrowed note','No')`, [alice])).rejects.toThrow();
       expect((await db.query("update public.study_tasks set completed = false where id = $1 returning id", [taskId])).rows).toEqual([]);
       await expect(db.query(`insert into public.study_tasks(user_id,title,skill,due_date)
         values ($1,'Borrow a task','Reading','2026-10-24')`, [alice])).rejects.toThrow();

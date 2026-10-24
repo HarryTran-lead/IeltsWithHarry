@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { authoredPackSchema, compareSentence, countWords, type AuthoredPack } from "@/lib/authored-content";
 import sample from "@/content/demo-pack.json";
+import { useNotebook } from "@/features/notebook/notebook-store";
 
 const initialPack = authoredPackSchema.parse(sample);
 const skills = ["Vocabulary", "Grammar", "Reading", "Listening", "Writing", "Speaking"] as const;
@@ -91,13 +92,15 @@ function VocabularyPractice({ items }: { items: AuthoredPack["vocabulary"] }) {
 }
 
 function VocabularyDemo({ item }: { item: AuthoredPack["vocabulary"][number] }) {
+  const { entries, addEntry, error: notebookError } = useNotebook();
   const [revealed, setRevealed] = useState(false);
   const [answer, setAnswer] = useState("");
   const [checked, setChecked] = useState(false);
   const result = compareSentence(answer, item.acceptedSentences);
+  const saved = entries.some((entry) => entry.kind === "word" && entry.title === item.word && entry.sourcePath === "/app/content-lab");
   return <div className="lab-stack">
     <div className="lab-section-heading"><span>🧠</span><div><h2>Vocabulary · Học rồi đặt câu</h2><p>Từ, nghĩa, định nghĩa và câu mẫu đều lấy từ gói dữ liệu.</p></div></div>
-    <div className="lab-word"><span>WORD CARD</span><h3>{item.word}</h3><p>{item.definition}</p><button type="button" className="button subtle" onClick={() => setRevealed(!revealed)}>{revealed ? "Ẩn nghĩa và ví dụ" : "Xem nghĩa và ví dụ"}</button>{revealed && <div className="lab-note"><strong>{item.meaningVi}</strong><p>{item.example}</p></div>}</div>
+    <div className="lab-word"><span>WORD CARD</span><h3>{item.word}</h3><p>{item.definition}</p><div className="lab-word-actions"><button type="button" className="button subtle" onClick={() => setRevealed(!revealed)}>{revealed ? "Ẩn nghĩa và ví dụ" : "Xem nghĩa và ví dụ"}</button><button type="button" className="button subtle" disabled={saved} onClick={async () => { try { await addEntry({ kind: "word", title: item.word, body: "", meaningVi: item.meaningVi, example: item.example }); } catch { /* Notebook shows the error. */ } }}>{saved ? "★ Đã lưu vào sổ" : "☆ Lưu vào sổ tay"}</button></div>{revealed && <div className="lab-note"><strong>{item.meaningVi}</strong><p>{item.example}</p></div>}{notebookError && <p className="form-error" role="alert">{notebookError}</p>}</div>
     <div className="lab-task"><h3>Đặt câu</h3><p>{item.sentencePromptVi}</p><label htmlFor="lab-sentence">Câu của bạn</label><input id="lab-sentence" value={answer} onChange={(event) => { setAnswer(event.target.value); setChecked(false); }} placeholder="Type your sentence in English…" /><button type="button" className="button primary" disabled={!answer.trim()} onClick={() => setChecked(true)}>So sánh với câu mẫu</button></div>
     {checked && <div className="lab-result" role="status"><strong>{result.exact ? "Khớp một đáp án đã soạn ✓" : "Chưa khớp đáp án đã soạn"}</strong><p>Mức trùng từ với câu mẫu gần nhất: {result.similarity}%. Đây là độ giống văn bản, không phải điểm chất lượng câu.</p><p><b>Các câu được chấp nhận:</b> {item.acceptedSentences.join(" / ")}</p><p>{result.exact ? "Bạn có thể thử một cách diễn đạt khác." : "Nếu câu của bạn cũng hợp lý nhưng diễn đạt khác mẫu, hãy tự đối chiếu hoặc bổ sung biến thể vào JSON."}</p></div>}
   </div>;

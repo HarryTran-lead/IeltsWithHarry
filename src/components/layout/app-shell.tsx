@@ -28,11 +28,13 @@ import { Mochi } from "@/components/illustrations/mochi";
 import { useDemo } from "@/features/demo/demo-store";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
+import { NotebookWidget } from "@/features/notebook/notebook-ui";
 
 const links = [
   { href: "/app/dashboard", label: "Dashboard", icon: Home },
   { href: "/app/learn", label: "Learn", icon: GraduationCap },
   { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical },
+  { href: "/app/notebook", label: "Notebook", icon: NotebookPen },
   { href: "/app/vocabulary", label: "Vocabulary", icon: Languages },
   { href: "/app/grammar", label: "Grammar", icon: BookOpen },
   { href: "/app/reading", label: "Reading", icon: BookOpen },
@@ -255,7 +257,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <nav className="bottom-nav" aria-label="Mobile navigation">
-        {[links[0], links[1], links[2], links[9]].map(
+        {[links[0], links[1], links[3], links[10]].map(
           ({ href, label, icon: Icon }) => (
             <Link
               key={href}
@@ -268,6 +270,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           ),
         )}
       </nav>
+      <NotebookWidget />
     </div>
   );
 }
