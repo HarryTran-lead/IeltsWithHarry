@@ -84,6 +84,8 @@ insert into public.admin_users(user_id) values ('USER_UUID');
 
 The `/admin` route checks the signed-in account on the server and uses `is_admin()` in the database. Only admins can change curriculum rows. Signed-in learners enter `/app`; admins enter `/admin`. Course, unit and lesson records can be drafted, renamed, published, unpublished and deleted. The lesson editor can add/edit/delete content blocks, questions and vocabulary entries; answer keys are saved in the same database transaction as questions. The published course catalog is visible at `/courses`; published lesson content and exercises load from the database at `/app/lesson/[slug]`.
 
+If the project owner is locked out and the built-in Supabase email sender has reached its limit, a Supabase CLI-authenticated owner can run `scripts/reset-account-password.ps1 -UserId USER_UUID -Email owner@example.com` from PowerShell in the project directory. The script verifies the account ID and email, prompts for a new password without echoing it, and updates that account through the server-side Auth Admin API. It does not store a service-role key or password in the repository. Use this only for an account whose owner is present and has requested the reset; ordinary learners should use the email recovery flow.
+
 ## Security model
 
 - Profiles, tasks, attempts, drafts, notebook entries and study visits use user-scoped RLS. Direct insert/update of scored attempts is not granted to learners.
