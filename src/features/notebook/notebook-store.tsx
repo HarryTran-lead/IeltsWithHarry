@@ -28,10 +28,12 @@ type NotebookStore = {
 const Store = createContext<NotebookStore | null>(null);
 
 function visitTitle(path: string) {
+  if (path.startsWith("/app/news/learn/")) return `Learn with News: ${path.split("/").pop()?.replaceAll("-", " ")}`;
+  if (path.startsWith("/app/news/")) return `Daily News: ${path.split("/").pop()?.replaceAll("-", " ")}`;
   if (path.startsWith("/app/lesson/")) return `Bài học: ${(path.split("/").pop() ?? "").replaceAll("-", " ")}`;
   if (path.startsWith("/app/learn/")) return `Lộ trình: ${path.split("/").pop()?.replaceAll("-", " ")}`;
   const titles: Record<string, string> = {
-    "/app/learn": "Khám phá lộ trình", "/app/vocabulary": "Luyện từ vựng",
+    "/app/learn": "Khám phá lộ trình", "/app/news": "Daily English News", "/app/vocabulary": "Luyện từ vựng",
     "/app/grammar": "Luyện ngữ pháp", "/app/reading": "Luyện Reading",
     "/app/listening": "Luyện Listening", "/app/writing": "Luyện Writing",
     "/app/speaking": "Luyện Speaking", "/app/content-lab": "Thử Content Lab",

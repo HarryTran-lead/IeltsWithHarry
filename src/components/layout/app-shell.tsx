@@ -24,6 +24,7 @@ import {
   X,
   Bell,
   LogOut,
+  Newspaper,
 } from "lucide-react";
 import { Mochi } from "@/components/illustrations/mochi";
 import { useDemo } from "@/features/demo/demo-store";
@@ -34,6 +35,8 @@ import { NotebookWidget } from "@/features/notebook/notebook-ui";
 const links = [
   { href: "/app/dashboard", label: "Dashboard", icon: Home },
   { href: "/app/learn", label: "Learn", icon: GraduationCap },
+  { href: "/app/news", label: "Daily News", icon: Newspaper },
+  { href: "/app/news/learn", label: "Learn with News", icon: BookOpen },
   { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical },
   { href: "/app/notebook", label: "Notebook", icon: NotebookPen },
   { href: "/app/vocabulary", label: "Vocabulary", icon: Languages },

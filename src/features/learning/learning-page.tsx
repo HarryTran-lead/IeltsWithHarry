@@ -18,6 +18,7 @@ import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
 import { SettingsPage } from "@/features/auth/settings-page";
 import { useNotebook } from "@/features/notebook/notebook-store";
+import { SavedWordReview } from "@/features/news/saved-word-review";
 
 const modules = [
   {
@@ -328,6 +329,7 @@ function VocabularyPage() {
           {notebookError && <p className="form-error" role="alert">{notebookError}</p>}
         </aside>
       </div>
+      <SavedWordReview />
     </div>
   );
 }

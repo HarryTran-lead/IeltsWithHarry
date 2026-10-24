@@ -8,6 +8,7 @@ import { LearningPage } from "@/features/learning/learning-page";
 import { ContentLab } from "@/features/content-lab/content-lab";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { NotebookPage } from "@/features/notebook/notebook-ui";
+import { NewsPortal } from "@/features/news/news-portal";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -27,6 +28,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <ContentLab />
         ) : section === "notebook" ? (
           <NotebookPage />
+        ) : section === "news" ? (
+          <NewsPortal />
         ) : (
           <LearningPage section={section} />
         )}

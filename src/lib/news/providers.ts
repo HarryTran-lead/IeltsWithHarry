@@ -1,0 +1,131 @@
+import { createHash } from "node:crypto";
+import { isIP } from "node:net";
+import { XMLParser } from "fast-xml-parser";
+import { NEWS_CATEGORIES, type NewsCategory } from "./constants";
+
+export { NEWS_CATEGORIES };
+export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number };
+export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
+export type FetchResult = { items: NewsItem[]; etag: string | null; lastModified: string | null; cacheUntil: string | null; notModified: boolean };
+export interface NewsProvider { readonly kind: NewsSource["provider"]; fetch(source: NewsSource, fetcher?: typeof fetch): Promise<FetchResult> }
+
+const sensitive = /\b(killed|murder|shooting|bomb|war|attack|assault|graphic|suicide|abuse)\b/i;
+const cleanText = (value: unknown, max: number) => String(value ?? "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim().slice(0, max);
+export function parsePublishedDate(value: unknown): string | null {
+  if (!value) return null;
+  const raw = String(value);
+  const normalized = /^\d{14}$/.test(raw) ? `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}T${raw.slice(8,10)}:${raw.slice(10,12)}:${raw.slice(12,14)}Z` : raw;
+  const date = new Date(normalized);
+  return Number.isNaN(date.valueOf()) || date.valueOf() > Date.now() + 86400000 ? null : date.toISOString();
+}
+export function canonicalUrl(raw: string): string | null {
+  try {
+    const url = new URL(raw);
+    if (!["https:", "http:"].includes(url.protocol) || url.username || url.password || !url.hostname || isIP(url.hostname)) return null;
+    url.hash = "";
+    for (const key of [...url.searchParams.keys()]) if (/^(utm_|fbclid$|gclid$)/i.test(key)) url.searchParams.delete(key);
+    return url.toString();
+  } catch { return null; }
+}
+export function newsHash(url: string): string { return createHash("sha256").update(url).digest("hex"); }
+function makeItem(source: NewsSource, raw: { url: unknown; title: unknown; date: unknown; publisher?: unknown; language?: unknown; externalId?: unknown }): NewsItem | null {
+  const canonical_url = canonicalUrl(String(raw.url ?? ""));
+  const title = cleanText(raw.title, 400);
+  const published_at = parsePublishedDate(raw.date);
+  const language = cleanText(raw.language ?? "English", 30);
+  if (!canonical_url || title.length < 5 || !published_at || !/^(en|english)$/i.test(language)) return null;
+  const flagged = sensitive.test(title);
+  return { source_id: source.id, provider: source.provider, external_id: raw.externalId ? cleanText(raw.externalId, 400) : null,
+    canonical_hash: newsHash(canonical_url), canonical_url, title, publisher: cleanText(raw.publisher || source.name, 150), language: "English",
+    category: source.category, published_at, publication_status: source.auto_publish && !flagged && source.reviewed_basis.length >= 12 && ["METADATA_ONLY","FULL_REUSE_ALLOWED"].includes(source.policy_status) ? "published" : "review",
+    attribution_text: source.attribution_text, sensitive: flagged, metadata: {} };
+}
+
+export function normalizeGdelt(data: unknown, source: NewsSource): NewsItem[] {
+  const articles = (data as { articles?: unknown })?.articles;
+  if (!Array.isArray(articles)) return [];
+  return articles.slice(0, 50).map((entry) => {
+    const row = entry as Record<string, unknown>;
+    return makeItem(source, { url: row.url, title: row.title, date: row.seendate, publisher: row.domain, language: row.language });
+  }).filter((item): item is NewsItem => item !== null);
+}
+function xmlText(value: unknown): string {
+  if (typeof value === "string" || typeof value === "number") return String(value);
+  if (value && typeof value === "object") return String((value as Record<string, unknown>)["#text"] ?? "");
+  return "";
+}
+function atomLink(value: unknown): string {
+  if (typeof value === "string") return value;
+  const links = Array.isArray(value) ? value : [value];
+  const entry = links.find((link) => link && typeof link === "object" && (!link["@_rel"] || link["@_rel"] === "alternate"));
+  return entry && typeof entry === "object" ? String(entry["@_href"] ?? "") : "";
+}
+export function parseRss(xml: string, source: NewsSource): NewsItem[] {
+  if (xml.includes("<!DOCTYPE") || xml.includes("<!ENTITY")) throw new Error("XML entities are not supported");
+  const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as Record<string, unknown>;
+  const rss = parsed.rss as { channel?: { item?: unknown; title?: unknown } } | undefined;
+  const atom = parsed.feed as { entry?: unknown; title?: unknown } | undefined;
+  const entries = rss?.channel?.item ?? atom?.entry;
+  const list = Array.isArray(entries) ? entries : entries ? [entries] : [];
+  return list.slice(0, 50).map((value) => {
+    const row = value as Record<string, unknown>;
+    return makeItem(source, { url: rss ? xmlText(row.link) : atomLink(row.link), title: xmlText(row.title),
+      date: row.pubDate ?? row["dc:date"] ?? row.published ?? row.updated,
+      publisher: source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
+  }).filter((item): item is NewsItem => item !== null);
+}
+
+export function assertApprovedFeedUrl(raw: string): URL {
+  const url = new URL(raw);
+  const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov").split(",").map((host) => host.trim().toLowerCase());
+  if (url.protocol !== "https:" || url.port || url.username || url.password || isIP(url.hostname) || !allowed.includes(url.hostname.toLowerCase())) throw new Error("Feed host is not approved in NEWS_RSS_ALLOWED_HOSTS");
+  return url;
+}
+async function boundedFetch(url: URL, init: RequestInit, fetcher: typeof fetch): Promise<Response> {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const response = await fetcher(url, { ...init, redirect: "manual", signal: AbortSignal.timeout(9000), cache: "no-store" });
+    if (response.status === 304) return response;
+    if ([500, 502, 503, 504].includes(response.status) && attempt < 2) { await new Promise((resolve) => setTimeout(resolve, 300 * 2 ** attempt)); continue; }
+    if (response.status >= 300 && response.status < 400) throw new Error("Provider redirect blocked");
+    return response;
+  }
+  throw new Error("Provider unavailable");
+}
+async function boundedText(response: Response): Promise<string> {
+  const reader = response.body?.getReader();
+  if (!reader) return "";
+  const chunks: Uint8Array[] = []; let size = 0;
+  try {
+    while (true) { const { done, value } = await reader.read(); if (done) break; size += value.length; if (size > 1024 * 1024) throw new Error("Provider response too large"); chunks.push(value); }
+  } finally { await reader.cancel().catch(() => undefined); }
+  return new TextDecoder().decode(Buffer.concat(chunks));
+}
+
+export const gdeltProvider: NewsProvider = { kind: "gdelt", async fetch(source, fetcher = fetch) {
+  const url = new URL("https://api.gdeltproject.org/api/v2/doc/doc");
+  url.searchParams.set("query", "(education OR science OR technology OR environment) sourcelang:english");
+  url.searchParams.set("mode", "artlist"); url.searchParams.set("format", "json");
+  url.searchParams.set("maxrecords", "50"); url.searchParams.set("timespan", "1d"); url.searchParams.set("sort", "datedesc");
+  const response = await boundedFetch(url, { headers: { Accept: "application/json" } }, fetcher);
+  if (!response.ok) throw new Error(`GDELT HTTP ${response.status}`);
+  const raw = await boundedText(response);
+  const data = JSON.parse(raw);
+  return { items: normalizeGdelt(data, source), etag: null, lastModified: null, cacheUntil: null, notModified: false };
+} };
+function cacheUntil(response: Response): string | null {
+  const match = /(?:^|,)\s*max-age=(\d+)/i.exec(response.headers.get("cache-control") ?? "");
+  if (!match) return null;
+  return new Date(Date.now() + Math.min(Number(match[1]), 86400) * 1000).toISOString();
+}
+export const rssProvider: NewsProvider = { kind: "rss", async fetch(source, fetcher = fetch) {
+  if (!source.feed_url) throw new Error("Feed URL missing");
+  const url = assertApprovedFeedUrl(source.feed_url);
+  const headers: Record<string,string> = { Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml" };
+  if (source.etag) headers["If-None-Match"] = source.etag;
+  if (source.last_modified) headers["If-Modified-Since"] = source.last_modified;
+  const response = await boundedFetch(url, { headers }, fetcher);
+  if (response.status === 304) return { items: [], etag: source.etag, lastModified: source.last_modified, cacheUntil: cacheUntil(response), notModified: true };
+  if (!response.ok) throw new Error(`RSS HTTP ${response.status}`);
+  return { items: parseRss(await boundedText(response), source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
+} };
+export const providers: Record<NewsSource["provider"], NewsProvider> = { gdelt: gdeltProvider, rss: rssProvider };

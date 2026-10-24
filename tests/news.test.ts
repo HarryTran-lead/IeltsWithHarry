@@ -1,0 +1,104 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { describe, expect, it, vi } from "vitest";
+import { PGlite } from "@electric-sql/pglite";
+import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalizeGdelt, parsePublishedDate, parseRss, rssProvider, type NewsSource } from "../src/lib/news/providers";
+import { nextWordReview } from "../src/lib/news/review";
+
+const source: NewsSource = { id: "11111111-1111-4111-8111-111111111111", name: "NASA", provider: "rss", feed_url: "https://www.nasa.gov/news-release/feed/", category: "Science", policy_status: "METADATA_ONLY", reviewed_basis: "NASA official RSS feed reviewed", attribution_text: "NASA", auto_publish: true, enabled: true, etag: null, last_modified: null, min_interval_minutes: 30 };
+const xml = `<rss version="2.0"><channel><title>NASA</title><item><title>New science mission announced</title><link>https://www.nasa.gov/news/mission/?utm_source=test</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate><guid>mission-1</guid><description>Third-party text is intentionally ignored.</description></item></channel></rss>`;
+
+describe("news providers", () => {
+  it("schedules saved vocabulary reviews without duplicate intervals", () => {
+    const now = new Date("2026-10-24T12:00:00Z");
+    const first = nextWordReview(undefined,"good",now);
+    expect(first.interval_days).toBe(1);
+    expect(nextWordReview({notebook_entry_id:"x",...first},"good",now).interval_days).toBe(2);
+    expect(nextWordReview({notebook_entry_id:"x",...first},"again",now).interval_days).toBe(0);
+  });
+  it("parses dates to UTC and rejects invalid future dates", () => {
+    expect(parsePublishedDate("20261023120000")).toBe("2026-10-23T12:00:00.000Z");
+    expect(parsePublishedDate("not a date")).toBeNull();
+    expect(parsePublishedDate("29990101000000")).toBeNull();
+  });
+  it("parses RSS and Atom metadata without copying the body", () => {
+    const rss = parseRss(xml, source);
+    expect(rss).toHaveLength(1);
+    expect(rss[0]).toMatchObject({ title: "New science mission announced", published_at: "2026-10-23T12:00:00.000Z", publication_status: "published", metadata: {} });
+    expect(rss[0].canonical_url).not.toContain("utm_source");
+    const atom = `<feed><entry><title>Science update for students</title><link href="https://www.nasa.gov/news/students/" rel="alternate"/><updated>2026-10-23T12:00:00Z</updated><content>Do not save full text</content></entry></feed>`;
+    expect(parseRss(atom, source)[0].title).toBe("Science update for students");
+    expect(() => parseRss("<!DOCTYPE rss><rss/>", source)).toThrow();
+  });
+  it("normalizes GDELT English results and holds sensitive titles for review", () => {
+    const gdelt = { ...source, provider: "gdelt" as const };
+    const rows = normalizeGdelt({ articles: [
+      { url: "https://example.org/science", title: "Science students build a new garden", seendate: "20261023120000", domain: "example.org", language: "English", fullText: "must not be copied" },
+      { url: "https://example.org/war", title: "War attack hits town center", seendate: "20261023120000", domain: "example.org", language: "English" },
+      { url: "https://example.org/fr", title: "French-language result", seendate: "20261023120000", domain: "example.org", language: "French" },
+    ] }, gdelt);
+    expect(rows).toHaveLength(2);
+    expect(rows[0].metadata).toEqual({});
+    expect(rows[1]).toMatchObject({ sensitive: true, publication_status: "review" });
+  });
+  it("deduplicates tracking URLs and restricts RSS hosts", () => {
+    expect(newsHash(canonicalUrl("https://www.nasa.gov/news/mission/?utm_source=x")!)).toBe(newsHash(canonicalUrl("https://www.nasa.gov/news/mission/")!));
+    expect(() => assertApprovedFeedUrl("https://127.0.0.1/private")).toThrow();
+    expect(() => assertApprovedFeedUrl("https://evil.example/feed.xml")).toThrow();
+    expect(() => assertApprovedFeedUrl("http://www.nasa.gov/feed/")).toThrow();
+  });
+  it("handles conditional RSS responses, rate limits and blocked redirects", async () => {
+    const unchanged = vi.fn(async () => new Response(null, { status: 304 }));
+    expect((await rssProvider.fetch(source, unchanged as unknown as typeof fetch)).notModified).toBe(true);
+    const rateLimited = vi.fn(async () => new Response("Slow down", { status: 429 }));
+    await expect(gdeltProvider.fetch({ ...source, provider: "gdelt" }, rateLimited as unknown as typeof fetch)).rejects.toThrow("429");
+    expect(rateLimited).toHaveBeenCalledTimes(1);
+    const redirected = vi.fn(async () => new Response(null, { status: 302, headers: { location: "http://127.0.0.1/" } }));
+    await expect(rssProvider.fetch(source, redirected as unknown as typeof fetch)).rejects.toThrow("redirect blocked");
+  });
+});
+
+describe("news database permissions and grading", () => {
+  it("seeds all seven stages, protects private rows, grades once per attempt, and avoids duplicate XP", async () => {
+    const db = new PGlite();
+    try {
+      await db.exec(`create role anon; create role authenticated; create role service_role; create schema auth;
+        create table auth.users(id uuid primary key, raw_user_meta_data jsonb);
+        create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
+        grant usage on schema auth to authenticated; grant execute on function auth.uid() to authenticated;`);
+      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql"]) {
+        if (name.includes("007")) await db.exec(readFileSync(resolve("supabase/seed.sql"), "utf8"));
+        await db.exec(readFileSync(resolve("supabase/migrations", name), "utf8"));
+      }
+      expect((await db.query<{ count:number }>("select count(*)::int as count from public.news_learning_articles where published")).rows[0].count).toBe(7);
+      expect((await db.query<{ count:number }>("select count(*)::int as count from public.news_questions")).rows[0].count).toBe(35);
+      const alice="11111111-1111-4111-8111-111111111111",bob="22222222-2222-4222-8222-222222222222";
+      await db.query("insert into auth.users(id,raw_user_meta_data) values ($1,'{}'),($2,'{}')",[alice,bob]);
+      const article=(await db.query<{id:string}>("select id from public.news_learning_articles where slug='technology-changing-education'")).rows[0];
+      const questions=(await db.query<{id:string;correct_answer:string}>("select q.id,k.correct_answer from public.news_questions q join public.news_answer_keys k on k.question_id=q.id where q.article_id=$1 order by q.sort_order",[article.id])).rows;
+      const answers=Object.fromEntries(questions.map((q)=>[q.id,q.correct_answer]));
+      await db.exec(`set role authenticated; set request.jwt.claim.sub='${alice}';`);
+      expect((await db.query("select * from public.news_answer_keys")).rows).toEqual([]);
+      await expect(db.query("insert into public.news_learning_articles(slug,title,category,stage_id,passage,rights_status,rights_basis) values ('learner-content','Learner content','Science','foundation',repeat('x',110),'ORIGINAL','Original by learner')")).rejects.toThrow();
+      await db.query("select public.news_mark_read('technology-changing-education')");
+      const word=(await db.query<{id:string}>("insert into public.notebook_entries(kind,title,meaning_vi) values ('word','tablet','máy tính bảng') returning id")).rows[0];
+      await db.query("insert into public.user_word_reviews(notebook_entry_id) values ($1)",[word.id]);
+      await db.query("select public.news_finish_read('technology-changing-education')");
+      await db.query("select public.news_finish_read('technology-changing-education')");
+      expect((await db.query<{xp_awarded:number}>("select xp_awarded from public.user_news_progress")).rows[0].xp_awarded).toBe(5);
+      await db.query("insert into public.study_tasks(title,skill,due_date,lesson_slug) values ('Read news','Reading','2026-10-24','news:technology-changing-education')");
+      const first=await db.query<{result:{score:number;total:number}}>("select public.news_submit_quiz($1,$2::jsonb) as result",["technology-changing-education",JSON.stringify(answers)]);
+      expect(first.rows[0].result).toMatchObject({score:5,total:5});
+      await db.query("select public.news_submit_quiz($1,$2::jsonb)",["technology-changing-education",JSON.stringify(answers)]);
+      expect((await db.query<{xp_awarded:number}>("select xp_awarded from public.user_news_progress")).rows[0].xp_awarded).toBe(25);
+      expect((await db.query<{completed:boolean}>("select completed from public.study_tasks where lesson_slug='news:technology-changing-education'")).rows[0].completed).toBe(true);
+      await db.query("insert into public.user_saved_news(article_id) values ($1) on conflict do nothing",[article.id]).catch(()=>undefined);
+      await db.exec(`set request.jwt.claim.sub='${bob}';`);
+      expect((await db.query("select * from public.user_news_progress")).rows).toEqual([]);
+      expect((await db.query("select * from public.news_reading_attempts")).rows).toEqual([]);
+      expect((await db.query("select * from public.user_word_reviews")).rows).toEqual([]);
+      await expect(db.query("insert into public.user_word_reviews(notebook_entry_id) values ($1)",[word.id])).rejects.toThrow();
+      await expect(db.query("select public.admin_save_news_question(null,$1,'main_idea','Unauthorized question','[]'::jsonb,'Answer','','')",[article.id])).rejects.toThrow();
+    } finally { await db.close(); }
+  }, 30000);
+});

@@ -11,7 +11,9 @@ src/features/auth/       Sign in, registration and password reset
 src/features/dashboard/  Learner dashboard
 src/features/planner/    Task list, filters and task form
 src/features/learning/   Sample activities and database-backed lesson reader
-src/features/admin/      Curriculum editor
+src/features/admin/      Curriculum and Daily News editors
+src/features/news/       News dashboard, reading practice and saved-word review
+src/lib/news/            Provider adapters, normalization, sync and review schedule
 src/features/notebook/   Floating quick notebook and learning timeline
 src/features/demo/       Shared learner store with explicit demo/live adapters
 src/lib/supabase/        Browser and server clients
@@ -24,6 +26,7 @@ docs/                   Architecture and rollout notes
 
 See [docs/STRUCTURE.md](docs/STRUCTURE.md) for data flows and security boundaries.
 See [docs/AUTHORED_CONTENT.md](docs/AUTHORED_CONTENT.md) for the no-AI, content-driven skill plan and the interactive `/app/content-lab` JSON demo.
+See [docs/DAILY_NEWS.md](docs/DAILY_NEWS.md) for news sources, rights rules, scheduled sync, and operations.
 
 ## Run locally in demo mode
 
@@ -42,14 +45,14 @@ The floating **Sổ tay** button opens quick note and vocabulary capture on lear
 
 ## Connected Supabase project
 
-The production project is `vpkhriywprepuhrbarye` (`https://vpkhriywprepuhrbarye.supabase.co`). All three migrations and `supabase/seed.sql` were applied on 24 October 2026. Auth site/redirect URLs are tracked in `supabase/config.toml`; 15 public tables have RLS enabled. The Vercel production project has the public Supabase URL and publishable key. Keep secrets out of Git.
+The production project is `vpkhriywprepuhrbarye` (`https://vpkhriywprepuhrbarye.supabase.co`). Apply all migrations in `supabase/migrations/` with the Supabase CLI. Auth site/redirect URLs are tracked in `supabase/config.toml`. The Vercel production project has the public Supabase URL and publishable key. Keep secrets out of Git.
 
 The Supabase built-in email sender is restricted to project organization members and has a low rate limit. The registration and recovery screens disclose this while `NEXT_PUBLIC_EMAIL_DELIVERY_READY` is unset. Configure custom SMTP in Supabase Authentication, verify delivery to an ordinary address, set `NEXT_PUBLIC_EMAIL_DELIVERY_READY=true` in Vercel and redeploy before inviting the public. Google OAuth and phone/SMS still need their respective providers and remain hidden in the UI. Once the designated owner registers and confirms their account, add its `auth.users.id` to `public.admin_users` as described below.
 
 ## Enable real accounts and persistence
 
 1. Create a Supabase project. In **Authentication → URL Configuration**, set the Site URL to your production domain and allow redirects for `http://localhost:3000/auth/callback`, `http://localhost:3000/auth/callback?next=/reset-password`, `https://english-skill-lab-ruby.vercel.app/auth/callback` and `https://english-skill-lab-ruby.vercel.app/auth/callback?next=/reset-password`. Configure email confirmation and custom SMTP for production delivery. The connected project already has these URLs configured.
-2. Run `supabase/migrations/202610240001_foundation.sql`, `202610240002_notebook.sql` and `202610240003_google_profile.sql` in order in the Supabase SQL editor, then run `supabase/seed.sql`. Or use the Supabase CLI migration workflow after linking the project. **Do not run a linked database reset on a project containing user data.**
+2. Apply all SQL files in `supabase/migrations/` in numerical order and run `supabase/seed.sql` after the foundation schema. Or use the Supabase CLI migration workflow after linking the project. Set the two Vault secrets described in `docs/DAILY_NEWS.md` before the Cron migration. **Do not run a linked database reset on a project containing user data.**
 3. Set the following in `.env.local`:
 
 ```dotenv
@@ -72,7 +75,7 @@ Enable the Phone provider in Supabase and configure an SMS provider plus phone c
 
 Both provider flags control whether the corresponding option appears in the form. They do not enable providers in Supabase. Redeploy after changing `NEXT_PUBLIC_*` variables. Test a new email account, a Google account, a phone account and an admin account in the connected production project before announcing those options as available.
 
-Never put a Supabase secret/service-role key in a `NEXT_PUBLIC_` variable or commit it. This MVP needs only the publishable key because Row Level Security and database functions enforce access.
+Never put a Supabase secret/service-role key in a `NEXT_PUBLIC_` variable or commit it. Daily News synchronization needs a server-only service-role key; learner and admin browser access remains protected by Row Level Security and database functions.
 
 ### First admin
 

@@ -2,11 +2,12 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, ChevronRight, FileText, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Mic, PenLine, ShieldCheck } from "lucide-react";
+import { BookOpen, ChevronRight, FileText, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Mic, PenLine, ShieldCheck, Newspaper, ListChecks, Rss, ScrollText } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { LessonContentEditor } from "./lesson-content-editor";
 import { MediaLibrary } from "./media-library";
 import { skillMaterialSchema, type SkillName } from "@/lib/skill-material";
+import { AdminNews } from "./admin-news";
 
 type Course = { id: string; stage_id: string; slug: string; title: string; description: string; published: boolean };
 type Unit = { id: string; course_id: string; slug: string; title: string; published: boolean };
@@ -22,11 +23,16 @@ const nav = [
   { slug: "writing", label: "Writing", icon: PenLine },
   { slug: "speaking", label: "Speaking", icon: Mic },
   { slug: "media", label: "Media library", icon: Image },
+  { slug: "news", label: "Daily News", icon: Newspaper },
+  { slug: "news/sources", label: "News sources", icon: Rss },
+  { slug: "news/review", label: "News review", icon: ListChecks },
+  { slug: "news/articles", label: "Learning articles", icon: BookOpen },
+  { slug: "news/sync-logs", label: "Sync logs", icon: ScrollText },
 ] as const;
 export function AdminEditor() {
   const supabase = useMemo(() => createClient(), []);
   const pathname = usePathname();
-  const segment = pathname.split("/")[2] || "overview";
+  const segment = pathname.split("/").slice(2).join("/") || "overview";
   const section = nav.some((item) => item.slug === segment) ? segment : "overview";
   const sectionLabel = nav.find((item) => item.slug === section)?.label ?? "Tổng quan";
   const currentSkill = skillTabs.find((item) => item.toLowerCase() === section);
@@ -127,6 +133,7 @@ export function AdminEditor() {
     </>}
     {currentSkill && <>{lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
     {section === "media" && <MediaLibrary />}
+    {section.startsWith("news") && <AdminNews section={section} />}
     </>}
   </main></div>;
 }
