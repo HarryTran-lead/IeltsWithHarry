@@ -43,7 +43,7 @@ export function TaskList({
             }}
             onDrop={(e) => {
               e.preventDefault();
-              if (dragged && dragged !== task.id) reorderTask(dragged, task.id);
+              if (dragged && dragged !== task.id) void reorderTask(dragged, task.id).catch(() => {});
               setDragged(null);
             }}
           >
@@ -59,7 +59,7 @@ export function TaskList({
               aria-label={`${task.completed ? "Unmark" : "Complete"} ${task.title}`}
               aria-pressed={task.completed}
               onClick={() =>
-                updateTask(task.id, { completed: !task.completed })
+                void updateTask(task.id, { completed: !task.completed }).catch(() => {})
               }
             >
               {task.completed && <Check size={15} strokeWidth={3} />}
@@ -89,7 +89,7 @@ export function TaskList({
                   aria-label={`Delete ${task.title}`}
                   onClick={() => {
                     if (window.confirm(`Delete “${task.title}”?`))
-                      deleteTask(task.id);
+                      void deleteTask(task.id).catch(() => {});
                   }}
                 >
                   <Trash2 size={15} />
@@ -129,7 +129,8 @@ export function TaskModal({
   const [priority, setPriority] = useState<StudyTask["priority"]>(
     task?.priority || "Medium",
   );
-  function submit(e: React.FormEvent) {
+  const [saving, setSaving] = useState(false);
+  async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!title.trim()) return;
     const data = {
@@ -141,9 +142,13 @@ export function TaskModal({
       completed: task?.completed || false,
       lesson: task?.lesson,
     };
-    if (task) updateTask(task.id, data);
-    else addTask(data);
-    onClose();
+    setSaving(true);
+    try {
+      if (task) await updateTask(task.id, data);
+      else await addTask(data);
+      onClose();
+    } catch { /* The store displays the save error. */ }
+    finally { setSaving(false); }
   }
   return (
     <div
@@ -228,9 +233,9 @@ export function TaskModal({
             <button type="button" className="button subtle" onClick={onClose}>
               Cancel
             </button>
-            <Button type="submit" className="button primary">
+            <Button type="submit" className="button primary" disabled={saving}>
               <Plus size={17} />
-              {task ? "Save changes" : "Add task"}
+              {saving ? "Saving…" : task ? "Save changes" : "Add task"}
             </Button>
           </div>
         </form>

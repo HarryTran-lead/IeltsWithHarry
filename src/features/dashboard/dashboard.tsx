@@ -11,6 +11,7 @@ import { Mochi, StudyIllustration } from "@/components/illustrations/mochi";
 import { PlannerMini } from "@/features/planner/planner-widgets";
 import { useDemo } from "@/features/demo/demo-store";
 import { recommendations, stages, todayISO } from "@/lib/demo-data";
+import { demoMode } from "@/lib/runtime";
 
 function WelcomeBanner() {
   const hour = new Date().getHours();
@@ -65,13 +66,13 @@ function LearningPath() {
           <Link
             key={stage.id}
             href={`/app/learn/${stage.id}`}
-            className={`path-node ${stage.status}`}
+            className={`path-node ${demoMode ? stage.status : index === 0 ? "current" : "future"}`}
             title={stage.description}
           >
             <span className="node-check">
-              {stage.status === "done" ? (
+              {demoMode && stage.status === "done" ? (
                 <Check size={16} strokeWidth={3} />
-              ) : stage.status === "current" ? (
+              ) : (demoMode ? stage.status === "current" : index === 0) ? (
                 "●"
               ) : (
                 ""
@@ -91,7 +92,7 @@ function LearningPath() {
           <span className="plant">🌿</span>
         </div>
         <div className="continue-body">
-          <span className="current-label">Current Unit</span>
+          <span className="current-label">{demoMode ? "Current Unit" : "Featured Unit"}</span>
           <h3>Technology &amp; Digital Life</h3>
           <p>
             Learn useful vocabulary, reading strategies, writing tasks and
@@ -108,8 +109,8 @@ function LearningPath() {
           {["Vocabulary", "Reading", "Listening", "Writing", "Speaking"].map(
             (skill, i) => (
               <span key={skill}>
-                <i className={i < 2 ? "filled" : ""}>
-                  {i < 2 && <Check size={11} strokeWidth={4} />}
+                <i className={demoMode && i < 2 ? "filled" : ""}>
+                  {demoMode && i < 2 && <Check size={11} strokeWidth={4} />}
                 </i>
                 {skill}
               </span>
@@ -139,7 +140,7 @@ function TodayGoal() {
               "How many tasks is your daily goal?",
               String(goal),
             );
-            if (value && /^\d+$/.test(value)) setGoal(Number(value));
+            if (value && /^\d+$/.test(value)) void setGoal(Number(value)).catch(() => {});
           }}
         >
           Set Goal ›
@@ -265,6 +266,8 @@ const badges = [
 ];
 
 function Achievements() {
+  const { tasks, attempts } = useDemo();
+  if (!demoMode) return <section className="card achievements"><div className="card-head"><div className="head-title"><span className="emoji-icon">📈</span><h2>Your activity</h2></div><Link href="/app/progress" className="text-link">View All</Link></div><div className="planner-summary"><div><strong>{tasks.filter((task) => task.completed).length}</strong><small>Completed tasks</small></div><div><strong>{attempts.length}</strong><small>Practice attempts</small></div></div></section>;
   return (
     <section className="card achievements">
       <div className="card-head">
@@ -300,10 +303,7 @@ export function Dashboard() {
   return (
     <div className="dashboard-grid">
       <div className="dashboard-main">
-        <div className="demo-note">
-          <Sparkles size={14} /> Demo preview · Your changes are saved in this
-          browser
-        </div>
+        <div className="demo-note"><Sparkles size={14} /> {demoMode ? "Demo preview · Your changes are saved in this browser" : "Your tasks and practice are saved to your account"}</div>
         <WelcomeBanner />
         <LearningPath />
         <div className="dashboard-duo">

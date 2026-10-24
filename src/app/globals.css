@@ -2799,3 +2799,29 @@ h3 {
     @apply font-sans;
   }
 }
+.auth-form { display: grid; gap: 1rem; }
+.auth-form label { display: grid; gap: .35rem; font-weight: 700; }
+.auth-form input { width: 100%; border: 1px solid #d8e4ed; border-radius: 12px; padding: .75rem 1rem; background: #fff; color: #162445; }
+.auth-links { margin-top: 1rem; }
+.auth-links a { color: #0877bb; }
+.form-error, .save-error { color: #9b2828; background: #fff0ef; border: 1px solid #f6c6c2; border-radius: 12px; padding: .75rem 1rem; }
+.save-error { margin: 0 0 1rem; display: flex; justify-content: space-between; gap: 1rem; }
+.save-error button { font-size: 1.3rem; }
+.setup-notice { max-width: 620px; margin: 12vh auto; padding: 2rem; background: white; border-radius: 20px; }
+.admin-panel { max-width: 1100px; margin: 2rem auto; padding: 0 1rem 3rem; display: grid; gap: 1.25rem; }
+.admin-heading { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+.admin-create, .admin-list { padding: 1.5rem; }
+.admin-create form { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .8rem; align-items: end; }
+.admin-create label { display: grid; gap: .3rem; font-weight: 700; }
+.admin-create input, .admin-create select { width: 100%; border: 1px solid #d8e4ed; border-radius: 10px; padding: .7rem; background: #fff; }
+.admin-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .8rem 0; border-top: 1px solid #edf1f5; }
+.admin-row div:first-child { display: grid; }
+.admin-row small { color: #64728a; }
+.admin-row div:last-child { display: flex; flex-wrap: wrap; gap: .4rem; }
+.admin-select, .admin-content-form label { display: grid; gap: .35rem; font-weight: 700; }
+.admin-select select { max-width: 420px; }
+.admin-content-form { display: grid; gap: .8rem; margin: 1rem 0 1.5rem; }
+.admin-content-form input, .admin-content-form select, .admin-content-form textarea, .admin-select select { border: 1px solid #d8e4ed; border-radius: 10px; padding: .7rem; background: #fff; }
+.admin-content-form textarea { min-height: 90px; resize: vertical; }
+.admin-content-form > div { display: flex; gap: .5rem; }
+@media (max-width: 680px) { .admin-heading, .admin-row { flex-direction: column; align-items: stretch; } }

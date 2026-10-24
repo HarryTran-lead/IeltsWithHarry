@@ -25,6 +25,8 @@ import {
 } from "lucide-react";
 import { Mochi } from "@/components/illustrations/mochi";
 import { useDemo } from "@/features/demo/demo-store";
+import { demoMode } from "@/lib/runtime";
+import { createClient } from "@/lib/supabase/browser";
 
 const links = [
   { href: "/app/dashboard", label: "Dashboard", icon: Home },
@@ -58,7 +60,7 @@ const searchItems = [
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const { tasks, attempts } = useDemo();
+  const { tasks, attempts, error, clearError } = useDemo();
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -132,20 +134,20 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           )}
         </div>
         <div className="header-actions">
-          <div className="stat-pill streak">
+          {demoMode && <div className="stat-pill streak">
             <Flame size={23} fill="#ff9b3d" color="#ff752f" />
             <strong>12</strong>
             <small>day streak</small>
-          </div>
-          <div className="stat-pill xp">
+          </div>}
+          {demoMode && <div className="stat-pill xp">
             <Star size={23} fill="#ffd15a" color="#eca927" />
             <strong>{xp}</strong>
             <small>XP points</small>
-          </div>
+          </div>}
           <div className="stat-pill level">
             <Trophy size={22} fill="#ffd15a" color="#e9a923" />
-            <strong>Level 3</strong>
-            <small>Demo learner</small>
+            <strong>{demoMode ? "Level 3" : `${completed} tasks`}</strong>
+            <small>{demoMode ? "Demo learner" : `${attempts.length} practices`}</small>
           </div>
           <div className="popover-wrap">
             <button
@@ -183,8 +185,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </button>
             {profileOpen && (
               <div className="small-popover profile-menu">
-                <b>Demo learner</b>
-                <small>Local demo mode</small>
+                <b>{demoMode ? "Demo learner" : "My account"}</b>
+                <small>{demoMode ? "Local demo mode" : "Saved with Supabase"}</small>
                 <Link
                   href="/app/progress"
                   onClick={() => setProfileOpen(false)}
@@ -197,9 +199,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 >
                   <Settings size={16} /> Settings
                 </Link>
-                <Link href="/login" onClick={() => setProfileOpen(false)}>
-                  <LogOut size={16} /> Account info
-                </Link>
+                {demoMode ? <Link href="/login" onClick={() => setProfileOpen(false)}><LogOut size={16} /> Account info</Link> :
+                  <button onClick={async () => { await createClient().auth.signOut(); router.push("/login"); router.refresh(); }}><LogOut size={16} /> Sign out</button>}
               </div>
             )}
           </div>
@@ -247,7 +248,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           onClick={() => setMenuOpen(false)}
         />
       )}
-      <main className="main-area">{children}</main>
+      <main className="main-area">
+        {error && <div className="save-error" role="alert">{error} <button onClick={clearError} aria-label="Dismiss error">×</button></div>}
+        {children}
+      </main>
       <nav className="bottom-nav" aria-label="Mobile navigation">
         {[links[0], links[1], links[8], links[9]].map(
           ({ href, label, icon: Icon }) => (

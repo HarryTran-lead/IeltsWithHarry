@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { stages } from "@/lib/demo-data";
-export default function CoursesPage() {
+import { liveMode } from "@/lib/runtime";
+import { createClient } from "@/lib/supabase/server";
+export default async function CoursesPage() {
+  const courses = liveMode ? (await (await createClient()).from("courses").select("slug,title,description").eq("published", true).order("title")).data ?? [] : [];
   return (
     <div className="public-container">
       <span className="eyebrow">EXPLORE THE ROADMAP</span>
@@ -22,6 +25,7 @@ export default function CoursesPage() {
           </Link>
         ))}
       </div>
+      {liveMode && <section className="published-courses"><h2>Published courses</h2><div className="public-course-grid">{courses.map((course) => <Link href={`/courses/${course.slug}`} key={course.slug} className="card"><h3>{course.title}</h3><p>{course.description}</p><b>View course <ArrowRight size={16} /></b></Link>)}</div>{!courses.length && <p>New courses are being prepared.</p>}</section>}
     </div>
   );
 }

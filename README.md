@@ -1,70 +1,92 @@
 # English Skill Lab
 
-Responsive English-learning **demo MVP** inspired by the supplied dashboard reference. Built with Next.js App Router, React, strict TypeScript, Tailwind CSS, shadcn/ui, Lucide icons and custom CSS design tokens.
+An English learning web app built with Next.js 16, React 19, TypeScript, Tailwind CSS and Supabase. It includes a responsive dashboard, study planner, six sample skill activities and a small curriculum editor.
 
-## Run locally
+## Project layout
 
-Requirements: Node.js 20.9 or newer and npm.
+```text
+src/app/                 App Router pages, auth callback, protected student/admin routes
+src/components/          Shared layout, UI and original SVG illustrations
+src/features/auth/       Sign in, registration and password reset
+src/features/dashboard/  Learner dashboard
+src/features/planner/    Task list, filters and task form
+src/features/learning/   Sample activities and database-backed lesson reader
+src/features/admin/      Curriculum editor
+src/features/demo/       Shared learner store with explicit demo/live adapters
+src/lib/supabase/        Browser and server clients
+src/lib/validation/      Input schemas
+supabase/migrations/     PostgreSQL schema, RLS and server-side grading
+supabase/seed.sql        Original starter content (no sample learner progress)
+tests/                  Unit tests
+docs/                   Architecture and rollout notes
+```
+
+See [docs/STRUCTURE.md](docs/STRUCTURE.md) for data flows and security boundaries.
+
+## Run locally in demo mode
+
+Use Node.js 20.9+ and npm. Copy `.env.example` to `.env.local` and leave `NEXT_PUBLIC_DEMO_MODE=true`.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open `http://localhost:3000/app/dashboard`. No account or environment keys are needed for the demo. To verify a production build:
+Open `http://localhost:3000/app/dashboard`. Demo tasks, attempts, goal and Writing draft stay in this browser's localStorage. Seeded tasks, XP, streaks and stages are clearly sample data. No account is created in demo mode.
+
+## Enable real accounts and persistence
+
+1. Create a Supabase project. In **Authentication → URL Configuration**, set the Site URL and allow redirects for your local URL (`http://localhost:3000/auth/callback`, `http://localhost:3000/reset-password`) and production domain. Configure email delivery and confirmation policy for your release.
+2. Run `supabase/migrations/202610240001_foundation.sql` in the Supabase SQL editor. Then run `supabase/seed.sql`. Or use the Supabase CLI migration workflow after linking the project. **Do not run a linked database reset on a project containing user data.**
+3. Set the following in `.env.local`:
+
+```dotenv
+NEXT_PUBLIC_DEMO_MODE=false
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=YOUR_PUBLISHABLE_KEY
+```
+
+4. Restart `npm run dev`. Register and confirm an email account. `/app/*` now requires authentication; planner tasks, attempts, daily goal and Writing draft persist in Supabase under the signed-in user.
+
+Never put a Supabase secret/service-role key in a `NEXT_PUBLIC_` variable or commit it. This MVP needs only the publishable key because Row Level Security and database functions enforce access.
+
+### First admin
+
+After the admin user registers, grant the role in the Supabase SQL editor as a project owner (replace the UUID with the account's ID from Authentication → Users):
+
+```sql
+insert into public.admin_users(user_id) values ('USER_UUID');
+```
+
+The `/admin` route checks the signed-in account on the server and uses `is_admin()` in the database. Only admins can change curriculum rows. Course, unit and lesson records can be drafted, renamed, published, unpublished and deleted. The lesson editor can add/edit/delete content blocks and questions; answer keys are saved in the same database transaction as questions. The published course catalog is visible at `/courses`; published lesson content and exercises load from the database at `/app/lesson/[slug]`.
+
+## Security model
+
+- Profiles, tasks, attempts and drafts use user-scoped RLS. Direct insert/update of scored attempts is not granted to learners.
+- Answer keys live in a separate RLS-protected table and are never sent with published question queries. `submit_exercise` checks the authenticated user, grades against database keys, stores the attempt and completes linked tasks in one transaction.
+- Admin membership is managed through SQL by the project owner; the browser cannot grant itself admin access.
+- Auth pages use Supabase Auth. Student and admin pages recheck authentication server-side. Next.js Proxy refreshes auth cookies.
+- Demo data never enters the production database. When no backend is configured and demo mode is off, the app shows a setup state instead of pretending to save.
+
+## Quality checks
 
 ```bash
 npm run typecheck
 npm run lint
+npm run test
 npm run build
-npm run start
 ```
 
-## What works in this demo
+The tests cover task/date, goal, draft and answer input validation. Database migration and RLS isolation need a connected Supabase project and must be tested before switching the public deployment to live mode.
 
-- Responsive dashboard with original Mochi illustration, seven learning milestones, activity links, planner preview, badges and task-based daily goal.
-- Planner task creation, editing, deletion, completion, search, filters and manual drag sorting.
-- Original sample activities: vocabulary flashcards, Present Simple question, Reading passage and grading, browser-generated Listening narration and question, Writing draft, Speaking recording and playback.
-- Exercise attempts, planner tasks, goal and writing draft persist in browser `localStorage` under `english-skill-lab-demo-v1`.
-- Submitting a linked Reading or Listening exercise marks its associated task complete and updates demo progress.
-- Public course/about information and clear account/admin unavailable states.
+## Deploy on Vercel
 
-All streaks, initial XP, initial milestones and seeded tasks are **sample data**. Added XP and progress are calculated from local demo activity. The seven stages are guidance, not official IELTS score certifications. Listening uses the browser's speech synthesis, so voice support varies by browser. Speaking audio can be downloaded during the session but is not uploaded or retained after the page closes.
+Connect the public GitHub repository to a Vercel project. Configure `NEXT_PUBLIC_DEMO_MODE=true` for an interface preview, or configure the three live variables above after the Supabase migration, seed and auth redirects are ready. Redeploy after changing `NEXT_PUBLIC_*` variables because Next.js embeds them at build time. Do not copy local `.env.local` to Git or Vercel.
 
-## Structure
+The existing Vercel preview can stay in explicit demo mode while backend setup is pending. Production account sign-in is ready to activate with a Supabase project but is **not verified live** until the migration and auth flow are exercised.
 
-See [docs/STRUCTURE.md](docs/STRUCTURE.md) for the feature map and implementation phases.
+## Current scope and deferred work
 
-## Configuration and future production backend
+Working: dashboard, planner CRUD and sorting, sample vocabulary/grammar/reading/listening/writing/speaking interactions, local demo persistence, auth integration, user-scoped cloud persistence, server-side exercise grading, published course/lesson reading and admin curriculum/block/question CRUD.
 
-Copy `.env.example` to `.env.local` when integration work begins. The current build deliberately does **not** use the listed Supabase or R2 keys. There is no account persistence, Row Level Security policy, admin CRUD or private upload path in this demo. Do not set `NEXT_PUBLIC_DEMO_MODE=false` expecting a production backend: that mode has not been implemented.
-
-Production integration plan:
-
-1. Add Supabase migrations for profiles, curriculum, attempts, planner tasks and writing drafts.
-2. Add Supabase Auth and RLS policies that scope learner records to `auth.uid()`.
-3. Replace browser-local demo services with server-side validated services and Zod schemas.
-4. Add an authenticated admin CMS with role checks enforced on the server.
-5. Add Cloudflare R2 signed upload/download URLs for learner audio and media.
-6. Add curriculum imports, meaningful automated tests and deployment environment checks.
-
-There are no migrations or seed SQL yet because this trial does not create a database. Demo seed content is in `src/lib/demo-data.ts`.
-
-## Deploy to Vercel
-
-After signing in with the Vercel CLI:
-
-```bash
-npx vercel link
-npx vercel deploy
-npx vercel deploy --prod
-```
-
-Vercel detects the Next.js project. This demo needs no environment variables. The production backend phase will require server-side Vercel environment variables and Supabase/R2 setup before enabling accounts. `.env*`, `.vercel` and build output are ignored by Git; `.env.example` remains tracked.
-
-## Known limits
-
-- Demo data belongs to one browser only and can be cleared by clearing browser storage.
-- A complete curriculum from 1.0 to 7.0+, spaced repetition, timed exam mode, scoring rubrics and analytics are still planned.
-- Authentication, admin publishing, server persistence, AI feedback and notification delivery are unavailable.
-- Browser speech synthesis does not provide a seekable recorded Listening asset.
+Deferred: full 1.0–7.0+ curriculum, admin vocabulary editing and draft preview, R2 media uploads and private speaking recordings, automated email reminders, AI feedback, production XP/streak awards and RLS integration tests. Browser narration is a sample Listening aid; a licensed recorded audio library is a later content task. Demo sample activities remain fixed authored content; published database lessons use the separate lesson reader.

@@ -15,6 +15,8 @@ import {
 import { Mochi } from "@/components/illustrations/mochi";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
+import { demoMode } from "@/lib/runtime";
+import { SettingsPage } from "@/features/auth/settings-page";
 
 const modules = [
   {
@@ -110,18 +112,18 @@ function LearnOverview({ stageId }: { stageId?: string }) {
             <Link
               key={stage.id}
               href={`/app/learn/${stage.id}`}
-              className={`stage-card ${stage.status} ${selected?.id === stage.id ? "selected" : ""}`}
+              className={`stage-card ${demoMode ? stage.status : index === 0 ? "current" : "future"} ${selected?.id === stage.id ? "selected" : ""}`}
             >
               <span className="stage-index">
-                {stage.status === "done" ? <Check size={17} /> : index + 1}
+                {demoMode && stage.status === "done" ? <Check size={17} /> : index + 1}
               </span>
               <strong>{stage.range}</strong>
               <h3>{stage.name}</h3>
               <p>{stage.description}</p>
               <span className="stage-status">
-                {stage.status === "done"
+                {demoMode && stage.status === "done"
                   ? "Demo milestone"
-                  : stage.status === "current"
+                  : (demoMode ? stage.status === "current" : index === 0)
                     ? "Current stage"
                     : "Preview stage"}{" "}
                 <ArrowRight size={14} />
@@ -334,9 +336,10 @@ function VocabularyPage() {
 }
 
 function GrammarPage() {
-  const { saveAttempt } = useDemo();
+  const { submitExercise } = useDemo();
   const [answer, setAnswer] = useState("");
   const [result, setResult] = useState(false);
+  const [score, setScore] = useState(0);
   return (
     <div className="content-page">
       <PageIntro
@@ -380,20 +383,21 @@ function GrammarPage() {
             <button
               className="button primary"
               disabled={!answer}
-              onClick={() => {
-                setResult(true);
-                saveAttempt(
-                  "grammar-present-simple",
-                  Number(answer === "She studies English every day."),
-                  1,
-                );
+              onClick={async () => {
+                try {
+                  const grade = await submitExercise("grammar-present-simple", { q1: [
+                    "She study English every day.", "She studies English every day.", "She studying English every day.",
+                  ].indexOf(answer) }, Number(answer === "She studies English every day."), 1);
+                  setScore(grade.score);
+                  setResult(true);
+                } catch { /* The store displays the save error. */ }
               }}
             >
               Check answer <ArrowRight size={16} />
             </button>
           ) : (
             <ExerciseResult
-              correct={Number(answer === "She studies English every day.")}
+              correct={score}
               total={1}
               explanation={[
                 "“She” is third-person singular, so “study” becomes “studies”.",
@@ -448,12 +452,10 @@ const readingQuestions = [
 ];
 
 function ReadingPage() {
-  const { saveAttempt } = useDemo();
+  const { submitExercise } = useDemo();
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [submitted, setSubmitted] = useState(false);
-  const correct = readingQuestions.filter(
-    (q, i) => answers[i] === q.answer,
-  ).length;
+  const [correct, setCorrect] = useState(0);
   return (
     <div className="content-page">
       <PageIntro
@@ -506,13 +508,14 @@ function ReadingPage() {
             <button
               className="button primary"
               disabled={Object.keys(answers).length !== readingQuestions.length}
-              onClick={() => {
-                setSubmitted(true);
-                saveAttempt(
-                  "reading-city-gardens",
-                  correct,
-                  readingQuestions.length,
-                );
+              onClick={async () => {
+                try {
+                  const grade = await submitExercise("reading-city-gardens", {
+                    q1: answers[0], q2: answers[1], q3: answers[2],
+                  }, readingQuestions.filter((q, i) => answers[i] === q.answer).length, readingQuestions.length);
+                  setCorrect(grade.score);
+                  setSubmitted(true);
+                } catch { /* The store displays the save error. */ }
               }}
             >
               Submit answers <ArrowRight size={16} />
@@ -537,11 +540,12 @@ function ReadingPage() {
 const listeningText =
   "Hi, I’m Lily. I usually study English after dinner. On Mondays, I listen to a short podcast. On Wednesdays, I practice speaking with my friend. My favourite part is learning new words because I can use them at work.";
 function ListeningPage() {
-  const { saveAttempt } = useDemo();
+  const { submitExercise } = useDemo();
   const [playing, setPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
   const [answer, setAnswer] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [score, setScore] = useState(0);
   const [showTranscript, setShowTranscript] = useState(false);
   useEffect(() => () => window.speechSynthesis?.cancel(), []);
   function play() {
@@ -614,20 +618,19 @@ function ListeningPage() {
             <button
               className="button primary"
               disabled={!answer}
-              onClick={() => {
-                setSubmitted(true);
-                saveAttempt(
-                  "listening-daily-life",
-                  Number(answer === "On Wednesdays"),
-                  1,
-                );
+              onClick={async () => {
+                try {
+                  const grade = await submitExercise("listening-daily-life", { q1: ["On Mondays", "On Wednesdays", "Every evening"].indexOf(answer) }, Number(answer === "On Wednesdays"), 1);
+                  setScore(grade.score);
+                  setSubmitted(true);
+                } catch { /* The store displays the save error. */ }
               }}
             >
               Check answer
             </button>
           ) : (
             <ExerciseResult
-              correct={Number(answer === "On Wednesdays")}
+              correct={score}
               total={1}
               explanation={[
                 "Lily says she practices speaking with her friend on Wednesdays.",
@@ -667,16 +670,17 @@ function ListeningPage() {
 }
 
 function WritingPage() {
-  const { draft, saveDraft } = useDemo();
+  const { draft, saveDraft, ready } = useDemo();
   const [text, setText] = useState(draft);
   const [saved, setSaved] = useState(false);
+  useEffect(() => { if (ready) queueMicrotask(() => setText(draft)); }, [ready, draft]);
   const words = text.trim() ? text.trim().split(/\s+/).length : 0;
   return (
     <div className="content-page">
       <PageIntro
         eyebrow="WRITING · IELTS STARTER"
         title="Technology in daily life"
-        description="Write a short opinion paragraph. Your draft is stored locally in this browser."
+        description={demoMode ? "Write a short opinion paragraph. Your draft is stored in this browser." : "Write a short opinion paragraph. Your draft is saved to your account."}
         icon="✏️"
       />
       <div className="practice-layout">
@@ -701,14 +705,14 @@ function WritingPage() {
           <div className="writing-actions">
             <span>
               {saved
-                ? "✓ Draft saved in this browser"
+                ? demoMode ? "✓ Draft saved in this browser" : "✓ Draft saved to your account"
                 : "Your draft has not been saved yet"}
             </span>
             <button
               className="button primary"
-              onClick={() => {
-                saveDraft(text);
-                setSaved(true);
+              onClick={async () => {
+                try { await saveDraft(text); setSaved(true); }
+                catch { setSaved(false); }
               }}
             >
               <Save size={16} /> Save draft
@@ -868,7 +872,7 @@ function ProgressPage() {
       <PageIntro
         eyebrow="YOUR JOURNEY"
         title="Learning progress"
-        description="A snapshot of the activity saved in this browser."
+        description={demoMode ? "A snapshot of the activity saved in this browser." : "A snapshot of the activity saved to your account."}
         icon="📊"
       />
       <div className="progress-stat-grid">
@@ -967,6 +971,7 @@ export function LearningPage({ section }: { section: string }) {
   if (section === "speaking") return <SpeakingPage />;
   if (section === "progress" || section === "achievements")
     return <ProgressPage />;
+  if (section === "settings") return <SettingsPage />;
   return (
     <UnavailablePage
       title={section.charAt(0).toUpperCase() + section.slice(1)}
