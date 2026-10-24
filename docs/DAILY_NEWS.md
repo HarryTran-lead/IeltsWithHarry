@@ -6,6 +6,8 @@
 
 `/app/news/learn` reads original or specifically licensed material from `news_learning_articles`. Seven original sample passages cover the seven existing stages. Vocabulary lives in `news_vocabulary`, and quiz keys live separately in `news_answer_keys`. `news_submit_quiz` grades in PostgreSQL, saves attempts, awards XP once per article, and completes a linked planner task. `news_mark_read` and `news_finish_read` distinguish opening and finishing a passage. Words saved to the notebook are available in the Vocabulary Lab review deck. No AI service is used.
 
+`/app/news/learn` also offers deterministic personal suggestions. Learners save a level and preferred topics in `user_news_preferences`. The order also considers completed readings, the most recent quiz result, and words saved in the notebook. The complete reading catalog and manual filters remain available.
+
 `/admin/news` is available only to an admin account. The admin can configure feed sources, review imported headlines, edit original/licensed readings, author vocabulary and answer-key questions, publish readings, and inspect sync logs. Database constraints require a recorded rights basis before enabling source ingestion and require a word plus a graded question before publishing a reading.
 
 ## Providers and rights

@@ -4,11 +4,20 @@ import { describe, expect, it, vi } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalizeGdelt, parsePublishedDate, parseRss, rssProvider, type NewsSource } from "../src/lib/news/providers";
 import { nextWordReview } from "../src/lib/news/review";
+import { recommendReadings } from "../src/lib/news/recommend";
 
 const source: NewsSource = { id: "11111111-1111-4111-8111-111111111111", name: "NASA", provider: "rss", feed_url: "https://www.nasa.gov/news-release/feed/", category: "Science", policy_status: "METADATA_ONLY", reviewed_basis: "NASA official RSS feed reviewed", attribution_text: "NASA", auto_publish: true, enabled: true, etag: null, last_modified: null, min_interval_minutes: 30 };
 const xml = `<rss version="2.0"><channel><title>NASA</title><item><title>New science mission announced</title><link>https://www.nasa.gov/news/mission/?utm_source=test</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate><guid>mission-1</guid><description>Third-party text is intentionally ignored.</description></item></channel></rss>`;
 
 describe("news providers", () => {
+  it("ranks unread lessons by saved preferences and recent study evidence", () => {
+    const items = [
+      { id: "science", stage_id: "foundation", category: "Science", created_at: "2026-10-24T00:00:00Z" },
+      { id: "tech", stage_id: "elementary", category: "Technology", created_at: "2026-10-23T00:00:00Z" },
+    ];
+    expect(recommendReadings(items, { stage_id: "elementary", topics: ["Technology"] }, [{ article_id: "science", completed_at: "2026-10-24T01:00:00Z" }], null, [{ article_id: "tech", word: "device" }], ["device"])[0].id).toBe("tech");
+    expect(recommendReadings(items, { stage_id: null, topics: [] }, [], { article_id: "science", score: 5, total: 5 }, [], [])[0].id).toBe("tech");
+  });
   it("schedules saved vocabulary reviews without duplicate intervals", () => {
     const now = new Date("2026-10-24T12:00:00Z");
     const first = nextWordReview(undefined,"good",now);
@@ -69,7 +78,7 @@ describe("news database permissions and grading", () => {
         create table auth.users(id uuid primary key, raw_user_meta_data jsonb);
         create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
         grant usage on schema auth to authenticated; grant execute on function auth.uid() to authenticated;`);
-      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql"]) {
+      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql"]) {
         if (name.includes("007")) await db.exec(readFileSync(resolve("supabase/seed.sql"), "utf8"));
         await db.exec(readFileSync(resolve("supabase/migrations", name), "utf8"));
       }
