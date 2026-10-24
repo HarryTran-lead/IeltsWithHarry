@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/browser";
-import { demoMode, googleAuthEnabled, phoneAuthEnabled, supabaseConfigured } from "@/lib/runtime";
+import { demoMode, emailDeliveryReady, googleAuthEnabled, phoneAuthEnabled, supabaseConfigured } from "@/lib/runtime";
 
 type AuthMode = "login" | "register" | "forgot" | "reset";
 type Identifier = "email" | "phone";
@@ -125,6 +125,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
       {error && <p role="alert" className="form-error">{error}</p>}
       {demoMode && <p className="auth-links"><Link href="/">← Về trang Guest</Link></p>}
     </div> : <div className="card public-message">
+      {!emailDeliveryReady && (mode === "register" || mode === "forgot") && <p role="note">Email xác nhận hiện chỉ gửi được tới thành viên của project. Đăng ký và khôi phục mật khẩu cho mọi người sẽ hoạt động sau khi cấu hình dịch vụ gửi email riêng.</p>}
       {pendingPhone ? <form onSubmit={verifyPhone} className="auth-form">
         <p>Đã gửi mã SMS tới <strong>{pendingPhone}</strong>.</p>
         <label>Mã xác minh 6 chữ số<input inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6}" maxLength={6} required value={otp} onChange={(event) => setOtp(event.target.value)} /></label>

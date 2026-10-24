@@ -44,7 +44,7 @@ The floating **Sổ tay** button opens quick note and vocabulary capture on lear
 
 The production project is `vpkhriywprepuhrbarye` (`https://vpkhriywprepuhrbarye.supabase.co`). All three migrations and `supabase/seed.sql` were applied on 24 October 2026. Auth site/redirect URLs are tracked in `supabase/config.toml`; 15 public tables have RLS enabled. The Vercel production project has the public Supabase URL and publishable key. Keep secrets out of Git.
 
-The Supabase built-in email sender is restricted to project organization members and has a low rate limit. Configure custom SMTP in Supabase Authentication before inviting the public or claiming email registration/recovery is generally available. Google OAuth and phone/SMS still need their respective providers and remain hidden in the UI. Once the designated owner registers and confirms their account, add its `auth.users.id` to `public.admin_users` as described below.
+The Supabase built-in email sender is restricted to project organization members and has a low rate limit. The registration and recovery screens disclose this while `NEXT_PUBLIC_EMAIL_DELIVERY_READY` is unset. Configure custom SMTP in Supabase Authentication, verify delivery to an ordinary address, set `NEXT_PUBLIC_EMAIL_DELIVERY_READY=true` in Vercel and redeploy before inviting the public. Google OAuth and phone/SMS still need their respective providers and remain hidden in the UI. Once the designated owner registers and confirms their account, add its `auth.users.id` to `public.admin_users` as described below.
 
 ## Enable real accounts and persistence
 
