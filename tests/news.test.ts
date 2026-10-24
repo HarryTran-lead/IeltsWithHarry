@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
-import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalizeGdelt, parseNasaNewsBodies, parsePublishedDate, parseRss, rssProvider, type NewsSource } from "../src/lib/news/providers";
+import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalizeGdelt, parseNasaNewsBodies, parseNoaaNewsBodies, parsePublishedDate, parseRss, rssProvider, type NewsSource } from "../src/lib/news/providers";
 import { nextWordReview } from "../src/lib/news/review";
 import { recommendReadings } from "../src/lib/news/recommend";
 
@@ -49,6 +49,16 @@ describe("news providers", () => {
     expect(parseNasaNewsBodies(feed, { ...source, feed_url: "https://science.nasa.gov/feed/" })).toHaveLength(0);
     expect(parseNasaNewsBodies(feed.replace(passage, `${passage} Copyright third party`), source)).toHaveLength(0);
   });
+  it("reads NOAA-authored text from its official RSS and excludes third-party notices", () => {
+    const noaa = { ...source, name: "NOAA News", feed_url: "https://www.noaa.gov/rss.xml" };
+    const passage = "NOAA researchers measured the ocean and explained how changing water temperatures can affect weather across the coast. ".repeat(4);
+    const feed = `<rss><channel><item><title>Ocean research update</title><link>https://www.noaa.gov/news-release/ocean-research-update</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate><description><![CDATA[<div class="c-field--name-field-body-formatted-long"><script>bad()</script><p>${passage}</p></div>]]></description></item></channel></rss>`;
+    const bodies = parseNoaaNewsBodies(feed, noaa);
+    expect(bodies).toHaveLength(1);
+    expect(bodies[0].body_text).toContain("NOAA researchers");
+    expect(bodies[0].body_text).not.toContain("bad()");
+    expect(parseNoaaNewsBodies(feed.replace(passage, `${passage} © Reuters`), noaa)).toHaveLength(0);
+  });
   it("normalizes GDELT English results and holds sensitive titles for review", () => {
     const gdelt = { ...source, provider: "gdelt" as const };
     const rows = normalizeGdelt({ articles: [
@@ -88,7 +98,7 @@ describe("news database permissions and grading", () => {
         create table auth.users(id uuid primary key, raw_user_meta_data jsonb);
         create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
         grant usage on schema auth to authenticated; grant execute on function auth.uid() to authenticated;`);
-      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql"]) {
+      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql"]) {
         if (name.includes("007")) await db.exec(readFileSync(resolve("supabase/seed.sql"), "utf8"));
         await db.exec(readFileSync(resolve("supabase/migrations", name), "utf8"));
       }

@@ -78,7 +78,10 @@ export function parseRss(xml: string, source: NewsSource): NewsItem[] {
 }
 
 const nasaFeedUrl = "https://www.nasa.gov/news-release/feed/";
+const noaaFeedUrl = "https://www.noaa.gov/rss.xml";
 const nasaRightsBasis = "NASA Images and Media Usage Guidelines: NASA-produced educational and informational material may be used with NASA attribution; individually exclude third-party copyrighted material. https://www.nasa.gov/nasa-brand-center/images-and-media/";
+const noaaRightsBasis = "NOAA Education and Outreach FAQ: NOAA-created articles may be reused with NOAA attribution; check each item and exclude third-party content. https://www.noaa.gov/office-education/outreach-communication/faq";
+const thirdPartyNotice = /(?:copyright|©|all rights reserved|associated press|reuters|getty images|shutterstock|adobe stock)/i;
 export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
   if (source.feed_url !== nasaFeedUrl || xml.includes("<!DOCTYPE") || xml.includes("<!ENTITY")) return [];
   const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as { rss?: { channel?: { item?: unknown } } };
@@ -91,7 +94,7 @@ export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCa
     const url = new URL(source_url);
     if (url.hostname !== "www.nasa.gov" || !url.pathname.startsWith("/news-release/")) return [];
     const html = xmlText(row["content:encoded"]);
-    if (!html || html.length > 250000 || /(?:copyright|©|all rights reserved|associated press|reuters|getty images|shutterstock|adobe stock)/i.test(html)) return [];
+    if (!html || html.length > 250000 || thirdPartyNotice.test(html)) return [];
     const $ = load(html);
     $("script,style,nav,form,svg,iframe,figure,figcaption,blockquote").remove();
     const paragraphs = $("p,h2,h3,li").toArray().map((node) => $(node).text().replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12);
@@ -101,9 +104,33 @@ export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCa
   });
 }
 
+export function parseNoaaNewsBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
+  if (source.feed_url !== noaaFeedUrl || xml.includes("<!DOCTYPE") || xml.includes("<!ENTITY")) return [];
+  const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as { rss?: { channel?: { item?: unknown } } };
+  const entries = parsed.rss?.channel?.item;
+  const list = Array.isArray(entries) ? entries : entries ? [entries] : [];
+  return list.slice(0, 50).flatMap((entry) => {
+    const row = entry as Record<string, unknown>;
+    const source_url = canonicalUrl(xmlText(row.link));
+    if (!source_url) return [];
+    const url = new URL(source_url);
+    if (url.hostname !== "www.noaa.gov" || !/^\/(news-release|news|stories|media-advisory)\//.test(url.pathname)) return [];
+    const html = xmlText(row.description);
+    if (!html || html.length > 250000 || thirdPartyNotice.test(html)) return [];
+    const $ = load(html);
+    const body = $(".c-field--name-field-body-formatted-long");
+    if (!body.length) return [];
+    body.find("script,style,nav,form,svg,iframe,figure,figcaption").remove();
+    const paragraphs = body.find("p,h2,h3,li").toArray().map((node) => $(node).text().replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12);
+    const body_text = paragraphs.join("\n\n").slice(0, 50000);
+    if (body_text.length < 200) return [];
+    return [{ canonical_hash: newsHash(source_url), body_text, rights_basis: noaaRightsBasis, source_url }];
+  });
+}
+
 export function assertApprovedFeedUrl(raw: string): URL {
   const url = new URL(raw);
-  const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov").split(",").map((host) => host.trim().toLowerCase());
+  const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov").split(",").map((host) => host.trim().toLowerCase());
   if (url.protocol !== "https:" || url.port || url.username || url.password || isIP(url.hostname) || !allowed.includes(url.hostname.toLowerCase())) throw new Error("Feed host is not approved in NEWS_RSS_ALLOWED_HOSTS");
   return url;
 }
@@ -166,6 +193,6 @@ export const rssProvider: NewsProvider = { kind: "rss", async fetch(source, fetc
   if (response.status === 304) return { items: [], etag: source.etag, lastModified: source.last_modified, cacheUntil: cacheUntil(response), notModified: true };
   if (!response.ok) throw new Error(`RSS HTTP ${response.status}`);
   const xml = await boundedText(response);
-  return { items: parseRss(xml, source), bodies: parseNasaNewsBodies(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
+  return { items: parseRss(xml, source), bodies: [...parseNasaNewsBodies(xml, source), ...parseNoaaNewsBodies(xml, source)], etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
 } };
 export const providers: Record<NewsSource["provider"], NewsProvider> = { gdelt: gdeltProvider, rss: rssProvider };
