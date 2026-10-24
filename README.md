@@ -22,6 +22,7 @@ docs/                   Architecture and rollout notes
 ```
 
 See [docs/STRUCTURE.md](docs/STRUCTURE.md) for data flows and security boundaries.
+See [docs/AUTHORED_CONTENT.md](docs/AUTHORED_CONTENT.md) for the no-AI, content-driven skill plan and the interactive `/app/content-lab` JSON demo.
 
 ## Run locally in demo mode
 
@@ -87,6 +88,6 @@ The existing Vercel preview can stay in explicit demo mode while backend setup i
 
 ## Current scope and deferred work
 
-Working: dashboard, planner CRUD and sorting, sample vocabulary/grammar/reading/listening/writing/speaking interactions, local demo persistence, auth integration, user-scoped cloud persistence, server-side exercise grading, published course/lesson reading and admin curriculum/block/question CRUD.
+Working: dashboard, planner CRUD and sorting, sample vocabulary/grammar/reading/listening/writing/speaking interactions, authored JSON Content Lab preview for all six skills, local demo persistence, auth integration, user-scoped cloud persistence, server-side exercise grading, published course/lesson reading and admin curriculum/block/question/vocabulary CRUD.
 
 Deferred: full 1.0–7.0+ curriculum, admin draft preview, R2 media uploads and private speaking recordings, automated email reminders, AI feedback, production XP/streak awards and live Supabase integration tests. Browser narration is a sample Listening aid; a licensed recorded audio library is a later content task. Demo sample activities remain fixed authored content; published database lessons use the separate lesson reader.

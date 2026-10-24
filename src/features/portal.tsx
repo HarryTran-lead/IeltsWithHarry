@@ -5,6 +5,7 @@ import { AppShell } from "@/components/layout/app-shell";
 import { Dashboard } from "@/features/dashboard/dashboard";
 import { PlannerPage } from "@/features/planner/planner-page";
 import { LearningPage } from "@/features/learning/learning-page";
+import { ContentLab } from "@/features/content-lab/content-lab";
 
 export function Portal() {
   return <DemoProvider><PortalContent /></DemoProvider>;
@@ -20,6 +21,8 @@ function PortalContent() {
           <Dashboard />
         ) : section === "planner" ? (
           <PlannerPage />
+        ) : section === "content-lab" ? (
+          <ContentLab />
         ) : (
           <LearningPage section={section} />
         )}

@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "title": "Technology & Digital Life",
+  "level": "IELTS Starter · sample lesson",
+  "vocabulary": [{
+    "word": "device",
+    "meaningVi": "thiết bị",
+    "definition": "A piece of equipment made for a particular purpose.",
+    "example": "My phone is a useful device for studying English.",
+    "sentencePromptVi": "Viết bằng tiếng Anh: Điện thoại của tôi là một thiết bị hữu ích để học tiếng Anh.",
+    "acceptedSentences": [
+      "My phone is a useful device for studying English.",
+      "My phone is a useful device to study English."
+    ]
+  }, {
+    "word": "convenient",
+    "meaningVi": "thuận tiện",
+    "definition": "Easy to use or suitable for a particular situation.",
+    "example": "Online lessons are convenient for busy students.",
+    "sentencePromptVi": "Viết bằng tiếng Anh: Các bài học trực tuyến thuận tiện cho học sinh bận rộn.",
+    "acceptedSentences": ["Online lessons are convenient for busy students.", "Online classes are convenient for busy students."]
+  }],
+  "grammar": {
+    "rule": "Present Simple: chủ ngữ he/she/it thường thêm -s hoặc -es vào động từ.",
+    "example": "She uses a tablet every day.",
+    "questions": [{
+    "prompt": "Choose the correct sentence.",
+    "options": ["She use a tablet every day.", "She uses a tablet every day.", "She using a tablet every day."],
+    "correctIndex": 1,
+    "explanation": "She là ngôi thứ ba số ít, vì vậy use đổi thành uses."
+    }, {
+      "prompt": "Which sentence describes a daily habit?",
+      "options": ["He studies English every morning.", "He studying English every morning.", "He study English every morning."],
+      "correctIndex": 0,
+      "explanation": "He studies dùng Present Simple với chủ ngữ he."
+    }]
+  },
+  "reading": {
+    "passage": "Mina lives far from her school. Each evening, she uses a small tablet to read short English stories. She saves new words in a notebook and reviews them on Saturday. The tablet helps her study, but she turns it off before bedtime so she can sleep well.",
+    "questions": [{
+    "prompt": "When does Mina review her new words?",
+    "options": ["Every evening", "On Saturday", "Before bedtime"],
+    "correctIndex": 1,
+    "evidence": "She saves new words in a notebook and reviews them on Saturday.",
+    "explanation": "Đoạn văn nói rõ Mina ôn từ mới vào thứ Bảy."
+    }, {
+      "prompt": "Why does Mina turn off her tablet before bedtime?",
+      "options": ["To charge it", "To sleep well", "To call her friend"],
+      "correctIndex": 1,
+      "evidence": "She turns it off before bedtime so she can sleep well.",
+      "explanation": "Câu cuối cho biết Mina tắt máy để ngủ ngon."
+    }]
+  },
+  "listening": {
+    "script": "Hello, I'm Leo. I listen to a short English podcast on my way to work. I write down two new words after each episode. On Sunday, I listen again and check what I remember.",
+    "questions": [{
+    "prompt": "How many new words does Leo write down after each episode?",
+    "options": ["One", "Two", "Three"],
+    "correctIndex": 1,
+    "explanation": "Leo says: I write down two new words after each episode."
+    }, {
+      "prompt": "When does Leo listen again?",
+      "options": ["On Friday", "On Saturday", "On Sunday"],
+      "correctIndex": 2,
+      "explanation": "Leo nói rằng cậu ấy nghe lại vào Chủ nhật."
+    }]
+  },
+  "writing": {
+    "prompt": "Write 40–60 words about one device that helps you learn English. Say what it is, how you use it and why it helps.",
+    "minWords": 40,
+    "modelAnswer": "My phone helps me learn English every day. I use it to read short stories and listen to simple podcasts. When I see a new word, I save it in a note and review it later. This device is useful because I can study anywhere, even on the bus.",
+    "checklist": ["Nêu rõ thiết bị", "Giải thích cách sử dụng", "Đưa ra lý do hoặc ví dụ", "Kiểm tra dấu câu và thì động từ"]
+  },
+  "speaking": {
+    "prompt": "Describe a device you use for learning. What is it, how often do you use it, and why do you like it?",
+    "preparationSeconds": 15,
+    "modelAnswer": "I often use my phone to learn English. I listen to short podcasts on the bus and look up new words. I like it because it is easy to carry and lets me practise for a few minutes every day.",
+    "checklist": ["Trả lời đủ ba ý của câu hỏi", "Nói một ví dụ cụ thể", "Nghe lại bản ghi để nhận ra chỗ ngập ngừng"]
+  }
+}

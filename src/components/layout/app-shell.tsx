@@ -6,6 +6,7 @@ import {
   BookOpen,
   CalendarDays,
   ChartNoAxesCombined,
+  FlaskConical,
   ChevronDown,
   Flame,
   GraduationCap,
@@ -31,6 +32,7 @@ import { createClient } from "@/lib/supabase/browser";
 const links = [
   { href: "/app/dashboard", label: "Dashboard", icon: Home },
   { href: "/app/learn", label: "Learn", icon: GraduationCap },
+  { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical },
   { href: "/app/vocabulary", label: "Vocabulary", icon: Languages },
   { href: "/app/grammar", label: "Grammar", icon: BookOpen },
   { href: "/app/reading", label: "Reading", icon: BookOpen },
@@ -253,7 +255,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <nav className="bottom-nav" aria-label="Mobile navigation">
-        {[links[0], links[1], links[8], links[9]].map(
+        {[links[0], links[1], links[2], links[9]].map(
           ({ href, label, icon: Icon }) => (
             <Link
               key={href}

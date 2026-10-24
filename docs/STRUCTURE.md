@@ -6,6 +6,8 @@
 src/app/                 Định tuyến Next.js, kiểm tra phiên trên server
 src/components/          Giao diện chung, thiết kế, minh họa
 src/features/            Từng miền nghiệp vụ: auth, dashboard, planner, learning, admin, demo
+src/features/content-lab/  Bản thử luyện tập từ gói JSON do người soạn nạp
+src/content/             Gói nội dung JSON mẫu cho Content Lab
 src/lib/supabase/        Tạo client cho trình duyệt/server
 src/lib/validation/      Kiểm tra dữ liệu nhập
 supabase/migrations/     Bảng, index, RLS, hàm chấm điểm
