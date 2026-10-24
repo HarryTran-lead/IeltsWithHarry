@@ -83,9 +83,22 @@ export function assertApprovedFeedUrl(raw: string): URL {
 }
 async function boundedFetch(url: URL, init: RequestInit, fetcher: typeof fetch): Promise<Response> {
   for (let attempt = 0; attempt < 3; attempt++) {
-    const response = await fetcher(url, { ...init, redirect: "manual", signal: AbortSignal.timeout(9000), cache: "no-store" });
+    let response: Response;
+    try {
+      response = await fetcher(url, { ...init, redirect: "manual", signal: AbortSignal.timeout(9000), cache: "no-store" });
+    } catch (error) {
+      if (attempt === 2) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 300 * 2 ** attempt));
+      continue;
+    }
     if (response.status === 304) return response;
-    if ([500, 502, 503, 504].includes(response.status) && attempt < 2) { await new Promise((resolve) => setTimeout(resolve, 300 * 2 ** attempt)); continue; }
+    if ((response.status === 429 || [500, 502, 503, 504].includes(response.status)) && attempt < 2) {
+      const retryAfter = Number(response.headers.get("retry-after"));
+      const delay = Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter * 1000, 2000) : 300 * 2 ** attempt;
+      await response.body?.cancel().catch(() => undefined);
+      await new Promise((resolve) => setTimeout(resolve, delay));
+      continue;
+    }
     if (response.status >= 300 && response.status < 400) throw new Error("Provider redirect blocked");
     return response;
   }

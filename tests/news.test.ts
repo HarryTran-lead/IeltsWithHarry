@@ -52,7 +52,10 @@ describe("news providers", () => {
     expect((await rssProvider.fetch(source, unchanged as unknown as typeof fetch)).notModified).toBe(true);
     const rateLimited = vi.fn(async () => new Response("Slow down", { status: 429 }));
     await expect(gdeltProvider.fetch({ ...source, provider: "gdelt" }, rateLimited as unknown as typeof fetch)).rejects.toThrow("429");
-    expect(rateLimited).toHaveBeenCalledTimes(1);
+    expect(rateLimited).toHaveBeenCalledTimes(3);
+    const transient = vi.fn().mockRejectedValueOnce(new Error("timeout")).mockResolvedValueOnce(new Response(xml, { status: 200 }));
+    expect((await rssProvider.fetch(source, transient as unknown as typeof fetch)).items).toHaveLength(1);
+    expect(transient).toHaveBeenCalledTimes(2);
     const redirected = vi.fn(async () => new Response(null, { status: 302, headers: { location: "http://127.0.0.1/" } }));
     await expect(rssProvider.fetch(source, redirected as unknown as typeof fetch)).rejects.toThrow("redirect blocked");
   });
