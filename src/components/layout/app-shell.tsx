@@ -203,7 +203,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 >
                   <Settings size={16} /> Settings
                 </Link>
-                {demoMode ? <Link href="/login" onClick={() => setProfileOpen(false)}><LogOut size={16} /> Account info</Link> :
+                {demoMode ? <button onClick={async () => { await fetch("/auth/demo", { method: "DELETE" }); router.push("/"); router.refresh(); }}><LogOut size={16} /> Thoát demo</button> :
                   <button onClick={async () => { await createClient().auth.signOut(); router.push("/login"); router.refresh(); }}><LogOut size={16} /> Sign out</button>}
               </div>
             )}

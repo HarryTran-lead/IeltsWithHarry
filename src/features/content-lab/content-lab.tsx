@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { authoredPackSchema, compareSentence, countWords, type AuthoredPack } from "@/lib/authored-content";
 import sample from "@/content/demo-pack.json";
 import { useNotebook } from "@/features/notebook/notebook-store";
+import { DEMO_PUBLISHED_PACK_KEY } from "@/lib/demo-content";
+import { demoMode } from "@/lib/runtime";
 
 const initialPack = authoredPackSchema.parse(sample);
 const skills = ["Vocabulary", "Grammar", "Reading", "Listening", "Writing", "Speaking"] as const;
@@ -15,6 +17,18 @@ export function ContentLab() {
   const [skill, setSkill] = useState<Skill>("Vocabulary");
   const [revision, setRevision] = useState(0);
   const [importError, setImportError] = useState("");
+
+  useEffect(() => {
+    if (!demoMode) return;
+    void Promise.resolve().then(() => {
+      try {
+        const published = localStorage.getItem(DEMO_PUBLISHED_PACK_KEY);
+        if (!published) return;
+        const parsed = authoredPackSchema.safeParse(JSON.parse(published));
+        if (parsed.success) { setPack(parsed.data); setDraftJson(JSON.stringify(parsed.data, null, 2)); }
+      } catch { /* The bundled sample remains available if local data is damaged. */ }
+    });
+  }, []);
 
   function applyJson(value: string) {
     try {

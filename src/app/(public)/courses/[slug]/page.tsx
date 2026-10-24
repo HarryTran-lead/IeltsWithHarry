@@ -34,8 +34,8 @@ export default async function CoursePage({
           Activities for each skill are available in demo mode. This stage is a
           learning milestone, not an official IELTS certification.
         </p>
-        <Link href={`/app/learn/${stage.id}`} className="button primary">
-          Open stage →
+        <Link href="/login" className="button primary">
+          Đăng nhập để học →
         </Link>
       </div>
     </div>

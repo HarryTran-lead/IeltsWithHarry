@@ -34,7 +34,9 @@ npm ci
 npm run dev
 ```
 
-Open `http://localhost:3000/app/dashboard`. Demo tasks, attempts, goal and Writing draft stay in this browser's localStorage. Seeded tasks, XP, streaks and stages are clearly sample data. No account is created in demo mode.
+Open `http://localhost:3000`. Visitors start on the public Guest homepage and can browse the published course catalog. On `/login`, choose the student or admin demo role. The student area is under `/app`; the separate admin area is under `/admin`. Guest requests to either private area redirect to `/login`, and a student cannot open the admin editor. The demo role is only a preview switch, not a real account or security credential. Demo tasks, attempts, goal, Writing draft and authored content stay in this browser's localStorage. Seeded tasks, XP, streaks and stages are clearly sample data.
+
+In admin demo, edit the JSON curriculum pack, validate it, save a draft and publish it. Switch to the student demo role in the same browser to see the published pack in `/app/content-lab`. Live admin uses the Supabase CMS and database permissions instead of this browser storage.
 
 The floating **Sổ tay** button opens quick note and vocabulary capture on learning pages. `/app/notebook` lets learners search, edit, delete and export saved entries, and review learning-page visits plus submitted practice. Demo notebook data stays in localStorage on this browser. On a configured live account, entries and visits use the second Supabase migration and user-scoped RLS.
 
@@ -62,7 +64,7 @@ After the admin user registers, grant the role in the Supabase SQL editor as a p
 insert into public.admin_users(user_id) values ('USER_UUID');
 ```
 
-The `/admin` route checks the signed-in account on the server and uses `is_admin()` in the database. Only admins can change curriculum rows. Course, unit and lesson records can be drafted, renamed, published, unpublished and deleted. The lesson editor can add/edit/delete content blocks, questions and vocabulary entries; answer keys are saved in the same database transaction as questions. The published course catalog is visible at `/courses`; published lesson content and exercises load from the database at `/app/lesson/[slug]`.
+The `/admin` route checks the signed-in account on the server and uses `is_admin()` in the database. Only admins can change curriculum rows. Signed-in learners enter `/app`; admins enter `/admin`. Course, unit and lesson records can be drafted, renamed, published, unpublished and deleted. The lesson editor can add/edit/delete content blocks, questions and vocabulary entries; answer keys are saved in the same database transaction as questions. The published course catalog is visible at `/courses`; published lesson content and exercises load from the database at `/app/lesson/[slug]`.
 
 ## Security model
 

@@ -15,7 +15,7 @@ export default async function CoursesPage() {
       </p>
       <div className="public-course-grid">
         {stages.map((stage) => (
-          <Link href={`/app/learn/${stage.id}`} key={stage.id} className="card">
+          <Link href={`/courses/${stage.id}`} key={stage.id} className="card">
             <span>{stage.range}</span>
             <h2>{stage.name}</h2>
             <p>{stage.description}</p>

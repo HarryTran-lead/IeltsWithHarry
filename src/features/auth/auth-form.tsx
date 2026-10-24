@@ -29,17 +29,30 @@ export function AuthForm({ mode }: { mode: "login" | "register" | "forgot" | "re
     else result = await supabase.auth.updateUser({ password });
     setBusy(false);
     if (result.error) { setError(result.error.message); return; }
-    if (mode === "login") { router.push("/app/dashboard"); router.refresh(); }
+    if (mode === "login") { const { data: isAdmin } = await supabase.rpc("is_admin"); router.push(isAdmin === true ? "/admin" : "/app/dashboard"); router.refresh(); }
     else if (mode === "reset") { setMessage("Password updated. You can now sign in."); await supabase.auth.signOut(); }
     else setMessage(mode === "register" ? "Check your email to confirm your account." : "If the address exists, a reset link is on its way.");
+  }
+
+  async function enterDemo(role: "student" | "admin") {
+    setBusy(true); setError("");
+    try {
+      const response = await fetch("/auth/demo", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ role }) });
+      if (!response.ok) throw new Error("Không mở được phiên demo. Hãy thử lại.");
+      router.push(role === "admin" ? "/admin" : "/app/dashboard");
+      router.refresh();
+    } catch (cause) { setError(cause instanceof Error ? cause.message : "Không mở được phiên demo."); }
+    finally { setBusy(false); }
   }
 
   return <div className="public-container narrow">
     <span className="eyebrow">ENGLISH SKILL LAB</span>
     <h1>{titles[mode]}</h1>
     {inactive ? <div className="card public-message">
-      <p>{demoMode ? "Local demo mode is enabled. Accounts are available after Supabase is configured." : "Account setup is waiting for a Supabase project."}</p>
-      {demoMode && <Link href="/app/dashboard" className="button primary">Open demo →</Link>}
+      <p>{demoMode ? "Bản demo tách riêng Guest, học viên và admin. Phiên demo không tạo tài khoản thật; dữ liệu chỉ lưu trong trình duyệt này." : "Account setup is waiting for a Supabase project."}</p>
+      {demoMode && (mode === "login" || mode === "register") && <div className="demo-role-actions"><button type="button" className="button primary" disabled={busy} onClick={() => void enterDemo("student")}>Vào trang học viên demo →</button><button type="button" className="button subtle" disabled={busy} onClick={() => void enterDemo("admin")}>Xem trang admin demo →</button></div>}
+      {error && <p role="alert" className="form-error">{error}</p>}
+      {demoMode && <p className="auth-links"><Link href="/">← Về trang Guest</Link></p>}
     </div> : <div className="card public-message">
       <form onSubmit={submit} className="auth-form">
         {mode === "register" && <label>Display name<input required maxLength={80} value={name} onChange={(e) => setName(e.target.value)} /></label>}
