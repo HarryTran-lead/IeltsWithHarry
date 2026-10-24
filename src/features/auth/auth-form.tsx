@@ -26,7 +26,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
 
   useEffect(() => {
     if (new URLSearchParams(location.search).get("error") === "verification") {
-      void Promise.resolve().then(() => setError("Liên kết xác minh đã hết hạn hoặc không hợp lệ. Hãy thử đăng nhập hoặc yêu cầu liên kết mới."));
+      void Promise.resolve().then(() => setError("Không tạo được phiên đăng nhập từ liên kết email. Nếu tài khoản đã được xác nhận, hãy đăng nhập bằng email và mật khẩu của bạn."));
     }
   }, []);
 
