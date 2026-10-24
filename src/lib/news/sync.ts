@@ -38,6 +38,17 @@ export async function syncNews() {
           inserted = fresh.length;
         }
       }
+      if (response.bodies?.length) {
+        const bodyHashes = response.bodies.map((body) => body.canonical_hash);
+        const { data: articles, error: articleError } = await db.from("news_articles").select("id,canonical_hash").in("canonical_hash", bodyHashes);
+        if (articleError) throw articleError;
+        const ids = new Map((articles ?? []).map((article) => [article.canonical_hash, article.id]));
+        const eligible = response.bodies.flatMap((body) => ids.has(body.canonical_hash) ? [{ article_id: ids.get(body.canonical_hash), body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url }] : []);
+        if (eligible.length) {
+          const { error: bodyError } = await db.from("news_article_bodies").upsert(eligible, { onConflict: "article_id", ignoreDuplicates: true });
+          if (bodyError) throw bodyError;
+        }
+      }
       const finished_at = new Date().toISOString();
       const status = response.notModified ? "not_modified" : "success";
       const { error: sourceError } = await db.from("news_sources").update({ last_success_at: finished_at, last_error: null, etag: response.etag, last_modified: response.lastModified, cache_until: response.cacheUntil }).eq("id", source.id);

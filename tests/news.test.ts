@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
-import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalizeGdelt, parsePublishedDate, parseRss, rssProvider, type NewsSource } from "../src/lib/news/providers";
+import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalizeGdelt, parseNasaNewsBodies, parsePublishedDate, parseRss, rssProvider, type NewsSource } from "../src/lib/news/providers";
 import { nextWordReview } from "../src/lib/news/review";
 import { recommendReadings } from "../src/lib/news/recommend";
 
@@ -38,6 +38,16 @@ describe("news providers", () => {
     const atom = `<feed><entry><title>Science update for students</title><link href="https://www.nasa.gov/news/students/" rel="alternate"/><updated>2026-10-23T12:00:00Z</updated><content>Do not save full text</content></entry></feed>`;
     expect(parseRss(atom, source)[0].title).toBe("Science update for students");
     expect(() => parseRss("<!DOCTYPE rss><rss/>", source)).toThrow();
+  });
+  it("copies only eligible NASA news-release text and strips markup", () => {
+    const passage = "NASA announced a new mission to study the Moon and share its findings with students around the world. ".repeat(4);
+    const feed = `<rss><channel><item><title>NASA announces a new mission</title><link>https://www.nasa.gov/news-release/new-mission/</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate><content:encoded><![CDATA[<script>danger()</script><p>${passage}</p>]]></content:encoded></item><item><title>Outside NASA release</title><link>https://science.nasa.gov/image-article/example/</link><content:encoded><![CDATA[<p>${passage}</p>]]></content:encoded></item></channel></rss>`;
+    const bodies = parseNasaNewsBodies(feed, source);
+    expect(bodies).toHaveLength(1);
+    expect(bodies[0].body_text).toContain("NASA announced");
+    expect(bodies[0].body_text).not.toContain("danger()");
+    expect(parseNasaNewsBodies(feed, { ...source, feed_url: "https://science.nasa.gov/feed/" })).toHaveLength(0);
+    expect(parseNasaNewsBodies(feed.replace(passage, `${passage} Copyright third party`), source)).toHaveLength(0);
   });
   it("normalizes GDELT English results and holds sensitive titles for review", () => {
     const gdelt = { ...source, provider: "gdelt" as const };
@@ -78,7 +88,7 @@ describe("news database permissions and grading", () => {
         create table auth.users(id uuid primary key, raw_user_meta_data jsonb);
         create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
         grant usage on schema auth to authenticated; grant execute on function auth.uid() to authenticated;`);
-      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql"]) {
+      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql"]) {
         if (name.includes("007")) await db.exec(readFileSync(resolve("supabase/seed.sql"), "utf8"));
         await db.exec(readFileSync(resolve("supabase/migrations", name), "utf8"));
       }
