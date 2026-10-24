@@ -9,16 +9,16 @@ import { ContentLab } from "@/features/content-lab/content-lab";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { NotebookPage } from "@/features/notebook/notebook-ui";
 
-export function Portal() {
-  return <DemoProvider><NotebookProvider><PortalContent /></NotebookProvider></DemoProvider>;
+export function Portal({ canManage = false }: { canManage?: boolean }) {
+  return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
 }
 
-function PortalContent() {
+function PortalContent({ canManage }: { canManage: boolean }) {
   const pathname = usePathname();
   const { ready } = useDemo();
   const section = pathname.split("/")[2] || "dashboard";
   return (
-      <AppShell>
+      <AppShell canManage={canManage}>
         {!ready ? <div className="content-page">Loading your learning space…</div> : section === "dashboard" ? (
           <Dashboard />
         ) : section === "planner" ? (

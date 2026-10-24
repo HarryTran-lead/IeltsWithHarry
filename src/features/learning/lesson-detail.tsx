@@ -9,12 +9,14 @@ type Question = { id: string; slug: string; prompt: string; options: string[] };
 type Word = { id: string; word: string; phonetic: string; meaning_vi: string; definition: string; example: string };
 type Grade = { score: number; total: number; review?: { slug: string; correctIndex: number; explanation: string }[] };
 
-export function LessonShell(props: Parameters<typeof LessonDetail>[0]) {
+type LessonShellProps = Parameters<typeof LessonDetail>[0] & { canManage?: boolean };
+
+export function LessonShell(props: LessonShellProps) {
   return <DemoProvider><NotebookProvider><LessonShellContent {...props} /></NotebookProvider></DemoProvider>;
 }
-function LessonShellContent(props: Parameters<typeof LessonDetail>[0]) {
+function LessonShellContent({ canManage = false, ...props }: LessonShellProps) {
   const { ready } = useDemo();
-  return <AppShell>{ready ? <LessonDetail {...props} /> : <div className="content-page">Loading your lesson…</div>}</AppShell>;
+  return <AppShell canManage={canManage}>{ready ? <LessonDetail {...props} /> : <div className="content-page">Loading your lesson…</div>}</AppShell>;
 }
 
 export function LessonDetail({ lesson, blocks, questions, words }: {

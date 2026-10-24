@@ -31,7 +31,7 @@ Chưa cấu hình Supabase và đã tắt demo thì giao diện hiển thị tr�
 
 ## Ranh giới quyền
 
-Luồng trang: `/` và `/courses` dành cho Guest; `/login` chuyển sang học viên hoặc admin demo; `/app/*` là khu học viên; `/admin/*` là khu biên tập. Server kiểm tra vai trò trước khi dựng trang. Trong demo, cookie chỉ chọn vai trò trình diễn và nội dung biên tập được lưu trong localStorage của cùng trình duyệt. Trong live, Supabase Auth xác thực tài khoản, `is_admin()` xác định admin, RLS bảo vệ dữ liệu; người dùng không tự chọn vai trò admin.
+Luồng trang: `/` và `/courses` dành cho Guest; `/login` chuyển sang học viên hoặc admin demo; `/app/*` là khu học viên mà cả student và admin đều dùng được; `/admin/*` là khu biên tập chỉ dành cho admin. Server kiểm tra vai trò trước khi dựng trang. Trong demo, cookie chỉ chọn vai trò trình diễn và nội dung biên tập được lưu trong localStorage của cùng trình duyệt. Trong live, Supabase Auth xác thực tài khoản, `is_admin()` xác định admin, RLS bảo vệ dữ liệu; người dùng không tự chọn vai trò admin.
 
 | Dữ liệu | Khách | Học viên | Admin |
 | --- | --- | --- | --- |

@@ -18,6 +18,7 @@ import {
   NotebookPen,
   Search,
   Settings,
+  ShieldCheck,
   Star,
   Trophy,
   X,
@@ -61,7 +62,7 @@ const searchItems = [
   },
 ];
 
-export function AppShell({ children }: { children: React.ReactNode }) {
+export function AppShell({ children, canManage = false }: { children: React.ReactNode; canManage?: boolean }) {
   const pathname = usePathname();
   const router = useRouter();
   const { tasks, attempts, error, clearError } = useDemo();
@@ -203,6 +204,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 >
                   <Settings size={16} /> Settings
                 </Link>
+                {canManage && <Link href="/admin" onClick={() => setProfileOpen(false)}><ShieldCheck size={16} /> Admin portal</Link>}
                 {demoMode ? <button onClick={async () => { await fetch("/auth/demo", { method: "DELETE" }); router.push("/"); router.refresh(); }}><LogOut size={16} /> Thoát demo</button> :
                   <button onClick={async () => { await createClient().auth.signOut(); router.push("/login"); router.refresh(); }}><LogOut size={16} /> Sign out</button>}
               </div>
@@ -233,6 +235,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <span>{label}</span>
             </Link>
           ))}
+          {canManage && <Link href="/admin" onClick={() => setMenuOpen(false)} className="nav-link"><ShieldCheck size={21} strokeWidth={2.3} /><span>Admin portal</span></Link>}
         </nav>
         <div className="sidebar-card">
           <div className="sidebar-card-stars">✦ ✧</div>
