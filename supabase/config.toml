@@ -1,0 +1,13 @@
+project_id = "english-skill-lab"
+
+[auth]
+site_url = "https://english-skill-lab-ruby.vercel.app"
+additional_redirect_urls = [
+  "http://localhost:3000/auth/callback",
+  "http://localhost:3000/auth/callback?next=/reset-password",
+  "https://english-skill-lab-ruby.vercel.app/auth/callback",
+  "https://english-skill-lab-ruby.vercel.app/auth/callback?next=/reset-password",
+]
+
+[auth.email]
+enable_confirmations = true

@@ -40,9 +40,15 @@ In admin demo, edit the JSON curriculum pack, validate it, save a draft and publ
 
 The floating **Sổ tay** button opens quick note and vocabulary capture on learning pages. `/app/notebook` lets learners search, edit, delete and export saved entries, and review learning-page visits plus submitted practice. Demo notebook data stays in localStorage on this browser. On a configured live account, entries and visits use the second Supabase migration and user-scoped RLS.
 
+## Connected Supabase project
+
+The production project is `vpkhriywprepuhrbarye` (`https://vpkhriywprepuhrbarye.supabase.co`). All three migrations and `supabase/seed.sql` were applied on 24 October 2026. Auth site/redirect URLs are tracked in `supabase/config.toml`; 15 public tables have RLS enabled. The Vercel production project has the public Supabase URL and publishable key. Keep secrets out of Git.
+
+The Supabase built-in email sender is restricted to project organization members and has a low rate limit. Configure custom SMTP in Supabase Authentication before inviting the public or claiming email registration/recovery is generally available. Google OAuth and phone/SMS still need their respective providers and remain hidden in the UI. Once the designated owner registers and confirms their account, add its `auth.users.id` to `public.admin_users` as described below.
+
 ## Enable real accounts and persistence
 
-1. Create a Supabase project. In **Authentication → URL Configuration**, set the Site URL to your production domain and allow redirects for `http://localhost:3000/auth/callback`, `http://localhost:3000/reset-password`, `https://english-skill-lab-ruby.vercel.app/auth/callback` and `https://english-skill-lab-ruby.vercel.app/reset-password`. Configure email confirmation and custom SMTP for production delivery.
+1. Create a Supabase project. In **Authentication → URL Configuration**, set the Site URL to your production domain and allow redirects for `http://localhost:3000/auth/callback`, `http://localhost:3000/auth/callback?next=/reset-password`, `https://english-skill-lab-ruby.vercel.app/auth/callback` and `https://english-skill-lab-ruby.vercel.app/auth/callback?next=/reset-password`. Configure email confirmation and custom SMTP for production delivery. The connected project already has these URLs configured.
 2. Run `supabase/migrations/202610240001_foundation.sql`, `202610240002_notebook.sql` and `202610240003_google_profile.sql` in order in the Supabase SQL editor, then run `supabase/seed.sql`. Or use the Supabase CLI migration workflow after linking the project. **Do not run a linked database reset on a project containing user data.**
 3. Set the following in `.env.local`:
 
@@ -64,7 +70,7 @@ Create a Google Cloud OAuth web client. In Google Cloud, add the local and produ
 
 Enable the Phone provider in Supabase and configure an SMS provider plus phone confirmation. After SMS delivery and OTP verification work, set `NEXT_PUBLIC_ENABLE_PHONE_AUTH=true` locally and in Vercel. Users enter E.164 numbers such as `+84901234567`; signup sends a verification code, and password recovery uses a new SMS code. Configure SMS limits and abuse protection before opening public signup. See [Supabase phone/password setup](https://supabase.com/docs/guides/auth/passwords#with-phone). Phone account recovery depends on control of the number; for a public release, add MFA for stronger protection.
 
-Both provider flags control whether the corresponding option appears in the form. They do not enable providers in Supabase. Redeploy after changing `NEXT_PUBLIC_*` variables. Test a new email account, a Google account, a phone account and an admin account in the connected production project before disabling demo mode on the public domain.
+Both provider flags control whether the corresponding option appears in the form. They do not enable providers in Supabase. Redeploy after changing `NEXT_PUBLIC_*` variables. Test a new email account, a Google account, a phone account and an admin account in the connected production project before announcing those options as available.
 
 Never put a Supabase secret/service-role key in a `NEXT_PUBLIC_` variable or commit it. This MVP needs only the publishable key because Row Level Security and database functions enforce access.
 
@@ -95,13 +101,13 @@ npm run test
 npm run build
 ```
 
-The tests cover task/date, goal, draft, notebook and answer input validation. A local PGlite test applies both PostgreSQL migrations and the seed, then checks exercise grading, learner isolation (including notebook data), unpublished content and admin permissions. The Auth and PostgREST flow still needs verification against a connected Supabase project before switching the public deployment to live mode.
+The tests cover task/date, goal, draft, notebook and answer input validation. A local PGlite test applies the PostgreSQL migrations and seed, then checks exercise grading, learner isolation (including notebook data), unpublished content and admin permissions. Public PostgREST reads and answer-key denial were checked against the connected Supabase project. Interactive registration, password recovery and admin role routing still need an account with a working email sender.
 
 ## Deploy on Vercel
 
 Connect the public GitHub repository to a Vercel project. Configure `NEXT_PUBLIC_DEMO_MODE=true` for an interface preview, or configure the three live variables above after the Supabase migration, seed and auth redirects are ready. Redeploy after changing `NEXT_PUBLIC_*` variables because Next.js embeds them at build time. Do not copy local `.env.local` to Git or Vercel.
 
-The existing Vercel deployment stays in explicit demo mode while backend setup is pending. Production email/password, Google OAuth and phone/password code paths are ready to configure but are **not verified live** until a Supabase project, Google OAuth client and SMS provider are connected and each flow is exercised.
+Production points to the connected Supabase project. Email/password screens are enabled, subject to the SMTP limitation above. Google OAuth and phone/password code paths are ready to configure but **not verified live**; the corresponding controls stay hidden until a Google OAuth client and SMS provider are connected and tested.
 
 ## Current scope and deferred work
 
