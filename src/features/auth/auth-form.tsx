@@ -68,7 +68,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
         } else {
           const { error: authError } = await supabase.auth.resetPasswordForEmail(email.trim(), { redirectTo: `${location.origin}/auth/callback?next=/reset-password` });
           if (authError) throw authError;
-          setMessage("Nếu email tồn tại, bạn sẽ nhận được liên kết đặt lại mật khẩu.");
+          setMessage("Nếu email tồn tại, bạn sẽ nhận được liên kết đặt lại mật khẩu. Hãy mở liên kết bằng đúng trình duyệt đã yêu cầu đặt lại; nếu Gmail mở trình duyệt khác, hãy sao chép liên kết và dán vào trình duyệt này.");
         }
       } else {
         const { error: authError } = await supabase.auth.updateUser({ password });
@@ -76,7 +76,10 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
         await supabase.auth.signOut();
         setMessage("Mật khẩu đã được cập nhật. Hãy đăng nhập lại.");
       }
-    } catch (cause) { setError(cause instanceof Error ? cause.message : "Không thể hoàn tất. Hãy thử lại."); }
+    } catch (cause) {
+      const detail = cause instanceof Error ? cause.message : "Không thể hoàn tất. Hãy thử lại.";
+      setError(mode === "login" && detail === "Invalid login credentials" ? "Email hoặc mật khẩu không đúng. Nếu bạn quên mật khẩu, hãy chọn ‘Quên mật khẩu?’ bên dưới để đặt lại." : detail);
+    }
     finally { setBusy(false); }
   }
 
