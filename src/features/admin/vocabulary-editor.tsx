@@ -4,10 +4,11 @@ import { createClient } from "@/lib/supabase/browser";
 
 type Entry = {
   id: string; word: string; phonetic: string; meaning_vi: string;
-  definition: string; example: string; sort_order: number;
+  definition: string; example: string; sentence_prompt_vi: string;
+  accepted_sentences: string[]; sort_order: number;
 };
 
-const blank = { word: "", phonetic: "", meaning_vi: "", definition: "", example: "" };
+const blank = { word: "", phonetic: "", meaning_vi: "", definition: "", example: "", sentence_prompt_vi: "", accepted_sentences: "" };
 
 export function VocabularyEditor({ lessonId }: { lessonId: string }) {
   const supabase = useMemo(() => createClient(), []);
@@ -18,7 +19,7 @@ export function VocabularyEditor({ lessonId }: { lessonId: string }) {
   const [error, setError] = useState("");
 
   const load = useCallback(async () => {
-    const result = await supabase.from("vocabulary_entries").select("id,word,phonetic,meaning_vi,definition,example,sort_order")
+    const result = await supabase.from("vocabulary_entries").select("id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order")
       .eq("lesson_id", lessonId).order("sort_order");
     if (result.error) setError(result.error.message);
     else setEntries(result.data as Entry[]);
@@ -32,7 +33,12 @@ export function VocabularyEditor({ lessonId }: { lessonId: string }) {
       word: form.word.trim(), phonetic: form.phonetic.trim(),
       meaning_vi: form.meaning_vi.trim(), definition: form.definition.trim(),
       example: form.example.trim(),
+      sentence_prompt_vi: form.sentence_prompt_vi.trim(),
+      accepted_sentences: form.accepted_sentences.split('\n').map((line) => line.trim()).filter(Boolean),
     };
+    if (data.accepted_sentences.length > 12 || (data.sentence_prompt_vi && !data.accepted_sentences.length)) {
+      setBusy(false); setError('Nhập 1–12 câu được chấp nhận khi có yêu cầu đặt câu.'); return;
+    }
     const result = editingId
       ? await supabase.from("vocabulary_entries").update(data).eq("id", editingId)
       : await supabase.from("vocabulary_entries").insert({
@@ -53,7 +59,7 @@ export function VocabularyEditor({ lessonId }: { lessonId: string }) {
     <h3>Vocabulary</h3>
     {entries.map((entry) => <div className="admin-row" key={entry.id}>
       <div><strong>{entry.word} · {entry.meaning_vi}</strong><small>{entry.example}</small></div>
-      <div><button className="button subtle" onClick={() => { setEditingId(entry.id); setForm({ word: entry.word, phonetic: entry.phonetic, meaning_vi: entry.meaning_vi, definition: entry.definition, example: entry.example }); }}>Edit</button>
+      <div><button className="button subtle" onClick={() => { setEditingId(entry.id); setForm({ word: entry.word, phonetic: entry.phonetic, meaning_vi: entry.meaning_vi, definition: entry.definition, example: entry.example, sentence_prompt_vi: entry.sentence_prompt_vi, accepted_sentences: entry.accepted_sentences.join('\n') }); }}>Edit</button>
         <button className="button subtle" onClick={() => void remove(entry.id)}>Delete</button></div>
     </div>)}
     <form className="admin-content-form" onSubmit={save}>
@@ -63,6 +69,8 @@ export function VocabularyEditor({ lessonId }: { lessonId: string }) {
       <label>Vietnamese meaning<input required maxLength={200} value={form.meaning_vi} onChange={(event) => setForm({ ...form, meaning_vi: event.target.value })} /></label>
       <label>Definition<textarea value={form.definition} onChange={(event) => setForm({ ...form, definition: event.target.value })} /></label>
       <label>Example<textarea value={form.example} onChange={(event) => setForm({ ...form, example: event.target.value })} /></label>
+      <label>Yêu cầu đặt câu (tiếng Việt)<textarea value={form.sentence_prompt_vi} onChange={(event) => setForm({ ...form, sentence_prompt_vi: event.target.value })} /></label>
+      <label>Các câu được chấp nhận · mỗi dòng một câu<textarea value={form.accepted_sentences} onChange={(event) => setForm({ ...form, accepted_sentences: event.target.value })} /></label>
       <div><button className="button primary" disabled={busy}>{busy ? "Saving…" : editingId ? "Save word" : "Add word"}</button>
         {editingId && <button type="button" className="button subtle" onClick={reset}>Cancel edit</button>}</div>
     </form>

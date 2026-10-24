@@ -33,6 +33,8 @@ Chưa cấu hình Supabase và đã tắt demo thì giao diện hiển thị tr�
 
 Luồng trang: `/` và `/courses` dành cho Guest; `/login` chuyển sang học viên hoặc admin demo; `/app/*` là khu học viên mà cả student và admin đều dùng được; `/admin/*` là khu biên tập chỉ dành cho admin. Server kiểm tra vai trò trước khi dựng trang. Trong demo, cookie chỉ chọn vai trò trình diễn và nội dung biên tập được lưu trong localStorage của cùng trình duyệt. Trong live, Supabase Auth xác thực tài khoản, `is_admin()` xác định admin, RLS bảo vệ dữ liệu; người dùng không tự chọn vai trò admin.
 
+Admin live có sidebar: Tổng quan, Lộ trình & bài học, sáu kỹ năng và Media library. Mỗi bài học có `lesson_materials.content` theo schema Zod trong `src/lib/skill-material.ts`; trắc nghiệm và answer key vẫn ở bảng riêng. Form Reading nhập passage; Listening nhập transcript và audio; Writing nhập đề, số từ, mẫu, checklist; Speaking nhập đề, giờ chuẩn bị, mẫu, checklist; Grammar nhập quy tắc và ví dụ; Vocabulary nhập danh sách từ, yêu cầu đặt câu và các câu được chấp nhận. Hình minh họa có URL, alt và nút upload. Media public chỉ được admin ghi qua Storage RLS. Admin xem trước cả lesson nháp, học viên chỉ mở được lesson đã xuất bản. Bài Writing lưu bản nháp theo lesson; Speaking ghi âm tại tab trình duyệt và không lưu lên server.
+
 | Dữ liệu | Khách | Học viên | Admin |
 | --- | --- | --- | --- |
 | Stage, nội dung đã xuất bản | Đọc | Đọc | Đọc/sửa |
