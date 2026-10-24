@@ -23,6 +23,8 @@ tests/                  Kiểm tra đầu vào, nghiệp vụ và migration/RLS 
 
 **Live** (`NEXT_PUBLIC_DEMO_MODE=false` và có Supabase URL/publishable key): Supabase Auth xác thực người học; server bảo vệ `/app` và `/admin`; UI đọc/ghi dữ liệu cá nhân qua Supabase với RLS. Grammar/Reading/Listening gửi lựa chọn tới `submit_exercise` trong Postgres. Hàm này chấm bằng answer key riêng, lưu kết quả và cập nhật task liên kết trong cùng giao dịch. Bài học xuất bản ở `/app/lesson/[slug]` đọc nội dung thật từ database.
 
+Đăng nhập live hỗ trợ email/mật khẩu, Google OAuth và số điện thoại/mật khẩu. Hai lựa chọn Google/điện thoại chỉ hiển thị khi bật cờ môi trường tương ứng sau khi cấu hình provider trong Supabase. Email xác nhận và Google OAuth quay về `/auth/callback`; đăng ký điện thoại xác minh SMS qua OTP. Vai trò admin được kiểm tra từ `admin_users` qua `is_admin()`, không lấy từ metadata do người dùng gửi khi đăng ký.
+
 **Sổ tay**: nút nổi trong AppShell mở ghi chú/từ vựng từ mọi trang. Demo lưu `notebook_entries` và `study_visits` trong localStorage riêng; live dùng migration `202610240002_notebook.sql` với RLS. Trang `/app/notebook` ghép mục đã lưu, lần mở trang học và bài luyện đã nộp thành dòng thời gian. Lần mở trang chỉ ghi khi chuyển vào một trang học; việc xem dashboard/planner/sổ tay không tạo lịch sử học giả.
 
 Chưa cấu hình Supabase và đã tắt demo thì giao diện hiển thị trạng thái cần thiết lập. Không có dữ liệu mẫu nào được ghi vào tài khoản thật.

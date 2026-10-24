@@ -42,17 +42,29 @@ The floating **Sổ tay** button opens quick note and vocabulary capture on lear
 
 ## Enable real accounts and persistence
 
-1. Create a Supabase project. In **Authentication → URL Configuration**, set the Site URL and allow redirects for your local URL (`http://localhost:3000/auth/callback`, `http://localhost:3000/reset-password`) and production domain. Configure email delivery and confirmation policy for your release.
-2. Run `supabase/migrations/202610240001_foundation.sql` and then `supabase/migrations/202610240002_notebook.sql` in the Supabase SQL editor. Then run `supabase/seed.sql`. Or use the Supabase CLI migration workflow after linking the project. **Do not run a linked database reset on a project containing user data.**
+1. Create a Supabase project. In **Authentication → URL Configuration**, set the Site URL to your production domain and allow redirects for `http://localhost:3000/auth/callback`, `http://localhost:3000/reset-password`, `https://english-skill-lab-ruby.vercel.app/auth/callback` and `https://english-skill-lab-ruby.vercel.app/reset-password`. Configure email confirmation and custom SMTP for production delivery.
+2. Run `supabase/migrations/202610240001_foundation.sql`, `202610240002_notebook.sql` and `202610240003_google_profile.sql` in order in the Supabase SQL editor, then run `supabase/seed.sql`. Or use the Supabase CLI migration workflow after linking the project. **Do not run a linked database reset on a project containing user data.**
 3. Set the following in `.env.local`:
 
 ```dotenv
 NEXT_PUBLIC_DEMO_MODE=false
 NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=YOUR_PUBLISHABLE_KEY
+NEXT_PUBLIC_ENABLE_GOOGLE_AUTH=false
+NEXT_PUBLIC_ENABLE_PHONE_AUTH=false
 ```
 
 4. Restart `npm run dev`. Register and confirm an email account. `/app/*` now requires authentication; planner tasks, attempts, daily goal and Writing draft persist in Supabase under the signed-in user.
+
+### Google sign-in
+
+Create a Google Cloud OAuth web client. In Google Cloud, add the local and production origins, and add the **Supabase Google provider callback URL** as the authorized redirect URI. Put the Google client ID and secret in **Supabase Authentication → Providers → Google**, not in this repository or Vercel. Add the app callback URL to Supabase's redirect allow list, then set `NEXT_PUBLIC_ENABLE_GOOGLE_AUTH=true` locally and in Vercel. The app sends Google users through `/auth/callback` and routes them by their database role. See the [Supabase Google setup guide](https://supabase.com/docs/guides/auth/social-sign-in/auth-google).
+
+### Phone number and password
+
+Enable the Phone provider in Supabase and configure an SMS provider plus phone confirmation. After SMS delivery and OTP verification work, set `NEXT_PUBLIC_ENABLE_PHONE_AUTH=true` locally and in Vercel. Users enter E.164 numbers such as `+84901234567`; signup sends a verification code, and password recovery uses a new SMS code. Configure SMS limits and abuse protection before opening public signup. See [Supabase phone/password setup](https://supabase.com/docs/guides/auth/passwords#with-phone). Phone account recovery depends on control of the number; for a public release, add MFA for stronger protection.
+
+Both provider flags control whether the corresponding option appears in the form. They do not enable providers in Supabase. Redeploy after changing `NEXT_PUBLIC_*` variables. Test a new email account, a Google account, a phone account and an admin account in the connected production project before disabling demo mode on the public domain.
 
 Never put a Supabase secret/service-role key in a `NEXT_PUBLIC_` variable or commit it. This MVP needs only the publishable key because Row Level Security and database functions enforce access.
 
@@ -89,7 +101,7 @@ The tests cover task/date, goal, draft, notebook and answer input validation. A 
 
 Connect the public GitHub repository to a Vercel project. Configure `NEXT_PUBLIC_DEMO_MODE=true` for an interface preview, or configure the three live variables above after the Supabase migration, seed and auth redirects are ready. Redeploy after changing `NEXT_PUBLIC_*` variables because Next.js embeds them at build time. Do not copy local `.env.local` to Git or Vercel.
 
-The existing Vercel preview can stay in explicit demo mode while backend setup is pending. Production account sign-in is ready to activate with a Supabase project but is **not verified live** until the migration and auth flow are exercised.
+The existing Vercel deployment stays in explicit demo mode while backend setup is pending. Production email/password, Google OAuth and phone/password code paths are ready to configure but are **not verified live** until a Supabase project, Google OAuth client and SMS provider are connected and each flow is exercised.
 
 ## Current scope and deferred work
 

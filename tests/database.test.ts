@@ -5,6 +5,7 @@ import { PGlite } from "@electric-sql/pglite";
 
 const migration = readFileSync(resolve("supabase/migrations/202610240001_foundation.sql"), "utf8");
 const notebookMigration = readFileSync(resolve("supabase/migrations/202610240002_notebook.sql"), "utf8");
+const googleProfileMigration = readFileSync(resolve("supabase/migrations/202610240003_google_profile.sql"), "utf8");
 const seed = readFileSync(resolve("supabase/seed.sql"), "utf8");
 
 describe("PostgreSQL foundation", () => {
@@ -25,6 +26,7 @@ describe("PostgreSQL foundation", () => {
       await db.exec(migration);
       await db.exec(seed);
       await db.exec(notebookMigration);
+      await db.exec(googleProfileMigration);
       const stages = await db.query<{ count: number }>("select count(*)::integer as count from public.learning_stages");
       expect(stages.rows[0].count).toBe(7);
       const questions = await db.query<{ count: number }>("select count(*)::integer as count from public.exercise_questions");
@@ -32,7 +34,10 @@ describe("PostgreSQL foundation", () => {
 
       const alice = "11111111-1111-4111-8111-111111111111";
       const bob = "22222222-2222-4222-8222-222222222222";
+      const googleUser = "33333333-3333-4333-8333-333333333333";
       await db.query("insert into auth.users(id, raw_user_meta_data) values ($1, '{}'), ($2, '{}')", [alice, bob]);
+      await db.query("insert into auth.users(id, raw_user_meta_data) values ($1, $2::jsonb)", [googleUser, JSON.stringify({ full_name: "Google Learner" })]);
+      expect((await db.query<{ display_name: string }>("select display_name from public.profiles where id = $1", [googleUser])).rows[0].display_name).toBe("Google Learner");
       await db.exec(`set role authenticated; set request.jwt.claim.sub = '${alice}';`);
       const aliceProfiles = await db.query<{ id: string }>("select id from public.profiles");
       expect(aliceProfiles.rows.map((row) => row.id)).toEqual([alice]);

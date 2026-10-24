@@ -4,7 +4,7 @@ import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 
 export function SettingsPage() {
-  const [email, setEmail] = useState("");
+  const [accountId, setAccountId] = useState("");
   const [name, setName] = useState("");
   const [timezone, setTimezone] = useState("Asia/Ho_Chi_Minh");
   const [goal, setGoal] = useState(5);
@@ -19,7 +19,7 @@ export function SettingsPage() {
         supabase.auth.getUser(), supabase.from("profiles").select("display_name,timezone,daily_goal").single(),
       ]);
       if (userResult.error || profileResult.error) { setError(userResult.error?.message ?? profileResult.error!.message); return; }
-      setEmail(userResult.data.user.email ?? "");
+      setAccountId(userResult.data.user.email ?? userResult.data.user.phone ?? "");
       setName(profileResult.data.display_name);
       setTimezone(profileResult.data.timezone);
       setGoal(profileResult.data.daily_goal);
@@ -35,5 +35,5 @@ export function SettingsPage() {
     setBusy(false);
     if (error) setError(error.message); else setMessage("Profile saved.");
   }
-  return <div className="content-page"><div className="learning-intro"><div><span className="eyebrow">MY ACCOUNT</span><h1>Profile settings</h1><p>Update the details used for your learning plan.</p></div></div><section className="card section-card"><form className="auth-form" onSubmit={save}><p>Email: {email || "Loading…"}</p><label>Display name<input required maxLength={80} value={name} onChange={(e) => setName(e.target.value)} /></label><label>Timezone<input required maxLength={80} value={timezone} onChange={(e) => setTimezone(e.target.value)} /></label><label>Daily task goal<input required type="number" min={1} max={20} value={goal} onChange={(e) => setGoal(Number(e.target.value))} /></label>{error && <p role="alert" className="form-error">{error}</p>}{message && <p role="status">{message}</p>}<button className="button primary" disabled={busy}>{busy ? "Saving…" : "Save profile"}</button></form></section></div>;
+  return <div className="content-page"><div className="learning-intro"><div><span className="eyebrow">MY ACCOUNT</span><h1>Profile settings</h1><p>Update the details used for your learning plan.</p></div></div><section className="card section-card"><form className="auth-form" onSubmit={save}><p>Tài khoản: {accountId || "Đang tải…"}</p><label>Display name<input required maxLength={80} value={name} onChange={(e) => setName(e.target.value)} /></label><label>Timezone<input required maxLength={80} value={timezone} onChange={(e) => setTimezone(e.target.value)} /></label><label>Daily task goal<input required type="number" min={1} max={20} value={goal} onChange={(e) => setGoal(Number(e.target.value))} /></label>{error && <p role="alert" className="form-error">{error}</p>}{message && <p role="status">{message}</p>}<button className="button primary" disabled={busy}>{busy ? "Saving…" : "Save profile"}</button></form></section></div>;
 }
