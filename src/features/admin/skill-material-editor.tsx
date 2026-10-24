@@ -9,6 +9,8 @@ export function SkillMaterialEditor({ lessonId, skill }: { lessonId: string; ski
   const supabase = useMemo(() => createClient(), []);
   const [draft, setDraft] = useState<SkillMaterial>(() => emptySkillMaterial(skill));
   const [busy, setBusy] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loadFailed, setLoadFailed] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
@@ -16,10 +18,11 @@ export function SkillMaterialEditor({ lessonId, skill }: { lessonId: string; ski
     let active = true;
     void supabase.from("lesson_materials").select("content").eq("lesson_id", lessonId).maybeSingle().then(({ data, error: loadError }) => {
       if (!active) return;
-      if (loadError) { setError(loadError.message); return; }
+      if (loadError) { setError(loadError.message); setLoadFailed(true); setLoading(false); return; }
       const parsed = skillMaterialSchema.safeParse(data?.content);
       setDraft(parsed.success && parsed.data.skill === skill ? parsed.data : emptySkillMaterial(skill));
       setError(""); setMessage("");
+      setLoading(false);
     });
     return () => { active = false; };
   }, [lessonId, skill, supabase]);
@@ -55,6 +58,9 @@ export function SkillMaterialEditor({ lessonId, skill }: { lessonId: string; ski
     setBusy(false);
     if (result.error) setError(result.error.message); else setMessage("Đã lưu dữ liệu bài học.");
   }
+
+  if (loading) return <div className="admin-material-form" role="status">Đang tải dữ liệu bài học…</div>;
+  if (loadFailed) return <p className="form-error" role="alert">Không tải được dữ liệu bài học: {error}</p>;
 
   return <form className="admin-material-form" onSubmit={save}>
     <div className="admin-section-head"><div><span className="eyebrow">{skill.toUpperCase()} INPUT</span><h3>Dữ liệu riêng cho kỹ năng</h3><p>Nhập nội dung ở đây, sau đó thêm câu hỏi và đáp án bên dưới nếu bài có trắc nghiệm.</p></div></div>
