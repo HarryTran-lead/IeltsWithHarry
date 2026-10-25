@@ -14,22 +14,31 @@ const minimumPerType: Record<QuestionType, number> = { tfng: 4, mcq: 4, sentence
 export const tfngOptions = ["True", "False", "Not Given"];
 export const answerWordLimit = 3;
 
+/**
+ * `explanation` is a Vietnamese explanation of why the answer is right.
+ * `option_notes` (choice questions only) says in Vietnamese, per option, why it is right or wrong.
+ */
 export type GeneratedQuestion = {
   type: QuestionType; prompt: string; options: string[]; correct_index: number | null;
-  accepted_answers: string[] | null; supporting_sentence: string; explanation: string;
+  accepted_answers: string[] | null; supporting_sentence: string; explanation: string; option_notes: string[] | null;
 };
 
-const evidence = { supporting_sentence: z.string().trim().min(15).max(500), explanation: z.string().trim().min(10).max(1000) };
+// Vietnamese has letters English never uses; at least one shows the text is in Vietnamese.
+const vietnamese = /[ăâđêôơưàáạảãằắặẳẵầấậẩẫèéẹẻẽềếệểễìíịỉĩòóọỏõồốộổỗờớợởỡùúụủũừứựửữỳýỵỷỹ]/i;
+const vietnameseText = (min: number, max: number) => z.string().trim().min(min).max(max).refine((text) => vietnamese.test(text), "not Vietnamese");
+const evidence = { supporting_sentence: z.string().trim().min(15).max(500), explanation: vietnameseText(30, 1500) };
+const optionNotes = (count: number) => z.array(vietnameseText(8, 400)).length(count);
 const writtenAnswer = z.string().trim().min(1).max(60);
 const rawSchemas = {
-  tfng: z.object({ statement: z.string().trim().min(10).max(400), answer: z.enum(["TRUE", "FALSE", "NOT GIVEN"]), ...evidence }),
-  mcq: z.object({ question: z.string().trim().min(10).max(500), options: z.array(z.string().trim().min(1).max(250)).length(4), correct_index: z.number().int().min(0).max(3), ...evidence }),
+  tfng: z.object({ statement: z.string().trim().min(10).max(400), answer: z.enum(["TRUE", "FALSE", "NOT GIVEN"]), option_notes: optionNotes(3), ...evidence }),
+  mcq: z.object({ question: z.string().trim().min(10).max(500), options: z.array(z.string().trim().min(1).max(250)).length(4), correct_index: z.number().int().min(0).max(3), option_notes: optionNotes(4), ...evidence }),
   sentence_completion: z.object({ sentence: z.string().trim().min(10).max(400), answer: writtenAnswer, ...evidence }),
   short_answer: z.object({ question: z.string().trim().min(10).max(400), answer: writtenAnswer, ...evidence }),
 };
 // Keys the model fills; one spare per type so a faulty item does not waste the request.
 const aiKeys: Record<QuestionType, string> = { tfng: "true_false_not_given", mcq: "multiple_choice", sentence_completion: "sentence_completion", short_answer: "short_answer" };
 const evidenceProps = { supporting_sentence: { type: "string" }, explanation: { type: "string" } };
+// option_notes is listed with the type's own fields, so it is required only where present.
 const group = (count: number, fields: Record<string, unknown>) => ({
   type: "array", minItems: count, maxItems: count + 1, items: { type: "object", additionalProperties: false,
     required: [...Object.keys(fields), "supporting_sentence", "explanation"], properties: { ...fields, ...evidenceProps } },
@@ -37,8 +46,8 @@ const group = (count: number, fields: Record<string, unknown>) => ({
 const quizJsonSchema = {
   type: "object", additionalProperties: false, required: [...Object.values(aiKeys), "image_query"],
   properties: {
-    true_false_not_given: group(quizPlan.tfng, { statement: { type: "string" }, answer: { type: "string", enum: ["TRUE", "FALSE", "NOT GIVEN"] } }),
-    multiple_choice: group(quizPlan.mcq, { question: { type: "string" }, options: { type: "array", items: { type: "string" } }, correct_index: { type: "integer" } }),
+    true_false_not_given: group(quizPlan.tfng, { statement: { type: "string" }, answer: { type: "string", enum: ["TRUE", "FALSE", "NOT GIVEN"] }, option_notes: { type: "array", items: { type: "string" } } }),
+    multiple_choice: group(quizPlan.mcq, { question: { type: "string" }, options: { type: "array", items: { type: "string" } }, correct_index: { type: "integer" }, option_notes: { type: "array", items: { type: "string" } } }),
     sentence_completion: group(quizPlan.sentence_completion, { sentence: { type: "string" }, answer: { type: "string" } }),
     short_answer: group(quizPlan.short_answer, { question: { type: "string" }, answer: { type: "string" } }),
     image_query: { type: "string" },
@@ -59,17 +68,17 @@ const gap = /_{3,}|…|\.{3,}/g;
 
 function checkQuestion(type: QuestionType, item: unknown, passage: string): GeneratedQuestion | string {
   const parsed = rawSchemas[type].safeParse(item);
-  if (!parsed.success) return "AI returned a malformed question";
-  const raw = parsed.data as Record<string, unknown> & { supporting_sentence: string; explanation: string };
+  if (!parsed.success) return parsed.error.issues.some((issue) => issue.message === "not Vietnamese") ? "AI explanation is not in Vietnamese" : "AI returned a malformed question";
+  const raw = parsed.data as Record<string, unknown> & { supporting_sentence: string; explanation: string; option_notes?: string[] };
   if (!passage.includes(normalized(raw.supporting_sentence))) return "AI evidence is absent from the article";
   const base = { supporting_sentence: raw.supporting_sentence, explanation: raw.explanation };
   if (type === "tfng") {
-    return { ...base, type, prompt: String(raw.statement), options: tfngOptions, correct_index: ["TRUE", "FALSE", "NOT GIVEN"].indexOf(String(raw.answer)), accepted_answers: null };
+    return { ...base, type, prompt: String(raw.statement), options: tfngOptions, correct_index: ["TRUE", "FALSE", "NOT GIVEN"].indexOf(String(raw.answer)), accepted_answers: null, option_notes: raw.option_notes ?? null };
   }
   if (type === "mcq") {
     const options = raw.options as string[];
     if (new Set(options.map(normalized)).size !== 4) return "AI repeated an answer option";
-    return { ...base, type, prompt: String(raw.question), options, correct_index: Number(raw.correct_index), accepted_answers: null };
+    return { ...base, type, prompt: String(raw.question), options, correct_index: Number(raw.correct_index), accepted_answers: null, option_notes: raw.option_notes ?? null };
   }
   // Written answers: NO MORE THAN THREE WORDS taken from the article, absent from the prompt.
   const answer = String(raw.answer).replace(/\s+/g, " ");
@@ -81,7 +90,7 @@ function checkQuestion(type: QuestionType, item: unknown, passage: string): Gene
     prompt = prompt.replace(gap, "______");
   } else if (!prompt.endsWith("?")) return "AI short-answer prompt is not a question";
   if (` ${answerWords(prompt)} `.includes(` ${normalizeAnswer(answer)} `)) return "AI prompt gives away the answer";
-  return { ...base, type, prompt, options: [], correct_index: null, accepted_answers: [answer] };
+  return { ...base, type, prompt, options: [], correct_index: null, accepted_answers: [answer], option_notes: null };
 }
 
 /**
@@ -134,7 +143,8 @@ function shuffleOptions(question: GeneratedQuestion, random = Math.random): Gene
   if (question.type !== "mcq" || question.correct_index === null) return question;
   const order = [0, 1, 2, 3];
   for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
-  return { ...question, options: order.map((index) => question.options[index]), correct_index: order.indexOf(question.correct_index) };
+  return { ...question, options: order.map((index) => question.options[index]), correct_index: order.indexOf(question.correct_index),
+    option_notes: question.option_notes ? order.map((index) => question.option_notes![index]) : null };
 }
 
 /** About 3,000 tokens of input, cut at a paragraph: enough for twenty questions and gentle on free-tier token limits. */
@@ -211,7 +221,12 @@ export const quizInstructions = `Write these groups, each following the order of
 - sentence_completion: ${quizPlan.sentence_completion + 1} sentences paraphrasing the article, each with exactly one gap written as "______". answer is NO MORE THAN THREE WORDS copied exactly from the article and must not appear in the sentence.
 - short_answer: ${quizPlan.short_answer + 1} questions ending with "?". answer is NO MORE THAN THREE WORDS and/or a number, copied exactly from the article, and must not appear in the question.
 
-For every item, supporting_sentence is an exact contiguous quotation from the article. It proves the answer; for NOT GIVEN it is the closest related sentence, showing the claim is not covered. For written answers the answer appears inside it. explanation is one or two short sentences in simple English, based on that quotation.
+For every item, supporting_sentence is an exact contiguous quotation from the article. It proves the answer; for NOT GIVEN it is the closest related sentence, showing the claim is not covered. For written answers the answer appears inside it.
+
+Explanations are for Vietnamese learners and are written in Vietnamese (keep English words from the article in English, inside quotation marks):
+- explanation: 2-4 sentences in Vietnamese saying why the answer is correct, pointing to the exact words of supporting_sentence and naming any paraphrase or synonym the question uses. For NOT GIVEN, say what the article does say and which detail of the statement it never mentions. For written answers, say which words of the sentence give the answer and why they fit the gap or question and the word limit.
+- option_notes (true_false_not_given and multiple_choice only): one short Vietnamese note per option, in the same order as the options (for true_false_not_given: TRUE, FALSE, NOT GIVEN). The note for the correct option says why it is right; every other note says exactly why that option is wrong, for example a detail the article contradicts, a word that changes the meaning, or information the article does not give.
+
 image_query is 2-5 English words naming a concrete, photographable subject of the article (for example "lunar lander", "coral reef"), never a person's name.`;
 export const quizSchemaProperties = quizJsonSchema.properties;
 export const quizRequiredKeys = quizJsonSchema.required;

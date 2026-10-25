@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 
-const chain = ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql", "202610250008_news_preview_images.sql", "202610250010_news_enrichment.sql", "202610250011_news_enrichment_claim_fix.sql", "202610250012_news_illustration_credit.sql", "202610250013_news_creative_commons_images.sql", "202610250014_news_admin_controls.sql", "202610250015_news_manual_quiz_reset.sql", "202610250016_news_full_text_sources.sql", "202610250017_news_ielts_question_types.sql", "202610250018_news_open_licence_sources.sql", "202610250019_news_readable_only.sql", "202610250020_news_ai_vietnam_rewrites.sql"];
+const chain = ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql", "202610250008_news_preview_images.sql", "202610250010_news_enrichment.sql", "202610250011_news_enrichment_claim_fix.sql", "202610250012_news_illustration_credit.sql", "202610250013_news_creative_commons_images.sql", "202610250014_news_admin_controls.sql", "202610250015_news_manual_quiz_reset.sql", "202610250016_news_full_text_sources.sql", "202610250017_news_ielts_question_types.sql", "202610250018_news_open_licence_sources.sql", "202610250019_news_readable_only.sql", "202610250020_news_ai_vietnam_rewrites.sql", "202610250021_news_detailed_explanations.sql"];
 
 async function migratedDb() {
   const db = new PGlite();
@@ -58,7 +58,7 @@ describe("Daily News IELTS question sets", () => {
       await db.query("insert into public.news_article_bodies(article_id,body_text,rights_basis,source_url) values ($1,repeat('Engineers measured the heat shield during the flight. ',60),repeat('NASA media guidelines reviewed ',2),'https://www.nasa.gov/news-release/heat/')", [article]);
       const evidence = { supporting_sentence: "Engineers measured the heat shield during the flight.", explanation: "The sentence says so." };
       const questions = [
-        ...Array.from({ length: 6 }, (_, i) => ({ type: "tfng", prompt: `TFNG statement ${i}`, options: ["True", "False", "Not Given"], correct_index: i % 3, accepted_answers: null, ...evidence })),
+        ...Array.from({ length: 6 }, (_, i) => ({ type: "tfng", prompt: `TFNG statement ${i}`, options: ["True", "False", "Not Given"], correct_index: i % 3, accepted_answers: null, option_notes: ["Đúng vì bài nói vậy.", "Sai vì bài không phủ nhận.", "Sai vì bài có nhắc tới."], ...evidence })),
         ...Array.from({ length: 6 }, (_, i) => ({ type: "mcq", prompt: `Multiple choice ${i}`, options: ["a", "b", "c", "d"], correct_index: 1, accepted_answers: null, ...evidence })),
         ...Array.from({ length: 8 }, (_, i) => ({ type: i < 4 ? "sentence_completion" : "short_answer", prompt: `Written ${i} ______`, options: [], correct_index: null, accepted_answers: ["the heat shield"], ...evidence })),
       ];
@@ -75,6 +75,8 @@ describe("Daily News IELTS question sets", () => {
       const graded = (await db.query<{ result: { score: number; total: number; review: { correct: boolean; acceptedAnswers: string[] | null }[] } }>("select public.news_submit_auto_quiz($1,$2::jsonb) as result", [article, JSON.stringify(answers)])).rows[0].result;
       expect(graded).toMatchObject({ score: 19, total: 20 });
       expect(graded.review[13]).toMatchObject({ correct: false, acceptedAnswers: ["the heat shield"] });
+      expect((graded.review[0] as unknown as { optionNotes: string[] }).optionNotes).toEqual(["Đúng vì bài nói vậy.", "Sai vì bài không phủ nhận.", "Sai vì bài có nhắc tới."]);
+      expect((graded.review[6] as unknown as { optionNotes: string[] | null }).optionNotes).toBeNull();
       expect((await db.query<{ total: number }>("select total from public.news_auto_attempts where article_id=$1", [article])).rows[0].total).toBe(20);
       const partial = Object.fromEntries(Object.entries(answers).slice(0, 19));
       await expect(db.query("select public.news_submit_auto_quiz($1,$2::jsonb)", [article, JSON.stringify(partial)])).rejects.toThrow(/Answer every question/);

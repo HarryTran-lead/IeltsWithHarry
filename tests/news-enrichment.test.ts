@@ -3,12 +3,12 @@ import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageKeywords, no
 
 const passage = "The Artemis team tested a new spacecraft on Tuesday. The spacecraft will carry instruments to study the Moon. Scientists will use the results to prepare later missions. The test took place at Kennedy Space Center in Florida. Engineers measured the heat shield during the flight.";
 const quote = "The Artemis team tested a new spacecraft on Tuesday.";
-const explanation = "The quoted sentence states this directly.";
+const explanation = "Câu trích trong bài nói rõ điều này, nên đáp án này đúng.";
 /** A complete AI reply: the planned count plus one spare in every group. */
 function reply(evidence = quote) {
   return {
-    true_false_not_given: Array.from({ length: 7 }, (_, i) => ({ statement: `Statement ${i + 1} about the spacecraft test`, answer: ["TRUE", "FALSE", "NOT GIVEN"][i % 3], supporting_sentence: evidence, explanation })),
-    multiple_choice: Array.from({ length: 7 }, (_, i) => ({ question: `Question ${i + 1}: what did the team test?`, options: ["A spacecraft", "A school", "A rover on Mars", "A laboratory"], correct_index: 0, supporting_sentence: evidence, explanation })),
+    true_false_not_given: Array.from({ length: 7 }, (_, i) => ({ statement: `Statement ${i + 1} about the spacecraft test`, answer: ["TRUE", "FALSE", "NOT GIVEN"][i % 3], option_notes: ["Đúng vì bài nói rõ điều này.", "Sai vì bài không phủ nhận điều này.", "Sai vì bài có nhắc tới thông tin này."], supporting_sentence: evidence, explanation })),
+    multiple_choice: Array.from({ length: 7 }, (_, i) => ({ question: `Question ${i + 1}: what did the team test?`, options: ["A spacecraft", "A school", "A rover on Mars", "A laboratory"], correct_index: 0, option_notes: ["Đúng: bài nói nhóm đã thử nghiệm điều này.", "Sai: bài không nhắc tới trường học.", "Sai: bài không nói về sao Hỏa.", "Sai: bài không nhắc tới phòng thí nghiệm."], supporting_sentence: evidence, explanation })),
     sentence_completion: Array.from({ length: 5 }, (_, i) => ({ sentence: `Completion ${i + 1}: the test was held at ______.`, answer: "Kennedy Space Center", supporting_sentence: "The test took place at Kennedy Space Center in Florida.", explanation })),
     short_answer: Array.from({ length: 5 }, (_, i) => ({ question: `Short question ${i + 1}: what did engineers measure?`, answer: "the heat shield", supporting_sentence: "Engineers measured the heat shield during the flight.", explanation })),
     image_query: "Artemis spacecraft!",
@@ -75,6 +75,16 @@ describe("IELTS-style AI quiz validation", () => {
     expect(tfng.map((question) => question.correct_index)).toEqual([0, 0, 1, 1, 2, 2]);
     expect(tfng.map((question) => question.prompt)).not.toContain("Statement 3 about the spacecraft test");
   });
+  it("requires Vietnamese explanations and one note per option", () => {
+    const english = reply();
+    for (const group of [english.true_false_not_given, english.multiple_choice, english.sentence_completion, english.short_answer]) for (const item of group) item.explanation = "The quoted sentence states this directly.";
+    expect(() => validateGeneratedQuiz(english, passage)).toThrow(/not in Vietnamese/);
+    const missing = reply(); for (const item of missing.multiple_choice) item.option_notes = item.option_notes.slice(0, 3);
+    expect(() => validateGeneratedQuiz(missing, passage)).toThrow(/too few mcq/);
+    const quiz = validateGeneratedQuiz(reply(), passage);
+    expect(quiz[0].option_notes).toHaveLength(3);
+    expect(quiz[12].option_notes).toBeNull();
+  });
   it("rejects True/False/Not Given statements that all share one answer", () => {
     const data = reply(); for (const item of data.true_false_not_given) item.answer = "TRUE";
     expect(() => validateGeneratedQuiz(data, passage)).toThrow(/same answer/);
@@ -113,7 +123,11 @@ describe("Gemini news quiz generation", () => {
       expect(result.model).toBe("gemini-3.5-flash-lite");
       expect(result.questions).toHaveLength(20);
       expect(result.imageQuery).toBe("Artemis spacecraft");
-      for (const question of result.questions.filter((item) => item.type === "mcq")) expect(question.options[question.correct_index!]).toBe("A spacecraft");
+      // Shuffling keeps each option's note with its option.
+      for (const question of result.questions.filter((item) => item.type === "mcq")) {
+        expect(question.options[question.correct_index!]).toBe("A spacecraft");
+        expect(question.option_notes![question.correct_index!]).toMatch(/^Đúng/);
+      }
       expect(result.questions[0].options).toEqual(tfngOptions);
     });
   });

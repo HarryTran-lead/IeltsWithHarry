@@ -7,7 +7,7 @@ import "@/app/news-enrichment.css";
 
 type QuestionType = "tfng" | "mcq" | "sentence_completion" | "short_answer";
 type Question = { id: string; sort_order: number; question_type: QuestionType; prompt: string; options: string[]; supporting_sentence: string };
-type Review = { id: string; correct: boolean; correctIndex: number | null; acceptedAnswers: string[] | null; explanation: string; supportingSentence: string };
+type Review = { id: string; correct: boolean; correctIndex: number | null; acceptedAnswers: string[] | null; explanation: string; optionNotes: string[] | null; supportingSentence: string };
 type Result = { score: number; total: number; review: Review[] };
 
 // Instructions follow the wording of IELTS Academic Reading papers.
@@ -87,12 +87,14 @@ export function NewsAutoQuiz({ articleId }: { articleId: string }) {
             {choice && <div className={`news-auto-options ${question.question_type === "tfng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
               <label key={index} className={`${value === index ? "selected" : ""} ${review?.correctIndex === index ? "correct" : ""} ${review && value === index && index !== review.correctIndex ? "wrong" : ""}`}>
                 <input type="radio" name={`news-ai-${question.id}`} checked={value === index} disabled={Boolean(result)} onChange={() => setValue(index)}/>
-                {question.question_type === "mcq" && <span>{"ABCD"[index]}</span>}{question.question_type === "tfng" ? option.toUpperCase() : option}
+                {question.question_type === "mcq" && <span>{"ABCD"[index]}</span>}<em>{question.question_type === "tfng" ? option.toUpperCase() : option}</em>
+                {review?.optionNotes?.[index] && <small className="news-auto-note">{index === review.correctIndex ? "✓ " : "✗ "}{review.optionNotes[index]}</small>}
               </label>)}</div>}
             {review && <div className={`news-auto-explanation ${review.correct ? "" : "wrong"}`}>{review.correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
-              <strong>{review.correctIndex !== null ? `Đáp án: ${question.question_type === "tfng" ? question.options[review.correctIndex].toUpperCase() : question.options[review.correctIndex]}` : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
+              <strong>{review.correct ? "Chính xác! " : "Chưa đúng. "}{review.correctIndex !== null ? `Đáp án: ${question.question_type === "tfng" ? question.options[review.correctIndex].toUpperCase() : question.options[review.correctIndex]}` : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
               {!review.correct && !choice && <p>Bạn trả lời: “{String(value ?? "")}”</p>}
-              <p>{review.explanation}</p><small>Trong bài: “{review.supportingSentence}”</small></div></div>}
+              <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>
+              <small><b>Câu dẫn chứng trong bài:</b> “{review.supportingSentence}”</small></div></div>}
           </div>;
         })}
       </div>;

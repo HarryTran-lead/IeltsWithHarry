@@ -57,14 +57,14 @@ describe("AI rewrite fact checks", () => {
 
 describe("AI rewrite pipeline", () => {
   const evidence = cited[1].text;
-  const explanation = "The article states this directly.";
+  const explanation = "Câu trích trong bài nói rõ điều này, nên đáp án này đúng.";
   const writerReply = {
     suitable: true,
     sentences: Array.from({ length: 5 }, (_, index) => (index === 0 ? [background, ...cited] : cited).map((sentence) => ({ paragraph: index + 1, ...sentence }))).flat(),
   };
   const quizReply = {
-    true_false_not_given: Array.from({ length: 7 }, (_, i) => ({ statement: `Rescue statement ${i + 1} about the hiker`, answer: ["TRUE", "FALSE", "NOT GIVEN"][i % 3], supporting_sentence: evidence, explanation })),
-    multiple_choice: Array.from({ length: 7 }, (_, i) => ({ question: `Question ${i + 1}: what did the rescuers use?`, options: ["Ropes", "A helicopter", "A ladder", "A boat"], correct_index: 0, supporting_sentence: evidence, explanation })),
+    true_false_not_given: Array.from({ length: 7 }, (_, i) => ({ statement: `Rescue statement ${i + 1} about the hiker`, answer: ["TRUE", "FALSE", "NOT GIVEN"][i % 3], option_notes: ["Đúng vì bài nói rõ điều này.", "Sai vì bài không phủ nhận điều này.", "Sai vì bài có nhắc tới thông tin này."], supporting_sentence: evidence, explanation })),
+    multiple_choice: Array.from({ length: 7 }, (_, i) => ({ question: `Question ${i + 1}: what did the rescuers use?`, options: ["Ropes", "A helicopter", "A ladder", "A boat"], correct_index: 0, option_notes: ["Đúng: bài nói nhóm đã thử nghiệm điều này.", "Sai: bài không nhắc tới trường học.", "Sai: bài không nói về sao Hỏa.", "Sai: bài không nhắc tới phòng thí nghiệm."], supporting_sentence: evidence, explanation })),
     sentence_completion: Array.from({ length: 5 }, (_, i) => ({ sentence: `Completion ${i + 1}: rescuers used ______ to lift the woman out.`, answer: "ropes", supporting_sentence: evidence, explanation })),
     short_answer: Array.from({ length: 5 }, (_, i) => ({ question: `Short question ${i + 1}: how many friends were hiking with her?`, answer: "5 friends", supporting_sentence: cited[3].text, explanation })),
     image_query: "forest hiking trail",
