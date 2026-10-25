@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
-import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalizeGdelt, parseNasaNewsBodies, parseNoaaNewsBodies, parsePublishedDate, parseRss, rssProvider, type NewsSource } from "../src/lib/news/providers";
+import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalizeGdelt, parseNasaNewsBodies, parseNoaaNewsBodies, parsePublishedDate, parseRss, parseRssImages, rssProvider, type NewsSource } from "../src/lib/news/providers";
 import { nextWordReview } from "../src/lib/news/review";
 import { recommendReadings } from "../src/lib/news/recommend";
 
@@ -76,6 +76,17 @@ describe("news providers", () => {
     expect(parseNoaaNewsBodies(feed.replace("www.noaa.gov/sites/default/files/ocean.jpg","other.example/ocean.jpg"), noaa)[0].image_url).toBeNull();
     expect(parseNoaaNewsBodies(feed.replace(passage, `${passage} © Reuters`), noaa)).toHaveLength(0);
   });
+  it("syncs only agency-hosted and credited preview images from approved feeds", () => {
+    const nasaFigure = `<figure><img src="https://assets.science.nasa.gov/dynamicimage/assets/nasa-mission.jpg" alt="A NASA spacecraft above Earth"><figcaption>Spacecraft in orbit</figcaption><div class="hds-credits">NASA</div></figure>`;
+    const nasaFeed = `<rss><channel><item><title>NASA spacecraft reaches orbit</title><link>https://www.nasa.gov/news-release/spacecraft/</link><description><![CDATA[${nasaFigure}]]></description></item></channel></rss>`;
+    expect(parseRssImages(nasaFeed, source)).toMatchObject([{image_credit:"NASA",image_url:"https://assets.science.nasa.gov/dynamicimage/assets/nasa-mission.jpg"}]);
+    expect(parseRssImages(nasaFeed.replace("<div class=\"hds-credits\">NASA</div>","<div class=\"hds-credits\">SpaceX</div>"),source)).toHaveLength(0);
+    const ocean = { ...source, feed_url: "https://oceanservice.noaa.gov/rss/nosnews.xml" };
+    const oceanFeed = `<rss><channel><item><title>New coastal research</title><link>https://oceanservice.noaa.gov/news/coastal-research.html</link><description><![CDATA[<img src="https://oceanservice.noaa.gov/news/coastal-research.jpg" alt="A NOAA scientist studying the coast">]]></description></item></channel></rss>`;
+    expect(parseRssImages(oceanFeed,ocean)).toMatchObject([{image_credit:"NOAA National Ocean Service",image_url:"https://oceanservice.noaa.gov/news/coastal-research.jpg"}]);
+    expect(parseRssImages(oceanFeed.replace("<img ","(Image credit: Getty Images) <img "),ocean)).toHaveLength(0);
+    expect(parseRssImages(oceanFeed,{...ocean,feed_url:"https://www.nsf.gov/rss/news.xml"})).toHaveLength(0);
+  });
   it("normalizes GDELT English results and holds sensitive titles for review", () => {
     const gdelt = { ...source, provider: "gdelt" as const };
     const rows = normalizeGdelt({ articles: [
@@ -115,7 +126,7 @@ describe("news database permissions and grading", () => {
         create table auth.users(id uuid primary key, raw_user_meta_data jsonb);
         create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
         grant usage on schema auth to authenticated; grant execute on function auth.uid() to authenticated;`);
-      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql"]) {
+      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql", "202610250008_news_preview_images.sql"]) {
         if (name.includes("007")) await db.exec(readFileSync(resolve("supabase/seed.sql"), "utf8"));
         await db.exec(readFileSync(resolve("supabase/migrations", name), "utf8"));
       }
@@ -126,6 +137,9 @@ describe("news database permissions and grading", () => {
       const imported=(await db.query<{id:string}>("insert into public.news_articles(source_id,provider,canonical_hash,title,canonical_url,publisher,category,published_at,publication_status) select id,'rss',repeat('a',64),'A safe NASA reading','https://www.nasa.gov/news-release/test-reading/','NASA','Science',now(),'published' from public.news_sources where feed_url='https://www.nasa.gov/news-release/feed/' returning id")).rows[0];
       await db.query("insert into public.news_article_bodies(article_id,body_text,rights_basis,source_url) values ($1,repeat('NASA article text. ',20),repeat('rights reviewed ',3),'https://www.nasa.gov/news-release/test-reading/')",[imported.id]);
       await expect(db.query("update public.news_article_bodies set image_url='https://example.com/x.jpg',image_alt='Example image',image_credit='NASA',image_rights_basis=repeat('rights reviewed ',3) where article_id=$1",[imported.id])).rejects.toThrow();
+      await db.query("insert into public.news_article_images(article_id,source_url,image_url,image_alt,image_credit,image_rights_basis) values ($1,'https://www.nasa.gov/news-release/test-reading/','https://assets.science.nasa.gov/dynamicimage/assets/nasa-mission.jpg','A NASA spacecraft above Earth','NASA',repeat('NASA imagery reviewed ',3))",[imported.id]);
+      expect((await db.query<{image_url:string}>("select image_url from public.news_archive_catalog where id=$1",[imported.id])).rows[0].image_url).toContain("assets.science.nasa.gov");
+      await expect(db.query("update public.news_article_images set image_url='https://example.com/unapproved.jpg' where article_id=$1",[imported.id])).rejects.toThrow();
       const article=(await db.query<{id:string}>("select id from public.news_learning_articles where slug='technology-changing-education'")).rows[0];
       const questions=(await db.query<{id:string;correct_answer:string}>("select q.id,k.correct_answer from public.news_questions q join public.news_answer_keys k on k.question_id=q.id where q.article_id=$1 order by q.sort_order",[article.id])).rows;
       const answers=Object.fromEntries(questions.map((q)=>[q.id,q.correct_answer]));

@@ -39,6 +39,16 @@ async function ingest(db: AdminClient, response: FetchResult) {
       if (error) throw error;
     }
   }
+  for (const group of batches(response.images ?? [])) {
+    const { data: articles, error: articleError } = await db.from("news_articles").select("id,canonical_hash").in("canonical_hash", group.map((image) => image.canonical_hash));
+    if (articleError) throw articleError;
+    const ids = new Map((articles ?? []).map((article) => [article.canonical_hash, article.id]));
+    const eligible = group.flatMap((image) => ids.has(image.canonical_hash) ? [{ article_id: ids.get(image.canonical_hash), source_url: image.source_url, image_url: image.image_url, image_alt: image.image_alt, image_credit: image.image_credit, image_rights_basis: image.image_rights_basis }] : []);
+    if (eligible.length) {
+      const { error } = await db.from("news_article_images").upsert(eligible, { onConflict: "article_id" });
+      if (error) throw error;
+    }
+  }
   return { fetched: unique.length, inserted };
 }
 

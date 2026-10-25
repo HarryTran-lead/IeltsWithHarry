@@ -8,7 +8,8 @@ export { NEWS_CATEGORIES };
 export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number; archive_next_page: number | null };
 export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
 export type NewsBodyCandidate = { canonical_hash: string; body_text: string; rights_basis: string; source_url: string; image_url: string | null; image_alt: string | null; image_credit: string | null; image_rights_basis: string | null };
-export type FetchResult = { items: NewsItem[]; bodies?: NewsBodyCandidate[]; etag: string | null; lastModified: string | null; cacheUntil: string | null; notModified: boolean };
+export type NewsImageCandidate = { canonical_hash: string; source_url: string; image_url: string; image_alt: string; image_credit: string; image_rights_basis: string };
+export type FetchResult = { items: NewsItem[]; bodies?: NewsBodyCandidate[]; images?: NewsImageCandidate[]; etag: string | null; lastModified: string | null; cacheUntil: string | null; notModified: boolean };
 export interface NewsProvider { readonly kind: NewsSource["provider"]; fetch(source: NewsSource, fetcher?: typeof fetch, archivePage?: number): Promise<FetchResult> }
 
 const sensitive = /\b(killed|murder|shooting|bomb|war|attack|assault|graphic|suicide|abuse)\b/i;
@@ -68,7 +69,7 @@ function hasUnsafeXmlDeclaration(xml: string): boolean {
   const outsideCdata = xml.replace(/<!\[CDATA\[[\s\S]*?\]\]>/g, "");
   return /<!DOCTYPE|<!ENTITY/i.test(outsideCdata);
 }
-export function parseRss(xml: string, source: NewsSource): NewsItem[] {
+function rssEntries(xml: string) {
   if (hasUnsafeXmlDeclaration(xml)) throw new Error("XML entities are not supported");
   const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as Record<string, unknown>;
   const rss = parsed.rss as { channel?: { item?: unknown; title?: unknown } } | undefined;
@@ -86,8 +87,11 @@ export function parseRss(xml: string, source: NewsSource): NewsItem[] {
     for (const child of Array.isArray(children) ? children : children ? [children] : []) collect(child);
   }
   for (const entry of list) collect(entry);
-  return flattened.map((value) => {
-    const row = value as Record<string, unknown>;
+  return { rss: Boolean(rss), entries: flattened as Record<string, unknown>[] };
+}
+export function parseRss(xml: string, source: NewsSource): NewsItem[] {
+  const { rss, entries } = rssEntries(xml);
+  return entries.map((row) => {
     return makeItem(source, { url: rss ? xmlText(row.link) : atomLink(row.link), title: xmlText(row.title),
       date: row.pubDate ?? row["dc:date"] ?? row.published ?? row.updated,
       publisher: source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
@@ -98,24 +102,65 @@ const nasaFeedUrl = "https://www.nasa.gov/news-release/feed/";
 const noaaFeedUrl = "https://www.noaa.gov/rss.xml";
 const nasaRightsBasis = "NASA Images and Media Usage Guidelines: NASA-produced educational and informational material may be used with NASA attribution; individually exclude third-party copyrighted material. https://www.nasa.gov/nasa-brand-center/images-and-media/";
 const noaaRightsBasis = "NOAA Education and Outreach FAQ: NOAA-created articles may be reused with NOAA attribution; check each item and exclude third-party content. https://www.noaa.gov/office-education/outreach-communication/faq";
+const oceanServiceRightsBasis = "NOAA National Ocean Service image guidance: most images may be used with NOAA credit unless a credit or caption notes otherwise. https://oceanservice.noaa.gov/about/faq.html";
 const thirdPartyNotice = /(?:copyright|©|all rights reserved|associated press|reuters|getty images|shutterstock|adobe stock)/i;
 function creditedImage(html: string, agency: "NASA" | "NOAA") {
   const $ = load(html);
   for (const figure of $("figure").toArray()) {
     const image = $(figure).find("img[src]").first();
     const caption = $(figure).find("figcaption").first().text().replace(/\s+/g, " ").trim();
-    const credit = /(?:image|photo|illustration)\s+credit:\s*([^)]+)\)/i.exec(caption)?.[1]?.trim();
+    const credit = $(figure).find(".hds-credits").first().text().replace(/\s+/g, " ").trim()
+      || /(?:image|photo|illustration)\s+credit:\s*([^)]+)/i.exec(caption)?.[1]?.trim();
     if (!image.length || !credit || !new RegExp(`\\b${agency}\\b`, "i").test(credit) || thirdPartyNotice.test(caption)) continue;
+    if (agency === "NASA" && /\b(?:ESA|SpaceX|Reuters|Getty|Shutterstock|Associated Press)\b/i.test(credit)) continue;
     const image_url = canonicalUrl(image.attr("src") ?? "");
     if (!image_url || image_url.length > 2000) continue;
     const url = new URL(image_url);
     const approved = agency === "NOAA"
       ? url.hostname === "www.noaa.gov" && url.pathname.startsWith("/sites/default/files/")
-      : url.hostname === "www.nasa.gov" && url.pathname.startsWith("/wp-content/uploads/");
+      : (url.hostname === "www.nasa.gov" && url.pathname.startsWith("/wp-content/uploads/"))
+        || (url.hostname === "assets.science.nasa.gov" && url.pathname.startsWith("/dynamicimage/assets/"));
     if (!approved || url.protocol !== "https:") continue;
     return { image_url, image_alt: cleanText(image.attr("alt") || caption, 300), image_credit: cleanText(credit, 200), image_rights_basis: agency === "NOAA" ? noaaRightsBasis : nasaRightsBasis };
   }
   return { image_url: null, image_alt: null, image_credit: null, image_rights_basis: null };
+}
+function oceanServiceImage(html: string, title: string) {
+  if (thirdPartyNotice.test(html)) return null;
+  const $ = load(html);
+  const image = $("img[src]").first();
+  const image_url = canonicalUrl(image.attr("src") ?? "");
+  if (!image_url || image_url.length > 2000) return null;
+  const url = new URL(image_url);
+  if (url.protocol !== "https:" || url.hostname !== "oceanservice.noaa.gov") return null;
+  const credit = /(?:image|photo|illustration)\s+credit:\s*([^)<\n]+)/i.exec(html)?.[1]?.trim();
+  if (credit && !/\bNOAA\b/i.test(credit)) return null;
+  const image_alt = cleanText(image.attr("alt") || title, 300);
+  if (image_alt.length < 5) return null;
+  return { image_url, image_alt, image_credit: credit || "NOAA National Ocean Service", image_rights_basis: oceanServiceRightsBasis };
+}
+export function parseRssImages(xml: string, source: NewsSource): NewsImageCandidate[] {
+  const feed = source.feed_url;
+  const nasa = feed?.startsWith("https://www.nasa.gov/");
+  const noaa = feed === noaaFeedUrl;
+  const ocean = feed === "https://oceanservice.noaa.gov/rss/nosnews.xml";
+  if (!nasa && !noaa && !ocean) return [];
+  const { rss, entries } = rssEntries(xml);
+  if (!rss) return [];
+  return entries.flatMap((row) => {
+    const source_url = canonicalUrl(xmlText(row.link));
+    if (!source_url) return [];
+    const host = new URL(source_url).hostname;
+    if (nasa && !["www.nasa.gov", "science.nasa.gov"].includes(host)) return [];
+    if (noaa && host !== "www.noaa.gov") return [];
+    if (ocean && host !== "oceanservice.noaa.gov") return [];
+    const html = xmlText(row["content:encoded"] ?? row.description);
+    if (!html || html.length > 250000) return [];
+    const image = ocean ? oceanServiceImage(html, xmlText(row.title)) : creditedImage(html, nasa ? "NASA" : "NOAA");
+    return image?.image_url && image.image_alt && image.image_credit && image.image_rights_basis
+      ? [{ canonical_hash: newsHash(source_url), source_url, image_url: image.image_url, image_alt: image.image_alt, image_credit: image.image_credit, image_rights_basis: image.image_rights_basis }]
+      : [];
+  });
 }
 export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
   if (source.feed_url !== nasaFeedUrl || hasUnsafeXmlDeclaration(xml)) return [];
@@ -232,6 +277,6 @@ export const rssProvider: NewsProvider = { kind: "rss", async fetch(source, fetc
   if (response.status === 304) return { items: [], etag: source.etag, lastModified: source.last_modified, cacheUntil: cacheUntil(response), notModified: true };
   if (!response.ok) throw new Error(`RSS HTTP ${response.status}`);
   const xml = await boundedText(response);
-  return { items: parseRss(xml, source), bodies: [...parseNasaNewsBodies(xml, source), ...parseNoaaNewsBodies(xml, source)], etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
+  return { items: parseRss(xml, source), bodies: [...parseNasaNewsBodies(xml, source), ...parseNoaaNewsBodies(xml, source)], images: parseRssImages(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
 } };
 export const providers: Record<NewsSource["provider"], NewsProvider> = { gdelt: gdeltProvider, rss: rssProvider };

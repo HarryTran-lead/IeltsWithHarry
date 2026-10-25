@@ -15,7 +15,7 @@ type NewsRow = { id: string; title: string; publisher: string; canonical_url: st
 type ArchiveRow = NewsRow & { source_id: string; readable: boolean; image_url: string | null; image_alt: string | null; image_credit: string | null };
 type NewsImage = { image_url: string; image_alt: string; image_credit: string };
 type NewsBody = { body_text: string; rights_basis: string; source_url: string; image_url: string | null; image_alt: string | null; image_credit: string | null };
-function newsImage(body: NewsBody | null | undefined): NewsImage | undefined { return body?.image_url && body.image_alt && body.image_credit ? { image_url: body.image_url, image_alt: body.image_alt, image_credit: body.image_credit } : undefined; }
+function newsImage(row: { image_url: string | null; image_alt: string | null; image_credit: string | null } | null | undefined): NewsImage | undefined { return row?.image_url && row.image_alt && row.image_credit ? { image_url: row.image_url, image_alt: row.image_alt, image_credit: row.image_credit } : undefined; }
 type LearnRow = { id: string; slug: string; title: string; summary: string; category: NewsCategory; stage_id: string; passage?: string; audio_url: string | null; source_url: string | null; rights_status: string; related_news_id: string | null; created_at: string };
 type WordRow = { id: string; word: string; part_of_speech: string; meaning_vi: string; definition: string; phonetic: string; example: string };
 type QuestionRow = { id: string; kind: string; prompt: string; options: string[]; supporting_sentence: string };
@@ -141,24 +141,36 @@ function LearnList() {
 
 function NewsDetail({ id }: { id: string }) {
   const db = useMemo(() => createClient(), []);
-  const [row,setRow]=useState<NewsRow|null>(null);
+  const [row,setRow]=useState<ArchiveRow|null>(null);
   const [slug,setSlug]=useState<string|null>(null);
   const [saved,setSaved]=useState(false);
   const [body,setBody]=useState<NewsBody|null>(null);
   const [read,setRead]=useState(false);
   const [readError,setReadError]=useState("");
   const [marking,setMarking]=useState(false);
-  useEffect(()=>{void (async()=>{const [a,b,c,d,e]=await Promise.all([db.from("news_articles").select("id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive").eq("id",id).eq("publication_status","published").maybeSingle(),db.from("news_learning_articles").select("slug").eq("related_news_id",id).eq("published",true).maybeSingle(),db.from("user_saved_news").select("article_id").eq("article_id",id).maybeSingle(),db.from("news_article_bodies").select("body_text,rights_basis,source_url,image_url,image_alt,image_credit").eq("article_id",id).maybeSingle(),db.from("user_news_article_reads").select("article_id").eq("article_id",id).maybeSingle()]);setRow(a.data as NewsRow|null);setSlug(b.data?.slug??null);setSaved(Boolean(c.data));setBody(d.data);setRead(Boolean(e.data));})();},[db,id]);
+  useEffect(()=>{void (async()=>{const [a,b,c,d,e]=await Promise.all([db.from("news_archive_catalog").select("id,source_id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit").eq("id",id).eq("publication_status","published").eq("sensitive",false).maybeSingle(),db.from("news_learning_articles").select("slug").eq("related_news_id",id).eq("published",true).maybeSingle(),db.from("user_saved_news").select("article_id").eq("article_id",id).maybeSingle(),db.from("news_article_bodies").select("body_text,rights_basis,source_url,image_url,image_alt,image_credit").eq("article_id",id).maybeSingle(),db.from("user_news_article_reads").select("article_id").eq("article_id",id).maybeSingle()]);setRow(a.data as ArchiveRow|null);setSlug(b.data?.slug??null);setSaved(Boolean(c.data));setBody(d.data);setRead(Boolean(e.data));})();},[db,id]);
   async function toggle(){const result=saved?await db.from("user_saved_news").delete().eq("article_id",id):await db.from("user_saved_news").insert({article_id:id});if(!result.error)setSaved(!saved);}
   async function markRead(){setMarking(true);setReadError("");const result=await db.rpc("news_mark_article_read",{p_article_id:id});setMarking(false);if(result.error)setReadError(result.error.message);else setRead(true);}
   if(!row)return <div className="content-page news-page news-detail-page"><Link href="/app/news">← Daily News</Link><div className="news-empty">Tin không có sẵn hoặc đang chờ duyệt.</div></div>;
   const onSitePublisher = body?.source_url.includes("noaa.gov") ? "NOAA" : "NASA";
   const rightsUrl = onSitePublisher === "NOAA" ? "https://www.noaa.gov/office-education/outreach-communication/faq" : "https://www.nasa.gov/nasa-brand-center/images-and-media/";
-  const image = newsImage(body);
+  const image = newsImage(row);
   return <div className="content-page news-page news-detail-page"><Link href="/app/news" className="news-back"><ArrowLeft size={17}/> Daily News</Link><article className="news-detail"><header className="news-detail-lead"><div><div className="news-detail-art" style={{background:`linear-gradient(120deg,${accents[row.category]}55,#fffaf3)`}}>{image?<Image src={image.image_url} alt={image.image_alt} fill sizes="(max-width: 950px) 100vw, 48vw" unoptimized/>:"📰"}<span>{row.category}</span></div>{image&&<p className="news-image-credit">Ảnh: {image.image_credit} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Nguồn bài gốc</a></p>}</div><div className="news-detail-intro"><span className="eyebrow">{row.category} · {relativeTime(row.published_at)}</span><h1>{row.title}</h1><p>{row.publisher} · {newsDate(row.published_at)}</p><p className="news-attribution">{row.attribution_text} {row.attribution_text.includes("GDELT")&&<a href="https://www.gdeltproject.org/" target="_blank" rel="noopener noreferrer">The GDELT Project</a>}</p>{body?<div className="news-rights-note"><BookOpenText size={20}/><p>Nội dung {image?"văn bản và ảnh":"văn bản"} {onSitePublisher} được hiển thị tại đây với ghi nguồn. <a href={rightsUrl} target="_blank" rel="noopener noreferrer">Xem hướng dẫn sử dụng của {onSitePublisher}</a>.</p></div>:<div className="news-rights-note"><BookOpenText size={20}/><p>Nguồn này chưa có quyền hiển thị toàn bài trên IeltsWithHarry. Bạn có thể đọc tại trang nhà xuất bản.</p></div>}</div></header>{body&&<NewsReadingTools articleId={id} paragraphs={body.body_text.split(/\n\n+/)}><div className="news-reading-control"><button disabled={read||marking} onClick={()=>void markRead()}>{read?"✓ Đã hoàn thành bài đọc":marking?"Đang lưu…":"Tôi đã đọc xong ✓"}</button>{read&&<span>Hoạt động đọc đã được ghi vào lịch sử của bạn.</span>}</div>{readError&&<p className="form-error" role="alert">{readError}</p>}</NewsReadingTools>}<div className="news-detail-actions"><a className="button primary" href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Read Original Article <ExternalLink size={17}/></a><button className="button subtle" onClick={()=>void toggle()}><Bookmark size={17} fill={saved?"currentColor":"none"}/> {saved?"Đã lưu":"Lưu tin"}</button>{slug&&<Link className="button subtle" href={`/app/news/learn/${slug}`}>Learn with News →</Link>}</div></article></div>;
 }
 
-function SavedNews(){const db=useMemo(()=>createClient(),[]);const [rows,setRows]=useState<NewsRow[]>([]);useEffect(()=>{void db.from("user_saved_news").select("article_id, news_articles(id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive)").order("saved_at",{ascending:false}).limit(100).then(({data})=>setRows((data??[]).flatMap((item)=>item.news_articles?[item.news_articles as unknown as NewsRow]:[])));},[db]);return <div className="content-page news-page"><NewsHero compact/><section className="news-section"><h2>🔖 Tin đã lưu</h2><p>Danh sách riêng của bạn. Mở bài gốc trên trang nhà xuất bản.</p><div className="news-grid">{rows.map((row)=><NewsCard key={row.id} row={row} saved onSave={async()=>{await db.from("user_saved_news").delete().eq("article_id",row.id);setRows((current)=>current.filter((item)=>item.id!==row.id));}}/>)}</div>{!rows.length&&<div className="news-empty">Bạn chưa lưu tin nào. <Link href="/app/news">Khám phá Daily News →</Link></div>}</section></div>;}
+function SavedNews(){
+  const db=useMemo(()=>createClient(),[]);
+  const [rows,setRows]=useState<ArchiveRow[]>([]);
+  useEffect(()=>{void (async()=>{
+    const {data}=await db.from("user_saved_news").select("article_id").order("saved_at",{ascending:false}).limit(100);
+    const ids=(data??[]).map((item)=>item.article_id);
+    if(!ids.length){setRows([]);return;}
+    const archive=await db.from("news_archive_catalog").select("id,source_id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit").in("id",ids).eq("publication_status","published").eq("sensitive",false);
+    const byId=new Map((archive.data??[]).map((item)=>[item.id,item as ArchiveRow]));
+    setRows(ids.flatMap((id)=>byId.has(id)?[byId.get(id)!]:[]));
+  })();},[db]);
+  return <div className="content-page news-page"><NewsHero compact/><section className="news-section"><h2>🔖 Tin đã lưu</h2><p>Danh sách riêng của bạn. Mở bài gốc trên trang nhà xuất bản.</p><div className="news-grid">{rows.map((row)=><NewsCard key={row.id} row={row} saved onSite={row.readable} image={newsImage(row)} onSave={async()=>{await db.from("user_saved_news").delete().eq("article_id",row.id);setRows((current)=>current.filter((item)=>item.id!==row.id));}}/>)}</div>{!rows.length&&<div className="news-empty">Bạn chưa lưu tin nào. <Link href="/app/news">Khám phá Daily News →</Link></div>}</section></div>;
+}
 
 function NewsHistory(){
   const db=useMemo(()=>createClient(),[]);
