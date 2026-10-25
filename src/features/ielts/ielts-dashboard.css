@@ -166,3 +166,10 @@
 @media (max-width: 900px) { .ielts-dashboard-modes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .ielts-dashboard-modes { grid-template-columns: 1fr; } .ielts-dashboard-modes-head > strong { margin-left: 0; } }
 .ielts-dashboard-modes-head .ielts-dashboard-mode-filters button { padding: 6px 12px; }
+/* Slim title row in place of the page banner. */
+.ielts-dashboard-titlebar { display: flex; align-items: center; gap: 12px; margin: 0 2px 14px; min-height: 44px; }
+.ielts-dashboard-titlebar-icon { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; color: var(--accent); background: var(--wash); }
+.ielts-dashboard-titlebar h1 { flex: none; margin: 0; font-size: 22px; line-height: 1.2; letter-spacing: -0.02em; }
+.ielts-dashboard-titlebar p { flex: 1; min-width: 0; margin: 0; color: #6b7f96; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ielts-dashboard-titlebar .ielts-dashboard-start { flex: none; padding: 8px 15px; }
+@media (max-width: 700px) { .ielts-dashboard-titlebar { flex-wrap: wrap; } .ielts-dashboard-titlebar p { flex-basis: 100%; order: 3; white-space: normal; } .ielts-dashboard-titlebar .page-head-link { margin-left: auto; } }

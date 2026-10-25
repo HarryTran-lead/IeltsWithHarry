@@ -6,8 +6,6 @@ import {
   ArrowRight, AudioLines, BookOpen, ChartNoAxesCombined, Clock3, ExternalLink,
   FileText, Headphones, Languages, ListChecks, Mic, NotebookPen, Sparkles,
 } from "lucide-react";
-import type { StickerName } from "@/components/stickers/stickers";
-import { PageHeader } from "@/components/ui/page-header";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "./ielts-live-page";
 import { useIeltsData } from "./use-ielts-data";
@@ -22,8 +20,6 @@ const copy: Record<IeltsSkill, { title: string; intro: string; icon: typeof Book
   writing: { title: "IELTS Writing", intro: "Luyện Academic Task 1 bằng số liệu thật và Task 2 bằng chủ đề thời sự.", icon: NotebookPen, tone: "yellow" },
   speaking: { title: "IELTS Speaking", intro: "Chuẩn bị ý, bấm giờ và ghi âm với cue card từ các chủ đề đang diễn ra.", icon: Mic, tone: "pink" },
 };
-const skillOrder: IeltsSkill[] = ["vocabulary", "grammar", "reading", "listening", "writing", "speaking"];
-const skillStickers: Record<IeltsSkill, StickerName> = { vocabulary: "abc", grammar: "pencil", reading: "book", listening: "headphones", writing: "chart", speaking: "mic" };
 
 type Mode = { title: string; detail: string; source: string; href: string; available: boolean; icon: typeof BookOpen; tag?: string; planned?: boolean };
 
@@ -80,8 +76,13 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? !mode.planned : mode.planned));
 
   return <main className={`ielts-dashboard ielts-dashboard-${config.tone}`}>
-    <PageHeader eyebrow={<><Icon size={12} /> KỸ NĂNG {String(skillOrder.indexOf(skill) + 1).padStart(2, "0")} / 06</>} title={config.title} description={config.intro} sticker={skillStickers[skill]}
-      actions={<><a className="page-head-link" href="https://ielts.org/take-a-test/preparation-resources/sample-test-questions" target="_blank" rel="noreferrer">Đề mẫu IELTS <ExternalLink size={14}/></a>{availableModes[0] ? <Link className="ielts-dashboard-start" href={availableModes[0].href}>Bắt đầu học <ArrowRight size={17}/></Link> : <span className="ielts-dashboard-wait">Đang chờ dữ liệu nguồn</span>}</>} />
+    <div className="ielts-dashboard-titlebar">
+      <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
+      <h1>{config.title}</h1>
+      <p title={config.intro}>{config.intro}</p>
+      <a className="page-head-link" href="https://ielts.org/take-a-test/preparation-resources/sample-test-questions" target="_blank" rel="noreferrer">Đề mẫu IELTS <ExternalLink size={14}/></a>
+      {availableModes[0] ? <Link className="ielts-dashboard-start" href={availableModes[0].href}>Bắt đầu học <ArrowRight size={17}/></Link> : <span className="ielts-dashboard-wait">Đang chờ dữ liệu nguồn</span>}
+    </div>
 
     <div className="ielts-dashboard-stats" aria-label="Tiến độ của bạn">
       <Stat icon={FileText} value={busy ? "…" : String(sourceCount)} label={sourceUnit} note="Nguồn đang hiển thị"/>
