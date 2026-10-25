@@ -7,7 +7,7 @@ import { NEWS_CATEGORIES, type NewsCategory } from "./constants";
 export { NEWS_CATEGORIES };
 export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number };
 export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
-export type NewsBodyCandidate = { canonical_hash: string; body_text: string; rights_basis: string; source_url: string };
+export type NewsBodyCandidate = { canonical_hash: string; body_text: string; rights_basis: string; source_url: string; image_url: string | null; image_alt: string | null; image_credit: string | null; image_rights_basis: string | null };
 export type FetchResult = { items: NewsItem[]; bodies?: NewsBodyCandidate[]; etag: string | null; lastModified: string | null; cacheUntil: string | null; notModified: boolean };
 export interface NewsProvider { readonly kind: NewsSource["provider"]; fetch(source: NewsSource, fetcher?: typeof fetch): Promise<FetchResult> }
 
@@ -82,6 +82,24 @@ const noaaFeedUrl = "https://www.noaa.gov/rss.xml";
 const nasaRightsBasis = "NASA Images and Media Usage Guidelines: NASA-produced educational and informational material may be used with NASA attribution; individually exclude third-party copyrighted material. https://www.nasa.gov/nasa-brand-center/images-and-media/";
 const noaaRightsBasis = "NOAA Education and Outreach FAQ: NOAA-created articles may be reused with NOAA attribution; check each item and exclude third-party content. https://www.noaa.gov/office-education/outreach-communication/faq";
 const thirdPartyNotice = /(?:copyright|©|all rights reserved|associated press|reuters|getty images|shutterstock|adobe stock)/i;
+function creditedImage(html: string, agency: "NASA" | "NOAA") {
+  const $ = load(html);
+  for (const figure of $("figure").toArray()) {
+    const image = $(figure).find("img[src]").first();
+    const caption = $(figure).find("figcaption").first().text().replace(/\s+/g, " ").trim();
+    const credit = /(?:image|photo|illustration)\s+credit:\s*([^)]+)\)/i.exec(caption)?.[1]?.trim();
+    if (!image.length || !credit || !new RegExp(`\\b${agency}\\b`, "i").test(credit) || thirdPartyNotice.test(caption)) continue;
+    const image_url = canonicalUrl(image.attr("src") ?? "");
+    if (!image_url || image_url.length > 2000) continue;
+    const url = new URL(image_url);
+    const approved = agency === "NOAA"
+      ? url.hostname === "www.noaa.gov" && url.pathname.startsWith("/sites/default/files/")
+      : url.hostname === "www.nasa.gov" && url.pathname.startsWith("/wp-content/uploads/");
+    if (!approved || url.protocol !== "https:") continue;
+    return { image_url, image_alt: cleanText(image.attr("alt") || caption, 300), image_credit: cleanText(credit, 200), image_rights_basis: agency === "NOAA" ? noaaRightsBasis : nasaRightsBasis };
+  }
+  return { image_url: null, image_alt: null, image_credit: null, image_rights_basis: null };
+}
 export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
   if (source.feed_url !== nasaFeedUrl || xml.includes("<!DOCTYPE") || xml.includes("<!ENTITY")) return [];
   const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as { rss?: { channel?: { item?: unknown } } };
@@ -100,7 +118,7 @@ export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCa
     const paragraphs = $("p,h2,h3,li").toArray().map((node) => $(node).text().replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12);
     const body_text = paragraphs.join("\n\n").slice(0, 50000);
     if (body_text.length < 200) return [];
-    return [{ canonical_hash: newsHash(source_url), body_text, rights_basis: nasaRightsBasis, source_url }];
+    return [{ canonical_hash: newsHash(source_url), body_text, rights_basis: nasaRightsBasis, source_url, ...creditedImage(html, "NASA") }];
   });
 }
 
@@ -124,7 +142,7 @@ export function parseNoaaNewsBodies(xml: string, source: NewsSource): NewsBodyCa
     const paragraphs = body.find("p,h2,h3,li").toArray().map((node) => $(node).text().replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12);
     const body_text = paragraphs.join("\n\n").slice(0, 50000);
     if (body_text.length < 200) return [];
-    return [{ canonical_hash: newsHash(source_url), body_text, rights_basis: noaaRightsBasis, source_url }];
+    return [{ canonical_hash: newsHash(source_url), body_text, rights_basis: noaaRightsBasis, source_url, ...creditedImage(html, "NOAA") }];
   });
 }
 

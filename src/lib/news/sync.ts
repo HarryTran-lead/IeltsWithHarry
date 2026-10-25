@@ -43,9 +43,9 @@ export async function syncNews() {
         const { data: articles, error: articleError } = await db.from("news_articles").select("id,canonical_hash").in("canonical_hash", bodyHashes);
         if (articleError) throw articleError;
         const ids = new Map((articles ?? []).map((article) => [article.canonical_hash, article.id]));
-        const eligible = response.bodies.flatMap((body) => ids.has(body.canonical_hash) ? [{ article_id: ids.get(body.canonical_hash), body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url }] : []);
+        const eligible = response.bodies.flatMap((body) => ids.has(body.canonical_hash) ? [{ article_id: ids.get(body.canonical_hash), body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url, image_url: body.image_url, image_alt: body.image_alt, image_credit: body.image_credit, image_rights_basis: body.image_rights_basis }] : []);
         if (eligible.length) {
-          const { error: bodyError } = await db.from("news_article_bodies").upsert(eligible, { onConflict: "article_id", ignoreDuplicates: true });
+          const { error: bodyError } = await db.from("news_article_bodies").upsert(eligible, { onConflict: "article_id" });
           if (bodyError) throw bodyError;
         }
       }

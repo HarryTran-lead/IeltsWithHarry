@@ -52,11 +52,15 @@ describe("news providers", () => {
   it("reads NOAA-authored text from its official RSS and excludes third-party notices", () => {
     const noaa = { ...source, name: "NOAA News", feed_url: "https://www.noaa.gov/rss.xml" };
     const passage = "NOAA researchers measured the ocean and explained how changing water temperatures can affect weather across the coast. ".repeat(4);
-    const feed = `<rss><channel><item><title>Ocean research update</title><link>https://www.noaa.gov/news-release/ocean-research-update</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate><description><![CDATA[<div class="c-field--name-field-body-formatted-long"><script>bad()</script><p>${passage}</p></div>]]></description></item></channel></rss>`;
+    const figure = `<figure><img src="https://www.noaa.gov/sites/default/files/ocean.jpg" alt="NOAA researcher measuring ocean water"><figcaption>Ocean research. (Image credit: NOAA)</figcaption></figure>`;
+    const feed = `<rss><channel><item><title>Ocean research update</title><link>https://www.noaa.gov/news-release/ocean-research-update</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate><description><![CDATA[${figure}<div class="c-field--name-field-body-formatted-long"><script>bad()</script><p>${passage}</p></div>]]></description></item></channel></rss>`;
     const bodies = parseNoaaNewsBodies(feed, noaa);
     expect(bodies).toHaveLength(1);
     expect(bodies[0].body_text).toContain("NOAA researchers");
     expect(bodies[0].body_text).not.toContain("bad()");
+    expect(bodies[0]).toMatchObject({image_url:"https://www.noaa.gov/sites/default/files/ocean.jpg",image_credit:"NOAA"});
+    expect(parseNoaaNewsBodies(feed.replace("(Image credit: NOAA)","(Image credit: Smith Media)"), noaa)[0].image_url).toBeNull();
+    expect(parseNoaaNewsBodies(feed.replace("www.noaa.gov/sites/default/files/ocean.jpg","other.example/ocean.jpg"), noaa)[0].image_url).toBeNull();
     expect(parseNoaaNewsBodies(feed.replace(passage, `${passage} © Reuters`), noaa)).toHaveLength(0);
   });
   it("normalizes GDELT English results and holds sensitive titles for review", () => {
@@ -98,7 +102,7 @@ describe("news database permissions and grading", () => {
         create table auth.users(id uuid primary key, raw_user_meta_data jsonb);
         create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
         grant usage on schema auth to authenticated; grant execute on function auth.uid() to authenticated;`);
-      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql"]) {
+      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql"]) {
         if (name.includes("007")) await db.exec(readFileSync(resolve("supabase/seed.sql"), "utf8"));
         await db.exec(readFileSync(resolve("supabase/migrations", name), "utf8"));
       }
@@ -108,6 +112,7 @@ describe("news database permissions and grading", () => {
       await db.query("insert into auth.users(id,raw_user_meta_data) values ($1,'{}'),($2,'{}')",[alice,bob]);
       const imported=(await db.query<{id:string}>("insert into public.news_articles(source_id,provider,canonical_hash,title,canonical_url,publisher,category,published_at,publication_status) select id,'rss',repeat('a',64),'A safe NASA reading','https://www.nasa.gov/news-release/test-reading/','NASA','Science',now(),'published' from public.news_sources where feed_url='https://www.nasa.gov/news-release/feed/' returning id")).rows[0];
       await db.query("insert into public.news_article_bodies(article_id,body_text,rights_basis,source_url) values ($1,repeat('NASA article text. ',20),repeat('rights reviewed ',3),'https://www.nasa.gov/news-release/test-reading/')",[imported.id]);
+      await expect(db.query("update public.news_article_bodies set image_url='https://example.com/x.jpg',image_alt='Example image',image_credit='NASA',image_rights_basis=repeat('rights reviewed ',3) where article_id=$1",[imported.id])).rejects.toThrow();
       const article=(await db.query<{id:string}>("select id from public.news_learning_articles where slug='technology-changing-education'")).rows[0];
       const questions=(await db.query<{id:string;correct_answer:string}>("select q.id,k.correct_answer from public.news_questions q join public.news_answer_keys k on k.question_id=q.id where q.article_id=$1 order by q.sort_order",[article.id])).rows;
       const answers=Object.fromEntries(questions.map((q)=>[q.id,q.correct_answer]));
