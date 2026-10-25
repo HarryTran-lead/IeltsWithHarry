@@ -22,7 +22,13 @@ Migration `202610250019_news_readable_only.sql` keeps only articles that can be 
 
 ### Vietnamese news written by AI
 
-Vietnamese publishers keep their rights, so their articles are never copied. Migration `202610250020_news_ai_vietnam_rewrites.sql` adds four `ai_rewrite` sources: VnExpress International (news, life, business) and Tuoi Tre News. Each enrichment run, `src/lib/news/rewrite.ts` takes the newest unseen, non-sensitive story from the least recently used source. It reads the report's page only as fact evidence (never stored) and then:
+Vietnamese publishers keep their rights, so their articles are never copied. Migration `202610250020_news_ai_vietnam_rewrites.sql` adds four `ai_rewrite` sources: VnExpress International (news, life, business) and Tuoi Tre News. Each enrichment run, `src/lib/news/rewrite.ts` collects all four feeds and picks the **hottest unseen story of the last 24 hours**, favouring topics young readers follow. Choosing a story uses no AI; `rankStories` scores it as follows:
+
+- **Hot:** signals read from both homepages: VnExpress "Most read" rank (60 points for #1, 4 fewer per place), top story (30), Trending (25), "Most liked" (20) and homepage position (up to 20). A story reported by both outlets, sharing three or more title words, gets 20 more.
+- **Youth:** up to 40 points for matching topics (study, exams, jobs, technology, social media, music and concerts, film, sport, travel, food, fashion, mental health and similar), plus 10 for VnExpress life, tech, travel and sports sections.
+- **Freshness:** minus 2 points per hour of age.
+
+Stories without any hot signal are not written. Titles about politics, crime, death, accidents, rescues, podcasts or videos are dropped before any AI request. The writer is told its readers are about 16–30 and to keep the article engaging without changing any fact. It reads the report's page only as fact evidence (never stored) and then:
 
 1. **Writer request.** Gemini writes an original English article of 330–420 words. Each sentence cites an exact quote from the source. It may mark the story unsuitable (politics, crime, death, disasters with victims, or too little detail).
 2. **Code checks** (`verifyRewrite`):

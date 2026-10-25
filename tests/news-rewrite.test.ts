@@ -1,5 +1,47 @@
 import { describe, expect, it } from "vitest";
-import { storyText, verifyRewrite, writeVietnamArticle, type RewriteSentence } from "../src/lib/news/rewrite";
+import { rankStories, readHotSignals, storyText, verifyRewrite, writeVietnamArticle, type RewriteSentence, type StoryCandidate } from "../src/lib/news/rewrite";
+import { newsHash, type NewsSource } from "../src/lib/news/providers";
+
+describe("choosing the hottest story for young readers", () => {
+  const now = Date.parse("2026-10-25T12:00:00Z");
+  const vnSource = { id: "s1", name: "VnExpress International", provider: "ai_rewrite", feed_url: "https://e.vnexpress.net/rss/news.rss", category: "World News" } as unknown as NewsSource;
+  const ttSource = { ...vnSource, id: "s2", name: "Tuoi Tre News", feed_url: "https://news.tuoitre.vn/rss" } as NewsSource;
+  const story = (url: string, title: string, hoursAgo: number, source = vnSource, summary = ""): StoryCandidate => ({
+    source, summary, item: { source_id: source.id, provider: "rss", external_id: null, canonical_hash: newsHash(url), canonical_url: url, title, publisher: source.name, language: "English",
+      category: "World News", published_at: new Date(now - hoursAgo * 3600000).toISOString(), publication_status: "published", attribution_text: "", sensitive: false, metadata: {} },
+  });
+  const homepage = `<div class="item-topstory item-top1"><a href="https://e.vnexpress.net/news/news/top-story-1000001.html">Top</a></div>
+    <div class="content_tab content_tab_most_read"><div class="item_most_read"><a href="https://e.vnexpress.net/news/life/trend/students-flock-to-cafes-1000002.html">A</a></div><div class="item_most_read"><a href="https://e.vnexpress.net/news/business/economy/rice-exports-1000003.html">B</a></div></div>
+    <div class="list-trending"><a href="/news/tech/new-app-1000004.html">C</a></div><a href="https://e.vnexpress.net/news/news/quiet-story-1000005.html">D</a>`;
+
+  it("reads most-read rank, trending, top stories and homepage order", () => {
+    const signals = readHotSignals(homepage, "https://e.vnexpress.net/");
+    expect(signals.get(newsHash("https://e.vnexpress.net/news/life/trend/students-flock-to-cafes-1000002.html"))).toMatchObject({ mostRead: 1 });
+    expect(signals.get(newsHash("https://e.vnexpress.net/news/business/economy/rice-exports-1000003.html"))).toMatchObject({ mostRead: 2 });
+    expect(signals.get(newsHash("https://e.vnexpress.net/news/tech/new-app-1000004.html"))).toMatchObject({ trending: true });
+    expect(signals.get(newsHash("https://e.vnexpress.net/news/news/top-story-1000001.html"))).toMatchObject({ top: true, position: 1 });
+  });
+  it("ranks hot, youth-relevant, recent stories first and drops cold or unsuitable ones", () => {
+    const signals = readHotSignals(homepage, "https://e.vnexpress.net/");
+    const ranked = rankStories([
+      story("https://e.vnexpress.net/news/business/economy/rice-exports-1000003.html", "Rice exports rise in third quarter", 2),
+      story("https://e.vnexpress.net/news/life/trend/students-flock-to-cafes-1000002.html", "Students flock to study cafes before university exams", 3),
+      story("https://e.vnexpress.net/news/news/top-story-1000001.html", "Motorbike crash kills two in Hanoi", 1),
+      story("https://e.vnexpress.net/news/news/never-promoted-1000009.html", "Students launch a new music app", 1),
+      story("https://e.vnexpress.net/news/tech/new-app-1000004.html", "Young developers build a language app", 30),
+    ], signals, now);
+    expect(ranked.map((item) => item.item.title)).toEqual(["Students flock to study cafes before university exams", "Rice exports rise in third quarter"]);
+    expect(ranked[0].youth).toBeGreaterThan(ranked[1].youth);
+  });
+  it("treats the same event in both outlets as hot", () => {
+    const ranked = rankStories([
+      story("https://e.vnexpress.net/news/life/arts/bigbang-hanoi-concert-tickets-1000010.html", "BigBang Hanoi concert tickets resold at high prices", 2),
+      story("https://news.tuoitre.vn/bigbang-hanoi-concert-tickets-scalpers-103261025000000001.htm", "Scalpers resell BigBang Hanoi concert tickets", 3, ttSource),
+    ], new Map(), now);
+    expect(ranked).toHaveLength(2);
+    expect(ranked[0].hot).toBe(20);
+  });
+});
 
 const source = "A 40-year-old Malaysian woman was rescued after falling into a 10m deep hole while hiking in Da Lat, Lam Dong Province, on Sunday, local authorities said. Rescuers from the Lam Dong fire department used ropes to pull her out after two hours. The woman suffered minor injuries and was taken to a hospital in Da Lat for a check-up. She had been hiking with a group of 5 friends on a forest trail near the city. Officials urged tourists to stay on marked paths.";
 const cited: RewriteSentence[] = [
