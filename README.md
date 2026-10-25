@@ -2,6 +2,8 @@
 
 An English learning web app built with Next.js 16, React 19, TypeScript, Tailwind CSS and Supabase. It includes a responsive dashboard, study planner, six sample skill activities and a small curriculum editor.
 
+Production: https://ieltswithharry.vercel.app · Source: https://github.com/HarryTran-lead/IeltsWithHarry
+
 ## Project layout
 
 ```text
@@ -54,7 +56,7 @@ The Supabase built-in email sender is restricted to project organization members
 
 ## Enable real accounts and persistence
 
-1. Create a Supabase project. In **Authentication → URL Configuration**, set the Site URL to your production domain and allow redirects for `http://localhost:3000/auth/callback`, `http://localhost:3000/auth/callback?next=/reset-password`, `https://english-skill-lab-ruby.vercel.app/auth/callback` and `https://english-skill-lab-ruby.vercel.app/auth/callback?next=/reset-password`. Configure email confirmation and custom SMTP for production delivery. The connected project already has these URLs configured.
+1. Create a Supabase project. In **Authentication → URL Configuration**, set the Site URL to `https://ieltswithharry.vercel.app` and allow `/auth/callback` and `/auth/callback?next=/reset-password` on that domain, the previous production domain and `http://localhost:3000`. Configure email confirmation and custom SMTP for production delivery. The connected project has these URLs configured.
 2. Apply all SQL files in `supabase/migrations/` in numerical order and run `supabase/seed.sql` after the foundation schema. Or use the Supabase CLI migration workflow after linking the project. Set the two Vault secrets described in `docs/DAILY_NEWS.md` before the Cron migration. **Do not run a linked database reset on a project containing user data.**
 3. Set the following in `.env.local`:
 

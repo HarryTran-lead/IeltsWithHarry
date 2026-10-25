@@ -1,10 +1,12 @@
-project_id = "english-skill-lab"
+project_id = "ieltswithharry"
 
 [auth]
-site_url = "https://english-skill-lab-ruby.vercel.app"
+site_url = "https://ieltswithharry.vercel.app"
 additional_redirect_urls = [
   "http://localhost:3000/auth/callback",
   "http://localhost:3000/auth/callback?next=/reset-password",
+  "https://ieltswithharry.vercel.app/auth/callback",
+  "https://ieltswithharry.vercel.app/auth/callback?next=/reset-password",
   "https://english-skill-lab-ruby.vercel.app/auth/callback",
   "https://english-skill-lab-ruby.vercel.app/auth/callback?next=/reset-password",
 ]
