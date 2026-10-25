@@ -29,7 +29,7 @@ async function ingest(db: AdminClient, response: FetchResult) {
       inserted += fresh.length;
     }
   }
-  for (const group of batches(response.bodies ?? [])) {
+  for (const group of batches([...new Map((response.bodies ?? []).map((body) => [body.canonical_hash, body])).values()])) {
     const { data: articles, error: articleError } = await db.from("news_articles").select("id,canonical_hash").in("canonical_hash", group.map((body) => body.canonical_hash));
     if (articleError) throw articleError;
     const ids = new Map((articles ?? []).map((article) => [article.canonical_hash, article.id]));
@@ -39,7 +39,7 @@ async function ingest(db: AdminClient, response: FetchResult) {
       if (error) throw error;
     }
   }
-  for (const group of batches(response.images ?? [])) {
+  for (const group of batches([...new Map((response.images ?? []).map((image) => [image.canonical_hash, image])).values()])) {
     const { data: articles, error: articleError } = await db.from("news_articles").select("id,canonical_hash").in("canonical_hash", group.map((image) => image.canonical_hash));
     if (articleError) throw articleError;
     const ids = new Map((articles ?? []).map((article) => [article.canonical_hash, article.id]));
@@ -107,7 +107,8 @@ export async function syncNews() {
       await db.from("news_sync_runs").update({ finished_at, status, fetched_count: fetched, inserted_count: inserted }).eq("id", run.id);
       results.push({ source: source.name, status, fetched, inserted });
     } catch (cause) {
-      const message = cause instanceof Error ? cause.message.slice(0, 400) : "Unknown sync error";
+      const message = cause && typeof cause === "object" && "message" in cause && typeof cause.message === "string"
+        ? cause.message.slice(0, 400) : "Unknown sync error";
       const finished_at = new Date().toISOString();
       await Promise.all([
         db.from("news_sources").update({ last_error: message }).eq("id", source.id),
