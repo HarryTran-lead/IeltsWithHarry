@@ -382,7 +382,10 @@ const maxCandidates = 6;
 async function gatherCandidates(title: string, body: string, query: string, fetcher: typeof fetch) {
   const keywords = imageKeywords(title, body, query);
   if (keywords.length < 2) return [];
-  const searches = [...new Set([query && words(query).length >= 2 ? words(query).join(" ") : "", keywords.slice(0, 3).join(" ")].filter(Boolean))];
+  const subject = query && words(query).length >= 2 ? words(query).join(" ") : "";
+  // Vietnamese stories look for photos taken in Vietnam first; the AI rejects scenes from elsewhere.
+  const local = subject && /\bviet ?nam(ese)?\b/i.test(`${title} ${body.slice(0, 1500)}`) && !/vietnam/.test(subject) ? `${subject} vietnam` : "";
+  const searches = [...new Set([local, subject, keywords.slice(0, 3).join(" ")].filter(Boolean))];
   const found = new Map<string, Candidate & { library: string }>();
   let failure: unknown = null;
   const libraries = ["openverse", "commons", "nasa"] as const;
@@ -396,8 +399,10 @@ async function gatherCandidates(title: string, body: string, query: string, fetc
   }
   if (!found.size && failure) throw failure;
   const ranked = [...found.values()].sort((a, b) => b.score - a.score);
-  // Openverse covers everyday subjects best; Commons and NASA add one or two each.
-  const share = { openverse: 3, commons: 2, nasa: 1 };
+  // Openverse covers everyday subjects best; for space and aerospace stories the NASA
+  // library holds the real photos (engine tests, launches, spacecraft), so it gets more slots.
+  const spaceStory = /\b(nasa|space|rocket|engine test|launch|moon|lunar|mars|orbit|satellite|astronaut|spacecraft|telescope|artemis|aeronautics|aircraft)\b/i.test(`${title} ${query}`);
+  const share = spaceStory ? { openverse: 2, commons: 1, nasa: 3 } : { openverse: 3, commons: 2, nasa: 1 };
   return libraries.flatMap((library) => ranked.filter((candidate) => candidate.library === library).slice(0, share[library])).sort((a, b) => b.score - a.score).slice(0, maxCandidates);
 }
 
@@ -415,7 +420,7 @@ async function previewData(url: string, fetcher: typeof fetch) {
 const visionSchema = { type: "object", additionalProperties: false, required: ["best", "fit"], properties: { best: { type: "integer" }, fit: { type: "integer" } } } as const;
 const visionPrompt = `You choose a photo to illustrate a news article for English learners. Look at each numbered image.
 A suitable photo honestly shows the article's actual subject: the same kind of place, activity, object, event or people. Sharing a word with the headline is not enough.
-Unsuitable: a different topic, a specific landmark or place in another country than the story's, portraits of named people unrelated to the story, logos, maps, charts, documents or text-heavy images, historical artworks for modern news, and anything distasteful.
+Unsuitable: a different topic; an image whose caption or content places it in a different country or named place than the story (for a story in Vietnam, a photo labelled as the Philippines, China or Bali is unsuitable even if the scene looks alike); portraits of named people unrelated to the story, logos, maps, charts, documents or text-heavy images, historical artworks for modern news, and anything distasteful.
 Return best: the number of the most suitable image, or -1 if none is suitable. Return fit: 0-10, how well that image matches the article (10 = clearly shows the subject).`;
 const dailyImageLimit = 80;
 const subjectSchema = { type: "object", additionalProperties: false, required: ["image_query"], properties: { image_query: { type: "string" } } } as const;

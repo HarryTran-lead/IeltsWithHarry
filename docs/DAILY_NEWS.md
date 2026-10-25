@@ -88,7 +88,10 @@ Migration `202610250010_news_enrichment.sql` schedules `/api/news/enrich` every 
 **AI-checked illustrations** (migration `202610250022_news_ai_checked_images.sql`). Keyword-only picks were often unrelated to the story, such as a Mars photo on a flu article, so all were removed and searched again. Search runs after the quiz, whose request names the article's visual subject (stored as `news_auto_quiz_sets.image_query`):
 
 1. Up to six licensed candidates are gathered: three from [Openverse](https://openverse.org/) (Creative Commons or public-domain Flickr photos; best for everyday subjects), two from Wikimedia Commons and one from the NASA Image Library.
-2. Gemini looks at small previews of the candidates (Commons 330 px, Flickr `_n`, NASA `~thumb`) together with the title, the visual subject and the article's opening. It returns the best image and a 0–10 fit score.
+   - Space and aerospace stories take three from NASA, two from Openverse and one from Commons.
+   - Vietnamese stories search "subject + vietnam" first.
+   - Articles with no stored visual subject get one from a small Gemini text request.
+2. Gemini looks at small previews of the candidates (Commons 330 px, Flickr `_n`, NASA `~thumb`) together with the title, the visual subject and the article's opening. It returns the best image and a 0–10 fit score. A photo labelled as another country or named place than the story's is unsuitable; for example, Luzon terraces are rejected for a Vietnamese terraced-field festival.
 3. An image is used only with a fit of 7 or more. Otherwise the article keeps its category placeholder, because no picture is better than a misleading one.
 
 Each image costs one Gemini request and up to two Openverse searches (200 a day anonymously). The worker handles three per run and at most 80 a day. Licence data (creator, source page, licence and link) is stored for every image. The check constraint now rejects a missing licence URL; before, it accepted one by evaluating to NULL.
