@@ -89,6 +89,11 @@ describe("IELTS-style AI quiz validation", () => {
     const data = reply(); for (const item of data.true_false_not_given) item.answer = "TRUE";
     expect(() => validateGeneratedQuiz(data, passage)).toThrow(/same answer/);
   });
+  it("matches evidence by its words even when punctuation differs", () => {
+    const punctuated = `${passage} The figure — naked or clothed, for example — appears in [many] “paintings”.`;
+    expect(validateGeneratedQuiz(reply("The figure naked or clothed for example appears in many paintings"), punctuated)).toHaveLength(20);
+    expect(() => validateGeneratedQuiz(reply("The figure naked or clothed appears in many paintings"), punctuated)).toThrow(/evidence/);
+  });
   it("treats typographic quotes and dashes in evidence as equal", () => {
     const curly = `${passage} NASA’s team — working fast — recorded every result.`;
     expect(validateGeneratedQuiz(reply("NASA's team - working fast - recorded every result."), curly)).toHaveLength(20);

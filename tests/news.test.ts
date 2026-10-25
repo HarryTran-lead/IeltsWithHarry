@@ -80,6 +80,9 @@ describe("news providers", () => {
     expect(bodies[0]).toMatchObject({ byline: "Ana Pérez", source_url: "https://globalvoices.org/2026/10/24/radio-andes/" });
     expect(bodies[0].body_text.split("\n\n")).toHaveLength(2);
     expect(bodies[0].body_text).not.toMatch(/partner|embedded|Read more/);
+    const noted = parseGlobalVoicesBodies(`<rss><channel>${item(`<p>African populations — enslaved people and maroons [AN: this will need context] — joined the celebration in large numbers.</p>`)}</channel></rss>`, gv);
+    expect(noted[0].body_text).toContain("enslaved people and maroons — joined");
+    expect(noted[0].body_text).not.toContain("[AN:");
     expect(parseGlobalVoicesBodies(`<rss><channel>${item('<p class="originally-published">Originally published on Global Voices</p>')}</channel></rss>`, gv)).toHaveLength(1);
     expect(parseGlobalVoicesBodies(`<rss><channel>${item("<p>This article was originally published by Partner Media and is republished as part of a content-sharing agreement.</p>")}</channel></rss>`, gv)).toHaveLength(0);
     expect(parseGlobalVoicesBodies(`<rss><channel>${item()}</channel></rss>`, source)).toHaveLength(0);

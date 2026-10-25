@@ -63,6 +63,7 @@ function normalized(value: string) {
 function answerWords(value: string) {
   return normalized(value).replace(/(\d),(\d)/g, "$1$2").replace(/[^a-z0-9]+/g, " ").trim();
 }
+function evidenceWords(value: string) { return normalized(value).replace(/[^\p{L}\p{N}]+/gu, " ").trim(); }
 export function normalizeAnswer(value: string) { return answerWords(value).replace(/^(the|a|an) /, ""); }
 const gap = /_{3,}|…|\.{3,}/g;
 
@@ -70,7 +71,8 @@ function checkQuestion(type: QuestionType, item: unknown, passage: string): Gene
   const parsed = rawSchemas[type].safeParse(item);
   if (!parsed.success) return parsed.error.issues.some((issue) => issue.message === "not Vietnamese") ? "AI explanation is not in Vietnamese" : "AI returned a malformed question";
   const raw = parsed.data as Record<string, unknown> & { supporting_sentence: string; explanation: string; option_notes?: string[] };
-  if (!passage.includes(normalized(raw.supporting_sentence))) return "AI evidence is absent from the article";
+  // Exact words in order; punctuation (quotes, dashes, brackets) may differ.
+  if (!` ${evidenceWords(passage)} `.includes(` ${evidenceWords(raw.supporting_sentence)} `)) return "AI evidence is absent from the article";
   const base = { supporting_sentence: raw.supporting_sentence, explanation: raw.explanation };
   if (type === "tfng") {
     return { ...base, type, prompt: String(raw.statement), options: tfngOptions, correct_index: ["TRUE", "FALSE", "NOT GIVEN"].indexOf(String(raw.answer)), accepted_answers: null, option_notes: raw.option_notes ?? null };

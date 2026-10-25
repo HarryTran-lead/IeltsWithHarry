@@ -290,8 +290,9 @@ export function parseGlobalVoicesBodies(xml: string, source: NewsSource): NewsBo
     const prose = $("body").text().replace(/\s+/g, " ");
     if (/©|all rights reserved|content[- ]sharing (agreement|partnership)|republished (here )?(with permission|as part of|under)|originally (published|appeared) (on|in|by) (?!Global Voices)/i.test(prose)) return [];
     $("script,style,iframe,figure,figcaption,blockquote,.wp-caption,.gv-rss-footer,.originally-published").remove();
+    // Translators' notes such as "[AN: ...]" are editorial leftovers, not article text.
     const paragraphs = $("body").children("p,h2,h3,ul,ol").toArray().flatMap((node) => /^(ul|ol)$/i.test(node.tagName) ? $(node).find("li").toArray() : [node])
-      .map((node) => $(node).text().replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12);
+      .map((node) => $(node).text().replace(/\s*\[(?:AN|TN|Ed|Editor's note):[^\]]*\]/gi, "").replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12);
     const body_text = paragraphs.join("\n\n").slice(0, 50000);
     if (body_text.length < 200) return [];
     return [{ canonical_hash: newsHash(source_url), body_text, rights_basis: globalVoicesRightsBasis, source_url, byline, image_url: null, image_alt: null, image_credit: null, image_rights_basis: null }];

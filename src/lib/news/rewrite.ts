@@ -61,7 +61,7 @@ function shingles(text: string, size: number) {
  * sentences carry no names or numbers; no direct quotes; no 15-word run copied
  * from the source. Returns the article text.
  */
-export function verifyRewrite(paragraphs: RewriteSentence[][], source: string, words = { min: 280, max: 470 }) {
+export function verifyRewrite(paragraphs: RewriteSentence[][], source: string, words = { min: 280, max: 520 }) {
   const evidence = normalized(source);
   const sourceWords = new Set(source.match(/[\p{L}\p{M}'’.-]+/gu)?.map((word) => word.replace(/['’]s$/, "").replace(/[.'’-]+$/, "")) ?? []);
   const sourceNumbers = new Set(numbers(source));
@@ -134,7 +134,7 @@ const writerPrompt = `You write English news for young Vietnamese readers (about
 
 First decide suitable: false if SOURCE is mainly about politics or political leaders, crime, violence, death, accidents or disasters with victims, or if it is too thin for a full article. If suitable is false, still return the other fields briefly.
 
-Then rewrite SOURCE as an ORIGINAL English news article of 330-420 words in 5-7 paragraphs, B2-C1 level, neutral tone.
+Then rewrite SOURCE as an ORIGINAL English news article of 330-450 words, B2-C1 level: 5 or 6 paragraphs of 3-4 sentences each (about 20 sentences in total). Keep to this length even when SOURCE is longer; leave out minor details rather than exceed it.
 Truth rules (strict, an automatic fact-checker rejects any violation):
 - Use only facts stated in SOURCE. Never add names, numbers, dates, places, organisations, causes, consequences, motives, comparisons or opinions that SOURCE does not state. Do not exaggerate or soften.
 - Return the article as a list of sentences in reading order. Each is {paragraph, text, source_quote}: paragraph is its paragraph number starting at 1. source_quote is an exact contiguous quotation of 5-40 words copied from SOURCE that supports every fact in the sentence, including every number in it.
@@ -166,7 +166,7 @@ export async function writeVietnamArticle(story: SourceStory, fetcher: typeof fe
   let draft: { model: string; body: string; paragraphs: RewriteSentence[][] } | null = null;
   let rejection = "";
   for (let attempt = 0; attempt < 2 && !draft; attempt++) {
-    const revision = rejection ? `\n\nYour previous draft was rejected by the fact-checker: ${rejection}. Write a new draft that fixes this and follows every rule.` : "";
+    const revision = rejection ? `\n\nYour previous draft was rejected by the fact-checker: ${rejection}. Write a new draft that fixes this and follows every rule${/words$/.test(rejection) ? ", staying between 330 and 450 words" : ""}.` : "";
     const { model, data } = await geminiJson<{ suitable?: boolean; sentences?: (RewriteSentence & { paragraph?: unknown })[] }>(
       writerPrompt, sourceBlock(story) + revision, writeSchema, { fetcher, temperature: 0.3 });
     if (data.suitable !== true) throw new UnsuitableStoryError("AI marked the story unsuitable for learners");

@@ -36,7 +36,7 @@ Stories without any hot signal are not written. Titles about politics, crime, de
    - Every number, number word and name in a sentence appears in the source; a name may also share its stem, as in Vietnam and Vietnamese.
    - Uncited background sentences contain no names or numbers, and there are at most 3 of them or a quarter of the article.
    - There are no direct quotations and no 15-word run copied from the source.
-   - The length is 280–470 words.
+   - The length is 280–520 words. The writer is asked for 5–6 paragraphs of 3–4 sentences.
 
    A failed draft gets one revision that is told the reason.
 3. **Fact-checker request.** A second Gemini call, at temperature 0, labels every sentence SUPPORTED, BACKGROUND, UNSUPPORTED or CONTRADICTED. Any of the last two rejects the article.
