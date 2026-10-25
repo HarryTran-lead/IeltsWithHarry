@@ -35,7 +35,10 @@ describe("authored curriculum", () => {
   });
 
   it("keeps the generated SQL in sync with the JSON", () => {
-    expect(readFileSync(resolve(`supabase/content/${stage}.sql`), "utf8")).toBe(stageSql(stage));
+    // Git may check the file out with Windows line endings; compare the text itself.
+    expect(readFileSync(resolve(`supabase/content/${stage}.sql`), "utf8").replace(/
+/g, "
+")).toBe(stageSql(stage));
   });
 
   it("loads into the database as drafts and can be re-applied", async () => {
