@@ -102,7 +102,7 @@ describe("news database permissions and grading", () => {
         create table auth.users(id uuid primary key, raw_user_meta_data jsonb);
         create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
         grant usage on schema auth to authenticated; grant execute on function auth.uid() to authenticated;`);
-      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql"]) {
+      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql"]) {
         if (name.includes("007")) await db.exec(readFileSync(resolve("supabase/seed.sql"), "utf8"));
         await db.exec(readFileSync(resolve("supabase/migrations", name), "utf8"));
       }
@@ -120,6 +120,8 @@ describe("news database permissions and grading", () => {
       expect((await db.query<{new_read:boolean}>("select public.news_mark_article_read($1) as new_read",[imported.id])).rows[0].new_read).toBe(true);
       expect((await db.query<{new_read:boolean}>("select public.news_mark_article_read($1) as new_read",[imported.id])).rows[0].new_read).toBe(false);
       expect((await db.query("select * from public.user_news_article_reads")).rows).toHaveLength(1);
+      for (let claim = 0; claim < 6; claim++) expect((await db.query<{allowed:boolean}>("select public.news_claim_translation_quota(5000) as allowed")).rows[0].allowed).toBe(true);
+      expect((await db.query<{allowed:boolean}>("select public.news_claim_translation_quota(1) as allowed")).rows[0].allowed).toBe(false);
       expect((await db.query("select * from public.news_answer_keys")).rows).toEqual([]);
       await expect(db.query("insert into public.news_learning_articles(slug,title,category,stage_id,passage,rights_status,rights_basis) values ('learner-content','Learner content','Science','foundation',repeat('x',110),'ORIGINAL','Original by learner')")).rejects.toThrow();
       await db.query("select public.news_mark_read('technology-changing-education')");
