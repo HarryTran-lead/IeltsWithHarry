@@ -62,8 +62,14 @@ function atomLink(value: unknown): string {
   const entry = links.find((link) => link && typeof link === "object" && (!link["@_rel"] || link["@_rel"] === "alternate"));
   return entry && typeof entry === "object" ? String(entry["@_href"] ?? "") : "";
 }
+function hasUnsafeXmlDeclaration(xml: string): boolean {
+  // News article HTML can legitimately contain a doctype inside CDATA.
+  // Only declarations in the XML document itself are rejected.
+  const outsideCdata = xml.replace(/<!\[CDATA\[[\s\S]*?\]\]>/g, "");
+  return /<!DOCTYPE|<!ENTITY/i.test(outsideCdata);
+}
 export function parseRss(xml: string, source: NewsSource): NewsItem[] {
-  if (xml.includes("<!DOCTYPE") || xml.includes("<!ENTITY")) throw new Error("XML entities are not supported");
+  if (hasUnsafeXmlDeclaration(xml)) throw new Error("XML entities are not supported");
   const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as Record<string, unknown>;
   const rss = parsed.rss as { channel?: { item?: unknown; title?: unknown } } | undefined;
   const atom = parsed.feed as { entry?: unknown; title?: unknown } | undefined;
@@ -112,7 +118,7 @@ function creditedImage(html: string, agency: "NASA" | "NOAA") {
   return { image_url: null, image_alt: null, image_credit: null, image_rights_basis: null };
 }
 export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
-  if (source.feed_url !== nasaFeedUrl || xml.includes("<!DOCTYPE") || xml.includes("<!ENTITY")) return [];
+  if (source.feed_url !== nasaFeedUrl || hasUnsafeXmlDeclaration(xml)) return [];
   const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as { rss?: { channel?: { item?: unknown } } };
   const entries = parsed.rss?.channel?.item;
   const list = Array.isArray(entries) ? entries : entries ? [entries] : [];
@@ -134,7 +140,7 @@ export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCa
 }
 
 export function parseNoaaNewsBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
-  if (source.feed_url !== noaaFeedUrl || xml.includes("<!DOCTYPE") || xml.includes("<!ENTITY")) return [];
+  if (source.feed_url !== noaaFeedUrl || hasUnsafeXmlDeclaration(xml)) return [];
   const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as { rss?: { channel?: { item?: unknown } } };
   const entries = parsed.rss?.channel?.item;
   const list = Array.isArray(entries) ? entries : entries ? [entries] : [];

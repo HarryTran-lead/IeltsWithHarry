@@ -38,6 +38,7 @@ describe("news providers", () => {
     const atom = `<feed><entry><title>Science update for students</title><link href="https://www.nasa.gov/news/students/" rel="alternate"/><updated>2026-10-23T12:00:00Z</updated><content>Do not save full text</content></entry></feed>`;
     expect(parseRss(atom, source)[0].title).toBe("Science update for students");
     expect(() => parseRss("<!DOCTYPE rss><rss/>", source)).toThrow();
+    expect(parseRss(xml.replace("Third-party text is intentionally ignored.", "<![CDATA[<!DOCTYPE html><p>Historic article markup</p>]]>"), source)).toHaveLength(1);
   });
   it("keeps the older entries nested in the NOAA Ocean Service archive feed", () => {
     const archive = `<rss><channel><item><title>New ocean finding</title><link>https://oceanservice.noaa.gov/news/new.html</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate></item><item><item><title>Ocean discovery from 2013</title><link>https://oceanservice.noaa.gov/news/old.html</link><pubDate>Wed, 02 Jan 2013 18:03:20 GMT</pubDate></item></item></channel></rss>`;
