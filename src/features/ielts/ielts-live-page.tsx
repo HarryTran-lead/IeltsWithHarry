@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { BookOpen, ExternalLink, Headphones, Mic, RotateCcw, Save, Volume2 } from "lucide-react";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import type { IeltsLiveData, LiveArticle } from "@/lib/ielts/live";
+import { useIeltsData } from "./use-ielts-data";
 import "./ielts-live.css";
 
 export type IeltsSkill = "vocabulary" | "grammar" | "reading" | "listening" | "writing" | "speaking";
@@ -47,17 +48,15 @@ function wordCandidates(text: string) {
 }
 function wordCount(value: string) { return value.trim() ? value.trim().split(/\s+/).length : 0; }
 
-export function IeltsLivePage({ skill }: { skill: IeltsSkill }) {
+export function IeltsLivePage({ skill, mode }: { skill: IeltsSkill; mode?: string }) {
   const { addEntry } = useNotebook();
-  const [data, setData] = useState<IeltsLiveData | null>(null);
-  const [error, setError] = useState("");
-  const [busy, setBusy] = useState(true);
+  const { data, error, busy } = useIeltsData(skill);
   const [articleId, setArticleId] = useState("");
   const [audioId, setAudioId] = useState("");
   const [answers, setAnswers] = useState<string[]>([]);
   const [score, setScore] = useState<number | null>(null);
   const [draft, setDraft] = useState("");
-  const [writingTask, setWritingTask] = useState<1 | 2>(1);
+  const [writingTask, setWritingTask] = useState<1 | 2>(mode === "task-2" ? 2 : 1);
   const [saved, setSaved] = useState("");
   const [dictionary, setDictionary] = useState<{ word: string; definition: string; meaningVi: string; sourceUrl: string } | null>(null);
   const [lookupBusy, setLookupBusy] = useState(false);
@@ -68,23 +67,14 @@ export function IeltsLivePage({ skill }: { skill: IeltsSkill }) {
   const [timerRunning, setTimerRunning] = useState(false);
 
   useEffect(() => {
-    let live = true;
-    fetch("/api/ielts/live", { cache: "no-store" }).then(async (response) => {
-      const value = await response.json();
-      if (!response.ok) throw new Error(value.error ?? "Không tải được dữ liệu.");
-      if (live) setData(value as IeltsLiveData);
-    }).catch((cause) => { if (live) setError(cause instanceof Error ? cause.message : "Không tải được dữ liệu."); })
-      .finally(() => { if (live) setBusy(false); });
-    return () => { live = false; };
-  }, []);
-  useEffect(() => {
     if (!timerRunning) return;
     const interval = window.setInterval(() => setSeconds((value) => value + 1), 1000);
     return () => window.clearInterval(interval);
   }, [timerRunning]);
   useEffect(() => () => { recorder.current?.stream.getTracks().forEach((track) => track.stop()); if (recordUrl) URL.revokeObjectURL(recordUrl); }, [recordUrl]);
 
-  const article = data?.articles.find((item) => item.id === articleId) ?? data?.articles[0];
+  const article = data?.articles.find((item) => item.id === articleId) ??
+    (skill === "grammar" ? data?.articles.find((item) => grammarQuestions(item.text).length > 0) : undefined) ?? data?.articles[0];
   const audio = data?.audio.find((item) => item.id === audioId) ?? data?.audio[0];
   const questions = useMemo(() => article ? (skill === "grammar" ? grammarQuestions(article.text) : readingQuestions(article.text)) : [], [article, skill]);
   const vocabulary = useMemo(() => article ? wordCandidates(article.text) : [], [article]);
@@ -134,6 +124,7 @@ export function IeltsLivePage({ skill }: { skill: IeltsSkill }) {
 
   return <main className="ielts-live content-page">
     <div className="ielts-hero">
+      <Link className="ielts-back" href={`/app/${skill}`}>← Tổng quan {skillNames[skill]}</Link>
       <span className="eyebrow">IELTS ACADEMIC · LIVE PRACTICE</span>
       <h1>{skillNames[skill]}</h1>
       <p>{sourceNote}</p>

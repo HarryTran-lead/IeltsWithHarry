@@ -43,7 +43,7 @@ Các bộ [IELTS.org sample questions](https://ielts.org/take-a-test/preparation
 
 ## Bản thử đang chạy trên sáu màn kỹ năng
 
-`/app/vocabulary`, `/app/grammar`, `/app/reading`, `/app/listening`, `/app/writing`, `/app/speaking` dùng chung API đăng nhập `/api/ielts/live`. Endpoint đọc tối đa 12 bài toàn văn **đã xuất bản và không nhạy cảm** trong kho Daily News. Kho này có đồng bộ tự động khoảng 30 phút/lần; mỗi lần mở màn học, danh sách bài được đọc lại từ database. LibriVox API được làm mới tối đa mỗi 6 giờ; kiểm tra liên kết audio bằng HEAD và bỏ file trả lỗi. World Bank API được làm mới tối đa mỗi 7 ngày vì chuỗi chỉ số cập nhật theo năm. Nếu một nguồn lỗi, hai nguồn khác vẫn có thể hoạt động và giao diện hiện cảnh báo nguồn lỗi.
+`/app/vocabulary`, `/app/grammar`, `/app/reading`, `/app/listening`, `/app/writing`, `/app/speaking` là **dashboard kỹ năng**: tiến độ cá nhân, trạng thái dữ liệu, chế độ học khả dụng và lịch sử gần đây. Thẻ học mở trang `/app/<skill>/live`; Writing còn có `/app/writing/task-1` và `/app/writing/task-2`. Các màn dùng API đăng nhập `/api/ielts/live?skill=<skill>` để chỉ tải nguồn cần cho kỹ năng đó. Endpoint đọc tối đa 12 bài toàn văn **đã xuất bản và không nhạy cảm** trong kho Daily News. Kho này có đồng bộ tự động khoảng 30 phút/lần; dashboard và bài luyện dùng lại dữ liệu trong cùng tab tối đa 2 phút rồi đọc lại database. LibriVox API được làm mới tối đa mỗi 6 giờ; kiểm tra liên kết audio bằng HEAD và bỏ file trả lỗi. World Bank API được làm mới tối đa mỗi 7 ngày vì chuỗi chỉ số cập nhật theo năm. Nếu một nguồn lỗi, hai nguồn khác vẫn có thể hoạt động và giao diện hiện cảnh báo nguồn lỗi.
 
 | Màn | Chức năng của bản thử | Chấm và lưu |
 | --- | --- | --- |

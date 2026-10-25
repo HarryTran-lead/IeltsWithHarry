@@ -91,8 +91,17 @@ async function worldBankChart(): Promise<LiveDataPoint[]> {
     .sort((a, b) => a.year - b.year || a.country.localeCompare(b.country));
 }
 
-export async function loadIeltsLiveData(): Promise<IeltsLiveData> {
-  const [news, audio, chart] = await Promise.allSettled([newsArticles(), librivoxAudio(), worldBankChart()]);
+export type IeltsLiveSkill = "vocabulary" | "grammar" | "reading" | "listening" | "writing" | "speaking";
+
+export async function loadIeltsLiveData(skill?: IeltsLiveSkill): Promise<IeltsLiveData> {
+  const needNews = !skill || skill !== "listening";
+  const needAudio = !skill || skill === "listening";
+  const needChart = !skill || skill === "writing";
+  const [news, audio, chart] = await Promise.allSettled([
+    needNews ? newsArticles() : Promise.resolve([]),
+    needAudio ? librivoxAudio() : Promise.resolve([]),
+    needChart ? worldBankChart() : Promise.resolve([]),
+  ]);
   const warnings = [news, audio, chart].flatMap((result, index) => result.status === "rejected"
     ? [`${["Daily News", "LibriVox", "World Bank"][index]} tạm thời không khả dụng.`] : []);
   return {

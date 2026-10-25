@@ -28,6 +28,8 @@ type NotebookStore = {
 const Store = createContext<NotebookStore | null>(null);
 
 function visitTitle(path: string) {
+  const ieltsPractice = /^\/app\/(vocabulary|grammar|reading|listening|writing|speaking)\/(live|task-1|task-2)$/.exec(path);
+  if (ieltsPractice) return `IELTS ${ieltsPractice[1]} · ${ieltsPractice[2]}`;
   if (path.startsWith("/app/vocabulary/")) return `Từ vựng: ${path.split("/")[3]?.replaceAll("-", " ") ?? "học từ"}`;
   if (path.startsWith("/app/news/learn/")) return `Learn with News: ${path.split("/").pop()?.replaceAll("-", " ")}`;
   if (path.startsWith("/app/news/")) return `Daily News: ${path.split("/").pop()?.replaceAll("-", " ")}`;

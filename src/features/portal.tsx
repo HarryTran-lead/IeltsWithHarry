@@ -11,7 +11,8 @@ import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { NotebookPage } from "@/features/notebook/notebook-ui";
 import { NewsPortal } from "@/features/news/news-portal";
 import { VocabularyHub } from "@/features/vocabulary/vocabulary-hub";
-import { IeltsLivePage } from "@/features/ielts/ielts-live-page";
+import { IeltsLivePage, type IeltsSkill } from "@/features/ielts/ielts-live-page";
+import { IeltsSkillDashboard } from "@/features/ielts/ielts-skill-dashboard";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -21,6 +22,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
   const pathname = usePathname();
   const { ready } = useDemo();
   const section = pathname.split("/")[2] || "dashboard";
+  const skill = (["vocabulary", "grammar", "reading", "listening", "writing", "speaking"] as string[]).includes(section) ? section as IeltsSkill : null;
+  const skillMode = pathname.split("/")[3];
   return (
       <AppShell canManage={canManage}>
         {!ready ? <div className="content-page">Loading your learning space…</div> : section === "dashboard" ? (
@@ -31,12 +34,14 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <ContentLab />
         ) : section === "notebook" ? (
           <NotebookPage />
-        ) : section === "vocabulary" && pathname === "/app/vocabulary" ? (
-          <IeltsLivePage skill="vocabulary" />
+        ) : skill && !skillMode ? (
+          <IeltsSkillDashboard key={skill} skill={skill} />
+        ) : skill && (skillMode === "live" || (skill === "writing" && (skillMode === "task-1" || skillMode === "task-2"))) ? (
+          <IeltsLivePage key={pathname} skill={skill} mode={skillMode} />
         ) : section === "vocabulary" ? (
           <Suspense fallback={<div className="content-page">Đang tải từ vựng…</div>}><VocabularyHub /></Suspense>
-        ) : ["grammar", "reading", "listening", "writing", "speaking"].includes(section) ? (
-          <IeltsLivePage skill={section as "grammar" | "reading" | "listening" | "writing" | "speaking"} />
+        ) : skill ? (
+          <IeltsSkillDashboard key={skill} skill={skill} />
         ) : section === "news" ? (
           <NewsPortal />
         ) : section === "study-together" ? (
