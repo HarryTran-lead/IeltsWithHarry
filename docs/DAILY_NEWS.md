@@ -49,6 +49,16 @@ select vault.create_secret('SAME_VALUE_AS_NEWS_SYNC_SECRET', 'news_sync_secret')
 
 The migration enables `pg_net` and `pg_cron`, then schedules `english-skill-lab-news-30m` at `*/30 * * * *`. Cron calls `POST /api/news/sync` with a bearer token read from Vault. The endpoint also supports a same-origin, authenticated admin's manual sync button. Each source has its own minimum interval of at least 30 minutes. Check `cron.job`, `cron.job_run_details`, `net._http_response`, and `public.news_sync_runs` to verify operation. A successful Cron job means the HTTP request was queued; confirm an HTTP 200 and a source-level success row before saying sync works. Never print Vault's decrypted token in logs.
 
+## Automatic questions and illustration search
+
+Migration `202610250010_news_enrichment.sql` schedules `/api/news/enrich` every ten minutes after the sync. It reuses the existing Vault URL and bearer secret. Each bounded run handles at most four missing illustrations and one quiz. The admin's **Tạo câu hỏi & tìm ảnh** button runs one batch immediately. Retries are delayed so failed searches or API calls do not run on every sync.
+
+The image worker searches Wikimedia Commons and accepts only files explicitly marked Public domain or CC0 in the file metadata. It records the Commons file page, creator, license, and labels the result as an illustration. An agency-supplied image always takes priority. The external image search can return no suitable result; in that case the category illustration remains.
+
+Ten AI multiple-choice questions are generated only for published, non-sensitive articles already stored with eligible full text. Each answer must include a sentence quoted exactly from that text. The server validates ten distinct questions, four distinct choices per question, and every supporting quote before publishing the set. Correct answers stay in a private table; learners submit through an authenticated grading function and their score is saved to their account. AI output should still be reviewed for educational accuracy when possible.
+
+AI generation is off until the project owner creates an OpenAI API key and adds `OPENAI_API_KEY` as a **Production** environment variable in Vercel, then redeploys. The key must remain server-side and must never be pasted into chat, committed to Git, or prefixed with `NEXT_PUBLIC_`. Set an API spending limit in the OpenAI dashboard before enabling scheduled generation. The model used by the worker is `gpt-5-mini`. Existing manually authored Learn with News questions remain separate.
+
 ## Limits
 
 GDELT availability and the publishers' metadata quality are external. Article-list publication times can sometimes be the time GDELT observed an item rather than its original publication time; the UI displays the supplied time without inventing a replacement. RSS dates are read from `pubDate`, `dc:date`, `published`, or `updated`. Source errors are visible in the admin log and the last successful check is shown to learners. A collection older than two hours displays a stale notice.
