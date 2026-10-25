@@ -1,15 +1,21 @@
 import { describe, expect, it } from "vitest";
-import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageKeywords, quizExcerpt, validateGeneratedQuiz } from "../src/lib/news/enrichment";
+import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageKeywords, normalizeAnswer, quizExcerpt, tfngOptions, validateGeneratedQuiz } from "../src/lib/news/enrichment";
 
-const passage = "The Artemis team tested a new spacecraft on Tuesday. The spacecraft will carry instruments to study the Moon. Scientists will use the results to prepare later missions.";
-function questions(evidence = "The Artemis team tested a new spacecraft on Tuesday.", count = 10) {
-  return Array.from({ length: count }, (_, index) => ({
-    prompt: `What did the article say about the Artemis team in question ${index + 1}?`,
-    options: ["They tested a spacecraft", "They built a school", "They moved to Mars", "They closed a lab"],
-    correct_index: 0, supporting_sentence: evidence,
-    explanation: "The article explicitly says that the team tested a spacecraft.",
-  }));
+const passage = "The Artemis team tested a new spacecraft on Tuesday. The spacecraft will carry instruments to study the Moon. Scientists will use the results to prepare later missions. The test took place at Kennedy Space Center in Florida. Engineers measured the heat shield during the flight.";
+const quote = "The Artemis team tested a new spacecraft on Tuesday.";
+const explanation = "The quoted sentence states this directly.";
+/** A complete AI reply: the planned count plus one spare in every group. */
+function reply(evidence = quote) {
+  return {
+    true_false_not_given: Array.from({ length: 7 }, (_, i) => ({ statement: `Statement ${i + 1} about the spacecraft test`, answer: ["TRUE", "FALSE", "NOT GIVEN"][i % 3], supporting_sentence: evidence, explanation })),
+    multiple_choice: Array.from({ length: 7 }, (_, i) => ({ question: `Question ${i + 1}: what did the team test?`, options: ["A spacecraft", "A school", "A rover on Mars", "A laboratory"], correct_index: 0, supporting_sentence: evidence, explanation })),
+    sentence_completion: Array.from({ length: 5 }, (_, i) => ({ sentence: `Completion ${i + 1}: the test was held at ______.`, answer: "Kennedy Space Center", supporting_sentence: "The test took place at Kennedy Space Center in Florida.", explanation })),
+    short_answer: Array.from({ length: 5 }, (_, i) => ({ question: `Short question ${i + 1}: what did engineers measure?`, answer: "the heat shield", supporting_sentence: "Engineers measured the heat shield during the flight.", explanation })),
+    image_query: "Artemis spacecraft!",
+  };
 }
+const types = (questions: { type: string }[]) => questions.map((question) => question.type);
+const planned = [...Array(6).fill("tfng"), ...Array(6).fill("mcq"), ...Array(4).fill("sentence_completion"), ...Array(4).fill("short_answer")];
 const geminiReply = (value: unknown) => new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] }), { status: 200 });
 async function withKey<T>(run: () => Promise<T>, models?: string) {
   const previous = { key: process.env.GEMINI_API_KEY, models: process.env.GEMINI_MODELS };
@@ -22,29 +28,65 @@ async function withKey<T>(run: () => Promise<T>, models?: string) {
   }
 }
 
-describe("news AI quiz validation", () => {
-  it("accepts ten distinct questions with exact article evidence", () => {
-    expect(validateGeneratedQuiz({ questions: questions() }, passage)).toHaveLength(10);
+describe("IELTS-style AI quiz validation", () => {
+  it("builds twenty questions grouped as TFNG, multiple choice, completion and short answer", () => {
+    const quiz = validateGeneratedQuiz(reply(), passage);
+    expect(types(quiz)).toEqual(planned);
+    expect(quiz[0]).toMatchObject({ options: tfngOptions, correct_index: 0, accepted_answers: null });
+    expect(quiz[2].correct_index).toBe(2);
+    expect(quiz[12]).toMatchObject({ prompt: "Completion 1: the test was held at ______.", options: [], correct_index: null, accepted_answers: ["Kennedy Space Center"] });
+    expect(quiz[16].accepted_answers).toEqual(["the heat shield"]);
+  });
+  it("replaces a faulty item with the group's spare", () => {
+    const data = reply(); data.true_false_not_given[1].supporting_sentence = "The mission landed on Mars yesterday.";
+    data.multiple_choice[0].options[1] = data.multiple_choice[0].options[0];
+    const quiz = validateGeneratedQuiz(data, passage);
+    expect(types(quiz)).toEqual(planned);
+    expect(quiz.map((question) => question.prompt)).not.toContain("Statement 2 about the spacecraft test");
+  });
+  it("covers a thin group with spare questions of other types", () => {
+    const data = reply(); data.sentence_completion = data.sentence_completion.slice(0, 2);
+    const quiz = validateGeneratedQuiz(data, passage);
+    expect(quiz).toHaveLength(20);
+    expect(types(quiz).filter((type) => type === "sentence_completion")).toHaveLength(2);
   });
   it("rejects claims without a matching sentence in the article", () => {
-    expect(() => validateGeneratedQuiz({ questions: questions("The mission landed on Mars yesterday.") }, passage)).toThrow(/evidence/);
+    expect(() => validateGeneratedQuiz(reply("The mission landed on Mars yesterday."), passage)).toThrow(/evidence/);
   });
-  it("rejects duplicate options and incomplete quizzes", () => {
-    const bad = questions(); bad[0].options[1] = bad[0].options[0];
-    expect(() => validateGeneratedQuiz({ questions: bad }, passage)).toThrow(/option/);
-    expect(() => validateGeneratedQuiz({ questions: questions().slice(0, 9) }, passage)).toThrow();
+  it("rejects a set whose multiple-choice options repeat", () => {
+    const data = reply(); for (const item of data.multiple_choice) item.options[1] = item.options[0];
+    expect(() => validateGeneratedQuiz(data, passage)).toThrow(/option.*too few mcq/);
   });
-  it("keeps ten valid questions when spare ones are faulty", () => {
-    const set = questions(undefined, 12);
-    set[1].supporting_sentence = "The mission landed on Mars yesterday.";
-    set[4].options[2] = set[4].options[0];
-    const kept = validateGeneratedQuiz({ questions: set }, passage);
-    expect(kept).toHaveLength(10);
-    expect(kept.map((question) => question.prompt)).not.toContain(set[1].prompt);
+  it("checks written answers against the IELTS word limit and the quoted sentence", () => {
+    const broken = (change: (item: { sentence: string; answer: string }) => void) => {
+      const data = reply(); for (const item of data.sentence_completion) change(item);
+      return () => validateGeneratedQuiz(data, passage);
+    };
+    expect(broken((item) => { item.answer = "Kennedy Space Center in Florida"; })).toThrow(/three words/);
+    expect(broken((item) => { item.answer = "Houston"; })).toThrow(/not in the quoted sentence/);
+    expect(broken((item) => { item.sentence = item.sentence.replace("______", "Kennedy Space Center"); })).toThrow(/gap|gives away/);
+    const data = reply(); for (const item of data.short_answer) item.question = item.question.replace("?", ".");
+    expect(() => validateGeneratedQuiz(data, passage)).toThrow(/not a question/);
+  });
+  it("prefers a True/False/Not Given selection that uses every answer, in article order", () => {
+    const data = reply();
+    data.true_false_not_given.forEach((item, index) => { item.answer = ["TRUE", "TRUE", "TRUE", "FALSE", "FALSE", "NOT GIVEN", "NOT GIVEN"][index]; });
+    const tfng = validateGeneratedQuiz(data, passage).slice(0, 6);
+    expect(tfng.map((question) => question.correct_index)).toEqual([0, 0, 1, 1, 2, 2]);
+    expect(tfng.map((question) => question.prompt)).not.toContain("Statement 3 about the spacecraft test");
+  });
+  it("rejects True/False/Not Given statements that all share one answer", () => {
+    const data = reply(); for (const item of data.true_false_not_given) item.answer = "TRUE";
+    expect(() => validateGeneratedQuiz(data, passage)).toThrow(/same answer/);
   });
   it("treats typographic quotes and dashes in evidence as equal", () => {
-    const curly = "NASA’s team — working fast — tested a new spacecraft on Tuesday and recorded every result.";
-    expect(validateGeneratedQuiz({ questions: questions("NASA's team - working fast - tested a new spacecraft on Tuesday") }, curly)).toHaveLength(10);
+    const curly = `${passage} NASA’s team — working fast — recorded every result.`;
+    expect(validateGeneratedQuiz(reply("NASA's team - working fast - recorded every result."), curly)).toHaveLength(20);
+  });
+  it("normalizes written answers like the database grader", () => {
+    expect(normalizeAnswer("The Heat-Shield.")).toBe("heat shield");
+    expect(normalizeAnswer(" 1,200 tonnes ")).toBe("1200 tonnes");
+    expect(normalizeAnswer("an orbit")).toBe("orbit");
   });
   it("cuts long articles at a paragraph boundary", () => {
     const body = Array.from({ length: 40 }, (_, index) => `Paragraph ${index} ${"text ".repeat(80)}`).join("\n\n");
@@ -64,13 +106,15 @@ describe("Gemini news quiz generation", () => {
         const request = JSON.parse(String(init?.body));
         expect(request.contents[0].parts[0].text).toContain(passage);
         expect(request.generationConfig.responseFormat.text.mimeType).toBe("APPLICATION_JSON");
-        return geminiReply({ questions: questions(undefined, 12), image_query: "Artemis spacecraft!" });
+        expect(request.generationConfig.responseFormat.text.schema.required).toContain("true_false_not_given");
+        return geminiReply(reply());
       };
       const result = await generateNewsQuiz("Artemis test", passage, fetcher as typeof fetch);
       expect(result.model).toBe("gemini-3.5-flash-lite");
-      expect(result.questions).toHaveLength(10);
+      expect(result.questions).toHaveLength(20);
       expect(result.imageQuery).toBe("Artemis spacecraft");
-      for (const question of result.questions) expect(question.options[question.correct_index]).toBe("They tested a spacecraft");
+      for (const question of result.questions.filter((item) => item.type === "mcq")) expect(question.options[question.correct_index!]).toBe("A spacecraft");
+      expect(result.questions[0].options).toEqual(tfngOptions);
     });
   });
   it("falls back to the next configured model when one is rate limited", async () => {
@@ -79,7 +123,7 @@ describe("Gemini news quiz generation", () => {
       const fetcher = async (url: string | URL | Request) => {
         seen.push(String(url));
         if (seen.length === 1) return new Response(JSON.stringify({ error: { details: [{ retryDelay: "30s" }] } }), { status: 429 });
-        return geminiReply({ questions: questions(), image_query: "" });
+        return geminiReply({ ...reply(), image_query: "" });
       };
       const result = await generateNewsQuiz("Artemis test", passage, fetcher as typeof fetch);
       expect(result.model).toBe("model-b");

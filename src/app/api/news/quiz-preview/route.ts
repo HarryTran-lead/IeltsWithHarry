@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     const { data: article, error: articleError } = await db.from("news_articles").select("id,title,sensitive").eq("id", payload.articleId).single();
     if (articleError || !article || article.sensitive) return NextResponse.json({ error: "Không tìm thấy bài phù hợp." }, { status: 404 });
     const { data: body, error: bodyError } = await db.from("news_article_bodies").select("body_text").eq("article_id", article.id).single();
-    if (bodyError || !body || body.body_text.length < 700) return NextResponse.json({ error: "Bài cần ít nhất 700 ký tự toàn văn để thử prompt." }, { status: 400 });
+    if (bodyError || !body || body.body_text.length < 2000) return NextResponse.json({ error: "Bài cần ít nhất 2.000 ký tự toàn văn (khoảng 330 từ) để tạo bộ 20 câu." }, { status: 400 });
     return NextResponse.json(await generateNewsQuiz(article.title, body.body_text, fetch, payload.prompt));
   } catch (cause) {
     return NextResponse.json({ error: cause instanceof Error ? cause.message : "Không thể thử prompt." }, { status: 502 });
