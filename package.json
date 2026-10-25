@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:study-room": "node scripts/smoke-study-room.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

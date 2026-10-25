@@ -48,6 +48,8 @@ The floating **Sổ tay** button opens quick note and vocabulary capture on lear
 
 The **Cùng học** item opens `/app/study-together`: one shared room for authenticated learners and admins. Messages persist in `study_room_messages` and new messages and online presence use Supabase Realtime. The room includes an original animated study scene, a 25-minute focus timer and an original Web Audio lofi loop. Browsers require a user gesture before sound can play, so press **Bật nhạc** once; it keeps looping while the room stays open. The demo preview does not send messages to the live room. Migration `202610250006_study_together.sql` enables message RLS, rate limiting, realtime publication and private presence policies.
 
+Migration `202610250007_study_together_realtime_join.sql` grants the private channel's broadcast read permission needed at join time. To check the live room end to end, run `npm run test:study-room` with `STUDY_SMOKE_URL`, `STUDY_SMOKE_PUBLIC_KEY` and `STUDY_SMOKE_SECRET_KEY` set privately. The script creates two temporary confirmed accounts, tests anonymous denial, presence, cross-user realtime delivery and deletion permissions, then removes its messages and accounts. Never commit or print the secret key.
+
 ## Connected Supabase project
 
 The production project is `vpkhriywprepuhrbarye` (`https://vpkhriywprepuhrbarye.supabase.co`). Apply all migrations in `supabase/migrations/` with the Supabase CLI. Auth site/redirect URLs are tracked in `supabase/config.toml`. The Vercel production project has the public Supabase URL and publishable key. Keep secrets out of Git.
