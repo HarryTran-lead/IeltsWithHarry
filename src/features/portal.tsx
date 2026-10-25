@@ -11,6 +11,7 @@ import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { NotebookPage } from "@/features/notebook/notebook-ui";
 import { NewsPortal } from "@/features/news/news-portal";
 import { VocabularyHub } from "@/features/vocabulary/vocabulary-hub";
+import { IeltsLivePage } from "@/features/ielts/ielts-live-page";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -30,8 +31,12 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <ContentLab />
         ) : section === "notebook" ? (
           <NotebookPage />
+        ) : section === "vocabulary" && pathname === "/app/vocabulary" ? (
+          <IeltsLivePage skill="vocabulary" />
         ) : section === "vocabulary" ? (
           <Suspense fallback={<div className="content-page">Đang tải từ vựng…</div>}><VocabularyHub /></Suspense>
+        ) : ["grammar", "reading", "listening", "writing", "speaking"].includes(section) ? (
+          <IeltsLivePage skill={section as "grammar" | "reading" | "listening" | "writing" | "speaking"} />
         ) : section === "news" ? (
           <NewsPortal />
         ) : section === "study-together" ? (

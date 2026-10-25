@@ -40,3 +40,18 @@ Kiểm tra ngày 25/10/2026. Đây là kế hoạch nguồn cho bài **luyện t
 4. Trên admin portal hiện nguồn, quyền, bản cập nhật cuối, số bài nháp và lỗi. Trên student portal hiện nguồn/tác giả/ngày dữ liệu; lưu kết quả cá nhân vào Supabase.
 
 Các bộ [IELTS.org sample questions](https://ielts.org/take-a-test/preparation-resources/sample-test-questions) và [British Council practice tests](https://takeielts.britishcouncil.org/prepare/ielts-free-practice-mock-tests) nên được dẫn link cho người học luyện trên trang chính thức. Không tự tải và đăng lại đề, audio hoặc đáp án của họ khi chưa có quyền tái sử dụng.
+
+## Bản thử đang chạy trên sáu màn kỹ năng
+
+`/app/vocabulary`, `/app/grammar`, `/app/reading`, `/app/listening`, `/app/writing`, `/app/speaking` dùng chung API đăng nhập `/api/ielts/live`. Endpoint đọc tối đa 12 bài toàn văn **đã xuất bản và không nhạy cảm** trong kho Daily News. Kho này có đồng bộ tự động khoảng 30 phút/lần; mỗi lần mở màn học, danh sách bài được đọc lại từ database. LibriVox API được làm mới tối đa mỗi 6 giờ; kiểm tra liên kết audio bằng HEAD và bỏ file trả lỗi. World Bank API được làm mới tối đa mỗi 7 ngày vì chuỗi chỉ số cập nhật theo năm. Nếu một nguồn lỗi, hai nguồn khác vẫn có thể hoạt động và giao diện hiện cảnh báo nguồn lỗi.
+
+| Màn | Chức năng của bản thử | Chấm và lưu |
+| --- | --- | --- |
+| Vocabulary | Chọn từ dài xuất hiện trong bài mới, tra định nghĩa/IPA từ endpoint từ điển hiện có, lưu ví dụ có nguồn vào sổ tay. | Không tự chấm nghĩa do người học tự viết; từ lưu trong `notebook_entries`. Kho flashcard cũ ở `/app/vocabulary/overview`. |
+| Grammar | Tìm câu thật có từ nối thuộc ngân hàng quy tắc đã xác định; bài điền đúng từ nối gốc. | So khớp một từ, lưu kết quả vào sổ tay. Đây là nhận diện cấu trúc, chưa đo đầy đủ năng lực ngữ pháp IELTS. |
+| Reading | Hiện toàn văn đã có quyền; tạo tối đa 5 câu sentence completion bằng cách xóa một từ trong câu nguồn. | So khớp một từ, lưu kết quả vào sổ tay. Chưa phải bài Academic Reading 3 đoạn/40 câu. |
+| Listening | Chọn tối đa 4 bản ghi tiếng Anh mới có audio còn truy cập được từ LibriVox, nghe và viết note. | Lưu note; không chấm nghe hiểu tự động vì chưa có transcript khớp audio. |
+| Writing | Task 1 từ chuỗi dân số Việt Nam/Thái Lan của World Bank; Task 2 theo chủ đề bài mới. Có giờ tập, đếm từ và lưu bài. | Không chấm band tự động cho câu trả lời mở; lưu bài trong sổ tay. |
+| Speaking | Cue card Part 2 từ bài mới, Part 3 follow-up, giờ tập, ghi âm và nghe lại. | Ghi âm chỉ tồn tại trong phiên trình duyệt; phần tự nhận xét lưu ở sổ tay. Chưa chấm phát âm/band. |
+
+Để chuyển bản thử thành kho bài IELTS đầy đủ cần ngân hàng câu hỏi được biên soạn/duyệt (đặc biệt T/F/NG, Listening có transcript đúng thời điểm), nguồn audio theo tình huống thi, lịch sử bài làm chuyên biệt, và quy trình đánh giá Writing/Speaking bởi giáo viên. Dữ liệu bên ngoài được cập nhật tự động **không đồng nghĩa** câu hỏi IELTS chất lượng có thể tạo hay chấm tự động từ mọi bản tin.
