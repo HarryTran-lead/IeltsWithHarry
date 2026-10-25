@@ -10,8 +10,8 @@ import { useStudyPresence } from "./study-presence";
 type Bounds = { x: number; y: number; width: number; height: number };
 type Gesture = { kind: "drag" | "resize"; startX: number; startY: number; bounds: Bounds };
 
-const small = { width: 390, height: 530 };
-const large = { width: 610, height: 700 };
+const small = { width: 390, height: 800 };
+const large = { width: 610, height: 900 };
 
 function clampBounds(bounds: Bounds): Bounds {
   const width = Math.min(bounds.width, Math.max(280, window.innerWidth - 16));
@@ -26,9 +26,9 @@ function clampBounds(bounds: Bounds): Bounds {
 
 function initialBounds(): Bounds {
   const mobile = window.innerWidth <= 700;
-  const bottomGap = mobile ? 145 : 115;
+  const bottomGap = mobile ? 80 : 24;
   const width = Math.min(mobile ? 330 : small.width, window.innerWidth - 16);
-  const height = Math.min(mobile ? 430 : small.height, window.innerHeight - bottomGap - 8);
+  const height = Math.min(small.height, window.innerHeight - (mobile ? 160 : 144));
   return clampBounds({ x: window.innerWidth - width - 24, y: window.innerHeight - height - bottomGap, width, height });
 }
 
