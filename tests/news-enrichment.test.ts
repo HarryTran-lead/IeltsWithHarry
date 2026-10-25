@@ -208,7 +208,14 @@ describe("illustration search checked by AI vision", () => {
   it("never offers unlicensed or third-party images to the AI", async () => {
     const { fetcher, seen } = fetcherFor([commonsPage("All rights reserved")], [nasaItem({ secondary_creator: "Intuitive Machines" })], { best: 1, fit: 10 });
     expect(await run(() => findNewsIllustration("Artemis spacecraft Moon mission", fetcher))).toBeNull();
-    expect(seen.prompts).toHaveLength(0);
+    // Only the small visual-subject request runs; no image reaches the vision request.
+    expect(seen.prompts.filter((prompt) => prompt.includes("inlineData"))).toHaveLength(0);
+  });
+  it("asks for a visual subject when the article has none stored", async () => {
+    const { fetcher, seen } = fetcherFor([commonsPage("Public domain")], [], { best: 1, fit: 9 });
+    await run(() => findNewsIllustration("Artemis spacecraft Moon mission", fetcher, { body: "The spacecraft flew around the Moon." }));
+    expect(seen.prompts[0]).toContain("photographable subject");
+    expect(seen.prompts[1]).toContain("inlineData");
   });
   it("offers attributed Openverse photos from Flickr with a small preview", async () => {
     const { fetcher, seen } = fetcherFor([], [], { best: 1, fit: 9 }, [flickr("by"), flickr("by-nc", { url: "https://live.staticflickr.com/1/3_def_b.jpg" }), flickr("by", { creator: "", url: "https://live.staticflickr.com/1/4_ghi_b.jpg" })]);
