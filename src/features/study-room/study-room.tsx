@@ -23,7 +23,7 @@ function StudyScene() {
     <div className="study-scene-stars">✦ <span>✦</span> ✦</div>
     <div className="study-lamp"><span /></div>
     <div className="study-student"><HarryMascot size={165} /><span className="study-headphones"><Headphones size={29} /></span></div>
-    <div className="study-desk"><div className="study-book"><span /><span /></div><div className="study-mug">☕</div></div>
+    <div className="study-desk"><div className="study-book"><span /><span /></div><span className="study-pencil" /><div className="study-mug">☕</div></div>
     <div className="study-wave" aria-hidden="true">{Array.from({ length: 12 }, (_, index) => <i key={index} />)}</div>
     <span className="study-scene-caption">STUDY WITH HARRY · 24/7 FOCUS VIBES</span>
   </div>;
