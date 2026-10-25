@@ -9,11 +9,9 @@ import { ContentLab } from "@/features/content-lab/content-lab";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { NotebookPage } from "@/features/notebook/notebook-ui";
 import { NewsPortal } from "@/features/news/news-portal";
-import { StudyRoom } from "@/features/study-room/study-room";
-import { StudyPresenceProvider } from "@/features/study-room/study-presence";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
-  return <DemoProvider><NotebookProvider><StudyPresenceProvider><PortalContent canManage={canManage} /></StudyPresenceProvider></NotebookProvider></DemoProvider>;
+  return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
 }
 
 function PortalContent({ canManage }: { canManage: boolean }) {
@@ -33,7 +31,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : section === "news" ? (
           <NewsPortal />
         ) : section === "study-together" ? (
-          <StudyRoom canManage={canManage} />
+          <div className="study-room-placeholder" aria-hidden="true" />
         ) : (
           <LearningPage section={section} />
         )}

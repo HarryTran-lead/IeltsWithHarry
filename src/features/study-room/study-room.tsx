@@ -33,7 +33,7 @@ function StudyScene() {
 export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentUser, setCurrentUser] = useState("");
-  const { online, status, subscribeMessages } = useStudyPresence();
+  const { online, status, sessionActive, setSessionActive, studySeconds, subscribeMessages } = useStudyPresence();
   const [error, setError] = useState("");
   const [draft, setDraft] = useState("");
   const [sending, setSending] = useState(false);
@@ -47,11 +47,9 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
   const [focusMinutes, setFocusMinutes] = useState(25);
   const [secondsLeft, setSecondsLeft] = useState(25 * 60);
   const [timerRunning, setTimerRunning] = useState(false);
-  const [studySeconds, setStudySeconds] = useState(0);
   const focusEndsAt = useRef<number | null>(null);
   const player = useRef<LofiPlayer | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
-  const endRef = useRef<HTMLDivElement | null>(null);
   const supabase = useRef(!demoMode && process.env.NEXT_PUBLIC_SUPABASE_URL ? createClient() : null);
 
   useEffect(() => {
@@ -91,7 +89,7 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
 
   useEffect(() => {
     const element = listRef.current;
-    if (!element || element.scrollHeight - element.scrollTop - element.clientHeight < 180) endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    if (element && element.scrollHeight - element.scrollTop - element.clientHeight < 180) element.scrollTo({ top: element.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
   useEffect(() => {
@@ -106,23 +104,6 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
     }, 250);
     return () => clearInterval(timer);
   }, [timerRunning]);
-
-  useEffect(() => {
-    if (!currentUser && !demoMode) return;
-    const today = new Date().toLocaleDateString("sv-SE");
-    const key = `study-room-seconds:${currentUser || "demo"}:${today}`;
-    const saved = Number(window.localStorage.getItem(key));
-    const load = window.setTimeout(() => setStudySeconds(Number.isFinite(saved) && saved > 0 ? saved : 0), 0);
-    const timer = window.setInterval(() => {
-      if (document.visibilityState !== "visible") return;
-      const currentKey = `study-room-seconds:${currentUser || "demo"}:${new Date().toLocaleDateString("sv-SE")}`;
-      const previous = Number(window.localStorage.getItem(currentKey));
-      const next = (Number.isFinite(previous) && previous > 0 ? previous : 0) + 1;
-      window.localStorage.setItem(currentKey, String(next));
-      setStudySeconds(next);
-    }, 1000);
-    return () => { window.clearTimeout(load); window.clearInterval(timer); };
-  }, [currentUser]);
 
   useEffect(() => () => { void player.current?.stop(); }, []);
 
@@ -174,7 +155,7 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
     }
     setDraft("");
     setMessages((previous) => mergeMessage(previous, result.data as Message));
-    requestAnimationFrame(() => endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }));
+    requestAnimationFrame(() => listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" }));
   }
 
   async function loadOlder() {
@@ -198,7 +179,7 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
   }
 
   return <main className="study-room-page">
-    <div className="study-room-heading"><div><span className="study-eyebrow"><span className="study-live-dot" /> PHÒNG HỌC TRỰC TIẾP</span><h1>Cùng học, cùng tiến bộ <span>✦</span></h1></div><div className="study-room-stats"><div className="study-online"><UsersRound size={18} /><strong>{online ?? "…"}</strong><span>đang học cùng</span></div><div className="study-elapsed"><Clock3 size={18} /><strong>{String(Math.floor(studySeconds / 60)).padStart(2, "0")}:{String(studySeconds % 60).padStart(2, "0")}</strong><span>đã học hôm nay</span></div></div></div>
+    <div className="study-room-heading"><div><span className="study-eyebrow"><span className="study-live-dot" /> PHÒNG HỌC TRỰC TIẾP</span><h1>Cùng học, cùng tiến bộ <span>✦</span></h1></div><div className="study-room-stats"><div className="study-online"><UsersRound size={18} /><strong>{online ?? "…"}</strong><span>đang học cùng</span></div><div className="study-elapsed"><Clock3 size={18} /><strong>{String(Math.floor(studySeconds / 60)).padStart(2, "0")}:{String(studySeconds % 60).padStart(2, "0")}</strong><span>đã học hôm nay</span></div><button type="button" className="study-session-toggle" onClick={() => setSessionActive(!sessionActive)}>{sessionActive ? <Pause size={15} /> : <Play size={15} />}{sessionActive ? "Dừng học" : "Tiếp tục học"}</button></div></div>
     <section className="study-control-bar" aria-label="Chọn nhạc và cài đặt thời gian">
       <div className="study-control-top"><div className="study-video-tabs" role="group" aria-label="Chọn không gian học">
         <button type="button" className={videoMode === "youtube" ? "selected" : ""} onClick={() => void selectVideo("youtube")} aria-pressed={videoMode === "youtube"}>● YouTube live</button>
@@ -217,7 +198,7 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
         </section>
       </div>
       <section className="study-chat-card" aria-label="Phòng chat cùng học"><header className="study-chat-header"><div className="study-chat-icon"><MessageCircle size={22} /></div><div><strong>Phòng chat chung</strong><span>{demoMode ? "Bản xem trước" : status === "live" ? "Đang kết nối trực tiếp" : status === "connecting" ? "Đang kết nối…" : "Chưa có kết nối trực tiếp"}</span></div><span className={`study-chat-status ${status}`} /></header>
-        <div className="study-chat-messages" ref={listRef} aria-live="polite">{hasOlder && <button className="study-older" type="button" onClick={() => void loadOlder()} disabled={loadingOlder}>{loadingOlder ? "Đang tải…" : "Xem tin nhắn cũ"}</button>}{messages.length === 0 && <div className="study-chat-empty"><HarryMascot size={100} /><h2>Chào mừng vào phòng!</h2><p>Chia sẻ mục tiêu học hôm nay hoặc gửi lời chào tới mọi người nhé.</p></div>}{messages.map((item) => <article className={`study-message ${item.user_id === currentUser ? "mine" : ""}`} key={item.id}><span className="study-message-avatar">{item.display_name.slice(0, 1).toUpperCase()}</span><div><div className="study-message-meta"><strong>{item.user_id === currentUser ? "Bạn" : item.display_name}</strong><time dateTime={item.created_at}>{new Date(item.created_at).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}</time>{(item.user_id === currentUser || canManage) && <button type="button" onClick={() => void deleteMessage(item.id)} aria-label="Xóa tin nhắn"><Trash2 size={13} /></button>}</div><p>{item.body}</p></div></article>)}<div ref={endRef} /></div>
+        <div className="study-chat-messages" ref={listRef} aria-live="polite">{hasOlder && <button className="study-older" type="button" onClick={() => void loadOlder()} disabled={loadingOlder}>{loadingOlder ? "Đang tải…" : "Xem tin nhắn cũ"}</button>}{messages.length === 0 && <div className="study-chat-empty"><HarryMascot size={100} /><h2>Chào mừng vào phòng!</h2><p>Chia sẻ mục tiêu học hôm nay hoặc gửi lời chào tới mọi người nhé.</p></div>}{messages.map((item) => <article className={`study-message ${item.user_id === currentUser ? "mine" : ""}`} key={item.id}><span className="study-message-avatar">{item.display_name.slice(0, 1).toUpperCase()}</span><div><div className="study-message-meta"><strong>{item.user_id === currentUser ? "Bạn" : item.display_name}</strong><time dateTime={item.created_at}>{new Date(item.created_at).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}</time>{(item.user_id === currentUser || canManage) && <button type="button" onClick={() => void deleteMessage(item.id)} aria-label="Xóa tin nhắn"><Trash2 size={13} /></button>}</div><p>{item.body}</p></div></article>)}</div>
         {error && <p className="study-chat-error" role="alert">{error}</p>}
         {demoMode ? <div className="study-chat-demo">Đăng ký tài khoản để tham gia trò chuyện trực tiếp.</div> : <form className="study-chat-compose" onSubmit={(event) => void sendMessage(event)}><label className="sr-only" htmlFor="study-message">Tin nhắn của bạn</label><input id="study-message" value={draft} onChange={(event) => setDraft(event.target.value)} placeholder="Viết lời chào hoặc mục tiêu học tập…" maxLength={500} autoComplete="off" disabled={!currentUser || sending} /><button type="submit" aria-label="Gửi tin nhắn" disabled={!draft.trim() || !currentUser || sending}><Send size={18} /></button></form>}<p className="study-chat-note">Tôn trọng nhau và giữ cuộc trò chuyện phù hợp với việc học.</p>
       </section>
