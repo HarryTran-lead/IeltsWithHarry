@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Check, GripVertical, Pencil, Plus, Trash2, X } from "lucide-react";
+import { CalendarDays, Check, GripVertical, Pencil, Plus, Trash2, X } from "lucide-react";
+import { HeadIcon } from "@/components/ui/head-icon";
 import {
   type Skill,
   type StudyTask,
@@ -301,5 +302,5 @@ export function PlannerMini() {
 }
 
 function CalendarIcon() {
-  return <span className="emoji-icon">🗓️</span>;
+  return <HeadIcon icon={CalendarDays} />;
 }

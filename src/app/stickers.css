@@ -1,0 +1,205 @@
+/* Sticker system: die-cut stickers, washi tape, doodles and highlighter marks. */
+/* Zero specificity so a single class elsewhere can position or hide a sticker. */
+:where(.sticker) {
+  position: relative;
+  display: inline-block;
+}
+.sticker {
+  --tilt: 0deg;
+  --delay: 0ms;
+  flex: none;
+  rotate: var(--tilt);
+  filter: drop-shadow(0 1px 0.5px rgba(16, 35, 63, 0.14)) drop-shadow(0 6px 10px rgba(16, 35, 63, 0.13));
+  transition:
+    rotate 0.55s var(--ease-spring),
+    scale 0.55s var(--ease-spring),
+    translate 0.55s var(--ease-spring),
+    filter 0.35s var(--ease-out);
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: auto;
+}
+.sticker svg {
+  display: block;
+  overflow: visible;
+}
+.sticker-text {
+  font-family: var(--font-hand), "Patrick Hand", cursive;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.sticker:hover {
+  rotate: calc(var(--tilt) * -0.35);
+  scale: 1.08;
+  translate: 0 -3px;
+  filter: drop-shadow(0 2px 1px rgba(16, 35, 63, 0.12)) drop-shadow(0 14px 18px rgba(16, 35, 63, 0.18));
+}
+.sticker.is-popping {
+  animation: sticker-pop 0.7s var(--ease-spring) backwards;
+  animation-delay: var(--delay);
+}
+.sticker.is-floating {
+  animation:
+    sticker-pop 0.7s var(--ease-spring) backwards var(--delay),
+    sticker-float 6.5s ease-in-out calc(var(--delay) + 0.7s) infinite;
+}
+.sticker.is-floating:hover {
+  animation-play-state: running, paused;
+}
+@keyframes sticker-pop {
+  from {
+    opacity: 0;
+    scale: 0.45;
+    rotate: calc(var(--tilt) - 18deg);
+  }
+}
+@keyframes sticker-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+/* Sticker positioned in a corner or free space of a parent with position: relative. */
+.sticker-spot {
+  position: absolute;
+  z-index: 2;
+}
+
+/* Washi tape strip pinned to the top of a card. */
+.washi {
+  position: absolute;
+  z-index: 3;
+  width: 92px;
+  height: 24px;
+  top: -11px;
+  left: 50%;
+  translate: -50% 0;
+  rotate: -3deg;
+  opacity: 0.9;
+  clip-path: polygon(0 0, 100% 0, 97% 17%, 100% 33%, 97% 50%, 100% 67%, 97% 83%, 100% 100%, 0 100%, 3% 83%, 0 67%, 3% 50%, 0 33%, 3% 17%);
+}
+.washi-teal {
+  background: repeating-linear-gradient(-45deg, #9fe0e2 0 7px, #b9eaeb 7px 14px);
+}
+.washi-sun {
+  background: repeating-linear-gradient(-45deg, #ffe08a 0 7px, #ffeab0 7px 14px);
+}
+.washi-coral {
+  background: radial-gradient(circle at 6px 6px, #fff6 2px, transparent 2.5px) 0 0 / 12px 12px, #ffb3a9;
+}
+.washi-lilac {
+  background: repeating-linear-gradient(90deg, #cdc2ff 0 6px, #ddd5ff 6px 12px);
+}
+
+/* Hand-drawn doodles. */
+.doodle {
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.doodle-dots {
+  fill: currentColor;
+  stroke: none;
+}
+.doodle-underline path,
+.doodle-arrow path,
+.doodle-swirl path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: doodle-draw 1.1s var(--ease-out) 0.35s forwards;
+}
+@keyframes doodle-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Highlighter swipe under important words. */
+.hl {
+  position: relative;
+  white-space: nowrap;
+  background: linear-gradient(transparent 58%, var(--hl, #ffd95e) 58% 92%, transparent 92%) no-repeat 0 0 / 0% 100%;
+  animation: hl-swipe 0.9s var(--ease-out) 0.25s forwards;
+  border-radius: 3px;
+  padding: 0 0.08em;
+  margin: 0 -0.08em;
+}
+.hl-teal {
+  --hl: #a8e8e6;
+}
+.hl-coral {
+  --hl: #ffc2b8;
+}
+@keyframes hl-swipe {
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+/* Handwritten margin note. */
+.hand-note {
+  font-family: var(--font-hand), "Patrick Hand", cursive;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  color: var(--teal-strong);
+  rotate: -4deg;
+}
+
+/* Small cluster of stickers that fills an empty hero corner. */
+.sticker-cluster {
+  position: relative;
+  flex: none;
+  width: 220px;
+  height: 170px;
+}
+.sticker-cluster .sticker {
+  position: absolute;
+}
+.sticker-cluster .sticker:nth-child(1) {
+  inset: 0;
+  margin: auto;
+}
+.sticker-cluster .sticker:nth-child(2) {
+  left: 4px;
+  top: 6px;
+}
+.sticker-cluster .sticker:nth-child(3) {
+  right: 0;
+  bottom: 4px;
+}
+.sticker-cluster .sticker:nth-child(4) {
+  right: 10px;
+  top: 0;
+}
+.news-hero.compact .sticker-cluster {
+  width: 190px;
+  height: 120px;
+}
+@media (max-width: 760px) {
+  .sticker-cluster {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sticker,
+  .sticker.is-floating,
+  .sticker.is-popping,
+  .doodle path,
+  .hl {
+    animation: none !important;
+  }
+  .doodle path {
+    stroke-dashoffset: 0;
+  }
+  .hl {
+    background-size: 100% 100%;
+  }
+}

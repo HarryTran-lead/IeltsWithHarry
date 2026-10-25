@@ -1,0 +1,109 @@
+/* Shared motion: page entrances, staggered reveals, hover lift and overlays. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    scale: 0.96;
+    translate: 0 -4px;
+  }
+}
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    scale: 0.97;
+    translate: 0 12px;
+  }
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Each portal section fades up when it opens; direct children follow in sequence. */
+.page-enter {
+  animation: rise-in 0.5s var(--ease-out) backwards;
+}
+.stagger > * {
+  animation: rise-in 0.55s var(--ease-out) backwards;
+}
+.stagger > *:nth-child(2) { animation-delay: 60ms; }
+.stagger > *:nth-child(3) { animation-delay: 120ms; }
+.stagger > *:nth-child(4) { animation-delay: 180ms; }
+.stagger > *:nth-child(5) { animation-delay: 240ms; }
+.stagger > *:nth-child(6) { animation-delay: 300ms; }
+.stagger > *:nth-child(7) { animation-delay: 360ms; }
+.stagger > *:nth-child(n + 8) { animation-delay: 420ms; }
+
+/* Interactive cards lift with a soft spring. */
+.lift {
+  transition:
+    translate 0.4s var(--ease-spring),
+    box-shadow 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out),
+    background-color 0.3s var(--ease-out);
+}
+.lift:hover {
+  translate: 0 -3px;
+  box-shadow: var(--shadow-lg);
+}
+.lift:active {
+  translate: 0 -1px;
+}
+
+/* Popovers, drawers and modals. */
+.small-popover,
+.search-results {
+  animation: pop-in 0.22s var(--ease-out);
+  transform-origin: top right;
+}
+.modal-backdrop,
+.notebook-backdrop,
+.sidebar-backdrop {
+  animation: fade-in 0.2s ease-out;
+}
+.task-modal,
+.notebook-drawer {
+  animation: sheet-in 0.32s var(--ease-out);
+}
+
+/* Loading placeholder. */
+.skeleton {
+  border-radius: 12px;
+  background: linear-gradient(90deg, #eceee8 0%, #f6f7f3 40%, #eceee8 80%) 0 0 / 200% 100%;
+  animation: shimmer 1.3s linear infinite;
+}
+
+/* Sections on public pages reveal as they scroll into view where supported. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: rise-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .stagger > *,
+  .reveal,
+  .small-popover,
+  .search-results,
+  .task-modal,
+  .notebook-drawer {
+    animation: none !important;
+  }
+  .lift:hover {
+    translate: none;
+  }
+}

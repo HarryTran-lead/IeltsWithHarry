@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
-import { CalendarDays, Plus, Search, SlidersHorizontal } from "lucide-react";
+import { CalendarDays, CircleCheck, ClipboardList, Plus, Search, SlidersHorizontal, Target } from "lucide-react";
+import { Sticker } from "@/components/stickers/stickers";
 import { type Skill, todayISO } from "@/lib/demo-data";
 import { useDemo } from "@/features/demo/demo-store";
 import { TaskList, TaskModal } from "./planner-widgets";
@@ -56,32 +57,34 @@ export function PlannerPage() {
       <div className="page-title-row">
         <div>
           <span className="eyebrow">YOUR STUDY SPACE</span>
-          <h1>
-            Study Planner <span>✦</span>
-          </h1>
+          <h1>Study Planner</h1>
           <p>Shape a routine that works for you, one small task at a time.</p>
         </div>
-        <button className="button primary" onClick={() => setModal(true)}>
-          <Plus size={18} /> Add a Task
-        </button>
+        <div className="page-title-actions">
+          <Sticker name="calendar" size={58} tilt={-8} float />
+          <Sticker name="pencil" size={44} tilt={14} delay={150} />
+          <button className="button primary" onClick={() => setModal(true)}>
+            <Plus size={18} /> Add a Task
+          </button>
+        </div>
       </div>
       <div className="planner-summary">
         <div>
-          <span className="summary-icon coral">📝</span>
+          <span className="summary-icon coral"><ClipboardList size={20} /></span>
           <div>
             <strong>{tasks.length}</strong>
             <small>Total tasks</small>
           </div>
         </div>
         <div>
-          <span className="summary-icon teal">✓</span>
+          <span className="summary-icon teal"><CircleCheck size={20} /></span>
           <div>
             <strong>{completed}</strong>
             <small>Completed</small>
           </div>
         </div>
         <div>
-          <span className="summary-icon purple">🎯</span>
+          <span className="summary-icon purple"><Target size={20} /></span>
           <div>
             <strong>
               {tasks.filter((t) => t.date === today && !t.completed).length}

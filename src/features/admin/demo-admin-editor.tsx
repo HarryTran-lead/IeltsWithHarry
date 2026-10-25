@@ -1,14 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BookOpenText, CheckCircle2, FilePenLine, LogOut, Upload } from "lucide-react";
+import { BookOpenText, CheckCircle2, Eye, FileJson, FilePenLine, Headphones, Languages, LayoutDashboard, ListChecks, Upload } from "lucide-react";
 import sample from "@/content/demo-pack.json";
+import { Sticker } from "@/components/stickers/stickers";
+import { HeadIcon } from "@/components/ui/head-icon";
 import { authoredPackSchema, type AuthoredPack } from "@/lib/authored-content";
 import { DEMO_DRAFT_PACK_KEY, DEMO_PUBLISHED_PACK_KEY } from "@/lib/demo-content";
+import { AdminShell } from "./admin-shell";
 
 const sampleText = JSON.stringify(sample, null, 2);
+const sections = [
+  { id: "overview", label: "Tổng quan", icon: LayoutDashboard },
+  { id: "editor", label: "Biên tập nội dung", icon: FilePenLine },
+  { id: "preview", label: "Xem trước", icon: Eye },
+] as const;
 
 export function DemoAdminEditor() {
   const router = useRouter();
@@ -17,6 +24,7 @@ export function DemoAdminEditor() {
   const [preview, setPreview] = useState<AuthoredPack | null>(authoredPackSchema.parse(sample));
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const [active, setActive] = useState<(typeof sections)[number]["id"]>("overview");
 
   useEffect(() => {
     void Promise.resolve().then(() => {
@@ -64,10 +72,39 @@ export function DemoAdminEditor() {
     router.push("/"); router.refresh();
   }
 
-  return <div className="demo-admin"><aside className="demo-admin-sidebar"><Link href="/admin" className="demo-admin-brand">★ IeltsWithHarry <span>ADMIN</span></Link><nav><a href="#overview">Tổng quan</a><a href="#editor">Biên tập nội dung</a><a href="#preview">Xem trước</a></nav><button type="button" onClick={() => void signOut()}><LogOut size={17} /> Thoát admin demo</button></aside><main>
-    <header id="overview" className="demo-admin-hero"><span className="eyebrow">KHU QUẢN TRỊ · BẢN DEMO</span><h1>Quản lý nội dung học</h1><p>Admin soạn gói bài học, lưu nháp và xuất bản. Nội dung xuất bản sẽ xuất hiện ở Content Lab khi chuyển sang vai trò học viên trên cùng trình duyệt.</p><div className="demo-admin-status"><span><FilePenLine size={19} /> Nháp: {preview?.title ?? "Chưa có"}</span><span><CheckCircle2 size={19} /> Xuất bản: {published?.title ?? "Gói mẫu mặc định"}</span></div></header>
-    <section id="editor" className="card demo-admin-card"><div className="demo-admin-card-head"><div><span className="eyebrow">CONTENT EDITOR</span><h2>Gói nội dung JSON</h2><p>Gói này chứa từ vựng, câu hỏi, đáp án, bài đọc, kịch bản nghe, đề Writing và Speaking.</p></div><Upload size={30} /></div><textarea aria-label="Gói nội dung JSON" spellCheck={false} value={jsonText} onChange={(event) => setJsonText(event.target.value)} /><div className="demo-admin-actions"><button type="button" className="button subtle" onClick={() => { setJsonText(sampleText); setMessage("Đã tải mẫu vào khung soạn. Nhấn lưu hoặc xuất bản để áp dụng."); }}>Tải nội dung mẫu</button><button type="button" className="button subtle" onClick={saveDraft}>Lưu nháp</button><button type="button" className="button primary" onClick={publish}>Xuất bản demo</button>{published && <button type="button" className="button subtle" onClick={unpublish}>Gỡ xuất bản</button>}</div>{error && <p className="form-error" role="alert">{error}</p>}{message && <p className="demo-admin-message" role="status">{message}</p>}</section>
-    <section id="preview" className="card demo-admin-card"><div className="demo-admin-card-head"><div><span className="eyebrow">PREVIEW</span><h2>Xem cấu trúc trước khi xuất bản</h2></div><BookOpenText size={30} /></div><button type="button" className="button subtle" onClick={validate}>Kiểm tra JSON và xem trước</button>{preview && <div className="demo-admin-preview"><h3>{preview.title}</h3><p>{preview.level}</p><div><span>{preview.vocabulary.length} từ vựng</span><span>{preview.grammar.questions.length} câu Grammar</span><span>{preview.reading.questions.length} câu Reading</span><span>{preview.listening.questions.length} câu Listening</span><span>1 đề Writing</span><span>1 đề Speaking</span></div></div>}</section>
+  const groups = [{ label: "Quản lý nội dung", items: sections.map((item) => ({ href: `#${item.id}`, label: item.label, icon: item.icon, active: active === item.id, onClick: () => setActive(item.id) })) }];
+  const lines = jsonText.split("\n").length;
+  const sizeKb = (new Blob([jsonText]).size / 1024).toFixed(1);
+
+  return <AdminShell groups={groups} section="Nội dung demo" title="Quản lý nội dung học" description="Admin soạn gói bài học, lưu nháp và xuất bản. Nội dung xuất bản sẽ xuất hiện ở Content Lab khi chuyển sang vai trò học viên trên cùng trình duyệt." mode="demo" onSignOut={() => void signOut()} actions={<button type="button" className="button primary" onClick={publish}><Upload size={16} /> Xuất bản demo</button>}>
+    <section id="overview" className="admin-demo-overview">
+      <div className="admin-stats stagger">
+        <article><HeadIcon icon={Languages} tone="mint" /><span>Từ vựng</span><strong>{preview?.vocabulary.length ?? 0}</strong><small>Thẻ từ trong gói</small></article>
+        <article><HeadIcon icon={ListChecks} tone="sky" /><span>Câu Grammar</span><strong>{preview?.grammar.questions.length ?? 0}</strong><small>Có đáp án và giải thích</small></article>
+        <article><HeadIcon icon={BookOpenText} tone="coral" /><span>Câu Reading</span><strong>{preview?.reading.questions.length ?? 0}</strong><small>Gắn với bài đọc</small></article>
+        <article><HeadIcon icon={Headphones} tone="lavender" /><span>Câu Listening</span><strong>{preview?.listening.questions.length ?? 0}</strong><small>Kèm kịch bản nghe</small></article>
+      </div>
+      <div className="admin-status-grid">
+        <div className="admin-status-card"><span className="status-pill draft"><i aria-hidden="true" />Bản nháp</span><strong>{preview?.title ?? "Chưa có"}</strong><small>{preview?.level ?? "Lưu nháp để giữ gói đang soạn"}</small></div>
+        <div className="admin-status-card"><span className="status-pill live"><i aria-hidden="true" />Đang xuất bản</span><strong>{published?.title ?? "Gói mẫu mặc định"}</strong><small>{published ? published.level : "Học viên đang thấy gói mẫu"}</small></div>
+        <Sticker name="stamp" label={published ? "LIVE" : "DEMO"} size={86} tilt={-10} className="admin-status-sticker" />
+      </div>
+    </section>
+
+    <section id="editor" className="card demo-admin-card">
+      <div className="demo-admin-card-head"><div><span className="eyebrow">CONTENT EDITOR</span><h2>Gói nội dung JSON</h2><p>Gói này chứa từ vựng, câu hỏi, đáp án, bài đọc, kịch bản nghe, đề Writing và Speaking.</p></div><CheckCircle2 size={22} className={error ? "demo-admin-state invalid" : "demo-admin-state"} /></div>
+      <div className="code-editor">
+        <div className="code-editor-bar"><span className="code-dots" aria-hidden="true"><i /><i /><i /></span><FileJson size={15} /> demo-pack.json<span className="code-editor-meta">{lines} dòng · {sizeKb} KB</span></div>
+        <textarea aria-label="Gói nội dung JSON" spellCheck={false} value={jsonText} onChange={(event) => setJsonText(event.target.value)} />
+      </div>
+      <div className="demo-admin-actions"><button type="button" className="button subtle" onClick={() => { setJsonText(sampleText); setMessage("Đã tải mẫu vào khung soạn. Nhấn lưu hoặc xuất bản để áp dụng."); }}>Tải nội dung mẫu</button><button type="button" className="button subtle" onClick={saveDraft}>Lưu nháp</button><button type="button" className="button primary" onClick={publish}>Xuất bản demo</button>{published && <button type="button" className="button subtle" onClick={unpublish}>Gỡ xuất bản</button>}</div>
+      {error && <p className="form-error" role="alert">{error}</p>}{message && <p className="demo-admin-message" role="status">{message}</p>}
+    </section>
+
+    <section id="preview" className="card demo-admin-card">
+      <div className="demo-admin-card-head"><div><span className="eyebrow">PREVIEW</span><h2>Xem cấu trúc trước khi xuất bản</h2><p>Kiểm tra JSON để chắc chắn mọi phần đều hợp lệ trước khi học viên nhìn thấy.</p></div><button type="button" className="button subtle" onClick={validate}><Eye size={16} /> Kiểm tra JSON</button></div>
+      {preview && <div className="demo-admin-preview"><Sticker name="book" size={58} tilt={-8} /><div><h3>{preview.title}</h3><p>{preview.level}</p><div><span>{preview.vocabulary.length} từ vựng</span><span>{preview.grammar.questions.length} câu Grammar</span><span>{preview.reading.questions.length} câu Reading</span><span>{preview.listening.questions.length} câu Listening</span><span>1 đề Writing</span><span>1 đề Speaking</span></div></div></div>}
+    </section>
     <p className="demo-admin-disclaimer">Quyền admin demo chỉ điều khiển dữ liệu trong trình duyệt này. Admin thật cần tài khoản Supabase được cấp quyền; người học không thể tự cấp quyền admin trong chế độ live.</p>
-  </main></div>;
+  </AdminShell>;
 }

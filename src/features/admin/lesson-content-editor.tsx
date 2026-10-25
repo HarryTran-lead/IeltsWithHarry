@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { Sticker } from "@/components/stickers/stickers";
 import { createClient } from "@/lib/supabase/browser";
 import { VocabularyEditor } from "./vocabulary-editor";
 import { SkillMaterialEditor } from "./skill-material-editor";
@@ -79,7 +80,8 @@ export function LessonContentEditor({ lessons, onPublish }: { lessons: Lesson[];
 
   return <section className="card admin-list"><h2>Biên soạn bài học</h2>
     <label className="admin-select">Chọn bài học<select value={lessonId} onChange={(e) => { setContentLoading(true); setLessonId(e.target.value); resetQuestion(); }}><option value="">Chọn bài học</option>{lessons.map((lesson) => <option key={lesson.id} value={lesson.id}>{lesson.title}</option>)}</select></label>
-    {selected && <><div className="admin-lesson-actions"><span>{selected.published ? "Đã xuất bản" : "Bản nháp"}</span><Link href={`/app/lesson/${selected.slug}`} className="button subtle">Xem trước trang học viên ↗</Link><button type="button" className="button primary" onClick={() => onPublish(selected)}>{selected.published ? "Gỡ xuất bản" : "Xuất bản bài học"}</button></div>
+    {!selected && <div className="admin-empty-state admin-pick"><Sticker name="pencil" size={60} tilt={-10} /><div><h3>Chọn một bài để bắt đầu</h3><p>{lessons.length} bài {lessons[0]?.skill ?? ""} đang có. Chọn ở danh sách phía trên để nhập nội dung, câu hỏi và từ vựng.</p></div></div>}
+    {selected && <><div className="admin-lesson-actions"><span className={selected.published ? "status-pill live" : "status-pill draft"}><i aria-hidden="true" />{selected.published ? "Đã xuất bản" : "Bản nháp"}</span><Link href={`/app/lesson/${selected.slug}`} className="button subtle">Xem trước trang học viên ↗</Link><button type="button" className="button primary" onClick={() => onPublish(selected)}>{selected.published ? "Gỡ xuất bản" : "Xuất bản bài học"}</button></div>
       <SkillMaterialEditor key={selected.id} lessonId={selected.id} skill={selected.skill} />
       {contentLoading ? <p role="status">Đang tải câu hỏi và từ vựng…</p> : <>
       <details className="admin-extra"><summary>Khối nội dung bổ sung</summary><h3>Content blocks</h3>

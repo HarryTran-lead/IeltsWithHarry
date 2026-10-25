@@ -3,16 +3,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
+  Activity,
   ArrowRight,
   Check,
+  CircleCheck,
   Headphones,
+  Lightbulb,
+  Target,
+  TrendingUp,
   Mic,
   RotateCcw,
   Save,
   Square,
   Volume2,
 } from "lucide-react";
-import { HarryMascot } from "@/components/illustrations/harry";
+import { Sticker, type StickerName } from "@/components/stickers/stickers";
+import { HeadIcon } from "@/components/ui/head-icon";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
@@ -24,42 +30,42 @@ const modules = [
   {
     name: "Vocabulary",
     href: "/app/vocabulary",
-    icon: "🧠",
+    icon: "abc" as StickerName,
     description: "Learn IELTS vocabulary from current articles and review saved words.",
     color: "mint",
   },
   {
     name: "Grammar",
     href: "/app/grammar",
-    icon: "📝",
+    icon: "pencil" as StickerName,
     description: "Identify grammar patterns in current English articles.",
     color: "blue",
   },
   {
     name: "Reading",
     href: "/app/reading",
-    icon: "📖",
+    icon: "book" as StickerName,
     description: "Read source credited articles and answer IELTS style questions.",
     color: "coral",
   },
   {
     name: "Listening",
     href: "/app/listening",
-    icon: "🎧",
+    icon: "headphones" as StickerName,
     description: "Listen to updated public domain recordings and take notes.",
     color: "teal",
   },
   {
     name: "Writing",
     href: "/app/writing",
-    icon: "✏️",
+    icon: "chart" as StickerName,
     description: "Practise IELTS Academic Task 1 and Task 2 with current data.",
     color: "yellow",
   },
   {
     name: "Speaking",
     href: "/app/speaking",
-    icon: "🎙️",
+    icon: "mic" as StickerName,
     description: "Use IELTS cue cards, a timer and recording to practise speaking.",
     color: "purple",
   },
@@ -74,18 +80,20 @@ function PageIntro({
   eyebrow: string;
   title: string;
   description: string;
-  icon: string;
+  icon: StickerName;
 }) {
   return (
     <div className="learning-intro">
       <div>
         <span className="eyebrow">{eyebrow}</span>
-        <h1>
-          <span>{icon}</span> {title}
-        </h1>
+        <h1>{title}</h1>
         <p>{description}</p>
       </div>
-      <HarryMascot size={92} />
+      <div className="sticker-cluster">
+        <Sticker name="harry" size={104} tilt={-4} float />
+        <Sticker name={icon} size={64} tilt={-10} delay={140} />
+        <Sticker name="star" size={46} tilt={12} delay={240} />
+      </div>
     </div>
   );
 }
@@ -102,7 +110,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
             ? selected.description
             : "Seven milestones from your first English words to confident IELTS practice."
         }
-        icon="🗺️"
+        icon="globe"
       />
       <section className="card section-card">
         <div className="section-head">
@@ -148,7 +156,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
               href={module.href}
               className={`module-card ${module.color}`}
             >
-              <span>{module.icon}</span>
+              <Sticker name={module.icon} size={46} tilt={-6} />
               <h3>{module.name}</h3>
               <p>{module.description}</p>
               <b>
@@ -169,7 +177,7 @@ function LessonOverview() {
         eyebrow="CURRENT UNIT · IELTS STARTER"
         title="Technology & Digital Life"
         description="Explore everyday technology through vocabulary, examples and short practice tasks."
-        icon="💻"
+        icon="rocket"
       />
       <section className="card section-card lesson-overview">
         <div className="section-head">
@@ -196,7 +204,7 @@ function LessonOverview() {
               href={module.href}
               className={`module-card ${module.color}`}
             >
-              <span>{module.icon}</span>
+              <Sticker name={module.icon} size={46} tilt={-6} />
               <h3>{module.name}</h3>
               <p>{module.description}</p>
               <b>
@@ -223,7 +231,7 @@ function ExerciseResult({
 }) {
   return (
     <div className="result-panel">
-      <span className="result-sparkle">✨</span>
+      <Sticker name={correct === total ? "star" : "heart"} size={52} tilt={10} />
       <h3>
         {correct === total
           ? "Wonderful work!"
@@ -259,7 +267,7 @@ function VocabularyPage() {
         eyebrow="LEARN · PRACTICE · REVIEW"
         title="Vocabulary Lab"
         description="Five practical words for Technology & Digital Life. Flip each card to see the meaning and example."
-        icon="🧠"
+        icon="abc"
       />
       <div className="practice-layout">
         <section className="card practice-main">
@@ -303,7 +311,7 @@ function VocabularyPage() {
               className="button subtle"
               onClick={async () => { try { if (savedEntry) await removeEntry(savedEntry.id); else await addEntry({ kind: "word", title: card.word, body: "", meaningVi: card.meaning, example: card.example }); } catch { /* Notebook shows the error. */ } }}
             >
-              {savedEntry ? "★ Đã lưu vào sổ" : "☆ Lưu vào sổ tay"}
+              {savedEntry ? "Đã lưu vào sổ" : "Lưu vào sổ tay"}
             </button>
             <button
               className="button primary"
@@ -317,7 +325,7 @@ function VocabularyPage() {
           </div>
         </section>
         <aside className="card practice-side">
-          <h3>Study tip 💡</h3>
+          <h3><Lightbulb size={18} /> Study tip</h3>
           <p>
             Read the example aloud, then make one sentence about your own life.
           </p>
@@ -345,7 +353,7 @@ function GrammarPage() {
         eyebrow="GRAMMAR · BEGINNER"
         title="Present Simple"
         description="Use the present simple for habits and facts. The verb changes with he, she and it."
-        icon="📝"
+        icon="pencil"
       />
       <div className="practice-layout">
         <section className="card practice-main">
@@ -461,7 +469,7 @@ function ReadingPage() {
         eyebrow="READING · FOUNDATION"
         title="City Gardens"
         description="Practice finding key details in a short, original passage."
-        icon="📖"
+        icon="book"
       />
       <div className="reading-layout">
         <section className="card passage-card">
@@ -564,7 +572,7 @@ function ListeningPage() {
         eyebrow="LISTENING · BEGINNER"
         title="A weekly study routine"
         description="Listen for when Lily practices speaking. Audio is generated by your browser in this demo."
-        icon="🎧"
+        icon="headphones"
       />
       <div className="practice-layout">
         <section className="card practice-main">
@@ -680,7 +688,7 @@ function WritingPage() {
         eyebrow="WRITING · IELTS STARTER"
         title="Technology in daily life"
         description={demoMode ? "Write a short opinion paragraph. Your draft is stored in this browser." : "Write a short opinion paragraph. Your draft is saved to your account."}
-        icon="✏️"
+        icon="pencil"
       />
       <div className="practice-layout">
         <section className="card practice-main">
@@ -799,7 +807,7 @@ function SpeakingPage() {
         eyebrow="SPEAKING · IELTS STARTER"
         title="Talk about technology"
         description="Record a short answer, listen back, and reflect on your clarity and fluency."
-        icon="🎙️"
+        icon="mic"
       />
       <div className="practice-layout">
         <section className="card practice-main">
@@ -872,26 +880,26 @@ function ProgressPage() {
         eyebrow="YOUR JOURNEY"
         title="Learning progress"
         description={demoMode ? "A snapshot of the activity saved in this browser." : "A snapshot of the activity saved to your account."}
-        icon="📊"
+        icon="chart"
       />
       <div className="progress-stat-grid">
         <div className="card">
-          <span>✅</span>
+          <HeadIcon icon={CircleCheck} tone="mint" />
           <strong>{completed}</strong>
           <small>Tasks completed</small>
         </div>
         <div className="card">
-          <span>⚡</span>
+          <HeadIcon icon={Activity} tone="lavender" />
           <strong>{attempts.length}</strong>
           <small>Practice attempts</small>
         </div>
         <div className="card">
-          <span>🎯</span>
+          <HeadIcon icon={Target} tone="coral" />
           <strong>{goal}</strong>
           <small>Daily task goal</small>
         </div>
         <div className="card">
-          <span>📈</span>
+          <HeadIcon icon={TrendingUp} tone="teal" />
           <strong>{pct}%</strong>
           <small>Planner completion</small>
         </div>
@@ -934,7 +942,7 @@ function UnavailablePage({ title }: { title: string }) {
         eyebrow="COMING IN A LATER PHASE"
         title={title}
         description="This area needs account-backed progress and is not part of the current demo."
-        icon="✨"
+        icon="bulb"
       />
       <section className="card section-card">
         <h2>Keep learning in demo mode</h2>

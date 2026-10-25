@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Check } from "lucide-react";
+import { Sticker, Tape } from "@/components/stickers/stickers";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode, emailDeliveryReady, googleAuthEnabled, phoneAuthEnabled, supabaseConfigured } from "@/lib/runtime";
 
@@ -23,6 +25,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
   const [error, setError] = useState("");
   const inactive = demoMode || !supabaseConfigured;
   const titles = { login: "Đăng nhập", register: "Tạo tài khoản", forgot: "Khôi phục mật khẩu", reset: "Đặt mật khẩu mới" };
+  const leads = { login: "Chào mừng quay lại! Tiếp tục từ chỗ bạn đã dừng.", register: "Tạo tài khoản miễn phí để lưu tiến độ, sổ tay và kế hoạch học.", forgot: "Chúng tôi sẽ gửi hướng dẫn để bạn đặt lại mật khẩu.", reset: "Chọn một mật khẩu mới cho tài khoản của bạn." };
 
   useEffect(() => {
     if (new URLSearchParams(location.search).get("error") === "verification") {
@@ -120,8 +123,8 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
     finally { setBusy(false); }
   }
 
-  return <div className="public-container narrow">
-    <span className="eyebrow">IELTSWITHHARRY</span><h1>{titles[mode]}</h1>
+  return <div className="auth-layout"><div className="auth-main">
+    <span className="eyebrow">IELTSWITHHARRY</span><h1>{titles[mode]}</h1><p className="auth-lead">{leads[mode]}</p>
     {inactive ? <div className="card public-message">
       <p>{demoMode ? "Bản demo tách riêng Guest, học viên và admin. Phiên demo không tạo tài khoản thật; dữ liệu chỉ lưu trong trình duyệt này." : "Đăng nhập đang chờ kết nối Supabase project."}</p>
       {demoMode && (mode === "login" || mode === "register") && <div className="demo-role-actions"><button type="button" className="button primary" disabled={busy} onClick={() => void enterDemo("student")}>Vào trang học viên demo →</button><button type="button" className="button subtle" disabled={busy} onClick={() => void enterDemo("admin")}>Xem trang admin demo →</button></div>}
@@ -150,5 +153,18 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
         <p className="auth-links"><Link href="/login">Đăng nhập</Link> · <Link href="/register">Đăng ký</Link> · <Link href="/forgot-password">Quên mật khẩu?</Link></p>
       </>}
     </div>}
-  </div>;
+  </div>
+  <aside className="auth-aside" aria-hidden="true">
+    <Tape tone="sun" />
+    <Sticker name="bubble" label="Welcome!" size={98} tilt={8} delay={160} className="auth-bubble" />
+    <Sticker name="harry" size={150} tilt={-5} float className="auth-harry" />
+    <Sticker name="star" label="7.0+" size={66} tilt={-12} delay={260} className="auth-star" />
+    <span className="hand-note">Small steps, big progress!</span>
+    <ul>
+      <li><i><Check size={12} strokeWidth={3.5} /></i> Lưu tiến độ và bài luyện đã nộp</li>
+      <li><i><Check size={12} strokeWidth={3.5} /></i> Sổ tay cho từ mới và ghi chú</li>
+      <li><i><Check size={12} strokeWidth={3.5} /></i> Kế hoạch học và mục tiêu mỗi ngày</li>
+    </ul>
+    <Sticker name="plane" size={62} tilt={6} delay={360} className="auth-plane" />
+  </aside></div>;
 }

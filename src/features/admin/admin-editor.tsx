@@ -1,9 +1,11 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { HarryMascot } from "@/components/illustrations/harry";
 import { usePathname } from "next/navigation";
-import { BookOpen, ChevronRight, FileText, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2 } from "lucide-react";
+import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes } from "lucide-react";
+import { Sticker } from "@/components/stickers/stickers";
+import { HeadIcon } from "@/components/ui/head-icon";
+import { AdminShell, type AdminNavGroup } from "./admin-shell";
 import { createClient } from "@/lib/supabase/browser";
 import { LessonContentEditor } from "./lesson-content-editor";
 import { MediaLibrary } from "./media-library";
@@ -32,6 +34,20 @@ const nav = [
   { slug: "news/articles", label: "Learning articles", icon: BookOpen },
   { slug: "news/sync-logs", label: "Sync logs", icon: ScrollText },
 ] as const;
+const navGroups = [
+  { label: "Tổng quan", slugs: ["overview"] },
+  { label: "Nội dung", slugs: ["curriculum", "media"] },
+  { label: "Kỹ năng", slugs: ["vocabulary", "grammar", "reading", "listening", "writing", "speaking"] },
+  { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/sync-logs"] },
+];
+const descriptions: Record<string, string> = {
+  overview: "Quản lý nội dung học tập theo từng kỹ năng và theo dõi trạng thái xuất bản.",
+  curriculum: "Tạo khóa học, unit và bài học trước khi nhập nội dung cho từng kỹ năng.",
+  media: "Quản lý hình minh họa và âm thanh dùng trong bài học.",
+};
+function StatusPill({ published }: { published: boolean }) {
+  return <span className={published ? "status-pill live" : "status-pill draft"}><i aria-hidden="true" />{published ? "Đã xuất bản" : "Bản nháp"}</span>;
+}
 export function AdminEditor() {
   const supabase = useMemo(() => createClient(), []);
   const pathname = usePathname();
@@ -105,11 +121,29 @@ export function AdminEditor() {
     if (error) setError(error.message); else await load();
   }
 
-  return <div className="admin-shell"><aside className="admin-sidebar"><Link href="/admin" className="admin-brand"><span className="admin-brand-mark"><HarryMascot size={39} /></span><span><strong>IeltsWithHarry</strong><small>ADMIN PORTAL</small></span></Link><div className="admin-sidebar-label">QUẢN LÝ NỘI DUNG</div><nav aria-label="Admin navigation">{nav.map(({ slug: itemSlug, label, icon: Icon }) => <Link key={itemSlug} href={itemSlug === "overview" ? "/admin" : `/admin/${itemSlug}`} className={section === itemSlug ? "admin-nav-link active" : "admin-nav-link"} aria-current={section === itemSlug ? "page" : undefined}><Icon size={19} /><span>{label}</span><ChevronRight size={15} className="admin-nav-chevron" /></Link>)}</nav><Link href="/app/dashboard" className="admin-student-link"><GraduationCap size={19} /> Student portal <span>↗</span></Link></aside><main className="admin-panel">
-    <div className="admin-heading"><div><span className="eyebrow">ADMIN CMS / {section.toUpperCase()}</span><h1>{sectionLabel}</h1><p>{section === "overview" ? "Quản lý nội dung học tập theo từng kỹ năng và theo dõi trạng thái xuất bản." : section === "curriculum" ? "Tạo khóa học, unit và bài học trước khi nhập nội dung cho từng kỹ năng." : section === "media" ? "Quản lý hình minh họa và âm thanh dùng trong bài học." : `Biên soạn dữ liệu ${sectionLabel} và xem trước trải nghiệm học viên.`}</p></div><Link className="button subtle" href="/app/dashboard">Student portal →</Link></div>
+  const groups: AdminNavGroup[] = navGroups.map((group) => ({
+    label: group.label,
+    items: group.slugs.map((itemSlug) => {
+      const item = nav.find((entry) => entry.slug === itemSlug)!;
+      return { href: itemSlug === "overview" ? "/admin" : `/admin/${itemSlug}`, label: item.label, icon: item.icon, active: section === itemSlug };
+    }),
+  }));
+  const published = (rows: { published: boolean }[]) => rows.filter((item) => item.published).length;
+
+  return <AdminShell groups={groups} section={sectionLabel} title={sectionLabel} description={descriptions[section] ?? `Biên soạn dữ liệu ${sectionLabel} và xem trước trải nghiệm học viên.`} mode="live" actions={section === "overview" || section === "curriculum" ? <Link className="button primary" href="/admin/curriculum"><Plus size={16} /> Tạo nội dung</Link> : undefined}>
     {error && <p role="alert" className="form-error">{error}</p>}
-    {loading ? <section className="card admin-list" role="status">Đang tải dữ liệu quản trị…</section> : <>
-    {section === "overview" && <><div className="admin-stats"><article><span>Khóa học</span><strong>{courses.length}</strong><small>{courses.filter((item) => item.published).length} đã xuất bản</small></article><article><span>Units</span><strong>{units.length}</strong><small>{units.filter((item) => item.published).length} đã xuất bản</small></article><article><span>Bài học</span><strong>{lessons.length}</strong><small>{lessons.filter((item) => item.published).length} đã xuất bản</small></article><article><span>Kỹ năng</span><strong>6</strong><small>Đầu vào chuyên biệt</small></article></div><section className="card admin-overview-card"><h2>Bắt đầu biên soạn</h2><p>Chọn một kỹ năng để nhập bài đọc, audio, đề viết, câu hỏi hoặc từ vựng. Nội dung nháp chỉ admin xem được.</p><div className="admin-quick-links">{nav.slice(2, 8).map(({ slug: itemSlug, label, icon: Icon }) => <Link key={itemSlug} href={`/admin/${itemSlug}`}><Icon size={22} /><strong>{label}</strong><ChevronRight size={18} /></Link>)}</div></section><section className="card admin-overview-card"><h2>Phân bố bài học theo kỹ năng</h2><p>Số bài đã xuất bản và bản nháp ở mỗi kỹ năng.</p><div className="admin-coverage">{skillTabs.map((name) => { const rows = lessons.filter((item) => item.skill === name); const live = rows.filter((item) => item.published).length; return <div className="admin-coverage-row" key={name}><span>{name}</span><div className="admin-coverage-track"><i style={{ width: `${rows.length ? live / rows.length * 100 : 0}%` }} /></div><b>{live}/{rows.length}</b></div>; })}</div></section><section className="card admin-overview-card"><div className="admin-section-head"><h2>Bài học gần đây</h2><Link href="/admin/curriculum">Xem lộ trình →</Link></div>{lessons.slice(0, 6).map((item) => <div className="admin-row" key={item.id}><div><strong>{item.title}</strong><small>{item.skill} · {item.published ? "Đã xuất bản" : "Bản nháp"}</small></div><Link href={`/admin/${item.skill.toLowerCase()}`} className="button subtle">Biên soạn</Link></div>)}</section></>}
+    {loading ? <section className="card admin-list admin-loading" role="status"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" />Đang tải dữ liệu quản trị…</section> : <>
+    {section === "overview" && <><div className="admin-stats stagger">
+      <article><HeadIcon icon={FolderTree} /><span>Khóa học</span><strong>{courses.length}</strong><small>{published(courses)} đã xuất bản</small></article>
+      <article><HeadIcon icon={Layers} tone="sky" /><span>Units</span><strong>{units.length}</strong><small>{published(units)} đã xuất bản</small></article>
+      <article><HeadIcon icon={BookOpen} tone="coral" /><span>Bài học</span><strong>{lessons.length}</strong><small>{published(lessons)} đã xuất bản</small></article>
+      <article><HeadIcon icon={Shapes} tone="lavender" /><span>Kỹ năng</span><strong>6</strong><small>Đầu vào chuyên biệt</small></article>
+    </div>
+    <div className="admin-overview-grid">
+      <section className="card admin-overview-card"><div className="admin-section-head"><div><h2>Bắt đầu biên soạn</h2><p>Chọn một kỹ năng để nhập bài đọc, audio, đề viết, câu hỏi hoặc từ vựng. Nội dung nháp chỉ admin xem được.</p></div></div><div className="admin-quick-links">{nav.slice(2, 8).map(({ slug: itemSlug, label, icon: Icon }) => { const rows = lessons.filter((item) => item.skill.toLowerCase() === itemSlug); return <Link key={itemSlug} href={`/admin/${itemSlug}`} className="lift"><span className="admin-quick-icon"><Icon size={19} /></span><span><strong>{label}</strong><small>{rows.length} bài · {published(rows)} xuất bản</small></span><ChevronRight size={17} /></Link>; })}</div></section>
+      <section className="card admin-overview-card"><div className="admin-section-head"><div><h2>Phân bố theo kỹ năng</h2><p>Bài đã xuất bản trên tổng số bài.</p></div></div><div className="admin-coverage">{skillTabs.map((name) => { const rows = lessons.filter((item) => item.skill === name); const live = published(rows); return <div className="admin-coverage-row" key={name}><span>{name}</span><div className="admin-coverage-track"><i style={{ width: `${rows.length ? live / rows.length * 100 : 0}%` }} /></div><b>{live}/{rows.length}</b></div>; })}</div></section>
+    </div>
+    <section className="card admin-overview-card"><div className="admin-section-head"><h2>Bài học gần đây</h2><Link href="/admin/curriculum">Xem lộ trình <ChevronRight size={15} /></Link></div>{lessons.length ? <div className="admin-table">{lessons.slice(0, 6).map((item) => <div className="admin-row" key={item.id}><div><strong>{item.title}</strong><small>{item.skill} · /{item.slug}</small></div><StatusPill published={item.published} /><div><Link href={`/admin/${item.skill.toLowerCase()}`} className="button subtle">Biên soạn</Link></div></div>)}</div> : <div className="admin-empty-state"><Sticker name="pencil" size={64} tilt={-8} /><div><h3>Chưa có bài học nào</h3><p>Tạo khóa học, unit rồi bài học đầu tiên trong mục Lộ trình & bài học.</p></div><Link className="button primary" href="/admin/curriculum">Tạo bài học</Link></div>}</section></>}
     {section === "curriculum" && <>
     <section className="card admin-create"><h2>Add content</h2>
       <form onSubmit={create}>
@@ -126,17 +160,17 @@ export function AdminEditor() {
       { title: "Courses", table: "courses" as const, rows: courses },
       { title: "Units", table: "units" as const, rows: units },
       { title: "Lessons", table: "lessons" as const, rows: lessons },
-    ]).map((group) => <section key={group.table} className="card admin-list"><h2>{group.title}</h2>{!group.rows.length && <p>No items yet.</p>}
-      {group.rows.map((item) => <div className="admin-row" key={item.id}><div><strong>{item.title}</strong><small>/{item.slug} · {item.published ? "Published" : "Draft"}</small></div><div>
+    ]).map((group) => <section key={group.table} className="card admin-list"><div className="admin-section-head"><h2>{group.title}</h2><span className="admin-count">{group.rows.length}</span></div>{!group.rows.length && <p className="admin-muted">No items yet.</p>}
+      {group.rows.map((item) => <div className="admin-row" key={item.id}><div><strong>{item.title}</strong><small>/{item.slug}</small></div><StatusPill published={item.published} /><div>
         <button className="button subtle" onClick={() => { const name = window.prompt("New title", item.title)?.trim(); if (name) void change(group.table, item.id, { title: name }); }}>Rename</button>
         <button className="button subtle" onClick={() => void change(group.table, item.id, { published: !item.published })}>{item.published ? "Unpublish" : "Publish"}</button>
         <button className="button subtle" onClick={() => void remove(group.table, item.id)}>Delete</button>
       </div></div>)}
     </section>)}
     </>}
-    {currentSkill && <>{lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
+    {currentSkill && <>{lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><Sticker name="book" size={64} tilt={-8} /><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
     {section === "media" && <MediaLibrary />}
     {section.startsWith("news") && <AdminNews section={section} />}
     </>}
-  </main></div>;
+  </AdminShell>;
 }

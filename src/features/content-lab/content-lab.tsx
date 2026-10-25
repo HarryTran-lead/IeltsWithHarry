@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Compass, Lock, Package, Play } from "lucide-react";
+import { Sticker } from "@/components/stickers/stickers";
 import { authoredPackSchema, compareSentence, countWords, type AuthoredPack } from "@/lib/authored-content";
 import sample from "@/content/demo-pack.json";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -68,10 +70,13 @@ export function ContentLab() {
 
   return <div className="content-page content-lab">
     <header className="lab-hero">
-      <span className="eyebrow">BẢN THỬ · NỘI DUNG SOẠN SẴN</span>
-      <h1>Một gói dữ liệu, sáu cách luyện tập</h1>
-      <p>Nạp câu hỏi, đáp án, giải thích và bài mẫu vào JSON. Trang sẽ dựng bài luyện và chấm những câu có đáp án xác định; không gọi AI.</p>
-      <div className="lab-badges"><span>📦 {pack.title}</span><span>🧭 {pack.level}</span><span>🔒 Chỉ thử trong trình duyệt</span></div>
+      <div>
+        <span className="eyebrow">BẢN THỬ · NỘI DUNG SOẠN SẴN</span>
+        <h1>Một gói dữ liệu, sáu cách luyện tập</h1>
+        <p>Nạp câu hỏi, đáp án, giải thích và bài mẫu vào JSON. Trang sẽ dựng bài luyện và chấm những câu có đáp án xác định; không gọi AI.</p>
+        <div className="lab-badges"><span><Package size={15} /> {pack.title}</span><span><Compass size={15} /> {pack.level}</span><span><Lock size={15} /> Chỉ thử trong trình duyệt</span></div>
+      </div>
+      <div className="sticker-cluster"><Sticker name="bulb" size={92} tilt={-6} float /><Sticker name="abc" size={58} tilt={-10} delay={140} /><Sticker name="check" size={46} tilt={8} delay={240} /></div>
     </header>
 
     <section className="card lab-import" aria-label="Nạp nội dung">
@@ -113,8 +118,8 @@ function VocabularyDemo({ item }: { item: AuthoredPack["vocabulary"][number] }) 
   const result = compareSentence(answer, item.acceptedSentences);
   const saved = entries.some((entry) => entry.kind === "word" && entry.title === item.word && entry.sourcePath === "/app/content-lab");
   return <div className="lab-stack">
-    <div className="lab-section-heading"><span>🧠</span><div><h2>Vocabulary · Học rồi đặt câu</h2><p>Từ, nghĩa, định nghĩa và câu mẫu đều lấy từ gói dữ liệu.</p></div></div>
-    <div className="lab-word"><span>WORD CARD</span><h3>{item.word}</h3><p>{item.definition}</p><div className="lab-word-actions"><button type="button" className="button subtle" onClick={() => setRevealed(!revealed)}>{revealed ? "Ẩn nghĩa và ví dụ" : "Xem nghĩa và ví dụ"}</button><button type="button" className="button subtle" disabled={saved} onClick={async () => { try { await addEntry({ kind: "word", title: item.word, body: "", meaningVi: item.meaningVi, example: item.example }); } catch { /* Notebook shows the error. */ } }}>{saved ? "★ Đã lưu vào sổ" : "☆ Lưu vào sổ tay"}</button></div>{revealed && <div className="lab-note"><strong>{item.meaningVi}</strong><p>{item.example}</p></div>}{notebookError && <p className="form-error" role="alert">{notebookError}</p>}</div>
+    <div className="lab-section-heading"><Sticker name="abc" size={54} tilt={-6} /><div><h2>Vocabulary · Học rồi đặt câu</h2><p>Từ, nghĩa, định nghĩa và câu mẫu đều lấy từ gói dữ liệu.</p></div></div>
+    <div className="lab-word"><span>WORD CARD</span><h3>{item.word}</h3><p>{item.definition}</p><div className="lab-word-actions"><button type="button" className="button subtle" onClick={() => setRevealed(!revealed)}>{revealed ? "Ẩn nghĩa và ví dụ" : "Xem nghĩa và ví dụ"}</button><button type="button" className="button subtle" disabled={saved} onClick={async () => { try { await addEntry({ kind: "word", title: item.word, body: "", meaningVi: item.meaningVi, example: item.example }); } catch { /* Notebook shows the error. */ } }}>{saved ? "Đã lưu vào sổ" : "Lưu vào sổ tay"}</button></div>{revealed && <div className="lab-note"><strong>{item.meaningVi}</strong><p>{item.example}</p></div>}{notebookError && <p className="form-error" role="alert">{notebookError}</p>}</div>
     <div className="lab-task"><h3>Đặt câu</h3><p>{item.sentencePromptVi}</p><label htmlFor="lab-sentence">Câu của bạn</label><input id="lab-sentence" value={answer} onChange={(event) => { setAnswer(event.target.value); setChecked(false); }} placeholder="Type your sentence in English…" /><button type="button" className="button primary" disabled={!answer.trim()} onClick={() => setChecked(true)}>So sánh với câu mẫu</button></div>
     {checked && <div className="lab-result" role="status"><strong>{result.exact ? "Khớp một đáp án đã soạn ✓" : "Chưa khớp đáp án đã soạn"}</strong><p>Mức trùng từ với câu mẫu gần nhất: {result.similarity}%. Đây là độ giống văn bản, không phải điểm chất lượng câu.</p><p><b>Các câu được chấp nhận:</b> {item.acceptedSentences.join(" / ")}</p><p>{result.exact ? "Bạn có thể thử một cách diễn đạt khác." : "Nếu câu của bạn cũng hợp lý nhưng diễn đạt khác mẫu, hãy tự đối chiếu hoặc bổ sung biến thể vào JSON."}</p></div>}
   </div>;
@@ -138,14 +143,14 @@ function ListeningDemo({ item }: { item: AuthoredPack["listening"] }) {
     speech.rate = 0.85;
     window.speechSynthesis.speak(speech);
   }
-  return <div className="lab-stack"><div className="lab-section-heading"><span>🎧</span><div><h2>Listening · Nghe rồi trả lời</h2><p>Chế độ luyện tập: transcript mở sau khi nộp câu đầu tiên.</p></div></div><div className="lab-note"><button type="button" className="button primary" onClick={play}>▶ Phát giọng đọc mẫu</button><button type="button" className="button subtle" onClick={() => window.speechSynthesis?.cancel()}>Dừng</button><small>Giọng tổng hợp có sẵn của trình duyệt; chất lượng tùy thiết bị. Bản chính thức sẽ dùng tệp âm thanh do người soạn tải lên.</small></div>{item.questions.map((question, index) => <ChoiceDemo key={index} item={question} number={index + 1} onSubmit={() => setSubmitted(true)} />)}{submitted && <><h3>Transcript để ôn tập</h3><div className="lab-passage">{item.script}</div></>}</div>;
+  return <div className="lab-stack"><div className="lab-section-heading"><Sticker name="headphones" size={54} tilt={-6} /><div><h2>Listening · Nghe rồi trả lời</h2><p>Chế độ luyện tập: transcript mở sau khi nộp câu đầu tiên.</p></div></div><div className="lab-note"><button type="button" className="button primary" onClick={play}><Play size={15} /> Phát giọng đọc mẫu</button><button type="button" className="button subtle" onClick={() => window.speechSynthesis?.cancel()}>Dừng</button><small>Giọng tổng hợp có sẵn của trình duyệt; chất lượng tùy thiết bị. Bản chính thức sẽ dùng tệp âm thanh do người soạn tải lên.</small></div>{item.questions.map((question, index) => <ChoiceDemo key={index} item={question} number={index + 1} onSubmit={() => setSubmitted(true)} />)}{submitted && <><h3>Transcript để ôn tập</h3><div className="lab-passage">{item.script}</div></>}</div>;
 }
 
 function WritingDemo({ item }: { item: AuthoredPack["writing"] }) {
   const [body, setBody] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const words = countWords(body);
-  return <div className="lab-stack"><div className="lab-section-heading"><span>✍️</span><div><h2>Writing · Viết và tự đối chiếu</h2><p>Đề bài, ngưỡng từ, mẫu và checklist đều do người soạn cung cấp.</p></div></div><div className="lab-note"><strong>Đề bài</strong><p>{item.prompt}</p></div><label htmlFor="lab-writing">Bài viết của bạn · {words} từ / tối thiểu {item.minWords}</label><textarea id="lab-writing" rows={9} value={body} onChange={(event) => { setBody(event.target.value); setSubmitted(false); }} placeholder="Write your answer here…" /><button type="button" className="button primary" disabled={!body.trim()} onClick={() => setSubmitted(true)}>Mở mẫu và checklist</button>{submitted && <div className="lab-result" role="status"><strong>{words >= item.minWords ? "Đã đạt số từ tối thiểu" : `Cần thêm ${item.minWords - words} từ để đạt ngưỡng`}</strong><p><b>Bài mẫu tham khảo:</b> {item.modelAnswer}</p><ul>{item.checklist.map((line) => <li key={line}><label><input type="checkbox" /> {line}</label></li>)}</ul><small>Checklist do bạn tự đánh dấu. Hệ thống không tự đánh giá chất lượng bài viết.</small></div>}</div>;
+  return <div className="lab-stack"><div className="lab-section-heading"><Sticker name="pencil" size={54} tilt={-6} /><div><h2>Writing · Viết và tự đối chiếu</h2><p>Đề bài, ngưỡng từ, mẫu và checklist đều do người soạn cung cấp.</p></div></div><div className="lab-note"><strong>Đề bài</strong><p>{item.prompt}</p></div><label htmlFor="lab-writing">Bài viết của bạn · {words} từ / tối thiểu {item.minWords}</label><textarea id="lab-writing" rows={9} value={body} onChange={(event) => { setBody(event.target.value); setSubmitted(false); }} placeholder="Write your answer here…" /><button type="button" className="button primary" disabled={!body.trim()} onClick={() => setSubmitted(true)}>Mở mẫu và checklist</button>{submitted && <div className="lab-result" role="status"><strong>{words >= item.minWords ? "Đã đạt số từ tối thiểu" : `Cần thêm ${item.minWords - words} từ để đạt ngưỡng`}</strong><p><b>Bài mẫu tham khảo:</b> {item.modelAnswer}</p><ul>{item.checklist.map((line) => <li key={line}><label><input type="checkbox" /> {line}</label></li>)}</ul><small>Checklist do bạn tự đánh dấu. Hệ thống không tự đánh giá chất lượng bài viết.</small></div>}</div>;
 }
 
 function SpeakingDemo({ item }: { item: AuthoredPack["speaking"] }) {
@@ -184,5 +189,5 @@ function SpeakingDemo({ item }: { item: AuthoredPack["speaking"] }) {
       setRecording(true);
     } catch { setError("Không mở được microphone. Hãy kiểm tra quyền truy cập."); }
   }
-  return <div className="lab-stack"><div className="lab-section-heading"><span>🎙️</span><div><h2>Speaking · Ghi âm và tự nghe lại</h2><p>Câu hỏi và câu mẫu do người soạn nhập; bản ghi chỉ ở tab này.</p></div></div><div className="lab-note"><strong>Câu hỏi</strong><p>{item.prompt}</p></div><div className="lab-speaking-controls"><span>Chuẩn bị: <b>{seconds}s</b></span><button type="button" className="button subtle" onClick={() => { setSeconds(item.preparationSeconds); setCounting(true); }}>Bắt đầu đếm giờ</button>{recording ? <button type="button" className="button primary" onClick={() => recorder.current?.stop()}>■ Dừng ghi âm</button> : <button type="button" className="button primary" onClick={() => void startRecording()}>● Ghi âm</button>}</div>{error && <p className="form-error" role="alert">{error}</p>}{audioUrl && <audio controls src={audioUrl} aria-label="Nghe lại bài nói" />}<button type="button" className="button subtle" onClick={() => setRevealed(!revealed)}>{revealed ? "Ẩn mẫu" : "Xem câu mẫu và checklist"}</button>{revealed && <div className="lab-result"><p><b>Câu mẫu:</b> {item.modelAnswer}</p><ul>{item.checklist.map((line) => <li key={line}><label><input type="checkbox" /> {line}</label></li>)}</ul><small>Không tự chấm phát âm hay band IELTS.</small></div>}</div>;
+  return <div className="lab-stack"><div className="lab-section-heading"><Sticker name="mic" size={54} tilt={-6} /><div><h2>Speaking · Ghi âm và tự nghe lại</h2><p>Câu hỏi và câu mẫu do người soạn nhập; bản ghi chỉ ở tab này.</p></div></div><div className="lab-note"><strong>Câu hỏi</strong><p>{item.prompt}</p></div><div className="lab-speaking-controls"><span>Chuẩn bị: <b>{seconds}s</b></span><button type="button" className="button subtle" onClick={() => { setSeconds(item.preparationSeconds); setCounting(true); }}>Bắt đầu đếm giờ</button>{recording ? <button type="button" className="button primary" onClick={() => recorder.current?.stop()}>■ Dừng ghi âm</button> : <button type="button" className="button primary" onClick={() => void startRecording()}>● Ghi âm</button>}</div>{error && <p className="form-error" role="alert">{error}</p>}{audioUrl && <audio controls src={audioUrl} aria-label="Nghe lại bài nói" />}<button type="button" className="button subtle" onClick={() => setRevealed(!revealed)}>{revealed ? "Ẩn mẫu" : "Xem câu mẫu và checklist"}</button>{revealed && <div className="lab-result"><p><b>Câu mẫu:</b> {item.modelAnswer}</p><ul>{item.checklist.map((line) => <li key={line}><label><input type="checkbox" /> {line}</label></li>)}</ul><small>Không tự chấm phát âm hay band IELTS.</small></div>}</div>;
 }
