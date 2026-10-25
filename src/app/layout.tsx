@@ -4,8 +4,10 @@ import "./news.css";
 import "./study-room.css";
 import "./stickers.css";
 import "./motion.css";
+import "./playful.css";
 import { Be_Vietnam_Pro, Bricolage_Grotesque, Patrick_Hand } from "next/font/google";
 import { StickerDefs } from "@/components/stickers/stickers";
+import { InteractionLayer } from "@/components/fx/interaction-layer";
 import { cn } from "@/lib/utils";
 
 const body = Be_Vietnam_Pro({
@@ -39,6 +41,7 @@ export default function RootLayout({
     <html lang="en"className={cn("font-sans", body.variable, display.variable, hand.variable)}>
       <body>
         <StickerDefs />
+        <InteractionLayer />
         {children}
       </body>
     </html>

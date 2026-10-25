@@ -34,7 +34,8 @@ import {
   PanelLeftOpen,
 } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
-import { Sticker, Tape } from "@/components/stickers/stickers";
+import { Tape } from "@/components/stickers/stickers";
+import { HarryBuddy } from "@/components/fx/harry-buddy";
 import { useDemo } from "@/features/demo/demo-store";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
@@ -45,36 +46,36 @@ const groups = [
   {
     label: "Tổng quan",
     links: [
-      { href: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard },
-      { href: "/app/learn", label: "Learn", icon: GraduationCap },
-      { href: "/app/planner", label: "Planner", icon: CalendarDays },
-      { href: "/app/progress", label: "Progress", icon: ChartNoAxesCombined },
+      { href: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard, tone: "teal" },
+      { href: "/app/learn", label: "Learn", icon: GraduationCap, tone: "sky" },
+      { href: "/app/planner", label: "Planner", icon: CalendarDays, tone: "coral" },
+      { href: "/app/progress", label: "Progress", icon: ChartNoAxesCombined, tone: "lavender" },
     ],
   },
   {
     label: "Kỹ năng IELTS",
     links: [
-      { href: "/app/vocabulary", label: "Vocabulary", icon: Languages },
-      { href: "/app/grammar", label: "Grammar", icon: SpellCheck },
-      { href: "/app/reading", label: "Reading", icon: BookOpenText },
-      { href: "/app/listening", label: "Listening", icon: Headphones },
-      { href: "/app/writing", label: "Writing", icon: PenLine },
-      { href: "/app/speaking", label: "Speaking", icon: Mic },
+      { href: "/app/vocabulary", label: "Vocabulary", icon: Languages, tone: "mint" },
+      { href: "/app/grammar", label: "Grammar", icon: SpellCheck, tone: "sky" },
+      { href: "/app/reading", label: "Reading", icon: BookOpenText, tone: "coral" },
+      { href: "/app/listening", label: "Listening", icon: Headphones, tone: "teal" },
+      { href: "/app/writing", label: "Writing", icon: PenLine, tone: "sun" },
+      { href: "/app/speaking", label: "Speaking", icon: Mic, tone: "lavender" },
     ],
   },
   {
     label: "Học với tin tức",
     links: [
-      { href: "/app/news", label: "Daily News", icon: Newspaper },
-      { href: "/app/news/learn", label: "Learn with News", icon: Library },
+      { href: "/app/news", label: "Daily News", icon: Newspaper, tone: "sky" },
+      { href: "/app/news/learn", label: "Learn with News", icon: Library, tone: "mint" },
     ],
   },
   {
     label: "Không gian học",
     links: [
-      { href: "/app/study-together", label: "Cùng học", icon: UsersRound },
-      { href: "/app/notebook", label: "Notebook", icon: NotebookPen },
-      { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical },
+      { href: "/app/study-together", label: "Cùng học", icon: UsersRound, tone: "lavender" },
+      { href: "/app/notebook", label: "Notebook", icon: NotebookPen, tone: "sun" },
+      { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical, tone: "coral" },
     ],
   },
 ];
@@ -239,6 +240,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
             <Trophy size={18} fill="#ffd15a" color="#d99a17" />
             <strong>{demoMode ? "Level 3" : `${completed} tasks`}</strong>
             <small>{demoMode ? "Demo learner" : `${attempts.length} practices`}</small>
+            {demoMode && <span className="level-bar" title={`${xp % 500}/500 XP tới level tiếp theo`}><i style={{ width: `${(xp % 500) / 5}%` }} /></span>}
           </div>
           <span className="header-divider" aria-hidden="true" />
           <div className="popover-wrap">
@@ -315,7 +317,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
           {groups.map((group) => (
             <div className="nav-group" key={group.label}>
               <span className="nav-group-label">{group.label}</span>
-              {group.links.map(({ href, label, icon: Icon }) => (
+              {group.links.map(({ href, label, icon: Icon, tone }) => (
                 <Link
                   key={href}
                   href={href}
@@ -324,20 +326,18 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                   aria-current={isActive(pathname, href) ? "page" : undefined}
                   title={label}
                 >
-                  <Icon size={18} strokeWidth={2.1} />
+                  <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b>
                   <span>{label}</span>
                   {href === "/app/study-together" && <span className="study-nav-count" aria-label={`${studyOnline ?? "Đang kết nối"} người đang học trực tiếp`}><i />{studyOnline ?? "…"}</span>}
                 </Link>
               ))}
             </div>
           ))}
-          {canManage && <div className="nav-group"><span className="nav-group-label">Quản trị</span><Link href="/admin" onClick={() => setMenuOpen(false)} className="nav-link" title="Admin portal"><ShieldCheck size={18} strokeWidth={2.1} /><span>Admin portal</span></Link></div>}
+          {canManage && <div className="nav-group"><span className="nav-group-label">Quản trị</span><Link href="/admin" onClick={() => setMenuOpen(false)} className="nav-link" title="Admin portal"><b className="nav-icon tone-teal"><ShieldCheck size={17} strokeWidth={2.2} /></b><span>Admin portal</span></Link></div>}
         </nav>
         <div className="sidebar-card">
           <Tape tone="sun" />
-          <Sticker name="harry" size={64} tilt={-6} />
-          <p className="hand-note">Small steps,<br />big progress!</p>
-          <span>Every practice counts.</span>
+          <HarryBuddy size={60} className="sidebar-buddy" tips={["Small steps, big progress!", "Hôm nay học gì nào?", "Nhớ uống nước nhé!", "Mỗi bài luyện đều có giá trị.", "Cố lên, bạn làm được!"]} />
         </div>
       </aside>
       {menuOpen && (

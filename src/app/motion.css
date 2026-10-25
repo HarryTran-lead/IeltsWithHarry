@@ -93,15 +93,18 @@
   }
 }
 
+/* With reduced motion, entrances fade in place instead of sliding. */
 @media (prefers-reduced-motion: reduce) {
   .page-enter,
   .stagger > *,
-  .reveal,
   .small-popover,
   .search-results,
   .task-modal,
   .notebook-drawer {
-    animation: none !important;
+    animation-name: fade-in;
+  }
+  .reveal {
+    animation: none;
   }
   .lift:hover {
     translate: none;

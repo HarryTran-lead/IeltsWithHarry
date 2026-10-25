@@ -18,9 +18,11 @@ import {
 } from "lucide-react";
 import { Sticker, Tape, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
+import { HarryBuddy } from "@/components/fx/harry-buddy";
+import { celebrate } from "@/lib/celebrate";
 import { PlannerMini } from "@/features/planner/planner-widgets";
 import { useDemo } from "@/features/demo/demo-store";
-import { recommendations, stages, todayISO, type Skill } from "@/lib/demo-data";
+import { offsetISO, recommendations, skillColors, stages, todayISO, type Skill } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
 
 const skillIcons: Partial<Record<Skill, typeof BookOpenText>> = {
@@ -45,6 +47,7 @@ function WelcomeBanner() {
           Keep going, you’re doing <span className="hl">great</span>!
         </h1>
         <span>Step by step to a more confident you.</span>
+        <StreakWeek />
         <div className="welcome-actions">
           <Link href="/app/lesson/technology-digital-life" className="button primary">
             Continue learning <ArrowRight size={16} />
@@ -55,13 +58,37 @@ function WelcomeBanner() {
         </div>
       </div>
       <div className="welcome-art" aria-hidden="true">
-        <Sticker name="harry" size={132} tilt={-4} float className="welcome-harry" />
-        <Sticker name="bubble" label="Let’s go!" size={86} tilt={8} delay={150} className="welcome-bubble" />
+        <HarryBuddy size={126} className="welcome-harry" />
         <Sticker name="star" label="7.0" size={62} tilt={-12} delay={260} float className="welcome-star" />
         <Sticker name="book" size={64} tilt={10} delay={340} className="welcome-book" />
         <Sticker name="pencil" size={50} tilt={-20} delay={420} className="welcome-pencil" />
       </div>
     </section>
+  );
+}
+
+const weekdays = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
+
+/** Monday-to-Sunday strip; a day lights up once any planner task dated that day is ticked off. */
+function StreakWeek() {
+  const { tasks } = useDemo();
+  const today = todayISO();
+  const mondayOffset = -((new Date().getDay() + 6) % 7);
+  const days = weekdays.map((label, index) => {
+    const date = offsetISO(mondayOffset + index);
+    return { label, date, done: tasks.some((task) => task.date === date && task.completed) };
+  });
+  const active = days.filter((day) => day.done).length;
+  return (
+    <div className="streak-week" aria-label={`${active} trên 7 ngày tuần này có hoàn thành nhiệm vụ`}>
+      {days.map((day) => (
+        <span key={day.date} className={`streak-day ${day.done ? "done" : ""} ${day.date === today ? "today" : ""} ${day.date > today ? "future" : ""}`} title={day.date}>
+          <i>{day.done ? <Sticker name="flame" size={22} pop={false} /> : null}</i>
+          <small>{day.label}</small>
+        </span>
+      ))}
+      <b>{active}/7 ngày</b>
+    </div>
   );
 }
 
@@ -139,15 +166,24 @@ function LearningPath() {
 }
 
 function TodayGoal() {
-  const { tasks, goal, setGoal } = useDemo();
-  const done = tasks.filter((t) => t.date === todayISO() && t.completed).length;
+  const { tasks, goal, setGoal, updateTask } = useDemo();
+  const todays = tasks.filter((t) => t.date === todayISO());
+  const done = todays.filter((t) => t.completed).length;
   const pct = Math.min(100, Math.round((done / goal) * 100));
+  const quests = [...todays].sort((a, b) => Number(a.completed) - Number(b.completed)).slice(0, 3);
+  async function toggle(id: string, completed: boolean, target: HTMLElement) {
+    if (!completed) {
+      const reached = done + 1 >= goal;
+      celebrate(target, { label: reached ? "Đạt mục tiêu!" : "Tuyệt!", pieces: reached ? 44 : 22 });
+    }
+    await updateTask(id, { completed: !completed }).catch(() => {});
+  }
   return (
     <section className="card goal-card">
       <div className="card-head">
         <div className="head-title">
           <HeadIcon icon={Target} tone="coral" />
-          <h2>Today’s Goal</h2>
+          <h2>Nhiệm vụ hôm nay</h2>
         </div>
         <button
           className="text-link"
@@ -156,31 +192,33 @@ function TodayGoal() {
               "How many tasks is your daily goal?",
               String(goal),
             );
-            if (value && /^\d+$/.test(value)) void setGoal(Number(value)).catch(() => {});
+            if (value && /^d+$/.test(value)) void setGoal(Number(value)).catch(() => {});
           }}
         >
-          Set goal <ChevronRight size={14} />
+          Mục tiêu {goal} <ChevronRight size={14} />
         </button>
       </div>
       <div className="goal-content">
         <div
-          className="progress-ring"
+          className={`progress-ring ${pct >= 100 ? "complete" : ""}`}
           style={{ "--pct": `${pct}%` } as React.CSSProperties}
         >
           <div>
             <strong>{pct}%</strong>
             <span>
-              {done} / {goal} tasks
+              {done} / {goal}
             </span>
           </div>
         </div>
-        <div>
-          <strong>Complete {goal} learning tasks</strong>
-          <p>Tick tasks off in your planner to fill the ring.</p>
+        <div className="quest-list">
+          {quests.length ? quests.map((task) => (
+            <button key={task.id} type="button" className={`quest-item ${task.completed ? "done" : ""}`} onClick={(event) => void toggle(task.id, task.completed, event.currentTarget)} aria-pressed={task.completed}>
+              <i style={{ background: skillColors[task.skill] }} aria-hidden="true">{task.completed && <Check size={12} strokeWidth={3.5} />}</i>
+              <span>{task.title}</span>
+            </button>
+          )) : <p>Chưa có nhiệm vụ cho hôm nay. Thêm một việc nhỏ trong Planner nhé!</p>}
           <small className={pct >= 100 ? "goal-state done" : "goal-state"}>
-            {pct >= 100
-              ? "Goal reached! Amazing work."
-              : "You’re on track! Keep going!"}
+            {pct >= 100 ? "Đạt mục tiêu hôm nay rồi!" : `Còn ${Math.max(0, goal - done)} nhiệm vụ nữa thôi`}
           </small>
         </div>
       </div>

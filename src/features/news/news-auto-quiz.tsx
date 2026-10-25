@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CheckCircle2, Sparkles, XCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
+import { celebrateScore } from "@/lib/celebrate";
 import "@/app/news-enrichment.css";
 
 type QuestionType = "tfng" | "mcq" | "sentence_completion" | "short_answer";
@@ -60,7 +61,7 @@ export function NewsAutoQuiz({ articleId }: { articleId: string }) {
     const { data, error: submitError } = await db.rpc("news_submit_auto_quiz", { p_article_id: articleId, p_answers: payload });
     setBusy(false);
     if (submitError) setError(submitError.message);
-    else setResult(data as Result);
+    else { setResult(data as Result); celebrateScore((data as Result).score, (data as Result).total); }
   }
 
   if (!questions.length && !error) return null;

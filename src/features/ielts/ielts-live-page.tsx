@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { BookOpen, ExternalLink, Headphones, Mic, RotateCcw, Save, Volume2 } from "lucide-react";
 import { useNotebook } from "@/features/notebook/notebook-store";
+import { celebrateScore } from "@/lib/celebrate";
 import type { IeltsLiveData, LiveArticle } from "@/lib/ielts/live";
 import { useIeltsData } from "./use-ielts-data";
 import "./ielts-live.css";
@@ -89,6 +90,7 @@ export function IeltsLivePage({ skill, mode }: { skill: IeltsSkill; mode?: strin
   async function checkAnswers() {
     const correct = questions.reduce((total, question, index) => total + (answers[index]?.trim().toLowerCase() === question.answer.toLowerCase() ? 1 : 0), 0);
     setScore(correct);
+    celebrateScore(correct, questions.length);
     await saveNote(`IELTS ${skillNames[skill]} · ${article?.title ?? "Practice"}`, `${correct}/${questions.length} câu điền từ đúng. Nguồn: ${article?.sourceUrl ?? ""}`);
   }
   async function lookup(word: string) {

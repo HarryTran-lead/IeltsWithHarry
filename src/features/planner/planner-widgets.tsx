@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { CalendarDays, Check, GripVertical, Pencil, Plus, Trash2, X } from "lucide-react";
 import { HeadIcon } from "@/components/ui/head-icon";
+import { celebrate } from "@/lib/celebrate";
 import {
   type Skill,
   type StudyTask,
@@ -59,9 +60,10 @@ export function TaskList({
               className={`task-check ${task.completed ? "checked" : ""}`}
               aria-label={`${task.completed ? "Unmark" : "Complete"} ${task.title}`}
               aria-pressed={task.completed}
-              onClick={() =>
-                void updateTask(task.id, { completed: !task.completed }).catch(() => {})
-              }
+              onClick={(event) => {
+                if (!task.completed) celebrate(event.currentTarget, { label: "Xong!", pieces: 18 });
+                void updateTask(task.id, { completed: !task.completed }).catch(() => {});
+              }}
             >
               {task.completed && <Check size={15} strokeWidth={3} />}
             </button>

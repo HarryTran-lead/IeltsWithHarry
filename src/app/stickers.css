@@ -189,17 +189,10 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .sticker,
-  .sticker.is-floating,
-  .sticker.is-popping,
-  .doodle path,
-  .hl {
-    animation: none !important;
+  .sticker.is-floating {
+    animation: sticker-pop 0.5s var(--ease-out) backwards var(--delay);
   }
-  .doodle path {
-    stroke-dashoffset: 0;
-  }
-  .hl {
-    background-size: 100% 100%;
+  .sticker:hover {
+    translate: none;
   }
 }

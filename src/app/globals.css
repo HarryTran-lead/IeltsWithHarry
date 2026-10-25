@@ -2529,14 +2529,14 @@ a.card:hover {
     box-shadow: 0 0 0 13px #ffb7b733;
   }
 }
+/* Reduced motion keeps gentle fades and colour changes; the stylesheets below
+   switch off only large movement (floating, tilting, sliding). */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *:before,
-  *:after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html {
+    scroll-behavior: auto;
+  }
+  :root {
+    --ease-spring: var(--ease-out);
   }
 }
 @media (max-width: 1300px) {

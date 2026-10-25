@@ -1,0 +1,586 @@
+/* Playful layer: rewards, tilting cards, ripples, Harry and the colourful touches that make study feel alive. */
+
+/* Livelier page background: warm and lilac light behind the dot grid. */
+.main-area {
+  background:
+    radial-gradient(640px 420px at 100% 0, rgba(255, 201, 74, 0.16), transparent 70%),
+    radial-gradient(560px 440px at 0 560px, rgba(124, 102, 220, 0.09), transparent 70%),
+    radial-gradient(520px 380px at 60% 900px, rgba(18, 161, 171, 0.08), transparent 70%),
+    var(--dot-grid) 0 0 / 22px 22px,
+    var(--paper);
+}
+
+/* Confetti and floating reward label from lib/celebrate. */
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  overflow: hidden;
+}
+.confetti-layer i {
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  margin: -6px 0 0 -4px;
+  border-radius: 2px;
+  animation: confetti-fly 1.15s cubic-bezier(0.15, 0.7, 0.35, 1) forwards;
+}
+@keyframes confetti-fly {
+  0% {
+    transform: translate(0, 0) rotate(0) scale(0.5);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), calc(var(--dy) + 110px)) rotate(var(--spin)) scale(1);
+    opacity: 0;
+  }
+}
+.confetti-layer b {
+  position: absolute;
+  translate: -50% -50%;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #fff;
+  font: 700 15px/1.2 var(--font-display);
+  white-space: nowrap;
+  box-shadow: var(--shadow-lg);
+  animation: reward-float 1.3s var(--ease-out) forwards;
+}
+@keyframes reward-float {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-18px) scale(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-70px) scale(1);
+  }
+}
+
+/* Buttons squash when pressed and leave a ripple. */
+.button,
+.ielts-primary,
+.notebook-bubble {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.button {
+  transition:
+    translate 0.35s var(--ease-spring),
+    scale 0.25s var(--ease-spring),
+    background-color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.25s var(--ease-out);
+}
+.button:active:not(:disabled) {
+  scale: 0.95;
+}
+.ripple {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.22;
+  scale: 0;
+  pointer-events: none;
+  animation: ripple 0.6s var(--ease-out) forwards;
+}
+@keyframes ripple {
+  to {
+    scale: 1;
+    opacity: 0;
+  }
+}
+
+/* Cards lean toward the pointer (class set by InteractionLayer). */
+:is(.tilt, a.card, .module-card, .stage-card, .recommend-card, .guest-skill, .guest-tool, .roadmap-stop, .course-stage, .ielts-dashboard-mode, .news-card, .news-learn-card) {
+  transition:
+    transform 0.5s var(--ease-out),
+    translate 0.4s var(--ease-spring),
+    box-shadow 0.3s var(--ease-out),
+    border-color 0.3s,
+    background-color 0.3s;
+}
+.is-tilting {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition:
+    transform 0.12s linear,
+    translate 0.4s var(--ease-spring),
+    box-shadow 0.3s var(--ease-out),
+    border-color 0.3s;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Stickers wiggle when their card is hovered. */
+:is(a.card, .module-card, .guest-skill, .guest-tool, .roadmap-stop, .course-stage, .recommend-card, .badge-card, .stage-skill-list li, .about-principle, .welcome-art):hover .sticker {
+  animation: wiggle 0.7s var(--ease-out);
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    rotate: var(--tilt);
+  }
+  25% {
+    rotate: calc(var(--tilt) - 12deg);
+  }
+  50% {
+    rotate: calc(var(--tilt) + 9deg);
+  }
+  75% {
+    rotate: calc(var(--tilt) - 4deg);
+  }
+}
+
+/* Colourful sidebar icons. */
+.nav-link {
+  gap: 10px;
+}
+.nav-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  transition:
+    transform 0.4s var(--ease-spring),
+    background-color 0.2s,
+    color 0.2s;
+}
+.nav-link .nav-icon svg,
+.nav-link:hover .nav-icon svg,
+.nav-link.active .nav-icon svg {
+  color: inherit;
+  scale: 1;
+}
+.nav-link:hover .nav-icon {
+  transform: rotate(-10deg) scale(1.1);
+}
+.nav-icon.tone-teal { color: #0a7f89; background: #e2f5f4; }
+.nav-icon.tone-coral { color: #d84b44; background: #ffece8; }
+.nav-icon.tone-sun { color: #b77a06; background: #fff3d4; }
+.nav-icon.tone-lavender { color: #6448d2; background: #efebfd; }
+.nav-icon.tone-sky { color: #2f72c8; background: #e6effc; }
+.nav-icon.tone-mint { color: #128461; background: #e0f5ec; }
+.nav-link.active .nav-icon { color: #fff; box-shadow: 0 4px 10px -4px rgba(16, 35, 63, 0.4); }
+.nav-link.active .nav-icon.tone-teal { background: #0a7f89; }
+.nav-link.active .nav-icon.tone-coral { background: #e5554e; }
+.nav-link.active .nav-icon.tone-sun { background: #e0a020; }
+.nav-link.active .nav-icon.tone-lavender { background: #6a52d6; }
+.nav-link.active .nav-icon.tone-sky { background: #3b7fd4; }
+.nav-link.active .nav-icon.tone-mint { background: #1fae7f; }
+
+/* Topbar: flickering streak flame and XP bar. */
+.stat-pill.streak svg {
+  transform-origin: 50% 90%;
+  animation: flicker 1.8s ease-in-out infinite;
+}
+@keyframes flicker {
+  0%,
+  100% {
+    scale: 1;
+    rotate: 0deg;
+  }
+  30% {
+    scale: 1.1 0.94;
+    rotate: -5deg;
+  }
+  60% {
+    scale: 0.95 1.08;
+    rotate: 4deg;
+  }
+}
+.level-bar {
+  grid-column: 2;
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin-top: 3px;
+  border-radius: 4px;
+  background: #f3e3b3;
+  overflow: hidden;
+}
+.level-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ffb020, #ff7a3d);
+  transform-origin: left;
+  animation: bar-grow 1s var(--ease-out) 0.3s backwards;
+}
+
+/* Harry: tap for a new tip. */
+.harry-buddy {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.harry-buddy-bubble {
+  position: absolute;
+  right: 62%;
+  bottom: calc(100% - 22px);
+  z-index: 3;
+  width: max-content;
+  max-width: 190px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px 14px 4px 14px;
+  background: #fff;
+  box-shadow: var(--shadow-lg);
+  color: var(--navy);
+  font: 400 15.5px/1.25 var(--font-hand), cursive;
+  text-align: left;
+  animation: bubble-in 0.45s var(--ease-spring);
+}
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    scale: 0.6;
+    translate: 12px 12px;
+  }
+}
+.harry-buddy-body {
+  display: block;
+}
+.harry-buddy-body.hop {
+  animation: hop 0.6s var(--ease-spring);
+}
+@keyframes hop {
+  0% {
+    translate: 0 0;
+  }
+  35% {
+    translate: 0 -18px;
+    rotate: -6deg;
+  }
+  70% {
+    translate: 0 3px;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+.harry-buddy small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.harry-buddy:hover small,
+.harry-buddy:focus-visible small {
+  opacity: 1;
+}
+.welcome-art {
+  z-index: 3;
+  pointer-events: none;
+}
+.welcome-art > * {
+  pointer-events: auto;
+}
+.welcome-art .harry-buddy {
+  position: absolute;
+}
+.welcome-art .harry-buddy .sticker {
+  position: relative;
+}
+.welcome-art .harry-buddy-bubble {
+  right: -8px;
+  bottom: calc(100% - 6px);
+  border-radius: 14px 14px 4px 14px;
+}
+.sidebar-card .harry-buddy {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.sidebar-card .harry-buddy-bubble {
+  position: static;
+  order: 2;
+  width: auto;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 16px;
+}
+.sidebar-card .harry-buddy small {
+  display: none;
+}
+
+/* Week streak inside the welcome banner. */
+.streak-week {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.streak-day {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+}
+.streak-day i {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1.5px dashed #c3d3ce;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+}
+.streak-day.done i {
+  border: 1.5px solid #ffc999;
+  background: #fff4e8;
+  animation: sticker-pop 0.5s var(--ease-spring) backwards;
+}
+.streak-day.today i {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(18, 161, 171, 0.2);
+}
+.streak-day.future {
+  opacity: 0.5;
+}
+.streak-day small {
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 600;
+}
+.streak-week b {
+  order: -1;
+  flex: 0 0 100%;
+  width: max-content;
+  max-width: max-content;
+  margin: 0 0 2px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #fff4e8;
+  color: #c2560f;
+  font-size: 12.5px;
+}
+
+/* Today's quests. */
+.quest-list {
+  display: grid;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+.quest-list p {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+.quest-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 13px;
+  text-align: left;
+  transition:
+    border-color 0.2s,
+    translate 0.3s var(--ease-spring),
+    background-color 0.2s;
+}
+.quest-item:hover {
+  border-color: #a6dcde;
+  translate: 3px 0;
+}
+.quest-item:active {
+  scale: 0.98;
+}
+.quest-item i {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  color: #fff;
+  opacity: 0.3;
+  transition:
+    opacity 0.2s,
+    scale 0.35s var(--ease-spring);
+}
+.quest-item.done i {
+  opacity: 1;
+  animation: check-pop 0.4s var(--ease-spring);
+}
+.quest-item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.quest-item.done span {
+  color: var(--subtle);
+  text-decoration: line-through;
+}
+.quest-list .goal-state {
+  justify-self: start;
+  margin-top: 2px;
+}
+.progress-ring.complete {
+  animation: ring-glow 1.8s ease-in-out infinite;
+}
+@keyframes ring-glow {
+  50% {
+    box-shadow: 0 0 0 8px rgba(47, 184, 137, 0.15);
+  }
+}
+
+/* Landing word card: flip and shuffle. */
+.flip-word.board-card {
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  perspective: 1100px;
+}
+.flip-word-inner {
+  position: relative;
+  display: grid;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  transform-style: preserve-3d;
+  transition: transform 0.7s var(--ease-spring);
+}
+.flip-word.is-flipped .flip-word-inner {
+  transform: rotateY(180deg);
+}
+.flip-word-face {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 200px;
+  padding: 22px 22px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--shadow-lg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-word-face.back {
+  transform: rotateY(180deg);
+  background:
+    var(--dot-grid) 0 0 / 14px 14px,
+    #fff7ec;
+}
+.flip-word-face em {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--ink);
+  font-size: 13px;
+}
+.flip-word-definition {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.flip-word-collocation {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+.flip-word-collocation b {
+  color: var(--teal-strong);
+}
+.flip-word-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+.flip-word-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition:
+    translate 0.3s var(--ease-spring),
+    color 0.2s;
+}
+.flip-word-actions button:hover {
+  translate: 0 -2px;
+  color: var(--teal-strong);
+}
+
+@media (max-width: 1100px) {
+  .sidebar-card .harry-buddy {
+    display: flex;
+    justify-content: center;
+  }
+  .sidebar-card .harry-buddy-bubble {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .sidebar-card .harry-buddy {
+    display: grid;
+  }
+  .sidebar-card .harry-buddy-bubble {
+    display: block;
+  }
+  .welcome-art .harry-buddy {
+    left: calc(50% - 63px);
+    bottom: 8px;
+    width: auto !important;
+    height: auto !important;
+  }
+  .harry-buddy-bubble {
+    right: 70%;
+    max-width: 150px;
+    font-size: 14px;
+  }
+  .streak-day i {
+    width: 26px;
+    height: 26px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-tilting {
+    transform: none;
+  }
+  .stat-pill.streak svg {
+    animation: none;
+  }
+}

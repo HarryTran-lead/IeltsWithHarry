@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { ArrowRight, CalendarDays, Check, Headphones, NotebookPen, Newspaper, UsersRound, Volume2 } from "lucide-react";
+import { ArrowRight, CalendarDays, Check, Headphones, NotebookPen, Newspaper, UsersRound } from "lucide-react";
 import { Doodle, Sticker, Tape, type StickerName } from "@/components/stickers/stickers";
-import { stages, vocabulary } from "@/lib/demo-data";
+import { FlipWordCard } from "@/components/fx/flip-word-card";
+import { stages } from "@/lib/demo-data";
 import { getViewerRole } from "@/lib/viewer-role";
 
 const skills: { name: string; sticker: StickerName; text: string; tone: string }[] = [
@@ -20,7 +21,6 @@ export default async function GuestHome() {
   const role = await getViewerRole();
   if (role === "student") redirect("/app/dashboard");
   if (role === "admin") redirect("/admin");
-  const word = vocabulary[0];
   return <div className="guest-home">
     <section className="guest-hero">
       <div className="guest-hero-copy">
@@ -38,15 +38,8 @@ export default async function GuestHome() {
           <div><dt>1</dt><dd>sổ tay cho mọi ghi chú</dd></div>
         </dl>
       </div>
-      <div className="guest-board" aria-hidden="true">
-        <div className="board-card board-word">
-          <Tape tone="teal" />
-          <span className="board-label">WORD CARD</span>
-          <strong>{word.word}</strong>
-          <span className="board-phonetic"><Volume2 size={15} /> {word.phonetic}</span>
-          <p><b>{word.meaning}</b> · {word.definition}</p>
-          <em>“{word.example}”</em>
-        </div>
+      <div className="guest-board">
+        <FlipWordCard className="board-card board-word" />
         <div className="board-card board-plan">
           <Tape tone="sun" />
           <span className="board-label"><CalendarDays size={14} /> HÔM NAY</span>

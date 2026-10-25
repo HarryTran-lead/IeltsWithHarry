@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
+import { celebrateScore } from "@/lib/celebrate";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
@@ -229,8 +230,10 @@ function ExerciseResult({
   onRetry: () => void;
   explanation: string[];
 }) {
+  const panel = useRef<HTMLDivElement>(null);
+  useEffect(() => { celebrateScore(correct, total, panel.current); }, [correct, total]);
   return (
-    <div className="result-panel">
+    <div className="result-panel" ref={panel}>
       <Sticker name={correct === total ? "star" : "heart"} size={52} tilt={10} />
       <h3>
         {correct === total
