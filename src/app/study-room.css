@@ -6,6 +6,13 @@
 .study-online{display:flex;align-items:center;gap:7px;border-radius:999px;background:#e5f8f6;color:#118e89;padding:10px 15px;white-space:nowrap;font-size:13px}.study-online strong{font-size:19px}.study-online span{font-weight:750}
 .study-room-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(345px,.82fr);gap:20px;align-items:start}.study-room-main{display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0}
 .study-visual-card{grid-column:1/-1;background:white;border:1px solid #e3edf2;border-radius:25px;overflow:hidden;box-shadow:0 10px 30px #1239540a}
+.study-video-tabs{display:flex;gap:8px;padding:12px;background:#f4fbfb}
+.study-video-tabs button{border:1px solid #deedef;border-radius:999px;padding:8px 13px;background:#fff;color:#55758a;font-size:12px;font-weight:850;cursor:pointer}
+.study-video-tabs button.selected{background:#d9f7f5;border-color:#75d3d2;color:#087985}
+.study-youtube{aspect-ratio:16/9;background:#142645}
+.study-youtube iframe{display:block;width:100%;height:100%;border:0}
+.study-visual-footer a{color:#148b9c;text-decoration:underline}
+.study-room-main.has-youtube .study-focus{grid-column:1/-1;min-height:95px}
 .study-scene{height:clamp(310px,32vw,500px);position:relative;overflow:hidden;background:radial-gradient(circle at 52% 70%,#6075a8 0,#354b75 42%,#18294e 100%)}
 .study-scene-glow{position:absolute;inset:auto 14% -42% 14%;height:75%;background:#ffb66b66;filter:blur(70px);border-radius:50%}
 .study-window{position:absolute;top:10%;right:10%;width:31%;height:53%;border:11px solid #21385f;border-radius:90px 90px 10px 10px;background:linear-gradient(#182751,#3a5485);box-shadow:inset 0 0 0 4px #6887a2,0 20px 30px #152c5088;overflow:hidden}.study-window:before,.study-window:after{content:"";position:absolute;background:#6486a0}.study-window:before{width:5px;height:100%;left:50%}.study-window:after{height:5px;width:100%;top:49%}.study-window i{position:absolute;top:-20px;width:2px;height:24px;background:#b6d5e9aa;transform:rotate(16deg);animation:study-rain 1.4s linear infinite}.study-window i:nth-of-type(1){left:13%;animation-delay:-.2s}.study-window i:nth-of-type(2){left:36%;animation-delay:-.8s}.study-window i:nth-of-type(3){left:57%;animation-delay:-.5s}.study-window i:nth-of-type(4){left:76%;animation-delay:-1.2s}.study-window i:nth-of-type(5){left:90%;animation-delay:-.7s}.study-moon{position:absolute;top:15%;right:20%;width:38px;height:38px;border-radius:50%;background:#ffe1a4;box-shadow:0 0 25px #ffdf9ab0}

@@ -11,6 +11,8 @@ const users = [];
 const channels = [];
 const clients = [];
 const runId = randomUUID();
+const activeCount = (channel) => Object.values(channel.presenceState())
+  .filter((metas) => metas.some((meta) => meta.active === true)).length;
 
 async function createLearner(label) {
   const email = `study-smoke-${label}-${runId}@example.invalid`;
@@ -57,14 +59,14 @@ try {
   }
   const secondChannel = channels[0].channel;
   await subscribed(secondChannel);
-  await secondChannel.track({ user_id: second.user.id, joined_at: new Date().toISOString() });
+  await secondChannel.track({ active: true, joined_at: new Date().toISOString() });
   const firstChannel = first.client.channel("study-together", { config: { private: true, presence: { key: first.user.id } } });
   channels.push({ client: first.client, channel: firstChannel });
   await subscribed(firstChannel);
-  await firstChannel.track({ user_id: first.user.id, joined_at: new Date().toISOString() });
+  await firstChannel.track({ active: true, joined_at: new Date().toISOString() });
   let peers = 0;
   for (let attempt = 0; attempt < 20; attempt += 1) {
-    peers = Object.keys(secondChannel.presenceState()).length;
+    peers = activeCount(secondChannel);
     if (peers === 2) break;
     await new Promise((resolve) => setTimeout(resolve, 200));
   }
@@ -85,6 +87,14 @@ try {
   const deleted = await first.client.from("study_room_messages").delete().eq("id", sent.data.id);
   if (deleted.error) throw deleted.error;
   console.log("author delete: ok");
+  await firstChannel.track({ active: false });
+  for (let attempt = 0; attempt < 40; attempt += 1) {
+    peers = activeCount(secondChannel);
+    if (peers === 1) break;
+    await new Promise((resolve) => setTimeout(resolve, 200));
+  }
+  if (peers !== 1) throw new Error(`Expected one learner after leaving the room, got ${peers}`);
+  console.log("live count after leaving: ok");
 } finally {
   await Promise.all(channels.map(({ client, channel }) => client.removeChannel(channel).catch(() => undefined)));
   for (const client of clients) client.realtime.disconnect();

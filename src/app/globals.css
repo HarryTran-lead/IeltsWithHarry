@@ -105,6 +105,19 @@ h3 {
   grid-template-columns: 220px minmax(0, 1fr);
   grid-template-rows: 88px minmax(0, 1fr);
 }
+.app-frame.sidebar-collapsed {
+  grid-template-columns: 0 minmax(0, 1fr);
+}
+.sidebar-collapsed .sidebar {
+  display: none;
+}
+.sidebar-collapsed .main-area {
+  grid-column: 1 / -1;
+}
+.desktop-sidebar-toggle {
+  flex: none;
+  color: #258f9c;
+}
 .topbar {
   grid-column: 1/-1;
   grid-row: 1;
@@ -361,6 +374,29 @@ h3 {
   background: #dff7f7;
   color: #075b69;
   font-weight: 800;
+}
+.nav-link > span:not(.study-nav-count) {
+  flex: 1;
+}
+.study-nav-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 32px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #d9f7ef;
+  color: #0a806c;
+  font-size: 11px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+.study-nav-count i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1ac094;
 }
 .sidebar-card {
   margin-top: auto;
@@ -2085,8 +2121,20 @@ h3 {
   .nav-link {
     justify-content: center;
     padding: 0;
+    position: relative;
   }
   .nav-link span {
+    display: none;
+  }
+  .nav-link .study-nav-count {
+    position: absolute;
+    transform: translate(20px, -16px);
+    display: inline-flex;
+    min-width: 19px;
+    padding: 1px 4px;
+    font-size: 9px;
+  }
+  .nav-link .study-nav-count i {
     display: none;
   }
   .sidebar-card {
@@ -2158,6 +2206,9 @@ h3 {
   .mobile-menu {
     display: grid;
   }
+  .desktop-sidebar-toggle {
+    display: none;
+  }
   .header-search {
     display: none;
   }
@@ -2206,6 +2257,9 @@ h3 {
     box-shadow: 15px 0 40px #1a405033;
     overflow-y: auto;
   }
+  .app-frame.sidebar-collapsed .sidebar {
+    display: flex;
+  }
   .sidebar.open {
     transform: translateX(0);
   }
@@ -2224,6 +2278,17 @@ h3 {
   }
   .sidebar .nav-link span {
     display: inline;
+  }
+  .sidebar .nav-link .study-nav-count {
+    position: static;
+    transform: none;
+    display: inline-flex;
+    min-width: 32px;
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+  .sidebar .nav-link .study-nav-count i {
+    display: inline-block;
   }
   .sidebar-card {
     min-height: 165px;

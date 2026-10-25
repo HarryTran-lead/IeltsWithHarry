@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   BookOpen,
   CalendarDays,
@@ -26,12 +26,15 @@ import {
   LogOut,
   Newspaper,
   UsersRound,
+  PanelLeftClose,
+  PanelLeftOpen,
 } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { useDemo } from "@/features/demo/demo-store";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
+import { useStudyPresence } from "@/features/study-room/study-presence";
 
 const links = [
   { href: "/app/dashboard", label: "Dashboard", icon: Home },
@@ -72,6 +75,8 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
   const router = useRouter();
   const { tasks, attempts, error, clearError } = useDemo();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const { online: studyOnline } = useStudyPresence();
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -82,8 +87,22 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
     .filter((item) => item.label.toLowerCase().includes(query.toLowerCase()))
     .slice(0, 5);
 
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setSidebarCollapsed(window.localStorage.getItem("ieltswithharry-sidebar-collapsed") === "true");
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  function toggleSidebar() {
+    setSidebarCollapsed((current) => {
+      window.localStorage.setItem("ieltswithharry-sidebar-collapsed", String(!current));
+      return !current;
+    });
+  }
+
   return (
-    <div className="app-frame">
+    <div className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}>
       <header className="topbar">
         <button
           className="mobile-menu icon-button"
@@ -91,6 +110,17 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
           aria-label="Open menu"
         >
           <Menu size={23} />
+        </button>
+        <button
+          type="button"
+          className="desktop-sidebar-toggle icon-button"
+          onClick={toggleSidebar}
+          aria-label={sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
+          aria-expanded={!sidebarCollapsed}
+          aria-controls="student-sidebar"
+          title={sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
+        >
+          {sidebarCollapsed ? <PanelLeftOpen size={21} /> : <PanelLeftClose size={21} />}
         </button>
         <Link href="/app/dashboard" className="brand">
           <span className="brand-mascot">
@@ -217,7 +247,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
           </div>
         </div>
       </header>
-      <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
+      <aside id="student-sidebar" className={`sidebar ${menuOpen ? "open" : ""}`}>
         <div className="sidebar-mobile-head">
           <span>Menu</span>
           <button
@@ -235,9 +265,11 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
               href={href}
               onClick={() => setMenuOpen(false)}
               className={`nav-link ${pathname === href || (href !== "/app/dashboard" && pathname.startsWith(href + "/")) ? "active" : ""}`}
+              title={label}
             >
               <Icon size={21} strokeWidth={2.3} />
               <span>{label}</span>
+              {href === "/app/study-together" && <span className="study-nav-count" aria-label={`${studyOnline ?? "Đang kết nối"} người đang học trực tiếp`}><i />{studyOnline ?? "…"}</span>}
             </Link>
           ))}
           {canManage && <Link href="/admin" onClick={() => setMenuOpen(false)} className="nav-link"><ShieldCheck size={21} strokeWidth={2.3} /><span>Admin portal</span></Link>}

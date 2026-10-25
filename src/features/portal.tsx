@@ -10,9 +10,10 @@ import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { NotebookPage } from "@/features/notebook/notebook-ui";
 import { NewsPortal } from "@/features/news/news-portal";
 import { StudyRoom } from "@/features/study-room/study-room";
+import { StudyPresenceProvider } from "@/features/study-room/study-presence";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
-  return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
+  return <DemoProvider><NotebookProvider><StudyPresenceProvider><PortalContent canManage={canManage} /></StudyPresenceProvider></NotebookProvider></DemoProvider>;
 }
 
 function PortalContent({ canManage }: { canManage: boolean }) {
