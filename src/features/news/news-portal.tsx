@@ -1,9 +1,9 @@
 "use client";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarPlus, CheckCircle2, Clock3, ExternalLink, Globe2, Headphones, Newspaper, Search, Trophy, Volume2 } from "lucide-react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Archive, ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarDays, CalendarPlus, CheckCircle2, Clock3, ExternalLink, Flame, Headphones, History, Newspaper, Search, Trophy, Volume2, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -12,6 +12,7 @@ import { NEWS_CATEGORIES, type NewsCategory } from "@/lib/news/constants";
 import { NewsRecommendations } from "./news-recommendations";
 import { NewsReadingTools } from "./news-reading-tools";
 import { NewsAutoQuiz } from "./news-auto-quiz";
+import "./news-masthead.css";
 
 type NewsRow = { id: string; title: string; publisher: string; canonical_url: string; category: NewsCategory; published_at: string; fetched_at: string; attribution_text: string; sensitive: boolean };
 type ArchiveRow = NewsRow & { source_id: string; readable: boolean; image_url: string | null; image_alt: string | null; image_credit: string | null; illustration_source_url: string | null; illustration_license: string | null; illustration_license_url: string | null };
@@ -41,12 +42,52 @@ export function NewsPortal() {
   return <NewsHome />;
 }
 
-function NewsHero({ compact = false }: { compact?: boolean }) {
-  return <header className={`news-hero ${compact ? "compact" : ""}`}><div><span className="eyebrow">IELTSWITHHARRY / DAILY NEWS</span><h1>Daily English News</h1><p>Discover the world. Improve your English every day.</p><div className="news-hero-links"><Link href="/app/news">Tin mới</Link><Link href="/app/news/learn">Learn with News</Link><Link href="/app/news/saved">Đã lưu</Link><Link href="/app/news/history">Lịch sử học</Link></div></div><div className="sticker-cluster news-hero-stickers"><Sticker name="globe" size={compact ? 76 : 104} tilt={-6} float /><Sticker name="newspaper" size={compact ? 52 : 70} tilt={-12} delay={140} /><Sticker name="coffee" size={compact ? 44 : 60} tilt={10} delay={240} /></div></header>;
+type Feed = "latest" | "hot" | "today" | "archive";
+const feeds: { id: Feed; label: string; icon: LucideIcon; hint: string }[] = [
+  { id: "latest", label: "Mới nhất", icon: Clock3, hint: "Tin mới nhất có toàn văn để đọc ngay tại đây." },
+  { id: "hot", label: "Nổi bật", icon: Flame, hint: "Tin Việt Nam đang được đọc nhiều trên VnExpress và Tuổi Trẻ, viết lại bằng tiếng Anh." },
+  { id: "today", label: "Hôm nay", icon: CalendarDays, hint: "Tin được xuất bản trong ngày hôm nay." },
+  { id: "archive", label: "Lưu trữ", icon: Archive, hint: "Chọn nguồn, năm và thứ tự để xem lại tin cũ." },
+];
+const newsPages = [
+  { id: "learn", label: "Learn with News", href: "/app/news/learn", icon: BookOpenText },
+  { id: "saved", label: "Đã lưu", href: "/app/news/saved", icon: Bookmark },
+  { id: "history", label: "Lịch sử học", href: "/app/news/history", icon: History },
+] as const;
+type NewsTab = Feed | (typeof newsPages)[number]["id"];
+
+/** One compact header for every Daily News page; the tab row is the section menu and stays pinned while scrolling. */
+function NewsMasthead({ active, meta, search }: { active: NewsTab; meta?: React.ReactNode; search?: React.ReactNode }) {
+  const today = new Intl.DateTimeFormat("vi-VN", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(new Date());
+  const list = useRef<HTMLDivElement>(null);
+  // On narrow screens the menu scrolls sideways; keep the open tab in view.
+  useEffect(() => {
+    const element = list.current;
+    const current = element?.querySelector<HTMLElement>(".active");
+    if (element && current) element.scrollTo({ left: current.offsetLeft - (element.clientWidth - current.offsetWidth) / 2, behavior: "smooth" });
+  }, [active]);
+  return <>
+    <header className="news-masthead">
+      <div className="news-masthead-title"><Sticker name="globe" size={50} tilt={-8} /><div><span className="eyebrow">Daily News · <time suppressHydrationWarning>{today}</time></span><h1>Daily English News</h1></div></div>
+      {meta && <div className="news-masthead-meta">{meta}</div>}
+    </header>
+    <nav className="news-tabs" aria-label="Mục lục Daily News">
+      <div className="news-tabs-list" ref={list}>
+        {feeds.map(({ id, label, icon: Icon }) => <Link key={id} href={id === "latest" ? "/app/news" : `/app/news?feed=${id}`} scroll={false} className={active === id ? "active" : ""} aria-current={active === id ? "page" : undefined}><Icon size={16} />{label}</Link>)}
+        <span className="news-tabs-divider" aria-hidden="true" />
+        {newsPages.map(({ id, label, href, icon: Icon }) => <Link key={id} href={href} className={active === id ? "active" : ""} aria-current={active === id ? "page" : undefined}><Icon size={16} />{label}</Link>)}
+      </div>
+      {search}
+    </nav>
+  </>;
 }
 
 function NewsHome() {
   const db = useMemo(() => createClient(), []);
+  const params = useSearchParams();
+  const feedParam = params.get("feed");
+  const feed: Feed = feedParam === "hot" || feedParam === "today" || feedParam === "archive" ? feedParam : "latest";
+  const feedInfo = feeds.find((item) => item.id === feed)!;
   const [category, setCategory] = useState<string>("All News");
   const [query, setQuery] = useState("");
   const [search, setSearch] = useState("");
@@ -55,7 +96,10 @@ function NewsHome() {
   const [year, setYear] = useState("all");
   const [sources, setSources] = useState<{id: string; name: string}[]>([]);
   const [oldestYear, setOldestYear] = useState(new Date().getFullYear());
-  const [page, setPage] = useState(0);
+  // Paging belongs to one feed, so switching tabs starts again from page one.
+  const [paging, setPaging] = useState<{ feed: Feed; page: number }>({ feed, page: 0 });
+  const page = paging.feed === feed ? paging.page : 0;
+  const setPage = (next: number | ((value: number) => number)) => setPaging({ feed, page: typeof next === "function" ? next(page) : next });
   const [rows, setRows] = useState<ArchiveRow[]>([]);
   const [count, setCount] = useState(0);
   const [saved, setSaved] = useState<string[]>([]);
@@ -69,19 +113,29 @@ function NewsHome() {
   const [now] = useState(() => Date.now());
   const [error, setError] = useState("");
   const load = useCallback(async () => {
-    setLoading(true);
+    setLoading(true); setError("");
     const start = new Date(); start.setHours(0,0,0,0);
     const end = new Date(start); end.setDate(end.getDate()+1);
+    // Hot stories are the Vietnamese stories the rewrite job picked from Most read and Trending lists.
+    let hotIds: string[] | null = null;
+    if (feed === "hot") {
+      const hot = await db.from("news_article_bodies").select("article_id").eq("ai_generated", true).order("ingested_at", { ascending: false }).limit(150);
+      if (hot.error) { setError(hot.error.message); setLoading(false); return; }
+      hotIds = (hot.data ?? []).map((row) => row.article_id);
+    }
     let request = db.from("news_archive_catalog").select("id,source_id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit,illustration_source_url,illustration_license,illustration_license_url", { count: "exact" }).eq("publication_status", "published").eq("sensitive", false);
     if (category !== "All News") request = request.eq("category", category);
-    if (source !== "all") request = request.eq("source_id", source);
     // Only articles readable on site are listed; teaser-only items wait until their text arrives.
     request = request.eq("readable", true);
-    if (year !== "all") request = request.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);
+    if (hotIds) request = request.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]);
+    if (feed === "today") request = request.gte("published_at", start.toISOString()).lt("published_at", end.toISOString());
+    const archive = feed === "archive";
+    if (archive && source !== "all") request = request.eq("source_id", source);
+    if (archive && year !== "all") request = request.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);
     if (search.trim()) request = request.ilike("title", `%${search.trim().replace(/[%_,]/g, "")}%`);
-    if (sort === "oldest") request = request.order("published_at", { ascending: true });
-    else if (sort === "added") request = request.order("fetched_at", { ascending: false });
-    else if (sort === "category") request = request.order("category").order("published_at", { ascending: false });
+    if (archive && sort === "oldest") request = request.order("published_at", { ascending: true });
+    else if (archive && sort === "added") request = request.order("fetched_at", { ascending: false });
+    else if (archive && sort === "category") request = request.order("category").order("published_at", { ascending: false });
     else request = request.order("published_at", { ascending: false });
     const [articles, saves, freshness, readings, progress, today, recentReads, sourceList, oldest] = await Promise.all([
       request.range(page * 12, page * 12 + 11),
@@ -106,7 +160,7 @@ function NewsHome() {
     setCompleted((progress.data??[]).filter((item)=>item.completed_at).length);
     setXp((progress.data??[]).reduce((sum,item)=>sum+(item.xp_awarded??0),0));
     setTodayCount(today.count??0);
-  }, [db, category, search, sort, source, year, page]);
+  }, [db, feed, category, search, sort, source, year, page]);
   useEffect(() => { const timer = setTimeout(() => setSearch(query), 300); return () => clearTimeout(timer); }, [query]);
   useEffect(() => { void Promise.resolve().then(load); }, [load]);
   async function toggleSave(id: string) {
@@ -114,18 +168,24 @@ function NewsHome() {
     const result = isSaved ? await db.from("user_saved_news").delete().eq("article_id", id) : await db.from("user_saved_news").insert({ article_id: id });
     if (result.error) setError(result.error.message); else setSaved((current) => isSaved ? current.filter((item) => item !== id) : [...current, id]);
   }
-  return <div className="content-page news-page news-home"><NewsHero compact />
+  const yearOptions = Array.from({ length: Math.max(1, new Date().getFullYear() - oldestYear + 1) }, (_, i) => new Date().getFullYear() - i);
+  return <div className="content-page news-page news-home">
+    <NewsMasthead active={feed}
+      meta={<><span><Newspaper /> <b>{todayCount}</b> tin hôm nay</span><span><Clock3 /> Cập nhật {latest ? relativeTime(latest).toLowerCase() : "—"}</span><span title={`${xp} XP từ bài luyện`}><Trophy /> Đã đọc <b>{readToday}</b> hôm nay · <b>{completed}</b> bài luyện</span></>}
+      search={<label className="news-tabs-search"><Search size={16} /><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm theo tiêu đề..." aria-label="Tìm tin" /></label>} />
     {latest && now - new Date(latest).valueOf() > 2 * 3600000 && <p className="news-stale">Tin đã lưu vẫn xem được. Lần đồng bộ gần nhất: {newsDate(latest)}.</p>}
-    <section className="news-section" id="news-archive"><div className="news-section-heading"><div><span className="eyebrow">KHO BÁO THEO THỜI GIAN</span><h2>Tin mới và tin lưu trữ</h2><p>Chọn năm, nguồn và thứ tự để xem lại tin cũ. Bài đủ điều kiện có toàn văn tại đây; bài khác dẫn tới trang gốc.</p></div><Link href="/app/news/saved">Tin đã lưu →</Link></div>
-    <div className="news-categories">{["All News",...NEWS_CATEGORIES].map((item) => <button key={item} className={category === item ? "selected" : ""} onClick={() => { setCategory(item); setPage(0); }}>{item}</button>)}</div>
-    <div className="news-toolbar news-archive-toolbar"><label><Search size={18}/><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm theo tiêu đề..." aria-label="Tìm tin" /></label><select aria-label="Nguồn tin" value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="all">Mọi nguồn</option>{sources.map((item)=><option key={item.id} value={item.id}>{item.name}</option>)}</select><select aria-label="Năm xuất bản" value={year} onChange={(event) => { setYear(event.target.value); setPage(0); }}><option value="all">Mọi năm</option>{Array.from({length:Math.max(1,new Date().getFullYear()-oldestYear+1)},(_,i)=>new Date().getFullYear()-i).map((value)=><option key={value} value={value}>{value}</option>)}</select><select aria-label="Sắp xếp tin" value={sort} onChange={(event) => { setSort(event.target.value); setPage(0); }}><option value="newest">Mới nhất</option><option value="oldest">Cũ nhất</option><option value="added">Mới thêm</option><option value="category">Danh mục</option></select></div>
-    <p className="news-archive-count">{count.toLocaleString("vi-VN")} bài phù hợp · Đã lưu để đọc lại; các năm cũ đang tiếp tục được bổ sung.</p>
-    {error && <p className="form-error" role="alert">{error}</p>}{loading ? <p>Đang tải tin…</p> : rows.length ? <div className="news-grid">{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={row.image_url && row.image_alt && row.image_credit ? {image_url:row.image_url,image_alt:row.image_alt,image_credit:row.image_credit} : undefined} learnSlug={learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Newspaper size={42}/><h3>Chưa có tin phù hợp</h3><p>Hãy đổi năm, nguồn hoặc chế độ đọc. Kho tin cũ đang được nhập thêm theo lịch.</p><Link href="/app/news/learn" className="button primary">Learn with News</Link></div>}
-    <div className="news-pagination"><button disabled={page === 0} onClick={() => setPage((value) => value - 1)}>← Trước</button><span>Trang {page + 1} / {Math.max(1, Math.ceil(count / 12))}</span><button disabled={(page + 1) * 12 >= count} onClick={() => setPage((value) => value + 1)}>Tiếp →</button></div></section>
-    <div className="news-stats news-home-stats"><div><Newspaper /><span>Today&apos;s news</span><strong>{todayCount}</strong></div><div><Clock3 /><span>Last checked</span><strong>{latest ? relativeTime(latest) : "Chưa đồng bộ"}</strong></div><div><Globe2 /><span>Available articles</span><strong>{count}</strong></div><div><Trophy /><span>Đã học</span><strong>{readToday} tin hôm nay · {completed} bài luyện</strong><small>{xp} XP từ bài luyện</small></div></div>
-    <section className="news-challenge"><div><span className="eyebrow">DAILY READING CHALLENGE</span><h2>Mỗi ngày một câu chuyện mới</h2><p>Tin từ NASA, NOAA và NSF được tự đồng bộ và lưu lại theo ngày. Lọc bài có thể đọc tại đây hoặc mở bài gốc từ nhà xuất bản.</p></div><div className="news-challenge-actions"><a href="#news-archive" className="button primary">Khám phá kho tin <ArrowRight size={17}/></a><Link href="/app/news/learn" className="button subtle">Luyện câu hỏi</Link></div></section>
+    <section className="news-feed" id="news-archive">
+      <div className="news-feed-bar">
+        <div className="news-categories">{["All News",...NEWS_CATEGORIES].map((item) => <button key={item} className={category === item ? "selected" : ""} onClick={() => { setCategory(item); setPage(0); }}>{item}</button>)}</div>
+        {feed === "archive" && <div className="news-archive-filters"><select aria-label="Nguồn tin" value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="all">Mọi nguồn</option>{sources.map((item)=><option key={item.id} value={item.id}>{item.name}</option>)}</select><select aria-label="Năm xuất bản" value={year} onChange={(event) => { setYear(event.target.value); setPage(0); }}><option value="all">Mọi năm</option>{yearOptions.map((value)=><option key={value} value={value}>{value}</option>)}</select><select aria-label="Sắp xếp tin" value={sort} onChange={(event) => { setSort(event.target.value); setPage(0); }}><option value="newest">Mới nhất</option><option value="oldest">Cũ nhất</option><option value="added">Mới thêm</option><option value="category">Danh mục</option></select></div>}
+      </div>
+      <p className="news-feed-count"><feedInfo.icon size={15} /><b>{loading ? "…" : count.toLocaleString("vi-VN")} bài</b><span>{feedInfo.hint}</span></p>
+      {error && <p className="form-error" role="alert">{error}</p>}
+      {loading ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className="news-grid stagger">{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={row.image_url && row.image_alt && row.image_credit ? {image_url:row.image_url,image_alt:row.image_alt,image_credit:row.image_credit} : undefined} learnSlug={learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
+      {count > 12 && <div className="news-pagination"><button disabled={page === 0} onClick={() => setPage((value) => value - 1)}>← Trước</button><span>Trang {page + 1} / {Math.ceil(count / 12)}</span><button disabled={(page + 1) * 12 >= count} onClick={() => setPage((value) => value + 1)}>Tiếp →</button></div>}
+    </section>
     <section className="news-section"><div className="news-section-heading"><div><span className="eyebrow">HỌC QUA BÀI ĐỌC GỐC</span><h2>Learn with News</h2><p>Bài đọc và câu hỏi do người biên soạn, có đáp án rõ ràng.</p></div><Link href="/app/news/learn">Xem tất cả →</Link></div><div className="news-grid">{learn.slice(0,3).map((item) => <LearnCard key={item.id} item={item}/>)}</div></section>
-    <p className="news-credit">Nguồn: NASA, NOAA, NSF. Mỗi bài đều dẫn tới bản gốc; chỉ nội dung có hồ sơ quyền phù hợp mới hiển thị toàn văn.</p>
+    <p className="news-credit">Mỗi bài đều dẫn tới bản gốc; chỉ nội dung có hồ sơ quyền phù hợp mới hiển thị toàn văn.</p>
   </div>;
 }
 
@@ -142,7 +202,7 @@ function LearnList() {
   const db = useMemo(() => createClient(), []);
   const [rows, setRows] = useState<LearnRow[]>([]); const [level, setLevel] = useState("all"); const [category, setCategory] = useState("All News"); const [error, setError] = useState("");
   useEffect(() => { let request = db.from("news_learning_articles").select("id,slug,title,summary,category,stage_id,audio_url,source_url,rights_status,related_news_id,created_at").eq("published",true).order("created_at",{ascending:false}).limit(100); if (level !== "all") request = request.eq("stage_id",level); if (category !== "All News") request=request.eq("category",category); void request.then(({data,error})=>{setRows((data??[]) as LearnRow[]);setError(error?.message??"");}); },[db,level,category]);
-  return <div className="content-page news-page"><NewsHero compact/><NewsRecommendations/><section className="news-section"><span className="eyebrow">BÀI ĐỌC CÓ BẢN QUYỀN RÕ RÀNG</span><h2>Learn with News</h2><p>Chọn chủ đề và mức độ phù hợp. Đây là bài đọc gốc hoặc đã được cấp phép, không phải toàn văn tin lấy tự động.</p><div className="news-toolbar"><select value={level} onChange={(event)=>setLevel(event.target.value)} aria-label="Choose level"><option value="all">Mọi trình độ</option>{Object.entries(stages).map(([id,label])=><option key={id} value={id}>{label}</option>)}</select><select value={category} onChange={(event)=>setCategory(event.target.value)} aria-label="Choose category"><option>All News</option>{NEWS_CATEGORIES.map((item)=><option key={item}>{item}</option>)}</select></div>{error&&<p role="alert" className="form-error">{error}</p>}<div className="news-grid">{rows.map((item)=><LearnCard key={item.id} item={item}/>)}</div>{!rows.length&&<div className="news-empty">Chưa có bài học cho bộ lọc này.</div>}</section></div>;
+  return <div className="content-page news-page"><NewsMasthead active="learn"/><NewsRecommendations/><section className="news-section"><span className="eyebrow">BÀI ĐỌC CÓ BẢN QUYỀN RÕ RÀNG</span><h2>Learn with News</h2><p>Chọn chủ đề và mức độ phù hợp. Đây là bài đọc gốc hoặc đã được cấp phép, không phải toàn văn tin lấy tự động.</p><div className="news-toolbar"><select value={level} onChange={(event)=>setLevel(event.target.value)} aria-label="Choose level"><option value="all">Mọi trình độ</option>{Object.entries(stages).map(([id,label])=><option key={id} value={id}>{label}</option>)}</select><select value={category} onChange={(event)=>setCategory(event.target.value)} aria-label="Choose category"><option>All News</option>{NEWS_CATEGORIES.map((item)=><option key={item}>{item}</option>)}</select></div>{error&&<p role="alert" className="form-error">{error}</p>}<div className="news-grid">{rows.map((item)=><LearnCard key={item.id} item={item}/>)}</div>{!rows.length&&<div className="news-empty">Chưa có bài học cho bộ lọc này.</div>}</section></div>;
 }
 
 function NewsDetail({ id }: { id: string }) {
@@ -179,7 +239,7 @@ function SavedNews(){
     const byId=new Map((archive.data??[]).map((item)=>[item.id,item as ArchiveRow]));
     setRows(ids.flatMap((id)=>byId.has(id)?[byId.get(id)!]:[]));
   })();},[db]);
-  return <div className="content-page news-page"><NewsHero compact/><section className="news-section"><h2>Tin đã lưu</h2><p>Danh sách riêng của bạn. Mở bài gốc trên trang nhà xuất bản.</p><div className="news-grid">{rows.map((row)=><NewsCard key={row.id} row={row} saved onSite={row.readable} image={newsImage(row)} onSave={async()=>{await db.from("user_saved_news").delete().eq("article_id",row.id);setRows((current)=>current.filter((item)=>item.id!==row.id));}}/>)}</div>{!rows.length&&<div className="news-empty">Bạn chưa lưu tin nào. <Link href="/app/news">Khám phá Daily News →</Link></div>}</section></div>;
+  return <div className="content-page news-page"><NewsMasthead active="saved"/><section className="news-section"><h2>Tin đã lưu</h2><p>Danh sách riêng của bạn. Mở bài gốc trên trang nhà xuất bản.</p><div className="news-grid">{rows.map((row)=><NewsCard key={row.id} row={row} saved onSite={row.readable} image={newsImage(row)} onSave={async()=>{await db.from("user_saved_news").delete().eq("article_id",row.id);setRows((current)=>current.filter((item)=>item.id!==row.id));}}/>)}</div>{!rows.length&&<div className="news-empty">Bạn chưa lưu tin nào. <Link href="/app/news">Khám phá Daily News →</Link></div>}</section></div>;
 }
 
 function NewsHistory(){
@@ -204,7 +264,7 @@ function NewsHistory(){
     const ids=[...new Set([...(n.data??[]).map((item)=>item.article_id),...(automatic.data??[]).map((item)=>item.article_id)])];
     if(ids.length){const headlines=await db.from("news_articles").select("id,title").in("id",ids);setNewsTitles(Object.fromEntries((headlines.data??[]).map((item)=>[item.id,item.title])));}
   })();},[db]);
-  return <div className="content-page news-page"><NewsHero compact/><section className="news-section"><h2>Lịch sử học với tin</h2><div className="news-stats"><div><Newspaper/><span>Tin đã đọc xong</span><strong>{newsReads.length}</strong></div><div><BookOpenText/><span>Bài luyện đã mở</span><strong>{progress.length}</strong></div><div><CheckCircle2/><span>Quiz đã nộp</span><strong>{attempts.length+autoAttempts.length}</strong></div></div><h3>Tin đã đọc trực tiếp</h3><div className="news-history-list">{newsReads.map((item)=><article key={item.article_id}><span>{newsDate(item.read_at)}</span><h3>{newsTitles[item.article_id]??"Bài tin"}</h3><Link href={`/app/news/${item.article_id}`}>Đọc lại →</Link></article>)}</div>{!newsReads.length&&<div className="news-empty">Bạn chưa đánh dấu hoàn thành tin nào. <Link href="/app/news#direct-news">Khám phá tin đọc trực tiếp →</Link></div>}<h3>Câu hỏi tự động từ bài báo</h3><div className="news-history-list">{autoAttempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{newsTitles[item.article_id]??"Bài báo"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p><Link href={`/app/news/${item.article_id}`}>Đọc và luyện lại →</Link></article>)}</div>{!autoAttempts.length&&<p>Chưa có bài quiz tự động nào được nộp.</p>}<h3>Bài luyện và câu hỏi</h3><div className="news-history-list">{attempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{titles[item.article_id]?.split("|")[0]??"Bài đọc"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p>{titles[item.article_id]&&<Link href={`/app/news/learn/${titles[item.article_id].split("|")[1]}`}>Ôn lại →</Link>}</article>)}</div>{!attempts.length&&<div className="news-empty">Bạn chưa hoàn thành bài quiz nào. <Link href="/app/news/learn">Bắt đầu đọc →</Link></div>}</section></div>;
+  return <div className="content-page news-page"><NewsMasthead active="history"/><section className="news-section"><h2>Lịch sử học với tin</h2><div className="news-stats"><div><Newspaper/><span>Tin đã đọc xong</span><strong>{newsReads.length}</strong></div><div><BookOpenText/><span>Bài luyện đã mở</span><strong>{progress.length}</strong></div><div><CheckCircle2/><span>Quiz đã nộp</span><strong>{attempts.length+autoAttempts.length}</strong></div></div><h3>Tin đã đọc trực tiếp</h3><div className="news-history-list">{newsReads.map((item)=><article key={item.article_id}><span>{newsDate(item.read_at)}</span><h3>{newsTitles[item.article_id]??"Bài tin"}</h3><Link href={`/app/news/${item.article_id}`}>Đọc lại →</Link></article>)}</div>{!newsReads.length&&<div className="news-empty">Bạn chưa đánh dấu hoàn thành tin nào. <Link href="/app/news#direct-news">Khám phá tin đọc trực tiếp →</Link></div>}<h3>Câu hỏi tự động từ bài báo</h3><div className="news-history-list">{autoAttempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{newsTitles[item.article_id]??"Bài báo"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p><Link href={`/app/news/${item.article_id}`}>Đọc và luyện lại →</Link></article>)}</div>{!autoAttempts.length&&<p>Chưa có bài quiz tự động nào được nộp.</p>}<h3>Bài luyện và câu hỏi</h3><div className="news-history-list">{attempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{titles[item.article_id]?.split("|")[0]??"Bài đọc"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p>{titles[item.article_id]&&<Link href={`/app/news/learn/${titles[item.article_id].split("|")[1]}`}>Ôn lại →</Link>}</article>)}</div>{!attempts.length&&<div className="news-empty">Bạn chưa hoàn thành bài quiz nào. <Link href="/app/news/learn">Bắt đầu đọc →</Link></div>}</section></div>;
 }
 
 function LearnReader({ slug }: { slug: string }) {

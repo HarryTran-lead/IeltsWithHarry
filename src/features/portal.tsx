@@ -43,7 +43,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : skill ? (
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : section === "news" ? (
-          <NewsPortal />
+          <Suspense fallback={<div className="content-page">Đang tải Daily News…</div>}><NewsPortal /></Suspense>
         ) : section === "study-together" ? (
           <div className="study-room-placeholder" aria-hidden="true" />
         ) : (
