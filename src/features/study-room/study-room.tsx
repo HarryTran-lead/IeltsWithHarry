@@ -44,8 +44,11 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
   const [streamId, setStreamId] = useState<string>(liveStreams[0].id);
   const selectedStream = liveStreams.find((stream) => stream.id === streamId) ?? liveStreams[0];
   const [volume, setVolume] = useState(65);
+  const [focusMinutes, setFocusMinutes] = useState(25);
   const [secondsLeft, setSecondsLeft] = useState(25 * 60);
   const [timerRunning, setTimerRunning] = useState(false);
+  const [studySeconds, setStudySeconds] = useState(0);
+  const focusEndsAt = useRef<number | null>(null);
   const player = useRef<LofiPlayer | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
   const endRef = useRef<HTMLDivElement | null>(null);
@@ -93,15 +96,33 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
 
   useEffect(() => {
     if (!timerRunning) return;
-    const timer = setInterval(() => setSecondsLeft((current) => {
-      if (current <= 1) {
+    const timer = setInterval(() => {
+      const remaining = Math.max(0, Math.ceil(((focusEndsAt.current ?? Date.now()) - Date.now()) / 1000));
+      setSecondsLeft(remaining);
+      if (remaining === 0) {
+        focusEndsAt.current = null;
         setTimerRunning(false);
-        return 0;
       }
-      return current - 1;
-    }), 1000);
+    }, 250);
     return () => clearInterval(timer);
   }, [timerRunning]);
+
+  useEffect(() => {
+    if (!currentUser && !demoMode) return;
+    const today = new Date().toLocaleDateString("sv-SE");
+    const key = `study-room-seconds:${currentUser || "demo"}:${today}`;
+    const saved = Number(window.localStorage.getItem(key));
+    const load = window.setTimeout(() => setStudySeconds(Number.isFinite(saved) && saved > 0 ? saved : 0), 0);
+    const timer = window.setInterval(() => {
+      if (document.visibilityState !== "visible") return;
+      const currentKey = `study-room-seconds:${currentUser || "demo"}:${new Date().toLocaleDateString("sv-SE")}`;
+      const previous = Number(window.localStorage.getItem(currentKey));
+      const next = (Number.isFinite(previous) && previous > 0 ? previous : 0) + 1;
+      window.localStorage.setItem(currentKey, String(next));
+      setStudySeconds(next);
+    }, 1000);
+    return () => { window.clearTimeout(load); window.clearInterval(timer); };
+  }, [currentUser]);
 
   useEffect(() => () => { void player.current?.stop(); }, []);
 
@@ -177,25 +198,23 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
   }
 
   return <main className="study-room-page">
-    <div className="study-room-heading"><div><span className="study-eyebrow"><span className="study-live-dot" /> KHÔNG GIAN HỌC TẬP CHUNG</span><h1>Cùng học, cùng tiến bộ <span>✦</span></h1><p>Mở sách, bật nhạc và trò chuyện cùng mọi người trong một phòng học chung.</p></div><div className="study-online"><UsersRound size={20} /><strong>{online ?? "…"}</strong><span>đang học cùng</span></div></div>
+    <div className="study-room-heading"><div><span className="study-eyebrow"><span className="study-live-dot" /> PHÒNG HỌC TRỰC TIẾP</span><h1>Cùng học, cùng tiến bộ <span>✦</span></h1></div><div className="study-room-stats"><div className="study-online"><UsersRound size={18} /><strong>{online ?? "…"}</strong><span>đang học cùng</span></div><div className="study-elapsed"><Clock3 size={18} /><strong>{String(Math.floor(studySeconds / 60)).padStart(2, "0")}:{String(studySeconds % 60).padStart(2, "0")}</strong><span>đã học hôm nay</span></div></div></div>
+    <section className="study-control-bar" aria-label="Chọn nhạc và cài đặt thời gian">
+      <div className="study-control-top"><div className="study-video-tabs" role="group" aria-label="Chọn không gian học">
+        <button type="button" className={videoMode === "youtube" ? "selected" : ""} onClick={() => void selectVideo("youtube")} aria-pressed={videoMode === "youtube"}>● YouTube live</button>
+        <button type="button" className={videoMode === "harry" ? "selected" : ""} onClick={() => void selectVideo("harry")} aria-pressed={videoMode === "harry"}>✦ Học cùng Harry</button>
+      </div><div className="study-focus-compact"><label htmlFor="study-focus-duration">Hẹn giờ</label><select id="study-focus-duration" value={focusMinutes} onChange={(event) => { const minutes = Number(event.target.value); focusEndsAt.current = null; setFocusMinutes(minutes); setTimerRunning(false); setSecondsLeft(minutes * 60); }}><option value={25}>25 phút</option><option value={50}>50 phút</option><option value={90}>90 phút</option></select><strong aria-label={`Còn ${Math.floor(secondsLeft / 60)} phút ${secondsLeft % 60} giây`}>{String(Math.floor(secondsLeft / 60)).padStart(2, "0")}:{String(secondsLeft % 60).padStart(2, "0")}</strong><button type="button" className="study-focus-start" onClick={() => { if (timerRunning) { focusEndsAt.current = null; setTimerRunning(false); return; } const next = secondsLeft === 0 ? focusMinutes * 60 : secondsLeft; if (secondsLeft === 0) setSecondsLeft(next); focusEndsAt.current = Date.now() + next * 1000; setTimerRunning(true); }}>{timerRunning ? "Tạm dừng" : "Bắt đầu"}</button><button type="button" className="study-focus-reset" onClick={() => { focusEndsAt.current = null; setTimerRunning(false); setSecondsLeft(focusMinutes * 60); }}>Đặt lại</button></div></div>
+      {videoMode === "youtube" && <div className="study-stream-list" role="group" aria-label="Chọn livestream để cùng học">{liveStreams.map((stream) => <button key={stream.id} type="button" className={`study-stream-option ${stream.color} ${stream.id === selectedStream.id ? "selected" : ""}`} onClick={() => void selectStream(stream.id)} aria-pressed={stream.id === selectedStream.id} title={`${stream.channel} · ${stream.description}`}>
+        <span className="study-stream-emoji" aria-hidden="true">{stream.emoji}</span><span className="study-stream-copy"><strong>{stream.title}</strong><small>{stream.channel}</small></span><span className="study-stream-badge"><i /> LIVE</span>
+      </button>)}</div>}
+      {videoMode === "harry" && <div className="study-music-controls"><Music2 size={18} /><span>Nhạc lofi tạo riêng</span><button type="button" className="study-play" onClick={() => void toggleMusic()} aria-label={musicPlaying ? "Tắt nhạc" : "Bật nhạc"}>{musicPlaying ? <Pause size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}{musicPlaying ? "Tạm dừng" : "Bật nhạc"}</button>{volume === 0 ? <VolumeX size={18} /> : <Volume2 size={18} />}<input type="range" aria-label="Âm lượng nhạc" min="0" max="100" value={volume} onChange={(event) => { const value = Number(event.target.value); setVolume(value); player.current?.setVolume(value / 100); }} /></div>}
+    </section>
     <div className="study-room-grid">
       <div className={`study-room-main ${videoMode === "youtube" ? "has-youtube" : ""}`}>
         <section className="study-visual-card">
-          <div className="study-video-tabs" role="group" aria-label="Chọn không gian học">
-            <button type="button" className={videoMode === "youtube" ? "selected" : ""} onClick={() => void selectVideo("youtube")} aria-pressed={videoMode === "youtube"}>● YouTube live</button>
-            <button type="button" className={videoMode === "harry" ? "selected" : ""} onClick={() => void selectVideo("harry")} aria-pressed={videoMode === "harry"}>✦ Học cùng Harry</button>
-          </div>
           {videoMode === "youtube" ? <div className="study-youtube"><iframe key={selectedStream.id} title={`${selectedStream.title} — ${selectedStream.channel} livestream`} src={`https://www.youtube-nocookie.com/embed/${selectedStream.id}?rel=0`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /></div> : <StudyScene />}
           <div className="study-visual-footer"><div><span className="study-on-air"><i /> {videoMode === "youtube" ? "YOUTUBE LIVE" : "STUDY SESSION"}</span><strong>{videoMode === "youtube" ? selectedStream.title : "Một góc nhỏ để tập trung mỗi ngày"}</strong><small>{videoMode === "youtube" ? <>{selectedStream.channel} · <a href={`https://www.youtube.com/watch?v=${selectedStream.id}`} target="_blank" rel="noopener noreferrer">Mở livestream trên YouTube ↗</a></> : "Hoạt cảnh và nhạc lặp tạo riêng cho IeltsWithHarry"}</small></div><span className="study-visual-sparkle">✦</span></div>
         </section>
-        {videoMode === "youtube" && <section className="study-stream-picker" aria-label="Chọn livestream để cùng học">
-          <div className="study-stream-heading"><div><span>CHỌN KÊNH ĐANG LIVE</span><h2>Học với âm nhạc bạn thích</h2></div><small>Phòng chat chung · Video mỗi người tự chọn</small></div>
-          <div className="study-stream-list">{liveStreams.map((stream) => <button key={stream.id} type="button" className={`study-stream-option ${stream.color} ${stream.id === selectedStream.id ? "selected" : ""}`} onClick={() => void selectStream(stream.id)} aria-pressed={stream.id === selectedStream.id}>
-            <span className="study-stream-emoji" aria-hidden="true">{stream.emoji}</span><span className="study-stream-copy"><strong>{stream.title}</strong><small>{stream.channel} · {stream.description}</small></span><span className="study-stream-badge"><i /> LIVE</span>
-          </button>)}</div><p className="study-stream-note">Livestream do các kênh YouTube phát. Nếu một kênh kết thúc hoặc chặn nhúng, hãy chọn kênh khác hay mở trang gốc trên YouTube.</p>
-        </section>}
-        {videoMode === "harry" && <section className="study-tools"><div className="study-tool-heading"><Music2 size={19} /><div><strong>Lofi cùng học</strong><span>Bản nhạc tạo riêng, phát lặp liên tục</span></div></div><div className="study-music-controls"><button type="button" className="study-play" onClick={() => void toggleMusic()} aria-label={musicPlaying ? "Tắt nhạc" : "Bật nhạc"}>{musicPlaying ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" />}{musicPlaying ? "Tạm dừng" : "Bật nhạc"}</button>{volume === 0 ? <VolumeX size={19} /> : <Volume2 size={19} />}<input type="range" aria-label="Âm lượng nhạc" min="0" max="100" value={volume} onChange={(event) => { const value = Number(event.target.value); setVolume(value); player.current?.setVolume(value / 100); }} /></div></section>}
-        <section className="study-tools study-focus"><div className="study-tool-heading"><Clock3 size={19} /><div><strong>Giờ tập trung</strong><span>Pomodoro 25 phút cho buổi học này</span></div></div><div className="study-focus-controls"><strong>{String(Math.floor(secondsLeft / 60)).padStart(2, "0")}:{String(secondsLeft % 60).padStart(2, "0")}</strong><button type="button" onClick={() => { if (secondsLeft === 0) setSecondsLeft(25 * 60); setTimerRunning(!timerRunning); }}>{timerRunning ? "Tạm dừng" : "Bắt đầu"}</button><button type="button" className="study-reset" onClick={() => { setTimerRunning(false); setSecondsLeft(25 * 60); }}>Đặt lại</button></div></section>
       </div>
       <section className="study-chat-card" aria-label="Phòng chat cùng học"><header className="study-chat-header"><div className="study-chat-icon"><MessageCircle size={22} /></div><div><strong>Phòng chat chung</strong><span>{demoMode ? "Bản xem trước" : status === "live" ? "Đang kết nối trực tiếp" : status === "connecting" ? "Đang kết nối…" : "Chưa có kết nối trực tiếp"}</span></div><span className={`study-chat-status ${status}`} /></header>
         <div className="study-chat-messages" ref={listRef} aria-live="polite">{hasOlder && <button className="study-older" type="button" onClick={() => void loadOlder()} disabled={loadingOlder}>{loadingOlder ? "Đang tải…" : "Xem tin nhắn cũ"}</button>}{messages.length === 0 && <div className="study-chat-empty"><HarryMascot size={100} /><h2>Chào mừng vào phòng!</h2><p>Chia sẻ mục tiêu học hôm nay hoặc gửi lời chào tới mọi người nhé.</p></div>}{messages.map((item) => <article className={`study-message ${item.user_id === currentUser ? "mine" : ""}`} key={item.id}><span className="study-message-avatar">{item.display_name.slice(0, 1).toUpperCase()}</span><div><div className="study-message-meta"><strong>{item.user_id === currentUser ? "Bạn" : item.display_name}</strong><time dateTime={item.created_at}>{new Date(item.created_at).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}</time>{(item.user_id === currentUser || canManage) && <button type="button" onClick={() => void deleteMessage(item.id)} aria-label="Xóa tin nhắn"><Trash2 size={13} /></button>}</div><p>{item.body}</p></div></article>)}<div ref={endRef} /></div>
