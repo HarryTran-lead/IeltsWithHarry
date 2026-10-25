@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes } from "lucide-react";
+import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes, LibraryBig } from "lucide-react";
 import { Sticker } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { AdminShell, type AdminNavGroup } from "./admin-shell";
@@ -11,6 +11,7 @@ import { LessonContentEditor } from "./lesson-content-editor";
 import { MediaLibrary } from "./media-library";
 import { skillMaterialSchema, type SkillName } from "@/lib/skill-material";
 import { AdminNews } from "./admin-news";
+import { VocabularyBank } from "./vocabulary-bank";
 
 type Course = { id: string; stage_id: string; slug: string; title: string; description: string; published: boolean };
 type Unit = { id: string; course_id: string; slug: string; title: string; published: boolean };
@@ -20,6 +21,7 @@ const nav = [
   { slug: "overview", label: "Tổng quan", icon: LayoutDashboard },
   { slug: "curriculum", label: "Lộ trình & bài học", icon: GraduationCap },
   { slug: "vocabulary", label: "Vocabulary", icon: Languages },
+  { slug: "vocabulary/library", label: "Kho từ & nhập ZIP", icon: LibraryBig },
   { slug: "grammar", label: "Grammar", icon: BookOpen },
   { slug: "reading", label: "Reading", icon: FileText },
   { slug: "listening", label: "Listening", icon: Headphones },
@@ -37,7 +39,7 @@ const nav = [
 const navGroups = [
   { label: "Tổng quan", slugs: ["overview"] },
   { label: "Nội dung", slugs: ["curriculum", "media"] },
-  { label: "Kỹ năng", slugs: ["vocabulary", "grammar", "reading", "listening", "writing", "speaking"] },
+  { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "grammar", "reading", "listening", "writing", "speaking"] },
   { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/sync-logs"] },
 ];
 const descriptions: Record<string, string> = {
@@ -169,6 +171,7 @@ export function AdminEditor() {
     </section>)}
     </>}
     {currentSkill && <>{lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><Sticker name="book" size={64} tilt={-8} /><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
+    {section === "vocabulary/library" && <VocabularyBank />}
     {section === "media" && <MediaLibrary />}
     {section.startsWith("news") && <AdminNews section={section} />}
     </>}

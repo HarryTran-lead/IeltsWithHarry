@@ -1,0 +1,34 @@
+.vbank-admin{display:grid;gap:20px;color:#17314e}
+.vbank-admin .card{padding:24px}
+.vbank-admin h2{font:850 22px var(--font-display);margin:0 0 8px}
+.vbank-admin p{color:#688097;line-height:1.55}
+.vbank-intro{display:flex;justify-content:space-between;gap:25px;align-items:center;background:linear-gradient(115deg,#e6faf8,#fff9f1)!important}
+.vbank-intro p{max-width:780px;margin:8px 0 0}
+.vbank-counts{display:flex;gap:12px;flex-wrap:wrap}
+.vbank-counts span{display:grid;gap:4px;min-width:115px;padding:13px 17px;border-radius:14px;background:#ffffffbf;font-size:12px;color:#6b8096}
+.vbank-counts strong{font:900 26px var(--font-display);color:#078f98}
+.vbank-import code{font-size:13px}
+.vbank-file{display:grid;gap:7px;max-width:510px;margin:18px 0;font-weight:800}
+.vbank-file input{border:1px dashed #9bcbd0;border-radius:11px;padding:12px;background:#f5fbfb}
+.vbank-muted{font-size:13px;color:#8293a7!important}
+.vbank-preview{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.vbank-preview span{border:1px solid #deebed;border-radius:9px;padding:8px 11px;background:#f8fbfc;font-size:12px}
+.vbank-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:16px}
+.vbank-heading span{font-size:13px;color:#8194a7}
+.vbank-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.vbank-filters input,.vbank-filters select,.vbank-editor input,.vbank-editor textarea,.vbank-editor select{border:1px solid #dce7ed;border-radius:10px;background:#fff;color:#17314e;padding:11px 12px;min-height:42px}
+.vbank-filters input{flex:1;min-width:210px}
+.vbank-list{display:grid}
+.vbank-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 3px;border:0;border-bottom:1px solid #eaf0f3;background:none;text-align:left;cursor:pointer;color:#17314e}
+.vbank-row:hover{background:#f5fbfb}
+.vbank-row>span:first-child{display:grid;gap:4px}
+.vbank-row small{font-size:12px;color:#7d8fa3}
+.vbank-pages{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:15px;font-size:13px;color:#698096}
+.vbank-editor{border-color:#74c7c8!important}
+.vbank-editor h2 small{font:700 14px var(--font-body);color:#71889c}
+.vbank-editor label{display:grid;gap:7px;margin:14px 0;font-weight:800}
+.vbank-editor input,.vbank-editor textarea,.vbank-editor select{width:100%;font:inherit}
+.vbank-example{border-left:3px solid #7dccce;padding:8px 14px;background:#f3fbfb}
+.vbank-actions{display:flex;justify-content:flex-end;gap:8px}
+.vbank-notice{border:1px solid #b6e6d2;border-radius:11px;background:#effbf4;padding:12px 15px;color:#176c4c!important}
+@media(max-width:700px){.vbank-intro{align-items:flex-start;flex-direction:column}.vbank-admin .card{padding:17px}.vbank-filters>*{flex:1}}
