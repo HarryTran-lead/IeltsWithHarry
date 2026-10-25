@@ -20,6 +20,24 @@ The full-text reader fills the available workspace and includes a per-article wo
 
 Migration `202610250019_news_readable_only.sql` keeps only articles that can be read on site. A feed that carries text (NASA, NOAA News, Global Voices) stores just the items whose text passed the rights checks. A teaser-only feed (GOV.UK, NOAA Ocean Service) keeps an item only until its page has been read. If the page gives no usable text, `news_prune_unreadable()` removes the item at the end of each sync. Removed links are recorded in `news_skipped_urls`, so later syncs do not import them again. Articles linked to a Learn with News lesson and manual items are never pruned. The learner archive lists readable articles only. The NSF feed is disabled because it has no reusable text. The first prune on 2026-10-25 removed 343 headline-only rows. 472 GOV.UK and Ocean Service items remain queued until their pages are read.
 
+### Vietnamese news written by AI
+
+Vietnamese publishers keep their rights, so their articles are never copied. Migration `202610250020_news_ai_vietnam_rewrites.sql` adds four `ai_rewrite` sources: VnExpress International (news, life, business) and Tuoi Tre News. Each enrichment run, `src/lib/news/rewrite.ts` takes the newest unseen, non-sensitive story from the least recently used source. It reads the report's page only as fact evidence (never stored) and then:
+
+1. **Writer request.** Gemini writes an original English article of 330–420 words. Each sentence cites an exact quote from the source. It may mark the story unsuitable (politics, crime, death, disasters with victims, or too little detail).
+2. **Code checks** (`verifyRewrite`):
+   - At least 85% of each quote's word pairs occur in the source.
+   - Every number, number word and name in a sentence appears in the source; a name may also share its stem, as in Vietnam and Vietnamese.
+   - Uncited background sentences contain no names or numbers, and there are at most 3 of them or a quarter of the article.
+   - There are no direct quotations and no 15-word run copied from the source.
+   - The length is 280–470 words.
+
+   A failed draft gets one revision that is told the reason.
+3. **Fact-checker request.** A second Gemini call, at temperature 0, labels every sentence SUPPORTED, BACKGROUND, UNSUPPORTED or CONTRADICTED. Any of the last two rejects the article.
+4. **Quiz request.** The usual 20-question IELTS set is written from the verified article alone. After a revision, the regular quiz worker writes it in a later run.
+
+Accepted articles are stored with `ai_generated = true` and a byline naming the source. The reader shows a warning label with a link to the original report. Rejected stories are recorded in `news_skipped_urls` (reason `ai_rewrite`) and never retried; a quota error leaves the story eligible. `daily_rewrite_limit` in `/admin/news/settings` (default 6; 0 disables it) caps attempts per day. Each attempt costs three Gemini requests, four with a revision. A live test on 2026-10-25 accepted a 382-word article about BigBang concert resale prices with 20 questions in 20 seconds. Earlier drafts were rightly rejected for copied wording, numbers that did not match their quote, and one story about deaths.
+
 ## Providers and rights
 
 - GDELT DOC API: public article-list discovery, English source-language filter, metadata only. This source is paused after repeated production timeouts; its existing rows are retained. The publisher's full article is never fetched.

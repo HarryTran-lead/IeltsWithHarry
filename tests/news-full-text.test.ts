@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 
-const chain = ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql", "202610250008_news_preview_images.sql", "202610250010_news_enrichment.sql", "202610250011_news_enrichment_claim_fix.sql", "202610250012_news_illustration_credit.sql", "202610250013_news_creative_commons_images.sql", "202610250014_news_admin_controls.sql", "202610250015_news_manual_quiz_reset.sql", "202610250016_news_full_text_sources.sql", "202610250017_news_ielts_question_types.sql", "202610250018_news_open_licence_sources.sql", "202610250019_news_readable_only.sql"];
+const chain = ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql", "202610250008_news_preview_images.sql", "202610250010_news_enrichment.sql", "202610250011_news_enrichment_claim_fix.sql", "202610250012_news_illustration_credit.sql", "202610250013_news_creative_commons_images.sql", "202610250014_news_admin_controls.sql", "202610250015_news_manual_quiz_reset.sql", "202610250016_news_full_text_sources.sql", "202610250017_news_ielts_question_types.sql", "202610250018_news_open_licence_sources.sql", "202610250019_news_readable_only.sql", "202610250020_news_ai_vietnam_rewrites.sql"];
 
 async function migratedDb() {
   const db = new PGlite();
@@ -39,6 +39,12 @@ describe("Daily News readable-only archive", () => {
       expect(left).not.toContain(headlineOnly);
       expect((await db.query<{ canonical_hash: string }>("select canonical_hash from public.news_skipped_urls order by 1")).rows.map((row) => row.canonical_hash)).toEqual(["1".repeat(64), "4".repeat(64)]);
       expect((await db.query<{ enabled: boolean }>("select enabled from public.news_sources where feed_url='https://www.nsf.gov/rss/rss_www_news.xml'")).rows[0].enabled).toBe(false);
+      // AI-rewrite sources and their settings.
+      expect((await db.query<{ count: number }>("select count(*)::int as count from public.news_sources where provider = 'ai_rewrite' and enabled")).rows[0].count).toBe(4);
+      expect((await db.query<{ daily_rewrite_limit: number }>("select daily_rewrite_limit from public.news_admin_settings")).rows[0].daily_rewrite_limit).toBe(6);
+      await db.query("insert into public.news_skipped_urls(canonical_hash, reason, detail) values (repeat('9',64), 'ai_rewrite', 'Fact-check UNSUPPORTED')");
+      await expect(db.query("insert into public.news_skipped_urls(canonical_hash, reason) values (repeat('8',64), 'other')")).rejects.toThrow();
+      expect((await db.query<{ ai_generated: boolean }>("select ai_generated from public.news_article_bodies where article_id = $1", [readable])).rows[0].ai_generated).toBe(false);
     } finally { await db.close(); }
   }, 30000);
 });

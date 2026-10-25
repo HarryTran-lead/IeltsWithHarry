@@ -116,7 +116,8 @@ export async function syncNews({ scheduled = false }: { scheduled?: boolean } = 
   if (error) throw error;
   const results: { source: string; status: string; fetched: number; inserted: number; error?: string }[] = [];
   for (const source of (sources ?? []) as NewsSource[]) {
-    if (!["METADATA_ONLY", "FULL_REUSE_ALLOWED"].includes(source.policy_status) || source.reviewed_basis.trim().length < 12) continue;
+    // AI-rewrite sources are read by the enrichment worker, one story at a time.
+    if ((source.provider as string) === "ai_rewrite" || !["METADATA_ONLY", "FULL_REUSE_ALLOWED"].includes(source.policy_status) || source.reviewed_basis.trim().length < 12) continue;
     const { data: claimed, error: claimError } = await db.rpc(scheduled ? "news_claim_source" : "news_claim_source_force", { p_source_id: source.id });
     if (claimError) { results.push({ source: source.name, status: "error", fetched: 0, inserted: 0, error: claimError.message }); continue; }
     if (!claimed) { results.push({ source: source.name, status: "skipped", fetched: 0, inserted: 0 }); continue; }

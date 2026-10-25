@@ -9,7 +9,8 @@ export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; 
 export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
 export type NewsBodyCandidate = { canonical_hash: string; body_text: string; rights_basis: string; source_url: string; image_url: string | null; image_alt: string | null; image_credit: string | null; image_rights_basis: string | null; byline?: string | null };
 export type NewsImageCandidate = { canonical_hash: string; source_url: string; image_url: string; image_alt: string; image_credit: string; image_rights_basis: string };
-export type FetchResult = { items: NewsItem[]; bodies?: NewsBodyCandidate[]; images?: NewsImageCandidate[]; etag: string | null; lastModified: string | null; cacheUntil: string | null; notModified: boolean };
+/** `summaries` holds RSS descriptions in memory only, as fact evidence for AI-written articles; they are never stored. */
+export type FetchResult = { items: NewsItem[]; bodies?: NewsBodyCandidate[]; images?: NewsImageCandidate[]; summaries?: Record<string, string>; etag: string | null; lastModified: string | null; cacheUntil: string | null; notModified: boolean };
 export interface NewsProvider { readonly kind: NewsSource["provider"]; fetch(source: NewsSource, fetcher?: typeof fetch, archivePage?: number): Promise<FetchResult> }
 
 const sensitive = /\b(killed|murder|shooting|bomb|war|attack|assault|graphic|suicide|abuse)\b/i;
@@ -88,6 +89,14 @@ function rssEntries(xml: string) {
   }
   for (const entry of list) collect(entry);
   return { rss: Boolean(rss), entries: flattened as Record<string, unknown>[] };
+}
+function rssSummaries(xml: string): Record<string, string> {
+  const { rss, entries } = rssEntries(xml);
+  return Object.fromEntries(entries.flatMap((row) => {
+    const url = canonicalUrl(rss ? xmlText(row.link) : atomLink(row.link));
+    const summary = cleanText(load(`<div>${xmlText(row.description ?? row.summary)}</div>`)("div").text(), 1200);
+    return url && summary ? [[newsHash(url), summary]] : [];
+  }));
 }
 export function parseRss(xml: string, source: NewsSource): NewsItem[] {
   const { rss, entries } = rssEntries(xml);
@@ -314,7 +323,7 @@ export async function fetchGovUkBody(sourceUrl: string, fetcher: typeof fetch = 
 
 export function assertApprovedFeedUrl(raw: string): URL {
   const url = new URL(raw);
-  const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov,oceanservice.noaa.gov,www.nsf.gov,globalvoices.org,www.gov.uk").split(",").map((host) => host.trim().toLowerCase());
+  const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov,oceanservice.noaa.gov,www.nsf.gov,globalvoices.org,www.gov.uk,e.vnexpress.net,news.tuoitre.vn").split(",").map((host) => host.trim().toLowerCase());
   if (url.protocol !== "https:" || url.port || url.username || url.password || isIP(url.hostname) || !allowed.includes(url.hostname.toLowerCase())) throw new Error("Feed host is not approved in NEWS_RSS_ALLOWED_HOSTS");
   return url;
 }
@@ -381,6 +390,6 @@ export const rssProvider: NewsProvider = { kind: "rss", async fetch(source, fetc
   if (response.status === 304) return { items: [], etag: source.etag, lastModified: source.last_modified, cacheUntil: cacheUntil(response), notModified: true };
   if (!response.ok) throw new Error(`RSS HTTP ${response.status}`);
   const xml = await boundedText(response);
-  return { items: parseRss(xml, source), bodies: [...parseNasaNewsBodies(xml, source), ...parseNoaaNewsBodies(xml, source), ...parseGlobalVoicesBodies(xml, source)], images: parseRssImages(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
+  return { items: parseRss(xml, source), summaries: rssSummaries(xml), bodies: [...parseNasaNewsBodies(xml, source), ...parseNoaaNewsBodies(xml, source), ...parseGlobalVoicesBodies(xml, source)], images: parseRssImages(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
 } };
 export const providers: Record<NewsSource["provider"], NewsProvider> = { gdelt: gdeltProvider, rss: rssProvider };

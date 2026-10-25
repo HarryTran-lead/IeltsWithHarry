@@ -28,6 +28,7 @@ export function AdminNewsSettings({ db, settings, eligible, reload, setError, se
       auto_enrich_enabled: draft.auto_enrich_enabled,
       quiz_prompt: draft.quiz_prompt.trim(),
       daily_quiz_limit: draft.daily_quiz_limit,
+      daily_rewrite_limit: draft.daily_rewrite_limit,
       updated_at: new Date().toISOString(),
     }).eq("id", true);
     setBusy(false);
@@ -56,6 +57,7 @@ export function AdminNewsSettings({ db, settings, eligible, reload, setError, se
         <label className="admin-check wide"><input type="checkbox" checked={draft.auto_sync_enabled} onChange={(event) => setDraft({ ...draft, auto_sync_enabled: event.target.checked })}/> Tự đồng bộ nguồn tin</label>
         <label className="admin-check wide"><input type="checkbox" checked={draft.auto_enrich_enabled} onChange={(event) => setDraft({ ...draft, auto_enrich_enabled: event.target.checked })}/> Tự tìm ảnh và tạo quiz</label>
         <label>Giới hạn quiz tự tạo mỗi ngày<input type="number" min={1} max={50} value={draft.daily_quiz_limit} onChange={(event) => setDraft({ ...draft, daily_quiz_limit: Number(event.target.value) })}/></label>
+        <label>Tin Việt Nam do AI viết mỗi ngày<input type="number" min={0} max={30} value={draft.daily_rewrite_limit ?? 0} onChange={(event) => setDraft({ ...draft, daily_rewrite_limit: Number(event.target.value) })}/><small>Mỗi bài tốn 3 lượt Gemini (4 nếu phải viết lại): viết bài, kiểm tra sự thật, tạo 20 câu hỏi. Đặt 0 để tắt.</small></label>
         <label className="wide">Hướng dẫn thêm cho AI<textarea rows={8} maxLength={4000} value={draft.quiz_prompt} onChange={(event) => setDraft({ ...draft, quiz_prompt: event.target.value })} placeholder="Ví dụ: Ưu tiên câu hỏi ở mức B1–B2, câu ngắn và dễ hiểu..."/><small>Luôn giữ quy tắc bắt buộc: 20 câu theo 4 dạng IELTS (6 True/False/Not Given, 6 trắc nghiệm, 4 hoàn thành câu, 4 trả lời ngắn), đáp án viết tối đa 3 từ, và dẫn chứng nguyên văn.</small></label>
         <button className="button primary" disabled={busy}>{busy ? "Đang lưu…" : "Lưu cấu hình"}</button>
       </form>

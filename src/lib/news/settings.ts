@@ -6,6 +6,8 @@ export type NewsAdminSettings = {
   auto_enrich_enabled: boolean;
   quiz_prompt: string;
   daily_quiz_limit: number;
+  /** AI-written Vietnamese story attempts per day; each costs three Gemini requests (four with a revision). */
+  daily_rewrite_limit: number;
   updated_at: string;
 };
 
