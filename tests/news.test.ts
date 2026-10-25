@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
-import { assertApprovedFeedUrl, canonicalUrl, fetchOceanServiceBody, gdeltProvider, nasaArticleText, newsHash, normalizeGdelt, oceanServiceArticleText, parseNasaNewsBodies, parseNoaaNewsBodies, parsePublishedDate, parseRss, parseRssImages, rssProvider, type NewsSource } from "../src/lib/news/providers";
+import { assertApprovedFeedUrl, canonicalUrl, fetchGovUkBody, fetchOceanServiceBody, gdeltProvider, parseGlobalVoicesBodies, nasaArticleText, newsHash, normalizeGdelt, oceanServiceArticleText, parseNasaNewsBodies, parseNoaaNewsBodies, parsePublishedDate, parseRss, parseRssImages, rssProvider, type NewsSource } from "../src/lib/news/providers";
 import { nextWordReview } from "../src/lib/news/review";
 import { recommendReadings } from "../src/lib/news/recommend";
 
@@ -70,6 +70,32 @@ describe("news providers", () => {
     expect(text.split("\n\n")).toHaveLength(4);
     expect(text).toContain("Propellant transfer");
     expect(text).not.toMatch(/About the Author|Discover More|Min Read/);
+  });
+  it("reads Global Voices text with its byline and skips partner pieces", () => {
+    const gv = { ...source, name: "Global Voices", feed_url: "https://globalvoices.org/feed/" };
+    const paragraph = "Community radio stations in the Andes broadcast in Quechua so that older listeners can follow local news. ";
+    const item = (extra = "") => `<item><title>Radio in the Andes</title><link>https://globalvoices.org/2026/10/24/radio-andes/</link><dc:creator>Ana Pérez</dc:creator><pubDate>Sat, 24 Oct 2026 10:00:00 GMT</pubDate><content:encoded><![CDATA[<p>${paragraph.repeat(2)}</p>${extra}<div class="wp-caption"><img src="x.jpg"><p>Photo by a partner</p></div><blockquote><p>An embedded post from someone else on social media.</p></blockquote><p>${paragraph.repeat(2)}</p><div class="gv-rss-footer"><p>Read more stories from Global Voices.</p></div>]]></content:encoded></item>`;
+    const bodies = parseGlobalVoicesBodies(`<rss><channel>${item()}</channel></rss>`, gv);
+    expect(bodies).toHaveLength(1);
+    expect(bodies[0]).toMatchObject({ byline: "Ana Pérez", source_url: "https://globalvoices.org/2026/10/24/radio-andes/" });
+    expect(bodies[0].body_text.split("\n\n")).toHaveLength(2);
+    expect(bodies[0].body_text).not.toMatch(/partner|embedded|Read more/);
+    expect(parseGlobalVoicesBodies(`<rss><channel>${item('<p class="originally-published">Originally published on Global Voices</p>')}</channel></rss>`, gv)).toHaveLength(1);
+    expect(parseGlobalVoicesBodies(`<rss><channel>${item("<p>This article was originally published by Partner Media and is republished as part of a content-sharing agreement.</p>")}</channel></rss>`, gv)).toHaveLength(0);
+    expect(parseGlobalVoicesBodies(`<rss><channel>${item()}</channel></rss>`, source)).toHaveLength(0);
+  });
+  it("reads GOV.UK article text through the Content API and stops at notes to editors", async () => {
+    const paragraph = "The new guidance helps schools support pupils who need extra help with reading and writing in English. ";
+    const content = { details: { body: `<p>${paragraph.repeat(2)}</p><div class="attachment">Download the report (PDF)</div><h2>What changes</h2><ul><li>Schools will receive termly reading data</li></ul><h2>Notes to editors</h2><p>Media enquiries: press office telephone line.</p>` } };
+    const urls: string[] = [];
+    const fetcher = vi.fn(async (url: URL) => { urls.push(String(url)); return new Response(JSON.stringify(content), { status: 200 }); });
+    const body = await fetchGovUkBody("https://www.gov.uk/government/news/reading-support", fetcher as unknown as typeof fetch);
+    expect(urls[0]).toBe("https://www.gov.uk/api/content/government/news/reading-support");
+    expect(body?.body_text.split("\n\n")).toEqual([paragraph.repeat(2).trim(), "What changes", "Schools will receive termly reading data"]);
+    expect(body?.rights_basis).toContain("Open Government Licence");
+    const withdrawn = vi.fn(async () => new Response(JSON.stringify({ ...content, withdrawn_notice: { explanation: "No longer current" } }), { status: 200 }));
+    expect(await fetchGovUkBody("https://www.gov.uk/government/news/old", withdrawn as unknown as typeof fetch)).toBeNull();
+    expect(await fetchGovUkBody("https://www.gov.uk/guidance/not-news", fetcher as unknown as typeof fetch)).toBeNull();
   });
   it("reads NOAA Ocean Service article text from the page, not the teaser", async () => {
     const paragraph = "The U.S. Ocean Enterprise, a thriving ecosystem of businesses connected to the ocean, keeps growing each year. ";

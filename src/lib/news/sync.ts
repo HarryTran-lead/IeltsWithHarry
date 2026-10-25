@@ -1,9 +1,14 @@
 import { createClient } from "@supabase/supabase-js";
-import { fetchOceanServiceBody, providers, type FetchResult, type NewsSource } from "./providers";
+import { fetchGovUkBody, fetchOceanServiceBody, providers, type FetchResult, type NewsBodyCandidate, type NewsSource } from "./providers";
 import { loadNewsSettings } from "./settings";
 
 const nasaArchiveFeed = "https://www.nasa.gov/news-release/feed/";
-const oceanServiceFeed = "https://oceanservice.noaa.gov/rss/nosnews.xml";
+/** Teaser-only feeds and how their article text is read. */
+function pageBodyReader(feed: string | null): ((url: string) => Promise<NewsBodyCandidate | null>) | null {
+  if (feed === "https://oceanservice.noaa.gov/rss/nosnews.xml") return fetchOceanServiceBody;
+  if (feed?.startsWith("https://www.gov.uk/search/news-and-communications.atom?")) return fetchGovUkBody;
+  return null;
+}
 
 export function newsAdminClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -35,7 +40,7 @@ async function ingest(db: AdminClient, response: FetchResult) {
     const { data: articles, error: articleError } = await db.from("news_articles").select("id,canonical_hash").in("canonical_hash", group.map((body) => body.canonical_hash));
     if (articleError) throw articleError;
     const ids = new Map((articles ?? []).map((article) => [article.canonical_hash, article.id]));
-    const eligible = group.flatMap((body) => ids.has(body.canonical_hash) ? [{ article_id: ids.get(body.canonical_hash), body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url, image_url: body.image_url, image_alt: body.image_alt, image_credit: body.image_credit, image_rights_basis: body.image_rights_basis }] : []);
+    const eligible = group.flatMap((body) => ids.has(body.canonical_hash) ? [{ article_id: ids.get(body.canonical_hash), body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url, image_url: body.image_url, image_alt: body.image_alt, image_credit: body.image_credit, image_rights_basis: body.image_rights_basis, byline: body.byline ?? null }] : []);
     if (eligible.length) {
       const { error } = await db.from("news_article_bodies").upsert(eligible, { onConflict: "article_id" });
       if (error) throw error;
@@ -58,16 +63,17 @@ async function ingest(db: AdminClient, response: FetchResult) {
  * Feeds that carry only a teaser get their text from the article page. A few
  * pages per sync, newest first; a failed or empty page waits a week.
  */
-async function fetchPageBodies(db: AdminClient, source: NewsSource, limit = 4) {
+async function fetchPageBodies(db: AdminClient, source: NewsSource, read: (url: string) => Promise<NewsBodyCandidate | null>, limit = 4) {
   const { data: claims, error } = await db.rpc("news_claim_body_fetch", { p_source_id: source.id, p_limit: limit });
   if (error) throw error;
   let added = 0;
-  for (const claim of (claims ?? []) as { article_id: string; canonical_url: string }[]) {
+  // Pages are read in parallel so several teaser-only sources fit in one sync request.
+  await Promise.all(((claims ?? []) as { article_id: string; canonical_url: string }[]).map(async (claim) => {
     let status: "success" | "none" | "error" = "none"; let message = "";
     try {
-      const body = await fetchOceanServiceBody(claim.canonical_url);
+      const body = await read(claim.canonical_url);
       if (body) {
-        const { error: bodyError } = await db.from("news_article_bodies").upsert({ article_id: claim.article_id, body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url }, { onConflict: "article_id" });
+        const { error: bodyError } = await db.from("news_article_bodies").upsert({ article_id: claim.article_id, body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url, byline: body.byline ?? null }, { onConflict: "article_id" });
         if (bodyError) throw bodyError;
         status = "success"; added++;
       }
@@ -75,7 +81,7 @@ async function fetchPageBodies(db: AdminClient, source: NewsSource, limit = 4) {
       status = "error"; message = cause instanceof Error ? cause.message : "Page fetch failed";
     }
     await db.from("news_enrichment_attempts").update({ status, error_message: message.slice(0, 300) }).eq("article_id", claim.article_id).eq("kind", "body");
-  }
+  }));
   return added;
 }
 
@@ -96,7 +102,7 @@ export async function backfillNews(pages: number[]) {
 export async function syncNews({ scheduled = false }: { scheduled?: boolean } = {}) {
   const db = newsAdminClient();
   if (scheduled && !(await loadNewsSettings(db)).auto_sync_enabled) return [];
-  const { data: sources, error } = await db.from("news_sources").select("*").eq("enabled", true).order("created_at").limit(10);
+  const { data: sources, error } = await db.from("news_sources").select("*").eq("enabled", true).order("created_at").limit(25);
   if (error) throw error;
   const results: { source: string; status: string; fetched: number; inserted: number; error?: string }[] = [];
   for (const source of (sources ?? []) as NewsSource[]) {
@@ -129,7 +135,8 @@ export async function syncNews({ scheduled = false }: { scheduled?: boolean } = 
         }
       }
       // Page text is a bonus: the feed's headlines are already saved, so a page problem must not fail the sync.
-      if (source.feed_url === oceanServiceFeed) await fetchPageBodies(db, source).catch(() => 0);
+      const reader = pageBodyReader(source.feed_url);
+      if (reader) await fetchPageBodies(db, source, reader).catch(() => 0);
       const finished_at = new Date().toISOString();
       const status = response.notModified && !fetched ? "not_modified" : "success";
       const { error: sourceError } = await db.from("news_sources").update({ last_success_at: finished_at, last_error: null, etag: response.etag, last_modified: response.lastModified, cache_until: response.cacheUntil, archive_next_page: archiveNextPage }).eq("id", source.id);

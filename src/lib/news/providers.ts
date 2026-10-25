@@ -7,7 +7,7 @@ import { NEWS_CATEGORIES, type NewsCategory } from "./constants";
 export { NEWS_CATEGORIES };
 export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number; archive_next_page: number | null };
 export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
-export type NewsBodyCandidate = { canonical_hash: string; body_text: string; rights_basis: string; source_url: string; image_url: string | null; image_alt: string | null; image_credit: string | null; image_rights_basis: string | null };
+export type NewsBodyCandidate = { canonical_hash: string; body_text: string; rights_basis: string; source_url: string; image_url: string | null; image_alt: string | null; image_credit: string | null; image_rights_basis: string | null; byline?: string | null };
 export type NewsImageCandidate = { canonical_hash: string; source_url: string; image_url: string; image_alt: string; image_credit: string; image_rights_basis: string };
 export type FetchResult = { items: NewsItem[]; bodies?: NewsBodyCandidate[]; images?: NewsImageCandidate[]; etag: string | null; lastModified: string | null; cacheUntil: string | null; notModified: boolean };
 export interface NewsProvider { readonly kind: NewsSource["provider"]; fetch(source: NewsSource, fetcher?: typeof fetch, archivePage?: number): Promise<FetchResult> }
@@ -191,7 +191,7 @@ export function nasaArticleText(html: string): string {
   $("[class*='hds-about-the-author'],[class*='hds-topic-cards'],[class*='hds-image-carousel'],[class*='hds-article-hero']").remove();
   return $("p,h2,h3,li").toArray().map((node) => $(node).text().replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12).join("\n\n").slice(0, 50000);
 }
-const nasaFeed = (feed: string | null) => Boolean(feed && /^https:\/\/www\.nasa\.gov\/(?:news-release|technology|aeronautics|missions\/station)\/feed\/$/.test(feed));
+const nasaFeed = (feed: string | null) => Boolean(feed && /^https:\/\/www\.nasa\.gov\/(?:(?:news-release|technology|aeronautics|missions\/station)\/)?feed\/$/.test(feed));
 export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
   if (!nasaFeed(source.feed_url) || hasUnsafeXmlDeclaration(xml)) return [];
   const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as { rss?: { channel?: { item?: unknown } } };
@@ -262,9 +262,59 @@ export function parseNoaaNewsBodies(xml: string, source: NewsSource): NewsBodyCa
   });
 }
 
+export const globalVoicesFeedUrl = "https://globalvoices.org/feed/";
+const globalVoicesRightsBasis = "Global Voices Republishing Guidelines: content created by Global Voices is licensed CC BY 3.0; credit the author and link to the original at the top; third-party works excluded. https://globalvoices.org/about/global-voices-attribution-policy/";
+/** Global Voices full text with its author byline; partner and third-party pieces stay link-only. */
+export function parseGlobalVoicesBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
+  if (source.feed_url !== globalVoicesFeedUrl || hasUnsafeXmlDeclaration(xml)) return [];
+  const { rss, entries } = rssEntries(xml);
+  if (!rss) return [];
+  return entries.slice(0, 50).flatMap((row) => {
+    const source_url = canonicalUrl(xmlText(row.link));
+    if (!source_url || new URL(source_url).hostname !== "globalvoices.org") return [];
+    const byline = cleanText(xmlText(row["dc:creator"]), 150);
+    const html = xmlText(row["content:encoded"]);
+    if (!byline || !html || html.length > 250000) return [];
+    const $ = load(html);
+    // Every post says "Originally published on Global Voices". Pieces first published by a
+    // partner outlet carry that outlet's licence, so they stay link-only.
+    const prose = $("body").text().replace(/\s+/g, " ");
+    if (/©|all rights reserved|content[- ]sharing (agreement|partnership)|republished (here )?(with permission|as part of|under)|originally (published|appeared) (on|in|by) (?!Global Voices)/i.test(prose)) return [];
+    $("script,style,iframe,figure,figcaption,blockquote,.wp-caption,.gv-rss-footer,.originally-published").remove();
+    const paragraphs = $("body").children("p,h2,h3,ul,ol").toArray().flatMap((node) => /^(ul|ol)$/i.test(node.tagName) ? $(node).find("li").toArray() : [node])
+      .map((node) => $(node).text().replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12);
+    const body_text = paragraphs.join("\n\n").slice(0, 50000);
+    if (body_text.length < 200) return [];
+    return [{ canonical_hash: newsHash(source_url), body_text, rights_basis: globalVoicesRightsBasis, source_url, byline, image_url: null, image_alt: null, image_credit: null, image_rights_basis: null }];
+  });
+}
+
+const govUkRightsBasis = "GOV.UK content is published under the Open Government Licence v3.0, which permits copying and adaptation with attribution; logos, personal data and third-party material are excluded. https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/";
+/** GOV.UK Atom entries carry a summary only; the Content API returns the article body. */
+export async function fetchGovUkBody(sourceUrl: string, fetcher: typeof fetch = fetch): Promise<NewsBodyCandidate | null> {
+  const page = new URL(sourceUrl);
+  if (page.protocol !== "https:" || page.hostname !== "www.gov.uk" || !page.pathname.startsWith("/government/news/")) return null;
+  const response = await boundedFetch(new URL(`https://www.gov.uk/api/content${page.pathname}`), { headers: { Accept: "application/json" } }, fetcher);
+  if (!response.ok) throw new Error(`GOV.UK HTTP ${response.status}`);
+  const content = JSON.parse(await boundedText(response)) as { withdrawn_notice?: { explanation?: string }; details?: { body?: string } };
+  if (content.withdrawn_notice?.explanation || !content.details?.body) return null;
+  const $ = load(content.details.body);
+  $("script,style,iframe,figure,figcaption,table,.attachment,.attachment-inline,.call-to-action").remove();
+  const blocks: string[] = [];
+  for (const node of $("p,h2,h3,li").toArray()) {
+    const text = $(node).text().replace(/\s+/g, " ").trim();
+    // Notes to editors and press contacts close the article.
+    if (/^h[23]$/i.test(node.tagName) && /^(notes to editors?|further information|media enquiries|contact|background)\b/i.test(text)) break;
+    if (text.length >= 12) blocks.push(text);
+  }
+  const body_text = blocks.join("\n\n").slice(0, 50000);
+  if (body_text.length < 200 || thirdPartyNotice.test(body_text)) return null;
+  return { canonical_hash: newsHash(sourceUrl), body_text, rights_basis: govUkRightsBasis, source_url: sourceUrl, image_url: null, image_alt: null, image_credit: null, image_rights_basis: null };
+}
+
 export function assertApprovedFeedUrl(raw: string): URL {
   const url = new URL(raw);
-  const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov,oceanservice.noaa.gov,www.nsf.gov").split(",").map((host) => host.trim().toLowerCase());
+  const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov,oceanservice.noaa.gov,www.nsf.gov,globalvoices.org,www.gov.uk").split(",").map((host) => host.trim().toLowerCase());
   if (url.protocol !== "https:" || url.port || url.username || url.password || isIP(url.hostname) || !allowed.includes(url.hostname.toLowerCase())) throw new Error("Feed host is not approved in NEWS_RSS_ALLOWED_HOSTS");
   return url;
 }
@@ -331,6 +381,6 @@ export const rssProvider: NewsProvider = { kind: "rss", async fetch(source, fetc
   if (response.status === 304) return { items: [], etag: source.etag, lastModified: source.last_modified, cacheUntil: cacheUntil(response), notModified: true };
   if (!response.ok) throw new Error(`RSS HTTP ${response.status}`);
   const xml = await boundedText(response);
-  return { items: parseRss(xml, source), bodies: [...parseNasaNewsBodies(xml, source), ...parseNoaaNewsBodies(xml, source)], images: parseRssImages(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
+  return { items: parseRss(xml, source), bodies: [...parseNasaNewsBodies(xml, source), ...parseNoaaNewsBodies(xml, source), ...parseGlobalVoicesBodies(xml, source)], images: parseRssImages(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
 } };
 export const providers: Record<NewsSource["provider"], NewsProvider> = { gdelt: gdeltProvider, rss: rssProvider };
