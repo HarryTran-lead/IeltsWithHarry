@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { usePathname } from "next/navigation";
-import { BookOpen, ChevronRight, FileText, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText } from "lucide-react";
+import { BookOpen, ChevronRight, FileText, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { LessonContentEditor } from "./lesson-content-editor";
 import { MediaLibrary } from "./media-library";
@@ -25,6 +25,8 @@ const nav = [
   { slug: "speaking", label: "Speaking", icon: Mic },
   { slug: "media", label: "Media library", icon: Image },
   { slug: "news", label: "Daily News", icon: Newspaper },
+  { slug: "news/settings", label: "News settings", icon: Settings2 },
+  { slug: "news/manual", label: "Add news", icon: FilePlus2 },
   { slug: "news/sources", label: "News sources", icon: Rss },
   { slug: "news/review", label: "News review", icon: ListChecks },
   { slug: "news/articles", label: "Learning articles", icon: BookOpen },

@@ -36,3 +36,18 @@ export const newsQuestionSchema = z.object({
 }).superRefine((value, ctx) => {
   if (value.options.length && !value.options.some((option) => option.toLowerCase() === value.answer.toLowerCase())) ctx.addIssue({ code: "custom", message: "The correct answer must match one option", path: ["answer"] });
 });
+
+export const manualNewsSchema = z.object({
+  title: z.string().trim().min(5).max(400),
+  canonical_url: z.string().url().refine((value) => value.startsWith("https://"), "Use an HTTPS source URL"),
+  publisher: z.string().trim().min(1).max(150),
+  category: z.enum(NEWS_CATEGORIES),
+  published_at: z.string().datetime(),
+  sensitive: z.boolean(),
+  body_text: z.string().trim().max(50000),
+  rights_basis: z.string().trim(),
+}).superRefine((value, ctx) => {
+  if (value.body_text && value.body_text.length < 200) ctx.addIssue({ code: "custom", message: "Full text needs at least 200 characters", path: ["body_text"] });
+  if (value.body_text && value.rights_basis.length < 30) ctx.addIssue({ code: "custom", message: "Describe the full-text reuse right in at least 30 characters", path: ["rights_basis"] });
+  if (new Date(value.published_at).valueOf() > Date.now() + 86400000) ctx.addIssue({ code: "custom", message: "Publication date is in the future", path: ["published_at"] });
+});

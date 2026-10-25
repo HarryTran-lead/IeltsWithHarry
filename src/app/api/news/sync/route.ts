@@ -14,7 +14,8 @@ function validSecret(candidate: string, secret: string) {
 export async function POST(request: NextRequest) {
   const secret = process.env.NEWS_SYNC_SECRET;
   const token = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "") ?? "";
-  let authorized = Boolean(secret && validSecret(token, secret));
+  const scheduled = Boolean(secret && validSecret(token, secret));
+  let authorized = scheduled;
   if (!authorized) {
     const origin = request.headers.get("origin");
     if (!origin || origin !== request.nextUrl.origin) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -29,7 +30,7 @@ export async function POST(request: NextRequest) {
   try {
     const payload = await request.json().catch(() => ({}));
     if (payload && typeof payload === "object" && "archivePages" in payload) return NextResponse.json({ results: await backfillNews(payload.archivePages) });
-    return NextResponse.json({ results: await syncNews() });
+    return NextResponse.json({ results: await syncNews({ scheduled }) });
   }
   catch (error) { return NextResponse.json({ error: error instanceof Error ? error.message : "Sync failed" }, { status: 500 }); }
 }

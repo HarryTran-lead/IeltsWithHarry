@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { providers, type FetchResult, type NewsSource } from "./providers";
+import { loadNewsSettings } from "./settings";
 
 const nasaArchiveFeed = "https://www.nasa.gov/news-release/feed/";
 
@@ -66,14 +67,15 @@ export async function backfillNews(pages: number[]) {
   return results;
 }
 
-export async function syncNews() {
+export async function syncNews({ scheduled = false }: { scheduled?: boolean } = {}) {
   const db = newsAdminClient();
+  if (scheduled && !(await loadNewsSettings(db)).auto_sync_enabled) return [];
   const { data: sources, error } = await db.from("news_sources").select("*").eq("enabled", true).order("created_at").limit(10);
   if (error) throw error;
   const results: { source: string; status: string; fetched: number; inserted: number; error?: string }[] = [];
   for (const source of (sources ?? []) as NewsSource[]) {
     if (!["METADATA_ONLY", "FULL_REUSE_ALLOWED"].includes(source.policy_status) || source.reviewed_basis.trim().length < 12) continue;
-    const { data: claimed, error: claimError } = await db.rpc("news_claim_source", { p_source_id: source.id });
+    const { data: claimed, error: claimError } = await db.rpc(scheduled ? "news_claim_source" : "news_claim_source_force", { p_source_id: source.id });
     if (claimError) { results.push({ source: source.name, status: "error", fetched: 0, inserted: 0, error: claimError.message }); continue; }
     if (!claimed) { results.push({ source: source.name, status: "skipped", fetched: 0, inserted: 0 }); continue; }
     const { data: run, error: runError } = await db.from("news_sync_runs").insert({ source_id: source.id }).select("id").single();
