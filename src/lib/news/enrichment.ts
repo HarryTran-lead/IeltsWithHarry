@@ -186,12 +186,13 @@ function geminiModels() {
  * One Gemini JSON request. Quota and unknown-model errors move on to the next
  * configured model; anything else fails the request.
  */
-export async function geminiJson<T>(system: string, user: string, schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4 }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number } = {}): Promise<{ model: string; data: T }> {
+export type GeminiPart = { text: string } | { inlineData: { mimeType: string; data: string } };
+export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4 }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number } = {}): Promise<{ model: string; data: T }> {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw new Error("GEMINI_API_KEY is not configured");
   const request = JSON.stringify({
     systemInstruction: { parts: [{ text: system }] },
-    contents: [{ role: "user", parts: [{ text: user }] }],
+    contents: [{ role: "user", parts: typeof user === "string" ? [{ text: user }] : user }],
     generationConfig: { maxOutputTokens, temperature, responseFormat: { text: { mimeType: "APPLICATION_JSON", schema } } },
   });
   let lastError: Error = new Error("AI service unavailable");
@@ -257,7 +258,8 @@ type CommonsResult = { query?: { pages?: { title?: string; imageinfo?: {
 }[] }[] } };
 type NasaLibraryResult = { collection?: { items?: { data?: { title?: string; nasa_id?: string; media_type?: string; center?: string; photographer?: string; secondary_creator?: string; description?: string; keywords?: string[] }[]; links?: { href?: string; rel?: string; width?: number }[] }[] } };
 export type Illustration = { image_url: string; image_alt: string; image_credit: string; image_source_url: string; license_name: string; license_url: string | null };
-type Candidate = { score: number; value: Illustration };
+/** `preview` is a small rendition the AI looks at; `value` is what gets stored. */
+type Candidate = { score: number; preview: string; value: Illustration };
 const stop = new Set(["about","after","agency","also","amid","among","and","announces","apod","april","are","august","been","behind","bonanza","but","can","could","december","during","each","ends","february","first","for","from","future","has","have","help","how","including","into","its","iii","january","july","june","leaves","march","may","mission","more","most","news","nasa","noaa","november","new","not","october","one","operations","other","our","over","part","partnership","releases","research","said","says","scientific","september","such","than","that","the","their","them","these","they","this","those","through","today","two","use","used","was","were","what","when","which","while","who","will","with","would","year","years","you"]);
 function words(text: string) { return text.toLowerCase().match(/[a-z][a-z0-9-]{2,}/g)?.filter((word) => !stop.has(word)) ?? []; }
 /** Search terms from the AI's visual subject, then the headline, then words the article repeats. */
@@ -295,10 +297,11 @@ async function commonsCandidates(query: string, keywords: string[], fetcher: typ
     const description = plain(image.extmetadata?.ImageDescription?.value ?? "").slice(0, 1200).toLowerCase();
     const caption = page.title.slice(5).replace(/\.[^.]+$/, "").replaceAll("_", " ");
     const matches = keywords.filter((word) => `${caption.toLowerCase()} ${description}`.includes(word));
-    if (matches.length < 2) return [];
+    if (!matches.length) return [];
     const artist = plain(image.extmetadata?.Artist?.value ?? "").slice(0, 160);
     if (!freeUse && !artist) return [];
-    return [{ score: matches.length * 10 + (freeUse ? 2 : 0), value: {
+    // Wikimedia serves only standard thumbnail widths; 330 px is the smallest useful one.
+    return [{ score: matches.length * 10, preview: imageUrl.replace(/\/\d+px-/, "/330px-"), value: {
       image_url: imageUrl, image_alt: `Ảnh minh họa: ${caption}`.slice(0, 300),
       image_credit: (artist || "Wikimedia Commons contributors").slice(0, 200),
       image_source_url: sourceUrl, license_name: license, license_url: licenseUrl,
@@ -327,9 +330,9 @@ async function nasaLibraryCandidates(query: string, keywords: string[], fetcher:
     const imageUrl = approvedUrl(link?.href ?? "", ["images-assets.nasa.gov"]);
     if (!imageUrl || !new URL(imageUrl).pathname.startsWith("/image/")) return [];
     const matches = keywords.filter((word) => text.toLowerCase().includes(word));
-    if (matches.length < 2) return [];
+    if (!matches.length) return [];
     const credit = meta.photographer ? `NASA/${plain(meta.photographer)}` : meta.center ? `NASA ${plain(meta.center)}` : "NASA";
-    return [{ score: matches.length * 10 + 3, value: {
+    return [{ score: matches.length * 10, preview: imageUrl.replace(/~(medium|small)\.jpg$/, "~thumb.jpg"), value: {
       image_url: imageUrl, image_alt: `Ảnh minh họa: ${plain(meta.title)}`.slice(0, 300), image_credit: credit.slice(0, 200),
       image_source_url: `https://images.nasa.gov/details/${encodeURIComponent(meta.nasa_id)}`,
       license_name: "NASA media guidelines", license_url: nasaMediaGuidelines,
@@ -337,40 +340,120 @@ async function nasaLibraryCandidates(query: string, keywords: string[], fetcher:
   });
 }
 
+type OpenverseResult = { results?: { title?: string; url?: string; creator?: string; license?: string; license_version?: string; license_url?: string; foreign_landing_url?: string; provider?: string; width?: number; height?: number }[] };
+const openverseLicences: Record<string, string> = { by: "CC BY", "by-sa": "CC BY-SA" };
 /**
- * Best licensed illustration for the article. A specific query is tried first
- * across both libraries, then a broader one; one library failing does not stop the other.
+ * Openverse: Creative Commons photos (Flickr only, for stable hosting). Everyday
+ * subjects such as concerts, hospitals or rivers are far better covered here than
+ * in Commons or NASA. Anonymous use allows 200 searches a day.
+ */
+async function openverseCandidates(query: string, keywords: string[], fetcher: typeof fetch): Promise<Candidate[]> {
+  const url = new URL("https://api.openverse.org/v1/images/");
+  Object.entries({ q: query, license: "by,by-sa,cc0,pdm", source: "flickr", mature: "false", page_size: "20" }).forEach(([key, value]) => url.searchParams.set(key, value));
+  const response = await fetcher(url, { signal: AbortSignal.timeout(7000), headers: imageAgent });
+  if (!response.ok) throw new Error(`Openverse image search returned HTTP ${response.status}`);
+  const data = await response.json() as OpenverseResult;
+  return (data.results ?? []).flatMap((item) => {
+    const imageUrl = approvedUrl(item.url ?? "", ["live.staticflickr.com"]);
+    const sourceUrl = approvedUrl(item.foreign_landing_url ?? "", ["www.flickr.com"]);
+    if (!imageUrl || !sourceUrl || !sourceUrl.includes("/photos/") || !/\.jpe?g$/i.test(imageUrl) || Math.max(item.width ?? 0, item.height ?? 0) < 500) return [];
+    const freeUse = item.license === "cc0" || item.license === "pdm";
+    const name = freeUse ? (item.license === "cc0" ? "CC0" : "Public domain") : openverseLicences[item.license ?? ""] ? `${openverseLicences[item.license!]} ${item.license_version}` : "";
+    const licenseUrl = freeUse ? null : approvedUrl(item.license_url ?? "", ["creativecommons.org"]);
+    if (!name || (!freeUse && (!/^CC BY(?:-SA)? [234]\.\d$/.test(name) || !licenseUrl))) return [];
+    const creator = plain(item.creator ?? "").slice(0, 160);
+    if (!freeUse && !creator) return [];
+    const title = plain(item.title ?? "").slice(0, 200);
+    const matches = keywords.filter((word) => title.toLowerCase().includes(word));
+    // Flickr sizes: "_n" is 320 px for the preview; the stored image is the larger rendition.
+    return [{ score: matches.length * 10 + 5, preview: /_[a-z]\.jpe?g$/i.test(imageUrl) ? imageUrl.replace(/_[a-z]\.(jpe?g)$/i, "_n.$1") : imageUrl, value: {
+      image_url: imageUrl, image_alt: `Ảnh minh họa: ${title || query}`.slice(0, 300), image_credit: (creator || "Flickr contributor").slice(0, 200),
+      image_source_url: sourceUrl, license_name: name, license_url: licenseUrl,
+    } }];
+  });
+}
+
+const maxCandidates = 6;
+/**
+ * Licensed photos that might illustrate the article, best keyword match first:
+ * the AI's visual subject is searched first, then the article's main terms. At most
+ * three per library so one library cannot crowd out the other.
+ */
+async function gatherCandidates(title: string, body: string, query: string, fetcher: typeof fetch) {
+  const keywords = imageKeywords(title, body, query);
+  if (keywords.length < 2) return [];
+  const searches = [...new Set([query && words(query).length >= 2 ? words(query).join(" ") : "", keywords.slice(0, 3).join(" ")].filter(Boolean))];
+  const found = new Map<string, Candidate & { library: string }>();
+  let failure: unknown = null;
+  const libraries = ["openverse", "commons", "nasa"] as const;
+  for (const search of searches) {
+    const results = await Promise.allSettled([openverseCandidates(search, keywords, fetcher), commonsCandidates(search, keywords, fetcher), nasaLibraryCandidates(search, keywords, fetcher)]);
+    results.forEach((outcome, index) => {
+      if (outcome.status === "rejected") { failure = outcome.reason; return; }
+      for (const candidate of outcome.value) if (!found.has(candidate.value.image_url)) found.set(candidate.value.image_url, { ...candidate, library: libraries[index] });
+    });
+    if (found.size >= maxCandidates * 2) break;
+  }
+  if (!found.size && failure) throw failure;
+  const ranked = [...found.values()].sort((a, b) => b.score - a.score);
+  // Openverse covers everyday subjects best; Commons and NASA add one or two each.
+  const share = { openverse: 3, commons: 2, nasa: 1 };
+  return libraries.flatMap((library) => ranked.filter((candidate) => candidate.library === library).slice(0, share[library])).sort((a, b) => b.score - a.score).slice(0, maxCandidates);
+}
+
+/** A small image as Gemini inline data, or null when it cannot be read. */
+async function previewData(url: string, fetcher: typeof fetch) {
+  try {
+    const response = await fetcher(url, { signal: AbortSignal.timeout(7000), headers: { "User-Agent": imageAgent["User-Agent"], Accept: "image/*" } });
+    const mimeType = response.headers.get("content-type")?.split(";")[0].trim() ?? "";
+    if (!response.ok || !/^image\/(jpeg|png|webp)$/.test(mimeType)) return null;
+    const bytes = Buffer.from(await response.arrayBuffer());
+    return bytes.length > 0 && bytes.length <= 700_000 ? { mimeType, data: bytes.toString("base64") } : null;
+  } catch { return null; }
+}
+
+const visionSchema = { type: "object", additionalProperties: false, required: ["best", "fit"], properties: { best: { type: "integer" }, fit: { type: "integer" } } } as const;
+const visionPrompt = `You choose a photo to illustrate a news article for English learners. Look at each numbered image.
+A suitable photo honestly shows the article's actual subject: the same kind of place, activity, object, event or people. Sharing a word with the headline is not enough.
+Unsuitable: a different topic, a specific landmark or place in another country than the story's, portraits of named people unrelated to the story, logos, maps, charts, documents or text-heavy images, historical artworks for modern news, and anything distasteful.
+Return best: the number of the most suitable image, or -1 if none is suitable. Return fit: 0-10, how well that image matches the article (10 = clearly shows the subject).`;
+const dailyImageLimit = 80;
+/** Minimum fit for an image to be used; no picture is better than a misleading one. */
+export const minimumImageFit = 7;
+
+/**
+ * The best licensed illustration, chosen by Gemini looking at the candidate images
+ * themselves (one request). Returns null when no candidate truly fits.
  */
 export async function findNewsIllustration(title: string, fetcher: typeof fetch = fetch, { body = "", query = "" }: { body?: string; query?: string } = {}): Promise<Illustration | null> {
-  const keywords = imageKeywords(title, body, query);
-  if (keywords.length < 2) return null;
-  const titleTerms = imageKeywords(title);
-  const searches = [...new Set([query && words(query).length >= 2 ? words(query).join(" ") : "", keywords.slice(0, 4).join(" "), (titleTerms.length >= 2 ? titleTerms : keywords).slice(0, 2).join(" ")].filter(Boolean))];
-  let failure: unknown = null;
-  for (const search of searches) {
-    const results = await Promise.allSettled([nasaLibraryCandidates(search, keywords, fetcher), commonsCandidates(search, keywords, fetcher)]);
-    const candidates = results.flatMap((result) => result.status === "fulfilled" ? result.value : (failure = result.reason, []));
-    const best = candidates.sort((a, b) => b.score - a.score)[0];
-    if (best) return best.value;
-  }
-  if (failure) throw failure;
-  return null;
+  if (!process.env.GEMINI_API_KEY) return null;
+  const candidates = await gatherCandidates(title, body, query, fetcher);
+  const previews = (await Promise.all(candidates.map(async (candidate) => ({ candidate, image: await previewData(candidate.preview, fetcher) })))).filter((entry) => entry.image);
+  if (!previews.length) return null;
+  const parts = [
+    { text: `Article title: ${title}\nVisual subject: ${query || "(not given)"}\nArticle start: ${body.slice(0, 700)}` },
+    ...previews.flatMap((entry, index) => [{ text: `Image ${index + 1}: ${entry.candidate.value.image_alt.replace(/^Ảnh minh họa: /, "")}` }, { inlineData: entry.image! }]),
+  ];
+  const { data } = await geminiJson<{ best?: number; fit?: number }>(visionPrompt, parts, visionSchema, { fetcher, temperature: 0, maxOutputTokens: 200 });
+  const chosen = typeof data.best === "number" ? previews[data.best - 1] : undefined;
+  return chosen && (data.fit ?? 0) >= minimumImageFit ? chosen.candidate.value : null;
 }
 
 type Claim = { article_id: string; title: string; body_text: string | null };
+/** The visual subject the quiz request named for each article, used as the image search query. */
+async function imageQueries(db: Db, ids: string[]) {
+  if (!ids.length) return new Map<string, string>();
+  const { data } = await db.from("news_auto_quiz_sets").select("article_id,image_query").in("article_id", ids);
+  return new Map((data ?? []).map((row) => [row.article_id as string, (row.image_query as string | null) ?? ""]));
+}
 type Db = ReturnType<typeof newsAdminClient>;
 async function finish(db: Db, id: string, kind: "image" | "quiz", status: "success" | "none" | "error", message = "", retryMs?: number) {
   await db.from("news_enrichment_attempts").update({ status, error_message: message.slice(0, 300),
     retry_after: new Date(Date.now() + (retryMs ?? (status === "none" ? 7 : 1) * 86400000)).toISOString() })
     .eq("article_id", id).eq("kind", kind);
 }
-async function hasImage(db: Db, articleId: string) {
-  const [body, preview, illustration] = await Promise.all([
-    db.from("news_article_bodies").select("article_id", { count: "exact", head: true }).eq("article_id", articleId).not("image_url", "is", null),
-    db.from("news_article_images").select("article_id", { count: "exact", head: true }).eq("article_id", articleId),
-    db.from("news_auto_illustrations").select("article_id", { count: "exact", head: true }).eq("article_id", articleId),
-  ]);
-  return [body, preview, illustration].some((query) => query.error || (query.count ?? 0) > 0);
+export async function saveImageQuery(db: Db, articleId: string, query: string) {
+  if (query) await db.from("news_auto_quiz_sets").update({ image_query: query.slice(0, 120) }).eq("article_id", articleId);
 }
 async function saveIllustration(db: Db, articleId: string, image: Illustration) {
   const { error } = await db.from("news_auto_illustrations").upsert({ article_id: articleId, ...image }, { onConflict: "article_id", ignoreDuplicates: true });
@@ -391,12 +474,19 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
 
 type EnrichResult = { imagesChecked: number; imagesAdded: number; quizzesChecked: number; quizzesAdded: number; aiConfigured: boolean; quotaLimited: boolean; errors: string[] };
 async function enrichImages(db: Db, result: EnrichResult) {
-  const { data: imageClaims, error: imageClaimError } = await db.rpc("news_claim_enrichment", { p_kind: "image", p_limit: 4 });
+  // Each image costs one Gemini vision request and up to two Openverse searches (200 a
+  // day anonymously): three per run, at most 80 a day.
+  if (!result.aiConfigured) return;
+  const today = new Date(); today.setUTCHours(0, 0, 0, 0);
+  const { count } = await db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").gte("attempted_at", today.toISOString());
+  if ((count ?? 0) >= dailyImageLimit) return;
+  const { data: imageClaims, error: imageClaimError } = await db.rpc("news_claim_enrichment", { p_kind: "image", p_limit: 3 });
   if (imageClaimError) throw imageClaimError;
+  const queries = await imageQueries(db, ((imageClaims ?? []) as Claim[]).map((article) => article.article_id));
   await Promise.all(((imageClaims ?? []) as Claim[]).map(async (article) => {
     result.imagesChecked++;
     try {
-      const image = await findNewsIllustration(article.title, fetch, { body: article.body_text ?? "" });
+      const image = await findNewsIllustration(article.title, fetch, { body: article.body_text ?? "", query: queries.get(article.article_id) ?? "" });
       if (image) { await saveIllustration(db, article.article_id, image); result.imagesAdded++; }
       await finish(db, article.article_id, "image", image ? "success" : "none");
     } catch (cause) {
@@ -425,12 +515,8 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
       if (error) throw error;
       if (saved) result.quizzesAdded++;
       await finish(db, article.article_id, "quiz", "success");
-      // The quiz request also named the article's visual subject: a free second
-      // chance for articles whose title alone found no fitting illustration.
-      if (generated.imageQuery && !(await hasImage(db, article.article_id))) {
-        const image = await findNewsIllustration(article.title, fetch, { body: article.body_text ?? "", query: generated.imageQuery }).catch(() => null);
-        if (image) await saveIllustration(db, article.article_id, image).then(() => { result.imagesAdded++; }, () => undefined);
-      }
+      // The visual subject named by the quiz request becomes the image search query.
+      await saveImageQuery(db, article.article_id, generated.imageQuery);
     } catch (cause) {
       const message = cause instanceof Error ? cause.message : "Quiz generation failed";
       result.errors.push(`Quiz ${article.article_id}: ${message}`);

@@ -1,5 +1,5 @@
 import { load } from "cheerio";
-import { AiQuotaError, findNewsIllustration, geminiJson, generateNewsQuiz, type GeneratedQuestion } from "./enrichment";
+import { AiQuotaError, geminiJson, generateNewsQuiz, saveImageQuery, type GeneratedQuestion } from "./enrichment";
 import { canonicalUrl, newsHash, rssProvider, type NewsItem, type NewsSource } from "./providers";
 import type { NewsAdminSettings } from "./settings";
 import type { newsAdminClient } from "./sync";
@@ -320,9 +320,11 @@ export async function rewriteVietnamNews(db: Db, result: RewriteRun, settings: N
     });
     if (bodyError) { await db.from("news_articles").delete().eq("id", article.id); throw bodyError; }
     result.rewritesAdded++;
-    if (written.questions.length) await db.rpc("news_publish_auto_quiz", { p_article_id: article.id, p_model: written.model, p_questions: written.questions }).then(() => undefined, () => undefined);
-    const image = await findNewsIllustration(item.title, fetcher, { body: written.body, query: written.imageQuery }).catch(() => null);
-    if (image) await db.from("news_auto_illustrations").upsert({ article_id: article.id, ...image }, { onConflict: "article_id", ignoreDuplicates: true });
+    // The image worker picks the illustration in a later run, checked by AI against the photo itself.
+    if (written.questions.length) {
+      const { error: quizError } = await db.rpc("news_publish_auto_quiz", { p_article_id: article.id, p_model: written.model, p_questions: written.questions });
+      if (!quizError) await saveImageQuery(db, article.id, written.imageQuery);
+    }
   } catch (cause) {
     const message = cause instanceof Error ? cause.message : "Rewrite failed";
     result.errors.push(`Rewrite ${item.canonical_url}: ${message}`);

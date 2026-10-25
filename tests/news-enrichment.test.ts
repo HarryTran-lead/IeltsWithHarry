@@ -161,49 +161,67 @@ describe("Gemini news quiz generation", () => {
   });
 });
 
-describe("illustration search", () => {
-  const commonsPage = (license: string) => ({ title: "File:Artemis spacecraft above the Moon.jpg", imageinfo: [{
-    thumburl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/artemis.jpg/960px-artemis.jpg",
-    descriptionurl: "https://commons.wikimedia.org/wiki/File:Artemis_spacecraft_above_the_Moon.jpg",
+describe("illustration search checked by AI vision", () => {
+  const commonsPage = (license: string, name = "Artemis spacecraft above the Moon") => ({ title: `File:${name}.jpg`, imageinfo: [{
+    thumburl: `https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/${name.replaceAll(" ", "_")}.jpg/960px-${name.replaceAll(" ", "_")}.jpg`,
+    descriptionurl: `https://commons.wikimedia.org/wiki/File:${name.replaceAll(" ", "_")}.jpg`,
     width: 1200, height: 700,
-    extmetadata: { LicenseShortName: { value: license }, LicenseUrl: { value: "https://creativecommons.org/licenses/by-sa/4.0/" }, Artist: { value: "NASA" }, ImageDescription: { value: "Artemis spacecraft above the Moon" } },
+    extmetadata: { LicenseShortName: { value: license }, LicenseUrl: { value: "https://creativecommons.org/licenses/by-sa/4.0/" }, Artist: { value: "NASA" }, ImageDescription: { value: name } },
   }] });
   const nasaItem = (extra: Record<string, string> = {}) => ({
     data: [{ title: "Artemis spacecraft over the Moon", nasa_id: "art001", media_type: "image", center: "JSC", photographer: "James Blair", description: "The Artemis spacecraft orbits the Moon.", keywords: ["Artemis"], ...extra }],
     links: [{ href: "https://images-assets.nasa.gov/image/art001/art001~medium.jpg", rel: "alternate", width: 1280 }],
   });
-  function fetcherFor(commons: unknown[][], nasa: unknown[] = []) {
-    const calls = { commons: 0, nasa: 0 };
-    const fetcher = async (url: string | URL | Request) => {
-      if (String(url).startsWith("https://images-api.nasa.gov/")) { calls.nasa++; return new Response(JSON.stringify({ collection: { items: nasa } }), { status: 200 }); }
-      const pages = commons[Math.min(calls.commons++, commons.length - 1)];
-      return new Response(JSON.stringify({ query: { pages } }), { status: 200 });
+  /** Answers library searches, image downloads and the Gemini vision request. */
+  const flickr = (license: string, extra: Record<string, unknown> = {}) => ({ title: "Concert crowd at night", url: "https://live.staticflickr.com/1/2_abc_b.jpg", creator: "Jane Doe", license, license_version: "2.0",
+    license_url: license === "cc0" ? undefined : `https://creativecommons.org/licenses/${license}/2.0/`, foreign_landing_url: "https://www.flickr.com/photos/jane/2", provider: "flickr", width: 1024, height: 683, ...extra });
+  function fetcherFor(commons: unknown[], nasa: unknown[], vision: { best: number; fit: number }, openverse: unknown[] = []) {
+    const seen = { previews: [] as string[], prompts: [] as string[] };
+    const fetcher = async (url: string | URL | Request, init?: RequestInit) => {
+      const href = String(url);
+      if (href.startsWith("https://images-api.nasa.gov/")) return new Response(JSON.stringify({ collection: { items: nasa } }), { status: 200 });
+      if (href.startsWith("https://commons.wikimedia.org/w/api.php")) return new Response(JSON.stringify({ query: { pages: commons } }), { status: 200 });
+      if (href.startsWith("https://api.openverse.org/")) return new Response(JSON.stringify({ results: openverse }), { status: 200 });
+      if (href.includes("generativelanguage.googleapis.com")) { seen.prompts.push(String(init?.body)); return geminiReply(vision); }
+      seen.previews.push(href);
+      return new Response(new Uint8Array([255, 216, 255, 224]), { status: 200, headers: { "content-type": "image/jpeg" } });
     };
-    return { fetcher: fetcher as typeof fetch, calls };
+    return { fetcher: fetcher as typeof fetch, seen };
   }
-  it("uses an explicitly public-domain and relevant Commons image with credit", async () => {
-    const image = await findNewsIllustration("Artemis spacecraft Moon mission", fetcherFor([[commonsPage("Public domain")]]).fetcher);
-    expect(image?.image_credit).toBe("NASA");
-    expect(image?.license_name).toBe("Public domain");
-    expect(image?.image_source_url).toContain("commons.wikimedia.org");
+  const run = <T>(work: () => Promise<T>) => withKey(work);
+
+  it("lets Gemini look at small previews and keeps the image it judges fitting", async () => {
+    const { fetcher, seen } = fetcherFor([commonsPage("Public domain")], [nasaItem()], { best: 2, fit: 9 });
+    const image = await run(() => findNewsIllustration("Artemis spacecraft Moon mission", fetcher, { query: "spacecraft near the Moon" }));
+    expect(seen.previews.some((url) => url.includes("/330px-"))).toBe(true);
+    expect(seen.previews.some((url) => url.endsWith("~thumb.jpg"))).toBe(true);
+    expect(seen.prompts[0]).toContain("inlineData");
+    expect(seen.prompts[0]).toContain("spacecraft near the Moon");
+    expect(image).not.toBeNull();
   });
-  it("rejects an image without an approved license", async () => {
-    expect(await findNewsIllustration("Artemis spacecraft Moon mission", fetcherFor([[commonsPage("All rights reserved")]]).fetcher)).toBeNull();
+  it("uses no image when the AI finds none fitting or rates the best one low", async () => {
+    const none = fetcherFor([commonsPage("Public domain")], [nasaItem()], { best: -1, fit: 0 });
+    expect(await run(() => findNewsIllustration("Artemis spacecraft Moon mission", none.fetcher))).toBeNull();
+    const weak = fetcherFor([commonsPage("Public domain")], [], { best: 1, fit: 5 });
+    expect(await run(() => findNewsIllustration("Artemis spacecraft Moon mission", weak.fetcher))).toBeNull();
   });
-  it("accepts an attributed Creative Commons image after broadening the search", async () => {
-    const { fetcher, calls } = fetcherFor([[], [commonsPage("CC BY-SA 4.0")]]);
-    const image = await findNewsIllustration("Artemis spacecraft Moon mission", fetcher);
-    expect(calls.commons).toBe(2);
-    expect(image?.license_url).toBe("https://creativecommons.org/licenses/by-sa/4.0/");
-    expect(image?.image_credit).toBe("NASA");
+  it("never offers unlicensed or third-party images to the AI", async () => {
+    const { fetcher, seen } = fetcherFor([commonsPage("All rights reserved")], [nasaItem({ secondary_creator: "Intuitive Machines" })], { best: 1, fit: 10 });
+    expect(await run(() => findNewsIllustration("Artemis spacecraft Moon mission", fetcher))).toBeNull();
+    expect(seen.prompts).toHaveLength(0);
   });
-  it("prefers a NASA Image Library photo and skips third-party credits", async () => {
-    const image = await findNewsIllustration("Artemis spacecraft Moon mission", fetcherFor([[commonsPage("CC BY-SA 4.0")]], [nasaItem()]).fetcher);
-    expect(image).toMatchObject({ image_credit: "NASA/James Blair", image_source_url: "https://images.nasa.gov/details/art001", license_name: "NASA media guidelines" });
-    const outside = await findNewsIllustration("Artemis spacecraft Moon mission", fetcherFor([[]], [nasaItem({ secondary_creator: "Intuitive Machines" })]).fetcher);
-    expect(outside).toBeNull();
+  it("offers attributed Openverse photos from Flickr with a small preview", async () => {
+    const { fetcher, seen } = fetcherFor([], [], { best: 1, fit: 9 }, [flickr("by"), flickr("by-nc", { url: "https://live.staticflickr.com/1/3_def_b.jpg" }), flickr("by", { creator: "", url: "https://live.staticflickr.com/1/4_ghi_b.jpg" })]);
+    const image = await run(() => findNewsIllustration("Concert tickets resold in Hanoi", fetcher, { query: "concert crowd" }));
+    expect(seen.previews).toEqual(["https://live.staticflickr.com/1/2_abc_n.jpg"]);
+    expect(image).toMatchObject({ image_url: "https://live.staticflickr.com/1/2_abc_b.jpg", image_credit: "Jane Doe", license_name: "CC BY 2.0", license_url: "https://creativecommons.org/licenses/by/2.0/", image_source_url: "https://www.flickr.com/photos/jane/2" });
   });
-  it("searches with the AI's visual subject and words the article repeats", async () => {
+  it("keeps the credit and licence of the chosen Commons image", async () => {
+    const { fetcher } = fetcherFor([commonsPage("CC BY-SA 4.0")], [], { best: 1, fit: 8 });
+    const image = await run(() => findNewsIllustration("Artemis spacecraft Moon mission", fetcher));
+    expect(image).toMatchObject({ image_credit: "NASA", license_url: "https://creativecommons.org/licenses/by-sa/4.0/" });
+  });
+  it("searches with the AI's visual subject and words the article repeats", () => {
     expect(imageKeywords("NASA Marks Milestone", "The coral reef grows. Coral reef scientists study the coral reef. Reef coral.", "coral reef survey")).toEqual(["coral", "reef", "survey", "marks", "milestone"]);
   });
 });
