@@ -26,9 +26,10 @@ function clampBounds(bounds: Bounds): Bounds {
 
 function initialBounds(): Bounds {
   const mobile = window.innerWidth <= 700;
+  const bottomGap = mobile ? 145 : 115;
   const width = Math.min(mobile ? 330 : small.width, window.innerWidth - 16);
-  const height = Math.min(mobile ? 430 : small.height, window.innerHeight - 88);
-  return clampBounds({ x: window.innerWidth - width - 24, y: window.innerHeight - height - 88, width, height });
+  const height = Math.min(mobile ? 430 : small.height, window.innerHeight - bottomGap - 8);
+  return clampBounds({ x: window.innerWidth - width - 24, y: window.innerHeight - height - bottomGap, width, height });
 }
 
 export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
