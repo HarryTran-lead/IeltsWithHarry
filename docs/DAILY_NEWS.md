@@ -2,7 +2,7 @@
 
 ## Data flows
 
-`/app/news` reads published metadata from `news_articles` with database pagination. Users can filter, search, save a headline, and open the publisher's original page. `news_articles` does not contain article bodies, images, or audio. GDELT records cite [The GDELT Project](https://www.gdeltproject.org/); underlying publisher pages remain external.
+`/app/news` reads the RLS-protected `news_archive_catalog` view with database pagination. Users can search, filter by category, source, year and on-site readability, sort newest or oldest, save a headline, and open the publisher's original page. The view joins the article metadata to a rights-controlled body when one exists. Imported rows are retained for historical browsing; the RSS feed's own archive depth and how far back it has been ingested determine actual coverage.
 
 For the official NASA news-release and NOAA feeds, the sync also extracts plain text from individually eligible entries into `news_article_bodies`. One agency-hosted lead image is included when its feed caption explicitly credits that agency; its URL, alt text, credit, and rights basis are stored per article. The on-site reader shows the image with source attribution and a link to the original. The extraction excludes other images, embedded media, scripts, and entries bearing third-party copyright markers. The per-article rights basis cites [NASA's media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/) or [NOAA's content guidance](https://www.noaa.gov/office-education/outreach-communication/faq). Other publisher articles remain links unless a rights review supports reuse. Admins can delete a body if its rights status changes.
 
@@ -10,7 +10,7 @@ For the official NASA news-release and NOAA feeds, the sync also extracts plain 
 
 `/app/news/learn` also offers deterministic personal suggestions. Learners save a level and preferred topics in `user_news_preferences`. The order also considers completed readings, the most recent quiz result, and words saved in the notebook. The complete reading catalog and manual filters remain available.
 
-The Daily News page now separates automatically imported on-site articles from editor-authored lessons. A learner can mark an eligible full-text article as read once; `user_news_article_reads` stores the completion per account and the History page shows it. The admin dashboard explains that ordinary news arrives through Cron. Editors only need to add content when they want a curated quiz with fixed answer keys or when reviewing a new source's rights.
+The Daily News page presents one archive with an explicit on-site reading filter, separate from editor-authored lessons. A learner can mark an eligible full-text article as read once; `user_news_article_reads` stores the completion per account and the History page shows it. The admin dashboard explains that ordinary news arrives through Cron. Editors only need to add content when they want a curated quiz with fixed answer keys or when reviewing a new source's rights.
 
 The full-text reader fills the available workspace and includes a per-article word explorer. Selecting one word looks up its English definition through [Free Dictionary API](https://dictionaryapi.dev/) and requests a Vietnamese machine translation. Once a meaning is available, the word is saved to the learner's notebook with the article path; the learner can edit the meaning. Bilingual mode aligns each English paragraph with Vietnamese. Chrome desktop uses its [built-in Translator API](https://developer.chrome.com/docs/ai/translator-api) on the learner's device. Other browsers use the server route only when `GOOGLE_CLOUD_TRANSLATE_API_KEY` is configured; without it, the reader shows a clear unavailable message and still allows a manual Vietnamese meaning. The fallback uses [Cloud Translation Basic](https://docs.cloud.google.com/translate/docs/reference/rest/v2/translate) and is capped at 30,000 characters per account per day. Configure the API key only on the server, restrict it to the Translation API, and set a project quota before enabling it.
 
@@ -18,13 +18,15 @@ The full-text reader fills the available workspace and includes a per-article wo
 
 ## Providers and rights
 
-- GDELT DOC API: public article-list discovery, English source-language filter, metadata only. Its initial source is enabled but **manual review** is required before a headline appears to learners. The publisher's full article is never fetched.
+- GDELT DOC API: public article-list discovery, English source-language filter, metadata only. This source is paused after repeated production timeouts; its existing rows are retained. The publisher's full article is never fetched.
 - NASA News Releases RSS: official feed at `https://www.nasa.gov/news-release/feed/`, initially approved for automatic metadata publication. Text from individually eligible `www.nasa.gov/news-release/` items is shown on site with NASA attribution. A title that matches the sensitive-content filter still enters review.
 - NOAA RSS: official feed at `https://www.noaa.gov/rss.xml`, approved for metadata publication. Individually eligible NOAA-authored text from `www.noaa.gov` news pages is shown on site with NOAA attribution. The feed may include third-party material, which the text extractor excludes when detected.
+- NASA Technology, Aeronautics and Space Station: [official NASA RSS feeds](https://www.nasa.gov/rss-feeds/) with metadata and original links. NASA News Releases additionally reads numbered historical RSS pages; `archive_next_page` advances two pages per successful scheduled sync. The authenticated admin can seed up to five selected pages per request through `POST /api/news/sync` with `{ "archivePages": [2, 3] }`.
+- NOAA National Ocean Service: [official news RSS](https://oceanservice.noaa.gov/rss.html) includes historical entries. Its unusual nested RSS entries are flattened during import. This feed and the [NSF news RSS](https://www.nsf.gov/rss) store metadata and original links only.
 - Additional RSS/Atom: starts disabled and with `MANUAL_PERMISSION_REQUIRED`. The admin must record a reviewed rights basis, select a restrictive policy, and enable it. The server additionally permits only exact hosts in `NEWS_RSS_ALLOWED_HOSTS`. The default list contains NASA hosts. Adding a new publisher requires an explicit environment change and redeploy.
 - Original or licensed passages: stored separately with `rights_status` and `rights_basis`. Non-original material requires a source URL. Audio requires a separate rights basis.
 
-The metadata adapter does not store RSS descriptions, publisher photos, or provider imagery. The NASA news-release exception stores only extracted plain text in the separate rights-controlled table. It rejects redirects, IP-address feed hosts, unsupported schemes, large responses, invalid dates, and non-English GDELT items. Requests have a nine-second timeout, bounded retries, and 50-item batches. URL hashes and a unique database constraint provide idempotency. A failed sync leaves previously imported records intact.
+The metadata adapter does not store RSS descriptions, publisher photos, or provider imagery. NASA and NOAA article-body exceptions store only individually eligible text in the separate rights-controlled table. It rejects redirects, IP-address feed hosts, unsupported schemes, large responses, invalid dates, and non-English GDELT items. Requests have a nine-second timeout, bounded retries, and 50-row database batches. URL hashes and a unique database constraint provide idempotency. A failed sync leaves previously imported records intact.
 
 ## Production configuration
 
@@ -33,7 +35,7 @@ Vercel server-only environment variables:
 ```dotenv
 SUPABASE_SERVICE_ROLE_KEY=...  # legacy service_role JWT or server-capable secret key
 NEWS_SYNC_SECRET=...           # random 32-byte-or-longer secret
-NEWS_RSS_ALLOWED_HOSTS=www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov
+NEWS_RSS_ALLOWED_HOSTS=www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov,oceanservice.noaa.gov,www.nsf.gov
 ```
 
 The first two must never use the `NEXT_PUBLIC_` prefix. Production already uses `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for RLS-protected browser access.

@@ -1,7 +1,7 @@
 import { timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { syncNews } from "@/lib/news/sync";
+import { backfillNews, syncNews } from "@/lib/news/sync";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -26,6 +26,10 @@ export async function POST(request: NextRequest) {
     }
   }
   if (!authorized) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  try { return NextResponse.json({ results: await syncNews() }); }
+  try {
+    const payload = await request.json().catch(() => ({}));
+    if (payload && typeof payload === "object" && "archivePages" in payload) return NextResponse.json({ results: await backfillNews(payload.archivePages) });
+    return NextResponse.json({ results: await syncNews() });
+  }
   catch (error) { return NextResponse.json({ error: error instanceof Error ? error.message : "Sync failed" }, { status: 500 }); }
 }

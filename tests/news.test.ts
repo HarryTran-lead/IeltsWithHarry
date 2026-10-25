@@ -6,7 +6,7 @@ import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalize
 import { nextWordReview } from "../src/lib/news/review";
 import { recommendReadings } from "../src/lib/news/recommend";
 
-const source: NewsSource = { id: "11111111-1111-4111-8111-111111111111", name: "NASA", provider: "rss", feed_url: "https://www.nasa.gov/news-release/feed/", category: "Science", policy_status: "METADATA_ONLY", reviewed_basis: "NASA official RSS feed reviewed", attribution_text: "NASA", auto_publish: true, enabled: true, etag: null, last_modified: null, min_interval_minutes: 30 };
+const source: NewsSource = { id: "11111111-1111-4111-8111-111111111111", name: "NASA", provider: "rss", feed_url: "https://www.nasa.gov/news-release/feed/", category: "Science", policy_status: "METADATA_ONLY", reviewed_basis: "NASA official RSS feed reviewed", attribution_text: "NASA", auto_publish: true, enabled: true, etag: null, last_modified: null, min_interval_minutes: 30, archive_next_page: 2 };
 const xml = `<rss version="2.0"><channel><title>NASA</title><item><title>New science mission announced</title><link>https://www.nasa.gov/news/mission/?utm_source=test</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate><guid>mission-1</guid><description>Third-party text is intentionally ignored.</description></item></channel></rss>`;
 
 describe("news providers", () => {
@@ -38,6 +38,18 @@ describe("news providers", () => {
     const atom = `<feed><entry><title>Science update for students</title><link href="https://www.nasa.gov/news/students/" rel="alternate"/><updated>2026-10-23T12:00:00Z</updated><content>Do not save full text</content></entry></feed>`;
     expect(parseRss(atom, source)[0].title).toBe("Science update for students");
     expect(() => parseRss("<!DOCTYPE rss><rss/>", source)).toThrow();
+  });
+  it("keeps the older entries nested in the NOAA Ocean Service archive feed", () => {
+    const archive = `<rss><channel><item><title>New ocean finding</title><link>https://oceanservice.noaa.gov/news/new.html</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate></item><item><item><title>Ocean discovery from 2013</title><link>https://oceanservice.noaa.gov/news/old.html</link><pubDate>Wed, 02 Jan 2013 18:03:20 GMT</pubDate></item></item></channel></rss>`;
+    expect(parseRss(archive, source).map((item) => item.published_at.slice(0, 4))).toEqual(["2026", "2013"]);
+  });
+  it("fetches a numbered NASA archive page without reusing the latest feed cache", async () => {
+    const mock = vi.fn(async (url: URL, init: RequestInit) => { void url; void init; return new Response(xml, { status: 200 }); });
+    const result = await rssProvider.fetch({ ...source, etag: '"latest"' }, mock as unknown as typeof fetch, 25);
+    expect(result.items).toHaveLength(1);
+    expect(String(mock.mock.calls[0][0])).toContain("paged=25");
+    expect((mock.mock.calls[0][1] as RequestInit).headers).not.toHaveProperty("If-None-Match");
+    await expect(rssProvider.fetch(source, mock as unknown as typeof fetch, 4001)).rejects.toThrow();
   });
   it("copies only eligible NASA news-release text and strips markup", () => {
     const passage = "NASA announced a new mission to study the Moon and share its findings with students around the world. ".repeat(4);
@@ -102,7 +114,7 @@ describe("news database permissions and grading", () => {
         create table auth.users(id uuid primary key, raw_user_meta_data jsonb);
         create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
         grant usage on schema auth to authenticated; grant execute on function auth.uid() to authenticated;`);
-      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql"]) {
+      for (const name of ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql"]) {
         if (name.includes("007")) await db.exec(readFileSync(resolve("supabase/seed.sql"), "utf8"));
         await db.exec(readFileSync(resolve("supabase/migrations", name), "utf8"));
       }

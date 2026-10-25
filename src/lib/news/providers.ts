@@ -5,11 +5,11 @@ import { load } from "cheerio";
 import { NEWS_CATEGORIES, type NewsCategory } from "./constants";
 
 export { NEWS_CATEGORIES };
-export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number };
+export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number; archive_next_page: number | null };
 export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
 export type NewsBodyCandidate = { canonical_hash: string; body_text: string; rights_basis: string; source_url: string; image_url: string | null; image_alt: string | null; image_credit: string | null; image_rights_basis: string | null };
 export type FetchResult = { items: NewsItem[]; bodies?: NewsBodyCandidate[]; etag: string | null; lastModified: string | null; cacheUntil: string | null; notModified: boolean };
-export interface NewsProvider { readonly kind: NewsSource["provider"]; fetch(source: NewsSource, fetcher?: typeof fetch): Promise<FetchResult> }
+export interface NewsProvider { readonly kind: NewsSource["provider"]; fetch(source: NewsSource, fetcher?: typeof fetch, archivePage?: number): Promise<FetchResult> }
 
 const sensitive = /\b(killed|murder|shooting|bomb|war|attack|assault|graphic|suicide|abuse)\b/i;
 const cleanText = (value: unknown, max: number) => String(value ?? "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim().slice(0, max);
@@ -69,7 +69,18 @@ export function parseRss(xml: string, source: NewsSource): NewsItem[] {
   const atom = parsed.feed as { entry?: unknown; title?: unknown } | undefined;
   const entries = rss?.channel?.item ?? atom?.entry;
   const list = Array.isArray(entries) ? entries : entries ? [entries] : [];
-  return list.slice(0, 50).map((value) => {
+  // The official NOAA Ocean Service feed nests older <item> nodes inside one
+  // item. Flatten them so the years of archive entries are not silently lost.
+  const flattened: unknown[] = [];
+  function collect(value: unknown) {
+    if (!value || typeof value !== "object" || flattened.length >= 500) return;
+    const row = value as Record<string, unknown>;
+    if (row.link && row.title) flattened.push(row);
+    const children = row.item;
+    for (const child of Array.isArray(children) ? children : children ? [children] : []) collect(child);
+  }
+  for (const entry of list) collect(entry);
+  return flattened.map((value) => {
     const row = value as Record<string, unknown>;
     return makeItem(source, { url: rss ? xmlText(row.link) : atomLink(row.link), title: xmlText(row.title),
       date: row.pubDate ?? row["dc:date"] ?? row.published ?? row.updated,
@@ -148,7 +159,7 @@ export function parseNoaaNewsBodies(xml: string, source: NewsSource): NewsBodyCa
 
 export function assertApprovedFeedUrl(raw: string): URL {
   const url = new URL(raw);
-  const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov").split(",").map((host) => host.trim().toLowerCase());
+  const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov,oceanservice.noaa.gov,www.nsf.gov").split(",").map((host) => host.trim().toLowerCase());
   if (url.protocol !== "https:" || url.port || url.username || url.password || isIP(url.hostname) || !allowed.includes(url.hostname.toLowerCase())) throw new Error("Feed host is not approved in NEWS_RSS_ALLOWED_HOSTS");
   return url;
 }
@@ -201,12 +212,16 @@ function cacheUntil(response: Response): string | null {
   if (!match) return null;
   return new Date(Date.now() + Math.min(Number(match[1]), 86400) * 1000).toISOString();
 }
-export const rssProvider: NewsProvider = { kind: "rss", async fetch(source, fetcher = fetch) {
+export const rssProvider: NewsProvider = { kind: "rss", async fetch(source, fetcher = fetch, archivePage) {
   if (!source.feed_url) throw new Error("Feed URL missing");
   const url = assertApprovedFeedUrl(source.feed_url);
+  if (archivePage !== undefined) {
+    if (source.feed_url !== nasaFeedUrl || !Number.isInteger(archivePage) || archivePage < 2 || archivePage > 4000) throw new Error("Archive page is not approved");
+    url.searchParams.set("paged", String(archivePage));
+  }
   const headers: Record<string,string> = { Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml" };
-  if (source.etag) headers["If-None-Match"] = source.etag;
-  if (source.last_modified) headers["If-Modified-Since"] = source.last_modified;
+  if (archivePage === undefined && source.etag) headers["If-None-Match"] = source.etag;
+  if (archivePage === undefined && source.last_modified) headers["If-Modified-Since"] = source.last_modified;
   const response = await boundedFetch(url, { headers }, fetcher);
   if (response.status === 304) return { items: [], etag: source.etag, lastModified: source.last_modified, cacheUntil: cacheUntil(response), notModified: true };
   if (!response.ok) throw new Error(`RSS HTTP ${response.status}`);
