@@ -12,7 +12,7 @@ type Learning = { id:string; slug:string; title:string; summary:string; category
 type Word = { id:string; word:string; part_of_speech:string; meaning_vi:string; definition:string; phonetic:string; example:string };
 type Question = { id:string; kind:string; prompt:string; options:string[]; supporting_sentence:string };
 type Run = { id:string; source_id:string; started_at:string; finished_at:string|null; status:string; fetched_count:number; inserted_count:number; error_message:string|null };
-const blank: Omit<Learning,"id"> = {slug:"",title:"",summary:"",category:"Education",stage_id:"foundation",passage:"",rights_status:"ORIGINAL",rights_basis:"Original English Skill Lab editorial content.",source_url:null,audio_url:null,audio_rights_basis:null,related_news_id:null,published:false};
+const blank: Omit<Learning,"id"> = {slug:"",title:"",summary:"",category:"Education",stage_id:"foundation",passage:"",rights_status:"ORIGINAL",rights_basis:"Original IeltsWithHarry editorial content.",source_url:null,audio_url:null,audio_rights_basis:null,related_news_id:null,published:false};
 const stageLabels:Record<string,string>={foundation:"1.0–2.0 Foundation",elementary:"2.0–3.0 Elementary","pre-ielts":"3.0–4.0 Pre-IELTS","ielts-starter":"4.0–5.0 IELTS Starter","ielts-builder":"5.0–6.0 IELTS Builder","ielts-advanced":"6.0–7.0 IELTS Advanced",mastery:"7.0+ Mastery"};
 function when(value:string|null){return value?new Intl.DateTimeFormat("vi-VN",{dateStyle:"medium",timeStyle:"short"}).format(new Date(value)):"Chưa có";}
 

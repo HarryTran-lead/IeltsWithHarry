@@ -89,7 +89,7 @@ export function NotebookPage() {
     const file = new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), entries, visits, attempts }, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(file);
     const link = document.createElement("a");
-    link.href = url; link.download = "english-skill-lab-notebook.json"; link.click();
+    link.href = url; link.download = "ieltswithharry-notebook.json"; link.click();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return <div className="content-page notebook-page"><header className="notebook-page-hero"><span className="eyebrow">HÀNH TRÌNH CỦA BẠN</span><h1>📒 Sổ tay học tập</h1><p>Ghi chú, từ mới và lịch sử học nằm cùng một chỗ. Mục được lưu khi đang học có liên kết về trang nguồn.</p><div><button type="button" className="button primary" onClick={() => { setEditing(null); setShowForm("note"); }}><Plus size={16} /> Ghi chú mới</button><button type="button" className="button subtle" onClick={() => { setEditing(null); setShowForm("word"); }}><Plus size={16} /> Lưu từ mới</button><button type="button" className="button subtle" onClick={exportNotebook}>Xuất JSON</button></div></header>

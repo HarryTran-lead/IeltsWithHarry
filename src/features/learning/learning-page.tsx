@@ -12,7 +12,7 @@ import {
   Square,
   Volume2,
 } from "lucide-react";
-import { Mochi } from "@/components/illustrations/mochi";
+import { HarryMascot } from "@/components/illustrations/harry";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
@@ -85,7 +85,7 @@ function PageIntro({
         </h1>
         <p>{description}</p>
       </div>
-      <Mochi size={92} />
+      <HarryMascot size={92} />
     </div>
   );
 }

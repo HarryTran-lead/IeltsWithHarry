@@ -2,10 +2,10 @@ import Link from "next/link";
 export default function AboutPage() {
   return (
     <div className="public-container">
-      <span className="eyebrow">ABOUT ENGLISH SKILL LAB</span>
+      <span className="eyebrow">ABOUT IELTSWITHHARRY</span>
       <h1>Small steps. Big progress.</h1>
       <p>
-        English Skill Lab is a friendly learning space for beginners and IELTS
+        IeltsWithHarry is a friendly learning space for beginners and IELTS
         learners. Practice useful English, plan your week and see how each step
         adds up.
       </p>

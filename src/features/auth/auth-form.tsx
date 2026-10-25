@@ -121,7 +121,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
   }
 
   return <div className="public-container narrow">
-    <span className="eyebrow">ENGLISH SKILL LAB</span><h1>{titles[mode]}</h1>
+    <span className="eyebrow">IELTSWITHHARRY</span><h1>{titles[mode]}</h1>
     {inactive ? <div className="card public-message">
       <p>{demoMode ? "Bản demo tách riêng Guest, học viên và admin. Phiên demo không tạo tài khoản thật; dữ liệu chỉ lưu trong trình duyệt này." : "Đăng nhập đang chờ kết nối Supabase project."}</p>
       {demoMode && (mode === "login" || mode === "register") && <div className="demo-role-actions"><button type="button" className="button primary" disabled={busy} onClick={() => void enterDemo("student")}>Vào trang học viên demo →</button><button type="button" className="button subtle" disabled={busy} onClick={() => void enterDemo("admin")}>Xem trang admin demo →</button></div>}

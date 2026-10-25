@@ -1,64 +1,7 @@
-export function Mochi({
-  size = 74,
-  className = "",
-}: {
-  size?: number;
-  className?: string;
-}) {
-  return (
-    <svg
-      className={className}
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      role="img"
-      aria-label="Mochi, the English Skill Lab mascot"
-    >
-      <defs>
-        <linearGradient id="mochiFill" x1="0" x2="1" y2="1">
-          <stop stopColor="#fffefa" />
-          <stop offset="1" stopColor="#c8f5ef" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M50 7 62 23 82 24 80 44 92 59 77 70 73 88 51 83 30 91 25 72 9 61 20 44 18 25 39 23Z"
-        fill="url(#mochiFill)"
-        stroke="#32b7bd"
-        strokeWidth="3"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M26 56c-9-3-12 9-5 15l8 3"
-        fill="#936de4"
-        stroke="#6043ab"
-        strokeWidth="2"
-      />
-      <path
-        d="M74 56c9-3 12 9 5 15l-8 3"
-        fill="#936de4"
-        stroke="#6043ab"
-        strokeWidth="2"
-      />
-      <circle cx="39" cy="48" r="3.2" fill="#183657" />
-      <circle cx="61" cy="48" r="3.2" fill="#183657" />
-      <path
-        d="M44 59q6 7 12 0"
-        fill="none"
-        stroke="#183657"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-      <ellipse cx="29" cy="57" rx="5" ry="3" fill="#ffadb5" opacity=".8" />
-      <ellipse cx="71" cy="57" rx="5" ry="3" fill="#ffadb5" opacity=".8" />
-      <path
-        d="M31 76h38v13q-19 7-38 0Z"
-        fill="#ffd26b"
-        stroke="#d39732"
-        strokeWidth="2"
-      />
-      <path d="M42 75v15m16-15v15" stroke="#d39732" strokeWidth="2" />
-    </svg>
-  );
+import Image from "next/image";
+
+export function HarryMascot({ size = 74, className = "" }: { size?: number; className?: string }) {
+  return <Image className={className} src="/ieltswithharry-mascot.webp" width={size} height={size} alt="IeltsWithHarry mascot" />;
 }
 
 export function StudyIllustration() {

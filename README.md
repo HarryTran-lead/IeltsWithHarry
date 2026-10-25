@@ -1,4 +1,4 @@
-# English Skill Lab
+# IeltsWithHarry
 
 An English learning web app built with Next.js 16, React 19, TypeScript, Tailwind CSS and Supabase. It includes a responsive dashboard, study planner, six sample skill activities and a small curriculum editor.
 
@@ -15,6 +15,7 @@ src/features/admin/      Curriculum and Daily News editors
 src/features/news/       News dashboard, reading practice and saved-word review
 src/lib/news/            Provider adapters, normalization, sync and review schedule
 src/features/notebook/   Floating quick notebook and learning timeline
+src/features/study-room/ Shared realtime chat, focus timer and original lofi player
 src/features/demo/       Shared learner store with explicit demo/live adapters
 src/lib/supabase/        Browser and server clients
 src/lib/validation/      Input schemas
@@ -42,6 +43,8 @@ Open `http://localhost:3000`. Visitors start on the public Guest homepage and ca
 In admin demo, edit the JSON curriculum pack, validate it, save a draft and publish it. Switch to the student demo role in the same browser to see the published pack in `/app/content-lab`. Live admin uses the Supabase CMS and database permissions instead of this browser storage.
 
 The floating **Sổ tay** button opens quick note and vocabulary capture on learning pages. `/app/notebook` lets learners search, edit, delete and export saved entries, and review learning-page visits plus submitted practice. Demo notebook data stays in localStorage on this browser. On a configured live account, entries and visits use the second Supabase migration and user-scoped RLS.
+
+The **Cùng học** item opens `/app/study-together`: one shared room for authenticated learners and admins. Messages persist in `study_room_messages` and new messages and online presence use Supabase Realtime. The room includes an original animated study scene, a 25-minute focus timer and an original Web Audio lofi loop. Browsers require a user gesture before sound can play, so press **Bật nhạc** once; it keeps looping while the room stays open. The demo preview does not send messages to the live room. Migration `202610250006_study_together.sql` enables message RLS, rate limiting, realtime publication and private presence policies.
 
 ## Connected Supabase project
 

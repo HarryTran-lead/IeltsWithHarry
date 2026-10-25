@@ -7,7 +7,7 @@ import {
   CirclePlay,
   Sparkles,
 } from "lucide-react";
-import { Mochi, StudyIllustration } from "@/components/illustrations/mochi";
+import { HarryMascot, StudyIllustration } from "@/components/illustrations/harry";
 import { PlannerMini } from "@/features/planner/planner-widgets";
 import { useDemo } from "@/features/demo/demo-store";
 import { recommendations, stages, todayISO } from "@/lib/demo-data";
@@ -316,7 +316,7 @@ export function Dashboard() {
         <PlannerMini />
         <Achievements />
         <div className="card encouragement">
-          <Mochi size={55} />
+          <HarryMascot size={55} />
           <div>
             <strong>One step closer!</strong>
             <p>A little practice every day adds up.</p>

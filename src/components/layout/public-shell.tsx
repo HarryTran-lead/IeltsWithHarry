@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Mochi } from "@/components/illustrations/mochi";
+import { HarryMascot } from "@/components/illustrations/harry";
 import { getViewerRole } from "@/lib/viewer-role";
 import { demoMode } from "@/lib/runtime";
 
@@ -10,9 +10,9 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
     <div className="public-site">
       <header className="public-header">
         <Link href="/" className="public-brand">
-          <Mochi size={44} />
+          <HarryMascot size={44} />
           <span>
-            English <b>Skill Lab</b>
+            Ielts<b>WithHarry</b>
           </span>
         </Link>
         <nav>
@@ -23,7 +23,7 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
       </header>
       <main>{children}</main>
       <footer>
-        © English Skill Lab · Small steps, big progress.{demoMode ? " · Bản demo" : ""}
+        © IeltsWithHarry · Small steps, big progress.{demoMode ? " · Bản demo" : ""}
       </footer>
     </div>
   );

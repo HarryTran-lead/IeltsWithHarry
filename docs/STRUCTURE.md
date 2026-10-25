@@ -1,4 +1,4 @@
-# Cấu trúc English Skill Lab
+# Cấu trúc IeltsWithHarry
 
 ## Các tầng chính
 
@@ -8,6 +8,7 @@ src/components/          Giao diện chung, thiết kế, minh họa
 src/features/            Từng miền nghiệp vụ: auth, dashboard, planner, learning, admin, demo
 src/features/content-lab/  Bản thử luyện tập từ gói JSON do người soạn nạp
 src/features/notebook/     Nút nổi ghi nhanh, sổ tay, lịch sử học
+src/features/study-room/   Phòng học chung, chat realtime, đồng hồ và nhạc tự tạo
 src/content/             Gói nội dung JSON mẫu cho Content Lab
 src/lib/supabase/        Tạo client cho trình duyệt/server
 src/lib/validation/      Kiểm tra dữ liệu nhập
@@ -26,6 +27,8 @@ tests/                  Kiểm tra đầu vào, nghiệp vụ và migration/RLS 
 Đăng nhập live hỗ trợ email/mật khẩu, Google OAuth và số điện thoại/mật khẩu. Hai lựa chọn Google/điện thoại chỉ hiển thị khi bật cờ môi trường tương ứng sau khi cấu hình provider trong Supabase. Email xác nhận và Google OAuth quay về `/auth/callback`; đăng ký điện thoại xác minh SMS qua OTP. Vai trò admin được kiểm tra từ `admin_users` qua `is_admin()`, không lấy từ metadata do người dùng gửi khi đăng ký.
 
 **Sổ tay**: nút nổi trong AppShell mở ghi chú/từ vựng từ mọi trang. Demo lưu `notebook_entries` và `study_visits` trong localStorage riêng; live dùng migration `202610240002_notebook.sql` với RLS. Trang `/app/notebook` ghép mục đã lưu, lần mở trang học và bài luyện đã nộp thành dòng thời gian. Lần mở trang chỉ ghi khi chuyển vào một trang học; việc xem dashboard/planner/sổ tay không tạo lịch sử học giả.
+
+**Cùng học**: `/app/study-together` dùng một phòng chung. Tin nhắn được lưu trong `study_room_messages`; trigger lấy tên từ profile, giới hạn 500 ký tự và một tin mỗi 2 giây. RLS chỉ cho người đăng nhập đọc/gửi; tác giả hoặc admin có thể xóa. Supabase Realtime phát tin mới và Presence đếm người trực tuyến. Hoạt cảnh CSS và vòng lofi Web Audio là tài sản tự tạo; người dùng cần bấm bật nhạc một lần theo quy định autoplay của trình duyệt.
 
 Chưa cấu hình Supabase và đã tắt demo thì giao diện hiển thị trạng thái cần thiết lập. Không có dữ liệu mẫu nào được ghi vào tài khoản thật.
 

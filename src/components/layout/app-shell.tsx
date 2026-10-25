@@ -25,8 +25,9 @@ import {
   Bell,
   LogOut,
   Newspaper,
+  UsersRound,
 } from "lucide-react";
-import { Mochi } from "@/components/illustrations/mochi";
+import { HarryMascot } from "@/components/illustrations/harry";
 import { useDemo } from "@/features/demo/demo-store";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
@@ -37,6 +38,7 @@ const links = [
   { href: "/app/learn", label: "Learn", icon: GraduationCap },
   { href: "/app/news", label: "Daily News", icon: Newspaper },
   { href: "/app/news/learn", label: "Learn with News", icon: BookOpen },
+  { href: "/app/study-together", label: "Cùng học", icon: UsersRound },
   { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical },
   { href: "/app/notebook", label: "Notebook", icon: NotebookPen },
   { href: "/app/vocabulary", label: "Vocabulary", icon: Languages },
@@ -92,10 +94,10 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
         </button>
         <Link href="/app/dashboard" className="brand">
           <span className="brand-mascot">
-            <Mochi size={49} />
+            <HarryMascot size={49} />
           </span>
           <span>
-            English <b>Skill Lab</b>
+            Ielts<b>WithHarry</b>
           </span>
         </Link>
         <div className="header-search">
@@ -247,7 +249,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
             <br />
             Big Progress!
           </strong>
-          <Mochi size={85} />
+          <HarryMascot size={85} />
           <span>Every practice counts.</span>
         </div>
       </aside>
@@ -263,7 +265,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
         {children}
       </main>
       <nav className="bottom-nav" aria-label="Mobile navigation">
-        {[links[0], links[1], links[3], links[10]].map(
+        {links.filter(({ href }) => ["/app/dashboard", "/app/learn", "/app/study-together", "/app/planner"].includes(href)).map(
           ({ href, label, icon: Icon }) => (
             <Link
               key={href}

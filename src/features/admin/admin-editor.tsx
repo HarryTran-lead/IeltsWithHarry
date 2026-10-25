@@ -1,8 +1,9 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { HarryMascot } from "@/components/illustrations/harry";
 import { usePathname } from "next/navigation";
-import { BookOpen, ChevronRight, FileText, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Mic, PenLine, ShieldCheck, Newspaper, ListChecks, Rss, ScrollText } from "lucide-react";
+import { BookOpen, ChevronRight, FileText, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { LessonContentEditor } from "./lesson-content-editor";
 import { MediaLibrary } from "./media-library";
@@ -102,7 +103,7 @@ export function AdminEditor() {
     if (error) setError(error.message); else await load();
   }
 
-  return <div className="admin-shell"><aside className="admin-sidebar"><Link href="/admin" className="admin-brand"><span className="admin-brand-mark"><ShieldCheck size={22} /></span><span><strong>English Skill Lab</strong><small>ADMIN PORTAL</small></span></Link><div className="admin-sidebar-label">QUẢN LÝ NỘI DUNG</div><nav aria-label="Admin navigation">{nav.map(({ slug: itemSlug, label, icon: Icon }) => <Link key={itemSlug} href={itemSlug === "overview" ? "/admin" : `/admin/${itemSlug}`} className={section === itemSlug ? "admin-nav-link active" : "admin-nav-link"} aria-current={section === itemSlug ? "page" : undefined}><Icon size={19} /><span>{label}</span><ChevronRight size={15} className="admin-nav-chevron" /></Link>)}</nav><Link href="/app/dashboard" className="admin-student-link"><GraduationCap size={19} /> Student portal <span>↗</span></Link></aside><main className="admin-panel">
+  return <div className="admin-shell"><aside className="admin-sidebar"><Link href="/admin" className="admin-brand"><span className="admin-brand-mark"><HarryMascot size={39} /></span><span><strong>IeltsWithHarry</strong><small>ADMIN PORTAL</small></span></Link><div className="admin-sidebar-label">QUẢN LÝ NỘI DUNG</div><nav aria-label="Admin navigation">{nav.map(({ slug: itemSlug, label, icon: Icon }) => <Link key={itemSlug} href={itemSlug === "overview" ? "/admin" : `/admin/${itemSlug}`} className={section === itemSlug ? "admin-nav-link active" : "admin-nav-link"} aria-current={section === itemSlug ? "page" : undefined}><Icon size={19} /><span>{label}</span><ChevronRight size={15} className="admin-nav-chevron" /></Link>)}</nav><Link href="/app/dashboard" className="admin-student-link"><GraduationCap size={19} /> Student portal <span>↗</span></Link></aside><main className="admin-panel">
     <div className="admin-heading"><div><span className="eyebrow">ADMIN CMS / {section.toUpperCase()}</span><h1>{sectionLabel}</h1><p>{section === "overview" ? "Quản lý nội dung học tập theo từng kỹ năng và theo dõi trạng thái xuất bản." : section === "curriculum" ? "Tạo khóa học, unit và bài học trước khi nhập nội dung cho từng kỹ năng." : section === "media" ? "Quản lý hình minh họa và âm thanh dùng trong bài học." : `Biên soạn dữ liệu ${sectionLabel} và xem trước trải nghiệm học viên.`}</p></div><Link className="button subtle" href="/app/dashboard">Student portal →</Link></div>
     {error && <p role="alert" className="form-error">{error}</p>}
     {loading ? <section className="card admin-list" role="status">Đang tải dữ liệu quản trị…</section> : <>
