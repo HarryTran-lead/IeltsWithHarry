@@ -13,6 +13,7 @@ import { NewsPortal } from "@/features/news/news-portal";
 import { VocabularyHub } from "@/features/vocabulary/vocabulary-hub";
 import { IeltsLivePage, type IeltsSkill } from "@/features/ielts/ielts-live-page";
 import { IeltsSkillDashboard } from "@/features/ielts/ielts-skill-dashboard";
+import { IeltsModePreview } from "@/features/ielts/ielts-mode-preview";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -38,6 +39,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : skill && (skillMode === "live" || (skill === "writing" && (skillMode === "task-1" || skillMode === "task-2"))) ? (
           <IeltsLivePage key={pathname} skill={skill} mode={skillMode} />
+        ) : skill && skillMode === "mode" ? (
+          <IeltsModePreview skill={skill} modeId={pathname.split("/")[4] || ""} />
         ) : section === "vocabulary" ? (
           <Suspense fallback={<div className="content-page">Đang tải từ vựng…</div>}><VocabularyHub /></Suspense>
         ) : skill ? (

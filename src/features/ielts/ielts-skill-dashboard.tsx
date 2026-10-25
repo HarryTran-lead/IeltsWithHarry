@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import {
   ArrowRight, AudioLines, BookOpen, ChartNoAxesCombined, Clock3, ExternalLink,
   FileText, Headphones, Languages, ListChecks, Mic, NotebookPen, Sparkles,
@@ -9,6 +10,7 @@ import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "./ielts-live-page";
 import { useIeltsData } from "./use-ielts-data";
+import { plannedModes } from "./planned-modes";
 import "./ielts-dashboard.css";
 
 const copy: Record<IeltsSkill, { title: string; intro: string; icon: typeof BookOpen; tone: string }> = {
@@ -22,9 +24,10 @@ const copy: Record<IeltsSkill, { title: string; intro: string; icon: typeof Book
 const skillOrder: IeltsSkill[] = ["vocabulary", "grammar", "reading", "listening", "writing", "speaking"];
 const skillStickers: Record<IeltsSkill, StickerName> = { vocabulary: "abc", grammar: "pencil", reading: "book", listening: "headphones", writing: "chart", speaking: "mic" };
 
-type Mode = { title: string; detail: string; source: string; href: string; available: boolean; icon: typeof BookOpen; tag?: string };
+type Mode = { title: string; detail: string; source: string; href: string; available: boolean; icon: typeof BookOpen; tag?: string; planned?: boolean };
 
 export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
+  const [modeFilter, setModeFilter] = useState<"all" | "live" | "planned">("all");
   const { data, busy, error } = useIeltsData(skill);
   const { entries, visits, ready: notebookReady } = useNotebook();
   const config = copy[skill];
@@ -64,7 +67,16 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     { title: "Part 2 cue card", detail: "Chuẩn bị 1 phút, nói tối đa 2 phút, ghi âm và tự nghe lại.", source: "Chủ đề từ Daily News", href: "/app/speaking/live", available: hasArticle, icon: Mic, tag: "Có ghi âm" },
     { title: "Part 3 follow-up", detail: "Thảo luận sâu về cùng chủ đề và lưu tự nhận xét.", source: "Chủ đề từ Daily News", href: "/app/speaking/live", available: hasArticle, icon: ListChecks },
   ];
+  const allModes: Mode[] = [
+    ...modes,
+    ...plannedModes[skill].map((mode) => ({
+      title: mode.title, detail: mode.detail, source: mode.source,
+      href: `/app/${skill}/mode/${mode.id}`, available: false,
+      icon: mode.icon, planned: true,
+    })),
+  ];
   const availableModes = modes.filter((mode) => mode.available);
+  const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? !mode.planned : mode.planned));
 
   return <main className={`ielts-dashboard ielts-dashboard-${config.tone}`}>
     <section className="ielts-dashboard-hero">
@@ -80,10 +92,15 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
       <Stat icon={ChartNoAxesCombined} value={busy ? "…" : latest} label="mốc dữ liệu mới" note={skill === "listening" ? "LibriVox" : skill === "writing" ? "World Bank" : "Daily News"}/>
     </div>
 
-    <div className="ielts-dashboard-section-head"><div><span className="ielts-dashboard-kicker">CHẾ ĐỘ HỌC</span><h2>Chọn cách luyện tập</h2><p>Chỉ mở chế độ có dữ liệu và chức năng đang dùng được.</p></div><strong>{busy ? "Đang kiểm tra…" : `${availableModes.length}/${modes.length} khả dụng`}</strong></div>
+    <div className="ielts-dashboard-section-head"><div><span className="ielts-dashboard-kicker">CHẾ ĐỘ HỌC</span><h2>Lộ trình luyện {config.title}</h2><p>{allModes.length} chế độ trong kế hoạch. Thẻ có nhãn “Sắp triển khai” là bản xem trước giao diện.</p></div><strong>{busy ? "Đang kiểm tra…" : `${availableModes.length} đang dùng · ${plannedModes[skill].length} dự kiến`}</strong></div>
+    <div className="ielts-dashboard-mode-filters" role="group" aria-label="Lọc chế độ học">
+      <button type="button" className={modeFilter === "all" ? "active" : ""} aria-pressed={modeFilter === "all"} onClick={() => setModeFilter("all")}>Tất cả <span>{allModes.length}</span></button>
+      <button type="button" className={modeFilter === "live" ? "active" : ""} aria-pressed={modeFilter === "live"} onClick={() => setModeFilter("live")}>Đang có <span>{modes.length}</span></button>
+      <button type="button" className={modeFilter === "planned" ? "active" : ""} aria-pressed={modeFilter === "planned"} onClick={() => setModeFilter("planned")}>Sắp triển khai <span>{plannedModes[skill].length}</span></button>
+    </div>
     {error && <div className="ielts-dashboard-notice">{error} Hãy tải lại trang để kiểm tra nguồn.</div>}
     {data?.warnings.map((warning) => <div className="ielts-dashboard-notice" key={warning}>{warning}</div>)}
-    <div className="ielts-dashboard-modes">{modes.map((mode, index) => <article className={`ielts-dashboard-mode ${mode.available ? "" : "disabled"}`} key={mode.title}><div className="ielts-dashboard-mode-top"><span className="ielts-dashboard-mode-icon"><mode.icon size={23}/></span><span className="ielts-dashboard-mode-number">0{index + 1}</span></div><div><div className="ielts-dashboard-mode-title"><h3>{mode.title}</h3>{mode.tag && mode.available && <span>{mode.tag}</span>}</div><p>{mode.detail}</p></div><div className="ielts-dashboard-mode-bottom"><small>{mode.source}</small>{mode.available ? <Link href={mode.href} aria-label={`Mở ${mode.title}`}><ArrowRight size={19}/></Link> : <span>Chờ nguồn</span>}</div></article>)}</div>
+    <div className="ielts-dashboard-modes">{displayedModes.map((mode) => <article className={`ielts-dashboard-mode ${mode.planned ? "planned" : mode.available ? "" : "disabled"}`} key={mode.title}><div className="ielts-dashboard-mode-top"><span className="ielts-dashboard-mode-icon"><mode.icon size={23}/></span><span className="ielts-dashboard-mode-number">{String(allModes.indexOf(mode) + 1).padStart(2, "0")}</span></div><div><div className="ielts-dashboard-mode-title"><h3>{mode.title}</h3>{mode.planned ? <span className="ielts-dashboard-planned-tag">Sắp triển khai</span> : mode.tag && mode.available ? <span>{mode.tag}</span> : null}</div><p>{mode.detail}</p></div><div className="ielts-dashboard-mode-bottom"><small>{mode.source}</small>{mode.planned ? <Link href={mode.href} className="ielts-dashboard-preview-link" aria-label={`Xem trước ${mode.title}`}>Xem trước <ArrowRight size={16}/></Link> : mode.available ? <Link href={mode.href} aria-label={`Mở ${mode.title}`}><ArrowRight size={19}/></Link> : <span>Chờ dữ liệu</span>}</div></article>)}</div>
 
     <div className="ielts-dashboard-bottom"><section className="ielts-dashboard-detail"><div className="ielts-dashboard-detail-head"><span className="ielts-dashboard-kicker">NGUỒN ĐANG KẾT NỐI</span><span className={`ielts-dashboard-dot ${sourceCount > 0 ? "online" : ""}`}/></div><h2>{skill === "listening" ? "LibriVox" : skill === "writing" ? "World Bank + Daily News" : skill === "vocabulary" ? "Daily News + từ điển mở" : "Daily News toàn văn"}</h2><p>{skill === "listening" ? `${audio.length} bản ghi tiếng Anh có file nghe hợp lệ trong nhóm mới nhất.` : skill === "writing" ? `${chart.length} mốc dân số, mới nhất năm ${latestYear ?? "—"}; ${articles.length} bài toàn văn gần đây cho Task 2.` : `${articles.length} bài toàn văn gần nhất đã được xuất bản và kiểm tra quyền.`}</p><div className="ielts-dashboard-check"><span>{busy ? "Đang kiểm tra" : data ? `Kiểm tra lúc ${new Date(data.checkedAt).toLocaleString("vi-VN")}` : "Chưa có dữ liệu"}</span><span>Không cần AI key</span></div></section><section className="ielts-dashboard-detail"><span className="ielts-dashboard-kicker">LỊCH SỬ HỌC</span><h2>Gần đây của bạn</h2>{recent.length ? <ul>{recent.map((item) => <li key={item.id}><span>{item.title}</span><small>{new Date(item.createdAt).toLocaleDateString("vi-VN")}</small></li>)}</ul> : <div className="ielts-dashboard-empty">Chưa có bài hoặc ghi chú nào. Bắt đầu một chế độ học để xây lịch sử học của bạn.</div>}<Link href="/app/notebook">Mở lịch sử trong Sổ tay <ArrowRight size={15}/></Link></section></div>
     <p className="ielts-dashboard-disclaimer">Các hoạt động được tạo theo định dạng luyện IELTS Academic từ nguồn được phép dùng. Điểm các câu ngắn không phải điểm band IELTS.</p>
