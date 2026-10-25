@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 
-const chain = ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql", "202610250008_news_preview_images.sql", "202610250010_news_enrichment.sql", "202610250011_news_enrichment_claim_fix.sql", "202610250012_news_illustration_credit.sql", "202610250013_news_creative_commons_images.sql", "202610250014_news_admin_controls.sql", "202610250015_news_manual_quiz_reset.sql", "202610250016_news_full_text_sources.sql", "202610250017_news_ielts_question_types.sql", "202610250018_news_open_licence_sources.sql"];
+const chain = ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql", "202610250008_news_preview_images.sql", "202610250010_news_enrichment.sql", "202610250011_news_enrichment_claim_fix.sql", "202610250012_news_illustration_credit.sql", "202610250013_news_creative_commons_images.sql", "202610250014_news_admin_controls.sql", "202610250015_news_manual_quiz_reset.sql", "202610250016_news_full_text_sources.sql", "202610250017_news_ielts_question_types.sql", "202610250018_news_open_licence_sources.sql", "202610250019_news_readable_only.sql"];
 
 async function migratedDb() {
   const db = new PGlite();
@@ -17,6 +17,31 @@ async function migratedDb() {
   }
   return db;
 }
+
+describe("Daily News readable-only archive", () => {
+  it("prunes headline-only articles, remembers their links and waits for unread pages", async () => {
+    const db = await migratedDb();
+    try {
+      const id = async (feed: string) => (await db.query<{ id: string }>("select id from public.news_sources where feed_url = $1", [feed])).rows[0].id;
+      const nasa = await id("https://www.nasa.gov/news-release/feed/");
+      const ocean = await id("https://oceanservice.noaa.gov/rss/nosnews.xml");
+      const add = async (source: string, letter: string, url: string) => (await db.query<{ id: string }>("insert into public.news_articles(source_id,provider,canonical_hash,title,canonical_url,publisher,category,published_at,publication_status) values ($1,'rss',repeat($2,64),'A readable test article',$3,'Agency','Science',now(),'published') returning id", [source, letter, url])).rows[0].id;
+      const headlineOnly = await add(nasa, "1", "https://www.nasa.gov/news-release/headline-only/");
+      const readable = await add(nasa, "2", "https://www.nasa.gov/news-release/readable/");
+      await db.query("insert into public.news_article_bodies(article_id,body_text,rights_basis,source_url) values ($1,repeat('NASA article text for readers. ',20),repeat('NASA media guidelines reviewed ',2),'https://www.nasa.gov/news-release/readable/')", [readable]);
+      const pagePending = await add(ocean, "3", "https://oceanservice.noaa.gov/news/pending.html");
+      const pageEmpty = await add(ocean, "4", "https://oceanservice.noaa.gov/news/empty.html");
+      await db.query("insert into public.news_enrichment_attempts(article_id,kind,status) values ($1,'body','none')", [pageEmpty]);
+
+      expect((await db.query<{ removed: number }>("select public.news_prune_unreadable() as removed")).rows[0].removed).toBe(2);
+      const left = (await db.query<{ id: string }>("select id from public.news_articles")).rows.map((row) => row.id);
+      expect(left.sort()).toEqual([readable, pagePending].sort());
+      expect(left).not.toContain(headlineOnly);
+      expect((await db.query<{ canonical_hash: string }>("select canonical_hash from public.news_skipped_urls order by 1")).rows.map((row) => row.canonical_hash)).toEqual(["1".repeat(64), "4".repeat(64)]);
+      expect((await db.query<{ enabled: boolean }>("select enabled from public.news_sources where feed_url='https://www.nsf.gov/rss/rss_www_news.xml'")).rows[0].enabled).toBe(false);
+    } finally { await db.close(); }
+  }, 30000);
+});
 
 describe("Daily News IELTS question sets", () => {
   it("publishes twenty mixed questions and grades written answers leniently", async () => {

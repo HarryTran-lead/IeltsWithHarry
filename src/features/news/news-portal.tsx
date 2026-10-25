@@ -51,7 +51,6 @@ function NewsHome() {
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("newest");
   const [source, setSource] = useState("all");
-  const [mode, setMode] = useState("all");
   const [year, setYear] = useState("all");
   const [sources, setSources] = useState<{id: string; name: string}[]>([]);
   const [oldestYear, setOldestYear] = useState(new Date().getFullYear());
@@ -75,7 +74,8 @@ function NewsHome() {
     let request = db.from("news_archive_catalog").select("id,source_id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit,illustration_source_url,illustration_license,illustration_license_url", { count: "exact" }).eq("publication_status", "published").eq("sensitive", false);
     if (category !== "All News") request = request.eq("category", category);
     if (source !== "all") request = request.eq("source_id", source);
-    if (mode === "readable") request = request.eq("readable", true);
+    // Only articles readable on site are listed; teaser-only items wait until their text arrives.
+    request = request.eq("readable", true);
     if (year !== "all") request = request.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);
     if (search.trim()) request = request.ilike("title", `%${search.trim().replace(/[%_,]/g, "")}%`);
     if (sort === "oldest") request = request.order("published_at", { ascending: true });
@@ -105,7 +105,7 @@ function NewsHome() {
     setCompleted((progress.data??[]).filter((item)=>item.completed_at).length);
     setXp((progress.data??[]).reduce((sum,item)=>sum+(item.xp_awarded??0),0));
     setTodayCount(today.count??0);
-  }, [db, category, search, sort, source, mode, year, page]);
+  }, [db, category, search, sort, source, year, page]);
   useEffect(() => { const timer = setTimeout(() => setSearch(query), 300); return () => clearTimeout(timer); }, [query]);
   useEffect(() => { void Promise.resolve().then(load); }, [load]);
   async function toggleSave(id: string) {
@@ -117,7 +117,7 @@ function NewsHome() {
     {latest && now - new Date(latest).valueOf() > 2 * 3600000 && <p className="news-stale">Tin đã lưu vẫn xem được. Lần đồng bộ gần nhất: {newsDate(latest)}.</p>}
     <section className="news-section" id="news-archive"><div className="news-section-heading"><div><span className="eyebrow">KHO BÁO THEO THỜI GIAN</span><h2>Tin mới và tin lưu trữ</h2><p>Chọn năm, nguồn và thứ tự để xem lại tin cũ. Bài đủ điều kiện có toàn văn tại đây; bài khác dẫn tới trang gốc.</p></div><Link href="/app/news/saved">Tin đã lưu →</Link></div>
     <div className="news-categories">{["All News",...NEWS_CATEGORIES].map((item) => <button key={item} className={category === item ? "selected" : ""} onClick={() => { setCategory(item); setPage(0); }}>{item}</button>)}</div>
-    <div className="news-toolbar news-archive-toolbar"><label><Search size={18}/><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm theo tiêu đề..." aria-label="Tìm tin" /></label><select aria-label="Nguồn tin" value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="all">Mọi nguồn</option>{sources.map((item)=><option key={item.id} value={item.id}>{item.name}</option>)}</select><select aria-label="Năm xuất bản" value={year} onChange={(event) => { setYear(event.target.value); setPage(0); }}><option value="all">Mọi năm</option>{Array.from({length:Math.max(1,new Date().getFullYear()-oldestYear+1)},(_,i)=>new Date().getFullYear()-i).map((value)=><option key={value} value={value}>{value}</option>)}</select><select aria-label="Cách đọc" value={mode} onChange={(event) => { setMode(event.target.value); setPage(0); }}><option value="all">Tất cả bài</option><option value="readable">Đọc tại đây</option></select><select aria-label="Sắp xếp tin" value={sort} onChange={(event) => { setSort(event.target.value); setPage(0); }}><option value="newest">Mới nhất</option><option value="oldest">Cũ nhất</option><option value="added">Mới thêm</option><option value="category">Danh mục</option></select></div>
+    <div className="news-toolbar news-archive-toolbar"><label><Search size={18}/><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm theo tiêu đề..." aria-label="Tìm tin" /></label><select aria-label="Nguồn tin" value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="all">Mọi nguồn</option>{sources.map((item)=><option key={item.id} value={item.id}>{item.name}</option>)}</select><select aria-label="Năm xuất bản" value={year} onChange={(event) => { setYear(event.target.value); setPage(0); }}><option value="all">Mọi năm</option>{Array.from({length:Math.max(1,new Date().getFullYear()-oldestYear+1)},(_,i)=>new Date().getFullYear()-i).map((value)=><option key={value} value={value}>{value}</option>)}</select><select aria-label="Sắp xếp tin" value={sort} onChange={(event) => { setSort(event.target.value); setPage(0); }}><option value="newest">Mới nhất</option><option value="oldest">Cũ nhất</option><option value="added">Mới thêm</option><option value="category">Danh mục</option></select></div>
     <p className="news-archive-count">{count.toLocaleString("vi-VN")} bài phù hợp · Đã lưu để đọc lại; các năm cũ đang tiếp tục được bổ sung.</p>
     {error && <p className="form-error" role="alert">{error}</p>}{loading ? <p>Đang tải tin…</p> : rows.length ? <div className="news-grid">{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={row.image_url && row.image_alt && row.image_credit ? {image_url:row.image_url,image_alt:row.image_alt,image_credit:row.image_credit} : undefined} learnSlug={learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Newspaper size={42}/><h3>Chưa có tin phù hợp</h3><p>Hãy đổi năm, nguồn hoặc chế độ đọc. Kho tin cũ đang được nhập thêm theo lịch.</p><Link href="/app/news/learn" className="button primary">Learn with News</Link></div>}
     <div className="news-pagination"><button disabled={page === 0} onClick={() => setPage((value) => value - 1)}>← Trước</button><span>Trang {page + 1} / {Math.max(1, Math.ceil(count / 12))}</span><button disabled={(page + 1) * 12 >= count} onClick={() => setPage((value) => value + 1)}>Tiếp →</button></div></section>

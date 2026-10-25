@@ -16,6 +16,10 @@ The full-text reader fills the available workspace and includes a per-article wo
 
 `/admin/news` is available only to an admin account. The admin can configure feed sources, review imported headlines, edit original/licensed readings, author vocabulary and answer-key questions, publish readings, and inspect sync logs. Database constraints require a recorded rights basis before enabling source ingestion and require a word plus a graded question before publishing a reading.
 
+### Readable-only archive
+
+Migration `202610250019_news_readable_only.sql` keeps only articles that can be read on site. A feed that carries text (NASA, NOAA News, Global Voices) stores just the items whose text passed the rights checks. A teaser-only feed (GOV.UK, NOAA Ocean Service) keeps an item only until its page has been read. If the page gives no usable text, `news_prune_unreadable()` removes the item at the end of each sync. Removed links are recorded in `news_skipped_urls`, so later syncs do not import them again. Articles linked to a Learn with News lesson and manual items are never pruned. The learner archive lists readable articles only. The NSF feed is disabled because it has no reusable text. The first prune on 2026-10-25 removed 343 headline-only rows. 472 GOV.UK and Ocean Service items remain queued until their pages are read.
+
 ## Providers and rights
 
 - GDELT DOC API: public article-list discovery, English source-language filter, metadata only. This source is paused after repeated production timeouts; its existing rows are retained. The publisher's full article is never fetched.

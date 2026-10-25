@@ -22,13 +22,23 @@ function batches<T>(values: T[], size = 50): T[][] {
   return Array.from({ length: Math.ceil(values.length / size) }, (_, index) => values.slice(index * size, (index + 1) * size));
 }
 
-async function ingest(db: AdminClient, response: FetchResult) {
-  const unique = [...new Map(response.items.map((item) => [item.canonical_hash, item])).values()];
+/**
+ * Only readable articles are stored. A feed that carries text keeps just the items with
+ * text; a teaser-only feed keeps every item until its page has been read.
+ */
+async function ingest(db: AdminClient, response: FetchResult, requireBody: boolean) {
+  const withText = new Set((response.bodies ?? []).map((body) => body.canonical_hash));
+  const unique = [...new Map(response.items.filter((item) => !requireBody || withText.has(item.canonical_hash)).map((item) => [item.canonical_hash, item])).values()];
   let inserted = 0;
   for (const group of batches(unique)) {
-    const { data: existing, error: existingError } = await db.from("news_articles").select("canonical_hash").in("canonical_hash", group.map((item) => item.canonical_hash));
+    const hashes = group.map((item) => item.canonical_hash);
+    const [{ data: existing, error: existingError }, { data: skipped, error: skippedError }] = await Promise.all([
+      db.from("news_articles").select("canonical_hash").in("canonical_hash", hashes),
+      db.from("news_skipped_urls").select("canonical_hash").in("canonical_hash", hashes),
+    ]);
     if (existingError) throw existingError;
-    const known = new Set((existing ?? []).map((row) => row.canonical_hash));
+    if (skippedError) throw skippedError;
+    const known = new Set([...(existing ?? []), ...(skipped ?? [])].map((row) => row.canonical_hash));
     const fresh = group.filter((item) => !known.has(item.canonical_hash));
     if (fresh.length) {
       const { error } = await db.from("news_articles").upsert(fresh, { onConflict: "canonical_hash", ignoreDuplicates: true });
@@ -94,7 +104,7 @@ export async function backfillNews(pages: number[]) {
   const results = [];
   for (const page of [...new Set(pages)]) {
     const response = await providers.rss.fetch(source as NewsSource, fetch, page);
-    results.push({ page, ...await ingest(db, response) });
+    results.push({ page, ...await ingest(db, response, true) });
   }
   return results;
 }
@@ -116,27 +126,27 @@ export async function syncNews({ scheduled = false }: { scheduled?: boolean } = 
       const provider = providers[source.provider];
       if (!provider) throw new Error("Unknown news provider");
       const response = await provider.fetch(source);
+      const reader = pageBodyReader(source.feed_url);
       let fetched = 0;
       let inserted = 0;
       if (!response.notModified) {
-        const count = await ingest(db, response);
+        const count = await ingest(db, response, !reader);
         fetched += count.fetched; inserted += count.inserted;
       }
       let archiveNextPage = source.archive_next_page;
       // Two older pages per sync, in order. The cursor advances only after
-      // successful ingestion, and older rows are never removed.
+      // successful ingestion.
       if (source.feed_url === nasaArchiveFeed && archiveNextPage) {
         for (let step = 0; step < 2 && archiveNextPage <= 4000; step++) {
           const archive = await providers.rss.fetch(source, fetch, archiveNextPage);
           if (!archive.items.length) { archiveNextPage = null; break; }
-          const count = await ingest(db, archive);
+          const count = await ingest(db, archive, true);
           fetched += count.fetched; inserted += count.inserted;
           archiveNextPage++;
         }
       }
-      // Page text is a bonus: the feed's headlines are already saved, so a page problem must not fail the sync.
-      const reader = pageBodyReader(source.feed_url);
-      if (reader) await fetchPageBodies(db, source, reader).catch(() => 0);
+      // A page problem must not fail the sync; the article is pruned only once its page proves unusable.
+      if (reader) await fetchPageBodies(db, source, reader, 8).catch(() => 0);
       const finished_at = new Date().toISOString();
       const status = response.notModified && !fetched ? "not_modified" : "success";
       const { error: sourceError } = await db.from("news_sources").update({ last_success_at: finished_at, last_error: null, etag: response.etag, last_modified: response.lastModified, cache_until: response.cacheUntil, archive_next_page: archiveNextPage }).eq("id", source.id);
@@ -154,5 +164,7 @@ export async function syncNews({ scheduled = false }: { scheduled?: boolean } = 
       results.push({ source: source.name, status: "error", fetched: 0, inserted: 0, error: message });
     }
   }
+  // Remove articles that turned out not to be readable on site (their links are remembered).
+  await db.rpc("news_prune_unreadable").then(() => undefined, () => undefined);
   return results;
 }
