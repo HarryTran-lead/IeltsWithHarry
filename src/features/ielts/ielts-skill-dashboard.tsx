@@ -62,7 +62,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     { title: "Academic Task 2", detail: "Viết essay theo một chủ đề rút từ bài mới được phép dùng.", source: "Daily News toàn văn", href: "/app/writing/task-2", available: hasArticle, icon: NotebookPen },
   ] : [
     { title: "Part 2 cue card", detail: "Chuẩn bị 1 phút, nói tối đa 2 phút, ghi âm và tự nghe lại.", source: "Chủ đề từ Daily News", href: "/app/speaking/live", available: hasArticle, icon: Mic, tag: "Có ghi âm" },
-    { title: "Part 3 follow-up", detail: "Thảo luận sâu về cùng chủ đề và lưu tự nhận xét.", source: "Chủ đề từ Daily News", href: "/app/speaking/live", available: hasArticle, icon: ListChecks },
+    { title: "Part 3 follow-up", detail: "Thảo luận sâu về cùng chủ đề và lưu tự nhận xét.", source: "Chủ đề từ Daily News", href: "/app/speaking/part-3", available: hasArticle, icon: ListChecks },
   ];
   const allModes: Mode[] = [
     ...modes,

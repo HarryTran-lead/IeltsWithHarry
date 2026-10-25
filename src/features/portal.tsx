@@ -37,7 +37,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <NotebookPage />
         ) : skill && !skillMode ? (
           <IeltsSkillDashboard key={skill} skill={skill} />
-        ) : skill && (skillMode === "live" || (skill === "writing" && (skillMode === "task-1" || skillMode === "task-2"))) ? (
+        ) : skill && (skillMode === "live" || (skill === "writing" && (skillMode === "task-1" || skillMode === "task-2")) || (skill === "speaking" && skillMode === "part-3")) ? (
           <IeltsLivePage key={pathname} skill={skill} mode={skillMode} />
         ) : skill && skillMode === "mode" ? (
           <IeltsModePreview skill={skill} modeId={pathname.split("/")[4] || ""} />

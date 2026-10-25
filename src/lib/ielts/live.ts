@@ -31,10 +31,10 @@ function httpsUrl(value: unknown) {
 async function newsArticles(): Promise<LiveArticle[]> {
   const db = newsAdminClient();
   const { data: bodies, error: bodyError } = await db.from("news_article_bodies")
-    .select("article_id,body_text,source_url,ingested_at")
-    .order("ingested_at", { ascending: false }).limit(80);
+    .select("article_id,body_text,source_url,rights_basis,ingested_at")
+    .order("ingested_at", { ascending: false }).limit(120);
   if (bodyError) throw bodyError;
-  const eligible = (bodies ?? []).filter((body) => body.body_text?.length >= 1000);
+  const eligible = (bodies ?? []).filter((body) => body.body_text?.length >= 1000 && body.rights_basis?.trim());
   if (!eligible.length) return [];
   const ids = eligible.map((body) => body.article_id);
   const { data: articles, error: articleError } = await db.from("news_articles")
@@ -42,7 +42,7 @@ async function newsArticles(): Promise<LiveArticle[]> {
     .in("id", ids).eq("publication_status", "published").eq("sensitive", false);
   if (articleError) throw articleError;
   const byId = new Map((articles ?? []).map((article) => [article.id, article]));
-  return eligible.flatMap((body) => {
+  const sorted = eligible.flatMap((body) => {
     const article = byId.get(body.article_id);
     if (!article) return [];
     const sourceUrl = httpsUrl(body.source_url) || httpsUrl(article.canonical_url);
@@ -50,7 +50,21 @@ async function newsArticles(): Promise<LiveArticle[]> {
     return [{ id: article.id, title: article.title, category: article.category,
       publisher: article.publisher, publishedAt: article.published_at,
       sourceUrl, text: body.body_text.slice(0, 12500) }];
-  }).sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)).slice(0, 12);
+  }).sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+  // Keep recent news from several publishers in the same practice pool.
+  const selected: LiveArticle[] = [];
+  const perPublisher = new Map<string, number>();
+  for (const article of sorted) {
+    if ((perPublisher.get(article.publisher) ?? 0) >= 4) continue;
+    selected.push(article);
+    perPublisher.set(article.publisher, (perPublisher.get(article.publisher) ?? 0) + 1);
+    if (selected.length === 12) break;
+  }
+  for (const article of sorted) {
+    if (selected.length === 12) break;
+    if (!selected.some((item) => item.id === article.id)) selected.push(article);
+  }
+  return selected.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
 
 async function librivoxAudio(): Promise<LiveAudio[]> {
@@ -79,7 +93,8 @@ async function librivoxAudio(): Promise<LiveAudio[]> {
 }
 
 async function worldBankChart(): Promise<LiveDataPoint[]> {
-  const response = await fetch("https://api.worldbank.org/v2/country/VNM;THA/indicator/SP.POP.TOTL?format=json&per_page=100&date=2010:2025", {
+  const currentYear = new Date().getUTCFullYear();
+  const response = await fetch(`https://api.worldbank.org/v2/country/VNM;THA/indicator/SP.POP.TOTL?format=json&per_page=100&date=2010:${currentYear}`, {
     headers: { Accept: "application/json", "User-Agent": "IeltsWithHarry/1.0 (IELTS writing practice)" },
     signal: AbortSignal.timeout(12000), next: { revalidate: 604800 },
   });
