@@ -10,6 +10,8 @@ For the official NASA news-release and NOAA feeds, the sync also extracts plain 
 
 `/app/news/learn` also offers deterministic personal suggestions. Learners save a level and preferred topics in `user_news_preferences`. The order also considers completed readings, the most recent quiz result, and words saved in the notebook. The complete reading catalog and manual filters remain available.
 
+The Daily News page now separates automatically imported on-site articles from editor-authored lessons. A learner can mark an eligible full-text article as read once; `user_news_article_reads` stores the completion per account and the History page shows it. The admin dashboard explains that ordinary news arrives through Cron. Editors only need to add content when they want a curated quiz with fixed answer keys or when reviewing a new source's rights.
+
 `/admin/news` is available only to an admin account. The admin can configure feed sources, review imported headlines, edit original/licensed readings, author vocabulary and answer-key questions, publish readings, and inspect sync logs. Database constraints require a recorded rights basis before enabling source ingestion and require a word plus a graded question before publishing a reading.
 
 ## Providers and rights
