@@ -14,6 +14,11 @@ export const notebookInputSchema = z.discriminatedUnion("kind", [
     body: z.literal(""),
     meaningVi: z.string().trim().min(1).max(200),
     example: z.string().trim().max(500),
+    phonetic: z.string().trim().max(100).optional(),
+    partOfSpeech: z.string().trim().max(50).optional(),
+    topic: z.string().trim().max(100).optional(),
+    definition: z.string().trim().max(500).optional(),
+    sourceUrl: z.union([z.literal(""), z.string().url().max(500)]).optional(),
   }),
 ]);
 

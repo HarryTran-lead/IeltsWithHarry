@@ -28,12 +28,16 @@ export function SavedWordReview() {
     if (demoMode) {
       const next = [...reviews.filter((row) => row.notebook_entry_id !== current.id), updated];
       localStorage.setItem(storageKey, JSON.stringify(next)); setReviews(next);
+      const key = "ieltswithharry-vocabulary-events-v1";
+      try { localStorage.setItem(key, JSON.stringify([{ notebook_entry_id: current.id, grade: value, reviewed_at: new Date().toISOString() }, ...JSON.parse(localStorage.getItem(key) ?? "[]")])); } catch { /* Review schedule still persists. */ }
     } else {
       const response = before ? await db!.from("user_word_reviews").update({due_at:updated.due_at,interval_days:updated.interval_days,repetitions:updated.repetitions,last_reviewed_at:updated.last_reviewed_at}).eq("notebook_entry_id",current.id) : await db!.from("user_word_reviews").insert(updated);
       if (response.error) { setError(response.error.message); return; }
       setReviews((rows) => [...rows.filter((row) => row.notebook_entry_id !== current.id), updated]);
+      const eventResult = await db!.from("vocabulary_review_events").insert({ notebook_entry_id: current.id, grade: value });
+      if (eventResult.error) setError("Đã lưu lịch ôn, nhưng chưa ghi được lượt ôn vào thống kê.");
     }
     setRevealed(false); setNow(Date.now());
   }
-  return <section className="card saved-word-review"><span className="eyebrow">SỔ TỪ VỰNG CỦA BẠN</span><h2>Ôn từ đã lưu</h2><p>Từ lưu từ Daily News và các bài học cùng xuất hiện tại đây. Lịch ôn tăng dần khi bạn nhớ đúng.</p><div className="saved-word-review-count"><strong>{due.length}</strong> từ đến hạn · {words.length} từ đã lưu</div>{error&&<p className="form-error" role="alert">{error}</p>}{current?<><button className="saved-word-review-card" onClick={()=>setRevealed(!revealed)}><small>{revealed?"Nhấn để ẩn nghĩa":"Nhấn để xem nghĩa"}</small><strong>{current.title}</strong>{revealed&&<><span>{current.meaningVi}</span><em>{current.example}</em></>}</button>{revealed&&<div className="saved-word-review-actions"><button onClick={()=>void grade("again")}>Chưa nhớ · 10 phút</button><button onClick={()=>void grade("good")}>Nhớ · ôn sau</button><button onClick={()=>void grade("easy")}>Rất dễ · giãn lâu</button></div>}</>:<div className="news-empty">Hôm nay đã ôn xong. Hãy lưu thêm từ trong bài đọc để tiếp tục.</div>}</section>;
+  return <section className="card saved-word-review"><span className="eyebrow">SỔ TỪ VỰNG CỦA BẠN</span><h2>Ôn từ đã lưu</h2><p>Từ lưu từ Daily News và các bài học cùng xuất hiện tại đây. Lịch ôn tăng dần khi bạn nhớ đúng.</p><div className="saved-word-review-count"><strong>{due.length}</strong> từ đến hạn · {words.length} từ đã lưu</div>{error&&<p className="form-error" role="alert">{error}</p>}{current?<><button className="saved-word-review-card" onClick={()=>setRevealed(!revealed)}><small>{revealed?"Nhấn để ẩn nghĩa":"Nhấn để xem nghĩa"}</small><strong>{current.title}</strong>{revealed&&<><span>{current.meaningVi}</span><em>{current.example}</em></>}</button>{revealed&&<div className="saved-word-review-actions"><button onClick={()=>void grade("again")}>Chưa nhớ · ngày mai</button><button onClick={()=>void grade("good")}>Nhớ · ôn sau</button><button onClick={()=>void grade("easy")}>Rất dễ · giãn lâu</button></div>}</>:<div className="news-empty">Hôm nay đã ôn xong. Hãy lưu thêm từ trong bài đọc để tiếp tục.</div>}</section>;
 }

@@ -28,6 +28,7 @@ type NotebookStore = {
 const Store = createContext<NotebookStore | null>(null);
 
 function visitTitle(path: string) {
+  if (path.startsWith("/app/vocabulary/")) return `Từ vựng: ${path.split("/")[3]?.replaceAll("-", " ") ?? "học từ"}`;
   if (path.startsWith("/app/news/learn/")) return `Learn with News: ${path.split("/").pop()?.replaceAll("-", " ")}`;
   if (path.startsWith("/app/news/")) return `Daily News: ${path.split("/").pop()?.replaceAll("-", " ")}`;
   if (path.startsWith("/app/lesson/")) return `Bài học: ${(path.split("/").pop() ?? "").replaceAll("-", " ")}`;
@@ -44,12 +45,14 @@ function visitTitle(path: string) {
 type EntryRow = {
   id: string; kind: "note" | "word"; title: string; body: string;
   meaning_vi: string; example: string; source_path: string;
+  phonetic: string; part_of_speech: string; topic: string; definition: string; source_url: string;
   created_at: string; updated_at: string;
 };
 type VisitRow = { id: string; path: string; title: string; visited_at: string };
 const fromEntryRow = (row: EntryRow): NotebookEntry => ({
   id: row.id, kind: row.kind, title: row.title, body: row.body,
   meaningVi: row.meaning_vi, example: row.example, sourcePath: row.source_path,
+  ...(row.kind === "word" && { phonetic: row.phonetic ?? "", partOfSpeech: row.part_of_speech ?? "", topic: row.topic ?? "", definition: row.definition ?? "", sourceUrl: row.source_url ?? "" }),
   createdAt: row.created_at, updatedAt: row.updated_at,
 } as NotebookEntry);
 const fromVisitRow = (row: VisitRow): StudyVisit => ({
@@ -64,6 +67,7 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   const [error, setError] = useState("");
   const lastPath = useRef("");
+  const pendingWords = useRef(new Set<string>());
 
   useEffect(() => {
     async function load() {
@@ -122,19 +126,26 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
     entries, visits, ready, error, clearError: () => setError(""),
     addEntry: async (input) => {
       const valid = notebookInputSchema.parse(input);
+      const wordKey = valid.kind === "word" ? valid.title.trim().replace(/\s+/g, " ").toLowerCase() : "";
+      if (wordKey && (pendingWords.current.has(wordKey) || entries.some((entry) => entry.kind === "word" && entry.title.trim().replace(/\s+/g, " ").toLowerCase() === wordKey))) return;
+      if (wordKey) pendingWords.current.add(wordKey);
       const sourcePath = visitTitle(pathname) ? pathname : "";
       setError("");
-      if (demoMode) {
+      try { if (demoMode) {
         const now = new Date().toISOString();
         setEntries((current) => [{ ...valid, id: crypto.randomUUID(), sourcePath, createdAt: now, updatedAt: now }, ...current]);
       } else {
         const result = await supabase!.from("notebook_entries").insert({
           kind: valid.kind, title: valid.title, body: valid.body,
           meaning_vi: valid.meaningVi, example: valid.example, source_path: sourcePath,
+          ...(valid.kind === "word" && { phonetic: valid.phonetic ?? "", part_of_speech: valid.partOfSpeech ?? "", topic: valid.topic ?? "", definition: valid.definition ?? "", source_url: valid.sourceUrl ?? "" }),
         }).select("*").single();
-        if (result.error) { setError(result.error.message); throw result.error; }
+        if (result.error) {
+          if (wordKey && result.error.code === "23505") return;
+          setError(result.error.message); throw result.error;
+        }
         setEntries((current) => [fromEntryRow(result.data as EntryRow), ...current]);
-      }
+      } } finally { if (wordKey) pendingWords.current.delete(wordKey); }
     },
     updateEntry: async (id, input) => {
       const valid = notebookInputSchema.parse(input);

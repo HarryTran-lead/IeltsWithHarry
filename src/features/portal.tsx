@@ -1,5 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
 import { DemoProvider, useDemo } from "@/features/demo/demo-store";
 import { AppShell } from "@/components/layout/app-shell";
 import { Dashboard } from "@/features/dashboard/dashboard";
@@ -9,6 +10,7 @@ import { ContentLab } from "@/features/content-lab/content-lab";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { NotebookPage } from "@/features/notebook/notebook-ui";
 import { NewsPortal } from "@/features/news/news-portal";
+import { VocabularyHub } from "@/features/vocabulary/vocabulary-hub";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -28,6 +30,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <ContentLab />
         ) : section === "notebook" ? (
           <NotebookPage />
+        ) : section === "vocabulary" ? (
+          <Suspense fallback={<div className="content-page">Đang tải từ vựng…</div>}><VocabularyHub /></Suspense>
         ) : section === "news" ? (
           <NewsPortal />
         ) : section === "study-together" ? (

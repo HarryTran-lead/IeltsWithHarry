@@ -23,7 +23,8 @@ describe("news providers", () => {
     const first = nextWordReview(undefined,"good",now);
     expect(first.interval_days).toBe(1);
     expect(nextWordReview({notebook_entry_id:"x",...first},"good",now).interval_days).toBe(2);
-    expect(nextWordReview({notebook_entry_id:"x",...first},"again",now).interval_days).toBe(0);
+    expect(nextWordReview({notebook_entry_id:"x",...first},"again",now).interval_days).toBe(1);
+    expect(nextWordReview({notebook_entry_id:"x",...first},"again",now).due_at).toBe("2026-10-25T12:00:00.000Z");
   });
   it("parses dates to UTC and rejects invalid future dates", () => {
     expect(parsePublishedDate("20261023120000")).toBe("2026-10-23T12:00:00.000Z");
