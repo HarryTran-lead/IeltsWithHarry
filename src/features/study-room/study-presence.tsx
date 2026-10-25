@@ -107,6 +107,7 @@ export function StudyPresenceProvider({ children }: { children: React.ReactNode 
       } else if (!sessionActiveRef.current && tracked) {
         await channel.track({ active: false });
         tracked = false;
+        if (active && sessionActiveRef.current) void syncTracking();
       }
     }
     syncTrackingRef.current = syncTracking;
