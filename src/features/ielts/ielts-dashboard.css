@@ -133,3 +133,36 @@
 .ielts-mode-preview-footer { display: flex; align-items: center; gap: 7px; color: #7890a7; font-size: 12px; margin-top: 17px; }
 @media (max-width: 1050px) { .ielts-dashboard-modes { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ielts-dashboard-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .ielts-dashboard { padding: 15px 14px 40px; } .ielts-dashboard-hero { grid-template-columns: 1fr; padding: 22px; } .ielts-dashboard-hero-art { display: none; } .ielts-dashboard-section-head { align-items: start; flex-wrap: wrap; } .ielts-dashboard-stats { gap: 8px; } .ielts-dashboard-stat { min-height: 118px; padding: 12px; } .ielts-dashboard-stat strong { font-size: 23px; } .ielts-dashboard-modes, .ielts-dashboard-bottom, .ielts-mode-preview-layout { grid-template-columns: 1fr; } .ielts-dashboard-mode { min-height: 190px; } .ielts-mode-preview { padding: 18px 14px 40px; } .ielts-mode-preview-art { display: none; } .ielts-mode-preview-status { margin: 10px 0 0; } }
+
+/* One-screen layout: stats as a strip, heading beside the filters, dense mode cards. */
+.ielts-dashboard { padding-top: 18px; }
+.ielts-dashboard .page-head { margin-bottom: 14px; }
+.ielts-dashboard-stats { grid-template-columns: repeat(4, minmax(0, 1fr)) auto; gap: 10px; align-items: stretch; }
+.ielts-dashboard-stat { min-height: 0; flex-direction: row; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; }
+.ielts-dashboard-stat span { flex: none; width: 36px; height: 36px; border-radius: 10px; }
+.ielts-dashboard-stat > div { display: grid; min-width: 0; }
+.ielts-dashboard-stat strong { margin: 0; font-size: 20px; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ielts-dashboard-stat b { font-size: 12px; font-weight: 600; color: #6b7f96; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ielts-dashboard-stats-link { display: inline-flex; align-items: center; gap: 5px; padding: 0 6px; color: #258d9f; font-weight: 700; font-size: 13px; white-space: nowrap; text-decoration: none; }
+.ielts-dashboard-modes-head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; margin: 18px 2px 12px; }
+.ielts-dashboard-modes-head h2 { margin: 0; font-size: 19px; }
+.ielts-dashboard-modes-head .ielts-dashboard-mode-filters { margin: 0; }
+.ielts-dashboard-modes-head > strong { margin-left: auto; color: #168f96; font-size: 13px; white-space: nowrap; }
+.ielts-dashboard-modes { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.ielts-dashboard-mode { min-height: 0; gap: 8px; padding: 14px 14px 12px; border-radius: 16px; }
+.ielts-dashboard-mode-top { align-items: center; gap: 10px; }
+.ielts-dashboard-mode-icon { flex: none; width: 34px; height: 34px; border-radius: 10px; }
+.ielts-dashboard-mode-top .ielts-dashboard-mode-title { flex: 1; min-width: 0; gap: 4px 6px; }
+.ielts-dashboard-mode h3 { font-size: 15px; line-height: 1.25; }
+.ielts-dashboard-mode-title span, .ielts-dashboard-planned-tag { padding: 2px 7px; font-size: 10px; }
+.ielts-dashboard-mode-number { align-self: flex-start; font-size: 11px; }
+.ielts-dashboard-mode p { margin: 0; font-size: 12.5px; line-height: 1.45; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.ielts-dashboard-mode-bottom { padding-top: 8px; margin-top: auto; }
+.ielts-dashboard-mode-bottom small { font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.ielts-dashboard-mode-bottom a { flex: none; width: 30px; height: 30px; }
+.ielts-dashboard-mode-bottom .ielts-dashboard-preview-link { width: auto; height: auto; }
+@media (max-width: 1280px) { .ielts-dashboard-modes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 1100px) { .ielts-dashboard-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ielts-dashboard-stats-link { grid-column: 1 / -1; justify-self: end; } }
+@media (max-width: 900px) { .ielts-dashboard-modes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .ielts-dashboard-modes { grid-template-columns: 1fr; } .ielts-dashboard-modes-head > strong { margin-left: 0; } }
+.ielts-dashboard-modes-head .ielts-dashboard-mode-filters button { padding: 6px 12px; }
