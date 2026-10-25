@@ -162,8 +162,38 @@ export function parseRssImages(xml: string, source: NewsSource): NewsImageCandid
       : [];
   });
 }
+// NASA's article template appends author cards, share/details panels and
+// "Explore More" link lists. Reading stops at the first of these headings.
+const nasaBoilerplate = /^(?:about the author|share|details|explore more|keep exploring|discover more topics|related terms|media contact|tomorrow[’']s picture)/i;
+/** Article text from NASA's WordPress markup: top-level prose only, no cards or carousels. */
+export function nasaArticleText(html: string): string {
+  const $ = load(html);
+  $("script,style,nav,form,svg,iframe,figure,figcaption,blockquote").remove();
+  const blocks: string[] = [];
+  for (const node of $("body").children().toArray()) {
+    const el = $(node);
+    const tag = node.tagName.toLowerCase();
+    if (!["p", "h2", "h3", "h4", "ul", "ol"].includes(tag)) {
+      // Stop before the template's trailing panels; skip heroes, quotes and media.
+      if (nasaBoilerplate.test(el.text().replace(/\s+/g, " ").trim()) && blocks.length) break;
+      continue;
+    }
+    const lines = tag === "ul" || tag === "ol" ? el.find("li").toArray().map((li) => $(li).text()) : [el.text()];
+    // Press contacts (names with e-mail addresses or phone numbers) are not reading material.
+    const texts = lines.map((line) => line.replace(/\s+/g, " ").trim())
+      .filter((line) => line.length >= 12 && !/^-?end-?$/i.test(line) && !(line.length < 300 && /[\w.-]+@[\w-]+\.gov\b|\b\d{3}-\d{3}-\d{4}\b/.test(line)));
+    if (/^h/.test(tag) && nasaBoilerplate.test(texts[0] ?? "")) break;
+    blocks.push(...texts);
+  }
+  const body = blocks.join("\n\n");
+  if (body.length >= 200) return body.slice(0, 50000);
+  // Older or nested templates: fall back to every paragraph outside NASA's card modules.
+  $("[class*='hds-about-the-author'],[class*='hds-topic-cards'],[class*='hds-image-carousel'],[class*='hds-article-hero']").remove();
+  return $("p,h2,h3,li").toArray().map((node) => $(node).text().replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12).join("\n\n").slice(0, 50000);
+}
+const nasaFeed = (feed: string | null) => Boolean(feed && /^https:\/\/www\.nasa\.gov\/(?:news-release|technology|aeronautics|missions\/station)\/feed\/$/.test(feed));
 export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
-  if (source.feed_url !== nasaFeedUrl || hasUnsafeXmlDeclaration(xml)) return [];
+  if (!nasaFeed(source.feed_url) || hasUnsafeXmlDeclaration(xml)) return [];
   const parsed = new XMLParser({ ignoreAttributes: false, processEntities: false, trimValues: true }).parse(xml) as { rss?: { channel?: { item?: unknown } } };
   const entries = parsed.rss?.channel?.item;
   const list = Array.isArray(entries) ? entries : entries ? [entries] : [];
@@ -172,16 +202,40 @@ export function parseNasaNewsBodies(xml: string, source: NewsSource): NewsBodyCa
     const source_url = canonicalUrl(xmlText(row.link));
     if (!source_url) return [];
     const url = new URL(source_url);
-    if (url.hostname !== "www.nasa.gov" || !url.pathname.startsWith("/news-release/")) return [];
+    // NASA-authored pages only. APOD text and images are written and credited
+    // by outside contributors, so it stays link-only.
+    if (!["www.nasa.gov", "science.nasa.gov"].includes(url.hostname) || url.protocol !== "https:" || /\/apod-/.test(url.pathname) || /^APOD:/i.test(xmlText(row.title))) return [];
     const html = xmlText(row["content:encoded"]);
     if (!html || html.length > 250000 || thirdPartyNotice.test(html)) return [];
-    const $ = load(html);
-    $("script,style,nav,form,svg,iframe,figure,figcaption,blockquote").remove();
-    const paragraphs = $("p,h2,h3,li").toArray().map((node) => $(node).text().replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12);
-    const body_text = paragraphs.join("\n\n").slice(0, 50000);
+    const body_text = nasaArticleText(html);
     if (body_text.length < 200) return [];
     return [{ canonical_hash: newsHash(source_url), body_text, rights_basis: nasaRightsBasis, source_url, ...creditedImage(html, "NASA") }];
   });
+}
+
+/** NOS RSS only carries a teaser, so the article page itself is read. */
+export function oceanServiceArticleText(html: string): string {
+  const $ = load(html);
+  $("script,style,nav,form,svg,iframe,figure,figcaption,.figure-caption").remove();
+  const blocks: string[] = [];
+  for (const node of $(".col-md-9").first().children("p,h2,h3,ul,ol").toArray()) {
+    const el = $(node);
+    const lines = /^(ul|ol)$/i.test(node.tagName) ? el.find("li").toArray().map((li) => $(li).text()) : [el.text()];
+    const texts = lines.map((line) => line.replace(/\s+/g, " ").trim()).filter((line) => line.length >= 12);
+    if (/^(media contact|related links|how to cite)/i.test(texts[0] ?? "")) break;
+    blocks.push(...texts);
+  }
+  const body = blocks.join("\n\n").slice(0, 50000);
+  return thirdPartyNotice.test(body) ? "" : body;
+}
+export async function fetchOceanServiceBody(sourceUrl: string, fetcher: typeof fetch = fetch): Promise<NewsBodyCandidate | null> {
+  const url = new URL(sourceUrl);
+  if (url.protocol !== "https:" || url.hostname !== "oceanservice.noaa.gov" || !url.pathname.startsWith("/news/")) return null;
+  const response = await boundedFetch(url, { headers: { Accept: "text/html" } }, fetcher);
+  if (!response.ok) throw new Error(`Ocean Service HTTP ${response.status}`);
+  const body_text = oceanServiceArticleText(await boundedText(response));
+  if (body_text.length < 200) return null;
+  return { canonical_hash: newsHash(sourceUrl), body_text, rights_basis: noaaRightsBasis, source_url: sourceUrl, image_url: null, image_alt: null, image_credit: null, image_rights_basis: null };
 }
 
 export function parseNoaaNewsBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {

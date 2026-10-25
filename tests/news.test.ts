@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
-import { assertApprovedFeedUrl, canonicalUrl, gdeltProvider, newsHash, normalizeGdelt, parseNasaNewsBodies, parseNoaaNewsBodies, parsePublishedDate, parseRss, parseRssImages, rssProvider, type NewsSource } from "../src/lib/news/providers";
+import { assertApprovedFeedUrl, canonicalUrl, fetchOceanServiceBody, gdeltProvider, nasaArticleText, newsHash, normalizeGdelt, oceanServiceArticleText, parseNasaNewsBodies, parseNoaaNewsBodies, parsePublishedDate, parseRss, parseRssImages, rssProvider, type NewsSource } from "../src/lib/news/providers";
 import { nextWordReview } from "../src/lib/news/review";
 import { recommendReadings } from "../src/lib/news/recommend";
 
@@ -53,15 +53,35 @@ describe("news providers", () => {
     expect((mock.mock.calls[0][1] as RequestInit).headers).not.toHaveProperty("If-None-Match");
     await expect(rssProvider.fetch(source, mock as unknown as typeof fetch, 4001)).rejects.toThrow();
   });
-  it("copies only eligible NASA news-release text and strips markup", () => {
+  it("copies NASA-authored article text from NASA feeds and strips markup", () => {
     const passage = "NASA announced a new mission to study the Moon and share its findings with students around the world. ".repeat(4);
-    const feed = `<rss><channel><item><title>NASA announces a new mission</title><link>https://www.nasa.gov/news-release/new-mission/</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate><content:encoded><![CDATA[<script>danger()</script><p>${passage}</p>]]></content:encoded></item><item><title>Outside NASA release</title><link>https://science.nasa.gov/image-article/example/</link><content:encoded><![CDATA[<p>${passage}</p>]]></content:encoded></item></channel></rss>`;
+    const feed = `<rss><channel><item><title>NASA announces a new mission</title><link>https://www.nasa.gov/news-release/new-mission/</link><pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate><content:encoded><![CDATA[<script>danger()</script><p>${passage}</p>]]></content:encoded></item><item><title>Lander plans</title><link>https://www.nasa.gov/missions/artemis/lander-plans/</link><content:encoded><![CDATA[<p>${passage}</p>]]></content:encoded></item><item><title>APOD: 2026 October 25 – Dark Matter</title><link>https://science.nasa.gov/image-article/apod-2026-october-25-dark-matter/</link><content:encoded><![CDATA[<p>${passage}</p>]]></content:encoded></item><item><title>Elsewhere</title><link>https://example.org/nasa-story/</link><content:encoded><![CDATA[<p>${passage}</p>]]></content:encoded></item></channel></rss>`;
     const bodies = parseNasaNewsBodies(feed, source);
-    expect(bodies).toHaveLength(1);
+    expect(bodies.map((body) => body.source_url)).toEqual(["https://www.nasa.gov/news-release/new-mission/", "https://www.nasa.gov/missions/artemis/lander-plans/"]);
     expect(bodies[0].body_text).toContain("NASA announced");
     expect(bodies[0].body_text).not.toContain("danger()");
+    expect(parseNasaNewsBodies(feed, { ...source, feed_url: "https://www.nasa.gov/technology/feed/" })).toHaveLength(2);
     expect(parseNasaNewsBodies(feed, { ...source, feed_url: "https://science.nasa.gov/feed/" })).toHaveLength(0);
-    expect(parseNasaNewsBodies(feed.replace(passage, `${passage} Copyright third party`), source)).toHaveLength(0);
+    expect(parseNasaNewsBodies(feed.replace(passage, `${passage} Copyright third party`), source)).toHaveLength(1);
+  });
+  it("stops NASA article text before the template's author, share and topic panels", () => {
+    const html = `<div class="hds-article-hero-header">7 Min Read Big headline</div><p>${"First paragraph about the lunar lander plan and its schedule. ".repeat(3)}</p><div class="hds-media"><img src="x"></div><h2>Starship lander concept</h2><ul class="wp-block-list"><li>Propellant transfer in low Earth orbit</li></ul><p>${"Second paragraph describing the crew and their training. ".repeat(3)}</p><div class="hds-about-the-author">About the Author Jane Doe</div><div class="hds-module">Share Details Last Updated Oct 23</div><div class="hds-topic-cards">Keep Exploring Discover More Topics From NASA</div>`;
+    const text = nasaArticleText(html);
+    expect(text.split("\n\n")).toHaveLength(4);
+    expect(text).toContain("Propellant transfer");
+    expect(text).not.toMatch(/About the Author|Discover More|Min Read/);
+  });
+  it("reads NOAA Ocean Service article text from the page, not the teaser", async () => {
+    const paragraph = "The U.S. Ocean Enterprise, a thriving ecosystem of businesses connected to the ocean, keeps growing each year. ";
+    const page = `<html><body><p class="small">An official website of the United States government.</p><div class="row"><div class="col-md-9"><figure><p class="figure-caption">Ship bridge at sunset.</p></figure><p>${paragraph.repeat(2)}</p><p>${paragraph.repeat(2)}</p><p>Media contact NOAA National Ocean Service Public Affairs team</p></div></div><footer><p>Contact Us</p></footer></body></html>`;
+    expect(oceanServiceArticleText(page).split("\n\n")).toHaveLength(2);
+    const fetcher = vi.fn(async () => new Response(page, { status: 200 }));
+    const body = await fetchOceanServiceBody("https://oceanservice.noaa.gov/news/oct26/ocean-enterprise-grows.html", fetcher as unknown as typeof fetch);
+    expect(body).toMatchObject({ source_url: "https://oceanservice.noaa.gov/news/oct26/ocean-enterprise-grows.html", image_url: null });
+    expect(body?.rights_basis).toContain("NOAA");
+    expect(await fetchOceanServiceBody("https://www.noaa.gov/news/other.html", fetcher as unknown as typeof fetch)).toBeNull();
+    const credited = vi.fn(async () => new Response(page.replace("keeps growing", "keeps growing © Reuters"), { status: 200 }));
+    expect(await fetchOceanServiceBody("https://oceanservice.noaa.gov/news/oct26/a.html", credited as unknown as typeof fetch)).toBeNull();
   });
   it("reads NOAA-authored text from its official RSS and excludes third-party notices", () => {
     const noaa = { ...source, name: "NOAA News", feed_url: "https://www.noaa.gov/rss.xml" };

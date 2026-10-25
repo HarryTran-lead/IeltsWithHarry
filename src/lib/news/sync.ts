@@ -1,8 +1,9 @@
 import { createClient } from "@supabase/supabase-js";
-import { providers, type FetchResult, type NewsSource } from "./providers";
+import { fetchOceanServiceBody, providers, type FetchResult, type NewsSource } from "./providers";
 import { loadNewsSettings } from "./settings";
 
 const nasaArchiveFeed = "https://www.nasa.gov/news-release/feed/";
+const oceanServiceFeed = "https://oceanservice.noaa.gov/rss/nosnews.xml";
 
 export function newsAdminClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -51,6 +52,31 @@ async function ingest(db: AdminClient, response: FetchResult) {
     }
   }
   return { fetched: unique.length, inserted };
+}
+
+/**
+ * Feeds that carry only a teaser get their text from the article page. A few
+ * pages per sync, newest first; a failed or empty page waits a week.
+ */
+async function fetchPageBodies(db: AdminClient, source: NewsSource, limit = 4) {
+  const { data: claims, error } = await db.rpc("news_claim_body_fetch", { p_source_id: source.id, p_limit: limit });
+  if (error) throw error;
+  let added = 0;
+  for (const claim of (claims ?? []) as { article_id: string; canonical_url: string }[]) {
+    let status: "success" | "none" | "error" = "none"; let message = "";
+    try {
+      const body = await fetchOceanServiceBody(claim.canonical_url);
+      if (body) {
+        const { error: bodyError } = await db.from("news_article_bodies").upsert({ article_id: claim.article_id, body_text: body.body_text, rights_basis: body.rights_basis, source_url: body.source_url }, { onConflict: "article_id" });
+        if (bodyError) throw bodyError;
+        status = "success"; added++;
+      }
+    } catch (cause) {
+      status = "error"; message = cause instanceof Error ? cause.message : "Page fetch failed";
+    }
+    await db.from("news_enrichment_attempts").update({ status, error_message: message.slice(0, 300) }).eq("article_id", claim.article_id).eq("kind", "body");
+  }
+  return added;
 }
 
 /** Seed a bounded set of older NASA pages; duplicates are ignored. */
@@ -102,6 +128,7 @@ export async function syncNews({ scheduled = false }: { scheduled?: boolean } = 
           archiveNextPage++;
         }
       }
+      if (source.feed_url === oceanServiceFeed) await fetchPageBodies(db, source);
       const finished_at = new Date().toISOString();
       const status = response.notModified && !fetched ? "not_modified" : "success";
       const { error: sourceError } = await db.from("news_sources").update({ last_success_at: finished_at, last_error: null, etag: response.etag, last_modified: response.lastModified, cache_until: response.cacheUntil, archive_next_page: archiveNextPage }).eq("id", source.id);
