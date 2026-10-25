@@ -1,0 +1,127 @@
+{
+  "stage": "ielts-starter",
+  "course": {
+    "slug": "ielts-starter-everyday-topics",
+    "title": "IELTS Starter: Everyday Topics",
+    "description": "Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry."
+  },
+  "unit": { "slug": "house-and-home", "title": "Unit 2 · House and Home", "sortOrder": 2 },
+  "lessons": [
+    {
+      "slug": "starter-u02-vocabulary-rooms-and-things",
+      "title": "Rooms and things at home",
+      "skill": "Vocabulary",
+      "summary": "Ten words for places and objects in a home.",
+      "sortOrder": 1,
+      "material": {
+        "skill": "Vocabulary",
+        "introduction": "Homes appear in IELTS Listening Section 1 (renting a room, booking accommodation) and in Speaking Part 1 ('Tell me about your home'). Learn these words for places and objects, notice the pairs that are easy to confuse (fridge / freezer, curtains / blinds), then write your own sentence.\n\nMẹo: học theo cặp từ dễ nhầm để nghe đúng trong bài Listening.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "vocabulary": [
+        { "word": "hallway", "phonetic": "/ˈhɔːlweɪ/", "meaningVi": "hành lang (trong nhà)", "definition": "A narrow space inside a building with doors to other rooms.", "example": "Please leave your shoes in the hallway.", "sentencePromptVi": "Viết bằng tiếng Anh: Hành lang nhà tôi rất hẹp.", "acceptedSentences": ["The hallway in my house is very narrow.", "My hallway is very narrow."] },
+        { "word": "attic", "phonetic": "/ˈætɪk/", "meaningVi": "gác mái", "definition": "A room or space just under the roof of a house.", "example": "We keep old books and toys in the attic.", "sentencePromptVi": "Viết bằng tiếng Anh: Chúng tôi cất đồ cũ trên gác mái.", "acceptedSentences": ["We keep old things in the attic.", "We store old things in the attic."] },
+        { "word": "basement", "phonetic": "/ˈbeɪsmənt/", "meaningVi": "tầng hầm", "definition": "A room or floor of a building that is below the ground.", "example": "The washing machine is in the basement.", "sentencePromptVi": "Viết bằng tiếng Anh: Tầng hầm thì lạnh và tối.", "acceptedSentences": ["The basement is cold and dark."] },
+        { "word": "garage", "phonetic": "/ˈɡærɑːʒ/", "meaningVi": "nhà để xe", "definition": "A building or room where you keep a car or motorbike.", "example": "My dad parks his motorbike in the garage.", "sentencePromptVi": "Viết bằng tiếng Anh: Xe đạp của tôi ở trong nhà để xe.", "acceptedSentences": ["My bike is in the garage.", "My bicycle is in the garage."] },
+        { "word": "wardrobe", "phonetic": "/ˈwɔːdrəʊb/", "meaningVi": "tủ quần áo", "definition": "A tall cupboard where you hang clothes.", "example": "There is a mirror on the wardrobe door.", "sentencePromptVi": "Viết bằng tiếng Anh: Tủ quần áo của tôi đầy quần áo.", "acceptedSentences": ["My wardrobe is full of clothes."] },
+        { "word": "curtains", "phonetic": "/ˈkɜːtnz/", "meaningVi": "rèm cửa (bằng vải, kéo sang hai bên)", "definition": "Pieces of cloth that you pull across a window.", "example": "I close the curtains when I want to sleep in.", "sentencePromptVi": "Viết bằng tiếng Anh: Rèm cửa phòng tôi màu xanh.", "acceptedSentences": ["The curtains in my room are blue.", "My curtains are blue."] },
+        { "word": "blinds", "phonetic": "/blaɪndz/", "meaningVi": "rèm cuốn / rèm sáo", "definition": "Window covers that you pull down or turn to block light.", "example": "The office has white blinds instead of curtains.", "sentencePromptVi": "Viết bằng tiếng Anh: Văn phòng có rèm cuốn màu trắng.", "acceptedSentences": ["The office has white blinds."] },
+        { "word": "fridge", "phonetic": "/frɪdʒ/", "meaningVi": "tủ lạnh (ngăn mát)", "definition": "A machine that keeps food cool but not frozen.", "example": "Put the milk back in the fridge, please.", "sentencePromptVi": "Viết bằng tiếng Anh: Có trái cây trong tủ lạnh.", "acceptedSentences": ["There is some fruit in the fridge.", "There is fruit in the fridge."] },
+        { "word": "freezer", "phonetic": "/ˈfriːzə/", "meaningVi": "ngăn đá / tủ đông", "definition": "A machine that keeps food frozen, below 0°C.", "example": "We keep ice cream and fish in the freezer.", "sentencePromptVi": "Viết bằng tiếng Anh: Kem ở trong ngăn đá.", "acceptedSentences": ["The ice cream is in the freezer."] },
+        { "word": "shared kitchen", "phonetic": "/ʃeəd ˈkɪtʃɪn/", "meaningVi": "bếp dùng chung", "definition": "A kitchen that several people who live in the same building use.", "example": "In my student hall, ten students use one shared kitchen.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi nấu ăn trong bếp dùng chung.", "acceptedSentences": ["I cook in a shared kitchen.", "I cook in the shared kitchen."] }
+      ]
+    },
+    {
+      "slug": "starter-u02-grammar-questions-negatives",
+      "title": "Present simple: negatives and questions",
+      "skill": "Grammar",
+      "summary": "Make negatives, questions and short answers with do and does.",
+      "sortOrder": 2,
+      "material": {
+        "skill": "Grammar",
+        "rule": "Negatives: subject + don't / doesn't + base verb.\n• I don't live near the city centre.\n• She doesn't have a balcony. (NOT: She doesn't has)\n\nQuestions: Do / Does + subject + base verb?\n• Do you share a room?   • Does the flat have Wi-Fi?\n• Wh- questions: Where do you live? How much does it cost?\n\nShort answers repeat do/does, not the main verb:\n• Do you rent your flat? – Yes, I do. / No, I don't.\n• Does he live alone? – Yes, he does. / No, he doesn't.\n\nGhi nhớ: sau does / doesn't, động từ chính về nguyên mẫu (không thêm -s).",
+        "example": "Does your apartment have a garden? – No, it doesn't, but it has a big balcony.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Choose the correct negative sentence.", "options": ["My room don't have a window.", "My room doesn't has a window.", "My room doesn't have a window."], "answer": 2, "explanation": "'My room' là số ít → doesn't; sau doesn't động từ ở nguyên mẫu: have." },
+        { "slug": "q2", "prompt": "___ your parents live in the city?", "options": ["Do", "Does", "Are"], "answer": 0, "explanation": "'Your parents' là số nhiều → Do." },
+        { "slug": "q3", "prompt": "Choose the correct question.", "options": ["How much costs the room?", "How much does the room cost?", "How much does the room costs?"], "answer": 1, "explanation": "Câu hỏi Wh-: How much + does + chủ ngữ + động từ nguyên mẫu." },
+        { "slug": "q4", "prompt": "'Does the flat have a dishwasher?' – 'No, ___.'", "options": ["it doesn't", "it don't", "it hasn't"], "answer": 0, "explanation": "Câu trả lời ngắn lặp lại trợ động từ: No, it doesn't." },
+        { "slug": "q5", "prompt": "Choose the correct sentence.", "options": ["We doesn't pay for electricity.", "We don't pay for electricity.", "We not pay for electricity."], "answer": 1, "explanation": "'We' dùng don't + động từ nguyên mẫu." },
+        { "slug": "q6", "prompt": "'Do you share a bathroom?' – 'Yes, ___.'", "options": ["I share", "I do", "I am"], "answer": 1, "explanation": "Câu trả lời ngắn dùng trợ động từ: Yes, I do." }
+      ]
+    },
+    {
+      "slug": "starter-u02-reading-student-housing-guide",
+      "title": "A guide to student housing",
+      "skill": "Reading",
+      "summary": "Read a housing guide and answer note-style and True/False/Not Given questions.",
+      "sortOrder": 3,
+      "material": {
+        "skill": "Reading",
+        "passage": "Choosing where to live: a guide for new students\n\nMost first-year students choose between three types of accommodation.\n\nCollege halls are large buildings on or next to the campus. Each student has a private bedroom with a desk and a single bed, but bathrooms and kitchens are shared by everyone on the same floor. Rent includes electricity, water and internet, which makes it easy to plan a budget. The halls are lively and it is easy to make friends, although some students find them noisy during exam periods.\n\nA homestay means living with a local family in their house. Breakfast and dinner are usually included in the weekly price. This option is popular with students who want to practise English every day, but houses are often a long way from the college, so students may need to commute for 40 minutes or more.\n\nPrivate flats are rented directly from a landlord and are usually shared by two to four people. They give students the most independence, and they can be cheaper if the rent is divided between several flatmates. However, bills are not normally included, and tenants must sign a contract for at least six months.\n\nThe accommodation office in Building C can help you compare options. It is open from Monday to Friday, 9 a.m. to 4 p.m.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Complete the note: College halls – bathrooms are ______.", "options": ["private", "shared", "not available"], "answer": 1, "explanation": "'bathrooms and kitchens are shared by everyone on the same floor'.", "evidence": "bathrooms and kitchens are shared by everyone on the same floor" },
+        { "slug": "q2", "prompt": "Complete the note: Homestay – price includes ______.", "options": ["two meals a day", "all bills and internet", "a bus pass"], "answer": 0, "explanation": "'Breakfast and dinner are usually included' → hai bữa mỗi ngày.", "evidence": "Breakfast and dinner are usually included in the weekly price" },
+        { "slug": "q3", "prompt": "Homestay families usually live close to the college. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 1, "explanation": "Bài đọc nói nhà thường 'a long way from the college' → False.", "evidence": "houses are often a long way from the college" },
+        { "slug": "q4", "prompt": "Private flats have the cheapest rent in the city. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 2, "explanation": "Chỉ nói căn hộ 'can be cheaper' nếu chia tiền thuê, không so sánh với cả thành phố → Not Given.", "evidence": "they can be cheaper if the rent is divided between several flatmates" },
+        { "slug": "q5", "prompt": "What is the minimum contract for a private flat?", "options": ["One month", "Six months", "One year"], "answer": 1, "explanation": "'sign a contract for at least six months'.", "evidence": "sign a contract for at least six months" },
+        { "slug": "q6", "prompt": "Which option is best for a student who wants to plan a budget easily?", "options": ["College halls", "Homestay", "Private flat"], "answer": 0, "explanation": "Ở ký túc xá, tiền thuê đã gồm điện, nước, internet 'which makes it easy to plan a budget'.", "evidence": "Rent includes electricity, water and internet, which makes it easy to plan a budget" }
+      ]
+    },
+    {
+      "slug": "starter-u02-listening-booking-a-room",
+      "title": "Phoning the accommodation office",
+      "skill": "Listening",
+      "summary": "Listen to a Section 1–style call and note the key details.",
+      "sortOrder": 4,
+      "material": {
+        "skill": "Listening",
+        "transcript": "Officer: Good afternoon, accommodation office. How can I help?\nStudent: Hi, I'm starting a course next month and I'm looking for a room.\nOfficer: Sure. Can I have your name, please?\nStudent: It's Duc Nguyen. That's D-U-C, and Nguyen is N-G-U-Y-E-N.\nOfficer: Thank you. What kind of accommodation are you looking for?\nStudent: A room in a shared flat, I think. Halls are a bit noisy for me.\nOfficer: OK. We have one in Park Street, number 28. It's a three-bedroom flat, and you'd share it with two other students.\nStudent: How much is the rent?\nOfficer: It's 140 pounds a week. Gas and electricity are extra, but the internet is included.\nStudent: Is the flat furnished?\nOfficer: Yes, there's a bed, a desk and a wardrobe in your room. The kitchen has a fridge and a washing machine, but there isn't a dishwasher.\nStudent: That's fine. How far is it from the campus?\nOfficer: About fifteen minutes by bike. There's a bus too, but it only runs every half an hour.\nStudent: Can I see it before I decide?\nOfficer: Of course. The landlord can show you round on Saturday at ten thirty.\nStudent: Perfect, thank you.",
+        "audioUrl": "",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "What is the student's family name?", "options": ["Nguyen", "Ngyuen", "Nuguen"], "answer": 0, "explanation": "Học viên đánh vần N-G-U-Y-E-N. Bài Listening Section 1 thường kiểm tra chính tả tên riêng." },
+        { "slug": "q2", "prompt": "What is the address of the flat?", "options": ["18 Park Street", "28 Park Street", "28 Bark Street"], "answer": 1, "explanation": "'Park Street, number 28'." },
+        { "slug": "q3", "prompt": "How much is the rent?", "options": ["£114 a week", "£140 a week", "£140 a month"], "answer": 1, "explanation": "'140 pounds a week' – chú ý phân biệt fourteen/forty và week/month." },
+        { "slug": "q4", "prompt": "Which bill is included in the rent?", "options": ["Gas", "Electricity", "Internet"], "answer": 2, "explanation": "'Gas and electricity are extra, but the internet is included'." },
+        { "slug": "q5", "prompt": "Which item is NOT in the flat?", "options": ["A wardrobe", "A washing machine", "A dishwasher"], "answer": 2, "explanation": "'there isn't a dishwasher'." },
+        { "slug": "q6", "prompt": "When can the student see the flat?", "options": ["Saturday, 10:30", "Saturday, 10:13", "Sunday, 10:30"], "answer": 0, "explanation": "'on Saturday at ten thirty'." }
+      ]
+    },
+    {
+      "slug": "starter-u02-writing-email-about-accommodation",
+      "title": "An email about your new room",
+      "skill": "Writing",
+      "summary": "Write a 60–80 word email to a friend about where you live.",
+      "sortOrder": 5,
+      "material": {
+        "skill": "Writing",
+        "prompt": "Your friend Mai wants to know about your new accommodation. Write an email to Mai (60–80 words). In your email:\n• describe your room and the building\n• say who you live with\n• say what you like or don't like about it.\nStart with 'Hi Mai,' and finish with a short closing such as 'Write soon,' and your name.",
+        "minWords": 60,
+        "modelAnswer": "Hi Mai,\n\nThanks for your email. I'm living in a shared flat near the college now. My room is small, but it has a big window, a desk and a comfortable bed. I share the kitchen and bathroom with two other students from Spain and Korea, and we often cook together. I really like the location because I can walk to class. The only problem is that the street is a bit noisy at night.\n\nWrite soon,\nHoa",
+        "checklist": ["Start with a greeting and end with a closing", "Answer all three bullet points", "Use capital letters and full stops correctly", "Use the present simple for facts about your home", "Write 60–80 words"],
+        "figure": { "url": "", "alt": "" }
+      }
+    },
+    {
+      "slug": "starter-u02-speaking-describe-your-home",
+      "title": "Talking about your home",
+      "skill": "Speaking",
+      "summary": "Answer Part 1 questions about where you live.",
+      "sortOrder": 6,
+      "material": {
+        "skill": "Speaking",
+        "prompt": "IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. Do you live in a house or an apartment?\n2. Which room do you spend the most time in? Why?\n3. Is there anything you would like to change about your home?\n4. Would you prefer to live alone or with other people in the future?",
+        "preparationSeconds": 15,
+        "modelAnswer": "I live in a small apartment on the sixth floor with my parents and my younger brother. I spend most of my time in my bedroom, because it's quiet and I have a desk there for studying. If I could change one thing, I'd like a bigger balcony with some plants. In the future I'd prefer to live with a friend, because it's cheaper and less lonely than living alone.",
+        "checklist": ["Answer the question directly first", "Add a reason with because or so", "Use home vocabulary from this unit", "Use 'I'd like…' or 'I'd prefer…' for the future", "Listen again: did you answer every question?"],
+        "figure": { "url": "", "alt": "" }
+      }
+    }
+  ]
+}

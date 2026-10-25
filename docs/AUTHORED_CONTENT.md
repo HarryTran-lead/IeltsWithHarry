@@ -24,3 +24,19 @@
 2. Nhập JSON/CSV theo lô, xem lỗi từng dòng và preview trước khi xuất bản. CSV phù hợp nhất cho bảng từ vựng; câu hỏi nhiều cấu trúc nên dùng JSON.
 3. Chấm trên server/database bằng answer key không gửi sớm tới người học; lưu từng câu trả lời và lịch ôn tập. Hiện `submit_exercise` đã chấm câu hỏi trắc nghiệm cho bài học database.
 4. Gắn tệp Listening đã được phép sử dụng và lưu bản ghi Speaking ở kho riêng tư khi có storage.
+
+## Lộ trình soạn theo khung Mindset for IELTS
+
+Nội dung các chặng IELTS nằm ở `src/content/curriculum/<stage>/unit-XX-*.json`, mỗi file một unit, mỗi unit sáu bài (Vocabulary, Grammar, Reading, Listening, Writing, Speaking). Bộ sách Mindset for IELTS chỉ được dùng làm khung chủ đề, dạng câu hỏi và mức độ; bài đọc, kịch bản nghe, câu hỏi, đề và bài mẫu đều viết mới, không chép từ sách.
+
+| Chặng web | Khung tham khảo |
+| --- | --- |
+| IELTS Starter (4.0–5.0) | Mindset Foundation |
+| IELTS Builder (5.0–6.0) | Mindset Level 1 |
+| IELTS Advanced (6.0–7.0) | Mindset Level 2 |
+| Mastery (7.0+) | Mindset Level 3 |
+
+1. Sửa hoặc thêm JSON, rồi chạy `node scripts/build-curriculum-sql.mjs` để tạo `supabase/content/<stage>.sql`.
+2. `npm test` kiểm tra schema bài học, đáp án, trích dẫn bằng chứng Reading và nạp thử SQL hai lần vào PGlite.
+3. Chạy file SQL trong Supabase SQL editor. Bài được tạo ở trạng thái nháp; chạy lại chỉ cập nhật nội dung, không đổi trạng thái xuất bản.
+4. Duyệt và xuất bản từng bài trong admin. Bài Listening chưa có `audioUrl` sẽ dùng giọng đọc của trình duyệt cho tới khi có file audio.

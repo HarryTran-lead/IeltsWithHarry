@@ -1,0 +1,126 @@
+{
+  "stage": "ielts-starter",
+  "course": {
+    "slug": "ielts-starter-everyday-topics",
+    "title": "IELTS Starter: Everyday Topics",
+    "description": "Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry."
+  },
+  "unit": { "slug": "daily-life", "title": "Unit 1 · Daily Life", "sortOrder": 1 },
+  "lessons": [
+    {
+      "slug": "starter-u01-vocabulary-daily-routine",
+      "title": "Daily routine phrases",
+      "skill": "Vocabulary",
+      "summary": "Ten collocations for talking about a normal day.",
+      "sortOrder": 1,
+      "material": {
+        "skill": "Vocabulary",
+        "introduction": "In IELTS Speaking Part 1 you often talk about your day. Native speakers use fixed verb + noun pairs (collocations) such as 'catch the bus', not 'take up the bus'. Learn each phrase, read the example, then write your own sentence.\n\nMẹo: học cả cụm từ, không học từng từ riêng lẻ.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "vocabulary": [
+        { "word": "wake up", "phonetic": "/weɪk ʌp/", "meaningVi": "thức dậy (mở mắt)", "definition": "To stop sleeping.", "example": "I usually wake up before my alarm rings.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi thường thức dậy lúc 6 giờ.", "acceptedSentences": ["I usually wake up at 6.", "I usually wake up at six o'clock.", "I usually wake up at 6 o'clock."] },
+        { "word": "get up", "phonetic": "/ɡet ʌp/", "meaningVi": "ra khỏi giường", "definition": "To leave your bed after sleeping.", "example": "On Sundays my brother gets up very late.", "sentencePromptVi": "Viết bằng tiếng Anh: Cô ấy dậy sớm mỗi sáng.", "acceptedSentences": ["She gets up early every morning."] },
+        { "word": "have breakfast", "phonetic": "/hæv ˈbrekfəst/", "meaningVi": "ăn sáng", "definition": "To eat the first meal of the day.", "example": "We have breakfast together at the kitchen table.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi ăn sáng lúc 7 giờ.", "acceptedSentences": ["I have breakfast at 7.", "I have breakfast at seven.", "I have breakfast at seven o'clock."] },
+        { "word": "catch the bus", "phonetic": "/kætʃ ðə bʌs/", "meaningVi": "bắt xe buýt", "definition": "To get on a bus at a particular time.", "example": "If I leave at 7:15, I can catch the bus to school.", "sentencePromptVi": "Viết bằng tiếng Anh: Anh ấy bắt xe buýt đi làm.", "acceptedSentences": ["He catches the bus to work."] },
+        { "word": "commute", "phonetic": "/kəˈmjuːt/", "meaningVi": "đi lại (giữa nhà và nơi làm/học)", "definition": "To travel regularly between home and work or school.", "example": "My father commutes to the city by train.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi đi lại bằng xe máy.", "acceptedSentences": ["I commute by motorbike.", "I commute by scooter."] },
+        { "word": "chat", "phonetic": "/tʃæt/", "meaningVi": "trò chuyện", "definition": "To talk in a friendly, informal way.", "example": "During lunch I chat with my classmates.", "sentencePromptVi": "Viết bằng tiếng Anh: Chúng tôi trò chuyện sau giờ học.", "acceptedSentences": ["We chat after class.", "We chat after school."] },
+        { "word": "go online", "phonetic": "/ɡəʊ ˌɒnˈlaɪn/", "meaningVi": "lên mạng", "definition": "To start using the internet.", "example": "I go online to check my messages after dinner.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi lên mạng mỗi tối.", "acceptedSentences": ["I go online every evening.", "I go online every night."] },
+        { "word": "do the housework", "phonetic": "/duː ðə ˈhaʊswɜːk/", "meaningVi": "làm việc nhà", "definition": "To clean and tidy your home.", "example": "Everyone in my family does the housework on Saturday.", "sentencePromptVi": "Viết bằng tiếng Anh: Mẹ tôi làm việc nhà vào buổi sáng.", "acceptedSentences": ["My mother does the housework in the morning.", "My mum does the housework in the morning."] },
+        { "word": "relax", "phonetic": "/rɪˈlæks/", "meaningVi": "thư giãn", "definition": "To rest and enjoy yourself after work or study.", "example": "I relax by listening to music in my room.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi thư giãn vào cuối tuần.", "acceptedSentences": ["I relax at the weekend.", "I relax on the weekend.", "I relax at weekends."] },
+        { "word": "go to bed", "phonetic": "/ɡəʊ tə bed/", "meaningVi": "đi ngủ", "definition": "To get into bed to sleep.", "example": "Students often go to bed late before an exam.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi đi ngủ lúc 11 giờ.", "acceptedSentences": ["I go to bed at 11.", "I go to bed at eleven.", "I go to bed at eleven o'clock."] }
+      ]
+    },
+    {
+      "slug": "starter-u01-grammar-present-simple-frequency",
+      "title": "Present simple and how often",
+      "skill": "Grammar",
+      "summary": "Use the present simple and adverbs of frequency for routines.",
+      "sortOrder": 2,
+      "material": {
+        "skill": "Grammar",
+        "rule": "Use the present simple for habits, routines and facts.\n• I / you / we / they + base verb: I walk to class.\n• He / she / it + verb + -s/-es: She walks. He watches. It goes.\n• Verbs ending in consonant + y change to -ies: study → studies.\n\nAdverbs of frequency say how often: always (100%) – usually – often – sometimes – rarely – never (0%).\n• They go BEFORE the main verb: I often study at night.\n• They go AFTER the verb 'be': She is always on time.\n\nGhi nhớ: trạng từ tần suất đứng trước động từ thường, nhưng đứng sau 'be'.",
+        "example": "My sister usually catches the bus, but she is never late for work.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Choose the correct sentence.", "options": ["Minh study English every evening.", "Minh studies English every evening.", "Minh studys English every evening."], "answer": 1, "explanation": "Chủ ngữ ngôi thứ ba số ít (Minh) → động từ thêm -s; 'study' kết thúc bằng phụ âm + y nên thành 'studies'." },
+        { "slug": "q2", "prompt": "Where does the adverb go? 'I ___ have breakfast at home.' (usually)", "options": ["I have usually breakfast at home.", "I usually have breakfast at home.", "Usually I have at home breakfast."], "answer": 1, "explanation": "Trạng từ tần suất đứng trước động từ thường: usually have." },
+        { "slug": "q3", "prompt": "Choose the correct sentence.", "options": ["She always is tired on Monday.", "She is always tired on Monday.", "Always she tired on Monday."], "answer": 1, "explanation": "Với động từ 'be', trạng từ tần suất đứng sau: is always." },
+        { "slug": "q4", "prompt": "My grandfather ___ TV in the evening.", "options": ["watch", "watchs", "watches"], "answer": 2, "explanation": "Động từ kết thúc bằng -ch thêm -es: watches." },
+        { "slug": "q5", "prompt": "Which adverb means 'almost never'?", "options": ["often", "rarely", "usually"], "answer": 1, "explanation": "'Rarely' = hiếm khi, gần với 'never'." },
+        { "slug": "q6", "prompt": "Choose the sentence that describes a routine.", "options": ["I am going to the gym now.", "I go to the gym three times a week.", "I went to the gym yesterday."], "answer": 1, "explanation": "Thói quen lặp lại dùng thì hiện tại đơn: go … three times a week." }
+      ]
+    },
+    {
+      "slug": "starter-u01-reading-a-day-abroad",
+      "title": "A day in a new city",
+      "skill": "Reading",
+      "summary": "Read about a student's routine abroad and answer IELTS-style questions.",
+      "sortOrder": 3,
+      "material": {
+        "skill": "Reading",
+        "passage": "Lan is nineteen and comes from Da Nang. This year she is studying hospitality at a college in Brisbane, Australia, and she rents a small room in a shared house near the river.\n\nOn weekdays Lan wakes up at half past six. She rarely has a big breakfast; usually she just makes toast and a cup of tea. At quarter past seven she catches the ferry, which she prefers to the bus because it is quieter and she can read on the way. Classes start at eight and finish at two.\n\nThree afternoons a week Lan works in a hotel café. The job is tiring, but she says it helps her English more than any textbook, because she has to understand customers who speak quickly and use a lot of informal words. On the other afternoons she studies in the college library.\n\nIn the evening Lan cooks with her housemates, who come from Brazil, Japan and Canada. They always speak English together, and every Friday each person cooks a dish from their own country. Lan often makes fresh spring rolls. Before bed she calls her family in Vietnam, although the time difference means she sometimes has to wait until they finish dinner.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Why does Lan take the ferry?", "options": ["It is cheaper than the bus.", "It is quieter and she can read.", "It stops next to her college.", "Her housemates take it too."], "answer": 1, "explanation": "Bài đọc: she prefers it to the bus 'because it is quieter and she can read on the way'.", "evidence": "which she prefers to the bus because it is quieter and she can read on the way" },
+        { "slug": "q2", "prompt": "Lan usually eats a large breakfast. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 1, "explanation": "'She rarely has a big breakfast' → thông tin ngược lại câu hỏi nên là False.", "evidence": "She rarely has a big breakfast" },
+        { "slug": "q3", "prompt": "Lan earns a good salary at the café. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 2, "explanation": "Bài đọc nói công việc mệt và giúp tiếng Anh, nhưng không nhắc đến lương → Not Given.", "evidence": "The job is tiring, but she says it helps her English" },
+        { "slug": "q4", "prompt": "According to Lan, what improves her English most?", "options": ["Studying in the library", "Reading on the ferry", "Talking to customers at work", "Calling her family"], "answer": 2, "explanation": "Công việc ở quán cà phê 'helps her English more than any textbook' vì phải hiểu khách nói nhanh.", "evidence": "it helps her English more than any textbook, because she has to understand customers" },
+        { "slug": "q5", "prompt": "In paragraph 3, 'informal words' are most likely…", "options": ["words used in relaxed, everyday speech", "words that are spelled wrongly", "words used only in hotels"], "answer": 0, "explanation": "Đoán nghĩa từ ngữ cảnh: khách nói nhanh và dùng từ 'informal' → từ ngữ đời thường, thân mật.", "evidence": "customers who speak quickly and use a lot of informal words" },
+        { "slug": "q6", "prompt": "What happens every Friday?", "options": ["Lan works late at the hotel.", "Each housemate cooks food from home.", "Lan calls her family early.", "The housemates eat at a restaurant."], "answer": 1, "explanation": "'every Friday each person cooks a dish from their own country'.", "evidence": "every Friday each person cooks a dish from their own country" }
+      ]
+    },
+    {
+      "slug": "starter-u01-listening-exchange-programme",
+      "title": "Joining an exchange programme",
+      "skill": "Listening",
+      "summary": "Listen to a coordinator explain a student exchange week.",
+      "sortOrder": 4,
+      "material": {
+        "skill": "Listening",
+        "transcript": "Coordinator: Good morning, everyone, and welcome to the exchange programme. I'm Ruth, and I'll explain how your first week works.\nEvery morning you'll meet your host student at the main gate at eight forty-five. Please don't be late, because lessons begin at nine sharp.\nOn Monday and Wednesday you'll join normal classes with your host. On Tuesday afternoon we have a cooking workshop in the student kitchen – you'll make a traditional local soup. On Thursday there's a trip to the science museum, so wear comfortable shoes; we walk there and it takes about twenty minutes.\nFriday is free in the morning, and in the evening there's a farewell party in the sports hall. Your host families are invited too.\nOne more thing: lunch is provided in the canteen every day except Thursday. On the museum trip, please bring a packed lunch.\nIf you have any problems, my office is on the first floor, next to the library. Any questions? No? Great, enjoy your week!",
+        "audioUrl": "",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "What time do students meet their host each morning?", "options": ["8:15", "8:45", "9:00", "9:45"], "answer": 1, "explanation": "'at the main gate at eight forty-five' – 9:00 là giờ vào học, dễ gây nhầm." },
+        { "slug": "q2", "prompt": "Which activity is on Tuesday?", "options": ["A museum trip", "Normal classes", "A cooking workshop", "A farewell party"], "answer": 2, "explanation": "'On Tuesday afternoon we have a cooking workshop'." },
+        { "slug": "q3", "prompt": "How do students travel to the museum?", "options": ["By bus", "On foot", "By train"], "answer": 1, "explanation": "'we walk there and it takes about twenty minutes'." },
+        { "slug": "q4", "prompt": "On which day must students bring their own lunch?", "options": ["Tuesday", "Thursday", "Friday"], "answer": 1, "explanation": "Ăn trưa có sẵn mỗi ngày 'except Thursday' – ngày đi bảo tàng." },
+        { "slug": "q5", "prompt": "Where is Ruth's office?", "options": ["Next to the canteen", "Next to the library", "In the sports hall"], "answer": 1, "explanation": "'on the first floor, next to the library'." }
+      ]
+    },
+    {
+      "slug": "starter-u01-writing-my-routine",
+      "title": "Describe your weekday routine",
+      "skill": "Writing",
+      "summary": "Write 60–80 words about a normal weekday.",
+      "sortOrder": 5,
+      "material": {
+        "skill": "Writing",
+        "prompt": "Write 60–80 words describing a normal weekday in your life. Say what you do in the morning, afternoon and evening, and use at least three adverbs of frequency (always, usually, often, sometimes, rarely, never).",
+        "minWords": 60,
+        "modelAnswer": "On weekdays I usually get up at six and have breakfast with my parents. I always catch the bus to college at seven because the roads are very busy later. My classes finish at twelve, so I often study in the library in the afternoon. In the evening I sometimes play badminton with my friends. After dinner I go online for a short time, and I rarely go to bed after eleven.",
+        "checklist": ["Mention morning, afternoon and evening", "Use the present simple correctly (he/she + -s)", "Use at least three adverbs of frequency in the right position", "Join ideas with and, but, so, because", "Write 60–80 words"],
+        "figure": { "url": "", "alt": "" }
+      }
+    },
+    {
+      "slug": "starter-u01-speaking-your-day",
+      "title": "Talking about your day",
+      "skill": "Speaking",
+      "summary": "Answer IELTS Part 1 questions about your daily routine.",
+      "sortOrder": 6,
+      "material": {
+        "skill": "Speaking",
+        "prompt": "IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. What is your favourite time of the day? Why?\n2. Do you usually have the same routine every day?\n3. How do you usually travel to school or work?\n4. Would you like to change anything about your daily routine?",
+        "preparationSeconds": 15,
+        "modelAnswer": "My favourite time of the day is the evening, because I finish my classes and I can relax. I usually have a similar routine on weekdays, but at the weekend I get up much later. I normally ride my motorbike to college; it takes about twenty minutes. If I could change one thing, I'd like to get up a little earlier so that I have time for breakfast.",
+        "checklist": ["Answer the question directly first", "Give a reason or an example (because…, for example…)", "Use the present simple for habits", "Speak for 15–25 seconds per question", "Listen again: are there long pauses?"],
+        "figure": { "url": "", "alt": "" }
+      }
+    }
+  ]
+}
