@@ -128,7 +128,8 @@ export async function syncNews({ scheduled = false }: { scheduled?: boolean } = 
           archiveNextPage++;
         }
       }
-      if (source.feed_url === oceanServiceFeed) await fetchPageBodies(db, source);
+      // Page text is a bonus: the feed's headlines are already saved, so a page problem must not fail the sync.
+      if (source.feed_url === oceanServiceFeed) await fetchPageBodies(db, source).catch(() => 0);
       const finished_at = new Date().toISOString();
       const status = response.notModified && !fetched ? "not_modified" : "success";
       const { error: sourceError } = await db.from("news_sources").update({ last_success_at: finished_at, last_error: null, etag: response.etag, last_modified: response.lastModified, cache_until: response.cacheUntil, archive_next_page: archiveNextPage }).eq("id", source.id);
