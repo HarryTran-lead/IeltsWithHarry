@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
+import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
@@ -83,20 +84,7 @@ function PageIntro({
   description: string;
   icon: StickerName;
 }) {
-  return (
-    <div className="learning-intro">
-      <div>
-        <span className="eyebrow">{eyebrow}</span>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </div>
-      <div className="sticker-cluster">
-        <Sticker name="harry" size={104} tilt={-4} float />
-        <Sticker name={icon} size={64} tilt={-10} delay={140} />
-        <Sticker name="star" size={46} tilt={12} delay={240} />
-      </div>
-    </div>
-  );
+  return <PageHeader eyebrow={eyebrow} title={title} description={description} sticker={icon} />;
 }
 
 function LearnOverview({ stageId }: { stageId?: string }) {

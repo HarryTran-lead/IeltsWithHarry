@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { DemoProvider, useDemo } from "@/features/demo/demo-store";
 import { AppShell } from "@/components/layout/app-shell";
+import { PageHeader } from "@/components/ui/page-header";
 import { NotebookProvider, useNotebook } from "@/features/notebook/notebook-store";
 import { SentencePractice, SkillLesson } from "@/features/learning/skill-lesson";
 import type { SkillMaterial } from "@/lib/skill-material";
@@ -30,7 +31,7 @@ export function LessonDetail({ lesson, blocks, questions, words, material }: {
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [grade, setGrade] = useState<Grade | null>(null);
   const [busy, setBusy] = useState(false);
-  return <div className="content-page"><div className="learning-intro"><div><span className="eyebrow">{lesson.skill.toUpperCase()} LESSON</span><h1>{lesson.title}</h1><p>{lesson.summary}</p></div></div>
+  return <div className="content-page"><PageHeader eyebrow={`${lesson.skill.toUpperCase()} LESSON`} title={lesson.title} description={lesson.summary} sticker="book" />
     <section className="card section-card">
       <SkillLesson material={material} lessonSlug={lesson.slug} answersRevealed={Boolean(grade)} />
       {blocks.filter((block) => !(material?.skill === "Reading" && block.kind === "paragraph" && block.body === material.passage)).map((block) => block.kind === "heading" ? <h2 key={block.id}>{block.body}</h2> : block.kind === "tip" ? <aside className="tip-box" key={block.id}>{block.body}</aside> : <p key={block.id}>{block.body}</p>)}

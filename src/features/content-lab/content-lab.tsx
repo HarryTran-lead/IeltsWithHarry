@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Compass, Lock, Package, Play } from "lucide-react";
 import { Sticker } from "@/components/stickers/stickers";
+import { PageHeader } from "@/components/ui/page-header";
 import { authoredPackSchema, compareSentence, countWords, type AuthoredPack } from "@/lib/authored-content";
 import sample from "@/content/demo-pack.json";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -69,15 +70,9 @@ export function ContentLab() {
   }
 
   return <div className="content-page content-lab">
-    <header className="lab-hero">
-      <div>
-        <span className="eyebrow">BẢN THỬ · NỘI DUNG SOẠN SẴN</span>
-        <h1>Một gói dữ liệu, sáu cách luyện tập</h1>
-        <p>Nạp câu hỏi, đáp án, giải thích và bài mẫu vào JSON. Trang sẽ dựng bài luyện và chấm những câu có đáp án xác định; không gọi AI.</p>
-        <div className="lab-badges"><span><Package size={15} /> {pack.title}</span><span><Compass size={15} /> {pack.level}</span><span><Lock size={15} /> Chỉ thử trong trình duyệt</span></div>
-      </div>
-      <div className="sticker-cluster"><Sticker name="bulb" size={92} tilt={-6} float /><Sticker name="abc" size={58} tilt={-10} delay={140} /><Sticker name="check" size={46} tilt={8} delay={240} /></div>
-    </header>
+    <PageHeader eyebrow="BẢN THỬ · NỘI DUNG SOẠN SẴN" title="Một gói dữ liệu, sáu cách luyện tập" description="Nạp câu hỏi, đáp án, giải thích và bài mẫu vào JSON. Trang sẽ dựng bài luyện và chấm những câu có đáp án xác định; không gọi AI." sticker="bulb">
+      <div className="lab-badges"><span><Package size={15} /> {pack.title}</span><span><Compass size={15} /> {pack.level}</span><span><Lock size={15} /> Chỉ thử trong trình duyệt</span></div>
+    </PageHeader>
 
     <section className="card lab-import" aria-label="Nạp nội dung">
       <div><h2>Nạp tài liệu thử</h2><p>Tải mẫu, sửa nội dung rồi chọn tệp JSON hoặc dán vào ô bên dưới. Dữ liệu chỉ tồn tại ở tab này; chưa xuất bản lên Supabase.</p></div>

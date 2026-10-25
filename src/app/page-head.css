@@ -1,0 +1,191 @@
+/* Compact page headers: every page opens with one short band instead of a tall hero. */
+.page-head {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-bottom: 18px;
+  padding: 16px 22px;
+  border: 1px solid #d9ece8;
+  border-radius: 18px;
+  background:
+    var(--dot-grid) 0 0 / 18px 18px,
+    linear-gradient(120deg, #e7f7f5, #f6faf4 60%, #fff8e8);
+  box-shadow: var(--shadow);
+}
+.page-head > .sticker {
+  flex: none;
+}
+.page-head-copy {
+  flex: 1;
+  min-width: 220px;
+}
+.page-head .eyebrow {
+  font-size: 11px;
+}
+.page-head h1,
+.content-page .page-head h1 {
+  margin: 2px 0 0;
+  font-size: clamp(22px, 2.1vw, 28px);
+  line-height: 1.15;
+}
+.page-head p {
+  display: -webkit-box;
+  max-width: 760px;
+  margin: 4px 0 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.page-head-actions {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.page-head-actions .button {
+  min-height: 38px;
+}
+.page-head-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.page-head-link:hover {
+  color: var(--teal-strong);
+}
+.page-head-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.page-head-extra {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.page-head .lab-badges {
+  margin-top: 0;
+}
+
+/* Skill dashboards and live practice use the same band, tinted by the skill colour. */
+.ielts-dashboard .page-head {
+  background:
+    var(--dot-grid) 0 0 / 18px 18px,
+    linear-gradient(112deg, var(--wash), var(--wash-two) 78%, #fff8ec);
+}
+.ielts-dashboard .page-head .eyebrow {
+  color: var(--accent);
+}
+.ielts-dashboard .page-head + .ielts-dashboard-section-head {
+  margin-top: 6px;
+}
+.page-head .ielts-dashboard-start {
+  padding: 9px 16px;
+}
+.page-head .ielts-skill-nav {
+  margin-top: 0;
+}
+.ielts-live > .ielts-back {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+
+/* Pages that keep their own header markup get the same compact proportions. */
+.ielts-mode-preview .ielts-mode-preview-hero {
+  min-height: 0;
+  padding: 18px 22px;
+}
+.ielts-mode-preview .ielts-mode-preview-hero h1 {
+  margin: 4px 0;
+  font-size: clamp(22px, 2.1vw, 28px);
+}
+.ielts-mode-preview .ielts-mode-preview-art {
+  display: none;
+}
+.vocab-hub .vocab-header {
+  margin-bottom: 16px;
+}
+.vocab-hub .vocab-header h1 {
+  margin: 2px 0 4px;
+  font-size: clamp(22px, 2.1vw, 28px);
+}
+.vocab-hub .vocab-header p {
+  margin: 0;
+  font-size: 13.5px;
+}
+
+/* Dashboard welcome stays friendly but shorter. */
+.welcome-banner {
+  min-height: 0;
+}
+.welcome-copy {
+  padding: 20px 0 20px 28px;
+}
+.welcome-greeting {
+  font-size: 18px;
+}
+.welcome-copy h1 {
+  font-size: clamp(22px, 2vw, 27px);
+}
+.welcome-actions {
+  margin-top: 14px;
+}
+.welcome-actions .button {
+  min-height: 36px;
+}
+
+/* Public page heads: smaller sticker group and less space above. */
+.public-container {
+  padding-top: 36px;
+}
+.public-container h1 {
+  font-size: clamp(28px, 3.2vw, 40px);
+}
+.public-page-head {
+  margin-bottom: 22px;
+}
+.public-page-head .sticker-cluster {
+  width: 170px;
+  height: 120px;
+  scale: 0.75;
+  margin: -16px -20px;
+}
+
+@media (max-width: 700px) {
+  .page-head {
+    padding: 14px 16px;
+  }
+  .page-head > .sticker {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .page-head-copy {
+    min-width: 0;
+  }
+  .page-head-actions {
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+  .welcome-copy {
+    padding: 20px 18px 6px;
+  }
+}

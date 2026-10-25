@@ -5,6 +5,7 @@ import "./study-room.css";
 import "./stickers.css";
 import "./motion.css";
 import "./playful.css";
+import "./page-head.css";
 import { Be_Vietnam_Pro, Bricolage_Grotesque, Patrick_Hand } from "next/font/google";
 import { StickerDefs } from "@/components/stickers/stickers";
 import { InteractionLayer } from "@/components/fx/interaction-layer";

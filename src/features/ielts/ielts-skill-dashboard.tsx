@@ -6,7 +6,8 @@ import {
   ArrowRight, AudioLines, BookOpen, ChartNoAxesCombined, Clock3, ExternalLink,
   FileText, Headphones, Languages, ListChecks, Mic, NotebookPen, Sparkles,
 } from "lucide-react";
-import { Sticker, type StickerName } from "@/components/stickers/stickers";
+import type { StickerName } from "@/components/stickers/stickers";
+import { PageHeader } from "@/components/ui/page-header";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "./ielts-live-page";
 import { useIeltsData } from "./use-ielts-data";
@@ -79,10 +80,8 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? !mode.planned : mode.planned));
 
   return <main className={`ielts-dashboard ielts-dashboard-${config.tone}`}>
-    <section className="ielts-dashboard-hero">
-      <div className="ielts-dashboard-hero-copy"><span className="ielts-dashboard-kicker">IELTSWITHHARRY / SKILL DASHBOARD</span><h1>{config.title}</h1><p>{config.intro}</p><div className="ielts-dashboard-hero-actions">{availableModes[0] ? <Link className="ielts-dashboard-start" href={availableModes[0].href}>Bắt đầu học <ArrowRight size={17}/></Link> : <span className="ielts-dashboard-wait">Đang chờ dữ liệu nguồn</span>}<a href="https://ielts.org/take-a-test/preparation-resources/sample-test-questions" target="_blank" rel="noreferrer">Đề mẫu IELTS chính thức <ExternalLink size={14}/></a></div></div>
-      <div className="ielts-dashboard-hero-art"><div className="sticker-cluster"><Sticker name={skillStickers[skill]} size={100} tilt={-6} float /><Sticker name="harry" size={66} tilt={8} delay={140} /><Sticker name="star" size={44} tilt={-12} delay={240} /></div><span><Icon size={13} /> {String(skillOrder.indexOf(skill) + 1).padStart(2, "0")} / 06 · LEARN · PRACTISE · REVIEW</span></div>
-    </section>
+    <PageHeader eyebrow={<><Icon size={12} /> KỸ NĂNG {String(skillOrder.indexOf(skill) + 1).padStart(2, "0")} / 06</>} title={config.title} description={config.intro} sticker={skillStickers[skill]}
+      actions={<><a className="page-head-link" href="https://ielts.org/take-a-test/preparation-resources/sample-test-questions" target="_blank" rel="noreferrer">Đề mẫu IELTS <ExternalLink size={14}/></a>{availableModes[0] ? <Link className="ielts-dashboard-start" href={availableModes[0].href}>Bắt đầu học <ArrowRight size={17}/></Link> : <span className="ielts-dashboard-wait">Đang chờ dữ liệu nguồn</span>}</>} />
 
     <div className="ielts-dashboard-section-head"><div><span className="ielts-dashboard-kicker">TỔNG QUAN</span><h2>Tiến độ của bạn</h2></div><Link href="/app/notebook">Xem Sổ tay <ArrowRight size={15}/></Link></div>
     <div className="ielts-dashboard-stats">

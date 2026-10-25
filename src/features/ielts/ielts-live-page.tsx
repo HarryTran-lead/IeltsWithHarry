@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { BookOpen, ExternalLink, Headphones, Mic, RotateCcw, Save, Volume2 } from "lucide-react";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { celebrateScore } from "@/lib/celebrate";
+import { PageHeader } from "@/components/ui/page-header";
 import type { IeltsLiveData, LiveArticle } from "@/lib/ielts/live";
 import { useIeltsData } from "./use-ielts-data";
 import "./ielts-live.css";
@@ -125,13 +126,10 @@ export function IeltsLivePage({ skill, mode }: { skill: IeltsSkill; mode?: strin
   }
 
   return <main className="ielts-live content-page">
-    <div className="ielts-hero">
-      <Link className="ielts-back" href={`/app/${skill}`}>← Tổng quan {skillNames[skill]}</Link>
-      <span className="eyebrow">IELTS ACADEMIC · LIVE PRACTICE</span>
-      <h1>{skillNames[skill]}</h1>
-      <p>{sourceNote}</p>
+    <Link className="ielts-back" href={`/app/${skill}`}>← Tổng quan {skillNames[skill]}</Link>
+    <PageHeader eyebrow="IELTS ACADEMIC · LIVE PRACTICE" title={skillNames[skill]} description={sourceNote}>
       <div className="ielts-skill-nav">{skills.map((item) => <Link key={item} className={item === skill ? "active" : ""} href={`/app/${item}`}>{skillNames[item]}</Link>)}</div>
-    </div>
+    </PageHeader>
     {busy && <div className="ielts-panel">Đang lấy dữ liệu bài luyện mới nhất…</div>}
     {error && <div className="ielts-panel ielts-error">{error}</div>}
     {data && <>

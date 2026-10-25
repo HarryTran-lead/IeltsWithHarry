@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { demoMode } from "@/lib/runtime";
+import { PageHeader } from "@/components/ui/page-header";
 import { createClient } from "@/lib/supabase/browser";
 
 export function SettingsPage() {
@@ -35,5 +36,5 @@ export function SettingsPage() {
     setBusy(false);
     if (error) setError(error.message); else setMessage("Profile saved.");
   }
-  return <div className="content-page"><div className="learning-intro"><div><span className="eyebrow">MY ACCOUNT</span><h1>Profile settings</h1><p>Update the details used for your learning plan.</p></div></div><section className="card section-card"><form className="auth-form" onSubmit={save}><p>Tài khoản: {accountId || "Đang tải…"}</p><label>Display name<input required maxLength={80} value={name} onChange={(e) => setName(e.target.value)} /></label><label>Timezone<input required maxLength={80} value={timezone} onChange={(e) => setTimezone(e.target.value)} /></label><label>Daily task goal<input required type="number" min={1} max={20} value={goal} onChange={(e) => setGoal(Number(e.target.value))} /></label>{error && <p role="alert" className="form-error">{error}</p>}{message && <p role="status">{message}</p>}<button className="button primary" disabled={busy}>{busy ? "Saving…" : "Save profile"}</button></form></section></div>;
+  return <div className="content-page"><PageHeader eyebrow="MY ACCOUNT" title="Profile settings" description="Update the details used for your learning plan." sticker="harry" /><section className="card section-card"><form className="auth-form" onSubmit={save}><p>Tài khoản: {accountId || "Đang tải…"}</p><label>Display name<input required maxLength={80} value={name} onChange={(e) => setName(e.target.value)} /></label><label>Timezone<input required maxLength={80} value={timezone} onChange={(e) => setTimezone(e.target.value)} /></label><label>Daily task goal<input required type="number" min={1} max={20} value={goal} onChange={(e) => setGoal(Number(e.target.value))} /></label>{error && <p role="alert" className="form-error">{error}</p>}{message && <p role="status">{message}</p>}<button className="button primary" disabled={busy}>{busy ? "Saving…" : "Save profile"}</button></form></section></div>;
 }
