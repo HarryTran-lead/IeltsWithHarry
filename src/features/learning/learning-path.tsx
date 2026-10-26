@@ -24,7 +24,7 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
   const current = lessons.find((lesson) => !isDone(lesson));
   const total = lessons.length;
   const finished = lessons.filter(isDone).length;
-  const packagePrefix = course.slug.match(/^(mindsetstarter|mindsetbuilder|mindsetadvanced)-/)?.[1];
+  const packagePrefix = course.slug.match(/^(preielts|mindsetstarter|mindsetbuilder|mindsetadvanced)-/)?.[1];
   const hasChecks = Boolean(packagePrefix) || course.stage_id === "foundation" || course.stage_id === "elementary";
   const finalCheckSlug = `${packagePrefix ?? course.stage_id}-final-check`;
 

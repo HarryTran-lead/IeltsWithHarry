@@ -9,6 +9,7 @@ import { strFromU8, unzipSync } from "fflate";
 const specs = {
   "ESL-FOUNDATION-1-2": { stage: "foundation", slug: "foundation-english-1-2", prefix: "foundation", units: 10 },
   "ESL-ELEMENTARY-2-3": { stage: "elementary", slug: "elementary-english-2-3", prefix: "elementary", units: 10 },
+  "ESL-PRE-IELTS-3-4": { stage: "pre-ielts", slug: "preielts-topic-practice-3-4", prefix: "preielts", units: 10, label: "Pre-IELTS 3.0–4.0" },
   "ESL-IELTS-STARTER-4-5": { stage: "ielts-starter", slug: "mindsetstarter-topic-practice-4-5", prefix: "mindsetstarter", units: 8, label: "IELTS Starter 4.0–5.0" },
   "ESL-IELTS-BUILDER-5-6": { stage: "ielts-builder", slug: "mindsetbuilder-topic-practice-5-6", prefix: "mindsetbuilder", units: 8, label: "IELTS Builder 5.0–6.0" },
   "ESL-IELTS-ADVANCED-6-7PLUS": { stage: "ielts-advanced", slug: "mindsetadvanced-topic-practice-6-7", prefix: "mindsetadvanced", units: 8, label: "IELTS Advanced 6.0–7.0+" },
