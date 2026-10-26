@@ -119,8 +119,10 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
           if (error) status = "local";
           else {
             const remote = { updatedAt: data?.updated_at ?? "", highlights: parseHighlights(JSON.stringify(data?.highlights ?? []), text) };
-            if (remote.updatedAt > local.updatedAt) latest = remote;
-            else if (local.updatedAt && local.updatedAt > remote.updatedAt) syncLocal = true;
+            const remoteTime = Date.parse(remote.updatedAt) || 0;
+            const localTime = Date.parse(local.updatedAt) || 0;
+            if (remoteTime > localTime) latest = remote;
+            else if (localTime > remoteTime) syncLocal = true;
           }
         } catch { status = "local"; }
       }
