@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { ArrowRight, BookOpenText, Check, Headphones, Languages, MapPin, Mic, PenLine, SpellCheck, Ticket, type LucideIcon } from "lucide-react";
 import { Sticker } from "@/components/stickers/stickers";
 import { celebrate } from "@/lib/celebrate";
@@ -22,22 +23,35 @@ type PathLesson = StageCourse["units"][number]["lessons"][number];
 export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (lesson: PathLesson) => boolean }) {
   const lessons = course.units.flatMap((unit) => unit.lessons);
   const current = lessons.find((lesson) => !isDone(lesson));
+  const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
+  const activeUnitId = selectedUnitId ?? current?.unit_id ?? course.units[0]?.id;
   const total = lessons.length;
   const finished = lessons.filter(isDone).length;
-  const packagePrefix = course.slug.match(/^(preielts|mindsetstarter|mindsetbuilder|mindsetadvanced)-/)?.[1];
+  const packagePrefix = course.slug.match(/^(foundationv2|preielts|mindsetstarter|mindsetbuilder|mindsetadvanced)-/)?.[1];
   const hasChecks = Boolean(packagePrefix) || course.stage_id === "foundation" || course.stage_id === "elementary";
   const finalCheckSlug = `${packagePrefix ?? course.stage_id}-final-check`;
 
-  return <div className="study-map">
+  return <div className="study-map-journey">
+    <div className="study-chapters" aria-label="Chọn chặng học">{course.units.map((unit) => {
+      const starter = unit.sort_order === 0 && course.slug.includes("foundation-journey");
+      const completed = unit.lessons.filter(isDone).length;
+      return <button key={unit.id} type="button" className={`study-chapter ${activeUnitId === unit.id ? "selected" : ""} ${completed === unit.lessons.length ? "completed" : ""}`} onClick={() => setSelectedUnitId(unit.id)} aria-current={activeUnitId === unit.id ? "step" : undefined}>
+        <span>{starter ? "Bắt đầu" : `Unit ${unit.sort_order}`}</span><strong>{completed}/{unit.lessons.length}</strong>
+      </button>;
+    })}</div>
+    <div className="study-map">
     <div className="study-map-lines">
       {course.units.map((unit, unitIndex) => {
+        if (unit.id !== activeUnitId) return null;
+        const starter = unit.sort_order === 0 && course.slug.includes("foundation-journey");
+        const number = starter ? 0 : unit.sort_order;
         const tone = lineTones[unitIndex % lineTones.length];
         const unitDone = unit.lessons.filter(isDone).length;
         const complete = unitDone === unit.lessons.length;
         return <section className={`map-line tone-${tone}`} key={unit.id} aria-label={unit.title}>
           <header className="map-line-head">
-            <span className="map-line-badge">U{unitIndex + 1}</span>
-            <div><small>Tuyến {unitIndex + 1}</small><h3>{unit.title.replace(/^Unit \d+\s*·\s*/, "")}</h3></div>
+            <span className="map-line-badge">{starter ? "GO" : `U${number}`}</span>
+            <div><small>{starter ? "Bước đầu tiên" : `Chặng ${number}`}</small><h3>{unit.title.replace(/^Unit \d+\s*·\s*/, "")}</h3></div>
             <span className="map-line-count">{unitDone}/{unit.lessons.length} ga</span>
           </header>
           <ol className="map-stations">
@@ -66,7 +80,7 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
                 <span>{complete ? "Ga cuối · đã nhận tem hoàn thành" : `Ga cuối · còn ${unit.lessons.length - unitDone} bài để nhận tem`}</span>
                 {complete && <Sticker name="stamp" label="XONG" size={54} tilt={-12} className="map-stamp" />}
               </button>
-              {hasChecks && <Link className="button subtle" href={`/app/check/${unit.slug}-check`}>Kiểm tra Unit {unitIndex + 1} →</Link>}
+              {hasChecks && !starter && <Link className="button subtle" href={`/app/check/${unit.slug}-check`}>Kiểm tra Unit {number} →</Link>}
             </li>
           </ol>
         </section>;
@@ -88,5 +102,6 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
         <p><Ticket size={15} /> Đi hết một tuyến để nhận tem</p>
       </div>
     </aside>
+    </div>
   </div>;
 }

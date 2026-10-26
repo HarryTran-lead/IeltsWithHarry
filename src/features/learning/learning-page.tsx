@@ -91,20 +91,38 @@ function PageIntro({
 function LearnOverview({ stageId }: { stageId?: string }) {
   const selected = stages.find((stage) => stage.id === stageId);
   const published = usePublishedCourses();
-  // No banner: the stage strip, courses and skills fit on one screen.
+  const { attempts } = useDemo();
+  const { visits } = useNotebook();
+  const stageCourses = published.courses.filter((course) => course.stage_id === (stageId ?? "foundation"));
+  const stageLessons = stageCourses.flatMap((course) => course.units.flatMap((unit) => unit.lessons));
+  const visited = new Set(visits.map((visit) => visit.path));
+  const submitted = new Set(attempts.map((attempt) => attempt.lesson));
+  const explored = stageLessons.filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
+  const nextLesson = stageLessons.find((lesson) => !visited.has(`/app/lesson/${lesson.slug}`) && !submitted.has(lesson.slug));
+  const total = stageLessons.length;
   return (
     <div className="content-page learn-overview">
+      {stageId === "foundation" || !stageId ? <section className="learn-mission" aria-label="Bài học tiếp theo">
+        <div className="learn-mission-main"><span className="eyebrow">HÀNH TRÌNH CỦA BẠN · BẮT ĐẦU TỪ ĐÂY</span>
+          <h1>{selected ? "Chinh phục chặng Foundation" : "Một bài nhỏ hôm nay, một bước tiến ngày mai"}</h1>
+          <p>{selected ? "Khởi động, đi qua 10 chủ đề và luyện đủ sáu kỹ năng. Hãy bắt đầu với bài chưa mở tiếp theo." : "Chọn chặng học phù hợp. Mỗi unit là một trạm, mỗi bài học là một bước tiến có thể nhìn thấy."}</p>
+          {nextLesson && <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? "Tiếp tục hành trình" : "Bắt đầu bài đầu tiên"} <ArrowRight size={16} /></Link>}
+          {demoMode && !nextLesson && <Link className="button primary" href="/app/learn/foundation">Xem hành trình Foundation <ArrowRight size={16} /></Link>}
+          {!nextLesson && !published.loading && total > 0 && <span className="learn-mission-complete">Đã khám phá hết bài học ở chặng này. Bạn có thể ôn lại hoặc làm bài kiểm tra cuối khóa.</span>}
+        </div>
+        <div className="learn-mission-progress"><span>CHẶNG 1 · FOUNDATION</span><strong>{demoMode && !total ? "7" : explored}<small>{demoMode && !total ? " chặng" : `/${total || "…"}`}</small></strong><span>{demoMode && !total ? "mốc trong lộ trình" : "bài đã mở"}</span><div className="study-map-bar"><i style={{ width: `${total ? Math.round(explored / total * 100) : 0}%` }} /></div><small>{demoMode && !total ? "Đăng nhập để lưu tiến độ học" : `Bước kế tiếp: ${nextLesson?.title ?? (total ? "Ôn tập" : "Đang tải bài học")}`}</small></div>
+      </section> : null}
       <section className="card section-card">
         <div className="section-head">
-          <h1>{selected ? `${selected.name} · ${selected.range}` : "Lộ trình học"}</h1>
-          <span>{selected ? selected.description : "7 chặng từ những từ đầu tiên đến IELTS 7.0+. Mốc band chỉ để định hướng."}</span>
+          <h2>{selected ? `Chọn chặng · ${selected.range}` : "Bản đồ 7 chặng học"}</h2>
+          <span>Chọn chặng để xem từng unit và bài học. Mốc band là định hướng nội bộ.</span>
         </div>
         <div className="stage-grid">
           {stages.map((stage, index) => (
             <Link
               key={stage.id}
               href={`/app/learn/${stage.id}`}
-              className={`stage-card ${demoMode ? stage.status : index === 0 ? "current" : "future"} ${selected?.id === stage.id ? "selected" : ""}`}
+              className={`stage-card ${demoMode ? stage.status : lessonCount(published.courses, stage.id) ? "available" : "future"} ${selected?.id === stage.id ? "selected" : ""}`}
             >
               <span className="stage-index">
                 {demoMode && stage.status === "done" ? <Check size={17} /> : index + 1}
@@ -117,9 +135,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
                   ? "Demo milestone"
                   : !demoMode && lessonCount(published.courses, stage.id)
                     ? `${lessonCount(published.courses, stage.id)} bài học`
-                    : (demoMode ? stage.status === "current" : index === 0)
-                      ? "Current stage"
-                      : "Preview stage"}{" "}
+                    : demoMode && stage.status === "current" ? "Chặng hiện tại" : "Sắp mở"}{" "}
                 <ArrowRight size={14} />
               </span>
             </Link>
