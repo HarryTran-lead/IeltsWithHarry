@@ -149,11 +149,13 @@ for (const { course, spec, audio } of packs) {
     unitIds.push(starter.id);
     for (const [index, module] of course.intro_modules.entries()) {
       const slug = `${spec.prefix}-start-${index + 1}`;
+      const starterSkill = index < 3 ? "Vocabulary" : "Grammar";
       const row = success(await db.from("lessons").upsert({ unit_id: starter.id, slug,
-        title: module.title, skill: "Grammar", summary: module.aim, sort_order: index + 1, published: false },
+        title: module.title, skill: starterSkill, summary: module.aim, sort_order: index + 1, published: false },
         { onConflict: "slug" }).select("id").single(), `starter ${slug}`);
       success(await db.from("lesson_materials").upsert({ lesson_id: row.id, content: {
-        skill: "Grammar", rule: module.theory_vi, example: module.examples?.[0] ?? "", figure: { url: "", alt: "" } } },
+        skill: starterSkill, ...(starterSkill === "Grammar" ? { rule: module.theory_vi, example: module.examples?.[0] ?? "" }
+          : { introduction: module.theory_vi }), figure: { url: "", alt: "" } } },
       { onConflict: "lesson_id" }), `starter material ${slug}`);
       success(await db.from("package_lesson_content").upsert({ lesson_id: row.id, content: {
         ...module, type: "intro", audio_url: index === 0 ? audioUrls["audio/starter_phonics.mp3"] : "",

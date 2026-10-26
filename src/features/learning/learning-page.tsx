@@ -107,7 +107,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           <h1>{selected ? "Chinh phục chặng Foundation" : "Một bài nhỏ hôm nay, một bước tiến ngày mai"}</h1>
           <p>{selected ? "Khởi động, đi qua 10 chủ đề và luyện đủ sáu kỹ năng. Hãy bắt đầu với bài chưa mở tiếp theo." : "Chọn chặng học phù hợp. Mỗi unit là một trạm, mỗi bài học là một bước tiến có thể nhìn thấy."}</p>
           {nextLesson && <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? "Tiếp tục hành trình" : "Bắt đầu bài đầu tiên"} <ArrowRight size={16} /></Link>}
-          {demoMode && !nextLesson && <Link className="button primary" href="/app/learn/foundation">Xem hành trình Foundation <ArrowRight size={16} /></Link>}
+          {demoMode && !nextLesson && <Link className="button primary" href={selected ? "/app/learn" : "/app/learn/foundation"}>{selected ? "Xem toàn bộ lộ trình" : "Xem hành trình Foundation"} <ArrowRight size={16} /></Link>}
           {!nextLesson && !published.loading && total > 0 && <span className="learn-mission-complete">Đã khám phá hết bài học ở chặng này. Bạn có thể ôn lại hoặc làm bài kiểm tra cuối khóa.</span>}
         </div>
         <div className="learn-mission-progress"><span>CHẶNG 1 · FOUNDATION</span><strong>{demoMode && !total ? "7" : explored}<small>{demoMode && !total ? " chặng" : `/${total || "…"}`}</small></strong><span>{demoMode && !total ? "mốc trong lộ trình" : "bài đã mở"}</span><div className="study-map-bar"><i style={{ width: `${total ? Math.round(explored / total * 100) : 0}%` }} /></div><small>{demoMode && !total ? "Đăng nhập để lưu tiến độ học" : `Bước kế tiếp: ${nextLesson?.title ?? (total ? "Ôn tập" : "Đang tải bài học")}`}</small></div>

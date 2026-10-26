@@ -77,7 +77,7 @@ export function OpenCourses({ courses, loading }: { courses: StageCourse[]; load
       return <Link key={course.id} href={`/app/learn/${course.stage_id}`} className="open-course lift">
         <span className="course-stage-band">{stage?.range ?? course.stage_id}</span>
         <b>{course.title}</b>
-        <small>{stage?.name} · {course.units.length} unit · {total} bài</small>
+        <small>{stage?.name} · {course.slug.includes("foundation-journey") ? `${course.units.length - 1} unit + 5 bài khởi động` : `${course.units.length} unit`} · {total} bài</small>
         <ArrowRight size={16} />
       </Link>;
     })}</div>
