@@ -22,7 +22,7 @@ import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
 import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
-import { StageMap, type StageStop } from "./stage-map";
+import { StageMap, stageStops } from "./stage-map";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
@@ -101,14 +101,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   const explored = stageLessons.filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
   const nextLesson = stageLessons.find((lesson) => !visited.has(`/app/lesson/${lesson.slug}`) && !submitted.has(lesson.slug));
   const total = stageLessons.length;
-  // Each stage's place on the map: finished, where the learner is now, open, or still to come.
-  const stageProgress = stages.map((stage) => {
-    const lessons = published.courses.filter((course) => course.stage_id === stage.id).flatMap((course) => course.units.flatMap((unit) => unit.lessons));
-    return { stage, total: lessons.length, explored: lessons.filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length };
-  });
-  const currentIndex = stageProgress.findIndex((item) => item.total > 0 && item.explored < item.total);
-  const stops: StageStop[] = stageProgress.map((item, index) => ({ ...item,
-    state: demoMode && !item.total ? item.stage.status : !item.total ? "future" : item.explored === item.total ? "done" : index === currentIndex ? "current" : "available" }));
+  const stops = stageStops(published.courses, (slug) => visited.has(`/app/lesson/${slug}`) || submitted.has(slug));
   return (
     <div className="content-page learn-overview">
       <section className={`learn-mission ${selected ? "learn-mission-selected" : ""}`} aria-label="Bài học tiếp theo">

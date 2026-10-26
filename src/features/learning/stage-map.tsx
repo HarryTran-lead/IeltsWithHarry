@@ -5,11 +5,40 @@ import { useRef } from "react";
 import { Check, Lock } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HarryMascot } from "@/components/illustrations/harry";
-import type { Stage } from "@/lib/demo-data";
+import { stages, type Stage } from "@/lib/demo-data";
+import { demoMode } from "@/lib/runtime";
+import { useDemo } from "@/features/demo/demo-store";
+import { useNotebook } from "@/features/notebook/notebook-store";
+import { usePublishedCourses, type StageCourse } from "./stage-courses";
 import "./stage-map.css";
 
 export type StageState = "done" | "current" | "available" | "future";
 export type StageStop = { stage: Stage; state: StageState; total: number; explored: number };
+
+/**
+ * Where each stage stands for the learner: finished, the current one (the
+ * first with lessons still to open), open, or still to come. A lesson counts
+ * once it has been opened or submitted. Demo mode keeps the sample statuses.
+ */
+export function stageStops(courses: StageCourse[], explored: (slug: string) => boolean): StageStop[] {
+  const progress = stages.map((stage) => {
+    const lessons = courses.filter((course) => course.stage_id === stage.id).flatMap((course) => course.units.flatMap((unit) => unit.lessons));
+    return { stage, total: lessons.length, explored: lessons.filter((lesson) => explored(lesson.slug)).length };
+  });
+  const current = progress.findIndex((item) => item.total > 0 && item.explored < item.total);
+  return progress.map((item, index) => ({ ...item,
+    state: demoMode && !item.total ? item.stage.status : !item.total ? "future" : item.explored === item.total ? "done" : index === current ? "current" : "available" }));
+}
+
+/** Stage stops for pages that do not load the courses themselves. */
+export function useStageStops() {
+  const { courses } = usePublishedCourses();
+  const { attempts } = useDemo();
+  const { visits } = useNotebook();
+  const visited = new Set(visits.map((visit) => visit.path));
+  const submitted = new Set(attempts.map((attempt) => attempt.lesson));
+  return stageStops(courses, (slug) => visited.has(`/app/lesson/${slug}`) || submitted.has(slug));
+}
 
 // Scene coordinates (viewBox 1000 × 420). Stops keep to the middle band so their labels fit below.
 const W = 1000;

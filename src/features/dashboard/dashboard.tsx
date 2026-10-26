@@ -22,9 +22,10 @@ import { HarryBuddy } from "@/components/fx/harry-buddy";
 import { celebrate } from "@/lib/celebrate";
 import { PlannerMini } from "@/features/planner/planner-widgets";
 import { useDemo } from "@/features/demo/demo-store";
-import { offsetISO, recommendations, skillColors, stages, todayISO, type Skill } from "@/lib/demo-data";
+import { offsetISO, recommendations, skillColors, todayISO, type Skill } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
 import { LatestNews, StudyRoomCard } from "./dashboard-widgets";
+import { StageMap, useStageStops } from "@/features/learning/stage-map";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { streakWeek } from "@/lib/account";
 import "./dashboard.css";
@@ -102,6 +103,7 @@ function StreakWeek() {
 }
 
 function LearningPath() {
+  const stops = useStageStops();
   return (
     <section className="card learning-path">
       <div className="card-head">
@@ -116,27 +118,7 @@ function LearningPath() {
           View all levels <ArrowRight size={15} />
         </Link>
       </div>
-      <div className="path-scroll">
-        <div className="path-line" />
-        {stages.map((stage, index) => (
-          <Link
-            key={stage.id}
-            href={`/app/learn/${stage.id}`}
-            className={`path-node ${demoMode ? stage.status : index === 0 ? "current" : "future"}`}
-            title={stage.description}
-          >
-            <span className="node-check">
-              {demoMode && stage.status === "done" ? (
-                <Check size={13} strokeWidth={3.2} />
-              ) : (demoMode ? stage.status === "current" : index === 0) ? (
-                <i />
-              ) : null}
-            </span>
-            <strong>{stage.range}</strong>
-            <small>{stage.name}</small>
-          </Link>
-        ))}
-      </div>
+      <StageMap stops={stops} />
       <div className="continue-card">
         <div className="continue-art" aria-hidden="true">
           <Sticker name="globe" size={62} tilt={-8} delay={100} />
