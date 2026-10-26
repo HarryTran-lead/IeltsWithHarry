@@ -119,6 +119,125 @@ WORDNET_TOPICS = {
     "verb.weather": "Environment & Climate",
 }
 
+# For source words without topical tags or a specific WordNet category, match
+# concrete cues in the headword/gloss before falling back to a language-function
+# bucket. Every assignment remains an automatic suggestion, not editorial review.
+DEFINITION_TOPICS = [
+    ("Health & Wellbeing", r"\b(?:medical|medicine|doctor|clinic\w*|hospital|disease|illness|injur\w*|surgery|blood|health\w*|therap\w*|symptom|infection)\b"),
+    ("Food & Nutrition", r"\b(?:food|meal|cook\w*|eat\w*|drink\w*|taste|tasty|flavo\w*|restaurant|fruit|vegetable|meat|dairy|bread)\b"),
+    ("Clothing & Fashion", r"\b(?:dress\w*|fashion\w*|garment|shirt|shoe\w*|wearing|worn|outfit|tracksuit|overalls)\b"),
+    ("Nature & Wildlife", r"\b(?:animal|bird|mammal|insect|wildlife|plant|tree|flower|species|forest)\b"),
+    ("Environment & Climate", r"\b(?:climate|weather|rain\w*|storm|flood|pollut\w*|ecosystem|carbon|atmosphere|drought)\b"),
+    ("Science & Technology", r"\b(?:computer|software|internet|digital|electronic|technology|technological|scientific|experiment|laboratory|chemical|physics|scientist)\b"),
+    ("Education & Knowledge", r"\b(?:school|student|teacher|learn\w*|academic|university|curriculum|lesson|education\w*|classroom)\b"),
+    ("Work & Careers", r"\b(?:job|workplace|employ\w*|office|career|salary|occupation|profession\w*|worker|colleague)\b"),
+    ("Travel & Transport", r"\b(?:travel\w*|journey|vehicle|passenger|aircraft|airplane|train|ship|road|destination|flight|transport\w*|aboard)\b"),
+    ("Money & Ownership", r"\b(?:money|payment|price|cost\w*|bank\w*|loan|tax\w*|finance|financial|purchase|selling|sold|buyer)\b"),
+    ("Family & Relationships", r"\b(?:family|parent|mother|father|marriage|husband|wife|sibling|daughter|son)\b"),
+    ("Media & Communication", r"\b(?:news|article|newspaper|broadcast|publish\w*|photograph|message|communicat\w*|advertis\w*|journal\w*)\b"),
+    ("Arts & Leisure", r"\b(?:music\w*|artist|artwork|paint\w*|theat\w*|literature|danc\w*|entertain\w*|game|sport|leisure)\b"),
+    ("Home & Housing", r"\b(?:house|housing|home|room|furniture|kitchen|bedroom|bathroom|household)\b"),
+    ("World & Culture", r"\b(?:country|nation\w*|culture|international|foreign|ethnic|global|aborigin\w*)\b"),
+    ("Society & Community", r"\b(?:government|politic\w*|legal|lawyer|police|crime|community|social|public|citizen|society)\b"),
+    ("Psychology & Emotions", r"\b(?:emotion\w*|fear\w*|anger|angry|mood\w*|mental|desire|happiness|sadness|anxiety|attention|motivation)\b"),
+    ("Time & Sequence", r"\b(?:time|day|week|month|year|season|period|duration|sequence|chronolog\w*|hour|minute|afternoon|morning)\b"),
+    ("Numbers & Data", r"\b(?:number|quantity|amount|measur\w*|count|counts|counted|counting|percentage|ratio|statistics|statistical)\b"),
+    ("Places & Travel", r"\b(?:location|region|distance|city|town|street|territory|geograph\w*)\b"),
+]
+
+FALLBACK_LEXICAL_TOPICS = {
+    "noun.act": "Actions & Processes",
+    "noun.event": "Events & Occurrences",
+    "noun.state": "Descriptions & Attributes",
+    "noun.time": "Time & Sequence",
+    "noun.relation": "Society & Community",
+    "noun.object": "Objects & Technology",
+    "verb.change": "Actions & Processes",
+    "verb.contact": "Actions & Processes",
+    "verb.creation": "Actions & Processes",
+    "verb.perception": "Actions & Processes",
+    "verb.stative": "Actions & Processes",
+    "verb.motion": "Actions & Processes",
+    "verb.social": "Society & Community",
+    "verb.possession": "Actions & Processes",
+    "verb.competition": "Actions & Processes",
+    "verb.consumption": "Actions & Processes",
+    "noun.Tops": "People & Daily Life",
+}
+
+FUNCTION_POS = {
+    "pronoun", "preposition", "determiner", "conjunction", "modal auxiliary",
+    "be-verb", "do-verb", "have-verb", "infinitive-to", "interjection",
+}
+
+# The source has a small set of missing glosses or incorrect POS labels. Their
+# headwords were inspected individually; keep these corrections reproducible.
+TOPIC_CORRECTIONS = {
+    "cefrj-1.6-732": "Media & Communication",  # blurt
+    "cefrj-1.6-853": "Science & Technology",  # broadband
+    "cefrj-1.6-1059": "Numbers & Data",  # centigrade
+    "cefrj-1.6-1376": "Media & Communication",  # conferencing
+    "cefrj-1.6-1436": "Media & Communication",  # content
+    "cefrj-1.6-2136": "Environment & Climate",  # eco
+    "cefrj-1.6-2150": "Media & Communication",  # edit
+    "cefrj-1.6-2359": "Media & Communication",  # exaggerate
+    "cefrj-1.6-2463": "Arts & Leisure",  # extreme sports
+    "cefrj-1.6-2478": "Urban Life & Services",  # facilities
+    "cefrj-1.6-2921": "Places & Travel",  # glacis
+    "cefrj-1.6-3049": "People & Daily Life",  # grown-up
+    "cefrj-1.6-3312": "Society & Community",  # human rights
+    "cefrj-1.6-3621": "Grammar & Usage",  # inverted commas
+    "cefrj-1.6-3964": "Health & Wellbeing",  # liver
+    "cefrj-1.6-4030": "Arts & Leisure",  # lyrics
+    "cefrj-1.6-4150": "Media & Communication",  # media
+    "cefrj-1.6-4158": "World & Culture",  # Mediterranean
+    "cefrj-1.6-4201": "Numbers & Data",  # micrometer
+    "cefrj-1.6-4309": "Science & Environment",  # moonscape
+    "cefrj-1.6-4348": "Nature & Wildlife",  # mountaintop
+    "cefrj-1.6-4406": "Science & Technology",  # nano
+    "cefrj-1.6-4549": "Media & Communication",  # noticeboard
+    "cefrj-1.6-4638": "World & Culture",  # Olympia
+    "cefrj-1.6-4787": "Grammar & Usage",  # ow
+    "cefrj-1.6-4893": "Descriptions & Attributes",  # patient, adjective
+    "cefrj-1.6-4894": "Health & Wellbeing",  # patient, noun
+    "cefrj-1.6-5147": "Actions & Processes",  # possess
+    "cefrj-1.6-5209": "Science & Research",  # prehuman
+    "cefrj-1.6-5573": "Actions & Processes",  # refresh
+    "cefrj-1.6-5612": "Descriptions & Attributes",  # relative, adjective
+    "cefrj-1.6-5654": "Actions & Processes",  # repaint
+    "cefrj-1.6-5800": "Travel & Transport",  # roam
+    "cefrj-1.6-6029": "Arts & Leisure",  # semi-final
+    "cefrj-1.6-7081": "Clothing & Fashion",  # tracksuit
+    "cefrj-1.6-7594": "Psychology & Emotions",  # weep
+    "cefrj-1.6-7733": "World & Culture",  # worldview
+    "octanove-1.0-29": "Society & Community",  # norms
+    "octanove-1.0-309": "Clothing & Fashion",  # overalls
+    "octanove-1.0-372": "Education & Knowledge",  # criteria
+    "octanove-1.0-471": "Travel & Transport",  # chauffer
+    "octanove-1.0-650": "People & Daily Life",  # antics
+    "octanove-1.0-674": "Travel & Transport",  # stray, verb
+    "octanove-1.0-675": "Descriptions & Attributes",  # stray, adjective
+    "octanove-1.0-739": "Science & Technology",  # personalization
+    "octanove-1.0-847": "Descriptions & Attributes",  # durable
+    "octanove-1.0-902": "Science & Research",  # stimuli
+    "octanove-1.0-1033": "Events & Occurrences",  # rustle, noun
+    "octanove-1.0-1052": "Descriptions & Attributes",  # quirky
+    "octanove-1.0-1099": "Money & Ownership",  # mark-up
+    "octanove-1.0-1103": "Shopping & Services",  # wares
+    "octanove-1.0-1255": "Arts & Leisure",  # fabulation
+    "octanove-1.0-1405": "Science & Research",  # pressurization
+    "octanove-1.0-1421": "Education & Knowledge",  # extracurricular
+    "octanove-1.0-1439": "Education & Language",  # wordage
+    "octanove-1.0-1518": "Actions & Processes",  # procedural
+    "octanove-1.0-1520": "Education & Knowledge",  # demystification
+    "octanove-1.0-1524": "Environment & Climate",  # floodgates
+    "octanove-1.0-1921": "Science & Research",  # emulsification
+    "octanove-1.0-2036": "Descriptions & Attributes",  # counterproductive
+    "octanove-1.0-2079": "Money & Ownership",  # marketability
+    "octanove-1.0-2117": "Arts & Leisure",  # reverb
+    "octanove-1.0-2129": "Media & Communication",  # remonstrate (source POS typo)
+}
+
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -196,19 +315,39 @@ def wordnet_lookup(headword: str, pos: str, entries: dict, synsets: dict) -> tup
     return "", "", "", ""
 
 
-def topic_tags(source_topics: str, lexname: str) -> tuple[str, str]:
+def topic_tags(source_id: str, source_topics: str, lexname: str, headword: str, pos: str, definition: str) -> tuple[str, str]:
+    if source_id in TOPIC_CORRECTIONS:
+        return TOPIC_CORRECTIONS[source_id], "headword inspected; editorial topic correction"
     tags = []
     for raw in source_topics.split("; "):
         if not raw:
             continue
         matched = TOPIC_MAP.get(raw.lower())
-        if matched and matched not in tags:
+        if matched and matched != "General & Cross-topic" and matched not in tags:
             tags.append(matched)
     if tags:
         return "; ".join(tags), "CEFR-J topical tags; editorial normalization"
     if lexname in WORDNET_TOPICS:
         return WORDNET_TOPICS[lexname], "Open English WordNet lexical category; automatic"
-    return "General & Cross-topic", "unclassified"
+    if pos in FUNCTION_POS:
+        return "Grammar & Usage", "part of speech; automatic"
+    if pos == "number":
+        return "Numbers & Data", "part of speech; automatic"
+    for topic, pattern in DEFINITION_TOPICS:
+        if re.search(pattern, headword.lower()):
+            return topic, "headword semantic cue; automatic"
+    for topic, pattern in DEFINITION_TOPICS:
+        if re.search(pattern, definition.lower()):
+            return topic, "WordNet definition cue; automatic; first sense needs review"
+    if lexname in FALLBACK_LEXICAL_TOPICS:
+        return FALLBACK_LEXICAL_TOPICS[lexname], "Open English WordNet broad lexical category; automatic"
+    if pos == "verb":
+        return "Actions & Processes", "verb study category; automatic"
+    if pos in ("adjective", "adverb"):
+        return "Descriptions & Attributes", "descriptive word study category; automatic"
+    if pos == "noun":
+        return "Ideas & Concepts", "noun study category; automatic; review priority"
+    return "Grammar & Usage", "unrecognized part of speech; automatic; review priority"
 
 
 FIELDS = [
@@ -238,7 +377,7 @@ def main() -> None:
     rows = cefr_records() + advanced_records()
     for row in rows:
         definition, example, lexname, synset_id = wordnet_lookup(row["headword"], row["pos"], entries, synsets)
-        tags, basis = topic_tags(row["source_topics"], lexname)
+        tags, basis = topic_tags(row["source_id"], row["source_topics"], lexname, row["headword"], row["pos"], definition)
         row.update({
             "study_lane": study_level(row["headword"], row["cefr"]), "topics": tags, "topic_basis": basis,
             "definition_en": definition, "example_en": example,
@@ -266,6 +405,7 @@ def main() -> None:
         "definitions_matched": sum(bool(row["definition_en"]) for row in rows),
         "source_topic_rows": sum(row["topic_basis"].startswith("CEFR-J") for row in rows),
         "general_unclassified_rows": sum(row["topics"] == "General & Cross-topic" for row in rows),
+        "topic_assignment_methods": dict(sorted(collections.Counter(row["topic_basis"] for row in rows).items())),
         "missing_definition_rows": sum(not row["definition_en"] for row in rows),
         "topic_count": len(by_topic), "rows_by_cefr": dict(sorted(by_level.items())),
         "rows_by_study_lane": dict(sorted(by_lane.items())),
@@ -308,11 +448,14 @@ IELTS nói rõ hai thang không tương ứng một-một: {SOURCE_URLS['ielts']
 ## Topic và định nghĩa
 
 `source_topics` giữ nguyên nhãn có sẵn từ CEFR-J. `topics` chuẩn hóa nhãn đó;
-nếu nguồn không gắn topic, một số danh từ/động từ được gợi ý topic theo lexical category
-của Open English WordNet. Các từ còn lại ở `General & Cross-topic`.
-`topic_basis` cho biết cách gán. **Không coi gán tự động là đã kiểm duyệt.**
-Có {manifest['general_unclassified_rows']:,} dòng ở `General & Cross-topic` vì nguồn chưa có
-nhãn chủ đề đáng tin cậy; không gán bừa vào IELTS topic.
+những dòng thiếu topic được phân loại theo nhóm nghĩa WordNet, dấu hiệu trong headword,
+định nghĩa tiếng Anh và từ loại. Các trường hợp nguồn thiếu định nghĩa nhưng xác định
+được đã được sửa topic thủ công. **Cả {len(rows):,} dòng đều có topic; không còn nhóm
+General & Cross-topic.** `topic_basis` ghi cách gán để dễ rà soát. Nhóm như
+`Actions & Processes`, `Descriptions & Attributes` và `Grammar & Usage` chứa các từ
+liên chủ đề. Topic tự động chỉ là gợi ý, **không coi là đã kiểm duyệt nghĩa IELTS**.
+`catalog/topical_candidates_for_ielts_review.csv` ưu tiên các dòng có nhãn nguồn,
+nhóm nghĩa WordNet cụ thể hoặc topic đã sửa thủ công.
 `definition_en` và `example_en` lấy first sense cùng từ loại từ Open English WordNet;
 nghĩa đầu tiên có thể sai ngữ cảnh IELTS. `definition_status` đánh dấu cần biên tập
 trước khi đưa vào bài học hoặc tạo câu hỏi chấm điểm. Có {manifest['missing_definition_rows']:,}
@@ -346,7 +489,9 @@ vào website cần giữ attribution của cả ba nguồn.
         bundle.writestr("catalog/vocabulary_all.csv", csv_bytes(rows))
         bundle.writestr("catalog/vocabulary_all.jsonl", "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows))
         bundle.writestr("catalog/topical_candidates_for_ielts_review.csv", csv_bytes([
-            row for row in rows if row["topics"] != "General & Cross-topic"
+            row for row in rows if row["topic_basis"].startswith("CEFR-J")
+            or row["topic_basis"] == "Open English WordNet lexical category; automatic"
+            or row["topic_basis"] == "headword inspected; editorial topic correction"
         ]))
         bundle.writestr("app_current_catalog.json", CATALOG_FILE.read_bytes())
         bundle.writestr("build/build-vocabulary-pack.py", Path(__file__).read_bytes())
