@@ -507,10 +507,10 @@ async function enrichImages(db: Db, result: EnrichResult) {
   // request before articles published in the afternoon arrive.
   if (!result.aiConfigured) return;
   const today = new Date(); today.setUTCHours(0, 0, 0, 0);
-  const hourAgo = new Date(Date.now() - 3600000).toISOString();
+  const thisHour = new Date(); thisHour.setUTCMinutes(0, 0, 0);
   const [{ count: todayCount, error: todayError }, { count: hourCount, error: hourError }] = await Promise.all([
     db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").gte("attempted_at", today.toISOString()),
-    db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").gte("attempted_at", hourAgo),
+    db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").gte("attempted_at", thisHour.toISOString()),
   ]);
   if (todayError) throw todayError;
   if (hourError) throw hourError;
