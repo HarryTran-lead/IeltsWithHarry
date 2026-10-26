@@ -5449,3 +5449,11 @@ a.card:hover {
     flex-direction: column;
   }
 }
+.admin-tts { display: grid; gap: 10px; padding: 16px; border: 1px dashed #b8d9db; border-radius: 14px; background: var(--dot-grid) 0 0 / 14px 14px, #f4fbfb; }
+.admin-tts-head { display: flex; gap: 10px; align-items: flex-start; color: var(--teal-strong); }
+.admin-tts-head h4 { margin: 0 0 2px; color: var(--navy); font-weight: 700; }
+.admin-tts-head p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.5; }
+.admin-tts-head code { padding: 1px 5px; border-radius: 5px; background: #fff; border: 1px solid var(--line); font-size: 12px; }
+.admin-tts-voices { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.admin-tts-voices select, .admin-tts input { width: 100%; padding: 0.55rem 0.7rem; border: 1px solid var(--line-strong); border-radius: 10px; background: #fff; color: var(--navy); font-weight: 400; }
+.admin-tts-actions { display: flex; gap: 8px; }
