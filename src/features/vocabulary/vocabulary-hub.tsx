@@ -12,6 +12,7 @@ import { catalog, filterTerms, findTerm, makeQuiz, normalizeWord, quizScore, top
 import { nextWordReview, type ReviewGrade, type WordReview } from "@/lib/news/review";
 import sourceTopics from "@/lib/vocabulary/source-topics.json";
 import { studyLevels } from "@/lib/vocabulary/study-levels";
+import { VocabularyStudy } from "@/features/vocabulary/vocabulary-study";
 import "@/app/vocabulary-hub.css";
 
 type ReviewEvent = { notebook_entry_id: string; grade: ReviewGrade; reviewed_at: string };
@@ -186,14 +187,15 @@ export function VocabularyHub() {
 
   const common = { terms, saved, savedByWord, reviewById, due, events, attempts, saveWord, removeWord, gradeWord, saveAttempt };
   return <div className="content-page vocab-hub">
-    <header className="vocab-header"><div><span className="eyebrow">IELTSWITHHARRY / VOCABULARY</span><h1>{section === "overview" ? "Học từ vựng hiệu quả hơn" : { learn: "Học từ mới", library: "Kho từ theo topic", notebook: "Từ đã lưu", review: "Ôn tập", practice: "Luyện tập", explore: "Tra từ", progress: "Tiến độ từ vựng" }[section] ?? "Từ vựng"}</h1><p>Học theo chủ đề, lưu từ trong bài đọc và ôn lại đúng thời điểm.</p></div><span className="vocab-header-count">{saved.length} từ đã lưu</span></header>
-    <nav className="vocab-nav" aria-label="Các mục từ vựng">{[["overview", "Tổng quan"], ["learn", "Học từ mới"], ["library", "Kho từ theo topic"], ["notebook", "Từ đã lưu"], ["review", "Ôn tập"], ["practice", "Luyện tập"], ["explore", "Tra từ"]].map(([key, label]) => <Link key={key} href={key === "overview" ? "/app/vocabulary" : `/app/vocabulary/${key}`} aria-current={section === key ? "page" : undefined}>{label}</Link>)}</nav>
+    <header className="vocab-header"><div><span className="eyebrow">IELTSWITHHARRY / VOCABULARY</span><h1>{section === "overview" ? "Học từ vựng hiệu quả hơn" : { learn: "Học từ mới", library: "Kho từ theo topic", study: "Luyện từ theo topic", notebook: "Từ đã lưu", review: "Ôn tập", practice: "Luyện tập", explore: "Tra từ", progress: "Tiến độ từ vựng" }[section] ?? "Từ vựng"}</h1><p>Học theo chủ đề, lưu từ trong bài đọc và ôn lại đúng thời điểm.</p></div><span className="vocab-header-count">{saved.length} từ đã lưu</span></header>
+    <nav className="vocab-nav" aria-label="Các mục từ vựng">{[["overview", "Tổng quan"], ["learn", "Học từ mới"], ["library", "Kho từ theo topic"], ["study", "Thẻ lật & trò chơi"], ["notebook", "Từ đã lưu"], ["review", "Ôn tập"], ["practice", "Luyện tập"], ["explore", "Tra từ"]].map(([key, label]) => <Link key={key} href={key === "overview" ? "/app/vocabulary" : `/app/vocabulary/${key}`} aria-current={section === key ? "page" : undefined}>{label}</Link>)}</nav>
     {(error || notebookError) && <p className="vocab-error" role="alert">{error || notebookError}</p>}
     {(loading || !notebookReady) ? <div className="vocab-panel">Đang tải từ vựng…</div>
       : section === "overview" ? <Overview {...common} mastered={mastered} reviewedToday={reviewedToday} />
       : section === "learn" && parts[1] ? <WordDetail wordId={parts[1]} terms={terms} savedByWord={savedByWord} saveWord={saveWord} gradeWord={gradeWord} events={events} back={`/app/vocabulary/learn?${searchParams.toString()}`} />
       : section === "learn" ? <Learn terms={terms} savedByWord={savedByWord} />
       : section === "library" ? <Library savedByWord={savedByWord} saveWord={saveWord} />
+      : section === "study" ? <VocabularyStudy />
       : section === "notebook" ? <SavedWords {...common} />
       : section === "review" ? <Review saved={saved} due={due} reviewById={reviewById} gradeWord={gradeWord} />
       : section === "practice" ? <Practice {...common} />
@@ -227,6 +229,8 @@ type ReferenceEntry = {
   source_id: string; headword: string; pos: string; cefr: string; study_lane: string;
   topics: string[]; source_definition_en: string; source_example_en: string;
   source_name: string; source_url: string; definition_source_url: string; total_count: number;
+  meaning_vi: string; meaning_options: string[]; meaning_status: string;
+  meaning_source: string; meaning_source_url: string; source_ipa: string;
 };
 
 function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWord">) {
@@ -255,9 +259,9 @@ function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWo
       setLoading(true);
       setError("");
       if (mode === "reference") {
-        const result = await db.rpc("list_vocabulary_reference_by_level", {
+        const result = await db.rpc("list_vocabulary_study_by_level", {
           p_query: query.trim(), p_level: level === "all" ? "" : level,
-          p_topic: topic === "all" ? "" : topic, p_page: page,
+          p_topic: topic === "all" ? "" : topic, p_page: page, p_page_size: 20,
         });
         if (!active) return;
         if (result.error) setError(result.error.message);
@@ -285,15 +289,15 @@ function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWo
   }, [db, mode, query, topic, level, page]);
 
   return <div className="vocab-library">
-    <section className="vocab-panel"><h2>Học từ vựng theo topic và Level</h2><p>Chọn chủ đề hoặc Level bên dưới để xem từ, nghe phát âm và tra nghĩa. Level 1–7+ là thứ tự học nội bộ, không phải band IELTS của từng từ.</p>
+    <section className="vocab-panel"><h2>Học từ vựng theo topic và Level</h2><p>Chọn chủ đề hoặc Level bên dưới để xem từ, nghe phát âm và tra nghĩa. Level 1–7+ là thứ tự học nội bộ, không phải band IELTS của từng từ.</p><Link className="vocab-button primary" href={`/app/vocabulary/study?${new URLSearchParams({ ...(topic !== "all" ? { topic } : {}), ...(level !== "all" ? { level } : {}) })}`}>Học bằng thẻ lật & trò chơi →</Link>
       <div className="vocab-library-tabs" role="group" aria-label="Loại kho từ"><button type="button" className={mode === "reference" ? "active" : ""} aria-pressed={mode === "reference"} onClick={() => { setMode("reference"); setPage(0); setTopic("all"); setTotal(0); setReferenceRows([]); }}>Kho nguồn cho học viên</button><button type="button" className={mode === "reviewed" ? "active" : ""} aria-pressed={mode === "reviewed"} onClick={() => { setMode("reviewed"); setPage(0); setTopic("all"); setTotal(0); setRows([]); }}>Từ đã duyệt</button></div>
-      <p className="vocab-library-notice">{mode === "reference" ? "Kho từ nguồn đã mở cho học viên học theo topic và Level. Topic và định nghĩa được gắn tự động, chưa kiểm tra ngữ cảnh IELTS hoặc thêm nghĩa Việt. Bạn có thể tra từng từ trước khi lưu vào sổ." : "Từ đã được biên tập có nghĩa Việt, định nghĩa và topic được duyệt để học và lưu trực tiếp."}</p>
+      <p className="vocab-library-notice">{mode === "reference" ? "Kho từ đã có gợi ý nghĩa Việt từ từ điển mở. Các nghĩa tự khớp chưa được biên tập theo ngữ cảnh IELTS; hãy đối chiếu định nghĩa tiếng Anh khi học." : "Từ đã được biên tập có nghĩa Việt, định nghĩa và topic được duyệt để học và lưu trực tiếp."}</p>
       <div className="vocab-filter-bar"><input aria-label="Tìm từ trong kho" placeholder="Tìm từ tiếng Anh…" value={query} onChange={(event) => { setPage(0); setQuery(event.target.value); }} /><select aria-label="Chọn topic" value={topic} onChange={(event) => { setPage(0); setTopic(event.target.value); }}><option value="all">Mọi topic</option>{sourceTopics.map((item) => <option key={item} value={item}>{item}</option>)}</select><select aria-label="Chọn level học" value={level} onChange={(event) => { setPage(0); setLevel(event.target.value); }}><option value="all">Mọi level</option>{studyLevels.map((item) => <option key={item}>{item}</option>)}</select></div>
       {(topic !== "all" || level !== "all") && <p className="vocab-muted">Đang học: {topic === "all" ? "mọi chủ đề" : topic} · {level === "all" ? "mọi Level" : level}</p>}
       {demoMode && <p>Kho trực tuyến cần kết nối Supabase.</p>}{error && <p role="alert" className="vocab-error">{error}</p>}
       {!demoMode && <p className="vocab-muted">{loading ? "Đang tải…" : total.toLocaleString("vi-VN") + (mode === "reference" ? " từ nguồn đang mở" : " từ đã duyệt")}</p>}
     </section>
-    {mode === "reference" ? <div className="vocab-library-grid">{referenceRows.map((row) => <article className="vocab-panel vocab-library-card" key={row.source_id}><div><span className="vocab-tag">{row.study_lane} · {row.topics[0] ?? "General"}</span><h2>{row.headword}</h2><small>{row.pos} · CEFR nguồn {row.cefr}</small></div><span className="vocab-reference-badge">Nguồn tham khảo · chưa duyệt</span><p>{row.source_definition_en || "Nguồn chưa có định nghĩa tiếng Anh cho từ này."}</p>{row.source_example_en && <em>{row.source_example_en}</em>}<div className="vocab-library-actions"><button className="vocab-button soft" onClick={() => speak(row.headword)}><Volume2 size={16} /> Nghe</button><Link className="vocab-button primary" href={`/app/vocabulary/explore?q=${encodeURIComponent(row.headword)}`}>Tra và lưu từ</Link></div><small className="vocab-muted">Nguồn: <a href={row.source_url} target="_blank" rel="noopener noreferrer">{row.source_name}</a>{row.definition_source_url && <> · <a href={row.definition_source_url} target="_blank" rel="noopener noreferrer">Định nghĩa gốc</a></>}</small></article>)}</div> : <div className="vocab-library-grid">{rows.map((row) => {
+    {mode === "reference" ? <div className="vocab-library-grid">{referenceRows.map((row) => <article className="vocab-panel vocab-library-card" key={row.source_id}><div><span className="vocab-tag">{row.study_lane} · {row.topics[0] ?? "General"}</span><h2>{row.headword}</h2><small>{row.pos} · CEFR nguồn {row.cefr}</small></div><span className="vocab-reference-badge">{row.meaning_status === "editor_reviewed" ? "Đã biên tập" : "Nghĩa từ điển · chưa duyệt ngữ cảnh"}</span><strong>{row.meaning_vi || "Chưa có nghĩa Việt trong nguồn mở"}</strong>{row.meaning_options?.length > 1 && <small className="vocab-muted">Nghĩa khác: {row.meaning_options.slice(1, 3).join(" · ")}</small>}<p>{row.source_definition_en || "Nguồn chưa có định nghĩa tiếng Anh cho từ này."}</p>{row.source_example_en && <em>{row.source_example_en}</em>}<div className="vocab-library-actions"><button className="vocab-button soft" onClick={() => speak(row.headword)}><Volume2 size={16} /> Nghe</button><Link className="vocab-button primary" href={`/app/vocabulary/explore?q=${encodeURIComponent(row.headword)}`}>Tra và lưu từ</Link></div><small className="vocab-muted">Nguồn: <a href={row.source_url} target="_blank" rel="noopener noreferrer">{row.source_name}</a>{row.definition_source_url && <> · <a href={row.definition_source_url} target="_blank" rel="noopener noreferrer">Định nghĩa gốc</a></>}{row.meaning_source_url && <> · <a href={row.meaning_source_url} target="_blank" rel="noopener noreferrer">Từ điển Việt</a></>}</small></article>)}</div> : <div className="vocab-library-grid">{rows.map((row) => {
       const term: VocabularyTerm = {
         id: row.source_id, word: row.headword, ipa: "", pos: row.pos, meaning: row.meaning_vi,
         level: row.study_lane, topic: row.reviewed_topic, collocations: [], synonyms: "",
@@ -304,7 +308,7 @@ function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWo
     })}</div>}
     {!loading && !(mode === "reference" ? referenceRows.length : rows.length) && !demoMode && !error && <div className="vocab-panel vocab-empty">Không tìm thấy từ phù hợp với bộ lọc hiện tại.</div>}
     {total > 20 && <div className="vocab-library-pages"><button className="vocab-button soft" disabled={page === 0} onClick={() => setPage(page - 1)}>← Trước</button><span>Trang {page + 1} / {Math.ceil(total / 20)}</span><button className="vocab-button soft" disabled={(page + 1) * 20 >= total} onClick={() => setPage(page + 1)}>Sau →</button></div>}
-    <p className="vocab-muted">Nguồn từ: <a href="https://www.cefr-j.org/download.html" target="_blank" rel="noopener noreferrer">CEFR-J</a>, <a href="https://github.com/openlanguageprofiles/olp-en-cefrj" target="_blank" rel="noopener noreferrer">Octanove (CC BY-SA 4.0)</a>. Định nghĩa nguồn từ <a href="https://en-word.net/" target="_blank" rel="noopener noreferrer">Open English WordNet (CC BY 4.0)</a>. CEFR-J là danh sách từ tiếng Anh được biên soạn tại Nhật.</p>
+    <p className="vocab-muted">Nguồn từ: <a href="https://www.cefr-j.org/download.html" target="_blank" rel="noopener noreferrer">CEFR-J</a>, <a href="https://github.com/openlanguageprofiles/olp-en-cefrj" target="_blank" rel="noopener noreferrer">Octanove (CC BY-SA 4.0)</a>. Định nghĩa nguồn từ <a href="https://en-word.net/" target="_blank" rel="noopener noreferrer">Open English WordNet (CC BY 4.0)</a>. Gợi ý nghĩa Việt từ <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noopener noreferrer">Thichhoc</a> và <a href="https://github.com/skypediacode/english-vietnamese-dictionary" target="_blank" rel="noopener noreferrer">Skypedia</a> (CC BY-SA 4.0). CEFR-J là danh sách từ tiếng Anh được biên soạn tại Nhật.</p>
   </div>;
 }
 
@@ -316,6 +320,7 @@ function Overview({ terms, saved, due, mastered, reviewedToday }: Common & { mas
     { title: "Luyện tập", sub: "Kiểm tra mức độ ghi nhớ", href: "practice", icon: Check, tint: "blue" },
     { title: "Tra từ", sub: "Xem nghĩa, IPA và ví dụ", href: "explore", icon: Search, tint: "pink" },
     { title: "Kho từ theo topic", sub: "Học từ nguồn theo 36 topic và Level 1–7+", href: "library", icon: BookOpen, tint: "mint" },
+    { title: "Thẻ lật & trò chơi", sub: "Flashcards, trắc nghiệm, gõ từ, ghép cặp", href: "study", icon: RotateCcw, tint: "lilac" },
   ];
   return <>
     <div className="vocab-feature-grid">{features.map(({ title, sub, href, icon: Icon, tint }) => <Link href={`/app/vocabulary/${href}`} className={`vocab-feature ${tint}`} key={href}><span><Icon size={25} /></span><strong>{title}</strong><small>{sub}</small><ArrowRight size={18} className="vocab-feature-arrow" /></Link>)}</div>
