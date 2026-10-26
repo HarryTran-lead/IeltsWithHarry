@@ -24,6 +24,8 @@ import { PlannerMini } from "@/features/planner/planner-widgets";
 import { useDemo } from "@/features/demo/demo-store";
 import { offsetISO, recommendations, skillColors, stages, todayISO, type Skill } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
+import { LatestNews, StudyRoomCard } from "./dashboard-widgets";
+import "./dashboard.css";
 
 const skillIcons: Partial<Record<Skill, typeof BookOpenText>> = {
   Reading: BookOpenText,
@@ -46,7 +48,7 @@ function WelcomeBanner() {
         <h1>
           Keep going, you’re doing <span className="hl">great</span>!
         </h1>
-        <span>Step by step to a more confident you.</span>
+        <div className="welcome-row">
         <StreakWeek />
         <div className="welcome-actions">
           <Link href="/app/lesson/technology-digital-life" className="button primary">
@@ -56,12 +58,11 @@ function WelcomeBanner() {
             <CalendarDays size={16} /> {doneToday}/{goal} tasks today
           </Link>
         </div>
+        </div>
       </div>
       <div className="welcome-art" aria-hidden="true">
-        <HarryBuddy size={126} className="welcome-harry" />
-        <Sticker name="star" label="7.0" size={62} tilt={-12} delay={260} float className="welcome-star" />
-        <Sticker name="book" size={64} tilt={10} delay={340} className="welcome-book" />
-        <Sticker name="pencil" size={50} tilt={-20} delay={420} className="welcome-pencil" />
+        <HarryBuddy size={92} className="welcome-harry" />
+        <Sticker name="star" label="7.0" size={46} tilt={-12} delay={260} float className="welcome-star" />
       </div>
     </section>
   );
@@ -332,8 +333,9 @@ export function Dashboard() {
   return (
     <div className="dashboard-grid">
       <div className="dashboard-main stagger">
-        <div className="demo-note"><i aria-hidden="true" /> {demoMode ? "Demo preview · Your changes are saved in this browser" : "Your tasks and practice are saved to your account"}</div>
+        {demoMode && <div className="demo-note"><i aria-hidden="true" /> Demo preview · Your changes are saved in this browser</div>}
         <WelcomeBanner />
+        <LatestNews />
         <LearningPath />
         <div className="dashboard-duo">
           <TodayGoal />
@@ -342,16 +344,9 @@ export function Dashboard() {
         <Recommended />
       </div>
       <aside className="dashboard-aside stagger">
+        <StudyRoomCard />
         <PlannerMini />
         <Achievements />
-        <Link href="/app/study-together" className="card encouragement lift">
-          <Sticker name="coffee" size={50} tilt={-6} />
-          <div>
-            <strong>One step closer!</strong>
-            <p>A little practice every day adds up. Join the study room.</p>
-          </div>
-          <ArrowRight size={18} />
-        </Link>
       </aside>
     </div>
   );

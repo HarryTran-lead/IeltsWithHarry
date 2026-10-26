@@ -1,0 +1,60 @@
+/* Dashboard first screen: a slim welcome, the newest news and the study room all fit above the fold. */
+.dashboard-grid .welcome-banner { min-height: 0; }
+.dashboard-grid .welcome-copy { flex: 1; width: auto; min-width: 0; padding: 14px 128px 14px 24px; }
+.dashboard-grid .welcome-greeting { margin-bottom: 2px; font-size: 17px; }
+.dashboard-grid .welcome-copy h1 { margin: 0; font-size: clamp(20px, 1.9vw, 25px); }
+.welcome-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 10px; }
+.welcome-row .streak-week { flex-wrap: nowrap; gap: 5px; margin: 0; }
+.welcome-row .streak-week b { order: 0; flex: none; margin: 0 0 14px 4px; }
+.welcome-row .streak-day i { width: 24px; height: 24px; }
+.welcome-row .streak-day small { font-size: 10px; }
+.dashboard-grid .welcome-actions { gap: 8px; margin: 0 0 14px; }
+.dashboard-grid .welcome-art { right: 6px; width: 128px; }
+.dashboard-grid .welcome-art .harry-buddy { right: 4px; bottom: 4px; }
+.dashboard-grid .welcome-star { top: 8px; left: 0; }
+/* Harry's tip shows on hover so it never covers the streak or buttons. */
+.dashboard-grid .welcome-art .harry-buddy-bubble { right: 72%; bottom: 62%; opacity: 0; translate: 0 6px; pointer-events: none; animation: none; transition: opacity 0.2s, translate 0.25s var(--ease-spring); }
+.dashboard-grid .welcome-art .harry-buddy:is(:hover, :focus-visible) .harry-buddy-bubble { opacity: 1; translate: 0 0; }
+.dashboard-grid .welcome-art .harry-buddy small { display: none; }
+
+.dash-news { padding: 16px 18px; }
+.dash-news .card-head { margin-bottom: 12px; }
+.dash-news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.dash-news-card { display: grid; grid-template-rows: auto auto 1fr; gap: 6px; min-width: 0; padding: 6px 6px 10px; border: 1px solid var(--line); border-radius: 14px; background: #fff; transition: translate 0.35s var(--ease-spring), box-shadow 0.3s var(--ease-out), border-color 0.3s; }
+.dash-news-card:hover { translate: 0 -3px; border-color: #bfe3e5; box-shadow: var(--shadow-lg); }
+.dash-news-card.skeleton { height: 178px; }
+.dash-news-img { position: relative; display: block; aspect-ratio: 2 / 1; overflow: hidden; border-radius: 10px; background: var(--surface-2); }
+.dash-news-img img { object-fit: cover; transition: scale 0.5s var(--ease-out); }
+.dash-news-card:hover .dash-news-img img { scale: 1.06; }
+.dash-news-img small { position: absolute; top: 7px; left: 7px; z-index: 1; padding: 2px 8px; border-radius: 99px; background: rgba(255, 255, 255, 0.92); color: var(--navy); font-size: 11px; font-weight: 700; }
+.dash-news-card strong { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; padding: 0 4px; color: var(--navy); font-size: 13.5px; line-height: 1.35; }
+.dash-news-meta { align-self: end; overflow: hidden; padding: 0 4px; color: var(--muted); font-size: 11.5px; text-overflow: ellipsis; white-space: nowrap; }
+
+.dash-room { display: grid; gap: 12px; padding: 16px; background: linear-gradient(160deg, #fff6ea, #fff 62%); }
+.dash-room-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.dash-room-live { display: inline-flex; align-items: center; gap: 7px; color: #c2410c; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.dash-room-live i { width: 8px; height: 8px; border-radius: 50%; background: #c3c7bd; }
+.dash-room-live.is-live i { background: #ef4444; animation: room-pulse 1.6s ease-out infinite; }
+@keyframes room-pulse { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); } 100% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); } }
+.dash-room-online { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border: 1px solid var(--line); border-radius: 99px; background: #fff; color: var(--muted); font-size: 12.5px; }
+.dash-room-online b { color: var(--navy); }
+.dash-room-body { display: flex; align-items: center; gap: 12px; }
+.dash-room-body strong { color: var(--navy); font-size: 16px; }
+.dash-room-body p { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
+.dash-room-chat { display: grid; gap: 6px; margin: 0; padding: 8px 10px; border: 1px dashed #f0d6b2; border-radius: 12px; background: rgba(255, 255, 255, 0.85); list-style: none; }
+.dash-room-chat li { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.dash-room-chat span { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-strong); font-size: 11px; font-weight: 800; }
+.dash-room-chat p { min-width: 0; margin: 0; overflow: hidden; color: var(--navy); font-size: 12.5px; text-overflow: ellipsis; white-space: nowrap; }
+.dash-room-chat b { font-weight: 700; }
+.dash-room-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.dash-room-foot > span { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); font-size: 12.5px; }
+.dash-room-foot b { color: var(--navy); }
+.dash-room-foot .button { min-height: 38px; }
+
+@media (max-width: 700px) {
+  .dashboard-grid .welcome-copy { padding: 14px 16px; }
+  .dashboard-grid .welcome-art { display: none; }
+  .dash-news-grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; }
+  .dash-news-card { scroll-snap-align: start; }
+}
+@media (prefers-reduced-motion: reduce) { .dash-room-live.is-live i { animation: none; } }
