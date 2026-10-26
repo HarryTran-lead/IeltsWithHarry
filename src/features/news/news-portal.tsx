@@ -244,7 +244,7 @@ function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read =
   return <article className={`news-card ${read ? "is-read" : ""}`}>
     <Link href={href} className="news-card-art" tabIndex={-1} aria-hidden="true" style={{ background: `linear-gradient(135deg, ${accents[row.category]}45, #fffaf3)` }}>
       {image ? <Image src={image.image_url} alt="" fill sizes="(max-width: 650px) 100vw, (max-width: 1050px) 50vw, 33vw" unoptimized/> : <Sticker name={categorySticker(row.category)} size={64} tilt={-6} />}
-      {image?.ai && <span className="news-ai-art-badge" title="Ảnh minh họa do AI tạo, không phải ảnh thực tế">Ảnh AI</span>}
+      {image?.ai && <em className="news-ai-art-badge" title="Ảnh minh họa do AI tạo, không phải ảnh thực tế">Ảnh AI</em>}
       <small>{row.category}</small>
       {read ? <em className="news-card-flag read"><CheckCircle2 size={13} /> Đã đọc</em> : fresh ? <em className="news-card-flag">Mới</em> : null}
     </Link>
