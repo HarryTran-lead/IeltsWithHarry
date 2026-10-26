@@ -19,6 +19,8 @@ type StudyPresence = {
   subscribeMessages: (listener: MessageListener) => () => void;
 };
 
+const STREAK_SECONDS = 300;
+
 const StudyPresenceContext = createContext<StudyPresence>({
   online: null,
   status: "offline",
@@ -82,6 +84,8 @@ export function StudyPresenceProvider({ children }: { children: React.ReactNode 
       const next = (Number.isFinite(previous) && previous > 0 ? previous : 0) + 1;
       window.localStorage.setItem(key, String(next));
       setStudySeconds(next);
+      // Five minutes in the room counts as a learning day for the streak (the server records it once per day).
+      if (next === STREAK_SECONDS && !demoMode) void createClient().rpc("record_study_room_activity");
     }, 1000);
     return () => window.clearInterval(timer);
   }, [sessionActive, sessionUser]);

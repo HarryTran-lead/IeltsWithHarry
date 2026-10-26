@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { CheckCircle2, Sparkles, XCircle } from "lucide-react";
+import { CheckCircle2, RotateCcw, Sparkles, XCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrateScore } from "@/lib/celebrate";
 import "@/app/news-enrichment.css";
@@ -10,6 +10,7 @@ type QuestionType = "tfng" | "mcq" | "sentence_completion" | "short_answer";
 type Question = { id: string; sort_order: number; question_type: QuestionType; prompt: string; options: string[]; supporting_sentence: string };
 type Review = { id: string; correct: boolean; correctIndex: number | null; acceptedAnswers: string[] | null; explanation: string; optionNotes: string[] | null; supportingSentence: string };
 type Result = { score: number; total: number; review: Review[] };
+type SavedResult = Result & { answers: Record<string, string>; submittedAt: string; attempts: number };
 
 // Instructions follow the wording of IELTS Academic Reading papers.
 const groups: Record<QuestionType, { title: string; instruction: string; hint: string }> = {
@@ -33,14 +34,27 @@ export function NewsAutoQuiz({ articleId, onProgress }: { articleId: string; onP
   const [result, setResult] = useState<Result | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [saved, setSaved] = useState<{ submittedAt: string; attempts: number } | null>(null);
   useEffect(() => {
     let live = true;
-    void db.from("news_auto_questions").select("id,sort_order,question_type,prompt,options,supporting_sentence")
-      .eq("article_id", articleId).order("sort_order").then(({ data, error: loadError }) => {
-        if (!live) return;
-        if (loadError) setError("Chưa tải được câu hỏi của bài này.");
-        else setQuestions((data ?? []) as Question[]);
-      });
+    void Promise.all([
+      db.from("news_auto_questions").select("id,sort_order,question_type,prompt,options,supporting_sentence").eq("article_id", articleId).order("sort_order"),
+      db.rpc("news_auto_quiz_last_result", { p_article_id: articleId }),
+    ]).then(([loaded, last]) => {
+      if (!live) return;
+      if (loaded.error) { setError("Chưa tải được câu hỏi của bài này."); return; }
+      const list = (loaded.data ?? []) as Question[];
+      setQuestions(list);
+      // A finished quiz opens with the saved answers and review instead of a blank sheet.
+      const previous = last.data as SavedResult | null;
+      if (!previous) return;
+      setAnswers(Object.fromEntries(list.filter((question) => previous.answers[question.id] !== undefined).map((question) => {
+        const value = previous.answers[question.id];
+        return [question.id, question.question_type === "tfng" || question.question_type === "mcq" ? Number(value) : value];
+      })));
+      setResult({ score: previous.score, total: previous.total, review: previous.review });
+      setSaved({ submittedAt: previous.submittedAt, attempts: previous.attempts });
+    });
     return () => { live = false; };
   }, [articleId, db]);
 
@@ -64,7 +78,10 @@ export function NewsAutoQuiz({ articleId, onProgress }: { articleId: string; onP
     const { data, error: submitError } = await db.rpc("news_submit_auto_quiz", { p_article_id: articleId, p_answers: payload });
     setBusy(false);
     if (submitError) setError(submitError.message);
-    else { setResult(data as Result); celebrateScore((data as Result).score, (data as Result).total); }
+    else {
+      setResult(data as Result); celebrateScore((data as Result).score, (data as Result).total);
+      setSaved((current) => ({ submittedAt: new Date().toISOString(), attempts: (current?.attempts ?? 0) + 1 }));
+    }
   }
 
   if (!questions.length && !error) return null;
@@ -105,7 +122,11 @@ export function NewsAutoQuiz({ articleId, onProgress }: { articleId: string; onP
     })}
     {questions.length > 0 && !result && <div className="news-auto-submit"><span>Đã làm {answered}/{questions.length} câu</span>
       <button type="button" className="button primary" disabled={busy || answered !== questions.length} onClick={() => void submit()}>{busy ? "Đang chấm…" : "Nộp bài và xem đáp án"}</button></div>}
-    {result && <div className="news-auto-score">Bạn đúng <strong>{result.score}/{result.total}</strong> câu ({Math.round(result.score / result.total * 100)}%). Kết quả đã lưu vào lịch sử học.</div>}
+    {result && <div className="news-auto-score">
+      <span>Bạn đúng <strong>{result.score}/{result.total}</strong> câu ({Math.round(result.score / result.total * 100)}%).
+        {saved && <> Đã lưu lần làm thứ {saved.attempts} lúc {new Date(saved.submittedAt).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" })}.</>}</span>
+      <button type="button" className="button subtle" onClick={() => { setResult(null); setAnswers({}); }}><RotateCcw size={15} /> Làm lại</button>
+    </div>}
   </section>;
 }
 

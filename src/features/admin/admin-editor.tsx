@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes, LibraryBig } from "lucide-react";
+import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes, LibraryBig, UsersRound, Megaphone, History } from "lucide-react";
 import { Sticker } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { AdminShell, type AdminNavGroup } from "./admin-shell";
@@ -12,6 +12,7 @@ import { MediaLibrary } from "./media-library";
 import { skillMaterialSchema, type SkillName } from "@/lib/skill-material";
 import { AdminNews } from "./admin-news";
 import { VocabularyBank } from "./vocabulary-bank";
+import { AdminAudit, AdminBroadcast, AdminLearnerDetail, AdminLearners } from "./admin-learners";
 
 type Course = { id: string; stage_id: string; slug: string; title: string; description: string; published: boolean };
 type Unit = { id: string; course_id: string; slug: string; title: string; published: boolean };
@@ -19,6 +20,9 @@ type Lesson = { id: string; unit_id: string; slug: string; title: string; skill:
 const skillTabs = ["Vocabulary", "Grammar", "Reading", "Listening", "Writing", "Speaking"] as const;
 const nav = [
   { slug: "overview", label: "Tổng quan", icon: LayoutDashboard },
+  { slug: "users", label: "Học viên", icon: UsersRound },
+  { slug: "users/broadcast", label: "Thông báo & giao bài", icon: Megaphone },
+  { slug: "users/audit", label: "Nhật ký admin", icon: History },
   { slug: "curriculum", label: "Lộ trình & bài học", icon: GraduationCap },
   { slug: "vocabulary", label: "Vocabulary", icon: Languages },
   { slug: "vocabulary/library", label: "Kho từ & nhập ZIP", icon: LibraryBig },
@@ -38,6 +42,7 @@ const nav = [
 ] as const;
 const navGroups = [
   { label: "Tổng quan", slugs: ["overview"] },
+  { label: "Học viên", slugs: ["users", "users/broadcast", "users/audit"] },
   { label: "Nội dung", slugs: ["curriculum", "media"] },
   { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "grammar", "reading", "listening", "writing", "speaking"] },
   { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/sync-logs"] },
@@ -46,6 +51,9 @@ const descriptions: Record<string, string> = {
   overview: "Quản lý nội dung học tập theo từng kỹ năng và theo dõi trạng thái xuất bản.",
   curriculum: "Tạo khóa học, unit và bài học trước khi nhập nội dung cho từng kỹ năng.",
   media: "Quản lý hình minh họa và âm thanh dùng trong bài học.",
+  users: "Theo dõi hoạt động, streak và kiểm soát tài khoản từng học viên: khóa, cấm chat, giao nhiệm vụ, đặt mục tiêu, gửi thông báo.",
+  "users/broadcast": "Gửi thông báo, giao nhiệm vụ và đặt mục tiêu ngày cho cả lớp cùng lúc.",
+  "users/audit": "Mọi thao tác của admin trên tài khoản học viên đều được ghi lại ở đây.",
 };
 function StatusPill({ published }: { published: boolean }) {
   return <span className={published ? "status-pill live" : "status-pill draft"}><i aria-hidden="true" />{published ? "Đã xuất bản" : "Bản nháp"}</span>;
@@ -54,7 +62,9 @@ export function AdminEditor() {
   const supabase = useMemo(() => createClient(), []);
   const pathname = usePathname();
   const segment = pathname.split("/").slice(2).join("/") || "overview";
-  const section = nav.some((item) => item.slug === segment) ? segment : "overview";
+  // /admin/users/<id> opens one learner inside the Học viên section.
+  const learnerId = /^users\/[0-9a-f-]{36}$/.test(segment) ? segment.slice("users/".length) : null;
+  const section = learnerId ? "users" : nav.some((item) => item.slug === segment) ? segment : "overview";
   const sectionLabel = nav.find((item) => item.slug === section)?.label ?? "Tổng quan";
   const currentSkill = skillTabs.find((item) => item.toLowerCase() === section);
   const [courses, setCourses] = useState<Course[]>([]);
@@ -175,5 +185,8 @@ export function AdminEditor() {
     {section === "media" && <MediaLibrary />}
     {section.startsWith("news") && <AdminNews section={section} />}
     </>}
+    {section === "users" && (learnerId ? <AdminLearnerDetail key={learnerId} id={learnerId} /> : <AdminLearners />)}
+    {section === "users/broadcast" && <AdminBroadcast />}
+    {section === "users/audit" && <AdminAudit />}
   </AdminShell>;
 }

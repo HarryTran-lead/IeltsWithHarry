@@ -25,6 +25,8 @@ import { useDemo } from "@/features/demo/demo-store";
 import { offsetISO, recommendations, skillColors, stages, todayISO, type Skill } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
 import { LatestNews, StudyRoomCard } from "./dashboard-widgets";
+import { useLearnerStreak } from "@/features/account/use-learner-streak";
+import { streakWeek } from "@/lib/account";
 import "./dashboard.css";
 
 const skillIcons: Partial<Record<Skill, typeof BookOpenText>> = {
@@ -70,25 +72,31 @@ function WelcomeBanner() {
 
 const weekdays = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
 
-/** Monday-to-Sunday strip; a day lights up once any planner task dated that day is ticked off. */
+/**
+ * Monday-to-Sunday strip. With an account a day lights up from the saved learning
+ * activity; in the demo it lights up once a planner task dated that day is ticked off.
+ */
 function StreakWeek() {
   const { tasks } = useDemo();
-  const today = todayISO();
+  const saved = useLearnerStreak();
+  const today = saved?.today ?? todayISO();
   const mondayOffset = -((new Date().getDay() + 6) % 7);
-  const days = weekdays.map((label, index) => {
-    const date = offsetISO(mondayOffset + index);
-    return { label, date, done: tasks.some((task) => task.date === date && task.completed) };
-  });
+  const days = saved
+    ? streakWeek(saved.days, saved.today).map((cell, index) => ({ label: weekdays[index], date: cell.date, done: cell.events > 0 }))
+    : weekdays.map((label, index) => {
+      const date = offsetISO(mondayOffset + index);
+      return { label, date, done: demoMode && tasks.some((task) => task.date === date && task.completed) };
+    });
   const active = days.filter((day) => day.done).length;
   return (
-    <div className="streak-week" aria-label={`${active} trên 7 ngày tuần này có hoàn thành nhiệm vụ`}>
+    <div className="streak-week" aria-label={saved ? `Chuỗi ${saved.current} ngày học liên tiếp` : `${active} trên 7 ngày tuần này có hoàn thành nhiệm vụ`}>
       {days.map((day) => (
         <span key={day.date} className={`streak-day ${day.done ? "done" : ""} ${day.date === today ? "today" : ""} ${day.date > today ? "future" : ""}`} title={day.date}>
           <i>{day.done ? <Sticker name="flame" size={22} pop={false} /> : null}</i>
           <small>{day.label}</small>
         </span>
       ))}
-      <b>{active}/7 ngày</b>
+      <b>{saved ? `${saved.current} ngày liên tiếp` : `${active}/7 ngày`}</b>
     </div>
   );
 }

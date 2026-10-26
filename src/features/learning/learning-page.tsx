@@ -25,7 +25,7 @@ import { lessonCount, OpenCourses, StageLessons, usePublishedCourses } from "./s
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
-import { SettingsPage } from "@/features/auth/settings-page";
+import { ProfilePage } from "@/features/account/profile-page";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { SavedWordReview } from "@/features/news/saved-word-review";
 
@@ -965,7 +965,7 @@ export function LearningPage({ section }: { section: string }) {
   if (section === "speaking") return <SpeakingPage />;
   if (section === "progress" || section === "achievements")
     return <ProgressPage />;
-  if (section === "settings") return <SettingsPage />;
+  if (section === "settings" || section === "profile") return <ProfilePage />;
   return (
     <UnavailablePage
       title={section.charAt(0).toUpperCase() + section.slice(1)}

@@ -11,3 +11,4 @@
 .news-auto-options label{flex-wrap:wrap}.news-auto-options label em{flex:1;min-width:0;font-style:normal}.news-auto-note{flex-basis:100%;margin:2px 0 0 34px;color:#5f7488;font-size:13px;line-height:1.5}.news-auto-options label.correct .news-auto-note{color:#226b4b}.news-auto-options label.wrong .news-auto-note{color:#9a3d33}.news-auto-options.tfng .news-auto-note{margin-left:0;text-align:left;font-weight:500;letter-spacing:0}
 .news-auto-why{line-height:1.6}.news-auto-explanation b{font-weight:800}
 @media(max-width:700px){.news-auto-options{grid-template-columns:1fr}.news-auto-options.tfng{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.news-auto-options.tfng label{padding:8px 6px;font-size:12px;gap:6px}.news-auto-written.inline{width:130px}}
+.news-auto-score{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}.news-auto-score .button{font-weight:700}

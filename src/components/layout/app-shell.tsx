@@ -41,6 +41,7 @@ import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
 import { useStudyPresence } from "@/features/study-room/study-presence";
+import { NotificationBell } from "@/components/account/notification-bell";
 
 const groups = [
   {
@@ -244,7 +245,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
           </div>
           <span className="header-divider" aria-hidden="true" />
           <div className="popover-wrap">
-            <button
+            {!demoMode ? <NotificationBell open={notificationsOpen} onToggle={() => { setNotificationsOpen(!notificationsOpen); setProfileOpen(false); }} /> : <><button
               className="icon-button notification-button"
               aria-label="Notifications"
               aria-expanded={notificationsOpen}
@@ -263,7 +264,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                   Welcome to your learning lab! Your practice tasks are ready.
                 </p>
               </div>
-            )}
+            )}</>}
           </div>
           <div className="popover-wrap">
             <button
@@ -289,10 +290,16 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                   <ChartNoAxesCombined size={16} /> Progress
                 </Link>
                 <Link
-                  href="/app/settings"
+                  href="/app/profile"
                   onClick={() => setProfileOpen(false)}
                 >
-                  <Settings size={16} /> Settings
+                  <UserRound size={16} /> Hồ sơ của tôi
+                </Link>
+                <Link
+                  href="/app/profile#edit"
+                  onClick={() => setProfileOpen(false)}
+                >
+                  <Settings size={16} /> Chỉnh sửa hồ sơ
                 </Link>
                 {canManage && <Link href="/admin" onClick={() => setProfileOpen(false)}><ShieldCheck size={16} /> Admin portal</Link>}
                 {demoMode ? <button onClick={async () => { await fetch("/auth/demo", { method: "DELETE" }); router.push("/"); router.refresh(); }}><LogOut size={16} /> Thoát demo</button> :
