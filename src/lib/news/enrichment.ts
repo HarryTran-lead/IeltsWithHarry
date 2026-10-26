@@ -2,6 +2,7 @@ import { load } from "cheerio";
 import { z } from "zod";
 import { newsAdminClient } from "./sync";
 import { loadNewsSettings } from "./settings";
+import { AiArtLimitError, aiArtBucket, aiArtCredit, aiArtLicense, aiArtSlots, aiArtSourceUrl, generateAiArt } from "./ai-art";
 
 /** IELTS Reading question types, in the order a set presents them. */
 export const questionTypes = ["tfng", "mcq", "sentence_completion", "short_answer"] as const;
@@ -443,9 +444,10 @@ export const minimumImageFit = 7;
  * The best licensed illustration, chosen by Gemini looking at the candidate images
  * themselves (one request). Returns null when no candidate truly fits.
  */
-type IllustrationResult = { image: Illustration | null; reason: string };
+/** `query` is the visual subject used for the search; it also guides an AI illustration. */
+type IllustrationResult = { image: Illustration | null; reason: string; query: string };
 async function findNewsIllustrationResult(title: string, fetcher: typeof fetch = fetch, { body = "", query = "" }: { body?: string; query?: string } = {}): Promise<IllustrationResult> {
-  if (!process.env.GEMINI_API_KEY) return { image: null, reason: "AI image selection is not configured" };
+  if (!process.env.GEMINI_API_KEY) return { image: null, reason: "AI image selection is not configured", query };
   // Articles quizzed before the visual subject was stored (or too short for a quiz) get one
   // from a small text request: searching by headline words alone rarely finds a fitting photo.
   if (!query) query = await visualSubject(title, body, fetcher).catch((cause) => {
@@ -453,9 +455,9 @@ async function findNewsIllustrationResult(title: string, fetcher: typeof fetch =
     return "";
   });
   const candidates = await gatherCandidates(title, body, query, fetcher);
-  if (!candidates.length) return { image: null, reason: "No licensed image matched the article search" };
+  if (!candidates.length) return { image: null, reason: "No licensed image matched the article search", query };
   const previews = (await Promise.all(candidates.map(async (candidate) => ({ candidate, image: await previewData(candidate.preview, fetcher) })))).filter((entry) => entry.image);
-  if (!previews.length) return { image: null, reason: "Licensed image previews were unavailable" };
+  if (!previews.length) return { image: null, reason: "Licensed image previews were unavailable", query };
   const parts = [
     { text: `Article title: ${title}\nVisual subject: ${query || "(not given)"}\nArticle start: ${body.slice(0, 700)}` },
     ...previews.flatMap((entry, index) => [{ text: `Image ${index + 1}: ${entry.candidate.value.image_alt.replace(/^Ảnh minh họa: /, "")}` }, { inlineData: entry.image! }]),
@@ -463,8 +465,8 @@ async function findNewsIllustrationResult(title: string, fetcher: typeof fetch =
   const { data } = await geminiJson<{ best?: number; fit?: number }>(visionPrompt, parts, visionSchema, { fetcher, temperature: 0, maxOutputTokens: 200 });
   const chosen = typeof data.best === "number" ? previews[data.best - 1] : undefined;
   return chosen && (data.fit ?? 0) >= minimumImageFit
-    ? { image: chosen.candidate.value, reason: "" }
-    : { image: null, reason: `AI found no suitable image (fit ${Math.max(0, Math.min(10, data.fit ?? 0))}/10)` };
+    ? { image: chosen.candidate.value, reason: "", query }
+    : { image: null, reason: `AI found no suitable image (fit ${Math.max(0, Math.min(10, data.fit ?? 0))}/10)`, query };
 }
 
 export async function findNewsIllustration(title: string, fetcher: typeof fetch = fetch, options: { body?: string; query?: string } = {}): Promise<Illustration | null> {
@@ -479,9 +481,10 @@ async function imageQueries(db: Db, ids: string[]) {
   return new Map((data ?? []).map((row) => [row.article_id as string, (row.image_query as string | null) ?? ""]));
 }
 type Db = ReturnType<typeof newsAdminClient>;
-async function finish(db: Db, id: string, kind: "image" | "quiz", status: "success" | "none" | "error", message = "", retryMs?: number) {
+/** `extra` sets further attempt columns, such as `ai_art_pending`. */
+async function finish(db: Db, id: string, kind: "image" | "quiz", status: "success" | "none" | "error", message = "", retryMs?: number, extra: Record<string, unknown> = {}) {
   await db.from("news_enrichment_attempts").update({ status, error_message: message.slice(0, 300),
-    retry_after: new Date(Date.now() + (retryMs ?? (status === "none" ? 7 : 1) * 86400000)).toISOString() })
+    retry_after: new Date(Date.now() + (retryMs ?? (status === "none" ? 7 : 1) * 86400000)).toISOString(), ...extra })
     .eq("article_id", id).eq("kind", kind);
 }
 export async function saveImageQuery(db: Db, articleId: string, query: string) {
@@ -490,6 +493,37 @@ export async function saveImageQuery(db: Db, articleId: string, query: string) {
 async function saveIllustration(db: Db, articleId: string, image: Illustration) {
   const { error } = await db.from("news_auto_illustrations").upsert({ article_id: articleId, ...image }, { onConflict: "article_id", ignoreDuplicates: true });
   if (error) throw error;
+}
+
+/** Articles whose photo search already failed; they go straight to AI generation. */
+async function pendingAiArt(db: Db, ids: string[]) {
+  if (!ids.length) return new Set<string>();
+  const { data } = await db.from("news_enrichment_attempts").select("article_id").eq("kind", "image").eq("ai_art_pending", true).in("article_id", ids);
+  return new Set((data ?? []).map((row) => row.article_id as string));
+}
+/** Retry delay for an article waiting for a free generation slot. */
+const aiArtQueueMs = 10 * 60000;
+
+/**
+ * Generates an illustration of the article's visual subject and stores it in
+ * Supabase Storage, so it is served from our own project rather than the generator.
+ */
+async function createAiIllustration(db: Db, article: Claim, query: string, fetcher: typeof fetch = fetch): Promise<Illustration> {
+  if (!query) query = await visualSubject(article.title, article.body_text ?? "", fetcher).catch((cause) => {
+    if (cause instanceof AiQuotaError) throw cause;
+    return "";
+  });
+  const art = await generateAiArt(article.title, query, article.article_id, fetcher);
+  const path = `${article.article_id}.${art.extension}`;
+  const storage = db.storage.from(aiArtBucket);
+  const { error } = await storage.upload(path, art.bytes, { contentType: art.contentType, upsert: true, cacheControl: "31536000" });
+  if (error) throw new Error(`AI illustration upload failed: ${error.message}`);
+  const subject = (query || article.title).replace(/\s+/g, " ").trim();
+  return {
+    image_url: storage.getPublicUrl(path).data.publicUrl,
+    image_alt: `Ảnh minh họa do AI tạo: ${subject}`.slice(0, 300),
+    image_credit: aiArtCredit, image_source_url: aiArtSourceUrl, license_name: aiArtLicense, license_url: null,
+  };
 }
 
 export async function enrichNews({ scheduled = false }: { scheduled?: boolean } = {}) {
@@ -527,18 +561,51 @@ async function enrichImages(db: Db, result: EnrichResult) {
   if (!limit) return;
   const { data: imageClaims, error: imageClaimError } = await db.rpc("news_claim_enrichment", { p_kind: "image", p_limit: limit });
   if (imageClaimError) throw imageClaimError;
-  const queries = await imageQueries(db, ((imageClaims ?? []) as Claim[]).map((article) => article.article_id));
-  await Promise.all(((imageClaims ?? []) as Claim[]).map(async (article) => {
+  const claims = (imageClaims ?? []) as Claim[];
+  const ids = claims.map((article) => article.article_id);
+  const [queries, pending] = await Promise.all([imageQueries(db, ids), pendingAiArt(db, ids)]);
+  // A real licensed photo is always preferred. When none fits, an AI illustration of the
+  // story's subject is generated instead; the free generator allows one image per run.
+  let slots = aiArtSlots();
+  const takeSlot = () => slots > 0 ? (slots--, true) : false;
+  // Articles already waiting for an AI illustration take the free slots first.
+  const ordered = [...claims].sort((a, b) => Number(pending.has(b.article_id)) - Number(pending.has(a.article_id)));
+  await Promise.all(ordered.map(async (article) => {
+    const id = article.article_id;
     result.imagesChecked++;
+    let query = queries.get(id) ?? "";
+    let reason = "";
     try {
-      const { image, reason } = await findNewsIllustrationResult(article.title, fetch, { body: article.body_text ?? "", query: queries.get(article.article_id) ?? "" });
-      if (image) { await saveIllustration(db, article.article_id, image); result.imagesAdded++; }
-      await finish(db, article.article_id, "image", image ? "success" : "none", reason);
+      if (!pending.has(id)) {
+        try {
+          const found = await findNewsIllustrationResult(article.title, fetch, { body: article.body_text ?? "", query });
+          if (found.image) {
+            await saveIllustration(db, id, found.image); result.imagesAdded++;
+            await finish(db, id, "image", "success", "", undefined, { ai_art_pending: false });
+            return;
+          }
+          query = found.query; reason = found.reason;
+        } catch (cause) {
+          // Out of AI quota: retry the whole lookup later. Any other search failure falls back to AI art.
+          if (cause instanceof AiQuotaError) throw cause;
+          reason = cause instanceof Error ? cause.message : "Image lookup failed";
+        }
+      }
+      if (!takeSlot()) {
+        await finish(db, id, "image", "none", `${reason ? `${reason}; ` : ""}AI illustration queued`, aiArtQueueMs, { ai_art_pending: true });
+        return;
+      }
+      const image = await createAiIllustration(db, article, query);
+      await saveIllustration(db, id, image); result.imagesAdded++;
+      await finish(db, id, "image", "success", "AI-generated illustration", undefined, { ai_art_pending: false });
     } catch (cause) {
       const message = cause instanceof Error ? cause.message : "Image lookup failed";
-      result.errors.push(`Image ${article.article_id}: ${message}`);
+      result.errors.push(`Image ${id}: ${message}`);
       if (cause instanceof AiQuotaError) result.quotaLimited = true;
-      await finish(db, article.article_id, "image", "error", message, cause instanceof AiQuotaError ? cause.retryAfterMs : undefined);
+      // A busy or failed generator keeps the article waiting for AI art, without a new photo search.
+      const generating = cause instanceof AiArtLimitError || (!(cause instanceof AiQuotaError) && (pending.has(id) || Boolean(reason)));
+      const retryMs = cause instanceof AiQuotaError || cause instanceof AiArtLimitError ? cause.retryAfterMs : generating ? 3 * 3600000 : undefined;
+      await finish(db, id, "image", "error", message, retryMs, generating ? { ai_art_pending: true } : {});
     }
   }));
 }
