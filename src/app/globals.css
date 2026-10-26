@@ -5608,6 +5608,19 @@ a.card:hover {
 .foundation-word-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; margin: 16px 0; }
 .foundation-word-grid > div { display: grid; gap: 2px; padding: 11px; background: white; border: 1px solid var(--line); border-radius: 11px; }
 .foundation-word-grid span { color: #087d83; }.foundation-word-grid small { color: var(--muted); }
+
+/* Compact textbook illustrations shared by units, lessons and words. */
+.topic-art { flex: none; margin: 0; overflow: hidden; border-radius: 12px; background: #e8f4f3; }
+.topic-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.topic-art figcaption { padding: 5px 2px 0; color: var(--muted); font-size: 11px; }
+.study-chapter-art { width: 100%; max-width: 64px; height: 34px; border-radius: 7px; }
+.map-line-art { width: 92px; height: 58px; border: 1px solid #e2edef; }
+.map-station-link { grid-template-columns: 26px 34px 54px minmax(0, 1fr) auto; }
+.map-station-art { width: 54px; height: 42px; border-radius: 8px; }
+.lesson-word-art { float: right; width: 104px; height: 68px; margin: 0 0 8px 12px; }
+.lesson-intro-art { width: 126px; height: 78px; margin: 0 0 12px auto; border: 1px solid #e0ebed; }
+.foundation-word-art { width: 100%; height: 75px; margin-bottom: 7px; }
+@media (max-width: 700px) { .map-line-art { width: 70px; height: 50px; } .map-station-link { grid-template-columns: 26px 46px minmax(0, 1fr) auto; } .map-station-art { width: 46px; height: 38px; } }
 .foundation-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .foundation-steps > div { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 2px 7px; padding: 10px; border: 1px solid #d9ede9; background: #f4fbf9; border-radius: 12px; }
 .foundation-steps span { grid-row: span 2; display: grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; color: white; background: #159ba2; font-weight: 800; font-size: 12px; }

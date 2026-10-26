@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { TopicArt } from "@/components/illustrations/topic-art";
 
 export type PackageActivity = { id: string; type: string; prompt: string; answer: string; options?: string[]; explanation?: string; instruction?: string };
 export type PackageLesson = {
@@ -89,7 +90,7 @@ export function PackageLessonPractice({ content, mode = "practice" }: { content:
     {content.practice_cycles?.length ? <div className="foundation-steps">{content.practice_cycles.map((step, index) => <div key={step.name}><span>{index + 1}</span><b>{step.name}</b><small>{step.instruction}</small></div>)}</div> : null}
     {content.type === "vocabulary" && content.audio_url && <div className="package-audio"><span>🎧 Nghe phát âm từ vựng</span><audio controls src={content.audio_url} aria-label="Audio từ vựng" /><small>Giọng máy thử nghiệm từ gói bài học.</small></div>}
     {content.type === "listening" && content.audio_quality_note && <small>{content.audio_quality_note}</small>}
-    {content.expansion_words?.length ? <details className="foundation-activity"><summary>Khám phá thêm {content.expansion_words.length} từ</summary><div className="foundation-word-grid">{content.expansion_words.map((word) => <div key={word.en}><strong>{word.en}</strong><span>{word.vi}</span><small>{word.example}</small></div>)}</div></details> : null}
+    {content.expansion_words?.length ? <details className="foundation-activity"><summary>Khám phá thêm {content.expansion_words.length} từ</summary><div className="foundation-word-grid">{content.expansion_words.map((word) => <div key={word.en}><TopicArt topic={content.title || "English"} word={word.en} className="foundation-word-art" /><strong>{word.en}</strong><span>{word.vi}</span><small>{word.example}</small></div>)}</div></details> : null}
   </div>;
   if (mode === "review") return <div className="package-review-content">
     <div className="package-concept"><span className="eyebrow">SAU BÀI HỌC NÀY</span><h2>Ghi nhớ và tự vận dụng</h2><p>{content.output || content.independent_use || content.aim || "Hãy thử dùng lại điều vừa học trong một tình huống của riêng bạn."}</p></div>
