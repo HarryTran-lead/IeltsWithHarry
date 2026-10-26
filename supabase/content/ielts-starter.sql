@@ -378,3 +378,1437 @@ begin
   insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Speaking","prompt":"IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. Do you live in a house or an apartment?\n2. Which room do you spend the most time in? Why?\n3. Is there anything you would like to change about your home?\n4. Would you prefer to live alone or with other people in the future?","preparationSeconds":15,"modelAnswer":"I live in a small apartment on the sixth floor with my parents and my younger brother. I spend most of my time in my bedroom, because it''s quiet and I have a desk there for studying. If I could change one thing, I''d like a bigger balcony with some plants. In the future I''d prefer to live with a friend, because it''s cheaper and less lonely than living alone.","checklist":["Answer the question directly first","Add a reason with because or so","Use home vocabulary from this unit","Use ''I''d like…'' or ''I''d prefer…'' for the future","Listen again: did you answer every question?"],"figure":{"url":"","alt":""}}'::jsonb)
   on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
 end $$;
+
+-- Unit 3 · Hobbies and Leisure
+do $$
+declare v_course uuid; v_unit uuid; v_lesson uuid; v_question uuid;
+begin
+  insert into public.courses(stage_id,slug,title,description,published)
+  values ('ielts-starter','ielts-starter-everyday-topics','IELTS Starter: Everyday Topics','Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry.',false)
+  on conflict (slug) do update set title=excluded.title, description=excluded.description returning id into v_course;
+  insert into public.units(course_id,slug,title,sort_order,published)
+  values (v_course,'hobbies-and-leisure','Unit 3 · Hobbies and Leisure',3,false)
+  on conflict (course_id,slug) do update set title=excluded.title, sort_order=excluded.sort_order returning id into v_unit;
+
+  -- Vocabulary: Free-time activities
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u03-vocabulary-free-time','Free-time activities','Vocabulary','Words for hobbies, sport and entertainment.',1,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Vocabulary","introduction":"Hobbies are one of the most common topics in IELTS Speaking Part 1. Notice which verb goes with each activity: we PLAY team sports and games, we GO + -ing for many activities (go swimming), and we DO individual or indoor activities (do yoga).\n\nMẹo: play football / go cycling / do yoga – đừng dùng sai động từ.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'hobby','/ˈhɒbi/','sở thích','An activity you do for pleasure in your free time.','Photography became my hobby when I was fifteen.','Viết bằng tiếng Anh: Sở thích của tôi là đọc sách.','["My hobby is reading.","My hobby is reading books."]'::jsonb,0)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'go cycling','/ɡəʊ ˈsaɪklɪŋ/','đi đạp xe','To ride a bicycle for fun or exercise.','We go cycling along the river on Sunday mornings.','Viết bằng tiếng Anh: Tôi đi đạp xe vào cuối tuần.','["I go cycling at the weekend.","I go cycling on the weekend.","I go cycling at weekends."]'::jsonb,1)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'do yoga','/duː ˈjəʊɡə/','tập yoga','To practise a series of stretching and breathing exercises.','My aunt does yoga before work to feel calm.','Viết bằng tiếng Anh: Cô ấy tập yoga mỗi sáng.','["She does yoga every morning."]'::jsonb,2)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'play a musical instrument','/pleɪ ə ˈmjuːzɪkl ˈɪnstrəmənt/','chơi một nhạc cụ','To make music with something like a guitar or piano.','Learning to play a musical instrument takes patience.','Viết bằng tiếng Anh: Bạn có chơi nhạc cụ nào không?','["Do you play a musical instrument?","Do you play any musical instruments?"]'::jsonb,3)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'spare time','/speə taɪm/','thời gian rảnh','Time when you are not working or studying.','In my spare time I watch cooking videos.','Viết bằng tiếng Anh: Tôi không có nhiều thời gian rảnh.','["I don''t have much spare time.","I do not have much spare time."]'::jsonb,4)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'be into','/biː ˈɪntuː/','rất thích, mê','To be very interested in something (informal).','My brother is really into video games.','Viết bằng tiếng Anh: Tôi rất mê bóng rổ.','["I''m really into basketball.","I am really into basketball.","I''m into basketball."]'::jsonb,5)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'take up','/teɪk ʌp/','bắt đầu (một sở thích mới)','To start doing a new activity regularly.','Last year my father took up running.','Viết bằng tiếng Anh: Tôi muốn bắt đầu học vẽ.','["I want to take up drawing.","I''d like to take up drawing.","I would like to take up drawing.","I want to take up painting."]'::jsonb,6)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'competition','/ˌkɒmpəˈtɪʃn/','cuộc thi','An event where people try to win something.','Our team won a local dance competition.','Viết bằng tiếng Anh: Cô ấy thắng một cuộc thi hát.','["She won a singing competition."]'::jsonb,7)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+
+  -- Grammar: Present simple or present continuous?
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u03-grammar-simple-vs-continuous','Present simple or present continuous?','Grammar','Choose between habits and actions happening now.',2,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Grammar","rule":"Present simple – habits, routines and facts:\n• I play the guitar every evening.  • Water boils at 100°C.\nTime words: always, usually, every week, on Mondays.\n\nPresent continuous (am / is / are + -ing) – actions happening now or around now, and temporary situations:\n• Shh, I''m watching a match.  • She is learning to swim this summer.\nTime words: now, at the moment, today, this week.\n\nState verbs (like, love, want, know, need, believe) are usually NOT used in the continuous form: I want a new racket (NOT I''m wanting).\n\nGhi nhớ: thói quen → hiện tại đơn; đang diễn ra / tạm thời → hiện tại tiếp diễn.","example":"I usually play badminton on Fridays, but this week I''m practising for a tennis tournament.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','Look! The children ___ in the park.','["play","are playing","plays"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''Look!'' cho thấy hành động đang diễn ra → hiện tại tiếp diễn.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','My sister ___ to the cinema every Saturday.','["goes","is going","go"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''every Saturday'' là thói quen → hiện tại đơn, chủ ngữ số ít: goes.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','Choose the correct sentence.','["I''m wanting to join a book club.","I want to join a book club.","I wanting to join a book club."]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''want'' là động từ chỉ trạng thái, không dùng ở dạng tiếp diễn.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','This month, Nam ___ for a marathon.','["trains","is training","train"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Tình huống tạm thời ''this month'' → hiện tại tiếp diễn.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','''What ___ at the moment?'' – ''I''m reading a comic.''','["do you do","are you doing","you are doing"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Câu hỏi về việc đang làm ''at the moment'': are you doing.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','How often ___ you go swimming?','["do","are","does"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''How often'' hỏi về thói quen → hiện tại đơn với ''you'': do.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Reading: A teenager on the climbing wall
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u03-reading-climbing-wall','A teenager on the climbing wall','Reading','Read about a young climber and avoid distracting answer options.',3,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Reading","passage":"When Quynh first tried indoor climbing at the age of twelve, she was scared of heights. Her cousin had a birthday party at a climbing centre in Ho Chi Minh City, and Quynh only agreed to try because everyone else was doing it. She reached the top of the easiest wall and, to her surprise, wanted to do it again.\n\nFive years later, climbing is the centre of her life. She trains four evenings a week after school, and on Sundays she helps the coaches with the children''s class. Many people think climbing is mainly about strong arms, but Quynh disagrees. ''Your legs do most of the work,'' she explains. ''The most important thing is to think before you move, like solving a puzzle.''\n\nAt the moment Quynh is preparing for the national youth championship in Da Nang. She is not the strongest climber in her team, but her coach says she is the most patient. Her parents were worried at first that climbing would take time away from her studies. Now they say it has actually helped, because she has learned to plan her time carefully.\n\nQuynh''s advice for beginners is simple: start at a centre with good instructors, and do not compare yourself with other people. ''Everyone is afraid at the beginning,'' she says. ''The fear is part of the fun.''","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','Why did Quynh try climbing for the first time?','["She wanted to stop being scared of heights.","Her cousin''s party was at a climbing centre.","Her school offered a climbing class.","A coach invited her to try."]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Cô ấy thử vì bữa tiệc sinh nhật của em họ diễn ra ở trung tâm leo núi. Đáp án A là bẫy: bài có nhắc nỗi sợ độ cao nhưng đó không phải lý do.','Her cousin had a birthday party at a climbing centre')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','According to Quynh, what matters most in climbing?','["Having strong arms","Training every day","Thinking before you move","Climbing with friends"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'''The most important thing is to think before you move''. Đáp án A là ý kiến của ''many people'', không phải của Quynh.','The most important thing is to think before you move')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','What does Quynh do on Sundays?','["She competes in championships.","She helps teach children.","She rests at home.","She studies for school."]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''on Sundays she helps the coaches with the children''s class''.','on Sundays she helps the coaches with the children''s class')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','What does her coach say about her?','["She is the strongest in the team.","She is the most patient.","She trains the hardest."]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Câu bẫy: bài nói rõ cô ấy KHÔNG phải người khỏe nhất; huấn luyện viên khen cô ''the most patient''.','her coach says she is the most patient')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','How do her parents feel about climbing now?','["They think it takes time from her studies.","They think it has helped her plan her time.","They want her to stop competing."]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Lúc đầu bố mẹ lo lắng (đáp án A là bẫy), nhưng ''Now they say it has actually helped''.','Now they say it has actually helped, because she has learned to plan her time carefully')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Listening: Joining a sports centre
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u03-listening-sports-centre','Joining a sports centre','Listening','Listen to a receptionist and choose the right options.',4,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Listening","transcript":"Receptionist: Hello, Riverside Sports Centre. How can I help you?\nCaller: Hi. I''m interested in joining, but I''d like some information first.\nReceptionist: Of course. We have two kinds of membership. The standard one costs 25 pounds a month and lets you use the gym and the swimming pool. The premium membership is 38 pounds, and it includes all group classes as well.\nCaller: What classes do you have?\nReceptionist: Yoga, dance and boxing. The boxing class is very popular, so it''s usually full. Yoga is on Tuesday and Thursday evenings.\nCaller: I work until six. What time does the yoga start?\nReceptionist: At half past seven, so you''d have plenty of time.\nCaller: Great. And do I need to bring anything?\nReceptionist: Just a towel and a padlock for the lockers. We provide the yoga mats.\nCaller: Is there parking?\nReceptionist: There''s a small car park, but it''s often full in the evening. Most members come by bike – we have lots of bike racks at the front.\nCaller: OK. Can I try it before I join?\nReceptionist: Yes, your first visit is free. Just bring some photo ID.","audioUrl":"","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','How much is the membership that includes group classes?','["£25 a month","£38 a month","£83 a month"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Gói premium 38 bảng gồm các lớp nhóm; 25 bảng chỉ gồm gym và bể bơi.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Which class is usually full?','["Yoga","Dance","Boxing"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'''The boxing class is very popular, so it''s usually full.''','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','What time does the yoga class start?','["6:00","6:30","7:30"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'''At half past seven'' – 6:00 là giờ người gọi tan làm, dễ gây nhầm.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','What does the centre provide?','["Towels","Padlocks","Yoga mats"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'Khách tự mang khăn và ổ khóa; trung tâm cung cấp thảm yoga.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','What must the caller bring for a free first visit?','["Photo ID","A friend","£5"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''Just bring some photo ID.''','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Writing: Describe a hobby you enjoy
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u03-writing-my-hobby','Describe a hobby you enjoy','Writing','Write 70–90 words about a hobby using present simple and continuous.',5,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Writing","prompt":"Write 70–90 words about a hobby you enjoy. Explain:\n• what the hobby is and when you started it\n• how often you do it and who with\n• what you are doing or learning in this hobby at the moment.\nUse the present simple for habits and the present continuous for what is happening now.","minWords":70,"modelAnswer":"My favourite hobby is playing the guitar. I started three years ago when my uncle gave me his old guitar. I usually practise for half an hour every evening, and on Saturdays I play with two friends from my class. We sometimes perform at school events. At the moment I''m learning a difficult Spanish song, and I''m also trying to write my own music. Playing the guitar helps me relax after studying, and it makes me feel creative.","checklist":["Say what the hobby is and when you started","Use the present simple for habits (usually, every…)","Use the present continuous for now (at the moment…)","Give at least one reason why you enjoy it","Write 70–90 words"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+
+  -- Speaking: Talking about free time
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u03-speaking-free-time','Talking about free time','Speaking','Answer Part 1 questions about hobbies and entertainment.',6,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Speaking","prompt":"IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. What do you like to do in your free time?\n2. Did you have a different hobby when you were a child?\n3. Do you prefer watching films at home or at the cinema?\n4. Is there a new hobby you would like to take up?","preparationSeconds":15,"modelAnswer":"In my free time I''m really into cooking; I try a new recipe almost every weekend. When I was a child I spent most of my time drawing cartoons, but I stopped when I started secondary school. I prefer watching films at the cinema because the screen and sound are much better, although it''s more expensive. I''d love to take up swimming, because it''s good exercise and I never learned properly.","checklist":["Use hobby verbs correctly (play / go / do)","Add a reason or a comparison","Use the past simple for childhood","Try ''be into'' or ''take up'' from this unit","Listen again: did you answer every question?"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+end $$;
+
+-- Unit 4 · Travel and Holidays
+do $$
+declare v_course uuid; v_unit uuid; v_lesson uuid; v_question uuid;
+begin
+  insert into public.courses(stage_id,slug,title,description,published)
+  values ('ielts-starter','ielts-starter-everyday-topics','IELTS Starter: Everyday Topics','Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry.',false)
+  on conflict (slug) do update set title=excluded.title, description=excluded.description returning id into v_course;
+  insert into public.units(course_id,slug,title,sort_order,published)
+  values (v_course,'travel-and-holidays','Unit 4 · Travel and Holidays',4,false)
+  on conflict (course_id,slug) do update set title=excluded.title, sort_order=excluded.sort_order returning id into v_unit;
+
+  -- Vocabulary: Travel words and adjectives
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u04-vocabulary-travel','Travel words and adjectives','Vocabulary','Words for trips and adjectives to describe places.',1,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Vocabulary","introduction":"When you describe a holiday in IELTS Speaking Part 2, simple adjectives like ''good'' and ''nice'' get a lower score. Use more precise words: a crowded beach, a comfortable seat, a breathtaking view. Learn these words, then write a sentence about a real trip.\n\nMẹo: thay ''nice/good'' bằng tính từ cụ thể hơn để nâng điểm từ vựng.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'destination','/ˌdestɪˈneɪʃn/','điểm đến','The place where someone is travelling to.','Hoi An is a popular destination for families.','Viết bằng tiếng Anh: Đà Lạt là điểm đến yêu thích của tôi.','["Da Lat is my favourite destination.","Da Lat is my favorite destination.","Dalat is my favourite destination."]'::jsonb,0)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'book','/bʊk/','đặt (vé, phòng)','To arrange to have a seat, room or ticket in advance.','We booked our hotel two months before the trip.','Viết bằng tiếng Anh: Tôi đã đặt vé máy bay hôm qua.','["I booked a plane ticket yesterday.","I booked a flight yesterday.","I booked the flight yesterday."]'::jsonb,1)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'luggage','/ˈlʌɡɪdʒ/','hành lý','The bags and cases you take on a journey (uncountable).','How much luggage can I take on the plane?','Viết bằng tiếng Anh: Hành lý của tôi rất nặng.','["My luggage is very heavy."]'::jsonb,2)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'crowded','/ˈkraʊdɪd/','đông đúc','Full of people.','The beach was crowded on the national holiday.','Viết bằng tiếng Anh: Chợ rất đông vào buổi sáng.','["The market is very crowded in the morning.","The market was very crowded in the morning."]'::jsonb,3)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'comfortable','/ˈkʌmftəbl/','thoải mái, dễ chịu','Making you feel relaxed and physically pleasant.','The night bus had comfortable beds.','Viết bằng tiếng Anh: Khách sạn rất thoải mái.','["The hotel was very comfortable.","The hotel is very comfortable."]'::jsonb,4)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'breathtaking','/ˈbreθteɪkɪŋ/','đẹp ngoạn mục','Extremely beautiful or surprising.','The view from the top of the mountain was breathtaking.','Viết bằng tiếng Anh: Cảnh hoàng hôn đẹp ngoạn mục.','["The sunset was breathtaking.","The sunset is breathtaking."]'::jsonb,5)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'sightseeing','/ˈsaɪtsiːɪŋ/','tham quan','Visiting interesting places as a tourist.','We spent the first day sightseeing in the old town.','Viết bằng tiếng Anh: Chúng tôi đi tham quan vào buổi chiều.','["We went sightseeing in the afternoon.","We go sightseeing in the afternoon."]'::jsonb,6)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'souvenir','/ˌsuːvəˈnɪə/','quà lưu niệm','Something you buy to remember a place.','I bought a small lantern as a souvenir.','Viết bằng tiếng Anh: Tôi đã mua quà lưu niệm cho mẹ.','["I bought a souvenir for my mother.","I bought a souvenir for my mum.","I bought souvenirs for my mother."]'::jsonb,7)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+
+  -- Grammar: Past simple for trips and experiences
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u04-grammar-past-simple','Past simple for trips and experiences','Grammar','Use regular and irregular past forms to talk about finished trips.',2,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Grammar","rule":"Use the past simple for finished actions at a specific time in the past (yesterday, last summer, in 2023, two years ago).\n• Regular verbs + -ed: visit → visited, stay → stayed, travel → travelled.\n• Irregular verbs must be learned: go → went, take → took, see → saw, buy → bought, fly → flew, eat → ate.\n• Negatives: didn''t + base verb: We didn''t stay long.\n• Questions: Did + subject + base verb? Did you enjoy it? – Yes, I did.\n• ''be'': I was / you were; Was it expensive?\n\nGhi nhớ: sau did / didn''t, động từ trở về nguyên mẫu (did you go, NOT did you went).","example":"Last summer we flew to Phu Quoc, stayed in a small guesthouse and didn''t spend much money.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','Last year we ___ to Japan for the first time.','["go","went","goed"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''go'' là động từ bất quy tắc: went.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Choose the correct question.','["Did you visited the museum?","Did you visit the museum?","You did visit the museum?"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Sau ''Did'', động từ ở nguyên mẫu: visit.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','The hotel ___ very clean, but the food was terrible.','["was","were","did"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''The hotel'' số ít → was.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','We ___ any souvenirs because the shops were closed.','["didn''t buy","didn''t bought","not bought"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Phủ định quá khứ: didn''t + nguyên mẫu (buy).','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','Which sentence is about the present, not a finished trip?','["I travelled to Hue in 2022.","I travel to Hue every Tet holiday.","I saw the citadel two years ago."]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''every Tet holiday'' là thói quen hiện tại → present simple; hai câu còn lại có mốc thời gian quá khứ.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','''Did your parents enjoy the trip?'' – ''Yes, ___.''','["they enjoyed","they did","they were"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Câu trả lời ngắn lặp lại trợ động từ: Yes, they did.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Reading: A month with a host family
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u04-reading-gap-year','A month with a host family','Reading','Read a travel blog and answer multiple-choice questions.',3,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Reading","passage":"Last July I spent four weeks in New Zealand on a school exchange programme. Before I left, I was nervous about two things: my English and the food. In the end, neither was a problem.\n\nI stayed with the Walker family in a small town near Christchurch. They had two children, and the youngest, Ella, was the same age as me. On my first day she took me to her school, where I joined classes in maths, art and geography. I understood more than I expected, mainly because the teachers spoke slowly and used lots of pictures.\n\nThe weekends were the best part. One Saturday we drove to a lake and went kayaking, although the water was so cold that I didn''t want to fall in. Another weekend we visited a farm, and I fed baby sheep with a bottle of milk. I had never been so close to farm animals before.\n\nThe only difficult thing was the weather. July is winter in New Zealand, and I didn''t bring enough warm clothes. Mrs Walker lent me a thick jacket, which I wore almost every day.\n\nWhen I came home, my parents said my English sounded more natural. I still write to Ella every week, and she wants to visit Vietnam next year.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','Before the trip, the writer was worried about…','["the weather and the cost","her English and the food","school subjects"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''I was nervous about two things: my English and the food.''','I was nervous about two things: my English and the food')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Why did the writer understand the lessons?','["Ella translated for her.","The teachers spoke slowly and used pictures.","She studied the subjects before."]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''mainly because the teachers spoke slowly and used lots of pictures''.','mainly because the teachers spoke slowly and used lots of pictures')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','What happened at the lake?','["The writer fell into the water.","They went kayaking.","They went swimming."]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Họ đi chèo kayak; người viết KHÔNG muốn rơi xuống nước vì nước lạnh – đáp án A là bẫy.','went kayaking, although the water was so cold that I didn''t want to fall in')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','The writer had been close to farm animals many times before. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''I had never been so close to farm animals before'' → False.','I had never been so close to farm animals before')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','What problem did the writer have?','["She didn''t have enough warm clothes.","She didn''t like her host family.","She lost her jacket."]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''I didn''t bring enough warm clothes'' – mùa đông ở New Zealand.','I didn''t bring enough warm clothes')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','Ella will definitely visit Vietnam next year. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'Bài chỉ nói Ella ''wants to visit'', không chắc chắn → Not Given (không thể khẳng định đúng hay sai).','she wants to visit Vietnam next year')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Listening: An interview about a holiday
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u04-listening-holiday-interview','An interview about a holiday','Listening','Listen to a student describe a trip and answer multiple-choice questions.',4,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Listening","transcript":"Interviewer: So, Tuan, you went to Singapore in the spring. Was it your first trip abroad?\nTuan: No, I went to Thailand with my family when I was ten. But it was my first trip without my parents.\nInterviewer: Who did you go with?\nTuan: My cousin and two friends from university. We planned it for months.\nInterviewer: How long did you stay?\nTuan: We wanted to stay for a week, but the flights were expensive, so we went for five days.\nInterviewer: Where did you stay?\nTuan: In a hostel in Chinatown. It wasn''t luxurious, but it was clean and very close to the metro.\nInterviewer: What did you enjoy most?\nTuan: Everyone expects me to say the shopping, but actually it was the food at the hawker centres. It was cheap and delicious – I tried something different every meal.\nInterviewer: Was anything disappointing?\nTuan: The botanic gardens were beautiful, but it rained on the day we went, so we only saw a small part.\nInterviewer: Would you go back?\nTuan: Definitely. Next time I''d like to visit Sentosa Island, because we didn''t have time.","audioUrl":"","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','This trip was Tuan''s first…','["trip abroad","trip without his parents","trip by plane"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Anh ấy từng đi Thái Lan với gia đình; đây là chuyến đầu tiên không có bố mẹ.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','How long did they stay in Singapore?','["Five days","A week","Ten days"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Họ muốn ở một tuần nhưng vé đắt nên chỉ đi năm ngày.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','What did Tuan say about the hostel?','["It was luxurious.","It was clean and near the metro.","It was far from the city."]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''it was clean and very close to the metro''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','What did Tuan enjoy most?','["Shopping","The botanic gardens","Food at hawker centres"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'Mọi người nghĩ là mua sắm (bẫy), nhưng thật ra là đồ ăn ở hawker centre.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','Why was the visit to the gardens disappointing?','["It was closed.","It rained.","It was too expensive."]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''it rained on the day we went''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Writing: An email about a recent trip
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u04-writing-email-about-a-trip','An email about a recent trip','Writing','Write an 80–100 word email to a friend about a trip, in the past simple.',5,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Writing","prompt":"You recently went on a short trip. Write an email to your friend Tom (80–100 words). In your email:\n• say where you went and who you went with\n• describe one thing you enjoyed and one problem\n• recommend the place (or not) and explain why.\nUse the past simple and at least two adjectives from this unit.","minWords":80,"modelAnswer":"Hi Tom,\n\nHow are you? Last weekend I went to Ninh Binh with my sister. We stayed in a comfortable homestay next to the rice fields. The best part was a boat trip through the caves – the scenery was breathtaking. However, the main temple was very crowded because it was a holiday, so we left early. I definitely recommend Ninh Binh, but try to go on a weekday when it is quieter. You can rent a bike and explore the villages, too.\n\nBest wishes,\nVy","checklist":["Greet and close the email","Answer all three bullet points","Use the past simple correctly (irregular verbs!)","Use at least two precise adjectives","Write 80–100 words"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+
+  -- Speaking: Describe a trip you enjoyed (Part 2)
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u04-speaking-describe-a-trip','Describe a trip you enjoyed (Part 2)','Speaking','Practise a one-minute talk with details and reasons.',6,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Speaking","prompt":"IELTS Speaking Part 2 – Describe a trip you enjoyed.\nYou should say:\n• where you went\n• who you went with\n• what you did there\nand explain why you enjoyed this trip.\nPrepare for one minute, then speak for one to two minutes.","preparationSeconds":60,"modelAnswer":"I''d like to talk about a trip to Da Lat that I took with my classmates after our final exams last year. We travelled by night bus, which was cheaper than flying, and we arrived early in the morning when the city was still foggy. During the three days, we visited flower gardens, cycled around Xuan Huong Lake and tried the famous grilled rice paper at the night market. One evening we went camping on a hill, and we sang songs around a small fire until midnight. I enjoyed this trip for two reasons. First, the cool weather was a nice change from the heat in Saigon. Second, it was the last time all of us were together before we went to different universities, so it feels very special now.","checklist":["Cover all four points on the card","Use the past simple consistently","Add details: when, how, what it looked like","Give two reasons with First… / Second…","Speak for at least one minute"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+end $$;
+
+-- Unit 5 · Food
+do $$
+declare v_course uuid; v_unit uuid; v_lesson uuid; v_question uuid;
+begin
+  insert into public.courses(stage_id,slug,title,description,published)
+  values ('ielts-starter','ielts-starter-everyday-topics','IELTS Starter: Everyday Topics','Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry.',false)
+  on conflict (slug) do update set title=excluded.title, description=excluded.description returning id into v_course;
+  insert into public.units(course_id,slug,title,sort_order,published)
+  values (v_course,'food','Unit 5 · Food',5,false)
+  on conflict (course_id,slug) do update set title=excluded.title, sort_order=excluded.sort_order returning id into v_unit;
+
+  -- Vocabulary: Food and cooking words
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u05-vocabulary-food-and-cooking','Food and cooking words','Vocabulary','Words for meals, tastes and cooking methods.',1,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Vocabulary","introduction":"Food questions are common in Speaking Part 1, and cooking steps often appear in Writing Task 1 process diagrams. Learn words for tastes (spicy, sour) and for cooking methods (boil, fry, steam) so you can describe dishes clearly.\n\nMẹo: khi tả món ăn, nêu nguyên liệu + cách nấu + vị: ''steamed fish with a sour sauce''.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'ingredient','/ɪnˈɡriːdiənt/','nguyên liệu','One of the foods you use to make a dish.','Rice noodles are the main ingredient in pho.','Viết bằng tiếng Anh: Món này cần năm nguyên liệu.','["This dish needs five ingredients.","This dish has five ingredients."]'::jsonb,0)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'spicy','/ˈspaɪsi/','cay','Having a strong, hot taste from chilli or spices.','Food in central Vietnam is often very spicy.','Viết bằng tiếng Anh: Tôi không thích đồ ăn cay.','["I don''t like spicy food.","I do not like spicy food."]'::jsonb,1)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'sour','/saʊə/','chua','Having a sharp taste like a lemon.','This soup is a little sour because it has tamarind.','Viết bằng tiếng Anh: Quả chanh này rất chua.','["This lemon is very sour.","This lime is very sour."]'::jsonb,2)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'boil','/bɔɪl/','luộc, đun sôi','To cook something in very hot water.','Boil the eggs for eight minutes.','Viết bằng tiếng Anh: Mẹ tôi luộc rau mỗi tối.','["My mother boils vegetables every evening.","My mum boils vegetables every evening."]'::jsonb,3)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'fry','/fraɪ/','chiên, rán','To cook something in hot oil.','We fry the spring rolls until they are golden.','Viết bằng tiếng Anh: Đừng chiên cá quá lâu.','["Don''t fry the fish for too long.","Do not fry the fish for too long."]'::jsonb,4)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'steam','/stiːm/','hấp','To cook something using the hot air from boiling water.','Steamed fish is healthier than fried fish.','Viết bằng tiếng Anh: Tôi thích cá hấp.','["I like steamed fish.","I love steamed fish."]'::jsonb,5)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'balanced diet','/ˈbælənst ˈdaɪət/','chế độ ăn cân bằng','Eating the right amounts of different kinds of food.','A balanced diet includes vegetables, protein and grains.','Viết bằng tiếng Anh: Học sinh cần một chế độ ăn cân bằng.','["Students need a balanced diet.","Students need to have a balanced diet."]'::jsonb,6)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'street food','/striːt fuːd/','đồ ăn đường phố','Food that is cooked and sold outside, often at stalls.','Hanoi is famous for its street food.','Viết bằng tiếng Anh: Đồ ăn đường phố ở đây rẻ và ngon.','["The street food here is cheap and delicious.","Street food here is cheap and delicious."]'::jsonb,7)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+
+  -- Grammar: Countable and uncountable nouns
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u05-grammar-countable-uncountable','Countable and uncountable nouns','Grammar','Use a/an, some, any, many, much and a lot of with food nouns.',2,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Grammar","rule":"Countable nouns have singular and plural forms: an egg – two eggs, a banana – some bananas.\nUncountable nouns have no plural and no a/an: rice, water, bread, milk, meat, advice, information.\n\n• some – positive sentences: I bought some apples / some rice.\n• any – negatives and questions: We don''t have any eggs. Is there any milk?\n• many + plural countable: How many eggs? (not many)\n• much + uncountable: How much sugar? (not much)\n• a lot of – both: a lot of vegetables, a lot of water.\n• To count uncountable nouns, use containers: a bottle of water, a bowl of rice, a slice of bread.\n\nGhi nhớ: How many + danh từ đếm được; How much + danh từ không đếm được.","example":"How much rice do we need, and are there any onions left?","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','How ___ water do you drink every day?','["many","much","a"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''water'' không đếm được → How much.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Choose the correct sentence.','["I''d like a bread, please.","I''d like a slice of bread, please.","I''d like breads, please."]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''bread'' không đếm được; dùng ''a slice of bread''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','There aren''t ___ tomatoes in the fridge.','["some","any","much"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Câu phủ định với danh từ đếm được số nhiều → any.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','Which noun is countable?','["sugar","carrot","milk"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Có thể nói ''a carrot / two carrots''; sugar và milk không đếm được.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','We need ___ eggs for the cake – about six.','["some","much","an"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Câu khẳng định với danh từ số nhiều → some.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','Can you give me some ___ about healthy eating?','["advices","advice","an advice"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''advice'' là danh từ không đếm được – không thêm -s, không dùng ''an''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Reading: A morning at the floating market
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u05-reading-floating-market','A morning at the floating market','Reading','Read about a market and complete sentences with words from the text.',3,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Reading","passage":"The floating market at Cai Rang, near Can Tho, starts long before sunrise. By five o''clock, hundreds of boats are already moving slowly along the river. Each boat hangs a sample of what it sells from a tall bamboo pole, so buyers can see from a distance whether a boat has pineapples, pumpkins or sweet potatoes.\n\nMost of the sellers are farmers or wholesalers who buy fruit and vegetables from gardens upstream. They sell in large quantities to shop owners and restaurant cooks, who then take the produce to markets on land. Tourists can still buy a single mango or a bag of rambutans, but the market is mainly a place for business.\n\nSmaller boats move between the big ones, selling breakfast. A woman in a boat no wider than a bed can serve hot noodle soup, iced coffee and sticky rice without spilling a drop. Visitors say that eating soup on a gently moving boat is the most memorable part of the morning.\n\nThe market is changing. As new roads and bridges connect the villages, more trade happens by truck, and the number of boats has fallen. Local authorities now hope that tourism will help the market survive, and they have built a new pier where visitors can take short boat tours.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','Complete: Each boat shows what it sells by hanging a sample from a tall ______.','["bamboo pole","roof","flag"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''hangs a sample of what it sells from a tall bamboo pole''.','hangs a sample of what it sells from a tall bamboo pole')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Who are the main customers at the market?','["Tourists","Shop owners and restaurant cooks","Farmers from upstream"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Người bán bán số lượng lớn ''to shop owners and restaurant cooks''. Du khách vẫn mua được nhưng không phải khách chính.','They sell in large quantities to shop owners and restaurant cooks')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','Complete: The small breakfast boats are no wider than a ______.','["table","bed","car"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''a boat no wider than a bed''.','a boat no wider than a bed')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','According to visitors, the most memorable part is…','["buying fruit cheaply","eating soup on a moving boat","taking photos at sunrise"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''eating soup on a gently moving boat is the most memorable part of the morning''.','eating soup on a gently moving boat is the most memorable part of the morning')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','Why has the number of boats fallen?','["Fruit is more expensive now.","More trade happens by truck.","Tourists don''t visit any more."]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Đường và cầu mới giúp buôn bán bằng xe tải nhiều hơn.','more trade happens by truck, and the number of boats has fallen')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','Complete: Authorities have built a new ______ for boat tours.','["bridge","road","pier"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'''they have built a new pier where visitors can take short boat tours''.','they have built a new pier where visitors can take short boat tours')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Listening: A cooking class
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u05-listening-cooking-class','A cooking class','Listening','Listen to a chef and match each step with the right detail.',4,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Listening","transcript":"Chef: Good evening, everyone. Tonight we''re making fresh spring rolls, and they''re much easier than they look.\nFirst, boil the rice noodles for just three minutes, then put them in cold water so they don''t stick together.\nWhile the noodles are cooling, boil the prawns. They only need about two minutes – when they turn pink, they''re ready. Cut each prawn in half along its length.\nNext, prepare the vegetables. Wash the lettuce and the herbs – we''re using mint and Thai basil – and cut the cucumber into thin strips.\nNow the important part: the rice paper. Dip one sheet into warm water for about two seconds only. If you leave it longer, it becomes too soft and breaks.\nPut the lettuce and noodles near the bottom of the paper, then three prawn halves in the middle, with the pink side facing down. Fold in the sides and roll it up tightly.\nFinally, the sauce. Mix two spoons of peanut butter with hoisin sauce and a little warm water. Some people add chilli, but I''ll leave that to you.\nAny questions? No? Then let''s start rolling!","audioUrl":"","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','How long should you boil the rice noodles?','["Two minutes","Three minutes","Five minutes"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''boil the rice noodles for just three minutes'' – hai phút là thời gian luộc tôm.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','How do you know the prawns are ready?','["They float.","They turn pink.","They become soft."]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''when they turn pink, they''re ready''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','Which herbs does the chef use?','["Mint and Thai basil","Coriander and mint","Basil and dill"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''we''re using mint and Thai basil''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','What happens if the rice paper stays in water too long?','["It becomes hard.","It becomes too soft and breaks.","It changes colour."]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''it becomes too soft and breaks''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','What is the sauce mainly made from?','["Fish sauce and lime","Peanut butter and hoisin sauce","Soy sauce and chilli"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''Mix two spoons of peanut butter with hoisin sauce''. Ớt là tùy chọn.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Writing: Describe how to make a dish
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u05-writing-describe-a-process','Describe how to make a dish','Writing','Write 80–100 words explaining the steps of a simple recipe.',5,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Writing","prompt":"Write 80–100 words explaining how to make a simple dish from your country. Describe the steps in order and use sequencing words (first, next, after that, while, finally). Mention the ingredients and at least two cooking methods (boil, fry, steam, grill…).","minWords":80,"modelAnswer":"Egg fried rice is quick and cheap to make. First, cook some rice and let it cool, because cold rice fries better. Next, chop an onion and a few spring onions. After that, heat some oil in a large pan and fry the onion for two minutes. While the onion is cooking, beat two eggs in a bowl. Then pour the eggs into the pan and stir them quickly. Add the rice and a little fish sauce, and fry everything for five minutes. Finally, sprinkle the spring onions on top and serve hot.","checklist":["Introduce the dish in one sentence","Put the steps in a clear order","Use at least four sequencing words","Use countable/uncountable nouns correctly (some rice, two eggs)","Write 80–100 words"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+
+  -- Speaking: Talking about eating habits
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u05-speaking-eating-habits','Talking about eating habits','Speaking','Answer Part 1 questions about food and meals.',6,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Speaking","prompt":"IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. What is your favourite food? Why?\n2. Do you usually eat at home or in restaurants?\n3. Can you cook? What can you make?\n4. Do you think people in your country eat more healthily now than in the past?","preparationSeconds":15,"modelAnswer":"My favourite food is bun cha, grilled pork with rice noodles and herbs, because the sauce is sweet and a little sour at the same time. On weekdays I usually eat at home with my family, but at the weekend we often try a new restaurant. I can cook a few simple dishes, like fried rice and omelettes. I think people know more about healthy eating now, but they also eat much more fast food than in the past.","checklist":["Name the food and describe its taste","Use frequency words (usually, often, rarely)","Compare past and present in question 4","Use food vocabulary from this unit","Listen again: did each answer have a reason?"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+end $$;
+
+-- Unit 6 · Transport and Places in Town
+do $$
+declare v_course uuid; v_unit uuid; v_lesson uuid; v_question uuid;
+begin
+  insert into public.courses(stage_id,slug,title,description,published)
+  values ('ielts-starter','ielts-starter-everyday-topics','IELTS Starter: Everyday Topics','Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry.',false)
+  on conflict (slug) do update set title=excluded.title, description=excluded.description returning id into v_course;
+  insert into public.units(course_id,slug,title,sort_order,published)
+  values (v_course,'transport-and-towns','Unit 6 · Transport and Places in Town',6,false)
+  on conflict (course_id,slug) do update set title=excluded.title, sort_order=excluded.sort_order returning id into v_unit;
+
+  -- Vocabulary: Getting around town
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u06-vocabulary-getting-around','Getting around town','Vocabulary','Words for transport and places in a city.',1,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Vocabulary","introduction":"Transport and towns appear in Listening maps and directions, and in Speaking questions like ''How do you usually travel?'' Learn these words with their prepositions: get ON a bus, get OFF a train, go BY bike, go ON foot.\n\nMẹo: by bus / by car / by bike nhưng on foot.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'traffic jam','/ˈtræfɪk dʒæm/','kẹt xe','A long line of vehicles that cannot move or move very slowly.','I was late because of a traffic jam on the bridge.','Viết bằng tiếng Anh: Có nhiều vụ kẹt xe vào giờ cao điểm.','["There are many traffic jams in the rush hour.","There are a lot of traffic jams in the rush hour.","There are many traffic jams at rush hour."]'::jsonb,0)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'rush hour','/rʌʃ ˈaʊə/','giờ cao điểm','The busy time when people travel to or from work.','The metro is very crowded during rush hour.','Viết bằng tiếng Anh: Tôi tránh đi lại vào giờ cao điểm.','["I avoid travelling in the rush hour.","I avoid travelling during rush hour.","I avoid traveling during rush hour."]'::jsonb,1)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'public transport','/ˈpʌblɪk ˈtrænspɔːt/','phương tiện công cộng','Buses, trains and other vehicles that everyone can use.','Public transport in Singapore is fast and clean.','Viết bằng tiếng Anh: Tôi thường dùng phương tiện công cộng.','["I usually use public transport.","I often use public transport."]'::jsonb,2)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'pedestrian','/pəˈdestriən/','người đi bộ','A person who is walking, not travelling in a vehicle.','This street is only for pedestrians at the weekend.','Viết bằng tiếng Anh: Phố đi bộ rất đông vào buổi tối.','["The pedestrian street is very crowded in the evening.","The walking street is very crowded in the evening."]'::jsonb,3)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'convenient','/kənˈviːniənt/','thuận tiện','Easy to use or useful because it saves time.','Living near a metro station is very convenient.','Viết bằng tiếng Anh: Xe buýt rất thuận tiện cho học sinh.','["The bus is very convenient for students.","Buses are very convenient for students."]'::jsonb,4)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'fare','/feə/','giá vé (xe, tàu)','The money you pay for a journey.','The bus fare is only seven thousand dong.','Viết bằng tiếng Anh: Giá vé tàu tăng năm nay.','["The train fare went up this year.","Train fares went up this year.","The train fare increased this year."]'::jsonb,5)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'pollution','/pəˈluːʃn/','ô nhiễm','Dirty air, water or land caused by people.','Motorbikes are a major cause of air pollution in cities.','Viết bằng tiếng Anh: Ô nhiễm không khí là một vấn đề lớn.','["Air pollution is a big problem.","Air pollution is a serious problem."]'::jsonb,6)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'residential area','/ˌrezɪˈdenʃl ˈeəriə/','khu dân cư','A part of a town where people live, not work.','We live in a quiet residential area outside the centre.','Viết bằng tiếng Anh: Khu dân cư này yên tĩnh.','["This residential area is quiet.","This residential area is very quiet."]'::jsonb,7)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+
+  -- Grammar: Comparatives and superlatives
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u06-grammar-comparatives-superlatives','Comparatives and superlatives','Grammar','Compare two things, and pick the extreme in a group.',2,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Grammar","rule":"Comparatives compare two things (+ than); superlatives compare one thing with a whole group (the …).\n• Short adjectives: cheap → cheaper → the cheapest; big → bigger → the biggest; busy → busier → the busiest.\n• Long adjectives: convenient → more convenient → the most convenient.\n• Irregular: good → better → the best; bad → worse → the worst; far → further → the furthest.\n• Small difference: a bit / slightly cheaper. Big difference: much / far more expensive.\n• Equal: as fast as; not as crowded as.\n\nGhi nhớ: không dùng ''more'' với tính từ ngắn (NOT more cheaper).","example":"The metro is much faster than the bus, but cycling is the cheapest way to get around.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','Travelling by train is ___ than flying.','["more cheap","cheaper","the cheapest"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Tính từ ngắn ''cheap'' → cheaper; có ''than'' nên dùng so sánh hơn.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','This is ___ bridge in the city.','["the longest","longer","the most long"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'So sánh với cả nhóm ''in the city'' → so sánh nhất: the longest.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','The bus is ___ convenient than a taxi for me.','["much","more","most"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Tính từ dài ''convenient'' → more convenient than.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','The traffic today is ___ than yesterday.','["badder","worse","worst"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''bad'' bất quy tắc: worse (so sánh hơn).','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','My town isn''t ___ Hanoi.','["as busy as","busier as","as busier than"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'So sánh không bằng: not as + tính từ + as.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','Choose the correct sentence.','["The metro is more faster than the bus.","The metro is much faster than the bus.","The metro is fastest than the bus."]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Dùng ''much'' để nhấn mạnh so sánh hơn; không dùng ''more'' với ''faster''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Reading: A car-free Sunday
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u06-reading-car-free-sunday','A car-free Sunday','Reading','Read about a city experiment and answer True/False/Not Given questions.',3,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Reading","passage":"Every first Sunday of the month, the central streets of a medium-sized coastal city close to cars and motorbikes from six in the morning until noon. The idea started three years ago, when a group of university students asked the city council to try a ''car-free morning'' for one day.\n\nThe council agreed, but many shop owners were against the plan. They believed customers would stay at home if they could not drive into the centre. In fact, the opposite happened. Families came on foot and by bicycle, children played in the middle of the road, and cafés put tables on the pavement. One bakery owner said she sold more bread that morning than on a normal weekday.\n\nThe event is now held every month, and the council measures air quality before and during the closure. On car-free mornings, the level of pollution in the main square is around forty per cent lower than on other Sundays.\n\nNot everyone is happy. Taxi drivers say they lose income, and some people who live inside the area complain that they cannot leave home by car. The council has responded by allowing residents to drive slowly on two streets, and it now runs free electric buses around the edge of the closed area.\n\nThe students who suggested the idea have since graduated, but one of them now works for the council''s transport department.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','The idea for the car-free morning came from the city council. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Ý tưởng đến từ một nhóm sinh viên đại học; hội đồng thành phố chỉ đồng ý → False.','a group of university students asked the city council to try a ''car-free morning''')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','At first, shop owners supported the plan. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''many shop owners were against the plan'' → False.','many shop owners were against the plan')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','A bakery sold more bread than on a normal weekday. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Chủ tiệm bánh nói bán được nhiều hơn ngày thường → True.','she sold more bread that morning than on a normal weekday')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','Pollution in the main square falls by about 40% on car-free mornings. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''around forty per cent lower'' → True.','the level of pollution in the main square is around forty per cent lower')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','The free electric buses are paid for by local shops. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'Bài nói hội đồng chạy xe buýt điện miễn phí nhưng không nói ai trả tiền → Not Given.','it now runs free electric buses around the edge of the closed area')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','One of the students now works in transport for the council. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''one of them now works for the council''s transport department'' → True.','one of them now works for the council''s transport department')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Listening: Directions on a city tour
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u06-listening-city-tour','Directions on a city tour','Listening','Listen to a tour guide and fill the gaps with the right word or number.',4,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Listening","transcript":"Guide: OK, everyone, gather round. We''re standing outside the Old Post Office, which was built in 1891. Today it''s a museum, and entry is free on Wednesdays.\nFrom here we''ll walk down Market Street. On your left you''ll see the night market – it opens at six in the evening, so it''s closed now. At the end of Market Street, turn right and you''ll come to the river.\nThe pedestrian bridge across the river is the newest in the city – it opened only last year. From the middle of the bridge you get the best view of the cathedral.\nOn the other side, there''s a small park with a statue of a famous poet. That''s where we''ll stop for a break. There are public toilets next to the park entrance.\nAfter the break, we''ll take the number 12 bus back to the hotel. The bus stop is opposite the park, and the fare is just eight thousand dong, so please have some small change ready.\nThe whole tour takes about two and a half hours. Please stay together, because the streets near the market can get very crowded.","audioUrl":"","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','The Old Post Office was built in ______.','["1819","1891","1981"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''built in 1891'' – chú ý thứ tự các chữ số.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Entry to the museum is free on ______.','["Mondays","Wednesdays","Sundays"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''entry is free on Wednesdays''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','At the end of Market Street, turn ______.','["left","right","back"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''turn right and you''ll come to the river''. Chợ đêm ở bên trái – dễ nhầm.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','The best view of the cathedral is from the ______.','["park","bridge","bus stop"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''From the middle of the bridge you get the best view of the cathedral.''','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','The bus fare is ______ dong.','["6,000","8,000","12,000"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''the fare is just eight thousand dong'' – số 12 là số tuyến xe buýt.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Writing: Compare transport in your town
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u06-writing-my-town','Compare transport in your town','Writing','Write 100–120 words comparing two ways to travel in your town.',5,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Writing","prompt":"Write 100–120 words comparing two ways of getting around your town or city (for example, motorbike and bus). Write one paragraph for each, and finish with a sentence saying which you prefer and why. Use at least three comparative or superlative forms.","minWords":100,"modelAnswer":"In my city, most people travel by motorbike or by bus. A motorbike is the fastest way to get around, because you can go through small streets and avoid some traffic jams. It is also more flexible, as you can leave whenever you want. However, it is more dangerous than the bus, and riding in the rain or heat is unpleasant.\n\nThe bus is much cheaper than a motorbike, because the fare is only seven thousand dong. It is also safer and better for the environment. On the other hand, buses are slower and very crowded during rush hour.\n\nOverall, I prefer the bus for long journeys, because I can read or listen to podcasts on the way.","checklist":["Write one paragraph for each type of transport","Use at least three comparatives or superlatives","Use linkers: however, on the other hand, also","Finish with your preference and a reason","Write 100–120 words"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+
+  -- Speaking: Talking about transport and towns
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u06-speaking-transport','Talking about transport and towns','Speaking','Answer Part 1 questions comparing places and transport.',6,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Speaking","prompt":"IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. How do you usually travel around your city?\n2. Is public transport good where you live?\n3. Which is the most interesting place in your town for visitors?\n4. Would you prefer to live in a big city or a small town?","preparationSeconds":15,"modelAnswer":"I usually ride my motorbike, because it''s the quickest way to get to college. Public transport is getting better – we have a new metro line now – but buses are still much slower than motorbikes. I think the most interesting place for visitors is the old market, because it''s busier and more colourful than the modern shopping centres. I''d prefer to live in a small town, because it''s quieter and the air is cleaner, although big cities have more jobs.","checklist":["Use comparatives to compare two options","Use at least one superlative","Give a reason for each answer","Use transport vocabulary from this unit","Listen again: was your answer longer than one sentence?"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+end $$;
+
+-- Unit 7 · Jobs, Work and Study
+do $$
+declare v_course uuid; v_unit uuid; v_lesson uuid; v_question uuid;
+begin
+  insert into public.courses(stage_id,slug,title,description,published)
+  values ('ielts-starter','ielts-starter-everyday-topics','IELTS Starter: Everyday Topics','Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry.',false)
+  on conflict (slug) do update set title=excluded.title, description=excluded.description returning id into v_course;
+  insert into public.units(course_id,slug,title,sort_order,published)
+  values (v_course,'jobs-work-and-study','Unit 7 · Jobs, Work and Study',7,false)
+  on conflict (course_id,slug) do update set title=excluded.title, sort_order=excluded.sort_order returning id into v_unit;
+
+  -- Vocabulary: Jobs and work experience
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u07-vocabulary-work-experience','Jobs and work experience','Vocabulary','Words for jobs, workplaces and applying for work.',1,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Vocabulary","introduction":"''Do you work or are you a student?'' is usually the first question in IELTS Speaking. These words help you describe a job, a part-time position or what you are studying, and they are useful for writing a job application email.\n\nMẹo: part-time job (việc bán thời gian) ≠ full-time job (việc toàn thời gian).","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'part-time job','/ˌpɑːt ˈtaɪm dʒɒb/','việc làm bán thời gian','A job you do for only some hours of the week.','Many students have a part-time job in a café.','Viết bằng tiếng Anh: Tôi có một công việc bán thời gian.','["I have a part-time job.","I''ve got a part-time job."]'::jsonb,0)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'apply for','/əˈplaɪ fɔː/','nộp đơn xin','To ask formally for a job or a place on a course.','She applied for a job at a bookshop.','Viết bằng tiếng Anh: Tôi muốn nộp đơn xin việc này.','["I want to apply for this job.","I would like to apply for this job.","I''d like to apply for this job."]'::jsonb,1)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'experience','/ɪkˈspɪəriəns/','kinh nghiệm','Knowledge or skill you get from doing something.','I don''t have any experience of working with children.','Viết bằng tiếng Anh: Tôi có kinh nghiệm bán hàng.','["I have experience in sales.","I have some experience in sales.","I have sales experience."]'::jsonb,2)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'colleague','/ˈkɒliːɡ/','đồng nghiệp','A person you work with.','My colleagues helped me a lot in my first week.','Viết bằng tiếng Anh: Đồng nghiệp của tôi rất thân thiện.','["My colleagues are very friendly.","My colleague is very friendly."]'::jsonb,3)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'salary','/ˈsæləri/','lương (tháng/năm)','The money you receive regularly for your job.','Doctors usually earn a high salary.','Viết bằng tiếng Anh: Lương không phải là điều quan trọng nhất.','["Salary is not the most important thing.","The salary is not the most important thing.","Salary isn''t the most important thing."]'::jsonb,4)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'shift','/ʃɪft/','ca làm việc','A period of work, e.g. a morning or night shift.','Nurses often work long night shifts.','Viết bằng tiếng Anh: Tôi làm ca tối vào thứ Sáu.','["I work the evening shift on Fridays.","I work an evening shift on Fridays.","I work evening shifts on Fridays."]'::jsonb,5)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'reliable','/rɪˈlaɪəbl/','đáng tin cậy','Someone you can trust to do what they say.','Employers want staff who are reliable and on time.','Viết bằng tiếng Anh: Tôi là người chăm chỉ và đáng tin cậy.','["I am hard-working and reliable.","I''m hard-working and reliable.","I am hardworking and reliable."]'::jsonb,6)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'degree','/dɪˈɡriː/','bằng đại học','A qualification you get after finishing a university course.','My brother has a degree in engineering.','Viết bằng tiếng Anh: Tôi đang học lấy bằng kinh tế.','["I''m studying for a degree in economics.","I am studying for a degree in economics.","I am doing a degree in economics."]'::jsonb,7)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+
+  -- Grammar: Can, can't, could and couldn't
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u07-grammar-can-could','Can, can''t, could and couldn''t','Grammar','Talk about present and past ability.',2,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Grammar","rule":"can / can''t + base verb – ability now: I can speak three languages. She can''t drive.\ncould / couldn''t + base verb – ability in the past: When I was five, I could swim. I couldn''t read until I was six.\n\n• Questions: Can you use Excel? – Yes, I can. / No, I can''t.\n• No -s and no ''to'': He can cook (NOT He cans cook / He can to cook).\n• For a specific success in the past, use ''was able to'' or the past simple: After three hours, we were able to fix the computer.\n\nGhi nhớ: can/could + động từ nguyên mẫu không ''to''.","example":"I couldn''t type fast at school, but now I can type sixty words a minute.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','My little brother ___ ride a bike when he was four.','["can","could","cans"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Khả năng trong quá khứ (''when he was four'') → could.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Choose the correct sentence.','["She can to speak Korean.","She cans speak Korean.","She can speak Korean."]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'can + động từ nguyên mẫu, không ''to'', không thêm -s.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','''Can you use Photoshop?'' – ''No, I ___.''','["can''t","don''t","couldn''t"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Câu trả lời ngắn lặp lại trợ động từ của câu hỏi: No, I can''t.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','I ___ sleep last night because the neighbours were very noisy.','["can''t","couldn''t","can"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''last night'' là quá khứ → couldn''t.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','Which sentence talks about ability NOW?','["I could swim at seven.","I can swim 1 km without stopping.","I couldn''t swim last year."]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''can'' diễn tả khả năng hiện tại.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','The exam was hard, but in the end I ___ answer every question.','["could","was able to","can"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Một lần làm được việc cụ thể trong quá khứ → was able to (không dùng could).','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Reading: Finding a summer job
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u07-reading-summer-jobs','Finding a summer job','Reading','Read an advice article and practise True/False/Not Given.',3,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Reading","passage":"Each year, thousands of students look for a job during the summer holidays. Career adviser Linh Pham says this is easier than most teenagers think. ''Cafés, shops and summer camps need extra staff from June to August,'' she explains. ''Employers know students are only available for a short time, and that is fine for them.''\n\nAccording to Ms Pham, the most common mistake is waiting too long. Many students start looking after their exams finish, but by then the best positions have already gone. She recommends sending applications at least six weeks before the holiday begins.\n\nExperience is not always necessary. ''For a first job, employers care more about attitude,'' she says. ''If you are polite, reliable and willing to learn, that is often enough.'' However, she suggests that students think about skills they already have. Someone who helps in a family shop can say they have experience of dealing with customers, and a student who organises school events can mention teamwork.\n\nMs Pham also reminds students to check the conditions before they accept an offer. They should know how many hours they will work each week, how much they will be paid and whether they will need to work at weekends. Students under eighteen may need permission from their parents.\n\nFinally, she says a summer job is not only about money. ''Students learn to manage their time and talk to adults confidently. These skills help them at university and later in their careers.''","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','Ms Pham thinks finding a summer job is very difficult for teenagers. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Bà nói việc này ''easier than most teenagers think'' → False.','this is easier than most teenagers think')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Students should apply at least six weeks before the holiday. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''sending applications at least six weeks before the holiday begins'' → True.','sending applications at least six weeks before the holiday begins')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','Employers always require previous work experience. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''Experience is not always necessary'' → False.','Experience is not always necessary')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','Summer camps pay more than cafés. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'Bài nhắc cả hai nơi cần thêm nhân viên nhưng không so sánh lương → Not Given.','Cafés, shops and summer camps need extra staff from June to August')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','Which of these does Ms Pham say students should check before accepting a job?','["The number of hours per week","The manager''s qualifications","The size of the company"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Học sinh nên biết ''how many hours they will work each week'', lương và có làm cuối tuần không.','how many hours they will work each week')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','According to Ms Pham, a summer job also helps students…','["choose a university","talk to adults confidently","save money for travel"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''Students learn to manage their time and talk to adults confidently.''','Students learn to manage their time and talk to adults confidently')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Listening: A part-time job interview
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u07-listening-job-interview','A part-time job interview','Listening','Listen to a short interview and answer multiple-choice questions.',4,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Listening","transcript":"Manager: Thanks for coming in, Hien. So you''d like to work in our bookshop at the weekends?\nHien: Yes, that''s right. I''m in my second year at university, studying literature.\nManager: Have you worked in a shop before?\nHien: Not in a bookshop, but last summer I worked at my aunt''s clothes shop for two months. I served customers and used the cash register.\nManager: Good. What would you say is your biggest strength?\nHien: I think I''m very organised. At university I''m the secretary of the reading club, so I plan our meetings and keep the records.\nManager: That''s useful – we need someone to help with stock in the storeroom too. Can you work on Saturdays and Sundays?\nHien: Saturdays are fine. On Sundays I can only work in the afternoon, because I have a class in the morning.\nManager: That should be OK. The shifts are four hours long, and we pay thirty-five thousand dong an hour.\nHien: That sounds good. When would I start?\nManager: We''re very busy before the new school year, so ideally next week. I''ll call you by Friday to let you know.","audioUrl":"","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','What does Hien study?','["Business","Literature","History"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''I''m in my second year at university, studying literature.''','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Where did Hien work last summer?','["In a bookshop","In a clothes shop","In a café"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''I worked at my aunt''s clothes shop for two months.''','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','What does Hien say is her biggest strength?','["She is organised.","She reads quickly.","She is good with money."]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''I think I''m very organised.''','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','When can Hien work on Sundays?','["All day","Only in the morning","Only in the afternoon"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'Sáng Chủ nhật cô ấy có lớp, nên chỉ làm được buổi chiều.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','How long is each shift?','["Three hours","Four hours","Five hours"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''The shifts are four hours long''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Writing: An email applying for a summer job
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u07-writing-job-application','An email applying for a summer job','Writing','Write a polite 100–120 word application email.',5,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Writing","prompt":"You saw this advert: ''Summer camp helpers wanted – July and August. Must be friendly and enjoy working with children.'' Write an email to the camp manager, Ms Taylor (100–120 words). In your email:\n• say which job you are applying for and where you saw the advert\n• describe your skills and any experience\n• say when you are available.\nUse a polite, semi-formal style (Dear Ms Taylor, … Best regards, …).","minWords":100,"modelAnswer":"Dear Ms Taylor,\n\nI am writing to apply for the position of summer camp helper, which I saw advertised on your website.\n\nI am eighteen and I am in my final year of high school. I really enjoy working with children. For the past year I have helped at an English club for young learners every Saturday, where I organise games and help the teacher with activities. I can also swim well and play the guitar, so I could lead some outdoor and music activities at the camp.\n\nI am available from the first of July until the end of August, and I can work at weekends if necessary.\n\nI look forward to hearing from you.\n\nBest regards,\nNguyen Thi Hong","checklist":["Use a polite opening and closing","State the job and where you saw it","Describe skills with can / could and examples","Say when you are available","Write 100–120 words with no contractions"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+
+  -- Speaking: Describing your skills and abilities
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u07-speaking-skills-and-abilities','Describing your skills and abilities','Speaking','Answer Part 1 questions about work, study and skills.',6,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Speaking","prompt":"IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. Do you work or are you a student?\n2. What skill would you like to learn in the future?\n3. Is there something you could do as a child that you can''t do now?\n4. What job would you like to have in ten years?","preparationSeconds":15,"modelAnswer":"I''m a student; I''m in my second year of a business degree, and I also have a part-time job in a coffee shop. In the future I''d like to learn to code, because I think it will be useful in almost every job. As a child I could do the splits because I took dance classes, but now I definitely can''t. In ten years I''d like to manage my own small business, maybe a café with a bookshop inside.","checklist":["Use can / could / couldn''t correctly","Use work vocabulary from this unit","Add a reason or an example","Use ''I''d like to…'' for the future","Listen again: was your pronunciation of ''can'' and ''can''t'' clear?"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+end $$;
+
+-- Unit 8 · Health and Medicine
+do $$
+declare v_course uuid; v_unit uuid; v_lesson uuid; v_question uuid;
+begin
+  insert into public.courses(stage_id,slug,title,description,published)
+  values ('ielts-starter','ielts-starter-everyday-topics','IELTS Starter: Everyday Topics','Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry.',false)
+  on conflict (slug) do update set title=excluded.title, description=excluded.description returning id into v_course;
+  insert into public.units(course_id,slug,title,sort_order,published)
+  values (v_course,'health-and-medicine','Unit 8 · Health and Medicine',8,false)
+  on conflict (course_id,slug) do update set title=excluded.title, sort_order=excluded.sort_order returning id into v_unit;
+
+  -- Vocabulary: Health, illness and staying well
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u08-vocabulary-health','Health, illness and staying well','Vocabulary','Words for common illnesses, healthy habits and relaxing.',1,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Vocabulary","introduction":"Health is a frequent topic in IELTS Reading passages and in Writing Task 2 questions about lifestyle. Learn words for common problems (a headache, stress) and healthy habits (get enough sleep, cut down on sugar), then use them to give advice.\n\nMẹo: have a headache / have a cold / feel stressed – chú ý động từ đi kèm.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'have a headache','/hæv ə ˈhedeɪk/','bị đau đầu','To feel pain in your head.','I often have a headache if I don''t drink enough water.','Viết bằng tiếng Anh: Tôi bị đau đầu sau giờ học.','["I have a headache after class.","I had a headache after class.","I have a headache after school."]'::jsonb,0)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'catch a cold','/kætʃ ə kəʊld/','bị cảm lạnh','To become ill with a mild illness that affects your nose and throat.','Wear a jacket or you''ll catch a cold.','Viết bằng tiếng Anh: Em gái tôi bị cảm lạnh tuần trước.','["My sister caught a cold last week.","My younger sister caught a cold last week."]'::jsonb,1)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'stress','/stres/','căng thẳng','A feeling of worry caused by difficult situations.','Exams cause a lot of stress for students.','Viết bằng tiếng Anh: Thể dục giúp giảm căng thẳng.','["Exercise helps to reduce stress.","Exercise helps reduce stress.","Exercise can reduce stress."]'::jsonb,2)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'get enough sleep','/ɡet ɪˈnʌf sliːp/','ngủ đủ giấc','To sleep for as long as your body needs.','Teenagers need to get enough sleep to concentrate.','Viết bằng tiếng Anh: Tôi không ngủ đủ giấc.','["I don''t get enough sleep.","I do not get enough sleep."]'::jsonb,3)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'cut down on','/kʌt daʊn ɒn/','cắt giảm','To have or do less of something.','My doctor told me to cut down on sugar.','Viết bằng tiếng Anh: Tôi nên cắt giảm đồ ăn nhanh.','["I should cut down on fast food.","I need to cut down on fast food."]'::jsonb,4)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'work out','/wɜːk aʊt/','tập thể dục','To do physical exercise, usually in a gym.','He works out three times a week.','Viết bằng tiếng Anh: Tôi tập thể dục ở phòng gym.','["I work out at the gym.","I work out in the gym."]'::jsonb,5)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'prescription','/prɪˈskrɪpʃn/','đơn thuốc','A doctor''s written instruction for medicine.','You need a prescription to buy this medicine.','Viết bằng tiếng Anh: Bác sĩ đưa cho tôi một đơn thuốc.','["The doctor gave me a prescription."]'::jsonb,6)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'screen time','/skriːn taɪm/','thời gian dùng màn hình','Time spent looking at phones, computers or TVs.','Too much screen time before bed affects your sleep.','Viết bằng tiếng Anh: Tôi muốn giảm thời gian dùng màn hình.','["I want to reduce my screen time.","I want to cut down on screen time.","I want to reduce screen time."]'::jsonb,7)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+
+  -- Grammar: Should, have to and don't have to
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u08-grammar-should-have-to','Should, have to and don''t have to','Grammar','Give advice and talk about rules and necessity.',2,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Grammar","rule":"should / shouldn''t + base verb – advice: You should drink more water. You shouldn''t skip breakfast.\nhave to / has to + base verb – something is necessary or a rule: Nurses have to work at night. She has to take this medicine twice a day.\ndon''t / doesn''t have to – it is NOT necessary (you can choose): You don''t have to make an appointment; just come in.\nmustn''t – it is not allowed: You mustn''t smoke in the hospital.\n\nCẩn thận: don''t have to (không cần) ≠ mustn''t (không được phép).","example":"You don''t have to go to a gym to stay fit, but you should walk at least thirty minutes a day.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','You look tired. You ___ go to bed earlier.','["should","have to","mustn''t"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Đưa ra lời khuyên → should.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','In this clinic, patients ___ wear a mask. It''s a rule.','["should","have to","don''t have to"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Quy định bắt buộc → have to.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','It''s free – you ___ pay for the health check.','["mustn''t","don''t have to","shouldn''t"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Không cần thiết phải trả tiền → don''t have to.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','My father ___ take his medicine every morning.','["have to","has to","has"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Chủ ngữ số ít ''My father'' → has to.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','You ___ use your phone in the operating room. It''s not allowed.','["don''t have to","mustn''t","shouldn''t to"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Không được phép → mustn''t.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','Choose the correct sentence.','["You should to eat more fruit.","You should eat more fruit.","You shoulds eat more fruit."]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'should + động từ nguyên mẫu, không ''to''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Reading: Do students sleep enough?
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u08-reading-sleep-and-students','Do students sleep enough?','Reading','Read an opinion essay and identify the writer''s views.',3,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Reading","passage":"Many people believe that teenagers are simply lazy when they find it hard to get up in the morning. In my opinion, this view is unfair, and schools should do more to help students sleep well.\n\nFirst of all, the body clock changes during the teenage years. Research shows that most teenagers naturally feel sleepy later at night than children or adults do. If they must be at school by seven, many of them cannot get the eight to ten hours of sleep that doctors recommend.\n\nSecondly, students today have more reasons to stay awake. Homework, extra classes and social media all compete for the evening hours. Bright screens also send a signal to the brain that it is still daytime, which makes it harder to fall asleep.\n\nThe effects of too little sleep are serious. Tired students find it difficult to concentrate, and they are more likely to feel stressed or anxious. Some studies have also found that they are more likely to have accidents on the way to school.\n\nSome people argue that a later start time would cause problems for parents who work early. This is a fair point, but schools could offer a supervised study room for students who arrive early.\n\nIn conclusion, I believe that later school start times, less homework at weekends and lessons about healthy sleep habits would make a real difference to students'' health and results.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','What is the writer''s opinion about the belief that teenagers are lazy?','["It is correct.","It is unfair.","It is only partly true."]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''In my opinion, this view is unfair''.','In my opinion, this view is unfair')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','According to the essay, why do teenagers feel sleepy later at night?','["They drink too much coffee.","Their body clock changes.","They do too much sport."]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''the body clock changes during the teenage years''.','the body clock changes during the teenage years')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','How do bright screens affect sleep?','["They make the eyes tired.","They tell the brain it is still daytime.","They make students hungry."]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Màn hình sáng ''send a signal to the brain that it is still daytime''.','send a signal to the brain that it is still daytime')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','Tired students are more likely to have accidents on the way to school. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''they are more likely to have accidents on the way to school'' → True.','they are more likely to have accidents on the way to school')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','How does the writer answer the problem for working parents?','["Parents should change their jobs.","Schools could open a supervised study room.","Students should use public transport."]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''schools could offer a supervised study room for students who arrive early''.','schools could offer a supervised study room for students who arrive early')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','Which is NOT one of the writer''s suggestions in the conclusion?','["Later school start times","Less homework at weekends","Banning phones at school"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'Kết luận đề xuất giờ học muộn hơn, ít bài tập cuối tuần và bài học về giấc ngủ – không nhắc cấm điện thoại.','later school start times, less homework at weekends and lessons about healthy sleep habits')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Listening: Staying active at work
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u08-listening-staying-active','Staying active at work','Listening','Listen to a radio interview and answer multiple-choice questions.',4,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Listening","transcript":"Presenter: Today we''re talking about office workers who sit at a desk all day. With me is physiotherapist Dr Kate Lim. Kate, how long do most office workers sit each day?\nKate: In our survey, the average was nine hours, including the time at home in the evening. That''s a lot more than people expect.\nPresenter: Why is that a problem?\nKate: Sitting for a long time without moving is bad for your back and neck, and it slows down your body''s use of energy. Even people who go to the gym can be affected if they sit all day.\nPresenter: So what should people do?\nKate: The simplest thing is to stand up every thirty minutes. You don''t have to do exercises – just walk to get some water or stretch your arms.\nPresenter: Many listeners say they don''t exercise because it takes too much time.\nKate: Yes, that''s the most common reason people give, more than the cost. But a ten-minute walk at lunchtime really helps. I spend twenty minutes outside on my lunch break, and I feel much more awake in the afternoon.\nPresenter: Any final advice?\nKate: Take the stairs instead of the lift. It''s free, and it''s a good workout for your legs.","audioUrl":"","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','According to the survey, how many hours a day do office workers sit on average?','["Seven","Eight","Nine"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'''the average was nine hours''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','What does Kate say about people who go to the gym?','["They don''t have any problems.","They can still be affected by sitting all day.","They should sit more."]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''Even people who go to the gym can be affected if they sit all day.''','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','How often should office workers stand up?','["Every 15 minutes","Every 30 minutes","Every hour"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''stand up every thirty minutes''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','What is the most common reason people give for not exercising?','["It takes too much time.","It is too expensive.","It makes them tired."]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''that''s the most common reason people give, more than the cost''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','How long does Kate spend outside on her lunch break?','["10 minutes","20 minutes","30 minutes"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Cô ấy dành 20 phút; 10 phút là thời gian đi bộ cô khuyên người nghe – dễ nhầm.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Writing: An email giving health advice
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u08-writing-advice-email','An email giving health advice','Writing','Write a 100–120 word email to a friend who feels stressed.',5,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Writing","prompt":"Your friend Nam wrote to you: ''I''ve got exams next month and I feel stressed all the time. I can''t sleep well and I eat lots of junk food. What should I do?'' Write an email to Nam (100–120 words). Give at least three pieces of advice and explain why each one will help. Use should, shouldn''t and don''t have to.","minWords":100,"modelAnswer":"Hi Nam,\n\nI''m sorry to hear you''re feeling stressed. Here are a few ideas that helped me last year.\n\nFirst, you should make a study timetable. When you know exactly what to revise each day, the exams feel less frightening. Second, you shouldn''t use your phone in bed, because the bright screen makes it harder to fall asleep. Try reading a book instead. Third, you don''t have to give up snacks completely, but you should cut down on crisps and sweets and eat more fruit. Healthy food gives you more energy for studying.\n\nFinally, take short breaks and go for a walk. Fresh air really clears your mind.\n\nGood luck!\nAn","checklist":["Respond to your friend''s problem in the first line","Give at least three pieces of advice","Explain why each piece of advice helps","Use should, shouldn''t and don''t have to correctly","Write 100–120 words"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+
+  -- Speaking: Talking about a healthy lifestyle
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u08-speaking-healthy-lifestyle','Talking about a healthy lifestyle','Speaking','Answer Part 1 questions about health and relaxing.',6,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Speaking","prompt":"IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. What do you do to stay healthy?\n2. How do you usually relax after a busy day?\n3. Do you think young people in your country get enough exercise?\n4. What advice would you give to someone who wants to sleep better?","preparationSeconds":15,"modelAnswer":"I try to walk to college instead of taking the bus, and I play football with my friends on Sunday mornings. After a busy day I usually relax by listening to music or chatting with my family over dinner. Honestly, I don''t think young people get enough exercise, because they spend so much time on their phones. I''d say you should stop using screens an hour before bed and try to go to sleep at the same time every night.","checklist":["Use health vocabulary from this unit","Use should for advice in question 4","Give your opinion with ''I think'' or ''Honestly''","Add a reason with because","Listen again: did you speak for at least 15 seconds each time?"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+end $$;
+
+-- Unit 9 · Language
+do $$
+declare v_course uuid; v_unit uuid; v_lesson uuid; v_question uuid;
+begin
+  insert into public.courses(stage_id,slug,title,description,published)
+  values ('ielts-starter','ielts-starter-everyday-topics','IELTS Starter: Everyday Topics','Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry.',false)
+  on conflict (slug) do update set title=excluded.title, description=excluded.description returning id into v_course;
+  insert into public.units(course_id,slug,title,sort_order,published)
+  values (v_course,'language','Unit 9 · Language',9,false)
+  on conflict (course_id,slug) do update set title=excluded.title, sort_order=excluded.sort_order returning id into v_unit;
+
+  -- Vocabulary: Learning languages
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u09-vocabulary-learning-languages','Learning languages','Vocabulary','Words for talking about language learning and communication.',1,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Vocabulary","introduction":"You are a language learner, so this topic is perfect for IELTS Speaking: ''How long have you studied English?'', ''What is difficult about learning a language?'' These words help you talk about your own learning and write about language in Task 2 essays.\n\nMẹo: fluent (trôi chảy) ≠ accurate (chính xác) – hai tiêu chí khác nhau khi chấm Speaking.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'native speaker','/ˈneɪtɪv ˈspiːkə/','người bản ngữ','Someone who learned a language as a child at home.','Talking to native speakers improves your listening.','Viết bằng tiếng Anh: Giáo viên của tôi là người bản ngữ.','["My teacher is a native speaker.","My teacher is a native English speaker."]'::jsonb,0)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'fluent','/ˈfluːənt/','trôi chảy, lưu loát','Able to speak a language easily, without many pauses.','She is fluent in English and Japanese.','Viết bằng tiếng Anh: Tôi muốn nói tiếng Anh trôi chảy.','["I want to speak English fluently.","I want to be fluent in English.","I would like to speak English fluently."]'::jsonb,1)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'accent','/ˈæksent/','giọng (vùng miền)','The way people from a place pronounce words.','IELTS listening includes British and Australian accents.','Viết bằng tiếng Anh: Giọng Úc khó nghe đối với tôi.','["The Australian accent is difficult for me to understand.","Australian accents are difficult for me to understand.","The Australian accent is hard for me to understand."]'::jsonb,2)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'pronunciation','/prəˌnʌnsiˈeɪʃn/','cách phát âm','The way a word is said.','Recording yourself helps you check your pronunciation.','Viết bằng tiếng Anh: Phát âm của tôi đang tốt hơn.','["My pronunciation is getting better.","My pronunciation is improving."]'::jsonb,3)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'memorise','/ˈmeməraɪz/','học thuộc','To learn something so that you remember it exactly.','It is better to use new words than just memorise them.','Viết bằng tiếng Anh: Tôi học thuộc mười từ mới mỗi ngày.','["I memorise ten new words every day.","I memorize ten new words every day.","I memorise ten new words a day."]'::jsonb,4)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'make mistakes','/meɪk mɪˈsteɪks/','mắc lỗi','To do or say something wrong.','Don''t be afraid to make mistakes when you speak.','Viết bằng tiếng Anh: Ai cũng mắc lỗi khi học ngôn ngữ.','["Everyone makes mistakes when they learn a language.","Everybody makes mistakes when learning a language.","Everyone makes mistakes when learning a language."]'::jsonb,5)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'bilingual','/baɪˈlɪŋɡwəl/','song ngữ','Able to speak two languages equally well.','Children who grow up bilingual often find it easier to learn a third language.','Viết bằng tiếng Anh: Bạn tôi nói song ngữ.','["My friend is bilingual."]'::jsonb,6)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'pick up','/pɪk ʌp/','học lỏm, tiếp thu (một cách tự nhiên)','To learn something without studying it formally.','I picked up a few Korean words from TV dramas.','Viết bằng tiếng Anh: Tôi học được nhiều từ qua bài hát.','["I picked up a lot of words from songs.","I pick up a lot of words from songs.","I picked up many words from songs."]'::jsonb,7)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+
+  -- Grammar: Going to for plans and intentions
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u09-grammar-going-to','Going to for plans and intentions','Grammar','Talk about future plans with be going to.',2,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Grammar","rule":"am / is / are + going to + base verb – plans and intentions you have already decided:\n• I''m going to take the IELTS test in December.\n• We aren''t going to study tonight.\n• Are you going to join the speaking club? – Yes, I am. / No, I''m not.\n\nAlso use going to for predictions when you can see evidence now: Look at those clouds – it''s going to rain.\n\nTime words: tomorrow, next week, this summer, in two years.\n\nGhi nhớ: kế hoạch đã quyết định → be going to + động từ nguyên mẫu.","example":"This year I''m going to read one English book a month, and I''m not going to translate every word.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','Next summer my sister ___ study in Australia.','["is going to","are going to","going to"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Chủ ngữ số ít ''my sister'' → is going to.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Choose the correct question.','["Are you going take the test?","Are you going to take the test?","Do you going to take the test?"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Câu hỏi: Are + chủ ngữ + going to + động từ nguyên mẫu.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','We ___ have a class tomorrow – the teacher is ill.','["aren''t going to","don''t going to","isn''t going to"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Phủ định với ''we'': aren''t going to.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','Look at the sky! It ___ rain.','["is going to","goes to","go to"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Dự đoán dựa trên dấu hiệu hiện tại → is going to.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','''Are you going to watch the film in English?'' – ''Yes, ___.''','["I''m going","I am","I do"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Câu trả lời ngắn: Yes, I am.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','Which sentence describes a decided plan?','["I learn English every day.","I''m going to start a French course in May.","I learned Chinese as a child."]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Kế hoạch đã quyết định trong tương lai → be going to.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Reading: Saving a language
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u09-reading-endangered-languages','Saving a language','Reading','Read about endangered languages and complete sentences.',3,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Reading","passage":"There are around seven thousand languages in the world today, but experts believe that nearly half of them could disappear by the end of this century. A language becomes endangered when children stop learning it at home. Once the last speakers grow old, the language can be lost forever.\n\nWhy does this happen? Often, families choose a more widely spoken language because it offers better jobs and education. Young people may also move to cities, where they rarely hear their parents'' language.\n\nHowever, some communities are fighting back. In New Zealand, the Maori language was spoken by fewer and fewer children by the 1970s. Parents and teachers then started ''language nests'' – nursery schools where young children hear only Maori all day. Today, Maori is an official language of the country, and it is used on television and in government websites.\n\nTechnology is also helping. Volunteers record older speakers telling stories, and these recordings are used to create online dictionaries and learning apps. In some cases, a language that had almost no young speakers now has a growing number of learners.\n\nLinguists say that losing a language means losing more than words. Each language contains knowledge about local plants, history and ways of thinking that may not exist anywhere else.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','Complete: A language becomes endangered when ______ stop learning it at home.','["teachers","children","governments"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''A language becomes endangered when children stop learning it at home.''','A language becomes endangered when children stop learning it at home')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Why do some families choose a more widely spoken language?','["It is easier to learn.","It offers better jobs and education.","Schools require it."]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''because it offers better jobs and education''.','because it offers better jobs and education')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','Complete: In ''language nests'', young children hear only ______ all day.','["English","Maori","two languages"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''nursery schools where young children hear only Maori all day''.','nursery schools where young children hear only Maori all day')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','Maori is now used…','["only in schools","on television and government websites","only by older people"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''it is used on television and in government websites''.','it is used on television and in government websites')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','What do volunteers record?','["Older speakers telling stories","Children singing songs","Television programmes"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''Volunteers record older speakers telling stories''.','Volunteers record older speakers telling stories')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','Complete: According to linguists, each language contains knowledge about local plants, history and ______.','["ways of thinking","famous people","modern technology"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''knowledge about local plants, history and ways of thinking''.','knowledge about local plants, history and ways of thinking')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Listening: Planning a language project
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u09-listening-language-project','Planning a language project','Listening','Listen to two students plan a project and note the details.',4,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Listening","transcript":"Mai: OK, Ben, we need to decide our topic for the language project. Any ideas?\nBen: I was thinking about English words that come from other languages, like ''karaoke'' from Japanese.\nMai: That''s interesting, but I think our tutor wants something we can research ourselves. What about a survey on how students learn vocabulary?\nBen: Good idea. We could ask students in our year. How many people should we interview?\nMai: The guidelines say at least twenty, but let''s try for thirty to get better results.\nBen: Fine. Are we going to do the survey online or face to face?\nMai: Online is faster, but face to face means people give longer answers. Let''s do it online, and then interview five people in more detail.\nBen: OK. I''m going to write the questions this weekend. Can you make the slides?\nMai: Sure. When''s the presentation?\nBen: It''s on the fourteenth of May, and it has to be ten minutes long.\nMai: Not twelve? I thought it was twelve.\nBen: No, the tutor changed it to ten last week.\nMai: Right. Let''s meet in the library on Thursday to check everything.","audioUrl":"","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','What topic do the students choose?','["English words from other languages","How students learn vocabulary","Japanese culture"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Ý tưởng của Ben (từ mượn) bị thay bằng khảo sát cách sinh viên học từ vựng.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','How many students do they plan to survey?','["20","30","5"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Hướng dẫn yêu cầu tối thiểu 20 nhưng họ muốn khảo sát 30 người.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','How will they do the survey?','["Only face to face","Online, plus five detailed interviews","By phone"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''Let''s do it online, and then interview five people in more detail.''','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','What is Ben going to do this weekend?','["Make the slides","Write the questions","Go to the library"]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''I''m going to write the questions this weekend.''','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','How long must the presentation be?','["Ten minutes","Twelve minutes","Fourteen minutes"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Giáo viên đã đổi thành mười phút; 14 là ngày thuyết trình.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Writing: A short essay: the best way to learn a language
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u09-writing-short-essay','A short essay: the best way to learn a language','Writing','Write a 120–150 word opinion essay with a clear structure.',5,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Writing","prompt":"Some people think the best way to learn a foreign language is to live in a country where it is spoken. Others think you can learn just as well at home. What is your opinion?\nWrite 120–150 words. Use an introduction, one or two body paragraphs with reasons and examples, and a short conclusion.","minWords":120,"modelAnswer":"Many people believe that living abroad is the fastest way to learn a language. While I agree that it helps, I think it is possible to learn well at home.\n\nIt is true that living in another country gives learners constant practice. They hear the language in shops and on the street, and they have to speak it every day. However, this option is very expensive, and not everyone can travel.\n\nNowadays, learners at home have many free resources. They can watch films with subtitles, listen to podcasts on the bus and talk to native speakers through online exchange apps. For example, my cousin reached a good level of English without leaving Vietnam, because she practised for an hour every day.\n\nIn conclusion, living abroad is helpful, but regular practice and motivation are more important than location.","checklist":["State your opinion clearly in the introduction","Give at least two reasons with examples","Use linkers: however, for example, in conclusion","Write a short conclusion that repeats your view","Write 120–150 words"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+
+  -- Speaking: Describe a language you would like to learn (Part 2)
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u09-speaking-longer-talk','Describe a language you would like to learn (Part 2)','Speaking','Practise a longer talk using going to for plans.',6,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Speaking","prompt":"IELTS Speaking Part 2 – Describe a language (not English) that you would like to learn.\nYou should say:\n• which language it is\n• where people speak it\n• how you are going to learn it\nand explain why you want to learn this language.\nPrepare for one minute, then speak for one to two minutes.","preparationSeconds":60,"modelAnswer":"The language I''d really like to learn is Korean. It''s spoken in South Korea and North Korea, and also by Korean communities in countries like the USA and China. I''ve already picked up a few words from TV dramas, but I want to learn it properly. My plan is to start with the alphabet, Hangul, which people say you can learn in just a few days. Then I''m going to use a free app for ten minutes every morning, and next semester I''m going to join the Korean club at my university, where we can practise speaking with exchange students. There are two main reasons why I want to learn it. First, many Korean companies have factories in Vietnam, so it could help me find a good job. Second, I love Korean food and music, and one day I''m going to travel to Seoul and order everything in Korean.","checklist":["Cover all four points on the card","Use ''going to'' for your plans","Use language-learning vocabulary from this unit","Organise reasons with First… / Second…","Speak for at least one minute without long pauses"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+end $$;
+
+-- Unit 10 · Science and Technology
+do $$
+declare v_course uuid; v_unit uuid; v_lesson uuid; v_question uuid;
+begin
+  insert into public.courses(stage_id,slug,title,description,published)
+  values ('ielts-starter','ielts-starter-everyday-topics','IELTS Starter: Everyday Topics','Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry.',false)
+  on conflict (slug) do update set title=excluded.title, description=excluded.description returning id into v_course;
+  insert into public.units(course_id,slug,title,sort_order,published)
+  values (v_course,'science-and-technology','Unit 10 · Science and Technology',10,false)
+  on conflict (course_id,slug) do update set title=excluded.title, sort_order=excluded.sort_order returning id into v_unit;
+
+  -- Vocabulary: Technology and describing trends
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u10-vocabulary-technology','Technology and describing trends','Vocabulary','Words for gadgets and for describing changes on a graph.',1,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Vocabulary","introduction":"This unit links two IELTS skills: talking about technology in Speaking, and describing graphs in Writing Task 1. Learn the gadget words, and learn the verbs for trends (increase, decrease, remain stable) together with the adverbs that show how big the change is (sharply, gradually).\n\nMẹo: increase sharply = tăng mạnh; increase gradually = tăng dần.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'device','/dɪˈvaɪs/','thiết bị','A machine or tool made for a particular purpose.','Most students own at least two digital devices.','Viết bằng tiếng Anh: Tôi dùng ba thiết bị mỗi ngày.','["I use three devices every day.","I use three devices a day."]'::jsonb,0)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'invention','/ɪnˈvenʃn/','phát minh','Something new that someone has created.','The smartphone is one of the most important inventions of this century.','Viết bằng tiếng Anh: Internet là một phát minh tuyệt vời.','["The internet is a great invention.","The Internet is a great invention.","The internet is a wonderful invention."]'::jsonb,1)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'rely on','/rɪˈlaɪ ɒn/','phụ thuộc vào','To need something in order to do something.','We rely on our phones for maps and payments.','Viết bằng tiếng Anh: Chúng ta phụ thuộc quá nhiều vào công nghệ.','["We rely on technology too much.","We rely too much on technology."]'::jsonb,2)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'increase','/ɪnˈkriːs/','tăng','To become larger in number or amount.','The number of online shoppers increased every year.','Viết bằng tiếng Anh: Giá xe điện đã tăng.','["The price of electric cars increased.","The price of electric cars has increased.","Electric car prices increased."]'::jsonb,3)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'decrease','/dɪˈkriːs/','giảm','To become smaller in number or amount.','Sales of printed newspapers decreased after 2015.','Viết bằng tiếng Anh: Số người xem tivi đã giảm.','["The number of people watching TV decreased.","The number of TV viewers decreased.","The number of people watching TV has decreased."]'::jsonb,4)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'sharply','/ˈʃɑːpli/','mạnh, đột ngột','Suddenly and by a large amount.','Smartphone use rose sharply between 2010 and 2015.','Viết bằng tiếng Anh: Số lượng người dùng tăng mạnh.','["The number of users increased sharply.","The number of users rose sharply."]'::jsonb,5)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'gradually','/ˈɡrædʒuəli/','dần dần','Slowly, over a long period.','The price of laptops fell gradually.','Viết bằng tiếng Anh: Nhiệt độ tăng dần.','["The temperature increased gradually.","The temperature rose gradually.","Temperatures rose gradually."]'::jsonb,6)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+  insert into public.vocabulary_entries(lesson_id,word,phonetic,meaning_vi,definition,example,sentence_prompt_vi,accepted_sentences,sort_order)
+  values (v_lesson,'remain stable','/rɪˈmeɪn ˈsteɪbl/','giữ ổn định','To stay at the same level.','The number of landline phones remained stable for five years.','Viết bằng tiếng Anh: Giá vẫn giữ ổn định năm 2020.','["The price remained stable in 2020.","Prices remained stable in 2020."]'::jsonb,7)
+  on conflict (lesson_id,word) do update set phonetic=excluded.phonetic, meaning_vi=excluded.meaning_vi, definition=excluded.definition, example=excluded.example, sentence_prompt_vi=excluded.sentence_prompt_vi, accepted_sentences=excluded.accepted_sentences, sort_order=excluded.sort_order;
+
+  -- Grammar: Will and won't for predictions
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u10-grammar-will-predictions','Will and won''t for predictions','Grammar','Make predictions about the future of technology.',2,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Grammar","rule":"will / won''t + base verb – predictions and opinions about the future:\n• In 2040, most cars will be electric.\n• Robots won''t replace all teachers.\n• Will people still use cash? – Yes, they will. / No, they won''t.\n\nShow how sure you are:\n• definitely / certainly (very sure): Phones will definitely get cheaper.\n• probably (quite sure): Schools will probably use more AI.\n• Adverb position: after will, but before won''t: It will probably rain. It probably won''t rain.\n\nCompare: be going to = decided plans or evidence now; will = opinions and predictions.","example":"I think people will probably work from home more, but offices definitely won''t disappear.","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','In the future, cars ___ drive themselves.','["will","wills","will to"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'will + động từ nguyên mẫu: will drive.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','Choose the correct position: ''Robots ___ replace doctors.'' (probably, negative)','["won''t probably","probably won''t","will not probably"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Với dạng phủ định, ''probably'' đứng trước won''t.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','''Will smartphones get cheaper?'' – ''Yes, ___.''','["they will","they do","they are"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Câu trả lời ngắn: Yes, they will.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','Which sentence is an opinion about the future?','["I''m going to buy a laptop on Saturday; I''ve saved the money.","I think everyone will have a home robot by 2050.","I bought a new phone yesterday."]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'Dự đoán / ý kiến về tương lai → will.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','Choose the correct sentence.','["People will definitely use more apps.","People will use definitely more apps.","People definitely will to use more apps."]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Trạng từ ''definitely'' đứng sau will, trước động từ chính.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','Paper books ___ disappear completely – many people still love them.','["won''t","will","don''t"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'Ý nghĩa: sách giấy sẽ KHÔNG biến mất → won''t.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Reading: Robots in the hospital
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u10-reading-robots-in-hospitals','Robots in the hospital','Reading','Read about medical technology and answer mixed questions.',3,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Reading","passage":"When people imagine robots in hospitals, they often think of machines performing operations on their own. The reality today is less dramatic but still important. Most hospital robots do simple, repetitive jobs so that nurses and doctors can spend more time with patients.\n\nIn one large hospital in Singapore, small robots carry medicine and clean sheets between floors. They use the lifts by themselves and can travel around fifteen kilometres a day. Nurses there say the robots save each of them up to an hour of walking per shift.\n\nRobots also help surgeons. In robot-assisted surgery, the surgeon sits at a control desk and moves the robot''s arms, which can make extremely small and steady movements. Patients often recover faster because the cuts are smaller. However, the surgeon is always in control; the robot does not make decisions.\n\nNot everyone is enthusiastic. The machines are very expensive, and smaller hospitals cannot afford them. Some older patients also say they feel uncomfortable when a robot enters their room.\n\nExperts believe that robots will become more common, but they say robots will not replace nurses. ''A robot can bring medicine,'' one hospital manager said, ''but it cannot hold a patient''s hand or notice that they look worried.''","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','What do most hospital robots do today?','["Perform operations alone","Do simple, repetitive jobs","Talk to patients"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''Most hospital robots do simple, repetitive jobs''. Đáp án A là điều người ta tưởng tượng, không phải thực tế.','Most hospital robots do simple, repetitive jobs')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','How much walking do the robots save nurses in the Singapore hospital?','["Up to an hour per shift","Fifteen kilometres a day","Two hours a day"]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'15 km là quãng đường robot đi; mỗi y tá tiết kiệm ''up to an hour of walking per shift''.','save each of them up to an hour of walking per shift')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','In robot-assisted surgery, the robot makes its own decisions. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''the surgeon is always in control; the robot does not make decisions'' → False.','the robot does not make decisions')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','Why do patients often recover faster after robot-assisted surgery?','["The cuts are smaller.","They leave hospital earlier.","The robot gives them medicine."]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''Patients often recover faster because the cuts are smaller.''','Patients often recover faster because the cuts are smaller')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','The robots in Singapore cost more than ten million dollars. (True / False / Not Given)','["True","False","Not Given"]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,2,'Bài nói robot ''very expensive'' nhưng không đưa ra con số → Not Given.','The machines are very expensive')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q6','What does the hospital manager say robots cannot do?','["Carry medicine","Notice that a patient looks worried","Use the lifts"]'::jsonb,5)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''it cannot hold a patient''s hand or notice that they look worried''.','notice that they look worried')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Listening: A talk about future technology
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u10-listening-future-of-technology','A talk about future technology','Listening','Listen to a short lecture with predictions and numbers.',4,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Listening","transcript":"Lecturer: Good morning. Today I want to look at how technology in our homes might change over the next twenty years.\nLet''s start with something we already have. In 2010, about one in five adults in this region owned a smartphone. By 2020, that figure had risen to almost nine out of ten. So growth was extremely fast.\nWhat will happen next? I think smartphones will definitely stay, but they will probably get smaller, and many people will use smart glasses instead of looking at a screen.\nSecondly, homes. Today, around fifteen per cent of homes have a smart speaker. I predict this will reach half of all homes by 2035, mainly because older people will use them to call family and to remind them to take medicine.\nThirdly, cars. Self-driving cars will become common, but not as quickly as many people think. Roads in big cities are complicated, so I don''t think we''ll see many fully self-driving taxis before 2040.\nFinally, one thing that probably won''t change much is how we read. Surveys show that young people still buy paper books, especially for studying.\nFor next week, please read chapter four and bring one prediction of your own.","audioUrl":"","figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q1','In 2010, how many adults in the region owned a smartphone?','["About one in five","About one in two","Almost nine out of ten"]'::jsonb,0)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''In 2010, about one in five adults'' – 9/10 là con số năm 2020.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q2','What does the lecturer predict about smartphones?','["They will disappear.","They will probably get smaller.","They will become more expensive."]'::jsonb,1)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''they will probably get smaller''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q3','What percentage of homes have a smart speaker today?','["5%","15%","50%"]'::jsonb,2)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''around fifteen per cent''; 50% là dự đoán cho năm 2035.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q4','Why will smart speakers become more popular?','["They will be free.","Older people will use them.","Schools will need them."]'::jsonb,3)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,1,'''mainly because older people will use them to call family and to remind them to take medicine''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+  insert into public.exercise_questions(lesson_id,slug,prompt,options,sort_order)
+  values (v_lesson,'q5','Why does the lecturer think self-driving taxis will take time?','["City roads are complicated.","People don''t like them.","They are illegal."]'::jsonb,4)
+  on conflict (lesson_id,slug) do update set prompt=excluded.prompt, options=excluded.options, sort_order=excluded.sort_order returning id into v_question;
+  insert into public.exercise_answer_keys(question_id,correct_index,explanation,evidence)
+  values (v_question,0,'''Roads in big cities are complicated''.','')
+  on conflict (question_id) do update set correct_index=excluded.correct_index, explanation=excluded.explanation, evidence=excluded.evidence;
+
+  -- Writing: Describe a line graph (Task 1 style)
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u10-writing-describe-a-graph','Describe a line graph (Task 1 style)','Writing','Write 100–130 words describing a simple trend.',5,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Writing","prompt":"The information below shows the percentage of students at one college who used an online learning app between 2018 and 2024 (practice data written for this lesson):\n2018: 12% · 2019: 15% · 2020: 58% · 2021: 64% · 2022: 61% · 2023: 62% · 2024: 70%\n\nSummarise the information by describing the main trends and making comparisons where relevant. Write 100–130 words. Do not give your opinion.","minWords":100,"modelAnswer":"The graph shows the percentage of students at a college who used an online learning app from 2018 to 2024.\n\nOverall, app use increased significantly over the period, with the biggest change happening in 2020.\n\nIn 2018, only 12% of students used the app, and this figure rose gradually to 15% in the following year. Between 2019 and 2020, however, the percentage increased sharply to 58%, almost four times higher than before. It continued to grow to 64% in 2021.\n\nAfter that, app use decreased slightly to 61% in 2022 and then remained stable at around 62% in 2023. In the final year, it rose again and reached its highest point, 70%.","checklist":["Paraphrase the task in the first sentence","Write an overview of the main trend","Use trend verbs with adverbs (rose sharply, fell slightly)","Include key numbers and years","Do not give your opinion; write 100–130 words"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+
+  -- Speaking: Describe a piece of technology (Part 2)
+  insert into public.lessons(unit_id,slug,title,skill,summary,sort_order,published)
+  values (v_unit,'starter-u10-speaking-describe-a-gadget','Describe a piece of technology (Part 2)','Speaking','Practise a Part 2 talk about a gadget you would like to buy.',6,false)
+  on conflict (slug) do update set unit_id=excluded.unit_id, title=excluded.title, skill=excluded.skill, summary=excluded.summary, sort_order=excluded.sort_order, updated_at=now() returning id into v_lesson;
+  insert into public.lesson_materials(lesson_id,content) values (v_lesson,'{"skill":"Speaking","prompt":"IELTS Speaking Part 2 – Describe a piece of technology that you would like to buy in the future.\nYou should say:\n• what it is\n• what it can do\n• how much it costs\nand explain why you would like to buy it.\nPrepare for one minute, then speak for one to two minutes.","preparationSeconds":60,"modelAnswer":"The piece of technology I''d like to buy is a tablet with a digital pen. I''ve seen my classmates use them in lectures, and they look really useful. With a tablet like this, you can write notes by hand, but everything is saved and organised automatically, so you never lose a page. You can also record the lecture while you write, and later tap on a word to hear what the teacher was saying at that moment. A good one costs around twelve million dong, which is quite expensive for a student, so I''m saving part of the money from my part-time job. I''d like to buy it for two reasons. First, I''ll be able to carry all my notes and textbooks in one light device. Second, I think it will help me study more efficiently, because I can search my notes instead of turning pages.","checklist":["Cover all four points on the card","Use can / will to describe what it does","Give the price and how you will pay for it","Explain two reasons clearly","Speak for at least one minute"],"figure":{"url":"","alt":""}}'::jsonb)
+  on conflict (lesson_id) do update set content=excluded.content, updated_at=now();
+end $$;

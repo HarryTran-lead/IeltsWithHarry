@@ -1,0 +1,124 @@
+{
+  "stage": "ielts-starter",
+  "course": {
+    "slug": "ielts-starter-everyday-topics",
+    "title": "IELTS Starter: Everyday Topics",
+    "description": "Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry."
+  },
+  "unit": { "slug": "transport-and-towns", "title": "Unit 6 · Transport and Places in Town", "sortOrder": 6 },
+  "lessons": [
+    {
+      "slug": "starter-u06-vocabulary-getting-around",
+      "title": "Getting around town",
+      "skill": "Vocabulary",
+      "summary": "Words for transport and places in a city.",
+      "sortOrder": 1,
+      "material": {
+        "skill": "Vocabulary",
+        "introduction": "Transport and towns appear in Listening maps and directions, and in Speaking questions like 'How do you usually travel?' Learn these words with their prepositions: get ON a bus, get OFF a train, go BY bike, go ON foot.\n\nMẹo: by bus / by car / by bike nhưng on foot.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "vocabulary": [
+        { "word": "traffic jam", "phonetic": "/ˈtræfɪk dʒæm/", "meaningVi": "kẹt xe", "definition": "A long line of vehicles that cannot move or move very slowly.", "example": "I was late because of a traffic jam on the bridge.", "sentencePromptVi": "Viết bằng tiếng Anh: Có nhiều vụ kẹt xe vào giờ cao điểm.", "acceptedSentences": ["There are many traffic jams in the rush hour.", "There are a lot of traffic jams in the rush hour.", "There are many traffic jams at rush hour."] },
+        { "word": "rush hour", "phonetic": "/rʌʃ ˈaʊə/", "meaningVi": "giờ cao điểm", "definition": "The busy time when people travel to or from work.", "example": "The metro is very crowded during rush hour.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi tránh đi lại vào giờ cao điểm.", "acceptedSentences": ["I avoid travelling in the rush hour.", "I avoid travelling during rush hour.", "I avoid traveling during rush hour."] },
+        { "word": "public transport", "phonetic": "/ˈpʌblɪk ˈtrænspɔːt/", "meaningVi": "phương tiện công cộng", "definition": "Buses, trains and other vehicles that everyone can use.", "example": "Public transport in Singapore is fast and clean.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi thường dùng phương tiện công cộng.", "acceptedSentences": ["I usually use public transport.", "I often use public transport."] },
+        { "word": "pedestrian", "phonetic": "/pəˈdestriən/", "meaningVi": "người đi bộ", "definition": "A person who is walking, not travelling in a vehicle.", "example": "This street is only for pedestrians at the weekend.", "sentencePromptVi": "Viết bằng tiếng Anh: Phố đi bộ rất đông vào buổi tối.", "acceptedSentences": ["The pedestrian street is very crowded in the evening.", "The walking street is very crowded in the evening."] },
+        { "word": "convenient", "phonetic": "/kənˈviːniənt/", "meaningVi": "thuận tiện", "definition": "Easy to use or useful because it saves time.", "example": "Living near a metro station is very convenient.", "sentencePromptVi": "Viết bằng tiếng Anh: Xe buýt rất thuận tiện cho học sinh.", "acceptedSentences": ["The bus is very convenient for students.", "Buses are very convenient for students."] },
+        { "word": "fare", "phonetic": "/feə/", "meaningVi": "giá vé (xe, tàu)", "definition": "The money you pay for a journey.", "example": "The bus fare is only seven thousand dong.", "sentencePromptVi": "Viết bằng tiếng Anh: Giá vé tàu tăng năm nay.", "acceptedSentences": ["The train fare went up this year.", "Train fares went up this year.", "The train fare increased this year."] },
+        { "word": "pollution", "phonetic": "/pəˈluːʃn/", "meaningVi": "ô nhiễm", "definition": "Dirty air, water or land caused by people.", "example": "Motorbikes are a major cause of air pollution in cities.", "sentencePromptVi": "Viết bằng tiếng Anh: Ô nhiễm không khí là một vấn đề lớn.", "acceptedSentences": ["Air pollution is a big problem.", "Air pollution is a serious problem."] },
+        { "word": "residential area", "phonetic": "/ˌrezɪˈdenʃl ˈeəriə/", "meaningVi": "khu dân cư", "definition": "A part of a town where people live, not work.", "example": "We live in a quiet residential area outside the centre.", "sentencePromptVi": "Viết bằng tiếng Anh: Khu dân cư này yên tĩnh.", "acceptedSentences": ["This residential area is quiet.", "This residential area is very quiet."] }
+      ]
+    },
+    {
+      "slug": "starter-u06-grammar-comparatives-superlatives",
+      "title": "Comparatives and superlatives",
+      "skill": "Grammar",
+      "summary": "Compare two things, and pick the extreme in a group.",
+      "sortOrder": 2,
+      "material": {
+        "skill": "Grammar",
+        "rule": "Comparatives compare two things (+ than); superlatives compare one thing with a whole group (the …).\n• Short adjectives: cheap → cheaper → the cheapest; big → bigger → the biggest; busy → busier → the busiest.\n• Long adjectives: convenient → more convenient → the most convenient.\n• Irregular: good → better → the best; bad → worse → the worst; far → further → the furthest.\n• Small difference: a bit / slightly cheaper. Big difference: much / far more expensive.\n• Equal: as fast as; not as crowded as.\n\nGhi nhớ: không dùng 'more' với tính từ ngắn (NOT more cheaper).",
+        "example": "The metro is much faster than the bus, but cycling is the cheapest way to get around.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Travelling by train is ___ than flying.", "options": ["more cheap", "cheaper", "the cheapest"], "answer": 1, "explanation": "Tính từ ngắn 'cheap' → cheaper; có 'than' nên dùng so sánh hơn." },
+        { "slug": "q2", "prompt": "This is ___ bridge in the city.", "options": ["the longest", "longer", "the most long"], "answer": 0, "explanation": "So sánh với cả nhóm 'in the city' → so sánh nhất: the longest." },
+        { "slug": "q3", "prompt": "The bus is ___ convenient than a taxi for me.", "options": ["much", "more", "most"], "answer": 1, "explanation": "Tính từ dài 'convenient' → more convenient than." },
+        { "slug": "q4", "prompt": "The traffic today is ___ than yesterday.", "options": ["badder", "worse", "worst"], "answer": 1, "explanation": "'bad' bất quy tắc: worse (so sánh hơn)." },
+        { "slug": "q5", "prompt": "My town isn't ___ Hanoi.", "options": ["as busy as", "busier as", "as busier than"], "answer": 0, "explanation": "So sánh không bằng: not as + tính từ + as." },
+        { "slug": "q6", "prompt": "Choose the correct sentence.", "options": ["The metro is more faster than the bus.", "The metro is much faster than the bus.", "The metro is fastest than the bus."], "answer": 1, "explanation": "Dùng 'much' để nhấn mạnh so sánh hơn; không dùng 'more' với 'faster'." }
+      ]
+    },
+    {
+      "slug": "starter-u06-reading-car-free-sunday",
+      "title": "A car-free Sunday",
+      "skill": "Reading",
+      "summary": "Read about a city experiment and answer True/False/Not Given questions.",
+      "sortOrder": 3,
+      "material": {
+        "skill": "Reading",
+        "passage": "Every first Sunday of the month, the central streets of a medium-sized coastal city close to cars and motorbikes from six in the morning until noon. The idea started three years ago, when a group of university students asked the city council to try a 'car-free morning' for one day.\n\nThe council agreed, but many shop owners were against the plan. They believed customers would stay at home if they could not drive into the centre. In fact, the opposite happened. Families came on foot and by bicycle, children played in the middle of the road, and cafés put tables on the pavement. One bakery owner said she sold more bread that morning than on a normal weekday.\n\nThe event is now held every month, and the council measures air quality before and during the closure. On car-free mornings, the level of pollution in the main square is around forty per cent lower than on other Sundays.\n\nNot everyone is happy. Taxi drivers say they lose income, and some people who live inside the area complain that they cannot leave home by car. The council has responded by allowing residents to drive slowly on two streets, and it now runs free electric buses around the edge of the closed area.\n\nThe students who suggested the idea have since graduated, but one of them now works for the council's transport department.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "The idea for the car-free morning came from the city council. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 1, "explanation": "Ý tưởng đến từ một nhóm sinh viên đại học; hội đồng thành phố chỉ đồng ý → False.", "evidence": "a group of university students asked the city council to try a 'car-free morning'" },
+        { "slug": "q2", "prompt": "At first, shop owners supported the plan. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 1, "explanation": "'many shop owners were against the plan' → False.", "evidence": "many shop owners were against the plan" },
+        { "slug": "q3", "prompt": "A bakery sold more bread than on a normal weekday. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 0, "explanation": "Chủ tiệm bánh nói bán được nhiều hơn ngày thường → True.", "evidence": "she sold more bread that morning than on a normal weekday" },
+        { "slug": "q4", "prompt": "Pollution in the main square falls by about 40% on car-free mornings. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 0, "explanation": "'around forty per cent lower' → True.", "evidence": "the level of pollution in the main square is around forty per cent lower" },
+        { "slug": "q5", "prompt": "The free electric buses are paid for by local shops. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 2, "explanation": "Bài nói hội đồng chạy xe buýt điện miễn phí nhưng không nói ai trả tiền → Not Given.", "evidence": "it now runs free electric buses around the edge of the closed area" },
+        { "slug": "q6", "prompt": "One of the students now works in transport for the council. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 0, "explanation": "'one of them now works for the council's transport department' → True.", "evidence": "one of them now works for the council's transport department" }
+      ]
+    },
+    {
+      "slug": "starter-u06-listening-city-tour",
+      "title": "Directions on a city tour",
+      "skill": "Listening",
+      "summary": "Listen to a tour guide and fill the gaps with the right word or number.",
+      "sortOrder": 4,
+      "material": {
+        "skill": "Listening",
+        "transcript": "Guide: OK, everyone, gather round. We're standing outside the Old Post Office, which was built in 1891. Today it's a museum, and entry is free on Wednesdays.\nFrom here we'll walk down Market Street. On your left you'll see the night market – it opens at six in the evening, so it's closed now. At the end of Market Street, turn right and you'll come to the river.\nThe pedestrian bridge across the river is the newest in the city – it opened only last year. From the middle of the bridge you get the best view of the cathedral.\nOn the other side, there's a small park with a statue of a famous poet. That's where we'll stop for a break. There are public toilets next to the park entrance.\nAfter the break, we'll take the number 12 bus back to the hotel. The bus stop is opposite the park, and the fare is just eight thousand dong, so please have some small change ready.\nThe whole tour takes about two and a half hours. Please stay together, because the streets near the market can get very crowded.",
+        "audioUrl": "",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "The Old Post Office was built in ______.", "options": ["1819", "1891", "1981"], "answer": 1, "explanation": "'built in 1891' – chú ý thứ tự các chữ số." },
+        { "slug": "q2", "prompt": "Entry to the museum is free on ______.", "options": ["Mondays", "Wednesdays", "Sundays"], "answer": 1, "explanation": "'entry is free on Wednesdays'." },
+        { "slug": "q3", "prompt": "At the end of Market Street, turn ______.", "options": ["left", "right", "back"], "answer": 1, "explanation": "'turn right and you'll come to the river'. Chợ đêm ở bên trái – dễ nhầm." },
+        { "slug": "q4", "prompt": "The best view of the cathedral is from the ______.", "options": ["park", "bridge", "bus stop"], "answer": 1, "explanation": "'From the middle of the bridge you get the best view of the cathedral.'" },
+        { "slug": "q5", "prompt": "The bus fare is ______ dong.", "options": ["6,000", "8,000", "12,000"], "answer": 1, "explanation": "'the fare is just eight thousand dong' – số 12 là số tuyến xe buýt." }
+      ]
+    },
+    {
+      "slug": "starter-u06-writing-my-town",
+      "title": "Compare transport in your town",
+      "skill": "Writing",
+      "summary": "Write 100–120 words comparing two ways to travel in your town.",
+      "sortOrder": 5,
+      "material": {
+        "skill": "Writing",
+        "prompt": "Write 100–120 words comparing two ways of getting around your town or city (for example, motorbike and bus). Write one paragraph for each, and finish with a sentence saying which you prefer and why. Use at least three comparative or superlative forms.",
+        "minWords": 100,
+        "modelAnswer": "In my city, most people travel by motorbike or by bus. A motorbike is the fastest way to get around, because you can go through small streets and avoid some traffic jams. It is also more flexible, as you can leave whenever you want. However, it is more dangerous than the bus, and riding in the rain or heat is unpleasant.\n\nThe bus is much cheaper than a motorbike, because the fare is only seven thousand dong. It is also safer and better for the environment. On the other hand, buses are slower and very crowded during rush hour.\n\nOverall, I prefer the bus for long journeys, because I can read or listen to podcasts on the way.",
+        "checklist": ["Write one paragraph for each type of transport", "Use at least three comparatives or superlatives", "Use linkers: however, on the other hand, also", "Finish with your preference and a reason", "Write 100–120 words"],
+        "figure": { "url": "", "alt": "" }
+      }
+    },
+    {
+      "slug": "starter-u06-speaking-transport",
+      "title": "Talking about transport and towns",
+      "skill": "Speaking",
+      "summary": "Answer Part 1 questions comparing places and transport.",
+      "sortOrder": 6,
+      "material": {
+        "skill": "Speaking",
+        "prompt": "IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. How do you usually travel around your city?\n2. Is public transport good where you live?\n3. Which is the most interesting place in your town for visitors?\n4. Would you prefer to live in a big city or a small town?",
+        "preparationSeconds": 15,
+        "modelAnswer": "I usually ride my motorbike, because it's the quickest way to get to college. Public transport is getting better – we have a new metro line now – but buses are still much slower than motorbikes. I think the most interesting place for visitors is the old market, because it's busier and more colourful than the modern shopping centres. I'd prefer to live in a small town, because it's quieter and the air is cleaner, although big cities have more jobs.",
+        "checklist": ["Use comparatives to compare two options", "Use at least one superlative", "Give a reason for each answer", "Use transport vocabulary from this unit", "Listen again: was your answer longer than one sentence?"],
+        "figure": { "url": "", "alt": "" }
+      }
+    }
+  ]
+}

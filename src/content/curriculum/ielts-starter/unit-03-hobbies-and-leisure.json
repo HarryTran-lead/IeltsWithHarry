@@ -1,0 +1,123 @@
+{
+  "stage": "ielts-starter",
+  "course": {
+    "slug": "ielts-starter-everyday-topics",
+    "title": "IELTS Starter: Everyday Topics",
+    "description": "Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry."
+  },
+  "unit": { "slug": "hobbies-and-leisure", "title": "Unit 3 · Hobbies and Leisure", "sortOrder": 3 },
+  "lessons": [
+    {
+      "slug": "starter-u03-vocabulary-free-time",
+      "title": "Free-time activities",
+      "skill": "Vocabulary",
+      "summary": "Words for hobbies, sport and entertainment.",
+      "sortOrder": 1,
+      "material": {
+        "skill": "Vocabulary",
+        "introduction": "Hobbies are one of the most common topics in IELTS Speaking Part 1. Notice which verb goes with each activity: we PLAY team sports and games, we GO + -ing for many activities (go swimming), and we DO individual or indoor activities (do yoga).\n\nMẹo: play football / go cycling / do yoga – đừng dùng sai động từ.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "vocabulary": [
+        { "word": "hobby", "phonetic": "/ˈhɒbi/", "meaningVi": "sở thích", "definition": "An activity you do for pleasure in your free time.", "example": "Photography became my hobby when I was fifteen.", "sentencePromptVi": "Viết bằng tiếng Anh: Sở thích của tôi là đọc sách.", "acceptedSentences": ["My hobby is reading.", "My hobby is reading books."] },
+        { "word": "go cycling", "phonetic": "/ɡəʊ ˈsaɪklɪŋ/", "meaningVi": "đi đạp xe", "definition": "To ride a bicycle for fun or exercise.", "example": "We go cycling along the river on Sunday mornings.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi đi đạp xe vào cuối tuần.", "acceptedSentences": ["I go cycling at the weekend.", "I go cycling on the weekend.", "I go cycling at weekends."] },
+        { "word": "do yoga", "phonetic": "/duː ˈjəʊɡə/", "meaningVi": "tập yoga", "definition": "To practise a series of stretching and breathing exercises.", "example": "My aunt does yoga before work to feel calm.", "sentencePromptVi": "Viết bằng tiếng Anh: Cô ấy tập yoga mỗi sáng.", "acceptedSentences": ["She does yoga every morning."] },
+        { "word": "play a musical instrument", "phonetic": "/pleɪ ə ˈmjuːzɪkl ˈɪnstrəmənt/", "meaningVi": "chơi một nhạc cụ", "definition": "To make music with something like a guitar or piano.", "example": "Learning to play a musical instrument takes patience.", "sentencePromptVi": "Viết bằng tiếng Anh: Bạn có chơi nhạc cụ nào không?", "acceptedSentences": ["Do you play a musical instrument?", "Do you play any musical instruments?"] },
+        { "word": "spare time", "phonetic": "/speə taɪm/", "meaningVi": "thời gian rảnh", "definition": "Time when you are not working or studying.", "example": "In my spare time I watch cooking videos.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi không có nhiều thời gian rảnh.", "acceptedSentences": ["I don't have much spare time.", "I do not have much spare time."] },
+        { "word": "be into", "phonetic": "/biː ˈɪntuː/", "meaningVi": "rất thích, mê", "definition": "To be very interested in something (informal).", "example": "My brother is really into video games.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi rất mê bóng rổ.", "acceptedSentences": ["I'm really into basketball.", "I am really into basketball.", "I'm into basketball."] },
+        { "word": "take up", "phonetic": "/teɪk ʌp/", "meaningVi": "bắt đầu (một sở thích mới)", "definition": "To start doing a new activity regularly.", "example": "Last year my father took up running.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi muốn bắt đầu học vẽ.", "acceptedSentences": ["I want to take up drawing.", "I'd like to take up drawing.", "I would like to take up drawing.", "I want to take up painting."] },
+        { "word": "competition", "phonetic": "/ˌkɒmpəˈtɪʃn/", "meaningVi": "cuộc thi", "definition": "An event where people try to win something.", "example": "Our team won a local dance competition.", "sentencePromptVi": "Viết bằng tiếng Anh: Cô ấy thắng một cuộc thi hát.", "acceptedSentences": ["She won a singing competition."] }
+      ]
+    },
+    {
+      "slug": "starter-u03-grammar-simple-vs-continuous",
+      "title": "Present simple or present continuous?",
+      "skill": "Grammar",
+      "summary": "Choose between habits and actions happening now.",
+      "sortOrder": 2,
+      "material": {
+        "skill": "Grammar",
+        "rule": "Present simple – habits, routines and facts:\n• I play the guitar every evening.  • Water boils at 100°C.\nTime words: always, usually, every week, on Mondays.\n\nPresent continuous (am / is / are + -ing) – actions happening now or around now, and temporary situations:\n• Shh, I'm watching a match.  • She is learning to swim this summer.\nTime words: now, at the moment, today, this week.\n\nState verbs (like, love, want, know, need, believe) are usually NOT used in the continuous form: I want a new racket (NOT I'm wanting).\n\nGhi nhớ: thói quen → hiện tại đơn; đang diễn ra / tạm thời → hiện tại tiếp diễn.",
+        "example": "I usually play badminton on Fridays, but this week I'm practising for a tennis tournament.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Look! The children ___ in the park.", "options": ["play", "are playing", "plays"], "answer": 1, "explanation": "'Look!' cho thấy hành động đang diễn ra → hiện tại tiếp diễn." },
+        { "slug": "q2", "prompt": "My sister ___ to the cinema every Saturday.", "options": ["goes", "is going", "go"], "answer": 0, "explanation": "'every Saturday' là thói quen → hiện tại đơn, chủ ngữ số ít: goes." },
+        { "slug": "q3", "prompt": "Choose the correct sentence.", "options": ["I'm wanting to join a book club.", "I want to join a book club.", "I wanting to join a book club."], "answer": 1, "explanation": "'want' là động từ chỉ trạng thái, không dùng ở dạng tiếp diễn." },
+        { "slug": "q4", "prompt": "This month, Nam ___ for a marathon.", "options": ["trains", "is training", "train"], "answer": 1, "explanation": "Tình huống tạm thời 'this month' → hiện tại tiếp diễn." },
+        { "slug": "q5", "prompt": "'What ___ at the moment?' – 'I'm reading a comic.'", "options": ["do you do", "are you doing", "you are doing"], "answer": 1, "explanation": "Câu hỏi về việc đang làm 'at the moment': are you doing." },
+        { "slug": "q6", "prompt": "How often ___ you go swimming?", "options": ["do", "are", "does"], "answer": 0, "explanation": "'How often' hỏi về thói quen → hiện tại đơn với 'you': do." }
+      ]
+    },
+    {
+      "slug": "starter-u03-reading-climbing-wall",
+      "title": "A teenager on the climbing wall",
+      "skill": "Reading",
+      "summary": "Read about a young climber and avoid distracting answer options.",
+      "sortOrder": 3,
+      "material": {
+        "skill": "Reading",
+        "passage": "When Quynh first tried indoor climbing at the age of twelve, she was scared of heights. Her cousin had a birthday party at a climbing centre in Ho Chi Minh City, and Quynh only agreed to try because everyone else was doing it. She reached the top of the easiest wall and, to her surprise, wanted to do it again.\n\nFive years later, climbing is the centre of her life. She trains four evenings a week after school, and on Sundays she helps the coaches with the children's class. Many people think climbing is mainly about strong arms, but Quynh disagrees. 'Your legs do most of the work,' she explains. 'The most important thing is to think before you move, like solving a puzzle.'\n\nAt the moment Quynh is preparing for the national youth championship in Da Nang. She is not the strongest climber in her team, but her coach says she is the most patient. Her parents were worried at first that climbing would take time away from her studies. Now they say it has actually helped, because she has learned to plan her time carefully.\n\nQuynh's advice for beginners is simple: start at a centre with good instructors, and do not compare yourself with other people. 'Everyone is afraid at the beginning,' she says. 'The fear is part of the fun.'",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Why did Quynh try climbing for the first time?", "options": ["She wanted to stop being scared of heights.", "Her cousin's party was at a climbing centre.", "Her school offered a climbing class.", "A coach invited her to try."], "answer": 1, "explanation": "Cô ấy thử vì bữa tiệc sinh nhật của em họ diễn ra ở trung tâm leo núi. Đáp án A là bẫy: bài có nhắc nỗi sợ độ cao nhưng đó không phải lý do.", "evidence": "Her cousin had a birthday party at a climbing centre" },
+        { "slug": "q2", "prompt": "According to Quynh, what matters most in climbing?", "options": ["Having strong arms", "Training every day", "Thinking before you move", "Climbing with friends"], "answer": 2, "explanation": "'The most important thing is to think before you move'. Đáp án A là ý kiến của 'many people', không phải của Quynh.", "evidence": "The most important thing is to think before you move" },
+        { "slug": "q3", "prompt": "What does Quynh do on Sundays?", "options": ["She competes in championships.", "She helps teach children.", "She rests at home.", "She studies for school."], "answer": 1, "explanation": "'on Sundays she helps the coaches with the children's class'.", "evidence": "on Sundays she helps the coaches with the children's class" },
+        { "slug": "q4", "prompt": "What does her coach say about her?", "options": ["She is the strongest in the team.", "She is the most patient.", "She trains the hardest."], "answer": 1, "explanation": "Câu bẫy: bài nói rõ cô ấy KHÔNG phải người khỏe nhất; huấn luyện viên khen cô 'the most patient'.", "evidence": "her coach says she is the most patient" },
+        { "slug": "q5", "prompt": "How do her parents feel about climbing now?", "options": ["They think it takes time from her studies.", "They think it has helped her plan her time.", "They want her to stop competing."], "answer": 1, "explanation": "Lúc đầu bố mẹ lo lắng (đáp án A là bẫy), nhưng 'Now they say it has actually helped'.", "evidence": "Now they say it has actually helped, because she has learned to plan her time carefully" }
+      ]
+    },
+    {
+      "slug": "starter-u03-listening-sports-centre",
+      "title": "Joining a sports centre",
+      "skill": "Listening",
+      "summary": "Listen to a receptionist and choose the right options.",
+      "sortOrder": 4,
+      "material": {
+        "skill": "Listening",
+        "transcript": "Receptionist: Hello, Riverside Sports Centre. How can I help you?\nCaller: Hi. I'm interested in joining, but I'd like some information first.\nReceptionist: Of course. We have two kinds of membership. The standard one costs 25 pounds a month and lets you use the gym and the swimming pool. The premium membership is 38 pounds, and it includes all group classes as well.\nCaller: What classes do you have?\nReceptionist: Yoga, dance and boxing. The boxing class is very popular, so it's usually full. Yoga is on Tuesday and Thursday evenings.\nCaller: I work until six. What time does the yoga start?\nReceptionist: At half past seven, so you'd have plenty of time.\nCaller: Great. And do I need to bring anything?\nReceptionist: Just a towel and a padlock for the lockers. We provide the yoga mats.\nCaller: Is there parking?\nReceptionist: There's a small car park, but it's often full in the evening. Most members come by bike – we have lots of bike racks at the front.\nCaller: OK. Can I try it before I join?\nReceptionist: Yes, your first visit is free. Just bring some photo ID.",
+        "audioUrl": "",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "How much is the membership that includes group classes?", "options": ["£25 a month", "£38 a month", "£83 a month"], "answer": 1, "explanation": "Gói premium 38 bảng gồm các lớp nhóm; 25 bảng chỉ gồm gym và bể bơi." },
+        { "slug": "q2", "prompt": "Which class is usually full?", "options": ["Yoga", "Dance", "Boxing"], "answer": 2, "explanation": "'The boxing class is very popular, so it's usually full.'" },
+        { "slug": "q3", "prompt": "What time does the yoga class start?", "options": ["6:00", "6:30", "7:30"], "answer": 2, "explanation": "'At half past seven' – 6:00 là giờ người gọi tan làm, dễ gây nhầm." },
+        { "slug": "q4", "prompt": "What does the centre provide?", "options": ["Towels", "Padlocks", "Yoga mats"], "answer": 2, "explanation": "Khách tự mang khăn và ổ khóa; trung tâm cung cấp thảm yoga." },
+        { "slug": "q5", "prompt": "What must the caller bring for a free first visit?", "options": ["Photo ID", "A friend", "£5"], "answer": 0, "explanation": "'Just bring some photo ID.'" }
+      ]
+    },
+    {
+      "slug": "starter-u03-writing-my-hobby",
+      "title": "Describe a hobby you enjoy",
+      "skill": "Writing",
+      "summary": "Write 70–90 words about a hobby using present simple and continuous.",
+      "sortOrder": 5,
+      "material": {
+        "skill": "Writing",
+        "prompt": "Write 70–90 words about a hobby you enjoy. Explain:\n• what the hobby is and when you started it\n• how often you do it and who with\n• what you are doing or learning in this hobby at the moment.\nUse the present simple for habits and the present continuous for what is happening now.",
+        "minWords": 70,
+        "modelAnswer": "My favourite hobby is playing the guitar. I started three years ago when my uncle gave me his old guitar. I usually practise for half an hour every evening, and on Saturdays I play with two friends from my class. We sometimes perform at school events. At the moment I'm learning a difficult Spanish song, and I'm also trying to write my own music. Playing the guitar helps me relax after studying, and it makes me feel creative.",
+        "checklist": ["Say what the hobby is and when you started", "Use the present simple for habits (usually, every…)", "Use the present continuous for now (at the moment…)", "Give at least one reason why you enjoy it", "Write 70–90 words"],
+        "figure": { "url": "", "alt": "" }
+      }
+    },
+    {
+      "slug": "starter-u03-speaking-free-time",
+      "title": "Talking about free time",
+      "skill": "Speaking",
+      "summary": "Answer Part 1 questions about hobbies and entertainment.",
+      "sortOrder": 6,
+      "material": {
+        "skill": "Speaking",
+        "prompt": "IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. What do you like to do in your free time?\n2. Did you have a different hobby when you were a child?\n3. Do you prefer watching films at home or at the cinema?\n4. Is there a new hobby you would like to take up?",
+        "preparationSeconds": 15,
+        "modelAnswer": "In my free time I'm really into cooking; I try a new recipe almost every weekend. When I was a child I spent most of my time drawing cartoons, but I stopped when I started secondary school. I prefer watching films at the cinema because the screen and sound are much better, although it's more expensive. I'd love to take up swimming, because it's good exercise and I never learned properly.",
+        "checklist": ["Use hobby verbs correctly (play / go / do)", "Add a reason or a comparison", "Use the past simple for childhood", "Try 'be into' or 'take up' from this unit", "Listen again: did you answer every question?"],
+        "figure": { "url": "", "alt": "" }
+      }
+    }
+  ]
+}

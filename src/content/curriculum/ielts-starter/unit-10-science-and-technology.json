@@ -1,0 +1,124 @@
+{
+  "stage": "ielts-starter",
+  "course": {
+    "slug": "ielts-starter-everyday-topics",
+    "title": "IELTS Starter: Everyday Topics",
+    "description": "Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry."
+  },
+  "unit": { "slug": "science-and-technology", "title": "Unit 10 · Science and Technology", "sortOrder": 10 },
+  "lessons": [
+    {
+      "slug": "starter-u10-vocabulary-technology",
+      "title": "Technology and describing trends",
+      "skill": "Vocabulary",
+      "summary": "Words for gadgets and for describing changes on a graph.",
+      "sortOrder": 1,
+      "material": {
+        "skill": "Vocabulary",
+        "introduction": "This unit links two IELTS skills: talking about technology in Speaking, and describing graphs in Writing Task 1. Learn the gadget words, and learn the verbs for trends (increase, decrease, remain stable) together with the adverbs that show how big the change is (sharply, gradually).\n\nMẹo: increase sharply = tăng mạnh; increase gradually = tăng dần.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "vocabulary": [
+        { "word": "device", "phonetic": "/dɪˈvaɪs/", "meaningVi": "thiết bị", "definition": "A machine or tool made for a particular purpose.", "example": "Most students own at least two digital devices.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi dùng ba thiết bị mỗi ngày.", "acceptedSentences": ["I use three devices every day.", "I use three devices a day."] },
+        { "word": "invention", "phonetic": "/ɪnˈvenʃn/", "meaningVi": "phát minh", "definition": "Something new that someone has created.", "example": "The smartphone is one of the most important inventions of this century.", "sentencePromptVi": "Viết bằng tiếng Anh: Internet là một phát minh tuyệt vời.", "acceptedSentences": ["The internet is a great invention.", "The Internet is a great invention.", "The internet is a wonderful invention."] },
+        { "word": "rely on", "phonetic": "/rɪˈlaɪ ɒn/", "meaningVi": "phụ thuộc vào", "definition": "To need something in order to do something.", "example": "We rely on our phones for maps and payments.", "sentencePromptVi": "Viết bằng tiếng Anh: Chúng ta phụ thuộc quá nhiều vào công nghệ.", "acceptedSentences": ["We rely on technology too much.", "We rely too much on technology."] },
+        { "word": "increase", "phonetic": "/ɪnˈkriːs/", "meaningVi": "tăng", "definition": "To become larger in number or amount.", "example": "The number of online shoppers increased every year.", "sentencePromptVi": "Viết bằng tiếng Anh: Giá xe điện đã tăng.", "acceptedSentences": ["The price of electric cars increased.", "The price of electric cars has increased.", "Electric car prices increased."] },
+        { "word": "decrease", "phonetic": "/dɪˈkriːs/", "meaningVi": "giảm", "definition": "To become smaller in number or amount.", "example": "Sales of printed newspapers decreased after 2015.", "sentencePromptVi": "Viết bằng tiếng Anh: Số người xem tivi đã giảm.", "acceptedSentences": ["The number of people watching TV decreased.", "The number of TV viewers decreased.", "The number of people watching TV has decreased."] },
+        { "word": "sharply", "phonetic": "/ˈʃɑːpli/", "meaningVi": "mạnh, đột ngột", "definition": "Suddenly and by a large amount.", "example": "Smartphone use rose sharply between 2010 and 2015.", "sentencePromptVi": "Viết bằng tiếng Anh: Số lượng người dùng tăng mạnh.", "acceptedSentences": ["The number of users increased sharply.", "The number of users rose sharply."] },
+        { "word": "gradually", "phonetic": "/ˈɡrædʒuəli/", "meaningVi": "dần dần", "definition": "Slowly, over a long period.", "example": "The price of laptops fell gradually.", "sentencePromptVi": "Viết bằng tiếng Anh: Nhiệt độ tăng dần.", "acceptedSentences": ["The temperature increased gradually.", "The temperature rose gradually.", "Temperatures rose gradually."] },
+        { "word": "remain stable", "phonetic": "/rɪˈmeɪn ˈsteɪbl/", "meaningVi": "giữ ổn định", "definition": "To stay at the same level.", "example": "The number of landline phones remained stable for five years.", "sentencePromptVi": "Viết bằng tiếng Anh: Giá vẫn giữ ổn định năm 2020.", "acceptedSentences": ["The price remained stable in 2020.", "Prices remained stable in 2020."] }
+      ]
+    },
+    {
+      "slug": "starter-u10-grammar-will-predictions",
+      "title": "Will and won't for predictions",
+      "skill": "Grammar",
+      "summary": "Make predictions about the future of technology.",
+      "sortOrder": 2,
+      "material": {
+        "skill": "Grammar",
+        "rule": "will / won't + base verb – predictions and opinions about the future:\n• In 2040, most cars will be electric.\n• Robots won't replace all teachers.\n• Will people still use cash? – Yes, they will. / No, they won't.\n\nShow how sure you are:\n• definitely / certainly (very sure): Phones will definitely get cheaper.\n• probably (quite sure): Schools will probably use more AI.\n• Adverb position: after will, but before won't: It will probably rain. It probably won't rain.\n\nCompare: be going to = decided plans or evidence now; will = opinions and predictions.",
+        "example": "I think people will probably work from home more, but offices definitely won't disappear.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "In the future, cars ___ drive themselves.", "options": ["will", "wills", "will to"], "answer": 0, "explanation": "will + động từ nguyên mẫu: will drive." },
+        { "slug": "q2", "prompt": "Choose the correct position: 'Robots ___ replace doctors.' (probably, negative)", "options": ["won't probably", "probably won't", "will not probably"], "answer": 1, "explanation": "Với dạng phủ định, 'probably' đứng trước won't." },
+        { "slug": "q3", "prompt": "'Will smartphones get cheaper?' – 'Yes, ___.'", "options": ["they will", "they do", "they are"], "answer": 0, "explanation": "Câu trả lời ngắn: Yes, they will." },
+        { "slug": "q4", "prompt": "Which sentence is an opinion about the future?", "options": ["I'm going to buy a laptop on Saturday; I've saved the money.", "I think everyone will have a home robot by 2050.", "I bought a new phone yesterday."], "answer": 1, "explanation": "Dự đoán / ý kiến về tương lai → will." },
+        { "slug": "q5", "prompt": "Choose the correct sentence.", "options": ["People will definitely use more apps.", "People will use definitely more apps.", "People definitely will to use more apps."], "answer": 0, "explanation": "Trạng từ 'definitely' đứng sau will, trước động từ chính." },
+        { "slug": "q6", "prompt": "Paper books ___ disappear completely – many people still love them.", "options": ["won't", "will", "don't"], "answer": 0, "explanation": "Ý nghĩa: sách giấy sẽ KHÔNG biến mất → won't." }
+      ]
+    },
+    {
+      "slug": "starter-u10-reading-robots-in-hospitals",
+      "title": "Robots in the hospital",
+      "skill": "Reading",
+      "summary": "Read about medical technology and answer mixed questions.",
+      "sortOrder": 3,
+      "material": {
+        "skill": "Reading",
+        "passage": "When people imagine robots in hospitals, they often think of machines performing operations on their own. The reality today is less dramatic but still important. Most hospital robots do simple, repetitive jobs so that nurses and doctors can spend more time with patients.\n\nIn one large hospital in Singapore, small robots carry medicine and clean sheets between floors. They use the lifts by themselves and can travel around fifteen kilometres a day. Nurses there say the robots save each of them up to an hour of walking per shift.\n\nRobots also help surgeons. In robot-assisted surgery, the surgeon sits at a control desk and moves the robot's arms, which can make extremely small and steady movements. Patients often recover faster because the cuts are smaller. However, the surgeon is always in control; the robot does not make decisions.\n\nNot everyone is enthusiastic. The machines are very expensive, and smaller hospitals cannot afford them. Some older patients also say they feel uncomfortable when a robot enters their room.\n\nExperts believe that robots will become more common, but they say robots will not replace nurses. 'A robot can bring medicine,' one hospital manager said, 'but it cannot hold a patient's hand or notice that they look worried.'",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "What do most hospital robots do today?", "options": ["Perform operations alone", "Do simple, repetitive jobs", "Talk to patients"], "answer": 1, "explanation": "'Most hospital robots do simple, repetitive jobs'. Đáp án A là điều người ta tưởng tượng, không phải thực tế.", "evidence": "Most hospital robots do simple, repetitive jobs" },
+        { "slug": "q2", "prompt": "How much walking do the robots save nurses in the Singapore hospital?", "options": ["Up to an hour per shift", "Fifteen kilometres a day", "Two hours a day"], "answer": 0, "explanation": "15 km là quãng đường robot đi; mỗi y tá tiết kiệm 'up to an hour of walking per shift'.", "evidence": "save each of them up to an hour of walking per shift" },
+        { "slug": "q3", "prompt": "In robot-assisted surgery, the robot makes its own decisions. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 1, "explanation": "'the surgeon is always in control; the robot does not make decisions' → False.", "evidence": "the robot does not make decisions" },
+        { "slug": "q4", "prompt": "Why do patients often recover faster after robot-assisted surgery?", "options": ["The cuts are smaller.", "They leave hospital earlier.", "The robot gives them medicine."], "answer": 0, "explanation": "'Patients often recover faster because the cuts are smaller.'", "evidence": "Patients often recover faster because the cuts are smaller" },
+        { "slug": "q5", "prompt": "The robots in Singapore cost more than ten million dollars. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 2, "explanation": "Bài nói robot 'very expensive' nhưng không đưa ra con số → Not Given.", "evidence": "The machines are very expensive" },
+        { "slug": "q6", "prompt": "What does the hospital manager say robots cannot do?", "options": ["Carry medicine", "Notice that a patient looks worried", "Use the lifts"], "answer": 1, "explanation": "'it cannot hold a patient's hand or notice that they look worried'.", "evidence": "notice that they look worried" }
+      ]
+    },
+    {
+      "slug": "starter-u10-listening-future-of-technology",
+      "title": "A talk about future technology",
+      "skill": "Listening",
+      "summary": "Listen to a short lecture with predictions and numbers.",
+      "sortOrder": 4,
+      "material": {
+        "skill": "Listening",
+        "transcript": "Lecturer: Good morning. Today I want to look at how technology in our homes might change over the next twenty years.\nLet's start with something we already have. In 2010, about one in five adults in this region owned a smartphone. By 2020, that figure had risen to almost nine out of ten. So growth was extremely fast.\nWhat will happen next? I think smartphones will definitely stay, but they will probably get smaller, and many people will use smart glasses instead of looking at a screen.\nSecondly, homes. Today, around fifteen per cent of homes have a smart speaker. I predict this will reach half of all homes by 2035, mainly because older people will use them to call family and to remind them to take medicine.\nThirdly, cars. Self-driving cars will become common, but not as quickly as many people think. Roads in big cities are complicated, so I don't think we'll see many fully self-driving taxis before 2040.\nFinally, one thing that probably won't change much is how we read. Surveys show that young people still buy paper books, especially for studying.\nFor next week, please read chapter four and bring one prediction of your own.",
+        "audioUrl": "",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "In 2010, how many adults in the region owned a smartphone?", "options": ["About one in five", "About one in two", "Almost nine out of ten"], "answer": 0, "explanation": "'In 2010, about one in five adults' – 9/10 là con số năm 2020." },
+        { "slug": "q2", "prompt": "What does the lecturer predict about smartphones?", "options": ["They will disappear.", "They will probably get smaller.", "They will become more expensive."], "answer": 1, "explanation": "'they will probably get smaller'." },
+        { "slug": "q3", "prompt": "What percentage of homes have a smart speaker today?", "options": ["5%", "15%", "50%"], "answer": 1, "explanation": "'around fifteen per cent'; 50% là dự đoán cho năm 2035." },
+        { "slug": "q4", "prompt": "Why will smart speakers become more popular?", "options": ["They will be free.", "Older people will use them.", "Schools will need them."], "answer": 1, "explanation": "'mainly because older people will use them to call family and to remind them to take medicine'." },
+        { "slug": "q5", "prompt": "Why does the lecturer think self-driving taxis will take time?", "options": ["City roads are complicated.", "People don't like them.", "They are illegal."], "answer": 0, "explanation": "'Roads in big cities are complicated'." }
+      ]
+    },
+    {
+      "slug": "starter-u10-writing-describe-a-graph",
+      "title": "Describe a line graph (Task 1 style)",
+      "skill": "Writing",
+      "summary": "Write 100–130 words describing a simple trend.",
+      "sortOrder": 5,
+      "material": {
+        "skill": "Writing",
+        "prompt": "The information below shows the percentage of students at one college who used an online learning app between 2018 and 2024 (practice data written for this lesson):\n2018: 12% · 2019: 15% · 2020: 58% · 2021: 64% · 2022: 61% · 2023: 62% · 2024: 70%\n\nSummarise the information by describing the main trends and making comparisons where relevant. Write 100–130 words. Do not give your opinion.",
+        "minWords": 100,
+        "modelAnswer": "The graph shows the percentage of students at a college who used an online learning app from 2018 to 2024.\n\nOverall, app use increased significantly over the period, with the biggest change happening in 2020.\n\nIn 2018, only 12% of students used the app, and this figure rose gradually to 15% in the following year. Between 2019 and 2020, however, the percentage increased sharply to 58%, almost four times higher than before. It continued to grow to 64% in 2021.\n\nAfter that, app use decreased slightly to 61% in 2022 and then remained stable at around 62% in 2023. In the final year, it rose again and reached its highest point, 70%.",
+        "checklist": ["Paraphrase the task in the first sentence", "Write an overview of the main trend", "Use trend verbs with adverbs (rose sharply, fell slightly)", "Include key numbers and years", "Do not give your opinion; write 100–130 words"],
+        "figure": { "url": "", "alt": "" }
+      }
+    },
+    {
+      "slug": "starter-u10-speaking-describe-a-gadget",
+      "title": "Describe a piece of technology (Part 2)",
+      "skill": "Speaking",
+      "summary": "Practise a Part 2 talk about a gadget you would like to buy.",
+      "sortOrder": 6,
+      "material": {
+        "skill": "Speaking",
+        "prompt": "IELTS Speaking Part 2 – Describe a piece of technology that you would like to buy in the future.\nYou should say:\n• what it is\n• what it can do\n• how much it costs\nand explain why you would like to buy it.\nPrepare for one minute, then speak for one to two minutes.",
+        "preparationSeconds": 60,
+        "modelAnswer": "The piece of technology I'd like to buy is a tablet with a digital pen. I've seen my classmates use them in lectures, and they look really useful. With a tablet like this, you can write notes by hand, but everything is saved and organised automatically, so you never lose a page. You can also record the lecture while you write, and later tap on a word to hear what the teacher was saying at that moment. A good one costs around twelve million dong, which is quite expensive for a student, so I'm saving part of the money from my part-time job. I'd like to buy it for two reasons. First, I'll be able to carry all my notes and textbooks in one light device. Second, I think it will help me study more efficiently, because I can search my notes instead of turning pages.",
+        "checklist": ["Cover all four points on the card", "Use can / will to describe what it does", "Give the price and how you will pay for it", "Explain two reasons clearly", "Speak for at least one minute"],
+        "figure": { "url": "", "alt": "" }
+      }
+    }
+  ]
+}

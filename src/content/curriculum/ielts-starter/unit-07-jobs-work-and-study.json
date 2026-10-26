@@ -1,0 +1,124 @@
+{
+  "stage": "ielts-starter",
+  "course": {
+    "slug": "ielts-starter-everyday-topics",
+    "title": "IELTS Starter: Everyday Topics",
+    "description": "Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry."
+  },
+  "unit": { "slug": "jobs-work-and-study", "title": "Unit 7 · Jobs, Work and Study", "sortOrder": 7 },
+  "lessons": [
+    {
+      "slug": "starter-u07-vocabulary-work-experience",
+      "title": "Jobs and work experience",
+      "skill": "Vocabulary",
+      "summary": "Words for jobs, workplaces and applying for work.",
+      "sortOrder": 1,
+      "material": {
+        "skill": "Vocabulary",
+        "introduction": "'Do you work or are you a student?' is usually the first question in IELTS Speaking. These words help you describe a job, a part-time position or what you are studying, and they are useful for writing a job application email.\n\nMẹo: part-time job (việc bán thời gian) ≠ full-time job (việc toàn thời gian).",
+        "figure": { "url": "", "alt": "" }
+      },
+      "vocabulary": [
+        { "word": "part-time job", "phonetic": "/ˌpɑːt ˈtaɪm dʒɒb/", "meaningVi": "việc làm bán thời gian", "definition": "A job you do for only some hours of the week.", "example": "Many students have a part-time job in a café.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi có một công việc bán thời gian.", "acceptedSentences": ["I have a part-time job.", "I've got a part-time job."] },
+        { "word": "apply for", "phonetic": "/əˈplaɪ fɔː/", "meaningVi": "nộp đơn xin", "definition": "To ask formally for a job or a place on a course.", "example": "She applied for a job at a bookshop.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi muốn nộp đơn xin việc này.", "acceptedSentences": ["I want to apply for this job.", "I would like to apply for this job.", "I'd like to apply for this job."] },
+        { "word": "experience", "phonetic": "/ɪkˈspɪəriəns/", "meaningVi": "kinh nghiệm", "definition": "Knowledge or skill you get from doing something.", "example": "I don't have any experience of working with children.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi có kinh nghiệm bán hàng.", "acceptedSentences": ["I have experience in sales.", "I have some experience in sales.", "I have sales experience."] },
+        { "word": "colleague", "phonetic": "/ˈkɒliːɡ/", "meaningVi": "đồng nghiệp", "definition": "A person you work with.", "example": "My colleagues helped me a lot in my first week.", "sentencePromptVi": "Viết bằng tiếng Anh: Đồng nghiệp của tôi rất thân thiện.", "acceptedSentences": ["My colleagues are very friendly.", "My colleague is very friendly."] },
+        { "word": "salary", "phonetic": "/ˈsæləri/", "meaningVi": "lương (tháng/năm)", "definition": "The money you receive regularly for your job.", "example": "Doctors usually earn a high salary.", "sentencePromptVi": "Viết bằng tiếng Anh: Lương không phải là điều quan trọng nhất.", "acceptedSentences": ["Salary is not the most important thing.", "The salary is not the most important thing.", "Salary isn't the most important thing."] },
+        { "word": "shift", "phonetic": "/ʃɪft/", "meaningVi": "ca làm việc", "definition": "A period of work, e.g. a morning or night shift.", "example": "Nurses often work long night shifts.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi làm ca tối vào thứ Sáu.", "acceptedSentences": ["I work the evening shift on Fridays.", "I work an evening shift on Fridays.", "I work evening shifts on Fridays."] },
+        { "word": "reliable", "phonetic": "/rɪˈlaɪəbl/", "meaningVi": "đáng tin cậy", "definition": "Someone you can trust to do what they say.", "example": "Employers want staff who are reliable and on time.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi là người chăm chỉ và đáng tin cậy.", "acceptedSentences": ["I am hard-working and reliable.", "I'm hard-working and reliable.", "I am hardworking and reliable."] },
+        { "word": "degree", "phonetic": "/dɪˈɡriː/", "meaningVi": "bằng đại học", "definition": "A qualification you get after finishing a university course.", "example": "My brother has a degree in engineering.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi đang học lấy bằng kinh tế.", "acceptedSentences": ["I'm studying for a degree in economics.", "I am studying for a degree in economics.", "I am doing a degree in economics."] }
+      ]
+    },
+    {
+      "slug": "starter-u07-grammar-can-could",
+      "title": "Can, can't, could and couldn't",
+      "skill": "Grammar",
+      "summary": "Talk about present and past ability.",
+      "sortOrder": 2,
+      "material": {
+        "skill": "Grammar",
+        "rule": "can / can't + base verb – ability now: I can speak three languages. She can't drive.\ncould / couldn't + base verb – ability in the past: When I was five, I could swim. I couldn't read until I was six.\n\n• Questions: Can you use Excel? – Yes, I can. / No, I can't.\n• No -s and no 'to': He can cook (NOT He cans cook / He can to cook).\n• For a specific success in the past, use 'was able to' or the past simple: After three hours, we were able to fix the computer.\n\nGhi nhớ: can/could + động từ nguyên mẫu không 'to'.",
+        "example": "I couldn't type fast at school, but now I can type sixty words a minute.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "My little brother ___ ride a bike when he was four.", "options": ["can", "could", "cans"], "answer": 1, "explanation": "Khả năng trong quá khứ ('when he was four') → could." },
+        { "slug": "q2", "prompt": "Choose the correct sentence.", "options": ["She can to speak Korean.", "She cans speak Korean.", "She can speak Korean."], "answer": 2, "explanation": "can + động từ nguyên mẫu, không 'to', không thêm -s." },
+        { "slug": "q3", "prompt": "'Can you use Photoshop?' – 'No, I ___.'", "options": ["can't", "don't", "couldn't"], "answer": 0, "explanation": "Câu trả lời ngắn lặp lại trợ động từ của câu hỏi: No, I can't." },
+        { "slug": "q4", "prompt": "I ___ sleep last night because the neighbours were very noisy.", "options": ["can't", "couldn't", "can"], "answer": 1, "explanation": "'last night' là quá khứ → couldn't." },
+        { "slug": "q5", "prompt": "Which sentence talks about ability NOW?", "options": ["I could swim at seven.", "I can swim 1 km without stopping.", "I couldn't swim last year."], "answer": 1, "explanation": "'can' diễn tả khả năng hiện tại." },
+        { "slug": "q6", "prompt": "The exam was hard, but in the end I ___ answer every question.", "options": ["could", "was able to", "can"], "answer": 1, "explanation": "Một lần làm được việc cụ thể trong quá khứ → was able to (không dùng could)." }
+      ]
+    },
+    {
+      "slug": "starter-u07-reading-summer-jobs",
+      "title": "Finding a summer job",
+      "skill": "Reading",
+      "summary": "Read an advice article and practise True/False/Not Given.",
+      "sortOrder": 3,
+      "material": {
+        "skill": "Reading",
+        "passage": "Each year, thousands of students look for a job during the summer holidays. Career adviser Linh Pham says this is easier than most teenagers think. 'Cafés, shops and summer camps need extra staff from June to August,' she explains. 'Employers know students are only available for a short time, and that is fine for them.'\n\nAccording to Ms Pham, the most common mistake is waiting too long. Many students start looking after their exams finish, but by then the best positions have already gone. She recommends sending applications at least six weeks before the holiday begins.\n\nExperience is not always necessary. 'For a first job, employers care more about attitude,' she says. 'If you are polite, reliable and willing to learn, that is often enough.' However, she suggests that students think about skills they already have. Someone who helps in a family shop can say they have experience of dealing with customers, and a student who organises school events can mention teamwork.\n\nMs Pham also reminds students to check the conditions before they accept an offer. They should know how many hours they will work each week, how much they will be paid and whether they will need to work at weekends. Students under eighteen may need permission from their parents.\n\nFinally, she says a summer job is not only about money. 'Students learn to manage their time and talk to adults confidently. These skills help them at university and later in their careers.'",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Ms Pham thinks finding a summer job is very difficult for teenagers. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 1, "explanation": "Bà nói việc này 'easier than most teenagers think' → False.", "evidence": "this is easier than most teenagers think" },
+        { "slug": "q2", "prompt": "Students should apply at least six weeks before the holiday. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 0, "explanation": "'sending applications at least six weeks before the holiday begins' → True.", "evidence": "sending applications at least six weeks before the holiday begins" },
+        { "slug": "q3", "prompt": "Employers always require previous work experience. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 1, "explanation": "'Experience is not always necessary' → False.", "evidence": "Experience is not always necessary" },
+        { "slug": "q4", "prompt": "Summer camps pay more than cafés. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 2, "explanation": "Bài nhắc cả hai nơi cần thêm nhân viên nhưng không so sánh lương → Not Given.", "evidence": "Cafés, shops and summer camps need extra staff from June to August" },
+        { "slug": "q5", "prompt": "Which of these does Ms Pham say students should check before accepting a job?", "options": ["The number of hours per week", "The manager's qualifications", "The size of the company"], "answer": 0, "explanation": "Học sinh nên biết 'how many hours they will work each week', lương và có làm cuối tuần không.", "evidence": "how many hours they will work each week" },
+        { "slug": "q6", "prompt": "According to Ms Pham, a summer job also helps students…", "options": ["choose a university", "talk to adults confidently", "save money for travel"], "answer": 1, "explanation": "'Students learn to manage their time and talk to adults confidently.'", "evidence": "Students learn to manage their time and talk to adults confidently" }
+      ]
+    },
+    {
+      "slug": "starter-u07-listening-job-interview",
+      "title": "A part-time job interview",
+      "skill": "Listening",
+      "summary": "Listen to a short interview and answer multiple-choice questions.",
+      "sortOrder": 4,
+      "material": {
+        "skill": "Listening",
+        "transcript": "Manager: Thanks for coming in, Hien. So you'd like to work in our bookshop at the weekends?\nHien: Yes, that's right. I'm in my second year at university, studying literature.\nManager: Have you worked in a shop before?\nHien: Not in a bookshop, but last summer I worked at my aunt's clothes shop for two months. I served customers and used the cash register.\nManager: Good. What would you say is your biggest strength?\nHien: I think I'm very organised. At university I'm the secretary of the reading club, so I plan our meetings and keep the records.\nManager: That's useful – we need someone to help with stock in the storeroom too. Can you work on Saturdays and Sundays?\nHien: Saturdays are fine. On Sundays I can only work in the afternoon, because I have a class in the morning.\nManager: That should be OK. The shifts are four hours long, and we pay thirty-five thousand dong an hour.\nHien: That sounds good. When would I start?\nManager: We're very busy before the new school year, so ideally next week. I'll call you by Friday to let you know.",
+        "audioUrl": "",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "What does Hien study?", "options": ["Business", "Literature", "History"], "answer": 1, "explanation": "'I'm in my second year at university, studying literature.'" },
+        { "slug": "q2", "prompt": "Where did Hien work last summer?", "options": ["In a bookshop", "In a clothes shop", "In a café"], "answer": 1, "explanation": "'I worked at my aunt's clothes shop for two months.'" },
+        { "slug": "q3", "prompt": "What does Hien say is her biggest strength?", "options": ["She is organised.", "She reads quickly.", "She is good with money."], "answer": 0, "explanation": "'I think I'm very organised.'" },
+        { "slug": "q4", "prompt": "When can Hien work on Sundays?", "options": ["All day", "Only in the morning", "Only in the afternoon"], "answer": 2, "explanation": "Sáng Chủ nhật cô ấy có lớp, nên chỉ làm được buổi chiều." },
+        { "slug": "q5", "prompt": "How long is each shift?", "options": ["Three hours", "Four hours", "Five hours"], "answer": 1, "explanation": "'The shifts are four hours long'." }
+      ]
+    },
+    {
+      "slug": "starter-u07-writing-job-application",
+      "title": "An email applying for a summer job",
+      "skill": "Writing",
+      "summary": "Write a polite 100–120 word application email.",
+      "sortOrder": 5,
+      "material": {
+        "skill": "Writing",
+        "prompt": "You saw this advert: 'Summer camp helpers wanted – July and August. Must be friendly and enjoy working with children.' Write an email to the camp manager, Ms Taylor (100–120 words). In your email:\n• say which job you are applying for and where you saw the advert\n• describe your skills and any experience\n• say when you are available.\nUse a polite, semi-formal style (Dear Ms Taylor, … Best regards, …).",
+        "minWords": 100,
+        "modelAnswer": "Dear Ms Taylor,\n\nI am writing to apply for the position of summer camp helper, which I saw advertised on your website.\n\nI am eighteen and I am in my final year of high school. I really enjoy working with children. For the past year I have helped at an English club for young learners every Saturday, where I organise games and help the teacher with activities. I can also swim well and play the guitar, so I could lead some outdoor and music activities at the camp.\n\nI am available from the first of July until the end of August, and I can work at weekends if necessary.\n\nI look forward to hearing from you.\n\nBest regards,\nNguyen Thi Hong",
+        "checklist": ["Use a polite opening and closing", "State the job and where you saw it", "Describe skills with can / could and examples", "Say when you are available", "Write 100–120 words with no contractions"],
+        "figure": { "url": "", "alt": "" }
+      }
+    },
+    {
+      "slug": "starter-u07-speaking-skills-and-abilities",
+      "title": "Describing your skills and abilities",
+      "skill": "Speaking",
+      "summary": "Answer Part 1 questions about work, study and skills.",
+      "sortOrder": 6,
+      "material": {
+        "skill": "Speaking",
+        "prompt": "IELTS Speaking Part 1 – answer each question in 2–3 sentences:\n1. Do you work or are you a student?\n2. What skill would you like to learn in the future?\n3. Is there something you could do as a child that you can't do now?\n4. What job would you like to have in ten years?",
+        "preparationSeconds": 15,
+        "modelAnswer": "I'm a student; I'm in my second year of a business degree, and I also have a part-time job in a coffee shop. In the future I'd like to learn to code, because I think it will be useful in almost every job. As a child I could do the splits because I took dance classes, but now I definitely can't. In ten years I'd like to manage my own small business, maybe a café with a bookshop inside.",
+        "checklist": ["Use can / could / couldn't correctly", "Use work vocabulary from this unit", "Add a reason or an example", "Use 'I'd like to…' for the future", "Listen again: was your pronunciation of 'can' and 'can't' clear?"],
+        "figure": { "url": "", "alt": "" }
+      }
+    }
+  ]
+}

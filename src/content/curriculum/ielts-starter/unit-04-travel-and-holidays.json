@@ -1,0 +1,124 @@
+{
+  "stage": "ielts-starter",
+  "course": {
+    "slug": "ielts-starter-everyday-topics",
+    "title": "IELTS Starter: Everyday Topics",
+    "description": "Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry."
+  },
+  "unit": { "slug": "travel-and-holidays", "title": "Unit 4 · Travel and Holidays", "sortOrder": 4 },
+  "lessons": [
+    {
+      "slug": "starter-u04-vocabulary-travel",
+      "title": "Travel words and adjectives",
+      "skill": "Vocabulary",
+      "summary": "Words for trips and adjectives to describe places.",
+      "sortOrder": 1,
+      "material": {
+        "skill": "Vocabulary",
+        "introduction": "When you describe a holiday in IELTS Speaking Part 2, simple adjectives like 'good' and 'nice' get a lower score. Use more precise words: a crowded beach, a comfortable seat, a breathtaking view. Learn these words, then write a sentence about a real trip.\n\nMẹo: thay 'nice/good' bằng tính từ cụ thể hơn để nâng điểm từ vựng.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "vocabulary": [
+        { "word": "destination", "phonetic": "/ˌdestɪˈneɪʃn/", "meaningVi": "điểm đến", "definition": "The place where someone is travelling to.", "example": "Hoi An is a popular destination for families.", "sentencePromptVi": "Viết bằng tiếng Anh: Đà Lạt là điểm đến yêu thích của tôi.", "acceptedSentences": ["Da Lat is my favourite destination.", "Da Lat is my favorite destination.", "Dalat is my favourite destination."] },
+        { "word": "book", "phonetic": "/bʊk/", "meaningVi": "đặt (vé, phòng)", "definition": "To arrange to have a seat, room or ticket in advance.", "example": "We booked our hotel two months before the trip.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi đã đặt vé máy bay hôm qua.", "acceptedSentences": ["I booked a plane ticket yesterday.", "I booked a flight yesterday.", "I booked the flight yesterday."] },
+        { "word": "luggage", "phonetic": "/ˈlʌɡɪdʒ/", "meaningVi": "hành lý", "definition": "The bags and cases you take on a journey (uncountable).", "example": "How much luggage can I take on the plane?", "sentencePromptVi": "Viết bằng tiếng Anh: Hành lý của tôi rất nặng.", "acceptedSentences": ["My luggage is very heavy."] },
+        { "word": "crowded", "phonetic": "/ˈkraʊdɪd/", "meaningVi": "đông đúc", "definition": "Full of people.", "example": "The beach was crowded on the national holiday.", "sentencePromptVi": "Viết bằng tiếng Anh: Chợ rất đông vào buổi sáng.", "acceptedSentences": ["The market is very crowded in the morning.", "The market was very crowded in the morning."] },
+        { "word": "comfortable", "phonetic": "/ˈkʌmftəbl/", "meaningVi": "thoải mái, dễ chịu", "definition": "Making you feel relaxed and physically pleasant.", "example": "The night bus had comfortable beds.", "sentencePromptVi": "Viết bằng tiếng Anh: Khách sạn rất thoải mái.", "acceptedSentences": ["The hotel was very comfortable.", "The hotel is very comfortable."] },
+        { "word": "breathtaking", "phonetic": "/ˈbreθteɪkɪŋ/", "meaningVi": "đẹp ngoạn mục", "definition": "Extremely beautiful or surprising.", "example": "The view from the top of the mountain was breathtaking.", "sentencePromptVi": "Viết bằng tiếng Anh: Cảnh hoàng hôn đẹp ngoạn mục.", "acceptedSentences": ["The sunset was breathtaking.", "The sunset is breathtaking."] },
+        { "word": "sightseeing", "phonetic": "/ˈsaɪtsiːɪŋ/", "meaningVi": "tham quan", "definition": "Visiting interesting places as a tourist.", "example": "We spent the first day sightseeing in the old town.", "sentencePromptVi": "Viết bằng tiếng Anh: Chúng tôi đi tham quan vào buổi chiều.", "acceptedSentences": ["We went sightseeing in the afternoon.", "We go sightseeing in the afternoon."] },
+        { "word": "souvenir", "phonetic": "/ˌsuːvəˈnɪə/", "meaningVi": "quà lưu niệm", "definition": "Something you buy to remember a place.", "example": "I bought a small lantern as a souvenir.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi đã mua quà lưu niệm cho mẹ.", "acceptedSentences": ["I bought a souvenir for my mother.", "I bought a souvenir for my mum.", "I bought souvenirs for my mother."] }
+      ]
+    },
+    {
+      "slug": "starter-u04-grammar-past-simple",
+      "title": "Past simple for trips and experiences",
+      "skill": "Grammar",
+      "summary": "Use regular and irregular past forms to talk about finished trips.",
+      "sortOrder": 2,
+      "material": {
+        "skill": "Grammar",
+        "rule": "Use the past simple for finished actions at a specific time in the past (yesterday, last summer, in 2023, two years ago).\n• Regular verbs + -ed: visit → visited, stay → stayed, travel → travelled.\n• Irregular verbs must be learned: go → went, take → took, see → saw, buy → bought, fly → flew, eat → ate.\n• Negatives: didn't + base verb: We didn't stay long.\n• Questions: Did + subject + base verb? Did you enjoy it? – Yes, I did.\n• 'be': I was / you were; Was it expensive?\n\nGhi nhớ: sau did / didn't, động từ trở về nguyên mẫu (did you go, NOT did you went).",
+        "example": "Last summer we flew to Phu Quoc, stayed in a small guesthouse and didn't spend much money.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Last year we ___ to Japan for the first time.", "options": ["go", "went", "goed"], "answer": 1, "explanation": "'go' là động từ bất quy tắc: went." },
+        { "slug": "q2", "prompt": "Choose the correct question.", "options": ["Did you visited the museum?", "Did you visit the museum?", "You did visit the museum?"], "answer": 1, "explanation": "Sau 'Did', động từ ở nguyên mẫu: visit." },
+        { "slug": "q3", "prompt": "The hotel ___ very clean, but the food was terrible.", "options": ["was", "were", "did"], "answer": 0, "explanation": "'The hotel' số ít → was." },
+        { "slug": "q4", "prompt": "We ___ any souvenirs because the shops were closed.", "options": ["didn't buy", "didn't bought", "not bought"], "answer": 0, "explanation": "Phủ định quá khứ: didn't + nguyên mẫu (buy)." },
+        { "slug": "q5", "prompt": "Which sentence is about the present, not a finished trip?", "options": ["I travelled to Hue in 2022.", "I travel to Hue every Tet holiday.", "I saw the citadel two years ago."], "answer": 1, "explanation": "'every Tet holiday' là thói quen hiện tại → present simple; hai câu còn lại có mốc thời gian quá khứ." },
+        { "slug": "q6", "prompt": "'Did your parents enjoy the trip?' – 'Yes, ___.'", "options": ["they enjoyed", "they did", "they were"], "answer": 1, "explanation": "Câu trả lời ngắn lặp lại trợ động từ: Yes, they did." }
+      ]
+    },
+    {
+      "slug": "starter-u04-reading-gap-year",
+      "title": "A month with a host family",
+      "skill": "Reading",
+      "summary": "Read a travel blog and answer multiple-choice questions.",
+      "sortOrder": 3,
+      "material": {
+        "skill": "Reading",
+        "passage": "Last July I spent four weeks in New Zealand on a school exchange programme. Before I left, I was nervous about two things: my English and the food. In the end, neither was a problem.\n\nI stayed with the Walker family in a small town near Christchurch. They had two children, and the youngest, Ella, was the same age as me. On my first day she took me to her school, where I joined classes in maths, art and geography. I understood more than I expected, mainly because the teachers spoke slowly and used lots of pictures.\n\nThe weekends were the best part. One Saturday we drove to a lake and went kayaking, although the water was so cold that I didn't want to fall in. Another weekend we visited a farm, and I fed baby sheep with a bottle of milk. I had never been so close to farm animals before.\n\nThe only difficult thing was the weather. July is winter in New Zealand, and I didn't bring enough warm clothes. Mrs Walker lent me a thick jacket, which I wore almost every day.\n\nWhen I came home, my parents said my English sounded more natural. I still write to Ella every week, and she wants to visit Vietnam next year.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Before the trip, the writer was worried about…", "options": ["the weather and the cost", "her English and the food", "school subjects"], "answer": 1, "explanation": "'I was nervous about two things: my English and the food.'", "evidence": "I was nervous about two things: my English and the food" },
+        { "slug": "q2", "prompt": "Why did the writer understand the lessons?", "options": ["Ella translated for her.", "The teachers spoke slowly and used pictures.", "She studied the subjects before."], "answer": 1, "explanation": "'mainly because the teachers spoke slowly and used lots of pictures'.", "evidence": "mainly because the teachers spoke slowly and used lots of pictures" },
+        { "slug": "q3", "prompt": "What happened at the lake?", "options": ["The writer fell into the water.", "They went kayaking.", "They went swimming."], "answer": 1, "explanation": "Họ đi chèo kayak; người viết KHÔNG muốn rơi xuống nước vì nước lạnh – đáp án A là bẫy.", "evidence": "went kayaking, although the water was so cold that I didn't want to fall in" },
+        { "slug": "q4", "prompt": "The writer had been close to farm animals many times before. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 1, "explanation": "'I had never been so close to farm animals before' → False.", "evidence": "I had never been so close to farm animals before" },
+        { "slug": "q5", "prompt": "What problem did the writer have?", "options": ["She didn't have enough warm clothes.", "She didn't like her host family.", "She lost her jacket."], "answer": 0, "explanation": "'I didn't bring enough warm clothes' – mùa đông ở New Zealand.", "evidence": "I didn't bring enough warm clothes" },
+        { "slug": "q6", "prompt": "Ella will definitely visit Vietnam next year. (True / False / Not Given)", "options": ["True", "False", "Not Given"], "answer": 2, "explanation": "Bài chỉ nói Ella 'wants to visit', không chắc chắn → Not Given (không thể khẳng định đúng hay sai).", "evidence": "she wants to visit Vietnam next year" }
+      ]
+    },
+    {
+      "slug": "starter-u04-listening-holiday-interview",
+      "title": "An interview about a holiday",
+      "skill": "Listening",
+      "summary": "Listen to a student describe a trip and answer multiple-choice questions.",
+      "sortOrder": 4,
+      "material": {
+        "skill": "Listening",
+        "transcript": "Interviewer: So, Tuan, you went to Singapore in the spring. Was it your first trip abroad?\nTuan: No, I went to Thailand with my family when I was ten. But it was my first trip without my parents.\nInterviewer: Who did you go with?\nTuan: My cousin and two friends from university. We planned it for months.\nInterviewer: How long did you stay?\nTuan: We wanted to stay for a week, but the flights were expensive, so we went for five days.\nInterviewer: Where did you stay?\nTuan: In a hostel in Chinatown. It wasn't luxurious, but it was clean and very close to the metro.\nInterviewer: What did you enjoy most?\nTuan: Everyone expects me to say the shopping, but actually it was the food at the hawker centres. It was cheap and delicious – I tried something different every meal.\nInterviewer: Was anything disappointing?\nTuan: The botanic gardens were beautiful, but it rained on the day we went, so we only saw a small part.\nInterviewer: Would you go back?\nTuan: Definitely. Next time I'd like to visit Sentosa Island, because we didn't have time.",
+        "audioUrl": "",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "This trip was Tuan's first…", "options": ["trip abroad", "trip without his parents", "trip by plane"], "answer": 1, "explanation": "Anh ấy từng đi Thái Lan với gia đình; đây là chuyến đầu tiên không có bố mẹ." },
+        { "slug": "q2", "prompt": "How long did they stay in Singapore?", "options": ["Five days", "A week", "Ten days"], "answer": 0, "explanation": "Họ muốn ở một tuần nhưng vé đắt nên chỉ đi năm ngày." },
+        { "slug": "q3", "prompt": "What did Tuan say about the hostel?", "options": ["It was luxurious.", "It was clean and near the metro.", "It was far from the city."], "answer": 1, "explanation": "'it was clean and very close to the metro'." },
+        { "slug": "q4", "prompt": "What did Tuan enjoy most?", "options": ["Shopping", "The botanic gardens", "Food at hawker centres"], "answer": 2, "explanation": "Mọi người nghĩ là mua sắm (bẫy), nhưng thật ra là đồ ăn ở hawker centre." },
+        { "slug": "q5", "prompt": "Why was the visit to the gardens disappointing?", "options": ["It was closed.", "It rained.", "It was too expensive."], "answer": 1, "explanation": "'it rained on the day we went'." }
+      ]
+    },
+    {
+      "slug": "starter-u04-writing-email-about-a-trip",
+      "title": "An email about a recent trip",
+      "skill": "Writing",
+      "summary": "Write an 80–100 word email to a friend about a trip, in the past simple.",
+      "sortOrder": 5,
+      "material": {
+        "skill": "Writing",
+        "prompt": "You recently went on a short trip. Write an email to your friend Tom (80–100 words). In your email:\n• say where you went and who you went with\n• describe one thing you enjoyed and one problem\n• recommend the place (or not) and explain why.\nUse the past simple and at least two adjectives from this unit.",
+        "minWords": 80,
+        "modelAnswer": "Hi Tom,\n\nHow are you? Last weekend I went to Ninh Binh with my sister. We stayed in a comfortable homestay next to the rice fields. The best part was a boat trip through the caves – the scenery was breathtaking. However, the main temple was very crowded because it was a holiday, so we left early. I definitely recommend Ninh Binh, but try to go on a weekday when it is quieter. You can rent a bike and explore the villages, too.\n\nBest wishes,\nVy",
+        "checklist": ["Greet and close the email", "Answer all three bullet points", "Use the past simple correctly (irregular verbs!)", "Use at least two precise adjectives", "Write 80–100 words"],
+        "figure": { "url": "", "alt": "" }
+      }
+    },
+    {
+      "slug": "starter-u04-speaking-describe-a-trip",
+      "title": "Describe a trip you enjoyed (Part 2)",
+      "skill": "Speaking",
+      "summary": "Practise a one-minute talk with details and reasons.",
+      "sortOrder": 6,
+      "material": {
+        "skill": "Speaking",
+        "prompt": "IELTS Speaking Part 2 – Describe a trip you enjoyed.\nYou should say:\n• where you went\n• who you went with\n• what you did there\nand explain why you enjoyed this trip.\nPrepare for one minute, then speak for one to two minutes.",
+        "preparationSeconds": 60,
+        "modelAnswer": "I'd like to talk about a trip to Da Lat that I took with my classmates after our final exams last year. We travelled by night bus, which was cheaper than flying, and we arrived early in the morning when the city was still foggy. During the three days, we visited flower gardens, cycled around Xuan Huong Lake and tried the famous grilled rice paper at the night market. One evening we went camping on a hill, and we sang songs around a small fire until midnight. I enjoyed this trip for two reasons. First, the cool weather was a nice change from the heat in Saigon. Second, it was the last time all of us were together before we went to different universities, so it feels very special now.",
+        "checklist": ["Cover all four points on the card", "Use the past simple consistently", "Add details: when, how, what it looked like", "Give two reasons with First… / Second…", "Speak for at least one minute"],
+        "figure": { "url": "", "alt": "" }
+      }
+    }
+  ]
+}

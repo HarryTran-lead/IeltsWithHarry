@@ -1,0 +1,124 @@
+{
+  "stage": "ielts-starter",
+  "course": {
+    "slug": "ielts-starter-everyday-topics",
+    "title": "IELTS Starter: Everyday Topics",
+    "description": "Band 4.0–5.0. Familiar topics, IELTS question types and short answers, written for IeltsWithHarry."
+  },
+  "unit": { "slug": "language", "title": "Unit 9 · Language", "sortOrder": 9 },
+  "lessons": [
+    {
+      "slug": "starter-u09-vocabulary-learning-languages",
+      "title": "Learning languages",
+      "skill": "Vocabulary",
+      "summary": "Words for talking about language learning and communication.",
+      "sortOrder": 1,
+      "material": {
+        "skill": "Vocabulary",
+        "introduction": "You are a language learner, so this topic is perfect for IELTS Speaking: 'How long have you studied English?', 'What is difficult about learning a language?' These words help you talk about your own learning and write about language in Task 2 essays.\n\nMẹo: fluent (trôi chảy) ≠ accurate (chính xác) – hai tiêu chí khác nhau khi chấm Speaking.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "vocabulary": [
+        { "word": "native speaker", "phonetic": "/ˈneɪtɪv ˈspiːkə/", "meaningVi": "người bản ngữ", "definition": "Someone who learned a language as a child at home.", "example": "Talking to native speakers improves your listening.", "sentencePromptVi": "Viết bằng tiếng Anh: Giáo viên của tôi là người bản ngữ.", "acceptedSentences": ["My teacher is a native speaker.", "My teacher is a native English speaker."] },
+        { "word": "fluent", "phonetic": "/ˈfluːənt/", "meaningVi": "trôi chảy, lưu loát", "definition": "Able to speak a language easily, without many pauses.", "example": "She is fluent in English and Japanese.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi muốn nói tiếng Anh trôi chảy.", "acceptedSentences": ["I want to speak English fluently.", "I want to be fluent in English.", "I would like to speak English fluently."] },
+        { "word": "accent", "phonetic": "/ˈæksent/", "meaningVi": "giọng (vùng miền)", "definition": "The way people from a place pronounce words.", "example": "IELTS listening includes British and Australian accents.", "sentencePromptVi": "Viết bằng tiếng Anh: Giọng Úc khó nghe đối với tôi.", "acceptedSentences": ["The Australian accent is difficult for me to understand.", "Australian accents are difficult for me to understand.", "The Australian accent is hard for me to understand."] },
+        { "word": "pronunciation", "phonetic": "/prəˌnʌnsiˈeɪʃn/", "meaningVi": "cách phát âm", "definition": "The way a word is said.", "example": "Recording yourself helps you check your pronunciation.", "sentencePromptVi": "Viết bằng tiếng Anh: Phát âm của tôi đang tốt hơn.", "acceptedSentences": ["My pronunciation is getting better.", "My pronunciation is improving."] },
+        { "word": "memorise", "phonetic": "/ˈmeməraɪz/", "meaningVi": "học thuộc", "definition": "To learn something so that you remember it exactly.", "example": "It is better to use new words than just memorise them.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi học thuộc mười từ mới mỗi ngày.", "acceptedSentences": ["I memorise ten new words every day.", "I memorize ten new words every day.", "I memorise ten new words a day."] },
+        { "word": "make mistakes", "phonetic": "/meɪk mɪˈsteɪks/", "meaningVi": "mắc lỗi", "definition": "To do or say something wrong.", "example": "Don't be afraid to make mistakes when you speak.", "sentencePromptVi": "Viết bằng tiếng Anh: Ai cũng mắc lỗi khi học ngôn ngữ.", "acceptedSentences": ["Everyone makes mistakes when they learn a language.", "Everybody makes mistakes when learning a language.", "Everyone makes mistakes when learning a language."] },
+        { "word": "bilingual", "phonetic": "/baɪˈlɪŋɡwəl/", "meaningVi": "song ngữ", "definition": "Able to speak two languages equally well.", "example": "Children who grow up bilingual often find it easier to learn a third language.", "sentencePromptVi": "Viết bằng tiếng Anh: Bạn tôi nói song ngữ.", "acceptedSentences": ["My friend is bilingual."] },
+        { "word": "pick up", "phonetic": "/pɪk ʌp/", "meaningVi": "học lỏm, tiếp thu (một cách tự nhiên)", "definition": "To learn something without studying it formally.", "example": "I picked up a few Korean words from TV dramas.", "sentencePromptVi": "Viết bằng tiếng Anh: Tôi học được nhiều từ qua bài hát.", "acceptedSentences": ["I picked up a lot of words from songs.", "I pick up a lot of words from songs.", "I picked up many words from songs."] }
+      ]
+    },
+    {
+      "slug": "starter-u09-grammar-going-to",
+      "title": "Going to for plans and intentions",
+      "skill": "Grammar",
+      "summary": "Talk about future plans with be going to.",
+      "sortOrder": 2,
+      "material": {
+        "skill": "Grammar",
+        "rule": "am / is / are + going to + base verb – plans and intentions you have already decided:\n• I'm going to take the IELTS test in December.\n• We aren't going to study tonight.\n• Are you going to join the speaking club? – Yes, I am. / No, I'm not.\n\nAlso use going to for predictions when you can see evidence now: Look at those clouds – it's going to rain.\n\nTime words: tomorrow, next week, this summer, in two years.\n\nGhi nhớ: kế hoạch đã quyết định → be going to + động từ nguyên mẫu.",
+        "example": "This year I'm going to read one English book a month, and I'm not going to translate every word.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Next summer my sister ___ study in Australia.", "options": ["is going to", "are going to", "going to"], "answer": 0, "explanation": "Chủ ngữ số ít 'my sister' → is going to." },
+        { "slug": "q2", "prompt": "Choose the correct question.", "options": ["Are you going take the test?", "Are you going to take the test?", "Do you going to take the test?"], "answer": 1, "explanation": "Câu hỏi: Are + chủ ngữ + going to + động từ nguyên mẫu." },
+        { "slug": "q3", "prompt": "We ___ have a class tomorrow – the teacher is ill.", "options": ["aren't going to", "don't going to", "isn't going to"], "answer": 0, "explanation": "Phủ định với 'we': aren't going to." },
+        { "slug": "q4", "prompt": "Look at the sky! It ___ rain.", "options": ["is going to", "goes to", "go to"], "answer": 0, "explanation": "Dự đoán dựa trên dấu hiệu hiện tại → is going to." },
+        { "slug": "q5", "prompt": "'Are you going to watch the film in English?' – 'Yes, ___.'", "options": ["I'm going", "I am", "I do"], "answer": 1, "explanation": "Câu trả lời ngắn: Yes, I am." },
+        { "slug": "q6", "prompt": "Which sentence describes a decided plan?", "options": ["I learn English every day.", "I'm going to start a French course in May.", "I learned Chinese as a child."], "answer": 1, "explanation": "Kế hoạch đã quyết định trong tương lai → be going to." }
+      ]
+    },
+    {
+      "slug": "starter-u09-reading-endangered-languages",
+      "title": "Saving a language",
+      "skill": "Reading",
+      "summary": "Read about endangered languages and complete sentences.",
+      "sortOrder": 3,
+      "material": {
+        "skill": "Reading",
+        "passage": "There are around seven thousand languages in the world today, but experts believe that nearly half of them could disappear by the end of this century. A language becomes endangered when children stop learning it at home. Once the last speakers grow old, the language can be lost forever.\n\nWhy does this happen? Often, families choose a more widely spoken language because it offers better jobs and education. Young people may also move to cities, where they rarely hear their parents' language.\n\nHowever, some communities are fighting back. In New Zealand, the Maori language was spoken by fewer and fewer children by the 1970s. Parents and teachers then started 'language nests' – nursery schools where young children hear only Maori all day. Today, Maori is an official language of the country, and it is used on television and in government websites.\n\nTechnology is also helping. Volunteers record older speakers telling stories, and these recordings are used to create online dictionaries and learning apps. In some cases, a language that had almost no young speakers now has a growing number of learners.\n\nLinguists say that losing a language means losing more than words. Each language contains knowledge about local plants, history and ways of thinking that may not exist anywhere else.",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "Complete: A language becomes endangered when ______ stop learning it at home.", "options": ["teachers", "children", "governments"], "answer": 1, "explanation": "'A language becomes endangered when children stop learning it at home.'", "evidence": "A language becomes endangered when children stop learning it at home" },
+        { "slug": "q2", "prompt": "Why do some families choose a more widely spoken language?", "options": ["It is easier to learn.", "It offers better jobs and education.", "Schools require it."], "answer": 1, "explanation": "'because it offers better jobs and education'.", "evidence": "because it offers better jobs and education" },
+        { "slug": "q3", "prompt": "Complete: In 'language nests', young children hear only ______ all day.", "options": ["English", "Maori", "two languages"], "answer": 1, "explanation": "'nursery schools where young children hear only Maori all day'.", "evidence": "nursery schools where young children hear only Maori all day" },
+        { "slug": "q4", "prompt": "Maori is now used…", "options": ["only in schools", "on television and government websites", "only by older people"], "answer": 1, "explanation": "'it is used on television and in government websites'.", "evidence": "it is used on television and in government websites" },
+        { "slug": "q5", "prompt": "What do volunteers record?", "options": ["Older speakers telling stories", "Children singing songs", "Television programmes"], "answer": 0, "explanation": "'Volunteers record older speakers telling stories'.", "evidence": "Volunteers record older speakers telling stories" },
+        { "slug": "q6", "prompt": "Complete: According to linguists, each language contains knowledge about local plants, history and ______.", "options": ["ways of thinking", "famous people", "modern technology"], "answer": 0, "explanation": "'knowledge about local plants, history and ways of thinking'.", "evidence": "knowledge about local plants, history and ways of thinking" }
+      ]
+    },
+    {
+      "slug": "starter-u09-listening-language-project",
+      "title": "Planning a language project",
+      "skill": "Listening",
+      "summary": "Listen to two students plan a project and note the details.",
+      "sortOrder": 4,
+      "material": {
+        "skill": "Listening",
+        "transcript": "Mai: OK, Ben, we need to decide our topic for the language project. Any ideas?\nBen: I was thinking about English words that come from other languages, like 'karaoke' from Japanese.\nMai: That's interesting, but I think our tutor wants something we can research ourselves. What about a survey on how students learn vocabulary?\nBen: Good idea. We could ask students in our year. How many people should we interview?\nMai: The guidelines say at least twenty, but let's try for thirty to get better results.\nBen: Fine. Are we going to do the survey online or face to face?\nMai: Online is faster, but face to face means people give longer answers. Let's do it online, and then interview five people in more detail.\nBen: OK. I'm going to write the questions this weekend. Can you make the slides?\nMai: Sure. When's the presentation?\nBen: It's on the fourteenth of May, and it has to be ten minutes long.\nMai: Not twelve? I thought it was twelve.\nBen: No, the tutor changed it to ten last week.\nMai: Right. Let's meet in the library on Thursday to check everything.",
+        "audioUrl": "",
+        "figure": { "url": "", "alt": "" }
+      },
+      "questions": [
+        { "slug": "q1", "prompt": "What topic do the students choose?", "options": ["English words from other languages", "How students learn vocabulary", "Japanese culture"], "answer": 1, "explanation": "Ý tưởng của Ben (từ mượn) bị thay bằng khảo sát cách sinh viên học từ vựng." },
+        { "slug": "q2", "prompt": "How many students do they plan to survey?", "options": ["20", "30", "5"], "answer": 1, "explanation": "Hướng dẫn yêu cầu tối thiểu 20 nhưng họ muốn khảo sát 30 người." },
+        { "slug": "q3", "prompt": "How will they do the survey?", "options": ["Only face to face", "Online, plus five detailed interviews", "By phone"], "answer": 1, "explanation": "'Let's do it online, and then interview five people in more detail.'" },
+        { "slug": "q4", "prompt": "What is Ben going to do this weekend?", "options": ["Make the slides", "Write the questions", "Go to the library"], "answer": 1, "explanation": "'I'm going to write the questions this weekend.'" },
+        { "slug": "q5", "prompt": "How long must the presentation be?", "options": ["Ten minutes", "Twelve minutes", "Fourteen minutes"], "answer": 0, "explanation": "Giáo viên đã đổi thành mười phút; 14 là ngày thuyết trình." }
+      ]
+    },
+    {
+      "slug": "starter-u09-writing-short-essay",
+      "title": "A short essay: the best way to learn a language",
+      "skill": "Writing",
+      "summary": "Write a 120–150 word opinion essay with a clear structure.",
+      "sortOrder": 5,
+      "material": {
+        "skill": "Writing",
+        "prompt": "Some people think the best way to learn a foreign language is to live in a country where it is spoken. Others think you can learn just as well at home. What is your opinion?\nWrite 120–150 words. Use an introduction, one or two body paragraphs with reasons and examples, and a short conclusion.",
+        "minWords": 120,
+        "modelAnswer": "Many people believe that living abroad is the fastest way to learn a language. While I agree that it helps, I think it is possible to learn well at home.\n\nIt is true that living in another country gives learners constant practice. They hear the language in shops and on the street, and they have to speak it every day. However, this option is very expensive, and not everyone can travel.\n\nNowadays, learners at home have many free resources. They can watch films with subtitles, listen to podcasts on the bus and talk to native speakers through online exchange apps. For example, my cousin reached a good level of English without leaving Vietnam, because she practised for an hour every day.\n\nIn conclusion, living abroad is helpful, but regular practice and motivation are more important than location.",
+        "checklist": ["State your opinion clearly in the introduction", "Give at least two reasons with examples", "Use linkers: however, for example, in conclusion", "Write a short conclusion that repeats your view", "Write 120–150 words"],
+        "figure": { "url": "", "alt": "" }
+      }
+    },
+    {
+      "slug": "starter-u09-speaking-longer-talk",
+      "title": "Describe a language you would like to learn (Part 2)",
+      "skill": "Speaking",
+      "summary": "Practise a longer talk using going to for plans.",
+      "sortOrder": 6,
+      "material": {
+        "skill": "Speaking",
+        "prompt": "IELTS Speaking Part 2 – Describe a language (not English) that you would like to learn.\nYou should say:\n• which language it is\n• where people speak it\n• how you are going to learn it\nand explain why you want to learn this language.\nPrepare for one minute, then speak for one to two minutes.",
+        "preparationSeconds": 60,
+        "modelAnswer": "The language I'd really like to learn is Korean. It's spoken in South Korea and North Korea, and also by Korean communities in countries like the USA and China. I've already picked up a few words from TV dramas, but I want to learn it properly. My plan is to start with the alphabet, Hangul, which people say you can learn in just a few days. Then I'm going to use a free app for ten minutes every morning, and next semester I'm going to join the Korean club at my university, where we can practise speaking with exchange students. There are two main reasons why I want to learn it. First, many Korean companies have factories in Vietnam, so it could help me find a good job. Second, I love Korean food and music, and one day I'm going to travel to Seoul and order everything in Korean.",
+        "checklist": ["Cover all four points on the card", "Use 'going to' for your plans", "Use language-learning vocabulary from this unit", "Organise reasons with First… / Second…", "Speak for at least one minute without long pauses"],
+        "figure": { "url": "", "alt": "" }
+      }
+    }
+  ]
+}
