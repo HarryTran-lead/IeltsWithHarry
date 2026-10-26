@@ -1,6 +1,18 @@
 # IELTS import verification — 2026-10-27
 
-Local environment: no dedicated development Supabase project or Supabase CLI. Production credentials are present locally, but this feature has not been deployed or imported into production. Database migrations were executed against PGlite with a Supabase auth/storage stub. **Records written to a live Supabase project: 0. Live import job successes/failures: 0/0.**
+## Production rollout
+
+Deployed commit `7f38470249636c6039675fa9c8de1be802a3cf34` to [ieltswithharry.vercel.app](https://ieltswithharry.vercel.app). Applied migrations `202610270001` and `202610270002` to the linked Supabase project. The cron job is installed and has recorded successful runs. Both source jobs completed with **696 inserts, 0 updates, 0 skips and 0 failures**; both source cursors were saved.
+
+| Source | Reading | Listening | Writing | Speaking | Imported | Published after review |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| BandReady | 44 | 43 | 102 | 496 | 685 | 8 (5 Reading, 3 Speaking) |
+| IELTS AI Dataset | 5 | 2 | 4 | 0 | 11 | 3 (1 Listening, 2 Writing) |
+| **Total** | **49** | **45** | **106** | **496** | **696** | **11** |
+
+All 11 published versions have zero validation warnings. The reviewed AI Listening exercise has four ingested audio parts and 40 questions. Its audio and a reviewed Writing image returned HTTP 200 from Supabase Storage. Unreviewed items remain in `needs_review`; BandReady Listening has no audio in the licensed pack and remains unpublished. Unauthenticated requests to the learner page redirect to login, and the library API returns 401 without a session. Browser use was disabled in Work settings, so an authenticated click-through on the production site was unavailable.
+
+## Source and local integration checks
 
 Current upstream manifests and licenses were read from GitHub. The live normalization audit (`IELTS_LIVE_AUDIT=1 npx vitest run tests/ielts-live-source.test.ts --reporter verbose --silent=false`) produced:
 
@@ -13,4 +25,4 @@ The PGlite integration test applies the migration, imports a sample, repeats it 
 
 An additional live-source integration test fetched one warning-free BandReady Reading record at the verified commit and imported it into ephemeral PGlite: **1 Reading inserted, 1 repeat skipped, 1 published, 1 learner attempt persisted, raw score 1/13**. This proves the connector and SQL import path against real source data; it does not represent a persistent Supabase import.
 
-Commands run: `npm run typecheck`, `npm run lint`, `npm run build`, `npm test`, the live source audit above, and `IELTS_LIVE_AUDIT=1 npx vitest run tests/ielts-live-import.test.ts --reporter verbose --silent=false`. The final full suite passed with **127 tests and 2 skipped**. During concurrent work in the shared checkout, an intermediate full run could not find an unrelated Daily News migration that was being added; the subsequent full run passed after that file appeared. A browser E2E against live Supabase could not run without an attached development project and admin/student accounts.
+Commands run: `npm run typecheck`, `npm run lint`, `npm run build`, `npm test`, the live source audit above, and `IELTS_LIVE_AUDIT=1 npx vitest run tests/ielts-live-import.test.ts --reporter verbose --silent=false`. The full suite passed with **127 tests and 2 skipped** before the production rollout. A later local typecheck in the shared checkout failed on an unrelated untracked Course Book file; the deployed commit contains only the IELTS changes. An authenticated browser E2E against production was unavailable because browser use is disabled in Work settings and no test learner session was provided.
