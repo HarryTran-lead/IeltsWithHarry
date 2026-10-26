@@ -501,8 +501,8 @@ async function pendingAiArt(db: Db, ids: string[]) {
   const { data } = await db.from("news_enrichment_attempts").select("article_id").eq("kind", "image").eq("ai_art_pending", true).in("article_id", ids);
   return new Set((data ?? []).map((row) => row.article_id as string));
 }
-/** Retry delay for an article waiting for a free generation slot. */
-const aiArtQueueMs = 10 * 60000;
+/** Retry delay for an article waiting for a free generation slot (under the 10-minute cron interval). */
+const aiArtQueueMs = 60000;
 
 /**
  * Generates an illustration of the article's visual subject and stores it in
@@ -552,8 +552,8 @@ async function enrichImages(db: Db, result: EnrichResult) {
   const today = new Date(); today.setUTCHours(0, 0, 0, 0);
   const thisHour = new Date(); thisHour.setUTCMinutes(0, 0, 0);
   const [{ count: todayCount, error: todayError }, { count: hourCount, error: hourError }] = await Promise.all([
-    db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").gte("attempted_at", today.toISOString()),
-    db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").gte("attempted_at", thisHour.toISOString()),
+    db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").eq("ai_art_pending", false).gte("attempted_at", today.toISOString()),
+    db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").eq("ai_art_pending", false).gte("attempted_at", thisHour.toISOString()),
   ]);
   if (todayError) throw todayError;
   if (hourError) throw hourError;
@@ -564,38 +564,39 @@ async function enrichImages(db: Db, result: EnrichResult) {
   const claims = (imageClaims ?? []) as Claim[];
   const ids = claims.map((article) => article.article_id);
   const [queries, pending] = await Promise.all([imageQueries(db, ids), pendingAiArt(db, ids)]);
-  // A real licensed photo is always preferred. When none fits, an AI illustration of the
-  // story's subject is generated instead; the free generator allows one image per run.
+  // Check licensed photo libraries in parallel first, then walk strictly from the newest
+  // claimed article to the oldest so the latest story always gets the free AI art slot first.
+  const photoLookups = new Map(await Promise.all(claims.map(async (article) => {
+    const id = article.article_id;
+    const initialQuery = queries.get(id) ?? "";
+    if (pending.has(id)) return [id, { image: null as Illustration | null, query: initialQuery, reason: "", quotaError: null as AiQuotaError | null }] as const;
+    try {
+      const found = await findNewsIllustrationResult(article.title, fetch, { body: article.body_text ?? "", query: initialQuery });
+      return [id, { image: found.image, query: found.query, reason: found.reason, quotaError: null as AiQuotaError | null }] as const;
+    } catch (cause) {
+      if (cause instanceof AiQuotaError) return [id, { image: null as Illustration | null, query: initialQuery, reason: "", quotaError: cause }] as const;
+      return [id, { image: null as Illustration | null, query: initialQuery, reason: cause instanceof Error ? cause.message : "Image lookup failed", quotaError: null as AiQuotaError | null }] as const;
+    }
+  })));
   let slots = aiArtSlots();
   const takeSlot = () => slots > 0 ? (slots--, true) : false;
-  // Articles already waiting for an AI illustration take the free slots first.
-  const ordered = [...claims].sort((a, b) => Number(pending.has(b.article_id)) - Number(pending.has(a.article_id)));
-  await Promise.all(ordered.map(async (article) => {
+  for (const article of claims) {
     const id = article.article_id;
     result.imagesChecked++;
-    let query = queries.get(id) ?? "";
-    let reason = "";
+    const lookup = photoLookups.get(id)!;
+    const reason = lookup.reason;
     try {
-      if (!pending.has(id)) {
-        try {
-          const found = await findNewsIllustrationResult(article.title, fetch, { body: article.body_text ?? "", query });
-          if (found.image) {
-            await saveIllustration(db, id, found.image); result.imagesAdded++;
-            await finish(db, id, "image", "success", "", undefined, { ai_art_pending: false });
-            return;
-          }
-          query = found.query; reason = found.reason;
-        } catch (cause) {
-          // Out of AI quota: retry the whole lookup later. Any other search failure falls back to AI art.
-          if (cause instanceof AiQuotaError) throw cause;
-          reason = cause instanceof Error ? cause.message : "Image lookup failed";
-        }
+      if (lookup.quotaError) throw lookup.quotaError;
+      if (lookup.image) {
+        await saveIllustration(db, id, lookup.image); result.imagesAdded++;
+        await finish(db, id, "image", "success", "", undefined, { ai_art_pending: false });
+        continue;
       }
       if (!takeSlot()) {
         await finish(db, id, "image", "none", `${reason ? `${reason}; ` : ""}AI illustration queued`, aiArtQueueMs, { ai_art_pending: true });
-        return;
+        continue;
       }
-      const image = await createAiIllustration(db, article, query);
+      const image = await createAiIllustration(db, article, lookup.query);
       await saveIllustration(db, id, image); result.imagesAdded++;
       await finish(db, id, "image", "success", "AI-generated illustration", undefined, { ai_art_pending: false });
     } catch (cause) {
@@ -607,7 +608,7 @@ async function enrichImages(db: Db, result: EnrichResult) {
       const retryMs = cause instanceof AiQuotaError || cause instanceof AiArtLimitError ? cause.retryAfterMs : generating ? 3 * 3600000 : undefined;
       await finish(db, id, "image", "error", message, retryMs, generating ? { ai_art_pending: true } : {});
     }
-  }));
+  }
 }
 
 async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<ReturnType<typeof loadNewsSettings>>, scheduled: boolean) {

@@ -80,22 +80,31 @@ describe("AI illustration migration", () => {
         await db.exec(readFileSync(resolve("supabase/migrations", name), "utf8"));
       }
       const source = (await db.query<{ id: string }>("select id from public.news_sources where feed_url='https://www.nasa.gov/news-release/feed/'")).rows[0].id;
-      const add = async (letter: string) => (await db.query<{ id: string }>("insert into public.news_articles(source_id,provider,canonical_hash,title,canonical_url,publisher,category,published_at,publication_status) values ($1,'rss',repeat($2,64),'An illustrated test article','https://www.nasa.gov/news-release/' || $2 || '/','NASA','Science',now(),'published') returning id", [source, letter])).rows[0].id;
-      const [noPhoto, found] = [await add("a"), await add("b")];
-      await db.query("insert into public.news_enrichment_attempts(article_id,kind,status,retry_after) values ($1,'image','none',now() + interval '7 days'), ($2,'image','success',now() + interval '7 days')", [noPhoto, found]);
+      const add = async (letter: string, ageHours = 1) => {
+        const id = (await db.query<{ id: string }>("insert into public.news_articles(source_id,provider,canonical_hash,title,canonical_url,publisher,category,published_at,publication_status) values ($1,'rss',repeat($2,64),'An illustrated test article','https://www.nasa.gov/news-release/' || $2 || '/','NASA','Science',now() - ($3 || ' hours')::interval,'published') returning id", [source, letter, String(ageHours)])).rows[0].id;
+        await db.query("insert into public.news_article_bodies(article_id,body_text,rights_basis,source_url) values ($1,repeat('NASA article text for readers. ',20),repeat('NASA media guidelines reviewed ',2),'https://www.nasa.gov/news-release/' || $2 || '/')", [id, letter]);
+        return id;
+      };
+      const [oldest, middle, newest, found] = [await add("a", 6), await add("b", 3), await add("c", 1), await add("d", 0)];
+      await db.query("insert into public.news_enrichment_attempts(article_id,kind,status,retry_after) values ($1,'image','none',now() + interval '7 days'), ($2,'image','error',now() + interval '1 day'), ($3,'image','success',now() + interval '7 days')", [oldest, middle, found]);
       await db.exec(readFileSync(resolve("supabase/migrations/202610260018_news_ai_generated_illustrations.sql"), "utf8"));
+      await db.exec(readFileSync(resolve("supabase/migrations/202610260019_news_image_latest_first_queue.sql"), "utf8"));
 
       expect((await db.query<{ public: boolean }>("select public from storage.buckets where id = 'news-ai-illustrations'")).rows[0].public).toBe(true);
       const attempts = (await db.query<{ article_id: string; ai_art_pending: boolean; due: boolean }>("select article_id, ai_art_pending, retry_after <= now() as due from public.news_enrichment_attempts")).rows;
-      expect(attempts.find((row) => row.article_id === noPhoto)).toMatchObject({ ai_art_pending: true, due: true });
+      expect(attempts.find((row) => row.article_id === oldest)).toMatchObject({ ai_art_pending: true, due: true });
+      expect(attempts.find((row) => row.article_id === middle)).toMatchObject({ ai_art_pending: true, due: true });
       expect(attempts.find((row) => row.article_id === found)).toMatchObject({ ai_art_pending: false, due: false });
+
+      const claimed = (await db.query<{ article_id: string }>("select article_id from public.news_claim_enrichment('image', 3)")).rows.map((row) => row.article_id);
+      expect(claimed).toEqual([newest, middle, oldest]);
 
       const insert = (article: string, url: string, source = "https://pollinations.ai/", license = "AI-generated") => db.query(
         "insert into public.news_auto_illustrations(article_id,image_url,image_alt,image_credit,image_source_url,license_name,license_url) values ($1,$2,'Ảnh minh họa do AI tạo: rocket','AI (Pollinations.ai)',$3,$4,null)", [article, url, source, license]);
-      await expect(insert(noPhoto, `https://example.com/storage/v1/object/public/user-avatars/${noPhoto}.jpg`)).rejects.toThrow();
-      await expect(insert(noPhoto, `https://abc.supabase.co/storage/v1/object/public/news-ai-illustrations/${noPhoto}.jpg`, "https://pollinations.ai/", "CC0")).rejects.toThrow();
-      await insert(noPhoto, `https://abc.supabase.co/storage/v1/object/public/news-ai-illustrations/${noPhoto}.jpg`);
-      const catalog = (await db.query<{ illustration_source_url: string; illustration_license: string }>("select illustration_source_url, illustration_license from public.news_archive_catalog where id = $1", [noPhoto])).rows[0];
+      await expect(insert(oldest, `https://example.com/storage/v1/object/public/user-avatars/${oldest}.jpg`)).rejects.toThrow();
+      await expect(insert(oldest, `https://abc.supabase.co/storage/v1/object/public/news-ai-illustrations/${oldest}.jpg`, "https://pollinations.ai/", "CC0")).rejects.toThrow();
+      await insert(oldest, `https://abc.supabase.co/storage/v1/object/public/news-ai-illustrations/${oldest}.jpg`);
+      const catalog = (await db.query<{ illustration_source_url: string; illustration_license: string }>("select illustration_source_url, illustration_license from public.news_archive_catalog where id = $1", [oldest])).rows[0];
       expect(catalog).toEqual({ illustration_source_url: "https://pollinations.ai/", illustration_license: "AI-generated" });
     } finally { await db.close(); }
   }, 30000);

@@ -78,7 +78,7 @@ export async function generateAiArt(title: string, subject: string, articleId: s
   });
   if (response.status === 402 || response.status === 429) {
     const seconds = Number(response.headers.get("retry-after"));
-    throw new AiArtLimitError(Math.max(Number.isFinite(seconds) ? seconds * 1000 : 0, 10 * 60000));
+    throw new AiArtLimitError(Math.max(Number.isFinite(seconds) ? seconds * 1000 : 0, 60000));
   }
   if (!response.ok) throw new Error(`AI illustration generator returned HTTP ${response.status}`);
   const contentType = response.headers.get("content-type")?.split(";")[0].trim().toLowerCase() ?? "";
