@@ -11,7 +11,7 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import { LessonPath } from "./learning-path";
 
 type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: string; summary: string; sort_order: number };
-type Unit = { id: string; course_id: string; title: string; sort_order: number; lessons: Lesson[] };
+type Unit = { id: string; course_id: string; slug: string; title: string; sort_order: number; lessons: Lesson[] };
 export type StageCourse = { id: string; slug: string; title: string; description: string; stage_id: string; units: Unit[] };
 
 /** Published courses with their published units and lessons, grouped for the Learn page. Live mode only. */
@@ -26,7 +26,7 @@ export function usePublishedCourses() {
     void (async () => {
       const courseResult = await supabase.from("courses").select("id,slug,title,description,stage_id").eq("published", true).order("title");
       const courseIds = (courseResult.data ?? []).map((course) => course.id);
-      const unitResult = courseIds.length ? await supabase.from("units").select("id,course_id,title,sort_order").eq("published", true).in("course_id", courseIds).order("sort_order") : { data: [], error: null };
+      const unitResult = courseIds.length ? await supabase.from("units").select("id,course_id,slug,title,sort_order").eq("published", true).in("course_id", courseIds).order("sort_order") : { data: [], error: null };
       const unitIds = (unitResult.data ?? []).map((unit) => unit.id);
       const lessonResult = unitIds.length ? await supabase.from("lessons").select("id,unit_id,slug,title,skill,summary,sort_order").eq("published", true).in("unit_id", unitIds).order("sort_order") : { data: [], error: null };
       if (!active) return;
