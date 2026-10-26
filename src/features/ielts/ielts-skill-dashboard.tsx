@@ -10,6 +10,8 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "./ielts-live-page";
 import { useIeltsData } from "./use-ielts-data";
 import { plannedModes } from "./planned-modes";
+import { BankSkillShelf } from "./bank-catalog";
+import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import sourceTopics from "@/lib/vocabulary/source-topics.json";
@@ -46,6 +48,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const { data, busy, error } = useIeltsData(skill);
   const { entries, visits, ready: notebookReady } = useNotebook();
   const config = copy[skill];
+  const bankSkill = catalogSkills.find((value) => value.toLowerCase() === skill);
   const Icon = config.icon;
   const savedWords = entries.filter((entry) => entry.kind === "word");
   const savedWork = skill === "vocabulary"
@@ -87,7 +90,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     { title: "Part 2 cue card", detail: "Chuẩn bị 1 phút, nói tối đa 2 phút, ghi âm và tự nghe lại.", source: "Chủ đề từ Daily News", href: "/app/speaking/live", available: hasArticle, icon: Mic, tag: "Có ghi âm" },
     { title: "Part 3 follow-up", detail: "Thảo luận sâu về cùng chủ đề và lưu tự nhận xét.", source: "Chủ đề từ Daily News", href: "/app/speaking/part-3", available: hasArticle, icon: ListChecks },
   ];
-  if (!demoMode && ["reading", "listening", "writing", "speaking"].includes(skill)) modes.unshift({ title: "Ngân hàng đề đã duyệt", detail: "Luyện với đề có nguồn, lưu lượt làm và xem lại kết quả.", source: "BandReady · IELTS AI Dataset", href: "/app/question-bank", available: true, icon: BookOpen, tag: "Đề luyện" });
+  if (!demoMode && bankSkill) modes.unshift({ title: "Ngân hàng đề đã duyệt", detail: "Luyện với đề có nguồn, chọn đúng dạng bài và xem lại kết quả.", source: "BandReady · IELTS AI Dataset", href: catalogHref(bankSkill), available: true, icon: BookOpen, tag: "Đề luyện" });
   const allModes: Mode[] = [
     ...modes,
     ...plannedModes[skill].map((mode) => ({
@@ -125,6 +128,8 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
       <Stat icon={ChartNoAxesCombined} value={skill === "vocabulary" ? String(sourceTopics.length) : busy ? "…" : latest} label={skill === "vocabulary" ? "chủ đề trong kho" : "mốc dữ liệu mới"} note={skill === "vocabulary" ? "Kho từ nguồn" : skill === "listening" ? "LibriVox" : skill === "writing" ? "World Bank" : "Daily News"}/>
       <Link className="ielts-dashboard-stats-link" href="/app/notebook">Xem Sổ tay <ArrowRight size={15}/></Link>
     </div>
+
+    {!demoMode && bankSkill && <BankSkillShelf skill={bankSkill} />}
 
     <div className="ielts-dashboard-modes-head">
     <h2 title={`${allModes.length} chế độ trong kế hoạch. Thẻ “Sắp triển khai” là bản xem trước giao diện.`}>Chế độ học</h2>

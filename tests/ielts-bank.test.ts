@@ -77,11 +77,15 @@ describe("IELTS bank migration", () => {
         create table storage.objects(bucket_id text);`);
       await db.exec(readFileSync(resolve("supabase/migrations/202610240001_foundation.sql"), "utf8"));
       await db.exec(readFileSync(resolve("supabase/migrations/202610270001_ielts_question_bank.sql"), "utf8"));
+      await db.exec(readFileSync(resolve("supabase/migrations/202610270004_ielts_practice_types.sql"), "utf8"));
       await db.exec("set request.jwt.claim.role = 'service_role'");
+      const categories = await db.query<{ format: string }>("select public.ielts_practice_type('Writing','General Training','{\"taskType\":\"gt_task1\"}'::jsonb) format union all select public.ielts_practice_type('Speaking','Academic','{\"speakingPart\":2}'::jsonb)");
+      expect(categories.rows.map((row) => row.format)).toEqual(["task1_general", "part2"]);
       const content = JSON.stringify({ sections: [{ id: "p1", title: "Passage", passage: "Text", transcript: "", questions: [{ id: "q1", number: 1, type: "short-answer", prompt: "Question", instructions: "", options: [], answers: ["yes"], explanation: "" }] }], prompt: "" });
       const meta = JSON.stringify({ skill: "Reading", title: "Test", license: "CC0-1.0", license_url: "https://creativecommons.org/publicdomain/zero/1.0/", source_url: "https://example.com/test", attribution: "BandReady" });
       const call = (hash: string, value = content) => db.query<{ result: string }>("select public.ielts_upsert_import('bandready','external-1',$1::jsonb,$2::jsonb,$3,'v1','[]'::jsonb) result", [meta, value, hash]);
       expect((await call("hash1")).rows[0].result).toBe("inserted");
+      expect((await db.query<{ practice_type: string }>("select practice_type from public.ielts_exams")).rows[0].practice_type).toBe("passage");
       expect((await call("hash1")).rows[0].result).toBe("skipped");
       const exam = (await db.query<{ id: string; current_version_id: string }>("select id,current_version_id from public.ielts_exams")).rows[0];
       const user = "11111111-1111-4111-8111-111111111111";

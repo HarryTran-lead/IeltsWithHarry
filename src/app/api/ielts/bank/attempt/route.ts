@@ -42,7 +42,7 @@ export async function GET(request: Request) {
   try {
     const user = await viewer(), client = bankClient(), url = new URL(request.url), id = url.searchParams.get("id");
     if (id) {
-      const { data, error } = await client.from("ielts_attempts").select("*,ielts_exam_versions(content),ielts_exams(id,title,skill,format,mode,duration_minutes,attribution,license,license_url,source_url,ai_generated)").eq("id", id).eq("user_id", user.id).single();
+      const { data, error } = await client.from("ielts_attempts").select("*,ielts_exam_versions(content),ielts_exams(id,title,skill,practice_type,format,mode,duration_minutes,attribution,license,license_url,source_url,ai_generated)").eq("id", id).eq("user_id", user.id).single();
       if (error || !data) throw new Error("Attempt unavailable");
       const version = Array.isArray(data.ielts_exam_versions) ? data.ielts_exam_versions[0] : data.ielts_exam_versions;
       const content = contentSchema.parse(version.content);
