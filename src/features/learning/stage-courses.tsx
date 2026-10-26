@@ -2,25 +2,17 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, BookOpenText, Check, Headphones, Languages, Mic, PenLine, SpellCheck, type LucideIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
 import { stages } from "@/lib/demo-data";
 import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
+import { LessonPath } from "./learning-path";
 
 type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: string; summary: string; sort_order: number };
 type Unit = { id: string; course_id: string; title: string; sort_order: number; lessons: Lesson[] };
 export type StageCourse = { id: string; slug: string; title: string; description: string; stage_id: string; units: Unit[] };
-
-const skillStyle: Record<string, { icon: LucideIcon; tone: string }> = {
-  Vocabulary: { icon: Languages, tone: "mint" },
-  Grammar: { icon: SpellCheck, tone: "sky" },
-  Reading: { icon: BookOpenText, tone: "coral" },
-  Listening: { icon: Headphones, tone: "teal" },
-  Writing: { icon: PenLine, tone: "sun" },
-  Speaking: { icon: Mic, tone: "lavender" },
-};
 
 /** Published courses with their published units and lessons, grouped for the Learn page. Live mode only. */
 export function usePublishedCourses() {
@@ -70,32 +62,8 @@ export function StageLessons({ stageId, courses, loading, error }: { stageId: st
   if (error) return <p className="form-error" role="alert">Không tải được bài học: {error}</p>;
   if (!stageCourses.length) return <section className="card section-card stage-lessons-empty"><h2>Bài học của chặng {stage?.name ?? ""}</h2><p>Chặng này đang được biên soạn. Bạn có thể luyện các kỹ năng bên dưới trong lúc chờ.</p></section>;
 
-  return <>{stageCourses.map((course) => {
-    const total = course.units.reduce((sum, unit) => sum + unit.lessons.length, 0);
-    const finished = course.units.reduce((sum, unit) => sum + unit.lessons.filter((lesson) => done.has(lesson.slug) || opened.has(`/app/lesson/${lesson.slug}`)).length, 0);
-    return <section className="card section-card stage-lessons" key={course.id}>
-      <div className="section-head">
-        <div><h2>{course.title}</h2><p>{course.description}</p></div>
-        <span className="stage-lessons-progress"><b>{finished}/{total}</b> bài đã học<i><em style={{ width: `${total ? (finished / total) * 100 : 0}%` }} /></i></span>
-      </div>
-      <div className="stage-units">{course.units.map((unit) => {
-        const unitDone = unit.lessons.filter((lesson) => done.has(lesson.slug) || opened.has(`/app/lesson/${lesson.slug}`)).length;
-        return <div className="stage-unit" key={unit.id}>
-          <div className="stage-unit-head"><h3>{unit.title}</h3><span>{unitDone}/{unit.lessons.length}</span></div>
-          <div className="stage-unit-lessons">{unit.lessons.map((lesson) => {
-            const style = skillStyle[lesson.skill] ?? skillStyle.Reading;
-            const submitted = done.has(lesson.slug);
-            const visited = opened.has(`/app/lesson/${lesson.slug}`);
-            return <Link key={lesson.id} href={`/app/lesson/${lesson.slug}`} className={`stage-lesson ${submitted || visited ? "is-done" : ""}`} title={lesson.summary}>
-              <span className={`head-icon tone-${style.tone}`}><style.icon size={16} /></span>
-              <span className="stage-lesson-copy"><small>{lesson.skill}</small><b>{lesson.title}</b></span>
-              {submitted || visited ? <span className="stage-lesson-state" aria-label={submitted ? "Đã nộp bài" : "Đã mở"}><Check size={13} strokeWidth={3} /></span> : <ArrowRight size={15} className="stage-lesson-arrow" />}
-            </Link>;
-          })}</div>
-        </div>;
-      })}</div>
-    </section>;
-  })}</>;
+  const isDone = (lesson: Lesson) => done.has(lesson.slug) || opened.has(`/app/lesson/${lesson.slug}`);
+  return <>{stageCourses.map((course) => <LessonPath key={course.id} course={course} isDone={isDone} />)}</>;
 }
 
 /** On the Learn overview: one compact card per published course, linking to its stage. */
