@@ -133,3 +133,22 @@
   .guided-actions .button { font-size: 11px; }
   .package-panel-actions { padding-right: 54px; }
 }
+
+/* Overview banner: one compact row so the stage map fits on the first screen. */
+.learn-overview .learn-mission:not(.learn-mission-selected) { grid-template-columns: minmax(0, 1fr) 250px; gap: 18px; padding: 14px 20px; margin-bottom: 12px; }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 18px; align-items: center; }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-main > * { grid-column: 1; }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-main > .button { grid-column: 2; grid-row: 1 / span 2; min-height: 40px; }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-main h1 { margin: 3px 0 0; font-size: clamp(19px, 1.7vw, 24px); }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-main p { display: none; }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress { flex-direction: row; flex-wrap: wrap; align-items: baseline; column-gap: 6px; row-gap: 2px; padding: 9px 13px; }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > span:first-child,
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > .study-map-bar,
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > small { flex-basis: 100%; }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > strong { font-size: 22px; }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 780px) {
+  .learn-overview .learn-mission:not(.learn-mission-selected) { grid-template-columns: 1fr; }
+  .learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-main { grid-template-columns: 1fr; row-gap: 10px; }
+  .learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-main > .button { grid-column: 1; grid-row: auto; justify-self: start; }
+}

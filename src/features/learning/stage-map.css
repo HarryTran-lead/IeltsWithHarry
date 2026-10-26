@@ -1,34 +1,37 @@
-/* Stage map: a tilted diorama of the seven stages. */
+/* Stage map: a paper diorama of the seven stages, in the site's sticker style. */
 .smap-wrap {
   container: smap / inline-size;
-  padding: 6px 4px 34px;
+  padding: 2px 0 18px;
 }
 .smap {
-  --rx: 12deg;
+  --rx: 8deg;
   --ry: 0deg;
-  perspective: 1700px;
-  perspective-origin: 50% 20%;
+  perspective: 1800px;
+  perspective-origin: 50% 10%;
 }
+/* Sized to stay on one screen under the page header; it narrows on short windows. */
 .smap-board {
   position: relative;
-  aspect-ratio: 1000 / 460;
-  border-radius: 26px;
+  width: min(100%, max(560px, calc((100svh - 340px) * 1000 / 420)));
+  aspect-ratio: 1000 / 420;
+  margin: 0 auto;
+  border-radius: 24px;
   transform: rotateX(var(--rx)) rotateY(var(--ry));
-  transform-origin: 50% 70%;
+  transform-origin: 50% 80%;
   transform-style: preserve-3d;
   transition: transform 0.5s var(--ease-out);
-  box-shadow: 0 34px 44px -26px rgba(16, 42, 67, 0.45);
+  box-shadow: var(--shadow-lg);
 }
-/* The slab's front face, folded down so the board reads as a block. */
+/* The board's paper edge, folded down so it reads as a block. */
 .smap-board::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   top: calc(100% - 1px);
-  height: 26px;
-  border-radius: 0 0 22px 22px;
-  background: linear-gradient(180deg, #7fc492 0 5px, #b98d5f 5px, #9a724a 70%, #7d5b3a);
+  height: 16px;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(180deg, #ebe6d8, #ddd6c3);
   transform: rotateX(-90deg);
   transform-origin: top;
 }
@@ -36,8 +39,11 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 26px;
-  background: linear-gradient(180deg, #e2f3fb, #f5f9f2 45%, #fbf6ea);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    var(--dot-grid) 0 0 / 18px 18px,
+    linear-gradient(180deg, var(--cream), #fbf8ef 55%, #f6f2e6);
 }
 .smap-scene {
   position: absolute;
@@ -45,6 +51,20 @@
   width: 100%;
   height: 100%;
 }
+/* Flat pastel shapes with a white die-cut edge, like the site's stickers. */
+.smap-sun circle:first-child { fill: var(--sun-soft); }
+.smap-sun circle:last-child { fill: #ffe7a6; stroke: #fff; stroke-width: 4; }
+.smap-hill.far { fill: var(--sky-soft); stroke: #fff; stroke-width: 5; }
+.smap-hill.land { fill: var(--mint); stroke: #fff; stroke-width: 6; }
+.smap-mountain.dark { fill: #e3ddfb; stroke: #fff; stroke-width: 6; stroke-linejoin: round; }
+.smap-mountain.light { fill: var(--lavender-soft); }
+.smap-snow { fill: #fff; }
+.smap-lake { fill: #dcebfb; stroke: #fff; stroke-width: 5; }
+.smap-lake-shine { fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; }
+.smap-bush circle { fill: #cdeedf; stroke: #fff; stroke-width: 3; }
+.smap-bush:nth-child(3n) circle { fill: #d8f1e6; }
+.smap-flag rect { fill: var(--navy); }
+.smap-flag path { fill: var(--coral); }
 .smap-road-edge,
 .smap-road-top,
 .smap-road-line {
@@ -52,40 +72,38 @@
   stroke-linecap: round;
 }
 .smap-road-edge {
-  stroke: #c3a676;
-  stroke-width: 30;
-  transform: translateY(6px);
+  stroke: var(--line-strong);
+  stroke-width: 26;
+  transform: translateY(4px);
 }
 .smap-road-top {
-  stroke: #f3e5c3;
-  stroke-width: 26;
+  stroke: #fff;
+  stroke-width: 22;
 }
 .smap-road-top.is-walked {
-  stroke: #8fded7;
+  stroke: var(--teal-soft);
 }
 .smap-road-line {
-  stroke: #fff;
-  stroke-width: 2.5;
-  stroke-dasharray: 9 11;
-  opacity: 0.9;
+  stroke: var(--line-strong);
+  stroke-width: 3;
+  stroke-dasharray: 8 10;
+}
+.smap-road-line.is-walked {
+  stroke: var(--teal);
 }
 .smap-cloud {
   position: absolute;
-  width: 92px;
-  height: 26px;
+  width: 84px;
+  height: 22px;
   border-radius: 99px;
   background: #fff;
-  opacity: 0.85;
-  box-shadow: 22px -12px 0 4px #fff, 50px -4px 0 0 #fff;
-  animation: smap-drift 38s linear infinite;
+  box-shadow: 20px -10px 0 3px #fff, 46px -3px 0 0 #fff, 0 6px 12px -8px rgba(16, 35, 63, 0.2);
+  animation: smap-drift 40s ease-in-out infinite;
 }
-.smap-cloud.c1 { top: 11%; left: 22%; }
-.smap-cloud.c2 { top: 6%; left: 58%; scale: 0.75; animation-duration: 52s; animation-delay: -18s; }
-.smap-cloud.c3 { top: 20%; left: 74%; scale: 0.6; animation-duration: 46s; animation-delay: -30s; }
+.smap-cloud.c1 { top: 12%; left: 30%; }
+.smap-cloud.c2 { top: 7%; left: 64%; scale: 0.7; animation-duration: 54s; animation-delay: -20s; }
 @keyframes smap-drift {
-  from { translate: -60px 0; }
-  50% { translate: 60px 0; }
-  to { translate: -60px 0; }
+  50% { translate: 50px 0; }
 }
 
 /* Stops stand upright on the tilted board. */
@@ -101,14 +119,14 @@
   position: absolute;
   width: 0;
   height: 0;
-  /* Upright, and lifted so the label hanging below the pad stays in front of the tilted board. */
-  transform: translateZ(34px) rotateX(calc(-1 * var(--rx)));
+  /* Upright, and lifted so the label below the pad stays in front of the tilted board. */
+  transform: translateZ(24px) rotateX(calc(-1 * var(--rx)));
   transform-origin: 0 0;
   animation: smap-rise 0.5s var(--ease-out) both;
   animation-delay: var(--delay);
 }
 @keyframes smap-rise {
-  from { opacity: 0; translate: 0 14px; }
+  from { opacity: 0; translate: 0 12px; }
 }
 .smap-stop a {
   position: absolute;
@@ -117,8 +135,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 140px;
-  translate: -50% -76px;
+  width: 132px;
+  translate: -50% -68px;
   color: var(--navy);
   outline: none;
 }
@@ -127,16 +145,17 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: 58px;
+  height: 52px;
   margin-bottom: -2px;
   transition: translate 0.35s var(--ease-spring);
 }
 .smap-stop.is-current .smap-figure img {
-  filter: drop-shadow(0 6px 6px rgba(16, 42, 67, 0.3));
+  border-radius: 50%;
+  filter: drop-shadow(0 4px 5px rgba(16, 42, 67, 0.25));
   animation: smap-bob 2.4s ease-in-out infinite;
 }
 @keyframes smap-bob {
-  50% { translate: 0 -5px; }
+  50% { translate: 0 -4px; }
 }
 .smap-here {
   position: absolute;
@@ -164,67 +183,67 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 78px;
-  height: 32px;
+  width: 64px;
+  height: 26px;
+  border: 3px solid #fff;
   border-radius: 50%;
-  background: radial-gradient(ellipse at 40% 35%, color-mix(in srgb, var(--c), #fff 35%), var(--c) 70%);
+  background: radial-gradient(ellipse at 40% 35%, color-mix(in srgb, var(--c), #fff 30%), var(--c) 75%);
   box-shadow:
-    0 7px 0 color-mix(in srgb, var(--c), #000 28%),
-    0 16px 14px -4px rgba(16, 35, 63, 0.35);
+    0 6px 0 color-mix(in srgb, var(--c), #000 22%),
+    0 13px 12px -4px rgba(16, 35, 63, 0.28);
   transition: translate 0.35s var(--ease-spring), box-shadow 0.35s;
 }
 .smap-pad b {
   display: grid;
   place-items: center;
-  min-width: 26px;
-  height: 22px;
+  min-width: 24px;
+  height: 20px;
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 .smap-stop.is-current .smap-pad::before {
   content: "";
   position: absolute;
-  inset: -8px -12px;
+  inset: -9px -13px;
   border: 2px solid var(--c);
   border-radius: 50%;
   opacity: 0;
   animation: smap-ring 2s ease-out infinite;
 }
 @keyframes smap-ring {
-  0% { opacity: 0.8; scale: 0.8; }
-  100% { opacity: 0; scale: 1.35; }
+  0% { opacity: 0.7; scale: 0.8; }
+  100% { opacity: 0; scale: 1.3; }
 }
 .smap-label {
   display: grid;
   justify-items: center;
   gap: 1px;
-  min-width: 118px;
-  margin-top: 16px;
-  padding: 6px 10px 8px;
-  border: 1px solid rgba(16, 42, 67, 0.08);
+  min-width: 112px;
+  margin-top: 13px;
+  padding: 5px 10px 7px;
+  border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 8px 18px -12px rgba(16, 42, 67, 0.5);
+  background: var(--surface);
+  box-shadow: var(--shadow);
   text-align: center;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, translate 0.35s var(--ease-spring);
 }
 .smap-label small {
-  color: var(--muted);
-  font-size: 11px;
+  color: var(--subtle);
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
 }
 .smap-label strong {
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.2;
   white-space: nowrap;
 }
 .smap-label em {
-  color: color-mix(in srgb, var(--c), #000 20%);
-  font-size: 11.5px;
+  color: var(--muted);
+  font-size: 11px;
   font-style: normal;
   font-weight: 700;
 }
@@ -233,7 +252,8 @@
   height: 4px;
   margin-top: 3px;
   border-radius: 99px;
-  background: #e8eeef;
+  background: var(--surface-2);
+  box-shadow: inset 0 0 0 1px var(--line);
   overflow: hidden;
 }
 .smap-label i b {
@@ -243,23 +263,27 @@
   background: var(--c);
 }
 .smap-stop.is-current .smap-label {
-  border-color: var(--c);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c), transparent 80%), 0 10px 20px -12px rgba(16, 42, 67, 0.55);
+  border-color: color-mix(in srgb, var(--c), #fff 40%);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c), transparent 82%), var(--shadow);
+}
+.smap-stop.is-current .smap-label em {
+  color: var(--teal-strong);
 }
 .smap-stop a:hover .smap-figure,
 .smap-stop a:focus-visible .smap-figure {
-  translate: 0 -6px;
+  translate: 0 -5px;
 }
 .smap-stop a:hover .smap-pad,
 .smap-stop a:focus-visible .smap-pad {
   translate: 0 -3px;
   box-shadow:
-    0 10px 0 color-mix(in srgb, var(--c), #000 28%),
-    0 20px 16px -4px rgba(16, 35, 63, 0.35);
+    0 9px 0 color-mix(in srgb, var(--c), #000 22%),
+    0 17px 14px -4px rgba(16, 35, 63, 0.28);
 }
 .smap-stop a:hover .smap-label,
 .smap-stop a:focus-visible .smap-label {
-  border-color: var(--c);
+  border-color: color-mix(in srgb, var(--c), #fff 30%);
+  translate: 0 -2px;
 }
 .smap-stop a:focus-visible .smap-label {
   outline: 3px solid color-mix(in srgb, var(--c), transparent 60%);
@@ -267,28 +291,28 @@
 }
 .smap-stop.is-future .smap-figure {
   filter: grayscale(1);
-  opacity: 0.55;
+  opacity: 0.5;
 }
 .smap-stop.is-future .smap-pad {
-  --c: #aab4bd;
+  --c: #b9c1c9;
 }
 .smap-stop.is-future .smap-label {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
 }
 .smap-stop.is-future .smap-label strong {
   color: var(--muted);
 }
 
-/* Medium boards: smaller labels so neighbours do not touch. */
+/* Medium boards: smaller stops so neighbours do not touch. */
 @container smap (max-width: 980px) {
-  .smap-stop a { width: 106px; translate: -50% -62px; }
-  .smap-figure { height: 46px; }
-  .smap-figure .sticker { width: 34px !important; height: 34px !important; }
-  .smap-figure img { width: 44px; height: 44px; }
-  .smap-label { min-width: 92px; margin-top: 12px; padding: 4px 7px 6px; }
+  .smap-stop a { width: 104px; translate: -50% -58px; }
+  .smap-figure { height: 42px; }
+  .smap-figure .sticker { width: 32px !important; height: 32px !important; }
+  .smap-figure img { width: 40px; height: 40px; }
+  .smap-label { min-width: 92px; margin-top: 11px; padding: 4px 7px 6px; }
   .smap-label strong { font-size: 12px; }
-  .smap-label em { font-size: 11px; }
-  .smap-pad { width: 60px; height: 26px; }
+  .smap-label em { font-size: 10.5px; }
+  .smap-pad { width: 54px; height: 22px; }
 }
 
 /* Narrow screens: a vertical trail instead of the board. */
@@ -296,6 +320,7 @@
   .smap-wrap { padding: 0; }
   .smap { perspective: none; }
   .smap-board {
+    width: 100%;
     aspect-ratio: auto;
     transform: none;
     box-shadow: none;
@@ -317,7 +342,8 @@
     width: 8px;
     translate: -50% 0;
     border-radius: 99px;
-    background: repeating-linear-gradient(180deg, #e6d3a8 0 12px, #f3e5c3 12px 22px);
+    background: repeating-linear-gradient(180deg, var(--teal-soft) 0 12px, #fff 12px 22px);
+    box-shadow: 0 0 0 1px var(--line);
   }
   .smap-stop {
     position: relative !important;
@@ -331,15 +357,14 @@
     position: relative;
     flex-direction: row;
     gap: 10px;
-    width: calc(50% + 39px);
+    width: calc(50% + 32px);
     translate: none;
   }
-  .smap-stop:nth-child(odd) a { margin-left: calc(50% - 39px); }
-  .smap-stop:nth-child(even) a { flex-direction: row-reverse; margin-right: calc(50% - 39px); margin-left: auto; }
+  .smap-stop:nth-child(odd) a { margin-left: calc(50% - 32px); }
+  .smap-stop:nth-child(even) a { flex-direction: row-reverse; margin-right: calc(50% - 32px); margin-left: auto; }
   .smap-figure { display: none; }
-  .smap-stop.is-current .smap-figure { display: flex; position: absolute; left: 50%; bottom: 100%; height: 44px; translate: -50% 0; }
-  .smap-stop:nth-child(odd).is-current .smap-figure { left: 39px; }
-  .smap-stop:nth-child(even).is-current .smap-figure { left: auto; right: 39px; translate: 50% 0; }
+  .smap-stop.is-current .smap-figure { display: flex; position: absolute; left: 32px; bottom: 100%; height: 44px; translate: -50% 0; }
+  .smap-stop:nth-child(even).is-current .smap-figure { left: auto; right: 32px; translate: 50% 0; }
   .smap-stop.is-current { margin-top: 48px; }
   .smap-pad { flex: none; }
   .smap-label { flex: 1; min-width: 0; margin-top: 0; justify-items: start; text-align: left; }

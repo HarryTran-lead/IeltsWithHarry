@@ -11,20 +11,21 @@ import "./stage-map.css";
 export type StageState = "done" | "current" | "available" | "future";
 export type StageStop = { stage: Stage; state: StageState; total: number; explored: number };
 
-// Scene coordinates (viewBox 1000 × 460): the road climbs from the lake to the summit.
+// Scene coordinates (viewBox 1000 × 420). Stops keep to the middle band so their labels fit below.
 const W = 1000;
-const H = 460;
-const points: [number, number][] = [[80, 340], [220, 235], [355, 330], [495, 215], [630, 305], [762, 226], [914, 96]];
+const H = 420;
+const points: [number, number][] = [[72, 262], [208, 168], [344, 256], [484, 150], [624, 240], [764, 158], [906, 82]];
+// Pad colours follow the site palette: teal, sky, mint, sun, coral, lavender, navy.
 const look: { icon: StickerName; color: string }[] = [
   { icon: "abc", color: "#12a1ab" },
-  { icon: "bubble", color: "#4c8fe0" },
-  { icon: "pencil", color: "#2fb67f" },
-  { icon: "book", color: "#e9a923" },
-  { icon: "chart", color: "#f0705f" },
-  { icon: "rocket", color: "#8f72ea" },
-  { icon: "star", color: "#334a7a" },
+  { icon: "bubble", color: "#4f8fe0" },
+  { icon: "pencil", color: "#2fae86" },
+  { icon: "book", color: "#f2b43a" },
+  { icon: "chart", color: "#f2665f" },
+  { icon: "rocket", color: "#7c66dc" },
+  { icon: "star", color: "#10233f" },
 ];
-const trees: [number, number, number][] = [[150, 285, 1], [300, 292, 0.8], [430, 262, 0.9], [575, 360, 1.1], [700, 238, 0.8], [265, 398, 1], [470, 405, 0.9], [610, 196, 0.7], [395, 196, 0.7], [720, 355, 1], [840, 300, 0.9], [60, 255, 0.8], [520, 300, 0.8]];
+const bushes: [number, number, number][] = [[130, 318, 1], [280, 300, 0.8], [418, 222, 0.75], [560, 318, 1], [690, 300, 0.85], [250, 372, 0.9], [470, 362, 0.8], [118, 210, 0.7], [600, 176, 0.65], [380, 336, 0.7], [835, 290, 0.8]];
 
 /** Smooth road segment between stop i and i + 1 (Catmull-Rom as cubic Béziers). */
 function segment(i: number) {
@@ -44,9 +45,10 @@ function statusText(stop: StageStop) {
 }
 
 /**
- * The seven stages as a tilted diorama: a road winds from the lake up to the
- * Mastery summit, each stage is a raised pad, and Harry stands on the current
- * one. The board leans toward the pointer; small containers get a vertical trail.
+ * The seven stages as a paper diorama in the site's sticker style: a road
+ * winds from the lake up to the Mastery summit, each stage is a raised pad,
+ * and Harry stands on the current one. The board leans gently toward the
+ * pointer, is sized to fit one screen, and becomes a vertical trail on phones.
  */
 export function StageMap({ stops }: { stops: StageStop[] }) {
   const board = useRef<HTMLDivElement>(null);
@@ -54,8 +56,8 @@ export function StageMap({ stops }: { stops: StageStop[] }) {
     const element = board.current;
     if (!element || event.pointerType !== "mouse") return;
     const rect = element.getBoundingClientRect();
-    element.style.setProperty("--ry", `${((event.clientX - rect.left) / rect.width - 0.5) * 5}deg`);
-    element.style.setProperty("--rx", `${12 - ((event.clientY - rect.top) / rect.height - 0.5) * 4}deg`);
+    element.style.setProperty("--ry", `${((event.clientX - rect.left) / rect.width - 0.5) * 4}deg`);
+    element.style.setProperty("--rx", `${8 - ((event.clientY - rect.top) / rect.height - 0.5) * 3}deg`);
   }
   function reset() {
     board.current?.style.removeProperty("--rx");
@@ -66,39 +68,27 @@ export function StageMap({ stops }: { stops: StageStop[] }) {
     <div className="smap" ref={board} onPointerMove={tilt} onPointerLeave={reset}>
       <div className="smap-board">
         <div className="smap-surface">
-        <svg className="smap-scene" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="smap-far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#d6efe2" /><stop offset="1" stopColor="#c2e6d2" /></linearGradient>
-            <linearGradient id="smap-land" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#bfe6c9" /><stop offset="1" stopColor="#9fd4ae" /></linearGradient>
-            <linearGradient id="smap-lake" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#9fdcf0" /><stop offset="1" stopColor="#5fb9db" /></linearGradient>
-            <linearGradient id="smap-rock-l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#b6c4d6" /><stop offset="1" stopColor="#8fa3bb" /></linearGradient>
-            <linearGradient id="smap-rock-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#8396b0" /><stop offset="1" stopColor="#6a7f9c" /></linearGradient>
-          </defs>
-          <circle cx="110" cy="78" r="34" fill="#ffe08a" opacity="0.9" />
-          <circle cx="110" cy="78" r="52" fill="#ffe08a" opacity="0.25" />
-          <path d="M0 230 C120 170 220 215 330 185 S560 150 680 195 S860 150 1000 175 L1000 460 L0 460Z" fill="url(#smap-far)" />
-          <path d="M770 360 L914 56 L1000 240 L1000 360Z" fill="url(#smap-rock-d)" />
-          <path d="M770 360 L914 56 L940 360Z" fill="url(#smap-rock-l)" />
-          <path d="M883 121 L914 56 L946 124 L929 114 L914 128 L898 112Z" fill="#fff" />
-          <path d="M0 280 C140 250 260 300 400 268 S640 240 760 285 S900 330 1000 300 L1000 460 L0 460Z" fill="url(#smap-land)" />
-          <ellipse cx="170" cy="414" rx="118" ry="28" fill="url(#smap-lake)" />
-          <ellipse cx="150" cy="408" rx="40" ry="6" fill="#fff" opacity="0.45" />
-          {trees.map(([x, y, s], i) => <g key={i} transform={`translate(${x} ${y}) scale(${s})`}>
-            <ellipse cx="0" cy="2" rx="10" ry="3" fill="#2f6b4a" opacity="0.18" />
-            <rect x="-1.8" y="-6" width="3.6" height="8" rx="1" fill="#8a6a45" />
-            <path d="M0 -30 L11 -6 L-11 -6Z" fill={i % 3 ? "#3fae74" : "#2f9a63"} />
-            <path d="M0 -38 L8 -20 L-8 -20Z" fill={i % 3 ? "#52bf85" : "#3fae74"} />
-          </g>)}
-          <g className="smap-road">
-            {road.map((d, i) => <path key={`e${i}`} d={d} className="smap-road-edge" />)}
-            {road.map((d, i) => <path key={`t${i}`} d={d} className={`smap-road-top ${i < reached ? "is-walked" : ""}`} />)}
-            {road.map((d, i) => <path key={`c${i}`} d={d} className="smap-road-line" />)}
-          </g>
-          <g transform="translate(914 60)"><rect x="-1.5" y="-34" width="3" height="34" fill="#334a7a" /><path d="M1.5 -34 L26 -26 L1.5 -18Z" fill="#f0705f" /></g>
-        </svg>
-        <span className="smap-cloud c1" aria-hidden="true" />
-        <span className="smap-cloud c2" aria-hidden="true" />
-        <span className="smap-cloud c3" aria-hidden="true" />
+          <svg className="smap-scene" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <g className="smap-sun"><circle cx="96" cy="70" r="40" /><circle cx="96" cy="70" r="26" /></g>
+            <path className="smap-hill far" d="M-10 220 C90 160 190 196 300 170 S520 128 640 168 S820 140 1010 150 L1010 430 L-10 430Z" />
+            <path className="smap-mountain dark" d="M760 330 Q860 120 900 58 Q912 44 924 58 Q962 120 1010 220 L1010 330Z" />
+            <path className="smap-mountain light" d="M760 330 Q860 120 900 58 Q908 48 916 52 Q900 190 930 330Z" />
+            <path className="smap-snow" d="M882 92 Q898 62 904 56 Q912 46 922 58 L938 92 Q926 84 916 94 Q906 82 896 94 Q890 86 882 92Z" />
+            <path className="smap-hill land" d="M-10 262 C120 232 250 290 400 252 S640 226 770 262 S920 300 1010 278 L1010 430 L-10 430Z" />
+            <ellipse className="smap-lake" cx="150" cy="378" rx="112" ry="24" />
+            <path className="smap-lake-shine" d="M100 374 Q140 368 176 372" />
+            {bushes.map(([x, y, s], i) => <g key={i} className="smap-bush" transform={`translate(${x} ${y}) scale(${s})`}>
+              <circle cx="-8" cy="0" r="9" /><circle cx="6" cy="-4" r="11" /><circle cx="14" cy="3" r="7" />
+            </g>)}
+            <g className="smap-road">
+              {road.map((d, i) => <path key={`e${i}`} d={d} className="smap-road-edge" />)}
+              {road.map((d, i) => <path key={`t${i}`} d={d} className={`smap-road-top ${i < reached ? "is-walked" : ""}`} />)}
+              {road.map((d, i) => <path key={`c${i}`} d={d} className={`smap-road-line ${i < reached ? "is-walked" : ""}`} />)}
+            </g>
+            <g className="smap-flag" transform="translate(912 50)"><rect x="-1.5" y="-30" width="3" height="30" rx="1.5" /><path d="M1.5 -30 L24 -23 L1.5 -15Z" /></g>
+          </svg>
+          <span className="smap-cloud c1" aria-hidden="true" />
+          <span className="smap-cloud c2" aria-hidden="true" />
         </div>
         <ol className="smap-stops" aria-label="Bản đồ 7 chặng học">
           {stops.map((stop, index) => {
@@ -108,9 +98,9 @@ export function StageMap({ stops }: { stops: StageStop[] }) {
             return <li key={stop.stage.id} className={`smap-stop is-${stop.state}`} style={{ left: `${x / W * 100}%`, top: `${y / H * 100}%`, "--c": color, "--delay": `${index * 70}ms` } as React.CSSProperties}>
               <Link href={`/app/learn/${stop.stage.id}`} aria-label={`Chặng ${index + 1}: ${stop.stage.name}, band ${stop.stage.range}, ${statusText(stop)}`}>
                 <span className="smap-figure" aria-hidden="true">
-                  {stop.state === "current" ? <><span className="smap-here">Bạn ở đây</span><HarryMascot size={54} /></> : <Sticker name={icon} size={44} tilt={index % 2 ? 6 : -6} pop={false} />}
+                  {stop.state === "current" ? <><span className="smap-here">Bạn ở đây</span><HarryMascot size={50} /></> : <Sticker name={icon} size={40} tilt={index % 2 ? 6 : -6} pop={false} />}
                 </span>
-                <span className="smap-pad" aria-hidden="true"><b>{stop.state === "done" ? <Check size={16} strokeWidth={3} /> : stop.state === "future" ? <Lock size={14} /> : index + 1}</b></span>
+                <span className="smap-pad" aria-hidden="true"><b>{stop.state === "done" ? <Check size={15} strokeWidth={3} /> : stop.state === "future" ? <Lock size={13} /> : index + 1}</b></span>
                 <span className="smap-label">
                   <small>{stop.stage.range}</small>
                   <strong>{stop.stage.name}</strong>
