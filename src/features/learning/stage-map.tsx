@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Check, Lock } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HarryMascot } from "@/components/illustrations/harry";
@@ -92,6 +92,14 @@ export function StageMap({ stops }: { stops: StageStop[] }) {
     board.current?.style.removeProperty("--rx");
     board.current?.style.removeProperty("--ry");
   }
+  const currentId = stops.find((stop) => stop.state === "current")?.stage.id;
+  // On a board that scrolls sideways, start with the current stage in view.
+  useEffect(() => {
+    const element = board.current;
+    const here = element?.querySelector<HTMLElement>(".smap-stop.is-current");
+    if (!element || !here || element.scrollWidth <= element.clientWidth) return;
+    element.scrollLeft = here.offsetLeft - element.clientWidth / 2;
+  }, [currentId]);
   const reached = stops.reduce((last, stop, index) => stop.state === "done" || stop.state === "current" ? index : last, 0);
   return <div className="smap-wrap">
     <div className="smap" ref={board} onPointerMove={tilt} onPointerLeave={reset}>
