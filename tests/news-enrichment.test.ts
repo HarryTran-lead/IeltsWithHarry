@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageKeywords, normalizeAnswer, quizExcerpt, tfngOptions, validateGeneratedQuiz } from "../src/lib/news/enrichment";
+import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageClaimLimit, imageKeywords, normalizeAnswer, quizExcerpt, tfngOptions, validateGeneratedQuiz } from "../src/lib/news/enrichment";
 
 const passage = "The Artemis team tested a new spacecraft on Tuesday. The spacecraft will carry instruments to study the Moon. Scientists will use the results to prepare later missions. The test took place at Kennedy Space Center in Florida. Engineers measured the heat shield during the flight.";
 const quote = "The Artemis team tested a new spacecraft on Tuesday.";
@@ -162,6 +162,14 @@ describe("Gemini news quiz generation", () => {
 });
 
 describe("illustration search checked by AI vision", () => {
+  it("reserves image searches throughout the day", () => {
+    expect(imageClaimLimit(0, 0)).toBe(3);
+    expect(imageClaimLimit(25, 2)).toBe(1);
+    expect(imageClaimLimit(25, 3)).toBe(0);
+    expect(imageClaimLimit(89, 0)).toBe(1);
+    expect(imageClaimLimit(90, 0)).toBe(0);
+  });
+
   const commonsPage = (license: string, name = "Artemis spacecraft above the Moon") => ({ title: `File:${name}.jpg`, imageinfo: [{
     thumburl: `https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/${name.replaceAll(" ", "_")}.jpg/960px-${name.replaceAll(" ", "_")}.jpg`,
     descriptionurl: `https://commons.wikimedia.org/wiki/File:${name.replaceAll(" ", "_")}.jpg`,

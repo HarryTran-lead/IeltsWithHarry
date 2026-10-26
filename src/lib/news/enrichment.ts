@@ -385,7 +385,9 @@ async function gatherCandidates(title: string, body: string, query: string, fetc
   const subject = query && words(query).length >= 2 ? words(query).join(" ") : "";
   // Vietnamese stories look for photos taken in Vietnam first; the AI rejects scenes from elsewhere.
   const local = subject && /\bviet ?nam(ese)?\b/i.test(`${title} ${body.slice(0, 1500)}`) && !/vietnam/.test(subject) ? `${subject} vietnam` : "";
-  const searches = [...new Set([local, subject, keywords.slice(0, 3).join(" ")].filter(Boolean))];
+  // Keep anonymous Openverse usage within the daily search budget while still
+  // trying a second description when the first query finds no fitting photo.
+  const searches = [...new Set([local, subject, keywords.slice(0, 3).join(" ")].filter(Boolean))].slice(0, 2);
   const found = new Map<string, Candidate & { library: string }>();
   let failure: unknown = null;
   const libraries = ["openverse", "commons", "nasa"] as const;
@@ -422,7 +424,11 @@ const visionPrompt = `You choose a photo to illustrate a news article for Englis
 A suitable photo honestly shows the article's actual subject: the same kind of place, activity, object, event or people. Sharing a word with the headline is not enough.
 Unsuitable: a different topic; an image whose caption or content places it in a different country or named place than the story (for a story in Vietnam, a photo labelled as the Philippines, China or Bali is unsuitable even if the scene looks alike); portraits of named people unrelated to the story, logos, maps, charts, documents or text-heavy images, historical artworks for modern news, and anything distasteful.
 Return best: the number of the most suitable image, or -1 if none is suitable. Return fit: 0-10, how well that image matches the article (10 = clearly shows the subject).`;
-const dailyImageLimit = 80;
+const dailyImageLimit = 90;
+const hourlyImageLimit = 3;
+export function imageClaimLimit(todayCount: number, hourCount: number) {
+  return Math.max(0, Math.min(3, dailyImageLimit - todayCount, hourlyImageLimit - hourCount));
+}
 const subjectSchema = { type: "object", additionalProperties: false, required: ["image_query"], properties: { image_query: { type: "string" } } } as const;
 async function visualSubject(title: string, body: string, fetcher: typeof fetch) {
   const { data } = await geminiJson<{ image_query?: string }>(
@@ -497,13 +503,20 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
 
 type EnrichResult = { imagesChecked: number; imagesAdded: number; quizzesChecked: number; quizzesAdded: number; aiConfigured: boolean; quotaLimited: boolean; errors: string[] };
 async function enrichImages(db: Db, result: EnrichResult) {
-  // Each image costs one Gemini vision request and up to two Openverse searches (200 a
-  // day anonymously): three per run, at most 80 a day.
+  // Spread image work over the day so the older backlog cannot consume every
+  // request before articles published in the afternoon arrive.
   if (!result.aiConfigured) return;
   const today = new Date(); today.setUTCHours(0, 0, 0, 0);
-  const { count } = await db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").gte("attempted_at", today.toISOString());
-  if ((count ?? 0) >= dailyImageLimit) return;
-  const { data: imageClaims, error: imageClaimError } = await db.rpc("news_claim_enrichment", { p_kind: "image", p_limit: 3 });
+  const hourAgo = new Date(Date.now() - 3600000).toISOString();
+  const [{ count: todayCount, error: todayError }, { count: hourCount, error: hourError }] = await Promise.all([
+    db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").gte("attempted_at", today.toISOString()),
+    db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "image").gte("attempted_at", hourAgo),
+  ]);
+  if (todayError) throw todayError;
+  if (hourError) throw hourError;
+  const limit = imageClaimLimit(todayCount ?? 0, hourCount ?? 0);
+  if (!limit) return;
+  const { data: imageClaims, error: imageClaimError } = await db.rpc("news_claim_enrichment", { p_kind: "image", p_limit: limit });
   if (imageClaimError) throw imageClaimError;
   const queries = await imageQueries(db, ((imageClaims ?? []) as Claim[]).map((article) => article.article_id));
   await Promise.all(((imageClaims ?? []) as Claim[]).map(async (article) => {
