@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, BookOpen, Headphones, Mic, NotebookPen, Search } from "lucide-react";
+import { ArrowRight, BookOpen, Headphones, Mic, NotebookPen } from "lucide-react";
 import { balancedCatalog, catalogGroups, catalogHref, catalogSkills, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
+import { BankLibrary } from "./bank-library";
 import "./bank.css";
 
 const skillCopy = {
@@ -42,10 +43,9 @@ export function BankCatalog() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const skill = catalogSkills.find((value) => value === searchParams.get("skill"));
-  const type = skill && catalogGroups[skill].some((group) => group.id === searchParams.get("type")) ? searchParams.get("type") || "" : "";
   const [exams, setExams] = useState<CatalogExam[]>([]);
   const [history, setHistory] = useState<{ id: string; state: string; score: number | null; total: number | null; ielts_exams: { title: string } }[]>([]);
-  const [loading, setLoading] = useState(true), [error, setError] = useState(""), [query, setQuery] = useState(""), [page, setPage] = useState(0);
+  const [loading, setLoading] = useState(true), [error, setError] = useState("");
 
   useEffect(() => {
     let live = true;
@@ -58,16 +58,8 @@ export function BankCatalog() {
     return () => { live = false; };
   }, []);
   const counts = useMemo(() => Object.fromEntries(catalogSkills.map((name) => [name, exams.filter((exam) => exam.skill === name).length])) as Record<CatalogSkill, number>, [exams]);
-  const skillExams = skill ? exams.filter((exam) => exam.skill === skill) : [];
-  const filtered = skillExams.filter((exam) => (!type || exam.practice_type === type) && (!query || exam.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())));
-  const ordered = skill && !type ? balancedCatalog(filtered, catalogGroups[skill].map((group) => group.id)) : filtered;
-  const pageSize = 12, pageCount = Math.max(1, Math.ceil(ordered.length / pageSize));
-  const currentPage = Math.min(page, pageCount - 1);
-  const visible = ordered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
 
   function choose(nextSkill?: CatalogSkill, nextType?: string) {
-    setPage(0);
-    setQuery("");
     router.push(nextSkill ? catalogHref(nextSkill, nextType) : "/app/question-bank");
   }
 
@@ -97,31 +89,8 @@ export function BankCatalog() {
       </section>;
     })}</div>}
 
-    {!loading && !error && skill && <section className={`bank-skill-list bank-tone-${skillCopy[skill].tone}`}>
-      <div className="bank-skill-list-heading"><div><span className="bank-catalog-kicker">{skill.toUpperCase()} / NGÂN HÀNG ĐỀ</span><h2>{counts[skill]} bài luyện {skill}</h2><p>Chọn dạng bài bên dưới. Mục “Tất cả” xếp luân phiên các dạng bài trước khi phân trang.</p></div><Link href={`/app/${skill.toLowerCase()}`}>Về trang {skill} <ArrowRight size={16} /></Link></div>
-      <div className="bank-type-tabs" role="group" aria-label={`Lọc dạng bài ${skill}`}>
-        <button type="button" className={!type ? "active" : ""} aria-pressed={!type} onClick={() => choose(skill)}>Tất cả <b>{counts[skill]}</b></button>
-        {catalogGroups[skill].filter((group) => groupCount(skillExams, group.id)).map((group) => <button type="button" className={type === group.id ? "active" : ""} aria-pressed={type === group.id} key={group.id} onClick={() => choose(skill, group.id)}>{group.label} <b>{groupCount(skillExams, group.id)}</b></button>)}
-      </div>
-      {type && <p className="bank-type-description">{catalogGroups[skill].find((group) => group.id === type)?.detail}</p>}
-      <div className="bank-list-tools"><label><Search size={17} aria-hidden="true" /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder={`Tìm đề ${skill}…`} aria-label={`Tìm đề ${skill}`} /></label><span>{ordered.length} bài phù hợp</span></div>
-      <div className="bank-catalog-grid">{visible.map((exam) => <CatalogCard key={exam.id} exam={exam} />)}</div>
-      {!visible.length && <p className="bank-catalog-state">Chưa có bài phù hợp. Thử chọn dạng bài khác.</p>}
-      {pageCount > 1 && <nav className="bank-pagination" aria-label="Phân trang đề"><button type="button" disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)}>← Trang trước</button><span>Trang {currentPage + 1} / {pageCount}</span><button type="button" disabled={currentPage + 1 >= pageCount} onClick={() => setPage(currentPage + 1)}>Trang sau →</button></nav>}
-    </section>}
+    {skill && <BankLibrary skill={skill} />}
 
     {history.length > 0 && <section className="bank-history"><h2>Bài bạn đã làm</h2><div>{history.slice(0, 5).map((item) => <Link key={item.id} href={item.state === "in_progress" ? `/app/question-bank/attempt/${item.id}` : `/app/question-bank/result/${item.id}`}><span>{item.ielts_exams?.title || "Bài luyện"}</span><small>{item.state === "in_progress" ? "Đang làm" : item.score === null ? "Chờ chấm thủ công" : `${item.score}/${item.total}`}</small><ArrowRight size={16} /></Link>)}</div></section>}
   </main>;
-}
-
-export function BankSkillShelf({ skill }: { skill: CatalogSkill }) {
-  const [exams, setExams] = useState<CatalogExam[]>([]), [loading, setLoading] = useState(true), [error, setError] = useState(false);
-  useEffect(() => { let live = true; void loadCatalog(skill).then((data) => { if (live) setExams(data); }).catch(() => { if (live) setError(true); }).finally(() => { if (live) setLoading(false); }); return () => { live = false; }; }, [skill]);
-  const groups = catalogGroups[skill].filter((group) => groupCount(exams, group.id));
-  const previews = balancedCatalog(exams, catalogGroups[skill].map((group) => group.id)).slice(0, 3);
-  return <section className={`bank-skill-shelf bank-tone-${skillCopy[skill].tone}`}>
-    <div className="bank-shelf-heading"><div><span className="bank-catalog-kicker">NGÂN HÀNG ĐỀ ĐÃ DUYỆT</span><h2>Luyện {skill} theo dạng bài</h2><p>{loading ? "Đang tải kho đề…" : error ? "Chưa tải được kho đề. Mở ngân hàng để thử lại." : `${exams.length} bài luyện có thể làm ngay`}</p></div><Link href={catalogHref(skill)}>Xem tất cả <ArrowRight size={17} /></Link></div>
-    {groups.length > 0 && <div className="bank-shelf-groups">{groups.map((group) => <Link key={group.id} href={catalogHref(skill, group.id)}><strong>{group.label}</strong><span>{group.detail}</span><b>{groupCount(exams, group.id)} bài <ArrowRight size={15} /></b></Link>)}</div>}
-    {previews.length > 0 && <div className="bank-shelf-previews">{previews.map((exam) => <CatalogCard key={exam.id} exam={exam} />)}</div>}
-  </section>;
 }

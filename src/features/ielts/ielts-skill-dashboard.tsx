@@ -10,7 +10,7 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "./ielts-live-page";
 import { useIeltsData } from "./use-ielts-data";
 import { plannedModes } from "./planned-modes";
-import { BankSkillShelf } from "./bank-catalog";
+import { BankLibrary, SkillTabs } from "./bank-library";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
@@ -102,7 +102,9 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const availableModes = modes.filter((mode) => mode.available);
   const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? !mode.planned : mode.planned));
 
+  const showLibrary = !demoMode && Boolean(bankSkill);
   return <main className={`ielts-dashboard ielts-dashboard-${config.tone}`}>
+    {bankSkill && <SkillTabs skill={skill} />}
     <div className="ielts-dashboard-titlebar">
       <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
       <h1>{config.title}</h1>
@@ -121,6 +123,9 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
       <p className="ielts-vocab-picker-note">Level là lộ trình học nội bộ. Từ nguồn có định nghĩa tiếng Anh; nghĩa Việt được bổ sung sau khi biên tập.</p>
     </section>}
 
+    {/* The question bank leads the four exam skills; stats and other study modes follow. */}
+    {showLibrary && bankSkill && <BankLibrary skill={bankSkill} />}
+
     <div className="ielts-dashboard-stats" aria-label="Tiến độ của bạn">
       <Stat icon={FileText} value={skill === "vocabulary" ? vocabularyCount === null ? "…" : vocabularyCount.toLocaleString("vi-VN") : busy ? "…" : String(sourceCount)} label={sourceUnit} note="Nguồn đang hiển thị"/>
       <Stat icon={ListChecks} value={notebookReady ? String(savedWork.length) : "…"} label={skill === "vocabulary" ? "từ đã lưu" : "bài/ghi chú đã lưu"} note="Trong tài khoản của bạn"/>
@@ -129,7 +134,6 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
       <Link className="ielts-dashboard-stats-link" href="/app/notebook">Xem Sổ tay <ArrowRight size={15}/></Link>
     </div>
 
-    {!demoMode && bankSkill && <BankSkillShelf skill={bankSkill} />}
 
     <div className="ielts-dashboard-modes-head">
     <h2 title={`${allModes.length} chế độ trong kế hoạch. Thẻ “Sắp triển khai” là bản xem trước giao diện.`}>Chế độ học</h2>

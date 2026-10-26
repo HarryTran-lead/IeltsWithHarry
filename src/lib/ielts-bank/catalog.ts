@@ -33,7 +33,28 @@ export type CatalogExam = {
   license: string;
   ai_generated: boolean;
   created_at: string;
+  topic?: string | null;
+  difficulty?: string | null;
+  source_id?: string;
+  /** Card details from ielts_catalog_summary; absent when the summary is unavailable. */
+  question_types?: string[];
+  question_count?: number;
+  task_type?: string | null;
+  visual_kind?: string | null;
+  visual?: Record<string, unknown> | null;
+  image_url?: string | null;
+  prompt_preview?: string | null;
+  question_preview?: string[];
+  attempt_count?: number;
 };
+
+type CatalogSummary = Pick<CatalogExam, "question_types" | "question_count" | "task_type" | "visual_kind" | "visual" | "image_url" | "prompt_preview" | "question_preview" | "attempt_count"> & { exam_id: string };
+
+/** Adds the card details to each exam that has a summary row. */
+export function withSummaries(exams: CatalogExam[], summaries: CatalogSummary[]) {
+  const byId = new Map(summaries.map(({ exam_id, ...summary }) => [exam_id, summary]));
+  return exams.map((exam) => ({ ...exam, ...byId.get(exam.id) }));
+}
 
 export function balancedCatalog<T extends { practice_type: string }>(items: T[], groupIds: readonly string[]): T[] {
   const buckets = groupIds.map((id) => items.filter((item) => item.practice_type === id));

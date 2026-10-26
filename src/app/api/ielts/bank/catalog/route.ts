@@ -1,5 +1,5 @@
 import { bankClient, requestError, viewer } from "@/lib/ielts-bank/server";
-import { catalogSkills, type CatalogExam } from "@/lib/ielts-bank/catalog";
+import { catalogSkills, withSummaries, type CatalogExam } from "@/lib/ielts-bank/catalog";
 
 export const runtime = "nodejs";
 
@@ -13,7 +13,7 @@ export async function GET(request: Request) {
     const pageSize = 500;
     for (let offset = 0; ; offset += pageSize) {
       let query = client.from("ielts_exams")
-        .select("id,title,skill,practice_type,format,duration_minutes,attribution,license,ai_generated,created_at")
+        .select("id,title,skill,practice_type,format,duration_minutes,attribution,license,ai_generated,created_at,topic,difficulty,source_id")
         .eq("status", "published")
         .not("published_version_id", "is", null)
         .order("created_at", { ascending: false })
@@ -25,6 +25,9 @@ export async function GET(request: Request) {
       exams.push(...(data || []) as CatalogExam[]);
       if (!data || data.length < pageSize) break;
     }
-    return Response.json({ exams, total: exams.length }, { headers: { "Cache-Control": "private, no-store" } });
+    // Card details are optional: the library still works if the summary function is missing.
+    const summary = await client.rpc("ielts_catalog_summary", { p_skill: skill ?? null });
+    const enriched = summary.error ? exams : withSummaries(exams, summary.data ?? []);
+    return Response.json({ exams: enriched, total: exams.length }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) { return requestError(error); }
 }
