@@ -17,6 +17,7 @@ type Props = {
   words: { id: string; word: string; phonetic: string; meaning_vi: string; definition: string; example: string; sentence_prompt_vi: string; accepted_sentences: string[] }[];
   material: SkillMaterial | null;
   packageContent: PackageLesson;
+  navigation: { previous: { slug: string; title: string } | null; next: { slug: string; title: string } | null; index: number; total: number } | null;
   canManage: boolean;
 };
 
@@ -43,7 +44,7 @@ export function CoursePackageLessonShell(props: Props) {
 function Content({ packageContent, canManage, ...lessonProps }: Props) {
   const { ready } = useDemo();
   const [step, setStep] = useState(0);
-  const { lesson, words, questions } = lessonProps;
+  const { lesson, words, questions, navigation } = lessonProps;
   const backHref = stageHref(lesson.slug);
   const hasAuthoredQuestions = Boolean(packageContent.activities?.length || packageContent.practice?.length);
   function goTo(next: number) {
@@ -53,6 +54,7 @@ function Content({ packageContent, canManage, ...lessonProps }: Props) {
 
   return <AppShell canManage={canManage}>{ready ? <div className="content-page package-lesson-page">
     <Link href={backHref} className="package-back"><ArrowLeft size={16} /> Về hành trình học</Link>
+    {navigation && <div className="package-route-bar"><span>Bài {navigation.index}/{navigation.total} trong chặng</span><div>{navigation.previous ? <Link href={`/app/lesson/${navigation.previous.slug}`} title={navigation.previous.title}><ArrowLeft size={15} /> Bài trước</Link> : <span>Đầu chặng</span>}{navigation.next ? <Link href={`/app/lesson/${navigation.next.slug}`} title={navigation.next.title}>Bài tiếp <ArrowRight size={15} /></Link> : <span>Cuối chặng</span>}</div></div>}
     <header className="package-lesson-hero">
       <div className="package-lesson-hero-main"><span className="eyebrow">{lesson.skill.toUpperCase()} · BÀI HỌC THEO BƯỚC</span><h1>{lesson.title}</h1><p>{lesson.summary}</p></div>
       <div className="package-lesson-hero-goal"><Target size={22} /><span>MỤC TIÊU BÀI HỌC</span><strong>{packageContent.aim || packageContent.output || "Hiểu nội dung và tự luyện tập."}</strong></div>
@@ -74,7 +76,7 @@ function Content({ packageContent, canManage, ...lessonProps }: Props) {
         </section>
         <section className="package-step-panel" hidden={step !== 2} aria-label="Bước 3: Ghi nhớ"><div className="package-step-heading"><span>03 / 03</span><h2>Mang kiến thức sang bài tiếp theo</h2><p>Đối chiếu điều bạn vừa học với mục tiêu, rồi trở lại bản đồ để chọn ga tiếp theo.</p></div>
           <PackageLessonPractice content={packageContent} mode="review" />
-          <div className="package-panel-actions"><button type="button" className="button subtle" onClick={() => goTo(1)}>← Luyện lại</button><Link className="button primary" href={backHref}>Xem bài tiếp theo <ArrowRight size={17} /></Link></div>
+          <div className="package-panel-actions"><button type="button" className="button subtle" onClick={() => goTo(1)}>← Luyện lại</button>{navigation?.next ? <Link className="button primary" href={`/app/lesson/${navigation.next.slug}`}>Bài tiếp theo <ArrowRight size={17} /></Link> : <Link className="button primary" href={backHref}>Về hành trình học <ArrowRight size={17} /></Link>}</div>
         </section>
       </main>
       <aside className="package-lesson-aside"><div className="package-guide"><Lightbulb size={21} /><h3>Học sao cho dễ nhớ?</h3><p>{step === 0 ? "Xem ví dụ, nghe một lần và tự nói lại trước khi mở bài tập." : step === 1 ? "Làm từng câu trước khi xem đáp án. Câu tự luận được đối chiếu với đáp án mẫu, không chấm band IELTS." : "Nói hoặc viết lại điều bạn nhớ được mà không nhìn bài, rồi đánh dấu checklist."}</p></div><div className="package-guide package-guide-quiet"><CircleHelp size={20} /><h3>Bạn cần ghi lại gì?</h3><p>Dùng nút Sổ tay bên phải để lưu từ mới, câu hay hoặc điều chưa rõ trong lúc học.</p></div></aside>

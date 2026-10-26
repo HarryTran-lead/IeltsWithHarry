@@ -15,7 +15,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const { data: claims } = await supabase.auth.getClaims();
   if (!claims?.claims) redirect("/login");
   const { data: isAdmin } = await supabase.rpc("is_admin");
-  let lessonQuery = supabase.from("lessons").select("id,slug,title,skill,summary").eq("slug", slug);
+  let lessonQuery = supabase.from("lessons").select("id,unit_id,slug,title,skill,summary").eq("slug", slug);
   if (isAdmin !== true) lessonQuery = lessonQuery.eq("published", true);
   const { data: lesson } = await lessonQuery.maybeSingle();
   if (!lesson) notFound();
@@ -31,7 +31,27 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const parsedMaterial = skillMaterialSchema.safeParse(materialResult.data?.content);
   const material = parsedMaterial.success && parsedMaterial.data.skill === lesson.skill ? parsedMaterial.data : null;
   const props = { lesson, blocks: blockResult.data ?? [], questions, words: wordResult.data ?? [], material, canManage: isAdmin === true };
+  let navigation: { previous: { slug: string; title: string } | null; next: { slug: string; title: string } | null; index: number; total: number } | null = null;
+  if (packageResult.data?.content) {
+    const { data: unit, error: unitError } = await supabase.from("units").select("course_id").eq("id", lesson.unit_id).single();
+    if (unitError || !unit) throw new Error("Could not load course navigation");
+    let unitsQuery = supabase.from("units").select("id,sort_order").eq("course_id", unit.course_id).order("sort_order");
+    if (isAdmin !== true) unitsQuery = unitsQuery.eq("published", true);
+    const { data: units, error: unitsError } = await unitsQuery;
+    if (unitsError) throw new Error("Could not load course units");
+    const unitIds = (units ?? []).map((item) => item.id);
+    if (unitIds.length) {
+      let lessonsQuery = supabase.from("lessons").select("slug,title,unit_id,sort_order").in("unit_id", unitIds);
+      if (isAdmin !== true) lessonsQuery = lessonsQuery.eq("published", true);
+      const { data: courseLessons, error: lessonsError } = await lessonsQuery;
+      if (lessonsError) throw new Error("Could not load lesson navigation");
+      const order = new Map(unitIds.map((id, index) => [id, index]));
+      const ordered = (courseLessons ?? []).sort((a, b) => (order.get(a.unit_id) ?? 0) - (order.get(b.unit_id) ?? 0) || a.sort_order - b.sort_order);
+      const index = ordered.findIndex((item) => item.slug === slug);
+      if (index >= 0) navigation = { previous: ordered[index - 1] ?? null, next: ordered[index + 1] ?? null, index: index + 1, total: ordered.length };
+    }
+  }
   return packageResult.data?.content
-    ? <CoursePackageLessonShell {...props} packageContent={packageResult.data.content} />
+    ? <CoursePackageLessonShell key={lesson.slug} {...props} packageContent={packageResult.data.content} navigation={navigation} />
     : <LessonShell {...props} />;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export type PackageActivity = { id: string; type: string; prompt: string; answer: string; options?: string[]; explanation?: string; instruction?: string };
 export type PackageLesson = {
@@ -31,10 +31,23 @@ export type PackageLesson = {
   review_checklist?: string[]; second_task?: string;
   shadow_phrases?: string[]; role_plays?: { id: string; scenario: string; target_seconds: number }[];
   stages?: { name: string; task: string }[]; self_check?: string[];
+  exam_strategy?: string;
+  data_visual?: { headers: string[]; rows: string[][] };
+  advanced_essay?: { prompt: string; min_words: number; model_paragraphs: string[]; planning_prompts: string[] };
+  language_upgrade?: { correction_drills: { prompt: string; model: string; why: string }[] };
+  speaking_extensions?: { question: string; response_framework: string }[];
 };
 
 function normalize(value: string) { return value.trim().toLocaleLowerCase().replace(/[.!?]+$/g, "").replace(/\s+/g, " "); }
 function lines(value?: string | string[]) { return Array.isArray(value) ? value : value ? [value] : []; }
+
+function AdvancedEssayPractice({ essay, keyName }: { essay: NonNullable<PackageLesson["advanced_essay"]>; keyName: string }) {
+  const [draft, setDraft] = useState("");
+  const [showModel, setShowModel] = useState(false);
+  useEffect(() => { const timer = window.setTimeout(() => { try { setDraft(localStorage.getItem(keyName) ?? ""); } catch { /* Browser storage can be disabled. */ } }, 0); return () => window.clearTimeout(timer); }, [keyName]);
+  const words = draft.trim() ? draft.trim().split(/\s+/).length : 0;
+  return <section className="advanced-essay"><span className="eyebrow">IELTS WRITING · TASK 2</span><h3>{essay.prompt}</h3><ol>{essay.planning_prompts.map((prompt) => <li key={prompt}>{prompt}</li>)}</ol><label htmlFor="advanced-essay-draft">Bản nháp của bạn · {words}/{essay.min_words} từ</label><textarea id="advanced-essay-draft" value={draft} rows={12} onChange={(event) => { setDraft(event.target.value); try { localStorage.setItem(keyName, event.target.value); } catch { /* The draft stays in memory. */ } }} placeholder="Viết dàn ý rồi phát triển thành bài luận tại đây…" /><p className="advanced-essay-save">Bản nháp tự lưu trên trình duyệt này.</p><button type="button" className="button subtle" onClick={() => setShowModel((value) => !value)}>{showModel ? "Ẩn bài mẫu" : "Xem bài mẫu để đối chiếu"}</button>{showModel && <div className="advanced-essay-model">{essay.model_paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}<small>Bài mẫu để tham khảo; hệ thống chưa chấm band tự động.</small></div>}</section>;
+}
 
 export function OpenResponsePractice({ items, title }: { items: PackageActivity[]; title: string }) {
   const [answers, setAnswers] = useState<Record<number, string>>({});
@@ -62,12 +75,13 @@ export function OpenResponsePractice({ items, title }: { items: PackageActivity[
 export function PackageLessonPractice({ content, mode = "practice" }: { content: PackageLesson | null; mode?: "learn" | "practice" | "review" }) {
   if (!content) return null;
   const method = typeof content.study_method === "string" ? content.study_method : content.study_method?.learn;
-  const strategy = lines(content.reading_strategy || content.listening_strategy || content.pre_listening);
+  const strategy = lines(content.reading_strategy || content.listening_strategy || content.pre_listening || content.exam_strategy);
   if (mode === "learn") return <div className="package-learn-content">
-    {content.type !== "intro" && (content.instruction_vi || method) && <div className="package-concept"><span className="eyebrow">CÁCH HỌC BÀI NÀY</span><h2>{content.type === "grammar" ? content.grammar_title || "Nhìn ví dụ trước khi luyện" : content.type === "listening" ? "Nghe để nắm ý chính" : content.type === "reading" ? "Đọc để hiểu nội dung" : content.type === "writing" ? "Lên ý trước khi viết" : content.type === "speaking" ? "Chuẩn bị ý trước khi nói" : "Nhìn, nghe và dùng từ"}</h2><p>{content.instruction_vi || method}</p>{method && content.instruction_vi && <small>{method}</small>}</div>}
+    {content.type !== "intro" && <div className="package-concept"><span className="eyebrow">CÁCH HỌC BÀI NÀY</span><h2>{content.type === "grammar" ? content.grammar_title || "Nhìn ví dụ trước khi luyện" : content.type === "listening" ? "Nghe để nắm ý chính" : content.type === "reading" ? "Đọc để hiểu nội dung" : content.type === "writing" ? "Lên ý trước khi viết" : content.type === "speaking" ? "Chuẩn bị ý trước khi nói" : "Nhìn, nghe và dùng từ"}</h2><p>{content.instruction_vi || method || (content.type === "reading" ? "Đọc bài một lượt để tìm ý chính; lượt hai tìm bằng chứng cho từng câu hỏi." : content.type === "listening" ? "Xem câu hỏi trước, nghe để bắt ý chính, rồi nghe lại để kiểm tra chi tiết." : content.type === "writing" ? "Xem đề và dữ liệu, ghi ý chính trước khi viết bản nháp." : content.type === "speaking" ? "Đọc câu hỏi, chuẩn bị vài ý, sau đó nói thành câu đầy đủ." : "Xem ví dụ, tự nói lại và thử dùng kiến thức vào câu mới.")}</p>{method && content.instruction_vi && <small>{method}</small>}</div>}
     {content.type === "intro" && <><div className="package-concept"><span className="eyebrow">Ý CHÍNH CẦN NHỚ</span><h2>{content.title}</h2><p>{content.theory_vi || content.aim}</p></div>{content.audio_url && <div className="package-audio"><span>🎧 Nghe mẫu và đọc theo</span><audio controls src={content.audio_url} aria-label="Audio bài học" /></div>}{content.examples?.length ? <div className="package-examples"><h3>Thử đọc những ví dụ này</h3><div className="foundation-chips">{content.examples.map((example) => <span key={example}>{example}</span>)}</div></div> : null}</>}
     {content.grammar_form && <div className="package-grammar-form"><strong>Công thức cần nhớ</strong><p>{content.grammar_form}</p></div>}
     {content.type === "grammar" && content.examples?.length ? <div className="package-examples"><h3>Quan sát câu mẫu</h3><div className="foundation-chips">{content.examples.map((example) => <span key={example}>{example}</span>)}</div></div> : null}
+    {content.data_visual?.rows?.length ? <div className="package-data-table"><h3>Dữ liệu cho Writing Task 1</h3><div><table><thead><tr>{content.data_visual.headers.map((cell, index) => <th key={index}>{cell}</th>)}</tr></thead><tbody>{content.data_visual.rows.map((row, index) => <tr key={index}>{row.map((cell, column) => <td key={column}>{cell}</td>)}</tr>)}</tbody></table></div><small>Chỉ mô tả số liệu và so sánh; không suy đoán nguyên nhân khi đề không cho biết.</small></div> : null}
     {strategy.length > 0 && <div className="package-strategy"><strong>Mẹo thực hành</strong><ol>{strategy.map((item, index) => <li key={`${index}-${item}`}>{item}</li>)}</ol></div>}
     {content.type === "writing" && content.phases?.length ? <div className="package-process"><h3>Viết theo các bước</h3>{content.phases.map((phase, index) => <div key={phase.phase}><span>{index + 1}</span><p><b>{phase.phase}</b><br />{phase.task}</p></div>)}</div> : null}
     {content.type === "speaking" && content.stages?.length ? <div className="package-process"><h3>Nói theo các bước</h3>{content.stages.map((stage, index) => <div key={stage.name}><span>{index + 1}</span><p><b>{stage.name}</b><br />{stage.task}</p></div>)}</div> : null}
@@ -95,6 +109,9 @@ export function PackageLessonPractice({ content, mode = "practice" }: { content:
     {content.audios?.slice(1).map((item, index) => <details className="foundation-activity" key={item.id}><summary>Bài nghe {index + 2}: {item.title}</summary><audio controls src={item.audio_url} aria-label={`Bài nghe ${index + 2}`} /><OpenResponsePractice items={item.questions} title="Nghe rồi trả lời" /><details><summary>Xem transcript sau khi làm</summary><p className="foundation-transcript">{item.script}</p></details></details>)}
     {content.passages?.slice(1).map((item, index) => <details className="foundation-activity" key={item.id}><summary>Bài đọc {index + 2}: {item.title}</summary><p className="foundation-passage">{item.text}</p><OpenResponsePractice items={item.questions} title="Đọc rồi trả lời" /></details>)}
     <OpenResponsePractice items={content.micro_exercises ?? []} title="Luyện câu trước khi viết" />
+    {content.advanced_essay && <AdvancedEssayPractice essay={content.advanced_essay} keyName={`ielts-draft:${content.assessment_slug}:${content.title}`} />}
+    {content.language_upgrade?.correction_drills?.length ? <details className="foundation-activity"><summary>Nâng cấp cách diễn đạt · {content.language_upgrade.correction_drills.length} câu</summary><OpenResponsePractice title="Viết lại cho chính xác" items={content.language_upgrade.correction_drills.map((item, index) => ({ id: `upgrade-${index}`, type: "short_answer", prompt: item.prompt, answer: item.model, explanation: item.why }))} /></details> : null}
+    {content.speaking_extensions?.length ? <div className="package-speaking-prompts"><h3>Nói sâu hơn · Part 3</h3>{content.speaking_extensions.map((item, index) => <details key={index}><summary>{index + 1}. {item.question}</summary><p><b>Khung gợi ý:</b> {item.response_framework}</p></details>)}</div> : null}
     {(content.new_translation_prompts?.length || content.second_task) ? <details className="foundation-activity"><summary>Dịch câu & thử thách viết</summary><OpenResponsePractice items={content.new_translation_prompts ?? []} title="Dịch câu ngắn" />{content.second_task && <p><strong>Thử thách thêm:</strong> {content.second_task}</p>}</details> : null}
     {content.role_plays?.length ? <details className="foundation-activity"><summary>Luyện nói theo tình huống</summary>{content.role_plays.map((role) => <p key={role.id}><strong>{role.target_seconds} giây:</strong> {role.scenario}</p>)}</details> : null}
     {content.scaffolding_steps?.length ? <details className="lab-note"><summary>Gợi ý từng bước & checklist</summary><ol>{content.scaffolding_steps.map((step, index) => <li key={`${index}-${step}`}>{step}</li>)}</ol></details> : null}

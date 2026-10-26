@@ -14,6 +14,7 @@ const specs = {
   "ESL-IELTS-STARTER-4-5": { stage: "ielts-starter", slug: "mindsetstarter-topic-practice-4-5", prefix: "mindsetstarter", units: 8, label: "IELTS Starter 4.0–5.0" },
   "ESL-IELTS-BUILDER-5-6": { stage: "ielts-builder", slug: "mindsetbuilder-topic-practice-5-6", prefix: "mindsetbuilder", units: 8, label: "IELTS Builder 5.0–6.0" },
   "ESL-IELTS-ADVANCED-6-7PLUS": { stage: "ielts-advanced", slug: "mindsetadvanced-topic-practice-6-7", prefix: "mindsetadvanced", units: 8, label: "IELTS Advanced 6.0–7.0+" },
+  "ESL-MINDSET-L3-IELTS-ADVANCED-V2": { stage: "ielts-advanced", slug: "mindsetadvanced-topic-practice-6-7", prefix: "mindsetadvanced", units: 8, label: "IELTS Advanced 6.0–7.0+ · Bản V2", advancedV2: true },
 };
 const skills = { vocabulary: "Vocabulary", grammar: "Grammar", reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking" };
 const paths = process.argv.slice(2).filter((arg) => arg.toLowerCase().endsWith(".zip"));
@@ -27,6 +28,31 @@ const packs = paths.map((path) => {
   const course = JSON.parse(strFromU8(files[courseFile]));
   const spec = specs[course.course_id];
   if (!spec || course.units?.length !== spec.units) throw new Error(`${path}: unexpected course or unit count`);
+  if (spec.advancedV2) {
+    if (course.schema_version !== "2.0.0" || !course.diagnostic) throw new Error(`${path}: incomplete Advanced V2`);
+    for (const unit of course.units) {
+      const number = String(unit.order).padStart(2, "0");
+      for (const lesson of unit.lessons) {
+        if (lesson.type === "vocabulary") lesson.audio_file = `audio/U${number}_Vocabulary.mp3`;
+        if (lesson.type === "listening") lesson.audio_file = `audio/U${number}_Listening_1.mp3`;
+      }
+      for (const listening of unit.expanded_listenings ?? []) listening.audio_file = `audio/${listening.audio_filename}`;
+      unit.unit_assessment_v2 = {
+        title: unit.unit_assessment.title,
+        auto_scored: (unit.unit_checkpoint_v2 ?? []).map((item) => ({ id: item.id, type: "multiple_choice", prompt: item.question, options: item.options, answer: item.answer, explanation: item.explanation })),
+        writing_task: unit.essay_task2?.prompt,
+        speaking_task: unit.speaking_extensions?.[0]?.question,
+      };
+    }
+    for (const listening of course.diagnostic.listening ?? []) listening.audio_file = `audio/${listening.audio_filename}`;
+    course.final_assessment = { title: "Đánh giá cuối chặng · IELTS Advanced V2" };
+    course.final_assessment_v2 = {
+      reading: course.diagnostic.reading.map((item) => ({ title: item.title, passage: item.paragraphs.join("\n\n"), questions: item.questions })),
+      listening: course.diagnostic.listening.map((item) => ({ ...item, audio_file: item.audio_file })),
+      writing_task: course.diagnostic.writing_task2?.prompt ?? course.diagnostic.writing_task1?.prompt,
+      speaking_task: course.diagnostic.speaking?.part2,
+    };
+  }
   if (spec.replace && (course.intro_modules?.length !== 5 || course.schema_version !== "2.0.0")) throw new Error(`${path}: incomplete Foundation V2`);
   const lessonIds = new Set();
   const referencedAudio = new Set();
@@ -48,7 +74,7 @@ const packs = paths.map((path) => {
       if (Buffer.byteLength(JSON.stringify(lesson), "utf8") > 95_000) throw new Error(`${path}: lesson ${lesson.id} exceeds content limit`);
     }
     if (!unit.unit_assessment || Buffer.byteLength(JSON.stringify(unit.unit_assessment), "utf8") > 145_000) throw new Error(`${path}: invalid assessment ${unit.unit_id}`);
-    for (const ref of [unit.unit_assessment_v2?.listening?.audio_file]) {
+    for (const ref of [unit.unit_assessment_v2?.listening?.audio_file, ...(unit.expanded_listenings ?? []).map((item) => item.audio_file)]) {
       if (ref && !files[ref]) throw new Error(`${path}: missing ${ref}`);
       if (ref) referencedAudio.add(ref);
     }
@@ -66,6 +92,7 @@ const packs = paths.map((path) => {
   }
   const audio = Object.entries(files).filter(([name]) => name.startsWith("audio/") && name.endsWith(".mp3"));
   if (spec.replace && (audio.length !== 53 || referencedAudio.size !== 53)) throw new Error(`${path}: expected 53 referenced audio files, got ${audio.length}/${referencedAudio.size}`);
+  if (spec.advancedV2 && (audio.length !== 36 || referencedAudio.size !== 36)) throw new Error(`${path}: expected 36 referenced audio files, got ${audio.length}/${referencedAudio.size}`);
   console.log(JSON.stringify({ path, course: course.course_id, units: course.units.length, lessons: lessonIds.size, starter: course.intro_modules?.length ?? 0, audio: audio.length, mode: apply ? "publish" : "dry run" }));
   return { files, course, spec, audio };
 });
@@ -106,9 +133,21 @@ function packageContent(lesson, audioUrl, warning, unitSlug, courseSlug) {
     pronunciation_focus: lesson.pronunciation_focus ?? lesson.focus,
     rubric: rubricRows(lesson.rubric), assessment_slug: `${unitSlug}-check`, course_slug: courseSlug };
 }
-function v2Content(lesson, audioUrl, audioUrls, warning, unitSlug, courseSlug) {
+function v2Content(lesson, audioUrl, audioUrls, warning, unitSlug, courseSlug, unit) {
   return { ...packageContent(lesson, audioUrl, warning, unitSlug, courseSlug),
-    audios: lesson.audios?.map((item) => ({ ...item, audio_url: audioUrls[item.audio_file] ?? "" })) };
+    audios: lesson.audios?.map((item) => ({ ...item, audio_url: audioUrls[item.audio_file] ?? "" })),
+    ...(unit?.expanded_readings && lesson.type === "reading" ? { passages: [{ id: `${unit.unit_id}-reading-1`, title: lesson.passage_title, text: lesson.passage, questions: lesson.activities }, ...unit.expanded_readings.map((item, index) => ({
+      id: `${unit.unit_id}-reading-${index + 2}`, title: item.title,
+      text: item.paragraphs.map((paragraph) => `${paragraph.label}. ${paragraph.text}`).join("\n\n"),
+      questions: item.questions, strategy: item.strategy,
+    }))] } : {}),
+    ...(unit?.expanded_listenings && lesson.type === "listening" ? { audios: [{ id: `${unit.unit_id}-listening-1`, title: lesson.title, script: lesson.transcript, audio_url: audioUrl, questions: lesson.activities }, ...unit.expanded_listenings.map((item, index) => ({
+      id: `${unit.unit_id}-listening-${index + 2}`, title: item.title, script: item.transcript,
+      audio_url: audioUrls[item.audio_file] ?? "", questions: item.questions, strategies: item.strategies,
+    }))] } : {}),
+    ...(unit?.essay_task2 && lesson.type === "writing" ? { advanced_essay: unit.essay_task2, language_upgrade: unit.language_upgrade } : {}),
+    ...(unit?.speaking_extensions && lesson.type === "speaking" ? { speaking_extensions: unit.speaking_extensions } : {}),
+  };
 }
 function materialFor(lesson, audioUrl) {
   const figure = { url: "", alt: "" };
@@ -178,7 +217,7 @@ for (const { course, spec, audio } of packs) {
       success(await db.from("lesson_materials").upsert({ lesson_id: lessonRow.id, content: materialFor(lesson, audioUrls[lesson.audio_file] ?? "") },
         { onConflict: "lesson_id" }), `material ${slug}`);
       success(await db.from("package_lesson_content").upsert({ lesson_id: lessonRow.id,
-        content: spec.replace ? v2Content(lesson, audioUrls[lesson.audio_file] ?? "", audioUrls, warning, unitSlug, spec.slug)
+        content: (spec.replace || spec.advancedV2) ? v2Content(lesson, audioUrls[lesson.audio_file] ?? "", audioUrls, warning, unitSlug, spec.slug, spec.advancedV2 ? unit : undefined)
           : packageContent(lesson, audioUrls[lesson.audio_file] ?? "", warning, unitSlug, spec.slug) }, { onConflict: "lesson_id" }), `package ${slug}`);
       if (lesson.type === "vocabulary") {
         const combined = spec.replace ? [...lesson.vocabulary, ...(lesson.expansion_words ?? [])] : lesson.vocabulary;
@@ -198,7 +237,8 @@ for (const { course, spec, audio } of packs) {
     }
     success(await db.from("package_assessments").upsert({ course_id: courseRow.id, unit_id: unitRow.id,
       slug: `${unitSlug}-check`, title: (unit.unit_assessment_v2 ?? unit.unit_assessment).title,
-      content: spec.replace ? { ...unit.unit_assessment_v2, listening: { ...unit.unit_assessment_v2.listening,
+      content: spec.advancedV2 ? { ...unit.unit_assessment_v2, review: unit.unit_review, stage_warning: warning, v2: true }
+        : spec.replace ? { ...unit.unit_assessment_v2, listening: { ...unit.unit_assessment_v2.listening,
         audio_url: audioUrls[unit.unit_assessment_v2.listening.audio_file] ?? "" }, review: unit.unit_review,
         goal_vi: unit.goal_vi, stage_warning: warning, v2: true }
         : { ...unit.unit_assessment, review: unit.unit_review, stage_warning: warning }, published: true },
@@ -208,7 +248,7 @@ for (const { course, spec, audio } of packs) {
   }
   success(await db.from("package_assessments").upsert({ course_id: courseRow.id, unit_id: null,
     slug: `${spec.prefix}-final-check`, title: course.final_assessment.title,
-    content: spec.replace ? { ...course.final_assessment_v2, title: course.final_assessment.title,
+    content: (spec.replace || spec.advancedV2) ? { ...course.final_assessment_v2, title: course.final_assessment.title,
       listening: course.final_assessment_v2.listening.map((item) => ({ ...item, audio_url: audioUrls[item.audio_file] ?? "" })),
       stage_warning: warning, v2: true }
       : { ...course.final_assessment, listening: { ...course.final_assessment.listening,
@@ -228,6 +268,14 @@ for (const { course, spec, audio } of packs) {
       .filter((item) => item.id).map((item) => `${obsoletePath}/${item.name}`);
     if (obsoleteFiles.length) success(await db.storage.from("lesson-media").remove(obsoleteFiles), "remove old Foundation audio");
     console.log(`Removed ${obsoleteFiles.length} obsolete Foundation audio files`);
+  }
+  if (spec.advancedV2) {
+    const folder = `course-packages/${spec.prefix}`;
+    const currentAudio = new Set(audio.map(([path]) => path.slice("audio/".length)));
+    const oldAudio = success(await db.storage.from("lesson-media").list(folder, { limit: 1000 }), "list Advanced audio")
+      .filter((item) => item.id && !currentAudio.has(item.name)).map((item) => `${folder}/${item.name}`);
+    if (oldAudio.length) success(await db.storage.from("lesson-media").remove(oldAudio), "remove obsolete Advanced audio");
+    console.log(`Removed ${oldAudio.length} obsolete Advanced audio files`);
   }
   console.log(JSON.stringify({ published: spec.slug, lessons: count, audio: audio.length, assessments: spec.units + 1, replaced: spec.replace ?? [] }));
 }
