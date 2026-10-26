@@ -7,7 +7,7 @@ import { Sticker } from "@/components/stickers/stickers";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { LofiPlayer } from "./lofi";
-import { liveStreams } from "./live-streams";
+import { liveStreams, savedStream, saveStream, STREAM_EVENT } from "./live-streams";
 import { useStudyPresence, type StudyRoomMessage } from "./study-presence";
 
 type Message = StudyRoomMessage;
@@ -44,6 +44,13 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
   const [videoMode, setVideoMode] = useState<"youtube" | "harry">("youtube");
   const [streamId, setStreamId] = useState<string>(liveStreams[0].id);
   const selectedStream = liveStreams.find((stream) => stream.id === streamId) ?? liveStreams[0];
+  // Open with the stream picked last time, here or on the dashboard card.
+  useEffect(() => {
+    const sync = () => setStreamId(savedStream().id);
+    sync();
+    window.addEventListener(STREAM_EVENT, sync);
+    return () => window.removeEventListener(STREAM_EVENT, sync);
+  }, []);
   const [volume, setVolume] = useState(65);
   const [focusMinutes, setFocusMinutes] = useState(25);
   const [secondsLeft, setSecondsLeft] = useState(25 * 60);
@@ -137,6 +144,7 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
 
   async function selectStream(id: string) {
     setStreamId(id);
+    saveStream(id);
     await selectVideo("youtube");
   }
 

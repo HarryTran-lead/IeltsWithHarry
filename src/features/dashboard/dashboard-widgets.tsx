@@ -3,8 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Clock3, Newspaper, UsersRound } from "lucide-react";
-import { Sticker } from "@/components/stickers/stickers";
+import { ArrowRight, ChevronRight, Clock3, Newspaper, Play, UsersRound } from "lucide-react";
+import { liveStreams, liveThumbnail, savedStream, saveStream, STREAM_EVENT, type LiveStream } from "@/features/study-room/live-streams";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { useStudyPresence } from "@/features/study-room/study-presence";
 import { createClient } from "@/lib/supabase/browser";
@@ -53,7 +53,18 @@ export function LatestNews() {
 
 /** Live study room at a glance: who is studying, the latest chat lines and a one-tap join. */
 export function StudyRoomCard() {
-  const { online, status, studySeconds } = useStudyPresence();
+  const { online, status, studySeconds, sessionActive } = useStudyPresence();
+  const [stream, setStream] = useState<LiveStream>(liveStreams[0]);
+  // A new frame from the broadcast every few minutes while the dashboard is open.
+  const [frame, setFrame] = useState(() => Math.floor(Date.now() / 300000));
+  useEffect(() => {
+    const sync = () => setStream(savedStream());
+    const raf = requestAnimationFrame(sync);
+    const timer = window.setInterval(() => setFrame(Math.floor(Date.now() / 300000)), 300000);
+    window.addEventListener(STREAM_EVENT, sync);
+    window.addEventListener("storage", sync);
+    return () => { cancelAnimationFrame(raf); window.clearInterval(timer); window.removeEventListener(STREAM_EVENT, sync); window.removeEventListener("storage", sync); };
+  }, []);
   const db = useMemo(() => (liveMode ? createClient() : null), []);
   const [messages, setMessages] = useState<RoomMessage[]>([]);
   useEffect(() => {
@@ -69,9 +80,15 @@ export function StudyRoomCard() {
       <span className={`dash-room-live ${status === "live" ? "is-live" : ""}`}><i /> Phòng cùng học</span>
       <span className="dash-room-online"><UsersRound size={15} /> <b>{online ?? "…"}</b> đang học</span>
     </div>
-    <div className="dash-room-body">
-      <Sticker name="coffee" size={52} tilt={-8} float />
-      <div><strong>Học cùng mọi người</strong><p>Nhạc lofi, đồng hồ học và chat cùng bạn học.</p></div>
+    <Link href="/app/study-together" className="dash-room-stream" aria-label={`Vào phòng học với livestream ${stream.title} của ${stream.channel}`}>
+      <Image key={`${stream.id}-${frame}`} src={liveThumbnail(stream.id, frame)} alt="" fill sizes="(max-width: 700px) 100vw, 360px" unoptimized />
+      <span className="dash-room-onair"><i /> {sessionActive ? "Đang phát" : "Live"}</span>
+      <span className="dash-room-play" aria-hidden="true"><Play size={18} fill="currentColor" /></span>
+      <span className="dash-room-stream-meta"><strong>{stream.emoji} {stream.title}</strong><small>{stream.channel} · {stream.description}</small></span>
+    </Link>
+    <div className="dash-room-streams" role="group" aria-label="Chọn livestream">
+      {liveStreams.map((item) => <button key={item.id} type="button" aria-pressed={item.id === stream.id} title={`${item.channel} · ${item.title}`} onClick={() => saveStream(item.id)}>
+        <span aria-hidden="true">{item.emoji}</span>{item.title}</button>)}
     </div>
     {messages.length > 0 && <ul className="dash-room-chat" aria-label="Tin nhắn mới trong phòng">
       {messages.map((item) => <li key={item.id}><span aria-hidden="true">{item.display_name.slice(0, 1).toUpperCase()}</span><p><b>{item.display_name}</b> {item.body}</p></li>)}

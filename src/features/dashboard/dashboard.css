@@ -41,6 +41,21 @@
 .dash-room-body { display: flex; align-items: center; gap: 12px; }
 .dash-room-body strong { color: var(--navy); font-size: 16px; }
 .dash-room-body p { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
+.dash-room-stream { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 14px; background: #1b2433; color: #fff; isolation: isolate; }
+.dash-room-stream img { object-fit: cover; transition: scale 0.5s var(--ease-out); }
+.dash-room-stream:hover img { scale: 1.04; }
+.dash-room-stream::after { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(10, 18, 30, 0.1) 40%, rgba(10, 18, 30, 0.82)); }
+.dash-room-onair { position: absolute; top: 10px; left: 10px; z-index: 1; display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 6px; background: #e11d2e; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.dash-room-onair i { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: room-pulse 1.6s ease-out infinite; }
+.dash-room-play { position: absolute; top: 50%; left: 50%; z-index: 1; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: rgba(255, 255, 255, 0.92); color: #e11d2e; translate: -50% -60%; transition: scale 0.3s var(--ease-spring); }
+.dash-room-stream:hover .dash-room-play { scale: 1.1; }
+.dash-room-stream-meta { position: absolute; right: 12px; bottom: 10px; left: 12px; z-index: 1; display: grid; gap: 1px; }
+.dash-room-stream-meta strong { overflow: hidden; font-size: 14.5px; text-overflow: ellipsis; white-space: nowrap; }
+.dash-room-stream-meta small { overflow: hidden; color: rgba(255, 255, 255, 0.8); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.dash-room-streams { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.dash-room-streams button { display: inline-flex; flex: none; align-items: center; gap: 5px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 99px; background: #fff; color: var(--muted); font-size: 12px; font-weight: 700; white-space: nowrap; transition: border-color 0.2s, color 0.2s; }
+.dash-room-streams button:hover { border-color: #f0c79a; color: var(--navy); }
+.dash-room-streams button[aria-pressed="true"] { border-color: #f5a35c; background: #fff1e2; color: #9a4a0c; }
 .dash-room-chat { display: grid; gap: 6px; margin: 0; padding: 8px 10px; border: 1px dashed #f0d6b2; border-radius: 12px; background: rgba(255, 255, 255, 0.85); list-style: none; }
 .dash-room-chat li { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .dash-room-chat span { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-strong); font-size: 11px; font-weight: 800; }
@@ -57,4 +72,4 @@
   .dash-news-grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; }
   .dash-news-card { scroll-snap-align: start; }
 }
-@media (prefers-reduced-motion: reduce) { .dash-room-live.is-live i { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .dash-room-live.is-live i, .dash-room-onair i { animation: none; } }

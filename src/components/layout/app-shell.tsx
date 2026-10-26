@@ -355,7 +355,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                   <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b>
                   <span>{label}</span>
                   {href === "/app/study-together" && <span className="study-nav-count" aria-label={`${studyOnline ?? "Đang kết nối"} người đang học trực tiếp`}><i />{studyOnline ?? "…"}</span>}
-                  {href === "/app/news" && newsUnread > 0 && <span className="study-nav-count news-nav-count" aria-label={`${newsUnread} tin mới`}>{newsUnread > 99 ? "99+" : newsUnread}</span>}
+                  {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
                 </Link>
               ))}
             </div>

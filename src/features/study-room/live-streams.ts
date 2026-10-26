@@ -32,3 +32,23 @@ export const liveStreams = [
     color: "sky",
   },
 ] as const;
+
+export type LiveStream = (typeof liveStreams)[number];
+const STREAM_KEY = "ieltswithharry-study-stream";
+export const STREAM_EVENT = "study-stream-change";
+
+/** The livestream this learner last picked, so the dashboard shows what the room will play. */
+export function savedStream(): LiveStream {
+  try {
+    const id = localStorage.getItem(STREAM_KEY);
+    return liveStreams.find((stream) => stream.id === id) ?? liveStreams[0];
+  } catch { return liveStreams[0]; }
+}
+export function saveStream(id: string) {
+  try { localStorage.setItem(STREAM_KEY, id); } catch { /* The choice stays for this visit. */ }
+  window.dispatchEvent(new Event(STREAM_EVENT));
+}
+/** YouTube's frame from a running broadcast; `version` refreshes it. */
+export function liveThumbnail(id: string, version: number) {
+  return `https://i.ytimg.com/vi/${id}/hqdefault_live.jpg?v=${version}`;
+}
