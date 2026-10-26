@@ -16,6 +16,15 @@ const lineTones = ["teal", "lavender", "coral", "sky", "sun", "mint"] as const;
 
 type PathLesson = StageCourse["units"][number]["lessons"][number];
 
+/** Whether the course has unit and final checks, and the final check's slug. */
+export function courseChecks(course: StageCourse) {
+  const packagePrefix = course.slug.match(/^(foundationv2|preielts|mindsetstarter|mindsetbuilder|mindsetadvanced)-/)?.[1];
+  return {
+    hasChecks: Boolean(packagePrefix) || course.stage_id === "foundation" || course.stage_id === "elementary",
+    finalCheckSlug: `${packagePrefix ?? course.stage_id}-final-check`,
+  };
+}
+
 /**
  * The course as a study "metro map": every unit is a coloured line, every
  * lesson a station with its full title, the next lesson is marked
@@ -28,9 +37,7 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
   const activeUnitId = selectedUnitId ?? current?.unit_id ?? course.units[0]?.id;
   const total = lessons.length;
   const finished = lessons.filter(isDone).length;
-  const packagePrefix = course.slug.match(/^(foundationv2|preielts|mindsetstarter|mindsetbuilder|mindsetadvanced)-/)?.[1];
-  const hasChecks = Boolean(packagePrefix) || course.stage_id === "foundation" || course.stage_id === "elementary";
-  const finalCheckSlug = `${packagePrefix ?? course.stage_id}-final-check`;
+  const { hasChecks, finalCheckSlug } = courseChecks(course);
 
   return <div className="study-map-journey">
     <div className="study-chapters" aria-label="Chọn chặng học">{course.units.map((unit) => {

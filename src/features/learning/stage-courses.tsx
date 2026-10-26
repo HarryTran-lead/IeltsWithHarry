@@ -2,13 +2,14 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, Map as MapIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
 import { stages } from "@/lib/demo-data";
 import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
-import { LessonPath } from "./learning-path";
+import { courseChecks, LessonPath } from "./learning-path";
+import { CourseBook } from "./course-book";
 
 type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: string; summary: string; sort_order: number };
 type Unit = { id: string; course_id: string; slug: string; title: string; sort_order: number; lessons: Lesson[] };
@@ -63,7 +64,28 @@ export function StageLessons({ stageId, courses, loading, error }: { stageId: st
   if (!stageCourses.length) return <section className="card section-card stage-lessons-empty"><h2>Bài học của chặng {stage?.name ?? ""}</h2><p>Chặng này đang được biên soạn. Bạn có thể luyện các kỹ năng bên dưới trong lúc chờ.</p></section>;
 
   const isDone = (lesson: Lesson) => done.has(lesson.slug) || opened.has(`/app/lesson/${lesson.slug}`);
-  return <>{stageCourses.map((course) => <LessonPath key={course.id} course={course} isDone={isDone} />)}</>;
+  return <CourseViews courses={stageCourses} isDone={isDone} />;
+}
+
+type CourseView = "book" | "map";
+
+/** Shows each course as a 3D coursebook (default) or as the study map; the choice is remembered. */
+function CourseViews({ courses, isDone }: { courses: StageCourse[]; isDone: (lesson: Lesson) => boolean }) {
+  // Only rendered after courses load in the browser, so storage can be read up front.
+  const [view, setView] = useState<CourseView>(() => {
+    try { return window.localStorage.getItem("course-view") === "map" ? "map" : "book"; } catch { return "book"; }
+  });
+  function choose(next: CourseView) {
+    setView(next);
+    try { window.localStorage.setItem("course-view", next); } catch { /* storage may be blocked */ }
+  }
+  const switcher = <div className="course-view-switch" role="group" aria-label="Kiểu hiển thị khóa học">
+    <button type="button" aria-pressed={view === "book"} onClick={() => choose("book")}><BookOpen size={15} /> Sách</button>
+    <button type="button" aria-pressed={view === "map"} onClick={() => choose("map")}><MapIcon size={15} /> Bản đồ</button>
+  </div>;
+  return <>{courses.map((course) => view === "book"
+    ? <CourseBook key={course.id} course={course} isDone={isDone} {...courseChecks(course)} toolbarStart={switcher} />
+    : <div key={course.id} className="course-map-view">{switcher}<LessonPath course={course} isDone={isDone} /></div>)}</>;
 }
 
 /** On the Learn overview: one compact card per published course, linking to its stage. */
