@@ -13,7 +13,7 @@ type Entry = {
   source_id: string; headword: string; pos: string; cefr: string; study_lane: string;
   topics: string[]; topic_basis: string; definition_en: string; example_en: string; meaning_vi: string;
   source_definition_en: string; source_example_en: string;
-  source_name: string; source_url: string; published: boolean; reviewed_topic: string;
+  source_name: string; source_url: string; published: boolean; student_visible: boolean; reviewed_topic: string;
 };
 const cefrLevels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 const pageSize = 24;
@@ -28,6 +28,7 @@ export function VocabularyBank() {
   const [total, setTotal] = useState(0);
   const [allCount, setAllCount] = useState(0);
   const [liveCount, setLiveCount] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(0);
   const [query, setQuery] = useState("");
   const [level, setLevel] = useState("all");
   const [topic, setTopic] = useState("all");
@@ -44,21 +45,25 @@ export function VocabularyBank() {
 
   const load = useCallback(async () => {
     let request = db.from("vocabulary_bank_entries")
-      .select("source_id,headword,pos,cefr,study_lane,topics,topic_basis,reviewed_topic,definition_en,example_en,source_definition_en,source_example_en,meaning_vi,source_name,source_url,published", { count: "exact" })
+      .select("source_id,headword,pos,cefr,study_lane,topics,topic_basis,reviewed_topic,definition_en,example_en,source_definition_en,source_example_en,meaning_vi,source_name,source_url,published,student_visible", { count: "exact" })
       .order("headword").range(page * pageSize, (page + 1) * pageSize - 1);
     if (query.trim()) request = request.ilike("headword", "%" + query.trim().replace(/[%,]/g, "") + "%");
     if (level !== "all") request = request.eq("study_lane", level);
     if (topic !== "all") request = request.contains("topics", [topic]);
-    if (status !== "all") request = request.eq("published", status === "published");
-    const [result, count, live] = await Promise.all([
+    if (status === "reviewed") request = request.eq("published", true);
+    if (status === "reference") request = request.eq("student_visible", true).eq("published", false);
+    if (status === "private") request = request.eq("student_visible", false).eq("published", false);
+    const [result, count, live, visible] = await Promise.all([
       request,
       db.from("vocabulary_bank_entries").select("source_id", { count: "exact", head: true }),
       db.from("vocabulary_bank_entries").select("source_id", { count: "exact", head: true }).eq("published", true),
+      db.from("vocabulary_bank_entries").select("source_id", { count: "exact", head: true }).eq("student_visible", true),
     ]);
     if (result.error) setError(result.error.message);
     else { setEntries((result.data ?? []) as Entry[]); setTotal(result.count ?? 0); }
     if (!count.error) setAllCount(count.count ?? 0);
     if (!live.error) setLiveCount(live.count ?? 0);
+    if (!visible.error) setVisibleCount(visible.count ?? 0);
   }, [db, query, level, topic, status, page]);
   useEffect(() => { void Promise.resolve().then(load); }, [load]);
 
@@ -101,7 +106,7 @@ export function VocabularyBank() {
           topic_basis: row.topic_basis ?? "", source_definition_en: row.definition_en ?? "",
           source_example_en: row.example_en ?? "", source_name: row.source,
           source_url: row.source_url ?? "", definition_source_url: row.definition_source_url ?? "",
-          definition_status: row.definition_status ?? "",
+          definition_status: row.definition_status ?? "", student_visible: true,
         }));
         // Editorial fields are omitted so a repeated import keeps review work intact.
         const result = await db.from("vocabulary_bank_entries").upsert(batch, { onConflict: "source_id" });
@@ -110,7 +115,7 @@ export function VocabularyBank() {
         setProgress(completed);
       }
       setUpload([]);
-      setNotice("Đã nhập " + completed.toLocaleString("vi-VN") + " dòng. Từ mới là bản nháp; từ đã duyệt giữ nguyên trạng thái.");
+      setNotice("Đã nhập và mở cho học viên " + completed.toLocaleString("vi-VN") + " từ nguồn. Phần nghĩa Việt vẫn cần duyệt trước khi xuất bản bài học.");
       await load();
     } catch (cause) {
       setError("Dừng sau " + completed.toLocaleString("vi-VN") + " dòng: " + (cause instanceof Error ? cause.message : "lỗi không rõ") + ". Chọn lại cùng file để tiếp tục.");
@@ -132,13 +137,13 @@ export function VocabularyBank() {
   }
 
   return <div className="vbank-admin">
-    <section className="card vbank-intro"><div><span className="eyebrow">ENGLISH REFERENCE → IELTS EDITORIAL</span><h2>Kho từ vựng tiếng Anh</h2><p>ZIP đã được chia 36 topic và Level 1–7+. Đây là lộ trình học nội bộ, không phải band IELTS của từng từ. CEFR gốc được giữ để đối chiếu; admin kiểm tra nghĩa theo ngữ cảnh trước khi xuất bản.</p></div><div className="vbank-counts"><span><strong>{allCount.toLocaleString("vi-VN")}</strong> đã nhập</span><span><strong>{liveCount.toLocaleString("vi-VN")}</strong> đã duyệt</span></div></section>
-    <section className="card vbank-import"><h2>Nhập / cập nhật</h2><p>Tải ZIP đã nhận hoặc file <code>catalog/vocabulary_all.csv</code>. Nhập lại cùng source_id sẽ cập nhật dữ liệu nguồn và giữ nguyên phần đã biên tập.</p><label className="vbank-file">Chọn ZIP hoặc CSV<input type="file" accept=".zip,.csv" disabled={importing} onChange={(event) => void choose(event.target.files?.[0])} /></label>
+    <section className="card vbank-intro"><div><span className="eyebrow">ENGLISH REFERENCE → IELTS EDITORIAL</span><h2>Kho từ vựng tiếng Anh</h2><p>ZIP đã được chia 36 topic và Level 1–7+. Đây là lộ trình học nội bộ, không phải band IELTS của từng từ. CEFR gốc được giữ để đối chiếu; học viên xem kho nguồn ngay; admin kiểm tra nghĩa theo ngữ cảnh trước khi xuất bản bản có nghĩa Việt.</p></div><div className="vbank-counts"><span><strong>{allCount.toLocaleString("vi-VN")}</strong> đã nhập</span><span><strong>{visibleCount.toLocaleString("vi-VN")}</strong> học viên xem được</span><span><strong>{liveCount.toLocaleString("vi-VN")}</strong> đã duyệt nghĩa</span></div></section>
+    <section className="card vbank-import"><h2>Nhập / cập nhật</h2><p>Tải ZIP đã nhận hoặc file <code>catalog/vocabulary_all.csv</code>. Nhập lại cùng source_id sẽ cập nhật dữ liệu nguồn, mở từ cho học viên và giữ nguyên phần đã biên tập.</p><label className="vbank-file">Chọn ZIP hoặc CSV<input type="file" accept=".zip,.csv" disabled={importing} onChange={(event) => void choose(event.target.files?.[0])} /></label>
       {fileName && <p className="vbank-muted">{fileName} · {upload.length.toLocaleString("vi-VN")} dòng hợp lệ</p>}
-      {upload.length > 0 && <><div className="vbank-preview">{upload.slice(0, 3).map((row) => <span key={row.source_id}><strong>{row.headword}</strong> · {row.study_lane} · {row.topics}</span>)}</div><button className="button primary" disabled={importing} onClick={() => void importRows()}>{importing ? "Đang nhập " + progress.toLocaleString("vi-VN") + " / " + upload.length.toLocaleString("vi-VN") : "Nhập vào kho nháp"}</button></>}
+      {upload.length > 0 && <><div className="vbank-preview">{upload.slice(0, 3).map((row) => <span key={row.source_id}><strong>{row.headword}</strong> · {row.study_lane} · {row.topics}</span>)}</div><button className="button primary" disabled={importing} onClick={() => void importRows()}>{importing ? "Đang nhập " + progress.toLocaleString("vi-VN") + " / " + upload.length.toLocaleString("vi-VN") : "Nhập và mở kho nguồn"}</button></>}
     </section>
-    <section className="card vbank-browser"><div className="vbank-heading"><h2>Rà soát & xuất bản</h2><span>{total.toLocaleString("vi-VN")} kết quả</span></div><div className="vbank-filters"><input aria-label="Tìm từ" placeholder="Tìm headword…" value={query} onChange={(event) => { setPage(0); setQuery(event.target.value); }} /><select aria-label="Lọc level học" value={level} onChange={(event) => { setPage(0); setLevel(event.target.value); }}><option value="all">Mọi level</option>{studyLevels.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Lọc topic" value={topic} onChange={(event) => { setPage(0); setTopic(event.target.value); }}><option value="all">Mọi topic</option>{sourceTopics.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Lọc trạng thái" value={status} onChange={(event) => { setPage(0); setStatus(event.target.value); }}><option value="all">Mọi trạng thái</option><option value="draft">Nháp</option><option value="published">Đã xuất bản</option></select></div>
-      <div className="vbank-list">{entries.map((entry) => <button className="vbank-row" key={entry.source_id} onClick={() => { setSelected(entry); setDefinition(entry.definition_en || entry.source_definition_en); setExample(entry.example_en || entry.source_example_en); setMeaning(entry.meaning_vi); setReviewedTopic(entry.reviewed_topic || entry.topics.find((topic) => sourceTopics.includes(topic)) || ""); setError(""); }}><span><strong>{entry.headword}</strong><small>{entry.pos} · {entry.study_lane} · {entry.reviewed_topic || entry.topics.join(", ") || "General"}</small></span><span className={entry.published ? "status-pill live" : "status-pill draft"}>{entry.published ? "Đã xuất bản" : "Nháp"}</span></button>)}{!entries.length && <p className="vbank-muted">Chưa có từ khớp bộ lọc.</p>}</div><div className="vbank-pages"><button className="button subtle" disabled={page === 0} onClick={() => setPage(page - 1)}>← Trước</button><span>Trang {page + 1} / {Math.max(1, Math.ceil(total / pageSize))}</span><button className="button subtle" disabled={(page + 1) * pageSize >= total} onClick={() => setPage(page + 1)}>Sau →</button></div>
+    <section className="card vbank-browser"><div className="vbank-heading"><h2>Rà soát & xuất bản</h2><span>{total.toLocaleString("vi-VN")} kết quả</span></div><div className="vbank-filters"><input aria-label="Tìm từ" placeholder="Tìm headword…" value={query} onChange={(event) => { setPage(0); setQuery(event.target.value); }} /><select aria-label="Lọc level học" value={level} onChange={(event) => { setPage(0); setLevel(event.target.value); }}><option value="all">Mọi level</option>{studyLevels.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Lọc topic" value={topic} onChange={(event) => { setPage(0); setTopic(event.target.value); }}><option value="all">Mọi topic</option>{sourceTopics.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Lọc trạng thái" value={status} onChange={(event) => { setPage(0); setStatus(event.target.value); }}><option value="all">Mọi trạng thái</option><option value="reference">Kho nguồn đã mở</option><option value="reviewed">Đã duyệt nghĩa</option><option value="private">Chưa mở</option></select></div>
+      <div className="vbank-list">{entries.map((entry) => <button className="vbank-row" key={entry.source_id} onClick={() => { setSelected(entry); setDefinition(entry.definition_en || entry.source_definition_en); setExample(entry.example_en || entry.source_example_en); setMeaning(entry.meaning_vi); setReviewedTopic(entry.reviewed_topic || entry.topics.find((topic) => sourceTopics.includes(topic)) || ""); setError(""); }}><span><strong>{entry.headword}</strong><small>{entry.pos} · {entry.study_lane} · {entry.reviewed_topic || entry.topics.join(", ") || "General"}</small></span><span className={entry.published || entry.student_visible ? "status-pill live" : "status-pill draft"}>{entry.published ? "Đã duyệt nghĩa" : entry.student_visible ? "Học viên xem được · chưa duyệt nghĩa" : "Chưa mở"}</span></button>)}{!entries.length && <p className="vbank-muted">Chưa có từ khớp bộ lọc.</p>}</div><div className="vbank-pages"><button className="button subtle" disabled={page === 0} onClick={() => setPage(page - 1)}>← Trước</button><span>Trang {page + 1} / {Math.max(1, Math.ceil(total / pageSize))}</span><button className="button subtle" disabled={(page + 1) * pageSize >= total} onClick={() => setPage(page + 1)}>Sau →</button></div>
     </section>
     {selected && <section className="card vbank-editor"><div className="vbank-heading"><div><span className="eyebrow">DUYỆT NGHĨA TRƯỚC KHI ĐĂNG</span><h2>{selected.headword} <small>{selected.pos} · {selected.study_lane}</small></h2></div><button className="button subtle" onClick={() => setSelected(null)}>Đóng</button></div><p className="vbank-muted">Nguồn: <a href={selected.source_url} target="_blank" rel="noopener noreferrer">{selected.source_name}</a> · CEFR nguồn {selected.cefr}. Level học là tham khảo, không phải band IELTS của từ.</p><p className="vbank-muted">Căn cứ topic nguồn: {selected.topic_basis}. Topic tự động chưa được duyệt cho bài IELTS.</p>{selected.source_definition_en && <p className="vbank-example">Định nghĩa nguồn (cần kiểm tra ngữ cảnh): {selected.source_definition_en}</p>}{selected.source_example_en && <p className="vbank-example">Ví dụ nguồn: {selected.source_example_en}</p>}<label>Định nghĩa tiếng Anh đã kiểm tra<textarea rows={3} value={definition} onChange={(event) => setDefinition(event.target.value)} /></label><label>Nghĩa tiếng Việt do admin biên soạn<input maxLength={300} value={meaning} onChange={(event) => setMeaning(event.target.value)} placeholder="Nghĩa phù hợp với ngữ cảnh" /></label><label>Topic đã kiểm tra<select value={reviewedTopic} onChange={(event) => setReviewedTopic(event.target.value)}><option value="">Chọn topic</option>{sourceTopics.map((topic) => <option key={topic}>{topic}</option>)}</select></label><label>Ví dụ đã kiểm tra<textarea rows={2} value={example} onChange={(event) => setExample(event.target.value)} /></label><div className="vbank-actions"><button className="button subtle" disabled={busy} onClick={() => void save(false)}>Lưu nháp</button><button className="button primary" disabled={busy || !definition.trim() || !meaning.trim() || !reviewedTopic} onClick={() => void save(true)}>{selected.published ? "Lưu & giữ xuất bản" : "Duyệt & xuất bản"}</button></div></section>}
     {notice && <p className="vbank-notice" role="status">{notice}</p>}{error && <p className="form-error" role="alert">{error}</p>}
