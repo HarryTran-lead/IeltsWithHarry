@@ -225,6 +225,15 @@ describe("illustration search checked by AI vision", () => {
     expect(seen.prompts[0]).toContain("photographable subject");
     expect(seen.prompts[1]).toContain("inlineData");
   });
+  it("reports an exhausted AI quota before spending more image searches", async () => {
+    let requests = 0;
+    const fetcher = (async () => {
+      requests++;
+      return new Response(JSON.stringify({ error: { details: [{ violations: [{ quotaId: "GenerateRequestsPerDayPerProjectPerModel-FreeTier" }] }] } }), { status: 429 });
+    }) as typeof fetch;
+    await expect(run(() => findNewsIllustration("Artemis spacecraft Moon mission", fetcher))).rejects.toBeInstanceOf(AiQuotaError);
+    expect(requests).toBe(1);
+  });
   it("offers attributed Openverse photos from Flickr with a small preview", async () => {
     const { fetcher, seen } = fetcherFor([], [], { best: 1, fit: 9 }, [flickr("by"), flickr("by-nc", { url: "https://live.staticflickr.com/1/3_def_b.jpg" }), flickr("by", { creator: "", url: "https://live.staticflickr.com/1/4_ghi_b.jpg" })]);
     const image = await run(() => findNewsIllustration("Concert tickets resold in Hanoi", fetcher, { query: "concert crowd" }));

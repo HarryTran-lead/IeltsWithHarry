@@ -448,7 +448,10 @@ async function findNewsIllustrationResult(title: string, fetcher: typeof fetch =
   if (!process.env.GEMINI_API_KEY) return { image: null, reason: "AI image selection is not configured" };
   // Articles quizzed before the visual subject was stored (or too short for a quiz) get one
   // from a small text request: searching by headline words alone rarely finds a fitting photo.
-  if (!query) query = await visualSubject(title, body, fetcher).catch(() => "");
+  if (!query) query = await visualSubject(title, body, fetcher).catch((cause) => {
+    if (cause instanceof AiQuotaError) throw cause;
+    return "";
+  });
   const candidates = await gatherCandidates(title, body, query, fetcher);
   if (!candidates.length) return { image: null, reason: "No licensed image matched the article search" };
   const previews = (await Promise.all(candidates.map(async (candidate) => ({ candidate, image: await previewData(candidate.preview, fetcher) })))).filter((entry) => entry.image);
@@ -494,10 +497,16 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
   const settings = await loadNewsSettings(db);
   const result = { imagesChecked: 0, imagesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[] };
   if (result.paused) return result;
-  // Image search and the (slower) quiz request run side by side to fit the route's time limit.
+  // On scheduled runs, give the available AI capacity to recent article images
+  // first. Quiz and rewrite work use the other ten-minute slots.
   // Loaded on demand: rewrite.ts builds on this module's quiz helpers.
   const { rewriteVietnamNews } = await import("./rewrite");
-  await Promise.all([enrichImages(db, result), enrichQuiz(db, result, settings, scheduled), rewriteVietnamNews(db, result, settings)]);
+  if (scheduled) {
+    await enrichImages(db, result);
+    if (!result.imagesChecked) await Promise.all([enrichQuiz(db, result, settings, scheduled), rewriteVietnamNews(db, result, settings)]);
+  } else {
+    await Promise.all([enrichImages(db, result), enrichQuiz(db, result, settings, scheduled), rewriteVietnamNews(db, result, settings)]);
+  }
   return result;
 }
 
@@ -528,7 +537,8 @@ async function enrichImages(db: Db, result: EnrichResult) {
     } catch (cause) {
       const message = cause instanceof Error ? cause.message : "Image lookup failed";
       result.errors.push(`Image ${article.article_id}: ${message}`);
-      await finish(db, article.article_id, "image", "error", message);
+      if (cause instanceof AiQuotaError) result.quotaLimited = true;
+      await finish(db, article.article_id, "image", "error", message, cause instanceof AiQuotaError ? cause.retryAfterMs : undefined);
     }
   }));
 }
