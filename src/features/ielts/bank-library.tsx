@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Clock3, Filter, Headphones, Mic, NotebookPen, PlayCircle, Search, ShieldCheck, X } from "lucide-react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, Filter, Headphones, Mic, NotebookPen, PlayCircle, Search, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import "./bank-library.css";
@@ -96,8 +96,8 @@ async function loadLibrary(skill: CatalogSkill) {
 }
 
 /**
- * The question bank inside a skill page: a filter sidebar (skill → practice type,
- * source, question type or Writing visual) beside a grid of exam cards with
+ * The question bank inside a skill page: a filter bar for this skill (practice
+ * type, question type or Writing visual, source) above a grid of exam cards with
  * pictures, badges and the learner's own results, paged like a library shelf.
  */
 export function BankLibrary({ skill }: { skill: CatalogSkill }) {
@@ -121,8 +121,7 @@ export function BankLibraryView({ skill, exams, attempts, loading, error }: { sk
   const [kinds, setKinds] = useState<string[]>([]);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(0);
-  const [collapsed, setCollapsed] = useState(false);
-  const [drawer, setDrawer] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const latest = useMemo(() => {
     const byExam = new Map<string, Attempt>();
@@ -157,55 +156,57 @@ export function BankLibraryView({ skill, exams, attempts, loading, error }: { sk
   const toggle = (list: string[], set: (value: string[]) => void, value: string) => { set(list.includes(value) ? list.filter((item) => item !== value) : [...list, value]); setPage(0); };
   const clearAll = () => { setSources([]); setKinds([]); setQuery(""); setPage(0); };
 
-  const sidebar = <aside className={`bl-sidebar ${drawer ? "is-open" : ""}`} aria-label="Bộ lọc ngân hàng đề">
-    <div className="bl-sidebar-head"><Filter size={17} /> <b>Bộ lọc</b>{activeFilters > 0 && <button type="button" onClick={clearAll}>Xóa lọc</button>}<button type="button" className="bl-sidebar-close" onClick={() => { setCollapsed(true); setDrawer(false); }} aria-label="Ẩn bộ lọc"><ChevronLeft size={17} /></button></div>
-    <div className="bl-promise"><ShieldCheck size={22} /><div><b>Đề đã duyệt nguồn</b><span>Luyện xong có đáp án và lưu lại bài làm.</span></div></div>
-    {catalogSkills.map((name) => {
-      const config = librarySkills[name];
-      const Icon = config.icon;
-      const here = name === skill;
-      return <section key={name} className={`bl-skill bl-tone-${config.tone} ${here ? "is-current" : ""}`}>
-        <Link href={config.href} className="bl-skill-head" aria-current={here ? "page" : undefined}><Icon size={17} /> {name}</Link>
-        <div className="bl-radios" role={here ? "radiogroup" : undefined} aria-label={here ? `Dạng bài ${name}` : undefined}>
-          {here && <label className="bl-radio"><input type="radio" name="bl-type" checked={!type} onChange={() => chooseType("")} /><span>Tất cả</span><small>{exams.length || ""}</small></label>}
-          {catalogGroups[name].map((group) => here
-            ? <label className="bl-radio" key={group.id}><input type="radio" name="bl-type" checked={type === group.id} onChange={() => chooseType(group.id)} /><span>{group.label}</span><small>{exams.filter((exam) => exam.practice_type === group.id).length || ""}</small></label>
-            : <Link key={group.id} className="bl-radio is-link" href={`${config.href}?type=${group.id}`}><i /><span>{group.label}</span></Link>)}
-        </div>
-      </section>;
-    })}
-    {sourceOptions.length > 1 && <FilterGroup title="Nguồn tài liệu">{sourceOptions.map((source) => <Check key={source} checked={sources.includes(source)} onChange={() => toggle(sources, setSources, source)} label={source} />)}</FilterGroup>}
-    {kindOptions.length > 0 && <FilterGroup title={skill === "Writing" ? "Dạng đề" : "Loại câu hỏi"}>{kindOptions.map((item) => <Check key={item.id} checked={kinds.includes(item.id)} onChange={() => toggle(kinds, setKinds, item.id)} label={item.label} count={item.count} />)}</FilterGroup>}
-  </aside>;
+  const counted = (id: string) => exams.filter((exam) => exam.practice_type === id).length;
+  const activeChips = [
+    ...kinds.map((value) => ({ value: kindOptions.find((item) => item.id === value)?.label ?? value, clear: () => toggle(kinds, setKinds, value) })),
+    ...sources.map((value) => ({ value, clear: () => toggle(sources, setSources, value) })),
+  ];
 
-  return <section className={`bl-library bl-tone-${librarySkills[skill].tone} ${collapsed ? "is-collapsed" : ""}`} aria-label={`Ngân hàng đề ${skill}`}>
-    {!collapsed && sidebar}
-    {drawer && <button type="button" className="bl-drawer-backdrop" aria-label="Đóng bộ lọc" onClick={() => setDrawer(false)} />}
-    <div className="bl-main">
-      <div className="bl-toolbar">
-        {collapsed && <button type="button" className="bl-show-filters" onClick={() => setCollapsed(false)}><Filter size={16} /> Bộ lọc{activeFilters ? ` · ${activeFilters}` : ""}</button>}
-        <button type="button" className="bl-mobile-filters" onClick={() => { setCollapsed(false); setDrawer(true); }}><Filter size={16} /> Bộ lọc{activeFilters ? ` · ${activeFilters}` : ""}</button>
+  return <section className={`bl-library bl-tone-${librarySkills[skill].tone}`} aria-label={`Ngân hàng đề ${skill}`}>
+    <div className="bl-filterbar">
+      <div className="bl-filter-row">
         <div className="bl-chips" role="group" aria-label="Dạng bài">
-          <button type="button" aria-pressed={!type} onClick={() => chooseType("")}>Tất cả</button>
-          {groups.filter((group) => exams.some((exam) => exam.practice_type === group.id)).map((group) => <button type="button" key={group.id} aria-pressed={type === group.id} onClick={() => chooseType(group.id)}>{group.label}</button>)}
+          <button type="button" aria-pressed={!type} onClick={() => chooseType("")}>Tất cả <b>{exams.length || ""}</b></button>
+          {groups.filter((group) => counted(group.id)).map((group) => <button type="button" key={group.id} aria-pressed={type === group.id} onClick={() => chooseType(group.id)}>{group.label} <b>{counted(group.id)}</b></button>)}
         </div>
         <label className="bl-search"><Search size={16} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder={`Tìm đề ${skill}…`} aria-label={`Tìm đề ${skill}`} /></label>
       </div>
-      {(sources.length > 0 || kinds.length > 0) && <div className="bl-active">
-        {[...sources.map((value) => ({ value, clear: () => toggle(sources, setSources, value) })), ...kinds.map((value) => ({ value: kindOptions.find((item) => item.id === value)?.label ?? value, clear: () => toggle(kinds, setKinds, value) }))].map((chip) => <button type="button" key={chip.value} onClick={chip.clear}>{chip.value} <X size={13} /></button>)}
-      </div>}
-      <p className="bl-count" role="status">{loading ? "Đang tải đề…" : error ? "" : `${ordered.length} đề phù hợp${type ? "" : " · xếp xen kẽ các dạng"}`}</p>
-      {error && <p className="bl-state" role="alert">{error}</p>}
-      {loading && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{Array.from({ length: 8 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
-      {!loading && !error && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{visible.map((exam) => <ExamCard key={exam.id} exam={exam} attempt={latest.get(exam.id)} />)}</div>}
-      {!loading && !error && !visible.length && <p className="bl-state">Chưa có đề phù hợp. Thử bỏ bớt bộ lọc.</p>}
-      {pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.querySelector(".bl-library")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
+      <div className="bl-filter-row is-secondary">
+        <span className="bl-filter-label"><Filter size={15} /> Lọc theo</span>
+        {kindOptions.length > 0 && <FilterMenu id="kinds" title={skill === "Writing" ? "Dạng đề" : "Loại câu hỏi"} count={kinds.length} open={openMenu === "kinds"} onOpen={setOpenMenu}>
+          {kindOptions.map((item) => <Check key={item.id} checked={kinds.includes(item.id)} onChange={() => toggle(kinds, setKinds, item.id)} label={item.label} count={item.count} />)}
+        </FilterMenu>}
+        {sourceOptions.length > 1 && <FilterMenu id="sources" title="Nguồn tài liệu" count={sources.length} open={openMenu === "sources"} onOpen={setOpenMenu}>
+          {sourceOptions.map((source) => <Check key={source} checked={sources.includes(source)} onChange={() => toggle(sources, setSources, source)} label={source} />)}
+        </FilterMenu>}
+        {activeChips.map((chip) => <button type="button" className="bl-active" key={chip.value} onClick={chip.clear} aria-label={`Bỏ lọc ${chip.value}`}>{chip.value} <X size={13} /></button>)}
+        {activeFilters > 0 && <button type="button" className="bl-clear" onClick={clearAll}>Xóa lọc</button>}
+        <span className="bl-count" role="status">{loading ? "Đang tải đề…" : error ? "" : `${ordered.length} đề phù hợp`}</span>
+      </div>
     </div>
+    {error && <p className="bl-state" role="alert">{error}</p>}
+    {loading && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{Array.from({ length: 8 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
+    {!loading && !error && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{visible.map((exam) => <ExamCard key={exam.id} exam={exam} attempt={latest.get(exam.id)} />)}</div>}
+    {!loading && !error && !visible.length && <p className="bl-state">Chưa có đề phù hợp. Thử bỏ bớt bộ lọc.</p>}
+    {pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.querySelector(".bl-library")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
   </section>;
 }
 
-function FilterGroup({ title, children }: { title: string; children: ReactNode }) {
-  return <details className="bl-filter" open><summary>{title}</summary><div>{children}</div></details>;
+/** A filter button that opens a checklist under it; closes on an outside click or Escape. */
+function FilterMenu({ id, title, count, open, onOpen, children }: { id: string; title: string; count: number; open: boolean; onOpen: (id: string | null) => void; children: ReactNode }) {
+  const box = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const close = (event: MouseEvent) => { if (!box.current?.contains(event.target as Node)) onOpen(null); };
+    const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onOpen(null); };
+    document.addEventListener("mousedown", close);
+    document.addEventListener("keydown", escape);
+    return () => { document.removeEventListener("mousedown", close); document.removeEventListener("keydown", escape); };
+  }, [open, onOpen]);
+  return <div ref={box} className={`bl-menu ${open ? "is-open" : ""} ${count ? "is-active" : ""}`}>
+    <button type="button" aria-expanded={open} onClick={() => onOpen(open ? null : id)}>{title}{count > 0 && <b>{count}</b>}<ChevronDown size={15} /></button>
+    {open && <div className="bl-menu-pop" role="group" aria-label={title}>{children}</div>}
+  </div>;
 }
 
 function Check({ checked, onChange, label, count }: { checked: boolean; onChange: () => void; label: string; count?: number }) {

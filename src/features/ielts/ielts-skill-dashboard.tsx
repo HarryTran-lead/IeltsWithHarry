@@ -103,7 +103,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? !mode.planned : mode.planned));
 
   const showLibrary = !demoMode && Boolean(bankSkill);
-  return <main className={`ielts-dashboard ielts-dashboard-${config.tone}`}>
+  return <main className={`ielts-dashboard ielts-dashboard-${config.tone} ${bankSkill ? "has-library" : ""}`}>
     {bankSkill && <SkillTabs skill={skill} />}
     <div className="ielts-dashboard-titlebar">
       <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
