@@ -22,7 +22,11 @@ const groups: Record<QuestionType, { title: string; instruction: string; hint: s
     instruction: "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the article for each answer." },
 };
 
-export function NewsAutoQuiz({ articleId }: { articleId: string }) {
+function isAnswered(value: number | string | undefined) {
+  return typeof value === "number" || (typeof value === "string" && value.trim() !== "");
+}
+
+export function NewsAutoQuiz({ articleId, onProgress }: { articleId: string; onProgress?: (answered: boolean[]) => void }) {
   const db = useMemo(() => createClient(), []);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<string, number | string>>({});
@@ -40,10 +44,9 @@ export function NewsAutoQuiz({ articleId }: { articleId: string }) {
     return () => { live = false; };
   }, [articleId, db]);
 
-  const answered = questions.filter((question) => {
-    const value = answers[question.id];
-    return typeof value === "number" || (typeof value === "string" && value.trim() !== "");
-  }).length;
+  const answered = questions.filter((question) => isAnswered(answers[question.id])).length;
+  // The reader's question strip shows which questions have an answer.
+  useEffect(() => { onProgress?.(questions.map((question) => isAnswered(answers[question.id]))); }, [answers, questions, onProgress]);
   const sections = useMemo(() => {
     const list: { type: QuestionType; items: { question: Question; number: number }[] }[] = [];
     questions.forEach((question, index) => {
@@ -78,7 +81,7 @@ export function NewsAutoQuiz({ articleId }: { articleId: string }) {
           const value = answers[question.id];
           const choice = question.question_type === "tfng" || question.question_type === "mcq";
           const setValue = (next: number | string) => setAnswers((current) => ({ ...current, [question.id]: next }));
-          return <div className={`news-auto-question ${review ? (review.correct ? "is-correct" : "is-wrong") : ""}`} key={question.id}>
+          return <div className={`news-auto-question ${review ? (review.correct ? "is-correct" : "is-wrong") : ""}`} key={question.id} data-q={number}>
             <strong>Câu {number}</strong>
             {question.question_type === "sentence_completion"
               ? <CompletionPrompt prompt={question.prompt} value={typeof value === "string" ? value : ""} disabled={Boolean(result)} onChange={setValue} label={`Câu ${number}`}/>

@@ -91,23 +91,13 @@ function PageIntro({
 function LearnOverview({ stageId }: { stageId?: string }) {
   const selected = stages.find((stage) => stage.id === stageId);
   const published = usePublishedCourses();
+  // No banner: the stage strip, courses and skills fit on one screen.
   return (
-    <div className="content-page">
-      <PageIntro
-        eyebrow="YOUR ROADMAP"
-        title={selected ? selected.name : "Explore your learning path"}
-        description={
-          selected
-            ? selected.description
-            : "Seven milestones from your first English words to confident IELTS practice."
-        }
-        icon="globe"
-      />
-      {selected && <StageLessons stageId={selected.id} {...published} />}
+    <div className="content-page learn-overview">
       <section className="card section-card">
         <div className="section-head">
-          <h2>Learning stages</h2>
-          <span>Milestones are guidance, not official IELTS scores.</span>
+          <h1>{selected ? `${selected.name} · ${selected.range}` : "Lộ trình học"}</h1>
+          <span>{selected ? selected.description : "7 chặng từ những từ đầu tiên đến IELTS 7.0+. Mốc band chỉ để định hướng."}</span>
         </div>
         <div className="stage-grid">
           {stages.map((stage, index) => (
@@ -136,13 +126,14 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           ))}
         </div>
       </section>
+      {selected && <StageLessons stageId={selected.id} {...published} />}
       {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}
       <section className="card section-card">
         <div className="section-head">
           <h2>
-            {selected ? `Practice in ${selected.name}` : "Choose a skill"}
+            {selected ? `Luyện thêm kỹ năng` : "Chọn kỹ năng"}
           </h2>
-          <span>Try one complete sample activity in each skill.</span>
+          <span>Mỗi kỹ năng có một hoạt động mẫu hoàn chỉnh.</span>
         </div>
         <div className="module-grid">
           {modules.map((module) => (

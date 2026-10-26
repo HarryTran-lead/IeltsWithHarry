@@ -6,13 +6,13 @@ import { compareSentence, countWords } from "@/lib/authored-content";
 import type { SkillMaterial } from "@/lib/skill-material";
 import { createClient } from "@/lib/supabase/browser";
 
-export function SkillLesson({ material, lessonSlug, answersRevealed }: { material: SkillMaterial | null; lessonSlug: string; answersRevealed: boolean }) {
+export function SkillLesson({ material, lessonSlug, answersRevealed, passageInReader = false }: { material: SkillMaterial | null; lessonSlug: string; answersRevealed: boolean; passageInReader?: boolean }) {
   if (!material) return null;
   return <div className="skill-lesson">
-    {material.figure.url && <figure className="skill-figure"><img src={material.figure.url} alt={material.figure.alt} /></figure>}
+    {material.figure.url && <figure className={`skill-figure ${material.skill === "Reading" ? "reading-figure" : ""}`}><img src={material.figure.url} alt={material.figure.alt} /></figure>}
     {material.skill === "Vocabulary" && material.introduction && <div className="lab-note"><h2>Chủ đề từ vựng</h2><p>{material.introduction}</p></div>}
     {material.skill === "Grammar" && <div className="lab-note"><h2>Quy tắc</h2><p>{material.rule}</p><p><strong>Ví dụ:</strong> {material.example}</p></div>}
-    {material.skill === "Reading" && <div className="lab-passage"><h2>Bài đọc</h2><p>{material.passage}</p></div>}
+    {material.skill === "Reading" && !passageInReader && <div className="lab-passage"><h2>Bài đọc</h2><p>{material.passage}</p></div>}
     {material.skill === "Listening" && <ListeningMaterial material={material} answersRevealed={answersRevealed} />}
     {material.skill === "Writing" && <WritingMaterial material={material} lessonSlug={lessonSlug} />}
     {material.skill === "Speaking" && <SpeakingMaterial material={material} />}
