@@ -7,7 +7,7 @@ import { createClient } from "@supabase/supabase-js";
 import { strFromU8, unzipSync } from "fflate";
 
 const packPath = resolve(process.argv.find((arg) => arg.endsWith(".zip")) ??
-  "deliverables/IeltsWithHarry_Vocabulary_Topics_Band_0-7plus.zip");
+  "deliverables/IeltsWithHarry_Vocabulary_Topics_Level_1-7plus.zip");
 const apply = process.argv.includes("--apply");
 const files = unzipSync(readFileSync(packPath), {
   filter: (file) => file.name === "catalog/vocabulary_all.jsonl",

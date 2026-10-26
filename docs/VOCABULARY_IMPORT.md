@@ -2,13 +2,15 @@
 
 ## Nguồn và giới hạn
 
-ZIP tại `deliverables/IeltsWithHarry_Vocabulary_Topics_Band_0-7plus.zip` có 9.937 bản ghi tiếng Anh. CEFR-J là wordlist **tiếng Anh** được biên soạn ở Nhật; đây không phải dữ liệu tiếng Nhật hay danh sách từ IELTS chính thức. Các nhóm band là lộ trình học do IeltsWithHarry quy ước từ CEFR. Topic tự gắn và nghĩa đầu tiên từ WordNet có thể sai ngữ cảnh.
+ZIP tại `deliverables/IeltsWithHarry_Vocabulary_Topics_Level_1-7plus.zip` có 9.937 bản ghi tiếng Anh. CEFR-J là wordlist **tiếng Anh** được biên soạn ở Nhật; đây không phải dữ liệu tiếng Nhật hay danh sách từ IELTS chính thức. Gói chia thành **32 topic** và **Level 1–7+**. Level là lộ trình học nội bộ, không phải band IELTS. Topic tự gắn và nghĩa đầu tiên từ WordNet có thể sai ngữ cảnh.
+
+Quy tắc Level: A1 → 1, A2 → 2, B1 có tần suất tiếng Anh Zipf ≥ 4,2 → 3, B1 còn lại → 4, B2 → 5, C1 → 6, C2 → 7+. Tần suất lấy từ [wordfreq](https://github.com/rspeer/wordfreq); chỉ dùng để chia nhóm B1, không suy ra điểm thi. CEFR gốc vẫn nằm trong ZIP và database để đối chiếu.
 
 Nguồn: [CEFR-J](https://www.cefr-j.org/download.html), [Octanove C1/C2 (CC BY-SA 4.0)](https://github.com/openlanguageprofiles/olp-en-cefrj), [Open English WordNet (CC BY 4.0)](https://en-word.net/downloads).
 
 ## Trạng thái kho trực tuyến
 
-Đã nhập đủ **9.937 bản ghi nguồn** vào Supabase. Học viên mở `/app/vocabulary/library` và chọn **Kho nguồn · 9.937 từ** để tìm theo từ, topic hoặc cấp độ CEFR. Đây là dữ liệu tham khảo chưa duyệt; chọn **Tra và lưu từ** để xem nghĩa trước khi thêm vào sổ. Chế độ **Bài học đã duyệt** hiện có 4 từ được biên tập riêng.
+Đã nhập đủ **9.937 bản ghi nguồn** vào Supabase. Học viên mở `/app/vocabulary/library` và chọn **Kho nguồn** để tìm theo từ, topic hoặc Level 1–7+. Đây là dữ liệu tham khảo chưa duyệt; chọn **Tra và lưu từ** để xem nghĩa trước khi thêm vào sổ. Chế độ **Từ đã duyệt** hiện có 4 từ được biên tập riêng.
 
 Database trước/sau khi nhập: khoảng 19 MB / 25 MB. ZIP nguồn vẫn giữ ở máy, không đưa vào gói triển khai Vercel. Script `scripts/import-vocabulary-bank.mjs` có thể chạy lại để cập nhật các trường nguồn, không ghi đè phần biên tập:
 
@@ -29,4 +31,4 @@ Lệnh đầu chỉ kiểm tra ZIP; lệnh `--apply` mới ghi vào Supabase. C�
 
 Nhập lại ZIP chỉ cập nhật **trường nguồn** (headword, CEFR, topic gợi ý, định nghĩa/ví dụ gợi ý, nguồn trích dẫn). Nghĩa Việt, định nghĩa/ví dụ đã duyệt, topic đã duyệt và trạng thái xuất bản được giữ nguyên. Chỉ bản ghi có nghĩa Việt, định nghĩa đã duyệt và topic đã duyệt mới được xuất bản.
 
-File `catalog/topical_candidates_for_ielts_review.csv` là danh sách ứng viên đã gắn topic để biên tập ưu tiên; không tự động xuất bản.
+File `catalog/topical_candidates_for_ielts_review.csv` là danh sách ứng viên đã gắn topic để biên tập ưu tiên; không tự động xuất bản. Các từ chưa có nhãn chủ đề đủ chắc chắn tiếp tục ở **General & Cross-topic**. Gói còn có `indexes/study_levels.csv`, `by_study_lane/` và `by_topic/` để kiểm tra từng nhóm trước khi nhập lại.

@@ -18,11 +18,12 @@ from pathlib import Path
 from urllib.parse import quote
 
 from openpyxl import load_workbook
+from wordfreq import zipf_frequency
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "deliverables" / "vocabulary-source-cache"
-OUTPUT = ROOT / "deliverables" / "IeltsWithHarry_Vocabulary_Topics_Band_0-7plus.zip"
+OUTPUT = ROOT / "deliverables" / "IeltsWithHarry_Vocabulary_Topics_Level_1-7plus.zip"
 CEFR_FILE = SOURCE / "CEFRJ_wordlist_ver1.6.zip"
 OCTANOVE_FILE = SOURCE / "octanove-vocabulary-profile-c1c2-1.0.csv"
 WORDNET_FILE = SOURCE / "english-wordnet-2025-json.zip"
@@ -35,15 +36,19 @@ SOURCE_URLS = {
     "ielts": "https://ielts.org/organisations/ielts-for-organisations/compare-ielts/ielts-and-the-cefr",
 }
 
-# Editorial study lanes, not an IELTS score or an official word-to-band mapping.
-STUDY_LANE = {
-    "A1": "0-3 Foundation",
-    "A2": "3.5-4.5 Building",
-    "B1": "5-5.5 Developing",
-    "B2": "6-6.5 Independent",
-    "C1": "7+ Advanced",
-    "C2": "7+ Advanced",
-}
+# Internal learning sequence. These numbers are not IELTS scores.
+STUDY_LEVELS = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Level 7+"]
+STUDY_LANE = {"A1": "Level 1", "A2": "Level 2", "B2": "Level 5", "C1": "Level 6", "C2": "Level 7+"}
+B1_COMMON_ZIPF = 4.2
+
+
+def study_level(headword: str, cefr: str) -> str:
+    if cefr == "B1":
+        # Split the large B1 source group by English usage frequency. A Zipf score
+        # of 4.2 is roughly one occurrence per 63,000 words in the source corpus.
+        word = headword.split("/", 1)[0]
+        return "Level 3" if zipf_frequency(word, "en") >= B1_COMMON_ZIPF else "Level 4"
+    return STUDY_LANE[cefr]
 POS_CODE = {"noun": "n", "verb": "v", "adjective": "a", "adverb": "r"}
 
 TOPIC_MAP = {
@@ -105,6 +110,13 @@ WORDNET_TOPICS = {
     "noun.quantity": "Numbers & Data",
     "noun.possession": "Money & Ownership",
     "noun.artifact": "Objects & Technology",
+    "noun.attribute": "Descriptions & Attributes",
+    "noun.shape": "Descriptions & Attributes",
+    "verb.communication": "Media & Communication",
+    "verb.cognition": "Education & Knowledge",
+    "verb.emotion": "Psychology & Emotions",
+    "verb.body": "Health & Wellbeing",
+    "verb.weather": "Environment & Climate",
 }
 
 
@@ -126,7 +138,7 @@ def cefr_records() -> list[dict[str, str]]:
     records = []
     for index, row in enumerate(book["ALL"].iter_rows(min_row=2, values_only=True), start=2):
         headword, pos, cefr, core1, core2, threshold = (clean(item) for item in row[:6])
-        if not headword or cefr not in STUDY_LANE:
+        if not headword or cefr not in (*STUDY_LANE, "B1"):
             continue
         records.append({
             "source_id": f"cefrj-1.6-{index}", "headword": headword, "pos": pos,
@@ -228,7 +240,7 @@ def main() -> None:
         definition, example, lexname, synset_id = wordnet_lookup(row["headword"], row["pos"], entries, synsets)
         tags, basis = topic_tags(row["source_topics"], lexname)
         row.update({
-            "study_lane": STUDY_LANE[row["cefr"]], "topics": tags, "topic_basis": basis,
+            "study_lane": study_level(row["headword"], row["cefr"]), "topics": tags, "topic_basis": basis,
             "definition_en": definition, "example_en": example,
             "definition_status": "first_sense_needs_review" if definition else "not_available",
             "wordnet_synset": synset_id,
@@ -257,6 +269,7 @@ def main() -> None:
         "missing_definition_rows": sum(not row["definition_en"] for row in rows),
         "topic_count": len(by_topic), "rows_by_cefr": dict(sorted(by_level.items())),
         "rows_by_study_lane": dict(sorted(by_lane.items())),
+        "study_level_method": "A1=1, A2=2, B1 Zipf >=4.2=3 and <4.2=4, B2=5, C1=6, C2=7+; internal study sequence, not IELTS band",
         "source_files": {path.name: {"bytes": path.stat().st_size, "sha256": sha256(path)}
                          for path in [CEFR_FILE, OCTANOVE_FILE, WORDNET_FILE]},
         "sources": SOURCE_URLS,
@@ -277,8 +290,8 @@ IELTS chính thức**. Các topic chỉ là ứng viên để admin chọn và b
 - `catalog/topical_candidates_for_ielts_review.csv`: các dòng đã gắn topic cụ thể,
   dành cho admin rà soát; chưa được coi là từ IELTS đã kiểm duyệt.
 - `by_topic/*.csv`: mỗi topic một file; một từ có thể ở nhiều topic.
-- `by_study_lane/*.csv`: nhóm học từ nền tảng 0–3 đến 7+.
-- `indexes/topics.csv`, `indexes/cefr_levels.csv`: bảng số lượng.
+- `by_study_lane/*.csv`: Level 1 đến Level 7+.
+- `indexes/topics.csv`, `indexes/cefr_levels.csv`, `indexes/study_levels.csv`: bảng số lượng.
 - `sources/`: bản gốc đã tải để đối chiếu; `manifest.json` có SHA-256.
 - `app_current_catalog.json`: bộ từ đã soạn tiếng Việt đang có trong web, để so sánh; không phải nguồn của 9.9k dòng.
 - `build/build-vocabulary-pack.py`: script tái tạo gói từ nguồn gốc (chạy trong repo).
@@ -286,15 +299,16 @@ IELTS chính thức**. Các topic chỉ là ứng viên để admin chọn và b
 ## Cách hiểu cấp độ
 
 CEFR A1/A2/B1/B2 lấy từ **CEFR-J Wordlist 1.6**. C1/C2 lấy từ **Octanove 1.0**.
-Các `study_lane` là nhóm học do IeltsWithHarry biên tập: A1 → 0–3, A2 → 3.5–4.5,
-B1 → 5–5.5, B2 → 6–6.5, C1/C2 → 7+. Đây **không phải band IELTS của từng từ hoặc
-quy đổi chính thức từ CEFR sang IELTS**; band 0 thực tế nghĩa là không dự thi.
+Các `study_lane` là **Level học nội bộ**: A1 → 1, A2 → 2, B1 phổ biến hơn → 3,
+B1 ít gặp hơn → 4, B2 → 5, C1 → 6, C2 → 7+. B1 được tách bằng tần suất tiếng Anh
+Zipf 4.2 từ wordfreq 3.1.1 (dữ liệu tần suất tới khoảng 2021); đây chỉ là thứ tự
+ôn luyện, **không phải band IELTS của từng từ hoặc quy đổi chính thức CEFR → IELTS**.
 IELTS nói rõ hai thang không tương ứng một-một: {SOURCE_URLS['ielts']}
 
 ## Topic và định nghĩa
 
 `source_topics` giữ nguyên nhãn có sẵn từ CEFR-J. `topics` chuẩn hóa nhãn đó;
-nếu nguồn không gắn topic, một số danh từ được gợi ý topic theo lexical category
+nếu nguồn không gắn topic, một số danh từ/động từ được gợi ý topic theo lexical category
 của Open English WordNet. Các từ còn lại ở `General & Cross-topic`.
 `topic_basis` cho biết cách gán. **Không coi gán tự động là đã kiểm duyệt.**
 Có {manifest['general_unclassified_rows']:,} dòng ở `General & Cross-topic` vì nguồn chưa có
@@ -317,6 +331,8 @@ IPA, collocation hoặc câu đặt sẵn cho toàn bộ kho — những trườ
    {SOURCE_URLS['wordnet']}. **CC BY 4.0**:
    https://creativecommons.org/licenses/by/4.0/. Định nghĩa/ví dụ là dữ liệu nguồn,
    không phải nội dung IeltsWithHarry tự viết.
+4. **wordfreq 3.1.1**, Robyn Speer, https://github.com/rspeer/wordfreq,
+   dùng riêng để chia nhóm B1 theo tần suất tiếng Anh.
 
 Các file biên tập tổng hợp trong gói này được cung cấp theo **CC BY-SA 4.0**
 để tương thích điều kiện share-alike của phần Octanove. Khi phát hành hoặc nhập
@@ -334,14 +350,17 @@ vào website cần giữ attribution của cả ba nguồn.
         ]))
         bundle.writestr("app_current_catalog.json", CATALOG_FILE.read_bytes())
         bundle.writestr("build/build-vocabulary-pack.py", Path(__file__).read_bytes())
-        bundle.writestr("build/requirements.txt", "openpyxl>=3.1,<4\n")
+        bundle.writestr("build/requirements.txt", "openpyxl>=3.1,<4\nwordfreq==3.1.1\n")
         bundle.writestr("indexes/topics.csv", csv_bytes([
             {"topic": topic, "rows": len(items)} for topic, items in sorted(by_topic.items())
         ], ["topic", "rows"]))
         bundle.writestr("indexes/cefr_levels.csv", csv_bytes([
-            {"cefr": level, "study_lane": STUDY_LANE[level], "rows": by_level[level]}
-            for level in STUDY_LANE
-        ], ["cefr", "study_lane", "rows"]))
+            {"cefr": level, "rows": by_level[level]}
+            for level in ["A1", "A2", "B1", "B2", "C1", "C2"]
+        ], ["cefr", "rows"]))
+        bundle.writestr("indexes/study_levels.csv", csv_bytes([
+            {"study_lane": level, "rows": by_lane[level]} for level in STUDY_LEVELS
+        ], ["study_lane", "rows"]))
         for topic, items in sorted(by_topic.items()):
             bundle.writestr(f"by_topic/{safe_filename(topic)}.csv", csv_bytes(items))
         for lane, items in sorted(((lane, [r for r in rows if r["study_lane"] == lane]) for lane in set(by_lane))):
