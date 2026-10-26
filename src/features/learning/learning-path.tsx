@@ -24,6 +24,9 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
   const current = lessons.find((lesson) => !isDone(lesson));
   const total = lessons.length;
   const finished = lessons.filter(isDone).length;
+  const packagePrefix = course.slug.match(/^(mindsetstarter|mindsetbuilder|mindsetadvanced)-/)?.[1];
+  const hasChecks = Boolean(packagePrefix) || course.stage_id === "foundation" || course.stage_id === "elementary";
+  const finalCheckSlug = `${packagePrefix ?? course.stage_id}-final-check`;
 
   return <div className="study-map">
     <div className="study-map-lines">
@@ -63,7 +66,7 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
                 <span>{complete ? "Ga cuối · đã nhận tem hoàn thành" : `Ga cuối · còn ${unit.lessons.length - unitDone} bài để nhận tem`}</span>
                 {complete && <Sticker name="stamp" label="XONG" size={54} tilt={-12} className="map-stamp" />}
               </button>
-              {(course.stage_id === "foundation" || course.stage_id === "elementary" || course.stage_id === "ielts-starter") && <Link className="button subtle" href={`/app/check/${unit.slug}-check`}>Kiểm tra Unit {unitIndex + 1} →</Link>}
+              {hasChecks && <Link className="button subtle" href={`/app/check/${unit.slug}-check`}>Kiểm tra Unit {unitIndex + 1} →</Link>}
             </li>
           </ol>
         </section>;
@@ -75,7 +78,7 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
         <div className="study-map-score"><b>{finished}</b><span>/ {total} ga đã qua</span></div>
         <div className="study-map-bar"><i style={{ width: `${total ? (finished / total) * 100 : 0}%` }} /></div>
         {current ? <Link href={`/app/lesson/${current.slug}`} className="button primary wide">Học tiếp: {current.title} <ArrowRight size={16} /></Link> : <p className="study-map-finished">Bạn đã đi hết các tuyến của khóa này.</p>}
-        {(course.stage_id === "foundation" || course.stage_id === "elementary" || course.stage_id === "ielts-starter") && <Link href={`/app/check/${course.stage_id}-final-check`} className="button subtle wide">Bài kiểm tra cuối khóa →</Link>}
+        {hasChecks && <Link href={`/app/check/${finalCheckSlug}`} className="button subtle wide">Bài kiểm tra cuối khóa →</Link>}
       </div>
       <div className="card study-map-panel study-map-legend">
         <h4>Đọc bản đồ học</h4>
