@@ -12,6 +12,7 @@ export type PackageLesson = {
   assessment_slug?: string;
   activities?: PackageActivity[];
   micro_exercises?: PackageActivity[];
+  scaffolding_steps?: string[];
   rubric?: { criterion: string; detail: string; max: number }[];
   pronunciation_focus?: string;
 };
@@ -45,6 +46,7 @@ export function PackageLessonPractice({ content }: { content: PackageLesson | nu
     {content.type === "listening" && content.audio_quality_note && <small>{content.audio_quality_note}</small>}
     <OpenResponsePractice items={open} title={content.type === "grammar" ? "Luyện điền từ" : "Câu hỏi luyện tập"} />
     <OpenResponsePractice items={micro} title="Luyện câu trước khi viết" />
+    {content.scaffolding_steps?.length ? <details className="lab-note"><summary>Gợi ý từng bước & checklist</summary><ol>{content.scaffolding_steps.map((step, index) => <li key={`${index}-${step}`}>{step}</li>)}</ol></details> : null}
     {content.pronunciation_focus && <p className="lab-note"><strong>Luyện phát âm:</strong> {content.pronunciation_focus}</p>}
     {content.rubric?.length ? <details className="lab-note"><summary>Tiêu chí tự đánh giá</summary><ul>{content.rubric.map((row) => <li key={row.criterion}><strong>{row.criterion}:</strong> {row.detail} ({row.max} điểm tối đa)</li>)}</ul></details> : null}
     {content.assessment_slug && <p><Link className="button subtle" href={`/app/check/${content.assessment_slug}`}>Ôn tập & kiểm tra unit →</Link></p>}

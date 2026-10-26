@@ -28,7 +28,7 @@ export function CourseAssessment({ content, stageId }: { content: Assessment; st
       <OpenResponsePractice items={content.comprehension_checks ?? []} title="Câu hỏi hiểu bài" />
       {content.reading?.passage && <div className="lab-passage"><h2>Bài đọc</h2><p>{content.reading.passage}</p></div>}
       <OpenResponsePractice items={content.reading?.questions ?? []} title="Câu hỏi Reading" />
-      {content.listening?.audio_url && <div className="lab-note"><h2>Bài nghe</h2><audio controls src={content.listening.audio_url} aria-label="Audio bài kiểm tra" /><small>Giọng máy thử nghiệm từ gói bài học.</small></div>}
+      {content.listening?.audio_url && <div className="lab-note"><h2>Bài nghe</h2><audio controls src={content.listening.audio_url} aria-label="Audio bài kiểm tra" /><small>Audio giọng máy thử nghiệm; dùng để luyện tập.</small></div>}
       <OpenResponsePractice items={content.listening?.questions ?? []} title="Câu hỏi Listening" />
       {(content.writing_task || content.writing?.prompt) && <div className="lab-note"><h2>Writing</h2><p>{content.writing_task ?? content.writing?.prompt}</p><p>Viết bản nháp vào sổ tay hoặc giấy, sau đó tự đánh giá theo bài học. Phần này chưa chấm band IELTS.</p></div>}
       {(content.speaking_task || content.speaking?.prompt) && <div className="lab-note"><h2>Speaking</h2><p>{content.speaking_task ?? content.speaking?.prompt}</p><p>Ghi âm và tự nghe lại. Phần này chưa chấm band IELTS.</p></div>}
