@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 
-const chain = ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql", "202610250008_news_preview_images.sql", "202610250010_news_enrichment.sql", "202610250011_news_enrichment_claim_fix.sql", "202610250012_news_illustration_credit.sql", "202610250013_news_creative_commons_images.sql", "202610250014_news_admin_controls.sql", "202610250015_news_manual_quiz_reset.sql", "202610250016_news_full_text_sources.sql", "202610250017_news_ielts_question_types.sql", "202610250018_news_open_licence_sources.sql", "202610250019_news_readable_only.sql", "202610250020_news_ai_vietnam_rewrites.sql", "202610250021_news_detailed_explanations.sql", "202610250022_news_ai_checked_images.sql", "202610260014_news_images_before_quizzes.sql"];
+const chain = ["202610240001_foundation.sql", "202610240002_notebook.sql", "202610240007_daily_news.sql", "202610240008_news_practice_samples.sql", "202610240010_news_read_completion.sql", "202610240011_news_preferences.sql", "202610240012_nasa_article_reader.sql", "202610240013_noaa_full_text.sql", "202610250001_news_article_reads.sql", "202610250002_news_article_images.sql", "202610250003_news_translation_quota.sql", "202610250004_news_archive.sql", "202610250008_news_preview_images.sql", "202610250010_news_enrichment.sql", "202610250011_news_enrichment_claim_fix.sql", "202610250012_news_illustration_credit.sql", "202610250013_news_creative_commons_images.sql", "202610250014_news_admin_controls.sql", "202610250015_news_manual_quiz_reset.sql", "202610250016_news_full_text_sources.sql", "202610250017_news_ielts_question_types.sql", "202610250018_news_open_licence_sources.sql", "202610250019_news_readable_only.sql", "202610250020_news_ai_vietnam_rewrites.sql", "202610250021_news_detailed_explanations.sql", "202610250022_news_ai_checked_images.sql", "202610260014_news_images_before_quizzes.sql", "202610260017_news_practice_history.sql"];
 
 async function migratedDb() {
   const db = new PGlite();
@@ -80,6 +80,22 @@ describe("Daily News IELTS question sets", () => {
       expect((await db.query<{ total: number }>("select total from public.news_auto_attempts where article_id=$1", [article])).rows[0].total).toBe(20);
       const partial = Object.fromEntries(Object.entries(answers).slice(0, 19));
       await expect(db.query("select public.news_submit_auto_quiz($1,$2::jsonb)", [article, JSON.stringify(partial)])).rejects.toThrow(/Answer every question/);
+
+      // A round of chosen question types is graded, saved with its breakdown and does not replace the full result.
+      expect((await db.query<{ breakdown: Record<string, { correct: number; total: number }> }>("select breakdown from public.news_auto_attempts where article_id=$1", [article])).rows[0].breakdown)
+        .toEqual({ tfng: { correct: 6, total: 6 }, mcq: { correct: 6, total: 6 }, sentence_completion: { correct: 3, total: 4 }, short_answer: { correct: 4, total: 4 } });
+      const written = Object.fromEntries(ids.filter((row) => row.sort_order >= 12 && row.sort_order < 16).map((row) => [row.id, answers[row.id]]));
+      const round = (await db.query<{ result: { score: number; total: number; partial: boolean; review: { id: string }[]; breakdown: object } }>("select public.news_submit_auto_practice($1,$2::jsonb,95) as result", [article, JSON.stringify(written)])).rows[0].result;
+      expect(round).toMatchObject({ score: 3, total: 4, partial: true, breakdown: { sentence_completion: { correct: 3, total: 4 } } });
+      expect(round.review.map((item) => item.id)).toEqual(ids.slice(12, 16).map((row) => row.id));
+      const saved = (await db.query<{ partial: boolean; total: number; duration_seconds: number | null }>("select partial,total,duration_seconds from public.news_auto_attempts where article_id=$1 order by submitted_at, partial", [article])).rows;
+      expect(saved).toEqual([{ partial: false, total: 20, duration_seconds: null }, { partial: true, total: 4, duration_seconds: 95 }]);
+      const last = (await db.query<{ r: { score: number; total: number; attempts: number } }>("select public.news_auto_quiz_last_result($1) as r", [article])).rows[0].r;
+      expect(last).toMatchObject({ score: 19, total: 20, attempts: 1 });
+      await expect(db.query("select public.news_submit_auto_practice($1,$2::jsonb)", [article, JSON.stringify({ [ids[0].id]: 7 })])).rejects.toThrow(/Answer every question/);
+      await expect(db.query("select public.news_submit_auto_practice($1,$2::jsonb)", [article, JSON.stringify({ [ids[12].id]: "   " })])).rejects.toThrow(/Answer every question/);
+      await expect(db.query("select public.news_submit_auto_practice($1,$2::jsonb)", [article, JSON.stringify({ "00000000-0000-4000-8000-000000000000": 1 })])).rejects.toThrow(/Answer every question/);
+      await expect(db.query("select public.news_submit_auto_practice($1,'{}'::jsonb)", [article])).rejects.toThrow(/Answer every question/);
     } finally { await db.close(); }
   }, 30000);
 });

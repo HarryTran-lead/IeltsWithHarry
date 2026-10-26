@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
-import { Archive, ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarDays, CalendarPlus, CheckCircle2, Clock3, ExternalLink, Flame, Headphones, History, Newspaper, Search, Trophy, Volume2, type LucideIcon } from "lucide-react";
+import { Archive, ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarDays, CalendarPlus, ChartNoAxesColumn, CheckCircle2, Clock3, ExternalLink, Flame, Headphones, History, Newspaper, Search, Sparkles, Trophy, Volume2, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { celebrateScore } from "@/lib/celebrate";
@@ -12,7 +12,9 @@ import { useDemo } from "@/features/demo/demo-store";
 import { NEWS_CATEGORIES, type NewsCategory } from "@/lib/news/constants";
 import { NewsRecommendations } from "./news-recommendations";
 import { NewsReadingTools } from "./news-reading-tools";
-import { NewsAutoQuiz } from "./news-auto-quiz";
+import { NewsAutoQuiz, QuestionTypePicker, type QuestionType, type TypeCount } from "./news-auto-quiz";
+import { countNewsSince, newsSeenBefore } from "./news-unread";
+import { estimateBand, formatDuration, percent, sumBreakdowns, summarizeAttempts, typeLabels, type PracticeAttempt } from "@/lib/news/practice-stats";
 import "./news-masthead.css";
 
 type NewsRow = { id: string; title: string; publisher: string; canonical_url: string; category: NewsCategory; published_at: string; fetched_at: string; attribution_text: string; sensitive: boolean };
@@ -58,18 +60,18 @@ const newsPages = [
 type NewsTab = Feed | (typeof newsPages)[number]["id"];
 
 /** One compact header for every Daily News page; the tab row is the section menu and stays pinned while scrolling. */
-function NewsMasthead({ active, meta, search }: { active: NewsTab; meta?: React.ReactNode; search?: React.ReactNode }) {
+function NewsMasthead({ active, meta }: { active: NewsTab; meta?: React.ReactNode }) {
   const today = new Intl.DateTimeFormat("vi-VN", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(new Date());
   const list = useRef<HTMLDivElement>(null);
   // On narrow screens the menu scrolls sideways; keep the open tab in view.
   useEffect(() => {
     const element = list.current;
     const current = element?.querySelector<HTMLElement>(".active");
-    if (element && current) element.scrollTo({ left: current.offsetLeft - (element.clientWidth - current.offsetWidth) / 2, behavior: "smooth" });
+    if (element && current && element.scrollWidth > element.clientWidth) element.scrollTo({ left: current.offsetLeft - (element.clientWidth - current.offsetWidth) / 2, behavior: "smooth" });
   }, [active]);
   return <>
     <header className="news-masthead">
-      <div className="news-masthead-title"><Sticker name="globe" size={50} tilt={-8} /><div><span className="eyebrow">Daily News · <time suppressHydrationWarning>{today}</time></span><h1>Daily English News</h1></div></div>
+      <div className="news-masthead-title"><Sticker name="globe" size={50} tilt={-8} /><div><span className="eyebrow news-masthead-date">Daily News<i aria-hidden="true">·</i><time suppressHydrationWarning>{today}</time></span><h1>Daily English News</h1></div></div>
       {meta && <div className="news-masthead-meta">{meta}</div>}
     </header>
     <nav className="news-tabs" aria-label="Mục lục Daily News">
@@ -78,10 +80,12 @@ function NewsMasthead({ active, meta, search }: { active: NewsTab; meta?: React.
         <span className="news-tabs-divider" aria-hidden="true" />
         {newsPages.map(({ id, label, href, icon: Icon }) => <Link key={id} href={href} className={active === id ? "active" : ""} aria-current={active === id ? "page" : undefined}><Icon size={16} />{label}</Link>)}
       </div>
-      {search}
     </nav>
   </>;
 }
+
+const PAGE_SIZE = 12;
+const CATALOG_COLUMNS = "id,source_id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit,illustration_source_url,illustration_license,illustration_license_url";
 
 function NewsHome() {
   const db = useMemo(() => createClient(), []);
@@ -100,10 +104,11 @@ function NewsHome() {
   // Paging belongs to one feed, so switching tabs starts again from page one.
   const [paging, setPaging] = useState<{ feed: Feed; page: number }>({ feed, page: 0 });
   const page = paging.feed === feed ? paging.page : 0;
-  const setPage = (next: number | ((value: number) => number)) => setPaging({ feed, page: typeof next === "function" ? next(page) : next });
+  const setPage = (next: number) => setPaging({ feed, page: next });
   const [rows, setRows] = useState<ArchiveRow[]>([]);
   const [count, setCount] = useState(0);
   const [saved, setSaved] = useState<string[]>([]);
+  const [readIds, setReadIds] = useState<string[]>([]);
   const [readToday, setReadToday] = useState(0);
   const [latest, setLatest] = useState<string | null>(null);
   const [learn, setLearn] = useState<LearnRow[]>([]);
@@ -112,8 +117,41 @@ function NewsHome() {
   const [xp, setXp] = useState(0);
   const [loading, setLoading] = useState(true);
   const [now] = useState(() => Date.now());
+  // Stories that arrived since the learner's previous visit get a "Mới" label.
+  const [seenBefore] = useState(() => newsSeenBefore());
+  const [loadedAt, setLoadedAt] = useState(() => new Date().toISOString());
+  const [arrived, setArrived] = useState(0);
   const [error, setError] = useState("");
-  const load = useCallback(async () => {
+  const listTop = useRef<HTMLElement>(null);
+  const latestRequest = useRef(0);
+
+  // Page-wide numbers and option lists do not depend on the filters, so they load once.
+  const loadStats = useCallback(async () => {
+    const start = new Date(); start.setHours(0,0,0,0);
+    const end = new Date(start); end.setDate(end.getDate()+1);
+    const [saves, freshness, readings, progress, today, recentReads, sourceList, oldest] = await Promise.all([
+      db.from("user_saved_news").select("article_id").limit(500),
+      db.rpc("news_freshness"),
+      db.from("news_learning_articles").select("id,slug,title,summary,category,stage_id,audio_url,source_url,rights_status,related_news_id,created_at").eq("published", true).limit(6),
+      db.from("user_news_progress").select("completed_at,xp_awarded").limit(1000),
+      db.from("news_articles").select("id",{count:"exact",head:true}).eq("publication_status","published").eq("sensitive",false).gte("published_at",start.toISOString()).lt("published_at",end.toISOString()),
+      db.from("user_news_article_reads").select("article_id",{count:"exact",head:true}).gte("read_at",start.toISOString()).lt("read_at",end.toISOString()),
+      db.from("news_source_options").select("id,name").order("name"),
+      db.from("news_archive_catalog").select("published_at").eq("publication_status","published").eq("sensitive",false).order("published_at",{ascending:true}).limit(1),
+    ]);
+    setSources((sourceList.data ?? []) as {id:string;name:string}[]);
+    if (oldest.data?.[0]?.published_at) setOldestYear(new Date(oldest.data[0].published_at).getUTCFullYear());
+    setReadToday(recentReads.count ?? 0);
+    setSaved((saves.data ?? []).map((row) => row.article_id));
+    setLatest(freshness.data as string | null);
+    setLearn((readings.data ?? []) as LearnRow[]);
+    setCompleted((progress.data??[]).filter((item)=>item.completed_at).length);
+    setXp((progress.data??[]).reduce((sum,item)=>sum+(item.xp_awarded??0),0));
+    setTodayCount(today.count??0);
+  }, [db]);
+
+  const loadList = useCallback(async () => {
+    const request = ++latestRequest.current;
     setLoading(true); setError("");
     const start = new Date(); start.setHours(0,0,0,0);
     const end = new Date(start); end.setDate(end.getDate()+1);
@@ -121,71 +159,76 @@ function NewsHome() {
     let hotIds: string[] | null = null;
     if (feed === "hot") {
       const hot = await db.from("news_article_bodies").select("article_id").eq("ai_generated", true).order("ingested_at", { ascending: false }).limit(150);
+      if (request !== latestRequest.current) return;
       if (hot.error) { setError(hot.error.message); setLoading(false); return; }
       hotIds = (hot.data ?? []).map((row) => row.article_id);
     }
-    let request = db.from("news_archive_catalog").select("id,source_id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit,illustration_source_url,illustration_license,illustration_license_url", { count: "exact" }).eq("publication_status", "published").eq("sensitive", false);
-    if (category !== "All News") request = request.eq("category", category);
     // Only articles readable on site are listed; teaser-only items wait until their text arrives.
-    request = request.eq("readable", true);
-    if (hotIds) request = request.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]);
-    if (feed === "today") request = request.gte("published_at", start.toISOString()).lt("published_at", end.toISOString());
+    let list = db.from("news_archive_catalog").select(CATALOG_COLUMNS, { count: "exact" }).eq("publication_status", "published").eq("sensitive", false).eq("readable", true);
+    if (category !== "All News") list = list.eq("category", category);
+    if (hotIds) list = list.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]);
+    if (feed === "today") list = list.gte("published_at", start.toISOString()).lt("published_at", end.toISOString());
     const archive = feed === "archive";
-    if (archive && source !== "all") request = request.eq("source_id", source);
-    if (archive && year !== "all") request = request.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);
-    if (search.trim()) request = request.ilike("title", `%${search.trim().replace(/[%_,]/g, "")}%`);
-    if (archive && sort === "oldest") request = request.order("published_at", { ascending: true });
-    else if (archive && sort === "added") request = request.order("fetched_at", { ascending: false });
-    else if (archive && sort === "category") request = request.order("category").order("published_at", { ascending: false });
-    else request = request.order("published_at", { ascending: false });
-    const [articles, saves, freshness, readings, progress, today, recentReads, sourceList, oldest] = await Promise.all([
-      request.range(page * 12, page * 12 + 11),
-      db.from("user_saved_news").select("article_id").limit(500),
-      db.rpc("news_freshness"),
-      db.from("news_learning_articles").select("id,slug,title,summary,category,stage_id,audio_url,source_url,rights_status,related_news_id,created_at").eq("published", true).limit(6),
-      db.from("user_news_progress").select("article_id,completed_at,xp_awarded").limit(1000),
-      db.from("news_articles").select("id",{count:"exact",head:true}).eq("publication_status","published").eq("sensitive",false).gte("published_at",start.toISOString()).lt("published_at",end.toISOString()),
-      db.from("user_news_article_reads").select("article_id",{count:"exact",head:true}).gte("read_at",start.toISOString()).lt("read_at",end.toISOString()),
-      db.from("news_source_options").select("id,name").order("name"),
-      db.from("news_archive_catalog").select("published_at").eq("publication_status","published").eq("sensitive",false).order("published_at",{ascending:true}).limit(1),
-    ]);
+    if (archive && source !== "all") list = list.eq("source_id", source);
+    if (archive && year !== "all") list = list.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);
+    if (search.trim()) list = list.ilike("title", `%${search.trim().replace(/[%_,]/g, "")}%`);
+    if (archive && sort === "oldest") list = list.order("published_at", { ascending: true });
+    else if (archive && sort === "added") list = list.order("fetched_at", { ascending: false });
+    else if (archive && sort === "category") list = list.order("category").order("published_at", { ascending: false });
+    else list = list.order("published_at", { ascending: false });
+    const articles = await list.range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE - 1);
+    // A slower, older request must not replace the list for the newest filters.
+    if (request !== latestRequest.current) return;
     if (articles.error) { setError(articles.error.message); setLoading(false); return; }
-    setSources((sourceList.data ?? []) as {id:string;name:string}[]);
-    if (oldest.data?.[0]?.published_at) setOldestYear(new Date(oldest.data[0].published_at).getUTCFullYear());
-    setReadToday(recentReads.count ?? 0);
+    const found = (articles.data ?? []) as ArchiveRow[];
+    const reads = found.length ? await db.from("user_news_article_reads").select("article_id").in("article_id", found.map((row) => row.id)) : null;
+    if (request !== latestRequest.current) return;
+    setRows(found); setCount(articles.count ?? 0);
+    setReadIds((reads?.data ?? []).map((row) => row.article_id));
+    setLoadedAt(new Date().toISOString()); setArrived(0);
     setLoading(false);
-    setRows((articles.data ?? []) as ArchiveRow[]); setCount(articles.count ?? 0);
-    setSaved((saves.data ?? []).map((row) => row.article_id));
-    setLatest(freshness.data as string | null);
-    setLearn((readings.data ?? []) as LearnRow[]);
-    setCompleted((progress.data??[]).filter((item)=>item.completed_at).length);
-    setXp((progress.data??[]).reduce((sum,item)=>sum+(item.xp_awarded??0),0));
-    setTodayCount(today.count??0);
   }, [db, feed, category, search, sort, source, year, page]);
+
   useEffect(() => { const timer = setTimeout(() => setSearch(query), 300); return () => clearTimeout(timer); }, [query]);
-  useEffect(() => { void Promise.resolve().then(load); }, [load]);
+  useEffect(() => { void Promise.resolve().then(loadStats); }, [loadStats]);
+  useEffect(() => { void Promise.resolve().then(loadList); }, [loadList]);
+  // While the page stays open, offer the stories that arrive instead of moving the list under the reader.
+  useEffect(() => {
+    if (feed === "archive") return;
+    const check = () => { if (document.visibilityState === "visible") void countNewsSince(db, loadedAt).then(setArrived).catch(() => {}); };
+    const timer = window.setInterval(check, 3 * 60 * 1000);
+    window.addEventListener("focus", check);
+    return () => { window.clearInterval(timer); window.removeEventListener("focus", check); };
+  }, [db, feed, loadedAt]);
+
   async function toggleSave(id: string) {
     const isSaved = saved.includes(id);
     const result = isSaved ? await db.from("user_saved_news").delete().eq("article_id", id) : await db.from("user_saved_news").insert({ article_id: id });
     if (result.error) setError(result.error.message); else setSaved((current) => isSaved ? current.filter((item) => item !== id) : [...current, id]);
   }
+  function goToPage(next: number) {
+    setPage(next);
+    listTop.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
   const yearOptions = Array.from({ length: Math.max(1, new Date().getFullYear() - oldestYear + 1) }, (_, i) => new Date().getFullYear() - i);
-  return <div className="content-page news-page news-home">
+  const pages = Math.ceil(count / PAGE_SIZE);
+  return <div className="content-page news-page news-hub news-home">
     <NewsMasthead active={feed}
-      meta={<><span><Newspaper /> <b>{todayCount}</b> tin hôm nay</span><span><Clock3 /> Cập nhật {latest ? relativeTime(latest).toLowerCase() : "—"}</span><span title={`${xp} XP từ bài luyện`}><Trophy /> Đã đọc <b>{readToday}</b> hôm nay · <b>{completed}</b> bài luyện</span></>}
-      search={<label className="news-tabs-search"><Search size={16} /><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm theo tiêu đề..." aria-label="Tìm tin" /></label>} />
+      meta={<><span><Newspaper /> <b>{todayCount}</b> tin hôm nay</span><span><Clock3 /> Cập nhật {latest ? relativeTime(latest).toLowerCase() : "—"}</span><span title={`${xp} XP từ bài luyện`}><Trophy /> Đã đọc <b>{readToday}</b> · <b>{completed}</b> bài luyện</span></>} />
     {latest && now - new Date(latest).valueOf() > 2 * 3600000 && <p className="news-stale">Tin đã lưu vẫn xem được. Lần đồng bộ gần nhất: {newsDate(latest)}.</p>}
-    <section className="news-feed" id="news-archive">
+    <section className="news-feed" id="news-archive" ref={listTop}>
       <div className="news-feed-bar">
-        <div className="news-categories">{["All News",...NEWS_CATEGORIES].map((item) => <button key={item} className={category === item ? "selected" : ""} onClick={() => { setCategory(item); setPage(0); }}>{item}</button>)}</div>
-        {feed === "archive" && <div className="news-archive-filters"><select aria-label="Nguồn tin" value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="all">Mọi nguồn</option>{sources.map((item)=><option key={item.id} value={item.id}>{item.name}</option>)}</select><select aria-label="Năm xuất bản" value={year} onChange={(event) => { setYear(event.target.value); setPage(0); }}><option value="all">Mọi năm</option>{yearOptions.map((value)=><option key={value} value={value}>{value}</option>)}</select><select aria-label="Sắp xếp tin" value={sort} onChange={(event) => { setSort(event.target.value); setPage(0); }}><option value="newest">Mới nhất</option><option value="oldest">Cũ nhất</option><option value="added">Mới thêm</option><option value="category">Danh mục</option></select></div>}
+        <div className="news-categories">{["All News",...NEWS_CATEGORIES].map((item) => <button key={item} className={category === item ? "selected" : ""} aria-pressed={category === item} onClick={() => { setCategory(item); setPage(0); }}>{item}</button>)}</div>
+        <label className="news-feed-search"><Search size={16} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm theo tiêu đề..." aria-label="Tìm tin theo tiêu đề" /></label>
       </div>
-      <p className="news-feed-count"><feedInfo.icon size={15} /><b>{loading ? "…" : count.toLocaleString("vi-VN")} bài</b><span>{feedInfo.hint}</span></p>
+      {feed === "archive" && <div className="news-archive-filters"><select aria-label="Nguồn tin" value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="all">Mọi nguồn</option>{sources.map((item)=><option key={item.id} value={item.id}>{item.name}</option>)}</select><select aria-label="Năm xuất bản" value={year} onChange={(event) => { setYear(event.target.value); setPage(0); }}><option value="all">Mọi năm</option>{yearOptions.map((value)=><option key={value} value={value}>{value}</option>)}</select><select aria-label="Sắp xếp tin" value={sort} onChange={(event) => { setSort(event.target.value); setPage(0); }}><option value="newest">Mới nhất</option><option value="oldest">Cũ nhất</option><option value="added">Mới thêm</option><option value="category">Danh mục</option></select></div>}
+      <div className="news-feed-count"><feedInfo.icon size={15} /><b>{loading ? "…" : count.toLocaleString("vi-VN")} bài</b><span>{feedInfo.hint}</span>
+        {arrived > 0 && <button type="button" className="news-arrived" onClick={() => { if (page) setPage(0); else void loadList(); }}><Sparkles size={14} /> {arrived} tin mới · Xem ngay</button>}</div>
       {error && <p className="form-error" role="alert">{error}</p>}
-      {loading ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className="news-grid stagger">{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={row.image_url && row.image_alt && row.image_credit ? {image_url:row.image_url,image_alt:row.image_alt,image_credit:row.image_credit} : undefined} learnSlug={learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
-      {count > 12 && <div className="news-pagination"><button disabled={page === 0} onClick={() => setPage((value) => value - 1)}>← Trước</button><span>Trang {page + 1} / {Math.ceil(count / 12)}</span><button disabled={(page + 1) * 12 >= count} onClick={() => setPage((value) => value + 1)}>Tiếp →</button></div>}
+      {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} read={readIds.includes(row.id)} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
+      {pages > 1 && <div className="news-pagination"><button disabled={page === 0 || loading} onClick={() => goToPage(page - 1)}>← Trước</button><span>Trang <b>{page + 1}</b> / {pages}</span><button disabled={page + 1 >= pages || loading} onClick={() => goToPage(page + 1)}>Tiếp →</button></div>}
     </section>
-    <section className="news-section"><div className="news-section-heading"><div><span className="eyebrow">HỌC QUA BÀI ĐỌC GỐC</span><h2>Learn with News</h2><p>Bài đọc và câu hỏi do người biên soạn, có đáp án rõ ràng.</p></div><Link href="/app/news/learn">Xem tất cả →</Link></div><div className="news-grid">{learn.slice(0,3).map((item) => <LearnCard key={item.id} item={item}/>)}</div></section>
+    {learn.length > 0 && <section className="news-section"><div className="news-section-heading"><div><span className="eyebrow">HỌC QUA BÀI ĐỌC GỐC</span><h2>Learn with News</h2><p>Bài đọc và câu hỏi do người biên soạn, có đáp án rõ ràng.</p></div><Link href="/app/news/learn">Xem tất cả →</Link></div><div className="news-grid">{learn.slice(0,3).map((item) => <LearnCard key={item.id} item={item}/>)}</div></section>}
     <p className="news-credit">Mỗi bài đều dẫn tới bản gốc; chỉ nội dung có hồ sơ quyền phù hợp mới hiển thị toàn văn.</p>
   </div>;
 }
@@ -194,8 +237,27 @@ function categorySticker(category: string): StickerName {
   return category === "Technology" ? "bulb" : category === "Science" ? "rocket" : category === "Environment" ? "mountain" : category === "Education" ? "book" : "globe";
 }
 
-function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image }: { row: NewsRow; saved: boolean; onSave: () => void; learnSlug?: string; onSite?: boolean; image?: NewsImage }) {
-  return <article className="news-card"><div className="news-card-art" style={{ background: `linear-gradient(135deg, ${accents[row.category]}45, #fffaf3)` }}>{image?<Image src={image.image_url} alt={image.image_alt} fill sizes="(max-width: 650px) 100vw, (max-width: 1050px) 50vw, 33vw" unoptimized/>:<Sticker name={categorySticker(row.category)} size={64} tilt={-6} />}<small>{row.category}</small></div><div className="news-card-body"><div className="news-card-meta"><span>{row.publisher}</span><span>{relativeTime(row.published_at)}</span></div><h3><Link href={`/app/news/${row.id}`}>{row.title}</Link></h3><p>{newsDate(row.published_at)}</p><div className="news-card-actions"><Link href={`/app/news/${row.id}`} className="button subtle">{onSite ? "Đọc tại đây" : "Chi tiết"} <ArrowRight size={15}/></Link><a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer" className="button subtle">Read Original <ExternalLink size={15}/></a><button aria-label={saved ? "Remove saved article" : "Save article"} aria-pressed={saved} onClick={onSave} className={saved ? "saved" : ""}><Bookmark size={19} fill={saved ? "currentColor" : "none"}/></button></div>{learnSlug && <Link className="news-learn-link" href={`/app/news/learn/${learnSlug}`}>Learn with News →</Link>}</div></article>;
+function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read = false, fresh = false }: { row: NewsRow; saved: boolean; onSave: () => void; learnSlug?: string; onSite?: boolean; image?: NewsImage; read?: boolean; fresh?: boolean }) {
+  const href = `/app/news/${row.id}`;
+  return <article className={`news-card ${read ? "is-read" : ""}`}>
+    <Link href={href} className="news-card-art" tabIndex={-1} aria-hidden="true" style={{ background: `linear-gradient(135deg, ${accents[row.category]}45, #fffaf3)` }}>
+      {image ? <Image src={image.image_url} alt="" fill sizes="(max-width: 650px) 100vw, (max-width: 1050px) 50vw, 33vw" unoptimized/> : <Sticker name={categorySticker(row.category)} size={64} tilt={-6} />}
+      <small>{row.category}</small>
+      {read ? <em className="news-card-flag read"><CheckCircle2 size={13} /> Đã đọc</em> : fresh ? <em className="news-card-flag">Mới</em> : null}
+    </Link>
+    <div className="news-card-body">
+      <div className="news-card-meta"><span>{row.publisher}</span><time dateTime={row.published_at} title={newsDate(row.published_at)}>{relativeTime(row.published_at)}</time></div>
+      <h3><Link href={href}>{row.title}</Link></h3>
+      <div className="news-card-foot">
+        <Link href={href} className="news-card-read">{onSite ? "Đọc tại đây" : "Chi tiết"} <ArrowRight size={15}/></Link>
+        <div className="news-card-icons">
+          <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer" aria-label={`Đọc bài gốc trên ${row.publisher}`} title={`Bài gốc trên ${row.publisher}`}><ExternalLink size={16}/></a>
+          <button type="button" aria-label={saved ? "Bỏ lưu tin" : "Lưu tin"} title={saved ? "Bỏ lưu tin" : "Lưu tin"} aria-pressed={saved} onClick={onSave} className={saved ? "saved" : ""}><Bookmark size={16} fill={saved ? "currentColor" : "none"}/></button>
+        </div>
+      </div>
+      {learnSlug && <Link className="news-learn-link" href={`/app/news/learn/${learnSlug}`}>Learn with News →</Link>}
+    </div>
+  </article>;
 }
 function LearnCard({ item }: { item: LearnRow }) { return <Link href={`/app/news/learn/${item.slug}`} className="news-learn-card"><div className="news-learn-icon" style={{ background: accents[item.category] + "33" }}><Sticker name={categorySticker(item.category)} size={40} tilt={-6} pop={false} /></div><span>{item.category} · {stages[item.stage_id] ?? item.stage_id}</span><h3>{item.title}</h3><p>{item.summary}</p><strong>Đọc & luyện tập <ArrowRight size={16}/></strong></Link>; }
 
@@ -203,11 +265,12 @@ function LearnList() {
   const db = useMemo(() => createClient(), []);
   const [rows, setRows] = useState<LearnRow[]>([]); const [level, setLevel] = useState("all"); const [category, setCategory] = useState("All News"); const [error, setError] = useState("");
   useEffect(() => { let request = db.from("news_learning_articles").select("id,slug,title,summary,category,stage_id,audio_url,source_url,rights_status,related_news_id,created_at").eq("published",true).order("created_at",{ascending:false}).limit(100); if (level !== "all") request = request.eq("stage_id",level); if (category !== "All News") request=request.eq("category",category); void request.then(({data,error})=>{setRows((data??[]) as LearnRow[]);setError(error?.message??"");}); },[db,level,category]);
-  return <div className="content-page news-page"><NewsMasthead active="learn"/><NewsRecommendations/><section className="news-section"><span className="eyebrow">BÀI ĐỌC CÓ BẢN QUYỀN RÕ RÀNG</span><h2>Learn with News</h2><p>Chọn chủ đề và mức độ phù hợp. Đây là bài đọc gốc hoặc đã được cấp phép, không phải toàn văn tin lấy tự động.</p><div className="news-toolbar"><select value={level} onChange={(event)=>setLevel(event.target.value)} aria-label="Choose level"><option value="all">Mọi trình độ</option>{Object.entries(stages).map(([id,label])=><option key={id} value={id}>{label}</option>)}</select><select value={category} onChange={(event)=>setCategory(event.target.value)} aria-label="Choose category"><option>All News</option>{NEWS_CATEGORIES.map((item)=><option key={item}>{item}</option>)}</select></div>{error&&<p role="alert" className="form-error">{error}</p>}<div className="news-grid">{rows.map((item)=><LearnCard key={item.id} item={item}/>)}</div>{!rows.length&&<div className="news-empty">Chưa có bài học cho bộ lọc này.</div>}</section></div>;
+  return <div className="content-page news-page news-hub"><NewsMasthead active="learn"/><NewsRecommendations/><section className="news-section"><span className="eyebrow">BÀI ĐỌC CÓ BẢN QUYỀN RÕ RÀNG</span><h2>Learn with News</h2><p>Chọn chủ đề và mức độ phù hợp. Đây là bài đọc gốc hoặc đã được cấp phép, không phải toàn văn tin lấy tự động.</p><div className="news-toolbar"><select value={level} onChange={(event)=>setLevel(event.target.value)} aria-label="Choose level"><option value="all">Mọi trình độ</option>{Object.entries(stages).map(([id,label])=><option key={id} value={id}>{label}</option>)}</select><select value={category} onChange={(event)=>setCategory(event.target.value)} aria-label="Choose category"><option>All News</option>{NEWS_CATEGORIES.map((item)=><option key={item}>{item}</option>)}</select></div>{error&&<p role="alert" className="form-error">{error}</p>}<div className="news-grid">{rows.map((item)=><LearnCard key={item.id} item={item}/>)}</div>{!rows.length&&<div className="news-empty">Chưa có bài học cho bộ lọc này.</div>}</section></div>;
 }
 
 function NewsDetail({ id }: { id: string }) {
   const db = useMemo(() => createClient(), []);
+  const [loading,setLoading]=useState(true);
   const [row,setRow]=useState<ArchiveRow|null>(null);
   const [slug,setSlug]=useState<string|null>(null);
   const [saved,setSaved]=useState(false);
@@ -215,58 +278,124 @@ function NewsDetail({ id }: { id: string }) {
   const [read,setRead]=useState(false);
   const [readError,setReadError]=useState("");
   const [marking,setMarking]=useState(false);
-  const [answered,setAnswered]=useState<boolean[]>([]);
-  useEffect(()=>{void (async()=>{const [a,b,c,d,e]=await Promise.all([db.from("news_archive_catalog").select("id,source_id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit,illustration_source_url,illustration_license,illustration_license_url").eq("id",id).eq("publication_status","published").eq("sensitive",false).maybeSingle(),db.from("news_learning_articles").select("slug").eq("related_news_id",id).eq("published",true).maybeSingle(),db.from("user_saved_news").select("article_id").eq("article_id",id).maybeSingle(),db.from("news_article_bodies").select("body_text,rights_basis,source_url,image_url,image_alt,image_credit,byline,ai_generated").eq("article_id",id).maybeSingle(),db.from("user_news_article_reads").select("article_id").eq("article_id",id).maybeSingle()]);setRow(a.data as ArchiveRow|null);setSlug(b.data?.slug??null);setSaved(Boolean(c.data));setBody(d.data);setRead(Boolean(e.data));})();},[db,id]);
+  const [progress,setProgress]=useState<{answered:boolean[];correct:(boolean|undefined)[]}>({answered:[],correct:[]});
+  const onQuizProgress=useCallback((answered:boolean[],correct:(boolean|undefined)[])=>setProgress({answered,correct}),[]);
+  const [quizTypes,setQuizTypes]=useState<QuestionType[]>([]);
+  const [quizAvailable,setQuizAvailable]=useState<TypeCount[]>([]);
+  useEffect(()=>{void (async()=>{const [a,b,c,d,e]=await Promise.all([db.from("news_archive_catalog").select(CATALOG_COLUMNS).eq("id",id).eq("publication_status","published").eq("sensitive",false).maybeSingle(),db.from("news_learning_articles").select("slug").eq("related_news_id",id).eq("published",true).maybeSingle(),db.from("user_saved_news").select("article_id").eq("article_id",id).maybeSingle(),db.from("news_article_bodies").select("body_text,rights_basis,source_url,image_url,image_alt,image_credit,byline,ai_generated").eq("article_id",id).maybeSingle(),db.from("user_news_article_reads").select("article_id").eq("article_id",id).maybeSingle()]);setRow(a.data as ArchiveRow|null);setSlug(b.data?.slug??null);setSaved(Boolean(c.data));setBody(d.data);setRead(Boolean(e.data));setLoading(false);})();},[db,id]);
+  const paragraphs = useMemo(()=>body?body.body_text.split(/\n\n+/):[],[body]);
   async function toggle(){const result=saved?await db.from("user_saved_news").delete().eq("article_id",id):await db.from("user_saved_news").insert({article_id:id});if(!result.error)setSaved(!saved);}
   async function markRead(){setMarking(true);setReadError("");const result=await db.rpc("news_mark_article_read",{p_article_id:id});setMarking(false);if(result.error)setReadError(result.error.message);else setRead(true);}
-  if(!row)return <div className="content-page news-page news-detail-page"><Link href="/app/news">← Daily News</Link><div className="news-empty">Tin không có sẵn hoặc đang chờ duyệt.</div></div>;
-  const sourceHost = body ? new URL(body.source_url).hostname : "";
+  if(loading)return <div className="content-page news-page news-detail-page" aria-busy="true"><Link href="/app/news" className="news-back"><ArrowLeft size={17}/> Daily News</Link><div className="news-detail news-detail-skeleton"><span className="skeleton"/><div><span className="skeleton"/><span className="skeleton"/><span className="skeleton"/></div></div></div>;
+  if(!row)return <div className="content-page news-page news-detail-page"><Link href="/app/news" className="news-back"><ArrowLeft size={17}/> Daily News</Link><div className="news-empty"><Sticker name="newspaper" size={72} tilt={-6}/><h3>Tin không có sẵn hoặc đang chờ duyệt</h3><Link href="/app/news" className="button primary">Xem tin mới nhất</Link></div></div>;
+  let sourceHost = "";
+  try { sourceHost = body ? new URL(body.source_url).hostname : ""; } catch { /* A malformed source keeps the publisher name. */ }
   const onSitePublisher = sourceHost === "noaa.gov" || sourceHost.endsWith(".noaa.gov") ? "NOAA" : sourceHost === "nasa.gov" || sourceHost.endsWith(".nasa.gov") ? "NASA"
     : sourceHost === "globalvoices.org" ? "Global Voices" : sourceHost === "www.gov.uk" ? "GOV.UK" : null;
   const rightsUrls: Record<string, string> = { NOAA: "https://www.noaa.gov/office-education/outreach-communication/faq", NASA: "https://www.nasa.gov/nasa-brand-center/images-and-media/",
     "Global Voices": "https://globalvoices.org/about/global-voices-attribution-policy/", "GOV.UK": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" };
   const rightsUrl = onSitePublisher ? rightsUrls[onSitePublisher] : null;
   const image = newsImage(row);
-  return <div className="content-page news-page news-detail-page"><Link href="/app/news" className="news-back"><ArrowLeft size={17}/> Daily News</Link><article className="news-detail"><header className="news-detail-lead"><div><div className="news-detail-art" style={{background:`linear-gradient(120deg,${accents[row.category]}55,#fffaf3)`}}>{image?<Image src={image.image_url} alt={image.image_alt} fill sizes="(max-width: 950px) 100vw, 48vw" unoptimized/>:<Sticker name="newspaper" size={96} tilt={-6} />}<span>{row.category}</span></div>{image&&<p className="news-image-credit">{row.illustration_source_url ? <>Ảnh minh họa: {image.image_credit} · <a href={safeExternal(row.illustration_source_url)} target="_blank" rel="noopener noreferrer">{row.illustration_source_url.startsWith("https://images.nasa.gov/") ? "NASA Image Library" : row.illustration_source_url.startsWith("https://www.flickr.com/") ? "Flickr" : "Wikimedia Commons"}</a> · {row.illustration_license_url ? <a href={safeExternal(row.illustration_license_url)} target="_blank" rel="noopener noreferrer">{row.illustration_license}</a> : row.illustration_license}</> : <>Ảnh: {image.image_credit} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Nguồn bài gốc</a></>}</p>}</div><div className="news-detail-intro"><span className="eyebrow">{row.category} · {relativeTime(row.published_at)}</span><h1>{row.title}</h1><p>{row.publisher} · {newsDate(row.published_at)}</p>{body?.byline&&<p className="news-byline">By {body.byline} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Bài gốc trên {row.publisher}</a></p>}<p className="news-attribution">{row.attribution_text} {row.attribution_text.includes("GDELT")&&<a href="https://www.gdeltproject.org/" target="_blank" rel="noopener noreferrer">The GDELT Project</a>}</p>{body?.ai_generated?<div className="news-rights-note news-ai-note" role="note"><BookOpenText size={20}/><p><strong>Bài do AI viết lại bằng tiếng Anh</strong> từ tin của {row.publisher}. Từng câu đã được đối chiếu tự động với bài gốc, nhưng vẫn có thể có sai sót. <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Đọc bài gốc để kiểm tra</a>.</p></div>:body?<div className="news-rights-note"><BookOpenText size={20}/><p>Nội dung văn bản {onSitePublisher ?? row.publisher} được hiển thị tại đây với ghi nguồn. {rightsUrl&&<a href={rightsUrl} target="_blank" rel="noopener noreferrer">Xem hướng dẫn sử dụng của {onSitePublisher}</a>}</p></div>:<div className="news-rights-note"><BookOpenText size={20}/><p>Nguồn này chưa có quyền hiển thị toàn bài trên IeltsWithHarry. Bạn có thể đọc tại trang nhà xuất bản.</p></div>}</div></header>{body&&<NewsReadingTools articleId={id} title={row.title} paragraphs={body.body_text.split(/\n\n+/)} practice={{answered,content:<NewsAutoQuiz articleId={id} onProgress={setAnswered}/>}}><div className="news-reading-control"><button disabled={read||marking} onClick={()=>void markRead()}>{read?"✓ Đã hoàn thành bài đọc":marking?"Đang lưu…":"Tôi đã đọc xong ✓"}</button>{read&&<span>Hoạt động đọc đã được ghi vào lịch sử của bạn.</span>}</div>{readError&&<p className="form-error" role="alert">{readError}</p>}</NewsReadingTools>}<div className="news-detail-actions"><a className="button primary" href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Read Original Article <ExternalLink size={17}/></a><button className="button subtle" onClick={()=>void toggle()}><Bookmark size={17} fill={saved?"currentColor":"none"}/> {saved?"Đã lưu":"Lưu tin"}</button>{slug&&<Link className="button subtle" href={`/app/news/learn/${slug}`}>Learn with News →</Link>}</div></article></div>;
+  const links = <div className="news-detail-actions"><a className="button subtle" href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Bài gốc <ExternalLink size={16}/></a><button className={`button subtle ${saved ? "is-saved" : ""}`} aria-pressed={saved} onClick={()=>void toggle()}><Bookmark size={16} fill={saved?"currentColor":"none"}/> {saved?"Đã lưu":"Lưu tin"}</button>{slug&&<Link className="button subtle" href={`/app/news/learn/${slug}`}>Learn with News →</Link>}</div>;
+  return <div className="content-page news-page news-detail-page"><Link href="/app/news" className="news-back"><ArrowLeft size={17}/> Daily News</Link><article className="news-detail"><header className="news-detail-lead"><div><div className="news-detail-art" style={{background:`linear-gradient(120deg,${accents[row.category]}55,#fffaf3)`}}>{image?<Image src={image.image_url} alt={image.image_alt} fill sizes="(max-width: 950px) 100vw, 48vw" unoptimized/>:<Sticker name={categorySticker(row.category)} size={88} tilt={-6} />}<span>{row.category}</span></div>{image&&<p className="news-image-credit">{row.illustration_source_url ? <>Ảnh minh họa: {image.image_credit} · <a href={safeExternal(row.illustration_source_url)} target="_blank" rel="noopener noreferrer">{row.illustration_source_url.startsWith("https://images.nasa.gov/") ? "NASA Image Library" : row.illustration_source_url.startsWith("https://www.flickr.com/") ? "Flickr" : "Wikimedia Commons"}</a> · {row.illustration_license_url ? <a href={safeExternal(row.illustration_license_url)} target="_blank" rel="noopener noreferrer">{row.illustration_license}</a> : row.illustration_license}</> : <>Ảnh: {image.image_credit} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Nguồn bài gốc</a></>}</p>}</div><div className="news-detail-intro"><span className="eyebrow">{row.category} · {relativeTime(row.published_at)}</span><h1>{row.title}</h1><p className="news-detail-source">{row.publisher} · {newsDate(row.published_at)}{read&&<span className="news-read-tag"><CheckCircle2 size={14}/> Đã đọc</span>}</p>{body?.byline&&<p className="news-byline">By {body.byline} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Bài gốc trên {row.publisher}</a></p>}<p className="news-attribution">{row.attribution_text} {row.attribution_text.includes("GDELT")&&<a href="https://www.gdeltproject.org/" target="_blank" rel="noopener noreferrer">The GDELT Project</a>}</p>{body?.ai_generated?<div className="news-rights-note news-ai-note" role="note"><BookOpenText size={20}/><p><strong>Bài do AI viết lại bằng tiếng Anh</strong> từ tin của {row.publisher}. Từng câu đã được đối chiếu tự động với bài gốc, nhưng vẫn có thể có sai sót. <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Đọc bài gốc để kiểm tra</a>.</p></div>:body?<div className="news-rights-note"><BookOpenText size={20}/><p>Nội dung văn bản {onSitePublisher ?? row.publisher} được hiển thị tại đây với ghi nguồn. {rightsUrl&&<a href={rightsUrl} target="_blank" rel="noopener noreferrer">Xem hướng dẫn sử dụng của {onSitePublisher}</a>}</p></div>:<div className="news-rights-note"><BookOpenText size={20}/><p>Nguồn này chưa có quyền hiển thị toàn bài trên IeltsWithHarry. Bạn có thể đọc tại trang nhà xuất bản.</p></div>}</div></header>
+    {body?<NewsReadingTools articleId={id} title={row.title} paragraphs={paragraphs} practice={{answered:progress.answered,correct:progress.correct,setup:<QuestionTypePicker available={quizAvailable} selected={quizTypes} onChange={setQuizTypes}/>,content:<NewsAutoQuiz articleId={id} types={quizTypes} onTypesChange={setQuizTypes} onAvailable={setQuizAvailable} onProgress={onQuizProgress}/>}}>
+      <div className={`news-finish ${read ? "is-done" : ""}`}><button type="button" className="news-finish-main" disabled={read||marking} onClick={()=>void markRead()}><CheckCircle2 size={18}/>{read?"Đã hoàn thành bài đọc":marking?"Đang lưu…":"Tôi đã đọc xong"}</button>{links}{read&&<span className="news-finish-note">Hoạt động đọc đã được ghi vào lịch sử của bạn.</span>}</div>
+      {readError&&<p className="form-error" role="alert">{readError}</p>}
+    </NewsReadingTools>:<div className="news-detail-actions news-detail-actions-only"><a className="button primary" href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Đọc bài gốc trên {row.publisher} <ExternalLink size={17}/></a><button className="button subtle" aria-pressed={saved} onClick={()=>void toggle()}><Bookmark size={17} fill={saved?"currentColor":"none"}/> {saved?"Đã lưu":"Lưu tin"}</button>{slug&&<Link className="button subtle" href={`/app/news/learn/${slug}`}>Learn with News →</Link>}</div>}
+  </article></div>;
 }
 
 function SavedNews(){
   const db=useMemo(()=>createClient(),[]);
   const [rows,setRows]=useState<ArchiveRow[]>([]);
+  const [loading,setLoading]=useState(true);
   useEffect(()=>{void (async()=>{
     const {data}=await db.from("user_saved_news").select("article_id").order("saved_at",{ascending:false}).limit(100);
     const ids=(data??[]).map((item)=>item.article_id);
-    if(!ids.length){setRows([]);return;}
-    const archive=await db.from("news_archive_catalog").select("id,source_id,title,publisher,canonical_url,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit,illustration_source_url,illustration_license,illustration_license_url").in("id",ids).eq("publication_status","published").eq("sensitive",false);
+    if(!ids.length){setRows([]);setLoading(false);return;}
+    const archive=await db.from("news_archive_catalog").select(CATALOG_COLUMNS).in("id",ids).eq("publication_status","published").eq("sensitive",false);
     const byId=new Map((archive.data??[]).map((item)=>[item.id,item as ArchiveRow]));
     setRows(ids.flatMap((id)=>byId.has(id)?[byId.get(id)!]:[]));
+    setLoading(false);
   })();},[db]);
-  return <div className="content-page news-page"><NewsMasthead active="saved"/><section className="news-section"><h2>Tin đã lưu</h2><p>Danh sách riêng của bạn. Mở bài gốc trên trang nhà xuất bản.</p><div className="news-grid">{rows.map((row)=><NewsCard key={row.id} row={row} saved onSite={row.readable} image={newsImage(row)} onSave={async()=>{await db.from("user_saved_news").delete().eq("article_id",row.id);setRows((current)=>current.filter((item)=>item.id!==row.id));}}/>)}</div>{!rows.length&&<div className="news-empty">Bạn chưa lưu tin nào. <Link href="/app/news">Khám phá Daily News →</Link></div>}</section></div>;
+  return <div className="content-page news-page news-hub"><NewsMasthead active="saved"/><section className="news-section"><h2>Tin đã lưu</h2><p>Danh sách riêng của bạn. Mở bài gốc trên trang nhà xuất bản.</p><div className="news-grid">{rows.map((row)=><NewsCard key={row.id} row={row} saved onSite={row.readable} image={newsImage(row)} onSave={async()=>{await db.from("user_saved_news").delete().eq("article_id",row.id);setRows((current)=>current.filter((item)=>item.id!==row.id));}}/>)}</div>{!rows.length&&!loading&&<div className="news-empty"><Sticker name="newspaper" size={64} tilt={-6}/><h3>Bạn chưa lưu tin nào</h3><p>Bấm biểu tượng dấu trang trên thẻ tin để lưu lại đọc sau.</p><Link href="/app/news" className="button primary">Khám phá Daily News</Link></div>}</section></div>;
 }
 
 function NewsHistory(){
   const db=useMemo(()=>createClient(),[]);
+  const [loading,setLoading]=useState(true);
   const [attempts,setAttempts]=useState<AttemptRow[]>([]);
-  const [autoAttempts,setAutoAttempts]=useState<AttemptRow[]>([]);
+  const [autoAttempts,setAutoAttempts]=useState<PracticeAttempt[]>([]);
   const [progress,setProgress]=useState<{article_id:string;last_read_at:string;completed_at:string|null;best_score:number|null;best_total:number|null}[]>([]);
   const [titles,setTitles]=useState<Record<string,string>>({});
   const [newsReads,setNewsReads]=useState<{article_id:string;read_at:string}[]>([]);
   const [newsTitles,setNewsTitles]=useState<Record<string,string>>({});
+  const [filter,setFilter]=useState<"all"|"full"|"partial">("all");
   useEffect(()=>{void (async()=>{
+    const automaticRequest=async()=>{
+      const rows=await db.from("news_auto_attempts").select("id,article_id,score,total,submitted_at,partial,breakdown,duration_seconds").order("submitted_at",{ascending:false}).limit(200);
+      // Before the practice-history migration only the basic columns exist.
+      return rows.error?await db.from("news_auto_attempts").select("id,article_id,score,total,submitted_at").order("submitted_at",{ascending:false}).limit(200):rows;
+    };
     const [a,p,l,n,automatic]=await Promise.all([
       db.from("news_reading_attempts").select("id,article_id,score,total,submitted_at").order("submitted_at",{ascending:false}).limit(100),
       db.from("user_news_progress").select("article_id,last_read_at,completed_at,best_score,best_total").order("last_read_at",{ascending:false}).limit(100),
       db.from("news_learning_articles").select("id,title,slug").eq("published",true).limit(100),
       db.from("user_news_article_reads").select("article_id,read_at").order("read_at",{ascending:false}).limit(100),
-      db.from("news_auto_attempts").select("id,article_id,score,total,submitted_at").order("submitted_at",{ascending:false}).limit(100),
+      automaticRequest(),
     ]);
-    setAttempts((a.data??[]) as AttemptRow[]);setAutoAttempts((automatic.data??[]) as AttemptRow[]);setProgress((p.data??[]) as typeof progress);
+    setAttempts((a.data??[]) as AttemptRow[]);setAutoAttempts((automatic.data??[]) as PracticeAttempt[]);setProgress((p.data??[]) as typeof progress);
     setTitles(Object.fromEntries((l.data??[]).map((item)=>[item.id,`${item.title}|${item.slug}`])));
     setNewsReads(n.data??[]);
     const ids=[...new Set([...(n.data??[]).map((item)=>item.article_id),...(automatic.data??[]).map((item)=>item.article_id)])];
     if(ids.length){const headlines=await db.from("news_articles").select("id,title").in("id",ids);setNewsTitles(Object.fromEntries((headlines.data??[]).map((item)=>[item.id,item.title])));}
+    setLoading(false);
   })();},[db]);
-  return <div className="content-page news-page"><NewsMasthead active="history"/><section className="news-section"><h2>Lịch sử học với tin</h2><div className="news-stats"><div><Newspaper/><span>Tin đã đọc xong</span><strong>{newsReads.length}</strong></div><div><BookOpenText/><span>Bài luyện đã mở</span><strong>{progress.length}</strong></div><div><CheckCircle2/><span>Quiz đã nộp</span><strong>{attempts.length+autoAttempts.length}</strong></div></div><h3>Tin đã đọc trực tiếp</h3><div className="news-history-list">{newsReads.map((item)=><article key={item.article_id}><span>{newsDate(item.read_at)}</span><h3>{newsTitles[item.article_id]??"Bài tin"}</h3><Link href={`/app/news/${item.article_id}`}>Đọc lại →</Link></article>)}</div>{!newsReads.length&&<div className="news-empty">Bạn chưa đánh dấu hoàn thành tin nào. <Link href="/app/news#direct-news">Khám phá tin đọc trực tiếp →</Link></div>}<h3>Câu hỏi tự động từ bài báo</h3><div className="news-history-list">{autoAttempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{newsTitles[item.article_id]??"Bài báo"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p><Link href={`/app/news/${item.article_id}`}>Đọc và luyện lại →</Link></article>)}</div>{!autoAttempts.length&&<p>Chưa có bài quiz tự động nào được nộp.</p>}<h3>Bài luyện và câu hỏi</h3><div className="news-history-list">{attempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{titles[item.article_id]?.split("|")[0]??"Bài đọc"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p>{titles[item.article_id]&&<Link href={`/app/news/learn/${titles[item.article_id].split("|")[1]}`}>Ôn lại →</Link>}</article>)}</div>{!attempts.length&&<div className="news-empty">Bạn chưa hoàn thành bài quiz nào. <Link href="/app/news/learn">Bắt đầu đọc →</Link></div>}</section></div>;
+  const stats=useMemo(()=>summarizeAttempts(autoAttempts),[autoAttempts]);
+  const listed=autoAttempts.filter((item)=>filter==="all"||(filter==="partial")===Boolean(item.partial));
+  return <div className="content-page news-page news-hub"><NewsMasthead active="history"/><section className="news-section"><h2>Lịch sử học với tin</h2>
+    <div className="news-stats"><div><Newspaper/><span>Tin đã đọc xong</span><strong>{newsReads.length}</strong></div><div><BookOpenText/><span>Bài luyện đã mở</span><strong>{progress.length}</strong></div><div><CheckCircle2/><span>Quiz đã nộp</span><strong>{attempts.length+autoAttempts.length}</strong></div></div>
+    {!loading&&<PracticeAnalytics stats={stats}/>}
+    <h3>Tin đã đọc trực tiếp</h3><div className="news-history-list">{newsReads.map((item)=><article key={item.article_id}><span>{newsDate(item.read_at)}</span><h3>{newsTitles[item.article_id]??"Bài tin"}</h3><Link href={`/app/news/${item.article_id}`}>Đọc lại →</Link></article>)}</div>{!newsReads.length&&!loading&&<div className="news-empty">Bạn chưa đánh dấu hoàn thành tin nào. <Link href="/app/news">Khám phá tin đọc trực tiếp →</Link></div>}
+    <div className="news-history-head"><h3>Câu hỏi IELTS từ bài báo</h3>{autoAttempts.some((item)=>item.partial)&&<div className="news-history-filter" role="group" aria-label="Lọc lượt làm bài">{([["all","Tất cả"],["full","Đầy đủ"],["partial","Theo dạng"]] as const).map(([id,label])=><button key={id} type="button" aria-pressed={filter===id} onClick={()=>setFilter(id)}>{label}</button>)}</div>}</div>
+    <div className="news-history-list news-attempt-list">{listed.map((item)=>{const types=sumBreakdowns([item.breakdown]);return <article key={item.id}>
+      <div className="news-attempt-score"><strong>{item.score}<small>/{item.total}</small></strong><span>{percent(item.score,item.total)}%</span></div>
+      <div className="news-attempt-body"><span>{newsDate(item.submitted_at)} · {item.partial?"Luyện theo dạng":"Bài đầy đủ"}{item.duration_seconds?` · ${formatDuration(item.duration_seconds)}`:""}{!item.partial&&estimateBand(item.score,item.total)?` · Band ≈ ${estimateBand(item.score,item.total)}`:""}</span>
+        <h3>{newsTitles[item.article_id]??"Bài báo"}</h3>
+        {types.length>0&&<p className="news-attempt-types">{types.map((type)=><em key={type.type} className={type.percent>=70?"good":type.percent<50?"low":""}>{typeLabels[type.type]} {type.correct}/{type.total}</em>)}</p>}
+      </div>
+      <Link href={`/app/news/${item.article_id}`}>Luyện lại →</Link></article>;})}</div>
+    {!autoAttempts.length&&!loading&&<p>Chưa có bài quiz tự động nào được nộp.</p>}
+    <h3>Bài luyện và câu hỏi</h3><div className="news-history-list">{attempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{titles[item.article_id]?.split("|")[0]??"Bài đọc"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p>{titles[item.article_id]&&<Link href={`/app/news/learn/${titles[item.article_id].split("|")[1]}`}>Ôn lại →</Link>}</article>)}</div>{!attempts.length&&!loading&&<div className="news-empty">Bạn chưa hoàn thành bài quiz nào. <Link href="/app/news/learn">Bắt đầu đọc →</Link></div>}
+  </section></div>;
+}
+
+/** Numbers across every Daily News quiz attempt: totals, accuracy per question type and the recent trend. */
+function PracticeAnalytics({ stats }: { stats: ReturnType<typeof summarizeAttempts> }) {
+  if (!stats.attempts) return <div className="news-analytics news-analytics-empty"><ChartNoAxesColumn size={22}/><p><b>Phân tích kết quả</b> sẽ hiện ở đây sau lượt luyện đề đầu tiên. Mở một bài báo và bấm <b>Luyện đề</b>.</p></div>;
+  return <section className="news-analytics" aria-label="Phân tích kết quả luyện đề">
+    <div className="news-analytics-head"><span className="eyebrow">PHÂN TÍCH KẾT QUẢ</span><h3>Luyện đề IELTS từ bài báo</h3></div>
+    <div className="news-kpis">
+      <div><small>Lượt làm bài</small><strong>{stats.attempts}</strong></div>
+      <div><small>Câu đúng</small><strong>{stats.correct}<span>/{stats.questions}</span></strong></div>
+      <div><small>Tỉ lệ đúng</small><strong>{stats.accuracy}%</strong></div>
+      <div><small>Thời gian / câu</small><strong>{stats.secondsPerQuestion!==null?<>{stats.secondsPerQuestion}<span> giây</span></>:"—"}</strong></div>
+      {stats.bestBand&&<div title="Quy đổi từ bài đầy đủ tốt nhất theo thang 40 câu, chỉ để tham khảo"><small>Band tốt nhất (ước tính)</small><strong>{stats.bestBand}</strong></div>}
+    </div>
+    <div className="news-analytics-grid">
+      <div className="news-analytics-card"><h4>Tỉ lệ đúng theo dạng câu hỏi</h4>
+        {stats.types.length?stats.types.map((item)=><div key={item.type} className="news-type-bar" title={`${typeLabels[item.type]}: đúng ${item.correct}/${item.total}`}><span>{typeLabels[item.type]}</span><i><b style={{width:`${Math.max(item.percent,2)}%`}}/></i><strong>{item.percent}%</strong></div>):<p className="news-analytics-note">Các lượt mới sẽ được tách theo dạng câu hỏi.</p>}
+        {stats.weakest&&stats.weakest.percent<100&&<p className="news-analytics-tip">Dạng cần ưu tiên: <b>{typeLabels[stats.weakest.type]}</b> — đúng {stats.weakest.correct}/{stats.weakest.total} câu ({stats.weakest.percent}%).</p>}
+      </div>
+      <div className="news-analytics-card"><h4>{stats.trend.length} lượt gần nhất</h4>
+        <div className="news-trend" role="img" aria-label={`Tỉ lệ đúng các lượt gần nhất: ${stats.trend.map((item)=>`${item.percent}%`).join(", ")}`}>
+          {stats.trend.map((item)=><div key={item.id} className={item.partial?"is-partial":""} title={`${newsDate(item.at)} · ${item.partial?"Theo dạng":"Đầy đủ"}: ${item.score}/${item.total} (${item.percent}%)`}>
+            <span>{item.percent}</span><i style={{height:`${Math.max(item.percent,3)}%`}}/></div>)}
+        </div>
+        <p className="news-analytics-note"><i className="dot full"/> Bài đầy đủ <i className="dot partial"/> Luyện theo dạng · cũ → mới</p>
+      </div>
+    </div>
+  </section>;
 }
 
 function LearnReader({ slug }: { slug: string }) {

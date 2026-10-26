@@ -37,12 +37,13 @@ import { HarryMascot } from "@/components/illustrations/harry";
 import { Tape } from "@/components/stickers/stickers";
 import { HarryBuddy } from "@/components/fx/harry-buddy";
 import { useDemo } from "@/features/demo/demo-store";
-import { demoMode } from "@/lib/runtime";
+import { demoMode, liveMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
 import { useStudyPresence } from "@/features/study-room/study-presence";
 import { NotificationBell } from "@/components/account/notification-bell";
 import { AccountAvatar } from "@/components/account/account-avatar";
+import { useNewsUnread } from "@/features/news/news-unread";
 
 const groups = [
   {
@@ -113,6 +114,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
   const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const { online: studyOnline } = useStudyPresence();
+  const newsUnread = useNewsUnread(pathname, liveMode);
   const [profileOpen, setProfileOpen] = useState(false);
   const [avatar, setAvatar] = useState("harry");
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -353,6 +355,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                   <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b>
                   <span>{label}</span>
                   {href === "/app/study-together" && <span className="study-nav-count" aria-label={`${studyOnline ?? "Đang kết nối"} người đang học trực tiếp`}><i />{studyOnline ?? "…"}</span>}
+                  {href === "/app/news" && newsUnread > 0 && <span className="study-nav-count news-nav-count" aria-label={`${newsUnread} tin mới`}>{newsUnread > 99 ? "99+" : newsUnread}</span>}
                 </Link>
               ))}
             </div>

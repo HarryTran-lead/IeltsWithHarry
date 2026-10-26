@@ -160,7 +160,7 @@ strong {
   align-items: center;
   gap: 14px;
   padding: 0 20px 0 22px;
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: saturate(1.4) blur(14px);
   -webkit-backdrop-filter: saturate(1.4) blur(14px);
   border-bottom: 1px solid var(--line);
@@ -536,6 +536,20 @@ strong {
   border-radius: 50%;
   background: #1ac094;
   animation: live-dot 2s ease-in-out infinite;
+}
+.study-nav-count.news-nav-count {
+  min-width: 22px;
+  padding: 1px 6px;
+  background: #ff6b5f;
+  color: #fff;
+  box-shadow: 0 2px 6px -2px rgba(230, 74, 60, 0.6);
+  animation: news-count-in 0.4s var(--ease-spring);
+}
+@keyframes news-count-in {
+  from {
+    scale: 0.4;
+    opacity: 0;
+  }
 }
 @keyframes live-dot {
   50% {

@@ -1,7 +1,7 @@
 "use client";
 
-import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { AArrowDown, AArrowUp, BookOpenText, Clock3, Columns2, Highlighter, ListChecks, Timer, Trash2, X } from "lucide-react";
+import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { AArrowDown, AArrowUp, BookOpenText, Clock3, Columns2, Highlighter, ListChecks, Minimize2, PanelRightOpen, Timer, Trash2, X } from "lucide-react";
 import { addHighlight, highlightColors, parseHighlightCache, parseHighlights, segments, trimRange, type Highlight, type HighlightColor } from "@/lib/highlights";
 import { Literata } from "next/font/google";
 import { createClient } from "@/lib/supabase/browser";
@@ -14,13 +14,20 @@ const readingFont = Literata({ subsets: ["latin", "vietnamese"], variable: "--fo
 const sizes = [15, 16, 17, 18, 20, 22, 24];
 const DEFAULT_SIZE = 3;
 const SIZE_KEY = "ieltswithharry-reader-size";
+const TOOLS_KEY = "ieltswithharry-reader-tools";
 const colorName: Record<HighlightColor, string> = { sun: "vàng", mint: "xanh", rose: "hồng" };
 
 type Range = Pick<Highlight, "p" | "start" | "end">;
-type Popover = { x: number; y: number; below: boolean; ranges?: Range[]; mark?: string };
+type Popover = { x: number; y: number; below: boolean; touch: boolean; ranges?: Range[]; mark?: string };
 
-/** Questions shown beside the passage in practice mode. `answered` has one entry per question, in order. */
-export type ReadingPractice = { answered: boolean[]; content: React.ReactNode };
+/** Questions shown beside the passage in practice mode. `answered` has one entry per question, in order; `setup` sits in the start card. */
+export type ReadingPractice = { answered: boolean[]; content: React.ReactNode; setup?: React.ReactNode; correct?: (boolean | undefined)[] };
+type PracticeClock = { elapsed: () => number; restart: () => void };
+const PracticeClockContext = createContext<PracticeClock>({ elapsed: () => 0, restart: () => {} });
+/** Seconds on the practice timer, and a way to start it again for a new round. */
+export function usePracticeClock() { return useContext(PracticeClockContext); }
+/** A panel beside the passage. Minimised panels become icons; `onSelect` panels open when the reader selects a word. */
+export type ReadingTool = { id: string; label: string; icon: React.ReactNode; count?: number; onSelect?: boolean; content: React.ReactNode };
 
 function offsetIn(element: HTMLElement, node: Node, offset: number) {
   const range = document.createRange();
@@ -30,6 +37,16 @@ function offsetIn(element: HTMLElement, node: Node, offset: number) {
 }
 function letter(index: number) { return index < 26 ? String.fromCharCode(65 + index) : String(index + 1); }
 function clock(seconds: number) { return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`; }
+/**
+ * Places the highlight menu under the selection. Browsers put their own
+ * selection menus (copy, search, translate) above it, which used to cover
+ * ours; it only goes above when there is no room below.
+ */
+function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below" | "touch"> {
+  const room = window.innerHeight - rect.bottom;
+  const below = room > (touch ? 110 : 70) || rect.top < 200;
+  return { x: Math.max(80, Math.min(window.innerWidth - 80, rect.left + rect.width / 2)), y: below ? rect.bottom : rect.top, below, touch };
+}
 
 /**
  * A passage with two modes. Reading mode is a calm article view with the
@@ -45,7 +62,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   translation?: (index: number) => React.ReactNode;
   onSelectWord?: (word: string) => void;
   toolbar?: React.ReactNode;
-  tools?: React.ReactNode;
+  tools?: ReadingTool[];
   after?: React.ReactNode;
   practice?: ReadingPractice;
 }) {
@@ -61,7 +78,12 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   const [tab, setTab] = useState<"passage" | "questions">("passage");
   const [split, setSplit] = useState(52);
   const [seconds, setSeconds] = useState(0);
+  const secondsRef = useRef(0);
+  useEffect(() => { secondsRef.current = seconds; }, [seconds]);
+  const practiceClock = useMemo<PracticeClock>(() => ({ elapsed: () => secondsRef.current, restart: () => { secondsRef.current = 0; setSeconds(0); } }), []);
   const [popover, setPopover] = useState<Popover | null>(null);
+  const [toolsMin, setToolsMin] = useState(false);
+  const [openTool, setOpenTool] = useState<string | null>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   const sideRef = useRef<HTMLDivElement>(null);
@@ -71,6 +93,8 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   const practicing = mode === "practice";
   const total = practice?.answered.length ?? 0;
   const done = practice?.answered.filter(Boolean).length ?? 0;
+  const graded = Boolean(practice?.correct?.length) && practice!.correct!.every((item) => item !== undefined);
+  const right = practice?.correct?.filter(Boolean).length ?? 0;
   const minutes = Math.max(1, Math.round(text.join(" ").split(/\s+/).length / 200));
 
   const syncRemote = useCallback((userId: string, next: Highlight[], updatedAt: string) => {
@@ -107,6 +131,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
         local = parseHighlightCache(localStorage.getItem(scopedKey), text);
         const saved = localStorage.getItem(SIZE_KEY);
         if (saved !== null && Number.isInteger(Number(saved)) && Number(saved) >= 0 && Number(saved) < sizes.length) setSize(Number(saved));
+        setToolsMin(localStorage.getItem(TOOLS_KEY) === "min");
       } catch { /* Private windows can block storage; the reader still works. */ }
       let latest = local;
       let status: "saved" | "local" = userId ? "saved" : "local";
@@ -147,6 +172,12 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     else setSaveStatus("local");
   }, [storageKey, syncRemote]);
 
+  function minimiseTools(next: boolean) {
+    setToolsMin(next);
+    setOpenTool(null);
+    try { localStorage.setItem(TOOLS_KEY, next ? "min" : "full"); } catch { /* The choice stays for this visit. */ }
+  }
+
   function resize(step: number) {
     const next = Math.min(sizes.length - 1, Math.max(0, size + step));
     setSize(next);
@@ -165,10 +196,14 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     function onKey(event: KeyboardEvent) {
       if (event.key !== "Escape") return;
       if (popover) setPopover(null);
+      else if (openTool) setOpenTool(null);
       else if (practicing) setMode("read");
     }
     function onPointer(event: PointerEvent) {
-      if (popover && !(event.target as Element).closest?.(".rw-popover")) setPopover(null);
+      const target = event.target as Element;
+      if (popover && !target.closest?.(".rw-popover")) setPopover(null);
+      // Selecting more words keeps an open tool in place.
+      if (openTool && !target.closest?.(".rw-flyout, .rw-rail, .rw-text")) setOpenTool(null);
     }
     function onScroll() { if (popover) setPopover(null); }
     window.addEventListener("keydown", onKey);
@@ -179,7 +214,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       window.removeEventListener("pointerdown", onPointer);
       window.removeEventListener("scroll", onScroll, true);
     };
-  }, [popover, practicing]);
+  }, [popover, practicing, openTool]);
 
   function onSelect(event: React.MouseEvent | React.TouchEvent) {
     if (!ready) return;
@@ -189,9 +224,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     if (selection.isCollapsed || !selection.rangeCount) {
       const mark = (event.target as Element).closest?.("mark[data-hl]");
       if (mark && root.contains(mark)) {
-        const rect = mark.getBoundingClientRect();
-        const below = rect.top < 90;
-        setPopover({ x: Math.max(72, Math.min(window.innerWidth - 72, rect.left + rect.width / 2)), y: below ? rect.bottom : rect.top, below, mark: mark.getAttribute("data-hl") ?? "" });
+        setPopover({ ...anchor(mark.getBoundingClientRect(), event.type.startsWith("touch")), mark: mark.getAttribute("data-hl") ?? "" });
       }
       return;
     }
@@ -206,11 +239,12 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       if (to > from) ranges.push({ p, start: from, end: to });
     });
     if (!ranges.length) return;
-    const rect = range.getBoundingClientRect();
-    const below = rect.top < 90;
-    setPopover({ x: Math.max(72, Math.min(window.innerWidth - 72, rect.left + rect.width / 2)), y: below ? rect.bottom : rect.top, below, ranges });
+    setPopover({ ...anchor(range.getBoundingClientRect(), event.type.startsWith("touch")), ranges });
     const word = selection.toString().trim();
-    if (!practicing && onSelectWord && /^[A-Za-z][A-Za-z'-]*$/.test(word)) onSelectWord(word);
+    if (!practicing && onSelectWord && /^[A-Za-z][A-Za-z'-]*$/.test(word)) {
+      onSelectWord(word);
+      if (toolsMin) setOpenTool(tools?.find((tool) => tool.onSelect)?.id ?? null);
+    }
   }
 
   function paint(color: HighlightColor) {
@@ -223,7 +257,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     setPopover(null);
   }
 
-  function enterPractice() { setMode("practice"); setTab("passage"); setPopover(null); window.getSelection()?.removeAllRanges(); }
+  function enterPractice() { setMode("practice"); setTab("passage"); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
   function jump(number: number) {
     setTab("questions");
     requestAnimationFrame(() => sideRef.current?.querySelector(`[data-q="${number}"]`)?.scrollIntoView({ behavior: "smooth", block: "center" }));
@@ -248,7 +282,25 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     <Highlighter size={16} /> {highlights.length} <Trash2 size={14} />
   </button>;
 
-  return <div className={`rw ${readingFont.variable} ${practicing ? "is-practice" : "is-read"} ${tools ? "" : "no-tools"}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
+  const flyout = tools?.find((tool) => tool.id === openTool);
+  const toolPanel = tools?.length ? toolsMin ? <div className="rw-tools is-min">
+    <div className="rw-rail" role="toolbar" aria-label="Công cụ đọc">
+      {tools.map((tool) => <button type="button" key={tool.id} aria-pressed={openTool === tool.id} aria-label={tool.label} title={tool.label} onClick={() => setOpenTool(openTool === tool.id ? null : tool.id)}>
+        {tool.icon}{tool.count ? <i>{tool.count > 99 ? "99+" : tool.count}</i> : null}</button>)}
+      <button type="button" className="rw-rail-expand" onClick={() => minimiseTools(false)} aria-label="Mở rộng công cụ" title="Mở rộng công cụ"><PanelRightOpen size={17} /></button>
+    </div>
+    {flyout && <div className="rw-flyout" role="dialog" aria-label={flyout.label}>
+      <button type="button" className="rw-flyout-close" onClick={() => setOpenTool(null)} aria-label="Đóng"><X size={16} /></button>
+      {flyout.content}
+    </div>}
+  </div> : <div className="rw-tools">
+    {tools.map((tool) => <div className="rw-tool" key={tool.id}>
+      <button type="button" className="rw-tool-min" onClick={() => minimiseTools(true)} aria-label="Thu nhỏ công cụ thành biểu tượng" title="Thu nhỏ"><Minimize2 size={15} /></button>
+      {tool.content}
+    </div>)}
+  </div> : null;
+
+  return <div className={`rw ${readingFont.variable} ${practicing ? "is-practice" : "is-read"} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
     <div className="rw-bar" role="toolbar" aria-label={practicing ? "Thanh làm bài" : "Công cụ đọc"}>
       {practicing ? <>
         <button type="button" className="rw-exit" onClick={() => setMode("read")}><X size={17} /> Thoát</button>
@@ -289,24 +341,29 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
         {!practicing && after}
         {!practicing && total > 0 && <div className="rw-cta">
           <span className="rw-cta-icon"><Columns2 size={22} /></span>
-          <div><strong>Luyện đề IELTS từ bài này</strong><span>{total} câu hỏi · màn hình chia đôi để vừa đọc vừa làm, có đồng hồ bấm giờ</span></div>
-          <button type="button" className="button primary" onClick={enterPractice}>Làm bài</button>
+          <div className="rw-cta-text"><strong>Luyện đề IELTS từ bài này</strong><span>{total} câu hỏi · màn hình chia đôi để vừa đọc vừa làm, có đồng hồ bấm giờ</span></div>
+          <button type="button" className="button primary" onClick={enterPractice}>Làm {total} câu</button>
+          {practice?.setup && <div className="rw-cta-setup"><small>Chọn dạng câu hỏi muốn luyện:</small>{practice.setup}</div>}
         </div>}
       </div>
       {practicing && <div className="rw-divider" role="separator" aria-orientation="vertical" aria-label="Kéo để đổi độ rộng hai khung" aria-valuemin={30} aria-valuemax={70} aria-valuenow={Math.round(split)} tabIndex={0}
         onPointerDown={drag} onKeyDown={(event) => { if (event.key === "ArrowLeft") setSplit((value) => Math.max(30, value - 4)); if (event.key === "ArrowRight") setSplit((value) => Math.min(70, value + 4)); }}><i /></div>}
       <div className="rw-pane rw-side-pane" ref={sideRef}>
-        {tools && <div className="rw-tools">{tools}</div>}
-        {practice && <div className="rw-questions">{practice.content}</div>}
+        {toolPanel}
+        {practice && <div className="rw-questions"><PracticeClockContext.Provider value={practiceClock}>{practice.content}</PracticeClockContext.Provider></div>}
       </div>
     </div>
 
     {practicing && total > 0 && <nav className="rw-nav" aria-label="Đi tới câu hỏi">
-      <span>Đã làm <b>{done}</b>/{total}</span>
-      <div>{practice?.answered.map((answered, index) => <button type="button" key={index} className={answered ? "is-answered" : ""} onClick={() => jump(index + 1)} aria-label={`Câu ${index + 1}${answered ? ", đã trả lời" : ""}`}>{index + 1}</button>)}</div>
+      {graded ? <span className="rw-nav-score">Đúng <b>{right}</b>/{total}</span> : <span>Đã làm <b>{done}</b>/{total}</span>}
+      <div>{practice?.answered.map((answered, index) => {
+        const result = graded ? practice.correct?.[index] : undefined;
+        return <button type="button" key={index} className={result === true ? "is-right" : result === false ? "is-wrong" : answered ? "is-answered" : ""} onClick={() => jump(index + 1)}
+          aria-label={`Câu ${index + 1}${result === true ? ", đúng" : result === false ? ", sai" : answered ? ", đã trả lời" : ""}`}>{index + 1}</button>;
+      })}</div>
     </nav>}
 
-    {popover && <div className={`rw-popover ${popover.below ? "below" : ""}`} style={{ left: popover.x, top: popover.y }} role="dialog" aria-label="Highlight">
+    {popover && <div className={`rw-popover ${popover.below ? "below" : ""} ${popover.touch ? "touch" : ""}`} style={{ left: popover.x, top: popover.y }} role="dialog" aria-label="Highlight">
       {highlightColors.map((color) => <button type="button" key={color} className={`rw-swatch ${color}`} onClick={() => paint(color)} aria-label={`Highlight màu ${colorName[color]}`} />)}
       {popover.mark && <button type="button" className="rw-unmark" onClick={() => { save(highlights.filter((item) => item.id !== popover.mark)); setPopover(null); }}><X size={14} /> Bỏ</button>}
     </div>}
