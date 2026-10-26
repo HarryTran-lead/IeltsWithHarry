@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight, AudioLines, BookOpen, ChartNoAxesCombined, Clock3, ExternalLink,
   FileText, Headphones, Languages, ListChecks, Mic, NotebookPen, Sparkles,
@@ -10,10 +10,14 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "./ielts-live-page";
 import { useIeltsData } from "./use-ielts-data";
 import { plannedModes } from "./planned-modes";
+import { createClient } from "@/lib/supabase/browser";
+import { demoMode } from "@/lib/runtime";
+import sourceTopics from "@/lib/vocabulary/source-topics.json";
+import { studyLevels } from "@/lib/vocabulary/study-levels";
 import "./ielts-dashboard.css";
 
 const copy: Record<IeltsSkill, { title: string; intro: string; icon: typeof BookOpen; tone: string }> = {
-  vocabulary: { title: "IELTS Vocabulary", intro: "Gặp từ trong ngữ cảnh bài mới, tra nghĩa và xây kho từ của riêng bạn.", icon: Languages, tone: "mint" },
+  vocabulary: { title: "IELTS Vocabulary", intro: "Chọn topic hoặc Level để học từ trong kho và lưu từ cần ôn.", icon: Languages, tone: "mint" },
   grammar: { title: "IELTS Grammar", intro: "Nhận diện cấu trúc trong câu thật, bắt đầu với các từ nối thường dùng khi viết và nói.", icon: ListChecks, tone: "lavender" },
   reading: { title: "IELTS Reading", intro: "Đọc bài toàn văn có nguồn rõ ràng và luyện điền từ theo dạng câu hỏi IELTS.", icon: BookOpen, tone: "peach" },
   listening: { title: "IELTS Listening", intro: "Nghe bản ghi tiếng Anh mới từ kho âm thanh công cộng và lưu ghi chú luyện nghe.", icon: Headphones, tone: "blue" },
@@ -25,6 +29,20 @@ type Mode = { title: string; detail: string; source: string; href: string; avail
 
 export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const [modeFilter, setModeFilter] = useState<"all" | "live" | "planned">("all");
+  const [selectedTopic, setSelectedTopic] = useState("");
+  const [selectedLevel, setSelectedLevel] = useState("");
+  const [vocabularyCount, setVocabularyCount] = useState<number | null>(null);
+  useEffect(() => {
+    if (skill !== "vocabulary" || demoMode) return;
+    let active = true;
+    const db = createClient();
+    void db.rpc("list_vocabulary_reference_by_level", {
+      p_query: "", p_level: "", p_topic: "", p_page: 0,
+    }).then(({ data, error }) => {
+      if (active && !error) setVocabularyCount(Number(data?.[0]?.total_count ?? 0));
+    });
+    return () => { active = false; };
+  }, [skill]);
   const { data, busy, error } = useIeltsData(skill);
   const { entries, visits, ready: notebookReady } = useNotebook();
   const config = copy[skill];
@@ -43,12 +61,17 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const latestArticle = articles[0];
   const latestYear = chart.length ? Math.max(...chart.map((point) => point.year)) : null;
   const latest = skill === "listening" ? "Kiểm tra trực tiếp" : skill === "writing" ? (latestYear ? `Số liệu ${latestYear}` : "Chưa có số liệu") : latestArticle ? new Date(latestArticle.publishedAt).toLocaleDateString("vi-VN") : "Chưa có bài";
-  const sourceCount = skill === "listening" ? audio.length : skill === "writing" ? chart.length : articles.length;
-  const sourceUnit = skill === "listening" ? "bản ghi có audio" : skill === "writing" ? "mốc dữ liệu" : "bài toàn văn gần nhất";
+  const sourceCount = skill === "vocabulary" ? vocabularyCount ?? 0 : skill === "listening" ? audio.length : skill === "writing" ? chart.length : articles.length;
+  const sourceUnit = skill === "vocabulary" ? "từ nguồn theo topic" : skill === "listening" ? "bản ghi có audio" : skill === "writing" ? "mốc dữ liệu" : "bài toàn văn gần nhất";
+  const vocabularyQuery = new URLSearchParams();
+  if (selectedTopic) vocabularyQuery.set("topic", selectedTopic);
+  if (selectedLevel) vocabularyQuery.set("level", selectedLevel);
+  const vocabularyHref = `/app/vocabulary/library${vocabularyQuery.size ? `?${vocabularyQuery}` : ""}`;
 
   const modes: Mode[] = skill === "vocabulary" ? [
+    { title: "Học theo topic & Level", detail: "Mở kho từ nguồn, chọn chủ đề hoặc Level 1–7+ rồi học từng từ.", source: "Kho từ theo 36 topic", href: "/app/vocabulary/library", available: true, icon: Languages, tag: "Học ngay" },
     { title: "Từ trong bài mới", detail: "Chọn từ trong bài đọc hiện tại, tra định nghĩa và lưu ví dụ có nguồn.", source: "Daily News + từ điển mở", href: "/app/vocabulary/live", available: hasArticle, icon: Sparkles, tag: "Tự cập nhật" },
-    { title: "Kho từ & thẻ ôn", detail: "Học bộ từ đã biên soạn và xem lại các từ đã lưu.", source: "Kho từ của IeltsWithHarry", href: "/app/vocabulary/overview", available: true, icon: Languages },
+    { title: "Từ đã lưu & thẻ ôn", detail: "Xem lại từ bạn đã lưu và ôn theo tiến độ cá nhân.", source: "Sổ từ của bạn", href: "/app/vocabulary/overview", available: true, icon: Languages },
     { title: "Tra cứu từ", detail: "Tra nghĩa, từ loại, phiên âm và lưu vào sổ tay.", source: "FreeDictionaryAPI / Wiktionary", href: "/app/vocabulary/explore", available: true, icon: BookOpen },
   ] : skill === "grammar" ? [
     { title: "Từ nối trong ngữ cảnh", detail: "Đọc câu trích từ bài nguồn và điền lại từ nối chính xác.", source: "Daily News toàn văn", href: "/app/grammar/live", available: hasGrammar, icon: ListChecks, tag: "Có đáp án" },
@@ -81,14 +104,24 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
       <h1>{config.title}</h1>
       <p title={config.intro}>{config.intro}</p>
       <a className="page-head-link" href="https://ielts.org/take-a-test/preparation-resources/sample-test-questions" target="_blank" rel="noreferrer">Đề mẫu IELTS <ExternalLink size={14}/></a>
-      {availableModes[0] ? <Link className="ielts-dashboard-start" href={availableModes[0].href}>Bắt đầu học <ArrowRight size={17}/></Link> : <span className="ielts-dashboard-wait">Đang chờ dữ liệu nguồn</span>}
+      {availableModes[0] ? <Link className="ielts-dashboard-start" href={availableModes[0].href}>{skill === "vocabulary" ? "Học theo topic / Level" : "Bắt đầu học"} <ArrowRight size={17}/></Link> : <span className="ielts-dashboard-wait">Đang chờ dữ liệu nguồn</span>}
     </div>
 
+    {skill === "vocabulary" && <section className="ielts-vocab-picker" aria-labelledby="ielts-vocab-picker-title">
+      <div className="ielts-vocab-picker-heading"><div><span className="ielts-dashboard-kicker">BẮT ĐẦU TẠI ĐÂY</span><h2 id="ielts-vocab-picker-title">Bạn muốn học từ theo gì?</h2><p>Chọn một topic, một Level, hoặc cả hai để mở danh sách từ phù hợp.</p></div><span className="ielts-vocab-picker-count">{vocabularyCount === null ? "Đang tải kho từ…" : `${vocabularyCount.toLocaleString("vi-VN")} từ đang mở`}</span></div>
+      <div className="ielts-vocab-picker-controls">
+        <label><span>1. Chọn chủ đề IELTS</span><select value={selectedTopic} onChange={(event) => setSelectedTopic(event.target.value)}><option value="">Tất cả 36 chủ đề</option>{sourceTopics.map((topic) => <option key={topic} value={topic}>{topic}</option>)}</select></label>
+        <label><span>2. Chọn Level học</span><select value={selectedLevel} onChange={(event) => setSelectedLevel(event.target.value)}><option value="">Tất cả Level</option>{studyLevels.map((level) => <option key={level} value={level}>{level}</option>)}</select></label>
+        <Link className="ielts-vocab-picker-action" href={vocabularyHref}>Xem danh sách từ <ArrowRight size={18}/></Link>
+      </div>
+      <p className="ielts-vocab-picker-note">Level là lộ trình học nội bộ. Từ nguồn có định nghĩa tiếng Anh; nghĩa Việt được bổ sung sau khi biên tập.</p>
+    </section>}
+
     <div className="ielts-dashboard-stats" aria-label="Tiến độ của bạn">
-      <Stat icon={FileText} value={busy ? "…" : String(sourceCount)} label={sourceUnit} note="Nguồn đang hiển thị"/>
+      <Stat icon={FileText} value={skill === "vocabulary" ? vocabularyCount === null ? "…" : vocabularyCount.toLocaleString("vi-VN") : busy ? "…" : String(sourceCount)} label={sourceUnit} note="Nguồn đang hiển thị"/>
       <Stat icon={ListChecks} value={notebookReady ? String(savedWork.length) : "…"} label={skill === "vocabulary" ? "từ đã lưu" : "bài/ghi chú đã lưu"} note="Trong tài khoản của bạn"/>
       <Stat icon={Clock3} value={notebookReady ? String(practiceVisits.length) : "…"} label="lượt mở bài gần đây" note="Theo lịch sử học"/>
-      <Stat icon={ChartNoAxesCombined} value={busy ? "…" : latest} label="mốc dữ liệu mới" note={skill === "listening" ? "LibriVox" : skill === "writing" ? "World Bank" : "Daily News"}/>
+      <Stat icon={ChartNoAxesCombined} value={skill === "vocabulary" ? String(sourceTopics.length) : busy ? "…" : latest} label={skill === "vocabulary" ? "chủ đề trong kho" : "mốc dữ liệu mới"} note={skill === "vocabulary" ? "Kho từ nguồn" : skill === "listening" ? "LibriVox" : skill === "writing" ? "World Bank" : "Daily News"}/>
       <Link className="ielts-dashboard-stats-link" href="/app/notebook">Xem Sổ tay <ArrowRight size={15}/></Link>
     </div>
 
@@ -105,7 +138,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     {data?.warnings.map((warning) => <div className="ielts-dashboard-notice" key={warning}>{warning}</div>)}
     <div className="ielts-dashboard-modes">{displayedModes.map((mode) => <article className={`ielts-dashboard-mode ${mode.planned ? "planned" : mode.available ? "" : "disabled"}`} key={mode.title}><div className="ielts-dashboard-mode-top"><span className="ielts-dashboard-mode-icon"><mode.icon size={19}/></span><div className="ielts-dashboard-mode-title"><h3>{mode.title}</h3>{mode.planned ? <span className="ielts-dashboard-planned-tag">Sắp triển khai</span> : mode.tag && mode.available ? <span>{mode.tag}</span> : null}</div><span className="ielts-dashboard-mode-number">{String(allModes.indexOf(mode) + 1).padStart(2, "0")}</span></div><p>{mode.detail}</p><div className="ielts-dashboard-mode-bottom"><small>{mode.source}</small>{mode.planned ? <Link href={mode.href} className="ielts-dashboard-preview-link" aria-label={`Xem trước ${mode.title}`}>Xem trước <ArrowRight size={16}/></Link> : mode.available ? <Link href={mode.href} aria-label={`Mở ${mode.title}`}><ArrowRight size={19}/></Link> : <span>Chờ dữ liệu</span>}</div></article>)}</div>
 
-    <div className="ielts-dashboard-bottom"><section className="ielts-dashboard-detail"><div className="ielts-dashboard-detail-head"><span className="ielts-dashboard-kicker">NGUỒN ĐANG KẾT NỐI</span><span className={`ielts-dashboard-dot ${sourceCount > 0 ? "online" : ""}`}/></div><h2>{skill === "listening" ? "LibriVox" : skill === "writing" ? "World Bank + Daily News" : skill === "vocabulary" ? "Daily News + từ điển mở" : "Daily News toàn văn"}</h2><p>{skill === "listening" ? `${audio.length} bản ghi tiếng Anh có file nghe hợp lệ trong nhóm mới nhất.` : skill === "writing" ? `${chart.length} mốc dân số, mới nhất năm ${latestYear ?? "—"}; ${articles.length} bài toàn văn gần đây cho Task 2.` : `${articles.length} bài toàn văn gần nhất đã được xuất bản và kiểm tra quyền.`}</p><div className="ielts-dashboard-check"><span>{busy ? "Đang kiểm tra" : data ? `Kiểm tra lúc ${new Date(data.checkedAt).toLocaleString("vi-VN")}` : "Chưa có dữ liệu"}</span><span>Không cần AI key</span></div></section><section className="ielts-dashboard-detail"><span className="ielts-dashboard-kicker">LỊCH SỬ HỌC</span><h2>Gần đây của bạn</h2>{recent.length ? <ul>{recent.map((item) => <li key={item.id}><span>{item.title}</span><small>{new Date(item.createdAt).toLocaleDateString("vi-VN")}</small></li>)}</ul> : <div className="ielts-dashboard-empty">Chưa có bài hoặc ghi chú nào. Bắt đầu một chế độ học để xây lịch sử học của bạn.</div>}<Link href="/app/notebook">Mở lịch sử trong Sổ tay <ArrowRight size={15}/></Link></section></div>
+    <div className="ielts-dashboard-bottom"><section className="ielts-dashboard-detail"><div className="ielts-dashboard-detail-head"><span className="ielts-dashboard-kicker">NGUỒN ĐANG KẾT NỐI</span><span className={`ielts-dashboard-dot ${sourceCount > 0 ? "online" : ""}`}/></div><h2>{skill === "listening" ? "LibriVox" : skill === "writing" ? "World Bank + Daily News" : skill === "vocabulary" ? "Kho từ nguồn theo topic & Level" : "Daily News toàn văn"}</h2><p>{skill === "vocabulary" ? `${vocabularyCount === null ? "Kho từ đang tải" : vocabularyCount.toLocaleString("vi-VN") + " từ đang mở"} trong ${sourceTopics.length} topic và ${studyLevels.length} Level. Mở kho để học và tra thêm nghĩa trước khi lưu.` : skill === "listening" ? `${audio.length} bản ghi tiếng Anh có file nghe hợp lệ trong nhóm mới nhất.` : skill === "writing" ? `${chart.length} mốc dân số, mới nhất năm ${latestYear ?? "—"}; ${articles.length} bài toàn văn gần đây cho Task 2.` : `${articles.length} bài toàn văn gần nhất đã được xuất bản và kiểm tra quyền.`}</p><div className="ielts-dashboard-check"><span>{busy ? "Đang kiểm tra" : data ? `Kiểm tra lúc ${new Date(data.checkedAt).toLocaleString("vi-VN")}` : "Chưa có dữ liệu"}</span><span>Không cần AI key</span></div></section><section className="ielts-dashboard-detail"><span className="ielts-dashboard-kicker">LỊCH SỬ HỌC</span><h2>Gần đây của bạn</h2>{recent.length ? <ul>{recent.map((item) => <li key={item.id}><span>{item.title}</span><small>{new Date(item.createdAt).toLocaleDateString("vi-VN")}</small></li>)}</ul> : <div className="ielts-dashboard-empty">Chưa có bài hoặc ghi chú nào. Bắt đầu một chế độ học để xây lịch sử học của bạn.</div>}<Link href="/app/notebook">Mở lịch sử trong Sổ tay <ArrowRight size={15}/></Link></section></div>
     <p className="ielts-dashboard-disclaimer">Các hoạt động được tạo theo định dạng luyện IELTS Academic từ nguồn được phép dùng. Điểm các câu ngắn không phải điểm band IELTS.</p>
   </main>;
 }

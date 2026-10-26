@@ -19,7 +19,6 @@ export type PlannedMode = {
 // These are curriculum designs, not active exercises. Keep them separate from live modes.
 export const plannedModes: Record<IeltsSkill, PlannedMode[]> = {
   vocabulary: [
-    { id: "topics", title: "Từ theo chủ đề", detail: "Học các nhóm từ học thuật theo chủ đề IELTS và ví dụ trong ngữ cảnh.", source: "Bộ từ do biên tập viên duyệt", icon: Layers3, steps: ["Chọn chủ đề", "Học nghĩa và ví dụ", "Lưu từ cần ôn"], needs: "Bộ từ có nghĩa, ví dụ và phân loại chủ đề đã được duyệt." },
     { id: "match-meaning", title: "Ghép nghĩa", detail: "Ghép từ với định nghĩa đúng rồi xem lời giải cho từng lựa chọn.", source: "Kho từ có đáp án", icon: CheckCheck, steps: ["Chọn bộ từ", "Ghép từ và nghĩa", "Xem đáp án, lưu lỗi sai"], needs: "Bộ câu hỏi ghép từ được tạo và kiểm tra từ kho từ đã duyệt." },
     { id: "spelling", title: "Chính tả từ vựng", detail: "Nghe hoặc đọc gợi ý, viết đúng chính tả của từ mục tiêu.", source: "Từ vựng + audio hợp lệ", icon: SpellCheck, steps: ["Chọn nhóm từ", "Nghe gợi ý và nhập từ", "Đối chiếu đáp án"], needs: "Audio phát âm được phép sử dụng và đáp án chính tả chuẩn." },
     { id: "spaced-review", title: "Ôn tập ngắt quãng", detail: "Ôn lại những từ sắp quên theo lịch cá nhân.", source: "Kho từ đã lưu của bạn", icon: RotateCcw, steps: ["Xem từ đến hạn", "Tự nhớ trước khi lật thẻ", "Đánh dấu mức độ nhớ"], needs: "Lịch ôn và trạng thái nhớ được lưu theo tài khoản." },

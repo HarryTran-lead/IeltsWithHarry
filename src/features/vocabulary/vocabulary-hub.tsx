@@ -231,10 +231,17 @@ type ReferenceEntry = {
 
 function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWord">) {
   const db = useMemo(() => demoMode ? null : createClient(), []);
+  const params = useSearchParams();
   const [mode, setMode] = useState<"reference" | "reviewed">("reference");
   const [query, setQuery] = useState("");
-  const [topic, setTopic] = useState("all");
-  const [level, setLevel] = useState("all");
+  const [topic, setTopic] = useState(() => {
+    const requested = params.get("topic");
+    return requested && sourceTopics.includes(requested) ? requested : "all";
+  });
+  const [level, setLevel] = useState(() => {
+    const requested = params.get("level");
+    return requested && studyLevels.some((item) => item === requested) ? requested : "all";
+  });
   const [page, setPage] = useState(0);
   const [rows, setRows] = useState<LibraryEntry[]>([]);
   const [referenceRows, setReferenceRows] = useState<ReferenceEntry[]>([]);
@@ -278,10 +285,11 @@ function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWo
   }, [db, mode, query, topic, level, page]);
 
   return <div className="vocab-library">
-    <section className="vocab-panel"><h2>Kho từ vựng tiếng Anh</h2><p>Tra theo topic và Level 1–7+. Level là thứ tự học nội bộ, không phải band IELTS của từng từ; CEFR gốc được giữ để đối chiếu.</p>
+    <section className="vocab-panel"><h2>Học từ vựng theo topic và Level</h2><p>Chọn chủ đề hoặc Level bên dưới để xem từ, nghe phát âm và tra nghĩa. Level 1–7+ là thứ tự học nội bộ, không phải band IELTS của từng từ.</p>
       <div className="vocab-library-tabs" role="group" aria-label="Loại kho từ"><button type="button" className={mode === "reference" ? "active" : ""} aria-pressed={mode === "reference"} onClick={() => { setMode("reference"); setPage(0); setTopic("all"); setTotal(0); setReferenceRows([]); }}>Kho nguồn cho học viên</button><button type="button" className={mode === "reviewed" ? "active" : ""} aria-pressed={mode === "reviewed"} onClick={() => { setMode("reviewed"); setPage(0); setTopic("all"); setTotal(0); setRows([]); }}>Từ đã duyệt</button></div>
       <p className="vocab-library-notice">{mode === "reference" ? "Kho từ nguồn đã mở cho học viên học theo topic và Level. Topic và định nghĩa được gắn tự động, chưa kiểm tra ngữ cảnh IELTS hoặc thêm nghĩa Việt. Bạn có thể tra từng từ trước khi lưu vào sổ." : "Từ đã được biên tập có nghĩa Việt, định nghĩa và topic được duyệt để học và lưu trực tiếp."}</p>
       <div className="vocab-filter-bar"><input aria-label="Tìm từ trong kho" placeholder="Tìm từ tiếng Anh…" value={query} onChange={(event) => { setPage(0); setQuery(event.target.value); }} /><select aria-label="Chọn topic" value={topic} onChange={(event) => { setPage(0); setTopic(event.target.value); }}><option value="all">Mọi topic</option>{sourceTopics.map((item) => <option key={item} value={item}>{item}</option>)}</select><select aria-label="Chọn level học" value={level} onChange={(event) => { setPage(0); setLevel(event.target.value); }}><option value="all">Mọi level</option>{studyLevels.map((item) => <option key={item}>{item}</option>)}</select></div>
+      {(topic !== "all" || level !== "all") && <p className="vocab-muted">Đang học: {topic === "all" ? "mọi chủ đề" : topic} · {level === "all" ? "mọi Level" : level}</p>}
       {demoMode && <p>Kho trực tuyến cần kết nối Supabase.</p>}{error && <p role="alert" className="vocab-error">{error}</p>}
       {!demoMode && <p className="vocab-muted">{loading ? "Đang tải…" : total.toLocaleString("vi-VN") + (mode === "reference" ? " từ nguồn đang mở" : " từ đã duyệt")}</p>}
     </section>
