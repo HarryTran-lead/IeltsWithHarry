@@ -21,6 +21,7 @@ import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
+import { lessonCount, OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
@@ -89,6 +90,7 @@ function PageIntro({
 
 function LearnOverview({ stageId }: { stageId?: string }) {
   const selected = stages.find((stage) => stage.id === stageId);
+  const published = usePublishedCourses();
   return (
     <div className="content-page">
       <PageIntro
@@ -101,6 +103,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
         }
         icon="globe"
       />
+      {selected && <StageLessons stageId={selected.id} {...published} />}
       <section className="card section-card">
         <div className="section-head">
           <h2>Learning stages</h2>
@@ -122,15 +125,18 @@ function LearnOverview({ stageId }: { stageId?: string }) {
               <span className="stage-status">
                 {demoMode && stage.status === "done"
                   ? "Demo milestone"
-                  : (demoMode ? stage.status === "current" : index === 0)
-                    ? "Current stage"
-                    : "Preview stage"}{" "}
+                  : !demoMode && lessonCount(published.courses, stage.id)
+                    ? `${lessonCount(published.courses, stage.id)} bài học`
+                    : (demoMode ? stage.status === "current" : index === 0)
+                      ? "Current stage"
+                      : "Preview stage"}{" "}
                 <ArrowRight size={14} />
               </span>
             </Link>
           ))}
         </div>
       </section>
+      {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}
       <section className="card section-card">
         <div className="section-head">
           <h2>
