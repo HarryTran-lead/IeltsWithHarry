@@ -14,6 +14,7 @@ import { VocabularyHub } from "@/features/vocabulary/vocabulary-hub";
 import { IeltsLivePage, type IeltsSkill } from "@/features/ielts/ielts-live-page";
 import { IeltsSkillDashboard } from "@/features/ielts/ielts-skill-dashboard";
 import { IeltsModePreview } from "@/features/ielts/ielts-mode-preview";
+import { BankStudent } from "@/features/ielts/bank-student";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -47,6 +48,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : section === "news" ? (
           <Suspense fallback={<div className="content-page">Đang tải Daily News…</div>}><NewsPortal /></Suspense>
+        ) : section === "question-bank" ? (
+          <BankStudent examId={pathname.split("/")[3] === "exam" ? pathname.split("/")[4] : undefined} resultId={pathname.split("/")[3] === "result" ? pathname.split("/")[4] : undefined} attemptId={pathname.split("/")[3] === "attempt" ? pathname.split("/")[4] : undefined} />
         ) : section === "study-together" ? (
           <div className="study-room-placeholder" aria-hidden="true" />
         ) : (

@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes, LibraryBig, UsersRound, Megaphone, History } from "lucide-react";
+import { BankAdmin } from "@/features/ielts/bank-admin";
 import { Sticker } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { AdminShell, type AdminNavGroup } from "./admin-shell";
@@ -32,6 +33,7 @@ const nav = [
   { slug: "writing", label: "Writing", icon: PenLine },
   { slug: "speaking", label: "Speaking", icon: Mic },
   { slug: "media", label: "Media library", icon: Image },
+  { slug: "ielts-bank", label: "Ngân hàng IELTS", icon: LibraryBig },
   { slug: "news", label: "Daily News", icon: Newspaper },
   { slug: "news/settings", label: "News settings", icon: Settings2 },
   { slug: "news/manual", label: "Add news", icon: FilePlus2 },
@@ -44,6 +46,7 @@ const navGroups = [
   { label: "Tổng quan", slugs: ["overview"] },
   { label: "Học viên", slugs: ["users", "users/broadcast", "users/audit"] },
   { label: "Nội dung", slugs: ["curriculum", "media"] },
+  { label: "IELTS Management", slugs: ["ielts-bank"] },
   { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "grammar", "reading", "listening", "writing", "speaking"] },
   { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/sync-logs"] },
 ];
@@ -183,6 +186,7 @@ export function AdminEditor() {
     {currentSkill && <>{lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><Sticker name="book" size={64} tilt={-8} /><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
     {section === "vocabulary/library" && <VocabularyBank />}
     {section === "media" && <MediaLibrary />}
+    {section === "ielts-bank" && <BankAdmin />}
     {section.startsWith("news") && <AdminNews section={section} />}
     </>}
     {section === "users" && (learnerId ? <AdminLearnerDetail key={learnerId} id={learnerId} /> : <AdminLearners />)}

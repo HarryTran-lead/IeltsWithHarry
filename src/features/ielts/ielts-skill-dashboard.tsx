@@ -87,6 +87,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     { title: "Part 2 cue card", detail: "Chuẩn bị 1 phút, nói tối đa 2 phút, ghi âm và tự nghe lại.", source: "Chủ đề từ Daily News", href: "/app/speaking/live", available: hasArticle, icon: Mic, tag: "Có ghi âm" },
     { title: "Part 3 follow-up", detail: "Thảo luận sâu về cùng chủ đề và lưu tự nhận xét.", source: "Chủ đề từ Daily News", href: "/app/speaking/part-3", available: hasArticle, icon: ListChecks },
   ];
+  if (!demoMode && ["reading", "listening", "writing", "speaking"].includes(skill)) modes.unshift({ title: "Ngân hàng đề đã duyệt", detail: "Luyện với đề có nguồn, lưu lượt làm và xem lại kết quả.", source: "BandReady · IELTS AI Dataset", href: "/app/question-bank", available: true, icon: BookOpen, tag: "Đề luyện" });
   const allModes: Mode[] = [
     ...modes,
     ...plannedModes[skill].map((mode) => ({

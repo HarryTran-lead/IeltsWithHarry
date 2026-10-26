@@ -64,6 +64,7 @@ const groups = [
       { href: "/app/listening", label: "Listening", icon: Headphones, tone: "teal" },
       { href: "/app/writing", label: "Writing", icon: PenLine, tone: "sun" },
       { href: "/app/speaking", label: "Speaking", icon: Mic, tone: "lavender" },
+      ...(!demoMode ? [{ href: "/app/question-bank", label: "Ngân hàng đề", icon: Library, tone: "teal" }] : []),
     ],
   },
   {

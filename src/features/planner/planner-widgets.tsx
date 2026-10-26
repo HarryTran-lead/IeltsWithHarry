@@ -72,7 +72,7 @@ export function TaskList({
               style={{ backgroundColor: skillColors[task.skill] }}
             />
             <div className="task-copy">
-              {task.lesson === "vocabulary-review" ? <Link href="/app/vocabulary/review">{task.title} →</Link> : <span>{task.title}</span>}
+              {task.lesson === "vocabulary-review" ? <Link href="/app/vocabulary/review">{task.title} →</Link> : task.lesson?.startsWith("ielts:") ? <Link href={`/app/question-bank/exam/${task.lesson.slice(6)}`}>{task.title} →</Link> : <span>{task.title}</span>}
               {editable && (
                 <small>
                   {task.skill} · {task.date} · {task.priority} priority
