@@ -68,9 +68,12 @@
 
 /* Buttons squash when pressed and leave a ripple. */
 .button,
-.ielts-primary,
-.notebook-bubble {
+.ielts-primary {
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.notebook-bubble {
   overflow: hidden;
   isolation: isolate;
 }
