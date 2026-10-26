@@ -53,12 +53,8 @@ function Content({ packageContent, canManage, ...lessonProps }: Props) {
   }
 
   return <AppShell canManage={canManage}>{ready ? <div className="content-page package-lesson-page">
-    <Link href={backHref} className="package-back"><ArrowLeft size={16} /> Về hành trình học</Link>
-    {navigation && <div className="package-route-bar"><span>Bài {navigation.index}/{navigation.total} trong chặng</span><div>{navigation.previous ? <Link href={`/app/lesson/${navigation.previous.slug}`} title={navigation.previous.title}><ArrowLeft size={15} /> Bài trước</Link> : <span>Đầu chặng</span>}{navigation.next ? <Link href={`/app/lesson/${navigation.next.slug}`} title={navigation.next.title}>Bài tiếp <ArrowRight size={15} /></Link> : <span>Cuối chặng</span>}</div></div>}
-    <header className="package-lesson-hero">
-      <div className="package-lesson-hero-main"><span className="eyebrow">{lesson.skill.toUpperCase()} · BÀI HỌC THEO BƯỚC</span><h1>{lesson.title}</h1><p>{lesson.summary}</p></div>
-      <div className="package-lesson-hero-goal"><Target size={22} /><span>MỤC TIÊU BÀI HỌC</span><strong>{packageContent.aim || packageContent.output || "Hiểu nội dung và tự luyện tập."}</strong></div>
-    </header>
+    <div className="package-route-bar"><Link href={backHref} className="package-back"><ArrowLeft size={16} /> Hành trình học</Link>{navigation && <><span>Bài {navigation.index}/{navigation.total}</span><div>{navigation.previous ? <Link href={`/app/lesson/${navigation.previous.slug}`} title={navigation.previous.title}><ArrowLeft size={15} /> Bài trước</Link> : <span>Đầu chặng</span>}{navigation.next ? <Link href={`/app/lesson/${navigation.next.slug}`} title={navigation.next.title}>Bài tiếp <ArrowRight size={15} /></Link> : <span>Cuối chặng</span>}</div></>}</div>
+    <header className="package-lesson-heading"><div><span className="eyebrow">{lesson.skill.toUpperCase()} · BÀI HỌC THEO BƯỚC</span><h1>{lesson.title}</h1></div>{(lesson.summary || packageContent.aim || packageContent.output) && <details><summary>Mục tiêu & mô tả bài</summary>{lesson.summary && <p>{lesson.summary}</p>}{(packageContent.aim || packageContent.output) && <p><Target size={15} /> {packageContent.aim || packageContent.output}</p>}</details>}</header>
     <nav className="package-step-nav" aria-label="Các bước của bài học">{steps.map((item, index) => { const Icon = item.icon; return <button type="button" key={item.label} className={step === index ? "active" : ""} aria-current={step === index ? "step" : undefined} onClick={() => goTo(index)}><span className="package-step-number">{index + 1}</span><Icon size={18} /><span><strong>{item.label}</strong><small>{item.hint}</small></span></button>; })}</nav>
     <div className="package-lesson-layout">
       <main className="package-lesson-main">

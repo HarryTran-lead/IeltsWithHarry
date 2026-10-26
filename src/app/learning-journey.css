@@ -1,10 +1,11 @@
-/* The selected stage is a destination, so its lessons lead the page. */
-.learn-overview .learn-mission-selected { grid-template-columns: minmax(0, 1fr) 185px; padding: 14px 18px; margin-bottom: 10px; }
-.learn-mission-selected .learn-mission-main h1 { font-size: clamp(20px, 2vw, 27px); margin: 4px 0 9px; }
-.learn-mission-selected .learn-mission-main .button { min-height: 36px; padding: 7px 13px; }
-.learn-mission-selected .learn-mission-progress { padding: 9px 12px; }
-.learn-mission-selected .learn-mission-progress > strong { font-size: 24px; }
-.learn-mission-selected .learn-mission-progress > small { display: none; }
+/* Keep the chosen stage in a compact heading so the unit list starts above the fold. */
+.learn-stage-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; min-height: 62px; margin: 0 0 12px; padding: 0 2px 11px; border-bottom: 1px solid #d9e6e6; }
+.learn-stage-heading > div { flex: 1 1 260px; min-width: 0; }
+.learn-stage-heading .eyebrow { color: #0b8c91; font-size: 10px; font-weight: 900; letter-spacing: .1em; }
+.learn-stage-heading h1 { margin: 2px 0 0; color: var(--navy); font-size: clamp(21px, 2vw, 28px); line-height: 1.2; }
+.learn-stage-heading .button { min-height: 36px; padding: 7px 13px; }
+.learn-stage-count { white-space: nowrap; color: #627a89; font-size: 12px; }
+.learn-stage-count strong { color: #087f84; font-size: 17px; }
 .learn-stage-tools { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 12px; position: relative; z-index: 5; }
 .learn-stage-tools > a, .learn-stage-tools summary { display: inline-flex; align-items: center; min-height: 37px; padding: 7px 13px; border: 1px solid #dceae9; border-radius: 999px; background: #fff; color: #0b777e; font-size: 13px; font-weight: 800; text-decoration: none; cursor: pointer; }
 .learn-stage-tools summary { list-style: none; }
@@ -17,18 +18,21 @@
 
 /* A single lesson now has three clear screens instead of several stacked cards. */
 .package-lesson-page { max-width: 1380px; }
-.package-back { display: inline-flex; align-items: center; gap: 7px; margin: 0 0 10px; color: #178b91; font-size: 13px; font-weight: 800; text-decoration: none; }
-.package-route-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; color: #667e8d; font-size: 12px; font-weight: 800; }
+.package-back { display: inline-flex; align-items: center; gap: 7px; color: #178b91; font-size: 12px; font-weight: 800; text-decoration: none; }
+.package-route-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 8px; color: #667e8d; font-size: 12px; font-weight: 800; }
+.package-route-bar > span { margin-left: auto; }
 .package-route-bar > div { display: flex; flex-wrap: wrap; gap: 8px; }
-.package-route-bar a, .package-route-bar > div > span { display: inline-flex; align-items: center; gap: 5px; min-height: 32px; padding: 5px 10px; border: 1px solid #dcebea; border-radius: 999px; background: #fff; color: #0a8187; text-decoration: none; }
+.package-route-bar a, .package-route-bar > div > span { display: inline-flex; align-items: center; gap: 5px; min-height: 30px; padding: 4px 10px; border: 1px solid #dcebea; border-radius: 999px; background: #fff; color: #0a8187; text-decoration: none; }
 .package-route-bar > div > span { color: #8ca0a9; }
-.package-lesson-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 320px); align-items: center; gap: 18px; padding: 21px 24px; border: 1px solid #bfe8e2; border-radius: 24px; background: radial-gradient(circle at 72% 15%, #fff1cf 0, transparent 30%), linear-gradient(115deg, #e8fbf8, #f5f8ff 66%, #fff9ea); }
-.package-lesson-hero h1 { font-size: clamp(24px, 2.8vw, 38px); margin: 5px 0; }
-.package-lesson-hero-main p { margin: 0; color: #56718a; line-height: 1.5; }
-.package-lesson-hero-goal { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 4px 10px; padding: 13px 15px; border: 1px solid #e1efeb; border-radius: 16px; background: #ffffffd9; }
-.package-lesson-hero-goal svg { color: #0ba2a5; grid-row: span 2; }
-.package-lesson-hero-goal span { color: #0b8b8e; font-size: 10px; font-weight: 900; letter-spacing: .09em; }
-.package-lesson-hero-goal strong { color: var(--navy); font-size: 13px; line-height: 1.4; }
+.package-lesson-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 7px 16px; padding: 0 2px 10px; border-bottom: 1px solid #dce9e9; }
+.package-lesson-heading > div { flex: 1 1 400px; min-width: 0; }
+.package-lesson-heading .eyebrow { font-size: 10px; }
+.package-lesson-heading h1 { margin: 3px 0 0; color: var(--navy); font-size: clamp(21px, 2.2vw, 29px); line-height: 1.2; }
+.package-lesson-heading details { position: relative; flex: none; max-width: 100%; }
+.package-lesson-heading summary { cursor: pointer; color: #087f84; font-size: 12px; font-weight: 800; }
+.package-lesson-heading details[open] { flex-basis: 100%; padding: 10px 12px; border-radius: 12px; background: #eef9f7; }
+.package-lesson-heading details p { margin: 6px 0; color: #496978; font-size: 13px; line-height: 1.5; }
+.package-lesson-heading details p svg { vertical-align: -2px; color: #0a9298; }
 .package-step-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin: 11px 0 14px; }
 .package-step-nav button { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 10px 13px; border: 1px solid #e0e9ed; border-radius: 15px; background: #fff; color: #6b8192; text-align: left; cursor: pointer; }
 .package-step-nav button.active { border-color: #5acac8; background: #e7f9f6; box-shadow: 0 0 0 2px #20aaa71a; color: #075f69; }
@@ -139,10 +143,11 @@
   .package-lesson-aside { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
-  .package-route-bar { align-items: flex-start; flex-direction: column; }
-  .learn-overview .learn-mission-selected { grid-template-columns: 1fr; }
-  .package-lesson-hero { grid-template-columns: 1fr; padding: 18px; }
-  .package-lesson-hero-goal { display: none; }
+  .learn-stage-heading { gap: 8px; }
+  .learn-stage-heading > div { flex-basis: 100%; }
+  .package-route-bar > span { margin-left: 0; }
+  .package-route-bar > div { margin-left: auto; }
+  .package-lesson-heading > div { flex-basis: 100%; }
   .package-step-nav { gap: 5px; }
   .package-step-nav button { justify-content: center; gap: 5px; padding: 9px 5px; }
   .package-step-nav button > svg, .package-step-nav small { display: none; }
