@@ -102,19 +102,21 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   const total = stageLessons.length;
   return (
     <div className="content-page learn-overview">
-      {stageId === "foundation" || !stageId ? <section className="learn-mission" aria-label="Bài học tiếp theo">
+      <section className={`learn-mission ${selected ? "learn-mission-selected" : ""}`} aria-label="Bài học tiếp theo">
         <div className="learn-mission-main"><span className="eyebrow">HÀNH TRÌNH CỦA BẠN · BẮT ĐẦU TỪ ĐÂY</span>
-          <h1>{selected ? "Chinh phục chặng Foundation" : "Một bài nhỏ hôm nay, một bước tiến ngày mai"}</h1>
-          <p>{selected ? "Khởi động, đi qua 10 chủ đề và luyện đủ sáu kỹ năng. Hãy bắt đầu với bài chưa mở tiếp theo." : "Chọn chặng học phù hợp. Mỗi unit là một trạm, mỗi bài học là một bước tiến có thể nhìn thấy."}</p>
+          <h1>{selected ? `${selected.range} · ${selected.name}` : "Một bài nhỏ hôm nay, một bước tiến ngày mai"}</h1>
+          {!selected && <p>Chọn chặng học phù hợp. Mỗi unit là một trạm, mỗi bài học là một bước tiến có thể nhìn thấy.</p>}
           {nextLesson && <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? "Tiếp tục hành trình" : "Bắt đầu bài đầu tiên"} <ArrowRight size={16} /></Link>}
           {demoMode && !nextLesson && <Link className="button primary" href={selected ? "/app/learn" : "/app/learn/foundation"}>{selected ? "Xem toàn bộ lộ trình" : "Xem hành trình Foundation"} <ArrowRight size={16} /></Link>}
           {!nextLesson && !published.loading && total > 0 && <span className="learn-mission-complete">Đã khám phá hết bài học ở chặng này. Bạn có thể ôn lại hoặc làm bài kiểm tra cuối khóa.</span>}
         </div>
-        <div className="learn-mission-progress"><span>CHẶNG 1 · FOUNDATION</span><strong>{demoMode && !total ? "7" : explored}<small>{demoMode && !total ? " chặng" : `/${total || "…"}`}</small></strong><span>{demoMode && !total ? "mốc trong lộ trình" : "bài đã mở"}</span><div className="study-map-bar"><i style={{ width: `${total ? Math.round(explored / total * 100) : 0}%` }} /></div><small>{demoMode && !total ? "Đăng nhập để lưu tiến độ học" : `Bước kế tiếp: ${nextLesson?.title ?? (total ? "Ôn tập" : "Đang tải bài học")}`}</small></div>
-      </section> : null}
-      <section className="card section-card">
+        <div className="learn-mission-progress"><span>{selected ? `CHẶNG ${stages.indexOf(selected) + 1} · ${selected.name.toUpperCase()}` : "LỘ TRÌNH HỌC"}</span><strong>{demoMode && !total ? "7" : explored}<small>{demoMode && !total ? " chặng" : `/${total || "…"}`}</small></strong><span>{demoMode && !total ? "mốc trong lộ trình" : "bài đã mở"}</span><div className="study-map-bar"><i style={{ width: `${total ? Math.round(explored / total * 100) : 0}%` }} /></div><small>{demoMode && !total ? "Đăng nhập để lưu tiến độ học" : `Bước kế tiếp: ${nextLesson?.title ?? (total ? "Ôn tập" : "Đang tải bài học")}`}</small></div>
+      </section>
+      {selected && <div className="learn-stage-tools"><Link href="/app/learn">← Toàn bộ lộ trình</Link><details><summary>Đổi chặng học</summary><div className="learn-stage-menu">{stages.map((stage) => <Link key={stage.id} href={`/app/learn/${stage.id}`} aria-current={stage.id === selected.id ? "page" : undefined}><b>{stage.range}</b> {stage.name}</Link>)}</div></details></div>}
+      {selected && <StageLessons stageId={selected.id} {...published} />}
+      {!selected && <section className="card section-card">
         <div className="section-head">
-          <h2>{selected ? `Chọn chặng · ${selected.range}` : "Bản đồ 7 chặng học"}</h2>
+          <h2>Bản đồ 7 chặng học</h2>
           <span>Chọn chặng để xem từng unit và bài học. Mốc band là định hướng nội bộ.</span>
         </div>
         <div className="stage-grid">
@@ -122,7 +124,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
             <Link
               key={stage.id}
               href={`/app/learn/${stage.id}`}
-              className={`stage-card ${demoMode ? stage.status : lessonCount(published.courses, stage.id) ? "available" : "future"} ${selected?.id === stage.id ? "selected" : ""}`}
+              className={`stage-card ${demoMode ? stage.status : lessonCount(published.courses, stage.id) ? "available" : "future"}`}
             >
               <span className="stage-index">
                 {demoMode && stage.status === "done" ? <Check size={17} /> : index + 1}
@@ -141,8 +143,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
             </Link>
           ))}
         </div>
-      </section>
-      {selected && <StageLessons stageId={selected.id} {...published} />}
+      </section>}
       {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}
       <section className="card section-card">
         <div className="section-head">

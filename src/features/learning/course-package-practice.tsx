@@ -7,6 +7,9 @@ export type PackageActivity = { id: string; type: string; prompt: string; answer
 export type PackageLesson = {
   type: string;
   title?: string; aim?: string; theory_vi?: string; examples?: string[]; practice?: [string, string][]; output?: string;
+  instruction_vi?: string; study_method?: string | { learn?: string; practice?: string; review?: string; master?: string }; duration_min?: number;
+  grammar_title?: string; grammar_form?: string; listening_strategy?: string | string[]; pre_listening?: string;
+  reading_strategy?: string | string[]; questions?: string[];
   audio_url?: string;
   audio_quality_note?: string;
   stage_warning?: string;
@@ -31,46 +34,69 @@ export type PackageLesson = {
 };
 
 function normalize(value: string) { return value.trim().toLocaleLowerCase().replace(/[.!?]+$/g, "").replace(/\s+/g, " "); }
+function lines(value?: string | string[]) { return Array.isArray(value) ? value : value ? [value] : []; }
 
 export function OpenResponsePractice({ items, title }: { items: PackageActivity[]; title: string }) {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
+  const [active, setActive] = useState(0);
   if (!items.length) return null;
-  return <section className="lesson-questions" aria-label={title}>
-    <h2>{title}</h2>
-    <p>Điền câu trả lời rồi tự kiểm tra với đáp án biên soạn sẵn. Cách diễn đạt tương đương ở bài đọc/nghe có thể vẫn đúng.</p>
-    {items.map((item, index) => <div className="question-block" key={`${item.id}-${index}`}>
-      <h3>{index + 1}. {item.prompt}</h3>
-      {item.options?.length ? <div className="answer-options">{item.options.map((option, optionIndex) => <button type="button" key={optionIndex} className={answers[index] === option ? "selected" : ""} onClick={() => setAnswers((current) => ({ ...current, [index]: option }))}>{option}</button>)}</div>
-        : <input aria-label={`Câu trả lời ${index + 1}`} value={answers[index] ?? ""} onChange={(event) => setAnswers((current) => ({ ...current, [index]: event.target.value }))} />}
-      <button type="button" className="button subtle" disabled={!answers[index]?.trim()} onClick={() => setRevealed((current) => ({ ...current, [index]: !current[index] }))}>{revealed[index] ? "Ẩn đáp án" : "Kiểm tra"}</button>
-      {revealed[index] && <div className="result-panel" role="status"><b>{normalize(answers[index]) === normalize(item.answer) ? "Khớp đáp án" : "Hãy so sánh câu trả lời"}</b><p>Đáp án gợi ý: <strong>{item.answer}</strong></p>{item.explanation && <p>{item.explanation}</p>}{item.instruction && <small>{item.instruction}</small>}</div>}
-    </div>)}
+  const item = items[Math.min(active, items.length - 1)];
+  const completed = items.filter((_, index) => revealed[index]).length;
+  return <section className="guided-practice" aria-label={title}>
+    <div className="guided-practice-head"><div><span className="eyebrow">LUYỆN TẬP TỪNG CÂU</span><h2>{title}</h2></div><strong>{completed}/{items.length} đã kiểm tra</strong></div>
+    <div className="guided-practice-track" role="progressbar" aria-label="Số câu đã kiểm tra" aria-valuenow={completed} aria-valuemin={0} aria-valuemax={items.length}><span style={{ width: `${completed / items.length * 100}%` }} /></div>
+    <div className="guided-practice-dots" aria-label="Chọn câu hỏi">{items.map((question, index) => <button type="button" key={`${question.id}-${index}`} aria-label={`Câu ${index + 1}${revealed[index] ? ", đã kiểm tra" : ""}`} aria-current={active === index ? "step" : undefined} className={`${active === index ? "active" : ""} ${revealed[index] ? "done" : ""}`} onClick={() => setActive(index)}>{index + 1}</button>)}</div>
+    <div className="guided-question" key={`${item.id}-${active}`}>
+      <div className="guided-question-meta"><span>CÂU {active + 1} / {items.length}</span><span>{item.options?.length ? "Chọn một đáp án" : "Tự viết câu trả lời"}</span></div>
+      <h3>{item.prompt}</h3>
+      {item.instruction && <p className="guided-question-hint">{item.instruction}</p>}
+      {item.options?.length ? <div className="guided-options">{item.options.map((option, optionIndex) => <button type="button" key={optionIndex} className={answers[active] === option ? "selected" : ""} aria-pressed={answers[active] === option} onClick={() => { setAnswers((current) => ({ ...current, [active]: option })); setRevealed((current) => ({ ...current, [active]: false })); }}><span>{String.fromCharCode(65 + optionIndex)}</span>{option}</button>)}</div>
+        : <label className="guided-answer">Câu trả lời của bạn<input value={answers[active] ?? ""} onChange={(event) => { setAnswers((current) => ({ ...current, [active]: event.target.value })); setRevealed((current) => ({ ...current, [active]: false })); }} placeholder="Gõ câu trả lời tại đây…" onKeyDown={(event) => { if (event.key === "Enter" && answers[active]?.trim()) setRevealed((current) => ({ ...current, [active]: true })); }} /></label>}
+      {revealed[active] && <div className={`guided-feedback ${normalize(answers[active]) === normalize(item.answer) ? "matched" : "review"}`} role="status"><b>{normalize(answers[active]) === normalize(item.answer) ? "Chính xác!" : "Đối chiếu với đáp án gợi ý"}</b><p>Đáp án biên soạn: <strong>{item.answer}</strong></p>{item.explanation && <p>{item.explanation}</p>}{!item.options?.length && <small>Cách diễn đạt tương đương có thể vẫn đúng; phần so sánh này chỉ khớp văn bản.</small>}</div>}
+      <div className="guided-actions"><button type="button" className="button subtle" disabled={active === 0} onClick={() => setActive(active - 1)}>← Câu trước</button><div>{!revealed[active] && <button type="button" className="button primary" disabled={!answers[active]?.trim()} onClick={() => setRevealed((current) => ({ ...current, [active]: true }))}>Kiểm tra câu này</button>}{revealed[active] && active < items.length - 1 && <button type="button" className="button primary" onClick={() => setActive(active + 1)}>Câu tiếp theo →</button>}</div></div>
+    </div>
   </section>;
 }
 
-export function PackageLessonPractice({ content }: { content: PackageLesson | null }) {
+export function PackageLessonPractice({ content, mode = "practice" }: { content: PackageLesson | null; mode?: "learn" | "practice" | "review" }) {
   if (!content) return null;
-  const open = (content.activities ?? []).filter((item) => item.type !== "multiple_choice");
-  const micro = content.micro_exercises ?? [];
-  return <div className="lab-stack">
-    {content.stage_warning && <p className="lab-note"><strong>Lộ trình nội bộ:</strong> {content.stage_warning}</p>}
-    {content.type === "intro" && <section className="foundation-activity"><span className="eyebrow">BƯỚC KHỞI ĐỘNG</span><h2>{content.title}</h2><p>{content.aim}</p><p>{content.theory_vi}</p>{content.audio_url && <audio controls src={content.audio_url} aria-label="Nghe chữ cái tiếng Anh" />}{content.examples?.length ? <div className="foundation-chips">{content.examples.map((example) => <span key={example}>{example}</span>)}</div> : null}<OpenResponsePractice title="Thử làm trước khi xem đáp án" items={(content.practice ?? []).map(([prompt, answer], index) => ({ id: `start-${index}`, prompt, answer, type: "short_answer" }))} />{content.output && <p className="lab-note"><strong>Mục tiêu:</strong> {content.output}</p>}</section>}
+  const method = typeof content.study_method === "string" ? content.study_method : content.study_method?.learn;
+  const strategy = lines(content.reading_strategy || content.listening_strategy || content.pre_listening);
+  if (mode === "learn") return <div className="package-learn-content">
+    {content.type !== "intro" && (content.instruction_vi || method) && <div className="package-concept"><span className="eyebrow">CÁCH HỌC BÀI NÀY</span><h2>{content.type === "grammar" ? content.grammar_title || "Nhìn ví dụ trước khi luyện" : content.type === "listening" ? "Nghe để nắm ý chính" : content.type === "reading" ? "Đọc để hiểu nội dung" : content.type === "writing" ? "Lên ý trước khi viết" : content.type === "speaking" ? "Chuẩn bị ý trước khi nói" : "Nhìn, nghe và dùng từ"}</h2><p>{content.instruction_vi || method}</p>{method && content.instruction_vi && <small>{method}</small>}</div>}
+    {content.type === "intro" && <><div className="package-concept"><span className="eyebrow">Ý CHÍNH CẦN NHỚ</span><h2>{content.title}</h2><p>{content.theory_vi || content.aim}</p></div>{content.audio_url && <div className="package-audio"><span>🎧 Nghe mẫu và đọc theo</span><audio controls src={content.audio_url} aria-label="Audio bài học" /></div>}{content.examples?.length ? <div className="package-examples"><h3>Thử đọc những ví dụ này</h3><div className="foundation-chips">{content.examples.map((example) => <span key={example}>{example}</span>)}</div></div> : null}</>}
+    {content.grammar_form && <div className="package-grammar-form"><strong>Công thức cần nhớ</strong><p>{content.grammar_form}</p></div>}
+    {content.type === "grammar" && content.examples?.length ? <div className="package-examples"><h3>Quan sát câu mẫu</h3><div className="foundation-chips">{content.examples.map((example) => <span key={example}>{example}</span>)}</div></div> : null}
+    {strategy.length > 0 && <div className="package-strategy"><strong>Mẹo thực hành</strong><ol>{strategy.map((item, index) => <li key={`${index}-${item}`}>{item}</li>)}</ol></div>}
+    {content.type === "writing" && content.phases?.length ? <div className="package-process"><h3>Viết theo các bước</h3>{content.phases.map((phase, index) => <div key={phase.phase}><span>{index + 1}</span><p><b>{phase.phase}</b><br />{phase.task}</p></div>)}</div> : null}
+    {content.type === "speaking" && content.stages?.length ? <div className="package-process"><h3>Nói theo các bước</h3>{content.stages.map((stage, index) => <div key={stage.name}><span>{index + 1}</span><p><b>{stage.name}</b><br />{stage.task}</p></div>)}</div> : null}
+    {content.type === "speaking" && content.shadow_phrases?.length ? <div className="package-examples"><h3>Cụm từ để nói theo</h3><div className="foundation-chips">{content.shadow_phrases.map((phrase) => <span key={phrase}>{phrase}</span>)}</div></div> : null}
     {content.practice_cycles?.length ? <div className="foundation-steps">{content.practice_cycles.map((step, index) => <div key={step.name}><span>{index + 1}</span><b>{step.name}</b><small>{step.instruction}</small></div>)}</div> : null}
-    {content.type === "vocabulary" && content.audio_url && <div className="lab-note"><h2>Nghe phát âm từ vựng</h2><audio controls src={content.audio_url} aria-label="Audio từ vựng" /><small>Giọng máy thử nghiệm từ gói bài học.</small></div>}
+    {content.type === "vocabulary" && content.audio_url && <div className="package-audio"><span>🎧 Nghe phát âm từ vựng</span><audio controls src={content.audio_url} aria-label="Audio từ vựng" /><small>Giọng máy thử nghiệm từ gói bài học.</small></div>}
     {content.type === "listening" && content.audio_quality_note && <small>{content.audio_quality_note}</small>}
-    {content.expansion_words?.length ? <details className="foundation-activity"><summary>Thêm {content.expansion_words.length} từ mở rộng</summary><div className="foundation-word-grid">{content.expansion_words.map((word) => <div key={word.en}><strong>{word.en}</strong><span>{word.vi}</span><small>{word.example}</small></div>)}</div><OpenResponsePractice items={content.expansion_activities ?? []} title="Thử dùng từ mở rộng" /></details> : null}
+    {content.expansion_words?.length ? <details className="foundation-activity"><summary>Khám phá thêm {content.expansion_words.length} từ</summary><div className="foundation-word-grid">{content.expansion_words.map((word) => <div key={word.en}><strong>{word.en}</strong><span>{word.vi}</span><small>{word.example}</small></div>)}</div></details> : null}
+  </div>;
+  if (mode === "review") return <div className="package-review-content">
+    <div className="package-concept"><span className="eyebrow">SAU BÀI HỌC NÀY</span><h2>Ghi nhớ và tự vận dụng</h2><p>{content.output || content.independent_use || content.aim || "Hãy thử dùng lại điều vừa học trong một tình huống của riêng bạn."}</p></div>
+    {content.independent_use && content.output && <p className="lab-note"><strong>Tự vận dụng:</strong> {content.independent_use}</p>}
+    {content.review_checklist?.length ? <div className="package-review-list"><h3>Tự kiểm tra</h3>{content.review_checklist.map((item) => <label key={item}><input type="checkbox" /> {item}</label>)}</div> : null}
+    {content.self_check?.length ? <div className="package-review-list"><h3>Trước khi rời bài</h3>{content.self_check.map((item) => <label key={item}><input type="checkbox" /> {item}</label>)}</div> : null}
+    {content.pronunciation_focus && <p className="lab-note"><strong>Luyện phát âm:</strong> {content.pronunciation_focus}</p>}
+    {content.rubric?.length ? <details className="foundation-activity"><summary>Tiêu chí tự đánh giá</summary><ul>{content.rubric.map((row) => <li key={row.criterion}><strong>{row.criterion}:</strong> {row.detail} ({row.max} điểm tối đa)</li>)}</ul></details> : null}
+    {content.stage_warning && <details className="package-curriculum-note"><summary>Về mức học của lộ trình</summary><p>{content.stage_warning}</p></details>}
+    {content.assessment_slug && <p><Link className="button subtle" href={`/app/check/${content.assessment_slug}`}>Ôn tập & kiểm tra unit →</Link></p>}
+  </div>;
+  return <div className="lab-stack">
+    {content.type === "intro" && <OpenResponsePractice title="Thử làm trước khi xem đáp án" items={(content.practice ?? []).map(([prompt, answer], index) => ({ id: `start-${index}`, prompt, answer, type: "short_answer" }))} />}
+    {content.expansion_activities?.length ? <details className="foundation-activity"><summary>Thử dùng từ mở rộng · {content.expansion_activities.length} câu</summary><OpenResponsePractice items={content.expansion_activities} title="Thử dùng từ mở rộng" /></details> : null}
     {content.practice_sections?.map((section) => <details className="foundation-activity" key={section.title}><summary>{section.title} · {section.activities.length} câu</summary>{section.instruction_vi && <p>{section.instruction_vi}</p>}<OpenResponsePractice items={section.activities} title="Luyện ngữ pháp" /></details>)}
-    {content.independent_use && <p className="lab-note"><strong>Tự vận dụng:</strong> {content.independent_use}</p>}
-    <OpenResponsePractice items={open} title={content.type === "grammar" ? "Luyện điền từ" : content.type === "listening" ? "Bài nghe 1 · trả lời câu hỏi" : content.type === "reading" ? "Bài đọc 1 · trả lời câu hỏi" : "Câu hỏi luyện tập"} />
+    <OpenResponsePractice items={content.activities ?? []} title={content.type === "grammar" ? "Luyện ngữ pháp" : content.type === "listening" ? "Bài nghe 1 · trả lời câu hỏi" : content.type === "reading" ? "Bài đọc 1 · trả lời câu hỏi" : "Câu hỏi luyện tập"} />
     {content.audios?.slice(1).map((item, index) => <details className="foundation-activity" key={item.id}><summary>Bài nghe {index + 2}: {item.title}</summary><audio controls src={item.audio_url} aria-label={`Bài nghe ${index + 2}`} /><OpenResponsePractice items={item.questions} title="Nghe rồi trả lời" /><details><summary>Xem transcript sau khi làm</summary><p className="foundation-transcript">{item.script}</p></details></details>)}
     {content.passages?.slice(1).map((item, index) => <details className="foundation-activity" key={item.id}><summary>Bài đọc {index + 2}: {item.title}</summary><p className="foundation-passage">{item.text}</p><OpenResponsePractice items={item.questions} title="Đọc rồi trả lời" /></details>)}
-    <OpenResponsePractice items={micro} title="Luyện câu trước khi viết" />
-    {content.phases?.length ? <details className="foundation-activity"><summary>Quy trình viết từng bước</summary><ol>{content.phases.map((phase) => <li key={phase.phase}><b>{phase.phase}</b> · {phase.task}</li>)}</ol><OpenResponsePractice items={content.new_translation_prompts ?? []} title="Dịch câu ngắn" />{content.second_task && <p><strong>Thử thách thêm:</strong> {content.second_task}</p>}{content.review_checklist?.length ? <ul>{content.review_checklist.map((item) => <li key={item}>{item}</li>)}</ul> : null}</details> : null}
-    {content.role_plays?.length ? <details className="foundation-activity"><summary>Luyện nói theo tình huống</summary>{content.stages?.map((stage) => <p key={stage.name}><b>{stage.name}:</b> {stage.task}</p>)}{content.shadow_phrases?.length ? <div className="foundation-chips">{content.shadow_phrases.map((phrase) => <span key={phrase}>{phrase}</span>)}</div> : null}{content.role_plays.map((role) => <p key={role.id}><strong>{role.target_seconds} giây:</strong> {role.scenario}</p>)}{content.self_check?.length ? <ul>{content.self_check.map((item) => <li key={item}>{item}</li>)}</ul> : null}</details> : null}
+    <OpenResponsePractice items={content.micro_exercises ?? []} title="Luyện câu trước khi viết" />
+    {(content.new_translation_prompts?.length || content.second_task) ? <details className="foundation-activity"><summary>Dịch câu & thử thách viết</summary><OpenResponsePractice items={content.new_translation_prompts ?? []} title="Dịch câu ngắn" />{content.second_task && <p><strong>Thử thách thêm:</strong> {content.second_task}</p>}</details> : null}
+    {content.role_plays?.length ? <details className="foundation-activity"><summary>Luyện nói theo tình huống</summary>{content.role_plays.map((role) => <p key={role.id}><strong>{role.target_seconds} giây:</strong> {role.scenario}</p>)}</details> : null}
     {content.scaffolding_steps?.length ? <details className="lab-note"><summary>Gợi ý từng bước & checklist</summary><ol>{content.scaffolding_steps.map((step, index) => <li key={`${index}-${step}`}>{step}</li>)}</ol></details> : null}
-    {content.pronunciation_focus && <p className="lab-note"><strong>Luyện phát âm:</strong> {content.pronunciation_focus}</p>}
-    {content.rubric?.length ? <details className="lab-note"><summary>Tiêu chí tự đánh giá</summary><ul>{content.rubric.map((row) => <li key={row.criterion}><strong>{row.criterion}:</strong> {row.detail} ({row.max} điểm tối đa)</li>)}</ul></details> : null}
-    {content.assessment_slug && <p><Link className="button subtle" href={`/app/check/${content.assessment_slug}`}>Ôn tập & kiểm tra unit →</Link></p>}
   </div>;
 }

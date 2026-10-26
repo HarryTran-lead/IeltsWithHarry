@@ -23,9 +23,10 @@ function LessonShellContent({ canManage = false, ...props }: LessonShellProps) {
   return <AppShell canManage={canManage}>{ready ? <LessonDetail {...props} /> : <div className="content-page">Loading your lesson…</div>}</AppShell>;
 }
 
-export function LessonDetail({ lesson, blocks, questions, words, material }: {
+export function LessonDetail({ lesson, blocks, questions, words, material, display = "full" }: {
   lesson: { slug: string; title: string; skill: string; summary: string };
   blocks: Block[]; questions: Question[]; words: Word[]; material: SkillMaterial | null;
+  display?: "full" | "material" | "words" | "questions";
 }) {
   const { entries, addEntry, error: notebookError } = useNotebook();
   const [answered, setAnswered] = useState<boolean[]>([]);
@@ -34,6 +35,9 @@ export function LessonDetail({ lesson, blocks, questions, words, material }: {
   const blockNodes = blocks.filter((block) => !(reading && block.kind === "paragraph" && block.body === reading.passage)).map((block) => block.kind === "heading" ? <h2 key={block.id}>{block.body}</h2> : block.kind === "tip" ? <aside className="tip-box" key={block.id}>{block.body}</aside> : <p key={block.id}>{block.body}</p>);
   const wordNodes = words.length > 0 && <div className="lesson-words"><h2>Vocabulary</h2>{words.map((word) => { const saved = entries.some((entry) => entry.kind === "word" && entry.title === word.word && entry.sourcePath === `/app/lesson/${lesson.slug}`); return <article key={word.id}><h3>{word.word} <small>{word.phonetic}</small></h3><p>{word.meaning_vi} · {word.definition}</p><p><em>{word.example}</em></p><button type="button" className="button subtle" disabled={saved} onClick={async () => { try { await addEntry({ kind: "word", title: word.word, body: "", meaningVi: word.meaning_vi, example: word.example }); } catch { /* Notebook shows the error. */ } }}>{saved ? "Đã lưu vào sổ" : "Lưu vào sổ tay"}</button>{word.sentence_prompt_vi && word.accepted_sentences.length > 0 && <SentencePractice prompt={word.sentence_prompt_vi} accepted={word.accepted_sentences} />}</article>; })}{notebookError && <p role="alert" className="form-error">{notebookError}</p>}</div>;
   const questionNodes = questions.length > 0 && <LessonQuestions lessonSlug={lesson.slug} questions={questions} onProgress={setAnswered} onGraded={setRevealed} />;
+  if (display === "words") return wordNodes || null;
+  if (display === "questions") return questionNodes || null;
+  if (display === "material") return <div className="package-material"><SkillLesson material={material} lessonSlug={lesson.slug} answersRevealed={revealed} passageInReader={Boolean(reading)} />{reading ? <ReadingWorkspace key={lesson.slug} docKey={`lesson:${lesson.slug}`} title={lesson.title} paragraphs={reading.passage.split(/\n\s*\n/)} after={blockNodes} /> : blockNodes}</div>;
   return <div className={`content-page ${reading ? "reading-lesson-page" : ""}`}>{reading
     ? <header className="reading-lesson-intro"><span className="eyebrow">IELTS READING · BÀI ĐỌC</span><h1>{lesson.title}</h1><p>{lesson.summary}</p></header>
     : <PageHeader eyebrow={`${lesson.skill.toUpperCase()} LESSON`} title={lesson.title} description={lesson.summary} sticker="book" />}
