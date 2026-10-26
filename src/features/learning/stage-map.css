@@ -1,0 +1,355 @@
+/* Stage map: a tilted diorama of the seven stages. */
+.smap-wrap {
+  container: smap / inline-size;
+  padding: 6px 4px 34px;
+}
+.smap {
+  --rx: 12deg;
+  --ry: 0deg;
+  perspective: 1700px;
+  perspective-origin: 50% 20%;
+}
+.smap-board {
+  position: relative;
+  aspect-ratio: 1000 / 460;
+  border-radius: 26px;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transform-origin: 50% 70%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s var(--ease-out);
+  box-shadow: 0 34px 44px -26px rgba(16, 42, 67, 0.45);
+}
+/* The slab's front face, folded down so the board reads as a block. */
+.smap-board::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 1px);
+  height: 26px;
+  border-radius: 0 0 22px 22px;
+  background: linear-gradient(180deg, #7fc492 0 5px, #b98d5f 5px, #9a724a 70%, #7d5b3a);
+  transform: rotateX(-90deg);
+  transform-origin: top;
+}
+.smap-surface {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 26px;
+  background: linear-gradient(180deg, #e2f3fb, #f5f9f2 45%, #fbf6ea);
+}
+.smap-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.smap-road-edge,
+.smap-road-top,
+.smap-road-line {
+  fill: none;
+  stroke-linecap: round;
+}
+.smap-road-edge {
+  stroke: #c3a676;
+  stroke-width: 30;
+  transform: translateY(6px);
+}
+.smap-road-top {
+  stroke: #f3e5c3;
+  stroke-width: 26;
+}
+.smap-road-top.is-walked {
+  stroke: #8fded7;
+}
+.smap-road-line {
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-dasharray: 9 11;
+  opacity: 0.9;
+}
+.smap-cloud {
+  position: absolute;
+  width: 92px;
+  height: 26px;
+  border-radius: 99px;
+  background: #fff;
+  opacity: 0.85;
+  box-shadow: 22px -12px 0 4px #fff, 50px -4px 0 0 #fff;
+  animation: smap-drift 38s linear infinite;
+}
+.smap-cloud.c1 { top: 11%; left: 22%; }
+.smap-cloud.c2 { top: 6%; left: 58%; scale: 0.75; animation-duration: 52s; animation-delay: -18s; }
+.smap-cloud.c3 { top: 20%; left: 74%; scale: 0.6; animation-duration: 46s; animation-delay: -30s; }
+@keyframes smap-drift {
+  from { translate: -60px 0; }
+  50% { translate: 60px 0; }
+  to { translate: -60px 0; }
+}
+
+/* Stops stand upright on the tilted board. */
+.smap-stops {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform-style: preserve-3d;
+}
+.smap-stop {
+  position: absolute;
+  width: 0;
+  height: 0;
+  /* Upright, and lifted so the label hanging below the pad stays in front of the tilted board. */
+  transform: translateZ(34px) rotateX(calc(-1 * var(--rx)));
+  transform-origin: 0 0;
+  animation: smap-rise 0.5s var(--ease-out) both;
+  animation-delay: var(--delay);
+}
+@keyframes smap-rise {
+  from { opacity: 0; translate: 0 14px; }
+}
+.smap-stop a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  translate: -50% -76px;
+  color: var(--navy);
+  outline: none;
+}
+.smap-figure {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 58px;
+  margin-bottom: -2px;
+  transition: translate 0.35s var(--ease-spring);
+}
+.smap-stop.is-current .smap-figure img {
+  filter: drop-shadow(0 6px 6px rgba(16, 42, 67, 0.3));
+  animation: smap-bob 2.4s ease-in-out infinite;
+}
+@keyframes smap-bob {
+  50% { translate: 0 -5px; }
+}
+.smap-here {
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  translate: -50% 0;
+  padding: 2px 9px;
+  border-radius: 99px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.smap-here::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50% -1px;
+  border: 5px solid transparent;
+  border-top-color: var(--navy);
+}
+.smap-pad {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 40% 35%, color-mix(in srgb, var(--c), #fff 35%), var(--c) 70%);
+  box-shadow:
+    0 7px 0 color-mix(in srgb, var(--c), #000 28%),
+    0 16px 14px -4px rgba(16, 35, 63, 0.35);
+  transition: translate 0.35s var(--ease-spring), box-shadow 0.35s;
+}
+.smap-pad b {
+  display: grid;
+  place-items: center;
+  min-width: 26px;
+  height: 22px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+.smap-stop.is-current .smap-pad::before {
+  content: "";
+  position: absolute;
+  inset: -8px -12px;
+  border: 2px solid var(--c);
+  border-radius: 50%;
+  opacity: 0;
+  animation: smap-ring 2s ease-out infinite;
+}
+@keyframes smap-ring {
+  0% { opacity: 0.8; scale: 0.8; }
+  100% { opacity: 0; scale: 1.35; }
+}
+.smap-label {
+  display: grid;
+  justify-items: center;
+  gap: 1px;
+  min-width: 118px;
+  margin-top: 16px;
+  padding: 6px 10px 8px;
+  border: 1px solid rgba(16, 42, 67, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 18px -12px rgba(16, 42, 67, 0.5);
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.smap-label small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.smap-label strong {
+  font-size: 13.5px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.smap-label em {
+  color: color-mix(in srgb, var(--c), #000 20%);
+  font-size: 11.5px;
+  font-style: normal;
+  font-weight: 700;
+}
+.smap-label i {
+  width: 100%;
+  height: 4px;
+  margin-top: 3px;
+  border-radius: 99px;
+  background: #e8eeef;
+  overflow: hidden;
+}
+.smap-label i b {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--c);
+}
+.smap-stop.is-current .smap-label {
+  border-color: var(--c);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c), transparent 80%), 0 10px 20px -12px rgba(16, 42, 67, 0.55);
+}
+.smap-stop a:hover .smap-figure,
+.smap-stop a:focus-visible .smap-figure {
+  translate: 0 -6px;
+}
+.smap-stop a:hover .smap-pad,
+.smap-stop a:focus-visible .smap-pad {
+  translate: 0 -3px;
+  box-shadow:
+    0 10px 0 color-mix(in srgb, var(--c), #000 28%),
+    0 20px 16px -4px rgba(16, 35, 63, 0.35);
+}
+.smap-stop a:hover .smap-label,
+.smap-stop a:focus-visible .smap-label {
+  border-color: var(--c);
+}
+.smap-stop a:focus-visible .smap-label {
+  outline: 3px solid color-mix(in srgb, var(--c), transparent 60%);
+  outline-offset: 2px;
+}
+.smap-stop.is-future .smap-figure {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+.smap-stop.is-future .smap-pad {
+  --c: #aab4bd;
+}
+.smap-stop.is-future .smap-label {
+  background: rgba(255, 255, 255, 0.8);
+}
+.smap-stop.is-future .smap-label strong {
+  color: var(--muted);
+}
+
+/* Medium boards: smaller labels so neighbours do not touch. */
+@container smap (max-width: 980px) {
+  .smap-stop a { width: 106px; translate: -50% -62px; }
+  .smap-figure { height: 46px; }
+  .smap-figure .sticker { width: 34px !important; height: 34px !important; }
+  .smap-figure img { width: 44px; height: 44px; }
+  .smap-label { min-width: 92px; margin-top: 12px; padding: 4px 7px 6px; }
+  .smap-label strong { font-size: 12px; }
+  .smap-label em { font-size: 11px; }
+  .smap-pad { width: 60px; height: 26px; }
+}
+
+/* Narrow screens: a vertical trail instead of the board. */
+@container smap (max-width: 700px) {
+  .smap-wrap { padding: 0; }
+  .smap { perspective: none; }
+  .smap-board {
+    aspect-ratio: auto;
+    transform: none;
+    box-shadow: none;
+  }
+  .smap-board::after,
+  .smap-scene { display: none; }
+  .smap-stops {
+    position: relative;
+    display: grid;
+    gap: 6px;
+    padding: 18px 14px;
+  }
+  .smap-stops::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    left: 50%;
+    width: 8px;
+    translate: -50% 0;
+    border-radius: 99px;
+    background: repeating-linear-gradient(180deg, #e6d3a8 0 12px, #f3e5c3 12px 22px);
+  }
+  .smap-stop {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto;
+    height: auto;
+    transform: none;
+  }
+  .smap-stop a {
+    position: relative;
+    flex-direction: row;
+    gap: 10px;
+    width: calc(50% + 39px);
+    translate: none;
+  }
+  .smap-stop:nth-child(odd) a { margin-left: calc(50% - 39px); }
+  .smap-stop:nth-child(even) a { flex-direction: row-reverse; margin-right: calc(50% - 39px); margin-left: auto; }
+  .smap-figure { display: none; }
+  .smap-stop.is-current .smap-figure { display: flex; position: absolute; left: 50%; bottom: 100%; height: 44px; translate: -50% 0; }
+  .smap-stop:nth-child(odd).is-current .smap-figure { left: 39px; }
+  .smap-stop:nth-child(even).is-current .smap-figure { left: auto; right: 39px; translate: 50% 0; }
+  .smap-stop.is-current { margin-top: 48px; }
+  .smap-pad { flex: none; }
+  .smap-label { flex: 1; min-width: 0; margin-top: 0; justify-items: start; text-align: left; }
+  .smap-stop:nth-child(even) .smap-label { justify-items: end; text-align: right; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smap-board { transition: none; }
+  .smap-cloud,
+  .smap-stop,
+  .smap-stop.is-current .smap-figure img,
+  .smap-stop.is-current .smap-pad::before { animation: none; }
+}

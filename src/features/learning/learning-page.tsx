@@ -21,7 +21,8 @@ import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
-import { lessonCount, OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
+import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
+import { StageMap, type StageStop } from "./stage-map";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
@@ -100,6 +101,14 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   const explored = stageLessons.filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
   const nextLesson = stageLessons.find((lesson) => !visited.has(`/app/lesson/${lesson.slug}`) && !submitted.has(lesson.slug));
   const total = stageLessons.length;
+  // Each stage's place on the map: finished, where the learner is now, open, or still to come.
+  const stageProgress = stages.map((stage) => {
+    const lessons = published.courses.filter((course) => course.stage_id === stage.id).flatMap((course) => course.units.flatMap((unit) => unit.lessons));
+    return { stage, total: lessons.length, explored: lessons.filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length };
+  });
+  const currentIndex = stageProgress.findIndex((item) => item.total > 0 && item.explored < item.total);
+  const stops: StageStop[] = stageProgress.map((item, index) => ({ ...item,
+    state: demoMode && !item.total ? item.stage.status : !item.total ? "future" : item.explored === item.total ? "done" : index === currentIndex ? "current" : "available" }));
   return (
     <div className="content-page learn-overview">
       <section className={`learn-mission ${selected ? "learn-mission-selected" : ""}`} aria-label="Bài học tiếp theo">
@@ -119,30 +128,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           <h2>Bản đồ 7 chặng học</h2>
           <span>Chọn chặng để xem từng unit và bài học. Mốc band là định hướng nội bộ.</span>
         </div>
-        <div className="stage-grid">
-          {stages.map((stage, index) => (
-            <Link
-              key={stage.id}
-              href={`/app/learn/${stage.id}`}
-              className={`stage-card ${demoMode ? stage.status : lessonCount(published.courses, stage.id) ? "available" : "future"}`}
-            >
-              <span className="stage-index">
-                {demoMode && stage.status === "done" ? <Check size={17} /> : index + 1}
-              </span>
-              <strong>{stage.range}</strong>
-              <h3>{stage.name}</h3>
-              <p>{stage.description}</p>
-              <span className="stage-status">
-                {demoMode && stage.status === "done"
-                  ? "Demo milestone"
-                  : !demoMode && lessonCount(published.courses, stage.id)
-                    ? `${lessonCount(published.courses, stage.id)} bài học`
-                    : demoMode && stage.status === "current" ? "Chặng hiện tại" : "Sắp mở"}{" "}
-                <ArrowRight size={14} />
-              </span>
-            </Link>
-          ))}
-        </div>
+        <StageMap stops={stops} />
       </section>}
       {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}
       <section className="card section-card">
