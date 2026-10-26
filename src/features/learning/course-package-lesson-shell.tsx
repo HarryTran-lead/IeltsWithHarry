@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, BookOpenText, Check, CircleHelp, Lightbulb, Target } from "lucide-react";
 import { AppShell } from "@/components/layout/app-shell";
 import { DemoProvider, useDemo } from "@/features/demo/demo-store";
@@ -44,18 +44,34 @@ export function CoursePackageLessonShell(props: Props) {
 
 function Content({ packageContent, canManage, ...lessonProps }: Props) {
   const { ready } = useDemo();
-  const [step, setStep] = useState(0);
-  const { lesson, words, questions, navigation } = lessonProps;
+  const { lesson, navigation } = lessonProps;
   const backHref = stageHref(lesson.slug);
-  const hasAuthoredQuestions = Boolean(packageContent.activities?.length || packageContent.practice?.length);
-  function goTo(next: number) {
-    setStep(next);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
 
   return <AppShell canManage={canManage}>{ready ? <div className="content-page package-lesson-page">
     <div className="package-route-bar"><Link href={backHref} className="package-back"><ArrowLeft size={16} /> Hành trình học</Link>{navigation && <><span>Bài {navigation.index}/{navigation.total}</span><div>{navigation.previous ? <Link href={`/app/lesson/${navigation.previous.slug}`} title={navigation.previous.title}><ArrowLeft size={15} /> Bài trước</Link> : <span>Đầu chặng</span>}{navigation.next ? <Link href={`/app/lesson/${navigation.next.slug}`} title={navigation.next.title}>Bài tiếp <ArrowRight size={15} /></Link> : <span>Cuối chặng</span>}</div></>}</div>
-    <header className="package-lesson-heading"><TopicArt topic={lesson.title} className="package-lesson-art" /><div><span className="eyebrow">{lesson.skill.toUpperCase()} · BÀI HỌC THEO BƯỚC</span><h1>{lesson.title}</h1></div>{(lesson.summary || packageContent.aim || packageContent.output) && <details><summary>Mục tiêu & mô tả bài</summary>{lesson.summary && <p>{lesson.summary}</p>}{(packageContent.aim || packageContent.output) && <p><Target size={15} /> {packageContent.aim || packageContent.output}</p>}</details>}</header>
+    <PackageLessonHeading lesson={lesson} packageContent={packageContent} />
+    <PackageLessonSteps {...lessonProps} packageContent={packageContent} onStepChange={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      finish={navigation?.next ? <Link className="button primary" href={`/app/lesson/${navigation.next.slug}`}>Bài tiếp theo <ArrowRight size={17} /></Link> : <Link className="button primary" href={backHref}>Về hành trình học <ArrowRight size={17} /></Link>} />
+  </div> : <div className="content-page">Đang mở bài học…</div>}</AppShell>;
+}
+
+export type PackageLessonProps = Omit<Props, "navigation" | "canManage">;
+
+export function PackageLessonHeading({ lesson, packageContent }: Pick<Props, "lesson" | "packageContent">) {
+  return <header className="package-lesson-heading"><TopicArt topic={lesson.title} className="package-lesson-art" /><div><span className="eyebrow">{lesson.skill.toUpperCase()} · BÀI HỌC THEO BƯỚC</span><h1>{lesson.title}</h1></div>{(lesson.summary || packageContent.aim || packageContent.output) && <details><summary>Mục tiêu & mô tả bài</summary>{lesson.summary && <p>{lesson.summary}</p>}{(packageContent.aim || packageContent.output) && <p><Target size={15} /> {packageContent.aim || packageContent.output}</p>}</details>}</header>;
+}
+
+/** The three lesson steps (learn, practise, remember); `finish` is the call to action after the last step. */
+export function PackageLessonSteps({ packageContent, finish, onStepChange, ...lessonProps }: PackageLessonProps & { finish: ReactNode; onStepChange?: () => void }) {
+  const [step, setStep] = useState(0);
+  const { lesson, words, questions } = lessonProps;
+  const hasAuthoredQuestions = Boolean(packageContent.activities?.length || packageContent.practice?.length);
+  function goTo(next: number) {
+    setStep(next);
+    onStepChange?.();
+  }
+
+  return <>
     <nav className="package-step-nav" aria-label="Các bước của bài học">{steps.map((item, index) => { const Icon = item.icon; return <button type="button" key={item.label} className={step === index ? "active" : ""} aria-current={step === index ? "step" : undefined} onClick={() => goTo(index)}><span className="package-step-number">{index + 1}</span><Icon size={18} /><span><strong>{item.label}</strong><small>{item.hint}</small></span></button>; })}</nav>
     <div className="package-lesson-layout">
       <main className="package-lesson-main">
@@ -73,10 +89,10 @@ function Content({ packageContent, canManage, ...lessonProps }: Props) {
         </section>
         <section className="package-step-panel" hidden={step !== 2} aria-label="Bước 3: Ghi nhớ"><div className="package-step-heading"><span>03 / 03</span><h2>Mang kiến thức sang bài tiếp theo</h2><p>Đối chiếu điều bạn vừa học với mục tiêu, rồi trở lại bản đồ để chọn ga tiếp theo.</p></div>
           <PackageLessonPractice content={packageContent} mode="review" />
-          <div className="package-panel-actions"><button type="button" className="button subtle" onClick={() => goTo(1)}>← Luyện lại</button>{navigation?.next ? <Link className="button primary" href={`/app/lesson/${navigation.next.slug}`}>Bài tiếp theo <ArrowRight size={17} /></Link> : <Link className="button primary" href={backHref}>Về hành trình học <ArrowRight size={17} /></Link>}</div>
+          <div className="package-panel-actions"><button type="button" className="button subtle" onClick={() => goTo(1)}>← Luyện lại</button>{finish}</div>
         </section>
       </main>
       <aside className="package-lesson-aside"><div className="package-guide"><Lightbulb size={21} /><h3>Học sao cho dễ nhớ?</h3><p>{step === 0 ? "Xem ví dụ, nghe một lần và tự nói lại trước khi mở bài tập." : step === 1 ? "Làm từng câu trước khi xem đáp án. Câu tự luận được đối chiếu với đáp án mẫu, không chấm band IELTS." : "Nói hoặc viết lại điều bạn nhớ được mà không nhìn bài, rồi đánh dấu checklist."}</p></div><div className="package-guide package-guide-quiet"><CircleHelp size={20} /><h3>Bạn cần ghi lại gì?</h3><p>Dùng nút Sổ tay bên phải để lưu từ mới, câu hay hoặc điều chưa rõ trong lúc học.</p></div></aside>
     </div>
-  </div> : <div className="content-page">Đang mở bài học…</div>}</AppShell>;
+  </>;
 }

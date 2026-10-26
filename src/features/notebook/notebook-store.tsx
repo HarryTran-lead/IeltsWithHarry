@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { z } from "zod";
 import { demoMode } from "@/lib/runtime";
@@ -24,6 +24,10 @@ type NotebookStore = {
   addEntry: (input: NotebookInput) => Promise<void>;
   updateEntry: (id: string, input: NotebookInput) => Promise<void>;
   removeEntry: (id: string) => Promise<void>;
+  /** Records a study visit for a path the learner opened without navigating, e.g. a lesson opened over the course book. */
+  recordVisit: (path: string) => Promise<void>;
+  /** Overrides the page path that new notebook entries are attributed to (null restores the current URL). */
+  setSourcePath: (path: string | null) => void;
 };
 const Store = createContext<NotebookStore | null>(null);
 
@@ -69,6 +73,8 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   const [error, setError] = useState("");
   const lastPath = useRef("");
+  const [sourceOverride, setSourceOverride] = useState<string | null>(null);
+  const activePath = sourceOverride ?? pathname;
   const pendingWords = useRef(new Set<string>());
 
   useEffect(() => {
@@ -107,22 +113,23 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
     }
   }, [entries, visits, ready]);
 
+  const recordVisit = useCallback(async (path: string) => {
+    const title = visitTitle(path);
+    if (!title) return;
+    if (demoMode) {
+      setVisits((current) => [{ id: crypto.randomUUID(), path, title, visitedAt: new Date().toISOString() }, ...current].slice(0, 200));
+    } else {
+      const result = await supabase!.from("study_visits").insert({ path, title }).select("*").single();
+      if (result.error) setError(result.error.message);
+      else setVisits((current) => [fromVisitRow(result.data as VisitRow), ...current].slice(0, 200));
+    }
+  }, [supabase]);
+
   useEffect(() => {
     if (!ready || lastPath.current === pathname) return;
     lastPath.current = pathname;
-    const title = visitTitle(pathname);
-    if (!title) return;
-    async function record() {
-      if (demoMode) {
-        setVisits((current) => [{ id: crypto.randomUUID(), path: pathname, title, visitedAt: new Date().toISOString() }, ...current].slice(0, 200));
-      } else {
-        const result = await supabase!.from("study_visits").insert({ path: pathname, title }).select("*").single();
-        if (result.error) setError(result.error.message);
-        else setVisits((current) => [fromVisitRow(result.data as VisitRow), ...current].slice(0, 200));
-      }
-    }
-    void record();
-  }, [pathname, ready, supabase]);
+    void recordVisit(pathname);
+  }, [pathname, ready, recordVisit]);
 
   const value = useMemo<NotebookStore>(() => ({
     entries, visits, ready, error, clearError: () => setError(""),
@@ -131,7 +138,7 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
       const wordKey = valid.kind === "word" ? valid.title.trim().replace(/\s+/g, " ").toLowerCase() : "";
       if (wordKey && (pendingWords.current.has(wordKey) || entries.some((entry) => entry.kind === "word" && entry.title.trim().replace(/\s+/g, " ").toLowerCase() === wordKey))) return;
       if (wordKey) pendingWords.current.add(wordKey);
-      const sourcePath = visitTitle(pathname) ? pathname : "";
+      const sourcePath = visitTitle(activePath) ? activePath : "";
       setError("");
       try { if (demoMode) {
         const now = new Date().toISOString();
@@ -173,7 +180,9 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
       }
       setEntries((current) => current.filter((entry) => entry.id !== id));
     },
-  }), [entries, visits, ready, error, pathname, supabase]);
+    recordVisit,
+    setSourcePath: setSourceOverride,
+  }), [entries, visits, ready, error, activePath, supabase, recordVisit]);
 
   return <Store.Provider value={value}>{children}</Store.Provider>;
 }

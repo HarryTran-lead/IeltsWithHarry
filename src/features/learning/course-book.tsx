@@ -5,6 +5,7 @@ import { BookMarked, BookOpen, ChevronLeft, ChevronRight, List, Maximize2, Minim
 import { createClient } from "@/lib/supabase/browser";
 import { stages } from "@/lib/demo-data";
 import type { StageCourse } from "./stage-courses";
+import { LessonWorkbook } from "./course-book-lesson";
 import { BookPageView, splitUnitTitle, unitColor, unitLabel, type BookContent, type BookContext, type BookLesson, type BookPage } from "./course-book-pages";
 import "./course-book.css";
 
@@ -127,6 +128,8 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
     return Math.min(Math.max(0, value), last);
   });
   const [flip, setFlip] = useState<Flip | null>(null);
+  // The lesson open as a workbook over the book, kept in the hash as "l=<slug>".
+  const [openSlug, setOpenSlug] = useState<string | null>(() => typeof window === "undefined" ? null : new URLSearchParams(window.location.hash.slice(1)).get("l"));
   const [sound, setSound] = useState(() => typeof window === "undefined" || readStored("course-book:sound") !== "off");
   // Page turns follow the system's reduced-motion setting until the learner picks for themselves.
   const [motion, setMotion] = useState(() => {
@@ -166,8 +169,8 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const anchor = layout.single ? page : firstPageOf(spreadOf(page));
   useEffect(() => {
     writeStored(storageKey, String(anchor));
-    window.history.replaceState(window.history.state, "", `#p=${anchor}`);
-  }, [anchor, storageKey]);
+    window.history.replaceState(window.history.state, "", `#p=${anchor}${openSlug ? `&l=${openSlug}` : ""}`);
+  }, [anchor, openSlug, storageKey]);
 
   const goTo = useCallback((target: number) => {
     const clamped = Math.min(Math.max(0, target), last);
@@ -191,7 +194,16 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const next = useCallback(() => goTo(layout.single ? anchor + 1 : firstPageOf(spreadOf(anchor) + 1)), [anchor, goTo, layout.single]);
   const previous = useCallback(() => goTo(layout.single ? anchor - 1 : firstPageOf(spreadOf(anchor) - 1)), [anchor, goTo, layout.single]);
 
+  // Opening a lesson also turns the book to it, without an animation behind the sheet.
+  const openLesson = useCallback((lesson: BookLesson) => {
+    setOpenSlug(lesson.slug);
+    const start = lessonStart.get(lesson.id);
+    if (start !== undefined && !flipping.current) setPage(start);
+  }, [lessonStart]);
+  const closeLesson = useCallback(() => setOpenSlug(null), []);
+
   useEffect(() => {
+    if (openSlug) return;
     const onKey = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
       if (target?.closest("input, textarea, select, [contenteditable='true']")) return;
@@ -202,7 +214,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [next, previous]);
+  }, [next, openSlug, previous]);
 
   useEffect(() => {
     const onChange = () => setFullscreen(document.fullscreenElement === shellRef.current);
@@ -228,7 +240,8 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   }, [course.units, pages, visible]);
   const contents = useLessonContents(wantedLessonIds);
 
-  const ctx: BookContext = { course, stage, isDone, current, contents, unitStart, lessonStart, finishPage, finished, total: lessons.length, hasChecks, finalCheckSlug, goTo };
+  const ctx: BookContext = { course, stage, isDone, current, contents, unitStart, lessonStart, finishPage, finished, total: lessons.length, hasChecks, finalCheckSlug, goTo, openLesson };
+  const openIndex = openSlug ? lessons.findIndex((lesson) => lesson.slug === openSlug) : -1;
   const render = (index: number | null, side: "left" | "right") => index === null || !pages[index] ? null : <BookPageView page={pages[index]} index={index} side={side} ctx={ctx} />;
 
   // Static pages under the turning leaf, the leaf faces, and how far the closed book shifts to stay centred.
@@ -349,6 +362,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
       {!layout.single && <button type="button" className="bk-arrow is-next" onClick={next} disabled={atEnd} aria-label="Trang sau"><ChevronRight size={26} /></button>}
       {layout.single && <div className="bk-single-nav"><button type="button" onClick={previous} disabled={atStart}><ChevronLeft size={18} /> Trang trước</button><button type="button" onClick={next} disabled={atEnd}>Trang sau <ChevronRight size={18} /></button></div>}
     </div>
+    {openIndex >= 0 && <LessonWorkbook lesson={lessons[openIndex]} position={openIndex + 1} total={lessons.length} previous={lessons[openIndex - 1]} next={lessons[openIndex + 1]} onOpen={openLesson} onClose={closeLesson} />}
     <p className="sr-only" aria-live="polite">Trang {pageLabel} trên {last}</p>
   </div>;
 }

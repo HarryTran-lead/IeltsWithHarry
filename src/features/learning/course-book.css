@@ -392,3 +392,39 @@
 .course-view-switch button[aria-pressed="true"] { background: var(--navy); color: #fff; }
 .course-map-view { display: grid; gap: 12px; }
 .course-map-view > .course-view-switch { justify-self: start; }
+
+/* Lesson workbook: the full lesson on a spiral-bound sheet that slides up over the book */
+.bk-workbook { position: fixed; inset: 0; z-index: 76; display: flex; align-items: flex-end; justify-content: center; padding: 16px 16px 0; }
+.bk-workbook-backdrop { position: absolute; inset: 0; border: 0; padding: 0; background: rgba(40, 28, 10, 0.42); backdrop-filter: blur(3px); cursor: default; animation: bk-fade 0.25s ease both; }
+.bk-workbook-sheet { position: relative; display: flex; flex-direction: column; width: min(1180px, 100%); height: calc(100dvh - 16px); padding-top: 24px; border-radius: 18px 18px 0 0; background: #fffdf7; background-image: linear-gradient(90deg, transparent 52px, rgba(229, 72, 77, 0.28) 52px 54px, transparent 54px), repeating-linear-gradient(180deg, transparent 0 31px, rgba(79, 143, 224, 0.12) 31px 32px); box-shadow: 0 -20px 60px -20px rgba(40, 25, 5, 0.55); animation: bk-sheet-in 0.42s var(--ease-out) both; color: var(--navy); }
+.bk-workbook-sheet::before { content: ""; position: absolute; top: -9px; left: 34px; right: 34px; height: 30px; background: radial-gradient(circle at 50% 70%, #e9e1cf 0 5px, transparent 5.5px) 0 0 / 30px 30px repeat-x, radial-gradient(ellipse 4px 11px at 50% 40%, #6b7280 0 3px, transparent 3.5px) 0 0 / 30px 30px repeat-x; pointer-events: none; }
+@keyframes bk-sheet-in { from { transform: translateY(60px); opacity: 0; } }
+.bk-workbook-head { display: flex; align-items: center; gap: 14px; padding: 10px 22px 12px 26px; border-bottom: 2px solid var(--skill); background: rgba(255, 253, 247, 0.96); }
+.bk-workbook-back { display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 14px; border: 1.5px solid var(--line-strong); border-radius: 999px; background: #fff; color: var(--navy); font: inherit; font-size: 13.5px; font-weight: 800; cursor: pointer; }
+.bk-workbook-back:hover { border-color: var(--skill); }
+.bk-workbook-title { flex: 1; min-width: 0; }
+.bk-workbook-title small { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.bk-workbook-title small b { padding: 2px 7px; border-radius: 4px; background: var(--skill); color: var(--skill-ink); }
+.bk-workbook-title h2 { margin: 3px 0 0; overflow: hidden; font: 800 20px/1.2 var(--font-display), sans-serif; letter-spacing: -0.01em; text-overflow: ellipsis; white-space: nowrap; }
+.bk-workbook-nav { display: flex; align-items: center; gap: 4px; }
+.bk-workbook-nav button, .bk-workbook-nav a { display: grid; place-items: center; width: 38px; height: 38px; border: 0; border-radius: 50%; background: transparent; color: var(--navy); cursor: pointer; }
+.bk-workbook-nav button:hover:not(:disabled), .bk-workbook-nav a:hover { background: var(--teal-soft); }
+.bk-workbook-nav button:disabled { opacity: 0.3; cursor: default; }
+.bk-workbook-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 18px 28px 48px 72px; }
+.bk-workbook-lesson { max-width: none; margin: 0; }
+.bk-workbook-lesson .package-step-nav { margin-top: 0; }
+.bk-workbook-state { display: grid; gap: 14px; max-width: 640px; padding: 30px 0; }
+.bk-workbook-state .skeleton { display: block; height: 18px; border-radius: 8px; }
+@media (max-width: 720px) {
+  .bk-workbook { padding: 0; }
+  .bk-workbook-sheet { height: 100dvh; border-radius: 0; padding-top: 0; background-image: none; }
+  .bk-workbook-sheet::before { display: none; }
+  .bk-workbook-head { gap: 8px; padding: 10px 10px 10px 12px; }
+  .bk-workbook-back span, .bk-workbook-page { display: none !important; }
+  .bk-workbook-back { padding: 0 10px; }
+  .bk-workbook-title h2 { font-size: 15.5px; }
+  .bk-workbook-body { padding: 14px 14px 90px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bk-workbook-sheet, .bk-workbook-backdrop { animation: none; }
+}

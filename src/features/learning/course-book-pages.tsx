@@ -49,6 +49,7 @@ export type BookContext = {
   hasChecks: boolean;
   finalCheckSlug: string;
   goTo: (page: number) => void;
+  openLesson: (lesson: BookLesson) => void;
 };
 
 export const skillTheme: Record<string, { color: string; ink: string; icon: LucideIcon; vi: string }> = {
@@ -208,8 +209,13 @@ function Skeleton() {
   return <div className="bk-skeleton" aria-label="Đang mở trang…"><i /><i /><i /><i /><i /><i /></div>;
 }
 
-function LessonLink({ lesson, label = "Vào học", tone }: { lesson: BookLesson; label?: string; tone?: string }) {
-  return <Link href={`/app/lesson/${lesson.slug}`} className="bk-go" style={tone ? { "--tone": tone } as CSSProperties : undefined}>{label} <ArrowRight size={16} /></Link>;
+/** Opens the lesson as a workbook over the book; modified clicks still open the lesson page in a new tab. */
+function LessonLink({ lesson, label = "Vào học", open }: { lesson: BookLesson; label?: string; open: (lesson: BookLesson) => void }) {
+  return <Link href={`/app/lesson/${lesson.slug}`} className="bk-go" onClick={(event) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    open(lesson);
+  }}>{label} <ArrowRight size={16} /></Link>;
 }
 
 /** The right-hand page of a lesson: a preview of the real exercises, laid out like a workbook. */
@@ -453,7 +459,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
           </div>
           <LeadIn lesson={lesson} content={content} />
           <div className="bk-open-actions">
-            <LessonLink lesson={lesson} label={done ? "Học lại" : here ? "Vào học ngay" : "Vào học"} />
+            <LessonLink lesson={lesson} label={done ? "Học lại" : here ? "Vào học ngay" : "Vào học"} open={ctx.openLesson} />
             <span className="bk-meta">{duration ? <><Clock3 size={14} /> {duration} phút</> : null}{content?.activities?.length ? <> · {content.activities.length} câu</> : null}</span>
           </div>
           {here && <div className="bk-sticky-note"><Tape tone="sun" /><b>Bạn đang ở đây</b><span>Bài nên học tiếp theo lộ trình.</span></div>}
@@ -466,7 +472,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     return <div className={`bk-page is-${side} bk-lesson-practice`} style={style}>
       <div className="bk-page-body">
         <PracticePreview lesson={lesson} content={content} />
-        <div className="bk-practice-foot"><span><Lightbulb size={15} /> Đây là trang xem trước — bài đầy đủ có giải thích đáp án.</span><LessonLink lesson={lesson} label="Làm đầy đủ" /></div>
+        <div className="bk-practice-foot"><span><Lightbulb size={15} /> Bài đầy đủ mở ngay trên sách, có giải thích đáp án.</span><LessonLink lesson={lesson} label="Làm bài đầy đủ" open={ctx.openLesson} /></div>
       </div>
       <Folio number={index} label={folioLabel} side={side} color={theme.color} />
     </div>;
@@ -486,7 +492,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
           </button></li>;
         })}</ul>
         {ctx.hasChecks ? <Link className="bk-go" href={`/app/check/${ctx.finalCheckSlug}`}>Làm bài kiểm tra cuối khóa <ArrowRight size={16} /></Link>
-          : current && <LessonLink lesson={current} label={`Học tiếp: ${lessonShortTitle(current)}`} />}
+          : current && <LessonLink lesson={current} label={`Học tiếp: ${lessonShortTitle(current)}`} open={ctx.openLesson} />}
         <div className="bk-notes"><span className="bk-hand">3 điều tôi tiến bộ nhất sau khóa này:</span><i /><i /><i /><i /></div>
       </div>
       <Folio number={index} label="REVIEW" side={side} color="#0a7f89" />
