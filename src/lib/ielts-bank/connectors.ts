@@ -96,7 +96,11 @@ export function normalizeSource(sourceId: SourceId, path: string, data: unknown,
     const questions = arr(script.questions).map((v) => { const q = asObject(v); return { id: `${str(row.id)}:${str(q.n)}`, number: Number(q.n) || 1, type: str(q.type), prompt: str(q.prompt), instructions: str(q.instruction), options: Object.entries(asObject(q.options)).map(([key, value]) => `${key} — ${str(value)}`), answers: arr(q.answers).flatMap((a) => Array.isArray(a) ? a.map(str) : [str(a)]).filter(Boolean), explanation: str(q.explanation) }; });
     return [{ ...base, externalId: str(row.id), skill: "Listening", title: str(row.title), topic: str(row.topic_id), content: { sections: [{ id: str(row.id), title: str(row.title), passage: "", transcript, questions }], prompt: "" } }];
   }
-  if (path.endsWith("writing_prompts.jsonl")) return [{ ...base, externalId: str(row.id), skill: "Writing", title: str(row.id).replaceAll("_", " "), topic: str(row.topic_id), durationMinutes: str(row.task_type).includes("task1") ? 20 : 40, content: { sections: [], prompt: str(row.prompt_text), taskType: str(row.task_type), minimumWords: str(row.task_type).includes("task1") ? 150 : 250, visual: row.chart_spec || undefined } }];
+  if (path.endsWith("writing_prompts.jsonl")) {
+    const taskType = str(row.task_type), id = str(row.id);
+    const subject = id.replace(/^wp_(?:core_)?(?:a[12]|gtl|t2od|t2pa\d+|gt1|ac1|t2)(?:_\d+)?_/, "").replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+    return [{ ...base, externalId: id, skill: "Writing", format: taskType === "gt_task1" ? "General Training" : base.format, title: `Writing Task ${taskType.includes("task1") ? "1" : "2"}: ${subject}`, topic: str(row.topic_id), durationMinutes: taskType.includes("task1") ? 20 : 40, content: { sections: [], prompt: str(row.prompt_text), taskType, minimumWords: taskType.includes("task1") ? 150 : 250, visual: row.chart_spec || undefined } }];
+  }
   if (path.endsWith("speaking_cards.jsonl")) {
     const p = asObject(row.payload_json), part = Number(row.part) || 1;
     const questionTexts = part === 2 ? [str(asObject(p.cue_card).topic), ...arr(asObject(p.cue_card).bullets).map(str)] : part === 3 ? arr(p.part3_themes).flatMap((v) => arr(asObject(v).questions).map(str)) : arr(p.questions).map(str);

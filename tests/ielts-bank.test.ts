@@ -30,6 +30,14 @@ describe("IELTS source normalization", () => {
     expect(exam.content.sections[0].questions[0].type).toBe("form_completion");
     expect(validateExam(exam)).toContain("audio_missing");
   });
+  it("labels BandReady General Training letters separately from Academic charts", () => {
+    const [letter] = normalizeSource("bandready", "content/core-en/data/writing_prompts.jsonl", { id: "wp_gtl_01_formal_enquiry_field_course", task_type: "gt_task1", prompt_text: "Write a letter about a course." }, "v1");
+    const [chart] = normalizeSource("bandready", "content/core-en/data/writing_prompts.jsonl", { id: "wp_a1_01_bar_recycling_materials", task_type: "ac_task1", prompt_text: "Describe the chart.", chart_spec: { kind: "bar" } }, "v1");
+    expect(letter.format).toBe("General Training");
+    expect(letter.title).toBe("Writing Task 1: Formal Enquiry Field Course");
+    expect(chart.format).toBe("Academic");
+    expect(chart.title).toBe("Writing Task 1: Bar Recycling Materials");
+  });
   it("does not turn incomplete synthetic mocks into full mocks", () => {
     const [exam] = normalizeSource("ielts-ai-dataset", "datasets/synthetic-official-mocks/reading/sample.json", reading, "abc");
     expect(exam.mode).toBe("practice");
