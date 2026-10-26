@@ -437,21 +437,29 @@ export const minimumImageFit = 7;
  * The best licensed illustration, chosen by Gemini looking at the candidate images
  * themselves (one request). Returns null when no candidate truly fits.
  */
-export async function findNewsIllustration(title: string, fetcher: typeof fetch = fetch, { body = "", query = "" }: { body?: string; query?: string } = {}): Promise<Illustration | null> {
-  if (!process.env.GEMINI_API_KEY) return null;
+type IllustrationResult = { image: Illustration | null; reason: string };
+async function findNewsIllustrationResult(title: string, fetcher: typeof fetch = fetch, { body = "", query = "" }: { body?: string; query?: string } = {}): Promise<IllustrationResult> {
+  if (!process.env.GEMINI_API_KEY) return { image: null, reason: "AI image selection is not configured" };
   // Articles quizzed before the visual subject was stored (or too short for a quiz) get one
   // from a small text request: searching by headline words alone rarely finds a fitting photo.
   if (!query) query = await visualSubject(title, body, fetcher).catch(() => "");
   const candidates = await gatherCandidates(title, body, query, fetcher);
+  if (!candidates.length) return { image: null, reason: "No licensed image matched the article search" };
   const previews = (await Promise.all(candidates.map(async (candidate) => ({ candidate, image: await previewData(candidate.preview, fetcher) })))).filter((entry) => entry.image);
-  if (!previews.length) return null;
+  if (!previews.length) return { image: null, reason: "Licensed image previews were unavailable" };
   const parts = [
     { text: `Article title: ${title}\nVisual subject: ${query || "(not given)"}\nArticle start: ${body.slice(0, 700)}` },
     ...previews.flatMap((entry, index) => [{ text: `Image ${index + 1}: ${entry.candidate.value.image_alt.replace(/^Ảnh minh họa: /, "")}` }, { inlineData: entry.image! }]),
   ];
   const { data } = await geminiJson<{ best?: number; fit?: number }>(visionPrompt, parts, visionSchema, { fetcher, temperature: 0, maxOutputTokens: 200 });
   const chosen = typeof data.best === "number" ? previews[data.best - 1] : undefined;
-  return chosen && (data.fit ?? 0) >= minimumImageFit ? chosen.candidate.value : null;
+  return chosen && (data.fit ?? 0) >= minimumImageFit
+    ? { image: chosen.candidate.value, reason: "" }
+    : { image: null, reason: `AI found no suitable image (fit ${Math.max(0, Math.min(10, data.fit ?? 0))}/10)` };
+}
+
+export async function findNewsIllustration(title: string, fetcher: typeof fetch = fetch, options: { body?: string; query?: string } = {}): Promise<Illustration | null> {
+  return (await findNewsIllustrationResult(title, fetcher, options)).image;
 }
 
 type Claim = { article_id: string; title: string; body_text: string | null };
@@ -501,9 +509,9 @@ async function enrichImages(db: Db, result: EnrichResult) {
   await Promise.all(((imageClaims ?? []) as Claim[]).map(async (article) => {
     result.imagesChecked++;
     try {
-      const image = await findNewsIllustration(article.title, fetch, { body: article.body_text ?? "", query: queries.get(article.article_id) ?? "" });
+      const { image, reason } = await findNewsIllustrationResult(article.title, fetch, { body: article.body_text ?? "", query: queries.get(article.article_id) ?? "" });
       if (image) { await saveIllustration(db, article.article_id, image); result.imagesAdded++; }
-      await finish(db, article.article_id, "image", image ? "success" : "none");
+      await finish(db, article.article_id, "image", image ? "success" : "none", reason);
     } catch (cause) {
       const message = cause instanceof Error ? cause.message : "Image lookup failed";
       result.errors.push(`Image ${article.article_id}: ${message}`);
