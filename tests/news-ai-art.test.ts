@@ -88,7 +88,7 @@ describe("AI illustration migration", () => {
       const [oldest, middle, newest, found] = [await add("a", 6), await add("b", 3), await add("c", 1), await add("d", 0)];
       await db.query("insert into public.news_enrichment_attempts(article_id,kind,status,retry_after) values ($1,'image','none',now() + interval '7 days'), ($2,'image','error',now() + interval '1 day'), ($3,'image','success',now() + interval '7 days')", [oldest, middle, found]);
       await db.exec(readFileSync(resolve("supabase/migrations/202610260018_news_ai_generated_illustrations.sql"), "utf8"));
-      await db.exec(readFileSync(resolve("supabase/migrations/202610260019_news_image_latest_first_queue.sql"), "utf8"));
+      await db.exec(readFileSync(resolve("supabase/migrations/202610270003_news_image_latest_first_queue.sql"), "utf8"));
 
       expect((await db.query<{ public: boolean }>("select public from storage.buckets where id = 'news-ai-illustrations'")).rows[0].public).toBe(true);
       const attempts = (await db.query<{ article_id: string; ai_art_pending: boolean; due: boolean }>("select article_id, ai_art_pending, retry_after <= now() as due from public.news_enrichment_attempts")).rows;
