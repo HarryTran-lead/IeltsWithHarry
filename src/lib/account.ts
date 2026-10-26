@@ -2,6 +2,13 @@ export const avatarStickers = ["harry", "star", "rocket", "book", "globe", "head
 export type AvatarSticker = (typeof avatarStickers)[number];
 export function isAvatar(value: unknown): value is AvatarSticker { return avatarStickers.includes(value as AvatarSticker); }
 
+const avatarPhotoPattern = /^[0-9a-f-]{36}\/[0-9a-f-]{36}\.(?:jpg|png|webp)$/;
+export function avatarPhotoUrl(value: unknown) {
+  const projectUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (typeof value !== "string" || !avatarPhotoPattern.test(value) || !projectUrl) return null;
+  return `${projectUrl.replace(/\/$/, "")}/storage/v1/object/public/user-avatars/${value}`;
+}
+
 export type StreakDay = { day: string; events: number; kinds: string[] };
 export type Streak = { current: number; longest: number; today: string; activeToday: boolean; totalDays: number; days: StreakDay[] };
 export type AccountControls = { suspendedUntil: string | null; suspendedReason: string; chatMutedUntil: string | null; chatMutedReason: string };

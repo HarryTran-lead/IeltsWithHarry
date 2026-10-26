@@ -42,6 +42,7 @@ import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
 import { useStudyPresence } from "@/features/study-room/study-presence";
 import { NotificationBell } from "@/components/account/notification-bell";
+import { AccountAvatar } from "@/components/account/account-avatar";
 
 const groups = [
   {
@@ -113,6 +114,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const { online: studyOnline } = useStudyPresence();
   const [profileOpen, setProfileOpen] = useState(false);
+  const [avatar, setAvatar] = useState("harry");
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
@@ -140,6 +142,21 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
     }
     window.addEventListener("keydown", focusSearch);
     return () => window.removeEventListener("keydown", focusSearch);
+  }, []);
+
+  useEffect(() => {
+    if (demoMode) return;
+    const db = createClient();
+    let active = true;
+    async function loadAvatar() {
+      const { data: user } = await db.auth.getUser();
+      if (!user.user) return;
+      const { data } = await db.from("profiles").select("avatar").eq("id", user.user.id).maybeSingle();
+      if (active && data?.avatar) setAvatar(data.avatar);
+    }
+    void loadAvatar();
+    window.addEventListener("account-avatar-updated", loadAvatar);
+    return () => { active = false; window.removeEventListener("account-avatar-updated", loadAvatar); };
   }, []);
 
   function toggleSidebar() {
@@ -276,7 +293,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                 setNotificationsOpen(false);
               }}
             >
-              <span><UserRound size={18} strokeWidth={2.2} /></span>
+              {demoMode ? <span><UserRound size={18} strokeWidth={2.2} /></span> : <AccountAvatar value={avatar} size={34} />}
               <ChevronDown size={15} />
             </button>
             {profileOpen && (

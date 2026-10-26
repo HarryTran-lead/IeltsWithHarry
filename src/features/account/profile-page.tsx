@@ -6,7 +6,8 @@ import { BookOpenText, CalendarClock, CalendarDays, Check, Clock3, Flame, Langua
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { ActivityHeatmap } from "@/components/account/activity-heatmap";
-import { activeUntil, activityLabels, avatarStickers, isAvatar, untilLabel, type LearnerOverview } from "@/lib/account";
+import { activeUntil, activityLabels, avatarPhotoUrl, avatarStickers, untilLabel, type LearnerOverview } from "@/lib/account";
+import { AccountAvatar } from "@/components/account/account-avatar";
 import { stages } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
@@ -68,7 +69,7 @@ export function ProfilePage() {
 
   return <div className="content-page profile-page">
     <section className="card profile-hero">
-      <div className="profile-avatar"><Sticker name={isAvatar(profile.avatar) ? profile.avatar : "harry"} size={84} tilt={-6} /></div>
+      <div className="profile-avatar"><AccountAvatar value={profile.avatar} size={84} /></div>
       <div className="profile-id">
         <span className="eyebrow">HỒ SƠ HỌC VIÊN</span>
         <h1>{profile.display_name}</h1>
@@ -130,17 +131,43 @@ export function ProfilePage() {
 function ProfileForm({ data, onSaved }: { data: LearnerOverview; onSaved: () => Promise<void> }) {
   const { profile } = data;
   const [form, setForm] = useState({
-    display_name: profile.display_name, bio: profile.bio, avatar: isAvatar(profile.avatar) ? profile.avatar : "harry",
+    display_name: profile.display_name, bio: profile.bio, avatar: profile.avatar,
     target_band: profile.target_band ? Number(profile.target_band).toFixed(1) : "", exam_date: profile.exam_date ?? "",
     stage_id: profile.stage_id ?? "", daily_goal: profile.daily_goal, timezone: profile.timezone,
   });
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState("");
+  const [statusError, setStatusError] = useState(false);
   const set = <K extends keyof typeof form>(key: K, value: (typeof form)[K]) => { setForm((current) => ({ ...current, [key]: value })); setStatus(""); };
+  async function uploadPhoto(file: File) {
+    const extensions: Record<string, string> = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
+    const extension = extensions[file.type];
+    if (!extension || file.size > 2 * 1024 * 1024 || file.size === 0) {
+      setStatusError(true);
+      setStatus("Chọn ảnh JPG, PNG hoặc WebP tối đa 2 MB.");
+      return;
+    }
+    setBusy(true); setStatus("");
+    const db = createClient();
+    const path = `${profile.id}/${crypto.randomUUID()}.${extension}`;
+    const uploaded = await db.storage.from("user-avatars").upload(path, file, { contentType: file.type, upsert: false });
+    if (uploaded.error) { setStatusError(true); setStatus(uploaded.error.message); setBusy(false); return; }
+    const updated = await db.from("profiles").update({ avatar: path, updated_at: new Date().toISOString() })
+      .eq("id", profile.id).select("avatar").maybeSingle();
+    if (updated.error || !updated.data) {
+      await db.storage.from("user-avatars").remove([path]);
+      setStatusError(true); setStatus(updated.error?.message ?? "Không lưu được ảnh đại diện."); setBusy(false); return;
+    }
+    if (avatarPhotoUrl(profile.avatar)) await db.storage.from("user-avatars").remove([profile.avatar]);
+    set("avatar", path);
+    setStatusError(false); setStatus("Đã cập nhật ảnh đại diện."); setBusy(false);
+    window.dispatchEvent(new Event("account-avatar-updated"));
+    await onSaved();
+  }
   async function save(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const submitter = (event.nativeEvent as SubmitEvent).submitter;
-    if (!form.display_name.trim()) { setStatus("Tên hiển thị không được để trống."); return; }
+    if (!form.display_name.trim()) { setStatusError(true); setStatus("Tên hiển thị không được để trống."); return; }
     setBusy(true); setStatus("");
     const { error } = await createClient().from("profiles").update({
       display_name: form.display_name.trim().slice(0, 80), bio: form.bio.trim().slice(0, 280), avatar: form.avatar,
@@ -148,8 +175,11 @@ function ProfileForm({ data, onSaved }: { data: LearnerOverview; onSaved: () => 
       stage_id: form.stage_id || null, daily_goal: form.daily_goal, timezone: form.timezone, updated_at: new Date().toISOString(),
     }).eq("id", profile.id);
     setBusy(false);
-    if (error) { setStatus(error.message); return; }
+    if (error) { setStatusError(true); setStatus(error.message); return; }
+    if (avatarPhotoUrl(profile.avatar) && profile.avatar !== form.avatar) await createClient().storage.from("user-avatars").remove([profile.avatar]);
+    setStatusError(false);
     setStatus("Đã lưu hồ sơ.");
+    window.dispatchEvent(new Event("account-avatar-updated"));
     if (submitter) celebrate(submitter, { label: "Đã lưu!", pieces: 18 });
     await onSaved();
   }
@@ -161,7 +191,13 @@ function ProfileForm({ data, onSaved }: { data: LearnerOverview; onSaved: () => 
           <input type="radio" name="avatar" value={name} checked={form.avatar === name} onChange={() => set("avatar", name)} />
           <Sticker name={name} size={44} pop={false} /><span className="sr-only">{name}</span>
         </label>)}
+        <label className={`profile-upload ${avatarPhotoUrl(form.avatar) ? "selected" : ""}`}>
+          <input type="file" accept="image/jpeg,image/png,image/webp" disabled={busy} onChange={(event) => { const file = event.target.files?.[0]; if (file) void uploadPhoto(file); event.target.value = ""; }} />
+          {avatarPhotoUrl(form.avatar) ? <AccountAvatar value={form.avatar} size={44} /> : <span className="profile-upload-icon">+</span>}
+          <span className="sr-only">Tải ảnh của bạn lên</span>
+        </label>
       </fieldset>
+      <p className="profile-photo-hint">Chọn hình có sẵn hoặc tải ảnh JPG, PNG, WebP tối đa 2 MB. Ảnh tải lên được lưu ngay và hiện trên hồ sơ, menu tài khoản.</p>
       <div className="profile-fields">
         <label>Tên hiển thị<input value={form.display_name} maxLength={80} onChange={(event) => set("display_name", event.target.value)} required /></label>
         <label>Band mục tiêu<select value={form.target_band} onChange={(event) => set("target_band", event.target.value)}>{bands.map((band) => <option key={band} value={band}>{band || "Chưa chọn"}</option>)}</select></label>
@@ -173,7 +209,7 @@ function ProfileForm({ data, onSaved }: { data: LearnerOverview; onSaved: () => 
       </div>
       <div className="profile-form-actions">
         <button type="submit" className="button primary" disabled={busy}><Save size={16} /> {busy ? "Đang lưu…" : "Lưu hồ sơ"}</button>
-        {status && <span role="status">{status}</span>}
+        {status && <span className={statusError ? "is-error" : ""} role={statusError ? "alert" : "status"}>{status}</span>}
       </div>
     </form>
   </section>;

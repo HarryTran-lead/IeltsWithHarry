@@ -64,10 +64,16 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
           }
         } catch { /* Ignore damaged local demo data. */ }
       } else if (supabase) {
+        const { data: authData, error: authError } = await supabase.auth.getUser();
+        if (authError || !authData.user) {
+          setError(authError?.message ?? "Vui lòng đăng nhập để tải dữ liệu học.");
+          setReady(true);
+          return;
+        }
         const [taskResult, attemptResult, profileResult, draftResult] = await Promise.all([
           supabase.from("study_tasks").select("*").order("sort_order").order("due_date"),
           supabase.from("exercise_attempts").select("id,lesson_slug,score,total,submitted_at").order("submitted_at", { ascending: false }).limit(100),
-          supabase.from("profiles").select("daily_goal").single(),
+          supabase.from("profiles").select("daily_goal").eq("id", authData.user.id).maybeSingle(),
           supabase.from("writing_drafts").select("body").eq("lesson_slug", "writing-technology").maybeSingle(),
         ]);
         const failure = taskResult.error || attemptResult.error || profileResult.error || draftResult.error;
@@ -78,7 +84,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
             id: row.id, lesson: row.lesson_slug, score: row.score,
             total: row.total, date: row.submitted_at.slice(0, 10), submittedAt: row.submitted_at,
           })));
-          setGoalValue(profileResult.data.daily_goal);
+          setGoalValue(profileResult.data?.daily_goal ?? 5);
           setDraft(draftResult.data?.body ?? "");
         }
       }

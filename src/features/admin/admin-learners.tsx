@@ -3,9 +3,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Ban, BellRing, CalendarPlus, ChevronLeft, ChevronRight, Flame, MessageCircleOff, Search, ShieldCheck, Target, Trash2, Unlock, UserRound } from "lucide-react";
-import { Sticker } from "@/components/stickers/stickers";
+import { AccountAvatar } from "@/components/account/account-avatar";
 import { ActivityHeatmap } from "@/components/account/activity-heatmap";
-import { activeUntil, activityLabels, isAvatar, untilLabel, type LearnerOverview } from "@/lib/account";
+import { activeUntil, activityLabels, untilLabel, type LearnerOverview } from "@/lib/account";
 import { createClient } from "@/lib/supabase/browser";
 import "./admin-learners.css";
 
@@ -29,7 +29,7 @@ function date(value: string | null | undefined, withTime = false) {
   return new Intl.DateTimeFormat("vi-VN", withTime ? { dateStyle: "short", timeStyle: "short" } : { dateStyle: "medium" }).format(new Date(value));
 }
 function tomorrow() { const day = new Date(); day.setDate(day.getDate() + 1); return day.toLocaleDateString("sv-SE"); }
-function Avatar({ name, size = 34 }: { name: string; size?: number }) { return <span className="learner-avatar"><Sticker name={isAvatar(name) ? name : "harry"} size={size} pop={false} /></span>; }
+function Avatar({ name, size = 34 }: { name: string; size?: number }) { return <span className="learner-avatar"><AccountAvatar value={name} size={size} /></span>; }
 function StatusChips({ isAdmin, suspended, muted }: { isAdmin: boolean; suspended: string | null; muted: string | null }) {
   return <span className="learner-chips">
     {isAdmin && <span className="chip admin"><ShieldCheck size={12} /> Admin</span>}
