@@ -119,7 +119,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const storageKey = `course-book:${course.id}`;
   const shellRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
-  const [layout, setLayout] = useState({ single: false, scale: 1 });
+  const [layout, setLayout] = useState({ single: false, scale: 1, height: 0 });
   const [page, setPage] = useState(() => {
     if (typeof window === "undefined") return 0;
     const fromHash = Number(window.location.hash.match(/^#p=(\d+)/)?.[1]);
@@ -150,19 +150,30 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const stage = { name: stages[stageIndex]?.name ?? course.title, range: stages[stageIndex]?.range ?? "", number: stageIndex + 1 };
 
   // Measure the desk: two pages scaled to fit on wide screens, one fluid page on narrow ones.
+  // On wide screens the desk fills the viewport height left below it, so the whole book is on screen.
   useEffect(() => {
     const element = stageRef.current;
     if (!element) return;
     const measure = () => {
       const width = element.clientWidth;
-      const height = element.clientHeight;
-      if (width < 860) setLayout({ single: true, scale: 1 });
-      else setLayout({ single: false, scale: Math.max(0.5, Math.min((width - 150) / (PAGE_W * 2), (height - 40) / PAGE_H, 1.3)) });
+      if (width < 860) { setLayout({ single: true, scale: 1, height: 0 }); return; }
+      const fullscreen = Boolean(document.fullscreenElement);
+      const top = element.getBoundingClientRect().top + (fullscreen ? 0 : window.scrollY);
+      const height = Math.max(520, Math.round(window.innerHeight - top - (fullscreen ? 10 : 14)));
+      // Room for the thumb tabs and side arrows across, and the cover board's edge above and below.
+      const scale = Math.max(0.5, Math.min((width - 140) / (PAGE_W * 2 + 84), (height - 28) / (PAGE_H + 22), 1.9));
+      setLayout({ single: false, scale, height });
     };
     measure();
     const observer = new ResizeObserver(measure);
     observer.observe(element);
-    return () => observer.disconnect();
+    window.addEventListener("resize", measure);
+    document.addEventListener("fullscreenchange", measure);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+      document.removeEventListener("fullscreenchange", measure);
+    };
   }, []);
 
   // In spread view the canonical page is always the left page of a spread (or the cover).
@@ -318,7 +329,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
 
     {layout.single && <div className="bk-unit-strip" aria-label="Chọn unit">{unitTabs.map((tab) => <button type="button" key={tab.unit.id} className={tab.active ? "is-active" : ""} style={{ "--tone": unitColor(tab.unitIndex) } as CSSProperties} onClick={() => goTo(tab.start)}>{unitLabel(tab.unit, course).short}</button>)}</div>}
 
-    <div ref={stageRef} className={`bk-desk ${layout.single ? "is-single" : ""}`}>
+    <div ref={stageRef} className={`bk-desk ${layout.single ? "is-single" : ""}`} style={layout.height ? { height: layout.height } : undefined}>
       {!layout.single && <button type="button" className="bk-arrow is-prev" onClick={previous} disabled={atStart} aria-label="Trang trước"><ChevronLeft size={26} /></button>}
       <div
         className={`bk-book ${flip ? "is-flipping" : ""} ${layout.single ? "is-single" : ""}`}

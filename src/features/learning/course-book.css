@@ -13,8 +13,8 @@
   margin-bottom: 18px;
 }
 .bk-shell .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.bk-shell.is-fullscreen { padding: 14px; background: #efe6d2; overflow: auto; }
-.bk-shell.is-fullscreen .bk-desk { height: calc(100dvh - 92px); }
+.bk-shell.is-fullscreen { gap: 8px; padding: 10px 10px 0; background: #efe6d2; overflow: auto; }
+.bk-shell.is-fullscreen .bk-desk { height: calc(100dvh - 66px); }
 
 /* Toolbar */
 .bk-toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }

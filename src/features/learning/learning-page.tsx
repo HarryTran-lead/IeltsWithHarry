@@ -104,11 +104,12 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   const stops = stageStops(published.courses, (slug) => visited.has(`/app/lesson/${slug}`) || submitted.has(slug));
   return (
     <div className="content-page learn-overview">
-      {selected && <div className="learn-stage-tools"><Link href="/app/learn">← Toàn bộ lộ trình</Link><details><summary>Đổi chặng học</summary><div className="learn-stage-menu">{stages.map((stage) => <Link key={stage.id} href={`/app/learn/${stage.id}`} aria-current={stage.id === selected.id ? "page" : undefined}><b>{stage.range}</b> {stage.name}</Link>)}</div></details></div>}
-      {selected ? <header className="learn-stage-heading">
+      {selected ? <header className="learn-stage-heading learn-stage-tools">
+        <Link href="/app/learn" aria-label="Toàn bộ lộ trình">← Lộ trình</Link>
         <div><span className="eyebrow">CHẶNG {stages.indexOf(selected) + 1} · {selected.range}</span><h1>{selected.name}</h1></div>
         <span className="learn-stage-count"><strong>{explored}/{total || "…"}</strong> bài đã mở</span>
         {nextLesson ? <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? "Học tiếp" : "Bắt đầu học"} <ArrowRight size={16} /></Link> : !published.loading && total > 0 ? <span className="learn-mission-complete">Đã xem hết bài · chọn unit để ôn lại</span> : null}
+        <details><summary>Đổi chặng</summary><div className="learn-stage-menu">{stages.map((stage) => <Link key={stage.id} href={`/app/learn/${stage.id}`} aria-current={stage.id === selected.id ? "page" : undefined}><b>{stage.range}</b> {stage.name}</Link>)}</div></details>
       </header> : <section className="learn-mission" aria-label="Bài học tiếp theo">
         <div className="learn-mission-main"><span className="eyebrow">HÀNH TRÌNH CỦA BẠN · BẮT ĐẦU TỪ ĐÂY</span>
           <h1>Một bài nhỏ hôm nay, một bước tiến ngày mai</h1>
