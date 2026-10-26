@@ -1,19 +1,37 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { BookMarked, BookOpen, ChevronLeft, ChevronRight, List, Maximize2, Minimize2, Sparkles, Volume2, VolumeX } from "lucide-react";
+import { createPortal } from "react-dom";
+import { AArrowDown, AArrowUp, Bookmark, BookmarkCheck, BookMarked, BookOpen, ChevronLeft, ChevronRight, List, Maximize2, Minimize2, Sparkles, StickyNote, Trash2, Type, Volume2, VolumeX, X, ZoomIn, ZoomOut } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { stages } from "@/lib/demo-data";
 import type { StageCourse } from "./stage-courses";
-import { LessonWorkbook } from "./course-book-lesson";
-import { BookPageView, splitUnitTitle, unitColor, unitLabel, type BookContent, type BookContext, type BookLesson, type BookPage } from "./course-book-pages";
+import { useNotebook } from "@/features/notebook/notebook-store";
+import { BookWorkbook } from "./course-book-lesson";
+import { BookPanel, type BookMark, type PanelTab } from "./course-book-panel";
+import { loadPracticeResults, subscribePracticeResults, type PracticeResult } from "./practice-results";
+import { BookPageView, describePage, splitUnitTitle, unitColor, unitLabel, type BookContent, type BookContext, type BookLesson, type BookPage } from "./course-book-pages";
 import "./course-book.css";
+import "./course-book-tools.css";
 
 const PAGE_W = 540;
 const PAGE_H = 740;
 const FLIP_MS = 760;
 
 type Flip = { dir: 1 | -1; from: number; to: number; riffle: number };
+type OpenItem = { kind: "lesson"; slug: string } | { kind: "check"; slug: string; title: string };
+const ZOOMS = [1, 1.5, 2, 2.5];
+const BOOKMARK_PREFIX = "Dấu trang";
+
+/** Reads "l=<lesson>" or "c=<check>&t=<title>" from the hash, so a reload reopens the workbook. */
+function openFromHash(): OpenItem | null {
+  if (typeof window === "undefined") return null;
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  const lesson = params.get("l");
+  if (lesson) return { kind: "lesson", slug: lesson };
+  const check = params.get("c");
+  return check ? { kind: "check", slug: check, title: params.get("t") ?? "Bài kiểm tra" } : null;
+}
 
 /** Lays the course out as printed pages: cover, guide, contents, then per unit an opener spread and one spread per lesson. */
 function buildPages(course: StageCourse) {
@@ -119,7 +137,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const storageKey = `course-book:${course.id}`;
   const shellRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
-  const [layout, setLayout] = useState({ single: false, scale: 1, height: 0 });
+  const [layout, setLayout] = useState({ single: false, narrow: false, scale: 1, height: 0 });
   const [page, setPage] = useState(() => {
     if (typeof window === "undefined") return 0;
     const fromHash = Number(window.location.hash.match(/^#p=(\d+)/)?.[1]);
@@ -128,8 +146,22 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
     return Math.min(Math.max(0, value), last);
   });
   const [flip, setFlip] = useState<Flip | null>(null);
-  // The lesson open as a workbook over the book, kept in the hash as "l=<slug>".
-  const [openSlug, setOpenSlug] = useState<string | null>(() => typeof window === "undefined" ? null : new URLSearchParams(window.location.hash.slice(1)).get("l"));
+  // The lesson or check open as a workbook over the book, kept in the hash.
+  const [openItem, setOpenItem] = useState<OpenItem | null>(openFromHash);
+  const [panelTab, setPanelTab] = useState<PanelTab | null>(null);
+  const [noteDraft, setNoteDraft] = useState<string | null>(null);
+  const [expandedNote, setExpandedNote] = useState<string | null>(null);
+  const [zoom, setZoom] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const drag = useRef<{ x: number; y: number; panX: number; panY: number } | null>(null);
+  // Reading mode shows one page at a time at a comfortable width, with adjustable text size.
+  const [reading, setReading] = useState(() => typeof window !== "undefined" && readStored("course-book:reading") === "on");
+  const [textScale, setTextScale] = useState(() => {
+    const stored = typeof window === "undefined" ? NaN : Number(readStored("course-book:text"));
+    return Number.isFinite(stored) && stored >= 0.9 && stored <= 1.6 ? stored : 1;
+  });
+  const [results, setResults] = useState<Record<string, PracticeResult>>({});
+  const { entries, addEntry, removeEntry } = useNotebook();
   const [sound, setSound] = useState(() => typeof window === "undefined" || readStored("course-book:sound") !== "off");
   // Page turns follow the system's reduced-motion setting until the learner picks for themselves.
   const [motion, setMotion] = useState(() => {
@@ -156,13 +188,13 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
     if (!element) return;
     const measure = () => {
       const width = element.clientWidth;
-      if (width < 860) { setLayout({ single: true, scale: 1, height: 0 }); return; }
+      if (width < 860 || reading) { setLayout({ single: true, narrow: width < 860, scale: 1, height: 0 }); return; }
       const fullscreen = Boolean(document.fullscreenElement);
       const top = element.getBoundingClientRect().top + (fullscreen ? 0 : window.scrollY);
       const height = Math.max(520, Math.round(window.innerHeight - top - (fullscreen ? 10 : 14)));
       // Room for the thumb tabs and side arrows across, and the cover board's edge above and below.
       const scale = Math.max(0.5, Math.min((width - 140) / (PAGE_W * 2 + 84), (height - 28) / (PAGE_H + 22), 1.9));
-      setLayout({ single: false, scale, height });
+      setLayout({ single: false, narrow: false, scale, height });
     };
     measure();
     const observer = new ResizeObserver(measure);
@@ -174,14 +206,15 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
       window.removeEventListener("resize", measure);
       document.removeEventListener("fullscreenchange", measure);
     };
-  }, []);
+  }, [reading]);
 
   // In spread view the canonical page is always the left page of a spread (or the cover).
   const anchor = layout.single ? page : firstPageOf(spreadOf(page));
   useEffect(() => {
     writeStored(storageKey, String(anchor));
-    window.history.replaceState(window.history.state, "", `#p=${anchor}${openSlug ? `&l=${openSlug}` : ""}`);
-  }, [anchor, openSlug, storageKey]);
+    const open = !openItem ? "" : openItem.kind === "lesson" ? `&l=${encodeURIComponent(openItem.slug)}` : `&c=${encodeURIComponent(openItem.slug)}&t=${encodeURIComponent(openItem.title)}`;
+    window.history.replaceState(window.history.state, "", `#p=${anchor}${open}`);
+  }, [anchor, openItem, storageKey]);
 
   const goTo = useCallback((target: number) => {
     const clamped = Math.min(Math.max(0, target), last);
@@ -207,14 +240,34 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
 
   // Opening a lesson also turns the book to it, without an animation behind the sheet.
   const openLesson = useCallback((lesson: BookLesson) => {
-    setOpenSlug(lesson.slug);
+    setOpenItem({ kind: "lesson", slug: lesson.slug });
+    setPanelTab(null);
     const start = lessonStart.get(lesson.id);
     if (start !== undefined && !flipping.current) setPage(start);
   }, [lessonStart]);
-  const closeLesson = useCallback(() => setOpenSlug(null), []);
+  const openCheck = useCallback((slug: string, title = "Bài kiểm tra") => { setOpenItem({ kind: "check", slug, title }); setPanelTab(null); }, []);
+  const closeLesson = useCallback(() => setOpenItem(null), []);
+
+  // Practice scores for every lesson in the course, kept fresh while the learner works.
+  const lessonSlugKey = course.units.flatMap((unit) => unit.lessons.map((lesson) => lesson.slug)).join(",");
+  useEffect(() => {
+    let active = true;
+    loadPracticeResults(lessonSlugKey.split(",").filter(Boolean)).then((found) => { if (active) setResults(found); }, () => undefined);
+    const unsubscribe = subscribePracticeResults((slug, result) => setResults((previous) => ({ ...previous, [slug]: result })));
+    return () => { active = false; unsubscribe(); };
+  }, [lessonSlugKey]);
+
+  // Bookmarks and sticky notes live in the notebook, linked to "/app/learn/<stage>#p=<page>".
+  const bookPath = `/app/learn/${course.stage_id}`;
+  const marks = useMemo<BookMark[]>(() => entries.flatMap((entry) => {
+    if (entry.kind !== "note" || !entry.sourcePath.startsWith(`${bookPath}#p=`)) return [];
+    const page = Number(entry.sourcePath.slice(bookPath.length + 3).split("&")[0]);
+    if (!Number.isInteger(page) || page < 0 || page > last) return [];
+    return [{ id: entry.id, page, kind: entry.title.startsWith(BOOKMARK_PREFIX) ? "bookmark" as const : "note" as const, title: entry.title, body: entry.body }];
+  }), [bookPath, entries, last]);
 
   useEffect(() => {
-    if (openSlug) return;
+    if (openItem || panelTab || noteDraft !== null) return;
     const onKey = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
       if (target?.closest("input, textarea, select, [contenteditable='true']")) return;
@@ -225,7 +278,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [next, openSlug, previous]);
+  }, [next, noteDraft, openItem, panelTab, previous]);
 
   useEffect(() => {
     const onChange = () => setFullscreen(document.fullscreenElement === shellRef.current);
@@ -251,8 +304,8 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   }, [course.units, pages, visible]);
   const contents = useLessonContents(wantedLessonIds);
 
-  const ctx: BookContext = { course, stage, isDone, current, contents, unitStart, lessonStart, finishPage, finished, total: lessons.length, hasChecks, finalCheckSlug, goTo, openLesson };
-  const openIndex = openSlug ? lessons.findIndex((lesson) => lesson.slug === openSlug) : -1;
+  const ctx: BookContext = { course, stage, isDone, current, contents, unitStart, lessonStart, finishPage, finished, total: lessons.length, hasChecks, finalCheckSlug, goTo, openLesson, openCheck, results };
+  const openIndex = openItem?.kind === "lesson" ? lessons.findIndex((lesson) => lesson.slug === openItem.slug) : -1;
   const render = (index: number | null, side: "left" | "right") => index === null || !pages[index] ? null : <BookPageView page={pages[index]} index={index} side={side} ctx={ctx} />;
 
   // Static pages under the turning leaf, the leaf faces, and how far the closed book shifts to stay centred.
@@ -287,6 +340,51 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const atStart = anchor === 0;
   const atEnd = layout.single ? anchor >= last : spreadPages(spreadOf(anchor), last)[1] === null;
 
+  const shownPages = layout.single ? [anchor] : spreadPages(spreadOf(anchor), last).filter((value): value is number => value !== null);
+  const markPage = anchor;
+  const pageBookmarks = marks.filter((mark) => mark.kind === "bookmark" && shownPages.includes(mark.page));
+  const markLabel = (page: number) => describePage(pages[page], course);
+
+  function toggleBookmark() {
+    if (pageBookmarks.length) { pageBookmarks.forEach((mark) => void removeEntry(mark.id).catch(() => undefined)); return; }
+    void addEntry({ kind: "note", title: `${BOOKMARK_PREFIX} · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: `Đánh dấu trong sách ${course.title}`, meaningVi: "", example: "" }, `${bookPath}#p=${markPage}`).catch(() => undefined);
+  }
+
+  function saveNote() {
+    const body = (noteDraft ?? "").trim();
+    if (!body) return;
+    void addEntry({ kind: "note", title: `Ghi chú sách · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: body.slice(0, 5000), meaningVi: "", example: "" }, `${bookPath}#p=${markPage}`).catch(() => undefined);
+    setNoteDraft(null);
+  }
+
+  function changeZoom(step: 1 | -1) {
+    const nextZoom = ZOOMS[Math.min(ZOOMS.length - 1, Math.max(0, ZOOMS.indexOf(zoom) + step))];
+    setZoom(nextZoom);
+    if (nextZoom === 1) setPan({ x: 0, y: 0 });
+  }
+
+  function clampPan(x: number, y: number) {
+    const desk = stageRef.current;
+    if (!desk) return { x, y };
+    const maxX = Math.max(0, (PAGE_W * 2 * layout.scale * zoom - desk.clientWidth) / 2 + 60);
+    const maxY = Math.max(0, (PAGE_H * layout.scale * zoom - desk.clientHeight) / 2 + 40);
+    return { x: Math.max(-maxX, Math.min(maxX, x)), y: Math.max(-maxY, Math.min(maxY, y)) };
+  }
+
+  function toggleReading() {
+    setReading((value) => { writeStored("course-book:reading", value ? "off" : "on"); return !value; });
+    setZoom(1);
+    setPan({ x: 0, y: 0 });
+  }
+
+  function changeText(step: number) {
+    setTextScale((value) => {
+      const nextValue = Math.round(Math.min(1.6, Math.max(0.9, value + step)) * 10) / 10;
+      writeStored("course-book:text", String(nextValue));
+      return nextValue;
+    });
+  }
+
   function toggleFullscreen() {
     if (document.fullscreenElement) void document.exitFullscreen();
     else void shellRef.current?.requestFullscreen?.();
@@ -301,15 +399,52 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   // A single page grows with its content and scrolls with the page; spreads are scaled to fit the desk.
   const bookStyle = {
     "--flip-ms": `${FLIP_MS}ms`,
-    ...(layout.single ? {} : { width: PAGE_W * 2, height: PAGE_H, transform: `translate(-50%, -50%) translateX(${shift * layout.scale}px) scale(${layout.scale})` }),
+    ...(layout.single ? {} : { width: PAGE_W * 2, height: PAGE_H, transform: `translate(-50%, -50%) translate(${pan.x}px, ${pan.y}px) translateX(${shift * layout.scale * zoom}px) scale(${layout.scale * zoom})` }),
   } as CSSProperties;
 
-  return <div ref={shellRef} className={`bk-shell ${fullscreen ? "is-fullscreen" : ""} ${motion ? "" : "is-still"}`} style={{ "--board": boardColor(course.stage_id) } as CSSProperties}>
+  const toggleMotion = () => setMotion((value) => { writeStored("course-book:motion", value ? "off" : "on"); return !value; });
+  const toggleSound = () => setSound((value) => { writeStored("course-book:sound", value ? "off" : "on"); return !value; });
+  const notesOn = (page: number) => marks.filter((mark) => mark.kind === "note" && mark.page === page);
+
+  // The learner's sticky notes for a page; on a single fluid page they sit below it instead of over the text.
+  const stickies = (page: number, flow = false) => {
+    const notes = notesOn(page);
+    if (!notes.length) return null;
+    return <div className={`bk-stickies ${flow ? "is-flow" : ""}`}>{notes.map((note, index) => {
+      const open = expandedNote === note.id;
+      return <div key={note.id} className={`bk-sticky ${open ? "is-open" : ""}`} style={{ "--tilt": `${index % 2 ? 2 : -2}deg` } as CSSProperties}>
+        <button type="button" onClick={() => setExpandedNote(open ? null : note.id)} aria-expanded={open}>{open || note.body.length <= 70 ? note.body : `${note.body.slice(0, 70)}…`}</button>
+        {open && <button type="button" className="bk-sticky-delete" onClick={() => { void removeEntry(note.id).catch(() => undefined); setExpandedNote(null); }}><Trash2 size={13} /> Gỡ ghi chú</button>}
+      </div>;
+    })}</div>;
+  };
+
+  // The learner's own bookmark flag and sticky notes on a page, hidden while a leaf turns.
+  const markLayer = (page: number | null, side: "left" | "right" | "single") => {
+    if (flip || page === null) return null;
+    const flagged = marks.some((mark) => mark.kind === "bookmark" && mark.page === page);
+    const notes = side === "single" ? null : stickies(page);
+    if (!flagged && !notes) return null;
+    return <div className={`bk-mark-layer is-${side}`}>
+      {flagged && <span className="bk-flag" title="Trang bạn đã đánh dấu"><Bookmark size={14} /></span>}
+      {notes}
+    </div>;
+  };
+
+  const settings = <div className="bk-settings">
+    <span>Hiển thị</span>
+    <button type="button" aria-pressed={motion} onClick={toggleMotion}><Sparkles size={15} /> Lật trang 3D</button>
+    <button type="button" aria-pressed={sound} onClick={toggleSound}>{sound ? <Volume2 size={15} /> : <VolumeX size={15} />} Tiếng lật trang</button>
+    {!layout.narrow && <button type="button" aria-pressed={reading} onClick={toggleReading}><Type size={15} /> Chế độ đọc</button>}
+    {layout.single && <span className="bk-text-size"><button type="button" onClick={() => changeText(-0.1)} disabled={textScale <= 0.9} aria-label="Chữ nhỏ hơn"><AArrowDown size={16} /></button><b>{Math.round(textScale * 100)}%</b><button type="button" onClick={() => changeText(0.1)} disabled={textScale >= 1.6} aria-label="Chữ lớn hơn"><AArrowUp size={16} /></button></span>}
+  </div>;
+
+  return <div ref={shellRef} className={`bk-shell ${fullscreen ? "is-fullscreen" : ""} ${motion ? "" : "is-still"} ${reading && !layout.narrow ? "is-reading" : ""}`} style={{ "--board": boardColor(course.stage_id), "--bk-text": textScale } as CSSProperties}>
     <div className="bk-toolbar" role="toolbar" aria-label="Điều khiển sách">
       <div className="bk-toolbar-start">{toolbarStart}</div>
       <div className="bk-toolbar-main">
         <button type="button" className="bk-tool-wide" onClick={() => goTo(0)} title="Bìa sách" aria-label="Bìa sách"><BookOpen size={18} /></button>
-        <button type="button" onClick={() => goTo(2)} title="Mục lục" aria-label="Mục lục"><List size={18} /><span>Mục lục</span></button>
+        <button type="button" onClick={() => setPanelTab((tab) => tab ? null : "contents")} aria-pressed={Boolean(panelTab)} title="Mục lục, trang, tìm kiếm và đánh dấu" aria-label="Mở bảng điều hướng"><List size={18} /><span>Mục lục</span></button>
         <button type="button" onClick={previous} disabled={atStart} title="Trang trước (←)" aria-label="Trang trước"><ChevronLeft size={19} /></button>
         <form className="bk-page-field" onSubmit={(event) => { event.preventDefault(); submitPage(); }}>
           <label><span className="sr-only">Đi tới trang</span>
@@ -321,15 +456,43 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
         {currentPage !== undefined && <button type="button" className="bk-bookmark-button" onClick={() => goTo(currentPage)} title="Lật tới bài đang học" aria-label="Lật tới bài đang học"><BookMarked size={18} /><span>Bài đang học</span></button>}
       </div>
       <div className="bk-toolbar-end">
-        <button type="button" onClick={() => setMotion((value) => { writeStored("course-book:motion", value ? "off" : "on"); return !value; })} aria-pressed={motion} title={motion ? "Tắt hiệu ứng lật trang 3D" : "Bật hiệu ứng lật trang 3D"} aria-label="Hiệu ứng lật trang 3D"><Sparkles size={18} /></button>
-        <button type="button" onClick={() => setSound((value) => { writeStored("course-book:sound", value ? "off" : "on"); return !value; })} aria-pressed={sound} title={sound ? "Tắt tiếng lật trang" : "Bật tiếng lật trang"} aria-label="Tiếng lật trang">{sound ? <Volume2 size={18} /> : <VolumeX size={18} />}</button>
+        <button type="button" onClick={toggleBookmark} aria-pressed={pageBookmarks.length > 0} title={pageBookmarks.length ? "Bỏ đánh dấu trang này" : "Đánh dấu trang này"} aria-label="Đánh dấu trang">{pageBookmarks.length ? <BookmarkCheck size={18} /> : <Bookmark size={18} />}</button>
+        <button type="button" onClick={() => setNoteDraft((draft) => draft === null ? "" : null)} aria-pressed={noteDraft !== null} title="Dán ghi chú lên trang" aria-label="Dán ghi chú lên trang"><StickyNote size={18} /></button>
+        {!layout.single && <>
+          <button type="button" className="bk-tool-wide" onClick={() => changeZoom(-1)} disabled={zoom === 1} title="Thu nhỏ" aria-label="Thu nhỏ"><ZoomOut size={18} /></button>
+          <button type="button" className="bk-tool-wide" onClick={() => changeZoom(1)} disabled={zoom === ZOOMS[ZOOMS.length - 1]} title={zoom > 1 ? `Phóng to (${zoom * 100}%) · kéo để di chuyển` : "Phóng to"} aria-label="Phóng to"><ZoomIn size={18} /></button>
+        </>}
+        {reading && !layout.narrow && <>
+          <button type="button" className="bk-tool-wide" onClick={() => changeText(-0.1)} disabled={textScale <= 0.9} title="Chữ nhỏ hơn" aria-label="Chữ nhỏ hơn"><AArrowDown size={18} /></button>
+          <button type="button" className="bk-tool-wide" onClick={() => changeText(0.1)} disabled={textScale >= 1.6} title="Chữ lớn hơn" aria-label="Chữ lớn hơn"><AArrowUp size={18} /></button>
+        </>}
+        {!layout.narrow && <button type="button" className="bk-tool-wide" onClick={toggleReading} aria-pressed={reading} title={reading ? "Về trang đôi" : "Chế độ đọc: từng trang, chỉnh cỡ chữ"} aria-label="Chế độ đọc"><Type size={18} /></button>}
+        <button type="button" className="bk-tool-wide" onClick={toggleMotion} aria-pressed={motion} title={motion ? "Tắt hiệu ứng lật trang 3D" : "Bật hiệu ứng lật trang 3D"} aria-label="Hiệu ứng lật trang 3D"><Sparkles size={18} /></button>
+        <button type="button" className="bk-tool-wide" onClick={toggleSound} aria-pressed={sound} title={sound ? "Tắt tiếng lật trang" : "Bật tiếng lật trang"} aria-label="Tiếng lật trang">{sound ? <Volume2 size={18} /> : <VolumeX size={18} />}</button>
         <button type="button" className="bk-tool-wide" onClick={toggleFullscreen} title="Toàn màn hình" aria-label={fullscreen ? "Thoát toàn màn hình" : "Toàn màn hình"}>{fullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}</button>
       </div>
+      {noteDraft !== null && <form className="bk-composer" aria-label="Ghi chú cho trang" onSubmit={(event) => { event.preventDefault(); saveNote(); }} onKeyDown={(event) => { if (event.key === "Escape") setNoteDraft(null); if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) saveNote(); }}>
+        <header><b>Ghi chú · Trang {markPage}</b><small>{markLabel(markPage)}</small><button type="button" onClick={() => setNoteDraft(null)} aria-label="Đóng"><X size={16} /></button></header>
+        <textarea autoFocus value={noteDraft} maxLength={5000} onChange={(event) => setNoteDraft(event.target.value)} placeholder="Viết điều cần nhớ, câu hỏi chưa rõ, từ muốn ôn…" rows={4} />
+        <footer><small>Lưu vào Sổ tay và dán lên trang này.</small><button type="submit" className="button primary" disabled={!noteDraft.trim()}>Dán lên trang</button></footer>
+      </form>}
     </div>
 
     {layout.single && <div className="bk-unit-strip" aria-label="Chọn unit">{unitTabs.map((tab) => <button type="button" key={tab.unit.id} className={tab.active ? "is-active" : ""} style={{ "--tone": unitColor(tab.unitIndex) } as CSSProperties} onClick={() => goTo(tab.start)}>{unitLabel(tab.unit, course).short}</button>)}</div>}
 
-    <div ref={stageRef} className={`bk-desk ${layout.single ? "is-single" : ""}`} style={layout.height ? { height: layout.height } : undefined}>
+    <div
+      ref={stageRef}
+      className={`bk-desk ${layout.single ? "is-single" : ""} ${zoom > 1 ? "is-zoomed" : ""}`}
+      style={layout.height ? { height: layout.height } : undefined}
+      onPointerDown={(event) => {
+        if (zoom === 1 || event.pointerType !== "mouse" || (event.target as HTMLElement).closest("button, a, input, textarea, audio, summary, label")) return;
+        drag.current = { x: event.clientX, y: event.clientY, panX: pan.x, panY: pan.y };
+        event.currentTarget.setPointerCapture(event.pointerId);
+      }}
+      onPointerMove={(event) => { const start = drag.current; if (start) setPan(clampPan(start.panX + event.clientX - start.x, start.panY + event.clientY - start.y)); }}
+      onPointerUp={() => { drag.current = null; }}
+      onPointerCancel={() => { drag.current = null; }}
+    >
       {!layout.single && <button type="button" className="bk-arrow is-prev" onClick={previous} disabled={atStart} aria-label="Trang trước"><ChevronLeft size={26} /></button>}
       <div
         className={`bk-book ${flip ? "is-flipping" : ""} ${layout.single ? "is-single" : ""}`}
@@ -348,8 +511,9 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
       >
         {showLeftBoard && <span className="bk-board is-left" aria-hidden="true" />}
         {showRightBoard && <span className="bk-board is-right" aria-hidden="true" />}
-        {!layout.single && <div className="bk-slot is-left" style={{ boxShadow: leftIndex !== null && leftIndex !== last ? paperEdge(edge(leftIndex), "left") : undefined }}>{render(leftIndex, "left")}</div>}
-        <div className={`bk-slot ${layout.single ? "is-single" : "is-right"}`} style={{ boxShadow: rightIndex !== null && rightIndex !== 0 ? paperEdge(edge(last - rightIndex), "right") : undefined }}>{render(rightIndex, "right")}</div>
+        {!layout.single && <div className="bk-slot is-left" style={{ boxShadow: leftIndex !== null && leftIndex !== last ? paperEdge(edge(leftIndex), "left") : undefined }}>{render(leftIndex, "left")}{markLayer(leftIndex, "left")}</div>}
+        <div className={`bk-slot ${layout.single ? "is-single" : "is-right"}`} style={{ boxShadow: rightIndex !== null && rightIndex !== 0 ? paperEdge(edge(last - rightIndex), "right") : undefined }}>{render(rightIndex, "right")}{markLayer(rightIndex, layout.single ? "single" : "right")}</div>
+        {layout.single && !flip && stickies(anchor, true)}
         {flip && !layout.single && leaf && <>
           {Array.from({ length: flip.riffle }, (_, i) => <div key={i} className={`bk-leaf is-riffle ${flip.dir > 0 ? "is-next" : "is-prev"}`} style={{ animationDelay: `${(i + 1) * 70}ms`, animationDuration: `${FLIP_MS - 160}ms` }} aria-hidden="true"><div className="bk-leaf-face is-front"><div className="bk-page is-right bk-blank" /></div><div className="bk-leaf-face is-back"><div className="bk-page is-left bk-blank" /></div></div>)}
           <div className={`bk-leaf ${flip.dir > 0 ? "is-next" : "is-prev"}`} aria-hidden="true">
@@ -373,7 +537,23 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
       {!layout.single && <button type="button" className="bk-arrow is-next" onClick={next} disabled={atEnd} aria-label="Trang sau"><ChevronRight size={26} /></button>}
       {layout.single && <div className="bk-single-nav"><button type="button" onClick={previous} disabled={atStart}><ChevronLeft size={18} /> Trang trước</button><button type="button" onClick={next} disabled={atEnd}>Trang sau <ChevronRight size={18} /></button></div>}
     </div>
-    {openIndex >= 0 && <LessonWorkbook lesson={lessons[openIndex]} position={openIndex + 1} total={lessons.length} previous={lessons[openIndex - 1]} next={lessons[openIndex + 1]} onOpen={openLesson} onClose={closeLesson} />}
+    {panelTab && createPortal(<div className="bk-panel-scope" style={{ "--board": boardColor(course.stage_id) } as CSSProperties}><BookPanel
+      course={course} pages={pages} unitStart={unitStart} lessonStart={lessonStart} finishPage={finishPage}
+      visible={shownPages} single={layout.single} tab={panelTab} onTab={setPanelTab} onClose={() => setPanelTab(null)}
+      goTo={goTo} openLesson={openLesson} isDone={isDone} current={current} results={results}
+      marks={marks} removeMark={(mark) => void removeEntry(mark.id).catch(() => undefined)} settings={settings}
+    /></div>, document.fullscreenElement ?? document.body)}
+    {openItem && (openItem.kind === "check" || openIndex >= 0) && <BookWorkbook
+      item={openItem.kind === "lesson" ? { kind: "lesson", lesson: lessons[openIndex] } : openItem}
+      stageId={course.stage_id}
+      position={openIndex + 1}
+      total={lessons.length}
+      previous={openIndex > 0 ? lessons[openIndex - 1] : undefined}
+      next={openIndex >= 0 ? lessons[openIndex + 1] : undefined}
+      onOpenLesson={openLesson}
+      onOpenCheck={(slug) => openCheck(slug, "Ôn tập & kiểm tra unit")}
+      onClose={closeLesson}
+    />}
     <p className="sr-only" aria-live="polite">Trang {pageLabel} trên {last}</p>
   </div>;
 }

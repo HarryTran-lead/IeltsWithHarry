@@ -24,9 +24,18 @@ type Assessment = {
   review?: { vocabulary_recall?: { en: string; vi: string }[] };
 };
 
+export type { Assessment };
+
 export function CourseAssessment({ content, stageId }: { content: Assessment; stageId: string }) {
   return <DemoProvider><NotebookProvider><AppShell><div className="content-page">
     <p><Link href={`/app/learn/${stageId}`}>← Quay lại lộ trình {stageId}</Link></p>
+    <AssessmentBody content={content} stageId={stageId} />
+  </div></AppShell></NotebookProvider></DemoProvider>;
+}
+
+/** The check itself, shared by its own page and the course book's workbook. */
+export function AssessmentBody({ content, stageId }: { content: Assessment; stageId: string }) {
+  return <>
     <div className="card section-card"><small>KIỂM TRA NỘI BỘ · {stageId.toUpperCase()}</small><h1>{content.title}</h1>
       {content.instruction_vi && <p>{content.instruction_vi}</p>}
       {content.stage_warning && <p className="lab-note">{content.stage_warning}</p>}
@@ -45,5 +54,5 @@ export function CourseAssessment({ content, stageId }: { content: Assessment; st
       {content.pass_rule && <p className="lab-note">{content.pass_rule}</p>}
       {content.standards_vi && <p className="lab-note">{content.standards_vi}</p>}
     </div>
-  </div></AppShell></NotebookProvider></DemoProvider>;
+  </>;
 }

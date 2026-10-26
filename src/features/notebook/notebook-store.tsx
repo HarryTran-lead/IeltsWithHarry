@@ -21,7 +21,8 @@ type NotebookStore = {
   ready: boolean;
   error: string;
   clearError: () => void;
-  addEntry: (input: NotebookInput) => Promise<void>;
+  /** Adds an entry linked to the current page, or to `sourcePath` when given (e.g. a page of the course book). */
+  addEntry: (input: NotebookInput, sourcePath?: string) => Promise<void>;
   updateEntry: (id: string, input: NotebookInput) => Promise<void>;
   removeEntry: (id: string) => Promise<void>;
   /** Records a study visit for a path the learner opened without navigating, e.g. a lesson opened over the course book. */
@@ -133,12 +134,13 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
 
   const value = useMemo<NotebookStore>(() => ({
     entries, visits, ready, error, clearError: () => setError(""),
-    addEntry: async (input) => {
+    addEntry: async (input, sourceOverride) => {
       const valid = notebookInputSchema.parse(input);
       const wordKey = valid.kind === "word" ? valid.title.trim().replace(/\s+/g, " ").toLowerCase() : "";
       if (wordKey && (pendingWords.current.has(wordKey) || entries.some((entry) => entry.kind === "word" && entry.title.trim().replace(/\s+/g, " ").toLowerCase() === wordKey))) return;
       if (wordKey) pendingWords.current.add(wordKey);
-      const sourcePath = visitTitle(activePath) ? activePath : "";
+      const linkedPath = sourceOverride ?? activePath;
+      const sourcePath = visitTitle(linkedPath) ? linkedPath.slice(0, 300) : "";
       setError("");
       try { if (demoMode) {
         const now = new Date().toISOString();

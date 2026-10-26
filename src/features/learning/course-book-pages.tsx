@@ -7,6 +7,7 @@ import { TopicArt } from "@/components/illustrations/topic-art";
 import { Sticker, Tape } from "@/components/stickers/stickers";
 import type { StageCourse } from "./stage-courses";
 import type { PackageActivity, PackageLesson } from "./course-package-practice";
+import { resultTone, type PracticeResult } from "./practice-results";
 
 export type BookUnit = StageCourse["units"][number];
 export type BookLesson = BookUnit["lessons"][number];
@@ -50,6 +51,8 @@ export type BookContext = {
   finalCheckSlug: string;
   goTo: (page: number) => void;
   openLesson: (lesson: BookLesson) => void;
+  openCheck: (slug: string, title: string) => void;
+  results: Record<string, PracticeResult>;
 };
 
 export const skillTheme: Record<string, { color: string; ink: string; icon: LucideIcon; vi: string }> = {
@@ -85,6 +88,29 @@ export function splitUnitTitle(title: string) {
 export function lessonShortTitle(lesson: BookLesson) {
   const parts = lesson.title.split(" · ");
   return parts.length > 1 ? parts.slice(1).join(" · ") : lesson.title;
+}
+
+/** A short name for a page, used by the thumbnails, bookmarks and search. */
+export function describePage(page: BookPage | undefined, course: StageCourse) {
+  if (!page) return "";
+  switch (page.kind) {
+    case "cover": return "Bìa sách";
+    case "back": return "Bìa sau";
+    case "guide": return "Cách học với cuốn sách";
+    case "contents": return "Mục lục";
+    case "unit-art": return `${unitLabel(page.unit, course).short} · ${splitUnitTitle(page.unit.title).en}`;
+    case "unit-overview": return `${unitLabel(page.unit, course).short} · Tổng quan`;
+    case "lesson-open": return `${unitLabel(page.unit, course).short} · ${lessonShortTitle(page.lesson)}`;
+    case "lesson-practice": return `${unitLabel(page.unit, course).short} · ${page.lesson.skill}: bài tập`;
+    case "finish": return "Tổng kết khóa";
+    case "certificate": return "Chứng nhận";
+  }
+}
+
+function ScoreBadge({ result }: { result: PracticeResult | undefined }) {
+  if (!result) return null;
+  const complete = result.checked >= result.total;
+  return <span className={`bk-score ${resultTone(result)}`} title="Kết quả luyện tập tốt nhất của bạn">{complete ? `Điểm ${result.correct}/${result.total}` : `Đã làm ${result.checked}/${result.total} · đúng ${result.correct}`}</span>;
 }
 
 const genericSummary = /^Luyện \w+ với chủ đề của unit\.?$/;
@@ -349,7 +375,11 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
         </ol>
         <div className="bk-skill-key">{Object.entries(skillTheme).map(([skill, theme]) => <span key={skill} style={{ "--tone": theme.color } as CSSProperties}><i />{skill}</span>)}</div>
         <p className="bk-hand">Mẹo: dùng phím ← → hoặc vuốt để lật trang ✎</p>
-        <div className="bk-notes"><span className="bk-hand">Mục tiêu của tôi cho khóa này:</span><i /><i /><i /></div>
+        {(() => {
+          const review = ctx.course.units.flatMap((unit) => unit.lessons).filter((lesson) => resultTone(ctx.results[lesson.slug]) === "is-weak").slice(0, 3);
+          return review.length ? <div className="bk-review"><b>Nên ôn lại</b>{review.map((lesson) => <button type="button" key={lesson.id} onClick={() => ctx.openLesson(lesson)}><ScoreBadge result={ctx.results[lesson.slug]} /> {lessonShortTitle(lesson)} →</button>)}</div>
+            : <div className="bk-notes"><span className="bk-hand">Mục tiêu của tôi cho khóa này:</span><i /><i /><i /></div>;
+        })()}
       </div>
       <Folio number={index} label={course.title} side={side} color="#0a7f89" />
     </div>;
@@ -370,7 +400,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
               <span className="bk-toc-name"><b>{title.en}</b>{title.vi && <small>{title.vi}</small>}</span>
               <span className="bk-toc-skills" aria-label={`${done}/${unit.lessons.length} bài đã học`}>{unit.lessons.map((lesson) => {
                 const Icon = themeOf(lesson.skill).icon;
-                return <i key={lesson.id} title={`${lesson.skill}${isDone(lesson) ? " · đã học" : ""}`} className={`${isDone(lesson) ? "is-done" : ""} ${current?.id === lesson.id ? "is-here" : ""}`} style={{ "--tone": themeOf(lesson.skill).color } as CSSProperties}><Icon size={11} /></i>;
+                return <i key={lesson.id} title={`${lesson.skill}${isDone(lesson) ? " · đã học" : ""}${ctx.results[lesson.slug] ? ` · ${ctx.results[lesson.slug].correct}/${ctx.results[lesson.slug].total} đúng` : ""}`} className={`${isDone(lesson) ? "is-done" : ""} ${current?.id === lesson.id ? "is-here" : ""} ${resultTone(ctx.results[lesson.slug])}`} style={{ "--tone": themeOf(lesson.skill).color } as CSSProperties}><Icon size={11} /></i>;
               })}</span>
               <span className="bk-toc-page">{start}</span>
             </button>;
@@ -418,12 +448,12 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
           const Icon = theme.icon;
           return <li key={lesson.id}><button type="button" onClick={() => goTo(ctx.lessonStart.get(lesson.id) ?? 0)} className={`${isDone(lesson) ? "is-done" : ""} ${current?.id === lesson.id ? "is-here" : ""}`}>
             <span className="bk-skill-chip" style={{ background: theme.color, color: theme.ink }}><Icon size={13} /></span>
-            <span className="bk-unit-toc-title"><small>{lesson.skill}</small>{lessonShortTitle(lesson)}</span>
+            <span className="bk-unit-toc-title"><small>{lesson.skill} <ScoreBadge result={ctx.results[lesson.slug]} /></small>{lessonShortTitle(lesson)}</span>
             <span className="bk-leader" aria-hidden="true" />
             <span className="bk-unit-toc-page">{isDone(lesson) ? <Check size={14} strokeWidth={3} /> : ctx.lessonStart.get(lesson.id)}</span>
           </button></li>;
         })}</ol>
-        {ctx.hasChecks && !label.starter && <Link className="bk-check-link" href={`/app/check/${page.unit.slug}-check`}><Ticket size={16} /> Kiểm tra {label.short} — làm sau khi xong 6 bài</Link>}
+        {ctx.hasChecks && !label.starter && <button type="button" className="bk-check-link" onClick={() => ctx.openCheck(`${page.unit.slug}-check`, `Kiểm tra ${label.short}`)}><Ticket size={16} /> Kiểm tra {label.short} — làm sau khi xong {page.unit.lessons.length} bài</button>}
         <div className="bk-notes"><span className="bk-hand">Ghi chú: viết 3 từ bạn đã biết về chủ đề này…</span><i /><i /><i /><i /></div>
       </div>
       <Folio number={index} label={label.short.toUpperCase()} side={side} color={color} />
@@ -461,6 +491,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
           <div className="bk-open-actions">
             <LessonLink lesson={lesson} label={done ? "Học lại" : here ? "Vào học ngay" : "Vào học"} open={ctx.openLesson} />
             <span className="bk-meta">{duration ? <><Clock3 size={14} /> {duration} phút</> : null}{content?.activities?.length ? <> · {content.activities.length} câu</> : null}</span>
+            <ScoreBadge result={ctx.results[lesson.slug]} />
           </div>
           {here && <div className="bk-sticky-note"><Tape tone="sun" /><b>Bạn đang ở đây</b><span>Bài nên học tiếp theo lộ trình.</span></div>}
           {done && <span className="bk-stamp" aria-label="Đã học">Đã học <Check size={16} strokeWidth={3} /></span>}
@@ -491,7 +522,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
             <small>{done}/{unit.lessons.length}</small>
           </button></li>;
         })}</ul>
-        {ctx.hasChecks ? <Link className="bk-go" href={`/app/check/${ctx.finalCheckSlug}`}>Làm bài kiểm tra cuối khóa <ArrowRight size={16} /></Link>
+        {ctx.hasChecks ? <button type="button" className="bk-go" onClick={() => ctx.openCheck(ctx.finalCheckSlug, "Bài kiểm tra cuối khóa")}>Làm bài kiểm tra cuối khóa <ArrowRight size={16} /></button>
           : current && <LessonLink lesson={current} label={`Học tiếp: ${lessonShortTitle(current)}`} open={ctx.openLesson} />}
         <div className="bk-notes"><span className="bk-hand">3 điều tôi tiến bộ nhất sau khóa này:</span><i /><i /><i /><i /></div>
       </div>

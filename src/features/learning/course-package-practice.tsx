@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 
 export type PackageActivity = { id: string; type: string; prompt: string; answer: string; options?: string[]; explanation?: string; instruction?: string };
@@ -39,7 +39,17 @@ export type PackageLesson = {
   speaking_extensions?: { question: string; response_framework: string }[];
 };
 
+/** Collects self-checked scores from the practice sets of a lesson, keyed by set. */
+export const PracticeScoreReporter = createContext<((key: string, result: { correct: number; checked: number; total: number }) => void) | null>(null);
+/** When set (inside the course book), unit checks open in place instead of on their own page. */
+export const CheckOpener = createContext<((slug: string) => void) | null>(null);
+
 function normalize(value: string) { return value.trim().toLocaleLowerCase().replace(/[.!?]+$/g, "").replace(/\s+/g, " "); }
+/** True when the answer matches the key or one of its "/"-separated alternatives. */
+function matches(answer: string | undefined, key: string) {
+  const given = normalize(answer ?? "");
+  return Boolean(given) && [key, ...key.split(" / ")].some((option) => normalize(option) === given);
+}
 function lines(value?: string | string[]) { return Array.isArray(value) ? value : value ? [value] : []; }
 
 function AdvancedEssayPractice({ essay, keyName }: { essay: NonNullable<PackageLesson["advanced_essay"]>; keyName: string }) {
@@ -50,10 +60,18 @@ function AdvancedEssayPractice({ essay, keyName }: { essay: NonNullable<PackageL
   return <section className="advanced-essay"><span className="eyebrow">IELTS WRITING · TASK 2</span><h3>{essay.prompt}</h3><ol>{essay.planning_prompts.map((prompt) => <li key={prompt}>{prompt}</li>)}</ol><label htmlFor="advanced-essay-draft">Bản nháp của bạn · {words}/{essay.min_words} từ</label><textarea id="advanced-essay-draft" value={draft} rows={12} onChange={(event) => { setDraft(event.target.value); try { localStorage.setItem(keyName, event.target.value); } catch { /* The draft stays in memory. */ } }} placeholder="Viết dàn ý rồi phát triển thành bài luận tại đây…" /><p className="advanced-essay-save">Bản nháp tự lưu trên trình duyệt này.</p><button type="button" className="button subtle" onClick={() => setShowModel((value) => !value)}>{showModel ? "Ẩn bài mẫu" : "Xem bài mẫu để đối chiếu"}</button>{showModel && <div className="advanced-essay-model">{essay.model_paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}<small>Bài mẫu để tham khảo; hệ thống chưa chấm band tự động.</small></div>}</section>;
 }
 
-export function OpenResponsePractice({ items, title }: { items: PackageActivity[]; title: string }) {
+export function OpenResponsePractice({ items, title, scoreKey }: { items: PackageActivity[]; title: string; scoreKey?: string }) {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
   const [active, setActive] = useState(0);
+  const report = useContext(PracticeScoreReporter);
+  useEffect(() => {
+    if (!scoreKey || !report) return;
+    const checked = items.filter((_, index) => revealed[index]).length;
+    if (!checked) return;
+    const correct = items.filter((item, index) => revealed[index] && matches(answers[index], item.answer)).length;
+    report(scoreKey, { correct, checked, total: items.length });
+  }, [answers, items, report, revealed, scoreKey]);
   if (!items.length) return null;
   const item = items[Math.min(active, items.length - 1)];
   const completed = items.filter((_, index) => revealed[index]).length;
@@ -67,7 +85,7 @@ export function OpenResponsePractice({ items, title }: { items: PackageActivity[
       {item.instruction && <p className="guided-question-hint">{item.instruction}</p>}
       {item.options?.length ? <div className="guided-options">{item.options.map((option, optionIndex) => <button type="button" key={optionIndex} className={answers[active] === option ? "selected" : ""} aria-pressed={answers[active] === option} onClick={() => { setAnswers((current) => ({ ...current, [active]: option })); setRevealed((current) => ({ ...current, [active]: false })); }}><span>{String.fromCharCode(65 + optionIndex)}</span>{option}</button>)}</div>
         : <label className="guided-answer">Câu trả lời của bạn<input value={answers[active] ?? ""} onChange={(event) => { setAnswers((current) => ({ ...current, [active]: event.target.value })); setRevealed((current) => ({ ...current, [active]: false })); }} placeholder="Gõ câu trả lời tại đây…" onKeyDown={(event) => { if (event.key === "Enter" && answers[active]?.trim()) setRevealed((current) => ({ ...current, [active]: true })); }} /></label>}
-      {revealed[active] && <div className={`guided-feedback ${normalize(answers[active]) === normalize(item.answer) ? "matched" : "review"}`} role="status"><b>{normalize(answers[active]) === normalize(item.answer) ? "Chính xác!" : "Đối chiếu với đáp án gợi ý"}</b><p>Đáp án biên soạn: <strong>{item.answer}</strong></p>{item.explanation && <p>{item.explanation}</p>}{!item.options?.length && <small>Cách diễn đạt tương đương có thể vẫn đúng; phần so sánh này chỉ khớp văn bản.</small>}</div>}
+      {revealed[active] && <div className={`guided-feedback ${matches(answers[active], item.answer) ? "matched" : "review"}`} role="status"><b>{matches(answers[active], item.answer) ? "Chính xác!" : "Đối chiếu với đáp án gợi ý"}</b><p>Đáp án biên soạn: <strong>{item.answer}</strong></p>{item.explanation && <p>{item.explanation}</p>}{!item.options?.length && <small>Cách diễn đạt tương đương có thể vẫn đúng; phần so sánh này chỉ khớp văn bản.</small>}</div>}
       <div className="guided-actions"><button type="button" className="button subtle" disabled={active === 0} onClick={() => setActive(active - 1)}>← Câu trước</button><div>{!revealed[active] && <button type="button" className="button primary" disabled={!answers[active]?.trim()} onClick={() => setRevealed((current) => ({ ...current, [active]: true }))}>Kiểm tra câu này</button>}{revealed[active] && active < items.length - 1 && <button type="button" className="button primary" onClick={() => setActive(active + 1)}>Câu tiếp theo →</button>}</div></div>
     </div>
   </section>;
@@ -100,13 +118,13 @@ export function PackageLessonPractice({ content, mode = "practice" }: { content:
     {content.pronunciation_focus && <p className="lab-note"><strong>Luyện phát âm:</strong> {content.pronunciation_focus}</p>}
     {content.rubric?.length ? <details className="foundation-activity"><summary>Tiêu chí tự đánh giá</summary><ul>{content.rubric.map((row) => <li key={row.criterion}><strong>{row.criterion}:</strong> {row.detail} ({row.max} điểm tối đa)</li>)}</ul></details> : null}
     {content.stage_warning && <details className="package-curriculum-note"><summary>Về mức học của lộ trình</summary><p>{content.stage_warning}</p></details>}
-    {content.assessment_slug && <p><Link className="button subtle" href={`/app/check/${content.assessment_slug}`}>Ôn tập & kiểm tra unit →</Link></p>}
+    {content.assessment_slug && <p><CheckLink slug={content.assessment_slug} /></p>}
   </div>;
   return <div className="lab-stack">
-    {content.type === "intro" && <OpenResponsePractice title="Thử làm trước khi xem đáp án" items={(content.practice ?? []).map(([prompt, answer], index) => ({ id: `start-${index}`, prompt, answer, type: "short_answer" }))} />}
+    {content.type === "intro" && <OpenResponsePractice scoreKey="intro" title="Thử làm trước khi xem đáp án" items={(content.practice ?? []).map(([prompt, answer], index) => ({ id: `start-${index}`, prompt, answer, type: "short_answer" }))} />}
     {content.expansion_activities?.length ? <details className="foundation-activity"><summary>Thử dùng từ mở rộng · {content.expansion_activities.length} câu</summary><OpenResponsePractice items={content.expansion_activities} title="Thử dùng từ mở rộng" /></details> : null}
     {content.practice_sections?.map((section) => <details className="foundation-activity" key={section.title}><summary>{section.title} · {section.activities.length} câu</summary>{section.instruction_vi && <p>{section.instruction_vi}</p>}<OpenResponsePractice items={section.activities} title="Luyện ngữ pháp" /></details>)}
-    <OpenResponsePractice items={content.activities ?? []} title={content.type === "grammar" ? "Luyện ngữ pháp" : content.type === "listening" ? "Bài nghe 1 · trả lời câu hỏi" : content.type === "reading" ? "Bài đọc 1 · trả lời câu hỏi" : "Câu hỏi luyện tập"} />
+    <OpenResponsePractice scoreKey="main" items={content.activities ?? []} title={content.type === "grammar" ? "Luyện ngữ pháp" : content.type === "listening" ? "Bài nghe 1 · trả lời câu hỏi" : content.type === "reading" ? "Bài đọc 1 · trả lời câu hỏi" : "Câu hỏi luyện tập"} />
     {content.audios?.slice(1).map((item, index) => <details className="foundation-activity" key={item.id}><summary>Bài nghe {index + 2}: {item.title}</summary><audio controls src={item.audio_url} aria-label={`Bài nghe ${index + 2}`} /><OpenResponsePractice items={item.questions} title="Nghe rồi trả lời" /><details><summary>Xem transcript sau khi làm</summary><p className="foundation-transcript">{item.script}</p></details></details>)}
     {content.passages?.slice(1).map((item, index) => <details className="foundation-activity" key={item.id}><summary>Bài đọc {index + 2}: {item.title}</summary><p className="foundation-passage">{item.text}</p><OpenResponsePractice items={item.questions} title="Đọc rồi trả lời" /></details>)}
     <OpenResponsePractice items={content.micro_exercises ?? []} title="Luyện câu trước khi viết" />
@@ -117,4 +135,10 @@ export function PackageLessonPractice({ content, mode = "practice" }: { content:
     {content.role_plays?.length ? <details className="foundation-activity"><summary>Luyện nói theo tình huống</summary>{content.role_plays.map((role) => <p key={role.id}><strong>{role.target_seconds} giây:</strong> {role.scenario}</p>)}</details> : null}
     {content.scaffolding_steps?.length ? <details className="lab-note"><summary>Gợi ý từng bước & checklist</summary><ol>{content.scaffolding_steps.map((step, index) => <li key={`${index}-${step}`}>{step}</li>)}</ol></details> : null}
   </div>;
+}
+
+function CheckLink({ slug }: { slug: string }) {
+  const open = useContext(CheckOpener);
+  return open ? <button type="button" className="button subtle" onClick={() => open(slug)}>Ôn tập & kiểm tra unit →</button>
+    : <Link className="button subtle" href={`/app/check/${slug}`}>Ôn tập & kiểm tra unit →</Link>;
 }

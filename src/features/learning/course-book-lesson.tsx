@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useEffectEvent, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink, X } from "lucide-react";
@@ -9,19 +9,27 @@ import { skillMaterialSchema } from "@/lib/skill-material";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { LessonDetail } from "./lesson-detail";
 import { PackageLessonSteps, type PackageLessonProps } from "./course-package-lesson-shell";
-import type { PackageLesson } from "./course-package-practice";
+import { CheckOpener, type PackageLesson } from "./course-package-practice";
+import { AssessmentBody, type Assessment } from "./course-assessment";
 import { lessonShortTitle, themeOf, type BookLesson } from "./course-book-pages";
 
 type LessonData = Omit<PackageLessonProps, "packageContent"> & { packageContent: PackageLesson | null };
+export type WorkbookItem = { kind: "lesson"; lesson: BookLesson } | { kind: "check"; slug: string; title: string };
 
-// Lessons opened in this session stay loaded, so flipping back to one is instant.
-const loaded = new Map<string, Promise<LessonData>>();
+// What was opened in this session stays loaded, so going back to it is instant.
+const loaded = new Map<string, Promise<unknown>>();
+function cached<T>(key: string, load: () => Promise<T>) {
+  const existing = loaded.get(key) as Promise<T> | undefined;
+  if (existing) return existing;
+  const request = load();
+  loaded.set(key, request);
+  request.catch(() => loaded.delete(key));
+  return request;
+}
 
 /** Loads what the lesson page loads on the server, through the learner's own session. */
 function loadLesson(lesson: BookLesson) {
-  const cached = loaded.get(lesson.id);
-  if (cached) return cached;
-  const request = (async () => {
+  return cached(`lesson:${lesson.id}`, async (): Promise<LessonData> => {
     const supabase = createClient();
     const [blocks, questions, words, material, packageContent] = await Promise.all([
       supabase.from("lesson_blocks").select("id,kind,body").eq("lesson_id", lesson.id).order("sort_order"),
@@ -41,48 +49,61 @@ function loadLesson(lesson: BookLesson) {
       material: parsedMaterial.success && parsedMaterial.data.skill === lesson.skill ? parsedMaterial.data : null,
       packageContent: (packageContent.data?.content as PackageLesson | undefined) ?? null,
     };
-  })();
-  loaded.set(lesson.id, request);
-  request.catch(() => loaded.delete(lesson.id));
-  return request;
+  });
+}
+
+function loadCheck(slug: string) {
+  return cached(`check:${slug}`, async (): Promise<Assessment> => {
+    const { data, error } = await createClient().from("package_assessments").select("title,content").eq("slug", slug).maybeSingle();
+    if (error) throw new Error(error.message);
+    if (!data) throw new Error("Bài kiểm tra chưa được mở.");
+    return { ...(data.content as Record<string, unknown>), title: data.title } as Assessment;
+  });
+}
+
+function useLoaded<T>(key: string, load: () => Promise<T>) {
+  const [result, setResult] = useState<{ key: string; data?: T; error?: string } | null>(null);
+  const start = useEffectEvent(load);
+  useEffect(() => {
+    let active = true;
+    start().then((data) => { if (active) setResult({ key, data }); }, (error: Error) => { if (active) setResult({ key, error: error.message }); });
+    return () => { active = false; };
+  }, [key]);
+  return result?.key === key ? result : null;
 }
 
 /**
- * A lesson opened as a workbook sheet over the course book, so learners do
- * the full exercises without leaving the book. Closing it returns to the same
- * spread; the "Sổ tay" notebook stays available above it.
+ * A lesson or unit check opened as a workbook sheet over the course book, so
+ * learners work through it without leaving the book. Closing it returns to
+ * the same spread; the "Sổ tay" notebook stays available above it.
  */
-export function LessonWorkbook({ lesson, position, total, previous, next, onOpen, onClose }: {
-  lesson: BookLesson;
-  position: number;
-  total: number;
+export function BookWorkbook({ item, stageId, position, total, previous, next, onOpenLesson, onOpenCheck, onClose }: {
+  item: WorkbookItem;
+  stageId: string;
+  position?: number;
+  total?: number;
   previous?: BookLesson;
   next?: BookLesson;
-  onOpen: (lesson: BookLesson) => void;
+  onOpenLesson: (lesson: BookLesson) => void;
+  onOpenCheck: (slug: string) => void;
   onClose: () => void;
 }) {
   const { recordVisit, setSourcePath } = useNotebook();
-  const [result, setResult] = useState<{ id: string; data?: LessonData; error?: string } | null>(null);
   // Opened only by a click, so the document exists. Render into the fullscreen book when it is fullscreen.
   const [host] = useState<Element | null>(() => typeof document === "undefined" ? null : document.fullscreenElement ?? document.body);
   const scroller = useRef<HTMLDivElement>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
-  const theme = themeOf(lesson.skill);
-  const path = `/app/lesson/${lesson.slug}`;
-
-  useEffect(() => {
-    let active = true;
-    loadLesson(lesson).then((data) => { if (active) setResult({ id: lesson.id, data }); }, (error: Error) => { if (active) setResult({ id: lesson.id, error: error.message }); });
-    scroller.current?.scrollTo({ top: 0 });
-    return () => { active = false; };
-  }, [lesson]);
+  const key = item.kind === "lesson" ? `lesson:${item.lesson.id}` : `check:${item.slug}`;
+  const path = item.kind === "lesson" ? `/app/lesson/${item.lesson.slug}` : `/app/check/${item.slug}`;
+  const theme = item.kind === "lesson" ? themeOf(item.lesson.skill) : { color: "#10233f", ink: "#ffffff" };
 
   // Opening a lesson counts as visiting it, and notes taken meanwhile link back to it.
   useEffect(() => {
-    void recordVisit(path);
+    if (item.kind === "lesson") void recordVisit(path);
     setSourcePath(path);
+    scroller.current?.scrollTo({ top: 0 });
     return () => setSourcePath(null);
-  }, [path, recordVisit, setSourcePath]);
+  }, [item.kind, path, recordVisit, setSourcePath]);
 
   useEffect(() => {
     const previousFocus = document.activeElement as HTMLElement | null;
@@ -98,36 +119,58 @@ export function LessonWorkbook({ lesson, position, total, previous, next, onOpen
     };
   }, [onClose]);
 
-  const data = result?.id === lesson.id ? result.data : undefined;
-  const error = result?.id === lesson.id ? result.error : undefined;
-  const finish = next
-    ? <button type="button" className="button primary" onClick={() => onOpen(next)}>Bài tiếp theo: {lessonShortTitle(next)} <ArrowRight size={17} /></button>
-    : <button type="button" className="button primary" onClick={onClose}>Gấp vở, về sách <ArrowRight size={17} /></button>;
-
   if (!host) return null;
-  return createPortal(<div className="bk-workbook" role="dialog" aria-modal="true" aria-label={`Bài học: ${lesson.title}`} style={{ "--skill": theme.color, "--skill-ink": theme.ink } as CSSProperties}>
-    <button type="button" className="bk-workbook-backdrop" aria-label="Đóng bài học" tabIndex={-1} onClick={onClose} />
+  return createPortal(<div className="bk-workbook" role="dialog" aria-modal="true" aria-label={item.kind === "lesson" ? `Bài học: ${item.lesson.title}` : item.title} style={{ "--skill": theme.color, "--skill-ink": theme.ink } as CSSProperties}>
+    <button type="button" className="bk-workbook-backdrop" aria-label="Đóng" tabIndex={-1} onClick={onClose} />
     <div className="bk-workbook-sheet">
       <header className="bk-workbook-head">
         <button ref={closeButton} type="button" className="bk-workbook-back" onClick={onClose}><ArrowLeft size={17} /> <span>Về sách</span></button>
         <div className="bk-workbook-title">
-          <small><b>{lesson.skill}</b> · Bài {position}/{total}</small>
-          <h2>{lessonShortTitle(lesson)}</h2>
+          {item.kind === "lesson" ? <small><b>{item.lesson.skill}</b> · Bài {position}/{total}</small> : <small><b>Kiểm tra</b> · Ôn tập và tự đánh giá</small>}
+          <h2>{item.kind === "lesson" ? lessonShortTitle(item.lesson) : item.title}</h2>
         </div>
         <nav className="bk-workbook-nav" aria-label="Chuyển bài">
-          <button type="button" onClick={() => previous && onOpen(previous)} disabled={!previous} title={previous ? lessonShortTitle(previous) : undefined} aria-label="Bài trước"><ArrowLeft size={17} /></button>
-          <button type="button" onClick={() => next && onOpen(next)} disabled={!next} title={next ? lessonShortTitle(next) : undefined} aria-label="Bài tiếp"><ArrowRight size={17} /></button>
+          {item.kind === "lesson" && <>
+            <button type="button" onClick={() => previous && onOpenLesson(previous)} disabled={!previous} title={previous ? lessonShortTitle(previous) : undefined} aria-label="Bài trước"><ArrowLeft size={17} /></button>
+            <button type="button" onClick={() => next && onOpenLesson(next)} disabled={!next} title={next ? lessonShortTitle(next) : undefined} aria-label="Bài tiếp"><ArrowRight size={17} /></button>
+          </>}
           <Link href={path} className="bk-workbook-page" title="Mở thành trang riêng"><ExternalLink size={16} /></Link>
           <button type="button" onClick={onClose} aria-label="Đóng"><X size={18} /></button>
         </nav>
       </header>
       <div ref={scroller} className="bk-workbook-body">
-        {error ? <div className="bk-workbook-state"><p>Không mở được bài học: {error}</p><Link className="button primary" href={path}>Mở thành trang riêng <ArrowRight size={16} /></Link></div>
-          : !data ? <div className="bk-workbook-state" aria-busy="true"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>
-          : data.packageContent
-            ? <div className="package-lesson-page bk-workbook-lesson"><PackageLessonSteps key={lesson.id} {...data} packageContent={data.packageContent} finish={finish} onStepChange={() => scroller.current?.scrollTo({ top: 0, behavior: "smooth" })} /></div>
-            : <div className="bk-workbook-lesson"><LessonDetail key={lesson.id} {...data} /><div className="package-panel-actions">{finish}</div></div>}
+        <CheckOpener.Provider value={onOpenCheck}>
+          {item.kind === "lesson"
+            ? <LessonSheet key={key} lesson={item.lesson} next={next} onOpenLesson={onOpenLesson} onClose={onClose} path={path} scroller={scroller} />
+            : <CheckSheet key={key} slug={item.slug} stageId={stageId} onClose={onClose} path={path} />}
+        </CheckOpener.Provider>
       </div>
     </div>
   </div>, host);
+}
+
+function SheetState({ error, path }: { error?: string; path: string }) {
+  return error ? <div className="bk-workbook-state"><p>Không mở được: {error}</p><Link className="button primary" href={path}>Mở thành trang riêng <ArrowRight size={16} /></Link></div>
+    : <div className="bk-workbook-state" aria-busy="true"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>;
+}
+
+function LessonSheet({ lesson, next, onOpenLesson, onClose, path, scroller }: { lesson: BookLesson; next?: BookLesson; onOpenLesson: (lesson: BookLesson) => void; onClose: () => void; path: string; scroller: React.RefObject<HTMLDivElement | null> }) {
+  const result = useLoaded(`lesson:${lesson.id}`, () => loadLesson(lesson));
+  const data = result?.data;
+  if (!data) return <SheetState error={result?.error} path={path} />;
+  const finish: ReactNode = next
+    ? <button type="button" className="button primary" onClick={() => onOpenLesson(next)}>Bài tiếp theo: {lessonShortTitle(next)} <ArrowRight size={17} /></button>
+    : <button type="button" className="button primary" onClick={onClose}>Gấp vở, về sách <ArrowRight size={17} /></button>;
+  return data.packageContent
+    ? <div className="package-lesson-page bk-workbook-lesson"><PackageLessonSteps {...data} packageContent={data.packageContent} finish={finish} onStepChange={() => scroller.current?.scrollTo({ top: 0, behavior: "smooth" })} /></div>
+    : <div className="bk-workbook-lesson"><LessonDetail {...data} /><div className="package-panel-actions">{finish}</div></div>;
+}
+
+function CheckSheet({ slug, stageId, onClose, path }: { slug: string; stageId: string; onClose: () => void; path: string }) {
+  const result = useLoaded(`check:${slug}`, () => loadCheck(slug));
+  if (!result?.data) return <SheetState error={result?.error} path={path} />;
+  return <div className="bk-workbook-lesson bk-workbook-check">
+    <AssessmentBody content={result.data} stageId={stageId} />
+    <div className="package-panel-actions"><button type="button" className="button primary" onClick={onClose}>Xong, về sách <ArrowRight size={17} /></button></div>
+  </div>;
 }

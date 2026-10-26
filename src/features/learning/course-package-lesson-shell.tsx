@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, BookOpenText, Check, CircleHelp, Lightbulb, Target } from "lucide-react";
 import { AppShell } from "@/components/layout/app-shell";
 import { DemoProvider, useDemo } from "@/features/demo/demo-store";
@@ -9,7 +9,8 @@ import { LessonDetail } from "@/features/learning/lesson-detail";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import type { SkillMaterial } from "@/lib/skill-material";
-import { PackageLessonPractice, type PackageLesson } from "./course-package-practice";
+import { PackageLessonPractice, PracticeScoreReporter, type PackageLesson } from "./course-package-practice";
+import { savePracticeResult, type PracticeResult } from "./practice-results";
 
 type Props = {
   lesson: { slug: string; title: string; skill: string; summary: string };
@@ -70,8 +71,26 @@ export function PackageLessonSteps({ packageContent, finish, onStepChange, ...le
     setStep(next);
     onStepChange?.();
   }
+  // Sum the scored practice sets and save shortly after the learner stops checking answers.
+  const parts = useRef<Record<string, PracticeResult>>({});
+  const timer = useRef<number | undefined>(undefined);
+  const pending = useRef<PracticeResult | null>(null);
+  const flush = useCallback(() => {
+    if (!pending.current) return;
+    void savePracticeResult(lesson.slug, pending.current).catch(() => undefined);
+    pending.current = null;
+  }, [lesson.slug]);
+  const report = useCallback((key: string, result: PracticeResult) => {
+    parts.current[key] = result;
+    const sum = Object.values(parts.current).reduce((total, part) => ({ correct: total.correct + part.correct, checked: total.checked + part.checked, total: total.total + part.total }), { correct: 0, checked: 0, total: 0 });
+    pending.current = sum;
+    window.clearTimeout(timer.current);
+    timer.current = window.setTimeout(flush, 700);
+  }, [flush]);
+  // Closing the lesson right after checking an answer still saves it.
+  useEffect(() => () => { window.clearTimeout(timer.current); flush(); }, [flush]);
 
-  return <>
+  return <PracticeScoreReporter.Provider value={report}>
     <nav className="package-step-nav" aria-label="Các bước của bài học">{steps.map((item, index) => { const Icon = item.icon; return <button type="button" key={item.label} className={step === index ? "active" : ""} aria-current={step === index ? "step" : undefined} onClick={() => goTo(index)}><span className="package-step-number">{index + 1}</span><Icon size={18} /><span><strong>{item.label}</strong><small>{item.hint}</small></span></button>; })}</nav>
     <div className="package-lesson-layout">
       <main className="package-lesson-main">
@@ -94,5 +113,5 @@ export function PackageLessonSteps({ packageContent, finish, onStepChange, ...le
       </main>
       <aside className="package-lesson-aside"><div className="package-guide"><Lightbulb size={21} /><h3>Học sao cho dễ nhớ?</h3><p>{step === 0 ? "Xem ví dụ, nghe một lần và tự nói lại trước khi mở bài tập." : step === 1 ? "Làm từng câu trước khi xem đáp án. Câu tự luận được đối chiếu với đáp án mẫu, không chấm band IELTS." : "Nói hoặc viết lại điều bạn nhớ được mà không nhìn bài, rồi đánh dấu checklist."}</p></div><div className="package-guide package-guide-quiet"><CircleHelp size={20} /><h3>Bạn cần ghi lại gì?</h3><p>Dùng nút Sổ tay bên phải để lưu từ mới, câu hay hoặc điều chưa rõ trong lúc học.</p></div></aside>
     </div>
-  </>;
+  </PracticeScoreReporter.Provider>;
 }
