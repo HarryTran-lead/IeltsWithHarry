@@ -78,7 +78,7 @@ function useLoaded<T>(key: string, load: () => Promise<T>) {
  * learners work through it without leaving the book. Closing it returns to
  * the same spread; the "Sổ tay" notebook stays available above it.
  */
-export function BookWorkbook({ item, stageId, position, total, previous, next, onOpenLesson, onOpenCheck, onClose }: {
+export function BookWorkbook({ item, stageId, position, total, previous, next, onOpenLesson, onOpenCheck, onClose, onFinishLesson }: {
   item: WorkbookItem;
   stageId: string;
   position?: number;
@@ -88,6 +88,7 @@ export function BookWorkbook({ item, stageId, position, total, previous, next, o
   onOpenLesson: (lesson: BookLesson) => void;
   onOpenCheck: (slug: string) => void;
   onClose: () => void;
+  onFinishLesson?: (nextLesson?: BookLesson) => void;
 }) {
   const { recordVisit, setSourcePath } = useNotebook();
   // Opened only by a click, so the document exists. Render into the fullscreen book when it is fullscreen.
@@ -143,7 +144,7 @@ export function BookWorkbook({ item, stageId, position, total, previous, next, o
       <div ref={scroller} className="bk-workbook-body">
         <CheckOpener.Provider value={onOpenCheck}>
           {item.kind === "lesson"
-            ? <LessonSheet key={key} lesson={item.lesson} next={next} onOpenLesson={onOpenLesson} onClose={onClose} path={path} scroller={scroller} />
+            ? <LessonSheet key={key} lesson={item.lesson} next={next} onOpenLesson={onOpenLesson} onClose={onClose} onFinishLesson={onFinishLesson} path={path} scroller={scroller} />
             : <CheckSheet key={key} slug={item.slug} stageId={stageId} onClose={onClose} path={path} />}
         </CheckOpener.Provider>
       </div>
@@ -156,13 +157,16 @@ function SheetState({ error, path }: { error?: string; path: string }) {
     : <div className="bk-workbook-state" aria-busy="true"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>;
 }
 
-function LessonSheet({ lesson, next, onOpenLesson, onClose, path, scroller }: { lesson: BookLesson; next?: BookLesson; onOpenLesson: (lesson: BookLesson) => void; onClose: () => void; path: string; scroller: React.RefObject<HTMLDivElement | null> }) {
+function LessonSheet({ lesson, next, onOpenLesson, onClose, onFinishLesson, path, scroller }: { lesson: BookLesson; next?: BookLesson; onOpenLesson: (lesson: BookLesson) => void; onClose: () => void; onFinishLesson?: (nextLesson?: BookLesson) => void; path: string; scroller: React.RefObject<HTMLDivElement | null> }) {
   const result = useLoaded(`lesson:${lesson.id}`, () => loadLesson(lesson));
   const data = result?.data;
   if (!data) return <SheetState error={result?.error} path={path} />;
   const finish: ReactNode = next
-    ? <button type="button" className="button primary" onClick={() => onOpenLesson(next)}>Bài tiếp theo: {lessonShortTitle(next)} <ArrowRight size={17} /></button>
-    : <button type="button" className="button primary" onClick={onClose}>Gấp vở, về sách <ArrowRight size={17} /></button>;
+    ? <div className="bk-finish-actions">
+        <button type="button" className="button subtle" onClick={() => onOpenLesson(next)}>Mở luôn bài tập tiếp theo</button>
+        <button type="button" className="button primary" onClick={() => onFinishLesson ? onFinishLesson(next) : onClose()}>Hoàn thành &amp; Lật sang trang sách tiếp theo: {lessonShortTitle(next)} <ArrowRight size={17} /></button>
+      </div>
+    : <button type="button" className="button primary" onClick={() => onFinishLesson ? onFinishLesson(undefined) : onClose()}>Gấp vở, về sách <ArrowRight size={17} /></button>;
   return data.packageContent
     ? <div className="package-lesson-page bk-workbook-lesson"><PackageLessonSteps {...data} packageContent={data.packageContent} finish={finish} onStepChange={() => scroller.current?.scrollTo({ top: 0, behavior: "smooth" })} /></div>
     : <div className="bk-workbook-lesson"><LessonDetail {...data} /><div className="package-panel-actions">{finish}</div></div>;

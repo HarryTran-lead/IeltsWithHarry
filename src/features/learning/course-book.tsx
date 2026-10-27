@@ -553,6 +553,15 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
       onOpenLesson={openLesson}
       onOpenCheck={(slug) => openCheck(slug, "Ôn tập & kiểm tra unit")}
       onClose={closeLesson}
+      onFinishLesson={(nextLesson) => {
+        setOpenItem(null);
+        if (nextLesson) {
+          const targetPage = lessonStart.get(nextLesson.id);
+          if (targetPage !== undefined) {
+            window.setTimeout(() => goTo(targetPage), 80);
+          }
+        }
+      }}
     />}
     <p className="sr-only" aria-live="polite">Trang {pageLabel} trên {last}</p>
   </div>;

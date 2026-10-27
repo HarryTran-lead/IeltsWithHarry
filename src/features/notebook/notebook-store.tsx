@@ -194,3 +194,8 @@ export function useNotebook() {
   if (!value) throw new Error("NotebookProvider missing");
   return value;
 }
+
+
+export function useOptionalNotebook() {
+  return useContext(Store);
+}

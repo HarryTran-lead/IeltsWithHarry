@@ -6,7 +6,7 @@ import { ArrowRight, BookOpenText, Check, Clock3, Headphones, Languages, Lightbu
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { Sticker, Tape } from "@/components/stickers/stickers";
 import type { StageCourse } from "./stage-courses";
-import type { PackageActivity, PackageLesson } from "./course-package-practice";
+import { speakEnglishText, type PackageActivity, type PackageLesson } from "./course-package-practice";
 import { resultTone, type PracticeResult } from "./practice-results";
 
 export type BookUnit = StageCourse["units"][number];
@@ -14,7 +14,7 @@ export type BookLesson = BookUnit["lessons"][number];
 
 /** Package content as stored; a few fields are richer than the shared PackageLesson type. */
 export type BookContent = Omit<PackageLesson, "questions"> & {
-  vocabulary?: { en: string; vi: string; example?: string }[];
+  vocabulary?: { en: string; vi: string; example?: string; example_vi?: string }[];
   passage_title?: string;
   passage?: string;
   task?: string;
@@ -203,16 +203,32 @@ function Tip({ children }: { children: ReactNode }) {
   return <aside className="bk-tip"><span className="bk-tip-badge">TIP</span><p>{children}</p></aside>;
 }
 
-function AudioChip({ src, title }: { src: string; title: string }) {
+function AudioChip({ src, script, title }: { src?: string; script?: string; title: string }) {
   const audio = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
+  function toggle() {
+    if (src) {
+      const element = audio.current;
+      if (!element) return;
+      if (element.paused) void element.play();
+      else element.pause();
+      return;
+    }
+    if (playing) {
+      if (typeof window !== "undefined") window.speechSynthesis?.cancel();
+      setPlaying(false);
+    } else {
+      setPlaying(true);
+      speakEnglishText(script || title, 0.9, () => setPlaying(false));
+    }
+  }
   return <div className="bk-audio">
-    <button type="button" onClick={() => { const element = audio.current; if (!element) return; if (element.paused) void element.play(); else element.pause(); }} aria-label={playing ? `Tạm dừng ${title}` : `Nghe ${title}`}>
+    <button type="button" onClick={toggle} aria-label={playing ? `Tạm dừng ${title}` : `Nghe ${title}`}>
       {playing ? <Pause size={15} /> : <Play size={15} />}
     </button>
     <span className="bk-audio-track"><i className={playing ? "is-playing" : ""} /></span>
     <small>{title}</small>
-    <audio ref={audio} src={src} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} />
+    {src && <audio ref={audio} src={src} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} />}
   </div>;
 }
 
@@ -225,7 +241,7 @@ function QuickChoice({ activity }: { activity: PackageActivity }) {
       const state = picked === null ? "" : option === activity.answer ? "is-right" : option === picked ? "is-wrong" : "";
       return <li key={option}><button type="button" className={state} onClick={() => setPicked(option)} disabled={picked !== null}><b>{String.fromCharCode(65 + index)}</b> {option}</button></li>;
     })}</ol>
-    {picked !== null && <small className="bk-choice-note">{picked === activity.answer ? "Chính xác! " : `Đáp án: ${activity.answer}. `}{activity.explanation}</small>}
+    {picked !== null && <small className="bk-choice-note">{picked === activity.answer ? "✓ Chính xác! " : `✗ Đáp án đúng: ${activity.answer}. `}{activity.explanation_vi || activity.explanation}</small>}
   </div>;
 }
 
@@ -305,7 +321,7 @@ function PracticePreview({ unit, lesson, content }: { unit: BookUnit; lesson: Bo
     case "Vocabulary": return <>
       {visual}
       <Exercise number={next()} title="Nghe và đọc các cụm từ của unit.">
-        {content.audio_url && <AudioChip src={content.audio_url} title="Audio từ vựng" />}
+        <AudioChip src={content.audio_url} script={(content.vocabulary ?? content.expansion_words ?? []).slice(0, 8).map((w) => w.en).join(". ")} title="Nghe phát âm cụm từ" />
         <dl className="bk-wordlist">{(content.vocabulary ?? content.expansion_words ?? []).slice(0, 10).map((word) => <div key={word.en} className="bk-wordlist-item" title={word.example}><TopicArt topic={lesson.title} word={word.en} unitSlug={unit.slug} lessonSlug={lesson.slug} badge={false} className="bk-word-thumb" /><span className="bk-wordlist-copy"><dt>{word.en}</dt><dd>{word.vi}</dd></span></div>)}</dl>
       </Exercise>
       {choice && <Exercise number={next()} title="Thử ngay: chọn đáp án đúng."><QuickChoice activity={choice} /></Exercise>}
@@ -335,7 +351,7 @@ function PracticePreview({ unit, lesson, content }: { unit: BookUnit; lesson: Bo
       return <>
         {visual}
         <Exercise number={next()} title="Nghe và điền vào chỗ trống.">
-          {(audio?.audio_url || content.audio_url) && <AudioChip src={audio?.audio_url || content.audio_url || ""} title={audio?.title.replace(/^Listening:\s*/, "") ?? "Bản ghi âm"} />}
+          <AudioChip src={audio?.audio_url || content.audio_url || ""} script={audio?.script} title={audio?.title.replace(/^Listening:\s*/, "") ?? "Nghe bài hội thoại / bài giảng"} />
           <BlankLines items={prompts.slice(0, 5)} />
         </Exercise>
         {choice && <Exercise number={next()} title="Chọn đáp án đúng."><QuickChoice activity={choice} /></Exercise>}
