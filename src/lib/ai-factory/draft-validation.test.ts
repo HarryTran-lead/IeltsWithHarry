@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { validateFactoryDraft } from "./draft-validation";
+import { normalizeEvidenceQuote, validateFactoryDraft } from "./draft-validation";
 import type { NormalizedExam } from "../ielts-bank/schema";
 
 const base: NormalizedExam = {
@@ -9,6 +9,12 @@ const base: NormalizedExam = {
 };
 
 describe("factory draft gate", () => {
+  it("recovers a literal evidence span from an edge-ellipsis quote", () => {
+    const passage = "The survey found that children in green spaces showed lower stress levels, especially after long walks.";
+    expect(normalizeEvidenceQuote(passage, "...children in green spaces showed lower stress levels...")).toBe("children in green spaces showed lower stress levels");
+    expect(normalizeEvidenceQuote(passage, "...a result that was never stated...")).toBe("...a result that was never stated...");
+  });
+
   it("holds a vague writing task for review", () => {
     expect(validateFactoryDraft(base)).toContain("writing_prompt_invalid");
   });

@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import type { NormalizedExam } from "../ielts-bank/schema";
-import { validateFactoryDraft, type DraftEvidence } from "./draft-validation";
+import { normalizeEvidenceQuote, validateFactoryDraft, type DraftEvidence } from "./draft-validation";
 
 export type TextSkill = "Listening" | "Reading" | "Writing" | "Speaking";
 type ModelUsage = { inputTokens: number | null; outputTokens: number | null };
@@ -121,7 +121,7 @@ async function generateTextPracticeOnce(skill: TextSkill, topic: string, fetcher
       instructions: item.type === "short_answer" ? "NO MORE THAN THREE WORDS" : "Choose ONE letter, A-D.",
       options: item.type === "multiple_choice" ? item.options.map((option, i) => `${"ABCD"[i]} — ${option}`) : [],
       answers: [item.answer], explanation: item.explanation }));
-    evidence = Object.fromEntries(result.questions.map((item, index) => [`q${index + 1}`, item.evidence]));
+    evidence = Object.fromEntries(result.questions.map((item, index) => [`q${index + 1}`, normalizeEvidenceQuote(result.passage, item.evidence)]));
     exam = { ...meta, title: result.title, topic: result.topic, content: { sections: [{ id: "passage-1", title: result.title, passage: result.passage, transcript: "", questions }], prompt: "" } };
   } else if (skill === "Writing") {
     const result = writingReply.parse(value);

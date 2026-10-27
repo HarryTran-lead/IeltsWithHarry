@@ -5,6 +5,14 @@ export type DraftEvidence = Record<string, string>;
 const words = (value: string) => value.trim().split(/\s+/).filter(Boolean);
 const comparable = (value: string) => value.normalize("NFKC").replace(/\s+/g, " ").trim().toLocaleLowerCase("en");
 
+/** Remove only decorative edge ellipses and recover the literal passage span. */
+export function normalizeEvidenceQuote(passage: string, quoted: string): string {
+  const trimmed = quoted.trim().replace(/^(?:\.{3,}|…)\s*/, "").replace(/\s*(?:\.{3,}|…)$/, "").trim();
+  if (!trimmed) return quoted;
+  const index = passage.toLocaleLowerCase("en").indexOf(trimmed.toLocaleLowerCase("en"));
+  return index < 0 ? quoted : passage.slice(index, index + trimmed.length);
+}
+
 /** Conservative machine checks. Human approval is still required before publishing. */
 export function validateFactoryDraft(exam: NormalizedExam, evidence: DraftEvidence = {}): string[] {
   const warnings = validateExam(exam).filter((warning) => !(exam.skill === "Listening" && warning === "audio_missing"));
