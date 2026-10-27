@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/browser";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { useMic, type Take } from "@/features/ielts/speaking-kit";
 import { wordDifferences, youtubeId, type VideoLesson } from "@/lib/listening/youtube";
+import { catalogVideos, findCatalogVideos, videoTopics, type CatalogVideo, type VideoTopic } from "@/lib/listening/video-catalog";
 import { YoutubePlayer } from "./youtube-player";
 import "./youtube-lab.css";
 
@@ -21,6 +22,9 @@ export function YoutubeLab() {
   const [error, setError] = useState("");
   const [customUrl, setCustomUrl] = useState("");
   const [selected, setSelected] = useState<VideoLesson | null>(null);
+  const [catalogSelection, setCatalogSelection] = useState<CatalogVideo | null>(null);
+  const [search, setSearch] = useState("");
+  const [topic, setTopic] = useState<VideoTopic | "all">("all");
   const [cueIndex, setCueIndex] = useState(0);
   const [request, setRequest] = useState(0);
   const [loop, setLoop] = useState(false);
@@ -41,10 +45,17 @@ export function YoutubeLab() {
   })(); return () => { alive = false; }; }, [db]);
 
   const cue = selected?.transcript?.[cueIndex];
-  const videoId = selected?.youtube_id ?? youtubeId(customUrl);
+  const videoId = selected?.youtube_id ?? catalogSelection?.id ?? youtubeId(customUrl);
+  const filteredCatalog = useMemo(() => findCatalogVideos(search, topic), [search, topic]);
+  const filteredLessons = useMemo(() => lessons.filter((lesson) => {
+    const term = search.trim().toLocaleLowerCase("vi-VN");
+    return !term || `${lesson.title} ${lesson.topic} ${lesson.cefr}`.toLocaleLowerCase("vi-VN").includes(term);
+  }), [lessons, search]);
+  const youtubeSearch = search.trim() || (topic === "all" ? "IELTS listening practice" : videoTopics.find((item) => item.id === topic)?.search ?? "IELTS listening practice");
   const authorized = Boolean(selected && selected.transcript.length && selected.rights_source && selected.rights_license);
   const active = selected?.transcript.findIndex((item) => time >= item.start && time < item.end) ?? -1;
-  function pickLesson(lesson: VideoLesson) { if (take) mic.release(take.url); setTake(null); setSelected(lesson); setCustomUrl(""); setCueIndex(0); setRequest(0); setChecked(false); setAnswer(""); setQuizChecked(false); setQuizAnswers({}); setError(""); }
+  function pickLesson(lesson: VideoLesson) { if (take) mic.release(take.url); setTake(null); setSelected(lesson); setCatalogSelection(null); setCustomUrl(""); setCueIndex(0); setRequest(0); setChecked(false); setAnswer(""); setQuizChecked(false); setQuizAnswers({}); setError(""); }
+  function pickCatalog(video: CatalogVideo) { if (take) mic.release(take.url); setTake(null); setSelected(null); setCatalogSelection(video); setCustomUrl(""); setError(""); window.requestAnimationFrame(() => document.getElementById("yt-watch")?.scrollIntoView({ behavior: "smooth", block: "start" })); }
   function playCue(index: number) { if (!selected?.transcript[index]) return; setCueIndex(index); setRequest((value) => value + 1); setChecked(false); setAnswer(""); }
   async function stopRecording() { const recorded = await mic.stop(); if (recorded) { if (take) mic.release(take.url); setTake(recorded); } }
   async function saveWord() {
@@ -56,13 +67,22 @@ export function YoutubeLab() {
   }
 
   return <main className="yt-lab">
-    <header><Link href="/app/listening">← Listening</Link><h1>YouTube Shadowing & Listening Lab</h1><p>Practice with teacher supplied transcripts and questions. Videos play in the official YouTube player.</p></header>
+    <header><Link href="/app/listening">← Listening</Link><h1>YouTube Shadowing & Listening Lab</h1><p>Chọn video theo chủ đề, tìm bài nghe phù hợp rồi phát bằng trình phát YouTube. Bài có phụ đề và câu hỏi do giáo viên biên soạn sẽ có thêm các chế độ luyện tập.</p></header>
     {error && <p role="status" className="yt-notice">{error}</p>}
-    <section className="yt-panel"><h2>Video lessons</h2>{loading ? <p>Loading lessons…</p> : lessons.length ? <div className="yt-lesson-list">{lessons.map((lesson) => <button type="button" key={lesson.id} className={selected?.id === lesson.id ? "active" : ""} onClick={() => pickLesson(lesson)}><strong>{lesson.title}</strong><small>{lesson.cefr} · {lesson.topic}</small></button>)}</div> : <p>No published video lessons yet.</p>}
-      <label>Watch a YouTube URL without transcript activities<input value={customUrl} onChange={(event) => { setSelected(null); setCustomUrl(event.target.value); }} placeholder="https://www.youtube.com/watch?v=..." /></label>{customUrl && !videoId && <small role="alert">Enter a valid HTTPS YouTube video URL.</small>}
+    <section className="yt-panel yt-discover" aria-labelledby="yt-discover-title">
+      <div className="yt-discover-head"><div><span className="yt-kicker">KHÁM PHÁ VIDEO</span><h2 id="yt-discover-title">Nghe tiếng Anh theo chủ đề</h2><p>{catalogVideos.length} video được chọn từ BBC Learning English. Tìm theo chủ đề hoặc từ khóa; có thể mở thêm kết quả trực tiếp trên YouTube.</p></div><span className="yt-discover-count">{filteredCatalog.length} video</span></div>
+      <div className="yt-search-row"><label htmlFor="yt-video-search">Tìm video<input id="yt-video-search" type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Ví dụ: công nghệ, climate, health…" /></label><a className="yt-search-more" href={`https://www.youtube.com/results?search_query=${encodeURIComponent(youtubeSearch)}`} target="_blank" rel="noopener noreferrer">Tìm thêm trên YouTube ↗</a></div>
+      <div className="yt-topic-tabs" role="group" aria-label="Lọc video theo chủ đề"><button type="button" className={topic === "all" ? "active" : ""} aria-pressed={topic === "all"} onClick={() => setTopic("all")}>Tất cả <span>{catalogVideos.length}</span></button>{videoTopics.map((item) => <button type="button" key={item.id} className={topic === item.id ? "active" : ""} aria-pressed={topic === item.id} onClick={() => setTopic(item.id)}>{item.label} <span>{catalogVideos.filter((video) => video.topic === item.id).length}</span></button>)}</div>
+      {filteredCatalog.length ? videoTopics.filter((item) => topic === "all" || topic === item.id).map((item) => {
+        const videos = filteredCatalog.filter((video) => video.topic === item.id);
+        return videos.length ? <div className="yt-topic-section" key={item.id}><div className="yt-topic-heading"><h3>{item.label}</h3><a href={`https://www.youtube.com/results?search_query=${encodeURIComponent(item.search)}`} target="_blank" rel="noopener noreferrer">Xem thêm ↗</a></div><div className="yt-video-grid">{videos.map((video) => <button type="button" key={video.id} className={`yt-video-card ${catalogSelection?.id === video.id ? "active" : ""}`} onClick={() => pickCatalog(video)}><span className="yt-video-thumb" style={{ backgroundImage: `url(https://i.ytimg.com/vi/${video.id}/hqdefault.jpg)` }}><span>▶ Phát video</span></span><span className="yt-video-card-copy"><strong>{video.title}</strong><small>{video.channel} · {video.duration}</small></span></button>)}</div></div> : null;
+      }) : <div className="yt-search-empty"><strong>Chưa có video trong thư viện khớp từ khóa này.</strong><p>Thử một chủ đề khác hoặc tìm toàn bộ YouTube bằng nút phía trên.</p></div>}
     </section>
-    {videoId && <section className="yt-panel"><h2>{selected?.title ?? "YouTube video"}</h2><YoutubePlayer key={videoId} id={videoId} segment={request ? cue : null} request={request} loop={loop} onTime={setTime} />{selected && <small>Transcript rights: {selected.rights_license} · {selected.rights_source}</small>}</section>}
-    {videoId && !authorized && <section className="yt-panel"><p>Transcript activities require a licensed transcript supplied by an admin. You can watch this video normally.</p></section>}
+    <section className="yt-panel"><h2>Bài luyện có phụ đề & câu hỏi</h2>{loading ? <p>Đang tải bài luyện…</p> : filteredLessons.length ? <div className="yt-lesson-list">{filteredLessons.map((lesson) => <button type="button" key={lesson.id} className={selected?.id === lesson.id ? "active" : ""} onClick={() => pickLesson(lesson)}><strong>{lesson.title}</strong><small>{lesson.cefr} · {lesson.topic}</small></button>)}</div> : <p>{lessons.length ? "Không có bài luyện khớp từ khóa." : "Chưa có bài do giáo viên xuất bản. Bạn vẫn có thể xem và luyện nghe với thư viện video ở trên."}</p>}
+      <label>Xem video từ liên kết YouTube<input value={customUrl} onChange={(event) => { setSelected(null); setCatalogSelection(null); setCustomUrl(event.target.value); }} placeholder="https://www.youtube.com/watch?v=..." /></label>{customUrl && !videoId && <small role="alert">Hãy nhập URL HTTPS của một video YouTube hợp lệ.</small>}
+    </section>
+    {videoId && <section id="yt-watch" className="yt-panel yt-watch"><h2>{selected?.title ?? catalogSelection?.title ?? "Video YouTube"}</h2><YoutubePlayer key={videoId} id={videoId} segment={request ? cue : null} request={request} loop={loop} onTime={setTime} />{selected && <small>Nguồn phụ đề: {selected.rights_license} · {selected.rights_source}</small>}</section>}
+    {videoId && !authorized && <section className="yt-panel"><p>Video này chưa có phụ đề và câu hỏi do giáo viên biên soạn. Bạn có thể xem, tạm dừng và chỉnh tốc độ để luyện nghe; các hoạt động chép chính tả, shadowing theo câu sẽ xuất hiện ở bài luyện có phụ đề.</p></section>}
     {authorized && selected && cue && <section className="yt-panel"><div className="yt-mode-tabs" role="group" aria-label="Listening mode">{([ ["shadow","Shadowing"], ["repeat","Repeat After Me"], ["dictation","Dictation"], ["questions","Comprehension"], ["words","Save words"] ] as const).map(([key,label]) => <button key={key} type="button" aria-pressed={mode === key} onClick={() => setMode(key)}>{label}</button>)}</div>
       <div className="yt-layout"><div><h3>Transcript</h3><div className="yt-cues">{selected.transcript.map((item, index) => <button key={`${item.start}-${index}`} type="button" className={`${index === cueIndex ? "selected" : ""} ${index === active ? "playing" : ""}`} onClick={() => playCue(index)}><time>{Math.floor(item.start / 60)}:{String(Math.floor(item.start % 60)).padStart(2, "0")}</time><span>{item.text}</span></button>)}</div></div>
       <div className="yt-activity"><h3>{mode === "shadow" ? "Shadow this sentence" : mode === "repeat" ? "Repeat after me" : mode === "dictation" ? "Type what you hear" : mode === "questions" ? "Teacher questions" : "Save a word"}</h3>
