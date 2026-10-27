@@ -9,12 +9,14 @@ import { HeadIcon } from "@/components/ui/head-icon";
 import { authoredPackSchema, type AuthoredPack } from "@/lib/authored-content";
 import { DEMO_DRAFT_PACK_KEY, DEMO_PUBLISHED_PACK_KEY } from "@/lib/demo-content";
 import { AdminShell } from "./admin-shell";
+import { YoutubeLessonsAdmin } from "./youtube-lessons";
 
 const sampleText = JSON.stringify(sample, null, 2);
 const sections = [
   { id: "overview", label: "Tổng quan", icon: LayoutDashboard },
   { id: "editor", label: "Biên tập nội dung", icon: FilePenLine },
   { id: "preview", label: "Xem trước", icon: Eye },
+  { id: "youtube", label: "YouTube Listening", icon: Headphones },
 ] as const;
 
 export function DemoAdminEditor() {
@@ -105,6 +107,7 @@ export function DemoAdminEditor() {
       <div className="demo-admin-card-head"><div><span className="eyebrow">PREVIEW</span><h2>Xem cấu trúc trước khi xuất bản</h2><p>Kiểm tra JSON để chắc chắn mọi phần đều hợp lệ trước khi học viên nhìn thấy.</p></div><button type="button" className="button subtle" onClick={validate}><Eye size={16} /> Kiểm tra JSON</button></div>
       {preview && <div className="demo-admin-preview"><Sticker name="book" size={58} tilt={-8} /><div><h3>{preview.title}</h3><p>{preview.level}</p><div><span>{preview.vocabulary.length} từ vựng</span><span>{preview.grammar.questions.length} câu Grammar</span><span>{preview.reading.questions.length} câu Reading</span><span>{preview.listening.questions.length} câu Listening</span><span>1 đề Writing</span><span>1 đề Speaking</span></div></div></div>}
     </section>
+    <section id="youtube"><YoutubeLessonsAdmin /></section>
     <p className="demo-admin-disclaimer">Quyền admin demo chỉ điều khiển dữ liệu trong trình duyệt này. Admin thật cần tài khoản Supabase được cấp quyền; người học không thể tự cấp quyền admin trong chế độ live.</p>
   </AdminShell>;
 }

@@ -16,6 +16,7 @@ import { IeltsSkillDashboard } from "@/features/ielts/ielts-skill-dashboard";
 import { IeltsModePreview } from "@/features/ielts/ielts-mode-preview";
 import { BankStudent } from "@/features/ielts/bank-student";
 import { SpeakingMock } from "@/features/ielts/speaking-mock";
+import { YoutubeLab } from "@/features/listening/youtube-lab";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -41,6 +42,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : skill === "speaking" && skillMode === "mock" ? (
           <SpeakingMock />
+        ) : skill === "listening" && skillMode === "youtube" ? (
+          <YoutubeLab />
         ) : skill && (skillMode === "live" || (skill === "writing" && (skillMode === "task-1" || skillMode === "task-2")) || (skill === "speaking" && skillMode === "part-3")) ? (
           <IeltsLivePage key={pathname} skill={skill} mode={skillMode} />
         ) : skill && skillMode === "mode" ? (
