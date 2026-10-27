@@ -3,7 +3,20 @@ name: AI Factory text drafts
 on:
   schedule:
     - cron: "37 18 * * *"
+    - cron: "47 18 * * *"
+    - cron: "57 18 * * *"
+    - cron: "7 19 * * *"
   workflow_dispatch:
+    inputs:
+      skill:
+        description: Optional single skill to generate
+        required: false
+        type: choice
+        options:
+          - Listening
+          - Reading
+          - Writing
+          - Speaking
 
 permissions:
   contents: read
@@ -22,6 +35,8 @@ jobs:
       AI_FACTORY_GEMINI_API_KEY: ${{ secrets.AI_FACTORY_GEMINI_API_KEY }}
       AI_FACTORY_FREE_TIER_CONFIRMED: ${{ secrets.AI_FACTORY_FREE_TIER_CONFIRMED }}
       AI_FACTORY_FREE_TIER_ONLY: "true"
+      AI_FACTORY_SCHEDULE_CRON: ${{ github.event.schedule }}
+      AI_FACTORY_SKILL: ${{ inputs.skill }}
     steps:
       - name: Check free-tier configuration
         id: config

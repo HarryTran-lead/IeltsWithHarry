@@ -26,7 +26,20 @@ async function main() {
   }
   const day = Math.floor(Date.now() / 86_400_000);
   const skills: TextSkill[] = ["Listening", "Reading", "Writing", "Speaking"];
-  const skill = skills[day % skills.length];
+  const scheduled: Record<string, TextSkill> = {
+    "37 18 * * *": "Listening", "47 18 * * *": "Reading", "57 18 * * *": "Writing", "7 19 * * *": "Speaking",
+  };
+  const requested = process.env.AI_FACTORY_SKILL;
+  if (requested && !skills.includes(requested as TextSkill)) throw new Error("Invalid AI Factory skill");
+  const skill = (requested as TextSkill | undefined) || scheduled[process.env.AI_FACTORY_SCHEDULE_CRON || ""] || skills[day % skills.length];
+  const today = new Date(); today.setUTCHours(0, 0, 0, 0);
+  const kind = skill === "Listening" ? "listening_audio" : skill.toLowerCase();
+  const { count, error: duplicateError } = await client.from("ai_factory_jobs").select("id", { count: "exact", head: true }).eq("kind", kind).gte("created_at", today.toISOString());
+  if (duplicateError) throw new Error(duplicateError.message);
+  if (count) {
+    console.log(`${skill} already has a Content Factory draft today; skipping duplicate.`);
+    return;
+  }
   const topic = topics[skill][Math.floor(day / skills.length) % topics[skill].length];
   const result = await createTextPracticeJob(client, skill, topic);
   console.log(`Created ${skill} practice job ${result.job.id}: ${result.status}`);
