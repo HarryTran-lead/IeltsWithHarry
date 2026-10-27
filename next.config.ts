@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { assertDeploymentEnvironment } from "./src/lib/deployment-environment";
+
+assertDeploymentEnvironment(process.env);
 
 const avatarOrigin = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const avatarPattern = avatarOrigin ? new URL("/storage/v1/object/public/user-avatars/**", avatarOrigin) : null;

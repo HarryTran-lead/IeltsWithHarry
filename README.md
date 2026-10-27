@@ -30,6 +30,7 @@ docs/                   Architecture and rollout notes
 See [docs/STRUCTURE.md](docs/STRUCTURE.md) for data flows and security boundaries.
 See [docs/AUTHORED_CONTENT.md](docs/AUTHORED_CONTENT.md) for the no-AI, content-driven skill plan and the interactive `/app/content-lab` JSON demo.
 See [docs/DAILY_NEWS.md](docs/DAILY_NEWS.md) for news sources, rights rules, scheduled sync, and operations.
+See [docs/ENVIRONMENTS.md](docs/ENVIRONMENTS.md) for the `develop` Preview, production isolation, and release workflow.
 
 ## Run locally in demo mode
 

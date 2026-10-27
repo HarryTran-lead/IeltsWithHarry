@@ -1090,6 +1090,8 @@ export function WritingStudioPractice({
   const [timerRunning, setTimerRunning] = useState(false);
 
   useEffect(() => {
+    // Reset the current exercise when its task key changes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTimerRunning(false);
     setShowModel(false);
     setSecondsLeft(targetMinutes * 60);
@@ -1363,6 +1365,8 @@ export function SpeakingStudioPractice({
 
   useEffect(() => {
     try {
+      // Restore the learner's notes when a different lesson is opened.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setNotes(localStorage.getItem(`${keyName}:notes`) ?? "");
     } catch {
       /* Ignore storage error */
