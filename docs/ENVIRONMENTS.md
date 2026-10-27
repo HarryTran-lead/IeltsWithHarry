@@ -3,9 +3,9 @@
 | Purpose | Git branch | Vercel | Supabase |
 | --- | --- | --- | --- |
 | Learners | `main` | Production, `ieltswithharry.vercel.app` | `vpkhriywprepuhrbarye` |
-| Development/testing | `develop` | Preview deployment for `develop` | A separate development project (pending capacity) |
+| Development/testing | `develop` | [Preview for `develop`](https://ieltswithharry-git-develop-harrytran-leads-projects.vercel.app) | `bhactqaxcvusmpeooxwi` (`IeltsWithHarry-Development`) |
 
-The `develop` Preview currently runs in **demo mode** while a separate Supabase project is being provisioned. Do not put production Supabase credentials into Preview or local development. The build checks in `next.config.ts` reject a Preview that points at the production database and reject a Production build that points elsewhere.
+The `develop` Preview runs against its own Supabase project with demo mode off. Do not put production Supabase credentials into Preview or local development. The build checks in `next.config.ts` reject a Preview that points at the production database and reject a Production build that points elsewhere. The development project's scheduled sync jobs are disabled; development data does not update automatically until dev-only worker secrets and schedules are configured.
 
 ## Normal release path
 
@@ -16,13 +16,15 @@ The `develop` Preview currently runs in **demo mode** while a separate Supabase 
 
 Changes made directly in the Vercel Preview do not promote database records to production. Transfer reviewed content through the app's import workflow or a deliberate migration. Do not copy learner accounts, chat, progress or other personal data into development.
 
-## Provision the development backend
+## Development backend setup (completed on 27 October 2026)
 
-1. Create a second Supabase project in the same or a nearby region. The account currently has no free project slot; paused projects do not count toward the limit. Do not substitute the production project.
-2. Link the **development checkout** to the new project with `supabase link --project-ref DEV_REF`; check the ref before every database command. Apply the migrations from `supabase/migrations/` to that project, then add safe test content. Never run `supabase db reset --linked` against production.
-3. Set the development project's Auth Site URL to the stable `develop` Preview URL and allow its `/auth/callback` and password reset callback. Add `http://localhost:3000/auth/callback` for local testing. Configure email delivery separately if testing real registration.
-4. In Vercel, add branch-scoped **Preview** variables for Git branch `develop`: `NEXT_PUBLIC_DEMO_MODE=false`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, and server-only `SUPABASE_SERVICE_ROLE_KEY`. Use values from the development Supabase project only. Keep the production variables scoped to **Production**. Redeploy `develop` after changing `NEXT_PUBLIC_*` variables because Next.js inlines them at build time.
-5. Configure dev-only `NEWS_SYNC_SECRET` and `IELTS_SYNC_SECRET` if testing scheduled workers. Point Supabase Vault URLs at the development Preview and keep its cron jobs disabled until those endpoints and secrets are verified. Do not reuse production API keys or enable paid AI jobs by default.
+1. `lego-shop` was paused, with the user's permission, to free a Supabase free-tier slot. Resume it only after another slot becomes available; pausing does not delete its data.
+2. A new Supabase project `IeltsWithHarry-Development` was created and all migrations were applied. The `develop` checkout is linked to it. Check the project ref before every database command. Never run `supabase db reset --linked` against production.
+3. Auth Site URL and callback allowlist point to the stable `develop` Preview, with localhost callbacks for local testing. Configure email delivery separately if testing real registration.
+4. Vercel has branch-scoped **Preview** variables for `develop`: `NEXT_PUBLIC_DEMO_MODE=false`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, and server-only `SUPABASE_SERVICE_ROLE_KEY`. Production variables remain scoped to Production. Redeploy `develop` after changing `NEXT_PUBLIC_*` variables because Next.js inlines them at build time.
+5. The development project's cron jobs were disabled. Configure dev-only `NEWS_SYNC_SECRET` and `IELTS_SYNC_SECRET` only if testing scheduled workers. Point Supabase Vault URLs at the development Preview and verify endpoints before enabling schedules. Do not reuse production API keys or enable paid AI jobs by default.
 6. For local live development, put the development URL and keys in the ignored `.env.development.local` file in the `develop` checkout and set `NEXT_PUBLIC_DEMO_MODE=false`. Do not commit any `.env*` file.
+
+The optional catalog bootstrap is for an **empty dev project with no users**. Run `pwsh -NoProfile -File scripts/bootstrap-dev-catalog.ps1 -TargetRef bhactqaxcvusmpeooxwi` from the `develop` checkout. It replaces only authored courses, lessons, exercise answers, and the vocabulary library. It deliberately excludes learner accounts, saved words, progress, chat, administrator records and the news archive. The script refuses to run if any user has signed up on dev. Re-run only while the dev project is disposable, since it replaces its existing catalog.
 
 Vercel automatically builds `main` as Production and other branches as Preview when its Git integration is connected. The existing `.github/workflows/quality.yml` runs checks for both branches. See [Vercel Git deployments](https://vercel.com/docs/git), [branch-specific environment variables](https://vercel.com/docs/environment-variables), and [Supabase environment management](https://supabase.com/docs/guides/deployment/managing-environments).
