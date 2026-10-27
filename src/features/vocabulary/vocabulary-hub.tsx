@@ -13,6 +13,7 @@ import { nextWordReview, type ReviewGrade, type WordReview } from "@/lib/news/re
 import sourceTopics from "@/lib/vocabulary/source-topics.json";
 import { studyLevels } from "@/lib/vocabulary/study-levels";
 import { VocabularyStudy } from "@/features/vocabulary/vocabulary-study";
+import { VocabularyDecks } from "@/features/vocabulary/vocabulary-decks";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import "@/app/vocabulary-hub.css";
 
@@ -85,7 +86,7 @@ export function VocabularyHub() {
       const [termRows, lessonRows, reviewRows, eventRows, attemptRows] = await Promise.all([
         db!.from("vocabulary_entries").select("id,lesson_id,word,phonetic,meaning_vi,definition,example").limit(1000),
         db!.from("lessons").select("id,title,published").eq("published", true).limit(1000),
-        db!.from("user_word_reviews").select("notebook_entry_id,due_at,interval_days,repetitions,last_reviewed_at").limit(1000),
+        db!.from("user_word_reviews").select("notebook_entry_id,due_at,interval_days,repetitions,last_reviewed_at,fsrs_state").limit(1000),
         db!.from("vocabulary_review_events").select("notebook_entry_id,grade,reviewed_at").order("reviewed_at", { ascending: false }).limit(1000),
         db!.from("vocabulary_practice_attempts").select("id,scope,score,total,wrong_words,submitted_at").order("submitted_at", { ascending: false }).limit(1000),
       ]);
@@ -151,14 +152,11 @@ export function VocabularyHub() {
       setReviews(updated); setEvents(nextEvents);
       return true;
     }
-    const result = before
-      ? await db!.from("user_word_reviews").update({ due_at: next.due_at, interval_days: next.interval_days, repetitions: next.repetitions, last_reviewed_at: next.last_reviewed_at }).eq("notebook_entry_id", entry.id)
-      : await db!.from("user_word_reviews").insert(next);
+    const result = await db!.rpc("save_word_fsrs_review", { p_entry: entry.id, p_grade: grade, p_state: next.fsrs_state, p_request: crypto.randomUUID(), p_previous_reviewed_at: before?.last_reviewed_at ?? null });
     if (result.error) { setError(result.error.message); return false; }
+    if (result.data === false) { setError("Từ này vừa được ôn ở nơi khác. Tải lại trang để xem lịch mới."); return false; }
     setReviews((current) => [...current.filter((review) => review.notebook_entry_id !== entry.id), next]);
-    const savedEvent = await db!.from("vocabulary_review_events").insert({ notebook_entry_id: entry.id, grade });
-    if (savedEvent.error) setError("Đã lưu lịch ôn, nhưng chưa ghi được lượt ôn vào thống kê.");
-    else setEvents((current) => [event, ...current]);
+    setEvents((current) => [event, ...current]);
     return true;
   }
 
@@ -188,8 +186,8 @@ export function VocabularyHub() {
 
   const common = { terms, saved, savedByWord, reviewById, due, events, attempts, saveWord, removeWord, gradeWord, saveAttempt };
   return <div className="content-page vocab-hub">
-    <header className="vocab-header"><div><span className="eyebrow">IELTSWITHHARRY / VOCABULARY</span><h1>{section === "overview" ? "Học từ vựng hiệu quả hơn" : { learn: "Học từ mới", library: "Kho từ theo topic", study: "Luyện từ theo topic", notebook: "Từ đã lưu", review: "Ôn tập", practice: "Luyện tập", explore: "Tra từ", progress: "Tiến độ từ vựng" }[section] ?? "Từ vựng"}</h1><p>Học theo chủ đề, lưu từ trong bài đọc và ôn lại đúng thời điểm.</p></div><span className="vocab-header-count">{saved.length} từ đã lưu</span></header>
-    <nav className="vocab-nav" aria-label="Các mục từ vựng">{[["overview", "Tổng quan"], ["learn", "Học từ mới"], ["library", "Kho từ theo topic"], ["study", "Thẻ lật & trò chơi"], ["notebook", "Từ đã lưu"], ["review", "Ôn tập"], ["practice", "Luyện tập"], ["explore", "Tra từ"]].map(([key, label]) => <Link key={key} href={key === "overview" ? "/app/vocabulary" : `/app/vocabulary/${key}`} aria-current={section === key ? "page" : undefined}>{label}</Link>)}</nav>
+    <header className="vocab-header"><div><span className="eyebrow">IELTSWITHHARRY / VOCABULARY</span><h1>{section === "overview" ? "Học từ vựng hiệu quả hơn" : { learn: "Học từ mới", library: "Kho từ theo topic", study: "Luyện từ theo topic", notebook: "Từ đã lưu", decks: "Bộ thẻ của bạn", review: "Ôn tập", practice: "Luyện tập", explore: "Tra từ", progress: "Tiến độ từ vựng" }[section] ?? "Từ vựng"}</h1><p>Học theo chủ đề, lưu từ trong bài đọc và ôn lại đúng thời điểm.</p></div><span className="vocab-header-count">{saved.length} từ đã lưu</span></header>
+    <nav className="vocab-nav" aria-label="Các mục từ vựng">{[["overview", "Tổng quan"], ["learn", "Học từ mới"], ["library", "Kho từ theo topic"], ["study", "Thẻ lật & trò chơi"], ["notebook", "Từ đã lưu"], ["decks", "Bộ thẻ"], ["review", "Ôn tập"], ["practice", "Luyện tập"], ["explore", "Tra từ"]].map(([key, label]) => <Link key={key} href={key === "overview" ? "/app/vocabulary" : `/app/vocabulary/${key}`} aria-current={section === key ? "page" : undefined}>{label}</Link>)}</nav>
     {(error || notebookError) && <p className="vocab-error" role="alert">{error || notebookError}</p>}
     {(loading || !notebookReady) ? <div className="vocab-panel">Đang tải từ vựng…</div>
       : section === "overview" ? <Overview {...common} mastered={mastered} reviewedToday={reviewedToday} />
@@ -198,6 +196,7 @@ export function VocabularyHub() {
       : section === "library" ? <Library savedByWord={savedByWord} saveWord={saveWord} />
       : section === "study" ? <VocabularyStudy />
       : section === "notebook" ? <SavedWords {...common} />
+      : section === "decks" ? <VocabularyDecks saved={saved} due={due} reviewById={reviewById} gradeWord={gradeWord} />
       : section === "review" ? <Review saved={saved} due={due} reviewById={reviewById} gradeWord={gradeWord} />
       : section === "practice" ? <Practice {...common} />
       : section === "explore" ? <Explore key={searchParams.get("q") ?? ""} {...common} />
@@ -318,6 +317,7 @@ function Overview({ terms, saved, due, mastered, reviewedToday }: Common & { mas
     { title: "Học từ mới", sub: "Chọn cấp độ và chủ đề", href: "learn", icon: BookOpen, tint: "lilac" },
     { title: "Từ đã lưu", sub: "Xem các từ bạn đã lưu", href: "notebook", icon: Bookmark, tint: "mint" },
     { title: "Ôn tập", sub: "Ôn từ cũ đúng thời điểm", href: "review", icon: RotateCcw, tint: "peach" },
+    { title: "Bộ thẻ của bạn", sub: "Nhóm và ôn các từ đã lưu", href: "decks", icon: Bookmark, tint: "lilac" },
     { title: "Luyện tập", sub: "Kiểm tra mức độ ghi nhớ", href: "practice", icon: Check, tint: "blue" },
     { title: "Tra từ", sub: "Xem nghĩa, IPA và ví dụ", href: "explore", icon: Search, tint: "pink" },
     { title: "Kho từ theo topic", sub: "Học từ nguồn theo 36 topic và Level 1–7+", href: "library", icon: BookOpen, tint: "mint" },
@@ -392,7 +392,7 @@ function Review({ saved, due, reviewById, gradeWord }: Pick<Common, "saved" | "d
   if (!current) return <div className="vocab-panel vocab-empty"><RotateCcw size={35}/><h2>{done.length ? `Đã ôn ${done.length} từ!` : "Hôm nay chưa có từ đến hạn"}</h2><p>{saved.length ? "Lịch ôn tiếp theo được lưu trong tài khoản của bạn." : "Lưu từ đầu tiên từ bài học hoặc Daily News để bắt đầu ôn."}</p><Link className="vocab-button primary" href={saved.length ? "/app/vocabulary/notebook" : "/app/vocabulary/learn"}>{saved.length ? "Mở từ đã lưu" : "Học từ mới"} <ArrowRight size={16}/></Link></div>;
   const term = fromSaved(current);
   const previous = reviewById.get(current.id);
-  return <div className="vocab-panel vocab-review"><div className="vocab-review-meta"><span className="vocab-kicker">FLASHCARD · {done.length + 1}/{due.length + done.length}</span><span>{previous ? `${previous.repetitions} lần nhớ` : "Lần ôn đầu"}</span></div><button className="vocab-flashcard" onClick={() => setRevealed((value) => !value)} aria-label={revealed ? "Ẩn nghĩa" : "Hiện nghĩa"}><span>{revealed ? "NGHĨA & VÍ DỤ" : "BẠN CÓ NHỚ TỪ NÀY?"}</span><TopicArt topic={term.topic} word={current.title} className="vocab-card-art" /><strong>{current.title}</strong>{term.ipa && <small>{term.ipa}</small>}{revealed ? <><b>{current.meaningVi}</b><em>{current.example}</em>{term.collocations.length > 0 && <small>{term.collocations.slice(0, 2).join(" · ")}</small>}</> : <small>Nhấn để hiện nghĩa</small>}</button>{revealed && <div className="vocab-rating"><button disabled={busy} onClick={() => void rate("again")}>Chưa nhớ</button><button disabled={busy} onClick={() => void rate("good")}>Tạm nhớ</button><button disabled={busy} onClick={() => void rate("easy")}>Đã nhớ</button></div>}<p className="vocab-muted">Mỗi lượt ôn được lưu; từ vừa đánh giá sẽ trở lại từ ngày mai hoặc muộn hơn.</p></div>;
+  return <div className="vocab-panel vocab-review"><div className="vocab-review-meta"><span className="vocab-kicker">FLASHCARD · {done.length + 1}/{due.length + done.length}</span><span>{previous ? `${previous.repetitions} lượt ôn` : "Thẻ mới"}</span></div><button className="vocab-flashcard" onClick={() => setRevealed((value) => !value)} aria-label={revealed ? "Ẩn nghĩa" : "Hiện nghĩa"}><span>{revealed ? "NGHĨA & VÍ DỤ" : "BẠN CÓ NHỚ TỪ NÀY?"}</span><TopicArt topic={term.topic} word={current.title} className="vocab-card-art" /><strong>{current.title}</strong>{term.ipa && <small>{term.ipa}</small>}{revealed ? <><b>{current.meaningVi}</b><em>{current.example}</em>{term.pos && <small>{term.pos}</small>}{term.collocations.length > 0 && <small>{term.collocations.slice(0, 2).join(" · ")}</small>}</> : <small>Nhấn để hiện nghĩa</small>}</button>{revealed && <div className="vocab-rating"><button disabled={busy} onClick={() => void rate("again")}>Again</button><button disabled={busy} onClick={() => void rate("hard")}>Hard</button><button disabled={busy} onClick={() => void rate("good")}>Good</button><button disabled={busy} onClick={() => void rate("easy")}>Easy</button></div>}<p className="vocab-muted">Lịch ôn dùng FSRS và lưu cùng lịch sử của từ. Thẻ có thể đến hạn lại sau vài phút.</p></div>;
 }
 
 function Practice({ saved, attempts, saveAttempt }: Pick<Common, "saved" | "attempts" | "saveAttempt">) {
