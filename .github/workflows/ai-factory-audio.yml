@@ -31,14 +31,32 @@ jobs:
           else
             echo "Audio worker not configured; no production job was claimed."
           fi
+      - name: Check audio queue before installing model dependencies
+        id: queue
+        if: steps.config.outputs.configured == 'true'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os, urllib.parse, urllib.request
+          query = urllib.parse.urlencode({"select": "id", "kind": "eq.listening_audio", "status": "in.(queued,running)", "limit": "1"})
+          request = urllib.request.Request(
+              os.environ["SUPABASE_URL"].rstrip("/") + "/rest/v1/ai_factory_jobs?" + query,
+              headers={"apikey": os.environ["SUPABASE_SERVICE_ROLE_KEY"], "Authorization": "Bearer " + os.environ["SUPABASE_SERVICE_ROLE_KEY"]},
+          )
+          with urllib.request.urlopen(request, timeout=20) as response:
+              pending = bool(json.load(response))
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write("pending=" + str(pending).lower() + "\n")
+          print("Audio queue has work" if pending else "Audio queue is empty")
+          PY
       - uses: actions/checkout@v4
-        if: steps.config.outputs.configured == 'true'
+        if: steps.queue.outputs.pending == 'true'
       - uses: actions/setup-python@v5
-        if: steps.config.outputs.configured == 'true'
+        if: steps.queue.outputs.pending == 'true'
         with:
           python-version: '3.11'
       - name: Install Kokoro dependencies
-        if: steps.config.outputs.configured == 'true'
+        if: steps.queue.outputs.pending == 'true'
         shell: bash
         run: |
           sudo apt-get update
@@ -46,5 +64,5 @@ jobs:
           python -m pip install --no-cache-dir -r services/audio-worker/requirements.txt
           python -m spacy download en_core_web_sm
       - name: Process one queued audio draft
-        if: steps.config.outputs.configured == 'true'
+        if: steps.queue.outputs.pending == 'true'
         run: python services/audio-worker/worker.py --once
