@@ -106,6 +106,7 @@ const noSubscription = () => () => undefined;
  */
 export function useMic() {
   const [recording, setRecording] = useState(false);
+  const [paused, setPaused] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [level, setLevel] = useState(0);
   const [transcript, setTranscript] = useState("");
@@ -116,6 +117,8 @@ export function useMic() {
   const recognition = useRef<Recognition | null>(null);
   const finalText = useRef("");
   const startedAt = useRef(0);
+  const pausedAt = useRef(0);
+  const pausedTotal = useRef(0);
   const loop = useRef(0);
   const silence = useRef<{ ms: number; onSilence: () => void; spoke: number; quietSince: number; floor: number } | null>(null);
   const takes = useRef<string[]>([]);
@@ -157,7 +160,7 @@ export function useMic() {
   }, []);
 
   useEffect(() => {
-    loop.current = window.setInterval(() => { sample(); if (startedAt.current) setSeconds(Math.floor((Date.now() - startedAt.current) / 1000)); }, 100);
+    loop.current = window.setInterval(() => { if (!pausedAt.current) sample(); if (startedAt.current) setSeconds(Math.floor(((pausedAt.current || Date.now()) - startedAt.current - pausedTotal.current) / 1000)); }, 100);
     const urls = takes.current;
     return () => {
       window.clearInterval(loop.current);
@@ -178,6 +181,7 @@ export function useMic() {
     recorder.current = next;
     next.start();
     startedAt.current = Date.now();
+    pausedAt.current = 0; pausedTotal.current = 0; setPaused(false);
     finalText.current = "";
     setTranscript("");
     setSeconds(0);
@@ -189,6 +193,7 @@ export function useMic() {
         const rec = new Ctor();
         rec.lang = "en-GB"; rec.continuous = true; rec.interimResults = true;
         rec.onresult = (event) => {
+          if (pausedAt.current) return;
           let interim = "";
           for (let index = event.resultIndex; index < event.results.length; index += 1) {
             const result = event.results[index];
@@ -198,7 +203,7 @@ export function useMic() {
           setTranscript(`${finalText.current} ${interim}`.trim());
         };
         // Recognition stops by itself after pauses; keep it going while recording.
-        rec.onend = () => { if (recognition.current === rec && recorder.current) { try { rec.start(); } catch { /* already running */ } } };
+        rec.onend = () => { if (recognition.current === rec && recorder.current && !pausedAt.current) { try { rec.start(); } catch { /* already running */ } } };
         rec.onerror = () => undefined;
         recognition.current = rec;
         rec.start();
@@ -214,7 +219,7 @@ export function useMic() {
     recognition.current = null;
     rec?.stop();
     if (!current || current.state === "inactive") { resolve(null); return; }
-    const took = Math.max(1, Math.round((Date.now() - startedAt.current) / 1000));
+    const took = Math.max(1, Math.round(((pausedAt.current || Date.now()) - startedAt.current - pausedTotal.current) / 1000));
     startedAt.current = 0;
     current.onstop = () => {
       const chunks = (current as MediaRecorder & { chunks?: BlobPart[] }).chunks ?? [];
@@ -222,13 +227,17 @@ export function useMic() {
       takes.current.push(url);
       recorder.current = null;
       setRecording(false);
+      setPaused(false);
       // Late recognition results arrive just after stopping; give them a moment.
       window.setTimeout(() => resolve({ url, seconds: took, transcript: finalText.current.trim() }), 350);
     };
     current.stop();
   }), []);
 
-  return { open, start, stop, recording, seconds, level, transcript, error, canTranscribe };
+  const pause = useCallback(() => { if (recorder.current?.state === "recording") { pausedAt.current = Date.now(); recorder.current.pause(); recognition.current?.stop(); setPaused(true); } }, []);
+  const resume = useCallback(() => { if (recorder.current?.state === "paused") { pausedTotal.current += Date.now() - pausedAt.current; pausedAt.current = 0; recorder.current.resume(); try { recognition.current?.start(); } catch { /* provider may still be stopping */ } setPaused(false); } }, []);
+  const release = useCallback((url: string) => { URL.revokeObjectURL(url); takes.current = takes.current.filter((item) => item !== url); }, []);
+  return { open, start, stop, pause, resume, release, recording, paused, seconds, level, transcript, error, canTranscribe };
 }
 
 export const clock = (value: number) => `${Math.floor(Math.max(0, value) / 60)}:${String(Math.max(0, value) % 60).padStart(2, "0")}`;

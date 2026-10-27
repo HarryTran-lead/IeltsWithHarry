@@ -29,11 +29,13 @@ describe("vocabulary hub", () => {
     expect(quizScore(questions, questions.map((question) => (question.answer + 1) % 4))).toBe(0);
   });
 
-  it("schedules a reviewed word for tomorrow or later", () => {
+  it("persists a real FSRS card for all four ratings", () => {
     const now = new Date("2026-10-25T08:00:00Z");
-    const first = nextWordReview(undefined, "again", now);
-    expect(new Date(first.due_at).getTime()).toBeGreaterThanOrEqual(now.getTime() + 86400000);
-    const later = nextWordReview({ notebook_entry_id: "one", ...first }, "easy", now);
-    expect(later.interval_days).toBeGreaterThan(first.interval_days);
+    const outcomes = (["again", "hard", "good", "easy"] as const).map((grade) => nextWordReview(undefined, grade, now));
+    expect(outcomes.every((item) => item.fsrs_state && new Date(item.due_at).getTime() > now.getTime())).toBe(true);
+    expect(new Set(outcomes.map((item) => item.due_at)).size).toBeGreaterThan(1);
+    const persisted = JSON.parse(JSON.stringify({ notebook_entry_id: "one", ...outcomes[2] }));
+    const later = nextWordReview(persisted, "good", new Date(outcomes[2].due_at));
+    expect(later.repetitions).toBe(2);
   });
 });
