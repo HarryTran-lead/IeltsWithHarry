@@ -85,6 +85,36 @@ const groups = [
 ];
 const links = groups.flatMap((group) => group.links);
 
+const skillPracticeLinks: Record<string, { label: string; href: string }[]> = {
+  vocabulary: [
+    { label: "Học theo topic & Level", href: "/app/vocabulary/library" },
+    { label: "Bộ thẻ cá nhân", href: "/app/vocabulary/decks" },
+    { label: "Luyện từ vựng", href: "/app/vocabulary/practice" },
+    { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },
+  ],
+  grammar: [{ label: "Từ nối trong ngữ cảnh", href: "/app/grammar/live" }],
+  reading: [
+    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/reading#ngan-hang-de" }] : []),
+    { label: "Sentence completion", href: "/app/reading/live" },
+  ],
+  listening: [
+    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/listening#ngan-hang-de" }] : []),
+    { label: "YouTube Shadowing", href: "/app/listening/youtube" },
+    { label: "Nghe & ghi ý chính", href: "/app/listening/live" },
+  ],
+  writing: [
+    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/writing#ngan-hang-de" }] : []),
+    { label: "Academic Task 1", href: "/app/writing/task-1" },
+    { label: "Academic Task 2", href: "/app/writing/task-2" },
+  ],
+  speaking: [
+    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/speaking#ngan-hang-de" }] : []),
+    { label: "Part 2 cue card", href: "/app/speaking/live" },
+    { label: "Part 3 follow-up", href: "/app/speaking/part-3" },
+    ...(!demoMode ? [{ label: "Thi thử Speaking", href: "/app/speaking/mock" }] : []),
+  ],
+};
+
 const searchItems = [
   {
     label: "Technology & Digital Life",
@@ -128,6 +158,10 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
     .filter((item) => item.label.toLowerCase().includes(query.toLowerCase()))
     .slice(0, 5);
   const section = pathname.split("/")[2] || "dashboard";
+  const [skillMenuOverride, setSkillMenuOverride] = useState<{ pathname: string; skill: string | null } | null>(null);
+  const expandedSkill = skillMenuOverride?.pathname === pathname
+    ? skillMenuOverride.skill
+    : skillPracticeLinks[section] ? section : null;
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -344,21 +378,42 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
           {groups.map((group) => (
             <div className="nav-group" key={group.label}>
               <span className="nav-group-label">{group.label}</span>
-              {group.links.map(({ href, label, icon: Icon, tone }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`nav-link ${isActive(pathname, href) ? "active" : ""}`}
-                  aria-current={isActive(pathname, href) ? "page" : undefined}
-                  title={label}
-                >
-                  <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b>
-                  <span>{label}</span>
-                  {href === "/app/study-together" && <span className="study-nav-count" aria-label={`${studyOnline ?? "Đang kết nối"} người đang học trực tiếp`}><i />{studyOnline ?? "…"}</span>}
-                  {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
-                </Link>
-              ))}
+              {group.links.map(({ href, label, icon: Icon, tone }) => {
+                const skill = href.split("/")[2];
+                const practiceLinks = skillPracticeLinks[skill];
+                const expanded = expandedSkill === skill && Boolean(practiceLinks);
+                const active = isActive(pathname, href);
+                return <div className="nav-item" key={href}>
+                  <Link
+                    href={practiceLinks ? `${href}#che-do-hoc` : href}
+                    onClick={() => {
+                      if (practiceLinks) setSkillMenuOverride({ pathname, skill: expanded ? null : skill });
+                      else setMenuOpen(false);
+                    }}
+                    className={`nav-link ${active ? "active" : ""} ${practiceLinks ? "nav-skill-link" : ""}`}
+                    aria-current={pathname === href ? "page" : undefined}
+                    aria-expanded={practiceLinks ? expanded : undefined}
+                    aria-controls={practiceLinks ? `skill-practice-${skill}` : undefined}
+                    title={label}
+                  >
+                    <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b>
+                    <span>{label}</span>
+                    {practiceLinks && <ChevronDown className="nav-skill-chevron" size={15} aria-hidden="true" />}
+                    {href === "/app/study-together" && <span className="study-nav-count" aria-label={`${studyOnline ?? "Đang kết nối"} người đang học trực tiếp`}><i />{studyOnline ?? "…"}</span>}
+                    {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
+                  </Link>
+                  {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className="nav-submenu" hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
+                    <Link href={`${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>Tất cả chế độ</Link>
+                    {practiceLinks.map((practice) => <Link
+                      key={practice.href}
+                      href={practice.href}
+                      className={`nav-submenu-link ${pathname === practice.href ? "active" : ""}`}
+                      aria-current={pathname === practice.href ? "page" : undefined}
+                      onClick={() => setMenuOpen(false)}
+                    >{practice.label}</Link>)}
+                  </div>}
+                </div>;
+              })}
             </div>
           ))}
           {canManage && <div className="nav-group"><span className="nav-group-label">Quản trị</span><Link href="/admin" onClick={() => setMenuOpen(false)} className="nav-link" title="Admin portal"><b className="nav-icon tone-teal"><ShieldCheck size={17} strokeWidth={2.2} /></b><span>Admin portal</span></Link></div>}
