@@ -1,0 +1,72 @@
+/* Harry the examiner: a layered 3D room that tilts with the pointer. */
+.hx-stage { --hx-accent: var(--bl-accent, #c768a0); position: relative; width: 100%; aspect-ratio: 16 / 10; perspective: 900px; border-radius: 22px; overflow: hidden; background: linear-gradient(180deg, #fdf3ea 0%, #f8e6d8 62%, #ecd0bb 62.2%, #e3c2a8 100%); isolation: isolate; user-select: none; }
+.hx-stage.is-compact { aspect-ratio: 16 / 11; border-radius: 18px; }
+.hx-rig { --hx-rx: 0deg; --hx-ry: 0deg; position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateX(var(--hx-rx)) rotateY(var(--hx-ry)); transition: transform 0.35s ease-out; animation: hx-sway 9s ease-in-out infinite; }
+.hx-room, .hx-person, .hx-desk { position: absolute; }
+.hx-room { inset: -6%; transform: translateZ(-80px) scale(1.12); }
+.hx-window { position: absolute; left: 9%; top: 12%; width: 22%; height: 34%; border: 6px solid #fff; border-radius: 10px; background: linear-gradient(180deg, #bfe6ff, #e9f7ff 70%, #c8ecd5 70%); box-shadow: 0 10px 20px -12px #6b4a3a66; }
+.hx-window i { position: absolute; background: #fff; }
+.hx-window i:first-child { left: 50%; top: 0; bottom: 0; width: 5px; transform: translateX(-50%); }
+.hx-window i:last-child { top: 50%; left: 0; right: 0; height: 5px; transform: translateY(-50%); }
+.hx-clock { position: absolute; right: 13%; top: 13%; width: 9%; aspect-ratio: 1; border: 5px solid #fff; border-radius: 50%; background: #fffaf3; box-shadow: 0 8px 18px -10px #6b4a3a88; }
+.hx-clock i { position: absolute; left: 50%; bottom: 50%; width: 3px; border-radius: 2px; background: #14284b; transform-origin: bottom center; }
+.hx-clock i:first-child { height: 34%; transform: translateX(-50%) rotate(40deg); }
+.hx-clock i:last-child { height: 44%; background: var(--hx-accent); transform: translateX(-50%) rotate(0deg); animation: hx-tick 60s steps(60) infinite; }
+.hx-plant { position: absolute; right: 7%; bottom: 36%; width: 9%; height: 26%; }
+.hx-plant b { position: absolute; left: 15%; right: 15%; bottom: 0; height: 32%; border-radius: 4px 4px 10px 10px; background: linear-gradient(90deg, #e46f67, #c9544d); }
+.hx-plant i { position: absolute; bottom: 26%; left: 40%; width: 28%; height: 70%; border-radius: 50% 50% 0 50%; background: linear-gradient(135deg, #5cc4aa, #2f9a80); transform-origin: bottom center; }
+.hx-plant i:nth-child(1) { transform: rotate(-32deg); }
+.hx-plant i:nth-child(2) { transform: rotate(8deg); height: 80%; }
+.hx-plant i:nth-child(3) { transform: rotate(40deg); height: 60%; }
+.hx-floor { position: absolute; left: 0; right: 0; bottom: 0; height: 38%; background: repeating-linear-gradient(90deg, transparent 0 14%, #00000008 14% 14.4%); }
+.hx-person { left: 50%; bottom: 14%; width: 46%; aspect-ratio: 1; transform: translateX(-50%) translateZ(0); }
+.hx-stage.is-compact .hx-person { width: 50%; }
+.hx-svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 16px 18px #6b4a3a33); }
+.hx-body { transform-origin: 150px 300px; animation: hx-breathe 4.2s ease-in-out infinite; }
+.hx-head { transform-box: view-box; transform-origin: 150px 205px; animation: hx-head-idle 7s ease-in-out infinite; }
+.hx-eyes { transform-box: fill-box; transform-origin: center; animation: hx-blink 5.2s infinite; }
+.hx-pupils { transition: transform 0.4s; }
+.hx-mouth-talk, .hx-mouth-listen { display: none; }
+.hx-mouth-talk { transform-box: fill-box; transform-origin: center top; }
+.hx-speaking .hx-mouth-idle, .hx-listening .hx-mouth-idle, .hx-thinking .hx-mouth-idle { display: none; }
+.hx-speaking .hx-mouth-talk { display: inline; animation: hx-talk 0.42s ease-in-out infinite alternate; }
+.hx-listening .hx-mouth-listen, .hx-thinking .hx-mouth-listen { display: inline; }
+.hx-speaking .hx-head { animation: hx-head-talk 2.4s ease-in-out infinite; }
+.hx-listening .hx-head { animation: hx-head-listen 3.6s ease-in-out infinite; }
+.hx-listening .hx-pupils { transform: translate(2px, 2px); }
+.hx-thinking .hx-pupils { transform: translate(-3px, -4px); }
+.hx-thinking .hx-brows { transform: translateY(-3px); }
+.hx-waves { position: absolute; right: -2%; top: 46%; display: none; width: 22%; aspect-ratio: 1; }
+.hx-waves i { position: absolute; inset: 0; border: 3px solid var(--hx-accent); border-color: transparent var(--hx-accent) transparent transparent; border-radius: 50%; opacity: 0; animation: hx-wave 1.4s ease-out infinite; }
+.hx-waves i:nth-child(2) { animation-delay: 0.45s; }
+.hx-waves i:nth-child(3) { animation-delay: 0.9s; }
+.hx-speaking .hx-waves { display: block; }
+.hx-desk { left: -4%; right: -4%; bottom: -2%; height: 22%; transform: translateZ(60px); border-radius: 14px 14px 0 0; background: linear-gradient(180deg, #c98f5f 0, #b97b4b 16%, #a86b3e 100%); box-shadow: 0 -10px 22px -14px #4b2e1c99, inset 0 4px 0 #dfaa7b; }
+.hx-hand { position: absolute; top: -18%; width: 9%; aspect-ratio: 1.3; border-radius: 50% 50% 45% 45%; background: radial-gradient(circle at 40% 35%, #ffe2cf, #f2b796); box-shadow: 0 4px 6px -3px #6b4a3a77; }
+.hx-hand-l { left: 33%; transform: rotate(-12deg); }
+.hx-hand-r { right: 33%; transform: rotate(12deg); }
+.hx-paper { position: absolute; left: 39%; top: 10%; width: 22%; height: 52%; display: grid; align-content: start; gap: 9%; padding: 4% 3%; border-radius: 4px; background: #fff; box-shadow: 0 6px 10px -6px #4b2e1c88; transform: perspective(200px) rotateX(18deg); }
+.hx-paper i { display: block; height: 4px; border-radius: 2px; background: #cdd8e0; }
+.hx-paper i:nth-child(2) { width: 80%; }
+.hx-paper i:nth-child(3) { width: 60%; }
+.hx-pen { position: absolute; left: 62%; top: 26%; width: 9%; height: 5px; border-radius: 3px; background: linear-gradient(90deg, #14284b 80%, #e8b04a 80%); transform: rotate(-18deg); }
+.hx-recorder { position: absolute; left: 13%; top: 14%; width: 11%; height: 44%; display: grid; place-items: center; border-radius: 9px; background: linear-gradient(180deg, #34435a, #1d2738); box-shadow: 0 6px 10px -6px #000a; }
+.hx-recorder i { width: 9px; height: 9px; border-radius: 50%; background: #66788d; }
+.is-recording .hx-recorder i { background: #ff4d4f; box-shadow: 0 0 0 calc(var(--hx-level, 0) * 9px) #ff4d4f44; animation: hx-rec 1s ease-in-out infinite; }
+.hx-plate { position: absolute; right: 11%; top: 18%; padding: 4px 10px; border-radius: 6px; background: linear-gradient(180deg, #fffaf0, #f1e2c6); color: #5a3423; font: 800 clamp(9px, 1.1vw, 12.5px)/1.2 var(--font-display), sans-serif; letter-spacing: 0.02em; white-space: nowrap; box-shadow: 0 5px 8px -5px #4b2e1c99; }
+
+@keyframes hx-sway { 0%, 100% { translate: 0 0; } 50% { translate: 0 -0.6%; } }
+@keyframes hx-breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.012); } }
+@keyframes hx-head-idle { 0%, 100% { transform: rotate(0deg); } 30% { transform: rotate(-2deg) translateY(1px); } 70% { transform: rotate(1.5deg); } }
+@keyframes hx-head-talk { 0%, 100% { transform: rotate(0deg) translateY(0); } 25% { transform: rotate(-1.5deg) translateY(1.5px); } 50% { transform: rotate(1deg) translateY(-1px); } 75% { transform: rotate(-0.5deg) translateY(2px); } }
+@keyframes hx-head-listen { 0%, 100% { transform: rotate(4deg) translateY(2px); } 45% { transform: rotate(5deg) translateY(4px); } 55% { transform: rotate(5deg) translateY(1px); } }
+@keyframes hx-blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.08); } }
+@keyframes hx-talk { 0% { transform: scaleY(0.25); } 40% { transform: scaleY(0.9); } 70% { transform: scaleY(0.45); } 100% { transform: scaleY(1); } }
+@keyframes hx-wave { 0% { transform: scale(0.4); opacity: 0.9; } 100% { transform: scale(1.3); opacity: 0; } }
+@keyframes hx-rec { 50% { opacity: 0.4; } }
+@keyframes hx-tick { to { transform: translateX(-50%) rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hx-rig, .hx-body, .hx-head, .hx-clock i:last-child { animation: none !important; }
+  .hx-speaking .hx-mouth-talk { animation-duration: 0.8s; }
+}

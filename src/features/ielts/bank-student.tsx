@@ -7,6 +7,8 @@ import { BankCatalog } from "./bank-catalog";
 import { AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
 import { TestRunner } from "./bank-test";
 import { WritingFeedbackPanel, WritingStudio } from "./bank-writing";
+import { SpeakingStudio } from "./bank-speaking";
+import { speakingItems } from "./speaking-kit";
 import "./bank.css";
 
 type Exam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; content?: ExamContent };
@@ -65,7 +67,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const answered = inScope.filter((item) => answers[item.id]).length;
   const setAnswer = (id: string, value: string) => setAnswers({ ...answers, [id]: value });
   const dialog = confirming && <SubmitDialog unanswered={inScope.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />;
-  // Reading and Listening run as a full test sheet; Writing as a studio; Speaking one question at a time.
+  // Reading and Listening run as a full test sheet; Writing and Speaking as studios.
   if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
     <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
     {error && <p className="bx-error" role="alert">{error}</p>}
@@ -78,6 +80,16 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     <WritingStudio exam={exam} content={content} answers={answers} setAnswers={setAnswers} visual={<>{content.figureDescription && <p className="bx-figure"><strong>Mô tả hình:</strong> {content.figureDescription}</p>}{content.imageUrl && <a className="bx-ghost" href={content.imageUrl} target="_blank" rel="noreferrer">Mở hình Task 1</a>}{Boolean(content.visual) && <BankVisual visual={content.visual} />}</>} />
     {dialog}
   </main>;
+  if (content && exam.skill === "Speaking") {
+    const items = speakingItems(content, exam.practice_type);
+    const spoken = items.filter((item) => answers[item.id]).length;
+    return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
+      <ExamBar exam={exam} answered={spoken} total={items.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
+      {error && <p className="bx-error" role="alert">{error}</p>}
+      <SpeakingStudio exam={exam} content={content} answers={answers} setAnswer={setAnswer} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} />
+      {confirming && <SubmitDialog unanswered={items.length - spoken} flagged={0} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />}
+    </main>;
+  }
   return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
     <ExamBar exam={exam} answered={answered} total={questions.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
     {questions.length > 1 && <QuestionNav questions={questions} active={active} answers={answers} flags={flags} onPick={setActive} />}

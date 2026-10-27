@@ -58,7 +58,7 @@ const guide: Record<string, { title: string; points: string[] }[]> = {
 
 const countWords = (text: string) => text.trim().split(/\s+/).filter(Boolean).length;
 
-function Lookup() {
+export function Lookup() {
   const [word, setWord] = useState(""), [busy, setBusy] = useState(false);
   const [result, setResult] = useState<{ word: string; ipa?: string; meanings?: { pos: string; definition: string; meaningVi: string; example: string }[]; error?: string } | null>(null);
   async function lookUp() {

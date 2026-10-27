@@ -11,6 +11,7 @@ import type { IeltsSkill } from "./ielts-live-page";
 import { useIeltsData } from "./use-ielts-data";
 import { plannedModes } from "./planned-modes";
 import { BankLibrary, SkillTabs } from "./bank-library";
+import { SpeakingMockCta } from "./speaking-mock";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
@@ -124,6 +125,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     </section>}
 
     {/* The question bank leads the four exam skills; stats and other study modes follow. */}
+    {skill === "speaking" && <SpeakingMockCta />}
     {showLibrary && bankSkill && <BankLibrary skill={bankSkill} />}
 
     <div className="ielts-dashboard-stats" aria-label="Tiến độ của bạn">
