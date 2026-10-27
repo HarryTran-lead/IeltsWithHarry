@@ -25,6 +25,7 @@ import { useDemo } from "@/features/demo/demo-store";
 import { offsetISO, recommendations, skillColors, todayISO, type Skill } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
 import { LatestNews, StudyRoomCard } from "./dashboard-widgets";
+import { StudyProgress } from "./study-progress";
 import { StageMap, useStageStops } from "@/features/learning/stage-map";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { streakWeek } from "@/lib/account";
@@ -326,6 +327,7 @@ export function Dashboard() {
         {demoMode && <div className="demo-note"><i aria-hidden="true" /> Demo preview · Your changes are saved in this browser</div>}
         <WelcomeBanner />
         <LatestNews />
+        <StudyProgress />
         <LearningPath />
         <div className="dashboard-duo">
           <TodayGoal />

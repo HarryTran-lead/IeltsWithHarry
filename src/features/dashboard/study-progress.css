@@ -1,0 +1,109 @@
+/* Study progress: goals, exam countdown, activity calendar and the weekly table. */
+.study-progress { container-type: inline-size; }
+.sp-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+@container (min-width: 700px) {
+  .sp-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .sp-goals, .sp-stats { grid-column: span 7; }
+  .sp-exam, .sp-calendar { grid-column: span 5; }
+}
+.sp-tone-reading { --sp-accent: #e46f67; --sp-wash: #ffebe7; }
+.sp-tone-listening { --sp-accent: #528add; --sp-wash: #e5efff; }
+.sp-tone-writing { --sp-accent: #cd8d22; --sp-wash: #fff2d5; }
+.sp-tone-speaking { --sp-accent: #c768a0; --sp-wash: #fbe8f4; }
+
+.sp-card { display: flex; flex-direction: column; min-width: 0; padding: 16px 18px; }
+.sp-card .card-head { margin-bottom: 14px; }
+.sp-status { padding: 3px 9px; border-radius: 99px; background: var(--teal-soft); color: var(--teal-strong); font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+
+/* 1. Goals */
+.sp-goal-grid { display: grid; flex: 1; grid-template-columns: 1.15fr repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, auto); gap: 10px; }
+.sp-goal { position: relative; display: grid; align-content: space-between; gap: 6px; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--sp-wash, var(--surface-2)); cursor: pointer; transition: border-color 0.2s, translate 0.3s var(--ease-spring); }
+.sp-goal:hover { border-color: var(--sp-accent, var(--teal)); translate: 0 -2px; }
+.sp-goal:focus-within { border-color: var(--sp-accent, var(--teal)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--sp-accent, var(--teal)) 22%, transparent); }
+.sp-goal > span { display: inline-flex; align-items: center; gap: 6px; color: var(--navy); font-size: 12.5px; font-weight: 700; }
+.sp-goal > span i { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 7px; background: var(--sp-accent); color: #fff; }
+.sp-goal select { width: 100%; padding: 0; border: 0; background: none; color: var(--sp-accent, var(--teal-strong)); font-family: var(--font-display), var(--font-sans), sans-serif; font-size: 26px; font-weight: 800; line-height: 1; cursor: pointer; appearance: none; }
+.sp-goal select:focus-visible { outline: none; }
+.sp-goal::after { content: ""; position: absolute; right: 12px; bottom: 15px; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; color: var(--muted); rotate: 45deg; opacity: 0.55; pointer-events: none; }
+.sp-goal-overall { grid-row: span 2; align-content: center; justify-items: center; text-align: center; border-color: transparent; background: linear-gradient(150deg, var(--teal), var(--teal-strong)); }
+.sp-goal-overall > span, .sp-goal-overall small { color: rgba(255, 255, 255, 0.86); }
+.sp-goal-overall > span { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
+.sp-goal-overall select { color: #fff; font-size: 46px; text-align: center; text-align-last: center; }
+.sp-goal-overall select option, .sp-goal select option { color: var(--navy); font-size: 15px; }
+.sp-goal-overall small { font-size: 11.5px; }
+.sp-goal-overall::after { color: #fff; right: 50%; bottom: 10px; translate: 50% 0; }
+.sp-goal-overall:hover, .sp-goal-overall:focus-within { border-color: transparent; }
+
+/* 2. Exam date */
+.sp-exam { background: linear-gradient(160deg, #eef5ff, #fff 70%); }
+.sp-countdown { display: flex; flex: 1; align-items: baseline; justify-content: center; gap: 8px; min-height: 76px; padding: 4px 0 12px; color: var(--muted); font-size: 15px; font-weight: 600; }
+.sp-countdown strong { color: #2f72c8; font-family: var(--font-display), var(--font-sans), sans-serif; font-size: 54px; font-weight: 800; line-height: 1; }
+.sp-countdown.soon strong { color: #d84b44; }
+.sp-countdown strong.sp-today { font-size: 30px; }
+.sp-countdown p { align-self: center; margin: 0; font-size: 13.5px; text-align: center; }
+.sp-date { display: grid; gap: 5px; color: var(--muted); font-size: 12px; font-weight: 700; }
+.sp-date input { min-height: 40px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 12px; background: #fff; color: var(--navy); font: inherit; font-size: 14px; font-weight: 600; }
+.sp-date input:focus-visible { outline: 2.5px solid var(--teal); outline-offset: 1px; }
+
+/* 3. Activity calendar */
+.sp-calendar .card-head { flex-wrap: wrap; align-items: center; }
+.sp-calendar .head-title { flex: 1 0 auto; }
+.sp-month { display: inline-flex; align-items: center; gap: 4px; color: var(--navy); font-size: 13px; white-space: nowrap; }
+.sp-month button { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 9px; background: #fff; color: var(--navy); }
+.sp-month button:hover:not(:disabled) { border-color: var(--teal); color: var(--teal-strong); }
+.sp-month button:disabled { opacity: 0.4; }
+.sp-month b { min-width: 104px; text-align: center; }
+.sp-error { margin: 0 0 10px; padding: 8px 10px; border-radius: 10px; background: var(--coral-soft); color: #b2392f; font-size: 12.5px; }
+.sp-cal-grid { display: grid; gap: 5px; }
+.sp-cal-row { display: grid; grid-template-columns: 34px repeat(7, minmax(0, 1fr)); gap: 5px; }
+.sp-cal-head span { color: var(--muted); font-size: 11px; font-weight: 700; text-align: center; }
+.sp-cal-week, .sp-cal-day { aspect-ratio: 1; min-height: 30px; max-height: 44px; padding: 0; border: 1.5px solid transparent; border-radius: 10px; font-size: 12.5px; font-weight: 700; transition: background 0.2s, border-color 0.2s, scale 0.25s var(--ease-spring); }
+.sp-cal-week { aspect-ratio: auto; border-color: var(--line); background: #fff; color: var(--muted); font-size: 11px; }
+.sp-cal-week:hover, .sp-cal-week.selected { border-color: var(--teal); color: var(--teal-strong); }
+.sp-cal-week.selected { background: var(--teal-soft); }
+.sp-cal-day { background: var(--surface-2); color: var(--navy); }
+.sp-cal-day:hover:not(:disabled) { scale: 1.08; }
+.sp-cal-day.outside { opacity: 0.45; }
+.sp-cal-day.active { background: #22a660; color: #fff; }
+.sp-cal-day.today { border-color: var(--navy); }
+.sp-cal-day.selected { box-shadow: 0 0 0 2.5px var(--teal); }
+.sp-cal-day:disabled { background: transparent; color: var(--line-strong); cursor: default; }
+.sp-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; color: var(--muted); font-size: 11.5px; }
+.sp-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.sp-legend i { width: 12px; height: 12px; border: 1.5px solid transparent; border-radius: 4px; background: var(--surface-2); }
+.sp-legend i.active { background: #22a660; }
+.sp-legend i.today { border-color: var(--navy); }
+
+/* 4. Weekly table */
+.sp-table-wrap { overflow-x: auto; margin: 0 -4px; }
+.sp-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; font-variant-numeric: tabular-nums; }
+.sp-table th, .sp-table td { padding: 7px 6px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
+.sp-table thead th { color: var(--muted); font-size: 11.5px; font-weight: 700; }
+.sp-table thead th i { display: none; place-items: center; width: 22px; height: 22px; margin: 0 auto; border-radius: 7px; background: var(--sp-accent); color: #fff; font-style: normal; font-size: 11px; }
+.sp-table thead th[class*="sp-tone"] { color: var(--sp-accent); }
+.sp-table tbody th, .sp-table tfoot th, .sp-table thead th:first-child { text-align: left; }
+.sp-table tbody th { color: var(--muted); font-weight: 500; }
+.sp-table tbody th b { display: inline-block; min-width: 24px; color: var(--navy); }
+.sp-table td { color: var(--line-strong); font-weight: 600; }
+.sp-table td.has { color: var(--navy); font-weight: 800; }
+.sp-table tr.today { background: var(--teal-soft); }
+.sp-table tr.today th:first-child { border-radius: 10px 0 0 10px; }
+.sp-table tr.today td:last-child { border-radius: 0 10px 10px 0; }
+.sp-table tr.future th, .sp-table tr.future td { opacity: 0.5; }
+.sp-table tfoot th, .sp-table tfoot td { border-bottom: 0; color: var(--navy); font-weight: 800; }
+.sp-table tfoot tr { background: var(--surface-2); }
+.sp-table tfoot th { border-radius: 10px 0 0 10px; }
+.sp-table tfoot td:last-child { border-radius: 0 10px 10px 0; }
+
+@container (max-width: 520px) {
+  .sp-goal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sp-goal-overall { grid-column: span 2; grid-row: auto; grid-template-columns: auto 1fr auto; align-items: center; justify-items: start; text-align: left; }
+  .sp-goal-overall select { font-size: 36px; text-align: left; text-align-last: left; }
+  .sp-goal-overall::after { right: 14px; bottom: 50%; translate: 0 50%; }
+  .sp-table { font-size: 12px; }
+  .sp-table th, .sp-table td { padding: 7px 3px; }
+  .sp-table thead th i { display: grid; }
+  .sp-th-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .sp-card .card-head { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) { .sp-goal, .sp-cal-day { transition: none; } }
