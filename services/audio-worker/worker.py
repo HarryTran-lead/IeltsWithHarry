@@ -282,30 +282,41 @@ def main() -> None:
         render_job(LocalDB(), KokoroProvider(), job, "local")
         print(json.dumps({"audio": str(output / "pilot-part3.mp3"), "status": "awaiting_human_review"}), flush=True)
         return
+    if len(sys.argv) > 2 or (len(sys.argv) == 2 and sys.argv[1] != "--once"):
+        raise SystemExit("Usage: worker.py [--once | --local-pilot INPUT OUTPUT | --asr-only INPUT AUDIO]")
+    once = len(sys.argv) == 2
     url = os.environ["SUPABASE_URL"].rstrip("/")
     key = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
     db = Supabase(url, key)
     provider: AudioProvider | None = None
     while True:
         token = str(uuid.uuid4())
+        job = None
         try:
-            if provider is None:
-                provider = KokoroProvider()
             job = db.claim(token)
             if not job:
+                if once:
+                    print(json.dumps({"status": "idle"}), flush=True)
+                    return
                 time.sleep(5)
                 continue
+            if provider is None:
+                provider = KokoroProvider()
             render_job(db, provider, job, token)
             print(json.dumps({"job": job["id"], "status": "awaiting_review"}), flush=True)
+            if once:
+                return
         except KeyboardInterrupt:
             return
         except Exception as exc:
-            if "job" in locals() and job:
+            if job:
                 try:
                     db.update(job, token, {"status": "qa_failed" if isinstance(exc, ValueError) else "failed", "error": str(exc)[:1000], "lease_token": None, "lease_until": None})
                 except Exception:
                     pass
             print(json.dumps({"error": str(exc)[:300]}), flush=True)
+            if once:
+                raise SystemExit(1) from exc
             time.sleep(10)
         finally:
             job = None
