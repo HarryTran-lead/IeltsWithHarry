@@ -19,8 +19,9 @@ type PathLesson = StageCourse["units"][number]["lessons"][number];
 /** Whether the course has unit and final checks, and the final check's slug. */
 export function courseChecks(course: StageCourse) {
   const packagePrefix = course.slug.match(/^(foundationv2|preielts|mindsetstarter|mindsetbuilder|mindsetadvanced)-/)?.[1];
+  const band56Pilot = course.stage_id === "ielts-builder" && course.units.some((unit) => unit.slug.startsWith("mindsetbuilder-v3-"));
   return {
-    hasChecks: Boolean(packagePrefix) || course.stage_id === "foundation" || course.stage_id === "elementary",
+    hasChecks: !band56Pilot && (Boolean(packagePrefix) || course.stage_id === "foundation" || course.stage_id === "elementary"),
     finalCheckSlug: `${packagePrefix ?? course.stage_id}-final-check`,
   };
 }

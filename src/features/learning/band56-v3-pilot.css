@@ -1,0 +1,23 @@
+.b56-pilot { display: grid; gap: 1rem; }
+.b56-pilot h3 { margin: .25rem 0; }
+.b56-reading { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+.b56-passage, .b56-questions { min-width: 0; }
+.b56-passage { position: sticky; top: 1rem; max-height: min(75vh, 780px); overflow: auto; padding: 1rem; background: #fffdf7; border: 1px solid #e7ddcd; border-radius: 18px; line-height: 1.8; }
+.b56-passage p { margin: 0 0 1rem; }
+.b56-questions details { margin-bottom: 1rem; padding: .75rem; background: #f5f9fb; border-radius: 14px; }
+.b56-questions ol { padding-left: 1.5rem; }
+.b56-vocab { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .65rem; }
+.b56-vocab > div { display: grid; gap: .25rem; padding: .8rem; border: 1px solid #dce8e9; border-radius: 14px; background: white; }
+.b56-vocab span { color: #176a72; }
+.b56-transcript { padding: .9rem; border-radius: 14px; background: #f5f9fb; }
+.b56-transcript p { white-space: pre-wrap; line-height: 1.7; }
+.b56-writing, .b56-speaking { display: grid; gap: .8rem; }
+.b56-writing textarea { width: 100%; min-height: 260px; padding: 1rem; border: 1px solid #bacbd0; border-radius: 14px; font: inherit; }
+.b56-writing > small, .b56-speaking > small { color: #567; }
+.b56-table { overflow-x: auto; }
+.b56-table table { width: 100%; border-collapse: collapse; background: white; }
+.b56-table th, .b56-table td { border: 1px solid #dce8e9; padding: .6rem; text-align: left; }
+.b56-table caption { text-align: left; font-weight: 700; padding-bottom: .5rem; }
+.b56-timer { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.b56-timer strong { font-size: 1.6rem; font-variant-numeric: tabular-nums; }
+@media (max-width: 780px) { .b56-reading { grid-template-columns: 1fr; } .b56-passage { position: static; max-height: none; } }

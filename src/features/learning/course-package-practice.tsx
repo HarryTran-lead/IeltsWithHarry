@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { TopicArt } from "@/components/illustrations/topic-art";
+import { Band56PilotPractice } from "./band56-v3-pilot";
 import { useOptionalNotebook } from "@/features/notebook/notebook-store";
 import { createClient } from "@/lib/supabase/browser";
 
@@ -124,6 +125,7 @@ export type PackageLesson = {
   speaking_extensions?: { question: string; response_framework: string }[];
   image_url?: string;
   exercise_image_url?: string;
+  v3_pilot?: boolean;
   visual_url?: string;
   unit_objectives?: string[];
   core_outcome?: string;
@@ -1588,6 +1590,7 @@ export function PackageLessonPractice({
   lessonTitle?: string;
 }) {
   if (!content) return null;
+  if (content.v3_pilot) return <Band56PilotPractice content={content} mode={mode} lessonSlug={lessonSlug || ""} />;
   const method = typeof content.study_method === "string" ? content.study_method : content.study_method?.learn;
   const strategy = lines(content.reading_strategy || content.listening_strategy || content.pre_listening || content.exam_strategy);
   const topicLabel = lessonTitle || content.title || "IELTS";

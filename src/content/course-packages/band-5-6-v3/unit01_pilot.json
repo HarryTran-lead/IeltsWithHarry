@@ -1,0 +1,454 @@
+{
+  "unit_id": "L2U01",
+  "title": "The Man-made Environment — original pilot",
+  "read": {
+    "title": "A corridor that changed more than a street",
+    "passage": [
+      [
+        "A",
+        "At first glance, Eastbank is an ordinary neighbourhood on the edge of an expanding city. Its narrow streets contain small shops, blocks of flats and a former railway depot that stood empty for fifteen years. Yet the depot has become the centre of an unusual planning project. Instead of selling the land to a private developer, the local council invited residents to help design a green pedestrian corridor. The aim was not simply to provide a pleasant path. Planners wanted to test whether a connected public space could change the way people travelled, spent money and met their neighbours."
+      ],
+      [
+        "B",
+        "The earliest proposal was quite different from the finished project. Consultants recommended a four-lane road to relieve congestion on the main avenue. Shop owners were attracted by the promise of more parking, but parents feared that additional traffic would make the route to school dangerous. At a public meeting, a local cycling group suggested a continuous walking and bicycle route instead. Residents did not agree immediately. Some wanted better bus services, while others argued that the council should repair existing pavements before building something new. The final plan emerged after three further workshops, rather than from a single vote."
+      ],
+      [
+        "C",
+        "Construction began with the abandoned freight depot. Workers kept its brick walls and roof beams, converting the interior into a covered market and a meeting room. A narrow path connected the building to the riverbank. The project team planted 600 trees along the route and used pale paving to reduce the amount of heat absorbed by the ground. The new trees were initially small, so the council installed temporary shade structures beside the busiest sections. Designers also left wide entrances to allow deliveries early in the morning, although motor vehicles were excluded from the central walkway during normal opening hours."
+      ],
+      [
+        "D",
+        "The opening of the corridor did not solve every transport problem. People travelling across the entire city still depended on buses and cars, and nearby streets remained crowded at peak times. Nevertheless, a household survey found that short local journeys changed noticeably. Many respondents said they now walked to buy basic goods rather than driving to a large supermarket. Researchers were careful not to claim that the corridor caused every change. Fuel prices rose during the same period, and a new bus timetable might also have influenced behaviour. The team therefore described the results as an association, not proof of direct causation."
+      ],
+      [
+        "E",
+        "The most difficult argument concerned the evening programme. Young people wanted the market to stay open late, whereas some households complained about noise after nine o’clock. Market traders negotiated a compromise: indoor stalls would close at ten on Fridays, but amplified music would stop earlier. The council also introduced a telephone line for complaints and agreed to review the arrangement after six months. Those measures were unpopular with a few stallholders, who believed the rules were unnecessarily strict. However, they allowed events to continue without the council cancelling the entire programme."
+      ],
+      [
+        "F",
+        "Paying for the corridor was another challenge. The initial construction budget came from the city’s regeneration fund, while a small share of parking revenue was reserved for routine maintenance. Community volunteers helped with weekend planting, but professional contractors remained responsible for lighting, drainage and major repairs. Economists studying the site warned against calculating value only through market rents. The corridor attracted visitors who did not necessarily buy anything. It also provided space for children to play and older residents to sit outside. Such benefits are difficult to include in a simple financial balance sheet."
+      ],
+      [
+        "G",
+        "Two years after the opening, the project had produced encouraging but incomplete evidence. Air-temperature sensors positioned beside the route recorded lower peak readings on several hot days than sensors near the adjoining asphalt car park. The difference was not identical in every season, and researchers emphasised that the equipment measured local conditions rather than city-wide climate change. Meanwhile, a proposed tram extension remained delayed because of funding problems unrelated to the corridor. The next phase will examine whether the design could work in districts with fewer shops and weaker public transport connections. Eastbank is therefore better seen as an experiment than as a universal model for urban development."
+      ]
+    ],
+    "word_count": 700,
+    "headings": [
+      "i. A debate over competing priorities",
+      "ii. A compromise over events and noise",
+      "iii. The limits of attributing travel changes to one project",
+      "iv. An experiment with promising but restricted evidence",
+      "v. From an empty industrial building to shared space",
+      "vi. The financial and social value of a public walkway",
+      "vii. The history of the city’s first tram system",
+      "viii. A rise in the price of privately owned homes"
+    ],
+    "questions": [
+      {
+        "id": "R01",
+        "type": "headings",
+        "prompt": "Choose a heading for paragraph B.",
+        "options": [
+          "i. A debate over competing priorities",
+          "ii. A compromise over events and noise",
+          "iii. The limits of attributing travel changes to one project",
+          "iv. An experiment with promising but restricted evidence",
+          "v. From an empty industrial building to shared space",
+          "vi. The financial and social value of a public walkway",
+          "vii. The history of the city’s first tram system",
+          "viii. A rise in the price of privately owned homes"
+        ],
+        "answer": "i",
+        "evidence": "B: consultant’s road plan, safety concerns and several workshops."
+      },
+      {
+        "id": "R02",
+        "type": "headings",
+        "prompt": "Choose a heading for paragraph E.",
+        "options": [
+          "i. A debate over competing priorities",
+          "ii. A compromise over events and noise",
+          "iii. The limits of attributing travel changes to one project",
+          "iv. An experiment with promising but restricted evidence",
+          "v. From an empty industrial building to shared space",
+          "vi. The financial and social value of a public walkway",
+          "vii. The history of the city’s first tram system",
+          "viii. A rise in the price of privately owned homes"
+        ],
+        "answer": "ii",
+        "evidence": "E: evening closing hours and noise rules were negotiated."
+      },
+      {
+        "id": "R03",
+        "type": "headings",
+        "prompt": "Choose a heading for paragraph F.",
+        "options": [
+          "i. A debate over competing priorities",
+          "ii. A compromise over events and noise",
+          "iii. The limits of attributing travel changes to one project",
+          "iv. An experiment with promising but restricted evidence",
+          "v. From an empty industrial building to shared space",
+          "vi. The financial and social value of a public walkway",
+          "vii. The history of the city’s first tram system",
+          "viii. A rise in the price of privately owned homes"
+        ],
+        "answer": "vi",
+        "evidence": "F: maintenance finance and benefits that cannot be counted through rent."
+      },
+      {
+        "id": "R04",
+        "type": "headings",
+        "prompt": "Choose a heading for paragraph G.",
+        "options": [
+          "i. A debate over competing priorities",
+          "ii. A compromise over events and noise",
+          "iii. The limits of attributing travel changes to one project",
+          "iv. An experiment with promising but restricted evidence",
+          "v. From an empty industrial building to shared space",
+          "vi. The financial and social value of a public walkway",
+          "vii. The history of the city’s first tram system",
+          "viii. A rise in the price of privately owned homes"
+        ],
+        "answer": "iv",
+        "evidence": "G: promising temperature observations, qualifications and transferability test."
+      },
+      {
+        "id": "R05",
+        "type": "short_answer",
+        "prompt": "Which former building was converted into a market? Use NO MORE THAN TWO WORDS.",
+        "answer": "freight depot",
+        "evidence": "C: “the abandoned freight depot” was converted."
+      },
+      {
+        "id": "R06",
+        "type": "short_answer",
+        "prompt": "How many trees were planted along the corridor? Use ONE NUMBER.",
+        "answer": "600",
+        "evidence": "C: “planted 600 trees along the route”."
+      },
+      {
+        "id": "R07",
+        "type": "short_answer",
+        "prompt": "Which group helped negotiate the evening compromise? Use NO MORE THAN TWO WORDS.",
+        "answer": "market traders",
+        "evidence": "E: “Market traders negotiated a compromise”."
+      },
+      {
+        "id": "R08",
+        "type": "short_answer",
+        "prompt": "What revenue source partly supported routine maintenance? Use NO MORE THAN TWO WORDS.",
+        "answer": "parking revenue",
+        "evidence": "F: “a small share of parking revenue”."
+      },
+      {
+        "id": "R09",
+        "type": "tfng",
+        "prompt": "Every local resident supported the first proposal.",
+        "answer": "FALSE",
+        "evidence": "B: shop owners/parents/cycling group/others disagreed on solutions."
+      },
+      {
+        "id": "R10",
+        "type": "tfng",
+        "prompt": "The temporary shade structures cost more than the new trees.",
+        "answer": "NOT GIVEN",
+        "evidence": "C mentions shade and trees but gives no cost comparison."
+      },
+      {
+        "id": "R11",
+        "type": "tfng",
+        "prompt": "The tram extension was delayed because of contamination near the corridor.",
+        "answer": "FALSE",
+        "evidence": "G: “delayed because of funding problems unrelated to the corridor”."
+      },
+      {
+        "id": "R12",
+        "type": "tfng",
+        "prompt": "Some sensors near the corridor reported lower highest temperatures than sensors near a car park.",
+        "answer": "TRUE",
+        "evidence": "G: temperature sensors beside the route recorded lower peak readings on several hot days."
+      }
+    ]
+  },
+  "vocabulary": [
+    {
+      "en": "public consultation",
+      "vi": "tham vấn cộng đồng",
+      "example": "Public consultation helped planners revise the proposal."
+    },
+    {
+      "en": "pedestrian corridor",
+      "vi": "lối đi bộ kết nối",
+      "example": "The pedestrian corridor links the park and market."
+    },
+    {
+      "en": "urban regeneration",
+      "vi": "tái thiết đô thị",
+      "example": "Urban regeneration can revive neglected buildings."
+    },
+    {
+      "en": "congestion",
+      "vi": "tình trạng ùn tắc",
+      "example": "Congestion remains severe during the evening rush."
+    },
+    {
+      "en": "land use",
+      "vi": "mục đích sử dụng đất",
+      "example": "The council reviewed land use in the district."
+    },
+    {
+      "en": "mixed-use development",
+      "vi": "phát triển đa chức năng",
+      "example": "Mixed-use development combines shops and housing."
+    },
+    {
+      "en": "retail activity",
+      "vi": "hoạt động bán lẻ",
+      "example": "Retail activity rose after the market reopened."
+    },
+    {
+      "en": "community engagement",
+      "vi": "sự tham gia của cộng đồng",
+      "example": "Community engagement improved the final design."
+    },
+    {
+      "en": "travel behaviour",
+      "vi": "hành vi di chuyển",
+      "example": "Travel behaviour may change when walking is convenient."
+    },
+    {
+      "en": "measurable impact",
+      "vi": "tác động đo lường được",
+      "example": "The study looked for a measurable impact."
+    },
+    {
+      "en": "alternative explanation",
+      "vi": "lời giải thích thay thế",
+      "example": "Fuel prices are an alternative explanation."
+    },
+    {
+      "en": "causal relationship",
+      "vi": "quan hệ nhân quả",
+      "example": "A correlation alone does not show a causal relationship."
+    },
+    {
+      "en": "routine maintenance",
+      "vi": "bảo trì thường xuyên",
+      "example": "Parking fees pay for routine maintenance."
+    },
+    {
+      "en": "long-term evaluation",
+      "vi": "đánh giá dài hạn",
+      "example": "Long-term evaluation should follow the initial survey."
+    },
+    {
+      "en": "built environment",
+      "vi": "môi trường xây dựng",
+      "example": "Public squares are part of the built environment."
+    },
+    {
+      "en": "public amenities",
+      "vi": "tiện ích công cộng",
+      "example": "Public amenities are important for older residents."
+    },
+    {
+      "en": "traffic flow",
+      "vi": "luồng giao thông",
+      "example": "The new junction improved traffic flow."
+    },
+    {
+      "en": "pedestrian access",
+      "vi": "lối tiếp cận cho người đi bộ",
+      "example": "Pedestrian access must remain safe."
+    },
+    {
+      "en": "peak temperature",
+      "vi": "nhiệt độ cao nhất",
+      "example": "The sensors recorded a lower peak temperature."
+    },
+    {
+      "en": "funding constraint",
+      "vi": "hạn chế ngân sách",
+      "example": "Funding constraints delayed the tram extension."
+    }
+  ],
+  "grammar": [
+    {
+      "prompt": "The council usually ___ (hold) two consultations a year.",
+      "answer": "holds",
+      "explanation_vi": "usually = thói quen: present simple; council số ít trong văn cảnh này."
+    },
+    {
+      "prompt": "At present, engineers ___ (repair) the drainage system.",
+      "answer": "are repairing",
+      "explanation_vi": "at present = quá trình đang diễn ra: present continuous."
+    },
+    {
+      "prompt": "The share of cyclists ___ (rise) at the moment.",
+      "answer": "is rising",
+      "explanation_vi": "at the moment → present continuous."
+    },
+    {
+      "prompt": "The map ___ (show) the locations of four stations.",
+      "answer": "shows",
+      "explanation_vi": "Miêu tả biểu đồ như một thực tế: present simple."
+    },
+    {
+      "prompt": "Bus use rose ___ 20% ___ 28%.",
+      "answer": "from; to",
+      "explanation_vi": "from A to B là điểm đầu/cuối."
+    },
+    {
+      "prompt": "The increase was ___ eight percentage points.",
+      "answer": "by",
+      "explanation_vi": "from 20% to 28% = tăng 8 percentage points, không phải tăng 8%."
+    },
+    {
+      "prompt": "Cars accounted ___ 62% of trips.",
+      "answer": "for",
+      "explanation_vi": "account for = chiếm tỷ lệ."
+    },
+    {
+      "prompt": "Correct the error: Cycling remained as the smallest category.",
+      "answer": "Cycling remained the smallest category.",
+      "explanation_vi": "remain + noun phrase; bỏ as trong cấu trúc này."
+    }
+  ],
+  "listening": {
+    "title": "Booking an educational visit",
+    "transcript": "Coordinator: Good morning, Eastbank Community Office. You’re speaking to Nina. How can I help?\nResident: Hello. I’m arranging a visit for a small group of postgraduate students. They’re studying transport design and would like to hear about the green corridor.\nCoordinator: Of course. We run guided visits on Thursdays and Saturdays. The Thursday session begins at nine thirty, but the Saturday tour was recently moved. It now starts at ten fifteen, not ten o’clock as the old leaflet says.\nResident: Saturday at ten fifteen would suit us. Is the meeting point still the library annex?\nCoordinator: It used to be. We now meet at the old freight depot, in Pavilion Room B, immediately behind the covered market. Please tell everyone not to wait at the library.\nResident: I’ll make that clear. We have twelve students and two tutors. Is fourteen people too many?\nCoordinator: Fourteen is fine. The normal maximum is sixteen, although we can occasionally divide a bigger group. There’s no fee for educational groups, but you must book in advance.\nResident: That’s helpful. Do we need to bring any equipment?\nCoordinator: A notebook is useful, and closed shoes are recommended because one short section of the path is still being resurfaced. You don’t need safety helmets. Please avoid umbrellas in the indoor demonstration area.\nResident: Will we see the monitoring equipment?\nCoordinator: Yes, though it’s important to understand what the instruments actually measure. They record air temperature at two locations and count people using the walkway. They do not measure pollution directly. Our last report described a local temperature difference, not proof that the corridor changed the whole city’s climate.\nResident: Can the students speak with people who work in the market?\nCoordinator: We can invite a market representative for a short Q-and-A. Please send your questions by Wednesday afternoon. We originally requested them by Monday, but the deadline has been extended.\nResident: Great. One last thing: we’d like to give the students a map. May we print the one on your website?\nCoordinator: Certainly, for this educational visit. The revised map was uploaded yesterday. It includes the entrance on Riverside Lane and the bicycle parking next to the east gate.\nResident: Thank you. I’ll register the group online this evening.\nCoordinator: You’re welcome. We look forward to seeing you.",
+    "questions": [
+      {
+        "id": "L01",
+        "prompt": "What day has the resident chosen?",
+        "answer": "Saturday",
+        "evidence": "the Saturday tour was recently moved ... Saturday at ten fifteen"
+      },
+      {
+        "id": "L02",
+        "prompt": "What is the new starting time?",
+        "answer": "10:15",
+        "evidence": "starts at ten fifteen, not ten o’clock"
+      },
+      {
+        "id": "L03",
+        "prompt": "Which room is the meeting point?",
+        "answer": "Pavilion Room B",
+        "evidence": "old freight depot, in Pavilion Room B"
+      },
+      {
+        "id": "L04",
+        "prompt": "How many people are in the group?",
+        "answer": "14",
+        "evidence": "twelve students and two tutors = fourteen"
+      },
+      {
+        "id": "L05",
+        "prompt": "What is the maximum group size normally allowed?",
+        "answer": "16",
+        "evidence": "normal maximum is sixteen"
+      },
+      {
+        "id": "L06",
+        "prompt": "How much will the educational group pay?",
+        "answer": "0",
+        "evidence": "no fee for educational groups"
+      },
+      {
+        "id": "L07",
+        "prompt": "Which item of footwear is recommended?",
+        "answer": "closed shoes",
+        "evidence": "closed shoes are recommended"
+      },
+      {
+        "id": "L08",
+        "prompt": "What does the equipment NOT measure?",
+        "answer": "pollution",
+        "evidence": "they do not measure pollution directly"
+      },
+      {
+        "id": "L09",
+        "prompt": "By which day must questions reach the office?",
+        "answer": "Wednesday",
+        "evidence": "send your questions by Wednesday afternoon"
+      },
+      {
+        "id": "L10",
+        "prompt": "Which lane contains the entrance?",
+        "answer": "Riverside Lane",
+        "evidence": "entrance on Riverside Lane"
+      }
+    ],
+    "note": "Script only. No natural audio recording provided. Do not brand browser TTS as IELTS-level test audio."
+  },
+  "writing": {
+    "task1": {
+      "data": {
+        "title": "Mode of transport to Eastbank town centre",
+        "unit": "Percentage of all journeys",
+        "years": [
+          "2012",
+          "2024"
+        ],
+        "rows": [
+          [
+            "Car",
+            62,
+            44
+          ],
+          [
+            "Bus",
+            25,
+            34
+          ],
+          [
+            "Bicycle",
+            13,
+            22
+          ]
+        ]
+      },
+      "task": "The table shows the percentage of journeys to Eastbank town centre by three modes of transport in 2012 and 2024. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+      "sample_answer": "The table compares the proportions of journeys made to Eastbank town centre by car, bus and bicycle in 2012 and 2024. Figures are presented as percentages of all journeys. Overall, car travel remained the largest category in both years, although its share fell considerably. In contrast, the proportions of trips made by bus and bicycle increased, with both bus and bicycle travel increasing by nine percentage points. In 2012, cars accounted for 62% of journeys, more than twice the figure for buses, at 25%. Bicycles represented the smallest share, at 13%. By 2024, the proportion of car journeys had declined to 44%, a reduction of 18 percentage points. Over the same period, bus travel rose from 25% to 34%, an increase of 9 percentage points. Cycling also became more common, climbing from 13% to 22%. Despite these gains, the combined share of buses and bicycles, at 56%, was only moderately higher than the proportion of car journeys in the later year.",
+      "sample_word_count": 161,
+      "template": {
+        "introduction": "The table compares ... in [years].",
+        "overview": "Overall, [main category] remained ..., whereas ...",
+        "body_1": "In [year], X accounted for ..., compared with ...",
+        "body_2": "By [year], X had ...; meanwhile, Y ..."
+      },
+      "warnings": [
+        "Không liệt kê từng con số mà thiếu overview.",
+        "Không diễn giải nguyên nhân mà bảng không cung cấp.",
+        "62% to 44% = giảm 18 percentage points, không phải 18%."
+      ]
+    },
+    "task2_extension": {
+      "prompt": "Some people believe that replacing car parks with pedestrian areas is the best way to improve city centres. To what extent do you agree or disagree?",
+      "planning_points": [
+        "Nêu rõ mức độ đồng ý ngay introduction.",
+        "Body 1: lợi ích khả thi (đi bộ/an toàn/tiếp cận).",
+        "Body 2: hạn chế và điều kiện (giao hàng, người khuyết tật, công cộng).",
+        "Kết luận nhắc lại lập trường với điều kiện thay thế."
+      ]
+    }
+  },
+  "speaking": {
+    "part1": [
+      "Do you live in a busy or quiet neighbourhood?",
+      "What public facilities do you use most often?",
+      "How has your area changed in recent years?",
+      "Would you prefer to live near a public park? Why?"
+    ],
+    "part2": "Describe a public place in your city that people use regularly. You should say where it is, what people do there, how it has changed, and explain why it matters to the community.",
+    "part3": [
+      "Should local governments prioritise public transport or parks?",
+      "How can city planning affect people’s health?",
+      "What are some disadvantages of redeveloping older neighbourhoods?",
+      "Who should be consulted before major changes to public spaces?",
+      "Can planners measure the social value of public areas accurately?"
+    ]
+  },
+  "sources": "All pilot content is original; designed from verified book learning objectives without copying textbook items."
+}
