@@ -1,0 +1,100 @@
+{
+ "title": "Đánh giá cuối chặng · IELTS Builder 5.0–6.0",
+ "readings": [
+  {
+   "title": "The library that lends more than books",
+   "strategy": "TRUE/FALSE/NOT GIVEN và short answer: tìm đúng câu chứa ý, chú ý từ giới hạn và giới hạn số từ.",
+   "paragraphs": [
+    ["A", "When the public library in the fictional town of Easton faced cuts to its budget, the head librarian, Ruth Adeyemi, decided to ask residents what they actually needed. Visitor numbers had been falling for a decade, and many people assumed that libraries had become unnecessary in an age of smartphones. The answers to her survey surprised the council."],
+    ["B", "Fewer than a third of residents said they wanted more books. Instead, the most common requests were for things that were expensive to buy but rarely used: tools, sewing machines, camping equipment and musical instruments. Many respondents also asked for quiet places to work, since a growing number of residents were working from home in small flats."],
+    ["C", "Two years later, the library operates a ‘library of things’ alongside its book collection. Members can borrow more than four hundred items, from drills and ladders to telescopes and board games, for up to a week at a time. Items are checked after each loan, and members must attend a short safety session before borrowing power tools."],
+    ["D", "The study rooms on the first floor have been converted into a shared workspace with reliable internet, which can be booked free of charge for up to four hours a day. On weekday mornings, it is often full. Ruth Adeyemi says the workspace has brought in a group of users who had never visited the library before, many of whom now borrow books as well."],
+    ["E", "Visitor numbers have risen by around forty per cent since the changes. Not everyone is pleased, however. Some long-standing members complain that the building has become noisier, and a small group has asked for one floor to be kept strictly for reading. The library is now considering opening a silent reading room on the top floor, which is currently used for storage."]
+   ],
+   "questions": [
+    {"type": "tfng", "prompt": "Visitor numbers at the library had been falling for ten years.", "answer": "TRUE", "why": "Đoạn A: “falling for a decade”."},
+    {"type": "tfng", "prompt": "Most residents wanted the library to buy more books.", "answer": "FALSE", "why": "Đoạn B: ít hơn 1/3 muốn thêm sách."},
+    {"type": "tfng", "prompt": "Members must pay a fee to borrow power tools.", "answer": "NOT GIVEN", "why": "Đoạn C chỉ nói phải tham gia buổi hướng dẫn an toàn, không nói về phí."},
+    {"type": "tfng", "prompt": "Some new workspace users have started borrowing books.", "answer": "TRUE", "why": "Đoạn D: “many of whom now borrow books as well”."},
+    {"type": "short", "prompt": "How many items can members borrow from the ‘library of things’? Write NO MORE THAN THREE WORDS.", "answer": "more than four hundred", "why": "Đoạn C: “more than four hundred items” – chấp nhận 400."},
+    {"type": "short", "prompt": "For how long can the workspace be booked each day? Write NO MORE THAN THREE WORDS.", "answer": "up to four hours", "why": "Đoạn D: “up to four hours a day” – chấp nhận four hours."},
+    {"type": "short", "prompt": "By roughly what percentage have visitor numbers risen? Write A NUMBER.", "answer": "40%", "why": "Đoạn E: “around forty per cent”."},
+    {"type": "short", "prompt": "Which floor might become a silent reading room? Write NO MORE THAN TWO WORDS.", "answer": "top floor", "why": "Đoạn E: “a silent reading room on the top floor”."}
+   ]
+  },
+  {
+   "title": "Can a city measure happiness?",
+   "strategy": "Matching headings và multiple choice: tóm tắt ý chính từng đoạn trước khi đọc danh sách heading.",
+   "headings": [
+    "i. Problems with asking people how they feel",
+    "ii. Why some cities look beyond income",
+    "iii. Using the results to make decisions",
+    "iv. The most popular leisure activities",
+    "v. What the survey asks"
+   ],
+   "paragraphs": [
+    ["A", "For most of the last century, the success of a city was judged mainly by economic measures such as employment, income and the number of new businesses. In recent years, however, several cities have begun to argue that these figures tell only part of the story. A city can grow richer while its residents become more stressed, more isolated and less healthy."],
+    ["B", "The fictional city of Arden now carries out an annual wellbeing survey of ten thousand residents. People are asked how satisfied they are with their lives, how often they feel lonely, whether they trust their neighbours and how easily they can reach green spaces, health services and public transport. The results are published for each district."],
+    ["C", "Critics point out that answers to questions about happiness can be influenced by many temporary factors, from the weather to a recent news story. People may also give answers that they think are expected of them. For this reason, Arden combines the survey with objective data, such as hospital visits, crime figures and the distance from each home to the nearest park."],
+    ["D", "The council says the survey has already changed its priorities. When the results showed high levels of loneliness among older people in two districts, money was moved into community centres and a volunteer visiting scheme. Two years later, reported loneliness in those districts had fallen, although the council admits that other factors may also have contributed."]
+   ],
+   "questions": [
+    {"type": "heading", "paragraph": "A", "prompt": "Choose the best heading for paragraph A.", "answer": "ii. Why some cities look beyond income", "why": "Đoạn A: số liệu kinh tế chỉ là một phần câu chuyện."},
+    {"type": "heading", "paragraph": "B", "prompt": "Choose the best heading for paragraph B.", "answer": "v. What the survey asks", "why": "Đoạn B mô tả các câu hỏi trong khảo sát."},
+    {"type": "heading", "paragraph": "C", "prompt": "Choose the best heading for paragraph C.", "answer": "i. Problems with asking people how they feel", "why": "Đoạn C: câu trả lời bị ảnh hưởng bởi yếu tố tạm thời và kỳ vọng."},
+    {"type": "heading", "paragraph": "D", "prompt": "Choose the best heading for paragraph D.", "answer": "iii. Using the results to make decisions", "why": "Đoạn D: kết quả khảo sát làm thay đổi ưu tiên ngân sách."},
+    {"type": "mcq", "prompt": "How many residents take part in Arden’s survey each year?", "options": ["A. One thousand", "B. Five thousand", "C. Ten thousand", "D. Twenty thousand"], "answer": "C. Ten thousand", "why": "Đoạn B: “ten thousand residents”."},
+    {"type": "mcq", "prompt": "Why does Arden also use objective data?", "options": ["A. Because the survey is too expensive", "B. Because survey answers can be affected by temporary factors", "C. Because residents refuse to answer", "D. Because the government requires it"], "answer": "B. Because survey answers can be affected by temporary factors", "why": "Đoạn C: “For this reason, Arden combines the survey with objective data”."},
+    {"type": "mcq", "prompt": "What does the council admit about the fall in loneliness?", "options": ["A. It was caused only by the new scheme.", "B. Other factors may also have played a part.", "C. It did not really happen.", "D. It happened in every district."], "answer": "B. Other factors may also have played a part.", "why": "Đoạn D: “other factors may also have contributed”."},
+    {"type": "short", "prompt": "Apart from community centres, what did the council fund? Write NO MORE THAN FOUR WORDS.", "answer": "a volunteer visiting scheme", "why": "Đoạn D: “community centres and a volunteer visiting scheme”."}
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Joining a community sports club",
+   "strategies": ["Corrections", "Numbers", "Spelling"],
+   "transcript": "Receptionist: Oakfield Community Sports Club, how can I help?\nCaller: Hi, I’d like to join the club. Could you tell me about membership?\nReceptionist: Sure. Adult membership is twenty-eight pounds a month. If you pay for a whole year in advance, it’s three hundred pounds instead.\nCaller: I’ll pay monthly for now. What’s included?\nReceptionist: The gym, the swimming pool and two group classes a week. Extra classes cost four pounds each.\nCaller: What classes do you have in the evening?\nReceptionist: On Mondays there’s yoga at seven, and on Wednesdays there’s a circuit class. The circuit class used to be at six thirty, but it’s moved to seven fifteen.\nCaller: Great. Can I have a look around first?\nReceptionist: Of course. We do tours every Saturday at eleven. Can I take your name?\nCaller: Yes, it’s Maria Lindgren. L-I-N-D-G-R-E-N.\nReceptionist: Thank you. And your postcode?\nCaller: It’s B-H-four, nine-A-T.\nReceptionist: Lovely. On your first visit, please bring a photo for your membership card, and wear trainers – outdoor shoes aren’t allowed in the gym.\nCaller: Is there parking?\nReceptionist: Yes, it’s free for members, but it gets busy after six, so you might prefer to cycle. We have a secure bike shelter next to the pool entrance.\nCaller: Perfect. See you on Saturday.",
+   "questions": [
+    {"prompt": "Monthly adult membership: £______", "answer": "28", "why": "“twenty-eight pounds a month”."},
+    {"prompt": "Number of group classes included per week: ______", "answer": "2", "why": "“two group classes a week”."},
+    {"prompt": "Cost of each extra class: £______", "answer": "4", "why": "“Extra classes cost four pounds each”."},
+    {"prompt": "Monday evening class: ______", "answer": "yoga", "why": "“On Mondays there’s yoga at seven”."},
+    {"prompt": "New time of the circuit class: ______", "answer": "7:15", "why": "Trước 6:30 (bẫy), nay “seven fifteen”."},
+    {"prompt": "Caller’s surname: ______", "answer": "Lindgren", "why": "Đánh vần L-I-N-D-G-R-E-N."},
+    {"prompt": "Bring on first visit: a ______", "answer": "photo", "why": "“please bring a photo for your membership card”."},
+    {"prompt": "The bike shelter is next to the ______ entrance.", "answer": "pool", "why": "“next to the pool entrance”."}
+   ]
+  },
+  {
+   "title": "Lecture: sleep and learning",
+   "strategies": ["Lecture structure", "Numbers", "Key terms"],
+   "transcript": "Lecturer: Today I’d like to look at a topic that affects every student in this room: the relationship between sleep and learning.\nLet’s start with how much sleep we need. For young adults, most researchers recommend between seven and nine hours a night. Surveys of university students, however, show that a large proportion sleep fewer than six hours during exam periods.\nWhy does this matter? During sleep, the brain does not simply rest. It processes information from the day and strengthens new memories, a process known as consolidation. In one well-known experiment, students who learned a list of words and then slept remembered around twenty per cent more the next day than students who stayed awake for the same period.\nSleep also affects attention. After a night with little sleep, people find it harder to concentrate and make more mistakes, but they often do not realise how much their performance has fallen. In other words, tired students tend to overestimate how well they are working.\nSo what can students do? First, keep a regular schedule, going to bed and getting up at similar times every day, including weekends. Second, reduce screen use in the hour before bed, because light from phones can delay sleep. Third, avoid caffeine in the late afternoon and evening. And finally, if you have to choose between an extra hour of revision late at night and an extra hour of sleep, the evidence suggests that the sleep will usually do more for your results.\nFor next week, please keep a sleep diary for seven days and bring it to the seminar.",
+   "questions": [
+    {"prompt": "Recommended sleep for young adults: seven to ______ hours", "answer": "nine", "why": "“between seven and nine hours”."},
+    {"prompt": "Many students sleep fewer than ______ hours during exams.", "answer": "six", "why": "“fewer than six hours during exam periods”."},
+    {"prompt": "Strengthening new memories during sleep is called ______", "answer": "consolidation", "why": "“a process known as consolidation”."},
+    {"prompt": "Students who slept remembered about ______ more words.", "answer": "20%", "why": "“around twenty per cent more”."},
+    {"prompt": "Tired students tend to ______ how well they are working.", "answer": "overestimate", "why": "“tired students tend to overestimate how well they are working”."},
+    {"prompt": "Light from ______ can delay sleep.", "answer": "phones", "why": "“light from phones can delay sleep”."},
+    {"prompt": "Avoid ______ in the late afternoon and evening.", "answer": "caffeine", "why": "“avoid caffeine in the late afternoon and evening”."},
+    {"prompt": "Homework: keep a sleep ______ for seven days.", "answer": "diary", "why": "“keep a sleep diary for seven days”."}
+   ]
+  }
+ ],
+ "writing_task1": {
+  "prompt": "The table shows the percentage of adults in a city who took part in three types of activity at least once a week in 2015 and 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "headers": ["Activity", "2015", "2025"],
+  "rows": [["Sport or exercise", "41%", "52%"], ["Volunteering", "18%", "14%"], ["Attending a cultural event", "23%", "31%"]],
+  "recommended_words": 150
+ },
+ "writing_task2": {
+  "prompt": "Some people believe that the best way to improve public health is to increase the number of sports facilities. Others think this would have little effect and that other measures are needed. Discuss both views and give your own opinion. Write at least 250 words.",
+  "recommended_words": 250
+ },
+ "speaking": {
+  "part1": ["Where do you live, and what do you like about it?", "How do you usually spend your weekends?", "Do you prefer reading the news or watching it?"],
+  "part2": "Describe a skill that you learned outside school. You should say what the skill is, how you learned it, how long it took, and explain why it is useful to you.",
+  "part3": ["Is it better to learn practical skills from a teacher or by yourself?", "How has technology changed the way people learn new skills?", "Should employers pay for their staff to learn new skills?"]
+ }
+}

@@ -1,0 +1,273 @@
+{
+ "unit_id": "L2U03",
+ "order": 3,
+ "title": "The News and Media",
+ "title_vi": "Tin tức và truyền thông",
+ "objectives": [
+  "Làm dạng matching information: tìm đoạn chứa một thông tin cụ thể",
+  "Nhận ra câu bị động trong bài đọc học thuật và hiểu ai làm hành động",
+  "Mô tả quy trình (process diagram) theo đúng thứ tự bằng câu bị động và từ nối trình tự",
+  "Thảo luận Part 3 về truyền thông: nêu ý kiến, ví dụ và giới hạn của quan điểm"
+ ],
+ "exam_strategy": "Matching information: câu hỏi không theo thứ tự bài và một đoạn có thể dùng nhiều lần; đọc kỹ từng đoạn tìm loại thông tin (ví dụ, lý do, so sánh) chứ không chỉ chủ đề.",
+ "core_outcome": "Xác định đoạn chứa ý chứ không dò từ giống hệt; mô tả quy trình đủ các bước mà không thêm nguyên nhân hay ý kiến.",
+ "vocabulary": [
+  ["media coverage", "sự đưa tin của truyền thông", "The election received wide media coverage."],
+  ["news outlet", "cơ quan báo chí", "Several news outlets reported the story within minutes."],
+  ["editorial decision", "quyết định biên tập", "Choosing the front-page story is an editorial decision."],
+  ["breaking news", "tin nóng", "Breaking news often contains errors that are corrected later."],
+  ["fact-checking", "kiểm chứng thông tin", "Fact-checking takes time but protects a newspaper’s reputation."],
+  ["reliable source", "nguồn tin đáng tin cậy", "Journalists should confirm a story with a reliable source."],
+  ["misinformation", "thông tin sai lệch", "Misinformation spreads quickly on social media."],
+  ["public awareness", "nhận thức của công chúng", "The campaign raised public awareness of road safety."],
+  ["digital platform", "nền tảng số", "Most young people read the news on a digital platform."],
+  ["news consumption", "việc tiếp nhận tin tức", "News consumption has moved from print to phones."],
+  ["headline", "tiêu đề tin", "A misleading headline can change how readers understand a story."],
+  ["press release", "thông cáo báo chí", "The company issued a press release about the new factory."],
+  ["investigative journalism", "báo chí điều tra", "Investigative journalism can take months of research."],
+  ["target audience", "đối tượng khán giả mục tiêu", "The programme’s target audience is teenagers."],
+  ["subscription model", "mô hình thu phí thuê bao", "Many newspapers now rely on a subscription model."],
+  ["advertising revenue", "doanh thu quảng cáo", "Falling advertising revenue forced the paper to close."],
+  ["local newspaper", "báo địa phương", "The local newspaper covers council meetings and school events."],
+  ["social media", "mạng xã hội", "Many people first hear about events on social media."],
+  ["verify information", "xác minh thông tin", "Reporters must verify information before publishing it."],
+  ["disseminate information", "phổ biến thông tin", "Radio is still used to disseminate information in remote areas."]
+ ],
+ "grammar": {
+  "title": "The passive voice and sequence markers",
+  "explanation_vi": "Câu bị động (be + V3) dùng khi hành động quan trọng hơn người làm, rất phổ biến trong tin tức và mô tả quy trình: The story was published. Muốn nói người làm thì thêm by …. Mô tả quy trình dùng present simple passive và các từ trình tự: first, next, after that, once …, finally.",
+  "form": "is/are + V3 (hiện tại) · was/were + V3 (quá khứ) · has/have been + V3 · can/must/will be + V3 · First, … Next, … Once X is done, … Finally, …",
+  "examples": [
+   "The article was written by two journalists and checked by an editor.",
+   "First, the raw news is collected; next, it is checked against reliable sources.",
+   "Once the story has been approved, it is published on the website."
+  ],
+  "examples_vi": [
+   "Bài báo được hai nhà báo viết và một biên tập viên kiểm tra.",
+   "Đầu tiên, tin thô được thu thập; tiếp theo, nó được đối chiếu với nguồn tin đáng tin cậy.",
+   "Khi câu chuyện đã được duyệt, nó được đăng lên trang web."
+  ],
+  "trap": "Không bỏ “be” trong câu bị động (viết “The paper is printed”, không viết “The paper printed” khi tờ báo không tự in). Trong Task 1 quy trình, không thêm lý do hay ý kiến không có trong sơ đồ.",
+  "items": [
+   ["The newspaper ___ (print) every night at 2 a.m.", "is printed", "Quy trình lặp lại, tờ báo không tự in → present simple passive."],
+   ["The interview ___ (record) last Tuesday.", "was recorded", "Hành động trong quá khứ, không cần nêu người làm → past passive."],
+   ["All photos must ___ (check) before publication.", "be checked", "Sau modal must dùng be + V3."],
+   ["The story ___ (share) more than 10,000 times so far.", "has been shared", "so far → present perfect passive."],
+   ["___ the article is approved, it is sent to the website team. (một từ chỉ trình tự)", "Once", "Once = ngay khi/sau khi bước trước xong."],
+   ["The report was written ___ a team of local journalists.", "by", "by + người thực hiện trong câu bị động."],
+   ["Change to passive: Editors choose the main headline.", "The main headline is chosen by editors.", "Tân ngữ → chủ ngữ; choose → is chosen."],
+   ["Correct the error: The news collected from many sources.", "The news is collected from many sources.", "Thiếu be; tin tức không tự thu thập."]
+  ]
+ },
+ "readings": [
+  {
+   "title": "How younger audiences find the news",
+   "strategy": "Matching information: đọc câu hỏi, xác định loại thông tin cần tìm (ví dụ, lời giải thích, con số, so sánh), rồi đọc từng đoạn. Một đoạn có thể là đáp án cho nhiều câu.",
+   "instruction_vi": "Bài đọc khoảng 700 từ, 11 câu: 6 câu matching information (đoạn nào chứa thông tin) và 5 câu short-answer.",
+   "paragraphs": [
+    ["A", "Ask a group of eighteen-year-olds where they last read a news story and very few will mention a newspaper. Most will name an app, a video platform or a message forwarded by a friend. This shift has worried many journalists, who fear that young people are no longer interested in the news. A three-year study of 1,200 people aged sixteen to twenty-four in the fictional country of Valdor suggests a more complicated picture: young people do follow the news, but they meet it in different ways and judge it by different standards."],
+    ["B", "The most common route to the news, the study found, is accidental. Rather than deciding to read about current events, young people usually come across a story while doing something else – scrolling through photos, watching a comedy clip or chatting with friends. Around seventy per cent of participants said that most of the news they saw in a typical week had appeared in this way. Only one in five regularly visited a news website or app on purpose."],
+    ["C", "This accidental exposure has advantages. It brings news to people who might never look for it, including those who say they find politics boring. However, the researchers noted that stories reached participants through systems designed to keep them watching, not to inform them. A dramatic video about a minor event could be seen by millions, while an important but less exciting decision by the government might not appear at all. Several participants admitted that they knew a great deal about celebrity disputes but very little about changes to student loans."],
+    ["D", "Trust was another major theme. Participants did not trust news organisations simply because they were large or well known. Instead, they paid attention to who had shared a story and whether it seemed to be supported by evidence such as videos, documents or interviews. Many said they trusted an ordinary person filming an event more than a news presenter describing it. The researchers pointed out that this attitude can be healthy, since it encourages people to look for proof, but it also makes young audiences vulnerable to edited or misleading clips."],
+    ["E", "When participants did want to understand a story properly, their habits changed. Asked what they did after seeing a surprising claim, nearly half said they searched for the same story on another source to check it. Short explainer videos and podcasts were especially popular for complicated topics such as the economy or climate policy. One participant described podcasts as “the only place where someone explains the whole story, not just the angry part”."],
+    ["F", "Local news presented a particular challenge. Few participants could name a local newspaper or radio station, and many were unaware of decisions made by their town council. Yet when the researchers showed them stories about local issues – a closed youth centre, a new bus route, a plan to build flats on a sports field – interest was high. The problem, the researchers concluded, was not a lack of interest but a lack of contact: local stories rarely appear on the platforms that young people use most."],
+    ["G", "Some news organisations have responded by changing how they work. In Valdor, a regional newspaper now employs two reporters who produce short videos about local stories specifically for social media, and a public broadcaster has started a weekly programme presented by people under twenty-five. Early figures suggest that these efforts reach far more young people than the organisations’ websites, although it is not yet clear whether viewers go on to read longer reports."],
+    ["H", "The study’s authors argue that schools also have a role to play. Teaching students how stories are selected, how images can be edited and how to compare sources could help them make better use of the news they meet by accident. In their view, the aim should not be to persuade young people to return to traditional newspapers, but to help them become careful, questioning readers wherever they find the news."]
+   ],
+   "questions": [
+    {"type": "match", "prompt": "Which paragraph contains an example of a type of content young people prefer for difficult subjects?", "options": ["A", "B", "C", "D", "E", "F", "G", "H"], "answer": "E", "why": "Đoạn E: “Short explainer videos and podcasts were especially popular for complicated topics”."},
+    {"type": "match", "prompt": "Which paragraph contains a reference to news organisations producing content for social media?", "options": ["A", "B", "C", "D", "E", "F", "G", "H"], "answer": "G", "why": "Đoạn G: hai phóng viên làm video ngắn “specifically for social media”."},
+    {"type": "match", "prompt": "Which paragraph contains a statement about how many participants regularly chose to visit a news site?", "options": ["A", "B", "C", "D", "E", "F", "G", "H"], "answer": "B", "why": "Đoạn B: “Only one in five regularly visited a news website or app on purpose”."},
+    {"type": "match", "prompt": "Which paragraph contains a suggestion about what schools could teach?", "options": ["A", "B", "C", "D", "E", "F", "G", "H"], "answer": "H", "why": "Đoạn H: dạy học sinh cách tin được chọn, ảnh bị chỉnh sửa và so sánh nguồn."},
+    {"type": "match", "prompt": "Which paragraph contains a comparison between trust in ordinary people and in news presenters?", "options": ["A", "B", "C", "D", "E", "F", "G", "H"], "answer": "D", "why": "Đoạn D: “trusted an ordinary person filming an event more than a news presenter”."},
+    {"type": "match", "prompt": "Which paragraph contains an explanation of why some important stories are seen by few people?", "options": ["A", "B", "C", "D", "E", "F", "G", "H"], "answer": "C", "why": "Đoạn C: hệ thống được thiết kế để giữ người xem, nên quyết định quan trọng nhưng kém hấp dẫn có thể không xuất hiện."},
+    {"type": "short", "prompt": "How many people took part in the study? Write ONE NUMBER.", "answer": "1,200", "why": "Đoạn A: “a three-year study of 1,200 people”."},
+    {"type": "short", "prompt": "What percentage of participants met most news by accident? Write A NUMBER.", "answer": "70%", "why": "Đoạn B: “Around seventy per cent of participants”."},
+    {"type": "short", "prompt": "What did nearly half of participants do after seeing a surprising claim? Write NO MORE THAN FOUR WORDS.", "answer": "searched another source", "why": "Đoạn E: “searched for the same story on another source to check it” – chấp nhận check another source."},
+    {"type": "short", "prompt": "According to the researchers, local news suffered from a lack of what? Write ONE WORD.", "answer": "contact", "why": "Đoạn F: “not a lack of interest but a lack of contact”."},
+    {"type": "short", "prompt": "Who presents the public broadcaster’s new weekly programme? Write NO MORE THAN SIX WORDS.", "answer": "people under twenty-five", "why": "Đoạn G: “presented by people under twenty-five”."}
+   ]
+  },
+  {
+   "title": "Checking a story before it runs",
+   "strategy": "Bài có nhiều câu bị động: hỏi “ai làm việc này?” để không nhầm người thực hiện. Câu hỏi TRUE/FALSE/NOT GIVEN theo thứ tự bài.",
+   "headings": [],
+   "paragraphs": [
+    ["A", "Every story that appears in the Harbour Times, a fictional regional newspaper, passes through several stages before readers see it. The process was redesigned five years ago after the paper published a report about a factory closure that turned out to be false. The error was not made deliberately: a reporter had relied on a single message from someone who claimed to work at the factory. Since then, no story may be published until at least two independent sources have confirmed its central facts."],
+    ["B", "The first stage is collection. Information arrives from many places – press releases, phone calls, court records, social media posts and the paper’s own reporters. Each item is logged in a shared system, together with a note about where it came from. Material from social media is treated with particular care, and any photo or video is examined to find out when and where it was originally recorded."],
+    ["C", "Next, the story is written and passed to a section editor, who checks that it is fair and that every claim can be supported. If a person or organisation is criticised, they must be contacted and given a chance to respond before publication. The editor may also ask for numbers to be checked against official records, because figures are where many mistakes occur."],
+    ["D", "Once the section editor is satisfied, the story is sent to the night desk, where headlines are written and photos are selected. This is often where conflicts arise. A strong headline attracts readers, but it can also exaggerate what the story actually says. The paper’s rule is that a headline must not make any claim that is not supported in the first three paragraphs of the article."],
+    ["E", "The new process is slower, and reporters admit that the paper is sometimes beaten by rival outlets that publish first. However, the editor-in-chief believes the delay is worth it. Since the changes were introduced, the number of corrections the paper has had to publish has fallen by more than half, and a reader survey found that trust in the paper had increased, particularly among people over forty."]
+   ],
+   "questions": [
+    {"type": "tfng", "prompt": "The newspaper changed its process after publishing an inaccurate story.", "answer": "TRUE", "why": "Đoạn A: quy trình được thiết kế lại sau một bài sai về việc đóng cửa nhà máy."},
+    {"type": "tfng", "prompt": "The reporter who wrote the false story was dismissed.", "answer": "NOT GIVEN", "why": "Bài không nói phóng viên có bị sa thải hay không."},
+    {"type": "tfng", "prompt": "Stories now need confirmation from at least two independent sources.", "answer": "TRUE", "why": "Đoạn A: “until at least two independent sources have confirmed its central facts”."},
+    {"type": "tfng", "prompt": "Photos from social media are published without being examined.", "answer": "FALSE", "why": "Đoạn B: ảnh/video được kiểm tra thời gian và nơi ghi hình."},
+    {"type": "tfng", "prompt": "People who are criticised in a story must be given a chance to reply.", "answer": "TRUE", "why": "Đoạn C: “they must be contacted and given a chance to respond”."},
+    {"type": "short", "prompt": "Where does the editor check numbers? Write NO MORE THAN THREE WORDS.", "answer": "official records", "why": "Đoạn C: “checked against official records”."},
+    {"type": "short", "prompt": "Which team writes the headlines? Write NO MORE THAN THREE WORDS.", "answer": "the night desk", "why": "Đoạn D: “sent to the night desk, where headlines are written”."},
+    {"type": "short", "prompt": "A headline must be supported by the first how many paragraphs? Write ONE NUMBER.", "answer": "3", "why": "Đoạn D: “the first three paragraphs” – 3 hoặc three."},
+    {"type": "short", "prompt": "By how much has the number of corrections fallen? Write NO MORE THAN FOUR WORDS.", "answer": "more than half", "why": "Đoạn E: “fallen by more than half”."}
+   ]
+  },
+  {
+   "title": "The radio station that kept a town informed",
+   "strategy": "Matching information + short answer: gạch dưới loại thông tin trong câu hỏi (nguyên nhân, kết quả, thời gian) trước khi quét bài.",
+   "headings": [],
+   "paragraphs": [
+    ["A", "When a storm cut electricity and mobile signals across the mountain town of Ridgeway for four days, most residents had no way of reading the news online. What they did have was battery radios, and a small community station run largely by volunteers became the town’s main source of information. Its two studios were in the basement of the library, which had a back-up generator."],
+    ["B", "The station normally broadcasts music and local talk shows for about eight hours a day. During the emergency, it stayed on air around the clock. Volunteers read out which roads were blocked, where drinking water was available and which shops had opened. Residents who had heard the information passed it on to neighbours, so even people without radios were reached."],
+    ["C", "Accuracy was a constant concern. Rumours spread quickly in the town, including a false report that the dam above the valley was about to fail. The station decided that nothing would be announced unless it had been confirmed by the emergency services or by a volunteer who had seen the situation in person. When the dam rumour was investigated and found to be untrue, the station broadcast a clear correction every hour for a day."],
+    ["D", "Since the storm, the station has received funding from the regional council to install a larger generator and train more volunteers. It has also agreed a plan with the emergency services so that, in a future crisis, official announcements can be made directly from the studio. Station managers say the experience showed that new technology does not make older media unnecessary; it simply changes when they are most valuable."],
+    ["E", "Listening figures have also changed. Before the storm, an estimated one in eight households tuned in at least once a week. A survey taken three months afterwards found that this had risen to one in three, and many new listeners said they had kept the habit because the station covered local events that national programmes ignored. The managers now plan a weekly programme in which residents can question council members live on air."]
+   ],
+   "questions": [
+    {"type": "match", "prompt": "Which paragraph describes how information reached people without radios?", "options": ["A", "B", "C", "D", "E"], "answer": "B", "why": "Đoạn B: người nghe truyền lại cho hàng xóm."},
+    {"type": "match", "prompt": "Which paragraph explains the station’s rule for announcing information?", "options": ["A", "B", "C", "D", "E"], "answer": "C", "why": "Đoạn C: chỉ thông báo khi đã được xác nhận."},
+    {"type": "match", "prompt": "Which paragraph mentions a change in the number of listeners?", "options": ["A", "B", "C", "D", "E"], "answer": "E", "why": "Đoạn E: từ 1/8 lên 1/3 hộ gia đình."},
+    {"type": "match", "prompt": "Which paragraph describes preparations for a future emergency?", "options": ["A", "B", "C", "D", "E"], "answer": "D", "why": "Đoạn D: máy phát lớn hơn, đào tạo tình nguyện viên, kế hoạch với lực lượng khẩn cấp."},
+    {"type": "short", "prompt": "For how many days were electricity and mobile signals cut? Write ONE NUMBER.", "answer": "4", "why": "Đoạn A: “for four days”."},
+    {"type": "short", "prompt": "In which building were the station’s studios? Write ONE WORD.", "answer": "library", "why": "Đoạn A: “in the basement of the library”."},
+    {"type": "short", "prompt": "What did a false rumour say might fail? Write ONE WORD.", "answer": "dam", "why": "Đoạn C: tin đồn về “the dam above the valley”."},
+    {"type": "short", "prompt": "Who will residents be able to question in the planned weekly programme? Write NO MORE THAN THREE WORDS.", "answer": "council members", "why": "Đoạn E: “question council members live on air”."}
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "A student radio interview",
+   "section": "Section 3 · notes completion",
+   "strategy": "Notes completion: câu hỏi theo thứ tự bài nói; đọc tiêu đề các phần của ghi chú để biết lúc nào chuyển sang ý mới.",
+   "pre_listening": "Trước khi nghe: xem mỗi chỗ trống cần danh từ, số hay tính từ.",
+   "trap": "Hai người nói có thể đưa con số khác nhau; đáp án là con số được xác nhận cuối cùng.",
+   "strategies": ["Note headings", "Word type", "Confirmed numbers"],
+   "transcript": "Presenter: Welcome back to Campus Talk. Today I’m with Leila and Marco, who run the university’s student radio station. Leila, how did the station start?\nLeila: It was set up in 2016 by three media students as part of a course project. At first it only broadcast online for two hours a week.\nPresenter: And now?\nMarco: Now we’re on air for about forty hours a week. We thought it was fifty, actually, but when we counted last month it was closer to forty.\nPresenter: Who listens?\nLeila: Mostly students, of course, but our surveys show that about a quarter of listeners are local residents, which surprised us. We think they like the local news bulletin we added last year.\nPresenter: What’s the hardest part of running the station?\nMarco: Definitely finding volunteers for the early shows. Everyone wants to present in the evening, but nobody wants to be in the studio at seven in the morning.\nLeila: And equipment. Our microphones are quite old. We’ve applied for a grant from the students’ union to replace them.\nPresenter: How do you train new presenters?\nLeila: Everyone does a four-week course. In the first week they learn how the mixing desk works, then they practise interviews, and in the final week they record a short programme that we play to the committee.\nPresenter: Does the station help people find jobs?\nMarco: It does. Several of our former presenters now work in commercial radio, and one is a producer at a national news channel. Employers like to see that you’ve worked to deadlines and dealt with live problems.\nPresenter: Finally, how can listeners get involved?\nLeila: Come to our open evening on the twelfth of November, in the Media building, room two-oh-four. No experience needed – just bring an idea for a show.",
+   "questions": [
+    {"prompt": "Year the station was set up: ______", "answer": "2016", "why": "“It was set up in 2016”."},
+    {"prompt": "Original broadcasting time: ______ hours a week", "answer": "2", "why": "“only broadcast online for two hours a week”."},
+    {"prompt": "Current broadcasting time: about ______ hours a week", "answer": "40", "why": "Họ tưởng 50 nhưng đếm lại “closer to forty” (bẫy)."},
+    {"prompt": "Proportion of listeners who are local residents: about a ______", "answer": "quarter", "why": "“about a quarter of listeners are local residents”."},
+    {"prompt": "Hardest part: finding volunteers for the ______ shows", "answer": "early", "why": "“finding volunteers for the early shows”."},
+    {"prompt": "Equipment that needs replacing: ______", "answer": "microphones", "why": "“Our microphones are quite old.”"},
+    {"prompt": "Length of training course: ______ weeks", "answer": "4", "why": "“a four-week course”."},
+    {"prompt": "Open evening date: 12th ______", "answer": "November", "why": "“the twelfth of November”."},
+    {"prompt": "Open evening room: ______", "answer": "204", "why": "“room two-oh-four” trong Media building."}
+   ]
+  },
+  {
+   "title": "Morning news bulletin",
+   "section": "Section 2 · short answers",
+   "strategy": "Bản tin có nhiều tin ngắn; nghe tín hiệu chuyển tin (“In other news…”, “Turning to…”) và chú ý số liệu.",
+   "strategies": ["News signposts", "Numbers", "Place names"],
+   "transcript": "Newsreader: Good morning. Here are today’s local headlines.\nThe city council has approved plans for a new cycle route along the river. The route will be eight kilometres long and is expected to open next spring. Councillors said the decision followed a public consultation in which more than three thousand residents took part.\nIn other news, the Central Library will close for two weeks from Monday while its heating system is replaced. During this time, books can be returned at the Hillview community centre. Online services will not be affected.\nTurning to transport, passengers on the number fourteen bus should expect delays this week because of road works on Station Street. The bus company has added three extra services in the morning to reduce overcrowding.\nA local secondary school has won a national award for its student newspaper. The paper, called The Green Pages, is written entirely by students aged thirteen to sixteen and is published every month. The judges praised its reporting on plastic waste in the town’s parks.\nFinally, the weather. It will be cloudy this morning with some light rain, clearing by the afternoon. The highest temperature will be fourteen degrees, falling to around five overnight. That’s all for now; the next bulletin is at nine o’clock.",
+   "questions": [
+    {"prompt": "Length of the new cycle route: ______ km", "answer": "8", "why": "“eight kilometres long”."},
+    {"prompt": "When is the cycle route expected to open?", "answer": "next spring", "why": "“expected to open next spring”."},
+    {"prompt": "How long will the library close?", "answer": "two weeks", "why": "“close for two weeks from Monday”."},
+    {"prompt": "Where can library books be returned during the closure? (place name)", "answer": "Hillview community centre", "why": "“returned at the Hillview community centre”."},
+    {"prompt": "Which bus will be delayed? Number ______", "answer": "14", "why": "“the number fourteen bus”."},
+    {"prompt": "How many extra morning services have been added?", "answer": "3", "why": "“three extra services in the morning”."},
+    {"prompt": "Name of the student newspaper: The ______ Pages", "answer": "Green", "why": "“called The Green Pages”."},
+    {"prompt": "Highest temperature today: ______ degrees", "answer": "14", "why": "“The highest temperature will be fourteen degrees”."}
+   ]
+  },
+  {
+   "title": "Lecture: how a news story travels",
+   "section": "Section 4 · lecture notes",
+   "strategy": "Section 4 là bài giảng một người nói, không nghỉ giữa chừng; theo dõi các bước của quy trình và từ nối trình tự.",
+   "strategies": ["Process stages", "Sequence markers", "Academic vocabulary"],
+   "transcript": "Lecturer: Today I want to trace the journey of a single news story, from the moment something happens to the moment you read about it on your phone. I’ll describe five stages.\nThe first stage is the event itself and the first report of it. Increasingly, the first report does not come from a journalist at all, but from a witness with a smartphone. In one study of major incidents, around sixty per cent of first images came from members of the public.\nThe second stage is verification. A newsroom that receives a video must establish whether it is genuine, when it was filmed and where. Journalists compare details such as weather, shadows and street signs with other information. This stage is often skipped by smaller websites, which is one reason misleading clips spread so fast.\nThird comes framing. Editors decide what kind of story this is – a crime story, a political story, a human-interest story – and that decision shapes the headline, the images and the experts who are interviewed. Two outlets can report the same facts but frame them very differently.\nThe fourth stage is distribution. Here the story is no longer controlled by the newsroom. It is shared, commented on and cut into shorter versions. Research suggests that most people who share a news article on social media have not read beyond the headline.\nThe final stage, and the one most often forgotten, is correction. When errors are found, responsible outlets publish corrections, but these reach only a small fraction of the people who saw the original. For your assignment, I’d like you to choose one recent story and identify where it was framed, and by whom.",
+   "questions": [
+    {"prompt": "Number of stages described: ______", "answer": "5", "why": "“I’ll describe five stages.”"},
+    {"prompt": "Stage 1: first images increasingly come from a witness with a ______", "answer": "smartphone", "why": "“a witness with a smartphone”."},
+    {"prompt": "Percentage of first images from the public in one study: ______", "answer": "60%", "why": "“around sixty per cent of first images”."},
+    {"prompt": "Stage 2 (verification): journalists compare weather, shadows and street ______", "answer": "signs", "why": "“weather, shadows and street signs”."},
+    {"prompt": "Stage 3 is called ______", "answer": "framing", "why": "“Third comes framing.”"},
+    {"prompt": "Stage 4: most people who share an article have only read the ______", "answer": "headline", "why": "“have not read beyond the headline”."},
+    {"prompt": "The stage most often forgotten: ______", "answer": "correction", "why": "“The final stage, and the one most often forgotten, is correction.”"},
+    {"prompt": "Assignment: identify where a story was framed and by ______", "answer": "whom", "why": "“identify where it was framed, and by whom”."}
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 1 – process diagram",
+  "instruction_vi": "Mô tả từng bước của quy trình theo đúng thứ tự bằng câu bị động và từ nối trình tự; overview nêu số bước, điểm bắt đầu và kết thúc. Viết ít nhất 150 từ.",
+  "task": "The diagram below shows how a local newspaper is produced, from collecting news to delivery. Summarise the information by selecting and reporting the main features. Write at least 150 words.",
+  "data_visual": {"headers": ["Stage", "What happens", "Who / where"], "rows": [["1", "News is collected (press releases, reporters, readers)", "Newsroom"], ["2", "Stories are written and facts are checked", "Reporters and editors"], ["3", "Pages are designed and headlines are added", "Design team"], ["4", "Pages are approved and sent electronically", "Chief editor → printing works"], ["5", "Newspapers are printed overnight", "Printing works"], ["6", "Copies are delivered to shops and homes", "Delivery vans"]]},
+  "sample_answer": "The diagram illustrates the stages involved in producing a local newspaper, from the collection of news to the delivery of printed copies.\n\nOverall, the process consists of six main stages, beginning in the newsroom and ending when the newspaper reaches shops and homes. The first four stages are concerned with preparing the content, while the last two involve printing and distribution.\n\nAt the start of the process, news is collected from a range of sources, including press releases, the paper’s own reporters and readers. The stories are then written by reporters, and their facts are checked by editors. After that, the pages are designed by a specialist team, and headlines are added.\n\nOnce the pages have been approved by the chief editor, they are sent electronically to the printing works. There, the newspapers are printed overnight. Finally, the printed copies are loaded into delivery vans and taken to shops and homes, where they are available to readers the following morning.",
+  "guidance": [
+   "Câu mở đầu: paraphrase (shows how … is produced → illustrates the stages involved in producing …).",
+   "Overview: số bước, bước đầu và bước cuối, chia thành nhóm giai đoạn.",
+   "Thân bài 1: các bước chuẩn bị nội dung (bị động + first/then/after that).",
+   "Thân bài 2: in ấn và phân phối (once …, finally …)."
+  ],
+  "micro": [
+   ["Chuyển sang bị động: Reporters write the stories.", "The stories are written by reporters."],
+   ["Nối hai bước bằng “once”: pages approved / pages sent", "Once the pages have been approved, they are sent to the printing works."],
+   ["Viết câu overview cho quy trình 6 bước.", "Overall, the process consists of six stages, from collecting news to delivering the printed newspaper."],
+   ["Thay “then” bằng một từ nối khác.", "After that / Subsequently / Following this"],
+   ["Sửa: The newspapers print overnight.", "The newspapers are printed overnight."]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 1. The diagram shows how a television news report is prepared and broadcast. Summarise the information by selecting and reporting the main features. Write at least 150 words.",
+  "essay": {
+   "prompt": "Some people believe that the news media have too much influence on people’s opinions. To what extent do you agree or disagree?",
+   "planning_prompts": [
+    "Mở bài: nêu rõ bạn đồng ý ở mức nào.",
+    "Thân bài 1: truyền thông ảnh hưởng thế nào (chọn tin, cách đặt tiêu đề, lặp lại).",
+    "Thân bài 2: giới hạn của ảnh hưởng (người đọc chủ động, nhiều nguồn, kinh nghiệm cá nhân).",
+    "Kết luận: quan điểm cân bằng và một đề xuất."
+   ],
+   "model_paragraphs": [
+    "The news media play a central role in how people understand events they cannot see for themselves. Some argue that this role has become too powerful and that newspapers, television channels and websites now shape public opinion too strongly. I partly agree: the media have considerable influence, but readers are not simply passive receivers of whatever they are told.",
+    "There is no doubt that the media influence what people think about. By choosing which stories appear on the front page or at the top of a news app, editors decide which issues the public considers important. The way a story is framed also matters. A headline that describes a protest as “violent” rather than “large” will lead many readers to a particular view before they have read any details, and repeating the same angle over several days can make it seem like common sense.",
+    "However, this influence has clear limits. Most people today receive news from many different sources, and contradictory reports make it harder for any single outlet to control opinion. People also judge stories against their own experience. A newspaper may claim that a local hospital is failing, but residents who have received good care there are unlikely to accept that view. Furthermore, studies suggest that readers often choose media that confirm what they already believe, which means the media may reinforce opinions more often than they create them.",
+    "For these reasons, the main risk is not that the media control people’s minds, but that some audiences rely on too few sources. Encouraging people to compare reports and to check claims is therefore more effective than trying to limit the media.",
+    "In conclusion, the news media certainly influence public opinion, particularly by deciding which issues receive attention. Nevertheless, their power is balanced by the variety of sources available and by readers’ own judgement."
+   ]
+  },
+  "drills": [
+   ["Sửa lỗi: The news are checked by editors.", "The news is checked by editors.", "news là danh từ không đếm được → động từ số ít."],
+   ["Sửa lỗi: Firstly, the newspaper print at night.", "First, the newspaper is printed at night.", "Thiếu be trong bị động; “First” tự nhiên hơn trong quy trình."],
+   ["Viết lại khách quan hơn: The diagram shows a very good process.", "The diagram shows the stages in the process.", "Task 1 không đưa nhận xét/ý kiến."],
+   ["Sửa lỗi: After the pages designed, they are sent.", "After the pages have been designed, they are sent.", "Mệnh đề sau after cần động từ đầy đủ: have been designed."],
+   ["Sửa lỗi: The media has big influence to people.", "The media have a strong influence on people.", "influence on (không phải to); dùng strong/considerable thay big."],
+   ["Viết lại học thuật hơn: Everybody believes what the news says.", "Many people tend to accept what they read in the news.", "Tránh khái quát tuyệt đối (everybody); dùng many people tend to."]
+  ]
+ },
+ "speaking": {
+  "title": "News, media and information",
+  "instruction_vi": "Part 3 cần nêu ý kiến, giải thích và cho ví dụ; tập dùng các cụm nêu quan điểm và thừa nhận mặt còn lại.",
+  "focus": "Nêu ý kiến rồi giới hạn nó (“That said…”, “It depends on…”); nhấn trọng âm câu vào từ mang thông tin chính.",
+  "part1": [
+   "How do you usually find out about the news?",
+   "Do you prefer reading the news or watching it?",
+   "Did your family read newspapers when you were a child?",
+   "What kind of news stories interest you most?"
+  ],
+  "part2": "Describe a news story that you remember well. You should say what the story was about, when and how you heard about it, what you thought about it, and explain why you remember it.",
+  "part3": [
+   "Why do some false news stories spread so quickly?",
+   "Should social media companies be responsible for checking the news on their platforms?",
+   "Do you think local news is still important today?"
+  ],
+  "model_answer": "The news story I remember best is about a group of students in my city who cleaned up a river that had been full of rubbish for years. I first saw it on social media about two years ago – someone shared a short video showing the river before and after – and later I read a longer article about it on a news website. What impressed me was that it wasn’t organised by the government or a big company. It started with just five university students who went there every weekend, and gradually hundreds of local people joined them. At first I thought the video might be exaggerated, so I actually went to see the river myself, and it really was much cleaner. I remember the story because most of the news we see is negative – accidents, prices going up, arguments between politicians – and this was one of the few stories that made me feel ordinary people can change something.",
+  "extensions": [
+   ["Why do some false news stories spread so quickly?", "Hai lý do: tin giả gây cảm xúc mạnh, và người ta chia sẻ trước khi đọc → ví dụ → kết: kiểm tra nguồn trước khi chia sẻ."],
+   ["Should social media companies be responsible for checking the news on their platforms?", "Đồng ý một phần → họ có công nghệ và lợi nhuận → khó khăn: quá nhiều nội dung, nguy cơ kiểm duyệt → giải pháp chung với người dùng."],
+   ["Do you think local news is still important today?", "Có → tin địa phương ảnh hưởng trực tiếp (đường, trường, giá) → ví dụ → thách thức: báo địa phương thiếu tiền."],
+   ["Will printed newspapers disappear in the future?", "Dự đoán (phần lớn, nhưng không hết) → lý do: điện thoại, chi phí → nhóm vẫn đọc báo giấy → kết luận."]
+  ]
+ },
+ "checkpoint": [
+  ["In a matching information task, can the same paragraph be the answer to more than one question?", ["Never", "Only in the last question", "Yes, if the instructions allow it", "Only for paragraph A"], "Yes, if the instructions allow it", "Đề thường ghi “You may use any letter more than once”."],
+  ["Choose the correct passive sentence.", ["The story was publish yesterday.", "The story published yesterday.", "The story was published yesterday.", "The story has publish yesterday."], "The story was published yesterday.", "Past passive: was + V3."],
+  ["Which linking word best shows that one step must finish before the next begins?", ["However", "Once", "Although", "Because"], "Once", "Once = ngay khi bước trước đã xong."],
+  ["What should NOT appear in a Task 1 process description?", ["Sequence markers", "The number of stages", "Your opinion about the process", "Passive verbs"], "Your opinion about the process", "Task 1 chỉ mô tả, không đánh giá."],
+  ["A listener hears “We thought it was fifty, but it was closer to forty.” What is the answer?", ["50", "40", "45", "90"], "40", "Con số được xác nhận cuối cùng mới là đáp án."]
+ ],
+ "reflection": [
+  "Trong matching information, bạn có bị lừa bởi đoạn chỉ cùng chủ đề nhưng không chứa đúng thông tin không?",
+  "Bài mô tả quy trình của bạn đã đủ các bước và dùng bị động đúng chưa?"
+ ]
+}

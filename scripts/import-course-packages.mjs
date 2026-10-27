@@ -15,10 +15,14 @@ const specs = {
   "ESL-IELTS-BUILDER-5-6": { stage: "ielts-builder", slug: "mindsetbuilder-topic-practice-5-6", prefix: "mindsetbuilder", units: 8, label: "IELTS Builder 5.0–6.0" },
   "ESL-IELTS-ADVANCED-6-7PLUS": { stage: "ielts-advanced", slug: "mindsetadvanced-topic-practice-6-7", prefix: "mindsetadvanced", units: 8, label: "IELTS Advanced 6.0–7.0+" },
   "ESL-MINDSET-L3-IELTS-ADVANCED-V2": { stage: "ielts-advanced", slug: "mindsetadvanced-topic-practice-6-7", prefix: "mindsetadvanced", units: 8, label: "IELTS Advanced 6.0–7.0+ · Bản V2", advancedV2: true },
+  // Built from content/ielts-builder-5-6-v3; same course and lesson slugs as the first Builder package, so progress carries over.
+  "ESL-IELTS-BUILDER-5-6-V3": { stage: "ielts-builder", slug: "mindsetbuilder-topic-practice-5-6", prefix: "mindsetbuilder", units: 8, label: "IELTS Builder 5.0–6.0", advancedV2: true, audioCount: 34, replaceVocabulary: true },
 };
 const skills = { vocabulary: "Vocabulary", grammar: "Grammar", reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking" };
 const paths = process.argv.slice(2).filter((arg) => arg.toLowerCase().endsWith(".zip"));
 const apply = process.argv.includes("--apply");
+// Imports a package whose audio is not finished yet; lessons without an MP3 fall back to the browser voice.
+const partialAudio = process.argv.includes("--partial-audio");
 if (!paths.length) throw new Error("Pass at least one course ZIP");
 
 const packs = paths.map((path) => {
@@ -45,7 +49,7 @@ const packs = paths.map((path) => {
       };
     }
     for (const listening of course.diagnostic.listening ?? []) listening.audio_file = `audio/${listening.audio_filename}`;
-    course.final_assessment = { title: "Đánh giá cuối chặng · IELTS Advanced V2" };
+    course.final_assessment = { title: course.final_title ?? "Đánh giá cuối chặng · IELTS Advanced V2" };
     course.final_assessment_v2 = {
       reading: course.diagnostic.reading.map((item) => ({ title: item.title, passage: item.paragraphs.join("\n\n"), questions: item.questions })),
       listening: course.diagnostic.listening.map((item) => ({ ...item, audio_file: item.audio_file })),
@@ -56,16 +60,22 @@ const packs = paths.map((path) => {
   if (spec.replace && (course.intro_modules?.length !== 5 || course.schema_version !== "2.0.0")) throw new Error(`${path}: incomplete Foundation V2`);
   const lessonIds = new Set();
   const referencedAudio = new Set();
+  const missingAudio = [];
+  const needAudio = (ref) => {
+    if (files[ref]) return;
+    if (!partialAudio) throw new Error(`${path}: missing ${ref}`);
+    missingAudio.push(ref);
+  };
   for (const unit of course.units) {
     if (unit.lessons?.length !== 6 || new Set(unit.lessons.map((lesson) => lesson.type)).size !== 6 ||
       unit.lessons.some((lesson) => !skills[lesson.type])) throw new Error(`${path}: invalid lessons in ${unit.unit_id}`);
     for (const lesson of unit.lessons) {
       if (lessonIds.has(lesson.id)) throw new Error(`${path}: duplicate lesson ${lesson.id}`);
       lessonIds.add(lesson.id);
-      if (lesson.audio_file && !files[lesson.audio_file]) throw new Error(`${path}: missing ${lesson.audio_file}`);
+      if (lesson.audio_file) needAudio(lesson.audio_file);
       if (lesson.audio_file) referencedAudio.add(lesson.audio_file);
       for (const item of lesson.audios ?? []) {
-        if (!files[item.audio_file]) throw new Error(`${path}: missing ${item.audio_file}`);
+        needAudio(item.audio_file);
         referencedAudio.add(item.audio_file);
       }
       for (const item of lesson.activities ?? []) {
@@ -75,7 +85,7 @@ const packs = paths.map((path) => {
     }
     if (!unit.unit_assessment || Buffer.byteLength(JSON.stringify(unit.unit_assessment), "utf8") > 145_000) throw new Error(`${path}: invalid assessment ${unit.unit_id}`);
     for (const ref of [unit.unit_assessment_v2?.listening?.audio_file, ...(unit.expanded_listenings ?? []).map((item) => item.audio_file)]) {
-      if (ref && !files[ref]) throw new Error(`${path}: missing ${ref}`);
+      if (ref) needAudio(ref);
       if (ref) referencedAudio.add(ref);
     }
   }
@@ -83,7 +93,7 @@ const packs = paths.map((path) => {
   if (!course.final_assessment || (finalAudio && !files[finalAudio])) throw new Error(`${path}: missing final assessment or audio`);
   if (finalAudio) referencedAudio.add(finalAudio);
   for (const item of course.final_assessment_v2?.listening ?? []) {
-    if (!files[item.audio_file]) throw new Error(`${path}: missing ${item.audio_file}`);
+    needAudio(item.audio_file);
     referencedAudio.add(item.audio_file);
   }
   if (spec.replace) {
@@ -92,8 +102,10 @@ const packs = paths.map((path) => {
   }
   const audio = Object.entries(files).filter(([name]) => name.startsWith("audio/") && name.endsWith(".mp3"));
   if (spec.replace && (audio.length !== 53 || referencedAudio.size !== 53)) throw new Error(`${path}: expected 53 referenced audio files, got ${audio.length}/${referencedAudio.size}`);
-  if (spec.advancedV2 && (audio.length !== 36 || referencedAudio.size !== 36)) throw new Error(`${path}: expected 36 referenced audio files, got ${audio.length}/${referencedAudio.size}`);
-  console.log(JSON.stringify({ path, course: course.course_id, units: course.units.length, lessons: lessonIds.size, starter: course.intro_modules?.length ?? 0, audio: audio.length, mode: apply ? "publish" : "dry run" }));
+  const expectedAudio = spec.audioCount ?? 36;
+  if (spec.advancedV2 && referencedAudio.size !== expectedAudio) throw new Error(`${path}: expected ${expectedAudio} audio references, got ${referencedAudio.size}`);
+  if (spec.advancedV2 && !partialAudio && audio.length !== expectedAudio) throw new Error(`${path}: expected ${expectedAudio} referenced audio files, got ${audio.length}/${referencedAudio.size}`);
+  console.log(JSON.stringify({ path, course: course.course_id, units: course.units.length, lessons: lessonIds.size, starter: course.intro_modules?.length ?? 0, audio: audio.length, missingAudio, mode: apply ? "publish" : "dry run" }));
   return { files, course, spec, audio };
 });
 if (!apply) process.exit(0);
@@ -138,7 +150,7 @@ function v2Content(lesson, audioUrl, audioUrls, warning, unitSlug, courseSlug, u
     audios: lesson.audios?.map((item) => ({ ...item, audio_url: audioUrls[item.audio_file] ?? "" })),
     ...(unit?.expanded_readings && lesson.type === "reading" ? { passages: [{ id: `${unit.unit_id}-reading-1`, title: lesson.passage_title, text: lesson.passage, questions: lesson.activities }, ...unit.expanded_readings.map((item, index) => ({
       id: `${unit.unit_id}-reading-${index + 2}`, title: item.title,
-      text: item.paragraphs.map((paragraph) => `${paragraph.label}. ${paragraph.text}`).join("\n\n"),
+      text: item.paragraphs.map((paragraph) => `[${paragraph.label}] ${paragraph.text}`).join("\n\n"),
       questions: item.questions, strategy: item.strategy,
     }))] } : {}),
     ...(unit?.expanded_listenings && lesson.type === "listening" ? { audios: [{ id: `${unit.unit_id}-listening-1`, title: lesson.title, script: lesson.transcript, audio_url: audioUrl, questions: lesson.activities }, ...unit.expanded_listenings.map((item, index) => ({
@@ -157,7 +169,7 @@ function materialFor(lesson, audioUrl) {
     case "reading": return { skill: "Reading", passage: lesson.passage, figure };
     case "listening": return { skill: "Listening", transcript: lesson.transcript, audioUrl, figure };
     case "writing": {
-      const range = lesson.task.match(/(\d+)\s*[-–]\s*(\d+)\s*words?/i);
+      const range = lesson.task.match(/(\d+)\s*[-–]\s*(\d+)\s*words?/i) ?? lesson.task.match(/at least (\d+) words/i);
       return { skill: "Writing", prompt: lesson.task, minWords: range ? Number(range[1]) : 40, modelAnswer: lesson.sample_answer,
         checklist: checklist(lesson.scaffolding_steps ?? lesson.guidance), figure };
     }
@@ -225,6 +237,13 @@ for (const { course, spec, audio } of packs) {
         const entries = allWords.map((item, i) => ({ lesson_id: lessonRow.id, word: item.en, phonetic: item.ipa_reference ?? "",
           meaning_vi: item.vi, definition: "", example: item.example, sort_order: i }));
         success(await db.from("vocabulary_entries").upsert(entries, { onConflict: "lesson_id,word" }), `vocabulary ${slug}`);
+        // A new edition replaces the word list, so words from the earlier edition must not linger in the lesson.
+        if (spec.replaceVocabulary) {
+          const keep = new Set(allWords.map((item) => item.en));
+          const stale = success(await db.from("vocabulary_entries").select("id,word").eq("lesson_id", lessonRow.id), `vocabulary rows ${slug}`)
+            .filter((row) => !keep.has(row.word)).map((row) => row.id);
+          if (stale.length) success(await db.from("vocabulary_entries").delete().in("id", stale), `remove old vocabulary ${slug}`);
+        }
       }
       const mcqs = (lesson.activities ?? []).filter((item) => item.type === "multiple_choice");
       for (const [index, item] of mcqs.entries()) {
@@ -272,10 +291,10 @@ for (const { course, spec, audio } of packs) {
   if (spec.advancedV2) {
     const folder = `course-packages/${spec.prefix}`;
     const currentAudio = new Set(audio.map(([path]) => path.slice("audio/".length)));
-    const oldAudio = success(await db.storage.from("lesson-media").list(folder, { limit: 1000 }), "list Advanced audio")
+    const oldAudio = success(await db.storage.from("lesson-media").list(folder, { limit: 1000 }), `list ${spec.prefix} audio`)
       .filter((item) => item.id && !currentAudio.has(item.name)).map((item) => `${folder}/${item.name}`);
-    if (oldAudio.length) success(await db.storage.from("lesson-media").remove(oldAudio), "remove obsolete Advanced audio");
-    console.log(`Removed ${oldAudio.length} obsolete Advanced audio files`);
+    if (oldAudio.length) success(await db.storage.from("lesson-media").remove(oldAudio), `remove obsolete ${spec.prefix} audio`);
+    console.log(`Removed ${oldAudio.length} obsolete ${spec.prefix} audio files`);
   }
   console.log(JSON.stringify({ published: spec.slug, lessons: count, audio: audio.length, assessments: spec.units + 1, replaced: spec.replace ?? [] }));
 }

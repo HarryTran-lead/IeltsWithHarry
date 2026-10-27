@@ -1,0 +1,902 @@
+{
+ "unit_id": "L2U04",
+ "order": 4,
+ "title": "Travel and Transport",
+ "title_vi": "Du lịch và giao thông",
+ "objectives": [
+  "Chọn heading cho đoạn văn: phân biệt ý chính của cả đoạn với một chi tiết nổi bật",
+  "Nghe chỉ đường và xác định vị trí trên bản đồ",
+  "Mô tả sự thay đổi giữa hai bản đồ bằng present perfect, bị động và giới từ vị trí",
+  "Kể một chuyến đi trong Part 2 đủ 1–2 phút"
+ ],
+ "exam_strategy": "Matching headings: đọc cả đoạn rồi tự tóm tắt ý chính trong vài từ trước khi nhìn danh sách heading; heading lặp lại một từ trong đoạn chưa chắc là đáp án.",
+ "core_outcome": "Khớp heading với ý chính toàn đoạn; mô tả vị trí và thay đổi trên bản đồ có hệ thống, theo hướng hoặc theo khu vực.",
+ "vocabulary": [
+  [
+   "transport network",
+   "mạng lưới giao thông",
+   "The city’s transport network includes buses, trams and ferries."
+  ],
+  [
+   "public transport",
+   "giao thông công cộng",
+   "Public transport is cheaper than driving in the city centre."
+  ],
+  [
+   "rush hour",
+   "giờ cao điểm",
+   "Trains are extremely crowded during rush hour."
+  ],
+  [
+   "commuter",
+   "người đi làm hằng ngày bằng phương tiện",
+   "Thousands of commuters travel into the city every morning."
+  ],
+  [
+   "passenger capacity",
+   "sức chứa hành khách",
+   "The new trains have a larger passenger capacity."
+  ],
+  [
+   "route diversion",
+   "sự chuyển hướng tuyến đường",
+   "A route diversion is in place while the bridge is repaired."
+  ],
+  [
+   "terminal building",
+   "nhà ga/nhà chờ chính",
+   "The terminal building was extended to the north."
+  ],
+  [
+   "rail extension",
+   "đoạn đường sắt nối dài",
+   "The rail extension will reach the airport by 2028."
+  ],
+  [
+   "traffic jam",
+   "tắc đường",
+   "We were stuck in a traffic jam for an hour."
+  ],
+  [
+   "cycle lane",
+   "làn xe đạp",
+   "A cycle lane was added along the main road."
+  ],
+  [
+   "pedestrian crossing",
+   "vạch qua đường cho người đi bộ",
+   "Use the pedestrian crossing outside the station."
+  ],
+  [
+   "fare increase",
+   "sự tăng giá vé",
+   "The fare increase was criticised by students."
+  ],
+  [
+   "low-cost airline",
+   "hãng hàng không giá rẻ",
+   "Low-cost airlines have made weekend trips abroad more common."
+  ],
+  [
+   "tourist destination",
+   "điểm đến du lịch",
+   "The island has become a popular tourist destination."
+  ],
+  [
+   "carbon emissions",
+   "lượng khí thải carbon",
+   "Air travel produces high carbon emissions per passenger."
+  ],
+  [
+   "journey time",
+   "thời gian di chuyển",
+   "The new line cut the journey time to forty minutes."
+  ],
+  [
+   "road safety",
+   "an toàn giao thông",
+   "Road safety campaigns target young drivers."
+  ],
+  [
+   "ticket office",
+   "phòng bán vé",
+   "The ticket office is next to the main entrance."
+  ],
+  [
+   "park and ride",
+   "bãi đỗ xe rồi đi xe buýt vào trung tâm",
+   "Visitors are encouraged to use the park and ride outside the city."
+  ],
+  [
+   "redevelopment",
+   "sự tái phát triển",
+   "The redevelopment of the port area took ten years."
+  ]
+ ],
+ "grammar": {
+  "title": "Describing change: present perfect, passive and prepositions of place",
+  "explanation_vi": "Khi so sánh hai bản đồ (trước và nay), dùng present perfect bị động cho thay đổi đã hoàn thành: A car park has been built. Dùng past simple khi có mốc quá khứ: In 2005, there was a farm. Vị trí: to the north of, next to, opposite, between, in the south-east corner, along the river.",
+  "form": "X has been + V3 (built/replaced/extended/demolished) · X was replaced by Y · to the north/south/east/west of · next to · opposite · between A and B · along · in the centre of",
+  "examples": [
+   "The old bus station has been demolished and replaced by a shopping centre.",
+   "A cycle lane has been built along the river.",
+   "The car park is located to the east of the terminal building."
+  ],
+  "examples_vi": [
+   "Bến xe buýt cũ đã bị phá bỏ và thay bằng một trung tâm mua sắm.",
+   "Một làn xe đạp đã được xây dọc bờ sông.",
+   "Bãi đỗ xe nằm ở phía đông của nhà ga chính."
+  ],
+  "trap": "Không viết “has been build” (phải là V3: built). Không dùng present perfect với mốc thời gian cụ thể đã qua (“In 2005, a road has been built” sai → “was built”).",
+  "items": [
+   [
+    "Since 2010, a new bridge ___ (build) across the river.",
+    "has been built",
+    "Since + thay đổi kéo dài đến nay → present perfect passive."
+   ],
+   [
+    "In 2005, the area ___ (cover) by farmland.",
+    "was covered",
+    "Mốc 2005 đã qua → past simple passive."
+   ],
+   [
+    "The old station ___ (replace) by a shopping centre.",
+    "has been replaced",
+    "Thay đổi đã hoàn tất so với hiện tại → present perfect passive."
+   ],
+   [
+    "The museum is ___ the park and the river. (giới từ)",
+    "between",
+    "between A and B = nằm giữa hai địa điểm."
+   ],
+   [
+    "The hotel is located to the north ___ the lake.",
+    "of",
+    "to the north of + địa điểm."
+   ],
+   [
+    "A footpath now runs ___ the river bank. (giới từ: dọc theo)",
+    "along",
+    "along = dọc theo."
+   ],
+   [
+    "The car park was extended ___ the west. (giới từ)",
+    "to",
+    "extended to the west = mở rộng về phía tây."
+   ],
+   [
+    "Correct the error: Several trees has been cut down.",
+    "Several trees have been cut down.",
+    "Chủ ngữ số nhiều (trees) → have been."
+   ]
+  ]
+ },
+ "readings": [
+  {
+   "title": "The slow return of the night train",
+   "strategy": "Matching headings: tóm tắt ý chính mỗi đoạn trong 5–8 từ trước, rồi mới so với danh sách. Có nhiều heading hơn số đoạn; loại heading chỉ khớp một chi tiết.",
+   "instruction_vi": "Bài đọc khoảng 700 từ, 11 câu: chọn heading cho 6 đoạn (B–G) và trả lời 5 câu short-answer.",
+   "headings": [
+    "i. Why night trains disappeared",
+    "ii. A business that depends on full trains",
+    "iii. Changing attitudes among travellers",
+    "iv. The cost of building new railway lines",
+    "v. Problems with old equipment",
+    "vi. A future that depends on government support",
+    "vii. What passengers expect from a sleeper train",
+    "viii. Airlines respond with lower fares",
+    "ix. Crossing borders by rail"
+   ],
+   "paragraphs": [
+    [
+     "A",
+     "For much of the twentieth century, travelling overnight by train was a normal way to cross a country or a continent. Passengers boarded in the evening, slept in narrow beds as the train moved through the dark, and woke up in another city in time for breakfast. In the early twenty-first century, however, many of these services were cut, and some railway companies predicted that the night train would soon belong only in history books. Today the picture is changing again, and new sleeper routes are being announced in several regions."
+    ],
+    [
+     "B",
+     "The decline of the night train had several causes. Low-cost airlines made it possible to fly between major cities for less than the price of a sleeper ticket, and the journey took one hour instead of ten. At the same time, new high-speed railway lines allowed daytime trains to cover long distances quickly, so fewer travellers needed to spend a night on board. Sleeper carriages were also expensive to maintain, and because each passenger needs a bed rather than a seat, a night train carries far fewer people than a daytime service of the same length."
+    ],
+    [
+     "C",
+     "What has brought the night train back is, above all, a change in how people think about travel. Surveys in several countries show that a growing number of travellers, particularly younger ones, are worried about the carbon emissions produced by flying. For a journey of around a thousand kilometres, a train produces only a small fraction of the emissions of a plane. Many travellers also point out that a night train saves the cost of a hotel and delivers them to the centre of a city, rather than to an airport far outside it."
+    ],
+    [
+     "D",
+     "Expectations, however, have changed since the last generation of sleepers was built. Passengers who once accepted shared compartments with six narrow beds now want privacy, clean bathrooms and reliable wifi. Some new services offer small private cabins with a shower, while others have introduced capsule-style beds similar to those in budget hotels. Operators report that families and solo travellers are particularly interested in cabins that can be locked from the inside."
+    ],
+    [
+     "E",
+     "Meeting these expectations is not easy, because many operators are still using carriages that are thirty or forty years old. Old heating systems break down in winter, and spare parts for some models are no longer manufactured. One operator was forced to cancel a popular route for an entire season when three of its carriages failed safety inspections. New carriages are being built, but each one takes years to design and approve, and they cost several million euros."
+    ],
+    [
+     "F",
+     "International routes face additional difficulties. Each country has its own railway rules, electricity systems and safety standards, so a train that crosses several borders may need to change locomotives and drivers along the way. Timetables must also be agreed between national companies with different priorities. A delay in one country can cause a train to miss its time slot in the next, leaving passengers to arrive hours late."
+    ],
+    [
+     "G",
+     "For the companies that run them, night trains are a difficult business. Because each carriage holds relatively few people, a train needs to be almost completely full every night to cover its costs. Operators have tried to increase income by selling food and drinks on board and by offering cheaper seats in carriages without beds. Even so, few routes make a profit, and most rely on some form of public money."
+    ],
+    [
+     "H",
+     "Whether the revival continues will therefore depend largely on governments. Supporters argue that public funding is justified because night trains reduce emissions and connect smaller cities that airlines ignore. Critics reply that the money would achieve more if it were spent on improving daytime services used by far larger numbers of people. For now, demand is strong, and many new routes are fully booked months in advance – but the night train’s long-term future is far from guaranteed."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "heading",
+     "paragraph": "B",
+     "prompt": "Choose the best heading for paragraph B.",
+     "answer": "i. Why night trains disappeared",
+     "why": "Đoạn B liệt kê nguyên nhân suy giảm: hàng không giá rẻ, tàu cao tốc, chi phí bảo trì."
+    },
+    {
+     "type": "heading",
+     "paragraph": "C",
+     "prompt": "Choose the best heading for paragraph C.",
+     "answer": "iii. Changing attitudes among travellers",
+     "why": "Đoạn C: “a change in how people think about travel” – lo ngại khí thải."
+    },
+    {
+     "type": "heading",
+     "paragraph": "D",
+     "prompt": "Choose the best heading for paragraph D.",
+     "answer": "vii. What passengers expect from a sleeper train",
+     "why": "Đoạn D: hành khách muốn riêng tư, phòng tắm sạch, wifi."
+    },
+    {
+     "type": "heading",
+     "paragraph": "E",
+     "prompt": "Choose the best heading for paragraph E.",
+     "answer": "v. Problems with old equipment",
+     "why": "Đoạn E: toa tàu 30–40 năm tuổi, sưởi hỏng, thiếu phụ tùng. Heading iv sai vì đoạn nói toa tàu, không phải xây đường ray."
+    },
+    {
+     "type": "heading",
+     "paragraph": "F",
+     "prompt": "Choose the best heading for paragraph F.",
+     "answer": "ix. Crossing borders by rail",
+     "why": "Đoạn F: khó khăn của tuyến quốc tế qua nhiều biên giới."
+    },
+    {
+     "type": "heading",
+     "paragraph": "G",
+     "prompt": "Choose the best heading for paragraph G.",
+     "answer": "ii. A business that depends on full trains",
+     "why": "Đoạn G: tàu phải gần như kín chỗ mỗi đêm mới đủ chi phí."
+    },
+    {
+     "type": "short",
+     "prompt": "How long does the flight between major cities take, according to paragraph B? Write NO MORE THAN TWO WORDS.",
+     "answer": "one hour",
+     "why": "Đoạn B: “the journey took one hour instead of ten”."
+    },
+    {
+     "type": "short",
+     "prompt": "Which group of travellers is particularly worried about flying emissions? Write ONE WORD.",
+     "answer": "younger",
+     "why": "Đoạn C: “particularly younger ones”."
+    },
+    {
+     "type": "short",
+     "prompt": "What can travellers save by taking a night train, apart from emissions? Write NO MORE THAN FOUR WORDS.",
+     "answer": "the cost of a hotel",
+     "why": "Đoạn C: “a night train saves the cost of a hotel”."
+    },
+    {
+     "type": "short",
+     "prompt": "How many carriages failed safety inspections on one route? Write ONE NUMBER.",
+     "answer": "3",
+     "why": "Đoạn E: “three of its carriages failed safety inspections”."
+    },
+    {
+     "type": "short",
+     "prompt": "What do critics think the money should be spent on? Write NO MORE THAN THREE WORDS.",
+     "answer": "daytime services",
+     "why": "Đoạn H: “spent on improving daytime services”."
+    }
+   ]
+  },
+  {
+   "title": "A town that redesigned its station area",
+   "strategy": "Heading và vị trí: chú ý từ chỉ thay đổi (replaced, moved, extended) và vị trí (north of, opposite) – chúng cũng giúp bạn viết Task 1 bản đồ.",
+   "headings": [
+    "i. Reasons for the redesign",
+    "ii. A new home for buses",
+    "iii. Space for people instead of cars",
+    "iv. Early results and remaining problems",
+    "v. A station that was once a factory"
+   ],
+   "paragraphs": [
+    [
+     "A",
+     "Ten years ago, arriving at the railway station in the fictional town of Kelby was an unpleasant experience. Passengers stepped out into a large car park, crossed a busy road with no pedestrian crossing and walked past empty warehouses to reach the town centre. Local businesses complained that visitors left as soon as possible, and accident figures showed that the road outside the station was one of the most dangerous in the region."
+    ],
+    [
+     "B",
+     "The first major change was to the bus station, which used to stand on the far side of the road, about two hundred metres from the trains. It has been moved directly in front of the station entrance, so that passengers can change from train to bus under a single roof. The number of bus routes stopping at the station has also increased from four to nine."
+    ],
+    [
+     "C",
+     "The large car park to the east of the station has been reduced by half. In its place, a public square has been created, with trees, benches and a small café. A wide pedestrian crossing now connects the square to a footpath that runs along the canal to the town centre. A secure cycle store with space for two hundred bicycles has been built next to the ticket office."
+    ],
+    [
+     "D",
+     "Three years after the work was completed, the results are mostly encouraging. The number of people walking from the station to the town centre has doubled, and there have been no serious accidents on the road since the crossing was installed. However, some residents of nearby villages say that it is now harder to find a parking space, and a park-and-ride service on the edge of town is still being planned."
+    ],
+    [
+     "E",
+     "Planners from other towns have visited Kelby to learn from the project. The lesson they most often take away is that the order of the work mattered. The bus station was moved first, so that passengers already had a better connection before any parking spaces were removed. Had the car park been reduced first, the council believes, opposition would have been much stronger, and the rest of the scheme might never have been approved. The town is now consulting residents about extending the canal footpath to the hospital on the western edge of town."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "heading",
+     "paragraph": "A",
+     "prompt": "Choose the best heading for paragraph A.",
+     "answer": "i. Reasons for the redesign",
+     "why": "Đoạn A mô tả các vấn đề cũ dẫn đến việc thiết kế lại."
+    },
+    {
+     "type": "heading",
+     "paragraph": "B",
+     "prompt": "Choose the best heading for paragraph B.",
+     "answer": "ii. A new home for buses",
+     "why": "Đoạn B: bến xe buýt được chuyển ra trước cửa ga."
+    },
+    {
+     "type": "heading",
+     "paragraph": "C",
+     "prompt": "Choose the best heading for paragraph C.",
+     "answer": "iii. Space for people instead of cars",
+     "why": "Đoạn C: bãi đỗ xe thu nhỏ, thay bằng quảng trường và lối đi bộ."
+    },
+    {
+     "type": "heading",
+     "paragraph": "D",
+     "prompt": "Choose the best heading for paragraph D.",
+     "answer": "iv. Early results and remaining problems",
+     "why": "Đoạn D: kết quả tích cực nhưng vẫn thiếu chỗ đỗ xe."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The bus station used to be about two hundred metres from the trains.",
+     "answer": "TRUE",
+     "why": "Đoạn B: “about two hundred metres from the trains”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The car park was removed completely.",
+     "answer": "FALSE",
+     "why": "Đoạn C: “reduced by half”, không bỏ hoàn toàn."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The café in the new square is run by the railway company.",
+     "answer": "NOT GIVEN",
+     "why": "Bài không nói ai điều hành quán café."
+    },
+    {
+     "type": "short",
+     "prompt": "How many bus routes now stop at the station? Write ONE NUMBER.",
+     "answer": "9",
+     "why": "Đoạn B: “from four to nine”."
+    },
+    {
+     "type": "short",
+     "prompt": "Where is the new cycle store? Write NO MORE THAN FOUR WORDS.",
+     "answer": "next to the ticket office",
+     "why": "Đoạn C: “built next to the ticket office”."
+    }
+   ]
+  },
+  {
+   "title": "Why tourists crowd the same places",
+   "strategy": "Câu hỏi heading cho bài ngắn: nếu hai heading đều có vẻ đúng, chọn heading bao quát cả đoạn, không chỉ câu đầu.",
+   "headings": [
+    "i. A problem caused by popularity",
+    "ii. Spreading visitors across time and place",
+    "iii. The role of photographs and social media",
+    "iv. Local people take part in decisions",
+    "v. The history of package holidays"
+   ],
+   "paragraphs": [
+    [
+     "A",
+     "In some of the world’s most famous destinations, residents now complain that their cities are being overwhelmed. Narrow streets are blocked by tour groups, rents rise as apartments are turned into holiday lets, and local shops are replaced by souvenir stores. The problem is not that tourism exists, but that very large numbers of visitors arrive in the same small areas at the same times."
+    ],
+    [
+     "B",
+     "Part of the reason is the way places are now discovered. Before travelling, many people look at the same photographs online and want to stand in exactly the same spots. A single viewpoint can attract thousands of visitors a day, while a beautiful street a few minutes away remains almost empty. Travel guides that list the “top ten” sights of a city have a similar effect."
+    ],
+    [
+     "C",
+     "Several cities are experimenting with ways to spread visitors more evenly. Some museums now require tickets to be booked for a particular time. Tourist offices promote lesser-known neighbourhoods and towns outside the city, and some have stopped printing maps that mark only the most famous sights. Others charge higher prices during the busiest months and offer discounts for visits in winter."
+    ],
+    [
+     "D",
+     "The most successful plans, according to researchers, are those that involve residents from the start. In one coastal town, a committee of local people helped decide where tour buses could stop and which streets should be closed to groups. Because the rules were agreed locally, they were respected, and both residents and businesses reported improvements within two years."
+    ],
+    [
+     "E",
+     "Tourists themselves can also make a difference. Travel writers increasingly encourage visitors to stay longer in one place instead of rushing between famous sights, to visit in spring or autumn rather than in midsummer, and to spend money in family-run businesses. Such choices may seem small, but in a city that receives millions of visitors a year, even a modest shift in behaviour can reduce crowding in the busiest streets. Some cities now publish live information showing how busy each major sight is, so that visitors can choose a quieter time."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "heading",
+     "paragraph": "A",
+     "prompt": "Choose the best heading for paragraph A.",
+     "answer": "i. A problem caused by popularity",
+     "why": "Đoạn A: quá đông khách ở cùng nơi, cùng thời điểm."
+    },
+    {
+     "type": "heading",
+     "paragraph": "B",
+     "prompt": "Choose the best heading for paragraph B.",
+     "answer": "iii. The role of photographs and social media",
+     "why": "Đoạn B: du khách xem cùng ảnh trên mạng và muốn đứng đúng chỗ đó."
+    },
+    {
+     "type": "heading",
+     "paragraph": "C",
+     "prompt": "Choose the best heading for paragraph C.",
+     "answer": "ii. Spreading visitors across time and place",
+     "why": "Đoạn C: vé theo giờ, quảng bá khu ít người, giá theo mùa."
+    },
+    {
+     "type": "heading",
+     "paragraph": "D",
+     "prompt": "Choose the best heading for paragraph D.",
+     "answer": "iv. Local people take part in decisions",
+     "why": "Đoạn D: ủy ban cư dân cùng quyết định quy định."
+    },
+    {
+     "type": "short",
+     "prompt": "What are some apartments turned into? Write NO MORE THAN THREE WORDS.",
+     "answer": "holiday lets",
+     "why": "Đoạn A: “apartments are turned into holiday lets”."
+    },
+    {
+     "type": "short",
+     "prompt": "What kind of guide lists only the best-known sights? Write NO MORE THAN THREE WORDS.",
+     "answer": "top ten",
+     "why": "Đoạn B: guides that list the “top ten” sights."
+    },
+    {
+     "type": "short",
+     "prompt": "In which season do some cities offer discounts? Write ONE WORD.",
+     "answer": "winter",
+     "why": "Đoạn C: “discounts for visits in winter”."
+    },
+    {
+     "type": "short",
+     "prompt": "Within how long did the coastal town report improvements? Write NO MORE THAN TWO WORDS.",
+     "answer": "two years",
+     "why": "Đoạn D: “within two years”."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Finding your way around Kelby station",
+   "section": "Section 2 · map labelling",
+   "strategy": "Map labelling: xác định điểm bắt đầu và hướng (trái/phải/bắc/nam) trước khi nghe; người nói đi theo một lộ trình, đánh dấu từng địa điểm theo thứ tự.",
+   "pre_listening": "Trước khi nghe: tìm lối vào chính và đọc các phương án vị trí.",
+   "trap": "Người nói có thể nhắc một vị trí cũ (“the ticket office used to be…”) – chọn vị trí hiện tại.",
+   "strategies": [
+    "Find the starting point",
+    "Directions and prepositions",
+    "Old vs new locations"
+   ],
+   "transcript": "Guide: Welcome to Kelby station. I’m going to explain where everything is, starting from where we’re standing now, at the main entrance, facing into the station.\nThe ticket office used to be on your left as you came in, but it’s been moved. It’s now straight ahead of you, at the back of the main hall, between the two staircases.\nIf you need help, the information desk is just inside the entrance on your right, so it’s the first thing you pass.\nFor food, there’s a café in the north-west corner of the hall – that’s to your far left – and a small supermarket opposite it, in the north-east corner.\nThe toilets are downstairs. Take the left-hand staircase, and you’ll find them at the bottom, next to the lifts.\nPlatforms one and two are reached by the left-hand staircase as well, while platforms three and four are reached by the staircase on the right.\nNow, outside. When you leave by the main entrance, the new bus station is directly in front of you, under the glass roof. Taxis wait to the right of the bus station, along the side of the square.\nThe cycle store is to the left of the entrance as you go out, next to the ticket machines on the outside wall. You need a membership card to open it; cards can be bought at the information desk.\nFinally, if you’re walking into town, cross the square to the pedestrian crossing in the far corner, and follow the footpath along the canal. It’s about a twelve-minute walk.",
+   "questions": [
+    {
+     "prompt": "Where is the ticket office now?",
+     "options": [
+      "A. On the left of the entrance",
+      "B. At the back of the hall, between the staircases",
+      "C. Next to the café"
+     ],
+     "answer": "B. At the back of the hall, between the staircases",
+     "why": "Trước ở bên trái (vị trí cũ); nay “straight ahead … between the two staircases”."
+    },
+    {
+     "prompt": "Where is the information desk?",
+     "options": [
+      "A. Just inside the entrance on the right",
+      "B. Downstairs next to the lifts",
+      "C. In the north-east corner"
+     ],
+     "answer": "A. Just inside the entrance on the right",
+     "why": "“just inside the entrance on your right”."
+    },
+    {
+     "prompt": "Where is the café?",
+     "options": [
+      "A. North-east corner",
+      "B. North-west corner",
+      "C. Outside the entrance"
+     ],
+     "answer": "B. North-west corner",
+     "why": "“a café in the north-west corner of the hall”."
+    },
+    {
+     "prompt": "Where are the toilets?",
+     "options": [
+      "A. Downstairs, next to the lifts",
+      "B. Beside the supermarket",
+      "C. Near platform four"
+     ],
+     "answer": "A. Downstairs, next to the lifts",
+     "why": "“at the bottom, next to the lifts”."
+    },
+    {
+     "prompt": "Which staircase leads to platform 3?",
+     "options": [
+      "A. The left-hand staircase",
+      "B. The right-hand staircase",
+      "C. Both staircases"
+     ],
+     "answer": "B. The right-hand staircase",
+     "why": "“platforms three and four are reached by the staircase on the right”."
+    },
+    {
+     "prompt": "Where do taxis wait?",
+     "options": [
+      "A. In front of the entrance",
+      "B. To the right of the bus station",
+      "C. Next to the cycle store"
+     ],
+     "answer": "B. To the right of the bus station",
+     "why": "“Taxis wait to the right of the bus station”."
+    },
+    {
+     "prompt": "Where can cycle-store cards be bought?",
+     "options": [
+      "A. At the ticket machines",
+      "B. At the information desk",
+      "C. At the café"
+     ],
+     "answer": "B. At the information desk",
+     "why": "“cards can be bought at the information desk”."
+    },
+    {
+     "prompt": "How long is the walk into town?",
+     "options": [
+      "A. About 10 minutes",
+      "B. About 12 minutes",
+      "C. About 20 minutes"
+     ],
+     "answer": "B. About 12 minutes",
+     "why": "“about a twelve-minute walk”."
+    }
+   ]
+  },
+  {
+   "title": "Booking a coach trip",
+   "section": "Section 1 · form completion",
+   "strategy": "Nghe ngày, giá, số người và yêu cầu đặc biệt; chú ý thông tin được đổi giữa chừng.",
+   "strategies": [
+    "Dates and times",
+    "Prices",
+    "Changed details"
+   ],
+   "transcript": "Agent: Coastline Coaches, good afternoon.\nCustomer: Hello, I’d like to book places on your day trip to Port Elwyn.\nAgent: Certainly. Which date were you thinking of?\nCustomer: Saturday the fifteenth of June.\nAgent: I’m afraid that trip is full. We do have space on Sunday the sixteenth, though.\nCustomer: Sunday’s fine.\nAgent: How many people?\nCustomer: Two adults and one child. My son is eleven.\nAgent: Children under twelve pay half price, so that’s two adults at thirty-two pounds and one child at sixteen. Eighty pounds altogether.\nCustomer: Great. Where does the coach leave from?\nAgent: It used to leave from the bus station, but now it departs from the car park behind the town hall, at eight fifteen. Please arrive ten minutes early.\nCustomer: And what time do we get back?\nAgent: We leave Port Elwyn at five, so you should be back at about seven thirty.\nCustomer: Is lunch included?\nAgent: Lunch isn’t included, but the price does include a guided walk round the old harbour in the morning. There’s also an optional boat trip in the afternoon for an extra six pounds per person.\nCustomer: We’ll decide about the boat on the day. Can I have your name for the booking?\nCustomer: Of course – Helen Price. P-R-I-C-E.\nAgent: Thank you, Mrs Price. Does anyone need extra assistance, for example with a wheelchair?\nCustomer: No, but my son gets travel sick. Could we sit near the front?\nAgent: I’ll make a note of that. You’ll receive your tickets by email.",
+   "questions": [
+    {
+     "prompt": "Destination: Port ______",
+     "answer": "Elwyn",
+     "why": "“day trip to Port Elwyn”."
+    },
+    {
+     "prompt": "Date of trip: Sunday ______ June",
+     "answer": "16th",
+     "why": "Thứ bảy 15/6 đã kín; đặt Chủ nhật 16/6."
+    },
+    {
+     "prompt": "Child’s age: ______",
+     "answer": "11",
+     "why": "“My son is eleven.”"
+    },
+    {
+     "prompt": "Total cost: £______",
+     "answer": "80",
+     "why": "2 × £32 + £16 = £80."
+    },
+    {
+     "prompt": "Departure point: car park behind the ______",
+     "answer": "town hall",
+     "why": "Trước đây ở bus station (bẫy); nay “behind the town hall”."
+    },
+    {
+     "prompt": "Departure time: ______",
+     "answer": "8:15",
+     "why": "“at eight fifteen”."
+    },
+    {
+     "prompt": "Included in the price: a guided walk round the old ______",
+     "answer": "harbour",
+     "why": "“a guided walk round the old harbour”."
+    },
+    {
+     "prompt": "Special request: seats near the ______",
+     "answer": "front",
+     "why": "“Could we sit near the front?”"
+    }
+   ]
+  },
+  {
+   "title": "Lecture: planning for cycling cities",
+   "section": "Section 4 · lecture notes",
+   "strategy": "Bài giảng có cấu trúc: vấn đề → nguyên nhân → giải pháp → ví dụ. Dùng các từ chuyển ý để biết câu nào đang được hỏi.",
+   "strategies": [
+    "Lecture structure",
+    "Examples and numbers",
+    "Key terms"
+   ],
+   "transcript": "Lecturer: In today’s lecture, I want to look at why some cities have very high levels of cycling while others, with similar weather and geography, have very low levels.\nThe first factor is safety, or more precisely, how safe people feel. Surveys consistently show that the most common reason people give for not cycling is fear of traffic. Painting a line on a busy road does little to change this. What makes a difference is physical separation – a kerb, a row of parked cars or a strip of planting between cyclists and motor vehicles.\nThe second factor is the network. A cycle lane that ends suddenly at a busy junction is almost useless. Researchers talk about the importance of connectivity: people will only cycle regularly if they can complete their whole journey safely. In one city, building just three short links between existing lanes increased cycling on the whole network by around twenty per cent.\nThird, parking. Many people own a bicycle but do not use it because they have nowhere secure to leave it, either at home or at their destination. Secure parking at railway stations is particularly effective, because it allows people to combine cycling with train travel.\nThe fourth factor is less obvious: speed limits for cars. When a city lowered the limit on residential streets to thirty kilometres an hour, the number of children cycling to school rose noticeably, even though no new lanes were built.\nFinally, culture. In cities where cycling is common, it is seen as a normal way to travel, not a sport. People cycle in ordinary clothes, and politicians and business leaders are often seen on bicycles. That image matters, but it usually follows the practical changes rather than coming first.",
+   "questions": [
+    {
+     "prompt": "Most common reason for not cycling: fear of ______",
+     "answer": "traffic",
+     "why": "“fear of traffic”."
+    },
+    {
+     "prompt": "What changes how safe people feel: physical ______",
+     "answer": "separation",
+     "why": "“What makes a difference is physical separation”."
+    },
+    {
+     "prompt": "The importance of a complete network is called ______",
+     "answer": "connectivity",
+     "why": "“Researchers talk about the importance of connectivity”."
+    },
+    {
+     "prompt": "Effect of three short links: cycling increased by about ______",
+     "answer": "20%",
+     "why": "“increased cycling … by around twenty per cent”."
+    },
+    {
+     "prompt": "Secure parking is especially effective at railway ______",
+     "answer": "stations",
+     "why": "“Secure parking at railway stations is particularly effective”."
+    },
+    {
+     "prompt": "New speed limit on residential streets: ______ km/h",
+     "answer": "30",
+     "why": "“thirty kilometres an hour”."
+    },
+    {
+     "prompt": "After the lower limit, more ______ cycled to school.",
+     "answer": "children",
+     "why": "“the number of children cycling to school rose noticeably”."
+    },
+    {
+     "prompt": "In cycling cities, cycling is seen as normal travel, not a ______",
+     "answer": "sport",
+     "why": "“not a sport”."
+    }
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 1 – comparing two maps",
+  "instruction_vi": "So sánh hai bản đồ (trước và nay): overview nêu thay đổi lớn nhất và những gì giữ nguyên; thân bài chia theo khu vực hoặc theo loại thay đổi. Viết ít nhất 150 từ.",
+  "task": "The maps below show the area around Kelby railway station ten years ago and today. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "data_visual": {
+   "headers": [
+    "Location",
+    "Ten years ago",
+    "Today"
+   ],
+   "rows": [
+    [
+     "In front of the station",
+     "Busy road, no crossing",
+     "Bus station under a glass roof"
+    ],
+    [
+     "East of the station",
+     "Large car park",
+     "Half the car park + public square with café"
+    ],
+    [
+     "Across the road",
+     "Bus station and warehouses",
+     "Warehouses converted into flats"
+    ],
+    [
+     "Next to the ticket office",
+     "Empty land",
+     "Cycle store (200 bikes)"
+    ],
+    [
+     "Along the canal",
+     "No path",
+     "Footpath to the town centre"
+    ],
+    [
+     "Railway lines",
+     "Two platforms",
+     "Two platforms (unchanged)"
+    ]
+   ]
+  },
+  "sample_answer": "The maps compare the area around Kelby railway station ten years ago with its appearance today.\n\nOverall, the area has been transformed from a space dominated by roads and parking into one designed for pedestrians, cyclists and public transport. The railway lines and platforms, however, have remained the same.\n\nTen years ago, passengers leaving the station faced a busy road with no crossing, while the bus station stood on the opposite side of the road among several warehouses. To the east of the station there was a large car park, and the land next to the ticket office was empty.\n\nToday, a new bus station has been built directly in front of the station entrance, and the old warehouses across the road have been converted into flats. The car park has been reduced to half its original size, and the remaining space has been turned into a public square with a café. In addition, a cycle store for 200 bicycles has been constructed next to the ticket office, and a new footpath now runs along the canal to the town centre.",
+  "guidance": [
+   "Câu mở đầu: paraphrase hai bản đồ và hai mốc thời gian.",
+   "Overview: thay đổi tổng thể + điều không đổi (platforms).",
+   "Thân bài 1: bản đồ cũ (past simple: there was/stood).",
+   "Thân bài 2: thay đổi (present perfect passive: has been built/converted/reduced)."
+  ],
+  "micro": [
+   [
+    "Viết câu bị động hiện tại hoàn thành: build / bus station / in front of the entrance",
+    "A bus station has been built in front of the entrance."
+   ],
+   [
+    "Diễn đạt: warehouses → flats",
+    "The warehouses have been converted into flats."
+   ],
+   [
+    "Diễn đạt: car park nhỏ đi một nửa",
+    "The car park has been reduced to half its original size."
+   ],
+   [
+    "Câu overview cho hai bản đồ.",
+    "Overall, the area has become more pedestrian-friendly, although the railway itself has not changed."
+   ],
+   [
+    "Vị trí: cycle store / ticket office",
+    "A cycle store has been constructed next to the ticket office."
+   ]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 1. The maps show an airport in 2010 and the plans for its development in 2030. Summarise the main changes and make comparisons. Write at least 150 words.",
+  "essay": {
+   "prompt": "In many cities, traffic congestion is becoming a serious problem. Some people think the best solution is to make public transport free. To what extent do you agree or disagree?",
+   "planning_prompts": [
+    "Mở bài: nêu vấn đề và mức độ đồng ý.",
+    "Thân bài 1: lợi ích của giao thông công cộng miễn phí (giảm xe cá nhân, công bằng).",
+    "Thân bài 2: giới hạn (chi phí, chất lượng dịch vụ, người ta vẫn lái xe nếu xe buýt chậm).",
+    "Kết luận: miễn phí chỉ là một phần của giải pháp."
+   ],
+   "model_paragraphs": [
+    "Traffic congestion wastes time, pollutes the air and makes cities less pleasant to live in. One proposed solution is to make public transport completely free so that more people leave their cars at home. I agree that lower fares can help, but I do not believe free public transport alone would solve the problem.",
+    "There are clear arguments in favour of removing fares. Cost is one reason why some people choose to drive, especially families who would need to buy several tickets. If buses and trains were free, these households might change their habits, and the number of cars on the road could fall. Free transport would also benefit people on low incomes, students and older residents, making it easier for them to reach jobs, schools and medical appointments.",
+    "However, price is often not the main reason people drive. Many commuters choose cars because buses are slow, crowded or unreliable, or because there is no direct route to their workplace. If fares were removed without improving services, the extra passengers would make overcrowding worse, and frustrated users might return to their cars. Moreover, someone has to pay for free transport. The money would probably come from taxes, and it might be used more effectively to build new lines, buy more vehicles and introduce bus lanes.",
+    "A more effective strategy would combine several measures: reasonable fares, frequent and reliable services, dedicated bus lanes and higher parking charges in the city centre. In this way, public transport becomes the most convenient choice, not just the cheapest one.",
+    "In conclusion, while free public transport would encourage some drivers to change their habits, it is unlikely to reduce congestion significantly on its own. Improving the quality of services is at least as important as reducing their price."
+   ]
+  },
+  "drills": [
+   [
+    "Sửa lỗi: A new bus station has been build.",
+    "A new bus station has been built.",
+    "Present perfect passive cần V3: built."
+   ],
+   [
+    "Sửa lỗi: Ten years ago, a car park has been in the east.",
+    "Ten years ago, there was a car park to the east.",
+    "Mốc quá khứ cụ thể → past simple; dùng to the east."
+   ],
+   [
+    "Sửa lỗi: The warehouses changed to flats.",
+    "The warehouses have been converted into flats.",
+    "Dùng bị động và convert into cho thay đổi chức năng."
+   ],
+   [
+    "Sửa lỗi: The footpath is along of the canal.",
+    "The footpath runs along the canal.",
+    "along không đi với of; dùng runs along."
+   ],
+   [
+    "Viết lại trang trọng hơn: There are lots of changes in the area.",
+    "The area has undergone significant changes.",
+    "undergo significant changes là cách diễn đạt học thuật."
+   ],
+   [
+    "Sửa lỗi: Free transport will solve all traffic problem.",
+    "Free public transport alone is unlikely to solve traffic problems.",
+    "Tránh khẳng định tuyệt đối; problem cần số nhiều."
+   ]
+  ]
+ },
+ "speaking": {
+  "title": "Journeys and getting around",
+  "instruction_vi": "Part 2 kể một chuyến đi: dùng thứ tự thời gian và mở rộng bằng cảm xúc, chi tiết; Part 3 so sánh phương tiện và nêu giải pháp.",
+  "focus": "Kể chuyến đi mạch lạc (first, after that, by the time we arrived) và nối âm tự nhiên giữa các từ (get_on, a_lot_of).",
+  "part1": [
+   "How do you usually travel to work or school?",
+   "Do you enjoy travelling by public transport?",
+   "Is traffic a problem where you live?",
+   "Would you like to travel more in the future?"
+  ],
+  "part2": "Describe a journey you remember well. You should say where you went, how you travelled, who you were with, and explain why you remember this journey.",
+  "part3": [
+   "What are the advantages of travelling by train rather than by plane?",
+   "How could cities reduce traffic congestion?",
+   "Has tourism had a positive effect on your country?"
+  ],
+  "model_answer": "I’d like to describe a train journey I took from Hanoi to Hue with two of my classmates after we finished our final exams. We chose the overnight train because it was cheaper than flying and we didn’t have to pay for a hotel that night. We left Hanoi at about seven in the evening, and at first we were a bit disappointed because our cabin was quite small and the air conditioning was very cold. But after a while, we started chatting with an older couple in the next cabin who were travelling to visit their grandchildren, and they shared some sticky rice and fruit with us. When I woke up early the next morning, the train was running along the coast, and the view of the sea and the mountains was absolutely beautiful. By the time we arrived in Hue, I felt like the journey itself had been part of the holiday. I remember it because it taught me that slow travel can be more enjoyable than simply getting somewhere as fast as possible.",
+  "extensions": [
+   [
+    "What are the advantages of travelling by train rather than by plane?",
+    "Nêu 2–3 ưu điểm (vào trung tâm thành phố, ít khí thải, thoải mái) → ví dụ → thừa nhận: máy bay nhanh hơn cho quãng xa."
+   ],
+   [
+    "How could cities reduce traffic congestion?",
+    "Hai giải pháp cụ thể (xe buýt nhanh, giới hạn xe máy/ô tô giờ cao điểm) → giải thích → ví dụ ở Hà Nội/TP.HCM."
+   ],
+   [
+    "Has tourism had a positive effect on your country?",
+    "Mặt tích cực (việc làm, bảo tồn văn hóa) → mặt tiêu cực (quá tải, rác thải) → kết luận cân bằng."
+   ],
+   [
+    "Will people travel less in the future because of the environment?",
+    "Dự đoán → lý do một số người đi ít hơn → lý do du lịch vẫn tăng → kết luận có điều kiện."
+   ]
+  ]
+ },
+ "checkpoint": [
+  [
+   "In matching headings, what should you do first?",
+   [
+    "Read the list of headings and choose quickly",
+    "Summarise each paragraph in a few words",
+    "Look for the same words in the heading and the paragraph",
+    "Read only the first sentence"
+   ],
+   "Summarise each paragraph in a few words",
+   "Tự tóm tắt ý chính trước giúp tránh bị lừa bởi từ lặp lại."
+  ],
+  [
+   "Choose the correct sentence for a map description.",
+   [
+    "A car park has been build.",
+    "A car park was build in 2015.",
+    "A car park has been built.",
+    "A car park have been built."
+   ],
+   "A car park has been built.",
+   "has been + V3 (built)."
+  ],
+  [
+   "Which phrase describes a location correctly?",
+   [
+    "to the north from the lake",
+    "to the north of the lake",
+    "at north of the lake",
+    "in north of lake"
+   ],
+   "to the north of the lake",
+   "Cấu trúc đúng: to the north of."
+  ],
+  [
+   "In a map listening task, the speaker says “It used to be on the left, but now it’s straight ahead.” Which is the answer?",
+   [
+    "On the left",
+    "Straight ahead",
+    "Both",
+    "Neither"
+   ],
+   "Straight ahead",
+   "Chọn vị trí hiện tại, không chọn vị trí cũ."
+  ],
+  [
+   "What should the overview of a map task include?",
+   [
+    "Every small change",
+    "The main overall change and what stayed the same",
+    "Your opinion about the changes",
+    "The cost of the changes"
+   ],
+   "The main overall change and what stayed the same",
+   "Overview tóm tắt thay đổi chính và phần giữ nguyên."
+  ]
+ ],
+ "reflection": [
+  "Heading nào bạn chọn sai vì nó chỉ khớp một chi tiết trong đoạn?",
+  "Bạn đã dùng đủ giới từ vị trí và present perfect bị động khi mô tả bản đồ chưa?"
+ ]
+}

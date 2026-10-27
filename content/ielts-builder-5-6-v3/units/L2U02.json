@@ -1,0 +1,986 @@
+{
+ "unit_id": "L2U02",
+ "order": 2,
+ "title": "Leisure and Education",
+ "title_vi": "Giải trí và giáo dục",
+ "objectives": [
+  "Làm câu hỏi multiple choice: loại phương án đúng một nửa hoặc trái với bài",
+  "Phân biệt fact (sự thật kiểm chứng được) và opinion (quan điểm của người viết)",
+  "So sánh số liệu từ hai nguồn (biểu đồ + bảng) trong Task 1",
+  "Dùng past simple, past continuous và cấu trúc so sánh chính xác"
+ ],
+ "exam_strategy": "Với multiple choice, đọc câu hỏi trước, tìm đoạn liên quan rồi loại từng phương án; phương án dùng lại nhiều từ trong bài thường là bẫy.",
+ "core_outcome": "Không chọn đáp án dựa trên hiểu biết cá nhân; tách rõ điều bài khẳng định với điều chỉ là ý kiến; chọn thông tin nổi bật nhất từ hai biểu đồ.",
+ "vocabulary": [
+  [
+   "recreational activity",
+   "hoạt động giải trí",
+   "Hiking is a popular recreational activity at weekends."
+  ],
+  [
+   "extracurricular activity",
+   "hoạt động ngoại khóa",
+   "Every student must choose one extracurricular activity."
+  ],
+  [
+   "participation rate",
+   "tỉ lệ tham gia",
+   "The participation rate in team sports fell after age sixteen."
+  ],
+  [
+   "competitive sport",
+   "thể thao thi đấu",
+   "Some children enjoy competitive sport, while others prefer to play for fun."
+  ],
+  [
+   "physical fitness",
+   "thể lực",
+   "Regular swimming improves physical fitness."
+  ],
+  [
+   "adult education",
+   "giáo dục người lớn",
+   "Adult education classes are often held in the evening."
+  ],
+  [
+   "lifelong learning",
+   "học tập suốt đời",
+   "Libraries support lifelong learning for every age group."
+  ],
+  [
+   "academic performance",
+   "kết quả học tập",
+   "Sleep has a clear effect on academic performance."
+  ],
+  [
+   "leisure time",
+   "thời gian rảnh",
+   "Teenagers spend much of their leisure time online."
+  ],
+  [
+   "sedentary lifestyle",
+   "lối sống ít vận động",
+   "A sedentary lifestyle increases the risk of illness."
+  ],
+  [
+   "team spirit",
+   "tinh thần đồng đội",
+   "The coach tried to build team spirit before the final."
+  ],
+  [
+   "sporting achievement",
+   "thành tích thể thao",
+   "Her greatest sporting achievement was a national medal."
+  ],
+  [
+   "public funding",
+   "ngân sách công",
+   "The new pool was built with public funding."
+  ],
+  [
+   "membership fee",
+   "phí hội viên",
+   "The gym reduced its membership fee for students."
+  ],
+  [
+   "work-life balance",
+   "cân bằng công việc và cuộc sống",
+   "Evening classes can be hard to fit into a busy work-life balance."
+  ],
+  [
+   "hands-on learning",
+   "học qua thực hành",
+   "Science museums encourage hands-on learning."
+  ],
+  [
+   "screen time",
+   "thời gian dùng màn hình",
+   "Parents worry about the amount of screen time their children have."
+  ],
+  [
+   "skill development",
+   "phát triển kỹ năng",
+   "Music lessons contribute to skill development and patience."
+  ],
+  [
+   "voluntary basis",
+   "trên tinh thần tự nguyện",
+   "The coaches work on a voluntary basis."
+  ],
+  [
+   "opening hours",
+   "giờ mở cửa",
+   "The library extended its opening hours during exams."
+  ]
+ ],
+ "grammar": {
+  "title": "Past simple vs past continuous; comparatives and superlatives",
+  "explanation_vi": "Past simple kể sự việc đã xong (She joined the club in 2019). Past continuous tả hành động đang diễn ra làm nền cho một sự việc khác chen vào (I was training when it started to rain). Để so sánh số liệu, dùng more/less … than, twice as … as, the highest/lowest, và much/slightly để chỉ mức độ chênh lệch.",
+  "form": "S + V2/ed — việc đã xong · S + was/were + V-ing — đang diễn ra trong quá khứ · A is much/slightly higher than B · A is twice as popular as B · the most/least popular",
+  "examples": [
+   "While I was studying abroad, I joined a university rowing club.",
+   "Swimming was slightly more popular than cycling among adults.",
+   "Football attracted the highest number of young participants."
+  ],
+  "examples_vi": [
+   "Khi đang du học, tôi đã tham gia câu lạc bộ chèo thuyền của trường.",
+   "Bơi lội phổ biến hơn đạp xe một chút ở người trưởng thành.",
+   "Bóng đá thu hút số người trẻ tham gia cao nhất."
+  ],
+  "trap": "Không viết “more higher” hay “the most popularest”. Với tính từ ngắn dùng -er/-est, tính từ dài dùng more/most. “Twice as many as” (không phải “twice more than”) khi một con số gấp đôi con số kia.",
+  "items": [
+   [
+    "When the fire alarm rang, the students ___ (play) volleyball in the hall.",
+    "were playing",
+    "Hành động đang diễn ra (nền) khi việc khác xảy ra → past continuous."
+   ],
+   [
+    "She ___ (start) karate lessons when she was nine.",
+    "started",
+    "Sự việc đã xong ở một thời điểm trong quá khứ → past simple."
+   ],
+   [
+    "Cycling was ___ (popular) than tennis among teenagers.",
+    "more popular",
+    "popular là tính từ dài → more popular than."
+   ],
+   [
+    "Swimming had the ___ (high) participation rate of all sports.",
+    "highest",
+    "So sánh nhất của tính từ ngắn high → the highest."
+   ],
+   [
+    "Twenty per cent played chess, compared with ten per cent who played cards. Chess was ___ popular as cards. (hai từ)",
+    "twice as",
+    "20% gấp đôi 10% → twice as popular as."
+   ],
+   [
+    "The number of museum visitors was ___ lower in 2020 than in 2019. (much / more)",
+    "much",
+    "much + so sánh hơn để nhấn mạnh mức chênh lớn."
+   ],
+   [
+    "I ___ (walk) home from the stadium when I met my old coach.",
+    "was walking",
+    "Hành động kéo dài bị một sự việc ngắn chen vào → past continuous."
+   ],
+   [
+    "Correct the error: Basketball was more cheaper than tennis lessons.",
+    "Basketball was cheaper than tennis lessons.",
+    "cheap là tính từ ngắn: cheaper, không thêm more."
+   ]
+  ]
+ },
+ "readings": [
+  {
+   "title": "Does organised sport make better students?",
+   "strategy": "Multiple choice: tìm đoạn chứa ý câu hỏi, rồi loại phương án sai, phương án không được nhắc và phương án đúng một nửa. Fact = có số liệu/nguồn kiểm chứng; opinion = từ đánh giá như should, I believe, it is clear that.",
+   "instruction_vi": "Bài đọc khoảng 700 từ, 10 câu: 6 câu multiple choice và 4 câu xác định câu nói là FACT hay OPINION.",
+   "paragraphs": [
+    [
+     "A",
+     "For decades, schools have defended after-school sport by claiming that it does more than keep children fit. Teams, coaches and weekly matches are said to teach discipline, cooperation and the ability to recover from failure – qualities that should also help in the classroom. Yet when education budgets are tight, sport is often among the first activities to be reduced, partly because its academic benefits are difficult to demonstrate."
+    ],
+    [
+     "B",
+     "A five-year study carried out in the fictional region of Westmoor attempted to measure those benefits more carefully. Researchers followed 2,300 students aged eleven to sixteen in eighteen secondary schools. Around half took part in organised sport at least twice a week; the rest did not. Each year, the researchers collected exam results, attendance records and questionnaires about how students felt at school."
+    ],
+    [
+     "C",
+     "At first sight, the results seemed to confirm the traditional view. Students who played organised sport had higher average exam scores and missed fewer days of school. However, the research team pointed out a serious difficulty. Families who pay for sports clubs, transport and equipment are, on average, better off than those who do not, and wealthier families also tend to provide more help with homework. The sport itself might therefore not be responsible for the better results."
+    ],
+    [
+     "D",
+     "To address this problem, the researchers compared students from similar backgrounds, including pupils whose clubs were free because they were run by the school. Once family income was taken into account, the difference in exam scores became much smaller, though it did not disappear completely. The difference in attendance, on the other hand, remained clear. Students who belonged to a team were noticeably less likely to miss school, particularly on days when matches or training sessions took place."
+    ],
+    [
+     "E",
+     "Interviews with students suggested why. Many said that their team was one of the main reasons they enjoyed school, and that they did not want to let teammates down. Coaches also reported that they often noticed when a student seemed unhappy or tired before teachers did, because they saw the same small group regularly in a relaxed setting. In the words of one coach, “Training is the only hour of the week when some of these kids feel they are good at something.”"
+    ],
+    [
+     "F",
+     "Not every finding was positive. A minority of students, most often those who played at a high competitive level, reported that training left them too tired to study in the evening, and their grades fell during the main competition season. The researchers concluded that the amount of sport mattered: two or three sessions a week appeared helpful, while daily training was linked with lower marks for some students."
+    ],
+    [
+     "G",
+     "The researchers also looked at which sports seemed to matter most. Team games such as football, basketball and netball were linked with the largest improvement in attendance, while individual activities such as running and swimming showed a smaller effect. One explanation offered in the report is that team members notice when someone is missing and ask why, which gives students a reason to turn up even on days when they would rather stay at home."
+    ],
+    [
+     "H",
+     "Teachers interviewed for the study were divided about what schools should do with these findings. Some argued that the benefits were too small to justify the cost of transport, equipment and staff time, especially when examination results are what parents and inspectors look at first. Others replied that a student who attends regularly has more chances to learn, so a small effect on attendance could add up to a meaningful difference over five years of secondary school."
+    ],
+    [
+     "I",
+     "The study’s authors are careful about what their evidence shows. They argue that organised sport is unlikely to raise exam scores dramatically on its own, but that it may keep some students connected to school who might otherwise drift away. In my view, that alone is a strong reason for schools to protect free sports clubs, especially in areas where families cannot afford private ones."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "According to paragraph A, why is school sport often cut when money is short?",
+     "options": [
+      "A. Parents prefer academic subjects.",
+      "B. Its effect on learning is hard to prove.",
+      "C. Coaches are too expensive to employ.",
+      "D. Students are no longer interested."
+     ],
+     "answer": "B. Its effect on learning is hard to prove.",
+     "why": "Đoạn A: “its academic benefits are difficult to demonstrate” – paraphrase của B."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What did the researchers collect each year?",
+     "options": [
+      "A. Exam results, attendance and student questionnaires",
+      "B. Fitness test scores and coaches’ reports",
+      "C. Family income records and homework marks",
+      "D. Match results and training times"
+     ],
+     "answer": "A. Exam results, attendance and student questionnaires",
+     "why": "Đoạn B liệt kê đúng ba nguồn dữ liệu này."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What problem did the research team identify in paragraph C?",
+     "options": [
+      "A. Too few students played sport.",
+      "B. Exam results were recorded incorrectly.",
+      "C. Family wealth could explain the better results.",
+      "D. Wealthier families did not support homework."
+     ],
+     "answer": "C. Family wealth could explain the better results.",
+     "why": "Đoạn C: gia đình khá giả vừa trả tiền cho thể thao vừa hỗ trợ học tập nhiều hơn."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What happened when students from similar backgrounds were compared?",
+     "options": [
+      "A. The gap in exam scores disappeared completely.",
+      "B. The gap in exam scores became smaller, but attendance still differed.",
+      "C. Students who played sport had lower attendance.",
+      "D. Both gaps became larger."
+     ],
+     "answer": "B. The gap in exam scores became smaller, but attendance still differed.",
+     "why": "Đoạn D: điểm chênh “became much smaller … did not disappear”, chuyên cần “remained clear”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Why did coaches sometimes notice problems before teachers?",
+     "options": [
+      "A. They had more training in student welfare.",
+      "B. They saw a small group often in a relaxed situation.",
+      "C. Students told coaches about their exam results.",
+      "D. Teachers did not talk to students about feelings."
+     ],
+     "answer": "B. They saw a small group often in a relaxed situation.",
+     "why": "Đoạn E: “they saw the same small group regularly in a relaxed setting”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What did the researchers conclude about the amount of sport?",
+     "options": [
+      "A. Daily training improved marks for most students.",
+      "B. The more sport students played, the better their grades.",
+      "C. Two or three sessions a week seemed better than daily training.",
+      "D. Competitive students always performed worse."
+     ],
+     "answer": "C. Two or three sessions a week seemed better than daily training.",
+     "why": "Đoạn F: 2–3 buổi/tuần có ích; tập hằng ngày liên quan đến điểm thấp hơn ở một số em. D sai vì “always”."
+    },
+    {
+     "type": "match",
+     "prompt": "Statement: Researchers followed 2,300 students in eighteen schools.",
+     "options": [
+      "FACT",
+      "OPINION"
+     ],
+     "answer": "FACT",
+     "why": "Con số và mô tả nghiên cứu có thể kiểm chứng."
+    },
+    {
+     "type": "match",
+     "prompt": "Statement: Students who belonged to a team were less likely to miss school.",
+     "options": [
+      "FACT",
+      "OPINION"
+     ],
+     "answer": "FACT",
+     "why": "Đây là kết quả đo được từ hồ sơ chuyên cần (đoạn D)."
+    },
+    {
+     "type": "match",
+     "prompt": "Statement: Schools should protect free sports clubs, especially in poorer areas.",
+     "options": [
+      "FACT",
+      "OPINION"
+     ],
+     "answer": "OPINION",
+     "why": "Đoạn I: “In my view … a strong reason” – quan điểm của người viết."
+    },
+    {
+     "type": "match",
+     "prompt": "Statement: Training is the only hour of the week when some students feel they are good at something.",
+     "options": [
+      "FACT",
+      "OPINION"
+     ],
+     "answer": "OPINION",
+     "why": "Đây là nhận định của một huấn luyện viên, không phải số liệu kiểm chứng."
+    }
+   ]
+  },
+  {
+   "title": "The return of the evening class",
+   "strategy": "TRUE/FALSE/NOT GIVEN: FALSE khi bài nói điều ngược lại; NOT GIVEN khi bài không đề cập. Đừng dùng hiểu biết riêng để điền phần bài không nói.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "Twenty years ago, the community college in the fictional town of Ashford offered more than eighty evening courses, from car maintenance to conversational Italian. By 2015, that number had fallen to fewer than thirty. Online tutorials had made it easy to learn almost anything at home, and many adults said they were simply too busy to spend two hours in a classroom after work."
+    ],
+    [
+     "B",
+     "Since then, however, enrolment has risen every year. The college now runs fifty-five evening courses, and some, such as pottery and first aid, have waiting lists. The director, Maria Lund, believes the main reason is social. “People can learn facts online,” she says, “but they cannot easily make friends there. Many of our students live alone or have moved to the area recently. The class is where they meet people.”"
+    ],
+    [
+     "C",
+     "Price also plays a part. Most courses cost between forty and ninety pounds for ten weeks, and students over sixty pay half price. The college keeps fees low by using volunteer assistants and by sharing rooms with the local secondary school, which are empty in the evenings. Courses that lead to a qualification, such as accounting, are more expensive because examinations must be paid for."
+    ],
+    [
+     "D",
+     "Not all subjects have recovered. Language courses, once the college’s most popular area, still attract fewer students than before, probably because free translation apps and language programmes are widely available. On the other hand, practical subjects that need equipment or close supervision – woodwork, cookery and photography – are more popular than ever."
+    ],
+    [
+     "E",
+     "The college has also changed when and how it teaches. Some courses now start at half past six rather than seven, so that parents can be home earlier, and several combine online video lessons with a practical session every two weeks. According to the college’s own survey, students on these mixed courses were just as satisfied as those attending every week in person."
+    ],
+    [
+     "F",
+     "Lund admits that the growth may not continue. The college’s funding from the regional government is reviewed every three years, and the next decision is due soon. For now, though, she is optimistic. “Every September,” she says, “I see people who arrived as strangers leave the building together, still talking about what they made.”"
+    ],
+    [
+     "G",
+     "Other colleges in the region are watching Ashford closely. Two have already copied its idea of starting earlier in the evening, and one has begun inviting former students back as volunteer assistants. Whether the same approach will work in larger cities, where people have many more choices of things to do after work, remains an open question."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "tfng",
+     "prompt": "In 2015, the college offered fewer than thirty evening courses.",
+     "answer": "TRUE",
+     "why": "Đoạn A: “By 2015, that number had fallen to fewer than thirty.”"
+    },
+    {
+     "type": "tfng",
+     "prompt": "Every course at the college now has a waiting list.",
+     "answer": "FALSE",
+     "why": "Đoạn B: chỉ “some, such as pottery and first aid, have waiting lists”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Maria Lund thinks the social side of classes explains the rise in students.",
+     "answer": "TRUE",
+     "why": "Đoạn B: “believes the main reason is social”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Students over sixty can attend courses for free.",
+     "answer": "FALSE",
+     "why": "Đoạn C: họ trả nửa giá (half price), không miễn phí."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The secondary school charges the college rent for its rooms.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn C chỉ nói hai bên dùng chung phòng, không nói có trả tiền thuê hay không."
+    },
+    {
+     "type": "short",
+     "prompt": "Which type of course is more expensive because of examination costs? Write ONE WORD as an example from the text.",
+     "answer": "accounting",
+     "why": "Đoạn C: “Courses that lead to a qualification, such as accounting, are more expensive”."
+    },
+    {
+     "type": "short",
+     "prompt": "Which area of study was once the college’s most popular? Write ONE WORD.",
+     "answer": "languages",
+     "why": "Đoạn D: “Language courses, once the college’s most popular area” – chấp nhận language."
+    },
+    {
+     "type": "short",
+     "prompt": "On mixed courses, how often is there a practical session? Write NO MORE THAN THREE WORDS.",
+     "answer": "every two weeks",
+     "why": "Đoạn E: “a practical session every two weeks”."
+    },
+    {
+     "type": "short",
+     "prompt": "How often is the college’s regional funding reviewed? Write NO MORE THAN THREE WORDS.",
+     "answer": "every three years",
+     "why": "Đoạn F: “reviewed every three years”."
+    }
+   ]
+  },
+  {
+   "title": "Museums you are allowed to touch",
+   "strategy": "Câu hỏi global understanding (chọn tiêu đề/ý chính cả bài): đọc câu đầu và câu cuối mỗi đoạn; loại tiêu đề chỉ đúng với một đoạn.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "For most of their history, museums asked visitors to look but not touch. Objects were placed behind glass, guards watched the rooms, and signs reminded children to keep their hands to themselves. In the last thirty years, a different kind of museum has spread around the world: the hands-on science centre, where pressing buttons, building structures and testing ideas is the whole point of a visit."
+    ],
+    [
+     "B",
+     "Supporters say these centres reach people who would never enter a traditional museum. Visitor surveys at one large centre in the fictional city of Port Hallam found that forty per cent of adult visitors had not been to any museum in the previous five years. Families also stay longer: the average visit lasts three hours, compared with about seventy minutes at the city’s art gallery."
+    ],
+    [
+     "C",
+     "The educational value of all this activity is harder to judge. A team of researchers watched children in one gallery and recorded what they did at each exhibit. Many children ran from one button to the next, spending less than thirty seconds at each display, and few read the explanations. When the researchers interviewed them afterwards, most could describe what had happened at an exhibit but not why it had happened."
+    ],
+    [
+     "D",
+     "Small changes made a big difference. When staff members or volunteers were present to ask simple questions – “What do you think will happen if you make the ramp steeper?” – children stayed at exhibits up to four times longer and were much more likely to explain the science correctly. Exhibits that asked visitors to make a prediction before acting had a similar effect, even without an adult present."
+    ],
+    [
+     "E",
+     "Traditional museums have taken note. Several now offer handling sessions in which visitors may hold real fossils or historical tools under supervision, and some have added touch-screen displays beside their glass cases. Directors stress that the aim is not to turn every museum into a playground, but to give visitors a reason to think about what they are seeing."
+    ],
+    [
+     "F",
+     "Science centres are also changing the way they measure success. Rather than counting only tickets sold, some now record how long visitors spend at each exhibit and invite a sample of families to answer a few questions as they leave. These measures are less simple than visitor numbers, but they show whether people have actually understood something new, which is the reason most centres were built in the first place."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "Which is the best title for the whole passage?",
+     "options": [
+      "A. Why science centres are replacing art galleries",
+      "B. Hands-on museums: popular, but learning needs support",
+      "C. The history of glass cases in museums",
+      "D. How to build a science exhibit cheaply"
+     ],
+     "answer": "B. Hands-on museums: popular, but learning needs support",
+     "why": "Cả bài: bảo tàng thực hành thu hút nhiều người (B), nhưng trẻ chỉ học tốt khi có câu hỏi/dự đoán (C–D). Các tiêu đề khác chỉ đúng một phần hoặc không có trong bài."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What did the Port Hallam survey show?",
+     "options": [
+      "A. Most visitors were regular museum-goers.",
+      "B. Many adult visitors had not visited a museum recently.",
+      "C. Families preferred the art gallery.",
+      "D. Visits lasted about seventy minutes."
+     ],
+     "answer": "B. Many adult visitors had not visited a museum recently.",
+     "why": "Đoạn B: 40% người lớn chưa đến bảo tàng nào trong 5 năm. D là số liệu của art gallery (bẫy)."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What did the researchers notice about many children in paragraph C?",
+     "options": [
+      "A. They read every explanation carefully.",
+      "B. They could explain why things happened.",
+      "C. They moved quickly between exhibits.",
+      "D. They refused to touch the exhibits."
+     ],
+     "answer": "C. They moved quickly between exhibits.",
+     "why": "Đoạn C: “ran from one button to the next, spending less than thirty seconds at each”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "According to paragraph D, what helped children learn even without an adult?",
+     "options": [
+      "A. Longer written explanations",
+      "B. Exhibits that asked for a prediction first",
+      "C. Louder sound effects",
+      "D. Shorter visits"
+     ],
+     "answer": "B. Exhibits that asked for a prediction first",
+     "why": "Đoạn D: “Exhibits that asked visitors to make a prediction … had a similar effect, even without an adult present”."
+    },
+    {
+     "type": "short",
+     "prompt": "What percentage of adult visitors had not visited a museum in five years? Write A NUMBER.",
+     "answer": "40%",
+     "why": "Đoạn B: “forty per cent of adult visitors”."
+    },
+    {
+     "type": "short",
+     "prompt": "How long does the average visit to the science centre last? Write NO MORE THAN TWO WORDS.",
+     "answer": "three hours",
+     "why": "Đoạn B: “the average visit lasts three hours”."
+    },
+    {
+     "type": "short",
+     "prompt": "With an adult asking questions, how much longer did children stay at exhibits? Write NO MORE THAN THREE WORDS.",
+     "answer": "four times longer",
+     "why": "Đoạn D: “up to four times longer”."
+    },
+    {
+     "type": "short",
+     "prompt": "What may visitors hold in handling sessions, as well as historical tools? Write ONE WORD.",
+     "answer": "fossils",
+     "why": "Đoạn E: “hold real fossils or historical tools”."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "A tour of the Riverside Sports Centre",
+   "section": "Section 2 · multiple choice",
+   "strategy": "Multiple choice trong Section 2: cả ba phương án thường đều được nhắc; chọn phương án khớp với ý người nói khẳng định cuối cùng.",
+   "pre_listening": "Trước khi nghe: gạch dưới từ khóa trong câu hỏi và phương án; đoán từ đồng nghĩa có thể xuất hiện.",
+   "trap": "Người nói hay nhắc một phương án rồi phủ định (“not on Mondays, though”) – nghe hết ý trước khi chọn.",
+   "strategies": [
+    "Keywords in options",
+    "Rejected options",
+    "Signposting"
+   ],
+   "transcript": "Guide: Welcome to the Riverside Sports Centre, everyone. I’m Tom, the centre manager, and I’ll show you round before you decide which membership suits you.\nWe opened in 2009, but the building you’re standing in is new – the old hall was replaced two years ago after a flood damaged the floor. The swimming pool, though, is original, and it was fully refurbished last summer.\nLet’s start with the pool. It’s open from six in the morning until ten at night, except on Mondays, when it closes at eight for the swimming club. Lessons for children run on weekday afternoons and Saturday mornings. Adult lessons used to be on Sundays, but we’ve moved them to Tuesday evenings because more people asked for a weekday time.\nNow, the gym upstairs. We have a free induction session for every new member, which takes about forty-five minutes. You don’t have to book it in advance; just ask at reception when you first arrive. What you do need to bring is a padlock for the lockers – we don’t lend them any more because so many went missing.\nThe sports hall is used for badminton, basketball and indoor football. Courts can be booked online up to seven days ahead. Members get a twenty per cent discount on court bookings, and students pay the member price even without a membership, as long as they show a valid student card.\nA couple of practical points. The café on the ground floor is run by a local charity, and all its profits go to sports programmes for young people with disabilities. Parking is free for the first three hours, but please register your car number at reception, or you may receive a fine.\nFinally, membership. There are three options: off-peak, which lets you use the facilities before four in the afternoon on weekdays; standard, which covers all times; and family, for two adults and up to three children. Most people who join after a tour choose the standard option, but if you only come during the day, off-peak is excellent value.",
+   "questions": [
+    {
+     "prompt": "Why was the sports hall rebuilt?",
+     "options": [
+      "A. It was too small.",
+      "B. A flood damaged the floor.",
+      "C. The pool needed more space."
+     ],
+     "answer": "B. A flood damaged the floor.",
+     "why": "“the old hall was replaced … after a flood damaged the floor”."
+    },
+    {
+     "prompt": "When does the pool close early?",
+     "options": [
+      "A. On Mondays",
+      "B. On Tuesdays",
+      "C. On Sundays"
+     ],
+     "answer": "A. On Mondays",
+     "why": "“except on Mondays, when it closes at eight for the swimming club”."
+    },
+    {
+     "prompt": "When are adult swimming lessons held now?",
+     "options": [
+      "A. Sunday mornings",
+      "B. Saturday mornings",
+      "C. Tuesday evenings"
+     ],
+     "answer": "C. Tuesday evenings",
+     "why": "Trước đây là Sunday; nay chuyển sang Tuesday evenings."
+    },
+    {
+     "prompt": "What must new gym members bring?",
+     "options": [
+      "A. A booking confirmation",
+      "B. A padlock",
+      "C. A towel"
+     ],
+     "answer": "B. A padlock",
+     "why": "Induction không cần đặt trước; cần mang “a padlock for the lockers”."
+    },
+    {
+     "prompt": "Who can pay the member price for courts without being a member?",
+     "options": [
+      "A. Students with a valid card",
+      "B. Families with children",
+      "C. Visitors who book online"
+     ],
+     "answer": "A. Students with a valid card",
+     "why": "“students pay the member price … as long as they show a valid student card”."
+    },
+    {
+     "prompt": "Where do the café’s profits go?",
+     "options": [
+      "A. To repairing the building",
+      "B. To sports for young disabled people",
+      "C. To the swimming club"
+     ],
+     "answer": "B. To sports for young disabled people",
+     "why": "“profits go to sports programmes for young people with disabilities”."
+    },
+    {
+     "prompt": "What must drivers do to avoid a fine?",
+     "options": [
+      "A. Pay at the machine",
+      "B. Leave within one hour",
+      "C. Register their car number"
+     ],
+     "answer": "C. Register their car number",
+     "why": "“please register your car number at reception, or you may receive a fine”."
+    },
+    {
+     "prompt": "Which membership does the guide say most people choose?",
+     "options": [
+      "A. Off-peak",
+      "B. Standard",
+      "C. Family"
+     ],
+     "answer": "B. Standard",
+     "why": "“Most people who join after a tour choose the standard option”."
+    }
+   ]
+  },
+  {
+   "title": "Enrolling on an evening course",
+   "section": "Section 1 · form completion",
+   "strategy": "Điền form: nghe tên khóa, ngày, giá và cách đánh vần; một số thông tin được nói rồi sửa lại.",
+   "strategies": [
+    "Dates and prices",
+    "Spelling",
+    "Corrections"
+   ],
+   "transcript": "Receptionist: Ashford Community College, enrolment desk. How can I help?\nCaller: Hello, I’d like to sign up for one of your evening courses – the photography one.\nReceptionist: We have two photography courses: Beginners and Next Steps. Which one are you interested in?\nCaller: Beginners, please. I’ve only used my phone camera so far.\nReceptionist: That’s fine – phone cameras are welcome on that course. Can I have your full name?\nCaller: It’s David Marsh. M-A-R-S-H.\nReceptionist: Thank you. And your date of birth?\nCaller: The fourteenth of March, nineteen eighty-seven.\nReceptionist: Lovely. The course runs on Wednesdays, starting on the second of October. Oh, sorry – I’m looking at last year’s timetable. It actually starts on the ninth of October this year, and it lasts ten weeks.\nCaller: What time does it begin?\nReceptionist: Half past six, and each session is two hours. You’ll be in room twelve in the Arts building.\nCaller: And how much does it cost?\nReceptionist: The full fee is seventy-five pounds. Are you over sixty, or receiving any benefits?\nCaller: No, neither.\nReceptionist: Then it’s seventy-five. That includes printing for your final exhibition, but you’ll need to buy a memory card if you use a separate camera.\nCaller: OK. Can I pay by card over the phone?\nReceptionist: Yes, or you can pay in person at the library desk. Lastly, how did you hear about the course?\nCaller: A friend recommended it. She did the cookery course last spring.\nReceptionist: Wonderful. I’ll email you a confirmation today. What’s your email address?\nCaller: It’s dmarsh at lightmail dot com.\nReceptionist: Perfect. See you in October, David.",
+   "questions": [
+    {
+     "prompt": "Course level: ______",
+     "answer": "Beginners",
+     "why": "Có hai khóa; người gọi chọn “Beginners”."
+    },
+    {
+     "prompt": "Surname: ______",
+     "answer": "Marsh",
+     "why": "Được đánh vần M-A-R-S-H."
+    },
+    {
+     "prompt": "Date of birth: 14th ______ 1987",
+     "answer": "March",
+     "why": "“The fourteenth of March, nineteen eighty-seven”."
+    },
+    {
+     "prompt": "Start date: ______ October",
+     "answer": "9th",
+     "why": "Ngày 2/10 là lịch năm ngoái (bẫy); năm nay bắt đầu “the ninth of October”."
+    },
+    {
+     "prompt": "Start time: ______",
+     "answer": "6:30",
+     "why": "“Half past six” – chấp nhận 6.30 / half past six."
+    },
+    {
+     "prompt": "Room: ______, Arts building",
+     "answer": "12",
+     "why": "“room twelve in the Arts building”."
+    },
+    {
+     "prompt": "Fee: £______",
+     "answer": "75",
+     "why": "“The full fee is seventy-five pounds”."
+    },
+    {
+     "prompt": "Student must buy: a ______ (if using a separate camera)",
+     "answer": "memory card",
+     "why": "“you’ll need to buy a memory card”."
+    },
+    {
+     "prompt": "Heard about the course from: a ______",
+     "answer": "friend",
+     "why": "“A friend recommended it.”"
+    }
+   ]
+  },
+  {
+   "title": "Planning a survey on student leisure",
+   "section": "Section 3 · multiple choice (discussion)",
+   "strategy": "Section 3 có hai người thảo luận; chú ý ai đồng ý/không đồng ý và quyết định cuối cùng của cả hai.",
+   "strategies": [
+    "Agreement and disagreement",
+    "Final decision",
+    "Paraphrase"
+   ],
+   "transcript": "Kim: So, Sam, we need to decide how to run our survey on how students spend their free time.\nSam: Right. I thought we could just put a questionnaire online and share the link with everyone in our year.\nKim: That would be quick, but I’m worried that only the most organised students would answer. Tutor Ellis said online surveys often get a very low response rate.\nSam: Fair point. What if we hand out paper questionnaires at the start of lectures instead?\nKim: Yes, that should give us more answers, and from a wider range of students. Let’s do that.\nSam: OK. How many questions should we include? I wrote twenty-five.\nKim: That’s too many for a lecture break. People will stop halfway. I’d say twelve at most.\nSam: Twelve, then. I’ll remove the ones about music, because they overlap with the questions on social media.\nKim: Good idea. Now, what do you think will be the most interesting result?\nSam: Honestly, I expect sport to be less popular than people think. Most students I know say they’re too busy.\nKim: I think the result about part-time work will be more interesting. If many students work twenty hours a week, that explains a lot about their free time.\nSam: True. We should definitely ask about working hours.\nKim: What about the presentation? Ellis wants it in two weeks.\nSam: I’d like to show the results as pie charts.\nKim: Pie charts are fine for one question, but we want to compare first-year and final-year students, so bar charts would work better.\nSam: You’re right. Bar charts it is.\nKim: And one last thing – we should explain the limitations of our survey at the end. Only students on our course will answer, so we can’t say the results apply to the whole university.\nSam: Agreed. I’ll write that section, and you can do the introduction.",
+   "questions": [
+    {
+     "prompt": "Why does Kim reject an online questionnaire?",
+     "options": [
+      "A. It would take too long to design.",
+      "B. Too few students might reply.",
+      "C. The tutor does not allow them."
+     ],
+     "answer": "B. Too few students might reply.",
+     "why": "Kim lo chỉ người chăm chỉ trả lời; online survey “often get a very low response rate”."
+    },
+    {
+     "prompt": "How will they collect answers?",
+     "options": [
+      "A. Online",
+      "B. By email",
+      "C. On paper at lectures"
+     ],
+     "answer": "C. On paper at lectures",
+     "why": "“hand out paper questionnaires at the start of lectures … Let’s do that.”"
+    },
+    {
+     "prompt": "How many questions will the survey have?",
+     "options": [
+      "A. 12",
+      "B. 20",
+      "C. 25"
+     ],
+     "answer": "A. 12",
+     "why": "Sam viết 25 câu nhưng cả hai thống nhất “Twelve, then”."
+    },
+    {
+     "prompt": "Which topic will Sam remove?",
+     "options": [
+      "A. Social media",
+      "B. Music",
+      "C. Part-time work"
+     ],
+     "answer": "B. Music",
+     "why": "“I’ll remove the ones about music”."
+    },
+    {
+     "prompt": "Which result does Kim expect to be most interesting?",
+     "options": [
+      "A. Sport",
+      "B. Social media",
+      "C. Part-time work"
+     ],
+     "answer": "C. Part-time work",
+     "why": "Sam nói về sport; Kim cho rằng “the result about part-time work will be more interesting”."
+    },
+    {
+     "prompt": "When is the presentation due?",
+     "options": [
+      "A. In one week",
+      "B. In two weeks",
+      "C. At the end of term"
+     ],
+     "answer": "B. In two weeks",
+     "why": "“Ellis wants it in two weeks.”"
+    },
+    {
+     "prompt": "What type of chart will they use?",
+     "options": [
+      "A. Pie charts",
+      "B. Bar charts",
+      "C. Line graphs"
+     ],
+     "answer": "B. Bar charts",
+     "why": "Sam muốn pie charts nhưng đồng ý dùng bar charts để so sánh hai nhóm."
+    },
+    {
+     "prompt": "What limitation will they mention?",
+     "options": [
+      "A. The survey was too short.",
+      "B. Only students on one course took part.",
+      "C. Some answers were missing."
+     ],
+     "answer": "B. Only students on one course took part.",
+     "why": "“Only students on our course will answer, so we can’t say the results apply to the whole university.”"
+    }
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 1 – chart and table together",
+  "instruction_vi": "Đề có hai nguồn số liệu: chọn xu hướng nổi bật của từng nguồn và tìm một điểm liên hệ giữa chúng để viết overview. Viết ít nhất 150 từ trong 20 phút.",
+  "task": "The table below shows the percentage of adults in one country who took part in four leisure activities in 2023 and the average number of hours they spent on each activity per week. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "data_visual": {
+   "headers": [
+    "Activity",
+    "Adults taking part (%)",
+    "Average hours per week"
+   ],
+   "rows": [
+    [
+     "Walking",
+     "64%",
+     "3.5"
+    ],
+    [
+     "Gym or fitness class",
+     "28%",
+     "4.0"
+    ],
+    [
+     "Team sports",
+     "15%",
+     "5.5"
+    ],
+    [
+     "Evening classes",
+     "9%",
+     "2.0"
+    ]
+   ]
+  },
+  "sample_answer": "The table gives information about how many adults in one country took part in four leisure activities in 2023 and how much time participants spent on each of them every week.\n\nOverall, walking was by far the most common activity, while team sports, although less popular, took up the most time for those who did them. Evening classes were the least popular and the least time-consuming activity.\n\nAlmost two thirds of adults (64%) went walking, more than twice the proportion who used a gym or attended a fitness class (28%). Only 15% played team sports, and fewer than one in ten adults (9%) attended evening classes.\n\nIn terms of time, the pattern was almost the opposite. People who played team sports spent an average of 5.5 hours a week on them, compared with 4 hours for gym users and 3.5 hours for walkers. Evening classes required the least time, at just 2 hours per week. This suggests that the most popular activity was not necessarily the one that took up most of people’s free time.",
+  "guidance": [
+   "Câu mở đầu: nêu rõ hai loại số liệu (tỉ lệ tham gia và số giờ).",
+   "Overview: hoạt động phổ biến nhất vs hoạt động tốn nhiều thời gian nhất.",
+   "Thân bài 1: so sánh tỉ lệ tham gia (twice as…, fewer than one in ten).",
+   "Thân bài 2: so sánh số giờ và chỉ ra điểm tương phản giữa hai cột."
+  ],
+  "micro": [
+   [
+    "Viết lại 64% bằng phân số.",
+    "almost two thirds of adults"
+   ],
+   [
+    "So sánh walking (64%) và gym (28%) bằng “twice”.",
+    "The proportion of adults who walked was more than twice that of gym users."
+   ],
+   [
+    "Viết lại 9% bằng cụm “one in …”.",
+    "fewer than one in ten adults"
+   ],
+   [
+    "Câu tương phản giữa tỉ lệ và số giờ của team sports.",
+    "Although only 15% played team sports, they spent the most time on them, at 5.5 hours a week."
+   ],
+   [
+    "Viết câu overview không có số.",
+    "Overall, walking was the most popular activity, while team sports took up the most time."
+   ]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 1. The chart and table show the number of visitors to three museums in 2019 and 2024 and the average length of a visit. Summarise the main features and make comparisons. Write at least 150 words.",
+  "essay": {
+   "prompt": "Some people think schools should spend more time on sport and creative activities, while others believe that academic subjects are more important. Discuss both views and give your own opinion.",
+   "planning_prompts": [
+    "Mở bài: paraphrase hai quan điểm và nêu ý kiến của bạn.",
+    "Thân bài 1: vì sao một số người ưu tiên môn học thuật (thi cử, nghề nghiệp).",
+    "Thân bài 2: lợi ích của thể thao và nghệ thuật (sức khỏe, kỹ năng mềm, chuyên cần).",
+    "Kết luận: tóm tắt và nhắc lại quan điểm cân bằng."
+   ],
+   "model_paragraphs": [
+    "Schools have limited time, and there is ongoing debate about how it should be used. While some people believe that academic subjects should come first, others argue that sport and creative activities deserve a larger place in the timetable. In my opinion, academic study is essential, but a modest increase in sport and the arts would benefit most students.",
+    "Those who prioritise academic subjects point out that exam results strongly influence young people’s futures. Good grades in mathematics, science and languages open the door to university places and well-paid careers, and parents often judge schools by these results. From this point of view, every hour spent on football or painting is an hour taken away from preparing for important examinations.",
+    "On the other hand, there are convincing reasons to protect time for sport and creative work. Physical activity improves concentration and health, and team activities teach cooperation and resilience in a way that classroom lessons rarely do. Moreover, research suggests that students who belong to a team or a drama group are more likely to attend school regularly, which in turn supports their academic progress. Creative subjects also develop problem-solving skills that employers increasingly value.",
+    "In my view, the two sides are not really in competition. A timetable that includes two or three hours of sport and one creative subject each week is unlikely to harm exam results and may even improve them by keeping students motivated.",
+    "In conclusion, although academic subjects must remain central, schools should give sport and creative activities enough time to help students stay healthy, engaged and confident."
+   ]
+  },
+  "drills": [
+   [
+    "Sửa lỗi: Walking was the most popular than gym.",
+    "Walking was more popular than going to the gym.",
+    "So sánh hai đối tượng dùng so sánh hơn (more … than), không dùng the most."
+   ],
+   [
+    "Sửa lỗi: Team sports took twice more time than walking.",
+    "Team sports took more time than walking.",
+    "5,5 giờ không gấp đôi 3,5 giờ; và cấu trúc đúng là twice as much … as."
+   ],
+   [
+    "Sửa lỗi: The number of people who did evening classes were 9%.",
+    "The proportion of people who attended evening classes was 9%.",
+    "Phần trăm đi với proportion/percentage; chủ ngữ số ít → was."
+   ],
+   [
+    "Viết lại trang trọng hơn: Lots of people like walking.",
+    "Walking was by far the most popular activity.",
+    "Dùng by far + so sánh nhất thay cho “lots of people like”."
+   ],
+   [
+    "Sửa lỗi: In 2023, gym had 28 percents.",
+    "In 2023, 28% of adults used a gym or attended a fitness class.",
+    "percent không có -s; nêu rõ 28% của nhóm nào."
+   ],
+   [
+    "Sửa lỗi: People was spending 2 hours for evening classes.",
+    "People spent two hours a week on evening classes.",
+    "Chủ ngữ số nhiều; spend time on something; dùng past simple cho dữ liệu đã xong."
+   ]
+  ]
+ },
+ "speaking": {
+  "title": "Free time, sport and learning",
+  "instruction_vi": "Part 2 luyện kể chuyện theo trình tự thời gian bằng past simple/past continuous; cố nói đủ 1–2 phút.",
+  "focus": "Kể sự kiện theo trình tự (at first, then, after that, in the end) và phát âm rõ đuôi -ed (/t/, /d/, /ɪd/).",
+  "part1": [
+   "What do you usually do in your free time?",
+   "Did you play any sports when you were a child?",
+   "Do you prefer learning in a classroom or online? Why?",
+   "Is there a new skill you would like to learn?"
+  ],
+  "part2": "Describe a sports event that you watched or took part in. You should say what the event was, when and where it happened, what happened during the event, and explain why you remember it.",
+  "part3": [
+   "Why do some people stop playing sport when they get older?",
+   "Should schools make sport compulsory for all students?",
+   "How has the way people spend their free time changed in recent years?"
+  ],
+  "model_answer": "I’d like to talk about a school football tournament I took part in when I was about fifteen. It was held at a sports ground near my home town during the summer holidays, and teams from six different schools came to play. To be honest, our team wasn’t expected to do well, because most of us were quite small and we had only been training together for a couple of months. In our first match, we were losing two–nil at half-time, and I remember the coach telling us to stop worrying about the score and just pass the ball more. After that, something changed. We scored twice in the second half and won on penalties. In the end, we reached the final, which we lost, but nobody minded very much. I remember it so clearly because it was the first time I really understood what team spirit means – none of us were great players, but we worked hard for each other, and that felt better than winning.",
+  "extensions": [
+   [
+    "Why do some people stop playing sport when they get older?",
+    "Đưa 2 lý do: thời gian (công việc, gia đình) và chi phí/chấn thương → ví dụ → thêm ý: một số người chuyển sang môn nhẹ hơn như đi bộ."
+   ],
+   [
+    "Should schools make sport compulsory for all students?",
+    "Quan điểm (đồng ý một phần) → lợi ích sức khỏe → vấn đề với học sinh không thích thi đấu → giải pháp: nhiều lựa chọn vận động khác nhau."
+   ],
+   [
+    "How has the way people spend their free time changed in recent years?",
+    "So sánh trước–nay: nhiều thời gian màn hình hơn → nguyên nhân → mặt tích cực (học online, kết nối) → mặt tiêu cực (ít vận động)."
+   ],
+   [
+    "Is it better to learn a skill from a teacher or by yourself online?",
+    "Phụ thuộc kỹ năng: kỹ năng thực hành cần giáo viên sửa lỗi → kiến thức lý thuyết có thể tự học → ví dụ cá nhân."
+   ]
+  ]
+ },
+ "checkpoint": [
+  [
+   "Which statement is an OPINION?",
+   [
+    "The club has 120 members.",
+    "The pool opened in 2009.",
+    "Every school should have a swimming pool.",
+    "Fees rose by 10% last year."
+   ],
+   "Every school should have a swimming pool.",
+   "“should” thể hiện quan điểm, không kiểm chứng được."
+  ],
+  [
+   "In a multiple-choice question, an option repeats many words from the passage but changes one detail. It is probably…",
+   [
+    "the correct answer",
+    "a distractor",
+    "a heading",
+    "a paraphrase"
+   ],
+   "a distractor",
+   "Phương án lặp nhiều từ nhưng đổi một chi tiết là bẫy phổ biến."
+  ],
+  [
+   "Choose the correct sentence.",
+   [
+    "Cycling was more cheaper than tennis.",
+    "Cycling was cheaper than tennis.",
+    "Cycling was the cheaper than tennis.",
+    "Cycling was most cheap than tennis."
+   ],
+   "Cycling was cheaper than tennis.",
+   "cheap là tính từ ngắn: cheaper than."
+  ],
+  [
+   "“I ___ dinner when the phone rang.” Choose the correct form.",
+   [
+    "cooked",
+    "was cooking",
+    "am cooking",
+    "have cooked"
+   ],
+   "was cooking",
+   "Hành động đang diễn ra bị việc khác chen vào → past continuous."
+  ],
+  [
+   "A Task 1 question shows two different sets of data. What should the overview do?",
+   [
+    "Describe only the first chart",
+    "List every number",
+    "Give the main feature of each data set",
+    "Explain the causes of the trends"
+   ],
+   "Give the main feature of each data set",
+   "Overview phải bao quát cả hai nguồn số liệu."
+  ]
+ ],
+ "reflection": [
+  "Bạn có chọn sai câu multiple choice vì phương án lặp lại từ trong bài không?",
+  "Bạn đã phân biệt được fact và opinion bằng dấu hiệu ngôn ngữ nào?"
+ ]
+}

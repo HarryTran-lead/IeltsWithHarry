@@ -1,0 +1,841 @@
+{
+ "unit_id": "L2U06",
+ "order": 6,
+ "title": "The Natural Environment",
+ "title_vi": "Môi trường tự nhiên",
+ "objectives": [
+  "Làm YES/NO/NOT GIVEN: xác định quan điểm của người viết, không phải sự thật chung",
+  "Làm summary completion: chọn đúng từ trong bài, đúng loại từ và giới hạn từ",
+  "Viết Task 2 agree/disagree với lập trường rõ ràng và mọi đoạn đều liên quan đề",
+  "Dùng ngôn ngữ thận trọng (hedging): may, tend to, it is likely that"
+ ],
+ "exam_strategy": "YES/NO/NOT GIVEN hỏi về quan điểm người viết: YES khi người viết đồng ý, NO khi người viết nói ngược lại, NOT GIVEN khi không thể biết người viết nghĩ gì.",
+ "core_outcome": "Không đánh đồng NOT GIVEN với NO; lập trường Task 2 rõ ngay mở bài và giữ nhất quán đến kết luận.",
+ "vocabulary": [
+  [
+   "habitat loss",
+   "mất môi trường sống",
+   "Habitat loss is the main threat to many bird species."
+  ],
+  [
+   "biodiversity",
+   "đa dạng sinh học",
+   "Tropical forests have extremely high biodiversity."
+  ],
+  [
+   "endangered species",
+   "loài có nguy cơ tuyệt chủng",
+   "The tiger is an endangered species in many countries."
+  ],
+  [
+   "conservation policy",
+   "chính sách bảo tồn",
+   "A new conservation policy protects the coastal wetlands."
+  ],
+  [
+   "ecosystem",
+   "hệ sinh thái",
+   "Removing one predator can change a whole ecosystem."
+  ],
+  [
+   "deforestation",
+   "nạn phá rừng",
+   "Deforestation increases the risk of floods and landslides."
+  ],
+  [
+   "climate change",
+   "biến đổi khí hậu",
+   "Climate change is affecting rainfall patterns."
+  ],
+  [
+   "renewable energy",
+   "năng lượng tái tạo",
+   "Solar power is the fastest-growing form of renewable energy."
+  ],
+  [
+   "carbon footprint",
+   "lượng phát thải carbon cá nhân",
+   "Eating less meat can reduce your carbon footprint."
+  ],
+  [
+   "sustainable practice",
+   "cách làm bền vững",
+   "Rotating crops is a sustainable practice that protects the soil."
+  ],
+  [
+   "wildlife corridor",
+   "hành lang cho động vật hoang dã",
+   "A wildlife corridor lets animals move safely between forests."
+  ],
+  [
+   "natural resources",
+   "tài nguyên thiên nhiên",
+   "Water is one of our most valuable natural resources."
+  ],
+  [
+   "environmental impact",
+   "tác động môi trường",
+   "The environmental impact of the dam was carefully assessed."
+  ],
+  [
+   "plastic waste",
+   "rác thải nhựa",
+   "Plastic waste often ends up in rivers and oceans."
+  ],
+  [
+   "protected area",
+   "khu bảo tồn",
+   "Hunting is banned in the protected area."
+  ],
+  [
+   "invasive species",
+   "loài xâm lấn",
+   "An invasive species can push out native plants."
+  ],
+  [
+   "soil erosion",
+   "xói mòn đất",
+   "Tree roots help to prevent soil erosion on hillsides."
+  ],
+  [
+   "water shortage",
+   "tình trạng thiếu nước",
+   "The region faces a water shortage every summer."
+  ],
+  [
+   "environmental regulation",
+   "quy định về môi trường",
+   "Stricter environmental regulation reduced river pollution."
+  ],
+  [
+   "restore a habitat",
+   "phục hồi môi trường sống",
+   "Volunteers are working to restore a habitat for wild bees."
+  ]
+ ],
+ "grammar": {
+  "title": "Expressing views and hedging",
+  "explanation_vi": "Trong Task 2 cần nêu quan điểm rõ ràng (I strongly agree that…, I do not believe that…), nhưng khi nói về kết quả, nguyên nhân hay dự đoán thì nên thận trọng để tránh khái quát quá mức: may/might/could, tend to, it is likely that, in many cases. Người viết bài đọc cũng dùng những cụm này – đó là manh mối cho câu YES/NO/NOT GIVEN.",
+  "form": "I (strongly / partly) agree that … · I do not believe that … · It is likely / unlikely that … · X may / might / could + V · X tends to + V · in many cases · to some extent",
+  "examples": [
+   "I strongly agree that governments should protect wetlands.",
+   "Planting trees in the wrong place may actually harm local wildlife.",
+   "Large-scale projects tend to be more expensive than expected."
+  ],
+  "examples_vi": [
+   "Tôi hoàn toàn đồng ý rằng chính phủ nên bảo vệ các vùng đất ngập nước.",
+   "Trồng cây sai chỗ thực ra có thể gây hại cho động vật hoang dã địa phương.",
+   "Các dự án quy mô lớn thường tốn kém hơn dự kiến."
+  ],
+  "trap": "Không viết “I am agree” (đúng: I agree). Không khái quát tuyệt đối như “All farmers destroy forests” – dùng many/some/tend to. Trong YES/NO/NOT GIVEN, người viết nói “may” thì câu hỏi khẳng định chắc chắn có thể là NO hoặc NOT GIVEN.",
+  "items": [
+   [
+    "Correct the error: I am agree that recycling is important.",
+    "I agree that recycling is important.",
+    "agree là động từ, không dùng với am."
+   ],
+   [
+    "Hedge the statement: Electric cars solve pollution. (dùng may help to)",
+    "Electric cars may help to reduce pollution.",
+    "may help to làm câu thận trọng, chính xác hơn."
+   ],
+   [
+    "People who live near forests ___ (tend / use) more wood for heating. (tend to + V)",
+    "tend to use",
+    "tend to + V nguyên mẫu = có xu hướng."
+   ],
+   [
+    "It is ___ that sea levels will continue to rise. (likely / like)",
+    "likely",
+    "It is likely that … = có khả năng là …"
+   ],
+   [
+    "I ___ agree with this view: it is true in some cases but not all. (partly / strongly)",
+    "partly",
+    "Đồng ý một phần → partly agree."
+   ],
+   [
+    "To some ___, the new law has reduced plastic waste.",
+    "extent",
+    "to some extent = ở một mức độ nào đó."
+   ],
+   [
+    "I do not ___ that tourism always harms nature. (believe / believing)",
+    "believe",
+    "do not + V nguyên mẫu."
+   ],
+   [
+    "Correct the error: All the farmers cuts down trees.",
+    "Some farmers cut down trees.",
+    "Tránh khái quát tuyệt đối; chủ ngữ số nhiều → cut."
+   ]
+  ]
+ },
+ "readings": [
+  {
+   "title": "Should we bring back lost species?",
+   "strategy": "YES/NO/NOT GIVEN: tìm phần người viết bày tỏ quan điểm (I would argue, it seems, in my view) và các từ thận trọng. Câu hỏi về ý kiến người khác trong bài không phải là ý của người viết.",
+   "instruction_vi": "Bài đọc khoảng 700 từ, 12 câu: 6 câu YES/NO/NOT GIVEN và 6 câu điền vào bản tóm tắt (summary completion, mỗi chỗ trống ONE WORD lấy từ bài).",
+   "paragraphs": [
+    [
+     "A",
+     "Across Europe, animals that disappeared centuries ago are returning. Beavers once again build dams in rivers where they were hunted out of existence, wild bison graze in forests from which they vanished long ago, and white-tailed eagles circle above coasts that had not seen them for generations. This process, often called rewilding, involves reintroducing species to areas they once occupied and then allowing natural processes to shape the landscape. Supporters see it as a way to repair damaged ecosystems. Critics fear that it creates new problems for the people who now live and work in those places."
+    ],
+    [
+     "B",
+     "The beaver offers the clearest example of what rewilding can achieve. By building dams, beavers slow the flow of water through a river system, creating ponds and wetlands. These hold back water during heavy rain, which can reduce flooding downstream, and release it slowly during dry periods. In one fictional valley studied over ten years, the number of species of insects and amphibians around beaver ponds more than doubled. In my view, few engineering projects could deliver so many benefits so cheaply."
+    ],
+    [
+     "C",
+     "However, the same dams can flood farmland, block drainage ditches and damage trees that landowners value. Farmers in several regions have complained that they were not properly consulted before beavers were released, and some have been angered by the loss of productive fields. These concerns should not be dismissed as simple opposition to nature. When farmers bear the costs of a project while the benefits are shared by society as a whole, it is understandable that they feel unfairly treated."
+    ],
+    [
+     "D",
+     "Predators raise even stronger feelings. Proposals to return wolves or lynx to areas where they have been absent for centuries are frequently opposed by sheep farmers, who fear losing animals. Supporters of predator reintroduction point to evidence that predators can control populations of deer, which, when left unchecked, eat young trees and prevent forests from regenerating. The evidence for this effect is real but mixed: it appears strongest in large, wild areas and much weaker in landscapes that are divided by roads, farms and villages."
+    ],
+    [
+     "E",
+     "There is also a question of what rewilding is trying to restore. Landscapes have changed enormously over the centuries, and the climate is changing again. A species that thrived in a particular valley five hundred years ago may not find the same conditions there today. Some scientists therefore argue that the aim should not be to recreate the past, but to build ecosystems that can cope with the conditions of the future. I find this argument persuasive, although it makes the goals of rewilding projects harder to define and to measure."
+    ],
+    [
+     "F",
+     "Money is an important factor. Reintroducing a species is expensive: animals must be captured, checked for disease, transported and monitored for years. Several projects have failed because funding ended before populations were large enough to survive alone. On the other hand, rewilded areas can attract tourists, and in some rural communities wildlife-watching holidays now provide more jobs than traditional farming. It would be wrong, however, to assume that this will be true everywhere."
+    ],
+    [
+     "G",
+     "The most successful projects appear to share certain features. They begin with long discussions with local residents, they offer compensation or practical help to landowners who suffer losses, and they reintroduce species gradually so that problems can be identified early. Projects that were announced suddenly by national organisations, without local support, have tended to face lasting opposition, even when the scientific case was strong."
+    ],
+    [
+     "H",
+     "Rewilding is sometimes presented as a simple choice between nature and people. That framing is, I believe, misleading. The real question is how the benefits and costs of returning wildlife can be shared fairly. Where that question is answered honestly, there is every reason to expect that more lost species will find their way home."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "ynng",
+     "prompt": "Beaver dams provide many benefits at a low cost.",
+     "answer": "YES",
+     "why": "Đoạn B: “In my view, few engineering projects could deliver so many benefits so cheaply.”"
+    },
+    {
+     "type": "ynng",
+     "prompt": "Farmers who object to beavers are simply opposed to nature.",
+     "answer": "NO",
+     "why": "Đoạn C: “These concerns should not be dismissed as simple opposition to nature.”"
+    },
+    {
+     "type": "ynng",
+     "prompt": "Wolves are more dangerous to sheep than lynx are.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn D nói nông dân lo mất cừu nhưng người viết không so sánh sói và linh miêu."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The evidence that predators control deer is equally strong in all landscapes.",
+     "answer": "NO",
+     "why": "Đoạn D: bằng chứng mạnh ở vùng hoang dã rộng, yếu hơn ở vùng bị chia cắt."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The aim of rewilding should be to prepare ecosystems for future conditions.",
+     "answer": "YES",
+     "why": "Đoạn E: “I find this argument persuasive”."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Wildlife tourism will create more jobs than farming in every rural area.",
+     "answer": "NO",
+     "why": "Đoạn F: “It would be wrong … to assume that this will be true everywhere.”"
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Rewilding means reintroducing species and letting natural ______ shape the land. (ONE WORD)",
+     "answer": "processes",
+     "why": "Đoạn A: “allowing natural processes to shape the landscape”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Beaver ponds hold back water during heavy rain, which can reduce ______ downstream. (ONE WORD)",
+     "answer": "flooding",
+     "why": "Đoạn B: “which can reduce flooding downstream”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: In one valley, insect and amphibian species around the ponds more than ______. (ONE WORD)",
+     "answer": "doubled",
+     "why": "Đoạn B: “more than doubled”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Too many deer eat young ______ and stop forests from regenerating. (ONE WORD)",
+     "answer": "trees",
+     "why": "Đoạn D: deer “eat young trees and prevent forests from regenerating”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Some projects failed because ______ ended too early. (ONE WORD)",
+     "answer": "funding",
+     "why": "Đoạn F: “funding ended before populations were large enough”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Successful projects offer ______ or practical help to landowners. (ONE WORD)",
+     "answer": "compensation",
+     "why": "Đoạn G: “offer compensation or practical help to landowners”."
+    }
+   ]
+  },
+  {
+   "title": "The plastic problem on a small island",
+   "strategy": "Summary completion: đọc cả bản tóm tắt trước, đoán loại từ cần điền (danh từ/động từ/số), rồi tìm đoạn tương ứng – bản tóm tắt thường đi theo thứ tự bài.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "The fictional island of Morra has a population of only six thousand, yet every year its beaches collect several tonnes of plastic waste. Very little of this rubbish comes from the island itself. Most of it is carried by ocean currents from countries hundreds of kilometres away, and it arrives in the largest quantities after winter storms."
+    ],
+    [
+     "B",
+     "For years, the islanders relied on volunteers who walked the beaches with bags after each storm. The volunteers collected huge amounts, but the waste was then shipped to the mainland for disposal, which was expensive and produced its own emissions. In 2019, the island council decided that a different approach was needed."
+    ],
+    [
+     "C",
+     "The council’s first step was to measure the problem accurately. Volunteers began sorting what they collected and recording each type of item. The results were surprising: fishing equipment, especially nets and ropes, made up nearly half of the plastic by weight, while drinks bottles, which most people had expected to dominate, accounted for less than a tenth."
+    ],
+    [
+     "D",
+     "These figures changed the island’s strategy. Instead of focusing only on cleaning beaches, Morra began working with fishing organisations in neighbouring countries to encourage the return of old nets. A small workshop on the island now turns collected rope into mats and baskets, which are sold to tourists. The workshop employs four people and covers about a third of its costs through sales."
+    ],
+    [
+     "E",
+     "The islanders accept that they cannot solve a global problem alone. Their records, however, have been shared with researchers studying ocean currents, and their data has been used to argue for stricter international rules on fishing equipment. In this way, a very small community has contributed to a much larger debate."
+    ],
+    [
+     "F",
+     "Visitors to the island are now asked to join a short beach clean during their stay, and many hotels offer a small discount to guests who take part. The council admits that the scheme is partly about raising awareness rather than removing large amounts of rubbish. Even so, several visitors have written to their own local councils after returning home, asking them to support the same international rules that Morra has campaigned for."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "short",
+     "prompt": "Summary: Most plastic on Morra is carried by ocean ______ from other countries. (ONE WORD)",
+     "answer": "currents",
+     "why": "Đoạn A: “carried by ocean currents”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: The largest amounts arrive after winter ______. (ONE WORD)",
+     "answer": "storms",
+     "why": "Đoạn A: “after winter storms”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Collected waste was sent to the ______ for disposal. (ONE WORD)",
+     "answer": "mainland",
+     "why": "Đoạn B: “shipped to the mainland for disposal”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Nearly half of the plastic by weight was fishing ______. (ONE WORD)",
+     "answer": "equipment",
+     "why": "Đoạn C: “fishing equipment … made up nearly half”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: A workshop turns collected rope into mats and ______. (ONE WORD)",
+     "answer": "baskets",
+     "why": "Đoạn D: “turns collected rope into mats and baskets”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Drinks bottles made up the largest part of the plastic collected.",
+     "answer": "FALSE",
+     "why": "Đoạn C: chai nước chiếm chưa đến 1/10."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The rope workshop covers all of its costs through sales.",
+     "answer": "FALSE",
+     "why": "Đoạn D: chỉ khoảng một phần ba chi phí."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Morra’s data has been used in arguments for stricter international rules.",
+     "answer": "TRUE",
+     "why": "Đoạn E: “used to argue for stricter international rules on fishing equipment”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The number of tourists visiting Morra has increased since the workshop opened.",
+     "answer": "NOT GIVEN",
+     "why": "Bài không nói về số lượng khách du lịch."
+    }
+   ]
+  },
+  {
+   "title": "Gardens that help wild bees",
+   "strategy": "YES/NO/NOT GIVEN ở bài ngắn: tìm câu có “I”, “in my view”, “should”, “it is a mistake”… để xác định ý người viết.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "Honeybees are well known, but they are only one of hundreds of bee species. Most wild bees live alone rather than in hives, and many are struggling because the flowers they depend on have disappeared from farmland and towns. In my opinion, private gardens could make a far bigger difference to these insects than most people realise."
+    ],
+    [
+     "B",
+     "Together, gardens cover a surprisingly large area. In some suburbs, they make up a quarter of all the land. If even a small proportion of gardeners planted a variety of flowers that bloom from early spring to late autumn, wild bees would have food for much more of the year. Lawns that are cut less often also help, because small flowers such as clover are allowed to grow."
+    ],
+    [
+     "C",
+     "It is a mistake, I believe, to think that only rare or expensive plants are useful. Many common herbs, including thyme and rosemary, are excellent sources of food for bees. What matters more is the shape of the flower: open, simple flowers are easier for bees to reach than the large, complex flowers often sold in garden centres."
+    ],
+    [
+     "D",
+     "Garden chemicals are a more difficult issue. Some products used to kill insects that damage plants can also harm bees. Several countries have restricted certain chemicals, although scientists continue to debate how much harm each one causes. Until the evidence is clearer, gardeners would be wise to use as few chemicals as possible."
+    ],
+    [
+     "E",
+     "Some towns have begun competitions for the most bee-friendly garden, and local schools have planted flower strips in their playgrounds. These efforts are small, but they show that helping wild bees does not require large farms or nature reserves – only a little space and some thought about what to plant."
+    ],
+    [
+     "F",
+     "Gardeners who want to do more can also provide places for bees to nest. Many wild species lay their eggs in small holes in dead wood or in patches of bare, sunny soil, both of which are often removed in very tidy gardens. Leaving a corner of the garden a little untidy may therefore be one of the simplest and cheapest ways to help, although it may take some time for bees to find and use these new nesting sites."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "ynng",
+     "prompt": "Private gardens could help wild bees more than people expect.",
+     "answer": "YES",
+     "why": "Đoạn A: “could make a far bigger difference … than most people realise”."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Only rare plants provide good food for bees.",
+     "answer": "NO",
+     "why": "Đoạn C: “It is a mistake … to think that only rare or expensive plants are useful.”"
+    },
+    {
+     "type": "ynng",
+     "prompt": "Garden centres should stop selling large, complex flowers.",
+     "answer": "NOT GIVEN",
+     "why": "Người viết nói hoa đơn giản tốt hơn nhưng không đề xuất cấm bán hoa phức tạp."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Gardeners should reduce their use of chemicals.",
+     "answer": "YES",
+     "why": "Đoạn D: “gardeners would be wise to use as few chemicals as possible”."
+    },
+    {
+     "type": "short",
+     "prompt": "Most wild bees live alone rather than in what? Write ONE WORD.",
+     "answer": "hives",
+     "why": "Đoạn A: “live alone rather than in hives”."
+    },
+    {
+     "type": "short",
+     "prompt": "In some suburbs, gardens make up what proportion of the land? Write NO MORE THAN TWO WORDS.",
+     "answer": "a quarter",
+     "why": "Đoạn B: “a quarter of all the land”."
+    },
+    {
+     "type": "short",
+     "prompt": "Which small flower grows when lawns are cut less often? Write ONE WORD.",
+     "answer": "clover",
+     "why": "Đoạn B: “small flowers such as clover”."
+    },
+    {
+     "type": "short",
+     "prompt": "Name ONE common herb that is good for bees. Write ONE WORD.",
+     "answer": "thyme",
+     "why": "Đoạn C: “thyme and rosemary” – chấp nhận rosemary."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Lecture: how wetlands protect us",
+   "section": "Section 4 · lecture notes",
+   "strategy": "Bài giảng học thuật: nghe các cụm định nghĩa (“is known as”, “in other words”) và cụm chỉ mức độ (“roughly”, “up to”) – đáp án thường nằm sau chúng.",
+   "pre_listening": "Trước khi nghe: đọc tiêu đề các mục ghi chú; đoán chỗ nào cần số, chỗ nào cần danh từ.",
+   "trap": "Giảng viên có thể nêu một con số phổ biến rồi sửa bằng con số chính xác hơn (qualifier) – chọn con số sau.",
+   "strategies": [
+    "Definitions",
+    "Qualifiers and numbers",
+    "Lecture structure"
+   ],
+   "transcript": "Lecturer: Good morning. Today’s topic is wetlands – marshes, swamps, river floodplains and similar areas where the land is covered by water for at least part of the year. For centuries, wetlands were seen as useless land, and many were drained to create farmland or space for building. It’s often said that the world has lost half of its wetlands, but more recent estimates suggest the true figure since nineteen hundred is closer to sixty-five per cent.\nWhy does this matter? I’ll focus on three services that wetlands provide.\nThe first is flood control. A wetland acts rather like a sponge. During heavy rain, it absorbs water and releases it slowly, which reduces the peak height of floods further down the river. One study found that a single hectare of wetland can store up to fourteen thousand cubic metres of floodwater.\nThe second service is water purification. As water moves slowly through wetland plants, many pollutants settle out or are absorbed. In other words, wetlands act as natural filters. Some towns now build artificial wetlands to clean water from farms before it reaches rivers.\nThe third service is less obvious: carbon storage. Peatlands, a type of wetland, cover only about three per cent of the world’s land, yet they store more carbon than all the world’s forests combined. When peatlands are drained, that carbon is released into the atmosphere.\nRestoring wetlands is possible, but it is slow. Blocking drainage ditches can raise the water level within months, but it may take decades for the full community of plants and animals to return. For your seminar next week, please read the case study on the Elm River restoration and consider which of the three services improved first.",
+   "questions": [
+    {
+     "prompt": "Wetlands were often drained to create ______ or space for building.",
+     "answer": "farmland",
+     "why": "“drained to create farmland or space for building”."
+    },
+    {
+     "prompt": "Estimated loss of wetlands since 1900: about ______",
+     "answer": "65%",
+     "why": "Con số phổ biến là một nửa, nhưng ước tính mới “closer to sixty-five per cent”."
+    },
+    {
+     "prompt": "Service 1: wetlands act like a ______",
+     "answer": "sponge",
+     "why": "“A wetland acts rather like a sponge.”"
+    },
+    {
+     "prompt": "One hectare can store up to ______ cubic metres of floodwater.",
+     "answer": "14,000",
+     "why": "“up to fourteen thousand cubic metres”."
+    },
+    {
+     "prompt": "Service 2: wetlands act as natural ______",
+     "answer": "filters",
+     "why": "“wetlands act as natural filters”."
+    },
+    {
+     "prompt": "Peatlands cover about ______ of the world’s land.",
+     "answer": "3%",
+     "why": "“about three per cent of the world’s land”."
+    },
+    {
+     "prompt": "Peatlands store more carbon than all the world’s ______",
+     "answer": "forests",
+     "why": "“more carbon than all the world’s forests combined”."
+    },
+    {
+     "prompt": "Full return of plants and animals may take ______",
+     "answer": "decades",
+     "why": "“it may take decades”."
+    }
+   ]
+  },
+  {
+   "title": "Volunteering for a beach clean-up",
+   "section": "Section 1 · form completion",
+   "strategy": "Nghe tên, số điện thoại, ngày và đồ cần mang; chú ý thông tin bị đổi.",
+   "strategies": [
+    "Names and numbers",
+    "Dates",
+    "Items to bring"
+   ],
+   "transcript": "Organiser: Coastal Care, Jenny speaking.\nCaller: Hi, I’d like to volunteer for the beach clean-up this month.\nOrganiser: Wonderful. We have two dates: Saturday the eighth and Saturday the twenty-second. Which would you prefer?\nCaller: The eighth, please.\nOrganiser: Actually, I’m sorry – the eighth is now full. Could you do the twenty-second?\nCaller: Yes, that’s fine.\nOrganiser: Great. Can I take your name?\nCaller: Tariq Hassan. That’s H-A-S-S-A-N.\nOrganiser: And a phone number?\nCaller: Zero seven eight two two, five six one, four four nine.\nOrganiser: Thanks. We meet at nine in the car park next to the lifeboat station, and we finish at around one.\nCaller: What should I bring?\nOrganiser: We provide gloves and bags, but please bring a reusable water bottle and wear strong shoes – there’s a lot of broken glass on some parts of the beach. If it’s sunny, a hat is a good idea.\nCaller: Is there a minimum age? I might bring my daughter.\nOrganiser: Children over eight are welcome if they’re with an adult. How old is she?\nCaller: She’s ten.\nOrganiser: That’s fine. Finally, at the end of the morning, we record everything we’ve found. The information goes to a national survey of beach rubbish, so it’s really useful.\nCaller: Great. See you on the twenty-second.",
+   "questions": [
+    {
+     "prompt": "Date of clean-up: Saturday ______",
+     "answer": "22nd",
+     "why": "Ngày 8 đã kín; chọn ngày 22."
+    },
+    {
+     "prompt": "Volunteer’s surname: ______",
+     "answer": "Hassan",
+     "why": "Được đánh vần H-A-S-S-A-N."
+    },
+    {
+     "prompt": "Phone number: 07822 561 ______",
+     "answer": "449",
+     "why": "“five six one, four four nine”."
+    },
+    {
+     "prompt": "Meeting place: car park next to the ______ station",
+     "answer": "lifeboat",
+     "why": "“next to the lifeboat station”."
+    },
+    {
+     "prompt": "Finishing time: around ______",
+     "answer": "1",
+     "why": "“we finish at around one” – 1 p.m."
+    },
+    {
+     "prompt": "Bring: a reusable water ______",
+     "answer": "bottle",
+     "why": "“bring a reusable water bottle”."
+    },
+    {
+     "prompt": "Wear strong ______",
+     "answer": "shoes",
+     "why": "“wear strong shoes”."
+    },
+    {
+     "prompt": "Minimum age for children (with an adult): over ______",
+     "answer": "8",
+     "why": "“Children over eight are welcome”."
+    }
+   ]
+  },
+  {
+   "title": "Discussing a tree-planting project",
+   "section": "Section 3 · multiple choice",
+   "strategy": "Hai sinh viên thảo luận: nghe ai đề xuất, ai phản đối và hai người đồng ý điều gì cuối cùng.",
+   "strategies": [
+    "Agreement",
+    "Reasons",
+    "Final decisions"
+   ],
+   "transcript": "Mia: So, for our project, we’re evaluating the tree-planting scheme on the hills outside town. Where do you want to start, Leo?\nLeo: I thought the main question was simple: did they plant enough trees? The council’s target was fifty thousand, and they planted more than that.\nMia: True, but our tutor said the number planted isn’t the best measure. What matters is how many survived.\nLeo: Good point. According to the report, about forty per cent died in the first two years.\nMia: That’s quite high. The report blames the dry summer, but I think the bigger problem was the type of tree. They planted a fast-growing species that isn’t native to this area.\nLeo: Why did they choose it?\nMia: It was cheaper and grew quickly, so the hills would look green sooner. But native trees support more insects and birds.\nLeo: So in our evaluation, we should compare the survival of native and non-native trees.\nMia: Exactly. And we should mention that local people weren’t involved. Volunteers from the city did the planting, and nobody came back to water the young trees.\nLeo: What would we recommend, then?\nMia: Smaller areas planted with native species, and a local group responsible for looking after them for the first three years.\nLeo: I agree. Shall we present our findings as a poster or a short talk?\nMia: A poster, I think – we can show the photos from our site visit.\nLeo: Fine. I’ll design the poster, and you write the recommendations.",
+   "questions": [
+    {
+     "prompt": "What did Leo first think was the main question?",
+     "options": [
+      "A. How many trees survived",
+      "B. Whether enough trees were planted",
+      "C. Which species were planted"
+     ],
+     "answer": "B. Whether enough trees were planted",
+     "why": "“did they plant enough trees?”"
+    },
+    {
+     "prompt": "According to the tutor, what is the best measure of success?",
+     "options": [
+      "A. The number of trees planted",
+      "B. The cost of the project",
+      "C. The number of trees that survived"
+     ],
+     "answer": "C. The number of trees that survived",
+     "why": "“What matters is how many survived.”"
+    },
+    {
+     "prompt": "What proportion of trees died in the first two years?",
+     "options": [
+      "A. About 20%",
+      "B. About 40%",
+      "C. About 50%"
+     ],
+     "answer": "B. About 40%",
+     "why": "“about forty per cent died”."
+    },
+    {
+     "prompt": "What does Mia think was the main problem?",
+     "options": [
+      "A. The dry summer",
+      "B. The type of tree",
+      "C. The number of volunteers"
+     ],
+     "answer": "B. The type of tree",
+     "why": "Báo cáo đổ lỗi cho mùa hè khô, nhưng Mia cho rằng vấn đề lớn hơn là loài cây không bản địa."
+    },
+    {
+     "prompt": "Why was the fast-growing species chosen?",
+     "options": [
+      "A. It supported more wildlife.",
+      "B. It was cheaper and grew quickly.",
+      "C. Local people requested it."
+     ],
+     "answer": "B. It was cheaper and grew quickly.",
+     "why": "“It was cheaper and grew quickly”."
+    },
+    {
+     "prompt": "What will they recommend?",
+     "options": [
+      "A. Planting more trees in larger areas",
+      "B. Native species and a local group to look after them",
+      "C. Paying city volunteers to water the trees"
+     ],
+     "answer": "B. Native species and a local group to look after them",
+     "why": "“Smaller areas planted with native species, and a local group responsible…”"
+    },
+    {
+     "prompt": "How will they present their findings?",
+     "options": [
+      "A. A poster",
+      "B. A short talk",
+      "C. A written report"
+     ],
+     "answer": "A. A poster",
+     "why": "“A poster, I think”."
+    },
+    {
+     "prompt": "Who will write the recommendations?",
+     "options": [
+      "A. Leo",
+      "B. Mia",
+      "C. Both of them"
+     ],
+     "answer": "B. Mia",
+     "why": "Leo: “I’ll design the poster, and you write the recommendations.”"
+    }
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 2 – agree or disagree",
+  "instruction_vi": "Đề hỏi “To what extent do you agree or disagree?”: nêu rõ mức độ đồng ý ngay mở bài, mỗi thân bài là một lý do ủng hộ lập trường đó, kết luận nhắc lại. Viết ít nhất 250 từ.",
+  "task": "Some people believe that protecting the environment is the responsibility of governments, not individuals. To what extent do you agree or disagree? Write at least 250 words.",
+  "data_visual": null,
+  "sample_answer": "Environmental problems such as air pollution, plastic waste and climate change affect everyone, and there is debate about who should be responsible for solving them. Some people argue that this is a task for governments alone. I disagree with this view: although governments must play the leading role, individuals also have an important responsibility.\n\nIt is true that many environmental problems can only be solved by governments. Individuals cannot build public transport systems, regulate factories or negotiate international agreements on emissions. Laws that ban single-use plastic bags or require cleaner engines have achieved far more than voluntary efforts. For this reason, governments clearly carry the main responsibility, and they should be judged on their environmental policies.\n\nHowever, government action depends on the behaviour of ordinary people. A recycling system is useless if households do not separate their waste, and new cycle lanes make little difference if people continue to drive short distances. Moreover, individual choices add up. If millions of people reduce their energy use, choose public transport or buy fewer disposable products, the combined effect is significant. Individuals also influence governments by voting and by supporting businesses that act responsibly.\n\nFinally, personal responsibility matters for future generations. Children learn by watching adults, and families who save water or avoid waste pass these habits on. Relying entirely on the government would send the message that the environment is somebody else’s problem.\n\nIn conclusion, governments have the greatest power to protect the environment and must lead the way. Nevertheless, I believe individuals share this responsibility, because government policies can only succeed when people support them in their daily lives.",
+  "guidance": [
+   "Mở bài: paraphrase đề + lập trường rõ (I disagree with this view…).",
+   "Thân bài 1: thừa nhận vai trò của chính phủ (nhượng bộ có kiểm soát).",
+   "Thân bài 2–3: lý do cá nhân cũng có trách nhiệm, có ví dụ.",
+   "Kết luận: nhắc lại lập trường, không thêm ý mới."
+  ],
+  "micro": [
+   [
+    "Viết câu lập trường cho mở bài (không đồng ý một phần).",
+    "Although governments must lead, I believe individuals also share this responsibility."
+   ],
+   [
+    "Câu nhượng bộ mở đầu thân bài 1.",
+    "It is true that many environmental problems can only be solved by governments."
+   ],
+   [
+    "Hedge: Recycling solves the waste problem.",
+    "Recycling may help to reduce the amount of waste sent to landfill."
+   ],
+   [
+    "Câu chuyển ý trái ngược đầu thân bài 2.",
+    "However, government action depends on the behaviour of ordinary people."
+   ],
+   [
+    "Câu kết luận nhắc lại lập trường.",
+    "In conclusion, protecting the environment is a shared responsibility of governments and individuals."
+   ]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 2. Some people think that zoos should be closed because it is wrong to keep animals in captivity. To what extent do you agree or disagree? Write at least 250 words.",
+  "essay": {
+   "prompt": "Some people say that the best way to protect wild animals is to create more national parks. Others believe that education is more effective. Discuss both views and give your own opinion.",
+   "planning_prompts": [
+    "Mở bài: nêu hai cách tiếp cận và quan điểm của bạn.",
+    "Thân bài 1: lợi ích của vườn quốc gia (bảo vệ trực tiếp môi trường sống).",
+    "Thân bài 2: lợi ích của giáo dục (thay đổi hành vi lâu dài, giảm săn bắt/buôn bán).",
+    "Kết luận: cần kết hợp, nêu cái nào nên ưu tiên."
+   ],
+   "model_paragraphs": [
+    "Many wild animal species are declining, and people disagree about the most effective way to protect them. Some argue that creating more national parks is the answer, while others believe that education will achieve more in the long term. In my opinion, both are necessary, but national parks will only succeed if they are supported by education.",
+    "Supporters of national parks point out that habitat loss is the main threat to most species. When forests are cleared or wetlands are drained, animals simply have nowhere to live. A national park protects a large area by law, prevents building and farming, and allows rangers to stop illegal hunting. Several species that were close to extinction have recovered mainly because their last remaining habitats were protected in this way.",
+    "On the other hand, those who prioritise education argue that parks cannot work if local people see them as a threat. If a park takes away land that families depended on for food or fuel, illegal hunting may continue. Education can change this by showing communities how wildlife tourism can provide income and by teaching children why protecting animals matters. It can also reduce demand for products made from endangered animals, a problem that no park can solve.",
+    "In my view, the strongest strategies combine both approaches. A national park creates the space that animals need, while education builds the local support that keeps the park effective over many years.",
+    "In conclusion, national parks offer immediate protection for habitats, whereas education changes attitudes over time. Rather than choosing between them, governments should use education to make national parks successful."
+   ]
+  },
+  "drills": [
+   [
+    "Sửa lỗi: I am agree with this opinion.",
+    "I agree with this opinion.",
+    "agree là động từ, không dùng với am."
+   ],
+   [
+    "Hedge: Electric cars will stop climate change.",
+    "Electric cars may help to reduce carbon emissions.",
+    "Dùng may help to để tránh khẳng định quá mức."
+   ],
+   [
+    "Sửa lỗi: People should to recycle more.",
+    "People should recycle more.",
+    "Sau should dùng V nguyên mẫu, không có to."
+   ],
+   [
+    "Viết lại học thuật hơn: Pollution is a very big problem nowadays.",
+    "Pollution has become a serious problem in many cities.",
+    "Dùng serious và nêu phạm vi cụ thể."
+   ],
+   [
+    "Sửa lỗi: Government must to make strict laws.",
+    "Governments must introduce strict laws.",
+    "Bỏ to sau must; dùng introduce laws (collocation)."
+   ],
+   [
+    "Sửa lỗi: In conclusion, I think both sides have good points and I don’t know.",
+    "In conclusion, although both views have merit, I believe individuals also share responsibility.",
+    "Kết luận phải có lập trường rõ ràng."
+   ]
+  ]
+ },
+ "speaking": {
+  "title": "Nature and the environment",
+  "instruction_vi": "Part 3 về môi trường: dùng khung nguyên nhân → hệ quả → giải pháp, và cụm thận trọng (it’s likely that, to some extent).",
+  "focus": "Trình bày nguyên nhân–hệ quả–giải pháp mạch lạc; dùng ngôn ngữ thận trọng và phát âm rõ các cụm danh từ dài (climate change, renewable energy).",
+  "part1": [
+   "Do you enjoy spending time in nature?",
+   "Is there a park or green space near your home?",
+   "What do you do to protect the environment in your daily life?",
+   "Did you learn about the environment at school?"
+  ],
+  "part2": "Describe a beautiful natural place that you have visited. You should say where it is, when you went there, what you did there, and explain why you think it is beautiful.",
+  "part3": [
+   "What are the main environmental problems in your country?",
+   "Should individuals or governments be responsible for protecting the environment?",
+   "How can children be taught to care about nature?"
+  ],
+  "model_answer": "I’d like to talk about Ba Be Lake in the north of Vietnam, which I visited with my family about two years ago. It’s a large natural lake surrounded by limestone mountains and forest, and it’s part of a national park. We stayed for two nights in a homestay run by a local family, and on the second day we hired a boat and spent the whole morning on the lake. We visited a cave where the river flows right through the mountain, and later we cycled through a few small villages. What made the place so beautiful for me was how peaceful it was. In the early morning there was mist on the water, and the only sounds were birds and the boat engine. Compared with the noise of the city, it felt completely different. I also liked the fact that the local people seemed to care about protecting it – our host told us that fishing with nets was restricted to protect the fish. I think that’s why it still looks so natural.",
+  "extensions": [
+   [
+    "What are the main environmental problems in your country?",
+    "Nêu 2 vấn đề (ô nhiễm không khí ở thành phố, rác thải nhựa) → nguyên nhân → hệ quả → một giải pháp ngắn."
+   ],
+   [
+    "Should individuals or governments be responsible for protecting the environment?",
+    "Lập trường (cả hai, chính phủ dẫn dắt) → lý do mỗi bên → ví dụ (luật túi nilon, thói quen phân loại rác)."
+   ],
+   [
+    "How can children be taught to care about nature?",
+    "2 cách: học ngoài trời, dự án ở trường → vì sao hiệu quả → ví dụ cá nhân."
+   ],
+   [
+    "Is it worth spending a lot of money to save one endangered species?",
+    "Đồng ý có điều kiện → vai trò trong hệ sinh thái → chi phí cơ hội → kết luận thận trọng."
+   ]
+  ]
+ },
+ "checkpoint": [
+  [
+   "A YES/NO/NOT GIVEN question asks about…",
+   [
+    "facts in the passage",
+    "the writer’s opinions or claims",
+    "the reader’s opinion",
+    "the title of the passage"
+   ],
+   "the writer’s opinions or claims",
+   "Dạng này kiểm tra quan điểm của người viết."
+  ],
+  [
+   "The writer says “wildlife tourism may create jobs in some areas.” The statement is “Wildlife tourism creates jobs everywhere.” The answer is…",
+   [
+    "YES",
+    "NO",
+    "NOT GIVEN",
+    "TRUE"
+   ],
+   "NO",
+   "Người viết giới hạn “some areas”, câu hỏi nói “everywhere” → mâu thuẫn."
+  ],
+  [
+   "In summary completion, the answer must…",
+   [
+    "be your own word",
+    "come from the passage and fit the word limit",
+    "be a synonym",
+    "always be a number"
+   ],
+   "come from the passage and fit the word limit",
+   "Lấy từ trong bài, đúng ngữ pháp và giới hạn từ."
+  ],
+  [
+   "Which sentence is a hedged statement?",
+   [
+    "Recycling solves pollution.",
+    "Recycling may reduce pollution.",
+    "Recycling never works.",
+    "All people recycle."
+   ],
+   "Recycling may reduce pollution.",
+   "may = thận trọng."
+  ],
+  [
+   "In an agree/disagree essay, when should your opinion be clear?",
+   [
+    "Only in the conclusion",
+    "In the introduction and throughout the essay",
+    "Never",
+    "Only in the first body paragraph"
+   ],
+   "In the introduction and throughout the essay",
+   "Lập trường nêu ngay mở bài và nhất quán."
+  ]
+ ],
+ "reflection": [
+  "Bạn đã chọn NO thay cho NOT GIVEN (hoặc ngược lại) ở câu nào? Vì sao?",
+  "Mọi đoạn trong bài Task 2 của bạn đã ủng hộ lập trường ở mở bài chưa?"
+ ]
+}

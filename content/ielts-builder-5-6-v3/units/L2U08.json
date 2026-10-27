@@ -1,0 +1,274 @@
+{
+ "unit_id": "L2U08",
+ "order": 8,
+ "title": "Festivals and Traditions",
+ "title_vi": "Lễ hội và truyền thống",
+ "objectives": [
+  "Làm TRUE/FALSE/NOT GIVEN: tách thông tin có trong bài với thông tin còn thiếu",
+  "Nghe thông tin sự kiện: giờ, ngày, lựa chọn và bẫy thay đổi kế hoạch",
+  "Viết Task 2 dạng problems and solutions, mỗi vấn đề có giải pháp tương ứng",
+  "Dùng câu điều kiện loại 1 và loại 2 để nêu hệ quả và giả định"
+ ],
+ "exam_strategy": "TRUE/FALSE/NOT GIVEN: tìm câu trong bài nói về cùng ý; nếu bài khẳng định cùng ý → TRUE, nói ngược lại → FALSE, không đề cập đủ để kết luận → NOT GIVEN. Không suy diễn từ kiến thức riêng.",
+ "core_outcome": "Không suy diễn NOT GIVEN; mỗi vấn đề trong bài viết đi kèm một giải pháp cụ thể và khả thi.",
+ "vocabulary": [
+  ["cultural heritage", "di sản văn hóa", "The old town is an important part of the country’s cultural heritage."],
+  ["annual celebration", "lễ kỷ niệm hằng năm", "The harvest festival is an annual celebration in the village."],
+  ["traditional ceremony", "nghi lễ truyền thống", "The wedding began with a traditional ceremony at home."],
+  ["community participation", "sự tham gia của cộng đồng", "The festival depends on community participation."],
+  ["commercialisation", "sự thương mại hóa", "Some people worry about the commercialisation of traditional festivals."],
+  ["preserve a custom", "gìn giữ một phong tục", "Older villagers want to preserve the custom of making paper lanterns."],
+  ["public holiday", "ngày nghỉ lễ", "New Year’s Day is a public holiday in most countries."],
+  ["local craft", "nghề thủ công địa phương", "Visitors can buy local crafts at the festival market."],
+  ["costume", "trang phục (biểu diễn/lễ hội)", "Dancers wore colourful costumes during the parade."],
+  ["parade", "cuộc diễu hành", "Thousands of people watched the parade through the city."],
+  ["fireworks display", "màn bắn pháo hoa", "The evening ended with a fireworks display over the river."],
+  ["intergenerational", "giữa các thế hệ", "Cooking traditional dishes is an intergenerational activity."],
+  ["ritual", "nghi thức", "Lighting candles is an important ritual during the festival."],
+  ["tourist attraction", "điểm thu hút khách du lịch", "The lantern festival has become a major tourist attraction."],
+  ["family reunion", "sự đoàn tụ gia đình", "Lunar New Year is a time for family reunion."],
+  ["folk music", "nhạc dân gian", "A band played folk music in the main square."],
+  ["sense of identity", "ý thức về bản sắc", "Festivals give communities a strong sense of identity."],
+  ["crowd control", "kiểm soát đám đông", "Crowd control was difficult when the gates opened."],
+  ["volunteer steward", "tình nguyện viên hướng dẫn", "Volunteer stewards helped visitors find the exits."],
+  ["waste management", "quản lý rác thải", "Good waste management is essential at large outdoor events."]
+ ],
+ "grammar": {
+  "title": "First and second conditionals",
+  "explanation_vi": "Câu điều kiện loại 1 nói về khả năng có thật trong tương lai: If + present simple, will + V (If it rains, the parade will be cancelled). Loại 2 nói về tình huống giả định, ít khả năng hoặc trái với hiện tại: If + past simple, would + V (If I lived in Hue, I would go to the festival every year). Trong Task 2, loại 1 dùng để nêu hệ quả của một giải pháp; loại 2 dùng để đưa giả định.",
+  "form": "Loại 1: If + S + V(s/es), S + will/can/may + V · Loại 2: If + S + V2/ed (were), S + would/could/might + V · Unless = if … not",
+  "examples": [
+   "If the council provides more bins, there will be less litter after the festival.",
+   "If tickets were cheaper, more local families would attend.",
+   "Unless the tradition is taught to children, it may disappear."
+  ],
+  "examples_vi": [
+   "Nếu hội đồng cung cấp thêm thùng rác, sẽ có ít rác hơn sau lễ hội.",
+   "Nếu vé rẻ hơn, sẽ có nhiều gia đình địa phương tham dự hơn.",
+   "Trừ khi truyền thống được dạy cho trẻ em, nó có thể biến mất."
+  ],
+  "trap": "Không dùng will trong mệnh đề if (sai: “If it will rain…”). Loại 2 dùng were cho mọi ngôi trong văn trang trọng: If I were the organiser… Không viết “If I would have…” cho loại 2.",
+  "items": [
+   ["If it ___ (rain) tomorrow, the parade will be cancelled.", "rains", "Loại 1: mệnh đề if dùng present simple."],
+   ["If more people volunteer, the festival ___ (be) easier to organise.", "will be", "Loại 1: mệnh đề chính dùng will + V."],
+   ["If I ___ (be) the mayor, I would make the festival free.", "were", "Loại 2 trang trọng: were cho mọi ngôi."],
+   ["If tickets were cheaper, more families ___ (attend).", "would attend", "Loại 2: would + V."],
+   ["___ the custom is taught to children, it may disappear. (từ = if … not)", "Unless", "Unless = if … not."],
+   ["If the organisers ___ (not / plan) waste management, the park will be full of rubbish.", "don’t plan", "Loại 1, phủ định: don’t + V."],
+   ["What would you do if you ___ (win) a trip to a famous festival?", "won", "Loại 2: past simple trong mệnh đề if."],
+   ["Correct the error: If the weather will be good, we will go to the festival.", "If the weather is good, we will go to the festival.", "Không dùng will trong mệnh đề if."]
+  ]
+ },
+ "readings": [
+  {
+   "title": "When a village festival becomes famous",
+   "strategy": "TRUE/FALSE/NOT GIVEN: câu hỏi theo thứ tự bài. Gạch dưới từ giới hạn (all, only, never, more than) trong câu hỏi – chúng thường quyết định đáp án FALSE hay NOT GIVEN.",
+   "instruction_vi": "Bài đọc khoảng 700 từ, 12 câu: 8 câu TRUE/FALSE/NOT GIVEN và 4 câu short-answer.",
+   "paragraphs": [
+    ["A", "For more than three hundred years, the people of the fictional mountain village of San Morel have celebrated the end of the harvest with a festival of light. On the first night of the full moon in October, every household places paper lanterns along the narrow streets, and the villagers walk in a slow procession to the old stone bridge, where the lanterns are released onto the river. For most of its history, the festival was attended only by villagers and a few relatives from nearby towns."],
+    ["B", "That changed about fifteen years ago, when a travel photographer published a series of pictures of the procession. The images were shared widely online, and within three years the number of visitors on festival night had grown from a few hundred to more than twenty thousand. Hotels, cafés and souvenir shops opened in a village that had previously had a single guest house, and many young people who had moved to the city for work returned to run businesses."],
+    ["C", "For the local economy, the effect has been largely positive. The village council estimates that tourism now provides around a third of all local income, and the population, which had been falling for decades, has begun to grow again. The primary school, which was close to closing because of a lack of pupils, has added a new classroom. Several traditional crafts, including lantern making and wood carving, have been revived because there is now a market for them."],
+    ["D", "Yet many residents feel that the festival has lost something important. The procession, which used to move slowly and quietly, is now surrounded by crowds holding up phones, and some visitors push into the procession to take photographs. Older villagers complain that the ceremony at the bridge, which has a religious meaning for many families, has become a show for outsiders. In a survey carried out by the council, a majority of residents said they were proud that people came to see the festival, but almost as many said they no longer enjoyed taking part."],
+    ["E", "There are also practical problems. The narrow streets were never designed for thousands of people, and in some years the crowds have been so large that emergency vehicles could not get through. The river below the bridge is now filled with lanterns, many of them cheap plastic versions sold to tourists, which take months to break down and harm fish. Local volunteers spend several days after the festival removing rubbish from the riverbanks."],
+    ["F", "The council has introduced a number of changes in response. Since last year, visitors must book a free ticket online, and the number of tickets is limited to eight thousand. Only lanterns made from paper and natural materials may be released into the river, and these are sold by local craftspeople. A separate viewing area has been built on a hillside above the village, so that visitors can watch the procession without entering the narrowest streets."],
+    ["G", "These measures have had mixed results. Residents report that the procession feels calmer, and the amount of rubbish in the river has fallen considerably. However, some business owners complain that their income has dropped, and a number of visitors who arrived without tickets were angry when they were turned away. There have also been reports of tickets being resold online at high prices, despite being free."],
+    ["H", "San Morel’s experience is far from unique. Around the world, small communities are discovering that a tradition which once belonged to them alone can quickly become an attraction for thousands. The challenge is to share it without destroying the qualities that made it worth visiting. Some villagers believe the answer is to hold a second, private ceremony for residents only, on the night after the public festival. That proposal will be discussed at the next village meeting."]
+   ],
+   "questions": [
+    {"type": "tfng", "prompt": "The festival in San Morel is more than three hundred years old.", "answer": "TRUE", "why": "Đoạn A: “For more than three hundred years”."},
+    {"type": "tfng", "prompt": "The photographer was paid by the village to promote the festival.", "answer": "NOT GIVEN", "why": "Đoạn B nói nhiếp ảnh gia đăng ảnh, không nói có được làng trả tiền không."},
+    {"type": "tfng", "prompt": "Before the festival became famous, there were several hotels in the village.", "answer": "FALSE", "why": "Đoạn B: trước đó làng chỉ có “a single guest house”."},
+    {"type": "tfng", "prompt": "The village population is now increasing.", "answer": "TRUE", "why": "Đoạn C: dân số “has begun to grow again”."},
+    {"type": "tfng", "prompt": "Most residents no longer feel proud of the festival.", "answer": "FALSE", "why": "Đoạn D: đa số cư dân nói họ tự hào khi có người đến xem."},
+    {"type": "tfng", "prompt": "Emergency vehicles have sometimes been unable to reach parts of the village during the festival.", "answer": "TRUE", "why": "Đoạn E: “emergency vehicles could not get through”."},
+    {"type": "tfng", "prompt": "Visitors now have to pay for tickets to the festival.", "answer": "FALSE", "why": "Đoạn F: vé đặt online là vé miễn phí (free ticket)."},
+    {"type": "tfng", "prompt": "All business owners support the new ticket limit.", "answer": "FALSE", "why": "Đoạn G: một số chủ kinh doanh phàn nàn thu nhập giảm."},
+    {"type": "short", "prompt": "On which night of October is the festival held? Write NO MORE THAN FOUR WORDS.", "answer": "first night of the full moon", "why": "Đoạn A: “the first night of the full moon in October” – chấp nhận full moon."},
+    {"type": "short", "prompt": "What share of local income comes from tourism? Write NO MORE THAN THREE WORDS.", "answer": "around a third", "why": "Đoạn C: “around a third of all local income” – chấp nhận a third."},
+    {"type": "short", "prompt": "What is the maximum number of tickets? Write ONE NUMBER.", "answer": "8,000", "why": "Đoạn F: “limited to eight thousand”."},
+    {"type": "short", "prompt": "Where has a separate viewing area been built? Write NO MORE THAN THREE WORDS.", "answer": "on a hillside", "why": "Đoạn F: “on a hillside above the village” – chấp nhận hillside."}
+   ]
+  },
+  {
+   "title": "Keeping traditional skills alive",
+   "strategy": "TRUE/FALSE/NOT GIVEN với số liệu: so sánh con số trong câu hỏi với con số trong bài rất cẩn thận (more than, almost, over).",
+   "headings": [],
+   "paragraphs": [
+    ["A", "In many countries, traditional crafts such as weaving, pottery and woodcarving are disappearing. The reasons are similar almost everywhere: factory-made goods are cheaper, young people move to cities in search of better-paid work, and the long training needed to master a craft does not fit modern lifestyles. When the last skilled practitioners in a community retire, knowledge that has been passed down for generations can vanish within a few years."],
+    ["B", "One response has been the creation of apprenticeship schemes in which experienced craftspeople are paid to train young learners. In the fictional region of Calda, a programme launched eight years ago has trained more than one hundred and twenty apprentices in twelve different crafts. Each apprentice works alongside a master for two years and receives a small monthly allowance, which allows them to concentrate on learning rather than taking other jobs."],
+    ["C", "The programme’s organisers admit that not every apprentice continues in the craft. Around sixty per cent are still working in their chosen craft three years after finishing, a figure the organisers consider encouraging. Those who leave often say that it was difficult to earn enough money from selling their products, particularly in the first years before they had built up regular customers."],
+    ["D", "To address this, the region has opened a shop and an online store where apprentices and former apprentices can sell their work together. Some have also found new markets by combining traditional techniques with modern designs – for example, using traditional weaving patterns to make laptop cases or phone covers. Purists sometimes criticise such products, arguing that they weaken the tradition. Others reply that crafts have always changed over time, and that a craft which nobody buys cannot survive."],
+    ["E", "Schools in Calda have also become involved. Since the programme began, local primary schools have invited craftspeople to give regular workshops, so that children can try weaving or carving for themselves. Teachers report that these sessions are among the most popular activities of the year, and a few former pupils have later applied to become apprentices themselves."]
+   ],
+   "questions": [
+    {"type": "tfng", "prompt": "Traditional crafts are disappearing mainly because people dislike them.", "answer": "FALSE", "why": "Đoạn A: lý do là hàng nhà máy rẻ hơn, người trẻ lên thành phố, đào tạo lâu – không phải vì không thích."},
+    {"type": "tfng", "prompt": "The Calda programme has trained more than one hundred and twenty apprentices.", "answer": "TRUE", "why": "Đoạn B: “more than one hundred and twenty apprentices”."},
+    {"type": "tfng", "prompt": "Apprentices in Calda receive a full salary.", "answer": "FALSE", "why": "Đoạn B: chỉ nhận “a small monthly allowance”."},
+    {"type": "tfng", "prompt": "The organisers are disappointed with the number of apprentices who continue.", "answer": "FALSE", "why": "Đoạn C: họ thấy con số 60% là “encouraging”."},
+    {"type": "tfng", "prompt": "The online store sells more products than the physical shop.", "answer": "NOT GIVEN", "why": "Bài không so sánh doanh số hai kênh."},
+    {"type": "short", "prompt": "How many different crafts does the programme teach? Write ONE NUMBER.", "answer": "12", "why": "Đoạn B: “twelve different crafts”."},
+    {"type": "short", "prompt": "How long does each apprentice work with a master? Write NO MORE THAN TWO WORDS.", "answer": "two years", "why": "Đoạn B: “for two years”."},
+    {"type": "short", "prompt": "Give ONE example of a modern product made with traditional weaving. Write NO MORE THAN TWO WORDS.", "answer": "laptop cases", "why": "Đoạn D: “laptop cases or phone covers” – chấp nhận phone covers."},
+    {"type": "short", "prompt": "Who give regular workshops in local primary schools? Write ONE WORD.", "answer": "craftspeople", "why": "Đoạn E: “invited craftspeople to give regular workshops”."}
+   ]
+  },
+  {
+   "title": "Are festivals becoming too commercial?",
+   "strategy": "Phân biệt thông tin bài nêu với ý kiến của các nhóm khác nhau; câu hỏi NOT GIVEN thường hỏi về điều “có vẻ hợp lý” nhưng bài không nói.",
+   "headings": [],
+   "paragraphs": [
+    ["A", "In the weeks before major festivals, shops in many cities fill with decorations, special offers and seasonal products. For businesses, festivals have become some of the most important times of the year, and in some sectors, such as toys and confectionery, they account for a large share of annual sales. Critics argue that this commercialisation has turned meaningful traditions into shopping events."],
+    ["B", "Surveys suggest that many people share this concern. In one study carried out in five countries, more than half of the people questioned said that festivals had become “too much about spending money”. Interestingly, the same survey found that most of these people also said they enjoyed buying presents and special food. Researchers concluded that people’s feelings about commercialisation are often mixed rather than simply negative."],
+    ["C", "Supporters of festival trade point out that buying and selling have always been part of celebrations. Historical records show that many traditional festivals included markets where farmers sold produce and craftspeople sold their goods. Without this economic activity, they argue, many festivals would not have survived, and today local businesses still provide much of the funding for public events such as parades and concerts."],
+    ["D", "Nevertheless, some communities have taken steps to protect the non-commercial side of their festivals. In certain towns, advertising is banned in the main square during the festival period, and some organisers have introduced free events, such as storytelling and traditional games, which require no spending at all. Religious and community groups also continue to hold ceremonies that have little connection with shopping."],
+    ["E", "For individuals, the solution may be a matter of choice. Many families now set a spending limit or agree to exchange handmade gifts, and some spend part of the festival volunteering, for example by preparing meals for people who live alone. Such practices suggest that it is possible to enjoy the commercial side of festivals without allowing it to replace their deeper meaning. As one festival organiser put it, the best celebrations are remembered for the people who were there, not for what was bought."]
+   ],
+   "questions": [
+    {"type": "tfng", "prompt": "Toys and confectionery depend heavily on festival sales.", "answer": "TRUE", "why": "Đoạn A: “they account for a large share of annual sales”."},
+    {"type": "tfng", "prompt": "The survey was carried out in more than five countries.", "answer": "FALSE", "why": "Đoạn B: “in five countries” – không phải hơn năm."},
+    {"type": "tfng", "prompt": "Many people who criticise commercialisation still enjoy buying presents.", "answer": "TRUE", "why": "Đoạn B: phần lớn những người này vẫn thích mua quà."},
+    {"type": "tfng", "prompt": "Traditional festival markets sold mainly imported goods.", "answer": "NOT GIVEN", "why": "Đoạn C nói nông dân và thợ thủ công bán hàng, không nói về hàng nhập khẩu."},
+    {"type": "tfng", "prompt": "Advertising is banned in every town during festivals.", "answer": "FALSE", "why": "Đoạn D: chỉ “In certain towns”."},
+    {"type": "short", "prompt": "What proportion of people said festivals were too much about spending? Write NO MORE THAN THREE WORDS.", "answer": "more than half", "why": "Đoạn B: “more than half of the people questioned”."},
+    {"type": "short", "prompt": "Name ONE free event introduced by some organisers. Write ONE WORD.", "answer": "storytelling", "why": "Đoạn D: “storytelling and traditional games” – chấp nhận traditional games."},
+    {"type": "short", "prompt": "What kind of gifts do some families agree to exchange? Write ONE WORD.", "answer": "handmade", "why": "Đoạn E: “exchange handmade gifts”."}
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Information about the Riverside Festival",
+   "section": "Section 2 · event information",
+   "strategy": "Thông tin sự kiện: ghi giờ và ngày cẩn thận; người nói thường đổi lịch (“originally… but now…”). Câu hỏi chọn nhiều đáp án: đánh dấu từng hoạt động khi nghe.",
+   "pre_listening": "Trước khi nghe: đọc chương trình, gạch dưới thời gian và địa điểm cần điền.",
+   "trap": "Lịch bị thay đổi là bẫy thường gặp: chọn thông tin mới nhất.",
+   "strategies": ["Times and dates", "Changed arrangements", "Selection questions"],
+   "transcript": "Presenter: Good morning, everyone, and thanks for listening to Radio Riverside. I’m here with some information about this year’s Riverside Festival, which takes place over the first weekend in August.\nThe festival opens on Friday evening with a parade through the town centre. The parade was originally planned to start at six, but because of road closures it will now begin at seven, starting from the railway station and finishing at the riverside park.\nOn Saturday, the main events are in the park. There’s a food market from ten in the morning, with stalls run by local restaurants and farmers. In the afternoon, there’s a folk music stage, and at four o’clock children can take part in a lantern-making workshop. It’s free, but places are limited to fifty, so you’ll need to book at the information tent.\nThe highlight on Saturday night is the fireworks display over the river at ten o’clock. The best place to watch is from the old bridge, but please note that the bridge will be closed to cars from eight.\nSunday is a quieter day. There’s a craft fair in the town hall, and in the afternoon the boat race – which has taken place every year since nineteen fifty-two – will be held on the river. Last year the race was moved to the morning, but this year it’s back in its usual slot at two o’clock.\nA few practical points. Entry to all events is free, but we recommend that visitors use public transport, as parking in the town centre will be very limited. Extra buses will run from the park-and-ride site on Mill Lane every fifteen minutes. And please remember that this year the festival has a no-plastic policy: food stalls will use only paper or reusable containers, so if you can, bring your own cup.",
+   "questions": [
+    {"prompt": "Festival dates: the first weekend in ______", "answer": "August", "why": "“the first weekend in August”."},
+    {"prompt": "Parade start time: ______", "answer": "7", "why": "Ban đầu 6 giờ (bẫy), nay “will now begin at seven” – 7 p.m."},
+    {"prompt": "Parade starts from the ______", "answer": "railway station", "why": "“starting from the railway station”."},
+    {"prompt": "Lantern-making workshop: maximum number of places: ______", "answer": "50", "why": "“places are limited to fifty”."},
+    {"prompt": "Book the workshop at the information ______", "answer": "tent", "why": "“book at the information tent”."},
+    {"prompt": "Fireworks start at ______", "answer": "10", "why": "“at ten o’clock” – 10 p.m."},
+    {"prompt": "The boat race has taken place every year since ______", "answer": "1952", "why": "“since nineteen fifty-two”."},
+    {"prompt": "Time of the boat race this year: ______", "answer": "2", "why": "Năm ngoái dời sang buổi sáng; năm nay “back in its usual slot at two o’clock”."},
+    {"prompt": "Extra buses leave from the park-and-ride site on ______ Lane", "answer": "Mill", "why": "“the park-and-ride site on Mill Lane”."}
+   ]
+  },
+  {
+   "title": "Booking a stall at the craft fair",
+   "section": "Section 1 · form completion",
+   "strategy": "Nghe kích thước, giá, ngày và yêu cầu; số liệu thường được nhắc hai lần – lần sau là con số đúng.",
+   "strategies": ["Sizes and prices", "Requirements", "Corrections"],
+   "transcript": "Organiser: Craft Fair bookings, Paul speaking.\nCaller: Hi, I’d like to book a stall at the craft fair during the Riverside Festival.\nOrganiser: Of course. What do you sell?\nCaller: Handmade jewellery, mostly silver earrings and necklaces.\nOrganiser: Lovely. We have two sizes of stall: small, which is two metres wide, and large, which is four metres.\nCaller: The small one should be enough.\nOrganiser: That’s thirty-five pounds for the day. Sorry, I’m looking at last year’s prices – it’s forty pounds this year.\nCaller: That’s fine. Do you provide tables?\nOrganiser: Yes, one table and two chairs are included. If you need electricity for lights, that’s an extra ten pounds.\nCaller: I don’t need electricity, thanks.\nOrganiser: OK. Can I have your name?\nCaller: Anna Kowalski. K-O-W-A-L-S-K-I.\nOrganiser: Thanks. And the name of your business?\nCaller: It’s called Silver Thread.\nOrganiser: Great. Stallholders can set up from seven thirty in the morning, and the fair opens to the public at ten. You must stay until the fair closes at five.\nCaller: Is there anywhere to park?\nOrganiser: There’s a small car park for stallholders behind the town hall. You’ll get a parking permit with your confirmation.\nCaller: Do I need any special insurance?\nOrganiser: Yes, all stallholders need public liability insurance. Please send a copy of your certificate before the event.\nCaller: OK, I’ll do that this week.",
+   "questions": [
+    {"prompt": "Products: handmade ______", "answer": "jewellery", "why": "“Handmade jewellery”."},
+    {"prompt": "Stall size: small, ______ metres wide", "answer": "2", "why": "“small, which is two metres wide”."},
+    {"prompt": "Stall price: £______", "answer": "40", "why": "£35 là giá năm ngoái (bẫy); năm nay £40."},
+    {"prompt": "Included: one table and two ______", "answer": "chairs", "why": "“one table and two chairs are included”."},
+    {"prompt": "Stallholder’s surname: ______", "answer": "Kowalski", "why": "Đánh vần K-O-W-A-L-S-K-I."},
+    {"prompt": "Business name: Silver ______", "answer": "Thread", "why": "“It’s called Silver Thread.”"},
+    {"prompt": "Set-up time from: ______ a.m.", "answer": "7:30", "why": "“from seven thirty in the morning”."},
+    {"prompt": "Document required: public liability ______ certificate", "answer": "insurance", "why": "“public liability insurance … send a copy of your certificate”."}
+   ]
+  },
+  {
+   "title": "Planning a presentation on a tradition",
+   "section": "Section 3 · multiple choice",
+   "strategy": "Hai sinh viên chọn chủ đề và cách trình bày: nghe lý do loại bỏ phương án và quyết định cuối cùng.",
+   "strategies": ["Rejected ideas", "Reasons", "Final choices"],
+   "transcript": "Hoa: OK, Jack, we need to choose a tradition for our cultural studies presentation.\nJack: I was thinking about wedding customs. There’s so much variety between countries.\nHoa: That’s true, but it’s a huge topic. We only have fifteen minutes. What about something more focused, like the Mid-Autumn Festival? I know a lot about it from home.\nJack: That sounds good, and it would be interesting for the class because most of them won’t know much about it.\nHoa: Exactly. Now, how should we organise it? I thought we could start with the history.\nJack: Our tutor said presentations that start with history often lose the audience. Why don’t we start with a personal story – you could describe how your family celebrates it?\nHoa: OK, that’s a better opening. Then the history, then how the festival has changed.\nJack: Yes. For the changes, we could talk about how mooncakes have become a business. Some companies sell really expensive gift boxes now.\nHoa: Good idea – that links to the commercialisation reading we did last week.\nJack: What about visual material? Should we show a video?\nHoa: The tutor said no videos longer than one minute. I think photos would be better, and I could bring a real lantern to show the class.\nJack: Perfect. People always remember objects. Who’ll do which part?\nHoa: I’ll do the personal story and the history. Could you do the section on changes and the conclusion?\nJack: Sure. And we should practise together at least once. Shall we meet on Wednesday afternoon?\nHoa: Wednesday’s difficult for me. How about Thursday morning?\nJack: Thursday morning is fine.",
+   "questions": [
+    {"prompt": "Why does Hoa reject wedding customs?", "options": ["A. The class already knows about them.", "B. The topic is too big for the time.", "C. She knows nothing about them."], "answer": "B. The topic is too big for the time.", "why": "“it’s a huge topic. We only have fifteen minutes.”"},
+    {"prompt": "Which tradition do they choose?", "options": ["A. Wedding customs", "B. The Mid-Autumn Festival", "C. Lunar New Year"], "answer": "B. The Mid-Autumn Festival", "why": "Cả hai đồng ý chọn Trung thu."},
+    {"prompt": "How will the presentation begin?", "options": ["A. With the history", "B. With a video", "C. With a personal story"], "answer": "C. With a personal story", "why": "Jack đề xuất bắt đầu bằng câu chuyện cá nhân; Hoa đồng ý “that’s a better opening”."},
+    {"prompt": "What example of change will they discuss?", "options": ["A. Expensive mooncake gift boxes", "B. New lantern designs", "C. Shorter holidays"], "answer": "A. Expensive mooncake gift boxes", "why": "“mooncakes have become a business … expensive gift boxes”."},
+    {"prompt": "What does the tutor say about videos?", "options": ["A. They are not allowed.", "B. They must be shorter than one minute.", "C. They are the best visual aid."], "answer": "B. They must be shorter than one minute.", "why": "“no videos longer than one minute”."},
+    {"prompt": "What will Hoa bring to show the class?", "options": ["A. A mooncake", "B. A lantern", "C. A costume"], "answer": "B. A lantern", "why": "“I could bring a real lantern”."},
+    {"prompt": "Which parts will Jack present?", "options": ["A. The personal story and the history", "B. The changes and the conclusion", "C. Only the conclusion"], "answer": "B. The changes and the conclusion", "why": "Hoa nhờ Jack làm phần thay đổi và kết luận."},
+    {"prompt": "When will they practise together?", "options": ["A. Wednesday afternoon", "B. Thursday morning", "C. Thursday afternoon"], "answer": "B. Thursday morning", "why": "Thứ Tư không được; chốt “Thursday morning is fine”."}
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 2 – problems and solutions",
+  "instruction_vi": "Đề problems/solutions phải trả lời cả hai phần. Cách dễ nhất: thân bài 1 nêu 2 vấn đề, thân bài 2 nêu giải pháp tương ứng cho từng vấn đề (dùng câu điều kiện loại 1 để nói hệ quả). Viết ít nhất 250 từ.",
+  "task": "In many places, traditional festivals are attracting large numbers of tourists. What problems can this cause, and what solutions can you suggest? Write at least 250 words.",
+  "data_visual": null,
+  "sample_answer": "In recent years, many traditional festivals have become popular tourist attractions, drawing thousands of visitors to towns and villages that were once known only to local people. Although this can bring economic benefits, it also creates serious problems for host communities. This essay will discuss these problems and suggest some possible solutions.\n\nThe first problem is overcrowding. Many festivals take place in historic streets or small villages that were never designed for large crowds. When thousands of visitors arrive at the same time, roads become blocked, public transport is overloaded, and emergency services may not be able to reach people who need help. The second problem is that festivals can lose their original meaning. Ceremonies that have religious or family significance may be turned into performances for tourists, and local people may feel that their own tradition no longer belongs to them.\n\nThere are, however, practical ways to reduce these problems. To deal with overcrowding, organisers could introduce a free ticket system that limits the number of visitors each day. If visitor numbers are controlled in this way, the streets will remain safe and the atmosphere will be more pleasant for everyone. In addition, separate viewing areas could allow tourists to watch events without entering the busiest areas. To protect the meaning of the festival, communities could keep certain ceremonies private, for example by holding them for residents only on a different day, while still offering public events for visitors. Explaining the history and customs of the festival to tourists, through signs or guides, would also encourage more respectful behaviour.\n\nIn conclusion, festival tourism can cause overcrowding and weaken the cultural meaning of traditions. However, by limiting visitor numbers, creating separate spaces and protecting important ceremonies, communities can share their festivals while preserving what makes them special.",
+  "guidance": [
+   "Mở bài: paraphrase + câu định hướng (bài sẽ bàn vấn đề và giải pháp).",
+   "Thân bài 1: 2 vấn đề, mỗi vấn đề có giải thích/ví dụ.",
+   "Thân bài 2: giải pháp tương ứng cho từng vấn đề; dùng If … will … để nói hệ quả.",
+   "Kết luận: tóm tắt vấn đề và giải pháp, không thêm ý mới."
+  ],
+  "micro": [
+   ["Câu định hướng ở mở bài.", "This essay will discuss these problems and suggest some possible solutions."],
+   ["Viết câu nêu vấn đề quá tải.", "The first problem is overcrowding, as historic streets cannot cope with thousands of visitors."],
+   ["Viết giải pháp bằng câu điều kiện loại 1.", "If visitor numbers are limited, the festival will remain safe and enjoyable."],
+   ["Nối giải pháp với vấn đề (To deal with …).", "To deal with overcrowding, organisers could introduce a free ticket system."],
+   ["Câu kết luận tóm tắt.", "In conclusion, festival tourism causes overcrowding and cultural loss, but careful planning can reduce both problems."]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 2. In many countries, young people are less interested in traditional customs than older generations. Why is this happening, and what can be done to keep traditions alive? Write at least 250 words.",
+  "essay": {
+   "prompt": "Some people think that governments should spend money on preserving traditional culture, while others believe the money should be used for modern projects. Discuss both views and give your own opinion.",
+   "planning_prompts": [
+    "Mở bài: nêu hai quan điểm và ý kiến của bạn.",
+    "Thân bài 1: lý do bảo tồn văn hóa (bản sắc, du lịch, kết nối thế hệ).",
+    "Thân bài 2: lý do ưu tiên dự án hiện đại (nhu cầu cấp thiết: y tế, giao thông, công nghệ).",
+    "Kết luận: quan điểm cân bằng, đề xuất cách kết hợp."
+   ],
+   "model_paragraphs": [
+    "Governments have limited budgets, and people disagree about whether public money should be used to protect traditional culture or to fund modern projects. While modern needs are clearly urgent, I believe that preserving traditional culture is also a responsible use of public money.",
+    "Those who favour preserving traditional culture argue that it gives people a sense of identity and continuity. Festivals, crafts, music and historic buildings connect younger generations with their history and help communities feel united. Once a craft or a language has disappeared, it is almost impossible to bring it back, so some spending is needed before it is too late. Furthermore, cultural heritage often attracts tourists, so money spent on it can create jobs and income.",
+    "On the other hand, supporters of modern projects point out that many countries face pressing problems, such as overcrowded hospitals, poor public transport and a lack of affordable housing. In their view, these needs affect people’s daily lives directly and should come first. Investment in technology and infrastructure can also make a country more competitive and improve living standards for everyone.",
+    "In my opinion, the choice is not either one or the other. Cultural preservation usually requires a relatively small share of the budget compared with large infrastructure projects. Moreover, the two can be combined: a modernised museum, a festival supported by better transport, or digital archives of traditional music all use modern tools to protect the past.",
+    "In conclusion, although modern projects deserve priority in many areas, governments should still invest in traditional culture, because the benefits to identity and tourism are significant and the losses would be permanent."
+   ]
+  },
+  "drills": [
+   ["Sửa lỗi: If the government will invest more, the tradition will survive.", "If the government invests more, the tradition will survive.", "Không dùng will trong mệnh đề if."],
+   ["Sửa lỗi: If I am the organiser, I would limit tickets.", "If I were the organiser, I would limit tickets.", "Loại 2 dùng were."],
+   ["Sửa lỗi: One problem is many tourists come.", "One problem is that too many tourists arrive at the same time.", "Sau is cần that + mệnh đề; nêu vấn đề cụ thể hơn."],
+   ["Viết lại học thuật hơn: Tourists make a lot of rubbish.", "Large numbers of visitors produce a significant amount of waste.", "Dùng large numbers of / a significant amount of."],
+   ["Sửa lỗi: The solution for this problem is to limit tickets.", "One solution to this problem is to limit the number of tickets.", "solution to (không phải for); thêm the number of."],
+   ["Sửa lỗi: Unless the tradition is not taught, it will disappear.", "Unless the tradition is taught to children, it will disappear.", "Unless đã mang nghĩa phủ định; không thêm not."]
+  ]
+ },
+ "speaking": {
+  "title": "Festivals, customs and traditions",
+  "instruction_vi": "Part 2 mô tả một lễ hội: hoạt động, cảm xúc, ý nghĩa. Part 3 so sánh thế hệ và dùng câu điều kiện để nói giả định.",
+  "focus": "So sánh trước–nay và giữa các thế hệ; dùng câu điều kiện (If…, would…) trong Part 3 và phát âm rõ tên lễ hội, món ăn.",
+  "part1": [
+   "What is the most important festival in your country?",
+   "How do you usually celebrate your birthday?",
+   "Do you like attending large public events?",
+   "Is there a traditional custom in your family?"
+  ],
+  "part2": "Describe a festival or celebration that is important in your country. You should say what the festival is, when it takes place, what people do during it, and explain why it is important.",
+  "part3": [
+   "Why do some young people show less interest in traditional festivals?",
+   "Do you think festivals have become too commercial?",
+   "How can traditions be kept alive in a modern society?"
+  ],
+  "model_answer": "I’d like to talk about Tet, the Lunar New Year, which is by far the most important festival in Vietnam. It usually falls in late January or February, and although the official holiday lasts about a week, preparations start much earlier. In the weeks before Tet, families clean and decorate their homes, buy peach blossom or kumquat trees, and prepare special food such as banh chung, which is sticky rice cake wrapped in leaves. On the first days of the new year, people visit relatives, give lucky money in red envelopes to children and older people, and go to pagodas to pray for good luck. I think Tet is important for two main reasons. First, it’s the time of family reunion. Many people work far from home, in big cities or even abroad, and Tet is often the only time of the year when everyone comes back together. Second, it’s a chance to make a fresh start – people try to pay their debts, forgive old arguments and think about their plans for the year. Even though some traditions are changing, especially in cities, I think the feeling of coming home will always be at the heart of Tet.",
+  "extensions": [
+   ["Why do some young people show less interest in traditional festivals?", "2 lý do (lối sống bận rộn, ảnh hưởng văn hóa toàn cầu) → ví dụ → thừa nhận: nhiều bạn trẻ vẫn yêu lễ hội theo cách mới."],
+   ["Do you think festivals have become too commercial?", "Đồng ý một phần → ví dụ (giỏ quà Tết đắt tiền) → mặt tích cực của kinh doanh lễ hội → kết luận."],
+   ["How can traditions be kept alive in a modern society?", "Giải pháp: trường học, gia đình, công nghệ (mạng xã hội) → If … will … để nói hệ quả → ví dụ."],
+   ["If you could take part in a festival anywhere in the world, which would you choose?", "Dùng câu điều kiện loại 2 → chọn lễ hội → lý do → điều bạn muốn trải nghiệm."]
+  ]
+ },
+ "checkpoint": [
+  ["The passage says “a majority of residents were proud of the festival.” The statement is “All residents were proud of the festival.” The answer is…", ["TRUE", "FALSE", "NOT GIVEN", "YES"], "FALSE", "Majority khác all – câu hỏi mâu thuẫn với bài."],
+  ["The passage does not mention the price of hotels. The statement is “Hotels became more expensive.” The answer is…", ["TRUE", "FALSE", "NOT GIVEN", "NO"], "NOT GIVEN", "Bài không có thông tin để xác định."],
+  ["Choose the correct sentence.", ["If it will rain, the parade will be cancelled.", "If it rains, the parade will be cancelled.", "If it rained, the parade will be cancelled.", "If it rains, the parade would cancelled."], "If it rains, the parade will be cancelled.", "Loại 1: If + present, will + V."],
+  ["In a problems/solutions essay, the best structure is…", ["only problems", "only solutions", "problems in one paragraph, matching solutions in the next", "your personal story"], "problems in one paragraph, matching solutions in the next", "Trả lời đủ cả hai phần, giải pháp khớp vấn đề."],
+  ["A speaker says “The parade was planned for six, but it will now begin at seven.” The answer is…", ["6", "7", "6:30", "13"], "7", "Chọn thông tin mới nhất sau khi thay đổi."]
+ ],
+ "reflection": [
+  "Câu NOT GIVEN nào bạn trả lời FALSE vì dùng hiểu biết riêng?",
+  "Trong bài Task 2, mỗi vấn đề của bạn đã có một giải pháp tương ứng chưa?"
+ ]
+}

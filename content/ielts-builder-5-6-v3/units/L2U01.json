@@ -1,0 +1,287 @@
+{
+ "unit_id": "L2U01",
+ "order": 1,
+ "title": "The Man-made Environment",
+ "title_vi": "Môi trường do con người xây dựng",
+ "objectives": [
+  "Skim một bài đọc để nắm ý chính từng đoạn trước khi đọc câu hỏi",
+  "Scan tìm tên riêng, con số và trả lời short-answer đúng giới hạn từ",
+  "Nhận ra paraphrase thay vì dò từ giống hệt",
+  "Mô tả xu hướng trong bảng/biểu đồ bằng present simple và ngôn ngữ so sánh"
+ ],
+ "exam_strategy": "Skim để biết mỗi đoạn nói gì, scan để tìm đúng chi tiết; đáp án short-answer phải chép đúng từ trong bài và không vượt giới hạn từ.",
+ "core_outcome": "Tìm nhanh chi tiết mà không nhầm keyword với paraphrase; viết overview Task 1 mà không liệt kê mọi con số.",
+ "vocabulary": [
+  ["public consultation", "tham vấn cộng đồng", "Public consultation helped planners revise the proposal."],
+  ["pedestrian corridor", "lối đi bộ kết nối", "The pedestrian corridor links the park and the market."],
+  ["urban regeneration", "tái thiết đô thị", "Urban regeneration can revive neglected buildings."],
+  ["congestion", "tình trạng ùn tắc", "Congestion remains severe during the evening rush."],
+  ["land use", "mục đích sử dụng đất", "The council reviewed land use in the district."],
+  ["mixed-use development", "phát triển đa chức năng", "Mixed-use development combines shops and housing."],
+  ["retail activity", "hoạt động bán lẻ", "Retail activity rose after the market reopened."],
+  ["community engagement", "sự tham gia của cộng đồng", "Community engagement improved the final design."],
+  ["travel behaviour", "hành vi di chuyển", "Travel behaviour may change when walking is convenient."],
+  ["measurable impact", "tác động đo lường được", "The study looked for a measurable impact on local shops."],
+  ["alternative explanation", "lời giải thích thay thế", "Rising fuel prices are an alternative explanation."],
+  ["causal relationship", "quan hệ nhân quả", "A correlation alone does not show a causal relationship."],
+  ["routine maintenance", "bảo trì thường xuyên", "Parking fees pay for routine maintenance of the path."],
+  ["long-term evaluation", "đánh giá dài hạn", "A long-term evaluation should follow the first survey."],
+  ["built environment", "môi trường xây dựng", "Public squares are an important part of the built environment."],
+  ["public amenities", "tiện ích công cộng", "Good public amenities matter a great deal to older residents."],
+  ["traffic flow", "luồng giao thông", "The new junction has improved traffic flow on the avenue."],
+  ["pedestrian access", "lối tiếp cận cho người đi bộ", "Safe pedestrian access must remain open during the works."],
+  ["peak temperature", "nhiệt độ cao nhất", "The sensors recorded a lower peak temperature beside the trees."],
+  ["funding constraint", "hạn chế ngân sách", "A funding constraint delayed the tram extension."]
+ ],
+ "grammar": {
+  "title": "Present simple vs present continuous; trend language",
+  "explanation_vi": "Present simple diễn tả thói quen, sự thật và nội dung của biểu đồ (The table shows…). Present continuous diễn tả việc đang diễn ra hoặc thay đổi tạm thời (Bus use is rising). Khi mô tả số liệu, dùng from…to… cho điểm đầu–cuối và by… cho mức chênh lệch.",
+  "form": "S + V(s/es) — thói quen, sự thật · S + am/is/are + V-ing — đang diễn ra · rise/fall from A to B · rise/fall by X percentage points · account for X%",
+  "examples": [
+   "The council usually holds two public consultations a year.",
+   "At present, engineers are repairing the drainage system under the market.",
+   "Bus use rose from 25% to 34%, an increase of nine percentage points."
+  ],
+  "examples_vi": [
+   "Hội đồng thường tổ chức hai buổi tham vấn cộng đồng mỗi năm.",
+   "Hiện tại, các kỹ sư đang sửa hệ thống thoát nước dưới khu chợ.",
+   "Tỉ lệ đi xe buýt tăng từ 25% lên 34%, tức tăng 9 điểm phần trăm."
+  ],
+  "trap": "Từ 20% lên 28% là tăng 8 percentage points, KHÔNG phải tăng 8%. Không dùng present continuous với động từ trạng thái như show, contain, belong (viết “The map shows”, không viết “is showing”).",
+  "items": [
+   ["The council usually ___ (hold) two consultations a year.", "holds", "usually = thói quen → present simple; the council là chủ ngữ số ít."],
+   ["At present, engineers ___ (repair) the drainage system.", "are repairing", "at present = việc đang diễn ra → present continuous."],
+   ["The share of cyclists ___ (rise) at the moment.", "is rising", "at the moment → present continuous cho xu hướng đang diễn ra."],
+   ["The map ___ (show) the locations of four stations.", "shows", "show là động từ mô tả biểu đồ/sự thật → present simple."],
+   ["Bus use rose ___ 20% ___ 28%. (điền hai giới từ, cách nhau bằng dấu chấm phẩy)", "from; to", "from A to B nêu điểm đầu và điểm cuối."],
+   ["The increase was ___ eight percentage points.", "by", "by + mức chênh lệch: tăng thêm 8 điểm phần trăm."],
+   ["Cars accounted ___ 62% of trips.", "for", "account for + tỉ lệ = chiếm bao nhiêu phần trăm."],
+   ["Correct the error: Cycling remained as the smallest category.", "Cycling remained the smallest category.", "remain + cụm danh từ; không thêm as."]
+  ]
+ },
+ "readings": [
+  {
+   "title": "A corridor that changed more than a street",
+   "strategy": "Skim câu đầu mỗi đoạn để chọn heading; scan tên riêng và con số cho short-answer; với TRUE/FALSE/NOT GIVEN, tìm câu nói đúng ý đó rồi mới quyết định.",
+   "instruction_vi": "Bài đọc 700 từ, 12 câu: chọn heading cho 4 đoạn, trả lời 4 câu short-answer (không quá hai từ hoặc một con số) và 4 câu TRUE/FALSE/NOT GIVEN.",
+   "headings": [
+    "i. A debate over competing priorities",
+    "ii. A compromise over events and noise",
+    "iii. The limits of attributing travel changes to one project",
+    "iv. An experiment with promising but restricted evidence",
+    "v. From an empty industrial building to shared space",
+    "vi. The financial and social value of a public walkway",
+    "vii. The history of the city’s first tram system",
+    "viii. A rise in the price of privately owned homes"
+   ],
+   "paragraphs": [
+    ["A", "At first glance, Eastbank is an ordinary neighbourhood on the edge of an expanding city. Its narrow streets contain small shops, blocks of flats and a former railway depot that stood empty for fifteen years. Yet the depot has become the centre of an unusual planning project. Instead of selling the land to a private developer, the local council invited residents to help design a green pedestrian corridor. The aim was not simply to provide a pleasant path. Planners wanted to test whether a connected public space could change the way people travelled, spent money and met their neighbours."],
+    ["B", "The earliest proposal was quite different from the finished project. Consultants recommended a four-lane road to relieve congestion on the main avenue. Shop owners were attracted by the promise of more parking, but parents feared that additional traffic would make the route to school dangerous. At a public meeting, a local cycling group suggested a continuous walking and bicycle route instead. Residents did not agree immediately. Some wanted better bus services, while others argued that the council should repair existing pavements before building something new. The final plan emerged after three further workshops, rather than from a single vote."],
+    ["C", "Construction began with the abandoned freight depot. Workers kept its brick walls and roof beams, converting the interior into a covered market and a meeting room. A narrow path connected the building to the riverbank. The project team planted 600 trees along the route and used pale paving to reduce the amount of heat absorbed by the ground. The new trees were initially small, so the council installed temporary shade structures beside the busiest sections. Designers also left wide entrances to allow deliveries early in the morning, although motor vehicles were excluded from the central walkway during normal opening hours."],
+    ["D", "The opening of the corridor did not solve every transport problem. People travelling across the entire city still depended on buses and cars, and nearby streets remained crowded at peak times. Nevertheless, a household survey found that short local journeys changed noticeably. Many respondents said they now walked to buy basic goods rather than driving to a large supermarket. Researchers were careful not to claim that the corridor caused every change. Fuel prices rose during the same period, and a new bus timetable might also have influenced behaviour. The team therefore described the results as an association, not proof of direct causation."],
+    ["E", "The most difficult argument concerned the evening programme. Young people wanted the market to stay open late, whereas some households complained about noise after nine o’clock. Market traders negotiated a compromise: indoor stalls would close at ten on Fridays, but amplified music would stop earlier. The council also introduced a telephone line for complaints and agreed to review the arrangement after six months. Those measures were unpopular with a few stallholders, who believed the rules were unnecessarily strict. However, they allowed events to continue without the council cancelling the entire programme."],
+    ["F", "Paying for the corridor was another challenge. The initial construction budget came from the city’s regeneration fund, while a small share of parking revenue was reserved for routine maintenance. Community volunteers helped with weekend planting, but professional contractors remained responsible for lighting, drainage and major repairs. Economists studying the site warned against calculating value only through market rents. The corridor attracted visitors who did not necessarily buy anything. It also provided space for children to play and older residents to sit outside. Such benefits are difficult to include in a simple financial balance sheet."],
+    ["G", "Two years after the opening, the project had produced encouraging but incomplete evidence. Air-temperature sensors positioned beside the route recorded lower peak readings on several hot days than sensors near the adjoining asphalt car park. The difference was not identical in every season, and researchers emphasised that the equipment measured local conditions rather than city-wide climate change. Meanwhile, a proposed tram extension remained delayed because of funding problems unrelated to the corridor. The next phase will examine whether the design could work in districts with fewer shops and weaker public transport connections. Eastbank is therefore better seen as an experiment than as a universal model for urban development."]
+   ],
+   "questions": [
+    {"type": "heading", "paragraph": "B", "prompt": "Choose the best heading for paragraph B.", "answer": "i. A debate over competing priorities", "why": "Đoạn B: kế hoạch đường bốn làn, lo ngại về an toàn và nhiều buổi workshop – các nhóm có ưu tiên khác nhau."},
+    {"type": "heading", "paragraph": "E", "prompt": "Choose the best heading for paragraph E.", "answer": "ii. A compromise over events and noise", "why": "Đoạn E: giờ đóng cửa buổi tối và quy định tiếng ồn được thương lượng."},
+    {"type": "heading", "paragraph": "F", "prompt": "Choose the best heading for paragraph F.", "answer": "vi. The financial and social value of a public walkway", "why": "Đoạn F: nguồn tiền bảo trì và những lợi ích không tính được bằng tiền thuê."},
+    {"type": "heading", "paragraph": "G", "prompt": "Choose the best heading for paragraph G.", "answer": "iv. An experiment with promising but restricted evidence", "why": "Đoạn G: kết quả nhiệt độ đáng khích lệ nhưng còn giới hạn; dự án là “an experiment”."},
+    {"type": "short", "prompt": "Which former building was converted into a market? Write NO MORE THAN TWO WORDS.", "answer": "freight depot", "why": "Đoạn C: “the abandoned freight depot” được chuyển thành chợ có mái che."},
+    {"type": "short", "prompt": "How many trees were planted along the corridor? Write ONE NUMBER.", "answer": "600", "why": "Đoạn C: “planted 600 trees along the route”."},
+    {"type": "short", "prompt": "Which group negotiated the evening compromise? Write NO MORE THAN TWO WORDS.", "answer": "market traders", "why": "Đoạn E: “Market traders negotiated a compromise”."},
+    {"type": "short", "prompt": "What source of money partly paid for routine maintenance? Write NO MORE THAN TWO WORDS.", "answer": "parking revenue", "why": "Đoạn F: “a small share of parking revenue was reserved for routine maintenance”."},
+    {"type": "tfng", "prompt": "Every local resident supported the first proposal.", "answer": "FALSE", "why": "Đoạn B: chủ cửa hàng, phụ huynh, nhóm xe đạp và cư dân khác có ý kiến khác nhau."},
+    {"type": "tfng", "prompt": "The temporary shade structures cost more than the new trees.", "answer": "NOT GIVEN", "why": "Đoạn C có nhắc mái che tạm và cây xanh nhưng không so sánh chi phí."},
+    {"type": "tfng", "prompt": "The tram extension was delayed because of problems caused by the corridor.", "answer": "FALSE", "why": "Đoạn G: chậm vì “funding problems unrelated to the corridor”."},
+    {"type": "tfng", "prompt": "On some hot days, sensors beside the corridor recorded lower peak temperatures than sensors near a car park.", "answer": "TRUE", "why": "Đoạn G: “recorded lower peak readings on several hot days than sensors near the adjoining asphalt car park”."}
+   ]
+  },
+  {
+   "title": "Living vertically: what tall housing changes",
+   "strategy": "Gạch dưới từ khóa của câu hỏi, rồi scan bài tìm từ đồng nghĩa (paraphrase) chứ không chỉ từ giống hệt.",
+   "headings": [],
+   "paragraphs": [
+    ["A", "In many growing cities, the most visible sign of change is upward. Towers of thirty or forty floors now stand where low terraces once lined the street. Supporters argue that building higher is the only realistic way to house more people without spreading the city into farmland. Critics reply that height is not the same as quality, and that a tall building can be crowded, expensive to run and isolating for the people who live in it."],
+    ["B", "A recent survey of residents in three high-rise estates in the fictional city of Norhaven offers a more detailed picture. Researchers spoke to 420 households, asking how they used shared spaces, how often they met neighbours and how they travelled to work. The answers varied less by the height of the building than by what surrounded it. Residents of towers with a park, a primary school and a bus stop within five minutes’ walk reported the strongest sense of community."],
+    ["C", "Lifts were a recurring complaint. In the oldest estate, two lifts served twenty-eight floors, and a single breakdown could leave older residents unable to go out. Families with young children said they rarely let them play outside alone because the playground was too far below to supervise. By contrast, a newer block placed a small garden and a children’s room on every fifth floor. Parents there described these spaces as the most valuable feature of the building."],
+    ["D", "The survey also questioned a common assumption about energy. Tall buildings are often described as efficient because flats share walls and heat is lost more slowly. Residents’ bills, however, depended mainly on insulation and window design. In one estate built with large single-glazed windows, heating costs were higher than in nearby low-rise houses. The researchers concluded that height alone tells us little about energy use."],
+    ["E", "None of this means that tall housing is a mistake. The city’s planning office now requires new towers to include shared indoor space, at least three lifts for buildings above twenty floors and a public route through the site at ground level. Whether these rules will create stronger communities is not yet known. The researchers plan to repeat the survey in five years, when the first buildings under the new rules have been occupied."],
+    ["F", "Residents themselves were divided about the experience of living high above the street. Many valued the views, the quiet of the upper floors and the security of a staffed entrance. Others missed the feeling of stepping straight out of their front door into a familiar neighbourhood. Several older residents said they had made more friends in the lift than in their previous low-rise street, which suggests that design can create contact as well as prevent it."]
+   ],
+   "questions": [
+    {"type": "short", "prompt": "What type of land could be lost if a city spreads outwards? Write ONE WORD.", "answer": "farmland", "why": "Đoạn A: “without spreading the city into farmland”."},
+    {"type": "short", "prompt": "How many households took part in the survey? Write ONE NUMBER.", "answer": "420", "why": "Đoạn B: “Researchers spoke to 420 households”."},
+    {"type": "short", "prompt": "In the oldest estate, how many lifts served the building? Write ONE NUMBER.", "answer": "2", "why": "Đoạn C: “two lifts served twenty-eight floors” – viết 2 hoặc two."},
+    {"type": "short", "prompt": "What did the newer block provide on every fifth floor, as well as a garden? Write NO MORE THAN THREE WORDS.", "answer": "a children’s room", "why": "Đoạn C: “a small garden and a children’s room on every fifth floor”."},
+    {"type": "short", "prompt": "According to the survey, what two things mainly decided residents’ energy bills? Write insulation and ONE OTHER WORD.", "answer": "window design", "why": "Đoạn D: “depended mainly on insulation and window design”."},
+    {"type": "tfng", "prompt": "Residents’ sense of community depended more on nearby facilities than on building height.", "answer": "TRUE", "why": "Đoạn B: kết quả khác nhau “less by the height of the building than by what surrounded it”."},
+    {"type": "tfng", "prompt": "Most parents in the oldest estate let their children play outside alone.", "answer": "FALSE", "why": "Đoạn C: họ “rarely let them play outside alone”."},
+    {"type": "tfng", "prompt": "The estate with single-glazed windows was the most expensive to build.", "answer": "NOT GIVEN", "why": "Đoạn D nói chi phí sưởi ấm cao hơn, không nói chi phí xây dựng."},
+    {"type": "tfng", "prompt": "The researchers already know that the new planning rules have improved communities.", "answer": "FALSE", "why": "Đoạn E: “Whether these rules will create stronger communities is not yet known”."}
+   ]
+  },
+  {
+   "title": "Why some new districts feel empty",
+   "strategy": "Câu hỏi paraphrase: đọc cả câu trong bài, so ý chứ không so từ; loại đáp án đúng một nửa.",
+   "headings": [],
+   "paragraphs": [
+    ["A", "Visitors to some newly built districts notice the same thing: wide roads, neat lawns and modern apartment blocks, but very few people on the street. Planners have a name for this problem. They call it low street life, and it matters because empty streets feel less safe, shops struggle to survive and residents have fewer chances to meet one another by accident."],
+    ["B", "One cause is the separation of uses. In many twentieth-century plans, homes were placed in one zone, offices in another and shopping in a third, often linked only by roads. As a result, almost every trip required a car, and the pavements between zones were used by almost no one. Older city centres, by contrast, usually mix homes above shops, schools beside parks and workplaces a short walk away."],
+    ["C", "Another cause is the size of street blocks. Where blocks are long, people have to walk further to reach a destination, so they are more likely to drive. Short blocks create more corners, more crossing points and more routes to choose from. Studies in several countries have linked smaller blocks with higher levels of walking, although the strength of this link varies with climate and income."],
+    ["D", "Timing also plays a part. A district is often built in stages, and the first residents may arrive years before the shops, clinics and bus services they were promised. During this period, households form travel habits that are hard to change later. Some developers now open a café, a small grocery and a bus route before the first homes are sold, so that new residents find a working neighbourhood from the start."],
+    ["E", "Fixing an empty district is slower than designing a lively one. Councils have added ground-floor shops to existing blocks, cut new footpaths through long blocks and allowed markets to use car parks at weekends. Results so far suggest that small changes can help, but only when several are made together and given time to work."],
+    ["F", "Measuring success is itself a challenge. Some councils now count pedestrians at fixed points several times a year, record how long people stay in public spaces and ask local businesses about their trade. A single busy weekend proves little, because a festival or warm weather can fill a street for a day. What planners look for instead is a steady rise over several seasons, which shows that people have begun to treat the district as a place to spend time rather than only a place to pass through."]
+   ],
+   "questions": [
+    {"type": "mcq", "prompt": "According to paragraph A, why does low street life matter?", "options": ["A. It makes roads wider and more expensive.", "B. It affects safety, local shops and social contact.", "C. It increases the number of cars in older centres.", "D. It reduces the size of apartment blocks."], "answer": "B. It affects safety, local shops and social contact.", "why": "Đoạn A nêu ba hậu quả: kém an toàn, cửa hàng khó tồn tại, ít cơ hội gặp nhau."},
+    {"type": "mcq", "prompt": "What does the writer say about the separation of uses?", "options": ["A. It encouraged people to walk between zones.", "B. It was common in older city centres.", "C. It made most journeys depend on cars.", "D. It was introduced in the twenty-first century."], "answer": "C. It made most journeys depend on cars.", "why": "Đoạn B: “almost every trip required a car” – paraphrase của đáp án C."},
+    {"type": "mcq", "prompt": "What is true about the link between small blocks and walking?", "options": ["A. It is equally strong in every country.", "B. It has been found, but it is affected by other factors.", "C. It has never been studied outside one country.", "D. It shows that long blocks are safer."], "answer": "B. It has been found, but it is affected by other factors.", "why": "Đoạn C: “linked … although the strength of this link varies with climate and income”."},
+    {"type": "mcq", "prompt": "Why do some developers open shops and bus routes early?", "options": ["A. To sell homes at a higher price.", "B. To finish the district in one stage.", "C. To stop residents forming car-based habits.", "D. To meet a government deadline."], "answer": "C. To stop residents forming car-based habits.", "why": "Đoạn D: thói quen đi lại hình thành sớm và khó thay đổi; mở dịch vụ trước để khu phố “working … from the start”."},
+    {"type": "short", "prompt": "What name do planners give to the problem of empty streets? Write NO MORE THAN THREE WORDS.", "answer": "low street life", "why": "Đoạn A: “They call it low street life”."},
+    {"type": "short", "prompt": "In older centres, where are homes often placed? Write NO MORE THAN TWO WORDS.", "answer": "above shops", "why": "Đoạn B: “mix homes above shops”."},
+    {"type": "short", "prompt": "What can short blocks create more of, as well as corners and routes? Write NO MORE THAN TWO WORDS.", "answer": "crossing points", "why": "Đoạn C: “more corners, more crossing points and more routes”."},
+    {"type": "short", "prompt": "Which spaces have councils allowed markets to use at weekends? Write NO MORE THAN TWO WORDS.", "answer": "car parks", "why": "Đoạn E: “allowed markets to use car parks at weekends”."}
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Booking an educational visit",
+   "section": "Section 1 · form completion",
+   "strategy": "Trong Section 1, người nói hay sửa lại thông tin (ten o’clock → ten fifteen). Chỉ ghi đáp án sau khi nghe hết câu.",
+   "pre_listening": "Trước khi nghe: đọc 10 câu hỏi và đoán loại thông tin – ngày, giờ, con số hay tên phòng.",
+   "trap": "Thông tin cũ (giờ cũ, địa điểm cũ, hạn cũ) thường được nhắc trước rồi mới sửa – đó là bẫy.",
+   "strategies": ["Predict the answer type", "Listen for corrections", "Check spelling of names"],
+   "transcript": "Coordinator: Good morning, Eastbank Community Office. You’re speaking to Nina. How can I help?\nResident: Hello. I’m arranging a visit for a small group of postgraduate students. They’re studying transport design and would like to hear about the green corridor.\nCoordinator: Of course. We run guided visits on Thursdays and Saturdays. The Thursday session begins at nine thirty, but the Saturday tour was recently moved. It now starts at ten fifteen, not ten o’clock as the old leaflet says.\nResident: Saturday at ten fifteen would suit us. Is the meeting point still the library annex?\nCoordinator: It used to be. We now meet at the old freight depot, in Pavilion Room B, immediately behind the covered market. Please tell everyone not to wait at the library.\nResident: I’ll make that clear. We have twelve students and two tutors. Is fourteen people too many?\nCoordinator: Fourteen is fine. The normal maximum is sixteen, although we can occasionally divide a bigger group. There’s no fee for educational groups, but you must book in advance.\nResident: That’s helpful. Do we need to bring any equipment?\nCoordinator: A notebook is useful, and closed shoes are recommended because one short section of the path is still being resurfaced. You don’t need safety helmets. Please avoid umbrellas in the indoor demonstration area.\nResident: Will we see the monitoring equipment?\nCoordinator: Yes, though it’s important to understand what the instruments actually measure. They record air temperature at two locations and count people using the walkway. They do not measure pollution directly.\nResident: Can the students speak with people who work in the market?\nCoordinator: We can invite a market representative for a short question-and-answer session. Please send your questions by Wednesday afternoon. We originally requested them by Monday, but the deadline has been extended.\nResident: Great. One last thing: may we print the map on your website for the students?\nCoordinator: Certainly, for this educational visit. The revised map was uploaded yesterday. It includes the entrance on Riverside Lane and the bicycle parking next to the east gate.\nResident: Thank you. I’ll register the group online this evening.\nCoordinator: You’re welcome. We look forward to seeing you.",
+   "questions": [
+    {"prompt": "Day of the visit: ______", "answer": "Saturday", "why": "“Saturday at ten fifteen would suit us.”"},
+    {"prompt": "New starting time: ______", "answer": "10:15", "why": "“It now starts at ten fifteen, not ten o’clock” – 10:15 hoặc ten fifteen."},
+    {"prompt": "Meeting point: Pavilion Room ______", "answer": "B", "why": "“in Pavilion Room B, immediately behind the covered market”."},
+    {"prompt": "Total number of people in the group: ______", "answer": "14", "why": "12 sinh viên + 2 giảng viên = fourteen."},
+    {"prompt": "Normal maximum group size: ______", "answer": "16", "why": "“The normal maximum is sixteen”."},
+    {"prompt": "Recommended footwear: ______", "answer": "closed shoes", "why": "“closed shoes are recommended”."},
+    {"prompt": "The equipment does NOT measure: ______", "answer": "pollution", "why": "“They do not measure pollution directly.”"},
+    {"prompt": "Deadline for sending questions: ______ afternoon", "answer": "Wednesday", "why": "“by Wednesday afternoon” – Monday là hạn cũ (bẫy)."},
+    {"prompt": "Street with the entrance on the map: ______ Lane", "answer": "Riverside", "why": "“the entrance on Riverside Lane”."},
+    {"prompt": "Bicycle parking is next to the ______ gate.", "answer": "east", "why": "“bicycle parking next to the east gate”."}
+   ]
+  },
+  {
+   "title": "Renting a room near the university",
+   "section": "Section 1 · form completion",
+   "strategy": "Nghe số điện thoại, giá tiền và cách đánh vần tên; chú ý đơn vị (per week / per month).",
+   "strategies": ["Numbers and prices", "Spelling of names", "Corrected information"],
+   "transcript": "Agent: Hillside Lettings, Mark speaking.\nStudent: Hi, I saw an advert for a room in a shared flat on Carlton Road. Is it still available?\nAgent: It is. It’s a double room on the second floor of a four-bedroom flat. Can I take your name?\nStudent: Yes, it’s Lena Okafor. That’s O-K-A-F-O-R.\nAgent: Thanks, Lena. The flat is at number forty-three Carlton Road, about ten minutes on foot from the main campus.\nStudent: And how much is the rent?\nAgent: The advert says five hundred pounds a month, but that’s out of date. The landlord has just lowered it to four hundred and seventy-five, and that includes water and internet. Electricity is shared between the tenants.\nStudent: That’s good. How many other people live there?\nAgent: Three at the moment – two postgraduate students and a nurse who works night shifts at the hospital.\nStudent: Is there anywhere to keep a bicycle?\nAgent: There’s a locked shed in the back garden. There’s no parking for cars, but there’s a bus stop right outside.\nStudent: When could I move in?\nAgent: The current tenant leaves at the end of August, so the room is free from the first of September. You’d need to pay a deposit of one month’s rent before then.\nStudent: Could I see the room first?\nAgent: Of course. I can show you round on Thursday at five, or Friday morning if that’s easier.\nStudent: Thursday at five is fine.\nAgent: Great. Can I have a phone number in case anything changes?\nStudent: It’s oh-seven-seven-one, double four nine, three-one-two.\nAgent: Thanks. And one more thing: please bring some photo identification to the viewing.\nStudent: No problem. See you on Thursday.",
+   "questions": [
+    {"prompt": "Student’s surname: ______", "answer": "Okafor", "why": "Được đánh vần O-K-A-F-O-R."},
+    {"prompt": "Address: ______ Carlton Road", "answer": "43", "why": "“number forty-three Carlton Road”."},
+    {"prompt": "Rent per month: £______", "answer": "475", "why": "£500 là giá cũ trên quảng cáo; giá mới là “four hundred and seventy-five”."},
+    {"prompt": "The rent includes water and ______", "answer": "internet", "why": "“includes water and internet”; electricity không bao gồm."},
+    {"prompt": "Occupation of one current tenant (works night shifts): ______", "answer": "nurse", "why": "“a nurse who works night shifts”."},
+    {"prompt": "Bicycles can be kept in a locked ______", "answer": "shed", "why": "“a locked shed in the back garden”."},
+    {"prompt": "Date the room is available: 1st ______", "answer": "September", "why": "“the room is free from the first of September”."},
+    {"prompt": "Viewing: Thursday at ______", "answer": "5", "why": "“Thursday at five is fine.” – 5 hoặc 5 pm."},
+    {"prompt": "Bring to the viewing: photo ______", "answer": "identification", "why": "“please bring some photo identification” – chấp nhận ID."}
+   ]
+  },
+  {
+   "title": "A talk on the new town square",
+   "section": "Section 2 · notes completion",
+   "strategy": "Section 2 là một người nói về một địa điểm; câu hỏi đi theo thứ tự bài nói, chú ý signpost như “first”, “next”, “finally”.",
+   "strategies": ["Follow signposting", "Note completion in order", "Distinguish past and present"],
+   "transcript": "Speaker: Good evening, and thank you for coming to this information session about the redesign of Millbrook town square. I’ll explain what is changing, why, and what it means for you.\nFirst, some background. The square was built in the nineteen-seventies mainly as a car park, and until last year it held around one hundred and twenty cars. Surveys showed that most of the spaces were empty after six in the evening, so the council decided the land could be used more effectively.\nThe main change is that the central area will become a pedestrian space. Cars will still be able to reach the shops along the northern edge, where we are keeping a short-stay car park with forty spaces. The rest of the square will be paved and planted.\nNext, the market. At present, the weekly market takes place on Wednesdays. From the spring, it will move to Saturdays, because traders told us that is when most families are free. We are also adding a covered area so that the market can continue in bad weather.\nNow, trees and water. We will plant thirty-five trees around the edge of the square, chosen because they provide shade without dropping too many leaves. In the centre there will be a shallow fountain that children can play in during the summer months.\nSeveral of you have asked about seating. There will be benches facing both the fountain and the shops, and every bench will have a back and arm rests, which older residents requested during the consultation.\nFinally, timing. Work starts in March and should take about nine months. During that period, the bus stop on the square will move temporarily to Station Road. We expect the square to reopen fully before the end of the year. Thank you – I’m happy to take questions.",
+   "questions": [
+    {"prompt": "Original use of the square: a ______", "answer": "car park", "why": "“built … mainly as a car park”."},
+    {"prompt": "Number of cars the square held until last year: ______", "answer": "120", "why": "“around one hundred and twenty cars”."},
+    {"prompt": "Short-stay parking will remain along the ______ edge.", "answer": "northern", "why": "“the shops along the northern edge, where we are keeping a short-stay car park”."},
+    {"prompt": "New market day: ______", "answer": "Saturday", "why": "Hiện tại là Wednesday; từ mùa xuân chuyển sang Saturdays."},
+    {"prompt": "Number of trees to be planted: ______", "answer": "35", "why": "“thirty-five trees around the edge”."},
+    {"prompt": "Children can play in a shallow ______ in summer.", "answer": "fountain", "why": "“a shallow fountain that children can play in”."},
+    {"prompt": "Every bench will have a back and ______", "answer": "arm rests", "why": "“every bench will have a back and arm rests”."},
+    {"prompt": "During the work, the bus stop will move to ______ Road.", "answer": "Station", "why": "“move temporarily to Station Road”."}
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 1 – table and trends",
+  "instruction_vi": "Đọc bảng, tìm xu hướng lớn nhất để viết overview, rồi chia số liệu thành hai đoạn thân bài. Viết ít nhất 150 từ trong 20 phút.",
+  "task": "The table shows the percentage of journeys to Eastbank town centre made by three modes of transport in 2012 and 2024. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "data_visual": {"headers": ["Mode of transport", "2012", "2024"], "rows": [["Car", "62%", "44%"], ["Bus", "25%", "34%"], ["Bicycle", "13%", "22%"]]},
+  "sample_answer": "The table compares the proportions of journeys made to Eastbank town centre by car, bus and bicycle in 2012 and 2024. Figures are given as percentages of all journeys.\n\nOverall, the car remained the most common way of travelling to the centre in both years, although its share fell considerably. In contrast, the proportions of trips made by bus and bicycle both increased, each by nine percentage points.\n\nIn 2012, cars accounted for 62% of journeys, more than twice the figure for buses, at 25%. Bicycles represented the smallest share, at only 13%.\n\nBy 2024, the proportion of car journeys had declined to 44%, a drop of 18 percentage points. Over the same period, bus travel rose from 25% to 34%, while cycling also became more popular, climbing from 13% to 22%. As a result, buses and bicycles together accounted for 56% of journeys in 2024, meaning that for the first time they were used for more than half of all trips to the town centre.",
+  "guidance": [
+   "Câu mở đầu: paraphrase đề (shows → compares; journeys → trips).",
+   "Overview: nêu 2 xu hướng lớn nhất, KHÔNG ghi số.",
+   "Thân bài 1: số liệu năm 2012, có so sánh.",
+   "Thân bài 2: thay đổi đến 2024, dùng from…to… và by… percentage points."
+  ],
+  "micro": [
+   ["Paraphrase: “The table shows the percentage of journeys…”", "The table compares the proportions of trips…"],
+   ["Viết một câu overview cho bảng (không dùng số).", "Overall, the car remained the main mode of transport, although bus and bicycle use increased."],
+   ["Nối: Car 62% → 44% (dùng fall … by)", "The share of car journeys fell by 18 percentage points, from 62% to 44%."],
+   ["So sánh năm 2012: car 62%, bus 25%", "In 2012, cars accounted for 62% of journeys, more than twice the figure for buses."],
+   ["Viết câu về bicycle với “climb from … to …”", "Cycling climbed from 13% to 22% of journeys between 2012 and 2024."]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 1. The table shows the percentage of households in a city living within 10 minutes’ walk of a park in 2010 and 2025, in three districts. Summarise the main features and make comparisons. Write at least 150 words.",
+  "essay": {
+   "prompt": "Some people believe that replacing city-centre car parks with pedestrian areas is the best way to improve town centres. To what extent do you agree or disagree?",
+   "planning_prompts": [
+    "Nêu rõ mức độ đồng ý ngay ở mở bài.",
+    "Thân bài 1: lợi ích (an toàn, cửa hàng nhỏ, không khí, gặp gỡ).",
+    "Thân bài 2: giới hạn và điều kiện (giao hàng, người khuyết tật, giao thông công cộng).",
+    "Kết luận: nhắc lại quan điểm kèm điều kiện."
+   ],
+   "model_paragraphs": [
+    "Many town centres today are dominated by traffic and large car parks, and some people argue that turning these spaces into pedestrian areas would be the best way to improve them. I largely agree with this view, provided that the change is supported by good public transport and access for people who cannot walk long distances.",
+    "The main advantage of pedestrian areas is that they make town centres more pleasant and safer places to spend time. Without moving cars, families can walk with young children, older people can cross the street without fear, and the air is noticeably cleaner. When people stay longer, they also tend to visit more shops and cafés, so small local businesses often benefit rather than suffer.",
+    "However, removing car parks without other changes could cause serious problems. Shops still need deliveries, and disabled or elderly residents may depend on being able to park close to where they are going. If buses are infrequent, people who live outside the centre may simply choose to shop at large out-of-town stores instead. In this case, a pedestrian area could become as empty as the car park it replaced.",
+    "For this reason, the best approach is a gradual one. A council might keep a small number of short-stay and disabled parking spaces at the edge of the centre, allow deliveries early in the morning and improve bus services at the same time as the car park is closed.",
+    "In conclusion, I believe pedestrian areas are generally the most effective way to improve town centres, but only when they are planned together with transport and access for everyone. Simply removing cars is not enough on its own."
+   ]
+  },
+  "drills": [
+   ["Sửa lỗi: The number of cars are decreasing.", "The number of cars is decreasing.", "Chủ ngữ là “the number” (số ít) → is.", "number of + N số nhiều vẫn đi với động từ số ít"],
+   ["Sửa lỗi: Bus use increased 9%.", "Bus use increased by nine percentage points.", "Thiếu by; với tỉ lệ phần trăm dùng percentage points."],
+   ["Sửa lỗi: In 2024, the bicycle was 22%.", "In 2024, bicycles accounted for 22% of journeys.", "Dùng account for để nói tỉ lệ một nhóm chiếm."],
+   ["Sửa lỗi: The table is showing three types of transport.", "The table shows three types of transport.", "show là động từ trạng thái, dùng present simple."],
+   ["Viết lại cho học thuật hơn: A lot of people use cars.", "A large proportion of journeys are made by car.", "Tránh “a lot of”; dùng a large proportion of."],
+   ["Sửa lỗi: Overall, car fell from 62% to 44% and bus rose from 25% to 34%.", "Overall, car use declined considerably, while bus travel became more common.", "Overview không đưa số chi tiết; chỉ nêu xu hướng chính."]
+  ]
+ },
+ "speaking": {
+  "title": "Your neighbourhood and public places",
+  "instruction_vi": "Part 1: trả lời 2–3 câu cho mỗi câu hỏi. Part 2: chuẩn bị 1 phút, nói 1–2 phút. Part 3: nêu ý kiến, lý do và ví dụ.",
+  "focus": "Mở rộng câu trả lời Part 1 thành 2–3 câu (trả lời → lý do → ví dụ) và nhấn đúng trọng âm từ dài như con-SUL-tation, DE-velopment.",
+  "part1": [
+   "Do you live in a busy or quiet neighbourhood?",
+   "What public facilities do you use most often?",
+   "How has your area changed in recent years?",
+   "Would you like to live near a public park? Why?"
+  ],
+  "part2": "Describe a public place in your town or city that people use regularly. You should say where it is, what people do there, how it has changed, and explain why it matters to the community.",
+  "part3": [
+   "Should local governments spend more on public transport or on parks?",
+   "How can city planning affect people’s health?",
+   "Who should be consulted before major changes are made to public spaces?"
+  ],
+  "model_answer": "I’d like to talk about the lakeside park near the centre of my city. It’s only about ten minutes on foot from my home, so I go there quite often, especially in the early morning. If you go at around six, you see hundreds of people doing exercise – older people practising tai chi, groups of women dancing to music and teenagers playing badminton. In the evening it’s busier with families and street food sellers. The park has changed a lot in the last few years. It used to be quite dark and dirty, but the city added lights, new paths and a running track around the lake, so it feels much safer now. I think it really matters to the community because it’s one of the few free places where people of every age can meet. In a crowded city with small apartments, having somewhere green to relax is not a luxury – it’s something people genuinely need.",
+  "extensions": [
+   ["Should local governments spend more on public transport or on parks?", "Nêu lựa chọn → lý do chính (nhiều người hưởng lợi nhất) → ví dụ ở Việt Nam → thừa nhận mặt còn lại: “That said, parks are also…”."],
+   ["How can city planning affect people’s health?", "Hai cách: đi bộ/xe đạp nhiều hơn và không khí sạch hơn → ví dụ cụ thể → kết: thiết kế thành phố ảnh hưởng thói quen hằng ngày."],
+   ["Who should be consulted before major changes are made to public spaces?", "Liệt kê nhóm: cư dân, chủ cửa hàng, người cao tuổi/khuyết tật → vì sao mỗi nhóm cần → hạn chế: tham vấn mất thời gian nhưng tránh sai lầm."],
+   ["Are old buildings worth protecting when a city grows quickly?", "Đồng ý có điều kiện → giá trị lịch sử/du lịch → chi phí và nhu cầu nhà ở → giải pháp: cải tạo thay vì phá bỏ."]
+  ]
+ },
+ "checkpoint": [
+  ["You need to find a date in a long passage. Which technique should you use?", ["Skimming", "Scanning", "Reading every word carefully", "Translating the whole text"], "Scanning", "Scanning = tìm nhanh một chi tiết cụ thể như ngày, tên, con số."],
+  ["A question says “bikes” but the passage says “bicycles”. This is an example of…", ["a spelling mistake", "a distractor", "paraphrase", "a heading"], "paraphrase", "Bài đọc dùng từ đồng nghĩa/cách diễn đạt khác với câu hỏi."],
+  ["The instruction says NO MORE THAN TWO WORDS. Which answer is acceptable?", ["the old freight depot", "freight depot", "an abandoned freight depot", "depot building used for freight"], "freight depot", "Chỉ “freight depot” có đúng hai từ."],
+  ["A share rises from 20% to 28%. How should you describe the change?", ["It rose by 8%.", "It rose by 28%.", "It rose by eight percentage points.", "It rose to eight percentage points."], "It rose by eight percentage points.", "Chênh lệch giữa hai tỉ lệ là percentage points."],
+  ["What should a Task 1 overview contain?", ["Every number in the table", "The main trends without detailed figures", "Your opinion about the data", "Reasons for the changes"], "The main trends without detailed figures", "Overview nêu xu hướng chính, không liệt kê số và không giải thích nguyên nhân."]
+ ],
+ "reflection": [
+  "Câu nào bạn chọn sai vì dò từ giống hệt thay vì hiểu paraphrase?",
+  "Overview Task 1 của bạn đã nêu xu hướng chính mà không có số chưa?"
+ ]
+}

@@ -1,0 +1,275 @@
+{
+ "unit_id": "L2U07",
+ "order": 7,
+ "title": "Education Systems",
+ "title_vi": "Hệ thống giáo dục",
+ "objectives": [
+  "Hoàn thành flow-chart và sơ đồ quy trình bằng từ trong bài, đúng giới hạn từ",
+  "Skim để định vị đoạn mô tả quy trình rồi đọc kỹ từng bước",
+  "Viết Task 2 dạng discuss both views + give your opinion",
+  "Dùng modal chỉ nghĩa vụ và lời khuyên: must, have to, should, don’t have to"
+ ],
+ "exam_strategy": "Flow-chart completion: các bước trong sơ đồ đi theo thứ tự bài; xác định loại từ cần điền và nhớ quy tắc số từ (ví dụ NO MORE THAN TWO WORDS).",
+ "core_outcome": "Điền đúng đơn vị và tuân thủ giới hạn từ trong sơ đồ; phát triển lập luận Task 2 không lan man, có ví dụ cụ thể.",
+ "vocabulary": [
+  ["curriculum reform", "cải cách chương trình học", "The curriculum reform added coding to primary schools."],
+  ["compulsory education", "giáo dục bắt buộc", "Compulsory education ends at sixteen in many countries."],
+  ["higher education", "giáo dục đại học", "Higher education is free in some European countries."],
+  ["tuition fees", "học phí", "Tuition fees have risen sharply over the past decade."],
+  ["academic performance", "kết quả học tập", "Regular sleep improves academic performance."],
+  ["assessment method", "phương pháp đánh giá", "Projects are an alternative assessment method to exams."],
+  ["learning outcome", "kết quả đầu ra của việc học", "Each course lists its expected learning outcomes."],
+  ["equal access", "sự tiếp cận công bằng", "Scholarships help to provide equal access to university."],
+  ["class size", "sĩ số lớp", "Smaller class sizes allow more individual attention."],
+  ["vocational training", "đào tạo nghề", "Vocational training prepares students for specific jobs."],
+  ["standardised test", "bài kiểm tra chuẩn hóa", "Every student takes a standardised test at the age of eleven."],
+  ["critical thinking", "tư duy phản biện", "Debate classes develop critical thinking."],
+  ["rote learning", "học vẹt", "Rote learning helps students pass exams but not understand ideas."],
+  ["gap year", "năm nghỉ trước đại học", "She spent her gap year volunteering abroad."],
+  ["distance learning", "học từ xa", "Distance learning allows adults to study while working."],
+  ["teacher training", "đào tạo giáo viên", "Better teacher training is key to improving schools."],
+  ["school leaver", "học sinh vừa tốt nghiệp phổ thông", "Many school leavers choose to go straight to work."],
+  ["scholarship", "học bổng", "He won a scholarship to study engineering."],
+  ["exam pressure", "áp lực thi cử", "Exam pressure can affect students’ mental health."],
+  ["entrance examination", "kỳ thi tuyển sinh", "The university entrance examination is held every June."]
+ ],
+ "grammar": {
+  "title": "Modals of obligation and advice",
+  "explanation_vi": "must và have to diễn tả nghĩa vụ (must thường là quy định/ý của người nói; have to là quy định từ bên ngoài). mustn’t = bị cấm; don’t have to = không bắt buộc (vẫn được làm). should/ought to = lời khuyên, rất hữu ích để nêu đề xuất trong Task 2. Quá khứ của must/have to là had to.",
+  "form": "must / have to + V (bắt buộc) · mustn’t + V (cấm) · don’t have to + V (không bắt buộc) · should / ought to + V (khuyên) · had to + V (bắt buộc trong quá khứ)",
+  "examples": [
+   "Students must submit their applications before the end of March.",
+   "In some countries, pupils don’t have to wear a uniform.",
+   "Schools should teach students how to manage money."
+  ],
+  "examples_vi": [
+   "Học sinh phải nộp hồ sơ trước cuối tháng Ba.",
+   "Ở một số nước, học sinh không bắt buộc mặc đồng phục.",
+   "Trường học nên dạy học sinh cách quản lý tiền."
+  ],
+  "trap": "mustn’t (cấm) KHÁC don’t have to (không bắt buộc). “You mustn’t use your phone” = không được dùng; “You don’t have to use your phone” = không cần dùng. Không viết “must to” hay “should to”.",
+  "items": [
+   ["In this exam, you ___ use a dictionary. It is not allowed. (mustn’t / don’t have to)", "mustn’t", "Không được phép → mustn’t."],
+   ["Attendance at the lecture is optional, so you ___ come. (mustn’t / don’t have to)", "don’t have to", "Không bắt buộc → don’t have to."],
+   ["When I was at school, we ___ (have to) wear a uniform every day.", "had to", "Nghĩa vụ trong quá khứ → had to."],
+   ["I think universities ___ offer more practical courses. (advice)", "should", "Đề xuất/lời khuyên → should."],
+   ["All students ___ register online by Friday. It is the rule. (must / should)", "must", "Quy định bắt buộc → must."],
+   ["Correct the error: Students must to pay the fee before enrolling.", "Students must pay the fee before enrolling.", "must + V nguyên mẫu, không có to."],
+   ["Does she ___ take an entrance examination? (have to)", "have to", "Câu hỏi với does → have to (không chia)."],
+   ["Correct the error: Teachers should gives more feedback.", "Teachers should give more feedback.", "should + V nguyên mẫu."]
+  ]
+ },
+ "readings": [
+  {
+   "title": "How a student becomes a teacher in Nordvik",
+   "strategy": "Flow-chart: skim để tìm đoạn mô tả quy trình, rồi đọc kỹ theo thứ tự. Mỗi ô trong sơ đồ tương ứng một bước; từ cần điền thường là danh từ.",
+   "instruction_vi": "Bài đọc khoảng 700 từ, 12 câu: 6 câu hoàn thành flow-chart quy trình tuyển chọn và đào tạo giáo viên, 3 câu TRUE/FALSE/NOT GIVEN và 3 câu short-answer.",
+   "paragraphs": [
+    ["A", "In discussions about education, one question appears again and again: why do some school systems consistently achieve better results than others with similar budgets? Researchers have pointed to many factors, from class sizes to the age at which children start school. Increasingly, however, attention has turned to the people at the front of the classroom. Several of the most successful systems share a common feature: they make teaching a highly selective, well-respected profession and invest heavily in preparing teachers before they ever take charge of a class. The fictional example below shows what this looks like in practice."],
+    ["B", "In the fictional country of Nordvik, whose system follows this model, becoming a primary school teacher is more competitive than entering law or medicine. Each year, around ten applicants compete for every place on a teacher education programme. Applicants must first pass a national written examination that tests reading comprehension, mathematics and the ability to analyse educational research. Only those with the highest scores are invited to the next stage."],
+    ["C", "The second stage takes place at the university itself. Candidates attend an interview with two lecturers, during which they are asked to explain why they want to teach and to respond to realistic classroom situations. They also take part in a group activity, often a discussion or a short teaching task with other candidates, while assessors observe how well they communicate and cooperate. Universities argue that these qualities cannot be measured by a written test alone."],
+    ["D", "Successful candidates then begin a five-year programme that leads to a master’s degree. The first three years combine the study of subjects such as mathematics and language with courses in child development and learning theory. A distinctive feature of the programme is that students are trained to read and carry out educational research, so that they can judge new teaching methods for themselves rather than simply following instructions."],
+    ["E", "Practical experience is built into every year of the course. Student teachers spend increasing amounts of time in special training schools that are attached to the universities, in much the same way that hospitals train new doctors. At first they observe experienced teachers; later they plan and teach lessons themselves, receiving detailed feedback after each one. In the final year, they complete a long teaching placement, usually lasting around ten weeks."],
+    ["F", "Before graduating, every student must write a research thesis on a classroom question of their choice – for example, how to support children who are learning in a second language, or how homework affects younger pupils. Only after the thesis has been approved can they apply for a permanent teaching post. New teachers are then supported by a mentor during their first year in school."],
+    ["G", "The results of this approach are impressive but not easy to copy. Teachers in Nordvik enjoy a high level of trust: there are no school inspections of the kind common in many countries, and teachers have considerable freedom to choose their own methods and materials. Surveys show that very few leave the profession, compared with countries where many new teachers quit within five years. However, critics point out that Nordvik is a small country with relatively low levels of inequality, and that a system which works there may not succeed in larger, more diverse societies."],
+    ["H", "Nevertheless, several countries have borrowed elements of the model. Some have raised entry requirements for teacher training, while others have introduced longer school placements or mentoring for new teachers. Whether these changes will lead to the same results is uncertain. What the research does suggest is that improving the quality of teaching depends less on any single reform than on treating teachers as highly trained professionals."]
+   ],
+   "questions": [
+    {"type": "short", "prompt": "Flow-chart, Stage 1: Applicants pass a national ______ examination. (ONE WORD)", "answer": "written", "why": "Đoạn B: “a national written examination”."},
+    {"type": "short", "prompt": "Flow-chart, Stage 2: Candidates attend an interview with two ______. (ONE WORD)", "answer": "lecturers", "why": "Đoạn C: “an interview with two lecturers”."},
+    {"type": "short", "prompt": "Flow-chart, Stage 2: Candidates also take part in a ______ activity. (ONE WORD)", "answer": "group", "why": "Đoạn C: “They also take part in a group activity”."},
+    {"type": "short", "prompt": "Flow-chart, Stage 3: A five-year programme leads to a ______ degree. (ONE WORD)", "answer": "master’s", "why": "Đoạn D: “leads to a master’s degree”."},
+    {"type": "short", "prompt": "Flow-chart, Stage 4: Final-year placement lasts about ______. (NO MORE THAN TWO WORDS)", "answer": "ten weeks", "why": "Đoạn E: “usually lasting around ten weeks”."},
+    {"type": "short", "prompt": "Flow-chart, Stage 5: Students must write a research ______. (ONE WORD)", "answer": "thesis", "why": "Đoạn F: “write a research thesis”."},
+    {"type": "tfng", "prompt": "In Nordvik, it is harder to enter teacher education than to study law.", "answer": "TRUE", "why": "Đoạn B: “more competitive than entering law or medicine”."},
+    {"type": "tfng", "prompt": "Teachers in Nordvik are paid more than doctors.", "answer": "NOT GIVEN", "why": "Bài không nói về mức lương."},
+    {"type": "tfng", "prompt": "Schools in Nordvik are inspected every year.", "answer": "FALSE", "why": "Đoạn G: “there are no school inspections of the kind common in many countries”."},
+    {"type": "short", "prompt": "What are the special schools where student teachers train compared to? Write ONE WORD.", "answer": "hospitals", "why": "Đoạn E: “in much the same way that hospitals train new doctors”."},
+    {"type": "short", "prompt": "Who supports new teachers during their first year? Write ONE WORD.", "answer": "mentor", "why": "Đoạn F: “supported by a mentor”."},
+    {"type": "short", "prompt": "According to critics, Nordvik has relatively low levels of what? Write ONE WORD.", "answer": "inequality", "why": "Đoạn G: “relatively low levels of inequality”."}
+   ]
+  },
+  {
+   "title": "From application to enrolment: applying to university",
+   "strategy": "Diagram/flow-chart labelling: các bước có thể không theo thứ tự đoạn văn hoàn toàn; tìm từ chỉ thời gian (first, after, once, finally) để sắp xếp.",
+   "headings": [],
+   "paragraphs": [
+    ["A", "In the fictional country of Westria, all applications to undergraduate courses are handled by a central admissions service rather than by individual universities. This system was introduced to make the process fairer and simpler, since students previously had to complete a different form for every institution, each with its own deadline."],
+    ["B", "The process begins in the autumn of a student’s final school year. Students create an online account and choose up to five courses, which may be at the same university or at different ones. They then write a single personal statement of no more than four thousand characters, explaining why they want to study their chosen subject. Because the same statement is sent to all five courses, advisers recommend that students apply for courses in similar subjects."],
+    ["C", "Next, a teacher at the student’s school writes a reference and adds predicted grades for the final examinations. The school submits the complete application, and the deadline for most courses is the middle of January. Some highly competitive courses, such as medicine, have an earlier deadline in October and may require an additional admissions test."],
+    ["D", "Universities then review the applications. Some invite applicants to an interview, especially for subjects such as teaching or nursing where communication skills are important. Each university then sends one of three responses: an unconditional offer, a conditional offer, which depends on the student achieving certain grades, or a rejection."],
+    ["E", "By early May, students must choose a firm choice and an insurance choice from the offers they have received. The insurance choice usually asks for lower grades, so it provides a back-up if the student’s results are disappointing. When examination results are published in August, offers are confirmed, and students who have met the conditions can enrol."],
+    ["F", "Students who receive no offers, or who miss their grades, are not necessarily left without a place. A process known as clearing, which runs through the summer, matches them with courses that still have vacancies. Advisers suggest that students research possible clearing options before results day, so that they can make calls quickly if necessary."]
+   ],
+   "questions": [
+    {"type": "short", "prompt": "Step 1: Choose up to ______ courses. (ONE NUMBER)", "answer": "5", "why": "Đoạn B: “choose up to five courses”."},
+    {"type": "short", "prompt": "Step 2: Write one personal ______. (ONE WORD)", "answer": "statement", "why": "Đoạn B: “write a single personal statement”."},
+    {"type": "short", "prompt": "Step 3: A teacher writes a reference and adds predicted ______. (ONE WORD)", "answer": "grades", "why": "Đoạn C: “adds predicted grades”."},
+    {"type": "short", "prompt": "Deadline for most courses: middle of ______. (ONE WORD)", "answer": "January", "why": "Đoạn C: “the middle of January”."},
+    {"type": "short", "prompt": "Step 5: Students choose a firm choice and an ______ choice. (ONE WORD)", "answer": "insurance", "why": "Đoạn E: “a firm choice and an insurance choice”."},
+    {"type": "short", "prompt": "Results are published in ______. (ONE WORD)", "answer": "August", "why": "Đoạn E: “When examination results are published in August”."},
+    {"type": "short", "prompt": "Process for students with no offers: ______. (ONE WORD)", "answer": "clearing", "why": "Đoạn F: “A process known as clearing”."},
+    {"type": "tfng", "prompt": "Students write a different personal statement for each course.", "answer": "FALSE", "why": "Đoạn B: một bài duy nhất gửi tới cả năm khóa."},
+    {"type": "tfng", "prompt": "Medicine courses have an earlier deadline than most courses.", "answer": "TRUE", "why": "Đoạn C: “an earlier deadline in October”."}
+   ]
+  },
+  {
+   "title": "Should homework be abolished in primary schools?",
+   "strategy": "Bài nêu nhiều quan điểm: ghi chú ai nói gì (giáo viên, phụ huynh, nhà nghiên cứu) và kết luận của người viết ở đoạn cuối.",
+   "headings": [],
+   "paragraphs": [
+    ["A", "Few school practices cause as much argument at home as homework. Some parents believe it builds good study habits and keeps them informed about what their children are learning. Others see it as a source of stress that takes time away from play, family life and sleep. In recent years, a number of primary schools have decided to stop setting homework altogether, and their experiences offer useful evidence."],
+    ["B", "Research on the academic benefits of homework gives a mixed picture. For older secondary students, studies generally find a positive link between homework and achievement, at least up to about two hours a night. For children under eleven, however, the link is weak or absent. One explanation is that young children have not yet developed the ability to study independently, so homework often becomes either too easy to be useful or too difficult to complete without help."],
+    ["C", "That need for help raises a question of fairness. Children whose parents have the time and education to support them may benefit from homework, while those whose parents work long hours or do not speak the language of instruction may fall further behind. Teachers in several schools reported that marking homework told them more about children’s home circumstances than about what they had learned."],
+    ["D", "At one primary school in the fictional town of Bellbrook, teachers replaced written homework with three simple expectations: read for twenty minutes every day, practise times tables, and talk to an adult about something learned at school. After two years, reading scores had risen slightly, and a survey found that most parents preferred the new approach. A minority, however, worried that their children would not be ready for the larger amounts of homework set in secondary school."],
+    ["E", "Teachers at Bellbrook have responded by introducing short, optional projects in the final year of primary school, which give pupils some practice in planning their own work. The head teacher argues that this gradual approach is more sensible than setting homework from the age of five simply because older students need it."],
+    ["F", "The evidence therefore suggests that the most important question is not whether homework should exist, but what kind and how much is appropriate at each age. For young children, reading and conversation appear to offer most of the benefits of homework with few of the disadvantages."]
+   ],
+   "questions": [
+    {"type": "mcq", "prompt": "What does research say about homework for children under eleven?", "options": ["A. It strongly improves results.", "B. Its benefits are weak or absent.", "C. It is more useful than for older students.", "D. It should last two hours a night."], "answer": "B. Its benefits are weak or absent.", "why": "Đoạn B: “For children under eleven, however, the link is weak or absent.”"},
+    {"type": "mcq", "prompt": "Why does homework raise a question of fairness?", "options": ["A. Some children get more help at home than others.", "B. Teachers mark it unfairly.", "C. It is too easy for most children.", "D. Parents refuse to help."], "answer": "A. Some children get more help at home than others.", "why": "Đoạn C: con có bố mẹ có thời gian/học vấn được hỗ trợ hơn."},
+    {"type": "mcq", "prompt": "What concern did some Bellbrook parents have?", "options": ["A. Reading scores would fall.", "B. Children would not be prepared for secondary school homework.", "C. Times tables were too difficult.", "D. Teachers would set too many projects."], "answer": "B. Children would not be prepared for secondary school homework.", "why": "Đoạn D: lo con chưa sẵn sàng cho lượng bài tập lớn hơn ở cấp hai."},
+    {"type": "mcq", "prompt": "What is the writer’s conclusion?", "options": ["A. Homework should be banned at all ages.", "B. Homework should start at the age of five.", "C. The type and amount should suit the child’s age.", "D. Parents should decide whether to set homework."], "answer": "C. The type and amount should suit the child’s age.", "why": "Đoạn F: câu hỏi quan trọng là loại và lượng bài tập phù hợp từng độ tuổi."},
+    {"type": "short", "prompt": "For older students, homework helps up to about how long a night? Write NO MORE THAN TWO WORDS.", "answer": "two hours", "why": "Đoạn B: “up to about two hours a night”."},
+    {"type": "short", "prompt": "How long should Bellbrook pupils read every day? Write NO MORE THAN TWO WORDS.", "answer": "twenty minutes", "why": "Đoạn D: “read for twenty minutes every day”."},
+    {"type": "short", "prompt": "What did teachers introduce in the final year of primary school? Write NO MORE THAN THREE WORDS.", "answer": "short, optional projects", "why": "Đoạn E: “short, optional projects” – chấp nhận optional projects."},
+    {"type": "short", "prompt": "Apart from reading, what appears to offer most benefits for young children? Write ONE WORD.", "answer": "conversation", "why": "Đoạn F: “reading and conversation”."}
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Lecture: comparing school systems",
+   "section": "Section 4 · table completion",
+   "strategy": "Table completion: đọc tiêu đề hàng và cột trước để biết bài giảng sẽ so sánh những gì; thông tin thường đi theo hàng, từ trái sang phải.",
+   "pre_listening": "Trước khi nghe: xác định mỗi ô cần số (tuổi, giờ) hay danh từ.",
+   "trap": "Giảng viên có thể nhắc một con số “thường nghĩ” rồi đưa con số đúng; chọn con số được khẳng định.",
+   "strategies": ["Read table headings", "Numbers and ages", "Contrast signals"],
+   "transcript": "Lecturer: Today I want to compare three school systems using a simple table: the age at which children start school, the length of the school day, and the main way students are assessed at the end of secondary school. I’ll use three fictional countries, Aland, Belmar and Corvia, which represent common patterns.\nLet’s start with Aland. Children there start formal schooling quite late, at the age of seven. Before that, they attend kindergarten, where the focus is on play rather than reading and writing. The school day is short, around five hours for younger pupils. At the end of secondary school, students take a national examination, but teachers’ continuous assessment also counts towards the final grade.\nBelmar is quite different. Many people assume children start at six there, but in fact they begin school at five, and they learn to read in their first year. The school day is long – about eight hours including lunch and after-school study. Assessment at the end of secondary school is almost entirely based on a single national examination, which is extremely competitive.\nFinally, Corvia. Children start at six. The school day is around six and a half hours. What makes Corvia distinctive is its assessment: instead of a single final exam, students complete a portfolio of projects over their last two years, which is marked by their teachers and checked by external examiners.\nWhich system is best? The research doesn’t give a simple answer. Aland’s late start doesn’t seem to harm results; by the age of fifteen, its students perform as well as those in Belmar. However, Belmar’s students report much higher levels of stress. Corvia’s portfolio system is popular with students but criticised by some universities, which find it harder to compare applicants.",
+   "questions": [
+    {"prompt": "Aland – age children start school: ______", "answer": "7", "why": "“at the age of seven”."},
+    {"prompt": "Aland – before school, focus of kindergarten: ______", "answer": "play", "why": "“the focus is on play rather than reading and writing”."},
+    {"prompt": "Aland – length of school day for younger pupils: about ______ hours", "answer": "5", "why": "“around five hours”."},
+    {"prompt": "Belmar – age children start school: ______", "answer": "5", "why": "Nhiều người nghĩ là 6 (bẫy), thực tế “they begin school at five”."},
+    {"prompt": "Belmar – length of school day: about ______ hours", "answer": "8", "why": "“about eight hours”."},
+    {"prompt": "Belmar – main assessment: a single national ______", "answer": "examination", "why": "“a single national examination”."},
+    {"prompt": "Corvia – main assessment: a ______ of projects", "answer": "portfolio", "why": "“a portfolio of projects”."},
+    {"prompt": "Belmar students report higher levels of ______", "answer": "stress", "why": "“much higher levels of stress”."}
+   ]
+  },
+  {
+   "title": "Asking about a summer language course",
+   "section": "Section 1 · form completion",
+   "strategy": "Nghe tên khóa, mức độ, giá và nơi ở; chú ý chi tiết được sửa và từ được đánh vần.",
+   "strategies": ["Levels and prices", "Accommodation", "Spelling"],
+   "transcript": "Adviser: Good morning, Lakeside Language School.\nCaller: Hello. I’m interested in your summer English course for university students.\nAdviser: Of course. We have two options: a two-week general course and a four-week academic course that prepares students for university study.\nCaller: The academic one, please.\nAdviser: That runs from the seventh of July to the first of August. Classes are in the morning, from nine until twelve thirty, and in the afternoons there are workshops on presentations and academic writing.\nCaller: How much does it cost?\nAdviser: The course fee is one thousand two hundred pounds. There’s also a registration fee of fifty pounds, which isn’t refundable.\nCaller: And accommodation?\nAdviser: You can stay with a host family or in our student residence. Host families cost one hundred and sixty pounds a week, including breakfast and dinner. The residence is a little cheaper, but meals aren’t included.\nCaller: I’d prefer a host family. I’d like to practise speaking as much as possible.\nAdviser: Good choice. Do you have any dietary requirements?\nCaller: I’m vegetarian.\nAdviser: No problem, I’ll note that. Before the course starts, you’ll need to take a short online placement test. It takes about forty minutes.\nCaller: OK. What’s the best way to get to the school from the airport?\nAdviser: There’s a direct coach that takes about an hour. Alternatively, we can arrange a taxi for you, but it’s more expensive.\nCaller: I’ll take the coach. Can I have your email for the application form?\nAdviser: It’s admissions at lakeside-lang dot com.",
+   "questions": [
+    {"prompt": "Course chosen: four-week ______ course", "answer": "academic", "why": "“The academic one, please.”"},
+    {"prompt": "Course start date: ______ July", "answer": "7th", "why": "“from the seventh of July”."},
+    {"prompt": "Afternoon workshops: presentations and academic ______", "answer": "writing", "why": "“workshops on presentations and academic writing”."},
+    {"prompt": "Course fee: £______", "answer": "1,200", "why": "“one thousand two hundred pounds”."},
+    {"prompt": "Non-refundable registration fee: £______", "answer": "50", "why": "“a registration fee of fifty pounds”."},
+    {"prompt": "Host family cost per week: £______", "answer": "160", "why": "“one hundred and sixty pounds a week”."},
+    {"prompt": "Dietary requirement: ______", "answer": "vegetarian", "why": "“I’m vegetarian.”"},
+    {"prompt": "Length of placement test: about ______ minutes", "answer": "40", "why": "“about forty minutes”."}
+   ]
+  },
+  {
+   "title": "Tutorial: designing a study plan",
+   "section": "Section 3 · multiple choice",
+   "strategy": "Gia sư và sinh viên thảo luận: chú ý lời khuyên của gia sư (you should / you don’t have to) và quyết định của sinh viên.",
+   "strategies": ["Advice language", "Decisions", "Reasons"],
+   "transcript": "Tutor: Hi Nadia, come in. You wanted to talk about your study plan for the exam term.\nNadia: Yes. I’ve been studying a lot, but my marks aren’t improving, and I’m not sure why.\nTutor: Let’s look at how you study. What do you usually do?\nNadia: Mostly I reread my notes and highlight the important parts.\nTutor: That’s very common, but research suggests it’s one of the least effective methods. You should test yourself instead – for example, close your notes and try to write down everything you remember, then check.\nNadia: That sounds harder.\nTutor: It is, and that’s why it works. Another thing: how do you organise your week?\nNadia: I usually spend a whole day on one subject.\nTutor: You don’t have to stop that completely, but it’s better to mix subjects – say, two or three in a day – and return to each topic after a few days. Spacing your revision helps you remember for longer.\nNadia: OK. What about sleep? I often stay up late before an exam.\nTutor: That’s something you really must change. Sleep is when your brain consolidates what you’ve learned. Studying until two in the morning usually does more harm than good.\nNadia: I’ll try. Should I join a study group?\nTutor: It depends on the group. They work well if everyone prepares beforehand and you explain ideas to each other. If it becomes a social chat, it’s a waste of time.\nNadia: There’s a group in my course that meets on Thursdays. I’ll give it a try.\nTutor: Good. Let’s meet again in three weeks to see how the new plan is working.",
+   "questions": [
+    {"prompt": "What does Nadia usually do when she studies?", "options": ["A. Tests herself", "B. Rereads and highlights notes", "C. Studies in a group"], "answer": "B. Rereads and highlights notes", "why": "“Mostly I reread my notes and highlight the important parts.”"},
+    {"prompt": "What does the tutor recommend instead?", "options": ["A. Testing herself", "B. Writing longer notes", "C. Reading more books"], "answer": "A. Testing herself", "why": "“You should test yourself instead”."},
+    {"prompt": "What does the tutor say about studying one subject all day?", "options": ["A. She must stop completely.", "B. It is the best method.", "C. Mixing subjects is better."], "answer": "C. Mixing subjects is better.", "why": "“You don’t have to stop that completely, but it’s better to mix subjects”."},
+    {"prompt": "Why does the tutor recommend spacing revision?", "options": ["A. It saves time.", "B. It helps long-term memory.", "C. It reduces stress."], "answer": "B. It helps long-term memory.", "why": "“Spacing your revision helps you remember for longer.”"},
+    {"prompt": "What does the tutor say Nadia must change?", "options": ["A. Her sleep habits", "B. Her choice of subjects", "C. Her study group"], "answer": "A. Her sleep habits", "why": "“That’s something you really must change.” – về việc thức khuya."},
+    {"prompt": "When do study groups work well?", "options": ["A. When they meet every day", "B. When members prepare and explain ideas", "C. When they are large"], "answer": "B. When members prepare and explain ideas", "why": "“They work well if everyone prepares beforehand and you explain ideas to each other.”"},
+    {"prompt": "When does the study group meet?", "options": ["A. On Tuesdays", "B. On Thursdays", "C. At weekends"], "answer": "B. On Thursdays", "why": "“a group in my course that meets on Thursdays”."},
+    {"prompt": "When will they meet again?", "options": ["A. In one week", "B. In two weeks", "C. In three weeks"], "answer": "C. In three weeks", "why": "“Let’s meet again in three weeks”."}
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 2 – discuss both views and give your opinion",
+  "instruction_vi": "Đề “Discuss both views and give your opinion”: một thân bài cho mỗi quan điểm, rồi nêu rõ ý kiến của bạn (ở mở bài và kết luận, hoặc một đoạn riêng). Viết ít nhất 250 từ.",
+  "task": "Some people believe that university education should be free for all students. Others think that students should pay for their own studies. Discuss both views and give your own opinion. Write at least 250 words.",
+  "data_visual": null,
+  "sample_answer": "The question of who should pay for university education is widely debated. While some people believe that higher education should be free for everyone, others argue that students should cover the cost of their own studies. In my opinion, university should be free or very low-cost, although students can reasonably be expected to contribute in other ways.\n\nThose who believe students should pay make several points. Firstly, graduates usually earn more than people without a degree, so it seems fair that they, rather than all taxpayers, should pay for the education that benefits them. Secondly, if university is free, governments may have to limit the number of places or reduce spending on schools and hospitals. Finally, paying fees may encourage students to take their studies seriously and to choose courses carefully.\n\nOn the other hand, supporters of free university education argue that it provides equal access. When fees are high, talented students from poor families may decide not to apply, either because they cannot afford it or because they fear large debts. This wastes ability and increases inequality. Moreover, society as a whole benefits from well-educated doctors, engineers and teachers, so it is reasonable for the state to share the cost.\n\nIn my view, the second argument is more convincing. A person’s chance of going to university should depend on ability, not on family income. However, graduates who earn high salaries could contribute through a slightly higher tax rate, which would be fairer than charging fees at the start of their studies.\n\nIn conclusion, although there are valid reasons for asking students to pay, I believe that free or low-cost university education, funded partly through taxation of graduates, is the fairest system.",
+  "guidance": [
+   "Mở bài: paraphrase hai quan điểm + ý kiến của bạn.",
+   "Thân bài 1: quan điểm thứ nhất (Those who believe…), 2–3 lý do.",
+   "Thân bài 2: quan điểm thứ hai (On the other hand…), có ví dụ.",
+   "Đoạn ý kiến/Kết luận: nêu rõ bạn ủng hộ bên nào và vì sao."
+  ],
+  "micro": [
+   ["Paraphrase: Some people believe that university education should be free.", "Some people argue that higher education should not involve tuition fees."],
+   ["Câu mở đầu thân bài cho quan điểm thứ nhất.", "Those who believe students should pay make several points."],
+   ["Viết câu nêu lợi ích “equal access”.", "Free university education ensures that talented students from poor families can still apply."],
+   ["Câu nêu ý kiến cá nhân rõ ràng.", "In my view, the second argument is more convincing."],
+   ["Câu đề xuất dùng should.", "Governments should provide grants for students from low-income families."]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 2. Some people think children should start formal education at a very young age, while others believe they should not begin until they are at least seven. Discuss both views and give your own opinion. Write at least 250 words.",
+  "essay": {
+   "prompt": "In many countries, students spend a great deal of time preparing for examinations. Some people think this is the best way to measure ability, while others believe continuous assessment is more effective. Discuss both views and give your opinion.",
+   "planning_prompts": [
+    "Mở bài: nêu hai hình thức đánh giá và ý kiến của bạn.",
+    "Thân bài 1: ưu điểm của thi cử (khách quan, so sánh được, khó gian lận).",
+    "Thân bài 2: ưu điểm của đánh giá liên tục (phản ánh quá trình, giảm áp lực, kỹ năng thực tế).",
+    "Kết luận: kết hợp hai hình thức, nêu tỉ lệ hợp lý."
+   ],
+   "model_paragraphs": [
+    "Examinations have long been the main way of measuring students’ ability, but many educators now argue that continuous assessment, such as projects and coursework, gives a more accurate picture. Both approaches have strengths, and I believe a combination of the two is the fairest system.",
+    "Supporters of examinations argue that they are objective and easy to compare. All students answer the same questions under the same conditions, usually without knowing who will mark their papers, so the results can be used fairly to select students for university or jobs. Examinations also make it difficult to cheat or to receive excessive help from parents or private tutors, which can be a problem with work done at home.",
+    "On the other hand, continuous assessment reflects learning over a longer period. A single exam may not show a student’s true ability if they are ill or anxious on the day, whereas projects and regular tasks allow students to demonstrate their progress. This approach also develops skills that are valuable in real life, such as research, planning and working in teams, which are rarely tested in a timed exam. In addition, it may reduce the extreme pressure that many students feel before final examinations.",
+    "In my opinion, neither method is sufficient alone. Examinations should remain part of the system because they provide a fair, standard comparison, but a significant share of the final grade – perhaps around forty per cent – should come from continuous assessment.",
+    "In conclusion, examinations offer objectivity, while continuous assessment captures a wider range of skills and progress over time. Combining the two would give a more complete and balanced measure of students’ ability."
+   ]
+  },
+  "drills": [
+   ["Sửa lỗi: Students must to pay high fees.", "Students have to pay high fees.", "must/have to + V nguyên mẫu; không có to sau must."],
+   ["Sửa lỗi: Government should makes university free.", "The government should make university free.", "should + V nguyên mẫu; thêm the."],
+   ["Sửa lỗi: In the one hand, fees are fair.", "On the one hand, fees may seem fair.", "Cụm đúng: On the one hand."],
+   ["Viết lại học thuật hơn: Poor students can’t go to uni.", "Students from low-income families may be unable to attend university.", "Tránh từ thân mật (uni, can’t); dùng low-income families."],
+   ["Sửa lỗi: Education is very important for develop the country.", "Education is essential for the development of the country.", "for + danh từ/V-ing; dùng essential thay very important."],
+   ["Sửa lỗi: I think both sides are right and I agree with both.", "Although both views have merit, I believe the second is more convincing.", "Đề yêu cầu nêu ý kiến rõ ràng."]
+  ]
+ },
+ "speaking": {
+  "title": "School, learning and education",
+  "instruction_vi": "Part 3 về giáo dục: nêu vấn đề → nguyên nhân → hệ quả → giải pháp; dùng should/have to để đề xuất.",
+  "focus": "Đưa đề xuất bằng should/ought to và giải thích hệ quả; ngắt nghỉ tự nhiên giữa các ý thay vì nói liền không dừng.",
+  "part1": [
+   "What was your favourite subject at school?",
+   "Did you have to wear a uniform at school?",
+   "Do you prefer studying alone or with others?",
+   "What do you find most difficult about studying?"
+  ],
+  "part2": "Describe a teacher who had a strong influence on you. You should say who the teacher was, what subject they taught, what they did that was special, and explain how they influenced you.",
+  "part3": [
+   "What makes a good teacher?",
+   "Should schools focus more on practical skills than on exams?",
+   "Do you think online learning will replace traditional classrooms?"
+  ],
+  "model_answer": "I’d like to talk about my English teacher in secondary school, Ms Lan. She taught our class for three years, from grade ten to grade twelve. What made her special was that she didn’t just teach grammar for the exam, although of course we had to prepare for that too. Every Friday, she brought something real into the classroom – a short news article, a song or a video clip – and we had to discuss it in groups using only English. At first, most of us were too shy to speak, but she never laughed at our mistakes. Instead, she wrote down common errors and explained them to the whole class at the end, without saying who had made them. She also lent me some simple English novels when she noticed I was interested in reading. I think she influenced me in two ways. First, she made me see English as a tool for communicating, not just a school subject. And second, she showed me that a good teacher can change how confident a student feels. That’s one of the reasons I’m preparing for IELTS now.",
+  "extensions": [
+   ["What makes a good teacher?", "Liệt kê 2–3 phẩm chất (kiên nhẫn, truyền cảm hứng, hiểu học sinh) → ví dụ cá nhân → kết luận."],
+   ["Should schools focus more on practical skills than on exams?", "Quan điểm cân bằng → lợi ích kỹ năng thực tế → vai trò của thi cử → đề xuất bằng should."],
+   ["Do you think online learning will replace traditional classrooms?", "Dự đoán (không hoàn toàn) → ưu điểm online → giới hạn (tương tác, kỷ luật) → mô hình kết hợp."],
+   ["Is it fair that some students go to private schools?", "Nêu hai mặt (quyền lựa chọn vs bất bình đẳng) → ví dụ → ý kiến có điều kiện."]
+  ]
+ },
+ "checkpoint": [
+  ["In a flow-chart completion task, the steps usually…", ["appear in random order", "follow the order of the passage", "come only from the first paragraph", "use words not in the passage"], "follow the order of the passage", "Thông tin của sơ đồ thường đi theo thứ tự bài đọc."],
+  ["“You ___ bring your passport to the exam – it is required.”", ["don’t have to", "must", "shouldn’t", "mustn’t"], "must", "Bắt buộc → must."],
+  ["“You ___ arrive early, but you can if you want.”", ["mustn’t", "must", "don’t have to", "have to"], "don’t have to", "Không bắt buộc → don’t have to."],
+  ["In a “discuss both views and give your opinion” essay, your opinion…", ["is not needed", "must be clearly stated", "should only appear in the first sentence", "must agree with both views equally"], "must be clearly stated", "Đề yêu cầu “give your own opinion”."],
+  ["The instruction says NO MORE THAN TWO WORDS. Which answer breaks the rule?", ["ten weeks", "research thesis", "a long teaching placement", "mentor"], "a long teaching placement", "Có bốn từ – vượt giới hạn."]
+ ],
+ "reflection": [
+  "Bạn có mất điểm ở flow-chart vì viết quá số từ cho phép không?",
+  "Trong bài Task 2, ý kiến của bạn đã được nêu rõ ở mở bài và kết luận chưa?"
+ ]
+}
