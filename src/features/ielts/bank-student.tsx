@@ -110,7 +110,10 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
         <div className="bx-question-head"><span>Câu {active + 1} / {questions.length}</span><b>{typeLabel(q.type)}</b></div>
         {q.instructions && <p className="bx-instructions"><RichText text={q.instructions} /></p>}
         <h3 className="bx-prompt"><RichText text={q.prompt} /></h3>
-        {q.mediaUrl && <a className="bx-ghost" href={q.mediaUrl} target="_blank" rel="noreferrer">Mở sơ đồ/hình</a>}
+        {q.mediaUrl && (/\.(png|jpe?g|webp|svg)(\?|$)/i.test(q.mediaUrl)
+          // eslint-disable-next-line @next/next/no-img-element -- Question maps and diagrams come from Supabase public storage.
+          ? <figure className="bx-media"><img src={q.mediaUrl} alt="Sơ đồ/bản đồ cho câu hỏi" /><a href={q.mediaUrl} target="_blank" rel="noreferrer">Mở hình lớn</a></figure>
+          : <a className="bx-ghost" href={q.mediaUrl} target="_blank" rel="noreferrer">Mở sơ đồ/hình</a>)}
         {exam.skill === "Speaking" || q.type === "speaking"
           ? <SpeakingAnswer key={q.id} value={answers[q.id] || ""} onChange={(value) => setAnswer(q.id, value)} index={active} />
           : <AnswerInput question={q} value={answers[q.id] || ""} onChange={(value) => setAnswer(q.id, value)} index={active} />}

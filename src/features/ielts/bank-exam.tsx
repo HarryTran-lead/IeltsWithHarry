@@ -140,14 +140,17 @@ export function AnswerInput({ question, value, onChange, index }: { question: Ex
   if (options.length) {
     const many = /multiple[_-]answers/.test(question.type);
     const picked = many ? value.split(",").filter(Boolean) : [value];
-    return <div className={`bx-options ${fixed.length && !question.options.length ? "is-inline" : ""}`} role={many ? "group" : "radiogroup"} aria-label={`Đáp án câu ${index + 1}`}>
+    const lettersOnly = question.options.length > 0 && question.options.every((option) => /^[A-Z]$/.test(option));
+    return <div className={`bx-options ${fixed.length && !question.options.length ? "is-inline" : ""} ${lettersOnly ? "is-letters" : ""}`} role={many ? "group" : "radiogroup"} aria-label={`Đáp án câu ${index + 1}`}>
       {options.map((option, optionIndex) => {
         const on = picked.includes(option);
+        const letter = String.fromCharCode(65 + optionIndex);
+        // Lettered options ("C — text", or just "C" on a map) already get the letter badge, so drop the repeat.
         const display = /multiple[_-]choice/.test(question.type)
           ? option.replace(/^\s*[A-D]\s+—\s*/i, "").replace(/^\s*[A-D][).]\s*/i, "")
-          : option;
+          : option.startsWith(`${letter} — `) ? option.slice(letter.length + 3) : option;
         return <button type="button" key={option} role={many ? "checkbox" : "radio"} aria-checked={on} className={on ? "is-on" : ""} onClick={() => onChange(many ? (on ? picked.filter((item) => item !== option) : [...picked, option]).join(",") : option)}>
-          {question.options.length > 0 && <b>{String.fromCharCode(65 + optionIndex)}</b>}<span>{display}</span>{on && <Check size={15} />}
+          {question.options.length > 0 && <b>{letter}</b>}{!(question.options.length > 0 && display === letter) && <span>{display}</span>}{on && <Check size={15} />}
         </button>;
       })}
     </div>;
