@@ -18,6 +18,9 @@ export const questionSchema = z.object({
   options: z.array(z.string()).default([]), answers: z.array(z.string()).default([]),
   explanation: z.string().default(""), wordLimit: z.string().optional(),
   mediaReference: z.string().optional(), mediaUrl: z.url().optional(),
+  // Questions sharing a group form one "Choose TWO letters" item: each is answered with one letter,
+  // and every distinct correct letter in the group earns one mark, in any order.
+  group: z.string().optional(),
 });
 export const sectionSchema = z.object({
   id: z.string().min(1), title: z.string().min(1), passage: z.string().default(""),
@@ -80,12 +83,22 @@ export function scoreAnswers(content: ExamContent, answers: Record<string, strin
   const questions = content.sections.flatMap((s) => s.questions).filter((q) => q.answers.length);
   const normalize = (v: string) => v.trim().replace(/\s+/g, " ").toLocaleLowerCase("en");
   const optionKey = (v: string) => qOptionKey(v);
+  // Correct letters still unclaimed in each "Choose TWO" group, so one letter cannot score twice.
+  const unclaimed = new Map<string, Set<string>>();
+  for (const q of questions) if (q.group) {
+    const letters = unclaimed.get(q.group) ?? new Set<string>();
+    q.answers.forEach((answer) => letters.add(normalize(answer)));
+    unclaimed.set(q.group, letters);
+  }
   const review = questions.map((q) => {
     const given = String(answers[q.id] ?? "");
     const selected = q.options.length ? optionKey(given) : given;
-    const correct = /multiple[_-]answers/.test(q.type)
-      ? q.answers.map(normalize).sort().join("|") === given.split(",").map((part) => normalize(optionKey(part))).filter(Boolean).sort().join("|")
-      : q.answers.some((answer) => normalize(answer) === normalize(selected));
+    const letters = q.group ? unclaimed.get(q.group) : undefined;
+    const correct = letters
+      ? letters.delete(normalize(selected))
+      : /multiple[_-]answers/.test(q.type)
+        ? q.answers.map(normalize).sort().join("|") === given.split(",").map((part) => normalize(optionKey(part))).filter(Boolean).sort().join("|")
+        : q.answers.some((answer) => normalize(answer) === normalize(selected));
     return { id: q.id, given, correct, answers: q.answers, explanation: q.explanation, type: q.type };
   });
   return { score: review.filter((q) => q.correct).length, total: review.length, review };

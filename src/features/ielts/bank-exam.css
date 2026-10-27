@@ -100,6 +100,9 @@
 .bx-options button svg { color: var(--bl-accent); }
 .bx-options.is-letters { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .bx-options.is-letters button { justify-content: center; }
+.bx-table { display: grid; margin: 8px 0; border-top: 1px solid #cfdbe3; border-left: 1px solid #cfdbe3; font-size: 14px; }
+.bx-cell { padding: 6px 9px; border-right: 1px solid #cfdbe3; border-bottom: 1px solid #cfdbe3; background: #fff; }
+.bx-cell.is-head { background: #f1f6f9; font-weight: 700; }
 .bx-media { display: grid; gap: 6px; margin: 0; }
 .bx-media img { width: 100%; height: auto; border: 1px solid #dbe6ec; border-radius: 12px; background: #fff; }
 .bx-media a { justify-self: end; color: #56697b; font-size: 12.5px; font-weight: 700; }

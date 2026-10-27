@@ -52,6 +52,14 @@ describe("IELTS source normalization", () => {
     expect(scoreAnswers(exam.content, { [question.id]: "A — first,C — third" }).score).toBe(1);
     expect(scoreAnswers(exam.content, { [question.id]: "A — first" }).score).toBe(0);
   });
+  it("gives one mark per distinct correct letter in a Choose TWO group, in any order", () => {
+    const options = ["A — first", "B — second", "C — third", "D — fourth", "E — fifth"];
+    const pair = (answer: string, id: string) => ({ id, number: 1, type: "multiple_choice_multiple_answers", prompt: "Which TWO?", instructions: "", options, answers: [answer], explanation: "", group: "G11" });
+    const content = { prompt: "", sections: [{ id: "s", title: "Part 2", passage: "", transcript: "", questions: [pair("B", "q11"), pair("D", "q12")] }] };
+    expect(scoreAnswers(content, { q11: "D — fourth", q12: "B — second" }).score).toBe(2);
+    expect(scoreAnswers(content, { q11: "B — second", q12: "B — second" }).score).toBe(1);
+    expect(scoreAnswers(content, { q11: "B — second", q12: "A — first" }).score).toBe(1);
+  });
   it("isolates a malformed JSONL row so adjacent rows remain usable", () => {
     const rows = createConnector("bandready").parseContent("content/core-en/data/writing_prompts.jsonl", '{"id":"one"}\n{broken\n{"id":"three"}');
     expect(rows).toHaveLength(3);

@@ -7,7 +7,10 @@ import { TopicArt } from "@/components/illustrations/topic-art";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { catalogGroups, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { librarySkills } from "./bank-library";
+import { RichText } from "./rich-text";
 import "./bank-exam.css";
+
+export { RichText };
 
 export type BankExam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; topic?: string | null; content?: ExamContent };
 export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string };
@@ -26,17 +29,6 @@ export function typeLabel(type: string) {
 
 function practiceLabel(exam: BankExam) {
   return catalogGroups[exam.skill as CatalogSkill]?.find((group) => group.id === exam.practice_type)?.label ?? exam.skill;
-}
-
-/** Bold (**text**), line breaks and answer blanks (____) from source prompts. */
-export function RichText({ text, className }: { text: string; className?: string }) {
-  const lines = text.split(/\n/);
-  return <span className={className}>{lines.map((line, lineIndex) => <span key={lineIndex}>
-    {lineIndex > 0 && <br />}
-    {line.split(/(\*\*[^*]+\*\*|_{3,})/g).map((part, index) => part.startsWith("**") && part.endsWith("**") && part.length > 4
-      ? <strong key={index}>{part.slice(2, -2)}</strong>
-      : /^_{3,}$/.test(part) ? <span key={index} className="bx-blank" aria-label="chỗ trống" /> : part)}
-  </span>)}</span>;
 }
 
 function examQuestions(content?: ExamContent) {
@@ -138,7 +130,8 @@ export function AnswerInput({ question, value, onChange, index }: { question: Ex
   const fixed = /true[_-]false/.test(question.type) ? ["TRUE", "FALSE", "NOT GIVEN"] : /yes[_-]no/.test(question.type) ? ["YES", "NO", "NOT GIVEN"] : [];
   const options = question.options.length ? question.options : fixed;
   if (options.length) {
-    const many = /multiple[_-]answers/.test(question.type);
+    // A grouped "Choose TWO" item asks one letter per question; an ungrouped one ticks every letter at once.
+    const many = /multiple[_-]answers/.test(question.type) && !question.group;
     const picked = many ? value.split(",").filter(Boolean) : [value];
     const lettersOnly = question.options.length > 0 && question.options.every((option) => /^[A-Z]$/.test(option));
     return <div className={`bx-options ${fixed.length && !question.options.length ? "is-inline" : ""} ${lettersOnly ? "is-letters" : ""}`} role={many ? "group" : "radiogroup"} aria-label={`Đáp án câu ${index + 1}`}>
