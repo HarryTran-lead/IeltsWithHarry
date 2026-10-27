@@ -10,7 +10,6 @@ import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { courseChecks, LessonPath } from "./learning-path";
 import { CourseBook } from "./course-book";
-import { Band56V3Roadmap } from "./band56-v3-roadmap";
 
 type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: string; summary: string; sort_order: number };
 type Unit = { id: string; course_id: string; slug: string; title: string; sort_order: number; lessons: Lesson[] };
@@ -65,7 +64,7 @@ export function StageLessons({ stageId, courses, loading, error }: { stageId: st
   if (!stageCourses.length) return <section className="card section-card stage-lessons-empty"><h2>Bài học của chặng {stage?.name ?? ""}</h2><p>Chặng này đang được biên soạn. Bạn có thể luyện các kỹ năng bên dưới trong lúc chờ.</p></section>;
 
   const isDone = (lesson: Lesson) => done.has(lesson.slug) || opened.has(`/app/lesson/${lesson.slug}`);
-  return <>{stageId === "ielts-builder" && stageCourses.some((course) => course.title.includes("V3")) && <Band56V3Roadmap />}<CourseViews courses={stageCourses} isDone={isDone} /></>;
+  return <CourseViews courses={stageCourses} isDone={isDone} />;
 }
 
 type CourseView = "book" | "map";

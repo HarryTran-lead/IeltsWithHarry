@@ -81,7 +81,6 @@ export function PackageLessonSteps({ packageContent, finish, onStepChange, ...le
 
   const { lesson, words, questions } = lessonProps;
   const hasAuthoredQuestions = Boolean(
-    packageContent.v3_pilot ||
     packageContent.activities?.length ||
     packageContent.practice?.length ||
     packageContent.passages?.length ||
