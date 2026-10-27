@@ -2,8 +2,10 @@ import { z } from "zod";
 import { bankClient, requestError, saveRevision, viewer } from "@/lib/ielts-bank/server";
 import { contentHash, contentSchema, validateExam } from "@/lib/ielts-bank/schema";
 import { pilotContent, pilotPayload } from "@/lib/ai-factory/pilot";
+import { createTextPracticeJob } from "@/lib/ai-factory/produce";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 export async function GET() {
   try {
@@ -24,15 +26,17 @@ export async function GET() {
       }
       return { ...job, previewUrl };
     }));
-    return Response.json({ settings: settings.data, voices: voices.data, jobs: rows, usage: usage.data });
+    return Response.json({ settings: settings.data, voices: voices.data, jobs: rows, usage: usage.data, textProviderReady: Boolean(process.env.AI_FACTORY_GEMINI_API_KEY && process.env.AI_FACTORY_FREE_TIER_ONLY === "true") });
   } catch (error) { return requestError(error); }
 }
 
 const command = z.discriminatedUnion("action", [
   z.object({ action: z.literal("pilot") }),
+  z.object({ action: z.literal("generate"), skill: z.enum(["Listening", "Reading", "Writing", "Speaking"]), topic: z.string().trim().min(8).max(100) }),
   z.object({ action: z.literal("settings"), generationEnabled: z.boolean().optional(), dailyJobLimit: z.number().int().min(0).max(100).optional(), maxConcurrency: z.number().int().min(1).max(8).optional() }),
   z.object({ action: z.literal("voice"), voiceId: z.string().min(1), enabled: z.boolean(), pace: z.number().min(0.75).max(1.25).optional() }),
   z.object({ action: z.literal("cancel"), jobId: z.uuid() }),
+  z.object({ action: z.literal("review_text"), jobId: z.uuid(), decision: z.enum(["approve", "reject"]), note: z.string().min(3).max(2000), answersChecked: z.boolean() }),
   z.object({ action: z.literal("review"), jobId: z.uuid(), decision: z.enum(["approve","reject"]), note: z.string().min(3).max(2000), listened: z.boolean(), answersChecked: z.boolean() }),
 ]);
 
@@ -58,6 +62,9 @@ export async function POST(request: Request) {
       if (error) throw new Error(error.message);
       return Response.json({ ok: true });
     }
+    if (body.action === "generate") {
+      return Response.json(await createTextPracticeJob(client, body.skill, body.topic, actor.id));
+    }
     if (body.action === "pilot") {
       const { data: settings, error: settingsError } = await client.from("ai_factory_settings").select("daily_job_limit").single();
       if (settingsError) throw new Error(settingsError.message);
@@ -81,6 +88,21 @@ export async function POST(request: Request) {
     }
     const { data: job, error: jobError } = await client.from("ai_factory_jobs").select("*").eq("id", body.jobId).single();
     if (jobError || !job) throw new Error(jobError?.message || "Job missing");
+    if (body.action === "review_text") {
+      if (job.kind === "listening_audio" || !["awaiting_review", "qa_failed"].includes(job.status)) throw new Error("Text draft cannot be reviewed in this state");
+      if (body.decision === "approve") {
+        if (job.status !== "awaiting_review" || !body.answersChecked) throw new Error("Inspect the full draft and every answer before approval");
+        const { data: qa, error: qaError } = await client.from("ai_factory_qa").select("passed").eq("job_id", job.id).single();
+        if (qaError || !qa?.passed) throw new Error("Content QA has not passed");
+        const { data: exam, error: examError } = await client.from("ielts_exams").select("current_version_id,status").eq("id", job.exam_id).single();
+        if (examError || !exam || exam.current_version_id !== job.exam_version_id || exam.status === "published") throw new Error("Draft changed after generation; review the current version");
+      }
+      const { error } = await client.from("ai_factory_jobs").update({ status: body.decision === "approve" ? "approved" : "rejected", reviewed_by: actor.id, review_note: body.note, reviewed_at: new Date().toISOString(), updated_at: new Date().toISOString() }).eq("id", job.id).eq("status", job.status);
+      if (error) throw new Error(error.message);
+      if (body.decision === "approve") await client.from("ielts_review_log").insert({ exam_id: job.exam_id, version_id: job.exam_version_id, actor_id: actor.id, action: "text_approved", note: body.note });
+      return Response.json({ ok: true, examId: job.exam_id });
+    }
+    if (job.kind !== "listening_audio") throw new Error("Use text review for this draft");
     if (body.decision === "reject") {
       if (!["awaiting_review","qa_failed"].includes(job.status)) throw new Error("Job cannot be rejected in this state");
       const { error } = await client.from("ai_factory_jobs").update({ status: "rejected", reviewed_by: actor.id, review_note: body.note, reviewed_at: new Date().toISOString(), updated_at: new Date().toISOString() }).eq("id", job.id).eq("status", job.status);

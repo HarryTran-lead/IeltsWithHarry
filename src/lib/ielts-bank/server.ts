@@ -211,9 +211,9 @@ export async function reviewExam(examId: string, action: "ready" | "publish" | "
   if (["ready", "publish"].includes(action)) {
     if (!version || (version.warnings as string[]).length) throw new Error("Resolve validation warnings before approval");
     if (action === "publish" && !["ready", "published"].includes(exam.status)) throw new Error("Mark exam ready before publishing");
-    if (exam.source_id === "ai-factory" && exam.skill === "Listening") {
+    if (exam.source_id === "ai-factory") {
       const { data: audioReview, error: audioError } = await client.from("ai_factory_jobs").select("id").eq("exam_id", examId).eq("exam_version_id", exam.current_version_id).eq("status", "approved").limit(1);
-      if (audioError || !audioReview?.length) throw new Error("Approved audio QA and human review required");
+      if (audioError || !audioReview?.length) throw new Error("Content Factory QA and human review required");
     }
   }
   const status = { ready: "ready", publish: "published", reject: "rejected", archive: "archived" }[action];

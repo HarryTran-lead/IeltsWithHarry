@@ -1,0 +1,46 @@
+name: AI Factory text drafts
+
+on:
+  schedule:
+    - cron: "37 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-factory-text
+  cancel-in-progress: false
+
+jobs:
+  create-one:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      AI_FACTORY_SUPABASE_URL: ${{ secrets.AI_FACTORY_SUPABASE_URL }}
+      AI_FACTORY_SERVICE_ROLE_KEY: ${{ secrets.AI_FACTORY_SERVICE_ROLE_KEY }}
+      AI_FACTORY_GEMINI_API_KEY: ${{ secrets.AI_FACTORY_GEMINI_API_KEY }}
+      AI_FACTORY_FREE_TIER_CONFIRMED: ${{ secrets.AI_FACTORY_FREE_TIER_CONFIRMED }}
+      AI_FACTORY_FREE_TIER_ONLY: "true"
+    steps:
+      - name: Check free-tier configuration
+        id: config
+        shell: bash
+        run: |
+          if [[ "$AI_FACTORY_FREE_TIER_CONFIRMED" == "true" && -n "$AI_FACTORY_GEMINI_API_KEY" && -n "$AI_FACTORY_SUPABASE_URL" && -n "$AI_FACTORY_SERVICE_ROLE_KEY" ]]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No confirmed unbilled AI Factory project; no model request will be made."
+          fi
+      - uses: actions/checkout@v4
+        if: steps.config.outputs.configured == 'true'
+      - uses: actions/setup-node@v4
+        if: steps.config.outputs.configured == 'true'
+        with:
+          node-version: '22'
+      - name: Install project dependencies
+        if: steps.config.outputs.configured == 'true'
+        run: npm ci --ignore-scripts
+      - name: Create one draft if production generation is enabled
+        if: steps.config.outputs.configured == 'true'
+        run: npx tsx scripts/run-ai-factory-text.ts
