@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 import { createConnector, normalizeSource } from "../src/lib/ielts-bank/connectors";
+import { cleanExamTitle, ieltsCoverSubject, orderCoverCandidates } from "../src/lib/ielts-bank/cover-art";
 import { contentHash, publicContent, scoreAnswers, validateExam } from "../src/lib/ielts-bank/schema";
 
 describe("IELTS source normalization", () => {
@@ -78,6 +79,8 @@ describe("IELTS bank migration", () => {
       await db.exec(readFileSync(resolve("supabase/migrations/202610240001_foundation.sql"), "utf8"));
       await db.exec(readFileSync(resolve("supabase/migrations/202610270001_ielts_question_bank.sql"), "utf8"));
       await db.exec(readFileSync(resolve("supabase/migrations/202610270004_ielts_practice_types.sql"), "utf8"));
+      await db.exec(readFileSync(resolve("supabase/migrations/202610270006_ielts_catalog_summary.sql"), "utf8"));
+      await db.exec(readFileSync(resolve("supabase/migrations/202610270008_ielts_exam_cover_illustrations.sql"), "utf8"));
       await db.exec("set request.jwt.claim.role = 'service_role'");
       const categories = await db.query<{ format: string }>("select public.ielts_practice_type('Writing','General Training','{\"taskType\":\"gt_task1\"}'::jsonb) format union all select public.ielts_practice_type('Speaking','Academic','{\"speakingPart\":2}'::jsonb)");
       expect(categories.rows.map((row) => row.format)).toEqual(["task1_general", "part2"]);
@@ -102,6 +105,10 @@ describe("IELTS bank migration", () => {
       expect((await db.query<{ version_id: string }>("select version_id from public.ielts_attempts")).rows[0].version_id).toBe(exam.current_version_id);
       expect((await db.query<{ published_version_id: string }>("select published_version_id from public.ielts_exams where id=$1", [exam.id])).rows[0].published_version_id).toBe(exam.current_version_id);
       expect((await db.query<{ score: number; total: number }>("select score,total from public.ielts_attempts where user_id=$1", [user])).rows[0]).toMatchObject({ score: 1, total: 1 });
+      const coverUrl = `https://abc.supabase.co/storage/v1/object/public/ielts-images/covers/${exam.id}.jpg`;
+      await expect(db.query("update public.ielts_exams set cover_image_url='https://example.com/bad.jpg' where id=$1", [exam.id])).rejects.toThrow();
+      await db.query("update public.ielts_exams set status='published',cover_image_url=$1 where id=$2", [coverUrl, exam.id]);
+      expect((await db.query<{ image_url: string }>("select image_url from public.ielts_catalog_summary('Reading') where exam_id=$1", [exam.id])).rows[0].image_url).toBe(coverUrl);
       await db.exec("set request.jwt.claim.role = 'authenticated'");
       await expect(call("hash3")).rejects.toThrow("Service role required");
     } finally { await db.close(); }
@@ -119,5 +126,30 @@ describe("IELTS option keys", () => {
     expect(scoreAnswers(content, { h: "iii", g: "G", d: "B" }).score).toBe(3);
     expect(scoreAnswers(content, { h: "iii — Three", g: "G — Seven", d: " — B. second" }).score).toBe(3);
     expect(scoreAnswers(content, { h: "ii", g: "F", d: "A" }).score).toBe(0);
+  });
+});
+
+describe("IELTS AI cover illustrations", () => {
+  it("strips exam boilerplate from titles and prompts and interleaves skills", () => {
+    expect(cleanExamTitle("Writing Task 2: Advantages Disadvantages Global Streaming")).toBe("Global Streaming");
+    expect(cleanExamTitle("Lecture: peat bogs and the carbon they hold")).toBe("peat bogs and the carbon they hold");
+    expect(cleanExamTitle("IELTS Academic Reading Practice: Advanced Sciences (Band 8)")).toBe("Advanced Sciences");
+    const subject = ieltsCoverSubject({
+      title: "Writing Task 2: Two Part News On Social Media",
+      topic: "topic_media",
+      prompt_preview: "Write about the following topic:\n\nMore and more people get their news from social media.\n\nWhy is this happening?",
+    });
+    expect(subject).toContain("News On Social Media");
+    expect(subject).toContain("More and more people get their news from social media.");
+    expect(subject).toContain("(media)");
+
+    const ordered = orderCoverCandidates([
+      { id: "r1", skill: "Reading", practice_type: "passage", title: "R1", topic: null, created_at: "2026-10-27T02:00:00Z" },
+      { id: "r2", skill: "Reading", practice_type: "full_test", title: "R2", topic: null, created_at: "2026-10-27T01:00:00Z" },
+      { id: "l1", skill: "Listening", practice_type: "part", title: "L1", topic: null, created_at: "2026-10-27T02:00:00Z" },
+      { id: "w1", skill: "Writing", practice_type: "task2", title: "W1", topic: null, created_at: "2026-10-27T02:00:00Z" },
+      { id: "g1", skill: "Writing", practice_type: "task1_general", title: "G1", topic: null, created_at: "2026-10-27T02:00:00Z" },
+    ]);
+    expect(ordered.map((item) => item.id)).toEqual(["r1", "l1", "w1", "g1", "r2"]);
   });
 });

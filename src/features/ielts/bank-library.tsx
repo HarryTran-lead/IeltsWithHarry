@@ -234,14 +234,16 @@ export function ExamCard({ exam, attempt }: { exam: CatalogExam; attempt?: Attem
   const usage = exam.attempt_count ? <span className="bl-usage"><PlayCircle size={13} /> {exam.attempt_count.toLocaleString("vi-VN")} lượt làm</span> : <span className="bl-usage"><Clock3 size={13} /> {exam.duration_minutes} phút</span>;
   const cta = <span className="bl-cta">{attempt?.state === "in_progress" ? "Làm tiếp" : attempt ? "Luyện lại" : "Luyện đề"} <ArrowRight size={15} /></span>;
 
+  const aiCover = Boolean(!exam.visual && exam.image_url?.includes("/ielts-images/covers/"));
   if (exam.skill === "Writing") {
     const kind = writingKind(exam);
     return <Link href={href} className="bl-card bl-card-writing">
-      <span className="bl-writing-thumb">
+      <span className={`bl-writing-thumb ${aiCover ? "has-cover" : ""}`}>
         {/* Source figures come from many hosts, so a plain lazy image is used rather than next/image. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         {exam.visual ? <VisualThumb visual={exam.visual} kind={kind} /> : exam.image_url ? <img src={exam.image_url} alt="" loading="lazy" /> : <TopicArt topic={artTopic(exam)} className="bl-art" />}
         <b className="bl-kind">{writingKinds[kind]}</b>
+        {aiCover && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
       </span>
       <span className="bl-writing-copy">
         <span className="bl-writing-meta"><span>{exam.practice_type === "task2" ? "Task 2" : exam.practice_type === "task1_general" ? "Task 1 · GT" : "Task 1 · Academic"}</span><AttemptChip attempt={attempt} /></span>
@@ -267,9 +269,11 @@ export function ExamCard({ exam, attempt }: { exam: CatalogExam; attempt?: Attem
   const types = typeGroups(exam);
   return <Link href={href} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
-      <TopicArt topic={artTopic(exam)} className="bl-art" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {exam.image_url ? <figure className="bl-art"><img src={exam.image_url} alt="" loading="lazy" /></figure> : <TopicArt topic={artTopic(exam)} className="bl-art" />}
       {usage}
       <b className="bl-badge">{partBadge(exam)}</b>
+      {aiCover && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
     </span>
     <span className="bl-body">
       <strong className="bl-title">{exam.title}</strong>
