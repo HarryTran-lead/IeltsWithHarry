@@ -18,13 +18,13 @@ describe("news providers", () => {
     expect(recommendReadings(items, { stage_id: "elementary", topics: ["Technology"] }, [{ article_id: "science", completed_at: "2026-10-24T01:00:00Z" }], null, [{ article_id: "tech", word: "device" }], ["device"])[0].id).toBe("tech");
     expect(recommendReadings(items, { stage_id: null, topics: [] }, [], { article_id: "science", score: 5, total: 5 }, [], [])[0].id).toBe("tech");
   });
-  it("schedules saved vocabulary reviews without duplicate intervals", () => {
+  it("shares FSRS scheduling with saved vocabulary reviews", () => {
     const now = new Date("2026-10-24T12:00:00Z");
     const first = nextWordReview(undefined,"good",now);
-    expect(first.interval_days).toBe(1);
-    expect(nextWordReview({notebook_entry_id:"x",...first},"good",now).interval_days).toBe(2);
-    expect(nextWordReview({notebook_entry_id:"x",...first},"again",now).interval_days).toBe(1);
-    expect(nextWordReview({notebook_entry_id:"x",...first},"again",now).due_at).toBe("2026-10-25T12:00:00.000Z");
+    expect(first.fsrs_state).toBeTruthy();
+    const second = nextWordReview({notebook_entry_id:"x",...first},"hard",new Date(first.due_at));
+    expect(second.repetitions).toBe(2);
+    expect(new Date(second.due_at).getTime()).toBeGreaterThan(new Date(first.due_at).getTime());
   });
   it("parses dates to UTC and rejects invalid future dates", () => {
     expect(parsePublishedDate("20261023120000")).toBe("2026-10-23T12:00:00.000Z");

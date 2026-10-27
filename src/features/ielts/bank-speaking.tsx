@@ -43,13 +43,14 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
 
   const { speak, stop: hush } = voice;
   const { start: startMic, stop: stopMic } = mic;
+  const { release: releaseTake } = mic;
   const record = useCallback(async () => { hush(); setPrepLeft(null); await startMic(); }, [hush, startMic]);
   const finishTake = useCallback(async () => {
     const take = await stopMic();
     if (!take || !item) return;
-    setTakes((current) => ({ ...current, [item.id]: take }));
+    setTakes((current) => { if (current[item.id]) releaseTake(current[item.id].url); return { ...current, [item.id]: take }; });
     if (take.transcript) setAnswer(item.id, take.transcript);
-  }, [item, stopMic, setAnswer]);
+  }, [item, stopMic, setAnswer, releaseTake]);
   const goTo = (next: number) => {
     if (mic.recording) void finishTake();
     setIndex(next); setPanel("start"); setStep(0); setPrepLeft(null);
@@ -61,7 +62,7 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
   useEffect(() => { if (asked.current || !items[0]) return; asked.current = true; void speak(askLine(items[0])); }, [items, speak]);
   // A recording stops by itself at the time limit.
   const atLimit = useEffectEvent(() => { void finishTake(); });
-  useEffect(() => { if (!mic.recording) return; const timer = window.setTimeout(atLimit, limit * 1000); return () => window.clearTimeout(timer); }, [mic.recording, limit]);
+  useEffect(() => { if (!mic.recording || mic.paused) return; const timer = window.setTimeout(atLimit, Math.max(0, limit - mic.seconds) * 1000); return () => window.clearTimeout(timer); }, [mic.recording, mic.paused, mic.seconds, limit]);
   // The minute of preparation counts down, then Harry asks the learner to start.
   useEffect(() => {
     if (prepLeft === null) return;
@@ -115,13 +116,14 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
         {mic.recording ? <>
           <div className="bs-live"><span className="bs-meter" style={{ width: `${Math.min(100, mic.level * 400)}%` }} /><b>Đang ghi · {clock(mic.seconds)}</b><small>còn {clock(limit - mic.seconds)}</small></div>
           {mic.transcript && <p className="bs-transcript-live">{mic.transcript}</p>}
+          <button type="button" className="bx-ghost" onClick={mic.paused ? mic.resume : mic.pause}>{mic.paused ? "Tiếp tục" : "Tạm dừng"}</button>
           <button type="button" className="bs-rec is-live" onClick={() => void finishTake()}><Square size={16} /> Dừng ghi âm</button>
         </> : <button type="button" className="bs-rec" onClick={() => void record()}>{take ? <RotateCcw size={17} /> : <Mic size={17} />} {take ? "Ghi âm lại" : "Bắt đầu ghi âm"}</button>}
         {mic.error && <small className="bs-error" role="alert">{mic.error}</small>}
       </div>
 
       {(take || answers[item.id]) && !mic.recording && <div className="bs-take">
-        {take && <audio controls src={take.url} aria-label="Bản ghi của bạn" />}
+        {take && <><audio controls src={take.url} aria-label="Bản ghi của bạn" /><button type="button" className="bx-ghost" onClick={() => { mic.release(take.url); setTakes((current) => { const next = { ...current }; delete next[item.id]; return next; }); setAnswer(item.id, ""); }}>Xóa bản ghi</button></>}
         <label><span>{mic.canTranscribe ? "Lời bạn nói (tự nhận dạng, có thể sửa)" : "Tóm tắt ý bạn đã nói"}</span>
           <textarea rows={3} value={answers[item.id] || ""} onChange={(event) => setAnswer(item.id, event.target.value)} placeholder="Trình duyệt này chưa nhận dạng được giọng nói — ghi lại ý chính bạn đã nói." /></label>
       </div>}

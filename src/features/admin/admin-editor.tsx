@@ -14,6 +14,7 @@ import { MediaLibrary } from "./media-library";
 import { skillMaterialSchema, type SkillName } from "@/lib/skill-material";
 import { AdminNews } from "./admin-news";
 import { VocabularyBank } from "./vocabulary-bank";
+import { YoutubeLessonsAdmin } from "./youtube-lessons";
 import { AdminAudit, AdminBroadcast, AdminLearnerDetail, AdminLearners } from "./admin-learners";
 
 type Course = { id: string; stage_id: string; slug: string; title: string; description: string; published: boolean };
@@ -186,6 +187,7 @@ export function AdminEditor() {
     </section>)}
     </>}
     {currentSkill && <>{lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><Sticker name="book" size={64} tilt={-8} /><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
+    {section === "listening" && <YoutubeLessonsAdmin />}
     {section === "vocabulary/library" && <VocabularyBank />}
     {section === "media" && <MediaLibrary />}
     {section === "ielts-bank" && <BankAdmin />}

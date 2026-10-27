@@ -1,0 +1,62 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { describe, expect, it } from "vitest";
+import { PGlite } from "@electric-sql/pglite";
+
+describe("top three feature migration", () => {
+  it("keeps reviews atomic and scopes sessions and video drafts", async () => {
+    const db = new PGlite();
+    const alice = "11111111-1111-4111-8111-111111111111";
+    const bob = "22222222-2222-4222-8222-222222222222";
+    try {
+      await db.exec(`create role anon; create role authenticated; create schema auth;
+        create schema storage;
+        create table storage.buckets(id text primary key,name text not null,public boolean not null,file_size_limit bigint,allowed_mime_types text[]);
+        create table storage.objects(bucket_id text not null,name text not null);
+        alter table storage.objects enable row level security;
+        create function storage.foldername(path text) returns text[] language sql immutable as $$ select string_to_array(regexp_replace(path, '/[^/]*$', ''), '/') $$;
+        create table auth.users(id uuid primary key);
+        create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
+        create table public.admin_users(user_id uuid primary key);
+        create function public.is_admin() returns boolean language sql stable security definer set search_path = '' as $$ select exists(select 1 from public.admin_users where user_id = (select auth.uid())) $$;
+        grant usage on schema auth,storage to authenticated; grant execute on function auth.uid() to authenticated;
+        grant execute on function storage.foldername(text) to authenticated;
+        grant insert,select,delete on storage.objects to authenticated;
+        grant execute on function public.is_admin() to authenticated;
+        create table public.notebook_entries(id uuid primary key default gen_random_uuid(),user_id uuid not null,kind text not null,title text not null);
+        create table public.user_word_reviews(user_id uuid not null,notebook_entry_id uuid not null,due_at timestamptz not null default now(),interval_days integer not null default 0 check (interval_days between 0 and 365),repetitions integer not null default 0 check (repetitions between 0 and 1000),last_reviewed_at timestamptz,primary key(user_id,notebook_entry_id));
+        create table public.vocabulary_review_events(id uuid primary key default gen_random_uuid(),user_id uuid not null,notebook_entry_id uuid not null,grade text not null check (grade in ('again','good','easy')),reviewed_at timestamptz not null default now());
+        grant select on public.notebook_entries,public.user_word_reviews,public.vocabulary_review_events to authenticated;
+        insert into auth.users values ('${alice}'),('${bob}');
+        insert into public.admin_users values ('${alice}');
+        insert into public.notebook_entries(id,user_id,kind,title) values ('33333333-3333-4333-8333-333333333333','${alice}','word','example');`);
+      await db.exec(readFileSync(resolve("supabase/migrations/202610270011_top3_learning_labs.sql"), "utf8"));
+      await db.exec(readFileSync(resolve("supabase/migrations/202610270012_speaking_recordings.sql"), "utf8"));
+      await db.exec(`set role authenticated; set request.jwt.claim.sub='${alice}';`);
+      const state = JSON.stringify({ due: new Date(Date.now() + 60000).toISOString(), scheduled_days: 0, reps: 1 });
+      const args = ["33333333-3333-4333-8333-333333333333", "good", state, "44444444-4444-4444-8444-444444444444", null];
+      expect((await db.query<{ saved: boolean }>("select public.save_word_fsrs_review($1,$2,$3::jsonb,$4,$5) as saved", args)).rows[0].saved).toBe(true);
+      expect((await db.query<{ saved: boolean }>("select public.save_word_fsrs_review($1,$2,$3::jsonb,$4,$5) as saved", args)).rows[0].saved).toBe(false);
+      expect((await db.query("select id from public.vocabulary_review_events")).rows).toHaveLength(1);
+      await db.query("insert into public.speaking_mock_sessions(id,duration_seconds,speaking_seconds,answers) values ($1,100,50,'[]')", ["55555555-5555-4555-8555-555555555555"]);
+      const path = `${alice}/55555555-5555-4555-8555-555555555555/0.webm`;
+      await db.query("insert into storage.objects(bucket_id,name) values ('speaking-recordings',$1)", [path]);
+      await db.query("insert into public.speaking_mock_recordings(session_id,answer_index,storage_path) values ($1,0,$2)", ["55555555-5555-4555-8555-555555555555", path]);
+      await expect(db.query("insert into storage.objects(bucket_id,name) values ('speaking-recordings',$1)", [`${bob}/55555555-5555-4555-8555-555555555555/1.webm`])).rejects.toThrow(/row-level security/);
+      await db.query("insert into public.youtube_listening_lessons(title,youtube_id,cefr,topic,published) values ('A test lesson','abcdefghijk','B1','Travel',false)");
+      const deck = (await db.query<{ id: string }>("insert into public.vocabulary_decks(name) values ('Travel') returning id")).rows[0];
+      await db.query("insert into public.vocabulary_deck_cards(deck_id,notebook_entry_id) values ($1,$2)", [deck.id, args[0]]);
+      await db.exec(`set request.jwt.claim.sub='${bob}';`);
+      await expect(db.query("insert into storage.objects(bucket_id,name) values ('speaking-recordings',$1)", [`${bob}/55555555-5555-4555-8555-555555555555/1.webm`])).rejects.toThrow(/row-level security/);
+      await expect(db.query("insert into public.speaking_mock_recordings(session_id,answer_index,storage_path) values ($1,1,$2)", ["55555555-5555-4555-8555-555555555555", `${bob}/55555555-5555-4555-8555-555555555555/1.webm`])).rejects.toThrow(/row-level security/);
+      expect((await db.query("select id from public.speaking_mock_sessions")).rows).toHaveLength(0);
+      expect((await db.query("select session_id from public.speaking_mock_recordings")).rows).toHaveLength(0);
+      expect((await db.query("select name from storage.objects")).rows).toHaveLength(0);
+      expect((await db.query("select id from public.youtube_listening_lessons")).rows).toHaveLength(0);
+      expect((await db.query("select id from public.vocabulary_decks")).rows).toHaveLength(0);
+      expect((await db.query("select deck_id from public.vocabulary_deck_cards")).rows).toHaveLength(0);
+      await expect(db.query("insert into public.vocabulary_deck_cards(deck_id,notebook_entry_id) values ($1,$2)", [deck.id, args[0]])).rejects.toThrow();
+      await expect(db.query("insert into public.youtube_listening_lessons(title,youtube_id,cefr,topic,published) values ('Learner draft','abcdefghijk','B1','Travel',false)")).rejects.toThrow();
+    } finally { await db.close(); }
+  }, 30000);
+});

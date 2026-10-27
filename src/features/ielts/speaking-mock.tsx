@@ -1,10 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowRight, Mic, RotateCcw, Save, SkipForward, Square, Volume2 } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ArrowRight, Mic, RotateCcw, Save, SkipForward, Square, Trash2, Volume2 } from "lucide-react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { useNotebook } from "@/features/notebook/notebook-store";
+import { demoMode } from "@/lib/runtime";
+import { createClient } from "@/lib/supabase/browser";
+import { deleteLocalRecordings, getLocalRecording, listLocalRecordingIndexes, putLocalRecording } from "@/lib/speaking-recordings";
 import { HarryExaminer, useHarryVoice } from "./harry-examiner";
 import { CueCard } from "./bank-speaking";
 import { clock, speakingItems, useMic, wordsIn, type SpeakingItem, type Take } from "./speaking-kit";
@@ -14,6 +17,9 @@ import "./bank-speaking.css";
 
 type MockSet = { part1: { topic: string; questions: string[] }[]; cue: SpeakingItem; part3: string[] };
 type Entry = { id: string; part: 1 | 2 | 3; question: string; take: Take | null };
+type Session = { id: string; completed_at: string; duration_seconds: number; speaking_seconds: number; answers: { part: 1 | 2 | 3; question: string; seconds: number; transcript: string }[] };
+type RecordingRef = { session_id: string; answer_index: number; storage_path: string };
+const historyKey = "english-skill-lab-speaking-mocks-v1";
 type Stage = { part: 1 | 2 | 3; mode: "speaking" | "listening" | "prep"; text: string; limit?: number; until?: number };
 type CatalogRow = { id: string; title: string; practice_type: string; topic?: string | null };
 
@@ -85,20 +91,126 @@ export function SpeakingMock() {
   const [startedAt, setStartedAt] = useState(0);
   const [now, setNow] = useState(0);
   const [saved, setSaved] = useState(false);
+  const [history, setHistory] = useState<Session[]>([]);
+  const [historyError, setHistoryError] = useState("");
+  const [historyRetry, setHistoryRetry] = useState(0);
+  const [recordingRefs, setRecordingRefs] = useState<RecordingRef[]>([]);
+  const [recordingBusy, setRecordingBusy] = useState(false);
+  const [expandedSession, setExpandedSession] = useState("");
+  const [playback, setPlayback] = useState<{ key: string; url: string } | null>(null);
+  const sessionId = useRef("");
+  const historySaved = useRef("");
+  const db = useMemo(() => demoMode ? null : createClient(), []);
   const run = useRef(0);
   const advance = useRef<((reason: "done" | "repeat") => void) | null>(null);
   const { speak, stop: hush } = voice;
   const { start: startMic, stop: stopMic, open: openMic } = mic;
 
   useEffect(() => { const timer = window.setInterval(() => setNow(Date.now()), 500); return () => window.clearInterval(timer); }, []);
+  useEffect(() => { void (async () => {
+    if (demoMode) { try {
+      const sessions = JSON.parse(localStorage.getItem(historyKey) ?? "[]") as Session[];
+      setHistory(sessions);
+      const saved = await Promise.all(sessions.map(async (session) => (await listLocalRecordingIndexes(session.id)).map((answer_index) => ({ session_id: session.id, answer_index, storage_path: "" }))));
+      setRecordingRefs(saved.flat());
+    } catch { setHistoryError("Không đọc được lịch sử hoặc bản ghi trên thiết bị."); } return; }
+    const result = await db!.from("speaking_mock_sessions").select("id,completed_at,duration_seconds,speaking_seconds,answers").order("completed_at", { ascending: false }).limit(30);
+    if (result.error) setHistoryError(result.error.message); else setHistory(result.data as Session[]);
+    const recordings = await db!.from("speaking_mock_recordings").select("session_id,answer_index,storage_path");
+    if (recordings.error) setHistoryError(recordings.error.message); else setRecordingRefs(recordings.data as RecordingRef[]);
+  })(); }, [db]);
+  useEffect(() => { if (phase !== "done" || !log.length || historySaved.current === sessionId.current || !sessionId.current) return;
+    historySaved.current = sessionId.current;
+    const row: Session = { id: sessionId.current, completed_at: new Date().toISOString(), duration_seconds: Math.max(0, Math.floor((Date.now() - startedAt) / 1000)), speaking_seconds: log.reduce((sum, item) => sum + (item.take?.seconds ?? 0), 0), answers: log.map((item) => ({ part: item.part, question: item.question, seconds: item.take?.seconds ?? 0, transcript: item.take?.transcript ?? "" })) };
+    void (async () => { if (demoMode) { try { const next = [row, ...history].slice(0, 30); localStorage.setItem(historyKey, JSON.stringify(next)); setHistory(next); setHistoryError(""); } catch { historySaved.current = ""; setHistoryError("Không lưu được lịch sử trên thiết bị."); } }
+      else { const result = await db!.from("speaking_mock_sessions").insert({ id: row.id, duration_seconds: row.duration_seconds, speaking_seconds: row.speaking_seconds, answers: row.answers }); if (result.error) { historySaved.current = ""; setHistoryError(result.error.message); } else { setHistory((current) => [row, ...current].slice(0, 30)); setHistoryError(""); } } })();
+  }, [phase, log, startedAt, history, db, historyRetry]);
   // Leaving the page ends the test.
   useEffect(() => () => { run.current += 1; advance.current?.("done"); }, []);
+  useEffect(() => () => { if (playback) URL.revokeObjectURL(playback.url); }, [playback]);
+
+  const saveRecordings = async () => {
+    const savingSessionId = sessionId.current;
+    if (!savingSessionId || !history.some((item) => item.id === savingSessionId)) return;
+    setRecordingBusy(true); setHistoryError("");
+    try {
+      const userId = demoMode ? "" : (await db!.auth.getUser()).data.user?.id;
+      if (!demoMode && !userId) throw new Error("Bạn cần đăng nhập để lưu bản ghi riêng tư.");
+      for (const [answerIndex, entry] of log.entries()) {
+        if (!entry.take || recordingRefs.some((item) => item.session_id === savingSessionId && item.answer_index === answerIndex)) continue;
+        const blob = await (await fetch(entry.take.url)).blob();
+        if (!blob.size) continue;
+        if (demoMode) {
+          await putLocalRecording(savingSessionId, answerIndex, blob);
+          setRecordingRefs((current) => [...current, { session_id: savingSessionId, answer_index: answerIndex, storage_path: "" }]);
+          continue;
+        }
+        const extension = blob.type.includes("mp4") ? "mp4" : blob.type.includes("ogg") ? "ogg" : "webm";
+        const path = `${userId}/${savingSessionId}/${answerIndex}.${extension}`;
+        const uploaded = await db!.storage.from("speaking-recordings").upload(path, blob, { contentType: `audio/${extension}`, upsert: true });
+        if (uploaded.error) throw uploaded.error;
+        const inserted = await db!.from("speaking_mock_recordings").insert({ session_id: savingSessionId, answer_index: answerIndex, storage_path: path });
+        if (inserted.error) {
+          const existing = await db!.from("speaking_mock_recordings").select("session_id,answer_index,storage_path").eq("session_id", savingSessionId).eq("answer_index", answerIndex).maybeSingle();
+          if (existing.data) { setRecordingRefs((current) => [...current, existing.data as RecordingRef]); continue; }
+          await db!.storage.from("speaking-recordings").remove([path]);
+          throw inserted.error;
+        }
+        setRecordingRefs((current) => [...current, { session_id: savingSessionId, answer_index: answerIndex, storage_path: path }]);
+      }
+    } catch (error) { setHistoryError(error instanceof Error ? error.message : "Không lưu được bản ghi."); }
+    finally { setRecordingBusy(false); }
+  };
+
+  const playHistoryRecording = async (sessionIdToPlay: string, answerIndex: number) => {
+    setHistoryError("");
+    try {
+      const recording = recordingRefs.find((item) => item.session_id === sessionIdToPlay && item.answer_index === answerIndex);
+      if (!recording) throw new Error("Không tìm thấy bản ghi.");
+      let blob: Blob | undefined | null;
+      if (demoMode) blob = await getLocalRecording(sessionIdToPlay, answerIndex);
+      else {
+        const downloaded = await db!.storage.from("speaking-recordings").download(recording.storage_path);
+        if (downloaded.error) throw downloaded.error;
+        blob = downloaded.data;
+      }
+      if (!blob) throw new Error("Không tìm thấy bản ghi.");
+      setPlayback({ key: `${sessionIdToPlay}/${answerIndex}`, url: URL.createObjectURL(blob) });
+    } catch (error) { setHistoryError(error instanceof Error ? error.message : "Không phát được bản ghi."); }
+  };
+
+  const deleteSession = async (session: Session) => {
+    if (!window.confirm("Xoá phiên này cùng mọi bản ghi âm đã lưu?")) return;
+    setRecordingBusy(true); setHistoryError("");
+    try {
+      if (demoMode) {
+        await deleteLocalRecordings(session.id);
+        localStorage.setItem(historyKey, JSON.stringify(history.filter((item) => item.id !== session.id)));
+      } else {
+        const userId = (await db!.auth.getUser()).data.user?.id;
+        if (!userId) throw new Error("Bạn cần đăng nhập để xoá phiên.");
+        const folder = `${userId}/${session.id}`;
+        const listed = await db!.storage.from("speaking-recordings").list(folder, { limit: 100 });
+        if (listed.error) throw listed.error;
+        const paths = (listed.data ?? []).map((file) => `${folder}/${file.name}`);
+        if (paths.length) { const removed = await db!.storage.from("speaking-recordings").remove(paths); if (removed.error) throw removed.error; }
+        const removed = await db!.from("speaking_mock_sessions").delete().eq("id", session.id);
+        if (removed.error) throw removed.error;
+      }
+      setHistory((current) => current.filter((item) => item.id !== session.id));
+      setRecordingRefs((current) => current.filter((item) => item.session_id !== session.id));
+      if (expandedSession === session.id) setExpandedSession("");
+      if (playback?.key.startsWith(`${session.id}/`)) setPlayback(null);
+    } catch (error) { setHistoryError(error instanceof Error ? error.message : "Không xoá được phiên luyện tập."); }
+    finally { setRecordingBusy(false); }
+  };
 
   const begin = useCallback(async () => {
     const id = ++run.current;
     const alive = () => { if (run.current !== id) throw new Stopped(); };
+    sessionId.current = crypto.randomUUID();
     setPhase("loading"); setLog([]); setSaved(false); setCueNotes("");
-    await openMic();
+    if (!(await openMic())) { setPhase("setup"); return; }
     const set = await loadSet();
     alive();
     setCue(set.cue); setStartedAt(Date.now()); setPhase("exam");
@@ -170,11 +282,13 @@ export function SpeakingMock() {
           <div><b>{words && spoken ? Math.round(words / (spoken / 60)) : "—"}</b><span>từ / phút (chuẩn 110–150)</span></div>
         </div>
         <div className="sm-actions">
-          <button type="button" className="bx-submit" onClick={() => void begin()}><RotateCcw size={16} /> Thi lại đề khác</button>
+          <button type="button" className="bx-submit" disabled={recordingBusy} onClick={() => void begin()}><RotateCcw size={16} /> Thi lại đề khác</button>
           <button type="button" className="bx-ghost" disabled={saved || !log.length} onClick={() => void save()}><Save size={16} /> {saved ? "Đã lưu vào Sổ tay" : "Lưu vào Sổ tay"}</button>
+          <button type="button" className="bx-ghost" disabled={recordingBusy || !history.some((item) => item.id === sessionId.current) || !log.some((item, index) => item.take && !recordingRefs.some((recording) => recording.session_id === sessionId.current && recording.answer_index === index))} onClick={() => void saveRecordings()}><Save size={16} /> {recordingBusy ? "Đang lưu bản ghi…" : "Lưu bản ghi riêng tư"}</button>
           <Link className="bx-ghost" href="/app/speaking">Về Speaking</Link>
         </div>
-        <p className="bs-privacy">Nghe lại từng câu để tự đánh giá độ trôi chảy, phát âm và độ dài câu trả lời. Bản ghi âm chỉ nằm trong trình duyệt này và sẽ mất khi bạn rời trang.</p>
+        <p className="bs-privacy">Nghe lại từng câu để tự đánh giá độ trôi chảy, phát âm và độ dài câu trả lời. Bấm lưu nếu muốn giữ bản ghi sau khi rời trang; {demoMode ? "bản demo lưu trên thiết bị này" : "tài khoản thật lưu trong kho riêng tư của bạn"}. Bản ghi chưa lưu sẽ mất khi đóng trang.</p>
+        <section className="sm-log"><h2>Tự đánh giá theo 4 tiêu chí IELTS</h2><p>Fluency and coherence: ý có liền mạch? Lexical resource: từ dùng có phù hợp? Grammatical range and accuracy: cấu trúc có đa dạng và chính xác? Pronunciation: người nghe có hiểu rõ? Đây là gợi ý tự đánh giá, không phải band score chính thức.</p>{historyError && <p role="alert">{historyError}</p>}{historyError && !history.some((item) => item.id === sessionId.current) && <button type="button" className="bx-ghost" onClick={() => setHistoryRetry((current) => current + 1)}>Thử lưu lịch sử lại</button>}</section>
         <div className="sm-log">{([1, 2, 3] as const).map((part) => {
           const entries = log.filter((entry) => entry.part === part);
           return entries.length ? <section key={part} className="sm-log"><h2>Part {part}</h2>{entries.map((entry) => <article key={entry.id} className="sm-entry">
@@ -209,6 +323,14 @@ export function SpeakingMock() {
           </div>
         </div>
         <button type="button" className="bx-start sm-start" disabled={phase === "loading"} onClick={() => void begin()}>{phase === "loading" ? "Đang chọn đề…" : "Bắt đầu thi"} <ArrowRight size={18} /></button>
+        <div className="sm-log"><h2>Lịch sử luyện tập</h2><p>{history.length} phiên đã lưu · {clock(history.reduce((sum, item) => sum + item.speaking_seconds, 0))} đã nói. Chọn một phiên để đọc lại câu hỏi, bản chữ và nghe những bản ghi đã lưu.</p>{historyError && <p role="alert">{historyError}</p>}{history.slice(0, 10).map((item) => <section key={item.id} className="sm-entry">
+          <button type="button" className="bx-ghost" onClick={() => setExpandedSession((current) => current === item.id ? "" : item.id)} aria-expanded={expandedSession === item.id}>{new Date(item.completed_at).toLocaleString("vi-VN")} · {item.answers.length} câu · {clock(item.speaking_seconds)} nói</button>
+          {expandedSession === item.id && <><button type="button" className="bx-ghost" disabled={recordingBusy} onClick={() => void deleteSession(item)}><Trash2 size={15} /> Xoá phiên và bản ghi</button>{item.answers.map((answer, index) => {
+            const key = `${item.id}/${index}`;
+            const hasAudio = recordingRefs.some((recording) => recording.session_id === item.id && recording.answer_index === index);
+            return <article key={key} className="sm-entry"><b>Part {answer.part}: {answer.question}</b><p>{answer.transcript || "Không có bản chữ."}</p><small>{clock(answer.seconds)}</small>{hasAudio && <button type="button" className="bx-ghost" onClick={() => void playHistoryRecording(item.id, index)}><Volume2 size={15} /> Nghe bản ghi</button>}{playback?.key === key && <audio controls autoPlay src={playback.url} aria-label={`Bản ghi: ${answer.question}`} />}</article>;
+          })}</>}
+        </section>)}</div>
       </section>
     </div>
   </main>;

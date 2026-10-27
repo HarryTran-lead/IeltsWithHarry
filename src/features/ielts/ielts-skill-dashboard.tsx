@@ -83,6 +83,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     { title: "Sentence completion", detail: "Đọc văn bản thật và điền một từ được rút từ chính câu nguồn.", source: "Daily News toàn văn", href: "/app/reading/live", available: hasArticle, icon: FileText, tag: "Có đáp án" },
     { title: "Đọc toàn văn", detail: "Mở bài gốc trong kho Daily News để đọc sâu và lưu từ.", source: latestArticle?.publisher ?? "Daily News", href: latestArticle ? `/app/news/${latestArticle.id}` : "/app/news", available: hasArticle, icon: BookOpen },
   ] : skill === "listening" ? [
+    { title: "YouTube Shadowing & Listening Lab", detail: "Luyện shadowing, chép chính tả và câu hỏi với phụ đề được cấp quyền.", source: "Bài học do giáo viên xuất bản", href: "/app/listening/youtube", available: true, icon: Headphones, tag: "YouTube" },
     { title: "Nghe và ghi ý chính", detail: "Chọn bản ghi đã kiểm tra file, nghe rồi lưu ghi chú vào Sổ tay.", source: "LibriVox · public domain", href: "/app/listening/live", available: audio.length > 0, icon: AudioLines, tag: "Audio mới" },
   ] : skill === "writing" ? [
     { title: "Academic Task 1", detail: "Mô tả và so sánh biểu đồ dân số từ số liệu World Bank.", source: `World Bank · ${latestYear ?? "đang tải"}`, href: "/app/writing/task-1", available: chart.length >= 2, icon: ChartNoAxesCombined, tag: "Dữ liệu thật" },
