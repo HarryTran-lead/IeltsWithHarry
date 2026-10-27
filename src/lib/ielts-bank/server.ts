@@ -3,7 +3,6 @@ import { randomUUID } from "node:crypto";
 import { createClient } from "@/lib/supabase/server";
 import { demoMode } from "@/lib/runtime";
 import { contentHash, contentSchema, scoreAnswers, validateExam, type ExamContent, type NormalizedExam } from "./schema";
-import { PILOT_PREFIX } from "./original-pilot";
 import { createConnector, sources, type SourceId } from "./connectors";
 
 export function bankClient() {
@@ -210,7 +209,6 @@ export async function reviewExam(examId: string, action: "ready" | "publish" | "
   if (error || !exam) throw new Error(error?.message || "Exam unavailable");
   const version = Array.isArray(exam.ielts_exam_versions) ? exam.ielts_exam_versions[0] : exam.ielts_exam_versions;
   if (["ready", "publish"].includes(action)) {
-    if (String(exam.external_id).startsWith(PILOT_PREFIX)) throw new Error("Original pilot requires documented rights, editorial and human-audio review before release");
     if (!version || (version.warnings as string[]).length) throw new Error("Resolve validation warnings before approval");
     if (action === "publish" && !["ready", "published"].includes(exam.status)) throw new Error("Mark exam ready before publishing");
     if (exam.source_id === "ai-factory") {
