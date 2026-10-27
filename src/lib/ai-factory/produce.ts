@@ -4,7 +4,7 @@ import { generateTextPractice, type TextSkill } from "./text-generation";
 
 /** One practice draft. Scheduled callers must check generation_enabled before invoking. */
 export async function createTextPracticeJob(client: SupabaseClient, skill: TextSkill, topic: string, actorId: string | null = null) {
-  if (!process.env.AI_FACTORY_GEMINI_API_KEY || process.env.AI_FACTORY_FREE_TIER_ONLY !== "true") throw new Error("Configure a separate, unbilled AI Factory free-tier key before generating drafts");
+  if (!process.env.AI_FACTORY_GEMINI_API_KEY || process.env.AI_FACTORY_FREE_TIER_ONLY !== "true" || process.env.AI_FACTORY_FREE_TIER_CONFIRMED !== "true") throw new Error("Configure a separate, confirmed unbilled AI Factory free-tier key before generating drafts");
   const { data: settings, error: settingsError } = await client.from("ai_factory_settings").select("daily_job_limit").single();
   if (settingsError) throw new Error(settingsError.message);
   const today = new Date(); today.setUTCHours(0, 0, 0, 0);

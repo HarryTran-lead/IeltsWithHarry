@@ -46,6 +46,7 @@ const instructions: Record<TextSkill, string> = {
 };
 
 async function callFreeTierModel(skill: TextSkill, topic: string, fetcher: typeof fetch): Promise<{ value: unknown; model: string; usage: ModelUsage }> {
+  if (process.env.AI_FACTORY_FREE_TIER_CONFIRMED !== "true" || process.env.AI_FACTORY_FREE_TIER_ONLY !== "true") throw new Error("AI Factory free-tier project has not been confirmed");
   const key = process.env.AI_FACTORY_GEMINI_API_KEY;
   if (!key) throw new Error("Separate AI Factory free-tier key is not configured");
   const model = "gemini-3.5-flash-lite";

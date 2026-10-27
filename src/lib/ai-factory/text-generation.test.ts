@@ -7,8 +7,23 @@ function modelResponse(value: unknown): typeof fetch {
   return vi.fn(async () => Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }], usageMetadata: { promptTokenCount: 128, candidatesTokenCount: 256 } })) as typeof fetch;
 }
 
+function enableConfirmedFreeTier() {
+  vi.stubEnv("AI_FACTORY_FREE_TIER_ONLY", "true");
+  vi.stubEnv("AI_FACTORY_FREE_TIER_CONFIRMED", "true");
+}
+
 describe("AI Factory text drafting", () => {
+  it("never calls a model before free-tier billing is confirmed", async () => {
+    vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "test-only");
+    vi.stubEnv("AI_FACTORY_FREE_TIER_ONLY", "true");
+    vi.stubEnv("AI_FACTORY_FREE_TIER_CONFIRMED", "");
+    const fetcher = vi.fn() as unknown as typeof fetch;
+    await expect(generateTextPractice("Writing", "Public transport choices", fetcher)).rejects.toThrow("free-tier project");
+    expect(fetcher).not.toHaveBeenCalled();
+  });
+
   it("never calls a model with no separate factory key", async () => {
+    enableConfirmedFreeTier();
     vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "");
     const fetcher = vi.fn() as unknown as typeof fetch;
     await expect(generateTextPractice("Writing", "Public transport choices", fetcher)).rejects.toThrow("Separate AI Factory");
@@ -16,6 +31,7 @@ describe("AI Factory text drafting", () => {
   });
 
   it("keeps a valid Writing Task 2 as a reviewable practice draft", async () => {
+    enableConfirmedFreeTier();
     vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "test-only");
     const prompt = "Some cities plan to replace short car journeys with improved public transport. To what extent do you agree that this should be a priority for local governments? Give reasons for your answer and include relevant examples from your own knowledge or experience.";
     const draft = await generateTextPractice("Writing", "Public transport choices", modelResponse({ title: "Prioritising public transport", topic: "Public transport choices", prompt }));
@@ -26,6 +42,7 @@ describe("AI Factory text drafting", () => {
   });
 
   it("queues Listening only when each answer is spoken in its cited turn", async () => {
+    enableConfirmedFreeTier();
     vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "test-only");
     const turns = Array.from({ length: 20 }, (_, index) => ({
       speaker: index % 2 ? "Agent" : "Caller",

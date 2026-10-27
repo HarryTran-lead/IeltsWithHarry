@@ -26,7 +26,7 @@ export async function GET() {
       }
       return { ...job, previewUrl };
     }));
-    return Response.json({ settings: settings.data, voices: voices.data, jobs: rows, usage: usage.data, textProviderReady: Boolean(process.env.AI_FACTORY_GEMINI_API_KEY && process.env.AI_FACTORY_FREE_TIER_ONLY === "true") });
+    return Response.json({ settings: settings.data, voices: voices.data, jobs: rows, usage: usage.data, textProviderReady: Boolean(process.env.AI_FACTORY_GEMINI_API_KEY && process.env.AI_FACTORY_FREE_TIER_ONLY === "true" && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true") });
   } catch (error) { return requestError(error); }
 }
 
