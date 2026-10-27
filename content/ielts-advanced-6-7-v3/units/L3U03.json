@@ -1,0 +1,1069 @@
+{
+ "unit_id": "L3U03",
+ "order": 3,
+ "title": "Art and Architecture",
+ "title_vi": "Nghệ thuật và kiến trúc",
+ "objectives": [
+  "Làm TRUE/FALSE/NOT GIVEN với câu có nhiều mệnh đề và từ giới hạn",
+  "Trả lời multiple choice về mục đích, thái độ và ý chính của đoạn",
+  "Mô tả thay đổi trên mặt bằng/bản đồ (Task 1) bằng bị động và giới từ vị trí chính xác",
+  "Nói Part 2 đủ 2 phút về một công trình: mô tả, cảm nhận, đánh giá"
+ ],
+ "exam_strategy": "TRUE/FALSE/NOT GIVEN với câu dài: chia câu hỏi thành từng ý nhỏ; chỉ TRUE khi mọi ý đều được xác nhận, FALSE khi có một ý mâu thuẫn, NOT GIVEN khi một ý không có trong bài.",
+ "core_outcome": "Đánh giá tranh luận về bảo tồn kiến trúc dựa trên bằng chứng; mô tả thay đổi không gian một cách có hệ thống.",
+ "grammar": {
+  "title": "Relative and participle clauses for description",
+  "explanation_vi": "Mệnh đề quan hệ (which, where, whose) và mệnh đề phân từ rút gọn giúp mô tả công trình cô đọng: “a factory which was built in 1890” → “a factory built in 1890” (bị động → V3); “a gallery that houses modern art” → “a gallery housing modern art” (chủ động → V-ing). Mệnh đề không xác định (có dấu phẩy) bổ sung thông tin, không dùng that.",
+  "form": "N + which/that/who + V · N + where + S + V · N + whose + N · N + V3 (rút gọn bị động) · N + V-ing (rút gọn chủ động) · , which … (không xác định – không dùng that)",
+  "examples": [
+   "The station, which was designed in 1905, has been converted into a museum.",
+   "A former warehouse housing three galleries now stands on the waterfront.",
+   "The courtyard where the market was held has become a sculpture garden."
+  ],
+  "examples_vi": [
+   "Nhà ga, được thiết kế năm 1905, đã được chuyển thành bảo tàng.",
+   "Một nhà kho cũ chứa ba phòng trưng bày nay nằm ở bờ sông.",
+   "Khoảng sân nơi từng họp chợ đã trở thành vườn điêu khắc."
+  ],
+  "trap": "Không dùng that sau dấu phẩy (sai: “The museum, that opened in 2010, …”). Rút gọn bị động dùng V3, không dùng V-ing (sai: “a bridge building in 1600”).",
+  "items": [
+   [
+    "The gallery, ___ opened in 2015, attracts a million visitors a year. (which / that)",
+    "which",
+    "Mệnh đề không xác định có dấu phẩy → which, không dùng that."
+   ],
+   [
+    "This is the square ___ the old market used to be held. (which / where)",
+    "where",
+    "where thay cho nơi chốn (in which)."
+   ],
+   [
+    "The architect ___ design won the prize is only thirty years old. (who / whose)",
+    "whose",
+    "whose + danh từ chỉ sở hữu."
+   ],
+   [
+    "Reduce: a bridge which was built in 1620 → a bridge ___ in 1620",
+    "built",
+    "Rút gọn bị động → V3."
+   ],
+   [
+    "Reduce: a building that contains six studios → a building ___ six studios",
+    "containing",
+    "Rút gọn chủ động → V-ing."
+   ],
+   [
+    "The warehouse, ___ roof had collapsed, was restored in 2018.",
+    "whose",
+    "whose roof = mái của nhà kho."
+   ],
+   [
+    "Paintings ___ (donate) by local families are displayed in the east wing.",
+    "donated",
+    "Rút gọn bị động: paintings (which were) donated."
+   ],
+   [
+    "Correct the error: The museum, that was built in 1890, is closed.",
+    "The museum, which was built in 1890, is closed.",
+    "Sau dấu phẩy dùng which."
+   ]
+  ]
+ },
+ "readings": [
+  {
+   "title": "Old buildings, new lives",
+   "strategy": "TFNG: tách câu hỏi thành từng ý; multiple choice về mục đích đoạn: đọc câu đầu và câu cuối, hỏi “đoạn này làm gì” (giải thích, phản bác, minh họa).",
+   "instruction_vi": "Bài đọc khoảng 850 từ, 13 câu: 7 câu TRUE/FALSE/NOT GIVEN và 6 câu multiple choice.",
+   "paragraphs": [
+    [
+     "A",
+     "In the second half of the twentieth century, many cities treated old industrial buildings as obstacles. Warehouses, mills and power stations that had lost their original purpose were demolished to make way for offices, roads and housing estates. Today the attitude is very different. Across Europe, North America and East Asia, former factories have become galleries, railway stations have become museums, and grain stores have become apartments. Architects call this adaptive reuse, and it has moved from the margins of the profession to its centre. What was once a niche interest of conservation groups is now routinely discussed by developers, city councils and investors."
+    ],
+    [
+     "B",
+     "The most frequently cited argument for adaptive reuse is environmental. Constructing a new building requires vast amounts of energy, much of it used in producing cement and steel, and the emissions released during construction can exceed those produced by heating and lighting the building for several decades. Reusing an existing structure avoids much of this embodied carbon. A study of thirty conversions in the fictional city of Marlow found that, on average, they produced less than half the construction emissions of comparable new buildings, although the savings varied widely depending on how much of the original structure was retained."
+    ],
+    [
+     "C",
+     "Supporters also point to cultural benefits. Old buildings carry memories of the work and communities associated with them, and many residents feel a strong attachment to landmarks that have shaped the skyline for generations. When a familiar building is preserved, even with a completely new function, the neighbourhood keeps a sense of continuity. Several surveys suggest that people are more likely to visit, and to feel welcome in, a cultural institution housed in a building they already know."
+    ],
+    [
+     "D",
+     "However, adaptive reuse is rarely as simple or as cheap as it sounds. Industrial buildings were designed for machines rather than people. Their floors may not support the weight of crowds, their windows may be too small for comfortable offices, and their structures often contain materials, such as asbestos, that must be removed at great expense. Before any design work can begin, engineers must establish the structural integrity of the building, a process that can take months and sometimes reveals problems serious enough to make conversion impossible."
+    ],
+    [
+     "E",
+     "Accessibility presents a further challenge. Many historic buildings have steps at every entrance, narrow staircases and no lifts. Making them accessible to wheelchair users and people with limited mobility is both a legal requirement and a moral obligation, but an accessibility retrofit may require alterations that conflict with the aim of preserving the building's character. Conservation officers and architects frequently disagree about how much change is acceptable, and some of the most heated debates in the profession concern lifts and ramps rather than grand design decisions."
+    ],
+    [
+     "F",
+     "There is also disagreement about what should be preserved. Some conservationists argue for an approach that keeps as much original material as possible, even if this produces awkward spaces. Others favour a more flexible approach in which only the most significant features, such as the facade or a particular hall, are retained, while the rest is rebuilt. Critics of the second approach describe it as 'facadism', claiming that it reduces historic buildings to stage scenery. Its defenders reply that it is often the only financially realistic way of saving anything at all."
+    ],
+    [
+     "G",
+     "The economics of conversion are changing. As construction materials become more expensive and governments introduce stricter limits on carbon emissions, the financial case for reuse has strengthened. Some developers now actively seek out old industrial buildings, recognising that their high ceilings, large windows and distinctive character appeal to both businesses and residents. Nevertheless, conversions remain risky, because unexpected structural problems can add significantly to costs once work has begun."
+    ],
+    [
+     "H",
+     "Perhaps the most important lesson from recent projects is that the decision to reuse a building should be made early. When planners and architects consider reuse only after a demolition has been proposed, they are often forced into rushed compromises. Where cities identify buildings with potential for reuse in advance, carry out structural surveys and involve local communities in deciding their future, conversions tend to be both more successful and less controversial."
+    ],
+    [
+     "I",
+     "None of this means that every old building should be saved. Some are too damaged, too dangerous or too poorly located to justify the cost. But the burden of proof has shifted. Whereas demolition was once the default and preservation the exception, many cities now expect developers to explain why an existing building cannot be reused before permission to demolish it is granted."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "tfng",
+     "prompt": "In the late twentieth century, many cities demolished old industrial buildings.",
+     "answer": "TRUE",
+     "why": "Đoạn A: nhiều thành phố coi nhà máy cũ là trở ngại và phá bỏ."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Construction emissions can be greater than several decades of a building's heating and lighting emissions.",
+     "answer": "TRUE",
+     "why": "Đoạn B: “can exceed those produced by heating and lighting the building for several decades”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Every conversion in the Marlow study saved more than half of the construction emissions.",
+     "answer": "FALSE",
+     "why": "Đoạn B: con số là trung bình (“on average”) và “savings varied widely”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Residents are more likely to visit cultural institutions housed in familiar buildings.",
+     "answer": "TRUE",
+     "why": "Đoạn C: “people are more likely to visit … a cultural institution housed in a building they already know”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Removing asbestos is the most expensive part of most conversions.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn D nói xử lý asbestos tốn kém nhưng không nói là phần đắt nhất."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Conservation officers and architects usually agree about lifts and ramps.",
+     "answer": "FALSE",
+     "why": "Đoạn E: “frequently disagree … some of the most heated debates … concern lifts and ramps”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Many cities now require developers to justify demolishing an existing building.",
+     "answer": "TRUE",
+     "why": "Đoạn I: “expect developers to explain why an existing building cannot be reused before permission to demolish”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What is the main purpose of paragraph D?",
+     "options": [
+      "A. To describe the history of industrial buildings",
+      "B. To explain practical difficulties of converting old buildings",
+      "C. To argue that conversions should be banned",
+      "D. To compare the costs of different materials"
+     ],
+     "answer": "B. To explain practical difficulties of converting old buildings",
+     "why": "Đoạn D: sàn yếu, cửa sổ nhỏ, asbestos, khảo sát kết cấu – các khó khăn thực tế."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What is 'facadism', according to its critics?",
+     "options": [
+      "A. Keeping all original material",
+      "B. Reducing a historic building to scenery by keeping only its front",
+      "C. Building copies of old buildings",
+      "D. Painting old facades in bright colours"
+     ],
+     "answer": "B. Reducing a historic building to scenery by keeping only its front",
+     "why": "Đoạn F: chỉ giữ mặt tiền, bị chỉ trích là “stage scenery”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "How do defenders of the flexible approach respond to criticism?",
+     "options": [
+      "A. It is the most authentic method.",
+      "B. It is often the only affordable way to save part of a building.",
+      "C. It produces the lowest emissions.",
+      "D. Residents prefer it."
+     ],
+     "answer": "B. It is often the only affordable way to save part of a building.",
+     "why": "Đoạn F: “often the only financially realistic way of saving anything at all”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Why has the financial case for reuse strengthened?",
+     "options": [
+      "A. Old buildings have become cheaper to buy.",
+      "B. Materials are more expensive and carbon rules stricter.",
+      "C. Structural problems are now rare.",
+      "D. Governments pay for all conversions."
+     ],
+     "answer": "B. Materials are more expensive and carbon rules stricter.",
+     "why": "Đoạn G: “As construction materials become more expensive and governments introduce stricter limits on carbon emissions”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "According to paragraph H, when are conversions most successful?",
+     "options": [
+      "A. When decided after demolition is proposed",
+      "B. When decided early, with surveys and community involvement",
+      "C. When carried out by large developers",
+      "D. When the building is in the city centre"
+     ],
+     "answer": "B. When decided early, with surveys and community involvement",
+     "why": "Đoạn H: xác định sớm, khảo sát kết cấu, có cộng đồng tham gia."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What is the writer's overall position?",
+     "options": [
+      "A. All old buildings should be preserved.",
+      "B. Demolition is usually the best choice.",
+      "C. Reuse should be seriously considered first, though not every building can be saved.",
+      "D. Adaptive reuse is a temporary fashion."
+     ],
+     "answer": "C. Reuse should be seriously considered first, though not every building can be saved.",
+     "why": "Đoạn I: không phải mọi công trình đều nên giữ, nhưng “the burden of proof has shifted”."
+    }
+   ]
+  },
+  {
+   "title": "Who chooses public art?",
+   "strategy": "Multiple choice về thái độ: tìm từ đánh giá (praised, criticised, sceptical) gắn với từng nhóm người.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "When a city commissions a sculpture for a public square, it spends public money on something that every passer-by will have to live with. Unlike a painting in a gallery, which visitors choose to see, public art is encountered whether people like it or not. This makes the process of choosing it unusually sensitive, and many cities have struggled to find a method that satisfies artists, officials and residents at the same time."
+    ],
+    [
+     "B",
+     "Traditionally, decisions were made by small panels of experts – curators, architects and senior officials – who assessed proposals on artistic grounds. Supporters of this approach argue that experts are best placed to recognise originality and quality, and that public taste, if consulted directly, tends to favour safe, familiar designs. Several works that were widely disliked when they were first installed are now regarded as much-loved landmarks."
+    ],
+    [
+     "C",
+     "Critics reply that expert panels often reflect the preferences of a narrow group. In the fictional city of Rowan, a large abstract steel sculpture chosen by a panel in 2009 provoked a petition signed by more than eight thousand residents, who complained that they had not been consulted and that the work had no connection with the history of the area. The council eventually moved the sculpture to a less prominent location, at considerable cost."
+    ],
+    [
+     "D",
+     "Since then, Rowan has experimented with a more participatory process. A shortlist of designs is now displayed in the town library and online for six weeks, and residents can comment and vote. The final decision remains with the panel, but it must explain publicly how it took residents' views into account. Artists were initially sceptical, fearing that the process would discourage ambitious ideas, but several have since said that discussing their proposals with residents improved the final work."
+    ],
+    [
+     "E",
+     "Participation has its own limitations. Those who take part in consultations are rarely representative of the whole population: older residents and people with more free time tend to be overrepresented, while young people and those working long hours are underrepresented. To address this, Rowan has started running workshops in schools and inviting artists to present their ideas at markets and community festivals, where they meet people who would never attend a formal consultation."
+    ],
+    [
+     "F",
+     "Whether these changes will produce better art is difficult to judge, and it may be decades before a clear answer emerges. What they have produced, according to council surveys, is a greater sense among residents that public spaces belong to them. For many officials, that alone justifies the extra time the process requires. Other councils in the region have begun to adopt similar methods."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "Why is choosing public art described as sensitive?",
+     "options": [
+      "A. It is more expensive than gallery art.",
+      "B. People encounter it whether they want to or not.",
+      "C. Artists refuse to work for cities.",
+      "D. Experts never agree."
+     ],
+     "answer": "B. People encounter it whether they want to or not.",
+     "why": "Đoạn A: “public art is encountered whether people like it or not”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What do supporters of expert panels claim about public taste?",
+     "options": [
+      "A. It favours safe, familiar designs.",
+      "B. It is usually more original than expert taste.",
+      "C. It changes very quickly.",
+      "D. It has no effect on decisions."
+     ],
+     "answer": "A. It favours safe, familiar designs.",
+     "why": "Đoạn B: “public taste … tends to favour safe, familiar designs”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "How did artists in Rowan first react to the participatory process?",
+     "options": [
+      "A. They welcomed it enthusiastically.",
+      "B. They were doubtful about it.",
+      "C. They refused to take part.",
+      "D. They demanded higher fees."
+     ],
+     "answer": "B. They were doubtful about it.",
+     "why": "Đoạn D: “Artists were initially sceptical”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What has the new process achieved, according to council surveys?",
+     "options": [
+      "A. Clearly better art",
+      "B. Lower costs",
+      "C. A stronger feeling that public spaces belong to residents",
+      "D. Faster decisions"
+     ],
+     "answer": "C. A stronger feeling that public spaces belong to residents",
+     "why": "Đoạn F: “a greater sense among residents that public spaces belong to them”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Some public artworks that were disliked at first later became popular.",
+     "answer": "TRUE",
+     "why": "Đoạn B: “Several works that were widely disliked … are now regarded as much-loved landmarks.”"
+    },
+    {
+     "type": "tfng",
+     "prompt": "More than eight thousand residents signed a petition against the steel sculpture.",
+     "answer": "TRUE",
+     "why": "Đoạn C: “signed by more than eight thousand residents”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Residents of Rowan now make the final decision on public art.",
+     "answer": "FALSE",
+     "why": "Đoạn D: “The final decision remains with the panel”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Young people are overrepresented in Rowan's consultations.",
+     "answer": "FALSE",
+     "why": "Đoạn E: người trẻ “underrepresented”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The relocated steel sculpture is now more popular than before.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn C nói tượng bị dời đi, không nói mức độ yêu thích sau đó."
+    }
+   ]
+  },
+  {
+   "title": "Restoring a medieval bridge",
+   "strategy": "TFNG + short answer về quy trình kỹ thuật: chú ý thứ tự các bước và tên vật liệu.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "The stone bridge at the fictional town of Edderford has carried traffic across the river Tane for more than six hundred years. By 2016, however, engineers had become seriously concerned about its condition. Cracks had appeared in two of its five arches, and heavy lorries, which the bridge had never been designed to carry, were causing vibrations that loosened the stonework."
+    ],
+    [
+     "B",
+     "The first decision was to close the bridge to all motor vehicles. This was unpopular with local businesses, which feared losing customers, but engineers argued that no restoration could succeed while the bridge was still being damaged. A new road bridge was built a short distance downstream, and the old bridge was reserved for pedestrians and cyclists."
+    ],
+    [
+     "C",
+     "Before any repairs began, the team carried out a detailed survey of the structure. Using laser scanning, they produced a three-dimensional model that recorded the position of every stone to within a few millimetres. Samples of the original mortar were analysed in a laboratory to identify its ingredients, because using a modern cement-based mortar would have been harmful: cement is harder and less flexible than the lime mortar used by medieval builders, and it can cause the surrounding stones to crack."
+    ],
+    [
+     "D",
+     "The restoration itself followed a principle known as minimal intervention. Wherever possible, original stones were cleaned and reset rather than replaced. Where stones were too damaged to keep, new ones were cut from a quarry that analysis showed had probably supplied the original builders. Each replacement stone was marked with a small date, so that future historians would be able to distinguish new material from old."
+    ],
+    [
+     "E",
+     "The project took three years and cost considerably more than first estimated, largely because the survey revealed that the foundations of one arch had been weakened by the river. Divers spent several months strengthening them before work on the visible structure could continue."
+    ],
+    [
+     "F",
+     "Since reopening, the bridge has become one of the most visited places in the town. A small exhibition in the old toll house explains the restoration techniques, and local schools use the project to teach pupils about engineering and history. The town's businesses, many of which had opposed the closure, now report that visitor numbers are higher than before the restoration began."
+    ],
+    [
+     "G",
+     "Engineers involved in the project believe it offers a model for other historic structures. In particular, they stress the value of the detailed survey carried out before work began: without it, the weakness in the foundations might not have been discovered until repairs to the arches had already started, which could have caused serious damage and added even more to the final cost. They also argue that recording every intervention, as the dated stones do, allows future engineers to understand exactly what was changed and why."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "tfng",
+     "prompt": "The bridge was originally designed to carry heavy vehicles.",
+     "answer": "FALSE",
+     "why": "Đoạn A: “heavy lorries, which the bridge had never been designed to carry”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Local businesses supported the closure of the bridge to vehicles.",
+     "answer": "FALSE",
+     "why": "Đoạn B: quyết định này “unpopular with local businesses”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Cement-based mortar is less flexible than lime mortar.",
+     "answer": "TRUE",
+     "why": "Đoạn C: “cement is harder and less flexible than the lime mortar”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The project was completed within its original budget.",
+     "answer": "FALSE",
+     "why": "Đoạn E: “cost considerably more than first estimated”."
+    },
+    {
+     "type": "short",
+     "prompt": "How many arches does the bridge have? Write ONE NUMBER.",
+     "answer": "5",
+     "why": "Đoạn A: “two of its five arches”."
+    },
+    {
+     "type": "short",
+     "prompt": "Which technology was used to create a 3D model of the bridge? Write NO MORE THAN TWO WORDS.",
+     "answer": "laser scanning",
+     "why": "Đoạn C: “Using laser scanning”."
+    },
+    {
+     "type": "short",
+     "prompt": "What principle guided the restoration? Write NO MORE THAN TWO WORDS.",
+     "answer": "minimal intervention",
+     "why": "Đoạn D: “a principle known as minimal intervention”."
+    },
+    {
+     "type": "short",
+     "prompt": "What was marked on each replacement stone? Write NO MORE THAN THREE WORDS.",
+     "answer": "a small date",
+     "why": "Đoạn D: “marked with a small date”."
+    },
+    {
+     "type": "short",
+     "prompt": "Where is the exhibition about the restoration? Write NO MORE THAN THREE WORDS.",
+     "answer": "old toll house",
+     "why": "Đoạn F: “in the old toll house”."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "A tour of the Foundry Arts Centre",
+   "section": "Section 2 · map labelling",
+   "strategy": "Map labelling: xác định vị trí người nói đứng và hướng nhìn; theo dõi từ chỉ hướng (to your left, beyond, opposite). Vị trí cũ thường được nhắc để gây nhiễu.",
+   "pre_listening": "Trước khi nghe: tìm lối vào, sân trung tâm và các phương án vị trí.",
+   "trap": "Hướng dẫn viên có thể nói vị trí cũ của một phòng trước khi nói vị trí mới.",
+   "strategies": [
+    "Orientation",
+    "Direction language",
+    "Old vs new positions"
+   ],
+   "transcript": "Guide: Welcome to the Foundry Arts Centre. As some of you may know, this building was an iron foundry for nearly a century before it closed in 1984. It stood empty for twenty years until the conversion, which was completed in 2009. I'll describe the layout so you can find your way around after the tour. We're standing in the main entrance, facing the central courtyard.\nThe courtyard itself was once the casting floor, where molten iron was poured into moulds. It now has a glass roof and is used for large sculptures and evening events.\nIf you look to your left, the long building along the western side of the courtyard is the Main Gallery, which shows our temporary exhibitions. Directly opposite us, on the far side of the courtyard, is the old boiler house, which now contains the cinema. The ticket office for films is just inside its door.\nThe café used to be next to the entrance, but it has moved. It's now in the north-east corner of the courtyard, beside the cinema, where it gets the afternoon sun.\nOn your right, along the eastern side, are the artists' studios. There are twelve of them, rented to local artists at reduced rates. Visitors are welcome on the first Saturday of every month, when the studios are open to the public.\nThe education rooms, where we run workshops for schools, are upstairs above the main entrance – the staircase is just behind you, and there's a lift next to it.\nFinally, the gift shop. It's located between the Main Gallery and the cinema, in the north-west corner, so you'll pass it on your way out if you follow the exit signs through the gallery.\nOne more thing: the original chimney, which you can see above the boiler house, has been preserved, but for safety reasons it isn't open to visitors. Right, let's start with the Main Gallery.",
+   "questions": [
+    {
+     "prompt": "The central courtyard was originally the ______",
+     "options": [
+      "A. casting floor",
+      "B. boiler house",
+      "C. iron store"
+     ],
+     "answer": "A. casting floor",
+     "why": "“The courtyard itself was once the casting floor”."
+    },
+    {
+     "prompt": "Where is the Main Gallery?",
+     "options": [
+      "A. Along the eastern side",
+      "B. Along the western side",
+      "C. Above the entrance"
+     ],
+     "answer": "B. Along the western side",
+     "why": "“to your left … along the western side … is the Main Gallery”."
+    },
+    {
+     "prompt": "What is in the old boiler house now?",
+     "options": [
+      "A. The gift shop",
+      "B. The artists' studios",
+      "C. The cinema"
+     ],
+     "answer": "C. The cinema",
+     "why": "“the old boiler house, which now contains the cinema”."
+    },
+    {
+     "prompt": "Where is the café now?",
+     "options": [
+      "A. Next to the entrance",
+      "B. In the north-east corner, beside the cinema",
+      "C. In the north-west corner"
+     ],
+     "answer": "B. In the north-east corner, beside the cinema",
+     "why": "Trước ở cạnh lối vào (bẫy); nay ở góc đông bắc cạnh rạp."
+    },
+    {
+     "prompt": "How many artists' studios are there?",
+     "options": [
+      "A. 10",
+      "B. 12",
+      "C. 20"
+     ],
+     "answer": "B. 12",
+     "why": "“There are twelve of them”."
+    },
+    {
+     "prompt": "When are the studios open to the public?",
+     "options": [
+      "A. Every Saturday",
+      "B. The first Saturday of each month",
+      "C. Weekday evenings"
+     ],
+     "answer": "B. The first Saturday of each month",
+     "why": "“on the first Saturday of every month”."
+    },
+    {
+     "prompt": "Where are the education rooms?",
+     "options": [
+      "A. Upstairs above the main entrance",
+      "B. Inside the boiler house",
+      "C. Beside the gift shop"
+     ],
+     "answer": "A. Upstairs above the main entrance",
+     "why": "“upstairs above the main entrance”."
+    },
+    {
+     "prompt": "Where is the gift shop?",
+     "options": [
+      "A. In the north-east corner",
+      "B. In the north-west corner, between the gallery and the cinema",
+      "C. Next to the staircase"
+     ],
+     "answer": "B. In the north-west corner, between the gallery and the cinema",
+     "why": "“between the Main Gallery and the cinema, in the north-west corner”."
+    },
+    {
+     "prompt": "Why can visitors not enter the chimney?",
+     "options": [
+      "A. It is being repaired.",
+      "B. For safety reasons",
+      "C. It is used for storage."
+     ],
+     "answer": "B. For safety reasons",
+     "why": "“for safety reasons it isn't open to visitors”."
+    }
+   ]
+  },
+  {
+   "title": "Planning a presentation on museum displays",
+   "section": "Section 3 · multiple choice",
+   "strategy": "Section 3: chú ý ai đề xuất, ai đồng ý; đáp án là quyết định chung hoặc lý do được cả hai chấp nhận.",
+   "strategies": [
+    "Proposals and decisions",
+    "Reasons",
+    "Agreement"
+   ],
+   "transcript": "Tutor: So, Ava and Tom, you're presenting on how museums display their collections. Where are you up to?\nAva: We've chosen two museums to compare. The first displays objects in chronological order, from the oldest to the newest. The second groups them by theme – things like 'food', 'work' and 'belief' – with objects from different periods side by side.\nTom: I assumed the chronological one would be easier for visitors, but when we looked at visitor surveys, the thematic museum actually got higher satisfaction scores.\nTutor: Did the surveys explain why?\nAva: Visitors said the themes helped them connect the objects to their own lives. With the chronological layout, a lot of people said they felt they had to see everything in order, so they got tired before reaching the modern rooms.\nTom: Although the curators at the chronological museum told us that school groups find their layout clearer, because it matches the history curriculum.\nTutor: That's an interesting tension. How are you going to structure the presentation?\nTom: I suggested we describe one museum and then the other, but Ava thinks that will be repetitive.\nAva: I'd prefer to organise it around three questions – how easy it is to navigate, how well it explains objects, and how it serves different audiences – and compare both museums under each one.\nTom: Yes, I think that's clearer. Let's do it that way.\nTutor: Good. What about visuals?\nAva: We were going to show photographs of the galleries, but we think floor plans would be more useful, because they show the route visitors take.\nTutor: And your conclusion?\nTom: We don't want to say one approach is better. Our conclusion is that the best choice depends on the main audience – thematic displays for general visitors, chronological ones where education is the priority.\nTutor: That's a sensible, evidence-based position. Make sure you mention the size of the surveys, though – one of them only had about two hundred responses.",
+   "questions": [
+    {
+     "prompt": "How does the second museum organise its objects?",
+     "options": [
+      "A. By date",
+      "B. By theme",
+      "C. By country"
+     ],
+     "answer": "B. By theme",
+     "why": "“The second groups them by theme”."
+    },
+    {
+     "prompt": "What surprised Tom about the visitor surveys?",
+     "options": [
+      "A. The thematic museum had higher satisfaction.",
+      "B. Few visitors completed them.",
+      "C. Visitors preferred the chronological layout."
+     ],
+     "answer": "A. The thematic museum had higher satisfaction.",
+     "why": "“the thematic museum actually got higher satisfaction scores”."
+    },
+    {
+     "prompt": "Why did visitors to the chronological museum get tired?",
+     "options": [
+      "A. The rooms were crowded.",
+      "B. They felt they had to see everything in order.",
+      "C. The labels were too long."
+     ],
+     "answer": "B. They felt they had to see everything in order.",
+     "why": "“they felt they had to see everything in order”."
+    },
+    {
+     "prompt": "Who, according to curators, prefers the chronological layout?",
+     "options": [
+      "A. Tourists",
+      "B. School groups",
+      "C. Researchers"
+     ],
+     "answer": "B. School groups",
+     "why": "“school groups find their layout clearer, because it matches the history curriculum”."
+    },
+    {
+     "prompt": "How will they structure the presentation?",
+     "options": [
+      "A. One museum, then the other",
+      "B. Around three questions comparing both museums",
+      "C. As a timeline"
+     ],
+     "answer": "B. Around three questions comparing both museums",
+     "why": "Tom đồng ý với đề xuất của Ava: tổ chức theo ba câu hỏi."
+    },
+    {
+     "prompt": "What visuals will they use?",
+     "options": [
+      "A. Photographs of the galleries",
+      "B. Floor plans",
+      "C. A short video"
+     ],
+     "answer": "B. Floor plans",
+     "why": "Ảnh là kế hoạch ban đầu; chuyển sang floor plans."
+    },
+    {
+     "prompt": "What is their conclusion?",
+     "options": [
+      "A. Thematic displays are always better.",
+      "B. Chronological displays are always better.",
+      "C. The best choice depends on the main audience."
+     ],
+     "answer": "C. The best choice depends on the main audience.",
+     "why": "“the best choice depends on the main audience”."
+    },
+    {
+     "prompt": "What does the tutor ask them to mention?",
+     "options": [
+      "A. The cost of each museum",
+      "B. The size of the surveys",
+      "C. The names of the curators"
+     ],
+     "answer": "B. The size of the surveys",
+     "why": "“Make sure you mention the size of the surveys”."
+    },
+    {
+     "prompt": "About how many responses did one survey have?",
+     "options": [
+      "A. 200",
+      "B. 2,000",
+      "C. 20"
+     ],
+     "answer": "A. 200",
+     "why": "“only had about two hundred responses”."
+    }
+   ]
+  },
+  {
+   "title": "Lecture: why tall buildings look the way they do",
+   "section": "Section 4 · note completion",
+   "strategy": "Bài giảng về kỹ thuật: ghi chú theo các yếu tố (wind, light, cost) và thuật ngữ đi kèm.",
+   "strategies": [
+    "Technical terms",
+    "Cause and effect",
+    "Lecture structure"
+   ],
+   "transcript": "Lecturer: When people look at skyscrapers, they usually assume that their shapes are the result of an architect's artistic vision. In fact, many of the features that make tall buildings distinctive are responses to practical problems. Today I'll focus on three: wind, light and the cost of land.\nLet's begin with wind. At great heights, wind speeds are much higher than at street level, and a tall building must resist not only being pushed over but also swaying. Even small movements can make occupants feel unwell. One common solution is to taper the building, making it narrower towards the top. Another is to cut gaps or openings near the top, which allow wind to pass through. Some towers also contain a tuned mass damper – essentially a huge weight, sometimes several hundred tonnes, suspended near the top, which moves in the opposite direction to the building and reduces the sway.\nThe second factor is light, and here regulations play a big part. In the early twentieth century, some cities found that tall buildings were turning streets into dark canyons. They responded with rules requiring buildings to step back as they rose higher, so that sunlight could still reach the street. This produced the famous 'wedding cake' profile of many older towers, with each level slightly smaller than the one below.\nThird, the cost of land. Where land is extremely expensive, developers want to build as much floor space as possible on a small plot. This explains why so many towers have simple rectangular floor plans – they are the most efficient. However, a building that is too deep from window to centre will have dark interior offices, so most office towers keep every desk within about twelve metres of a window.\nIn recent decades, a fourth factor has become important: energy. Glass towers can overheat in summer, so designers now use external shading, double-skin facades and sensors that adjust lighting automatically. For next week, please choose a tall building in your own city and identify which of these factors best explains its shape.",
+   "questions": [
+    {
+     "prompt": "Many skyscraper features are responses to ______ problems, not only artistic vision.",
+     "answer": "practical",
+     "why": "“responses to practical problems”."
+    },
+    {
+     "prompt": "Wind: tall buildings must resist being pushed over and ______",
+     "answer": "swaying",
+     "why": "“not only being pushed over but also swaying”."
+    },
+    {
+     "prompt": "Making a building narrower towards the top is called ______ it.",
+     "answer": "tapering",
+     "why": "“to taper the building” – chấp nhận taper."
+    },
+    {
+     "prompt": "A large weight that reduces sway is a tuned mass ______",
+     "answer": "damper",
+     "why": "“a tuned mass damper”."
+    },
+    {
+     "prompt": "Early rules required buildings to step ______ as they rose.",
+     "answer": "back",
+     "why": "“step back as they rose higher”."
+    },
+    {
+     "prompt": "This produced the '______ cake' profile.",
+     "answer": "wedding",
+     "why": "“the famous 'wedding cake' profile”."
+    },
+    {
+     "prompt": "Expensive land explains simple ______ floor plans.",
+     "answer": "rectangular",
+     "why": "“simple rectangular floor plans”."
+    },
+    {
+     "prompt": "Most office towers keep desks within about ______ metres of a window.",
+     "answer": "12",
+     "why": "“within about twelve metres of a window”."
+    },
+    {
+     "prompt": "Energy solutions include external shading and double-skin ______",
+     "answer": "facades",
+     "why": "“double-skin facades”."
+    }
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 1 – comparing two plans",
+  "instruction_vi": "So sánh mặt bằng trước và sau cải tạo: overview nêu thay đổi chức năng tổng thể và những gì được giữ lại; thân bài chia theo khu vực, dùng bị động hiện tại hoàn thành và giới từ vị trí. Viết ít nhất 150 từ (mục tiêu 170–190).",
+  "task": "The plans show a former iron foundry in 1980 and the same site today, after it was converted into an arts centre. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "data_visual": {
+   "headers": [
+    "Part of the site",
+    "1980 (foundry)",
+    "Today (arts centre)"
+   ],
+   "rows": [
+    [
+     "Centre of site",
+     "Open casting floor",
+     "Courtyard with glass roof for sculpture and events"
+    ],
+    [
+     "West building",
+     "Pattern workshop",
+     "Main Gallery (temporary exhibitions)"
+    ],
+    [
+     "East building",
+     "Storage sheds",
+     "12 artists' studios"
+    ],
+    [
+     "North building",
+     "Boiler house with chimney",
+     "Cinema; chimney kept but closed"
+    ],
+    [
+     "North-east corner",
+     "Coal yard",
+     "Café"
+    ],
+    [
+     "Above entrance",
+     "Offices",
+     "Education rooms with lift"
+    ],
+    [
+     "South (outside)",
+     "Railway siding",
+     "Car park removed; public garden"
+    ]
+   ]
+  },
+  "sample_answer": "The plans compare a former iron foundry in 1980 with the same site today, following its conversion into an arts centre.\n\nOverall, the site has been transformed from an industrial complex into a cultural venue, with almost every building given a new function. Nevertheless, the basic layout has been retained, with buildings still arranged around a central open space, and the historic chimney has been preserved.\n\nIn 1980, the centre of the site was occupied by an open casting floor, surrounded by a pattern workshop to the west, storage sheds to the east and a boiler house with a tall chimney to the north. A coal yard stood in the north-east corner, offices were located above the entrance, and a railway siding ran along the southern edge of the site.\n\nToday, the casting floor has been covered with a glass roof to create a courtyard used for sculptures and events. The pattern workshop has been converted into the Main Gallery, while the storage sheds now contain twelve artists' studios. The boiler house has become a cinema, although its chimney, which has been kept, is closed to visitors. A café has replaced the coal yard, the former offices have been turned into education rooms with a lift, and the railway siding has made way for a public garden.",
+  "guidance": [
+   "Câu mở đầu: paraphrase (former iron foundry, following its conversion).",
+   "Overview: thay đổi chức năng toàn bộ + điều giữ nguyên (bố cục quanh sân, ống khói).",
+   "Thân bài 1: năm 1980 – mô tả theo hướng (to the west/east/north).",
+   "Thân bài 2: hiện nay – has been converted into / has become / has made way for."
+  ],
+  "micro": [
+   [
+    "Diễn đạt: pattern workshop → Main Gallery.",
+    "The pattern workshop has been converted into the Main Gallery."
+   ],
+   [
+    "Câu overview nêu điều được giữ lại.",
+    "Nevertheless, the basic layout around a central space has been retained."
+   ],
+   [
+    "Dùng “make way for” cho railway siding → garden.",
+    "The railway siding has made way for a public garden."
+   ],
+   [
+    "Mệnh đề quan hệ không xác định về ống khói.",
+    "The chimney, which has been preserved, is closed to visitors."
+   ],
+   [
+    "Vị trí: coal yard ở góc đông bắc năm 1980.",
+    "In 1980, a coal yard stood in the north-east corner of the site."
+   ]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 1. The plans show a public library in 2005 and after its redesign in 2025. Summarise the main changes and make comparisons. Write at least 150 words.",
+  "essay": {
+   "prompt": "Some people think that governments should spend money on preserving old buildings, while others believe this money would be better spent on building new housing and public services. Discuss both views and give your own opinion.",
+   "planning_prompts": [
+    "Mở bài: nêu hai quan điểm và ý kiến (cân bằng có tiêu chí).",
+    "Thân bài 1: lý do bảo tồn (bản sắc, du lịch, giảm phát thải nhờ tái sử dụng).",
+    "Thân bài 2: lý do xây mới (nhu cầu nhà ở, dịch vụ hiện đại, chi phí bảo tồn cao).",
+    "Ý kiến: tái sử dụng thích ứng có thể đáp ứng cả hai mục tiêu."
+   ],
+   "model_paragraphs": [
+    "Public budgets are limited, and governments must decide whether to spend money on protecting historic buildings or on meeting present needs such as housing, schools and hospitals. While I understand the case for prioritising new construction, I believe that well-chosen preservation projects deserve continued funding, particularly when old buildings can be adapted for modern use.",
+    "Those who favour new building argue that the needs of living people should come first. Many cities face severe housing shortages, and families on waiting lists may question why public money is spent on restoring a disused church or factory. Furthermore, old buildings are often expensive to maintain, difficult to make accessible and poorly insulated, so new purpose-built facilities can deliver better services for the same investment.",
+    "On the other hand, supporters of preservation argue that historic buildings are irreplaceable. Once a landmark is demolished, the connection it provides to a community's past is lost forever. Such buildings also attract tourists and give neighbourhoods a distinctive character that can support local businesses. In addition, there is a strong environmental argument: constructing a new building releases large amounts of carbon, whereas reusing an existing structure avoids much of this.",
+    "In my view, the most convincing approach is to see preservation and modern needs as compatible rather than competing. Many old buildings can be converted into homes, libraries or community centres, providing new services while keeping historic character and reducing emissions. Public funding should therefore favour projects that give old buildings a practical new purpose.",
+    "In conclusion, although new housing and services are urgent priorities, governments should continue to invest in historic buildings, especially through adaptive reuse, which allows cities to meet present needs without erasing their past."
+   ]
+  },
+  "drills": [
+   [
+    "Sửa lỗi: The workshop converted into a gallery.",
+    "The workshop has been converted into a gallery.",
+    "Cần bị động hiện tại hoàn thành."
+   ],
+   [
+    "Sửa lỗi: The museum, that opened in 2009, is very popular.",
+    "The museum, which opened in 2009, is very popular.",
+    "Sau dấu phẩy dùng which."
+   ],
+   [
+    "Sửa lỗi: A garden is in the place of the railway.",
+    "The railway siding has made way for a garden.",
+    "Dùng cụm make way for để diễn tả thay thế."
+   ],
+   [
+    "Viết lại học thuật hơn: Old buildings are very nice and we should keep them.",
+    "Historic buildings contribute to a city's identity and are therefore worth preserving.",
+    "Nêu lý do cụ thể thay vì tính từ chung chung."
+   ],
+   [
+    "Sửa lỗi: The chimney still there but nobody can go in.",
+    "The chimney has been retained, although it is closed to visitors.",
+    "Câu thiếu động từ; dùng retained và although."
+   ],
+   [
+    "Sửa lỗi: In 1980, there was offices above entrance.",
+    "In 1980, there were offices above the entrance.",
+    "there were + danh từ số nhiều; thiếu the."
+   ]
+  ]
+ },
+ "speaking": {
+  "title": "Buildings and the arts",
+  "instruction_vi": "Part 2 nói đủ 2 phút: mô tả (vị trí, hình dáng, vật liệu) → trải nghiệm → đánh giá. Dùng mệnh đề quan hệ để mô tả chi tiết.",
+  "focus": "Nói Part 2 có cấu trúc rõ (mở → mô tả → trải nghiệm → lý do) và dùng tính từ mô tả kiến trúc chính xác (spacious, ornate, minimalist).",
+  "part1": [
+   "Do you prefer modern or traditional buildings?",
+   "Is there a building in your city that you particularly like?",
+   "How often do you visit museums or galleries?",
+   "Did you enjoy art lessons at school?"
+  ],
+  "part2": "Describe a building that you find attractive. You should say where it is, what it looks like, what it is used for, and explain why you find it attractive.",
+  "part3": [
+   "Should governments spend money on preserving old buildings?",
+   "How important is it for public buildings to be beautiful as well as practical?",
+   "Why do some people find modern architecture unattractive?"
+  ],
+  "model_answer": "I'd like to describe the Hanoi Opera House, which is in the French Quarter of the city, just east of Hoan Kiem Lake. It was built in the early twentieth century, during the colonial period, and its design was based on the Palais Garnier in Paris. From the outside, it's a cream-coloured building with tall columns, ornate balconies and a wide flight of steps leading up to the entrance, which is especially impressive at night when the whole facade is lit up. It's still used for its original purpose, so it hosts classical concerts, ballet and traditional Vietnamese performances, and on some days you can join a guided tour of the interior. I went to a concert there with my family a couple of years ago, and I remember being struck by the main hall, which is smaller than I expected but extremely elegant, with red seats and gold decoration. What I find attractive about it isn't just its appearance. It's the fact that a building connected to a difficult period of history has become a place that everyone in the city can enjoy. I think it shows how old buildings can take on new meanings over time, and that's why I'd always recommend it to visitors.",
+  "extensions": [
+   [
+    "Should governments spend money on preserving old buildings?",
+    "Đồng ý có tiêu chí → giá trị lịch sử, du lịch, môi trường → chi phí cơ hội → ưu tiên công trình có thể tái sử dụng."
+   ],
+   [
+    "How important is it for public buildings to be beautiful as well as practical?",
+    "Lập trường → công trình đẹp tạo niềm tự hào, thu hút người dùng → chi phí → ví dụ thư viện/nhà ga."
+   ],
+   [
+    "Why do some people find modern architecture unattractive?",
+    "Lý do: đơn điệu, không liên quan bối cảnh địa phương, vật liệu lạnh → phản biện: nhiều công trình hiện đại được yêu thích → kết luận."
+   ],
+   [
+    "Should ordinary people have a say in the design of new public buildings?",
+    "Đồng ý có giới hạn → lợi ích tham vấn → rủi ro chọn thiết kế an toàn → vai trò chuyên gia."
+   ]
+  ]
+ },
+ "checkpoint": [
+  [
+   "A statement says “The bridge was closed to all traffic and then rebuilt.” The passage says it was closed to vehicles and restored. The answer is…",
+   [
+    "TRUE",
+    "FALSE",
+    "NOT GIVEN",
+    "YES"
+   ],
+   "FALSE",
+   "Bài nói đóng với xe cơ giới (không phải mọi phương tiện) và trùng tu (không xây lại)."
+  ],
+  [
+   "Which sentence is correct?",
+   [
+    "The gallery, that opened in 2009, is free.",
+    "The gallery, which opened in 2009, is free.",
+    "The gallery which, opened in 2009, is free.",
+    "The gallery, opened it in 2009, is free."
+   ],
+   "The gallery, which opened in 2009, is free.",
+   "Mệnh đề không xác định dùng which."
+  ],
+  [
+   "Reduce: “a bridge which was built in 1620”.",
+   [
+    "a bridge building in 1620",
+    "a bridge built in 1620",
+    "a bridge was built in 1620",
+    "a bridge builds in 1620"
+   ],
+   "a bridge built in 1620",
+   "Rút gọn bị động → V3."
+  ],
+  [
+   "In a map listening task, the guide says “It used to be next to the entrance, but it has moved to the north-east corner.” The answer is…",
+   [
+    "Next to the entrance",
+    "North-east corner",
+    "Both",
+    "Neither"
+   ],
+   "North-east corner",
+   "Chọn vị trí hiện tại."
+  ],
+  [
+   "The overview for two plans should mention…",
+   [
+    "every room",
+    "the overall change of function and what has been kept",
+    "the cost of conversion",
+    "your opinion of the design"
+   ],
+   "the overall change of function and what has been kept",
+   "Overview: thay đổi tổng thể và phần giữ nguyên."
+  ]
+ ],
+ "reflection": [
+  "Câu TFNG nào bạn trả lời sai vì chỉ kiểm tra một phần của câu hỏi?",
+  "Bài mô tả mặt bằng của bạn đã dùng đúng bị động hiện tại hoàn thành chưa?"
+ ],
+ "vocabulary": [
+  [
+   "architectural heritage",
+   "di sản kiến trúc",
+   "Architectural heritage can shape civic identity."
+  ],
+  [
+   "adaptive reuse",
+   "tái sử dụng công trình",
+   "Adaptive reuse gives old buildings new functions."
+  ],
+  [
+   "conservation ethics",
+   "đạo đức bảo tồn",
+   "Conservation ethics guide restoration decisions."
+  ],
+  [
+   "structural integrity",
+   "độ bền kết cấu",
+   "Engineers assessed the building's structural integrity."
+  ],
+  [
+   "aesthetic judgement",
+   "đánh giá thẩm mỹ",
+   "Aesthetic judgement varies across cultures."
+  ],
+  [
+   "public patronage",
+   "sự bảo trợ công cộng",
+   "Public patronage supports smaller galleries."
+  ],
+  [
+   "cultural institution",
+   "thiết chế văn hóa",
+   "The museum is a major cultural institution."
+  ],
+  [
+   "built environment",
+   "môi trường xây dựng",
+   "The built environment influences daily experience."
+  ],
+  [
+   "heritage designation",
+   "công nhận di sản",
+   "Heritage designation can restrict redevelopment."
+  ],
+  [
+   "curatorial approach",
+   "cách tiếp cận giám tuyển",
+   "The curatorial approach emphasised local history."
+  ],
+  [
+   "creative economy",
+   "kinh tế sáng tạo",
+   "The creative economy provides specialist employment."
+  ],
+  [
+   "accessibility retrofit",
+   "cải tạo để dễ tiếp cận",
+   "An accessibility retrofit added a lift."
+  ],
+  [
+   "heritage conservation",
+   "bảo tồn di sản",
+   "Heritage conservation may require public funding."
+  ],
+  [
+   "public accessibility",
+   "khả năng tiếp cận công cộng",
+   "Public accessibility was improved by a lift."
+  ],
+  [
+   "construction lifecycle",
+   "vòng đời công trình",
+   "Construction lifecycle costs can be substantial."
+  ],
+  [
+   "restoration technique",
+   "kỹ thuật trùng tu",
+   "The restoration technique preserved original materials."
+  ],
+  [
+   "spatial design",
+   "thiết kế không gian",
+   "Spatial design affects how visitors move."
+  ],
+  [
+   "interpretive display",
+   "trưng bày diễn giải",
+   "The interpretive display presented local voices."
+  ],
+  [
+   "public commission",
+   "đơn đặt hàng công",
+   "The public commission funded a sculpture."
+  ],
+  [
+   "adaptive preservation",
+   "bảo tồn thích ứng",
+   "Adaptive preservation allows new uses."
+  ]
+ ],
+ "v3_enrichment": {
+  "coaching": {
+   "core": "Phân biệt bảo tồn, thay đổi công năng và lợi ích cộng đồng",
+   "terms": [
+    "aesthetic judgement versus measurable access",
+    "supporting an argument with a representative example",
+    "comparison of two design alternatives"
+   ],
+   "example": "An old building may retain its façade while serving an entirely new purpose; preservation is not always identical to leaving everything unchanged.",
+   "trap": "Chọn tiêu đề vì một chi tiết nổi bật thay vì ý chính của toàn đoạn.",
+   "reading_focus": "Matching headings and matching features",
+   "listening_focus": "Following a design-team discussion and alternative choices",
+   "writing1": "bar",
+   "speaking_issue": "Should governments prioritise old buildings over new services?",
+   "deep": {
+    "grammar": "Các tính từ đánh giá như 'valuable', 'beautiful' thường là phán đoán chủ quan; 'attendance rose from X to Y' là quan sát đo được. 'Although/nevertheless' hữu ích để đặt hai ý tương phản mà không làm mờ mối quan hệ. Trong lập luận, ghi rõ tiêu chuẩn bạn dùng để đánh giá một phương án kiến trúc: tiếp cận, kinh phí, tính di sản hay mục đích sử dụng.",
+    "reading": "Matching headings yêu cầu xác định ý chính toàn đoạn. Dùng một câu diễn đạt lại đoạn trước khi xem đáp án. Nếu đoạn chủ yếu nói về việc mở cửa nhà ga cũ làm thư viện, tiêu đề 'a new use for existing heritage' phù hợp hơn 'the station's original construction', dù năm xây dựng có xuất hiện.",
+    "listening": "Theo dõi các quyết định thiết kế thay đổi trong thảo luận nhiều người. Viết nháp: proposed -> criticised -> agreed. Đừng chọn đề xuất đầu tiên khi cuộc họp vẫn đang cân nhắc. Với matching features, đảm bảo bạn gán chính xác ý kiến cho từng người nói thay vì chỉ nhận diện từ khóa 'cost'.",
+    "writing": "Trong Task 1 bar chart, so sánh các nhóm có cùng thước đo: số lượt tham quan/chi phí, không so chỉ số khác đơn vị. Trong Task 2, nếu bạn cho rằng di sản cần được bảo tồn, hãy thừa nhận nhu cầu sử dụng đất và ngân sách công. Nhượng bộ có căn cứ giúp lập trường sắc nét hơn, không làm nó yếu đi."
+   }
+  },
+  "writing_task1_template": [
+   "Intro: Paraphrase what the visual compares, without inventing a reason.",
+   "Overview: Report the largest change and a meaningful contrast.",
+   "Body 1: Group comparable categories and support with figures.",
+   "Body 2: Describe contrasts and exceptions, use accurate units."
+  ],
+  "writing_task2_template": [
+   "Intro: Paraphrase the problem and state a clear answer.",
+   "Body 1: Claim -> why -> concrete illustration -> implication.",
+   "Body 2: Second argument or contrasting view, with measured concession.",
+   "Conclusion: Answer the exact question without adding new evidence."
+  ],
+  "speaking_part3_template": [
+   "Give an answer and its scope.",
+   "Explain the mechanism or trade-off.",
+   "Offer a concrete but non-generalised example.",
+   "Recognise a limitation, comparison or alternative."
+  ]
+ }
+}

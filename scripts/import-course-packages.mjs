@@ -16,6 +16,8 @@ const specs = {
   "ESL-IELTS-ADVANCED-6-7PLUS": { stage: "ielts-advanced", slug: "mindsetadvanced-topic-practice-6-7", prefix: "mindsetadvanced", units: 8, label: "IELTS Advanced 6.0–7.0+" },
   "ESL-MINDSET-L3-IELTS-ADVANCED-V2": { stage: "ielts-advanced", slug: "mindsetadvanced-topic-practice-6-7", prefix: "mindsetadvanced", units: 8, label: "IELTS Advanced 6.0–7.0+ · Bản V2", advancedV2: true },
   // Built from content/ielts-builder-5-6-v3; same course and lesson slugs as the first Builder package, so progress carries over.
+  // Built from content/ielts-advanced-6-7-v3; replaces the Advanced V2 content in place (same slugs).
+  "ESL-IELTS-ADVANCED-6-7PLUS-V3": { stage: "ielts-advanced", slug: "mindsetadvanced-topic-practice-6-7", prefix: "mindsetadvanced", units: 8, label: "IELTS Advanced 6.0–7.0+", advancedV2: true, audioCount: 36, replaceVocabulary: true },
   "ESL-IELTS-BUILDER-5-6-V3": { stage: "ielts-builder", slug: "mindsetbuilder-topic-practice-5-6", prefix: "mindsetbuilder", units: 8, label: "IELTS Builder 5.0–6.0", advancedV2: true, audioCount: 34, replaceVocabulary: true },
 };
 const skills = { vocabulary: "Vocabulary", grammar: "Grammar", reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking" };
@@ -245,7 +247,8 @@ for (const { course, spec, audio } of packs) {
           if (stale.length) success(await db.from("vocabulary_entries").delete().in("id", stale), `remove old vocabulary ${slug}`);
         }
       }
-      const mcqs = (lesson.activities ?? []).filter((item) => item.type === "multiple_choice");
+      // exercise_questions allows 2–6 options; longer lists (summary word banks) live only in the package content.
+      const mcqs = (lesson.activities ?? []).filter((item) => item.type === "multiple_choice" && item.options.length <= 6);
       for (const [index, item] of mcqs.entries()) {
         const question = success(await db.from("exercise_questions").upsert({ lesson_id: lessonRow.id, slug: item.id.toLowerCase(),
           prompt: item.prompt, options: item.options, sort_order: index }, { onConflict: "lesson_id,slug" }).select("id").single(), `question ${slug}/${item.id}`);

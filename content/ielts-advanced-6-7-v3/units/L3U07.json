@@ -1,0 +1,1093 @@
+{
+ "unit_id": "L3U07",
+ "order": 7,
+ "title": "Television, News and Current Affairs",
+ "title_vi": "Truyền hình, tin tức và thời sự",
+ "objectives": [
+  "Làm matching information, short answer và matching sentence endings trong cùng một bài",
+  "Phân biệt tường thuật, xác minh và suy đoán trong tin tức; nhận ra cách đóng khung (framing)",
+  "Viết Task 1 biểu đồ tròn: so sánh tỉ trọng giữa hai thời điểm",
+  "Dùng động từ tường thuật chính xác (claim, acknowledge, deny, warn) và câu tường thuật"
+ ],
+ "exam_strategy": "Matching sentence endings: phần kết phải đúng cả ngữ pháp và nghĩa; đọc phần đầu câu, tìm đoạn chứa ý đó, rồi loại phần kết chỉ hợp ngữ pháp.",
+ "core_outcome": "Đọc tin tức phản biện: nguồn, mức độ xác minh, cách đóng khung; mô tả biểu đồ tròn bằng ngôn ngữ tỉ lệ chính xác.",
+ "grammar": {
+  "title": "Reporting verbs and reported speech",
+  "explanation_vi": "Động từ tường thuật thể hiện thái độ của người nói: claim (khẳng định, chưa chắc đúng), acknowledge/admit (thừa nhận), deny (phủ nhận), warn (cảnh báo), suggest (đề xuất/gợi ý). Mỗi động từ có mẫu riêng: deny + V-ing, warn + O + that/to V, suggest + V-ing/that. Khi tường thuật quá khứ, lùi thì nếu thông tin không còn đúng, nhưng có thể giữ thì nếu vẫn còn đúng.",
+  "form": "claim that … / claim to have + V3 · acknowledge that … · deny + V-ing · warn (sb) that … / warn sb (not) to + V · suggest + V-ing / suggest that S (should) + V · S said (that) S + lùi thì",
+  "examples": [
+   "The minister claimed that the figures had been misreported.",
+   "The editor acknowledged that the headline was misleading.",
+   "The company denied receiving any warning about the fault."
+  ],
+  "examples_vi": [
+   "Bộ trưởng khẳng định rằng các số liệu đã bị đưa tin sai.",
+   "Biên tập viên thừa nhận rằng tiêu đề gây hiểu lầm.",
+   "Công ty phủ nhận việc đã nhận được bất kỳ cảnh báo nào về lỗi này."
+  ],
+  "trap": "deny + V-ing (không phải deny to do). suggest không đi với to V (sai: “suggested to change”). claim cho thấy người viết chưa xác nhận thông tin – khác với state hay confirm.",
+  "items": [
+   [
+    "The spokesperson denied ___ (know) about the report.",
+    "knowing",
+    "deny + V-ing."
+   ],
+   [
+    "Experts warned that the virus ___ (spread) quickly. (lùi thì của will)",
+    "would spread",
+    "Tường thuật quá khứ: will → would."
+   ],
+   [
+    "The journalist ___ that she had made an error. (acknowledged / denied) – cô ấy thừa nhận lỗi",
+    "acknowledged",
+    "acknowledge = thừa nhận."
+   ],
+   [
+    "The editor suggested ___ (check) the figures again.",
+    "checking",
+    "suggest + V-ing."
+   ],
+   [
+    "He claimed ___ (see) the accident himself. (quá khứ)",
+    "to have seen",
+    "claim to have + V3 cho việc trong quá khứ."
+   ],
+   [
+    "The report warned readers ___ (not / share) the video. (cấu trúc to V)",
+    "not to share",
+    "warn sb not to + V."
+   ],
+   [
+    "She said that she ___ (work) for the BBC at the moment. (vẫn đúng hiện tại)",
+    "works",
+    "Thông tin vẫn đúng → có thể giữ thì hiện tại."
+   ],
+   [
+    "Correct the error: The minister suggested to delay the vote.",
+    "The minister suggested delaying the vote.",
+    "suggest + V-ing, không dùng to V."
+   ]
+  ]
+ },
+ "readings": [
+  {
+   "title": "How a news story is verified",
+   "strategy": "Làm matching information trước (cần đọc toàn bài), rồi short answer và sentence endings theo thứ tự đoạn. Một đoạn có thể là đáp án cho nhiều câu matching.",
+   "instruction_vi": "Bài đọc khoảng 880 từ, 13 câu: 5 câu matching information (đoạn A–I), 4 câu short-answer và 4 câu matching sentence endings.",
+   "paragraphs": [
+    [
+     "A",
+     "In the minutes after a major event – an explosion, a flood, a political resignation – newsrooms face an impossible choice. Audiences expect information immediately, and rival outlets are already publishing. Yet the first reports of any event are almost always incomplete and often wrong. How news organisations manage this tension between speed and accuracy has become one of the defining questions of modern journalism, particularly since social media made it possible for anyone to publish claims instantly to millions of people. A single misleading video can be viewed millions of times before any professional journalist has had the chance to examine it, and once a false impression has formed, it is remarkably difficult to undo."
+    ],
+    [
+     "B",
+     "At the fictional public broadcaster Northern News, the verification process begins as soon as a claim reaches the newsroom. A specialist team, separate from the reporters covering the story, examines every video, photograph and document before it is broadcast. Their first question is simple: where did this come from? Material that cannot be traced to its original source is either rejected or broadcast with a clear warning that it has not been confirmed."
+    ],
+    [
+     "C",
+     "Checking images has become a highly technical task. Team members compare details in a video – shadows, weather, street signs, the shape of buildings – with satellite images and weather records to establish where and when it was filmed. They also search for earlier copies online, since many supposedly new images turn out to be from previous events, sometimes years old and on another continent. In one recent month, the team found that almost a third of the videos it received about a flood had been filmed elsewhere."
+    ],
+    [
+     "D",
+     "Verifying statements made by officials raises different problems. A government minister may claim that crime has fallen or that a hospital has more staff than last year. Such claims are usually checked against official statistics, but statistics can be presented in many ways. A fall in recorded crime may reflect a genuine decline or simply a change in how incidents are counted. The broadcaster's guidelines therefore require reporters to explain the basis of any figure and, where possible, to include an independent expert's assessment."
+    ],
+    [
+     "E",
+     "Language plays a crucial role in signalling how certain information is. Reporters are trained to distinguish between what has been confirmed, what has been claimed and what is merely being reported by others. Phrases such as 'police have confirmed' and 'a witness told us' tell the audience how much weight to give a statement. Critics argue that audiences rarely notice such distinctions, especially when headlines and short social media posts remove them. For this reason, some broadcasters now repeat the level of confirmation in every update, rather than mentioning it only once at the beginning of a report."
+    ],
+    [
+     "F",
+     "Even with careful procedures, mistakes happen. When they do, Northern News publishes a correction in its public correction log, explaining what was wrong and how the error occurred. The broadcaster's editors argue that this transparency increases trust, because it shows that errors are taken seriously. Research on audience attitudes offers some support for this view, although it also suggests that corrections reach far fewer people than the original mistakes."
+    ],
+    [
+     "G",
+     "The framing of a story – the angle from which it is told – is harder to verify than any individual fact. Two accurate reports of the same event can leave audiences with very different impressions, depending on which details are emphasised, which people are interviewed and which images are chosen. A story about a factory closure framed around job losses will feel very different from one framed around environmental benefits, even if every fact in both is correct."
+    ],
+    [
+     "H",
+     "Some newsrooms have responded by publishing explanations of their editorial decisions, describing why a story was covered in a certain way and which sources were used. Supporters say this editorial transparency helps audiences judge stories for themselves. Sceptics doubt whether many people read such explanations, and warn that they could become a form of public relations rather than genuine accountability. A few organisations have gone further, inviting members of the public to attend editorial meetings or to question senior editors in regular online sessions."
+    ],
+    [
+     "I",
+     "What seems clear is that verification can no longer be left entirely to journalists. Audiences now encounter news through many channels, often without any professional checking at all. Teaching people to ask where information comes from, how it has been checked and what might have been left out may be as important as any procedure inside a newsroom. In an information ecosystem without gatekeepers, every reader has to become, at least occasionally, a verifier."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "match",
+     "prompt": "Which paragraph contains an example of the proportion of videos found to be filmed elsewhere?",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+     ],
+     "answer": "C",
+     "why": "Đoạn C: “almost a third of the videos … had been filmed elsewhere”."
+    },
+    {
+     "type": "match",
+     "prompt": "Which paragraph contains a reason why official statistics need careful explanation?",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+     ],
+     "answer": "D",
+     "why": "Đoạn D: giảm tội phạm ghi nhận có thể do thay đổi cách đếm."
+    },
+    {
+     "type": "match",
+     "prompt": "Which paragraph contains a reference to how few people may see corrections?",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+     ],
+     "answer": "F",
+     "why": "Đoạn F: “corrections reach far fewer people than the original mistakes”."
+    },
+    {
+     "type": "match",
+     "prompt": "Which paragraph contains a contrast between two accurate but different versions of a story?",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+     ],
+     "answer": "G",
+     "why": "Đoạn G: tin đóng nhà máy đóng khung theo mất việc vs lợi ích môi trường."
+    },
+    {
+     "type": "match",
+     "prompt": "Which paragraph contains the suggestion that audiences must check information themselves?",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+     ],
+     "answer": "I",
+     "why": "Đoạn I: “every reader has to become … a verifier”."
+    },
+    {
+     "type": "short",
+     "prompt": "What is the first question the verification team asks? Write NO MORE THAN FIVE WORDS.",
+     "answer": "where did this come from",
+     "why": "Đoạn B: “Their first question is simple: where did this come from?”"
+    },
+    {
+     "type": "short",
+     "prompt": "Apart from weather records, what images are used to check locations? Write NO MORE THAN TWO WORDS.",
+     "answer": "satellite images",
+     "why": "Đoạn C: “satellite images and weather records”."
+    },
+    {
+     "type": "short",
+     "prompt": "Whose assessment should reporters include where possible? Write NO MORE THAN THREE WORDS.",
+     "answer": "an independent expert",
+     "why": "Đoạn D: “an independent expert's assessment”."
+    },
+    {
+     "type": "short",
+     "prompt": "Where does Northern News publish corrections? Write NO MORE THAN THREE WORDS.",
+     "answer": "public correction log",
+     "why": "Đoạn F: “in its public correction log”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Complete: Material that cannot be traced to its original source…",
+     "options": [
+      "A. is broadcast without any warning.",
+      "B. is rejected or broadcast with a warning.",
+      "C. is always more reliable.",
+      "D. is checked by reporters covering the story."
+     ],
+     "answer": "B. is rejected or broadcast with a warning.",
+     "why": "Đoạn B: “either rejected or broadcast with a clear warning”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Complete: Phrases such as 'police have confirmed'…",
+     "options": [
+      "A. are rarely used by reporters.",
+      "B. show the audience how much weight to give a statement.",
+      "C. are removed by editors.",
+      "D. replace the need for verification."
+     ],
+     "answer": "B. show the audience how much weight to give a statement.",
+     "why": "Đoạn E: “tell the audience how much weight to give a statement”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Complete: Northern News editors believe that publishing corrections…",
+     "options": [
+      "A. damages the broadcaster's reputation.",
+      "B. increases trust in the broadcaster.",
+      "C. is required by law.",
+      "D. reaches more people than the original story."
+     ],
+     "answer": "B. increases trust in the broadcaster.",
+     "why": "Đoạn F: “this transparency increases trust”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Complete: Sceptics warn that explanations of editorial decisions…",
+     "options": [
+      "A. are too technical for audiences.",
+      "B. could become public relations rather than accountability.",
+      "C. reveal confidential sources.",
+      "D. are read by most viewers."
+     ],
+     "answer": "B. could become public relations rather than accountability.",
+     "why": "Đoạn H: “could become a form of public relations rather than genuine accountability”."
+    }
+   ]
+  },
+  {
+   "title": "The future of the public broadcaster",
+   "strategy": "Matching sentence endings ở bài ngắn: mỗi phần kết chỉ dùng một lần; loại phần kết có ý trái với bài.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "For much of the twentieth century, public broadcasters held a central place in national life. In many countries, a single public channel was where most people watched the evening news, followed major sporting events and saw national celebrations. Funded by a licence fee or by taxation, these broadcasters were expected to inform, educate and entertain the whole population, not only those who were profitable to reach."
+    ],
+    [
+     "B",
+     "Today, that central position is under pressure. Streaming services offer thousands of programmes on demand, social media platforms provide news without any licence fee, and younger audiences in particular spend far less time watching scheduled television. Audience fragmentation – the division of viewers among many different sources – means that no single channel can assume it reaches most of the country."
+    ],
+    [
+     "C",
+     "Critics of public broadcasting argue that it is no longer necessary. If audiences can find high-quality programmes elsewhere, they ask, why should everyone be required to pay for a broadcaster they may rarely watch? Some suggest replacing the licence fee with voluntary subscriptions, so that only those who value the service pay for it."
+    ],
+    [
+     "D",
+     "Supporters reply that public broadcasters provide things that commercial services do not. These include news that is required to be impartial, programmes for minority audiences and regional communities, and coverage of local events that would not attract enough viewers to be profitable. They also point to research suggesting that countries with well-funded public broadcasters tend to have higher levels of trust in news and a better-informed public, although they acknowledge that this does not prove one causes the other."
+    ],
+    [
+     "E",
+     "Many public broadcasters are trying to adapt. Some have moved resources from traditional channels to online platforms, created short-form news for social media and invested in podcasts. Others have formed partnerships with local newspapers, sharing reporters and stories to keep regional journalism alive. Whether these changes will be enough to keep younger audiences engaged remains uncertain."
+    ],
+    [
+     "F",
+     "The debate ultimately concerns what kind of information environment a society wants. A system made up entirely of commercial and social media may offer more choice, but it may also make it harder for citizens to share a common set of facts. Public broadcasters, whatever their faults, were designed to provide exactly that shared foundation, and their supporters argue that it has rarely been more needed."
+    ],
+    [
+     "G",
+     "In several countries, governments have set up independent reviews to decide how public broadcasting should be funded in the coming decades. Their conclusions differ, but most agree on one point: the principle of a service designed for everyone, rather than only for paying customers, still enjoys broad public support, even among people who rarely use it themselves."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "Complete: Public broadcasters were expected to serve…",
+     "options": [
+      "A. only profitable audiences.",
+      "B. the whole population.",
+      "C. mainly younger viewers.",
+      "D. only people who paid subscriptions."
+     ],
+     "answer": "B. the whole population.",
+     "why": "Đoạn A: “inform, educate and entertain the whole population”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Complete: Audience fragmentation means that…",
+     "options": [
+      "A. viewers are divided among many sources.",
+      "B. television is becoming more popular.",
+      "C. news is more impartial.",
+      "D. licence fees are rising."
+     ],
+     "answer": "A. viewers are divided among many sources.",
+     "why": "Đoạn B: “the division of viewers among many different sources”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Complete: Some critics suggest replacing the licence fee with…",
+     "options": [
+      "A. advertising.",
+      "B. voluntary subscriptions.",
+      "C. government grants.",
+      "D. free access for all."
+     ],
+     "answer": "B. voluntary subscriptions.",
+     "why": "Đoạn C: “replacing the licence fee with voluntary subscriptions”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Complete: Supporters acknowledge that research on trust…",
+     "options": [
+      "A. proves that public broadcasters cause higher trust.",
+      "B. does not prove a causal link.",
+      "C. shows lower trust in such countries.",
+      "D. has never been carried out."
+     ],
+     "answer": "B. does not prove a causal link.",
+     "why": "Đoạn D: “this does not prove one causes the other”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Younger audiences spend less time watching scheduled television.",
+     "answer": "TRUE",
+     "why": "Đoạn B."
+    },
+    {
+     "type": "tfng",
+     "prompt": "All public broadcasters have closed their traditional channels.",
+     "answer": "FALSE",
+     "why": "Đoạn E: chỉ chuyển một phần nguồn lực sang nền tảng online."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Some public broadcasters share reporters with local newspapers.",
+     "answer": "TRUE",
+     "why": "Đoạn E: “partnerships with local newspapers, sharing reporters”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Streaming services now produce more news than public broadcasters.",
+     "answer": "NOT GIVEN",
+     "why": "Bài không so sánh lượng tin tức."
+    },
+    {
+     "type": "short",
+     "prompt": "According to supporters, what do public broadcasters provide as a basis for citizens? Write NO MORE THAN THREE WORDS.",
+     "answer": "shared foundation",
+     "why": "Đoạn F: “that shared foundation” – chấp nhận a common set of facts."
+    }
+   ]
+  },
+  {
+   "title": "Why corrections rarely catch up",
+   "strategy": "Matching information + short answer: đánh dấu nghiên cứu, con số và đề xuất trong từng đoạn trước khi trả lời.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "When a newspaper or broadcaster discovers that it has published something false, the standard response is to issue a correction. Yet researchers have repeatedly found that corrections are far less effective than the original misinformation. A false claim may be shared thousands of times in its first hours, while the correction, published days later, is seen by a small fraction of the same audience."
+    ],
+    [
+     "B",
+     "Part of the problem is psychological. Once people have accepted a piece of information, they tend to continue relying on it even after learning that it was wrong – an effect researchers call the continued influence effect. In one fictional experiment, participants read a news report blaming a warehouse fire on illegal storage of chemicals. Even after being told that this explanation had been withdrawn, many continued to mention chemicals when asked what caused the fire."
+    ],
+    [
+     "C",
+     "Corrections work better when they provide an alternative explanation rather than simply stating that the earlier claim was false. In the same experiment, participants who were told that the fire had actually been caused by an electrical fault were much less likely to mention chemicals than those who were only told that the original explanation was wrong. A gap in a story, it seems, is easily filled by the original false information."
+    ],
+    [
+     "D",
+     "The way a correction is presented also matters. Researchers have found that repeating a false claim prominently – for example, in the headline of a correction – can sometimes reinforce it. Many fact-checkers now follow a 'truth sandwich' approach: begin with the accurate information, briefly mention the false claim, and end by repeating the accurate information."
+    ],
+    [
+     "E",
+     "Timing is crucial. Corrections published quickly, while a story is still being discussed, reach far more people than those published later. Some newsrooms now attach corrections directly to the original article online and send updates to everyone who shared it, though this is technically difficult on many social media platforms."
+    ],
+    [
+     "F",
+     "None of these techniques fully solves the problem, and researchers caution against expecting too much from corrections alone. Preventing errors through careful verification remains far more effective than correcting them afterwards. As one editor put it, a correction is a repair, not a guarantee."
+    ],
+    [
+     "G",
+     "For readers, the research offers a practical lesson. When a story is later corrected, it is worth deliberately replacing the old explanation with the new one, rather than simply noting that the first version was wrong. Talking about the correction with others, or sharing it as widely as the original, can also help to reduce the influence of the false account."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "match",
+     "prompt": "Which paragraph describes a technique for structuring corrections?",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+     ],
+     "answer": "D",
+     "why": "Đoạn D: phương pháp “truth sandwich”."
+    },
+    {
+     "type": "match",
+     "prompt": "Which paragraph explains why people keep believing false information?",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+     ],
+     "answer": "B",
+     "why": "Đoạn B: continued influence effect."
+    },
+    {
+     "type": "match",
+     "prompt": "Which paragraph mentions the importance of correcting stories quickly?",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+     ],
+     "answer": "E",
+     "why": "Đoạn E: “Timing is crucial.”"
+    },
+    {
+     "type": "match",
+     "prompt": "Which paragraph argues that prevention is better than correction?",
+     "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+     ],
+     "answer": "F",
+     "why": "Đoạn F: “Preventing errors … remains far more effective”."
+    },
+    {
+     "type": "short",
+     "prompt": "What do researchers call the tendency to keep relying on corrected information? Write NO MORE THAN THREE WORDS.",
+     "answer": "continued influence effect",
+     "why": "Đoạn B."
+    },
+    {
+     "type": "short",
+     "prompt": "In the experiment, what was the real cause of the fire? Write NO MORE THAN TWO WORDS.",
+     "answer": "electrical fault",
+     "why": "Đoạn C: “caused by an electrical fault”."
+    },
+    {
+     "type": "short",
+     "prompt": "What name is given to the approach of placing false claims between accurate information? Write NO MORE THAN TWO WORDS.",
+     "answer": "truth sandwich",
+     "why": "Đoạn D."
+    },
+    {
+     "type": "short",
+     "prompt": "According to one editor, a correction is a repair, not what? Write ONE WORD.",
+     "answer": "guarantee",
+     "why": "Đoạn F: “a correction is a repair, not a guarantee”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Repeating a false claim in a correction headline can sometimes strengthen belief in it.",
+     "answer": "TRUE",
+     "why": "Đoạn D."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "A radio producer describes her day",
+   "section": "Section 2 · sentence completion",
+   "strategy": "Sentence completion: đọc trước các câu để biết thông tin cần nghe; chú ý giới hạn số từ và từ đồng nghĩa.",
+   "pre_listening": "Trước khi nghe: xác định mỗi chỗ trống cần giờ, số hay danh từ chỉ công việc.",
+   "trap": "Giờ giấc có thể được nhắc theo lịch cũ rồi sửa.",
+   "strategies": [
+    "Word limits",
+    "Times",
+    "Paraphrase"
+   ],
+   "transcript": "Interviewer: Today on Careers in Media I'm talking to Hannah Cole, a producer on the morning news programme at City Radio. Hannah, what does a typical day look like?\nHannah: It starts very early. My alarm goes off at half past three, and I'm in the newsroom by four fifteen. The programme goes on air at six, so there's less than two hours to prepare.\nInterviewer: What's the first thing you do?\nHannah: I read through the overnight reports from our correspondents and check the main news agencies. Then I meet the presenters and we agree on a running order – that's the list of stories in the order they'll be broadcast.\nInterviewer: How do you decide which story comes first?\nHannah: We ask how many of our listeners will be directly affected. A national story might be bigger in general, but if there's a major road closure in the city at rush hour, that often goes first, because it changes people's plans that morning.\nInterviewer: What about interviews?\nHannah: Booking guests is probably the hardest part. We used to rely mainly on phone interviews, but now most guests join us by video link, even though we only broadcast the audio. It gives a more natural conversation.\nInterviewer: What happens if a big story breaks while you're on air?\nHannah: Then we drop whatever is least important. We have a rule that nothing goes out until it's confirmed by at least two sources, even if other stations are reporting it already.\nInterviewer: And when does your day end?\nHannah: The programme finishes at nine, then we have a short meeting to discuss what went well and what didn't. I'm usually home by one in the afternoon – and in bed by eight in the evening.\nInterviewer: What advice would you give someone who wants to do your job?\nHannah: Get as much practical experience as you can, for example on student or community radio. Employers care much more about whether you can work under pressure than about which degree you studied.",
+   "questions": [
+    {
+     "prompt": "Hannah arrives in the newsroom at ______.",
+     "answer": "4:15",
+     "why": "“I'm in the newsroom by four fifteen.”"
+    },
+    {
+     "prompt": "The programme goes on air at ______.",
+     "answer": "6",
+     "why": "“The programme goes on air at six”."
+    },
+    {
+     "prompt": "The list of stories in broadcast order is called the ______.",
+     "answer": "running order",
+     "why": "“a running order”."
+    },
+    {
+     "prompt": "A major road ______ in the city often goes first.",
+     "answer": "closure",
+     "why": "“a major road closure in the city at rush hour”."
+    },
+    {
+     "prompt": "Most guests now join by ______.",
+     "answer": "video link",
+     "why": "Trước dùng điện thoại; nay “by video link”."
+    },
+    {
+     "prompt": "Nothing is broadcast until confirmed by at least ______ sources.",
+     "answer": "2",
+     "why": "“confirmed by at least two sources”."
+    },
+    {
+     "prompt": "The programme finishes at ______.",
+     "answer": "9",
+     "why": "“The programme finishes at nine”."
+    },
+    {
+     "prompt": "Hannah is usually home by ______ in the afternoon.",
+     "answer": "1",
+     "why": "“home by one in the afternoon”."
+    },
+    {
+     "prompt": "Employers care most about whether you can work under ______.",
+     "answer": "pressure",
+     "why": "“whether you can work under pressure”."
+    }
+   ]
+  },
+  {
+   "title": "How a fact-check is produced",
+   "section": "Section 4 · flow-chart completion",
+   "strategy": "Flow-chart theo trình tự quy trình; nghe các từ chỉ bước (first, the next step, once, finally).",
+   "strategies": [
+    "Process stages",
+    "Key nouns",
+    "Sequence"
+   ],
+   "transcript": "Lecturer: In today's session, I'll walk you through how an independent fact-checking organisation produces a published fact-check, using the fictional organisation ClearFacts as an example.\nThe process begins with claim selection. ClearFacts receives hundreds of suggestions every week, from readers and from its own monitoring of speeches, debates and viral posts. It can only check a small number, so it prioritises claims that are widely shared, that concern important public issues, and that can actually be checked against evidence. Opinions, such as 'this policy is unfair', are not checked, because they can't be proved true or false.\nThe next step is contacting the person or organisation who made the claim. They are asked to provide their source. This step matters, because a claim that looks false may turn out to be based on a source the fact-checker hadn't considered.\nThen comes the research stage. Fact-checkers look for primary sources – original data, official documents, court records – rather than relying on other people's summaries. Where the evidence is technical, they consult at least one independent expert.\nOnce the research is complete, the fact-checker writes a draft and assigns a rating. ClearFacts uses a five-point scale, from 'accurate' to 'false', with a separate category, 'missing context', for claims that are technically true but misleading.\nThe draft is then reviewed by a second editor, who checks every source independently. If the two disagree about the rating, a third editor makes the final decision.\nFinally, the fact-check is published together with links to all its sources, so that readers can check the evidence for themselves. ClearFacts also sends the result to the person who made the claim and asks whether they will correct it. According to its annual report, around one in four do. Most of the others simply don't respond, and a small number publicly challenge the fact-check, in which case ClearFacts reviews the evidence again and publishes the outcome of that review as well.",
+   "questions": [
+    {
+     "prompt": "Stage 1: claim ______",
+     "answer": "selection",
+     "why": "“The process begins with claim selection.”"
+    },
+    {
+     "prompt": "Not checked: ______, because they cannot be proved true or false",
+     "answer": "opinions",
+     "why": "“Opinions … are not checked”."
+    },
+    {
+     "prompt": "Stage 2: the claimant is asked to provide their ______",
+     "answer": "source",
+     "why": "“They are asked to provide their source.”"
+    },
+    {
+     "prompt": "Stage 3: fact-checkers look for ______ sources",
+     "answer": "primary",
+     "why": "“they look for primary sources”."
+    },
+    {
+     "prompt": "For technical evidence, at least one independent ______ is consulted",
+     "answer": "expert",
+     "why": "“consult at least one independent expert”."
+    },
+    {
+     "prompt": "Stage 4: ratings use a ______-point scale",
+     "answer": "five",
+     "why": "“a five-point scale”."
+    },
+    {
+     "prompt": "Category for true but misleading claims: missing ______",
+     "answer": "context",
+     "why": "“'missing context'”."
+    },
+    {
+     "prompt": "If two editors disagree, a ______ editor decides",
+     "answer": "third",
+     "why": "“a third editor makes the final decision”."
+    },
+    {
+     "prompt": "Proportion of claimants who correct their claim: about one in ______",
+     "answer": "four",
+     "why": "“around one in four do”."
+    }
+   ]
+  },
+  {
+   "title": "Students plan a media survey",
+   "section": "Section 3 · multiple choice",
+   "strategy": "Thảo luận lập kế hoạch: nghe ý kiến được chấp nhận và lý do loại bỏ phương án khác.",
+   "strategies": [
+    "Rejected options",
+    "Reasons",
+    "Decisions"
+   ],
+   "transcript": "Tutor: So, Ruby and Daniel, what's the focus of your media survey?\nRuby: We want to find out where students get their news and how much they trust different sources.\nDaniel: Originally we planned to survey students across the whole university, but we realised we wouldn't get enough responses in time, so we'll focus on first-year students in three faculties.\nTutor: Sensible. How will you collect the data?\nRuby: We thought about interviews, but they take too long to analyse. So we're using an online questionnaire, with a few open questions at the end.\nTutor: What about the trust questions? Those can be tricky.\nDaniel: Yes, we're asking students to rate each source on a scale from one to five. We considered a ten-point scale, but in our pilot people found it hard to choose between, say, six and seven.\nRuby: We also added a question asking students whether they check stories before sharing them. In the pilot, almost everyone said yes, which makes us suspicious.\nTutor: That's social desirability – people giving the answer they think is expected. How will you deal with it?\nRuby: We'll ask a more specific question: 'In the last week, did you check a news story using another source before sharing it?' That's harder to answer dishonestly without noticing.\nTutor: Good. When will you present the results?\nDaniel: The presentation is due on the twenty-third, so we'll close the questionnaire on the tenth to give us time for analysis.\nTutor: And how will you present the data?\nRuby: Mostly bar charts comparing the faculties, and one pie chart showing the main source of news overall.\nTutor: Fine. Just make sure you report how many people answered each question – not everyone will complete the whole survey.\nDaniel: Should we include the open answers in the presentation?\nTutor: Yes, a few short quotations can bring the numbers to life, but choose ones that are typical, not just the most surprising.",
+   "questions": [
+    {
+     "prompt": "Who will the survey focus on?",
+     "options": [
+      "A. All students at the university",
+      "B. First-year students in three faculties",
+      "C. Final-year students"
+     ],
+     "answer": "B. First-year students in three faculties",
+     "why": "Kế hoạch toàn trường bị thay; tập trung vào sinh viên năm nhất ba khoa."
+    },
+    {
+     "prompt": "Why did they reject interviews?",
+     "options": [
+      "A. They take too long to analyse.",
+      "B. Students refused.",
+      "C. The tutor disliked them."
+     ],
+     "answer": "A. They take too long to analyse.",
+     "why": "“they take too long to analyse”."
+    },
+    {
+     "prompt": "What scale will they use for trust questions?",
+     "options": [
+      "A. One to three",
+      "B. One to five",
+      "C. One to ten"
+     ],
+     "answer": "B. One to five",
+     "why": "Thang 10 bị loại sau pilot; dùng thang 1–5."
+    },
+    {
+     "prompt": "What was suspicious in the pilot?",
+     "options": [
+      "A. Almost everyone said they checked stories.",
+      "B. Few people answered.",
+      "C. Students trusted all sources."
+     ],
+     "answer": "A. Almost everyone said they checked stories.",
+     "why": "“almost everyone said yes, which makes us suspicious”."
+    },
+    {
+     "prompt": "What does the tutor call this problem?",
+     "options": [
+      "A. Selection bias",
+      "B. Social desirability",
+      "C. Confirmation bias"
+     ],
+     "answer": "B. Social desirability",
+     "why": "“That's social desirability”."
+    },
+    {
+     "prompt": "How will they reduce the problem?",
+     "options": [
+      "A. By removing the question",
+      "B. By asking a more specific question about the last week",
+      "C. By interviewing students"
+     ],
+     "answer": "B. By asking a more specific question about the last week",
+     "why": "Câu hỏi cụ thể “In the last week…”."
+    },
+    {
+     "prompt": "When will the questionnaire close?",
+     "options": [
+      "A. On the 10th",
+      "B. On the 13th",
+      "C. On the 23rd"
+     ],
+     "answer": "A. On the 10th",
+     "why": "Hạn thuyết trình 23; đóng khảo sát ngày 10."
+    },
+    {
+     "prompt": "What will the pie chart show?",
+     "options": [
+      "A. Trust in each source",
+      "B. The main source of news overall",
+      "C. Differences between faculties"
+     ],
+     "answer": "B. The main source of news overall",
+     "why": "“one pie chart showing the main source of news overall”."
+    },
+    {
+     "prompt": "What does the tutor ask them to report?",
+     "options": [
+      "A. How many people answered each question",
+      "B. The names of respondents",
+      "C. The cost of the survey"
+     ],
+     "answer": "A. How many people answered each question",
+     "why": "“report how many people answered each question”."
+    }
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 1 – comparing pie charts",
+  "instruction_vi": "Hai biểu đồ tròn ở hai thời điểm: overview nêu nguồn lớn nhất và thay đổi nổi bật nhất; thân bài nhóm các nguồn tăng và các nguồn giảm, dùng ngôn ngữ tỉ trọng (accounted for, a quarter, the largest share). Viết ít nhất 150 từ (mục tiêu 170–190).",
+  "task": "The pie charts show the main source of news for adults in one country in 2010 and 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "data_visual": {
+   "headers": [
+    "Main source of news",
+    "2010",
+    "2025"
+   ],
+   "rows": [
+    [
+     "Television",
+     "52%",
+     "28%"
+    ],
+    [
+     "Printed newspapers",
+     "21%",
+     "6%"
+    ],
+    [
+     "Radio",
+     "11%",
+     "9%"
+    ],
+    [
+     "News websites and apps",
+     "12%",
+     "31%"
+    ],
+    [
+     "Social media",
+     "4%",
+     "26%"
+    ]
+   ]
+  },
+  "sample_answer": "The pie charts compare the main source of news for adults in one country in 2010 and 2025.\n\nOverall, there was a clear shift from traditional to digital sources. Television, which was by far the dominant source in 2010, lost its leading position to news websites and apps, while social media grew from a marginal source into one of the most important.\n\nIn 2010, more than half of adults (52%) relied mainly on television for news. Printed newspapers were the second most common source, at 21%, followed by news websites and apps (12%) and radio (11%). Social media accounted for only 4% of adults.\n\nBy 2025, the share of adults who depended on television had fallen to 28%, and printed newspapers had declined even more sharply, to just 6%. Radio remained relatively stable at 9%. In contrast, news websites and apps became the largest single source, rising to 31%, and social media increased more than sixfold, to 26%. As a result, digital sources together accounted for well over half of all adults in 2025.",
+  "guidance": [
+   "Câu mở đầu: paraphrase (main source of news, adults, two years).",
+   "Overview: chuyển dịch từ truyền thống sang số; nguồn dẫn đầu thay đổi.",
+   "Thân bài 1: năm 2010 – xếp hạng bằng more than half, followed by, accounted for.",
+   "Thân bài 2: 2025 – nhóm giảm (fallen to, declined sharply) và nhóm tăng (rose to, increased sixfold)."
+  ],
+  "micro": [
+   [
+    "Diễn đạt 52% bằng cụm khác.",
+    "more than half of adults"
+   ],
+   [
+    "Mô tả social media 4% → 26%.",
+    "Social media increased more than sixfold, from 4% to 26%."
+   ],
+   [
+    "Câu overview về sự chuyển dịch.",
+    "Overall, there was a clear shift from traditional to digital sources of news."
+   ],
+   [
+    "Dùng “remained relatively stable” cho radio.",
+    "Radio remained relatively stable, falling only slightly from 11% to 9%."
+   ],
+   [
+    "Câu tổng hợp nguồn số năm 2025.",
+    "Digital sources together accounted for well over half of adults in 2025."
+   ]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 1. The pie charts show how adults in one country spent their leisure time on media in 2005 and 2025. Summarise the main features and make comparisons. Write at least 150 words.",
+  "essay": {
+   "prompt": "Some people believe that media literacy should be a compulsory subject at school. To what extent do you agree or disagree?",
+   "planning_prompts": [
+    "Mở bài: lập trường (đồng ý, nhưng tích hợp vào nhiều môn hơn là một môn riêng).",
+    "Thân bài 1: lý do – môi trường thông tin không có người gác cổng, tin giả, quảng cáo trá hình.",
+    "Thân bài 2: phản biện – chương trình đã quá tải, giáo viên chưa được đào tạo; giải pháp.",
+    "Kết luận: trả lời rõ mức độ đồng ý."
+   ],
+   "model_paragraphs": [
+    "Young people today encounter more information than any previous generation, much of it through social media rather than professional news organisations. Some argue that schools should therefore make media literacy a compulsory subject. I agree that all students should be taught these skills, although I believe they are best integrated into existing subjects rather than taught as a separate course.",
+    "The case for compulsory media literacy is strong. Unlike traditional newspapers or television, social media platforms do not check information before it reaches users, so young people must judge for themselves whether a claim is reliable. Without guidance, they may be misled by edited videos, advertising presented as independent advice, or false stories designed to provoke strong emotions. Teaching students to ask who produced a piece of information, what evidence supports it and what might have been left out gives them skills that will be useful throughout their lives.",
+    "Nevertheless, there are practical objections. School timetables are already crowded, and many teachers have not been trained to teach these skills. Adding a new compulsory subject could mean reducing time for others, such as languages or science. Moreover, media literacy taught in isolation may feel abstract to students.",
+    "A better solution would be to build media literacy into subjects where it naturally belongs. History lessons can examine the reliability of sources, science lessons can discuss how to judge research claims, and language lessons can analyse persuasive techniques in advertisements and news. This approach makes the skills compulsory for everyone without creating an additional subject.",
+    "In conclusion, I strongly agree that every student should learn media literacy, as it is essential in today's information environment. However, it should be integrated across the curriculum rather than taught as a separate compulsory subject."
+   ]
+  },
+  "drills": [
+   [
+    "Sửa lỗi: Television was 52% in 2010.",
+    "Television was the main source of news for 52% of adults in 2010.",
+    "Nêu rõ 52% của nhóm nào."
+   ],
+   [
+    "Sửa lỗi: Social media increased six times.",
+    "The share of adults relying on social media increased more than sixfold.",
+    "Dùng sixfold; chủ ngữ rõ ràng."
+   ],
+   [
+    "Sửa lỗi: The spokesperson denied to know about the report.",
+    "The spokesperson denied knowing about the report.",
+    "deny + V-ing."
+   ],
+   [
+    "Viết lại học thuật hơn: Newspapers became very unpopular.",
+    "The proportion of adults relying on printed newspapers declined sharply, to just 6%.",
+    "Mô tả bằng số liệu và động từ xu hướng."
+   ],
+   [
+    "Sửa lỗi: The editor suggested to correct the headline.",
+    "The editor suggested correcting the headline.",
+    "suggest + V-ing."
+   ],
+   [
+    "Sửa lỗi: Overall, television fell from 52% to 28% and social media rose from 4% to 26%.",
+    "Overall, digital sources replaced television as the main way adults obtained news.",
+    "Overview không đưa số chi tiết."
+   ]
+  ]
+ },
+ "speaking": {
+  "title": "News and the media",
+  "instruction_vi": "Part 3 về truyền thông: dùng động từ tường thuật khi nhắc ý kiến người khác (experts warn that…, some people claim…) và phân biệt fact với opinion.",
+  "focus": "Tường thuật ý kiến người khác chính xác và nêu mức độ tin cậy của thông tin (it's been confirmed that…, some people claim…).",
+  "part1": [
+   "How do you usually find out about the news?",
+   "Do you watch the news on television?",
+   "What kind of news interests you most?",
+   "Do you trust news you see on social media?"
+  ],
+  "part2": "Describe a news story that you followed closely. You should say what the story was about, where you found out about it, how it developed, and explain why you followed it closely.",
+  "part3": [
+   "Should media literacy be taught at school?",
+   "Why do false stories sometimes spread faster than true ones?",
+   "Is there still a need for public television channels?"
+  ],
+  "model_answer": "One news story I followed very closely was about a serious flood in central Vietnam a few years ago. I first heard about it on social media, where people were sharing videos of streets completely under water, but at first I wasn't sure how reliable they were, because some of the clips turned out to be from earlier floods in other places. So I started checking the national news websites and a public television channel, which gave regular updates on how many people had been evacuated and which roads were closed. What made me follow it so closely was that some of my relatives live in that area. For a couple of days we couldn't contact them because the phone lines were down, so I was refreshing the news almost every hour. Fortunately, they were safe. Looking back, the experience changed how I use the news. I realised that social media is very fast, but it can also be confusing and sometimes misleading, whereas the official sources were slower but much more accurate. Since then, I always try to check where a video or photo comes from before I share it, especially during emergencies.",
+  "extensions": [
+   [
+    "Should media literacy be taught at school?",
+    "Đồng ý → lý do (mạng xã hội không kiểm duyệt, tin giả) → cách dạy tích hợp → giới hạn thời gian biểu."
+   ],
+   [
+    "Why do false stories sometimes spread faster than true ones?",
+    "Cơ chế: cảm xúc mạnh, mới lạ, chia sẻ trước khi đọc → ví dụ → giải pháp: chậm lại trước khi chia sẻ."
+   ],
+   [
+    "Is there still a need for public television channels?",
+    "Lập trường có điều kiện → vai trò tin tức khách quan, vùng miền → thách thức người trẻ → thích nghi online."
+   ],
+   [
+    "Should social media companies be responsible for false information?",
+    "Đồng ý một phần → khả năng kỹ thuật và lợi nhuận → rủi ro kiểm duyệt → minh bạch và hợp tác với nhà báo."
+   ]
+  ]
+ },
+ "checkpoint": [
+  [
+   "In matching sentence endings, the correct ending must…",
+   [
+    "fit grammatically only",
+    "fit both grammar and meaning according to the passage",
+    "repeat words from the passage",
+    "be the shortest option"
+   ],
+   "fit both grammar and meaning according to the passage",
+   "Phần kết phải đúng ngữ pháp và nghĩa."
+  ],
+  [
+   "Which sentence is correct?",
+   [
+    "The company denied to receive the warning.",
+    "The company denied receiving the warning.",
+    "The company denied that receive the warning.",
+    "The company denied receive the warning."
+   ],
+   "The company denied receiving the warning.",
+   "deny + V-ing."
+  ],
+  [
+   "“A witness told us that…” signals that the information is…",
+   [
+    "confirmed by police",
+    "a claim not yet verified",
+    "the reporter's opinion",
+    "false"
+   ],
+   "a claim not yet verified",
+   "Lời nhân chứng chưa được xác nhận độc lập."
+  ],
+  [
+   "The 'truth sandwich' technique means…",
+   [
+    "starting and ending with accurate information",
+    "repeating the false claim in the headline",
+    "avoiding corrections",
+    "publishing two versions"
+   ],
+   "starting and ending with accurate information",
+   "Bắt đầu và kết thúc bằng thông tin chính xác."
+  ],
+  [
+   "In a pie chart task, which phrase describes a share most accurately?",
+   [
+    "Television was 52.",
+    "Television accounted for 52% of adults' main news source.",
+    "Television had more.",
+    "Television was the most popular one percent."
+   ],
+   "Television accounted for 52% of adults' main news source.",
+   "Dùng accounted for + %."
+  ]
+ ],
+ "reflection": [
+  "Trong matching sentence endings, bạn có chọn phần kết chỉ vì đúng ngữ pháp không?",
+  "Bài biểu đồ tròn của bạn có overview nêu sự chuyển dịch chính chưa?"
+ ],
+ "vocabulary": [
+  [
+   "editorial independence",
+   "độc lập biên tập",
+   "Editorial independence can protect journalism from pressure."
+  ],
+  [
+   "information ecosystem",
+   "hệ sinh thái thông tin",
+   "The information ecosystem includes many platforms."
+  ],
+  [
+   "audience fragmentation",
+   "phân mảnh khán giả",
+   "Audience fragmentation changes advertising models."
+  ],
+  [
+   "public broadcaster",
+   "đài truyền hình công",
+   "A public broadcaster has civic responsibilities."
+  ],
+  [
+   "correction policy",
+   "chính sách cải chính",
+   "The correction policy explains how errors are fixed."
+  ],
+  [
+   "misinformation",
+   "thông tin sai lệch",
+   "Misinformation can spread rapidly online."
+  ],
+  [
+   "media regulation",
+   "quản lý truyền thông",
+   "Media regulation may protect pluralism."
+  ],
+  [
+   "source transparency",
+   "minh bạch nguồn",
+   "Source transparency helps readers assess claims."
+  ],
+  [
+   "news framing",
+   "cách đóng khung tin tức",
+   "News framing affects which details receive attention."
+  ],
+  [
+   "editorial judgement",
+   "quyết định biên tập",
+   "Editorial judgement is unavoidable in reporting."
+  ],
+  [
+   "independent verification",
+   "xác minh độc lập",
+   "Independent verification is necessary for major claims."
+  ],
+  [
+   "public-interest reporting",
+   "đưa tin vì lợi ích cộng đồng",
+   "Public-interest reporting investigates important issues."
+  ],
+  [
+   "verification standard",
+   "tiêu chuẩn xác minh",
+   "Verification standards protect factual accuracy."
+  ],
+  [
+   "editorial transparency",
+   "minh bạch biên tập",
+   "Editorial transparency builds audience trust."
+  ],
+  [
+   "provisional claim",
+   "tuyên bố tạm thời",
+   "Provisional claims may be revised."
+  ],
+  [
+   "public correction log",
+   "nhật ký cải chính",
+   "A public correction log records changes."
+  ],
+  [
+   "source document",
+   "tài liệu gốc",
+   "The reporter linked the source document."
+  ],
+  [
+   "independent newsroom",
+   "tòa soạn độc lập",
+   "Independent newsrooms face financial pressure."
+  ],
+  [
+   "reporting constraint",
+   "giới hạn đưa tin",
+   "Reporting constraints include limited time."
+  ],
+  [
+   "misleading context",
+   "bối cảnh gây hiểu lầm",
+   "Misleading context can distort a true statement."
+  ]
+ ],
+ "v3_enrichment": {
+  "coaching": {
+   "core": "Tách biệt sự kiện, quan điểm và độ chắc chắn trong truyền thông",
+   "terms": [
+    "framing and omission",
+    "verification and correction",
+    "reported fact versus interpretation"
+   ],
+   "example": "A headline can be technically accurate yet misleading if it hides a small sample or omits the original time period.",
+   "trap": "Dùng kiến thức ngoài bài đọc để trả lời Not Given.",
+   "reading_focus": "T/F/NG and matching information across news passages",
+   "listening_focus": "Following editorial discussion and revised plans",
+   "writing1": "stacked",
+   "speaking_issue": "Should media literacy be compulsory at school?",
+   "deep": {
+    "grammar": "Trong Writing Task 1, 'rose by 23 percentage points' khác với 'rose to 23 per cent'. Dùng 'overtook' khi một nhóm vượt nhóm khác theo cùng đại lượng và thời gian; 'remained' khi vẫn giữ trạng thái. Tránh 'the most highest' và mô tả sai đơn vị khi một bảng pha trộn phần trăm và số lượng.",
+    "reading": "News literacy: tác giả có thể phân biệt 'a report was published' với 'its claim was verified'. Trong True/False/Not Given, câu hỏi về động cơ nhà báo hoặc tỷ lệ độc giả nếu bài không cung cấp là NOT GIVEN, dù bạn có dự đoán hợp lý. Gạch chân những khẳng định có số liệu và đặt câu hỏi nguồn chứng cứ ở đâu.",
+    "listening": "Trong biên tập tin, deadline và correction có thể thay đổi. Tìm các cụm 'we will run that tomorrow instead', 'we have decided not to use it' để phát hiện lựa chọn cuối cùng. Nếu một người giải thích một ý nhưng người khác phản đối, đừng gộp hai ý thành quan điểm chung.",
+    "writing": "Essay về media literacy: Body 1 có thể chứng minh kỹ năng đánh giá nguồn giúp giảm lan truyền thông tin sai; Body 2 đề xuất giới hạn về thời lượng chương trình và đào tạo giáo viên. Phân tích kết quả hợp lý thay vì hứa kỹ năng này sẽ loại bỏ hoàn toàn tin giả. Đưa một ví dụ mini về kiểm tra tác giả/ngày công bố."
+   }
+  },
+  "writing_task1_template": [
+   "Intro: Paraphrase what the visual compares, without inventing a reason.",
+   "Overview: Report the largest change and a meaningful contrast.",
+   "Body 1: Group comparable categories and support with figures.",
+   "Body 2: Describe contrasts and exceptions, use accurate units."
+  ],
+  "writing_task2_template": [
+   "Intro: Paraphrase the problem and state a clear answer.",
+   "Body 1: Claim -> why -> concrete illustration -> implication.",
+   "Body 2: Second argument or contrasting view, with measured concession.",
+   "Conclusion: Answer the exact question without adding new evidence."
+  ],
+  "speaking_part3_template": [
+   "Give an answer and its scope.",
+   "Explain the mechanism or trade-off.",
+   "Offer a concrete but non-generalised example.",
+   "Recognise a limitation, comparison or alternative."
+  ]
+ }
+}

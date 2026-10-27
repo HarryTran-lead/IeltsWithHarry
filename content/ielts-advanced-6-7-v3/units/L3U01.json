@@ -1,0 +1,1007 @@
+{
+ "unit_id": "L3U01",
+ "order": 1,
+ "title": "Urban and Rural Life",
+ "title_vi": "Đời sống đô thị và nông thôn",
+ "objectives": [
+  "Chọn heading cho đoạn dài: tách luận điểm chính khỏi ví dụ và số liệu minh họa",
+  "Nhận ra giới hạn của bằng chứng chính sách: liên hệ (association) khác nhân quả (causation)",
+  "Viết Task 1 so sánh bảng số liệu theo nhóm, phân biệt percentage points và per cent",
+  "Mở rộng câu trả lời Part 1–2 về nơi sống bằng chi tiết và so sánh trước–nay"
+ ],
+ "exam_strategy": "Matching headings ở band 6–7: heading đúng thường diễn đạt lại ý của cả đoạn bằng từ trừu tượng hơn (ví dụ “an unintended consequence”); heading sai hay lấy một ví dụ cụ thể trong đoạn.",
+ "core_outcome": "Đọc đoạn văn chính sách để tìm luận điểm chính và giới hạn của bằng chứng; viết Task 1 có overview so sánh nhóm chứ không kể từng ô số liệu.",
+ "grammar": {
+  "title": "Precise comparison and the limits of inference",
+  "explanation_vi": "Ở band 6–7, so sánh phải chính xác về đại lượng: từ 40% lên 50% là tăng 10 percentage points nhưng tăng tương đối 25 per cent. Dùng whereas/while để đặt hai xu hướng song song, by contrast để mở câu mới đối lập, và các cụm thận trọng (is associated with, does not necessarily imply) khi dữ liệu chỉ cho thấy mối liên hệ chứ không chứng minh nguyên nhân.",
+  "form": "A rose by X percentage points, whereas B … · compared with / in comparison to … · considerably / marginally + so sánh hơn · X is associated with Y · This does not necessarily imply that …",
+  "examples": [
+   "Whereas access to clinics improved in the cities, the rural figure rose only marginally.",
+   "The gap narrowed from 18 to 11 percentage points over the period.",
+   "Higher broadband use is associated with new businesses, but this does not necessarily imply that one caused the other."
+  ],
+  "examples_vi": [
+   "Trong khi khả năng tiếp cận phòng khám ở thành phố được cải thiện, con số ở nông thôn chỉ tăng nhẹ.",
+   "Khoảng cách thu hẹp từ 18 xuống 11 điểm phần trăm trong giai đoạn này.",
+   "Tỉ lệ dùng băng thông rộng cao hơn có liên quan đến doanh nghiệp mới, nhưng điều đó không nhất thiết cho thấy cái này gây ra cái kia."
+  ],
+  "trap": "Không viết “increased by 10%” khi số liệu đi từ 40% lên 50% (đúng: by 10 percentage points). Không dùng “prove” hay “cause” khi dữ liệu chỉ cho thấy hai xu hướng xảy ra cùng lúc.",
+  "items": [
+   [
+    "The share rose from 40% to 50%, an increase of ten percentage ___.",
+    "points",
+    "Hiệu số giữa hai tỉ lệ đo bằng percentage points."
+   ],
+   [
+    "The same change represents a relative increase of ___ per cent. (một số)",
+    "25",
+    "(50 − 40) ÷ 40 = 0,25 → tăng tương đối 25%."
+   ],
+   [
+    "Urban incomes grew quickly, ___ rural incomes barely changed. (một từ nối hai mệnh đề đối lập)",
+    "whereas",
+    "whereas nối hai mệnh đề trái ngược trong cùng một câu."
+   ],
+   [
+    "Rural bus use fell sharply. By ___, rail use remained stable.",
+    "contrast",
+    "By contrast mở câu mới đối lập với câu trước."
+   ],
+   [
+    "Fast broadband is associated ___ business start-ups.",
+    "with",
+    "be associated with = có liên hệ với (không khẳng định nhân quả)."
+   ],
+   [
+    "The correlation does not necessarily ___ that the policy worked. (động từ)",
+    "imply",
+    "does not necessarily imply = không nhất thiết cho thấy."
+   ],
+   [
+    "The gap was ___ larger in 2012 than in 2025. (considerably / considerable)",
+    "considerably",
+    "Trạng từ considerably bổ nghĩa cho so sánh hơn larger."
+   ],
+   [
+    "Correct the error: The rural figure increased 8% from 30% to 38%.",
+    "The rural figure increased by eight percentage points, from 30% to 38%.",
+    "Thiếu by; chênh lệch giữa hai tỉ lệ là percentage points."
+   ]
+  ]
+ },
+ "readings": [
+  {
+   "title": "The uneven geography of opportunity",
+   "strategy": "Đọc câu chủ đề và câu cuối mỗi đoạn, tóm tắt ý chính trong 6–8 từ, rồi mới so với danh sách heading. Heading chứa một ví dụ cụ thể (tên thị trấn, con số) thường là bẫy.",
+   "instruction_vi": "Bài đọc khoảng 850 từ, 13 câu: chọn heading cho 6 đoạn (B–G), 4 câu TRUE/FALSE/NOT GIVEN và 3 câu short-answer.",
+   "headings": [
+    "i. Why connection does not guarantee opportunity",
+    "ii. The hidden cost of measuring the wrong thing",
+    "iii. When moving services may help some and harm others",
+    "iv. A long-standing pattern with new causes",
+    "v. Why those who stay are not a random group",
+    "vi. Evidence that cities always benefit from growth",
+    "vii. A case for patient, local evaluation",
+    "viii. The record of national relocation schemes",
+    "ix. The decline of farming as an industry"
+   ],
+   "paragraphs": [
+    [
+     "A",
+     "In almost every country, the chances available to a young person depend partly on where they grow up. A teenager in a large city can usually reach several universities, specialist hospitals and hundreds of employers within an hour, while a teenager in a remote valley may have to leave home to find any of them. Economists call this regional disparity, and for most of the twentieth century governments treated it as a problem that economic growth would gradually solve. The evidence of the last three decades suggests that this hope was too optimistic. Regional gaps in income, health and education have narrowed in some countries, but in many others they have stayed the same or even widened, despite decades of public spending intended to reduce them."
+    ],
+    [
+     "B",
+     "The pattern itself is not new. Rural areas lost population to cities throughout the industrial era, as factories and offices offered higher wages than agriculture. What has changed is the reason for the gap. Today, the most valuable jobs tend to cluster in a small number of metropolitan areas, where firms benefit from being close to one another and to large pools of skilled workers. As a result, even regions with good transport links can find that their young graduates leave and do not return, a process demographers describe as rural depopulation."
+    ],
+    [
+     "C",
+     "Governments have often responded by improving connections. New motorways, faster trains and rural broadband are all justified on the grounds that they will bring opportunity to places that lack it. Yet a road runs in two directions. In several of the regions studied by the fictional Northfield Institute, improved transport connectivity made it easier for residents to commute to the city, but it also allowed city-based retailers to deliver to rural customers, and a number of small local shops closed. Connection, in other words, can expose a weaker local economy to stronger competition as well as open new markets to it."
+    ],
+    [
+     "D",
+     "A second strategy is decentralisation: moving government offices, universities or hospitals out of the capital. Supporters argue that each relocated institution brings secure jobs and attracts private businesses. Critics point out that the benefits are often concentrated in the host town itself, while surrounding villages see little change, and that some specialist staff simply refuse to move. One relocation programme examined by the Institute increased employment in its three host towns but coincided with longer waiting times for patients in the capital, where a specialist clinic had been reduced in size."
+    ],
+    [
+     "E",
+     "Measuring the results of such policies is itself a difficult task. Many programmes have been judged by the number of jobs created or the amount of money invested, figures that are easy to collect but may say little about whether residents' lives have improved. A new factory might employ hundreds of people who commute from elsewhere, leaving local unemployment unchanged. When an evaluation metric rewards activity rather than outcomes, officials may continue to fund schemes that look successful on paper while the underlying accessibility gap remains as wide as ever."
+    ],
+    [
+     "F",
+     "Researchers face a further problem when they compare people who move with those who stay. It is tempting to conclude that rural residents earn less because they live in rural areas, but the people who choose to remain may differ in important ways from those who leave: they may have family responsibilities, own property or simply prefer a quieter life. This is known as self-selection bias, and it means that a simple comparison between urban and rural incomes can exaggerate, or occasionally understate, the effect of place itself."
+    ],
+    [
+     "G",
+     "For these reasons, the Institute's report argues for a slower and more local approach. Instead of announcing large national schemes, it recommends small trials in a variety of regions, with residents involved in choosing what to measure. A transport subsidy, for example, should be judged not only by how many tickets are sold, but by whether people can reach work, education and healthcare more easily than before. The authors admit that this approach is less dramatic, but they believe it is more likely to reveal what actually works."
+    ],
+    [
+     "H",
+     "None of this means that regional policy is pointless. Some regions that were once in decline have recovered by combining several measures at once: reliable public transport, good schools, affordable housing and support for local businesses. What the evidence suggests is that there is no single lever that can close the gap. Opportunity, it seems, depends less on any one connection than on the combination of services that allows people to build a life where they already are. The task for policy makers is therefore less glamorous than building a single landmark project, but it may prove far more durable."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "heading",
+     "paragraph": "B",
+     "prompt": "Choose the best heading for paragraph B.",
+     "answer": "iv. A long-standing pattern with new causes",
+     "why": "Đoạn B: xu hướng rời nông thôn không mới (“The pattern itself is not new”), nhưng nguyên nhân đã thay đổi (“What has changed is the reason”). Heading ix chỉ khớp một chi tiết."
+    },
+    {
+     "type": "heading",
+     "paragraph": "C",
+     "prompt": "Choose the best heading for paragraph C.",
+     "answer": "i. Why connection does not guarantee opportunity",
+     "why": "Đoạn C: “a road runs in two directions” – kết nối vừa mở thị trường vừa khiến cửa hàng địa phương phải cạnh tranh."
+    },
+    {
+     "type": "heading",
+     "paragraph": "D",
+     "prompt": "Choose the best heading for paragraph D.",
+     "answer": "iii. When moving services may help some and harm others",
+     "why": "Đoạn D: di dời cơ quan có lợi cho thị trấn nhận nhưng thời gian chờ ở thủ đô dài hơn. Heading viii quá chung, không nói tới mặt được–mất."
+    },
+    {
+     "type": "heading",
+     "paragraph": "E",
+     "prompt": "Choose the best heading for paragraph E.",
+     "answer": "ii. The hidden cost of measuring the wrong thing",
+     "why": "Đoạn E: chỉ số đo hoạt động (việc làm tạo ra, tiền đầu tư) có thể che giấu việc khoảng cách tiếp cận vẫn còn."
+    },
+    {
+     "type": "heading",
+     "paragraph": "F",
+     "prompt": "Choose the best heading for paragraph F.",
+     "answer": "v. Why those who stay are not a random group",
+     "why": "Đoạn F: self-selection bias – người ở lại khác người ra đi một cách có hệ thống."
+    },
+    {
+     "type": "heading",
+     "paragraph": "G",
+     "prompt": "Choose the best heading for paragraph G.",
+     "answer": "vii. A case for patient, local evaluation",
+     "why": "Đoạn G: đề xuất thử nghiệm nhỏ, chậm, có người dân tham gia chọn chỉ số."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Governments in the twentieth century expected economic growth to reduce regional differences.",
+     "answer": "TRUE",
+     "why": "Đoạn A: “governments treated it as a problem that economic growth would gradually solve”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Improved transport links in the Institute's study benefited every local business.",
+     "answer": "FALSE",
+     "why": "Đoạn C: “a number of small local shops closed”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The relocation programme reduced unemployment in the surrounding villages.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn D nói việc làm tăng ở ba thị trấn nhận và làng xung quanh “see little change” nói chung, nhưng không có số liệu thất nghiệp của làng trong chương trình này."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Self-selection bias always makes rural incomes appear lower than they really are.",
+     "answer": "FALSE",
+     "why": "Đoạn F: bias có thể “exaggerate, or occasionally understate” – không phải luôn một chiều."
+    },
+    {
+     "type": "short",
+     "prompt": "What term do demographers use for young people leaving rural regions? Write NO MORE THAN TWO WORDS.",
+     "answer": "rural depopulation",
+     "why": "Đoạn B: “a process demographers describe as rural depopulation”."
+    },
+    {
+     "type": "short",
+     "prompt": "According to paragraph E, what kind of metric may reward activity rather than outcomes? Write NO MORE THAN TWO WORDS.",
+     "answer": "evaluation metric",
+     "why": "Đoạn E: “When an evaluation metric rewards activity rather than outcomes”."
+    },
+    {
+     "type": "short",
+     "prompt": "Name ONE service, apart from public transport, that helped some declining regions recover. Write NO MORE THAN THREE WORDS.",
+     "answer": "good schools",
+     "why": "Đoạn H: “good schools, affordable housing and support for local businesses” – chấp nhận affordable housing."
+    }
+   ]
+  },
+  {
+   "title": "The broadband promise",
+   "strategy": "TRUE/FALSE/NOT GIVEN với số liệu: so khớp cả con số lẫn phạm vi (some/most/all) và mốc thời gian.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "When the regional government of the fictional province of Ardmoor announced that every village would receive high-speed broadband by 2020, the project was presented as a turning point. Fast internet, officials argued, would allow people to work remotely, start online businesses and use digital public services without travelling to the provincial capital. Digital inclusion became the central theme of the province's development strategy."
+    ],
+    [
+     "B",
+     "The physical work was largely completed on time. By the end of 2020, around ninety-four per cent of households could connect to a fast service, compared with just under forty per cent five years earlier. The remaining households, mostly isolated farms, were offered satellite connections at a subsidised price."
+    ],
+    [
+     "C",
+     "Take-up, however, was slower than expected. Two years after the network was finished, only about half of the households that could connect had actually done so. A survey commissioned by the province found that cost was not the main obstacle. Many older residents said they did not see what the internet would offer them, and a significant number lacked the confidence to use online services even when they had access. Younger households, by contrast, connected quickly, often within weeks of the service becoming available in their village."
+    ],
+    [
+     "D",
+     "The effect on employment has also been mixed. The number of residents who reported working from home for at least two days a week rose noticeably, particularly among people in professional occupations. Several new businesses, including a furniture workshop that sells mainly online, were set up in villages that had previously had no commercial activity at all. Yet the overall number of jobs in the province changed very little, and some economists argue that the remote workers were mainly people who would have moved to the province anyway, attracted by cheaper housing."
+    ],
+    [
+     "E",
+     "Recognising these limits, the province has shifted its attention from infrastructure to skills. Libraries and community centres now run free digital-skills sessions, and volunteers visit older residents at home to help them set up video calls with doctors. Officials admit that these measures are less visible than new cables, but they argue that a connection is only valuable if people are able and willing to use it."
+    ],
+    [
+     "F",
+     "Researchers studying the project warn against judging it too quickly. Changes in where people choose to live and work often take a decade or more to become clear, and the period since the network was completed has included several unusual economic shocks. For now, they suggest, the safest conclusion is that broadband has made new choices possible for some residents without transforming the economy of the province as a whole."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "tfng",
+     "prompt": "The broadband target for Ardmoor's villages was achieved roughly on schedule.",
+     "answer": "TRUE",
+     "why": "Đoạn B: “The physical work was largely completed on time.”"
+    },
+    {
+     "type": "tfng",
+     "prompt": "Five years before 2020, fewer than forty per cent of households could access a fast service.",
+     "answer": "TRUE",
+     "why": "Đoạn B: “just under forty per cent five years earlier”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Isolated farms received satellite connections free of charge.",
+     "answer": "FALSE",
+     "why": "Đoạn B: “at a subsidised price” – có trợ giá, không miễn phí."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Price was the most important reason why households did not connect.",
+     "answer": "FALSE",
+     "why": "Đoạn C: “cost was not the main obstacle”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The furniture workshop now employs more people than any other business in its village.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn D nhắc xưởng nội thất bán hàng online nhưng không nói số nhân viên."
+    },
+    {
+     "type": "short",
+     "prompt": "About what proportion of households able to connect had done so two years later? Write NO MORE THAN TWO WORDS.",
+     "answer": "about half",
+     "why": "Đoạn C: “only about half of the households” – chấp nhận half."
+    },
+    {
+     "type": "short",
+     "prompt": "Which group most often reported working from home? Write NO MORE THAN THREE WORDS.",
+     "answer": "professional occupations",
+     "why": "Đoạn D: “particularly among people in professional occupations”."
+    },
+    {
+     "type": "short",
+     "prompt": "What do volunteers help older residents set up? Write NO MORE THAN THREE WORDS.",
+     "answer": "video calls",
+     "why": "Đoạn E: “help them set up video calls with doctors”."
+    },
+    {
+     "type": "short",
+     "prompt": "How long can changes in where people live and work take to become clear? Write NO MORE THAN FOUR WORDS.",
+     "answer": "a decade or more",
+     "why": "Đoạn F: “often take a decade or more”."
+    }
+   ]
+  },
+  {
+   "title": "Two market towns, two outcomes",
+   "strategy": "Multiple choice so sánh hai trường hợp: đánh dấu thông tin của từng thị trấn riêng; phương án trộn chi tiết của hai thị trấn là bẫy.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "Lowford and Kestrel Bridge are two fictional market towns of similar size, about forty kilometres from the same regional city. Twenty years ago, both faced the same difficulties: a shrinking high street, a closed railway station and young people leaving for university and work. Today, their situations are strikingly different, and the reasons offer a useful lesson for planners."
+    ],
+    [
+     "B",
+     "Lowford's council concentrated on a single large project. It persuaded a supermarket chain to build an out-of-town store with a large car park, arguing that the jobs and tax revenue would revive the town. The store did create around one hundred and fifty jobs, but many of the small shops in the centre closed within five years, and the high street became quieter than before. Because most customers drove directly to the supermarket, few of them walked into the town at all."
+    ],
+    [
+     "C",
+     "Kestrel Bridge took a more gradual approach. Its council reopened the railway station with funding from a regional transport fund, converted two empty buildings into affordable flats above shops, and offered reduced rents for the first two years to businesses that opened in the centre. None of these measures was large on its own, and progress was slow: in the first three years, only a handful of new businesses opened. Over time, however, the combination of residents living in the centre and visitors arriving by train created enough daily activity to support cafés, a bookshop and a weekly market."
+    ],
+    [
+     "D",
+     "Community cohesion also seems to have developed differently. In Kestrel Bridge, a residents' association took responsibility for organising the market and maintaining a small park, and surveys show that people there are more likely to say they trust their neighbours. In Lowford, residents report feeling that decisions were made for them rather than with them, and turnout at local elections has fallen."
+    ],
+    [
+     "E",
+     "Researchers caution against drawing simple conclusions from two towns. Kestrel Bridge may have benefited from factors unrelated to its policies, such as attractive countryside nearby, while Lowford's supermarket was opened shortly before a national economic downturn. Nevertheless, the comparison suggests that policies which bring people into a town centre, rather than around it, may be more effective in sustaining local life."
+    ],
+    [
+     "F",
+     "Planners in other regions have begun to study the two towns. The lesson most of them draw is not that supermarkets should be banned or that railway stations are always the answer, but that the order and combination of decisions matter. Kestrel Bridge started by giving people reasons to be in its centre every day, and only later did businesses follow. Lowford, in contrast, invested heavily in a single site on its edge and hoped that benefits would spread inwards. Whether either approach would work elsewhere depends on local conditions that neither town can fully explain."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "What did both towns have in common twenty years ago?",
+     "options": [
+      "A. A successful weekly market",
+      "B. A closed railway station and a declining high street",
+      "C. Large supermarkets on the edge of town",
+      "D. Growing numbers of young residents"
+     ],
+     "answer": "B. A closed railway station and a declining high street",
+     "why": "Đoạn A: cả hai có “a shrinking high street, a closed railway station”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Why did Lowford's high street become quieter?",
+     "options": [
+      "A. The supermarket did not create any jobs.",
+      "B. Customers drove to the supermarket and rarely entered the town.",
+      "C. The railway station closed again.",
+      "D. Rents in the town centre were reduced."
+     ],
+     "answer": "B. Customers drove to the supermarket and rarely entered the town.",
+     "why": "Đoạn B: “most customers drove directly to the supermarket, few of them walked into the town”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What is true about Kestrel Bridge's early progress?",
+     "options": [
+      "A. It was rapid and dramatic.",
+      "B. It depended on one large investment.",
+      "C. It was slow, with few new businesses at first.",
+      "D. It was funded entirely by local residents."
+     ],
+     "answer": "C. It was slow, with few new businesses at first.",
+     "why": "Đoạn C: “progress was slow … only a handful of new businesses opened”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What is the writer's main conclusion?",
+     "options": [
+      "A. Supermarkets always damage small towns.",
+      "B. Kestrel Bridge's success was caused only by its countryside.",
+      "C. Bringing people into the centre may better sustain local life.",
+      "D. Two towns are enough to prove which policy works."
+     ],
+     "answer": "C. Bringing people into the centre may better sustain local life.",
+     "why": "Đoạn E: “policies which bring people into a town centre … may be more effective”. A và D khái quát quá mức."
+    },
+    {
+     "type": "short",
+     "prompt": "How far are the towns from the regional city? Write NO MORE THAN TWO WORDS.",
+     "answer": "forty kilometres",
+     "why": "Đoạn A: “about forty kilometres”."
+    },
+    {
+     "type": "short",
+     "prompt": "How many jobs did Lowford's supermarket create? Write A NUMBER.",
+     "answer": "150",
+     "why": "Đoạn B: “around one hundred and fifty jobs”."
+    },
+    {
+     "type": "short",
+     "prompt": "For how long were reduced rents offered in Kestrel Bridge? Write NO MORE THAN THREE WORDS.",
+     "answer": "the first two years",
+     "why": "Đoạn C: “reduced rents for the first two years” – chấp nhận two years."
+    },
+    {
+     "type": "short",
+     "prompt": "Which group organises the market in Kestrel Bridge? Write NO MORE THAN THREE WORDS.",
+     "answer": "residents' association",
+     "why": "Đoạn D: “a residents' association took responsibility for organising the market”."
+    },
+    {
+     "type": "short",
+     "prompt": "What national event happened shortly after Lowford's supermarket opened? Write NO MORE THAN THREE WORDS.",
+     "answer": "economic downturn",
+     "why": "Đoạn E: “a national economic downturn”."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Applying for a rural travel subsidy",
+   "section": "Section 1 · form completion",
+   "strategy": "Section 1 ở band 6–7 có nhiều chi tiết bị sửa và đánh vần; ghi đáp án sau khi người nói xác nhận, kiểm tra giới hạn số từ.",
+   "pre_listening": "Trước khi nghe: dự đoán từng chỗ trống là ngày, số tiền, mã bưu chính hay tên riêng.",
+   "trap": "Người gọi thường đưa thông tin cũ (địa chỉ cũ, mã thẻ cũ) trước khi sửa – chỉ ghi thông tin hiện tại.",
+   "strategies": [
+    "Corrections",
+    "Spelling and postcodes",
+    "Word limits"
+   ],
+   "transcript": "Adviser: Good afternoon, Ardmoor Travel Support. My name's Owen. How can I help?\nCaller: Hello. I'd like to apply for the rural travel subsidy. I live quite a long way from the nearest bus route.\nAdviser: Of course. I'll take a few details. Could I have your full name?\nCaller: Yes, it's Freya Haldane. That's H-A-L-D-A-N-E.\nAdviser: Thank you. And your address?\nCaller: I've just moved, so it's not the one on my old application. It's now Glenview Cottage, Burnside Lane, and the postcode is A-R-seven, four-D-W.\nAdviser: Thank you. The subsidy is for residents who live more than three kilometres from a regular bus stop. How far are you?\nCaller: I measured it on the map – it's about four and a half kilometres.\nAdviser: That qualifies. What would you mainly use it for?\nCaller: Getting to work. I'm a part-time pharmacist at the health centre in Kirkby.\nAdviser: Right. The scheme pays for a monthly travel card on the community minibus, which normally costs sixty pounds. With the subsidy, you'd pay twenty-two pounds a month. It used to be twenty, but the price went up in April.\nCaller: That's still very reasonable. Can I use the card at weekends?\nAdviser: Yes, every day except public holidays, when the minibus doesn't run.\nCaller: And do I need to send any documents?\nAdviser: Two things. A recent utility bill to prove your address, and a letter from your employer showing your working days. You can upload them online or post them to us.\nCaller: I'll upload them. When would the card start?\nAdviser: Applications are processed within ten working days, so if everything arrives this week, your card should be valid from the first of next month.\nCaller: Perfect. Is there a reference number I should use?\nAdviser: Yes, it's RT-four-five-nine-one. Please quote it on any documents you send.\nCaller: RT-four-five-nine-one. Thank you very much.",
+   "questions": [
+    {
+     "prompt": "Applicant's surname: ______",
+     "answer": "Haldane",
+     "why": "Được đánh vần H-A-L-D-A-N-E."
+    },
+    {
+     "prompt": "Address: Glenview Cottage, ______ Lane",
+     "answer": "Burnside",
+     "why": "Địa chỉ mới: “Glenview Cottage, Burnside Lane”."
+    },
+    {
+     "prompt": "Postcode: ______",
+     "answer": "AR7 4DW",
+     "why": "“A-R-seven, four-D-W”."
+    },
+    {
+     "prompt": "Distance from nearest regular bus stop: about ______ km",
+     "answer": "4.5",
+     "why": "“about four and a half kilometres”."
+    },
+    {
+     "prompt": "Applicant's job: part-time ______",
+     "answer": "pharmacist",
+     "why": "“I'm a part-time pharmacist”."
+    },
+    {
+     "prompt": "Monthly cost with the subsidy: £______",
+     "answer": "22",
+     "why": "Giá cũ £20 (bẫy); từ tháng Tư là £22."
+    },
+    {
+     "prompt": "The card cannot be used on public ______",
+     "answer": "holidays",
+     "why": "“every day except public holidays”."
+    },
+    {
+     "prompt": "Proof of address: a recent ______ bill",
+     "answer": "utility",
+     "why": "“A recent utility bill to prove your address”."
+    },
+    {
+     "prompt": "Processing time: ______ working days",
+     "answer": "10",
+     "why": "“processed within ten working days”."
+    },
+    {
+     "prompt": "Reference number: RT-______",
+     "answer": "4591",
+     "why": "“RT-four-five-nine-one”."
+    }
+   ]
+  },
+  {
+   "title": "A guided walk through the Harbourside district",
+   "section": "Section 2 · multiple choice",
+   "strategy": "Multiple choice trong Section 2: cả ba phương án thường được nhắc; chọn ý người nói khẳng định là kết quả/lý do chính, không chọn ý họ bác bỏ.",
+   "strategies": [
+    "Rejected options",
+    "Main reason vs detail",
+    "Past and present"
+   ],
+   "transcript": "Guide: Good morning, everyone, and welcome to Harbourside. I'm Lena, and I'll be your guide for the next hour. Before we start walking, let me give you a little background.\nThirty years ago this was an industrial port, full of warehouses and cranes. When the shipping company moved to a deep-water terminal further along the coast, most of the jobs went with it, and for about a decade the area was largely abandoned. People often assume the redevelopment was driven by tourism, but in fact the main reason the city invested here was housing: the city centre was running out of land, and this was the largest empty site within walking distance of it.\nWe're now standing outside the Granary, the oldest building on the site. It was originally used to store grain, of course, and later as a customs office. You might expect it to be a museum, and there were plans for that, but the city decided a public library would bring in local people every day rather than just visitors at weekends.\nIf you look across the water, you'll see the new footbridge. It's often described as a tourist attraction, but its real purpose is practical: before it was built, residents on the far side had a twenty-five-minute walk to reach the nearest station. Now it takes about eight minutes.\nOne thing the planners got wrong, at least at first, was shops. The original plan included a large shopping centre, but it struggled because people living here preferred to shop on the old high street. It's since been split into smaller units, including a health clinic and a primary school.\nFinally, a word about flooding, since people always ask. The whole district has been raised by about one metre, and the park you'll see at the end of our walk is designed to flood safely during storms, holding the water away from homes. So when you see it under water in winter, that's the system working, not failing.\nRight, let's head towards the Granary. Please stay on the path, as there are cyclists.",
+   "questions": [
+    {
+     "prompt": "What was the main reason the city invested in Harbourside?",
+     "options": [
+      "A. To attract tourists",
+      "B. To provide housing near the city centre",
+      "C. To create jobs at the port"
+     ],
+     "answer": "B. To provide housing near the city centre",
+     "why": "“People often assume … tourism, but in fact the main reason … was housing”."
+    },
+    {
+     "prompt": "Why did the port lose most of its jobs?",
+     "options": [
+      "A. The shipping company moved to another terminal.",
+      "B. The warehouses were destroyed by floods.",
+      "C. The city closed the port for redevelopment."
+     ],
+     "answer": "A. The shipping company moved to another terminal.",
+     "why": "“When the shipping company moved to a deep-water terminal … most of the jobs went with it”."
+    },
+    {
+     "prompt": "What is the Granary used for now?",
+     "options": [
+      "A. A museum",
+      "B. A customs office",
+      "C. A public library"
+     ],
+     "answer": "C. A public library",
+     "why": "Có kế hoạch làm bảo tàng nhưng thành phố chọn thư viện công cộng."
+    },
+    {
+     "prompt": "What is the main purpose of the footbridge?",
+     "options": [
+      "A. To attract visitors",
+      "B. To shorten residents' walk to the station",
+      "C. To connect the two parks"
+     ],
+     "answer": "B. To shorten residents' walk to the station",
+     "why": "“its real purpose is practical … twenty-five-minute walk … Now it takes about eight minutes”."
+    },
+    {
+     "prompt": "How long does the walk to the station take now?",
+     "options": [
+      "A. About 8 minutes",
+      "B. About 15 minutes",
+      "C. About 25 minutes"
+     ],
+     "answer": "A. About 8 minutes",
+     "why": "25 phút là trước khi có cầu (bẫy); nay khoảng 8 phút."
+    },
+    {
+     "prompt": "What happened to the original shopping centre?",
+     "options": [
+      "A. It became the district's busiest area.",
+      "B. It was divided into smaller units.",
+      "C. It was replaced by a car park."
+     ],
+     "answer": "B. It was divided into smaller units.",
+     "why": "“It's since been split into smaller units, including a health clinic and a primary school.”"
+    },
+    {
+     "prompt": "Why did the shopping centre struggle?",
+     "options": [
+      "A. Residents preferred the old high street.",
+      "B. It was too far from the station.",
+      "C. Rents were too high for shops."
+     ],
+     "answer": "A. Residents preferred the old high street.",
+     "why": "“people living here preferred to shop on the old high street”."
+    },
+    {
+     "prompt": "What does the guide say about the park flooding in winter?",
+     "options": [
+      "A. It shows the drainage has failed.",
+      "B. It is part of the design.",
+      "C. It happens only in very rare storms."
+     ],
+     "answer": "B. It is part of the design.",
+     "why": "“designed to flood safely … that's the system working, not failing”."
+    },
+    {
+     "prompt": "By how much has the district been raised?",
+     "options": [
+      "A. About half a metre",
+      "B. About one metre",
+      "C. About two metres"
+     ],
+     "answer": "B. About one metre",
+     "why": "“raised by about one metre”."
+    }
+   ]
+  },
+  {
+   "title": "Lecture: what makes a city resilient?",
+   "section": "Section 4 · note completion",
+   "strategy": "Section 4: nghe khung bài giảng (first, second, finally) và các định nghĩa; từ cần điền thường là danh từ học thuật ngay sau “known as”, “we call”.",
+   "strategies": [
+    "Definitions",
+    "Lecture signposts",
+    "Academic nouns"
+   ],
+   "transcript": "Lecturer: Today we're going to look at a concept that has become extremely popular in urban planning: resilience. In everyday language, resilience simply means the ability to recover from difficulty. In urban studies, it has a more specific meaning: the capacity of a city's systems, institutions and communities to absorb a shock, continue functioning and adapt afterwards.\nThe first point to make is that shocks come in two broad types. Sudden shocks are events such as floods, earthquakes or a major power failure. Chronic stresses, on the other hand, build up slowly – an ageing population, a shortage of affordable housing, or declining water supplies. Many planners argue that chronic stresses are actually more dangerous, because they weaken a city's ability to cope when a sudden shock arrives.\nSecond, resilience depends on what we call redundancy. This means having more than one way of providing an essential service. A city that relies on a single bridge, or a single power station, is vulnerable. One that has alternative routes and several sources of energy can keep functioning when one part fails. Redundancy can look wasteful in normal times, which is why it is often cut when budgets are tight.\nThird – and this is often overlooked – resilience is social as well as physical. Research after several major floods found that neighbourhoods where residents knew one another recovered faster than wealthier neighbourhoods where people were more isolated. Local networks helped people share information, check on elderly neighbours and organise repairs. Researchers describe this as social capital.\nFinally, how do we measure resilience? This is difficult, because a city's resilience is only really tested during a crisis. Some cities now use stress tests, in which planners model how services would cope with a particular scenario, such as a week-long heatwave. These tests have revealed weaknesses that would otherwise have been missed – for example, hospitals that depended on a single water supply.\nFor next week, I'd like you to choose one city and identify its main chronic stress. Be ready to explain how it affects the city's ability to respond to a sudden shock.",
+   "questions": [
+    {
+     "prompt": "Urban resilience: the capacity to absorb a shock, continue functioning and ______ afterwards.",
+     "answer": "adapt",
+     "why": "“absorb a shock, continue functioning and adapt afterwards”."
+    },
+    {
+     "prompt": "Slowly developing problems are called chronic ______",
+     "answer": "stresses",
+     "why": "“Chronic stresses, on the other hand, build up slowly”."
+    },
+    {
+     "prompt": "Example of a chronic stress: an ______ population",
+     "answer": "ageing",
+     "why": "“an ageing population”."
+    },
+    {
+     "prompt": "Having more than one way of providing a service is called ______",
+     "answer": "redundancy",
+     "why": "“what we call redundancy”."
+    },
+    {
+     "prompt": "Redundancy is often cut when ______ are tight.",
+     "answer": "budgets",
+     "why": "“often cut when budgets are tight”."
+    },
+    {
+     "prompt": "Neighbourhoods where residents knew each other recovered ______ after floods.",
+     "answer": "faster",
+     "why": "“recovered faster than wealthier neighbourhoods”."
+    },
+    {
+     "prompt": "Local networks of trust are described as social ______",
+     "answer": "capital",
+     "why": "“Researchers describe this as social capital.”"
+    },
+    {
+     "prompt": "Planners model scenarios such as a week-long heatwave in ______ tests.",
+     "answer": "stress",
+     "why": "“Some cities now use stress tests”."
+    },
+    {
+     "prompt": "One weakness found: hospitals depending on a single ______ supply.",
+     "answer": "water",
+     "why": "“hospitals that depended on a single water supply”."
+    }
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 1 – comparing data in a table",
+  "instruction_vi": "Nhóm các vùng có xu hướng giống nhau, overview nêu khoảng cách lớn nhất và thay đổi nổi bật; dùng percentage points chính xác. Viết ít nhất 150 từ (mục tiêu 170–190) trong 20 phút.",
+  "task": "The table shows the percentage of households in three types of area that lived within 30 minutes of four public services in 2012 and 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "data_visual": {
+   "headers": [
+    "Service",
+    "Urban 2012",
+    "Urban 2025",
+    "Small town 2012",
+    "Small town 2025",
+    "Rural 2012",
+    "Rural 2025"
+   ],
+   "rows": [
+    [
+     "Hospital",
+     "91%",
+     "93%",
+     "64%",
+     "70%",
+     "38%",
+     "41%"
+    ],
+    [
+     "Secondary school",
+     "97%",
+     "98%",
+     "88%",
+     "90%",
+     "61%",
+     "66%"
+    ],
+    [
+     "Job centre",
+     "89%",
+     "90%",
+     "52%",
+     "61%",
+     "22%",
+     "35%"
+    ],
+    [
+     "Supermarket",
+     "99%",
+     "99%",
+     "93%",
+     "95%",
+     "57%",
+     "72%"
+    ]
+   ]
+  },
+  "sample_answer": "The table compares the proportion of households in urban areas, small towns and rural areas that could reach four public services within 30 minutes in 2012 and 2025.\n\nOverall, urban households had the best access to every service in both years, while rural households had by far the worst. Access improved in all three types of area, but the largest gains were in rural areas, so the gap between urban and rural households narrowed, although it remained substantial.\n\nIn 2012, almost all urban households (89–99%) lived within half an hour of each service. Small towns followed some way behind, ranging from 52% for job centres to 93% for supermarkets. Rural access was much lower, particularly for job centres (22%) and hospitals (38%).\n\nBy 2025, rural access to supermarkets had risen by 15 percentage points to 72%, and access to job centres increased by 13 points to 35%. In contrast, rural access to hospitals improved only marginally, to 41%, meaning that hospitals remained the service least accessible to rural households. Urban figures changed very little, as they were already close to their maximum.",
+  "guidance": [
+   "Câu mở đầu: paraphrase (proportion of households, within half an hour, three types of area).",
+   "Overview: (1) thành thị tốt nhất – nông thôn kém nhất; (2) nông thôn cải thiện nhiều nhất, khoảng cách thu hẹp.",
+   "Thân bài 1: năm 2012 – nhóm số liệu theo vùng, dùng khoảng (89–99%).",
+   "Thân bài 2: thay đổi đến 2025 – chọn 3–4 thay đổi nổi bật, nêu bằng percentage points."
+  ],
+  "micro": [
+   [
+    "Viết lại “within 30 minutes” theo cách khác.",
+    "within half an hour"
+   ],
+   [
+    "Câu overview về khoảng cách thành thị–nông thôn.",
+    "Although access improved everywhere, the gap between urban and rural households remained substantial."
+   ],
+   [
+    "Mô tả rural job centres 22% → 35%.",
+    "Rural access to job centres rose by 13 percentage points, from 22% to 35%."
+   ],
+   [
+    "Nhóm số liệu đô thị 2012 bằng một khoảng.",
+    "In 2012, between 89% and 99% of urban households lived within half an hour of each service."
+   ],
+   [
+    "Câu đối lập về rural hospitals (dùng only marginally).",
+    "In contrast, rural access to hospitals improved only marginally, from 38% to 41%."
+   ]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 1. The table shows the average time taken to travel to work by car, bus and bicycle in three cities in 2015 and 2025. Summarise the main features and make comparisons. Write at least 150 words.",
+  "essay": {
+   "prompt": "Some people believe that governments should invest more in smaller towns and rural areas rather than in major cities. To what extent do you agree or disagree?",
+   "planning_prompts": [
+    "Mở bài: nêu lập trường rõ (đồng ý một phần/hoàn toàn) và điều kiện.",
+    "Thân bài 1: lý do đầu tư vào vùng nhỏ (công bằng lãnh thổ, giảm áp lực đô thị).",
+    "Thân bài 2: giới hạn (hiệu quả kinh tế của thành phố, rủi ro đầu tư dàn trải).",
+    "Kết luận: trả lời đúng câu hỏi “to what extent” với điều kiện cụ thể."
+   ],
+   "model_paragraphs": [
+    "In many countries, investment in infrastructure and public services is heavily concentrated in a few large cities, and some argue that this balance should shift towards smaller towns and rural areas. I largely agree with this view, provided that the investment focuses on services that allow people to build a life locally rather than on isolated prestige projects.",
+    "The strongest argument for redirecting investment is fairness. Residents of rural areas pay taxes like everyone else, yet they often live far from hospitals, job centres and further education. When access to such services depends on postcode, young people are effectively forced to leave, which accelerates rural depopulation and weakens the communities left behind. Investing in reliable transport, digital connections and local healthcare would give people a genuine choice about where to live.",
+    "A second argument concerns the cities themselves. Rapid growth in metropolitan areas has driven up housing costs and placed heavy pressure on transport networks. Strengthening regional centres could relieve some of this pressure by allowing businesses and workers to locate elsewhere. In this sense, investment outside the cities is not simply generosity towards rural areas, but a way of making the whole national economy more balanced and resilient.",
+    "Nevertheless, it would be a mistake to neglect major cities altogether. They remain the main engines of innovation and employment, and spreading resources too thinly can produce schemes that look impressive but change little. The evidence suggests that the most effective rural investment combines several services at once and is evaluated by whether residents' access actually improves.",
+    "In conclusion, I agree that governments should give smaller towns and rural areas a larger share of public investment, because this promotes fairness and relieves pressure on cities. However, such investment must be carefully targeted and evaluated, and should complement rather than replace support for urban areas."
+   ]
+  },
+  "drills": [
+   [
+    "Sửa lỗi: Rural access to job centres increased 13%.",
+    "Rural access to job centres increased by 13 percentage points.",
+    "Chênh lệch giữa hai tỉ lệ là percentage points; thiếu by."
+   ],
+   [
+    "Sửa lỗi: The better access was in urban areas.",
+    "Access was best in urban areas.",
+    "Dùng so sánh nhất đúng cấu trúc; tránh mạo từ thừa."
+   ],
+   [
+    "Viết lại học thuật hơn: Rural people had very bad access.",
+    "Rural households had by far the poorest access.",
+    "by far + so sánh nhất; poorest access thay vì very bad."
+   ],
+   [
+    "Sửa lỗi: The data proves that new roads caused better access.",
+    "The data suggests that access improved over the period.",
+    "Bảng số liệu không chứng minh nguyên nhân."
+   ],
+   [
+    "Sửa lỗi: In 2025, urban figure were almost same.",
+    "In 2025, the urban figures were almost the same.",
+    "Thiếu mạo từ; chủ ngữ số nhiều."
+   ],
+   [
+    "Viết lại để tránh lặp: Access increased. Access increased again in rural areas.",
+    "Access improved across all areas, and the gains were particularly large in rural areas.",
+    "Dùng từ đồng nghĩa (improved, gains) và gộp câu."
+   ]
+  ]
+ },
+ "speaking": {
+  "title": "Where you live",
+  "instruction_vi": "Part 1 trả lời 2–3 câu có chi tiết cá nhân; Part 2 nói đủ 2 phút với so sánh trước–nay; Part 3 nêu quan điểm có điều kiện.",
+  "focus": "Mở rộng Part 1 bằng lý do và so sánh; trong Part 2 dùng thì quá khứ và hiện tại hoàn thành để nói về thay đổi (used to, has become).",
+  "part1": [
+   "Do you live in a city, a town or the countryside?",
+   "What do you like most about the area where you live?",
+   "Has your area changed much in the last few years?",
+   "Would you prefer to live in a big city or a small town in the future?"
+  ],
+  "part2": "Describe a town or city that has changed a lot. You should say where it is, how it used to be, what has changed, and explain how you feel about these changes.",
+  "part3": [
+   "Why do so many young people move from rural areas to cities?",
+   "Should governments try to persuade people to live in the countryside?",
+   "What problems can rapid growth cause for a city?"
+  ],
+  "model_answer": "I'd like to talk about Da Lat, a city in the Central Highlands of Vietnam that I've visited several times since I was a child. When I first went there, about fifteen years ago, it felt like a quiet mountain town. There were narrow roads lined with pine trees, small family-run guesthouses and a market where most of the customers seemed to be local farmers. These days it has become one of the busiest tourist destinations in the country. There are large hotels on the hills, cafés designed mainly for taking photos, and traffic jams at weekends that would have been unimaginable when I was young. Some of the changes have clearly been positive. Many local families now earn far more from tourism than they did from farming, and the airport has made the city much easier to reach. On the other hand, I feel that some of its character has been lost, and I've read that the pine forests are shrinking because of construction. So my feelings are mixed. I'm glad the city is more prosperous, but I think the authorities should be stricter about where new buildings can go, otherwise the very things that made Da Lat special may disappear.",
+  "extensions": [
+   [
+    "Why do so many young people move from rural areas to cities?",
+    "Nêu 2 lực hút (việc làm, giáo dục) và 1 lực đẩy (thiếu dịch vụ) → ví dụ ở Việt Nam → giới hạn: một số người quay về khi có internet và việc làm từ xa."
+   ],
+   [
+    "Should governments try to persuade people to live in the countryside?",
+    "Lập trường có điều kiện → khuyến khích bằng dịch vụ tốt hơn là trả tiền → rủi ro nếu không có việc làm → kết luận."
+   ],
+   [
+    "What problems can rapid growth cause for a city?",
+    "Liệt kê 2 vấn đề (nhà ở đắt, ùn tắc/ô nhiễm) → cơ chế → ví dụ cụ thể → một giải pháp ngắn."
+   ],
+   [
+    "Is it fair that people in cities have better access to services?",
+    "Thừa nhận lý do kinh tế (mật độ dân cư) → lập luận công bằng → giải pháp: y tế từ xa, xe buýt cộng đồng."
+   ]
+  ]
+ },
+ "checkpoint": [
+  [
+   "In matching headings, a heading repeats the name of a town mentioned in the paragraph. What should you do?",
+   [
+    "Choose it immediately",
+    "Check whether it summarises the whole paragraph",
+    "Ignore all headings with names",
+    "Choose the longest heading"
+   ],
+   "Check whether it summarises the whole paragraph",
+   "Heading phải khớp ý chính của cả đoạn, không chỉ một chi tiết."
+  ],
+  [
+   "A figure rises from 22% to 35%. Which description is accurate?",
+   [
+    "It rose by 13%.",
+    "It rose by 13 percentage points.",
+    "It rose to 13 percentage points.",
+    "It rose by 35%."
+   ],
+   "It rose by 13 percentage points.",
+   "Hiệu số giữa hai tỉ lệ = percentage points."
+  ],
+  [
+   "“Areas with faster broadband had more new businesses.” Which conclusion is justified?",
+   [
+    "Broadband caused the new businesses.",
+    "Broadband and new businesses are associated.",
+    "Broadband has no effect on business.",
+    "Every area with broadband had new businesses."
+   ],
+   "Broadband and new businesses are associated.",
+   "Dữ liệu chỉ cho thấy liên hệ, chưa chứng minh nhân quả."
+  ],
+  [
+   "What is self-selection bias?",
+   [
+    "Researchers choosing their favourite results",
+    "Differences between people who choose to move and those who stay",
+    "A survey that is too small",
+    "A mistake in the data"
+   ],
+   "Differences between people who choose to move and those who stay",
+   "Nhóm tự lựa chọn khác nhau một cách có hệ thống."
+  ],
+  [
+   "In a Task 1 table with many numbers, the overview should…",
+   [
+    "list every figure",
+    "group areas and state the main differences and changes",
+    "explain why the changes happened",
+    "give your opinion"
+   ],
+   "group areas and state the main differences and changes",
+   "Overview nêu xu hướng chính theo nhóm."
+  ]
+ ],
+ "reflection": [
+  "Heading nào bạn chọn sai vì nó chứa một ví dụ cụ thể trong đoạn?",
+  "Bài Task 1 của bạn đã dùng đúng percentage points và có overview so sánh nhóm chưa?"
+ ],
+ "vocabulary": [
+  [
+   "regional disparity",
+   "chênh lệch vùng miền",
+   "Regional disparities influence access to medical services."
+  ],
+  [
+   "rural depopulation",
+   "suy giảm dân số nông thôn",
+   "Rural depopulation can threaten village schools."
+  ],
+  [
+   "urban resilience",
+   "khả năng chống chịu đô thị",
+   "Urban resilience depends on well-maintained infrastructure."
+  ],
+  [
+   "service provision",
+   "cung cấp dịch vụ",
+   "Service provision is difficult in remote areas."
+  ],
+  [
+   "labour mobility",
+   "sự dịch chuyển lao động",
+   "Labour mobility can benefit growing industries."
+  ],
+  [
+   "spatial inequality",
+   "bất bình đẳng không gian",
+   "Spatial inequality affects travel times to hospitals."
+  ],
+  [
+   "transport connectivity",
+   "kết nối vận tải",
+   "Transport connectivity shapes regional opportunities."
+  ],
+  [
+   "digital inclusion",
+   "hòa nhập kỹ thuật số",
+   "Digital inclusion needs more than internet coverage."
+  ],
+  [
+   "housing affordability",
+   "khả năng chi trả nhà ở",
+   "Housing affordability is a major urban concern."
+  ],
+  [
+   "decentralisation",
+   "phi tập trung hóa",
+   "Decentralisation moves decisions closer to communities."
+  ],
+  [
+   "public-service accessibility",
+   "khả năng tiếp cận dịch vụ công",
+   "Public-service accessibility varies between districts."
+  ],
+  [
+   "community cohesion",
+   "gắn kết cộng đồng",
+   "Community cohesion can weaken after rapid relocation."
+  ],
+  [
+   "territorial equity",
+   "công bằng lãnh thổ",
+   "Territorial equity requires attention to rural access."
+  ],
+  [
+   "public resource allocation",
+   "phân bổ nguồn lực công",
+   "Public resource allocation shapes services."
+  ],
+  [
+   "regional development",
+   "phát triển vùng",
+   "Regional development requires coordination."
+  ],
+  [
+   "institutional capacity",
+   "năng lực thể chế",
+   "Institutional capacity differs between districts."
+  ],
+  [
+   "accessibility gap",
+   "khoảng cách tiếp cận",
+   "The accessibility gap remained substantial."
+  ],
+  [
+   "transport subsidy",
+   "trợ cấp vận tải",
+   "Transport subsidies support isolated communities."
+  ],
+  [
+   "self-selection bias",
+   "thiên lệch tự lựa chọn",
+   "Self-selection bias can distort pilot results."
+  ],
+  [
+   "evaluation metric",
+   "chỉ số đánh giá",
+   "An evaluation metric must reflect real benefits."
+  ]
+ ],
+ "v3_enrichment": {
+  "coaching": {
+   "core": "Điều kiện, nhóm đối tượng và suy luận nhân quả trong chính sách đô thị",
+   "terms": [
+    "difference between association and causation",
+    "relative change versus percentage-point change",
+    "who benefits and who is omitted"
+   ],
+   "example": "Tỉ lệ có thể tăng từ 40% lên 50%: tăng 10 điểm phần trăm nhưng tăng tương đối 25%. Hai phát biểu mang ý nghĩa khác nhau.",
+   "trap": "Khẳng định dự án gây ra kết quả dù dữ liệu chỉ cho thấy mối liên hệ.",
+   "reading_focus": "Matching headings, T/F/NG and scope of policy evidence",
+   "listening_focus": "Corrections to quantities and revised project plans",
+   "writing1": "table",
+   "speaking_issue": "Should cities invest more heavily in smaller towns?",
+   "deep": {
+    "grammar": "So sánh phải chỉ rõ đại lượng và đơn vị: increased by 10 percentage points khác với increased by 10 per cent. Khi chênh lệch là 40% lên 50%, mẫu số ban đầu 40 cho phép tính tăng tương đối 25%. 'Whereas' kết nối hai xu hướng đối lập trong cùng câu và không tự nêu nguyên nhân. Không dùng 'proved' khi dữ liệu chỉ ghi nhận quan hệ đồng biến.",
+    "reading": "Tại đoạn có 'may' hoặc 'some', câu hỏi khẳng định 'all' thường vượt quá bằng chứng. TRUE cần cùng nội dung, FALSE cần mâu thuẫn rõ, NOT GIVEN là tác giả không kết luận. Ví dụ: bài chỉ nói 'some towns reported shorter journeys'; câu 'all towns benefited' không thể đánh True. Khoanh phạm vi định lượng và mốc thời gian trước khi quyết định.",
+    "listening": "Trước bài nghe mô tả dự án, gạch chân từ chỉ số lượng, thời gian, đơn vị và từ khóa final/current/revised. Người nói đôi khi nhắc phương án cũ rồi sửa: 'initially two, now four'. Kết quả ghi 'four' nếu câu hỏi hỏi kế hoạch hiện tại. Sau khi nghe cần tự giải thích vì sao số đầu tiên là distractor.",
+    "writing": "Task 1 nên nhóm urban/regional/rural và so sánh chênh lệch, không kể tuần tự từng ô. Task 2 muốn tranh luận phân bổ đầu tư vùng miền phải xác định điều kiện: ai hưởng lợi, chi phí công, khả năng tiếp cận. Ví dụ cụ thể có thể là thay đổi tuyến xe buýt ở một thị trấn, nhưng không được giả rằng ví dụ đó đại diện cho toàn quốc."
+   }
+  },
+  "writing_task1_template": [
+   "Intro: Paraphrase what the visual compares, without inventing a reason.",
+   "Overview: Report the largest change and a meaningful contrast.",
+   "Body 1: Group comparable categories and support with figures.",
+   "Body 2: Describe contrasts and exceptions, use accurate units."
+  ],
+  "writing_task2_template": [
+   "Intro: Paraphrase the problem and state a clear answer.",
+   "Body 1: Claim -> why -> concrete illustration -> implication.",
+   "Body 2: Second argument or contrasting view, with measured concession.",
+   "Conclusion: Answer the exact question without adding new evidence."
+  ],
+  "speaking_part3_template": [
+   "Give an answer and its scope.",
+   "Explain the mechanism or trade-off.",
+   "Offer a concrete but non-generalised example.",
+   "Recognise a limitation, comparison or alternative."
+  ]
+ }
+}
