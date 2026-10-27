@@ -41,6 +41,18 @@ describe("AI Factory text drafting", () => {
     expect(draft.usage).toEqual({ inputTokens: 128, outputTokens: 256 });
   });
 
+  it("retries one draft that fails local QA without publishing it", async () => {
+    enableConfirmedFreeTier();
+    vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "test-only");
+    const validPrompt = "Some cities plan to replace short car journeys with improved public transport. To what extent do you agree that this should be a priority for local governments? Give reasons for your answer and include relevant examples from your own knowledge or experience.";
+    const replies = ["Discuss transport?", validPrompt];
+    const fetcher = vi.fn(async () => Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ title: "Prioritising public transport", topic: "Public transport choices", prompt: replies.shift() }) }] } }] })) as typeof fetch;
+    const draft = await generateTextPractice("Writing", "Public transport choices", fetcher);
+    expect(fetcher).toHaveBeenCalledTimes(2);
+    expect(draft.warnings).toEqual([]);
+    expect(draft.exam.content.prompt).toBe(validPrompt);
+  });
+
   it("queues Listening only when each answer is spoken in its cited turn", async () => {
     enableConfirmedFreeTier();
     vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "test-only");
