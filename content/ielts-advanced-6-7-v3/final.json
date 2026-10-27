@@ -1,0 +1,702 @@
+{
+ "title": "Đánh giá cuối chặng · IELTS Advanced 6.0–7.0+",
+ "readings": [
+  {
+   "title": "The City That Reconsidered Its Nights",
+   "strategy": "Passage 1 — accessible academic",
+   "paragraphs": [
+    [
+     "A",
+     "For much of the twentieth century, the coastal city of Bellhaven treated a brightly illuminated street as a sign of progress. Shopkeepers requested stronger lamps, transport planners prized uninterrupted visibility, and public notices linked brighter pavements with a more welcoming city centre. By the 2010s, however, residents had begun reporting a different set of concerns. Light from commercial signs entered upstairs bedrooms, some waterfront paths remained uncomfortable despite intense lighting, and municipal electricity costs had become difficult to predict. The council did not suddenly decide that darkness was desirable. It began asking a narrower question: whether the same public purposes could be achieved with light placed more carefully."
+    ],
+    [
+     "B",
+     "A university team was invited to observe three neighbourhoods. It recorded how people used each route at different times, mapped the positions of lamps and signs, and interviewed workers who travelled after midnight. The researchers deliberately avoided treating a single measure as proof of safety. A well-lit pavement might still have a dangerous crossing, while a dimmer street with slow traffic and active shops could feel comfortable. They also noted that residents often used the word 'safe' to mean different things: freedom from collision, confidence about crime, or the simple ability to recognise a familiar face. Any recommendation would therefore have to make its assumptions explicit."
+    ],
+    [
+     "C",
+     "Bellhaven first tested a relatively modest intervention along Harbour Lane. Existing fittings were fitted with amber filters, and additional light was directed towards the pedestrian surface rather than upper windows. The change was not a reduction to complete darkness: the measured brightness around crossings stayed within the council's chosen standard. Residents received a map explaining which fittings would change, and the city opened an online form for comments. During the first month, complaints about light entering bedrooms fell, although the team warned that a small number of reports could not establish a lasting trend. It was also possible that initial publicity encouraged more people than usual to contact the council."
+    ],
+    [
+     "D",
+     "A second experiment used motion sensors beside a little-used riverside route. Instead of operating at maximum output through the night, lamps brightened when a person or cyclist approached and gradually returned to a lower setting afterwards. The equipment reduced recorded electricity use during the trial, but there were practical difficulties. One sensor repeatedly responded to moving branches, and another failed to detect a cyclist approaching at an unusual angle. Engineers adjusted the sensor positions before the study continued. This experience complicated a convenient headline: automation could save energy, but only where equipment was maintained and local conditions had been tested."
+    ],
+    [
+     "E",
+     "The most contentious discussion concerned the central market. Traders argued that vivid lighting attracted customers and helped late-shift staff feel visible. Nearby residents wanted less glare, while heritage officers preferred designs that would not obscure the older buildings. The council rejected a single city-wide rule. It instead drafted separate guidance for commercial signs, pedestrian crossings and residential streets. A shop could retain a bright sign until closing time, for example, but would need to shield it from adjacent flats. This distinction mattered because the objectives of a market street and those of a quiet housing estate were not identical."
+    ],
+    [
+     "F",
+     "Evaluating the experiments proved harder than installing the equipment. Recorded electricity use could be compared before and after an intervention, but public confidence was influenced by the weather, local news and recent experiences. The research team recommended repeating surveys across different seasons and combining them with route counts. They also asked the council to publish any equipment failures rather than discussing only successful trials. Their argument was not that the schemes had failed; it was that a reliable decision required evidence that did not disappear when the initial enthusiasm faded."
+    ],
+    [
+     "G",
+     "The final recommendation was described as an adaptive lighting plan rather than a programme of universal dimming. The council would retain adequate illumination at crossings, limit unnecessary spill into homes, and review sensor performance every six months. Residents would receive a simple explanation of the purpose of each change and an opportunity to report unexpected effects. No single experiment could determine how every city should illuminate its streets. Bellhaven's experience suggested instead that effective public infrastructure depends on choosing a measurable goal, acknowledging competing needs and revisiting decisions when new evidence arrives."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "Choose the best heading for paragraph A.",
+     "answer": "A historic preference challenged",
+     "why": "Đoạn A: The city moved from equating brightness with progress to questioning placement.",
+     "options": [
+      "A historic preference challenged",
+      "A technical sensor defect",
+      "The closing of a market",
+      "Seasonal surveys"
+     ]
+    },
+    {
+     "type": "mcq",
+     "prompt": "Choose the best heading for paragraph B.",
+     "answer": "Why one indicator is insufficient",
+     "why": "Đoạn B: Safety has multiple dimensions.",
+     "options": [
+      "A reduction in rental costs",
+      "Why one indicator is insufficient",
+      "Equipment faults discovered",
+      "A marketing campaign"
+     ]
+    },
+    {
+     "type": "mcq",
+     "prompt": "Choose the best heading for paragraph D.",
+     "answer": "Advantages and limits of automation",
+     "why": "Đoạn D: Sensors saved energy but required adjustment.",
+     "options": [
+      "A new harbour authority",
+      "A disagreement over shop signs",
+      "Advantages and limits of automation",
+      "A city-wide ban"
+     ]
+    },
+    {
+     "type": "mcq",
+     "prompt": "Choose the best heading for paragraph F.",
+     "answer": "The challenge of measuring success",
+     "why": "Đoạn F: Several confounding factors affect confidence.",
+     "options": [
+      "Why lamps are illegal",
+      "The challenge of measuring success",
+      "The price of electricity",
+      "Introducing amber filters"
+     ]
+    },
+    {
+     "type": "tfng",
+     "prompt": "Bellhaven originally regarded intense street lighting as a sign of development.",
+     "answer": "TRUE",
+     "why": "Đoạn A: Treated brightly lit streets as a sign of progress."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The university team used crime statistics as the only definition of safety.",
+     "answer": "FALSE",
+     "why": "Đoạn B: They deliberately avoided using one indicator and listed multiple meanings."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The amber filters reduced brightness at pedestrian crossings below the council standard.",
+     "answer": "FALSE",
+     "why": "Đoạn C: Crossing brightness remained within the chosen standard."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Most traders in the market supported the residential lighting proposals.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn E: We know traders argued for vivid lighting, not their numerical share or support for other proposals."
+    },
+    {
+     "type": "tfng",
+     "prompt": "All riverside motion sensors operated correctly throughout the first trial.",
+     "answer": "FALSE",
+     "why": "Đoạn D: Two technical difficulties were identified."
+    },
+    {
+     "type": "short",
+     "prompt": "Which type of filters was fitted along Harbour Lane?",
+     "answer": "amber filters",
+     "why": "Đoạn C: Existing fittings were fitted with amber filters."
+    },
+    {
+     "type": "short",
+     "prompt": "What technology made riverside lights brighten when users approached?",
+     "answer": "motion sensors",
+     "why": "Đoạn D: Motion sensors detected users."
+    },
+    {
+     "type": "short",
+     "prompt": "How often would sensor performance be reviewed?",
+     "answer": "every six months",
+     "why": "Đoạn G: The schedule is explicit."
+    },
+    {
+     "type": "short",
+     "prompt": "Which environmental factor might influence people’s confidence?",
+     "answer": "weather",
+     "why": "Đoạn F: Weather is one of the listed influences."
+    }
+   ]
+  },
+  {
+   "title": "The Unexpected Work of a Community Seed Library",
+   "strategy": "Passage 2 — analytical academic",
+   "paragraphs": [
+    [
+     "A",
+     "At first glance, a seed library looks like a room with labelled envelopes. In the fictional hill town of Norvale, however, it developed into a small experiment in how communities maintain knowledge. Residents could borrow packets of vegetable and flower seeds, plant them at home, and return some seeds from the next generation if their plants were successful. The scheme attracted gardeners who could not easily purchase uncommon local varieties, yet its founders insisted that the purpose was not simply to maximise the number of packets distributed. They wanted to understand which varieties performed reliably in the town's changing growing conditions and how practical experience could be recorded without turning it into an inaccessible technical database."
+    ],
+    [
+     "B",
+     "The first difficulty involved naming. Gardeners brought seeds labelled with traditional names that were not always used by commercial suppliers. Two packets could share a name but contain visibly different plants; conversely, one variety might be known by several names across nearby villages. The organisers introduced a recording sheet for each donation, noting where the donor had grown the plant, when seeds had been collected and any uncertainty about identification. They avoided claiming that the information was scientifically definitive. The main goal was traceability: later borrowers could learn what was known and what remained uncertain about a packet's history."
+    ],
+    [
+     "C",
+     "A local college then helped with basic germination checks. Volunteers placed small samples in controlled trays, counted how many seeds sprouted and recorded the conditions. Results varied sharply. A packet that had performed well in one household sometimes showed poor germination after being stored in a damp shed. The college cautioned that a small test could flag obvious problems without predicting performance in every garden. Seed viability depended on several interacting conditions, including storage temperature, moisture and the age of a collection. The library therefore attached test dates to its labels and encouraged borrowers to treat them as practical guidance, not a guarantee of success."
+    ],
+    [
+     "D",
+     "The project's public meetings revealed a second challenge: knowledge was not evenly distributed. Older gardeners often understood local soils and planting seasons but were less enthusiastic about uploading information to a website. Younger participants offered digital skills, although some had never saved seed before. A pair of volunteers proposed short recording sessions in which experienced gardeners demonstrated a technique while another person filmed the steps. The resulting clips were stored alongside written instructions. This approach was slower than asking everyone to complete an online form, but it helped make local expertise visible without demanding that its holders first master unfamiliar technology."
+    ],
+    [
+     "E",
+     "The library became more ambitious when the town suffered an unusually dry spring. Several volunteers suggested prioritising drought-tolerant varieties, hoping to make gardens more resilient. Yet the committee refused to label any seed 'climate-proof'. A variety might withstand one short dry period and still fail when high temperatures occurred during flowering. Furthermore, gardeners with shaded balconies faced different conditions from those cultivating open plots. The library began to collect short seasonal reports with a record of where each plant was grown. The aim was to build a body of observations, not to announce a universal winner from one difficult season."
+    ],
+    [
+     "F",
+     "There were also questions about fairness. Borrowers with large gardens could return many packets, while people with small flats might be able to grow only a few herbs. A strict rule requiring an equal return from everyone could discourage the very residents who stood to benefit most. The organisers chose a contribution system that accepted seeds, volunteer time, translation work or simple feedback. Critics said this made success harder to measure because contributions were not all equivalent. Supporters replied that a community resource should account for different capacities, not only the quantity of goods returned."
+    ],
+    [
+     "G",
+     "After three years, Norvale had more detailed records but no dramatic claim about transforming the region's food supply. Library members reported learning new cultivation techniques, and some older varieties were now being grown by several households instead of one. The project had also revealed the limits of informal evidence. Its observations were useful for local decisions, but a larger trial would be needed to determine whether participation systematically improved harvests. For the organisers, that limitation was a strength rather than an embarrassment: the seed library had become a place where the community practised careful observation and openly recorded uncertainty."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "Best heading for paragraph B.",
+     "answer": "The problem of inconsistent identification",
+     "why": "Đoạn B: Naming and traceability are the focus.",
+     "options": [
+      "A failed publicity drive",
+      "The problem of inconsistent identification",
+      "A strict borrowing policy",
+      "A laboratory shortage"
+     ]
+    },
+    {
+     "type": "mcq",
+     "prompt": "Best heading for paragraph C.",
+     "answer": "Testing with necessary caution",
+     "why": "Đoạn C: The germination checks cannot guarantee performance everywhere.",
+     "options": [
+      "Unexpected market profits",
+      "Testing with necessary caution",
+      "Rules on volunteer payments",
+      "The closing of a garden"
+     ]
+    },
+    {
+     "type": "mcq",
+     "prompt": "Best heading for paragraph D.",
+     "answer": "Bringing different skills together",
+     "why": "Đoạn D: Older and younger participants contribute different knowledge.",
+     "options": [
+      "Bringing different skills together",
+      "Replacing experienced gardeners",
+      "Only digital data matter",
+      "The discovery of a new species"
+     ]
+    },
+    {
+     "type": "mcq",
+     "prompt": "Best heading for paragraph F.",
+     "answer": "A flexible definition of contribution",
+     "why": "Đoạn F: Contributions include seeds, time, translation and feedback.",
+     "options": [
+      "Making the rules stricter",
+      "A flexible definition of contribution",
+      "Selling the collection",
+      "Expanding commercial production"
+     ]
+    },
+    {
+     "type": "tfng",
+     "prompt": "The founders measured success only by the total number of seed packets borrowed.",
+     "answer": "FALSE",
+     "why": "Đoạn A: They explicitly rejected packet count as the sole objective."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Some seed names varied between villages.",
+     "answer": "TRUE",
+     "why": "Đoạn B: One variety could be known by several names."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The college tested every seed in the entire library.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn C: Small samples were tested; coverage of every seed is not established."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The project required all participants to complete online forms.",
+     "answer": "FALSE",
+     "why": "Đoạn D: Filming and written instructions provided alternatives."
+    },
+    {
+     "type": "tfng",
+     "prompt": "The committee claimed to have identified a climate-proof variety.",
+     "answer": "FALSE",
+     "why": "Đoạn E: It refused to use that label."
+    },
+    {
+     "type": "short",
+     "prompt": "What did organisers want to preserve so borrowers could trace packet histories?",
+     "answer": "traceability",
+     "why": "Đoạn B: Traceability is identified as the main goal."
+    },
+    {
+     "type": "short",
+     "prompt": "What did the college count in the controlled trays?",
+     "answer": "sprouted seeds",
+     "why": "Đoạn C: They counted how many seeds sprouted."
+    },
+    {
+     "type": "short",
+     "prompt": "What type of seasonal condition prompted discussion about drought-tolerant varieties?",
+     "answer": "a dry spring",
+     "why": "Đoạn E: The unusually dry spring sparked the discussion."
+    },
+    {
+     "type": "short",
+     "prompt": "What extra evidence would be needed to test whether harvests improved systematically?",
+     "answer": "a larger trial",
+     "why": "Đoạn G: A larger trial is explicitly required."
+    }
+   ]
+  },
+  {
+   "title": "When Predictive Models Leave the Laboratory",
+   "strategy": "Passage 3 — evaluative argument",
+   "paragraphs": [
+    [
+     "A",
+     "A model that predicts an event correctly in a laboratory can be impressive without being ready to guide public decisions. In the fictional region of Eastport, a transport authority purchased a system designed to forecast bus delays. Its developer presented results from a controlled evaluation in which historical journeys were divided into training and testing sets. The model performed well on the test journeys. Yet those journeys came from the same network and the same period as the data used to design the system. The authority initially assumed that accurate past predictions would translate directly into better decisions on the road. A later review showed why that assumption deserved scrutiny."
+    ],
+    [
+     "B",
+     "During the first month of operation, several forecasts became unreliable when a new school timetable altered morning demand. Drivers also reported that a recently introduced one-way system caused queues in places that rarely appeared in the historical data. Neither change meant the model had been dishonest or useless. It meant the conditions under which it operated were no longer the same as those represented by its development set. Researchers called this a distribution shift. They warned that a single accuracy score concealed the possibility of sharply different performance in particular locations or at particular times of day."
+    ],
+    [
+     "C",
+     "The authority had originally requested one number: the proportion of forecasts within five minutes of the actual arrival time. That number offered an appealing basis for comparing software suppliers, but it did not answer every operational question. A forecast that was six minutes late on a nearly empty service could be less damaging than a three-minute error on a bus carrying students to an examination. Some planners proposed weighting errors according to the consequences for travellers. Others objected that different weights could embed political choices that were not apparent to the public. The discussion demonstrated that evaluation metrics do not merely describe performance; they also express what an institution considers important."
+    ],
+    [
+     "D",
+     "An external team suggested a staged trial. The model would provide advice to dispatchers, but humans would retain responsibility for decisions while its predictions were compared with actual outcomes. The researchers also asked for results to be reported separately by route, neighbourhood and time of day. This requirement was intended to prevent strong performance on frequent central routes from masking weak predictions for less-used outer services. The supplier accepted the trial but warned that very small groups would generate unstable estimates. The team agreed that disaggregated results should be accompanied by sample sizes and intervals of uncertainty rather than presented as equally precise figures."
+    ],
+    [
+     "E",
+     "Residents raised a different concern when they learned that the system would use passengers' location histories to improve predictions. The developer argued that detailed records could reveal changing travel patterns, but the authority questioned whether collecting individual traces was proportionate to the benefit. It tested an alternative using aggregated counts from stops. This reduced the detail available to the system, yet it also made identification of an individual traveller much less likely. The eventual policy limited retention of precise location records and required a public explanation of the data used. The resulting model was not necessarily the most statistically accurate one imaginable, but it better reflected the institution's obligations."
+    ],
+    [
+     "F",
+     "The review also challenged the language used to communicate results. At a public meeting, a slide announced that predictions had 'improved by 20 per cent'. Audience members could reasonably interpret this as a reduction in delay, an increase in accuracy measured in percentage points, or a relative change in an error metric. The presenter had actually meant that the average absolute forecasting error had fallen from ten minutes to eight minutes. Officials revised the statement to identify the precise measure and the baseline. In this case, a technically defensible statistic had become misleading because its denominator and meaning were left implicit."
+    ],
+    [
+     "G",
+     "Some commentators took the problems as proof that predictive models should not be used in public transport. That conclusion would go further than the evidence allowed. Dispatchers found some forecasts useful, particularly for detecting unusual delays after breakdowns, and the review identified practical improvements. Nevertheless, an equally simplistic celebration of the technology would ignore who bears the cost when forecasts are wrong. The more productive question is not whether a model is 'good' in the abstract but where it is reliable, which errors matter, who can challenge a decision and how the system changes when new conditions arise."
+    ],
+    [
+     "H",
+     "Eastport eventually established a quarterly audit, a process for logging surprising failures and a small panel of passengers to review communications. The authority did not publish a single triumphant accuracy figure. Instead, it released several measures, along with known limitations and a description of recent changes in the network. That approach was less convenient for publicity, but it made the model easier to question and improve. The case illustrates a broader principle: predictive technology becomes more trustworthy not when uncertainty disappears, but when an organisation learns how to make uncertainty visible and respond to it."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "ynng",
+     "prompt": "The author suggests that a strong laboratory score alone cannot establish real-world readiness.",
+     "answer": "YES",
+     "why": "Đoạn A: The opening contrasts lab performance with operational readiness."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The author believes that every forecasting error should be weighted equally.",
+     "answer": "NO",
+     "why": "Đoạn C: Different consequences are explicitly discussed."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The author claims the supplier deliberately concealed poor performance.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn B-D: No intention or deliberate concealment is alleged."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The author regards privacy as irrelevant once model accuracy improves.",
+     "answer": "NO",
+     "why": "Đoạn E: Privacy limits are treated as relevant obligations."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The author argues that all predictive models should be banned from transport decisions.",
+     "answer": "NO",
+     "why": "Đoạn G: A categorical ban is rejected as beyond the evidence."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The author values making model limitations visible.",
+     "answer": "YES",
+     "why": "Đoạn H: Visibility of uncertainty is the concluding principle."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What caused some initial forecasts to become unreliable?",
+     "answer": "Changes in the operating environment",
+     "why": "Đoạn B: School timetable and road changes created distribution shift.",
+     "options": [
+      "A deliberate reduction in passenger numbers",
+      "Changes in the operating environment",
+      "Errors in ticket prices",
+      "An entirely new rail system"
+     ]
+    },
+    {
+     "type": "mcq",
+     "prompt": "Why did the research team request results by neighbourhood?",
+     "answer": "To expose possible weaknesses hidden by the overall average",
+     "why": "Đoạn D: Aggregate performance could conceal weak outer services.",
+     "options": [
+      "To protect supplier advertising",
+      "To expose possible weaknesses hidden by the overall average",
+      "To avoid reporting sample sizes",
+      "To eliminate all operational judgement"
+     ]
+    },
+    {
+     "type": "mcq",
+     "prompt": "Why did the authority test aggregated stop counts?",
+     "answer": "To reduce individual privacy risks",
+     "why": "Đoạn E: Aggregated counts reduced identification risk.",
+     "options": [
+      "To increase promotional spending",
+      "To remove all statistics",
+      "To reduce individual privacy risks",
+      "To guarantee the lowest possible error"
+     ]
+    },
+    {
+     "type": "mcq",
+     "prompt": "What was wrong with the claim that predictions improved by 20 per cent?",
+     "answer": "The measure and baseline were unclear",
+     "why": "Đoạn F: The phrase did not specify the metric/denominator.",
+     "options": [
+      "There were no predictions",
+      "The measure and baseline were unclear",
+      "It was necessarily mathematically false",
+      "The forecast error had increased"
+     ]
+    },
+    {
+     "type": "short",
+     "prompt": "What term describes changing conditions that undermine previous test performance?",
+     "answer": "distribution shift",
+     "why": "Đoạn B: Explicit term in paragraph B."
+    },
+    {
+     "type": "short",
+     "prompt": "What kind of records raised concern about identifying travellers?",
+     "answer": "location histories",
+     "why": "Đoạn E: Individual passenger location histories."
+    },
+    {
+     "type": "short",
+     "prompt": "By how many minutes did average absolute forecast error fall?",
+     "answer": "two minutes",
+     "why": "Đoạn F: From ten to eight minutes."
+    },
+    {
+     "type": "short",
+     "prompt": "How often did Eastport decide to audit the system?",
+     "answer": "quarterly",
+     "why": "Đoạn H: A quarterly audit was established."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Part 1 — Student accommodation enquiry",
+   "instructions": "Questions 1–10. Use NO MORE THAN TWO WORDS AND/OR A NUMBER for completion.",
+   "transcript": "Receptionist: Good morning, Westhaven Student Housing. This is Julia speaking. How can I help?\nCaller: Hello. I’m looking for a room for the autumn semester. I read about the Riverside residence, but I may have the details wrong.\nReceptionist: Certainly. Riverside is for postgraduate students, and it opens on the fifteenth of September.\nCaller: I thought it was the twelfth.\nReceptionist: That was last year's date. This year the move-in date is the fifteenth.\nCaller: Right. My course begins on the twenty-first, so that is fine.\nReceptionist: The standard room is 185 pounds per week, including heating and internet.\nCaller: Is breakfast included?\nReceptionist: No. There is a shared kitchen on each floor. There is also a small café, but that is paid separately.\nCaller: I would prefer a quiet building.\nReceptionist: Riverside faces a public garden. The rooms at the rear are generally quieter than those facing the main road.\nCaller: Could I reserve one of the rear rooms?\nReceptionist: We cannot guarantee a specific room today, but you can request one.\nCaller: Is there somewhere secure for bicycles?\nReceptionist: Yes, residents use a locked cycle store behind Block B.\nCaller: Excellent. I also need to know about laundry.\nReceptionist: The laundry room is on the ground floor. You can use the machines with a student card.\nCaller: Do you take a deposit?\nReceptionist: Yes, a refundable deposit of 250 pounds is required.\nCaller: And when is the application deadline?\nReceptionist: Please submit the form by 30 August. We will contact you by email within five working days.\nCaller: Good. My surname is Patel, P-A-T-E-L.\nReceptionist: Thank you. Do you want us to email the accessibility information too?\nCaller: Yes, please. My email is m.patel@example.edu.\nReceptionist: I'll send the brochure today.\nCaller: Thank you, Julia.",
+   "questions": [
+    {
+     "prompt": "Residence name",
+     "answer": "Riverside",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Move-in date in September",
+     "answer": "15",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Weekly standard room cost in pounds",
+     "answer": "185",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Facility on each floor",
+     "answer": "shared kitchen",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Quieter rooms face the",
+     "answer": "rear",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Secure bicycle parking is behind",
+     "answer": "Block B",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Laundry room floor",
+     "answer": "ground floor",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Refundable deposit in pounds",
+     "answer": "250",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Application deadline in August",
+     "answer": "30",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Applicant surname",
+     "answer": "Patel",
+     "why": "Đối chiếu với script."
+    }
+   ]
+  },
+  {
+   "title": "Part 2 — Community museum orientation",
+   "instructions": "Questions 11–20. Short-answer / note-completion.",
+   "transcript": "Welcome to the Riverside Industrial Museum. My name is Dr Emma Lawson, and I coordinate our volunteer education programme. Before we begin the tour, I should explain a few practical arrangements. The building used to be a textile warehouse. The original entrance is still visible, but visitors now enter through the glass extension at the east side. If you leave the group during the tour, please return to the information desk beside the gift shop. The first gallery shows how workers arrived in the district during the nineteenth century. You will notice that we use family letters as well as official records. This is deliberate: a factory report can tell us about production, but it may say very little about daily life. Our second gallery contains a working model of the water-powered machinery. Demonstrations usually start at ten-thirty, but today's demonstration has moved to eleven because one part needed inspection. We have a special exhibition called 'Small Objects, Big Stories' on the upper floor. It includes tools donated by local residents, and there are short audio accounts explaining how those objects were used. The audio is available in English and Spanish. Visitors who need step-free access should take the lift beside the courtyard; the historical staircase is too narrow for wheelchairs. On Friday afternoons, volunteers run a conservation workshop in the learning room. Visitors practise recording the condition of objects rather than repairing them directly. Please do not touch the display pieces unless a guide invites you to. Photography is permitted without flash, but tripods require written permission. Finally, the museum café closes at four, whereas the galleries remain open until five. Our aim is to help you ask careful questions about what objects can and cannot tell us about the past. I hope you enjoy exploring the exhibits.",
+   "questions": [
+    {
+     "prompt": "Original building use",
+     "answer": "textile warehouse",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Current visitor entrance side",
+     "answer": "east",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Where to return if separated",
+     "answer": "information desk",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Source used alongside official records",
+     "answer": "family letters",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Revised demonstration time",
+     "answer": "11",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Name of special exhibition",
+     "answer": "Small Objects Big Stories",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Second audio language",
+     "answer": "Spanish",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Step-free transport between floors",
+     "answer": "lift",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Day of conservation workshop",
+     "answer": "Friday",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Café closing time",
+     "answer": "four",
+     "why": "Đối chiếu với script."
+    }
+   ]
+  },
+  {
+   "title": "Part 3 — Two students and a tutor discuss research design",
+   "instructions": "Questions 21–30. Follow changes of opinion; choose the FINAL decision.",
+   "transcript": "Tutor: Let's look at your project on commuter habits. What is your current research question?\nLina: We originally wanted to prove that flexible timetables reduce car use.\nNoah: But after our preliminary reading, we changed the question. We now want to investigate whether flexibility is associated with different travel choices.\nTutor: Better. The word 'prove' would have been far too strong. How will you gather evidence?\nLina: We drafted an online survey for university employees.\nNoah: Actually, we've decided not to restrict it to university staff. We'll distribute the survey through three workplaces, including a hospital and a local council office.\nTutor: Why those sites?\nNoah: Their shift patterns differ, which should give us a wider range of schedules.\nTutor: And your sample size?\nLina: We first planned 150 responses, but that's unrealistic with our recruitment budget. We're aiming for 90 completed surveys.\nTutor: Reasonable if you acknowledge the limitations. What about interviews?\nNoah: We suggested twenty interviews.\nLina: We agreed yesterday that twelve shorter interviews are more manageable.\nTutor: Good. How will you reduce the influence of leading questions?\nLina: We'll pilot the interview guide with five volunteers and revise any wording they interpret differently.\nTutor: Excellent. What information will you collect about income?\nNoah: We wanted exact salaries at first.\nLina: We've replaced that with broad income bands because several pilot volunteers said precise figures felt intrusive.\nTutor: And where will you store responses?\nNoah: On our personal laptops.\nTutor: I'd strongly discourage that.\nLina: We have now arranged the university's encrypted research drive.\nTutor: Good change. When do you expect to begin fieldwork?\nNoah: The second week of November.\nLina: More precisely, the tenth of November, provided our ethics application is approved.\nTutor:\nRemember: participants can withdraw before data are anonymised. Please write that clearly in the information sheet. What's the main limitation?\nNoah: People who choose to respond may already be interested in sustainable transport.\nTutor: Exactly. A self-selected sample can tell you something useful without representing everyone. Bring the pilot results to our meeting next Thursday.",
+   "questions": [
+    {
+     "prompt": "Final research aim",
+     "answer": "association",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Number of participating workplaces",
+     "answer": "three",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Final target survey responses",
+     "answer": "90",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Final number of interviews",
+     "answer": "twelve",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Number of pilot volunteers",
+     "answer": "five",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Income measure",
+     "answer": "income bands",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Approved storage",
+     "answer": "encrypted research drive",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Expected start date in November",
+     "answer": "10",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Required before fieldwork",
+     "answer": "ethics approval",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Key sampling weakness",
+     "answer": "self selection",
+     "why": "Đối chiếu với script."
+    }
+   ]
+  },
+  {
+   "title": "Part 4 — Lecture: evaluating urban heat interventions",
+   "instructions": "Questions 31–40. Academic notes and summary completion.",
+   "transcript": "Good afternoon. Today's lecture considers how researchers evaluate measures designed to reduce overheating in cities. I want to focus less on whether a particular material sounds innovative and more on how we determine what it actually achieves. Urban surfaces absorb and release heat differently. Buildings, roads and exposed soil may create local temperature variations, but the size of those variations depends on weather, shade and the time of measurement. One intervention involves reflective roofs, which send a greater proportion of incoming solar energy back into the atmosphere. This can reduce roof-surface temperature under suitable conditions. However, surface temperature is not identical to the indoor temperature experienced by residents, so the chosen outcome needs to be stated clearly. A second intervention is tree planting. Trees create shade and can cool surrounding air through evaporation, but benefits depend on species, access to water and mature canopy size. A newly planted tree cannot be assumed to deliver the same benefit as a mature one. A third approach uses permeable paving, which may support drainage and reduce some heat retention, although its performance changes with moisture and maintenance. How should these strategies be evaluated? One problem is selection bias. If greener streets are already wealthier and receive better maintenance, comparing them directly with poorer streets may produce misleading conclusions. A stronger evaluation could compare similar sites, collect measurements before and after installation, and record additional changes such as traffic levels or new buildings. Researchers must also choose the time scale. An experiment lasting two hot afternoons tells us much less about annual performance than repeated measurements across seasons. Even a carefully designed trial requires a plan for unusual weather events. Another issue concerns distribution. Average temperature reduction is not enough if benefits occur mainly in parks while residents of poorly insulated flats see little improvement. Teams increasingly examine exposure for vulnerable groups, particularly older residents and people who work outdoors. Finally, good reporting should distinguish evidence from projection. A simulation may estimate what could happen if ten thousand trees were planted, but that is not evidence that the trees have already survived or created shade. The most useful reports state assumptions, show uncertainty and explain which outcomes were actually measured. These practices may make a conclusion seem less dramatic, yet they give decision-makers a stronger basis for action. Next week, we'll examine how cities balance cooling with the availability of water.",
+   "questions": [
+    {
+     "prompt": "Reflective roofs send back incoming",
+     "answer": "solar energy",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Roof surface temperature is not the same as",
+     "answer": "indoor temperature",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Tree benefit depends partly on mature",
+     "answer": "canopy size",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Permeable paving may improve",
+     "answer": "drainage",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Comparing inherently different sites risks",
+     "answer": "selection bias",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "A stronger evaluation collects data before and",
+     "answer": "after installation",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Short studies miss changes across",
+     "answer": "seasons",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "One group requiring special attention",
+     "answer": "older residents",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Simulated future benefits should be called",
+     "answer": "projections",
+     "why": "Đối chiếu với script."
+    },
+    {
+     "prompt": "Good reporting should show",
+     "answer": "uncertainty",
+     "why": "Đối chiếu với script."
+    }
+   ]
+  }
+ ],
+ "writing_task1": {
+  "prompt": "The table gives the proportion of commuters using three transport modes in a fictional city in 2015 and 2025. Summarise the main features and make comparisons.",
+  "headers": [
+   "Mode",
+   "2015",
+   "2025"
+  ],
+  "rows": [
+   [
+    "Private car",
+    "58%",
+    "45%"
+   ],
+   [
+    "Public transport",
+    "27%",
+    "35%"
+   ],
+   [
+    "Walking/cycling",
+    "15%",
+    "20%"
+   ]
+  ],
+  "recommended_words": 150
+ },
+ "writing_task2": {
+  "prompt": "Some argue that universities should focus on practical employment skills, while others believe developing critical thinking is more important. Discuss both views and give your opinion.",
+  "recommended_words": 250
+ },
+ "speaking": {
+  "part1": [
+   "What do you value in your place of study?",
+   "How do you normally travel?",
+   "Do you prefer learning alone or in groups?"
+  ],
+  "part2": "Describe a decision that changed your daily routine. You should say what it was, why you made it, what happened, and explain what you learned.",
+  "part3": [
+   "When is it sensible for institutions to change established practices?",
+   "How can decision-makers balance expert advice with public priorities?",
+   "Do technological solutions sometimes create new problems?"
+  ]
+ }
+}

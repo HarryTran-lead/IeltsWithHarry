@@ -1,0 +1,975 @@
+{
+ "unit_id": "L3U06",
+ "order": 6,
+ "title": "Science and Technology",
+ "title_vi": "Khoa học và công nghệ",
+ "objectives": [
+  "Làm summary completion có và không có danh sách từ, cùng diagram labelling",
+  "Đánh giá tuyên bố về công nghệ: thiết kế thí nghiệm, tái lập, kiểm định độc lập",
+  "Viết Task 2 dạng hai câu hỏi (two-part question) trả lời đủ và cân đối cả hai phần",
+  "Dùng cấu trúc phi ngôi và câu chẻ (it is … that, what … is) để nhấn mạnh trong văn học thuật"
+ ],
+ "exam_strategy": "Summary completion có danh sách: đáp án phải đúng nghĩa VÀ đúng ngữ pháp; danh sách thường có từ đồng nghĩa gây nhiễu. Không có danh sách: chép từ trong bài, kiểm tra số từ.",
+ "core_outcome": "Đánh giá bằng chứng cho công nghệ mới (hiệu năng thử nghiệm khác hiệu quả thực tế); trả lời đủ hai phần của đề Task 2.",
+ "grammar": {
+  "title": "Impersonal structures and cleft sentences",
+  "explanation_vi": "Văn khoa học dùng cấu trúc phi ngôi để khách quan: It has been shown that…, It is often assumed that…, There is evidence that… Câu chẻ giúp nhấn mạnh một thành phần: It is the data, not the algorithm, that causes most errors. / What matters most is independent testing. Hai cấu trúc này rất hiệu quả trong Task 2 khi muốn nhấn trọng tâm lập luận.",
+  "form": "It has been shown / suggested that … · There is (little / growing) evidence that … · It is + X + that/who + … (câu chẻ) · What + S + V + is/was + … (câu chẻ với what)",
+  "examples": [
+   "It has been shown that many systems perform worse outside the laboratory.",
+   "It is the quality of the training data that largely determines accuracy.",
+   "What researchers need most is access to independent test data."
+  ],
+  "examples_vi": [
+   "Người ta đã chứng minh rằng nhiều hệ thống hoạt động kém hơn khi ra khỏi phòng thí nghiệm.",
+   "Chính chất lượng dữ liệu huấn luyện mới là yếu tố quyết định phần lớn độ chính xác.",
+   "Điều các nhà nghiên cứu cần nhất là được tiếp cận dữ liệu kiểm thử độc lập."
+  ],
+  "trap": "Câu chẻ với what dùng động từ số ít is khi phần nhấn là một ý (What we need is more tests). Không lặp chủ ngữ trong câu chẻ (sai: “It is the data that it causes errors”).",
+  "items": [
+   [
+    "It ___ been shown that the drug reduces symptoms. (has / is)",
+    "has",
+    "It has been shown that… = người ta đã chứng minh."
+   ],
+   [
+    "There is growing ___ that screen use affects sleep. (evidence / evidences)",
+    "evidence",
+    "evidence là danh từ không đếm được."
+   ],
+   [
+    "It is the battery, not the screen, ___ fails most often. (that / what)",
+    "that",
+    "Câu chẻ It is X that…"
+   ],
+   [
+    "___ surprised the researchers was the speed of the change. (What / That)",
+    "What",
+    "Câu chẻ với What đứng đầu."
+   ],
+   [
+    "What the team needs ___ more independent data. (is / are)",
+    "is",
+    "Câu chẻ with what → is."
+   ],
+   [
+    "It is often ___ that new technology always saves time. (assume / assumed)",
+    "assumed",
+    "It is often assumed that = người ta thường cho rằng."
+   ],
+   [
+    "Rewrite as a cleft sentence: Independent testing matters most. → What ___ most is independent testing.",
+    "matters",
+    "What + V + is + X."
+   ],
+   [
+    "Correct the error: It is the data that it causes most errors.",
+    "It is the data that causes most errors.",
+    "Không lặp chủ ngữ it trong mệnh đề that."
+   ]
+  ]
+ },
+ "readings": [
+  {
+   "title": "When a promising technology meets the real world",
+   "strategy": "Summary có danh sách từ: đọc bản tóm tắt, đoán loại từ, rồi chọn từ trong danh sách khớp nghĩa với đoạn tương ứng. Diagram labelling: tìm đoạn mô tả quy trình kiểm định và đi theo thứ tự.",
+   "instruction_vi": "Bài đọc khoảng 850 từ, 13 câu: 5 câu summary completion có danh sách từ, 4 câu summary completion không có danh sách (ONE WORD), 4 câu diagram labelling.",
+   "paragraphs": [
+    [
+     "A",
+     "Every few months, a news story announces that a new technology can diagnose a disease, predict a flood or detect fraud more accurately than human experts. The claims are often based on genuine research, yet many of these systems never become widely used, and some that are introduced perform far worse than expected. Understanding why requires looking closely at the difference between performance in a laboratory and performance in the messy conditions of everyday life. The gap between the two is rarely mentioned in press releases, but it is often the single most important factor in deciding whether a technology will be adopted, and whether it will do more good than harm once it is."
+    ],
+    [
+     "B",
+     "Most new systems are first tested on a dataset collected by the researchers who developed them. A medical imaging tool, for example, might be trained and evaluated using thousands of scans from a single hospital. Under these conditions, model performance can be extremely impressive. The difficulty is that the scans may share features that have nothing to do with the disease – the type of scanner used, the way patients were positioned, or even small labels printed on the image – and the system may learn to rely on these clues rather than on the medical signs that matter."
+    ],
+    [
+     "C",
+     "When such a system is moved to a different hospital, with different equipment and patients, its accuracy can fall sharply. Researchers call this problem dataset shift: the data the system encounters in practice no longer resembles the data it was trained on. In one widely discussed case from the fictional Meridian Health network, a tool that identified a lung condition with ninety-four per cent accuracy in its home hospital achieved only seventy-one per cent at three other sites."
+    ],
+    [
+     "D",
+     "For this reason, scientists increasingly insist on external validation – testing a system on data from sources that played no part in its development. Ideally, this testing should be carried out by an independent team, since developers may unintentionally make choices that favour their own system. Some journals now refuse to publish claims of high accuracy unless they are supported by at least one external test."
+    ],
+    [
+     "E",
+     "Even external validation is not the final step. A system that performs well on historical data may still change how people behave once it is introduced. Doctors who trust a diagnostic tool may examine images less carefully themselves, a problem known as automation bias. If the tool makes an error, it may therefore go unnoticed. Several researchers argue that the true test of a technology is a prospective trial, in which its effect on real decisions and outcomes is measured over time, rather than its accuracy on a fixed set of past cases."
+    ],
+    [
+     "F",
+     "There are also questions of fairness. If a system has been trained mainly on data from one group of people, it may perform less well for others. Facial recognition systems, for instance, have been found in several studies to make more errors for some demographic groups than for others. Researchers describe such patterns as algorithmic bias, and they warn that bias can arise even when developers have no intention of discriminating, simply because some groups are underrepresented in the training data."
+    ],
+    [
+     "G",
+     "None of this means that new technologies are untrustworthy. Many systems have passed every stage of testing and are now used safely, from tools that check X-rays for broken bones to software that predicts demand on electricity networks. The lesson is rather that a single impressive figure tells us very little. What matters is where the figure came from, who produced it and whether it has been reproduced under different conditions. A modest result that has been confirmed several times is usually more valuable than a dramatic one that has been reported only once."
+    ],
+    [
+     "H",
+     "Responsible deployment therefore involves several stages. A system is first developed and tested internally, then validated externally, then introduced in a limited trial with close monitoring, and only afterwards used more widely. Even then, its performance should be audited regularly, since the conditions in which it operates can change over time. Each stage takes time and money, which is why commercial pressure sometimes encourages companies to skip steps."
+    ],
+    [
+     "I",
+     "For the public, the most useful habit may be a healthy scepticism towards headline claims. When a news report states that a machine outperforms experts, it is worth asking a few simple questions: was the system tested on new data, by whom, and has anyone checked whether it improves real outcomes? Such questions are not hostile to innovation; they are what allow genuinely useful innovations to be distinguished from those that only look impressive in a laboratory."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "Summary (choose from the list): New systems are usually first tested on a ______ collected by their developers.",
+     "options": [
+      "A. dataset",
+      "B. hospital",
+      "C. journal",
+      "D. trial",
+      "E. label",
+      "F. network",
+      "G. budget",
+      "H. audience"
+     ],
+     "answer": "A. dataset",
+     "why": "Đoạn B: “first tested on a dataset collected by the researchers”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Summary (choose from the list): A system may learn to rely on irrelevant clues such as small ______ printed on images.",
+     "options": [
+      "A. dataset",
+      "B. hospital",
+      "C. journal",
+      "D. trial",
+      "E. labels",
+      "F. network",
+      "G. budget",
+      "H. audience"
+     ],
+     "answer": "E. labels",
+     "why": "Đoạn B: “even small labels printed on the image”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Summary (choose from the list): Some ______ will not publish high-accuracy claims without an external test.",
+     "options": [
+      "A. datasets",
+      "B. hospitals",
+      "C. journals",
+      "D. trials",
+      "E. labels",
+      "F. networks",
+      "G. budgets",
+      "H. audiences"
+     ],
+     "answer": "C. journals",
+     "why": "Đoạn D: “Some journals now refuse to publish claims…”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Summary (choose from the list): The true test may be a prospective ______ measuring effects on real decisions.",
+     "options": [
+      "A. dataset",
+      "B. hospital",
+      "C. journal",
+      "D. trial",
+      "E. label",
+      "F. network",
+      "G. budget",
+      "H. audience"
+     ],
+     "answer": "D. trial",
+     "why": "Đoạn E: “a prospective trial”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Summary (choose from the list): Software can predict demand on electricity ______.",
+     "options": [
+      "A. datasets",
+      "B. hospitals",
+      "C. journals",
+      "D. trials",
+      "E. labels",
+      "F. networks",
+      "G. budgets",
+      "H. audiences"
+     ],
+     "answer": "F. networks",
+     "why": "Đoạn G: “predicts demand on electricity networks”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary (ONE WORD from the passage): When practice data no longer resembles training data, this is called dataset ______.",
+     "answer": "shift",
+     "why": "Đoạn C: “dataset shift”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary (ONE WORD): Doctors who trust a tool too much may show automation ______.",
+     "answer": "bias",
+     "why": "Đoạn E: “a problem known as automation bias”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary (ONE WORD): Bias can arise when some groups are ______ in training data.",
+     "answer": "underrepresented",
+     "why": "Đoạn F: “some groups are underrepresented in the training data”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary (ONE WORD): Commercial pressure sometimes encourages companies to ______ steps.",
+     "answer": "skip",
+     "why": "Đoạn H: “encourages companies to skip steps”."
+    },
+    {
+     "type": "short",
+     "prompt": "Diagram, Stage 1: developed and tested ______. (ONE WORD)",
+     "answer": "internally",
+     "why": "Đoạn H: “first developed and tested internally”."
+    },
+    {
+     "type": "short",
+     "prompt": "Diagram, Stage 2: validated ______. (ONE WORD)",
+     "answer": "externally",
+     "why": "Đoạn H: “then validated externally”."
+    },
+    {
+     "type": "short",
+     "prompt": "Diagram, Stage 3: limited trial with close ______. (ONE WORD)",
+     "answer": "monitoring",
+     "why": "Đoạn H: “a limited trial with close monitoring”."
+    },
+    {
+     "type": "short",
+     "prompt": "Diagram, Stage 4: wider use, with performance ______ regularly. (ONE WORD)",
+     "answer": "audited",
+     "why": "Đoạn H: “its performance should be audited regularly”."
+    }
+   ]
+  },
+  {
+   "title": "Why replication matters",
+   "strategy": "Summary không có danh sách: bản tóm tắt theo thứ tự bài; đáp án là từ nguyên văn, kiểm tra số ít/số nhiều.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "One of the basic principles of science is that a result should not be accepted simply because one team has reported it. Other researchers should be able to repeat the experiment and obtain similar findings. This process, known as replication, protects against errors, chance results and, occasionally, deliberate fraud. Yet for much of the twentieth century, replication studies were rarely carried out, because journals preferred to publish new discoveries rather than repetitions of old ones."
+    ],
+    [
+     "B",
+     "In the early 2010s, several large projects attempted to replicate well-known studies in psychology, medicine and economics. The results were sobering. In some fields, fewer than half of the original findings could be reproduced with the same strength, and some disappeared altogether. The finding that a particular study failed to replicate did not necessarily mean the original researchers had done anything wrong; small samples, chance and subtle differences in methods could all play a part."
+    ],
+    [
+     "C",
+     "Researchers identified several practices that made unreliable results more likely. Small sample sizes allowed chance effects to appear significant. Flexible analysis – trying many statistical tests and reporting only those that 'worked' – increased the risk of false positives. And the pressure to publish striking results encouraged researchers to present tentative findings as more certain than they were."
+    ],
+    [
+     "D",
+     "Since then, many fields have adopted reforms. One of the most important is pre-registration, in which researchers publicly record their hypotheses and planned analysis before collecting data. This makes it much harder to change the analysis after seeing the results. Some journals now accept papers on the basis of their design, before the results are known, so that studies with negative findings are published as readily as those with positive ones."
+    ],
+    [
+     "E",
+     "Data sharing has also become more common. When researchers make their data and code available, others can check their calculations and try alternative analyses. Critics note that sharing data raises privacy concerns, particularly in medical research, and that preparing data for others to use takes time that is rarely rewarded in academic careers."
+    ],
+    [
+     "F",
+     "The replication debate has not undermined science; if anything, it shows science correcting itself. A field that discovers and admits its weaknesses is more trustworthy than one that never examines them. For readers of science news, the practical lesson is to treat a single study, however striking, as the beginning of an inquiry rather than its conclusion."
+    ],
+    [
+     "G",
+     "Funding bodies have begun to support these changes as well. Several now set aside money specifically for replication studies, and some require researchers to explain in advance how they will share their data. Although such policies add work for researchers, supporters argue that they make public money for science far more likely to produce findings that last."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "short",
+     "prompt": "Summary: Repeating an experiment to check its findings is called ______. (ONE WORD)",
+     "answer": "replication",
+     "why": "Đoạn A: “This process, known as replication”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: For many years, journals preferred to publish new ______. (ONE WORD)",
+     "answer": "discoveries",
+     "why": "Đoạn A: “journals preferred to publish new discoveries”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Small ______ sizes allowed chance effects to seem significant. (ONE WORD)",
+     "answer": "sample",
+     "why": "Đoạn C: “Small sample sizes”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Researchers now record hypotheses in advance, a practice called ______. (ONE WORD)",
+     "answer": "pre-registration",
+     "why": "Đoạn D: “pre-registration”."
+    },
+    {
+     "type": "short",
+     "prompt": "Summary: Sharing data raises ______ concerns in medical research. (ONE WORD)",
+     "answer": "privacy",
+     "why": "Đoạn E: “raises privacy concerns”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "A failed replication always shows that the original researchers made a mistake.",
+     "answer": "FALSE",
+     "why": "Đoạn B: “did not necessarily mean the original researchers had done anything wrong”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "In some fields, fewer than half of findings could be reproduced with the same strength.",
+     "answer": "TRUE",
+     "why": "Đoạn B."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Some journals now accept papers before the results are known.",
+     "answer": "TRUE",
+     "why": "Đoạn D: “accept papers on the basis of their design, before the results are known”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Pre-registration has eliminated all false positive results.",
+     "answer": "NOT GIVEN",
+     "why": "Bài nói pre-registration khiến khó thay đổi phân tích nhưng không nói loại bỏ hoàn toàn dương tính giả."
+    }
+   ]
+  },
+  {
+   "title": "How a smart irrigation system works",
+   "strategy": "Diagram labelling: đọc nhãn sơ đồ trước, rồi tìm đoạn mô tả từng bộ phận theo thứ tự dòng chảy của nước/dữ liệu.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "Agriculture uses around seventy per cent of the fresh water taken from rivers and underground sources worldwide, and much of it is wasted. Traditional irrigation often follows a fixed schedule, watering fields whether or not the soil needs it. Smart irrigation systems aim to reduce this waste by giving crops only the water they require, when they require it. In dry regions, the savings can make the difference between a viable farm and an abandoned one."
+    ],
+    [
+     "B",
+     "A typical system begins with soil moisture sensors buried at several depths in the field. These measure how much water is available to plant roots and send their readings wirelessly every fifteen minutes to a central controller, usually a small computer housed in a weatherproof box at the edge of the field."
+    ],
+    [
+     "C",
+     "The controller combines these readings with a local weather forecast, which it downloads several times a day. If rain is expected within the next twelve hours, it may postpone irrigation even if the soil is fairly dry. When watering is needed, the controller opens electrically operated valves on the pipes leading to each section of the field."
+    ],
+    [
+     "D",
+     "Water is then delivered through drip lines, narrow tubes laid along each row of crops with small openings close to the base of every plant. Because water is released slowly and directly to the roots, very little is lost through evaporation or runoff. A flow meter on the main pipe records how much water each section receives, allowing farmers to check that the system is working as intended."
+    ],
+    [
+     "E",
+     "Trials on fictional farms in the dry Corran valley found that smart systems reduced water use by between twenty and forty per cent compared with scheduled irrigation, without reducing yields. However, the systems require reliable electricity and internet connections, and sensors must be checked regularly, since a single faulty sensor can cause a section to be over- or under-watered."
+    ],
+    [
+     "F",
+     "The cost of installation remains the main barrier for small farmers. Some governments now offer grants that cover part of the cost, and several cooperatives share a single controller between neighbouring farms. Researchers suggest that, as sensor prices fall, smart irrigation may become standard practice in regions where water is scarce."
+    ],
+    [
+     "G",
+     "Some agricultural advisers caution that technology alone cannot solve water shortages. Where rivers are overused, the water saved on one farm may simply be used to irrigate a larger area, leaving total consumption unchanged. For smart irrigation to protect water supplies, they argue, it must be combined with limits on how much water each region can take, agreed between farmers, local authorities and environmental agencies."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "short",
+     "prompt": "Diagram label 1: soil moisture ______ buried at several depths. (ONE WORD)",
+     "answer": "sensors",
+     "why": "Đoạn B: “soil moisture sensors buried at several depths”."
+    },
+    {
+     "type": "short",
+     "prompt": "Diagram label 2: readings sent every ______ minutes. (ONE NUMBER)",
+     "answer": "15",
+     "why": "Đoạn B: “every fifteen minutes”."
+    },
+    {
+     "type": "short",
+     "prompt": "Diagram label 3: central ______ in a weatherproof box. (ONE WORD)",
+     "answer": "controller",
+     "why": "Đoạn B: “a central controller … housed in a weatherproof box”."
+    },
+    {
+     "type": "short",
+     "prompt": "Diagram label 4: electrically operated ______ on the pipes. (ONE WORD)",
+     "answer": "valves",
+     "why": "Đoạn C: “opens electrically operated valves”."
+    },
+    {
+     "type": "short",
+     "prompt": "Diagram label 5: ______ lines deliver water to plant roots. (ONE WORD)",
+     "answer": "drip",
+     "why": "Đoạn D: “delivered through drip lines”."
+    },
+    {
+     "type": "short",
+     "prompt": "Diagram label 6: a flow ______ on the main pipe. (ONE WORD)",
+     "answer": "meter",
+     "why": "Đoạn D: “A flow meter on the main pipe”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Smart irrigation may delay watering if rain is forecast.",
+     "answer": "TRUE",
+     "why": "Đoạn C: “it may postpone irrigation”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "In the Corran trials, smart systems reduced crop yields.",
+     "answer": "FALSE",
+     "why": "Đoạn E: “without reducing yields”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "All governments now pay the full cost of installation.",
+     "answer": "FALSE",
+     "why": "Đoạn F: “Some governments … grants that cover part of the cost”."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Students discuss a technology report",
+   "section": "Section 3 · multiple choice",
+   "strategy": "Multiple choice trong thảo luận: phân biệt ý kiến ban đầu của một người với điều cả hai thống nhất cuối cùng.",
+   "pre_listening": "Trước khi nghe: gạch dưới từ khóa của câu hỏi (why, main, agree).",
+   "trap": "Một sinh viên đưa nhận định rồi người kia phản biện – đáp án thường là kết luận sau phản biện.",
+   "strategies": [
+    "Initial vs final opinions",
+    "Reasons",
+    "Agreement"
+   ],
+   "transcript": "Tutor: So, Leo and Mei, you've read the report on the AI marking system that was trialled in secondary schools. What did you think?\nLeo: My first impression was that it was a big success. The system's marks agreed with teachers' marks ninety per cent of the time on short-answer questions.\nMei: But when you read the details, the agreement on longer essays was much lower – about sixty-five per cent. And essays are where marking takes teachers the most time.\nLeo: That's true. I suppose the headline figure was a bit misleading.\nTutor: What else stood out?\nMei: The schools in the trial were all quite large and well-funded. The report admits that results might be different in smaller schools with less experienced staff.\nLeo: And the students knew the system was being tested. Some of them said they wrote more carefully because of that, so the trial conditions weren't entirely normal.\nTutor: Did the report look at how teachers used the system?\nLeo: Yes, and that was interesting. Some teachers checked every mark the system gave, which meant they didn't save much time. Others accepted the marks almost automatically.\nMei: Which worries me, because the system made more mistakes with essays written by students learning English as a second language.\nTutor: So what's your overall judgement?\nLeo: I'd say it could be useful for short answers, but it isn't ready for essays.\nMei: I agree. And we think it should only be used to support teachers, not to give final marks, at least until it's been tested in a wider range of schools.\nTutor: Good. In your write-up, separate what the report shows from your own recommendations. And mention who funded the trial – it was the company that developed the system.\nMei: Oh, we missed that. That's important.",
+   "questions": [
+    {
+     "prompt": "What was Leo's first impression of the system?",
+     "options": [
+      "A. It was a big success.",
+      "B. It was too expensive.",
+      "C. It was unreliable."
+     ],
+     "answer": "A. It was a big success.",
+     "why": "“My first impression was that it was a big success.”"
+    },
+    {
+     "prompt": "What was the agreement rate for longer essays?",
+     "options": [
+      "A. About 90%",
+      "B. About 65%",
+      "C. About 50%"
+     ],
+     "answer": "B. About 65%",
+     "why": "90% là câu trả lời ngắn (bẫy); bài luận khoảng 65%."
+    },
+    {
+     "prompt": "What limitation does Mei mention about the schools?",
+     "options": [
+      "A. They were all large and well-funded.",
+      "B. They were in rural areas.",
+      "C. They had very small classes."
+     ],
+     "answer": "A. They were all large and well-funded.",
+     "why": "“all quite large and well-funded”."
+    },
+    {
+     "prompt": "Why might trial conditions not have been normal?",
+     "options": [
+      "A. Teachers were absent.",
+      "B. Students knew the system was being tested.",
+      "C. The questions were easier."
+     ],
+     "answer": "B. Students knew the system was being tested.",
+     "why": "“the students knew the system was being tested”."
+    },
+    {
+     "prompt": "Why did some teachers save little time?",
+     "options": [
+      "A. They checked every mark.",
+      "B. The system was slow.",
+      "C. They refused to use it."
+     ],
+     "answer": "A. They checked every mark.",
+     "why": "“Some teachers checked every mark … didn't save much time”."
+    },
+    {
+     "prompt": "Which students' essays did the system mark less accurately?",
+     "options": [
+      "A. Younger students",
+      "B. Students learning English as a second language",
+      "C. Students with neat handwriting"
+     ],
+     "answer": "B. Students learning English as a second language",
+     "why": "“essays written by students learning English as a second language”."
+    },
+    {
+     "prompt": "What do Leo and Mei recommend?",
+     "options": [
+      "A. Using the system for all marking",
+      "B. Using it only to support teachers",
+      "C. Stopping the trial"
+     ],
+     "answer": "B. Using it only to support teachers",
+     "why": "“only be used to support teachers, not to give final marks”."
+    },
+    {
+     "prompt": "Who funded the trial?",
+     "options": [
+      "A. The government",
+      "B. The schools",
+      "C. The company that developed the system"
+     ],
+     "answer": "C. The company that developed the system",
+     "why": "“it was the company that developed the system”."
+    },
+    {
+     "prompt": "What does the tutor ask them to separate in the write-up?",
+     "options": [
+      "A. Evidence and recommendations",
+      "B. Short answers and essays",
+      "C. Teachers and students"
+     ],
+     "answer": "A. Evidence and recommendations",
+     "why": "“separate what the report shows from your own recommendations”."
+    }
+   ]
+  },
+  {
+   "title": "How a new phone app is tested",
+   "section": "Section 2 · flow-chart completion",
+   "strategy": "Flow-chart: các bước theo thứ tự lời nói; nghe từ chuyển bước (first, once that's done, after that, finally).",
+   "strategies": [
+    "Sequence markers",
+    "Stage names",
+    "Numbers"
+   ],
+   "transcript": "Speaker: Good afternoon. I'm Dana Whitfield, head of quality at Brightline Apps, and I've been asked to explain how we test a new app before it reaches your phone. It's a longer process than most people imagine.\nIt all starts with what we call the specification. Before any code is written, the design team produces a document describing exactly what the app should do and how it should behave. Every test we carry out later is checked against this document.\nOnce development begins, programmers write automated tests alongside the code itself. These are small programs that check whether each individual function works correctly. Every time a programmer makes a change, several thousand of these tests run automatically, usually within about ten minutes.\nThe third stage is what we call integration testing. Here we check that the different parts of the app work together properly – for example, that the payment screen correctly communicates with the bank. Problems often appear at this stage even when every individual part works on its own.\nAfter that comes device testing. Our laboratory contains more than three hundred different phones and tablets, from the latest models to devices that are five or six years old, because many users don't replace their phones often. An app that runs smoothly on a new phone may be painfully slow on an older one.\nNext is accessibility testing. We check that the app can be used by people with visual impairments, for example with screen-reading software, and by people who have difficulty with fine hand movements.\nFinally, before a full launch, we release the app to a small group of real users – usually about two per cent of our customers – in what's called a staged rollout. We monitor crash reports and reviews closely, and only if everything looks stable do we release it to everyone.\nThe whole process typically takes between six and eight weeks for a new app.",
+   "questions": [
+    {
+     "prompt": "Stage 1: the design team writes the ______",
+     "answer": "specification",
+     "why": "“what we call the specification”."
+    },
+    {
+     "prompt": "Stage 2: programmers write automated ______",
+     "answer": "tests",
+     "why": "“programmers write automated tests”."
+    },
+    {
+     "prompt": "Automated tests usually run within about ______ minutes",
+     "answer": "10",
+     "why": "“usually within about ten minutes”."
+    },
+    {
+     "prompt": "Stage 3: ______ testing checks parts work together",
+     "answer": "integration",
+     "why": "“The third stage is what we call integration testing.”"
+    },
+    {
+     "prompt": "Stage 4: device laboratory has more than ______ devices",
+     "answer": "300",
+     "why": "“more than three hundred different phones and tablets”."
+    },
+    {
+     "prompt": "Stage 5: ______ testing for users with impairments",
+     "answer": "accessibility",
+     "why": "“Next is accessibility testing.”"
+    },
+    {
+     "prompt": "Stage 6: release to about ______ of customers",
+     "answer": "2%",
+     "why": "“usually about two per cent of our customers”."
+    },
+    {
+     "prompt": "This final release stage is called a staged ______",
+     "answer": "rollout",
+     "why": "“in what's called a staged rollout”."
+    },
+    {
+     "prompt": "Total time for a new app: six to ______ weeks",
+     "answer": "eight",
+     "why": "“between six and eight weeks”."
+    }
+   ]
+  },
+  {
+   "title": "Lecture: the history of a simple invention",
+   "section": "Section 4 · note completion",
+   "strategy": "Bài giảng lịch sử công nghệ: theo dõi mốc thời gian và các yếu tố giúp phát minh được chấp nhận.",
+   "strategies": [
+    "Dates and periods",
+    "Causes of adoption",
+    "Key terms"
+   ],
+   "transcript": "Lecturer: Today I want to use one example – the humble refrigerator – to explore a broader question: why do some technologies spread quickly, while others take decades to be adopted?\nThe basic principle of mechanical refrigeration was understood in the mid-eighteenth century, and working machines existed by the eighteen-fifties. Yet household refrigerators did not become common in wealthy countries until the nineteen-thirties and nineteen-forties, almost a century later. So what took so long?\nThe first factor was infrastructure. A household refrigerator needs a reliable electricity supply, and until the early twentieth century, most homes simply weren't connected to an electrical grid. This is a common pattern: a technology often depends on a supporting system that has to be built first.\nThe second factor was safety. Early refrigerators used gases that were toxic or flammable, and there were serious accidents when they leaked. The development of safer coolant gases in the late nineteen-twenties made refrigerators acceptable in ordinary kitchens – although, as we now know, those gases later turned out to damage the ozone layer, which led to them being phased out from the nineteen-eighties onwards.\nThird, price. The first household models cost more than a car. Mass production, combined with the option of paying in instalments, brought prices down to a level many families could afford.\nThe fourth factor is less obvious: changes in daily life. As more women entered paid work and fewer households employed servants, there was a growing need to store food for longer and shop less often. The refrigerator fitted these new patterns of living.\nSo the lesson is that adoption depends not only on whether a technology works, but on infrastructure, safety, cost and whether it fits the way people actually live. For next week, please apply these four factors to a technology of your choice.",
+   "questions": [
+    {
+     "prompt": "Working refrigeration machines existed by the ______",
+     "answer": "1850s",
+     "why": "“by the eighteen-fifties”."
+    },
+    {
+     "prompt": "Household fridges became common in the 1930s and ______",
+     "answer": "1940s",
+     "why": "“the nineteen-thirties and nineteen-forties”."
+    },
+    {
+     "prompt": "Factor 1: a reliable ______ supply",
+     "answer": "electricity",
+     "why": "“a reliable electricity supply”."
+    },
+    {
+     "prompt": "Early coolant gases were toxic or ______",
+     "answer": "flammable",
+     "why": "“toxic or flammable”."
+    },
+    {
+     "prompt": "Later, coolant gases were found to damage the ______ layer",
+     "answer": "ozone",
+     "why": "“damage the ozone layer”."
+    },
+    {
+     "prompt": "Factor 3: the first models cost more than a ______",
+     "answer": "car",
+     "why": "“cost more than a car”."
+    },
+    {
+     "prompt": "Prices fell through mass production and paying in ______",
+     "answer": "instalments",
+     "why": "“the option of paying in instalments”."
+    },
+    {
+     "prompt": "Factor 4: fewer households employed ______",
+     "answer": "servants",
+     "why": "“fewer households employed servants”."
+    },
+    {
+     "prompt": "A technology must fit the way people actually ______",
+     "answer": "live",
+     "why": "“whether it fits the way people actually live”."
+    }
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 2 – two-part question",
+  "instruction_vi": "Đề có hai câu hỏi: trả lời ĐỦ CẢ HAI, mỗi câu một thân bài, mở bài nêu ngắn gọn câu trả lời cho cả hai. Viết ít nhất 250 từ (mục tiêu 270–310).",
+  "task": "Artificial intelligence is increasingly being used to make decisions in areas such as healthcare, education and employment. Why is this happening? What problems might it cause, and how could they be addressed? Write at least 250 words.",
+  "data_visual": null,
+  "sample_answer": "Artificial intelligence is now used to help diagnose illnesses, mark examinations and select job applicants. This trend is driven mainly by the promise of speed and lower costs, but it also raises serious concerns about accuracy and fairness, which can be reduced through independent testing and human oversight.\n\nThe main reason organisations are adopting AI is efficiency. Systems can process thousands of applications or medical images in the time a person would take to review a handful, which is particularly attractive when staff are scarce and budgets are tight. In addition, AI systems are often presented as more objective than humans, since they do not become tired or allow personal feelings to influence their judgements. Advances in computing power and the availability of large amounts of data have made such systems far more capable than they were a decade ago.\n\nHowever, these systems can cause significant problems. A tool that performs well in a laboratory may make many more errors when used with different populations or equipment. Moreover, if the data used to train a system reflects past discrimination, the system may reproduce it, for example by rejecting qualified candidates from certain groups. Because many systems are difficult to explain, people affected by their decisions may find it impossible to challenge them.\n\nThese risks can be reduced in several ways. Systems should be tested independently on new data before being introduced, and their performance should be monitored regularly once in use. It is also essential that important decisions remain under human control, with people able to review and overturn automated recommendations. Finally, organisations should be required to explain how their systems work and to publish evidence of their accuracy for different groups.\n\nIn conclusion, AI is spreading because it promises efficiency, but its use in high-stakes decisions must be accompanied by rigorous testing, transparency and meaningful human oversight.",
+  "guidance": [
+   "Mở bài: paraphrase + trả lời ngắn cả hai câu hỏi (lý do; vấn đề và giải pháp).",
+   "Thân bài 1: lý do (hiệu quả, chi phí, được coi là khách quan, dữ liệu và sức mạnh tính toán).",
+   "Thân bài 2: vấn đề (dataset shift, thiên lệch, khó giải thích).",
+   "Thân bài 3: giải pháp tương ứng từng vấn đề; kết luận tóm tắt."
+  ],
+  "micro": [
+   [
+    "Câu mở bài trả lời ngắn cả hai câu hỏi.",
+    "This trend is driven by efficiency, but it raises concerns about fairness that can be addressed through testing and oversight."
+   ],
+   [
+    "Viết câu chẻ nhấn mạnh nguyên nhân chính.",
+    "It is the promise of speed and lower costs that is driving this trend."
+   ],
+   [
+    "Câu phi ngôi về bằng chứng.",
+    "It has been shown that some systems make more errors for certain groups."
+   ],
+   [
+    "Câu giải pháp khớp với vấn đề khó giải thích.",
+    "Organisations should be required to explain how their systems reach decisions."
+   ],
+   [
+    "Câu với “What … is …”.",
+    "What is needed most is independent testing on new data."
+   ]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 2. More and more people rely on the internet for information about health and science. Why is this the case? What are the risks, and how can they be reduced? Write at least 250 words.",
+  "essay": {
+   "prompt": "Some people think that schools should use artificial intelligence to assess students' work. To what extent do you agree or disagree?",
+   "planning_prompts": [
+    "Mở bài: lập trường (đồng ý một phần – hỗ trợ, không thay thế giáo viên).",
+    "Thân bài 1: lợi ích (nhanh, nhất quán với câu hỏi ngắn, phản hồi tức thì).",
+    "Thân bài 2: hạn chế (bài luận, thiên lệch với người học ngôn ngữ thứ hai, thiếu giải thích).",
+    "Kết luận: điều kiện để sử dụng có trách nhiệm."
+   ],
+   "model_paragraphs": [
+    "Advances in artificial intelligence have made it possible for software to mark students' work, and some argue that schools should adopt such systems widely. I partly agree: AI can be a useful assistant for certain tasks, but it should not replace teachers' judgement in assessing students.",
+    "There are clear benefits to using AI for some kinds of assessment. For short answers and multiple-choice questions, software can mark large numbers of responses quickly and consistently, freeing teachers to spend more time planning lessons and supporting individual students. It can also give instant feedback, allowing students to correct mistakes while the material is still fresh in their minds, rather than waiting days for marked work to be returned.",
+    "However, assessing more complex work is a different matter. Essays and creative projects require judgements about argument, originality and style that current systems handle much less reliably. Trials have shown that some systems are less accurate for students writing in a second language, which could disadvantage groups who already face challenges. Furthermore, if students know their work will be marked by software, they may learn to write for the machine, using expected keywords instead of developing genuine understanding.",
+    "For these reasons, AI marking should be used only where its accuracy has been independently tested, and teachers should review its results, particularly for high-stakes assessments. What matters most is that students are judged fairly, not that marking is fast.",
+    "In conclusion, I agree that schools can benefit from AI for routine marking and feedback, but I disagree that it should be used to assess students' work in general. Teachers must remain responsible for important judgements about students' learning."
+   ]
+  },
+  "drills": [
+   [
+    "Sửa lỗi: AI is used more and more because it is cheap and also it is fast and also objective.",
+    "AI is increasingly used because it is fast, cheap and widely regarded as objective.",
+    "Tránh lặp “and also”; liệt kê gọn."
+   ],
+   [
+    "Sửa lỗi: It is the data that it causes the problem.",
+    "It is the data that causes the problem.",
+    "Không lặp chủ ngữ trong câu chẻ."
+   ],
+   [
+    "Viết lại học thuật hơn: AI is not always right.",
+    "AI systems may produce inaccurate results, particularly with unfamiliar data.",
+    "Cụ thể hóa và dùng may."
+   ],
+   [
+    "Sửa lỗi: There are many evidences that AI has bias.",
+    "There is growing evidence that some AI systems are biased.",
+    "evidence không đếm được."
+   ],
+   [
+    "Sửa lỗi: The solution for this is human.",
+    "One solution is to ensure that humans review important decisions.",
+    "solution to/is to + V; câu đầy đủ ý."
+   ],
+   [
+    "Sửa lỗi: Why this happens? Because companies want money.",
+    "This is happening mainly because organisations want to reduce costs.",
+    "Không đặt câu hỏi tu từ; tránh văn nói."
+   ]
+  ]
+ },
+ "speaking": {
+  "title": "Science and technology in daily life",
+  "instruction_vi": "Part 1 trả lời tự nhiên về thói quen dùng công nghệ; Part 3 thảo luận lợi ích–rủi ro với cấu trúc nhấn mạnh (What worries me is…).",
+  "focus": "Part 1 mở rộng 2–3 câu tự nhiên; Part 3 dùng câu chẻ (What I find most useful is…, It's the speed that…) để nhấn trọng tâm.",
+  "part1": [
+   "What piece of technology do you use most every day?",
+   "Did you enjoy science lessons at school?",
+   "Do you prefer to read on paper or on a screen?",
+   "Is there a new technology you would like to try?"
+  ],
+  "part2": "Describe a piece of technology that has changed the way you study or work. You should say what it is, when you started using it, how you use it, and explain how it has changed the way you study or work.",
+  "part3": [
+   "Should schools use artificial intelligence to assess students?",
+   "Do you think people rely too much on technology?",
+   "How can ordinary people judge whether a scientific claim is reliable?"
+  ],
+  "model_answer": "I'd like to talk about a flashcard app that I've been using for about two years to study English vocabulary. I started using it in my first year at university, when a friend showed me how it works. Basically, you create digital cards with a word on one side and its meaning and an example sentence on the other, and the app shows them to you at increasing intervals, so you see difficult words more often and easy ones less often. I use it almost every day, usually for about fifteen minutes on the bus to class. What has changed most is how I think about studying. Before, I used to read through long word lists the night before a test, and I'd forget most of them a week later. With the app, I review a little every day, and I actually remember words months later. It's also made me more aware of my own progress, because the app shows statistics about how many words I've learned. If I'm honest, it's not perfect – sometimes I just tap through the cards without really thinking – but overall, it's the consistency that it encourages that has made the biggest difference. I think it's a good example of how a simple technology can be powerful if it's based on how memory actually works.",
+  "extensions": [
+   [
+    "Should schools use artificial intelligence to assess students?",
+    "Đồng ý một phần → lợi ích với câu hỏi ngắn → giới hạn với bài luận và thiên lệch → giáo viên kiểm tra kết quả."
+   ],
+   [
+    "Do you think people rely too much on technology?",
+    "Lập trường cân bằng → ví dụ phụ thuộc (bản đồ, máy tính) → lợi ích thực → kỹ năng nên giữ."
+   ],
+   [
+    "How can ordinary people judge whether a scientific claim is reliable?",
+    "Ba câu hỏi: nguồn nào, thử nghiệm ở đâu, đã được kiểm chứng độc lập chưa → ví dụ tin sức khỏe → thái độ hoài nghi lành mạnh."
+   ],
+   [
+    "Will technology create more jobs than it destroys?",
+    "Dự đoán có điều kiện → nghề mất đi và nghề mới → vai trò đào tạo lại → kết luận."
+   ]
+  ]
+ },
+ "checkpoint": [
+  [
+   "In summary completion with a list of options, the correct word must…",
+   [
+    "appear in the passage exactly",
+    "fit both the meaning and the grammar of the gap",
+    "be the longest option",
+    "be a number"
+   ],
+   "fit both the meaning and the grammar of the gap",
+   "Đáp án cần đúng nghĩa và đúng ngữ pháp."
+  ],
+  [
+   "What is dataset shift?",
+   [
+    "A system trained on too much data",
+    "Data in practice no longer resembling training data",
+    "A change in the price of data",
+    "Moving data to a new computer"
+   ],
+   "Data in practice no longer resembling training data",
+   "Khác biệt giữa dữ liệu thực tế và dữ liệu huấn luyện."
+  ],
+  [
+   "Choose the correct cleft sentence.",
+   [
+    "What we need are more tests.",
+    "What we need is more independent testing.",
+    "It is testing what we need.",
+    "What we need it is testing."
+   ],
+   "What we need is more independent testing.",
+   "What + S + V + is + X."
+  ],
+  [
+   "A two-part Task 2 question asks “Why?” and “What problems?”. You should…",
+   [
+    "answer only the more interesting question",
+    "answer both, with clear paragraphs for each",
+    "combine both into one paragraph without signposting",
+    "answer them only in the conclusion"
+   ],
+   "answer both, with clear paragraphs for each",
+   "Phải trả lời đủ hai phần."
+  ],
+  [
+   "Why is external validation important?",
+   [
+    "It makes systems faster.",
+    "It tests a system on data not used in its development.",
+    "It reduces the cost of development.",
+    "It replaces human oversight."
+   ],
+   "It tests a system on data not used in its development.",
+   "Kiểm định trên dữ liệu độc lập."
+  ]
+ ],
+ "reflection": [
+  "Bạn có chọn từ trong danh sách đúng nghĩa nhưng sai ngữ pháp (số ít/số nhiều) không?",
+  "Bài Task 2 hai câu hỏi của bạn đã trả lời đủ và cân đối cả hai phần chưa?"
+ ],
+ "vocabulary": [
+  [
+   "technological innovation",
+   "đổi mới công nghệ",
+   "Technological innovation can alter work practices."
+  ],
+  [
+   "algorithmic bias",
+   "thiên lệch thuật toán",
+   "Algorithmic bias may reproduce unequal treatment."
+  ],
+  [
+   "experimental design",
+   "thiết kế thí nghiệm",
+   "Experimental design affects reliability."
+  ],
+  [
+   "replication study",
+   "nghiên cứu lặp lại",
+   "A replication study tests previous findings."
+  ],
+  [
+   "data governance",
+   "quản trị dữ liệu",
+   "Data governance sets rules for responsible use."
+  ],
+  [
+   "privacy safeguard",
+   "biện pháp bảo vệ riêng tư",
+   "Privacy safeguards protect sensitive information."
+  ],
+  [
+   "automation risk",
+   "rủi ro tự động hóa",
+   "Automation risk differs between occupations."
+  ],
+  [
+   "human oversight",
+   "giám sát của con người",
+   "Human oversight is vital in critical decisions."
+  ],
+  [
+   "scalability",
+   "khả năng mở rộng",
+   "Scalability is important for public systems."
+  ],
+  [
+   "model performance",
+   "hiệu suất mô hình",
+   "Model performance must be tested beyond the laboratory."
+  ],
+  [
+   "ethical review",
+   "đánh giá đạo đức",
+   "Ethical review preceded the trial."
+  ],
+  [
+   "statistical significance",
+   "ý nghĩa thống kê",
+   "Statistical significance does not always imply practical value."
+  ],
+  [
+   "dataset shift",
+   "sự thay đổi phân bố dữ liệu",
+   "Dataset shift can reduce model performance."
+  ],
+  [
+   "external validation",
+   "kiểm định bên ngoài",
+   "External validation tests wider applicability."
+  ],
+  [
+   "independent audit",
+   "kiểm toán độc lập",
+   "An independent audit identified risks."
+  ],
+  [
+   "performance metric",
+   "chỉ số hiệu suất",
+   "A performance metric should match goals."
+  ],
+  [
+   "explainable decision",
+   "quyết định có thể giải thích",
+   "An explainable decision supports accountability."
+  ],
+  [
+   "technical limitation",
+   "giới hạn kỹ thuật",
+   "Every prototype has technical limitations."
+  ],
+  [
+   "responsible deployment",
+   "triển khai có trách nhiệm",
+   "Responsible deployment requires safeguards."
+  ],
+  [
+   "empirical evidence",
+   "bằng chứng thực nghiệm",
+   "Empirical evidence is stronger than marketing claims."
+  ]
+ ],
+ "v3_enrichment": {
+  "coaching": {
+   "core": "Khái quát hạn chế của nghiên cứu và công nghệ",
+   "terms": [
+    "validity, reliability, generalisability",
+    "sample and population",
+    "cause and effect versus prediction"
+   ],
+   "example": "A model may perform well on one dataset yet fail when conditions change. High test accuracy is not the same as universal reliability.",
+   "trap": "Nhầm sự chính xác trong một bối cảnh với khả năng áp dụng ở mọi nơi.",
+   "reading_focus": "Diagram/flow-chart completion and inference",
+   "listening_focus": "Academic explanation with self-correction",
+   "writing1": "line",
+   "speaking_issue": "Should schools use artificial intelligence to assess students?",
+   "deep": {
+    "grammar": "Modal verbs biểu đạt các cấp độ chắc chắn: 'may improve' không mạnh bằng 'will improve'. 'It remains unclear whether...' chỉ dùng khi chứng cứ không đủ, không phải câu đệm cho mọi bài luận. Phân biệt statistical significance với practical significance: một thay đổi nhỏ có thể có ý nghĩa thống kê nhưng không đủ tác động trong thực tiễn.",
+    "reading": "Đọc nghiên cứu công nghệ nên tìm thiết kế thử nghiệm, nhóm so sánh và hạn chế khái quát hóa. Một mô hình dự báo trong trường thí điểm không chứng minh được hiệu quả tại tất cả trường học. Với sơ đồ flow-chart, xác định trước mỗi bước cần hành động hay điều kiện, rồi dò câu chứa quy trình trong bài.",
+    "listening": "Bài giảng công nghệ thường dùng lập luận: hypothesis -> method -> findings -> limitations. Những câu 'at first we assumed' hoặc 'however' có thể đảo chiều thông tin. Sơ đồ ghi chép theo cấu trúc giúp không bị cuốn theo các thuật ngữ kỹ thuật gây xao nhãng.",
+    "writing": "Writing Task 2 lợi ích và tác hại của AI: không liệt kê 5 ưu điểm ngắn. Hãy chọn hai cơ chế quan trọng, ví dụ AI cải thiện khả năng tiếp cận phản hồi nhưng có nguy cơ tạo thiên lệch nếu dữ liệu thiếu đại diện. Câu kết cần nêu điều kiện quản lý cần thiết, không khẳng định công nghệ tự động tốt hoặc xấu."
+   }
+  },
+  "writing_task1_template": [
+   "Intro: Paraphrase what the visual compares, without inventing a reason.",
+   "Overview: Report the largest change and a meaningful contrast.",
+   "Body 1: Group comparable categories and support with figures.",
+   "Body 2: Describe contrasts and exceptions, use accurate units."
+  ],
+  "writing_task2_template": [
+   "Intro: Paraphrase the problem and state a clear answer.",
+   "Body 1: Claim -> why -> concrete illustration -> implication.",
+   "Body 2: Second argument or contrasting view, with measured concession.",
+   "Conclusion: Answer the exact question without adding new evidence."
+  ],
+  "speaking_part3_template": [
+   "Give an answer and its scope.",
+   "Explain the mechanism or trade-off.",
+   "Offer a concrete but non-generalised example.",
+   "Recognise a limitation, comparison or alternative."
+  ]
+ }
+}

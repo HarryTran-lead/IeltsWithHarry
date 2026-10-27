@@ -1,0 +1,999 @@
+{
+ "unit_id": "L3U05",
+ "order": 5,
+ "title": "History",
+ "title_vi": "Lịch sử và tư liệu",
+ "objectives": [
+  "Làm select from a list (chọn HAI/BA đáp án) và YES/NO/NOT GIVEN về quan điểm người viết",
+  "Đánh giá nguồn sử liệu: nguồn gốc, độ tin cậy, sự không chắc chắn trong diễn giải",
+  "Viết Task 1 biểu đồ cột với so sánh theo nhóm và theo thời gian",
+  "Dùng thì kể chuyện (past perfect) và bị động tường thuật (is believed to have)"
+ ],
+ "exam_strategy": "Select from a list: đáp án đúng thường rải ở nhiều đoạn; mỗi phương án phải được bài khẳng định rõ – loại phương án chỉ được nhắc mà không được xác nhận.",
+ "core_outcome": "Phân biệt bằng chứng lịch sử với diễn giải; viết Task 1 biểu đồ cột có overview và so sánh chính xác.",
+ "grammar": {
+  "title": "Narrative tenses and reporting structures",
+  "explanation_vi": "Kể lịch sử cần sắp xếp thời gian: past perfect cho việc xảy ra trước một mốc quá khứ khác (By 1850, the city had grown…). Khi thông tin chưa chắc chắn, dùng bị động tường thuật: It is believed that…, X is thought to have + V3 (việc trong quá khứ), X is said to be… Cách này thể hiện sự thận trọng của nhà sử học.",
+  "form": "had + V3 (trước mốc quá khứ) · It is believed / thought / said that + mệnh đề · S + is believed / thought to + V (hiện tại) · S + is believed / thought to have + V3 (quá khứ)",
+  "examples": [
+   "By the time the archive was discovered, much of it had been damaged by water.",
+   "The bridge is thought to have been built in the twelfth century.",
+   "It is widely believed that the town was abandoned after a fire."
+  ],
+  "examples_vi": [
+   "Vào lúc kho lưu trữ được phát hiện, phần lớn đã bị nước làm hư hại.",
+   "Cây cầu được cho là đã được xây vào thế kỷ 12.",
+   "Nhiều người tin rằng thị trấn bị bỏ hoang sau một trận hỏa hoạn."
+  ],
+  "trap": "is thought to have + V3 cho sự việc quá khứ (không viết “is thought to build in 1200”). Không dùng past perfect khi chỉ có một mốc thời gian và không có hành động trước đó.",
+  "items": [
+   [
+    "When archaeologists arrived, the site ___ (already / be) looted.",
+    "had already been",
+    "Việc xảy ra trước mốc “khi khảo cổ học đến” → past perfect bị động."
+   ],
+   [
+    "The temple is believed ___ (build) around 900 AD.",
+    "to have been built",
+    "Sự việc quá khứ + bị động → to have been + V3."
+   ],
+   [
+    "It is ___ that the letters were written by a merchant. (thought / thinking)",
+    "thought",
+    "It is thought that = người ta cho rằng."
+   ],
+   [
+    "The manuscript is said ___ (be) the oldest in the region. (hiện tại)",
+    "to be",
+    "Trạng thái hiện tại → to be."
+   ],
+   [
+    "By 1900, the population ___ (double).",
+    "had doubled",
+    "By + mốc quá khứ → past perfect."
+   ],
+   [
+    "The king is thought ___ (die) of illness. (quá khứ)",
+    "to have died",
+    "Việc trong quá khứ → to have + V3."
+   ],
+   [
+    "Historians ___ (believe) that the map is a later copy. (hiện tại, chủ động)",
+    "believe",
+    "Chủ ngữ là người tin → chủ động present simple."
+   ],
+   [
+    "Correct the error: The castle is believed to build in 1200.",
+    "The castle is believed to have been built in 1200.",
+    "Sự việc quá khứ, bị động → to have been built."
+   ]
+  ]
+ },
+ "readings": [
+  {
+   "title": "Reading the past through ordinary objects",
+   "strategy": "Select from a list: đọc từng phương án, tìm bằng chứng ở các đoạn khác nhau; chỉ chọn phương án được bài khẳng định. YES/NO/NOT GIVEN: tìm câu thể hiện quan điểm người viết (I would argue, it seems clear).",
+   "instruction_vi": "Bài đọc khoảng 850 từ, 13 câu: 3 câu select from a list (chọn cặp đáp án đúng), 6 câu YES/NO/NOT GIVEN và 4 câu short-answer.",
+   "paragraphs": [
+    [
+     "A",
+     "For much of the nineteenth and twentieth centuries, history was largely the study of written documents produced by powerful people: laws, treaties, the letters of kings and the records of governments. These sources remain invaluable, but they tell us far more about the small number of people who could read and write than about the majority who could not. Over the past fifty years, historians have increasingly turned to a different kind of evidence – the ordinary objects that people made, used and threw away – and in my view this shift has been one of the most valuable developments in the discipline."
+    ],
+    [
+     "B",
+     "Material evidence can reveal aspects of daily life that written sources ignore. A collection of cooking pots from a village rubbish pit may show what people ate, how food was prepared and whether families could afford imported goods. Tools reveal the work people did; toys suggest how children spent their time. In one fictional excavation at the town of Harlow, the discovery of hundreds of broken clay pipes in the cellars of workers' houses showed that tobacco had become widely available to labourers far earlier than official trade records suggested."
+    ],
+    [
+     "C",
+     "Yet objects do not speak for themselves. A pot is simply a pot until someone interprets its meaning, and interpretation always involves assumptions. Archaeologists once assumed, for instance, that graves containing weapons belonged to men and those containing jewellery belonged to women. Later analysis of skeletons showed that this was not always true. It would be a mistake, I believe, to treat this as a failure of material evidence; rather, it shows how the questions historians ask shape the answers they find."
+    ],
+    [
+     "D",
+     "Provenance – knowing where an object was found and in what context – is crucial. An object removed from the ground without careful recording loses much of its value as evidence, because its relationship to other objects and to the layer of soil in which it lay can no longer be studied. This is one reason why archaeologists are so concerned about illegal excavation. Objects sold on the private market are often attractive and valuable, but historically they may be almost silent."
+    ],
+    [
+     "E",
+     "Dating objects accurately is another challenge. Some materials, such as wood and bone, can be dated scientifically, but others, such as stone tools or metal coins, are usually dated by comparison with similar objects found elsewhere. This creates a risk of circular reasoning: if a style of pottery is dated by the coins found with it, and the coins are dated by the pottery, an error in one can spread to the other. Careful researchers therefore try to use several independent dating methods wherever possible."
+    ],
+    [
+     "F",
+     "Material evidence becomes particularly powerful when it is combined with written and oral sources. In the study of migration, for example, historians have compared official records of arrivals with the personal belongings migrants brought with them and the stories their descendants still tell. Each type of source has gaps, but together they can produce a fuller and more human account of the past. Oral testimony, though sometimes inaccurate about dates, can preserve details of feelings and motives that no object or document records."
+    ],
+    [
+     "G",
+     "Museums have been slow to reflect these changes. Many still display objects as beautiful items behind glass, with brief labels giving a date and a place, rather than explaining what the objects reveal about the people who used them. Some museums are experimenting with more interpretive displays, which show how historians reached their conclusions and where uncertainty remains. Visitor research suggests that people generally find such displays more engaging, although a minority prefer simpler labels."
+    ],
+    [
+     "H",
+     "The study of ordinary objects has also changed who is considered part of history. Women, children, servants and people who left no written record at all now appear in historical accounts in ways that would have been impossible a century ago. This does not mean that political and military history are unimportant, but it does mean that our picture of the past is broader and more democratic than it was."
+    ],
+    [
+     "I",
+     "Nevertheless, it would be naive to assume that material evidence is free from bias. Some materials survive much better than others: stone and pottery last for thousands of years, while cloth, wood and leather usually decay. As a result, the objects that reach us are a selection shaped partly by chance and partly by climate, and historians must always ask not only what has survived, but what has been lost. Silence in the record, in other words, is itself a kind of evidence that needs interpreting."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "Which TWO advantages of material evidence does the writer mention? (choose the correct pair)",
+     "options": [
+      "A. It shows details of daily life, and it reveals the lives of people without written records.",
+      "B. It is always easy to date, and it is free from bias.",
+      "C. It replaces written documents, and it is cheap to collect.",
+      "D. It shows feelings and motives, and it is easy to interpret."
+     ],
+     "answer": "A. It shows details of daily life, and it reveals the lives of people without written records.",
+     "why": "Đoạn B (đời sống hằng ngày) và đoạn H (người không có tư liệu viết). B sai (đoạn E, I); D: cảm xúc là ưu điểm của oral testimony (đoạn F)."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Which TWO problems with dating objects are described? (choose the correct pair)",
+     "options": [
+      "A. Some materials cannot be dated scientifically, and dating by comparison can become circular.",
+      "B. Scientific dating is always wrong, and coins are never useful.",
+      "C. Wood decays, and museums refuse to date objects.",
+      "D. Dating requires illegal excavation, and pottery cannot be dated."
+     ],
+     "answer": "A. Some materials cannot be dated scientifically, and dating by comparison can become circular.",
+     "why": "Đoạn E: đá/kim loại thường định niên đại bằng so sánh; nguy cơ lập luận vòng tròn."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Which TWO features of interpretive museum displays are mentioned? (choose the correct pair)",
+     "options": [
+      "A. They show how conclusions were reached, and they show where uncertainty remains.",
+      "B. They use only simple labels, and they remove glass cases.",
+      "C. They are preferred by every visitor, and they are cheaper.",
+      "D. They display only military objects, and they avoid dates."
+     ],
+     "answer": "A. They show how conclusions were reached, and they show where uncertainty remains.",
+     "why": "Đoạn G: “show how historians reached their conclusions and where uncertainty remains”."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The move towards studying ordinary objects has greatly benefited history.",
+     "answer": "YES",
+     "why": "Đoạn A: “in my view this shift has been one of the most valuable developments”."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The mistaken assumptions about graves show that material evidence is unreliable.",
+     "answer": "NO",
+     "why": "Đoạn C: “It would be a mistake, I believe, to treat this as a failure of material evidence”."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Objects sold on the private market usually have little value as historical evidence.",
+     "answer": "YES",
+     "why": "Đoạn D: “historically they may be almost silent”."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Oral testimony is generally more accurate about dates than written records.",
+     "answer": "NO",
+     "why": "Đoạn F: oral testimony “sometimes inaccurate about dates”."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Museums should stop displaying beautiful objects behind glass.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn G mô tả xu hướng và nghiên cứu khách tham quan nhưng người viết không đề xuất bỏ tủ kính."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Political and military history are no longer important.",
+     "answer": "NO",
+     "why": "Đoạn H: “This does not mean that political and military history are unimportant”."
+    },
+    {
+     "type": "short",
+     "prompt": "What objects found at Harlow showed early access to tobacco? Write NO MORE THAN THREE WORDS.",
+     "answer": "clay pipes",
+     "why": "Đoạn B: “hundreds of broken clay pipes”."
+    },
+    {
+     "type": "short",
+     "prompt": "What term describes knowing where and in what context an object was found? Write ONE WORD.",
+     "answer": "provenance",
+     "why": "Đoạn D: “Provenance – knowing where an object was found and in what context”."
+    },
+    {
+     "type": "short",
+     "prompt": "Name ONE material that can be dated scientifically. Write ONE WORD.",
+     "answer": "wood",
+     "why": "Đoạn E: “wood and bone” – chấp nhận bone."
+    },
+    {
+     "type": "short",
+     "prompt": "Name ONE material that usually decays. Write ONE WORD.",
+     "answer": "cloth",
+     "why": "Đoạn I: “cloth, wood and leather usually decay” – chấp nhận wood/leather."
+    }
+   ]
+  },
+  {
+   "title": "Saving a city's paper memory",
+   "strategy": "YES/NO/NOT GIVEN ở bài có nhiều quan điểm: chỉ tính quan điểm của người viết, không phải của nhân vật được trích dẫn.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "When the basement of the city archive in the fictional port of Velmar flooded in 2017, more than forty thousand documents were soaked in muddy water within a few hours. They included ships' records, property deeds and the minutes of council meetings stretching back three centuries. The response that followed has become a case study in how to rescue damaged collections – and, in my view, a warning about how little attention archives receive until disaster strikes."
+    ],
+    [
+     "B",
+     "The first priority was speed. Wet paper begins to grow mould within forty-eight hours, so volunteers and staff worked in shifts to move documents to a commercial freezer. Freezing stops mould from developing and gives conservators time to decide how each item should be treated. Documents were then dried slowly over several months using a vacuum process that turns ice directly into vapour without the paper becoming wet again."
+    ],
+    [
+     "C",
+     "Not everything could be saved. About eight per cent of the documents were judged too badly damaged to be restored, although many of these were photographed before they were discarded so that their contents would not be lost entirely. Conservators admitted that they had had to make difficult choices about which collections to treat first, giving priority to records that existed nowhere else."
+    ],
+    [
+     "D",
+     "The flood also accelerated plans to create a digital collection. Before 2017, only a small fraction of the archive had been scanned. Since then, the city has digitised more than half of its holdings, and researchers around the world can now consult records that previously required a visit to Velmar. Digitisation is not a substitute for preservation, since digital files can also be lost if they are not maintained, but it does reduce the risk that a single event will destroy information forever."
+    ],
+    [
+     "E",
+     "It seems to me that the most important lesson concerns funding. Archives rarely attract the attention given to museums or libraries, because their collections are not displayed and their users are mostly specialists. Yet they hold the evidence on which much of our understanding of the past depends. Velmar's archive had requested money to move its collections out of the basement several times before the flood; the requests were refused because other projects seemed more urgent."
+    ],
+    [
+     "F",
+     "The archive has now moved to a new building on higher ground, with climate control and a fire-suppression system. The cost of the move was considerably higher than the cost of the earlier proposals would have been, a fact that the city's own review described as an example of false economy. Other cities have since reviewed the condition of their own archive buildings."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "ynng",
+     "prompt": "The Velmar flood shows that archives are often neglected until something goes wrong.",
+     "answer": "YES",
+     "why": "Đoạn A: “a warning about how little attention archives receive until disaster strikes”."
+    },
+    {
+     "type": "ynng",
+     "prompt": "The decision to freeze the documents was a mistake.",
+     "answer": "NO",
+     "why": "Đoạn B mô tả việc đông lạnh là bước cần thiết để ngăn nấm mốc; người viết không phê phán."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Digitisation can fully replace the preservation of original documents.",
+     "answer": "NO",
+     "why": "Đoạn D: “Digitisation is not a substitute for preservation”."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Archives deserve more funding than museums.",
+     "answer": "NOT GIVEN",
+     "why": "Người viết nói lưu trữ ít được chú ý và cần đầu tư, nhưng không so sánh mức ngân sách nên hơn bảo tàng."
+    },
+    {
+     "type": "ynng",
+     "prompt": "Funding is the most important lesson from the flood.",
+     "answer": "YES",
+     "why": "Đoạn E: “It seems to me that the most important lesson concerns funding.”"
+    },
+    {
+     "type": "short",
+     "prompt": "How many documents were soaked in the flood? Write NO MORE THAN THREE WORDS.",
+     "answer": "more than forty thousand",
+     "why": "Đoạn A: “more than forty thousand documents” – chấp nhận 40,000."
+    },
+    {
+     "type": "short",
+     "prompt": "Within how long does wet paper begin to grow mould? Write NO MORE THAN TWO WORDS.",
+     "answer": "forty-eight hours",
+     "why": "Đoạn B: “within forty-eight hours” – chấp nhận 48 hours."
+    },
+    {
+     "type": "short",
+     "prompt": "What percentage of documents could not be restored? Write ONE NUMBER.",
+     "answer": "8%",
+     "why": "Đoạn C: “About eight per cent”."
+    },
+    {
+     "type": "short",
+     "prompt": "How did the city's review describe the delay in moving the archive? Write NO MORE THAN TWO WORDS.",
+     "answer": "false economy",
+     "why": "Đoạn F: “an example of false economy”."
+    }
+   ]
+  },
+  {
+   "title": "Memory, monuments and contested stories",
+   "strategy": "Select from a list: đọc kỹ các phương án ghép đôi; một phương án sai chỉ cần một nửa sai.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "Every society decides which parts of its past to remember in public. Statues, street names, national holidays and school textbooks all express a version of collective memory – a shared account of where a community has come from. Because these choices are made by particular people at particular times, they often reflect the values of those who held power when they were made, rather than the views of everyone affected by the events they commemorate."
+    ],
+    [
+     "B",
+     "In recent decades, many cities have faced disputes over monuments to figures whose actions are now viewed more critically. Some argue that such monuments should be removed because they honour people who caused great harm. Others believe that removing them erases history and that it is better to keep them with added information explaining their context. A third group proposes moving controversial monuments to museums, where they can be studied rather than celebrated."
+    ],
+    [
+     "C",
+     "Historians often point out that monuments are themselves historical evidence – not necessarily of the events they depict, but of the period in which they were built. A statue erected a century after a battle may say more about the politics of the later period than about the battle itself. Understanding when, why and by whom a monument was commissioned can therefore turn a source of conflict into an opportunity for learning."
+    ],
+    [
+     "D",
+     "Some communities have tried to address disputes by adding rather than removing. New monuments have been created to commemorate groups that were previously ignored, and some cities have invited artists to create temporary works that respond to existing statues. Supporters argue that this approach allows several perspectives to exist side by side; critics reply that it can avoid difficult decisions."
+    ],
+    [
+     "E",
+     "There is no single solution that will satisfy everyone, and the right approach probably depends on local circumstances. What does seem clear is that decisions are more widely accepted when they follow open public discussion, involve historians as well as politicians, and take account of the views of communities directly affected by the history in question. Rushed decisions, by contrast, tend to be reopened later."
+    ],
+    [
+     "F",
+     "Schools have an important part to play in this process. When pupils learn to ask who built a monument, when and for what purpose, they begin to see public memory as something that has been constructed and can be questioned, rather than as a fixed record of the truth. This kind of historical thinking may prove more lasting than any decision about a particular statue. Several education systems now include visits to local monuments in their history courses for exactly this reason."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "mcq",
+     "prompt": "Which TWO examples of collective memory are listed in paragraph A? (choose the correct pair)",
+     "options": [
+      "A. Street names and national holidays",
+      "B. Diaries and private letters",
+      "C. Family photographs and songs",
+      "D. Newspapers and novels"
+     ],
+     "answer": "A. Street names and national holidays",
+     "why": "Đoạn A: “Statues, street names, national holidays and school textbooks”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Which TWO responses to controversial monuments are described in paragraph B? (choose the correct pair)",
+     "options": [
+      "A. Removing them, and moving them to museums",
+      "B. Rebuilding them, and selling them",
+      "C. Ignoring them, and painting them",
+      "D. Copying them, and hiding them"
+     ],
+     "answer": "A. Removing them, and moving them to museums",
+     "why": "Đoạn B: gỡ bỏ, giữ lại kèm thông tin, hoặc chuyển vào bảo tàng."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Which TWO conditions make decisions more widely accepted? (choose the correct pair)",
+     "options": [
+      "A. Open public discussion, and involving historians",
+      "B. Quick decisions, and involving only politicians",
+      "C. Secret votes, and avoiding affected communities",
+      "D. Removing all statues, and banning debate"
+     ],
+     "answer": "A. Open public discussion, and involving historians",
+     "why": "Đoạn E: thảo luận công khai, có sử gia tham gia, lắng nghe cộng đồng liên quan."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Monuments always reflect the views of everyone affected by the events they commemorate.",
+     "answer": "FALSE",
+     "why": "Đoạn A: thường phản ánh giá trị của người nắm quyền khi chúng được dựng."
+    },
+    {
+     "type": "tfng",
+     "prompt": "A statue built long after an event may reveal more about the later period.",
+     "answer": "TRUE",
+     "why": "Đoạn C: “may say more about the politics of the later period”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Critics say that adding new monuments can avoid difficult decisions.",
+     "answer": "TRUE",
+     "why": "Đoạn D: “critics reply that it can avoid difficult decisions”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Most cities have now removed their controversial monuments.",
+     "answer": "NOT GIVEN",
+     "why": "Bài không nói số lượng thành phố đã gỡ bỏ."
+    },
+    {
+     "type": "short",
+     "prompt": "What term describes a shared account of a community's past? Write NO MORE THAN TWO WORDS.",
+     "answer": "collective memory",
+     "why": "Đoạn A: “a version of collective memory”."
+    },
+    {
+     "type": "short",
+     "prompt": "Who have some cities invited to create temporary works responding to statues? Write ONE WORD.",
+     "answer": "artists",
+     "why": "Đoạn D: “invited artists to create temporary works”."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Volunteering at a local history project",
+   "section": "Section 1 · form completion and selection",
+   "strategy": "Form completion có câu chọn nhiều đáp án: ghi chú mọi lựa chọn được nhắc, gạch bỏ lựa chọn bị từ chối.",
+   "pre_listening": "Trước khi nghe: đọc danh sách công việc và đoán từ đồng nghĩa.",
+   "trap": "Người gọi thường quan tâm một công việc rồi đổi ý khi biết yêu cầu.",
+   "strategies": [
+    "Selection",
+    "Corrections",
+    "Dates and times"
+   ],
+   "transcript": "Coordinator: Hello, Brookfield Heritage Project, Ruth speaking.\nCaller: Hi, I saw your notice in the library about volunteering. I'd like to find out more.\nCoordinator: Wonderful. We're recording the history of the old textile mills in the town. Can I take your name?\nCaller: Thomas Petrie. P-E-T-R-I-E.\nCoordinator: Thanks, Thomas. Is there a particular type of work you're interested in?\nCaller: I was thinking about the archaeological dig at the old dye works.\nCoordinator: That's popular, but I'm afraid it's full until next spring. At the moment we especially need people for three things: interviewing former mill workers, transcribing recordings, and scanning old photographs.\nCaller: I'm not sure I'd be confident doing interviews, but I'm a fast typist, so transcribing sounds good. And I could help with scanning as well.\nCoordinator: Perfect. Transcribing can mostly be done from home, but scanning takes place at the museum on Wednesday afternoons from two until five.\nCaller: Wednesdays are fine. Is there any training?\nCoordinator: Yes, there's an induction session for all new volunteers on Saturday the eleventh. It was going to be on the fourth, but we had to move it. It's at ten o'clock in the museum education room.\nCaller: Do I need to bring anything?\nCoordinator: Just some identification, and if you're scanning, we ask everyone to wear cotton gloves, which we provide.\nCaller: How long is the project running for?\nCoordinator: Until the end of next year. At the end, we're planning an exhibition and an online archive of all the interviews.\nCaller: That sounds great. Is there an age limit for volunteers?\nCoordinator: You need to be at least sixteen, and there's no upper limit – our oldest volunteer is eighty-seven.\nCaller: Great. And will I be able to read some of the interviews myself?\nCoordinator: Absolutely. Transcribers are usually the first people to hear them, and many volunteers say that's the most rewarding part – you hear people describe their working day at the mill in their own words.\nCaller: I'll see you on the eleventh, then.",
+   "questions": [
+    {
+     "prompt": "Volunteer's surname: ______",
+     "answer": "Petrie",
+     "why": "Đánh vần P-E-T-R-I-E."
+    },
+    {
+     "prompt": "The project records the history of the town's textile ______",
+     "answer": "mills",
+     "why": "“the history of the old textile mills”."
+    },
+    {
+     "prompt": "Which TWO tasks will Thomas do?",
+     "options": [
+      "A. Interviewing and transcribing",
+      "B. Transcribing and scanning",
+      "C. Digging and scanning"
+     ],
+     "answer": "B. Transcribing and scanning",
+     "why": "Không tự tin phỏng vấn; chọn transcribing và scanning. Khu khai quật đã kín."
+    },
+    {
+     "prompt": "Scanning takes place on ______ afternoons",
+     "answer": "Wednesday",
+     "why": "“on Wednesday afternoons from two until five”."
+    },
+    {
+     "prompt": "Induction date: Saturday the ______",
+     "answer": "11th",
+     "why": "Ngày 4 đã bị đổi (bẫy); nay là ngày 11."
+    },
+    {
+     "prompt": "Induction time: ______ o'clock",
+     "answer": "10",
+     "why": "“It's at ten o'clock”."
+    },
+    {
+     "prompt": "Volunteers scanning must wear cotton ______",
+     "answer": "gloves",
+     "why": "“wear cotton gloves”."
+    },
+    {
+     "prompt": "Final outputs: an exhibition and an online ______",
+     "answer": "archive",
+     "why": "“an exhibition and an online archive”."
+    },
+    {
+     "prompt": "Minimum age for volunteers: ______",
+     "answer": "16",
+     "why": "“at least sixteen”."
+    }
+   ]
+  },
+  {
+   "title": "Historians on their favourite sources",
+   "section": "Section 3 · multiple matching",
+   "strategy": "Multiple matching: mỗi người nói một nguồn tư liệu và một nhận xét; nghe từ đánh giá (most valuable, frustrating) để nối.",
+   "strategies": [
+    "Opinion language",
+    "Paraphrase",
+    "One speaker at a time"
+   ],
+   "transcript": "Presenter: For this week's programme, I asked four historians to tell me which type of source they find most revealing, and why. First, Dr Anita Rao.\nRao: For me it has to be court records. People only went to court when something had gone wrong, so the records capture conflicts – disputes over land, debts, insults. What I value most is that ordinary people's own words are often written down by the clerks, so you hear voices that don't appear anywhere else.\nPresenter: Professor James Whitaker.\nWhitaker: I work mainly with maps. Old maps are fascinating because they show not only what was there, but what the mapmaker thought was important. A map made for tax collection looks completely different from one made for travellers. The danger is assuming a map is a neutral picture – it never is.\nPresenter: Dr Sofia Mendes.\nMendes: Oral history. I record interviews with older people about their working lives. The most valuable thing is the emotional detail – how it felt to lose a job, or to arrive in a new country. Of course, memory isn't perfect, especially for dates, so I always check facts against written records.\nPresenter: And finally, Dr Kwame Asante.\nAsante: I'd choose household accounts – the notebooks families kept of what they spent. They sound dull, but they show you how people actually lived: what they ate, how much they paid for rent, when they bought new clothes. What frustrates me is how few have survived – families rarely thought they were worth keeping.\nPresenter: It's interesting that all four of you mentioned a weakness as well as a strength.\nWhitaker: That's what being a historian means, really. Every source was made by someone for a reason, and you have to ask what that reason was before you trust it.\nPresenter: Thank you all. Next week we'll be looking at how museums choose which of these sources to display.",
+   "questions": [
+    {
+     "prompt": "Anita Rao – source",
+     "options": [
+      "A. Court records",
+      "B. Maps",
+      "C. Oral history",
+      "D. Household accounts"
+     ],
+     "answer": "A. Court records",
+     "why": "“For me it has to be court records.”"
+    },
+    {
+     "prompt": "Anita Rao – what she values most",
+     "options": [
+      "A. Ordinary people's own words are recorded",
+      "B. They show what the maker thought important",
+      "C. Emotional detail",
+      "D. They show everyday spending"
+     ],
+     "answer": "A. Ordinary people's own words are recorded",
+     "why": "“ordinary people's own words are often written down”."
+    },
+    {
+     "prompt": "James Whitaker – source",
+     "options": [
+      "A. Court records",
+      "B. Maps",
+      "C. Oral history",
+      "D. Household accounts"
+     ],
+     "answer": "B. Maps",
+     "why": "“I work mainly with maps.”"
+    },
+    {
+     "prompt": "James Whitaker – the danger he mentions",
+     "options": [
+      "A. Few have survived",
+      "B. Assuming the source is neutral",
+      "C. Dates are unreliable",
+      "D. Clerks changed the words"
+     ],
+     "answer": "B. Assuming the source is neutral",
+     "why": "“The danger is assuming a map is a neutral picture”."
+    },
+    {
+     "prompt": "Sofia Mendes – source",
+     "options": [
+      "A. Court records",
+      "B. Maps",
+      "C. Oral history",
+      "D. Household accounts"
+     ],
+     "answer": "C. Oral history",
+     "why": "“Oral history.”"
+    },
+    {
+     "prompt": "Sofia Mendes – how she deals with weaknesses",
+     "options": [
+      "A. She checks facts against written records.",
+      "B. She ignores dates.",
+      "C. She uses only one interview.",
+      "D. She compares maps."
+     ],
+     "answer": "A. She checks facts against written records.",
+     "why": "“I always check facts against written records”."
+    },
+    {
+     "prompt": "Kwame Asante – source",
+     "options": [
+      "A. Court records",
+      "B. Maps",
+      "C. Oral history",
+      "D. Household accounts"
+     ],
+     "answer": "D. Household accounts",
+     "why": "“I'd choose household accounts”."
+    },
+    {
+     "prompt": "Kwame Asante – what frustrates him",
+     "options": [
+      "A. They are boring.",
+      "B. Few have survived.",
+      "C. They contain errors.",
+      "D. They are expensive to study."
+     ],
+     "answer": "B. Few have survived.",
+     "why": "“What frustrates me is how few have survived”."
+    },
+    {
+     "prompt": "Topic of next week's programme",
+     "options": [
+      "A. How museums choose which sources to display",
+      "B. How to record interviews",
+      "C. The history of mapmaking"
+     ],
+     "answer": "A. How museums choose which sources to display",
+     "why": "“how museums choose which of these sources to display”."
+    }
+   ]
+  },
+  {
+   "title": "Lecture: how historians date the past",
+   "section": "Section 4 · note completion",
+   "strategy": "Bài giảng phương pháp: ghi tên phương pháp, vật liệu áp dụng và giới hạn của từng phương pháp.",
+   "strategies": [
+    "Method names",
+    "Materials",
+    "Limitations"
+   ],
+   "transcript": "Lecturer: In today's lecture I want to look at how historians and archaeologists establish chronology – that is, when things happened and in what order. Without reliable dates, it's impossible to say whether one event caused another.\nThe simplest method is relative dating, which tells us the order of events without giving exact years. The principle of stratigraphy, for example, is based on the idea that in undisturbed soil, lower layers were deposited before higher ones. So an object found in a lower layer is usually older than one found above it. The key word there is 'undisturbed' – digging for foundations or animal burrows can mix layers together.\nAbsolute dating, by contrast, aims to give an approximate year. The best-known method is radiocarbon dating, which can be used on anything that was once alive – wood, bone, seeds, cloth. It measures the decay of a particular form of carbon, and it works for material up to about fifty thousand years old. However, the results are given as a range, not a single year, and they need to be adjusted, or calibrated, using other evidence.\nA more precise method, where it can be used, is tree-ring dating. Trees add a ring every year, and the width of each ring depends on the weather. By matching patterns of wide and narrow rings, researchers can sometimes identify the exact year a tree was cut down – which is extremely useful for dating wooden buildings.\nFor more recent periods, historians rely heavily on documents, but even these must be checked. Some documents were copied many times, and copyists sometimes changed dates or added material. Comparing handwriting, paper and ink can help reveal when a document was really produced.\nThe general principle is to use more than one method. When independent methods agree, we can be much more confident. For Thursday, please read chapter six on dating medieval buildings.",
+   "questions": [
+    {
+     "prompt": "Establishing when things happened and in what order is called ______",
+     "answer": "chronology",
+     "why": "“establish chronology”."
+    },
+    {
+     "prompt": "Relative dating gives the ______ of events, not exact years.",
+     "answer": "order",
+     "why": "“tells us the order of events”."
+    },
+    {
+     "prompt": "Stratigraphy: in undisturbed soil, ______ layers are older.",
+     "answer": "lower",
+     "why": "“lower layers were deposited before higher ones”."
+    },
+    {
+     "prompt": "Layers can be mixed by digging foundations or animal ______",
+     "answer": "burrows",
+     "why": "“digging for foundations or animal burrows”."
+    },
+    {
+     "prompt": "Radiocarbon dating works on material up to about ______ years old.",
+     "answer": "50,000",
+     "why": "“up to about fifty thousand years old”."
+    },
+    {
+     "prompt": "Radiocarbon results must be adjusted, or ______",
+     "answer": "calibrated",
+     "why": "“adjusted, or calibrated”."
+    },
+    {
+     "prompt": "Ring width depends on the ______",
+     "answer": "weather",
+     "why": "“the width of each ring depends on the weather”."
+    },
+    {
+     "prompt": "Tree-ring dating is useful for dating wooden ______",
+     "answer": "buildings",
+     "why": "“useful for dating wooden buildings”."
+    },
+    {
+     "prompt": "To check documents, compare handwriting, paper and ______",
+     "answer": "ink",
+     "why": "“Comparing handwriting, paper and ink”."
+    }
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 1 – bar chart over time",
+  "instruction_vi": "Biểu đồ cột nhiều nhóm qua nhiều năm: overview nêu nhóm cao nhất/thấp nhất và xu hướng chung; thân bài so sánh theo nhóm, dùng số liệu chọn lọc. Viết ít nhất 150 từ (mục tiêu 170–190).",
+  "task": "The bar chart shows the number of visitors (in thousands) to four types of heritage site in one country in 2000, 2010 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  "data_visual": {
+   "headers": [
+    "Type of site",
+    "2000",
+    "2010",
+    "2020"
+   ],
+   "rows": [
+    [
+     "Castles and palaces",
+     "820",
+     "910",
+     "640"
+    ],
+    [
+     "History museums",
+     "540",
+     "760",
+     "1,050"
+    ],
+    [
+     "Archaeological sites",
+     "210",
+     "260",
+     "390"
+    ],
+    [
+     "Historic houses",
+     "460",
+     "420",
+     "300"
+    ]
+   ]
+  },
+  "sample_answer": "The bar chart illustrates how many people, in thousands, visited four types of heritage site in one country in 2000, 2010 and 2020.\n\nOverall, history museums experienced the strongest growth and became the most visited type of site by 2020, while castles and palaces, which had been the most popular, lost visitors over the final decade. Historic houses were the only category to decline steadily throughout the period.\n\nIn 2000, castles and palaces attracted the largest number of visitors, at 820,000, followed by history museums with 540,000 and historic houses with 460,000. Archaeological sites were the least visited, with just 210,000.\n\nOver the following two decades, visits to history museums almost doubled, reaching 1.05 million in 2020. Archaeological sites also became more popular, with numbers rising to 390,000. In contrast, attendance at castles and palaces increased slightly to 910,000 in 2010 before falling to 640,000, and visits to historic houses decreased gradually to 300,000, around two thirds of their original level. By the end of the period, therefore, the ranking had changed considerably, with museums attracting more than three times as many visitors as historic houses.",
+  "guidance": [
+   "Câu mở đầu: paraphrase (how many people, in thousands, visited…).",
+   "Overview: nhóm tăng mạnh nhất, nhóm mất vị trí dẫn đầu, nhóm giảm đều.",
+   "Thân bài 1: năm 2000 – xếp hạng các nhóm.",
+   "Thân bài 2: thay đổi đến 2020 – almost doubled, before falling to, gradually decreased."
+  ],
+  "micro": [
+   [
+    "Mô tả history museums 540 → 1,050.",
+    "Visits to history museums almost doubled, reaching 1.05 million in 2020."
+   ],
+   [
+    "Mô tả castles 820 → 910 → 640 (rise then fall).",
+    "Attendance at castles increased slightly to 910,000 before falling to 640,000."
+   ],
+   [
+    "Câu overview về nhóm giảm đều.",
+    "Historic houses were the only category to decline steadily throughout the period."
+   ],
+   [
+    "Diễn đạt 300 so với 460 bằng phân số.",
+    "around two thirds of their original level"
+   ],
+   [
+    "Câu so sánh năm 2000 dùng “followed by”.",
+    "Castles attracted 820,000 visitors, followed by history museums with 540,000."
+   ]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 1. The bar chart shows the percentage of people in three age groups who visited a museum at least once a year in 1990, 2005 and 2020. Summarise the main features and make comparisons. Write at least 150 words.",
+  "essay": {
+   "prompt": "Some people think that history lessons at school should focus on the history of the students' own country, while others believe world history is more important. Discuss both views and give your own opinion.",
+   "planning_prompts": [
+    "Mở bài: hai quan điểm và ý kiến (kết hợp, dùng lịch sử dân tộc làm điểm xuất phát).",
+    "Thân bài 1: lý do ưu tiên lịch sử dân tộc (bản sắc, hiểu xã hội hiện tại).",
+    "Thân bài 2: lý do lịch sử thế giới (toàn cầu hóa, tư duy so sánh, tránh thiên lệch).",
+    "Kết luận: chương trình kết nối hai phạm vi."
+   ],
+   "model_paragraphs": [
+    "School timetables leave limited room for history, and opinions differ on whether lessons should concentrate on students' own country or on the wider world. While both have value, I believe the best approach is to teach national history in its global context.",
+    "Supporters of national history argue that it helps young people understand the society they live in. Knowing how their country's institutions, borders and traditions developed allows students to make sense of current debates and to participate as informed citizens. National history can also strengthen a sense of shared identity, especially in countries with diverse populations, by giving people a common story to discuss.",
+    "On the other hand, those who favour world history point out that no country has developed in isolation. Trade, migration, wars and ideas have always crossed borders, and many of today's challenges, such as climate change and pandemics, are global. Studying other societies also helps students recognise that their own country's version of events is only one perspective, which can reduce prejudice and encourage critical thinking.",
+    "In my view, the two approaches are most effective when combined. A unit on a national independence movement, for example, can examine how similar movements developed elsewhere and how international events influenced them. In this way, students learn about their own country while understanding its place in the world.",
+    "In conclusion, national history provides an essential foundation for understanding one's own society, but it should not be taught in isolation. Linking it to world history gives students both a sense of identity and the broader perspective needed in an interconnected world."
+   ]
+  },
+  "drills": [
+   [
+    "Sửa lỗi: The castle is believed to build in 1200.",
+    "The castle is believed to have been built in 1200.",
+    "Việc quá khứ + bị động → to have been built."
+   ],
+   [
+    "Sửa lỗi: History museums visitors increased to double.",
+    "The number of visitors to history museums almost doubled.",
+    "Dùng doubled; chủ ngữ rõ ràng."
+   ],
+   [
+    "Viết lại học thuật hơn: Castles were very popular but then not.",
+    "Castles remained popular until 2010, after which visitor numbers fell considerably.",
+    "Mô tả xu hướng có mốc thời gian."
+   ],
+   [
+    "Sửa lỗi: In 2000, archaeological sites had the less visitors.",
+    "In 2000, archaeological sites had the fewest visitors.",
+    "visitors đếm được → fewest."
+   ],
+   [
+    "Sửa lỗi: By 2020, visits to historic houses decreased to 300,000. (cần thể hiện quá trình trước mốc)",
+    "By 2020, visits to historic houses had decreased to 300,000.",
+    "By + mốc quá khứ → past perfect."
+   ],
+   [
+    "Sửa lỗi: Overall, castles had 820, 910 and 640.",
+    "Overall, castles lost their position as the most visited type of site.",
+    "Overview không liệt kê số."
+   ]
+  ]
+ },
+ "speaking": {
+  "title": "History and the past",
+  "instruction_vi": "Part 2 kể về một nơi/sự kiện lịch sử với thì quá khứ đa dạng; Part 3 thảo luận về cách học và lưu giữ lịch sử.",
+  "focus": "Kể chuyện với past simple, past perfect và cấu trúc bị động tường thuật (it is said that…, it's believed to have…); ngắt câu tự nhiên.",
+  "part1": [
+   "Did you enjoy studying history at school?",
+   "Do you like visiting historical places?",
+   "Is there an old building in your hometown that you like?",
+   "Do you know much about your family's history?"
+  ],
+  "part2": "Describe a historical place you have visited. You should say where it is, when you went there, what you learned about its history, and explain why it was interesting for you.",
+  "part3": [
+   "Why is it important for young people to learn history?",
+   "How should museums deal with parts of history that are disputed?",
+   "Will technology change the way people learn about the past?"
+  ],
+  "model_answer": "I'd like to talk about the Imperial Citadel of Thang Long in Hanoi, which I visited on a school trip when I was in grade ten. It's a large site in the centre of the city that served as the political centre of Vietnam for many centuries. What I didn't know before the visit was how many layers of history are there. Our guide explained that archaeologists had found the remains of buildings from several different dynasties, one on top of another, and that some of the foundations are believed to have been built over a thousand years ago. In one area, you can look down through a glass floor at the old foundations and pieces of pottery that had been buried for centuries. There were also buildings from much more recent times, including bunkers that had been used during the war. I found it interesting because it changed how I thought about history. Before, I'd imagined history as separate chapters in a textbook, but standing there, I could see that different periods literally sit on top of each other in the same place. It also made me realise how much we still don't know, because the guide kept saying things like 'historians think' or 'it's possible that', which I hadn't expected.",
+  "extensions": [
+   [
+    "Why is it important for young people to learn history?",
+    "2 lý do (hiểu hiện tại, tư duy phản biện về nguồn tin) → ví dụ → giới hạn: học thuộc ngày tháng ít giá trị."
+   ],
+   [
+    "How should museums deal with parts of history that are disputed?",
+    "Lập trường: trình bày nhiều góc nhìn và mức độ chắc chắn → lý do → ví dụ → rủi ro gây tranh cãi."
+   ],
+   [
+    "Will technology change the way people learn about the past?",
+    "Dự đoán (VR, lưu trữ số) → lợi ích tiếp cận → rủi ro thông tin sai, mất trải nghiệm thật → kết luận."
+   ],
+   [
+    "Should old traditions be preserved even if few people still follow them?",
+    "Cân bằng → giá trị bản sắc → nguồn lực có hạn → ghi chép, số hóa như giải pháp."
+   ]
+  ]
+ },
+ "checkpoint": [
+  [
+   "In a select-from-a-list question, an option is mentioned in the passage but the writer rejects it. It is…",
+   [
+    "a correct answer",
+    "a distractor",
+    "a heading",
+    "a summary"
+   ],
+   "a distractor",
+   "Phương án được nhắc nhưng bị bác bỏ là bẫy."
+  ],
+  [
+   "Choose the correct sentence.",
+   [
+    "The bridge is thought to build in 1300.",
+    "The bridge is thought to have been built in 1300.",
+    "The bridge thought to be built in 1300.",
+    "It is thought the bridge to be built in 1300."
+   ],
+   "The bridge is thought to have been built in 1300.",
+   "Việc quá khứ + bị động."
+  ],
+  [
+   "“By 1850, the city ___ to three times its size.”",
+   [
+    "grew",
+    "has grown",
+    "had grown",
+    "was growing"
+   ],
+   "had grown",
+   "By + mốc quá khứ → past perfect."
+  ],
+  [
+   "Why is provenance important?",
+   [
+    "It makes objects more beautiful.",
+    "It shows where and in what context an object was found.",
+    "It sets the price of an object.",
+    "It replaces dating methods."
+   ],
+   "It shows where and in what context an object was found.",
+   "Bối cảnh phát hiện quyết định giá trị bằng chứng."
+  ],
+  [
+   "The overview of a bar chart over three years should…",
+   [
+    "list all twelve numbers",
+    "identify the main trends and the highest/lowest categories",
+    "explain the reasons for changes",
+    "describe only the final year"
+   ],
+   "identify the main trends and the highest/lowest categories",
+   "Overview nêu xu hướng chính."
+  ]
+ ],
+ "reflection": [
+  "Bạn có chọn phương án select-from-a-list chỉ vì nó được nhắc trong bài không?",
+  "Bài biểu đồ cột của bạn đã có overview nêu cả xu hướng và thứ hạng chưa?"
+ ],
+ "vocabulary": [
+  [
+   "primary source",
+   "nguồn tư liệu sơ cấp",
+   "A diary is a primary source for personal experience."
+  ],
+  [
+   "archival evidence",
+   "bằng chứng lưu trữ",
+   "Archival evidence helped verify the timeline."
+  ],
+  [
+   "historical interpretation",
+   "diễn giải lịch sử",
+   "Historical interpretation changes with new evidence."
+  ],
+  [
+   "collective memory",
+   "ký ức tập thể",
+   "Collective memory may differ between communities."
+  ],
+  [
+   "material evidence",
+   "bằng chứng vật chất",
+   "Archaeologists examined material evidence."
+  ],
+  [
+   "chronological sequence",
+   "trình tự thời gian",
+   "The records were arranged in chronological sequence."
+  ],
+  [
+   "source provenance",
+   "nguồn gốc tư liệu",
+   "Source provenance affects reliability."
+  ],
+  [
+   "oral testimony",
+   "lời kể nhân chứng",
+   "Oral testimony preserves personal perspectives."
+  ],
+  [
+   "preservation conditions",
+   "điều kiện bảo quản",
+   "Preservation conditions matter for fragile documents."
+  ],
+  [
+   "contested narrative",
+   "cách diễn giải gây tranh cãi",
+   "The exhibition presented a contested narrative."
+  ],
+  [
+   "historical context",
+   "bối cảnh lịch sử",
+   "Historical context is needed to interpret the letter."
+  ],
+  [
+   "archaeological survey",
+   "khảo sát khảo cổ",
+   "The archaeological survey preceded construction."
+  ],
+  [
+   "archival record",
+   "hồ sơ lưu trữ",
+   "The archival record was incomplete."
+  ],
+  [
+   "historical methodology",
+   "phương pháp sử học",
+   "Historical methodology requires source criticism."
+  ],
+  [
+   "contextual evidence",
+   "bằng chứng theo bối cảnh",
+   "Contextual evidence clarifies the letter."
+  ],
+  [
+   "source criticism",
+   "phê bình nguồn sử liệu",
+   "Source criticism examines a document's origin."
+  ],
+  [
+   "interpretive uncertainty",
+   "bất định trong diễn giải",
+   "Interpretive uncertainty should be acknowledged."
+  ],
+  [
+   "digital collection",
+   "bộ sưu tập số",
+   "The digital collection includes photographs."
+  ],
+  [
+   "chronology",
+   "niên biểu",
+   "Researchers reconstructed a chronology of events."
+  ],
+  [
+   "conservation practice",
+   "thực hành bảo quản",
+   "Conservation practice can prevent damage."
+  ]
+ ],
+ "v3_enrichment": {
+  "coaching": {
+   "core": "Đánh giá nguồn sử liệu, giới hạn và góc nhìn",
+   "terms": [
+    "first-hand source versus later interpretation",
+    "evidence gaps and missing voices",
+    "the writer’s claim versus a historical fact"
+   ],
+   "example": "A newspaper article from 1920 is evidence that a claim was published then, not necessarily evidence that the claim was true.",
+   "trap": "Từ một tài liệu cá biệt suy ra mọi người trong quá khứ đều có trải nghiệm giống nhau.",
+   "reading_focus": "Writer’s views Y/N/NG and chronology",
+   "listening_focus": "Recognising speakers correcting archival details",
+   "writing1": "process",
+   "speaking_issue": "How should museums communicate historical uncertainty?",
+   "deep": {
+    "grammar": "Past perfect chỉ một sự việc xảy ra trước một mốc quá khứ khác: 'By 1920, the building had served three functions.' Nếu hai mốc đã rõ, không phải câu nào kể quá khứ cũng cần past perfect. 'According to the archive' cho biết nguồn thông tin và giúp người đọc phân biệt tài liệu gốc với suy luận của bạn.",
+    "reading": "Với tài liệu lịch sử, ghi ai là người phát biểu và thời điểm nào. Câu ghi 'reporter claimed the factory employed 2,000 workers' không tự chứng minh đúng 2,000. Tác giả có thể trình bày chứng cứ đối lập trong đoạn sau. Bài Y/N/NG cần xác định quan điểm người viết hiện tại, không chỉ một trích dẫn cũ.",
+    "listening": "Người thuyết trình trong bảo tàng có thể sửa ngày hoặc tên khi xác minh nguồn. Ghi cả draft và final trong nháp, chỉ nhập bản được xác nhận. Với bài về quy trình lưu trữ, nắm trình tự kỹ thuật: collect -> catalogue -> digitise -> verify, sau đó điền tên bước mà câu hỏi yêu cầu.",
+    "writing": "Task 1 dạng process không có xu hướng tăng/giảm. Introduction cần paraphrase quy trình; overview nêu số giai đoạn và bắt đầu/kết thúc; body diễn tả trình tự bằng cấu trúc bị động nếu tác nhân không quan trọng. Không tự thêm bước chưa xuất hiện trong hình. Trong Task 2, câu chuyện lịch sử phải được phân biệt với việc giải thích xung đột giữa các nguồn."
+   }
+  },
+  "writing_task1_template": [
+   "Intro: Paraphrase what the visual compares, without inventing a reason.",
+   "Overview: Report the largest change and a meaningful contrast.",
+   "Body 1: Group comparable categories and support with figures.",
+   "Body 2: Describe contrasts and exceptions, use accurate units."
+  ],
+  "writing_task2_template": [
+   "Intro: Paraphrase the problem and state a clear answer.",
+   "Body 1: Claim -> why -> concrete illustration -> implication.",
+   "Body 2: Second argument or contrasting view, with measured concession.",
+   "Conclusion: Answer the exact question without adding new evidence."
+  ],
+  "speaking_part3_template": [
+   "Give an answer and its scope.",
+   "Explain the mechanism or trade-off.",
+   "Offer a concrete but non-generalised example.",
+   "Recognise a limitation, comparison or alternative."
+  ]
+ }
+}

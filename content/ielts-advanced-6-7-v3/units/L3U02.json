@@ -1,0 +1,909 @@
+{
+ "unit_id": "L3U02",
+ "order": 2,
+ "title": "Health",
+ "title_vi": "Sức khỏe cộng đồng",
+ "objectives": [
+  "Hoàn thành flow-chart, bảng và câu (completion) bằng từ trong bài, đúng ngữ pháp và giới hạn từ",
+  "Đọc phê phán bằng chứng y tế: biến gây nhiễu, dữ liệu tự báo cáo, ngưỡng bằng chứng",
+  "Viết Task 2 dạng discuss both views với lập luận cân bằng và ý kiến rõ",
+  "Phát triển câu trả lời Part 3: ý chính → giải thích cơ chế → ví dụ → giới hạn"
+ ],
+ "exam_strategy": "Completion ở band 6–7: từ cần điền phải khớp ngữ pháp câu (danh từ số ít/số nhiều, động từ chia đúng); đáp án thường là cụm 2 từ nằm gần từ đồng nghĩa của câu hỏi.",
+ "core_outcome": "Hiểu quy trình đánh giá một can thiệp y tế và giới hạn của bằng chứng; viết Task 2 thảo luận hai mặt có lập luận nhân quả chặt.",
+ "grammar": {
+  "title": "Cause and effect; nominalisation",
+  "explanation_vi": "Văn học thuật hay diễn đạt nguyên nhân–kết quả bằng cụm động từ và danh từ hóa thay vì “because/so”: lead to, result in, contribute to, be attributable to, owing to + N. Danh từ hóa (the introduction of…, a reduction in…) giúp câu cô đọng và trang trọng hơn – rất hữu ích cho Task 2.",
+  "form": "X leads to / results in / contributes to Y · Y results from / is attributable to X · owing to / due to + N · The introduction of X led to a reduction in Y",
+  "examples": [
+   "Poor health literacy can contribute to the late diagnosis of serious illnesses.",
+   "The fall in hospital admissions was partly attributable to the vaccination campaign.",
+   "The introduction of free screening led to a sharp increase in early diagnoses."
+  ],
+  "examples_vi": [
+   "Hiểu biết sức khỏe kém có thể góp phần khiến bệnh nặng được chẩn đoán muộn.",
+   "Sự giảm số ca nhập viện một phần là nhờ chiến dịch tiêm chủng.",
+   "Việc áp dụng sàng lọc miễn phí đã dẫn đến sự gia tăng mạnh số ca được chẩn đoán sớm."
+  ],
+  "trap": "result in (dẫn đến kết quả) ngược chiều với result from (bắt nguồn từ). due to/owing to + danh từ, không + mệnh đề (sai: “due to people eat badly”).",
+  "items": [
+   [
+    "Smoking can ___ in serious lung disease. (một từ)",
+    "result",
+    "result in = dẫn đến."
+   ],
+   [
+    "Many cases of diabetes result ___ poor diet and inactivity.",
+    "from",
+    "result from = bắt nguồn từ (nguyên nhân đứng sau)."
+   ],
+   [
+    "The decline in infections was largely attributable ___ better hygiene.",
+    "to",
+    "be attributable to + nguyên nhân."
+   ],
+   [
+    "___ to staff shortages, waiting times increased. (Owing / Because)",
+    "Owing",
+    "Owing to + danh từ (staff shortages)."
+   ],
+   [
+    "Rewrite with nominalisation: The government introduced a sugar tax. → The ___ of a sugar tax …",
+    "introduction",
+    "introduce → the introduction of."
+   ],
+   [
+    "Rewrite: Admissions fell sharply. → There was a sharp ___ in admissions.",
+    "fall",
+    "fall (động từ) → a sharp fall in (danh từ)."
+   ],
+   [
+    "Regular exercise ___ to better mental health. (contributes / contributed by)",
+    "contributes",
+    "contribute to + kết quả."
+   ],
+   [
+    "Correct the error: Due to people eat too much sugar, obesity has risen.",
+    "Due to high sugar consumption, obesity has risen.",
+    "due to + danh từ; hoặc dùng Because people eat…"
+   ]
+  ]
+ },
+ "readings": [
+  {
+   "title": "From a promising idea to public-health policy",
+   "strategy": "Flow-chart và table completion: các bước trong sơ đồ đi theo thứ tự bài; xác định loại từ trước, rồi tìm từ đồng nghĩa trong đoạn tương ứng. Sentence completion: chép đúng từ trong bài, không đổi dạng từ.",
+   "instruction_vi": "Bài đọc khoảng 850 từ, 13 câu: 5 câu hoàn thành flow-chart, 4 câu hoàn thành bảng và 4 câu hoàn thành câu. Mỗi chỗ trống không quá HAI từ.",
+   "paragraphs": [
+    [
+     "A",
+     "Every year, health researchers propose hundreds of new ways to prevent illness, from school cookery lessons to text-message reminders that encourage people to take their medication. Only a small fraction of these ideas ever become national policy. The journey from a promising idea to a public-health intervention that reaches millions of people is long, expensive and full of opportunities for error, and understanding it helps to explain why governments often seem slow to act even when the need is obvious. Public-health researchers often describe this as the gap between knowing and doing."
+    ],
+    [
+     "B",
+     "The first stage is usually a small pilot. Researchers test the idea with a few hundred volunteers to find out whether it is practical and whether people are willing to take part. A pilot of a walking programme for office workers in the fictional city of Calder, for example, revealed that participants dropped out mainly because sessions were held at lunchtime, when many had meetings. Moving sessions to the early evening doubled attendance. Pilots rarely prove that an intervention works, but they often show how it could fail."
+    ],
+    [
+     "C",
+     "If the pilot is encouraging, the next step is a controlled trial. Participants are divided at random into an intervention group, which receives the programme, and a comparison group, which does not. Random allocation matters because it makes the two groups similar in every respect except the intervention itself. Without it, researchers might find that people who chose to join a walking programme became healthier, but they could not tell whether this was because of the programme or because more motivated people had chosen to join."
+    ],
+    [
+     "D",
+     "Even a well-designed trial can mislead if the follow-up period is too short. Many behavioural changes, such as eating more vegetables or exercising regularly, fade after a few months. For this reason, funding bodies increasingly require longitudinal studies that track participants for several years. In the Calder programme, the difference in weekly activity between the two groups was large after six months but had halved by the end of the second year, a finding that significantly changed the estimated value of the scheme."
+    ],
+    [
+     "E",
+     "Researchers must also deal with confounding variables – factors that influence both the intervention and the outcome. Suppose a town that introduces free swimming lessons also opens a new sports centre in the same year. Any improvement in residents' fitness might be due to either change, or both. Statistical techniques can reduce this problem, but they cannot remove it entirely, which is why researchers prefer to compare several towns rather than one."
+    ],
+    [
+     "F",
+     "Once the evidence has been collected, a decision has to be made about whether it is strong enough to justify national action. Different organisations set different evidence thresholds. Some require at least two independent trials showing a clear benefit; others will act on a single strong study if the intervention is cheap and unlikely to cause harm. Cost-effectiveness is crucial: an intervention that adds a few months of healthy life for a small sum is more likely to be adopted than one that achieves more but costs far more per person."
+    ],
+    [
+     "G",
+     "The final stage, policy uptake, depends as much on politics as on science. A programme may have excellent evidence and still be rejected because it is unpopular, because its benefits will appear only after the next election, or because the organisation that would pay for it is not the one that would save money. Conversely, interventions with weak evidence are sometimes adopted quickly because they are visible and popular."
+    ],
+    [
+     "H",
+     "None of this means that the system is broken. Careful evaluation protects the public from spending large sums on schemes that do not work, and from interventions that turn out to cause harm. But it does mean that the most useful question to ask about any new health policy is not simply whether it sounds sensible, but what evidence supports it, how long that evidence followed people, and what else might explain the results."
+    ],
+    [
+     "I",
+     "Some researchers argue that the process could be made faster without becoming less reliable. They suggest that governments should introduce promising interventions in stages, starting in a few areas chosen at random, so that the roll-out itself becomes a large trial. If the results are positive, the programme can be extended; if not, it can be stopped before large sums have been spent. This approach has been used successfully in several countries for school meal programmes and smoking-cessation services, and it allows decision-makers to learn while acting, rather than waiting years for perfect evidence before doing anything at all."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "short",
+     "prompt": "Flow-chart, Stage 1: A small ______ tests whether the idea is practical. (ONE WORD)",
+     "answer": "pilot",
+     "why": "Đoạn B: “The first stage is usually a small pilot.”"
+    },
+    {
+     "type": "short",
+     "prompt": "Flow-chart, Stage 2: In a controlled trial, participants are divided by random ______. (ONE WORD)",
+     "answer": "allocation",
+     "why": "Đoạn C: “Random allocation matters…” – câu hỏi cần danh từ sau random."
+    },
+    {
+     "type": "short",
+     "prompt": "Flow-chart, Stage 2: One group receives the programme; the other is the ______ group. (ONE WORD)",
+     "answer": "comparison",
+     "why": "Đoạn C: “a comparison group, which does not”."
+    },
+    {
+     "type": "short",
+     "prompt": "Flow-chart, Stage 3: ______ studies track participants for several years. (ONE WORD)",
+     "answer": "longitudinal",
+     "why": "Đoạn D: “require longitudinal studies that track participants for several years”."
+    },
+    {
+     "type": "short",
+     "prompt": "Flow-chart, Stage 5: Policy ______ depends on politics as well as science. (ONE WORD)",
+     "answer": "uptake",
+     "why": "Đoạn G: “The final stage, policy uptake, depends as much on politics as on science.”"
+    },
+    {
+     "type": "short",
+     "prompt": "Table – Calder pilot, problem found: sessions held at ______. (ONE WORD)",
+     "answer": "lunchtime",
+     "why": "Đoạn B: “sessions were held at lunchtime”."
+    },
+    {
+     "type": "short",
+     "prompt": "Table – Calder pilot, change made: sessions moved to the early ______. (ONE WORD)",
+     "answer": "evening",
+     "why": "Đoạn B: “Moving sessions to the early evening doubled attendance.”"
+    },
+    {
+     "type": "short",
+     "prompt": "Table – Calder trial, result after six months: a ______ difference in weekly activity. (ONE WORD)",
+     "answer": "large",
+     "why": "Đoạn D: “the difference … was large after six months”."
+    },
+    {
+     "type": "short",
+     "prompt": "Table – Calder trial, result after two years: the difference had ______. (ONE WORD)",
+     "answer": "halved",
+     "why": "Đoạn D: “had halved by the end of the second year”."
+    },
+    {
+     "type": "short",
+     "prompt": "Sentence: Factors that affect both the intervention and the outcome are called ______. (TWO WORDS)",
+     "answer": "confounding variables",
+     "why": "Đoạn E: “confounding variables – factors that influence both…”."
+    },
+    {
+     "type": "short",
+     "prompt": "Sentence: To reduce this problem, researchers prefer to compare several ______ rather than one. (ONE WORD)",
+     "answer": "towns",
+     "why": "Đoạn E: “compare several towns rather than one”."
+    },
+    {
+     "type": "short",
+     "prompt": "Sentence: Some organisations act on one strong study if an intervention is cheap and unlikely to cause ______. (ONE WORD)",
+     "answer": "harm",
+     "why": "Đoạn F: “if the intervention is cheap and unlikely to cause harm”."
+    },
+    {
+     "type": "short",
+     "prompt": "Sentence: Interventions with weak evidence are sometimes adopted because they are visible and ______. (ONE WORD)",
+     "answer": "popular",
+     "why": "Đoạn G: “because they are visible and popular”."
+    }
+   ]
+  },
+  {
+   "title": "Can we trust what people say about their health?",
+   "strategy": "Sentence completion + TRUE/FALSE/NOT GIVEN: với câu điền, đọc cả câu trong bài để chọn đúng cụm từ; với TFNG, chú ý từ chỉ mức độ (often, always, slightly).",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "Much of what we know about people's diets, exercise and sleep comes from asking them. Questionnaires and food diaries are cheap, quick and can reach thousands of people, which makes self-reported data the backbone of many large health surveys. Yet researchers have long known that people's accounts of their own behaviour are not always accurate, and the reasons are more varied than simple dishonesty."
+    ],
+    [
+     "B",
+     "One problem is memory. When asked how many portions of fruit they ate last week, most people do not remember precisely and instead give an estimate based on what they usually eat. Studies comparing food diaries with direct observation have found that people tend to forget snacks eaten between meals, especially sweets and drinks, which leads to a systematic underestimate of total calorie intake."
+    ],
+    [
+     "C",
+     "A second problem is social desirability. People may report behaviour that they believe is approved of, such as exercising regularly or drinking little alcohol, even when the questionnaire is anonymous. In one fictional study, participants who wore activity monitors for a week reported, on average, almost twice as much moderate exercise as the monitors actually recorded."
+    ],
+    [
+     "D",
+     "The wording of a question can also change the answers. Asking “How often do you exercise?” produces different results from asking “On how many days last week did you do at least thirty minutes of activity that made you breathe faster?”. The second version is longer, but because it refers to a specific period and a clear definition, it produces answers that are much closer to objective measurements."
+    ],
+    [
+     "E",
+     "None of this means that self-reported data is worthless. For many purposes, such as tracking whether a population's habits are changing over time, consistent errors matter less than consistent methods: if people underestimate their sugar intake by a similar amount every year, a rise in the reported figure still suggests a real increase. Problems arise mainly when self-reports are used to compare groups that may misreport in different ways, such as people of different ages or cultures."
+    ],
+    [
+     "F",
+     "Researchers increasingly combine questionnaires with objective measures. Wearable devices can record movement and sleep, and laboratory tests can detect certain nutrients in blood or urine. These methods are more expensive and are usually applied to smaller samples, but they allow researchers to check, and sometimes correct, what people say about themselves."
+    ],
+    [
+     "G",
+     "For individual readers, the lesson is to treat headlines based on surveys with some caution. A report that people in one country sleep less than those in another may reflect differences in how the question was asked, or in what each culture considers a normal amount of sleep, rather than a genuine difference in behaviour."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "short",
+     "prompt": "Sentence: Self-reported data is described as the ______ of many large health surveys. (ONE WORD)",
+     "answer": "backbone",
+     "why": "Đoạn A: “the backbone of many large health surveys”."
+    },
+    {
+     "type": "short",
+     "prompt": "Sentence: People often forget snacks eaten ______ meals. (ONE WORD)",
+     "answer": "between",
+     "why": "Đoạn B: “snacks eaten between meals”."
+    },
+    {
+     "type": "short",
+     "prompt": "Sentence: Reporting behaviour that is approved of is known as social ______. (ONE WORD)",
+     "answer": "desirability",
+     "why": "Đoạn C: “social desirability”."
+    },
+    {
+     "type": "short",
+     "prompt": "Sentence: Researchers increasingly combine questionnaires with ______ measures. (ONE WORD)",
+     "answer": "objective",
+     "why": "Đoạn F: “combine questionnaires with objective measures”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Inaccurate self-reports are mainly caused by people deliberately lying.",
+     "answer": "FALSE",
+     "why": "Đoạn A: lý do “more varied than simple dishonesty”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "In the activity-monitor study, participants reported about twice as much moderate exercise as was recorded.",
+     "answer": "TRUE",
+     "why": "Đoạn C: “almost twice as much moderate exercise as the monitors actually recorded”."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Longer questions always produce less accurate answers.",
+     "answer": "FALSE",
+     "why": "Đoạn D: câu hỏi dài hơn nhưng cụ thể lại cho kết quả gần đo lường khách quan hơn."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Consistent errors make self-reported data useless for tracking changes over time.",
+     "answer": "FALSE",
+     "why": "Đoạn E: sai số nhất quán ít ảnh hưởng khi theo dõi thay đổi theo thời gian."
+    },
+    {
+     "type": "tfng",
+     "prompt": "Wearable devices are now used in most national health surveys.",
+     "answer": "NOT GIVEN",
+     "why": "Đoạn F nói thiết bị đeo đắt hơn và dùng với mẫu nhỏ, không nói tỉ lệ khảo sát quốc gia sử dụng."
+    }
+   ]
+  },
+  {
+   "title": "Screening: when finding more is not always better",
+   "strategy": "Table completion + multiple choice: điền bảng theo hàng/cột, sau đó đọc kỹ đoạn kết để trả lời câu hỏi về quan điểm của người viết.",
+   "headings": [],
+   "paragraphs": [
+    [
+     "A",
+     "Preventive screening – testing healthy people for early signs of disease – sounds like an obvious way to save lives. If a cancer can be found before symptoms appear, treatment is usually simpler and more successful. Many countries therefore invite people of certain ages for regular tests, and public campaigns often encourage everyone to take part."
+    ],
+    [
+     "B",
+     "However, health experts increasingly point out that screening has costs as well as benefits. No test is perfect. A false positive result tells a healthy person that something may be wrong, leading to anxiety and further tests, some of which carry their own risks. In one fictional programme, for every person whose cancer was detected early, around eight people received a false positive result and needed further investigation."
+    ],
+    [
+     "C",
+     "A second, less familiar problem is overdiagnosis. Some conditions detected by screening would never have caused symptoms during a person's lifetime; they grow so slowly that the person would have died of something else first. Once detected, however, they are usually treated, exposing people to surgery or medication that they did not actually need. Overdiagnosis is difficult to measure, because it is impossible to know in advance which detected conditions would have remained harmless."
+    ],
+    [
+     "D",
+     "For these reasons, the decision to introduce a screening programme depends on careful comparison. Experts consider how common the disease is in the group being tested, how accurate the test is, whether effective treatment exists and how many people are likely to be harmed by false positives or overdiagnosis. A test that is valuable for people over sixty may do more harm than good in people of thirty, simply because the disease is much rarer in younger groups."
+    ],
+    [
+     "E",
+     "Communication is also changing. Rather than simply urging people to attend, some health services now provide leaflets that explain both the likely benefits and the possible harms in plain numbers. Early research suggests that most people still choose to be screened after reading such information, but they feel better prepared for an uncertain result. In the view of many ethicists, this informed choice is more important than achieving the highest possible participation rate."
+    ],
+    [
+     "F",
+     "The debate shows a wider point about modern medicine: more information is not automatically better information. A test result is only useful if people know how to interpret it, and if the actions it leads to are, on balance, more likely to help than to harm."
+    ],
+    [
+     "G",
+     "Some countries have already adjusted their programmes in response. Several have raised the age at which certain tests are first offered, and others have increased the interval between routine checks, after reviews showed that more frequent testing found few additional serious cases while producing many more false alarms."
+    ]
+   ],
+   "questions": [
+    {
+     "type": "short",
+     "prompt": "Table – Problem 1: a ______ result tells a healthy person something may be wrong. (TWO WORDS)",
+     "answer": "false positive",
+     "why": "Đoạn B: “A false positive result tells a healthy person that something may be wrong”."
+    },
+    {
+     "type": "short",
+     "prompt": "Table – Problem 1, effect: anxiety and further ______. (ONE WORD)",
+     "answer": "tests",
+     "why": "Đoạn B: “leading to anxiety and further tests”."
+    },
+    {
+     "type": "short",
+     "prompt": "Table – Problem 2: ______ (detecting conditions that would never cause symptoms). (ONE WORD)",
+     "answer": "overdiagnosis",
+     "why": "Đoạn C: “A second, less familiar problem is overdiagnosis.”"
+    },
+    {
+     "type": "short",
+     "prompt": "Table – Problem 2, effect: unnecessary surgery or ______. (ONE WORD)",
+     "answer": "medication",
+     "why": "Đoạn C: “surgery or medication that they did not actually need”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "In the fictional programme, how many people received a false positive for each early detection?",
+     "options": [
+      "A. About two",
+      "B. About five",
+      "C. About eight",
+      "D. About twenty"
+     ],
+     "answer": "C. About eight",
+     "why": "Đoạn B: “around eight people received a false positive result”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "Why may a test be less useful for people aged thirty?",
+     "options": [
+      "A. Younger people refuse treatment.",
+      "B. The disease is much rarer in younger groups.",
+      "C. The test is less accurate for young people.",
+      "D. Treatment does not work for young people."
+     ],
+     "answer": "B. The disease is much rarer in younger groups.",
+     "why": "Đoạn D: “simply because the disease is much rarer in younger groups”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What did early research on balanced leaflets find?",
+     "options": [
+      "A. Most people refused screening.",
+      "B. Most people still chose screening but felt better prepared.",
+      "C. Participation rates rose sharply.",
+      "D. People did not read the leaflets."
+     ],
+     "answer": "B. Most people still chose screening but felt better prepared.",
+     "why": "Đoạn E: “most people still choose to be screened … but they feel better prepared”."
+    },
+    {
+     "type": "mcq",
+     "prompt": "What is the writer's main point in paragraph F?",
+     "options": [
+      "A. Screening should be stopped.",
+      "B. More tests always improve health.",
+      "C. Information helps only when it can be interpreted and acted on wisely.",
+      "D. Doctors should decide for patients."
+     ],
+     "answer": "C. Information helps only when it can be interpreted and acted on wisely.",
+     "why": "Đoạn F: kết quả xét nghiệm chỉ hữu ích nếu biết diễn giải và hành động mang lợi nhiều hơn hại."
+    },
+    {
+     "type": "short",
+     "prompt": "According to many ethicists, what is more important than the highest participation rate? Write NO MORE THAN TWO WORDS.",
+     "answer": "informed choice",
+     "why": "Đoạn E: “this informed choice is more important”."
+    }
+   ]
+  }
+ ],
+ "listenings": [
+  {
+   "title": "Comparing two health campaigns",
+   "section": "Section 3 · table completion",
+   "strategy": "Table completion: đọc tiêu đề hàng và cột; hai sinh viên thường trao đổi số liệu và sửa nhau – chọn con số họ thống nhất cuối cùng.",
+   "pre_listening": "Trước khi nghe: xác định ô nào cần số, ô nào cần danh từ chỉ đối tượng hoặc phương pháp.",
+   "trap": "Một người đọc số liệu sai rồi người kia sửa – chỉ ghi con số được xác nhận.",
+   "strategies": [
+    "Table headings",
+    "Corrected figures",
+    "Agreement"
+   ],
+   "transcript": "Tutor: So, Maya and Sam, you've been comparing two public-health campaigns for your case study. Can you talk me through your table?\nMaya: Sure. The first campaign is the salt reduction programme. The target group was adults over forty, because that's the age when high blood pressure becomes common.\nSam: And the main method was working with food manufacturers to reduce salt in bread and ready meals, rather than trying to change what people chose to buy.\nTutor: Why that approach?\nMaya: Because it doesn't depend on people changing their behaviour. Most people didn't even notice the bread tasted different.\nSam: The programme ran for eight years. Average salt intake fell by about fifteen per cent.\nMaya: Wasn't it twelve?\nSam: Twelve was the figure after five years. The final report says fifteen.\nTutor: OK. And the main limitation?\nMaya: The data relied partly on urine samples from a fairly small group, so it's hard to know exactly how representative it was.\nTutor: And the second campaign?\nSam: That's the stair-climbing campaign. It targeted office workers. The method was posters next to lifts encouraging people to take the stairs.\nMaya: It was much shorter – just three months – and stair use went up by around a third while the posters were up.\nSam: But after they were removed, stair use went back almost to where it started. So the main limitation was that the effect didn't last.\nTutor: Good. So what's your overall conclusion?\nMaya: We think that changing the environment – like the salt in food – tends to have longer-lasting effects than campaigns that ask individuals to make an effort every day.\nSam: Although we should say that the two campaigns aren't perfectly comparable. They targeted different behaviours and different groups.\nTutor: That's an important point. Put it in your limitations section. And next time, try to find a third campaign so your comparison is stronger.",
+   "questions": [
+    {
+     "prompt": "Salt programme – target group: adults over ______",
+     "answer": "40",
+     "why": "“adults over forty”."
+    },
+    {
+     "prompt": "Salt programme – main method: working with food ______",
+     "answer": "manufacturers",
+     "why": "“working with food manufacturers”."
+    },
+    {
+     "prompt": "Salt programme – length: ______ years",
+     "answer": "8",
+     "why": "“ran for eight years”."
+    },
+    {
+     "prompt": "Salt programme – result: salt intake fell by about ______",
+     "answer": "15%",
+     "why": "12% là số sau 5 năm (bẫy); báo cáo cuối là 15%."
+    },
+    {
+     "prompt": "Salt programme – limitation: relied partly on ______ samples from a small group",
+     "answer": "urine",
+     "why": "“urine samples from a fairly small group”."
+    },
+    {
+     "prompt": "Stair campaign – target group: ______ workers",
+     "answer": "office",
+     "why": "“It targeted office workers.”"
+    },
+    {
+     "prompt": "Stair campaign – method: ______ next to lifts",
+     "answer": "posters",
+     "why": "“posters next to lifts”."
+    },
+    {
+     "prompt": "Stair campaign – length: ______ months",
+     "answer": "3",
+     "why": "“just three months”."
+    },
+    {
+     "prompt": "Stair campaign – result: stair use rose by around a ______",
+     "answer": "third",
+     "why": "“went up by around a third”."
+    },
+    {
+     "prompt": "Stair campaign – limitation: the effect did not ______",
+     "answer": "last",
+     "why": "“the main limitation was that the effect didn't last”."
+    }
+   ]
+  },
+  {
+   "title": "Registering at a new health centre",
+   "section": "Section 1 · form completion",
+   "strategy": "Nghe ngày sinh, số điện thoại, thuốc đang dùng và dị ứng; người nói hay đổi giờ hẹn.",
+   "strategies": [
+    "Dates",
+    "Medical details",
+    "Changed appointments"
+   ],
+   "transcript": "Receptionist: Hillcrest Health Centre, how can I help?\nPatient: Hello, I've just moved to the area and I'd like to register with the practice.\nReceptionist: Of course. Can I take your full name?\nPatient: Daniel Okonjo. O-K-O-N-J-O.\nReceptionist: Thank you. And your date of birth?\nPatient: The ninth of November, nineteen ninety-one.\nReceptionist: And your new address?\nPatient: Flat six, Maple Court, on Station Road.\nReceptionist: Thank you. Are you currently taking any regular medication?\nPatient: Just an inhaler for asthma. I use it mostly in winter.\nReceptionist: And do you have any allergies we should know about?\nPatient: Yes, I'm allergic to penicillin.\nReceptionist: I'll make a note of that. Have you had any operations or hospital stays in the last five years?\nPatient: Only a minor operation on my knee after a football injury, about three years ago. It healed well, and I don't have any problems with it now.\nReceptionist: Thank you. And do you smoke?\nPatient: No, I gave up about four years ago.\nReceptionist: That's great. All new patients are asked to attend a short health check with a nurse. It takes about twenty minutes. I could offer you Tuesday at nine.\nPatient: Tuesday morning is difficult because of work. Is there anything later in the week?\nReceptionist: Thursday at four forty-five?\nPatient: That's perfect.\nReceptionist: Please bring a list of any medicines you take and, if you have it, your previous doctor's details. We'll request your records from them.\nPatient: My previous doctor was at Riverside Surgery in Leeds.\nReceptionist: Thank you. And finally, a contact number?\nPatient: Zero seven nine one two, three three eight, five zero four.\nReceptionist: Thank you, Mr Okonjo. We'll send a text the day before your appointment. If you need to cancel, please let us know at least twenty-four hours in advance, so that we can offer the slot to another patient.\nPatient: Of course. Is there parking at the centre?\nReceptionist: There's a small car park at the back, but it fills up quickly. The number twelve bus stops right outside, which is usually easier.\nPatient: Great, thanks for your help.",
+   "questions": [
+    {
+     "prompt": "Patient's surname: ______",
+     "answer": "Okonjo",
+     "why": "Đánh vần O-K-O-N-J-O."
+    },
+    {
+     "prompt": "Date of birth: 9th ______ 1991",
+     "answer": "November",
+     "why": "“The ninth of November, nineteen ninety-one”."
+    },
+    {
+     "prompt": "Address: Flat 6, ______ Court, Station Road",
+     "answer": "Maple",
+     "why": "“Flat six, Maple Court”."
+    },
+    {
+     "prompt": "Regular medication: an ______ for asthma",
+     "answer": "inhaler",
+     "why": "“an inhaler for asthma”."
+    },
+    {
+     "prompt": "Allergy: ______",
+     "answer": "penicillin",
+     "why": "“I'm allergic to penicillin.”"
+    },
+    {
+     "prompt": "Length of health check: about ______ minutes",
+     "answer": "20",
+     "why": "“about twenty minutes”."
+    },
+    {
+     "prompt": "Appointment: Thursday at ______",
+     "answer": "4:45",
+     "why": "Thứ Ba 9 giờ không được; chốt Thursday at four forty-five."
+    },
+    {
+     "prompt": "Previous doctor: ______ Surgery, Leeds",
+     "answer": "Riverside",
+     "why": "“Riverside Surgery in Leeds”."
+    },
+    {
+     "prompt": "Reminder sent by: ______",
+     "answer": "text",
+     "why": "“We'll send a text the day before”."
+    }
+   ]
+  },
+  {
+   "title": "Lecture: health literacy",
+   "section": "Section 4 · note completion",
+   "strategy": "Bài giảng có định nghĩa, ba mức độ và ví dụ; chú ý từ sau “we call”, “refers to” và các số liệu phần trăm.",
+   "strategies": [
+    "Definitions",
+    "Levels and categories",
+    "Statistics"
+   ],
+   "transcript": "Lecturer: This morning I want to discuss health literacy, a concept that has received growing attention over the last twenty years. Health literacy refers to people's ability to find, understand and use health information in order to make decisions about their own care.\nIt's important to stress that health literacy is not the same as general literacy. A highly educated lawyer may still struggle to understand the risks described on a medication leaflet, or to compare two treatment options presented as percentages. In one national survey, around forty per cent of adults had difficulty interpreting basic health statistics, even though most of them could read perfectly well.\nResearchers often describe three levels. The first is functional health literacy: the basic skills needed to read instructions, such as how many tablets to take. The second is interactive health literacy, which involves communicating with professionals – asking questions, explaining symptoms and understanding the answers. The third is critical health literacy: the ability to judge the reliability of information, for example, recognising that a website selling a product may not give balanced advice.\nWhy does this matter? Low health literacy is associated with more emergency hospital visits, poorer management of long-term conditions such as diabetes, and lower uptake of preventive services like vaccination. Note that I say 'associated with' – people with low health literacy also tend to have lower incomes, which makes it hard to separate the effects.\nSo what can be done? Some of the most effective solutions involve changing the way professionals communicate rather than training patients. One technique is called 'teach-back': after explaining something, the doctor asks the patient to repeat it in their own words. This reveals misunderstandings immediately. Another is presenting risks as natural frequencies – 'three people in every hundred' – instead of percentages, which many people find easier to understand.\nFor Thursday's seminar, please bring one example of health information you found difficult to understand, and suggest how it could be improved.",
+   "questions": [
+    {
+     "prompt": "Health literacy: ability to find, understand and ______ health information",
+     "answer": "use",
+     "why": "“find, understand and use health information”."
+    },
+    {
+     "prompt": "Adults who had difficulty interpreting health statistics: around ______",
+     "answer": "40%",
+     "why": "“around forty per cent of adults”."
+    },
+    {
+     "prompt": "Level 1: ______ health literacy (reading instructions)",
+     "answer": "functional",
+     "why": "“The first is functional health literacy”."
+    },
+    {
+     "prompt": "Level 2 involves ______ with professionals",
+     "answer": "communicating",
+     "why": "“interactive health literacy, which involves communicating with professionals”."
+    },
+    {
+     "prompt": "Level 3: judging the ______ of information",
+     "answer": "reliability",
+     "why": "“the ability to judge the reliability of information”."
+    },
+    {
+     "prompt": "Low health literacy is linked with lower uptake of services such as ______",
+     "answer": "vaccination",
+     "why": "“preventive services like vaccination”."
+    },
+    {
+     "prompt": "It is hard to separate effects because of lower ______",
+     "answer": "incomes",
+     "why": "“also tend to have lower incomes”."
+    },
+    {
+     "prompt": "Technique: patient repeats information in own words – called ______",
+     "answer": "teach-back",
+     "why": "“One technique is called 'teach-back'”."
+    },
+    {
+     "prompt": "Present risks as natural ______ instead of percentages",
+     "answer": "frequencies",
+     "why": "“presenting risks as natural frequencies”."
+    }
+   ]
+  }
+ ],
+ "writing": {
+  "task_type": "Task 2 – discuss both views",
+  "instruction_vi": "Đề discuss both views: mỗi thân bài trình bày một quan điểm với lập luận nhân quả và ví dụ, rồi nêu ý kiến của bạn rõ ràng. Viết ít nhất 250 từ (mục tiêu 270–310) trong 40 phút.",
+  "task": "Some people believe that governments should spend more money on preventing illness through education and public-health campaigns, while others think the money is better spent on treating people who are already ill. Discuss both views and give your own opinion. Write at least 250 words.",
+  "data_visual": null,
+  "sample_answer": "Health budgets are limited, and there is ongoing debate about whether more should be invested in preventing illness or in treating those who are already sick. While both are essential, I believe that a gradual shift towards prevention would bring greater long-term benefits.\n\nThose who favour treatment argue that it addresses urgent and visible needs. People who are seriously ill require care now, and long waiting lists for operations or cancer treatment cause real suffering. Moreover, the benefits of treatment are immediate and measurable, whereas many prevention campaigns produce uncertain results that may take years to appear. From this perspective, reducing hospital funding in favour of advertising campaigns could be seen as neglecting the most vulnerable patients.\n\nOn the other hand, supporters of prevention point out that many of the most common and expensive illnesses, such as type 2 diabetes and heart disease, are strongly linked to diet, inactivity and smoking. Effective prevention can therefore reduce the number of people who need treatment in the first place, easing pressure on hospitals over time. Some of the most successful measures do not even depend on individuals changing their behaviour; reducing the salt in processed food, for example, lowered blood pressure across whole populations at relatively low cost.\n\nIn my view, the strongest argument is that prevention addresses the causes rather than the consequences of illness. However, it must be evidence-based. Governments should fund interventions that have been shown to work over several years, rather than short campaigns that are popular but ineffective.\n\nIn conclusion, although treatment must remain well funded, investing more in carefully evaluated prevention is likely to improve public health and reduce costs in the long run.",
+  "guidance": [
+   "Mở bài: paraphrase hai quan điểm + ý kiến (shift towards prevention).",
+   "Thân bài 1: quan điểm ưu tiên điều trị – nhu cầu cấp bách, kết quả đo được ngay.",
+   "Thân bài 2: quan điểm ưu tiên phòng bệnh – giảm số người mắc, ví dụ giảm muối.",
+   "Đoạn ý kiến + kết luận: lý do chọn bên, kèm điều kiện (evidence-based)."
+  ],
+  "micro": [
+   [
+    "Paraphrase “preventing illness” bằng danh từ hóa.",
+    "the prevention of illness"
+   ],
+   [
+    "Viết câu nhân quả bằng “be strongly linked to”.",
+    "Heart disease is strongly linked to diet, inactivity and smoking."
+   ],
+   [
+    "Viết câu đối lập về tốc độ kết quả (whereas).",
+    "The benefits of treatment are immediate, whereas prevention may take years to show results."
+   ],
+   [
+    "Câu nêu ý kiến kèm điều kiện.",
+    "In my view, prevention should be prioritised, provided that it is based on strong evidence."
+   ],
+   [
+    "Dùng “ease pressure on” trong một câu.",
+    "Effective prevention can ease pressure on hospitals over time."
+   ]
+  ],
+  "assessment_task": "IELTS Academic Writing Task 2. Some people think that individuals are responsible for their own health, while others believe the government should take responsibility. Discuss both views and give your own opinion. Write at least 250 words.",
+  "essay": {
+   "prompt": "Some people think that governments should tax unhealthy foods and drinks to improve public health. To what extent do you agree or disagree?",
+   "planning_prompts": [
+    "Mở bài: lập trường (đồng ý có điều kiện).",
+    "Thân bài 1: cơ chế thuế thay đổi hành vi và thay đổi công thức sản phẩm.",
+    "Thân bài 2: phản biện – thuế lũy thoái với người thu nhập thấp; cách khắc phục.",
+    "Kết luận: thuế là một phần của chiến lược rộng hơn."
+   ],
+   "model_paragraphs": [
+    "Rising rates of obesity and diabetes have led many governments to consider taxing foods and drinks that are high in sugar, salt or fat. I largely agree that such taxes can improve public health, but only if they are designed carefully and form part of a wider strategy.",
+    "The main argument in favour of these taxes is that price strongly influences what people buy. When sugary drinks become more expensive, consumption tends to fall, particularly among young people, who are most sensitive to price. Equally importantly, taxes can change the behaviour of manufacturers. In several countries, drinks companies reduced the sugar content of their products before a tax was introduced in order to avoid paying it, which benefited all consumers, including those who did not change their habits.",
+    "However, critics rightly point out that taxes on food can be regressive. Low-income households spend a larger proportion of their income on food, so they bear a heavier burden, even though they also tend to suffer more from diet-related illness. If the tax simply raises prices without offering healthier alternatives, it may increase hardship without improving health.",
+    "This problem can be reduced if the revenue is used to make healthy choices more affordable, for example by subsidising fruit and vegetables or funding free school meals. A tax that is clearly linked to such benefits is also more likely to gain public acceptance.",
+    "In conclusion, I agree that taxing unhealthy food and drink is a useful public-health measure, because it changes both consumer and industry behaviour. Nevertheless, it should be accompanied by policies that protect low-income families and make healthy food easier to obtain."
+   ]
+  },
+  "drills": [
+   [
+    "Sửa lỗi: Unhealthy diet results from obesity.",
+    "An unhealthy diet can result in obesity.",
+    "result in = dẫn đến; result from ngược chiều."
+   ],
+   [
+    "Sửa lỗi: Due to people do not exercise, they gain weight.",
+    "Owing to a lack of exercise, many people gain weight.",
+    "Due to/owing to + danh từ."
+   ],
+   [
+    "Viết lại trang trọng hơn: Lots of people get sick because they eat bad food.",
+    "A significant proportion of illness is attributable to poor diet.",
+    "Danh từ hóa và cụm attributable to."
+   ],
+   [
+    "Sửa lỗi: Prevention is more better than treatment.",
+    "Prevention is better than treatment.",
+    "Không dùng more với better."
+   ],
+   [
+    "Hedge: The campaign will stop obesity.",
+    "The campaign may help to reduce obesity.",
+    "Tránh khẳng định tuyệt đối."
+   ],
+   [
+    "Sửa lỗi: In conclusion, I think both are important and government should spend for both.",
+    "In conclusion, while both are essential, governments should gradually increase spending on prevention.",
+    "Kết luận cần ý kiến rõ; spend on, không spend for."
+   ]
+  ]
+ },
+ "speaking": {
+  "title": "Health and lifestyle",
+  "instruction_vi": "Part 3 dùng khung: trả lời → giải thích cơ chế → ví dụ → giới hạn. Part 2 kể một lần thay đổi thói quen, có trình tự và kết quả.",
+  "focus": "Phát triển câu trả lời Part 3 đủ 4–5 câu với từ nối nhân quả (as a result, which means that) và giới hạn (that said).",
+  "part1": [
+   "How do you usually stay healthy?",
+   "Do you think you get enough sleep?",
+   "Did you play sport when you were younger?",
+   "Is healthy food easy to find where you live?"
+  ],
+  "part2": "Describe a time when you changed a habit to become healthier. You should say what the habit was, why you decided to change it, how you changed it, and explain how you felt about the result.",
+  "part3": [
+   "Why do many people find it difficult to change unhealthy habits?",
+   "Should schools be responsible for teaching children about health?",
+   "Do you think technology has made people healthier or less healthy?"
+  ],
+  "model_answer": "I'd like to talk about the time I stopped drinking sweet milk tea every day, which was about two years ago when I was in my second year at university. I used to buy one or even two large cups a day, mainly because my friends and I would meet at a tea shop after class. I didn't really think about it until I had a routine health check and the doctor mentioned that my blood sugar was slightly higher than it should be for someone my age. That was quite a shock. I didn't stop completely at first, because I knew I'd give up if I tried to change too much at once. Instead, I asked for less sugar, then switched to plain tea three days a week, and after a couple of months I only had milk tea at weekends. I also started walking to class instead of taking a motorbike taxi. When I had another check six months later, my results were back to normal, and I actually felt more energetic in the afternoons. I was quite proud of myself, partly because I realised that small, gradual changes are much easier to keep than dramatic ones.",
+  "extensions": [
+   [
+    "Why do many people find it difficult to change unhealthy habits?",
+    "Nêu cơ chế (thói quen tự động, lợi ích ngắn hạn vs hại dài hạn) → môi trường (đồ ăn nhanh rẻ, thời gian) → ví dụ → giải pháp nhỏ, từng bước."
+   ],
+   [
+    "Should schools be responsible for teaching children about health?",
+    "Đồng ý một phần → trường có thể dạy kiến thức và tạo thói quen (bữa trưa, thể thao) → gia đình vẫn quyết định → phối hợp hai bên."
+   ],
+   [
+    "Do you think technology has made people healthier or less healthy?",
+    "Hai mặt: ứng dụng sức khỏe, thông tin y tế vs ít vận động, thiếu ngủ vì màn hình → kết luận phụ thuộc cách dùng."
+   ],
+   [
+    "Who should pay for healthcare: individuals or the government?",
+    "Lập trường cân bằng → bảo hiểm y tế công cho dịch vụ thiết yếu → cá nhân chi trả phần dịch vụ lựa chọn → ví dụ."
+   ]
+  ]
+ },
+ "checkpoint": [
+  [
+   "In a flow-chart completion task, the answer must…",
+   [
+    "be a synonym you choose",
+    "be taken from the passage and fit the grammar and word limit",
+    "always be a number",
+    "come from the first paragraph only"
+   ],
+   "be taken from the passage and fit the grammar and word limit",
+   "Completion lấy từ trong bài, đúng ngữ pháp và giới hạn từ."
+  ],
+  [
+   "Why is random allocation important in a controlled trial?",
+   [
+    "It makes the trial cheaper.",
+    "It makes the two groups similar except for the intervention.",
+    "It increases the number of volunteers.",
+    "It guarantees the intervention works."
+   ],
+   "It makes the two groups similar except for the intervention.",
+   "Phân nhóm ngẫu nhiên loại bỏ khác biệt có hệ thống."
+  ],
+  [
+   "A town introduces free swimming and opens a sports centre in the same year. Fitness improves. This is an example of…",
+   [
+    "self-reported data",
+    "a confounding variable",
+    "overdiagnosis",
+    "a pilot"
+   ],
+   "a confounding variable",
+   "Hai thay đổi cùng lúc khiến khó xác định nguyên nhân."
+  ],
+  [
+   "Which sentence is correct?",
+   [
+    "Obesity can result from poor diet.",
+    "Obesity can result in poor diet.",
+    "Due to people eat sugar, obesity rises.",
+    "Poor diet is attributable for obesity."
+   ],
+   "Obesity can result from poor diet.",
+   "result from = bắt nguồn từ."
+  ],
+  [
+   "In a “discuss both views” essay, you should…",
+   [
+    "only present your own view",
+    "present both views and give a clear opinion",
+    "avoid giving an opinion",
+    "list many views without explanation"
+   ],
+   "present both views and give a clear opinion",
+   "Đề yêu cầu cả hai quan điểm và ý kiến riêng."
+  ]
+ ],
+ "reflection": [
+  "Bạn có điền sai dạng từ (số ít/số nhiều, danh từ/động từ) ở câu completion nào không?",
+  "Bài Task 2 của bạn có giải thích cơ chế nhân quả thay vì chỉ liệt kê ý không?"
+ ],
+ "vocabulary": [
+  [
+   "preventive healthcare",
+   "y tế dự phòng",
+   "Preventive healthcare may reduce avoidable illness."
+  ],
+  [
+   "public-health intervention",
+   "can thiệp sức khỏe cộng đồng",
+   "The intervention targeted high-risk neighbourhoods."
+  ],
+  [
+   "health inequality",
+   "bất bình đẳng sức khỏe",
+   "Health inequality reflects broader social conditions."
+  ],
+  [
+   "clinical outcome",
+   "kết quả lâm sàng",
+   "Clinical outcomes were measured after treatment."
+  ],
+  [
+   "behavioural change",
+   "thay đổi hành vi",
+   "Behavioural change is difficult to sustain."
+  ],
+  [
+   "longitudinal study",
+   "nghiên cứu dài hạn",
+   "A longitudinal study tracks participants over time."
+  ],
+  [
+   "confounding variable",
+   "biến gây nhiễu",
+   "Income may act as a confounding variable."
+  ],
+  [
+   "self-reported data",
+   "dữ liệu tự báo cáo",
+   "Self-reported data may contain recall errors."
+  ],
+  [
+   "health literacy",
+   "hiểu biết về sức khỏe",
+   "Health literacy helps people evaluate claims."
+  ],
+  [
+   "evidence threshold",
+   "ngưỡng bằng chứng",
+   "Different policies require different evidence thresholds."
+  ],
+  [
+   "intervention group",
+   "nhóm can thiệp",
+   "The intervention group received weekly coaching."
+  ],
+  [
+   "follow-up period",
+   "giai đoạn theo dõi",
+   "The follow-up period lasted nine months."
+  ],
+  [
+   "selection bias",
+   "thiên lệch lựa chọn",
+   "Selection bias can affect survey findings."
+  ],
+  [
+   "preventive screening",
+   "sàng lọc dự phòng",
+   "Preventive screening detects some conditions early."
+  ],
+  [
+   "policy uptake",
+   "mức độ tiếp nhận chính sách",
+   "Policy uptake varies across regions."
+  ],
+  [
+   "health outcome measure",
+   "chỉ số kết quả sức khỏe",
+   "Health outcome measures require validation."
+  ],
+  [
+   "causal inference",
+   "suy luận nhân quả",
+   "Causal inference needs careful study design."
+  ],
+  [
+   "access barrier",
+   "rào cản tiếp cận",
+   "High fees can create an access barrier."
+  ],
+  [
+   "community intervention",
+   "can thiệp cộng đồng",
+   "Community interventions vary in effectiveness."
+  ],
+  [
+   "programme evaluation",
+   "đánh giá chương trình",
+   "Programme evaluation should include long-term follow-up."
+  ]
+ ],
+ "v3_enrichment": {
+  "coaching": {
+   "core": "Đọc số liệu y tế và đánh giá rủi ro mà không khái quát hóa",
+   "terms": [
+    "population average versus individual outcome",
+    "selection bias in a health study",
+    "qualified claims: may, might, appears to"
+   ],
+   "example": "Một nhóm người tham gia tự nguyện có thể khỏe hơn trước khảo sát; điều đó không chứng minh chương trình đã tạo ra toàn bộ thay đổi.",
+   "trap": "Xem correlation như bằng chứng chắc chắn của hiệu quả điều trị.",
+   "reading_focus": "Y/N/NG and critical reading of health evidence",
+   "listening_focus": "Recognising uncertainty and changes in research design",
+   "writing1": "line",
+   "speaking_issue": "How should responsibility for public health be shared?",
+   "deep": {
+    "grammar": "Trong bài sức khỏe, từ 'cause' mang nghĩa mạnh hơn 'be associated with'. 'Suggest' cho phép trình bày một xu hướng chưa được chứng minh bằng nghiên cứu kiểm soát, còn 'establish' ám chỉ chứng cứ xác lập tốt hơn. Phân biệt might/may/could theo ngữ cảnh và tránh thêm hedging quá mức khiến quan điểm mơ hồ.",
+    "reading": "Với YES/NO/NOT GIVEN, mục tiêu là quan điểm của người viết, khác với TRUE/FALSE/NOT GIVEN dành cho thông tin thực tế. Xác định câu đánh giá và chủ thể đưa ra quan điểm. Chú ý văn bản có thể trích ý kiến của chuyên gia mà tác giả không đồng ý; đừng mặc định câu trích là lập trường của tác giả.",
+    "listening": "Khi nhóm nghiên cứu thảo luận về kế hoạch, hãy ghi cả biến số lẫn giới hạn mẫu. Ví dụ, 'surveyed volunteers' khác với 'representative sample'. Khi nghe 'we had planned X, but finally chose Y', đáp án phải là Y. Chỉ viết chính xác số từ mà đề cho phép.",
+    "writing": "Task 2 dạng discuss both views and give your opinion: Body 1 giải thích hợp lý một phía; Body 2 phân tích phía còn lại và bộc lộ đánh giá của bạn; kết luận trả lời mức độ trách nhiệm của từng bên. Tránh câu chung chung 'health is important'. Thay vào đó phân tích vì sao người dân khó thay đổi hành vi nếu môi trường sinh sống thiếu không gian vận động."
+   }
+  },
+  "writing_task1_template": [
+   "Intro: Paraphrase what the visual compares, without inventing a reason.",
+   "Overview: Report the largest change and a meaningful contrast.",
+   "Body 1: Group comparable categories and support with figures.",
+   "Body 2: Describe contrasts and exceptions, use accurate units."
+  ],
+  "writing_task2_template": [
+   "Intro: Paraphrase the problem and state a clear answer.",
+   "Body 1: Claim -> why -> concrete illustration -> implication.",
+   "Body 2: Second argument or contrasting view, with measured concession.",
+   "Conclusion: Answer the exact question without adding new evidence."
+  ],
+  "speaking_part3_template": [
+   "Give an answer and its scope.",
+   "Explain the mechanism or trade-off.",
+   "Offer a concrete but non-generalised example.",
+   "Recognise a limitation, comparison or alternative."
+  ]
+ }
+}
