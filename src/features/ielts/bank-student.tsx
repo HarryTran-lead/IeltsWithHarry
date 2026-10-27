@@ -4,12 +4,14 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
-import { AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel, WritingEditor } from "./bank-exam";
+import { AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
+import { TestRunner } from "./bank-test";
+import { WritingFeedbackPanel, WritingStudio } from "./bank-writing";
 import "./bank.css";
 
 type Exam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; content?: ExamContent };
 type Attempt = { id: string; state: string; started_at: string; answers: Record<string,string>; flags: string[]; notes: Record<string,string>; content?: ExamContent; ielts_exams?: Exam };
-type Result = { score: number; total: number; review: { id: string; given: string; correct: boolean; answers: string[]; explanation: string }[] };
+type Result = { score: number; total: number; review: { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string }[] };
 async function api(path: string, body?: unknown) { const response = await fetch(`/api/ielts/bank/${path}`, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined); const data = await response.json(); if (!response.ok) throw new Error(data.error || "Request failed"); return data; }
 
 export function BankStudent({ examId, resultId, attemptId }: { examId?: string; resultId?: string; attemptId?: string }) {
@@ -27,29 +29,55 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   useEffect(() => { if (!attempt || attempt.state !== "in_progress") return; const timer = setTimeout(() => { setSaveState("saving"); void api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes }).then((data) => { setSaveState("saved"); if (typeof data.score === "number") { setResult(data); setAttempt({ ...attempt, state: "expired" }); } }).catch((e) => { setSaveState("error"); setError(String(e)); }); }, 1200); return () => clearTimeout(timer); }, [answers, flags, notes, attempt]);
   const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, answers, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted" }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, busy, exam]);
   useEffect(() => { if (clock && attempt?.state === "in_progress" && exam && remaining === 0) { const timer = setTimeout(() => void submit(true), 0); return () => clearTimeout(timer); } }, [clock, attempt?.state, exam, remaining, submit]);
-  async function start() { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id }); sessionStorage.setItem(`ielts-attempt:${exam.id}`, data.attempt.id); setAttempt(data.attempt); setClock(Date.now()); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
+  async function start(scope?: { section: string; ids: string[] }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id }); sessionStorage.setItem(`ielts-attempt:${exam.id}`, data.attempt.id); setAttempt(data.attempt); if (scope) setNotes({ ...(data.attempt.notes || {}), __section: scope.section, __scope: scope.ids.join(",") }); setClock(Date.now()); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
   const bankSkill = catalogSkills.find((value) => value === exam?.skill);
+  // A part-only practice keeps its question ids in the notes; scores and reviews then cover that part.
+  const scope = notes.__scope ? notes.__scope.split(",").filter(Boolean) : null;
+  const numberOf = (id: string) => (questions.findIndex((item) => item.id === id) + 1) || 0;
   const backHref = bankSkill ? catalogHref(bankSkill, exam?.practice_type) : "/app/question-bank";
   if (!examId && !resultId && !attemptId) return <BankCatalog />;
   if (error && !exam && !attempt) return <main className="bx-page"><p className="bx-error" role="alert">{error}</p><Link className="bx-ghost" href="/app/dashboard">Về trang chủ</Link></main>;
   if (resultId || result) {
     if (!result) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
-    const saved = attempt?.answers || answers;
+    // The local answers are the latest (they are also loaded from the attempt when reopening a result).
+    const saved = Object.keys(answers).length ? answers : attempt?.answers || {};
     // Writing/Speaking have no automatic score: show what the learner wrote instead.
-    const response = result.total ? undefined : saved.__response || Object.entries(saved).filter(([key, value]) => key !== "__response" && value).map(([, value]) => value).join("\n\n") || undefined;
-    return <ExamResult title={attempt?.ielts_exams?.title || exam?.title || "Bài luyện"} skill={exam?.skill || attempt?.ielts_exams?.skill || "Reading"} score={result.total ? result.score : null} total={result.total} review={result.review} response={response} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}` : undefined}
+    const response = result.total ? undefined : saved.__response || Object.entries(saved).filter(([key, value]) => !key.startsWith("__") && value).map(([, value]) => value).join("\n\n") || undefined;
+    const review = scope ? result.review.filter((item) => scope.includes(item.id)) : result.review;
+    const total = scope && result.total ? review.length : result.total;
+    const score = scope && result.total ? review.filter((item) => item.correct).length : result.score;
+    const skill = exam?.skill || attempt?.ielts_exams?.skill || "Reading";
+    const attemptRef = attempt?.id || resultId;
+    return <ExamResult title={attempt?.ielts_exams?.title || exam?.title || "Bài luyện"} skill={skill} format={exam?.format} score={total ? score : null} total={total} review={review} response={response} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}` : undefined}
+      numberOf={questions.length ? numberOf : undefined}
+      extra={skill === "Writing" && attemptRef && response ? <WritingFeedbackPanel attemptId={attemptRef} type={exam?.practice_type} essay={response} /> : undefined}
       // On the exam's own page a link to itself would not reset, so start over in place.
       onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
   }
   if (!exam) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
-  if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} onStart={() => void start()} scheduleSlot={<div className="bx-schedule">
+  if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} onStart={(scope) => void start(scope)} scheduleSlot={<div className="bx-schedule">
     <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} aria-label="Ngày luyện" />
     <button type="button" className="bx-ghost" disabled={!dueDate || busy} onClick={() => { void api("attempt", { action: "schedule", examId: exam.id, dueDate }).then(() => setScheduled(true)).catch((e) => setError(String(e))); }}>Lưu lịch</button>
     {scheduled && <span role="status">Đã thêm vào Study Planner.</span>}
   </div>} />;
   const q = questions[active]; const section = content?.sections.find((s) => s.questions.some((item) => item.id === q?.id)) || content?.sections[0];
-  const answered = questions.filter((item) => answers[item.id]).length;
+  const inScope = scope ? questions.filter((item) => scope.includes(item.id)) : questions;
+  const answered = inScope.filter((item) => answers[item.id]).length;
   const setAnswer = (id: string, value: string) => setAnswers({ ...answers, [id]: value });
+  const dialog = confirming && <SubmitDialog unanswered={inScope.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />;
+  // Reading and Listening run as a full test sheet; Writing as a studio; Speaking one question at a time.
+  if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
+    <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
+    {error && <p className="bx-error" role="alert">{error}</p>}
+    <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} />
+    {dialog}
+  </main>;
+  if (content && exam.skill === "Writing") return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
+    <ExamBar exam={exam} answered={0} total={0} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
+    {error && <p className="bx-error" role="alert">{error}</p>}
+    <WritingStudio exam={exam} content={content} answers={answers} setAnswers={setAnswers} visual={<>{content.figureDescription && <p className="bx-figure"><strong>Mô tả hình:</strong> {content.figureDescription}</p>}{content.imageUrl && <a className="bx-ghost" href={content.imageUrl} target="_blank" rel="noreferrer">Mở hình Task 1</a>}{Boolean(content.visual) && <BankVisual visual={content.visual} />}</>} />
+    {dialog}
+  </main>;
   return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
     <ExamBar exam={exam} answered={answered} total={questions.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
     {questions.length > 1 && <QuestionNav questions={questions} active={active} answers={answers} flags={flags} onPick={setActive} />}
@@ -79,10 +107,10 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
           <details className="bx-notes" open={Boolean(notes[q.id]) || undefined}><summary>Ghi chú cá nhân</summary><textarea value={notes[q.id] || ""} onChange={(e) => setNotes({ ...notes, [q.id]: e.target.value })} rows={3} placeholder="Từ khóa, lý do chọn đáp án…" /></details>
         </div>
         <div className="bx-steps"><button type="button" className="bx-ghost" disabled={!active} onClick={() => setActive(active - 1)}>← Câu trước</button>{active >= questions.length - 1 ? <button type="button" className="bx-submit" onClick={() => setConfirming(true)}>Xem lại & nộp</button> : <button type="button" className="bx-next" onClick={() => setActive(active + 1)}>Câu tiếp →</button>}</div>
-      </section> : <WritingEditor value={answers.__response || ""} onChange={(value) => setAnswer("__response", value)} minimum={content?.minimumWords || (exam.practice_type === "task2" ? 250 : 150)} />}
+      </section> : null}
     </div>
     <p className="bx-attribution">Nguồn: {exam.attribution} · {exam.license}</p>
-    {confirming && <SubmitDialog unanswered={questions.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />}
+    {dialog}
   </main>;
 }
 

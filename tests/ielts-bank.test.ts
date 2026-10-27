@@ -107,3 +107,17 @@ describe("IELTS bank migration", () => {
     } finally { await db.close(); }
   }, 30000);
 });
+
+describe("IELTS option keys", () => {
+  const question = (id: string, type: string, options: string[], answers: string[]) => ({ id, number: 1, type, prompt: "p", instructions: "", options, answers, explanation: "" });
+  const content = { prompt: "", sections: [{ id: "s", title: "S", passage: "", transcript: "", questions: [
+    question("h", "matching_headings", ["i — One", "ii — Two", "iii — Three"], ["iii"]),
+    question("g", "matching_features", ["F — Six", "G — Seven"], ["G"]),
+    question("d", "multiple-choice", [" — A. first", " — B. second"], ["B"]),
+  ] }] };
+  it("scores roman-numeral headings, letters past F and dash-led options by their key", () => {
+    expect(scoreAnswers(content, { h: "iii", g: "G", d: "B" }).score).toBe(3);
+    expect(scoreAnswers(content, { h: "iii — Three", g: "G — Seven", d: " — B. second" }).score).toBe(3);
+    expect(scoreAnswers(content, { h: "ii", g: "F", d: "A" }).score).toBe(0);
+  });
+});

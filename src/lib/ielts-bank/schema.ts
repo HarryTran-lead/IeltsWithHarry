@@ -90,4 +90,8 @@ export function scoreAnswers(content: ExamContent, answers: Record<string, strin
   });
   return { score: review.filter((q) => q.correct).length, total: review.length, review };
 }
-function qOptionKey(value: string) { return /^[A-F]\s+—/.test(value.trim()) ? value.split("—")[0].trim() : value.trim(); }
+/** The scored key of an option: "G — text" → G, "iii — text" → iii, " — B. text" → B, "C. text" → C; plain keys pass through. */
+export function qOptionKey(value: string) {
+  const text = value.trim();
+  return /^([A-Za-z]{1,2}|[ivxlc]{1,6})\s+—/.exec(text)?.[1] ?? /^—\s*([A-Z])\.\s/.exec(text)?.[1] ?? /^([A-Z])\.\s/.exec(text)?.[1] ?? text;
+}

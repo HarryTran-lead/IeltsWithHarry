@@ -18,7 +18,7 @@ describe("IELTS catalog grouping", () => {
   });
 
   it("links every type to its own skill page", () => {
-    expect(catalogHref("Writing", "task1_general")).toBe("/app/question-bank?skill=Writing&type=task1_general");
-    expect(catalogHref("Speaking", "part2")).toBe("/app/question-bank?skill=Speaking&type=part2");
+    expect(catalogHref("Writing", "task1_general")).toBe("/app/writing?type=task1_general");
+    expect(catalogHref("Speaking", "part2")).toBe("/app/speaking?type=part2");
   });
 });

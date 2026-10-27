@@ -10,7 +10,7 @@ import { librarySkills } from "./bank-library";
 import "./bank-exam.css";
 
 export type BankExam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; topic?: string | null; content?: ExamContent };
-export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string };
+export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string };
 
 export const toneOf = (skill: string) => librarySkills[skill as CatalogSkill]?.tone ?? "reading";
 
@@ -53,7 +53,11 @@ const beforeYouStart: Record<string, string[]> = {
 };
 
 /** The exam's cover page: what it is, what to expect, and when to practise it. */
-export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: () => void; scheduleSlot: ReactNode }) {
+export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }) => void; scheduleSlot: ReactNode }) {
+  const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
+  const choosable = (exam.skill === "Reading" || exam.skill === "Listening") && parts.length > 1;
+  const [choice, setChoice] = useState<string>("full");
+  const partName = (index: number) => exam.skill === "Listening" ? `Part ${index + 1}` : `Passage ${index + 1}`;
   const questions = examQuestions(exam.content);
   const types = [...new Set(questions.map((question) => typeLabel(question.type)))];
   const Icon = skillIcon[exam.skill as keyof typeof skillIcon] ?? ListChecks;
@@ -75,12 +79,21 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
         {exam.content?.prompt && exam.skill === "Writing" && <p className="bx-prompt-preview"><RichText text={exam.content.prompt.split(/\n\n/)[0]} /></p>}
         {preview.length > 0 && <ul className="bx-question-preview">{preview.map((question) => <li key={question}>{question}</li>)}</ul>}
         <div className="bx-hero-actions">
-          <button type="button" className="bx-start" disabled={busy} onClick={onStart}>{busy ? "Đang mở đề…" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button>
+          <button type="button" className="bx-start" disabled={busy} onClick={() => { const part = parts.find((section) => section.id === choice); onStart(part ? { section: part.id, ids: part.questions.map((question) => question.id) } : undefined); }}>{busy ? "Đang mở đề…" : choice === "full" ? "Bắt đầu làm bài" : `Luyện ${partName(parts.findIndex((section) => section.id === choice))}`} <ArrowRight size={18} /></button>
           <span>Bài làm được lưu tự động</span>
         </div>
         {error && <p className="bx-error" role="alert"><CircleAlert size={16} /> {error}</p>}
       </div>
     </section>
+    {choosable && <section className="bx-modes" aria-label="Chọn chế độ luyện tập">
+      <h2>Chọn chế độ luyện tập</h2>
+      <div className="bx-mode-grid">
+        <label className={`bx-mode ${choice === "full" ? "is-on" : ""}`}><input type="radio" name="bx-mode" checked={choice === "full"} onChange={() => setChoice("full")} /><span><b>Làm full test</b><small>Làm toàn bộ bài {exam.skill} · {exam.duration_minutes} phút</small></span><em>{questions.length} câu</em></label>
+        <div className={`bx-mode bx-mode-parts ${choice !== "full" ? "is-on" : ""}`}><b>Luyện từng phần</b><small>Chọn phần bạn muốn luyện; đồng hồ vẫn tính theo cả bài.</small>
+          {parts.map((section, index) => <label key={section.id} className={choice === section.id ? "is-on" : ""}><input type="radio" name="bx-mode" checked={choice === section.id} onChange={() => setChoice(section.id)} /><span>{partName(index)}<small>{section.title}</small></span><em>{section.questions.length} câu</em></label>)}
+        </div>
+      </div>
+    </section>}
     <div className="bx-intro-grid">
       <section className="bx-card"><h2><Check size={17} /> Trước khi bắt đầu</h2><ul className="bx-tips">{(beforeYouStart[exam.skill] ?? beforeYouStart.Reading).map((tip) => <li key={tip}>{tip}</li>)}</ul></section>
       <section className="bx-card"><h2><CalendarPlus size={17} /> Lên lịch luyện</h2><p>Thêm đề này vào Study Planner để nhắc bạn luyện vào ngày đã chọn.</p>{scheduleSlot}</section>
@@ -181,17 +194,6 @@ export function SpeakingAnswer({ value, onChange, index }: { value: string; onCh
   </div>;
 }
 
-export function WritingEditor({ value, onChange, minimum }: { value: string; onChange: (value: string) => void; minimum: number }) {
-  const words = value.trim().split(/\s+/).filter(Boolean).length;
-  const ratio = Math.min(1, words / Math.max(1, minimum));
-  return <section className="bx-question bx-writing">
-    <div className="bx-question-head"><span>Bài viết của bạn</span><b className={words >= minimum ? "is-done" : ""}>{words} / {minimum} từ</b></div>
-    <div className="bx-meter" aria-hidden="true"><i style={{ width: `${ratio * 100}%` }} /></div>
-    <textarea aria-label="Bài viết" value={value} onChange={(event) => onChange(event.target.value)} placeholder="Bắt đầu bằng một câu giới thiệu lại đề bài, rồi một đoạn tổng quan…" spellCheck />
-    <details className="bx-checklist"><summary>Checklist trước khi nộp</summary><ul><li>Có đoạn tổng quan nêu xu hướng/đặc điểm chính</li><li>So sánh số liệu quan trọng, không liệt kê hết</li><li>Đủ {minimum} từ, kiểm tra chính tả và thì động từ</li></ul></details>
-  </section>;
-}
-
 /** Asks before submitting, with what is still unanswered or flagged. */
 export function SubmitDialog({ unanswered, flagged, busy, onCancel, onConfirm }: { unanswered: number; flagged: number; busy: boolean; onCancel: () => void; onConfirm: () => void }) {
   const confirm = useRef<HTMLButtonElement>(null);
@@ -207,36 +209,66 @@ export function SubmitDialog({ unanswered, flagged, busy, onCancel, onConfirm }:
   </div>;
 }
 
-/** Score, a short verdict and a filterable review of every question. */
-export function ExamResult({ title, skill, score, total, review, response, backHref, retryHref, onRetry }: { title: string; skill: string; score: number | null; total: number; review: ReviewItem[]; response?: string; backHref: string; retryHref?: string; onRetry?: () => void }) {
+// Raw score out of 40 → band, from the published IELTS conversion tables.
+const bandTables: Record<string, [number, number][]> = {
+  Listening: [[39, 9], [37, 8.5], [35, 8], [32, 7.5], [30, 7], [26, 6.5], [23, 6], [18, 5.5], [16, 5], [13, 4.5], [10, 4], [8, 3.5], [6, 3], [4, 2.5]],
+  Academic: [[39, 9], [37, 8.5], [35, 8], [33, 7.5], [30, 7], [27, 6.5], [23, 6], [19, 5.5], [15, 5], [13, 4.5], [10, 4], [8, 3.5], [6, 3], [4, 2.5]],
+  General: [[40, 9], [39, 8.5], [37, 8], [36, 7.5], [34, 7], [32, 6.5], [30, 6], [27, 5.5], [23, 5], [19, 4.5], [15, 4], [12, 3.5], [9, 3], [6, 2.5]],
+};
+/** Band for a Reading/Listening result; partial tests are scaled to 40 questions and marked as an estimate. */
+export function estimateBand(skill: string, format: string, score: number, total: number) {
+  if (!total || (skill !== "Reading" && skill !== "Listening")) return null;
+  const table = skill === "Listening" ? bandTables.Listening : /general/i.test(format) ? bandTables.General : bandTables.Academic;
+  const raw = Math.round((score / total) * 40);
+  return table.find(([minimum]) => raw >= minimum)?.[1] ?? (raw > 0 ? 2 : 0);
+}
+
+/** Score, band, per-question-type table and a filterable review of every question. */
+export function ExamResult({ title, skill, format = "Academic", score, total, review, response, backHref, retryHref, onRetry, numberOf, extra }: { title: string; skill: string; format?: string; score: number | null; total: number; review: ReviewItem[]; response?: string; backHref: string; retryHref?: string; onRetry?: () => void; numberOf?: (id: string) => number; extra?: ReactNode }) {
   const [filter, setFilter] = useState<"all" | "wrong" | "right">("all");
   const percent = total && score !== null ? Math.round((score / total) * 100) : null;
-  const verdict = percent === null ? "Đã lưu bài làm" : percent >= 80 ? "Rất tốt! Giữ phong độ này." : percent >= 50 ? "Khá ổn — xem lại các câu sai bên dưới." : "Cần luyện thêm — đọc kỹ giải thích từng câu.";
+  const band = score !== null ? estimateBand(skill, format, score, total) : null;
+  const wrong = review.filter((item) => !item.correct && item.given).length;
+  const skipped = review.filter((item) => !item.given).length;
+  const verdict = percent === null ? "Đã lưu bài làm" : percent >= 80 ? "Rất tốt! Giữ phong độ này." : percent >= 50 ? "Khá ổn — xem lại các câu sai bên dưới." : "Đề hơi khó — mình cố thêm nhé, đọc kỹ giải thích từng câu.";
   const shown = review.filter((item) => filter === "all" || (filter === "right" ? item.correct : !item.correct));
+  const byType = [...review.reduce((map, item) => {
+    const key = typeLabel(item.type ?? "other");
+    const row = map.get(key) ?? { total: 0, right: 0, wrong: 0, skipped: 0 };
+    row.total++; if (item.correct) row.right++; else if (item.given) row.wrong++; else row.skipped++;
+    return map.set(key, row);
+  }, new Map<string, { total: number; right: number; wrong: number; skipped: number }>())];
   return <main className={`bx-page bl-tone-${toneOf(skill)}`}>
     <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {skill}</Link><span>/</span>Kết quả</nav>
     <section className="bx-result-hero">
+      {band !== null ? <span className="bx-band"><small>Band ước tính</small><b>{band.toFixed(1)}</b></span> : null}
       <span className="bx-ring" style={{ "--ratio": percent === null ? 1 : percent / 100 } as React.CSSProperties}>{percent === null ? <Check size={34} /> : <><b>{score}</b><small>/{total}</small></>}</span>
       <div>
         <span className="bx-kicker">{skill} · Kết quả bài luyện</span>
         <h1>{title}</h1>
         <p className="bx-verdict">{verdict}</p>
-        <p className="bx-muted">{total ? "Điểm thô của bài luyện tập, không phải band IELTS chính thức." : "Writing/Speaking cần người chấm; bài của bạn đã được lưu để xem lại."}</p>
+        {total > 0 && <div className="bx-tally"><span className="is-right">Đúng <b>{score}</b></span><span className="is-wrong">Sai <b>{wrong}</b></span><span>Bỏ qua <b>{skipped}</b></span></div>}
+        <p className="bx-muted">{total ? `Band quy đổi theo bảng điểm IELTS${total !== 40 ? ", ước tính từ số câu bạn đã làm" : ""}; đây là bài luyện tập, không phải điểm chính thức.` : "Bài của bạn đã được lưu để xem lại."}</p>
         <div className="bx-hero-actions">{onRetry ? <button type="button" className="bx-start" onClick={onRetry}><RotateCcw size={17} /> Làm lại</button> : retryHref && <Link className="bx-start" href={retryHref}><RotateCcw size={17} /> Làm lại</Link>}<Link className="bx-ghost" href={backHref}>Về ngân hàng đề <ArrowRight size={16} /></Link></div>
       </div>
     </section>
-    {response && <section className="bx-card bx-response"><h2><NotebookPen size={17} /> Bài làm của bạn</h2><p>{response}</p></section>}
+    {extra}
+    {response && !extra && <section className="bx-card bx-response"><h2><NotebookPen size={17} /> Bài làm của bạn</h2><p>{response}</p></section>}
+    {byType.length > 0 && <section className="bx-card bx-types-table"><h2><ListChecks size={17} /> Bảng dữ liệu chi tiết</h2><div className="bq-table-wrap"><table>
+      <thead><tr><th>Loại câu hỏi</th><th>Số câu</th><th className="is-right">Đúng</th><th className="is-wrong">Sai</th><th>Bỏ qua</th></tr></thead>
+      <tbody>{byType.map(([type, row]) => <tr key={type}><th>{type}</th><td>{row.total}</td><td><span className="is-right">{row.right}</span></td><td><span className="is-wrong">{row.wrong}</span></td><td><span>{row.skipped}</span></td></tr>)}</tbody>
+    </table></div></section>}
     {review.length > 0 && <section className="bx-review">
-      <div className="bx-review-head"><h2>Xem lại từng câu</h2><div className="bl-chips" role="group" aria-label="Lọc câu">
+      <div className="bx-review-head"><h2>Xem giải thích từng câu</h2><div className="bl-chips" role="group" aria-label="Lọc câu">
         <button type="button" aria-pressed={filter === "all"} onClick={() => setFilter("all")}>Tất cả <b>{review.length}</b></button>
         <button type="button" aria-pressed={filter === "wrong"} onClick={() => setFilter("wrong")}>Cần xem lại <b>{review.filter((item) => !item.correct).length}</b></button>
         <button type="button" aria-pressed={filter === "right"} onClick={() => setFilter("right")}>Đúng <b>{review.filter((item) => item.correct).length}</b></button>
       </div></div>
       <ol className="bx-review-list">{shown.map((item) => {
-        const number = review.indexOf(item) + 1;
+        const number = numberOf?.(item.id) || review.indexOf(item) + 1;
         return <li key={item.id} className={item.correct ? "is-right" : item.given ? "is-wrong" : "is-empty"}>
           <span className="bx-review-no">{number}</span>
-          <div><b>{item.correct ? "Đúng" : item.given ? "Chưa đúng" : "Chưa trả lời"}</b>
+          <div><b>{item.correct ? "Đúng" : item.given ? "Chưa đúng" : "Chưa trả lời"}</b>{item.type && <small className="bx-review-type">{typeLabel(item.type)}</small>}
             <p>Bạn trả lời: <span>{item.given || "—"}</span></p>
             <p>Đáp án: <strong>{item.answers.join(" / ") || "Cần chấm thủ công"}</strong></p>
             {item.explanation && <p className="bx-explain">{item.explanation}</p>}
@@ -246,4 +278,3 @@ export function ExamResult({ title, skill, score, total, review, response, backH
     </section>}
   </main>;
 }
-
