@@ -119,7 +119,7 @@ async function generateTextPracticeOnce(skill: TextSkill, topic: string, fetcher
     const result = readingReply.parse(value);
     const questions = result.questions.map((item, index) => ({ id: `q${index + 1}`, number: index + 1, type: item.type, prompt: item.prompt,
       instructions: item.type === "short_answer" ? "NO MORE THAN THREE WORDS" : "Choose ONE letter, A-D.",
-      options: item.type === "multiple_choice" ? item.options.map((option, i) => `${"ABCD"[i]} — ${option}`) : [],
+      options: item.type === "multiple_choice" ? item.options.map((option, i) => `${"ABCD"[i]} — ${option.replace(/^\s*[A-D]\s*(?:[).:]|—|-)\s*/i, "").trim()}`) : [],
       answers: [item.answer], explanation: item.explanation }));
     evidence = Object.fromEntries(result.questions.map((item, index) => [`q${index + 1}`, normalizeEvidenceQuote(result.passage, item.evidence)]));
     exam = { ...meta, title: result.title, topic: result.topic, content: { sections: [{ id: "passage-1", title: result.title, passage: result.passage, transcript: "", questions }], prompt: "" } };

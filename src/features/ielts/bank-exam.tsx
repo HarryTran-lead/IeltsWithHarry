@@ -143,8 +143,11 @@ export function AnswerInput({ question, value, onChange, index }: { question: Ex
     return <div className={`bx-options ${fixed.length && !question.options.length ? "is-inline" : ""}`} role={many ? "group" : "radiogroup"} aria-label={`Đáp án câu ${index + 1}`}>
       {options.map((option, optionIndex) => {
         const on = picked.includes(option);
+        const display = /multiple[_-]choice/.test(question.type)
+          ? option.replace(/^\s*[A-D]\s+—\s*/i, "").replace(/^\s*[A-D][).]\s*/i, "")
+          : option;
         return <button type="button" key={option} role={many ? "checkbox" : "radio"} aria-checked={on} className={on ? "is-on" : ""} onClick={() => onChange(many ? (on ? picked.filter((item) => item !== option) : [...picked, option]).join(",") : option)}>
-          {question.options.length > 0 && <b>{String.fromCharCode(65 + optionIndex)}</b>}<span>{option}</span>{on && <Check size={15} />}
+          {question.options.length > 0 && <b>{String.fromCharCode(65 + optionIndex)}</b>}<span>{display}</span>{on && <Check size={15} />}
         </button>;
       })}
     </div>;
