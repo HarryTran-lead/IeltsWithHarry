@@ -559,16 +559,6 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
             <span className="bk-meta">{duration ? <><Clock3 size={14} /> {duration} phút</> : null}{content?.activities?.length ? <> · {content.activities.length} câu</> : null}</span>
             <ScoreBadge result={ctx.results[lesson.slug]} />
           </div>
-          {!here && (
-            <div className="bk-open-scene">
-              <TopicArt topic={lesson.title} unitSlug={unit.slug} lessonSlug={lesson.slug} imageUrl={content?.image_url} variant="lesson" className="bk-open-scene-art" />
-              <div className="bk-open-scene-copy">
-                <small>MINH HỌA BÀI HỌC · {theme.vi.toUpperCase()}</small>
-                <b>{splitUnitTitle(unit.title).en}</b>
-                <span>{firstSentence(lesson.summary || content?.aim || splitUnitTitle(unit.title).vi, 95)}</span>
-              </div>
-            </div>
-          )}
           {here && <div className="bk-sticky-note"><Tape tone="sun" /><b>Bạn đang ở đây</b><span>Bài nên học tiếp theo lộ trình.</span></div>}
           {done && <span className="bk-stamp" aria-label="Đã học">Đã học <Check size={16} strokeWidth={3} /></span>}
         </div>
