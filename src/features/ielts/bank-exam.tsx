@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, CalendarPlus, Check, CircleAlert, Clock3, Flag, Headphones, ListChecks, Maximize2, Mic, Minimize2, NotebookPen, RotateCcw, ShieldCheck, Square, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
@@ -46,9 +47,13 @@ const beforeYouStart: Record<string, string[]> = {
 
 /** The exam's cover page: what it is, what to expect, and when to practise it. */
 export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }) => void; scheduleSlot: ReactNode }) {
+  const searchParams = useSearchParams();
   const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
   const choosable = (exam.skill === "Reading" || exam.skill === "Listening") && parts.length > 1;
-  const [choice, setChoice] = useState<string>("full");
+  const [choice, setChoice] = useState<string>(() => {
+    const part = Number(searchParams.get("part"));
+    return Number.isInteger(part) ? parts[part - 1]?.id ?? "full" : "full";
+  });
   const partName = (index: number) => exam.skill === "Listening" ? `Part ${index + 1}` : `Passage ${index + 1}`;
   const questions = examQuestions(exam.content);
   const types = [...new Set(questions.map((question) => typeLabel(question.type)))];
@@ -81,7 +86,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
       <h2>Chọn chế độ luyện tập</h2>
       <div className="bx-mode-grid">
         <label className={`bx-mode ${choice === "full" ? "is-on" : ""}`}><input type="radio" name="bx-mode" checked={choice === "full"} onChange={() => setChoice("full")} /><span><b>Làm full test</b><small>Làm toàn bộ bài {exam.skill} · {exam.duration_minutes} phút</small></span><em>{questions.length} câu</em></label>
-        <div className={`bx-mode bx-mode-parts ${choice !== "full" ? "is-on" : ""}`}><b>Luyện từng phần</b><small>Chọn phần bạn muốn luyện; đồng hồ vẫn tính theo cả bài.</small>
+        <div className={`bx-mode bx-mode-parts ${choice !== "full" ? "is-on" : ""}`}><b>Luyện từng phần</b><small>Mỗi phần là một lượt làm riêng, được chấm theo câu hỏi của phần đó.</small>
           {parts.map((section, index) => <label key={section.id} className={choice === section.id ? "is-on" : ""}><input type="radio" name="bx-mode" checked={choice === section.id} onChange={() => setChoice(section.id)} /><span>{partName(index)}<small>{section.title}</small></span><em>{section.questions.length} câu</em></label>)}
         </div>
       </div>

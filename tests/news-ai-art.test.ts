@@ -15,7 +15,8 @@ describe("AI illustration fallback", () => {
     expect(prompt).toContain("supersonic test aircraft");
     expect(prompt).toContain("NASA’s X-59 Aircraft");
     expect(prompt).not.toContain("&#8217;");
-    expect(prompt).toMatch(/no recognizable real people/);
+    expect(prompt).toMatch(/No people, human figures, faces/);
+    expect(prompt).toContain("nudity, underwear, swimwear, sexual or suggestive content");
     expect(aiArtPrompt("Coral reefs recover", "")).toContain("about Coral reefs recover");
   });
 
@@ -35,8 +36,8 @@ describe("AI illustration fallback", () => {
     const fetcher = (async (url: string | URL | Request) => { urls.push(String(url)); return jpeg(); }) as typeof fetch;
     const art = await generateAiArt("Diesel spill fine", "diesel fuel spill", id, fetcher);
     expect(urls[0]).toMatch(/^https:\/\/image\.pollinations\.ai\/prompt\//);
-    expect(urls[0]).toContain("width=960");
-    expect(urls[0]).toContain("height=540");
+    expect(urls[0]).toContain("width=1280");
+    expect(urls[0]).toContain("height=720");
     expect(urls[0]).toContain("nologo=true");
     expect(art).toMatchObject({ contentType: "image/jpeg", extension: "jpg" });
     expect(art.bytes.length).toBe(20_000);

@@ -44,3 +44,8 @@
 @media(max-width:1100px){.bank-overview-grid{grid-template-columns:1fr}.bank-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.bank-catalog-hero{align-items:flex-start;flex-direction:column}.bank-catalog-total{place-items:start;min-width:0}.bank-overview-previews,.bank-shelf-previews{grid-template-columns:repeat(2,minmax(0,1fr))}.bank-shelf-groups{grid-template-columns:repeat(2,minmax(0,1fr))}.bank-skill-list-heading,.bank-shelf-heading{align-items:flex-start;flex-direction:column}}
 @media(max-width:540px){.bank-overview-previews,.bank-shelf-previews,.bank-shelf-groups,.bank-catalog-grid{grid-template-columns:1fr}.bank-list-tools{align-items:flex-start;flex-direction:column}.bank-skill-tabs button,.bank-type-tabs button{font-size:12px;padding:8px 11px}}
+.bank-catalog-heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; padding: 4px 2px 18px; border-bottom: 1px solid #dcebee; }
+.bank-catalog-heading h1 { margin: 5px 0 6px; font-size: clamp(24px, 2.5vw, 34px); }
+.bank-catalog-heading p { margin: 0; color: #607892; font-size: 13px; }
+.bank-catalog-count { flex: none; color: #167e87; font-size: 12px; font-weight: 800; }
+@media (max-width: 650px) { .bank-catalog-heading { align-items: start; flex-direction: column; } }

@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 import { createConnector, normalizeSource } from "../src/lib/ielts-bank/connectors";
 import { cleanExamTitle, ieltsCoverSubject, orderCoverCandidates } from "../src/lib/ielts-bank/cover-art";
-import { contentHash, publicContent, scoreAnswers, validateExam } from "../src/lib/ielts-bank/schema";
+import { attemptContent, attemptMinutes, contentHash, publicContent, scoreAnswers, validateExam } from "../src/lib/ielts-bank/schema";
 
 describe("IELTS source normalization", () => {
   const reading = { id: "test-1", title: "Practice reading", test_type: "Academic", duration: "60 mins", passages: [{ id: "passage-1", title: "A passage", content: "Read this passage.", question_groups: [{ question_type: "true-false-not-given", instructions: "Choose one", questions: [{ id: "q1", question_order: 1, text: "A statement", answer: "TRUE", accepted_answers: ["True"] }] }] }] };
@@ -71,6 +71,16 @@ describe("IELTS source normalization", () => {
     expect(validateExam(exam)).toContain("media_missing");
     exam.content.imageUrl = "https://example.org/chart.png";
     expect(validateExam(exam)).not.toContain("media_missing");
+  });
+  it("grades a selected Reading passage independently of the full test", () => {
+    const question = (id: string) => ({ id, number: 1, type: "short_answer", prompt: id, instructions: "", options: [], answers: [id], explanation: "" });
+    const content = { prompt: "", sections: [1, 2, 3].map((number) => ({ id: `p${number}`, title: `Passage ${number}`, passage: "Text", transcript: "", questions: [question(`q${number}`)] })) };
+    const selected = attemptContent(content, { __section: "p2" });
+    expect(selected.sections).toHaveLength(1);
+    expect(scoreAnswers(selected, { q2: "q2" })).toMatchObject({ score: 1, total: 1 });
+    expect(scoreAnswers(content, { q2: "q2" })).toMatchObject({ score: 1, total: 3 });
+    expect(attemptMinutes("Reading", 60, { __section: "p2" })).toBe(20);
+    expect(attemptMinutes("Reading", 60, {})).toBe(60);
   });
 });
 

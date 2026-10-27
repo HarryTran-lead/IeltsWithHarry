@@ -25,9 +25,17 @@ const questionTypes = [
   { id: "mc_one", label: "Multiple Choice (One Answer)", test: /^multiple[_-]choice$/ },
   { id: "mc_many", label: "Multiple Choice (Many Answers)", test: /multiple[_-]answers/ },
   { id: "matching_information", label: "Matching Information", test: /matching[_-]information/ },
-  { id: "matching_features", label: "Matching Features", test: /matching[_-]features|^matching$|sentence[_-]endings/ },
-  { id: "labelling", label: "Map, Diagram Label", test: /labelling/ },
-  { id: "gap", label: "Gap Filling", test: /completion|short[_-]answer/ },
+  { id: "matching_features", label: "Matching Features", test: /matching[_-]features|^matching$/ },
+  { id: "matching_endings", label: "Matching Sentence Endings", test: /sentence[_-]endings/ },
+  { id: "sentence_completion", label: "Sentence Completion", test: /sentence[_-]completion/ },
+  { id: "summary_completion", label: "Summary Completion", test: /summary[_-]completion/ },
+  { id: "note_completion", label: "Note Completion", test: /note[_-]completion/ },
+  { id: "table_completion", label: "Table Completion", test: /table[_-]completion/ },
+  { id: "flow_chart", label: "Flow Chart Completion", test: /flow[_-]?chart[_-]completion/ },
+  { id: "diagram", label: "Diagram Labelling", test: /diagram[_-]labelling/ },
+  { id: "map_plan", label: "Map / Plan Labelling", test: /(map|plan)[_-]labelling/ },
+  { id: "form_completion", label: "Form Completion", test: /form[_-]completion/ },
+  { id: "short_answer", label: "Short Answer", test: /short[_-]answer/ },
 ] as const;
 const otherType = { id: "other", label: "Other Types" };
 
@@ -145,6 +153,7 @@ export function BankLibraryView({ skill, exams, attempts, loading, error }: { sk
   const currentPage = Math.min(page, pageCount - 1);
   const visible = ordered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
   const activeFilters = sources.length + kinds.length + (query ? 1 : 0);
+  const readingFull = skill === "Reading" && (!type || type === "passage") ? exams.filter((exam) => exam.practice_type === "full_test" && (!needle || `${exam.title} ${exam.topic ?? ""}`.toLocaleLowerCase().includes(needle))).slice(0, 2) : [];
 
   function chooseType(next: string) {
     const search = new URLSearchParams(params);
@@ -173,7 +182,7 @@ export function BankLibraryView({ skill, exams, attempts, loading, error }: { sk
       </div>
       <div className="bl-filter-row is-secondary">
         <span className="bl-filter-label"><Filter size={15} /> Lọc theo</span>
-        {kindOptions.length > 0 && <FilterMenu id="kinds" title={skill === "Writing" ? "Dạng đề" : "Loại câu hỏi"} count={kinds.length} open={openMenu === "kinds"} onOpen={setOpenMenu}>
+        {kindOptions.length > 0 && skill !== "Reading" && <FilterMenu id="kinds" title={skill === "Writing" ? "Dạng đề" : "Loại câu hỏi"} count={kinds.length} open={openMenu === "kinds"} onOpen={setOpenMenu}>
           {kindOptions.map((item) => <Check key={item.id} checked={kinds.includes(item.id)} onChange={() => toggle(kinds, setKinds, item.id)} label={item.label} count={item.count} />)}
         </FilterMenu>}
         {sourceOptions.length > 1 && <FilterMenu id="sources" title="Nguồn tài liệu" count={sources.length} open={openMenu === "sources"} onOpen={setOpenMenu}>
@@ -183,7 +192,9 @@ export function BankLibraryView({ skill, exams, attempts, loading, error }: { sk
         {activeFilters > 0 && <button type="button" className="bl-clear" onClick={clearAll}>Xóa lọc</button>}
         <span className="bl-count" role="status">{loading ? "Đang tải đề…" : error ? "" : `${ordered.length} đề phù hợp`}</span>
       </div>
+      {skill === "Reading" && kindOptions.length > 0 && <div className="bl-reading-types" role="group" aria-label="Lọc Reading theo dạng câu hỏi"><strong>Dạng câu hỏi</strong>{kindOptions.map((item) => <button type="button" key={item.id} aria-pressed={kinds.includes(item.id)} onClick={() => toggle(kinds, setKinds, item.id)}>{item.label} <small>{item.count}</small></button>)}</div>}
     </div>
+    {readingFull.length > 0 && <section className="bl-reading-parts"><div><h3>Luyện từng Passage từ đề full</h3><p>Passage 1, 2, 3 có đồng hồ 20 phút và kết quả riêng. Bạn cũng có thể mở đề full để làm cả ba.</p></div><div className="bl-reading-part-grid">{readingFull.flatMap((exam) => [1, 2, 3].map((part) => <Link key={`${exam.id}-${part}`} href={`/app/question-bank/exam/${exam.id}?part=${part}`}><span>PASSAGE {part}</span><strong>{exam.title}</strong><small>20 phút · bài làm riêng <ArrowRight size={14} /></small></Link>))}</div></section>}
     {error && <p className="bl-state" role="alert">{error}</p>}
     {loading && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{Array.from({ length: 8 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
     {!loading && !error && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{visible.map((exam) => <ExamCard key={exam.id} exam={exam} attempt={latest.get(exam.id)} />)}</div>}

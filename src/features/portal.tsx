@@ -13,6 +13,8 @@ import { NewsPortal } from "@/features/news/news-portal";
 import { VocabularyHub } from "@/features/vocabulary/vocabulary-hub";
 import { IeltsLivePage, type IeltsSkill } from "@/features/ielts/ielts-live-page";
 import { IeltsSkillDashboard } from "@/features/ielts/ielts-skill-dashboard";
+import { lockedLearnerPath } from "@/lib/runtime";
+import Link from "next/link";
 import { IeltsModePreview } from "@/features/ielts/ielts-mode-preview";
 import { BankStudent } from "@/features/ielts/bank-student";
 import { SpeakingMock } from "@/features/ielts/speaking-mock";
@@ -30,7 +32,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
   const skillMode = pathname.split("/")[3];
   return (
       <AppShell canManage={canManage}>
-        {!ready ? <div className="content-page">Loading your learning space…</div> : section === "dashboard" ? (
+        {lockedLearnerPath(pathname) ? <div className="content-page"><section className="card section-card"><h1>Chức năng đang chuẩn bị</h1><p>Nội dung đang được biên soạn và kiểm tra trước khi mở cho học viên.</p><Link className="button primary" href="/app/dashboard">Về Dashboard</Link></section></div> : !ready ? <div className="content-page">Loading your learning space…</div> : section === "dashboard" ? (
           <Dashboard />
         ) : section === "planner" ? (
           <PlannerPage />

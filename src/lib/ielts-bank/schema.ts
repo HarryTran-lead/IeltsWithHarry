@@ -103,6 +103,18 @@ export function scoreAnswers(content: ExamContent, answers: Record<string, strin
   });
   return { score: review.filter((q) => q.correct).length, total: review.length, review };
 }
+
+/** Limit grading to the passage chosen when the attempt began. */
+export function attemptContent(content: ExamContent, notes: Record<string, string> | null | undefined): ExamContent {
+  const sectionId = notes?.__section;
+  if (!sectionId) return content;
+  const section = content.sections.find((item) => item.id === sectionId);
+  return section ? { ...content, sections: [section] } : content;
+}
+
+export function attemptMinutes(skill: string, examMinutes: number, notes: Record<string, string> | null | undefined) {
+  return notes?.__section ? skill === "Reading" ? 20 : skill === "Listening" ? 10 : examMinutes : examMinutes;
+}
 /** The scored key of an option: "G — text" → G, "iii — text" → iii, " — B. text" → B, "C. text" → C; plain keys pass through. */
 export function qOptionKey(value: string) {
   const text = value.trim();

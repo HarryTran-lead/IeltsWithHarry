@@ -5,7 +5,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 
-export type StudyRoomMessage = { id: string; user_id: string; display_name: string; body: string; created_at: string };
+export type StudyRoomMessage = { id: string; user_id: string; display_name: string; body: string; created_at: string; is_admin: boolean };
 export type RoomStatus = "connecting" | "live" | "offline";
 type MessageEvent = "INSERT" | "DELETE";
 type MessageListener = (event: MessageEvent, row: StudyRoomMessage) => void;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Sticker, Tape, type StickerName } from "@/components/stickers/stickers";
 import { stages } from "@/lib/demo-data";
-import { liveMode } from "@/lib/runtime";
+import { liveMode, releaseLocks } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/server";
 export default async function CoursePage({
   params,
@@ -14,7 +14,8 @@ export default async function CoursePage({
   const stage = stages.find((item) => item.id === slug);
   if (!stage && liveMode) {
     const supabase = await createClient();
-    const { data: course } = await supabase.from("courses").select("id,title,description").eq("slug", slug).eq("published", true).maybeSingle();
+    const { data: course } = await supabase.from("courses").select("id,title,description,stage_id").eq("slug", slug).eq("published", true).maybeSingle();
+    if (course && releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(course.stage_id)) notFound();
     if (course) {
       const { data: units } = await supabase.from("units").select("id,title").eq("course_id", course.id).eq("published", true).order("sort_order");
       const unitIds = (units ?? []).map((unit) => unit.id);
@@ -23,6 +24,7 @@ export default async function CoursePage({
     }
   }
   if (!stage) notFound();
+  if (releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id)) notFound();
   const index = stages.indexOf(stage);
   return (
     <div className="public-container">

@@ -10,11 +10,11 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "./ielts-live-page";
 import { useIeltsData } from "./use-ielts-data";
 import { plannedModes } from "./planned-modes";
-import { BankLibrary, SkillTabs } from "./bank-library";
+import { BankLibrary } from "./bank-library";
 import { SpeakingMockCta } from "./speaking-mock";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { createClient } from "@/lib/supabase/browser";
-import { demoMode } from "@/lib/runtime";
+import { demoMode, lockedLearnerPath, releaseLocks } from "@/lib/runtime";
 import sourceTopics from "@/lib/vocabulary/source-topics.json";
 import { studyLevels } from "@/lib/vocabulary/study-levels";
 import "./ielts-dashboard.css";
@@ -91,30 +91,30 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     { title: "Sentence completion", detail: "Đọc văn bản thật và điền một từ được rút từ chính câu nguồn.", source: "Daily News toàn văn", href: "/app/reading/live", available: hasArticle, icon: FileText, tag: "Có đáp án" },
     { title: "Đọc toàn văn", detail: "Mở bài gốc trong kho Daily News để đọc sâu và lưu từ.", source: latestArticle?.publisher ?? "Daily News", href: latestArticle ? `/app/news/${latestArticle.id}` : "/app/news", available: hasArticle, icon: BookOpen },
   ] : skill === "listening" ? [
-    { title: "YouTube Shadowing & Listening Lab", detail: "Luyện shadowing, chép chính tả và câu hỏi với phụ đề được cấp quyền.", source: "Bài học do giáo viên xuất bản", href: "/app/listening/youtube", available: true, icon: Headphones, tag: "YouTube" },
+    { title: "YouTube Shadowing & Listening Lab", detail: "Luyện shadowing, chép chính tả và câu hỏi với phụ đề được cấp quyền.", source: "Bài học do giáo viên xuất bản", href: "/app/listening/youtube", available: !lockedLearnerPath("/app/listening/youtube"), icon: Headphones, tag: "YouTube" },
     { title: "Nghe và ghi ý chính", detail: "Chọn bản ghi đã kiểm tra file, nghe rồi lưu ghi chú vào Sổ tay.", source: "LibriVox · public domain", href: "/app/listening/live", available: audio.length > 0, icon: AudioLines, tag: "Audio mới" },
   ] : skill === "writing" ? [
     { title: "Academic Task 1", detail: "Mô tả và so sánh biểu đồ dân số từ số liệu World Bank.", source: `World Bank · ${latestYear ?? "đang tải"}`, href: "/app/writing/task-1", available: chart.length >= 2, icon: ChartNoAxesCombined, tag: "Dữ liệu thật" },
     { title: "Academic Task 2", detail: "Viết essay theo một chủ đề rút từ bài mới được phép dùng.", source: "Daily News toàn văn", href: "/app/writing/task-2", available: hasArticle, icon: NotebookPen },
   ] : [
+    { title: "Part 1 interview", detail: "Câu hỏi ngắn về bản thân, công việc, học tập và đời sống.", source: "Ngân hàng đề đã duyệt", href: "/app/speaking?type=part1", available: true, icon: Mic, tag: "Có ghi âm" },
     { title: "Part 2 cue card", detail: "Chuẩn bị 1 phút, nói tối đa 2 phút, ghi âm và tự nghe lại.", source: "Chủ đề từ Daily News", href: "/app/speaking/live", available: hasArticle, icon: Mic, tag: "Có ghi âm" },
     { title: "Part 3 follow-up", detail: "Thảo luận sâu về cùng chủ đề và lưu tự nhận xét.", source: "Chủ đề từ Daily News", href: "/app/speaking/part-3", available: hasArticle, icon: ListChecks },
   ];
   if (!demoMode && bankSkill) modes.unshift({ title: "Ngân hàng đề đã duyệt", detail: "Luyện với đề có nguồn, chọn đúng dạng bài và xem lại kết quả.", source: "BandReady · IELTS AI Dataset", href: catalogHref(bankSkill), available: true, icon: BookOpen, tag: "Đề luyện" });
   const allModes: Mode[] = [
     ...modes,
-    ...plannedModes[skill].map((mode) => ({
+    ...(!releaseLocks ? plannedModes[skill] : []).map((mode) => ({
       title: mode.title, detail: mode.detail, source: mode.source,
       href: `/app/${skill}/mode/${mode.id}`, available: false,
       icon: mode.icon, planned: true,
     })),
   ];
   const availableModes = modes.filter((mode) => mode.available);
-  const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? !mode.planned : mode.planned));
+  const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? mode.available : mode.planned));
 
   const showLibrary = !demoMode && Boolean(bankSkill);
   return <main className={`ielts-dashboard ielts-dashboard-${config.tone} ${bankSkill ? "has-library" : ""}`}>
-    {bankSkill && <SkillTabs skill={skill} />}
     <div className="ielts-dashboard-titlebar">
       <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
       <h1>{config.title}</h1>
@@ -150,10 +150,10 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     <h2 title={`${allModes.length} chế độ trong kế hoạch. Thẻ “Sắp triển khai” là bản xem trước giao diện.`}>Chế độ học</h2>
     <div className="ielts-dashboard-mode-filters" role="group" aria-label="Lọc chế độ học">
       <button type="button" className={modeFilter === "all" ? "active" : ""} aria-pressed={modeFilter === "all"} onClick={() => setModeFilter("all")}>Tất cả <span>{allModes.length}</span></button>
-      <button type="button" className={modeFilter === "live" ? "active" : ""} aria-pressed={modeFilter === "live"} onClick={() => setModeFilter("live")}>Đang có <span>{modes.length}</span></button>
-      <button type="button" className={modeFilter === "planned" ? "active" : ""} aria-pressed={modeFilter === "planned"} onClick={() => setModeFilter("planned")}>Sắp triển khai <span>{plannedModes[skill].length}</span></button>
+      <button type="button" className={modeFilter === "live" ? "active" : ""} aria-pressed={modeFilter === "live"} onClick={() => setModeFilter("live")}>Đang có <span>{availableModes.length}</span></button>
+      {!releaseLocks && <button type="button" className={modeFilter === "planned" ? "active" : ""} aria-pressed={modeFilter === "planned"} onClick={() => setModeFilter("planned")}>Sắp triển khai <span>{plannedModes[skill].length}</span></button>}
     </div>
-    <strong>{busy ? "Đang kiểm tra…" : `${availableModes.length} đang dùng · ${plannedModes[skill].length} dự kiến`}</strong>
+    <strong>{busy ? "Đang kiểm tra…" : releaseLocks ? `${availableModes.length} đang dùng` : `${availableModes.length} đang dùng · ${plannedModes[skill].length} dự kiến`}</strong>
     </div>
     {error && <div className="ielts-dashboard-notice">{error} Hãy tải lại trang để kiểm tra nguồn.</div>}
     {data?.warnings.map((warning) => <div className="ielts-dashboard-notice" key={warning}>{warning}</div>)}

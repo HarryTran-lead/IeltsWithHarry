@@ -341,3 +341,4 @@
   .smap-stop.is-current .smap-figure img,
   .smap-stop.is-current .smap-pad::before { animation: none; }
 }
+.smap-stop > div { position: absolute; left: 0; top: 0; display: flex; flex-direction: column; align-items: center; width: 132px; translate: -50% -68px; color: var(--navy); cursor: not-allowed; }

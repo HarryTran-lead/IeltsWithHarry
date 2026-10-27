@@ -8,8 +8,9 @@ import { HeadIcon } from "@/components/ui/head-icon";
 import { ActivityHeatmap } from "@/components/account/activity-heatmap";
 import { activeUntil, activityLabels, avatarPhotoUrl, avatarStickers, untilLabel, type LearnerOverview } from "@/lib/account";
 import { AccountAvatar } from "@/components/account/account-avatar";
+import { HarryMascot } from "@/components/illustrations/harry";
 import { stages } from "@/lib/demo-data";
-import { demoMode } from "@/lib/runtime";
+import { demoMode, releaseLocks } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrate } from "@/lib/celebrate";
 import "./profile.css";
@@ -41,11 +42,13 @@ export function ProfilePage() {
   const [data, setData] = useState<LearnerOverview | null>(null);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
   const load = useCallback(async () => {
     if (!db) return;
-    const [overview, user] = await Promise.all([db.rpc("learner_overview"), db.auth.getUser()]);
+    const [overview, user, admin] = await Promise.all([db.rpc("learner_overview"), db.auth.getUser(), db.rpc("is_admin")]);
     if (overview.error) setError(overview.error.message); else setData(overview.data as LearnerOverview);
     setEmail(user.data.user?.email ?? "");
+    setIsAdmin(admin.data === true);
   }, [db]);
   useEffect(() => { void Promise.resolve().then(load); }, [load]);
 
@@ -69,7 +72,7 @@ export function ProfilePage() {
 
   return <div className="content-page profile-page">
     <section className="card profile-hero">
-      <div className="profile-avatar"><AccountAvatar value={profile.avatar} size={84} /></div>
+      <div className="profile-avatar">{isAdmin ? <HarryMascot size={84} /> : <AccountAvatar value={profile.avatar} size={84} />}</div>
       <div className="profile-id">
         <span className="eyebrow">HỒ SƠ HỌC VIÊN</span>
         <h1>{profile.display_name}</h1>
@@ -124,11 +127,11 @@ export function ProfilePage() {
       </li>)}</ol> : <p className="profile-empty">Chưa có hoạt động nào. Làm một bài học hoặc đọc một bài Daily News để bắt đầu.</p>}
     </section>
 
-    <ProfileForm data={data} onSaved={load} />
+    <ProfileForm data={data} email={email} isAdmin={isAdmin} onSaved={load} />
   </div>;
 }
 
-function ProfileForm({ data, onSaved }: { data: LearnerOverview; onSaved: () => Promise<void> }) {
+function ProfileForm({ data, email, isAdmin, onSaved }: { data: LearnerOverview; email: string; isAdmin: boolean; onSaved: () => Promise<void> }) {
   const { profile } = data;
   const [form, setForm] = useState({
     display_name: profile.display_name, bio: profile.bio, avatar: profile.avatar,
@@ -186,7 +189,7 @@ function ProfileForm({ data, onSaved }: { data: LearnerOverview; onSaved: () => 
   return <section className="card section-card profile-form" id="edit">
     <div className="section-head"><h2>Chỉnh sửa hồ sơ</h2><span>Tên hiển thị dùng trong phòng cùng học.</span></div>
     <form onSubmit={(event) => void save(event)}>
-      <fieldset className="profile-avatars"><legend>Ảnh đại diện</legend>
+      {!isAdmin && <fieldset className="profile-avatars"><legend>Ảnh đại diện</legend>
         {avatarStickers.map((name) => <label key={name} className={form.avatar === name ? "selected" : ""}>
           <input type="radio" name="avatar" value={name} checked={form.avatar === name} onChange={() => set("avatar", name)} />
           <Sticker name={name} size={44} pop={false} /><span className="sr-only">{name}</span>
@@ -196,13 +199,13 @@ function ProfileForm({ data, onSaved }: { data: LearnerOverview; onSaved: () => 
           {avatarPhotoUrl(form.avatar) ? <AccountAvatar value={form.avatar} size={44} /> : <span className="profile-upload-icon">+</span>}
           <span className="sr-only">Tải ảnh của bạn lên</span>
         </label>
-      </fieldset>
-      <p className="profile-photo-hint">Chọn hình có sẵn hoặc tải ảnh JPG, PNG, WebP tối đa 2 MB. Ảnh tải lên được lưu ngay và hiện trên hồ sơ, menu tài khoản.</p>
+      </fieldset>}
+      {!isAdmin && <p className="profile-photo-hint">Chọn hình có sẵn hoặc tải ảnh JPG, PNG, WebP tối đa 2 MB. Ảnh tải lên được lưu ngay và hiện trên hồ sơ, menu tài khoản.</p>}
       <div className="profile-fields">
         <label>Tên hiển thị<input value={form.display_name} maxLength={80} onChange={(event) => set("display_name", event.target.value)} required /></label>
         <label>Band mục tiêu<select value={form.target_band} onChange={(event) => set("target_band", event.target.value)}>{bands.map((band) => <option key={band} value={band}>{band || "Chưa chọn"}</option>)}</select></label>
         <label>Ngày thi dự kiến<input type="date" value={form.exam_date} onChange={(event) => set("exam_date", event.target.value)} /></label>
-        <label>Chặng đang học<select value={form.stage_id} onChange={(event) => set("stage_id", event.target.value)}><option value="">Chưa chọn</option>{stages.map((stage) => <option key={stage.id} value={stage.id}>{stage.range} · {stage.name}</option>)}</select></label>
+        <label>Chặng đang học<select value={form.stage_id} onChange={(event) => set("stage_id", event.target.value)}><option value="">Chưa chọn</option>{stages.map((stage) => <option key={stage.id} value={stage.id} disabled={releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id)}>{stage.range} · {stage.name}{releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id) ? " · Sắp mở" : ""}</option>)}</select></label>
         <label>Mục tiêu mỗi ngày<input type="number" min={1} max={20} value={form.daily_goal} onChange={(event) => set("daily_goal", Math.min(20, Math.max(1, Number(event.target.value) || 1)))} /></label>
         <label>Múi giờ<select value={form.timezone} onChange={(event) => set("timezone", event.target.value)}>{[...new Set([form.timezone, ...zones])].map((zone) => <option key={zone} value={zone}>{zone}</option>)}</select></label>
         <label className="profile-bio-field">Giới thiệu ngắn<textarea rows={3} maxLength={280} value={form.bio} onChange={(event) => set("bio", event.target.value)} placeholder="Ví dụ: Mình cần 6.5 để du học, mạnh Reading, yếu Speaking." /><small>{form.bio.length}/280</small></label>
@@ -212,5 +215,42 @@ function ProfileForm({ data, onSaved }: { data: LearnerOverview; onSaved: () => 
         {status && <span className={statusError ? "is-error" : ""} role={statusError ? "alert" : "status"}>{status}</span>}
       </div>
     </form>
+    <ChangePassword email={email} />
   </section>;
+}
+
+function ChangePassword({ email }: { email: string }) {
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [message, setMessage] = useState("");
+  const [failed, setFailed] = useState(false);
+
+  async function change(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (newPassword.length < 8 || newPassword !== confirmPassword) {
+      setFailed(true); setMessage(newPassword.length < 8 ? "Mật khẩu mới cần ít nhất 8 ký tự." : "Hai lần nhập mật khẩu mới chưa khớp."); return;
+    }
+    setBusy(true); setMessage("");
+    const db = createClient();
+    const verified = await db.auth.signInWithPassword({ email, password: oldPassword });
+    if (verified.error) { setFailed(true); setMessage("Mật khẩu hiện tại không đúng hoặc tài khoản này dùng đăng nhập Google."); setBusy(false); return; }
+    const changed = await db.auth.updateUser({ password: newPassword });
+    setBusy(false);
+    if (changed.error) { setFailed(true); setMessage(changed.error.message); return; }
+    setOldPassword(""); setNewPassword(""); setConfirmPassword("");
+    setFailed(false); setMessage("Đã đổi mật khẩu.");
+  }
+
+  return <form className="profile-password-form" onSubmit={(event) => void change(event)}>
+    <h3>Đổi mật khẩu</h3>
+    <p>Dành cho tài khoản đăng nhập bằng email và mật khẩu.</p>
+    <div className="profile-fields">
+      <label>Mật khẩu hiện tại<input type="password" autoComplete="current-password" value={oldPassword} onChange={(event) => setOldPassword(event.target.value)} required /></label>
+      <label>Mật khẩu mới<input type="password" autoComplete="new-password" minLength={8} value={newPassword} onChange={(event) => setNewPassword(event.target.value)} required /></label>
+      <label>Nhập lại mật khẩu mới<input type="password" autoComplete="new-password" minLength={8} value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required /></label>
+    </div>
+    <div className="profile-form-actions"><button type="submit" className="button subtle" disabled={busy}>{busy ? "Đang đổi…" : "Đổi mật khẩu"}</button>{message && <span className={failed ? "is-error" : ""} role={failed ? "alert" : "status"}>{message}</span>}</div>
+  </form>;
 }

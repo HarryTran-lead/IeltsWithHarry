@@ -77,7 +77,7 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
         return;
       }
       setCurrentUser(session.user.id);
-      const result = await db.from("study_room_messages").select("id,user_id,display_name,body,created_at")
+      const result = await db.from("study_room_messages").select("id,user_id,display_name,body,created_at,is_admin")
         .order("created_at", { ascending: false }).limit(pageSize);
       if (!active) return;
       if (result.error) setError(result.error.message);
@@ -156,7 +156,7 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
     setSending(true);
     setError("");
     const result = await db.from("study_room_messages").insert({ body })
-      .select("id,user_id,display_name,body,created_at").single();
+      .select("id,user_id,display_name,body,created_at,is_admin").single();
     setSending(false);
     if (result.error) {
       setError(result.error.message.includes("wait before") ? "Bạn gửi hơi nhanh. Hãy đợi 2 giây rồi thử lại." : result.error.message);
@@ -171,7 +171,7 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
     const db = supabase.current;
     if (!db || !messages[0] || loadingOlder) return;
     setLoadingOlder(true);
-    const result = await db.from("study_room_messages").select("id,user_id,display_name,body,created_at")
+    const result = await db.from("study_room_messages").select("id,user_id,display_name,body,created_at,is_admin")
       .lt("created_at", messages[0].created_at).order("created_at", { ascending: false }).limit(pageSize);
     setLoadingOlder(false);
     if (result.error) { setError(result.error.message); return; }
@@ -207,7 +207,7 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
         </section>
       </div>
       <section className="study-chat-card" aria-label="Phòng chat cùng học"><header className="study-chat-header"><div className="study-chat-icon"><MessageCircle size={22} /></div><div><strong>Phòng chat chung</strong><span>{demoMode ? "Bản xem trước" : status === "live" ? "Đang kết nối trực tiếp" : status === "connecting" ? "Đang kết nối…" : "Chưa có kết nối trực tiếp"}</span></div><span className={`study-chat-status ${status}`} /></header>
-        <div className="study-chat-messages" ref={listRef} aria-live="polite">{hasOlder && <button className="study-older" type="button" onClick={() => void loadOlder()} disabled={loadingOlder}>{loadingOlder ? "Đang tải…" : "Xem tin nhắn cũ"}</button>}{messages.length === 0 && <div className="study-chat-empty"><HarryMascot size={100} /><h2>Chào mừng vào phòng!</h2><p>Chia sẻ mục tiêu học hôm nay hoặc gửi lời chào tới mọi người nhé.</p></div>}{messages.map((item) => <article className={`study-message ${item.user_id === currentUser ? "mine" : ""}`} key={item.id}><span className="study-message-avatar">{item.display_name.slice(0, 1).toUpperCase()}</span><div><div className="study-message-meta"><strong>{item.user_id === currentUser ? "Bạn" : item.display_name}</strong><time dateTime={item.created_at}>{new Date(item.created_at).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}</time>{(item.user_id === currentUser || canManage) && <button type="button" onClick={() => void deleteMessage(item.id)} aria-label="Xóa tin nhắn"><Trash2 size={13} /></button>}</div><p>{item.body}</p></div></article>)}</div>
+        <div className="study-chat-messages" ref={listRef} aria-live="polite">{hasOlder && <button className="study-older" type="button" onClick={() => void loadOlder()} disabled={loadingOlder}>{loadingOlder ? "Đang tải…" : "Xem tin nhắn cũ"}</button>}{messages.length === 0 && <div className="study-chat-empty"><HarryMascot size={100} /><h2>Chào mừng vào phòng!</h2><p>Chia sẻ mục tiêu học hôm nay hoặc gửi lời chào tới mọi người nhé.</p></div>}{messages.map((item) => <article className={`study-message ${item.user_id === currentUser ? "mine" : ""} ${item.is_admin ? "is-admin" : ""}`} key={item.id}><span className="study-message-avatar">{item.is_admin ? <HarryMascot size={28} /> : item.display_name.slice(0, 1).toUpperCase()}</span><div><div className="study-message-meta">{item.is_admin && <span className="study-message-admin-label">ADMIN</span>}<strong>{item.user_id === currentUser ? "Bạn" : item.display_name}</strong><time dateTime={item.created_at}>{new Date(item.created_at).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}</time>{(item.user_id === currentUser || canManage) && <button type="button" onClick={() => void deleteMessage(item.id)} aria-label="Xóa tin nhắn"><Trash2 size={13} /></button>}</div><p>{item.body}</p></div></article>)}</div>
         {error && <p className="study-chat-error" role="alert">{error}</p>}
         {demoMode ? <div className="study-chat-demo">Đăng ký tài khoản để tham gia trò chuyện trực tiếp.</div> : <form className="study-chat-compose" onSubmit={(event) => void sendMessage(event)}><label className="sr-only" htmlFor="study-message">Tin nhắn của bạn</label><input id="study-message" value={draft} onChange={(event) => setDraft(event.target.value)} placeholder="Viết lời chào hoặc mục tiêu học tập…" maxLength={500} autoComplete="off" disabled={!currentUser || sending} /><button type="submit" aria-label="Gửi tin nhắn" disabled={!draft.trim() || !currentUser || sending}><Send size={18} /></button></form>}<p className="study-chat-note">Tôn trọng nhau và giữ cuộc trò chuyện phù hợp với việc học.</p>
       </section>

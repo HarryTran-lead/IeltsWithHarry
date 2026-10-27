@@ -3,9 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { BookOpenText, CalendarClock, ChevronLeft, ChevronRight, Flame, Headphones, ListChecks, Mic, PenLine, Target } from "lucide-react";
 import { HeadIcon } from "@/components/ui/head-icon";
+import Link from "next/link";
 import { useDemo } from "@/features/demo/demo-store";
 import { todayISO } from "@/lib/demo-data";
 import { demoMode } from "@/lib/runtime";
+import { createClient } from "@/lib/supabase/browser";
+import { activityLabels, type LearnerOverview } from "@/lib/account";
 import {
   addMonths, asProgressSkill, bandOptions, bucketActivity, dayDiff, dayTotal, emptyDay, emptyGoals, monthWeeks, progressSkills, skillFromSlug, weekOf,
   type ActivityItem, type ProgressDay, type ProgressGoals, type ProgressReport, type ProgressSkill,
@@ -73,6 +76,13 @@ export function StudyProgress() {
   const [selection, setSelection] = useState<Selection | null>(null);
   const [goalsOverride, setGoalsOverride] = useState<ProgressGoals | null>(null);
   const [status, setStatus] = useState("");
+  const [overview, setOverview] = useState<LearnerOverview | null>(null);
+  useEffect(() => {
+    if (demoMode) return;
+    let active = true;
+    void createClient().rpc("learner_overview").then(({ data }) => { if (active && data) setOverview(data as LearnerOverview); });
+    return () => { active = false; };
+  }, []);
   const goals = goalsOverride ?? report?.goals ?? emptyGoals;
   const days = useMemo(() => new Map((report?.days ?? []).map((day) => [day.day, day])), [report]);
   const selected = selection ?? { kind: "week", days: weekOf(today) };
@@ -92,13 +102,26 @@ export function StudyProgress() {
     setStatus("Đã lưu");
   }
 
-  return <section className="study-progress" aria-label="Tiến độ học tập" aria-busy={!report && !live.error}><div className="sp-grid">
+  const monthDays = report?.days.filter((day) => day.day.startsWith(month)) ?? [];
+  const monthActive = monthDays.filter((day) => day.active).length;
+  const monthExercises = monthDays.reduce((total, day) => total + dayTotal(day), 0);
+  return <section className="study-progress" aria-label="Tiến độ học tập" aria-busy={!report && !live.error}>
+    <div className="sp-overview" aria-label="Tổng quan tiến độ">
+      <div><span>Chuỗi hiện tại</span><strong><Flame size={20} /> {demoMode ? "—" : overview?.streak.current ?? "…"}</strong><small>ngày liên tiếp</small></div>
+      <div><span>Ngày học trong tháng</span><strong>{report ? monthActive : "…"}</strong><small>{monthLabel(month)}</small></div>
+      <div><span>Bài đã làm trong tháng</span><strong>{report ? monthExercises : "…"}</strong><small>theo hoạt động đã lưu</small></div>
+      <div><span>Tổng ngày học</span><strong>{demoMode ? "—" : overview?.streak.totalDays ?? "…"}</strong><small>từ lúc tạo tài khoản</small></div>
+    </div>
+    <div className="sp-grid">
     <GoalsCard goals={goals} onChange={(next) => void saveGoals(next)} status={status} />
     <ExamCard examDate={goals.examDate} today={today} onChange={(examDate) => void saveGoals({ ...goals, examDate })} />
     <ActivityCalendar month={month} today={today} days={days} selection={selected} loading={!report} error={demoMode ? "" : live.error}
       onMonth={(offset) => { setMonth((current) => addMonths(current, offset)); setSelection(null); }}
       onSelect={setSelection} />
     <WeekStats selection={selected} days={days} today={today} loading={!report} />
+    {overview && <section className="card sp-card sp-recent"><div className="card-head"><div className="head-title"><HeadIcon icon={ListChecks} tone="teal" /><div><h2>Hoạt động gần đây</h2><p>{overview.stats.lessons} bài học · {overview.stats.newsQuizzes} quiz tin tức · {overview.stats.words} từ đã lưu</p></div></div><Link href="/app/profile">Xem hồ sơ</Link></div>
+      {overview.timeline.length ? <ol>{overview.timeline.slice(0, 6).map((item, index) => <li key={`${item.at}-${index}`}><span>{activityLabels[item.kind] ?? item.kind}</span>{item.link ? <Link href={item.link}>{item.title}</Link> : <strong>{item.title}</strong>}<time dateTime={item.at}>{new Date(item.at).toLocaleDateString("vi-VN")}</time></li>)}</ol> : <p>Chưa có hoạt động. Hoàn thành một bài luyện để bắt đầu theo dõi.</p>}
+    </section>}
   </div></section>;
 }
 

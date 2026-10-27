@@ -37,7 +37,8 @@ import { HarryMascot } from "@/components/illustrations/harry";
 import { Tape } from "@/components/stickers/stickers";
 import { HarryBuddy } from "@/components/fx/harry-buddy";
 import { useDemo } from "@/features/demo/demo-store";
-import { demoMode, liveMode } from "@/lib/runtime";
+import { demoMode, liveMode, lockedLearnerPath } from "@/lib/runtime";
+import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
 import { useStudyPresence } from "@/features/study-room/study-presence";
@@ -109,6 +110,7 @@ const skillPracticeLinks: Record<string, { label: string; href: string }[]> = {
   ],
   speaking: [
     ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/speaking#ngan-hang-de" }] : []),
+    { label: "Part 1 interview", href: "/app/speaking?type=part1" },
     { label: "Part 2 cue card", href: "/app/speaking/live" },
     { label: "Part 3 follow-up", href: "/app/speaking/part-3" },
     ...(!demoMode ? [{ label: "Thi thử Speaking", href: "/app/speaking/mock" }] : []),
@@ -145,6 +147,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
   const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const { online: studyOnline } = useStudyPresence();
+  const learnerStreak = useLearnerStreak();
   const newsUnread = useNewsUnread(pathname, liveMode);
   const [profileOpen, setProfileOpen] = useState(false);
   const [avatar, setAvatar] = useState("harry");
@@ -155,7 +158,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
   const completed = tasks.filter((t) => t.completed).length;
   const xp = 320 + Math.max(0, completed - 3) * 15 + attempts.length * 20;
   const filtered = searchItems
-    .filter((item) => item.label.toLowerCase().includes(query.toLowerCase()))
+    .filter((item) => !lockedLearnerPath(item.href) && item.label.toLowerCase().includes(query.toLowerCase()))
     .slice(0, 5);
   const section = pathname.split("/")[2] || "dashboard";
   const [skillMenuOverride, setSkillMenuOverride] = useState<{ pathname: string; skill: string | null } | null>(null);
@@ -281,11 +284,11 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
           )}
         </div>
         <div className="header-actions">
-          {demoMode && <div className="stat-pill streak" title="Day streak">
+          <Link href="/app/progress" className="stat-pill streak" title="Chuỗi ngày học">
             <Flame size={18} fill="#ff9b3d" color="#ef6a24" />
-            <strong>12</strong>
-            <small>day streak</small>
-          </div>}
+            <strong>{demoMode ? 12 : learnerStreak?.current ?? "…"}</strong>
+            <small>ngày liên tiếp</small>
+          </Link>
           {demoMode && <div className="stat-pill xp" title="XP points">
             <Star size={18} fill="#ffd15a" color="#e0a020" />
             <strong>{xp}</strong>
@@ -330,7 +333,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                 setNotificationsOpen(false);
               }}
             >
-              {demoMode ? <span><UserRound size={18} strokeWidth={2.2} /></span> : <AccountAvatar value={avatar} size={34} />}
+              {demoMode ? <span><UserRound size={18} strokeWidth={2.2} /></span> : canManage ? <HarryMascot size={34} /> : <AccountAvatar value={avatar} size={34} />}
               <ChevronDown size={15} />
             </button>
             {profileOpen && (
@@ -383,6 +386,9 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                 const practiceLinks = skillPracticeLinks[skill];
                 const expanded = expandedSkill === skill && Boolean(practiceLinks);
                 const active = isActive(pathname, href);
+                if (lockedLearnerPath(href)) return <div key={href} className="nav-link nav-link-locked" aria-label={`${label} đang chuẩn bị`} title={`${label} đang chuẩn bị`}>
+                  <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b><span>{label}</span><small>Sắp mở</small>
+                </div>;
                 return <div className="nav-item" key={href}>
                   <Link
                     href={practiceLinks ? `${href}#che-do-hoc` : href}
@@ -404,7 +410,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                   </Link>
                   {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className="nav-submenu" hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
                     <Link href={`${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>Tất cả chế độ</Link>
-                    {practiceLinks.map((practice) => <Link
+                    {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => <Link
                       key={practice.href}
                       href={practice.href}
                       className={`nav-submenu-link ${pathname === practice.href ? "active" : ""}`}

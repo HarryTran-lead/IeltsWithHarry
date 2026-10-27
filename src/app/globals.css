@@ -6917,3 +6917,10 @@ a.card:hover {
     max-height: none;
   }
 }
+.nav-link-locked { opacity: .55; cursor: not-allowed; }
+.stat-pill.streak { color: var(--navy); text-decoration: none; }
+.avatar-button > img { border-radius: 50%; box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px #bfe7e8; }
+.nav-link-locked small { margin-left: auto; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.nav-sub-links { display: flex; gap: 6px; padding: 2px 8px 8px 54px; }
+.nav-sub-links a { border-radius: 8px; padding: 5px 7px; color: var(--muted); font-size: 11px; font-weight: 700; text-decoration: none; }
+.nav-sub-links a:hover { background: #e5f4f3; color: var(--teal-strong); }
