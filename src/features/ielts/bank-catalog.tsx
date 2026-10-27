@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, BookOpen, Headphones, Mic, NotebookPen } from "lucide-react";
 import { balancedCatalog, catalogGroups, catalogHref, catalogSkills, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
-import { BankLibrary } from "./bank-library";
+import { BankLibrary, ExamCard } from "./bank-library";
 import "./bank.css";
 
 const skillCopy = {
@@ -26,25 +26,12 @@ function groupCount(exams: CatalogExam[], type: string) {
   return exams.filter((exam) => exam.practice_type === type).length;
 }
 
-function typeLabel(exam: CatalogExam) {
-  return catalogGroups[exam.skill].find((group) => group.id === exam.practice_type)?.label || "Bài luyện";
-}
-
-export function CatalogCard({ exam }: { exam: CatalogExam }) {
-  return <Link className={`bank-catalog-card bank-tone-${skillCopy[exam.skill].tone}`} href={`/app/question-bank/exam/${exam.id}`}>
-    <span className="bank-catalog-card-top"><span className="bank-type-badge">{typeLabel(exam)}</span><ArrowRight size={17} aria-hidden="true" /></span>
-    <h3>{exam.title}</h3>
-    <span className="bank-catalog-card-meta">{exam.format} <span aria-hidden="true">·</span> {exam.duration_minutes} phút</span>
-    <span className="bank-catalog-card-source">{exam.attribution} · {exam.license}{exam.ai_generated ? " · Nội dung AI" : ""}</span>
-  </Link>;
-}
-
 export function BankCatalog() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const skill = catalogSkills.find((value) => value === searchParams.get("skill"));
   const [exams, setExams] = useState<CatalogExam[]>([]);
-  const [history, setHistory] = useState<{ id: string; state: string; score: number | null; total: number | null; ielts_exams: { title: string } }[]>([]);
+  const [history, setHistory] = useState<{ id: string; exam_id: string; state: string; score: number | null; total: number | null; ielts_exams: { title: string } }[]>([]);
   const [loading, setLoading] = useState(true), [error, setError] = useState("");
 
   useEffect(() => {
@@ -80,11 +67,11 @@ export function BankCatalog() {
 
     {!loading && !error && !skill && <div className="bank-overview-grid">{catalogSkills.map((name) => {
       const data = exams.filter((exam) => exam.skill === name), config = skillCopy[name], Icon = config.icon;
-      const previews = balancedCatalog(data, catalogGroups[name].map((group) => group.id)).slice(0, 3);
+      const previews = balancedCatalog(data, catalogGroups[name].map((group) => group.id)).slice(0, name === "Writing" || name === "Speaking" ? 2 : 3);
       return <section className={`bank-overview-panel bank-tone-${config.tone}`} key={name}>
         <div className="bank-overview-heading"><span className="bank-overview-icon"><Icon size={24} aria-hidden="true" /></span><div><span className="bank-catalog-kicker">{data.length} ĐỀ LUYỆN</span><h2>{config.title}</h2><p>{config.detail}</p></div></div>
         <div className="bank-overview-groups">{catalogGroups[name].filter((group) => groupCount(data, group.id)).map((group) => <Link key={group.id} href={catalogHref(name, group.id)}>{group.label}<b>{groupCount(data, group.id)}</b></Link>)}</div>
-        <div className="bank-overview-previews">{previews.map((exam) => <CatalogCard key={exam.id} exam={exam} />)}</div>
+        <div className={`bank-overview-previews bl-grid bl-grid-${name.toLowerCase()}`}>{previews.map((exam) => <ExamCard key={exam.id} exam={exam} attempt={history.find((item) => item.exam_id === exam.id)} />)}</div>
         <Link className="bank-overview-more" href={catalogHref(name)}>Xem tất cả đề {name} <ArrowRight size={17} /></Link>
       </section>;
     })}</div>}

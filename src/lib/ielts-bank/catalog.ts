@@ -67,8 +67,7 @@ export function balancedCatalog<T extends { practice_type: string }>(items: T[],
   return result;
 }
 
+/** The skill page holds that skill's question-bank library; `type` preselects a practice type. */
 export function catalogHref(skill: CatalogSkill, type?: string) {
-  const query = new URLSearchParams({ skill });
-  if (type) query.set("type", type);
-  return `/app/question-bank?${query}`;
+  return `/app/${skill.toLowerCase()}${type ? `?type=${encodeURIComponent(type)}` : ""}`;
 }

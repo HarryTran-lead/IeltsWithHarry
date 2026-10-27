@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
+import { AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel, WritingEditor } from "./bank-exam";
 import "./bank.css";
 
 type Exam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; content?: ExamContent };
@@ -15,6 +16,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const [exam, setExam] = useState<Exam | null>(null), [attempt, setAttempt] = useState<Attempt | null>(null), [result, setResult] = useState<Result | null>(null);
   const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0);
   const [dueDate, setDueDate] = useState(""), [scheduled, setScheduled] = useState(false);
+  const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle"), [confirming, setConfirming] = useState(false);
   const loadAttempt = useCallback(async (id: string) => { const data = await api(`attempt?id=${encodeURIComponent(id)}`); setAttempt(data.attempt); setExam(data.attempt.ielts_exams || null); setAnswers(data.attempt.answers || {}); setFlags(data.attempt.flags || []); setNotes(data.attempt.notes || {}); setResult(data.result); setClock(Date.now()); }, []);
   useEffect(() => { let live = true; const run = async () => { try { if (resultId || attemptId) { await loadAttempt(resultId || attemptId!); return; } if (examId) { const data = await api(`library?id=${encodeURIComponent(examId)}`); if (!live) return; setExam(data.exam); const saved = sessionStorage.getItem(`ielts-attempt:${examId}`); if (saved) await loadAttempt(saved); } } catch (e) { if (live) setError(String(e)); } }; void run(); return () => { live = false; }; }, [examId, resultId, attemptId, loadAttempt]);
   useEffect(() => { const interval = setInterval(() => setClock(Date.now()), 1000); return () => clearInterval(interval); }, []);
@@ -22,24 +24,65 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const questions = useMemo(() => content?.sections.flatMap((s) => s.questions) || [], [content]);
   useEffect(() => { if (!attempt || attempt.state !== "in_progress" || !questions.length) return; const keydown = (event: KeyboardEvent) => { if ((event.target as HTMLElement)?.closest("input,textarea,select,button")) return; if (event.key === "ArrowRight") setActive((index) => Math.min(questions.length-1, index+1)); if (event.key === "ArrowLeft") setActive((index) => Math.max(0, index-1)); }; window.addEventListener("keydown", keydown); return () => window.removeEventListener("keydown", keydown); }, [attempt, questions.length]);
   const remaining = attempt && exam ? Math.max(0, exam.duration_minutes * 60 - Math.floor((clock - new Date(attempt.started_at).getTime()) / 1000)) : 0;
-  useEffect(() => { if (!attempt || attempt.state !== "in_progress") return; const timer = setTimeout(() => { void api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes }).then((data) => { if (typeof data.score === "number") { setResult(data); setAttempt({ ...attempt, state: "expired" }); } }).catch((e) => setError(String(e))); }, 1200); return () => clearTimeout(timer); }, [answers, flags, notes, attempt]);
+  useEffect(() => { if (!attempt || attempt.state !== "in_progress") return; const timer = setTimeout(() => { setSaveState("saving"); void api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes }).then((data) => { setSaveState("saved"); if (typeof data.score === "number") { setResult(data); setAttempt({ ...attempt, state: "expired" }); } }).catch((e) => { setSaveState("error"); setError(String(e)); }); }, 1200); return () => clearTimeout(timer); }, [answers, flags, notes, attempt]);
   const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, answers, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted" }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, busy, exam]);
   useEffect(() => { if (clock && attempt?.state === "in_progress" && exam && remaining === 0) { const timer = setTimeout(() => void submit(true), 0); return () => clearTimeout(timer); } }, [clock, attempt?.state, exam, remaining, submit]);
   async function start() { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id }); sessionStorage.setItem(`ielts-attempt:${exam.id}`, data.attempt.id); setAttempt(data.attempt); setClock(Date.now()); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
   const bankSkill = catalogSkills.find((value) => value === exam?.skill);
   const backHref = bankSkill ? catalogHref(bankSkill, exam?.practice_type) : "/app/question-bank";
   if (!examId && !resultId && !attemptId) return <BankCatalog />;
-  if (error && !exam && !attempt) return <main className="bank-page"><p role="alert">{error}</p><Link href="/app/dashboard">Về trang chủ</Link></main>;
-  if (resultId || result) return <main className="bank-page"><Link href={backHref}>← Ngân hàng đề</Link><h1>Kết quả bài làm</h1><p>{attempt?.ielts_exams?.title || exam?.title}</p>{attempt && <p>Mã lượt làm: {attempt.id}</p>}{result ? <><strong className="bank-score">{result.score}/{result.total}</strong><p>{result.total ? "Điểm thô của bài luyện tập; không phải band IELTS chính thức." : "Đã lưu bài làm. Writing/Speaking cần người chấm; chưa có điểm tự động."}</p><div className="bank-review">{result.review.map((q, i) => <article key={q.id}><b>Câu {i+1}: {q.correct ? "Đúng" : q.given ? "Sai" : "Chưa trả lời"}</b><p>Bạn trả lời: {q.given || "—"}</p><p>Đáp án: {q.answers.join(" / ") || "Cần chấm thủ công"}</p>{q.explanation && <p>{q.explanation}</p>}</article>)}</div></> : <p>Đang tải kết quả…</p>}</main>;
-  if (!exam) return <main className="bank-page">Đang tải đề…</main>;
-  if (!attempt) return <main className="bank-page"><Link href={backHref}>← Ngân hàng đề</Link><h1>{exam.title}</h1><p>{exam.skill} · {exam.format} · {exam.duration_minutes} phút</p><p>{exam.ai_generated ? "Nội dung luyện tập do AI tạo." : "Nội dung luyện tập."} Không liên kết với tổ chức IELTS.</p><p>Nguồn: <a href={exam.source_url} target="_blank" rel="noreferrer">{exam.attribution}</a> · <a href={exam.license_url} target="_blank" rel="noreferrer">{exam.license}</a></p><button className="button primary" disabled={busy} onClick={() => void start()}>Bắt đầu làm bài</button><div className="bank-schedule"><label>Lên lịch trong Study Planner <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} /></label><button className="button subtle" disabled={!dueDate || busy} onClick={() => { void api("attempt", { action: "schedule", examId: exam.id, dueDate }).then(() => setScheduled(true)).catch((e) => setError(String(e))); }}>Lưu lịch</button>{scheduled && <span role="status">Đã thêm vào Study Planner.</span>}</div>{error && <p role="alert">{error}</p>}</main>;
+  if (error && !exam && !attempt) return <main className="bx-page"><p className="bx-error" role="alert">{error}</p><Link className="bx-ghost" href="/app/dashboard">Về trang chủ</Link></main>;
+  if (resultId || result) {
+    if (!result) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
+    const saved = attempt?.answers || answers;
+    // Writing/Speaking have no automatic score: show what the learner wrote instead.
+    const response = result.total ? undefined : saved.__response || Object.entries(saved).filter(([key, value]) => key !== "__response" && value).map(([, value]) => value).join("\n\n") || undefined;
+    return <ExamResult title={attempt?.ielts_exams?.title || exam?.title || "Bài luyện"} skill={exam?.skill || attempt?.ielts_exams?.skill || "Reading"} score={result.total ? result.score : null} total={result.total} review={result.review} response={response} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}` : undefined}
+      // On the exam's own page a link to itself would not reset, so start over in place.
+      onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
+  }
+  if (!exam) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
+  if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} onStart={() => void start()} scheduleSlot={<div className="bx-schedule">
+    <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} aria-label="Ngày luyện" />
+    <button type="button" className="bx-ghost" disabled={!dueDate || busy} onClick={() => { void api("attempt", { action: "schedule", examId: exam.id, dueDate }).then(() => setScheduled(true)).catch((e) => setError(String(e))); }}>Lưu lịch</button>
+    {scheduled && <span role="status">Đã thêm vào Study Planner.</span>}
+  </div>} />;
   const q = questions[active]; const section = content?.sections.find((s) => s.questions.some((item) => item.id === q?.id)) || content?.sections[0];
-  return <main className="bank-page bank-exam"><header className="bank-exam-head"><div><strong>{exam.title}</strong><small>{exam.skill} · {exam.ai_generated ? "Synthetic practice" : "Practice"}</small></div><span role="timer">{Math.floor(remaining/60)}:{String(remaining%60).padStart(2,"0")}</span><button className="button subtle" onClick={() => { void document.documentElement.requestFullscreen?.(); }}>Toàn màn hình</button><button className="button primary" disabled={busy} onClick={() => { if (window.confirm("Nộp bài ngay?")) void submit(); }}>Nộp bài</button></header>
-    <div className="bank-nav" aria-label="Chọn câu hỏi">{questions.map((item, i) => <button key={item.id} aria-current={active === i ? "step" : undefined} className={`${answers[item.id] ? "answered" : ""} ${flags.includes(item.id) ? "flagged" : ""}`} onClick={() => setActive(i)}>{i+1}</button>)}</div>
-    {error && <p role="alert">{error}</p>}
-     <div className="bank-panes"><section className="bank-passage"><h2>{section?.title || "Đề bài"}</h2>{section?.audioUrl && <audio controls src={section.audioUrl} />}{section?.passage ? section.passage.split("\n\n").map((p, i) => <p key={i}>{p}</p>) : <p>{String(content?.prompt || "")}</p>}{content?.figureDescription && <p className="bank-figure-description"><strong>Mô tả hình từ nguồn:</strong> {content.figureDescription}</p>}{content?.imageUrl && <p><a href={content.imageUrl} target="_blank" rel="noreferrer">Mở hình Task 1</a></p>}{Boolean(content?.visual) && <BankVisual visual={content?.visual} />}</section><section className="bank-question">{q ? <><small>Câu {active+1} / {questions.length} · {q.type}</small><p>{q.instructions}</p><h2>{q.prompt}</h2>{q.options.length ? q.options.map((option) => /multiple[_-]answers/.test(q.type) ? <label key={option} className="bank-option"><input type="checkbox" checked={(answers[q.id] || "").split(",").includes(option)} onChange={(e) => { const current = (answers[q.id] || "").split(",").filter(Boolean); setAnswers({ ...answers, [q.id]: (e.target.checked ? [...current, option] : current.filter((v) => v !== option)).join(",") }); }} />{option}</label> : <label key={option} className="bank-option"><input type="radio" name={q.id} checked={answers[q.id] === option} onChange={() => setAnswers({ ...answers, [q.id]: option })} />{option}</label>) : <input aria-label={`Câu trả lời câu ${active+1}`} value={answers[q.id] || ""} onChange={(e) => setAnswers({ ...answers, [q.id]: e.target.value })} />}
-      {q.mediaUrl && <p><a href={q.mediaUrl} target="_blank" rel="noreferrer">Mở sơ đồ/hình từ nguồn đã duyệt</a></p>}<label className="bank-flag"><input type="checkbox" checked={flags.includes(q.id)} onChange={(e) => setFlags(e.target.checked ? [...flags, q.id] : flags.filter((id) => id !== q.id))} /> Đánh dấu xem lại</label><label>Ghi chú cá nhân<textarea value={notes[q.id] || ""} onChange={(e) => setNotes({ ...notes, [q.id]: e.target.value })} rows={3} /></label><div className="bank-actions"><button className="button subtle" disabled={!active} onClick={() => setActive(active-1)}>← Trước</button><button className="button subtle" disabled={active >= questions.length-1} onClick={() => setActive(active+1)}>Tiếp →</button></div></> : <><h2>Bài trả lời</h2><textarea aria-label="Bài viết hoặc ghi chú" value={answers.__response || ""} onChange={(e) => setAnswers({ ...answers, __response: e.target.value })} rows={18} /><p>{(answers.__response || "").trim().split(/\s+/).filter(Boolean).length} từ · Bài được lưu tự động</p></>}</section></div>
-    <p className="bank-attribution">Nguồn: {exam.attribution} · {exam.license}</p>
+  const answered = questions.filter((item) => answers[item.id]).length;
+  const setAnswer = (id: string, value: string) => setAnswers({ ...answers, [id]: value });
+  return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
+    <ExamBar exam={exam} answered={answered} total={questions.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
+    {questions.length > 1 && <QuestionNav questions={questions} active={active} answers={answers} flags={flags} onPick={setActive} />}
+    {error && <p className="bx-error" role="alert">{error}</p>}
+    <div className="bx-panes">
+      <section className="bx-source-pane" aria-label="Đề bài">
+        <span className="bx-pane-label">{exam.skill === "Listening" ? "Bản ghi âm" : exam.skill === "Writing" ? "Đề bài" : exam.skill === "Speaking" ? "Chủ đề" : "Bài đọc"}</span>
+        <h2>{section?.title || exam.title}</h2>
+        {section?.audioUrl && <div className="bx-audio"><audio controls src={section.audioUrl} preload="metadata" /><small>Nghe và trả lời câu hỏi bên phải. Khi luyện tập bạn có thể tua lại.</small></div>}
+        {section?.passage ? <div className="bx-passage">{section.passage.split("\n\n").map((paragraph, i) => <p key={i}><RichText text={paragraph} /></p>)}</div>
+          : content?.prompt ? <div className="bx-passage"><p><RichText text={String(content.prompt)} /></p></div> : null}
+        {exam.skill === "Speaking" && <ul className="bx-tips"><li>Trả lời 2–4 câu: ý chính → lý do → ví dụ.</li><li>Ghi âm rồi nghe lại để tự kiểm tra độ trôi chảy và phát âm.</li></ul>}
+        {content?.figureDescription && <p className="bx-figure"><strong>Mô tả hình:</strong> {content.figureDescription}</p>}
+        {content?.imageUrl && <a className="bx-ghost" href={content.imageUrl} target="_blank" rel="noreferrer">Mở hình Task 1</a>}
+        {Boolean(content?.visual) && <BankVisual visual={content?.visual} />}
+      </section>
+      {q ? <section className="bx-question" aria-label={`Câu ${active + 1}`}>
+        <div className="bx-question-head"><span>Câu {active + 1} / {questions.length}</span><b>{typeLabel(q.type)}</b></div>
+        {q.instructions && <p className="bx-instructions"><RichText text={q.instructions} /></p>}
+        <h3 className="bx-prompt"><RichText text={q.prompt} /></h3>
+        {q.mediaUrl && <a className="bx-ghost" href={q.mediaUrl} target="_blank" rel="noreferrer">Mở sơ đồ/hình</a>}
+        {exam.skill === "Speaking" || q.type === "speaking"
+          ? <SpeakingAnswer key={q.id} value={answers[q.id] || ""} onChange={(value) => setAnswer(q.id, value)} index={active} />
+          : <AnswerInput question={q} value={answers[q.id] || ""} onChange={(value) => setAnswer(q.id, value)} index={active} />}
+        <div className="bx-question-tools">
+          <button type="button" className={`bx-flag ${flags.includes(q.id) ? "is-on" : ""}`} aria-pressed={flags.includes(q.id)} onClick={() => setFlags(flags.includes(q.id) ? flags.filter((id) => id !== q.id) : [...flags, q.id])}>{flags.includes(q.id) ? "Đã đánh dấu xem lại" : "Đánh dấu xem lại"}</button>
+          <details className="bx-notes" open={Boolean(notes[q.id]) || undefined}><summary>Ghi chú cá nhân</summary><textarea value={notes[q.id] || ""} onChange={(e) => setNotes({ ...notes, [q.id]: e.target.value })} rows={3} placeholder="Từ khóa, lý do chọn đáp án…" /></details>
+        </div>
+        <div className="bx-steps"><button type="button" className="bx-ghost" disabled={!active} onClick={() => setActive(active - 1)}>← Câu trước</button>{active >= questions.length - 1 ? <button type="button" className="bx-submit" onClick={() => setConfirming(true)}>Xem lại & nộp</button> : <button type="button" className="bx-next" onClick={() => setActive(active + 1)}>Câu tiếp →</button>}</div>
+      </section> : <WritingEditor value={answers.__response || ""} onChange={(value) => setAnswer("__response", value)} minimum={content?.minimumWords || (exam.practice_type === "task2" ? 250 : 150)} />}
+    </div>
+    <p className="bx-attribution">Nguồn: {exam.attribution} · {exam.license}</p>
+    {confirming && <SubmitDialog unanswered={questions.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />}
   </main>;
 }
 
