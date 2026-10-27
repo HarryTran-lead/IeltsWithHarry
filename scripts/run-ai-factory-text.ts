@@ -27,7 +27,7 @@ async function main() {
   const day = Math.floor(Date.now() / 86_400_000);
   const skills: TextSkill[] = ["Listening", "Reading", "Writing", "Speaking"];
   const scheduled: Record<string, TextSkill> = {
-    "37 18 * * *": "Listening", "47 18 * * *": "Reading", "57 18 * * *": "Writing", "7 19 * * *": "Speaking",
+    "37 8 * * *": "Listening", "47 8 * * *": "Reading", "57 8 * * *": "Writing", "7 9 * * *": "Speaking",
   };
   const requested = process.env.AI_FACTORY_SKILL;
   if (requested && !skills.includes(requested as TextSkill)) throw new Error("Invalid AI Factory skill");

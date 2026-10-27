@@ -2,10 +2,12 @@ name: AI Factory text drafts
 
 on:
   schedule:
-    - cron: "37 18 * * *"
-    - cron: "47 18 * * *"
-    - cron: "57 18 * * *"
-    - cron: "7 19 * * *"
+    # UTC: 15:37-16:07 Asia/Ho_Chi_Minh, after the app's UTC-day reset
+    # and Gemini's midnight Pacific daily-quota reset in both PST and PDT.
+    - cron: "37 8 * * *"
+    - cron: "47 8 * * *"
+    - cron: "57 8 * * *"
+    - cron: "7 9 * * *"
   workflow_dispatch:
     inputs:
       skill:
