@@ -746,7 +746,7 @@ export function ReadingStudioPractice({
                 onClick={() => setActiveTab(idx)}
               >
                 <small>{isFull ? `ĐỀ THI ĐỌC #${idx - 2 > 0 ? idx - 2 : idx + 1}` : `BÀI ĐỌC ${idx + 1}`}</small>
-                <strong>{p.title.replace(/^Reading\s*\d*:\s*/i, "").slice(0, 38)}</strong>
+                <strong>{p.title.replace(/^Reading\s*\d*:\s*/i, "")}</strong>
                 <span>{p.questions.length} câu</span>
               </button>
             );

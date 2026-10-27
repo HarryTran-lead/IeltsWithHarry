@@ -6411,20 +6411,18 @@ a.card:hover {
   gap: 14px;
 }
 .v3-reading-topbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
+  gap: 10px;
   padding: 12px 14px;
   border: 1px solid #d5e5e7;
   border-radius: 16px;
   background: #f6fbfb;
 }
 .v3-reading-tabs {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 8px;
+  width: 100%;
 }
 .v3-reading-tab {
   display: grid;
