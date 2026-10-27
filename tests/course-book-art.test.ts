@@ -27,20 +27,30 @@ describe("course book Pollinations.ai illustrations", () => {
     });
   });
 
-  it("builds progressive fallback candidate URLs for units, lessons, and exercises", () => {
+  it("builds progressive fallback candidate URLs for units, lessons, exercises, and vocabulary words", () => {
     const exerciseCandidates = courseBookArtCandidates({
       topic: "Television, News and Current Affairs · Vocabulary & Pronunciation",
       unitSlug: "mindsetadvanced-l3u07",
       lessonSlug: "mindsetadvanced-l3u07-vocabulary",
       variant: "exercise",
     });
-    expect(exerciseCandidates).toHaveLength(4);
+    expect(exerciseCandidates).toHaveLength(5);
     expect(exerciseCandidates[0]).toContain("/course-book/exercises/mindsetadvanced-l3u07-vocabulary.jpg");
     expect(exerciseCandidates[1]).toContain("/course-book/lessons/mindsetadvanced-l3u07-vocabulary.jpg");
     expect(exerciseCandidates[2]).toContain("/course-book/units/mindsetadvanced-l3u07.jpg");
-    expect(exerciseCandidates[3]).toBe("/illustrations/topics/media.svg");
+    expect(exerciseCandidates[3]).toContain("/course-book/themes/media.jpg");
+    expect(exerciseCandidates[4]).toBe("/illustrations/topics/media.svg");
     expect(isCourseBookAiUrl(exerciseCandidates[0])).toBe(true);
-    expect(isCourseBookAiUrl(exerciseCandidates[3])).toBe(false);
+    expect(isCourseBookAiUrl(exerciseCandidates[3])).toBe(true);
+    expect(isCourseBookAiUrl(exerciseCandidates[4])).toBe(false);
+
+    const wordCandidates = courseBookArtCandidates({
+      topic: "Education & Knowledge",
+      word: "acquire",
+    });
+    expect(wordCandidates[0]).toContain("/course-book/words/acquire.jpg");
+    expect(wordCandidates[1]).toContain("/course-book/themes/education.jpg");
+    expect(wordCandidates[2]).toBe("/illustrations/topics/education.svg");
   });
 
   it("builds distinct contextual Pollinations prompts for unit, lesson, and exercise", () => {

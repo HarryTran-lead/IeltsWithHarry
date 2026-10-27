@@ -306,7 +306,7 @@ function PracticePreview({ unit, lesson, content }: { unit: BookUnit; lesson: Bo
       {visual}
       <Exercise number={next()} title="Nghe và đọc các cụm từ của unit.">
         {content.audio_url && <AudioChip src={content.audio_url} title="Audio từ vựng" />}
-        <dl className="bk-wordlist">{(content.vocabulary ?? content.expansion_words ?? []).slice(0, 10).map((word) => <div key={word.en} title={word.example}><dt>{word.en}</dt><dd>{word.vi}</dd></div>)}</dl>
+        <dl className="bk-wordlist">{(content.vocabulary ?? content.expansion_words ?? []).slice(0, 10).map((word) => <div key={word.en} className="bk-wordlist-item" title={word.example}><TopicArt topic={lesson.title} word={word.en} unitSlug={unit.slug} lessonSlug={lesson.slug} badge={false} className="bk-word-thumb" /><span className="bk-wordlist-copy"><dt>{word.en}</dt><dd>{word.vi}</dd></span></div>)}</dl>
       </Exercise>
       {choice && <Exercise number={next()} title="Thử ngay: chọn đáp án đúng."><QuickChoice activity={choice} /></Exercise>}
     </>;

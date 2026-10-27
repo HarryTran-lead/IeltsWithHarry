@@ -1,6 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { AiArtLimitError, generateAiArt } from "./news/ai-art";
-import { topicIllustration } from "./topic-illustration";
+import { topicIllustration, wordIllustration } from "./topic-illustration";
+import { catalog } from "./vocabulary/catalog";
 
 const DEFAULT_SUPABASE_URL = "https://vpkhriywprepuhrbarye.supabase.co";
 const BUCKET = "ielts-images";
@@ -10,13 +11,26 @@ function supabaseBaseUrl(): string {
   return (envUrl || DEFAULT_SUPABASE_URL).replace(/\/+$/, "");
 }
 
-export function courseBookStorageUrl(folder: "units" | "lessons" | "exercises", slug: string): string {
+export type CourseBookArtFolder = "units" | "lessons" | "exercises" | "themes" | "words";
+
+export function courseBookStorageUrl(folder: CourseBookArtFolder, slug: string): string {
   return `${supabaseBaseUrl()}/storage/v1/object/public/${BUCKET}/course-book/${folder}/${slug}.jpg`;
 }
 
 export function isCourseBookAiUrl(url: string | undefined | null): boolean {
   return Boolean(url && url.includes(`/storage/v1/object/public/${BUCKET}/course-book/`));
 }
+
+export function wordArtSlug(word: string): string {
+  return word
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 64);
+}
+
+const CURATED_WORD_SLUGS = new Set(catalog.map((item) => wordArtSlug(item.word)));
 
 export function inferUnitSlugFromLesson(lessonSlug?: string | null): string | null {
   if (!lessonSlug) return null;
@@ -63,7 +77,8 @@ export type CourseBookArtOptions = {
 
 export function courseBookArtCandidates(options: CourseBookArtOptions): string[] {
   const { topic, word, imageUrl, variant } = options;
-  const fallbackSvg = (word ? topicIllustration(topic || word) : topicIllustration(topic)).src;
+  const art = word ? wordIllustration(word, topic) : topicIllustration(topic);
+  const fallbackSvg = art.src;
   const inferred = inferBookSlugsFromTopic(topic);
   const lessonSlug = options.lessonSlug || inferred.lessonSlug;
   const unitSlug = options.unitSlug || inferUnitSlugFromLesson(lessonSlug) || inferred.unitSlug;
@@ -73,6 +88,15 @@ export function courseBookArtCandidates(options: CourseBookArtOptions): string[]
   const push = (url?: string | null) => {
     if (url && !candidates.includes(url)) candidates.push(url);
   };
+
+  if (word) {
+    const slug = wordArtSlug(word);
+    if (slug && (CURATED_WORD_SLUGS.has(slug) || Boolean(lessonSlug) || Boolean(unitSlug))) {
+      push(courseBookStorageUrl("words", slug));
+    }
+    const wordSpecificTheme = topicIllustration(word).theme;
+    push(courseBookStorageUrl("themes", wordSpecificTheme !== "general" ? wordSpecificTheme : art.theme));
+  }
 
   if (imageUrl) push(imageUrl);
 
@@ -98,8 +122,56 @@ export function courseBookArtCandidates(options: CourseBookArtOptions): string[]
     }
   }
 
+  push(courseBookStorageUrl("themes", art.theme));
   push(fallbackSvg);
   return candidates;
+}
+
+export const VOCAB_THEME_SCENES: Record<string, string> = {
+  art: "Fine arts and architecture: a sunlit art studio and contemporary museum gallery with paintings, sculptures, easel, and classical architectural arches",
+  history: "World history and heritage: an ancient civilization archaeological site, historical archive manuscripts, antique compass, and museum artifacts",
+  business: "Business, work and careers: a modern collaborative office, financial district skyline, startup team meeting table, and sustainable commerce",
+  shopping: "Shopping, consumer market and fashion: a lively boutique street market, artisan clothing display, eco-friendly packaging, and retail promenade",
+  health: "Health, medicine and wellbeing: a bright community wellness center, fresh organic produce, stethoscope, and people exercising in a green park",
+  food: "Food, nutrition and culinary culture: a warm farm-to-table kitchen and vibrant market table with fresh vegetables, fruits, grains, and artisan bread",
+  travel: "Travel, tourism and transport: a scenic high-speed train, airport terminal overlooking mountains and coast, vintage suitcase, and world travel route",
+  city: "Urban life and modern city: a vibrant sustainable city square with green tramways, bike lanes, historic and modern buildings, and lively street cafes",
+  home: "Home, housing and family life: a cozy sunlit modern living room and garden terrace with bookshelves, plants, and warm residential architecture",
+  education: "Education, university and knowledge: a sunlit university library and modern seminar classroom with books, globe, laptops, and campus courtyard",
+  science: "Science, research and data: a modern scientific research laboratory with microscopes, glassware, botanical specimens, and astronomical telescope",
+  technology: "Digital technology and innovation: a futuristic innovation lab with robotics, clean energy circuits, smart devices, and fiber-optic light streams",
+  nature: "Nature, environment and climate: a breathtaking diverse ecosystem with lush forest, crystal river, mountain peaks, wildlife, and renewable wind turbines",
+  media: "Media, news and communication: a modern broadcast television studio, journalism newsroom desk, documentary camera, and global communication satellites",
+  culture: "World culture, festivals and traditions: a colorful cultural heritage square with traditional lanterns, musical instruments, crafts, and historic pavilion",
+  hobbies: "Hobbies, leisure, sports and music: an acoustic guitar, easel, running track, camera, and outdoor recreation in a sunny park",
+  time: "Time, schedule and daily routine: a classic brass clock, morning coffee desk with planner notebook, hourglass, and changing seasons outside a window",
+  people: "People, psychology, society and community: a warm community gathering in a sunlit courtyard, diverse neighbors conversing, and social connection",
+  goals: "Goals, future plans and ambition: a mountain summit trail at sunrise, compass, architectural blueprint, and stepping stones toward a bright horizon",
+  language: "Language, linguistics and communication: an open illustrated book with floating visual motifs, fountain pen, headphones, and library study desk",
+  general: "Academic English learning and global discovery: a warm study desk overlooking a world cityscape with open books, globe, fountain pen, and notebook",
+};
+
+export function buildThemeArtPrompt(theme: string): string {
+  const scene = VOCAB_THEME_SCENES[theme] ?? VOCAB_THEME_SCENES.general;
+  return [
+    `Editorial coursebook illustration for English vocabulary topic "${theme}": ${scene}.`,
+    `Rich modern digital painting, warm natural light, clean composition.`,
+    `No text, no letters, no words, no numbers, no logos, no watermark.`,
+  ].join(" ");
+}
+
+export function buildWordArtPrompt(word: { word: string; meaning?: string; definition?: string; example?: string; topic?: string }): string {
+  const context = [
+    word.definition ? `Meaning: ${word.definition}.` : "",
+    word.example ? `Scene context: ${word.example}.` : "",
+    word.topic ? `Topic: ${word.topic}.` : "",
+  ].filter(Boolean).join(" ");
+  return [
+    `Vivid educational flashcard illustration representing the English concept "${word.word}".`,
+    context,
+    `Show a clear, concrete real-world scene or visual metaphor that helps a learner remember the concept, modern editorial digital painting, soft natural light.`,
+    `No text, no letters, no words, no numbers, no captions, no logos, no watermark.`,
+  ].filter(Boolean).join(" ");
 }
 
 export const ADVANCED_UNIT_SCENES: Record<string, string> = {
@@ -225,14 +297,18 @@ export async function enrichCourseBookArt(client: SupabaseClient, maxSlots = 1):
   const { data: units } = await client.from("units").select("id,slug,title,sort_order").eq("course_id", course.id).order("sort_order");
   if (!units?.length) return { generated: 0 };
 
-  const [unitFiles, lessonFiles, exerciseFiles] = await Promise.all([
+  const [unitFiles, lessonFiles, exerciseFiles, themeFiles, wordFiles] = await Promise.all([
     client.storage.from(BUCKET).list("course-book/units", { limit: 200 }),
     client.storage.from(BUCKET).list("course-book/lessons", { limit: 200 }),
     client.storage.from(BUCKET).list("course-book/exercises", { limit: 200 }),
+    client.storage.from(BUCKET).list("course-book/themes", { limit: 100 }),
+    client.storage.from(BUCKET).list("course-book/words", { limit: 500 }),
   ]);
   const hasUnit = new Set((unitFiles.data ?? []).map((f) => f.name));
   const hasLesson = new Set((lessonFiles.data ?? []).map((f) => f.name));
   const hasExercise = new Set((exerciseFiles.data ?? []).map((f) => f.name));
+  const hasTheme = new Set((themeFiles.data ?? []).map((f) => f.name));
+  const hasWord = new Set((wordFiles.data ?? []).map((f) => f.name));
 
   let generated = 0;
 
@@ -243,6 +319,21 @@ export async function enrichCourseBookArt(client: SupabaseClient, maxSlots = 1):
     try {
       const art = await generateAiArt(buildUnitArtPrompt(unit), cleanUnitTheme(unit.title), `unit:${unit.slug}`);
       const path = `course-book/units/${fileName}`;
+      const { error } = await client.storage.from(BUCKET).upload(path, art.bytes, { contentType: art.contentType, upsert: true, cacheControl: "31536000" });
+      if (!error) generated++;
+    } catch (error) {
+      if (error instanceof AiArtLimitError) return { generated };
+    }
+  }
+  if (generated >= maxSlots) return { generated };
+
+  for (const theme of Object.keys(VOCAB_THEME_SCENES)) {
+    if (generated >= maxSlots) break;
+    const fileName = `${theme}.jpg`;
+    if (hasTheme.has(fileName)) continue;
+    try {
+      const art = await generateAiArt(buildThemeArtPrompt(theme), theme, `theme:${theme}`);
+      const path = `course-book/themes/${fileName}`;
       const { error } = await client.storage.from(BUCKET).upload(path, art.bytes, { contentType: art.contentType, upsert: true, cacheControl: "31536000" });
       if (!error) generated++;
     } catch (error) {
@@ -303,6 +394,22 @@ export async function enrichCourseBookArt(client: SupabaseClient, maxSlots = 1):
       } catch (error) {
         if (error instanceof AiArtLimitError) return { generated };
       }
+    }
+  }
+  if (generated >= maxSlots) return { generated };
+
+  for (const item of catalog) {
+    if (generated >= maxSlots) break;
+    const slug = wordArtSlug(item.word);
+    const fileName = `${slug}.jpg`;
+    if (!slug || hasWord.has(fileName)) continue;
+    try {
+      const art = await generateAiArt(buildWordArtPrompt({ word: item.word, meaning: item.meaning, example: item.example, topic: item.topic }), item.topic, `word:${slug}`);
+      const path = `course-book/words/${fileName}`;
+      const { error } = await client.storage.from(BUCKET).upload(path, art.bytes, { contentType: art.contentType, upsert: true, cacheControl: "31536000" });
+      if (!error) generated++;
+    } catch (error) {
+      if (error instanceof AiArtLimitError) return { generated };
     }
   }
 
