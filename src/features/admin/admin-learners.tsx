@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Ban, BellRing, CalendarPlus, ChevronLeft, ChevronRight, Flame, MessageCircleOff, Search, ShieldCheck, Target, Trash2, Unlock, UserRound } from "lucide-react";
+import { ArrowLeft, Ban, BellRing, CalendarPlus, ChevronLeft, ChevronRight, Flame, MessageCircleOff, Plus, Search, ShieldCheck, Target, Trash2, Unlock, UserRound } from "lucide-react";
 import { AccountAvatar } from "@/components/account/account-avatar";
 import { ActivityHeatmap } from "@/components/account/activity-heatmap";
 import { activeUntil, activityLabels, untilLabel, type LearnerOverview } from "@/lib/account";
@@ -19,6 +19,7 @@ const skills = ["Reading", "Listening", "Writing", "Speaking", "Vocabulary", "Gr
 const suspendDurations = [["1", "1 ngày"], ["3", "3 ngày"], ["7", "7 ngày"], ["30", "30 ngày"], ["forever", "Vĩnh viễn"]] as const;
 const muteDurations = [["0.0417", "1 giờ"], ["1", "24 giờ"], ["7", "7 ngày"], ["30", "30 ngày"], ["forever", "Vĩnh viễn"]] as const;
 const actionLabels: Record<string, string> = {
+  create_user: "Tạo tài khoản",
   suspend: "Khóa tài khoản", unsuspend: "Mở khóa tài khoản", mute_chat: "Cấm chat", unmute_chat: "Bỏ cấm chat", grant_admin: "Cấp quyền admin",
   revoke_admin: "Thu quyền admin", notify: "Gửi thông báo", broadcast: "Thông báo cả lớp", assign_task: "Giao nhiệm vụ", set_goal: "Đặt mục tiêu ngày",
 };
@@ -60,6 +61,7 @@ export function AdminLearners() {
   const [filter, setFilter] = useState("all");
   const [rows, setRows] = useState<Row[] | null>(null);
   const [error, setError] = useState("");
+  const [refresh, setRefresh] = useState(0);
   useEffect(() => { const timer = window.setTimeout(() => { setSearch(query.trim()); setPage(0); }, 300); return () => window.clearTimeout(timer); }, [query]);
   useEffect(() => {
     let active = true;
@@ -68,7 +70,7 @@ export function AdminLearners() {
       if (loadError) setError(loadError.message); else { setError(""); setRows(data as Row[]); }
     });
     return () => { active = false; };
-  }, [db, search, page]);
+  }, [db, search, page, refresh]);
 
   const [{ today, weekAgo }] = useState(() => ({
     today: new Date().toLocaleDateString("sv-SE"),
@@ -86,6 +88,7 @@ export function AdminLearners() {
   ];
 
   return <div className="learners">
+    <AdminCreateUser onCreated={() => { setPage(0); setSearch(""); setQuery(""); setRefresh((value) => value + 1); }} />
     <div className="learner-tiles">{tiles.map(({ label, value, icon: Icon }) => <div key={label} className="card learner-tile"><Icon size={18} /><strong>{rows ? value : "…"}</strong><span>{label}</span></div>)}</div>
     {total > PAGE && <p className="learner-note">Số liệu hoạt động tính trên {PAGE} tài khoản của trang này.</p>}
     <section className="card learner-table-card">
@@ -123,6 +126,44 @@ export function AdminLearners() {
       </div>}
     </section>
   </div>;
+}
+
+function AdminCreateUser({ onCreated }: { onCreated: () => void }) {
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const [created, setCreated] = useState<{ id: string; email: string; name: string; password: string } | null>(null);
+
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault(); setBusy(true); setError(""); setCreated(null);
+    try {
+      const response = await fetch("/api/admin/users", { method: "POST", credentials: "same-origin", cache: "no-store",
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: name.trim(), email: email.trim() }) });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Không tạo được tài khoản.");
+      setCreated(result); setName(""); setEmail(""); onCreated();
+    } catch (cause) { setError(cause instanceof Error ? cause.message : "Không tạo được tài khoản."); }
+    finally { setBusy(false); }
+  }
+
+  return <section className="card learner-create-card">
+    <div><h2>Tạo tài khoản học viên</h2><p>Admin tạo tài khoản để học viên đăng nhập ngay. Hệ thống tạo mật khẩu mạnh và chỉ hiển thị một lần.</p></div>
+    <button type="button" className="button primary" onClick={() => { setOpen((value) => !value); setCreated(null); setError(""); }}><Plus size={16} /> {open ? "Đóng form" : "Tạo tài khoản"}</button>
+    {open && <form onSubmit={(event) => void submit(event)} className="learner-create-form">
+      <label>Họ và tên<input required minLength={2} maxLength={80} autoComplete="off" value={name} onChange={(event) => setName(event.target.value)} /></label>
+      <label>Email đăng nhập<input required type="email" maxLength={254} autoComplete="off" value={email} onChange={(event) => setEmail(event.target.value)} /></label>
+      <button type="submit" className="button primary" disabled={busy}>{busy ? "Đang tạo…" : "Tạo học viên"}</button>
+    </form>}
+    {error && <p className="form-error" role="alert">{error}</p>}
+    {created && <div className="learner-created" role="status"><strong>Đã tạo tài khoản cho {created.name}</strong><p>Email: {created.email}</p>
+      <label>Mật khẩu ban đầu (chỉ hiện ở đây)<input readOnly value={created.password} onFocus={(event) => event.target.select()} /></label>
+      <div><button type="button" className="button subtle" onClick={() => void navigator.clipboard.writeText(`${created.email}\n${created.password}`)}>Sao chép thông tin đăng nhập</button>
+        <Link className="button subtle" href={`/admin/users/${created.id}`}>Mở hồ sơ</Link></div>
+      <small>Gửi mật khẩu riêng cho học viên qua kênh an toàn. Đóng form hoặc rời trang sẽ không xem lại được mật khẩu này.</small>
+    </div>}
+  </section>;
 }
 
 export function AdminLearnerDetail({ id }: { id: string }) {

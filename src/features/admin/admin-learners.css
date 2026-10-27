@@ -1,5 +1,16 @@
 /* Admin: learner accounts, controls, class-wide notices and the audit log. */
 .learners { display: grid; gap: 14px; min-width: 0; }
+.learner-create-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; }
+.learner-create-card h2 { margin: 0 0 3px; color: var(--navy); font-size: 18px; }
+.learner-create-card p { margin: 0; color: var(--muted); font-size: 13px; }
+.learner-create-form { display: grid; grid-template-columns: repeat(2, minmax(180px, 1fr)) auto; align-items: end; gap: 10px; width: 100%; }
+.learner-create-form label, .learner-created label { display: grid; gap: 5px; color: var(--navy); font-size: 12px; font-weight: 700; }
+.learner-create-form input, .learner-created input { width: 100%; min-height: 40px; padding: 8px 10px; border: 1px solid var(--line-strong); border-radius: 10px; background: #fff; color: var(--navy); font: 500 14px var(--font-sans); }
+.learner-created { display: grid; gap: 8px; width: 100%; padding: 14px; border: 1px solid #a8ddca; border-radius: 12px; background: #e9f8f2; }
+.learner-created p { color: var(--navy); }
+.learner-created > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.learner-created small { color: #236448; }
+@media (max-width: 720px) { .learner-create-form { grid-template-columns: 1fr; } }
 .learners .section-card { margin: 0; }
 .learner-skeleton { display: block; height: 220px; border-radius: 14px; }
 .learner-skeleton.tall { height: 420px; }
