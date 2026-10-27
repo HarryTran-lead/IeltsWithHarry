@@ -1,0 +1,27 @@
+# Owner-supplied original IELTS-style pilot tests
+
+Source: `English_Skill_Lab_Source_10_Original_Tests.zip`, supplied on 27 October 2026. ZIP SHA-256: `f8cdcab564fd6775041cb4e39ba08563333437a5e687e33135205706b983f525`.
+
+The ZIP contains five Academic Reading and five Listening papers, each with 40 questions. It contains scripts and answer keys, but **zero MP3 files**. Its own quality report labels the content a pilot, not publication-ready or band-calibrated. The Listening scripts are substantially shorter than a complete 30-minute recording. The dialogue and questions still need editorial review, and the owner-supplied rights assertion needs documentation before release. These are source facts, not instructions to run its bundled server or audio generator.
+
+`scripts/import-original-tests.mts` reads only the ten JSON files from the ZIP; it never executes ZIP scripts. It validates IDs, 40 sequential questions, answer options and evidence, then maps the papers into the existing private IELTS bank. Answer keys stay in server-only exam versions. The import is idempotent and sets every paper to `needs_review` with explicit warnings. `reviewExam` blocks promotion of this pilot prefix until a later reviewed release process is built. **No paper is published by this import.**
+
+Dry run:
+
+```powershell
+node --import tsx scripts/import-original-tests.mts --zip 'C:\path\English_Skill_Lab_Source_10_Original_Tests.zip'
+```
+
+Import to the isolated development database:
+
+```powershell
+node --env-file=.env.development.local --import tsx scripts/import-original-tests.mts --zip 'C:\path\English_Skill_Lab_Source_10_Original_Tests.zip' --target-ref bhactqaxcvusmpeooxwi --apply
+```
+
+The production database accepts **admin-only drafts** using `.env.production.local`, `--target-ref vpkhriywprepuhrbarye`, `--apply` and `--allow-production-drafts` after dev verification. The script checks the URL against the explicit project ref. Keep both environment files out of Git.
+
+## Audio release gate
+
+The requirement is a **human performance**, with consent or a suitable licence for site distribution. Do not substitute browser speech synthesis or generated voices for the missing MP3s. Record distinct speakers where the script is a dialogue; edit obvious unnatural lines first. For each of the 20 parts, check names, numbers, spelling, pace, accent consistency, pauses and question alignment by listening to the final MP3. Store reviewed files in the existing `ielts-audio` bucket and attach their URLs only after rights and editorial approval. Until then, Listening remains invisible to learners.
+
+Reading also requires a question-by-question editor review. The package's structural validator and the import checks establish completeness, not exam validity, answer nuance, or an IELTS band score. Do not label the pilot official IELTS or use a score-to-band conversion.
