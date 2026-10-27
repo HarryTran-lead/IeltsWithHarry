@@ -19,7 +19,7 @@ jobs:
     env:
       SUPABASE_URL: ${{ secrets.AI_FACTORY_SUPABASE_URL }}
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.AI_FACTORY_SERVICE_ROLE_KEY }}
-      AUDIO_CACHE_DIR: ${{ runner.temp }}/ai-factory-audio
+      AUDIO_CACHE_DIR: /tmp/ai-factory-audio
       ASR_ENABLED: "true"
     steps:
       - name: Check private configuration
