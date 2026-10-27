@@ -14,7 +14,7 @@ import { BookPageView, describePage, splitUnitTitle, unitColor, unitLabel, type 
 import "./course-book.css";
 import "./course-book-tools.css";
 
-const PAGE_W = 540;
+const PAGE_W = 580;
 const PAGE_H = 740;
 const FLIP_MS = 760;
 
@@ -182,7 +182,8 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const stage = { name: stages[stageIndex]?.name ?? course.title, range: stages[stageIndex]?.range ?? "", number: stageIndex + 1 };
 
   // Measure the desk: two pages scaled to fit on wide screens, one fluid page on narrow ones.
-  // On wide screens the desk fills the viewport height left below it, so the whole book is on screen.
+  // On wide screens the desk fills the viewport height left below it, so the whole book is on screen;
+  // the tools sit in a dock on the desk's right edge, so the book can use nearly all of it.
   useEffect(() => {
     const element = stageRef.current;
     if (!element) return;
@@ -191,9 +192,9 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
       if (width < 860 || reading) { setLayout({ single: true, narrow: width < 860, scale: 1, height: 0 }); return; }
       const fullscreen = Boolean(document.fullscreenElement);
       const top = element.getBoundingClientRect().top + (fullscreen ? 0 : window.scrollY);
-      const height = Math.max(520, Math.round(window.innerHeight - top - (fullscreen ? 10 : 14)));
-      // Room for the thumb tabs and side arrows across, and the cover board's edge above and below.
-      const scale = Math.max(0.5, Math.min((width - 140) / (PAGE_W * 2 + 84), (height - 28) / (PAGE_H + 22), 1.9));
+      const height = Math.max(560, Math.round(window.innerHeight - top - (fullscreen ? 6 : 10)));
+      // Room for the thumb tabs, the arrows and the dock across, and the cover board's edge above and below.
+      const scale = Math.max(0.5, Math.min((width - 192) / (PAGE_W * 2 + 84), (height - 12) / (PAGE_H + 22), 1.95));
       setLayout({ single: false, narrow: false, scale, height });
     };
     measure();
@@ -439,20 +440,21 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
     {layout.single && <span className="bk-text-size"><button type="button" onClick={() => changeText(-0.1)} disabled={textScale <= 0.9} aria-label="Chữ nhỏ hơn"><AArrowDown size={16} /></button><b>{Math.round(textScale * 100)}%</b><button type="button" onClick={() => changeText(0.1)} disabled={textScale >= 1.6} aria-label="Chữ lớn hơn"><AArrowUp size={16} /></button></span>}
   </div>;
 
-  return <div ref={shellRef} className={`bk-shell ${fullscreen ? "is-fullscreen" : ""} ${motion ? "" : "is-still"} ${reading && !layout.narrow ? "is-reading" : ""}`} style={{ "--board": boardColor(course.stage_id), "--bk-text": textScale } as CSSProperties}>
-    <div className="bk-toolbar" role="toolbar" aria-label="Điều khiển sách">
-      <div className="bk-toolbar-start">{toolbarStart}</div>
+  // Spreads keep their tools in a dock on the desk's right edge; a single page keeps them in a bar above it.
+  const dock = !layout.single;
+  const toolbar = <div className={`bk-toolbar ${dock ? "is-dock" : ""}`} role="toolbar" aria-label="Điều khiển sách" aria-orientation={dock ? "vertical" : "horizontal"}>
+      {!dock && <div className="bk-toolbar-start">{toolbarStart}</div>}
       <div className="bk-toolbar-main">
         <button type="button" className="bk-tool-wide" onClick={() => goTo(0)} title="Bìa sách" aria-label="Bìa sách"><BookOpen size={18} /></button>
         <button type="button" onClick={() => setPanelTab((tab) => tab ? null : "contents")} aria-pressed={Boolean(panelTab)} title="Mục lục, trang, tìm kiếm và đánh dấu" aria-label="Mở bảng điều hướng"><List size={18} /><span>Mục lục</span></button>
-        <button type="button" onClick={previous} disabled={atStart} title="Trang trước (←)" aria-label="Trang trước"><ChevronLeft size={19} /></button>
+        {!dock && <button type="button" onClick={previous} disabled={atStart} title="Trang trước (←)" aria-label="Trang trước"><ChevronLeft size={19} /></button>}
         <form className="bk-page-field" onSubmit={(event) => { event.preventDefault(); submitPage(); }}>
           <label><span className="sr-only">Đi tới trang</span>
             <input inputMode="numeric" value={pageInput} placeholder={pageLabel} onChange={(event) => setPageInput(event.target.value.replace(/\D/g, ""))} onBlur={submitPage} aria-label={`Trang ${pageLabel} trên ${last}. Nhập số trang để đi tới`} />
           </label>
           <span>/ {last}</span>
         </form>
-        <button type="button" onClick={next} disabled={atEnd} title="Trang sau (→)" aria-label="Trang sau"><ChevronRight size={19} /></button>
+        {!dock && <button type="button" onClick={next} disabled={atEnd} title="Trang sau (→)" aria-label="Trang sau"><ChevronRight size={19} /></button>}
         {currentPage !== undefined && <button type="button" className="bk-bookmark-button" onClick={() => goTo(currentPage)} title="Lật tới bài đang học" aria-label="Lật tới bài đang học"><BookMarked size={18} /><span>Bài đang học</span></button>}
       </div>
       <div className="bk-toolbar-end">
@@ -476,13 +478,16 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
         <textarea autoFocus value={noteDraft} maxLength={5000} onChange={(event) => setNoteDraft(event.target.value)} placeholder="Viết điều cần nhớ, câu hỏi chưa rõ, từ muốn ôn…" rows={4} />
         <footer><small>Lưu vào Sổ tay và dán lên trang này.</small><button type="submit" className="button primary" disabled={!noteDraft.trim()}>Dán lên trang</button></footer>
       </form>}
-    </div>
+    </div>;
+
+  return <div ref={shellRef} className={`bk-shell ${fullscreen ? "is-fullscreen" : ""} ${motion ? "" : "is-still"} ${reading && !layout.narrow ? "is-reading" : ""}`} style={{ "--board": boardColor(course.stage_id), "--bk-text": textScale } as CSSProperties}>
+    {!dock && toolbar}
 
     {layout.single && <div className="bk-unit-strip" aria-label="Chọn unit">{unitTabs.map((tab) => <button type="button" key={tab.unit.id} className={tab.active ? "is-active" : ""} style={{ "--tone": unitColor(tab.unitIndex) } as CSSProperties} onClick={() => goTo(tab.start)}>{unitLabel(tab.unit, course).short}</button>)}</div>}
 
     <div
       ref={stageRef}
-      className={`bk-desk ${layout.single ? "is-single" : ""} ${zoom > 1 ? "is-zoomed" : ""}`}
+      className={`bk-desk ${layout.single ? "is-single" : "has-dock"} ${zoom > 1 ? "is-zoomed" : ""}`}
       style={layout.height ? { height: layout.height } : undefined}
       onPointerDown={(event) => {
         if (zoom === 1 || event.pointerType !== "mouse" || (event.target as HTMLElement).closest("button, a, input, textarea, audio, summary, label")) return;
@@ -493,6 +498,8 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
       onPointerUp={() => { drag.current = null; }}
       onPointerCancel={() => { drag.current = null; }}
     >
+      {dock && toolbarStart && <div className="bk-desk-topleft">{toolbarStart}</div>}
+      {dock && toolbar}
       {!layout.single && <button type="button" className="bk-arrow is-prev" onClick={previous} disabled={atStart} aria-label="Trang trước"><ChevronLeft size={26} /></button>}
       <div
         className={`bk-book ${flip ? "is-flipping" : ""} ${layout.single ? "is-single" : ""}`}

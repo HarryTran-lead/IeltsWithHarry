@@ -285,7 +285,136 @@ function exerciseCaption(lesson: BookLesson, content: BookContent | null | undef
   }
 }
 
-/** The right-hand page of a lesson: a preview of the real exercises, laid out like a workbook. */
+function clip(text: string | undefined, max: number) {
+  const value = (text ?? "").replace(/\s+/g, " ").trim();
+  return value.length > max ? `${value.slice(0, max - 1).replace(/\s+\S*$/, "")}…` : value;
+}
+
+const isTask1 = (content: BookContent) => Boolean(content.data_visual?.rows?.length) || /task\s*1/i.test(content.task ?? "");
+
+/** A passage's paragraphs as [label, text], with the "[A] …" labels the workbook uses. */
+function paragraphsOf(passage: { text: string; sections?: [string, string][] }): [string, string][] {
+  if (passage.sections?.length) return passage.sections;
+  return passage.text.split(/\n+/).map((paragraph) => paragraph.trim()).filter(Boolean).map((paragraph, index) => {
+    const match = paragraph.match(/^\[([A-Z0-9]+)\]\s*(.*)$/);
+    return match ? [match[1], match[2]] : [String.fromCharCode(65 + index), paragraph];
+  });
+}
+
+function readingPassages(content: BookContent) {
+  if (content.passages?.length) return content.passages;
+  return content.passage ? [{ id: "passage", title: content.passage_title ?? "", text: content.passage, questions: content.activities ?? [] }] : [];
+}
+
+function speakingQuestions(content: BookContent) {
+  return (content.questions ?? []).map((item) => typeof item === "string" ? { part: 1, prompt: item } : { part: item.part ?? 1, prompt: item.prompt });
+}
+
+type Word = { en: string; vi: string; example?: string };
+/** Numbered word list; with examples it reads like the vocabulary box of a printed unit. */
+function WordTable({ words, start, examples = false }: { words: Word[]; start: number; examples?: boolean }) {
+  return <ol className={`bk-words ${examples ? "" : "is-compact"}`} start={start}>{words.map((word) => <li key={word.en}>
+    <span><b>{word.en}</b> <em>{word.vi}</em></span>
+    {examples && word.example && <small>{word.example}</small>}
+  </li>)}</ol>;
+}
+
+/** Exercise lines with their answer options (if any) shown after the prompt. */
+function QuestionLines({ items, start = 1 }: { items: PackageActivity[]; start?: number }) {
+  return <ol className="bk-blanks" start={start}>{items.map((item, index) => {
+    const options = item.options?.length && item.options.length <= 4 && item.options.every((option) => option.length <= 24) ? item.options.join(" / ") : "";
+    return <li key={`${index}-${item.id}`}><span>{item.prompt}{options && <small className="bk-options"> ({options})</small>}</span><i aria-hidden="true" /></li>;
+  })}</ol>;
+}
+
+function Labelled({ label, tone, children }: { label: string; tone?: "trap"; children: ReactNode }) {
+  return <p className={`bk-focus ${tone ? `is-${tone}` : ""}`}><b>{label}</b>{children}</p>;
+}
+
+/**
+ * The opener page's main content: the lesson's own material (words, rule and
+ * examples, passage, transcript, task, questions), so the spread carries the
+ * lesson itself. Returns null when the package has no such material.
+ */
+function LessonOpenBody({ lesson, content }: { lesson: BookLesson; content: BookContent }): ReactNode {
+  const focus = clip(content.core_outcome || content.focus || content.instruction_vi, 190);
+  const trap = content.v3_enrichment?.coaching?.trap;
+  switch (lesson.skill) {
+    case "Vocabulary": {
+      const words = content.vocabulary ?? content.expansion_words ?? [];
+      if (!words.length) return null;
+      const first = words.slice(0, 10);
+      return <>
+        {focus && <Labelled label="Trọng tâm">{clip(focus, 120)}</Labelled>}
+        <AudioChip src={content.audio_url} script={first.map((word) => word.en).join(". ")} title={`Nghe phát âm từ 1–${first.length}`} />
+        <WordTable words={first} start={1} examples />
+      </>;
+    }
+    case "Grammar": {
+      if (!content.grammar_form && !content.grammar_explanation_vi) return null;
+      return <>
+        {content.grammar_title && <div className="bk-banner">GRAMMAR FOCUS: {content.grammar_title}</div>}
+        {content.grammar_explanation_vi && <Labelled label="Trọng tâm">{clip(content.grammar_explanation_vi, 260)}</Labelled>}
+        {content.grammar_form && <p className="bk-formula">{content.grammar_form}</p>}
+        {content.examples?.length ? <ul className="bk-bilingual">{content.examples.slice(0, 3).map((example, index) => <li key={example}><span>{example}</span>{content.examples_vi?.[index] && <small>{content.examples_vi[index]}</small>}</li>)}</ul> : null}
+        {trap && <Labelled label="Bẫy cần tránh" tone="trap">{clip(trap, 200)}</Labelled>}
+      </>;
+    }
+    case "Reading": {
+      const passages = readingPassages(content);
+      const first = passages[0];
+      if (!first) return null;
+      const method = strategyText(content.reading_strategy) || content.instruction_vi;
+      return <>
+        {method && <Labelled label="Phương pháp">{clip(method, 170)}</Labelled>}
+        {passages.length > 1 && <ol className="bk-tracklist">{passages.map((passage, index) => <li key={passage.id}><b>Bài {index + 1}</b><span>{passage.title}</span><small>{passage.questions?.length ?? 0} câu</small></li>)}</ol>}
+        <article className="bk-passage"><h6>{first.title || content.passage_title}</h6>{paragraphsOf(first).slice(0, 2).map(([label, text]) => <p key={label}><b>[{label}]</b> {text}</p>)}</article>
+      </>;
+    }
+    case "Listening": {
+      const audios = content.audios ?? [];
+      const first = audios[0];
+      if (!first) return null;
+      const method = strategyText(content.listening_strategy) || content.pre_listening || content.instruction_vi;
+      return <>
+        {method && <Labelled label="Phương pháp">{clip(method, 170)}</Labelled>}
+        <ol className="bk-tracklist">{audios.map((audio, index) => <li key={audio.id}><b>Track {index + 1}</b><span>{audio.title.replace(/^Listening:\s*/i, "")}</span><small>{audio.questions?.length ?? 0} câu</small></li>)}</ol>
+        <AudioChip src={first.audio_url || content.audio_url} script={first.script} title="Nghe thử Track 1" />
+        {first.script && <blockquote className="bk-transcript"><b>Transcript · đoạn mở đầu</b>{clip(first.script, 340)}</blockquote>}
+        {trap && <Labelled label="Bẫy nghe cần tránh" tone="trap">{clip(trap, 180)}</Labelled>}
+      </>;
+    }
+    case "Writing": {
+      if (!content.task) return null;
+      const task1 = isTask1(content);
+      const steps = content.guidance ?? content.scaffolding_steps ?? content.advanced_essay?.planning_prompts ?? [];
+      const sample = content.sample_answer?.split(/\n+/).find((paragraph) => paragraph.trim());
+      return <>
+        <div className="bk-banner">{task1 ? "WRITING TASK 1 · ĐỀ BÀI" : "WRITING TASK 2 · ĐỀ BÀI"}</div>
+        <p className="bk-task">{clip(content.task, 420)}</p>
+        {task1 && content.data_visual && <table className="bk-table"><thead><tr>{content.data_visual.headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{content.data_visual.rows.slice(0, 6).map((row) => <tr key={row.join()}>{row.map((cell, index) => <td key={index}>{cell}</td>)}</tr>)}</tbody></table>}
+        {steps.length > 0 && <Exercise number={1} title="Các bước lập dàn ý."><ul className="bk-checklist">{steps.slice(0, task1 ? 3 : 4).map((step) => <li key={step}>{clip(step, 150)}</li>)}</ul></Exercise>}
+        {!task1 && sample && <Labelled label="Đoạn mẫu mở đầu">{clip(sample, 300)}</Labelled>}
+      </>;
+    }
+    case "Speaking": {
+      const questions = speakingQuestions(content);
+      if (!questions.length) return null;
+      const part1 = questions.filter((item) => item.part === 1);
+      const cue = questions.find((item) => item.part === 2);
+      return <>
+        {focus && <Labelled label="Trọng tâm">{focus}</Labelled>}
+        {part1.length > 0 && <Exercise number={1} title="Speaking Part 1"><ul className="bk-examples is-questions">{part1.slice(0, 4).map((item) => <li key={item.prompt}>{item.prompt}</li>)}</ul></Exercise>}
+        {cue && <div className="bk-cuecard"><b>SPEAKING · PART 2 · CUE CARD</b><p>{cue.prompt}</p><small>1 phút chuẩn bị · nói 1–2 phút.</small></div>}
+        {content.model_answer && <div className="bk-model"><b>Bài nói mẫu Part 2</b><AudioChip script={content.model_answer} title="Nghe bài mẫu" /><p>{clip(content.model_answer, 380)}</p></div>}
+      </>;
+    }
+    default:
+      return null;
+  }
+}
+
+/** The right-hand page of a lesson: the rest of the lesson material and a first set of its exercises. */
 function PracticePreview({ unit, lesson, content }: { unit: BookUnit; lesson: BookLesson; content: BookContent | null | undefined }) {
   if (content === undefined) return <Skeleton />;
   const visual = (
@@ -312,71 +441,71 @@ function PracticePreview({ unit, lesson, content }: { unit: BookUnit; lesson: Bo
   </div>;
   const activities = content.activities ?? [];
   const choice = activities.find((item) => item.options?.length);
-  const prompts = activities.filter((item) => item !== choice).map((item) => item.prompt);
-  const strategy = strategyText(content.exam_strategy ?? content.reading_strategy ?? content.listening_strategy) ?? content.focus;
+  const rest = activities.filter((item) => item !== choice);
+  const strategy = strategyText(content.exam_strategy ?? content.reading_strategy ?? content.listening_strategy) ?? content.focus ?? content.v3_enrichment?.coaching?.core;
   let number = 0;
   const next = () => ++number;
 
   switch (lesson.skill) {
-    case "Vocabulary": return <>
-      {visual}
-      <Exercise number={next()} title="Nghe và đọc các cụm từ của unit.">
-        <AudioChip src={content.audio_url} script={(content.vocabulary ?? content.expansion_words ?? []).slice(0, 8).map((w) => w.en).join(". ")} title="Nghe phát âm cụm từ" />
-        <dl className="bk-wordlist">{(content.vocabulary ?? content.expansion_words ?? []).slice(0, 10).map((word) => <div key={word.en} className="bk-wordlist-item" title={word.example}><TopicArt topic={lesson.title} word={word.en} unitSlug={unit.slug} lessonSlug={lesson.slug} badge={false} className="bk-word-thumb" /><span className="bk-wordlist-copy"><dt>{word.en}</dt><dd>{word.vi}</dd></span></div>)}</dl>
-      </Exercise>
-      {choice && <Exercise number={next()} title="Thử ngay: chọn đáp án đúng."><QuickChoice activity={choice} /></Exercise>}
-    </>;
-    case "Grammar": return <>
-      {visual}
-      {content.grammar_title && <div className="bk-banner">GRAMMAR FOCUS: {content.grammar_title}</div>}
-      {content.grammar_form && <Exercise number={next()} title="Quan sát cấu trúc."><p className="bk-formula">{content.grammar_form}</p></Exercise>}
-      {content.examples?.length ? <Exercise number={next()} title="Đọc ví dụ và gạch chân phần cấu trúc."><ul className="bk-examples">{content.examples.slice(0, 4).map((example) => <li key={example}>{example}</li>)}</ul></Exercise> : null}
-      {prompts.length > 0 && <Exercise number={next()} title="Hoàn thành câu."><BlankLines items={prompts.slice(0, 3)} /></Exercise>}
-      {content.grammar_explanation_vi && <Tip>{firstSentence(content.grammar_explanation_vi, 160)}</Tip>}
-    </>;
-    case "Reading": {
-      const passage = content.passages?.[0];
-      const text = passage?.text ?? content.passage ?? "";
+    case "Vocabulary": {
+      const words = content.vocabulary ?? content.expansion_words ?? [];
       return <>
         {visual}
-        <Exercise number={next()} title="Đọc đoạn mở đầu của bài.">
-          <article className="bk-passage"><h6>{content.passage_title ?? passage?.title}</h6>{text.split(/\n+/).slice(0, 2).map((paragraph) => <p key={paragraph.slice(0, 40)}>{paragraph}</p>)}</article>
-        </Exercise>
-        {prompts.length > 0 && <Exercise number={next()} title="Trả lời câu hỏi."><BlankLines items={prompts.slice(0, 3)} /></Exercise>}
-        {strategy && <Tip>{firstSentence(strategy, 140)}</Tip>}
+        {words.length > 10 && <Exercise number={next()} title={`Từ vựng phần 2 (từ 11–${Math.min(20, words.length)}).`}><WordTable words={words.slice(10, 20)} start={11} /></Exercise>}
+        {choice && <Exercise number={next()} title="Thử ngay: chọn đáp án đúng."><QuickChoice activity={choice} /></Exercise>}
+        {rest.length > 0 && <Exercise number={next()} title="Điền từ thích hợp."><QuestionLines items={rest.slice(0, words.length > 10 ? 2 : 4)} /></Exercise>}
+      </>;
+    }
+    case "Grammar": return <>
+      {visual}
+      {choice && <Exercise number={next()} title="Thử ngay: chọn đáp án đúng."><QuickChoice activity={choice} /></Exercise>}
+      {rest.length > 0 && <Exercise number={next()} title="Hoàn thành câu với cấu trúc của bài."><QuestionLines items={rest.slice(0, 6)} /></Exercise>}
+      {strategy ? <Tip>{clip(strategy, 160)}</Tip> : content.grammar_explanation_vi ? <Tip>{firstSentence(content.grammar_explanation_vi, 160)}</Tip> : null}
+    </>;
+    case "Reading": {
+      const first = readingPassages(content)[0];
+      const more = first ? paragraphsOf(first).slice(2, 4) : [];
+      const questions = activities.length ? activities : first?.questions ?? [];
+      return <>
+        {visual}
+        {more.length > 0 && <Exercise number={next()} title="Đọc tiếp bài 1."><article className="bk-passage">{more.map(([label, text]) => <p key={label}><b>[{label}]</b> {text}</p>)}</article></Exercise>}
+        {questions.length > 0 && <Exercise number={next()} title="Trả lời câu hỏi của bài 1."><QuestionLines items={questions.slice(0, 6)} /></Exercise>}
+        {strategy && <Tip>{clip(strategy, 150)}</Tip>}
       </>;
     }
     case "Listening": {
-      const audio = content.audios?.[0];
+      const audios = content.audios ?? [];
+      const questions = activities.length ? activities : audios[0]?.questions ?? [];
       return <>
         {visual}
-        <Exercise number={next()} title="Nghe và điền vào chỗ trống.">
-          <AudioChip src={audio?.audio_url || content.audio_url || ""} script={audio?.script} title={audio?.title.replace(/^Listening:\s*/, "") ?? "Nghe bài hội thoại / bài giảng"} />
-          <BlankLines items={prompts.slice(0, 5)} />
-        </Exercise>
-        {choice && <Exercise number={next()} title="Chọn đáp án đúng."><QuickChoice activity={choice} /></Exercise>}
-        {strategy && <Tip>{firstSentence(strategy, 140)}</Tip>}
+        {questions.length > 0 && <Exercise number={next()} title="Nghe Track 1 và trả lời."><QuestionLines items={questions.slice(0, 5)} /></Exercise>}
+        {audios.length > 1 && <Exercise number={next()} title="Track 2 & 3 trong bài đầy đủ."><div className="bk-track-sums">{audios.slice(1, 3).map((audio, index) => <div key={audio.id}><b>Track {index + 2} · {audio.title.replace(/^Listening:\s*/i, "")}</b><ul>{audio.questions.slice(0, 2).map((question) => <li key={question.id}>{question.prompt}</li>)}</ul><small>{audio.questions.length} câu</small></div>)}</div></Exercise>}
+        {strategy && <Tip>{clip(strategy, 150)}</Tip>}
       </>;
     }
     case "Writing": {
-      const task = content.task ?? content.advanced_essay?.prompt;
+      const essay = content.advanced_essay;
+      const drills = content.language_upgrade?.correction_drills ?? [];
+      const micro = content.micro_exercises ?? [];
+      if (!essay && !micro.length && !drills.length) return <>
+        {visual}
+        {(content.scaffolding_steps ?? content.guidance)?.length ? <Exercise number={next()} title="Các bước lập dàn ý."><ul className="bk-checklist">{(content.scaffolding_steps ?? content.guidance ?? []).slice(0, 4).map((step) => <li key={step}>{step}</li>)}</ul></Exercise> : null}
+      </>;
       return <>
         {visual}
-        <div className="bk-banner">{content.data_visual ? "TASK 1 · TASK ACHIEVEMENT" : "WRITING TASK"}</div>
-        {task && <Exercise number={next()} title="Đọc đề bài."><p className="bk-task">{task}</p></Exercise>}
-        {content.data_visual && <table className="bk-table"><thead><tr>{content.data_visual.headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{content.data_visual.rows.slice(0, 5).map((row) => <tr key={row.join()}>{row.map((cell, index) => <td key={index}>{cell}</td>)}</tr>)}</tbody></table>}
-        {(content.scaffolding_steps ?? content.guidance)?.length ? <Exercise number={next()} title="Các bước lập dàn ý."><ul className="bk-checklist">{(content.scaffolding_steps ?? content.guidance ?? []).slice(0, 4).map((step) => <li key={step}>{step}</li>)}</ul></Exercise> : null}
+        {essay && <Exercise number={next()} title={`Bài luận nâng cao (≥ ${essay.min_words} từ).`}><p className="bk-task">{clip(essay.prompt, 260)}</p>{essay.model_paragraphs?.[0] && <p className="bk-sample"><b>Đoạn mẫu</b>{clip(essay.model_paragraphs[0], 260)}</p>}</Exercise>}
+        {micro.length > 0 && <Exercise number={next()} title="Viết câu học thuật."><QuestionLines items={micro.slice(0, 3)} /></Exercise>}
+        {drills.length > 0 && <Exercise number={next()} title="Sửa lỗi câu."><ol className="bk-blanks">{drills.slice(0, 3).map((drill) => <li key={drill.prompt}><span>{drill.prompt}{drill.hint && <small className="bk-options"> — gợi ý: {drill.hint}</small>}</span><i aria-hidden="true" /></li>)}</ol></Exercise>}
       </>;
     }
     case "Speaking": {
-      const questions = (content.questions ?? []).map((item) => typeof item === "string" ? { part: 1, prompt: item } : { part: item.part ?? 1, prompt: item.prompt });
-      const parts = [1, 2, 3].map((part) => ({ part, items: questions.filter((item) => item.part === part) })).filter((group) => group.items.length);
+      const extensions = content.speaking_extensions ?? [];
+      const part3 = extensions.length ? extensions : speakingQuestions(content).filter((item) => item.part === 3).map((item) => ({ question: item.prompt, response_framework: "" }));
       return <>
         {visual}
-        {parts.map((group) => group.part === 2
-          ? <div key={group.part} className="bk-cuecard"><b>SPEAKING · PART 2</b>{group.items.slice(0, 1).map((item) => <p key={item.prompt}>{item.prompt}</p>)}<small>Bạn có 1 phút chuẩn bị và nói 1–2 phút.</small></div>
-          : <Exercise key={group.part} number={next()} title={`Speaking Part ${group.part}`}><ul className="bk-examples is-questions">{group.items.slice(0, 3).map((item) => <li key={item.prompt}>{item.prompt}</li>)}</ul></Exercise>)}
-        {strategy && <Tip>{firstSentence(strategy, 140)}</Tip>}
+        {part3.length > 0 && <Exercise number={next()} title="Speaking Part 3 · thảo luận."><ol className="bk-discuss">{part3.slice(0, 4).map((item) => <li key={item.question}><span>{item.question}</span>{item.response_framework && <small>{clip(item.response_framework, 110)}</small>}</li>)}</ol></Exercise>}
+        {content.rubric?.length ? <Exercise number={next()} title="Tự chấm theo 4 tiêu chí."><dl className="bk-rubric">{content.rubric.slice(0, 4).map((item) => <div key={item.criterion}><dt>{item.criterion}</dt><dd>{clip(item.detail, 90)}</dd></div>)}</dl></Exercise> : null}
+        {!content.rubric?.length && strategy && <Tip>{clip(strategy, 140)}</Tip>}
       </>;
     }
     default: return <>
@@ -384,7 +513,7 @@ function PracticePreview({ unit, lesson, content }: { unit: BookUnit; lesson: Bo
       {content.theory_vi && <Exercise number={next()} title="Tìm hiểu."><p>{firstSentence(content.theory_vi, 220)}</p></Exercise>}
       {content.examples?.length ? <Exercise number={next()} title="Ví dụ."><ul className="bk-examples">{content.examples.slice(0, 4).map((example) => <li key={example}>{example}</li>)}</ul></Exercise> : null}
       {choice && <Exercise number={next()} title="Thử ngay."><QuickChoice activity={choice} /></Exercise>}
-      {prompts.length > 0 && <Exercise number={next()} title="Luyện tập."><BlankLines items={prompts.slice(0, 3)} /></Exercise>}
+      {rest.length > 0 && <Exercise number={next()} title="Luyện tập."><BlankLines items={rest.slice(0, 3).map((item) => item.prompt)} /></Exercise>}
     </>;
   }
 }
@@ -539,7 +668,8 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     if (page.kind === "lesson-open") {
       const Icon = theme.icon;
       const duration = content?.duration_min;
-      return <div className={`bk-page is-${side} bk-lesson-open`} style={style}>
+      const rich = content ? LessonOpenBody({ lesson, content }) : null;
+      return <div className={`bk-page is-${side} bk-lesson-open ${rich ? "is-rich" : ""}`} style={style}>
         <div className="bk-skill-band">
           <TopicArt topic={lesson.title} unitSlug={unit.slug} lessonSlug={lesson.slug} imageUrl={content?.image_url} variant="lesson" className="bk-band-photo" />
           <span className="bk-unit-tag">{label.starter ? "START" : `UNIT/${label.number}:`} <em>{splitUnitTitle(unit.title).en}</em></span>
@@ -549,17 +679,19 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
         {here && <span className="bk-ribbon" aria-hidden="true" />}
         <div className="bk-page-body">
           <h4 className="bk-lesson-title">{lessonShortTitle(lesson)}</h4>
-          <div className="bk-learn-box">
-            <b>IN THIS LESSON YOU WILL</b>
-            {content === undefined ? <Skeleton /> : <ul>{lessonGoals(lesson, content).map((goal) => <li key={goal}>{goal}</li>)}</ul>}
-          </div>
-          <LeadIn lesson={lesson} content={content} />
+          {rich ?? <>
+            <div className="bk-learn-box">
+              <b>IN THIS LESSON YOU WILL</b>
+              {content === undefined ? <Skeleton /> : <ul>{lessonGoals(lesson, content).map((goal) => <li key={goal}>{goal}</li>)}</ul>}
+            </div>
+            <LeadIn lesson={lesson} content={content} />
+          </>}
           <div className="bk-open-actions">
             <LessonLink lesson={lesson} label={done ? "Học lại" : here ? "Vào học ngay" : "Vào học"} open={ctx.openLesson} />
             <span className="bk-meta">{duration ? <><Clock3 size={14} /> {duration} phút</> : null}{content?.activities?.length ? <> · {content.activities.length} câu</> : null}</span>
             <ScoreBadge result={ctx.results[lesson.slug]} />
           </div>
-          {here && <div className="bk-sticky-note"><Tape tone="sun" /><b>Bạn đang ở đây</b><span>Bài nên học tiếp theo lộ trình.</span></div>}
+          {here && !rich && <div className="bk-sticky-note"><Tape tone="sun" /><b>Bạn đang ở đây</b><span>Bài nên học tiếp theo lộ trình.</span></div>}
           {done && <span className="bk-stamp" aria-label="Đã học">Đã học <Check size={16} strokeWidth={3} /></span>}
         </div>
         <Folio number={index} label={folioLabel} side={side} color={theme.color} />

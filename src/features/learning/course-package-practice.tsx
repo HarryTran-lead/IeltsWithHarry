@@ -128,6 +128,10 @@ export type PackageLesson = {
   unit_objectives?: string[];
   core_outcome?: string;
   v3_enrichment?: PackageV3Enrichment;
+  sample_answer?: string;
+  model_answer?: string;
+  focus?: string;
+  guidance?: string[];
 };
 
 /** Collects self-checked scores from the practice sets of a lesson, keyed by set. */
@@ -1002,7 +1006,7 @@ export function ListeningStudioPractice({
   );
 }
 
-/** Interactive Writing Studio supporting both Task 1 (Data/Visual chart + Template) and Task 2 (Essay + Template + Timer + Checklist). */
+/** Interactive Writing Studio: detects whether each prompt is Task 1 (data report) or Task 2 (essay) and pairs it with the right chart, template, timer and model answer. */
 export function WritingStudioPractice({
   task1Prompt,
   dataVisual,
@@ -1015,6 +1019,7 @@ export function WritingStudioPractice({
   lessonSlug,
   topic,
   imageUrl,
+  sampleAnswer,
 }: {
   task1Prompt?: string;
   dataVisual?: PackageLesson["data_visual"];
@@ -1027,29 +1032,73 @@ export function WritingStudioPractice({
   lessonSlug?: string;
   topic?: string;
   imageUrl?: string | null;
+  sampleAnswer?: string;
 }) {
-  const hasTask1 = Boolean(task1Prompt || dataVisual?.rows?.length);
-  const hasTask2 = Boolean(essay?.prompt);
-  const [activeTask, setActiveTask] = useState<"task1" | "task2">(hasTask1 ? "task1" : "task2");
-  const storageKey = `${keyName}:${activeTask}`;
+  type StudioTask = {
+    id: string;
+    kind: "task1" | "task2";
+    label: string;
+    prompt: string;
+    minWords: number;
+    minutes: number;
+    template?: string[];
+    model: string[];
+    planning: string[];
+  };
+
+  const tasks: StudioTask[] = [];
+  const primaryPrompt = task1Prompt?.trim();
+  const primaryIsTask1 = Boolean(dataVisual?.rows?.length) || /task\s*1/i.test(primaryPrompt ?? "");
+  const splitModel = (text?: string) => (text ? text.split(/\n+/).map((p) => p.trim()).filter(Boolean) : []);
+  if (primaryPrompt) {
+    tasks.push({
+      id: primaryIsTask1 ? "task1" : "main",
+      kind: primaryIsTask1 ? "task1" : "task2",
+      label: primaryIsTask1 ? "Task 1 · Báo cáo số liệu" : "Task 2 · Đề chính",
+      prompt: primaryPrompt,
+      minWords: primaryIsTask1 ? 150 : 250,
+      minutes: primaryIsTask1 ? 20 : 40,
+      template: primaryIsTask1 ? task1Template : task2Template,
+      model: splitModel(sampleAnswer),
+      planning: [],
+    });
+  }
+  if (essay?.prompt && normalize(essay.prompt) !== normalize(primaryPrompt ?? "")) {
+    tasks.push({
+      id: "essay",
+      kind: "task2",
+      label: primaryPrompt && !primaryIsTask1 ? "Task 2 · Đề mở rộng" : "Task 2 · Bài luận",
+      prompt: essay.prompt,
+      minWords: essay.min_words ?? 250,
+      minutes: 40,
+      template: task2Template,
+      model: essay.model_paragraphs ?? [],
+      planning: essay.planning_prompts ?? [],
+    });
+  }
+
+  const [activeId, setActiveId] = useState(tasks[0]?.id ?? "task1");
+  const active = tasks.find((t) => t.id === activeId) ?? tasks[0];
+  const storageKey = `${keyName}:${active?.id ?? "task"}`;
   const [draft, setDraft] = useState("");
   const [showModel, setShowModel] = useState(false);
   const [showTemplate, setShowTemplate] = useState(true);
   const [saveMessage, setSaveMessage] = useState("");
   const [busy, setBusy] = useState(false);
-  const targetMinutes = activeTask === "task1" ? 20 : 40;
+  const targetMinutes = active?.minutes ?? 40;
   const [secondsLeft, setSecondsLeft] = useState(targetMinutes * 60);
   const [timerRunning, setTimerRunning] = useState(false);
 
   useEffect(() => {
     setTimerRunning(false);
-    setSecondsLeft((activeTask === "task1" ? 20 : 40) * 60);
+    setShowModel(false);
+    setSecondsLeft(targetMinutes * 60);
     try {
       setDraft(localStorage.getItem(storageKey) ?? "");
     } catch {
       setDraft("");
     }
-  }, [activeTask, storageKey]);
+  }, [storageKey, targetMinutes]);
 
   useEffect(() => {
     if (!timerRunning || secondsLeft <= 0) return;
@@ -1057,9 +1106,9 @@ export function WritingStudioPractice({
     return () => window.clearTimeout(id);
   }, [timerRunning, secondsLeft]);
 
-  const minWords = activeTask === "task1" ? 150 : essay?.min_words ?? 250;
+  if (!active) return null;
+
   const words = draft.trim() ? draft.trim().split(/\s+/).length : 0;
-  const activeTemplate = activeTask === "task1" ? task1Template : task2Template;
 
   function updateDraft(nextValue: string) {
     setDraft(nextValue);
@@ -1072,10 +1121,9 @@ export function WritingStudioPractice({
   }
 
   function insertTemplateIntoDraft() {
-    if (!activeTemplate?.length) return;
-    const scaffold = activeTemplate.join("\n\n");
-    const nextValue = draft.trim() ? `${draft.trim()}\n\n${scaffold}` : scaffold;
-    updateDraft(nextValue);
+    if (!active?.template?.length) return;
+    const scaffold = active.template.join("\n\n");
+    updateDraft(draft.trim() ? `${draft.trim()}\n\n${scaffold}` : scaffold);
   }
 
   async function saveToCloud() {
@@ -1087,12 +1135,11 @@ export function WritingStudioPractice({
       const { data } = await supabase.auth.getUser();
       if (!data.user) {
         setSaveMessage("Đã lưu tự động trên trình duyệt (đăng nhập để đồng bộ lên tài khoản).");
-        setBusy(false);
         return;
       }
       const res = await supabase.from("writing_drafts").upsert({
         user_id: data.user.id,
-        lesson_slug: `${lessonSlug}-${activeTask}`,
+        lesson_slug: `${lessonSlug}-${active?.id}`,
         body: draft,
         updated_at: new Date().toISOString(),
       });
@@ -1106,54 +1153,47 @@ export function WritingStudioPractice({
 
   const mm = String(Math.floor(secondsLeft / 60)).padStart(2, "0");
   const ss = String(secondsLeft % 60).padStart(2, "0");
+  const isTask1 = active.kind === "task1";
 
   return (
     <section className="v3-writing-studio" aria-label="Phòng luyện viết IELTS Writing Studio">
       <div className="guided-practice-banner">
-        <TopicArt topic={topic || essay?.prompt || task1Prompt || "IELTS Writing"} lessonSlug={lessonSlug} imageUrl={imageUrl} variant="exercise" className="guided-practice-art" />
+        <TopicArt topic={topic || active.prompt || "IELTS Writing"} lessonSlug={lessonSlug} imageUrl={imageUrl} variant="exercise" className="guided-practice-art" />
         <div className="guided-practice-banner-copy">
-          <small>PHÒNG LUYỆN VIẾT HỌC THUẬT · IELTS WRITING STUDIO</small>
-          <strong>Viết có khung dàn ý V3, bộ đếm từ tự động, bấm giờ phòng thi & đối chiếu bài mẫu</strong>
+          <small>PHÒNG LUYỆN VIẾT · IELTS WRITING {isTask1 ? "TASK 1" : "TASK 2"}</small>
+          <strong>Viết theo khung dàn ý, đếm từ tự động, bấm giờ phòng thi và đối chiếu bài mẫu</strong>
         </div>
       </div>
 
-      {hasTask1 && hasTask2 && (
-        <div className="v3-reading-tabs" role="tablist" aria-label="Chọn Task 1 hoặc Task 2">
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTask === "task1"}
-            className={`v3-reading-tab ${activeTask === "task1" ? "is-active" : ""}`}
-            onClick={() => setActiveTask("task1")}
-          >
-            <small>WRITING TASK 1 · 20 PHÚT</small>
-            <strong>Báo cáo Biểu đồ / Bảng số liệu</strong>
-            <span>≥ 150 từ</span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTask === "task2"}
-            className={`v3-reading-tab ${activeTask === "task2" ? "is-active" : ""}`}
-            onClick={() => setActiveTask("task2")}
-          >
-            <small>WRITING TASK 2 · 40 PHÚT</small>
-            <strong>Bài luận Học thuật (Academic Essay)</strong>
-            <span>≥ {essay?.min_words ?? 250} từ</span>
-          </button>
+      {tasks.length > 1 && (
+        <div className="v3-reading-tabs" role="tablist" aria-label="Chọn đề viết">
+          {tasks.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              role="tab"
+              aria-selected={active.id === t.id}
+              className={`v3-reading-tab ${active.id === t.id ? "is-active" : ""}`}
+              onClick={() => setActiveId(t.id)}
+            >
+              <small>{t.kind === "task1" ? "WRITING TASK 1" : "WRITING TASK 2"} · {t.minutes} PHÚT</small>
+              <strong>{t.label}</strong>
+              <span>≥ {t.minWords} từ</span>
+            </button>
+          ))}
         </div>
       )}
 
       <div className="v3-writing-prompt-card">
-        <span className="eyebrow">{activeTask === "task1" ? "ĐỀ BÀI WRITING TASK 1 (DATA REPORT)" : "ĐỀ BÀI WRITING TASK 2 (ESSAY)"}</span>
-        <h3>{activeTask === "task1" ? task1Prompt : essay?.prompt}</h3>
+        <span className="eyebrow">{isTask1 ? "ĐỀ BÀI WRITING TASK 1 (BÁO CÁO SỐ LIỆU)" : "ĐỀ BÀI WRITING TASK 2 (BÀI LUẬN)"}</span>
+        <h3>{active.prompt}</h3>
 
-        {activeTask === "task1" && (visualUrl || dataVisual?.rows?.length) && (
+        {isTask1 && (visualUrl || dataVisual?.rows?.length) ? (
           <div className="v3-writing-visual-grid">
             {visualUrl && (
               <figure className="v3-unit-visual-figure">
                 <img src={visualUrl} alt="Biểu đồ dữ liệu Writing Task 1" loading="lazy" />
-                <figcaption>Biểu đồ trực quan của Unit — quan sát xu hướng lớn nhất (Overview) và các mốc so sánh chính.</figcaption>
+                <figcaption>Quan sát xu hướng lớn nhất (Overview) và các mốc so sánh chính.</figcaption>
               </figure>
             )}
             {dataVisual?.rows?.length ? (
@@ -1182,13 +1222,13 @@ export function WritingStudioPractice({
               </div>
             ) : null}
           </div>
-        )}
+        ) : null}
 
-        {activeTask === "task2" && essay?.planning_prompts?.length ? (
+        {active.planning.length ? (
           <div className="v3-writing-planning">
             <strong>Các bước lập dàn ý trước khi viết:</strong>
             <ol>
-              {essay.planning_prompts.map((p) => (
+              {active.planning.map((p) => (
                 <li key={p}>{p}</li>
               ))}
             </ol>
@@ -1196,10 +1236,10 @@ export function WritingStudioPractice({
         ) : null}
       </div>
 
-      {activeTemplate?.length ? (
+      {active.template?.length ? (
         <div className="v3-template-box">
           <div className="v3-template-head">
-            <strong>📋 Khung dàn ý học thuật gợi ý ({activeTask === "task1" ? "Task 1 · 4 đoạn" : "Task 2 · 4 đoạn"}):</strong>
+            <strong>📋 Khung dàn ý gợi ý ({isTask1 ? "Task 1" : "Task 2"} · {active.template.length} đoạn):</strong>
             <div>
               <button type="button" className="guided-tool-btn" onClick={() => setShowTemplate((v) => !v)}>
                 {showTemplate ? "Ẩn khung dàn ý" : "Hiện khung dàn ý"}
@@ -1211,7 +1251,7 @@ export function WritingStudioPractice({
           </div>
           {showTemplate && (
             <ul className="v3-template-list">
-              {activeTemplate.map((line, idx) => (
+              {active.template.map((line, idx) => (
                 <li key={idx}>{line}</li>
               ))}
             </ul>
@@ -1221,7 +1261,7 @@ export function WritingStudioPractice({
 
       <div className="v3-writing-editor-bar">
         <label htmlFor={`writing-editor-${storageKey}`}>
-          Bài viết của bạn · <b className={words >= minWords ? "is-enough" : ""}>{words} / {minWords} từ tối thiểu</b>
+          Bài viết của bạn · <b className={words >= active.minWords ? "is-enough" : ""}>{words} / {active.minWords} từ tối thiểu</b>
         </label>
         <div className="v3-timer-controls">
           <span className="v3-timer-Readout">⏱ {mm}:{ss}</span>
@@ -1248,7 +1288,7 @@ export function WritingStudioPractice({
         value={draft}
         onChange={(e) => updateDraft(e.target.value)}
         placeholder={
-          activeTask === "task1"
+          isTask1
             ? "Viết báo cáo Task 1 (Introduction → Overview → Body 1 → Body 2) tại đây, hoặc bấm '+ Chèn khung dàn ý vào ô viết bài'…"
             : "Viết bài luận Task 2 (Introduction → Body 1 → Body 2 → Conclusion) tại đây, hoặc bấm '+ Chèn khung dàn ý vào ô viết bài'…"
         }
@@ -1258,18 +1298,18 @@ export function WritingStudioPractice({
         <button type="button" className="button primary" disabled={busy || !draft.trim()} onClick={() => void saveToCloud()}>
           {busy ? "Đang lưu…" : "💾 Lưu bài viết"}
         </button>
-        {essay?.model_paragraphs?.length ? (
+        {active.model.length ? (
           <button type="button" className="button subtle" onClick={() => setShowModel((v) => !v)}>
-            {showModel ? "Ẩn bài mẫu Band 7.0+" : "📖 Xem bài mẫu & đối chiếu"}
+            {showModel ? "Ẩn bài mẫu" : "📖 Xem bài mẫu & đối chiếu"}
           </button>
         ) : null}
         <span className="advanced-essay-save">{saveMessage || "Bản nháp tự động lưu trên trình duyệt khi bạn gõ."}</span>
       </div>
 
-      {showModel && essay?.model_paragraphs?.length ? (
+      {showModel && active.model.length ? (
         <div className="advanced-essay-model">
-          <h4>Bài mẫu tham khảo Band 7.0+ (Phân tách từng đoạn)</h4>
-          {essay.model_paragraphs.map((paragraph, index) => (
+          <h4>Bài mẫu tham khảo · {active.label}</h4>
+          {active.model.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </div>
@@ -1555,58 +1595,74 @@ export function PackageLessonPractice({
   const deepSkillNote = coaching?.deep?.[skillKey] || coaching?.deep?.grammar;
 
   if (mode === "learn") {
+    const heroSummary =
+      coaching?.core ||
+      content.aim ||
+      content.grammar_title ||
+      content.passage_title ||
+      "Quan sát tình huống minh họa và nắm các khái niệm trọng tâm trước khi vào phần bài tập.";
+    const primaryInstruction =
+      content.instruction_vi ||
+      deepSkillNote ||
+      method ||
+      (content.type === "reading"
+        ? "Đọc lướt để nắm cấu trúc từng đoạn, sau đó sang Bước 2 (Thực hành) để đọc bài song song 2 cột với câu hỏi."
+        : content.type === "listening"
+          ? "Đọc trước chiến lược nghe và danh sách bài nghe bên dưới; ở Bước 2 (Thực hành), trình phát âm thanh nằm ngay trên câu hỏi."
+          : content.type === "writing"
+            ? "Quan sát biểu đồ/bảng số liệu và khung dàn ý 4 đoạn trước khi vào phòng viết ở Bước 2."
+            : content.type === "speaking"
+              ? "Xem các bước mở rộng ý và cụm từ nối (Signposting) trước khi bấm giờ ghi âm ở Bước 2."
+              : "Nghe phát âm từng cụm từ, đối chiếu câu ví dụ song ngữ Anh–Việt và lưu từ cần ôn vào Sổ tay.");
+
+    const distinctStrategy = strategy.filter(
+      (item) => normalize(item) !== normalize(primaryInstruction) && normalize(item) !== normalize(heroSummary),
+    );
+
+    const unitPassages = (content.passages ?? []).filter(
+      (p) => !String(p.id || "").includes("-P1") && !String(p.id || "").includes("-P2") && !String(p.id || "").includes("-P3") && !/^Full IELTS/i.test(String(p.title || "")),
+    );
+
     return (
       <div className="package-learn-content">
         <div className="package-scene-hero">
           <TopicArt topic={topicLabel} lessonSlug={lessonSlug} imageUrl={content.image_url} variant="lesson" className="package-scene-art" />
           <div className="package-scene-copy">
-            <span className="eyebrow">MINH HỌA BÀI HỌC · {(content.type || "IELTS").toUpperCase()}</span>
+            <span className="eyebrow">TRỌNG TÂM BÀI HỌC · {(content.type || "IELTS").toUpperCase()}</span>
             <h3>{content.title || lessonTitle}</h3>
-            <p>{content.aim || content.instruction_vi || content.grammar_title || content.passage_title || "Quan sát tình huống minh họa và nắm các khái niệm trọng tâm trước khi vào phần bài tập."}</p>
-            {content.core_outcome && <small className="v3-core-outcome">🎯 Đầu ra cốt lõi: {content.core_outcome}</small>}
+            <p>{heroSummary}</p>
+            {content.core_outcome && <small className="v3-core-outcome">🎯 Mục tiêu đầu ra: {content.core_outcome}</small>}
           </div>
         </div>
 
-        {/* Rich V3 Coaching & Deep Strategy Block */}
-        {coaching && (
-          <section className="v3-coaching-card" aria-label="Hướng dẫn học thuật chuyên sâu Band 6.0-7.0+">
-            <div className="v3-coaching-head">
-              <span className="eyebrow">HƯỚNG DẪN CHUYÊN SÂU · BAND 6.0–7.0+ COACHING</span>
-              <h2>Trọng tâm kiến thức & Chiến thuật làm bài</h2>
-            </div>
-            <div className="v3-coaching-grid">
-              {coaching.core && (
-                <div className="v3-coaching-box is-core">
-                  <strong>📌 Trọng tâm Unit & Bài học</strong>
-                  <p>{coaching.core}</p>
-                </div>
-              )}
-              {deepSkillNote && (
-                <div className="v3-coaching-box is-deep">
-                  <strong>🔍 Phân tích chuyên sâu ({(content.type || "Kỹ năng").toUpperCase()})</strong>
-                  <p>{deepSkillNote}</p>
-                </div>
-              )}
-              {coaching.example && (
-                <div className="v3-coaching-box is-example">
-                  <div className="v3-coaching-box-head">
-                    <strong>✍️ Câu mẫu học thuật phân tích</strong>
-                    <button type="button" className="v3-audio-pill" onClick={() => speakEnglishText(coaching.example!)}>
-                      🔊 Nghe mẫu
-                    </button>
-                  </div>
-                  <p>{coaching.example}</p>
-                </div>
-              )}
-              {coaching.trap && (
-                <div className="v3-coaching-box is-trap">
-                  <strong>⚠️ Bẫy thường gặp làm mất điểm Band 6.5+</strong>
-                  <p>{coaching.trap}</p>
-                </div>
-              )}
-            </div>
-            {coaching.terms?.length ? (
-              <div className="v3-coaching-terms">
+        {content.type !== "intro" && (
+          <div className="package-concept">
+            <span className="eyebrow">PHƯƠNG PHÁP & CHIẾN LƯỢC LÀM BÀI</span>
+            <h2>
+              {content.type === "grammar"
+                ? content.grammar_title || "Nắm vững cấu trúc và ngữ cảnh học thuật"
+                : content.type === "listening"
+                  ? "Nghe bắt tín hiệu chuyển ý & đối chiếu từ đồng nghĩa"
+                  : content.type === "reading"
+                    ? "Đọc xác định luận điểm đoạn & đối chiếu dẫn chứng"
+                    : content.type === "writing"
+                      ? "Phân tích biểu đồ / đề luận & lập dàn ý học thuật"
+                      : content.type === "speaking"
+                        ? "Mở rộng lập luận & phản xạ theo khung 4 bước"
+                        : "Học từ theo cụm (Collocation) và ngữ cảnh câu"}
+            </h2>
+            <p>{primaryInstruction}</p>
+            {content.grammar_explanation_vi && normalize(content.grammar_explanation_vi) !== normalize(primaryInstruction) && (
+              <p className="v3-grammar-theory">{content.grammar_explanation_vi}</p>
+            )}
+            {coaching?.trap && (
+              <div className="v3-coaching-box is-trap" style={{ marginTop: 12 }}>
+                <strong>⚠️ Bẫy thường gặp cần tránh trong phòng thi</strong>
+                <p>{coaching.trap}</p>
+              </div>
+            )}
+            {coaching?.terms?.length ? (
+              <div className="v3-coaching-terms" style={{ marginTop: 10 }}>
                 <span>Thuật ngữ cốt lõi cần nắm:</span>
                 {coaching.terms.map((term) => (
                   <button
@@ -1621,40 +1677,6 @@ export function PackageLessonPractice({
                 ))}
               </div>
             ) : null}
-          </section>
-        )}
-
-        {content.type !== "intro" && (
-          <div className="package-concept">
-            <span className="eyebrow">CÁCH HỌC BÀI NÀY</span>
-            <h2>
-              {content.type === "grammar"
-                ? content.grammar_title || "Nắm vững cấu trúc và ngữ cảnh học thuật"
-                : content.type === "listening"
-                  ? "Nghe bắt tín hiệu chuyển ý & đối chiếu từ đồng nghĩa"
-                  : content.type === "reading"
-                    ? "Đọc xác định luận điểm đoạn & đối chiếu dẫn chứng"
-                    : content.type === "writing"
-                      ? "Phân tích biểu đồ / đề luận & lập dàn ý học thuật"
-                      : content.type === "speaking"
-                        ? "Mở rộng lập luận & phản xạ theo khung 4 bước"
-                        : "Học từ theo cụm (Collocation) và ngữ cảnh câu"}
-            </h2>
-            <p>
-              {content.instruction_vi ||
-                method ||
-                (content.type === "reading"
-                  ? "Đọc lướt để nắm cấu trúc từng đoạn, sau đó sang Bước 2 (Thực hành) để đọc bài song song 2 cột với câu hỏi."
-                  : content.type === "listening"
-                    ? "Đọc trước chiến lược nghe và từ vựng bên dưới; ở Bước 2 (Thực hành), trình phát âm thanh nằm ngay trên câu hỏi."
-                    : content.type === "writing"
-                      ? "Quan sát biểu đồ/bảng số liệu và khung dàn ý 4 đoạn trước khi vào phòng viết ở Bước 2."
-                      : content.type === "speaking"
-                        ? "Xem các bước mở rộng ý và cụm từ nối (Signposting) trước khi bấm giờ ghi âm ở Bước 2."
-                        : "Nghe phát âm từng cụm từ, đối chiếu câu ví dụ song ngữ Anh–Việt và lưu từ cần ôn vào Sổ tay.")}
-            </p>
-            {content.grammar_explanation_vi && <p className="v3-grammar-theory">{content.grammar_explanation_vi}</p>}
-            {method && content.instruction_vi && <small>{method}</small>}
           </div>
         )}
 
@@ -1714,26 +1736,88 @@ export function PackageLessonPractice({
           </div>
         ) : null}
 
-        {/* Unit Visual Diagram / Chart for Grammar, Reading, and Writing */}
-        {visualUrl && (content.type === "grammar" || content.type === "writing" || content.type === "reading") && (
+        {/* Reading Overview in Step 1: Preview the Unit's 3 Reading Passages */}
+        {content.type === "reading" && unitPassages.length > 0 && (
+          <div className="v3-grammar-examples">
+            <h3>📚 Tổng quan {unitPassages.length} Bài đọc của Unit (Sẵn sàng ở Bước 2 · Thực hành)</h3>
+            <div className="v3-grammar-example-list">
+              {unitPassages.map((p, idx) => {
+                const firstPara = p.sections?.[0]?.[1] || p.text.split(/\n+/)[0] || "";
+                return (
+                  <div key={p.id || idx} className="v3-grammar-example-card">
+                    <div className="v3-grammar-example-en">
+                      <span className="v3-example-num">Bài đọc {idx + 1} · {p.questions.length} câu</span>
+                      <p>{p.title.replace(/^Reading\s*\d*:\s*/i, "")}</p>
+                    </div>
+                    <p className="v3-grammar-example-vi">
+                      <b>Đoạn mở đầu [A]:</b> “{firstPara.slice(0, 220)}{firstPara.length > 220 ? "…" : ""}”
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Listening Overview in Step 1: Preview the Unit's 3 Listening Tracks */}
+        {content.type === "listening" && content.audios?.length ? (
+          <div className="v3-grammar-examples">
+            <h3>🎧 Tổng quan {content.audios.length} Bài nghe của Unit (Nghe & trả lời trực tiếp ở Bước 2)</h3>
+            <div className="v3-grammar-example-list">
+              {content.audios.map((a, idx) => (
+                <div key={a.id || idx} className="v3-grammar-example-card">
+                  <div className="v3-grammar-example-en">
+                    <span className="v3-example-num">Bài nghe {idx + 1} · {a.questions.length} câu</span>
+                    <p>{a.title.replace(/^Listening:\s*/i, "")}</p>
+                    {a.script && (
+                      <button type="button" className="v3-audio-pill" onClick={() => speakEnglishText(a.script.slice(0, 260))}>
+                        🔊 Nghe thử đoạn đầu
+                      </button>
+                    )}
+                  </div>
+                  {a.script && (
+                    <p className="v3-grammar-example-vi">
+                      <b>Mở đầu bài nghe:</b> “{a.script.slice(0, 200)}{a.script.length > 200 ? "…" : ""}”
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
+
+        {/* Unit chart only for Writing Task 1 lessons; Task 2 essays have no data to describe */}
+        {visualUrl && content.type === "writing" && (content.data_visual?.rows?.length || /task\s*1/i.test(content.task ?? "")) ? (
           <div className="v3-visual-context-card">
             <div className="v3-visual-context-copy">
-              <span className="eyebrow">📊 BIỂU ĐỒ & DỮ LIỆU TRỰC QUAN CỦA UNIT</span>
-              <h3>Sơ đồ số liệu minh họa cho các câu ví dụ & bài viết Task 1</h3>
+              <span className="eyebrow">📊 BIỂU ĐỒ DỮ LIỆU WRITING TASK 1 CỦA UNIT</span>
+              <h3>{content.task || "Quan sát xu hướng tổng quan (Overview) và các mốc so sánh số liệu"}</h3>
               <p>
-                Quan sát biểu đồ để hiểu rõ ngữ cảnh số liệu được nhắc tới trong các câu mẫu ngữ pháp (ví dụ: <em>“The chart illustrates…”</em>) và bài báo cáo Writing Task 1.
+                Xác định xu hướng nổi bật nhất (Overview) và nhóm các số liệu có sự tương phản hoặc tương đồng rõ rệt vào 2 đoạn thân bài (Body 1 & Body 2).
               </p>
-              {coaching?.writing1 && <p className="v3-visual-coaching-note">💡 <b>Gợi ý phân tích biểu đồ:</b> {coaching.writing1}</p>}
             </div>
             <figure className="v3-unit-visual-figure">
               <img src={visualUrl} alt={`Biểu đồ dữ liệu ${topicLabel}`} loading="lazy" />
             </figure>
           </div>
-        )}
+        ) : null}
 
-        {content.data_visual?.rows?.length ? (
+        {content.type === "writing" && !content.data_visual?.rows?.length && content.task && !/task\s*1/i.test(content.task) ? (
+          <div className="v3-writing-prompt-card">
+            <span className="eyebrow">ĐỀ BÀI WRITING TASK 2 CỦA UNIT</span>
+            <h3>{content.task.replace(/^IELTS (Academic )?Writing Task 2\.\s*/i, "")}</h3>
+            {(content.guidance ?? content.scaffolding_steps)?.length ? (
+              <div className="v3-writing-planning">
+                <strong>Các bước xử lý đề:</strong>
+                <ol>{(content.guidance ?? content.scaffolding_steps ?? []).map((step) => <li key={step}>{step}</li>)}</ol>
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+
+        {content.type === "writing" && content.data_visual?.rows?.length ? (
           <div className="package-data-table">
-            <h3>Bảng số liệu cho Writing Task 1</h3>
+            <h3>Bảng số liệu chi tiết cho Writing Task 1</h3>
             <div>
               <table>
                 <thead>
@@ -1758,11 +1842,11 @@ export function PackageLessonPractice({
           </div>
         ) : null}
 
-        {strategy.length > 0 && (
+        {distinctStrategy.length > 0 && (
           <div className="package-strategy">
             <strong>🧭 Chiến lược thực hành từng bước</strong>
             <ol>
-              {strategy.map((item, index) => (
+              {distinctStrategy.map((item, index) => (
                 <li key={`${index}-${item}`}>{item}</li>
               ))}
             </ol>
@@ -1851,16 +1935,6 @@ export function PackageLessonPractice({
             <strong>Tự vận dụng:</strong> {content.independent_use}
           </p>
         )}
-        {content.v3_enrichment?.skills_workflow?.length ? (
-          <div className="package-strategy">
-            <strong>Quy trình ôn tập & chuyển giao kỹ năng sau bài học</strong>
-            <ol>
-              {content.v3_enrichment.skills_workflow.map((step, idx) => (
-                <li key={idx}>{step}</li>
-              ))}
-            </ol>
-          </div>
-        ) : null}
         {content.review_checklist?.length ? (
           <div className="package-review-list">
             <h3>Tự kiểm tra</h3>
@@ -1915,7 +1989,7 @@ export function PackageLessonPractice({
 
   // PRACTICE MODE (`mode === "practice"`)
   if (content.type === "reading") {
-    const passagesList: PackagePassage[] = content.passages?.length
+    const rawPassages: PackagePassage[] = content.passages?.length
       ? content.passages
       : content.passage
         ? [
@@ -1927,10 +2001,13 @@ export function PackageLessonPractice({
             },
           ]
         : [];
+    const passagesList = rawPassages.filter(
+      (p) => !String(p.id || "").includes("-P1") && !String(p.id || "").includes("-P2") && !String(p.id || "").includes("-P3") && !/^Full IELTS/i.test(String(p.title || "")),
+    );
     return (
       <div className="lab-stack">
         <ReadingStudioPractice
-          passages={passagesList}
+          passages={passagesList.length ? passagesList : rawPassages}
           fallbackActivities={content.activities}
           lessonSlug={lessonSlug}
           topicLabel={topicLabel}
@@ -2001,6 +2078,7 @@ export function PackageLessonPractice({
             lessonSlug={lessonSlug}
             topic={topicLabel}
             imageUrl={exerciseImg}
+            sampleAnswer={content.sample_answer}
           />
         )}
         {(content.new_translation_prompts?.length || content.second_task) ? (

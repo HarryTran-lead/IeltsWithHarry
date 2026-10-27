@@ -546,3 +546,76 @@
   border-radius: 8px;
   border: 1px solid rgba(16, 35, 63, 0.14);
 }
+
+/* Lesson spreads carry the lesson itself: a slimmer skill band, smaller type and denser blocks. */
+.bk-skill-band { height: 110px; padding: 14px 40px 0 36px; }
+.bk-unit-tag { padding: 5px 8px; font-size: 11px; }
+.bk-skill-word { margin-top: 8px; font-size: 36px; }
+.bk-skill-vi { margin-top: 6px; padding: 3px 8px; font-size: 11px; }
+.bk-book.is-single .bk-skill-band { height: 132px; padding: 16px 20px 0 24px; }
+.bk-book.is-single .bk-skill-word { font-size: 40px; }
+.bk-lesson-open .bk-page-body, .bk-lesson-practice .bk-page-body { gap: 8px; padding-top: 16px; font-size: 12px; line-height: 1.45; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #d8ccb2 transparent; }
+.bk-lesson-open .bk-lesson-title { font-size: 18px; }
+.bk-lesson-open.is-rich .bk-open-actions { margin-top: auto; padding-top: 6px; }
+.bk-lesson-open .bk-go, .bk-lesson-practice .bk-go { height: 34px; padding: 0 13px; font-size: 13px; }
+.bk-lesson-practice .bk-ex h5, .bk-lesson-open .bk-ex h5 { font-size: 12.5px; }
+.bk-lesson-practice .bk-ex, .bk-lesson-open .bk-ex { gap: 5px; }
+.bk-lesson-practice .bk-blanks, .bk-lesson-open .bk-blanks { gap: 4px; }
+.bk-lesson-practice .bk-blanks li, .bk-lesson-open .bk-blanks li { font-size: 12px; }
+.bk-lesson-practice .bk-blanks li i { height: 10px; }
+.bk-lesson-practice .bk-choice button { padding: 4px 8px; font-size: 11.5px; }
+.bk-lesson-practice .bk-tip, .bk-lesson-open .bk-tip { padding: 8px 12px 8px 30px; font-size: 11.5px; }
+.bk-lesson-practice .bk-tip-badge { width: 38px; height: 38px; margin-top: -19px; left: -19px; font-size: 12px; }
+.bk-practice-visual { flex: 0 0 64px; max-height: 64px; min-height: 0; }
+.bk-practice-caption { padding: 10px 64px 6px 11px; }
+.bk-practice-foot { padding-top: 8px; }
+.bk-formula { padding: 8px 10px; font-size: 11.5px; }
+.bk-task { padding: 8px 10px; font-size: 12px; }
+.bk-table { font-size: 11.5px; }
+.bk-table th, .bk-table td { padding: 4px 7px; }
+.bk-checklist { gap: 3px; font-size: 12px; }
+.bk-cuecard { gap: 4px; padding: 10px 12px; }
+.bk-lesson-open .bk-passage, .bk-lesson-practice .bk-passage { padding: 10px 12px; }
+.bk-lesson-open .bk-passage p, .bk-lesson-practice .bk-passage p { margin: 0 0 5px; font-size: 11.5px; line-height: 1.5; -webkit-line-clamp: 6; }
+.bk-passage p b { color: var(--navy); }
+.bk-focus { margin: 0; padding: 7px 10px; border-left: 4px solid var(--skill); background: color-mix(in srgb, var(--skill) 9%, #fff); font-size: 12px; }
+.bk-focus b { margin-right: 6px; font: 800 10.5px/1 var(--font-display), sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
+.bk-focus.is-trap { border-left-color: #e5484d; background: #fff4f3; }
+.bk-focus.is-trap b { color: #b42318; }
+.bk-words { display: grid; gap: 0; margin: 0; padding-left: 22px; }
+.bk-words li { padding: 1px 0 2px; border-bottom: 1px dotted #d8ccb2; line-height: 1.35; }
+.bk-words li::marker { color: var(--book-muted); font-size: 10.5px; font-weight: 800; }
+.bk-words b { color: var(--navy); }
+.bk-words em { color: var(--book-muted); font-style: normal; }
+.bk-words small { display: block; overflow: hidden; color: #6b6250; font-size: 10.5px; font-style: italic; text-overflow: ellipsis; white-space: nowrap; }
+.bk-words.is-compact { grid-template-columns: 1fr 1fr; column-gap: 22px; }
+.bk-words.is-compact li { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bk-bilingual { display: grid; gap: 5px; margin: 0; padding-left: 18px; }
+.bk-bilingual li::marker { color: var(--skill); }
+.bk-bilingual span { display: block; font-style: italic; }
+.bk-bilingual small { display: block; color: var(--book-muted); font-size: 11px; }
+.bk-tracklist { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.bk-tracklist li { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 8px; align-items: baseline; padding: 3px 0; border-bottom: 1px dotted #d8ccb2; }
+.bk-tracklist b { font: 800 10.5px/1.2 var(--font-display), sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--skill) 70%, #10233f); }
+.bk-tracklist span { overflow: hidden; font-weight: 700; color: var(--navy); text-overflow: ellipsis; white-space: nowrap; }
+.bk-tracklist small { color: var(--book-muted); font-size: 11px; }
+.bk-transcript, .bk-model, .bk-sample { display: grid; gap: 5px; margin: 0; padding: 8px 10px; border: 1px dashed #c9bb9a; background: #fffaf0; font-size: 11.5px; line-height: 1.5; }
+.bk-transcript b, .bk-model > b, .bk-sample b { font: 800 10.5px/1 var(--font-display), sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
+.bk-model p { margin: 0; font-style: italic; }
+.bk-sample { display: block; }
+.bk-sample b { display: block; margin-bottom: 4px; }
+.bk-options { color: var(--book-muted); font-size: 11px; }
+.bk-track-sums { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.bk-track-sums > div { display: grid; gap: 3px; align-content: start; padding: 7px 9px; border: 1px solid #e3d9c3; border-radius: 8px; background: #fff; font-size: 11.5px; }
+.bk-track-sums b { color: var(--navy); }
+.bk-track-sums ul { margin: 0; padding-left: 15px; }
+.bk-track-sums small { color: var(--book-muted); }
+.bk-discuss { display: grid; gap: 5px; margin: 0; padding-left: 18px; }
+.bk-discuss li::marker { font-weight: 800; color: var(--skill); }
+.bk-discuss span { display: block; font-weight: 700; color: var(--navy); }
+.bk-discuss small { display: block; color: var(--book-muted); font-size: 11px; }
+.bk-rubric { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 0; }
+.bk-rubric > div { padding: 6px 9px; border-top: 3px solid var(--skill); background: #fff; box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.3); }
+.bk-rubric dt { font-weight: 800; font-size: 11.5px; color: var(--navy); }
+.bk-rubric dd { margin: 0; color: var(--book-muted); font-size: 11px; }
+.bk-book.is-single .bk-words.is-compact, .bk-book.is-single .bk-track-sums, .bk-book.is-single .bk-rubric { grid-template-columns: 1fr; }
