@@ -4,6 +4,8 @@ Source: `English_Skill_Lab_Source_10_Original_Tests.zip`, supplied on 27 October
 
 The ZIP contains five Academic Reading and five Listening papers, each with 40 questions. It contains scripts and answer keys, but **zero MP3 files**. Its own quality report labels the content a pilot, not publication-ready or band-calibrated. The Listening scripts are substantially shorter than a complete 30-minute recording. The dialogue and questions still need editorial review, and the owner-supplied rights assertion needs documentation before release. These are source facts, not instructions to run its bundled server or audio generator.
 
+Independent checks on this ZIP found all 400 question numbers and answer keys present, all 400 supplied correct answers grade correctly, and no answer or transcript leaks through the learner payload. Every non-`NOT GIVEN` evidence quote appears in its passage or script. Content still needs human editing: across 540 Listening dialogue lines, only 397 are unique; one generic sentence repeats 30 times. One Reading paragraph repeats in six places. A structurally valid test is not yet a natural recording or a reliable IELTS-style assessment.
+
 `scripts/import-original-tests.mts` reads only the ten JSON files from the ZIP; it never executes ZIP scripts. It validates IDs, 40 sequential questions, answer options and evidence, then maps the papers into the existing private IELTS bank. Answer keys stay in server-only exam versions. The import is idempotent and sets every paper to `needs_review` with explicit warnings. `reviewExam` blocks promotion of this pilot prefix until a later reviewed release process is built. **No paper is published by this import.**
 
 Dry run:
