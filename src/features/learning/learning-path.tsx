@@ -44,7 +44,7 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
       const starter = unit.sort_order === 0 && course.slug.includes("foundation-journey");
       const completed = unit.lessons.filter(isDone).length;
       return <button key={unit.id} type="button" className={`study-chapter ${activeUnitId === unit.id ? "selected" : ""} ${completed === unit.lessons.length ? "completed" : ""}`} onClick={() => setSelectedUnitId(unit.id)} aria-current={activeUnitId === unit.id ? "step" : undefined}>
-        <TopicArt topic={unit.title} className="study-chapter-art" /><span>{starter ? "Bắt đầu" : `Unit ${unit.sort_order}`}</span><strong>{completed}/{unit.lessons.length}</strong>
+        <TopicArt topic={unit.title} unitSlug={unit.slug} variant="unit" badge={false} className="study-chapter-art" /><span>{starter ? "Bắt đầu" : `Unit ${unit.sort_order}`}</span><strong>{completed}/{unit.lessons.length}</strong>
       </button>;
     })}</div>
     <div className="study-map">
@@ -58,7 +58,7 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
         const complete = unitDone === unit.lessons.length;
         return <section className={`map-line tone-${tone}`} key={unit.id} aria-label={unit.title}>
           <header className="map-line-head">
-            <TopicArt topic={unit.title} className="map-line-art" />
+            <TopicArt topic={unit.title} unitSlug={unit.slug} variant="unit" badge={false} className="map-line-art" />
             <span className="map-line-badge">{starter ? "GO" : `U${number}`}</span>
             <div><small>{starter ? "Bước đầu tiên" : `Chặng ${number}`}</small><h3>{unit.title.replace(/^Unit \d+\s*·\s*/, "")}</h3></div>
             <span className="map-line-count">{unitDone}/{unit.lessons.length} ga</span>
@@ -72,7 +72,7 @@ export function LessonPath({ course, isDone }: { course: StageCourse; isDone: (l
                 <Link href={`/app/lesson/${lesson.slug}`} className="map-station-link">
                   <span className="map-station-dot" aria-hidden="true">{done && <Check size={12} strokeWidth={4} />}</span>
                   <span className="map-station-skill"><Icon size={16} /></span>
-                  <TopicArt topic={unit.title} className="map-station-art" />
+                  <TopicArt topic={lesson.title} unitSlug={unit.slug} lessonSlug={lesson.slug} variant="lesson" badge={false} className="map-station-art" />
                   <span className="map-station-copy">
                     <small>{lesson.skill}{here && <b className="map-here"><MapPin size={12} /> Bạn đang ở đây</b>}</small>
                     <strong>{lesson.title}</strong>

@@ -22,6 +22,8 @@ export type BookContent = Omit<PackageLesson, "questions"> & {
   focus?: string;
   grammar_explanation_vi?: string;
   questions?: (string | { part?: number; prompt: string })[];
+  image_url?: string;
+  exercise_image_url?: string;
 };
 
 export type BookPage =
@@ -244,10 +246,50 @@ function LessonLink({ lesson, label = "Vào học", open }: { lesson: BookLesson
   }}>{label} <ArrowRight size={16} /></Link>;
 }
 
+function exerciseCaption(lesson: BookLesson, content: BookContent | null | undefined, unit: BookUnit) {
+  const unitName = splitUnitTitle(unit.title).en;
+  if (!content) return `${unitName} · Bài tập ${lesson.skill}`;
+  switch (lesson.skill) {
+    case "Vocabulary": {
+      const sample = (content.vocabulary ?? content.expansion_words ?? []).slice(0, 3).map((w) => w.en).join(" · ");
+      return sample ? `Từ vựng: ${sample}` : `${unitName} · Từ vựng học thuật`;
+    }
+    case "Grammar":
+      return content.grammar_title ? `Ngữ pháp: ${content.grammar_title}` : `${unitName} · Cấu trúc học thuật`;
+    case "Reading":
+      return content.passage_title ?? content.passages?.[0]?.title ?? `${unitName} · Đọc hiểu học thuật`;
+    case "Listening":
+      return content.audios?.[0]?.title.replace(/^Listening:\s*/i, "") ?? `${unitName} · Nghe hiểu tình huống`;
+    case "Writing":
+      return content.data_visual ? `${unitName} · Phân tích bảng số liệu Task 1` : `${unitName} · Lập dàn ý & viết luận Task 2`;
+    case "Speaking":
+      return `${unitName} · Thảo luận & phản biện Part 1–3`;
+    default:
+      return `${unitName} · Thực hành ${lesson.skill}`;
+  }
+}
+
 /** The right-hand page of a lesson: a preview of the real exercises, laid out like a workbook. */
-function PracticePreview({ lesson, content }: { lesson: BookLesson; content: BookContent | null | undefined }) {
+function PracticePreview({ unit, lesson, content }: { unit: BookUnit; lesson: BookLesson; content: BookContent | null | undefined }) {
   if (content === undefined) return <Skeleton />;
+  const visual = (
+    <div className="bk-practice-visual">
+      <TopicArt
+        topic={lesson.title}
+        unitSlug={unit.slug}
+        lessonSlug={lesson.slug}
+        imageUrl={content?.exercise_image_url ?? content?.image_url}
+        variant="exercise"
+        className="bk-practice-art"
+      />
+      <div className="bk-practice-caption">
+        <span>MINH HỌA BÀI TẬP · {themeOf(lesson.skill).vi.toUpperCase()}</span>
+        <strong>{exerciseCaption(lesson, content, unit)}</strong>
+      </div>
+    </div>
+  );
   if (!content) return <div className="bk-practice-empty">
+    {visual}
     <Exercise number={1} title="Tìm hiểu"><p>{lesson.summary || "Đọc ý chính và xem ví dụ của bài."}</p></Exercise>
     <Exercise number={2} title="Thực hành"><p>Làm từng câu, bấm kiểm tra để xem giải thích.</p></Exercise>
     <Exercise number={3} title="Ghi nhớ"><p>Tự nhắc lại điều vừa học trước khi sang bài tiếp theo.</p></Exercise>
@@ -261,6 +303,7 @@ function PracticePreview({ lesson, content }: { lesson: BookLesson; content: Boo
 
   switch (lesson.skill) {
     case "Vocabulary": return <>
+      {visual}
       <Exercise number={next()} title="Nghe và đọc các cụm từ của unit.">
         {content.audio_url && <AudioChip src={content.audio_url} title="Audio từ vựng" />}
         <dl className="bk-wordlist">{(content.vocabulary ?? content.expansion_words ?? []).slice(0, 10).map((word) => <div key={word.en} title={word.example}><dt>{word.en}</dt><dd>{word.vi}</dd></div>)}</dl>
@@ -268,6 +311,7 @@ function PracticePreview({ lesson, content }: { lesson: BookLesson; content: Boo
       {choice && <Exercise number={next()} title="Thử ngay: chọn đáp án đúng."><QuickChoice activity={choice} /></Exercise>}
     </>;
     case "Grammar": return <>
+      {visual}
       {content.grammar_title && <div className="bk-banner">GRAMMAR FOCUS: {content.grammar_title}</div>}
       {content.grammar_form && <Exercise number={next()} title="Quan sát cấu trúc."><p className="bk-formula">{content.grammar_form}</p></Exercise>}
       {content.examples?.length ? <Exercise number={next()} title="Đọc ví dụ và gạch chân phần cấu trúc."><ul className="bk-examples">{content.examples.slice(0, 4).map((example) => <li key={example}>{example}</li>)}</ul></Exercise> : null}
@@ -278,6 +322,7 @@ function PracticePreview({ lesson, content }: { lesson: BookLesson; content: Boo
       const passage = content.passages?.[0];
       const text = passage?.text ?? content.passage ?? "";
       return <>
+        {visual}
         <Exercise number={next()} title="Đọc đoạn mở đầu của bài.">
           <article className="bk-passage"><h6>{content.passage_title ?? passage?.title}</h6>{text.split(/\n+/).slice(0, 2).map((paragraph) => <p key={paragraph.slice(0, 40)}>{paragraph}</p>)}</article>
         </Exercise>
@@ -288,6 +333,7 @@ function PracticePreview({ lesson, content }: { lesson: BookLesson; content: Boo
     case "Listening": {
       const audio = content.audios?.[0];
       return <>
+        {visual}
         <Exercise number={next()} title="Nghe và điền vào chỗ trống.">
           {(audio?.audio_url || content.audio_url) && <AudioChip src={audio?.audio_url || content.audio_url || ""} title={audio?.title.replace(/^Listening:\s*/, "") ?? "Bản ghi âm"} />}
           <BlankLines items={prompts.slice(0, 5)} />
@@ -299,6 +345,7 @@ function PracticePreview({ lesson, content }: { lesson: BookLesson; content: Boo
     case "Writing": {
       const task = content.task ?? content.advanced_essay?.prompt;
       return <>
+        {visual}
         <div className="bk-banner">{content.data_visual ? "TASK 1 · TASK ACHIEVEMENT" : "WRITING TASK"}</div>
         {task && <Exercise number={next()} title="Đọc đề bài."><p className="bk-task">{task}</p></Exercise>}
         {content.data_visual && <table className="bk-table"><thead><tr>{content.data_visual.headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{content.data_visual.rows.slice(0, 5).map((row) => <tr key={row.join()}>{row.map((cell, index) => <td key={index}>{cell}</td>)}</tr>)}</tbody></table>}
@@ -309,6 +356,7 @@ function PracticePreview({ lesson, content }: { lesson: BookLesson; content: Boo
       const questions = (content.questions ?? []).map((item) => typeof item === "string" ? { part: 1, prompt: item } : { part: item.part ?? 1, prompt: item.prompt });
       const parts = [1, 2, 3].map((part) => ({ part, items: questions.filter((item) => item.part === part) })).filter((group) => group.items.length);
       return <>
+        {visual}
         {parts.map((group) => group.part === 2
           ? <div key={group.part} className="bk-cuecard"><b>SPEAKING · PART 2</b>{group.items.slice(0, 1).map((item) => <p key={item.prompt}>{item.prompt}</p>)}<small>Bạn có 1 phút chuẩn bị và nói 1–2 phút.</small></div>
           : <Exercise key={group.part} number={next()} title={`Speaking Part ${group.part}`}><ul className="bk-examples is-questions">{group.items.slice(0, 3).map((item) => <li key={item.prompt}>{item.prompt}</li>)}</ul></Exercise>)}
@@ -316,6 +364,7 @@ function PracticePreview({ lesson, content }: { lesson: BookLesson; content: Boo
       </>;
     }
     default: return <>
+      {visual}
       {content.theory_vi && <Exercise number={next()} title="Tìm hiểu."><p>{firstSentence(content.theory_vi, 220)}</p></Exercise>}
       {content.examples?.length ? <Exercise number={next()} title="Ví dụ."><ul className="bk-examples">{content.examples.slice(0, 4).map((example) => <li key={example}>{example}</li>)}</ul></Exercise> : null}
       {choice && <Exercise number={next()} title="Thử ngay."><QuickChoice activity={choice} /></Exercise>}
@@ -339,7 +388,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
         <div className="bk-cover-top"><span>IeltsWithHarry · Coursebook</span><span className="bk-cover-band">{stage.range}</span></div>
         <h2><small>Chặng {stage.number}</small>{stage.name}</h2>
         <p className="bk-cover-sub">{course.title}</p>
-        <div className="bk-cover-collage">{arts.map((unit, artIndex) => <TopicArt key={unit.id} topic={unit.title} className={`bk-polaroid p${artIndex}`} />)}</div>
+        <div className="bk-cover-collage">{arts.map((unit, artIndex) => <TopicArt key={unit.id} topic={unit.title} unitSlug={unit.slug} variant="unit" badge={false} className={`bk-polaroid p${artIndex}`} />)}</div>
         <div className="bk-cover-foot">
           <span>{course.units.length} unit · {ctx.total} bài · {ctx.finished} đã học</span>
           <button type="button" className="bk-open" onClick={() => goTo(2)}>Mở sách <ArrowRight size={17} /></button>
@@ -424,7 +473,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     return <div className={`bk-page is-${side} bk-unit-art`} style={{ "--unit": color } as CSSProperties}>
       <div className="bk-unit-label"><span>{label.starter ? "START" : `UNIT/${label.number}:`}</span><strong>{title.en}</strong></div>
       {title.vi && <p className="bk-unit-vi">{title.vi}</p>}
-      <div className="bk-unit-photo-wrap"><Tape tone="sun" /><TopicArt topic={page.unit.title} className="bk-unit-photo" /></div>
+      <div className="bk-unit-photo-wrap"><Tape tone="sun" /><TopicArt topic={page.unit.title} unitSlug={page.unit.slug} variant="unit" className="bk-unit-photo" /></div>
       <div className="bk-unit-learn">
         <b>IN THIS UNIT YOU WILL</b>
         <ul>{page.unit.lessons.map((lesson) => <li key={lesson.id} style={{ "--tone": themeOf(lesson.skill).color } as CSSProperties}><i />{lessonShortTitle(lesson)}</li>)}</ul>
@@ -447,6 +496,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
           const theme = themeOf(lesson.skill);
           const Icon = theme.icon;
           return <li key={lesson.id}><button type="button" onClick={() => goTo(ctx.lessonStart.get(lesson.id) ?? 0)} className={`${isDone(lesson) ? "is-done" : ""} ${current?.id === lesson.id ? "is-here" : ""}`}>
+            <TopicArt topic={lesson.title} unitSlug={page.unit.slug} lessonSlug={lesson.slug} imageUrl={ctx.contents[lesson.id]?.image_url} variant="lesson" badge={false} className="bk-unit-toc-art" />
             <span className="bk-skill-chip" style={{ background: theme.color, color: theme.ink }}><Icon size={13} /></span>
             <span className="bk-unit-toc-title"><small>{lesson.skill} <ScoreBadge result={ctx.results[lesson.slug]} /></small>{lessonShortTitle(lesson)}</span>
             <span className="bk-leader" aria-hidden="true" />
@@ -475,7 +525,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
       const duration = content?.duration_min;
       return <div className={`bk-page is-${side} bk-lesson-open`} style={style}>
         <div className="bk-skill-band">
-          <TopicArt topic={unit.title} className="bk-band-photo" />
+          <TopicArt topic={lesson.title} unitSlug={unit.slug} lessonSlug={lesson.slug} imageUrl={content?.image_url} variant="lesson" className="bk-band-photo" />
           <span className="bk-unit-tag">{label.starter ? "START" : `UNIT/${label.number}:`} <em>{splitUnitTitle(unit.title).en}</em></span>
           <h3 className="bk-skill-word">{lesson.skill}</h3>
           <span className="bk-skill-vi"><Icon size={15} /> {theme.vi} · Bài {page.lessonIndex + 1}/{unit.lessons.length}</span>
@@ -493,6 +543,16 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
             <span className="bk-meta">{duration ? <><Clock3 size={14} /> {duration} phút</> : null}{content?.activities?.length ? <> · {content.activities.length} câu</> : null}</span>
             <ScoreBadge result={ctx.results[lesson.slug]} />
           </div>
+          {!here && (
+            <div className="bk-open-scene">
+              <TopicArt topic={lesson.title} unitSlug={unit.slug} lessonSlug={lesson.slug} imageUrl={content?.image_url} variant="lesson" className="bk-open-scene-art" />
+              <div className="bk-open-scene-copy">
+                <small>MINH HỌA BÀI HỌC · {theme.vi.toUpperCase()}</small>
+                <b>{splitUnitTitle(unit.title).en}</b>
+                <span>{firstSentence(lesson.summary || content?.aim || splitUnitTitle(unit.title).vi, 95)}</span>
+              </div>
+            </div>
+          )}
           {here && <div className="bk-sticky-note"><Tape tone="sun" /><b>Bạn đang ở đây</b><span>Bài nên học tiếp theo lộ trình.</span></div>}
           {done && <span className="bk-stamp" aria-label="Đã học">Đã học <Check size={16} strokeWidth={3} /></span>}
         </div>
@@ -502,7 +562,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
 
     return <div className={`bk-page is-${side} bk-lesson-practice`} style={style}>
       <div className="bk-page-body">
-        <PracticePreview lesson={lesson} content={content} />
+        <PracticePreview unit={unit} lesson={lesson} content={content} />
         <div className="bk-practice-foot"><span><Lightbulb size={15} /> Bài đầy đủ mở ngay trên sách, có giải thích đáp án.</span><LessonLink lesson={lesson} label="Làm bài đầy đủ" open={ctx.openLesson} /></div>
       </div>
       <Folio number={index} label={folioLabel} side={side} color={theme.color} />

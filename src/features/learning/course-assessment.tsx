@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AppShell } from "@/components/layout/app-shell";
+import { TopicArt } from "@/components/illustrations/topic-art";
 import { DemoProvider } from "@/features/demo/demo-store";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { OpenResponsePractice, type PackageActivity } from "./course-package-practice";
@@ -34,19 +35,27 @@ export function CourseAssessment({ content, stageId }: { content: Assessment; st
 }
 
 /** The check itself, shared by its own page and the course book's workbook. */
-export function AssessmentBody({ content, stageId }: { content: Assessment; stageId: string }) {
+export function AssessmentBody({ content, stageId, slug }: { content: Assessment; stageId: string; slug?: string }) {
+  const unitSlug = slug?.replace(/-check$/, "") || undefined;
   return <>
-    <div className="card section-card"><small>KIỂM TRA NỘI BỘ · {stageId.toUpperCase()}</small><h1>{content.title}</h1>
-      {content.instruction_vi && <p>{content.instruction_vi}</p>}
+    <div className="card section-card">
+      <div className="package-scene-hero">
+        <TopicArt topic={content.title} unitSlug={unitSlug} variant="unit" className="package-scene-art" />
+        <div className="package-scene-copy">
+          <span className="eyebrow">KIỂM TRA NỘI BỘ · {stageId.toUpperCase()}</span>
+          <h3>{content.title}</h3>
+          <p>{content.instruction_vi || content.goal_vi || "Ôn tập và tự đánh giá kiến thức của unit."}</p>
+        </div>
+      </div>
       {content.stage_warning && <p className="lab-note">{content.stage_warning}</p>}
       {content.goal_vi && <p className="lab-note"><b>Mục tiêu:</b> {content.goal_vi}</p>}
       {content.note && <p>{content.note}</p>}
       {content.review?.vocabulary_recall?.length ? <details className="lab-note"><summary>Từ vựng cần ôn</summary><ul>{content.review.vocabulary_recall.map((word, i) => <li key={`${word.en}-${i}`}><b>{word.en}</b> — {word.vi}</li>)}</ul></details> : null}
-      <OpenResponsePractice items={content.auto_scored ?? []} title="Câu hỏi từ vựng & ngữ pháp" />
-      <OpenResponsePractice items={content.language ?? []} title="Từ vựng & ngữ pháp mới" />
-      <OpenResponsePractice items={content.comprehension_checks ?? []} title="Câu hỏi hiểu bài" />
-      {(Array.isArray(content.reading) ? content.reading : content.reading ? [content.reading] : []).map((reading, index) => <section className="foundation-activity" key={`reading-${index}`}><h2>Bài đọc {index + 1}</h2><p className="foundation-passage">{reading.passage}</p><OpenResponsePractice items={questions(reading.questions)} title="Câu hỏi Reading" /></section>)}
-      {(Array.isArray(content.listening) ? content.listening : content.listening ? [content.listening] : []).map((listening, index) => <section className="foundation-activity" key={`listening-${index}`}><h2>Bài nghe {index + 1}</h2>{listening.audio_url && <audio controls src={listening.audio_url} aria-label={`Audio bài kiểm tra ${index + 1}`} />}<OpenResponsePractice items={questions(listening.questions)} title="Câu hỏi Listening" /></section>)}
+      <OpenResponsePractice topic={content.title} items={content.auto_scored ?? []} title="Câu hỏi từ vựng & ngữ pháp" />
+      <OpenResponsePractice topic={content.title} items={content.language ?? []} title="Từ vựng & ngữ pháp mới" />
+      <OpenResponsePractice topic={content.title} items={content.comprehension_checks ?? []} title="Câu hỏi hiểu bài" />
+      {(Array.isArray(content.reading) ? content.reading : content.reading ? [content.reading] : []).map((reading, index) => <section className="foundation-activity" key={`reading-${index}`}><h2>Bài đọc {index + 1}</h2><p className="foundation-passage">{reading.passage}</p><OpenResponsePractice topic={content.title} items={questions(reading.questions)} title="Câu hỏi Reading" /></section>)}
+      {(Array.isArray(content.listening) ? content.listening : content.listening ? [content.listening] : []).map((listening, index) => <section className="foundation-activity" key={`listening-${index}`}><h2>Bài nghe {index + 1}</h2>{listening.audio_url && <audio controls src={listening.audio_url} aria-label={`Audio bài kiểm tra ${index + 1}`} />}<OpenResponsePractice topic={content.title} items={questions(listening.questions)} title="Câu hỏi Listening" /></section>)}
       {(content.writing_task || content.writing) && <div className="lab-note"><h2>Writing</h2><p>{content.writing_task ?? (typeof content.writing === "string" ? content.writing : content.writing?.prompt ?? content.writing?.task)}</p><p>Viết bản nháp vào sổ tay hoặc giấy, sau đó tự đánh giá theo bài học. Phần này chưa chấm band IELTS.</p></div>}
       {content.writing && typeof content.writing === "object" && content.writing.rubric?.length ? <details className="lab-note"><summary>Tiêu chí tự đánh giá Writing</summary><ul>{content.writing.rubric.map((row) => <li key={row.criterion}><b>{row.criterion}:</b> {row.detail} ({row.max} điểm)</li>)}</ul></details> : null}
       {(content.speaking_task || content.speaking) && <div className="lab-note"><h2>Speaking</h2>{Array.isArray(content.speaking) ? <ol>{content.speaking.map((item) => <li key={item}>{item}</li>)}</ol> : <p>{content.speaking_task ?? content.speaking?.prompt ?? content.speaking?.task}</p>}<p>Ghi âm và tự nghe lại. Phần này chưa chấm band IELTS.</p></div>}

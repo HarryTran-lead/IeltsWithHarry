@@ -1,3 +1,4 @@
+import { enrichCourseBookArt } from "@/lib/course-book-art";
 import { bankClient, requestError, runSync } from "@/lib/ielts-bank/server";
 import type { SourceId } from "@/lib/ielts-bank/connectors";
 import { enrichIeltsCovers } from "@/lib/ielts-bank/cover-art";
@@ -17,7 +18,8 @@ export async function POST(request: Request) {
     const due = (data || []).filter((s) => activeIds.has(s.id) || !s.last_synced_at || Date.now() - new Date(s.last_synced_at).getTime() >= s.sync_hours * 3600000);
     const results = [];
     for (const source of due) results.push({ sourceId: source.id, ...(await runSync(source.id as SourceId)) });
-    const covers = await enrichIeltsCovers(client);
-    return Response.json({ results, covers });
+    const bookArt = await enrichCourseBookArt(client, 1);
+    const covers = bookArt.generated > 0 ? { generated: 0, skipped: 0 } : await enrichIeltsCovers(client);
+    return Response.json({ results, bookArt, covers });
   } catch (error) { return requestError(error); }
 }

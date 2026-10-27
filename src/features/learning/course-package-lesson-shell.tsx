@@ -59,7 +59,7 @@ function Content({ packageContent, canManage, ...lessonProps }: Props) {
 export type PackageLessonProps = Omit<Props, "navigation" | "canManage">;
 
 export function PackageLessonHeading({ lesson, packageContent }: Pick<Props, "lesson" | "packageContent">) {
-  return <header className="package-lesson-heading"><TopicArt topic={lesson.title} className="package-lesson-art" /><div><span className="eyebrow">{lesson.skill.toUpperCase()} · BÀI HỌC THEO BƯỚC</span><h1>{lesson.title}</h1></div>{(lesson.summary || packageContent.aim || packageContent.output) && <details><summary>Mục tiêu & mô tả bài</summary>{lesson.summary && <p>{lesson.summary}</p>}{(packageContent.aim || packageContent.output) && <p><Target size={15} /> {packageContent.aim || packageContent.output}</p>}</details>}</header>;
+  return <header className="package-lesson-heading"><TopicArt topic={lesson.title} lessonSlug={lesson.slug} imageUrl={packageContent.image_url} variant="lesson" className="package-lesson-art" /><div><span className="eyebrow">{lesson.skill.toUpperCase()} · BÀI HỌC THEO BƯỚC</span><h1>{lesson.title}</h1></div>{(lesson.summary || packageContent.aim || packageContent.output) && <details><summary>Mục tiêu & mô tả bài</summary>{lesson.summary && <p>{lesson.summary}</p>}{(packageContent.aim || packageContent.output) && <p><Target size={15} /> {packageContent.aim || packageContent.output}</p>}</details>}</header>;
 }
 
 /** The three lesson steps (learn, practise, remember); `finish` is the call to action after the last step. */
@@ -96,18 +96,18 @@ export function PackageLessonSteps({ packageContent, finish, onStepChange, ...le
       <main className="package-lesson-main">
         <section className="package-step-panel" hidden={step !== 0} aria-label="Bước 1: Tìm hiểu"><div className="package-step-heading"><span>01 / 03</span><h2>Bắt đầu từ ý chính</h2><p>Đọc hoặc nghe mẫu trước. Khi đã sẵn sàng, chuyển sang phần luyện tập.</p></div>
           {packageContent.type !== "intro" && lesson.skill !== "Writing" && lesson.skill !== "Speaking" && <LessonDetail {...lessonProps} display="material" />}
-          <PackageLessonPractice content={packageContent} mode="learn" />
+          <PackageLessonPractice content={packageContent} lessonSlug={lesson.slug} lessonTitle={lesson.title} mode="learn" />
           {words.length > 0 && <details className="package-word-details"><summary>Khám phá {words.length} từ trong bài</summary><LessonDetail {...lessonProps} display="words" /></details>}
           <div className="package-panel-actions"><button type="button" className="button primary" onClick={() => goTo(1)}>Bắt đầu luyện tập <ArrowRight size={17} /></button></div>
         </section>
         <section className="package-step-panel" hidden={step !== 1} aria-label="Bước 2: Thực hành"><div className="package-step-heading"><span>02 / 03</span><h2>Thử sức từng câu</h2><p>Chọn hoặc viết câu trả lời, bấm kiểm tra rồi xem giải thích. Bạn có thể quay lại câu trước bất cứ lúc nào.</p></div>
           {(lesson.skill === "Writing" || lesson.skill === "Speaking") && <LessonDetail {...lessonProps} display="material" />}
-          <PackageLessonPractice content={packageContent} mode="practice" />
+          <PackageLessonPractice content={packageContent} lessonSlug={lesson.slug} lessonTitle={lesson.title} mode="practice" />
           {!hasAuthoredQuestions && questions.length > 0 && <LessonDetail {...lessonProps} display="questions" />}
           <div className="package-panel-actions"><button type="button" className="button subtle" onClick={() => goTo(0)}>← Xem lại bài</button><button type="button" className="button primary" onClick={() => goTo(2)}>Đến bước ghi nhớ <ArrowRight size={17} /></button></div>
         </section>
         <section className="package-step-panel" hidden={step !== 2} aria-label="Bước 3: Ghi nhớ"><div className="package-step-heading"><span>03 / 03</span><h2>Mang kiến thức sang bài tiếp theo</h2><p>Đối chiếu điều bạn vừa học với mục tiêu, rồi trở lại bản đồ để chọn ga tiếp theo.</p></div>
-          <PackageLessonPractice content={packageContent} mode="review" />
+          <PackageLessonPractice content={packageContent} lessonSlug={lesson.slug} lessonTitle={lesson.title} mode="review" />
           <div className="package-panel-actions"><button type="button" className="button subtle" onClick={() => goTo(1)}>← Luyện lại</button>{finish}</div>
         </section>
       </main>

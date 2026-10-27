@@ -5638,3 +5638,106 @@ a.card:hover {
 @media (max-width: 520px) { .foundation-steps { grid-template-columns: 1fr; } .learn-overview .stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 1200px) { .study-chapters { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .study-chapters { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+
+/* AI-generated course book & lesson illustrations (Pollinations.ai) */
+.topic-art { position: relative; }
+.topic-art > em.topic-ai-badge {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  z-index: 2;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: rgba(15, 23, 42, 0.68);
+  color: #f8fafc;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 10px !important;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2 !important;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+.package-scene-hero {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid #cfe6e4;
+  border-radius: 16px;
+  background: linear-gradient(125deg, #f2fbf9 0%, #ffffff 65%, #fffaf0 100%);
+  box-shadow: 0 8px 22px -14px rgba(16, 35, 63, 0.22);
+}
+.package-scene-art {
+  width: 100%;
+  height: 142px;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 35, 63, 0.1);
+}
+.package-scene-copy {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.package-scene-copy h3 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.25;
+  color: var(--navy);
+}
+.package-scene-copy p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.guided-practice-banner {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #dce8ea;
+  border-radius: 14px;
+  background: linear-gradient(120deg, #f6fbfb, #fffdf9);
+}
+.guided-practice-art {
+  width: 100%;
+  height: 96px;
+  border-radius: 10px;
+  border: 1px solid rgba(16, 35, 63, 0.1);
+}
+.guided-practice-banner-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.guided-practice-banner-copy small {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0a7f89;
+}
+.guided-practice-banner-copy strong {
+  font-size: 14.5px;
+  line-height: 1.35;
+  color: var(--navy);
+}
+@media (max-width: 720px) {
+  .package-scene-hero,
+  .guided-practice-banner {
+    grid-template-columns: 1fr;
+  }
+  .package-scene-art {
+    height: 160px;
+  }
+  .guided-practice-art {
+    height: 136px;
+  }
+}

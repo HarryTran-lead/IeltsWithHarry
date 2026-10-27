@@ -4,6 +4,7 @@ import { useEffect, useEffectEvent, useRef, useState, type CSSProperties, type R
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink, X } from "lucide-react";
+import { TopicArt } from "@/components/illustrations/topic-art";
 import { createClient } from "@/lib/supabase/browser";
 import { skillMaterialSchema } from "@/lib/skill-material";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -125,6 +126,7 @@ export function BookWorkbook({ item, stageId, position, total, previous, next, o
     <div className="bk-workbook-sheet">
       <header className="bk-workbook-head">
         <button ref={closeButton} type="button" className="bk-workbook-back" onClick={onClose}><ArrowLeft size={17} /> <span>Về sách</span></button>
+        {item.kind === "lesson" && <TopicArt topic={item.lesson.title} lessonSlug={item.lesson.slug} variant="lesson" badge={false} className="bk-workbook-art" />}
         <div className="bk-workbook-title">
           {item.kind === "lesson" ? <small><b>{item.lesson.skill}</b> · Bài {position}/{total}</small> : <small><b>Kiểm tra</b> · Ôn tập và tự đánh giá</small>}
           <h2>{item.kind === "lesson" ? lessonShortTitle(item.lesson) : item.title}</h2>
@@ -170,7 +172,7 @@ function CheckSheet({ slug, stageId, onClose, path }: { slug: string; stageId: s
   const result = useLoaded(`check:${slug}`, () => loadCheck(slug));
   if (!result?.data) return <SheetState error={result?.error} path={path} />;
   return <div className="bk-workbook-lesson bk-workbook-check">
-    <AssessmentBody content={result.data} stageId={stageId} />
+    <AssessmentBody content={result.data} stageId={stageId} slug={slug} />
     <div className="package-panel-actions"><button type="button" className="button primary" onClick={onClose}>Xong, về sách <ArrowRight size={17} /></button></div>
   </div>;
 }
