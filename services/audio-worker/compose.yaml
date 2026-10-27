@@ -1,0 +1,18 @@
+services:
+  audio-worker:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      AUDIO_CACHE_DIR: /worker/cache
+      KOKORO_MODEL_ID: hexgrad/Kokoro-82M
+    volumes:
+      - kokoro-cache:/worker/cache
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m
+    security_opt:
+      - no-new-privileges:true
+    # Deliberately no published ports: only outbound Supabase traffic is needed.
+volumes:
+  kokoro-cache:

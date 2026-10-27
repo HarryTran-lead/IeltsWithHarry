@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes, LibraryBig, UsersRound, Megaphone, History } from "lucide-react";
 import { BankAdmin } from "@/features/ielts/bank-admin";
+import { AiContentFactory } from "@/features/ai-factory/ai-content-factory";
 import { Sticker } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { AdminShell, type AdminNavGroup } from "./admin-shell";
@@ -34,6 +35,7 @@ const nav = [
   { slug: "speaking", label: "Speaking", icon: Mic },
   { slug: "media", label: "Media library", icon: Image },
   { slug: "ielts-bank", label: "Ngân hàng IELTS", icon: LibraryBig },
+  { slug: "ai-content-factory", label: "AI Content Factory", icon: Shapes },
   { slug: "news", label: "Daily News", icon: Newspaper },
   { slug: "news/settings", label: "News settings", icon: Settings2 },
   { slug: "news/manual", label: "Add news", icon: FilePlus2 },
@@ -46,7 +48,7 @@ const navGroups = [
   { label: "Tổng quan", slugs: ["overview"] },
   { label: "Học viên", slugs: ["users", "users/broadcast", "users/audit"] },
   { label: "Nội dung", slugs: ["curriculum", "media"] },
-  { label: "IELTS Management", slugs: ["ielts-bank"] },
+  { label: "IELTS Management", slugs: ["ielts-bank", "ai-content-factory"] },
   { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "grammar", "reading", "listening", "writing", "speaking"] },
   { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/sync-logs"] },
 ];
@@ -187,6 +189,7 @@ export function AdminEditor() {
     {section === "vocabulary/library" && <VocabularyBank />}
     {section === "media" && <MediaLibrary />}
     {section === "ielts-bank" && <BankAdmin />}
+    {section === "ai-content-factory" && <AiContentFactory />}
     {section.startsWith("news") && <AdminNews section={section} />}
     </>}
     {section === "users" && (learnerId ? <AdminLearnerDetail key={learnerId} id={learnerId} /> : <AdminLearners />)}

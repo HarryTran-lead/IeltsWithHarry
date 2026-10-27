@@ -70,7 +70,7 @@ export async function runSync(sourceId: SourceId, options: { dryRun?: boolean; a
               let status: "inserted" | "updated" | "skipped" = "skipped";
               if (options.dryRun) {
                 const { data: existing, error: lookupError } = await client.from("ielts_exams")
-                  .select("id,ielts_exam_versions!ielts_exams_current_version_fk(content_hash)")
+                  .select("id,ielts_exam_versions!ielts_current_version_fk(content_hash)")
                   .eq("source_id", sourceId).eq("external_id", exam.externalId).maybeSingle();
                 if (lookupError) throw new Error(lookupError.message);
                 if (!existing) status = "inserted";
@@ -187,31 +187,40 @@ function metadata(exam: NormalizedExam) {
 function importHash(exam: NormalizedExam) {
   return contentHash({ metadata: metadata(exam), content: exam.content });
 }
-export async function saveRevision(examId: string, content: unknown, actorId: string) {
+export async function saveRevision(examId: string, content: unknown, actorId: string, expectedVersionId?: string) {
   const parsed = contentSchema.parse(content), client = bankClient();
-  const { data: exam, error } = await client.from("ielts_exams").select("*,ielts_exam_versions!ielts_exams_current_version_fk(revision,upstream_version)").eq("id", examId).single();
+  const { data: exam, error } = await client.from("ielts_exams").select("*,ielts_exam_versions!ielts_current_version_fk(revision,upstream_version)").eq("id", examId).single();
   if (error || !exam) throw new Error(error?.message || "Exam unavailable");
   const version = Array.isArray(exam.ielts_exam_versions) ? exam.ielts_exam_versions[0] : exam.ielts_exam_versions;
   const warnings = validateExam({ ...exam, externalId: exam.external_id, durationMinutes: exam.duration_minutes, sourceUrl: exam.source_url, licenseUrl: exam.license_url, aiGenerated: exam.ai_generated, upstreamVersion: version?.upstream_version ?? "manual", content: parsed });
   const { data: row, error: insertError } = await client.from("ielts_exam_versions").insert({ exam_id: examId, revision: (version?.revision ?? 0) + 1, upstream_version: version?.upstream_version ?? "manual", content_hash: contentHash(parsed), content: parsed, warnings }).select("id").single();
   if (insertError || !row) throw new Error(insertError?.message || "Revision failed");
-  await client.from("ielts_exams").update({ current_version_id: row.id, status: "needs_review", updated_at: new Date().toISOString() }).eq("id", examId);
-  await client.from("ielts_review_log").insert({ exam_id: examId, version_id: row.id, actor_id: actorId, action: "edit" });
+  let update = client.from("ielts_exams").update({ current_version_id: row.id, status: "needs_review", updated_at: new Date().toISOString() }).eq("id", examId);
+  if (expectedVersionId) update = update.eq("current_version_id", expectedVersionId);
+  const { data: updated, error: updateError } = await update.select("id").maybeSingle();
+  if (updateError || !updated) throw new Error(updateError?.message || "Exam changed during revision");
+  const { error: logError } = await client.from("ielts_review_log").insert({ exam_id: examId, version_id: row.id, actor_id: actorId, action: "edit" });
+  if (logError) throw new Error(logError.message);
   return { versionId: row.id, warnings };
 }
 export async function reviewExam(examId: string, action: "ready" | "publish" | "reject" | "archive", actorId: string, note = "") {
   const client = bankClient();
-  const { data: exam, error } = await client.from("ielts_exams").select("*,ielts_exam_versions!ielts_exams_current_version_fk(content,warnings)").eq("id", examId).single();
+  const { data: exam, error } = await client.from("ielts_exams").select("*,ielts_exam_versions!ielts_current_version_fk(content,warnings)").eq("id", examId).single();
   if (error || !exam) throw new Error(error?.message || "Exam unavailable");
   const version = Array.isArray(exam.ielts_exam_versions) ? exam.ielts_exam_versions[0] : exam.ielts_exam_versions;
   if (["ready", "publish"].includes(action)) {
     if (!version || (version.warnings as string[]).length) throw new Error("Resolve validation warnings before approval");
     if (action === "publish" && !["ready", "published"].includes(exam.status)) throw new Error("Mark exam ready before publishing");
+    if (exam.source_id === "ai-factory" && exam.skill === "Listening") {
+      const { data: audioReview, error: audioError } = await client.from("ai_factory_jobs").select("id").eq("exam_id", examId).eq("exam_version_id", exam.current_version_id).eq("status", "approved").limit(1);
+      if (audioError || !audioReview?.length) throw new Error("Approved audio QA and human review required");
+    }
   }
   const status = { ready: "ready", publish: "published", reject: "rejected", archive: "archived" }[action];
   const { error: updateError } = await client.from("ielts_exams").update({ status, ...(action === "publish" ? { published_version_id: exam.current_version_id } : {}), ...(action === "archive" ? { published_version_id: null } : {}), updated_at: new Date().toISOString() }).eq("id", examId);
   if (updateError) throw new Error(updateError.message);
-  await client.from("ielts_review_log").insert({ exam_id: examId, version_id: exam.current_version_id, actor_id: actorId, action, note });
+  const { error: logError } = await client.from("ielts_review_log").insert({ exam_id: examId, version_id: exam.current_version_id, actor_id: actorId, action, note });
+  if (logError) throw new Error(logError.message);
   return { status };
 }
 export async function submitAttempt(attemptId: string, userId: string, answers: Record<string, string>, state: "submitted" | "expired") {

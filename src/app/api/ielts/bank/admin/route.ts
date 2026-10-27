@@ -15,7 +15,7 @@ export async function GET(request: Request) {
       if (error) throw new Error(error.message);
       return Response.json({ items: data });
     }
-    let examsQuery = client.from("ielts_exams").select("*,ielts_exam_versions!ielts_exams_current_version_fk(content,warnings,revision,upstream_version)", { count: "exact" }).order("updated_at", { ascending: false }).range(page * 25, page * 25 + 24);
+    let examsQuery = client.from("ielts_exams").select("*,ielts_exam_versions!ielts_current_version_fk(content,warnings,revision,upstream_version)", { count: "exact" }).order("updated_at", { ascending: false }).range(page * 25, page * 25 + 24);
     for (const filter of ["skill", "status", "source_id", "topic", "difficulty"] as const) if (url.searchParams.get(filter)) examsQuery = examsQuery.eq(filter, url.searchParams.get(filter)!);
     const search = url.searchParams.get("q")?.trim(); if (search) examsQuery = examsQuery.ilike("title", `%${search.replace(/[%_]/g, "")}%`);
     const [exams, sourceRows, jobs, attempts] = await Promise.all([

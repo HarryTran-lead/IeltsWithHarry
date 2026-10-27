@@ -1,5 +1,6 @@
 node_modules
 .next
+services/audio-worker/output/
 .vercel
 supabase/.temp/
 .env*
