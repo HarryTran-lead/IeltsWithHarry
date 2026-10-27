@@ -36,6 +36,14 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const [selectedLevel, setSelectedLevel] = useState("");
   const [vocabularyCount, setVocabularyCount] = useState<number | null>(null);
   useEffect(() => {
+    const hash = window.location.hash;
+    if (hash !== "#che-do-hoc" && hash !== "#ngan-hang-de") return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(hash.slice(1))?.scrollIntoView({ block: "start" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [skill]);
+  useEffect(() => {
     if (skill !== "vocabulary" || demoMode) return;
     let active = true;
     const db = createClient();
@@ -138,7 +146,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     </div>
 
 
-    <div className="ielts-dashboard-modes-head">
+    <div id="che-do-hoc" className="ielts-dashboard-modes-head">
     <h2 title={`${allModes.length} chế độ trong kế hoạch. Thẻ “Sắp triển khai” là bản xem trước giao diện.`}>Chế độ học</h2>
     <div className="ielts-dashboard-mode-filters" role="group" aria-label="Lọc chế độ học">
       <button type="button" className={modeFilter === "all" ? "active" : ""} aria-pressed={modeFilter === "all"} onClick={() => setModeFilter("all")}>Tất cả <span>{allModes.length}</span></button>

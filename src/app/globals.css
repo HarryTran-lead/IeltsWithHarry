@@ -460,6 +460,9 @@ strong {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.nav-item {
+  min-width: 0;
+}
 .nav-link {
   position: relative;
   display: flex;
@@ -515,6 +518,46 @@ strong {
 }
 .nav-link > span:not(.study-nav-count) {
   flex: 1;
+}
+.nav-skill-chevron {
+  flex: none;
+  transition: transform 0.2s ease;
+}
+.nav-skill-link[aria-expanded="true"] .nav-skill-chevron {
+  transform: rotate(180deg);
+}
+.nav-submenu {
+  display: grid;
+  gap: 2px;
+  margin: 2px 0 6px 27px;
+  padding-left: 10px;
+  border-left: 2px solid var(--line);
+}
+.nav-submenu[hidden] {
+  display: none;
+}
+.nav-submenu-link {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 9px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.25;
+  transition: background-color 0.2s, color 0.2s;
+}
+.nav-submenu-link:hover,
+.nav-submenu-link.active {
+  background: var(--teal-soft);
+  color: var(--teal-strong);
+}
+.nav-submenu-link.active {
+  font-weight: 700;
+}
+#che-do-hoc,
+#ngan-hang-de {
+  scroll-margin-top: 88px;
 }
 .study-nav-count {
   display: inline-flex;
@@ -2598,7 +2641,7 @@ a.card:hover {
 }
 @media (max-width: 1100px) {
   .app-frame {
-    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-columns: 220px minmax(0, 1fr);
   }
   .brand {
     width: auto;
@@ -2617,33 +2660,31 @@ a.card:hover {
     border-top: 1px solid var(--line);
   }
   .nav-group-label {
-    display: none;
+    display: block;
   }
   .nav-link {
-    justify-content: center;
-    padding: 0;
-    height: 40px;
+    justify-content: flex-start;
+    padding: 0 10px;
+    height: 36px;
   }
   .nav-link::before {
     left: -10px;
   }
   .nav-link span {
-    display: none;
+    display: inline;
   }
   .nav-link .study-nav-count {
-    position: absolute;
-    top: 1px;
-    right: 1px;
+    position: static;
     display: inline-flex;
-    min-width: 17px;
-    padding: 0 4px;
-    font-size: 9.5px;
+    min-width: 30px;
+    padding: 1px 7px;
+    font-size: 11px;
   }
   .nav-link .study-nav-count i {
-    display: none;
+    display: inline-block;
   }
   .nav-link .news-nav-count small {
-    display: none;
+    display: inline;
   }
   .sidebar-card {
     display: flex;
