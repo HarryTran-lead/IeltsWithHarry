@@ -162,7 +162,7 @@ export function BankLibraryView({ skill, exams, attempts, loading, error }: { sk
     ...sources.map((value) => ({ value, clear: () => toggle(sources, setSources, value) })),
   ];
 
-  return <section className={`bl-library bl-tone-${librarySkills[skill].tone}`} aria-label={`Ngân hàng đề ${skill}`}>
+  return <section id="ngan-hang-de" className={`bl-library bl-tone-${librarySkills[skill].tone}`} aria-label={`Ngân hàng đề ${skill}`}>
     <div className="bl-filterbar">
       <div className="bl-filter-row">
         <div className="bl-chips" role="group" aria-label="Dạng bài">
