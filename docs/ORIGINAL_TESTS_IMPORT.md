@@ -26,4 +26,12 @@ The production database accepts **admin-only drafts** using `.env.production.loc
 
 The requirement is a **human performance**, with consent or a suitable licence for site distribution. Do not substitute browser speech synthesis or generated voices for the missing MP3s. Record distinct speakers where the script is a dialogue; edit obvious unnatural lines first. For each of the 20 parts, check names, numbers, spelling, pace, accent consistency, pauses and question alignment by listening to the final MP3. Store reviewed files in the existing `ielts-audio` bucket and attach their URLs only after rights and editorial approval. Until then, Listening remains invisible to learners.
 
+To prepare a hand-off for a human editor and performers, run:
+
+```powershell
+python scripts/build-original-recording-kit.py 'C:\path\English_Skill_Lab_Source_10_Original_Tests.zip' 'C:\path\IeltsWithHarry_Human_Recording_Kit.zip'
+```
+
+The resulting private ZIP has 20 editable actor scripts, 20 separate answer-cue review sheets, and a CSV recording plan. It removes 45 exact stock filler lines while checking that question evidence remains. **These scripts are working drafts, not approved copy.** A sample has incorrect speaker turns (the caller recites the library's rules while the clerk responds as the customer), and some repetitive correction exchanges. An editor must repair every dialogue and expand the short recordings before performers rehearse. The answer sheets must stay private, and a real listener must check each finished recording before any audio is attached to a test.
+
 Reading also requires a question-by-question editor review. The package's structural validator and the import checks establish completeness, not exam validity, answer nuance, or an IELTS band score. Do not label the pilot official IELTS or use a score-to-band conversion.
