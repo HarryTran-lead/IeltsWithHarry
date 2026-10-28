@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import json
 import os
 import subprocess
@@ -56,6 +57,16 @@ def main() -> None:
     drafts = db.rows("ielts_vocabulary_draft_entries", "candidate_key,batch_key,topic_slug,term,normalized_term,examples,review_status,qa_flags")
     original_titles = set(json.loads((Path(__file__).resolve().parent.parent / "src/lib/vocabulary/ielts-topics.json").read_text(encoding="utf-8")))
     matrix = json.loads((Path(__file__).resolve().parent.parent / "content/vocabulary/phase5/coverage-matrix.json").read_text(encoding="utf-8"))
+    content_dir = Path(__file__).resolve().parent.parent / "content/vocabulary/phase5"
+    source_batches = []
+    for path in content_dir.glob("*.json"):
+        raw = path.read_bytes()
+        parsed = json.loads(raw)
+        if "entries" in parsed:
+            source_batches.append((parsed, hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()))
+    expected_batch_hashes = {item["batch_key"]: digest for item, digest in source_batches}
+    expected_terms = {audit.normalized(entry["term"]) for item, _ in source_batches for entry in item["entries"]}
+    expected_examples = sum(len(entry["examples"]) for item, _ in source_batches for entry in item["entries"])
     expansion = {row["title"]: row["target_new_unique"] for row in topics if row["origin"] == "editorial_expansion"}
     source_named = {row["title"] for row in topics if row["origin"] == "source_named"}
     matrix_targets = {row["title"]: row["target_new_unique"] for row in matrix["topics"]}
@@ -68,10 +79,12 @@ def main() -> None:
         "catalog_matches_source": source_named == original_titles,
         "coverage_matrix_matches_catalog": matrix_targets == expansion,
         "draft_batches": len(batches),
+        "batch_hashes_match_files": {row["batch_key"]: row["source_sha256"] for row in batches} == expected_batch_hashes,
         "draft_entries": len(drafts),
         "draft_examples": sum(len(row["examples"]) for row in drafts),
+        "draft_terms_match_files": {row["normalized_term"] for row in drafts} == expected_terms,
         "approved": sum(row["review_status"] == "approved" for row in drafts),
-        "published_new_unique": 0,
+        "published_new_unique": db.count("ielts_vocabulary_entries", "source_key") - 5000,
         "unique_normalized_drafts": len({row["normalized_term"] for row in drafts}),
         "anon_topics_visible": anonymous_visible_rows("ielts_learning_topics", key),
         "anon_drafts_visible": anonymous_visible_rows("ielts_vocabulary_draft_entries", key),
@@ -81,9 +94,11 @@ def main() -> None:
     }
     expected = {"topics": 40, "source_named_topics": 25, "expansion_topics": 15,
                 "target_new_unique": 2650, "catalog_matches_source": True,
-                "coverage_matrix_matches_catalog": True, "draft_batches": 2,
-                "draft_entries": 50, "draft_examples": 100, "approved": 0,
-                "published_new_unique": 0, "unique_normalized_drafts": 50,
+                "coverage_matrix_matches_catalog": True, "draft_batches": len(source_batches),
+                "batch_hashes_match_files": True,
+                "draft_entries": len(expected_terms), "draft_examples": expected_examples,
+                "draft_terms_match_files": True,
+                "published_new_unique": 0, "unique_normalized_drafts": len(expected_terms),
                 "anon_topics_visible": 0, "anon_drafts_visible": 0,
                 "legacy_cefr_rows": 9941, "legacy_lesson_rows": 1237,
                 "existing_ielts_rows": 5000}
