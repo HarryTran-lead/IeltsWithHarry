@@ -9,8 +9,8 @@ export const supabaseConfigured = Boolean(
 );
 
 export const liveMode = !demoMode && supabaseConfigured;
-/** Hide unfinished learner experiences in deployed builds until their content is ready. */
-export const releaseLocks = process.env.NODE_ENV === "production";
+/** Keep launch locks in production; the isolated develop Preview can expose work in progress. */
+export const releaseLocks = process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES !== "true";
 
 export function lockedLearnerPath(pathname: string) {
   if (!releaseLocks) return false;

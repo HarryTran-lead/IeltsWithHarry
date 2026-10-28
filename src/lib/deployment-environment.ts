@@ -20,14 +20,17 @@ export function assertDeploymentEnvironment(env: Record<string, string | undefin
   const demo = env.NEXT_PUBLIC_DEMO_MODE === "true";
 
   if (target === "production") {
-    if (demo || projectRef !== PRODUCTION_SUPABASE_REF) {
-      throw new Error("Production must use the production Supabase project with demo mode disabled.");
+    if (demo || projectRef !== PRODUCTION_SUPABASE_REF || env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES === "true") {
+      throw new Error("Production must use the production Supabase project with demo mode disabled and release locks enabled.");
     }
     return;
   }
 
   if (projectRef === PRODUCTION_SUPABASE_REF) {
     throw new Error("Preview deployments must never connect to the production Supabase project.");
+  }
+  if (env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES === "true" && (demo || !projectRef)) {
+    throw new Error("Unlocked Preview requires an isolated live Supabase project.");
   }
   if (!demo && (!projectRef || !env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || !env.SUPABASE_SERVICE_ROLE_KEY)) {
     throw new Error("Live Preview requires a separate Supabase URL, publishable key and server-only service key.");

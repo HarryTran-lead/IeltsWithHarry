@@ -9,6 +9,7 @@ describe("deployment environment isolation", () => {
     expect(() => assertDeploymentEnvironment({ VERCEL_ENV: "production", NEXT_PUBLIC_DEMO_MODE: "false", NEXT_PUBLIC_SUPABASE_URL: prodUrl })).not.toThrow();
     expect(() => assertDeploymentEnvironment({ VERCEL_ENV: "production", NEXT_PUBLIC_DEMO_MODE: "true", NEXT_PUBLIC_SUPABASE_URL: prodUrl })).toThrow();
     expect(() => assertDeploymentEnvironment({ VERCEL_ENV: "production", NEXT_PUBLIC_DEMO_MODE: "false", NEXT_PUBLIC_SUPABASE_URL: devUrl })).toThrow();
+    expect(() => assertDeploymentEnvironment({ VERCEL_ENV: "production", NEXT_PUBLIC_DEMO_MODE: "false", NEXT_PUBLIC_SUPABASE_URL: prodUrl, NEXT_PUBLIC_UNLOCK_DEV_FEATURES: "true" })).toThrow();
   });
 
   it("rejects production Supabase from every preview", () => {
@@ -19,5 +20,7 @@ describe("deployment environment isolation", () => {
     expect(() => assertDeploymentEnvironment({ VERCEL_ENV: "preview", NEXT_PUBLIC_DEMO_MODE: "true" })).not.toThrow();
     expect(() => assertDeploymentEnvironment({ VERCEL_ENV: "preview", NEXT_PUBLIC_DEMO_MODE: "false", NEXT_PUBLIC_SUPABASE_URL: devUrl })).toThrow();
     expect(() => assertDeploymentEnvironment({ VERCEL_ENV: "preview", NEXT_PUBLIC_DEMO_MODE: "false", NEXT_PUBLIC_SUPABASE_URL: devUrl, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: "public", SUPABASE_SERVICE_ROLE_KEY: "server-only" })).not.toThrow();
+    expect(() => assertDeploymentEnvironment({ VERCEL_ENV: "preview", NEXT_PUBLIC_DEMO_MODE: "false", NEXT_PUBLIC_SUPABASE_URL: devUrl, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: "public", SUPABASE_SERVICE_ROLE_KEY: "server-only", NEXT_PUBLIC_UNLOCK_DEV_FEATURES: "true" })).not.toThrow();
+    expect(() => assertDeploymentEnvironment({ VERCEL_ENV: "preview", NEXT_PUBLIC_DEMO_MODE: "true", NEXT_PUBLIC_UNLOCK_DEV_FEATURES: "true" })).toThrow();
   });
 });
