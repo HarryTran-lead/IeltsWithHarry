@@ -3,6 +3,7 @@ import { bankClient, requestError, saveRevision, viewer } from "@/lib/ielts-bank
 import { contentHash, contentSchema, validateExam } from "@/lib/ielts-bank/schema";
 import { pilotContent, pilotPayload } from "@/lib/ai-factory/pilot";
 import { createTextPracticeJob } from "@/lib/ai-factory/produce";
+import { defaultKind, factoryKinds, type FactoryKind } from "@/lib/ai-factory/kinds";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -32,7 +33,7 @@ export async function GET() {
 
 const command = z.discriminatedUnion("action", [
   z.object({ action: z.literal("pilot") }),
-  z.object({ action: z.literal("generate"), skill: z.enum(["Listening", "Reading", "Writing", "Speaking"]), topic: z.string().trim().min(8).max(100) }),
+  z.object({ action: z.literal("generate"), skill: z.enum(["Listening", "Reading", "Writing", "Speaking"]), kind: z.enum(Object.keys(factoryKinds) as [FactoryKind, ...FactoryKind[]]).optional(), topic: z.string().trim().min(4).max(100) }),
   z.object({ action: z.literal("settings"), generationEnabled: z.boolean().optional(), dailyJobLimit: z.number().int().min(0).max(100).optional(), maxConcurrency: z.number().int().min(1).max(8).optional() }),
   z.object({ action: z.literal("voice"), voiceId: z.string().min(1), enabled: z.boolean(), pace: z.number().min(0.75).max(1.25).optional() }),
   z.object({ action: z.literal("cancel"), jobId: z.uuid() }),
@@ -63,7 +64,9 @@ export async function POST(request: Request) {
       return Response.json({ ok: true });
     }
     if (body.action === "generate") {
-      return Response.json(await createTextPracticeJob(client, body.skill, body.topic, actor.id));
+      // A kind must belong to the chosen skill; without one, the skill's default kind is written.
+      const kind = body.kind && factoryKinds[body.kind].skill === body.skill ? body.kind : defaultKind[body.skill];
+      return Response.json(await createTextPracticeJob(client, kind, body.topic, actor.id, { day: Math.floor(Date.now() / 86_400_000) }));
     }
     if (body.action === "pilot") {
       const { data: settings, error: settingsError } = await client.from("ai_factory_settings").select("daily_job_limit").single();

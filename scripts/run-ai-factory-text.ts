@@ -1,13 +1,9 @@
 import { createClient } from "@supabase/supabase-js";
 import { createTextPracticeJob } from "../src/lib/ai-factory/produce";
-import type { TextSkill } from "../src/lib/ai-factory/text-generation";
+import { factoryKinds, kindForSlot, topicSeeds, type FactoryKind } from "../src/lib/ai-factory/kinds";
 
-const topics: Record<TextSkill, string[]> = {
-  Listening: ["Booking a community workshop", "Asking about a local cycling course", "Arranging a museum visit", "Registering for a language club"],
-  Reading: ["Urban green spaces and wellbeing", "How communities preserve local archives", "Designing quieter public spaces", "The history of small inventions"],
-  Writing: ["Public transport and city life", "Technology in education", "Protecting local cultural traditions", "Working from home and community life"],
-  Speaking: ["A useful skill learned from someone", "A memorable public place", "A helpful conversation", "An activity shared with friends"],
-};
+// Five daily slots (UTC): two Listening parts, Reading, Writing, Speaking. See kindForSlot for the rotation.
+const slots: Record<string, number> = { "27 8 * * *": 0, "37 8 * * *": 1, "47 8 * * *": 2, "57 8 * * *": 3, "7 9 * * *": 4 };
 
 async function main() {
   if (process.env.AI_FACTORY_FREE_TIER_CONFIRMED !== "true" || process.env.AI_FACTORY_FREE_TIER_ONLY !== "true" || !process.env.AI_FACTORY_GEMINI_API_KEY) {
@@ -25,24 +21,24 @@ async function main() {
     return;
   }
   const day = Math.floor(Date.now() / 86_400_000);
-  const skills: TextSkill[] = ["Listening", "Reading", "Writing", "Speaking"];
-  const scheduled: Record<string, TextSkill> = {
-    "37 8 * * *": "Listening", "47 8 * * *": "Reading", "57 8 * * *": "Writing", "7 9 * * *": "Speaking",
-  };
-  const requested = process.env.AI_FACTORY_SKILL;
-  if (requested && !skills.includes(requested as TextSkill)) throw new Error("Invalid AI Factory skill");
-  const skill = (requested as TextSkill | undefined) || scheduled[process.env.AI_FACTORY_SCHEDULE_CRON || ""] || skills[day % skills.length];
+  // A manual run may name a kind (or, as before, a skill, meaning that skill's first kind).
+  const requested = process.env.AI_FACTORY_KIND || process.env.AI_FACTORY_SKILL || "";
+  const named = requested in factoryKinds ? requested as FactoryKind : (Object.keys(factoryKinds) as FactoryKind[]).find((item) => factoryKinds[item].skill === requested);
+  if (requested && !named) throw new Error("Invalid AI Factory kind");
+  const kind = named ?? kindForSlot(slots[process.env.AI_FACTORY_SCHEDULE_CRON || ""] ?? day % 5, day);
   const today = new Date(); today.setUTCHours(0, 0, 0, 0);
-  const kind = skill === "Listening" ? "listening_audio" : skill.toLowerCase();
-  const { count, error: duplicateError } = await client.from("ai_factory_jobs").select("id", { count: "exact", head: true }).eq("kind", kind).gte("created_at", today.toISOString());
+  const { count, error: duplicateError } = await client.from("ai_factory_jobs").select("id", { count: "exact", head: true }).contains("payload", { factoryKind: kind }).gte("created_at", today.toISOString());
   if (duplicateError) throw new Error(duplicateError.message);
   if (count) {
-    console.log(`${skill} already has a Content Factory draft today; skipping duplicate.`);
+    console.log(`${kind} already has a Content Factory draft today; skipping duplicate.`);
     return;
   }
-  const topic = topics[skill][Math.floor(day / skills.length) % topics[skill].length];
-  const result = await createTextPracticeJob(client, skill, topic);
-  console.log(`Created ${skill} practice job ${result.job.id}: ${result.status}`);
+  // Recent factory titles for the same skill, so the model does not repeat a topic or angle.
+  const { data: recent } = await client.from("ielts_exams").select("title").eq("source_id", "ai-factory").eq("skill", factoryKinds[kind].skill).order("created_at", { ascending: false }).limit(30);
+  const seeds = topicSeeds[kind];
+  const topic = seeds[day % seeds.length];
+  const result = await createTextPracticeJob(client, kind, topic, null, { day, avoid: (recent ?? []).map((row) => row.title) });
+  console.log(`Created ${kind} practice job ${result.job.id}: ${result.status}${result.warnings.length ? ` (${result.warnings.join("; ").slice(0, 400)})` : ""}`);
   if (result.status === "qa_failed") process.exitCode = 1;
 }
 

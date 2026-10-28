@@ -2,23 +2,31 @@ name: AI Factory text drafts
 
 on:
   schedule:
-    # UTC: 15:37-16:07 Asia/Ho_Chi_Minh, after the app's UTC-day reset
+    # UTC: 15:27-16:07 Asia/Ho_Chi_Minh, after the app's UTC-day reset
     # and Gemini's midnight Pacific daily-quota reset in both PST and PDT.
+    # Slots: two Listening parts, Reading, Writing, Speaking (see kindForSlot).
+    - cron: "27 8 * * *"
     - cron: "37 8 * * *"
     - cron: "47 8 * * *"
     - cron: "57 8 * * *"
     - cron: "7 9 * * *"
   workflow_dispatch:
     inputs:
-      skill:
-        description: Optional single skill to generate
+      kind:
+        description: Optional single kind to generate
         required: false
         type: choice
         options:
-          - Listening
-          - Reading
-          - Writing
-          - Speaking
+          - listening_part1
+          - listening_part2
+          - listening_part3
+          - listening_part4
+          - reading_passage
+          - writing_task1_academic
+          - writing_task1_general
+          - writing_task2
+          - speaking_part1
+          - speaking_part2
 
 permissions:
   contents: read
@@ -30,7 +38,7 @@ concurrency:
 jobs:
   create-one:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     env:
       AI_FACTORY_SUPABASE_URL: ${{ secrets.AI_FACTORY_SUPABASE_URL }}
       AI_FACTORY_SERVICE_ROLE_KEY: ${{ secrets.AI_FACTORY_SERVICE_ROLE_KEY }}
@@ -38,7 +46,9 @@ jobs:
       AI_FACTORY_FREE_TIER_CONFIRMED: ${{ secrets.AI_FACTORY_FREE_TIER_CONFIRMED }}
       AI_FACTORY_FREE_TIER_ONLY: "true"
       AI_FACTORY_SCHEDULE_CRON: ${{ github.event.schedule }}
-      AI_FACTORY_SKILL: ${{ inputs.skill }}
+      AI_FACTORY_KIND: ${{ inputs.kind }}
+      AI_FACTORY_TEXT_MODEL: ${{ vars.AI_FACTORY_TEXT_MODEL }}
+      AI_FACTORY_LONG_MODEL: ${{ vars.AI_FACTORY_LONG_MODEL }}
     steps:
       - name: Check free-tier configuration
         id: config
