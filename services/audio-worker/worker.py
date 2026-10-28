@@ -175,8 +175,9 @@ def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str) -> 
     started = time.perf_counter()
     payload = job["payload"]
     turns = payload.get("turns")
-    if not isinstance(turns, list) or not 3 <= len(turns) <= 100 or len({t.get("speaker") for t in turns}) < 2:
-        raise ValueError("Listening script needs 3-100 turns and at least two speakers")
+    # Parts 2 and 4 are monologues; Parts 1 and 3 have two or three speakers.
+    if not isinstance(turns, list) or not 2 <= len(turns) <= 100 or not 1 <= len({t.get("speaker") for t in turns}) <= 3:
+        raise ValueError("Listening script needs 2-100 turns and one to three speakers")
     voices = {v["id"]: v for v in db.rest("GET", "ai_factory_voices", params={"select": "*", "enabled": "eq.true"})}
     voice_by_speaker: dict[str, str] = {}
     rendered: list[np.ndarray] = []

@@ -17,7 +17,8 @@ async function main() {
   const passage = exam?.content?.sections?.[0]?.passage;
   if (!exam || exam.skill !== "Reading" || !passage || !rawEvidence) throw new Error("Reading draft payload is incomplete");
   const evidence = Object.fromEntries(Object.entries(rawEvidence).map(([id, quote]) => [id, normalizeEvidenceQuote(passage, quote)]));
-  const warnings = validateFactoryDraft(exam, evidence);
+  const missing = Object.entries(evidence).filter(([, quote]) => quote.trim().length < 15 || !passage.toLocaleLowerCase("en").includes(quote.trim().toLocaleLowerCase("en"))).map(([id]) => `evidence_missing:${id}`);
+  const warnings = [...validateFactoryDraft(exam), ...missing];
   if (warnings.length) throw new Error(`Reading draft still fails QA: ${warnings.join(", ")}`);
   const meta = { skill: exam.skill, title: exam.title, format: exam.format, mode: exam.mode, topic: exam.topic, difficulty: exam.difficulty,
     duration_minutes: exam.durationMinutes, license: exam.license, license_url: exam.licenseUrl, source_url: exam.sourceUrl, attribution: exam.attribution, ai_generated: true };

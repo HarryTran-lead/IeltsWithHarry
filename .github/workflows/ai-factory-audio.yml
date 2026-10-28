@@ -64,6 +64,12 @@ jobs:
           sudo apt-get install -y --no-install-recommends espeak-ng libsndfile1
           python -m pip install --no-cache-dir -r services/audio-worker/requirements.txt
           python -m spacy download en_core_web_sm
-      - name: Process one queued audio draft
+      - name: Process the queued audio drafts (up to three per run)
         if: steps.queue.outputs.pending == 'true'
-        run: python services/audio-worker/worker.py --once
+        shell: bash
+        run: |
+          for attempt in 1 2 3; do
+            output=$(python services/audio-worker/worker.py --once)
+            echo "$output"
+            if grep -q '"status": "idle"' <<< "$output"; then break; fi
+          done

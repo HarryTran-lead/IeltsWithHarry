@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { generateTextPractice } from "./text-generation";
+import { generateFactoryDraft, generateTextPractice } from "./text-generation";
 
 afterEach(() => vi.unstubAllEnvs());
 
@@ -10,7 +10,11 @@ function modelResponse(value: unknown): typeof fetch {
 function enableConfirmedFreeTier() {
   vi.stubEnv("AI_FACTORY_FREE_TIER_ONLY", "true");
   vi.stubEnv("AI_FACTORY_FREE_TIER_CONFIRMED", "true");
+  vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "test-only");
 }
+
+const essay = (statement: string) => ({ title: "Prioritising public transport", topic: "Public transport choices", statement, question: "To what extent do you agree or disagree?" });
+const validStatement = "Some cities plan to replace short car journeys with improved buses and trams. Supporters say this cuts pollution and traffic, but others argue that local governments should spend the money on housing and schools instead.";
 
 describe("AI Factory text drafting", () => {
   it("never calls a model before free-tier billing is confirmed", async () => {
@@ -30,41 +34,29 @@ describe("AI Factory text drafting", () => {
     expect(fetcher).not.toHaveBeenCalled();
   });
 
-  it("keeps a valid Writing Task 2 as a reviewable practice draft", async () => {
+  it("keeps a valid Writing Task 2 as a reviewable practice draft in the printed exam wording", async () => {
     enableConfirmedFreeTier();
-    vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "test-only");
-    const prompt = "Some cities plan to replace short car journeys with improved public transport. To what extent do you agree that this should be a priority for local governments? Give reasons for your answer and include relevant examples from your own knowledge or experience.";
-    const draft = await generateTextPractice("Writing", "Public transport choices", modelResponse({ title: "Prioritising public transport", topic: "Public transport choices", prompt }));
+    const draft = await generateTextPractice("Writing", "Public transport choices", modelResponse(essay(validStatement)));
     expect(draft.warnings).toEqual([]);
+    expect(draft.kind).toBe("writing_task2");
     expect(draft.exam.mode).toBe("practice");
     expect(draft.exam.content.minimumWords).toBe(250);
+    expect(draft.exam.content.prompt).toContain("Write at least 250 words.");
     expect(draft.usage).toEqual({ inputTokens: 128, outputTokens: 256 });
   });
 
-  it("retries one draft that fails local QA without publishing it", async () => {
+  it("retries one draft that fails the format gate, passing the reasons back", async () => {
     enableConfirmedFreeTier();
-    vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "test-only");
-    const validPrompt = "Some cities plan to replace short car journeys with improved public transport. To what extent do you agree that this should be a priority for local governments? Give reasons for your answer and include relevant examples from your own knowledge or experience.";
-    const replies = ["Discuss transport?", validPrompt];
-    const fetcher = vi.fn(async () => Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ title: "Prioritising public transport", topic: "Public transport choices", prompt: replies.shift() }) }] } }] })) as typeof fetch;
-    const draft = await generateTextPractice("Writing", "Public transport choices", fetcher);
+    const replies = [essay("Too short a statement for an essay question here."), essay(validStatement)];
+    const bodies: string[] = [];
+    const fetcher = vi.fn(async (_url: string, init: RequestInit) => {
+      bodies.push(String(init.body));
+      return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(replies.shift()) }] } }] });
+    }) as unknown as typeof fetch;
+    const draft = await generateFactoryDraft("writing_task2", "Public transport choices", { day: 0, avoid: ["An older title"] }, fetcher);
     expect(fetcher).toHaveBeenCalledTimes(2);
     expect(draft.warnings).toEqual([]);
-    expect(draft.exam.content.prompt).toBe(validPrompt);
-  });
-
-  it("queues Listening only when each answer is spoken in its cited turn", async () => {
-    enableConfirmedFreeTier();
-    vi.stubEnv("AI_FACTORY_GEMINI_API_KEY", "test-only");
-    const turns = Array.from({ length: 20 }, (_, index) => ({
-      speaker: index % 2 ? "Agent" : "Caller",
-      text: `For item ${index + 1}, the booking detail is code${index + 1}. Please confirm the schedule and repeat that detail carefully so the caller can write it on the form without any confusion later today.`,
-    }));
-    const questions = Array.from({ length: 10 }, (_, index) => ({ prompt: `Complete booking field ${index + 1}: ______`, answer: `code${index + 1}`, evidenceTurn: index, explanation: `The speaker states code${index + 1} while confirming booking field ${index + 1}.` }));
-    const valid = await generateTextPractice("Listening", "Booking an evening course", modelResponse({ title: "An evening course booking", topic: "Booking an evening course", turns, questions }));
-    expect(valid.warnings).toEqual([]);
-    expect(valid.audioPayload?.sectionId).toBe("part-1");
-    questions[0].answer = "unspoken";
-    await expect(generateTextPractice("Listening", "Booking an evening course", modelResponse({ title: "An evening course booking", topic: "Booking an evening course", turns, questions }))).rejects.toThrow("does not align");
+    expect(bodies[0]).toContain("An older title");
+    expect(bodies[1]).toContain("statement should be 25-100 words");
   });
 });

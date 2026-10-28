@@ -1,9 +1,10 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { contentHash } from "../ielts-bank/schema";
-import { generateTextPractice, type TextSkill } from "./text-generation";
+import { factoryKinds, type FactoryKind } from "./kinds";
+import { generateFactoryDraft } from "./text-generation";
 
-/** One practice draft. Scheduled callers must check generation_enabled before invoking. */
-export async function createTextPracticeJob(client: SupabaseClient, skill: TextSkill, topic: string, actorId: string | null = null) {
+/** One practice draft of a given kind. Scheduled callers must check generation_enabled before invoking. */
+export async function createTextPracticeJob(client: SupabaseClient, kind: FactoryKind, topic: string, actorId: string | null = null, options: { day?: number; avoid?: string[] } = {}) {
   if (!process.env.AI_FACTORY_GEMINI_API_KEY || process.env.AI_FACTORY_FREE_TIER_ONLY !== "true" || process.env.AI_FACTORY_FREE_TIER_CONFIRMED !== "true") throw new Error("Configure a separate, confirmed unbilled AI Factory free-tier key before generating drafts");
   const { data: settings, error: settingsError } = await client.from("ai_factory_settings").select("daily_job_limit").single();
   if (settingsError) throw new Error(settingsError.message);
@@ -11,11 +12,12 @@ export async function createTextPracticeJob(client: SupabaseClient, skill: TextS
   const { count, error: countError } = await client.from("ai_factory_jobs").select("id", { count: "exact", head: true }).gte("created_at", today.toISOString());
   if (countError) throw new Error(countError.message);
   if ((count || 0) >= settings.daily_job_limit) throw new Error("Daily Content Factory job limit reached");
+  const skill = factoryKinds[kind].skill;
   let createdId: string | null = null;
   try {
-    const draft = await generateTextPractice(skill, topic);
-    const payload = { topic, evidence: draft.evidence, usage: draft.usage, exam: draft.exam, ...(draft.audioPayload || {}) };
-    const created = await client.from("ai_factory_jobs").insert({ kind: skill === "Listening" ? "listening_audio" : skill.toLowerCase(), status: draft.warnings.length ? "qa_failed" : "failed", provider: skill === "Listening" ? "kokoro" : "gemini-free", model_id: skill === "Listening" ? "hexgrad/Kokoro-82M" : "gemini-3.5-flash-lite", created_by: actorId, payload, error: draft.warnings.length ? draft.warnings.join(", ").slice(0, 1000) : "Draft transaction incomplete" }).select("id").single();
+    const draft = await generateFactoryDraft(kind, topic, options);
+    const payload = { factoryKind: kind, topic, evidence: draft.evidence, usage: draft.usage, exam: draft.exam, ...(draft.audioPayload || {}) };
+    const created = await client.from("ai_factory_jobs").insert({ kind: skill === "Listening" ? "listening_audio" : skill.toLowerCase(), status: draft.warnings.length ? "qa_failed" : "failed", provider: skill === "Listening" ? "kokoro" : "gemini-free", model_id: skill === "Listening" ? "hexgrad/Kokoro-82M" : draft.model, created_by: actorId, payload, error: draft.warnings.length ? draft.warnings.join("; ").slice(0, 1000) : "Draft transaction incomplete" }).select("id").single();
     if (created.error || !created.data) throw new Error(created.error?.message || "Could not record generation job");
     createdId = created.data.id;
     if (draft.warnings.length) return { job: created.data, warnings: draft.warnings, status: "qa_failed" as const };
@@ -27,7 +29,7 @@ export async function createTextPracticeJob(client: SupabaseClient, skill: TextS
     const { data: record, error: recordError } = await client.from("ielts_exams").select("id,current_version_id").eq("source_id", "ai-factory").eq("external_id", exam.externalId).single();
     if (recordError || !record) throw new Error(recordError?.message || "Generated draft missing");
     if (exam.skill !== "Listening") {
-      const qa = await client.from("ai_factory_qa").insert({ job_id: createdId, technical: { skill: exam.skill, questionCount: exam.content.sections.flatMap((s) => s.questions).length, schemaPassed: true }, answer_alignment: { evidence: draft.evidence, warnings: [] }, passed: true });
+      const qa = await client.from("ai_factory_qa").insert({ job_id: createdId, technical: { kind, skill: exam.skill, questionCount: exam.content.sections.flatMap((s) => s.questions).length, formatGatePassed: true }, answer_alignment: { evidence: draft.evidence, warnings: [] }, passed: true });
       if (qa.error) throw new Error(qa.error.message);
     }
     const nextStatus = exam.skill === "Listening" ? "queued" : "awaiting_review";
