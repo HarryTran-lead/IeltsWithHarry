@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { balancedCatalog, catalogGroups, catalogHref, catalogSectionEntries, sectionSummaries, type CatalogExam } from "../src/lib/ielts-bank/catalog";
+import { balancedCatalog, catalogEntriesForSelection, catalogGroups, catalogHref, catalogQuestionTypeIds, catalogSectionEntries, sectionSummaries, type CatalogExam } from "../src/lib/ielts-bank/catalog";
 
 describe("IELTS catalog grouping", () => {
   it("interleaves formats so one large category does not fill the first page", () => {
@@ -50,5 +50,17 @@ describe("IELTS catalog grouping", () => {
     ] }] });
     expect(summaries).toEqual([{ title: "Passage 1", question_types: ["matching_headings"], question_count: 2 }]);
     expect(JSON.stringify(summaries)).not.toContain("Secret");
+  });
+
+  it("uses the same question types for sidebar filters and library entries", () => {
+    const exam = { id: "reading", title: "Reading Test", skill: "Reading", practice_type: "full_test", sections: [
+      { title: "Passage 1", question_types: ["matching_headings", "true_false_not_given"], question_count: 13 },
+      { title: "Passage 2", question_types: ["multiple_choice_single_answer"], question_count: 13 },
+    ] } as CatalogExam;
+    const first = catalogEntriesForSelection([exam], "Reading", false, 1);
+    const full = catalogEntriesForSelection([exam], "Reading", true, 0);
+    expect(first).toHaveLength(1);
+    expect(catalogQuestionTypeIds(first[0].questionTypes)).toEqual(["headings", "tfng"]);
+    expect(catalogQuestionTypeIds(full[0].questionTypes)).toEqual(["headings", "tfng", "mc_one"]);
   });
 });

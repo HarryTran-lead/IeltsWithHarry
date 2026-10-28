@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, Filter, Headphones, Mic, NotebookPen, PlayCircle, Search, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
-import { catalogGroups, catalogSkills, balancedCatalog, catalogSectionEntries, type CatalogExam, type CatalogSkill, type CatalogSectionEntry } from "@/lib/ielts-bank/catalog";
+import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import "./bank-library.css";
 
 type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null };
@@ -211,23 +211,6 @@ function LegacyBankLibraryView({ skill, exams, attempts, loading, error }: Libra
   </section>;
 }
 
-const simpleQuestionTypes = [
-  { id: "headings", label: "Matching Headings", test: /matching[_-]headings/ },
-  { id: "tfng", label: "True - False - Not Given", test: /true[_-]false/ },
-  { id: "ynng", label: "Yes - No - Not Given", test: /yes[_-]no/ },
-  { id: "mc_one", label: "Multiple Choice (One Answer)", test: /^multiple[_-]choice$/ },
-  { id: "information", label: "Matching Information", test: /matching[_-]information/ },
-  { id: "features", label: "Matching Features", test: /matching[_-]features/ },
-  { id: "mc_many", label: "Multiple Choice (Many Answers)", test: /multiple.*answers/ },
-  { id: "labels", label: "Map, Diagram Label", test: /(map|plan|diagram)[_-]labelling/ },
-  { id: "gaps", label: "Gap Filling", test: /(sentence|summary|note|table|flow[_-]?chart|flowchart|form)[_-]completion|short[_-]answer/ },
-  { id: "matching", label: "Matching", test: /^matching$|matching[_-]sentence[_-]endings/ },
-] as const;
-
-function simpleTypeIds(types: string[]): string[] {
-  return [...new Set(types.map((type) => simpleQuestionTypes.find((group) => group.test.test(type))?.id ?? "other"))];
-}
-
 function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryViewProps & { skill: "Reading" | "Listening" }) {
   const params = useSearchParams();
   const isReading = skill === "Reading";
@@ -236,21 +219,14 @@ function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryVie
   const partValue = Number(params.get("part"));
   const part = !full && Number.isInteger(partValue) && partValue >= 1 && partValue <= limit ? partValue : 0;
   const [query, setQuery] = useState("");
-  const [classification, setClassification] = useState({ scope: "", kind: "" });
   const [page, setPage] = useState(0);
-  const entries = useMemo(() => catalogSectionEntries(exams, skill), [exams, skill]);
-  const allFull = exams.filter((exam) => exam.practice_type === "full_test");
-  const base: CatalogSectionEntry[] = full
-    ? allFull.map((exam) => ({ exam, title: exam.title, questionTypes: exam.question_types ?? [], questionCount: exam.question_count ?? 0 }))
-    : entries.filter((entry) => !part || entry.part === part);
-  const scope = `${skill}:${full ? "full" : part || "single"}`;
+  const base = catalogEntriesForSelection(exams, skill, full, part);
   const kindCounts = new Map<string, number>();
-  for (const entry of base) for (const id of simpleTypeIds(entry.questionTypes)) kindCounts.set(id, (kindCounts.get(id) ?? 0) + 1);
-  const kindOptions = [...simpleQuestionTypes, { id: "other", label: "Other Types", test: /./ }]
-    .filter((group) => kindCounts.has(group.id));
-  const selectedKind = classification.scope === scope && kindCounts.has(classification.kind) ? classification.kind : "";
+  for (const entry of base) for (const id of catalogQuestionTypeIds(entry.questionTypes)) kindCounts.set(id, (kindCounts.get(id) ?? 0) + 1);
+  const requestedKind = params.get("kind") ?? "";
+  const selectedKind = kindCounts.has(requestedKind) ? requestedKind : "";
   const needle = query.trim().toLocaleLowerCase();
-  const filtered = base.filter((entry) => (!selectedKind || simpleTypeIds(entry.questionTypes).includes(selectedKind))
+  const filtered = base.filter((entry) => (!selectedKind || catalogQuestionTypeIds(entry.questionTypes).includes(selectedKind))
     && (!needle || `${entry.title} ${entry.exam.title} ${entry.exam.topic ?? ""}`.toLocaleLowerCase().includes(needle)));
   const pageCount = Math.max(1, Math.ceil(filtered.length / 12));
   const currentPage = Math.min(page, pageCount - 1);
@@ -263,7 +239,7 @@ function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryVie
 
   return <section id="ngan-hang-de" className={`bl-library bl-sectioned bl-tone-${skill.toLowerCase()}`} aria-label={`Ngân hàng đề ${skill}`}>
     <div className="bl-results">
-      <div className="bl-results-head"><div><span className="bl-results-kicker">{skill.toUpperCase()} · NGÂN HÀNG ĐỀ</span><h2>{heading}</h2><p>{loading ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><div className="bl-results-controls"><label className="bl-classification"><Filter size={17} /><select aria-label={`Lọc ${skill} theo loại câu hỏi`} value={selectedKind} disabled={!kindOptions.length} onChange={(event) => { setClassification({ scope, kind: event.target.value }); setPage(0); }}><option value="">Tất cả dạng câu hỏi</option>{kindOptions.map((group) => <option key={group.id} value={group.id}>{group.label} ({kindCounts.get(group.id)})</option>)}</select><ChevronDown size={15} /></label><label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên bài hoặc chủ đề…" aria-label={`Tìm đề ${skill}`} /></label></div></div>
+      <div className="bl-results-head"><div><span className="bl-results-kicker">{skill.toUpperCase()} · NGÂN HÀNG ĐỀ</span><h2>{heading}</h2><p>{loading ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><div className="bl-results-controls"><label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên bài hoặc chủ đề…" aria-label={`Tìm đề ${skill}`} /></label></div></div>
       {error && <p className="bl-state" role="alert">{error}</p>}
       {loading && <div className="bl-grid bl-grid-sectioned">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
       {!loading && !error && <div className="bl-grid bl-grid-sectioned">{visible.map((entry) => <ExamCard key={`${entry.exam.id}:${entry.part ?? "full"}`} exam={entry.exam} attempt={entry.splitFromFull ? undefined : latest.get(entry.exam.id)} section={entry.splitFromFull && entry.part ? { part: entry.part, title: entry.title, questionTypes: entry.questionTypes, questionCount: entry.questionCount } : undefined} />)}</div>}
@@ -348,7 +324,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
     </Link>;
   }
 
-  const types = section ? simpleTypeIds(section.questionTypes).map((id) => ({ id, label: simpleQuestionTypes.find((group) => group.id === id)?.label ?? "Other Types" })) : typeGroups(exam);
+  const types = section ? catalogQuestionTypeIds(section.questionTypes).map((id) => ({ id, label: catalogQuestionTypes.find((group) => group.id === id)?.label ?? "Other Types" })) : typeGroups(exam);
   return <Link href={href} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
       {/* eslint-disable-next-line @next/next/no-img-element */}

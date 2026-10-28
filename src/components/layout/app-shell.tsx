@@ -7,6 +7,7 @@ import {
   CalendarDays,
   ChartNoAxesCombined,
   FlaskConical,
+  Filter,
   ChevronDown,
   Flame,
   GraduationCap,
@@ -45,13 +46,21 @@ import { useStudyPresence } from "@/features/study-room/study-presence";
 import { NotificationBell } from "@/components/account/notification-bell";
 import { AccountAvatar } from "@/components/account/account-avatar";
 import { useNewsUnread } from "@/features/news/news-unread";
+import { catalogQuestionTypeIds, catalogQuestionTypes, catalogEntriesForSelection, type CatalogExam } from "@/lib/ielts-bank/catalog";
 
 const groups = [
+  {
+    label: "HOT",
+    links: [
+      { href: "/app/news", label: "Daily News", icon: Newspaper, tone: "sky" },
+      { href: "/app/study-together", label: "Cùng học", icon: UsersRound, tone: "lavender" },
+      { href: "/app/learn", label: "Learn", icon: GraduationCap, tone: "sky" },
+    ],
+  },
   {
     label: "Tổng quan",
     links: [
       { href: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard, tone: "teal" },
-      { href: "/app/learn", label: "Learn", icon: GraduationCap, tone: "sky" },
       { href: "/app/planner", label: "Planner", icon: CalendarDays, tone: "coral" },
       { href: "/app/progress", label: "Progress", icon: ChartNoAxesCombined, tone: "lavender" },
     ],
@@ -71,14 +80,12 @@ const groups = [
   {
     label: "Học với tin tức",
     links: [
-      { href: "/app/news", label: "Daily News", icon: Newspaper, tone: "sky" },
       { href: "/app/news/learn", label: "Learn with News", icon: Library, tone: "mint" },
     ],
   },
   {
     label: "Không gian học",
     links: [
-      { href: "/app/study-together", label: "Cùng học", icon: UsersRound, tone: "lavender" },
       { href: "/app/notebook", label: "Notebook", icon: NotebookPen, tone: "sun" },
       { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical, tone: "coral" },
     ],
@@ -166,10 +173,42 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
     .filter((item) => !lockedLearnerPath(item.href) && item.label.toLowerCase().includes(query.toLowerCase()))
     .slice(0, 5);
   const section = pathname.split("/")[2] || "dashboard";
+  const catalogSkill = section === "reading" ? "Reading" : section === "listening" ? "Listening" : null;
+  const [sidebarCatalog, setSidebarCatalog] = useState<{ skill: "Reading" | "Listening"; exams: CatalogExam[]; error?: string } | null>(null);
+  const catalogExams = sidebarCatalog?.skill === catalogSkill ? sidebarCatalog.exams : null;
+  const catalogFull = searchParams.get("type") === "full_test";
+  const catalogPartValue = Number(searchParams.get("part"));
+  const catalogLimit = catalogSkill === "Reading" ? 3 : 4;
+  const catalogPart = !catalogFull && Number.isInteger(catalogPartValue) && catalogPartValue >= 1 && catalogPartValue <= catalogLimit ? catalogPartValue : 0;
+  const catalogEntries = catalogSkill && catalogExams ? catalogEntriesForSelection(catalogExams, catalogSkill, catalogFull, catalogPart) : [];
+  const catalogTypeCounts = new Map<string, number>();
+  for (const entry of catalogEntries) for (const id of catalogQuestionTypeIds(entry.questionTypes)) catalogTypeCounts.set(id, (catalogTypeCounts.get(id) ?? 0) + 1);
+  const catalogKind = searchParams.get("kind") ?? "";
+  const catalogTypeOptions = [...catalogQuestionTypes, { id: "other", label: "Other Types", test: /./ }].filter((group) => catalogTypeCounts.has(group.id));
+  function typeHref(skill: string, kind: string) {
+    const next = new URLSearchParams(searchParams.toString());
+    if (kind) next.set("kind", kind);
+    else next.delete("kind");
+    const query = next.toString();
+    return `/app/${skill}${query ? `?${query}` : ""}`;
+  }
   const [skillMenuOverride, setSkillMenuOverride] = useState<{ pathname: string; skill: string | null } | null>(null);
   const expandedSkill = skillMenuOverride?.pathname === pathname
     ? skillMenuOverride.skill
     : skillPracticeLinks[section] ? section : null;
+
+  useEffect(() => {
+    if (!catalogSkill || demoMode) return;
+    let active = true;
+    fetch(`/api/ielts/bank/catalog?skill=${catalogSkill}`)
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Không tải được dạng câu hỏi.");
+        return response.json() as Promise<{ exams: CatalogExam[] }>;
+      })
+      .then(({ exams }) => { if (active) setSidebarCatalog({ skill: catalogSkill, exams }); })
+      .catch(() => { if (active) setSidebarCatalog({ skill: catalogSkill, exams: [], error: "Không tải được dạng câu hỏi." }); });
+    return () => { active = false; };
+  }, [catalogSkill]);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -385,7 +424,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
         <nav aria-label="Main navigation">
           {groups.map((group) => (
             <div className="nav-group" key={group.label}>
-              <span className="nav-group-label">{group.label}</span>
+              <span className={`nav-group-label ${group.label === "HOT" ? "nav-group-hot" : ""}`}>{group.label === "HOT" && <Flame size={13} aria-hidden="true" />}{group.label}</span>
               {group.links.map(({ href, label, icon: Icon, tone }) => {
                 const skill = href.split("/")[2];
                 const practiceLinks = skillPracticeLinks[skill];
@@ -430,6 +469,17 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                         onClick={() => setMenuOpen(false)}
                       >{practice.label}</Link>;
                     })}
+                  </div>}
+                  {examSkill && expanded && pathname === href && <div className="nav-exam-types" role="group" aria-label={`Loại câu hỏi ${label}`}>
+                    <span className="nav-exam-types-title"><Filter size={14} aria-hidden="true" /> Loại câu hỏi</span>
+                    {sidebarCatalog?.skill === catalogSkill && sidebarCatalog.error
+                      ? <span className="nav-exam-types-state" role="status">{sidebarCatalog.error}</span>
+                      : catalogExams === null
+                        ? <span className="nav-exam-types-state" role="status">Đang tải dạng câu hỏi…</span>
+                        : <>
+                          <Link href={typeHref(skill, "")} className={`nav-exam-type ${!catalogKind || !catalogTypeCounts.has(catalogKind) ? "active" : ""}`} aria-current={!catalogKind || !catalogTypeCounts.has(catalogKind) ? "page" : undefined} onClick={() => setMenuOpen(false)}><span>Tất cả dạng câu hỏi</span><small>{catalogEntries.length}</small></Link>
+                          {catalogTypeOptions.map((group) => <Link key={group.id} href={typeHref(skill, group.id)} className={`nav-exam-type ${catalogKind === group.id ? "active" : ""}`} aria-current={catalogKind === group.id ? "page" : undefined} onClick={() => setMenuOpen(false)}><span>{group.label}</span><small>{catalogTypeCounts.get(group.id)}</small></Link>)}
+                        </>}
                   </div>}
                 </div>;
               })}

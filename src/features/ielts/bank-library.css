@@ -173,11 +173,6 @@
 .bl-results-head p { margin: 0; color: #6d8296; font-size: 12px; }
 .bl-results-kicker { color: #74909d; font-size: 10px; font-weight: 900; letter-spacing: .1em; }
 .bl-results-controls { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 9px; min-width: 0; }
-.bl-classification { display: flex; align-items: center; gap: 8px; width: 250px; max-width: 100%; height: 38px; padding: 0 10px; border: 1px solid #dbe6ec; border-radius: 11px; background: #fff; color: var(--bl-accent); }
-.bl-classification:focus-within { border-color: var(--bl-accent); box-shadow: 0 0 0 3px var(--bl-wash); }
-.bl-classification select { flex: 1; min-width: 0; border: 0; appearance: none; background: transparent; color: #29445e; font: inherit; font-size: 13px; font-weight: 700; outline: none; cursor: pointer; }
-.bl-classification select:disabled { color: #8496a7; cursor: default; }
-.bl-classification svg { flex: none; }
 .bl-results-head .bl-search { flex: none; width: 290px; }
 .bl-grid-sectioned { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
 .bl-grid-sectioned .bl-card-shelf { min-width: 0; min-height: 278px; }
@@ -186,4 +181,4 @@
 .bl-grid-sectioned .bl-types { min-height: 33px; }
 @media (max-width: 1180px) { .bl-grid-sectioned { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 980px) { .bl-results-head { align-items: stretch; flex-direction: column; } .bl-results-controls { justify-content: flex-start; } }
-@media (max-width: 560px) { .bl-grid-sectioned { grid-template-columns: 1fr; } .bl-grid-sectioned .bl-card-shelf { flex-direction: row; min-height: 130px; } .bl-grid-sectioned .bl-thumb { width: 112px; aspect-ratio: auto; } .bl-results-controls { width: 100%; } .bl-classification, .bl-results-head .bl-search { width: 100%; } }
+@media (max-width: 560px) { .bl-grid-sectioned { grid-template-columns: 1fr; } .bl-grid-sectioned .bl-card-shelf { flex-direction: row; min-height: 130px; } .bl-grid-sectioned .bl-thumb { width: 112px; aspect-ratio: auto; } .bl-results-controls { width: 100%; } .bl-results-head .bl-search { width: 100%; } }

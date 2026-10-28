@@ -61,6 +61,23 @@ export function withSummaries(exams: CatalogExam[], summaries: CatalogSummary[])
 
 export type CatalogSectionEntry = { exam: CatalogExam; part?: number; splitFromFull?: boolean; title: string; questionTypes: string[]; questionCount: number };
 
+export const catalogQuestionTypes = [
+  { id: "headings", label: "Matching Headings", test: /matching[_-]headings/ },
+  { id: "tfng", label: "True - False - Not Given", test: /true[_-]false/ },
+  { id: "ynng", label: "Yes - No - Not Given", test: /yes[_-]no/ },
+  { id: "mc_one", label: "Multiple Choice (One Answer)", test: /^multiple[_-]choice(?:[_-]single[_-]answer)?$/ },
+  { id: "information", label: "Matching Information", test: /matching[_-]information/ },
+  { id: "features", label: "Matching Features", test: /matching[_-]features/ },
+  { id: "mc_many", label: "Multiple Choice (Many Answers)", test: /multiple.*answers/ },
+  { id: "labels", label: "Map, Diagram Label", test: /(map|plan|diagram)[_-]labelling/ },
+  { id: "gaps", label: "Gap Filling", test: /(sentence|summary|note|table|flow[_-]?chart|flowchart|form)[_-]completion|short[_-]answer/ },
+  { id: "matching", label: "Matching", test: /^matching$|matching[_-]sentence[_-]endings/ },
+] as const;
+
+export function catalogQuestionTypeIds(types: string[]): string[] {
+  return [...new Set(types.map((type) => catalogQuestionTypes.find((group) => group.test.test(type))?.id ?? "other"))];
+}
+
 /** Expose only card metadata; answer keys and passage text stay on the exam endpoint. */
 export function sectionSummaries(content: { sections?: { title?: string; questions?: ({ type?: string } & Record<string, unknown>)[] }[] }): NonNullable<CatalogExam["sections"]> {
   return (content.sections ?? []).map((section) => ({
@@ -86,6 +103,16 @@ export function catalogSectionEntries(exams: CatalogExam[], skill: "Reading" | "
       questionCount: section.question_count,
     }] : []);
   });
+}
+
+export function catalogEntriesForSelection(exams: CatalogExam[], skill: "Reading" | "Listening", full: boolean, part: number): CatalogSectionEntry[] {
+  if (!full) return catalogSectionEntries(exams, skill).filter((entry) => !part || entry.part === part);
+  return exams.filter((exam) => exam.practice_type === "full_test").map((exam) => ({
+    exam,
+    title: exam.title,
+    questionTypes: exam.question_types?.length ? exam.question_types : [...new Set((exam.sections ?? []).flatMap((section) => section.question_types))],
+    questionCount: exam.question_count ?? (exam.sections ?? []).reduce((sum, section) => sum + section.question_count, 0),
+  }));
 }
 
 export function balancedCatalog<T extends { practice_type: string }>(items: T[], groupIds: readonly string[]): T[] {
