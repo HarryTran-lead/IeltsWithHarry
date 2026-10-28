@@ -1,0 +1,21 @@
+{
+  "status": "editorial_plan",
+  "note": "Targets count approved unique entries only. Subtopics and CEFR focus are planning guides, not published content.",
+  "topics": [
+    {"title":"Everyday Routines & Habits","target_new_unique":180,"subtopics":["morning and evening routines","time management","household errands","routine changes"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A1","A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Friends & Social Relationships","target_new_unique":170,"subtopics":["making friends","keeping in touch","trust and support","social plans"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Personality, Feelings & Character","target_new_unique":220,"subtopics":["personal strengths","emotional responses","character descriptions","handling disagreements"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A2","B1","B2","C1"],"priority_focus":[0,1]},
+    {"title":"Entertainment, Films & Music","target_new_unique":200,"subtopics":["film genres","performances","music preferences","reviews and recommendations"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Shopping, Fashion & Consumer Choices","target_new_unique":170,"subtopics":["browsing and buying","clothing choices","returns and refunds","value for money"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Hobbies & Free Time","target_new_unique":170,"subtopics":["creative hobbies","exercise and relaxation","trying new activities","making time for interests"],"speaking_parts":[1,2,3],"writing_task_2":false,"cefr_focus":["A1","A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Weather, Seasons & Outdoor Life","target_new_unique":150,"subtopics":["daily weather","seasonal plans","outdoor activities","weather disruptions"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A1","A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Animals, Wildlife & Pets","target_new_unique":170,"subtopics":["pet care","animal behaviour","wildlife encounters","animal welfare"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Festivals, Celebrations & Traditions","target_new_unique":150,"subtopics":["family celebrations","public holidays","customs","planning an event"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Personal Objects, Gifts & Possessions","target_new_unique":150,"subtopics":["useful possessions","choosing gifts","sentimental items","repair and replacement"],"speaking_parts":[1,2,3],"writing_task_2":false,"cefr_focus":["A1","A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Childhood & Personal Memories","target_new_unique":170,"subtopics":["childhood activities","school memories","family stories","remembering the past"],"speaking_parts":[1,2,3],"writing_task_2":false,"cefr_focus":["A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Places, Landmarks & Descriptions","target_new_unique":190,"subtopics":["describing a place","landmarks","atmosphere and layout","changes over time"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A2","B1","B2","C1"],"priority_focus":[0,1]},
+    {"title":"Home Life & Household Chores","target_new_unique":170,"subtopics":["daily chores","appliances","sharing responsibilities","home maintenance"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A1","A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Food, Cooking & Dining Out","target_new_unique":180,"subtopics":["preparing meals","flavours and preferences","ordering food","restaurant experiences"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A1","A2","B1","B2"],"priority_focus":[0,1]},
+    {"title":"Stories, Experiences & Opinions","target_new_unique":210,"subtopics":["narrating events","giving reasons","reacting to experiences","reflecting on change"],"speaking_parts":[1,2,3],"writing_task_2":true,"cefr_focus":["A2","B1","B2","C1"],"priority_focus":[0,1]}
+  ]
+}
