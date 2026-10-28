@@ -97,7 +97,7 @@ def main() -> None:
                 "coverage_matrix_matches_catalog": True, "draft_batches": len(source_batches),
                 "batch_hashes_match_files": True,
                 "draft_entries": len(expected_terms), "draft_examples": expected_examples,
-                "draft_terms_match_files": True,
+                "draft_terms_match_files": True, "approved": 0,
                 "published_new_unique": 0, "unique_normalized_drafts": len(expected_terms),
                 "anon_topics_visible": 0, "anon_drafts_visible": 0,
                 "legacy_cefr_rows": 9941, "legacy_lesson_rows": 1237,
