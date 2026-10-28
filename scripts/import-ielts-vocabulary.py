@@ -25,6 +25,16 @@ PROJECTS = {
 }
 EXPECTED_ARCHIVE_SHA256 = "9add911cefcecf45cc6d1fbe4f947f0f38387ba0f3399ab07d2e55a1df738674"
 DATASET = "forumflash-ielts-v1"
+POS_MAP = {
+    "Danh từ": "noun",
+    "Cụm danh từ": "noun_phrase",
+    "Động từ": "verb",
+    "Tính từ": "adjective",
+    "Cụm tính từ": "adjective_phrase",
+    "Cụm động từ": "verb_phrase",
+    "Thành ngữ": "idiom",
+    "Cụm giới từ": "prepositional_phrase",
+}
 
 
 def load_local(name: str):
@@ -53,7 +63,9 @@ def make_records(rows: list[dict[str, str]], archive_hash: str, audit, estimator
             "term": row["Term"],
             "normalized_term": normalized_term,
             "definition_en": row["Definition"],
+            "definition_vi": row["Definition"],
             "pos_raw": row["Part of speech"],
+            "pos_standard": POS_MAP[row["Part of speech"]],
             "pattern": row["Pattern"],
             "examples": row["Examples"].split(" | "),
             "topic": row["Topic"],
