@@ -188,9 +188,8 @@ export function VocabularyHub() {
   }
 
   const common = { terms, saved, savedByWord, reviewById, due, events, attempts, saveWord, removeWord, gradeWord, saveAttempt };
-  return <div className="content-page vocab-hub">
-    <header className="vocab-header"><div><span className="eyebrow">IELTSWITHHARRY / VOCABULARY</span><h1>{section === "overview" ? "Học từ vựng hiệu quả hơn" : { learn: "Học từ mới", library: "Kho từ theo topic", study: "Luyện từ theo topic", notebook: "Từ đã lưu", decks: "Bộ thẻ của bạn", review: "Ôn tập", practice: "Luyện tập", explore: "Tra từ", progress: "Tiến độ từ vựng" }[section] ?? "Từ vựng"}</h1><p>Học theo chủ đề, lưu từ trong bài đọc và ôn lại đúng thời điểm.</p></div><span className="vocab-header-count">{saved.length} từ đã lưu</span></header>
-    <Link className="vocab-back" href="/app/vocabulary"><ArrowLeft size={16} /> Chọn cách học</Link>
+  return <div className={`content-page vocab-hub${section === "study" ? " vocab-hub-study" : ""}`}>
+    {section !== "study" && <><header className="vocab-header"><div><span className="eyebrow">IELTSWITHHARRY / VOCABULARY</span><h1>{section === "overview" ? "Học từ vựng hiệu quả hơn" : { learn: "Học từ mới", library: "Kho từ theo topic", notebook: "Từ đã lưu", decks: "Bộ thẻ của bạn", review: "Ôn tập", practice: "Luyện tập", explore: "Tra từ", progress: "Tiến độ từ vựng" }[section] ?? "Từ vựng"}</h1><p>Học theo chủ đề, lưu từ trong bài đọc và ôn lại đúng thời điểm.</p></div><span className="vocab-header-count">{saved.length} từ đã lưu</span></header><Link className="vocab-back" href="/app/vocabulary"><ArrowLeft size={16} /> Chọn cách học</Link></>}
     {(error || notebookError) && <p className="vocab-error" role="alert">{error || notebookError}</p>}
     {(loading || !notebookReady) ? <div className="vocab-panel">Đang tải từ vựng…</div>
       : section === "overview" ? <Overview {...common} mastered={mastered} reviewedToday={reviewedToday} />
