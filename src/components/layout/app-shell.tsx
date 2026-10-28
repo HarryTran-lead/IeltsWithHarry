@@ -96,9 +96,8 @@ const links = groups.flatMap((group) => group.links);
 type SkillPracticeLink = { label: string; href: string; kind?: "parent" | "child" | "full" };
 const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
   vocabulary: [
-    { label: "Kho từ A1–C2 & IELTS", href: "/app/vocabulary/library" },
-    { label: "Bộ thẻ cá nhân", href: "/app/vocabulary/decks" },
-    { label: "Luyện từ vựng", href: "/app/vocabulary/practice" },
+    { label: "Học từ IELTS", href: "/app/vocabulary/study?collection=ielts" },
+    { label: "Học từ A1–C2", href: "/app/vocabulary/study?collection=cefr" },
     { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },
   ],
   grammar: [{ label: "Từ nối trong ngữ cảnh", href: "/app/grammar/live" }],
@@ -454,12 +453,12 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                     {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
                   </Link>
                   {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className={`nav-submenu ${examSkill ? "nav-exam-submenu" : ""}`} hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
-                    {!examSkill && <Link href={`${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>Tất cả chế độ</Link>}
+                    {!examSkill && <Link href={skill === "vocabulary" ? href : `${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>{skill === "vocabulary" ? "Bắt đầu học" : "Tất cả chế độ"}</Link>}
                     {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => {
                       const target = new URL(practice.href, "https://ieltswithharry.local");
                       const selected = examSkill
                         ? pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
-                        : pathname === practice.href;
+                        : pathname === target.pathname && (!target.search || searchParams.get("collection") === target.searchParams.get("collection"));
                       const parentSelected = examSkill && practice.kind === "parent" && pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type");
                       return <Link
                         key={practice.href}
