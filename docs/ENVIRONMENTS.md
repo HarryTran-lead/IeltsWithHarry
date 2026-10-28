@@ -7,6 +7,8 @@
 
 The `develop` Preview runs against its own Supabase project with demo mode off. Do not put production Supabase credentials into Preview or local development. The build checks in `next.config.ts` reject a Preview that points at the production database and reject a Production build that points elsewhere. The development project's scheduled sync jobs are disabled; development data does not update automatically until dev-only worker secrets and schedules are configured.
 
+`develop` sets `NEXT_PUBLIC_UNLOCK_DEV_FEATURES=true` in its branch-scoped Preview environment so testers can open unfinished routes. Production keeps this unset; its build fails if the flag is enabled. The `Sync production code to develop` workflow merges each `main` push into `develop` without replacing dev-only commits. A merge conflict requires a manual resolution. This sync covers Git code and migrations, not production user accounts, chat, progress, or database content.
+
 ## Normal release path
 
 1. Create a feature branch from `develop`. Open a pull request back to `develop`. The existing `Quality` GitHub Action runs typecheck, lint, tests and build on pushes and pull requests.
