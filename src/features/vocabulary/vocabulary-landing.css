@@ -39,3 +39,34 @@
 @media(max-width:1200px){.vocabulary-landing-layout{grid-template-columns:minmax(0,1fr) 230px}.vocabulary-landing-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:800px){.vocabulary-landing-layout{grid-template-columns:1fr}.vocabulary-landing-side{grid-template-columns:repeat(2,minmax(0,1fr))}.vocabulary-landing-quick{grid-column:1/-1}}
 @media(max-width:560px){.vocabulary-landing{padding:18px 13px 36px}.vocabulary-landing-hero-art{display:none}.vocabulary-landing-filters{grid-template-columns:1fr 1fr}.vocabulary-landing-filters label:first-child,.vocabulary-landing-search{grid-column:1/-1}.vocabulary-landing-topic-grid{grid-template-columns:1fr 1fr;gap:9px}.vocabulary-landing-topic{padding:9px;min-height:214px}.vocabulary-landing-topic-art{height:75px}.vocabulary-landing-topic h3{font-size:12px}.vocabulary-landing-side{grid-template-columns:1fr}.vocabulary-landing-quick{grid-column:auto}.vocabulary-landing-section-head{align-items:start;flex-direction:column}}
+
+/* Dense topic browser: the library has thousands of words, so show topics as compact entries. */
+.vocabulary-landing{padding-top:14px;padding-bottom:28px}
+.vocabulary-landing-hero{margin-bottom:14px}
+.vocabulary-landing-hero h1{font-size:clamp(28px,2.8vw,39px);margin:4px 0 5px}
+.vocabulary-landing-hero p{font-size:13px;line-height:1.35}
+.vocabulary-landing-hero-art{width:64px;height:64px;border-radius:17px;transform:none}
+.vocabulary-landing-hero-art svg:first-child{width:34px;height:34px}
+.vocabulary-landing-layout{grid-template-columns:minmax(0,1fr) 250px;gap:14px}
+.vocabulary-landing-filters{padding:9px;border-radius:14px}
+.vocabulary-landing-filters select,.vocabulary-landing-filters input{height:36px}
+.vocabulary-landing-section-head{margin:15px 2px 9px}
+.vocabulary-landing-section-head h2{display:flex;align-items:baseline;flex-wrap:wrap;gap:7px;font-size:20px}
+.vocabulary-landing-topic-grid{gap:9px}
+.vocabulary-landing-topic{display:grid;grid-template-columns:82px minmax(0,1fr);gap:10px;min-height:104px;padding:9px;border-radius:14px}
+.vocabulary-landing-topic-art{width:82px;height:82px;border-radius:9px}
+.vocabulary-landing-topic h3{min-height:0;margin:2px 0 4px;font-size:13px}
+.vocabulary-landing-topic-content>a{justify-content:flex-start;min-height:0;margin-top:auto;background:transparent;color:#078e97;font-size:11px}
+.vocabulary-landing-topic-content>a:hover{background:transparent;text-decoration:underline}
+.vocabulary-landing-topic-content>a svg{width:13px}
+.vocabulary-landing-side{gap:10px}
+.vocabulary-landing-side section{padding:14px;border-radius:14px}
+.vocabulary-landing-side h2{margin:5px 0 4px;font-size:15px}
+.vocabulary-landing-side strong{font-size:30px}
+.vocabulary-landing-side p{margin:4px 0 8px;font-size:11px;line-height:1.4}
+.vocabulary-landing-side a{min-height:31px;font-size:11px}
+.vocabulary-landing-saved{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #edf1f4;color:#526e83;font-size:11px;font-weight:700}
+.vocabulary-landing-saved b{color:#078d95}
+@media(max-width:1200px){.vocabulary-landing-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:850px){.vocabulary-landing-layout{grid-template-columns:1fr}.vocabulary-landing-side{grid-template-columns:repeat(2,minmax(0,1fr))}.vocabulary-landing-quick{grid-column:1/-1}}
+@media(max-width:560px){.vocabulary-landing-topic-grid{grid-template-columns:1fr}.vocabulary-landing-topic{grid-template-columns:70px minmax(0,1fr);min-height:88px;padding:7px}.vocabulary-landing-topic-art{width:70px;height:70px}.vocabulary-landing-side{grid-template-columns:1fr}.vocabulary-landing-quick{grid-column:auto}}
