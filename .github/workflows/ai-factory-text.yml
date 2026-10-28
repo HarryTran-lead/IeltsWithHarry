@@ -2,31 +2,9 @@ name: AI Factory text drafts
 
 on:
   schedule:
-    # UTC: 15:27-16:07 Asia/Ho_Chi_Minh, after the app's UTC-day reset
-    # and Gemini's midnight Pacific daily-quota reset in both PST and PDT.
-    # Slots: two Listening parts, Reading, Writing, Speaking (see kindForSlot).
+    # One daily set, after Gemini's midnight Pacific free-tier reset.
     - cron: "27 8 * * *"
-    - cron: "37 8 * * *"
-    - cron: "47 8 * * *"
-    - cron: "57 8 * * *"
-    - cron: "7 9 * * *"
   workflow_dispatch:
-    inputs:
-      kind:
-        description: Optional single kind to generate
-        required: false
-        type: choice
-        options:
-          - listening_part1
-          - listening_part2
-          - listening_part3
-          - listening_part4
-          - reading_passage
-          - writing_task1_academic
-          - writing_task1_general
-          - writing_task2
-          - speaking_part1
-          - speaking_part2
 
 permissions:
   contents: read
@@ -36,17 +14,15 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  create-one:
+  create-daily-set:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 75
     env:
       AI_FACTORY_SUPABASE_URL: ${{ secrets.AI_FACTORY_SUPABASE_URL }}
       AI_FACTORY_SERVICE_ROLE_KEY: ${{ secrets.AI_FACTORY_SERVICE_ROLE_KEY }}
       AI_FACTORY_GEMINI_API_KEY: ${{ secrets.AI_FACTORY_GEMINI_API_KEY }}
       AI_FACTORY_FREE_TIER_CONFIRMED: ${{ secrets.AI_FACTORY_FREE_TIER_CONFIRMED }}
       AI_FACTORY_FREE_TIER_ONLY: "true"
-      AI_FACTORY_SCHEDULE_CRON: ${{ github.event.schedule }}
-      AI_FACTORY_KIND: ${{ inputs.kind }}
       AI_FACTORY_TEXT_MODEL: ${{ vars.AI_FACTORY_TEXT_MODEL }}
       AI_FACTORY_LONG_MODEL: ${{ vars.AI_FACTORY_LONG_MODEL }}
     steps:
@@ -68,6 +44,6 @@ jobs:
       - name: Install project dependencies
         if: steps.config.outputs.configured == 'true'
         run: npm ci --ignore-scripts
-      - name: Create one draft if production generation is enabled
+      - name: Create or resume today's review-only IELTS set
         if: steps.config.outputs.configured == 'true'
-        run: npx tsx scripts/run-ai-factory-text.ts
+        run: npx tsx scripts/run-ai-factory-daily-set.ts

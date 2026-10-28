@@ -59,4 +59,13 @@ describe("AI Factory text drafting", () => {
     expect(bodies[0]).toContain("An older title");
     expect(bodies[1]).toContain("statement should be 25-100 words");
   });
+
+  it("counts each attempted request and stops immediately on quota exhaustion", async () => {
+    enableConfirmedFreeTier();
+    const beforeRequest = vi.fn(async () => {});
+    const fetcher = vi.fn(async () => Response.json({ error: { message: "Requests per day exceeded" } }, { status: 429 })) as typeof fetch;
+    await expect(generateFactoryDraft("reading_passage1", "How bees navigate", { beforeRequest }, fetcher)).rejects.toThrow("daily quota exhausted");
+    expect(beforeRequest).toHaveBeenCalledTimes(1);
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
 });

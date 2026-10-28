@@ -1,16 +1,16 @@
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import { validateFactoryDraft } from "./draft-validation";
-import { briefFor, buildDraft, defaultKind, factoryKinds, outputSchema, type Brief, type FactoryKind, type TextSkill } from "./kinds";
+import { briefFor, buildDraft, defaultKind, factoryKinds, isReadingKind, outputSchema, type Brief, type FactoryKind, type TextSkill } from "./kinds";
 
 export type { FactoryKind, TextSkill } from "./kinds";
 type ModelUsage = { inputTokens: number | null; outputTokens: number | null };
-type Options = { day?: number; avoid?: string[] };
+type Options = { day?: number; avoid?: string[]; beforeRequest?: (model: string) => Promise<void> };
 
 const topicSchema = z.string().trim().min(4).max(100);
-const isLong = (kind: FactoryKind) => kind.startsWith("listening") || kind === "reading_passage";
+const isLong = (kind: FactoryKind) => kind.startsWith("listening") || isReadingKind(kind);
 
-async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], fetcher: typeof fetch, retryReason = ""): Promise<{ value: unknown; model: string; usage: ModelUsage }> {
+async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], fetcher: typeof fetch, retryReason = "", beforeRequest?: Options["beforeRequest"]): Promise<{ value: unknown; model: string; usage: ModelUsage }> {
   if (process.env.AI_FACTORY_FREE_TIER_CONFIRMED !== "true" || process.env.AI_FACTORY_FREE_TIER_ONLY !== "true") throw new Error("AI Factory free-tier project has not been confirmed");
   const key = process.env.AI_FACTORY_GEMINI_API_KEY;
   if (!key) throw new Error("Separate AI Factory free-tier key is not configured");
@@ -18,6 +18,7 @@ async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], f
   const long = isLong(brief.kind);
   const configured = long ? process.env.AI_FACTORY_LONG_MODEL : process.env.AI_FACTORY_TEXT_MODEL;
   const model = /^[\w.-]+$/.test(configured ?? "") ? configured! : long ? "gemini-3.8-flash" : "gemini-3.5-flash-lite";
+  await beforeRequest?.(model);
   const response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
     method: "POST", cache: "no-store", signal: AbortSignal.timeout(long ? 120000 : 40000),
     headers: { "x-goog-api-key": key, "Content-Type": "application/json" },
@@ -34,7 +35,11 @@ async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], f
       generationConfig: { temperature: 0.6, maxOutputTokens: long ? 16000 : 2500, responseFormat: { text: { mimeType: "APPLICATION_JSON", schema: outputSchema(brief.kind) } } },
     }),
   });
-  if (!response.ok) throw new Error(`AI Factory model unavailable (HTTP ${response.status}); no draft was published`);
+  if (!response.ok) {
+    const detail = (await response.text()).slice(0, 1000);
+    if (response.status === 429 || /per day|quota|resource exhausted/i.test(detail)) throw new Error(`AI Factory daily quota exhausted (HTTP ${response.status})`);
+    throw new Error(`AI Factory model unavailable (HTTP ${response.status}); no draft was published`);
+  }
   const raw = await response.json() as { candidates?: { finishReason?: string; content?: { parts?: { text?: string }[] } }[]; usageMetadata?: { promptTokenCount?: number; candidatesTokenCount?: number } };
   const candidate = raw.candidates?.[0];
   if (candidate?.finishReason !== "STOP") throw new Error("AI Factory model returned an incomplete draft");
@@ -46,7 +51,7 @@ async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], f
 async function draftOnce(kind: FactoryKind, topic: string, options: Options, fetcher: typeof fetch, retryReason = "") {
   const cleanTopic = topicSchema.parse(topic);
   const brief = briefFor(kind, options.day ?? 0);
-  const { value, model, usage } = await callFreeTierModel(brief, cleanTopic, options.avoid ?? [], fetcher, retryReason);
+  const { value, model, usage } = await callFreeTierModel(brief, cleanTopic, options.avoid ?? [], fetcher, retryReason, options.beforeRequest);
   const id = randomUUID();
   const skill = factoryKinds[kind].skill;
   const sourceUrl = "https://ieltswithharry.vercel.app/app/question-bank";
@@ -78,7 +83,7 @@ export async function generateFactoryDraft(kind: FactoryKind, topic: string, opt
       reason = draft.warnings.join("; ").slice(0, 900);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      if (attempt === attempts || /model unavailable|free-tier project|Separate AI Factory free-tier key/i.test(message)) throw error;
+      if (attempt === attempts || /model unavailable|daily quota exhausted|daily request budget|Could not checkpoint|free-tier project|Separate AI Factory free-tier key/i.test(message)) throw error;
       reason = message.slice(0, 900);
     }
   }

@@ -1,0 +1,11 @@
+# AI Content Factory daily IELTS set
+
+The scheduled text workflow runs at 08:27 UTC. It creates at most one review-only set for each UTC day: four Listening parts, three Academic Reading passages, Writing Task 1 Academic and Task 2, and Speaking Part 1 and Part 2–3. The four Listening parts become one 40-question exam and one audio job; the three Reading passages become one 40-question exam. Writing and Speaking remain separate exams. All imported exams stay `needs_review`; no workflow publishes them.
+
+`scripts/run-ai-factory-daily-set.ts` stores completed pieces and a request counter in one `ai_factory_jobs` row with `payload.dailySet=true`. That row has `status=failed` while the set is in progress so the audio worker cannot claim it; the admin API presents it as set progress rather than an exam job. After all six review jobs exist, it becomes `cancelled` with `payload.completedAt`. A rerun resumes the oldest incomplete set. If today's set is complete, a manual run does nothing.
+
+Long Gemini model calls are spaced at least 13 seconds apart. The counter is saved before each request and stops at 20 calls per UTC quota day. HTTP 429 and daily quota errors leave completed pieces in place for the next run. The four shorter Writing/Speaking pieces use Flash-Lite. The production generation switch must be enabled; `daily_job_limit=0` disables the schedule. The job limit otherwise applies to admin-generated jobs, not the daily set.
+
+The audio workflow runs at 10:17 UTC and renders four MP3s for the single full Listening job. Each section has its own technical, alignment and ASR report. The admin must listen to all four files and check all answers before one approval copies the audio to the public bucket and saves a new exam revision. The ordinary bank review still controls publication.
+
+Useful checks: run `npx vitest run`, `npx tsc --noEmit -p .`, `npx eslint` on changed TypeScript files, and `python -m unittest discover -s services/audio-worker -p test_worker.py -v`. The Python test uses a synthetic audio provider; it does not download Kokoro or call Supabase. A local invocation of the daily script without the confirmed AI Factory key exits without making model requests.

@@ -1,5 +1,7 @@
 # Bàn giao: AI Content Factory – mỗi ngày tạo đúng 1 đề IELTS tiêu chuẩn
 
+> Lưu ý: đây là bản bàn giao lịch sử. Xem [AI_FACTORY_DAILY_SET.md](AI_FACTORY_DAILY_SET.md) để biết cách chạy và trạng thái triển khai hiện tại.
+
 > Dán toàn bộ file này cho AI tiếp theo. Đọc hết trước khi sửa code.
 
 ## 0. Bối cảnh và luật làm việc

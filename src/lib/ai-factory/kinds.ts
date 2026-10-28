@@ -10,7 +10,7 @@ import { checkFormat, fitsLimit, wordLimit } from "../ielts-bank/format-rules";
 
 export type TextSkill = "Listening" | "Reading" | "Writing" | "Speaking";
 export type FactoryKind =
-  | "listening_part1" | "listening_part2" | "listening_part3" | "listening_part4" | "reading_passage"
+  | "listening_part1" | "listening_part2" | "listening_part3" | "listening_part4" | "reading_passage" | "reading_passage1" | "reading_passage2" | "reading_passage3"
   | "writing_task1_academic" | "writing_task1_general" | "writing_task2" | "speaking_part1" | "speaking_part2";
 
 export const factoryKinds: Record<FactoryKind, { skill: TextSkill; label: string }> = {
@@ -19,6 +19,9 @@ export const factoryKinds: Record<FactoryKind, { skill: TextSkill; label: string
   listening_part3: { skill: "Listening", label: "Listening Part 3" },
   listening_part4: { skill: "Listening", label: "Listening Part 4" },
   reading_passage: { skill: "Reading", label: "Reading passage" },
+  reading_passage1: { skill: "Reading", label: "Reading Passage 1" },
+  reading_passage2: { skill: "Reading", label: "Reading Passage 2" },
+  reading_passage3: { skill: "Reading", label: "Reading Passage 3" },
   writing_task1_academic: { skill: "Writing", label: "Writing Task 1 (Academic)" },
   writing_task1_general: { skill: "Writing", label: "Writing Task 1 (General Training)" },
   writing_task2: { skill: "Writing", label: "Writing Task 2" },
@@ -46,13 +49,13 @@ export const plans: Partial<Record<FactoryKind, GroupPlan[][]>> = {
   ],
   listening_part2: [
     [{ type: "multiple_choice", count: 5 }, { type: "matching", count: 5, box: 7 }],
-    [{ type: "multiple_answers", count: 2 }, { type: "multiple_answers", count: 2 }, { type: "multiple_choice", count: 6 }],
-    [{ type: "multiple_choice", count: 6 }, { type: "table_completion", count: 4, limit: ONE }],
+    [{ type: "matching", count: 4, box: 6 }, { type: "multiple_choice", count: 6 }],
+    [{ type: "multiple_choice", count: 6 }, { type: "matching", count: 4, box: 6 }],
   ],
   listening_part3: [
-    [{ type: "multiple_choice", count: 6 }, { type: "matching", count: 4, box: 6 }],
     [{ type: "multiple_answers", count: 2 }, { type: "multiple_answers", count: 2 }, { type: "multiple_choice", count: 6 }],
-    [{ type: "multiple_choice", count: 5 }, { type: "flow_chart_completion", count: 5, box: 8 }],
+    [{ type: "multiple_answers", count: 2 }, { type: "multiple_answers", count: 2 }, { type: "multiple_choice", count: 6 }],
+    [{ type: "multiple_answers", count: 2 }, { type: "multiple_choice", count: 3 }, { type: "flow_chart_completion", count: 5, box: 8 }],
   ],
   listening_part4: [
     [{ type: "note_completion", count: 10, limit: ONE }],
@@ -65,7 +68,23 @@ export const plans: Partial<Record<FactoryKind, GroupPlan[][]>> = {
     [{ type: "matching_features", count: 5, box: 5 }, { type: "true_false_not_given", count: 4 }, { type: "matching_sentence_endings", count: 4, box: 6 }],
     [{ type: "multiple_answers", count: 2 }, { type: "multiple_answers", count: 2 }, { type: "yes_no_not_given", count: 5 }, { type: "sentence_completion", count: 4, limit: TWO }],
   ],
+  reading_passage1: [
+    [{ type: "true_false_not_given", count: 7 }, { type: "note_completion", count: 6, limit: ONE }],
+    [{ type: "table_completion", count: 6, limit: ONE }, { type: "true_false_not_given", count: 7 }],
+    [{ type: "note_completion", count: 8, limit: ONE }, { type: "true_false_not_given", count: 5 }],
+  ],
+  reading_passage2: [
+    [{ type: "matching_headings", count: 6, box: 8 }, { type: "multiple_answers", count: 2 }, { type: "multiple_answers", count: 2 }, { type: "summary_completion", count: 3, limit: ONE }],
+    [{ type: "matching_information", count: 5 }, { type: "matching_features", count: 4, box: 5 }, { type: "sentence_completion", count: 4, limit: ONE }],
+  ],
+  reading_passage3: [
+    [{ type: "multiple_choice", count: 5 }, { type: "yes_no_not_given", count: 5 }, { type: "matching_sentence_endings", count: 4, box: 6 }],
+    [{ type: "yes_no_not_given", count: 4 }, { type: "multiple_choice", count: 5 }, { type: "summary_completion", count: 5, limit: ONE }],
+  ],
 };
+
+export const isReadingKind = (kind: FactoryKind) => kind.startsWith("reading_passage");
+const passagePosition = (kind: FactoryKind) => kind === "reading_passage1" ? 1 : kind === "reading_passage2" ? 2 : kind === "reading_passage3" ? 3 : 1;
 
 const isGap = (type: GroupType) => type.endsWith("_completion") && type !== "flow_chart_completion";
 const usesBox = (plan: GroupPlan) => Boolean(plan.box) || plan.type === "matching_information";
@@ -146,7 +165,7 @@ const groupSchema = obj({ heading: s, box: arr(s), questions: arr(obj({ prompt: 
 
 export function outputSchema(kind: FactoryKind): object {
   if (kind.startsWith("listening")) return obj({ title: s, topic: s, setting: s, speakers: arr(obj({ name: s, gender: { type: "string", enum: ["female", "male"] }, accent: { type: "string", enum: ["UK", "US"] } })), turns: arr(obj({ speaker: s, text: s })), groups: arr(groupSchema) });
-  if (kind === "reading_passage") return obj({ title: s, topic: s, paragraphs: arr(s), groups: arr(groupSchema) });
+  if (isReadingKind(kind)) return obj({ title: s, topic: s, paragraphs: arr(s), groups: arr(groupSchema) });
   if (kind === "writing_task1_academic") return obj({ title: s, topic: s, description: s, visual: obj({ kind: { type: "string", enum: ["line", "bar", "table", "process"] }, title: s, unit: s, x_axis: obj({ label: s, categories: arr(s) }), series: arr(obj({ name: s, values: arr({ type: "number" }) })), rows: arr(arr(s)), steps: arr(obj({ label: s })) }) });
   if (kind === "writing_task1_general") return obj({ title: s, topic: s, situation: s, recipient: s, salutation: s, bullets: arr(s) });
   if (kind === "writing_task2") return obj({ title: s, topic: s, statement: s, question: s });
@@ -156,10 +175,10 @@ export function outputSchema(kind: FactoryKind): object {
 
 // ---- briefs ------------------------------------------------------------------------------------------
 const partBrief: Record<number, { who: string; words: [number, number]; speakers: string }> = {
-  1: { who: "an everyday conversation between two people about a practical matter (a booking, enquiry or registration). Include a name spelled letter by letter, a number or date that is first misheard or changed and then corrected, and natural small talk", words: [650, 900], speakers: "exactly two speakers" },
-  2: { who: "a talk by one speaker in a social context (for example a guide, organiser or manager describing a place, event, service or facility to a group)", words: [650, 850], speakers: "exactly one speaker" },
-  3: { who: "an academic discussion between two students, or two students and a tutor, about a project, assignment or study, in which they compare opinions, change their minds and agree on next steps", words: [750, 1000], speakers: "two or three speakers" },
-  4: { who: "part of a university lecture by one speaker on an academic topic, with a clear structure of sections", words: [650, 850], speakers: "exactly one speaker" },
+  1: { who: "an everyday conversation between two people about a practical matter (a booking, enquiry or registration). Include a name spelled letter by letter, a number or date that is first misheard or changed and then corrected, and natural small talk", words: [680, 900], speakers: "exactly two speakers" },
+  2: { who: "a talk by one speaker in a social context (for example a guide, organiser or manager describing a place, event, service or facility to a group)", words: [680, 900], speakers: "exactly one speaker" },
+  3: { who: "an academic discussion between two students, or two students and a tutor, about a project, assignment or study, in which they compare opinions, change their minds and agree on next steps", words: [800, 1050], speakers: "two or three speakers" },
+  4: { who: "part of a university lecture by one speaker on an academic topic, with a clear structure of sections", words: [680, 900], speakers: "exactly one speaker" },
 };
 const chartKinds = ["line", "bar", "table", "process"] as const;
 const essayTypes = [
@@ -184,10 +203,12 @@ export function briefFor(kind: FactoryKind, day: number): Brief {
     const groups = plan.map((group, i) => { const from = next; next += group.count; return `${i + 1}) Questions ${range(from, next - 1)}: ${describe[group.type](group, "Listening")}`; });
     return { kind, plan, extra: `Write one original IELTS Listening Part ${n} recording: ${p.who}. Use ${p.speakers} with first names (or a role such as Tutor or Lecturer), and give each speaker's gender and a UK or US accent. The transcript must be ${p.words[0]}-${p.words[1]} words in total (count them: a transcript under ${p.words[0]} words is rejected), split into natural turns${n === 2 || n === 4 ? " (8-12 paragraph-sized turns of 60-100 words, all by the one speaker)" : " (20-40 turns)"}. Questions follow the order of the recording, and each evidence quotation is one or two consecutive sentences copied exactly from a single turn. "setting" completes the sentence "You will hear …". Then write the questions in ${plan.length} group(s), in this order:\n${groups.join("\n")}` };
   }
-  if (kind === "reading_passage") {
-    let next = 1;
+  if (isReadingKind(kind)) {
+    const position = passagePosition(kind);
+    const [minimum, maximum] = kind === "reading_passage" ? [780, 1000] : position === 1 ? [750, 900] : position === 2 ? [800, 950] : [850, 1000];
+    let next = position === 1 ? 1 : position === 2 ? 14 : 27;
     const groups = plan.map((group, i) => { const from = next; next += group.count; return `${i + 1}) Questions ${range(from, next - 1)}: ${describe[group.type](group, "Reading")}`; });
-    return { kind, plan, extra: `Write one original IELTS Academic Reading passage of 780-1000 words (count them: under 750 or over 1,100 words is rejected) in 6-8 paragraphs (each paragraph a separate string, without letters; the platform letters them A, B, C…), in the neutral, factual style of a magazine or journal article about research, history or society. Then write 13 questions in ${plan.length} groups, in this order:\n${groups.join("\n")}` };
+    return { kind, plan, extra: `Write original IELTS Academic Reading Passage ${position}, ${minimum}-${maximum} words, in 6-8 paragraphs (each paragraph a separate string, without letters; the platform letters them A, B, C…). Passage 1 is accessible and factual; Passage 2 compares research or historical evidence; Passage 3 is the most demanding and includes the writer's claims and viewpoints. Keep the neutral style of a magazine or journal article. Then write ${position === 3 ? 14 : 13} questions in ${plan.length} groups, in this order:\n${groups.join("\n")}` };
   }
   if (kind === "writing_task1_academic") {
     const chart = chartKinds[Math.floor(day / 4) % chartKinds.length];
@@ -332,18 +353,20 @@ export function buildDraft(brief: Brief, value: unknown, meta: Meta): Built {
     exam = { ...meta, durationMinutes: 10, title: reply.title, topic: reply.topic, content: { prompt: "", taskType: `Listening Part ${part}`, sections: [{ id: sectionId, title: `Part ${part}: ${reply.title}`, passage: built.printed, transcript, questions: built.questions }] } };
     audioPayload = { sectionId, setting: reply.setting, turns, evidence: alignment, answerPhrases: built.questions.filter((q) => !q.options.length).map((q) => q.answers[0]) };
     for (const finding of checkFormat("Listening", exam.content, "part")) if (finding.severity === "error" && finding.code !== "L2" || finding.code === "L11") problems.push(`${finding.code}${finding.question ? ` Q${finding.question}` : ""}: ${finding.message}`);
-  } else if (kind === "reading_passage") {
+  } else if (isReadingKind(kind)) {
     const reply = readingReply.parse(value);
+    const position = passagePosition(kind);
     const lettered = brief.plan.some((group) => group.type === "matching_headings" || group.type === "matching_information");
     const paragraphs = reply.paragraphs.map((paragraph) => paragraph.replace(/^\s*\(?[A-H]\)?[.)]?\s+(?=[A-Z])/, ""));
     const passage = paragraphs.map((paragraph, i) => (lettered ? `(${letters(10)[i]}) ${paragraph}` : paragraph)).join("\n\n");
-    const built = buildQuestions("Reading", brief.plan, reply.groups, 1, passage, problems, paragraphs.length);
+    const built = buildQuestions("Reading", brief.plan, reply.groups, position === 1 ? 1 : position === 2 ? 14 : 27, passage, problems, paragraphs.length);
     evidence = built.evidence;
     const headings = built.questions.filter((q) => q.type === "matching_headings");
     if (headings.length && headings.some((q, i) => q.prompt.trim() !== `Paragraph ${letters(10)[i]}`)) problems.push("headings questions must ask about Paragraph A, B, C… in order");
-    exam = { ...meta, durationMinutes: 20, title: reply.title, topic: reply.topic, content: { prompt: "", sections: [{ id: "passage-1", title: reply.title, passage, transcript: "", questions: built.questions }] } };
+    exam = { ...meta, durationMinutes: 20, title: reply.title, topic: reply.topic, content: { prompt: "", sections: [{ id: `passage-${position}`, title: reply.title, passage, transcript: "", questions: built.questions }] } };
     for (const finding of checkFormat("Reading", exam.content, "part")) if (finding.severity === "error") problems.push(`${finding.code}${finding.question ? ` Q${finding.question}` : ""}: ${finding.message}`);
-    if (wordCount(passage) < 700 || wordCount(passage) > 1150) problems.push(`passage has ${wordCount(passage)} words (aim 780–1,000)`);
+    const [minimum, maximum] = kind === "reading_passage" ? [700, 1150] : position === 1 ? [750, 900] : position === 2 ? [800, 950] : [850, 1000];
+    if (wordCount(passage) < minimum || wordCount(passage) > maximum) problems.push(`passage has ${wordCount(passage)} words (aim ${minimum}–${maximum})`);
   } else if (kind === "writing_task1_academic") {
     const reply = chartReply.parse(value);
     const visual = reply.visual;
@@ -399,6 +422,9 @@ export const topicSeeds: Record<FactoryKind, string[]> = {
   listening_part3: ["A group presentation on urban gardens", "A survey of student sleep habits", "A project on museum accessibility", "Planning a field trip report", "Evaluating a language exchange app", "A study of plastic use in cafés", "A marketing case study", "A history assignment on local industry"],
   listening_part4: ["The science of bird song", "The history of public parks", "How glaciers shape landscapes", "Early printing technology", "Urban noise and health", "The economics of fair trade", "Bioluminescent sea creatures", "Ancient water management"],
   reading_passage: ["The history of the umbrella", "How bees navigate", "Rewilding farmland", "The psychology of queues", "Ancient Roman concrete", "The rise of citizen science", "Desert agriculture", "The invention of standard time"],
+  reading_passage1: ["The history of the umbrella", "How bees navigate", "Traditional paper making", "Urban beekeeping", "The invention of standard time", "Coastal gardens", "The growth of public libraries", "How glass is recycled"],
+  reading_passage2: ["Rewilding farmland", "Ancient Roman concrete", "Citizen science projects", "Desert agriculture", "Museums and public memory", "The history of botanical gardens", "Changing transport networks", "How cities measure air quality"],
+  reading_passage3: ["The psychology of queues", "How language shapes memory", "The limits of scientific models", "Public trust in research", "The meaning of cultural heritage", "Designing fairer cities", "Why experts disagree", "The future of shared knowledge"],
   writing_task1_academic: ["Household energy use", "Visitors to museums", "Water consumption by sector", "Commuting methods", "Book sales by format", "Recycling rates", "How paper is recycled", "Tourist arrivals by region"],
   writing_task1_general: ["A problem with a recent purchase", "Inviting a friend to an event", "Applying for a part-time job", "Complaining about noise", "Thanking a host", "Asking a landlord for repairs", "Changing a course booking", "Recommending a holiday place"],
   writing_task2: ["Working from home", "Online learning", "Public transport funding", "Advertising aimed at children", "Tourism and local culture", "Fast food and health", "Space exploration spending", "Social media and friendship"],

@@ -3,20 +3,28 @@ import { contentHash } from "../ielts-bank/schema";
 import { factoryKinds, type FactoryKind } from "./kinds";
 import { generateFactoryDraft } from "./text-generation";
 
+type FactoryDraft = Awaited<ReturnType<typeof generateFactoryDraft>>;
+
 /** One practice draft of a given kind. Scheduled callers must check generation_enabled before invoking. */
 export async function createTextPracticeJob(client: SupabaseClient, kind: FactoryKind, topic: string, actorId: string | null = null, options: { day?: number; avoid?: string[] } = {}) {
   if (!process.env.AI_FACTORY_GEMINI_API_KEY || process.env.AI_FACTORY_FREE_TIER_ONLY !== "true" || process.env.AI_FACTORY_FREE_TIER_CONFIRMED !== "true") throw new Error("Configure a separate, confirmed unbilled AI Factory free-tier key before generating drafts");
   const { data: settings, error: settingsError } = await client.from("ai_factory_settings").select("daily_job_limit").single();
   if (settingsError) throw new Error(settingsError.message);
   const today = new Date(); today.setUTCHours(0, 0, 0, 0);
-  const { count, error: countError } = await client.from("ai_factory_jobs").select("id", { count: "exact", head: true }).gte("created_at", today.toISOString());
+  const { count, error: countError } = await client.from("ai_factory_jobs").select("id", { count: "exact", head: true }).not("created_by", "is", null).gte("created_at", today.toISOString());
   if (countError) throw new Error(countError.message);
   if ((count || 0) >= settings.daily_job_limit) throw new Error("Daily Content Factory job limit reached");
+  const draft = await generateFactoryDraft(kind, topic, options);
+  return recordFactoryDraft(client, draft, actorId);
+}
+
+/** Store an already generated draft; daily-set orchestration can checkpoint model output before import. */
+export async function recordFactoryDraft(client: SupabaseClient, draft: FactoryDraft, actorId: string | null = null, dailySetId?: string) {
+  const kind = draft.kind;
   const skill = factoryKinds[kind].skill;
   let createdId: string | null = null;
   try {
-    const draft = await generateFactoryDraft(kind, topic, options);
-    const payload = { factoryKind: kind, topic, evidence: draft.evidence, usage: draft.usage, exam: draft.exam, ...(draft.audioPayload || {}) };
+    const payload = { factoryKind: kind, topic: draft.exam.topic, evidence: draft.evidence, usage: draft.usage, exam: draft.exam, ...(dailySetId ? { dailySetId, dailyRole: kind } : {}), ...(draft.audioPayload || {}) };
     const created = await client.from("ai_factory_jobs").insert({ kind: skill === "Listening" ? "listening_audio" : skill.toLowerCase(), status: draft.warnings.length ? "qa_failed" : "failed", provider: skill === "Listening" ? "kokoro" : "gemini-free", model_id: skill === "Listening" ? "hexgrad/Kokoro-82M" : draft.model, created_by: actorId, payload, error: draft.warnings.length ? draft.warnings.join("; ").slice(0, 1000) : "Draft transaction incomplete" }).select("id").single();
     if (created.error || !created.data) throw new Error(created.error?.message || "Could not record generation job");
     createdId = created.data.id;
