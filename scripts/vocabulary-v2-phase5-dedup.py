@@ -25,7 +25,8 @@ def load_audit():
 
 
 def classify_terms(terms: list[str], sources: dict[str, list[dict]], audit) -> list[dict]:
-    fields = {"ielts": ("term", "source_key"), "cefr_bank": ("headword", "source_id"), "lessons": ("word", "id")}
+    fields = {"ielts": ("term", "source_key"), "cefr_bank": ("headword", "source_id"),
+              "lessons": ("word", "id"), "drafts": ("term", "candidate_key")}
     index: dict[str, list[dict]] = collections.defaultdict(list)
     for collection, rows in sources.items():
         word_field, id_field = fields[collection]
@@ -71,6 +72,7 @@ def main() -> None:
         "ielts": db.rows("ielts_vocabulary_entries", "source_key,term"),
         "cefr_bank": db.rows("vocabulary_bank_entries", "source_id,headword"),
         "lessons": db.rows("vocabulary_entries", "id,word"),
+        "drafts": db.rows("ielts_vocabulary_draft_entries", "candidate_key,term"),
     }
     result = classify_terms(terms, sources, audit)
     counts = dict(sorted(collections.Counter(item["status"] for item in result).items()))

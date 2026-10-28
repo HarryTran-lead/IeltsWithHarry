@@ -29,4 +29,6 @@ Sáu mục có tín hiệu rà soát gồm `brush one's teeth`, `change one's ro
 - `scripts/stage-ielts-vocabulary-batch.py` mặc định dry run, chỉ chấp nhận project Dev, kiểm tra 25–50 dòng/batch, đối chiếu ba kho hiện có, rồi ghi cả batch trong một RPC transaction. Chạy lại cùng file thêm **0** bản nháp.
 - Báo cáo chi tiết về trùng và QA đặt ngoài repo tại `C:\Users\RAZER\Documents\ChatGPT\Vocab V2 Phase1 private\phase5\`. Không đưa tài liệu nguồn hoặc các báo cáo có ID nguồn vào `public/`.
 
-`scripts/verify-vocabulary-phase5-staging.py` xác nhận 40 topic, quota 2.650, 50 bản nháp, 100 ví dụ, quyền đọc ẩn, và ba kho cũ giữ nguyên 9.941/1.237/5.000 dòng. Phase 5 **chưa qua cổng GO**: còn cần biên tập và duyệt nội dung theo các batch 25–50 cho tới khi có đủ 2.650 mục mới thực sự đạt chất lượng.
+Batch `friends-001` bổ sung 25 bản nháp và 50 ví dụ cho **Friends & Social Relationships**. Trong 55 đề xuất ban đầu, `keep in touch` đã có ở cả kho IELTS và từ bài học nên bị loại. Batch đã đối chiếu với cả 50 bản nháp của topic đầu, không có trùng chữ hoặc biến thể gần. Bảy cờ `term_not_literal_in_examples` cần người biên tập xác minh dạng chia và cách diễn đạt.
+
+`scripts/verify-vocabulary-phase5-staging.py` xác nhận 40 topic, quota 2.650, **75 bản nháp trong 3 batch**, **150 ví dụ**, quyền đọc ẩn, và ba kho cũ giữ nguyên 9.941/1.237/5.000 dòng. Không mục mới nào được duyệt hay xuất bản; Phase 5 **chưa qua cổng GO**: còn cần biên tập và duyệt nội dung theo các batch 25–50 cho tới khi có đủ 2.650 mục mới thực sự đạt chất lượng.
