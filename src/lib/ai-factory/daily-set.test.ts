@@ -34,7 +34,7 @@ function piece(skill: "Listening" | "Reading", part: number): DailyPiece {
   const exam: NormalizedExam = { ...meta, skill, content: { prompt: "", sections: [{ id: skill === "Reading" ? `passage-${part}` : `part-${part}`,
     title: `${skill} ${part}`, passage: skill === "Reading" ? readingText : "Questions", transcript: skill === "Listening" ? speech : "", questions }] } };
   return { kind: skill === "Reading" ? `reading_passage${part}` : `listening_part${part}`, exam, warnings: [], evidence: {},
-    audioPayload: skill === "Listening" ? { sectionId: `part-${part}`, turns: [{ ordinal: 0, speaker: "Teacher", voice: "bf_emma", text: speech }], evidence: {}, answerPhrases: [] } : null,
+    audioPayload: skill === "Listening" ? { sectionId: `part-${part}`, setting: "a student talking to a tutor", turns: [{ ordinal: 0, speaker: "Teacher", voice: "bf_emma", text: speech }], evidence: {}, answerPhrases: [] } : null,
     model: "test", usage: { inputTokens: 0, outputTokens: 0 } } as unknown as DailyPiece;
 }
 
@@ -71,6 +71,7 @@ describe("AI Factory daily set", () => {
     const { exam, audioSections } = composeFullDraft("Listening", "set-2026-10-28", pieces);
     expect(exam.content.sections).toHaveLength(4);
     expect(audioSections.map((section) => section.sectionId)).toEqual(["part-1", "part-2", "part-3", "part-4"]);
+    expect(audioSections.map((section) => section.setting)).toEqual(Array(4).fill("a student talking to a tutor"));
     expect(checkFormat("Listening", exam.content, "full").map((finding) => finding.code)).toEqual(["L2", "L2", "L2", "L2"]);
   });
 });

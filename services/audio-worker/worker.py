@@ -1,7 +1,9 @@
-"""Private, service-role-only Kokoro worker. No inbound HTTP endpoint."""
+"""Private, service-role-only Gemini-first audio worker. No inbound HTTP endpoint."""
 from __future__ import annotations
 
+import base64
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -22,7 +24,14 @@ import requests
 import soundfile as sf
 
 SAMPLE_RATE = 24000
+QUESTION_PREVIEW_SECONDS = 30
+PART_REVIEW_SECONDS = 20
+FINAL_REVIEW_SECONDS = 120
+# "Approximately 30 minutes" is a range, not a target filled with artificial silence.
+FULL_MIN_SECONDS = 25 * 60
+FULL_MAX_SECONDS = 35 * 60
 MODEL_ID = os.getenv("KOKORO_MODEL_ID", "hexgrad/Kokoro-82M")
+GEMINI_TTS_MODEL = "gemini-3.8-flash-tts"
 # Published model-card SHA256 for Kokoro 1.0. Mismatch is a hard failure.
 MODEL_SHA256 = "496dba118d1a58f5f3db2efc88dbdc216e0483fc89fe6e47ee1f2c53f18ad1e4"
 CACHE_DIR = Path(os.getenv("AUDIO_CACHE_DIR", "/worker/cache"))
@@ -38,6 +47,11 @@ class AudioProvider(Protocol):
 
 
 class KokoroProvider:
+    provider_name = "kokoro"
+    model_id = MODEL_ID
+    model_sha256 = MODEL_SHA256
+    cache_version = MODEL_SHA256
+
     def __init__(self) -> None:
         from huggingface_hub import hf_hub_download
         from kokoro import KPipeline
@@ -74,6 +88,87 @@ class KokoroProvider:
         return inspect_audio(audio, SAMPLE_RATE)
 
 
+class GeminiUnavailable(RuntimeError):
+    """Gemini cannot supply a complete audio draft; Kokoro may replace the draft."""
+
+
+class GeminiProvider:
+    provider_name = "gemini"
+    model_id = GEMINI_TTS_MODEL
+    model_sha256 = None
+    cache_version = f"{GEMINI_TTS_MODEL}:ielts-voice-map-v1"
+    # Existing voice IDs remain stable in scripts and answer-alignment records.
+    voices = {"bf_emma": "Kore", "bm_george": "Charon", "af_heart": "Aoede", "am_michael": "Puck"}
+
+    def __init__(self, api_key: str) -> None:
+        if not api_key:
+            raise GeminiUnavailable("Gemini Free API key is missing")
+        self.api_key = api_key
+        self.session = requests.Session()
+
+    def list_voices(self) -> list[str]:
+        return list(self.voices)
+
+    def capabilities(self) -> dict:
+        return {"languages": ["en"], "sample_rate": SAMPLE_RATE, "multi_speaker": True}
+
+    def health(self) -> dict:
+        return {"ready": True, "provider": self.provider_name, "model": self.model_id}
+
+    def estimate_usage(self, text: str) -> dict:
+        return {"characters": len(text), "estimated_usd": 0}
+
+    def synthesize_segment(self, text: str, voice: str, pace: float) -> np.ndarray:
+        if voice not in self.voices:
+            raise ValueError(f"Unsupported voice: {voice}")
+        style = "Natural IELTS listening voice, clearly articulated, conversational, steady pace"
+        style += ", British English accent" if voice.startswith("b") else ", American English accent"
+        style += f", approximately {pace:.2f} times normal speaking speed"
+        body = {
+            "model": self.model_id,
+            "input": [{"type": "user_input", "content": [{"type": "text", "text": text,
+                       "annotations": [{"type": "speech_metadata", "style": style}]}]}],
+            "response_format": {"type": "audio"},
+            "generation_config": {"speech_config": [{"voice": self.voices[voice]}]},
+        }
+        try:
+            response = self.session.post("https://generativelanguage.googleapis.com/v1beta/interactions",
+                                         json=body, headers={"x-goog-api-key": self.api_key}, timeout=90)
+            if not response.ok:
+                raise GeminiUnavailable(f"Gemini TTS HTTP {response.status_code}")
+            payload = response.json()
+            audio_data = next((item.get("data") for step in reversed(payload.get("steps", []))
+                               for item in reversed(step.get("content", []))
+                               if item.get("type") == "audio" and item.get("data")), None)
+            if not audio_data:
+                raise GeminiUnavailable("Gemini TTS returned no audio")
+            encoded = base64.b64decode(audio_data, validate=True)
+            if encoded.startswith(b"RIFF"):
+                audio, sample_rate = sf.read(io.BytesIO(encoded), dtype="float32")
+                if sample_rate != SAMPLE_RATE:
+                    raise GeminiUnavailable(f"Gemini TTS sample rate {sample_rate} is unsupported")
+            else:
+                if len(encoded) % 2:
+                    raise GeminiUnavailable("Gemini TTS returned invalid PCM")
+                audio = np.frombuffer(encoded, dtype="<i2").astype(np.float32) / 32768
+            if audio.ndim != 1 or len(audio) == 0 or not np.isfinite(audio).all():
+                raise GeminiUnavailable("Gemini TTS returned invalid mono audio")
+            return np.asarray(audio, dtype=np.float32)
+        except GeminiUnavailable:
+            raise
+        except (requests.RequestException, ValueError, KeyError, TypeError, sf.LibsndfileError) as exc:
+            raise GeminiUnavailable(f"Gemini TTS response failed: {type(exc).__name__}") from exc
+
+    def validate_output(self, audio: np.ndarray) -> dict:
+        return inspect_audio(audio, SAMPLE_RATE)
+
+
+def confirmed_gemini_key() -> str | None:
+    if os.getenv("AI_FACTORY_FREE_TIER_ONLY") != "true" or os.getenv("AI_FACTORY_FREE_TIER_CONFIRMED") != "true":
+        return None
+    return os.getenv("AI_FACTORY_GEMINI_API_KEY") or None
+
+
 def normalize(text: str) -> str:
     text = re.sub(r"\s+", " ", text).strip()
     if not text or len(text) > 1000 or "<" in text or ">" in text:
@@ -81,7 +176,7 @@ def normalize(text: str) -> str:
     return text
 
 
-def inspect_audio(audio: np.ndarray, sample_rate: int) -> dict:
+def inspect_audio(audio: np.ndarray, sample_rate: int, planned_pauses: list[tuple[int, int]] | None = None) -> dict:
     if audio.ndim != 1 or len(audio) == 0 or not np.isfinite(audio).all():
         raise ValueError("Invalid or non-mono audio")
     peak = float(np.max(np.abs(audio)))
@@ -92,8 +187,59 @@ def inspect_audio(audio: np.ndarray, sample_rate: int) -> dict:
     changes = np.diff(np.concatenate(([False], quiet, [False])).astype(np.int8))
     starts, ends = np.flatnonzero(changes == 1), np.flatnonzero(changes == -1)
     longest_silence = float(np.max(ends - starts) / sample_rate) if len(starts) else 0.0
-    passed = sample_rate == SAMPLE_RATE and 0.1 < peak < 0.995 and clipping == 0 and longest_silence < 3.0 and duration > 0.5
-    return {"sample_rate": sample_rate, "channels": 1, "duration_seconds": round(duration, 3), "peak": round(peak, 5), "clipped_samples": clipping, "longest_silence_seconds": round(longest_silence, 3), "passed": passed}
+    tolerance = sample_rate  # TTS can leave up to one second of quiet beside an intentional pause.
+    unplanned = [(start, end) for start, end in zip(starts, ends)
+                 if not any(start >= pause_start - tolerance and end <= pause_end + tolerance
+                            for pause_start, pause_end in (planned_pauses or []))]
+    longest_unplanned = max((end - start for start, end in unplanned), default=0) / sample_rate
+    passed = sample_rate == SAMPLE_RATE and 0.1 < peak < 0.995 and clipping == 0 and longest_unplanned < 3.0 and duration > 0.5
+    return {"sample_rate": sample_rate, "channels": 1, "duration_seconds": round(duration, 3), "peak": round(peak, 5), "clipped_samples": clipping, "longest_silence_seconds": round(longest_silence, 3), "longest_unplanned_silence_seconds": round(longest_unplanned, 3), "passed": passed}
+
+
+def cached_segment(provider: AudioProvider, text: str, voice: str, pace: float) -> tuple[np.ndarray, str]:
+    canonical = normalize(text)
+    cache_key = hashlib.sha256(json.dumps([getattr(provider, "cache_version", MODEL_SHA256), voice, pace, canonical], ensure_ascii=False).encode()).hexdigest()
+    cache_path = CACHE_DIR / f"{cache_key}.wav"
+    if cache_path.exists():
+        clip, rate = sf.read(cache_path, dtype="float32")
+        if rate != SAMPLE_RATE or not provider.validate_output(clip)["passed"]:
+            cache_path.unlink()
+            clip = provider.synthesize_segment(canonical, voice, pace)
+    else:
+        clip = provider.synthesize_segment(canonical, voice, pace)
+    if not provider.validate_output(clip)["passed"]:
+        if getattr(provider, "provider_name", "kokoro") == "gemini":
+            raise GeminiUnavailable("Gemini TTS segment failed technical QA")
+        raise ValueError("Technical QA failed for speech segment")
+    if not cache_path.exists():
+        sf.write(cache_path, clip, SAMPLE_RATE, subtype="PCM_16")
+    return clip, cache_key
+
+
+def part_cues(section_id: str, setting: str | None, full_test: bool) -> tuple[str, str, str, int]:
+    match = re.fullmatch(r"part-([1-4])", section_id)
+    if not match:
+        raise ValueError(f"Invalid Listening section: {section_id}")
+    part = int(match.group(1))
+    labels = ("one", "two", "three", "four")
+    numbers = ("one to ten", "eleven to twenty", "twenty-one to thirty", "thirty-one to forty")
+    context = normalize(setting or "a conversation or talk")
+    if len(context) > 240:
+        raise ValueError(f"{section_id}: setting is too long")
+    context = context.rstrip(". ")
+    opening = "This is an original IELTS-style Listening practice test. You will hear each recording once only. " if full_test and part == 1 else ""
+    before = f"{opening}Part {labels[part - 1]}. You will hear {context}. Now look at questions {numbers[part - 1]}."
+    begin = f"Now listen carefully and answer questions {numbers[part - 1]}."
+    if full_test and part == 4:
+        after = "That is the end of the Listening practice test. You now have two minutes to check your answers."
+        return before, begin, after, FINAL_REVIEW_SECONDS
+    after = f"That is the end of Part {labels[part - 1]}. You now have some time to check your answers."
+    return before, begin, after, PART_REVIEW_SECONDS
+
+
+def full_duration_report(seconds: float) -> dict:
+    return {"duration_seconds": round(seconds, 2), "minimum_seconds": FULL_MIN_SECONDS,
+            "maximum_seconds": FULL_MAX_SECONDS, "passed": FULL_MIN_SECONDS <= seconds <= FULL_MAX_SECONDS}
 
 
 def words(text: str) -> list[str]:
@@ -171,7 +317,7 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str) -> None:
+def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str, *, fallback_reason: str | None = None) -> None:
     started = time.perf_counter()
     payload = job["payload"]
     grouped = payload.get("sections")
@@ -204,6 +350,37 @@ def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str) -> 
         rendered: list[np.ndarray] = []
         segments: list[dict] = []
         cursor = 0
+        planned_pauses: list[tuple[int, int]] = []
+        timeline: dict[str, object] = {}
+
+        def append_pause(seconds: float, label: str) -> None:
+            nonlocal cursor
+            start = cursor
+            silence = np.zeros(round(SAMPLE_RATE * seconds), dtype=np.float32)
+            rendered.append(silence)
+            cursor += len(silence)
+            planned_pauses.append((start, cursor))
+            timeline[label] = {"start_ms": round(start * 1000 / SAMPLE_RATE),
+                               "end_ms": round(cursor * 1000 / SAMPLE_RATE), "seconds": seconds}
+
+        before, begin, after, review_seconds = part_cues(section_id, section.get("setting"), multi)
+        narrator_voice = "bf_emma" if "bf_emma" in voices and "bf_emma" in provider.list_voices() else next(
+            (voice for voice in provider.list_voices() if voice in voices), None)
+        if narrator_voice is None:
+            raise ValueError("No enabled narrator voice")
+        narrator_pace = float(voices[narrator_voice]["pace"])
+        intro, _ = cached_segment(provider, before, narrator_voice, narrator_pace)
+        rendered.append(intro)
+        cursor += len(intro)
+        timeline["introduction"] = {"text": before, "start_ms": 0, "end_ms": round(cursor * 1000 / SAMPLE_RATE)}
+        append_pause(QUESTION_PREVIEW_SECONDS, "question_preview")
+        begin_start = cursor
+        begin_clip, _ = cached_segment(provider, begin, narrator_voice, narrator_pace)
+        rendered.append(begin_clip)
+        cursor += len(begin_clip)
+        timeline["start_cue"] = {"text": begin, "start_ms": round(begin_start * 1000 / SAMPLE_RATE),
+                                 "end_ms": round(cursor * 1000 / SAMPLE_RATE)}
+
         for ordinal, turn in enumerate(turns):
             db.update(job, token, {"lease_until": (datetime.now(timezone.utc) + timedelta(minutes=15)).isoformat()})
             if turn.get("ordinal") != ordinal:
@@ -216,19 +393,7 @@ def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str) -> 
             voice_by_speaker[speaker] = voice
             canonical = normalize(turn["text"])
             pace = float(voices[voice]["pace"])
-            cache_key = hashlib.sha256(json.dumps([MODEL_SHA256, voice, pace, canonical], ensure_ascii=False).encode()).hexdigest()
-            cache_path = CACHE_DIR / f"{cache_key}.wav"
-            if cache_path.exists():
-                clip, rate = sf.read(cache_path, dtype="float32")
-                if rate != SAMPLE_RATE or not provider.validate_output(clip)["passed"]:
-                    cache_path.unlink()
-                    clip = provider.synthesize_segment(canonical, voice, pace)
-            else:
-                clip = provider.synthesize_segment(canonical, voice, pace)
-            if not provider.validate_output(clip)["passed"]:
-                raise ValueError(f"{section_id}: technical QA failed for turn {ordinal}")
-            if not cache_path.exists():
-                sf.write(cache_path, clip, SAMPLE_RATE, subtype="PCM_16")
+            clip, cache_key = cached_segment(provider, canonical, voice, pace)
             start = cursor
             rendered.append(clip)
             cursor += len(clip)
@@ -238,12 +403,22 @@ def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str) -> 
             pause = np.zeros(int(SAMPLE_RATE * (0.42 if canonical.endswith(("?", "!")) else 0.32)), dtype=np.float32)
             rendered.append(pause)
             cursor += len(pause)
+        timeline["dialogue"] = {"start_ms": segments[0]["start_ms"], "end_ms": segments[-1]["end_ms"]}
+        outro_start = cursor
+        outro, _ = cached_segment(provider, after, narrator_voice, narrator_pace)
+        rendered.append(outro)
+        cursor += len(outro)
+        timeline["closing"] = {"text": after, "start_ms": round(outro_start * 1000 / SAMPLE_RATE),
+                               "end_ms": round(cursor * 1000 / SAMPLE_RATE)}
+        append_pause(review_seconds, "answer_review")
         audio = np.concatenate(rendered)
         peak = float(np.max(np.abs(audio)))
         if peak > 0:
             audio *= min(0.92 / peak, 1.6)
-        technical = inspect_audio(audio, SAMPLE_RATE)
-        technical.update({"expected_turns": len(turns), "actual_turns": len(segments), "model_sha256": MODEL_SHA256})
+        technical = inspect_audio(audio, SAMPLE_RATE, planned_pauses)
+        technical.update({"expected_turns": len(turns), "actual_turns": len(segments),
+                          "model_sha256": getattr(provider, "model_sha256", MODEL_SHA256),
+                          "timeline": timeline})
         evidence = section.get("evidence", {})
         alignment = {key: {"turns": value, "intervals_ms": [[segments[i]["start_ms"], segments[i]["end_ms"]] for i in value]}
                      for key, value in evidence.items()
@@ -257,10 +432,15 @@ def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str) -> 
             sf.write(wav, audio, SAMPLE_RATE, subtype="PCM_16")
             subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-hide_banner", "-loglevel", "error", "-y", "-i", str(wav),
                             "-codec:a", "libmp3lame", "-q:a", "4", str(mp3)], check=True, timeout=180)
-            decoded = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-v", "error", "-i", str(mp3), "-f", "null", "-"],
-                                     capture_output=True, timeout=120)
+            decoded_pcm = Path(temp) / "decoded.pcm"
+            decoded = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-v", "error", "-i", str(mp3), "-f", "s16le",
+                                      "-ac", "1", "-ar", str(SAMPLE_RATE), str(decoded_pcm)], capture_output=True, timeout=120)
             if decoded.returncode != 0 or mp3.stat().st_size < 1000 or mp3.stat().st_size > 20_000_000:
                 raise ValueError(f"{section_id}: final MP3 cannot be decoded or exceeds storage limit")
+            encoded_seconds = decoded_pcm.stat().st_size / (2 * SAMPLE_RATE)
+            if abs(encoded_seconds - technical["duration_seconds"]) > 1:
+                raise ValueError(f"{section_id}: MP3 duration does not match rendered audio")
+            technical["encoded_duration_seconds"] = round(encoded_seconds, 3)
             db.update(job, token, {"lease_until": (datetime.now(timezone.utc) + timedelta(minutes=45)).isoformat()})
             asr = asr_report(mp3, " ".join(turn["text"] for turn in turns), section.get("answerPhrases", []))
             path = f"{job['id']}/{section_id}.mp3" if multi else f"{job['id']}/audio.mp3"
@@ -272,12 +452,15 @@ def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str) -> 
         alignment_reports[section_id] = {"passed": alignment_passed, "evidence": alignment}
         asr_reports[section_id] = asr
         total_characters += sum(len(turn["text"]) for turn in turns)
-        total_seconds += technical["duration_seconds"]
+        total_seconds += technical["encoded_duration_seconds"]
         total_bytes += len(encoded)
 
+    duration_check = full_duration_report(total_seconds) if multi else None
+    if duration_check and not duration_check["passed"]:
+        raise ValueError(f"Full Listening audio is {round(total_seconds / 60, 1)} minutes; expected approximately 30 minutes (25–35)")
     db.insert("ai_factory_segments", all_segments)
     if multi:
-        technical_result = {"passed": True, "sections": technical_reports}
+        technical_result = {"passed": True, "sections": technical_reports, "full_duration": duration_check}
         alignment_result = {"passed": True, "sections": alignment_reports}
         asr_result = {"status": "review_required" if any(item.get("status") != "completed" for item in asr_reports.values()) else "completed",
                       "sections": asr_reports}
@@ -288,13 +471,38 @@ def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str) -> 
         alignment_result = alignment_reports[section_id]
         asr_result = asr_reports[section_id]
         artifact_path = paths[section_id]
+    technical_result["generation"] = {
+        "preferred_provider": "gemini", "actual_provider": getattr(provider, "provider_name", "kokoro"),
+        "model_id": getattr(provider, "model_id", MODEL_ID),
+        "needs_regeneration": getattr(provider, "provider_name", "kokoro") != "gemini",
+        "fallback_reason": fallback_reason,
+    }
     db.insert("ai_factory_qa", {"job_id": job["id"], "technical": technical_result,
                                 "answer_alignment": alignment_result, "asr": asr_result, "passed": True})
-    db.insert("ai_factory_usage", {"job_id": job["id"], "provider": "kokoro", "characters": total_characters,
+    db.insert("ai_factory_usage", {"job_id": job["id"], "provider": getattr(provider, "provider_name", "kokoro"), "characters": total_characters,
                                    "audio_seconds": round(total_seconds, 2), "processing_seconds": round(time.perf_counter() - started, 2),
                                    "storage_bytes": total_bytes, "estimated_usd": 0, "actual_usd": 0})
     db.update(job, token, {"status": "awaiting_review", "artifact_path": artifact_path,
-                           "model_sha256": MODEL_SHA256, "lease_token": None, "lease_until": None})
+                           "provider": getattr(provider, "provider_name", "kokoro"),
+                           "model_id": getattr(provider, "model_id", MODEL_ID),
+                           "model_sha256": getattr(provider, "model_sha256", MODEL_SHA256),
+                           "lease_token": None, "lease_until": None})
+
+
+def render_preferred_job(db: Supabase, job: dict, token: str, kokoro: AudioProvider | None = None) -> AudioProvider | None:
+    key = confirmed_gemini_key()
+    fallback_reason = "Gemini Free chưa được cấu hình hoặc xác nhận"
+    if key:
+        try:
+            gemini = GeminiProvider(key)
+            render_job(db, gemini, job, token)
+            return kokoro
+        except GeminiUnavailable as exc:
+            fallback_reason = str(exc)
+            print(json.dumps({"job": job["id"], "gemini_fallback": fallback_reason}), flush=True)
+    kokoro = kokoro or KokoroProvider()
+    render_job(db, kokoro, job, token, fallback_reason=fallback_reason)
+    return kokoro
 
 
 def main() -> None:
@@ -351,9 +559,7 @@ def main() -> None:
                     return
                 time.sleep(5)
                 continue
-            if provider is None:
-                provider = KokoroProvider()
-            render_job(db, provider, job, token)
+            provider = render_preferred_job(db, job, token, provider)
             print(json.dumps({"job": job["id"], "status": "awaiting_review"}), flush=True)
             if once:
                 return

@@ -47,7 +47,8 @@ export const pilotContent: ExamContent = {
 };
 
 export const pilotPayload = {
-  sectionId: "part-3", turns: pilotTurns.map((turn, ordinal) => ({ ordinal, ...turn })),
+  sectionId: "part-3", setting: "two students and a tutor discussing an urban ecology project",
+  turns: pilotTurns.map((turn, ordinal) => ({ ordinal, ...turn })),
   evidence: {
     "pilot-p3-q21": [1], "pilot-p3-q22": [5], "pilot-p3-q23": [7], "pilot-p3-q24": [8],
     "pilot-p3-q25": [9], "pilot-p3-q26": [12], "pilot-p3-q27": [12], "pilot-p3-q28": [15],
