@@ -9,6 +9,7 @@ import { demoMode } from "@/lib/runtime";
 import catalogJson from "@/data/grammar/catalog.json";
 import { grammarLevels, grammarWorlds, practiced, reviewedCount, type GrammarCatalogLesson, type GrammarGuide, type GrammarLessonProgress, type GrammarPracticeItem, type GrammarProgress, type GrammarResponse, type GrammarLevel } from "@/lib/grammar/types";
 import "./grammar-garden.css";
+import "./grammar-garden-layout.css";
 
 const catalog = catalogJson as GrammarCatalogLesson[];
 const ROOT = "/app/grammar";
