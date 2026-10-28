@@ -20,6 +20,7 @@ import { IeltsModePreview } from "@/features/ielts/ielts-mode-preview";
 import { BankStudent } from "@/features/ielts/bank-student";
 import { SpeakingMock } from "@/features/ielts/speaking-mock";
 import { YoutubeLab } from "@/features/listening/youtube-lab";
+import { GrammarGarden } from "@/features/grammar/grammar-garden";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -41,6 +42,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <ContentLab />
         ) : section === "notebook" ? (
           <NotebookPage />
+        ) : section === "grammar" && skillMode !== "live" ? (
+          <GrammarGarden />
         ) : skill === "vocabulary" && !skillMode ? (
           <VocabularyLanding />
         ) : skill && !skillMode ? (
