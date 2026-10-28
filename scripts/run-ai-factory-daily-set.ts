@@ -136,7 +136,7 @@ async function main() {
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     await save(client, active, { error: message.slice(0, 1000) });
-    if (/daily request budget|daily quota exhausted/i.test(message)) { console.log(`${active.payload.setId} paused: ${message}`); return; }
+    if (/daily request budget|daily quota exhausted|timeout|model unavailable \(HTTP 5\d\d\)/i.test(message)) { console.log(`${active.payload.setId} paused: ${message}`); return; }
     throw error;
   }
 }

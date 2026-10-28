@@ -83,7 +83,7 @@ export async function generateFactoryDraft(kind: FactoryKind, topic: string, opt
       reason = draft.warnings.join("; ").slice(0, 900);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      if (attempt === attempts || /model unavailable|daily quota exhausted|daily request budget|Could not checkpoint|free-tier project|Separate AI Factory free-tier key/i.test(message)) throw error;
+      if (attempt === attempts || (error instanceof Error && error.name === "TimeoutError") || /model unavailable|daily quota exhausted|daily request budget|Could not checkpoint|free-tier project|Separate AI Factory free-tier key/i.test(message)) throw error;
       reason = message.slice(0, 900);
     }
   }

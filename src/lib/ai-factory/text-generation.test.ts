@@ -68,4 +68,13 @@ describe("AI Factory text drafting", () => {
     expect(beforeRequest).toHaveBeenCalledTimes(1);
     expect(fetcher).toHaveBeenCalledTimes(1);
   });
+
+  it("does not spend more requests retrying a timed-out model call", async () => {
+    enableConfirmedFreeTier();
+    const beforeRequest = vi.fn(async () => {});
+    const fetcher = vi.fn(async () => { throw new DOMException("The operation was aborted due to timeout", "TimeoutError"); }) as typeof fetch;
+    await expect(generateFactoryDraft("listening_part1", "Joining a sports club", { beforeRequest }, fetcher)).rejects.toThrow("timeout");
+    expect(beforeRequest).toHaveBeenCalledTimes(1);
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
 });
