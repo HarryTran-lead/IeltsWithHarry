@@ -100,7 +100,12 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     { label: "Học từ A1–C2", href: "/app/vocabulary/study?collection=cefr" },
     { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },
   ],
-  grammar: [{ label: "Từ nối trong ngữ cảnh", href: "/app/grammar/live" }],
+  grammar: [
+    { label: "Bài kiểm tra", href: "/app/grammar/tests" },
+    { label: "Ôn tập & Sổ lỗi", href: "/app/grammar/review" },
+    { label: "Tiến độ Grammar", href: "/app/grammar/progress" },
+    { label: "Từ nối trong ngữ cảnh", href: "/app/grammar/live" },
+  ],
   ...(!demoMode ? {
     reading: [
       { label: "Bài lẻ", href: "/app/reading?type=passage", kind: "parent" as const },
@@ -435,7 +440,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                 </div>;
                 return <div className={`nav-item ${examSkill ? `nav-exam-item nav-exam-${skill}` : ""}`} key={href}>
                   <Link
-                    href={practiceLinks && !examSkill ? `${href}#che-do-hoc` : href}
+                    href={practiceLinks && !examSkill && skill !== "grammar" ? `${href}#che-do-hoc` : href}
                     onClick={() => {
                       if (practiceLinks) setSkillMenuOverride({ pathname, skill: examSkill ? skill : expanded ? null : skill });
                       else setMenuOpen(false);
@@ -453,7 +458,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                     {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
                   </Link>
                   {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className={`nav-submenu ${examSkill ? "nav-exam-submenu" : ""}`} hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
-                    {!examSkill && <Link href={skill === "vocabulary" ? href : `${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>{skill === "vocabulary" ? "Bắt đầu học" : "Tất cả chế độ"}</Link>}
+                    {!examSkill && <Link href={skill === "vocabulary" || skill === "grammar" ? href : `${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>{skill === "vocabulary" ? "Bắt đầu học" : skill === "grammar" ? "Lộ trình học" : "Tất cả chế độ"}</Link>}
                     {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => {
                       const target = new URL(practice.href, "https://ieltswithharry.local");
                       const selected = examSkill
