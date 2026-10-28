@@ -16,7 +16,7 @@ concurrency:
 jobs:
   create-daily-set:
     runs-on: ubuntu-24.04
-    timeout-minutes: 75
+    timeout-minutes: 150
     env:
       AI_FACTORY_SUPABASE_URL: ${{ secrets.AI_FACTORY_SUPABASE_URL }}
       AI_FACTORY_SERVICE_ROLE_KEY: ${{ secrets.AI_FACTORY_SERVICE_ROLE_KEY }}
