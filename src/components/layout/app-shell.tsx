@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
   BookOpenText,
@@ -86,7 +86,8 @@ const groups = [
 ];
 const links = groups.flatMap((group) => group.links);
 
-const skillPracticeLinks: Record<string, { label: string; href: string }[]> = {
+type SkillPracticeLink = { label: string; href: string; kind?: "parent" | "child" | "full" };
+const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
   vocabulary: [
     { label: "Học theo topic & Level", href: "/app/vocabulary/library" },
     { label: "Bộ thẻ cá nhân", href: "/app/vocabulary/decks" },
@@ -94,6 +95,18 @@ const skillPracticeLinks: Record<string, { label: string; href: string }[]> = {
     { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },
   ],
   grammar: [{ label: "Từ nối trong ngữ cảnh", href: "/app/grammar/live" }],
+  ...(!demoMode ? {
+    reading: [
+      { label: "Bài lẻ", href: "/app/reading?type=passage", kind: "parent" as const },
+      ...[1, 2, 3].map((part): SkillPracticeLink => ({ label: `Passage ${part}`, href: `/app/reading?type=passage&part=${part}`, kind: "child" })),
+      { label: "Full đề", href: "/app/reading?type=full_test", kind: "full" as const },
+    ],
+    listening: [
+      { label: "Bài lẻ", href: "/app/listening?type=part", kind: "parent" as const },
+      ...[1, 2, 3, 4].map((part): SkillPracticeLink => ({ label: `Section ${part}`, href: `/app/listening?type=part&part=${part}`, kind: "child" })),
+      { label: "Full đề", href: "/app/listening?type=full_test", kind: "full" as const },
+    ],
+  } : {}),
   writing: [
     ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/writing#ngan-hang-de" }] : []),
     { label: "Academic Task 1", href: "/app/writing/task-1" },
@@ -133,6 +146,7 @@ function isActive(pathname: string, href: string) {
 
 export function AppShell({ children, canManage = false }: { children: React.ReactNode; canManage?: boolean }) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const router = useRouter();
   const { tasks, attempts, error, clearError } = useDemo();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -375,16 +389,17 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
               {group.links.map(({ href, label, icon: Icon, tone }) => {
                 const skill = href.split("/")[2];
                 const practiceLinks = skillPracticeLinks[skill];
+                const examSkill = skill === "reading" || skill === "listening";
                 const expanded = expandedSkill === skill && Boolean(practiceLinks);
                 const active = isActive(pathname, href);
                 if (lockedLearnerPath(href)) return <div key={href} className="nav-link nav-link-locked" aria-label={`${label} đang chuẩn bị`} title={`${label} đang chuẩn bị`}>
                   <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b><span>{label}</span><small>Sắp mở</small>
                 </div>;
-                return <div className="nav-item" key={href}>
+                return <div className={`nav-item ${examSkill ? `nav-exam-item nav-exam-${skill}` : ""}`} key={href}>
                   <Link
-                    href={practiceLinks ? `${href}#che-do-hoc` : href}
+                    href={practiceLinks && !examSkill ? `${href}#che-do-hoc` : href}
                     onClick={() => {
-                      if (practiceLinks) setSkillMenuOverride({ pathname, skill: expanded ? null : skill });
+                      if (practiceLinks) setSkillMenuOverride({ pathname, skill: examSkill ? skill : expanded ? null : skill });
                       else setMenuOpen(false);
                     }}
                     className={`nav-link ${active ? "active" : ""} ${practiceLinks ? "nav-skill-link" : ""}`}
@@ -399,15 +414,22 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                     {href === "/app/study-together" && <span className="study-nav-count" aria-label={`${studyOnline ?? "Đang kết nối"} người đang học trực tiếp`}><i />{studyOnline ?? "…"}</span>}
                     {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
                   </Link>
-                  {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className="nav-submenu" hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
-                    <Link href={`${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>Tất cả chế độ</Link>
-                    {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => <Link
-                      key={practice.href}
-                      href={practice.href}
-                      className={`nav-submenu-link ${pathname === practice.href ? "active" : ""}`}
-                      aria-current={pathname === practice.href ? "page" : undefined}
-                      onClick={() => setMenuOpen(false)}
-                    >{practice.label}</Link>)}
+                  {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className={`nav-submenu ${examSkill ? "nav-exam-submenu" : ""}`} hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
+                    {!examSkill && <Link href={`${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>Tất cả chế độ</Link>}
+                    {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => {
+                      const target = new URL(practice.href, "https://ieltswithharry.local");
+                      const selected = examSkill
+                        ? pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
+                        : pathname === practice.href;
+                      const parentSelected = examSkill && practice.kind === "parent" && pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type");
+                      return <Link
+                        key={practice.href}
+                        href={practice.href}
+                        className={`nav-submenu-link ${examSkill ? `nav-exam-option nav-exam-${practice.kind}` : ""} ${selected ? "active" : ""} ${parentSelected ? "group-active" : ""}`}
+                        aria-current={selected ? "page" : undefined}
+                        onClick={() => setMenuOpen(false)}
+                      >{practice.label}</Link>;
+                    })}
                   </div>}
                 </div>;
               })}

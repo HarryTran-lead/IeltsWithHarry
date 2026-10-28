@@ -229,15 +229,12 @@ function simpleTypeIds(types: string[]) {
 }
 
 function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryViewProps & { skill: "Reading" | "Listening" }) {
-  const router = useRouter();
-  const pathname = usePathname();
   const params = useSearchParams();
   const isReading = skill === "Reading";
   const limit = isReading ? 3 : 4;
   const full = params.get("type") === "full_test";
   const partValue = Number(params.get("part"));
   const part = !full && Number.isInteger(partValue) && partValue >= 1 && partValue <= limit ? partValue : 0;
-  const [kinds, setKinds] = useState<string[]>([]);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(0);
   const entries = useMemo(() => catalogSectionEntries(exams, skill), [exams, skill]);
@@ -245,48 +242,24 @@ function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryVie
   const base: CatalogSectionEntry[] = full
     ? allFull.map((exam) => ({ exam, title: exam.title, questionTypes: exam.question_types ?? [], questionCount: exam.question_count ?? 0 }))
     : entries.filter((entry) => !part || entry.part === part);
-  const counts = new Map<string, number>();
-  for (const entry of base) for (const id of simpleTypeIds(entry.questionTypes)) counts.set(id, (counts.get(id) ?? 0) + 1);
-  const typeOptions = [...simpleQuestionTypes, { id: "other", label: "Other Types", test: /./ }]
-    .filter((group) => counts.has(group.id));
   const needle = query.trim().toLocaleLowerCase();
-  const filtered = base.filter((entry) => (!kinds.length || simpleTypeIds(entry.questionTypes).some((id) => kinds.includes(id)))
-    && (!needle || `${entry.title} ${entry.exam.title} ${entry.exam.topic ?? ""}`.toLocaleLowerCase().includes(needle)));
+  const filtered = base.filter((entry) => !needle || `${entry.title} ${entry.exam.title} ${entry.exam.topic ?? ""}`.toLocaleLowerCase().includes(needle));
   const pageCount = Math.max(1, Math.ceil(filtered.length / 12));
   const currentPage = Math.min(page, pageCount - 1);
   const visible = filtered.slice(currentPage * 12, (currentPage + 1) * 12);
   const latest = new Map<string, Attempt>();
   for (const attempt of attempts) if (!latest.has(attempt.exam_id)) latest.set(attempt.exam_id, attempt);
 
-  function select(nextFull: boolean, nextPart = 0) {
-    const next = new URLSearchParams(params);
-    next.set("type", nextFull ? "full_test" : isReading ? "passage" : "part");
-    if (nextPart) next.set("part", String(nextPart)); else next.delete("part");
-    setKinds([]);
-    setPage(0);
-    router.replace(`${pathname}?${next}`, { scroll: false });
-  }
   const name = isReading ? "Passage" : "Section";
   const heading = full ? "Full đề" : part ? `${name} ${part}` : "Bài lẻ";
 
   return <section id="ngan-hang-de" className={`bl-library bl-sectioned bl-tone-${skill.toLowerCase()}`} aria-label={`Ngân hàng đề ${skill}`}>
-    <aside className="bl-side" aria-label={`Lọc đề ${skill}`}>
-      <div className="bl-side-card">
-        <strong className="bl-side-heading">{isReading ? <BookOpen size={20} /> : <Headphones size={20} />}{skill}</strong>
-        <div className="bl-side-options">
-          <button type="button" className="bl-side-option" aria-pressed={!full && !part} onClick={() => select(false)}><span className="bl-radio" />Bài lẻ</button>
-          <div className="bl-side-nested">{Array.from({ length: limit }, (_, index) => index + 1).filter((number) => loading || entries.some((entry) => entry.part === number)).map((number) => <button type="button" key={number} className="bl-side-option" aria-pressed={!full && part === number} onClick={() => select(false, number)}><span className="bl-radio" />{name} {number}</button>)}</div>
-          {(loading || allFull.length > 0) && <button type="button" className="bl-side-option" aria-pressed={full} onClick={() => select(true)}><span className="bl-radio" />Full đề</button>}
-        </div>
-      </div>
-      {typeOptions.length > 0 && <fieldset className="bl-side-types"><legend>Loại câu hỏi</legend>{typeOptions.map((group) => <label key={group.id} className="bl-side-check"><input type="checkbox" checked={kinds.includes(group.id)} onChange={() => { setKinds((current) => current.includes(group.id) ? current.filter((id) => id !== group.id) : [...current, group.id]); setPage(0); }} /><span>{group.label}</span></label>)}{kinds.length > 0 && <button type="button" className="bl-side-clear" onClick={() => { setKinds([]); setPage(0); }}>Xóa loại câu hỏi</button>}</fieldset>}
-    </aside>
     <div className="bl-results">
       <div className="bl-results-head"><div><span className="bl-results-kicker">{skill.toUpperCase()} · NGÂN HÀNG ĐỀ</span><h2>{heading}</h2><p>{loading ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên bài hoặc chủ đề…" aria-label={`Tìm đề ${skill}`} /></label></div>
       {error && <p className="bl-state" role="alert">{error}</p>}
       {loading && <div className="bl-grid bl-grid-sectioned">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
       {!loading && !error && <div className="bl-grid bl-grid-sectioned">{visible.map((entry) => <ExamCard key={`${entry.exam.id}:${entry.part ?? "full"}`} exam={entry.exam} attempt={entry.splitFromFull ? undefined : latest.get(entry.exam.id)} section={entry.splitFromFull && entry.part ? { part: entry.part, title: entry.title, questionTypes: entry.questionTypes, questionCount: entry.questionCount } : undefined} />)}</div>}
-      {!loading && !error && !visible.length && <p className="bl-state">Chưa có bài phù hợp trong mục này. Hãy chọn phần hoặc loại câu hỏi khác.</p>}
+      {!loading && !error && !visible.length && <p className="bl-state">Chưa có bài phù hợp trong mục này. Hãy chọn phần khác trong sidebar hoặc đổi từ khóa tìm kiếm.</p>}
       {!loading && pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.getElementById("ngan-hang-de")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
     </div>
   </section>;
