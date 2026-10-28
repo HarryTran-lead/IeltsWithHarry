@@ -11,6 +11,7 @@ import { NotebookProvider } from "@/features/notebook/notebook-store";
 import { NotebookPage } from "@/features/notebook/notebook-ui";
 import { NewsPortal } from "@/features/news/news-portal";
 import { VocabularyHub } from "@/features/vocabulary/vocabulary-hub";
+import { VocabularyLanding } from "@/features/vocabulary/vocabulary-landing";
 import { IeltsLivePage, type IeltsSkill } from "@/features/ielts/ielts-live-page";
 import { IeltsSkillDashboard } from "@/features/ielts/ielts-skill-dashboard";
 import { lockedLearnerPath } from "@/lib/runtime";
@@ -40,6 +41,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <ContentLab />
         ) : section === "notebook" ? (
           <NotebookPage />
+        ) : skill === "vocabulary" && !skillMode ? (
+          <VocabularyLanding />
         ) : skill && !skillMode ? (
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : skill === "speaking" && skillMode === "mock" ? (
