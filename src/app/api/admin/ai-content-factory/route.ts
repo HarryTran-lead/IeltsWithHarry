@@ -48,6 +48,7 @@ const command = z.discriminatedUnion("action", [
   z.object({ action: z.literal("settings"), generationEnabled: z.boolean().optional(), dailyJobLimit: z.number().int().min(0).max(100).optional(), maxConcurrency: z.number().int().min(1).max(8).optional() }),
   z.object({ action: z.literal("voice"), voiceId: z.string().min(1), enabled: z.boolean(), pace: z.number().min(0.75).max(1.25).optional() }),
   z.object({ action: z.literal("cancel"), jobId: z.uuid() }),
+  z.object({ action: z.literal("regenerate_audio"), jobId: z.uuid() }),
   z.object({ action: z.literal("review_text"), jobId: z.uuid(), decision: z.enum(["approve", "reject"]), note: z.string().min(3).max(2000), answersChecked: z.boolean() }),
   z.object({ action: z.literal("review"), jobId: z.uuid(), decision: z.enum(["approve","reject"]), note: z.string().min(3).max(2000), listened: z.boolean(), answersChecked: z.boolean() }),
 ]);
@@ -102,6 +103,23 @@ export async function POST(request: Request) {
     }
     const { data: job, error: jobError } = await client.from("ai_factory_jobs").select("*").eq("id", body.jobId).single();
     if (jobError || !job) throw new Error(jobError?.message || "Job missing");
+    if (body.action === "regenerate_audio") {
+      if (job.kind !== "listening_audio" || !["awaiting_review", "approved"].includes(job.status)) throw new Error("Only a reviewed or reviewable Listening draft can be regenerated");
+      const { data: qa, error: qaError } = await client.from("ai_factory_qa").select("technical").eq("job_id", job.id).single();
+      if (qaError || !qa || !(qa.technical?.generation?.needs_regeneration ?? job.provider === "kokoro")) throw new Error("This audio is not marked for Gemini regeneration");
+      const { data: exam, error: examError } = await client.from("ielts_exams").select("current_version_id,status").eq("id", job.exam_id).single();
+      if (examError || !exam || exam.current_version_id !== job.exam_version_id || exam.status === "published") throw new Error("Exam version changed or is already published; review the current exam first");
+      const { data: active, error: activeError } = await client.from("ai_factory_jobs").select("id,status").eq("kind", "listening_audio").in("status", ["queued", "running", "awaiting_review"]).contains("payload", { regenerationOf: job.id }).limit(1);
+      if (activeError) throw new Error(activeError.message);
+      if (active?.length) return Response.json({ ok: true, job: active[0], alreadyQueued: true });
+      const { data: queued, error: queueError } = await client.from("ai_factory_jobs").insert({
+        kind: "listening_audio", exam_id: job.exam_id, exam_version_id: job.exam_version_id,
+        created_by: actor.id, provider: "gemini", model_id: "gemini-3.8-flash-tts",
+        payload: { ...job.payload, pilot: false, regenerationOf: job.id },
+      }).select("id,status").single();
+      if (queueError || !queued) throw new Error(queueError?.message || "Could not queue audio regeneration");
+      return Response.json({ ok: true, job: queued });
+    }
     if (body.action === "review_text") {
       if (job.kind === "listening_audio" || !["awaiting_review", "qa_failed"].includes(job.status)) throw new Error("Text draft cannot be reviewed in this state");
       if (body.decision === "approve") {

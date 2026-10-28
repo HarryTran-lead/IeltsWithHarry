@@ -50,7 +50,7 @@ export function composeFullDraft(skill: "Listening" | "Reading", setId: string, 
   const audioSections = skill === "Listening" ? valid.map((piece, index) => {
     const payload = piece.audioPayload;
     if (!payload || !Array.isArray(payload.turns) || !payload.evidence) throw new Error(`Listening Part ${index + 1} has no audio payload`);
-    return { sectionId: sections[index].id, turns: payload.turns, evidence: payload.evidence, answerPhrases: payload.answerPhrases };
+    return { sectionId: sections[index].id, setting: payload.setting, turns: payload.turns, evidence: payload.evidence, answerPhrases: payload.answerPhrases };
   }) : [];
   return { exam, audioSections, evidence: Object.assign({}, ...valid.map((piece) => piece.evidence)) as Record<string, string> };
 }

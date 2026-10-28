@@ -20,6 +20,9 @@ jobs:
     env:
       SUPABASE_URL: ${{ secrets.AI_FACTORY_SUPABASE_URL }}
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.AI_FACTORY_SERVICE_ROLE_KEY }}
+      AI_FACTORY_GEMINI_API_KEY: ${{ secrets.AI_FACTORY_GEMINI_API_KEY }}
+      AI_FACTORY_FREE_TIER_CONFIRMED: ${{ secrets.AI_FACTORY_FREE_TIER_CONFIRMED }}
+      AI_FACTORY_FREE_TIER_ONLY: "true"
       AUDIO_CACHE_DIR: /tmp/ai-factory-audio
       ASR_ENABLED: "true"
     steps:
