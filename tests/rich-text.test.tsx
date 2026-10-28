@@ -10,6 +10,11 @@ describe("RichText", () => {
     expect(html.match(/class="bx-cell is-head"/g)).toHaveLength(2);
     expect(html).toContain('class="bx-blank"');
   });
+  it("draws a {{gap}} placeholder as a blank, not as literal braces", () => {
+    const html = renderToStaticMarkup(<RichText text={"An open channel can be {{gap}} easily."} />);
+    expect(html).toContain('class="bx-blank"');
+    expect(html).not.toContain("{{gap}}");
+  });
   it("leaves a single line with a bar as ordinary text", () => {
     const html = renderToStaticMarkup(<RichText text={"Choose A | B"} />);
     expect(html).not.toContain("bx-table");

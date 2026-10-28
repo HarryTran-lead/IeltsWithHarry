@@ -1,11 +1,12 @@
 // Kept free of app aliases and styles so it can be rendered in tests; styles live in bank-exam.css.
 function inline(line: string) {
-  return line.split(/(\*\*[^*]+\*\*|_{3,})/g).map((part, index) => part.startsWith("**") && part.endsWith("**") && part.length > 4
+  // Some sources mark the gap as {{gap}} instead of underscores.
+  return line.split(/(\*\*[^*]+\*\*|_{3,}|\{\{gap\}\})/g).map((part, index) => part.startsWith("**") && part.endsWith("**") && part.length > 4
     ? <strong key={index}>{part.slice(2, -2)}</strong>
-    : /^_{3,}$/.test(part) ? <span key={index} className="bx-blank" aria-label="chỗ trống" /> : part);
+    : /^(_{3,}|\{\{gap\}\})$/.test(part) ? <span key={index} className="bx-blank" aria-label="chỗ trống" /> : part);
 }
 
-/** Bold (**text**), line breaks, answer blanks (____) and "a | b | c" table rows from source prompts. */
+/** Bold (**text**), line breaks, answer blanks (____ or {{gap}}) and "a | b | c" table rows from source prompts. */
 export function RichText({ text, className }: { text: string; className?: string }) {
   // Consecutive rows split by " | " become one grid, like the tables on a printed question paper.
   const runs: (string | string[][])[] = [];
