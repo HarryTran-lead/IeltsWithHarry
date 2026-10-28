@@ -98,6 +98,14 @@
 .bx-options button.is-on { border-color: var(--bl-accent); background: var(--bl-wash); color: var(--bl-ink); }
 .bx-options button.is-on b { background: var(--bl-accent); color: #fff; }
 .bx-options button svg { color: var(--bl-accent); }
+.bx-options.is-letters { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.bx-options.is-letters button { justify-content: center; }
+.bx-table { display: grid; margin: 8px 0; border-top: 1px solid #cfdbe3; border-left: 1px solid #cfdbe3; font-size: 14px; }
+.bx-cell { padding: 6px 9px; border-right: 1px solid #cfdbe3; border-bottom: 1px solid #cfdbe3; background: #fff; }
+.bx-cell.is-head { background: #f1f6f9; font-weight: 700; }
+.bx-media { display: grid; gap: 6px; margin: 0; }
+.bx-media img { width: 100%; height: auto; border: 1px solid #dbe6ec; border-radius: 12px; background: #fff; }
+.bx-media a { justify-self: end; color: #56697b; font-size: 12.5px; font-weight: 700; }
 .bx-text-answer { display: grid; gap: 6px; color: #6d8296; font-size: 12.5px; font-weight: 700; }
 .bx-text-answer input, .bx-text-answer textarea { width: 100%; padding: 12px 14px; border: 1.5px solid #dbe6ec; border-radius: 12px; background: #fff; color: var(--bl-ink); font: inherit; font-size: 15px; outline: none; resize: vertical; }
 .bx-text-answer input:focus, .bx-text-answer textarea:focus { border-color: var(--bl-accent); box-shadow: 0 0 0 3px var(--bl-wash); }

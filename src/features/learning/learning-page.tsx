@@ -25,7 +25,7 @@ import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses"
 import { StageMap, stageStops } from "./stage-map";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
-import { demoMode } from "@/lib/runtime";
+import { demoMode, lockedLearnerPath, releaseLocks } from "@/lib/runtime";
 import { ProfilePage } from "@/features/account/profile-page";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { SavedWordReview } from "@/features/news/saved-word-review";
@@ -109,7 +109,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
         <div><span className="eyebrow">CHẶNG {stages.indexOf(selected) + 1} · {selected.range}</span><h1>{selected.name}</h1></div>
         <span className="learn-stage-count"><strong>{explored}/{total || "…"}</strong> bài đã mở</span>
         {nextLesson ? <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? "Học tiếp" : "Bắt đầu học"} <ArrowRight size={16} /></Link> : !published.loading && total > 0 ? <span className="learn-mission-complete">Đã xem hết bài · chọn unit để ôn lại</span> : null}
-        <details><summary>Đổi chặng</summary><div className="learn-stage-menu">{stages.map((stage) => <Link key={stage.id} href={`/app/learn/${stage.id}`} aria-current={stage.id === selected.id ? "page" : undefined}><b>{stage.range}</b> {stage.name}</Link>)}</div></details>
+        <details><summary>Đổi chặng</summary><div className="learn-stage-menu">{stages.map((stage) => releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id) ? <span key={stage.id} aria-disabled="true"><b>{stage.range}</b> {stage.name} · Sắp mở</span> : <Link key={stage.id} href={`/app/learn/${stage.id}`} aria-current={stage.id === selected.id ? "page" : undefined}><b>{stage.range}</b> {stage.name}</Link>)}</div></details>
       </header> : <section className="learn-mission" aria-label="Bài học tiếp theo">
         <div className="learn-mission-main"><span className="eyebrow">HÀNH TRÌNH CỦA BẠN · BẮT ĐẦU TỪ ĐÂY</span>
           <h1>Một bài nhỏ hôm nay, một bước tiến ngày mai</h1>
@@ -137,7 +137,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           <span>Mỗi kỹ năng có một hoạt động mẫu hoàn chỉnh.</span>
         </div>
         <div className="module-grid">
-          {modules.map((module) => (
+          {modules.filter((module) => !lockedLearnerPath(module.href)).map((module) => (
             <Link
               key={module.name}
               href={module.href}
@@ -185,7 +185,7 @@ function LessonOverview() {
         </div>
         <h3>Pick your next activity</h3>
         <div className="module-grid">
-          {modules.map((module) => (
+          {modules.filter((module) => !lockedLearnerPath(module.href)).map((module) => (
             <Link
               key={module.name}
               href={module.href}

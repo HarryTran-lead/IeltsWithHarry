@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="720" height="480" font-family="Arial, Helvetica, sans-serif">
+  <title>Willow Arts Quarter – map (Questions 11–16)</title>
+  <rect width="720" height="480" fill="#f6f3ea"/>
+  <text x="360" y="24" font-size="17" font-weight="bold" fill="#1d3557" text-anchor="middle">Willow Arts Quarter</text>
+  <!-- Canal -->
+  <rect x="0" y="40" width="720" height="40" fill="#bcdcee" stroke="#86b6d3"/>
+  <text x="600" y="66" font-size="13" font-style="italic" fill="#356b8c" letter-spacing="2">CANAL</text>
+  <!-- Streets -->
+  <rect x="0" y="216" width="720" height="34" fill="#dcd6c8"/>
+  <text x="120" y="238" font-size="12" fill="#5d564a" letter-spacing="3">WEAVER STREET</text>
+  <rect x="330" y="80" width="34" height="370" fill="#dcd6c8"/>
+  <text x="347" y="160" font-size="12" fill="#5d564a" letter-spacing="3" transform="rotate(-90 347 160)" text-anchor="middle">MILL LANE</text>
+  <!-- Blocks -->
+  <g fill="#ffffff" stroke="#6b7c8c" stroke-width="2">
+    <rect x="40" y="96" width="130" height="104" rx="5"/>
+    <rect x="186" y="96" width="128" height="104" rx="5"/>
+    <rect x="380" y="96" width="130" height="104" rx="5"/>
+    <rect x="526" y="96" width="154" height="104" rx="5"/>
+    <rect x="40" y="266" width="130" height="134" rx="5"/>
+    <rect x="186" y="266" width="128" height="134" rx="5"/>
+    <rect x="566" y="266" width="114" height="62" rx="5"/>
+    <rect x="566" y="338" width="114" height="62" rx="5"/>
+  </g>
+  <!-- Market square -->
+  <rect x="384" y="266" width="166" height="134" rx="8" fill="#e5efe0" stroke="#8eab84" stroke-dasharray="6 4"/>
+  <text x="467" y="338" font-size="13" fill="#4d6b45" text-anchor="middle">Market Square</text>
+  <!-- You are here -->
+  <circle cx="347" cy="436" r="9" fill="#d1495b"/>
+  <text x="365" y="440" font-size="13" font-weight="bold" fill="#d1495b">Visitor kiosk – YOU ARE HERE</text>
+  <!-- Compass -->
+  <g transform="translate(690 120)"><path d="M0 -22 L7 4 L0 -2 L-7 4 Z" fill="#1d3557"/><text y="20" font-size="12" font-weight="bold" fill="#1d3557" text-anchor="middle">N</text></g>
+  <!-- Letters -->
+  <g font-size="26" font-weight="bold" fill="#1d3557" text-anchor="middle">
+    <text x="105" y="158">A</text>
+    <text x="250" y="158">B</text>
+    <text x="445" y="158">C</text>
+    <text x="603" y="158">D</text>
+    <text x="105" y="343">E</text>
+    <text x="250" y="343">F</text>
+    <text x="623" y="307">G</text>
+    <text x="623" y="379">H</text>
+  </g>
+</svg>

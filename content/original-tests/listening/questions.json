@@ -1,0 +1,95 @@
+{
+  "_note": "Question types for the five pilot Listening papers. Each group sets the exam type and rubric for its questions; entries under questions replace the owner-supplied question with that number (evidence must be spoken word for word in the script).",
+  "ESL-L-01": {
+    "groups": [
+      { "from": 1, "to": 6, "type": "form_completion", "instructions": "Complete the form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER" },
+      { "from": 7, "to": 10, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 11, "to": 16, "type": "map_labelling", "instructions": "Label the map below. Choose SIX answers from the map and write the correct letter, A–H, next to Questions 11–16.", "media": "ESL-L-01-map.svg", "options": ["A", "B", "C", "D", "E", "F", "G", "H"] },
+      { "from": 17, "to": 20, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 21, "to": 26, "type": "sentence_completion", "instructions": "Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 27, "to": 30, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 31, "to": 36, "type": "note_completion", "instructions": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 37, "to": 40, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." }
+    ],
+    "questions": {
+      "11": { "prompt": "Stone bridge", "answer": "A", "evidence": "The stone bridge crosses the river just past the point where you join the riverside path." },
+      "12": { "prompt": "Bird hide", "answer": "C", "evidence": "a short distance after the bridge, right at the water's edge, you'll see a small wooden shelter. That's the bird hide." },
+      "13": { "prompt": "Play area", "answer": "D", "evidence": "It's on the right of the path, between the path and the car park" },
+      "14": { "prompt": "Boat museum", "answer": "E", "evidence": "On the other side of the path from the play area, right on the riverbank, is one of the old boatsheds" },
+      "15": { "prompt": "Viewing platform", "answer": "F", "evidence": "the viewing platform is at the far end of the footbridge, on the north bank" },
+      "16": { "prompt": "Benches", "answer": "G", "evidence": "There are benches beside the willow grove, at the point where the path first turns away from the water and goes into the trees." }
+    }
+  },
+  "ESL-L-02": {
+    "groups": [
+      { "from": 1, "to": 6, "type": "form_completion", "instructions": "Complete the booking form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER" },
+      { "from": 7, "to": 10, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 11, "to": 16, "type": "note_completion", "instructions": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 17, "to": 20, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 21, "to": 26, "type": "sentence_completion", "instructions": "Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 27, "to": 30, "type": "matching", "instructions": "What do the students say about each of the following parts of their project? Choose FOUR answers from the box and write the correct letter, A–F, next to Questions 27–30.",
+        "options": ["A — It must be mentioned as a limitation.", "B — It should show the biggest difference.", "C — It is the best way to show a relationship.", "D — It will involve ongoing costs.", "E — It was suggested by their tutor.", "F — It may not be available in time."] },
+      { "from": 31, "to": 40, "type": "note_completion", "instructions": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" }
+    ],
+    "questions": {
+      "27": { "prompt": "Afternoon measurements", "answer": "B", "evidence": "Afternoons will give us the most glare." },
+      "28": { "prompt": "The choice of rooms", "answer": "A", "evidence": "The rooms differ in orientation, so comparisons need care." },
+      "29": { "prompt": "Scatter plots", "answer": "C", "evidence": "We can show the results using scatter plots" },
+      "30": { "prompt": "External louvres", "answer": "D", "evidence": "The recommendation should address maintenance costs as well." },
+      "37": { "prompt": "Local __________ provide detailed knowledge of channels.", "answer": "fishers", "evidence": "Local fishers provide detailed knowledge of channels" },
+      "38": { "prompt": "Planting is often organised around the __________.", "answer": "rainy season", "evidence": "Planting is often organised around the rainy season" },
+      "39": { "prompt": "Temporary paths prevent damage from __________.", "answer": "foot traffic", "evidence": "Temporary paths prevent damage from foot traffic." },
+      "40": { "prompt": "Success is assessed over several __________, not days.", "answer": "years", "evidence": "success is assessed over several years, not days." }
+    }
+  },
+  "ESL-L-03": {
+    "groups": [
+      { "from": 1, "to": 6, "type": "form_completion", "instructions": "Complete the registration form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER" },
+      { "from": 7, "to": 10, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 11, "to": 16, "type": "note_completion", "instructions": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 17, "to": 20, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 21, "to": 26, "type": "sentence_completion", "instructions": "Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 27, "to": 30, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 31, "to": 36, "type": "summary_completion", "instructions": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 37, "to": 40, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." }
+    ],
+    "questions": {}
+  },
+  "ESL-L-04": {
+    "groups": [
+      { "from": 1, "to": 6, "type": "table_completion", "instructions": "Complete the table below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER" },
+      { "from": 7, "to": 10, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 11, "to": 16, "type": "note_completion", "instructions": "Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER" },
+      { "from": 17, "to": 20, "type": "matching", "instructions": "What does the speaker say about each of the following? Choose FOUR answers from the box and write the correct letter, A–F, next to Questions 17–20.",
+        "options": ["A — Places must be reserved beforehand.", "B — There is no charge.", "C — It deals with the transport of goods.", "D — It can be entered without using steps.", "E — Copies are kept at the library.", "F — It is aimed at young children."] },
+      { "from": 21, "to": 26, "type": "sentence_completion", "instructions": "Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 27, "to": 30, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 31, "to": 36, "type": "note_completion", "instructions": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 37, "to": 40, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." }
+    ],
+    "questions": {
+      "17": { "prompt": "The archive tour", "answer": "A", "evidence": "The archive tour needs advance booking" },
+      "18": { "prompt": "The evening talk", "answer": "C", "evidence": "the evening talk covers river trade" },
+      "19": { "prompt": "The town hall", "answer": "D", "evidence": "a step-free entrance is available behind the hall" },
+      "20": { "prompt": "The full programme", "answer": "E", "evidence": "A full programme is available at the library desk" }
+    }
+  },
+  "ESL-L-05": {
+    "groups": [
+      { "from": 1, "to": 6, "type": "form_completion", "instructions": "Complete the booking form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER" },
+      { "from": 7, "to": 10, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 11, "to": 16, "type": "note_completion", "instructions": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 17, "to": 20, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 21, "to": 26, "type": "sentence_completion", "instructions": "Complete the sentences below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER" },
+      { "from": 27, "to": 30, "type": "multiple_choice", "instructions": "Choose the correct letter, A, B or C." },
+      { "from": 31, "to": 36, "type": "note_completion", "instructions": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" },
+      { "from": 37, "to": 40, "type": "sentence_completion", "instructions": "Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS" }
+    ],
+    "questions": {
+      "37": { "prompt": "Different roots create different __________.", "answer": "microhabitats", "evidence": "Different roots create different microhabitats" },
+      "38": { "prompt": "Excessive disturbance may disrupt __________.", "answer": "soil structure", "evidence": "Excessive disturbance may disrupt soil structure" },
+      "39": { "prompt": "A high microbial count does not prove high __________.", "answer": "soil health", "evidence": "a high microbial count does not prove high soil health." },
+      "40": { "prompt": "Researchers study __________ among organisms, not just individual species.", "answer": "relationships", "evidence": "Researchers study relationships among organisms, not just individual species" }
+    }
+  }
+}

@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
   BookOpenText,
   CalendarDays,
   ChartNoAxesCombined,
   FlaskConical,
+  Filter,
   ChevronDown,
   Flame,
   GraduationCap,
@@ -37,20 +38,29 @@ import { HarryMascot } from "@/components/illustrations/harry";
 import { Tape } from "@/components/stickers/stickers";
 import { HarryBuddy } from "@/components/fx/harry-buddy";
 import { useDemo } from "@/features/demo/demo-store";
-import { demoMode, liveMode } from "@/lib/runtime";
+import { demoMode, liveMode, lockedLearnerPath } from "@/lib/runtime";
+import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
 import { useStudyPresence } from "@/features/study-room/study-presence";
 import { NotificationBell } from "@/components/account/notification-bell";
 import { AccountAvatar } from "@/components/account/account-avatar";
 import { useNewsUnread } from "@/features/news/news-unread";
+import { catalogQuestionTypeIds, catalogQuestionTypes, catalogEntriesForSelection, type CatalogExam } from "@/lib/ielts-bank/catalog";
 
 const groups = [
+  {
+    label: "HOT",
+    links: [
+      { href: "/app/news", label: "Daily News", icon: Newspaper, tone: "sky" },
+      { href: "/app/study-together", label: "Cùng học", icon: UsersRound, tone: "lavender" },
+      { href: "/app/learn", label: "Learn", icon: GraduationCap, tone: "sky" },
+    ],
+  },
   {
     label: "Tổng quan",
     links: [
       { href: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard, tone: "teal" },
-      { href: "/app/learn", label: "Learn", icon: GraduationCap, tone: "sky" },
       { href: "/app/planner", label: "Planner", icon: CalendarDays, tone: "coral" },
       { href: "/app/progress", label: "Progress", icon: ChartNoAxesCombined, tone: "lavender" },
     ],
@@ -70,14 +80,12 @@ const groups = [
   {
     label: "Học với tin tức",
     links: [
-      { href: "/app/news", label: "Daily News", icon: Newspaper, tone: "sky" },
       { href: "/app/news/learn", label: "Learn with News", icon: Library, tone: "mint" },
     ],
   },
   {
     label: "Không gian học",
     links: [
-      { href: "/app/study-together", label: "Cùng học", icon: UsersRound, tone: "lavender" },
       { href: "/app/notebook", label: "Notebook", icon: NotebookPen, tone: "sun" },
       { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical, tone: "coral" },
     ],
@@ -85,7 +93,8 @@ const groups = [
 ];
 const links = groups.flatMap((group) => group.links);
 
-const skillPracticeLinks: Record<string, { label: string; href: string }[]> = {
+type SkillPracticeLink = { label: string; href: string; kind?: "parent" | "child" | "full" };
+const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
   vocabulary: [
     { label: "Học theo topic & Level", href: "/app/vocabulary/library" },
     { label: "Bộ thẻ cá nhân", href: "/app/vocabulary/decks" },
@@ -93,15 +102,18 @@ const skillPracticeLinks: Record<string, { label: string; href: string }[]> = {
     { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },
   ],
   grammar: [{ label: "Từ nối trong ngữ cảnh", href: "/app/grammar/live" }],
-  reading: [
-    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/reading#ngan-hang-de" }] : []),
-    { label: "Sentence completion", href: "/app/reading/live" },
-  ],
-  listening: [
-    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/listening#ngan-hang-de" }] : []),
-    { label: "YouTube Shadowing", href: "/app/listening/youtube" },
-    { label: "Nghe & ghi ý chính", href: "/app/listening/live" },
-  ],
+  ...(!demoMode ? {
+    reading: [
+      { label: "Bài lẻ", href: "/app/reading?type=passage", kind: "parent" as const },
+      ...[1, 2, 3].map((part): SkillPracticeLink => ({ label: `Passage ${part}`, href: `/app/reading?type=passage&part=${part}`, kind: "child" })),
+      { label: "Full đề", href: "/app/reading?type=full_test", kind: "full" as const },
+    ],
+    listening: [
+      { label: "Bài lẻ", href: "/app/listening?type=part", kind: "parent" as const },
+      ...[1, 2, 3, 4].map((part): SkillPracticeLink => ({ label: `Section ${part}`, href: `/app/listening?type=part&part=${part}`, kind: "child" })),
+      { label: "Full đề", href: "/app/listening?type=full_test", kind: "full" as const },
+    ],
+  } : {}),
   writing: [
     ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/writing#ngan-hang-de" }] : []),
     { label: "Academic Task 1", href: "/app/writing/task-1" },
@@ -109,6 +121,7 @@ const skillPracticeLinks: Record<string, { label: string; href: string }[]> = {
   ],
   speaking: [
     ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/speaking#ngan-hang-de" }] : []),
+    { label: "Part 1 interview", href: "/app/speaking?type=part1" },
     { label: "Part 2 cue card", href: "/app/speaking/live" },
     { label: "Part 3 follow-up", href: "/app/speaking/part-3" },
     ...(!demoMode ? [{ label: "Thi thử Speaking", href: "/app/speaking/mock" }] : []),
@@ -140,11 +153,13 @@ function isActive(pathname: string, href: string) {
 
 export function AppShell({ children, canManage = false }: { children: React.ReactNode; canManage?: boolean }) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const router = useRouter();
   const { tasks, attempts, error, clearError } = useDemo();
   const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const { online: studyOnline } = useStudyPresence();
+  const learnerStreak = useLearnerStreak();
   const newsUnread = useNewsUnread(pathname, liveMode);
   const [profileOpen, setProfileOpen] = useState(false);
   const [avatar, setAvatar] = useState("harry");
@@ -155,13 +170,45 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
   const completed = tasks.filter((t) => t.completed).length;
   const xp = 320 + Math.max(0, completed - 3) * 15 + attempts.length * 20;
   const filtered = searchItems
-    .filter((item) => item.label.toLowerCase().includes(query.toLowerCase()))
+    .filter((item) => !lockedLearnerPath(item.href) && item.label.toLowerCase().includes(query.toLowerCase()))
     .slice(0, 5);
   const section = pathname.split("/")[2] || "dashboard";
+  const catalogSkill = section === "reading" ? "Reading" : section === "listening" ? "Listening" : null;
+  const [sidebarCatalog, setSidebarCatalog] = useState<{ skill: "Reading" | "Listening"; exams: CatalogExam[]; error?: string } | null>(null);
+  const catalogExams = sidebarCatalog?.skill === catalogSkill ? sidebarCatalog.exams : null;
+  const catalogFull = searchParams.get("type") === "full_test";
+  const catalogPartValue = Number(searchParams.get("part"));
+  const catalogLimit = catalogSkill === "Reading" ? 3 : 4;
+  const catalogPart = !catalogFull && Number.isInteger(catalogPartValue) && catalogPartValue >= 1 && catalogPartValue <= catalogLimit ? catalogPartValue : 0;
+  const catalogEntries = catalogSkill && catalogExams ? catalogEntriesForSelection(catalogExams, catalogSkill, catalogFull, catalogPart) : [];
+  const catalogTypeCounts = new Map<string, number>();
+  for (const entry of catalogEntries) for (const id of catalogQuestionTypeIds(entry.questionTypes)) catalogTypeCounts.set(id, (catalogTypeCounts.get(id) ?? 0) + 1);
+  const catalogKind = searchParams.get("kind") ?? "";
+  const catalogTypeOptions = [...catalogQuestionTypes, { id: "other", label: "Other Types", test: /./ }].filter((group) => catalogTypeCounts.has(group.id));
+  function typeHref(skill: string, kind: string) {
+    const next = new URLSearchParams(searchParams.toString());
+    if (kind) next.set("kind", kind);
+    else next.delete("kind");
+    const query = next.toString();
+    return `/app/${skill}${query ? `?${query}` : ""}`;
+  }
   const [skillMenuOverride, setSkillMenuOverride] = useState<{ pathname: string; skill: string | null } | null>(null);
   const expandedSkill = skillMenuOverride?.pathname === pathname
     ? skillMenuOverride.skill
     : skillPracticeLinks[section] ? section : null;
+
+  useEffect(() => {
+    if (!catalogSkill || demoMode) return;
+    let active = true;
+    fetch(`/api/ielts/bank/catalog?skill=${catalogSkill}`)
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Không tải được dạng câu hỏi.");
+        return response.json() as Promise<{ exams: CatalogExam[] }>;
+      })
+      .then(({ exams }) => { if (active) setSidebarCatalog({ skill: catalogSkill, exams }); })
+      .catch(() => { if (active) setSidebarCatalog({ skill: catalogSkill, exams: [], error: "Không tải được dạng câu hỏi." }); });
+    return () => { active = false; };
+  }, [catalogSkill]);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -281,11 +328,11 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
           )}
         </div>
         <div className="header-actions">
-          {demoMode && <div className="stat-pill streak" title="Day streak">
+          <Link href="/app/progress" className="stat-pill streak" title="Chuỗi ngày học">
             <Flame size={18} fill="#ff9b3d" color="#ef6a24" />
-            <strong>12</strong>
-            <small>day streak</small>
-          </div>}
+            <strong>{demoMode ? 12 : learnerStreak?.current ?? "…"}</strong>
+            <small>ngày liên tiếp</small>
+          </Link>
           {demoMode && <div className="stat-pill xp" title="XP points">
             <Star size={18} fill="#ffd15a" color="#e0a020" />
             <strong>{xp}</strong>
@@ -330,7 +377,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                 setNotificationsOpen(false);
               }}
             >
-              {demoMode ? <span><UserRound size={18} strokeWidth={2.2} /></span> : <AccountAvatar value={avatar} size={34} />}
+              {demoMode ? <span><UserRound size={18} strokeWidth={2.2} /></span> : canManage ? <HarryMascot size={34} /> : <AccountAvatar value={avatar} size={34} />}
               <ChevronDown size={15} />
             </button>
             {profileOpen && (
@@ -377,17 +424,21 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
         <nav aria-label="Main navigation">
           {groups.map((group) => (
             <div className="nav-group" key={group.label}>
-              <span className="nav-group-label">{group.label}</span>
+              <span className={`nav-group-label ${group.label === "HOT" ? "nav-group-hot" : ""}`}>{group.label === "HOT" && <Flame size={13} aria-hidden="true" />}{group.label}</span>
               {group.links.map(({ href, label, icon: Icon, tone }) => {
                 const skill = href.split("/")[2];
                 const practiceLinks = skillPracticeLinks[skill];
+                const examSkill = skill === "reading" || skill === "listening";
                 const expanded = expandedSkill === skill && Boolean(practiceLinks);
                 const active = isActive(pathname, href);
-                return <div className="nav-item" key={href}>
+                if (lockedLearnerPath(href)) return <div key={href} className="nav-link nav-link-locked" aria-label={`${label} đang chuẩn bị`} title={`${label} đang chuẩn bị`}>
+                  <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b><span>{label}</span><small>Sắp mở</small>
+                </div>;
+                return <div className={`nav-item ${examSkill ? `nav-exam-item nav-exam-${skill}` : ""}`} key={href}>
                   <Link
-                    href={practiceLinks ? `${href}#che-do-hoc` : href}
+                    href={practiceLinks && !examSkill ? `${href}#che-do-hoc` : href}
                     onClick={() => {
-                      if (practiceLinks) setSkillMenuOverride({ pathname, skill: expanded ? null : skill });
+                      if (practiceLinks) setSkillMenuOverride({ pathname, skill: examSkill ? skill : expanded ? null : skill });
                       else setMenuOpen(false);
                     }}
                     className={`nav-link ${active ? "active" : ""} ${practiceLinks ? "nav-skill-link" : ""}`}
@@ -402,15 +453,33 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                     {href === "/app/study-together" && <span className="study-nav-count" aria-label={`${studyOnline ?? "Đang kết nối"} người đang học trực tiếp`}><i />{studyOnline ?? "…"}</span>}
                     {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
                   </Link>
-                  {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className="nav-submenu" hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
-                    <Link href={`${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>Tất cả chế độ</Link>
-                    {practiceLinks.map((practice) => <Link
-                      key={practice.href}
-                      href={practice.href}
-                      className={`nav-submenu-link ${pathname === practice.href ? "active" : ""}`}
-                      aria-current={pathname === practice.href ? "page" : undefined}
-                      onClick={() => setMenuOpen(false)}
-                    >{practice.label}</Link>)}
+                  {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className={`nav-submenu ${examSkill ? "nav-exam-submenu" : ""}`} hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
+                    {!examSkill && <Link href={`${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>Tất cả chế độ</Link>}
+                    {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => {
+                      const target = new URL(practice.href, "https://ieltswithharry.local");
+                      const selected = examSkill
+                        ? pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
+                        : pathname === practice.href;
+                      const parentSelected = examSkill && practice.kind === "parent" && pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type");
+                      return <Link
+                        key={practice.href}
+                        href={practice.href}
+                        className={`nav-submenu-link ${examSkill ? `nav-exam-option nav-exam-${practice.kind}` : ""} ${selected ? "active" : ""} ${parentSelected ? "group-active" : ""}`}
+                        aria-current={selected ? "page" : undefined}
+                        onClick={() => setMenuOpen(false)}
+                      >{practice.label}</Link>;
+                    })}
+                  </div>}
+                  {examSkill && expanded && pathname === href && <div className="nav-exam-types" role="group" aria-label={`Loại câu hỏi ${label}`}>
+                    <span className="nav-exam-types-title"><Filter size={14} aria-hidden="true" /> Loại câu hỏi</span>
+                    {sidebarCatalog?.skill === catalogSkill && sidebarCatalog.error
+                      ? <span className="nav-exam-types-state" role="status">{sidebarCatalog.error}</span>
+                      : catalogExams === null
+                        ? <span className="nav-exam-types-state" role="status">Đang tải dạng câu hỏi…</span>
+                        : <>
+                          <Link href={typeHref(skill, "")} className={`nav-exam-type ${!catalogKind || !catalogTypeCounts.has(catalogKind) ? "active" : ""}`} aria-current={!catalogKind || !catalogTypeCounts.has(catalogKind) ? "page" : undefined} onClick={() => setMenuOpen(false)}><span>Tất cả dạng câu hỏi</span><small>{catalogEntries.length}</small></Link>
+                          {catalogTypeOptions.map((group) => <Link key={group.id} href={typeHref(skill, group.id)} className={`nav-exam-type ${catalogKind === group.id ? "active" : ""}`} aria-current={catalogKind === group.id ? "page" : undefined} onClick={() => setMenuOpen(false)}><span>{group.label}</span><small>{catalogTypeCounts.get(group.id)}</small></Link>)}
+                        </>}
                   </div>}
                 </div>;
               })}

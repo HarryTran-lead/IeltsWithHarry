@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { ArrowRight, BookOpen, Headphones, Mic, NotebookPen } from "lucide-react";
 import { balancedCatalog, catalogGroups, catalogHref, catalogSkills, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { BankLibrary, ExamCard } from "./bank-library";
@@ -27,7 +27,6 @@ function groupCount(exams: CatalogExam[], type: string) {
 }
 
 export function BankCatalog() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const skill = catalogSkills.find((value) => value === searchParams.get("skill"));
   const [exams, setExams] = useState<CatalogExam[]>([]);
@@ -44,23 +43,12 @@ export function BankCatalog() {
       .finally(() => { if (live) setLoading(false); });
     return () => { live = false; };
   }, []);
-  const counts = useMemo(() => Object.fromEntries(catalogSkills.map((name) => [name, exams.filter((exam) => exam.skill === name).length])) as Record<CatalogSkill, number>, [exams]);
-
-  function choose(nextSkill?: CatalogSkill, nextType?: string) {
-    router.push(nextSkill ? catalogHref(nextSkill, nextType) : "/app/question-bank");
-  }
-
   return <main className="bank-page bank-catalog">
     <div className="bank-catalog-breadcrumb"><Link href="/app/dashboard">Tổng quan</Link><span>/</span> Ngân hàng IELTS</div>
-    <header className="bank-catalog-hero">
-      <div><span className="bank-catalog-kicker">IELTSWITHHARRY / LUYỆN ĐỀ</span><h1>{skill ? `Luyện ${skill} theo dạng bài` : "Chọn kỹ năng, luyện đúng dạng bài"}</h1><p>Bài luyện có nguồn rõ ràng, lưu tiến độ và xem lại bài làm. Nội dung dùng để luyện tập, không phải đề thi chính thức.</p></div>
-      <div className="bank-catalog-total"><strong>{loading ? "…" : exams.length.toLocaleString("vi-VN")}</strong><span>đề đã xuất bản</span></div>
+    <header className="bank-catalog-heading">
+      <div><span className="bank-catalog-kicker">NGÂN HÀNG IELTS</span><h1>{skill ? `Luyện ${skill} theo dạng bài` : "Chọn kỹ năng, luyện đúng dạng bài"}</h1><p>Bài luyện có nguồn rõ ràng, lưu tiến độ và xem lại bài làm.</p></div>
+      <span className="bank-catalog-count">{loading ? "Đang tải đề…" : `${exams.length.toLocaleString("vi-VN")} đề đã xuất bản`}</span>
     </header>
-
-    <nav className="bank-skill-tabs" aria-label="Chọn kỹ năng IELTS">
-      <button type="button" className={!skill ? "active" : ""} aria-current={!skill ? "page" : undefined} onClick={() => choose()}>Tổng quan <b>{exams.length}</b></button>
-      {catalogSkills.map((name) => { const Icon = skillCopy[name].icon; return <button type="button" key={name} className={skill === name ? `active bank-tone-${skillCopy[name].tone}` : ""} aria-current={skill === name ? "page" : undefined} onClick={() => choose(name)}><Icon size={17} aria-hidden="true" /> {name} <b>{counts[name]}</b></button>; })}
-    </nav>
 
     {loading && <p className="bank-catalog-state" role="status">Đang tải các bài luyện…</p>}
     {error && <p className="bank-catalog-state" role="alert">{error}</p>}

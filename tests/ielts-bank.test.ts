@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 import { createConnector, normalizeSource } from "../src/lib/ielts-bank/connectors";
 import { cleanExamTitle, ieltsCoverSubject, orderCoverCandidates } from "../src/lib/ielts-bank/cover-art";
-import { contentHash, publicContent, scoreAnswers, validateExam } from "../src/lib/ielts-bank/schema";
+import { attemptContent, attemptMinutes, contentHash, publicContent, scoreAnswers, validateExam } from "../src/lib/ielts-bank/schema";
 
 describe("IELTS source normalization", () => {
   const reading = { id: "test-1", title: "Practice reading", test_type: "Academic", duration: "60 mins", passages: [{ id: "passage-1", title: "A passage", content: "Read this passage.", question_groups: [{ question_type: "true-false-not-given", instructions: "Choose one", questions: [{ id: "q1", question_order: 1, text: "A statement", answer: "TRUE", accepted_answers: ["True"] }] }] }] };
@@ -52,6 +52,14 @@ describe("IELTS source normalization", () => {
     expect(scoreAnswers(exam.content, { [question.id]: "A — first,C — third" }).score).toBe(1);
     expect(scoreAnswers(exam.content, { [question.id]: "A — first" }).score).toBe(0);
   });
+  it("gives one mark per distinct correct letter in a Choose TWO group, in any order", () => {
+    const options = ["A — first", "B — second", "C — third", "D — fourth", "E — fifth"];
+    const pair = (answer: string, id: string) => ({ id, number: 1, type: "multiple_choice_multiple_answers", prompt: "Which TWO?", instructions: "", options, answers: [answer], explanation: "", group: "G11" });
+    const content = { prompt: "", sections: [{ id: "s", title: "Part 2", passage: "", transcript: "", questions: [pair("B", "q11"), pair("D", "q12")] }] };
+    expect(scoreAnswers(content, { q11: "D — fourth", q12: "B — second" }).score).toBe(2);
+    expect(scoreAnswers(content, { q11: "B — second", q12: "B — second" }).score).toBe(1);
+    expect(scoreAnswers(content, { q11: "B — second", q12: "A — first" }).score).toBe(1);
+  });
   it("isolates a malformed JSONL row so adjacent rows remain usable", () => {
     const rows = createConnector("bandready").parseContent("content/core-en/data/writing_prompts.jsonl", '{"id":"one"}\n{broken\n{"id":"three"}');
     expect(rows).toHaveLength(3);
@@ -63,6 +71,16 @@ describe("IELTS source normalization", () => {
     expect(validateExam(exam)).toContain("media_missing");
     exam.content.imageUrl = "https://example.org/chart.png";
     expect(validateExam(exam)).not.toContain("media_missing");
+  });
+  it("grades a selected Reading passage independently of the full test", () => {
+    const question = (id: string) => ({ id, number: 1, type: "short_answer", prompt: id, instructions: "", options: [], answers: [id], explanation: "" });
+    const content = { prompt: "", sections: [1, 2, 3].map((number) => ({ id: `p${number}`, title: `Passage ${number}`, passage: "Text", transcript: "", questions: [question(`q${number}`)] })) };
+    const selected = attemptContent(content, { __section: "p2" });
+    expect(selected.sections).toHaveLength(1);
+    expect(scoreAnswers(selected, { q2: "q2" })).toMatchObject({ score: 1, total: 1 });
+    expect(scoreAnswers(content, { q2: "q2" })).toMatchObject({ score: 1, total: 3 });
+    expect(attemptMinutes("Reading", 60, { __section: "p2" })).toBe(20);
+    expect(attemptMinutes("Reading", 60, {})).toBe(60);
   });
 });
 

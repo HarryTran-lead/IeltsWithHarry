@@ -49,3 +49,8 @@ body:has(.app-frame.sidebar-collapsed) .study-room-host.full{left:0}
 @media(max-width:1100px){.study-room-host.full{left:76px}}
 @media(max-width:700px){.study-room-host.full{inset:65px 0 64px 0}.study-room-host.full .study-room-page{padding:12px 12px 25px}.study-session-toggle{padding:8px;font-size:11px}.study-room-host.pip{bottom:145px}.study-room-host.pip .study-chat-empty img{width:55px;height:55px}.study-room-host.pip .study-chat-empty h2{font-size:14px}}
 .study-room-heading h1 .sticker{vertical-align:middle;margin:-6px 0 0 4px}.study-visual-sparkle.sticker{flex:none}
+.study-message.is-admin > div { border: 1px solid #f0ca72; border-radius: 14px; box-shadow: 0 4px 18px #c9823420; }
+.study-message.is-admin p, .study-message.is-admin.mine p { background: #fff5dc; color: #583d20; border-radius: 0 0 13px 13px; }
+.study-message.is-admin .study-message-meta { margin: 0; padding: 7px 10px 4px; flex-wrap: wrap; }
+.study-message-admin-label { order: -1; flex-basis: 100%; color: #9b5a08; font-size: 9px; font-weight: 900; letter-spacing: .12em; }
+.study-message.is-admin .study-message-avatar { background: #fff2d2; overflow: hidden; }

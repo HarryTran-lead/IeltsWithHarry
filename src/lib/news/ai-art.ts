@@ -42,10 +42,10 @@ export function aiArtPrompt(title: string, subject: string) {
   const topic = clean(subject, 80) || clean(title, 120);
   const headline = clean(title, 160);
   return [
-    `Editorial illustration for an English-learning news article about ${topic}.`,
+    `High resolution editorial photograph for an English-learning news article about ${topic}.`,
     headline && headline !== topic ? `Headline context: ${headline}.` : "",
-    "Show the scene, place or objects, realistic modern digital painting, soft natural light, clean composition.",
-    "No text, no letters, no captions, no logos, no watermark, no flags, no recognizable real people.",
+    "Photograph only a relevant place, landscape, device or object. Natural daylight, true-to-life colors and materials, sharp focus, detailed textures, realistic proportions, clean composition.",
+    "No people, human figures, faces, bodies, skin, nudity, underwear, swimwear, sexual or suggestive content. No text, letters, captions, logos, watermarks or flags.",
   ].filter(Boolean).join(" ");
 }
 
@@ -64,13 +64,13 @@ export class AiArtLimitError extends Error {
 const allowedTypes = /^image\/(jpeg|png|webp)$/;
 export type GeneratedArt = { bytes: Uint8Array; contentType: string; extension: "jpg" | "png" | "webp"; prompt: string };
 
-/** Renders a 16:9 illustration. Throws `AiArtLimitError` when the generator asks to wait. */
+/** Renders a 16:9 editorial scene. Throws `AiArtLimitError` when the generator asks to wait. */
 export async function generateAiArt(title: string, subject: string, articleId: string, fetcher: typeof fetch = fetch): Promise<GeneratedArt> {
   const prompt = aiArtPrompt(title, subject);
   const key = process.env.POLLINATIONS_API_KEY;
   const base = key ? "https://gen.pollinations.ai/image/" : "https://image.pollinations.ai/prompt/";
   const url = new URL(base + encodeURIComponent(prompt));
-  Object.entries({ model: "flux", width: "960", height: "540", seed: String(aiArtSeed(articleId)), nologo: "true", safe: "true", private: "true", enhance: "false", referrer: "ieltswithharry.vercel.app" })
+  Object.entries({ model: "flux", width: "1280", height: "720", seed: String(aiArtSeed(articleId)), nologo: "true", safe: "true", private: "true", enhance: "false", referrer: "ieltswithharry.vercel.app" })
     .forEach(([name, value]) => url.searchParams.set(name, value));
   const response = await fetcher(url, {
     signal: AbortSignal.timeout(35000), cache: "no-store",

@@ -96,3 +96,6 @@
   .profile-columns .section-head > span { text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) { .profile-streak.is-lit svg { animation: none; } }
+.profile-password-form { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+.profile-password-form h3 { margin: 0 0 4px; color: var(--navy); }
+.profile-password-form p { margin: 0 0 16px; color: var(--muted); }

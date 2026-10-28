@@ -1,13 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, CalendarPlus, Check, CircleAlert, Clock3, Flag, Headphones, ListChecks, Maximize2, Mic, Minimize2, NotebookPen, RotateCcw, ShieldCheck, Square, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { catalogGroups, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { librarySkills } from "./bank-library";
+import { RichText } from "./rich-text";
 import "./bank-exam.css";
+
+export { RichText };
 
 export type BankExam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; topic?: string | null; content?: ExamContent };
 export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string };
@@ -28,17 +32,6 @@ function practiceLabel(exam: BankExam) {
   return catalogGroups[exam.skill as CatalogSkill]?.find((group) => group.id === exam.practice_type)?.label ?? exam.skill;
 }
 
-/** Bold (**text**), line breaks and answer blanks (____) from source prompts. */
-export function RichText({ text, className }: { text: string; className?: string }) {
-  const lines = text.split(/\n/);
-  return <span className={className}>{lines.map((line, lineIndex) => <span key={lineIndex}>
-    {lineIndex > 0 && <br />}
-    {line.split(/(\*\*[^*]+\*\*|_{3,})/g).map((part, index) => part.startsWith("**") && part.endsWith("**") && part.length > 4
-      ? <strong key={index}>{part.slice(2, -2)}</strong>
-      : /^_{3,}$/.test(part) ? <span key={index} className="bx-blank" aria-label="chỗ trống" /> : part)}
-  </span>)}</span>;
-}
-
 function examQuestions(content?: ExamContent) {
   return content?.sections.flatMap((section) => section.questions) ?? [];
 }
@@ -54,23 +47,26 @@ const beforeYouStart: Record<string, string[]> = {
 
 /** The exam's cover page: what it is, what to expect, and when to practise it. */
 export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }) => void; scheduleSlot: ReactNode }) {
+  const searchParams = useSearchParams();
   const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
-  const choosable = (exam.skill === "Reading" || exam.skill === "Listening") && parts.length > 1;
-  const [choice, setChoice] = useState<string>("full");
+  const partNumber = Number(searchParams.get("part"));
+  const selectedPart = (exam.skill === "Reading" || exam.skill === "Listening") && Number.isInteger(partNumber) && partNumber > 0 ? parts[partNumber - 1] : undefined;
   const partName = (index: number) => exam.skill === "Listening" ? `Part ${index + 1}` : `Passage ${index + 1}`;
-  const questions = examQuestions(exam.content);
+  const questions = selectedPart?.questions ?? examQuestions(exam.content);
+  const selectedLabel = selectedPart ? partName(partNumber - 1) : practiceLabel(exam);
+  const duration = selectedPart ? exam.skill === "Reading" ? 20 : 10 : exam.duration_minutes;
   const types = [...new Set(questions.map((question) => typeLabel(question.type)))];
   const Icon = skillIcon[exam.skill as keyof typeof skillIcon] ?? ListChecks;
   const preview = exam.skill === "Speaking" ? questions.slice(0, 3).map((question) => question.prompt) : [];
   return <main className={`bx-page bl-tone-${toneOf(exam.skill)}`}>
-    <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {exam.skill}</Link><span>/</span>{practiceLabel(exam)}</nav>
+    <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {exam.skill}</Link><span>/</span>{selectedLabel}</nav>
     <section className="bx-hero">
       <div className="bx-hero-art"><TopicArt topic={`${(exam.topic ?? "").replace(/^topic_/, "")} ${exam.title}`} className="bx-art" /><span className="bx-hero-icon"><Icon size={22} /></span></div>
       <div className="bx-hero-copy">
-        <span className="bx-kicker">{exam.skill} · {practiceLabel(exam)}</span>
-        <h1>{exam.title}</h1>
+        <span className="bx-kicker">{exam.skill} · {selectedLabel}</span>
+        <h1>{selectedPart && !/^(?:reading\s+)?passage\s*\d+\s*$|^(?:listening\s+)?(?:section|part)\s*\d+\s*$/i.test(selectedPart.title) ? selectedPart.title : exam.title}</h1>
         <div className="bx-facts">
-          <span><Clock3 size={15} /> {exam.duration_minutes} phút</span>
+          <span><Clock3 size={15} /> {duration} phút</span>
           {questions.length > 0 && <span><ListChecks size={15} /> {questions.length} câu hỏi</span>}
           {exam.skill !== "Speaking" && <span>{exam.format.replace(/_/g, " ").replace(/^./, (letter) => letter.toUpperCase())}</span>}
           {exam.ai_generated && <span>Nội dung AI đã duyệt</span>}
@@ -79,21 +75,12 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
         {exam.content?.prompt && exam.skill === "Writing" && <p className="bx-prompt-preview"><RichText text={exam.content.prompt.split(/\n\n/)[0]} /></p>}
         {preview.length > 0 && <ul className="bx-question-preview">{preview.map((question) => <li key={question}>{question}</li>)}</ul>}
         <div className="bx-hero-actions">
-          <button type="button" className="bx-start" disabled={busy} onClick={() => { const part = parts.find((section) => section.id === choice); onStart(part ? { section: part.id, ids: part.questions.map((question) => question.id) } : undefined); }}>{busy ? "Đang mở đề…" : choice === "full" ? "Bắt đầu làm bài" : `Luyện ${partName(parts.findIndex((section) => section.id === choice))}`} <ArrowRight size={18} /></button>
+          <button type="button" className="bx-start" disabled={busy} onClick={() => onStart(selectedPart ? { section: selectedPart.id, ids: selectedPart.questions.map((question) => question.id) } : undefined)}>{busy ? "Đang mở đề…" : selectedPart ? `Luyện ${selectedLabel}` : "Bắt đầu làm bài"} <ArrowRight size={18} /></button>
           <span>Bài làm được lưu tự động</span>
         </div>
         {error && <p className="bx-error" role="alert"><CircleAlert size={16} /> {error}</p>}
       </div>
     </section>
-    {choosable && <section className="bx-modes" aria-label="Chọn chế độ luyện tập">
-      <h2>Chọn chế độ luyện tập</h2>
-      <div className="bx-mode-grid">
-        <label className={`bx-mode ${choice === "full" ? "is-on" : ""}`}><input type="radio" name="bx-mode" checked={choice === "full"} onChange={() => setChoice("full")} /><span><b>Làm full test</b><small>Làm toàn bộ bài {exam.skill} · {exam.duration_minutes} phút</small></span><em>{questions.length} câu</em></label>
-        <div className={`bx-mode bx-mode-parts ${choice !== "full" ? "is-on" : ""}`}><b>Luyện từng phần</b><small>Chọn phần bạn muốn luyện; đồng hồ vẫn tính theo cả bài.</small>
-          {parts.map((section, index) => <label key={section.id} className={choice === section.id ? "is-on" : ""}><input type="radio" name="bx-mode" checked={choice === section.id} onChange={() => setChoice(section.id)} /><span>{partName(index)}<small>{section.title}</small></span><em>{section.questions.length} câu</em></label>)}
-        </div>
-      </div>
-    </section>}
     <div className="bx-intro-grid">
       <section className="bx-card"><h2><Check size={17} /> Trước khi bắt đầu</h2><ul className="bx-tips">{(beforeYouStart[exam.skill] ?? beforeYouStart.Reading).map((tip) => <li key={tip}>{tip}</li>)}</ul></section>
       <section className="bx-card"><h2><CalendarPlus size={17} /> Lên lịch luyện</h2><p>Thêm đề này vào Study Planner để nhắc bạn luyện vào ngày đã chọn.</p>{scheduleSlot}</section>
@@ -138,16 +125,20 @@ export function AnswerInput({ question, value, onChange, index }: { question: Ex
   const fixed = /true[_-]false/.test(question.type) ? ["TRUE", "FALSE", "NOT GIVEN"] : /yes[_-]no/.test(question.type) ? ["YES", "NO", "NOT GIVEN"] : [];
   const options = question.options.length ? question.options : fixed;
   if (options.length) {
-    const many = /multiple[_-]answers/.test(question.type);
+    // A grouped "Choose TWO" item asks one letter per question; an ungrouped one ticks every letter at once.
+    const many = /multiple[_-]answers/.test(question.type) && !question.group;
     const picked = many ? value.split(",").filter(Boolean) : [value];
-    return <div className={`bx-options ${fixed.length && !question.options.length ? "is-inline" : ""}`} role={many ? "group" : "radiogroup"} aria-label={`Đáp án câu ${index + 1}`}>
+    const lettersOnly = question.options.length > 0 && question.options.every((option) => /^[A-Z]$/.test(option));
+    return <div className={`bx-options ${fixed.length && !question.options.length ? "is-inline" : ""} ${lettersOnly ? "is-letters" : ""}`} role={many ? "group" : "radiogroup"} aria-label={`Đáp án câu ${index + 1}`}>
       {options.map((option, optionIndex) => {
         const on = picked.includes(option);
+        const letter = String.fromCharCode(65 + optionIndex);
+        // Lettered options ("C — text", or just "C" on a map) already get the letter badge, so drop the repeat.
         const display = /multiple[_-]choice/.test(question.type)
           ? option.replace(/^\s*[A-D]\s+—\s*/i, "").replace(/^\s*[A-D][).]\s*/i, "")
-          : option;
+          : option.startsWith(`${letter} — `) ? option.slice(letter.length + 3) : option;
         return <button type="button" key={option} role={many ? "checkbox" : "radio"} aria-checked={on} className={on ? "is-on" : ""} onClick={() => onChange(many ? (on ? picked.filter((item) => item !== option) : [...picked, option]).join(",") : option)}>
-          {question.options.length > 0 && <b>{String.fromCharCode(65 + optionIndex)}</b>}<span>{display}</span>{on && <Check size={15} />}
+          {question.options.length > 0 && <b>{letter}</b>}{!(question.options.length > 0 && display === letter) && <span>{display}</span>}{on && <Check size={15} />}
         </button>;
       })}
     </div>;

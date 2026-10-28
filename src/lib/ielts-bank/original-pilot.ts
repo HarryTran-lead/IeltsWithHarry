@@ -22,7 +22,7 @@ const paper = z.discriminatedUnion("skill", [
 
 export const PILOT_PREFIX = "ESL-PILOT-2026-";
 export const PILOT_REVIEW_URL = "https://github.com/HarryTran-lead/IeltsWithHarry/blob/develop/docs/ORIGINAL_TESTS_IMPORT.md";
-export const PILOT_RIGHTS_STATUS = "Owner-supplied; publication rights pending review";
+export const PILOT_RIGHTS_STATUS = "Original IeltsWithHarry practice test (owner-confirmed rights)";
 
 /** Import content for admin review only. In particular, a transcript is never substituted for an audio recording. */
 export function normalizeOriginalPilot(raw: unknown): { exam: NormalizedExam; warnings: string[] } {

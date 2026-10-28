@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, Filter, Headphones, Mic, NotebookPen, PlayCircle, Search, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
-import { catalogGroups, catalogSkills, balancedCatalog, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
+import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import "./bank-library.css";
 
 type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null };
@@ -22,12 +22,20 @@ const questionTypes = [
   { id: "matching_headings", label: "Matching Headings", test: /matching[_-]headings/ },
   { id: "tfng", label: "True - False - Not Given", test: /true[_-]false/ },
   { id: "ynng", label: "Yes - No - Not Given", test: /yes[_-]no/ },
-  { id: "mc_one", label: "Multiple Choice (One Answer)", test: /^multiple[_-]choice$/ },
-  { id: "mc_many", label: "Multiple Choice (Many Answers)", test: /multiple[_-]answers/ },
+  { id: "mc_one", label: "Multiple Choice (One Answer)", test: /^multiple[_-]choice(?:[_-]single[_-]answer)?$/ },
+  { id: "mc_many", label: "Multiple Choice (Many Answers)", test: /multiple.*answers/ },
   { id: "matching_information", label: "Matching Information", test: /matching[_-]information/ },
-  { id: "matching_features", label: "Matching Features", test: /matching[_-]features|^matching$|sentence[_-]endings/ },
-  { id: "labelling", label: "Map, Diagram Label", test: /labelling/ },
-  { id: "gap", label: "Gap Filling", test: /completion|short[_-]answer/ },
+  { id: "matching_features", label: "Matching Features", test: /matching[_-]features|^matching$/ },
+  { id: "matching_endings", label: "Matching Sentence Endings", test: /sentence[_-]endings/ },
+  { id: "sentence_completion", label: "Sentence Completion", test: /sentence[_-]completion/ },
+  { id: "summary_completion", label: "Summary Completion", test: /summary[_-]completion/ },
+  { id: "note_completion", label: "Note Completion", test: /note[_-]completion/ },
+  { id: "table_completion", label: "Table Completion", test: /table[_-]completion/ },
+  { id: "flow_chart", label: "Flow Chart Completion", test: /flow[_-]?chart[_-]completion/ },
+  { id: "diagram", label: "Diagram Labelling", test: /diagram[_-]labelling/ },
+  { id: "map_plan", label: "Map / Plan Labelling", test: /(map|plan)[_-]labelling/ },
+  { id: "form_completion", label: "Form Completion", test: /form[_-]completion/ },
+  { id: "short_answer", label: "Short Answer", test: /short[_-]answer/ },
 ] as const;
 const otherType = { id: "other", label: "Other Types" };
 
@@ -111,7 +119,15 @@ export function BankLibrary({ skill }: { skill: CatalogSkill }) {
   return <BankLibraryView skill={skill} exams={current?.exams ?? []} attempts={current?.attempts ?? []} loading={!current} error={current?.error ?? ""} />;
 }
 
-export function BankLibraryView({ skill, exams, attempts, loading, error }: { skill: CatalogSkill; exams: CatalogExam[]; attempts: Attempt[]; loading: boolean; error: string }) {
+type LibraryViewProps = { skill: CatalogSkill; exams: CatalogExam[]; attempts: Attempt[]; loading: boolean; error: string };
+
+export function BankLibraryView(props: LibraryViewProps) {
+  return props.skill === "Reading" || props.skill === "Listening"
+    ? <SectionedLibrary {...props} skill={props.skill} />
+    : <LegacyBankLibraryView {...props} />;
+}
+
+function LegacyBankLibraryView({ skill, exams, attempts, loading, error }: LibraryViewProps) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -145,6 +161,7 @@ export function BankLibraryView({ skill, exams, attempts, loading, error }: { sk
   const currentPage = Math.min(page, pageCount - 1);
   const visible = ordered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
   const activeFilters = sources.length + kinds.length + (query ? 1 : 0);
+  const readingFull = skill === "Reading" && (!type || type === "passage") ? exams.filter((exam) => exam.practice_type === "full_test" && (!needle || `${exam.title} ${exam.topic ?? ""}`.toLocaleLowerCase().includes(needle))).slice(0, 2) : [];
 
   function chooseType(next: string) {
     const search = new URLSearchParams(params);
@@ -173,7 +190,7 @@ export function BankLibraryView({ skill, exams, attempts, loading, error }: { sk
       </div>
       <div className="bl-filter-row is-secondary">
         <span className="bl-filter-label"><Filter size={15} /> Lọc theo</span>
-        {kindOptions.length > 0 && <FilterMenu id="kinds" title={skill === "Writing" ? "Dạng đề" : "Loại câu hỏi"} count={kinds.length} open={openMenu === "kinds"} onOpen={setOpenMenu}>
+        {kindOptions.length > 0 && skill !== "Reading" && <FilterMenu id="kinds" title={skill === "Writing" ? "Dạng đề" : "Loại câu hỏi"} count={kinds.length} open={openMenu === "kinds"} onOpen={setOpenMenu}>
           {kindOptions.map((item) => <Check key={item.id} checked={kinds.includes(item.id)} onChange={() => toggle(kinds, setKinds, item.id)} label={item.label} count={item.count} />)}
         </FilterMenu>}
         {sourceOptions.length > 1 && <FilterMenu id="sources" title="Nguồn tài liệu" count={sources.length} open={openMenu === "sources"} onOpen={setOpenMenu}>
@@ -183,12 +200,52 @@ export function BankLibraryView({ skill, exams, attempts, loading, error }: { sk
         {activeFilters > 0 && <button type="button" className="bl-clear" onClick={clearAll}>Xóa lọc</button>}
         <span className="bl-count" role="status">{loading ? "Đang tải đề…" : error ? "" : `${ordered.length} đề phù hợp`}</span>
       </div>
+      {skill === "Reading" && kindOptions.length > 0 && <div className="bl-reading-types" role="group" aria-label="Lọc Reading theo dạng câu hỏi"><strong>Dạng câu hỏi</strong>{kindOptions.map((item) => <button type="button" key={item.id} aria-pressed={kinds.includes(item.id)} onClick={() => toggle(kinds, setKinds, item.id)}>{item.label} <small>{item.count}</small></button>)}</div>}
     </div>
+    {readingFull.length > 0 && <section className="bl-reading-parts"><div><h3>Luyện từng Passage từ đề full</h3><p>Passage 1, 2, 3 có đồng hồ 20 phút và kết quả riêng. Bạn cũng có thể mở đề full để làm cả ba.</p></div><div className="bl-reading-part-grid">{readingFull.flatMap((exam) => [1, 2, 3].map((part) => <Link key={`${exam.id}-${part}`} href={`/app/question-bank/exam/${exam.id}?part=${part}`}><span>PASSAGE {part}</span><strong>{exam.title}</strong><small>20 phút · bài làm riêng <ArrowRight size={14} /></small></Link>))}</div></section>}
     {error && <p className="bl-state" role="alert">{error}</p>}
     {loading && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{Array.from({ length: 8 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
     {!loading && !error && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{visible.map((exam) => <ExamCard key={exam.id} exam={exam} attempt={latest.get(exam.id)} />)}</div>}
     {!loading && !error && !visible.length && <p className="bl-state">Chưa có đề phù hợp. Thử bỏ bớt bộ lọc.</p>}
     {pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.querySelector(".bl-library")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
+  </section>;
+}
+
+function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryViewProps & { skill: "Reading" | "Listening" }) {
+  const params = useSearchParams();
+  const isReading = skill === "Reading";
+  const limit = isReading ? 3 : 4;
+  const full = params.get("type") === "full_test";
+  const partValue = Number(params.get("part"));
+  const part = !full && Number.isInteger(partValue) && partValue >= 1 && partValue <= limit ? partValue : 0;
+  const [query, setQuery] = useState("");
+  const [page, setPage] = useState(0);
+  const base = catalogEntriesForSelection(exams, skill, full, part);
+  const kindCounts = new Map<string, number>();
+  for (const entry of base) for (const id of catalogQuestionTypeIds(entry.questionTypes)) kindCounts.set(id, (kindCounts.get(id) ?? 0) + 1);
+  const requestedKind = params.get("kind") ?? "";
+  const selectedKind = kindCounts.has(requestedKind) ? requestedKind : "";
+  const needle = query.trim().toLocaleLowerCase();
+  const filtered = base.filter((entry) => (!selectedKind || catalogQuestionTypeIds(entry.questionTypes).includes(selectedKind))
+    && (!needle || `${entry.title} ${entry.exam.title} ${entry.exam.topic ?? ""}`.toLocaleLowerCase().includes(needle)));
+  const pageCount = Math.max(1, Math.ceil(filtered.length / 12));
+  const currentPage = Math.min(page, pageCount - 1);
+  const visible = filtered.slice(currentPage * 12, (currentPage + 1) * 12);
+  const latest = new Map<string, Attempt>();
+  for (const attempt of attempts) if (!latest.has(attempt.exam_id)) latest.set(attempt.exam_id, attempt);
+
+  const name = isReading ? "Passage" : "Section";
+  const heading = full ? "Full đề" : part ? `${name} ${part}` : "Bài lẻ";
+
+  return <section id="ngan-hang-de" className={`bl-library bl-sectioned bl-tone-${skill.toLowerCase()}`} aria-label={`Ngân hàng đề ${skill}`}>
+    <div className="bl-results">
+      <div className="bl-results-head"><div><span className="bl-results-kicker">{skill.toUpperCase()} · NGÂN HÀNG ĐỀ</span><h2>{heading}</h2><p>{loading ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><div className="bl-results-controls"><label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên bài hoặc chủ đề…" aria-label={`Tìm đề ${skill}`} /></label></div></div>
+      {error && <p className="bl-state" role="alert">{error}</p>}
+      {loading && <div className="bl-grid bl-grid-sectioned">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
+      {!loading && !error && <div className="bl-grid bl-grid-sectioned">{visible.map((entry) => <ExamCard key={`${entry.exam.id}:${entry.part ?? "full"}`} exam={entry.exam} attempt={entry.splitFromFull ? undefined : latest.get(entry.exam.id)} section={entry.splitFromFull && entry.part ? { part: entry.part, title: entry.title, questionTypes: entry.questionTypes, questionCount: entry.questionCount } : undefined} />)}</div>}
+      {!loading && !error && !visible.length && <p className="bl-state">Chưa có bài phù hợp. Hãy thử dạng câu hỏi khác, đổi từ khóa hoặc chọn phần khác trong sidebar.</p>}
+      {!loading && pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.getElementById("ngan-hang-de")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
+    </div>
   </section>;
 }
 
@@ -229,9 +286,10 @@ function AttemptChip({ attempt }: { attempt?: Attempt }) {
 }
 
 /** One exam on the shelf; its shape follows the skill, like a printed practice book. */
-export function ExamCard({ exam, attempt }: { exam: CatalogExam; attempt?: Attempt }) {
-  const href = attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : `/app/question-bank/exam/${exam.id}`;
-  const usage = exam.attempt_count ? <span className="bl-usage"><PlayCircle size={13} /> {exam.attempt_count.toLocaleString("vi-VN")} lượt làm</span> : <span className="bl-usage"><Clock3 size={13} /> {exam.duration_minutes} phút</span>;
+export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attempt?: Attempt; section?: { part: number; title: string; questionTypes: string[]; questionCount: number } }) {
+  const href = section ? `/app/question-bank/exam/${exam.id}?part=${section.part}` : attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : `/app/question-bank/exam/${exam.id}`;
+  const duration = section ? exam.skill === "Reading" ? 20 : 10 : exam.duration_minutes;
+  const usage = !section && exam.attempt_count ? <span className="bl-usage"><PlayCircle size={13} /> {exam.attempt_count.toLocaleString("vi-VN")} lượt làm</span> : <span className="bl-usage"><Clock3 size={13} /> {duration} phút</span>;
   const cta = <span className="bl-cta">{attempt?.state === "in_progress" ? "Làm tiếp" : attempt ? "Luyện lại" : "Luyện đề"} <ArrowRight size={15} /></span>;
 
   const aiCover = Boolean(!exam.visual && exam.image_url?.includes("/ielts-images/covers/"));
@@ -266,19 +324,19 @@ export function ExamCard({ exam, attempt }: { exam: CatalogExam; attempt?: Attem
     </Link>;
   }
 
-  const types = typeGroups(exam);
+  const types = section ? catalogQuestionTypeIds(section.questionTypes).map((id) => ({ id, label: catalogQuestionTypes.find((group) => group.id === id)?.label ?? "Other Types" })) : typeGroups(exam);
   return <Link href={href} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       {exam.image_url ? <figure className="bl-art"><img src={exam.image_url} alt="" loading="lazy" /></figure> : <TopicArt topic={artTopic(exam)} className="bl-art" />}
       {usage}
-      <b className="bl-badge">{partBadge(exam)}</b>
+      <b className="bl-badge">{section ? `${exam.skill === "Reading" ? "Passage" : "Section"} ${section.part}` : partBadge(exam)}</b>
       {aiCover && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
     </span>
     <span className="bl-body">
-      <strong className="bl-title">{exam.title}</strong>
+      <strong className="bl-title">{section?.title ?? exam.title}</strong>
       {types.length > 0 ? <ul className="bl-types">{types.slice(0, 3).map((item) => <li key={item.id}>{item.label}</li>)}</ul>
-        : <span className="bl-types-plain">{exam.question_count ? `${exam.question_count} câu hỏi` : exam.format} · {exam.duration_minutes} phút</span>}
+        : <span className="bl-types-plain">{section?.questionCount || exam.question_count ? `${section?.questionCount ?? exam.question_count} câu hỏi` : exam.format} · {duration} phút</span>}
       <span className="bl-foot"><AttemptChip attempt={attempt} /><span className="bl-source">{sourceLabel(exam)}</span>{cta}</span>
     </span>
   </Link>;

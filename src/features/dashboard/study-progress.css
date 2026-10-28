@@ -107,3 +107,15 @@
   .sp-card .card-head { flex-wrap: wrap; }
 }
 @media (prefers-reduced-motion: reduce) { .sp-goal, .sp-cal-day { transition: none; } }
+.sp-overview { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 18px; }
+.sp-overview > div { display: grid; gap: 4px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.sp-overview span, .sp-overview small { color: var(--muted); font-size: 12px; }
+.sp-overview strong { display: flex; align-items: center; gap: 5px; color: var(--navy); font-size: 27px; line-height: 1.1; }
+.sp-overview strong svg { color: #ee8425; }
+.sp-recent { grid-column: 1 / -1; }
+.sp-recent .card-head a { color: var(--teal-strong); font-size: 12px; font-weight: 700; }
+.sp-recent ol { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.sp-recent li { display: grid; grid-template-columns: minmax(120px, .6fr) minmax(0, 2fr) auto; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 13px; }
+.sp-recent li span, .sp-recent time { color: var(--muted); }
+.sp-recent li a { color: var(--teal-strong); font-weight: 700; }
+@media (max-width: 700px) { .sp-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); } .sp-recent li { grid-template-columns: 1fr auto; } .sp-recent li span { grid-column: 1 / -1; } }

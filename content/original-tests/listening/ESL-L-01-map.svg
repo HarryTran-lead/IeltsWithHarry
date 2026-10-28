@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="720" height="440" font-family="Arial, Helvetica, sans-serif">
+  <title>Riverside Heritage Walk – map for Questions 11–16</title>
+  <rect width="720" height="440" fill="#f6f2e6"/>
+  <!-- River Ash, flowing west to east -->
+  <path d="M0 158 C 180 150, 360 172, 540 160 S 690 150, 720 162 L 720 232 C 600 226, 470 240, 330 232 S 120 226, 0 234 Z" fill="#bfdff0" stroke="#7fb6d4" stroke-width="1.5"/>
+  <text x="26" y="200" font-size="15" font-style="italic" fill="#3c6f8f" letter-spacing="2">RIVER ASH</text>
+  <text x="640" y="200" font-size="13" fill="#3c6f8f">flow →</text>
+  <!-- Road -->
+  <rect x="0" y="404" width="720" height="24" fill="#dcd6c8"/>
+  <text x="300" y="421" font-size="12" fill="#5d564a" letter-spacing="3">MILL ROAD</text>
+  <!-- Riverside path (dashed) -->
+  <path d="M95 322 L95 272 L560 272 C 600 274, 615 292, 630 304 C 650 322, 668 350, 680 380" fill="none" stroke="#9a6b3f" stroke-width="3" stroke-dasharray="9 6"/>
+  <text x="250" y="292" font-size="11" fill="#7a5532">riverside path</text>
+  <!-- Old station (start) -->
+  <rect x="38" y="322" width="118" height="58" rx="4" fill="#e9d8bd" stroke="#8a7350"/>
+  <text x="97" y="346" font-size="13" font-weight="bold" fill="#4a3b25" text-anchor="middle">Old station</text>
+  <text x="97" y="366" font-size="12" fill="#4a3b25" text-anchor="middle">START ★</text>
+  <!-- Stone bridge -->
+  <rect x="186" y="150" width="28" height="94" fill="#c4bcac" stroke="#857c6b"/>
+  <!-- Footbridge -->
+  <rect x="555" y="146" width="12" height="98" fill="#b48a5e" stroke="#7d5c39"/>
+  <text x="575" y="214" font-size="11" fill="#5d4428">footbridge</text>
+  <!-- Car park -->
+  <rect x="398" y="350" width="104" height="44" rx="4" fill="#e4e4e4" stroke="#9a9a9a"/>
+  <text x="450" y="377" font-size="12" fill="#555" text-anchor="middle">Car park</text>
+  <!-- Woodland -->
+  <g fill="#a9c99a" stroke="#6f9a5e">
+    <circle cx="600" cy="330" r="16"/><circle cx="628" cy="352" r="18"/><circle cx="660" cy="318" r="15"/>
+    <circle cx="690" cy="340" r="16"/><circle cx="612" cy="376" r="14"/><circle cx="700" cy="300" r="13"/>
+  </g>
+  <!-- Customs house (end) -->
+  <rect x="596" y="382" width="118" height="20" rx="3" fill="#e9d8bd" stroke="#8a7350"/>
+  <text x="655" y="396" font-size="10.5" fill="#4a3b25" text-anchor="middle">Customs house · END</text>
+  <!-- North bank buildings -->
+  <rect x="236" y="86" width="70" height="44" fill="#ece6d6" stroke="#b3a88f"/>
+  <rect x="392" y="80" width="62" height="40" fill="#ece6d6" stroke="#b3a88f"/>
+  <!-- Compass -->
+  <g transform="translate(676 52)">
+    <path d="M0 -24 L8 4 L0 -2 L-8 4 Z" fill="#1d3557"/>
+    <text y="20" font-size="13" font-weight="bold" fill="#1d3557" text-anchor="middle">N</text>
+  </g>
+  <!-- Answer letters -->
+  <g font-size="15" font-weight="bold" text-anchor="middle" fill="#1d3557">
+    <g><circle cx="200" cy="197" r="14" fill="#fff" stroke="#1d3557" stroke-width="2"/><text x="200" y="202">A</text></g>
+    <g><circle cx="271" cy="108" r="14" fill="#fff" stroke="#1d3557" stroke-width="2"/><text x="271" y="113">B</text></g>
+    <g><circle cx="300" cy="250" r="14" fill="#fff" stroke="#1d3557" stroke-width="2"/><text x="300" y="255">C</text></g>
+    <g><circle cx="450" cy="314" r="14" fill="#fff" stroke="#1d3557" stroke-width="2"/><text x="450" y="319">D</text></g>
+    <g><circle cx="470" cy="250" r="14" fill="#fff" stroke="#1d3557" stroke-width="2"/><text x="470" y="255">E</text></g>
+    <g><circle cx="561" cy="128" r="14" fill="#fff" stroke="#1d3557" stroke-width="2"/><text x="561" y="133">F</text></g>
+    <g><circle cx="630" cy="304" r="14" fill="#fff" stroke="#1d3557" stroke-width="2"/><text x="630" y="309">G</text></g>
+    <g><circle cx="423" cy="100" r="14" fill="#fff" stroke="#1d3557" stroke-width="2"/><text x="423" y="105">H</text></g>
+  </g>
+</svg>

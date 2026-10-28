@@ -41,6 +41,8 @@ async function setup() {
     grant select, insert on public.study_room_messages to authenticated;
   `);
   await db.exec(read("supabase/migrations/202610260015_learner_accounts.sql"));
+  await db.exec(read("supabase/migrations/202610280001_profile_permissions.sql"));
+  await db.exec(read("supabase/migrations/202610280002_study_room_admin_badge.sql"));
   await db.query("insert into auth.users(id, email) values ($1, 'alice@example.org'), ($2, 'bob@example.org')", [alice, bob]);
   await db.query("insert into public.admin_users(user_id) values ($1)", [alice]);
   return db;
@@ -49,6 +51,19 @@ const as = (db: PGlite, user: string) => db.exec(`set role authenticated; set re
 const asOwner = (db: PGlite) => db.exec("reset role; reset request.jwt.claim.sub;");
 
 describe("learner accounts", { timeout: 60_000 }, () => {
+  it("allows owners to edit profile fields and stamps admin chat messages on the server", async () => {
+    const db = await setup();
+    try {
+      await as(db, bob);
+      await db.query("update public.profiles set bio = 'Reading goal', avatar = 'book' where id = $1", [bob]);
+      await db.query("insert into public.study_room_messages(body, is_admin) values ('hello', true)");
+      expect((await db.query<{ is_admin: boolean }>("select is_admin from public.study_room_messages where user_id = $1", [bob])).rows[0].is_admin).toBe(false);
+      await asOwner(db);
+      await as(db, alice);
+      await db.query("insert into public.study_room_messages(body) values ('Admin notice')");
+      expect((await db.query<{ is_admin: boolean }>("select is_admin from public.study_room_messages where user_id = $1", [alice])).rows[0].is_admin).toBe(true);
+    } finally { await db.close(); }
+  });
   it("builds the streak from learning activity in the learner's time zone", async () => {
     const db = await setup();
     try {

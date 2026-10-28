@@ -1,6 +1,6 @@
 # Top three features: implementation and handoff
 
-Local code only. No production database migration or deployment was performed.
+Released to production on 27 October 2026 through [PR #2](https://github.com/HarryTran-lead/IeltsWithHarry/pull/2). Supabase migrations `202610270011` and `202610270012` were applied to production project `vpkhriywprepuhrbarye` before the merge. Vercel deployment `dpl_F23zNXF6hv2PymnLRbmGNKxKs1Wv` is Ready and aliased to [ieltswithharry.vercel.app](https://ieltswithharry.vercel.app).
 
 ## Changed behavior
 
@@ -23,11 +23,11 @@ Implementation files: `src/lib/news/review.ts`, `src/lib/listening/youtube.ts`, 
 
 ## Verification
 
-At implementation time, `npm run build`, `npm run typecheck`, and `npx eslint . --ignore-pattern '.claude/**'` passed. The repository test suite run with `npx vitest run --exclude '**/.claude/**' --maxWorkers=2` passed with **167 tests passed, 3 skipped** after deck management was added. After private recording support, a focused run of migration, YouTube parser and vocabulary tests passed **13/13**; typecheck, changed-file ESLint and production build passed. The migration test verifies that another user cannot read recording metadata or Storage objects and cannot write into someone else's session. Browser checks in demo mode confirmed admin and learner page rendering, empty publication validation, invalid YouTube-host rejection, deck empty state, and mobile and desktop layout. Browser microphone permission, IndexedDB replay, a real playable YouTube lesson, and live Supabase deployment were not exercised.
+The isolated release branches passed typecheck, full ESLint, production build and the complete suite (**167 passed, 3 skipped**). GitHub Quality passed for the development and production PRs. The migration test verifies that another user cannot read recording metadata or Storage objects and cannot write into someone else's session. Development Supabase received both migrations, then a temporary learner successfully uploaded recording bytes, inserted metadata, downloaded their own file, and was denied anonymous read and cross-user upload; the test account and recording were removed. Its Vercel Preview became Ready. Production migration dry run showed exactly `011` and `012`; both applied, and the subsequent dry run showed no pending migration. A production SQL read-back found the new bucket private and RLS enabled on all five new tables. Production Vercel is Ready; `/` returned HTTP 200 and protected Speaking, Listening, Vocabulary and Admin routes returned the expected login redirect. Earlier demo browser checks confirmed admin and learner page rendering, empty publication validation, invalid YouTube-host rejection, deck empty state, and mobile and desktop layout. Browser microphone permission, IndexedDB replay, a real licensed YouTube lesson, and an authenticated production UI click-through have not been exercised.
 
 ## Run locally
 
-Use Node 20.9+ and `npm ci`. In `.env.local`, set `NEXT_PUBLIC_DEMO_MODE=true` for browser-local demo data; then run `npm run dev` and open `/admin` and `/app/listening/youtube`. For a live Supabase account, use the existing public Supabase URL/publishable key variables from `.env.example`, set `NEXT_PUBLIC_DEMO_MODE=false`, and apply the additive migration **to an authorized non-production database first**. Existing admin membership grants the lesson editor. No new API key is required. The YouTube IFrame API requires network access; browser microphone capture requires a secure origin or localhost and user permission.
+Use Node 20.9+ and `npm ci`. In `.env.local`, set `NEXT_PUBLIC_DEMO_MODE=true` for browser-local demo data; then run `npm run dev` and open `/admin` and `/app/listening/youtube`. For a separate live Supabase account, use the existing public Supabase URL/publishable key variables from `.env.example`, set `NEXT_PUBLIC_DEMO_MODE=false`, and apply both additive migrations to an authorized non-production database first. The development and production projects documented in `docs/ENVIRONMENTS.md` already have both migrations. Existing admin membership grants the lesson editor. No new API key is required. The YouTube IFrame API requires network access; browser microphone capture requires a secure origin or localhost and user permission.
 
 ## Acceptance checklist
 
@@ -44,4 +44,5 @@ Use Node 20.9+ and `npm ci`. In `.env.local`, set `NEXT_PUBLIC_DEMO_MODE=true` f
 | Four review actions, persistent FSRS, history, deduplication | DONE | Additive migration required in live mode. |
 | User deck management | DONE | Deck metadata references notebook words. |
 | Persistent private audio playback across sessions | DONE | Explicit save to device IndexedDB in demo or owner-scoped private Storage for live users; browser/live end-to-end check remains. |
-| Live end-to-end verification and production rollout | BLOCKED | Requires authorized migration, licensed lesson and deployed environment. |
+| Production rollout | DONE | Migrations applied; Vercel deployment Ready and main alias verified. |
+| Authenticated production and media end-to-end checks | PARTIAL | Requires a learner/admin session, microphone permission and a licensed, embeddable video lesson. |

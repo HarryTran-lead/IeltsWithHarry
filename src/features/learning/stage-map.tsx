@@ -6,7 +6,7 @@ import { Check, Lock } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { stages, type Stage } from "@/lib/demo-data";
-import { demoMode } from "@/lib/runtime";
+import { demoMode, releaseLocks } from "@/lib/runtime";
 import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { usePublishedCourses, type StageCourse } from "./stage-courses";
@@ -27,7 +27,7 @@ export function stageStops(courses: StageCourse[], explored: (slug: string) => b
   });
   const current = progress.findIndex((item) => item.total > 0 && item.explored < item.total);
   return progress.map((item, index) => ({ ...item,
-    state: demoMode && !item.total ? item.stage.status : !item.total ? "future" : item.explored === item.total ? "done" : index === current ? "current" : "available" }));
+    state: releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(item.stage.id) ? "future" : demoMode && !item.total ? item.stage.status : !item.total ? "future" : item.explored === item.total ? "done" : index === current ? "current" : "available" }));
 }
 
 /** Stage stops for pages that do not load the courses themselves. */
@@ -133,7 +133,9 @@ export function StageMap({ stops }: { stops: StageStop[] }) {
             const { icon, color } = look[index];
             const progress = stop.total ? Math.round(stop.explored / stop.total * 100) : stop.state === "done" ? 100 : 0;
             return <li key={stop.stage.id} className={`smap-stop is-${stop.state}`} style={{ left: `${x / W * 100}%`, top: `${y / H * 100}%`, "--c": color, "--delay": `${index * 70}ms` } as React.CSSProperties}>
-              <Link href={`/app/learn/${stop.stage.id}`} aria-label={`Chặng ${index + 1}: ${stop.stage.name}, band ${stop.stage.range}, ${statusText(stop)}`}>
+              {releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stop.stage.id) ? <div aria-label={`Chặng ${index + 1}: ${stop.stage.name}, band ${stop.stage.range}, đang khóa`}>
+                <span className="smap-figure" aria-hidden="true"><Sticker name={icon} size={40} pop={false} /></span><span className="smap-pad"><b><Lock size={13} /></b></span><span className="smap-label"><small>{stop.stage.range}</small><strong>{stop.stage.name}</strong><em>Đang biên soạn</em></span>
+              </div> : <Link href={`/app/learn/${stop.stage.id}`} aria-label={`Chặng ${index + 1}: ${stop.stage.name}, band ${stop.stage.range}, ${statusText(stop)}`}>
                 <span className="smap-figure" aria-hidden="true">
                   {stop.state === "current" ? <><span className="smap-here">Bạn ở đây</span><HarryMascot size={50} /></> : <Sticker name={icon} size={40} tilt={index % 2 ? 6 : -6} pop={false} />}
                 </span>
@@ -144,7 +146,7 @@ export function StageMap({ stops }: { stops: StageStop[] }) {
                   <em>{statusText(stop)}</em>
                   {stop.state !== "future" && <i><b style={{ width: `${progress}%` }} /></i>}
                 </span>
-              </Link>
+              </Link>}
             </li>;
           })}
         </ol>

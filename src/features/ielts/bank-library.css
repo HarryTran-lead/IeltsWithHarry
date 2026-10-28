@@ -149,3 +149,36 @@
   .bl-pager > button { font-size: 0; gap: 0; }
   .bl-pager > button svg { width: 20px; height: 20px; }
 }
+.bl-reading-types { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-top: 10px; }
+.bl-reading-types > strong { margin-right: 5px; color: #58758b; font-size: 12px; }
+.bl-reading-types button { padding: 7px 10px; border: 1px solid #dce8ed; border-radius: 9px; background: #fff; color: #38526b; font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; }
+.bl-reading-types button[aria-pressed="true"] { border-color: #e46f67; background: #ffebe7; color: #9b3d39; }
+.bl-reading-types small { margin-left: 4px; opacity: .65; }
+.bl-reading-parts { margin: 18px 0; padding: 18px; border: 1px solid #efdedb; border-radius: 18px; background: #fffaf9; }
+.bl-reading-parts h3 { margin: 0 0 3px; font-size: 18px; }
+.bl-reading-parts p { margin: 0 0 13px; color: #708396; font-size: 12px; }
+.bl-reading-part-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.bl-reading-part-grid a { display: grid; gap: 5px; padding: 13px; border: 1px solid #efdedb; border-radius: 12px; background: #fff; color: #243c59; text-decoration: none; }
+.bl-reading-part-grid a:hover { border-color: #e46f67; }
+.bl-reading-part-grid span { color: #bd5751; font-size: 10px; font-weight: 900; letter-spacing: .07em; }
+.bl-reading-part-grid strong { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 13px; }
+.bl-reading-part-grid small { display: flex; align-items: center; gap: 4px; color: #688193; }
+@media (max-width: 700px) { .bl-reading-part-grid { grid-template-columns: 1fr; } }
+
+/* Reading and Listening let the app sidebar choose the section. */
+.bl-sectioned { margin-top: 8px; }
+.bl-results { min-width: 0; }
+.bl-results-head { display: flex; justify-content: space-between; align-items: end; gap: 18px; min-height: 74px; padding: 5px 0 14px; border-bottom: 1px solid #e1e9ed; }
+.bl-results-head h2 { margin: 2px 0 1px; color: #183652; font-size: 22px; line-height: 1.2; }
+.bl-results-head p { margin: 0; color: #6d8296; font-size: 12px; }
+.bl-results-kicker { color: #74909d; font-size: 10px; font-weight: 900; letter-spacing: .1em; }
+.bl-results-controls { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 9px; min-width: 0; }
+.bl-results-head .bl-search { flex: none; width: 290px; }
+.bl-grid-sectioned { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+.bl-grid-sectioned .bl-card-shelf { min-width: 0; min-height: 278px; }
+.bl-grid-sectioned .bl-thumb { aspect-ratio: 16 / 9; }
+.bl-grid-sectioned .bl-title { font-size: 14px; }
+.bl-grid-sectioned .bl-types { min-height: 33px; }
+@media (max-width: 1180px) { .bl-grid-sectioned { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 980px) { .bl-results-head { align-items: stretch; flex-direction: column; } .bl-results-controls { justify-content: flex-start; } }
+@media (max-width: 560px) { .bl-grid-sectioned { grid-template-columns: 1fr; } .bl-grid-sectioned .bl-card-shelf { flex-direction: row; min-height: 130px; } .bl-grid-sectioned .bl-thumb { width: 112px; aspect-ratio: auto; } .bl-results-controls { width: 100%; } .bl-results-head .bl-search { width: 100%; } }

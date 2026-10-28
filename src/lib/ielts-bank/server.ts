@@ -2,8 +2,7 @@ import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { randomUUID } from "node:crypto";
 import { createClient } from "@/lib/supabase/server";
 import { demoMode } from "@/lib/runtime";
-import { contentHash, contentSchema, scoreAnswers, validateExam, type ExamContent, type NormalizedExam } from "./schema";
-import { PILOT_PREFIX } from "./original-pilot";
+import { attemptContent, attemptMinutes, contentHash, contentSchema, scoreAnswers, validateExam, type ExamContent, type NormalizedExam } from "./schema";
 import { createConnector, sources, type SourceId } from "./connectors";
 
 export function bankClient() {
@@ -210,7 +209,6 @@ export async function reviewExam(examId: string, action: "ready" | "publish" | "
   if (error || !exam) throw new Error(error?.message || "Exam unavailable");
   const version = Array.isArray(exam.ielts_exam_versions) ? exam.ielts_exam_versions[0] : exam.ielts_exam_versions;
   if (["ready", "publish"].includes(action)) {
-    if (String(exam.external_id).startsWith(PILOT_PREFIX)) throw new Error("Original pilot requires documented rights, editorial and human-audio review before release");
     if (!version || (version.warnings as string[]).length) throw new Error("Resolve validation warnings before approval");
     if (action === "publish" && !["ready", "published"].includes(exam.status)) throw new Error("Mark exam ready before publishing");
     if (exam.source_id === "ai-factory") {
@@ -227,13 +225,13 @@ export async function reviewExam(examId: string, action: "ready" | "publish" | "
 }
 export async function submitAttempt(attemptId: string, userId: string, answers: Record<string, string>, state: "submitted" | "expired") {
   const client = bankClient();
-  const { data: attempt, error } = await client.from("ielts_attempts").select("*,ielts_exam_versions(content),ielts_exams(duration_minutes)").eq("id", attemptId).eq("user_id", userId).single();
+  const { data: attempt, error } = await client.from("ielts_attempts").select("*,ielts_exam_versions(content),ielts_exams(duration_minutes,skill)").eq("id", attemptId).eq("user_id", userId).single();
   if (error || !attempt || attempt.state !== "in_progress") throw new Error("Attempt unavailable");
   const version = Array.isArray(attempt.ielts_exam_versions) ? attempt.ielts_exam_versions[0] : attempt.ielts_exam_versions;
   const content = contentSchema.parse(version.content) as ExamContent;
-  const result = scoreAnswers(content, answers);
+  const result = scoreAnswers(attemptContent(content, attempt.notes), answers);
   const exam = Array.isArray(attempt.ielts_exams) ? attempt.ielts_exams[0] : attempt.ielts_exams;
-  const expired = Date.now() > new Date(attempt.started_at).getTime() + exam.duration_minutes * 60000;
+  const expired = Date.now() > new Date(attempt.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, attempt.notes) * 60000;
   const { data: updated, error: updateError } = await client.from("ielts_attempts").update({ answers, state: expired ? "expired" : state, score: result.total ? result.score : null, total: result.total || null, submitted_at: new Date().toISOString() }).eq("id", attemptId).eq("state", "in_progress").select("id").single();
   if (updateError || !updated) throw new Error("Attempt already submitted");
   await client.from("study_tasks").update({ completed: true }).eq("user_id", userId).eq("lesson_slug", `ielts:${attempt.exam_id}`).eq("completed", false);

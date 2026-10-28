@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Archive, ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarDays, CalendarPlus, ChartNoAxesColumn, CheckCircle2, Clock3, ExternalLink, Flame, Headphones, History, Newspaper, Search, Sparkles, Trophy, Volume2, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
+import { releaseLocks } from "@/lib/runtime";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { celebrateScore } from "@/lib/celebrate";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -80,7 +81,7 @@ function NewsMasthead({ active, meta }: { active: NewsTab; meta?: React.ReactNod
       <div className="news-tabs-list" ref={list}>
         {feeds.map(({ id, label, icon: Icon }) => <Link key={id} href={id === "latest" ? "/app/news" : `/app/news?feed=${id}`} scroll={false} className={active === id ? "active" : ""} aria-current={active === id ? "page" : undefined}><Icon size={16} />{label}</Link>)}
         <span className="news-tabs-divider" aria-hidden="true" />
-        {newsPages.map(({ id, label, href, icon: Icon }) => <Link key={id} href={href} className={active === id ? "active" : ""} aria-current={active === id ? "page" : undefined}><Icon size={16} />{label}</Link>)}
+        {newsPages.filter((item) => !releaseLocks || item.id !== "learn").map(({ id, label, href, icon: Icon }) => <Link key={id} href={href} className={active === id ? "active" : ""} aria-current={active === id ? "page" : undefined}><Icon size={16} />{label}</Link>)}
       </div>
     </nav>
   </>;
@@ -227,10 +228,10 @@ function NewsHome() {
       <div className="news-feed-count"><feedInfo.icon size={15} /><b>{loading ? "…" : count.toLocaleString("vi-VN")} bài</b><span>{feedInfo.hint}</span>
         {arrived > 0 && <button type="button" className="news-arrived" onClick={() => { if (page) setPage(0); else void loadList(); }}><Sparkles size={14} /> {arrived} tin mới · Xem ngay</button>}</div>
       {error && <p className="form-error" role="alert">{error}</p>}
-      {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} read={readIds.includes(row.id)} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
+      {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} read={readIds.includes(row.id)} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={releaseLocks ? undefined : learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" && !releaseLocks ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
       {pages > 1 && <div className="news-pagination"><button disabled={page === 0 || loading} onClick={() => goToPage(page - 1)}>← Trước</button><span>Trang <b>{page + 1}</b> / {pages}</span><button disabled={page + 1 >= pages || loading} onClick={() => goToPage(page + 1)}>Tiếp →</button></div>}
     </section>
-    {learn.length > 0 && <section className="news-section"><div className="news-section-heading"><div><span className="eyebrow">HỌC QUA BÀI ĐỌC GỐC</span><h2>Learn with News</h2><p>Bài đọc và câu hỏi do người biên soạn, có đáp án rõ ràng.</p></div><Link href="/app/news/learn">Xem tất cả →</Link></div><div className="news-grid">{learn.slice(0,3).map((item) => <LearnCard key={item.id} item={item}/>)}</div></section>}
+      {!releaseLocks && learn.length > 0 && <section className="news-section"><div className="news-section-heading"><div><span className="eyebrow">HỌC QUA BÀI ĐỌC GỐC</span><h2>Learn with News</h2><p>Bài đọc và câu hỏi do người biên soạn, có đáp án rõ ràng.</p></div><Link href="/app/news/learn">Xem tất cả →</Link></div><div className="news-grid">{learn.slice(0,3).map((item) => <LearnCard key={item.id} item={item}/>)}</div></section>}
     <p className="news-credit">Mỗi bài đều dẫn tới bản gốc; chỉ nội dung có hồ sơ quyền phù hợp mới hiển thị toàn văn.</p>
   </div>;
 }
@@ -258,7 +259,7 @@ function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read =
           <button type="button" aria-label={saved ? "Bỏ lưu tin" : "Lưu tin"} title={saved ? "Bỏ lưu tin" : "Lưu tin"} aria-pressed={saved} onClick={onSave} className={saved ? "saved" : ""}><Bookmark size={16} fill={saved ? "currentColor" : "none"}/></button>
         </div>
       </div>
-      {learnSlug && <Link className="news-learn-link" href={`/app/news/learn/${learnSlug}`}>Learn with News →</Link>}
+      {!releaseLocks && learnSlug && <Link className="news-learn-link" href={`/app/news/learn/${learnSlug}`}>Learn with News →</Link>}
     </div>
   </article>;
 }
@@ -369,7 +370,7 @@ function NewsHistory(){
       </div>
       <Link href={`/app/news/${item.article_id}`}>Luyện lại →</Link></article>;})}</div>
     {!autoAttempts.length&&!loading&&<p>Chưa có bài quiz tự động nào được nộp.</p>}
-    <h3>Bài luyện và câu hỏi</h3><div className="news-history-list">{attempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{titles[item.article_id]?.split("|")[0]??"Bài đọc"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p>{titles[item.article_id]&&<Link href={`/app/news/learn/${titles[item.article_id].split("|")[1]}`}>Ôn lại →</Link>}</article>)}</div>{!attempts.length&&!loading&&<div className="news-empty">Bạn chưa hoàn thành bài quiz nào. <Link href="/app/news/learn">Bắt đầu đọc →</Link></div>}
+    <h3>Bài luyện và câu hỏi</h3><div className="news-history-list">{attempts.map((item)=><article key={item.id}><span>{newsDate(item.submitted_at)}</span><h3>{titles[item.article_id]?.split("|")[0]??"Bài đọc"}</h3><p>{item.score}/{item.total} câu đúng · {Math.round(item.score/item.total*100)}%</p>{!releaseLocks&&titles[item.article_id]&&<Link href={`/app/news/learn/${titles[item.article_id].split("|")[1]}`}>Ôn lại →</Link>}</article>)}</div>{!attempts.length&&!loading&&<div className="news-empty">Bạn chưa hoàn thành bài quiz nào. {!releaseLocks && <Link href="/app/news/learn">Bắt đầu đọc →</Link>}</div>}
   </section></div>;
 }
 
