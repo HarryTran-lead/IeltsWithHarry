@@ -54,9 +54,18 @@ export function VocabularyStudy() {
       setLoading(true); setError("");
       let fetched: Word[] = [];
       if (collection === "ielts") {
+        let linkedKeys: string[] | null = null;
+        if (topic !== "all" && ieltsLearningTopics.includes(topic)) {
+          const slug = topic.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+          const links = await db!.from("ielts_vocabulary_topic_links").select("source_key").eq("topic_slug", slug).limit(200);
+          if (!active) return;
+          if (links.error) { setError(links.error.message); setLoading(false); return; }
+          linkedKeys = links.data?.length ? links.data.map((item) => item.source_key) : ["__none__"];
+        }
         const base = () => {
           let request = db!.from("ielts_vocabulary_entries").select("source_key,term,pos_raw,topic,definition_en,examples,band_level,content_status", { count: "exact" }).eq("published", true).order("term");
-          if (topic !== "all") request = request.eq("topic", topic);
+          if (linkedKeys) request = request.in("source_key", linkedKeys);
+          else if (topic !== "all") request = request.eq("topic", topic);
           if (level !== "all") request = request.eq("band_level", level);
           return request;
         };
@@ -69,7 +78,7 @@ export function VocabularyStudy() {
         if (result.error) { setError(result.error.message); setLoading(false); return; }
         fetched = (result.data ?? []).map((row) => ({
           source_id: row.source_key, headword: row.term, pos: row.pos_raw,
-          study_lane: `Band ${row.band_level} gợi ý`, topics: [row.topic],
+          study_lane: `Band ${row.band_level} gợi ý`, topics: [linkedKeys ? topic : row.topic],
           source_definition_en: row.definition_en, source_example_en: row.examples?.[0] ?? "",
           meaning_vi: "", meaning_status: row.content_status, meaning_source: "",
           meaning_source_url: "", source_ipa: "", total_count: first.count ?? 0,
@@ -137,7 +146,7 @@ export function VocabularyStudy() {
   return <div className="vocab-study">
     <section className="vocab-panel"><h2>Luyện từ theo hai bộ</h2><p>Chọn bộ từ, trình độ và topic rồi học theo 4 chế độ. Band của bộ IELTS là gợi ý ước lượng; nghĩa và ví dụ nguồn cần đối chiếu ngữ cảnh.</p>
       <div className="vocab-library-tabs" role="group" aria-label="Bộ từ luyện tập"><button type="button" className={collection === "cefr" ? "active" : ""} aria-pressed={collection === "cefr"} onClick={() => { setCollection("cefr"); setTopic("all"); setLevel("all"); }}>Từ A1–C2</button><button type="button" className={collection === "ielts" ? "active" : ""} aria-pressed={collection === "ielts"} onClick={() => { setCollection("ielts"); setTopic("all"); setLevel("all"); }}>Từ IELTS · Band 1–7+</button></div>
-      <div className="vocab-filter-bar"><select aria-label="Chủ đề luyện từ" value={topic} onChange={(event) => setTopic(event.target.value)}><option value="all">Mọi topic</option>{collection === "ielts" ? <><optgroup label="Chủ đề từ kho nguồn">{ieltsTopics.map((item) => <option key={item}>{item}</option>)}</optgroup><optgroup label="Chủ đề học mở rộng">{ieltsLearningTopics.map((item, index) => <option key={item} disabled={index > 1}>{item}{index > 1 ? " · đang biên soạn" : ""}</option>)}</optgroup></> : sourceTopics.map((item) => <option key={item}>{item}</option>)}</select><select aria-label={collection === "ielts" ? "Band gợi ý luyện từ" : "CEFR luyện từ"} value={level} onChange={(event) => setLevel(event.target.value)}><option value="all">{collection === "ielts" ? "Mọi band gợi ý" : "Mọi mức CEFR"}</option>{(collection === "ielts" ? ieltsBands : cefrLevels).map((item) => <option key={item} value={item}>{collection === "ielts" ? `Band ${item}` : item}</option>)}</select><Link className="vocab-button soft" href={`/app/vocabulary/library?${new URLSearchParams({ collection, ...(topic !== "all" ? { topic } : {}), ...(level !== "all" ? { level } : {}) })}`}>Xem kho từ</Link></div>
+      <div className="vocab-filter-bar"><select aria-label="Chủ đề luyện từ" value={topic} onChange={(event) => setTopic(event.target.value)}><option value="all">Mọi topic</option>{collection === "ielts" ? <><optgroup label="Chủ đề từ kho nguồn">{ieltsTopics.map((item) => <option key={item}>{item}</option>)}</optgroup><optgroup label="Chủ đề học mở rộng">{ieltsLearningTopics.map((item) => <option key={item}>{item}</option>)}</optgroup></> : sourceTopics.map((item) => <option key={item}>{item}</option>)}</select><select aria-label={collection === "ielts" ? "Band gợi ý luyện từ" : "CEFR luyện từ"} value={level} onChange={(event) => setLevel(event.target.value)}><option value="all">{collection === "ielts" ? "Mọi band gợi ý" : "Mọi mức CEFR"}</option>{(collection === "ielts" ? ieltsBands : cefrLevels).map((item) => <option key={item} value={item}>{collection === "ielts" ? `Band ${item}` : item}</option>)}</select><Link className="vocab-button soft" href={`/app/vocabulary/library?${new URLSearchParams({ collection, ...(topic !== "all" ? { topic } : {}), ...(level !== "all" ? { level } : {}) })}`}>Xem kho từ</Link></div>
       <div className="vocab-study-modes">{modes.map((item) => <button key={item.id} type="button" className={mode === item.id ? "active" : ""} onClick={() => changeMode(item.id)}><strong>{item.title}</strong><small>{item.detail}</small></button>)}</div>
     </section>
     {error && <p className="vocab-error" role="alert">{error}</p>}
