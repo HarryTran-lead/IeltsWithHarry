@@ -262,6 +262,60 @@ if (args.includes("--show")) {
   console.log(section ? `${section.passage}\n\n${section.questions.map((q) => `[${q.number} ${q.type}] ${q.prompt} | ${q.options.join(" · ")} => ${q.answers.join(" / ")}`).join("\n")}` : "no such part");
 }
 
+// ---- preview -------------------------------------------------------------------------------------
+// --preview writes content/listening-tests/dist/preview.html: each part's printed paper, plan, answer key and transcript.
+if (args.includes("--preview")) {
+  const escape = (text: string) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const inline = (text: string) => escape(text).replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>").replace(/_{3,}/g, '<span class="blank"></span>');
+  const paperHtml = (passage: string) => {
+    const out: string[] = [];
+    let table: string[][] = [];
+    const flush = () => { if (table.length) out.push(`<table>${table.map((row, i) => `<tr>${row.map((cell) => `<${i ? "td" : "th"}>${inline(cell)}</${i ? "td" : "th"}>`).join("")}</tr>`).join("")}</table>`); table = []; };
+    for (const line of passage.split("\n")) {
+      if (line.includes(" | ")) { table.push(line.split(" | ")); continue; }
+      flush();
+      out.push(line.trim() ? `<p>${inline(line)}</p>` : "");
+    }
+    flush();
+    return out.join("\n");
+  };
+  const body = papers.map((paper, index) => {
+    const exam = exams[index];
+    const parts = paper.parts.map((part, partIndex) => {
+      const section = exam.content.sections[partIndex];
+      const images = [...new Set(part.groups.map((group) => group.image).filter(Boolean))].map((file) => `<figure>${readFileSync(join(sourceDir, file!), "utf8").replace(/<\?xml[^>]*>/, "")}</figure>`).join("");
+      const key = section.questions.map((q) => `<li><b>${q.number}</b> ${escape(q.answers.join(" / "))} <span class="ev">${escape(q.explanation.replace(/^Evidence: /, ""))}</span></li>`).join("");
+      const words = part.blocks.reduce((sum, block) => sum + block.lines.reduce((n, line) => n + line.text.split(/\s+/).length, 0), 0);
+      const transcript = part.blocks.map((block) => `<h5>Questions ${block.from}–${block.to}</h5>${block.lines.map((line) => `<p><b>${escape(line.speaker)}:</b> ${escape(line.text)}</p>`).join("")}`).join("");
+      return `<section class="part"><h3>Part ${part.number} · ${escape(part.title)} <small>${words} words · ${Object.entries(part.voices).map(([s, v]) => `${escape(s)} (${v.voice}, ${v.accent})`).join(", ")}</small></h3>
+<div class="paper">${paperHtml(section.passage)}${images}</div>
+<details><summary>Answer key and evidence</summary><ol class="key">${key}</ol></details>
+<details><summary>Transcript</summary><div class="script">${transcript}</div></details></section>`;
+    }).join("\n");
+    return `<article id="${paper.id}"><h2>${escape(paper.id)} · ${escape(paper.title)}</h2>${parts}</article>`;
+  }).join("\n");
+  const nav = papers.map((paper) => `<a href="#${paper.id}">${paper.id}</a>`).join("");
+  mkdirSync(outDir, { recursive: true });
+  writeFileSync(join(outDir, "preview.html"), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Listening papers preview</title>
+<style>
+:root{--ink:#1d2a38;--muted:#5d6b78;--line:#d6dee5;--wash:#f4f7f9;--accent:#1f6f8b}
+body{margin:0;background:#eef2f5;color:var(--ink);font:15px/1.55 Georgia,"Times New Roman",serif}
+nav{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;gap:8px;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line);font-family:Arial,sans-serif}
+nav a{padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--accent);text-decoration:none;font-size:13px}
+main{max-width:860px;margin:0 auto;padding:16px}
+article{margin:0 0 40px}h2{font-family:Arial,sans-serif;font-size:22px;margin:24px 0 12px}
+.part{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:0 0 18px}
+h3{font-family:Arial,sans-serif;font-size:17px;margin:0 0 10px}h3 small{display:block;color:var(--muted);font-weight:400;font-size:12px;margin-top:2px}
+.paper p{margin:3px 0}.blank{display:inline-block;width:90px;border-bottom:1.5px solid var(--ink);margin:0 4px;vertical-align:-2px}
+table{border-collapse:collapse;margin:8px 0;width:100%}th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}th{background:var(--wash)}
+figure{margin:10px 0}figure svg{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+details{margin-top:10px;font-family:Arial,sans-serif;font-size:14px}summary{cursor:pointer;color:var(--accent);font-weight:700}
+.key{padding-left:18px}.key li{margin:4px 0;list-style:none}.ev{display:block;color:var(--muted);font-size:12.5px}
+.script p{margin:4px 0}h5{margin:12px 0 4px;color:var(--muted)}
+</style></head><body><nav>${nav}</nav><main>${body}</main></body></html>`);
+  console.log(`Preview written to ${join(outDir, "preview.html")}`);
+}
+
 // ---- database ------------------------------------------------------------------------------------
 async function database() {
   const { createClient } = await import("@supabase/supabase-js");
