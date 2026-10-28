@@ -130,6 +130,8 @@ def main() -> None:
         "ielts": db.rows("ielts_vocabulary_entries", "source_key,term"),
         "cefr_bank": db.rows("vocabulary_bank_entries", "source_id,headword"),
         "lessons": db.rows("vocabulary_entries", "id,word"),
+        "drafts": [row for row in db.rows("ielts_vocabulary_draft_entries", "candidate_key,term,batch_key")
+                   if row["batch_key"] != batch["batch_key"]],
     }
     matches = dedup.classify_terms([entry["term"] for entry in entries], sources, audit)
     if any(item["status"] != "candidate" for item in matches):
