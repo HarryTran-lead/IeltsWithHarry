@@ -1,0 +1,31 @@
+name: Sync shared content to develop
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-shared-content-to-develop
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      IELTS_CONTENT_SOURCE_URL: https://vpkhriywprepuhrbarye.supabase.co
+      IELTS_CONTENT_TARGET_URL: https://bhactqaxcvusmpeooxwi.supabase.co
+      IELTS_CONTENT_SOURCE_SERVICE_KEY: ${{ secrets.CONTENT_SYNC_PROD_SERVICE_KEY }}
+      IELTS_CONTENT_TARGET_SERVICE_KEY: ${{ secrets.CONTENT_SYNC_DEV_SERVICE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: node scripts/sync-shared-content.mjs --apply
