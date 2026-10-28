@@ -49,25 +49,24 @@ const beforeYouStart: Record<string, string[]> = {
 export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }) => void; scheduleSlot: ReactNode }) {
   const searchParams = useSearchParams();
   const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
-  const choosable = (exam.skill === "Reading" || exam.skill === "Listening") && parts.length > 1;
-  const [choice, setChoice] = useState<string>(() => {
-    const part = Number(searchParams.get("part"));
-    return Number.isInteger(part) ? parts[part - 1]?.id ?? "full" : "full";
-  });
+  const partNumber = Number(searchParams.get("part"));
+  const selectedPart = (exam.skill === "Reading" || exam.skill === "Listening") && Number.isInteger(partNumber) && partNumber > 0 ? parts[partNumber - 1] : undefined;
   const partName = (index: number) => exam.skill === "Listening" ? `Part ${index + 1}` : `Passage ${index + 1}`;
-  const questions = examQuestions(exam.content);
+  const questions = selectedPart?.questions ?? examQuestions(exam.content);
+  const selectedLabel = selectedPart ? partName(partNumber - 1) : practiceLabel(exam);
+  const duration = selectedPart ? exam.skill === "Reading" ? 20 : 10 : exam.duration_minutes;
   const types = [...new Set(questions.map((question) => typeLabel(question.type)))];
   const Icon = skillIcon[exam.skill as keyof typeof skillIcon] ?? ListChecks;
   const preview = exam.skill === "Speaking" ? questions.slice(0, 3).map((question) => question.prompt) : [];
   return <main className={`bx-page bl-tone-${toneOf(exam.skill)}`}>
-    <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {exam.skill}</Link><span>/</span>{practiceLabel(exam)}</nav>
+    <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {exam.skill}</Link><span>/</span>{selectedLabel}</nav>
     <section className="bx-hero">
       <div className="bx-hero-art"><TopicArt topic={`${(exam.topic ?? "").replace(/^topic_/, "")} ${exam.title}`} className="bx-art" /><span className="bx-hero-icon"><Icon size={22} /></span></div>
       <div className="bx-hero-copy">
-        <span className="bx-kicker">{exam.skill} · {practiceLabel(exam)}</span>
-        <h1>{exam.title}</h1>
+        <span className="bx-kicker">{exam.skill} · {selectedLabel}</span>
+        <h1>{selectedPart && !/^(?:reading\s+)?passage\s*\d+\s*$|^(?:listening\s+)?(?:section|part)\s*\d+\s*$/i.test(selectedPart.title) ? selectedPart.title : exam.title}</h1>
         <div className="bx-facts">
-          <span><Clock3 size={15} /> {exam.duration_minutes} phút</span>
+          <span><Clock3 size={15} /> {duration} phút</span>
           {questions.length > 0 && <span><ListChecks size={15} /> {questions.length} câu hỏi</span>}
           {exam.skill !== "Speaking" && <span>{exam.format.replace(/_/g, " ").replace(/^./, (letter) => letter.toUpperCase())}</span>}
           {exam.ai_generated && <span>Nội dung AI đã duyệt</span>}
@@ -76,21 +75,12 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
         {exam.content?.prompt && exam.skill === "Writing" && <p className="bx-prompt-preview"><RichText text={exam.content.prompt.split(/\n\n/)[0]} /></p>}
         {preview.length > 0 && <ul className="bx-question-preview">{preview.map((question) => <li key={question}>{question}</li>)}</ul>}
         <div className="bx-hero-actions">
-          <button type="button" className="bx-start" disabled={busy} onClick={() => { const part = parts.find((section) => section.id === choice); onStart(part ? { section: part.id, ids: part.questions.map((question) => question.id) } : undefined); }}>{busy ? "Đang mở đề…" : choice === "full" ? "Bắt đầu làm bài" : `Luyện ${partName(parts.findIndex((section) => section.id === choice))}`} <ArrowRight size={18} /></button>
+          <button type="button" className="bx-start" disabled={busy} onClick={() => onStart(selectedPart ? { section: selectedPart.id, ids: selectedPart.questions.map((question) => question.id) } : undefined)}>{busy ? "Đang mở đề…" : selectedPart ? `Luyện ${selectedLabel}` : "Bắt đầu làm bài"} <ArrowRight size={18} /></button>
           <span>Bài làm được lưu tự động</span>
         </div>
         {error && <p className="bx-error" role="alert"><CircleAlert size={16} /> {error}</p>}
       </div>
     </section>
-    {choosable && <section className="bx-modes" aria-label="Chọn chế độ luyện tập">
-      <h2>Chọn chế độ luyện tập</h2>
-      <div className="bx-mode-grid">
-        <label className={`bx-mode ${choice === "full" ? "is-on" : ""}`}><input type="radio" name="bx-mode" checked={choice === "full"} onChange={() => setChoice("full")} /><span><b>Làm full test</b><small>Làm toàn bộ bài {exam.skill} · {exam.duration_minutes} phút</small></span><em>{questions.length} câu</em></label>
-        <div className={`bx-mode bx-mode-parts ${choice !== "full" ? "is-on" : ""}`}><b>Luyện từng phần</b><small>Mỗi phần là một lượt làm riêng, được chấm theo câu hỏi của phần đó.</small>
-          {parts.map((section, index) => <label key={section.id} className={choice === section.id ? "is-on" : ""}><input type="radio" name="bx-mode" checked={choice === section.id} onChange={() => setChoice(section.id)} /><span>{partName(index)}<small>{section.title}</small></span><em>{section.questions.length} câu</em></label>)}
-        </div>
-      </div>
-    </section>}
     <div className="bx-intro-grid">
       <section className="bx-card"><h2><Check size={17} /> Trước khi bắt đầu</h2><ul className="bx-tips">{(beforeYouStart[exam.skill] ?? beforeYouStart.Reading).map((tip) => <li key={tip}>{tip}</li>)}</ul></section>
       <section className="bx-card"><h2><CalendarPlus size={17} /> Lên lịch luyện</h2><p>Thêm đề này vào Study Planner để nhắc bạn luyện vào ngày đã chọn.</p>{scheduleSlot}</section>

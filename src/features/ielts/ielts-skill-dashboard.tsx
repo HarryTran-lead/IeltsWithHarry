@@ -22,8 +22,8 @@ import "./ielts-dashboard.css";
 const copy: Record<IeltsSkill, { title: string; intro: string; icon: typeof BookOpen; tone: string }> = {
   vocabulary: { title: "IELTS Vocabulary", intro: "Chọn topic hoặc Level để học từ trong kho và lưu từ cần ôn.", icon: Languages, tone: "mint" },
   grammar: { title: "IELTS Grammar", intro: "Nhận diện cấu trúc trong câu thật, bắt đầu với các từ nối thường dùng khi viết và nói.", icon: ListChecks, tone: "lavender" },
-  reading: { title: "IELTS Reading", intro: "Đọc bài toàn văn có nguồn rõ ràng và luyện điền từ theo dạng câu hỏi IELTS.", icon: BookOpen, tone: "peach" },
-  listening: { title: "IELTS Listening", intro: "Nghe bản ghi tiếng Anh mới từ kho âm thanh công cộng và lưu ghi chú luyện nghe.", icon: Headphones, tone: "blue" },
+  reading: { title: "IELTS Reading", intro: "Chọn Passage hoặc full đề, lọc theo dạng câu hỏi rồi bắt đầu luyện.", icon: BookOpen, tone: "peach" },
+  listening: { title: "IELTS Listening", intro: "Chọn Section hoặc full đề, lọc theo dạng câu hỏi rồi bắt đầu nghe.", icon: Headphones, tone: "blue" },
   writing: { title: "IELTS Writing", intro: "Luyện Academic Task 1 bằng số liệu thật và Task 2 bằng chủ đề thời sự.", icon: NotebookPen, tone: "yellow" },
   speaking: { title: "IELTS Speaking", intro: "Chuẩn bị ý, bấm giờ và ghi âm với cue card từ các chủ đề đang diễn ra.", icon: Mic, tone: "pink" },
 };
@@ -114,6 +114,16 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? mode.available : mode.planned));
 
   const showLibrary = !demoMode && Boolean(bankSkill);
+  if (showLibrary && bankSkill && (skill === "reading" || skill === "listening")) {
+    return <main className={`ielts-dashboard ielts-dashboard-${config.tone} has-library`}>
+      <div className="ielts-dashboard-titlebar">
+        <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
+        <h1>{config.title}</h1>
+        <p title={config.intro}>{config.intro}</p>
+      </div>
+      <BankLibrary skill={bankSkill} />
+    </main>;
+  }
   return <main className={`ielts-dashboard ielts-dashboard-${config.tone} ${bankSkill ? "has-library" : ""}`}>
     <div className="ielts-dashboard-titlebar">
       <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>

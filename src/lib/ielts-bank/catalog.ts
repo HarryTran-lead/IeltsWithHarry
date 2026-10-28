@@ -36,6 +36,7 @@ export type CatalogExam = {
   topic?: string | null;
   difficulty?: string | null;
   source_id?: string;
+  published_version_id?: string;
   /** Card details from ielts_catalog_summary; absent when the summary is unavailable. */
   question_types?: string[];
   question_count?: number;
@@ -46,6 +47,8 @@ export type CatalogExam = {
   prompt_preview?: string | null;
   question_preview?: string[];
   attempt_count?: number;
+  /** Published full test sections, without passage text or answer keys. */
+  sections?: { title: string; question_types: string[]; question_count: number }[];
 };
 
 type CatalogSummary = Pick<CatalogExam, "question_types" | "question_count" | "task_type" | "visual_kind" | "visual" | "image_url" | "prompt_preview" | "question_preview" | "attempt_count"> & { exam_id: string };
@@ -54,6 +57,35 @@ type CatalogSummary = Pick<CatalogExam, "question_types" | "question_count" | "t
 export function withSummaries(exams: CatalogExam[], summaries: CatalogSummary[]) {
   const byId = new Map(summaries.map(({ exam_id, ...summary }) => [exam_id, summary]));
   return exams.map((exam) => ({ ...exam, ...byId.get(exam.id) }));
+}
+
+export type CatalogSectionEntry = { exam: CatalogExam; part?: number; splitFromFull?: boolean; title: string; questionTypes: string[]; questionCount: number };
+
+/** Expose only card metadata; answer keys and passage text stay on the exam endpoint. */
+export function sectionSummaries(content: { sections?: { title?: string; questions?: ({ type?: string } & Record<string, unknown>)[] }[] }): NonNullable<CatalogExam["sections"]> {
+  return (content.sections ?? []).map((section) => ({
+    title: section.title ?? "",
+    question_types: [...new Set((section.questions ?? []).map((question) => question.type).filter((type): type is string => Boolean(type)))],
+    question_count: section.questions?.length ?? 0,
+  }));
+}
+
+export function catalogSectionEntries(exams: CatalogExam[], skill: "Reading" | "Listening"): CatalogSectionEntry[] {
+  const singleType = skill === "Reading" ? "passage" : "part";
+  const limit = skill === "Reading" ? 3 : 4;
+  return exams.flatMap((exam) => {
+    if (exam.practice_type === singleType) {
+      const match = exam.title.match(/\b(?:passage|section|part)\s*([1-4])\b/i);
+      return [{ exam, part: match ? Number(match[1]) : undefined, title: exam.title, questionTypes: exam.question_types ?? [], questionCount: exam.question_count ?? 0 }];
+    }
+    if (exam.practice_type !== "full_test") return [];
+    return (exam.sections ?? []).slice(0, limit).flatMap((section, index) => section.question_count ? [{
+      exam, part: index + 1, splitFromFull: true,
+      title: /^(?:reading\s+)?passage\s*\d+\s*$|^(?:listening\s+)?(?:section|part)\s*\d+\s*$/i.test(section.title) ? exam.title : section.title,
+      questionTypes: section.question_types,
+      questionCount: section.question_count,
+    }] : []);
+  });
 }
 
 export function balancedCatalog<T extends { practice_type: string }>(items: T[], groupIds: readonly string[]): T[] {

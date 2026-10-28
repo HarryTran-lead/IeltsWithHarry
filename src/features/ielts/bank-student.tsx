@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { attemptMinutes, type ExamContent } from "@/lib/ielts-bank/schema";
+import { attemptContent, attemptMinutes, type ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
 import { AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
@@ -17,14 +18,16 @@ type Result = { score: number; total: number; review: { id: string; given: strin
 async function api(path: string, body?: unknown) { const response = await fetch(`/api/ielts/bank/${path}`, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined); const data = await response.json(); if (!response.ok) throw new Error(data.error || "Request failed"); return data; }
 
 export function BankStudent({ examId, resultId, attemptId }: { examId?: string; resultId?: string; attemptId?: string }) {
+  const requestedPart = useSearchParams().get("part");
   const [exam, setExam] = useState<Exam | null>(null), [attempt, setAttempt] = useState<Attempt | null>(null), [result, setResult] = useState<Result | null>(null);
   const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0);
   const [dueDate, setDueDate] = useState(""), [scheduled, setScheduled] = useState(false);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle"), [confirming, setConfirming] = useState(false);
   const loadAttempt = useCallback(async (id: string) => { const data = await api(`attempt?id=${encodeURIComponent(id)}`); setAttempt(data.attempt); setExam(data.attempt.ielts_exams || null); setAnswers(data.attempt.answers || {}); setFlags(data.attempt.flags || []); setNotes(data.attempt.notes || {}); setResult(data.result); setClock(Date.now()); }, []);
-  useEffect(() => { let live = true; const run = async () => { try { if (resultId || attemptId) { await loadAttempt(resultId || attemptId!); return; } if (examId) { const data = await api(`library?id=${encodeURIComponent(examId)}`); if (!live) return; setExam(data.exam); const part = Number(new URLSearchParams(window.location.search).get("part")); const section = data.exam.content?.sections?.filter((item: { questions: unknown[] }) => item.questions.length)?.[part - 1]; const saved = sessionStorage.getItem(`ielts-attempt:${examId}:${section?.id ?? "full"}`); if (saved) await loadAttempt(saved); } } catch (e) { if (live) setError(String(e)); } }; void run(); return () => { live = false; }; }, [examId, resultId, attemptId, loadAttempt]);
+  useEffect(() => { let live = true; const run = async () => { try { if (resultId || attemptId) { await loadAttempt(resultId || attemptId!); return; } if (examId) { setAttempt(null); setResult(null); setAnswers({}); setFlags([]); setActive(0); const data = await api(`library?id=${encodeURIComponent(examId)}`); if (!live) return; setExam(data.exam); const part = Number(requestedPart); const section = data.exam.content?.sections?.filter((item: { questions: unknown[] }) => item.questions.length)?.[part - 1]; const saved = sessionStorage.getItem(`ielts-attempt:${examId}:${section?.id ?? "full"}`); if (saved) await loadAttempt(saved); } } catch (e) { if (live) setError(String(e)); } }; void run(); return () => { live = false; }; }, [examId, resultId, attemptId, requestedPart, loadAttempt]);
   useEffect(() => { const interval = setInterval(() => setClock(Date.now()), 1000); return () => clearInterval(interval); }, []);
-  const content = attempt?.content || exam?.content;
+  const sourceContent = attempt?.content || exam?.content;
+  const content = useMemo(() => sourceContent && attempt ? attemptContent(sourceContent, attempt.notes) : sourceContent, [sourceContent, attempt]);
   const questions = useMemo(() => content?.sections.flatMap((s) => s.questions) || [], [content]);
   useEffect(() => { if (!attempt || attempt.state !== "in_progress" || !questions.length) return; const keydown = (event: KeyboardEvent) => { if ((event.target as HTMLElement)?.closest("input,textarea,select,button")) return; if (event.key === "ArrowRight") setActive((index) => Math.min(questions.length-1, index+1)); if (event.key === "ArrowLeft") setActive((index) => Math.max(0, index-1)); }; window.addEventListener("keydown", keydown); return () => window.removeEventListener("keydown", keydown); }, [attempt, questions.length]);
   const partMinutes = exam && attempt ? attemptMinutes(exam.skill, exam.duration_minutes, attempt.notes) : 0;
@@ -37,7 +40,10 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   // A part-only practice keeps its question ids in the notes; scores and reviews then cover that part.
   const scope = notes.__scope ? notes.__scope.split(",").filter(Boolean) : null;
   const numberOf = (id: string) => (questions.findIndex((item) => item.id === id) + 1) || 0;
-  const backHref = bankSkill ? catalogHref(bankSkill, exam?.practice_type) : "/app/question-bank";
+  const part = Number(notes.__part || requestedPart);
+  const backHref = bankSkill && (bankSkill === "Reading" || bankSkill === "Listening") && Number.isInteger(part) && part > 0
+    ? `${catalogHref(bankSkill, bankSkill === "Reading" ? "passage" : "part")}&part=${part}`
+    : bankSkill ? catalogHref(bankSkill, exam?.practice_type) : "/app/question-bank";
   if (!examId && !resultId && !attemptId) return <BankCatalog />;
   if (error && !exam && !attempt) return <main className="bx-page"><p className="bx-error" role="alert">{error}</p><Link className="bx-ghost" href="/app/dashboard">Về trang chủ</Link></main>;
   if (resultId || result) {
@@ -51,7 +57,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     const score = scope && result.total ? review.filter((item) => item.correct).length : result.score;
     const skill = exam?.skill || attempt?.ielts_exams?.skill || "Reading";
     const attemptRef = attempt?.id || resultId;
-    return <ExamResult title={attempt?.ielts_exams?.title || exam?.title || "Bài luyện"} skill={skill} format={exam?.format} score={total ? score : null} total={total} review={review} response={response} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}` : undefined}
+    return <ExamResult title={attempt?.ielts_exams?.title || exam?.title || "Bài luyện"} skill={skill} format={exam?.format} score={total ? score : null} total={total} review={review} response={response} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}${part > 0 ? `?part=${part}` : ""}` : undefined}
       numberOf={questions.length ? numberOf : undefined}
       extra={skill === "Writing" && attemptRef && response ? <WritingFeedbackPanel attemptId={attemptRef} type={exam?.practice_type} essay={response} /> : undefined}
       // On the exam's own page a link to itself would not reset, so start over in place.

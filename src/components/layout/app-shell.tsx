@@ -95,13 +95,19 @@ const skillPracticeLinks: Record<string, { label: string; href: string }[]> = {
   ],
   grammar: [{ label: "Từ nối trong ngữ cảnh", href: "/app/grammar/live" }],
   reading: [
-    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/reading#ngan-hang-de" }] : []),
-    { label: "Sentence completion", href: "/app/reading/live" },
+    { label: "Bài lẻ", href: "/app/reading?type=passage" },
+    { label: "Passage 1", href: "/app/reading?type=passage&part=1" },
+    { label: "Passage 2", href: "/app/reading?type=passage&part=2" },
+    { label: "Passage 3", href: "/app/reading?type=passage&part=3" },
+    { label: "Full đề", href: "/app/reading?type=full_test" },
   ],
   listening: [
-    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/listening#ngan-hang-de" }] : []),
-    { label: "YouTube Shadowing", href: "/app/listening/youtube" },
-    { label: "Nghe & ghi ý chính", href: "/app/listening/live" },
+    { label: "Bài lẻ", href: "/app/listening?type=part" },
+    { label: "Section 1", href: "/app/listening?type=part&part=1" },
+    { label: "Section 2", href: "/app/listening?type=part&part=2" },
+    { label: "Section 3", href: "/app/listening?type=part&part=3" },
+    { label: "Section 4", href: "/app/listening?type=part&part=4" },
+    { label: "Full đề", href: "/app/listening?type=full_test" },
   ],
   writing: [
     ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/writing#ngan-hang-de" }] : []),
@@ -384,6 +390,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
               {group.links.map(({ href, label, icon: Icon, tone }) => {
                 const skill = href.split("/")[2];
                 const practiceLinks = skillPracticeLinks[skill];
+                const skillAnchor = skill === "reading" || skill === "listening" ? "ngan-hang-de" : "che-do-hoc";
                 const expanded = expandedSkill === skill && Boolean(practiceLinks);
                 const active = isActive(pathname, href);
                 if (lockedLearnerPath(href)) return <div key={href} className="nav-link nav-link-locked" aria-label={`${label} đang chuẩn bị`} title={`${label} đang chuẩn bị`}>
@@ -391,7 +398,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                 </div>;
                 return <div className="nav-item" key={href}>
                   <Link
-                    href={practiceLinks ? `${href}#che-do-hoc` : href}
+                    href={practiceLinks ? `${href}#${skillAnchor}` : href}
                     onClick={() => {
                       if (practiceLinks) setSkillMenuOverride({ pathname, skill: expanded ? null : skill });
                       else setMenuOpen(false);
@@ -409,7 +416,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                     {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
                   </Link>
                   {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className="nav-submenu" hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
-                    <Link href={`${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>Tất cả chế độ</Link>
+                    <Link href={`${href}#${skillAnchor}`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>{skill === "reading" || skill === "listening" ? "Tất cả bài" : "Tất cả chế độ"}</Link>
                     {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => <Link
                       key={practice.href}
                       href={practice.href}

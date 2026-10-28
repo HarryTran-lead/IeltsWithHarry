@@ -20,9 +20,11 @@ export async function POST(request: Request) {
         if (exam.skill !== "Reading" && exam.skill !== "Listening") throw new Error("Section practice unavailable");
         const { data: version, error: versionError } = await client.from("ielts_exam_versions").select("content").eq("id", exam.published_version_id).single();
         if (versionError || !version) throw new Error("Exam unavailable");
-        const section = contentSchema.parse(version.content).sections.find((item) => item.id === body.sectionId && item.questions.length);
+        const sections = contentSchema.parse(version.content).sections.filter((item) => item.questions.length);
+        const sectionIndex = sections.findIndex((item) => item.id === body.sectionId);
+        const section = sections[sectionIndex];
         if (!section) throw new Error("Section unavailable");
-        notes = { __section: section.id, __scope: section.questions.map((question) => question.id).join(",") };
+        notes = { __section: section.id, __part: String(sectionIndex + 1), __scope: section.questions.map((question) => question.id).join(",") };
       }
       const { data, error: insertError } = await client.from("ielts_attempts").insert({ user_id: user.id, exam_id: exam.id, version_id: exam.published_version_id, notes }).select("id,started_at,state,answers,flags,notes").single();
       if (insertError) throw new Error(insertError.message);
@@ -58,7 +60,7 @@ export async function GET(request: Request) {
       const version = Array.isArray(data.ielts_exam_versions) ? data.ielts_exam_versions[0] : data.ielts_exam_versions;
       const content = contentSchema.parse(version.content);
       const result = data.state === "in_progress" ? null : scoreAnswers(attemptContent(content, data.notes), data.answers);
-      return Response.json({ attempt: { ...data, ielts_exam_versions: undefined, content: data.state === "in_progress" ? publicContent(content) : undefined }, result });
+      return Response.json({ attempt: { ...data, ielts_exam_versions: undefined, content: data.state === "in_progress" ? publicContent(attemptContent(content, data.notes)) : undefined }, result });
     }
     const { data, error } = await client.from("ielts_attempts").select("id,exam_id,version_id,state,score,total,started_at,submitted_at,ielts_exams(title,skill)").eq("user_id", user.id).order("started_at", { ascending: false }).limit(30);
     if (error) throw new Error(error.message);
