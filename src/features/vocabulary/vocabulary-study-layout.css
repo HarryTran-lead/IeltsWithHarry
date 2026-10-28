@@ -29,3 +29,17 @@
 @media(max-width:800px){.vocab-study-toolbar-row{grid-template-columns:repeat(2,minmax(0,1fr))}.vocab-study-back{justify-content:flex-start}.vocab-study-library{justify-content:flex-end}}
 @media(max-width:1050px){.vocab-study-card{grid-template-columns:minmax(180px,.7fr) minmax(220px,1fr)}.vocab-study-card-definition{grid-column:1/-1;min-height:0}}
 @media(max-width:600px){.vocab-hub-study{padding-top:10px}.vocab-study-toolbar{padding:10px}.vocab-study-toolbar-row select{font-size:12px}.vocab-study-toolbar .vocab-study-modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.vocab-study-toolbar .vocab-study-modes button{min-height:38px;padding:5px 2px}.vocab-study-toolbar .vocab-study-modes button strong{font-size:11px}.vocab-study .vocab-study-board{padding:15px}.vocab-study-card{grid-template-columns:1fr;gap:10px}.vocab-study-card-image .vocab-card-art{height:205px}.vocab-study-card-word{padding:6px 0}.vocab-study-card-word h2{font-size:clamp(34px,9vw,46px)}.vocab-study-card-definition{grid-column:auto;padding:16px}.vocab-study-reveal{margin-top:9px}}
+
+.vocab-study{gap:12px}
+.vocab-study .vocab-study-board{max-width:1050px;padding:18px 20px}
+.vocab-study .vocab-study-board-choice,.vocab-study .vocab-study-board-type,.vocab-study .vocab-study-board-match{max-width:850px}
+.vocab-study-question{display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:18px;margin:12px 0 14px}
+.vocab-study-question .vocab-card-art{width:132px;height:100px;border-radius:12px}
+.vocab-study-question h2{margin:5px 0 0;font:900 clamp(23px,2.7vw,34px)/1.2 var(--font-display);overflow-wrap:anywhere}
+.vocab-study-board-choice .vocab-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0}
+.vocab-study-board-choice .vocab-options button{min-height:59px;padding:10px 13px;font-size:13px;line-height:1.35}
+.vocab-study-board-type .vocab-study-input{margin:8px 0}
+.vocab-study-board-match .vocab-match-grid{margin:12px 0}
+.vocab-study-board-match .vocab-match-grid button{min-height:54px}
+.vocab-study .vocab-muted{margin:14px 0 0;font-size:10px;line-height:1.4}
+@media(max-width:600px){.vocab-study .vocab-study-board{padding:14px}.vocab-study-question{grid-template-columns:94px minmax(0,1fr);gap:11px}.vocab-study-question .vocab-card-art{width:94px;height:80px}.vocab-study-board-choice .vocab-options{grid-template-columns:1fr}.vocab-study-meta{font-size:11px;flex-wrap:wrap}}
