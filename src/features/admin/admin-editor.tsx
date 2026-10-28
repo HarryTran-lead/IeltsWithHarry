@@ -14,6 +14,7 @@ import { MediaLibrary } from "./media-library";
 import { skillMaterialSchema, type SkillName } from "@/lib/skill-material";
 import { AdminNews } from "./admin-news";
 import { VocabularyBank } from "./vocabulary-bank";
+import { VocabularyPhase5 } from "./vocabulary-phase5";
 import { YoutubeLessonsAdmin } from "./youtube-lessons";
 import { AdminAudit, AdminBroadcast, AdminLearnerDetail, AdminLearners } from "./admin-learners";
 
@@ -29,6 +30,7 @@ const nav = [
   { slug: "curriculum", label: "Lộ trình & bài học", icon: GraduationCap },
   { slug: "vocabulary", label: "Vocabulary", icon: Languages },
   { slug: "vocabulary/library", label: "Kho từ & nhập ZIP", icon: LibraryBig },
+  { slug: "vocabulary/ielts-progress", label: "IELTS · tiến độ chủ đề", icon: ListChecks },
   { slug: "grammar", label: "Grammar", icon: BookOpen },
   { slug: "reading", label: "Reading", icon: FileText },
   { slug: "listening", label: "Listening", icon: Headphones },
@@ -50,7 +52,7 @@ const navGroups = [
   { label: "Học viên", slugs: ["users", "users/broadcast", "users/audit"] },
   { label: "Nội dung", slugs: ["curriculum", "media"] },
   { label: "IELTS Management", slugs: ["ielts-bank", "ai-content-factory"] },
-  { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "grammar", "reading", "listening", "writing", "speaking"] },
+  { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "vocabulary/ielts-progress", "grammar", "reading", "listening", "writing", "speaking"] },
   { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/sync-logs"] },
 ];
 const descriptions: Record<string, string> = {
@@ -60,6 +62,7 @@ const descriptions: Record<string, string> = {
   users: "Theo dõi hoạt động, streak và kiểm soát tài khoản từng học viên: khóa, cấm chat, giao nhiệm vụ, đặt mục tiêu, gửi thông báo.",
   "users/broadcast": "Gửi thông báo, giao nhiệm vụ và đặt mục tiêu ngày cho cả lớp cùng lúc.",
   "users/audit": "Mọi thao tác của admin trên tài khoản học viên đều được ghi lại ở đây.",
+  "vocabulary/ielts-progress": "Theo dõi 40 chủ đề học, mục đã xuất bản và tiến độ biên soạn mới.",
 };
 function StatusPill({ published }: { published: boolean }) {
   return <span className={published ? "status-pill live" : "status-pill draft"}><i aria-hidden="true" />{published ? "Đã xuất bản" : "Bản nháp"}</span>;
@@ -189,6 +192,7 @@ export function AdminEditor() {
     {currentSkill && <>{lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><Sticker name="book" size={64} tilt={-8} /><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
     {section === "listening" && <YoutubeLessonsAdmin />}
     {section === "vocabulary/library" && <VocabularyBank />}
+    {section === "vocabulary/ielts-progress" && <VocabularyPhase5 />}
     {section === "media" && <MediaLibrary />}
     {section === "ielts-bank" && <BankAdmin />}
     {section === "ai-content-factory" && <AiContentFactory />}
