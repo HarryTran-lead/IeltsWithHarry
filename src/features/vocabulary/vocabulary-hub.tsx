@@ -11,7 +11,9 @@ import { createClient } from "@/lib/supabase/browser";
 import { catalog, filterTerms, findTerm, makeQuiz, normalizeWord, quizScore, topics, type VocabularyQuestion, type VocabularyTerm } from "@/lib/vocabulary/catalog";
 import { nextWordReview, type ReviewGrade, type WordReview } from "@/lib/news/review";
 import sourceTopics from "@/lib/vocabulary/source-topics.json";
-import { studyLevels } from "@/lib/vocabulary/study-levels";
+import ieltsTopics from "@/lib/vocabulary/ielts-topics.json";
+import { cefrLevels } from "@/lib/vocabulary/cefr-levels";
+import { ieltsBands } from "@/lib/vocabulary/ielts-bands";
 import { VocabularyStudy } from "@/features/vocabulary/vocabulary-study";
 import { VocabularyDecks } from "@/features/vocabulary/vocabulary-decks";
 import { TopicArt } from "@/components/illustrations/topic-art";
@@ -233,22 +235,30 @@ type ReferenceEntry = {
   meaning_source: string; meaning_source_url: string; source_ipa: string;
 };
 
+type IeltsEntry = {
+  source_key: string; term: string; definition_en: string; pos_raw: string;
+  pattern: string; examples: string[]; topic: string; band_level: string;
+  band_method: string; content_status: string; source_file: string;
+};
+
 function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWord">) {
   const db = useMemo(() => demoMode ? null : createClient(), []);
   const params = useSearchParams();
+  const [collection, setCollection] = useState<"cefr" | "ielts">(() => params.get("collection") === "ielts" ? "ielts" : "cefr");
   const [mode, setMode] = useState<"reference" | "reviewed">("reference");
   const [query, setQuery] = useState("");
   const [topic, setTopic] = useState(() => {
     const requested = params.get("topic");
-    return requested && sourceTopics.includes(requested) ? requested : "all";
+    return requested && [...sourceTopics, ...ieltsTopics].includes(requested) ? requested : "all";
   });
   const [level, setLevel] = useState(() => {
     const requested = params.get("level");
-    return requested && studyLevels.some((item) => item === requested) ? requested : "all";
+    return requested && [...cefrLevels, ...ieltsBands].some((item) => item === requested) ? requested : "all";
   });
   const [page, setPage] = useState(0);
   const [rows, setRows] = useState<LibraryEntry[]>([]);
   const [referenceRows, setReferenceRows] = useState<ReferenceEntry[]>([]);
+  const [ieltsRows, setIeltsRows] = useState<IeltsEntry[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -258,9 +268,23 @@ function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWo
     const timer = window.setTimeout(async () => {
       setLoading(true);
       setError("");
+      if (collection === "ielts") {
+        let request = db.from("ielts_vocabulary_entries")
+          .select("source_key,term,definition_en,pos_raw,pattern,examples,topic,band_level,band_method,content_status,source_file", { count: "exact" })
+          .eq("published", true).order("term").range(page * 20, page * 20 + 19);
+        if (query.trim()) request = request.ilike("term", "%" + query.trim().replace(/[%,]/g, "") + "%");
+        if (topic !== "all") request = request.eq("topic", topic);
+        if (level !== "all") request = request.eq("band_level", level);
+        const result = await request;
+        if (!active) return;
+        if (result.error) setError(result.error.message);
+        else { setIeltsRows((result.data ?? []) as IeltsEntry[]); setTotal(result.count ?? 0); }
+        setLoading(false);
+        return;
+      }
       if (mode === "reference") {
-        const result = await db.rpc("list_vocabulary_study_by_level", {
-          p_query: query.trim(), p_level: level === "all" ? "" : level,
+        const result = await db.rpc("list_vocabulary_study_by_cefr", {
+          p_query: query.trim(), p_cefr: level === "all" ? "" : level,
           p_topic: topic === "all" ? "" : topic, p_page: page, p_page_size: 20,
         });
         if (!active) return;
@@ -278,7 +302,7 @@ function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWo
         .eq("published", true).order("headword").range(page * 20, page * 20 + 19);
       if (query.trim()) request = request.ilike("headword", "%" + query.trim().replace(/[%,]/g, "") + "%");
       if (topic !== "all") request = request.eq("reviewed_topic", topic);
-      if (level !== "all") request = request.eq("study_lane", level);
+      if (level !== "all") request = request.eq("cefr", level);
       const result = await request;
       if (!active) return;
       if (result.error) setError(result.error.message);
@@ -286,29 +310,37 @@ function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWo
       setLoading(false);
     }, 180);
     return () => { active = false; window.clearTimeout(timer); };
-  }, [db, mode, query, topic, level, page]);
+  }, [db, collection, mode, query, topic, level, page]);
 
+  function selectCollection(next: "cefr" | "ielts") {
+    setCollection(next); setMode("reference"); setPage(0); setTopic("all"); setLevel("all");
+    setTotal(0); setRows([]); setReferenceRows([]); setIeltsRows([]); setError("");
+  }
+  const topicOptions = collection === "ielts" ? ieltsTopics : sourceTopics;
+  const levelOptions = collection === "ielts" ? ieltsBands : cefrLevels;
   return <div className="vocab-library">
-    <section className="vocab-panel"><h2>Học từ vựng theo topic và Level</h2><p>Chọn chủ đề hoặc Level bên dưới để xem từ, nghe phát âm và tra nghĩa. Level 1–7+ là thứ tự học nội bộ, không phải band IELTS của từng từ.</p><Link className="vocab-button primary" href={`/app/vocabulary/study?${new URLSearchParams({ ...(topic !== "all" ? { topic } : {}), ...(level !== "all" ? { level } : {}) })}`}>Học bằng thẻ lật & trò chơi →</Link>
-      <div className="vocab-library-tabs" role="group" aria-label="Loại kho từ"><button type="button" className={mode === "reference" ? "active" : ""} aria-pressed={mode === "reference"} onClick={() => { setMode("reference"); setPage(0); setTopic("all"); setTotal(0); setReferenceRows([]); }}>Kho nguồn cho học viên</button><button type="button" className={mode === "reviewed" ? "active" : ""} aria-pressed={mode === "reviewed"} onClick={() => { setMode("reviewed"); setPage(0); setTopic("all"); setTotal(0); setRows([]); }}>Từ đã duyệt</button></div>
-      <p className="vocab-library-notice">{mode === "reference" ? "Kho từ đã có gợi ý nghĩa Việt từ từ điển mở. Các nghĩa tự khớp chưa được biên tập theo ngữ cảnh IELTS; hãy đối chiếu định nghĩa tiếng Anh khi học." : "Từ đã được biên tập có nghĩa Việt, định nghĩa và topic được duyệt để học và lưu trực tiếp."}</p>
-      <div className="vocab-filter-bar"><input aria-label="Tìm từ trong kho" placeholder="Tìm từ tiếng Anh…" value={query} onChange={(event) => { setPage(0); setQuery(event.target.value); }} /><select aria-label="Chọn topic" value={topic} onChange={(event) => { setPage(0); setTopic(event.target.value); }}><option value="all">Mọi topic</option>{sourceTopics.map((item) => <option key={item} value={item}>{item}</option>)}</select><select aria-label="Chọn level học" value={level} onChange={(event) => { setPage(0); setLevel(event.target.value); }}><option value="all">Mọi level</option>{studyLevels.map((item) => <option key={item}>{item}</option>)}</select></div>
-      {(topic !== "all" || level !== "all") && <p className="vocab-muted">Đang học: {topic === "all" ? "mọi chủ đề" : topic} · {level === "all" ? "mọi Level" : level}</p>}
+    <section className="vocab-panel"><h2>Hai bộ từ vựng</h2><p>Chọn bộ A1–C2 theo CEFR hoặc bộ IELTS theo band học gợi ý 1–7+. Hai bộ có nguồn dữ liệu và bộ lọc riêng.</p>
+      <div className="vocab-library-tabs" role="group" aria-label="Chọn bộ từ vựng"><button type="button" className={collection === "cefr" ? "active" : ""} aria-pressed={collection === "cefr"} onClick={() => selectCollection("cefr")}>Từ A1–C2</button><button type="button" className={collection === "ielts" ? "active" : ""} aria-pressed={collection === "ielts"} onClick={() => selectCollection("ielts")}>Từ IELTS · Band 1–7+</button></div>
+      <Link className="vocab-button primary" href={`/app/vocabulary/study?${new URLSearchParams({ collection, ...(topic !== "all" ? { topic } : {}), ...(level !== "all" ? { level } : {}) })}`}>Học bằng thẻ lật & trò chơi →</Link>
+      {collection === "cefr" && <div className="vocab-library-tabs" role="group" aria-label="Loại từ CEFR"><button type="button" className={mode === "reference" ? "active" : ""} aria-pressed={mode === "reference"} onClick={() => { setMode("reference"); setPage(0); setTotal(0); setReferenceRows([]); }}>Kho nguồn</button><button type="button" className={mode === "reviewed" ? "active" : ""} aria-pressed={mode === "reviewed"} onClick={() => { setMode("reviewed"); setPage(0); setTotal(0); setRows([]); }}>Từ đã duyệt</button></div>}
+      <p className="vocab-library-notice">{collection === "ielts" ? "Band là gợi ý học tập ước lượng từ tần suất sử dụng, không phải band IELTS chính thức của từng từ. Nghĩa tiếng Việt và ví dụ tiếng Anh từ 25 CSV do chủ dự án cung cấp, chưa duyệt từng nghĩa." : mode === "reference" ? "Kho CEFR có gợi ý nghĩa Việt từ từ điển mở. Các nghĩa tự khớp chưa được biên tập theo ngữ cảnh; hãy đối chiếu định nghĩa tiếng Anh khi học." : "Từ đã được biên tập có nghĩa Việt, định nghĩa và topic được duyệt để học và lưu trực tiếp."}</p>
+      <div className="vocab-filter-bar"><input aria-label="Tìm từ trong kho" placeholder="Tìm từ tiếng Anh…" value={query} onChange={(event) => { setPage(0); setQuery(event.target.value); }} /><select aria-label="Chọn topic" value={topic} onChange={(event) => { setPage(0); setTopic(event.target.value); }}><option value="all">Mọi topic</option>{topicOptions.map((item) => <option key={item} value={item}>{item}</option>)}</select><select aria-label={collection === "ielts" ? "Chọn band gợi ý" : "Chọn CEFR"} value={level} onChange={(event) => { setPage(0); setLevel(event.target.value); }}><option value="all">{collection === "ielts" ? "Mọi band gợi ý" : "Mọi mức CEFR"}</option>{levelOptions.map((item) => <option key={item} value={item}>{collection === "ielts" ? `Band ${item}` : item}</option>)}</select></div>
+      {(topic !== "all" || level !== "all") && <p className="vocab-muted">Đang học: {topic === "all" ? "mọi chủ đề" : topic} · {level === "all" ? "mọi mức" : collection === "ielts" ? `Band ${level} gợi ý` : level}</p>}
       {demoMode && <p>Kho trực tuyến cần kết nối Supabase.</p>}{error && <p role="alert" className="vocab-error">{error}</p>}
-      {!demoMode && <p className="vocab-muted">{loading ? "Đang tải…" : total.toLocaleString("vi-VN") + (mode === "reference" ? " từ nguồn đang mở" : " từ đã duyệt")}</p>}
+      {!demoMode && <p className="vocab-muted">{loading ? "Đang tải…" : total.toLocaleString("vi-VN") + (collection === "ielts" ? " từ IELTS" : mode === "reference" ? " từ CEFR nguồn đang mở" : " từ CEFR đã duyệt")}</p>}
     </section>
-    {mode === "reference" ? <div className="vocab-library-grid">{referenceRows.map((row) => <article className="vocab-panel vocab-library-card" key={row.source_id}><TopicArt topic={row.topics?.[0] ?? "English"} word={row.headword} className="vocab-library-art" /><div><span className="vocab-tag">{row.study_lane} · {row.topics[0] ?? "General"}</span><h2>{row.headword}</h2><small>{row.pos} · CEFR nguồn {row.cefr}</small></div><span className="vocab-reference-badge">{row.meaning_status === "editor_reviewed" ? "Đã biên tập" : "Nghĩa từ điển · chưa duyệt ngữ cảnh"}</span><strong>{row.meaning_vi || "Chưa có nghĩa Việt trong nguồn mở"}</strong>{row.meaning_options?.length > 1 && <small className="vocab-muted">Nghĩa khác: {row.meaning_options.slice(1, 3).join(" · ")}</small>}<p>{row.source_definition_en || "Nguồn chưa có định nghĩa tiếng Anh cho từ này."}</p>{row.source_example_en && <em>{row.source_example_en}</em>}<div className="vocab-library-actions"><button className="vocab-button soft" onClick={() => speak(row.headword)}><Volume2 size={16} /> Nghe</button><Link className="vocab-button primary" href={`/app/vocabulary/explore?q=${encodeURIComponent(row.headword)}`}>Tra và lưu từ</Link></div><small className="vocab-muted">Nguồn: <a href={row.source_url} target="_blank" rel="noopener noreferrer">{row.source_name}</a>{row.definition_source_url && <> · <a href={row.definition_source_url} target="_blank" rel="noopener noreferrer">Định nghĩa gốc</a></>}{row.meaning_source_url && <> · <a href={row.meaning_source_url} target="_blank" rel="noopener noreferrer">Từ điển Việt</a></>}</small></article>)}</div> : <div className="vocab-library-grid">{rows.map((row) => {
+    {collection === "ielts" ? <div className="vocab-library-grid">{ieltsRows.map((row) => <article className="vocab-panel vocab-library-card" key={row.source_key}><TopicArt topic={row.topic} word={row.term} className="vocab-library-art" /><div><span className="vocab-tag">Band {row.band_level} gợi ý · {row.topic}</span><h2>{row.term}</h2><small>{row.pos_raw}{row.pattern ? ` · ${row.pattern}` : ""}</small></div><span className="vocab-reference-badge">{row.content_status === "editor_reviewed" ? "Đã biên tập" : "Nội dung nguồn · chưa duyệt nghĩa"}</span><strong>{row.definition_en}</strong><div className="vocab-ielts-examples">{row.examples.map((example, index) => <em key={`${row.source_key}-${index}`}>{example}</em>)}</div><div className="vocab-library-actions"><button className="vocab-button soft" onClick={() => speak(row.term)}><Volume2 size={16} /> Nghe</button><Link className="vocab-button primary" href={`/app/vocabulary/explore?q=${encodeURIComponent(row.term)}`}>Tra và lưu từ</Link></div><small className="vocab-muted">Nguồn: bộ IELTS do chủ dự án cung cấp · {row.source_file}</small></article>)}</div> : mode === "reference" ? <div className="vocab-library-grid">{referenceRows.map((row) => <article className="vocab-panel vocab-library-card" key={row.source_id}><TopicArt topic={row.topics?.[0] ?? "English"} word={row.headword} className="vocab-library-art" /><div><span className="vocab-tag">{row.cefr} · {row.topics[0] ?? "General"}</span><h2>{row.headword}</h2><small>{row.pos} · CEFR nguồn {row.cefr}</small></div><span className="vocab-reference-badge">{row.meaning_status === "editor_reviewed" ? "Đã biên tập" : "Nghĩa từ điển · chưa duyệt ngữ cảnh"}</span><strong>{row.meaning_vi || "Chưa có nghĩa Việt trong nguồn mở"}</strong>{row.meaning_options?.length > 1 && <small className="vocab-muted">Nghĩa khác: {row.meaning_options.slice(1, 3).join(" · ")}</small>}<p>{row.source_definition_en || "Nguồn chưa có định nghĩa tiếng Anh cho từ này."}</p>{row.source_example_en && <em>{row.source_example_en}</em>}<div className="vocab-library-actions"><button className="vocab-button soft" onClick={() => speak(row.headword)}><Volume2 size={16} /> Nghe</button><Link className="vocab-button primary" href={`/app/vocabulary/explore?q=${encodeURIComponent(row.headword)}`}>Tra và lưu từ</Link></div><small className="vocab-muted">Nguồn: <a href={row.source_url} target="_blank" rel="noopener noreferrer">{row.source_name}</a>{row.definition_source_url && <> · <a href={row.definition_source_url} target="_blank" rel="noopener noreferrer">Định nghĩa gốc</a></>}{row.meaning_source_url && <> · <a href={row.meaning_source_url} target="_blank" rel="noopener noreferrer">Từ điển Việt</a></>}</small></article>)}</div> : <div className="vocab-library-grid">{rows.map((row) => {
       const term: VocabularyTerm = {
         id: row.source_id, word: row.headword, ipa: "", pos: row.pos, meaning: row.meaning_vi,
-        level: row.study_lane, topic: row.reviewed_topic, collocations: [], synonyms: "",
+        level: row.cefr, topic: row.reviewed_topic, collocations: [], synonyms: "",
         example: row.example_en, vi: "",
       };
       const saved = savedByWord.has(normalizeWord(row.headword));
-      return <article className="vocab-panel vocab-library-card" key={row.source_id}><TopicArt topic={row.reviewed_topic} word={row.headword} className="vocab-library-art" /><div><span className="vocab-tag">{row.study_lane} · {row.reviewed_topic}</span><h2>{row.headword}</h2><small>{row.pos} · CEFR nguồn {row.cefr}</small></div><strong>{row.meaning_vi}</strong><p>{row.definition_en}</p>{row.example_en && <em>{row.example_en}</em>}<div className="vocab-library-actions"><button className="vocab-button soft" onClick={() => speak(row.headword)}><Volume2 size={16} /> Nghe</button><button className="vocab-button primary" disabled={saved} onClick={() => void saveWord(term, row.source_url)}>{saved ? "✓ Đã lưu" : "☆ Lưu từ"}</button></div><small className="vocab-muted">Nguồn: <a href={row.source_url} target="_blank" rel="noopener noreferrer">{row.source_name}</a></small></article>;
+      return <article className="vocab-panel vocab-library-card" key={row.source_id}><TopicArt topic={row.reviewed_topic} word={row.headword} className="vocab-library-art" /><div><span className="vocab-tag">{row.cefr} · {row.reviewed_topic}</span><h2>{row.headword}</h2><small>{row.pos} · CEFR nguồn {row.cefr}</small></div><strong>{row.meaning_vi}</strong><p>{row.definition_en}</p>{row.example_en && <em>{row.example_en}</em>}<div className="vocab-library-actions"><button className="vocab-button soft" onClick={() => speak(row.headword)}><Volume2 size={16} /> Nghe</button><button className="vocab-button primary" disabled={saved} onClick={() => void saveWord(term, row.source_url)}>{saved ? "✓ Đã lưu" : "☆ Lưu từ"}</button></div><small className="vocab-muted">Nguồn: <a href={row.source_url} target="_blank" rel="noopener noreferrer">{row.source_name}</a></small></article>;
     })}</div>}
-    {!loading && !(mode === "reference" ? referenceRows.length : rows.length) && !demoMode && !error && <div className="vocab-panel vocab-empty">Không tìm thấy từ phù hợp với bộ lọc hiện tại.</div>}
+    {!loading && !(collection === "ielts" ? ieltsRows.length : mode === "reference" ? referenceRows.length : rows.length) && !demoMode && !error && <div className="vocab-panel vocab-empty">Không tìm thấy từ phù hợp với bộ lọc hiện tại.</div>}
     {total > 20 && <div className="vocab-library-pages"><button className="vocab-button soft" disabled={page === 0} onClick={() => setPage(page - 1)}>← Trước</button><span>Trang {page + 1} / {Math.ceil(total / 20)}</span><button className="vocab-button soft" disabled={(page + 1) * 20 >= total} onClick={() => setPage(page + 1)}>Sau →</button></div>}
-    <p className="vocab-muted">Nguồn từ: <a href="https://www.cefr-j.org/download.html" target="_blank" rel="noopener noreferrer">CEFR-J</a>, <a href="https://github.com/openlanguageprofiles/olp-en-cefrj" target="_blank" rel="noopener noreferrer">Octanove (CC BY-SA 4.0)</a>. Định nghĩa nguồn từ <a href="https://en-word.net/" target="_blank" rel="noopener noreferrer">Open English WordNet (CC BY 4.0)</a>. Gợi ý nghĩa Việt từ <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noopener noreferrer">Thichhoc</a> và <a href="https://github.com/skypediacode/english-vietnamese-dictionary" target="_blank" rel="noopener noreferrer">Skypedia</a> (CC BY-SA 4.0). CEFR-J là danh sách từ tiếng Anh được biên soạn tại Nhật.</p>
+    {collection === "cefr" && <p className="vocab-muted">Nguồn từ: <a href="https://www.cefr-j.org/download.html" target="_blank" rel="noopener noreferrer">CEFR-J</a>, <a href="https://github.com/openlanguageprofiles/olp-en-cefrj" target="_blank" rel="noopener noreferrer">Octanove (CC BY-SA 4.0)</a>. Định nghĩa nguồn từ <a href="https://en-word.net/" target="_blank" rel="noopener noreferrer">Open English WordNet (CC BY 4.0)</a>. Gợi ý nghĩa Việt từ <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noopener noreferrer">Thichhoc</a> và <a href="https://github.com/skypediacode/english-vietnamese-dictionary" target="_blank" rel="noopener noreferrer">Skypedia</a> (CC BY-SA 4.0). CEFR-J là danh sách từ tiếng Anh được biên soạn tại Nhật.</p>}
   </div>;
 }
 
@@ -320,7 +352,8 @@ function Overview({ terms, saved, due, mastered, reviewedToday }: Common & { mas
     { title: "Bộ thẻ của bạn", sub: "Nhóm và ôn các từ đã lưu", href: "decks", icon: Bookmark, tint: "lilac" },
     { title: "Luyện tập", sub: "Kiểm tra mức độ ghi nhớ", href: "practice", icon: Check, tint: "blue" },
     { title: "Tra từ", sub: "Xem nghĩa, IPA và ví dụ", href: "explore", icon: Search, tint: "pink" },
-    { title: "Kho từ theo topic", sub: "Học từ nguồn theo 36 topic và Level 1–7+", href: "library", icon: BookOpen, tint: "mint" },
+    { title: "Từ A1–C2", sub: "Kho CEFR hiện có theo 36 nhãn nguồn", href: "library?collection=cefr", icon: BookOpen, tint: "mint" },
+    { title: "Từ IELTS Band 1–7+", sub: "25 topic với band học gợi ý", href: "library?collection=ielts", icon: BookOpen, tint: "blue" },
     { title: "Thẻ lật & trò chơi", sub: "Flashcards, trắc nghiệm, gõ từ, ghép cặp", href: "study", icon: RotateCcw, tint: "lilac" },
   ];
   return <>
@@ -345,7 +378,7 @@ function Learn({ terms, savedByWord }: Pick<Common, "terms" | "savedByWord">) {
   }
   const query = params.toString();
   return <>
-    <section className="vocab-panel"><span className="vocab-kicker">KHO TỪ CHO HỌC VIÊN</span><h2>Học theo topic và Level 1–7+</h2><p>Kho nguồn đã mở cho học viên gồm từ tiếng Anh, định nghĩa nguồn và phát âm. Chọn topic hoặc Level để tìm từ phù hợp; tra thêm nghĩa trước khi lưu vào sổ tay.</p><Link className="vocab-button primary" href="/app/vocabulary/library">Mở kho từ theo topic <ArrowRight size={16}/></Link></section>
+    <section className="vocab-panel"><span className="vocab-kicker">HAI BỘ TỪ VỰNG</span><h2>CEFR A1–C2 và IELTS Band 1–7+</h2><p>Kho CEFR giữ nguyên nội dung và tiến độ cũ. Bộ IELTS có topic riêng và band học gợi ý từ dữ liệu nguồn.</p><Link className="vocab-button primary" href="/app/vocabulary/library">Mở hai bộ từ <ArrowRight size={16}/></Link></section>
     <section className="vocab-panel"><h2>1. Chọn trình độ</h2><div className="vocab-choice-row">{levels.map((item) => <button key={item} className={item === level ? "selected" : ""} aria-pressed={item === level} onClick={() => setFilter(item, topic)}>{item === "all" ? "Tất cả" : item}</button>)}</div><h2>2. Chọn chủ đề</h2><div className="vocab-choice-row">{topicOptions.map((item) => <button key={item} className={item === topic ? "selected" : ""} aria-pressed={item === topic} onClick={() => setFilter(level, item)}>{item === "all" ? "Tất cả" : item} <small>{item === "all" ? terms.length : terms.filter((term) => term.topic === item).length}</small></button>)}</div></section>
     <div className="vocab-section-heading"><h2>3. Danh sách từ ({filtered.length})</h2>{filtered.length > 0 && <Link className="vocab-button primary" href={`/app/vocabulary/learn/${encodeURIComponent(filtered[0].id)}${query ? `?${query}` : ""}`}>Bắt đầu học <ArrowRight size={16}/></Link>}</div>
     <div className="vocab-word-list">{filtered.map((term) => <article key={term.id} className="vocab-word-row"><TopicArt topic={term.topic} word={term.word} className="vocab-row-art" /><div><strong>{term.word}</strong><span className="vocab-tag">{term.level}</span><p>{term.pos && `${term.pos} · `}{term.meaning} · {term.topic}</p></div><div><span>{savedByWord.has(normalizeWord(term.word)) ? "✓ Đã lưu" : ""}</span><Link className="vocab-button soft" href={`/app/vocabulary/learn/${encodeURIComponent(term.id)}${query ? `?${query}` : ""}`}>Xem từ <ArrowRight size={15}/></Link></div></article>)}{filtered.length === 0 && <div className="vocab-panel vocab-empty">Chưa có từ trong bộ lọc này. Hãy chọn trình độ hoặc chủ đề khác.</div>}</div>
