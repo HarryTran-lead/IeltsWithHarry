@@ -33,6 +33,7 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { chunkTurns, pcmFromAudio, silence, ttsModels, ttsRequestBody, TTS_SAMPLE_RATE, type Turn } from "../src/lib/listening-tts.ts";
 import { contentHash, contentSchema, publicContent, scoreAnswers, validateExam, type ExamQuestion, type NormalizedExam } from "../src/lib/ielts-bank/schema.ts";
+import { checkFormat } from "../src/lib/ielts-bank/format-rules.ts";
 
 const args = process.argv.slice(2);
 const apply = args.includes("--apply");
@@ -199,7 +200,6 @@ const exams = papers.map((paper) => {
     for (const speaker of new Set(part.blocks.flatMap((block) => block.lines.map((line) => line.speaker)))) if (!part.voices[speaker]) problems.push(`${where}: no voice for ${speaker}`);
     const words = part.blocks.reduce((sum, block) => sum + block.lines.reduce((n, line) => n + line.text.split(/\s+/).length, 0), 0);
     total += words;
-    if (words < 600 || words > 1100) problems.push(`${where}: ${words} words (aim for 650–1,000)`);
     const blockText = (n: number) => normalize(part.blocks.find((block) => n >= block.from && n <= block.to)?.lines.map((line) => line.text).join(" ") ?? "");
     const whole = normalize(part.blocks.flatMap((block) => block.lines.map((line) => line.text)).join(" "));
     let last = -1;
@@ -241,7 +241,14 @@ const exams = papers.map((paper) => {
     report.push(`${where}: ${words} words · ${part.groups.map((group) => `${group.from}-${group.to} ${group.type}`).join(", ")}`);
   }
   report.push(`${label}: ${total} words in total`);
+  // Real papers run to about 3,000–3,300 words of recording; ours must not fall short of that.
+  if (total < 2950) problems.push(`${label}: ${total} words in total (real tests: about 3,000–3,300)`);
   const exam = toExam(paper);
+  // The strict format rules (docs/IELTS_FORMAT_RULES.md): every error except missing audio on a draft, and the
+  // transcript-length warnings, block a paper written here.
+  for (const finding of checkFormat("Listening", exam.content, "full")) {
+    if ((finding.severity === "error" && finding.code !== "L2") || finding.code === "L11" || finding.code === "L12") problems.push(`${label} ${finding.code}${finding.question ? ` Q${finding.question}` : ""}: ${finding.message}`);
+  }
   const invalid = validateExam(exam).filter((warning) => warning !== "audio_missing");
   if (invalid.length) problems.push(`${label}: ${invalid.join(", ")}`);
   const questions = exam.content.sections.flatMap((section) => section.questions);
