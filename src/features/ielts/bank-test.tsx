@@ -34,13 +34,16 @@ function rangeAt(root: Node, start: number, end: number) {
 }
 
 /** Plays one section's recording with ±5 s, speed and a seek bar, docked at the bottom of the test. */
-function AudioDock({ src, title }: { src: string; title: string }) {
+function AudioDock({ src, title, autoPlayNext, onEnded }: { src: string; title: string; autoPlayNext?: boolean; onEnded?: () => void }) {
   const audio = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false), [time, setTime] = useState(0), [duration, setDuration] = useState(0), [rate, setRate] = useState(1), [volume, setVolume] = useState(1);
+  useEffect(() => {
+    if (autoPlayNext) void audio.current?.play().catch(() => { /* Browser may require another tap. */ });
+  }, [autoPlayNext]);
   const clock = (value: number) => `${String(Math.floor(value / 60)).padStart(2, "0")}:${String(Math.floor(value % 60)).padStart(2, "0")}`;
   const skip = (seconds: number) => { if (audio.current) audio.current.currentTime = Math.max(0, Math.min(duration, audio.current.currentTime + seconds)); };
   return <div className="bt-audio" aria-label={`Bản ghi: ${title}`}>
-    <audio ref={audio} src={src} preload="metadata" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onTimeUpdate={(event) => setTime(event.currentTarget.currentTime)} onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)} />
+    <audio ref={audio} src={src} preload="metadata" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={onEnded} onTimeUpdate={(event) => setTime(event.currentTarget.currentTime)} onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)} />
     <input className="bt-seek" type="range" min={0} max={duration || 0} step={0.1} value={time} onChange={(event) => { if (audio.current) audio.current.currentTime = Number(event.target.value); }} aria-label="Tua bản ghi" style={{ "--progress": `${duration ? (time / duration) * 100 : 0}%` } as CSSProperties} />
     <div className="bt-audio-row">
       <span className="bt-audio-time">{clock(time)} / {clock(duration)}</span>
@@ -76,6 +79,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const numbers = useMemo(() => new Map(allQuestions.map((question, index) => [question.id, index + 1])), [allQuestions]);
   const sections = useMemo(() => content.sections.filter((section) => section.questions.length && (!scope || section.questions.some((question) => scope.includes(question.id)))), [content, scope]);
   const [part, setPart] = useState(0);
+  const [autoPlayPart, setAutoPlayPart] = useState<number | null>(null);
   const [scale, setScale] = useState(1);
   const [notesOpen, setNotesOpen] = useState(false);
   const [marks, setMarks] = useState<Mark[]>([]);
@@ -89,8 +93,9 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     numberOf: (id) => numbers.get(id) ?? 0,
   };
 
-  const goTo = useCallback((sectionIndex: number, questionId?: string) => {
+  const goTo = useCallback((sectionIndex: number, questionId?: string, playNext = false) => {
     setPart(sectionIndex);
+    setAutoPlayPart(playNext ? sectionIndex : null);
     setSelection(null);
     window.setTimeout(() => {
       const target = questionId ? document.getElementById(`q-${questionId}`) : document.querySelector(".bt-questions");
@@ -156,7 +161,10 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     </aside>}
 
     <footer className="bt-dock">
-      {listening && section.audioUrl && <AudioDock key={section.id} src={section.audioUrl} title={section.title} />}
+      {listening && section.audioUrl && <AudioDock key={section.id} src={section.audioUrl} title={section.title}
+        autoPlayNext={autoPlayPart === part}
+        onEnded={exam.mode === "full_test" && sections.length === 4 && part + 1 < sections.length
+          ? () => goTo(part + 1, undefined, true) : undefined} />}
       <nav className="bt-parts" aria-label="Chọn câu hỏi">
         <button type="button" className="bt-arrow" disabled={part === 0} onClick={() => goTo(part - 1)} aria-label="Phần trước"><ChevronLeft size={18} /></button>
         <div className="bt-part-list">{sections.map((item, index) => <div key={item.id} className={`bt-part ${index === part ? "is-current" : ""}`}>
