@@ -41,6 +41,8 @@ function piece(skill: "Listening" | "Reading", part: number): DailyPiece {
 describe("AI Factory daily set", () => {
   it("resumes from the first missing piece and uses one ID per UTC day", () => {
     const pieces: DailyPieces = { listening_part1: piece("Listening", 1), listening_part2: piece("Listening", 2) };
+    expect(nextMissingPiece(pieces)).toBe("writing_task1_academic");
+    for (const kind of dailyPieceKinds.slice(7)) pieces[kind] = piece("Reading", 1);
     expect(nextMissingPiece(pieces)).toBe("listening_part3");
     for (const kind of dailyPieceKinds) pieces[kind] = piece("Reading", 1);
     expect(nextMissingPiece(pieces)).toBeNull();
@@ -48,7 +50,8 @@ describe("AI Factory daily set", () => {
   });
 
   it("resumes an older incomplete set after quota exhaustion and never opens a second set today", () => {
-    const pieces: DailyPieces = { listening_part1: piece("Listening", 1), listening_part2: piece("Listening", 2), listening_part3: piece("Listening", 3), listening_part4: piece("Listening", 4), reading_passage1: piece("Reading", 1) };
+    const pieces: DailyPieces = { listening_part1: piece("Listening", 1), listening_part2: piece("Listening", 2), listening_part3: piece("Listening", 3), listening_part4: piece("Listening", 4), reading_passage1: piece("Reading", 1),
+      writing_task1_academic: piece("Reading", 1), writing_task2: piece("Reading", 1), speaking_part1: piece("Reading", 1), speaking_part2: piece("Reading", 1) };
     const old: { payload: { setId: string; pieces: DailyPieces; completedAt?: string } } = { payload: { setId: "set-2026-10-27", pieces } };
     expect(chooseDailySet(null, old)).toBe(old);
     expect(nextMissingPiece(old.payload.pieces)).toBe("reading_passage2");

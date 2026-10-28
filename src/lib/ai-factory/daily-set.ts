@@ -12,9 +12,10 @@ export const dailyPieceKinds = [
 export type DailyPieceKind = (typeof dailyPieceKinds)[number];
 export type DailyPiece = Awaited<ReturnType<typeof generateFactoryDraft>>;
 export type DailyPieces = Partial<Record<DailyPieceKind, DailyPiece>>;
+const generationOrder: readonly DailyPieceKind[] = [...dailyPieceKinds.slice(7), ...dailyPieceKinds.slice(0, 7)];
 
 export function nextMissingPiece(pieces: DailyPieces): DailyPieceKind | null {
-  return dailyPieceKinds.find((kind) => !pieces[kind]) ?? null;
+  return generationOrder.find((kind) => !pieces[kind]) ?? null;
 }
 
 export function dailySetId(date: Date): string {
