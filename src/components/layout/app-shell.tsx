@@ -96,7 +96,7 @@ const links = groups.flatMap((group) => group.links);
 type SkillPracticeLink = { label: string; href: string; kind?: "parent" | "child" | "full" };
 const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
   vocabulary: [
-    { label: "Học theo topic & Level", href: "/app/vocabulary/library" },
+    { label: "Kho từ A1–C2 & IELTS", href: "/app/vocabulary/library" },
     { label: "Bộ thẻ cá nhân", href: "/app/vocabulary/decks" },
     { label: "Luyện từ vựng", href: "/app/vocabulary/practice" },
     { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },

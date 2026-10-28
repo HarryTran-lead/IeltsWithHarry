@@ -4,6 +4,7 @@
 
 - **Từ A1–C2:** dùng kho `vocabulary_bank_entries` hiện có, lọc theo CEFR thật. Giữ nguyên toàn bộ `source_id`, từ bài học, sổ tay và lịch ôn. RPC CEFR mới đọc cùng kho `student_visible` hiện có; RPC Level cũ vẫn tồn tại cho caller cũ.
 - **Từ IELTS Band 1–7+:** bảng `ielts_vocabulary_entries` riêng, nhập 25 CSV do chủ dự án xác nhận có quyền đăng. 5.000 term chuẩn hóa duy nhất, 25 topic, 10.002 ví dụ; hai hàng có ba ví dụ được giữ đủ. Bộ này có tìm kiếm, lọc topic/band, xem định nghĩa/ví dụ và bốn chế độ luyện tập. Học viên có thể đi từ thẻ từ sang chức năng tra/lưu hiện có.
+- Cột `Definition` của CSV là nghĩa tiếng Việt; ví dụ là tiếng Anh. Tên cột database `definition_en` được giữ theo migration đã áp dụng, nhưng giao diện hiển thị đúng ngôn ngữ nguồn và không gọi đó là định nghĩa tiếng Anh.
 - **Band gợi ý:** `wordfreq` tiếng Anh 3.1.1, điểm Zipf với ngưỡng 5,5/5,0/4,5/4,0/3,5/3,0 tương ứng band 1/2/3/4/5/6; thấp hơn là 7+. Đây là **ước lượng để sắp lộ trình**, không phải band IELTS chính thức hay đánh giá độ khó đã biên tập. `band_method`, `band_score`, `band_model` lưu riêng để có thể chỉnh từng từ. Nội dung nguồn được gắn `source_unreviewed`.
 
 ## Mốc kiểm tra database

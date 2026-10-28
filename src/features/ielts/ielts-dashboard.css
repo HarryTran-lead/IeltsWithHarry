@@ -179,7 +179,7 @@
 .ielts-vocab-picker-heading h2 { margin: 3px 0; font-size: clamp(21px, 2vw, 27px); }
 .ielts-vocab-picker-heading p { margin: 0; color: #617c91; font-size: 13px; }
 .ielts-vocab-picker-count { flex: none; padding: 7px 11px; border-radius: 99px; background: #fff; color: #087f87; font-size: 12px; font-weight: 800; }
-.ielts-vocab-picker-controls { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .9fr) auto; align-items: end; gap: 12px; margin-top: 15px; }
+.ielts-vocab-picker-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, .9fr) auto; align-items: end; gap: 12px; margin-top: 15px; }
 .ielts-vocab-picker-controls label { display: grid; gap: 5px; min-width: 0; color: #244b65; font-size: 13px; font-weight: 800; }
 .ielts-vocab-picker-controls select { width: 100%; min-width: 0; height: 45px; padding: 0 12px; border: 1px solid #c4dfe5; border-radius: 11px; background: #fff; color: #173455; font: inherit; font-size: 14px; cursor: pointer; }
 .ielts-vocab-picker-controls select:focus-visible, .ielts-vocab-picker-action:focus-visible { outline: 3px solid #f5b94e; outline-offset: 2px; }
