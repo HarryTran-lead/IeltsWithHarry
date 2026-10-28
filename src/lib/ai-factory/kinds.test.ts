@@ -57,6 +57,18 @@ describe("Content Factory kinds", () => {
     expect(build("reading_passage", 0, short, "Reading").problems.join(" | ")).toMatch(/words/);
   });
 
+  it("assigns the three daily Reading passages questions 1–13, 14–26 and 27–40", () => {
+    const first = briefFor("reading_passage1", 0);
+    const second = briefFor("reading_passage2", 0);
+    const third = briefFor("reading_passage3", 0);
+    expect(first.plan.reduce((sum, group) => sum + group.count, 0)).toBe(13);
+    expect(second.plan.reduce((sum, group) => sum + group.count, 0)).toBe(13);
+    expect(third.plan.reduce((sum, group) => sum + group.count, 0)).toBe(14);
+    expect(first.extra).toContain("Questions 1–7");
+    expect(second.extra).toContain("Questions 14–19");
+    expect(third.extra).toContain("Questions 27–31");
+  });
+
   it("writes Writing and Speaking prompts in the printed exam wording", () => {
     const chart = build("writing_task1_academic", 0, { title: "Household energy use", topic: "Energy", description: "The graph below shows household energy use in Norland from 2000 to 2020.", visual: { kind: "line", title: "Household energy use", unit: "kWh", x_axis: { label: "Year", categories: ["2000", "2005", "2010", "2015", "2020"] }, series: [{ name: "Gas", values: [5, 6, 7, 6, 5] }, { name: "Solar", values: [0, 1, 2, 4, 7] }], rows: [], steps: [] } }, "Writing");
     expect(chart.problems).toEqual([]);

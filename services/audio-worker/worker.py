@@ -174,77 +174,127 @@ def utc_now() -> str:
 def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str) -> None:
     started = time.perf_counter()
     payload = job["payload"]
-    turns = payload.get("turns")
-    # Parts 2 and 4 are monologues; Parts 1 and 3 have two or three speakers.
-    if not isinstance(turns, list) or not 2 <= len(turns) <= 100 or not 1 <= len({t.get("speaker") for t in turns}) <= 3:
-        raise ValueError("Listening script needs 2-100 turns and one to three speakers")
+    grouped = payload.get("sections")
+    multi = grouped is not None
+    if multi:
+        if not isinstance(grouped, list) or len(grouped) != 4 or not all(isinstance(part, dict) for part in grouped) or [part.get("sectionId") for part in grouped] != [
+            "part-1", "part-2", "part-3", "part-4"
+        ]:
+            raise ValueError("Full Listening audio needs four ordered sections")
+        sections = grouped
+    else:
+        sections = [payload]
     voices = {v["id"]: v for v in db.rest("GET", "ai_factory_voices", params={"select": "*", "enabled": "eq.true"})}
-    voice_by_speaker: dict[str, str] = {}
-    rendered: list[np.ndarray] = []
-    segments: list[dict] = []
-    cursor = 0
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    for ordinal, turn in enumerate(turns):
-        db.update(job, token, {"lease_until": (datetime.now(timezone.utc) + timedelta(minutes=15)).isoformat()})
-        if turn.get("ordinal") != ordinal:
-            raise ValueError("Missing or reordered dialogue turn")
-        speaker, voice = turn["speaker"], turn["voice"]
-        if voice not in voices or voice not in provider.list_voices():
-            raise ValueError(f"Voice {voice} is not enabled")
-        if speaker in voice_by_speaker and voice_by_speaker[speaker] != voice:
-            raise ValueError("Speaker voice changed within the script")
-        voice_by_speaker[speaker] = voice
-        canonical = normalize(turn["text"])
-        pace = float(voices[voice]["pace"])
-        cache_key = hashlib.sha256(json.dumps([MODEL_SHA256, voice, pace, canonical], ensure_ascii=False).encode()).hexdigest()
-        cache_path = CACHE_DIR / f"{cache_key}.wav"
-        if cache_path.exists():
-            clip, rate = sf.read(cache_path, dtype="float32")
-            if rate != SAMPLE_RATE or not provider.validate_output(clip)["passed"]:
-                cache_path.unlink()
+    all_segments: list[dict] = []
+    paths: dict[str, str] = {}
+    technical_reports: dict[str, dict] = {}
+    alignment_reports: dict[str, dict] = {}
+    asr_reports: dict[str, dict] = {}
+    total_characters = 0
+    total_seconds = 0.0
+    total_bytes = 0
+
+    for section_index, section in enumerate(sections):
+        section_id = section.get("sectionId", f"part-{section_index + 1}")
+        turns = section.get("turns")
+        if not isinstance(turns, list) or not 2 <= len(turns) <= 100 or not 1 <= len({t.get("speaker") for t in turns}) <= 3:
+            raise ValueError(f"{section_id}: script needs 2-100 turns and one to three speakers")
+        voice_by_speaker: dict[str, str] = {}
+        rendered: list[np.ndarray] = []
+        segments: list[dict] = []
+        cursor = 0
+        for ordinal, turn in enumerate(turns):
+            db.update(job, token, {"lease_until": (datetime.now(timezone.utc) + timedelta(minutes=15)).isoformat()})
+            if turn.get("ordinal") != ordinal:
+                raise ValueError(f"{section_id}: missing or reordered dialogue turn")
+            speaker, voice = turn["speaker"], turn["voice"]
+            if voice not in voices or voice not in provider.list_voices():
+                raise ValueError(f"Voice {voice} is not enabled")
+            if speaker in voice_by_speaker and voice_by_speaker[speaker] != voice:
+                raise ValueError(f"{section_id}: speaker voice changed")
+            voice_by_speaker[speaker] = voice
+            canonical = normalize(turn["text"])
+            pace = float(voices[voice]["pace"])
+            cache_key = hashlib.sha256(json.dumps([MODEL_SHA256, voice, pace, canonical], ensure_ascii=False).encode()).hexdigest()
+            cache_path = CACHE_DIR / f"{cache_key}.wav"
+            if cache_path.exists():
+                clip, rate = sf.read(cache_path, dtype="float32")
+                if rate != SAMPLE_RATE or not provider.validate_output(clip)["passed"]:
+                    cache_path.unlink()
+                    clip = provider.synthesize_segment(canonical, voice, pace)
+            else:
                 clip = provider.synthesize_segment(canonical, voice, pace)
-        else:
-            clip = provider.synthesize_segment(canonical, voice, pace)
-        if not provider.validate_output(clip)["passed"]:
-            raise ValueError(f"Technical QA failed for turn {ordinal}")
-        if not cache_path.exists():
-            sf.write(cache_path, clip, SAMPLE_RATE, subtype="PCM_16")
-        start = cursor
-        rendered.append(clip)
-        cursor += len(clip)
-        segments.append({"job_id": job["id"], "ordinal": ordinal, "speaker_id": speaker, "voice_id": voice, "pace": pace, "canonical_text": canonical, "normalized_text": canonical, "cache_key": cache_key, "start_ms": round(start * 1000 / SAMPLE_RATE), "end_ms": round(cursor * 1000 / SAMPLE_RATE)})
-        pause = np.zeros(int(SAMPLE_RATE * (0.42 if canonical.endswith(("?", "!")) else 0.32)), dtype=np.float32)
-        rendered.append(pause)
-        cursor += len(pause)
-    audio = np.concatenate(rendered)
-    peak = float(np.max(np.abs(audio)))
-    if peak > 0:
-        audio *= min(0.92 / peak, 1.6)
-    technical = inspect_audio(audio, SAMPLE_RATE)
-    technical["expected_turns"] = len(turns)
-    technical["actual_turns"] = len(segments)
-    technical["model_sha256"] = MODEL_SHA256
-    evidence = payload.get("evidence", {})
-    alignment = {key: {"turns": value, "intervals_ms": [[segments[i]["start_ms"], segments[i]["end_ms"]] for i in value]} for key, value in evidence.items() if isinstance(value, list) and all(isinstance(i, int) and 0 <= i < len(segments) for i in value)}
-    alignment_passed = len(alignment) == 10 and all(v["intervals_ms"] for v in alignment.values())
-    if not technical["passed"] or not alignment_passed:
-        raise ValueError("Final technical or answer alignment QA failed")
-    with tempfile.TemporaryDirectory() as temp:
-        wav = Path(temp) / "audio.wav"
-        mp3 = Path(temp) / "audio.mp3"
-        sf.write(wav, audio, SAMPLE_RATE, subtype="PCM_16")
-        subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-hide_banner", "-loglevel", "error", "-y", "-i", str(wav), "-codec:a", "libmp3lame", "-q:a", "4", str(mp3)], check=True, timeout=180)
-        decoded = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-v", "error", "-i", str(mp3), "-f", "null", "-"], capture_output=True, timeout=120)
-        if decoded.returncode != 0 or mp3.stat().st_size < 1000 or mp3.stat().st_size > 20_000_000:
-            raise ValueError("Final MP3 cannot be decoded or exceeds storage limit")
-        asr = asr_report(mp3, " ".join(turn["text"] for turn in turns), payload.get("answerPhrases", []))
-        path = f"{job['id']}/audio.mp3"
-        encoded = mp3.read_bytes()
-        db.upload(path, encoded)
-    db.insert("ai_factory_segments", segments)
-    db.insert("ai_factory_qa", {"job_id": job["id"], "technical": technical, "answer_alignment": {"passed": alignment_passed, "evidence": alignment}, "asr": asr, "passed": True})
-    db.insert("ai_factory_usage", {"job_id": job["id"], "provider": "kokoro", "characters": sum(len(t["text"]) for t in turns), "audio_seconds": technical["duration_seconds"], "processing_seconds": round(time.perf_counter() - started, 2), "storage_bytes": len(encoded), "estimated_usd": 0, "actual_usd": 0})
-    db.update(job, token, {"status": "awaiting_review", "artifact_path": path, "model_sha256": MODEL_SHA256, "lease_token": None, "lease_until": None})
+            if not provider.validate_output(clip)["passed"]:
+                raise ValueError(f"{section_id}: technical QA failed for turn {ordinal}")
+            if not cache_path.exists():
+                sf.write(cache_path, clip, SAMPLE_RATE, subtype="PCM_16")
+            start = cursor
+            rendered.append(clip)
+            cursor += len(clip)
+            segments.append({"job_id": job["id"], "ordinal": len(all_segments) + ordinal, "speaker_id": speaker, "voice_id": voice,
+                             "pace": pace, "canonical_text": canonical, "normalized_text": canonical, "cache_key": cache_key,
+                             "start_ms": round(start * 1000 / SAMPLE_RATE), "end_ms": round(cursor * 1000 / SAMPLE_RATE)})
+            pause = np.zeros(int(SAMPLE_RATE * (0.42 if canonical.endswith(("?", "!")) else 0.32)), dtype=np.float32)
+            rendered.append(pause)
+            cursor += len(pause)
+        audio = np.concatenate(rendered)
+        peak = float(np.max(np.abs(audio)))
+        if peak > 0:
+            audio *= min(0.92 / peak, 1.6)
+        technical = inspect_audio(audio, SAMPLE_RATE)
+        technical.update({"expected_turns": len(turns), "actual_turns": len(segments), "model_sha256": MODEL_SHA256})
+        evidence = section.get("evidence", {})
+        alignment = {key: {"turns": value, "intervals_ms": [[segments[i]["start_ms"], segments[i]["end_ms"]] for i in value]}
+                     for key, value in evidence.items()
+                     if isinstance(value, list) and all(isinstance(i, int) and 0 <= i < len(segments) for i in value)}
+        alignment_passed = len(alignment) == 10 and all(value["intervals_ms"] for value in alignment.values())
+        if not technical["passed"] or not alignment_passed:
+            raise ValueError(f"{section_id}: final technical or answer alignment QA failed")
+        with tempfile.TemporaryDirectory() as temp:
+            wav = Path(temp) / "audio.wav"
+            mp3 = Path(temp) / "audio.mp3"
+            sf.write(wav, audio, SAMPLE_RATE, subtype="PCM_16")
+            subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-hide_banner", "-loglevel", "error", "-y", "-i", str(wav),
+                            "-codec:a", "libmp3lame", "-q:a", "4", str(mp3)], check=True, timeout=180)
+            decoded = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-v", "error", "-i", str(mp3), "-f", "null", "-"],
+                                     capture_output=True, timeout=120)
+            if decoded.returncode != 0 or mp3.stat().st_size < 1000 or mp3.stat().st_size > 20_000_000:
+                raise ValueError(f"{section_id}: final MP3 cannot be decoded or exceeds storage limit")
+            db.update(job, token, {"lease_until": (datetime.now(timezone.utc) + timedelta(minutes=45)).isoformat()})
+            asr = asr_report(mp3, " ".join(turn["text"] for turn in turns), section.get("answerPhrases", []))
+            path = f"{job['id']}/{section_id}.mp3" if multi else f"{job['id']}/audio.mp3"
+            encoded = mp3.read_bytes()
+            db.upload(path, encoded)
+        all_segments.extend(segments)
+        paths[section_id] = path
+        technical_reports[section_id] = technical
+        alignment_reports[section_id] = {"passed": alignment_passed, "evidence": alignment}
+        asr_reports[section_id] = asr
+        total_characters += sum(len(turn["text"]) for turn in turns)
+        total_seconds += technical["duration_seconds"]
+        total_bytes += len(encoded)
+
+    db.insert("ai_factory_segments", all_segments)
+    if multi:
+        technical_result = {"passed": True, "sections": technical_reports}
+        alignment_result = {"passed": True, "sections": alignment_reports}
+        asr_result = {"status": "review_required" if any(item.get("status") != "completed" for item in asr_reports.values()) else "completed",
+                      "sections": asr_reports}
+        artifact_path = json.dumps(paths)
+    else:
+        section_id = next(iter(paths))
+        technical_result = technical_reports[section_id]
+        alignment_result = alignment_reports[section_id]
+        asr_result = asr_reports[section_id]
+        artifact_path = paths[section_id]
+    db.insert("ai_factory_qa", {"job_id": job["id"], "technical": technical_result,
+                                "answer_alignment": alignment_result, "asr": asr_result, "passed": True})
+    db.insert("ai_factory_usage", {"job_id": job["id"], "provider": "kokoro", "characters": total_characters,
+                                   "audio_seconds": round(total_seconds, 2), "processing_seconds": round(time.perf_counter() - started, 2),
+                                   "storage_bytes": total_bytes, "estimated_usd": 0, "actual_usd": 0})
+    db.update(job, token, {"status": "awaiting_review", "artifact_path": artifact_path,
+                           "model_sha256": MODEL_SHA256, "lease_token": None, "lease_until": None})
 
 
 def main() -> None:

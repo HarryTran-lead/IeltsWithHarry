@@ -12,22 +12,33 @@ export async function GET() {
   try {
     await viewer(true);
     const client = bankClient();
-    const [settings, voices, jobs, usage] = await Promise.all([
+    const [settings, voices, jobs, usage, dailySet] = await Promise.all([
       client.from("ai_factory_settings").select("*").single(),
       client.from("ai_factory_voices").select("*").order("id"),
       client.from("ai_factory_jobs").select("*,ai_factory_qa(*),ai_factory_segments(ordinal,speaker_id,voice_id,pace,canonical_text,start_ms,end_ms)").order("created_at", { ascending: false }).limit(50),
       client.from("ai_factory_usage").select("provider,characters,audio_seconds,processing_seconds,storage_bytes,estimated_usd,actual_usd,created_at").gte("created_at", new Date(Date.now()-31*86400000).toISOString()).limit(1000),
+      client.from("ai_factory_jobs").select("status,error,payload").contains("payload", { dailySet: true }).order("created_at", { ascending: false }).limit(1),
     ]);
-    for (const result of [settings, voices, jobs, usage]) if (result.error) throw new Error(result.error.message);
-    const rows = await Promise.all((jobs.data || []).map(async (job) => {
+    for (const result of [settings, voices, jobs, usage, dailySet]) if (result.error) throw new Error(result.error.message);
+    const rows = await Promise.all((jobs.data || []).filter((job) => !job.payload?.dailySet).map(async (job) => {
       let previewUrl: string | null = null;
+      const previewUrls: { sectionId: string; url: string }[] = [];
       if (job.artifact_path && ["awaiting_review", "qa_failed"].includes(job.status)) {
-        const signed = await client.storage.from("ai-factory-drafts").createSignedUrl(job.artifact_path, 600);
-        previewUrl = signed.data?.signedUrl ?? null;
+        const sections = Array.isArray(job.payload?.sections) ? job.payload.sections as { sectionId: string }[] : [];
+        const paths = sections.length ? JSON.parse(job.artifact_path) as Record<string, string> : { [job.payload?.sectionId ?? "audio"]: job.artifact_path };
+        for (const [sectionId, path] of Object.entries(paths)) {
+          const signed = await client.storage.from("ai-factory-drafts").createSignedUrl(path, 600);
+          if (signed.data?.signedUrl) previewUrls.push({ sectionId, url: signed.data.signedUrl });
+        }
+        previewUrl = previewUrls[0]?.url ?? null;
       }
-      return { ...job, previewUrl };
+      return { ...job, previewUrl, previewUrls };
     }));
-    return Response.json({ settings: settings.data, voices: voices.data, jobs: rows, usage: usage.data, textProviderReady: Boolean(process.env.AI_FACTORY_GEMINI_API_KEY && process.env.AI_FACTORY_FREE_TIER_ONLY === "true" && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true") });
+    const set = dailySet.data?.[0];
+    return Response.json({ settings: settings.data, voices: voices.data, jobs: rows, usage: usage.data,
+      dailySet: set ? { setId: set.payload?.setId, completedPieces: Object.keys(set.payload?.pieces ?? {}).length,
+        totalPieces: 11, longRequestsUsed: set.payload?.longRequestsUsed ?? 0, completedAt: set.payload?.completedAt ?? null, error: set.error } : null,
+      textProviderReady: Boolean(process.env.AI_FACTORY_GEMINI_API_KEY && process.env.AI_FACTORY_FREE_TIER_ONLY === "true" && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true") });
   } catch (error) { return requestError(error); }
 }
 
@@ -72,7 +83,7 @@ export async function POST(request: Request) {
       const { data: settings, error: settingsError } = await client.from("ai_factory_settings").select("daily_job_limit").single();
       if (settingsError) throw new Error(settingsError.message);
       const today = new Date(); today.setUTCHours(0,0,0,0);
-      const { count, error: countError } = await client.from("ai_factory_jobs").select("id", { count: "exact", head: true }).gte("created_at", today.toISOString());
+      const { count, error: countError } = await client.from("ai_factory_jobs").select("id", { count: "exact", head: true }).not("created_by", "is", null).gte("created_at", today.toISOString());
       if (countError) throw new Error(countError.message);
       if ((count || 0) >= settings.daily_job_limit) throw new Error("Daily Content Factory job limit reached");
       const { data: active, error: activeError } = await client.from("ai_factory_jobs").select("id,status").eq("kind", "listening_audio").in("status", ["queued","running","awaiting_review","approved"]).contains("payload", { pilot: true }).limit(1);
@@ -120,16 +131,23 @@ export async function POST(request: Request) {
     if (versionError || !version) throw new Error(versionError?.message || "Exam version missing");
     const { data: exam, error: examError } = await client.from("ielts_exams").select("current_version_id,status").eq("id", job.exam_id).single();
     if (examError || !exam || exam.current_version_id !== job.exam_version_id || exam.status === "published") throw new Error("Exam changed after audio was queued; re-review required");
-    const { data: download, error: downloadError } = await client.storage.from("ai-factory-drafts").download(job.artifact_path);
-    if (downloadError || !download) throw new Error(downloadError?.message || "Audio draft missing");
-    const publicPath = `ai-factory/${job.id}.mp3`;
-    const uploaded = await client.storage.from("ielts-audio").upload(publicPath, download, { contentType: "audio/mpeg", upsert: false });
-    if (uploaded.error && !/already exists|Duplicate/i.test(uploaded.error.message)) throw new Error(uploaded.error.message);
     const content = contentSchema.parse(version.content);
-    const audioUrl = client.storage.from("ielts-audio").getPublicUrl(publicPath).data.publicUrl;
-    const section = content.sections.find((part) => part.id === job.payload.sectionId);
-    if (!section) throw new Error("Audio section missing");
-    section.audioUrl = audioUrl;
+    const fullSections = Array.isArray(job.payload?.sections) ? job.payload.sections as { sectionId: string }[] : [];
+    const draftPaths: Record<string, string> = fullSections.length ? JSON.parse(job.artifact_path) as Record<string, string> : { [String(job.payload.sectionId)]: job.artifact_path };
+    if (fullSections.length && (fullSections.length !== 4 || content.sections.length !== 4 || fullSections.some((part, index) => part.sectionId !== `part-${index + 1}`))) throw new Error("Full Listening draft needs four sections");
+    if (fullSections.length && Object.keys(draftPaths).length !== content.sections.length) throw new Error("Audio files do not match exam sections");
+    const targetSections = fullSections.length ? content.sections : content.sections.filter((section) => section.id === job.payload.sectionId);
+    if (targetSections.length !== (fullSections.length ? 4 : 1)) throw new Error("Audio section missing");
+    for (const section of targetSections) {
+      const draftPath = draftPaths[section.id];
+      if (!draftPath || !draftPath.startsWith(`${job.id}/`)) throw new Error(`Audio file missing for ${section.id}`);
+      const { data: download, error: downloadError } = await client.storage.from("ai-factory-drafts").download(draftPath);
+      if (downloadError || !download) throw new Error(downloadError?.message || "Audio draft missing");
+      const publicPath = fullSections.length ? `ai-factory/${job.id}/${section.id}.mp3` : `ai-factory/${job.id}.mp3`;
+      const uploaded = await client.storage.from("ielts-audio").upload(publicPath, download, { contentType: "audio/mpeg", upsert: false });
+      if (uploaded.error && !/already exists|Duplicate/i.test(uploaded.error.message)) throw new Error(uploaded.error.message);
+      section.audioUrl = client.storage.from("ielts-audio").getPublicUrl(publicPath).data.publicUrl;
+    }
     const saved = await saveRevision(job.exam_id, content, actor.id, job.exam_version_id);
     const { error: qaUpdateError } = await client.from("ai_factory_qa").update({ naturalness_review: { listened: true, answersChecked: true, note: body.note, actorId: actor.id } }).eq("job_id", job.id);
     if (qaUpdateError) throw new Error(qaUpdateError.message);
