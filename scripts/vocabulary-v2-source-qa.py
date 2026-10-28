@@ -24,18 +24,7 @@ def load_audit_module():
     return module
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--archive", type=Path, required=True)
-    parser.add_argument("--out-dir", type=Path, required=True)
-    args = parser.parse_args()
-    repo = Path(__file__).resolve().parent.parent
-    output_dir = args.out_dir.resolve()
-    if output_dir.is_relative_to(repo):
-        parser.error("QA output must be outside the repository")
-    output_dir.mkdir(parents=True, exist_ok=True)
-    audit = load_audit_module()
-    rows, source_report = audit.source_rows(args.archive)
+def analyze(rows: list[dict[str, str]], source_report: dict, audit) -> dict:
     examples_by_text: collections.Counter[str] = collections.Counter()
     for row in rows:
         examples_by_text.update(audit.normalized(part) for part in row["Examples"].split(" | "))
@@ -69,7 +58,7 @@ def main() -> None:
                 "signals": signals,
                 "row_sha256": hashlib.sha256(json.dumps(row, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest(),
             })
-    result = {
+    return {
         "archive_sha256": source_report["archive_sha256"],
         "source_rows": len(rows),
         "examples": source_report["total_examples"],
@@ -79,6 +68,21 @@ def main() -> None:
         "flagged_rows": flags,
         "note": "Heuristic QA signals require editorial review; a flag is not proof of an error.",
     }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--archive", type=Path, required=True)
+    parser.add_argument("--out-dir", type=Path, required=True)
+    args = parser.parse_args()
+    repo = Path(__file__).resolve().parent.parent
+    output_dir = args.out_dir.resolve()
+    if output_dir.is_relative_to(repo):
+        parser.error("QA output must be outside the repository")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    audit = load_audit_module()
+    rows, source_report = audit.source_rows(args.archive)
+    result = analyze(rows, source_report, audit)
     destination = output_dir / "source-qa-signals.json"
     destination.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({key: result[key] for key in ("source_rows", "examples", "rows_with_any_signal", "signal_counts")}, ensure_ascii=False))
