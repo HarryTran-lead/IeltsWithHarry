@@ -5,6 +5,11 @@ on:
     # One daily set, after Gemini's midnight Pacific free-tier reset.
     - cron: "27 8 * * *"
   workflow_dispatch:
+    inputs:
+      probe_only:
+        description: Check model connectivity with a tiny request without creating a set
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -41,9 +46,35 @@ jobs:
         if: steps.config.outputs.configured == 'true'
         with:
           node-version: '22'
+      - name: Probe long model connectivity
+        if: steps.config.outputs.configured == 'true' && github.event_name == 'workflow_dispatch' && inputs.probe_only
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          const model = process.env.AI_FACTORY_LONG_MODEL || 'gemini-3.8-flash';
+          const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}`;
+          const headers = { 'x-goog-api-key': process.env.AI_FACTORY_GEMINI_API_KEY };
+          for (const [name, url, init] of [
+            ['model', endpoint, { headers, signal: AbortSignal.timeout(20000) }],
+            ['generate', `${endpoint}:generateContent`, { method: 'POST', headers: { ...headers, 'Content-Type': 'application/json' },
+              body: JSON.stringify({ contents: [{ parts: [{ text: 'Reply with the single word OK.' }] }], generationConfig: { maxOutputTokens: 128 } }),
+              signal: AbortSignal.timeout(60000) }],
+          ]) {
+            const start = Date.now();
+            try {
+              const response = await fetch(url, init);
+              await response.arrayBuffer();
+              console.log(`${name}: HTTP ${response.status} in ${Date.now() - start} ms`);
+              if (!response.ok) process.exitCode = 1;
+            } catch (error) {
+              console.error(`${name}: ${error instanceof Error ? error.message : String(error)} after ${Date.now() - start} ms`);
+              process.exitCode = 1;
+            }
+          }
+          JS
       - name: Install project dependencies
-        if: steps.config.outputs.configured == 'true'
+        if: steps.config.outputs.configured == 'true' && !inputs.probe_only
         run: npm ci --ignore-scripts
       - name: Create or resume today's review-only IELTS set
-        if: steps.config.outputs.configured == 'true'
+        if: steps.config.outputs.configured == 'true' && !inputs.probe_only
         run: npx tsx scripts/run-ai-factory-daily-set.ts
