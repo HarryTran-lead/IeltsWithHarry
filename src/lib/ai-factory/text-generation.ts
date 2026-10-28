@@ -20,7 +20,7 @@ async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], f
   const model = /^[\w.-]+$/.test(configured ?? "") ? configured! : long ? "gemini-3.8-flash" : "gemini-3.5-flash-lite";
   await beforeRequest?.(model);
   const response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-    method: "POST", cache: "no-store", signal: AbortSignal.timeout(long ? 120000 : 40000),
+    method: "POST", cache: "no-store", signal: AbortSignal.timeout(long ? 360000 : 60000),
     headers: { "x-goog-api-key": key, "Content-Type": "application/json" },
     body: JSON.stringify({
       systemInstruction: { parts: [{ text: "You write original IELTS practice material for a human editor, matching the format of real IELTS papers exactly. Follow only the requested schema. Never claim to provide official IELTS questions. Never copy published test material; invent people, places and figures." }] },

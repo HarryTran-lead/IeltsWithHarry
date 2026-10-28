@@ -3,7 +3,7 @@ name: AI Factory audio
 on:
   schedule:
     # Allow the full daily text set to finish before rendering its four audio parts.
-    - cron: "17 10 * * *"
+    - cron: "17 12 * * *"
   workflow_dispatch:
 
 permissions:
