@@ -1,4 +1,4 @@
-"""Read-only gate for the Phase 5 topic catalog and private Development drafts."""
+"""Read-only gate for the Phase 5 Dev release and private review audit."""
 
 from __future__ import annotations
 
@@ -55,6 +55,9 @@ def main() -> None:
     topics = db.rows("ielts_learning_topics", "slug,title,origin,target_new_unique")
     batches = db.rows("ielts_vocabulary_draft_batches", "batch_key,topic_slug,source_sha256")
     drafts = db.rows("ielts_vocabulary_draft_entries", "candidate_key,batch_key,topic_slug,term,normalized_term,examples,review_status,qa_flags")
+    events = db.rows("ielts_vocabulary_review_events", "candidate_key,review_origin,qa_flags_before")
+    published = db.rows("ielts_vocabulary_entries", "source_key,content_origin,published,content_status",
+                        {"content_origin": "eq.owner_authorized_editorial"})
     original_titles = set(json.loads((Path(__file__).resolve().parent.parent / "src/lib/vocabulary/ielts-topics.json").read_text(encoding="utf-8")))
     matrix = json.loads((Path(__file__).resolve().parent.parent / "content/vocabulary/phase5/coverage-matrix.json").read_text(encoding="utf-8"))
     content_dir = Path(__file__).resolve().parent.parent / "content/vocabulary/phase5"
@@ -84,6 +87,10 @@ def main() -> None:
         "draft_examples": sum(len(row["examples"]) for row in drafts),
         "draft_terms_match_files": {row["normalized_term"] for row in drafts} == expected_terms,
         "approved": sum(row["review_status"] == "approved" for row in drafts),
+        "review_events": len(events),
+        "qa_leads_preserved": sum(bool(row["qa_flags_before"]) for row in events),
+        "owner_authorized_events": sum(row["review_origin"] == "owner_authorized_codex" for row in events),
+        "published_editorial": sum(row["published"] and row["content_status"] == "owner_authorized_review" for row in published),
         "published_new_unique": db.count("ielts_vocabulary_entries", "source_key") - 5000,
         "unique_normalized_drafts": len({row["normalized_term"] for row in drafts}),
         "anon_topics_visible": anonymous_visible_rows("ielts_learning_topics", key),
@@ -97,11 +104,14 @@ def main() -> None:
                 "coverage_matrix_matches_catalog": True, "draft_batches": len(source_batches),
                 "batch_hashes_match_files": True,
                 "draft_entries": len(expected_terms), "draft_examples": expected_examples,
-                "draft_terms_match_files": True, "approved": 0,
-                "published_new_unique": 0, "unique_normalized_drafts": len(expected_terms),
+                "draft_terms_match_files": True, "approved": len(expected_terms),
+                "review_events": len(expected_terms), "qa_leads_preserved": 13,
+                "owner_authorized_events": len(expected_terms),
+                "published_editorial": len(expected_terms),
+                "published_new_unique": len(expected_terms), "unique_normalized_drafts": len(expected_terms),
                 "anon_topics_visible": 0, "anon_drafts_visible": 0,
                 "legacy_cefr_rows": 9941, "legacy_lesson_rows": 1237,
-                "existing_ielts_rows": 5000}
+                "existing_ielts_rows": 5000 + len(expected_terms)}
     result["pass"] = all(result[field] == value for field, value in expected.items())
     print(json.dumps(result, ensure_ascii=True))
     if not result["pass"]:

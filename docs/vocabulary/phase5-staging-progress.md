@@ -1,4 +1,16 @@
-# Vocabulary V2 — Phase 5, tiến độ vùng nháp
+# Vocabulary V2 — Phase 5 release and Phase 6 integration
+
+The owner authorized approval and publication of all 75 current editorial proposals. The three batches contain 150 English examples across `Everyday Routines & Habits` (50) and `Friends & Social Relationships` (25). The original 5,000 IELTS CSV entries and the CEFR bank remain separate. The IELTS collection totals 5,075 entries after release.
+
+The 40-topic curriculum contains 25 source-named topics and 15 editorial expansion topics. The two populated expansion topics are available to learners; the other 13 remain visibly planned in the selector. The separate 36-label CEFR source taxonomy is unchanged. The goal of 2,650 new unique editorial entries remains a target: **75 published, 2,575 outstanding**.
+
+Review is recorded as `owner_authorized_codex`, with no human editor ID. All 13 original heuristic QA leads are preserved in `ielts_vocabulary_review_events` with a disposition; the signals concern pronoun substitution, inflection, a short but clear definition, and a short but complete example. A heuristic signal is not a confirmed content error. The new entries use `owner_authorized_review`, distinct from `editor_reviewed` on human reviewed content. Suggested IELTS bands come from `wordfreq-en-3.1.1-thresholds-v1` and are labeled as estimates. Proposed CEFR levels are learning metadata, separate from the IELTS band estimates.
+
+Migration `202610280005` creates the private draft staging tables and topic catalog. Migration `202610280006` adds provenance and review events, then provides an atomic service-role-only approval and publication RPC. `scripts/release-phase5-vocabulary.py` stages the same source batches on each target, verifies proposal hashes, and publishes 25 rows per transaction. The script is dry run by default. Learners can read only published IELTS entries; the draft and review audit tables have no learner access. Admins have a read-only aggregate progress panel at `/admin/vocabulary/ielts-progress` backed by `/api/admin/vocabulary-phase5`.
+
+Run `python scripts/verify-vocabulary-phase5-staging.py` against Development after deployment. Check Production with `python scripts/release-phase5-vocabulary.py --expected-ref vpkhriywprepuhrbarye` after release. Each run should report 5,075 IELTS entries, 75 approved drafts and 75 review events.
+
+## Pre-release staging record (historical)
 
 ## Trạng thái ngày 28/10/2026
 
