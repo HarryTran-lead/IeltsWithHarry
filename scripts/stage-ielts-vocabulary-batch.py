@@ -148,7 +148,9 @@ def main() -> None:
         records.append({**entry, "candidate_key": "phase5:" + hashlib.sha256(key.encode("utf-8")).hexdigest(),
                         "proposal_sha256": hashlib.sha256(encoded).hexdigest(),
                         "normalized_term": key, "qa_flags": qa_flags(entry, audit)})
-    source_sha = hashlib.sha256(payload_source).hexdigest()
+    # Git may check out text files with CRLF on Windows. Normalize line endings
+    # so the batch identity stays stable across editors and worktrees.
+    source_sha = hashlib.sha256(payload_source.replace(b"\r\n", b"\n")).hexdigest()
     payload = {"batch_key": batch["batch_key"], "topic_slug": topic_slug,
                "source_sha256": source_sha, "origin": batch["origin"], "entries": records}
     current = db.rows("ielts_vocabulary_draft_entries", "candidate_key,proposal_sha256,batch_key,review_status")
