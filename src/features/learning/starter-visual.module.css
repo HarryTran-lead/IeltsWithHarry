@@ -1,0 +1,22 @@
+.visual { margin: 10px 0 16px; padding: 14px; border: 1px solid #d5ddd9; border-radius: 12px; background: #f6faf8; color: #142641; }
+.visual figcaption { margin-bottom: 10px; font-weight: 800; font-size: 14px; line-height: 1.3; }
+.visual img { display: block; max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; }
+.flow { list-style: none; display: grid; gap: 8px; margin: 0; padding: 0; }
+.flow li { display: flex; align-items: center; gap: 9px; position: relative; }
+.flow li:not(:last-child)::after { content: '↓'; position: absolute; left: 11px; bottom: -10px; color: #068b8b; font-weight: 800; }
+.flow li span { display: grid; place-items: center; flex: none; width: 24px; height: 24px; border-radius: 50%; background: #069d9d; color: white; font-weight: 800; }
+.flow li p { flex: 1; margin: 0; padding: 7px 9px; border-radius: 6px; background: white; font-size: 12px; line-height: 1.4; }
+.maps { display: grid; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); gap: 12px; }
+.map { padding: 10px; border: 1px solid #bfd2c0; border-radius: 8px; background: #fff; }
+.map strong { display: block; text-align: center; margin-bottom: 7px; }
+.mapGrid { display: grid; gap: 3px; }
+.mapGrid > div { display: flex; gap: 3px; }
+.mapGrid span { flex: 1; display: grid; place-items: center; min-height: 43px; padding: 3px; border: 1px solid #c9d7c9; background: #eaf1e8; text-align: center; font-size: 10px; line-height: 1.25; }
+.chart { display: grid; gap: 6px; }
+.chart > div { display: grid; grid-template-columns: minmax(70px,120px) 1fr 55px; align-items: center; gap: 7px; font-size: 11px; }
+.chart i { display: block; height: 16px; background: #08a4a4; min-width: 2px; }
+.notes { margin: 12px 0 0; padding-left: 20px; font-size: 11px; }
+.compact { padding: 9px; }
+.compact figcaption { font-size: 12px; }
+.compact .flow li p { padding: 5px; font-size: 11px; }
+.compact .mapGrid span { min-height: 32px; font-size: 9px; }

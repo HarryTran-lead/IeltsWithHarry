@@ -11,6 +11,7 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import { LessonDetail } from "./lesson-detail";
 import { PackageLessonSteps, type PackageLessonProps } from "./course-package-lesson-shell";
 import { CheckOpener, OpenResponsePractice, type PackageLesson } from "./course-package-practice";
+import { StarterVisual } from "./starter-visual";
 import { AssessmentBody, type Assessment } from "./course-assessment";
 import { lessonShortTitle, themeOf, type BookLesson } from "./course-book-pages";
 
@@ -162,7 +163,7 @@ function LessonSheet({ lesson, groupId, next, onOpenLesson, onClose, onFinishLes
   const data = result?.data;
   if (!data) return <SheetState error={result?.error} path={path} />;
   if (groupId && data.packageContent) {
-    const content = data.packageContent as PackageLesson & { source_groups?: { id: string; title: string; instruction_en?: string; instruction_vi?: string; item_ids: string[] }[] };
+    const content = data.packageContent as PackageLesson & { source_groups?: { id: string; title: string; instruction_en?: string; instruction_vi?: string; visual_refs?: string[]; item_ids: string[] }[] };
     const group = content.source_groups?.find((entry) => entry.id === groupId);
     if (group) {
       const ids = new Set(group.item_ids);
@@ -172,6 +173,7 @@ function LessonSheet({ lesson, groupId, next, onOpenLesson, onClose, onFinishLes
         <h3>{group.title}</h3>
         {group.instruction_en && <p>{group.instruction_en}</p>}
         {group.instruction_vi && <p>{group.instruction_vi}</p>}
+        {group.visual_refs?.map((ref) => content.source_visuals?.[ref] && <StarterVisual key={ref} value={content.source_visuals[ref]} imageUrl={content.source_visual?.title === content.source_visuals[ref].title ? content.visual_url : undefined} />)}
         <OpenResponsePractice key={groupId} items={items} title={group.title} lessonSlug={lesson.slug} topic={lesson.title} />
         <div className="package-panel-actions"><button type="button" className="button primary" onClick={onClose}>Xong, về trang sách <ArrowRight size={17} /></button></div>
       </div>;

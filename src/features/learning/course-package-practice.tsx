@@ -6,6 +6,7 @@ import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { useOptionalNotebook } from "@/features/notebook/notebook-store";
 import { createClient } from "@/lib/supabase/browser";
+import { StarterVisual, type StarterVisualData } from "./starter-visual";
 
 export type PackageActivity = {
   id: string;
@@ -46,6 +47,8 @@ export type PackageCoaching = {
 export type PackageV3Enrichment = {
   coaching?: PackageCoaching;
   visual_url?: string;
+  source_visual?: StarterVisualData | null;
+  source_visuals?: Record<string, StarterVisualData>;
   writing_task1_template?: string[];
   writing_task2_template?: string[];
   speaking_part3_template?: string[];
@@ -126,6 +129,8 @@ export type PackageLesson = {
   image_url?: string;
   exercise_image_url?: string;
   visual_url?: string;
+  source_visual?: StarterVisualData | null;
+  source_visuals?: Record<string, StarterVisualData>;
   unit_objectives?: string[];
   core_outcome?: string;
   v3_enrichment?: PackageV3Enrichment;
@@ -1014,6 +1019,7 @@ export function WritingStudioPractice({
   task1Prompt,
   dataVisual,
   visualUrl,
+  sourceVisual,
   task1Template,
   essay,
   task2Template,
@@ -1027,6 +1033,7 @@ export function WritingStudioPractice({
   task1Prompt?: string;
   dataVisual?: PackageLesson["data_visual"];
   visualUrl?: string;
+  sourceVisual?: StarterVisualData | null;
   task1Template?: string[];
   essay?: PackageLesson["advanced_essay"];
   task2Template?: string[];
@@ -1051,13 +1058,13 @@ export function WritingStudioPractice({
 
   const tasks: StudioTask[] = [];
   const primaryPrompt = task1Prompt?.trim();
-  const primaryIsTask1 = Boolean(dataVisual?.rows?.length) || /task\s*1/i.test(primaryPrompt ?? "");
+  const primaryIsTask1 = Boolean(sourceVisual || dataVisual?.rows?.length) || /task\s*1/i.test(primaryPrompt ?? "");
   const splitModel = (text?: string) => (text ? text.split(/\n+/).map((p) => p.trim()).filter(Boolean) : []);
   if (primaryPrompt) {
     tasks.push({
       id: primaryIsTask1 ? "task1" : "main",
       kind: primaryIsTask1 ? "task1" : "task2",
-      label: primaryIsTask1 ? "Task 1 · Báo cáo số liệu" : "Task 2 · Đề chính",
+      label: primaryIsTask1 ? "Task 1 · Mô tả sơ đồ / biểu đồ" : "Task 2 · Đề chính",
       prompt: primaryPrompt,
       minWords: primaryIsTask1 ? 150 : 250,
       minutes: primaryIsTask1 ? 20 : 40,
@@ -1190,12 +1197,14 @@ export function WritingStudioPractice({
       )}
 
       <div className="v3-writing-prompt-card">
-        <span className="eyebrow">{isTask1 ? "ĐỀ BÀI WRITING TASK 1 (BÁO CÁO SỐ LIỆU)" : "ĐỀ BÀI WRITING TASK 2 (BÀI LUẬN)"}</span>
+        <span className="eyebrow">{isTask1 ? "ĐỀ BÀI WRITING TASK 1" : "ĐỀ BÀI WRITING TASK 2 (BÀI LUẬN)"}</span>
         <h3>{active.prompt}</h3>
 
-        {isTask1 && (visualUrl || dataVisual?.rows?.length) ? (
+        {isTask1 && sourceVisual && <StarterVisual value={sourceVisual} imageUrl={visualUrl} />}
+
+        {isTask1 && (!sourceVisual && visualUrl || dataVisual?.rows?.length) ? (
           <div className="v3-writing-visual-grid">
-            {visualUrl && (
+            {visualUrl && !sourceVisual && (
               <figure className="v3-unit-visual-figure">
                 <img src={visualUrl} alt="Biểu đồ dữ liệu Writing Task 1" loading="lazy" />
                 <figcaption>Quan sát xu hướng lớn nhất (Overview) và các mốc so sánh chính.</figcaption>
@@ -2077,6 +2086,7 @@ export function PackageLessonPractice({
             task1Prompt={content.task}
             dataVisual={content.data_visual}
             visualUrl={visualUrl}
+            sourceVisual={content.source_visual}
             task1Template={content.v3_enrichment?.writing_task1_template}
             essay={content.advanced_essay}
             task2Template={content.v3_enrichment?.writing_task2_template}

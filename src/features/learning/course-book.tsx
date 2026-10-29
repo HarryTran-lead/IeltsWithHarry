@@ -11,7 +11,7 @@ import { BookWorkbook } from "./course-book-lesson";
 import { BookPanel, type BookMark, type PanelTab } from "./course-book-panel";
 import { loadPracticeResults, subscribePracticeResults, type PracticeResult } from "./practice-results";
 import { BookPageView, describePage, splitUnitTitle, unitColor, unitLabel, type BookContent, type BookContext, type BookLesson, type BookPage } from "./course-book-pages";
-import { starterPagesForLesson } from "./starter-book-source";
+import { starterPageCountV2, starterPagesForLesson } from "./starter-book-source";
 import "./course-book.css";
 import "./course-book-tools.css";
 
@@ -41,20 +41,28 @@ function buildPages(course: StageCourse) {
   const lessonStart = new Map<string, number>();
   const sourceStart = new Map<string, number>();
   const legacyPage = new Map<number, number>();
+  const edition2Page = new Map<number, number>([[0, 0], [1, 1], [2, 2]]);
   let oldPage = 3;
+  let oldPageV2 = 3;
   course.units.forEach((unit, unitIndex) => {
     unitStart.set(unit.id, pages.length);
     legacyPage.set(oldPage++, pages.length);
     legacyPage.set(oldPage++, pages.length + 1);
+    edition2Page.set(oldPageV2++, pages.length);
+    edition2Page.set(oldPageV2++, pages.length + 1);
     pages.push({ kind: "unit-art", unit, unitIndex }, { kind: "unit-overview", unit, unitIndex });
     unit.lessons.forEach((lesson, lessonIndex) => {
       lessonStart.set(lesson.id, pages.length);
       legacyPage.set(oldPage++, pages.length);
       legacyPage.set(oldPage++, pages.length + 1);
+      edition2Page.set(oldPageV2++, pages.length);
+      edition2Page.set(oldPageV2++, pages.length + 1);
       pages.push({ kind: "lesson-open", unit, unitIndex, lesson, lessonIndex }, { kind: "lesson-practice", unit, unitIndex, lesson, lessonIndex });
       if (course.slug === "mindsetstarter-topic-practice-4-5") {
         const sourcePages = starterPagesForLesson(unitIndex, lessonIndex, lesson.id, lesson.skill);
         if (sourcePages.length) sourceStart.set(lesson.id, pages.length);
+        const priorCount = starterPageCountV2(unitIndex, lesson.skill);
+        for (let i = 0; i < priorCount; i++) edition2Page.set(oldPageV2++, pages.length + Math.min(sourcePages.length - 1, Math.floor(i * sourcePages.length / priorCount)));
         pages.push(...sourcePages.map((source) => ({ ...source, unit, lesson } as BookPage)));
       }
     });
@@ -63,8 +71,11 @@ function buildPages(course: StageCourse) {
   legacyPage.set(oldPage++, finishPage);
   legacyPage.set(oldPage++, finishPage + 1);
   legacyPage.set(oldPage, finishPage + 2);
+  edition2Page.set(oldPageV2++, finishPage);
+  edition2Page.set(oldPageV2++, finishPage + 1);
+  edition2Page.set(oldPageV2, finishPage + 2);
   pages.push({ kind: "finish" }, { kind: "certificate" }, { kind: "back" });
-  return { pages, unitStart, lessonStart, sourceStart, legacyPage, finishPage };
+  return { pages, unitStart, lessonStart, sourceStart, legacyPage, edition2Page, finishPage };
 }
 
 // Page 0 is the cover on its own; spread s then shows pages 2s-1 (left) and 2s (right).
@@ -148,7 +159,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   finalCheckSlug: string;
   toolbarStart?: ReactNode;
 }) {
-  const { pages, unitStart, lessonStart, sourceStart, legacyPage, finishPage } = useMemo(() => buildPages(course), [course]);
+  const { pages, unitStart, lessonStart, sourceStart, legacyPage, edition2Page, finishPage } = useMemo(() => buildPages(course), [course]);
   const last = pages.length - 1;
   const storageKey = `course-book:${course.id}`;
   const editionKey = `${storageKey}:edition`;
@@ -162,8 +173,8 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
     const stored = Number(readStored(storageKey));
     const fromLink = Number.isFinite(fromHash) && window.location.hash;
     const raw = fromLink ? fromHash : Number.isFinite(stored) ? stored : 0;
-    const currentEdition = fromLink ? new URLSearchParams(window.location.hash.slice(1)).get("v") === "2" : readStored(editionKey) === "2";
-    const value = expanded && !currentEdition ? legacyPage.get(raw) ?? raw : raw;
+    const edition = fromLink ? new URLSearchParams(window.location.hash.slice(1)).get("v") : readStored(editionKey);
+    const value = expanded ? edition === "3" ? raw : edition === "2" ? edition2Page.get(raw) ?? raw : legacyPage.get(raw) ?? raw : raw;
     return Math.min(Math.max(0, value), last);
   });
   const [flip, setFlip] = useState<Flip | null>(null);
@@ -234,9 +245,9 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const anchor = layout.single ? page : firstPageOf(spreadOf(page));
   useEffect(() => {
     writeStored(storageKey, String(anchor));
-    if (expanded) writeStored(editionKey, "2");
+    if (expanded) writeStored(editionKey, "3");
     const open = !openItem ? "" : openItem.kind === "lesson" ? `&l=${encodeURIComponent(openItem.slug)}${openItem.groupId ? `&g=${encodeURIComponent(openItem.groupId)}` : ""}` : `&c=${encodeURIComponent(openItem.slug)}&t=${encodeURIComponent(openItem.title)}`;
-    window.history.replaceState(window.history.state, "", `#p=${anchor}${expanded ? "&v=2" : ""}${open}`);
+    window.history.replaceState(window.history.state, "", `#p=${anchor}${expanded ? "&v=3" : ""}${open}`);
   }, [anchor, editionKey, expanded, openItem, storageKey]);
 
   const goTo = useCallback((target: number) => {
@@ -289,10 +300,10 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const marks = useMemo<BookMark[]>(() => entries.flatMap((entry) => {
     if (entry.kind !== "note" || !entry.sourcePath.startsWith(`${bookPath}#p=`)) return [];
     const pageFromPath = Number(entry.sourcePath.slice(bookPath.length + 3).split("&")[0]);
-    const page = expanded && !entry.sourcePath.includes("&v=2") ? legacyPage.get(pageFromPath) ?? pageFromPath : pageFromPath;
+    const page = expanded ? entry.sourcePath.includes("&v=3") ? pageFromPath : entry.sourcePath.includes("&v=2") ? edition2Page.get(pageFromPath) ?? pageFromPath : legacyPage.get(pageFromPath) ?? pageFromPath : pageFromPath;
     if (!Number.isInteger(page) || page < 0 || page > last) return [];
     return [{ id: entry.id, page, kind: entry.title.startsWith(BOOKMARK_PREFIX) ? "bookmark" as const : "note" as const, title: entry.title, body: entry.body }];
-  }), [bookPath, entries, expanded, last, legacyPage]);
+  }), [bookPath, entries, expanded, last, legacyPage, edition2Page]);
 
   useEffect(() => {
     if (openItem || panelTab || noteDraft !== null) return;
@@ -375,13 +386,13 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
 
   function toggleBookmark() {
     if (pageBookmarks.length) { pageBookmarks.forEach((mark) => void removeEntry(mark.id).catch(() => undefined)); return; }
-    void addEntry({ kind: "note", title: `${BOOKMARK_PREFIX} · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: `Đánh dấu trong sách ${course.title}`, meaningVi: "", example: "" }, `${bookPath}#p=${markPage}${expanded ? "&v=2" : ""}`).catch(() => undefined);
+    void addEntry({ kind: "note", title: `${BOOKMARK_PREFIX} · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: `Đánh dấu trong sách ${course.title}`, meaningVi: "", example: "" }, `${bookPath}#p=${markPage}${expanded ? "&v=3" : ""}`).catch(() => undefined);
   }
 
   function saveNote() {
     const body = (noteDraft ?? "").trim();
     if (!body) return;
-    void addEntry({ kind: "note", title: `Ghi chú sách · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: body.slice(0, 5000), meaningVi: "", example: "" }, `${bookPath}#p=${markPage}${expanded ? "&v=2" : ""}`).catch(() => undefined);
+    void addEntry({ kind: "note", title: `Ghi chú sách · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: body.slice(0, 5000), meaningVi: "", example: "" }, `${bookPath}#p=${markPage}${expanded ? "&v=3" : ""}`).catch(() => undefined);
     setNoteDraft(null);
   }
 
