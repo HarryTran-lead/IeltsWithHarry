@@ -24,4 +24,11 @@ describe("Reading vocabulary review", () => {
     expect(dayTwo.mistake_open).toBe(false);
     expect(dayTwo.mastered_at).toBe("2026-10-31T08:00:00.000Z");
   });
+
+  it("treats ordinary and SRS flashcards as one exercise format", () => {
+    const first = nextReadingProgress("RV0002", undefined, "good", "flashcard", "self_reviewed", new Date("2026-10-29T08:00:00Z"));
+    const second = nextReadingProgress("RV0002", first, "good", "srs", "self_reviewed", new Date("2026-10-30T08:00:00Z"));
+    expect(second.success_types).toEqual(["flashcard"]);
+    expect(second.mastered_at).toBeNull();
+  });
 });

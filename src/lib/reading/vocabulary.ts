@@ -66,8 +66,9 @@ export function nextReadingProgress(
   const effectiveRating = result === "incorrect" ? "again" : rating;
   const failed = rating === "again" || rating === "hard" || result === "incorrect";
   const success = !failed && type !== "context";
+  const exerciseFormat = type === "srs" ? "flashcard" : type;
   const successDays = success ? [...new Set([...(previous?.success_days ?? []), day])] : previous?.success_days ?? [];
-  const successTypes = success ? [...new Set([...(previous?.success_types ?? []), type])] : previous?.success_types ?? [];
+  const successTypes = success ? [...new Set([...(previous?.success_types ?? []), exerciseFormat])] : previous?.success_types ?? [];
   const lastMistake = failed ? iso : previous?.last_mistake_at ?? null;
   const recoveryDays = failed ? [] : previous?.mistake_open && lastMistake && day > lastMistake.slice(0, 10)
     ? [...new Set([...(previous.recovery_days ?? []), day])] : previous?.recovery_days ?? [];
@@ -107,4 +108,38 @@ export function readingQueue(words: ReadingWord[], progress: ReadingProgress[], 
     || a.source_order - b.source_order);
   const fresh = words.filter((word) => !byId.has(word.id)).sort((a, b) => a.source_order - b.source_order);
   return [...due, ...fresh];
+}
+
+function localDay(value: Date): string {
+  return `${value.getFullYear()}-${String(value.getMonth() + 1).padStart(2, "0")}-${String(value.getDate()).padStart(2, "0")}`;
+}
+
+export function readingActivityStats(attempts: ReadingAttempt[], now: Date): { weeklyActiveDays: number; streakDays: number } {
+  const active = new Set(attempts.map((attempt) => localDay(new Date(attempt.created_at))));
+  const day = new Date(now);
+  day.setHours(0, 0, 0, 0);
+  let weeklyActiveDays = 0;
+  for (let index = 0; index < 7; index++) {
+    if (active.has(localDay(day))) weeklyActiveDays++;
+    day.setDate(day.getDate() - 1);
+  }
+  const streakDay = new Date(now);
+  streakDay.setHours(0, 0, 0, 0);
+  if (!active.has(localDay(streakDay))) streakDay.setDate(streakDay.getDate() - 1);
+  let streakDays = 0;
+  while (active.has(localDay(streakDay))) {
+    streakDays++;
+    streakDay.setDate(streakDay.getDate() - 1);
+  }
+  return { weeklyActiveDays, streakDays };
+}
+
+export function readingDueCounts(progress: ReadingProgress[], now: Date): { dueToday: number; overdue: number } {
+  const start = new Date(now);
+  start.setHours(0, 0, 0, 0);
+  const end = new Date(start);
+  end.setDate(end.getDate() + 1);
+  const overdue = progress.filter((row) => new Date(row.due_at) < start).length;
+  const dueToday = progress.filter((row) => new Date(row.due_at) >= start && new Date(row.due_at) < end).length;
+  return { dueToday, overdue };
 }
