@@ -2,33 +2,20 @@
 
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, BookOpenText, Download, Headphones } from "lucide-react";
-import { starterSupplementById, starterSupplementUnits } from "@/lib/starter-supplement";
+import { useNotebook } from "@/features/notebook/notebook-store";
+import { starterBookCourse, starterSupplementById, starterSupplementUnits } from "@/lib/starter-supplement";
+import { CourseBook } from "./course-book";
 import "./starter-supplement-page.css";
 
 export function StarterBookPage() {
-  const activityCount = starterSupplementUnits.reduce((sum, unit) => sum + unit.activityCount, 0);
-  return <div className="content-page starter-book">
-    <Link className="starter-material-back" href="/app/learn"><ArrowLeft size={17} /> Lộ trình học</Link>
-    <div className="starter-book-spread">
-      <header className="starter-book-cover">
-        <span>IELTS WITH HARRY · SÁCH HỌC</span>
-        <h1>IELTS Starter</h1>
-        <strong>BAND 4.0–5.0</strong>
-        <p>8 unit theo chủ đề, luyện Reading, Writing, Listening và Speaking. Chọn unit để xem bài tập đầy đủ và nghe audio.</p>
-        <div className="starter-book-cover-foot">U01—U08 <BookOpenText size={27} /></div>
-      </header>
-      <section className="starter-book-contents" aria-label="Mục lục sách IELTS Starter">
-        <div className="starter-book-contents-head"><span>MỤC LỤC</span><h2>Chọn một unit để bắt đầu</h2><p>{starterSupplementUnits.length} unit · {activityCount} nhóm bài tập</p></div>
-        <ol>{starterSupplementUnits.map((unit) => <li key={unit.id}>
-          <Link href={`/app/learn/ielts-starter/supplement/${unit.id.toLowerCase()}`}>
-            <span className="starter-book-unit-no">{String(unit.order).padStart(2, "0")}</span>
-            <span className="starter-book-unit-copy"><strong>{unit.title}</strong><small>{unit.summaryVi}</small><em>{unit.skills.map((skill) => skill.name).join(" · ")} · {unit.tracks.length} audio</em></span>
-            <ArrowRight size={19} aria-hidden="true" />
-          </Link>
-        </li>)}</ol>
-      </section>
-    </div>
-  </div>;
+  const { visits } = useNotebook();
+  const opened = new Set(visits.map((visit) => visit.path));
+  return <CourseBook
+    course={starterBookCourse}
+    isDone={(lesson) => opened.has(`/app/learn/ielts-starter/supplement/${lesson.unit_id.toLowerCase()}`)}
+    hasChecks={false}
+    finalCheckSlug=""
+  />;
 }
 
 export function StarterSupplementPage({ unitId }: { unitId: string }) {
