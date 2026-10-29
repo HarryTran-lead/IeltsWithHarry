@@ -6,7 +6,6 @@ import { Check, Lock } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { stages, type Stage } from "@/lib/demo-data";
-import { starterSupplementUnits, visitedStarterUnitCount } from "@/lib/starter-supplement";
 import { demoMode, releaseLocks } from "@/lib/runtime";
 import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -21,9 +20,8 @@ export type StageStop = { stage: Stage; state: StageState; total: number; explor
  * first with lessons still to open), open, or still to come. A lesson counts
  * once it has been opened or submitted. Demo mode keeps the sample statuses.
  */
-export function stageStops(courses: StageCourse[], explored: (slug: string) => boolean, starterOpened = 0): StageStop[] {
+export function stageStops(courses: StageCourse[], explored: (slug: string) => boolean): StageStop[] {
   const progress = stages.map((stage) => {
-    if (stage.id === "ielts-starter") return { stage, total: starterSupplementUnits.length, explored: starterOpened };
     const lessons = courses.filter((course) => course.stage_id === stage.id).flatMap((course) => course.units.flatMap((unit) => unit.lessons));
     return { stage, total: lessons.length, explored: lessons.filter((lesson) => explored(lesson.slug)).length };
   });
@@ -39,7 +37,7 @@ export function useStageStops() {
   const { visits } = useNotebook();
   const visited = new Set(visits.map((visit) => visit.path));
   const submitted = new Set(attempts.map((attempt) => attempt.lesson));
-  return stageStops(courses, (slug) => visited.has(`/app/lesson/${slug}`) || submitted.has(slug), visitedStarterUnitCount(visited));
+  return stageStops(courses, (slug) => visited.has(`/app/lesson/${slug}`) || submitted.has(slug));
 }
 
 // Scene coordinates (viewBox 1000 × 420). Stops keep to the middle band so their labels fit below.
@@ -70,7 +68,6 @@ const road = points.slice(0, -1).map((_, i) => segment(i));
 
 function statusText(stop: StageStop) {
   if (stop.state === "future") return "Sắp mở";
-  if (stop.stage.id === "ielts-starter") return stop.state === "done" ? "Đã xem 8 unit" : `${stop.explored}/${stop.total} unit đã xem`;
   if (stop.total === 0) return stop.state === "done" ? "Đã hoàn thành" : stop.state === "current" ? "Chặng hiện tại" : "Mở để xem";
   if (stop.state === "done") return `Xong ${stop.total} bài`;
   return `${stop.explored}/${stop.total} bài`;

@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { Bookmark, Check, FileText, Grid3x3, List, Search, StickyNote, Trash2, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
-import { STARTER_SOURCE_COURSE_SLUG } from "@/lib/starter-supplement";
 import type { StageCourse } from "./stage-courses";
 import { describePage, lessonShortTitle, splitUnitTitle, themeOf, unitColor, unitLabel, type BookLesson, type BookPage } from "./course-book-pages";
 import { resultTone, type PracticeResult } from "./practice-results";
@@ -19,7 +18,6 @@ const indexCache = new Map<string, Promise<LessonIndex[]>>();
 export const fold = (text: string) => text.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/gi, "d").toLowerCase();
 
 function loadIndex(course: StageCourse) {
-  if (course.slug === STARTER_SOURCE_COURSE_SLUG) return Promise.resolve([]);
   let request = indexCache.get(course.id);
   if (!request) {
     const ids = course.units.flatMap((unit) => unit.lessons.map((lesson) => lesson.id));
