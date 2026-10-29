@@ -1,26 +1,4 @@
 .starter-material { display: grid; gap: 22px; max-width: 1280px; margin: 0 auto; padding-bottom: 48px; }
-.starter-book { display: grid; gap: 18px; max-width: 1280px; margin: 0 auto; padding-bottom: 48px; }
-.starter-book-spread { display: grid; grid-template-columns: minmax(275px, .7fr) minmax(0, 1.3fr); min-height: 720px; border: 1px solid #c9d8d4; border-radius: 20px; overflow: hidden; background: #fffdf5; box-shadow: 0 24px 60px #15304c24; }
-.starter-book-cover { display: flex; flex-direction: column; padding: clamp(30px, 5vw, 66px); background: linear-gradient(150deg, #153252 0%, #126d75 68%, #1f9690 100%); border-right: 12px solid #e7d9b7; color: #fff; }
-.starter-book-cover > span { color: #b9f0df; font-size: 12px; font-weight: 900; letter-spacing: .12em; }
-.starter-book-cover h1 { margin: 90px 0 8px; font-size: clamp(40px, 6vw, 72px); line-height: 1.02; }
-.starter-book-cover > strong { color: #fee2a5; font-size: clamp(19px, 2vw, 26px); letter-spacing: .12em; }
-.starter-book-cover p { max-width: 380px; margin: 30px 0; line-height: 1.75; }
-.starter-book-cover-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 30px; border-top: 1px solid #ffffff66; font-size: 13px; font-weight: 800; letter-spacing: .1em; }
-.starter-book-contents { padding: clamp(24px, 4vw, 46px); }
-.starter-book-contents-head > span { color: #0c8587; font-size: 12px; font-weight: 900; letter-spacing: .12em; }
-.starter-book-contents-head h2 { margin: 7px 0; color: #183755; font-size: clamp(25px, 3vw, 36px); }
-.starter-book-contents-head p { margin: 0 0 20px; color: #647689; }
-.starter-book-contents ol { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
-.starter-book-contents li { border-top: 1px solid #dce8e4; }
-.starter-book-contents li:last-child { border-bottom: 1px solid #dce8e4; }
-.starter-book-contents li a { display: flex; align-items: center; gap: 16px; padding: 14px 4px; color: #183755; text-decoration: none; }
-.starter-book-contents li a:hover, .starter-book-contents li a:focus-visible { background: #eaf7f3; }
-.starter-book-unit-no { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 11px; background: #e0f3ee; color: #087f84; font-weight: 900; }
-.starter-book-unit-copy { display: grid; gap: 3px; min-width: 0; flex: 1; }
-.starter-book-unit-copy strong { font-size: 17px; }
-.starter-book-unit-copy small { color: #52677a; font-size: 12px; line-height: 1.45; }
-.starter-book-unit-copy em { color: #0b8182; font-size: 11px; font-style: normal; font-weight: 800; }
 .starter-material-back { display: inline-flex; align-items: center; gap: 7px; justify-self: start; color: #087f84; font-weight: 800; text-decoration: none; }
 .starter-material-hero { padding: clamp(24px, 4vw, 42px); border-radius: 24px; background: linear-gradient(120deg, #173354, #167f87); color: #fff; box-shadow: 0 16px 36px #15304c24; }
 .starter-material-hero > span { color: #b9f0df; font-size: 12px; font-weight: 900; letter-spacing: .1em; }
@@ -49,5 +27,4 @@
 .starter-material-pager { display: flex; justify-content: space-between; gap: 16px; }
 .starter-material-pager a { display: inline-flex; align-items: center; gap: 7px; color: #087f84; font-weight: 800; text-decoration: none; }
 @media (max-width: 900px) { .starter-material-skills, .starter-material-tracks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 900px) { .starter-book-spread { grid-template-columns: 1fr; } .starter-book-cover { min-height: 310px; border-right: 0; border-bottom: 10px solid #e7d9b7; } .starter-book-cover h1 { margin-top: 38px; } }
-@media (max-width: 620px) { .starter-material { gap: 14px; } .starter-material-skills, .starter-material-tracks { grid-template-columns: 1fr; } .starter-material-section-head { align-items: flex-start; flex-direction: column; } .starter-material-sheet iframe { min-height: 440px; } .starter-book-contents li a { align-items: flex-start; gap: 10px; } .starter-book-unit-copy small { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; } .starter-material-pager { flex-wrap: wrap; } }
+@media (max-width: 620px) { .starter-material { gap: 14px; } .starter-material-skills, .starter-material-tracks { grid-template-columns: 1fr; } .starter-material-section-head { align-items: flex-start; flex-direction: column; } .starter-material-sheet iframe { min-height: 440px; } .starter-material-pager { flex-wrap: wrap; } }
