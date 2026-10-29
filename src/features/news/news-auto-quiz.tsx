@@ -9,6 +9,7 @@ import { usePracticeClock } from "@/features/reading/reading-workspace";
 import { addHighlight, highlightColors, parseHighlights, segments, type Highlight, type HighlightColor } from "@/lib/highlights";
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { estimateBand, formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
+import { choiceTypes, gapTypes } from "@/lib/news/ielts-passage";
 import "@/app/news-enrichment.css";
 
 export type { QuestionType };
@@ -20,13 +21,20 @@ const ATTEMPT_COLUMNS = "id,article_id,score,total,submitted_at,partial,breakdow
 
 // Instructions follow the wording of IELTS Academic Reading papers.
 const groups: Record<QuestionType, { title: string; short: string; instruction: string; hint: string }> = {
-  tfng: { title: "True / False / Not Given", short: "True / False / Not Given", hint: "Đúng với bài · Trái với bài · Bài không nhắc tới",
-    instruction: "Do the following statements agree with the information given in the article? Choose TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this." },
-  mcq: { title: "Multiple choice", short: "Multiple choice", hint: "Chọn một đáp án đúng", instruction: "Choose the correct letter, A, B, C or D." },
-  sentence_completion: { title: "Sentence completion", short: "Sentence completion", hint: "Điền tối đa 3 từ lấy nguyên văn trong bài",
-    instruction: "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the article for each answer." },
-  short_answer: { title: "Short-answer questions", short: "Short answer", hint: "Trả lời tối đa 3 từ và/hoặc một con số lấy trong bài",
-    instruction: "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the article for each answer." },
+  mcq: { title: "Multiple Choice", short: "Multiple Choice", instruction: "Choose the correct answer, A, B, C or D.", hint: "Chọn một đáp án đúng" },
+  tfng: { title: "True / False / Not Given", short: "True / False / Not Given", instruction: "Do the statements agree with the information in the article?", hint: "Đúng · Sai · Bài không cho biết" },
+  ynng: { title: "Yes / No / Not Given", short: "Yes / No / Not Given", instruction: "Do the statements agree with the writer's views?", hint: "Đồng ý · Không đồng ý · Không nêu" },
+  matching_headings: { title: "Matching Headings", short: "Matching Headings", instruction: "Choose the best heading for the named paragraph.", hint: "Ghép tiêu đề với đoạn" },
+  matching_information: { title: "Matching Information", short: "Matching Information", instruction: "Choose the paragraph containing the information.", hint: "Tìm đoạn chứa thông tin" },
+  matching_features: { title: "Matching Features", short: "Matching Features", instruction: "Match the statement to the correct person, place or organisation.", hint: "Ghép đặc điểm với đối tượng" },
+  matching_sentence_endings: { title: "Matching Sentence Endings", short: "Matching Sentence Endings", instruction: "Choose the phrase that best completes the sentence.", hint: "Ghép nửa sau của câu" },
+  sentence_completion: { title: "Sentence Completion", short: "Sentence Completion", instruction: "Complete the sentence. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền tối đa 3 từ" },
+  summary_completion: { title: "Summary Completion", short: "Summary Completion", instruction: "Complete the summary. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào tóm tắt" },
+  note_completion: { title: "Note Completion", short: "Note Completion", instruction: "Complete the note. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào ghi chú" },
+  table_completion: { title: "Table Completion", short: "Table Completion", instruction: "Complete the table entry. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào bảng" },
+  flow_chart_completion: { title: "Flow-chart Completion", short: "Flow-chart Completion", instruction: "Complete the process step. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào lưu đồ" },
+  diagram_label_completion: { title: "Diagram Label Completion", short: "Diagram Label Completion", instruction: "Complete the text diagram. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền nhãn sơ đồ" },
+  short_answer: { title: "Short-answer Questions", short: "Short Answer", instruction: "Answer using NO MORE THAN THREE WORDS from the article.", hint: "Trả lời ngắn" },
 };
 
 const ALL_TYPES: QuestionType[] = [];
@@ -95,7 +103,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
       if (!previous) return;
       setAnswers(Object.fromEntries(list.filter((question) => previous.answers[question.id] !== undefined).map((question) => {
         const value = previous.answers[question.id];
-        return [question.id, question.question_type === "tfng" || question.question_type === "mcq" ? Number(value) : value];
+        return [question.id, choiceTypes.has(question.question_type) ? Number(value) : value];
       })));
       setReviews(Object.fromEntries(previous.review.map((item) => [item.id, item])));
       setSaved({ submittedAt: previous.submittedAt, attempts: previous.attempts });
@@ -247,7 +255,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
         {section.items.map(({ question, number }) => {
           const review = graded ? reviews[question.id] : undefined;
           const value = answers[question.id];
-          const choice = question.question_type === "tfng" || question.question_type === "mcq";
+          const choice = choiceTypes.has(question.question_type);
           const setValue = (next: number | string) => setAnswers((current) => ({ ...current, [question.id]: next }));
           return <div className={`news-auto-question ${review ? (review.correct ? "is-correct" : "is-wrong") : ""}`} key={question.id} data-q={number}>
             <strong>Câu {number}</strong>
@@ -260,18 +268,18 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
               {highlightColors.map((color)=><button type="button" key={color} className={color} onClick={()=>paintQuestion(question,color)} aria-label={`Highlight màu ${color}`}/>)}
               {selection.mark&&<button type="button" className="remove" onClick={()=>{const next=(questionHighlights[question.id]??[]).filter((item)=>item.id!==selection.mark);setQuestionHighlights((current)=>({...current,[question.id]:next}));try{localStorage.setItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`,JSON.stringify(next));}catch{}setSelection(null);}}>Bỏ highlight</button>}
             </div>}
-            {question.question_type === "short_answer" && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Câu trả lời câu ${number}`}
+            {!choice && !gapTypes.has(question.question_type) && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Câu trả lời câu ${number}`}
               value={typeof value === "string" ? value : ""} disabled={graded} onChange={(event) => setValue(event.target.value)} placeholder="Tối đa 3 từ"/>}
-            {question.question_type === "sentence_completion" && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
+            {gapTypes.has(question.question_type) && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
               value={typeof value === "string" ? value : ""} disabled={graded} onChange={(event) => setValue(event.target.value)} placeholder="Điền vào chỗ trống · tối đa 3 từ"/>}
-            {choice && <div className={`news-auto-options ${question.question_type === "tfng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
+            {choice && <div className={`news-auto-options ${question.question_type === "tfng" || question.question_type === "ynng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
               <label key={index} className={`${value === index ? "selected" : ""} ${review?.correctIndex === index ? "correct" : ""} ${review && value === index && index !== review.correctIndex ? "wrong" : ""}`}>
                 <input type="radio" name={`news-ai-${question.id}`} checked={value === index} disabled={graded} onChange={() => setValue(index)}/>
-                {question.question_type === "mcq" && <span>{"ABCD"[index]}</span>}<em>{question.question_type === "tfng" ? option.toUpperCase() : option}</em>
+                {question.question_type !== "tfng" && question.question_type !== "ynng" && <span>{"ABCD"[index]}</span>}<em>{question.question_type === "tfng" || question.question_type === "ynng" ? option.toUpperCase() : option}</em>
                 {review?.optionNotes?.[index] && <small className="news-auto-note">{index === review.correctIndex ? "✓ " : "✗ "}{review.optionNotes[index]}</small>}
               </label>)}</div>}
             {review && <div className={`news-auto-explanation ${review.correct ? "" : "wrong"}`}>{review.correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
-              <strong>{review.correct ? "Chính xác! " : "Chưa đúng. "}{review.correctIndex !== null ? `Đáp án: ${question.question_type === "tfng" ? question.options[review.correctIndex].toUpperCase() : question.options[review.correctIndex]}` : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
+              <strong>{review.correct ? "Chính xác! " : "Chưa đúng. "}{review.correctIndex !== null ? `Đáp án: ${question.question_type === "tfng" || question.question_type === "ynng" ? question.options[review.correctIndex].toUpperCase() : question.options[review.correctIndex]}` : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
               {!review.correct && !choice && <p>Bạn trả lời: “{String(value ?? "")}”</p>}
               <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>
               <small><b>Câu dẫn chứng trong bài:</b> “{review.supportingSentence}”</small></div></div>}

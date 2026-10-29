@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { rankStories, readHotSignals, storyText, verifyRewrite, writeVietnamArticle, type RewriteSentence, type StoryCandidate } from "../src/lib/news/rewrite";
+import { choiceTypes, gapTypes, passageForKey, typesForKey } from "../src/lib/news/ielts-passage";
 import { newsHash, type NewsSource } from "../src/lib/news/providers";
 
 describe("choosing the hottest story for young readers", () => {
@@ -104,14 +105,16 @@ describe("AI rewrite pipeline", () => {
     suitable: true,
     sentences: Array.from({ length: 5 }, (_, index) => (index === 0 ? [background, ...cited] : cited).map((sentence) => ({ paragraph: index + 1, ...sentence }))).flat(),
   };
-  const quizReply = {
-    true_false_not_given: Array.from({ length: 7 }, (_, i) => ({ statement: `Rescue statement ${i + 1} about the hiker`, answer: ["TRUE", "FALSE", "NOT GIVEN"][i % 3], option_notes: ["Đúng vì bài nói rõ điều này.", "Sai vì bài không phủ nhận điều này.", "Sai vì bài có nhắc tới thông tin này."], supporting_sentence: evidence, explanation })),
-    multiple_choice: Array.from({ length: 7 }, (_, i) => ({ question: `Question ${i + 1}: what did the rescuers use?`, options: ["Ropes", "A helicopter", "A ladder", "A boat"], correct_index: 0, option_notes: ["Đúng: bài nói nhóm đã thử nghiệm điều này.", "Sai: bài không nhắc tới trường học.", "Sai: bài không nói về sao Hỏa.", "Sai: bài không nhắc tới phòng thí nghiệm."], supporting_sentence: evidence, explanation })),
-    sentence_completion: Array.from({ length: 5 }, (_, i) => ({ sentence: `Completion ${i + 1}: rescuers used ______ to lift the woman out.`, answer: "ropes", supporting_sentence: evidence, explanation })),
-    short_answer: Array.from({ length: 5 }, (_, i) => ({ question: `Short question ${i + 1}: how many friends were hiking with her?`, answer: "5 friends", supporting_sentence: cited[3].text, explanation })),
-    image_query: "forest hiking trail",
-  };
   const story = { title: "Malaysian tourist falls into 10-meter-deep hole in Da Lat", summary: source.split(". ")[0], text: source, url: "https://e.vnexpress.net/news/news/hole-in-da-lat-1.html", publisher: "VnExpress International" };
+  const quizReply = {
+    questions: typesForKey(story.url).flatMap((type) => Array.from({ length: 4 }, (_, i) => {
+      const options = type === "tfng" ? ["True", "False", "Not Given"] : type === "ynng" ? ["Yes", "No", "Not Given"] : ["Ropes", "Ladders", "Boats"];
+      const choice = choiceTypes.has(type);
+      return { type, prompt: `${type} ${i + 1}: ${gapTypes.has(type) ? "rescuers used ______ to lift the woman" : type === "short_answer" ? "what did the rescuers use?" : "what did the rescuers use?"}`,
+        options: choice ? options : [], correct_index: choice ? 0 : -1, answer: choice ? "" : "ropes",
+        supporting_sentence: evidence, explanation, option_notes: choice ? options.map(() => "Bài có nhắc tới chi tiết này một cách rõ ràng.") : [] };
+    })), image_query: "forest hiking trail",
+  };
   const reply = (value: unknown) => new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] }), { status: 200 });
   const sentenceCount = 26;
   /** Answers the writer, the fact-checker and the quiz request by their prompts. */
@@ -138,7 +141,8 @@ describe("AI rewrite pipeline", () => {
     expect(requests[1]).toContain("strict fact-checker");
     expect(requests[2]).toContain("IELTS Academic Reading");
     expect(requests[2]).not.toContain("SOURCE");
-    expect(result.questions).toHaveLength(20);
+    expect(result.questions).toHaveLength(12);
+    expect(result.readingPassage).toBe(passageForKey(story.url));
     expect(result.body.split(/\s+/).length).toBeGreaterThanOrEqual(280);
     expect(result.imageQuery).toBe("forest hiking trail");
   });

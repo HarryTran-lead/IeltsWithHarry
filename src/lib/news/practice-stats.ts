@@ -1,4 +1,5 @@
-export type QuestionType = "tfng" | "mcq" | "sentence_completion" | "short_answer";
+import { ieltsQuestionTypes, type IeltsQuestionType } from "./ielts-passage";
+export type QuestionType = IeltsQuestionType;
 export type TypeScore = { correct: number; total: number };
 export type Breakdown = Partial<Record<QuestionType, TypeScore>>;
 export type PracticeAttempt = {
@@ -6,9 +7,15 @@ export type PracticeAttempt = {
   partial?: boolean; breakdown?: Breakdown | null; duration_seconds?: number | null;
 };
 
-export const questionTypes: QuestionType[] = ["tfng", "mcq", "sentence_completion", "short_answer"];
+export const questionTypes: QuestionType[] = [...ieltsQuestionTypes];
 export const typeLabels: Record<QuestionType, string> = {
-  tfng: "True / False / Not Given", mcq: "Multiple choice", sentence_completion: "Sentence completion", short_answer: "Short answer",
+  mcq: "Multiple Choice", tfng: "True / False / Not Given", ynng: "Yes / No / Not Given",
+  matching_headings: "Matching Headings", matching_information: "Matching Information",
+  matching_features: "Matching Features", matching_sentence_endings: "Matching Sentence Endings",
+  sentence_completion: "Sentence Completion", summary_completion: "Summary Completion",
+  note_completion: "Note Completion", table_completion: "Table Completion",
+  flow_chart_completion: "Flow-chart Completion", diagram_label_completion: "Diagram Label Completion",
+  short_answer: "Short-answer Questions",
 };
 
 /** IELTS Academic Reading conversion, applied to a full quiz scaled to 40 questions. An estimate, not an official score. */

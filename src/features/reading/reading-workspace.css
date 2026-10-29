@@ -150,3 +150,8 @@
 @media (prefers-reduced-motion: reduce) {
   .rw.is-practice, .rw-popover, .rw-flyout { animation: none; }
 }
+.rw-setup-backdrop{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:18px;background:rgba(16,35,50,.55)}
+.rw-setup-dialog{position:relative;width:min(100%,580px);max-height:min(80vh,700px);overflow:auto;padding:28px;border-radius:20px;background:#fff;box-shadow:0 24px 80px rgba(16,35,50,.26)}
+.rw-setup-dialog h2{margin:8px 0;font-size:26px}.rw-setup-dialog p{margin:0 0 18px;color:#536779}
+.rw-setup-close{position:absolute;right:16px;top:16px;display:grid;place-items:center;width:32px;height:32px;border:0;border-radius:50%;background:#eef5f6;color:#32505d}
+.rw-setup-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}
