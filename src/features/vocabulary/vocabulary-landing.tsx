@@ -61,7 +61,7 @@ export function VocabularyLanding() {
 
         <div className="vocabulary-landing-section-head"><div><span className="vocabulary-landing-eyebrow">CHỌN MỘT CHỦ ĐỀ ĐỂ BẮT ĐẦU</span><h2>{collection === "ielts" ? "Chủ đề IELTS" : "Chủ đề A1–C2"} <small>{filteredTopics.length} chủ đề{libraryCount !== null ? ` · ${libraryCount.toLocaleString("vi-VN")} từ trong kho` : ""}</small></h2></div><Link href={`/app/vocabulary/library?collection=${collection}`}>Xem toàn bộ kho từ <ArrowRight size={16} /></Link></div>
         {filteredTopics.length ? <div className="vocabulary-landing-topic-grid">{filteredTopics.slice(0, visibleCount).map((topic) => <article className="vocabulary-landing-topic" key={topic}>
-          <TopicArt topic={topic} className="vocabulary-landing-topic-art" badge={false} />
+          <TopicArt localOnly topic={topic} className="vocabulary-landing-topic-art" badge={false} />
           <div className="vocabulary-landing-topic-content"><h3>{topic}</h3><span>{collection === "ielts" ? "Từ vựng IELTS" : "Từ vựng CEFR"}{level ? ` · ${collection === "ielts" ? "Band " : ""}${level}` : ""}</span><Link href={studyHref(topic)}>Bắt đầu học <ArrowRight size={16} /></Link></div>
         </article>)}</div> : <p className="vocabulary-landing-empty">Không tìm thấy chủ đề phù hợp. Thử một từ khóa khác.</p>}
         {visibleCount < filteredTopics.length && <button className="vocabulary-landing-more" type="button" onClick={() => setVisibleCount((count) => count + pageSize)}>Xem thêm chủ đề <ArrowRight size={16} /></button>}
