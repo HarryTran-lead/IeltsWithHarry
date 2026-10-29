@@ -95,7 +95,7 @@ export function BookPanel({ course, pages, unitStart, lessonStart, finishPage, v
     });
     pages.forEach((page, pageNumber) => {
       if (page.kind !== "source-detail" || found.length >= 60) return;
-      const content = `${page.title} ${page.subtitle ?? ""} ${page.paragraphs?.join(" ") ?? ""} ${page.items?.map((item) => `${item.question_en ?? item.question ?? ""} ${item.question_vi ?? ""}`).join(" ") ?? ""} ${page.words?.map((word) => word.join(" ")).join(" ") ?? ""}`;
+      const content = (page.sections ?? [page]).map((section) => `${section.title} ${section.subtitle ?? ""} ${section.paragraphs?.join(" ") ?? ""} ${section.items?.map((item) => `${item.question_en ?? item.question ?? ""} ${item.question_vi ?? ""}`).join(" ") ?? ""} ${section.words?.map((word) => word.join(" ")).join(" ") ?? ""}`).join(" ");
       if (fold(content).includes(needle)) found.push({ key: `s-${pageNumber}`, kind: page.lesson.skill, text: page.title, detail: `${unitLabel(page.unit, course).short} · trang ${pageNumber}`, page: pageNumber, lesson: page.lesson });
     });
     marks.forEach((mark) => { if (fold(`${mark.title} ${mark.body}`).includes(needle)) found.push({ key: `m-${mark.id}`, kind: mark.kind === "note" ? "Ghi chú" : "Dấu trang", text: mark.kind === "note" ? mark.body : mark.title, detail: `Trang ${mark.page}`, page: mark.page }); });

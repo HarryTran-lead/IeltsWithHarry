@@ -611,6 +611,14 @@
 .bk-source-map span { flex: 1; min-height: 25px; padding: 3px; border: 1px solid #b7c8af; font-size: 9px; text-align: center; }
 .bk-source-visual pre { white-space: pre-wrap; font-size: 10px; }
 .bk-source-figure img { display: block; max-width: 100%; max-height: 485px; margin: 0 auto; object-fit: contain; }
+.bk-source-section { margin: 0 0 13px; padding: 10px 11px 11px; border: 1px solid #eadfcd; border-radius: 9px; background: rgba(255,255,255,.7); }
+.bk-source-section h4 { margin: 0 0 5px; color: var(--navy); font: 800 13px/1.25 var(--font-display),sans-serif; }
+.bk-source-section .bk-source-subtitle { margin-bottom: 8px; }
+.bk-source-section .bk-source-question { padding: 7px 9px; margin-bottom: 5px; }
+.bk-source-inline-action { display: inline-flex; align-items: center; gap: 5px; margin-top: 4px; padding: 6px 9px; border: 0; border-radius: 6px; background: var(--skill); color: var(--skill-ink); font-size: 10px; font-weight: 800; cursor: pointer; }
+.bk-source-lead { padding: 8px 10px; margin-bottom: 10px; border-left: 3px solid var(--skill); background: #eef6f3; font-size: 11px; }
+.bk-source-lead b { display: block; margin-bottom: 3px; color: var(--navy); }
+.bk-source-lead p { margin: 0; line-height: 1.4; }
 .bk-practice-foot:has(.bk-linkish) { flex-wrap: wrap; }
 .bk-practice-foot > .bk-linkish { width: 100%; font-size: 11px; }
 .bk-focus { margin: 0; padding: 7px 10px; border-left: 4px solid var(--skill); background: color-mix(in srgb, var(--skill) 9%, #fff); font-size: 12px; }
