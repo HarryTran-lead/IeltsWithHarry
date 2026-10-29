@@ -13,6 +13,7 @@ import { NewsPortal } from "@/features/news/news-portal";
 import { VocabularyHub } from "@/features/vocabulary/vocabulary-hub";
 import { VocabularyLanding } from "@/features/vocabulary/vocabulary-landing";
 import { CollocationsPage } from "@/features/vocabulary/collocations-page";
+import { WordFormationPage } from "@/features/vocabulary/word-formation-page";
 import { IeltsLivePage, type IeltsSkill } from "@/features/ielts/ielts-live-page";
 import { IeltsSkillDashboard } from "@/features/ielts/ielts-skill-dashboard";
 import { lockedLearnerPath } from "@/lib/runtime";
@@ -50,6 +51,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <VocabularyLanding />
         ) : skill === "vocabulary" && skillMode === "collocations" ? (
           <CollocationsPage />
+        ) : skill === "vocabulary" && skillMode === "word-formation" ? (
+          <WordFormationPage />
         ) : skill && !skillMode ? (
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : skill === "speaking" && skillMode === "mock" ? (
