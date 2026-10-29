@@ -10,6 +10,7 @@ import type { StageCourse } from "./stage-courses";
 import { speakEnglishText, type PackageActivity, type PackageLesson } from "./course-package-practice";
 import { resultTone, type PracticeResult } from "./practice-results";
 import type { SourcePage } from "./starter-book-source";
+import { StarterVisual } from "./starter-visual";
 
 export type BookUnit = StageCourse["units"][number];
 export type BookLesson = BookUnit["lessons"][number];
@@ -296,7 +297,7 @@ function clip(text: string | undefined, max: number) {
   return value.length > max ? `${value.slice(0, max - 1).replace(/\s+\S*$/, "")}…` : value;
 }
 
-const isTask1 = (content: BookContent) => Boolean(content.data_visual?.rows?.length) || /task\s*1/i.test(content.task ?? "");
+const isTask1 = (content: BookContent) => Boolean(content.source_visual || content.data_visual?.rows?.length) || /task\s*1/i.test(content.task ?? "");
 
 /** A passage's paragraphs as [label, text], with the "[A] …" labels the workbook uses. */
 function paragraphsOf(passage: { text: string; sections?: [string, string][] }): [string, string][] {
@@ -398,6 +399,7 @@ function LessonOpenBody({ lesson, content }: { lesson: BookLesson; content: Book
       return <>
         <div className="bk-banner">{task1 ? "WRITING TASK 1 · ĐỀ BÀI" : "WRITING TASK 2 · ĐỀ BÀI"}</div>
         <p className="bk-task">{clip(content.task, 420)}</p>
+        {task1 && content.source_visual && <StarterVisual value={content.source_visual} imageUrl={content.visual_url ?? undefined} compact />}
         {task1 && content.data_visual && <table className="bk-table"><thead><tr>{content.data_visual.headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{content.data_visual.rows.slice(0, 6).map((row) => <tr key={row.join()}>{row.map((cell, index) => <td key={index}>{cell}</td>)}</tr>)}</tbody></table>}
         {steps.length > 0 && <Exercise number={1} title="Các bước lập dàn ý."><ul className="bk-checklist">{steps.slice(0, task1 ? 3 : 4).map((step) => <li key={step}>{clip(step, 150)}</li>)}</ul></Exercise>}
         {!task1 && sample && <Labelled label="Đoạn mẫu mở đầu">{clip(sample, 300)}</Labelled>}
@@ -529,20 +531,25 @@ function ProgressRing({ value, total, color }: { value: number; total: number; c
   return <span className="bk-ring" style={{ "--ratio": ratio, "--tone": color } as CSSProperties}><b>{value}</b><small>/{total}</small></span>;
 }
 
-function SourceVisual({ value }: { value: Record<string, unknown> }) {
-  const stages = Array.isArray(value.stages) ? value.stages.map(String) : [];
-  const labels = Array.isArray(value.labels) ? value.labels.map(String) : [];
-  const data = Array.isArray(value.data) ? value.data.map(Number) : [];
-  const series = value.series && typeof value.series === "object" ? Object.entries(value.series as Record<string, number[]>) : [];
-  const panels = Array.isArray(value.panels) ? value.panels as { year?: string; cells?: string[][] }[] : [];
-  return <div className="bk-source-visual">
-    {stages.length > 0 && <ol className="bk-source-flow">{stages.map((stage, index) => <li key={index}><span>{index + 1}</span>{stage}</li>)}</ol>}
-    {labels.length > 0 && <div className="bk-source-chart" role="img" aria-label={String(value.title ?? "Biểu đồ số liệu")}>
-      {labels.map((label, index) => <div key={index}><b>{label}</b><i style={{ width: `${Math.max(3, (data[index] ?? 0) / Math.max(...data, 1) * 100)}%` }} /><span>{data[index] ?? series.map(([name, values]) => `${name}: ${values[index]}`).join(" · ")}</span></div>)}
-    </div>}
-    {panels.map((panel, index) => <div className="bk-source-map" key={index}><b>{panel.year ?? `Bản đồ ${index + 1}`}</b><div>{panel.cells?.map((row, rowIndex) => <div key={rowIndex}>{row.map((cell, cellIndex) => <span key={cellIndex}>{cell}</span>)}</div>)}</div></div>)}
-    {!stages.length && !labels.length && !panels.length && <pre>{JSON.stringify(value, null, 2)}</pre>}
-  </div>;
+function SourceSection({ page, ctx, nested = false }: { page: SourcePage; ctx: BookContext; nested?: boolean }) {
+  return <section className={nested ? "bk-source-section" : undefined}>
+    {nested && <><h4>{page.title}</h4>{page.subtitle && <p className="bk-source-subtitle">{page.subtitle}</p>}</>}
+    {page.leadNote && <div className="bk-source-lead"><b>Chiến lược cần nhớ</b><p>{page.leadNote}</p></div>}
+    {page.audioUrl && <AudioChip src={page.audioUrl} title={page.title} script={page.paragraphs?.join(" ")} />}
+    {page.paragraphs?.map((paragraph, paragraphIndex) => <p className="bk-source-paragraph" key={paragraphIndex}>{paragraph}</p>)}
+    {page.visual && <StarterVisual value={page.visual} imageUrl={page.imageUrl} compact />}
+    {page.extraVisuals?.map((entry, index) => <StarterVisual key={index} value={entry.visual} imageUrl={entry.imageUrl} compact />)}
+    {page.imageUrl && !page.visual && <div className="bk-source-figure"><Image src={page.imageUrl} alt={page.title} width={480} height={480} /></div>}
+    {page.words && <ol className="bk-source-words">{page.words.map(([en, vi], wordIndex) => <li key={wordIndex}><b>{en}</b><span>{vi}</span></li>)}</ol>}
+    {page.steps?.map((step, stepIndex) => <div className="bk-source-step" key={stepIndex}>{step.split("\n").map((line, lineIndex) => lineIndex ? <p key={lineIndex}>{line}</p> : <b key={lineIndex}>{line}</b>)}</div>)}
+    {page.items?.map((item, itemIndex) => <div className="bk-source-question" key={item.id ?? itemIndex}>
+      <b>{(page.itemStart ?? 1) + itemIndex}. {item.question_en ?? item.question}</b>
+      {item.question_vi && <small>{item.question_vi}</small>}
+      {item.options?.length ? <ul>{item.options.map((option, optionIndex) => <li key={optionIndex}>{String.fromCharCode(65 + optionIndex)}. {option}</li>)}</ul> : <span className="bk-source-answer-line" aria-hidden="true" />}
+      <details><summary>{item.open || item.answer_type === "open" ? "Xem đáp án gợi ý" : "Xem đáp án và giải thích"}</summary><strong>{item.answer}</strong>{item.explanation_en && <p>{item.explanation_en}</p>}{item.explanation_vi && <p>{item.explanation_vi}</p>}</details>
+    </div>)}
+    {nested && page.groupId && <button type="button" className="bk-go bk-source-inline-action" onClick={() => ctx.openGroup(ctx.course.units[page.unitIndex].lessons[page.lessonIndex], page.groupId!)}>Làm phần này <ArrowRight size={14} /></button>}
+  </section>;
 }
 
 function SourceDetailPage({ page, index, side, ctx }: { page: Extract<BookPage, { kind: "source-detail" }>; index: number; side: "left" | "right"; ctx: BookContext }) {
@@ -551,25 +558,14 @@ function SourceDetailPage({ page, index, side, ctx }: { page: Extract<BookPage, 
   return <div className={`bk-page is-${side} bk-source-detail`} style={{ "--skill": theme.color, "--skill-ink": theme.ink, "--unit": unitColor(page.unitIndex) } as CSSProperties}>
     <div className="bk-page-body">
       <p className="bk-kicker">{label.short} · {page.lesson.skill} · {page.type === "group" ? "Bài tập" : "Bài học"}</p>
-      <h3 className="bk-source-title">{page.title}</h3>
-      {page.subtitle && <p className="bk-source-subtitle">{page.subtitle}</p>}
+      <h3 className="bk-source-title">{page.type === "bundle" ? page.lesson.skill === "Reading" || page.lesson.skill === "Listening" ? "Khám phá bài học" : "Luyện tập theo chủ điểm" : page.title}</h3>
+      {page.type !== "bundle" && page.subtitle && <p className="bk-source-subtitle">{page.subtitle}</p>}
       <div className="bk-source-content">
-        {page.audioUrl && <AudioChip src={page.audioUrl} title={page.title} script={page.paragraphs?.join(" ")} />}
-        {page.paragraphs?.map((paragraph, paragraphIndex) => <p className="bk-source-paragraph" key={paragraphIndex}>{paragraph}</p>)}
-        {page.visual && <SourceVisual value={page.visual} />}
-        {page.imageUrl && <div className="bk-source-figure"><Image src={page.imageUrl} alt={page.title} width={480} height={480} /></div>}
-        {page.words && <ol className="bk-source-words">{page.words.map(([en, vi], wordIndex) => <li key={wordIndex}><b>{en}</b><span>{vi}</span></li>)}</ol>}
-        {page.steps?.map((step, stepIndex) => <div className="bk-source-step" key={stepIndex}>{step.split("\n").map((line, lineIndex) => lineIndex ? <p key={lineIndex}>{line}</p> : <b key={lineIndex}>{line}</b>)}</div>)}
-        {page.items?.map((item, itemIndex) => <div className="bk-source-question" key={item.id ?? itemIndex}>
-          <b>{(page.itemStart ?? 1) + itemIndex}. {item.question_en ?? item.question}</b>
-          {item.question_vi && <small>{item.question_vi}</small>}
-          {item.options?.length ? <ul>{item.options.map((option, optionIndex) => <li key={optionIndex}>{String.fromCharCode(65 + optionIndex)}. {option}</li>)}</ul> : <span className="bk-source-answer-line" aria-hidden="true" />}
-          <details><summary>{item.open || item.answer_type === "open" ? "Xem đáp án gợi ý" : "Xem đáp án và giải thích"}</summary><strong>{item.answer}</strong>{item.explanation_en && <p>{item.explanation_en}</p>}{item.explanation_vi && <p>{item.explanation_vi}</p>}</details>
-        </div>)}
+        {page.sections ? page.sections.map((section, sectionIndex) => <SourceSection key={`${section.groupId ?? section.title}-${sectionIndex}`} page={section} ctx={ctx} nested />) : <SourceSection page={page} ctx={ctx} />}
       </div>
       <div className="bk-source-actions">
-        {page.groupId ? <button type="button" className="bk-go" onClick={() => ctx.openGroup(page.lesson, page.groupId!)}>Làm bài tập phần này <ArrowRight size={15} /></button>
-          : <button type="button" className="bk-go" onClick={() => ctx.openLesson(page.lesson)}>Học phần này <ArrowRight size={15} /></button>}
+        {page.groupId && !page.sections ? <button type="button" className="bk-go" onClick={() => ctx.openGroup(page.lesson, page.groupId!)}>Làm bài tập phần này <ArrowRight size={15} /></button>
+          : <button type="button" className="bk-go" onClick={() => ctx.openLesson(page.lesson)}>Học toàn bộ phần này <ArrowRight size={15} /></button>}
       </div>
     </div>
     <Folio number={index} label={`${label.short.toUpperCase()} / ${page.lesson.skill.toUpperCase()}`} side={side} color={theme.color} />

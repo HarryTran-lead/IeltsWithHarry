@@ -94,7 +94,7 @@ function contentOf(source, overviewUnit, skill) {
     aim: `${groups.length} nhóm bài tập · ${items.length} câu từ English Skill Lab U${String(overviewUnit.order).padStart(2, "0")}.`,
     instruction_vi: groups[0]?.instruction_vi ?? overviewUnit.summaryVi,
     activities: items,
-    source_groups: groups.map((group) => ({ id: group.id, title: group.title, instruction_en: group.instruction_en, instruction_vi: group.instruction_vi, item_ids: group.items.map((item, index) => item.id ?? `${group.id}-${String(index + 1).padStart(2, "0")}`) })),
+    source_groups: groups.map((group) => ({ id: group.id, title: group.title, instruction_en: group.instruction_en, instruction_vi: group.instruction_vi, visual_refs: [group.diagram_id, group.map_id, ...(group.visual?.split("+") ?? [])].filter(Boolean), item_ids: group.items.map((item, index) => item.id ?? `${group.id}-${String(index + 1).padStart(2, "0")}`) })),
     source_pdf_url: `/starter-supplement/${overviewUnit.id}/student.pdf`,
     source_course_id: catalog.course_id,
     assessment_slug: `mindsetstarter-m${String(overviewUnit.order).padStart(2, "0")}-check`,
@@ -109,8 +109,17 @@ function contentOf(source, overviewUnit, skill) {
   }
   if (skill === "W") {
     const model = source.writing_models?.[0] ?? (source.model_writing_task1 ? { text: source.model_writing_task1 } : null);
-    const task = model?.question ?? groups.find((group) => /write|describe|task/i.test(group.instruction_en ?? ""))?.instruction_en ?? groups[0]?.instruction_en ?? "";
+    const examIds = ["M01-W11", "M02-W15", "U03-W11", "U04-W15", "U05-W16", "U06-W11", "U07-W11", "U08-W09"];
+    const exam = groups.find((group) => group.id === examIds[overviewUnit.order - 1]) ?? groups.at(-1);
+    const visualRef = exam?.diagram_id ?? exam?.map_id ?? exam?.visual?.split("+")[0];
+    const visual = visualRef && (source.process_diagrams?.[visualRef] ?? source.maps?.[visualRef] ?? source.visuals?.[visualRef]);
+    const visualUrl = visualRef && [3, 4].includes(overviewUnit.order) ? `/starter-supplement/${overviewUnit.id}/assets/${overviewUnit.id}_${visualRef}.png` : undefined;
+    const question = exam?.items?.find((item) => /essay|report|write|describe/i.test(item.question_en ?? item.question ?? ""))?.question_en ?? exam?.items?.[0]?.question_en ?? exam?.items?.[0]?.question;
+    const task2Question = overviewUnit.order === 8 ? model?.question : overviewUnit.order === 7 ? model?.question : undefined;
+    const task = [`IELTS Writing Task ${overviewUnit.order <= 4 ? 1 : 2}.`, visual?.title ? `The ${exam?.diagram_id ? "process diagram" : exam?.map_id ? "maps" : "chart"} shows ${visual.title}.` : "", task2Question ?? question ?? "", exam?.instruction_en ?? ""].filter(Boolean).join(" ");
     return { ...base, task, sample_answer: model?.text ?? source.writing_task1_model_en ?? "", micro_exercises: items,
+      source_visual: visual ?? null, visual_url: visualUrl ?? null,
+      source_visuals: Object.fromEntries([...Object.entries(source.process_diagrams ?? {}), ...Object.entries(source.maps ?? {}), ...Object.entries(source.visuals ?? {})]),
       scaffolding_steps: groups.slice(0, 6).map((group) => group.instruction_vi ?? group.instruction_en).filter(Boolean) };
   }
   const model = source.speaking_models?.[0];
@@ -128,6 +137,7 @@ function supportingContent(source, overviewUnit, kind) {
   const common = { type: kind, title: `${source.title} · ${kind === "vocabulary" ? "Vocabulary" : "Grammar"}`,
     aim: `${chosen.length} nhóm ôn tập · ${items.length} câu lấy từ học liệu U${String(overviewUnit.order).padStart(2, "0")}.`,
     instruction_vi: chosen[0]?.instruction_vi ?? overviewUnit.summaryVi, activities: items,
+    source_groups: chosen.map((group) => ({ id: group.id, title: group.title, instruction_en: group.instruction_en, instruction_vi: group.instruction_vi, item_ids: group.items.map((item, index) => item.id ?? `${group.id}-${String(index + 1).padStart(2, "0")}`) })),
     source_course_id: catalog.course_id, source_pdf_url: `/starter-supplement/${overviewUnit.id}/student.pdf`,
     assessment_slug: `mindsetstarter-m${String(overviewUnit.order).padStart(2, "0")}-check` };
   if (kind === "vocabulary") return { ...common, vocabulary: vocabOf(source, chosen) };
@@ -167,6 +177,8 @@ const units = overview.units.map((unit) => {
     if (displayed.length !== lessons[skill].activities.length || displayed.some((id) => !lessons[skill].activities.some((item) => item.id === id)))
       throw new Error(`${unit.id}: ${skill} items are not all visible in the existing workbook`);
   }
+  if (unit.order <= 4 && (!lessons.writing.source_visual || !lessons.writing.task.includes("Writing Task 1")))
+    throw new Error(`${unit.id}: Writing Task 1 must carry its diagram and full prompt`);
   return { unit, lessons, assessment: assessmentOf(unit, lessons), groups: source.activities.length, items: sourceIds.length };
 });
 
