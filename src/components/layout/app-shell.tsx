@@ -99,6 +99,7 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     { label: "Học từ IELTS", href: "/app/vocabulary/study?collection=ielts" },
     { label: "Học từ A1–C2", href: "/app/vocabulary/study?collection=cefr" },
     { label: "1.200 từ IELTS Listening", href: "/app/vocabulary/listening" },
+    { label: "607 từ IELTS Reading", href: "/app/reading/vocabulary" },
     { label: "Collocations A1–C2", href: "/app/vocabulary/collocations" },
     { label: "Word Formation", href: "/app/vocabulary/word-formation" },
     { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },
@@ -111,6 +112,7 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
   ],
   ...(!demoMode ? {
     reading: [
+      { label: "607 từ IELTS Reading", href: "/app/reading/vocabulary" },
       { label: "Bài lẻ", href: "/app/reading?type=passage", kind: "parent" as const },
       ...[1, 2, 3].map((part): SkillPracticeLink => ({ label: `Passage ${part}`, href: `/app/reading?type=passage&part=${part}`, kind: "child" })),
       { label: "Full đề", href: "/app/reading?type=full_test", kind: "full" as const },

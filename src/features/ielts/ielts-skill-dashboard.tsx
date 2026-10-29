@@ -99,6 +99,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   ] : skill === "grammar" ? [
     { title: "Từ nối trong ngữ cảnh", detail: "Đọc câu trích từ bài nguồn và điền lại từ nối chính xác.", source: "Daily News toàn văn", href: "/app/grammar/live", available: hasGrammar, icon: ListChecks, tag: "Có đáp án" },
   ] : skill === "reading" ? [
+    { title: "607 từ IELTS Reading", detail: "Học 607 từ trong 11 chủ đề, ôn SRS và đi theo lộ trình 84 ngày.", source: "Bộ Reading do chủ dự án cung cấp", href: "/app/reading/vocabulary", available: true, icon: Languages, tag: "607 từ" },
     { title: "Sentence completion", detail: "Đọc văn bản thật và điền một từ được rút từ chính câu nguồn.", source: "Daily News toàn văn", href: "/app/reading/live", available: hasArticle, icon: FileText, tag: "Có đáp án" },
     { title: "Đọc toàn văn", detail: "Mở bài gốc trong kho Daily News để đọc sâu và lưu từ.", source: latestArticle?.publisher ?? "Daily News", href: latestArticle ? `/app/news/${latestArticle.id}` : "/app/news", available: hasArticle, icon: BookOpen },
   ] : skill === "listening" ? [
@@ -133,6 +134,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
         <h1>{config.title}</h1>
         <p title={config.intro}>{config.intro}</p>
         {skill === "listening" && <Link className="ielts-dashboard-start" href="/app/listening/vocabulary">Học 1.200 từ IELTS Listening <ArrowRight size={17} /></Link>}
+        {skill === "reading" && <Link className="ielts-dashboard-start" href="/app/reading/vocabulary">Học 607 từ IELTS Reading <ArrowRight size={17} /></Link>}
       </div>
       <BankLibrary skill={bankSkill} />
     </main>;
