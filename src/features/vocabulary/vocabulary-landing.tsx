@@ -13,7 +13,7 @@ import { demoMode } from "@/lib/runtime";
 import { useStudiedWords } from "./use-studied-words";
 import "./vocabulary-landing.css";
 
-type Category = "all" | "ielts" | "cefr" | "collocations" | "listening" | "families" | "personal";
+type Category = "all" | "ielts" | "cefr" | "collocations" | "listening" | "reading" | "families" | "personal";
 type CollectionCard = {
   title: string;
   detail: string;
@@ -30,6 +30,7 @@ const categories: { id: Category; label: string }[] = [
   { id: "cefr", label: "A1–C2" },
   { id: "collocations", label: "Collocations" },
   { id: "listening", label: "IELTS Listening" },
+  { id: "reading", label: "IELTS Reading" },
   { id: "families", label: "Word Families" },
   { id: "personal", label: "Từ của tôi" },
 ];
@@ -66,6 +67,7 @@ export function VocabularyLanding() {
     { title: "Từ A1–C2", detail: `${counts.cefr?.toLocaleString("vi-VN") ?? "…"} từ · 36 chủ đề`, description: "Đi từ nền tảng đến nâng cao theo CEFR.", href: "/app/vocabulary/study?collection=cefr", category: "cefr", icon: Layers3, art: "cefr" },
     { title: "Collocations A1–C2", detail: "988 cụm từ", description: "Ghép từ tự nhiên, xem ví dụ và ôn đúng hạn.", href: "/app/vocabulary/collocations", category: "collocations", icon: Puzzle, art: "collocations" },
     { title: "Từ vựng IELTS Listening", detail: "1.200 từ · 35 chủ đề", description: "Luyện nghe, chọn nghĩa và chép chính tả.", href: "/app/vocabulary/listening", category: "listening", icon: Headphones, art: "listening" },
+    { title: "Từ vựng IELTS Reading", detail: "607 từ · 11 chủ đề", description: "Học theo câu, ôn SRS và theo lộ trình 84 ngày.", href: "/app/reading/vocabulary", category: "reading", icon: BookOpen, art: "reading" },
     { title: "Word Families", detail: "300 họ từ", description: "Học noun, verb, adjective và adverb cùng nhau.", href: "/app/vocabulary/word-formation", category: "families", icon: Brain, art: "families" },
     { title: "Từ đã lưu", detail: `${ready ? saved.toLocaleString("vi-VN") : "…"} từ của bạn`, description: "Mở sổ tay và học lại các từ đã đánh dấu.", href: "/app/vocabulary/review", category: "personal", icon: Bookmark, art: "saved" },
   ];
@@ -81,7 +83,7 @@ export function VocabularyLanding() {
         <div className="vocabulary-landing-hero-stats" aria-label="Tiến độ từ vựng">
           <span><BookOpen size={20} /><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><small>từ đã học</small></span>
           <span><Bookmark size={20} /><strong>{ready ? saved.toLocaleString("vi-VN") : "…"}</strong><small>từ đã lưu</small></span>
-          <span><Layers3 size={20} /><strong>5</strong><small>bộ từ để học</small></span>
+          <span><Layers3 size={20} /><strong>6</strong><small>bộ từ để học</small></span>
         </div>
       </div>
       <div className="vocabulary-landing-hero-art" aria-hidden="true"><span className="book book-one">IELTS</span><span className="book book-two">A1–C2</span><span className="book book-three">LISTENING</span><BookOpen size={68} strokeWidth={1.7} /><Sparkles className="spark" size={25} /></div>

@@ -27,6 +27,7 @@ const BankStudent = dynamic(() => import("@/features/ielts/bank-student").then((
 const SpeakingMock = dynamic(() => import("@/features/ielts/speaking-mock").then((module) => module.SpeakingMock));
 const YoutubeLab = dynamic(() => import("@/features/listening/youtube-lab").then((module) => module.YoutubeLab));
 const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage));
+const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage));
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden));
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
@@ -70,6 +71,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <YoutubeLab />
         ) : skill === "listening" && skillMode === "vocabulary" ? (
           <ListeningVocabularyPage />
+        ) : skill === "reading" && skillMode === "vocabulary" ? (
+          <ReadingVocabularyPage />
         ) : skill && (skillMode === "live" || (skill === "writing" && (skillMode === "task-1" || skillMode === "task-2")) || (skill === "speaking" && skillMode === "part-3")) ? (
           <IeltsLivePage key={pathname} skill={skill} mode={skillMode} />
         ) : skill && skillMode === "mode" ? (
