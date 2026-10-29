@@ -53,6 +53,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <CollocationsPage />
         ) : skill === "vocabulary" && skillMode === "word-formation" ? (
           <WordFormationPage />
+        ) : skill === "vocabulary" && skillMode === "listening" ? (
+          <ListeningVocabularyPage />
         ) : skill && !skillMode ? (
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : skill === "speaking" && skillMode === "mock" ? (
