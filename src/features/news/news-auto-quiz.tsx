@@ -2,10 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ChartNoAxesColumn, Check, CheckCircle2, Clock3, RotateCcw, Sparkles, TrendingDown, TrendingUp, XCircle } from "lucide-react";
+import { ChartNoAxesColumn, Check, CheckCircle2, Clock3, Highlighter, Languages, RotateCcw, Sparkles, TrendingDown, TrendingUp, XCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrateScore } from "@/lib/celebrate";
 import { usePracticeClock } from "@/features/reading/reading-workspace";
+import { addHighlight, highlightColors, parseHighlights, segments, type Highlight, type HighlightColor } from "@/lib/highlights";
+import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { estimateBand, formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
 import "@/app/news-enrichment.css";
 
@@ -62,6 +64,11 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
   const [reviews, setReviews] = useState<Record<string, Review>>({});
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [translations, setTranslations] = useState<Record<string, string>>({});
+  const [translationVisible, setTranslationVisible] = useState<Record<string, boolean>>({});
+  const [translatingId, setTranslatingId] = useState<string | null>(null);
+  const [questionHighlights, setQuestionHighlights] = useState<Record<string, Highlight[]>>({});
+  const [selection, setSelection] = useState<{ questionId: string; start: number; end: number; mark?: string } | null>(null);
   const [saved, setSaved] = useState<{ submittedAt: string; attempts: number } | null>(null);
   // Time spent on the round shown in the result card; the practice timer restarts with each new round.
   const [duration, setDuration] = useState<number | null>(null);
@@ -78,6 +85,11 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
       if (loaded.error) { setError("Chưa tải được câu hỏi của bài này."); return; }
       const list = (loaded.data ?? []) as Question[];
       setQuestions(list);
+      setQuestionHighlights(Object.fromEntries(list.map((question) => {
+        let raw: string | null = null;
+        try { raw = localStorage.getItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`); } catch { /* Optional device storage. */ }
+        return [question.id, parseHighlights(raw, [question.prompt])];
+      })));
       // A finished quiz opens with the saved answers and review instead of a blank sheet.
       const previous = last.data as SavedResult | null;
       if (!previous) return;
@@ -130,6 +142,46 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
     });
     return list;
   }, [shown]);
+
+  async function toggleTranslation(question: Question) {
+    if (translations[question.id]) { setTranslationVisible((current) => ({ ...current, [question.id]: !current[question.id] })); return; }
+    setTranslatingId(question.id);
+    try {
+      const [translated] = await translateEnglishToVietnamese([question.prompt.replace("______", "…")]);
+      setTranslations((current) => ({ ...current, [question.id]: translated }));
+      setTranslationVisible((current) => ({ ...current, [question.id]: true }));
+    } catch { setError("Chưa dịch được câu hỏi. Hãy thử lại."); }
+    finally { setTranslatingId(null); }
+  }
+
+  function selectQuestion(root: HTMLElement, target: EventTarget, question: Question) {
+    const selected = window.getSelection();
+    if (!selected?.rangeCount || selected.isCollapsed) {
+      const mark = (target as Element).closest("mark[data-question-hl]");
+      if (mark) setSelection({ questionId: question.id, start: 0, end: 0, mark: mark.getAttribute("data-question-hl") ?? "" });
+      else setSelection(null);
+      return;
+    }
+    const range = selected.getRangeAt(0);
+    if (!root.contains(range.startContainer) || !root.contains(range.endContainer)) return;
+    const before = document.createRange();
+    before.selectNodeContents(root);
+    before.setEnd(range.startContainer, range.startOffset);
+    const start = before.toString().length;
+    const end = start + range.toString().length;
+    if (start < end) setSelection({ questionId: question.id, start, end });
+  }
+
+  function paintQuestion(question: Question, color: HighlightColor) {
+    if (!selection || selection.questionId !== question.id) return;
+    const previous = questionHighlights[question.id] ?? [];
+    const next = selection.mark ? previous.map((item) => item.id === selection.mark ? { ...item, color } : item)
+      : addHighlight(previous, { id: crypto.randomUUID(), p: 0, start: selection.start, end: selection.end, color });
+    setQuestionHighlights((current) => ({ ...current, [question.id]: next }));
+    try { localStorage.setItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`, JSON.stringify(next)); } catch { /* Keep highlights for this visit. */ }
+    window.getSelection()?.removeAllRanges();
+    setSelection(null);
+  }
 
   async function submit() {
     if (!shown.length || answered !== shown.length || busy) return;
@@ -199,11 +251,19 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
           const setValue = (next: number | string) => setAnswers((current) => ({ ...current, [question.id]: next }));
           return <div className={`news-auto-question ${review ? (review.correct ? "is-correct" : "is-wrong") : ""}`} key={question.id} data-q={number}>
             <strong>Câu {number}</strong>
-            {question.question_type === "sentence_completion"
-              ? <CompletionPrompt prompt={question.prompt} value={typeof value === "string" ? value : ""} disabled={graded} onChange={setValue} label={`Câu ${number}`}/>
-              : <h3>{question.prompt}</h3>}
+            <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{segments(question.prompt,0,questionHighlights[question.id]??[]).map((part)=>part.highlight
+                ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
+                : <span key={part.start}>{part.text}</span>)}</h3>
+            <div className="news-question-tools"><button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button><span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
+            {translationVisible[question.id]&&translations[question.id]&&<p className="news-question-translation" lang="vi">{translations[question.id]}</p>}
+            {selection?.questionId===question.id&&<div className="news-question-highlight-menu" role="group" aria-label={`Highlight câu ${number}`}>
+              {highlightColors.map((color)=><button type="button" key={color} className={color} onClick={()=>paintQuestion(question,color)} aria-label={`Highlight màu ${color}`}/>)}
+              {selection.mark&&<button type="button" className="remove" onClick={()=>{const next=(questionHighlights[question.id]??[]).filter((item)=>item.id!==selection.mark);setQuestionHighlights((current)=>({...current,[question.id]:next}));try{localStorage.setItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`,JSON.stringify(next));}catch{}setSelection(null);}}>Bỏ highlight</button>}
+            </div>}
             {question.question_type === "short_answer" && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Câu trả lời câu ${number}`}
               value={typeof value === "string" ? value : ""} disabled={graded} onChange={(event) => setValue(event.target.value)} placeholder="Tối đa 3 từ"/>}
+            {question.question_type === "sentence_completion" && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
+              value={typeof value === "string" ? value : ""} disabled={graded} onChange={(event) => setValue(event.target.value)} placeholder="Điền vào chỗ trống · tối đa 3 từ"/>}
             {choice && <div className={`news-auto-options ${question.question_type === "tfng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
               <label key={index} className={`${value === index ? "selected" : ""} ${review?.correctIndex === index ? "correct" : ""} ${review && value === index && index !== review.correctIndex ? "wrong" : ""}`}>
                 <input type="radio" name={`news-ai-${question.id}`} checked={value === index} disabled={graded} onChange={() => setValue(index)}/>
@@ -219,7 +279,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
         })}
       </div>;
     })}
-    {shown.length > 0 && !graded && <div className="news-auto-submit"><span>Đã làm {answered}/{shown.length} câu</span>
+    {shown.length > 0 && !graded && <div className="news-auto-submit"><span>Đã làm {answered}/{shown.length} câu{answered<shown.length&&<small>Trả lời đủ {shown.length-answered} câu còn lại trước khi nộp.</small>}</span>
       <button type="button" className="button primary" disabled={busy || answered !== shown.length} onClick={() => void submit()}>{busy ? "Đang chấm…" : "Nộp bài và xem đáp án"}</button></div>}
     {graded && <div ref={resultRef}><QuizResult score={score} total={shown.length} partial={partial} duration={duration}
       breakdown={sumBreakdowns([Object.fromEntries(available.map(({ type }) => {
@@ -229,7 +289,6 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
       saved={saved && !partial ? saved : null} history={history} onRetry={retry} /></div>}
   </section>;
 }
-
 function QuizResult({ score, total, partial, duration, breakdown, saved, history, onRetry }: {
   score: number; total: number; partial: boolean; duration: number | null;
   breakdown: ReturnType<typeof sumBreakdowns>; saved: { submittedAt: string; attempts: number } | null;
@@ -268,11 +327,4 @@ function QuizResult({ score, total, partial, duration, breakdown, saved, history
       <button type="button" className="button primary" onClick={onRetry}><RotateCcw size={15} /> Làm lại</button>
     </div>
   </section>;
-}
-
-function CompletionPrompt({ prompt, value, disabled, onChange, label }: { prompt: string; value: string; disabled: boolean; onChange: (value: string) => void; label: string }) {
-  const [before, after = ""] = prompt.split("______");
-  return <h3 className="news-auto-completion">{before}
-    <input className="news-auto-written inline" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu ${label}`} value={value} disabled={disabled} onChange={(event) => onChange(event.target.value)}/>
-    {after}</h3>;
 }
