@@ -20,6 +20,7 @@ const VocabularyHub = dynamic(() => import("@/features/vocabulary/vocabulary-hub
 const VocabularyLanding = dynamic(() => import("@/features/vocabulary/vocabulary-landing").then((module) => module.VocabularyLanding));
 const CollocationsPage = dynamic(() => import("@/features/vocabulary/collocations-page").then((module) => module.CollocationsPage));
 const WordFormationPage = dynamic(() => import("@/features/vocabulary/word-formation-page").then((module) => module.WordFormationPage));
+const ViEnTranslationPage = dynamic(() => import("@/features/vocabulary/vi-en-translation-page").then((module) => module.ViEnTranslationPage));
 const IeltsLivePage = dynamic(() => import("@/features/ielts/ielts-live-page").then((module) => module.IeltsLivePage));
 const IeltsSkillDashboard = dynamic(() => import("@/features/ielts/ielts-skill-dashboard").then((module) => module.IeltsSkillDashboard));
 const IeltsModePreview = dynamic(() => import("@/features/ielts/ielts-mode-preview").then((module) => module.IeltsModePreview));
@@ -61,6 +62,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <CollocationsPage />
         ) : skill === "vocabulary" && skillMode === "word-formation" ? (
           <WordFormationPage />
+        ) : skill === "vocabulary" && skillMode === "translation" ? (
+          <ViEnTranslationPage />
         ) : skill === "vocabulary" && skillMode === "listening" ? (
           <ListeningVocabularyPage />
         ) : skill && !skillMode ? (
