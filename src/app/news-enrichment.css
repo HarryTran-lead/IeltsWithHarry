@@ -20,6 +20,24 @@
 .news-type-picker button[aria-pressed="true"]{border-color:#0f8f99;background:#0f8f99;color:#fff}
 .news-type-picker button[aria-pressed="true"] b{background:rgba(255,255,255,.22);color:#fff}
 .news-auto-quiz-heading .news-type-picker{margin-top:14px}
+/* The reader size control also scales the questions in split practice mode. */
+.rw.is-practice .news-auto-question h3{width:100%;max-width:none;font-size:var(--rw-size);line-height:1.5;text-wrap:wrap;overflow-wrap:break-word;word-break:normal}
+.rw.is-practice .news-auto-options label,.rw.is-practice .news-auto-written{font-size:max(15px,calc(var(--rw-size) * .9))}
+.news-auto-options.tfng label{border-width:2px;border-color:#b8d2d8}
+.news-auto-options.tfng label.selected{border-color:#0b8d98;box-shadow:0 0 0 2px #0b8d9820}
+.news-auto-submit span small{display:block;margin-top:3px;color:#9a4e27;font-size:12px}
+.news-auto-submit .button:disabled{opacity:.48;cursor:not-allowed}
+.news-question-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:-4px 0 12px;color:#7790a0;font-size:12px}
+.news-question-tools button,.news-question-tools span{display:inline-flex;align-items:center;gap:4px}
+.news-question-tools button{padding:3px 0;color:#0c8794;font-weight:700}
+.news-question-tools button:disabled{opacity:.55}
+.news-question-translation{margin:0 0 14px;padding:8px 10px;border-left:3px solid #2bb2b7;border-radius:0 8px 8px 0;background:#f0faf9;color:#315a69;line-height:1.55}
+.news-question-mark{padding:0 1px;border-radius:3px;color:inherit;cursor:pointer;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.news-question-mark.sun{background:#ffe68f}.news-question-mark.mint{background:#bdeed6}.news-question-mark.rose{background:#ffcbd8}
+.news-question-highlight-menu{display:inline-flex;align-items:center;gap:6px;margin:0 0 12px;padding:6px 9px;border-radius:10px;background:#17324d;color:#fff}
+.news-question-highlight-menu button:not(.remove){width:24px;height:24px;border:2px solid #fff;border-radius:50%}
+.news-question-highlight-menu .sun{background:#ffd84d}.news-question-highlight-menu .mint{background:#6fd7a5}.news-question-highlight-menu .rose{background:#ff98b2}
+.news-question-highlight-menu .remove{padding:3px 5px;color:#fff;font-size:12px}
 /* Result card after grading: score, estimated band, time, change and per-type bars. */
 .news-quiz-result{margin-top:20px;padding:18px;border:1px solid #cfe7e2;border-radius:18px;background:linear-gradient(135deg,#f1fbf8,#fffdf6)}
 .news-quiz-result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}

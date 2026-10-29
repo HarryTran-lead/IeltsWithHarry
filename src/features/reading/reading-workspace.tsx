@@ -18,7 +18,7 @@ const TOOLS_KEY = "ieltswithharry-reader-tools";
 const colorName: Record<HighlightColor, string> = { sun: "vàng", mint: "xanh", rose: "hồng" };
 
 type Range = Pick<Highlight, "p" | "start" | "end">;
-type Popover = { x: number; y: number; below: boolean; touch: boolean; ranges?: Range[]; mark?: string };
+type Popover = { x: number; y: number; below: boolean; touch: boolean; ranges?: Range[]; mark?: string; word?: string };
 
 /** Questions shown beside the passage in practice mode. `answered` has one entry per question, in order; `setup` sits in the start card. */
 export type ReadingPractice = { answered: boolean[]; content: React.ReactNode; setup?: React.ReactNode; correct?: (boolean | undefined)[] };
@@ -55,12 +55,14 @@ function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below
  * at the bottom. Highlights are synced to the learner account with a scoped
  * local copy; text size is a device preference.
  */
-export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSelectWord, toolbar, tools, after, practice }: {
+export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSelectWord, lookupPreview, onReadEnd, toolbar, tools, after, practice }: {
   docKey: string;
   title: string;
   paragraphs: string[];
   translation?: (index: number) => React.ReactNode;
   onSelectWord?: (word: string) => void;
+  lookupPreview?: { word: string; meaning: string; loading: boolean } | null;
+  onReadEnd?: () => void;
   toolbar?: React.ReactNode;
   tools?: ReadingTool[];
   after?: React.ReactNode;
@@ -87,6 +89,10 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   const textRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   const sideRef = useRef<HTMLDivElement>(null);
+  const readEndRef = useRef<HTMLDivElement>(null);
+  const readStartedAt = useRef(0);
+  const readCompleted = useRef(false);
+  const readSeen = useRef(new Set<number>());
   const userIdRef = useRef<string | null>(null);
   const saveQueue = useRef<Promise<void>>(Promise.resolve());
   const saveVersion = useRef(0);
@@ -202,8 +208,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     function onPointer(event: PointerEvent) {
       const target = event.target as Element;
       if (popover && !target.closest?.(".rw-popover")) setPopover(null);
-      // Selecting more words keeps an open tool in place.
-      if (openTool && !target.closest?.(".rw-flyout, .rw-rail, .rw-text")) setOpenTool(null);
+      // Tools stay open until the reader closes them explicitly.
     }
     function onScroll() { if (popover) setPopover(null); }
     window.addEventListener("keydown", onKey);
@@ -215,6 +220,31 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       window.removeEventListener("scroll", onScroll, true);
     };
   }, [popover, practicing, openTool]);
+
+  useEffect(() => {
+    if (!onReadEnd || practicing || readCompleted.current || !readEndRef.current || !textRef.current) return;
+    if (!readStartedAt.current) readStartedAt.current = Date.now();
+    let visible = false;
+    const finish = () => {
+      if (!visible || document.visibilityState !== "visible" || readCompleted.current) return;
+      if (Date.now() - readStartedAt.current < 20000) return;
+      if (readSeen.current.size < Math.max(1, Math.ceil(text.length * 0.8))) return;
+      readCompleted.current = true;
+      onReadEnd();
+    };
+    const end = readEndRef.current;
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.target === end) visible = entry.isIntersecting;
+        else if (entry.isIntersecting) readSeen.current.add(Number((entry.target as HTMLElement).dataset.p));
+      }
+      finish();
+    }, { threshold: 0.1 });
+    observer.observe(readEndRef.current);
+    textRef.current.querySelectorAll("p[data-p]").forEach((paragraph) => observer.observe(paragraph));
+    const timer = window.setInterval(finish, 1000);
+    return () => { observer.disconnect(); window.clearInterval(timer); };
+  }, [onReadEnd, practicing, text.length]);
 
   function onSelect(event: React.MouseEvent | React.TouchEvent) {
     if (!ready) return;
@@ -239,9 +269,12 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       if (to > from) ranges.push({ p, start: from, end: to });
     });
     if (!ranges.length) return;
-    setPopover({ ...anchor(range.getBoundingClientRect(), event.type.startsWith("touch")), ranges });
     const word = selection.toString().trim();
-    if (!practicing && onSelectWord && /^[A-Za-z][A-Za-z'-]*$/.test(word)) {
+    const lookupWord = !practicing && onSelectWord && /^[A-Za-z][A-Za-z'-]*$/.test(word) ? word.toLowerCase() : undefined;
+    const position = anchor(range.getBoundingClientRect(), event.type.startsWith("touch"));
+    if (lookupWord) { const margin = Math.min(170, window.innerWidth / 2); position.x = Math.max(margin, Math.min(window.innerWidth - margin, position.x)); }
+    setPopover({ ...position, ranges, word: lookupWord });
+    if (lookupWord && onSelectWord) {
       onSelectWord(word);
       if (toolsMin) setOpenTool(tools?.find((tool) => tool.onSelect)?.id ?? null);
     }
@@ -257,7 +290,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     setPopover(null);
   }
 
-  function enterPractice() { setMode("practice"); setTab("passage"); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
+  function enterPractice() { readStartedAt.current = 0; setMode("practice"); setTab("passage"); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
   function jump(number: number) {
     setTab("questions");
     requestAnimationFrame(() => sideRef.current?.querySelector(`[data-q="${number}"]`)?.scrollIntoView({ behavior: "smooth", block: "center" }));
@@ -337,6 +370,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
             {translation?.(index)}
           </div>)}
         </div>
+        {!practicing && onReadEnd && <div ref={readEndRef} className="rw-read-end" aria-hidden="true" />}
         {!practicing && <p className="rw-hint" role="status"><Highlighter size={15} /> {ready ? saveStatus === "local" ? "Bôi đen để highlight. Bản này đang lưu trên thiết bị; sẽ thử đồng bộ khi có kết nối." : saveStatus === "saving" ? "Đang đồng bộ highlight…" : "Bôi đen để highlight. Highlight tự lưu vào tài khoản của bạn." : "Đang tải highlight…"}</p>}
         {!practicing && after}
         {!practicing && total > 0 && <div className="rw-cta">
@@ -366,6 +400,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     {popover && <div className={`rw-popover ${popover.below ? "below" : ""} ${popover.touch ? "touch" : ""}`} style={{ left: popover.x, top: popover.y }} role="dialog" aria-label="Highlight">
       {highlightColors.map((color) => <button type="button" key={color} className={`rw-swatch ${color}`} onClick={() => paint(color)} aria-label={`Highlight màu ${colorName[color]}`} />)}
       {popover.mark && <button type="button" className="rw-unmark" onClick={() => { save(highlights.filter((item) => item.id !== popover.mark)); setPopover(null); }}><X size={14} /> Bỏ</button>}
+      {popover.word && <span className="rw-lookup-preview" role="status"><strong>{popover.word}</strong>{lookupPreview?.word === popover.word ? lookupPreview.loading ? "Đang tra nghĩa…" : lookupPreview.meaning || "Chưa có nghĩa tiếng Việt" : "Đang tra nghĩa…"}</span>}
     </div>}
   </div>;
 }

@@ -558,10 +558,7 @@
   font-weight: 800;
   transition: background-color 0.2s, translate 0.25s var(--ease-spring);
 }
-.news-finish-main:not(:disabled):hover {
-  translate: 0 -2px;
-  background: #0b7f88;
-}
+.news-finish:not(.is-done) .news-finish-main { background: #e6f4f5; color: #216a76; }
 .news-finish.is-done .news-finish-main {
   background: #e3f7ee;
   color: #11806a;
@@ -948,6 +945,21 @@
 .rw-flyout .news-tool-card.is-compact {
   box-shadow: none;
 }
+.news-word-meaning{display:grid;gap:3px}
+.news-word-meaning>strong{font-size:12px;color:var(--navy)}
+.news-word-meaning p{margin:0;padding:9px 11px;border:1px solid #d6e9ed;border-radius:10px;background:#fff;font-size:14px;font-weight:700}
+.news-word-result .news-word-suggest-toggle{justify-self:start;padding:4px 0;background:transparent;color:#0b8290;font-size:12px}
+.news-word-suggestion{display:grid;gap:8px}
+.news-word-suggestion label{display:grid;gap:5px;font-size:12px;font-weight:700;color:var(--navy)}
+.news-word-suggestion textarea{width:100%;min-height:76px;resize:vertical;padding:9px;border:1px solid #cfe3e8;border-radius:10px;font:inherit;color:var(--navy)}
+.news-word-suggestion-status{color:#127d67;font-size:12px}
+.news-next-reads{margin-top:28px;padding-top:24px;border-top:1px solid #e2ecee}
+.news-next-reads h2{margin:5px 0 16px;color:var(--navy);font-size:clamp(20px,2vw,27px)}
+.news-next-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.news-next-grid a{display:grid;align-content:space-between;gap:9px;min-height:150px;padding:16px;border:1px solid #dcebee;border-radius:15px;background:#f8fcfc;color:var(--navy)}
+.news-next-grid a:hover{border-color:#72cdd0;background:#f0fbfa}
+.news-next-grid span{color:#668194;font-size:12px}.news-next-grid strong{font-size:15px;line-height:1.4}.news-next-grid small{color:#0c8c98;font-weight:800}
+@media(max-width:800px){.news-next-grid{grid-template-columns:1fr}.news-next-grid a{min-height:0}}
 
 /* Article text uses the whole reading column instead of a centred strip. */
 .news-detail-page .rw.is-read .rw-text,
