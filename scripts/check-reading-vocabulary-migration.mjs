@@ -11,8 +11,8 @@ try {
     create function public.is_admin() returns boolean language sql stable as $$ select false $$;
   `);
   for (const name of [
-    "202610290009_reading_vocabulary.sql",
-    "202610290010_reading_vocabulary_seed.sql",
+    "202610290011_reading_vocabulary.sql",
+    "202610290012_reading_vocabulary_seed.sql",
   ]) {
     await db.exec(readFileSync(new URL(`../supabase/migrations/${name}`, import.meta.url), "utf8"));
   }

@@ -58,7 +58,7 @@ def main() -> None:
     planned = [entry_id for day in plan for entry_id in day["new_vocabulary_ids"]]
     assert len(planned) == len(set(planned)) == 607 and set(planned) == ids
 
-    output = Path("supabase/migrations/202610290010_reading_vocabulary_seed.sql")
+    output = Path("supabase/migrations/202610290012_reading_vocabulary_seed.sql")
     with output.open("w", encoding="utf-8", newline="\n") as target:
         target.write(f"-- Reading 607 owner-supplied archive SHA-256: {checksum}\n")
         target.write("-- 607 words, 607 context lessons, 1,214 flashcards, 607 recalls, 1,214 translations, 84 planner days.\n")
