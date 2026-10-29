@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent as ReactKeyboardEvent, type PointerEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BookOpenText, Clock3, Download, History, Languages, Link2, MessageCircleMore, NotebookPen, Plus, Search, X } from "lucide-react";
@@ -12,6 +12,9 @@ import type { NotebookInput } from "@/lib/validation/notebook";
 
 type QuickTab = "note" | "word" | "recent";
 const when = (value: string) => new Intl.DateTimeFormat("vi-VN", { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
+const bubblePositionKey = "ieltswithharry-notebook-bubble-top";
+const bubbleSize = 56;
+const clampBubbleTop = (top: number) => Math.min(Math.max(84, top), Math.max(84, window.innerHeight - bubbleSize - 14));
 
 function QuickForm({ kind, onSaved, entry }: { kind: "note" | "word"; onSaved: () => void; entry?: NotebookEntry | null }) {
   const pathname = usePathname();
@@ -45,18 +48,82 @@ export function NotebookWidget() {
   const { entries, visits, ready } = useNotebook();
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<QuickTab>("note");
+  const [bubbleTop, setBubbleTop] = useState<number | null>(null);
+  const [dragging, setDragging] = useState(false);
+  const [drawerStyle, setDrawerStyle] = useState<CSSProperties>();
+  const drag = useRef<{ pointerId: number; startY: number; startTop: number; moved: boolean } | null>(null);
+  const suppressClick = useRef(false);
   const closeButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const restore = () => {
+      try {
+        const saved = window.localStorage.getItem(bubblePositionKey);
+        if (saved !== null && Number.isFinite(Number(saved))) setBubbleTop(clampBubbleTop(Number(saved)));
+      } catch { /* Storage may be unavailable; the bubble keeps its default position. */ }
+    };
+    void Promise.resolve().then(restore);
+    const onResize = () => setBubbleTop((top) => top === null ? null : clampBubbleTop(top));
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
   useEffect(() => { if (open) closeButton.current?.focus(); }, [open]);
   useEffect(() => { if (!open) return; const handle = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false); }; window.addEventListener("keydown", handle); return () => window.removeEventListener("keydown", handle); }, [open]);
   useEffect(() => { void Promise.resolve().then(() => setOpen(false)); }, [pathname]);
+  function saveBubbleTop(top: number) {
+    const next = clampBubbleTop(top);
+    setBubbleTop(next);
+    try { window.localStorage.setItem(bubblePositionKey, String(Math.round(next))); }
+    catch { /* Moving still works when storage is unavailable. */ }
+  }
+  function onBubblePointerDown(event: PointerEvent<HTMLButtonElement>) {
+    if (event.button !== 0) return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    drag.current = { pointerId: event.pointerId, startY: event.clientY, startTop: rect.top, moved: false };
+    suppressClick.current = false;
+    event.currentTarget.setPointerCapture(event.pointerId);
+  }
+  function onBubblePointerMove(event: PointerEvent<HTMLButtonElement>) {
+    const current = drag.current;
+    if (!current || current.pointerId !== event.pointerId) return;
+    const delta = event.clientY - current.startY;
+    if (!current.moved && Math.abs(delta) < 5) return;
+    current.moved = true;
+    suppressClick.current = true;
+    setDragging(true);
+    setBubbleTop(clampBubbleTop(current.startTop + delta));
+  }
+  function onBubblePointerEnd(event: PointerEvent<HTMLButtonElement>) {
+    const current = drag.current;
+    if (!current || current.pointerId !== event.pointerId) return;
+    if (current.moved) saveBubbleTop(current.startTop + event.clientY - current.startY);
+    drag.current = null;
+    setDragging(false);
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+  }
+  function onBubbleKeyDown(event: ReactKeyboardEvent<HTMLButtonElement>) {
+    if (event.key !== "ArrowUp" && event.key !== "ArrowDown") return;
+    event.preventDefault();
+    const top = event.currentTarget.getBoundingClientRect().top;
+    saveBubbleTop(top + (event.key === "ArrowDown" ? 24 : -24));
+  }
+  function openBubble(event: React.MouseEvent<HTMLButtonElement>) {
+    if (suppressClick.current) { suppressClick.current = false; return; }
+    const rect = event.currentTarget.getBoundingClientRect();
+    if (bubbleTop !== null) {
+      setDrawerStyle(rect.top < window.innerHeight / 2
+        ? { top: rect.bottom + 10, bottom: "auto", maxHeight: Math.max(160, window.innerHeight - rect.bottom - 26) }
+        : { bottom: window.innerHeight - rect.top + 10, top: "auto", maxHeight: Math.max(160, rect.top - 26) });
+    } else setDrawerStyle(undefined);
+    setOpen(true);
+  }
   const recent = [
     ...entries.map((entry) => ({ id: entry.id, title: entry.kind === "word" ? `Từ mới: ${entry.title}` : entry.title, date: entry.createdAt, icon: entry.kind === "word" ? <Languages size={16} /> : <NotebookPen size={16} /> })),
     ...visits.map((visit) => ({ id: visit.id, title: visit.title, date: visit.visitedAt, icon: <BookOpenText size={16} /> })),
   ].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
 
   return <>
-    <button type="button" className="notebook-bubble" aria-label="Mở sổ tay nhanh" aria-expanded={open} onClick={() => setOpen(true)}><MessageCircleMore size={27} /><span>Sổ tay</span></button>
-    {open && <><button type="button" className="notebook-backdrop" aria-label="Đóng sổ tay" onClick={() => setOpen(false)} /><aside className="notebook-drawer" role="dialog" aria-modal="true" aria-label="Sổ tay nhanh">
+    <button type="button" className={`notebook-bubble${dragging ? " is-dragging" : ""}`} style={bubbleTop === null ? undefined : { top: bubbleTop, bottom: "auto" }} aria-label="Mở sổ tay nhanh. Kéo lên xuống hoặc dùng phím mũi tên để đổi vị trí" title="Sổ tay · kéo lên hoặc xuống để đổi vị trí" aria-expanded={open} onPointerDown={onBubblePointerDown} onPointerMove={onBubblePointerMove} onPointerUp={onBubblePointerEnd} onPointerCancel={onBubblePointerEnd} onKeyDown={onBubbleKeyDown} onClick={openBubble}><MessageCircleMore size={25} /></button>
+    {open && <><button type="button" className="notebook-backdrop" aria-label="Đóng sổ tay" onClick={() => setOpen(false)} /><aside className="notebook-drawer" style={drawerStyle} role="dialog" aria-modal="true" aria-label="Sổ tay nhanh">
       <header className="notebook-drawer-head"><div><span className="eyebrow">CÔNG CỤ HỌC NHANH</span><h2>Sổ tay của bạn</h2><p>Ghi lại ngay, xem lại bất cứ lúc nào.</p></div><button ref={closeButton} type="button" className="icon-button" aria-label="Đóng sổ tay" onClick={() => setOpen(false)}><X size={20} /></button></header>
       <div className="notebook-quick-tabs" role="tablist" aria-label="Công cụ sổ tay"><button type="button" role="tab" aria-selected={tab === "note"} className={tab === "note" ? "active" : ""} onClick={() => setTab("note")}><NotebookPen size={15} /> Ghi chú</button><button type="button" role="tab" aria-selected={tab === "word"} className={tab === "word" ? "active" : ""} onClick={() => setTab("word")}><Languages size={15} /> Từ mới</button><button type="button" role="tab" aria-selected={tab === "recent"} className={tab === "recent" ? "active" : ""} onClick={() => setTab("recent")}><History size={15} /> Gần đây</button></div>
       <div className="notebook-drawer-body">{!ready ? <p>Đang mở sổ tay…</p> : tab === "recent" ? <div className="notebook-recent">{recent.length ? recent.map((item) => <div key={item.id}><span className="notebook-recent-icon">{item.icon}</span><div><strong>{item.title}</strong><small>{when(item.date)}</small></div></div>) : <p>Chưa có hoạt động. Mở một bài học hoặc lưu ghi chú đầu tiên.</p>}</div> : <QuickForm key={tab} kind={tab} onSaved={() => setTab("recent")} />}</div>
