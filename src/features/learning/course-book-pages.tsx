@@ -8,7 +8,6 @@ import { Sticker, Tape } from "@/components/stickers/stickers";
 import type { StageCourse } from "./stage-courses";
 import { speakEnglishText, type PackageActivity, type PackageLesson } from "./course-package-practice";
 import { resultTone, type PracticeResult } from "./practice-results";
-import { STARTER_SOURCE_COURSE_SLUG, starterSupplementFor, starterSupplementUnits } from "@/lib/starter-supplement";
 
 export type BookUnit = StageCourse["units"][number];
 export type BookLesson = BookUnit["lessons"][number];
@@ -526,7 +525,6 @@ function ProgressRing({ value, total, color }: { value: number; total: number; c
 
 export function BookPageView({ page, index, side, ctx }: { page: BookPage; index: number; side: "left" | "right"; ctx: BookContext }) {
   const { course, stage, isDone, current, goTo } = ctx;
-  const sourceBook = course.slug === STARTER_SOURCE_COURSE_SLUG;
 
   if (page.kind === "cover" || page.kind === "back") {
     const arts = course.units.slice(0, 4);
@@ -537,7 +535,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
         <p className="bk-cover-sub">{course.title}</p>
         <div className="bk-cover-collage">{arts.map((unit, artIndex) => <TopicArt key={unit.id} topic={unit.title} unitSlug={unit.slug} variant="unit" badge={false} className={`bk-polaroid p${artIndex}`} />)}</div>
         <div className="bk-cover-foot">
-          <span>{sourceBook ? `${course.units.length} unit · ${starterSupplementUnits.reduce((total, unit) => total + unit.activityCount, 0)} nhóm bài tập` : `${course.units.length} unit · ${ctx.total} bài · ${ctx.finished} đã học`}</span>
+          <span>{course.units.length} unit · {ctx.total} bài · {ctx.finished} đã học</span>
           <button type="button" className="bk-open" onClick={() => goTo(2)}>Mở sách <ArrowRight size={17} /></button>
         </div>
         <Sticker name="harry" size={84} tilt={-8} className="bk-cover-harry" />
@@ -558,22 +556,17 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
         <p className="bk-kicker">Trước khi bắt đầu</p>
         <h3 className="bk-title">Cách học với cuốn sách này</h3>
         <div className="bk-progress-card">
-          <ProgressRing value={sourceBook ? ctx.finished / 4 : ctx.finished} total={sourceBook ? course.units.length : ctx.total} color="#0a7f89" />
-          <div><b>Tiến độ của bạn</b><span>{sourceBook ? `${ctx.finished / 4} / ${course.units.length} unit đã mở` : `${ctx.finished} / ${ctx.total} bài đã mở hoặc đã nộp`}</span>
+          <ProgressRing value={ctx.finished} total={ctx.total} color="#0a7f89" />
+          <div><b>Tiến độ của bạn</b><span>{ctx.finished} / {ctx.total} bài đã mở hoặc đã nộp</span>
             {current && currentPage !== undefined ? <button type="button" className="bk-linkish" onClick={() => goTo(currentPage)}>Lật tới bài đang học: {lessonShortTitle(current)} →</button> : <span>Bạn đã đi hết các bài của khóa này.</span>}
           </div>
         </div>
-        <ol className="bk-steps">{sourceBook ? <>
-          <li><b>Mở Mục lục</b> và chọn một trong tám unit, hoặc bấm tab màu ở mép sách.</li>
-          <li><b>Lật qua bốn kỹ năng</b> để xem tóm tắt và câu mẫu lấy từ tài liệu U01–U08.</li>
-          <li><b>Mở học liệu đầy đủ</b> để làm bài trong PDF và nghe audio của unit.</li>
-          <li><b>Đánh dấu trang và ghi chú</b> bằng các công cụ ở cạnh sách.</li>
-        </> : <>
+        <ol className="bk-steps">
           <li><b>Mở Mục lục</b> ở trang bên cạnh và chọn một unit, hoặc bấm các tab màu ở mép sách.</li>
           <li><b>Mỗi bài là một trang đôi:</b> trang trái giới thiệu mục tiêu, trang phải xem trước bài tập — có thể thử ngay vài câu.</li>
           <li><b>Bấm “Vào học”</b> để làm bài đầy đủ với 3 bước Tìm hiểu → Thực hành → Ghi nhớ.</li>
           <li><b>Dải ruy băng đỏ</b> đánh dấu bài nên học tiếp; con dấu <em>ĐÃ HỌC</em> đánh dấu bài đã qua.</li>
-        </>}</ol>
+        </ol>
         <div className="bk-skill-key">{Object.entries(skillTheme).map(([skill, theme]) => <span key={skill} style={{ "--tone": theme.color } as CSSProperties}><i />{skill}</span>)}</div>
         <p className="bk-hand">Mẹo: dùng phím ← → hoặc vuốt để lật trang ✎</p>
         {(() => {
@@ -622,14 +615,12 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     const label = unitLabel(page.unit, course);
     const title = splitUnitTitle(page.unit.title);
     const color = unitColor(page.unitIndex);
-    const supplement = starterSupplementFor(course.slug, page.unit.sort_order);
     return <div className={`bk-page is-${side} bk-unit-art`} style={{ "--unit": color } as CSSProperties}>
       <div className="bk-unit-label"><span>{label.starter ? "START" : `UNIT/${label.number}:`}</span><strong>{title.en}</strong></div>
       {title.vi && <p className="bk-unit-vi">{title.vi}</p>}
       <div className="bk-unit-photo-wrap"><Tape tone="sun" /><TopicArt topic={page.unit.title} unitSlug={page.unit.slug} variant="unit" className="bk-unit-photo" /></div>
       <div className="bk-unit-learn">
         <b>IN THIS UNIT YOU WILL</b>
-        {supplement && <p className="bk-unit-supplement-summary">{supplement.summaryVi}</p>}
         <ul>{page.unit.lessons.map((lesson) => <li key={lesson.id} style={{ "--tone": themeOf(lesson.skill).color } as CSSProperties}><i />{lessonShortTitle(lesson)}</li>)}</ul>
       </div>
     </div>;
@@ -640,8 +631,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     const title = splitUnitTitle(page.unit.title);
     const color = unitColor(page.unitIndex);
     const done = page.unit.lessons.filter(isDone).length;
-    const supplement = starterSupplementFor(course.slug, page.unit.sort_order);
-    return <div className={`bk-page is-${side} bk-unit-overview ${supplement ? "has-supplement" : ""}`} style={{ "--unit": color } as CSSProperties}>
+    return <div className={`bk-page is-${side} bk-unit-overview`} style={{ "--unit": color } as CSSProperties}>
       <div className="bk-page-body">
         <div className="bk-overview-head">
           <div><p className="bk-kicker" style={{ color }}>{label.short} · Tổng quan</p><h3 className="bk-title">{title.en}</h3></div>
@@ -659,12 +649,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
           </button></li>;
         })}</ol>
         {ctx.hasChecks && !label.starter && <button type="button" className="bk-check-link" onClick={() => ctx.openCheck(`${page.unit.slug}-check`, `Kiểm tra ${label.short}`)}><Ticket size={16} /> Kiểm tra {label.short} — làm sau khi xong {page.unit.lessons.length} bài</button>}
-        {supplement ? <div className="bk-supplement-card">
-          <small>{sourceBook ? "BÀI TẬP TRONG SÁCH" : "HỌC LIỆU BỔ SUNG"} · UNIT {supplement.order}</small>
-          <p>{supplement.summaryVi}</p>
-          <span>{supplement.activityCount} nhóm bài tập · {supplement.itemCount} câu / hoạt động · {supplement.tracks.length} audio</span>
-          <Link href={`/app/learn/ielts-starter/supplement/${supplement.id.toLowerCase()}`}>Đọc nội dung đầy đủ và nghe audio <ArrowRight size={14} /></Link>
-        </div> : <div className="bk-notes"><span className="bk-hand">Ghi chú: viết 3 từ bạn đã biết về chủ đề này…</span><i /><i /><i /><i /></div>}
+        <div className="bk-notes"><span className="bk-hand">Ghi chú: viết 3 từ bạn đã biết về chủ đề này…</span><i /><i /><i /><i /></div>
       </div>
       <Folio number={index} label={label.short.toUpperCase()} side={side} color={color} />
     </div>;
@@ -674,33 +659,6 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     const { lesson, unit } = page;
     const theme = themeOf(lesson.skill);
     const label = unitLabel(unit, course);
-    const supplement = sourceBook ? starterSupplementFor(course.slug, unit.sort_order) : undefined;
-    const skill = supplement?.skills.find((item) => item.name === lesson.skill);
-    if (supplement && skill) {
-      const url = `/app/learn/ielts-starter/supplement/${supplement.id.toLowerCase()}`;
-      return <div className={`bk-page is-${side} bk-source-lesson`} style={{ "--skill": theme.color, "--unit": unitColor(page.unitIndex) } as CSSProperties}>
-        <div className="bk-page-body">
-          <p className="bk-kicker">UNIT {pad(supplement.order)} · {skill.name.toUpperCase()}</p>
-          <h3 className="bk-title">{page.kind === "lesson-open" ? `${skill.name}: ${supplement.title}` : "Xem trước bài tập"}</h3>
-          {page.kind === "lesson-open" ? <>
-            <p className="bk-source-summary">{supplement.summaryVi}</p>
-            <p className="bk-source-count">{skill.count} nhóm bài tập {skill.name} trong unit này</p>
-            <h4>Nội dung chính</h4>
-            <ol className="bk-source-list">{skill.examples.map((example) => <li key={example}>{example}</li>)}</ol>
-            <Link className="bk-source-open" href={url}>Mở bài tập và audio đầy đủ <ArrowRight size={16} /></Link>
-          </> : <>
-            <p className="bk-source-summary">Hai câu mẫu từ học liệu. Các nhóm bài tập còn lại có trong PDF của unit.</p>
-            <div className="bk-source-previews">{skill.previews.map((preview, previewIndex) => <section key={preview.title}>
-              <b>{pad(previewIndex + 1)} · {preview.title}</b>
-              <p>{preview.instructionVi}</p>
-              {preview.sampleQuestion && <blockquote>{preview.sampleQuestion}</blockquote>}
-            </section>)}</div>
-            <Link className="bk-source-open" href={url}>Xem toàn bộ {skill.count} nhóm bài tập <ArrowRight size={16} /></Link>
-          </>}
-        </div>
-        <Folio number={index} label={`UNIT ${supplement.order} / ${skill.name.toUpperCase()}`} side={side} color={theme.color} />
-      </div>;
-    }
     const content = ctx.contents[lesson.id];
     const done = isDone(lesson);
     const here = current?.id === lesson.id;
@@ -780,8 +738,8 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
         <p>Hoàn thành khóa học</p>
         <strong>{course.title}</strong>
         <span className="bk-cert-line" />
-        {complete ? <><Sticker name="stamp" label="XONG" size={92} tilt={-12} /><p>{sourceBook ? `Bạn đã mở đủ ${course.units.length} unit.` : `Bạn đã đi hết ${ctx.total} bài. Hãy tự hào về từng bước nhỏ!`}</p></>
-          : <><Lock size={26} /><p>{sourceBook ? `Còn ${course.units.length - ctx.finished / 4} unit nữa để mở chứng nhận.` : `Còn ${ctx.total - ctx.finished} bài nữa để nhận chứng nhận.`}</p></>}
+        {complete ? <><Sticker name="stamp" label="XONG" size={92} tilt={-12} /><p>Bạn đã đi hết {ctx.total} bài. Hãy tự hào về từng bước nhỏ!</p></>
+          : <><Lock size={26} /><p>Còn {ctx.total - ctx.finished} bài nữa để nhận chứng nhận.</p></>}
       </div>
     </div>
     <Folio number={index} label="CERTIFICATE" side={side} color="#c99400" />
