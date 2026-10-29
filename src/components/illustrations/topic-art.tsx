@@ -15,6 +15,7 @@ export type TopicArtProps = {
   imageUrl?: string | null;
   variant?: "unit" | "lesson" | "exercise";
   badge?: boolean;
+  localOnly?: boolean;
 };
 
 export function TopicArt({
@@ -27,9 +28,10 @@ export function TopicArt({
   imageUrl,
   variant,
   badge = true,
+  localOnly = false,
 }: TopicArtProps) {
   const art = word ? wordIllustration(word, topic) : topicIllustration(topic);
-  const candidates = courseBookArtCandidates({ topic, word, unitSlug, lessonSlug, imageUrl, variant });
+  const candidates = localOnly ? [art.src] : courseBookArtCandidates({ topic, word, unitSlug, lessonSlug, imageUrl, variant });
   const [failed, setFailed] = useState<string[]>([]);
   const activeSrc = candidates.find((url) => !failed.includes(url)) ?? art.src;
   const isAi = isCourseBookAiUrl(activeSrc);

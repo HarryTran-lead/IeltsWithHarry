@@ -1,7 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { AiArtLimitError, generateAiArt } from "./news/ai-art";
 import { topicIllustration, wordIllustration } from "./topic-illustration";
-import { catalog } from "./vocabulary/catalog";
 
 const DEFAULT_SUPABASE_URL = "https://vpkhriywprepuhrbarye.supabase.co";
 const BUCKET = "ielts-images";
@@ -11,7 +10,7 @@ function supabaseBaseUrl(): string {
   return (envUrl || DEFAULT_SUPABASE_URL).replace(/\/+$/, "");
 }
 
-export type CourseBookArtFolder = "units" | "lessons" | "exercises" | "themes" | "words";
+export type CourseBookArtFolder = "units" | "lessons" | "exercises" | "themes";
 
 export function courseBookStorageUrl(folder: CourseBookArtFolder, slug: string): string {
   return `${supabaseBaseUrl()}/storage/v1/object/public/${BUCKET}/course-book/${folder}/${slug}.jpg`;
@@ -20,17 +19,6 @@ export function courseBookStorageUrl(folder: CourseBookArtFolder, slug: string):
 export function isCourseBookAiUrl(url: string | undefined | null): boolean {
   return Boolean(url && url.includes(`/storage/v1/object/public/${BUCKET}/course-book/`));
 }
-
-export function wordArtSlug(word: string): string {
-  return word
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 64);
-}
-
-const CURATED_WORD_SLUGS = new Set(catalog.map((item) => wordArtSlug(item.word)));
 
 export function inferUnitSlugFromLesson(lessonSlug?: string | null): string | null {
   if (!lessonSlug) return null;
@@ -79,6 +67,7 @@ export function courseBookArtCandidates(options: CourseBookArtOptions): string[]
   const { topic, word, imageUrl, variant } = options;
   const art = word ? wordIllustration(word, topic) : topicIllustration(topic);
   const fallbackSvg = art.src;
+  if (word) return [fallbackSvg];
   const inferred = inferBookSlugsFromTopic(topic);
   const lessonSlug = options.lessonSlug || inferred.lessonSlug;
   const unitSlug = options.unitSlug || inferUnitSlugFromLesson(lessonSlug) || inferred.unitSlug;
@@ -88,15 +77,6 @@ export function courseBookArtCandidates(options: CourseBookArtOptions): string[]
   const push = (url?: string | null) => {
     if (url && !candidates.includes(url)) candidates.push(url);
   };
-
-  if (word) {
-    const slug = wordArtSlug(word);
-    if (slug && (CURATED_WORD_SLUGS.has(slug) || Boolean(lessonSlug) || Boolean(unitSlug))) {
-      push(courseBookStorageUrl("words", slug));
-    }
-    const wordSpecificTheme = topicIllustration(word).theme;
-    push(courseBookStorageUrl("themes", wordSpecificTheme !== "general" ? wordSpecificTheme : art.theme));
-  }
 
   if (imageUrl) push(imageUrl);
 
@@ -158,20 +138,6 @@ export function buildThemeArtPrompt(theme: string): string {
     `Rich modern digital painting, warm natural light, clean composition.`,
     `No text, no letters, no words, no numbers, no logos, no watermark.`,
   ].join(" ");
-}
-
-export function buildWordArtPrompt(word: { word: string; meaning?: string; definition?: string; example?: string; topic?: string }): string {
-  const context = [
-    word.definition ? `Meaning: ${word.definition}.` : "",
-    word.example ? `Scene context: ${word.example}.` : "",
-    word.topic ? `Topic: ${word.topic}.` : "",
-  ].filter(Boolean).join(" ");
-  return [
-    `Vivid educational flashcard illustration representing the English concept "${word.word}".`,
-    context,
-    `Show a clear, concrete real-world scene or visual metaphor that helps a learner remember the concept, modern editorial digital painting, soft natural light.`,
-    `No text, no letters, no words, no numbers, no captions, no logos, no watermark.`,
-  ].filter(Boolean).join(" ");
 }
 
 export const ADVANCED_UNIT_SCENES: Record<string, string> = {
@@ -297,18 +263,16 @@ export async function enrichCourseBookArt(client: SupabaseClient, maxSlots = 1):
   const { data: units } = await client.from("units").select("id,slug,title,sort_order").eq("course_id", course.id).order("sort_order");
   if (!units?.length) return { generated: 0 };
 
-  const [unitFiles, lessonFiles, exerciseFiles, themeFiles, wordFiles] = await Promise.all([
+  const [unitFiles, lessonFiles, exerciseFiles, themeFiles] = await Promise.all([
     client.storage.from(BUCKET).list("course-book/units", { limit: 200 }),
     client.storage.from(BUCKET).list("course-book/lessons", { limit: 200 }),
     client.storage.from(BUCKET).list("course-book/exercises", { limit: 200 }),
     client.storage.from(BUCKET).list("course-book/themes", { limit: 100 }),
-    client.storage.from(BUCKET).list("course-book/words", { limit: 500 }),
   ]);
   const hasUnit = new Set((unitFiles.data ?? []).map((f) => f.name));
   const hasLesson = new Set((lessonFiles.data ?? []).map((f) => f.name));
   const hasExercise = new Set((exerciseFiles.data ?? []).map((f) => f.name));
   const hasTheme = new Set((themeFiles.data ?? []).map((f) => f.name));
-  const hasWord = new Set((wordFiles.data ?? []).map((f) => f.name));
 
   let generated = 0;
 
@@ -396,22 +360,5 @@ export async function enrichCourseBookArt(client: SupabaseClient, maxSlots = 1):
       }
     }
   }
-  if (generated >= maxSlots) return { generated };
-
-  for (const item of catalog) {
-    if (generated >= maxSlots) break;
-    const slug = wordArtSlug(item.word);
-    const fileName = `${slug}.jpg`;
-    if (!slug || hasWord.has(fileName)) continue;
-    try {
-      const art = await generateAiArt(buildWordArtPrompt({ word: item.word, meaning: item.meaning, example: item.example, topic: item.topic }), item.topic, `word:${slug}`);
-      const path = `course-book/words/${fileName}`;
-      const { error } = await client.storage.from(BUCKET).upload(path, art.bytes, { contentType: art.contentType, upsert: true, cacheControl: "31536000" });
-      if (!error) generated++;
-    } catch (error) {
-      if (error instanceof AiArtLimitError) return { generated };
-    }
-  }
-
   return { generated };
 }

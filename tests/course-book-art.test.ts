@@ -27,7 +27,7 @@ describe("course book Pollinations.ai illustrations", () => {
     });
   });
 
-  it("builds progressive fallback candidate URLs for units, lessons, exercises, and vocabulary words", () => {
+  it("builds progressive fallback candidate URLs for units, lessons, and exercises while keeping words local", () => {
     const exerciseCandidates = courseBookArtCandidates({
       topic: "Television, News and Current Affairs · Vocabulary & Pronunciation",
       unitSlug: "mindsetadvanced-l3u07",
@@ -48,9 +48,14 @@ describe("course book Pollinations.ai illustrations", () => {
       topic: "Education & Knowledge",
       word: "acquire",
     });
-    expect(wordCandidates[0]).toContain("/course-book/words/acquire.jpg");
-    expect(wordCandidates[1]).toContain("/course-book/themes/education.jpg");
-    expect(wordCandidates[2]).toBe("/illustrations/topics/education.svg");
+    expect(wordCandidates).toEqual(["/illustrations/topics/education.svg"]);
+    expect(isCourseBookAiUrl(wordCandidates[0])).toBe(false);
+    expect(courseBookArtCandidates({
+      topic: "Education & Knowledge",
+      word: "book",
+      lessonSlug: "mindsetadvanced-l3u06-vocabulary",
+      imageUrl: "https://example.com/course-book/lessons/mindsetadvanced-l3u06-vocabulary.jpg",
+    })).toEqual(["/illustrations/topics/education.svg"]);
   });
 
   it("builds distinct contextual Pollinations prompts for unit, lesson, and exercise", () => {
