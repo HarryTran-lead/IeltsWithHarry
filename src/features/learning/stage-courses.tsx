@@ -6,6 +6,7 @@ import { ArrowRight, BookOpen, Map as MapIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
 import { stages } from "@/lib/demo-data";
+import { starterSupplementUnits } from "@/lib/starter-supplement";
 import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { courseChecks, LessonPath } from "./learning-path";
@@ -90,10 +91,16 @@ function CourseViews({ courses, isDone }: { courses: StageCourse[]; isDone: (les
 
 /** On the Learn overview: one compact card per published course, linking to its stage. */
 export function OpenCourses({ courses, loading }: { courses: StageCourse[]; loading: boolean }) {
-  if (!liveMode || loading || !courses.length) return null;
+  if (!liveMode || loading) return null;
+  const visibleCourses = courses.filter((course) => course.stage_id !== "ielts-starter");
   return <section className="card section-card">
     <div className="section-head"><h2>Khóa học đang mở</h2><span>Chọn một khóa để xem các unit và bài học.</span></div>
-    <div className="open-courses">{courses.map((course) => {
+    <div className="open-courses"><Link href="/app/learn/ielts-starter" className="open-course lift">
+      <span className="course-stage-band">4.0–5.0</span>
+      <b>IELTS Starter · U01–U08</b>
+      <small>IELTS Starter · {starterSupplementUnits.length} unit · Reading, Writing, Listening, Speaking</small>
+      <ArrowRight size={16} />
+    </Link>{visibleCourses.map((course) => {
       const stage = stages.find((item) => item.id === course.stage_id);
       const total = course.units.reduce((sum, unit) => sum + unit.lessons.length, 0);
       return <Link key={course.id} href={`/app/learn/${course.stage_id}`} className="open-course lift">
