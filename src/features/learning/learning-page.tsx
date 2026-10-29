@@ -22,6 +22,7 @@ import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
 import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
+import { StarterSupplementPage } from "./starter-supplement-page";
 import { StageMap, stageStops } from "./stage-map";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
@@ -951,6 +952,8 @@ export function LearningPage({ section }: { section: string }) {
   const pathname = usePathname();
   const { ready } = useDemo();
   const stageId = section === "learn" ? pathname.split("/")[3] : undefined;
+  if (section === "learn" && stageId === "ielts-starter" && pathname.split("/")[4] === "supplement")
+    return <StarterSupplementPage unitId={pathname.split("/")[5] ?? ""} />;
   if (section === "learn") return <LearnOverview stageId={stageId} />;
   if (section === "lesson") return <LessonOverview />;
   if (section === "vocabulary") return <VocabularyPage />;

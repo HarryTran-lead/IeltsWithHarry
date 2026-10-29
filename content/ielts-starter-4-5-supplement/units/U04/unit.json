@@ -1,0 +1,2364 @@
+{
+  "unit": "U04",
+  "title": "Food and Drink",
+  "band": "4.0-5.0",
+  "reference_pages": "64-85",
+  "passages": {
+    "A": {
+      "title": "When Everyday Meals Become a Cultural Surprise",
+      "text": "People who move or travel abroad often discover that food is more than a list of ingredients. The time of meals, the way people share dishes and the meaning of politeness can be different. Five travellers describe what surprised them about eating in new places.\n\nA — EMILY: When I arrived in Vietnam, I expected a large breakfast with toast, fruit and tea. Instead, my neighbours invited me for a hot bowl of noodle soup before work. At first I thought soup belonged at lunch. Now I sometimes eat it in the morning because it is filling and convenient. The small local café is busy before seven o’clock.\n\nB — MUSA: In my hometown, family members usually eat from individual plates. During a visit to a friend in Jordan, several dishes were placed in the centre of the table for everyone to share. I was surprised by how often people offered me more food. My friend explained that sharing food was a way of showing care, not an expectation that I should eat everything.\n\nC — SOFIA: I became a vegetarian two years ago. When I travel, I ask about ingredients because vegetable dishes sometimes contain meat stock or fish sauce. In one small restaurant, the chef carefully explained every ingredient and prepared a different sauce for me. I appreciated that flexibility. It made me feel comfortable although I could not read the local menu.\n\nD — JACK: I first tried eating with chopsticks when I travelled to Taiwan. The first few attempts were difficult; I dropped my noodles several times. A friend showed me how to hold the sticks, and I practised every day. Now I can use them for most meals, but I still find small slippery pieces hard to pick up.\n\nE — AMINA: I was taught that people should leave the table soon after finishing a meal. At a dinner with a host family abroad, everyone stayed and talked for an hour after eating. The food was delicious, but the long conversation was even more memorable. I realised that mealtimes can be an important opportunity to maintain friendships."
+    },
+    "B": {
+      "title": "Cooking Shows: Learning, Entertainment or Both?",
+      "text": "Television programmes about cooking have become popular on many platforms. Some teach viewers how to prepare affordable meals at home. Others focus on competition, famous personalities or unusual ingredients. These different formats appeal to different audiences.\n\nA — PRACTICAL LESSONS. A weekly programme called Home Kitchen teaches viewers to prepare simple meals. Each episode shows every stage and explains why ingredients are added. The host often demonstrates a lower-cost alternative for families who want to save money. Viewers can follow a recipe without expensive equipment.\n\nB — THE COOKING CONTEST. In Kitchen Challenge, six amateur cooks prepare dishes under time pressure. The judges discuss taste, appearance and cooking methods. The programme is exciting, but viewers may not learn enough about measurements to repeat the recipes at home. The show is designed mainly to entertain.\n\nC — FAMILY COOKING. In Cook Together, children cook with an adult relative. The emphasis is on safety, cooperation and choosing fresh foods. Young viewers learn that adults should handle hot pans and sharp knives. The programme has encouraged some families to cook together at weekends.\n\nD — FOOD HISTORY. The series Meals Through Time explores dishes from different periods. Historians explain how people stored food before modern refrigerators and how trading routes changed the ingredients available in different regions. The presenters travel to museums and speak with local cooks.\n\nE — PROFESSIONAL IDEAS. In The Restaurant Lab, chefs visit small restaurants and suggest ways to reduce waste. They discuss portion sizes, seasonal vegetables and planning a weekly menu. The programme argues that making food efficiently does not always require buying more products.\n\nF — WHAT VIEWERS DO. Surveys of television audiences suggest that watching a cooking programme does not necessarily mean a person will cook more often. Some people enjoy watching the competition but prefer ready-made meals. Others try one new recipe each month. For learners, a useful first step is to choose a simple recipe, prepare a short shopping list and practise safely with someone experienced."
+    }
+  },
+  "visuals": {
+    "pie-takeaway": {
+      "type": "pie",
+      "title": "Favourite takeaway cuisine (% of survey respondents)",
+      "labels": [
+        "Local dishes",
+        "Chinese",
+        "Italian",
+        "Indian",
+        "Other"
+      ],
+      "data": [
+        35,
+        25,
+        20,
+        12,
+        8
+      ]
+    },
+    "bar-cafes": {
+      "type": "bar",
+      "title": "Vegetarian cafés in Brookfield, 2016–2024",
+      "labels": [
+        "2016",
+        "2018",
+        "2020",
+        "2022",
+        "2024"
+      ],
+      "data": [
+        12,
+        19,
+        25,
+        34,
+        40
+      ]
+    },
+    "bar-stores": {
+      "type": "bar",
+      "title": "Market share of three lunch chains (%)",
+      "labels": [
+        "FreshBox",
+        "RiceStop",
+        "SoupHouse"
+      ],
+      "series": {
+        "2020": [
+          22,
+          34,
+          14
+        ],
+        "2024": [
+          30,
+          29,
+          21
+        ]
+      }
+    },
+    "exam-chart": {
+      "type": "bar",
+      "title": "Adults choosing balanced meals (%) by age",
+      "labels": [
+        "18–29",
+        "30–44",
+        "45–59",
+        "60+"
+      ],
+      "series": {
+        "2019": [
+          38,
+          46,
+          55,
+          61
+        ],
+        "2024": [
+          44,
+          53,
+          64,
+          69
+        ]
+      }
+    }
+  },
+  "tracks": {
+    "A": {
+      "title": "A meal for friends",
+      "dialogue": [
+        [
+          "NORA",
+          "What should we cook for our friends on Saturday? I was thinking of fried chicken, but Hannah does not eat meat."
+        ],
+        [
+          "JAMIE",
+          "Then how about vegetable noodles? We can boil the noodles and fry the vegetables."
+        ],
+        [
+          "NORA",
+          "Good idea. But please do not add peanuts. Hannah is allergic to them."
+        ],
+        [
+          "JAMIE",
+          "Of course. We could bake a small apple cake for dessert."
+        ],
+        [
+          "NORA",
+          "I wanted to start cooking at four, but our friends will arrive at six, so let us begin at half past four."
+        ],
+        [
+          "JAMIE",
+          "Perfect. I will buy carrots, mushrooms and two packets of noodles."
+        ]
+      ]
+    },
+    "B": {
+      "title": "At a street-food stall",
+      "dialogue": [
+        [
+          "CUSTOMER",
+          "Good afternoon. Are your dumplings fried?"
+        ],
+        [
+          "SELLER",
+          "We have fried ones, but our most popular dumplings are steamed."
+        ],
+        [
+          "CUSTOMER",
+          "I would like six steamed dumplings. Are they spicy?"
+        ],
+        [
+          "SELLER",
+          "No. We serve the hot sauce separately."
+        ],
+        [
+          "CUSTOMER",
+          "How much is the portion?"
+        ],
+        [
+          "SELLER",
+          "Seven dollars fifty. Actually, it is six fifty today because we have a lunch offer."
+        ],
+        [
+          "CUSTOMER",
+          "Great. And may I have a mango drink with no sugar?"
+        ],
+        [
+          "SELLER",
+          "Certainly. I will prepare it fresh."
+        ]
+      ]
+    },
+    "C": {
+      "title": "Three places to eat",
+      "dialogue": [
+        [
+          "HOST",
+          "Welcome to City Food Radio. Today we are talking about three restaurants. First, Green Garden."
+        ],
+        [
+          "REVIEWER",
+          "Green Garden serves vegetarian meals. Its vegetable curry is delicious, and the staff are friendly. It is a little expensive though."
+        ],
+        [
+          "HOST",
+          "What about River Grill?"
+        ],
+        [
+          "REVIEWER",
+          "River Grill is famous for grilled fish and chicken. It has a lovely view of the river, but the service can be slow on weekends."
+        ],
+        [
+          "HOST",
+          "And the last place?"
+        ],
+        [
+          "REVIEWER",
+          "Market Bowl is small and inexpensive. Students love its noodle soup. The room is noisy, but the portions are generous."
+        ],
+        [
+          "HOST",
+          "So you recommend Green Garden for vegetarians, River Grill for a view, and Market Bowl for a low-cost lunch?"
+        ],
+        [
+          "REVIEWER",
+          "Exactly."
+        ]
+      ]
+    },
+    "D": {
+      "title": "Food in three countries",
+      "dialogue": [
+        [
+          "PRESENTER",
+          "In our travel programme, three visitors describe memorable meals. Wei visited China and tried a bowl of noodle soup with fresh vegetables."
+        ],
+        [
+          "PRESENTER",
+          "He also learned that people may use chopsticks made from bamboo to pick up food."
+        ],
+        [
+          "PRESENTER",
+          "Sora visited Japan. She enjoyed rice balls filled with vegetables. Some were wrapped in seaweed and were easy to carry during a day trip."
+        ],
+        [
+          "PRESENTER",
+          "Min visited Korea. His hosts offered a side dish of fermented cabbage and then cooked beef on a small grill at the table."
+        ],
+        [
+          "PRESENTER",
+          "These were individual experiences, not rules about what everyone eats in each country."
+        ]
+      ]
+    },
+    "E": {
+      "title": "An interview with a television cook",
+      "dialogue": [
+        [
+          "INTERVIEWER",
+          "Today we welcome television cook Daniel Wu. What dish would you recommend to beginners?"
+        ],
+        [
+          "CHEF",
+          "My favourite is a simple vegetable rice bowl. You can make it in about fifteen minutes."
+        ],
+        [
+          "INTERVIEWER",
+          "Can children help?"
+        ],
+        [
+          "CHEF",
+          "Yes. Children can wash the vegetables, but an adult should use the hot pan."
+        ],
+        [
+          "INTERVIEWER",
+          "Does it have to include chilli?"
+        ],
+        [
+          "CHEF",
+          "Not at all. The recipe is flexible: add chilli if you like spicy food, or replace it with fresh herbs."
+        ],
+        [
+          "INTERVIEWER",
+          "Is it expensive?"
+        ],
+        [
+          "CHEF",
+          "No. Rice, carrots and eggs are affordable. It is also easy to make a meat-free version."
+        ],
+        [
+          "INTERVIEWER",
+          "What is the most important thing for a beginner?"
+        ],
+        [
+          "CHEF",
+          "Prepare your ingredients before turning on the heat. That saves time and reduces mistakes."
+        ]
+      ]
+    },
+    "F": {
+      "title": "Speaking model: food opinions",
+      "dialogue": [
+        [
+          "EXAMINER",
+          "Do you enjoy cooking at home?"
+        ],
+        [
+          "CANDIDATE",
+          "Yes, especially on weekends. I often make vegetable soup because it is simple and healthy. I also like cooking with my sister because we can chat while preparing dinner."
+        ],
+        [
+          "EXAMINER",
+          "Is there any food you dislike?"
+        ],
+        [
+          "CANDIDATE",
+          "I am not keen on very oily food. It sometimes makes me feel uncomfortable, so I usually choose grilled or steamed dishes instead."
+        ],
+        [
+          "EXAMINER",
+          "Do you prefer restaurants or home-cooked food?"
+        ],
+        [
+          "CANDIDATE",
+          "I prefer home-cooked food most days because I know exactly what goes into the meal. However, I enjoy going to restaurants for special occasions."
+        ]
+      ]
+    },
+    "G": {
+      "title": "Speaking Part 2 model: a memorable family meal",
+      "dialogue": [
+        [
+          "CANDIDATE",
+          "I would like to talk about a family dinner that we had last summer. We celebrated my grandmother’s birthday at my uncle’s house. Around ten relatives came, including my cousins, so the atmosphere was cheerful."
+        ],
+        [
+          "CANDIDATE",
+          "The main dish was grilled fish with rice and fresh vegetables. My aunt prepared a light soup as well, and we all helped set the table. Before dinner, I cut fruit and arranged the plates. It was a simple meal, but everything tasted fresh."
+        ],
+        [
+          "CANDIDATE",
+          "What made the occasion special was not the food alone. My grandmother told us stories about her childhood, and my younger cousins asked lots of questions. We laughed and took a few photos together."
+        ],
+        [
+          "CANDIDATE",
+          "I enjoyed the dinner because our family members are usually busy, and we do not meet very often. That evening gave us time to talk without checking our phones. For me, it was a warm and memorable celebration."
+        ]
+      ]
+    }
+  },
+  "activities": [
+    {
+      "id": "U04-R01",
+      "skill": "R",
+      "number": 1,
+      "title": "Countable and uncountable food nouns",
+      "instruction_en": "Choose the standard countable or uncountable use.",
+      "instruction_vi": "Chọn danh từ đếm được hoặc không đếm được.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Is “rice” usually countable or uncountable?",
+          "question_vi": "Rice thường đếm được không?",
+          "answer": "uncountable",
+          "explanation_en": "We count grains/bowls of rice, not “rices” in this meaning.",
+          "explanation_vi": "Đếm hạt/bát cơm, không đếm rice thành rices trong nghĩa thông dụng.",
+          "open": false
+        },
+        {
+          "question_en": "Is “egg” countable?",
+          "question_vi": "Egg đếm được không?",
+          "answer": "countable",
+          "explanation_en": "You can say one egg or two eggs.",
+          "explanation_vi": "Có thể nói one egg, two eggs.",
+          "open": false
+        },
+        {
+          "question_en": "Is “bread” generally uncountable?",
+          "question_vi": "Bread thông thường có đếm được không?",
+          "answer": "uncountable",
+          "explanation_en": "Say a slice or loaf of bread to count quantities.",
+          "explanation_vi": "Đếm bằng a slice/a loaf of bread.",
+          "open": false
+        },
+        {
+          "question_en": "Are “vegetables” countable?",
+          "question_vi": "Vegetables đếm được không?",
+          "answer": "countable",
+          "explanation_en": "Vegetables is a plural count noun.",
+          "explanation_vi": "Vegetables là danh từ đếm được dạng số nhiều.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-R02",
+      "skill": "R",
+      "number": 2,
+      "title": "Food preference warm-up",
+      "instruction_en": "Answer questions with one example each.",
+      "instruction_vi": "Tập trả lời sở thích và thói quen ăn uống.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Name a food you regularly eat for breakfast.",
+          "question_vi": "Nêu món ăn sáng thường ăn.",
+          "answer": "I often have noodle soup for breakfast because it is filling.",
+          "explanation_en": "Give the food and a short reason.",
+          "explanation_vi": "Nêu tên món và lý do.",
+          "open": true
+        },
+        {
+          "question_en": "What do you dislike and why?",
+          "question_vi": "Bạn không thích món nào và vì sao?",
+          "answer": "I dislike very oily food because it makes me feel uncomfortable.",
+          "explanation_en": "Link a preference to a reason.",
+          "explanation_vi": "Nối sở thích với lý do.",
+          "open": true
+        },
+        {
+          "question_en": "What dish is traditional in your area?",
+          "question_vi": "Món truyền thống địa phương bạn?",
+          "answer": "Fresh spring rolls are common at family gatherings.",
+          "explanation_en": "Name a specific dish, not only a food group.",
+          "explanation_vi": "Nêu món cụ thể.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-R03",
+      "skill": "R",
+      "number": 3,
+      "title": "Skim: food culture surprises",
+      "instruction_en": "Read Passage A quickly and identify its purpose.",
+      "instruction_vi": "Đọc lướt bài A và xác định chủ đề.",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "A: Five travellers describe different food experiences. B: Five recipes. C: A restaurant price list.",
+          "question_vi": "Chọn ý chính.",
+          "answer": "A",
+          "explanation_en": "The passage presents personal reactions to different eating habits.",
+          "explanation_vi": "Bài gồm phản ứng cá nhân khi trải nghiệm thói quen ăn uống.",
+          "open": false
+        },
+        {
+          "question_en": "Who describes learning a new eating skill?",
+          "question_vi": "Ai kể về học kỹ năng khi ăn?",
+          "answer": "Jack",
+          "explanation_en": "Jack practises using chopsticks.",
+          "explanation_vi": "Jack luyện dùng đũa.",
+          "open": false
+        },
+        {
+          "question_en": "Who highlights conversation after a meal?",
+          "question_vi": "Ai nói về trò chuyện sau bữa?",
+          "answer": "Amina",
+          "explanation_en": "Amina remembers socialising after dinner.",
+          "explanation_vi": "Amina nhớ việc ngồi trò chuyện sau khi ăn.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-R04",
+      "skill": "R",
+      "number": 4,
+      "title": "Scan to locate precise details",
+      "instruction_en": "Find a name or fact in Passage A.",
+      "instruction_vi": "Quét tìm tên và chi tiết cụ thể.",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Who had soup for breakfast?",
+          "question_vi": "Ai ăn súp/mì nước buổi sáng?",
+          "answer": "Emily",
+          "explanation_en": "Emily describes a hot bowl of noodle soup before work.",
+          "explanation_vi": "Emily ăn mì nước trước giờ đi làm.",
+          "open": false
+        },
+        {
+          "question_en": "Who is vegetarian?",
+          "question_vi": "Ai ăn chay?",
+          "answer": "Sofia",
+          "explanation_en": "Sofia says she became vegetarian two years ago.",
+          "explanation_vi": "Sofia cho biết ăn chay từ hai năm trước.",
+          "open": false
+        },
+        {
+          "question_en": "Who dropped noodles while learning chopsticks?",
+          "question_vi": "Ai làm rơi mì khi học dùng đũa?",
+          "answer": "Jack",
+          "explanation_en": "Jack says he dropped his noodles several times.",
+          "explanation_vi": "Jack kể làm rơi mì vài lần.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-R05",
+      "skill": "R",
+      "number": 5,
+      "title": "Paraphrase and supporting evidence",
+      "instruction_en": "Match a paraphrase to the traveller.",
+      "instruction_vi": "Ghép cách diễn đạt tương đương với người.",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "The cook adapted a dish to my needs.",
+          "question_vi": "Đầu bếp điều chỉnh món phù hợp nhu cầu.",
+          "answer": "Sofia",
+          "explanation_en": "Sofia says the chef prepared a different sauce.",
+          "explanation_vi": "Đầu bếp làm nước sốt khác cho Sofia.",
+          "open": false
+        },
+        {
+          "question_en": "Offering food was a sign of kindness.",
+          "question_vi": "Mời ăn thêm để thể hiện quan tâm.",
+          "answer": "Musa",
+          "explanation_en": "His friend explained that sharing food showed care.",
+          "explanation_vi": "Bạn Musa giải thích việc chia sẻ thức ăn thể hiện quan tâm.",
+          "open": false
+        },
+        {
+          "question_en": "A meal can strengthen social connections.",
+          "question_vi": "Bữa ăn có thể gắn kết mọi người.",
+          "answer": "Amina",
+          "explanation_en": "Amina learned that mealtimes maintain friendships.",
+          "explanation_vi": "Amina nhận ra bữa ăn giúp giữ tình bạn.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-R06",
+      "skill": "R",
+      "number": 6,
+      "title": "Sentence completion from the passage",
+      "instruction_en": "Use ONE WORD from Passage A for each gap.",
+      "instruction_vi": "Điền MỘT TỪ lấy nguyên từ bài A.",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Emily now finds soup a ___ breakfast.",
+          "question_vi": "Emily nhận thấy ăn súp rất tiện.",
+          "answer": "convenient",
+          "explanation_en": "Paragraph A says filling and convenient.",
+          "explanation_vi": "Đoạn Emily nói filling and convenient.",
+          "open": false
+        },
+        {
+          "question_en": "Musa learned that sharing food showed ___.",
+          "question_vi": "Chia sẻ thức ăn thể hiện điều gì?",
+          "answer": "care",
+          "explanation_en": "Musa: a way of showing care.",
+          "explanation_vi": "Musa nói showing care.",
+          "open": false
+        },
+        {
+          "question_en": "Sofia asks about ___ when ordering.",
+          "question_vi": "Sofia hỏi gì khi gọi món?",
+          "answer": "ingredients",
+          "explanation_en": "Sofia asks about ingredients.",
+          "explanation_vi": "Sofia hỏi thành phần món ăn.",
+          "open": false
+        },
+        {
+          "question_en": "Jack found small slippery pieces ___.",
+          "question_vi": "Jack thấy miếng trơn nhỏ khó như thế nào?",
+          "answer": "hard",
+          "explanation_en": "The last sentence in his account says hard to pick up.",
+          "explanation_vi": "Câu cuối của Jack nói hard to pick up.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-R07",
+      "skill": "R",
+      "number": 7,
+      "title": "Correct noun errors",
+      "instruction_en": "Identify and correct incorrect quantifiers/nouns.",
+      "instruction_vi": "Sửa sai danh từ và lượng từ.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "There are much eggs in the fridge.",
+          "question_vi": "Sửa much eggs.",
+          "answer": "many eggs",
+          "explanation_en": "Eggs are plural countable; use many.",
+          "explanation_vi": "Eggs đếm được số nhiều nên many.",
+          "open": false
+        },
+        {
+          "question_en": "I would like three breads.",
+          "question_vi": "Sửa three breads khi nói 3 lát.",
+          "answer": "three slices of bread",
+          "explanation_en": "Bread is uncountable in this use; add a unit.",
+          "explanation_vi": "Bread không đếm được, cần đơn vị slice.",
+          "open": false
+        },
+        {
+          "question_en": "We need an advice about healthy eating.",
+          "question_vi": "Sửa an advice.",
+          "answer": "some advice / a piece of advice",
+          "explanation_en": "Advice is uncountable in standard English.",
+          "explanation_vi": "Advice không đếm được; dùng some hoặc a piece of.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-R08",
+      "skill": "R",
+      "number": 8,
+      "title": "Some, any, much and many",
+      "instruction_en": "Choose the correct quantifier.",
+      "instruction_vi": "Chọn lượng từ theo loại danh từ và câu.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "There are ___ carrots on the table. (many/much)",
+          "question_vi": "Có nhiều cà rốt.",
+          "answer": "many",
+          "explanation_en": "Carrots are plural count nouns.",
+          "explanation_vi": "Carrots là danh từ đếm được số nhiều.",
+          "open": false
+        },
+        {
+          "question_en": "We do not have ___ milk left. (some/any)",
+          "question_vi": "Không còn sữa.",
+          "answer": "any",
+          "explanation_en": "Any is common in negatives.",
+          "explanation_vi": "Any thường dùng câu phủ định.",
+          "open": false
+        },
+        {
+          "question_en": "How ___ sugar do you use? (much/many)",
+          "question_vi": "Bạn dùng bao nhiêu đường?",
+          "answer": "much",
+          "explanation_en": "Sugar is uncountable.",
+          "explanation_vi": "Sugar không đếm được.",
+          "open": false
+        },
+        {
+          "question_en": "Would you like ___ soup? (some/any)",
+          "question_vi": "Bạn có muốn dùng chút súp không?",
+          "answer": "some",
+          "explanation_en": "Some is natural when offering food.",
+          "explanation_vi": "Some tự nhiên trong lời mời.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-R09",
+      "skill": "R",
+      "number": 9,
+      "title": "Locate information in a longer article",
+      "instruction_en": "Use Passage B. Match themes with paragraphs A–F.",
+      "instruction_vi": "Dựa vào bài B, ghép thông tin với đoạn A–F.",
+      "track": null,
+      "passage": "B",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "A programme involving young children.",
+          "question_vi": "Chương trình có trẻ em tham gia.",
+          "answer": "C",
+          "explanation_en": "Paragraph C describes children cooking with adults.",
+          "explanation_vi": "Đoạn C kể trẻ em nấu với người lớn.",
+          "open": false
+        },
+        {
+          "question_en": "An article about whether watching leads to action.",
+          "question_vi": "Xem chương trình có khiến người ta nấu nhiều hơn?",
+          "answer": "F",
+          "explanation_en": "Paragraph F says viewing does not necessarily increase cooking.",
+          "explanation_vi": "Đoạn F nói xem không đồng nghĩa nấu nhiều.",
+          "open": false
+        },
+        {
+          "question_en": "A programme showing food history.",
+          "question_vi": "Chương trình về lịch sử món ăn.",
+          "answer": "D",
+          "explanation_en": "Paragraph D investigates food storage in earlier times.",
+          "explanation_vi": "Đoạn D đề cập lịch sử bảo quản thực phẩm.",
+          "open": false
+        },
+        {
+          "question_en": "An entertaining contest.",
+          "question_vi": "Cuộc thi để giải trí.",
+          "answer": "B",
+          "explanation_en": "Paragraph B describes Kitchen Challenge.",
+          "explanation_vi": "Đoạn B là cuộc thi nấu ăn.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-R10",
+      "skill": "R",
+      "number": 10,
+      "title": "Exam skill: multiple matching",
+      "instruction_en": "Match the descriptions to A–F; a paragraph may be used more than once.",
+      "instruction_vi": "Ghép miêu tả với đoạn A–F; một đoạn có thể dùng lại.",
+      "track": null,
+      "passage": "B",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Offers alternatives to save money.",
+          "question_vi": "Đưa phương án rẻ hơn.",
+          "answer": "A",
+          "explanation_en": "The show demonstrates lower-cost options.",
+          "explanation_vi": "Đoạn A đưa nguyên liệu/phương án ít tốn kém.",
+          "open": false
+        },
+        {
+          "question_en": "Reduces waste in restaurants.",
+          "question_vi": "Giảm lãng phí tại nhà hàng.",
+          "answer": "E",
+          "explanation_en": "Chefs suggest ways to reduce waste.",
+          "explanation_vi": "Đoạn E nói giảm lãng phí.",
+          "open": false
+        },
+        {
+          "question_en": "Competitors are judged on their food.",
+          "question_vi": "Thí sinh được ban giám khảo nhận xét.",
+          "answer": "B",
+          "explanation_en": "Judges discuss taste and appearance.",
+          "explanation_vi": "Đoạn B có judges bình luận hương vị và hình thức.",
+          "open": false
+        },
+        {
+          "question_en": "Encourages safe cooking with family.",
+          "question_vi": "Khuyến khích nấu ăn an toàn cùng gia đình.",
+          "answer": "C",
+          "explanation_en": "Children cook with adults under safety guidance.",
+          "explanation_vi": "Đoạn C nhấn mạnh an toàn và phối hợp.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W01",
+      "skill": "W",
+      "number": 1,
+      "title": "Understand a two-diagram task",
+      "instruction_en": "Identify what each chart describes.",
+      "instruction_vi": "Xác định nội dung của hai biểu đồ.",
+      "track": null,
+      "passage": null,
+      "visual": "pie-takeaway+bar-cafes",
+      "items": [
+        {
+          "question_en": "Chart A: proportions or changes over time?",
+          "question_vi": "Biểu đồ tròn: tỉ lệ hay thời gian?",
+          "answer": "proportions",
+          "explanation_en": "A pie chart displays shares of a whole.",
+          "explanation_vi": "Biểu đồ tròn thể hiện tỉ lệ.",
+          "open": false
+        },
+        {
+          "question_en": "Chart B: categories only or numbers over years?",
+          "question_vi": "Biểu đồ cột theo năm: kiểu dữ liệu gì?",
+          "answer": "numbers over years",
+          "explanation_en": "The x-axis gives years 2016–2024.",
+          "explanation_vi": "Trục ngang là các năm 2016–2024.",
+          "open": false
+        },
+        {
+          "question_en": "Do the charts give reasons for food preferences?",
+          "question_vi": "Biểu đồ có nêu nguyên nhân lựa chọn món?",
+          "answer": "No",
+          "explanation_en": "Charts show quantities, not motivations.",
+          "explanation_vi": "Biểu đồ chỉ cho số, không cho nguyên nhân.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W02",
+      "skill": "W",
+      "number": 2,
+      "title": "Use approximate quantity expressions",
+      "instruction_en": "Match expressions to percentages or trends.",
+      "instruction_vi": "Ghép diễn đạt ước lượng với dữ liệu.",
+      "track": null,
+      "passage": null,
+      "visual": "pie-takeaway+bar-cafes",
+      "items": [
+        {
+          "question_en": "“about a third” best matches 35% / 8%?",
+          "question_vi": "Khoảng một phần ba ứng với 35 hay 8?",
+          "answer": "35%",
+          "explanation_en": "One third is about 33.3%.",
+          "explanation_vi": "Một phần ba khoảng 33,3%.",
+          "open": false
+        },
+        {
+          "question_en": "“one in five” matches 20% / 12%?",
+          "question_vi": "Một phần năm là bao nhiêu?",
+          "answer": "20%",
+          "explanation_en": "One divided by five equals 20%.",
+          "explanation_vi": "1/5 = 20%.",
+          "open": false
+        },
+        {
+          "question_en": "“a steady rise” describes café numbers or Other takeaway?",
+          "question_vi": "Tăng đều mô tả dữ liệu nào?",
+          "answer": "café numbers",
+          "explanation_en": "The bars rise continuously from 12 to 40.",
+          "explanation_vi": "Số quán tăng liên tục 12 → 40.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W03",
+      "skill": "W",
+      "number": 3,
+      "title": "Write introduction and overview",
+      "instruction_en": "Draft one introduction and one overview.",
+      "instruction_vi": "Viết mở bài và overview kết hợp hai biểu đồ.",
+      "track": null,
+      "passage": null,
+      "visual": "pie-takeaway+bar-cafes",
+      "items": [
+        {
+          "question_en": "Paraphrase the pie and bar chart titles in one sentence.",
+          "question_vi": "Diễn đạt lại hai tiêu đề biểu đồ trong một câu.",
+          "answer": "The charts show takeaway preferences and the number of vegetarian cafés over time.",
+          "explanation_en": "Mention both visuals clearly in the introduction.",
+          "explanation_vi": "Mở bài cần giới thiệu cả 2 biểu đồ.",
+          "open": true
+        },
+        {
+          "question_en": "Give one key fact from each chart in the overview.",
+          "question_vi": "Overview nêu 1 điểm chính của mỗi hình.",
+          "answer": "Overall, local food was most popular, while the number of cafés rose steadily.",
+          "explanation_en": "Overview combines major observations with no over-detail.",
+          "explanation_vi": "Overview kết hợp 2 ý nổi bật, ít số chi tiết.",
+          "open": true
+        },
+        {
+          "question_en": "Should you claim cafés grew because people preferred local food?",
+          "question_vi": "Có thể nói quán tăng vì người dân thích đồ ăn địa phương?",
+          "answer": "No",
+          "explanation_en": "The charts do not show a causal relationship.",
+          "explanation_vi": "Hai biểu đồ không chứng minh quan hệ nguyên nhân–kết quả.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W04",
+      "skill": "W",
+      "number": 4,
+      "title": "Read percentages precisely",
+      "instruction_en": "Translate fractions into percentages.",
+      "instruction_vi": "Chuyển phân số thành phần trăm.",
+      "track": null,
+      "passage": null,
+      "visual": "pie-takeaway",
+      "items": [
+        {
+          "question_en": "One fifth = ___%.",
+          "question_vi": "Một phần năm?",
+          "answer": "20",
+          "explanation_en": "1/5 = 0.2.",
+          "explanation_vi": "1/5 = 0,2.",
+          "open": false
+        },
+        {
+          "question_en": "A quarter = ___%.",
+          "question_vi": "Một phần tư?",
+          "answer": "25",
+          "explanation_en": "1/4 = 0.25.",
+          "explanation_vi": "1/4 = 0,25.",
+          "open": false
+        },
+        {
+          "question_en": "The smallest slice is ___%.",
+          "question_vi": "Phần nhỏ nhất là bao nhiêu?",
+          "answer": "8",
+          "explanation_en": "Other is 8%.",
+          "explanation_vi": "Other bằng 8%.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W05",
+      "skill": "W",
+      "number": 5,
+      "title": "Comparatives with fewer, less, more",
+      "instruction_en": "Choose a suitable comparative.",
+      "instruction_vi": "Chọn more, fewer hoặc less.",
+      "track": null,
+      "passage": null,
+      "visual": "pie-takeaway+bar-cafes",
+      "items": [
+        {
+          "question_en": "There were ___ cafés in 2016 than in 2024.",
+          "question_vi": "2016 có quán ít hơn 2024.",
+          "answer": "fewer",
+          "explanation_en": "Cafés are plural countable, and 12 < 40.",
+          "explanation_vi": "Cafés đếm được số nhiều, dùng fewer.",
+          "open": false
+        },
+        {
+          "question_en": "Other cuisines were ___ popular than local dishes.",
+          "question_vi": "Other ít phổ biến hơn local.",
+          "answer": "less",
+          "explanation_en": "Popularity is a degree; less popular.",
+          "explanation_vi": "Less đi với tính từ popular.",
+          "open": false
+        },
+        {
+          "question_en": "Chinese takeaway was ___ common than Indian takeaway.",
+          "question_vi": "Chinese phổ biến hơn Indian.",
+          "answer": "more",
+          "explanation_en": "25% > 12%.",
+          "explanation_vi": "25% lớn hơn 12%.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W06",
+      "skill": "W",
+      "number": 6,
+      "title": "Countable and uncountable in reports",
+      "instruction_en": "Choose the correct option.",
+      "instruction_vi": "Chọn lượng từ với danh từ báo cáo.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "There were more / much cafés in 2024.",
+          "question_vi": "Chọn more/much với cafés.",
+          "answer": "more",
+          "explanation_en": "More works with plural countable nouns.",
+          "explanation_vi": "More đi với cafés số nhiều.",
+          "open": false
+        },
+        {
+          "question_en": "The survey gives many / much information.",
+          "question_vi": "Chọn many/much với information.",
+          "answer": "much",
+          "explanation_en": "Information is uncountable.",
+          "explanation_vi": "Information là danh từ không đếm được.",
+          "open": false
+        },
+        {
+          "question_en": "There was less / fewer waste.",
+          "question_vi": "Chọn less/fewer với waste.",
+          "answer": "less",
+          "explanation_en": "Waste is treated as uncountable here.",
+          "explanation_vi": "Waste (rác thải) không đếm được trong ngữ cảnh này.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W07",
+      "skill": "W",
+      "number": 7,
+      "title": "Classify count nouns in charts",
+      "instruction_en": "Classify a noun and choose a quantifier.",
+      "instruction_vi": "Phân loại danh từ và lượng từ.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "“restaurant”: countable / uncountable?",
+          "question_vi": "Restaurant có đếm được?",
+          "answer": "countable",
+          "explanation_en": "One restaurant, two restaurants.",
+          "explanation_vi": "One restaurant, two restaurants.",
+          "open": false
+        },
+        {
+          "question_en": "“equipment”: countable / uncountable?",
+          "question_vi": "Equipment có đếm được?",
+          "answer": "uncountable",
+          "explanation_en": "Use a piece of equipment; no “equipments”.",
+          "explanation_vi": "Dùng a piece of equipment, không thêm s.",
+          "open": false
+        },
+        {
+          "question_en": "Choose: many / much supermarkets.",
+          "question_vi": "Chọn lượng từ supermarkets.",
+          "answer": "many",
+          "explanation_en": "Supermarkets are countable plural.",
+          "explanation_vi": "Supermarkets đếm được số nhiều.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W08",
+      "skill": "W",
+      "number": 8,
+      "title": "Compare two countries with numbers",
+      "instruction_en": "Use this independent comparison table: A has 45 cafés and 60 restaurants; B has 25 cafés and 75 restaurants.",
+      "instruction_vi": "Dùng bảng mới: A có 45 quán cà phê và 60 nhà hàng; B có 25 và 75.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Which city has more cafés?",
+          "question_vi": "Thành phố nào nhiều quán cà phê hơn?",
+          "answer": "A",
+          "explanation_en": "45 is higher than 25.",
+          "explanation_vi": "45 lớn hơn 25.",
+          "open": false
+        },
+        {
+          "question_en": "How many more cafés does A have?",
+          "question_vi": "A nhiều hơn B mấy quán cà phê?",
+          "answer": "20",
+          "explanation_en": "45 minus 25 equals 20.",
+          "explanation_vi": "45 − 25 = 20.",
+          "open": false
+        },
+        {
+          "question_en": "Which has fewer restaurants?",
+          "question_vi": "Nơi nào ít nhà hàng hơn?",
+          "answer": "A",
+          "explanation_en": "60 is fewer than 75.",
+          "explanation_vi": "60 ít hơn 75.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W09",
+      "skill": "W",
+      "number": 9,
+      "title": "Articles a, an and the",
+      "instruction_en": "Correct the article use.",
+      "instruction_vi": "Sửa mạo từ.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "He ordered an sandwich.",
+          "question_vi": "Sửa an sandwich.",
+          "answer": "a sandwich",
+          "explanation_en": "Sandwich begins with consonant sound /s/.",
+          "explanation_vi": "Sandwich mở đầu bằng âm phụ âm /s/.",
+          "open": false
+        },
+        {
+          "question_en": "The most popular dish was a rice.",
+          "question_vi": "Sửa a rice khi nói gạo/cơm nói chung.",
+          "answer": "rice",
+          "explanation_en": "Rice is uncountable in this sense.",
+          "explanation_vi": "Rice không đếm được trong nghĩa chung.",
+          "open": false
+        },
+        {
+          "question_en": "___ largest share was 35%. (A/The)",
+          "question_vi": "Điền mạo từ trước so sánh nhất.",
+          "answer": "The",
+          "explanation_en": "Superlative typically takes the.",
+          "explanation_vi": "So sánh nhất thường dùng the.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W10",
+      "skill": "W",
+      "number": 10,
+      "title": "Approximate figures",
+      "instruction_en": "Use about, just over, just under or almost.",
+      "instruction_vi": "Dùng từ mô tả số xấp xỉ.",
+      "track": null,
+      "passage": null,
+      "visual": "pie-takeaway+bar-cafes",
+      "items": [
+        {
+          "question_en": "19 cafés = ___ 20.",
+          "question_vi": "19 quán: gần 20.",
+          "answer": "almost / just under",
+          "explanation_en": "19 is slightly below 20.",
+          "explanation_vi": "19 thấp hơn 20 một chút.",
+          "open": false
+        },
+        {
+          "question_en": "A share of 35% = ___ one third.",
+          "question_vi": "35% so với một phần ba?",
+          "answer": "just over",
+          "explanation_en": "35% is slightly over 33.3%.",
+          "explanation_vi": "35% cao hơn 33,3% một ít.",
+          "open": false
+        },
+        {
+          "question_en": "40 cafés = ___ forty.",
+          "question_vi": "40 là chính xác hay xấp xỉ?",
+          "answer": "exactly",
+          "explanation_en": "Do not approximate when the chart gives exactly 40.",
+          "explanation_vi": "Khi biểu đồ ghi chính xác 40, không cần ước lượng.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W11",
+      "skill": "W",
+      "number": 11,
+      "title": "Explain trends using two time periods",
+      "instruction_en": "Describe beginning, middle and end.",
+      "instruction_vi": "Mô tả giai đoạn đầu, giữa và cuối.",
+      "track": null,
+      "passage": null,
+      "visual": "bar-cafes",
+      "items": [
+        {
+          "question_en": "How many cafés were there in 2016?",
+          "question_vi": "2016 có bao nhiêu quán chay?",
+          "answer": "12",
+          "explanation_en": "First bar shows 12.",
+          "explanation_vi": "Cột đầu là 12.",
+          "open": false
+        },
+        {
+          "question_en": "In 2020, the number stood at ___.",
+          "question_vi": "2020 có mấy quán?",
+          "answer": "25",
+          "explanation_en": "Middle bar shows 25.",
+          "explanation_vi": "Cột giữa là 25.",
+          "open": false
+        },
+        {
+          "question_en": "Total increase from 2016 to 2024?",
+          "question_vi": "Tổng mức tăng 2016–2024?",
+          "answer": "28",
+          "explanation_en": "40 minus 12 equals 28.",
+          "explanation_vi": "40 − 12 = 28.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W12",
+      "skill": "W",
+      "number": 12,
+      "title": "Avoid unsupported information",
+      "instruction_en": "Distinguish fact from unsupported inference.",
+      "instruction_vi": "Phân biệt thông tin số liệu và suy luận không có căn cứ.",
+      "track": null,
+      "passage": null,
+      "visual": "pie-takeaway+bar-cafes",
+      "items": [
+        {
+          "question_en": "“Local food had the largest share.” Supported?",
+          "question_vi": "Local lớn nhất có được biểu đồ chứng minh?",
+          "answer": "Yes",
+          "explanation_en": "It has 35%, the largest slice.",
+          "explanation_vi": "Local 35% là lớn nhất.",
+          "open": false
+        },
+        {
+          "question_en": "“More cafés opened because everyone became vegetarian.” Supported?",
+          "question_vi": "Tăng số quán do ai cũng ăn chay có bằng chứng?",
+          "answer": "No",
+          "explanation_en": "No cause is displayed.",
+          "explanation_vi": "Không có dữ liệu nguyên nhân.",
+          "open": false
+        },
+        {
+          "question_en": "“Café numbers rose throughout the period.” Supported?",
+          "question_vi": "Số quán tăng liên tục có chứng cứ?",
+          "answer": "Yes",
+          "explanation_en": "Each subsequent bar is taller.",
+          "explanation_vi": "Mỗi cột sau cao hơn cột trước.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W13",
+      "skill": "W",
+      "number": 13,
+      "title": "Analyse an original model",
+      "instruction_en": "Find the introduction, overview and comparison.",
+      "instruction_vi": "Phân tích bài mẫu do English Skill Lab viết.",
+      "track": null,
+      "passage": null,
+      "visual": "pie-takeaway+bar-cafes",
+      "items": [
+        {
+          "question_en": "Which paragraph starts “Overall”?",
+          "question_vi": "Overview bắt đầu ở đoạn nào?",
+          "answer": "paragraph 2",
+          "explanation_en": "It begins with Overall and describes major patterns.",
+          "explanation_vi": "Đoạn 2 có Overall và ý chính.",
+          "open": false
+        },
+        {
+          "question_en": "Which paragraph gives the pie-chart percentages?",
+          "question_vi": "Đoạn nào nêu tỷ lệ tròn?",
+          "answer": "paragraph 3",
+          "explanation_en": "It compares 35%, 25%, 20%, 12% and 8%.",
+          "explanation_vi": "Đoạn 3 so sánh các phần trăm.",
+          "open": false
+        },
+        {
+          "question_en": "Which paragraph describes the years 2016–2024?",
+          "question_vi": "Đoạn nào nêu mốc năm?",
+          "answer": "paragraph 4",
+          "explanation_en": "It reports numbers of cafés over time.",
+          "explanation_vi": "Đoạn 4 nêu số quán qua các năm.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W14",
+      "skill": "W",
+      "number": 14,
+      "title": "Prepare final exam task with two charts",
+      "instruction_en": "Write an overview and two comparisons from the 2019/2024 chart.",
+      "instruction_vi": "Lên overview và hai phép so sánh theo biểu đồ mới.",
+      "track": null,
+      "passage": null,
+      "visual": "exam-chart",
+      "items": [
+        {
+          "question_en": "What is the main pattern?",
+          "question_vi": "Xu hướng chính là gì?",
+          "answer": "All age groups became more likely to choose balanced meals.",
+          "explanation_en": "Every 2024 bar exceeds its 2019 counterpart.",
+          "explanation_vi": "Mọi cột 2024 cao hơn cột 2019.",
+          "open": true
+        },
+        {
+          "question_en": "Which group is highest in 2024?",
+          "question_vi": "Nhóm cao nhất năm 2024?",
+          "answer": "60+",
+          "explanation_en": "The value is 69%, above other age groups.",
+          "explanation_vi": "Nhóm 60+ đạt 69% cao nhất.",
+          "open": false
+        },
+        {
+          "question_en": "How many percentage points did the 45–59 group increase?",
+          "question_vi": "Nhóm 45–59 tăng mấy điểm phần trăm?",
+          "answer": "9",
+          "explanation_en": "64% minus 55% is nine percentage points.",
+          "explanation_vi": "64 − 55 = 9 điểm phần trăm.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-W15",
+      "skill": "W",
+      "number": 15,
+      "title": "Exam task: Task 1 (150+ words)",
+      "instruction_en": "Write at least 150 words from the exam chart within 20 minutes.",
+      "instruction_vi": "Viết tối thiểu 150 từ theo biểu đồ mới trong 20 phút.",
+      "track": null,
+      "passage": null,
+      "visual": "exam-chart",
+      "items": [
+        {
+          "question_en": "Write a four-paragraph report (intro, overview, details 1 and 2).",
+          "question_vi": "Viết 4 đoạn đúng bố cục.",
+          "answer": "The chart compares the proportions of adults choosing balanced meals in four age groups in 2019 and 2024. Overall, all four groups saw increases.",
+          "explanation_en": "The introduction states what is measured; the overview captures the main direction.",
+          "explanation_vi": "Mở bài nêu dữ liệu; overview nêu xu hướng lớn.",
+          "open": true
+        },
+        {
+          "question_en": "Mention at least two comparisons with exact figures.",
+          "question_vi": "Nêu ít nhất hai so sánh có số chính xác.",
+          "answer": "The rate for adults aged 60+ rose from 61% to 69%, while the 18–29 group increased from 38% to 44%.",
+          "explanation_en": "Use units correctly; figures represent percentages.",
+          "explanation_vi": "Phải dùng đúng đơn vị phần trăm.",
+          "open": true
+        },
+        {
+          "question_en": "Check unsupported reasons or personal opinions.",
+          "question_vi": "Kiểm tra không suy đoán nguyên nhân.",
+          "answer": "Do not explain WHY diets changed; the chart does not report causes.",
+          "explanation_en": "Task 1 is data description, not an opinion essay.",
+          "explanation_vi": "Task 1 mô tả số liệu, không phải bài nêu quan điểm.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-L01",
+      "skill": "L",
+      "number": 1,
+      "title": "Lead-in: cooking verbs",
+      "instruction_en": "Match each situation with boil, fry, bake or grill.",
+      "instruction_vi": "Ghép tình huống với boil, fry, bake hoặc grill.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Cook pasta in hot water.",
+          "question_vi": "Nấu mì trong nước nóng.",
+          "answer": "boil",
+          "explanation_en": "Boil means cook in water.",
+          "explanation_vi": "Boil là luộc/nấu trong nước sôi.",
+          "open": false
+        },
+        {
+          "question_en": "Cook eggs in oil in a pan.",
+          "question_vi": "Nấu trứng trong dầu trên chảo.",
+          "answer": "fry",
+          "explanation_en": "Fry uses oil and a frying pan.",
+          "explanation_vi": "Fry là chiên/rán bằng dầu.",
+          "open": false
+        },
+        {
+          "question_en": "Prepare bread in an oven.",
+          "question_vi": "Nướng bánh mì trong lò.",
+          "answer": "bake",
+          "explanation_en": "Bake uses dry heat inside an oven.",
+          "explanation_vi": "Bake là nướng trong lò.",
+          "open": false
+        },
+        {
+          "question_en": "Cook fish above direct heat.",
+          "question_vi": "Nướng cá trên nguồn nhiệt trực tiếp.",
+          "answer": "grill",
+          "explanation_en": "Grilling applies direct heat.",
+          "explanation_vi": "Grill là nướng trên vỉ/nguồn nhiệt trực tiếp.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L02",
+      "skill": "L",
+      "number": 2,
+      "title": "Food categories",
+      "instruction_en": "Classify the foods as meat, fruit, vegetables or sweets.",
+      "instruction_vi": "Phân loại các từ vào thịt, trái cây, rau củ hoặc đồ ngọt.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Category of chicken?",
+          "question_vi": "chicken thuộc nhóm thực phẩm nào?",
+          "answer": "meat",
+          "explanation_en": "Chicken is classified as meat.",
+          "explanation_vi": "Từ chicken thuộc nhóm meat.",
+          "open": false
+        },
+        {
+          "question_en": "Category of banana?",
+          "question_vi": "banana thuộc nhóm thực phẩm nào?",
+          "answer": "fruit",
+          "explanation_en": "Banana is classified as fruit.",
+          "explanation_vi": "Từ banana thuộc nhóm fruit.",
+          "open": false
+        },
+        {
+          "question_en": "Category of carrot?",
+          "question_vi": "carrot thuộc nhóm thực phẩm nào?",
+          "answer": "vegetables",
+          "explanation_en": "Carrot is classified as vegetables.",
+          "explanation_vi": "Từ carrot thuộc nhóm vegetables.",
+          "open": false
+        },
+        {
+          "question_en": "Category of chocolate?",
+          "question_vi": "chocolate thuộc nhóm thực phẩm nào?",
+          "answer": "sweets",
+          "explanation_en": "Chocolate is classified as sweets.",
+          "explanation_vi": "Từ chocolate thuộc nhóm sweets.",
+          "open": false
+        },
+        {
+          "question_en": "Category of beef?",
+          "question_vi": "beef thuộc nhóm thực phẩm nào?",
+          "answer": "meat",
+          "explanation_en": "Beef is classified as meat.",
+          "explanation_vi": "Từ beef thuộc nhóm meat.",
+          "open": false
+        },
+        {
+          "question_en": "Category of apple?",
+          "question_vi": "apple thuộc nhóm thực phẩm nào?",
+          "answer": "fruit",
+          "explanation_en": "Apple is classified as fruit.",
+          "explanation_vi": "Từ apple thuộc nhóm fruit.",
+          "open": false
+        },
+        {
+          "question_en": "Category of cucumber?",
+          "question_vi": "cucumber thuộc nhóm thực phẩm nào?",
+          "answer": "vegetables",
+          "explanation_en": "Cucumber is classified as vegetables.",
+          "explanation_vi": "Từ cucumber thuộc nhóm vegetables.",
+          "open": false
+        },
+        {
+          "question_en": "Category of cake?",
+          "question_vi": "cake thuộc nhóm thực phẩm nào?",
+          "answer": "sweets",
+          "explanation_en": "Cake is classified as sweets.",
+          "explanation_vi": "Từ cake thuộc nhóm sweets.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L03",
+      "skill": "L",
+      "number": 3,
+      "title": "Matching questions to answers",
+      "instruction_en": "Listen to Track A and answer the questions.",
+      "instruction_vi": "Nghe Track A rồi trả lời.",
+      "track": "A",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "What main dish do they decide to make?",
+          "question_vi": "Họ cuối cùng chọn món chính nào?",
+          "answer": "vegetable noodles",
+          "explanation_en": "They reject fried chicken due to a vegetarian guest.",
+          "explanation_vi": "Họ bỏ món gà rán vì có khách không ăn thịt.",
+          "open": false
+        },
+        {
+          "question_en": "What ingredient must they avoid?",
+          "question_vi": "Họ phải tránh nguyên liệu nào?",
+          "answer": "peanuts",
+          "explanation_en": "The guest is allergic to peanuts.",
+          "explanation_vi": "Khách bị dị ứng đậu phộng.",
+          "open": false
+        },
+        {
+          "question_en": "What dessert will they prepare?",
+          "question_vi": "Họ chuẩn bị món tráng miệng nào?",
+          "answer": "apple cake",
+          "explanation_en": "The speaker offers to bake an apple cake.",
+          "explanation_vi": "Người nói đề xuất nướng bánh táo.",
+          "open": false
+        },
+        {
+          "question_en": "At what time will they begin cooking?",
+          "question_vi": "Họ bắt đầu nấu lúc mấy giờ?",
+          "answer": "4:30",
+          "explanation_en": "The first idea, four o’clock, is corrected to half past four.",
+          "explanation_vi": "Giờ 4:00 đã được đổi thành 4:30.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L04",
+      "skill": "L",
+      "number": 4,
+      "title": "Ways of preparing food",
+      "instruction_en": "Listen to Track B. Choose the final cooking method or meal detail.",
+      "instruction_vi": "Nghe Track B, chọn cách chế biến hoặc chi tiết cuối cùng.",
+      "track": "B",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "How are the chosen dumplings cooked?",
+          "question_vi": "Há cảo được chọn chế biến thế nào?",
+          "answer": "steamed",
+          "explanation_en": "The customer orders steamed, not fried, dumplings.",
+          "explanation_vi": "Khách chọn há cảo hấp, không phải chiên.",
+          "open": false
+        },
+        {
+          "question_en": "How many dumplings does the customer order?",
+          "question_vi": "Khách gọi mấy cái há cảo?",
+          "answer": "6",
+          "explanation_en": "The customer says six.",
+          "explanation_vi": "Khách nói số lượng sáu.",
+          "open": false
+        },
+        {
+          "question_en": "How much does the portion cost today?",
+          "question_vi": "Hôm nay phần ăn có giá bao nhiêu?",
+          "answer": "$6.50",
+          "explanation_en": "The lunchtime offer reduces the initial price.",
+          "explanation_vi": "Giá khuyến mãi buổi trưa thay thế giá ban đầu.",
+          "open": false
+        },
+        {
+          "question_en": "What does the customer refuse in the drink?",
+          "question_vi": "Khách không muốn thêm gì vào đồ uống?",
+          "answer": "sugar",
+          "explanation_en": "The request is a mango drink with no sugar.",
+          "explanation_vi": "Khách yêu cầu nước xoài không đường.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L05",
+      "skill": "L",
+      "number": 5,
+      "title": "Matching places with food types",
+      "instruction_en": "Listen to Track C. Match restaurants with their signature foods.",
+      "instruction_vi": "Nghe Track C, ghép nhà hàng với loại món ăn đặc trưng.",
+      "track": "C",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Which restaurant serves vegetarian curry?",
+          "question_vi": "Nơi nào phục vụ cà ri chay?",
+          "answer": "Green Garden",
+          "explanation_en": "Vegetarian curry is its speciality.",
+          "explanation_vi": "Đặc sản là cà ri rau củ.",
+          "open": false
+        },
+        {
+          "question_en": "Which is known for grilled fish?",
+          "question_vi": "Nơi nào nổi tiếng với cá nướng?",
+          "answer": "River Grill",
+          "explanation_en": "The reviewer names grilled fish and chicken.",
+          "explanation_vi": "Người nhận xét nói cá và gà nướng.",
+          "open": false
+        },
+        {
+          "question_en": "Where can students buy noodle soup?",
+          "question_vi": "Sinh viên mua mì nước ở đâu?",
+          "answer": "Market Bowl",
+          "explanation_en": "Its noodle soup is popular with students.",
+          "explanation_vi": "Món mì nước ở đây được sinh viên yêu thích.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L06",
+      "skill": "L",
+      "number": 6,
+      "title": "Restaurant review matching",
+      "instruction_en": "Listen again to Track C. Match each characteristic to a restaurant.",
+      "instruction_vi": "Nghe lại Track C, ghép đặc điểm với nhà hàng.",
+      "track": "C",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "A restaurant with a river view",
+          "question_vi": "Nhà hàng có cảnh nhìn ra sông",
+          "answer": "River Grill",
+          "explanation_en": "The review specifically mentions the river view.",
+          "explanation_vi": "Bản nhận xét nêu cảnh nhìn ra sông.",
+          "open": false
+        },
+        {
+          "question_en": "A low-cost and noisy restaurant",
+          "question_vi": "Nhà hàng giá rẻ nhưng ồn",
+          "answer": "Market Bowl",
+          "explanation_en": "It is inexpensive but noisy.",
+          "explanation_vi": "Giá rẻ nhưng khá ồn.",
+          "open": false
+        },
+        {
+          "question_en": "A vegetarian restaurant that can be expensive",
+          "question_vi": "Nhà hàng chay nhưng có thể đắt",
+          "answer": "Green Garden",
+          "explanation_en": "It offers vegetarian dishes, though it is a little expensive.",
+          "explanation_vi": "Có món chay nhưng hơi đắt.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L07",
+      "skill": "L",
+      "number": 7,
+      "title": "Using the transcript",
+      "instruction_en": "Read Track C transcript and find evidence.",
+      "instruction_vi": "Đọc transcript Track C và tìm bằng chứng.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Which expression warns of slow service?",
+          "question_vi": "Cụm nào diễn tả phục vụ chậm?",
+          "answer": "service can be slow",
+          "explanation_en": "The negative point follows but.",
+          "explanation_vi": "Ý tiêu cực xuất hiện sau but.",
+          "open": false
+        },
+        {
+          "question_en": "What is the positive point about portions?",
+          "question_vi": "Điểm tích cực về khẩu phần là gì?",
+          "answer": "portions are generous",
+          "explanation_en": "Generous portions means large servings.",
+          "explanation_vi": "Generous portions nghĩa là khẩu phần khá nhiều.",
+          "open": false
+        },
+        {
+          "question_en": "What links the host’s summary to the review?",
+          "question_vi": "Lời tóm tắt của người dẫn có chính xác không?",
+          "answer": "Yes",
+          "explanation_en": "The reviewer confirms with Exactly.",
+          "explanation_vi": "Người nhận xét xác nhận bằng Exactly.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L08",
+      "skill": "L",
+      "number": 8,
+      "title": "Synonyms and paraphrases",
+      "instruction_en": "Give a phrase from the tracks matching each word.",
+      "instruction_vi": "Tìm cụm trong bài nghe tương đương với từ cho sẵn.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "inexpensive",
+          "question_vi": "rẻ tiền",
+          "answer": "low-cost / inexpensive",
+          "explanation_en": "These phrases all mean not costly.",
+          "explanation_vi": "Các cụm đều có nghĩa không đắt.",
+          "open": false
+        },
+        {
+          "question_en": "large servings",
+          "question_vi": "phần ăn nhiều",
+          "answer": "generous portions",
+          "explanation_en": "Portion refers to serving size.",
+          "explanation_vi": "Portion nghĩa là khẩu phần.",
+          "open": false
+        },
+        {
+          "question_en": "changeable",
+          "question_vi": "có thể thay đổi",
+          "answer": "flexible",
+          "explanation_en": "In Track E, the recipe can be adapted.",
+          "explanation_vi": "Track E nói công thức có thể điều chỉnh.",
+          "open": false
+        },
+        {
+          "question_en": "without meat",
+          "question_vi": "không có thịt",
+          "answer": "meat-free",
+          "explanation_en": "Meat-free means containing no meat.",
+          "explanation_vi": "Meat-free là không chứa thịt.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L09",
+      "skill": "L",
+      "number": 9,
+      "title": "Which statement is NOT equivalent?",
+      "instruction_en": "Choose the statement that changes the meaning.",
+      "instruction_vi": "Chọn câu làm thay đổi ý nghĩa.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Original: The service can be slow on weekends. Which differs? A. Sometimes guests wait longer on Saturdays. B. Service is always fast on weekends.",
+          "question_vi": "Câu nào trái nghĩa với phục vụ có thể chậm vào cuối tuần?",
+          "answer": "B",
+          "explanation_en": "Always fast contradicts can be slow.",
+          "explanation_vi": "Always fast mâu thuẫn với can be slow.",
+          "open": false
+        },
+        {
+          "question_en": "Original: It is a little expensive. Which differs? A. It costs quite a lot. B. It is the cheapest place in town.",
+          "question_vi": "Câu nào KHÔNG tương đương với hơi đắt?",
+          "answer": "B",
+          "explanation_en": "Cheapest has the opposite meaning.",
+          "explanation_vi": "Cheapest mang nghĩa đối lập.",
+          "open": false
+        },
+        {
+          "question_en": "Original: Add chilli if you like spicy food. Which differs? A. Chilli is optional. B. Everyone must add chilli.",
+          "question_vi": "Câu nào khác nghĩa?",
+          "answer": "B",
+          "explanation_en": "If makes the ingredient optional, not compulsory.",
+          "explanation_vi": "If cho biết ớt là tùy chọn.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L10",
+      "skill": "L",
+      "number": 10,
+      "title": "Vocabulary in context",
+      "instruction_en": "Write a short English definition based on the tracks.",
+      "instruction_vi": "Viết giải nghĩa tiếng Anh ngắn dựa trên bài nghe.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "allergic",
+          "question_vi": "dị ứng",
+          "answer": "having a bad physical reaction to something",
+          "explanation_en": "Hannah cannot eat peanuts because of an allergy.",
+          "explanation_vi": "Hannah không thể ăn đậu phộng vì dị ứng.",
+          "open": false
+        },
+        {
+          "question_en": "fermented",
+          "question_vi": "lên men",
+          "answer": "changed by a natural process involving microorganisms",
+          "explanation_en": "Fermented cabbage is a preserved food.",
+          "explanation_vi": "Rau lên men là thực phẩm được bảo quản bằng quá trình lên men.",
+          "open": false
+        },
+        {
+          "question_en": "recipe",
+          "question_vi": "công thức nấu ăn",
+          "answer": "instructions for preparing a dish",
+          "explanation_en": "A recipe explains ingredients and steps.",
+          "explanation_vi": "Recipe nói nguyên liệu và cách chế biến.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L11",
+      "skill": "L",
+      "number": 11,
+      "title": "Classification: food and countries",
+      "instruction_en": "Listen to Track D. Write China, Japan or Korea based only on the recording.",
+      "instruction_vi": "Nghe Track D. Ghi China, Japan hoặc Korea dựa trên thông tin nghe.",
+      "track": "D",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "rice balls wrapped in seaweed",
+          "question_vi": "Cơm nắm bọc rong biển",
+          "answer": "Japan",
+          "explanation_en": "The presenter assigns rice balls to Sora’s Japan trip.",
+          "explanation_vi": "Người dẫn nói món cơm nắm trong chuyến đi Nhật của Sora.",
+          "open": false
+        },
+        {
+          "question_en": "fermented cabbage side dish",
+          "question_vi": "Món rau cải lên men ăn kèm",
+          "answer": "Korea",
+          "explanation_en": "Min ate the side dish in Korea.",
+          "explanation_vi": "Min được dùng món này ở Hàn Quốc.",
+          "open": false
+        },
+        {
+          "question_en": "bamboo chopsticks",
+          "question_vi": "Đũa tre",
+          "answer": "China",
+          "explanation_en": "Wei learned about bamboo chopsticks in China.",
+          "explanation_vi": "Wei biết đến đũa tre ở Trung Quốc.",
+          "open": false
+        },
+        {
+          "question_en": "beef cooked at the table",
+          "question_vi": "Thịt bò nướng tại bàn",
+          "answer": "Korea",
+          "explanation_en": "Min describes grilling beef at the table.",
+          "explanation_vi": "Min nói người chủ nhà nướng thịt bò trên bàn.",
+          "open": false
+        },
+        {
+          "question_en": "noodle soup with vegetables",
+          "question_vi": "Mì nước có rau",
+          "answer": "China",
+          "explanation_en": "Wei tried the soup during his visit.",
+          "explanation_vi": "Wei thử món này trong chuyến đi Trung Quốc.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-L12",
+      "skill": "L",
+      "number": 12,
+      "title": "Exam skills: classify TV-cook advice",
+      "instruction_en": "Listen to Track E. Classify as A quick/easy, B flexible, C affordable, D safety. Letters can repeat.",
+      "instruction_vi": "Nghe Track E, phân loại A nhanh/dễ, B linh hoạt, C tiết kiệm, D an toàn. Có thể lặp chữ.",
+      "track": "E",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "The dish takes only fifteen minutes.",
+          "question_vi": "Món mất 15 phút.",
+          "answer": "A",
+          "explanation_en": "Fifteen minutes highlights speed.",
+          "explanation_vi": "15 phút cho thấy món làm nhanh.",
+          "open": false
+        },
+        {
+          "question_en": "You may replace chilli with fresh herbs.",
+          "question_vi": "Có thể thay ớt bằng rau thơm.",
+          "answer": "B",
+          "explanation_en": "The recipe allows changes.",
+          "explanation_vi": "Công thức cho phép thay nguyên liệu.",
+          "open": false
+        },
+        {
+          "question_en": "Rice and carrots are low-cost ingredients.",
+          "question_vi": "Gạo và cà rốt có giá thấp.",
+          "answer": "C",
+          "explanation_en": "Low-cost refers to affordability.",
+          "explanation_vi": "Giá thấp thuộc nhóm tiết kiệm.",
+          "open": false
+        },
+        {
+          "question_en": "An adult should operate the hot pan.",
+          "question_vi": "Người lớn nên sử dụng chảo nóng.",
+          "answer": "D",
+          "explanation_en": "This instruction prevents injury.",
+          "explanation_vi": "Đây là hướng dẫn an toàn.",
+          "open": false
+        },
+        {
+          "question_en": "It can be made without meat.",
+          "question_vi": "Có thể làm phiên bản không thịt.",
+          "answer": "B",
+          "explanation_en": "Making it meat-free is an adaptation.",
+          "explanation_vi": "Chỉnh thành món không thịt là sự linh hoạt.",
+          "open": false
+        },
+        {
+          "question_en": "Prepare ingredients before heating the pan.",
+          "question_vi": "Chuẩn bị nguyên liệu trước khi bật bếp.",
+          "answer": "A",
+          "explanation_en": "The chef says doing so saves time and reduces mistakes.",
+          "explanation_vi": "Đầu bếp nói cách này tiết kiệm thời gian và giảm sai sót.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U04-S01",
+      "skill": "S",
+      "number": 1,
+      "title": "Ingredient vocabulary",
+      "instruction_en": "Name the ingredients used in each meal: grilled fish; vegetable soup; fruit salad; cheese pizza.",
+      "instruction_vi": "Kể nguyên liệu dùng trong 4 món: cá nướng, súp rau, salad trái cây, pizza phô mai.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Two ingredients for grilled fish",
+          "question_vi": "2 nguyên liệu cho cá nướng",
+          "answer": "fish; herbs",
+          "explanation_en": "Fish is the main ingredient; herbs add flavour.",
+          "explanation_vi": "Cá là thành phần chính; rau thơm tạo vị.",
+          "open": true
+        },
+        {
+          "question_en": "Two ingredients for vegetable soup",
+          "question_vi": "2 nguyên liệu cho súp rau",
+          "answer": "carrots; potatoes",
+          "explanation_en": "Vegetables such as carrots and potatoes are suitable.",
+          "explanation_vi": "Cà rốt và khoai tây là nguyên liệu hợp lý.",
+          "open": true
+        },
+        {
+          "question_en": "Two ingredients for fruit salad",
+          "question_vi": "2 nguyên liệu cho salad trái cây",
+          "answer": "banana; apple",
+          "explanation_en": "Use fruits rather than meat or spices.",
+          "explanation_vi": "Dùng trái cây thay vì thịt hay gia vị.",
+          "open": true
+        },
+        {
+          "question_en": "Two ingredients for cheese pizza",
+          "question_vi": "2 nguyên liệu cho pizza phô mai",
+          "answer": "flour; cheese",
+          "explanation_en": "Dough needs flour; the topping can contain cheese.",
+          "explanation_vi": "Đế bánh cần bột; nhân có phô mai.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S02",
+      "skill": "S",
+      "number": 2,
+      "title": "Talk about your favourite food",
+      "instruction_en": "Answer in 2–3 sentences. Give a reason and an ingredient.",
+      "instruction_vi": "Trả lời 2–3 câu, thêm lý do và nguyên liệu.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "What is your favourite dish?",
+          "question_vi": "Bạn thích món nào nhất?",
+          "answer": "I really enjoy chicken soup because it is light and comforting. It is made with chicken, carrots and herbs.",
+          "explanation_en": "Name food + reason + specific details.",
+          "explanation_vi": "Nêu món + lý do + chi tiết cụ thể.",
+          "open": true
+        },
+        {
+          "question_en": "Who usually makes it?",
+          "question_vi": "Ai thường làm món đó?",
+          "answer": "My mother usually makes it at weekends, but I sometimes help her prepare the vegetables.",
+          "explanation_en": "A direct answer plus a habitual detail is enough.",
+          "explanation_vi": "Trả lời trực tiếp và thêm thói quen là đủ.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S03",
+      "skill": "S",
+      "number": 3,
+      "title": "Countable and uncountable food nouns",
+      "instruction_en": "Complete correctly with is/are, some/any, much/many.",
+      "instruction_vi": "Điền is/are, some/any, much/many cho đúng.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "There ___ three eggs in the fridge.",
+          "question_vi": "Có 3 quả trứng trong tủ lạnh.",
+          "answer": "are",
+          "explanation_en": "Plural eggs uses are.",
+          "explanation_vi": "Eggs số nhiều đi với are.",
+          "open": true
+        },
+        {
+          "question_en": "There ___ some rice in the bowl.",
+          "question_vi": "Có ít cơm trong bát.",
+          "answer": "is",
+          "explanation_en": "Rice is uncountable here.",
+          "explanation_vi": "Rice không đếm được nên dùng is.",
+          "open": true
+        },
+        {
+          "question_en": "How ___ bananas do we need?",
+          "question_vi": "Cần bao nhiêu quả chuối?",
+          "answer": "many",
+          "explanation_en": "Bananas is countable plural.",
+          "explanation_vi": "Bananas là danh từ đếm được số nhiều.",
+          "open": true
+        },
+        {
+          "question_en": "How ___ milk is left?",
+          "question_vi": "Còn bao nhiêu sữa?",
+          "answer": "much",
+          "explanation_en": "Milk is uncountable.",
+          "explanation_vi": "Milk không đếm được.",
+          "open": true
+        },
+        {
+          "question_en": "Do we have ___ oranges?",
+          "question_vi": "Có quả cam nào không?",
+          "answer": "any",
+          "explanation_en": "Any is usual in neutral questions.",
+          "explanation_vi": "Câu hỏi trung tính thường dùng any.",
+          "open": true
+        },
+        {
+          "question_en": "We have ___ bread for breakfast.",
+          "question_vi": "Chúng ta có ít bánh mì ăn sáng.",
+          "answer": "some",
+          "explanation_en": "Bread is uncountable in this use.",
+          "explanation_vi": "Bread không đếm được theo nghĩa này.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S04",
+      "skill": "S",
+      "number": 4,
+      "title": "Positive and negative food opinions",
+      "instruction_en": "Listen to Track F. Extract one positive and one negative expression.",
+      "instruction_vi": "Nghe Track F, tìm 1 cụm tích cực và 1 cụm tiêu cực.",
+      "track": "F",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Positive phrase about cooking",
+          "question_vi": "Cụm tích cực về nấu ăn",
+          "answer": "I often make vegetable soup because it is simple and healthy.",
+          "explanation_en": "Because introduces a reason.",
+          "explanation_vi": "Because dùng để đưa lý do.",
+          "open": true
+        },
+        {
+          "question_en": "Negative phrase about oily food",
+          "question_vi": "Cụm thể hiện không thích đồ dầu mỡ",
+          "answer": "I am not keen on very oily food.",
+          "explanation_en": "Not keen on is a polite dislike.",
+          "explanation_vi": "Not keen on là cách nói không thích tự nhiên, lịch sự.",
+          "open": true
+        },
+        {
+          "question_en": "Contrast expression",
+          "question_vi": "Cụm liên kết thể hiện đối lập",
+          "answer": "However",
+          "explanation_en": "However introduces a different view.",
+          "explanation_vi": "However mở ra ý kiến đối lập.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S05",
+      "skill": "S",
+      "number": 5,
+      "title": "Develop a Part 1 answer",
+      "instruction_en": "Use Answer → Reason → Example to speak for around 20 seconds.",
+      "instruction_vi": "Dùng Trả lời → Lý do → Ví dụ để nói khoảng 20 giây.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Do you prefer eating at home or going to restaurants?",
+          "question_vi": "Bạn thích ăn ở nhà hay đi nhà hàng?",
+          "answer": "I prefer eating at home because the food is usually fresher. For example, I can choose the amount of salt and vegetables in my meals.",
+          "explanation_en": "A preference becomes stronger with a reason and example.",
+          "explanation_vi": "Nêu sở thích kèm lý do và ví dụ làm câu trả lời đầy đủ.",
+          "open": true
+        },
+        {
+          "question_en": "Is there any food you avoid?",
+          "question_vi": "Có món nào bạn tránh ăn không?",
+          "answer": "I tend to avoid very sweet drinks because they make me thirsty. I usually choose plain water instead.",
+          "explanation_en": "Avoid making medical claims; give personal preference.",
+          "explanation_vi": "Chỉ nói sở thích cá nhân, tránh kết luận y khoa không cần thiết.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S06",
+      "skill": "S",
+      "number": 6,
+      "title": "Understand Speaking Part 2",
+      "instruction_en": "Listen to Track G. Identify when, where, who, food and why special.",
+      "instruction_vi": "Nghe Track G, xác định thời gian, nơi, người tham dự, món ăn và lý do đáng nhớ.",
+      "track": "G",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "When did the event take place?",
+          "question_vi": "Sự kiện diễn ra khi nào?",
+          "answer": "last summer",
+          "explanation_en": "The talk starts with the time reference.",
+          "explanation_vi": "Người nói nêu thời gian ở đầu bài.",
+          "open": true
+        },
+        {
+          "question_en": "Where was the celebration?",
+          "question_vi": "Buổi mừng diễn ra ở đâu?",
+          "answer": "at the uncle’s house",
+          "explanation_en": "The location is explicit.",
+          "explanation_vi": "Địa điểm được nói trực tiếp.",
+          "open": true
+        },
+        {
+          "question_en": "Whose birthday was it?",
+          "question_vi": "Đó là sinh nhật ai?",
+          "answer": "the grandmother’s",
+          "explanation_en": "The candidate celebrated a grandmother’s birthday.",
+          "explanation_vi": "Người nói mừng sinh nhật bà.",
+          "open": true
+        },
+        {
+          "question_en": "What main dish was served?",
+          "question_vi": "Món chính nào được phục vụ?",
+          "answer": "grilled fish",
+          "explanation_en": "The main dish is grilled fish with rice.",
+          "explanation_vi": "Món chính là cá nướng với cơm.",
+          "open": true
+        },
+        {
+          "question_en": "Why was it special?",
+          "question_vi": "Vì sao đáng nhớ?",
+          "answer": "time together as a family",
+          "explanation_en": "The candidate values rare time with family.",
+          "explanation_vi": "Giá trị là thời gian hiếm hoi bên gia đình.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S07",
+      "skill": "S",
+      "number": 7,
+      "title": "Part 2 vocabulary bank",
+      "instruction_en": "Translate into natural English, not word-by-word.",
+      "instruction_vi": "Dịch sang tiếng Anh tự nhiên, không dịch từng chữ.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Translate: bữa ăn truyền thống",
+          "question_vi": "Dịch: bữa ăn truyền thống",
+          "answer": "traditional meal",
+          "explanation_en": "Traditional describes the type of meal.",
+          "explanation_vi": "Traditional bổ nghĩa cho meal.",
+          "open": true
+        },
+        {
+          "question_en": "Translate: món ăn địa phương",
+          "question_vi": "Dịch: món ăn địa phương",
+          "answer": "local dish",
+          "explanation_en": "Dish is a specific prepared food.",
+          "explanation_vi": "Dish chỉ một món đã chế biến.",
+          "open": true
+        },
+        {
+          "question_en": "Translate: món nướng",
+          "question_vi": "Dịch: món nướng",
+          "answer": "grilled dish",
+          "explanation_en": "Grilled describes the cooking method.",
+          "explanation_vi": "Grilled chỉ phương pháp nướng.",
+          "open": true
+        },
+        {
+          "question_en": "Translate: món ăn đáng nhớ",
+          "question_vi": "Dịch: món ăn đáng nhớ",
+          "answer": "memorable meal",
+          "explanation_en": "Memorable means worth remembering.",
+          "explanation_vi": "Memorable là đáng nhớ.",
+          "open": true
+        },
+        {
+          "question_en": "Translate: bầu không khí ấm áp",
+          "question_vi": "Dịch: bầu không khí ấm áp",
+          "answer": "warm atmosphere",
+          "explanation_en": "Warm can describe a friendly mood.",
+          "explanation_vi": "Warm có thể mô tả bầu không khí thân mật.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S08",
+      "skill": "S",
+      "number": 8,
+      "title": "One-minute preparation",
+      "instruction_en": "Make keyword notes for food, place, people and reasons. No full sentences.",
+      "instruction_vi": "Ghi từ khóa theo món, nơi, người và lý do; không viết câu đầy đủ.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Food / ingredients",
+          "question_vi": "Món ăn / nguyên liệu",
+          "answer": "noodle soup; beef, herbs",
+          "explanation_en": "Brief keywords are faster to review.",
+          "explanation_vi": "Ghi từ khóa ngắn tiết kiệm thời gian.",
+          "open": true
+        },
+        {
+          "question_en": "Place / time",
+          "question_vi": "Địa điểm / thời gian",
+          "answer": "home; last holiday",
+          "explanation_en": "The notes should anchor a real event.",
+          "explanation_vi": "Ghi rõ sự kiện cụ thể.",
+          "open": true
+        },
+        {
+          "question_en": "People and mood",
+          "question_vi": "Người tham dự và bầu không khí",
+          "answer": "parents; relaxed",
+          "explanation_en": "Include people and feeling.",
+          "explanation_vi": "Nêu người tham dự và cảm xúc.",
+          "open": true
+        },
+        {
+          "question_en": "Why memorable?",
+          "question_vi": "Vì sao đáng nhớ?",
+          "answer": "first meal cooked together",
+          "explanation_en": "One strong reason is enough.",
+          "explanation_vi": "Một lý do rõ là đủ phát triển bài nói.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S09",
+      "skill": "S",
+      "number": 9,
+      "title": "Two-minute response plan",
+      "instruction_en": "Use this structure: 20 sec intro; 40 sec scene; 40 sec details; 20 sec feeling.",
+      "instruction_vi": "Dùng cấu trúc: mở 20 giây; hoàn cảnh 40 giây; chi tiết 40 giây; cảm nhận 20 giây.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Write one introductory sentence.",
+          "question_vi": "Viết 1 câu mở đầu.",
+          "answer": "I would like to talk about a meal I shared with my cousins last year.",
+          "explanation_en": "Begin with the precise occasion.",
+          "explanation_vi": "Mở bài nên nêu đúng sự kiện.",
+          "open": true
+        },
+        {
+          "question_en": "Write one sentence about the food.",
+          "question_vi": "Viết 1 câu về món ăn.",
+          "answer": "We cooked chicken noodles and served them with fresh vegetables.",
+          "explanation_en": "Past simple recounts a completed occasion.",
+          "explanation_vi": "Quá khứ đơn kể sự kiện đã xảy ra.",
+          "open": true
+        },
+        {
+          "question_en": "Write one concluding sentence.",
+          "question_vi": "Viết 1 câu kết.",
+          "answer": "I still remember that meal because everyone helped and we had a great time.",
+          "explanation_en": "The conclusion gives a personal reason.",
+          "explanation_vi": "Kết bài cho lý do cá nhân.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S10",
+      "skill": "S",
+      "number": 10,
+      "title": "Introductions and conclusions",
+      "instruction_en": "Identify whether each sentence is intro (I) or conclusion (C).",
+      "instruction_vi": "Nhận diện câu là mở bài (I) hay kết bài (C).",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "I am going to describe a dish I first tried during a trip.",
+          "question_vi": "Tôi sẽ mô tả món lần đầu thử trong chuyến đi.",
+          "answer": "I",
+          "explanation_en": "It introduces the subject.",
+          "explanation_vi": "Câu giới thiệu chủ đề.",
+          "open": true
+        },
+        {
+          "question_en": "That is why the experience has stayed in my memory.",
+          "question_vi": "Đó là lý do trải nghiệm vẫn trong ký ức.",
+          "answer": "C",
+          "explanation_en": "It closes the talk with reflection.",
+          "explanation_vi": "Câu kết bằng suy ngẫm.",
+          "open": true
+        },
+        {
+          "question_en": "I would like to talk about a family celebration.",
+          "question_vi": "Tôi muốn kể về dịp mừng của gia đình.",
+          "answer": "I",
+          "explanation_en": "The listener knows what follows.",
+          "explanation_vi": "Người nghe biết chủ đề tiếp theo.",
+          "open": true
+        },
+        {
+          "question_en": "Overall, it was a simple meal but a very special evening.",
+          "question_vi": "Nhìn chung, bữa ăn đơn giản nhưng buổi tối đặc biệt.",
+          "answer": "C",
+          "explanation_en": "It summarises the personal meaning.",
+          "explanation_vi": "Câu tóm lại ý nghĩa cá nhân.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S11",
+      "skill": "S",
+      "number": 11,
+      "title": "Comparing planning notes",
+      "instruction_en": "Choose which notes would be easier to speak from.",
+      "instruction_vi": "Chọn dàn ý dễ sử dụng khi nói.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "A. A full memorised paragraph B. Food / place / people / reason keywords",
+          "question_vi": "A. Một đoạn thuộc lòng B. Từ khóa món/nơi/người/lý do",
+          "answer": "B",
+          "explanation_en": "Part 2 planning time is short; keywords help natural speech.",
+          "explanation_vi": "Thời gian chuẩn bị ngắn; từ khóa giúp nói tự nhiên.",
+          "open": true
+        },
+        {
+          "question_en": "A. Ten unrelated adjectives B. Three specific details and a personal reason",
+          "question_vi": "A. 10 tính từ rời rạc B. 3 chi tiết cụ thể và 1 lý do",
+          "answer": "B",
+          "explanation_en": "Specific content supports coherent development.",
+          "explanation_vi": "Chi tiết cụ thể giúp phát triển mạch lạc.",
+          "open": true
+        },
+        {
+          "question_en": "A. Introduction, details, feelings B. Random facts with no order",
+          "question_vi": "A. Mở - chi tiết - cảm xúc B. Thông tin ngẫu nhiên",
+          "answer": "A",
+          "explanation_en": "A clear structure is easier to follow.",
+          "explanation_vi": "Cấu trúc rõ dễ theo dõi.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U04-S12",
+      "skill": "S",
+      "number": 12,
+      "title": "Speaking Part 2 exam simulation",
+      "instruction_en": "Describe a meal you enjoyed on a special occasion. Say: when/where, who was there, what you ate, why you remember it. Prepare 1 minute; speak up to 2 minutes.",
+      "instruction_vi": "Hãy kể một bữa ăn bạn rất thích trong dịp đặc biệt: khi nào/ở đâu, ai tham gia, ăn gì, vì sao đáng nhớ. Chuẩn bị 1 phút và nói tối đa 2 phút.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Plan four points (who, where, what, why).",
+          "question_vi": "Lên dàn ý 4 điểm (ai, nơi, món, vì sao).",
+          "answer": "family dinner; grandmother’s birthday; grilled fish; rare family time",
+          "explanation_en": "Cover every cue card point with natural content.",
+          "explanation_vi": "Bao quát mọi gợi ý trên thẻ, nội dung tự nhiên.",
+          "open": true
+        },
+        {
+          "question_en": "Give a suitable introduction.",
+          "question_vi": "Nói câu mở đầu phù hợp.",
+          "answer": "I would like to describe a family dinner that I really enjoyed.",
+          "explanation_en": "State the topic, not a memorised slogan.",
+          "explanation_vi": "Nêu chủ đề, không dùng khẩu hiệu học thuộc.",
+          "open": true
+        },
+        {
+          "question_en": "Give a meaningful ending.",
+          "question_vi": "Nói câu kết có ý nghĩa.",
+          "answer": "It was memorable because we were all together and had time to talk.",
+          "explanation_en": "Close with why it mattered to you.",
+          "explanation_vi": "Kết lại vì sao điều đó quan trọng với bạn.",
+          "open": true
+        }
+      ]
+    }
+  ],
+  "writing_models": [
+    {
+      "title": "Task 1: Takeaway choices and vegetarian cafés",
+      "source": "pie-takeaway+bar-cafes",
+      "text": "The pie chart shows the preferred takeaway cuisines in a survey, while the bar chart illustrates the number of vegetarian cafés in Brookfield from 2016 to 2024.\n\nOverall, local dishes were the most popular takeaway option, whereas other cuisines accounted for the smallest share. The number of vegetarian cafés increased steadily across the period.\n\nLocal food represented 35% of the preferences, followed by Chinese cuisine at 25%. Italian dishes accounted for a fifth, while Indian food and other cuisines made up 12% and 8%, respectively. Together, local and Chinese food represented three fifths of all responses.\n\nRegarding the number of cafés, there were 12 in 2016 and 19 in 2018. The figure rose to 25 in 2020, before reaching 34 in 2022 and 40 in 2024. The final number was therefore more than three times the initial figure.",
+      "vi": "Mở bài giới thiệu cả 2 biểu đồ. Overview nêu Local dishes nhiều nhất, Other ít nhất và số quán chay tăng đều. Thân bài 1 so sánh tỉ lệ, thân bài 2 trình bày biến động số quán theo mốc năm. Không tự giải thích nguyên nhân tăng."
+    }
+  ],
+  "speaking_models": []
+}

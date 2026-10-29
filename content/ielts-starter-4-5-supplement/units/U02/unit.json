@@ -1,0 +1,2503 @@
+{
+  "schema_version": "2.0.0",
+  "unit_id": "M02",
+  "title": "Places and Buildings",
+  "source_alignment": "20 reference pages (24–43): 13 Reading, 15 Writing, 15 Listening, 15 Speaking groups; original newly written tasks, not reproduction",
+  "language": "en-vi",
+  "level": "IELTS Starter 4.0–5.0 (internal learning pathway)",
+  "passages": {
+    "R-A": {
+      "title": "Four Unusual Homes and Why They Work",
+      "text": "Not every comfortable home looks like an ordinary flat or house. Around the world, some families choose surprising places to live because of the weather, the cost of land, or their personal interests. Four households explain how their unusual homes have changed their routines.\n\nIn northern Norway, Mila and her partner live in a small cabin with a roof covered in grass. The thick grass helps keep the rooms warm during long winters. They built the cabin in 2018 after leaving a crowded city. In summer, they grow vegetables beside it. The nearest supermarket is twenty kilometres away, so they shop only once a week. Mila says their home is peaceful, although travelling to work takes longer than before.\n\nIn the Netherlands, two friends, Leo and Sam, converted an old boat into a floating home in 2020. Their boat is tied to a quiet harbour, not far from the train station. The living room is narrow but bright because it has large windows. During storms, the boat moves slightly. At first, this movement made Sam nervous, but now he hardly notices it. They pay less for heating than they did in their previous apartment, although maintenance can be expensive.\n\nOutside Tokyo, architect Hana designed a micro-house on a narrow piece of land. The building is just four metres wide but has three levels. Instead of many walls, Hana used movable shelves to separate the sleeping and working areas. She cycles to her office and rarely uses a car. She believes people can live comfortably in a smaller space if every room has more than one purpose.\n\nIn southern Spain, a family restored a stone farmhouse that had been empty for almost thirty years. They kept the original thick walls and added modern windows. The house stays cool in summer without much air conditioning. The family moved there in 2022 and now run weekend art workshops. They enjoy welcoming visitors, but they must spend time repairing the old roof every year.\n\nThese homes are very different, yet their owners share one view: a successful home should support the way people live rather than simply look impressive.",
+      "words_min": 340
+    },
+    "R-B": {
+      "title": "A New Life in the Village of Alderbrook",
+      "text": "When my mother accepted a job in Alderbrook, I was worried about leaving the city. At seventeen, I thought the village would be too quiet and that I would lose contact with my friends. We moved in August, three weeks before my new school opened. Our rented house was small, but it had a garden and a view of the hills.\n\nDuring the first month, I travelled to school by bus. The journey took forty minutes because the bus stopped in five villages. I often arrived tired. My father suggested that I join the local cycling club, so I went to a meeting on a Saturday morning. I met several students who lived near me. They showed me a shorter route to school, and soon I began cycling instead of taking the bus. It took only twenty-five minutes.\n\nThe village has fewer shops than the city, and there is no large cinema. However, its community centre offers free music classes every Wednesday evening. I joined a guitar class and later helped organise a concert to raise money for the centre. At the event, more than a hundred residents came to listen. That was the first time I felt I belonged to the community.\n\nLast winter, heavy rain damaged a footbridge over the river. For six weeks, people had to take a longer path to the library and sports field. Several residents collected money, and a local builder repaired the bridge in March. This experience taught me that people in a small village often depend on one another.\n\nMy friends in the city still visit sometimes. When they come, we walk through the woods, explore the old railway station, and have lunch in the market square. They are surprised by how much there is to do. I do not think village life is perfect: buses are infrequent, and some services close early. Nevertheless, I now appreciate the peaceful surroundings and the strong sense of community. If my family moves again, I will miss Alderbrook more than I expected.",
+      "words_min": 340
+    }
+  },
+  "maps": {
+    "W-A": {
+      "title": "Riverton Campus: 2010 and 2025",
+      "subtitle": "A newly authored map comparison for Academic Writing Task 1",
+      "panels": [
+        {
+          "year": "2010",
+          "cells": [
+            [
+              "Sports field",
+              "Car park",
+              "Library"
+            ],
+            [
+              "Garden",
+              "Main hall",
+              "Old classrooms"
+            ],
+            [
+              "Trees",
+              "Cafeteria",
+              "Main gate"
+            ]
+          ]
+        },
+        {
+          "year": "2025",
+          "cells": [
+            [
+              "Sports centre",
+              "Car park",
+              "Library"
+            ],
+            [
+              "Science block",
+              "Main hall",
+              "Student housing"
+            ],
+            [
+              "Cycle parking",
+              "Cafeteria",
+              "Main gate"
+            ]
+          ]
+        }
+      ],
+      "notes": [
+        "The main hall, library, cafeteria and main gate are unchanged.",
+        "The sports field was replaced by a sports centre.",
+        "The garden became a science block; trees in the south-west were cleared for cycle parking.",
+        "Old classrooms in the east became student housing."
+      ]
+    },
+    "W-B": {
+      "title": "Harbourview Arts Centre: 2008 and 2026",
+      "subtitle": "Independent exam-style map task - a different setting",
+      "panels": [
+        {
+          "year": "2008",
+          "cells": [
+            [
+              "Outdoor garden",
+              "Old cinema",
+              "Car park"
+            ],
+            [
+              "Entrance",
+              "Open courtyard",
+              "Bookshop"
+            ],
+            [
+              "Path",
+              "Storage building",
+              "River walkway"
+            ]
+          ]
+        },
+        {
+          "year": "2026",
+          "cells": [
+            [
+              "Outdoor garden",
+              "Art gallery",
+              "Cafe"
+            ],
+            [
+              "Entrance",
+              "Covered courtyard",
+              "Workshop rooms"
+            ],
+            [
+              "Cycle racks",
+              "Performance hall",
+              "River walkway"
+            ]
+          ]
+        }
+      ],
+      "notes": [
+        "The entrance, outdoor garden and river walkway remained in the same position.",
+        "The old cinema was converted into an art gallery.",
+        "The car park was replaced by a cafe.",
+        "A covered courtyard replaced the open courtyard; workshops replaced the bookshop.",
+        "The old storage building became a performance hall, and cycle racks replaced the path."
+      ]
+    },
+    "S-A": {
+      "title": "Lakeside Town: location practice",
+      "subtitle": "Original speaking location diagram, not an exam map",
+      "panels": [
+        {
+          "year": "Current town",
+          "cells": [
+            [
+              "Library",
+              "Bridge",
+              "Hospital"
+            ],
+            [
+              "Park",
+              "Museum",
+              "Cafe"
+            ],
+            [
+              "School",
+              "Bus station",
+              "Market"
+            ]
+          ]
+        }
+      ],
+      "notes": [
+        "Library north of the park.",
+        "Cafe next to museum in central row.",
+        "Cafe is north of Market, not opposite the bus station in same grid."
+      ]
+    }
+  },
+  "listening": {
+    "L-A": {
+      "title": "Finding facilities in Brookfield",
+      "script": "WOMAN: Excuse me. Is the public library near the railway station?\nMAN: Yes. Walk along River Road for about five minutes. You will see the library opposite the town museum.\nWOMAN: Is there a bus stop outside the library?\nMAN: Not outside. The nearest one is next to the museum, on the same side of the road.\nWOMAN: Great. And where is the swimming pool?\nMAN: It is behind the sports centre. You can enter from Park Street.\nWOMAN: Thank you. That is very helpful.",
+      "hint": "Listen for place names and prepositions / Nghe tên địa điểm và giới từ vị trí."
+    },
+    "L-B": {
+      "title": "Booking a community room",
+      "script": "RECEPTIONIST: Brookfield Community Centre. How can I help?\nCALLER: Hello. I would like to hire a room for a family celebration. My name is Lina Moretti. That is M-O-R-E-T-T-I.\nRECEPTIONIST: Thank you. Was that Lina with an E?\nCALLER: No, L-I-N-A.\nRECEPTIONIST: And when would you like to come?\nCALLER: On Saturday the fourteenth of June. Actually, sorry, I have checked my calendar. It is Sunday the fifteenth.\nRECEPTIONIST: We have the Garden Room available from two thirty to five thirty.\nCALLER: Perfect. How much does it cost?\nRECEPTIONIST: It is sixty pounds for three hours, including the projector.\nCALLER: Could you send the booking form to lina dot moretti at greenmail dot com?\nRECEPTIONIST: Of course. I will email it today.",
+      "hint": "Corrections, spelling, date and price / Thông tin sửa lại, đánh vần, ngày và tiền."
+    },
+    "L-C": {
+      "title": "Restaurant planning with a friend",
+      "script": "AMY: What time does the film finish tonight?\nBEN: At seven fifteen. We could meet for dinner at seven thirty.\nAMY: Seven thirty is too early because the cinema is quite far away. Could we book for eight fifteen?\nBEN: All right, eight fifteen. Where shall we go?\nAMY: I wanted the Italian restaurant on Hill Road, but it is fully booked. How about the Thai restaurant on King Street?\nBEN: Good idea. Do you know its address?\nAMY: Number twenty-four King Street. Not number forty-two. I checked the website.\nBEN: How much should we budget?\nAMY: The set meal is seventeen pounds fifty per person, including a drink.\nBEN: Great. I will reserve a table for two.",
+      "hint": "Final choice after corrections / Chọn đáp án cuối sau khi người nói đổi ý."
+    },
+    "L-D": {
+      "title": "A beginner sailing course",
+      "script": "INSTRUCTOR: Welcome to Harbour Bay Sailing Club. The beginner course lasts six weeks, with one session every Saturday morning. Each class starts at nine thirty and finishes at noon.\nSTUDENT: Do we need to bring any equipment?\nINSTRUCTOR: You should bring a hat and water. The club provides safety jackets and boats.\nSTUDENT: When does the next course begin?\nINSTRUCTOR: The seventh of September. You can register at the club office on Marine Road.\nSTUDENT: And what is the cost?\nINSTRUCTOR: One hundred and twenty pounds for the full course. There is a twenty-pound discount for students.\nSTUDENT: Can I pay online?\nINSTRUCTOR: Yes, but please enter your full name exactly as it appears on your registration form.",
+      "hint": "Course details, times and discounts / Chi tiết khóa học, thời gian và giảm giá."
+    },
+    "L-E": {
+      "title": "Planning a riverside festival - exam practice",
+      "script": "ORGANISER: Thank you for volunteering at the Riverside Festival. I am Daniel Price, and I will explain the arrangements. The event will take place on Friday the twelfth of July, not the tenth as we originally announced. We expect around two hundred guests. The programme begins at four in the afternoon, but volunteers must arrive at three fifteen.\nVOLUNTEER: Which entrance should we use?\nORGANISER: The east gate beside the old bridge. The main gate will be closed until four. You will receive a yellow badge there.\nVOLUNTEER: Will lunch be provided?\nORGANISER: No lunch, but you will receive a sandwich and a bottle of water at five o'clock. We also have vegetarian sandwiches.\nVOLUNTEER: Where can we buy extra food?\nORGANISER: At the Green Kitchen stall near the music stage. A meal there costs nine pounds, although the drinks are sold separately.\nVOLUNTEER: What about the evening activities?\nORGANISER: The outdoor film begins at seven forty-five. Please remember that the film ends at nine twenty. The evening market closes at ten.\nVOLUNTEER: Is there a website for updates?\nORGANISER: Yes, it is www dot riversidefest dot org. You can also ask questions at the information tent next to the fountain.",
+      "hint": "Exam practice: questions in recording order, final details / Bài thi thử: câu theo thứ tự nghe, lấy thông tin cuối cùng."
+    },
+    "L-F": {
+      "title": "Spelling and numbers micro-listening",
+      "script": "SPEAKER: Listen and write the details. One: the visitor's surname is W-A-L-K-E-R. Two: the room is number sixteen, not sixty. Three: the price is thirteen pounds fifty. Four: the street is M-A-R-I-N-E Road. Five: your appointment is on the twenty-third of May. Six: the email address is help at citycentre dot org.",
+      "hint": "Contrast spelling and numbers / Phân biệt đánh vần và các số dễ nhầm."
+    }
+  },
+  "activities": [
+    {
+      "id": "M02-R01",
+      "skill": "R",
+      "exercise_no": 1,
+      "title": "Warm-up: types of homes",
+      "source_focus": "lead-in housing vocabulary",
+      "instruction_en": "Choose a suitable housing word.",
+      "instruction_vi": "Chọn loại nhà phù hợp với mô tả.",
+      "items": [
+        {
+          "question": "A family lives on the fifth floor of a tall city building. They live in an ____.",
+          "answer": "apartment",
+          "explanation_en": "A self-contained home within a larger building is an apartment (or flat).",
+          "explanation_vi": "Apartment/flat = căn hộ trong một tòa nhà; floor là tầng, không phải loại nhà.",
+          "answer_type": "closed",
+          "id": "M02-R01-01"
+        },
+        {
+          "question": "A wooden home in a forest is often called a ____.",
+          "answer": "cabin",
+          "explanation_en": "Cabin describes a small, usually wooden house, often in a rural area.",
+          "explanation_vi": "Cabin = nhà gỗ nhỏ, thường ở rừng/nông thôn; phân biệt cottage (nhà nhỏ vùng quê).",
+          "answer_type": "closed",
+          "id": "M02-R01-02"
+        },
+        {
+          "question": "A home built on a boat and used for living is a ____.",
+          "answer": "houseboat",
+          "explanation_en": "Houseboat combines house and boat and refers to a boat used as a home.",
+          "explanation_vi": "Houseboat = nhà nổi/nhà thuyền, không phải tàu du lịch.",
+          "answer_type": "closed",
+          "id": "M02-R01-03"
+        }
+      ]
+    },
+    {
+      "id": "M02-R02",
+      "skill": "R",
+      "exercise_no": 2,
+      "title": "Predict from homes and preferences",
+      "source_focus": "visual prediction / speaking before reading",
+      "instruction_en": "Read each description and predict a benefit and a challenge.",
+      "instruction_vi": "Đọc mô tả và dự đoán một ưu điểm, một bất lợi. Chưa cần chứng minh từ bài đọc.",
+      "items": [
+        {
+          "question": "A narrow three-level home in a busy city: one advantage and one disadvantage?",
+          "answer": "Example: convenient location; limited space.",
+          "explanation_en": "The prediction can be plausible without exactly matching the reading. The aim is to activate housing vocabulary.",
+          "explanation_vi": "Đây là dự đoán: ưu thế vị trí thuận tiện nhưng thiếu không gian; đáp án khác hợp lý vẫn đúng.",
+          "answer_type": "open",
+          "id": "M02-R02-01"
+        },
+        {
+          "question": "A house on water: one possible benefit and one possible problem?",
+          "answer": "Example: pleasant views; storm movement.",
+          "explanation_en": "Use prior knowledge to anticipate information, then confirm by scanning the passage.",
+          "explanation_vi": "Hãy dự đoán dựa vào hiểu biết, rồi quét bài để xác nhận, không coi phỏng đoán là sự thật.",
+          "answer_type": "open",
+          "id": "M02-R02-02"
+        }
+      ],
+      "passage_id": "R-A"
+    },
+    {
+      "id": "M02-R03",
+      "skill": "R",
+      "exercise_no": 3,
+      "title": "Match special homes with descriptions",
+      "source_focus": "matching types of homes",
+      "instruction_en": "Match each clue to a home type: grass-roof cabin / houseboat / micro-house / restored farmhouse.",
+      "instruction_vi": "Ghép mô tả với loại nhà: cabin mái cỏ, nhà thuyền, nhà siêu nhỏ, nhà trang trại cải tạo.",
+      "items": [
+        {
+          "question": "This house uses shelves to divide rooms.",
+          "answer": "micro-house",
+          "explanation_en": "The micro-house paragraph says movable shelves separate spaces; use the function, not just appearance.",
+          "explanation_vi": "Đoạn micro-house nêu kệ di động chia các khu vực, một cách paraphrase của divide rooms.",
+          "answer_type": "closed",
+          "id": "M02-R03-01"
+        },
+        {
+          "question": "This home sometimes moves during bad weather.",
+          "answer": "houseboat",
+          "explanation_en": "The passage says storms cause the boat to move slightly.",
+          "explanation_vi": "Bão làm thuyền chuyển động nhẹ; câu hỏi diễn đạt lại “during storms”.",
+          "answer_type": "closed",
+          "id": "M02-R03-02"
+        },
+        {
+          "question": "This house has old stone walls and modern windows.",
+          "answer": "restored farmhouse",
+          "explanation_en": "The restored farmhouse retains thick stone walls and has new windows.",
+          "explanation_vi": "Nhà được cải tạo nên giữ tường đá cũ và lắp cửa sổ mới.",
+          "answer_type": "closed",
+          "id": "M02-R03-03"
+        }
+      ],
+      "passage_id": "R-A"
+    },
+    {
+      "id": "M02-R04",
+      "skill": "R",
+      "exercise_no": 4,
+      "title": "Skimming: choose the main idea",
+      "source_focus": "skimming a paragraph and whole text",
+      "instruction_en": "Read Passage A quickly, then select the most suitable answer.",
+      "instruction_vi": "Đọc lướt bài A và chọn ý chính; đừng dừng ở từng từ lạ.",
+      "items": [
+        {
+          "question": "Main purpose of Passage A: (A) explaining how four unusual homes suit their owners; (B) giving steps to build a boat; (C) advertising a hotel.",
+          "answer": "A",
+          "explanation_en": "The article describes design choices and everyday effects for four homes, rather than construction instructions.",
+          "explanation_vi": "Bài nói về lý do và trải nghiệm ở bốn ngôi nhà khác thường, không phải hướng dẫn xây dựng.",
+          "answer_type": "closed",
+          "id": "M02-R04-01"
+        },
+        {
+          "question": "What common idea connects the final paragraph to the rest of the text?",
+          "answer": "A home should fit its residents’ needs.",
+          "explanation_en": "The concluding sentence generalises the four examples into a principle about lifestyles.",
+          "explanation_vi": "Đoạn cuối tổng hợp: nhà phù hợp nhu cầu và lối sống quan trọng hơn vẻ bề ngoài.",
+          "answer_type": "closed",
+          "id": "M02-R04-02"
+        }
+      ],
+      "passage_id": "R-A"
+    },
+    {
+      "id": "M02-R05",
+      "skill": "R",
+      "exercise_no": 5,
+      "title": "Scanning: locate details",
+      "source_focus": "scanning and locating targeted facts",
+      "instruction_en": "Find the precise fact in Passage A. Use NO MORE THAN THREE WORDS AND/OR A NUMBER.",
+      "instruction_vi": "Quét bài A tìm chi tiết. Tối đa ba từ và/hoặc một con số.",
+      "items": [
+        {
+          "question": "In which country is the house with grass on its roof?",
+          "answer": "Norway",
+          "explanation_en": "The first home is introduced as being in northern Norway; omit “northern” if the question asks for a country.",
+          "explanation_vi": "Thông tin “northern Norway” cho thấy quốc gia là Norway, không cần chép northern.",
+          "answer_type": "closed",
+          "id": "M02-R05-01"
+        },
+        {
+          "question": "What year was the houseboat converted?",
+          "answer": "2020",
+          "explanation_en": "Look for “converted an old boat ... in 2020”; this is a date, not the year a resident moved elsewhere.",
+          "explanation_vi": "Tìm cụm “converted ... in 2020”, phân biệt năm cải tạo nhà với các năm khác.",
+          "answer_type": "closed",
+          "id": "M02-R05-02"
+        },
+        {
+          "question": "How wide is Hana’s micro-house?",
+          "answer": "four metres",
+          "explanation_en": "The micro-house paragraph states that the building is just four metres wide.",
+          "explanation_vi": "Chứng cứ nằm ở đoạn micro-house: “four metres wide”; giữ đúng đơn vị.",
+          "answer_type": "closed",
+          "id": "M02-R05-03"
+        },
+        {
+          "question": "How often do the farmhouse owners repair the roof?",
+          "answer": "every year",
+          "explanation_en": "The Spanish farmhouse paragraph says they repair the roof every year.",
+          "explanation_vi": "Mỗi năm = every year; không lẫn với thời điểm chuyển đến năm 2022.",
+          "answer_type": "closed",
+          "id": "M02-R05-04"
+        }
+      ],
+      "passage_id": "R-A"
+    },
+    {
+      "id": "M02-R06",
+      "skill": "R",
+      "exercise_no": 6,
+      "title": "Decide: skim or scan?",
+      "source_focus": "distinguishing skimming from scanning",
+      "instruction_en": "Write SKIM or SCAN for the strategy.",
+      "instruction_vi": "Viết SKIM (đọc lướt) hoặc SCAN (đọc quét).",
+      "items": [
+        {
+          "question": "You need the year a family moved into a house.",
+          "answer": "SCAN",
+          "explanation_en": "A single date is a specific fact; move quickly to numbers/dates in the relevant paragraph.",
+          "explanation_vi": "Hỏi năm cụ thể, phải quét tìm ngày/năm, không cần đọc kỹ toàn bài.",
+          "answer_type": "closed",
+          "id": "M02-R06-01"
+        },
+        {
+          "question": "You need the general topic of a 400-word article.",
+          "answer": "SKIM",
+          "explanation_en": "Reading headings, opening sentences and concluding ideas gives an overview.",
+          "explanation_vi": "Nắm chủ đề tổng quát bằng mở đoạn và câu kết; đây là skimming.",
+          "answer_type": "closed",
+          "id": "M02-R06-02"
+        },
+        {
+          "question": "You need a named location in a paragraph.",
+          "answer": "SCAN",
+          "explanation_en": "Proper nouns are visual anchors that help locate precise details.",
+          "explanation_vi": "Tên riêng là dấu hiệu mạnh để tìm thông tin cụ thể.",
+          "answer_type": "closed",
+          "id": "M02-R06-03"
+        },
+        {
+          "question": "You need to decide which title best fits the entire article.",
+          "answer": "SKIM",
+          "explanation_en": "A title should represent the whole text, not one small detail.",
+          "explanation_vi": "Chọn tiêu đề phải hiểu ý bao quát, dùng skim.",
+          "answer_type": "closed",
+          "id": "M02-R06-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-R07",
+      "skill": "R",
+      "exercise_no": 7,
+      "title": "Recognise paraphrases",
+      "source_focus": "paraphrase identification",
+      "instruction_en": "Match the paraphrased phrase to a meaning in Passage A.",
+      "instruction_vi": "Nhận diện cách diễn đạt lại thông tin từ bài A.",
+      "items": [
+        {
+          "question": "“A busy urban area” matches which original idea?",
+          "answer": "a crowded city",
+          "explanation_en": "Busy/crowded and urban/city convey equivalent location and population context.",
+          "explanation_vi": "Busy urban area ≈ crowded city; không cần trùng từng từ mới là paraphrase.",
+          "answer_type": "closed",
+          "id": "M02-R07-01"
+        },
+        {
+          "question": "“Costly to look after” is closest to which phrase?",
+          "answer": "maintenance can be expensive",
+          "explanation_en": "Look after a property includes maintenance; costly is a synonym of expensive.",
+          "explanation_vi": "Costly = expensive; look after ở đây là bảo trì/chăm sóc nhà.",
+          "answer_type": "closed",
+          "id": "M02-R07-02"
+        },
+        {
+          "question": "“People who live in the house” may be called what?",
+          "answer": "residents",
+          "explanation_en": "Residents refers to people who live at a location, unlike visitors.",
+          "explanation_vi": "Residents = người cư trú; visitors là khách đến thăm.",
+          "answer_type": "closed",
+          "id": "M02-R07-03"
+        },
+        {
+          "question": "“The building does not need much cooling equipment” is expressed as?",
+          "answer": "without much air conditioning",
+          "explanation_en": "Without much air conditioning conveys reduced need for mechanical cooling.",
+          "explanation_vi": "Cụm “without much air conditioning” nghĩa là ít cần điều hòa.",
+          "answer_type": "closed",
+          "id": "M02-R07-04"
+        }
+      ],
+      "passage_id": "R-A"
+    },
+    {
+      "id": "M02-R08",
+      "skill": "R",
+      "exercise_no": 8,
+      "title": "Vocabulary in context",
+      "source_focus": "infer contextual meaning",
+      "instruction_en": "Choose the meaning that works in the sentence, not the first dictionary meaning.",
+      "instruction_vi": "Chọn nghĩa dựa trên câu và ngữ cảnh, không dịch từng từ rời rạc.",
+      "items": [
+        {
+          "question": "In “converted an old boat”, converted means: (A) sold (B) changed for a new use (C) painted.",
+          "answer": "B",
+          "explanation_en": "Convert means adapt something for another function, here from boat to home.",
+          "explanation_vi": "Convert = chuyển đổi công năng, không nhất thiết bán hay chỉ sơn lại.",
+          "answer_type": "closed",
+          "id": "M02-R08-01"
+        },
+        {
+          "question": "In “narrow but bright”, narrow means: (A) not wide (B) dark (C) cold.",
+          "answer": "A",
+          "explanation_en": "Narrow contrasts with width, while bright refers separately to lighting.",
+          "explanation_vi": "Narrow = hẹp (bề ngang), không phải tối.",
+          "answer_type": "closed",
+          "id": "M02-R08-02"
+        },
+        {
+          "question": "In “restored a stone farmhouse”, restored means: (A) damaged (B) repaired and improved (C) rented.",
+          "answer": "B",
+          "explanation_en": "The family repaired an old building and made it suitable for use again.",
+          "explanation_vi": "Restore = tu sửa/khôi phục công trình cũ để sử dụng lại.",
+          "answer_type": "closed",
+          "id": "M02-R08-03"
+        }
+      ],
+      "passage_id": "R-A"
+    },
+    {
+      "id": "M02-R09",
+      "skill": "R",
+      "exercise_no": 9,
+      "title": "Sentence completion",
+      "source_focus": "sentence completion, word limits",
+      "instruction_en": "Use NO MORE THAN THREE WORDS from Passage A.",
+      "instruction_vi": "Điền tối đa BA từ nguyên văn bài A.",
+      "items": [
+        {
+          "question": "Mila goes shopping only ______.",
+          "answer": "once a week",
+          "explanation_en": "The passage says “shop only once a week.” The answer has three words and is allowed under a limit of THREE words.",
+          "explanation_vi": "Bài ghi “shop only once a week”, trả lời ba từ. Bài này áp dụng giới hạn tối đa BA từ.",
+          "answer_type": "closed",
+          "id": "M02-R09-01"
+        },
+        {
+          "question": "The boat is close to a ______.",
+          "answer": "train station",
+          "explanation_en": "This two-word location is stated in the houseboat paragraph.",
+          "explanation_vi": "Train station là ga tàu, hai từ, chép đúng từ bài.",
+          "answer_type": "closed",
+          "id": "M02-R09-02"
+        },
+        {
+          "question": "Hana uses ______ to make different areas in the home.",
+          "answer": "movable shelves",
+          "explanation_en": "The phrase “movable shelves” is used to separate sleeping and working areas.",
+          "explanation_vi": "Movable shelves = kệ có thể di chuyển, hai từ nguyên văn.",
+          "answer_type": "closed",
+          "id": "M02-R09-03"
+        },
+        {
+          "question": "The Spanish house has ______ that keep it cooler in summer.",
+          "answer": "thick walls",
+          "explanation_en": "The text mentions thick walls and reduced summer heat.",
+          "explanation_vi": "Thick walls là tường dày, có tác dụng giữ mát trong mùa hè.",
+          "answer_type": "closed",
+          "id": "M02-R09-04"
+        }
+      ],
+      "passage_id": "R-A"
+    },
+    {
+      "id": "M02-R10",
+      "skill": "R",
+      "exercise_no": 10,
+      "title": "Grammar: present vs past",
+      "source_focus": "present simple and past simple identification",
+      "instruction_en": "Identify the tense and justify the time reference.",
+      "instruction_vi": "Xác định thì, giải thích dấu hiệu thời gian.",
+      "items": [
+        {
+          "question": "“They built the cabin in 2018.” Which tense is built?",
+          "answer": "past simple",
+          "explanation_en": "A completed construction in the specified past year 2018 requires past simple.",
+          "explanation_vi": "Năm 2018 đã kết thúc; built là quá khứ của build, dùng quá khứ đơn.",
+          "answer_type": "closed",
+          "id": "M02-R10-01"
+        },
+        {
+          "question": "“She cycles to her office.” Which tense is cycles?",
+          "answer": "present simple",
+          "explanation_en": "The sentence reports a habitual action, not something happening at this exact moment.",
+          "explanation_vi": "Cycles mô tả thói quen hiện tại, ngôi thứ ba số ít + s.",
+          "answer_type": "closed",
+          "id": "M02-R10-02"
+        },
+        {
+          "question": "“The house stays cool in summer.” Is this a routine/general fact or a completed action?",
+          "answer": "general fact",
+          "explanation_en": "Present simple explains a recurring feature of the house.",
+          "explanation_vi": "Stays cool là đặc điểm lặp lại, không phải hành động đã xong.",
+          "answer_type": "closed",
+          "id": "M02-R10-03"
+        },
+        {
+          "question": "“The family moved there in 2022.” Identify the time cue.",
+          "answer": "in 2022",
+          "explanation_en": "The completed past time phrase “in 2022” signals past simple.",
+          "explanation_vi": "“In 2022” là mốc quá khứ rõ ràng, đi với moved.",
+          "answer_type": "closed",
+          "id": "M02-R10-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-R11",
+      "skill": "R",
+      "exercise_no": 11,
+      "title": "Choose the correct tense",
+      "source_focus": "present simple vs past simple forms",
+      "instruction_en": "Choose the correct verb form.",
+      "instruction_vi": "Chọn dạng động từ đúng; nhớ chủ ngữ ngôi ba và động từ bất quy tắc.",
+      "items": [
+        {
+          "question": "Every morning, Mia (walk / walks / walked) to the local café.",
+          "answer": "walks",
+          "explanation_en": "Every morning describes a habit and Mia is third-person singular, so add -s.",
+          "explanation_vi": "Every morning = thói quen; Mia = she nên walks.",
+          "answer_type": "closed",
+          "id": "M02-R11-01"
+        },
+        {
+          "question": "Two years ago, the town (build / built / builds) a footbridge.",
+          "answer": "built",
+          "explanation_en": "Two years ago requires past simple; build is irregular: built.",
+          "explanation_vi": "Two years ago → quá khứ đơn; build–built–built.",
+          "answer_type": "closed",
+          "id": "M02-R11-02"
+        },
+        {
+          "question": "My parents usually (is / are / were) at home on Sundays.",
+          "answer": "are",
+          "explanation_en": "Parents is plural, and usually indicates a present routine.",
+          "explanation_vi": "Parents số nhiều dùng are, usually diễn tả thói quen.",
+          "answer_type": "closed",
+          "id": "M02-R11-03"
+        },
+        {
+          "question": "Last winter, heavy rain (damage / damaged / damages) the road.",
+          "answer": "damaged",
+          "explanation_en": "Last winter indicates finished past time, so use regular -ed past form.",
+          "explanation_vi": "Last winter là quá khứ, damage thêm -d thành damaged.",
+          "answer_type": "closed",
+          "id": "M02-R11-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-R12",
+      "skill": "R",
+      "exercise_no": 12,
+      "title": "Correct the grammar",
+      "source_focus": "tenses accuracy in a housing context",
+      "instruction_en": "Find and correct the ONE main verb error.",
+      "instruction_vi": "Tìm và sửa MỘT lỗi động từ chính mỗi câu.",
+      "items": [
+        {
+          "question": "Yesterday, we visit an old castle.",
+          "answer": "visited",
+          "explanation_en": "Yesterday requires past simple; visit is regular and takes -ed.",
+          "explanation_vi": "Yesterday là hôm qua; visit → visited.",
+          "answer_type": "closed",
+          "id": "M02-R12-01"
+        },
+        {
+          "question": "He live near the harbour every summer.",
+          "answer": "lives",
+          "explanation_en": "Habitual present action with he requires third-person -s.",
+          "explanation_vi": "He là ngôi ba số ít, live phải thêm -s → lives.",
+          "answer_type": "closed",
+          "id": "M02-R12-02"
+        },
+        {
+          "question": "My aunt buy a house in 2019.",
+          "answer": "bought",
+          "explanation_en": "The dated past action uses irregular past form buy → bought.",
+          "explanation_vi": "Buy bất quy tắc → bought; 2019 là thời gian quá khứ.",
+          "answer_type": "closed",
+          "id": "M02-R12-03"
+        },
+        {
+          "question": "The museum open at nine every day.",
+          "answer": "opens",
+          "explanation_en": "The museum is singular and this is a fixed schedule, so opens.",
+          "explanation_vi": "The museum số ít; lịch giờ mở cửa dùng hiện tại đơn + s.",
+          "answer_type": "closed",
+          "id": "M02-R12-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-R13",
+      "skill": "R",
+      "exercise_no": 13,
+      "title": "Exam practice: Home in Alderbrook",
+      "source_focus": "exam sentence completion, 2 words maximum",
+      "instruction_en": "Read Passage B and answer using NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+      "instruction_vi": "Làm bài đọc B như bài thi; tối đa HAI từ và/hoặc một số. Trích bằng chứng cụ thể.",
+      "items": [
+        {
+          "question": "In which month did the narrator’s family move?",
+          "answer": "August",
+          "explanation_en": "The first paragraph says they moved in August. Do not give “three weeks”, which refers to a different detail.",
+          "explanation_vi": "Đoạn đầu: moved in August; “three weeks” nói thời gian trước khi trường mở.",
+          "answer_type": "closed",
+          "id": "M02-R13-01"
+        },
+        {
+          "question": "How long did the original bus journey take?",
+          "answer": "forty minutes",
+          "explanation_en": "The first bus journey took forty minutes, whereas cycling took twenty-five minutes.",
+          "explanation_vi": "Đi xe buýt mất forty minutes, còn xe đạp 25 phút; đây là distractor.",
+          "answer_type": "closed",
+          "id": "M02-R13-02"
+        },
+        {
+          "question": "Which club helped the narrator find a shorter way to school?",
+          "answer": "cycling club",
+          "explanation_en": "The cycling club members showed the student a quicker route.",
+          "explanation_vi": "Cycling club hỗ trợ tìm đường ngắn; cụm từ đúng hai từ.",
+          "answer_type": "closed",
+          "id": "M02-R13-03"
+        },
+        {
+          "question": "On which day are free music classes offered?",
+          "answer": "Wednesday",
+          "explanation_en": "The centre offers free music classes every Wednesday evening.",
+          "explanation_vi": "Lớp nhạc miễn phí vào Wednesday, không phải Saturday (ngày họp câu lạc bộ xe đạp).",
+          "answer_type": "closed",
+          "id": "M02-R13-04"
+        },
+        {
+          "question": "Which building was damaged by heavy rain?",
+          "answer": "footbridge",
+          "explanation_en": "Heavy rain damaged a footbridge; it was repaired in March.",
+          "explanation_vi": "Footbridge = cầu đi bộ, bị mưa lớn phá hỏng.",
+          "answer_type": "closed",
+          "id": "M02-R13-05"
+        },
+        {
+          "question": "What closes early in the village?",
+          "answer": "some services",
+          "explanation_en": "The final paragraph says some services close early.",
+          "explanation_vi": "Some services là một số dịch vụ; chép đúng hai từ.",
+          "answer_type": "closed",
+          "id": "M02-R13-06"
+        },
+        {
+          "question": "The narrator appreciates the peaceful surroundings and a strong sense of ______.",
+          "answer": "community",
+          "explanation_en": "The text ends with “strong sense of community.” The sentence already provides the preceding words, so only community is missing.",
+          "explanation_vi": "Câu hỏi đã cho “a strong sense of”, chỉ cần điền community (1 từ), đúng giới hạn.",
+          "answer_type": "closed",
+          "id": "M02-R13-07"
+        }
+      ],
+      "passage_id": "R-B"
+    },
+    {
+      "id": "M02-W01",
+      "skill": "W",
+      "exercise_no": 1,
+      "title": "Campus vocabulary",
+      "source_focus": "lead-in facilities",
+      "instruction_en": "Match a definition to a campus facility.",
+      "instruction_vi": "Nối mô tả với cơ sở vật chất đại học.",
+      "items": [
+        {
+          "question": "The building where students borrow books is the ____.",
+          "answer": "library",
+          "explanation_en": "A library lends books and provides study space; do not confuse it with a bookshop.",
+          "explanation_vi": "Library là thư viện, có thể mượn sách; bookshop bán sách.",
+          "answer_type": "closed",
+          "id": "M02-W01-01"
+        },
+        {
+          "question": "An indoor building for exercise and games is a ____.",
+          "answer": "sports centre",
+          "explanation_en": "Sports centre is an indoor sports facility, unlike an outdoor field.",
+          "explanation_vi": "Sports centre = trung tâm thể thao, khác sports field (sân thể thao).",
+          "answer_type": "closed",
+          "id": "M02-W01-02"
+        },
+        {
+          "question": "A place to leave bicycles is called ____.",
+          "answer": "cycle parking",
+          "explanation_en": "Cycle parking is a designated area for bikes.",
+          "explanation_vi": "Cycle parking là khu đậu xe đạp, không phải bãi ô tô.",
+          "answer_type": "closed",
+          "id": "M02-W01-03"
+        }
+      ]
+    },
+    {
+      "id": "M02-W02",
+      "skill": "W",
+      "exercise_no": 2,
+      "title": "Compare two maps: orientation",
+      "source_focus": "reading a campus map",
+      "instruction_en": "Study Map W-A. Give the location using north, south, east or west.",
+      "instruction_vi": "Quan sát sơ đồ W-A, nói vị trí theo hướng bắc/nam/đông/tây.",
+      "items": [
+        {
+          "question": "Which facility is in the north-east corner of both maps?",
+          "answer": "library",
+          "explanation_en": "The top-right cell is north-east; this item is unchanged from 2010 to 2025.",
+          "explanation_vi": "Ô trên cùng bên phải là đông bắc, thư viện giữ nguyên.",
+          "answer_type": "closed",
+          "id": "M02-W02-01"
+        },
+        {
+          "question": "Which building is at the centre of both maps?",
+          "answer": "main hall",
+          "explanation_en": "The middle cell stays Main hall in both years.",
+          "explanation_vi": "Ô chính giữa là main hall (hội trường), không thay đổi.",
+          "answer_type": "closed",
+          "id": "M02-W02-02"
+        },
+        {
+          "question": "In which direction is the main gate relative to the main hall?",
+          "answer": "south-east",
+          "explanation_en": "The gate is below and to the right of the hall in both maps.",
+          "explanation_vi": "Main gate ở dưới và bên phải main hall, tức đông nam.",
+          "answer_type": "closed",
+          "id": "M02-W02-03"
+        }
+      ],
+      "map_id": "W-A"
+    },
+    {
+      "id": "M02-W03",
+      "skill": "W",
+      "exercise_no": 3,
+      "title": "Prepositions of place",
+      "source_focus": "prepositions: between, opposite, next to",
+      "instruction_en": "Fill in one suitable preposition using Map W-A.",
+      "instruction_vi": "Điền một giới từ vị trí phù hợp dựa trên Map W-A.",
+      "items": [
+        {
+          "question": "In 2010, the main hall was ______ the garden and old classrooms.",
+          "answer": "between",
+          "explanation_en": "Between links the central hall to the two facilities on either side.",
+          "explanation_vi": "Between A and B = ở giữa A và B; hall nằm giữa garden và classrooms.",
+          "answer_type": "closed",
+          "id": "M02-W03-01"
+        },
+        {
+          "question": "In 2025, the car park was ______ the library.",
+          "answer": "next to",
+          "explanation_en": "These two facilities are adjacent in the top row.",
+          "explanation_vi": "Next to = ngay cạnh; car park và library sát nhau.",
+          "answer_type": "closed",
+          "id": "M02-W03-02"
+        },
+        {
+          "question": "In 2010, the cafeteria was ______ the main hall.",
+          "answer": "south of",
+          "explanation_en": "Cafeteria lies below the main hall in the map; south of is precise.",
+          "explanation_vi": "South of = phía nam, vì cafeteria nằm phía dưới hall.",
+          "answer_type": "closed",
+          "id": "M02-W03-03"
+        },
+        {
+          "question": "The sports centre in 2025 was ______ the north-west corner.",
+          "answer": "in",
+          "explanation_en": "We say in the north-west corner, not on the corner of this diagram.",
+          "explanation_vi": "Cấu trúc cố định: in the north-west corner = ở góc tây bắc.",
+          "answer_type": "closed",
+          "id": "M02-W03-04"
+        }
+      ],
+      "map_id": "W-A"
+    },
+    {
+      "id": "M02-W04",
+      "skill": "W",
+      "exercise_no": 4,
+      "title": "Complete accurate location sentences",
+      "source_focus": "prepositional accuracy in map descriptions",
+      "instruction_en": "Write ONE location phrase for each.",
+      "instruction_vi": "Viết cụm vị trí chính xác, phân biệt between / next to / opposite.",
+      "items": [
+        {
+          "question": "Complete: “The library was situated ______ the car park.”",
+          "answer": "next to",
+          "explanation_en": "Adjacent cells in the northern row call for next to/beside.",
+          "explanation_vi": "Library cạnh car park, dùng next to hoặc beside.",
+          "answer_type": "closed",
+          "id": "M02-W04-01"
+        },
+        {
+          "question": "Complete: “In 2025, the science block was ______ the main hall.”",
+          "answer": "west of",
+          "explanation_en": "Science block occupies the middle-left cell, i.e. west of the hall.",
+          "explanation_vi": "Science block bên trái hội trường (hướng tây).",
+          "answer_type": "closed",
+          "id": "M02-W04-02"
+        },
+        {
+          "question": "Complete: “The cafeteria was ______ the main gate.”",
+          "answer": "west of",
+          "explanation_en": "Both are in the bottom row, with the cafeteria left of the gate.",
+          "explanation_vi": "Cafeteria ở phía tây của main gate.",
+          "answer_type": "closed",
+          "id": "M02-W04-03"
+        }
+      ],
+      "map_id": "W-A"
+    },
+    {
+      "id": "M02-W05",
+      "skill": "W",
+      "exercise_no": 5,
+      "title": "Write map sentences freely",
+      "source_focus": "producing location descriptions",
+      "instruction_en": "Write a complete sentence for each prompt.",
+      "instruction_vi": "Viết câu hoàn chỉnh; chấp nhận cách diễn đạt tự nhiên khác.",
+      "items": [
+        {
+          "question": "Describe the location of student housing in 2025.",
+          "answer": "In 2025, student housing was located to the east of the main hall.",
+          "explanation_en": "A good answer names the year, facility and relative location, using past tense for a past dated map.",
+          "explanation_vi": "Câu đủ năm, địa điểm và vị trí; map mốc năm 2025 dùng was located.",
+          "answer_type": "open",
+          "id": "M02-W05-01"
+        },
+        {
+          "question": "Describe where the cycle parking area is on the new map.",
+          "answer": "Cycle parking was placed in the south-west corner of the campus.",
+          "explanation_en": "In the south-west corner correctly describes the bottom-left cell.",
+          "explanation_vi": "Cycle parking ở góc tây nam; dùng in the ... corner.",
+          "answer_type": "open",
+          "id": "M02-W05-02"
+        }
+      ],
+      "map_id": "W-A"
+    },
+    {
+      "id": "M02-W06",
+      "skill": "W",
+      "exercise_no": 6,
+      "title": "Task analysis: maps over time",
+      "source_focus": "understanding Academic Task 1 map task",
+      "instruction_en": "Answer these task-analysis questions before writing.",
+      "instruction_vi": "Phân tích đề trước khi viết, không đoán thông tin từ ngoài sơ đồ.",
+      "items": [
+        {
+          "question": "How many time points are compared in Map W-A?",
+          "answer": "two",
+          "explanation_en": "The maps show 2010 and 2025; both years are necessary for change language.",
+          "explanation_vi": "Có hai thời điểm 2010 và 2025, cần so sánh thay đổi.",
+          "answer_type": "closed",
+          "id": "M02-W06-01"
+        },
+        {
+          "question": "Which facilities stayed in the same positions?",
+          "answer": "main hall, library, cafeteria and main gate",
+          "explanation_en": "These four labels occur in identical cells in the two panels.",
+          "explanation_vi": "Bốn hạng mục giữ vị trí giống nhau trong hai sơ đồ; liệt kê giúp viết overview.",
+          "answer_type": "closed",
+          "id": "M02-W06-02"
+        },
+        {
+          "question": "What should an IELTS Academic Task 1 map overview summarise?",
+          "answer": "the most important overall changes",
+          "explanation_en": "An overview reports the dominant trends, such as redevelopment and what stayed unchanged, without listing every location.",
+          "explanation_vi": "Overview nêu thay đổi lớn nhất, không liệt kê chi tiết từng ô.",
+          "answer_type": "open",
+          "id": "M02-W06-03"
+        }
+      ],
+      "map_id": "W-A"
+    },
+    {
+      "id": "M02-W07",
+      "skill": "W",
+      "exercise_no": 7,
+      "title": "Separate introduction and overview",
+      "source_focus": "map introduction and overview",
+      "instruction_en": "Decide whether each sentence is an INTRODUCTION or OVERVIEW.",
+      "instruction_vi": "Phân biệt mở bài và tổng quan bản đồ.",
+      "items": [
+        {
+          "question": "“The two maps illustrate how Riverton Campus changed between 2010 and 2025.”",
+          "answer": "INTRODUCTION",
+          "explanation_en": "This paraphrases the task and identifies the subject and dates.",
+          "explanation_vi": "Mở bài giới thiệu đối tượng, mốc thời gian; chưa nêu đặc điểm chung.",
+          "answer_type": "closed",
+          "id": "M02-W07-01"
+        },
+        {
+          "question": "“Overall, the campus gained academic and residential facilities, while several key buildings stayed in place.”",
+          "answer": "OVERVIEW",
+          "explanation_en": "This summarises the largest categories of change and continuity.",
+          "explanation_vi": "Overall + thay đổi trọng tâm và cái giữ nguyên = tổng quan.",
+          "answer_type": "closed",
+          "id": "M02-W07-02"
+        },
+        {
+          "question": "“In the north-west, the sports field was replaced by an indoor sports centre.”",
+          "answer": "BODY DETAIL",
+          "explanation_en": "This gives a specific location and change, so belongs in a body paragraph.",
+          "explanation_vi": "Câu nêu chi tiết vị trí và hạng mục, nên để thân bài.",
+          "answer_type": "closed",
+          "id": "M02-W07-03"
+        }
+      ],
+      "map_id": "W-A"
+    },
+    {
+      "id": "M02-W08",
+      "skill": "W",
+      "exercise_no": 8,
+      "title": "Map vocabulary: change verbs",
+      "source_focus": "map change vocabulary and past tense",
+      "instruction_en": "Choose a precise verb: replaced / converted / expanded / removed.",
+      "instruction_vi": "Chọn động từ mô tả thay đổi đúng nghĩa.",
+      "items": [
+        {
+          "question": "The old classrooms were ______ into student housing.",
+          "answer": "converted",
+          "explanation_en": "Convert A into B means change the use of an existing space or building.",
+          "explanation_vi": "Convert into = chuyển đổi công năng từ lớp học sang nhà ở.",
+          "answer_type": "closed",
+          "id": "M02-W08-01"
+        },
+        {
+          "question": "The sports field was ______ by a sports centre.",
+          "answer": "replaced",
+          "explanation_en": "Be replaced by indicates one facility takes the place of another.",
+          "explanation_vi": "Be replaced by = bị thay thế bằng.",
+          "answer_type": "closed",
+          "id": "M02-W08-02"
+        },
+        {
+          "question": "The trees were ______ to make space for cycle parking.",
+          "answer": "removed",
+          "explanation_en": "Removed means taken away, appropriate for land clearance.",
+          "explanation_vi": "Removed = bị dỡ bỏ/loại bỏ, cây bị chặt/dời đi.",
+          "answer_type": "closed",
+          "id": "M02-W08-03"
+        },
+        {
+          "question": "The campus ______ its facilities over the fifteen-year period.",
+          "answer": "expanded",
+          "explanation_en": "Expanded describes broader growth in the range of facilities.",
+          "explanation_vi": "Expanded = mở rộng, không chỉ nhấn mạnh một hạng mục.",
+          "answer_type": "closed",
+          "id": "M02-W08-04"
+        }
+      ],
+      "map_id": "W-A"
+    },
+    {
+      "id": "M02-W09",
+      "skill": "W",
+      "exercise_no": 9,
+      "title": "Synonyms for map descriptions",
+      "source_focus": "paraphrasing changes",
+      "instruction_en": "Rewrite using the word in brackets without changing meaning.",
+      "instruction_vi": "Viết lại tương đương, dùng từ trong ngoặc.",
+      "items": [
+        {
+          "question": "A cafe took the place of the car park. (replaced)",
+          "answer": "A cafe replaced the car park.",
+          "explanation_en": "Replace is active here: new subject (cafe) + replaced + previous facility.",
+          "explanation_vi": "Chủ ngữ mới là cafe, dùng câu chủ động replaced + car park.",
+          "answer_type": "closed",
+          "id": "M02-W09-01"
+        },
+        {
+          "question": "The bookshop became workshop rooms. (converted)",
+          "answer": "The bookshop was converted into workshop rooms.",
+          "explanation_en": "Passive “was converted into” highlights the previous facility.",
+          "explanation_vi": "Bị động was converted into: cái cũ được chuyển thành cái mới.",
+          "answer_type": "closed",
+          "id": "M02-W09-02"
+        },
+        {
+          "question": "Workers took away the old fence. (removed)",
+          "answer": "The old fence was removed.",
+          "explanation_en": "A past passive sentence focuses on what disappeared; “was” + past participle “removed”.",
+          "explanation_vi": "Đổi chủ động sang bị động quá khứ: was + V3 = was removed.",
+          "answer_type": "closed",
+          "id": "M02-W09-03"
+        }
+      ],
+      "map_id": "W-B"
+    },
+    {
+      "id": "M02-W10",
+      "skill": "W",
+      "exercise_no": 10,
+      "title": "Find and correct map mistakes",
+      "source_focus": "grammar accuracy in map descriptions",
+      "instruction_en": "Correct the error in each sentence.",
+      "instruction_vi": "Sửa lỗi về giới từ, dùng từ và thì khi mô tả bản đồ.",
+      "items": [
+        {
+          "question": "In 2010, the garden located on the west side.",
+          "answer": "In 2010, the garden was located on the west side.",
+          "explanation_en": "“Was located” is the past passive form to describe position in a dated map.",
+          "explanation_vi": "Thiếu was: was located là dạng mô tả vị trí trong quá khứ.",
+          "answer_type": "closed",
+          "id": "M02-W10-01"
+        },
+        {
+          "question": "The new cafe was replaced the car park.",
+          "answer": "The new cafe replaced the car park.",
+          "explanation_en": "Do not put “was” before a past simple active verb when the new facility is the subject.",
+          "explanation_vi": "Chủ ngữ cafe chủ động thay thế nên dùng replaced, bỏ was.",
+          "answer_type": "closed",
+          "id": "M02-W10-02"
+        },
+        {
+          "question": "The main hall stayed in same place.",
+          "answer": "The main hall stayed in the same place.",
+          "explanation_en": "“The same” requires the definite article the.",
+          "explanation_vi": "Same trong cấu trúc so sánh thường đi với the: the same place.",
+          "answer_type": "closed",
+          "id": "M02-W10-03"
+        },
+        {
+          "question": "The cafeteria was in north of the entrance.",
+          "answer": "The cafeteria was to the north of the entrance.",
+          "explanation_en": "Use “to the north of” or “north of” to show relative direction; “in north of” is not idiomatic.",
+          "explanation_vi": "Dùng to the north of hoặc north of, không dùng in north of.",
+          "answer_type": "closed",
+          "id": "M02-W10-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-W11",
+      "skill": "W",
+      "exercise_no": 11,
+      "title": "Regular and irregular past forms",
+      "source_focus": "past simple and irregular changes",
+      "instruction_en": "Write the past simple forms.",
+      "instruction_vi": "Viết dạng quá khứ đơn của động từ, phân biệt quy tắc/bất quy tắc.",
+      "items": [
+        {
+          "question": "build → ______",
+          "answer": "built",
+          "explanation_en": "Build is irregular, so it changes to built rather than builded.",
+          "explanation_vi": "Build bất quy tắc: build–built–built.",
+          "answer_type": "closed",
+          "id": "M02-W11-01"
+        },
+        {
+          "question": "expand → ______",
+          "answer": "expanded",
+          "explanation_en": "Expand is regular, add -ed.",
+          "explanation_vi": "Expand là động từ có quy tắc: expanded.",
+          "answer_type": "closed",
+          "id": "M02-W11-02"
+        },
+        {
+          "question": "take → ______",
+          "answer": "took",
+          "explanation_en": "Take changes vowel in past simple: took.",
+          "explanation_vi": "Take bất quy tắc: took.",
+          "answer_type": "closed",
+          "id": "M02-W11-03"
+        },
+        {
+          "question": "create → ______",
+          "answer": "created",
+          "explanation_en": "Verbs ending in -e add only -d.",
+          "explanation_vi": "Create đã có -e nên chỉ thêm -d → created.",
+          "answer_type": "closed",
+          "id": "M02-W11-04"
+        },
+        {
+          "question": "become → ______",
+          "answer": "became",
+          "explanation_en": "Become is irregular: become–became–become.",
+          "explanation_vi": "Become có quá khứ đơn became, V3 là become.",
+          "answer_type": "closed",
+          "id": "M02-W11-05"
+        }
+      ]
+    },
+    {
+      "id": "M02-W12",
+      "skill": "W",
+      "exercise_no": 12,
+      "title": "Describe past changes",
+      "source_focus": "simple past regular/irregular",
+      "instruction_en": "Complete the sentence with the correct past tense.",
+      "instruction_vi": "Chia thì quá khứ đơn, chú ý câu chủ động.",
+      "items": [
+        {
+          "question": "In 2025 the university ______ (open) a new science block.",
+          "answer": "opened",
+          "explanation_en": "Open is regular and the event is dated in the past.",
+          "explanation_vi": "Open → opened, mốc thời gian năm 2025.",
+          "answer_type": "closed",
+          "id": "M02-W12-01"
+        },
+        {
+          "question": "The old classrooms ______ (become) student housing.",
+          "answer": "became",
+          "explanation_en": "Become has irregular past tense became.",
+          "explanation_vi": "Become → became, không viết becomed.",
+          "answer_type": "closed",
+          "id": "M02-W12-02"
+        },
+        {
+          "question": "The university ______ (build) a sports centre.",
+          "answer": "built",
+          "explanation_en": "Past form of build is built.",
+          "explanation_vi": "Build → built; phân biệt xây mới với chuyển đổi công năng.",
+          "answer_type": "closed",
+          "id": "M02-W12-03"
+        },
+        {
+          "question": "The designers ______ (keep) the main entrance.",
+          "answer": "kept",
+          "explanation_en": "Keep changes to kept in the past.",
+          "explanation_vi": "Keep → kept; giữ nguyên lối vào.",
+          "answer_type": "closed",
+          "id": "M02-W12-04"
+        }
+      ],
+      "map_id": "W-A"
+    },
+    {
+      "id": "M02-W13",
+      "skill": "W",
+      "exercise_no": 13,
+      "title": "Active vs passive map description",
+      "source_focus": "past simple active/passive",
+      "instruction_en": "Rewrite in the past passive.",
+      "instruction_vi": "Chuyển sang câu bị động quá khứ để nhấn mạnh hạng mục thay đổi.",
+      "items": [
+        {
+          "question": "Workers converted the cinema into an art gallery.",
+          "answer": "The cinema was converted into an art gallery.",
+          "explanation_en": "Passive pattern: object + was/were + past participle; cinema is singular.",
+          "explanation_vi": "Bị động: The cinema + was + converted + into...",
+          "answer_type": "closed",
+          "id": "M02-W13-01"
+        },
+        {
+          "question": "The town removed the old fence.",
+          "answer": "The old fence was removed.",
+          "explanation_en": "The object becomes the subject and takes was removed.",
+          "explanation_vi": "The old fence thành chủ ngữ, was removed.",
+          "answer_type": "closed",
+          "id": "M02-W13-02"
+        },
+        {
+          "question": "Builders replaced the bookshop with workshop rooms.",
+          "answer": "The bookshop was replaced with workshop rooms.",
+          "explanation_en": "“Was replaced with/by” reports the old facility and its replacement.",
+          "explanation_vi": "Bookshop được thay bằng workshop rooms; có thể dùng with/by.",
+          "answer_type": "closed",
+          "id": "M02-W13-03"
+        },
+        {
+          "question": "They planted new trees near the entrance.",
+          "answer": "New trees were planted near the entrance.",
+          "explanation_en": "Plural new trees requires were rather than was.",
+          "explanation_vi": "New trees số nhiều → were planted.",
+          "answer_type": "closed",
+          "id": "M02-W13-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-W14",
+      "skill": "W",
+      "exercise_no": 14,
+      "title": "Active/passive accuracy check",
+      "source_focus": "choosing active or passive",
+      "instruction_en": "Choose the correct version and explain why.",
+      "instruction_vi": "Chọn cấu trúc đúng và giải thích vì sao.",
+      "items": [
+        {
+          "question": "“The sports field (replaced / was replaced) by a sports centre.”",
+          "answer": "was replaced",
+          "explanation_en": "The sports field receives the action, and “by” introduces the new replacing facility.",
+          "explanation_vi": "Sports field là cái bị thay thế, dùng bị động was replaced by.",
+          "answer_type": "closed",
+          "id": "M02-W14-01"
+        },
+        {
+          "question": "“The university (built / was built) a new hall.”",
+          "answer": "built",
+          "explanation_en": "The university performs the action, so use active voice built.",
+          "explanation_vi": "University là chủ thể xây, dùng built chủ động.",
+          "answer_type": "closed",
+          "id": "M02-W14-02"
+        },
+        {
+          "question": "“New rooms (added / were added) to the centre.”",
+          "answer": "were added",
+          "explanation_en": "Rooms are plural and receive the action: were added.",
+          "explanation_vi": "Rooms số nhiều nên were added.",
+          "answer_type": "closed",
+          "id": "M02-W14-03"
+        },
+        {
+          "question": "“The old entrance (remained / was remained) unchanged.”",
+          "answer": "remained",
+          "explanation_en": "Remain is an intransitive verb; avoid “was remained”.",
+          "explanation_vi": "Remain là nội động từ, không dùng bị động was remained.",
+          "answer_type": "closed",
+          "id": "M02-W14-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-W15",
+      "skill": "W",
+      "exercise_no": 15,
+      "title": "Independent exam writing: two maps",
+      "source_focus": "complete IELTS Academic Task 1 / 150 words minimum",
+      "instruction_en": "Study Map W-B. Write at least 150 words: introduction, overview and two body paragraphs.",
+      "instruction_vi": "Quan sát Map W-B và viết ít nhất 150 từ: mở bài, overview, hai đoạn thân bài. Tự viết trước khi xem bài mẫu.",
+      "items": [
+        {
+          "question": "Write a 150+ word report comparing Harbourview Arts Centre in 2008 and 2026.",
+          "answer": "See the full 170+ word model in the Teacher Guide.",
+          "explanation_en": "Report: 1) paraphrase topic/time; 2) highlight conversion of public spaces and unchanged landmarks; 3) group changes by area; 4) use accurate past simple/passive and place prepositions.",
+          "explanation_vi": "Bố cục: mở bài diễn đạt lại đề, overview nêu mở rộng chức năng và hạng mục giữ nguyên, thân bài so sánh theo khu vực. Dùng quá khứ đơn/bị động và giới từ vị trí chính xác.",
+          "answer_type": "open",
+          "id": "M02-W15-01"
+        }
+      ],
+      "map_id": "W-B"
+    },
+    {
+      "id": "M02-L01",
+      "skill": "L",
+      "exercise_no": 1,
+      "title": "Public places recognition",
+      "source_focus": "place names and public facilities",
+      "instruction_en": "Write the appropriate place for each function.",
+      "instruction_vi": "Viết tên địa điểm phù hợp với chức năng.",
+      "items": [
+        {
+          "question": "Where can people borrow books?",
+          "answer": "library",
+          "explanation_en": "Borrowing (not buying) books points to a library.",
+          "explanation_vi": "Borrow books = mượn sách ở thư viện.",
+          "answer_type": "closed",
+          "id": "M02-L01-01"
+        },
+        {
+          "question": "Where do passengers catch trains?",
+          "answer": "railway station",
+          "explanation_en": "Railway station is the transport hub for trains.",
+          "explanation_vi": "Railway station = ga tàu.",
+          "answer_type": "closed",
+          "id": "M02-L01-02"
+        },
+        {
+          "question": "Where can people watch paintings and exhibitions?",
+          "answer": "museum",
+          "explanation_en": "Museums and galleries exhibit cultural objects and art.",
+          "explanation_vi": "Museum là bảo tàng; art gallery là phòng triển lãm tranh.",
+          "answer_type": "closed",
+          "id": "M02-L01-03"
+        },
+        {
+          "question": "Where can people swim indoors?",
+          "answer": "swimming pool",
+          "explanation_en": "Swimming pool is the required facility, distinct from sports centre generally.",
+          "explanation_vi": "Swimming pool = hồ bơi.",
+          "answer_type": "closed",
+          "id": "M02-L01-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-L02",
+      "skill": "L",
+      "exercise_no": 2,
+      "title": "Classify places by purpose",
+      "source_focus": "categorising places",
+      "instruction_en": "Group each place: transport / leisure / culture / services.",
+      "instruction_vi": "Phân loại địa điểm theo công năng.",
+      "items": [
+        {
+          "question": "railway station → ______",
+          "answer": "transport",
+          "explanation_en": "Trains are a form of public transport.",
+          "explanation_vi": "Ga tàu thuộc nhóm giao thông.",
+          "answer_type": "closed",
+          "id": "M02-L02-01"
+        },
+        {
+          "question": "cinema → ______",
+          "answer": "leisure",
+          "explanation_en": "A cinema is visited for recreation/entertainment.",
+          "explanation_vi": "Cinema thuộc giải trí.",
+          "answer_type": "closed",
+          "id": "M02-L02-02"
+        },
+        {
+          "question": "museum → ______",
+          "answer": "culture",
+          "explanation_en": "A museum displays history, culture or science.",
+          "explanation_vi": "Museum thuộc văn hóa.",
+          "answer_type": "closed",
+          "id": "M02-L02-03"
+        },
+        {
+          "question": "bank → ______",
+          "answer": "services",
+          "explanation_en": "A bank provides financial services.",
+          "explanation_vi": "Bank cung cấp dịch vụ tài chính.",
+          "answer_type": "closed",
+          "id": "M02-L02-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-L03",
+      "skill": "L",
+      "exercise_no": 3,
+      "title": "Identify a conversation location",
+      "source_focus": "listening for setting",
+      "instruction_en": "Listen to Track A and identify the two nearby facilities.",
+      "instruction_vi": "Nghe Track A, xác định hai địa điểm gần nhau.",
+      "items": [
+        {
+          "question": "Which place is opposite the library?",
+          "answer": "town museum",
+          "explanation_en": "The speaker says the library is opposite the town museum.",
+          "explanation_vi": "Library nằm đối diện town museum; opposite = đối diện.",
+          "answer_type": "closed",
+          "id": "M02-L03-01"
+        },
+        {
+          "question": "Which place is behind the sports centre?",
+          "answer": "swimming pool",
+          "explanation_en": "The directions locate the pool behind the sports centre.",
+          "explanation_vi": "Behind = phía sau sports centre.",
+          "answer_type": "closed",
+          "id": "M02-L03-02"
+        },
+        {
+          "question": "Which road is mentioned for access to the pool?",
+          "answer": "Park Street",
+          "explanation_en": "The speaker says the swimming pool can be entered from Park Street.",
+          "explanation_vi": "Đường vào bể bơi là Park Street, không phải River Road.",
+          "answer_type": "closed",
+          "id": "M02-L03-03"
+        }
+      ],
+      "audio_clip": "L-A"
+    },
+    {
+      "id": "M02-L04",
+      "skill": "L",
+      "exercise_no": 4,
+      "title": "Spell names and addresses",
+      "source_focus": "spelling names accurately",
+      "instruction_en": "Listen to Track B and copy the information exactly.",
+      "instruction_vi": "Nghe Track B, ghi chính xác cách viết tên riêng và địa chỉ.",
+      "items": [
+        {
+          "question": "What is the caller’s first name?",
+          "answer": "Lina",
+          "explanation_en": "The caller explicitly corrects the receptionist: “L-I-N-A”.",
+          "explanation_vi": "Khách sửa cách viết tên bằng đánh vần L-I-N-A.",
+          "answer_type": "closed",
+          "id": "M02-L04-01"
+        },
+        {
+          "question": "How is the family name spelled?",
+          "answer": "M-O-R-E-T-T-I",
+          "explanation_en": "The caller spells her surname letter by letter; double T matters.",
+          "explanation_vi": "Họ được đánh vần M-O-R-E-T-T-I; chú ý hai chữ T.",
+          "answer_type": "closed",
+          "id": "M02-L04-02"
+        },
+        {
+          "question": "Write the email domain (the part after @).",
+          "answer": "greenmail.com",
+          "explanation_en": "The caller says “at greenmail dot com”; “at” represents @ and “dot” represents a full stop.",
+          "explanation_vi": "Phần sau @ là greenmail.com; “dot” phải viết dấu chấm.",
+          "answer_type": "closed",
+          "id": "M02-L04-03"
+        }
+      ],
+      "audio_clip": "L-B"
+    },
+    {
+      "id": "M02-L05",
+      "skill": "L",
+      "exercise_no": 5,
+      "title": "Listening for numbers",
+      "source_focus": "numbers and distinctions",
+      "instruction_en": "Listen to Track F and write the exact detail.",
+      "instruction_vi": "Nghe Track F và ghi số/từ chính xác.",
+      "items": [
+        {
+          "question": "Which room number is stated: 16 or 60?",
+          "answer": "16",
+          "explanation_en": "Sixteen has -teen stress differences from sixty (-ty). The recording adds “not sixty”.",
+          "explanation_vi": "Sixteen là 16, sixty là 60; thông tin sửa “not sixty” xác nhận 16.",
+          "answer_type": "closed",
+          "id": "M02-L05-01"
+        },
+        {
+          "question": "What price is spoken?",
+          "answer": "£13.50",
+          "explanation_en": "Thirteen pounds fifty means 13 pounds and 50 pence, not 30 pounds.",
+          "explanation_vi": "Thirteen pounds fifty = 13 bảng 50 xu.",
+          "answer_type": "closed",
+          "id": "M02-L05-02"
+        },
+        {
+          "question": "What is the appointment date?",
+          "answer": "23 May",
+          "explanation_en": "Twenty-third of May is May 23; ordinal form is not 22nd.",
+          "explanation_vi": "Twenty-third = ngày 23, không phải 22.",
+          "answer_type": "closed",
+          "id": "M02-L05-03"
+        }
+      ],
+      "audio_clip": "L-F"
+    },
+    {
+      "id": "M02-L06",
+      "skill": "L",
+      "exercise_no": 6,
+      "title": "Underline keywords before listening",
+      "source_focus": "short-answer key words",
+      "instruction_en": "Identify the key information type before listening.",
+      "instruction_vi": "Xác định loại thông tin cần nghe: ngày, giờ, địa điểm, tiền.",
+      "items": [
+        {
+          "question": "“On which day is the family celebration?” You must listen for a ______.",
+          "answer": "date",
+          "explanation_en": "When refers to time; here “day” requires a calendar date.",
+          "explanation_vi": "On which day → ngày tổ chức, nghe ngày tháng chứ không nghe giá.",
+          "answer_type": "closed",
+          "id": "M02-L06-01"
+        },
+        {
+          "question": "“What is the total price of the booking?” You must listen for a ______.",
+          "answer": "price",
+          "explanation_en": "How much/total price indicates a money amount.",
+          "explanation_vi": "How much / total price = số tiền.",
+          "answer_type": "closed",
+          "id": "M02-L06-02"
+        },
+        {
+          "question": "“What is the name of the room?” You must listen for a ______.",
+          "answer": "room name",
+          "explanation_en": "The question requests a named room, not the number of guests.",
+          "explanation_vi": "Room name = tên phòng; cần nghe danh từ riêng của phòng.",
+          "answer_type": "closed",
+          "id": "M02-L06-03"
+        }
+      ]
+    },
+    {
+      "id": "M02-L07",
+      "skill": "L",
+      "exercise_no": 7,
+      "title": "Plan answer types",
+      "source_focus": "predict question answer type",
+      "instruction_en": "Choose the expected answer type.",
+      "instruction_vi": "Đọc câu hỏi trước, đoán kiểu đáp án.",
+      "items": [
+        {
+          "question": "“At what time should volunteers arrive?”",
+          "answer": "time",
+          "explanation_en": "At what time signals clock time; use the final instruction given by the organiser.",
+          "explanation_vi": "At what time hỏi giờ, nghe thời gian yêu cầu có mặt chứ không phải giờ sự kiện bắt đầu.",
+          "answer_type": "closed",
+          "id": "M02-L07-01"
+        },
+        {
+          "question": "“What colour is the volunteer badge?”",
+          "answer": "colour",
+          "explanation_en": "What colour asks for an adjective like yellow, not a venue.",
+          "explanation_vi": "What colour = màu sắc; đáp án có thể là yellow.",
+          "answer_type": "closed",
+          "id": "M02-L07-02"
+        },
+        {
+          "question": "“Which entrance should visitors use?”",
+          "answer": "place / entrance",
+          "explanation_en": "Which entrance asks for a specific gate or entry point.",
+          "explanation_vi": "Which entrance = cổng vào cụ thể.",
+          "answer_type": "closed",
+          "id": "M02-L07-03"
+        },
+        {
+          "question": "“How many guests are expected?”",
+          "answer": "number",
+          "explanation_en": "How many guests requires a number of people.",
+          "explanation_vi": "How many = số lượng người.",
+          "answer_type": "closed",
+          "id": "M02-L07-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-L08",
+      "skill": "L",
+      "exercise_no": 8,
+      "title": "Choose where numbers are needed",
+      "source_focus": "not every listening answer is a number",
+      "instruction_en": "Mark each question NUMBER or WORD(S).",
+      "instruction_vi": "Đánh dấu câu cần NUMBER (số) hay WORD(S) (từ).",
+      "items": [
+        {
+          "question": "How much is the sailing course?",
+          "answer": "NUMBER",
+          "explanation_en": "A price should include a numerical amount and currency if requested.",
+          "explanation_vi": "Hỏi học phí → nghe số tiền.",
+          "answer_type": "closed",
+          "id": "M02-L08-01"
+        },
+        {
+          "question": "Which road is the sailing office on?",
+          "answer": "WORD(S)",
+          "explanation_en": "A road name is made of words, even if a house number could accompany it.",
+          "explanation_vi": "Tên đường là từ; nếu câu hỏi yêu cầu tên đường thì không bắt buộc số nhà.",
+          "answer_type": "closed",
+          "id": "M02-L08-02"
+        },
+        {
+          "question": "What time does class start?",
+          "answer": "NUMBER",
+          "explanation_en": "Clock time is normally given using digits or spoken numbers.",
+          "explanation_vi": "Giờ bắt đầu là dạng số.",
+          "answer_type": "closed",
+          "id": "M02-L08-03"
+        },
+        {
+          "question": "What equipment should students bring?",
+          "answer": "WORD(S)",
+          "explanation_en": "Equipment names are nouns such as hat or water.",
+          "explanation_vi": "Đồ vật là danh từ, ví dụ hat / water.",
+          "answer_type": "closed",
+          "id": "M02-L08-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-L09",
+      "skill": "L",
+      "exercise_no": 9,
+      "title": "Short answers: corrected date and room",
+      "source_focus": "listen for corrections and final answers",
+      "instruction_en": "Listen to Track B. Use NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+      "instruction_vi": "Nghe Track B; tối đa HAI từ và/hoặc một số. Chú ý thông tin bị sửa.",
+      "items": [
+        {
+          "question": "On what date is the family event finally booked?",
+          "answer": "15 June",
+          "explanation_en": "The caller corrects Saturday 14 June to Sunday 15 June. Final corrected detail wins.",
+          "explanation_vi": "Ban đầu ngày 14 nhưng người gọi sửa thành Chủ nhật ngày 15/6; chọn thông tin cuối.",
+          "answer_type": "closed",
+          "id": "M02-L09-01"
+        },
+        {
+          "question": "Which room is available?",
+          "answer": "Garden Room",
+          "explanation_en": "This is the named available room; do not answer “community centre” as that is the building.",
+          "explanation_vi": "Garden Room là tên phòng, community centre là tòa nhà.",
+          "answer_type": "closed",
+          "id": "M02-L09-02"
+        },
+        {
+          "question": "How much is the three-hour booking?",
+          "answer": "£60",
+          "explanation_en": "Receptionist gives sixty pounds including projector, with no extra charge mentioned.",
+          "explanation_vi": "Giá thuê ba giờ là £60, gồm máy chiếu.",
+          "answer_type": "closed",
+          "id": "M02-L09-03"
+        }
+      ],
+      "audio_clip": "L-B"
+    },
+    {
+      "id": "M02-L10",
+      "skill": "L",
+      "exercise_no": 10,
+      "title": "Spot an answer that breaks instructions",
+      "source_focus": "answer limits and spelling",
+      "instruction_en": "Identify the mistake in the proposed answer.",
+      "instruction_vi": "Phát hiện lỗi giới hạn từ, chính tả hoặc lấy sai thông tin.",
+      "items": [
+        {
+          "question": "Instruction: ONE WORD ONLY. Question: “Which room?” Proposed answer: “the Garden Room”. What is wrong?",
+          "answer": "too many words",
+          "explanation_en": "A three-word answer exceeds ONE WORD ONLY; if the requested answer is the named room, the task should allow two words.",
+          "explanation_vi": "Đáp án 3 từ vi phạm ONE WORD ONLY; câu hỏi tên Garden Room phải quy định tối đa HAI từ hoặc đổi dạng hỏi.",
+          "answer_type": "closed",
+          "id": "M02-L10-01"
+        },
+        {
+          "question": "Question: Which day is the event? Proposed answer: “Saturday”. What is wrong?",
+          "answer": "outdated information",
+          "explanation_en": "The caller later corrects the day to Sunday, so Saturday is a distractor.",
+          "explanation_vi": "Saturday là thông tin bị sửa; Sunday mới là ngày chốt.",
+          "answer_type": "closed",
+          "id": "M02-L10-02"
+        },
+        {
+          "question": "Question: Write the surname. Proposed answer: “Moreti”. What is wrong?",
+          "answer": "spelling",
+          "explanation_en": "The correct spelling is Moretti with double T.",
+          "explanation_vi": "Moreti thiếu một chữ t; nghe đánh vần tên riêng cần đúng từng chữ.",
+          "answer_type": "closed",
+          "id": "M02-L10-03"
+        }
+      ],
+      "audio_clip": "L-B"
+    },
+    {
+      "id": "M02-L11",
+      "skill": "L",
+      "exercise_no": 11,
+      "title": "Select the final information",
+      "source_focus": "distractors in short answers",
+      "instruction_en": "Listen to Track C and give corrected final details.",
+      "instruction_vi": "Nghe Track C; chọn thông tin cuối cùng sau khi người nói đổi ý.",
+      "items": [
+        {
+          "question": "At what time do the friends finally plan to eat?",
+          "answer": "8:15 pm",
+          "explanation_en": "They first mention 7:30 but reject it and settle on eight fifteen.",
+          "explanation_vi": "7:30 bị bác bỏ vì không đủ thời gian; cuối cùng ăn lúc 8:15.",
+          "answer_type": "closed",
+          "id": "M02-L11-01"
+        },
+        {
+          "question": "On which street is their chosen restaurant?",
+          "answer": "King Street",
+          "explanation_en": "Hill Road is the fully booked option; the selected Thai restaurant is on King Street.",
+          "explanation_vi": "Hill Road là quán không đặt được; địa chỉ chốt King Street.",
+          "answer_type": "closed",
+          "id": "M02-L11-02"
+        },
+        {
+          "question": "What is the house number of the chosen restaurant?",
+          "answer": "24",
+          "explanation_en": "The speaker corrects the possible confusion with 42 and confirms 24.",
+          "explanation_vi": "Nghe rõ number 24, not 42; đây là bẫy đảo chữ số.",
+          "answer_type": "closed",
+          "id": "M02-L11-03"
+        },
+        {
+          "question": "How much is the set meal per person?",
+          "answer": "£17.50",
+          "explanation_en": "The chosen set meal includes a drink and costs seventeen pounds fifty per person.",
+          "explanation_vi": "Giá 17.50 bảng/người, đã gồm đồ uống.",
+          "answer_type": "closed",
+          "id": "M02-L11-04"
+        }
+      ],
+      "audio_clip": "L-C"
+    },
+    {
+      "id": "M02-L12",
+      "skill": "L",
+      "exercise_no": 12,
+      "title": "Sailing course: short answers",
+      "source_focus": "short-answer questions in course information",
+      "instruction_en": "Listen to Track D. Use NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+      "instruction_vi": "Nghe Track D; tối đa HAI từ và/hoặc một con số.",
+      "items": [
+        {
+          "question": "How many weeks does the beginner course last?",
+          "answer": "6",
+          "explanation_en": "It lasts six weeks; the question already provides “weeks”.",
+          "explanation_vi": "Đề đã có weeks, chỉ cần ghi 6.",
+          "answer_type": "closed",
+          "id": "M02-L12-01"
+        },
+        {
+          "question": "What time does each class start?",
+          "answer": "9:30 am",
+          "explanation_en": "The session begins at nine thirty and finishes at noon; take the start time.",
+          "explanation_vi": "Start = bắt đầu 9:30, không nhầm với noon kết thúc.",
+          "answer_type": "closed",
+          "id": "M02-L12-02"
+        },
+        {
+          "question": "Which item does the club provide for safety?",
+          "answer": "safety jackets",
+          "explanation_en": "The club provides safety jackets and boats; these are the safety equipment.",
+          "explanation_vi": "Club cung cấp safety jackets, học viên chỉ mang hat và water.",
+          "answer_type": "closed",
+          "id": "M02-L12-03"
+        },
+        {
+          "question": "On what date does the next course begin?",
+          "answer": "7 September",
+          "explanation_en": "The instructor states the seventh of September.",
+          "explanation_vi": "Bắt đầu ngày 7/9.",
+          "answer_type": "closed",
+          "id": "M02-L12-04"
+        }
+      ],
+      "audio_clip": "L-D"
+    },
+    {
+      "id": "M02-L13",
+      "skill": "L",
+      "exercise_no": 13,
+      "title": "Exam preview: find numerical questions",
+      "source_focus": "predicting required answer formats",
+      "instruction_en": "Classify which questions need numbers using the festival task.",
+      "instruction_vi": "Trước khi nghe bài festival, xác định câu nào cần số.",
+      "items": [
+        {
+          "question": "“How many people are expected?”",
+          "answer": "NUMBER",
+          "explanation_en": "How many requests quantity, which the audio supplies as a number.",
+          "explanation_vi": "How many = hỏi số lượng người.",
+          "answer_type": "closed",
+          "id": "M02-L13-01"
+        },
+        {
+          "question": "“Where should volunteers enter?”",
+          "answer": "WORDS",
+          "explanation_en": "A named gate is a place phrase, not just a number.",
+          "explanation_vi": "Hỏi cổng cụ thể, cần cụm từ chỉ địa điểm.",
+          "answer_type": "closed",
+          "id": "M02-L13-02"
+        },
+        {
+          "question": "“When does the market close?”",
+          "answer": "TIME",
+          "explanation_en": "When used for closing means a time.",
+          "explanation_vi": "Hỏi giờ đóng cửa, nghe mốc thời gian.",
+          "answer_type": "closed",
+          "id": "M02-L13-03"
+        },
+        {
+          "question": "“What is the website address?”",
+          "answer": "WORDS / CHARACTERS",
+          "explanation_en": "Write the domain correctly, including dots and letters; it is not a money amount.",
+          "explanation_vi": "Địa chỉ web phải chép chữ và dấu chấm chính xác.",
+          "answer_type": "closed",
+          "id": "M02-L13-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-L14",
+      "skill": "L",
+      "exercise_no": 14,
+      "title": "Track key words and synonyms",
+      "source_focus": "listen before the final exam practice",
+      "instruction_en": "Find which phrase in the recording supplies the answer.",
+      "instruction_vi": "Nhận diện cụm được nói trong audio và câu hỏi diễn đạt lại.",
+      "items": [
+        {
+          "question": "Question says “What time must helpers be there?” Audio uses what word for helpers?",
+          "answer": "volunteers",
+          "explanation_en": "Helpers in context paraphrases volunteers, the people assisting at the festival.",
+          "explanation_vi": "Helpers ≈ volunteers (tình nguyện viên) trong ngữ cảnh.",
+          "answer_type": "closed",
+          "id": "M02-L14-01"
+        },
+        {
+          "question": "Question says “What is included in the refreshments?” Audio gives what two items?",
+          "answer": "sandwich and water",
+          "explanation_en": "The organiser says each volunteer receives a sandwich and bottle of water.",
+          "explanation_vi": "Refreshments = đồ ăn/uống nhẹ; audio nói sandwich và water.",
+          "answer_type": "closed",
+          "id": "M02-L14-02"
+        },
+        {
+          "question": "Question says “How much will a meal set you back?” Audio uses which price?",
+          "answer": "£9",
+          "explanation_en": "“Set you back” informally asks for a price; the Green Kitchen meal costs nine pounds.",
+          "explanation_vi": "Set you back trong hỏi giá nghĩa là tốn bao nhiêu; giá £9.",
+          "answer_type": "closed",
+          "id": "M02-L14-03"
+        }
+      ],
+      "audio_clip": "L-E"
+    },
+    {
+      "id": "M02-L15",
+      "skill": "L",
+      "exercise_no": 15,
+      "title": "Exam skills: Riverside Festival",
+      "source_focus": "full short-answer practice",
+      "instruction_en": "Listen to Track E. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each question.",
+      "instruction_vi": "Nghe Track E như bài thi, tối đa HAI từ và/hoặc một con số. Nghe 2 lần rồi mới xem transcript.",
+      "items": [
+        {
+          "question": "What is the final date of the festival?",
+          "answer": "12 July",
+          "explanation_en": "The organiser explicitly corrects the original 10 July to Friday 12 July.",
+          "explanation_vi": "10/7 là thông tin ban đầu, cuối cùng chốt 12/7.",
+          "answer_type": "closed",
+          "id": "M02-L15-01"
+        },
+        {
+          "question": "Approximately how many guests are expected?",
+          "answer": "200",
+          "explanation_en": "The organiser expects around two hundred guests.",
+          "explanation_vi": "Khoảng 200 khách, đáp án 200.",
+          "answer_type": "closed",
+          "id": "M02-L15-02"
+        },
+        {
+          "question": "At what time should volunteers arrive?",
+          "answer": "3:15 pm",
+          "explanation_en": "The programme starts at 4:00, but volunteers must arrive at 3:15.",
+          "explanation_vi": "3:15 là giờ tình nguyện viên có mặt, 4 giờ là giờ chương trình mở.",
+          "answer_type": "closed",
+          "id": "M02-L15-03"
+        },
+        {
+          "question": "Which gate should volunteers use?",
+          "answer": "east gate",
+          "explanation_en": "The correct gate is the east gate beside the old bridge.",
+          "explanation_vi": "East gate = cổng phía đông, không phải main gate (đang đóng).",
+          "answer_type": "closed",
+          "id": "M02-L15-04"
+        },
+        {
+          "question": "What colour badge will they receive?",
+          "answer": "yellow",
+          "explanation_en": "The organiser says each volunteer will receive a yellow badge.",
+          "explanation_vi": "Badge màu yellow.",
+          "answer_type": "closed",
+          "id": "M02-L15-05"
+        },
+        {
+          "question": "What kind of sandwiches are also available?",
+          "answer": "vegetarian",
+          "explanation_en": "Vegetarian sandwiches are specifically mentioned as an alternative.",
+          "explanation_vi": "Vegetarian = chay, không phải sandwich thịt.",
+          "answer_type": "closed",
+          "id": "M02-L15-06"
+        },
+        {
+          "question": "How much is a meal at the Green Kitchen stall?",
+          "answer": "£9",
+          "explanation_en": "The meal costs nine pounds; drinks are extra, so do not add a made-up total.",
+          "explanation_vi": "Bữa ăn £9, đồ uống bán riêng, không tự cộng giá.",
+          "answer_type": "closed",
+          "id": "M02-L15-07"
+        },
+        {
+          "question": "When does the evening market close?",
+          "answer": "10 pm",
+          "explanation_en": "The film ends at 9:20, but the market closes at ten.",
+          "explanation_vi": "Chợ đóng lúc 10 giờ, không lẫn giờ phim kết thúc 9:20.",
+          "answer_type": "closed",
+          "id": "M02-L15-08"
+        },
+        {
+          "question": "Give the website domain of the festival.",
+          "answer": "riversidefest.org",
+          "explanation_en": "“www dot riversidefest dot org” identifies the domain; entering riversidefest.org is sufficient.",
+          "explanation_vi": "Viết đúng riversidefest.org; có www cũng được nếu cho phép.",
+          "answer_type": "closed",
+          "id": "M02-L15-09"
+        }
+      ],
+      "audio_clip": "L-E"
+    },
+    {
+      "id": "M02-S01",
+      "skill": "S",
+      "exercise_no": 1,
+      "title": "Recognise hometown questions",
+      "source_focus": "matching IELTS Part 1 question intentions",
+      "instruction_en": "Match each question with the purpose: preference, past change, local activity.",
+      "instruction_vi": "Nhận diện mục đích câu hỏi: sở thích, thay đổi quá khứ, hoạt động địa phương.",
+      "items": [
+        {
+          "question": "“What do young people enjoy doing in your hometown?”",
+          "answer": "local activity",
+          "explanation_en": "What do ... enjoy doing asks for popular activities among residents.",
+          "explanation_vi": "Câu hỏi về hoạt động giới trẻ thích làm.",
+          "answer_type": "closed",
+          "id": "M02-S01-01"
+        },
+        {
+          "question": "“Has your hometown changed since you were a child?”",
+          "answer": "past change",
+          "explanation_en": "Has changed since ... asks for a comparison with earlier times.",
+          "explanation_vi": "Has changed since hỏi sự thay đổi từ xưa tới nay.",
+          "answer_type": "closed",
+          "id": "M02-S01-02"
+        },
+        {
+          "question": "“Would you rather live in the countryside or the city?”",
+          "answer": "preference",
+          "explanation_en": "Would rather expresses a choice or preference.",
+          "explanation_vi": "Would rather dùng để hỏi thích chọn lựa nào hơn.",
+          "answer_type": "closed",
+          "id": "M02-S01-03"
+        }
+      ]
+    },
+    {
+      "id": "M02-S02",
+      "skill": "S",
+      "exercise_no": 2,
+      "title": "Give an extended Part 1 answer",
+      "source_focus": "answer + detail + reason/example",
+      "instruction_en": "Answer in 2–3 sentences. Use your own hometown and give a reason.",
+      "instruction_vi": "Trả lời 2–3 câu, thêm lý do/ví dụ; không chỉ trả lời Yes/No.",
+      "items": [
+        {
+          "question": "What do you enjoy most about your hometown?",
+          "answer": "I enjoy its riverside parks because they are quiet. I often meet my friends there after work.",
+          "explanation_en": "A direct answer + reason + personal example forms a natural Part 1 response.",
+          "explanation_vi": "Câu mẫu có ý chính (parks), lý do (quiet) và thói quen thực tế (meet friends).",
+          "answer_type": "open",
+          "id": "M02-S02-01"
+        },
+        {
+          "question": "What is one disadvantage of your hometown?",
+          "answer": "Public transport can be slow in the evenings, so I sometimes use my bicycle instead.",
+          "explanation_en": "State one drawback and its personal consequence instead of listing unrelated problems.",
+          "explanation_vi": "Nêu một nhược điểm và tác động cụ thể, tránh liệt kê dài dòng.",
+          "answer_type": "open",
+          "id": "M02-S02-02"
+        }
+      ]
+    },
+    {
+      "id": "M02-S03",
+      "skill": "S",
+      "exercise_no": 3,
+      "title": "Prepositions for location",
+      "source_focus": "describe hometown locations using prepositions",
+      "instruction_en": "Choose the correct preposition or phrase.",
+      "instruction_vi": "Chọn giới từ/cụm vị trí phù hợp.",
+      "items": [
+        {
+          "question": "The museum is ______ the bank and the post office.",
+          "answer": "between",
+          "explanation_en": "Between is used with two reference points.",
+          "explanation_vi": "Between ... and ... = giữa hai địa điểm.",
+          "answer_type": "closed",
+          "id": "M02-S03-01"
+        },
+        {
+          "question": "The bridge is ______ the river.",
+          "answer": "over",
+          "explanation_en": "A bridge crosses above a river, so “over the river” is natural.",
+          "explanation_vi": "Bridge over the river = cầu bắc qua sông.",
+          "answer_type": "closed",
+          "id": "M02-S03-02"
+        },
+        {
+          "question": "The bus stop is ______ the shopping centre, not inside it.",
+          "answer": "outside",
+          "explanation_en": "Outside means beyond the building rather than in the interior.",
+          "explanation_vi": "Outside = phía ngoài; phân biệt inside là bên trong.",
+          "answer_type": "closed",
+          "id": "M02-S03-03"
+        }
+      ]
+    },
+    {
+      "id": "M02-S04",
+      "skill": "S",
+      "exercise_no": 4,
+      "title": "Describe a neighbourhood map",
+      "source_focus": "map-based place description",
+      "instruction_en": "Use Map S-A and write a two-sentence description.",
+      "instruction_vi": "Quan sát sơ đồ S-A, viết hai câu nói vị trí các nơi.",
+      "items": [
+        {
+          "question": "Where is the library in relation to the park?",
+          "answer": "The library is north of the park.",
+          "explanation_en": "Describe the relative location based on the grid; north means the upper part of the map.",
+          "explanation_vi": "Thư viện ở phía bắc công viên, vì nằm ở ô phía trên.",
+          "answer_type": "open",
+          "id": "M02-S04-01"
+        },
+        {
+          "question": "Where can someone find the café?",
+          "answer": "The café is to the east of the museum and north of the market.",
+          "explanation_en": "The café is in the middle-right cell, east of the museum and directly above the market.",
+          "explanation_vi": "Quán café nằm bên phải museum và phía trên market; không dùng opposite bus station vì không trực diện.",
+          "answer_type": "closed",
+          "id": "M02-S04-02"
+        }
+      ],
+      "map_id": "S-A"
+    },
+    {
+      "id": "M02-S05",
+      "skill": "S",
+      "exercise_no": 5,
+      "title": "Sort adjectives for hometowns",
+      "source_focus": "adjective categories and connotation",
+      "instruction_en": "Put the adjectives under LOCATION, SIZE, CHARACTER or OPINION.",
+      "instruction_vi": "Xếp tính từ vào nhóm vị trí, quy mô, đặc điểm, đánh giá.",
+      "items": [
+        {
+          "question": "coastal → ______",
+          "answer": "LOCATION",
+          "explanation_en": "Coastal describes a place close to the sea.",
+          "explanation_vi": "Coastal = ven biển, thuộc vị trí địa lý.",
+          "answer_type": "closed",
+          "id": "M02-S05-01"
+        },
+        {
+          "question": "compact → ______",
+          "answer": "SIZE",
+          "explanation_en": "Compact describes a place that is relatively small but efficiently arranged.",
+          "explanation_vi": "Compact = nhỏ gọn, nhóm kích thước.",
+          "answer_type": "closed",
+          "id": "M02-S05-02"
+        },
+        {
+          "question": "lively → ______",
+          "answer": "CHARACTER",
+          "explanation_en": "Lively describes an energetic atmosphere.",
+          "explanation_vi": "Lively = sôi động, mô tả không khí/đặc điểm.",
+          "answer_type": "closed",
+          "id": "M02-S05-03"
+        },
+        {
+          "question": "pleasant → ______",
+          "answer": "OPINION",
+          "explanation_en": "Pleasant expresses a positive judgement.",
+          "explanation_vi": "Pleasant = dễ chịu, đánh giá chủ quan.",
+          "answer_type": "closed",
+          "id": "M02-S05-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-S06",
+      "skill": "S",
+      "exercise_no": 6,
+      "title": "Positive and negative place adjectives",
+      "source_focus": "range of adjectives",
+      "instruction_en": "Choose the adjective that matches the meaning.",
+      "instruction_vi": "Chọn tính từ theo sắc thái ý nghĩa.",
+      "items": [
+        {
+          "question": "A place with very little space: (spacious / cramped / modern)",
+          "answer": "cramped",
+          "explanation_en": "Cramped describes limited space and is usually negative.",
+          "explanation_vi": "Cramped = chật chội, trái nghĩa spacious = rộng rãi.",
+          "answer_type": "closed",
+          "id": "M02-S06-01"
+        },
+        {
+          "question": "A place with many enjoyable activities: (boring / lively / deserted)",
+          "answer": "lively",
+          "explanation_en": "Lively fits a place full of life and activity.",
+          "explanation_vi": "Lively = nhộn nhịp; deserted = vắng tanh.",
+          "answer_type": "closed",
+          "id": "M02-S06-02"
+        },
+        {
+          "question": "A neighbourhood with trees and little traffic: (peaceful / noisy / industrial)",
+          "answer": "peaceful",
+          "explanation_en": "Peaceful suggests calmness and low disturbance.",
+          "explanation_vi": "Peaceful = yên bình, phù hợp khu nhiều cây ít xe.",
+          "answer_type": "closed",
+          "id": "M02-S06-03"
+        },
+        {
+          "question": "A well-designed large public square: (tiny / impressive / crowded)",
+          "answer": "impressive",
+          "explanation_en": "Impressive expresses admiration for design/scale, not size alone.",
+          "explanation_vi": "Impressive = gây ấn tượng, nói về đánh giá tích cực.",
+          "answer_type": "closed",
+          "id": "M02-S06-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-S07",
+      "skill": "S",
+      "exercise_no": 7,
+      "title": "Build rich place descriptions",
+      "source_focus": "expand one idea with evidence",
+      "instruction_en": "Complete each answer in a natural way.",
+      "instruction_vi": "Mở rộng câu bằng một tính từ, lý do/ví dụ cụ thể.",
+      "items": [
+        {
+          "question": "“My town is lively because ...”",
+          "answer": "My town is lively because there are outdoor markets and music events every weekend.",
+          "explanation_en": "A specific example makes the adjective credible, not a memorised list of adjectives.",
+          "explanation_vi": "Nói sôi động vì có chợ và sự kiện cuối tuần; nêu ví dụ cụ thể thay vì học thuộc.",
+          "answer_type": "open",
+          "id": "M02-S07-01"
+        },
+        {
+          "question": "“I prefer quiet places, although ...”",
+          "answer": "I prefer quiet places, although I sometimes enjoy the busy city centre with my friends.",
+          "explanation_en": "Although introduces a meaningful contrast within one connected answer.",
+          "explanation_vi": "Although nối tương phản: thích yên tĩnh nhưng đôi khi vẫn thích trung tâm đông đúc.",
+          "answer_type": "open",
+          "id": "M02-S07-02"
+        }
+      ]
+    },
+    {
+      "id": "M02-S08",
+      "skill": "S",
+      "exercise_no": 8,
+      "title": "Compare places with adjectives",
+      "source_focus": "adjective comparisons and preferences",
+      "instruction_en": "Describe two contrasting settings, using a comparative adjective.",
+      "instruction_vi": "So sánh hai nơi, dùng tính từ so sánh phù hợp.",
+      "items": [
+        {
+          "question": "Compare a busy shopping street with a quiet village square.",
+          "answer": "The shopping street is busier, but the village square feels more relaxing.",
+          "explanation_en": "Busy takes -ier (busier), while relaxing takes more.",
+          "explanation_vi": "Busy → busier (y→ier); relaxing → more relaxing.",
+          "answer_type": "open",
+          "id": "M02-S08-01"
+        },
+        {
+          "question": "Compare an old building and a modern library.",
+          "answer": "The old building looks more traditional, whereas the modern library is brighter and more practical.",
+          "explanation_en": "Comparisons work best when connected to relevant criteria such as design and function.",
+          "explanation_vi": "So sánh theo tiêu chí kiến trúc và công năng; “whereas” thể hiện đối lập.",
+          "answer_type": "open",
+          "id": "M02-S08-02"
+        }
+      ]
+    },
+    {
+      "id": "M02-S09",
+      "skill": "S",
+      "exercise_no": 9,
+      "title": "Use present and past for hometowns",
+      "source_focus": "present simple, past simple and present perfect",
+      "instruction_en": "Select the tense and give one suitable example.",
+      "instruction_vi": "Chọn thì và nêu ví dụ về quê hương.",
+      "items": [
+        {
+          "question": "“My hometown ______ small when I was a child.” (is / was / has been)",
+          "answer": "was",
+          "explanation_en": "When I was a child refers to a finished period in the past.",
+          "explanation_vi": "When I was a child là quá khứ đã kết thúc → was.",
+          "answer_type": "closed",
+          "id": "M02-S09-01"
+        },
+        {
+          "question": "“There ______ a new metro station now.” (is / was / were)",
+          "answer": "is",
+          "explanation_en": "Now describes the present; there is agrees with singular station.",
+          "explanation_vi": "Now = hiện tại; a new station số ít → there is.",
+          "answer_type": "closed",
+          "id": "M02-S09-02"
+        },
+        {
+          "question": "“The city ______ a lot since 2015.” (changed / has changed / change)",
+          "answer": "has changed",
+          "explanation_en": "Since 2015 connects the past to the present, so present perfect is suitable.",
+          "explanation_vi": "Since + mốc thời gian quá khứ đến nay → has changed.",
+          "answer_type": "closed",
+          "id": "M02-S09-03"
+        },
+        {
+          "question": "“Twenty years ago, there ______ fewer apartment blocks.” (are / were / was)",
+          "answer": "were",
+          "explanation_en": "Past time plus plural blocks requires were.",
+          "explanation_vi": "Twenty years ago → quá khứ, blocks số nhiều → were.",
+          "answer_type": "closed",
+          "id": "M02-S09-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-S10",
+      "skill": "S",
+      "exercise_no": 10,
+      "title": "Read Part 1 examiner questions carefully",
+      "source_focus": "identify time reference and question focus",
+      "instruction_en": "Identify whether the question asks about PRESENT, PAST or CHANGE.",
+      "instruction_vi": "Xác định câu hỏi nhắm tới hiện tại, quá khứ hay thay đổi.",
+      "items": [
+        {
+          "question": "“What is your hometown famous for?”",
+          "answer": "PRESENT",
+          "explanation_en": "The verb is is present; talk about the current reputation of the town.",
+          "explanation_vi": "Is thuộc hiện tại, nên mô tả hiện nay.",
+          "answer_type": "closed",
+          "id": "M02-S10-01"
+        },
+        {
+          "question": "“Where did you go with friends as a child?”",
+          "answer": "PAST",
+          "explanation_en": "Did + base verb and as a child anchor the past.",
+          "explanation_vi": "Did ... go và as a child → quá khứ đơn.",
+          "answer_type": "closed",
+          "id": "M02-S10-02"
+        },
+        {
+          "question": "“How has your town developed in recent years?”",
+          "answer": "CHANGE",
+          "explanation_en": "Present perfect has developed requests changes continuing to the present.",
+          "explanation_vi": "Has developed hỏi biến chuyển đến hiện tại.",
+          "answer_type": "closed",
+          "id": "M02-S10-03"
+        },
+        {
+          "question": "“Do you think it will improve in the future?”",
+          "answer": "FUTURE",
+          "explanation_en": "Will improve asks a prediction, not a description of history.",
+          "explanation_vi": "Will + V hỏi dự đoán tương lai.",
+          "answer_type": "closed",
+          "id": "M02-S10-04"
+        }
+      ]
+    },
+    {
+      "id": "M02-S11",
+      "skill": "S",
+      "exercise_no": 11,
+      "title": "Answer the right question",
+      "source_focus": "relevance and controlled extension",
+      "instruction_en": "Answer each in 2–3 sentences.",
+      "instruction_vi": "Đáp đúng trọng tâm trước, mở rộng 1–2 câu sau.",
+      "items": [
+        {
+          "question": "Where did you play when you were younger?",
+          "answer": "I usually played football in a small park near my school. It was safe and only five minutes from home.",
+          "explanation_en": "Use past simple to describe a childhood habit, followed by a clear detail.",
+          "explanation_vi": "Câu hỏi về hồi nhỏ, dùng played/was; câu thứ hai cung cấp chi tiết.",
+          "answer_type": "open",
+          "id": "M02-S11-01"
+        },
+        {
+          "question": "How has your town changed recently?",
+          "answer": "It has become more convenient because two new bus routes have opened. However, traffic is heavier than before.",
+          "explanation_en": "Use present perfect for recent change and add a balanced consequence.",
+          "explanation_vi": "Has become / have opened nêu thay đổi gần đây; thêm tác động cụ thể.",
+          "answer_type": "open",
+          "id": "M02-S11-02"
+        }
+      ]
+    },
+    {
+      "id": "M02-S12",
+      "skill": "S",
+      "exercise_no": 12,
+      "title": "Pronunciation: regular -ed endings",
+      "source_focus": "-ed sounds /t/ /d/ /ɪd/",
+      "instruction_en": "Classify the final sound of the past form.",
+      "instruction_vi": "Phân loại âm đuôi -ed, không dựa vào chữ viết mà dựa âm cuối của động từ.",
+      "items": [
+        {
+          "question": "walked → /t/, /d/ or /ɪd/?",
+          "answer": "/t/",
+          "explanation_en": "Walk ends in voiceless /k/, so the -ed ending is pronounced /t/.",
+          "explanation_vi": "Walk kết thúc /k/ vô thanh → -ed đọc /t/.",
+          "answer_type": "closed",
+          "id": "M02-S12-01"
+        },
+        {
+          "question": "played → /t/, /d/ or /ɪd/?",
+          "answer": "/d/",
+          "explanation_en": "Play ends in a voiced vowel sound, so -ed is /d/.",
+          "explanation_vi": "Play kết thúc bằng âm hữu thanh → /d/.",
+          "answer_type": "closed",
+          "id": "M02-S12-02"
+        },
+        {
+          "question": "wanted → /t/, /d/ or /ɪd/?",
+          "answer": "/ɪd/",
+          "explanation_en": "A base verb ending in /t/ takes an extra syllable /ɪd/.",
+          "explanation_vi": "Want kết thúc /t/ nên -ed đọc /ɪd/ và thêm âm tiết.",
+          "answer_type": "closed",
+          "id": "M02-S12-03"
+        },
+        {
+          "question": "needed → /t/, /d/ or /ɪd/?",
+          "answer": "/ɪd/",
+          "explanation_en": "Need ends in /d/, so -ed is pronounced /ɪd/.",
+          "explanation_vi": "Need cuối /d/, -ed đọc /ɪd/.",
+          "answer_type": "closed",
+          "id": "M02-S12-04"
+        },
+        {
+          "question": "finished → /t/, /d/ or /ɪd/?",
+          "answer": "/t/",
+          "explanation_en": "Finish ends in voiceless /ʃ/; the ending is /t/.",
+          "explanation_vi": "Finish kết thúc /ʃ/ vô thanh, -ed đọc /t/.",
+          "answer_type": "closed",
+          "id": "M02-S12-05"
+        },
+        {
+          "question": "opened → /t/, /d/ or /ɪd/?",
+          "answer": "/d/",
+          "explanation_en": "Open ends in voiced /n/, so the suffix is /d/.",
+          "explanation_vi": "Open cuối /n/ hữu thanh → /d/.",
+          "answer_type": "closed",
+          "id": "M02-S12-06"
+        }
+      ]
+    },
+    {
+      "id": "M02-S13",
+      "skill": "S",
+      "exercise_no": 13,
+      "title": "Finish sentences about town changes",
+      "source_focus": "past/present structures + pronunciation",
+      "instruction_en": "Complete using an appropriate tense and then say the sentence aloud.",
+      "instruction_vi": "Chia thì đúng rồi đọc thành tiếng, luyện đuôi -ed.",
+      "items": [
+        {
+          "question": "In 2005, our town ______ (have) fewer shops.",
+          "answer": "had",
+          "explanation_en": "A finished past date needs past simple; have becomes had.",
+          "explanation_vi": "Năm 2005 đã qua, have → had.",
+          "answer_type": "closed",
+          "id": "M02-S13-01"
+        },
+        {
+          "question": "Recently, the council ______ (open) two new parks.",
+          "answer": "has opened",
+          "explanation_en": "Recently connects a recent event to the present; present perfect is a natural option.",
+          "explanation_vi": "Recently có thể dùng hiện tại hoàn thành; council số ít → has opened.",
+          "answer_type": "closed",
+          "id": "M02-S13-02"
+        },
+        {
+          "question": "When I was young, the streets ______ (be) quieter.",
+          "answer": "were",
+          "explanation_en": "Past reference and plural streets require were.",
+          "explanation_vi": "Streets số nhiều, hồi nhỏ → were.",
+          "answer_type": "closed",
+          "id": "M02-S13-03"
+        },
+        {
+          "question": "Our city ______ (develop) quickly since 2018.",
+          "answer": "has developed",
+          "explanation_en": "Since 2018 signals a continuing period to the present.",
+          "explanation_vi": "Since 2018 → has developed.",
+          "answer_type": "closed",
+          "id": "M02-S13-04"
+        },
+        {
+          "question": "Last year, they ______ (build) a new bridge.",
+          "answer": "built",
+          "explanation_en": "Last year is past simple and build is irregular.",
+          "explanation_vi": "Last year → quá khứ đơn, build → built.",
+          "answer_type": "closed",
+          "id": "M02-S13-05"
+        }
+      ]
+    },
+    {
+      "id": "M02-S14",
+      "skill": "S",
+      "exercise_no": 14,
+      "title": "Improve a weak Speaking answer",
+      "source_focus": "answer analysis and self-assessment",
+      "instruction_en": "Read a weak answer and write a stronger one.",
+      "instruction_vi": "Nhận diện câu trả lời yếu rồi viết phiên bản tốt hơn, 2–3 câu.",
+      "items": [
+        {
+          "question": "Question: “Is your town a good place for young people?” Weak answer: “Yes, good.” Improve it.",
+          "answer": "Yes, I think it is a good place for young people because there are parks and affordable sports facilities. However, there are not many evening activities.",
+          "explanation_en": "It answers the question, adds specific reasons and balances the opinion, while remaining concise.",
+          "explanation_vi": "Câu tốt trả lời trực tiếp, đưa dẫn chứng và có thể nêu hạn chế, không kéo dài lan man.",
+          "answer_type": "open",
+          "id": "M02-S14-01"
+        },
+        {
+          "question": "Question: “Has your town changed?” Weak answer: “I go to work every day.” Improve it.",
+          "answer": "Yes, it has changed a lot. The council has built a new bridge, so commuting is much easier now.",
+          "explanation_en": "The weak answer is off topic; the improved answer focuses on change and its impact.",
+          "explanation_vi": "Câu cũ lạc đề. Câu mới trả lời có thay đổi gì và hệ quả ra sao.",
+          "answer_type": "open",
+          "id": "M02-S14-02"
+        }
+      ]
+    },
+    {
+      "id": "M02-S15",
+      "skill": "S",
+      "exercise_no": 15,
+      "title": "Independent Speaking Part 1 practice",
+      "source_focus": "fluency, relevance, grammar and pronunciation review",
+      "instruction_en": "Record yourself answering all four questions. Aim for 20–30 seconds each; do not memorise a script.",
+      "instruction_vi": "Ghi âm 4 câu, 20–30 giây/câu; tự kiểm độ mạch lạc, ngữ pháp, phát âm.",
+      "items": [
+        {
+          "question": "Where is your hometown, and what is it like?",
+          "answer": "My hometown is a medium-sized coastal city. It is fairly peaceful, and the local seafood markets are always busy.",
+          "explanation_en": "Give location and a characteristic, then add a concrete example.",
+          "explanation_vi": "Nêu địa điểm, 1–2 đặc điểm và ví dụ; không kể lan man.",
+          "answer_type": "open",
+          "id": "M02-S15-01"
+        },
+        {
+          "question": "What place do you recommend to a visitor?",
+          "answer": "I would recommend the riverside park because it is easy to reach and has beautiful views at sunset.",
+          "explanation_en": "A recommendation should name a place and justify it.",
+          "explanation_vi": "Cần tên nơi và lý do cụ thể khi recommend.",
+          "answer_type": "open",
+          "id": "M02-S15-02"
+        },
+        {
+          "question": "How has your hometown changed in recent years?",
+          "answer": "It has become more modern, especially in the city centre. Several new public transport routes have opened, although traffic is still heavy.",
+          "explanation_en": "Use present perfect for change and give balanced details.",
+          "explanation_vi": "Has become / have opened diễn tả sự thay đổi đến nay; thêm thông tin cân bằng.",
+          "answer_type": "open",
+          "id": "M02-S15-03"
+        },
+        {
+          "question": "Would you like to live there in the future?",
+          "answer": "Probably yes, because my family lives there and the cost of living is still reasonable. I may move away temporarily for work.",
+          "explanation_en": "Future preference can be expressed naturally using would, may and a reason.",
+          "explanation_vi": "Dùng would/may và nêu lý do; trả lời linh hoạt, không phải học thuộc.",
+          "answer_type": "open",
+          "id": "M02-S15-04"
+        }
+      ]
+    }
+  ],
+  "writing_task1_model_en": "The two maps compare the layout of Harbourview Arts Centre in 2008 and 2026.\n\nOverall, the centre became a more varied cultural venue, with several existing areas converted into spaces for exhibitions, events and food services. Despite these developments, the main entrance, outdoor garden and riverside walkway remained in their original positions.\n\nIn the northern part of the site, the old cinema was converted into an art gallery, while the car park to its east was replaced by a café. The outdoor garden in the north-west corner did not change. In the central area, a roof was added over the previously open courtyard, and the bookshop on the eastern side was turned into workshop rooms.\n\nFurther changes took place in the south. The storage building was redeveloped as a performance hall, and a new bicycle-parking area took the place of the former path near the western entrance. By contrast, the river walkway along the southern edge of the site remained unchanged.",
+  "writing_task1_model_vi": "Hai sơ đồ so sánh bố cục trung tâm nghệ thuật Harbourview vào năm 2008 và 2026.\n\nNhìn chung, trung tâm trở thành một địa điểm văn hóa đa chức năng hơn: nhiều khu vực cũ được chuyển thành không gian triển lãm, sự kiện và ăn uống. Tuy nhiên, lối vào chính, vườn ngoài trời và lối đi ven sông vẫn ở vị trí ban đầu.\n\nỞ phía bắc, rạp chiếu phim cũ được chuyển thành phòng trưng bày nghệ thuật, còn bãi đậu xe phía đông bị thay bằng quán cà phê. Vườn ở góc tây bắc không thay đổi. Ở trung tâm, sân trong trước đây không có mái nay được che mái, và hiệu sách phía đông chuyển thành các phòng workshop.\n\nPhía nam cũng có thay đổi: nhà kho trở thành hội trường biểu diễn; nơi từng là lối đi gần cổng phía tây nay thành khu để xe đạp. Ngược lại, lối đi ven sông ở mép nam vẫn được giữ nguyên.",
+  "rights_note": "Textbook images used for identifying learning objectives only. All texts, dialogues, maps and questions are new original supplements. Not an authorised or official Cambridge edition.",
+  "assessment_note": "Do not automatically assign IELTS band. Writing and Speaking require rubric/human review. Synthesis TTS is for rehearsal only.",
+  "canonical_unit_id": "U02"
+}
