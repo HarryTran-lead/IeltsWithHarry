@@ -98,6 +98,7 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
   vocabulary: [
     { label: "Học từ IELTS", href: "/app/vocabulary/study?collection=ielts" },
     { label: "Học từ A1–C2", href: "/app/vocabulary/study?collection=cefr" },
+    { label: "Collocations A1–C2", href: "/app/vocabulary/collocations" },
     { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },
   ],
   grammar: [

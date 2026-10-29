@@ -52,6 +52,7 @@ export function VocabularyLanding() {
 
     <div className="vocabulary-landing-layout">
       <div className="vocabulary-landing-main">
+        <Link className="vocabulary-landing-collocations" href="/app/vocabulary/collocations"><span><strong>Collocations A1–C2</strong><small>988 cụm từ song ngữ · gợi ý học và ôn đúng hạn</small></span><ArrowRight size={21} /></Link>
         <section className="vocabulary-landing-filters" aria-label="Tìm chủ đề học">
           <label><span>Bộ từ</span><select value={collection} onChange={(event) => { setCollection(event.target.value as Collection); setLevel(""); setVisibleCount(pageSize); }}><option value="ielts">Từ IELTS · Band 1–7+</option><option value="cefr">Từ A1–C2</option></select></label>
           <label><span>Trình độ</span><select value={level} onChange={(event) => setLevel(event.target.value)}><option value="">{collection === "ielts" ? "Mọi band gợi ý" : "Mọi mức CEFR"}</option>{levels.map((item) => <option key={item} value={item}>{collection === "ielts" ? `Band ${item}` : item}</option>)}</select></label>
