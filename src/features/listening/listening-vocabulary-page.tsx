@@ -115,7 +115,7 @@ export function ListeningVocabularyPage() {
   }
 
   return <main className="listening-vocab-page">
-    <div className="listening-vocab-back"><Link href={pathname.startsWith("/app/vocabulary/") ? "/app/vocabulary" : "/app/listening"}><ArrowLeft size={17} /> {pathname.startsWith("/app/vocabulary/") ? "Từ vựng" : "Listening"}</Link><span>BỘ TỪ VỰNG LISTENING</span></div>
+    <div className="listening-vocab-back"><Link href={pathname.startsWith("/app/vocabulary/") ? "/app/vocabulary" : "/app/listening"}><ArrowLeft size={17} /> {pathname.startsWith("/app/vocabulary/") ? "Từ vựng" : "Listening"}</Link><span>BỘ TỪ VỰNG IELTS LISTENING</span></div>
     <header className="listening-vocab-hero"><div><span className="listening-vocab-kicker">1.200 MỤC · 35 CHỦ ĐỀ</span><h1>Nghe được từ, <em>hiểu được ý</em></h1><p>Học theo chủ đề bằng thẻ nhớ, nghe chọn nghĩa và chép chính tả. Giọng đọc do trình duyệt tạo.</p></div><span className="listening-vocab-hero-icon"><Headphones size={45} /></span></header>
     <section className="listening-vocab-controls" aria-label="Bộ lọc học Listening">
       <label>Chủ đề<select value={topicId ?? "all"} onChange={(event) => changeScope(event.target.value === "all" ? null : Number(event.target.value))}><option value="all">Tất cả 35 chủ đề</option>{topics.map((topic) => <option value={topic.id} key={topic.id}>{topic.en} · {topic.vi}</option>)}</select></label>
