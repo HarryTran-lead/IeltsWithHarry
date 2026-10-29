@@ -119,11 +119,11 @@ export function ViEnTranslationPage() {
       <label>Tìm từ<input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Từ mục tiêu…" /></label>
       <button className="translation-primary" type="button" disabled={loading || !exercises.length} onClick={start}>{sessionIds.length ? "Bắt đầu lượt mới" : "Bắt đầu học"} <ArrowRight size={17} /></button>
     </section>
-    <div className="translation-stats"><span><strong>{filtered.length}</strong> câu đã duyệt</span><span><strong>{studied}</strong> câu đã học</span><span><strong>{due}</strong> câu đến hạn ôn</span></div>
+    <div className="translation-stats"><span><strong>{filtered.length}</strong> câu có thể học</span><span><strong>{studied}</strong> câu đã học</span><span><strong>{due}</strong> câu đến hạn ôn</span></div>
     {loading && <section className="translation-empty">Đang tải bài luyện…</section>}
     {error && <p className="translation-error" role="alert">{error}</p>}
     {notice && <p className="translation-notice" role="status">{notice}</p>}
-    {!loading && !exercises.length && <section className="translation-empty"><BookOpenCheck size={32} /><h2>Chủ đề này đang được biên tập</h2><p>Câu dịch chưa duyệt sẽ không xuất hiện trong bài học. Hãy thử chủ đề khác sau.</p></section>}
+    {!loading && !exercises.length && <section className="translation-empty"><BookOpenCheck size={32} /><h2>Chủ đề này chưa có câu luyện</h2><p>Hãy thử chủ đề khác.</p></section>}
     {!loading && exercises.length > 0 && !sessionIds.length && <section className="translation-empty"><Lightbulb size={30} /><h2>Sẵn sàng luyện dịch</h2><p>{filtered.length} câu trong chủ đề này. Chọn số câu và bấm “Bắt đầu học”.</p></section>}
     {done && <section className="translation-empty"><BookOpenCheck size={34} /><h2>Hoàn thành {sessionIds.length} câu</h2><p>Bạn đã đối chiếu câu mẫu và lưu tự đánh giá. Những câu cần ôn sẽ xuất hiện theo lịch.</p><button className="translation-primary" type="button" onClick={start}><RotateCcw size={17} /> Luyện lượt khác</button></section>}
     {current && <section className="translation-card">
