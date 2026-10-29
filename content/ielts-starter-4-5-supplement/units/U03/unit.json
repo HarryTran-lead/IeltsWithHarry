@@ -1,0 +1,2392 @@
+{
+  "unit": "U03",
+  "title": "Education and Employment",
+  "band": "4.0-5.0",
+  "reference_pages": "44-63",
+  "passages": {
+    "A": {
+      "title": "Learning Beyond the Classroom: Opportunities and Limits",
+      "text": "Online classes and international partnerships have changed the way people study. In the past, many learners could only take a course at a nearby school. Today, a student in a small town may attend an online lecture given by a teacher in another country. Several colleges also offer blended courses, which combine classroom meetings with online activities. The new options are convenient, but they do not work equally well for everyone.\n\nAt Lakeside College, first-year students visit the campus on Mondays and work online during the rest of the week. This approach has allowed many learners to keep part-time jobs. However, some students have reported that they miss immediate conversations with classmates. The college has introduced small online discussion groups to help them communicate more often.\n\nInternational exchanges can also be valuable. Students who spend a semester abroad may improve their language skills and develop greater confidence. They often learn to solve problems without depending on their families. Yet travel and housing costs make these opportunities difficult for people from low-income households. One college has responded by offering virtual exchange projects, in which teams from different countries complete an assignment together.\n\nEducation and employment are increasingly connected. Companies want workers who can communicate clearly, use technology and adapt to change. As a result, some universities have expanded their work-placement programmes. Students spend several weeks in a company and apply what they have learned in class. Such placements help them understand daily tasks, although not every placement leads directly to a job.\n\nThese changes have not removed traditional education. In-person teaching still matters for practical subjects, and a reliable internet connection is essential for online learning. Experts therefore argue that access, cost and support should be considered alongside innovation. A course can be modern without being suitable for every student."
+    },
+    "B": {
+      "title": "A Community Workshop That Connects Learning and Work",
+      "text": "A few years ago, many school leavers in Eastport found it difficult to obtain their first job. Local businesses wanted applicants with practical skills, but young people had little experience. In 2021, a community workshop opened to offer short courses in bicycle repair, basic computing and customer service. The organisers hoped that a practical learning space would make the transition from school to work easier.\n\nThe workshop began with twelve learners and three volunteer instructors. At first, classes took place in a borrowed room above a small shop. Two years later, a local company provided a larger building and donated tools. Since then, the workshop has trained more than three hundred people, and some former students have returned as mentors.\n\nEach course includes a short classroom lesson followed by hands-on activities. In the repair course, for instance, learners practise identifying faults and explaining them to customers. The computing course teaches students to prepare documents, organise information and protect personal data. Students are encouraged to make mistakes during practice so that they can learn to correct them safely.\n\nMost courses last six weeks. Students attend two evenings per week and can borrow equipment without charge. To reduce travel problems, the organisers recently introduced a weekend session. The workshop does not guarantee employment, but it provides references and helps students prepare for job interviews. Many local employers say graduates communicate more confidently than before.\n\nThe programme has faced challenges. Instructors have limited time, and new equipment is expensive. Nevertheless, local residents believe the workshop fills a gap between general education and actual workplace tasks. Its success shows that learning opportunities can develop outside a traditional college."
+    }
+  },
+  "visuals": {
+    "chart-line": {
+      "type": "line",
+      "title": "Adults attending weekend skills classes (2018–2023)",
+      "labels": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "data": [
+        120,
+        135,
+        108,
+        160,
+        195,
+        220
+      ]
+    },
+    "chart-bar": {
+      "type": "bar",
+      "title": "New trainees by programme in 2023",
+      "labels": [
+        "Computing",
+        "Repair",
+        "Design",
+        "Customer service"
+      ],
+      "data": [
+        240,
+        160,
+        110,
+        190
+      ]
+    },
+    "chart-pie": {
+      "type": "pie",
+      "title": "Preferred study method (survey of 200 learners)",
+      "labels": [
+        "Blended",
+        "In-person",
+        "Online",
+        "Self-study"
+      ],
+      "data": [
+        40,
+        30,
+        20,
+        10
+      ]
+    },
+    "chart-final": {
+      "type": "bar",
+      "title": "Course completion rates by subject and year (%)",
+      "labels": [
+        "Computing",
+        "Design",
+        "Business",
+        "Health"
+      ],
+      "series": {
+        "2022": [
+          68,
+          72,
+          60,
+          77
+        ],
+        "2024": [
+          80,
+          73,
+          74,
+          83
+        ]
+      }
+    }
+  },
+  "tracks": {
+    "A": {
+      "title": "Choosing a course",
+      "dialogue": [
+        [
+          "ADVISER",
+          "Welcome to the college. Are you looking for a full-time course?"
+        ],
+        [
+          "STUDENT",
+          "Not exactly. I work during the day, so I need evening classes."
+        ],
+        [
+          "ADVISER",
+          "We have a digital design course on Tuesday, but the computing course is on Thursday."
+        ],
+        [
+          "STUDENT",
+          "I prefer computing. Does it start on the nineteenth of September?"
+        ],
+        [
+          "ADVISER",
+          "It was planned for the nineteenth. Sorry, the final start date is the twenty-sixth."
+        ],
+        [
+          "STUDENT",
+          "And how many places are there?"
+        ],
+        [
+          "ADVISER",
+          "There are fifteen places, but only six are still available."
+        ],
+        [
+          "STUDENT",
+          "Great. The course lasts eight weeks, right?"
+        ],
+        [
+          "ADVISER",
+          "Actually it lasts six weeks, with two lessons each week."
+        ]
+      ]
+    },
+    "B": {
+      "title": "A store recruitment call",
+      "dialogue": [
+        [
+          "MANAGER",
+          "Hello. This is Mina from Green Street Store."
+        ],
+        [
+          "APPLICANT",
+          "Hello. I saw your advertisement for an assistant."
+        ],
+        [
+          "MANAGER",
+          "Yes, we are hiring a weekend store assistant, not a warehouse worker."
+        ],
+        [
+          "APPLICANT",
+          "I have worked in a café before. I recently completed a customer-service course."
+        ],
+        [
+          "MANAGER",
+          "That sounds useful. Our shop is on King Road, opposite the post office."
+        ],
+        [
+          "APPLICANT",
+          "Is the interview on Friday morning?"
+        ],
+        [
+          "MANAGER",
+          "No, Monday at ten thirty. Please bring your CV."
+        ]
+      ]
+    },
+    "C": {
+      "title": "Skills programme information",
+      "dialogue": [
+        [
+          "RECEPTIONIST",
+          "The new course is called Practical Skills for Work."
+        ],
+        [
+          "CALLER",
+          "Is it about office jobs only?"
+        ],
+        [
+          "RECEPTIONIST",
+          "No, it includes teamwork, basic computing and dealing with customers."
+        ],
+        [
+          "CALLER",
+          "When does it begin?"
+        ],
+        [
+          "RECEPTIONIST",
+          "At nine fifteen in the morning, on the seventh of October."
+        ],
+        [
+          "CALLER",
+          "How long does each class last?"
+        ],
+        [
+          "RECEPTIONIST",
+          "Two and a half hours. The whole course runs for four weeks."
+        ],
+        [
+          "CALLER",
+          "And the price?"
+        ],
+        [
+          "RECEPTIONIST",
+          "The full fee is sixty dollars, including the handbook. You do not pay extra for materials."
+        ],
+        [
+          "CALLER",
+          "Where is it held?"
+        ],
+        [
+          "RECEPTIONIST",
+          "At the Riverside Training Centre. It is near the main library."
+        ]
+      ]
+    },
+    "D": {
+      "title": "A speaking Part 1 model",
+      "dialogue": [
+        [
+          "EXAMINER",
+          "Are you working or studying at the moment?"
+        ],
+        [
+          "STUDENT",
+          "I am studying information technology at college. I enjoy practical projects because I can apply what I learn."
+        ],
+        [
+          "EXAMINER",
+          "What is the most difficult part of your course?"
+        ],
+        [
+          "STUDENT",
+          "Time management is the hardest part. We often work on several tasks at once, so I have learned to plan my week."
+        ],
+        [
+          "EXAMINER",
+          "Would you like to learn something new?"
+        ],
+        [
+          "STUDENT",
+          "Yes. I would like to learn project management because I hope to lead a small team one day."
+        ]
+      ]
+    },
+    "E": {
+      "title": "A speaking Part 2 model: learning a new skill",
+      "dialogue": [
+        [
+          "STUDENT",
+          "I would like to describe the time I learned to edit videos. Last year, my class had to make a short film about recycling. I had never used editing software, so the task was quite challenging."
+        ],
+        [
+          "STUDENT",
+          "First, I watched some tutorials and practised cutting short clips. Then a classmate showed me how to add subtitles and adjust the sound. At the beginning I made many mistakes, but I gradually became more confident."
+        ],
+        [
+          "STUDENT",
+          "After two weeks we finished a three-minute video and showed it to our teacher. She praised the clear message and the subtitles. I felt proud because I had learned something useful from a real project."
+        ],
+        [
+          "STUDENT",
+          "The experience taught me that learning a skill takes patience. Now I occasionally edit videos for school events, and I want to improve further."
+        ]
+      ]
+    }
+  },
+  "activities": [
+    {
+      "id": "U03-R01",
+      "skill": "R",
+      "number": 1,
+      "title": "Work and studies vocabulary",
+      "instruction_en": "Classify the terms as work, studies, or both.",
+      "instruction_vi": "Phân loại từ thuộc công việc, học tập hoặc cả hai.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "1. apprenticeship",
+          "question_vi": "học nghề",
+          "answer": "both",
+          "explanation_en": "Apprenticeships combine training and work experience.",
+          "explanation_vi": "Học nghề kết hợp đào tạo và kinh nghiệm làm việc.",
+          "open": false
+        },
+        {
+          "question_en": "2. employer",
+          "question_vi": "nhà tuyển dụng",
+          "answer": "work",
+          "explanation_en": "An employer hires workers.",
+          "explanation_vi": "Employer là người/tổ chức tuyển nhân viên.",
+          "open": false
+        },
+        {
+          "question_en": "3. qualification",
+          "question_vi": "bằng cấp/chứng chỉ",
+          "answer": "both",
+          "explanation_en": "Qualifications can be earned in education and requested by employers.",
+          "explanation_vi": "Bằng cấp liên quan cả học tập và tuyển dụng.",
+          "open": false
+        },
+        {
+          "question_en": "4. lifelong learning",
+          "question_vi": "học tập suốt đời",
+          "answer": "studies",
+          "explanation_en": "This describes continuing education throughout life.",
+          "explanation_vi": "Thuật ngữ chỉ việc học kéo dài suốt đời.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-R02",
+      "skill": "R",
+      "number": 2,
+      "title": "One-minute vocabulary scan",
+      "instruction_en": "Scan Passage A for matching vocabulary.",
+      "instruction_vi": "Quét bài A để tìm từ tương ứng; không cần đọc từng dòng.",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Find a term for courses mixing online and classroom study.",
+          "question_vi": "Tìm thuật ngữ kết hợp học trực tuyến và tại lớp.",
+          "answer": "blended courses",
+          "explanation_en": "The first paragraph defines the term directly.",
+          "explanation_vi": "Đoạn 1 giải thích trực tiếp blended courses.",
+          "open": false
+        },
+        {
+          "question_en": "Find a phrase for work undertaken while studying.",
+          "question_vi": "Tìm cụm từ chỉ công việc làm trong khi học.",
+          "answer": "part-time jobs",
+          "explanation_en": "Paragraph 2 says learners can keep part-time jobs.",
+          "explanation_vi": "Đoạn 2 nêu rõ part-time jobs.",
+          "open": false
+        },
+        {
+          "question_en": "Find a programme placing students inside companies.",
+          "question_vi": "Tìm chương trình giúp sinh viên làm việc tại công ty.",
+          "answer": "work-placement programmes",
+          "explanation_en": "Paragraph 4 names work-placement programmes.",
+          "explanation_vi": "Đoạn 4 dùng đúng cụm từ này.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-R03",
+      "skill": "R",
+      "number": 3,
+      "title": "Skim for the author’s position",
+      "instruction_en": "Read only the introduction and paragraph endings. Select the main conclusion.",
+      "instruction_vi": "Đọc mở bài và câu cuối mỗi đoạn, chọn kết luận chung.",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "A: Technology makes classrooms unnecessary. B: New study options help some learners but not everyone. C: Studying abroad is free.",
+          "question_vi": "Chọn thông điệp chính A/B/C.",
+          "answer": "B",
+          "explanation_en": "The introduction and conclusion stress benefits and unequal access.",
+          "explanation_vi": "Mở và kết bài nhấn mạnh lợi ích đi kèm giới hạn tiếp cận.",
+          "open": false
+        },
+        {
+          "question_en": "Is the article completely negative about online courses? Yes/No.",
+          "question_vi": "Tác giả có hoàn toàn phản đối học trực tuyến không?",
+          "answer": "No",
+          "explanation_en": "The writer says they are convenient but not equally suitable.",
+          "explanation_vi": "Bài công nhận tính thuận tiện nhưng không phù hợp với mọi người.",
+          "open": false
+        },
+        {
+          "question_en": "Which paragraph introduces international exchange? Number 1–5.",
+          "question_vi": "Đoạn nào giới thiệu chương trình trao đổi quốc tế?",
+          "answer": "3",
+          "explanation_en": "It begins: International exchanges can also be valuable.",
+          "explanation_vi": "Đoạn 3 mở đầu bằng International exchanges.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-R04",
+      "skill": "R",
+      "number": 4,
+      "title": "Locate multiple-choice evidence",
+      "instruction_en": "Use Passage A. Find the best answer; explain why the others are wrong.",
+      "instruction_vi": "Dựa vào bài A, tìm đáp án và loại phương án nhiễu.",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Why did Lakeside College add discussion groups? A reduce fees B improve communication C replace campus visits.",
+          "question_vi": "Vì sao trường lập nhóm thảo luận?",
+          "answer": "B",
+          "explanation_en": "The text says groups help learners communicate more often.",
+          "explanation_vi": "Đoạn 2 nói nhóm giúp liên lạc thường xuyên hơn.",
+          "open": false
+        },
+        {
+          "question_en": "Virtual exchanges mainly help students who cannot easily ___. A travel abroad B use a laptop C study any language.",
+          "question_vi": "Trao đổi trực tuyến giúp nhóm nào?",
+          "answer": "A",
+          "explanation_en": "Travel and housing costs restrict physical exchanges; the virtual option responds to this.",
+          "explanation_vi": "Chi phí đi lại và chỗ ở khiến đi nước ngoài khó; trao đổi trực tuyến giải quyết rào cản.",
+          "open": false
+        },
+        {
+          "question_en": "Work placements help students understand ___. A daily workplace tasks B only exams C company profits.",
+          "question_vi": "Thực tập giúp hiểu điều gì?",
+          "answer": "A",
+          "explanation_en": "Paragraph 4 says understand daily tasks; other options are unsupported.",
+          "explanation_vi": "Đoạn 4 nêu daily tasks; đáp án khác không có bằng chứng.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-R05",
+      "skill": "R",
+      "number": 5,
+      "title": "Synonyms and paraphrases",
+      "instruction_en": "Match meanings using the passage, not identical wording.",
+      "instruction_vi": "Ghép nghĩa theo diễn đạt tương đương.",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "keep a paid job for fewer hours = ?",
+          "question_vi": "Giữ công việc ít giờ = ?",
+          "answer": "keep part-time jobs",
+          "explanation_en": "Part-time refers to work with fewer hours than a full-time job.",
+          "explanation_vi": "Part-time là công việc thời gian ngắn hơn toàn thời gian.",
+          "open": false
+        },
+        {
+          "question_en": "difficult to afford = ?",
+          "question_vi": "Khó chi trả = ?",
+          "answer": "costs make opportunities difficult",
+          "explanation_en": "The phrase expresses a financial barrier.",
+          "explanation_vi": "Cụm này nói về rào cản tài chính.",
+          "open": false
+        },
+        {
+          "question_en": "adjust to new situations = ?",
+          "question_vi": "Thích nghi với thay đổi = ?",
+          "answer": "adapt to change",
+          "explanation_en": "Adapt is the closest meaning.",
+          "explanation_vi": "Adapt = thích ứng.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-R06",
+      "skill": "R",
+      "number": 6,
+      "title": "Identify main ideas versus details",
+      "instruction_en": "Decide Main (M) or Detail (D).",
+      "instruction_vi": "Phân biệt ý chính (M) với chi tiết (D).",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Education is becoming more closely connected with work.",
+          "question_vi": "Giáo dục ngày càng gắn với công việc.",
+          "answer": "M",
+          "explanation_en": "It summarises the fourth paragraph.",
+          "explanation_vi": "Câu bao quát đoạn 4.",
+          "open": false
+        },
+        {
+          "question_en": "Lakeside students come to campus on Mondays.",
+          "question_vi": "Sinh viên Lakeside tới trường thứ Hai.",
+          "answer": "D",
+          "explanation_en": "One schedule supports a larger point.",
+          "explanation_vi": "Đây chỉ là lịch học minh họa.",
+          "open": false
+        },
+        {
+          "question_en": "Modern courses still need to consider equality of access.",
+          "question_vi": "Khóa học hiện đại vẫn phải quan tâm khả năng tiếp cận.",
+          "answer": "M",
+          "explanation_en": "It captures the article’s central limitation.",
+          "explanation_vi": "Câu tóm lược giới hạn xuyên suốt văn bản.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-R07",
+      "skill": "R",
+      "number": 7,
+      "title": "Question-first multiple choice",
+      "instruction_en": "Answer without reading every sentence again.",
+      "instruction_vi": "Đọc câu hỏi trước, định vị đoạn phù hợp rồi trả lời.",
+      "track": null,
+      "passage": "A",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "What prevents some people joining exchanges? A expenses B poor grades C few teachers.",
+          "question_vi": "Điều gì ngăn một số người tham gia trao đổi?",
+          "answer": "A",
+          "explanation_en": "Travel and housing costs are named as barriers.",
+          "explanation_vi": "Chi phí đi lại và nhà ở là rào cản được nêu rõ.",
+          "open": false
+        },
+        {
+          "question_en": "Why do companies value placements? A students can practise skills B they replace degrees C all get jobs.",
+          "question_vi": "Lợi ích của thực tập là gì?",
+          "answer": "A",
+          "explanation_en": "Students apply learned skills; the text explicitly denies guaranteed jobs.",
+          "explanation_vi": "Sinh viên áp dụng kiến thức; văn bản không đảm bảo việc làm.",
+          "open": false
+        },
+        {
+          "question_en": "What is required for online learning? A reliable internet B overseas travel C uniform.",
+          "question_vi": "Điều kiện để học online?",
+          "answer": "A",
+          "explanation_en": "The final paragraph calls internet access essential.",
+          "explanation_vi": "Đoạn cuối xác định mạng ổn định là thiết yếu.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-R08",
+      "skill": "R",
+      "number": 8,
+      "title": "Present perfect in context",
+      "instruction_en": "Choose the best tense and explain the time link.",
+      "instruction_vi": "Chọn thì hiện tại hoàn thành và giải thích quan hệ quá khứ–hiện tại.",
+      "track": null,
+      "passage": "B",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Online learning ___ the way people study. A changed B has changed.",
+          "question_vi": "Điền thì phù hợp.",
+          "answer": "B – has changed",
+          "explanation_en": "A past change still has a present result; no finished time is stated.",
+          "explanation_vi": "Thay đổi bắt đầu trước đây và còn ảnh hưởng hiện tại; không có mốc kết thúc.",
+          "open": false
+        },
+        {
+          "question_en": "Since 2021, the workshop ___ more learners. A trained B has trained.",
+          "question_vi": "Điền thì với since 2021.",
+          "answer": "B – has trained",
+          "explanation_en": "Since + starting time normally calls for present perfect for a continuing period.",
+          "explanation_vi": "Since + mốc bắt đầu và quá trình kéo dài tới nay dùng hiện tại hoàn thành.",
+          "open": false
+        },
+        {
+          "question_en": "They ___ the new room in 2023. A opened B have opened.",
+          "question_vi": "Điền thì với in 2023.",
+          "answer": "A – opened",
+          "explanation_en": "A definite finished past time normally takes past simple.",
+          "explanation_vi": "In 2023 là mốc quá khứ cụ thể; dùng quá khứ đơn.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-R09",
+      "skill": "R",
+      "number": 9,
+      "title": "Exam practice: workplace learning",
+      "instruction_en": "Use Passage B. Choose one answer for each question.",
+      "instruction_vi": "Làm bài thi mô phỏng dựa trên bài B.",
+      "track": null,
+      "passage": "B",
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Why was the workshop created? A to provide practical job skills B to sell bicycles C to replace schools.",
+          "question_vi": "Mục đích mở xưởng học cộng đồng?",
+          "answer": "A",
+          "explanation_en": "Opening paragraph connects unemployment difficulties to missing experience.",
+          "explanation_vi": "Mở bài liên hệ khó kiếm việc với thiếu kinh nghiệm thực hành.",
+          "open": false
+        },
+        {
+          "question_en": "What changed two years after opening? A a company donated a bigger space B the courses closed C teachers left.",
+          "question_vi": "Hai năm sau có thay đổi gì?",
+          "answer": "A",
+          "explanation_en": "Paragraph 2 describes a donated building and tools.",
+          "explanation_vi": "Đoạn 2 nói được hỗ trợ nhà lớn hơn và dụng cụ.",
+          "open": false
+        },
+        {
+          "question_en": "How often do learners attend? A twice a week B daily C monthly.",
+          "question_vi": "Tần suất tham gia lớp?",
+          "answer": "A",
+          "explanation_en": "Paragraph 4: two evenings per week.",
+          "explanation_vi": "Đoạn 4: hai buổi tối mỗi tuần.",
+          "open": false
+        },
+        {
+          "question_en": "The courses guarantee a job. True / False / Not Given?",
+          "question_vi": "Khóa học đảm bảo có việc làm?",
+          "answer": "False",
+          "explanation_en": "It explicitly says the workshop does not guarantee employment.",
+          "explanation_vi": "Văn bản phủ định trực tiếp việc đảm bảo việc làm.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W01",
+      "skill": "W",
+      "number": 1,
+      "title": "Identify common chart types",
+      "instruction_en": "Identify line graph, bar chart, pie chart or table.",
+      "instruction_vi": "Nhận dạng biểu đồ đường, cột, tròn hoặc bảng.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Which chart best shows changes across 2018–2023?",
+          "question_vi": "Loại biểu đồ phù hợp mô tả diễn biến theo năm?",
+          "answer": "line graph",
+          "explanation_en": "A line shows a time series clearly.",
+          "explanation_vi": "Biểu đồ đường thể hiện xu hướng theo thời gian.",
+          "open": false
+        },
+        {
+          "question_en": "Which chart shows proportions adding to 100%?",
+          "question_vi": "Loại biểu đồ thể hiện tỉ lệ cộng thành 100%?",
+          "answer": "pie chart",
+          "explanation_en": "Pie slices represent the whole.",
+          "explanation_vi": "Biểu đồ tròn biểu diễn các phần của tổng thể.",
+          "open": false
+        },
+        {
+          "question_en": "Which chart compares categories in one year?",
+          "question_vi": "So sánh nhóm tại một năm?",
+          "answer": "bar chart",
+          "explanation_en": "Bars allow comparisons between categories.",
+          "explanation_vi": "Các cột giúp so sánh những nhóm khác nhau.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W02",
+      "skill": "W",
+      "number": 2,
+      "title": "Increase and decrease language",
+      "instruction_en": "Choose the correct trend word.",
+      "instruction_vi": "Chọn từ miêu tả chiều tăng giảm.",
+      "track": null,
+      "passage": null,
+      "visual": "chart-line",
+      "items": [
+        {
+          "question_en": "120 to 135 = rise/fall?",
+          "question_vi": "120 lên 135 tăng hay giảm?",
+          "answer": "rise",
+          "explanation_en": "135 is greater than 120.",
+          "explanation_vi": "135 lớn hơn 120 nên tăng.",
+          "open": false
+        },
+        {
+          "question_en": "135 to 108 = rise/fall?",
+          "question_vi": "135 xuống 108?",
+          "answer": "fall",
+          "explanation_en": "108 is smaller than 135.",
+          "explanation_vi": "108 thấp hơn 135 nên giảm.",
+          "open": false
+        },
+        {
+          "question_en": "195 to 220 = growth/decline?",
+          "question_vi": "195 lên 220?",
+          "answer": "growth",
+          "explanation_en": "There is a positive change of 25.",
+          "explanation_vi": "Tăng thêm 25 đơn vị.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W03",
+      "skill": "W",
+      "number": 3,
+      "title": "Verb forms in data descriptions",
+      "instruction_en": "Write the correct past form / noun form.",
+      "instruction_vi": "Viết dạng quá khứ hoặc danh từ phù hợp.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Past simple: rise → ?",
+          "question_vi": "Quá khứ của rise?",
+          "answer": "rose",
+          "explanation_en": "Rise is irregular: rise–rose–risen.",
+          "explanation_vi": "Rise là động từ bất quy tắc rise–rose–risen.",
+          "open": false
+        },
+        {
+          "question_en": "Past simple: fall → ?",
+          "question_vi": "Quá khứ của fall?",
+          "answer": "fell",
+          "explanation_en": "Fall–fell–fallen, not falled.",
+          "explanation_vi": "Fall bất quy tắc, không viết falled.",
+          "open": false
+        },
+        {
+          "question_en": "Noun of increase (same spelling)?",
+          "question_vi": "Danh từ của increase?",
+          "answer": "increase",
+          "explanation_en": "Increase functions as a noun or verb; stress may differ.",
+          "explanation_vi": "Increase dùng được làm danh từ hoặc động từ.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W04",
+      "skill": "W",
+      "number": 4,
+      "title": "Write correct data statements",
+      "instruction_en": "Fill the missing number or trend word.",
+      "instruction_vi": "Điền số hoặc từ mô tả đúng số liệu.",
+      "track": null,
+      "passage": null,
+      "visual": "chart-line",
+      "items": [
+        {
+          "question_en": "Attendance fell to ___ in 2020.",
+          "question_vi": "Số học viên giảm về bao nhiêu năm 2020?",
+          "answer": "108",
+          "explanation_en": "Read the third point on the original chart.",
+          "explanation_vi": "Đọc điểm thứ 3 trên biểu đồ.",
+          "open": false
+        },
+        {
+          "question_en": "By 2023, attendance had reached ___.",
+          "question_vi": "Đến 2023, số lượng đạt bao nhiêu?",
+          "answer": "220",
+          "explanation_en": "The final point is 220.",
+          "explanation_vi": "Điểm cuối là 220.",
+          "open": false
+        },
+        {
+          "question_en": "Between 2021 and 2023 the trend was ___.",
+          "question_vi": "Xu hướng 2021–2023 như thế nào?",
+          "answer": "upward",
+          "explanation_en": "The numbers rose from 160 to 195 to 220.",
+          "explanation_vi": "Các số tăng liên tiếp 160 → 195 → 220.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W05",
+      "skill": "W",
+      "number": 5,
+      "title": "Select main features, not every detail",
+      "instruction_en": "Choose the most useful overview statement.",
+      "instruction_vi": "Chọn câu overview nêu điểm nổi bật.",
+      "track": null,
+      "passage": null,
+      "visual": "chart-bar",
+      "items": [
+        {
+          "question_en": "A All figures changed each year. B Attendance ended higher, despite a dip in 2020.",
+          "question_vi": "Chọn overview tốt hơn.",
+          "answer": "B",
+          "explanation_en": "It gives the overall direction and a notable exception.",
+          "explanation_vi": "Câu B nêu xu hướng chung và ngoại lệ đáng chú ý.",
+          "open": false
+        },
+        {
+          "question_en": "Is “The chart is very interesting” suitable for Task 1? Yes/No.",
+          "question_vi": "Câu nhận xét chủ quan có phù hợp không?",
+          "answer": "No",
+          "explanation_en": "Task 1 reports information objectively.",
+          "explanation_vi": "Task 1 mô tả khách quan, không đưa đánh giá cá nhân.",
+          "open": false
+        },
+        {
+          "question_en": "Which programme had most trainees?",
+          "question_vi": "Nhóm nào đông học viên nhất?",
+          "answer": "Computing",
+          "explanation_en": "Computing has 240, the tallest bar.",
+          "explanation_vi": "Computing cao nhất với 240 học viên.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W06",
+      "skill": "W",
+      "number": 6,
+      "title": "Compare bar-chart categories",
+      "instruction_en": "Select the correct factual comparison.",
+      "instruction_vi": "Chọn cách so sánh số liệu đúng.",
+      "track": null,
+      "passage": null,
+      "visual": "chart-bar",
+      "items": [
+        {
+          "question_en": "Computing had ___ trainees than design. A more B fewer.",
+          "question_vi": "Computing có học viên nhiều hay ít hơn Design?",
+          "answer": "A – more",
+          "explanation_en": "240 is higher than 110.",
+          "explanation_vi": "240 lớn hơn 110.",
+          "open": false
+        },
+        {
+          "question_en": "Customer service had ___ students than repair. A 30 more B 30 fewer.",
+          "question_vi": "Customer service so với Repair?",
+          "answer": "A – 30 more",
+          "explanation_en": "190 minus 160 equals 30.",
+          "explanation_vi": "190 – 160 = 30.",
+          "open": false
+        },
+        {
+          "question_en": "The smallest group was ___.",
+          "question_vi": "Nhóm nhỏ nhất là?",
+          "answer": "Design",
+          "explanation_en": "Design has 110 learners.",
+          "explanation_vi": "Design chỉ có 110 người.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W07",
+      "skill": "W",
+      "number": 7,
+      "title": "Prepositions with numbers",
+      "instruction_en": "Complete using from, to, by, at.",
+      "instruction_vi": "Điền giới từ đi với số liệu.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Numbers increased ___ 120 ___ 135.",
+          "question_vi": "Tăng từ 120 đến 135.",
+          "answer": "from / to",
+          "explanation_en": "From ... to ... gives beginning and end.",
+          "explanation_vi": "From ... to ... chỉ điểm đầu và cuối.",
+          "open": false
+        },
+        {
+          "question_en": "Attendance rose ___ 25 between 2022 and 2023.",
+          "question_vi": "Tăng thêm 25 người.",
+          "answer": "by",
+          "explanation_en": "By describes the amount of change.",
+          "explanation_vi": "By chỉ mức tăng.",
+          "open": false
+        },
+        {
+          "question_en": "Design stood ___ 110 trainees.",
+          "question_vi": "Design ở mức 110.",
+          "answer": "at",
+          "explanation_en": "Stand at introduces a measured value.",
+          "explanation_vi": "Stand at đi với giá trị cụ thể.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W08",
+      "skill": "W",
+      "number": 8,
+      "title": "Find structure in a model",
+      "instruction_en": "Identify introduction, overview and detail.",
+      "instruction_vi": "Xác định bố cục 4 đoạn trong bài mẫu.",
+      "track": null,
+      "passage": null,
+      "visual": "chart-final",
+      "items": [
+        {
+          "question_en": "Which paragraph describes the overall pattern without many numbers?",
+          "question_vi": "Đoạn tóm tắt xu hướng chung là đoạn nào?",
+          "answer": "paragraph 2",
+          "explanation_en": "The second paragraph begins Overall.",
+          "explanation_vi": "Đoạn 2 bắt đầu với Overall.",
+          "open": false
+        },
+        {
+          "question_en": "Which paragraph gives specific figures from 2022 and 2024?",
+          "question_vi": "Đoạn có số liệu 2022 và 2024?",
+          "answer": "paragraph 3",
+          "explanation_en": "It contains the main numerical comparisons.",
+          "explanation_vi": "Đoạn 3 có các so sánh số liệu chính.",
+          "open": false
+        },
+        {
+          "question_en": "Should you infer reasons for increased completion? Yes/No.",
+          "question_vi": "Có nên tự suy ra nguyên nhân tăng không?",
+          "answer": "No",
+          "explanation_en": "No causes appear in the chart.",
+          "explanation_vi": "Biểu đồ không cho nguyên nhân; không tự suy diễn.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W09",
+      "skill": "W",
+      "number": 9,
+      "title": "Pie-chart proportions",
+      "instruction_en": "Use the chart to interpret fractions and comparisons.",
+      "instruction_vi": "Diễn đạt tỉ lệ và so sánh biểu đồ tròn.",
+      "track": null,
+      "passage": null,
+      "visual": "chart-pie",
+      "items": [
+        {
+          "question_en": "What percentage prefer blended learning?",
+          "question_vi": "Bao nhiêu phần trăm thích học kết hợp?",
+          "answer": "40%",
+          "explanation_en": "The largest slice is labelled 40%.",
+          "explanation_vi": "Miếng lớn nhất là 40%.",
+          "open": false
+        },
+        {
+          "question_en": "Which is less popular: online or in-person?",
+          "question_vi": "Hình thức nào ít phổ biến hơn?",
+          "answer": "online",
+          "explanation_en": "Online 20% is less than in-person 30%.",
+          "explanation_vi": "Online 20% ít hơn tại lớp 30%.",
+          "open": false
+        },
+        {
+          "question_en": "Two fifths equals ___%.",
+          "question_vi": "Hai phần năm tương đương bao nhiêu phần trăm?",
+          "answer": "40",
+          "explanation_en": "2 divided by 5 = 0.4.",
+          "explanation_vi": "2/5 = 0,4 = 40%.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-W10",
+      "skill": "W",
+      "number": 10,
+      "title": "Plan a Task 1 report",
+      "instruction_en": "Write an objective introduction, overview and two comparisons.",
+      "instruction_vi": "Lập dàn ý mở bài, overview và hai so sánh.",
+      "track": null,
+      "passage": null,
+      "visual": "chart-final",
+      "items": [
+        {
+          "question_en": "Introduction: paraphrase the chart title.",
+          "question_vi": "Mở bài diễn đạt lại tiêu đề.",
+          "answer": "The chart compares course completion rates in four subjects in 2022 and 2024.",
+          "explanation_en": "Mention what, categories and years without opinion.",
+          "explanation_vi": "Nêu dữ liệu, nhóm và mốc năm; không đánh giá.",
+          "open": true
+        },
+        {
+          "question_en": "Overview: describe the clearest two trends.",
+          "question_vi": "Overview nêu hai điểm đáng chú ý.",
+          "answer": "Overall, all four rates rose, and health remained the strongest subject.",
+          "explanation_en": "Choose overall trends before detailed numbers.",
+          "explanation_vi": "Nêu xu hướng lớn trước số chi tiết.",
+          "open": true
+        },
+        {
+          "question_en": "Choose two figures for the body paragraphs.",
+          "question_vi": "Chọn hai so sánh số liệu.",
+          "answer": "Business: 60% to 74%; design: 72% to 73%.",
+          "explanation_en": "Contrasting a large increase with a small increase is useful.",
+          "explanation_vi": "Đối chiếu mức tăng lớn và nhỏ giúp nổi bật bài viết.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U03-W11",
+      "skill": "W",
+      "number": 11,
+      "title": "Exam task: full Task 1 report",
+      "instruction_en": "Write at least 150 words from the chart. Use 20 minutes.",
+      "instruction_vi": "Viết tối thiểu 150 từ theo biểu đồ trong 20 phút.",
+      "track": null,
+      "passage": null,
+      "visual": "chart-final",
+      "items": [
+        {
+          "question_en": "Write introduction, overview and two detail paragraphs.",
+          "question_vi": "Viết 4 đoạn: mở, overview, thân 1, thân 2.",
+          "answer": "See original model answer in Teacher Guide.",
+          "explanation_en": "Use exact percentages and comparisons. The model is one example, not a fixed answer.",
+          "explanation_vi": "Dùng số liệu đúng, so sánh; bài mẫu chỉ là một cách diễn đạt.",
+          "open": true
+        },
+        {
+          "question_en": "Check that you include the most notable rise.",
+          "question_vi": "Kiểm tra mức tăng đáng chú ý nhất.",
+          "answer": "Business increased by 14 percentage points (60% to 74%).",
+          "explanation_en": "Rate changes between percentages use percentage points.",
+          "explanation_vi": "Chênh lệch tỉ lệ phần trăm nên dùng “điểm phần trăm”.",
+          "open": true
+        },
+        {
+          "question_en": "Check what you must NOT write.",
+          "question_vi": "Kiểm tra điều không được viết.",
+          "answer": "Do not invent causes or personal opinions.",
+          "explanation_en": "Academic Task 1 describes visual data only.",
+          "explanation_vi": "Không thêm nguyên nhân hay ý kiến ngoài dữ liệu.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U03-L01",
+      "skill": "L",
+      "number": 1,
+      "title": "Jobs and areas of study",
+      "instruction_en": "Match each job to the most suitable field.",
+      "instruction_vi": "Ghép nghề với lĩnh vực.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "A chef works mainly in ___.",
+          "question_vi": "Đầu bếp thuộc ngành gì?",
+          "answer": "hospitality",
+          "explanation_en": "A chef prepares food for customers.",
+          "explanation_vi": "Đầu bếp làm trong dịch vụ ẩm thực.",
+          "open": false
+        },
+        {
+          "question_en": "A software developer works in ___.",
+          "question_vi": "Lập trình viên thuộc ngành gì?",
+          "answer": "information technology",
+          "explanation_en": "Developers create software systems.",
+          "explanation_vi": "Software developer tạo phần mềm.",
+          "open": false
+        },
+        {
+          "question_en": "A nurse works in ___.",
+          "question_vi": "Điều dưỡng thuộc ngành gì?",
+          "answer": "healthcare",
+          "explanation_en": "Nurses provide health care.",
+          "explanation_vi": "Điều dưỡng chăm sóc sức khỏe.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L02",
+      "skill": "L",
+      "number": 2,
+      "title": "Jobs versus courses",
+      "instruction_en": "Classify the nouns as job (J) or course (C).",
+      "instruction_vi": "Phân loại nghề (J) hoặc khóa học (C).",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "store assistant",
+          "question_vi": "Nhân viên bán hàng",
+          "answer": "J",
+          "explanation_en": "A store assistant is a person’s role.",
+          "explanation_vi": "Đây là vị trí công việc.",
+          "open": false
+        },
+        {
+          "question_en": "digital design",
+          "question_vi": "Thiết kế số",
+          "answer": "C",
+          "explanation_en": "This names a subject of study.",
+          "explanation_vi": "Đây là tên môn/khóa học.",
+          "open": false
+        },
+        {
+          "question_en": "customer-service training",
+          "question_vi": "Đào tạo dịch vụ khách hàng",
+          "answer": "C",
+          "explanation_en": "Training is a learning activity.",
+          "explanation_vi": "Training là quá trình học nghề.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L03",
+      "skill": "L",
+      "number": 3,
+      "title": "Sort the job-field-course table",
+      "instruction_en": "Identify the linked field or role.",
+      "instruction_vi": "Ghép ngành–nghề–khóa học.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Field for assistant in a shop?",
+          "question_vi": "Nhân viên cửa hàng thuộc ngành nào?",
+          "answer": "retail",
+          "explanation_en": "Retail means selling to consumers.",
+          "explanation_vi": "Retail là bán lẻ.",
+          "open": false
+        },
+        {
+          "question_en": "Course suitable for building technician?",
+          "question_vi": "Kỹ thuật viên xây dựng cần học?",
+          "answer": "construction",
+          "explanation_en": "Construction is the building field.",
+          "explanation_vi": "Construction là ngành xây dựng.",
+          "open": false
+        },
+        {
+          "question_en": "Field for a graphic designer?",
+          "question_vi": "Designer đồ họa thuộc ngành?",
+          "answer": "art and design",
+          "explanation_en": "Graphic design is a visual creative occupation.",
+          "explanation_vi": "Thiết kế đồ họa thuộc mỹ thuật và thiết kế.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L04",
+      "skill": "L",
+      "number": 4,
+      "title": "Word-ending clues",
+      "instruction_en": "Choose the word that names a person, not a course.",
+      "instruction_vi": "Dùng đuôi từ để nhận biết người hay chương trình.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Which names a person: trainer / training?",
+          "question_vi": "Từ chỉ người: trainer/training?",
+          "answer": "trainer",
+          "explanation_en": "-er often indicates a person.",
+          "explanation_vi": "Đuôi -er thường chỉ người.",
+          "open": false
+        },
+        {
+          "question_en": "Which names a subject: engineer / engineering?",
+          "question_vi": "Từ chỉ lĩnh vực: engineer/engineering?",
+          "answer": "engineering",
+          "explanation_en": "Engineering is the field; engineer is the worker.",
+          "explanation_vi": "Engineering chỉ ngành, engineer chỉ người.",
+          "open": false
+        },
+        {
+          "question_en": "Which names a worker: reception / receptionist?",
+          "question_vi": "Từ chỉ nhân viên tiếp tân?",
+          "answer": "receptionist",
+          "explanation_en": "-ist identifies the person in this word family.",
+          "explanation_vi": "Receptionist chỉ người làm việc ở quầy tiếp tân.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L05",
+      "skill": "L",
+      "number": 5,
+      "title": "Identify topics in short calls",
+      "instruction_en": "Listen to Tracks A and B and choose course or job.",
+      "instruction_vi": "Nghe audio A/B, phân loại chủ đề nghề hay học.",
+      "track": "A+B",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Track A is mainly about: a course / a job.",
+          "question_vi": "Track A nói về khóa học hay việc làm?",
+          "answer": "a course",
+          "explanation_en": "An adviser discusses class dates and availability.",
+          "explanation_vi": "Cố vấn nói về lịch và chỗ trống khóa học.",
+          "open": false
+        },
+        {
+          "question_en": "Track B is mainly about: a course / a job.",
+          "question_vi": "Track B nói về khóa học hay việc làm?",
+          "answer": "a job",
+          "explanation_en": "The manager describes a vacant assistant role.",
+          "explanation_vi": "Quản lý tuyển nhân viên phụ bán.",
+          "open": false
+        },
+        {
+          "question_en": "What kind of job is in Track B?",
+          "question_vi": "Tên công việc trong audio B?",
+          "answer": "store assistant",
+          "explanation_en": "The caller says weekend store assistant, not warehouse worker.",
+          "explanation_vi": "Họ tuyển nhân viên cửa hàng, không phải kho.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L06",
+      "skill": "L",
+      "number": 6,
+      "title": "Predict information types",
+      "instruction_en": "Classify the gap type before listening.",
+      "instruction_vi": "Đoán loại thông tin cho chỗ trống trước khi nghe.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "The course starts on ___ September. Date/price/place?",
+          "question_vi": "Chỗ trống cần ngày, giá hay nơi?",
+          "answer": "date",
+          "explanation_en": "A month after a gap requires a day number.",
+          "explanation_vi": "Trước September cần ngày.",
+          "open": false
+        },
+        {
+          "question_en": "Only ___ places are still available. Date/number/name?",
+          "question_vi": "Chỗ trống là ngày, số hay tên?",
+          "answer": "number",
+          "explanation_en": "Available places are counted.",
+          "explanation_vi": "Số chỗ trống được đếm.",
+          "open": false
+        },
+        {
+          "question_en": "The interview is on ___ at 10.30. Day/occupation/fee?",
+          "question_vi": "Chỗ trống cần thông tin nào?",
+          "answer": "day",
+          "explanation_en": "The preposition on refers to a day.",
+          "explanation_vi": "On đi với ngày trong tuần.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L07",
+      "skill": "L",
+      "number": 7,
+      "title": "Match gaps to data types",
+      "instruction_en": "Predict how answers will fit grammar.",
+      "instruction_vi": "Đoán dạng đáp án và kiểm tra ngữ pháp.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "I have completed a ___ course. Noun or verb?",
+          "question_vi": "Sau a cần danh từ hay động từ?",
+          "answer": "noun / noun phrase",
+          "explanation_en": "The article a introduces a singular noun phrase.",
+          "explanation_vi": "Mạo từ a đứng trước cụm danh từ số ít.",
+          "open": false
+        },
+        {
+          "question_en": "There are six ___ available. Singular or plural?",
+          "question_vi": "Sau six cần số ít hay nhiều?",
+          "answer": "plural",
+          "explanation_en": "After six use a plural count noun.",
+          "explanation_vi": "Sau six dùng danh từ đếm được số nhiều.",
+          "open": false
+        },
+        {
+          "question_en": "The centre is near the ___. Place or time?",
+          "question_vi": "Near the đứng trước địa điểm hay thời gian?",
+          "answer": "place",
+          "explanation_en": "Near is a location preposition.",
+          "explanation_vi": "Near chỉ vị trí địa lý.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L08",
+      "skill": "L",
+      "number": 8,
+      "title": "Gap completion: recruitment",
+      "instruction_en": "Listen to Track B and complete the notes. Max TWO WORDS.",
+      "instruction_vi": "Nghe B và điền tối đa HAI TỪ.",
+      "track": "B",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "The vacancy is for a weekend ___.",
+          "question_vi": "Tuyển nhân viên cuối tuần vị trí gì?",
+          "answer": "store assistant",
+          "explanation_en": "The employer says weekend store assistant.",
+          "explanation_vi": "Quản lý nói chính xác weekend store assistant.",
+          "open": false
+        },
+        {
+          "question_en": "The applicant has recently completed a ___ course.",
+          "question_vi": "Ứng viên vừa học khóa gì?",
+          "answer": "customer-service",
+          "explanation_en": "The applicant says customer-service course.",
+          "explanation_vi": "Người xin việc nói customer-service course.",
+          "open": false
+        },
+        {
+          "question_en": "The shop is on ___ Road.",
+          "question_vi": "Cửa hàng ở đường gì?",
+          "answer": "King",
+          "explanation_en": "The manager gives King Road.",
+          "explanation_vi": "Quản lý nêu King Road.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L09",
+      "skill": "L",
+      "number": 9,
+      "title": "Grammar of gap answers",
+      "instruction_en": "Choose the grammatically correct answer.",
+      "instruction_vi": "Kiểm số ít/số nhiều và dạng từ.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "A weekend ___: assistant / assistants?",
+          "question_vi": "Sau a cần danh từ số ít hay nhiều?",
+          "answer": "assistant",
+          "explanation_en": "A requires a singular count noun.",
+          "explanation_vi": "A đi với danh từ đếm được số ít.",
+          "open": false
+        },
+        {
+          "question_en": "Six place / places are available.",
+          "question_vi": "Chọn place hay places?",
+          "answer": "places",
+          "explanation_en": "Six requires plural places.",
+          "explanation_vi": "Six yêu cầu places.",
+          "open": false
+        },
+        {
+          "question_en": "The course lasts six week / weeks.",
+          "question_vi": "Chọn week hay weeks?",
+          "answer": "weeks",
+          "explanation_en": "A number greater than one normally requires plural weeks.",
+          "explanation_vi": "Sáu tuần: six weeks.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L10",
+      "skill": "L",
+      "number": 10,
+      "title": "Listen for the corrected final facts",
+      "instruction_en": "Listen to Track A carefully and ignore the first date.",
+      "instruction_vi": "Nghe A, chọn thông tin sau khi người nói sửa.",
+      "track": "A",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Final start date: 19th / 26th September?",
+          "question_vi": "Ngày bắt đầu cuối cùng?",
+          "answer": "26th September",
+          "explanation_en": "The adviser corrects nineteenth to twenty-sixth.",
+          "explanation_vi": "Cố vấn sửa từ 19 sang 26.",
+          "open": false
+        },
+        {
+          "question_en": "Places still available: 15 / 6?",
+          "question_vi": "Còn bao nhiêu chỗ trống?",
+          "answer": "6",
+          "explanation_en": "Fifteen is total capacity; six remain available.",
+          "explanation_vi": "15 là tổng chỗ, 6 là còn lại.",
+          "open": false
+        },
+        {
+          "question_en": "Course duration: 8 / 6 weeks?",
+          "question_vi": "Khóa kéo dài mấy tuần?",
+          "answer": "6 weeks",
+          "explanation_en": "The adviser corrects eight to six.",
+          "explanation_vi": "Cố vấn sửa 8 thành 6 tuần.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L11",
+      "skill": "L",
+      "number": 11,
+      "title": "Follow the conversation in order",
+      "instruction_en": "Sequence the information from Track C.",
+      "instruction_vi": "Sắp xếp các chủ đề theo audio C.",
+      "track": "C",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "First: price / course name / centre location?",
+          "question_vi": "Thông tin đầu tiên?",
+          "answer": "course name",
+          "explanation_en": "The receptionist begins with the course title.",
+          "explanation_vi": "Mở hội thoại là tên khóa.",
+          "open": false
+        },
+        {
+          "question_en": "Second: start time / cost?",
+          "question_vi": "Thời điểm bắt đầu hay học phí xuất hiện trước?",
+          "answer": "start time",
+          "explanation_en": "The caller asks when it begins before asking the price.",
+          "explanation_vi": "Người gọi hỏi giờ bắt đầu trước giá.",
+          "open": false
+        },
+        {
+          "question_en": "Last: centre location / course length?",
+          "question_vi": "Thông tin xuất hiện cuối?",
+          "answer": "centre location",
+          "explanation_en": "The receptionist ends with the venue.",
+          "explanation_vi": "Kết thúc là địa điểm.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L12",
+      "skill": "L",
+      "number": 12,
+      "title": "Link prompts to information types",
+      "instruction_en": "Classify each prompt: time, duration, title or cost.",
+      "instruction_vi": "Phân loại câu hỏi: giờ, thời lượng, tên, phí.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "How long does each class last?",
+          "question_vi": "Mỗi lớp kéo dài bao lâu?",
+          "answer": "duration",
+          "explanation_en": "How long asks about a period.",
+          "explanation_vi": "How long hỏi độ dài thời gian.",
+          "open": false
+        },
+        {
+          "question_en": "What is the full fee?",
+          "question_vi": "Tổng học phí?",
+          "answer": "cost",
+          "explanation_en": "Fee is the price paid.",
+          "explanation_vi": "Fee là khoản tiền phải trả.",
+          "open": false
+        },
+        {
+          "question_en": "What is the course called?",
+          "question_vi": "Tên khóa học?",
+          "answer": "title",
+          "explanation_en": "Called asks for a name/title.",
+          "explanation_vi": "Called dùng hỏi tên.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L13",
+      "skill": "L",
+      "number": 13,
+      "title": "Synonyms and paraphrases",
+      "instruction_en": "Match words from Track C with equivalent phrases.",
+      "instruction_vi": "Ghép từ đồng nghĩa từ audio C.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "cost = ___",
+          "question_vi": "Cost đồng nghĩa với?",
+          "answer": "fee",
+          "explanation_en": "A fee is money charged for a course.",
+          "explanation_vi": "Fee là học phí/chi phí.",
+          "open": false
+        },
+        {
+          "question_en": "last = ___",
+          "question_vi": "Last khi nói thời lượng đồng nghĩa?",
+          "answer": "run for",
+          "explanation_en": "Run for indicates duration.",
+          "explanation_vi": "Run for chỉ kéo dài bao lâu.",
+          "open": false
+        },
+        {
+          "question_en": "place = ___",
+          "question_vi": "Địa điểm đồng nghĩa?",
+          "answer": "venue / centre",
+          "explanation_en": "The centre is where the course takes place.",
+          "explanation_vi": "Venue/centre là nơi tổ chức.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L14",
+      "skill": "L",
+      "number": 14,
+      "title": "Practice paraphrase before the test",
+      "instruction_en": "Choose a synonym for each phrase.",
+      "instruction_vi": "Chọn cách diễn đạt tương đương trước bài thi.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "The programme begins at 9.15 = it ___ at 9.15.",
+          "question_vi": "Bắt đầu lúc 9:15 = ?",
+          "answer": "starts",
+          "explanation_en": "Begin and start are equivalent here.",
+          "explanation_vi": "Begin tương đương start.",
+          "open": false
+        },
+        {
+          "question_en": "The whole course is four weeks = it ___ four weeks.",
+          "question_vi": "Toàn khóa 4 tuần = ?",
+          "answer": "lasts",
+          "explanation_en": "Lasts expresses the time span.",
+          "explanation_vi": "Lasts chỉ thời lượng.",
+          "open": false
+        },
+        {
+          "question_en": "There is no extra payment = materials are ___.",
+          "question_vi": "Không thu thêm = tài liệu...?",
+          "answer": "included",
+          "explanation_en": "Included means part of the stated fee.",
+          "explanation_vi": "Included nghĩa là đã bao gồm trong giá.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L15",
+      "skill": "L",
+      "number": 15,
+      "title": "Exam task: sentence completion",
+      "instruction_en": "Listen to Track C; NO MORE THAN TWO WORDS AND/OR A NUMBER.",
+      "instruction_vi": "Nghe C, điền không quá hai từ và/hoặc một số.",
+      "track": "C",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "The course is called Practical Skills for ___.",
+          "question_vi": "Tên khóa Practical Skills for ...?",
+          "answer": "Work",
+          "explanation_en": "The title is spoken at the beginning.",
+          "explanation_vi": "Tên khóa xuất hiện đầu audio.",
+          "open": false
+        },
+        {
+          "question_en": "Sessions start at ___ a.m.",
+          "question_vi": "Buổi học bắt đầu lúc mấy giờ sáng?",
+          "answer": "9.15",
+          "explanation_en": "The speaker says nine fifteen.",
+          "explanation_vi": "Người nói đọc nine fifteen.",
+          "open": false
+        },
+        {
+          "question_en": "The course runs for ___ weeks.",
+          "question_vi": "Khóa học kéo dài mấy tuần?",
+          "answer": "4",
+          "explanation_en": "Four weeks, not the length of each session.",
+          "explanation_vi": "4 tuần, không nhầm với thời lượng mỗi buổi.",
+          "open": false
+        },
+        {
+          "question_en": "The total fee is ___ dollars.",
+          "question_vi": "Tổng học phí là bao nhiêu?",
+          "answer": "60",
+          "explanation_en": "Full fee is sixty dollars.",
+          "explanation_vi": "Full fee là 60 đô.",
+          "open": false
+        },
+        {
+          "question_en": "The centre is near the main ___.",
+          "question_vi": "Trung tâm gần đâu?",
+          "answer": "library",
+          "explanation_en": "The last sentence says main library.",
+          "explanation_vi": "Câu cuối nói gần thư viện chính.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-L16",
+      "skill": "L",
+      "number": 16,
+      "title": "Final answer checking",
+      "instruction_en": "Correct the following common mistakes.",
+      "instruction_vi": "Sửa lỗi cuối bài về số, chính tả và giới hạn từ.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Question asks for a number: write “four weeks” or “4”?",
+          "question_vi": "Đề cần một con số: chọn cách nào?",
+          "answer": "4",
+          "explanation_en": "The gap already has weeks; writing weeks again repeats the word.",
+          "explanation_vi": "Câu đã có weeks, chỉ cần 4.",
+          "open": false
+        },
+        {
+          "question_en": "For “at ___ a.m.” use “9.15 am” or “9.15”?",
+          "question_vi": "Sau chỗ trống có a.m. thì viết thế nào?",
+          "answer": "9.15",
+          "explanation_en": "Do not repeat a.m. already printed in the question.",
+          "explanation_vi": "Không lặp a.m. đã có sẵn.",
+          "open": false
+        },
+        {
+          "question_en": "Check the plural in “There are six ___ available.”",
+          "question_vi": "Cần dạng nào của place?",
+          "answer": "places",
+          "explanation_en": "Six needs the plural form.",
+          "explanation_vi": "Six đòi danh từ số nhiều.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S01",
+      "skill": "S",
+      "number": 1,
+      "title": "Recognise work-and-study situations",
+      "instruction_en": "Match jobs and study experiences.",
+      "instruction_vi": "Nhận dạng tình huống nghề nghiệp và học tập.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "A person designing buildings works as a...?",
+          "question_vi": "Người thiết kế tòa nhà là nghề gì?",
+          "answer": "architect",
+          "explanation_en": "Architects plan and design buildings.",
+          "explanation_vi": "Architect là kiến trúc sư.",
+          "open": false
+        },
+        {
+          "question_en": "Who works with patients in a hospital?",
+          "question_vi": "Ai chăm sóc bệnh nhân ở bệnh viện?",
+          "answer": "nurse",
+          "explanation_en": "A nurse provides patient care.",
+          "explanation_vi": "Nurse là điều dưỡng.",
+          "open": false
+        },
+        {
+          "question_en": "Who teaches learners in a classroom?",
+          "question_vi": "Ai giảng dạy trong lớp?",
+          "answer": "teacher",
+          "explanation_en": "Teachers guide learning.",
+          "explanation_vi": "Teacher là giáo viên.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S02",
+      "skill": "S",
+      "number": 2,
+      "title": "Adjectives for experiences",
+      "instruction_en": "Choose positive or negative meaning.",
+      "instruction_vi": "Phân loại tính từ tích cực/tiêu cực.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "challenging: positive, negative or context-dependent?",
+          "question_vi": "Challenging có tích cực hay tiêu cực?",
+          "answer": "context-dependent",
+          "explanation_en": "Challenging may describe a valuable difficulty.",
+          "explanation_vi": "Challenging có thể là thử thách tích cực hoặc áp lực tùy ngữ cảnh.",
+          "open": false
+        },
+        {
+          "question_en": "boring: positive or negative?",
+          "question_vi": "Boring tích cực hay tiêu cực?",
+          "answer": "negative",
+          "explanation_en": "Boring means not interesting.",
+          "explanation_vi": "Boring = nhàm chán.",
+          "open": false
+        },
+        {
+          "question_en": "rewarding: positive or negative?",
+          "question_vi": "Rewarding tích cực hay tiêu cực?",
+          "answer": "positive",
+          "explanation_en": "Rewarding means it brings satisfaction.",
+          "explanation_vi": "Rewarding = mang lại cảm giác xứng đáng.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S03",
+      "skill": "S",
+      "number": 3,
+      "title": "Feelings versus causes",
+      "instruction_en": "Choose the adjective describing the person.",
+      "instruction_vi": "Phân biệt -ed cảm xúc người và -ing tính chất.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "I was excited / exciting about my first lesson.",
+          "question_vi": "Tôi cảm thấy hào hứng?",
+          "answer": "excited",
+          "explanation_en": "-ed describes the person’s feeling.",
+          "explanation_vi": "-ed miêu tả cảm xúc của người.",
+          "open": false
+        },
+        {
+          "question_en": "The lesson was interested / interesting.",
+          "question_vi": "Bài học thú vị?",
+          "answer": "interesting",
+          "explanation_en": "-ing describes what creates the feeling.",
+          "explanation_vi": "-ing miêu tả đặc tính gây ra cảm xúc.",
+          "open": false
+        },
+        {
+          "question_en": "He felt bored / boring after a long meeting.",
+          "question_vi": "Anh ấy cảm thấy chán?",
+          "answer": "bored",
+          "explanation_en": "The person experiences boredom.",
+          "explanation_vi": "Người cảm thấy chán → bored.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S04",
+      "skill": "S",
+      "number": 4,
+      "title": "Build adjective pairs",
+      "instruction_en": "Complete useful adjective combinations.",
+      "instruction_vi": "Ghép cặp tính từ -ed/-ing.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "amazed → the experience is ___.",
+          "question_vi": "Ngạc nhiên → trải nghiệm gây ngạc nhiên?",
+          "answer": "amazing",
+          "explanation_en": "Use -ing for the cause of amazement.",
+          "explanation_vi": "Dùng -ing chỉ tác nhân.",
+          "open": false
+        },
+        {
+          "question_en": "tired → the work is ___.",
+          "question_vi": "Mệt → công việc làm mệt?",
+          "answer": "tiring",
+          "explanation_en": "Tiring describes the source of tiredness.",
+          "explanation_vi": "Tiring chỉ nguyên nhân gây mệt.",
+          "open": false
+        },
+        {
+          "question_en": "interested → the job is ___.",
+          "question_vi": "Thích thú → công việc thú vị?",
+          "answer": "interesting",
+          "explanation_en": "Interesting triggers interest.",
+          "explanation_vi": "Interesting gây sự thích thú.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S05",
+      "skill": "S",
+      "number": 5,
+      "title": "Choose accurate feeling adjectives",
+      "instruction_en": "Fill in the gaps with -ed or -ing.",
+      "instruction_vi": "Chọn -ed/-ing theo vai trò.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "The interview was very ___. (stress)",
+          "question_vi": "Buổi phỏng vấn gây căng thẳng.",
+          "answer": "stressful",
+          "explanation_en": "Stressful describes an experience causing stress.",
+          "explanation_vi": "Stressful mô tả việc tạo áp lực.",
+          "open": false
+        },
+        {
+          "question_en": "I felt ___ before my presentation. (nervous)",
+          "question_vi": "Tôi cảm thấy lo lắng trước thuyết trình.",
+          "answer": "nervous",
+          "explanation_en": "Nervous is a feeling adjective.",
+          "explanation_vi": "Nervous miêu tả cảm giác.",
+          "open": false
+        },
+        {
+          "question_en": "I found the science project ___. (fascinate)",
+          "question_vi": "Tôi thấy dự án khoa học rất cuốn hút.",
+          "answer": "fascinating",
+          "explanation_en": "The project creates fascination.",
+          "explanation_vi": "Dự án gây hứng thú → fascinating.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S06",
+      "skill": "S",
+      "number": 6,
+      "title": "Describe a personal activity",
+      "instruction_en": "Answer from your own experience with a reason.",
+      "instruction_vi": "Trả lời theo trải nghiệm và nêu lý do.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Describe a practical skill you have tried.",
+          "question_vi": "Mô tả kỹ năng thực hành bạn từng thử.",
+          "answer": "I tried basic video editing last year. It was challenging at first, but I learned to add subtitles.",
+          "explanation_en": "Give a real or plausible example and a specific detail.",
+          "explanation_vi": "Đưa trải nghiệm cụ thể thay vì trả lời chung chung.",
+          "open": true
+        },
+        {
+          "question_en": "Would you like to work in a team? Why?",
+          "question_vi": "Bạn muốn làm việc nhóm không?",
+          "answer": "Yes, because I can share ideas and learn from other people.",
+          "explanation_en": "Answer directly then justify.",
+          "explanation_vi": "Trả lời thẳng rồi giải thích.",
+          "open": true
+        },
+        {
+          "question_en": "What school subject is difficult for you?",
+          "question_vi": "Môn nào khiến bạn thấy khó?",
+          "answer": "Mathematics is sometimes difficult because I need more time to solve problems.",
+          "explanation_en": "Personal examples are acceptable.",
+          "explanation_vi": "Có thể dùng ví dụ cá nhân.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U03-S07",
+      "skill": "S",
+      "number": 7,
+      "title": "Identify a Part 1 answer",
+      "instruction_en": "Listen to Track D. Identify topic and supporting detail.",
+      "instruction_vi": "Nghe D, tìm chủ đề và chi tiết hỗ trợ.",
+      "track": "D",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "What does the student study?",
+          "question_vi": "Bạn học ngành gì?",
+          "answer": "information technology",
+          "explanation_en": "The candidate says it in the first answer.",
+          "explanation_vi": "Câu đầu nêu information technology.",
+          "open": false
+        },
+        {
+          "question_en": "What is the hardest part of the course?",
+          "question_vi": "Phần khó nhất của khóa học?",
+          "answer": "time management",
+          "explanation_en": "The student directly names time management.",
+          "explanation_vi": "Bạn nói rõ time management.",
+          "open": false
+        },
+        {
+          "question_en": "Which new subject would the student like to learn?",
+          "question_vi": "Bạn muốn học thêm gì?",
+          "answer": "project management",
+          "explanation_en": "The final answer mentions project management.",
+          "explanation_vi": "Câu cuối nói project management.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S08",
+      "skill": "S",
+      "number": 8,
+      "title": "Follow the organisation of a response",
+      "instruction_en": "Put ideas in the order from Track D.",
+      "instruction_vi": "Sắp xếp thứ tự ý trong câu trả lời.",
+      "track": "D",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Direct answer: subject or reason first?",
+          "question_vi": "Thông tin ngành học hay lý do xuất hiện trước?",
+          "answer": "subject",
+          "explanation_en": "The student first says what they study.",
+          "explanation_vi": "Bạn trả lời ngành học trước.",
+          "open": false
+        },
+        {
+          "question_en": "After “time management”, what explanation follows?",
+          "question_vi": "Sau time management là ý gì?",
+          "answer": "several tasks at once",
+          "explanation_en": "The explanation links many tasks to planning.",
+          "explanation_vi": "Bạn giải thích phải làm nhiều nhiệm vụ cùng lúc.",
+          "open": false
+        },
+        {
+          "question_en": "Does the student give a future goal?",
+          "question_vi": "Bạn có mục tiêu tương lai không?",
+          "answer": "Yes",
+          "explanation_en": "The student hopes to lead a small team.",
+          "explanation_vi": "Bạn hy vọng quản lý nhóm nhỏ.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S09",
+      "skill": "S",
+      "number": 9,
+      "title": "Use headings to describe study or work",
+      "instruction_en": "Organise notes under what, where, why, future.",
+      "instruction_vi": "Sắp xếp ghi chú thành 4 nhóm.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "What do you study or do?",
+          "question_vi": "Bạn học/làm gì?",
+          "answer": "I study English and computer science.",
+          "explanation_en": "Start with the main activity.",
+          "explanation_vi": "Bắt đầu bằng hoạt động chính.",
+          "open": true
+        },
+        {
+          "question_en": "Why do you enjoy it?",
+          "question_vi": "Vì sao bạn thích?",
+          "answer": "I enjoy practical tasks because they help me remember new ideas.",
+          "explanation_en": "Give one reason and a relevant detail.",
+          "explanation_vi": "Nêu lý do cụ thể.",
+          "open": true
+        },
+        {
+          "question_en": "What would you like to do later?",
+          "question_vi": "Bạn muốn làm gì sau này?",
+          "answer": "I would like to work as a software engineer.",
+          "explanation_en": "A clear future plan extends the answer.",
+          "explanation_vi": "Mục tiêu tương lai giúp mở rộng câu.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U03-S10",
+      "skill": "S",
+      "number": 10,
+      "title": "Speaking Part 1 practice",
+      "instruction_en": "Answer work/study questions naturally.",
+      "instruction_vi": "Trả lời Part 1 theo mô hình 2–3 câu.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "What do you study or what is your job?",
+          "question_vi": "Bạn học ngành gì/làm nghề gì?",
+          "answer": "I study information technology. I especially enjoy building small websites because I can test my ideas.",
+          "explanation_en": "Answer + specific detail + reason.",
+          "explanation_vi": "Trả lời + chi tiết + lý do.",
+          "open": true
+        },
+        {
+          "question_en": "Do you enjoy your studies? Why?",
+          "question_vi": "Bạn có thích việc học không?",
+          "answer": "Mostly yes. Some tasks are difficult, but working with classmates helps me learn faster.",
+          "explanation_en": "Balanced answers sound natural when relevant.",
+          "explanation_vi": "Câu trả lời có cân bằng hợp lý nghe tự nhiên.",
+          "open": true
+        },
+        {
+          "question_en": "Would you like to learn a new skill?",
+          "question_vi": "Bạn muốn học kỹ năng mới?",
+          "answer": "Yes, I would like to learn presentation skills so I can express my ideas more clearly.",
+          "explanation_en": "Explain how it would help you.",
+          "explanation_vi": "Giải thích lợi ích cụ thể.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U03-S11",
+      "skill": "S",
+      "number": 11,
+      "title": "Initial consonant clusters",
+      "instruction_en": "Practise /st/, /sk/, /pl/ in common words.",
+      "instruction_vi": "Luyện cụm phụ âm đầu.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Which word starts with /st/: student / useful?",
+          "question_vi": "Từ bắt đầu /st/?",
+          "answer": "student",
+          "explanation_en": "Do not add a vowel before /st/.",
+          "explanation_vi": "Không chèn nguyên âm trước /st/.",
+          "open": false
+        },
+        {
+          "question_en": "Which word starts with /sk/: skill / school?",
+          "question_vi": "Từ bắt đầu /sk/?",
+          "answer": "both",
+          "explanation_en": "Both start with an /sk/ sound.",
+          "explanation_vi": "Cả skill và school đều mở đầu /sk/.",
+          "open": false
+        },
+        {
+          "question_en": "Which word starts with /pl/: plan / learn?",
+          "question_vi": "Từ bắt đầu /pl/?",
+          "answer": "plan",
+          "explanation_en": "Plan has both /p/ and /l/ at the start.",
+          "explanation_vi": "Plan gồm cả /p/ và /l/ ở đầu.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S12",
+      "skill": "S",
+      "number": 12,
+      "title": "Introduce Speaking Part 2",
+      "instruction_en": "Choose the clearest one-sentence opening.",
+      "instruction_vi": "Chọn câu mở Part 2 tự nhiên.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "A I will tell you about learning to swim. B I have no idea what to say.",
+          "question_vi": "Câu mở nào tốt hơn?",
+          "answer": "A",
+          "explanation_en": "A announces the topic clearly.",
+          "explanation_vi": "Câu A giới thiệu rõ chủ đề.",
+          "open": false
+        },
+        {
+          "question_en": "What tense would suit a completed learning experience?",
+          "question_vi": "Kể trải nghiệm học xong dùng thì gì?",
+          "answer": "past simple",
+          "explanation_en": "Use past simple for completed past events.",
+          "explanation_vi": "Quá khứ đơn kể sự kiện đã kết thúc.",
+          "open": false
+        },
+        {
+          "question_en": "How long is the usual preparation time?",
+          "question_vi": "Thời gian chuẩn bị Speaking Part 2?",
+          "answer": "one minute",
+          "explanation_en": "IELTS Part 2 allows one minute to prepare.",
+          "explanation_vi": "Part 2 có 1 phút chuẩn bị.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S13",
+      "skill": "S",
+      "number": 13,
+      "title": "Identify suitable Part 2 topics",
+      "instruction_en": "Classify the topics: personal learning experience or general debate.",
+      "instruction_vi": "Phân loại chủ đề phù hợp Part 2.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Describe a time you learned to cook. Suitable?",
+          "question_vi": "Kể lần bạn học nấu ăn có phù hợp?",
+          "answer": "Yes",
+          "explanation_en": "It is a personal experience with a clear narrative.",
+          "explanation_vi": "Đây là trải nghiệm cá nhân.",
+          "open": false
+        },
+        {
+          "question_en": "Discuss global unemployment policies. Suitable as a basic experience cue card?",
+          "question_vi": "Phân tích chính sách thất nghiệp toàn cầu phù hợp không?",
+          "answer": "No",
+          "explanation_en": "This is an abstract debate, not a personal event.",
+          "explanation_vi": "Đây là tranh luận trừu tượng.",
+          "open": false
+        },
+        {
+          "question_en": "Describe your first day at a new school. Suitable?",
+          "question_vi": "Kể ngày đầu ở trường mới?",
+          "answer": "Yes",
+          "explanation_en": "It has a specific time and events.",
+          "explanation_vi": "Có thời gian và diễn biến cụ thể.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S14",
+      "skill": "S",
+      "number": 14,
+      "title": "Understand the Part 2 procedure",
+      "instruction_en": "Put the phases in correct order.",
+      "instruction_vi": "Sắp xếp quy trình Part 2.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "What comes first: cue card / two-minute talk?",
+          "question_vi": "Bước đầu là nhận thẻ hay nói?",
+          "answer": "cue card",
+          "explanation_en": "The examiner provides the task before preparation.",
+          "explanation_vi": "Giám khảo đưa thẻ trước.",
+          "open": false
+        },
+        {
+          "question_en": "What follows the cue card: notes / final questions?",
+          "question_vi": "Sau thẻ là ghi chú hay câu hỏi?",
+          "answer": "notes",
+          "explanation_en": "The candidate receives one minute to plan.",
+          "explanation_vi": "Thí sinh có 1 phút chuẩn bị.",
+          "open": false
+        },
+        {
+          "question_en": "What happens after the long turn?",
+          "question_vi": "Sau phần nói dài là gì?",
+          "answer": "follow-up question(s)",
+          "explanation_en": "The examiner may ask brief follow-up question(s).",
+          "explanation_vi": "Giám khảo có thể hỏi 1–2 câu phụ.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S15",
+      "skill": "S",
+      "number": 15,
+      "title": "Underline Part 2 prompts",
+      "instruction_en": "Identify four cue-card areas.",
+      "instruction_vi": "Nhận diện bốn ý của cue card.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Describe a time you learned something new: WHAT must you say?",
+          "question_vi": "Ý WHAT yêu cầu gì?",
+          "answer": "what you learned",
+          "explanation_en": "State the skill/knowledge you learned.",
+          "explanation_vi": "Nêu kỹ năng/kiến thức đã học.",
+          "open": false
+        },
+        {
+          "question_en": "HOW must you say?",
+          "question_vi": "Ý HOW yêu cầu gì?",
+          "answer": "how you learned it",
+          "explanation_en": "Explain method, teacher or practice.",
+          "explanation_vi": "Nêu cách học/người hướng dẫn/luyện tập.",
+          "open": false
+        },
+        {
+          "question_en": "WHY/how did you feel?",
+          "question_vi": "Ý cuối yêu cầu gì?",
+          "answer": "how you felt / why it mattered",
+          "explanation_en": "End with a personal response.",
+          "explanation_vi": "Kết bằng cảm nhận cá nhân.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S16",
+      "skill": "S",
+      "number": 16,
+      "title": "Turn notes into a coherent plan",
+      "instruction_en": "Match cue-card areas with short notes.",
+      "instruction_vi": "Ghép gợi ý với ghi chú ngắn.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "WHAT: choose a skill.",
+          "question_vi": "Chọn một kỹ năng đã học.",
+          "answer": "video editing",
+          "explanation_en": "A specific skill is easier to describe.",
+          "explanation_vi": "Kỹ năng cụ thể dễ triển khai.",
+          "open": true
+        },
+        {
+          "question_en": "HOW: list two stages.",
+          "question_vi": "Liệt kê hai bước học.",
+          "answer": "watched tutorials; practised with classmates",
+          "explanation_en": "Sequence words help the listener follow.",
+          "explanation_vi": "Từ nối trình tự giúp bài nói mạch lạc.",
+          "open": true
+        },
+        {
+          "question_en": "RESULT/FEELING: note one outcome.",
+          "question_vi": "Kết quả và cảm xúc.",
+          "answer": "finished a film; felt proud",
+          "explanation_en": "Result and feeling make the ending meaningful.",
+          "explanation_vi": "Kết quả và cảm xúc làm phần kết rõ ràng.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U03-S17",
+      "skill": "S",
+      "number": 17,
+      "title": "Introduce your story",
+      "instruction_en": "Write natural opening sentences.",
+      "instruction_vi": "Viết câu mở tự nhiên.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Start with “I would like to describe...”",
+          "question_vi": "Mở bằng I would like to describe...",
+          "answer": "I would like to describe a time I learned to edit a short video.",
+          "explanation_en": "The opening is specific and directly answers the card.",
+          "explanation_vi": "Câu mở cụ thể, bám thẻ.",
+          "open": true
+        },
+        {
+          "question_en": "Introduce when it happened.",
+          "question_vi": "Nói khi nào diễn ra.",
+          "answer": "It happened last year during a school project.",
+          "explanation_en": "Add a time reference to anchor the story.",
+          "explanation_vi": "Nêu mốc thời gian cho chuyện.",
+          "open": true
+        },
+        {
+          "question_en": "Give your starting difficulty.",
+          "question_vi": "Nêu khó khăn ban đầu.",
+          "answer": "At first, I did not know how to use the software.",
+          "explanation_en": "A small challenge helps form a narrative.",
+          "explanation_vi": "Thử thách tạo diễn biến câu chuyện.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U03-S18",
+      "skill": "S",
+      "number": 18,
+      "title": "Use a model to complete Part 2 notes",
+      "instruction_en": "Listen to Track E and find the details.",
+      "instruction_vi": "Nghe mẫu E và điền nội dung ghi chú.",
+      "track": "E",
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "What skill did the student learn?",
+          "question_vi": "Bạn học kỹ năng gì?",
+          "answer": "video editing",
+          "explanation_en": "Track E opens with learning to edit videos.",
+          "explanation_vi": "Đầu bài E nói video editing.",
+          "open": false
+        },
+        {
+          "question_en": "Who helped the student?",
+          "question_vi": "Ai giúp bạn?",
+          "answer": "a classmate",
+          "explanation_en": "The classmate explained subtitles and sound.",
+          "explanation_vi": "Bạn cùng lớp chỉ cách làm phụ đề và âm thanh.",
+          "open": false
+        },
+        {
+          "question_en": "How long did the project take?",
+          "question_vi": "Dự án kéo dài bao lâu?",
+          "answer": "two weeks",
+          "explanation_en": "The student says after two weeks they finished.",
+          "explanation_vi": "Sau hai tuần họ hoàn thành.",
+          "open": false
+        },
+        {
+          "question_en": "How did the student feel?",
+          "question_vi": "Bạn cảm thấy thế nào?",
+          "answer": "proud",
+          "explanation_en": "The model explicitly says felt proud.",
+          "explanation_vi": "Bài mẫu nói felt proud.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "id": "U03-S19",
+      "skill": "S",
+      "number": 19,
+      "title": "Plan your own Part 2",
+      "instruction_en": "Prepare a four-part cue-card outline.",
+      "instruction_vi": "Chuẩn bị dàn ý 4 phần theo trải nghiệm cá nhân.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "WHAT did you learn?",
+          "question_vi": "Bạn học gì?",
+          "answer": "I learned to prepare a basic presentation.",
+          "explanation_en": "Choose one clear event, not several unrelated skills.",
+          "explanation_vi": "Chọn một sự kiện cụ thể.",
+          "open": true
+        },
+        {
+          "question_en": "HOW did you learn it?",
+          "question_vi": "Bạn học như thế nào?",
+          "answer": "I practised with a friend and watched two tutorials.",
+          "explanation_en": "Use 2 stages and sequence them.",
+          "explanation_vi": "Nêu 2 bước theo trình tự.",
+          "open": true
+        },
+        {
+          "question_en": "HOW did you feel?",
+          "question_vi": "Bạn cảm thấy thế nào?",
+          "answer": "I was nervous at first but pleased with my progress.",
+          "explanation_en": "Contrast early and later feelings.",
+          "explanation_vi": "Đối chiếu cảm xúc ban đầu và sau này.",
+          "open": true
+        }
+      ]
+    },
+    {
+      "id": "U03-S20",
+      "skill": "S",
+      "number": 20,
+      "title": "Final two-minute Part 2 simulation",
+      "instruction_en": "Speak up to two minutes about learning a new skill.",
+      "instruction_vi": "Nói tối đa hai phút về lần học kỹ năng mới.",
+      "track": null,
+      "passage": null,
+      "visual": null,
+      "items": [
+        {
+          "question_en": "Opening: what and when.",
+          "question_vi": "Mở bài nêu điều học và lúc nào.",
+          "answer": "I would like to talk about learning basic photography last summer.",
+          "explanation_en": "Introduce one event clearly.",
+          "explanation_vi": "Giới thiệu sự kiện rõ ràng.",
+          "open": true
+        },
+        {
+          "question_en": "Body: how you learned and one problem.",
+          "question_vi": "Thân bài nêu cách học và một khó khăn.",
+          "answer": "I watched short lessons, practised outside and struggled with lighting at first.",
+          "explanation_en": "Develop a short narrative, not a list of adjectives.",
+          "explanation_vi": "Kể quá trình ngắn thay vì liệt kê tính từ.",
+          "open": true
+        },
+        {
+          "question_en": "Ending: result and feeling.",
+          "question_vi": "Kết bài nêu kết quả và cảm xúc.",
+          "answer": "I can now take better photos, and I feel more confident.",
+          "explanation_en": "End on a personal result.",
+          "explanation_vi": "Kết bằng kết quả của bản thân.",
+          "open": true
+        }
+      ]
+    }
+  ],
+  "writing_models": [
+    {
+      "title": "Task 1: Comparing course completion rates",
+      "source": "chart-final",
+      "text": "The bar chart compares the percentages of students who completed four types of courses in 2022 and 2024.\n\nOverall, completion rates increased in all subjects, although the rise in design was very small. Health had the highest rate in both years, while business recorded the lowest figure in 2022.\n\nIn 2022, 77% of learners finished the health course, compared with 72% in design and 68% in computing. Business had the lowest rate, at 60%. By 2024, health completion had reached 83%, and computing had climbed to 80%. Business also increased markedly, from 60% to 74%. In contrast, design rose by only one percentage point to 73%.\n\nThe gap between the highest and lowest subject rates therefore narrowed from 17 percentage points in 2022 to 10 in 2024.",
+      "vi": "Mở bài diễn đạt lại đề; Overview nêu mọi nhóm tăng, Health cao nhất và Design tăng ít. Hai đoạn thân bài so sánh số liệu chính xác giữa 2022 và 2024. Không thêm nguyên nhân không có trong biểu đồ."
+    }
+  ],
+  "speaking_models": []
+}
