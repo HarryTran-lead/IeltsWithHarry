@@ -111,7 +111,8 @@ export async function backfillNews(pages: number[]) {
 
 export async function syncNews({ scheduled = false }: { scheduled?: boolean } = {}) {
   const db = newsAdminClient();
-  if (scheduled && !(await loadNewsSettings(db)).auto_sync_enabled) return [];
+  const settings = await loadNewsSettings(db);
+  if (scheduled && !settings.auto_sync_enabled) return [];
   const { data: sources, error } = await db.from("news_sources").select("*").eq("enabled", true).order("created_at").limit(25);
   if (error) throw error;
   const results: { source: string; status: string; fetched: number; inserted: number; error?: string }[] = [];
@@ -135,15 +136,20 @@ export async function syncNews({ scheduled = false }: { scheduled?: boolean } = 
         fetched += count.fetched; inserted += count.inserted;
       }
       let archiveNextPage = source.archive_next_page;
-      // Two older pages per sync, in order. The cursor advances only after
-      // successful ingestion.
+      // Archive pages can arrive much faster than the daily quiz budget.
+      // Keep reading the live feed, but pause archive import until the quiz
+      // queue is small enough to process within a day.
       if (source.feed_url === nasaArchiveFeed && archiveNextPage) {
-        for (let step = 0; step < 2 && archiveNextPage <= 4000; step++) {
+        const { data: pendingQuizzes, error: backlogError } = await db.rpc("news_pending_quiz_count");
+        if (backlogError || typeof pendingQuizzes !== "number") throw backlogError ?? new Error("Quiz backlog count unavailable");
+        if (pendingQuizzes < settings.daily_quiz_limit && archiveNextPage <= 4000) {
           const archive = await providers.rss.fetch(source, fetch, archiveNextPage);
-          if (!archive.items.length) { archiveNextPage = null; break; }
-          const count = await ingest(db, archive, true);
-          fetched += count.fetched; inserted += count.inserted;
-          archiveNextPage++;
+          if (!archive.items.length) archiveNextPage = null;
+          else {
+            const count = await ingest(db, archive, true);
+            fetched += count.fetched; inserted += count.inserted;
+            archiveNextPage++;
+          }
         }
       }
       // A page problem must not fail the sync; the article is pruned only once its page proves unusable.

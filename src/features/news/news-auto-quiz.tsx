@@ -58,12 +58,13 @@ export function QuestionTypePicker({ available, selected, onChange }: { availabl
   </div>;
 }
 
-export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAvailable, onProgress }: {
+export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAvailable, onProgress, onStatus }: {
   articleId: string;
   types?: QuestionType[];
   onTypesChange?: (next: QuestionType[]) => void;
   onAvailable?: (available: TypeCount[]) => void;
   onProgress?: (answered: boolean[], correct: (boolean | undefined)[]) => void;
+  onStatus?: (status: "ready" | "pending" | "error") => void;
 }) {
   const db = useMemo(() => createClient(), []);
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -90,9 +91,10 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
       db.rpc("news_auto_quiz_last_result", { p_article_id: articleId }),
     ]).then(([loaded, last]) => {
       if (!live) return;
-      if (loaded.error) { setError("Chưa tải được câu hỏi của bài này."); return; }
+      if (loaded.error) { setError("Chưa tải được câu hỏi của bài này."); onStatus?.("error"); return; }
       const list = (loaded.data ?? []) as Question[];
       setQuestions(list);
+      onStatus?.(list.length ? "ready" : "pending");
       setQuestionHighlights(Object.fromEntries(list.map((question) => {
         let raw: string | null = null;
         try { raw = localStorage.getItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`); } catch { /* Optional device storage. */ }
@@ -110,7 +112,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
       setDuration(previous.durationSeconds ?? null);
     });
     return () => { live = false; };
-  }, [articleId, db]);
+  }, [articleId, db, onStatus]);
 
   // This article's past attempts, for "so với lần trước" and the attempt list.
   useEffect(() => {
