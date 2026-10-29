@@ -8,6 +8,7 @@ import { Sticker, Tape } from "@/components/stickers/stickers";
 import type { StageCourse } from "./stage-courses";
 import { speakEnglishText, type PackageActivity, type PackageLesson } from "./course-package-practice";
 import { resultTone, type PracticeResult } from "./practice-results";
+import { starterSupplementFor } from "@/lib/starter-supplement";
 
 export type BookUnit = StageCourse["units"][number];
 export type BookLesson = BookUnit["lessons"][number];
@@ -615,12 +616,14 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     const label = unitLabel(page.unit, course);
     const title = splitUnitTitle(page.unit.title);
     const color = unitColor(page.unitIndex);
+    const supplement = starterSupplementFor(course.slug, page.unit.sort_order);
     return <div className={`bk-page is-${side} bk-unit-art`} style={{ "--unit": color } as CSSProperties}>
       <div className="bk-unit-label"><span>{label.starter ? "START" : `UNIT/${label.number}:`}</span><strong>{title.en}</strong></div>
       {title.vi && <p className="bk-unit-vi">{title.vi}</p>}
       <div className="bk-unit-photo-wrap"><Tape tone="sun" /><TopicArt topic={page.unit.title} unitSlug={page.unit.slug} variant="unit" className="bk-unit-photo" /></div>
       <div className="bk-unit-learn">
         <b>IN THIS UNIT YOU WILL</b>
+        {supplement && <p className="bk-unit-supplement-summary">{supplement.summaryVi}</p>}
         <ul>{page.unit.lessons.map((lesson) => <li key={lesson.id} style={{ "--tone": themeOf(lesson.skill).color } as CSSProperties}><i />{lessonShortTitle(lesson)}</li>)}</ul>
       </div>
     </div>;
@@ -631,7 +634,8 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     const title = splitUnitTitle(page.unit.title);
     const color = unitColor(page.unitIndex);
     const done = page.unit.lessons.filter(isDone).length;
-    return <div className={`bk-page is-${side} bk-unit-overview`} style={{ "--unit": color } as CSSProperties}>
+    const supplement = starterSupplementFor(course.slug, page.unit.sort_order);
+    return <div className={`bk-page is-${side} bk-unit-overview ${supplement ? "has-supplement" : ""}`} style={{ "--unit": color } as CSSProperties}>
       <div className="bk-page-body">
         <div className="bk-overview-head">
           <div><p className="bk-kicker" style={{ color }}>{label.short} · Tổng quan</p><h3 className="bk-title">{title.en}</h3></div>
@@ -649,7 +653,12 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
           </button></li>;
         })}</ol>
         {ctx.hasChecks && !label.starter && <button type="button" className="bk-check-link" onClick={() => ctx.openCheck(`${page.unit.slug}-check`, `Kiểm tra ${label.short}`)}><Ticket size={16} /> Kiểm tra {label.short} — làm sau khi xong {page.unit.lessons.length} bài</button>}
-        <div className="bk-notes"><span className="bk-hand">Ghi chú: viết 3 từ bạn đã biết về chủ đề này…</span><i /><i /><i /><i /></div>
+        {supplement ? <div className="bk-supplement-card">
+          <small>HỌC LIỆU BỔ SUNG · UNIT {supplement.order}</small>
+          <p>{supplement.summaryVi}</p>
+          <span>{supplement.activityCount} nhóm bài tập · {supplement.itemCount} câu / hoạt động · {supplement.tracks.length} audio</span>
+          <Link href={`/app/learn/ielts-starter/supplement/${supplement.id.toLowerCase()}`}>Đọc nội dung đầy đủ và nghe audio <ArrowRight size={14} /></Link>
+        </div> : <div className="bk-notes"><span className="bk-hand">Ghi chú: viết 3 từ bạn đã biết về chủ đề này…</span><i /><i /><i /><i /></div>}
       </div>
       <Folio number={index} label={label.short.toUpperCase()} side={side} color={color} />
     </div>;

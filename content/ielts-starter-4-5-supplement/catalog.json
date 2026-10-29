@@ -1,0 +1,175 @@
+{
+  "schema": "english-skill-lab-course-catalog/v1",
+  "course_id": "esl-ielts-starter-b4-b5-u01-u08",
+  "course_name": "IELTS Starter 4.0–5.0 · Eight units",
+  "language": [
+    "en",
+    "vi"
+  ],
+  "unit_count": 8,
+  "units": [
+    {
+      "id": "U01",
+      "title": "Relationships",
+      "band": "4.0-5.0",
+      "content": "units/U01/unit.json",
+      "learner_pdf": "units/U01/student.pdf",
+      "teacher_pdf": "units/U01/teacher_key.pdf",
+      "offline_html": "units/U01/offline.html",
+      "exercise_groups": 49,
+      "items": 132,
+      "exercise_groups_by_skill": {
+        "R": 12,
+        "W": 11,
+        "L": 13,
+        "S": 13
+      },
+      "has_audio": true,
+      "source_zip_name": "English_Skill_Lab_Band_4.0-5.0_U1_U2_UPGRADED.zip",
+      "copyright": "original supplementary data (NOT publisher scans/audio)"
+    },
+    {
+      "id": "U02",
+      "title": "Places and Buildings",
+      "band": "4.0-5.0",
+      "content": "units/U02/unit.json",
+      "learner_pdf": "units/U02/student.pdf",
+      "teacher_pdf": "units/U02/teacher_key.pdf",
+      "offline_html": "units/U02/offline.html",
+      "exercise_groups": 58,
+      "items": 205,
+      "exercise_groups_by_skill": {
+        "R": 13,
+        "W": 15,
+        "L": 15,
+        "S": 15
+      },
+      "has_audio": true,
+      "source_zip_name": "English_Skill_Lab_Band_4.0-5.0_U1_U2_UPGRADED.zip",
+      "copyright": "original supplementary data (NOT publisher scans/audio)"
+    },
+    {
+      "id": "U03",
+      "title": "Education and Employment",
+      "band": "4.0-5.0",
+      "content": "units/U03/unit.json",
+      "learner_pdf": "units/U03/student.pdf",
+      "teacher_pdf": "units/U03/teacher_key.pdf",
+      "offline_html": "units/U03/offline.html",
+      "exercise_groups": 56,
+      "items": 173,
+      "exercise_groups_by_skill": {
+        "R": 9,
+        "W": 11,
+        "L": 16,
+        "S": 20
+      },
+      "has_audio": true,
+      "source_zip_name": "English_Skill_Lab_IELTS_4.0-5.0_U03_FULL_BILINGUAL.zip",
+      "copyright": "original supplementary data (NOT publisher scans/audio)"
+    },
+    {
+      "id": "U04",
+      "title": "Food and Drink",
+      "band": "4.0-5.0",
+      "content": "units/U04/unit.json",
+      "learner_pdf": "units/U04/student.pdf",
+      "teacher_pdf": "units/U04/teacher_key.pdf",
+      "offline_html": "units/U04/offline.html",
+      "exercise_groups": 49,
+      "items": 174,
+      "exercise_groups_by_skill": {
+        "R": 10,
+        "W": 15,
+        "L": 12,
+        "S": 12
+      },
+      "has_audio": true,
+      "source_zip_name": "English_Skill_Lab_IELTS_4.0-5.0_U04_FULL_BILINGUAL.zip",
+      "copyright": "original supplementary data (NOT publisher scans/audio)"
+    },
+    {
+      "id": "U05",
+      "title": "Consumerism",
+      "band": "4.0-5.0",
+      "content": "units/U05/unit.json",
+      "learner_pdf": "units/U05/student.pdf",
+      "teacher_pdf": "units/U05/teacher_key.pdf",
+      "offline_html": "units/U05/offline.html",
+      "exercise_groups": 49,
+      "items": 160,
+      "exercise_groups_by_skill": {
+        "R": 12,
+        "W": 16,
+        "L": 9,
+        "S": 12
+      },
+      "has_audio": true,
+      "source_zip_name": "English_Skill_Lab_IELTS_4.0-5.0_U05_FULL_BILINGUAL.zip",
+      "copyright": "original supplementary data (NOT publisher scans/audio)"
+    },
+    {
+      "id": "U06",
+      "title": "Leisure Time",
+      "band": "4.0-5.0",
+      "content": "units/U06/unit.json",
+      "learner_pdf": "units/U06/student.pdf",
+      "teacher_pdf": "units/U06/teacher_key.pdf",
+      "offline_html": "units/U06/offline.html",
+      "exercise_groups": 46,
+      "items": 214,
+      "exercise_groups_by_skill": {
+        "R": 12,
+        "W": 12,
+        "L": 10,
+        "S": 12
+      },
+      "has_audio": true,
+      "source_zip_name": "English_Skill_Lab_IELTS_4.0-5.0_U06_FULL_BILINGUAL.zip",
+      "copyright": "original supplementary data (NOT publisher scans/audio)"
+    },
+    {
+      "id": "U07",
+      "title": "Fame and the Media",
+      "band": "4.0-5.0",
+      "content": "units/U07/unit.json",
+      "learner_pdf": "units/U07/student.pdf",
+      "teacher_pdf": "units/U07/teacher_key.pdf",
+      "offline_html": "units/U07/offline.html",
+      "exercise_groups": 41,
+      "items": 199,
+      "exercise_groups_by_skill": {
+        "R": 11,
+        "W": 11,
+        "L": 11,
+        "S": 8
+      },
+      "has_audio": true,
+      "source_zip_name": "English_Skill_Lab_IELTS_4.0-5.0_U07_FULL_BILINGUAL.zip",
+      "copyright": "original supplementary data (NOT publisher scans/audio)"
+    },
+    {
+      "id": "U08",
+      "title": "Natural World",
+      "band": "4.0-5.0",
+      "content": "units/U08/unit.json",
+      "learner_pdf": "units/U08/student.pdf",
+      "teacher_pdf": "units/U08/teacher_key.pdf",
+      "offline_html": "units/U08/offline.html",
+      "exercise_groups": 44,
+      "items": 205,
+      "exercise_groups_by_skill": {
+        "R": 13,
+        "W": 10,
+        "L": 10,
+        "S": 11
+      },
+      "has_audio": true,
+      "source_zip_name": "English_Skill_Lab_IELTS_4.0-5.0_U08_Writing_Listening_Speaking_Bilingual.zip",
+      "copyright": "original supplementary data (NOT publisher scans/audio)",
+      "reading_offline_html": "units/U08/reading_offline.html"
+    }
+  ],
+  "editorial_status": "original supplementary, requires local integration QA; synthetic audio = demo only",
+  "source_alignment": "User-supplied reference screenshots. Text and questions are independently written."
+}

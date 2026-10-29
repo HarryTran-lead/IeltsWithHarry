@@ -227,6 +227,7 @@
 .bk-unit-photo img { display: block; width: 100%; height: auto; border-radius: 2px; }
 .bk-unit-learn { position: relative; z-index: 2; margin: auto 44px 34px 36px; padding: 14px 18px; border-left: 6px solid #10233f; background: rgba(255, 253, 247, 0.96); box-shadow: 0 10px 20px -14px rgba(0, 0, 0, 0.5); }
 .bk-unit-learn b { display: block; margin-bottom: 8px; font: 800 13px/1.1 var(--font-display), sans-serif; letter-spacing: 0.06em; }
+.bk-unit-supplement-summary { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; margin: 0 0 8px; color: #244661; font-size: 11px; line-height: 1.35; }
 .bk-unit-learn ul { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
 .bk-unit-learn li { display: flex; align-items: baseline; gap: 8px; font-size: 12.5px; }
 .bk-unit-learn li i { flex: none; width: 8px; height: 8px; border-radius: 2px; background: var(--tone); transform: translateY(-1px); }
@@ -244,6 +245,12 @@
 .bk-unit-toc-page { min-width: 22px; font: 800 13px/1 var(--font-display), sans-serif; text-align: right; color: var(--navy); }
 .bk-unit-toc .is-done .bk-unit-toc-page { color: #22a660; }
 .bk-unit-toc .is-here { background: #fff3f1; box-shadow: inset 3px 0 0 #c0392b; }
+.bk-unit-overview.has-supplement .bk-page-body { overflow-y: auto; scrollbar-width: thin; }
+.bk-supplement-card { display: grid; gap: 5px; margin-top: auto; padding: 10px 12px; border: 1px solid color-mix(in srgb, var(--unit) 40%, #fff); border-left: 4px solid var(--unit); border-radius: 9px; background: #f8fbf7; }
+.bk-supplement-card small { color: #0c6670; font: 900 10px/1.2 var(--font-display), sans-serif; letter-spacing: .07em; }
+.bk-supplement-card p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; margin: 0; color: var(--navy); font-size: 11.5px; line-height: 1.35; }
+.bk-supplement-card > span { color: var(--book-muted); font-size: 10.5px; font-weight: 700; }
+.bk-supplement-card a { display: inline-flex; align-items: center; gap: 4px; justify-self: start; color: #087f84; font-size: 11.5px; font-weight: 900; text-decoration: underline; text-underline-offset: 2px; }
 .bk-check-link { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; padding: 8px 12px; border: 1.5px dashed var(--unit); border-radius: 10px; color: var(--navy); font-size: 13px; font-weight: 700; text-decoration: none; }
 .bk-check-link:hover { background: color-mix(in srgb, var(--unit) 8%, #fff); }
 .bk-notes { display: grid; gap: 0; margin-top: auto; }
