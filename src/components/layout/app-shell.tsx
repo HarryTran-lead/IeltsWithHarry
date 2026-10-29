@@ -102,6 +102,7 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     { label: "607 từ IELTS Reading", href: "/app/reading/vocabulary" },
     { label: "Collocations A1–C2", href: "/app/vocabulary/collocations" },
     { label: "Word Formation", href: "/app/vocabulary/word-formation" },
+    { label: "Luyện dịch câu Việt → Anh", href: "/app/vocabulary/translation" },
     { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },
   ],
   grammar: [
