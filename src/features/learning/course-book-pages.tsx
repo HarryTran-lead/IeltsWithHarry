@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { ArrowRight, BookOpenText, Check, Clock3, Headphones, Languages, Lightbulb, Lock, Mic, Pause, PenLine, Play, SpellCheck, Ticket, type LucideIcon } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
@@ -8,6 +9,7 @@ import { Sticker, Tape } from "@/components/stickers/stickers";
 import type { StageCourse } from "./stage-courses";
 import { speakEnglishText, type PackageActivity, type PackageLesson } from "./course-package-practice";
 import { resultTone, type PracticeResult } from "./practice-results";
+import type { SourcePage } from "./starter-book-source";
 
 export type BookUnit = StageCourse["units"][number];
 export type BookLesson = BookUnit["lessons"][number];
@@ -34,6 +36,7 @@ export type BookPage =
   | { kind: "unit-overview"; unit: BookUnit; unitIndex: number }
   | { kind: "lesson-open"; unit: BookUnit; unitIndex: number; lesson: BookLesson; lessonIndex: number }
   | { kind: "lesson-practice"; unit: BookUnit; unitIndex: number; lesson: BookLesson; lessonIndex: number }
+  | (SourcePage & { unit: BookUnit; lesson: BookLesson })
   | { kind: "finish" }
   | { kind: "certificate" }
   | { kind: "back" };
@@ -46,6 +49,7 @@ export type BookContext = {
   contents: Record<string, BookContent | null | undefined>;
   unitStart: Map<string, number>;
   lessonStart: Map<string, number>;
+  sourceStart: Map<string, number>;
   finishPage: number;
   finished: number;
   total: number;
@@ -53,6 +57,7 @@ export type BookContext = {
   finalCheckSlug: string;
   goTo: (page: number) => void;
   openLesson: (lesson: BookLesson) => void;
+  openGroup: (lesson: BookLesson, groupId: string) => void;
   openCheck: (slug: string, title: string) => void;
   results: Record<string, PracticeResult>;
 };
@@ -104,6 +109,7 @@ export function describePage(page: BookPage | undefined, course: StageCourse) {
     case "unit-overview": return `${unitLabel(page.unit, course).short} · Tổng quan`;
     case "lesson-open": return `${unitLabel(page.unit, course).short} · ${lessonShortTitle(page.lesson)}`;
     case "lesson-practice": return `${unitLabel(page.unit, course).short} · ${page.lesson.skill}: bài tập`;
+    case "source-detail": return `${unitLabel(page.unit, course).short} · ${page.lesson.skill}: ${page.title}`;
     case "finish": return "Tổng kết khóa";
     case "certificate": return "Chứng nhận";
   }
@@ -523,8 +529,57 @@ function ProgressRing({ value, total, color }: { value: number; total: number; c
   return <span className="bk-ring" style={{ "--ratio": ratio, "--tone": color } as CSSProperties}><b>{value}</b><small>/{total}</small></span>;
 }
 
+function SourceVisual({ value }: { value: Record<string, unknown> }) {
+  const stages = Array.isArray(value.stages) ? value.stages.map(String) : [];
+  const labels = Array.isArray(value.labels) ? value.labels.map(String) : [];
+  const data = Array.isArray(value.data) ? value.data.map(Number) : [];
+  const series = value.series && typeof value.series === "object" ? Object.entries(value.series as Record<string, number[]>) : [];
+  const panels = Array.isArray(value.panels) ? value.panels as { year?: string; cells?: string[][] }[] : [];
+  return <div className="bk-source-visual">
+    {stages.length > 0 && <ol className="bk-source-flow">{stages.map((stage, index) => <li key={index}><span>{index + 1}</span>{stage}</li>)}</ol>}
+    {labels.length > 0 && <div className="bk-source-chart" role="img" aria-label={String(value.title ?? "Biểu đồ số liệu")}>
+      {labels.map((label, index) => <div key={index}><b>{label}</b><i style={{ width: `${Math.max(3, (data[index] ?? 0) / Math.max(...data, 1) * 100)}%` }} /><span>{data[index] ?? series.map(([name, values]) => `${name}: ${values[index]}`).join(" · ")}</span></div>)}
+    </div>}
+    {panels.map((panel, index) => <div className="bk-source-map" key={index}><b>{panel.year ?? `Bản đồ ${index + 1}`}</b><div>{panel.cells?.map((row, rowIndex) => <div key={rowIndex}>{row.map((cell, cellIndex) => <span key={cellIndex}>{cell}</span>)}</div>)}</div></div>)}
+    {!stages.length && !labels.length && !panels.length && <pre>{JSON.stringify(value, null, 2)}</pre>}
+  </div>;
+}
+
+function SourceDetailPage({ page, index, side, ctx }: { page: Extract<BookPage, { kind: "source-detail" }>; index: number; side: "left" | "right"; ctx: BookContext }) {
+  const theme = themeOf(page.lesson.skill);
+  const label = unitLabel(page.unit, ctx.course);
+  return <div className={`bk-page is-${side} bk-source-detail`} style={{ "--skill": theme.color, "--skill-ink": theme.ink, "--unit": unitColor(page.unitIndex) } as CSSProperties}>
+    <div className="bk-page-body">
+      <p className="bk-kicker">{label.short} · {page.lesson.skill} · {page.type === "group" ? "Bài tập" : "Bài học"}</p>
+      <h3 className="bk-source-title">{page.title}</h3>
+      {page.subtitle && <p className="bk-source-subtitle">{page.subtitle}</p>}
+      <div className="bk-source-content">
+        {page.audioUrl && <AudioChip src={page.audioUrl} title={page.title} script={page.paragraphs?.join(" ")} />}
+        {page.paragraphs?.map((paragraph, paragraphIndex) => <p className="bk-source-paragraph" key={paragraphIndex}>{paragraph}</p>)}
+        {page.visual && <SourceVisual value={page.visual} />}
+        {page.imageUrl && <div className="bk-source-figure"><Image src={page.imageUrl} alt={page.title} width={480} height={480} /></div>}
+        {page.words && <ol className="bk-source-words">{page.words.map(([en, vi], wordIndex) => <li key={wordIndex}><b>{en}</b><span>{vi}</span></li>)}</ol>}
+        {page.steps?.map((step, stepIndex) => <div className="bk-source-step" key={stepIndex}>{step.split("\n").map((line, lineIndex) => lineIndex ? <p key={lineIndex}>{line}</p> : <b key={lineIndex}>{line}</b>)}</div>)}
+        {page.items?.map((item, itemIndex) => <div className="bk-source-question" key={item.id ?? itemIndex}>
+          <b>{(page.itemStart ?? 1) + itemIndex}. {item.question_en ?? item.question}</b>
+          {item.question_vi && <small>{item.question_vi}</small>}
+          {item.options?.length ? <ul>{item.options.map((option, optionIndex) => <li key={optionIndex}>{String.fromCharCode(65 + optionIndex)}. {option}</li>)}</ul> : <span className="bk-source-answer-line" aria-hidden="true" />}
+          <details><summary>{item.open || item.answer_type === "open" ? "Xem đáp án gợi ý" : "Xem đáp án và giải thích"}</summary><strong>{item.answer}</strong>{item.explanation_en && <p>{item.explanation_en}</p>}{item.explanation_vi && <p>{item.explanation_vi}</p>}</details>
+        </div>)}
+      </div>
+      <div className="bk-source-actions">
+        {page.groupId ? <button type="button" className="bk-go" onClick={() => ctx.openGroup(page.lesson, page.groupId!)}>Làm bài tập phần này <ArrowRight size={15} /></button>
+          : <button type="button" className="bk-go" onClick={() => ctx.openLesson(page.lesson)}>Học phần này <ArrowRight size={15} /></button>}
+      </div>
+    </div>
+    <Folio number={index} label={`${label.short.toUpperCase()} / ${page.lesson.skill.toUpperCase()}`} side={side} color={theme.color} />
+  </div>;
+}
+
 export function BookPageView({ page, index, side, ctx }: { page: BookPage; index: number; side: "left" | "right"; ctx: BookContext }) {
   const { course, stage, isDone, current, goTo } = ctx;
+
+  if (page.kind === "source-detail") return <SourceDetailPage page={page} index={index} side={side} ctx={ctx} />;
 
   if (page.kind === "cover" || page.kind === "back") {
     const arts = course.units.slice(0, 4);
@@ -701,7 +756,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
     return <div className={`bk-page is-${side} bk-lesson-practice`} style={style}>
       <div className="bk-page-body">
         <PracticePreview unit={unit} lesson={lesson} content={content} />
-        <div className="bk-practice-foot"><span><Lightbulb size={15} /> Bài đầy đủ mở ngay trên sách, có giải thích đáp án.</span><LessonLink lesson={lesson} label="Làm bài đầy đủ" open={ctx.openLesson} /></div>
+        <div className="bk-practice-foot"><span><Lightbulb size={15} /> Bài đầy đủ mở ngay trên sách, có giải thích đáp án.</span><LessonLink lesson={lesson} label="Làm bài đầy đủ" open={ctx.openLesson} />{ctx.sourceStart.has(lesson.id) && <button type="button" className="bk-linkish" onClick={() => goTo(ctx.sourceStart.get(lesson.id)!)}>Đọc toàn bộ nội dung trên trang sách →</button>}</div>
       </div>
       <Folio number={index} label={folioLabel} side={side} color={theme.color} />
     </div>;

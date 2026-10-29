@@ -25,6 +25,7 @@ function itemOf(group, item, index) {
   return {
     id: item.id ?? `${group.id}-${String(index + 1).padStart(2, "0")}`,
     type: item.open || item.answer_type === "open" ? "short_answer" : item.options?.includes(item.answer) ? "multiple_choice" : "short_answer",
+    open: Boolean(item.open || item.answer_type === "open"),
     prompt: required(item.question_en ?? item.question, `${group.id} question`),
     prompt_vi: item.question_vi || undefined,
     answer: String(required(item.answer, `${group.id} answer`)),
@@ -135,6 +136,23 @@ function supportingContent(source, overviewUnit, kind) {
     examples: items.slice(0, 3).map((item) => item.prompt) };
 }
 
+function assessmentOf(overviewUnit, lessons) {
+  const reading = lessons.reading.passages.find((passage) => passage.questions.length) ?? lessons.reading.passages[0];
+  const listening = lessons.listening.audios.find((track) => track.questions.length) ?? lessons.listening.audios[0];
+  return {
+    title: `Unit ${overviewUnit.order} · ${overviewUnit.title} — Progress Check`,
+    instruction_vi: `Ôn lại bốn kỹ năng từ học liệu English Skill Lab ${overviewUnit.id}.`,
+    stage_warning: "Bài ôn tập nội bộ; kết quả không quy đổi thành điểm IELTS chính thức.",
+    source_course_id: catalog.course_id,
+    auto_scored: [...lessons.writing.activities, ...lessons.speaking.activities].filter((item) => !item.open).slice(0, 6),
+    reading: { id: reading.id, title: reading.title, passage: reading.text, questions: reading.questions.slice(0, 6) },
+    listening: { id: listening.id, title: listening.title, script: listening.script, audio_url: listening.audio_url, questions: listening.questions.slice(0, 6) },
+    writing_task: lessons.writing.task,
+    speaking_task: typeof lessons.speaking.questions[0] === "string" ? lessons.speaking.questions[0] : lessons.speaking.questions[0]?.prompt,
+    review: { vocabulary_recall: lessons.vocabulary.vocabulary.slice(0, 12) },
+  };
+}
+
 const units = overview.units.map((unit) => {
   const source = JSON.parse(readFileSync(resolve(root, `content/ielts-starter-4-5-supplement/units/${unit.id}/unit.json`), "utf8"));
   const lessons = { vocabulary: supportingContent(source, unit, "vocabulary"), grammar: supportingContent(source, unit, "grammar"),
@@ -149,7 +167,7 @@ const units = overview.units.map((unit) => {
     if (displayed.length !== lessons[skill].activities.length || displayed.some((id) => !lessons[skill].activities.some((item) => item.id === id)))
       throw new Error(`${unit.id}: ${skill} items are not all visible in the existing workbook`);
   }
-  return { unit, lessons, groups: source.activities.length, items: sourceIds.length };
+  return { unit, lessons, assessment: assessmentOf(unit, lessons), groups: source.activities.length, items: sourceIds.length };
 });
 
 console.log(JSON.stringify({ mode: apply ? "apply" : "dry-run", units: units.length,
@@ -176,19 +194,30 @@ const dbLessons = data(await db.from("lessons").select("id,slug,skill,unit_id,pu
 if (dbLessons.length !== 48 || dbLessons.some((lesson) => !lesson.published)) throw new Error("Existing book must have 48 published lessons");
 const before = data(await db.from("package_lesson_content").select("lesson_id,content").in("lesson_id", dbLessons.map((lesson) => lesson.id)), "current content");
 if (before.length !== 48) throw new Error("Existing book must have content for all 48 lessons");
+const beforeChecks = data(await db.from("package_assessments").select("id,slug,title,content,published,unit_id").eq("course_id", course.id), "current assessments");
 const backupPath = join(tmpdir(), `ielts-starter-book-before-${new Date().toISOString().replace(/[:.]/g, "-")}.json`);
-writeFileSync(backupPath, JSON.stringify({ course, units: dbUnits, lessons: dbLessons, content: before }));
+writeFileSync(backupPath, JSON.stringify({ course, units: dbUnits, lessons: dbLessons, content: before, assessments: beforeChecks }));
 console.log(`Backup: ${backupPath}`);
-for (const { unit, lessons } of units) {
+for (const { unit, lessons, assessment } of units) {
   const dbUnit = required(dbUnits.find((row) => row.sort_order === unit.order), `${unit.id} database unit`);
   for (const [skill, content] of Object.entries(lessons)) {
     const lesson = required(dbLessons.find((row) => row.unit_id === dbUnit.id && row.skill.toLowerCase() === skill), `${unit.id} ${skill} lesson`);
     data(await db.from("package_lesson_content").upsert({ lesson_id: lesson.id, content }, { onConflict: "lesson_id" }), `content ${lesson.slug}`);
     data(await db.from("lessons").update({ summary: content.aim }).eq("id", lesson.id), `summary ${lesson.slug}`);
   }
+  data(await db.from("package_assessments").upsert({ course_id: course.id, unit_id: dbUnit.id, slug: `${dbUnit.slug}-check`, title: assessment.title, content: assessment, published: true }, { onConflict: "slug" }), `assessment ${dbUnit.slug}`);
   console.log(`${unit.id}: six existing lessons populated`);
 }
+const last = units.at(-1).assessment;
+const final = { ...last, title: "IELTS Starter · Tổng ôn Band 4.0–5.0", instruction_vi: "Tổng ôn học liệu English Skill Lab U01–U08 trước khi chuyển chặng.",
+  auto_scored: units.flatMap(({ assessment }) => assessment.auto_scored.slice(0, 1)),
+  review: { vocabulary_recall: units.flatMap(({ lessons }) => lessons.vocabulary.vocabulary.slice(0, 2)) } };
+data(await db.from("package_assessments").upsert({ course_id: course.id, unit_id: null, slug: "mindsetstarter-final-check", title: final.title, content: final, published: true }, { onConflict: "slug" }), "final assessment");
 const after = data(await db.from("package_lesson_content").select("lesson_id,content").in("lesson_id", dbLessons.map((lesson) => lesson.id)), "verify content");
 if (after.length !== 48 || after.some((row) => row.content?.source_course_id !== catalog.course_id))
   throw new Error("Production verification failed: some lessons still contain the old package");
+const afterChecks = data(await db.from("package_assessments").select("slug,content").eq("course_id", course.id), "verify assessments");
+const expectedChecks = [...dbUnits.map((unit) => `${unit.slug}-check`), "mindsetstarter-final-check"];
+if (expectedChecks.some((slug) => afterChecks.find((row) => row.slug === slug)?.content?.source_course_id !== catalog.course_id))
+  throw new Error("Production verification failed: assessments still contain old content");
 console.log("Published source data in the existing book; course, unit, and lesson IDs unchanged.");
