@@ -30,6 +30,16 @@ SUMMARIES = {
 SKILLS = {"R": "Reading", "W": "Writing", "L": "Listening", "S": "Speaking"}
 
 
+def activity_preview(activity: dict) -> dict:
+    question = next((item.get("question") for item in activity.get("items", [])
+                     if isinstance(item.get("question"), str)), "")
+    return {
+        "title": activity["title"],
+        "instructionVi": activity.get("instruction_vi") or activity.get("instruction_en") or "",
+        "sampleQuestion": question,
+    }
+
+
 def write_bytes(path: Path, data: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(data)
@@ -100,7 +110,9 @@ def main(archive_path: Path) -> None:
                 "activityCount": len(activities),
                 "itemCount": item_count,
                 "skills": [
-                    {"name": name, "count": counts[code], "examples": [a["title"] for a in activities if a.get("skill") == code][:3]}
+                    {"name": name, "count": counts[code],
+                     "examples": [a["title"] for a in activities if a.get("skill") == code][:3],
+                     "previews": [activity_preview(a) for a in activities if a.get("skill") == code][:2]}
                     for code, name in SKILLS.items()
                 ],
                 "pdfUrl": pdf_url,
