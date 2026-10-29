@@ -10,12 +10,12 @@ import { skillMaterialSchema } from "@/lib/skill-material";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { LessonDetail } from "./lesson-detail";
 import { PackageLessonSteps, type PackageLessonProps } from "./course-package-lesson-shell";
-import { CheckOpener, type PackageLesson } from "./course-package-practice";
+import { CheckOpener, OpenResponsePractice, type PackageLesson } from "./course-package-practice";
 import { AssessmentBody, type Assessment } from "./course-assessment";
 import { lessonShortTitle, themeOf, type BookLesson } from "./course-book-pages";
 
 type LessonData = Omit<PackageLessonProps, "packageContent"> & { packageContent: PackageLesson | null };
-export type WorkbookItem = { kind: "lesson"; lesson: BookLesson } | { kind: "check"; slug: string; title: string };
+export type WorkbookItem = { kind: "lesson"; lesson: BookLesson; groupId?: string } | { kind: "check"; slug: string; title: string };
 
 // What was opened in this session stays loaded, so going back to it is instant.
 const loaded = new Map<string, Promise<unknown>>();
@@ -95,7 +95,7 @@ export function BookWorkbook({ item, stageId, position, total, previous, next, o
   const [host] = useState<Element | null>(() => typeof document === "undefined" ? null : document.fullscreenElement ?? document.body);
   const scroller = useRef<HTMLDivElement>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
-  const key = item.kind === "lesson" ? `lesson:${item.lesson.id}` : `check:${item.slug}`;
+  const key = item.kind === "lesson" ? `lesson:${item.lesson.id}:${item.groupId ?? "all"}` : `check:${item.slug}`;
   const path = item.kind === "lesson" ? `/app/lesson/${item.lesson.slug}` : `/app/check/${item.slug}`;
   const theme = item.kind === "lesson" ? themeOf(item.lesson.skill) : { color: "#10233f", ink: "#ffffff" };
 
@@ -130,7 +130,7 @@ export function BookWorkbook({ item, stageId, position, total, previous, next, o
         {item.kind === "lesson" && <TopicArt topic={item.lesson.title} lessonSlug={item.lesson.slug} variant="lesson" badge={false} className="bk-workbook-art" />}
         <div className="bk-workbook-title">
           {item.kind === "lesson" ? <small><b>{item.lesson.skill}</b> · Bài {position}/{total}</small> : <small><b>Kiểm tra</b> · Ôn tập và tự đánh giá</small>}
-          <h2>{item.kind === "lesson" ? lessonShortTitle(item.lesson) : item.title}</h2>
+          <h2>{item.kind === "lesson" ? item.groupId ? `Bài tập · ${lessonShortTitle(item.lesson)}` : lessonShortTitle(item.lesson) : item.title}</h2>
         </div>
         <nav className="bk-workbook-nav" aria-label="Chuyển bài">
           {item.kind === "lesson" && <>
@@ -144,7 +144,7 @@ export function BookWorkbook({ item, stageId, position, total, previous, next, o
       <div ref={scroller} className="bk-workbook-body">
         <CheckOpener.Provider value={onOpenCheck}>
           {item.kind === "lesson"
-            ? <LessonSheet key={key} lesson={item.lesson} next={next} onOpenLesson={onOpenLesson} onClose={onClose} onFinishLesson={onFinishLesson} path={path} scroller={scroller} />
+            ? <LessonSheet key={key} lesson={item.lesson} groupId={item.groupId} next={next} onOpenLesson={onOpenLesson} onClose={onClose} onFinishLesson={onFinishLesson} path={path} scroller={scroller} />
             : <CheckSheet key={key} slug={item.slug} stageId={stageId} onClose={onClose} path={path} />}
         </CheckOpener.Provider>
       </div>
@@ -157,10 +157,26 @@ function SheetState({ error, path }: { error?: string; path: string }) {
     : <div className="bk-workbook-state" aria-busy="true"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>;
 }
 
-function LessonSheet({ lesson, next, onOpenLesson, onClose, onFinishLesson, path, scroller }: { lesson: BookLesson; next?: BookLesson; onOpenLesson: (lesson: BookLesson) => void; onClose: () => void; onFinishLesson?: (nextLesson?: BookLesson) => void; path: string; scroller: React.RefObject<HTMLDivElement | null> }) {
+function LessonSheet({ lesson, groupId, next, onOpenLesson, onClose, onFinishLesson, path, scroller }: { lesson: BookLesson; groupId?: string; next?: BookLesson; onOpenLesson: (lesson: BookLesson) => void; onClose: () => void; onFinishLesson?: (nextLesson?: BookLesson) => void; path: string; scroller: React.RefObject<HTMLDivElement | null> }) {
   const result = useLoaded(`lesson:${lesson.id}`, () => loadLesson(lesson));
   const data = result?.data;
   if (!data) return <SheetState error={result?.error} path={path} />;
+  if (groupId && data.packageContent) {
+    const content = data.packageContent as PackageLesson & { source_groups?: { id: string; title: string; instruction_en?: string; instruction_vi?: string; item_ids: string[] }[] };
+    const group = content.source_groups?.find((entry) => entry.id === groupId);
+    if (group) {
+      const ids = new Set(group.item_ids);
+      const items = content.activities?.filter((activity) => ids.has(activity.id)) ?? [];
+      return <div className="bk-workbook-lesson bk-group-lesson">
+        <p className="eyebrow">{lesson.skill} · {items.length} câu</p>
+        <h3>{group.title}</h3>
+        {group.instruction_en && <p>{group.instruction_en}</p>}
+        {group.instruction_vi && <p>{group.instruction_vi}</p>}
+        <OpenResponsePractice key={groupId} items={items} title={group.title} lessonSlug={lesson.slug} topic={lesson.title} />
+        <div className="package-panel-actions"><button type="button" className="button primary" onClick={onClose}>Xong, về trang sách <ArrowRight size={17} /></button></div>
+      </div>;
+    }
+  }
   const finish: ReactNode = next
     ? <div className="bk-finish-actions">
         <button type="button" className="button subtle" onClick={() => onOpenLesson(next)}>Mở luôn bài tập tiếp theo</button>
