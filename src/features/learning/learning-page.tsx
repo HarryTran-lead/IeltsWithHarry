@@ -22,11 +22,9 @@ import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
 import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
-import { StarterBookPage, StarterSupplementPage } from "./starter-supplement-page";
 import { StageMap, stageStops } from "./stage-map";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
-import { visitedStarterUnitCount } from "@/lib/starter-supplement";
 import { demoMode, lockedLearnerPath, releaseLocks } from "@/lib/runtime";
 import { ProfilePage } from "@/features/account/profile-page";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -103,7 +101,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   const explored = stageLessons.filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
   const nextLesson = stageLessons.find((lesson) => !visited.has(`/app/lesson/${lesson.slug}`) && !submitted.has(lesson.slug));
   const total = stageLessons.length;
-  const stops = stageStops(published.courses, (slug) => visited.has(`/app/lesson/${slug}`) || submitted.has(slug), visitedStarterUnitCount(visited));
+  const stops = stageStops(published.courses, (slug) => visited.has(`/app/lesson/${slug}`) || submitted.has(slug));
   return (
     <div className="content-page learn-overview">
       {selected ? <header className="learn-stage-heading learn-stage-tools">
@@ -953,9 +951,6 @@ export function LearningPage({ section }: { section: string }) {
   const pathname = usePathname();
   const { ready } = useDemo();
   const stageId = section === "learn" ? pathname.split("/")[3] : undefined;
-  if (section === "learn" && stageId === "ielts-starter" && pathname.split("/")[4] === "supplement")
-    return <StarterSupplementPage unitId={pathname.split("/")[5] ?? ""} />;
-  if (section === "learn" && stageId === "ielts-starter") return <StarterBookPage />;
   if (section === "learn") return <LearnOverview stageId={stageId} />;
   if (section === "lesson") return <LessonOverview />;
   if (section === "vocabulary") return <VocabularyPage />;

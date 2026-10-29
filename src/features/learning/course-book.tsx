@@ -2,11 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { createPortal } from "react-dom";
-import { useRouter } from "next/navigation";
 import { AArrowDown, AArrowUp, Bookmark, BookmarkCheck, BookMarked, BookOpen, ChevronLeft, ChevronRight, List, Maximize2, Minimize2, Sparkles, StickyNote, Trash2, Type, Volume2, VolumeX, X, ZoomIn, ZoomOut } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { stages } from "@/lib/demo-data";
-import { STARTER_SOURCE_COURSE_SLUG } from "@/lib/starter-supplement";
 import type { StageCourse } from "./stage-courses";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { BookWorkbook } from "./course-book-lesson";
@@ -134,8 +132,6 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   finalCheckSlug: string;
   toolbarStart?: ReactNode;
 }) {
-  const router = useRouter();
-  const sourceBook = course.slug === STARTER_SOURCE_COURSE_SLUG;
   const { pages, unitStart, lessonStart, finishPage } = useMemo(() => buildPages(course), [course]);
   const last = pages.length - 1;
   const storageKey = `course-book:${course.id}`;
@@ -151,7 +147,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   });
   const [flip, setFlip] = useState<Flip | null>(null);
   // The lesson or check open as a workbook over the book, kept in the hash.
-  const [openItem, setOpenItem] = useState<OpenItem | null>(() => sourceBook ? null : openFromHash());
+  const [openItem, setOpenItem] = useState<OpenItem | null>(openFromHash);
   const [panelTab, setPanelTab] = useState<PanelTab | null>(null);
   const [noteDraft, setNoteDraft] = useState<string | null>(null);
   const [expandedNote, setExpandedNote] = useState<string | null>(null);
@@ -245,27 +241,22 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
 
   // Opening a lesson also turns the book to it, without an animation behind the sheet.
   const openLesson = useCallback((lesson: BookLesson) => {
-    if (sourceBook) {
-      router.push(`/app/learn/ielts-starter/supplement/${lesson.unit_id.toLowerCase()}`);
-      return;
-    }
     setOpenItem({ kind: "lesson", slug: lesson.slug });
     setPanelTab(null);
     const start = lessonStart.get(lesson.id);
     if (start !== undefined && !flipping.current) setPage(start);
-  }, [lessonStart, router, sourceBook]);
+  }, [lessonStart]);
   const openCheck = useCallback((slug: string, title = "Bài kiểm tra") => { setOpenItem({ kind: "check", slug, title }); setPanelTab(null); }, []);
   const closeLesson = useCallback(() => setOpenItem(null), []);
 
   // Practice scores for every lesson in the course, kept fresh while the learner works.
   const lessonSlugKey = course.units.flatMap((unit) => unit.lessons.map((lesson) => lesson.slug)).join(",");
   useEffect(() => {
-    if (sourceBook) return;
     let active = true;
     loadPracticeResults(lessonSlugKey.split(",").filter(Boolean)).then((found) => { if (active) setResults(found); }, () => undefined);
     const unsubscribe = subscribePracticeResults((slug, result) => setResults((previous) => ({ ...previous, [slug]: result })));
     return () => { active = false; unsubscribe(); };
-  }, [lessonSlugKey, sourceBook]);
+  }, [lessonSlugKey]);
 
   // Bookmarks and sticky notes live in the notebook, linked to "/app/learn/<stage>#p=<page>".
   const bookPath = `/app/learn/${course.stage_id}`;
@@ -305,14 +296,13 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
 
   // Load lesson content for the units on screen and the unit after, so the next turn is ready.
   const wantedLessonIds = useMemo(() => {
-    if (sourceBook) return [];
     const unitIndexes = new Set<number>();
     for (const index of visible) {
       const item = pages[index];
       if (item && "unitIndex" in item) { unitIndexes.add(item.unitIndex); unitIndexes.add(item.unitIndex + 1); }
     }
     return [...unitIndexes].flatMap((unitIndex) => course.units[unitIndex]?.lessons.map((lesson) => lesson.id) ?? []).sort();
-  }, [course.units, pages, sourceBook, visible]);
+  }, [course.units, pages, visible]);
   const contents = useLessonContents(wantedLessonIds);
 
   const ctx: BookContext = { course, stage, isDone, current, contents, unitStart, lessonStart, finishPage, finished, total: lessons.length, hasChecks, finalCheckSlug, goTo, openLesson, openCheck, results };
