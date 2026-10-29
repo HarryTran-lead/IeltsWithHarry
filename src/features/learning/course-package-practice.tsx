@@ -10,6 +10,7 @@ import { createClient } from "@/lib/supabase/browser";
 export type PackageActivity = {
   id: string;
   type: string;
+  open?: boolean;
   prompt: string;
   prompt_vi?: string;
   answer: string;
@@ -255,10 +256,11 @@ export function OpenResponsePractice({
 
   useEffect(() => {
     if (!scoreKey || !report) return;
-    const checked = items.filter((_, index) => revealed[index]).length;
+    const closed = items.filter((item) => !item.open);
+    const checked = items.filter((item, index) => !item.open && revealed[index]).length;
     if (!checked) return;
-    const correct = items.filter((item, index) => revealed[index] && matches(answers[index], item.answer)).length;
-    report(scoreKey, { correct, checked, total: items.length });
+    const correct = items.filter((item, index) => !item.open && revealed[index] && matches(answers[index], item.answer)).length;
+    report(scoreKey, { correct, checked, total: closed.length });
   }, [answers, items, report, revealed, scoreKey]);
 
   if (!items.length) return null;
@@ -321,14 +323,14 @@ export function OpenResponsePractice({
       <div className="guided-practice-dots" aria-label="Chọn câu hỏi">
         {items.map((question, index) => {
           const done = Boolean(revealed[index]);
-          const right = done && matches(answers[index], question.answer);
+          const right = done && !question.open && matches(answers[index], question.answer);
           return (
             <button
               type="button"
               key={`${question.id}-${index}`}
-              aria-label={`Câu ${index + 1}${done ? (right ? ", đúng" : ", cần xem lại") : ""}`}
+              aria-label={`Câu ${index + 1}${done ? question.open ? ", đã xem gợi ý" : right ? ", đúng" : ", cần xem lại" : ""}`}
               aria-current={safeIndex === index ? "step" : undefined}
-              className={`${safeIndex === index ? "active" : ""} ${done ? (right ? "done is-right" : "done is-wrong") : ""}`}
+              className={`${safeIndex === index ? "active" : ""} ${done ? question.open ? "done" : right ? "done is-right" : "done is-wrong" : ""}`}
               onClick={() => setActive(index)}
             >
               {index + 1}
@@ -444,7 +446,7 @@ export function OpenResponsePractice({
             })}
           </div>
         ) : (
-          <label className={`guided-answer ${isRevealed ? (isCorrect ? "is-correct" : "is-wrong") : ""}`}>
+          <label className={`guided-answer ${isRevealed && !item.open ? (isCorrect ? "is-correct" : "is-wrong") : ""}`}>
             Câu trả lời của bạn
             <input
               value={answers[safeIndex] ?? ""}
@@ -466,7 +468,8 @@ export function OpenResponsePractice({
           <div className={`guided-feedback ${isCorrect ? "matched" : "review"}`} role="status">
             <div className="guided-feedback-head">
               <b>
-                {isCorrect
+                {item.open ? "Đáp án gợi ý — hãy tự đối chiếu ý và cách diễn đạt."
+                  : isCorrect
                   ? "✓ Chính xác! Bạn đã trả lời đúng."
                   : "✗ Chưa chính xác — hãy đối chiếu với đáp án đúng màu xanh"}
               </b>
@@ -479,7 +482,7 @@ export function OpenResponsePractice({
               </button>
             </div>
             <p className="guided-feedback-answer">
-              Đáp án biên soạn: <strong className="answer-highlight">{item.answer}</strong>
+              {item.open ? "Câu trả lời tham khảo" : "Đáp án biên soạn"}: <strong className="answer-highlight">{item.answer}</strong>
               {item.location && <span className="guided-location-badge">📍 Dẫn chứng: {item.location}</span>}
             </p>
             {(item.explanation_vi || item.explanation) && (
@@ -506,7 +509,7 @@ export function OpenResponsePractice({
                 disabled={!answers[safeIndex]?.trim()}
                 onClick={() => setRevealed((current) => ({ ...current, [safeIndex]: true }))}
               >
-                Kiểm tra câu này
+                {item.open ? "Xem câu trả lời tham khảo" : "Kiểm tra câu này"}
               </button>
             )}
             {isRevealed && safeIndex < items.length - 1 && (

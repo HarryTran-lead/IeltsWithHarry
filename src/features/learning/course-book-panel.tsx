@@ -93,9 +93,14 @@ export function BookPanel({ course, pages, unitStart, lessonStart, finishPage, v
         });
       });
     });
+    pages.forEach((page, pageNumber) => {
+      if (page.kind !== "source-detail" || found.length >= 60) return;
+      const content = `${page.title} ${page.subtitle ?? ""} ${page.paragraphs?.join(" ") ?? ""} ${page.items?.map((item) => `${item.question_en ?? item.question ?? ""} ${item.question_vi ?? ""}`).join(" ") ?? ""} ${page.words?.map((word) => word.join(" ")).join(" ") ?? ""}`;
+      if (fold(content).includes(needle)) found.push({ key: `s-${pageNumber}`, kind: page.lesson.skill, text: page.title, detail: `${unitLabel(page.unit, course).short} · trang ${pageNumber}`, page: pageNumber, lesson: page.lesson });
+    });
     marks.forEach((mark) => { if (fold(`${mark.title} ${mark.body}`).includes(needle)) found.push({ key: `m-${mark.id}`, kind: mark.kind === "note" ? "Ghi chú" : "Dấu trang", text: mark.kind === "note" ? mark.body : mark.title, detail: `Trang ${mark.page}`, page: mark.page }); });
     return found.slice(0, 60);
-  }, [course, index, lessonStart, marks, query, unitStart]);
+  }, [course, index, lessonStart, marks, pages, query, unitStart]);
 
   // Thumbnails come in spreads on wide screens, single pages on narrow ones.
   const groups = useMemo(() => {
@@ -183,6 +188,7 @@ function MiniPage({ page, mark }: { page: BookPage | undefined; mark?: "bookmark
   if (page.kind === "cover" || page.kind === "back") { style = { background: "var(--board)" }; label = page.kind === "cover" ? "Bìa" : "Bìa sau"; }
   else if (page.kind === "unit-art") { style = { background: unitColor(page.unitIndex) }; label = `U${page.unit.sort_order}`; }
   else if (page.kind === "lesson-open") { style = { "--band": themeOf(page.lesson.skill).color } as CSSProperties; label = page.lesson.skill.slice(0, 5); }
+  else if (page.kind === "source-detail") { style = { "--band": themeOf(page.lesson.skill).color } as CSSProperties; label = page.type === "group" ? "Bài tập" : page.lesson.skill.slice(0, 5); }
   else if (page.kind === "contents") label = "Mục lục";
   return <span className={`bk-mini is-${page.kind}`} style={style}>
     {label && <b>{label}</b>}

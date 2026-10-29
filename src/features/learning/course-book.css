@@ -578,6 +578,41 @@
 .bk-lesson-open .bk-passage, .bk-lesson-practice .bk-passage { padding: 10px 12px; }
 .bk-lesson-open .bk-passage p, .bk-lesson-practice .bk-passage p { margin: 0 0 5px; font-size: 11.5px; line-height: 1.5; -webkit-line-clamp: 6; }
 .bk-passage p b { color: var(--navy); }
+
+/* Additional authored pages use the original paper, skill colour, folio and book controls. */
+.bk-source-detail .bk-page-body { gap: 8px; padding-top: 24px; overflow: hidden; }
+.bk-source-title { margin: 0; font: 800 21px/1.15 var(--font-display), sans-serif; color: var(--navy); }
+.bk-source-subtitle { margin: 0; color: var(--book-muted); font-size: 11px; }
+.bk-source-content { min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #d8ccb2 transparent; padding: 1px 5px 8px 0; }
+.bk-source-paragraph { margin: 0 0 10px; white-space: pre-line; font-size: 12px; line-height: 1.48; }
+.bk-source-actions { flex: none; padding: 8px 0 3px; border-top: 1px solid var(--paper-line); }
+.bk-source-actions .bk-go { height: 33px; padding: 0 12px; font-size: 12px; background: var(--skill); color: var(--skill-ink); border: 0; cursor: pointer; }
+.bk-source-question { padding: 10px 12px; margin-bottom: 9px; border: 1px solid var(--paper-line); border-left: 3px solid var(--skill); background: #fffaf0; font-size: 11.5px; }
+.bk-source-question > b { display: block; line-height: 1.4; }
+.bk-source-question > small { display: block; color: var(--book-muted); margin-top: 3px; }
+.bk-source-question ul { margin: 7px 0; padding-left: 20px; display: grid; gap: 2px; }
+.bk-source-question details { margin-top: 7px; }
+.bk-source-question summary { color: var(--navy); font-weight: 800; cursor: pointer; }
+.bk-source-question details p { margin: 4px 0; }
+.bk-source-answer-line { display: block; border-bottom: 1px solid #c4bba8; width: 80%; margin: 12px 0 3px; }
+.bk-source-words { margin: 0; padding-left: 23px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px 18px; font-size: 11px; }
+.bk-source-words li span { display: block; color: var(--book-muted); }
+.bk-source-step { padding: 9px 12px; margin-bottom: 9px; background: #ecf5f2; border-left: 3px solid var(--skill); font-size: 11.5px; }
+.bk-source-step p { margin: 4px 0 0; }
+.bk-source-flow { list-style: none; display: grid; gap: 6px; margin: 0; padding: 0; }
+.bk-source-flow li { display: flex; align-items: center; gap: 9px; padding: 7px; background: #e6f1f2; font-size: 11.5px; }
+.bk-source-flow li span { flex: none; display: grid; place-items: center; width: 21px; height: 21px; border-radius: 50%; background: var(--skill); color: var(--skill-ink); font-weight: 800; }
+.bk-source-chart { display: grid; gap: 6px; }
+.bk-source-chart > div { display: grid; grid-template-columns: 130px 1fr 78px; gap: 6px; align-items: center; font-size: 10.5px; }
+.bk-source-chart i { display: block; height: 15px; background: var(--skill); min-width: 2px; }
+.bk-source-map { margin: 10px 0; padding: 8px; background: #eff3e8; }
+.bk-source-map > div { display: grid; gap: 2px; }
+.bk-source-map > div > div { display: flex; gap: 2px; }
+.bk-source-map span { flex: 1; min-height: 25px; padding: 3px; border: 1px solid #b7c8af; font-size: 9px; text-align: center; }
+.bk-source-visual pre { white-space: pre-wrap; font-size: 10px; }
+.bk-source-figure img { display: block; max-width: 100%; max-height: 485px; margin: 0 auto; object-fit: contain; }
+.bk-practice-foot:has(.bk-linkish) { flex-wrap: wrap; }
+.bk-practice-foot > .bk-linkish { width: 100%; font-size: 11px; }
 .bk-focus { margin: 0; padding: 7px 10px; border-left: 4px solid var(--skill); background: color-mix(in srgb, var(--skill) 9%, #fff); font-size: 12px; }
 .bk-focus b { margin-right: 6px; font: 800 10.5px/1 var(--font-display), sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
 .bk-focus.is-trap { border-left-color: #e5484d; background: #fff4f3; }

@@ -11,6 +11,7 @@ import { BookWorkbook } from "./course-book-lesson";
 import { BookPanel, type BookMark, type PanelTab } from "./course-book-panel";
 import { loadPracticeResults, subscribePracticeResults, type PracticeResult } from "./practice-results";
 import { BookPageView, describePage, splitUnitTitle, unitColor, unitLabel, type BookContent, type BookContext, type BookLesson, type BookPage } from "./course-book-pages";
+import { starterPagesForLesson } from "./starter-book-source";
 import "./course-book.css";
 import "./course-book-tools.css";
 
@@ -19,7 +20,7 @@ const PAGE_H = 740;
 const FLIP_MS = 760;
 
 type Flip = { dir: 1 | -1; from: number; to: number; riffle: number };
-type OpenItem = { kind: "lesson"; slug: string } | { kind: "check"; slug: string; title: string };
+type OpenItem = { kind: "lesson"; slug: string; groupId?: string } | { kind: "check"; slug: string; title: string };
 const ZOOMS = [1, 1.5, 2, 2.5];
 const BOOKMARK_PREFIX = "Dấu trang";
 
@@ -28,7 +29,7 @@ function openFromHash(): OpenItem | null {
   if (typeof window === "undefined") return null;
   const params = new URLSearchParams(window.location.hash.slice(1));
   const lesson = params.get("l");
-  if (lesson) return { kind: "lesson", slug: lesson };
+  if (lesson) return { kind: "lesson", slug: lesson, groupId: params.get("g") ?? undefined };
   const check = params.get("c");
   return check ? { kind: "check", slug: check, title: params.get("t") ?? "Bài kiểm tra" } : null;
 }
@@ -38,17 +39,32 @@ function buildPages(course: StageCourse) {
   const pages: BookPage[] = [{ kind: "cover" }, { kind: "guide" }, { kind: "contents" }];
   const unitStart = new Map<string, number>();
   const lessonStart = new Map<string, number>();
+  const sourceStart = new Map<string, number>();
+  const legacyPage = new Map<number, number>();
+  let oldPage = 3;
   course.units.forEach((unit, unitIndex) => {
     unitStart.set(unit.id, pages.length);
+    legacyPage.set(oldPage++, pages.length);
+    legacyPage.set(oldPage++, pages.length + 1);
     pages.push({ kind: "unit-art", unit, unitIndex }, { kind: "unit-overview", unit, unitIndex });
     unit.lessons.forEach((lesson, lessonIndex) => {
       lessonStart.set(lesson.id, pages.length);
+      legacyPage.set(oldPage++, pages.length);
+      legacyPage.set(oldPage++, pages.length + 1);
       pages.push({ kind: "lesson-open", unit, unitIndex, lesson, lessonIndex }, { kind: "lesson-practice", unit, unitIndex, lesson, lessonIndex });
+      if (course.slug === "mindsetstarter-topic-practice-4-5") {
+        const sourcePages = starterPagesForLesson(unitIndex, lessonIndex, lesson.id, lesson.skill);
+        if (sourcePages.length) sourceStart.set(lesson.id, pages.length);
+        pages.push(...sourcePages.map((source) => ({ ...source, unit, lesson } as BookPage)));
+      }
     });
   });
   const finishPage = pages.length;
+  legacyPage.set(oldPage++, finishPage);
+  legacyPage.set(oldPage++, finishPage + 1);
+  legacyPage.set(oldPage, finishPage + 2);
   pages.push({ kind: "finish" }, { kind: "certificate" }, { kind: "back" });
-  return { pages, unitStart, lessonStart, finishPage };
+  return { pages, unitStart, lessonStart, sourceStart, legacyPage, finishPage };
 }
 
 // Page 0 is the cover on its own; spread s then shows pages 2s-1 (left) and 2s (right).
@@ -132,9 +148,11 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   finalCheckSlug: string;
   toolbarStart?: ReactNode;
 }) {
-  const { pages, unitStart, lessonStart, finishPage } = useMemo(() => buildPages(course), [course]);
+  const { pages, unitStart, lessonStart, sourceStart, legacyPage, finishPage } = useMemo(() => buildPages(course), [course]);
   const last = pages.length - 1;
   const storageKey = `course-book:${course.id}`;
+  const editionKey = `${storageKey}:edition`;
+  const expanded = course.slug === "mindsetstarter-topic-practice-4-5";
   const shellRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const [layout, setLayout] = useState({ single: false, narrow: false, scale: 1, height: 0 });
@@ -142,7 +160,10 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
     if (typeof window === "undefined") return 0;
     const fromHash = Number(window.location.hash.match(/^#p=(\d+)/)?.[1]);
     const stored = Number(readStored(storageKey));
-    const value = Number.isFinite(fromHash) && window.location.hash ? fromHash : Number.isFinite(stored) ? stored : 0;
+    const fromLink = Number.isFinite(fromHash) && window.location.hash;
+    const raw = fromLink ? fromHash : Number.isFinite(stored) ? stored : 0;
+    const currentEdition = fromLink ? new URLSearchParams(window.location.hash.slice(1)).get("v") === "2" : readStored(editionKey) === "2";
+    const value = expanded && !currentEdition ? legacyPage.get(raw) ?? raw : raw;
     return Math.min(Math.max(0, value), last);
   });
   const [flip, setFlip] = useState<Flip | null>(null);
@@ -213,9 +234,10 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const anchor = layout.single ? page : firstPageOf(spreadOf(page));
   useEffect(() => {
     writeStored(storageKey, String(anchor));
-    const open = !openItem ? "" : openItem.kind === "lesson" ? `&l=${encodeURIComponent(openItem.slug)}` : `&c=${encodeURIComponent(openItem.slug)}&t=${encodeURIComponent(openItem.title)}`;
-    window.history.replaceState(window.history.state, "", `#p=${anchor}${open}`);
-  }, [anchor, openItem, storageKey]);
+    if (expanded) writeStored(editionKey, "2");
+    const open = !openItem ? "" : openItem.kind === "lesson" ? `&l=${encodeURIComponent(openItem.slug)}${openItem.groupId ? `&g=${encodeURIComponent(openItem.groupId)}` : ""}` : `&c=${encodeURIComponent(openItem.slug)}&t=${encodeURIComponent(openItem.title)}`;
+    window.history.replaceState(window.history.state, "", `#p=${anchor}${expanded ? "&v=2" : ""}${open}`);
+  }, [anchor, editionKey, expanded, openItem, storageKey]);
 
   const goTo = useCallback((target: number) => {
     const clamped = Math.min(Math.max(0, target), last);
@@ -246,6 +268,10 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
     const start = lessonStart.get(lesson.id);
     if (start !== undefined && !flipping.current) setPage(start);
   }, [lessonStart]);
+  const openGroup = useCallback((lesson: BookLesson, groupId: string) => {
+    setOpenItem({ kind: "lesson", slug: lesson.slug, groupId });
+    setPanelTab(null);
+  }, []);
   const openCheck = useCallback((slug: string, title = "Bài kiểm tra") => { setOpenItem({ kind: "check", slug, title }); setPanelTab(null); }, []);
   const closeLesson = useCallback(() => setOpenItem(null), []);
 
@@ -262,10 +288,11 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   const bookPath = `/app/learn/${course.stage_id}`;
   const marks = useMemo<BookMark[]>(() => entries.flatMap((entry) => {
     if (entry.kind !== "note" || !entry.sourcePath.startsWith(`${bookPath}#p=`)) return [];
-    const page = Number(entry.sourcePath.slice(bookPath.length + 3).split("&")[0]);
+    const pageFromPath = Number(entry.sourcePath.slice(bookPath.length + 3).split("&")[0]);
+    const page = expanded && !entry.sourcePath.includes("&v=2") ? legacyPage.get(pageFromPath) ?? pageFromPath : pageFromPath;
     if (!Number.isInteger(page) || page < 0 || page > last) return [];
     return [{ id: entry.id, page, kind: entry.title.startsWith(BOOKMARK_PREFIX) ? "bookmark" as const : "note" as const, title: entry.title, body: entry.body }];
-  }), [bookPath, entries, last]);
+  }), [bookPath, entries, expanded, last, legacyPage]);
 
   useEffect(() => {
     if (openItem || panelTab || noteDraft !== null) return;
@@ -305,7 +332,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
   }, [course.units, pages, visible]);
   const contents = useLessonContents(wantedLessonIds);
 
-  const ctx: BookContext = { course, stage, isDone, current, contents, unitStart, lessonStart, finishPage, finished, total: lessons.length, hasChecks, finalCheckSlug, goTo, openLesson, openCheck, results };
+  const ctx: BookContext = { course, stage, isDone, current, contents, unitStart, lessonStart, sourceStart, finishPage, finished, total: lessons.length, hasChecks, finalCheckSlug, goTo, openLesson, openGroup, openCheck, results };
   const openIndex = openItem?.kind === "lesson" ? lessons.findIndex((lesson) => lesson.slug === openItem.slug) : -1;
   const render = (index: number | null, side: "left" | "right") => index === null || !pages[index] ? null : <BookPageView page={pages[index]} index={index} side={side} ctx={ctx} />;
 
@@ -348,13 +375,13 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
 
   function toggleBookmark() {
     if (pageBookmarks.length) { pageBookmarks.forEach((mark) => void removeEntry(mark.id).catch(() => undefined)); return; }
-    void addEntry({ kind: "note", title: `${BOOKMARK_PREFIX} · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: `Đánh dấu trong sách ${course.title}`, meaningVi: "", example: "" }, `${bookPath}#p=${markPage}`).catch(() => undefined);
+    void addEntry({ kind: "note", title: `${BOOKMARK_PREFIX} · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: `Đánh dấu trong sách ${course.title}`, meaningVi: "", example: "" }, `${bookPath}#p=${markPage}${expanded ? "&v=2" : ""}`).catch(() => undefined);
   }
 
   function saveNote() {
     const body = (noteDraft ?? "").trim();
     if (!body) return;
-    void addEntry({ kind: "note", title: `Ghi chú sách · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: body.slice(0, 5000), meaningVi: "", example: "" }, `${bookPath}#p=${markPage}`).catch(() => undefined);
+    void addEntry({ kind: "note", title: `Ghi chú sách · Trang ${markPage} · ${markLabel(markPage)}`.slice(0, 100), body: body.slice(0, 5000), meaningVi: "", example: "" }, `${bookPath}#p=${markPage}${expanded ? "&v=2" : ""}`).catch(() => undefined);
     setNoteDraft(null);
   }
 
@@ -551,7 +578,7 @@ export function CourseBook({ course, isDone, hasChecks, finalCheckSlug, toolbarS
       marks={marks} removeMark={(mark) => void removeEntry(mark.id).catch(() => undefined)} settings={settings}
     /></div>, document.fullscreenElement ?? document.body)}
     {openItem && (openItem.kind === "check" || openIndex >= 0) && <BookWorkbook
-      item={openItem.kind === "lesson" ? { kind: "lesson", lesson: lessons[openIndex] } : openItem}
+      item={openItem.kind === "lesson" ? { kind: "lesson", lesson: lessons[openIndex], groupId: openItem.groupId } : openItem}
       stageId={course.stage_id}
       position={openIndex + 1}
       total={lessons.length}
