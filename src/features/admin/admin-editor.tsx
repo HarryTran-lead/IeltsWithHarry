@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes, LibraryBig, UsersRound, Megaphone, History } from "lucide-react";
+import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes, LibraryBig, UsersRound, Megaphone, History, MessageSquareText } from "lucide-react";
 import { BankAdmin } from "@/features/ielts/bank-admin";
 import { AiContentFactory } from "@/features/ai-factory/ai-content-factory";
 import { Sticker } from "@/components/stickers/stickers";
@@ -45,6 +45,7 @@ const nav = [
   { slug: "news/sources", label: "News sources", icon: Rss },
   { slug: "news/review", label: "News review", icon: ListChecks },
   { slug: "news/articles", label: "Learning articles", icon: BookOpen },
+  { slug: "news/meaning-suggestions", label: "Góp ý nghĩa từ", icon: MessageSquareText },
   { slug: "news/sync-logs", label: "Sync logs", icon: ScrollText },
 ] as const;
 const navGroups = [
@@ -53,7 +54,7 @@ const navGroups = [
   { label: "Nội dung", slugs: ["curriculum", "media"] },
   { label: "IELTS Management", slugs: ["ielts-bank", "ai-content-factory"] },
   { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "vocabulary/ielts-progress", "grammar", "reading", "listening", "writing", "speaking"] },
-  { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/sync-logs"] },
+  { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/meaning-suggestions", "news/sync-logs"] },
 ];
 const descriptions: Record<string, string> = {
   overview: "Quản lý nội dung học tập theo từng kỹ năng và theo dõi trạng thái xuất bản.",
