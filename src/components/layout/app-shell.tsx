@@ -114,6 +114,7 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
       { label: "Full đề", href: "/app/reading?type=full_test", kind: "full" as const },
     ],
     listening: [
+      { label: "1.200 từ Listening", href: "/app/listening/vocabulary" },
       { label: "Bài lẻ", href: "/app/listening?type=part", kind: "parent" as const },
       ...[1, 2, 3, 4].map((part): SkillPracticeLink => ({ label: `Section ${part}`, href: `/app/listening?type=part&part=${part}`, kind: "child" })),
       { label: "Full đề", href: "/app/listening?type=full_test", kind: "full" as const },
@@ -463,7 +464,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
                     {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => {
                       const target = new URL(practice.href, "https://ieltswithharry.local");
                       const selected = examSkill
-                        ? pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
+                        ? target.pathname !== href ? pathname === target.pathname : pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
                         : pathname === target.pathname && (!target.search || searchParams.get("collection") === target.searchParams.get("collection"));
                       const parentSelected = examSkill && practice.kind === "parent" && pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type");
                       return <Link

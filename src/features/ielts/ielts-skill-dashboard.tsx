@@ -102,6 +102,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     { title: "Sentence completion", detail: "Đọc văn bản thật và điền một từ được rút từ chính câu nguồn.", source: "Daily News toàn văn", href: "/app/reading/live", available: hasArticle, icon: FileText, tag: "Có đáp án" },
     { title: "Đọc toàn văn", detail: "Mở bài gốc trong kho Daily News để đọc sâu và lưu từ.", source: latestArticle?.publisher ?? "Daily News", href: latestArticle ? `/app/news/${latestArticle.id}` : "/app/news", available: hasArticle, icon: BookOpen },
   ] : skill === "listening" ? [
+    { title: "1.200 từ vựng Listening", detail: "Học theo 35 chủ đề, nghe chọn nghĩa và chép chính tả với ví dụ song ngữ.", source: "Bộ Listening do chủ dự án cung cấp", href: "/app/listening/vocabulary", available: true, icon: Languages, tag: "1.200 mục" },
     { title: "YouTube Shadowing & Listening Lab", detail: "Luyện shadowing, chép chính tả và câu hỏi với phụ đề được cấp quyền.", source: "Bài học do giáo viên xuất bản", href: "/app/listening/youtube", available: !lockedLearnerPath("/app/listening/youtube"), icon: Headphones, tag: "YouTube" },
     { title: "Nghe và ghi ý chính", detail: "Chọn bản ghi đã kiểm tra file, nghe rồi lưu ghi chú vào Sổ tay.", source: "LibriVox · public domain", href: "/app/listening/live", available: audio.length > 0, icon: AudioLines, tag: "Audio mới" },
   ] : skill === "writing" ? [
@@ -131,6 +132,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
         <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
         <h1>{config.title}</h1>
         <p title={config.intro}>{config.intro}</p>
+        {skill === "listening" && <Link className="ielts-dashboard-start" href="/app/listening/vocabulary">Học 1.200 từ Listening <ArrowRight size={17} /></Link>}
       </div>
       <BankLibrary skill={bankSkill} />
     </main>;

@@ -21,6 +21,7 @@ import { IeltsModePreview } from "@/features/ielts/ielts-mode-preview";
 import { BankStudent } from "@/features/ielts/bank-student";
 import { SpeakingMock } from "@/features/ielts/speaking-mock";
 import { YoutubeLab } from "@/features/listening/youtube-lab";
+import { ListeningVocabularyPage } from "@/features/listening/listening-vocabulary-page";
 import { GrammarGarden } from "@/features/grammar/grammar-garden";
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
@@ -55,6 +56,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <SpeakingMock />
         ) : skill === "listening" && skillMode === "youtube" ? (
           <YoutubeLab />
+        ) : skill === "listening" && skillMode === "vocabulary" ? (
+          <ListeningVocabularyPage />
         ) : skill && (skillMode === "live" || (skill === "writing" && (skillMode === "task-1" || skillMode === "task-2")) || (skill === "speaking" && skillMode === "part-3")) ? (
           <IeltsLivePage key={pathname} skill={skill} mode={skillMode} />
         ) : skill && skillMode === "mode" ? (
