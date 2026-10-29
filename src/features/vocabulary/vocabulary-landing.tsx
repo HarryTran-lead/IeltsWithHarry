@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import {
-  ArrowRight, BookOpen, Bookmark, Brain, CheckCircle2, GraduationCap,
+  ArrowRight, BookOpen, BookOpenCheck, Bookmark, Brain, CheckCircle2, GraduationCap,
   Headphones, Layers3, Puzzle, RotateCcw, Search, Sparkles, Target,
   type LucideIcon,
 } from "lucide-react";
@@ -13,7 +13,7 @@ import { demoMode } from "@/lib/runtime";
 import { useStudiedWords } from "./use-studied-words";
 import "./vocabulary-landing.css";
 
-type Category = "all" | "ielts" | "cefr" | "collocations" | "listening" | "reading" | "families" | "personal";
+type Category = "all" | "ielts" | "cefr" | "collocations" | "listening" | "reading" | "families" | "translation" | "personal";
 type CollectionCard = {
   title: string;
   detail: string;
@@ -32,6 +32,7 @@ const categories: { id: Category; label: string }[] = [
   { id: "listening", label: "IELTS Listening" },
   { id: "reading", label: "IELTS Reading" },
   { id: "families", label: "Word Families" },
+  { id: "translation", label: "Luyện dịch câu" },
   { id: "personal", label: "Từ của tôi" },
 ];
 
@@ -69,6 +70,7 @@ export function VocabularyLanding() {
     { title: "Từ vựng IELTS Listening", detail: "1.200 từ · 35 chủ đề", description: "Luyện nghe, chọn nghĩa và chép chính tả.", href: "/app/vocabulary/listening", category: "listening", icon: Headphones, art: "listening" },
     { title: "Từ vựng IELTS Reading", detail: "607 từ · 11 chủ đề", description: "Học theo câu, ôn SRS và theo lộ trình 84 ngày.", href: "/app/reading/vocabulary", category: "reading", icon: BookOpen, art: "reading" },
     { title: "Word Families", detail: "300 họ từ", description: "Học noun, verb, adjective và adverb cùng nhau.", href: "/app/vocabulary/word-formation", category: "families", icon: Brain, art: "families" },
+    { title: "Luyện dịch câu Việt → Anh", detail: "40 chủ đề · Speaking & Writing", description: "Viết câu, xem bản mẫu và tự đánh giá. Câu mới mở sau khi biên tập.", href: "/app/vocabulary/translation", category: "translation", icon: BookOpenCheck, art: "reading" },
     { title: "Từ đã lưu", detail: `${ready ? saved.toLocaleString("vi-VN") : "…"} từ của bạn`, description: "Mở sổ tay và học lại các từ đã đánh dấu.", href: "/app/vocabulary/review", category: "personal", icon: Bookmark, art: "saved" },
   ];
   const filteredCards = cards.filter((card) => (category === "all" || card.category === category)

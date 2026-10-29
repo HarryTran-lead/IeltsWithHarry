@@ -15,6 +15,7 @@ import { skillMaterialSchema, type SkillName } from "@/lib/skill-material";
 import { AdminNews } from "./admin-news";
 import { VocabularyBank } from "./vocabulary-bank";
 import { VocabularyPhase5 } from "./vocabulary-phase5";
+import { ViEnTranslationReview } from "./vi-en-translation-review";
 import { YoutubeLessonsAdmin } from "./youtube-lessons";
 import { AdminAudit, AdminBroadcast, AdminLearnerDetail, AdminLearners } from "./admin-learners";
 
@@ -31,6 +32,7 @@ const nav = [
   { slug: "vocabulary", label: "Vocabulary", icon: Languages },
   { slug: "vocabulary/library", label: "Kho từ & nhập ZIP", icon: LibraryBig },
   { slug: "vocabulary/ielts-progress", label: "IELTS · tiến độ chủ đề", icon: ListChecks },
+  { slug: "vocabulary/translation", label: "Luyện dịch câu · duyệt", icon: Languages },
   { slug: "grammar", label: "Grammar", icon: BookOpen },
   { slug: "reading", label: "Reading", icon: FileText },
   { slug: "listening", label: "Listening", icon: Headphones },
@@ -53,7 +55,7 @@ const navGroups = [
   { label: "Học viên", slugs: ["users", "users/broadcast", "users/audit"] },
   { label: "Nội dung", slugs: ["curriculum", "media"] },
   { label: "IELTS Management", slugs: ["ielts-bank", "ai-content-factory"] },
-  { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "vocabulary/ielts-progress", "grammar", "reading", "listening", "writing", "speaking"] },
+  { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "vocabulary/ielts-progress", "vocabulary/translation", "grammar", "reading", "listening", "writing", "speaking"] },
   { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/meaning-suggestions", "news/sync-logs"] },
 ];
 const descriptions: Record<string, string> = {
@@ -194,6 +196,7 @@ export function AdminEditor() {
     {section === "listening" && <YoutubeLessonsAdmin />}
     {section === "vocabulary/library" && <VocabularyBank />}
     {section === "vocabulary/ielts-progress" && <VocabularyPhase5 />}
+    {section === "vocabulary/translation" && <ViEnTranslationReview />}
     {section === "media" && <MediaLibrary />}
     {section === "ielts-bank" && <BankAdmin />}
     {section === "ai-content-factory" && <AiContentFactory />}
