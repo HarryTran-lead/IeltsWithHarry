@@ -68,6 +68,9 @@ export function VocabularyHub() {
   const [now, setNow] = useState(() => Date.now());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const parts = pathname.split("/").filter(Boolean).slice(2);
+  const section = parts[0] ?? "overview";
+  const needsHubData = section !== "library" && section !== "study";
 
   useEffect(() => {
     const timer = window.setInterval(() => setNow(Date.now()), 60_000);
@@ -75,6 +78,8 @@ export function VocabularyHub() {
   }, []);
 
   useEffect(() => {
+    // Library and study run their own paginated queries.
+    if (!needsHubData) return;
     let alive = true;
     async function load() {
       if (demoMode) {
@@ -112,7 +117,7 @@ export function VocabularyHub() {
     }
     void load();
     return () => { alive = false; };
-  }, [db]);
+  }, [db, needsHubData]);
 
   const saved = useMemo(() => entries.filter((entry): entry is WordEntry => entry.kind === "word"), [entries]);
   const savedByWord = useMemo(() => new Map(saved.map((entry) => [normalizeWord(entry.title), entry])), [saved]);
@@ -126,8 +131,6 @@ export function VocabularyHub() {
   const reviewedToday = events.filter((event) => new Date(event.reviewed_at).toLocaleDateString("en-CA") === today).length;
   const totalCorrect = attempts.reduce((count, item) => count + item.score, 0);
   const totalQuestions = attempts.reduce((count, item) => count + item.total, 0);
-  const parts = pathname.split("/").filter(Boolean).slice(2);
-  const section = parts[0] ?? "overview";
 
   async function saveWord(term: VocabularyTerm, sourceUrl = "") {
     if (savedByWord.has(normalizeWord(term.word))) return;
@@ -191,7 +194,7 @@ export function VocabularyHub() {
   return <div className={`content-page vocab-hub${section === "study" ? " vocab-hub-study" : ""}`}>
     {section !== "study" && <><header className="vocab-header"><div><span className="eyebrow">IELTSWITHHARRY / VOCABULARY</span><h1>{section === "overview" ? "Học từ vựng hiệu quả hơn" : { learn: "Học từ mới", library: "Kho từ theo topic", notebook: "Từ đã lưu", decks: "Bộ thẻ của bạn", review: "Ôn tập", practice: "Luyện tập", explore: "Tra từ", progress: "Tiến độ từ vựng" }[section] ?? "Từ vựng"}</h1><p>Học theo chủ đề, lưu từ trong bài đọc và ôn lại đúng thời điểm.</p></div><span className="vocab-header-count">{saved.length} từ đã lưu</span></header><Link className="vocab-back" href="/app/vocabulary"><ArrowLeft size={16} /> Chọn cách học</Link></>}
     {(error || notebookError) && <p className="vocab-error" role="alert">{error || notebookError}</p>}
-    {(loading || !notebookReady) ? <div className="vocab-panel">Đang tải từ vựng…</div>
+    {((loading && needsHubData) || (!notebookReady && section !== "study")) ? <div className="vocab-panel">Đang tải từ vựng…</div>
       : section === "overview" ? <Overview {...common} mastered={mastered} reviewedToday={reviewedToday} />
       : section === "learn" && parts[1] ? <WordDetail wordId={parts[1]} terms={terms} savedByWord={savedByWord} saveWord={saveWord} gradeWord={gradeWord} events={events} back={`/app/vocabulary/learn?${searchParams.toString()}`} />
       : section === "learn" ? <Learn terms={terms} savedByWord={savedByWord} />

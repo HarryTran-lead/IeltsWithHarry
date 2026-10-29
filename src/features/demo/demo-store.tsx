@@ -64,18 +64,19 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
           }
         } catch { /* Ignore damaged local demo data. */ }
       } else if (supabase) {
-        const { data: authData, error: authError } = await supabase.auth.getUser();
+        const [authResult, taskResult, attemptResult, draftResult] = await Promise.all([
+          supabase.auth.getUser(),
+          supabase.from("study_tasks").select("*").order("sort_order").order("due_date"),
+          supabase.from("exercise_attempts").select("id,lesson_slug,score,total,submitted_at").order("submitted_at", { ascending: false }).limit(100),
+          supabase.from("writing_drafts").select("body").eq("lesson_slug", "writing-technology").maybeSingle(),
+        ]);
+        const { data: authData, error: authError } = authResult;
         if (authError || !authData.user) {
           setError(authError?.message ?? "Vui lòng đăng nhập để tải dữ liệu học.");
           setReady(true);
           return;
         }
-        const [taskResult, attemptResult, profileResult, draftResult] = await Promise.all([
-          supabase.from("study_tasks").select("*").order("sort_order").order("due_date"),
-          supabase.from("exercise_attempts").select("id,lesson_slug,score,total,submitted_at").order("submitted_at", { ascending: false }).limit(100),
-          supabase.from("profiles").select("daily_goal").eq("id", authData.user.id).maybeSingle(),
-          supabase.from("writing_drafts").select("body").eq("lesson_slug", "writing-technology").maybeSingle(),
-        ]);
+        const profileResult = await supabase.from("profiles").select("daily_goal").eq("id", authData.user.id).maybeSingle();
         const failure = taskResult.error || attemptResult.error || profileResult.error || draftResult.error;
         if (failure) setError(failure.message);
         else {
