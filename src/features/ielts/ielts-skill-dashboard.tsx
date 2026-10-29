@@ -132,7 +132,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
         <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
         <h1>{config.title}</h1>
         <p title={config.intro}>{config.intro}</p>
-        {skill === "listening" && <Link className="ielts-dashboard-start" href="/app/listening/vocabulary">Học 1.200 từ Listening <ArrowRight size={17} /></Link>}
+        {skill === "listening" && <Link className="ielts-dashboard-start" href="/app/listening/vocabulary">Học 1.200 từ IELTS Listening <ArrowRight size={17} /></Link>}
       </div>
       <BankLibrary skill={bankSkill} />
     </main>;

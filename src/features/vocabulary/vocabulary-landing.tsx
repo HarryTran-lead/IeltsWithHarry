@@ -2,77 +2,117 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, BookOpen, Bookmark, Headphones, Layers3, RotateCcw, Search, Shapes, Sparkles } from "lucide-react";
-import { TopicArt } from "@/components/illustrations/topic-art";
+import {
+  ArrowRight, BookOpen, Bookmark, Brain, CheckCircle2, GraduationCap,
+  Headphones, Layers3, Puzzle, RotateCcw, Search, Sparkles, Target,
+  type LucideIcon,
+} from "lucide-react";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import { useStudiedWords } from "./use-studied-words";
-import sourceTopics from "@/lib/vocabulary/source-topics.json";
-import ieltsTopics from "@/lib/vocabulary/ielts-topics.json";
-import ieltsLearningTopics from "@/lib/vocabulary/ielts-learning-topics.json";
-import { cefrLevels } from "@/lib/vocabulary/cefr-levels";
-import { ieltsBands } from "@/lib/vocabulary/ielts-bands";
 import "./vocabulary-landing.css";
 
-type Collection = "ielts" | "cefr";
-const pageSize = 12;
+type Category = "all" | "ielts" | "cefr" | "collocations" | "listening" | "families" | "personal";
+type CollectionCard = {
+  title: string;
+  detail: string;
+  description: string;
+  href: string;
+  category: Category;
+  icon: LucideIcon;
+  art: string;
+};
+
+const categories: { id: Category; label: string }[] = [
+  { id: "all", label: "Tất cả bộ từ" },
+  { id: "ielts", label: "IELTS" },
+  { id: "cefr", label: "A1–C2" },
+  { id: "collocations", label: "Collocations" },
+  { id: "listening", label: "IELTS Listening" },
+  { id: "families", label: "Word Families" },
+  { id: "personal", label: "Từ của tôi" },
+];
 
 export function VocabularyLanding() {
   const { entries, ready } = useNotebook();
   const db = useMemo(() => demoMode ? null : createClient(), []);
   const { studiedCount } = useStudiedWords();
-  const [collection, setCollection] = useState<Collection>("ielts");
-  const [level, setLevel] = useState("");
+  const [counts, setCounts] = useState<{ ielts?: number; cefr?: number }>({});
+  const [category, setCategory] = useState<Category>("all");
   const [query, setQuery] = useState("");
-  const [visibleCount, setVisibleCount] = useState(pageSize);
-  const [libraryCounts, setLibraryCounts] = useState<Partial<Record<Collection, number>>>({});
-  const libraryCount = libraryCounts[collection] ?? null;
   const saved = entries.filter((entry) => entry.kind === "word").length;
-  const topics = useMemo(() => collection === "ielts" ? [...ieltsTopics, ...ieltsLearningTopics] : sourceTopics, [collection]);
-  const filteredTopics = useMemo(() => topics.filter((topic) => topic.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())), [topics, query]);
-  const levels = collection === "ielts" ? ieltsBands : cefrLevels;
-  const studyHref = (topic?: string, mode = "cards") => `/app/vocabulary/study?${new URLSearchParams({ collection, ...(topic ? { topic } : {}), ...(level ? { level } : {}), mode })}`;
+  const total = counts.ielts !== undefined && counts.cefr !== undefined ? counts.ielts + counts.cefr : null;
+  const progress = total && studiedCount !== null ? Math.min(100, Math.round(studiedCount / total * 100)) : 0;
 
   useEffect(() => {
     if (!db) return;
     let active = true;
-    const request = collection === "ielts"
-      ? db.from("ielts_vocabulary_entries").select("source_key", { count: "exact", head: true }).eq("published", true)
-      : db.from("vocabulary_bank_entries").select("source_id", { count: "exact", head: true }).eq("student_visible", true);
-    void request.then(({ count, error }) => { if (active && !error) setLibraryCounts((current) => ({ ...current, [collection]: count ?? 0 })); });
+    void Promise.all([
+      db.from("ielts_vocabulary_entries").select("source_key", { count: "exact", head: true }).eq("published", true),
+      db.from("vocabulary_bank_entries").select("source_id", { count: "exact", head: true }).eq("student_visible", true),
+    ]).then(([ielts, cefr]) => {
+      if (!active) return;
+      setCounts({
+        ...(ielts.error ? {} : { ielts: ielts.count ?? 0 }),
+        ...(cefr.error ? {} : { cefr: cefr.count ?? 0 }),
+      });
+    });
     return () => { active = false; };
-  }, [db, collection]);
+  }, [db]);
+
+  const cards: CollectionCard[] = [
+    { title: "Từ vựng IELTS", detail: `${counts.ielts?.toLocaleString("vi-VN") ?? "…"} từ · 40 chủ đề`, description: "Học từ theo chủ đề và band gợi ý.", href: "/app/vocabulary/study?collection=ielts", category: "ielts", icon: GraduationCap, art: "ielts" },
+    { title: "Từ A1–C2", detail: `${counts.cefr?.toLocaleString("vi-VN") ?? "…"} từ · 36 chủ đề`, description: "Đi từ nền tảng đến nâng cao theo CEFR.", href: "/app/vocabulary/study?collection=cefr", category: "cefr", icon: Layers3, art: "cefr" },
+    { title: "Collocations A1–C2", detail: "988 cụm từ", description: "Ghép từ tự nhiên, xem ví dụ và ôn đúng hạn.", href: "/app/vocabulary/collocations", category: "collocations", icon: Puzzle, art: "collocations" },
+    { title: "Từ vựng IELTS Listening", detail: "1.200 từ · 35 chủ đề", description: "Luyện nghe, chọn nghĩa và chép chính tả.", href: "/app/vocabulary/listening", category: "listening", icon: Headphones, art: "listening" },
+    { title: "Word Families", detail: "300 họ từ", description: "Học noun, verb, adjective và adverb cùng nhau.", href: "/app/vocabulary/word-formation", category: "families", icon: Brain, art: "families" },
+    { title: "Từ đã lưu", detail: `${ready ? saved.toLocaleString("vi-VN") : "…"} từ của bạn`, description: "Mở sổ tay và học lại các từ đã đánh dấu.", href: "/app/vocabulary/review", category: "personal", icon: Bookmark, art: "saved" },
+  ];
+  const filteredCards = cards.filter((card) => (category === "all" || card.category === category)
+    && `${card.title} ${card.detail} ${card.description}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
 
   return <main className="vocabulary-landing">
     <header className="vocabulary-landing-hero">
-      <div><span className="vocabulary-landing-eyebrow">VOCABULARY · BẮT ĐẦU HỌC</span><h1>Hôm nay <em>bạn muốn học gì?</em></h1><p>{libraryCount === null ? "Chọn chủ đề và bắt đầu học." : `${libraryCount.toLocaleString("vi-VN")} từ trong bộ ${collection === "ielts" ? "IELTS" : "A1–C2"}. Chọn chủ đề và bắt đầu học.`}</p></div>
-      <span className="vocabulary-landing-hero-art" aria-hidden="true"><BookOpen size={58} strokeWidth={1.5} /><Sparkles size={23} /></span>
+      <div className="vocabulary-landing-hero-copy">
+        <span className="vocabulary-landing-eyebrow">THƯ VIỆN TỪ VỰNG</span>
+        <h1>Hôm nay <em>bạn muốn học gì?</em></h1>
+        <p>Chọn một bộ từ phù hợp với mục tiêu của bạn, rồi bắt đầu học ngay.</p>
+        <div className="vocabulary-landing-hero-stats" aria-label="Tiến độ từ vựng">
+          <span><BookOpen size={20} /><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><small>từ đã học</small></span>
+          <span><Bookmark size={20} /><strong>{ready ? saved.toLocaleString("vi-VN") : "…"}</strong><small>từ đã lưu</small></span>
+          <span><Layers3 size={20} /><strong>5</strong><small>bộ từ để học</small></span>
+        </div>
+      </div>
+      <div className="vocabulary-landing-hero-art" aria-hidden="true"><span className="book book-one">IELTS</span><span className="book book-two">A1–C2</span><span className="book book-three">LISTENING</span><BookOpen size={68} strokeWidth={1.7} /><Sparkles className="spark" size={25} /></div>
     </header>
 
     <div className="vocabulary-landing-layout">
       <div className="vocabulary-landing-main">
-        <Link className="vocabulary-landing-collocations" href="/app/vocabulary/collocations"><span><strong>Collocations A1–C2</strong><small>988 cụm từ song ngữ · gợi ý học và ôn đúng hạn</small></span><ArrowRight size={21} /></Link>
-        <section className="vocabulary-landing-filters" aria-label="Tìm chủ đề học">
-          <label><span>Bộ từ</span><select value={collection} onChange={(event) => { setCollection(event.target.value as Collection); setLevel(""); setVisibleCount(pageSize); }}><option value="ielts">Từ IELTS · Band 1–7+</option><option value="cefr">Từ A1–C2</option></select></label>
-          <label><span>Trình độ</span><select value={level} onChange={(event) => setLevel(event.target.value)}><option value="">{collection === "ielts" ? "Mọi band gợi ý" : "Mọi mức CEFR"}</option>{levels.map((item) => <option key={item} value={item}>{collection === "ielts" ? `Band ${item}` : item}</option>)}</select></label>
-          <label className="vocabulary-landing-search"><span>Tìm chủ đề</span><Search size={17} /><input value={query} onChange={(event) => { setQuery(event.target.value); setVisibleCount(pageSize); }} placeholder="Tên chủ đề…" /></label>
-        </section>
-
-        <div className="vocabulary-landing-section-head"><div><span className="vocabulary-landing-eyebrow">CHỌN MỘT CHỦ ĐỀ ĐỂ BẮT ĐẦU</span><h2>{collection === "ielts" ? "Chủ đề IELTS" : "Chủ đề A1–C2"} <small>{filteredTopics.length} chủ đề{libraryCount !== null ? ` · ${libraryCount.toLocaleString("vi-VN")} từ trong kho` : ""}</small></h2></div><Link href={`/app/vocabulary/library?collection=${collection}`}>Xem toàn bộ kho từ <ArrowRight size={16} /></Link></div>
-        {filteredTopics.length ? <div className="vocabulary-landing-topic-grid">{filteredTopics.slice(0, visibleCount).map((topic) => <article className="vocabulary-landing-topic" key={topic}>
-          <TopicArt localOnly topic={topic} className="vocabulary-landing-topic-art" badge={false} />
-          <div className="vocabulary-landing-topic-content"><h3>{topic}</h3><span>{collection === "ielts" ? "Từ vựng IELTS" : "Từ vựng CEFR"}{level ? ` · ${collection === "ielts" ? "Band " : ""}${level}` : ""}</span><Link href={studyHref(topic)}>Bắt đầu học <ArrowRight size={16} /></Link></div>
-        </article>)}</div> : <p className="vocabulary-landing-empty">Không tìm thấy chủ đề phù hợp. Thử một từ khóa khác.</p>}
-        {visibleCount < filteredTopics.length && <button className="vocabulary-landing-more" type="button" onClick={() => setVisibleCount((count) => count + pageSize)}>Xem thêm chủ đề <ArrowRight size={16} /></button>}
+        <div className="vocabulary-landing-toolbar">
+          <div className="vocabulary-landing-tabs" role="group" aria-label="Lọc bộ từ">
+            {categories.map((item) => <button key={item.id} type="button" className={category === item.id ? "active" : ""} aria-pressed={category === item.id} onClick={() => setCategory(item.id)}>{item.label}</button>)}
+          </div>
+          <label className="vocabulary-landing-search"><Search size={18} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm bộ từ vựng…" aria-label="Tìm bộ từ vựng" /></label>
+        </div>
+        <div className="vocabulary-landing-section-head"><h2>{category === "all" ? "Tất cả bộ từ vựng" : categories.find((item) => item.id === category)?.label} <small>({filteredCards.length})</small></h2></div>
+        {filteredCards.length ? <div className="vocabulary-landing-card-grid">
+          {filteredCards.map((card) => <Link className="vocabulary-landing-card" href={card.href} key={card.title}>
+            <span className={`vocabulary-landing-card-art ${card.art}`}><card.icon size={52} strokeWidth={1.6} /></span>
+            <span className="vocabulary-landing-card-copy"><strong>{card.title}</strong><small>{card.detail}</small><span>{card.description}</span></span>
+            <span className="vocabulary-landing-card-arrow"><ArrowRight size={18} /></span>
+          </Link>)}
+        </div> : <p className="vocabulary-landing-empty">Không tìm thấy bộ từ phù hợp.</p>}
+        <div className="vocabulary-landing-library-links"><Link href="/app/vocabulary/library?collection=ielts">Khám phá chủ đề IELTS <ArrowRight size={16} /></Link><Link href="/app/vocabulary/library?collection=cefr">Khám phá chủ đề A1–C2 <ArrowRight size={16} /></Link></div>
       </div>
 
-      <aside className="vocabulary-landing-side" aria-label="Công cụ học từ vựng">
-        <section><span className="vocabulary-landing-eyebrow">TIẾN ĐỘ CỦA BẠN</span><h2>Từ đã học</h2><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><p>Đếm từ riêng biệt đã xem nghĩa hoặc làm bài trong tài khoản của bạn.</p><div className="vocabulary-landing-saved">Từ đã lưu <b>{ready ? saved : "…"}</b></div><Link href="/app/vocabulary/review"><RotateCcw size={17} /> Ôn từ đã lưu <ArrowRight size={16} /></Link></section>
-        <section><span className="vocabulary-landing-eyebrow">CÁCH HỌC</span><h2>Chọn cách luyện</h2><Link href={studyHref(undefined, "cards")}><Layers3 size={18} /> Thẻ lật <ArrowRight size={16} /></Link><Link href={studyHref(undefined, "choice")}><BookOpen size={18} /> Trắc nghiệm <ArrowRight size={16} /></Link><Link href={studyHref(undefined, "type")}><Sparkles size={18} /> Gõ từ <ArrowRight size={16} /></Link></section>
-        <section className="vocabulary-landing-quick"><span className="vocabulary-landing-eyebrow">CÔNG CỤ KHÁC</span><Link href="/app/vocabulary/word-formation"><Shapes size={17} /> 300 họ từ Word Formation</Link><Link href="/app/vocabulary/listening"><Headphones size={17} /> 1.200 từ Listening</Link><Link href={`/app/vocabulary/library?collection=${collection}`}><BookOpen size={17} /> Xem kho từ</Link><Link href="/app/vocabulary/notebook"><Bookmark size={17} /> Từ đã lưu</Link><Link href="/app/vocabulary/explore"><Search size={17} /> Tra từ</Link></section>
+      <aside className="vocabulary-landing-side" aria-label="Tiến độ và gợi ý học">
+        <section className="vocabulary-landing-continue"><span className="vocabulary-landing-eyebrow">BẮT ĐẦU NHANH</span><h2>Học từ IELTS hôm nay</h2><p>Chọn chủ đề và band gợi ý, sau đó luyện bằng thẻ hoặc bài tập.</p><Link href="/app/vocabulary/study?collection=ielts">Bắt đầu học <ArrowRight size={17} /></Link></section>
+        <section className="vocabulary-landing-progress"><div className="vocabulary-landing-side-heading"><h2>Tiến độ của bạn</h2><Target size={20} /></div><div className="vocabulary-landing-progress-number"><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><span>/ {total === null ? "…" : total.toLocaleString("vi-VN")} từ trong hai kho IELTS và A1–C2</span></div><div className="vocabulary-landing-progress-track" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label="Tiến độ học từ IELTS và A1–C2"><span style={{ width: `${progress}%` }} /></div><small>{progress}% đã học</small><div className="vocabulary-landing-progress-saved"><Bookmark size={17} /> Từ đã lưu <b>{ready ? saved : "…"}</b></div><Link href="/app/vocabulary/review">Ôn từ đã lưu <ArrowRight size={16} /></Link></section>
+        <section className="vocabulary-landing-suggestion"><span className="vocabulary-landing-eyebrow">GỢI Ý HÔM NAY <Sparkles size={15} /></span><h2>Thử học qua nghe</h2><p>Chọn một trong 35 chủ đề của bộ IELTS Listening và luyện với 1.200 từ.</p><Link href="/app/vocabulary/listening"><Headphones size={18} /> Học IELTS Listening <ArrowRight size={16} /></Link></section>
+        <section className="vocabulary-landing-side-actions"><h2>Luyện theo cách của bạn</h2><Link href="/app/vocabulary/study?collection=ielts&mode=cards"><Layers3 size={18} /> Thẻ lật <ArrowRight size={16} /></Link><Link href="/app/vocabulary/study?collection=ielts&mode=choice"><CheckCircle2 size={18} /> Trắc nghiệm <ArrowRight size={16} /></Link><Link href="/app/vocabulary/review"><RotateCcw size={18} /> Ôn tập <ArrowRight size={16} /></Link></section>
       </aside>
     </div>
-    {collection === "ielts" && <p className="vocabulary-landing-note">Band của bộ IELTS là gợi ý học tập ước lượng, không phải band chính thức của từng từ.</p>}
+    <p className="vocabulary-landing-note">Band trong bộ IELTS là gợi ý học tập ước lượng, không phải band chính thức của từng từ.</p>
   </main>;
 }

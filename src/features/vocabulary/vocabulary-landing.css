@@ -1,73 +1,79 @@
-.vocabulary-landing{width:100%;padding:24px clamp(16px,2.5vw,38px) 48px;color:#173455}
-.vocabulary-landing-eyebrow{color:#078b94;font-size:11px;font-weight:900;letter-spacing:.11em}
-.vocabulary-landing-hero{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:22px}
-.vocabulary-landing-hero h1{font:900 clamp(30px,3.2vw,46px)/1.1 var(--font-display);letter-spacing:-.035em;margin:9px 0}
-.vocabulary-landing-hero h1 em{color:#089fa4;font-style:normal}
-.vocabulary-landing-hero p{margin:0;color:#687f97;line-height:1.5}
-.vocabulary-landing-hero-art{display:grid;place-items:center;position:relative;flex:none;width:110px;height:110px;border-radius:28px;background:linear-gradient(145deg,#d9f7f3,#fff9eb);color:#09a0a6;transform:rotate(-6deg)}
-.vocabulary-landing-hero-art svg:last-child{position:absolute;right:8px;top:8px;color:#f1b147}
-.vocabulary-landing-layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:20px;align-items:start}
-.vocabulary-landing-filters{display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(140px,.8fr) minmax(150px,1fr);gap:10px;padding:12px;border:1px solid #e2ebef;border-radius:18px;background:#fff;box-shadow:0 8px 24px #173d5f08}
-.vocabulary-landing-filters label{position:relative;display:grid;gap:5px;min-width:0;color:#668096;font-size:11px;font-weight:850}
-.vocabulary-landing-filters select,.vocabulary-landing-filters input{width:100%;height:40px;min-width:0;padding:0 10px;border:1px solid #e1eaf0;border-radius:10px;background:#f9fbfc;color:#173455;font:inherit;font-size:13px;font-weight:750}
-.vocabulary-landing-search svg{position:absolute;left:12px;bottom:11px;color:#8299ad}
-.vocabulary-landing-search input{padding-left:37px}
-.vocabulary-landing-section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:22px 2px 12px}
-.vocabulary-landing-section-head h2{margin:4px 0 0;font:900 22px var(--font-display)}
-.vocabulary-landing-section-head h2 small{color:#8194a5;font:700 13px var(--font-display)}
-.vocabulary-landing-section-head>a{display:inline-flex;align-items:center;gap:5px;color:#0b9099;font-size:12px;font-weight:850;text-decoration:none;white-space:nowrap}
-.vocabulary-landing-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.vocabulary-landing-topic{display:flex;flex-direction:column;min-width:0;min-height:228px;padding:12px;border:1px solid #e4ecf0;border-radius:18px;background:#fff;box-shadow:0 8px 22px #173d5f08}
-.vocabulary-landing-topic-art{width:100%;height:94px;border-radius:11px}
-.vocabulary-landing-topic-content{display:flex;flex:1;flex-direction:column;min-width:0}
-.vocabulary-landing-topic h3{min-height:37px;margin:10px 0 4px;font:850 14px/1.3 var(--font-display);overflow-wrap:anywhere}
-.vocabulary-landing-topic-content>span{color:#8194a8;font-size:11px}
-.vocabulary-landing-topic-content>a{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:35px;margin-top:auto;border-radius:9px;background:#0fa4aa;color:#fff;font-size:12px;font-weight:850;text-decoration:none}
-.vocabulary-landing-topic-content>a:hover{background:#087f87}
-.vocabulary-landing-more{display:flex;align-items:center;gap:7px;margin:18px auto 0;padding:10px 16px;border:1px solid #cde6e8;border-radius:11px;background:#fff;color:#078b94;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer}
-.vocabulary-landing-empty{padding:30px;border-radius:14px;background:#fff;color:#647e94}
-.vocabulary-landing-side{display:grid;gap:13px}
-.vocabulary-landing-side section{padding:19px;border:1px solid #e4ecf0;border-radius:18px;background:#fff;box-shadow:0 8px 22px #173d5f08}
-.vocabulary-landing-side h2{margin:7px 0 11px;font:900 17px var(--font-display)}
-.vocabulary-landing-side strong{display:block;color:#078d95;font:900 34px var(--font-display)}
-.vocabulary-landing-side p{color:#73899f;font-size:12px;line-height:1.5}
-.vocabulary-landing-side a{display:flex;align-items:center;gap:9px;min-height:37px;border-top:1px solid #edf1f4;color:#244a64;font-size:12px;font-weight:800;text-decoration:none}
-.vocabulary-landing-side a svg:last-child{margin-left:auto;color:#8aa3b5}
-.vocabulary-landing-quick a:first-of-type{margin-top:11px}
-.vocabulary-landing-note{color:#8398aa;font-size:11px;margin:18px 0 0}
-.vocabulary-landing a:focus-visible,.vocabulary-landing button:focus-visible,.vocabulary-landing input:focus-visible,.vocabulary-landing select:focus-visible{outline:3px solid #48bec5;outline-offset:2px}
-@media(max-width:1200px){.vocabulary-landing-layout{grid-template-columns:minmax(0,1fr) 230px}.vocabulary-landing-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:800px){.vocabulary-landing-layout{grid-template-columns:1fr}.vocabulary-landing-side{grid-template-columns:repeat(2,minmax(0,1fr))}.vocabulary-landing-quick{grid-column:1/-1}}
-@media(max-width:560px){.vocabulary-landing{padding:18px 13px 36px}.vocabulary-landing-hero-art{display:none}.vocabulary-landing-filters{grid-template-columns:1fr 1fr}.vocabulary-landing-filters label:first-child,.vocabulary-landing-search{grid-column:1/-1}.vocabulary-landing-topic-grid{grid-template-columns:1fr 1fr;gap:9px}.vocabulary-landing-topic{padding:9px;min-height:214px}.vocabulary-landing-topic-art{height:75px}.vocabulary-landing-topic h3{font-size:12px}.vocabulary-landing-side{grid-template-columns:1fr}.vocabulary-landing-quick{grid-column:auto}.vocabulary-landing-section-head{align-items:start;flex-direction:column}}
-
-/* Dense topic browser: the library has thousands of words, so show topics as compact entries. */
-.vocabulary-landing{padding-top:14px;padding-bottom:28px}
-.vocabulary-landing-hero{margin-bottom:14px}
-.vocabulary-landing-hero h1{font-size:clamp(28px,2.8vw,39px);margin:4px 0 5px}
-.vocabulary-landing-hero p{font-size:13px;line-height:1.35}
-.vocabulary-landing-hero-art{width:64px;height:64px;border-radius:17px;transform:none}
-.vocabulary-landing-hero-art svg:first-child{width:34px;height:34px}
-.vocabulary-landing-layout{grid-template-columns:minmax(0,1fr) 250px;gap:14px}
-.vocabulary-landing-filters{padding:9px;border-radius:14px}
-.vocabulary-landing-filters select,.vocabulary-landing-filters input{height:36px}
-.vocabulary-landing-section-head{margin:15px 2px 9px}
-.vocabulary-landing-section-head h2{display:flex;align-items:baseline;flex-wrap:wrap;gap:7px;font-size:20px}
-.vocabulary-landing-topic-grid{gap:9px}
-.vocabulary-landing-topic{display:grid;grid-template-columns:82px minmax(0,1fr);gap:10px;min-height:104px;padding:9px;border-radius:14px}
-.vocabulary-landing-topic-art{width:82px;height:82px;border-radius:9px}
-.vocabulary-landing-topic h3{min-height:0;margin:2px 0 4px;font-size:13px}
-.vocabulary-landing-topic-content>a{justify-content:flex-start;min-height:0;margin-top:auto;background:transparent;color:#078e97;font-size:11px}
-.vocabulary-landing-topic-content>a:hover{background:transparent;text-decoration:underline}
-.vocabulary-landing-topic-content>a svg{width:13px}
-.vocabulary-landing-side{gap:10px}
-.vocabulary-landing-side section{padding:14px;border-radius:14px}
-.vocabulary-landing-side h2{margin:5px 0 4px;font-size:15px}
-.vocabulary-landing-side strong{font-size:30px}
-.vocabulary-landing-side p{margin:4px 0 8px;font-size:11px;line-height:1.4}
-.vocabulary-landing-side a{min-height:31px;font-size:11px}
-.vocabulary-landing-saved{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #edf1f4;color:#526e83;font-size:11px;font-weight:700}
-.vocabulary-landing-saved b{color:#078d95}
-@media(max-width:1200px){.vocabulary-landing-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:850px){.vocabulary-landing-layout{grid-template-columns:1fr}.vocabulary-landing-side{grid-template-columns:repeat(2,minmax(0,1fr))}.vocabulary-landing-quick{grid-column:1/-1}}
-@media(max-width:560px){.vocabulary-landing-topic-grid{grid-template-columns:1fr}.vocabulary-landing-topic{grid-template-columns:70px minmax(0,1fr);min-height:88px;padding:7px}.vocabulary-landing-topic-art{width:70px;height:70px}.vocabulary-landing-side{grid-template-columns:1fr}.vocabulary-landing-quick{grid-column:auto}}
-.vocabulary-landing-collocations{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:15px;padding:15px 19px;background:linear-gradient(110deg,#e8f9f8,#fff);border:1px solid #bce8e7;border-radius:17px;text-decoration:none;color:#087f88}.vocabulary-landing-collocations span{display:grid;gap:3px}.vocabulary-landing-collocations strong{font-size:17px;color:#12365a}.vocabulary-landing-collocations small{font-size:13px;color:#648097}
+.vocabulary-landing{width:100%;padding:18px clamp(16px,2vw,32px) 30px;color:#15345a}
+.vocabulary-landing-eyebrow{display:inline-flex;align-items:center;gap:5px;color:#078f9a;font-size:11px;font-weight:900;letter-spacing:.11em}
+.vocabulary-landing-hero{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:205px;overflow:hidden;padding:20px 28px;margin-bottom:14px;border:1px solid #d9eeee;border-radius:22px;background:radial-gradient(circle at 80% 10%,#c9f4ed 0,transparent 32%),linear-gradient(110deg,#f6fbfa,#e9f8f5 65%,#f8fcfb)}
+.vocabulary-landing-hero-copy{position:relative;z-index:1;min-width:0}
+.vocabulary-landing-hero h1{margin:6px 0;font:900 clamp(28px,2.9vw,43px)/1.12 var(--font-display);letter-spacing:-.035em}
+.vocabulary-landing-hero h1 em{color:#079ba4;font-style:normal}
+.vocabulary-landing-hero p{margin:0;color:#627b92;font-size:13px;line-height:1.45}
+.vocabulary-landing-hero-stats{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.vocabulary-landing-hero-stats>span{display:grid;grid-template-columns:24px auto;column-gap:8px;align-items:center;min-width:118px;padding:8px 11px;border:1px solid #e4f0f1;border-radius:12px;background:#ffffffd9;box-shadow:0 4px 14px #123e5210}
+.vocabulary-landing-hero-stats svg{grid-row:1/3;color:#08a19e}
+.vocabulary-landing-hero-stats strong{font:900 17px/1 var(--font-display)}
+.vocabulary-landing-hero-stats small{margin-top:3px;color:#738aa1;font-size:10px}
+.vocabulary-landing-hero-art{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;flex:none;width:235px;height:170px;margin-right:24px;transform:rotate(-7deg)}
+.vocabulary-landing-hero-art .book{display:block;width:155px;padding:7px 15px;border-radius:7px 12px 12px 7px;border-bottom:4px solid #0002;box-shadow:5px 7px 12px #154b5d22;color:#fff;font-size:11px;font-weight:900;letter-spacing:.08em}
+.vocabulary-landing-hero-art .book-one{background:#ff6264;transform:translateX(12px)}
+.vocabulary-landing-hero-art .book-two{background:#745fd5;transform:translateX(-7px)}
+.vocabulary-landing-hero-art .book-three{background:#178bc7;transform:translateX(9px)}
+.vocabulary-landing-hero-art>svg:not(.spark){position:absolute;right:-10px;bottom:0;padding:13px;width:88px;height:88px;border:1px solid #b8e9e3;border-radius:24px;background:#dbf8f2;color:#06999c;transform:rotate(13deg);box-shadow:0 8px 20px #12536520}
+.vocabulary-landing-hero-art .spark{position:absolute;top:0;right:6px;color:#efb741;transform:rotate(7deg)}
+.vocabulary-landing-layout{display:grid;grid-template-columns:minmax(0,1fr) 278px;gap:14px;align-items:start}
+.vocabulary-landing-main{min-width:0}
+.vocabulary-landing-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.vocabulary-landing-tabs{display:flex;align-items:center;gap:6px;min-width:0;overflow-x:auto;padding:2px 0;scrollbar-width:thin}
+.vocabulary-landing-tabs button{flex:none;padding:8px 11px;border:1px solid #e4ebf0;border-radius:999px;background:#f6f9fb;color:#55718a;font:750 11px var(--font-display);cursor:pointer;white-space:nowrap}
+.vocabulary-landing-tabs button.active{border-color:#089da5;background:#089da5;color:#fff}
+.vocabulary-landing-tabs button:hover:not(.active){background:#e7f6f5;color:#087e88}
+.vocabulary-landing-search{display:flex;align-items:center;gap:8px;flex:none;width:190px;height:36px;padding:0 10px;border:1px solid #e2ebef;border-radius:10px;background:#fff;color:#879ab0}
+.vocabulary-landing-search input{width:100%;min-width:0;border:0;background:transparent;color:#183859;font:650 11px var(--font-display);outline:0}
+.vocabulary-landing-search input::placeholder{color:#8a9eb0}
+.vocabulary-landing-section-head{display:flex;align-items:center;justify-content:space-between;margin:12px 2px 8px}
+.vocabulary-landing-section-head h2{margin:0;font:900 20px var(--font-display)}
+.vocabulary-landing-section-head small{color:#8499a8;font-size:12px}
+.vocabulary-landing-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.vocabulary-landing-card{position:relative;display:grid;grid-template-columns:78px minmax(0,1fr);gap:10px;min-width:0;min-height:122px;padding:10px 25px 10px 10px;border:1px solid #e3ecf0;border-radius:15px;background:#fff;text-decoration:none;color:inherit;box-shadow:0 5px 18px #173d5f08;transition:transform .15s,box-shadow .15s,border-color .15s}
+.vocabulary-landing-card:hover{transform:translateY(-2px);border-color:#9bd9db;box-shadow:0 10px 22px #173d5f15}
+.vocabulary-landing-card-art{display:grid;place-items:center;width:78px;min-height:98px;border-radius:11px}
+.vocabulary-landing-card-art.ielts{background:linear-gradient(145deg,#d8f6e5,#bde2fc);color:#047b91}
+.vocabulary-landing-card-art.cefr{background:linear-gradient(145deg,#ece2ff,#bdd4ff);color:#7053c0}
+.vocabulary-landing-card-art.collocations{background:linear-gradient(145deg,#ffe7d6,#fff2c5);color:#e28436}
+.vocabulary-landing-card-art.listening{background:linear-gradient(145deg,#d2f9f6,#bce9f5);color:#068ca2}
+.vocabulary-landing-card-art.families{background:linear-gradient(145deg,#edf6ce,#d5ecae);color:#5e9b47}
+.vocabulary-landing-card-art.saved{background:linear-gradient(145deg,#ffe4df,#fff3d4);color:#e5706b}
+.vocabulary-landing-card-copy{display:flex;flex-direction:column;min-width:0;padding-top:2px}
+.vocabulary-landing-card-copy strong{font:850 13px/1.3 var(--font-display);color:#132f58}
+.vocabulary-landing-card-copy small{margin-top:4px;color:#167caa;font-size:11px;font-weight:750}
+.vocabulary-landing-card-copy>span{margin-top:7px;color:#6e8399;font-size:10px;line-height:1.4}
+.vocabulary-landing-card-arrow{position:absolute;right:8px;bottom:8px;display:grid;place-items:center;width:25px;height:25px;border:1px solid #cde7f0;border-radius:50%;background:#f5fbfe;color:#078cab}
+.vocabulary-landing-library-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.vocabulary-landing-library-links a{display:inline-flex;align-items:center;gap:5px;padding:8px 11px;border:1px solid #d8e9ee;border-radius:9px;background:#f9fcfd;color:#078c97;font-size:11px;font-weight:850;text-decoration:none}
+.vocabulary-landing-library-links a:hover{background:#e8f7f6}
+.vocabulary-landing-empty{padding:24px;border:1px solid #e5edf0;border-radius:13px;background:#fff;color:#72899d}
+.vocabulary-landing-side{display:grid;gap:10px}
+.vocabulary-landing-side section{min-width:0;padding:15px;border:1px solid #e3ecf0;border-radius:15px;background:#fff;box-shadow:0 5px 18px #173d5f08}
+.vocabulary-landing-side h2{margin:5px 0 8px;font:900 16px var(--font-display)}
+.vocabulary-landing-side p{margin:0 0 11px;color:#6f859b;font-size:11px;line-height:1.45}
+.vocabulary-landing-side a{display:inline-flex;align-items:center;gap:7px;color:#078b98;font-size:11px;font-weight:850;text-decoration:none}
+.vocabulary-landing-side a svg:last-child{margin-left:auto}
+.vocabulary-landing-continue{background:linear-gradient(125deg,#fff,#ecf9f7)!important}
+.vocabulary-landing-continue>a{display:flex;justify-content:center;width:100%;min-height:33px;border-radius:8px;background:#dff5f5}
+.vocabulary-landing-side-heading{display:flex;align-items:center;justify-content:space-between}
+.vocabulary-landing-side-heading svg{color:#0799a4}
+.vocabulary-landing-progress-number{display:flex;align-items:baseline;gap:5px}
+.vocabulary-landing-progress-number strong{color:#0797a0;font:900 27px var(--font-display)}
+.vocabulary-landing-progress-number span{color:#6f8499;font-size:10px;line-height:1.3}
+.vocabulary-landing-progress-track{height:7px;overflow:hidden;margin:10px 0 3px;border-radius:99px;background:#e9eff3}
+.vocabulary-landing-progress-track>span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#06aab0,#56c8cc)}
+.vocabulary-landing-progress>small{color:#7d92a5;font-size:10px}
+.vocabulary-landing-progress-saved{display:flex;align-items:center;gap:7px;margin:10px 0;padding-top:10px;border-top:1px solid #edf1f4;color:#5f7890;font-size:11px}
+.vocabulary-landing-progress-saved svg{color:#e17c5f}
+.vocabulary-landing-progress-saved b{margin-left:auto;color:#0a96a0}
+.vocabulary-landing-suggestion{background:linear-gradient(135deg,#e8f8fc,#fff)!important}
+.vocabulary-landing-suggestion>a{display:flex;align-items:center;width:100%;padding:9px;border-radius:9px;background:#fff}
+.vocabulary-landing-side-actions a{display:flex;align-items:center;gap:9px;min-height:33px;border-top:1px solid #edf1f4;color:#395874}
+.vocabulary-landing-side-actions a svg:first-child{color:#099ba6}
+.vocabulary-landing-note{margin:14px 0 0;color:#8798a8;font-size:10px}
+.vocabulary-landing a:focus-visible,.vocabulary-landing button:focus-visible,.vocabulary-landing input:focus-visible{outline:3px solid #42bfc5;outline-offset:2px}
+@media(max-width:1250px){.vocabulary-landing-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vocabulary-landing-layout{grid-template-columns:minmax(0,1fr) 250px}.vocabulary-landing-toolbar{align-items:stretch;flex-direction:column}.vocabulary-landing-search{width:100%}}
+@media(max-width:850px){.vocabulary-landing-layout{grid-template-columns:1fr}.vocabulary-landing-side{grid-template-columns:repeat(2,minmax(0,1fr))}.vocabulary-landing-hero-art{margin-right:0}}
+@media(max-width:600px){.vocabulary-landing{padding:12px 12px 25px}.vocabulary-landing-hero{padding:18px;min-height:0}.vocabulary-landing-hero-art{display:none}.vocabulary-landing-hero h1{font-size:29px}.vocabulary-landing-hero-stats{gap:5px}.vocabulary-landing-hero-stats>span{min-width:0;flex:1;padding:7px;column-gap:4px}.vocabulary-landing-hero-stats svg{width:16px}.vocabulary-landing-card-grid{grid-template-columns:1fr}.vocabulary-landing-card{min-height:105px}.vocabulary-landing-card-art{min-height:83px}.vocabulary-landing-side{grid-template-columns:1fr}}
