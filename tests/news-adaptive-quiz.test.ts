@@ -34,6 +34,15 @@ describe("adaptive IELTS passage quiz", () => {
     missing.questions[5].answer = "wind turbines";
     expect(() => validateAdaptiveQuiz(missing, body, selected)).toThrow(/only 11 valid/);
   });
+  it("accepts a smaller, evidence-backed set for a short article", () => {
+    const selected: IeltsQuestionType[] = ["mcq", "tfng"];
+    const result = validateAdaptiveQuiz(generated(selected), body, selected, 2);
+    expect(result).toHaveLength(4);
+    expect(result.map((question) => question.type)).toEqual(["mcq", "mcq", "tfng", "tfng"]);
+    const partial = generated(selected);
+    partial.questions.slice(0, 3).forEach((question) => { question.supporting_sentence = "A fabricated sentence about the Moon."; });
+    expect(validateAdaptiveQuiz(partial, body, selected, 2)).toHaveLength(3);
+  });
   it("assigns stable passage levels and varied groups", () => {
     expect(passageForKey("article-one")).toBe(passageForKey("article-one"));
     expect(new Set(Array.from({ length: 30 }, (_, index) => passageForKey(`article-${index}`))).size).toBe(3);
