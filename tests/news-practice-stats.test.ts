@@ -20,7 +20,7 @@ describe("Daily News practice statistics", () => {
 
   it("adds per-type scores in IELTS order and skips empty types", () => {
     expect(sumBreakdowns([{ mcq: { correct: 2, total: 5 }, tfng: { correct: 6, total: 6 } }, { mcq: { correct: 3, total: 5 } }, null, {}]))
-      .toEqual([{ type: "tfng", correct: 6, total: 6, percent: 100 }, { type: "mcq", correct: 5, total: 10, percent: 50 }]);
+      .toEqual([{ type: "mcq", correct: 5, total: 10, percent: 50 }, { type: "tfng", correct: 6, total: 6, percent: 100 }]);
   });
 
   it("summarises history: accuracy, time per question, best band, weakest type and trend", () => {

@@ -20,7 +20,7 @@ const colorName: Record<HighlightColor, string> = { sun: "vàng", mint: "xanh", 
 type Range = Pick<Highlight, "p" | "start" | "end">;
 type Popover = { x: number; y: number; below: boolean; touch: boolean; ranges?: Range[]; mark?: string; word?: string };
 
-/** Questions shown beside the passage in practice mode. `answered` has one entry per question, in order; `setup` sits in the start card. */
+/** Questions shown beside the passage in practice mode. `setup` opens before a news practice starts. */
 export type ReadingPractice = { answered: boolean[]; content: React.ReactNode; setup?: React.ReactNode; correct?: (boolean | undefined)[] };
 type PracticeClock = { elapsed: () => number; restart: () => void };
 const PracticeClockContext = createContext<PracticeClock>({ elapsed: () => 0, restart: () => {} });
@@ -77,6 +77,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   const [saveStatus, setSaveStatus] = useState<"saved" | "saving" | "local">("saving");
   const [size, setSize] = useState(DEFAULT_SIZE);
   const [mode, setMode] = useState<"read" | "practice">("read");
+  const [setupOpen, setSetupOpen] = useState(false);
   const [tab, setTab] = useState<"passage" | "questions">("passage");
   const [split, setSplit] = useState(52);
   const [seconds, setSeconds] = useState(0);
@@ -291,6 +292,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   }
 
   function enterPractice() { readStartedAt.current = 0; setMode("practice"); setTab("passage"); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
+  function requestPractice() { if (practice?.setup) setSetupOpen(true); else enterPractice(); }
   function jump(number: number) {
     setTab("questions");
     requestAnimationFrame(() => sideRef.current?.querySelector(`[data-q="${number}"]`)?.scrollIntoView({ behavior: "smooth", block: "center" }));
@@ -346,7 +348,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       </> : <>
         <div className="rw-modes" role="group" aria-label="Chế độ">
           <button type="button" aria-pressed="true"><BookOpenText size={16} /> Đọc</button>
-          {total > 0 && <button type="button" aria-pressed="false" onClick={enterPractice}><Columns2 size={16} /> Luyện đề · {total} câu</button>}
+          {total > 0 && <button type="button" aria-pressed="false" onClick={requestPractice}><Columns2 size={16} /> Luyện đề · {total} câu</button>}
         </div>
         <span className="rw-meta"><Clock3 size={15} /> ~{minutes} phút đọc</span>
         {toolbar}
@@ -376,8 +378,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
         {!practicing && total > 0 && <div className="rw-cta">
           <span className="rw-cta-icon"><Columns2 size={22} /></span>
           <div className="rw-cta-text"><strong>Luyện đề IELTS từ bài này</strong><span>{total} câu hỏi · màn hình chia đôi để vừa đọc vừa làm, có đồng hồ bấm giờ</span></div>
-          <button type="button" className="button primary" onClick={enterPractice}>Làm {total} câu</button>
-          {practice?.setup && <div className="rw-cta-setup"><small>Chọn dạng câu hỏi muốn luyện:</small>{practice.setup}</div>}
+          <button type="button" className="button primary" onClick={requestPractice}>Làm {total} câu</button>
         </div>}
       </div>
       {practicing && <div className="rw-divider" role="separator" aria-orientation="vertical" aria-label="Kéo để đổi độ rộng hai khung" aria-valuemin={30} aria-valuemax={70} aria-valuenow={Math.round(split)} tabIndex={0}
@@ -387,6 +388,16 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
         {practice && <div className="rw-questions"><PracticeClockContext.Provider value={practiceClock}>{practice.content}</PracticeClockContext.Provider></div>}
       </div>
     </div>
+
+    {setupOpen && practice?.setup && <div className="rw-setup-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) setSetupOpen(false); }}>
+      <section className="rw-setup-dialog" role="dialog" aria-modal="true" aria-labelledby="rw-setup-title" onKeyDown={(event) => { if (event.key === "Escape") setSetupOpen(false); }}>
+        <button type="button" className="rw-setup-close" onClick={() => setSetupOpen(false)} aria-label="Đóng"><X size={18}/></button>
+        <span className="eyebrow">LUYỆN ĐỀ IELTS</span><h2 id="rw-setup-title">Chọn dạng câu hỏi</h2>
+        <p>Chọn một, nhiều hoặc tất cả các dạng được tạo cho bài đọc này.</p>
+        {practice.setup}
+        <div className="rw-setup-actions"><button type="button" className="button subtle" onClick={() => setSetupOpen(false)}>Để sau</button><button type="button" className="button primary" onClick={() => { setSetupOpen(false); enterPractice(); }}>Bắt đầu · {total} câu</button></div>
+      </section>
+    </div>}
 
     {practicing && total > 0 && <nav className="rw-nav" aria-label="Đi tới câu hỏi">
       {graded ? <span className="rw-nav-score">Đúng <b>{right}</b>/{total}</span> : <span>Đã làm <b>{done}</b>/{total}</span>}

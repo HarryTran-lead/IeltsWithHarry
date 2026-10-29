@@ -3,9 +3,9 @@
 import { useState } from "react";
 import type { createClient } from "@/lib/supabase/browser";
 import type { NewsAdminSettings } from "@/lib/news/settings";
+import { typeLabels } from "@/lib/news/practice-stats";
 
 type PreviewQuestion = { type: string; prompt: string; options: string[]; correct_index: number | null; accepted_answers: string[] | null; supporting_sentence: string; explanation: string; option_notes: string[] | null };
-const typeLabels: Record<string, string> = { tfng: "True/False/Not Given", mcq: "Multiple choice", sentence_completion: "Sentence completion", short_answer: "Short answer" };
 
 export function AdminNewsSettings({ db, settings, eligible, reload, setError, setNotice }: {
   db: ReturnType<typeof createClient>;
@@ -57,15 +57,15 @@ export function AdminNewsSettings({ db, settings, eligible, reload, setError, se
         <label className="admin-check wide"><input type="checkbox" checked={draft.auto_sync_enabled} onChange={(event) => setDraft({ ...draft, auto_sync_enabled: event.target.checked })}/> Tự đồng bộ nguồn tin</label>
         <label className="admin-check wide"><input type="checkbox" checked={draft.auto_enrich_enabled} onChange={(event) => setDraft({ ...draft, auto_enrich_enabled: event.target.checked })}/> Tự tìm ảnh và tạo quiz</label>
         <label>Giới hạn quiz tự tạo mỗi ngày<input type="number" min={1} max={50} value={draft.daily_quiz_limit} onChange={(event) => setDraft({ ...draft, daily_quiz_limit: Number(event.target.value) })}/></label>
-        <label>Tin Việt Nam do AI viết mỗi ngày<input type="number" min={0} max={30} value={draft.daily_rewrite_limit ?? 0} onChange={(event) => setDraft({ ...draft, daily_rewrite_limit: Number(event.target.value) })}/><small>Mỗi bài tốn 3 lượt Gemini (4 nếu phải viết lại): viết bài, kiểm tra sự thật, tạo 20 câu hỏi. Đặt 0 để tắt.</small></label>
-        <label className="wide">Hướng dẫn thêm cho AI<textarea rows={8} maxLength={4000} value={draft.quiz_prompt} onChange={(event) => setDraft({ ...draft, quiz_prompt: event.target.value })} placeholder="Ví dụ: Ưu tiên câu hỏi ở mức B1–B2, câu ngắn và dễ hiểu..."/><small>Luôn giữ quy tắc bắt buộc: 20 câu theo 4 dạng IELTS (6 True/False/Not Given, 6 trắc nghiệm, 4 hoàn thành câu, 4 trả lời ngắn), đáp án viết tối đa 3 từ, và dẫn chứng nguyên văn.</small></label>
+        <label>Tin Việt Nam do AI viết mỗi ngày<input type="number" min={0} max={30} value={draft.daily_rewrite_limit ?? 0} onChange={(event) => setDraft({ ...draft, daily_rewrite_limit: Number(event.target.value) })}/><small>Mỗi bài tốn 3 lượt Gemini (4 nếu phải viết lại): viết bài, kiểm tra sự thật, tạo 12 câu hỏi. Đặt 0 để tắt.</small></label>
+        <label className="wide">Hướng dẫn thêm cho AI<textarea rows={8} maxLength={4000} value={draft.quiz_prompt} onChange={(event) => setDraft({ ...draft, quiz_prompt: event.target.value })} placeholder="Ví dụ: Ưu tiên câu hỏi ở mức B1–B2, câu ngắn và dễ hiểu..."/><small>Mỗi bài là một Passage và có 12 câu thuộc 3 dạng được chọn ngẫu nhiên trong 14 dạng IELTS Reading; đáp án điền tối đa 3 từ và mỗi câu phải có dẫn chứng nguyên văn.</small></label>
         <button className="button primary" disabled={busy}>{busy ? "Đang lưu…" : "Lưu cấu hình"}</button>
       </form>
     </section>
     <section className="card admin-news-panel"><h3>Thử prompt với bài có toàn văn</h3><p>Bản thử hiển thị đáp án cho admin và không lưu vào kho bài. Lượt thử vẫn tính vào hạn mức Gemini API.</p>
       <div className="admin-news-form"><label className="wide">Chọn bài<select value={articleId} onChange={(event) => setArticleId(event.target.value)}><option value="">Chọn bài để thử</option>{eligible.map((article) => <option key={article.id} value={article.id}>{article.title}</option>)}</select></label>
         <button type="button" className="button subtle" disabled={busy || !articleId} onClick={() => void testPrompt()}>{busy ? "Đang tạo…" : "Tạo bản xem trước"}</button></div>
-      {preview.length > 0 && <div className="admin-news-preview">{preview.map((question, index) => <article key={index}><small>{typeLabels[question.type] ?? question.type}</small><strong>{index + 1}. {question.prompt}</strong>{question.options.length > 0 ? <ol>{question.options.map((option, optionIndex) => <li key={optionIndex}>{option}{optionIndex === question.correct_index ? " ✓" : ""}{question.option_notes?.[optionIndex] && <small> — {question.option_notes[optionIndex]}</small>}</li>)}</ol> : <p>Đáp án: <b>{question.accepted_answers?.join(" / ")}</b></p>}<small>Dẫn chứng: {question.supporting_sentence}</small><p>{question.explanation}</p></article>)}</div>}
+      {preview.length > 0 && <div className="admin-news-preview">{preview.map((question, index) => <article key={index}><small>{typeLabels[question.type as keyof typeof typeLabels] ?? question.type}</small><strong>{index + 1}. {question.prompt}</strong>{question.options.length > 0 ? <ol>{question.options.map((option, optionIndex) => <li key={optionIndex}>{option}{optionIndex === question.correct_index ? " ✓" : ""}{question.option_notes?.[optionIndex] && <small> — {question.option_notes[optionIndex]}</small>}</li>)}</ol> : <p>Đáp án: <b>{question.accepted_answers?.join(" / ")}</b></p>}<small>Dẫn chứng: {question.supporting_sentence}</small><p>{question.explanation}</p></article>)}</div>}
     </section>
   </div>;
 }
