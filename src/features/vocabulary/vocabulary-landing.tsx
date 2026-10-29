@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, BookOpen, Bookmark, Headphones, Layers3, RotateCcw, Search, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Bookmark, Headphones, Layers3, RotateCcw, Search, Shapes, Sparkles } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { createClient } from "@/lib/supabase/browser";
@@ -70,7 +70,7 @@ export function VocabularyLanding() {
       <aside className="vocabulary-landing-side" aria-label="Công cụ học từ vựng">
         <section><span className="vocabulary-landing-eyebrow">TIẾN ĐỘ CỦA BẠN</span><h2>Từ đã học</h2><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><p>Đếm từ riêng biệt đã xem nghĩa hoặc làm bài trong tài khoản của bạn.</p><div className="vocabulary-landing-saved">Từ đã lưu <b>{ready ? saved : "…"}</b></div><Link href="/app/vocabulary/review"><RotateCcw size={17} /> Ôn từ đã lưu <ArrowRight size={16} /></Link></section>
         <section><span className="vocabulary-landing-eyebrow">CÁCH HỌC</span><h2>Chọn cách luyện</h2><Link href={studyHref(undefined, "cards")}><Layers3 size={18} /> Thẻ lật <ArrowRight size={16} /></Link><Link href={studyHref(undefined, "choice")}><BookOpen size={18} /> Trắc nghiệm <ArrowRight size={16} /></Link><Link href={studyHref(undefined, "type")}><Sparkles size={18} /> Gõ từ <ArrowRight size={16} /></Link></section>
-        <section className="vocabulary-landing-quick"><span className="vocabulary-landing-eyebrow">CÔNG CỤ KHÁC</span><Link href="/app/listening/vocabulary"><Headphones size={17} /> 1.200 từ Listening</Link><Link href={`/app/vocabulary/library?collection=${collection}`}><BookOpen size={17} /> Xem kho từ</Link><Link href="/app/vocabulary/notebook"><Bookmark size={17} /> Từ đã lưu</Link><Link href="/app/vocabulary/explore"><Search size={17} /> Tra từ</Link></section>
+        <section className="vocabulary-landing-quick"><span className="vocabulary-landing-eyebrow">CÔNG CỤ KHÁC</span><Link href="/app/vocabulary/word-formation"><Shapes size={17} /> 300 họ từ Word Formation</Link><Link href="/app/listening/vocabulary"><Headphones size={17} /> 1.200 từ Listening</Link><Link href={`/app/vocabulary/library?collection=${collection}`}><BookOpen size={17} /> Xem kho từ</Link><Link href="/app/vocabulary/notebook"><Bookmark size={17} /> Từ đã lưu</Link><Link href="/app/vocabulary/explore"><Search size={17} /> Tra từ</Link></section>
       </aside>
     </div>
     {collection === "ielts" && <p className="vocabulary-landing-note">Band của bộ IELTS là gợi ý học tập ước lượng, không phải band chính thức của từng từ.</p>}
