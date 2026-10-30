@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, BookOpenCheck, Lightbulb, RotateCcw } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import sourceTopics from "@/lib/vocabulary/ielts-topics.json";
 import learningTopics from "@/lib/vocabulary/ielts-learning-topics.json";
+import { promptWordHints, type PromptHint } from "@/lib/vocabulary/vi-en-word-hints";
 import { chooseTranslationSession, compareTranslation, matchesCopiedWord, nextTranslationProgress, ratingForComparison, type TranslationExercise, type TranslationProgress, type WordComparison } from "@/lib/vocabulary/vi-en-translation";
 import "./vi-en-translation-page.css";
 
@@ -15,6 +16,20 @@ type ModeFilter = "mixed" | "speaking" | "writing";
 type Selection = "new" | "due" | "all";
 type PracticeStage = "copy" | "write" | "result";
 const topics = [...sourceTopics, ...learningTopics].sort((a, b) => a.localeCompare(b));
+
+function VietnamesePrompt({ prompt, hints }: { prompt: string; hints: PromptHint[] }) {
+  let cursor = 0;
+  const parts: ReactNode[] = [];
+  for (const [index, hint] of hints.entries()) {
+    parts.push(prompt.slice(cursor, hint.start));
+    parts.push(hint.english.length ? <button key={index} type="button" className="translation-prompt-word" aria-label={`${hint.phrase}: ${hint.english.join(", ")}`}>
+      {hint.text}<span className="translation-word-tooltip" role="tooltip"><small>{hint.phrase}</small><strong lang="en">{hint.english.join(" · ")}</strong></span>
+    </button> : <span key={index}>{hint.text}</span>);
+    cursor = hint.end;
+  }
+  parts.push(prompt.slice(cursor));
+  return <p className="translation-prompt" lang="vi">{parts}</p>;
+}
 
 export function ViEnTranslationPage() {
   const params = useSearchParams();
@@ -124,6 +139,7 @@ export function ViEnTranslationPage() {
   const studied = filtered.filter((item) => progressById.has(item.id)).length;
   const due = filtered.filter((item) => progressById.has(item.id) && Date.parse(progressById.get(item.id)!.due_at) <= now).length;
   const current = exercises.find((item) => item.id === sessionIds[index]);
+  const promptHints = useMemo(() => current ? promptWordHints(current.prompt_vi, [current.reference_en, ...current.alternatives].join(" "), current.term, current.meaning_vi ?? "") : [], [current]);
   const done = sessionIds.length > 0 && index >= sessionIds.length;
 
   useEffect(() => {
@@ -250,7 +266,8 @@ export function ViEnTranslationPage() {
         <span className="translation-step-label">02 / 03 · VIẾT CÂU</span>
         <h2>Dịch câu này sang tiếng Anh</h2>
         <p className="translation-target-inline">Từ mục tiêu: <b lang="en">{current.term}</b></p>
-        <p className="translation-prompt" lang="vi">{current.prompt_vi}</p>
+        <VietnamesePrompt prompt={current.prompt_vi} hints={promptHints} />
+        <p className="translation-hover-instruction">Rê chuột hoặc dùng Tab vào từ gạch chân để xem gợi ý riêng cho từ đó. <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noreferrer">Nguồn từ điển</a> (CC BY-SA 4.0).</p>
         <div className="translation-hint-actions"><button type="button" onClick={() => setHint((old) => Math.min(old + 1, 2))} disabled={hint === 2}><Lightbulb size={16} /> {hint === 0 ? "Gợi ý từ" : hint === 1 ? "Gợi ý cấu trúc" : "Đã mở gợi ý"}</button>{hint >= 1 && <span>Từ mục tiêu: <b>{current.term}</b>{current.meaning_vi ? " · " + current.meaning_vi : ""}</span>}{hint >= 2 && <span>Mẫu dùng: {current.pattern || current.collocations || "Tự chọn cấu trúc phù hợp."}</span>}</div>
         <label className="translation-answer-label">Câu tiếng Anh của bạn<textarea ref={answerInputRef} rows={4} value={answer} onChange={(event) => setAnswer(event.target.value)} onKeyDown={onAnswerKeyDown} placeholder="Viết câu dịch của bạn ở đây…" spellCheck autoComplete="off" /></label>
         <div className="translation-actions"><button className="translation-primary" type="button" disabled={!answer.trim() || saving} onClick={() => void checkSentence()}>Kiểm tra câu <ArrowRight size={17} /></button><button type="button" disabled={saving} onClick={() => void checkSentence(true)}>Bỏ qua câu</button><span className="translation-key-hint"><kbd>Enter</kbd> nộp câu · <kbd>Shift</kbd> + <kbd>Enter</kbd> xuống dòng</span></div>
