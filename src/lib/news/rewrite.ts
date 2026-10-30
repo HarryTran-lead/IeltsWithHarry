@@ -135,7 +135,7 @@ const writerPrompt = `You write English news for young Vietnamese readers (about
 
 First decide suitable: false if SOURCE is mainly about politics or political leaders, crime, violence, death, accidents or disasters with victims, or if it is too thin for a full article. If suitable is false, still return the other fields briefly.
 
-Then rewrite SOURCE as an ORIGINAL English news article of 330-450 words in 5 or 6 paragraphs of 3-4 sentences each (about 20 sentences in total). It should read as one IELTS Academic Reading passage at the target level supplied after SOURCE. Keep to this length even when SOURCE is longer; leave out minor details rather than exceed it.
+Then rewrite SOURCE as an ORIGINAL English news article of 330-450 words in 5 or 6 paragraphs of 3-4 sentences each (about 20 sentences in total). Target CEFR B2-C1 for Daily News: use natural, clear English, coherent paragraph links, and useful topic vocabulary and collocations without forcing rare words or making the text sound translated. Keep grammar and reporting verbs accurate, avoid repeated wording, and preserve uncertainty and qualifications from SOURCE. Before returning, check grammar, naturalness, cohesion, repetition, and the 330-450 word range. Keep the article at this level and length even when SOURCE is longer; leave out minor details rather than pad it with filler.
 Truth rules (strict, an automatic fact-checker rejects any violation):
 - Use only facts stated in SOURCE. Never add names, numbers, dates, places, organisations, causes, consequences, motives, comparisons or opinions that SOURCE does not state. Do not exaggerate or soften.
 - Return the article as a list of sentences in reading order. Each is {paragraph, text, source_quote}: paragraph is its paragraph number starting at 1. source_quote is an exact contiguous quotation of 5-40 words copied from SOURCE that supports every fact in the sentence, including every number in it.
@@ -248,6 +248,18 @@ const titleWords = (title: string) => new Set(title.toLowerCase().match(/[a-z][a
 export type StoryCandidate = { item: NewsItem; source: NewsSource; summary: string };
 export type RankedStory = StoryCandidate & { score: number; hot: number; youth: number };
 
+function sameRecentEvent(a: StoryCandidate, b: StoryCandidate) {
+  if (a.item.category !== b.item.category || new URL(a.item.canonical_url).hostname === new URL(b.item.canonical_url).hostname) return false;
+  if (Math.abs(new Date(a.item.published_at).valueOf() - new Date(b.item.published_at).valueOf()) > 86400000) return false;
+  const left = titleWords(a.item.title); const right = titleWords(b.item.title);
+  const shared = [...left].filter((word) => right.has(word)).length;
+  return shared >= 3 && shared / Math.max(1, Math.min(left.size, right.size)) >= 0.6;
+}
+
+function summaryWordCount(story: StoryCandidate) {
+  return story.summary.match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g)?.length ?? 0;
+}
+
 /**
  * Hot score from homepage signals and coverage by both publishers, plus youth
  * relevance, minus 2 points per hour of age. Only stories from the last 24 hours with
@@ -258,7 +270,7 @@ export function rankStories(stories: StoryCandidate[], signals: Map<string, HotS
   const unique = [...new Map(recent.map((story) => [story.item.canonical_hash, story])).values()];
   const words = new Map(unique.map((story) => [story.item.canonical_hash, titleWords(story.item.title)]));
   const hostOf = (story: StoryCandidate) => new URL(story.item.canonical_url).hostname;
-  return unique.map((story) => {
+  const ranked = unique.map((story) => {
     const signal = signals.get(story.item.canonical_hash) ?? {};
     const mine = words.get(story.item.canonical_hash)!;
     // The same event reported by the other publisher: at least three shared title words.
@@ -270,6 +282,16 @@ export function rankStories(stories: StoryCandidate[], signals: Map<string, HotS
     const hours = (now - new Date(story.item.published_at).valueOf()) / 3600000;
     return { ...story, hot, youth, score: hot + youth - 2 * hours };
   }).filter((story) => story.hot > 0).sort((a, b) => b.score - a.score);
+  // A syndicated event can appear in both English-language feeds under
+  // different URLs. Keep the version with a fuller feed summary so the next
+  // enrichment run does not publish the same event from the other outlet.
+  const events: RankedStory[] = [];
+  for (const story of ranked) {
+    const duplicate = events.findIndex((kept) => sameRecentEvent(story, kept));
+    if (duplicate < 0) { events.push(story); continue; }
+    if (summaryWordCount(story) > summaryWordCount(events[duplicate])) events[duplicate] = story;
+  }
+  return events.sort((a, b) => b.score - a.score);
 }
 
 type Db = ReturnType<typeof newsAdminClient>;
