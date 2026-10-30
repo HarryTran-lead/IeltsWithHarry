@@ -47,6 +47,16 @@
 .news-completion-table tbody tr:nth-child(even){background:#f8fbfb}
 .news-completion-table td:has(input){background:#f0faf8}
 .news-completion-table .news-auto-written{display:inline-block;width:min(100%,220px);min-width:120px;padding:8px 10px;font-size:inherit}
+.news-completion-instruction{margin:18px 0 10px;color:#3d566c;font-size:14px;line-height:1.5}
+.news-completion-table tbody th{background:#f5faf9;color:#17324d;font-weight:700}
+.news-completion-table tbody tr:nth-child(even) th{background:#edf6f5}
+.news-completion-number{display:block;margin-bottom:4px;color:#128f9b;font-size:12px;font-weight:800}
+.news-completion-translate{display:flex;align-items:center;gap:4px;margin-top:8px;padding:0;color:#0c8794;font-size:12px;font-weight:700}
+.news-completion-translation{display:block;margin-top:7px;color:#56708a;font-weight:400;line-height:1.45}
+.news-completion-feedback{display:block;margin-top:5px;color:#247c55;font-weight:700}
+.news-completion-table .is-wrong .news-completion-feedback{color:#a44940}
+.news-completion-table .is-correct input{border-color:#46bc86;background:#edfaf2}
+.news-completion-table .is-wrong input{border-color:#e88a8a;background:#fff2f0}
 .rw.is-practice .news-completion-table{font-size:max(15px,calc(var(--rw-size) * .82))}
 /* Result card after grading: score, estimated band, time, change and per-type bars. */
 .news-quiz-result{margin-top:20px;padding:18px;border:1px solid #cfe7e2;border-radius:18px;background:linear-gradient(135deg,#f1fbf8,#fffdf6)}
