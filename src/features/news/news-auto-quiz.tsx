@@ -20,6 +20,18 @@ type Review = { id: string; correct: boolean; correctIndex: number | null; accep
 type SavedResult = { score: number; total: number; review: Review[]; answers: Record<string, string>; submittedAt: string; attempts: number; durationSeconds?: number | null };
 const ATTEMPT_COLUMNS = "id,article_id,score,total,submitted_at,partial,breakdown,duration_seconds";
 
+function parseFlowChartPrompt(prompt: string) {
+  const steps: { text: string; start: number }[] = [];
+  let offset = 0;
+  for (const part of prompt.split(/(\s*(?:->|→)\s*)/)) {
+    if (/^\s*(?:->|→)\s*$/.test(part)) { offset += part.length; continue; }
+    const text = part.trim();
+    if (text) steps.push({ text, start: offset + part.indexOf(text) });
+    offset += part.length;
+  }
+  return steps.length > 1 ? steps : null;
+}
+
 // Instructions follow the wording of IELTS Academic Reading papers.
 const groups: Record<QuestionType, { title: string; short: string; instruction: string; hint: string }> = {
   mcq: { title: "Multiple Choice", short: "Multiple Choice", instruction: "Choose the correct answer, A, B, C or D.", hint: "Chọn một đáp án đúng" },
@@ -165,7 +177,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
     finally { setTranslatingId(null); }
   }
 
-  function selectQuestion(root: HTMLElement, target: EventTarget, question: Question) {
+  function selectQuestion(root: HTMLElement, target: EventTarget, question: Question, promptOffset = 0) {
     const selected = window.getSelection();
     if (!selected?.rangeCount || selected.isCollapsed) {
       const mark = (target as Element).closest("mark[data-question-hl]");
@@ -178,7 +190,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
     const before = document.createRange();
     before.selectNodeContents(root);
     before.setEnd(range.startContainer, range.startOffset);
-    const start = before.toString().length;
+    const start = promptOffset + before.toString().length;
     const end = start + range.toString().length;
     if (start < end) setSelection({ questionId: question.id, start, end });
   }
@@ -295,13 +307,19 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
           const value = answers[question.id];
           const choice = choiceTypes.has(question.question_type);
           const table = question.question_type === "table_completion" ? parseTableCompletion(question.prompt) : null;
+          const flowChart = question.question_type === "flow_chart_completion" ? parseFlowChartPrompt(question.prompt) : null;
           const visiblePrompt = table?.instruction ?? question.prompt;
           const setValue = (next: number | string) => setAnswers((current) => ({ ...current, [question.id]: next }));
           return <div className={`news-auto-question ${review ? (review.correct ? "is-correct" : "is-wrong") : ""}`} key={question.id} data-q={number}>
             <strong>Câu {number}</strong>
-            <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{segments(visiblePrompt,0,questionHighlights[question.id]??[]).map((part)=>part.highlight
+            {flowChart ? <div className="news-flow-chart" role="list" aria-label={question.prompt}>{flowChart.map((step,index)=><div className="news-flow-chart-unit" key={`${step.start}-${index}`}>
+              <div className="news-flow-chart-step" role="listitem" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question,step.start)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question,step.start));}}>{segments(step.text,step.start,questionHighlights[question.id]??[]).map((part)=>part.highlight
                 ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
-                : <span key={part.start}>{part.text}</span>)}</h3>
+                : <span key={part.start}>{part.text}</span>)}</div>
+              {index < flowChart.length - 1 && <span className="news-flow-chart-arrow" aria-hidden="true">↓</span>}
+            </div>)}</div> : <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{segments(visiblePrompt,0,questionHighlights[question.id]??[]).map((part)=>part.highlight
+                ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
+                : <span key={part.start}>{part.text}</span>)}</h3>}
             <div className="news-question-tools"><button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button><span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
             {translationVisible[question.id]&&translations[question.id]&&<p className="news-question-translation" lang="vi">{translations[question.id]}</p>}
             {selection?.questionId===question.id&&<div className="news-question-highlight-menu" role="group" aria-label={`Highlight câu ${number}`}>
