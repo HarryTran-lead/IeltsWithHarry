@@ -10,6 +10,7 @@ import { addHighlight, highlightColors, parseHighlights, segments, type Highligh
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
 import { choiceTypes, gapTypes } from "@/lib/news/ielts-passage";
+import { parseTableCompletion } from "@/lib/news/table-completion";
 import "@/app/news-enrichment.css";
 
 export type { QuestionType };
@@ -31,7 +32,7 @@ const groups: Record<QuestionType, { title: string; short: string; instruction: 
   sentence_completion: { title: "Sentence Completion", short: "Sentence Completion", instruction: "Complete the sentence. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền tối đa 3 từ" },
   summary_completion: { title: "Summary Completion", short: "Summary Completion", instruction: "Complete the summary. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào tóm tắt" },
   note_completion: { title: "Note Completion", short: "Note Completion", instruction: "Complete the note. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào ghi chú" },
-  table_completion: { title: "Table Completion", short: "Table Completion", instruction: "Complete the table entry. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào bảng" },
+  table_completion: { title: "Table Completion", short: "Table Completion", instruction: "Complete the table. Follow the word limit stated in each question.", hint: "Điền vào ô trống theo giới hạn từ" },
   flow_chart_completion: { title: "Flow-chart Completion", short: "Flow-chart Completion", instruction: "Complete the process step. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào lưu đồ" },
   diagram_label_completion: { title: "Diagram Label Completion", short: "Diagram Label Completion", instruction: "Complete the text diagram. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền nhãn sơ đồ" },
   short_answer: { title: "Short-answer Questions", short: "Short Answer", instruction: "Answer using NO MORE THAN THREE WORDS from the article.", hint: "Trả lời ngắn" },
@@ -258,10 +259,12 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
           const review = graded ? reviews[question.id] : undefined;
           const value = answers[question.id];
           const choice = choiceTypes.has(question.question_type);
+          const table = question.question_type === "table_completion" ? parseTableCompletion(question.prompt) : null;
+          const visiblePrompt = table?.instruction ?? question.prompt;
           const setValue = (next: number | string) => setAnswers((current) => ({ ...current, [question.id]: next }));
           return <div className={`news-auto-question ${review ? (review.correct ? "is-correct" : "is-wrong") : ""}`} key={question.id} data-q={number}>
             <strong>Câu {number}</strong>
-            <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{segments(question.prompt,0,questionHighlights[question.id]??[]).map((part)=>part.highlight
+            <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{segments(visiblePrompt,0,questionHighlights[question.id]??[]).map((part)=>part.highlight
                 ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
                 : <span key={part.start}>{part.text}</span>)}</h3>
             <div className="news-question-tools"><button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button><span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
@@ -270,9 +273,19 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
               {highlightColors.map((color)=><button type="button" key={color} className={color} onClick={()=>paintQuestion(question,color)} aria-label={`Highlight màu ${color}`}/>)}
               {selection.mark&&<button type="button" className="remove" onClick={()=>{const next=(questionHighlights[question.id]??[]).filter((item)=>item.id!==selection.mark);setQuestionHighlights((current)=>({...current,[question.id]:next}));try{localStorage.setItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`,JSON.stringify(next));}catch{}setSelection(null);}}>Bỏ highlight</button>}
             </div>}
+            {table && <div className="news-completion-table-scroll"><table className="news-completion-table" aria-label={`Bảng điền từ câu ${number}`}>
+              <thead><tr>{table.headers.map((header, index) => <th scope="col" key={index}>{header}</th>)}</tr></thead>
+              <tbody>{table.rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, columnIndex) => {
+                const isGap = table.gap.row === rowIndex && table.gap.column === columnIndex;
+                const marker = isGap ? /_{3,}|\.{3,}|…/.exec(cell) : null;
+                return <td key={columnIndex}>{marker ? <>{cell.slice(0, marker.index)}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
+                  aria-label={`Từ còn thiếu câu ${number}, cột ${table.headers[columnIndex]}`} value={typeof value === "string" ? value : ""} disabled={graded}
+                  onChange={(event) => setValue(event.target.value)} placeholder="Điền từ"/>{cell.slice(marker.index + marker[0].length)}</> : cell}</td>;
+              })}</tr>)}</tbody>
+            </table></div>}
             {!choice && !gapTypes.has(question.question_type) && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Câu trả lời câu ${number}`}
               value={typeof value === "string" ? value : ""} disabled={graded} onChange={(event) => setValue(event.target.value)} placeholder="Tối đa 3 từ"/>}
-            {gapTypes.has(question.question_type) && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
+            {gapTypes.has(question.question_type) && !table && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
               value={typeof value === "string" ? value : ""} disabled={graded} onChange={(event) => setValue(event.target.value)} placeholder="Điền vào chỗ trống · tối đa 3 từ"/>}
             {choice && <div className={`news-auto-options ${question.question_type === "tfng" || question.question_type === "ynng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
               <label key={index} className={`${value === index ? "selected" : ""} ${review?.correctIndex === index ? "correct" : ""} ${review && value === index && index !== review.correctIndex ? "wrong" : ""}`}>

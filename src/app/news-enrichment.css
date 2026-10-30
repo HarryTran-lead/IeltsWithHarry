@@ -38,6 +38,16 @@
 .news-question-highlight-menu button:not(.remove){width:24px;height:24px;border:2px solid #fff;border-radius:50%}
 .news-question-highlight-menu .sun{background:#ffd84d}.news-question-highlight-menu .mint{background:#6fd7a5}.news-question-highlight-menu .rose{background:#ff98b2}
 .news-question-highlight-menu .remove{padding:3px 5px;color:#fff;font-size:12px}
+.news-completion-table-scroll{max-width:100%;margin:2px 0 14px;overflow-x:auto;border:1px solid #bfdbe0;border-radius:12px}
+.news-completion-table{width:100%;min-width:360px;border-collapse:collapse;color:#17324d;font-size:15px;line-height:1.45}
+.news-completion-table th,.news-completion-table td{width:auto;padding:12px 14px;border-right:1px solid #d3e4e8;border-bottom:1px solid #d3e4e8;text-align:left;vertical-align:middle;overflow-wrap:anywhere}
+.news-completion-table th:last-child,.news-completion-table td:last-child{border-right:0}
+.news-completion-table tbody tr:last-child td{border-bottom:0}
+.news-completion-table th{background:#e9f5f5;color:#174b5a;font-weight:800}
+.news-completion-table tbody tr:nth-child(even){background:#f8fbfb}
+.news-completion-table td:has(input){background:#f0faf8}
+.news-completion-table .news-auto-written{display:inline-block;width:min(100%,220px);min-width:120px;padding:8px 10px;font-size:inherit}
+.rw.is-practice .news-completion-table{font-size:max(15px,calc(var(--rw-size) * .82))}
 /* Result card after grading: score, estimated band, time, change and per-type bars. */
 .news-quiz-result{margin-top:20px;padding:18px;border:1px solid #cfe7e2;border-radius:18px;background:linear-gradient(135deg,#f1fbf8,#fffdf6)}
 .news-quiz-result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
