@@ -23,7 +23,7 @@ import { celebrate } from "@/lib/celebrate";
 import { PlannerMini } from "@/features/planner/planner-widgets";
 import { useDemo } from "@/features/demo/demo-store";
 import { offsetISO, recommendations, skillColors, todayISO, type Skill } from "@/lib/demo-data";
-import { demoMode } from "@/lib/runtime";
+import { demoMode, releaseLocks } from "@/lib/runtime";
 import { LatestNews, StudyRoomCard } from "./dashboard-widgets";
 import { StudyProgress } from "./study-progress";
 import { StageMap, useStageStops } from "@/features/learning/stage-map";
@@ -55,9 +55,9 @@ function WelcomeBanner() {
         <div className="welcome-row">
         <StreakWeek />
         <div className="welcome-actions">
-          <Link href="/app/lesson/technology-digital-life" className="button primary">
+          {releaseLocks ? <button className="button primary" disabled>Learn · Sắp mở</button> : <Link href="/app/lesson/technology-digital-life" className="button primary">
             Continue learning <ArrowRight size={16} />
-          </Link>
+          </Link>}
           <Link href="/app/planner" className="button ghost">
             <CalendarDays size={16} /> {doneToday}/{goal} tasks today
           </Link>
@@ -115,9 +115,9 @@ function LearningPath() {
             <p>From band 1.0 to 7.0+ — build your skills step by step.</p>
           </div>
         </div>
-        <Link href="/app/learn" className="link-pill">
+        {releaseLocks ? <span className="link-pill" aria-disabled="true">Sắp mở</span> : <Link href="/app/learn" className="link-pill">
           View all levels <ArrowRight size={15} />
-        </Link>
+        </Link>}
       </div>
       <StageMap stops={stops} />
       <div className="continue-card">
@@ -133,12 +133,12 @@ function LearningPath() {
             Learn useful vocabulary, reading strategies, writing tasks and
             speaking skills for real-world topics.
           </p>
-          <Link
+          {releaseLocks ? <button className="button coral" disabled>Sắp mở</button> : <Link
             href="/app/lesson/technology-digital-life"
             className="button coral"
           >
             Continue learning <ArrowRight size={16} />
-          </Link>
+          </Link>}
         </div>
         <div className="continue-skills">
           {["Vocabulary", "Reading", "Listening", "Writing", "Speaking"].map(
@@ -329,11 +329,11 @@ export function Dashboard() {
         <LatestNews />
         <StudyProgress />
         <LearningPath />
-        <div className="dashboard-duo">
+        {releaseLocks ? <TodayGoal /> : <><div className="dashboard-duo">
           <TodayGoal />
           <PracticeNow />
         </div>
-        <Recommended />
+        <Recommended /></>}
       </div>
       <aside className="dashboard-aside stagger">
         <StudyRoomCard />

@@ -9,7 +9,7 @@ const stageStickers: StickerName[] = ["abc", "pencil", "book", "headphones", "ch
 
 export default async function CoursesPage() {
   const courses = liveMode ? (await (await createClient()).from("courses").select("slug,title,description,stage_id").eq("published", true).order("title")).data ?? [] : [];
-  const visibleCourses = releaseLocks ? courses.filter((course) => !["foundation", "elementary", "pre-ielts"].includes(course.stage_id)) : courses;
+  const visibleCourses = releaseLocks ? [] : courses;
   return (
     <div className="public-container">
       <header className="public-page-head">
@@ -29,7 +29,7 @@ export default async function CoursesPage() {
       </header>
       <div className="public-course-grid stagger">
         {stages.map((stage, index) => {
-          const locked = releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id);
+          const locked = releaseLocks;
           const content = <>
             <div className="course-stage-top">
               <span className="course-stage-index">{String(index + 1).padStart(2, "0")}</span>

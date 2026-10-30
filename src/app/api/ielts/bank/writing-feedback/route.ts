@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { bankClient, requestError, viewer } from "@/lib/ielts-bank/server";
 import { AiQuotaError, geminiJson } from "@/lib/news/enrichment";
+import { releaseLocks } from "@/lib/runtime";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -36,6 +37,7 @@ const round = (value: number) => Math.min(9, Math.max(0, Math.round(value * 2) /
 
 /** Feedback already stored on the learner's attempt, or null; never calls the AI. */
 export async function GET(request: Request) {
+  if (releaseLocks) return Response.json({ error: "Writing practice is not available yet." }, { status: 404 });
   try {
     const user = await viewer();
     const attemptId = z.uuid().parse(new URL(request.url).searchParams.get("attemptId"));
@@ -48,6 +50,7 @@ export async function GET(request: Request) {
 
 /** AI practice feedback for a submitted Writing attempt; stored on the attempt so it is graded once. */
 export async function POST(request: Request) {
+  if (releaseLocks) return Response.json({ error: "Writing practice is not available yet." }, { status: 404 });
   try {
     const user = await viewer();
     const { attemptId } = z.object({ attemptId: z.uuid() }).parse(await request.json());

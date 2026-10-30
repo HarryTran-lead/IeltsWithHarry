@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { loadIeltsLiveData, type IeltsLiveSkill } from "@/lib/ielts/live";
+import { releaseLocks } from "@/lib/runtime";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
 
 export async function GET(request: NextRequest) {
+  if (releaseLocks) return NextResponse.json({ error: "IELTS practice is not available yet." }, { status: 404 });
   const client = await createClient();
   const { data } = await client.auth.getClaims();
   if (!data?.claims) return NextResponse.json({ error: "Cần đăng nhập để luyện tập." }, { status: 401 });

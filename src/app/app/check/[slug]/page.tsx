@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { releaseLocks } from "@/lib/runtime";
 
 export default async function CheckPage({ params }: { params: Promise<{ slug: string }> }) {
+  if (releaseLocks) notFound();
   const { slug } = await params;
   const supabase = await createClient();
   const { data: claims } = await supabase.auth.getClaims();
@@ -12,6 +13,5 @@ export default async function CheckPage({ params }: { params: Promise<{ slug: st
   if (!assessment) notFound();
   const { data: course } = await supabase.from("courses").select("stage_id").eq("id", assessment.course_id).single();
   if (!course) notFound();
-  if (releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(course.stage_id)) notFound();
   return <CourseAssessment content={{ ...assessment.content as Record<string, unknown>, title: assessment.title }} stageId={course.stage_id} />;
 }
