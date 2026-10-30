@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { bankClient, requestError, submitAttempt, viewer } from "@/lib/ielts-bank/server";
 import { attemptContent, attemptMinutes, contentSchema, publicContent, scoreAnswers } from "@/lib/ielts-bank/schema";
+import { releaseLocks } from "@/lib/runtime";
 export const runtime = "nodejs";
 
 const bodySchema = z.discriminatedUnion("action", [
@@ -10,6 +11,7 @@ const bodySchema = z.discriminatedUnion("action", [
   z.object({ action: z.literal("submit"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), expired: z.boolean().optional() }),
 ]);
 export async function POST(request: Request) {
+  if (releaseLocks) return Response.json({ error: "Question bank is not available yet." }, { status: 404 });
   try {
     const user = await viewer(), client = bankClient(), body = bodySchema.parse(await request.json());
     if (body.action === "start") {
@@ -52,6 +54,7 @@ export async function POST(request: Request) {
   } catch (error) { return requestError(error); }
 }
 export async function GET(request: Request) {
+  if (releaseLocks) return Response.json({ error: "Question bank is not available yet." }, { status: 404 });
   try {
     const user = await viewer(), client = bankClient(), url = new URL(request.url), id = url.searchParams.get("id");
     if (id) {

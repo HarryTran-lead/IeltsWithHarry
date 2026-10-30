@@ -8,6 +8,7 @@ import { getViewerRole } from "@/lib/viewer-role";
 import { skillMaterialSchema } from "@/lib/skill-material";
 
 export default async function LessonPage({ params }: { params: Promise<{ slug: string }> }) {
+  if (releaseLocks) notFound();
   if (demoMode) return <Portal canManage={(await getViewerRole()) === "admin"} />;
   if (!supabaseConfigured) return <main className="setup-notice"><h1>Backend setup required</h1><p>Connect Supabase to see published lessons.</p></main>;
   const { slug } = await params;
@@ -19,11 +20,6 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   if (isAdmin !== true) lessonQuery = lessonQuery.eq("published", true);
   const { data: lesson } = await lessonQuery.maybeSingle();
   if (!lesson) notFound();
-  if (releaseLocks && isAdmin !== true) {
-    const { data: unit } = await supabase.from("units").select("course_id").eq("id", lesson.unit_id).maybeSingle();
-    const { data: course } = unit ? await supabase.from("courses").select("stage_id").eq("id", unit.course_id).maybeSingle() : { data: null };
-    if (course && ["foundation", "elementary", "pre-ielts"].includes(course.stage_id)) notFound();
-  }
   const [blockResult, questionResult, wordResult, materialResult, packageResult] = await Promise.all([
     supabase.from("lesson_blocks").select("id,kind,body").eq("lesson_id", lesson.id).order("sort_order"),
     supabase.from("exercise_questions").select("id,slug,prompt,options").eq("lesson_id", lesson.id).order("sort_order"),

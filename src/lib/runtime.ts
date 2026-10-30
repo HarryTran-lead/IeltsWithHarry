@@ -14,9 +14,10 @@ export const releaseLocks = process.env.NODE_ENV === "production" && process.env
 
 export function lockedLearnerPath(pathname: string) {
   if (!releaseLocks) return false;
-  return /^\/app\/(vocabulary|reading|listening|writing|speaking)\/mode\//.test(pathname)
+  return /^\/app\/(grammar|reading|listening|writing|speaking|question-bank|learn)(?:\/|$)/.test(pathname)
+    || /^\/app\/vocabulary\/mode\//.test(pathname)
     || pathname === "/app/content-lab" || pathname.startsWith("/app/content-lab/")
     || pathname === "/app/news/learn" || pathname.startsWith("/app/news/learn/")
-    || pathname === "/app/listening/youtube" || pathname.startsWith("/app/listening/youtube/")
-    || ["foundation", "elementary", "pre-ielts"].some((stage) => pathname === `/app/learn/${stage}` || pathname.startsWith(`/app/learn/${stage}/`));
+    || pathname === "/app/lesson" || pathname.startsWith("/app/lesson/")
+    || pathname === "/app/check" || pathname.startsWith("/app/check/");
 }

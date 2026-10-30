@@ -1,9 +1,11 @@
 import { bankClient, requestError, viewer } from "@/lib/ielts-bank/server";
 import { catalogSkills, sectionSummaries, withSummaries, type CatalogExam } from "@/lib/ielts-bank/catalog";
+import { releaseLocks } from "@/lib/runtime";
 
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {
+  if (releaseLocks) return Response.json({ error: "Question bank is not available yet." }, { status: 404 });
   try {
     await viewer();
     const requestedSkill = new URL(request.url).searchParams.get("skill");

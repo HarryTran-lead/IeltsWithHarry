@@ -1,8 +1,10 @@
 import { bankClient, requestError, viewer } from "@/lib/ielts-bank/server";
 import { contentSchema, publicContent } from "@/lib/ielts-bank/schema";
+import { releaseLocks } from "@/lib/runtime";
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {
+  if (releaseLocks) return Response.json({ error: "Question bank is not available yet." }, { status: 404 });
   try {
     await viewer();
     const client = bankClient(), url = new URL(request.url), id = url.searchParams.get("id");
