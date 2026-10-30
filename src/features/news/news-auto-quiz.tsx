@@ -10,7 +10,7 @@ import { addHighlight, highlightColors, parseHighlights, segments, type Highligh
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
 import { choiceTypes, gapTypes } from "@/lib/news/ielts-passage";
-import { parseTableCompletion } from "@/lib/news/table-completion";
+import { parseArrowTableCompletion, parseTableCompletion } from "@/lib/news/table-completion";
 import "@/app/news-enrichment.css";
 
 export type { QuestionType };
@@ -253,9 +253,44 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
     {sections.map((section) => {
       const group = groups[section.type];
       const first = section.items[0].number; const last = section.items[section.items.length - 1].number;
+      const arrowTable = section.type === "table_completion" ? parseArrowTableCompletion(section.items.map(({ question }) => question.prompt)) : null;
       return <div className="news-auto-group" key={`${section.type}-${first}`}>
         <div className="news-auto-group-head"><strong>Questions {first}{last > first ? `–${last}` : ""} · {group.title}</strong><p>{group.instruction}</p><small>{group.hint}</small></div>
-        {section.items.map(({ question, number }) => {
+        {arrowTable && <>
+          <p className="news-completion-instruction">{arrowTable.instruction}</p>
+          <div className="news-completion-table-scroll"><table className="news-completion-table" aria-label={`Bảng điền từ câu ${first} đến ${last}`}>
+            <thead><tr>{arrowTable.headers.map((header, index) => <th scope="col" key={index}>{header}</th>)}</tr></thead>
+            <tbody>{arrowTable.rows.map((row, index) => {
+              const { question, number } = section.items[index];
+              const value = answers[question.id];
+              const review = graded ? reviews[question.id] : undefined;
+              const marker = /_{3,}|\.{3,}|…/.exec(row.value)!;
+              return <tr key={question.id} className={review ? review.correct ? "is-correct" : "is-wrong" : ""}>
+                <th scope="row"><small className="news-completion-number">Câu {number}</small>{row.label}
+                  <button type="button" className="news-completion-translate" onClick={() => void toggleTranslation(question)} disabled={translatingId === question.id}>
+                    <Languages size={13}/>{translatingId === question.id ? "Đang dịch…" : translationVisible[question.id] ? "Ẩn bản dịch" : "Dịch câu hỏi"}</button>
+                  {translationVisible[question.id] && translations[question.id] && <small className="news-completion-translation" lang="vi">{translations[question.id]}</small>}
+                </th>
+                <td>{row.value.slice(0, marker.index)}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
+                  aria-label={`Từ còn thiếu câu ${number}, ${row.label}`} value={typeof value === "string" ? value : ""} disabled={graded}
+                  onChange={(event) => setAnswers((current) => ({ ...current, [question.id]: event.target.value }))} placeholder="Điền từ"/>{row.value.slice(marker.index + marker[0].length)}
+                  {review && <small className="news-completion-feedback">{review.correct ? "✓ Chính xác" : `✗ Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</small>}
+                </td>
+              </tr>;
+            })}</tbody>
+          </table></div>
+          {graded && section.items.map(({ question, number }) => {
+            const review = reviews[question.id];
+            if (!review) return null;
+            return <div className={`news-auto-explanation ${review.correct ? "" : "wrong"}`} key={question.id}>{review.correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
+              <strong>Câu {number}: {review.correct ? "Chính xác!" : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
+              {!review.correct && <p>Bạn trả lời: “{String(answers[question.id] ?? "")}”</p>}
+              <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>
+              <small><b>Câu dẫn chứng trong bài:</b> “{review.supportingSentence}”</small>
+            </div></div>;
+          })}
+        </>}
+        {!arrowTable && section.items.map(({ question, number }) => {
           const review = graded ? reviews[question.id] : undefined;
           const value = answers[question.id];
           const choice = choiceTypes.has(question.question_type);

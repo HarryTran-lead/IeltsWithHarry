@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseTableCompletion } from "../src/lib/news/table-completion";
+import { parseArrowTableCompletion, parseTableCompletion } from "../src/lib/news/table-completion";
 
 describe("Table Completion prompt layout", () => {
   it("recovers the flattened two-column table shown to learners", () => {
@@ -28,5 +28,30 @@ describe("Table Completion prompt layout", () => {
   it("leaves non-table or ambiguous prompts for the original question layout", () => {
     expect(parseTableCompletion("Complete the table below. Builder Division ______")).toBeNull();
     expect(parseTableCompletion("Complete the table below. A | B --- | --- A1 | ______ A2 | ______")).toBeNull();
+  });
+});
+
+describe("shared Table Completion form", () => {
+  it("combines the Vega Island arrow prompts into one table", () => {
+    const lead = "Complete the table note with a word from the article: Feature of Vega Island skull -> Corresponding landscape element ";
+    expect(parseArrowTableCompletion([
+      `${lead}Eye socket -> A ______ jutting out of the ice`,
+      `${lead}Mouth -> A ______ moraine`,
+      `${lead}Jawbone -> Bahía del Diablo (Devil's Bay) ______`,
+    ])).toEqual({
+      instruction: "Complete the table note with a word from the article:",
+      headers: ["Feature of Vega Island skull", "Corresponding landscape element"],
+      rows: [
+        { label: "Eye socket", value: "A ______ jutting out of the ice" },
+        { label: "Mouth", value: "A ______ moraine" },
+        { label: "Jawbone", value: "Bahía del Diablo (Devil's Bay) ______" },
+      ],
+    });
+  });
+
+  it("supports one arrow question and rejects mixed or ambiguous groups", () => {
+    expect(parseArrowTableCompletion(["Complete the table: Feature -> Landscape Mouth -> A ______ moraine"])?.rows).toEqual([{ label: "Mouth", value: "A ______ moraine" }]);
+    expect(parseArrowTableCompletion(["Complete the table: Feature -> Landscape Mouth -> A ______ moraine", "Complete the table: Feature -> Landscape Jawbone -> ______ ______"])).toBeNull();
+    expect(parseArrowTableCompletion(["Complete the table: Feature -> Landscape Mouth -> A moraine"])).toBeNull();
   });
 });
