@@ -1,4 +1,3 @@
-import { randomBytes } from "node:crypto";
 import { z } from "zod";
 import { bankClient, viewer } from "../../../../lib/ielts-bank/server";
 
@@ -7,6 +6,7 @@ export const runtime = "nodejs";
 const createUserSchema = z.object({
   name: z.string().trim().min(2).max(80),
   email: z.email().trim().toLowerCase().max(254),
+  password: z.string().min(8).max(128),
 });
 
 const noStore = { "Cache-Control": "no-store" };
@@ -18,10 +18,9 @@ export async function POST(request: Request) {
     if (origin && new URL(origin).host !== new URL(request.url).host) return Response.json({ error: "Invalid request origin" }, { status: 403, headers: noStore });
     if (Number(request.headers.get("content-length") || 0) > 4096) return Response.json({ error: "Request too large" }, { status: 413, headers: noStore });
     const parsed = createUserSchema.safeParse(await request.json());
-    if (!parsed.success) return Response.json({ error: "Nhập họ tên và email hợp lệ." }, { status: 400, headers: noStore });
+    if (!parsed.success) return Response.json({ error: "Nhập họ tên, email hợp lệ và mật khẩu từ 8 đến 128 ký tự." }, { status: 400, headers: noStore });
 
-    const { name, email } = parsed.data;
-    const password = randomBytes(24).toString("base64url");
+    const { name, email, password } = parsed.data;
     const admin = bankClient();
     const { data, error } = await admin.auth.admin.createUser({
       email, password, email_confirm: true, user_metadata: { display_name: name },
@@ -40,7 +39,7 @@ export async function POST(request: Request) {
       const rollback = await admin.auth.admin.deleteUser(data.user.id);
       return Response.json({ error: rollback.error ? "Tài khoản đã tạo nhưng ghi nhật ký thất bại. Liên hệ quản trị hệ thống để kiểm tra." : "Không ghi được nhật ký. Tài khoản chưa được tạo; hãy thử lại." }, { status: 500, headers: noStore });
     }
-    return Response.json({ id: data.user.id, email, name, password }, { status: 201, headers: noStore });
+    return Response.json({ id: data.user.id, email, name }, { status: 201, headers: noStore });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unexpected error";
     const status = /Authentication required/.test(message) ? 401 : /Admin access required/.test(message) ? 403 : 500;

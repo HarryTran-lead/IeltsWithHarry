@@ -132,36 +132,35 @@ function AdminCreateUser({ onCreated }: { onCreated: () => void }) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const [created, setCreated] = useState<{ id: string; email: string; name: string; password: string } | null>(null);
+  const [created, setCreated] = useState<{ id: string; email: string; name: string } | null>(null);
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault(); setBusy(true); setError(""); setCreated(null);
     try {
       const response = await fetch("/api/admin/users", { method: "POST", credentials: "same-origin", cache: "no-store",
-        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: name.trim(), email: email.trim() }) });
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: name.trim(), email: email.trim(), password }) });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Không tạo được tài khoản.");
-      setCreated(result); setName(""); setEmail(""); onCreated();
+      setCreated(result); setName(""); setEmail(""); setPassword(""); onCreated();
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Không tạo được tài khoản."); }
     finally { setBusy(false); }
   }
 
   return <section className="card learner-create-card">
-    <div><h2>Tạo tài khoản học viên</h2><p>Admin tạo tài khoản để học viên đăng nhập ngay. Hệ thống tạo mật khẩu mạnh và chỉ hiển thị một lần.</p></div>
+    <div><h2>Tạo tài khoản học viên</h2><p>Nhập thông tin đăng nhập cho học viên. Mật khẩu do admin đặt ngay trong form.</p></div>
     <button type="button" className="button primary" onClick={() => { setOpen((value) => !value); setCreated(null); setError(""); }}><Plus size={16} /> {open ? "Đóng form" : "Tạo tài khoản"}</button>
     {open && <form onSubmit={(event) => void submit(event)} className="learner-create-form">
       <label>Họ và tên<input required minLength={2} maxLength={80} autoComplete="off" value={name} onChange={(event) => setName(event.target.value)} /></label>
       <label>Email đăng nhập<input required type="email" maxLength={254} autoComplete="off" value={email} onChange={(event) => setEmail(event.target.value)} /></label>
+      <label>Mật khẩu ban đầu<input required type="password" minLength={8} maxLength={128} autoComplete="new-password" value={password} onChange={(event) => setPassword(event.target.value)} /></label>
       <button type="submit" className="button primary" disabled={busy}>{busy ? "Đang tạo…" : "Tạo học viên"}</button>
     </form>}
     {error && <p className="form-error" role="alert">{error}</p>}
-    {created && <div className="learner-created" role="status"><strong>Đã tạo tài khoản cho {created.name}</strong><p>Email: {created.email}</p>
-      <label>Mật khẩu ban đầu (chỉ hiện ở đây)<input readOnly value={created.password} onFocus={(event) => event.target.select()} /></label>
-      <div><button type="button" className="button subtle" onClick={() => void navigator.clipboard.writeText(`${created.email}\n${created.password}`)}>Sao chép thông tin đăng nhập</button>
-        <Link className="button subtle" href={`/admin/users/${created.id}`}>Mở hồ sơ</Link></div>
-      <small>Gửi mật khẩu riêng cho học viên qua kênh an toàn. Đóng form hoặc rời trang sẽ không xem lại được mật khẩu này.</small>
+    {created && <div className="learner-created" role="status"><strong>Đã tạo tài khoản cho {created.name}</strong><p>Email đăng nhập: {created.email}</p>
+      <Link className="button subtle" href={`/admin/users/${created.id}`}>Mở hồ sơ</Link>
     </div>}
   </section>;
 }
