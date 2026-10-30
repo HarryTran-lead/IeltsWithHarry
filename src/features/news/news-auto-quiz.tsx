@@ -32,7 +32,7 @@ const groups: Record<QuestionType, { title: string; short: string; instruction: 
   sentence_completion: { title: "Sentence Completion", short: "Sentence Completion", instruction: "Complete the sentence. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền tối đa 3 từ" },
   summary_completion: { title: "Summary Completion", short: "Summary Completion", instruction: "Complete the summary. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào tóm tắt" },
   note_completion: { title: "Note Completion", short: "Note Completion", instruction: "Complete the note. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào ghi chú" },
-  table_completion: { title: "Table Completion", short: "Table Completion", instruction: "Complete the table entry. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào bảng" },
+  table_completion: { title: "Table Completion", short: "Table Completion", instruction: "Complete the table. Follow the word limit stated in each question.", hint: "Điền vào ô trống theo giới hạn từ" },
   flow_chart_completion: { title: "Flow-chart Completion", short: "Flow-chart Completion", instruction: "Complete the process step. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào lưu đồ" },
   diagram_label_completion: { title: "Diagram Label Completion", short: "Diagram Label Completion", instruction: "Complete the text diagram. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền nhãn sơ đồ" },
   short_answer: { title: "Short-answer Questions", short: "Short Answer", instruction: "Answer using NO MORE THAN THREE WORDS from the article.", hint: "Trả lời ngắn" },
