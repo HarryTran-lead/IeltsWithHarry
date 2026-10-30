@@ -445,6 +445,20 @@
 .news-page .news-card h3 a:hover {
   color: var(--teal-strong);
 }
+.news-card-quiz {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  margin: -5px 0 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eee9ff;
+  color: #5b3d96;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
 .news-card-foot {
   display: flex;
   align-items: center;
