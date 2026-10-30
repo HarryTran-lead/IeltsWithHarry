@@ -1,7 +1,6 @@
 import { load } from "cheerio";
 import { AiQuotaError, geminiJson, saveImageQuery } from "./enrichment";
 import { generateAdaptiveNewsQuiz, type AdaptiveQuestion } from "./adaptive-quiz";
-import { passageBands, passageForKey, type ReadingPassage } from "./ielts-passage";
 import { canonicalUrl, newsHash, rssProvider, type NewsItem, type NewsSource } from "./providers";
 import type { NewsAdminSettings } from "./settings";
 import type { newsAdminClient } from "./sync";
@@ -154,7 +153,7 @@ When unsure, choose UNSUPPORTED.`;
 
 const sourceBlock = (story: SourceStory) => `SOURCE (${story.publisher}, ${story.url})\nTitle: ${story.title}\nSummary: ${story.summary}\n\n${story.text}`;
 
-export type RewriteResult = { model: string; body: string; questions: AdaptiveQuestion[]; imageQuery: string; readingPassage: ReadingPassage };
+export type RewriteResult = { model: string; body: string; questions: AdaptiveQuestion[]; imageQuery: string };
 export class UnsuitableStoryError extends Error {}
 
 /**
@@ -165,14 +164,12 @@ export class UnsuitableStoryError extends Error {}
  */
 export async function writeVietnamArticle(story: SourceStory, fetcher: typeof fetch = fetch): Promise<RewriteResult> {
   const source = `${story.title}\n${story.summary}\n${story.text}`;
-  const readingPassage = passageForKey(story.url);
-  const level = `\n\nTARGET: Passage ${readingPassage}, approximate practice band ${passageBands[readingPassage]}. Passage 1 uses shorter, more direct sentences and familiar vocabulary; Passage 2 uses moderate detail and paraphrase; Passage 3 uses denser ideas and more complex syntax. Keep all facts strictly supported by SOURCE. Do not add abstract claims simply to raise difficulty.`;
   let draft: { model: string; body: string; paragraphs: RewriteSentence[][] } | null = null;
   let rejection = "";
   for (let attempt = 0; attempt < 2 && !draft; attempt++) {
     const revision = rejection ? `\n\nYour previous draft was rejected by the fact-checker: ${rejection}. Write a new draft that fixes this and follows every rule${/words$/.test(rejection) ? ", staying between 330 and 450 words" : ""}.` : "";
     const { model, data } = await geminiJson<{ suitable?: boolean; sentences?: (RewriteSentence & { paragraph?: unknown })[] }>(
-      writerPrompt, sourceBlock(story) + level + revision, writeSchema, { fetcher, temperature: 0.3 });
+      writerPrompt, sourceBlock(story) + revision, writeSchema, { fetcher, temperature: 0.3 });
     if (data.suitable !== true) throw new UnsuitableStoryError("AI marked the story unsuitable for learners");
     try {
       const paragraphs = toParagraphs(data.sentences ?? []);
@@ -193,12 +190,12 @@ export async function writeVietnamArticle(story: SourceStory, fetcher: typeof fe
   if (failed) throw new Error(`Fact-check ${failed.verdict ?? "MISSING"}: ${failed.text.slice(0, 100)}`);
   // Written from the verified article only, so every answer is grounded in what learners read.
   // After a revision the request budget of this run is spent; the quiz worker takes over.
-  if (rejection) return { model, body, questions: [], imageQuery: "", readingPassage };
-  const quiz = await generateAdaptiveNewsQuiz(story.title, body, story.url, readingPassage, fetcher).catch((cause) => {
+  if (rejection) return { model, body, questions: [], imageQuery: "" };
+  const quiz = await generateAdaptiveNewsQuiz(story.title, body, story.url, fetcher).catch((cause) => {
     if (cause instanceof AiQuotaError) throw cause;
     return { questions: [] as AdaptiveQuestion[], imageQuery: "" };
   });
-  return { model, body, questions: quiz.questions, imageQuery: quiz.imageQuery, readingPassage };
+  return { model, body, questions: quiz.questions, imageQuery: quiz.imageQuery };
 }
 
 /* ---------- Choosing the story: hot, recent and relevant to young readers ---------- */
@@ -318,7 +315,7 @@ export async function rewriteVietnamNews(db: Db, result: RewriteRun, settings: N
     const { data: article, error: articleError } = await db.from("news_articles").insert({ ...item, provider: "ai_rewrite", publisher: source.name }).select("id").single();
     if (articleError) throw articleError;
     const { error: bodyError } = await db.from("news_article_bodies").insert({
-      article_id: article.id, body_text: written.body, source_url: item.canonical_url, ai_generated: true, reading_passage: written.readingPassage,
+      article_id: article.id, body_text: written.body, source_url: item.canonical_url, ai_generated: true,
       byline: `AI-written English version of a report by ${source.name}`.slice(0, 150),
       rights_basis: `Original English text written by AI (${written.model}) for IeltsWithHarry from facts reported by ${source.name} (${item.canonical_url}). The source text is not stored or reproduced; every sentence was checked against the source report on ${new Date().toISOString().slice(0, 10)}.`,
     });
