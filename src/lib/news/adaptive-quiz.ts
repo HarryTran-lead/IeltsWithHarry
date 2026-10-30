@@ -62,9 +62,9 @@ export function validateAdaptiveQuiz(value: unknown, body: string, selected: Iel
     : perType;
   const targetTotal = Object.values(targets).reduce((sum, count) => sum + (count ?? 0), 0);
   const grouped = selected.flatMap((type) => result.filter((item) => item.type === type).slice(0, targets[type] ?? 0));
-  // A short source may not support every requested question; keep only grounded
-  // questions rather than leaving the entire article without practice.
-  if (!grouped.length || (targetTotal >= 13 && grouped.length !== targetTotal) || (typeof perType === "number" && perType === 4 && grouped.length !== targetTotal))
+  // The article's length does not guarantee enough distinct facts. Keep every
+  // grounded question when the source cannot support the full target.
+  if (!grouped.length || (typeof perType === "number" && perType === 4 && grouped.length !== targetTotal))
     throw new Error(`AI returned only ${grouped.length} valid IELTS questions`);
   return grouped;
 }
