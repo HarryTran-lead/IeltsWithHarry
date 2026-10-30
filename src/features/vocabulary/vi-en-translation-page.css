@@ -1,6 +1,7 @@
 .translation-page {
-  max-width: 1120px;
-  margin: 0 auto;
+  width: min(100%, 1080px);
+  box-sizing: border-box;
+  margin-inline: auto;
   padding: 12px clamp(12px, 2vw, 24px) 40px;
   color: #163455;
   font-family: var(--font-display);
@@ -34,14 +35,14 @@
 .translation-empty p { max-width: 480px; margin: 0 0 15px; color: #71869a; line-height: 1.5; }
 .translation-error, .translation-notice { padding: 11px 14px; border-radius: 9px; background: #fff1ec; color: #a74532; font-size: 13px; }
 .translation-notice { background: #e8f8f7; color: #087f89; }
-.translation-done { max-width: 1040px; margin: 0 auto; }
+.translation-done { width: 100%; }
 
-.translation-card { max-width: 1040px; min-height: 440px; margin: 0 auto; padding: 22px clamp(18px, 3vw, 30px); border: 1px solid #dfe9ed; border-radius: 19px; background: #fff; box-shadow: 0 12px 28px #1c496511; scroll-margin-top: 108px; }
+.translation-card { width: 100%; box-sizing: border-box; min-height: 440px; padding: 22px clamp(18px, 3vw, 30px); border: 1px solid #dfe9ed; border-radius: 19px; background: #fff; box-shadow: 0 12px 28px #1c496511; scroll-margin-top: 108px; }
 .translation-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #078f99; font-size: 11px; font-weight: 900; letter-spacing: .05em; }
 .translation-card-top strong { color: #234768; font-size: 14px; letter-spacing: 0; white-space: nowrap; }
 .translation-track { height: 7px; margin: 11px 0 22px; overflow: hidden; border-radius: 20px; background: #e7eff1; }
 .translation-track span { display: block; height: 100%; border-radius: 20px; background: #0aa4aa; transition: width .2s; }
-.translation-stage { max-width: 920px; }
+.translation-stage { width: 100%; max-width: 880px; margin-inline: auto; }
 .translation-step-label { display: block; margin-bottom: 5px; color: #078f99; font-size: 11px; font-weight: 900; letter-spacing: .1em; }
 .translation-stage h2 { margin: 0 0 9px; font-size: clamp(21px, 2.2vw, 26px); line-height: 1.25; }
 .translation-stage-intro { margin: 0 0 17px; color: #6b8295; font-size: 14px; }
@@ -50,7 +51,16 @@
 .translation-target-word span { color: #597b8d; font-size: 15px; }
 .translation-target-inline { margin: 0 0 12px; color: #698298; font-size: 13px; }
 .translation-target-inline b { color: #087f89; }
-.translation-prompt { margin: 0 0 17px; padding: 18px 20px; border-left: 4px solid #11a5aa; border-radius: 0 10px 10px 0; background: #ecf9f8; color: #12365b; font-size: clamp(18px, 2vw, 23px); font-weight: 800; line-height: 1.45; }
+.translation-prompt { margin: 0 0 7px; padding: 18px 20px; border-left: 4px solid #11a5aa; border-radius: 0 10px 10px 0; background: #ecf9f8; color: #12365b; font-size: clamp(18px, 2vw, 23px); font-weight: 800; line-height: 1.45; }
+.translation-prompt-word { position: relative; display: inline; padding: 0; border: 0; border-bottom: 1px dotted #0a9299; background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: help; }
+.translation-prompt-word:hover, .translation-prompt-word:focus-visible { color: #087f89; border-bottom-style: solid; }
+.translation-prompt-word:focus-visible { outline: 2px solid #0a9fa6; outline-offset: 2px; border-radius: 2px; }
+.translation-word-tooltip { position: absolute; z-index: 5; top: calc(100% + 7px); left: 50%; display: none; width: max-content; max-width: min(230px, 72vw); padding: 7px 10px; border: 1px solid #c7e3e2; border-radius: 8px; background: #fff; box-shadow: 0 8px 24px #173d5f29; color: #173a5b; font: 600 13px/1.35 var(--font-display); text-align: left; white-space: normal; transform: translateX(-50%); pointer-events: none; }
+.translation-word-tooltip small { display: block; color: #71869a; font-size: 10px; font-weight: 600; }
+.translation-word-tooltip strong { display: block; color: #087f89; font-size: 14px; }
+.translation-prompt-word:hover .translation-word-tooltip, .translation-prompt-word:focus-visible .translation-word-tooltip { display: block; }
+.translation-hover-instruction { margin: 0 0 12px; color: #71869a; font-size: 11px; }
+.translation-hover-instruction a { color: #087f89; }
 .translation-hint-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 15px; }
 .translation-hint-actions button { display: inline-flex; align-items: center; gap: 5px; padding: 7px 10px; border: 1px solid #d6e9e8; border-radius: 8px; background: #f6fbfb; color: #078f99; font-weight: 800; cursor: pointer; }
 .translation-hint-actions span { padding: 7px 9px; border-radius: 8px; background: #f4f8fa; color: #55758b; font-size: 12px; }
