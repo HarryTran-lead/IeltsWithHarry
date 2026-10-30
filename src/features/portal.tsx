@@ -6,7 +6,7 @@ import { DemoProvider, useDemo } from "@/features/demo/demo-store";
 import { AppShell } from "@/components/layout/app-shell";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "@/features/ielts/ielts-live-page";
-import { lockedLearnerPath } from "@/lib/runtime";
+import { lockedLearnerPath, smartNotebookV1 } from "@/lib/runtime";
 import Link from "next/link";
 
 // The catch-all learner route loads only the section being viewed.
@@ -15,6 +15,7 @@ const PlannerPage = dynamic(() => import("@/features/planner/planner-page").then
 const LearningPage = dynamic(() => import("@/features/learning/learning-page").then((module) => module.LearningPage));
 const ContentLab = dynamic(() => import("@/features/content-lab/content-lab").then((module) => module.ContentLab));
 const NotebookPage = dynamic(() => import("@/features/notebook/notebook-ui").then((module) => module.NotebookPage));
+const SmartNotebook = dynamic(() => import("@/features/notebook/smart-notebook").then((module) => module.SmartNotebook));
 const NewsPortal = dynamic(() => import("@/features/news/news-portal").then((module) => module.NewsPortal));
 const VocabularyHub = dynamic(() => import("@/features/vocabulary/vocabulary-hub").then((module) => module.VocabularyHub));
 const VocabularyLanding = dynamic(() => import("@/features/vocabulary/vocabulary-landing").then((module) => module.VocabularyLanding));
@@ -53,7 +54,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : section === "content-lab" ? (
           <ContentLab />
         ) : section === "notebook" ? (
-          <NotebookPage />
+          smartNotebookV1 ? <SmartNotebook /> : <NotebookPage />
         ) : section === "grammar" && skillMode !== "live" ? (
           <GrammarGarden />
         ) : skill === "vocabulary" && !skillMode ? (

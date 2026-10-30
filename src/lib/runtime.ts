@@ -9,6 +9,8 @@ export const supabaseConfigured = Boolean(
 );
 
 export const liveMode = !demoMode && supabaseConfigured;
+/** Explicit rollout switch; the legacy notes and timeline stay available until migration and QA are complete. */
+export const smartNotebookV1 = liveMode && process.env.NEXT_PUBLIC_SMART_NOTEBOOK_V1 === "true";
 /** Keep launch locks in production; the isolated develop Preview can expose work in progress. */
 export const releaseLocks = process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES !== "true";
 
