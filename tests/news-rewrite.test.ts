@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { rankStories, readHotSignals, storyText, verifyRewrite, writeVietnamArticle, type RewriteSentence, type StoryCandidate } from "../src/lib/news/rewrite";
-import { choiceTypes, gapTypes, passageForKey, typesForKey } from "../src/lib/news/ielts-passage";
+import { choiceTypes, gapTypes, typesForKey } from "../src/lib/news/ielts-passage";
 import { newsHash, type NewsSource } from "../src/lib/news/providers";
 
 describe("choosing the hottest story for young readers", () => {
@@ -142,7 +142,8 @@ describe("AI rewrite pipeline", () => {
     expect(requests[2]).toContain("IELTS Academic Reading");
     expect(requests[2]).not.toContain("SOURCE");
     expect(result.questions).toHaveLength(12);
-    expect(result.readingPassage).toBe(passageForKey(story.url));
+    expect(requests[0]).not.toContain("TARGET: Passage");
+    expect(requests[2]).not.toContain("target band");
     expect(result.body.split(/\s+/).length).toBeGreaterThanOrEqual(280);
     expect(result.imageQuery).toBe("forest hiking trail");
   });

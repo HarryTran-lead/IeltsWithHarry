@@ -624,12 +624,8 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
   for (const article of (quizClaims ?? []) as Claim[]) {
     result.quizzesChecked++;
     try {
-      const [{ generateAdaptiveNewsQuiz }, { passageForKey }] = await Promise.all([import("./adaptive-quiz"), import("./ielts-passage")]);
-      const { data: bodyLevel, error: levelError } = await db.from("news_article_bodies").select("reading_passage").eq("article_id", article.article_id).single();
-      if (levelError) throw levelError;
-      const passage = bodyLevel?.reading_passage === 1 || bodyLevel?.reading_passage === 2 || bodyLevel?.reading_passage === 3
-        ? bodyLevel.reading_passage : passageForKey(article.article_id);
-      const generated = await generateAdaptiveNewsQuiz(article.title, article.body_text ?? "", article.article_id, passage, fetch, settings.quiz_prompt);
+      const { generateAdaptiveNewsQuiz } = await import("./adaptive-quiz");
+      const generated = await generateAdaptiveNewsQuiz(article.title, article.body_text ?? "", article.article_id, fetch, settings.quiz_prompt);
       const { data: saved, error } = await db.rpc("news_publish_auto_quiz", { p_article_id: article.article_id, p_model: generated.model, p_questions: generated.questions });
       if (error) throw error;
       if (saved) result.quizzesAdded++;

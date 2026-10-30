@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { validateAdaptiveQuiz } from "../src/lib/news/adaptive-quiz";
-import { choiceTypes, gapTypes, ieltsQuestionTypes, passageForKey, typesForKey, type IeltsQuestionType } from "../src/lib/news/ielts-passage";
+import { choiceTypes, gapTypes, ieltsQuestionTypes, typesForKey, type IeltsQuestionType } from "../src/lib/news/ielts-passage";
 
 const quote = "Scientists used solar panels to power the research station during the summer.";
 const body = `${quote}\n\nThe station collected data about the local climate.`;
@@ -43,9 +43,7 @@ describe("adaptive IELTS passage quiz", () => {
     partial.questions.slice(0, 3).forEach((question) => { question.supporting_sentence = "A fabricated sentence about the Moon."; });
     expect(validateAdaptiveQuiz(partial, body, selected, 2)).toHaveLength(3);
   });
-  it("assigns stable passage levels and varied groups", () => {
-    expect(passageForKey("article-one")).toBe(passageForKey("article-one"));
-    expect(new Set(Array.from({ length: 30 }, (_, index) => passageForKey(`article-${index}`))).size).toBe(3);
+  it("assigns varied question groups", () => {
     const groups = typesForKey("article-one");
     expect(groups).toHaveLength(3);
     expect(new Set(groups).size).toBe(3);

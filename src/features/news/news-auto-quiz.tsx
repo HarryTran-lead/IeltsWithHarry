@@ -8,7 +8,7 @@ import { celebrateScore } from "@/lib/celebrate";
 import { usePracticeClock } from "@/features/reading/reading-workspace";
 import { addHighlight, highlightColors, parseHighlights, segments, type Highlight, type HighlightColor } from "@/lib/highlights";
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
-import { estimateBand, formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
+import { formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
 import { choiceTypes, gapTypes } from "@/lib/news/ielts-passage";
 import "@/app/news-enrichment.css";
 
@@ -305,7 +305,6 @@ function QuizResult({ score, total, partial, duration, breakdown, saved, history
   history: PracticeAttempt[]; onRetry: () => void;
 }) {
   const pct = percent(score, total);
-  const band = partial ? null : estimateBand(score, total);
   // Compare with the attempt before this one, of the same kind (full quiz or chosen types).
   const same = history.filter((item) => Boolean(item.partial) === partial);
   const previous = same.length > 1 && same[0].score === score && same[0].total === total ? same[1] : null;
@@ -314,7 +313,6 @@ function QuizResult({ score, total, partial, duration, breakdown, saved, history
   return <section className="news-quiz-result" aria-label="Kết quả bài làm">
     <div className="news-quiz-result-stats">
       <div className="is-main"><small>Số câu đúng</small><strong>{score}<span>/{total}</span></strong><em>{pct}%</em></div>
-      {band && <div title="Quy đổi theo thang IELTS Academic Reading 40 câu, chỉ để tham khảo"><small>Band ước tính</small><strong>{band}</strong><em>quy đổi thang 40 câu</em></div>}
       {duration !== null && duration > 0 && <div><small><Clock3 size={13} /> Thời gian</small><strong>{formatDuration(duration)}</strong><em>~{Math.max(1, Math.round(duration / total))} giây/câu</em></div>}
       {change !== null && <div><small>So với lần trước</small><strong className={change > 0 ? "up" : change < 0 ? "down" : ""}>{change > 0 ? <TrendingUp size={18} /> : change < 0 ? <TrendingDown size={18} /> : null}{change > 0 ? "+" : ""}{change}%</strong><em>lần trước {previous!.score}/{previous!.total}</em></div>}
     </div>
