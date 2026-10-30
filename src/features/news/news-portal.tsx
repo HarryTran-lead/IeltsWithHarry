@@ -278,7 +278,22 @@ function categorySticker(category: string): StickerName {
   return category === "Technology" ? "bulb" : category === "Science" ? "rocket" : category === "Environment" ? "mountain" : category === "Education" ? "book" : "globe";
 }
 
-const quizTypeLabels: Record<string, string> = { tfng: "True/False/Not Given", mcq: "Trắc nghiệm", sentence_completion: "Hoàn thành câu", short_answer: "Trả lời ngắn" };
+const quizTypeLabels: Record<string, string> = {
+  mcq: "Multiple Choice",
+  tfng: "True/False/Not Given",
+  ynng: "Yes/No/Not Given",
+  matching_headings: "Matching Headings",
+  matching_information: "Matching Information",
+  matching_features: "Matching Features",
+  matching_sentence_endings: "Matching Sentence Endings",
+  sentence_completion: "Sentence Completion",
+  summary_completion: "Summary Completion",
+  note_completion: "Note Completion",
+  table_completion: "Table Completion",
+  flow_chart_completion: "Flow-Chart Completion",
+  diagram_label_completion: "Diagram-Label Completion",
+  short_answer: "Short Answer",
+};
 function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read = false, fresh = false, quizInfo }: { row: NewsRow; saved: boolean; onSave: () => void; learnSlug?: string; onSite?: boolean; image?: NewsImage; read?: boolean; fresh?: boolean; quizInfo?: { total: number; types: Record<string, number> } }) {
   const href = `/app/news/${row.id}`;
   return <article className={`news-card ${read ? "is-read" : ""}`}>
@@ -291,7 +306,7 @@ function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read =
     <div className="news-card-body">
       <div className="news-card-meta"><span>{row.publisher}</span><time dateTime={row.published_at} title={newsDate(row.published_at)}>{relativeTime(row.published_at)}</time></div>
       <h3><Link href={href}>{row.title}</Link></h3>
-      {quizInfo && quizInfo.total > 0 && <div className="news-card-quiz-wrap"><span className="news-card-quiz"><ListChecks size={14} aria-hidden="true"/> Có đề luyện · {quizInfo.total} câu</span><small className="news-card-quiz-types" aria-label="Các dạng câu hỏi">{Object.entries(quizInfo.types).map(([type, count]) => `${quizTypeLabels[type] ?? type} ${count}`).join(" · ")}</small></div>}
+      {quizInfo && quizInfo.total > 0 && <div className="news-card-quiz-wrap"><span className="news-card-quiz"><ListChecks size={14} aria-hidden="true"/> Có đề luyện · {quizInfo.total} câu</span><small className="news-card-quiz-types" aria-label="Question types">{Object.entries(quizInfo.types).map(([type, count]) => <span key={type}>{quizTypeLabels[type] ?? type} {count}</span>)}</small></div>}
       <div className="news-card-foot">
         <Link href={href} className="news-card-read">{onSite ? "Đọc tại đây" : "Chi tiết"} <ArrowRight size={15}/></Link>
         <div className="news-card-icons">

@@ -468,6 +468,9 @@
 }
 .news-card-quiz-wrap .news-card-quiz { margin: 0; }
 .news-card-quiz-types {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   padding-left: 2px;
   color: #718497;
   font-size: 10px;
