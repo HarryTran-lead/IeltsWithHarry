@@ -459,6 +459,21 @@
   font-weight: 800;
   line-height: 1.2;
 }
+.news-card-quiz-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin: -5px 0 14px;
+}
+.news-card-quiz-wrap .news-card-quiz { margin: 0; }
+.news-card-quiz-types {
+  padding-left: 2px;
+  color: #718497;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+}
 .news-card-foot {
   display: flex;
   align-items: center;
