@@ -165,6 +165,7 @@ export function VocabularyStudy() {
     {error && <p className="vocab-error" role="alert">{error}</p>}
     {loading ? <section className="vocab-panel">Đang lấy bộ từ…</section> : !words.length ? <section className="vocab-panel">Không có từ trong bộ lọc này. Hãy chọn chủ đề hoặc trình độ khác.</section> : <section className={`vocab-panel vocab-study-board vocab-study-board-${mode}`}>
       <div className="vocab-study-progress"><div className="vocab-study-meta"><strong>Đang ở từ {progressPosition.toLocaleString("vi-VN")} / {totalAvailable.toLocaleString("vi-VN")}</strong><span>Lượt {batchPage + 1}{studiedCount !== null ? ` · Đã học ${studiedCount.toLocaleString("vi-VN")} từ` : ""}{done ? ` · ${correct}/${done} đúng` : ""}</span></div><progress aria-label="Vị trí hiện tại trong bộ từ đang chọn" value={progressPosition} max={Math.max(1, totalAvailable)} /></div>
+      {collection === "ielts" && current && <Link className="vocab-to-translation" href={`/app/vocabulary/translation?word=${encodeURIComponent(current.source_id)}`}>Chép từ và viết câu với “{current.headword}” →</Link>}
       {mode === "cards" && <>
         <div className={`vocab-study-card${flipped ? " is-revealed" : ""}`} aria-label={`Thẻ từ ${current.headword}`}>
           <div className="vocab-study-card-image"><TopicArt topic={current.topics?.[0] ?? topic} word={current.headword} className="vocab-card-art" /><small>Hình gợi nhớ</small></div>
