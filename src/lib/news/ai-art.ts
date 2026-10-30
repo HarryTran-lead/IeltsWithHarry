@@ -38,9 +38,18 @@ function clean(text: string, max: number) {
  * A prompt that depicts the story's subject rather than its people: generated
  * faces of real, named people would be misleading in a news context.
  */
-export function aiArtPrompt(title: string, subject: string) {
+export function aiArtPrompt(title: string, subject: string, style: "news" | "standard" = "standard") {
   const topic = clean(subject, 80) || clean(title, 120);
   const headline = clean(title, 160);
+  if (style === "news") {
+    return [
+      `Create a polished editorial cartoon illustration for a news article about ${topic}.`,
+      headline && headline !== topic ? `Headline context: ${headline}.` : "",
+      "Use a clearly illustrated 2D style: clean hand-drawn or vector shapes, simple outlines, gentle shading, and a thoughtful, colorful editorial palette. Make the main subject a relevant object, tool, device, building, landscape, plant, or symbolic scene.",
+      "If the story is about a person or people, represent its topic with related objects and surroundings instead of depicting anyone. No humans in any form: no faces, portraits, bodies, hands, silhouettes, crowds, skin, or human-like figures.",
+      "This must look illustrated, not like a photograph or photorealistic/realistic 3D render. No text, letters, captions, logos, watermarks, or flags.",
+    ].filter(Boolean).join(" ");
+  }
   return [
     `High resolution editorial photograph for an English-learning news article about ${topic}.`,
     headline && headline !== topic ? `Headline context: ${headline}.` : "",
@@ -65,8 +74,8 @@ const allowedTypes = /^image\/(jpeg|png|webp)$/;
 export type GeneratedArt = { bytes: Uint8Array; contentType: string; extension: "jpg" | "png" | "webp"; prompt: string };
 
 /** Renders a 16:9 editorial scene. Throws `AiArtLimitError` when the generator asks to wait. */
-export async function generateAiArt(title: string, subject: string, articleId: string, fetcher: typeof fetch = fetch): Promise<GeneratedArt> {
-  const prompt = aiArtPrompt(title, subject);
+export async function generateAiArt(title: string, subject: string, articleId: string, fetcher: typeof fetch = fetch, style: "news" | "standard" = "standard"): Promise<GeneratedArt> {
+  const prompt = aiArtPrompt(title, subject, style);
   const key = process.env.POLLINATIONS_API_KEY;
   const base = key ? "https://gen.pollinations.ai/image/" : "https://image.pollinations.ai/prompt/";
   const url = new URL(base + encodeURIComponent(prompt));
