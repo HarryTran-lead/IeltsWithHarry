@@ -63,7 +63,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : skill === "vocabulary" && skillMode === "word-formation" ? (
           <WordFormationPage />
         ) : skill === "vocabulary" && skillMode === "translation" ? (
-          <ViEnTranslationPage />
+          <Suspense fallback={<div className="content-page">Đang tải bài luyện dịch…</div>}><ViEnTranslationPage /></Suspense>
         ) : skill === "vocabulary" && skillMode === "listening" ? (
           <ListeningVocabularyPage />
         ) : skill && !skillMode ? (
