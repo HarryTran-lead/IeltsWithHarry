@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowLeft, ArrowRight, BookOpenCheck, Lightbulb, RotateCcw } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
@@ -13,6 +13,7 @@ import "./vi-en-translation-page.css";
 
 type ModeFilter = "mixed" | "speaking" | "writing";
 type Selection = "new" | "due" | "all";
+type PracticeStage = "copy" | "write" | "result";
 const topics = [...sourceTopics, ...learningTopics].sort((a, b) => a.localeCompare(b));
 
 export function ViEnTranslationPage() {
@@ -33,11 +34,15 @@ export function ViEnTranslationPage() {
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [copiedWord, setCopiedWord] = useState("");
-  const [copyReady, setCopyReady] = useState(false);
+  const [stage, setStage] = useState<PracticeStage>("copy");
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const [copyError, setCopyError] = useState("");
   const [comparison, setComparison] = useState<WordComparison | null>(null);
   const [hint, setHint] = useState(0);
-  const [revealed, setRevealed] = useState(false);
+  const cardRef = useRef<HTMLElement>(null);
+  const copyInputRef = useRef<HTMLInputElement>(null);
+  const answerInputRef = useRef<HTMLTextAreaElement>(null);
+  const nextButtonRef = useRef<HTMLButtonElement>(null);
   const [loading, setLoading] = useState(!demoMode);
   const [now, setNow] = useState(() => Date.now());
   const [saving, setSaving] = useState(false);
@@ -94,7 +99,7 @@ export function ViEnTranslationPage() {
       if (!active) return;
       const list = (data ?? []) as TranslationExercise[];
       setExercises(list); setProgress(allProgress);
-      setSessionIds([]); setIndex(0); setAnswer(""); setCopiedWord(""); setCopyReady(false); setCopyError(""); setComparison(null); setRevealed(false); setHint(0);
+      setSessionIds([]); setIndex(0); setAnswer(""); setCopiedWord(""); setStage("copy"); setCopyError(""); setComparison(null); setHint(0);
       if (target?.topic === topic && list.some((item) => item.id === target.id)) {
         setSessionIds([target.id]);
       } else {
@@ -121,18 +126,30 @@ export function ViEnTranslationPage() {
   const current = exercises.find((item) => item.id === sessionIds[index]);
   const done = sessionIds.length > 0 && index >= sessionIds.length;
 
+  useEffect(() => {
+    if (!current) return;
+    cardRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+  }, [current, stage]);
+
+  useEffect(() => {
+    if (!current) return;
+    if (stage === "copy") copyInputRef.current?.focus({ preventScroll: true });
+    if (stage === "write") answerInputRef.current?.focus({ preventScroll: true });
+    if (stage === "result" && !saving) nextButtonRef.current?.focus({ preventScroll: true });
+  }, [current, stage, saving]);
+
   function start() {
     const picked = chooseTranslationSession(filtered, progress, selection, size);
     if (!picked.length) { setNotice(selection === "due" ? "Chưa có câu đến hạn ôn trong chủ đề này." : "Chưa có câu phù hợp. Hãy đổi bộ lọc."); return; }
     const ids = picked.map((item) => item.id);
-    setSessionIds(ids); setIndex(0); setAnswer(""); setCopiedWord(""); setCopyReady(false); setCopyError(""); setComparison(null); setRevealed(false); setHint(0); setNotice(""); setNow(Date.now());
+    setSessionIds(ids); setIndex(0); setAnswer(""); setCopiedWord(""); setStage("copy"); setSettingsOpen(false); setCopyError(""); setComparison(null); setHint(0); setNotice(""); setNow(Date.now());
     window.localStorage.setItem(`vi-en-session:${topic}`, JSON.stringify({ ids, index: 0 }));
   }
 
   function checkCopiedWord() {
     if (!current) return;
     if (!matchesCopiedWord(copiedWord, current.term)) { setCopyError("Chưa khớp từ mục tiêu. Hãy kiểm tra lại cách viết."); return; }
-    setCopyReady(true); setCopyError("");
+    setStage("write"); setCopyError("");
     if (db && current.canonical_source_key && !studiedKeys.includes(current.canonical_source_key)) {
       const key = current.canonical_source_key;
       void db.from("vocabulary_studied_words").insert({ collection: "ielts", source_id: key }).then(({ error: insertError }) => {
@@ -142,15 +159,15 @@ export function ViEnTranslationPage() {
   }
 
   async function checkSentence(skipped = false) {
-    if (!current || saving || revealed || !copyReady || (!answer.trim() && !skipped)) return;
+    if (!current || saving || stage !== "write" || (!answer.trim() && !skipped)) return;
     const result = compareTranslation(skipped ? "" : answer, current.reference_en, current.alternatives);
-    setComparison(result); setRevealed(true);
+    setComparison(result); setStage("result");
     if (!db) return;
     setSaving(true); setError("");
     const user = await db.auth.getUser();
     if (!user.data.user) { setError("Bạn cần đăng nhập để lưu tiến độ."); setSaving(false); return; }
     const attempt = await db.from("user_vi_en_translation_attempts").insert({
-      user_id: user.data.user.id, exercise_id: current.id, submitted_en: answer.trim(), viewed_answer: true,
+      user_id: user.data.user.id, exercise_id: current.id, submitted_en: skipped ? "" : answer.trim(), viewed_answer: true,
       self_rating: ratingForComparison(result), source_revision: current.revision,
     });
     if (attempt.error) { setError(attempt.error.message); setSaving(false); return; }
@@ -163,37 +180,91 @@ export function ViEnTranslationPage() {
 
   function next() {
     const nextIndex = index + 1;
-    setIndex(nextIndex); setAnswer(""); setCopiedWord(""); setCopyReady(false); setCopyError(""); setComparison(null); setRevealed(false); setHint(0);
+    setIndex(nextIndex); setAnswer(""); setCopiedWord(""); setStage("copy"); setCopyError(""); setComparison(null); setHint(0);
     window.localStorage.setItem(`vi-en-session:${topic}`, JSON.stringify({ ids: sessionIds, index: nextIndex }));
   }
 
-  return <main className="translation-page">
-    <header className="translation-heading"><Link href="/app/vocabulary"><ArrowLeft size={17} /> Từ vựng</Link><span>HỌC TỪ · CHÉP TỪ · VIẾT CÂU</span><h1>Viết câu tiếng Anh theo ý của bạn</h1><p>Nhớ từ mục tiêu, chép lại từ, rồi dịch câu tiếng Việt. Hệ thống sẽ đếm số từ khớp với câu mẫu.</p></header>
-    <section className="translation-controls" aria-label="Chọn bài luyện dịch">
-      <label>Chủ đề<select value={topic} onChange={(event) => { setLoading(true); setError(""); setTopic(event.target.value); }}>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>
-      <label>Loại câu<select value={mode} onChange={(event) => { setMode(event.target.value as ModeFilter); setSessionIds([]); window.localStorage.removeItem(`vi-en-session:${topic}`); }}><option value="mixed">Speaking + Writing</option><option value="speaking">Speaking</option><option value="writing">Writing</option></select></label>
-      <label>Học / ôn<select value={selection} onChange={(event) => setSelection(event.target.value as Selection)}><option value="new">Câu chưa luyện</option><option value="due">Đến hạn ôn</option><option value="all">Tất cả câu</option></select></label>
-      <label>Số câu<select value={size} onChange={(event) => setSize(Number(event.target.value))}><option value={5}>5 câu</option><option value={10}>10 câu</option><option value={20}>20 câu</option></select></label>
-      <label>Tìm từ<input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Từ mục tiêu…" /></label>
-      <button className="translation-primary" type="button" disabled={loading || !exercises.length} onClick={start}>{sessionIds.length ? "Bắt đầu lượt mới" : "Bắt đầu học"} <ArrowRight size={17} /></button>
-      <label className="translation-studied-filter"><input type="checkbox" checked={onlyStudied} onChange={(event) => setOnlyStudied(event.target.checked)} /> Chỉ luyện các từ đã học trong bộ IELTS ({studiedKeys.length})</label>
-    </section>
-    <div className="translation-stats"><span><strong>{filtered.length}</strong> câu có thể học</span><span><strong>{studied}</strong> câu đã học</span><span><strong>{due}</strong> câu đến hạn ôn</span></div>
+  function onCopyKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+    if (event.key !== "Enter" || event.nativeEvent.isComposing) return;
+    event.preventDefault();
+    checkCopiedWord();
+  }
+
+  function onAnswerKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
+    if (event.key !== "Enter" || event.shiftKey || event.nativeEvent.isComposing) return;
+    event.preventDefault();
+    void checkSentence();
+  }
+
+  const sessionActive = Boolean(current || done);
+
+  return <main className={"translation-page" + (sessionActive ? " is-active" : "")}>
+    <header className="translation-heading">
+      <div className="translation-heading-row">
+        <Link href="/app/vocabulary"><ArrowLeft size={17} /> Từ vựng</Link>
+        {sessionActive && <button type="button" className="translation-settings-toggle" aria-expanded={settingsOpen} onClick={() => setSettingsOpen((open) => !open)}>{settingsOpen ? "Ẩn bộ lọc" : "Đổi bộ lọc"}</button>}
+      </div>
+      <span>HỌC TỪ · CHÉP TỪ · VIẾT CÂU</span>
+      <h1>{sessionActive ? "Luyện dịch câu Việt → Anh" : "Viết câu tiếng Anh theo ý của bạn"}</h1>
+      {!sessionActive && <p>Chọn bài luyện, chép từ mục tiêu rồi viết câu. Kết quả được chấm theo từng từ.</p>}
+    </header>
+
+    {(!sessionActive || settingsOpen) && <>
+      <section className="translation-controls" aria-label="Chọn bài luyện dịch">
+        <label>Chủ đề<select value={topic} onChange={(event) => { setLoading(true); setError(""); setTopic(event.target.value); }}>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>
+        <label>Loại câu<select value={mode} onChange={(event) => { setMode(event.target.value as ModeFilter); setSessionIds([]); window.localStorage.removeItem("vi-en-session:" + topic); }}><option value="mixed">Speaking + Writing</option><option value="speaking">Speaking</option><option value="writing">Writing</option></select></label>
+        <label>Học / ôn<select value={selection} onChange={(event) => setSelection(event.target.value as Selection)}><option value="new">Câu chưa luyện</option><option value="due">Đến hạn ôn</option><option value="all">Tất cả câu</option></select></label>
+        <label>Số câu<select value={size} onChange={(event) => setSize(Number(event.target.value))}><option value={5}>5 câu</option><option value={10}>10 câu</option><option value={20}>20 câu</option></select></label>
+        <label>Tìm từ<input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Từ mục tiêu…" /></label>
+        <button className="translation-primary" type="button" disabled={loading || !exercises.length} onClick={start}>{sessionIds.length ? "Bắt đầu lượt mới" : "Bắt đầu học"} <ArrowRight size={17} /></button>
+        <label className="translation-studied-filter"><input type="checkbox" checked={onlyStudied} onChange={(event) => setOnlyStudied(event.target.checked)} /> Chỉ luyện các từ đã học trong bộ IELTS ({studiedKeys.length})</label>
+      </section>
+      <div className="translation-stats"><span><strong>{filtered.length}</strong> câu có thể học</span><span><strong>{studied}</strong> câu đã học</span><span><strong>{due}</strong> câu đến hạn ôn</span></div>
+    </>}
+
     {loading && <section className="translation-empty">Đang tải bài luyện…</section>}
     {error && <p className="translation-error" role="alert">{error}</p>}
     {notice && <p className="translation-notice" role="status">{notice}</p>}
     {!loading && !exercises.length && <section className="translation-empty"><BookOpenCheck size={32} /><h2>Chủ đề này chưa có câu luyện</h2><p>Hãy thử chủ đề khác.</p></section>}
     {!loading && exercises.length > 0 && !sessionIds.length && <section className="translation-empty"><Lightbulb size={30} /><h2>Sẵn sàng luyện dịch</h2><p>{filtered.length} câu trong chủ đề này. Chọn số câu và bấm “Bắt đầu học”.</p></section>}
-    {done && <section className="translation-empty"><BookOpenCheck size={34} /><h2>Hoàn thành {sessionIds.length} câu</h2><p>Kết quả khớp từ đã được dùng để lên lịch ôn các câu bạn cần luyện lại.</p><button className="translation-primary" type="button" onClick={start}><RotateCcw size={17} /> Luyện lượt khác</button></section>}
-    {current && <section className="translation-card">
-      <div className="translation-card-top"><span>{current.mode === "speaking" ? "IELTS SPEAKING" : "IELTS WRITING"} · {topic}</span><strong>{index + 1}/{sessionIds.length}</strong></div>
-      <div className="translation-track" role="progressbar" aria-label="Tiến độ lượt luyện" aria-valuemin={0} aria-valuemax={sessionIds.length} aria-valuenow={index}><span style={{ width: `${(index / sessionIds.length) * 100}%` }} /></div>
-      <div className="translation-copy-step"><span>BƯỚC 1 · HỌC VÀ CHÉP TỪ</span><strong lang="en">{current.term}</strong>{current.meaning_vi && <small>{current.meaning_vi}</small>}<label>Chép lại từ tiếng Anh<input value={copiedWord} disabled={copyReady} onChange={(event) => { setCopiedWord(event.target.value); setCopyError(""); }} onKeyDown={(event) => { if (event.key === "Enter") checkCopiedWord(); }} placeholder="Gõ lại từ ở đây…" autoComplete="off" spellCheck={false} /></label>{!copyReady ? <button type="button" onClick={checkCopiedWord} disabled={!copiedWord.trim()}>Kiểm tra từ</button> : <p role="status">✓ Đã chép đúng từ. Bây giờ hãy viết câu.</p>}{copyError && <p className="translation-copy-error" role="alert">{copyError}</p>}</div>
-      {copyReady && <><h2>BƯỚC 2 · Dịch câu này sang tiếng Anh</h2><p className="translation-prompt" lang="vi">{current.prompt_vi}</p>
-      <div className="translation-hint-actions"><button type="button" onClick={() => setHint((old) => Math.min(old + 1, 2))} disabled={hint === 2 || revealed}><Lightbulb size={16} /> {hint === 0 ? "Gợi ý từ" : hint === 1 ? "Gợi ý cấu trúc" : "Đã mở gợi ý"}</button>{hint >= 1 && <span>Từ mục tiêu: <b>{current.term}</b>{current.meaning_vi && ` · ${current.meaning_vi}`}</span>}{hint >= 2 && <span>Mẫu dùng: {current.pattern || current.collocations || "Tự chọn cấu trúc phù hợp."}</span>}</div>
-      <label className="translation-answer-label">Câu tiếng Anh của bạn<textarea rows={4} value={answer} disabled={revealed} onChange={(event) => setAnswer(event.target.value)} placeholder="Viết câu dịch của bạn ở đây…" spellCheck autoComplete="off" /></label>
-      {!revealed ? <div className="translation-actions"><button className="translation-primary" type="button" disabled={!answer.trim() || saving} onClick={() => void checkSentence()}>Kiểm tra câu <ArrowRight size={17} /></button><button type="button" disabled={saving} onClick={() => void checkSentence(true)}>Bỏ qua câu</button></div> : comparison && <><div className="translation-score" role="status"><strong>{comparison.matched}/{comparison.total} từ khớp · {comparison.accuracy}%</strong><span>{comparison.extra > 0 ? `${comparison.extra} từ bạn viết chưa khớp câu mẫu.` : "Không có từ thừa so với câu mẫu."}</span></div><div className="translation-word-diff"><div><b>Câu bạn viết</b><p>{comparison.answerWords.length ? comparison.answerWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>) : "Bạn đã bỏ qua câu này."}</p></div><div><b>Câu mẫu gần nhất</b><p lang="en">{comparison.referenceWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>)}</p></div></div><div className="translation-reference"><span>CÂU MẪU THAM KHẢO</span><p lang="en">{comparison.reference}</p>{current.alternatives.length > 0 && <small>Cách diễn đạt khác: {current.alternatives.join(" · ")}</small>}{current.editor_note && <small>{current.editor_note}</small>}</div><p className="translation-disclaimer">Điểm này chỉ đo các từ trùng với câu mẫu theo đúng thứ tự, chưa đánh giá đầy đủ ngữ pháp hoặc những cách diễn đạt khác vẫn đúng.</p><button className="translation-primary translation-next" type="button" disabled={saving} onClick={next}>{saving ? "Đang lưu…" : "Câu tiếp theo"} <ArrowRight size={17} /></button></>}
-      </>}
+    {done && <section className="translation-empty translation-done"><BookOpenCheck size={34} /><h2>Hoàn thành {sessionIds.length} câu</h2><p>Kết quả khớp từ đã được dùng để lên lịch ôn các câu cần luyện lại.</p><button className="translation-primary" type="button" onClick={start}><RotateCcw size={17} /> Luyện lượt khác</button></section>}
+
+    {current && <section ref={cardRef} className="translation-card" aria-label={"Câu " + (index + 1) + " trên " + sessionIds.length}>
+      <div className="translation-card-top">
+        <span>{current.mode === "speaking" ? "IELTS SPEAKING" : "IELTS WRITING"} · {topic}</span>
+        <strong>Câu {index + 1}/{sessionIds.length}</strong>
+      </div>
+      <div className="translation-track" role="progressbar" aria-label="Tiến độ lượt luyện" aria-valuemin={0} aria-valuemax={sessionIds.length} aria-valuenow={index + (stage === "result" ? 1 : 0)}><span style={{ width: String(((index + (stage === "result" ? 1 : 0)) / sessionIds.length) * 100) + "%" }} /></div>
+
+      {stage === "copy" && <div className="translation-stage">
+        <span className="translation-step-label">01 / 03 · HỌC VÀ CHÉP TỪ</span>
+        <h2>Chép lại từ vựng</h2>
+        <p className="translation-stage-intro">Nhìn từ và nghĩa, sau đó tự gõ lại để nhớ cách viết.</p>
+        <div className="translation-target-word"><strong lang="en">{current.term}</strong>{current.meaning_vi && <span>{current.meaning_vi}</span>}</div>
+        <label className="translation-answer-label">Từ tiếng Anh của bạn<input ref={copyInputRef} value={copiedWord} onChange={(event) => { setCopiedWord(event.target.value); setCopyError(""); }} onKeyDown={onCopyKeyDown} placeholder="Gõ lại từ ở đây…" autoComplete="off" spellCheck={false} /></label>
+        {copyError && <p className="translation-copy-error" role="alert">{copyError}</p>}
+        <div className="translation-actions"><button className="translation-primary" type="button" disabled={!copiedWord.trim()} onClick={checkCopiedWord}>Kiểm tra từ <ArrowRight size={17} /></button><span className="translation-key-hint"><kbd>Enter</kbd> để tiếp tục</span></div>
+      </div>}
+
+      {stage === "write" && <div className="translation-stage">
+        <span className="translation-step-label">02 / 03 · VIẾT CÂU</span>
+        <h2>Dịch câu này sang tiếng Anh</h2>
+        <p className="translation-target-inline">Từ mục tiêu: <b lang="en">{current.term}</b></p>
+        <p className="translation-prompt" lang="vi">{current.prompt_vi}</p>
+        <div className="translation-hint-actions"><button type="button" onClick={() => setHint((old) => Math.min(old + 1, 2))} disabled={hint === 2}><Lightbulb size={16} /> {hint === 0 ? "Gợi ý từ" : hint === 1 ? "Gợi ý cấu trúc" : "Đã mở gợi ý"}</button>{hint >= 1 && <span>Từ mục tiêu: <b>{current.term}</b>{current.meaning_vi ? " · " + current.meaning_vi : ""}</span>}{hint >= 2 && <span>Mẫu dùng: {current.pattern || current.collocations || "Tự chọn cấu trúc phù hợp."}</span>}</div>
+        <label className="translation-answer-label">Câu tiếng Anh của bạn<textarea ref={answerInputRef} rows={4} value={answer} onChange={(event) => setAnswer(event.target.value)} onKeyDown={onAnswerKeyDown} placeholder="Viết câu dịch của bạn ở đây…" spellCheck autoComplete="off" /></label>
+        <div className="translation-actions"><button className="translation-primary" type="button" disabled={!answer.trim() || saving} onClick={() => void checkSentence()}>Kiểm tra câu <ArrowRight size={17} /></button><button type="button" disabled={saving} onClick={() => void checkSentence(true)}>Bỏ qua câu</button><span className="translation-key-hint"><kbd>Enter</kbd> nộp câu · <kbd>Shift</kbd> + <kbd>Enter</kbd> xuống dòng</span></div>
+      </div>}
+
+      {stage === "result" && comparison && <div className="translation-stage translation-result">
+        <span className="translation-step-label">03 / 03 · KẾT QUẢ</span>
+        <h2>Kết quả câu của bạn</h2>
+        <div className="translation-score" role="status"><strong>{comparison.matched}/{comparison.total} từ khớp · {comparison.accuracy}%</strong><span>{comparison.extra > 0 ? comparison.extra + " từ bạn viết chưa khớp câu mẫu." : "Không có từ thừa so với câu mẫu."}</span></div>
+        <div className="translation-actions"><button ref={nextButtonRef} className="translation-primary" type="button" disabled={saving} onClick={next}>{saving ? "Đang lưu…" : index + 1 === sessionIds.length ? "Xem tổng kết" : "Câu tiếp theo"} <ArrowRight size={17} /></button><span className="translation-key-hint"><kbd>Enter</kbd> để tiếp tục</span></div>
+        <div className="translation-word-diff"><div><b>Câu bạn viết</b><p>{comparison.answerWords.length ? comparison.answerWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>) : "Bạn đã bỏ qua câu này."}</p></div><div><b>Câu mẫu gần nhất</b><p lang="en">{comparison.referenceWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>)}</p></div></div>
+        <div className="translation-reference"><span>CÂU MẪU THAM KHẢO</span><p lang="en">{comparison.reference}</p>{current.alternatives.length > 0 && <small>Cách diễn đạt khác: {current.alternatives.join(" · ")}</small>}{current.editor_note && <small>{current.editor_note}</small>}</div>
+        <p className="translation-disclaimer">Điểm này đo các từ trùng với câu mẫu theo đúng thứ tự, chưa đánh giá đầy đủ ngữ pháp hoặc những cách diễn đạt khác vẫn đúng.</p>
+      </div>}
     </section>}
   </main>;
 }
