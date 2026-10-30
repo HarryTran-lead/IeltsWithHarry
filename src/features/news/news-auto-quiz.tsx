@@ -56,7 +56,7 @@ const groups: Record<QuestionType, { title: string; short: string; instruction: 
   matching_sentence_endings: { title: "Matching Sentence Endings", short: "Matching Sentence Endings", instruction: "Choose the phrase that best completes the sentence.", hint: "Ghép nửa sau của câu" },
   sentence_completion: { title: "Sentence Completion", short: "Sentence Completion", instruction: "Complete the sentence. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền tối đa 3 từ" },
   summary_completion: { title: "Summary Completion", short: "Summary Completion", instruction: "Complete the summary. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào tóm tắt" },
-  note_completion: { title: "Note Completion", short: "Note Completion", instruction: "Complete the note. Follow the word limit shown with each question.", hint: "Điền vào ghi chú" },
+  note_completion: { title: "Note Completion", short: "Note Completion", instruction: "Complete the notes below.", hint: "Điền vào ghi chú" },
   table_completion: { title: "Table Completion", short: "Table Completion", instruction: "Complete the table. Follow the word limit stated in each question.", hint: "Điền vào ô trống theo giới hạn từ" },
   flow_chart_completion: { title: "Flow-chart Completion", short: "Flow-chart Completion", instruction: "Complete the process step. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền vào lưu đồ" },
   diagram_label_completion: { title: "Diagram Label Completion", short: "Diagram Label Completion", instruction: "Complete the text diagram. Write NO MORE THAN THREE WORDS from the article.", hint: "Điền nhãn sơ đồ" },
@@ -279,8 +279,16 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
       const group = groups[section.type];
       const first = section.items[0].number; const last = section.items[section.items.length - 1].number;
       const arrowTable = section.type === "table_completion" ? parseArrowTableCompletion(section.items.map(({ question }) => question.prompt)) : null;
+      const noteWordLimits = section.type === "note_completion"
+        ? section.items.map(({ question }) => noteWordLimitForPrompt(question.prompt)) : [];
+      const sharedNoteWordLimit = noteWordLimits.length && noteWordLimits.every((limit) => limit === noteWordLimits[0])
+        ? noteWordLimits[0] : null;
       return <div className="news-auto-group" key={`${section.type}-${first}`}>
-        <div className="news-auto-group-head"><strong>Questions {first}{last > first ? `–${last}` : ""} · {group.title}</strong><p>{group.instruction}</p><small>{group.hint}</small></div>
+        <div className="news-auto-group-head"><strong>Questions {first}{last > first ? `–${last}` : ""} · {group.title}</strong><p>{section.type === "note_completion"
+          ? sharedNoteWordLimit
+            ? `${group.instruction} Write NO MORE THAN ${wordLimitText(sharedNoteWordLimit)} from the article for each answer.`
+            : `${group.instruction} Follow the word limit shown with each question.`
+          : group.instruction}</p><small>{group.hint}</small></div>
         {arrowTable && <>
           <p className="news-completion-instruction">{arrowTable.instruction}</p>
           <div className="news-completion-table-scroll"><table className="news-completion-table" aria-label={`Bảng điền từ câu ${first} đến ${last}`}>
@@ -335,7 +343,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
             </div>)}</div> : <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{segments(visiblePrompt,0,questionHighlights[question.id]??[]).map((part)=>part.highlight
                 ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
                 : <span key={part.start}>{part.text}</span>)}</h3>}
-            {question.question_type === "note_completion" && <small className="news-note-word-limit">Write NO MORE THAN {wordLimitText(noteWordLimit)} from the article.</small>}
+            {question.question_type === "note_completion" && !sharedNoteWordLimit && <small className="news-note-word-limit">Write NO MORE THAN {wordLimitText(noteWordLimit)} from the article.</small>}
             <div className="news-question-tools"><button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button><span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
             {translationVisible[question.id]&&translations[question.id]&&<p className="news-question-translation" lang="vi">{translations[question.id]}</p>}
             {selection?.questionId===question.id&&<div className="news-question-highlight-menu" role="group" aria-label={`Highlight câu ${number}`}>
