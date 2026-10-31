@@ -170,7 +170,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
 }
 
 function AppShellContent({ children, canManage }: { children: React.ReactNode; canManage: boolean }) {
-  const { mode } = useHeaderWeather();
+  const { mode, phase } = useHeaderWeather();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -270,7 +270,10 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   }
 
   return (
-    <div className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}>
+    <div
+      className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""} ${mode !== "off" ? weatherStyles.skyFrame : ""}`}
+      data-sky-phase={mode !== "off" ? phase : undefined}
+    >
       <header className={`topbar ${mode !== "off" ? weatherStyles.headerSurface : ""}`}>
         <HeaderSkyBackdrop />
         <button

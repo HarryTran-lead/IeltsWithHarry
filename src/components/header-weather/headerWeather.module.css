@@ -1,9 +1,19 @@
 /* Keep the existing header controls above the decorative layer and let menus overflow. */
-.headerSurface { isolation:isolate; }
+.headerSurface { isolation:isolate; border-bottom-color:transparent; }
 .headerSurface > :not(.skyBackdrop) { position:relative; z-index:1; }
-.skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; background-size:100% 100%; background-position:center bottom; background-repeat:no-repeat; border-bottom:1px solid var(--line); filter:saturate(.55); }
-.skyBackdrop::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(246,245,240,.3),rgba(246,245,240,.76)); }
+.skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; background-size:100% 100%; background-position:center bottom; background-repeat:no-repeat; filter:saturate(.82) contrast(.96); }
+.skyBackdrop::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(246,245,240,.08),rgba(246,245,240,.2)); }
 .nightSky::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,.84),rgba(255,255,255,.50) 25%,transparent 54%); }
+.skyFrame { --sky-glow-left:rgba(164,191,220,.2); --sky-glow-right:rgba(255,211,152,.2); --sky-glow-center:rgba(255,220,173,.1); }
+.skyFrame[data-sky-phase="earlyMorning"] { --sky-glow-left:rgba(180,166,218,.25); --sky-glow-right:rgba(255,185,141,.29); --sky-glow-center:rgba(255,210,175,.14); }
+.skyFrame[data-sky-phase="lateMorning"] { --sky-glow-left:rgba(139,198,222,.25); --sky-glow-right:rgba(252,218,156,.24); --sky-glow-center:rgba(198,230,229,.12); }
+.skyFrame[data-sky-phase="midday"] { --sky-glow-left:rgba(119,187,226,.27); --sky-glow-right:rgba(250,221,168,.21); --sky-glow-center:rgba(194,226,235,.12); }
+.skyFrame[data-sky-phase="lateAfternoon"] { --sky-glow-left:rgba(143,193,207,.23); --sky-glow-right:rgba(255,191,142,.28); --sky-glow-center:rgba(255,219,178,.12); }
+.skyFrame[data-sky-phase="sunset"] { --sky-glow-left:rgba(181,113,168,.24); --sky-glow-right:rgba(255,156,96,.32); --sky-glow-center:rgba(255,194,140,.16); }
+.skyFrame[data-sky-phase="night"] { --sky-glow-left:rgba(111,126,196,.23); --sky-glow-right:rgba(138,174,211,.21); --sky-glow-center:rgba(159,179,218,.11); }
+.skyFrame[data-sky-phase="lateNight"] { --sky-glow-left:rgba(103,119,177,.22); --sky-glow-right:rgba(126,160,199,.19); --sky-glow-center:rgba(148,166,207,.1); }
+.skyFrame :global(.main-area) { background:radial-gradient(ellipse 48% 240px at 5% 0%,var(--sky-glow-left),transparent 100%),radial-gradient(ellipse 52% 260px at 95% 0%,var(--sky-glow-right),transparent 100%),linear-gradient(180deg,var(--sky-glow-center),transparent 240px),var(--dot-grid) 0 0 / 22px 22px,var(--paper); }
+.skyFrame :global(.sidebar) { background:linear-gradient(180deg,var(--sky-glow-left),#fff 190px); }
 .widgetRoot { position:relative; z-index:10; display:flex; align-items:center; flex:0 0 auto; gap:7px; font-family:inherit; }
 .weatherChip { min-width:148px; max-width:190px; height:54px; display:flex; align-items:center; gap:9px; padding:7px 12px; color:#152c51; background:rgba(255,255,255,.81); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.8); box-shadow:0 3px 15px #20406112; border-radius:13px; }
 .weatherEmoji { font-size:26px; line-height:1; }
