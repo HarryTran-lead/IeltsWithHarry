@@ -47,6 +47,8 @@ import { NotificationBell } from "@/components/account/notification-bell";
 import { AccountAvatar } from "@/components/account/account-avatar";
 import { useNewsUnread } from "@/features/news/news-unread";
 import { catalogQuestionTypeIds, catalogQuestionTypes, catalogEntriesForSelection, type CatalogExam } from "@/lib/ielts-bank/catalog";
+import { HeaderSkyBackdrop, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather } from "@/components/header-weather";
+import weatherStyles from "@/components/header-weather/headerWeather.module.css";
 
 const groups = [
   {
@@ -162,6 +164,11 @@ function isActive(pathname: string, href: string) {
 }
 
 export function AppShell({ children, canManage = false }: { children: React.ReactNode; canManage?: boolean }) {
+  return <HeaderWeatherProvider><AppShellContent canManage={canManage}>{children}</AppShellContent></HeaderWeatherProvider>;
+}
+
+function AppShellContent({ children, canManage }: { children: React.ReactNode; canManage: boolean }) {
+  const { mode } = useHeaderWeather();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -262,7 +269,8 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
 
   return (
     <div className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}>
-      <header className="topbar">
+      <header className={`topbar ${mode !== "off" ? weatherStyles.headerSurface : ""}`}>
+        <HeaderSkyBackdrop />
         <button
           className="mobile-menu icon-button"
           onClick={() => setMenuOpen(true)}
@@ -338,6 +346,7 @@ export function AppShell({ children, canManage = false }: { children: React.Reac
           )}
         </div>
         <div className="header-actions">
+          <HeaderWeatherWidget />
           <Link href="/app/progress" className="stat-pill streak" title="Chuỗi ngày học">
             <Flame size={18} fill="#ff9b3d" color="#ef6a24" />
             <strong>{demoMode ? 12 : learnerStreak?.current ?? "…"}</strong>
