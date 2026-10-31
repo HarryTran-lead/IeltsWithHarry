@@ -283,7 +283,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
         ? section.items.map(({ question }) => noteWordLimitForPrompt(question.prompt)) : [];
       const sharedNoteWordLimit = noteWordLimits.length && noteWordLimits.every((limit) => limit === noteWordLimits[0])
         ? noteWordLimits[0] : null;
-      return <div className="news-auto-group" key={`${section.type}-${first}`}>
+      return <div className={`news-auto-group${section.type === "flow_chart_completion" ? " news-auto-flow-group" : ""}`} key={`${section.type}-${first}`}>
         <div className="news-auto-group-head"><strong>Questions {first}{last > first ? `–${last}` : ""} · {group.title}</strong><p>{section.type === "note_completion"
           ? sharedNoteWordLimit
             ? `${group.instruction} Write NO MORE THAN ${wordLimitText(sharedNoteWordLimit)} from the article for each answer.`
