@@ -22,9 +22,12 @@ export function localHour(date: Date, timeZone: string): number {
 
 export function phaseAt(date: Date, timeZone: string): DayPhase {
   const hour = localHour(date, timeZone);
-  if (hour >= 5 && hour < 12) return 'morning';
-  if (hour >= 12 && hour < 18) return 'afternoon';
-  if (hour >= 18 && hour < 22) return 'evening';
+  if (hour >= 5 && hour < 7) return 'earlyMorning';
+  if (hour >= 7 && hour < 11) return 'lateMorning';
+  if (hour >= 11 && hour < 14) return 'midday';
+  if (hour >= 14 && hour < 17) return 'lateAfternoon';
+  if (hour >= 17 && hour < 19) return 'sunset';
+  if (hour >= 19 && hour < 22) return 'night';
   return 'lateNight';
 }
 
@@ -39,5 +42,6 @@ export function formatLocalClock(date: Date, timeZone: string): string {
 }
 
 export const PHASE_LABELS: Record<DayPhase, string> = {
-  morning: 'Buổi sáng', afternoon: 'Buổi chiều', evening: 'Buổi tối', lateNight: 'Đêm khuya',
+  earlyMorning: 'Sáng sớm', lateMorning: 'Buổi sáng', midday: 'Buổi trưa',
+  lateAfternoon: 'Xế chiều', sunset: 'Hoàng hôn', night: 'Buổi tối', lateNight: 'Đêm khuya',
 };
