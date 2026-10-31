@@ -59,6 +59,10 @@ export function weatherLabel(code: number): string {
   return 'Thời tiết';
 }
 
+export function isRainyWeather(code: number): boolean {
+  return [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 95, 96, 99].includes(code);
+}
+
 export function weatherSymbol(code: number, isDay: boolean): string {
   if (code === 0) return isDay ? '☀️' : '🌙';
   if (code <= 3 && code >= 1) return isDay ? '⛅' : '☁️';
