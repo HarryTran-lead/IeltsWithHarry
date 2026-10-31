@@ -16,6 +16,7 @@ import {
   Languages,
   Library,
   Menu,
+  MessageCircle,
   Mic,
   NotebookPen,
   PenLine,
@@ -38,7 +39,7 @@ import { HarryMascot } from "@/components/illustrations/harry";
 import { Tape } from "@/components/stickers/stickers";
 import { HarryBuddy } from "@/components/fx/harry-buddy";
 import { useDemo } from "@/features/demo/demo-store";
-import { demoMode, liveMode, lockedLearnerPath } from "@/lib/runtime";
+import { communityEnabled, demoMode, liveMode, lockedLearnerPath } from "@/lib/runtime";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
@@ -56,6 +57,7 @@ const groups = [
     links: [
       { href: "/app/news", label: "Daily News", icon: Newspaper, tone: "sky" },
       { href: "/app/study-together", label: "Cùng học", icon: UsersRound, tone: "lavender" },
+      ...(communityEnabled ? [{ href: "/app/community", label: "Cộng đồng", icon: MessageCircle, tone: "teal" }] : []),
       { href: "/app/learn", label: "Learn", icon: GraduationCap, tone: "sky" },
     ],
   },

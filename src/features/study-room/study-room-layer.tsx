@@ -33,7 +33,8 @@ function initialBounds(): Bounds {
 }
 
 export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
-  const inRoom = usePathname() === "/app/study-together";
+  const pathname = usePathname();
+  const inRoom = pathname === "/app/study-together";
   const { sessionActive, setSessionActive, studySeconds } = useStudyPresence();
   const [entered, setEntered] = useState(inRoom);
   const [visible, setVisible] = useState(true);
@@ -54,7 +55,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
     return () => { window.cancelAnimationFrame(frame); window.removeEventListener("resize", onResize); };
   }, []);
 
-  if (!inRoom && (!entered || !visible)) return null;
+  if (!inRoom && (!entered || !visible || pathname.startsWith("/app/community"))) return null;
 
   function begin(event: React.PointerEvent<HTMLElement>, kind: Gesture["kind"]) {
     if (inRoom || !bounds || event.button !== 0 || (event.target as HTMLElement).closest("button,a,input")) return;

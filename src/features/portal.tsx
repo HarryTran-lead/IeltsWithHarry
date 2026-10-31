@@ -6,7 +6,7 @@ import { DemoProvider, useDemo } from "@/features/demo/demo-store";
 import { AppShell } from "@/components/layout/app-shell";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "@/features/ielts/ielts-live-page";
-import { lockedLearnerPath, smartNotebookV1 } from "@/lib/runtime";
+import { communityEnabled, lockedLearnerPath, smartNotebookV1 } from "@/lib/runtime";
 import Link from "next/link";
 
 // The catch-all learner route loads only the section being viewed.
@@ -31,6 +31,7 @@ const YoutubeLab = dynamic(() => import("@/features/listening/youtube-lab").then
 const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage));
 const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage));
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden));
+const Community = dynamic(() => import("@/features/community/community").then((module) => module.Community));
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -89,6 +90,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <Suspense fallback={<div className="content-page">Đang tải Daily News…</div>}><NewsPortal /></Suspense>
         ) : section === "question-bank" ? (
           <BankStudent examId={pathname.split("/")[3] === "exam" ? pathname.split("/")[4] : undefined} resultId={pathname.split("/")[3] === "result" ? pathname.split("/")[4] : undefined} attemptId={pathname.split("/")[3] === "attempt" ? pathname.split("/")[4] : undefined} />
+        ) : section === "community" && communityEnabled ? (
+          <Community canManage={canManage} />
         ) : section === "study-together" ? (
           <div className="study-room-placeholder" aria-hidden="true" />
         ) : (
