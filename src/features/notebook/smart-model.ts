@@ -9,7 +9,7 @@ export type Cover = (typeof covers)[number];
 export type Paper = (typeof papers)[number];
 
 export type Book = {
-  id: string; user_id: string; title: string; description: string; cover: Cover;
+  id: string; user_id: string; title: string; description: string; cover: Cover; folder: string;
   favorite: boolean; deleted_at: string | null; opened_at: string | null;
   created_at: string; updated_at: string;
 };
