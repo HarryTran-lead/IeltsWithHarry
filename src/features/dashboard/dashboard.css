@@ -66,6 +66,11 @@
 .dash-room-foot b { color: var(--navy); }
 .dash-room-foot .button { min-height: 38px; }
 
+/* Reserve room for the draggable quick notebook bubble beside this action. */
+@media (min-width: 901px) {
+  .dashboard-grid .achievements .card-head .text-link { margin-right: 54px; }
+}
+
 @media (max-width: 700px) {
   .dashboard-grid .welcome-copy { padding: 14px 16px; }
   .dashboard-grid .welcome-art { display: none; }

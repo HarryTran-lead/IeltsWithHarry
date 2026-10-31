@@ -1,5 +1,13 @@
 import type { DayPhase } from './types';
 
+export const PHASE_SEQUENCE: readonly DayPhase[] = [
+  'earlyMorning', 'lateMorning', 'midday', 'lateAfternoon', 'sunset', 'night', 'lateNight',
+];
+
+export function nextPhase(phase: DayPhase): DayPhase {
+  return PHASE_SEQUENCE[(PHASE_SEQUENCE.indexOf(phase) + 1) % PHASE_SEQUENCE.length];
+}
+
 export function deviceTimeZone(): string {
   try {
     return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
