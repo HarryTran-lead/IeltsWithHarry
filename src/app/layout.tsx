@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./news.css";
+import "./community.css";
 import "./study-room.css";
 import "./stickers.css";
 import "./motion.css";
