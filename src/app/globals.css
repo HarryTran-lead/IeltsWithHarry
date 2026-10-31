@@ -2863,8 +2863,10 @@ a.card:hover {
   .stat-pill small {
     display: none;
   }
-  .stat-pill.level,
-  .notification-button {
+  .stat-pill.level {
+    display: none;
+  }
+  .header-actions .xp {
     display: none;
   }
   .avatar-button > span {

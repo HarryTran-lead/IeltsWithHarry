@@ -1,11 +1,18 @@
 /* Keep the existing header controls above the decorative layer and let menus overflow. */
+@property --sky-edge-left { syntax:"<color>"; inherits:true; initial-value:#d6e7f2; }
+@property --sky-edge-center { syntax:"<color>"; inherits:true; initial-value:#e4eef5; }
+@property --sky-edge-right { syntax:"<color>"; inherits:true; initial-value:#dceaf4; }
+@property --sky-page { syntax:"<color>"; inherits:true; initial-value:#f6f5f0; }
 .headerSurface { isolation:isolate; border-bottom-color:transparent; background:linear-gradient(90deg,var(--sky-edge-left),var(--sky-edge-center) 50%,var(--sky-edge-right)),var(--sky-page); }
 .headerSurface > :not(.skyBackdrop) { position:relative; z-index:1; }
-.skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; background-size:100% 100%; background-position:center bottom; background-repeat:no-repeat; filter:saturate(.82) contrast(.96); -webkit-mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); }
-.skyBackdrop::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(246,245,240,.08),rgba(246,245,240,.2)); }
+.skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; filter:saturate(.82) contrast(.96); -webkit-mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); }
+.skyScene { position:absolute; inset:0; z-index:0; background-size:100% 100%; background-position:center bottom; background-repeat:no-repeat; }
+.skySceneNext { z-index:1; opacity:0; transition:opacity 1.8s ease-in-out; }
+.skySceneVisible { opacity:1; }
+.skyBackdrop::before { content:""; position:absolute; inset:0; z-index:2; background:linear-gradient(180deg,rgba(246,245,240,.08),rgba(246,245,240,.2)); }
 .nightSky::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,.84),rgba(255,255,255,.50) 25%,transparent 54%); }
-.rainClouds { position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse 38% 115% at 28% -15%,rgba(55,77,108,.24),transparent 80%),radial-gradient(ellipse 43% 120% at 76% -10%,rgba(55,77,108,.2),transparent 82%),linear-gradient(180deg,rgba(82,103,131,.1),transparent 80%); }
-.skyFrame { --sky-page:var(--paper); --sky-edge-left:rgba(155,200,230,.48); --sky-edge-center:rgba(198,224,241,.52); --sky-edge-right:rgba(171,209,234,.48); --header-glass:rgba(255,255,255,.62); --header-glass-quiet:rgba(255,255,255,.5); }
+.rainClouds { position:absolute; inset:0; z-index:3; pointer-events:none; background:radial-gradient(ellipse 38% 115% at 28% -15%,rgba(55,77,108,.24),transparent 80%),radial-gradient(ellipse 43% 120% at 76% -10%,rgba(55,77,108,.2),transparent 82%),linear-gradient(180deg,rgba(82,103,131,.1),transparent 80%); }
+.skyFrame { --sky-page:var(--paper); --sky-edge-left:rgba(155,200,230,.48); --sky-edge-center:rgba(198,224,241,.52); --sky-edge-right:rgba(171,209,234,.48); --header-glass:rgba(255,255,255,.62); --header-glass-quiet:rgba(255,255,255,.5); transition:--sky-edge-left 1.8s ease-in-out,--sky-edge-center 1.8s ease-in-out,--sky-edge-right 1.8s ease-in-out,--sky-page 1.8s ease-in-out; }
 .skyFrame[data-sky-phase="earlyMorning"] { --sky-edge-left:rgba(168,202,226,.55); --sky-edge-center:rgba(237,185,191,.55); --sky-edge-right:rgba(188,213,232,.5); }
 .skyFrame[data-sky-phase="lateMorning"] { --sky-edge-left:rgba(155,200,230,.48); --sky-edge-center:rgba(198,224,241,.52); --sky-edge-right:rgba(171,209,234,.48); }
 .skyFrame[data-sky-phase="midday"] { --sky-edge-left:rgba(193,215,223,.42); --sky-edge-center:rgba(242,223,174,.46); --sky-edge-right:rgba(212,225,221,.42); }
@@ -32,12 +39,15 @@
 .headerSurface :global(.notification-button) { width:34px; height:34px; border-radius:50%; }
 .widgetRoot { position:relative; z-index:10; display:flex; align-items:center; flex:0 0 auto; gap:7px; font-family:inherit; }
 .weatherChip { min-width:140px; max-width:178px; height:46px; display:flex; align-items:center; gap:7px; padding:4px 10px; color:#152c51; border-radius:999px; }
+.headerSurface .weatherChip { background:rgba(255,255,255,.86); border-color:rgba(255,255,255,.84); }
 .weatherEmoji { font-size:22px; line-height:1; }
 .weatherText { display:flex; min-width:0; flex-direction:column; gap:1px; }
 .weatherText strong { font-size:13px; font-weight:800; line-height:1.1; white-space:nowrap; }
-.weatherText span { font-size:10px; color:#526586; line-height:1.25; }
-.weatherText .cityLabel { display:block; font-size:9.5px; color:#2e4366; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:108px; }
-.metaLine { font-size:9px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.weatherText span { font-size:10px; color:#344b68; line-height:1.25; }
+.weatherText strong .weatherFullValue,.weatherText strong .weatherCompactValue { color:inherit; font-size:inherit; line-height:inherit; }
+.weatherCompactValue { display:none; }
+.weatherText .cityLabel { display:block; font-size:10px; color:#243c5c; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:108px; }
+.metaLine { font-size:9.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .settingsButton { width:29px; height:29px; padding:0; border:1px solid rgba(49,95,132,.15); border-radius:9px; background:rgba(255,255,255,.9); color:#284263; font-size:17px; cursor:pointer; flex-shrink:0; }
 .headerSurface .settingsButton { width:32px; height:32px; border-radius:50%; }
 .settingsButton:hover { background:#ecfaff; }
@@ -74,6 +84,7 @@
 .credit a { color:#0b7895; }
 
 /* Header remains readable and functional at laptop/tablet/mobile widths. */
-@media(max-width:1199px){ .weatherChip { min-width:95px; max-width:118px; padding:7px; } .weatherEmoji { font-size:22px; } .weatherText .cityLabel,.weatherText .metaLine { display:none; } }
+@media(max-width:1199px){ .weatherChip { min-width:95px; max-width:118px; padding:7px; } .weatherEmoji { font-size:22px; } .weatherText .cityLabel,.weatherText .metaLine,.weatherText strong .weatherFullValue { display:none; } .weatherText strong .weatherCompactValue { display:inline; } }
 @media(max-width:767px){ .weatherChip { min-width:0; width:auto; height:34px; padding:4px 7px; } .weatherEmoji { font-size:18px; } .weatherText strong { font-size:12px; } .weatherText .cityLabel,.weatherText .metaLine { display:none; } .settingsButton,.headerSurface .settingsButton { width:26px; height:26px; } .popover { position:fixed; top:66px; left:10px; right:10px; width:auto; max-height:calc(100dvh - 76px); overflow-y:auto; } }
 @media(max-width:560px){ .headerSurface :global(.brand) > span:last-child { display:none; } }
+@media(prefers-reduced-motion:reduce){ .skyFrame,.skySceneNext { transition:none; } }

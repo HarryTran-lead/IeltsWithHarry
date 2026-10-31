@@ -77,7 +77,10 @@ export function HeaderWeatherWidget() {
         <div className={styles.weatherChip} aria-live="polite">
           <span className={styles.weatherEmoji} aria-hidden="true">{weather ? weatherSymbol(weather.weatherCode, weather.isDay) : '🧭'}</span>
           <div className={styles.weatherText}>
-            <strong>{weather ? `${Math.round(weather.temperatureC)}°C` : location ? '--°C' : 'Chọn thành phố'}</strong>
+            <strong>
+              <span className={styles.weatherFullValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : location ? '--°C' : 'Chọn thành phố'}</span>
+              <span className={styles.weatherCompactValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : '--°C'}</span>
+            </strong>
             <span className={styles.cityLabel} title={location?.name || 'Chưa chọn vị trí'}>{location?.name || 'Thời tiết theo vị trí'}</span>
             <span className={styles.metaLine}>{textClock} · {location ? caption : PHASE_LABELS[phase]}</span>
           </div>
