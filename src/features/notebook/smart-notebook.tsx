@@ -3,10 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { BookCopy, BookOpen, Grid2X2, Heart, List, Plus, RotateCcw, Search, Trash2 } from "lucide-react";
+import { BookCopy, BookOpen, BookOpenText, Clock3, CloudUpload, Download, FileText, Folder, Grid2X2, History, List, Mic, MoreVertical, NotebookPen, Pencil, Plus, RotateCcw, Search, Sparkles, Star, Trash2, Upload, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
-import { NotebookPage } from "./notebook-ui";
-import type { NotebookEntry } from "./notebook-store";
+import { useDemo } from "@/features/demo/demo-store";
+import { NotebookPage, QuickForm } from "./notebook-ui";
+import { useNotebook, type NotebookEntry } from "./notebook-store";
 import { SmartEditor } from "./smart-editor";
 import { covers, documentSchema, papers, type Book, type Cover, type PageDocument, type Paper, type TextElement } from "./smart-model";
 import "./smart-notebook.css";
@@ -14,6 +15,31 @@ import "./smart-notebook.css";
 type BookWithCount = Book & { count: number };
 const coverLabels: Record<Cover, string> = { teal: "Xanh ngọc", blue: "Xanh lam", lavender: "Tím nhạt", coral: "San hô", sand: "Màu cát" };
 const paperLabels: Record<Paper, string> = { blank: "Giấy trắng", ruled: "Giấy kẻ dòng", grid: "Giấy ô vuông" };
+
+function bookIcon(title: string) {
+  const name = title.toLocaleLowerCase();
+  if (name.includes("grammar") || name.includes("ngữ pháp")) return FileText;
+  if (name.includes("writing") || name.includes("viết")) return Pencil;
+  if (name.includes("speaking") || name.includes("nói")) return Mic;
+  return BookOpen;
+}
+
+function relativeTime(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "gần đây";
+  const days = Math.floor((Date.now() - date.getTime()) / 86400000);
+  if (days <= 0) return "hôm nay";
+  if (days === 1) return "1 ngày trước";
+  if (days < 7) return `${days} ngày trước`;
+  return new Intl.DateTimeFormat("vi-VN", { day: "numeric", month: "numeric", year: "numeric" }).format(date);
+}
+
+function activityTime(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "GẦN ĐÂY";
+  const day = relativeTime(value).toLocaleUpperCase();
+  return `${day} · ${new Intl.DateTimeFormat("vi-VN", { hour: "2-digit", minute: "2-digit" }).format(date)}`;
+}
 
 export function SmartNotebook() {
   const pathname = usePathname();
@@ -23,6 +49,8 @@ export function SmartNotebook() {
 
 function Library() {
   const db = useMemo(() => createClient(), []);
+  const { entries, visits } = useNotebook();
+  const { attempts } = useDemo();
   const router = useRouter();
   const [books, setBooks] = useState<BookWithCount[]>([]);
   const [ready, setReady] = useState(false);
@@ -32,6 +60,9 @@ function Library() {
   const [tab, setTab] = useState<"all" | "recent" | "favorite" | "trash">("all");
   const [view, setView] = useState<"grid" | "list">("grid");
   const [creating, setCreating] = useState(false);
+  const [quickNote, setQuickNote] = useState(false);
+  const [showHistory, setShowHistory] = useState(false);
+  const [menuBookId, setMenuBookId] = useState<string | null>(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [cover, setCover] = useState<Cover>("teal");
@@ -144,13 +175,44 @@ function Library() {
     setBusy(false);
   }
 
+  const activeBooks = books.filter((book) => !book.deleted_at);
+  const recentActivities = [
+    ...activeBooks.map((book) => ({ id: `book-${book.id}`, date: book.updated_at, title: `Cập nhật sổ tay ${book.title}`, detail: `${book.count} trang trong sổ tay`, kind: "book", href: `/app/notebook/${book.id}` })),
+    ...entries.map((entry) => ({ id: `entry-${entry.id}`, date: entry.updatedAt, title: entry.kind === "word" ? `Lưu từ mới ${entry.title}` : `Thêm ghi chú ${entry.title}`, detail: entry.kind === "word" ? entry.meaningVi : entry.body, kind: entry.kind, href: entry.sourcePath.startsWith("/app/") ? entry.sourcePath : "/app/notebook" })),
+    ...visits.map((visit) => ({ id: `visit-${visit.id}`, date: visit.visitedAt, title: `Mở ${visit.title}`, detail: "Đã xem nội dung học tập", kind: "visit", href: visit.path })),
+    ...attempts.map((attempt) => ({ id: `attempt-${attempt.id}`, date: attempt.submittedAt ?? `${attempt.date}T12:00:00`, title: `Hoàn thành ${attempt.lesson.replaceAll("-", " ")}`, detail: `${attempt.score}/${attempt.total} câu đúng`, kind: "attempt", href: `/app/lesson/${attempt.lesson}` })),
+  ].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+
+  function exportLegacyData() {
+    const file = new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), entries, visits, attempts }, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(file);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "ieltswithharry-notebook.json";
+    link.click();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
   return <div className="content-page smart-library">
-    <header className="smart-library-hero"><div><span className="eyebrow">MY WORKSPACE</span><h1>Sổ tay của tôi</h1><p>Không gian riêng để ghi chép, viết tay và lưu kiến thức.</p></div><div className="smart-hero-actions"><button className="button subtle" disabled={busy} onClick={() => importRef.current?.click()}>Nhập dữ liệu</button><input ref={importRef} type="file" hidden accept="application/json,.json" onChange={(event) => { const file = event.target.files?.[0]; if (file) void importData(file); event.target.value = ""; }} /><button className="button primary" onClick={() => setCreating(true)}><Plus size={18} /> Tạo sổ tay</button></div></header>
+    <header className="smart-library-hero">
+      <div className="smart-hero-copy"><span className="eyebrow">MY WORKSPACE</span><h1>Sổ tay của tôi</h1><p>Không gian riêng để ghi chép, viết tay và lưu kiến thức học tập.</p></div>
+      <span className="smart-hero-art" aria-hidden="true" />
+      <div className="smart-hero-actions"><button className="button subtle" onClick={() => setQuickNote((value) => !value)}><Pencil size={18} /> Ghi chú nhanh</button><button className="button primary" onClick={() => setCreating(true)}><Plus size={20} /> Tạo sổ tay</button></div>
+    </header>
+    {quickNote && <section className="card smart-quick-note"><div className="smart-panel-heading"><h2>Ghi chú nhanh</h2><button type="button" aria-label="Đóng ghi chú" onClick={() => setQuickNote(false)}><X size={18} /></button></div><QuickForm kind="note" onSaved={() => setQuickNote(false)} /></section>}
     {word && <section className="card smart-word-picker" aria-label="Đưa từ vào vở"><h2>Đưa “{word.title}” vào vở</h2>{books.some((item) => !item.deleted_at) ? <><label>Chọn sổ tay<select value={targetBook} onChange={(event) => { setTargetBook(event.target.value); void loadWordPages(event.target.value); }}>{books.filter((item) => !item.deleted_at).map((item) => <option key={item.id} value={item.id}>{item.title}</option>)}</select></label><label>Chọn trang<select value={targetPage} onChange={(event) => setTargetPage(event.target.value)}>{wordPages.map((item, index) => <option key={item.id} value={item.id}>Trang {index + 1}</option>)}</select></label><div><button className="button subtle" onClick={() => setWord(null)}>Hủy</button><button className="button primary" disabled={busy || !targetPage} onClick={() => void saveWord()}>Lưu và mở sổ tay</button></div></> : <><p>Hãy tạo sổ tay trước khi đưa từ vào vở.</p><button className="button primary" onClick={() => { setWord(null); setCreating(true); }}>Tạo sổ tay</button></>}</section>}
     {creating && <section className="card smart-create" aria-label="Tạo sổ tay mới"><h2>Tạo sổ tay mới</h2><div className="smart-create-fields"><label>Tên sổ tay<input autoFocus maxLength={100} value={title} onChange={(event) => setTitle(event.target.value)} /></label><label>Mô tả (không bắt buộc)<input maxLength={300} value={description} onChange={(event) => setDescription(event.target.value)} /></label><label>Màu bìa<select value={cover} onChange={(event) => setCover(event.target.value as Cover)}>{covers.map((item) => <option key={item} value={item}>{coverLabels[item]}</option>)}</select></label><label>Loại giấy<select value={paper} onChange={(event) => setPaper(event.target.value as Paper)}>{papers.map((item) => <option key={item} value={item}>{paperLabels[item]}</option>)}</select></label></div><div className="smart-create-actions"><button className="button subtle" onClick={() => setCreating(false)}>Hủy</button><button className="button primary" disabled={busy} onClick={() => void create()}>{busy ? "Đang tạo…" : "Tạo sổ tay"}</button></div></section>}
     {error && <div className="form-error" role="alert">{error} <button onClick={() => void refresh()}>Tải lại</button></div>}
-    <div className="smart-library-tools"><label className="smart-search"><Search size={18} /><input aria-label="Tìm kiếm sổ tay" placeholder="Tìm kiếm sổ tay..." value={query} onChange={(event) => setQuery(event.target.value)} /></label><div className="smart-tabs" role="group" aria-label="Lọc sổ tay">{(["all", "recent", "favorite", "trash"] as const).map((item) => <button key={item} className={tab === item ? "active" : ""} onClick={() => setTab(item)}>{{ all: "Tất cả", recent: "Gần đây", favorite: "Yêu thích", trash: "Thùng rác" }[item]}</button>)}</div><div className="smart-views"><button aria-label="Xem dạng lưới" aria-pressed={view === "grid"} onClick={() => setView("grid")}><Grid2X2 size={18} /></button><button aria-label="Xem dạng danh sách" aria-pressed={view === "list"} onClick={() => setView("list")}><List size={18} /></button></div></div>
-    {!ready ? <p>Đang tải sổ tay…</p> : shown.length ? <div className={`smart-book-list ${view}`}>{shown.map((book) => <article className="smart-book" key={book.id}><Link href={`/app/notebook/${book.id}`} className={`smart-book-cover ${book.cover}`} aria-label={`Mở ${book.title}`}><BookOpen size={36} strokeWidth={1.5} /><span>{book.title}</span></Link><div className="smart-book-info"><h2><Link href={`/app/notebook/${book.id}`}>{book.title}</Link></h2>{book.description && <p>{book.description}</p>}<small>{book.count} trang · Cập nhật {new Intl.DateTimeFormat("vi-VN", { dateStyle: "medium" }).format(new Date(book.updated_at))}</small><div className="smart-book-actions">{book.deleted_at ? <button disabled={busy} onClick={() => void update(book, { deleted_at: null })}><RotateCcw size={15} /> Khôi phục</button> : <><button disabled={busy} aria-label={book.favorite ? "Bỏ yêu thích" : "Yêu thích"} onClick={() => void update(book, { favorite: !book.favorite })}><Heart size={16} fill={book.favorite ? "currentColor" : "none"} /></button><button disabled={busy} onClick={() => { const name = window.prompt("Đổi tên sổ tay", book.title)?.trim(); if (name && name.length <= 100) void update(book, { title: name }); }}>Đổi tên</button><button disabled={busy} onClick={() => { const next = covers[(covers.indexOf(book.cover) + 1) % covers.length]; void update(book, { cover: next }); }}>Đổi bìa</button><button disabled={busy} onClick={() => void duplicate(book)}><BookCopy size={15} /> Sao chép</button><button disabled={busy} onClick={() => { if (window.confirm(`Chuyển “${book.title}” vào thùng rác?`)) void update(book, { deleted_at: new Date().toISOString() }); }}><Trash2 size={15} /> Xóa</button></>}</div></div></article>)}</div> : <div className="smart-empty"><BookOpen size={42} /><h2>{query ? "Không tìm thấy sổ tay phù hợp." : tab === "trash" ? "Thùng rác đang trống" : "Sổ tay của bạn đang trống"}</h2><p>{!query && tab !== "trash" ? "Tạo cuốn vở đầu tiên để bắt đầu ghi chép." : ""}</p>{!query && tab !== "trash" && <button className="button primary" onClick={() => setCreating(true)}>Tạo sổ tay</button>}</div>}
-    <NotebookPage compact onImportWord={(entry) => void chooseWord(entry)} />
+    <div className="smart-library-tools"><label className="smart-search"><Search size={20} /><input aria-label="Tìm kiếm sổ tay" placeholder="Tìm kiếm sổ tay của bạn..." value={query} onChange={(event) => setQuery(event.target.value)} /></label><div className="smart-tabs" role="group" aria-label="Lọc sổ tay">{(["all", "recent", "favorite"] as const).map((item) => <button key={item} className={tab === item ? "active" : ""} onClick={() => setTab(item)}>{{ all: "Tất cả", recent: "Gần đây", favorite: "Yêu thích" }[item]}</button>)}</div><div className="smart-views"><button aria-label="Xem dạng lưới" aria-pressed={view === "grid"} onClick={() => setView("grid")}><Grid2X2 size={19} /></button><button aria-label="Xem dạng danh sách" aria-pressed={view === "list"} onClick={() => setView("list")}><List size={19} /></button></div></div>
+    <div className="smart-library-columns"><div className="smart-library-main">
+      <div className="smart-section-heading"><h2>{tab === "trash" ? "Thùng rác" : "Các sổ tay của tôi"} <span>{shown.length} sổ tay</span></h2>{tab === "trash" && <button onClick={() => setTab("all")}>← Quay lại</button>}</div>
+      {!ready ? <p>Đang tải sổ tay…</p> : shown.length ? <div className={`smart-book-list ${view}`}>{shown.map((book) => { const Icon = bookIcon(book.title); return <article className="smart-book" key={book.id}>
+        <div className={`smart-book-cover ${book.cover}`}><span className="smart-spiral" aria-hidden="true" /><Link href={`/app/notebook/${book.id}`} className="smart-cover-link" aria-label={`Mở ${book.title}`}><Icon size={36} strokeWidth={1.7} /><strong>{book.title}</strong><small>My Notebook</small></Link><button className="smart-book-menu-trigger" aria-label={`Tùy chọn ${book.title}`} aria-expanded={menuBookId === book.id} onClick={() => setMenuBookId(menuBookId === book.id ? null : book.id)}><MoreVertical size={20} /></button>{menuBookId === book.id && <div className="smart-book-menu">{book.deleted_at ? <button disabled={busy} onClick={() => { setMenuBookId(null); void update(book, { deleted_at: null }); }}><RotateCcw size={15} /> Khôi phục</button> : <><button onClick={() => { setMenuBookId(null); router.push(`/app/notebook/${book.id}`); }}><BookOpen size={15} /> Mở sổ tay</button><button disabled={busy} onClick={() => { setMenuBookId(null); const name = window.prompt("Đổi tên sổ tay", book.title)?.trim(); if (name && name.length <= 100) void update(book, { title: name }); }}><Pencil size={15} /> Đổi tên</button><button disabled={busy} onClick={() => { setMenuBookId(null); void update(book, { cover: covers[(covers.indexOf(book.cover) + 1) % covers.length] }); }}><Sparkles size={15} /> Đổi bìa</button><button disabled={busy} onClick={() => { setMenuBookId(null); void duplicate(book); }}><BookCopy size={15} /> Sao chép</button><button disabled={busy} onClick={() => { setMenuBookId(null); if (window.confirm(`Chuyển “${book.title}” vào thùng rác?`)) void update(book, { deleted_at: new Date().toISOString() }); }}><Trash2 size={15} /> Xóa</button></>}</div>}</div>
+        <div className="smart-book-info"><div className="smart-book-title-line"><h3><Link href={`/app/notebook/${book.id}`}>{book.title}</Link></h3>{!book.deleted_at && <button disabled={busy} aria-label={book.favorite ? `Bỏ yêu thích ${book.title}` : `Yêu thích ${book.title}`} onClick={() => void update(book, { favorite: !book.favorite })}><Star size={19} fill={book.favorite ? "currentColor" : "none"} /></button>}</div><p>{book.count} trang</p><small><Clock3 size={15} /> Cập nhật {relativeTime(book.updated_at)}</small></div>
+      </article>; })}</div> : <div className="smart-empty"><BookOpen size={42} /><h2>{query ? "Không tìm thấy sổ tay phù hợp." : tab === "trash" ? "Thùng rác đang trống" : "Sổ tay của bạn đang trống"}</h2><p>{!query && tab !== "trash" ? "Tạo cuốn vở đầu tiên để bắt đầu ghi chép." : ""}</p>{!query && tab !== "trash" && <button className="button primary" onClick={() => setCreating(true)}>Tạo sổ tay</button>}</div>}
+      <div className="smart-library-bottom-actions"><button className="button subtle" disabled={busy} onClick={() => importRef.current?.click()}><Upload size={18} /> Nhập dữ liệu</button><input ref={importRef} type="file" hidden accept="application/json,.json" onChange={(event) => { const file = event.target.files?.[0]; if (file) void importData(file); event.target.value = ""; }} /><button className="button subtle" onClick={exportLegacyData}><Download size={18} /> Xuất dữ liệu cũ</button><button className="smart-trash-link" onClick={() => setTab(tab === "trash" ? "all" : "trash")}><Trash2 size={15} /> {tab === "trash" ? "Trở lại" : "Thùng rác"}</button></div>
+    </div><aside className="smart-benefits"><div className="smart-benefits-heading"><Sparkles size={25} /><h2>Không gian học tập<br />của riêng bạn</h2></div><p>Ghi chú bằng bàn phím hoặc viết tay, lưu trữ tài liệu học tập và đồng bộ trên mọi thiết bị.</p><div className="smart-benefit"><span><Pencil size={23} /></span><div><strong>Ghi chú linh hoạt</strong><small>Gõ phím hoặc viết tay</small></div></div><div className="smart-benefit"><span><CloudUpload size={23} /></span><div><strong>Lưu trữ an toàn</strong><small>Tự động đồng bộ trên mọi thiết bị</small></div></div><div className="smart-benefit"><span><Folder size={23} /></span><div><strong>Tổ chức dễ dàng</strong><small>Phân loại theo chủ đề, gắn thẻ</small></div></div><span className="smart-benefits-art" aria-hidden="true" /></aside></div>
+    <section className="smart-recent"><div className="smart-recent-head"><div><h2>Hoạt động gần đây</h2><p>{recentActivities.length} hoạt động gần nhất của bạn</p></div><button onClick={() => setShowHistory((value) => !value)}>{showHistory ? "Thu gọn" : "Xem tất cả"} <span aria-hidden="true">→</span></button></div>{recentActivities.length ? <div className="smart-recent-grid">{recentActivities.map((item) => <Link href={item.href} key={item.id} className="smart-recent-item"><span className={`smart-recent-icon ${item.kind}`}>{item.kind === "book" ? <BookOpenText size={26} /> : item.kind === "note" ? <NotebookPen size={26} /> : item.kind === "word" ? <FileText size={26} /> : item.kind === "visit" ? <History size={26} /> : <Pencil size={26} />}</span><span><small>{activityTime(item.date)}</small><strong>{item.title}</strong><em>{item.detail}</em></span></Link>)}</div> : <p className="smart-recent-empty">Chưa có hoạt động. Hãy tạo sổ tay hoặc ghi chú đầu tiên.</p>}</section>
+    {showHistory && <NotebookPage compact onImportWord={(entry) => void chooseWord(entry)} />}
   </div>;
 }

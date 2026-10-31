@@ -16,7 +16,7 @@ const bubblePositionKey = "ieltswithharry-notebook-bubble-top";
 const bubbleSize = 56;
 const clampBubbleTop = (top: number) => Math.min(Math.max(84, top), Math.max(84, window.innerHeight - bubbleSize - 14));
 
-function QuickForm({ kind, onSaved, entry }: { kind: "note" | "word"; onSaved: () => void; entry?: NotebookEntry | null }) {
+export function QuickForm({ kind, onSaved, entry }: { kind: "note" | "word"; onSaved: () => void; entry?: NotebookEntry | null }) {
   const pathname = usePathname();
   const { addEntry, updateEntry, error } = useNotebook();
   const [title, setTitle] = useState(entry?.title ?? "");

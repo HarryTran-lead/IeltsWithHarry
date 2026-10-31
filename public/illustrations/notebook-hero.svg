@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 180" fill="none" aria-hidden="true">
+  <defs><linearGradient id="book" x1="50" y1="0" x2="240" y2="195" gradientUnits="userSpaceOnUse"><stop stop-color="#8ed8d4"/><stop offset="1" stop-color="#31aaa9"/></linearGradient><filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#137f85" flood-opacity=".2"/></filter></defs>
+  <path d="M226 55c12-6 20-3 28 4l58 42-31 86-82-31z" fill="#aee2df"/>
+  <g transform="rotate(19 230 105)"><rect x="170" y="38" width="89" height="133" rx="11" fill="#fffaf0"/><path d="M185 65h59M185 83h56M185 101h52M185 119h55M185 137h43" stroke="#addcdd" stroke-width="2"/><path d="M185 52h17" stroke="#c5d2d3" stroke-width="5" stroke-linecap="round"/></g>
+  <g filter="url(#shadow)" transform="rotate(-12 145 93)"><rect x="80" y="18" width="116" height="154" rx="12" fill="url(#book)"/><path d="M99 18v154" stroke="#208b90" stroke-opacity=".26" stroke-width="4"/><rect x="107" y="58" width="59" height="29" rx="5" fill="#fff9e9"/><text x="116" y="77" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#45b3b1">Notes</text><path d="M130 122c18-5 36-5 52 2" stroke="#b8eeee" stroke-opacity=".36" stroke-width="22" stroke-linecap="round"/></g>
+  <g stroke="#295a69" stroke-width="6" stroke-linecap="round"><path d="M77 42h18M73 65h20M70 89h20M69 113h20M73 138h20"/></g>
+  <path d="m239 20 5 15 11 4-11 4-5 15-5-15-11-4 11-4z" fill="#69d4f0"/><path d="m277 46 3 9 7 3-7 3-3 9-3-9-7-3 7-3z" fill="#ffc95f"/><path d="m43 99 3 10 7 3-7 3-3 10-3-10-7-3 7-3z" fill="#ffc95f"/>
+</svg>
