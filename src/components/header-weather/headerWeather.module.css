@@ -1,28 +1,43 @@
 /* Keep the existing header controls above the decorative layer and let menus overflow. */
-.headerSurface { isolation:isolate; border-bottom-color:transparent; }
+.headerSurface { isolation:isolate; border-bottom-color:transparent; background:linear-gradient(90deg,var(--sky-glow-left),var(--sky-glow-center) 50%,var(--sky-glow-right)),var(--paper); }
 .headerSurface > :not(.skyBackdrop) { position:relative; z-index:1; }
-.skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; background-size:100% 100%; background-position:center bottom; background-repeat:no-repeat; filter:saturate(.82) contrast(.96); }
+.skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; background-size:100% 100%; background-position:center bottom; background-repeat:no-repeat; filter:saturate(.82) contrast(.96); -webkit-mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); }
 .skyBackdrop::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(246,245,240,.08),rgba(246,245,240,.2)); }
 .nightSky::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,.84),rgba(255,255,255,.50) 25%,transparent 54%); }
-.skyFrame { --sky-glow-left:rgba(164,191,220,.2); --sky-glow-right:rgba(255,211,152,.2); --sky-glow-center:rgba(255,220,173,.1); }
+.skyFrame { --sky-glow-left:rgba(164,191,220,.2); --sky-glow-right:rgba(255,211,152,.2); --sky-glow-center:rgba(255,220,173,.1); --header-glass:rgba(255,255,255,.5); --header-glass-quiet:rgba(255,255,255,.36); }
 .skyFrame[data-sky-phase="earlyMorning"] { --sky-glow-left:rgba(180,166,218,.25); --sky-glow-right:rgba(255,185,141,.29); --sky-glow-center:rgba(255,210,175,.14); }
 .skyFrame[data-sky-phase="lateMorning"] { --sky-glow-left:rgba(139,198,222,.25); --sky-glow-right:rgba(252,218,156,.24); --sky-glow-center:rgba(198,230,229,.12); }
 .skyFrame[data-sky-phase="midday"] { --sky-glow-left:rgba(119,187,226,.27); --sky-glow-right:rgba(250,221,168,.21); --sky-glow-center:rgba(194,226,235,.12); }
 .skyFrame[data-sky-phase="lateAfternoon"] { --sky-glow-left:rgba(143,193,207,.23); --sky-glow-right:rgba(255,191,142,.28); --sky-glow-center:rgba(255,219,178,.12); }
 .skyFrame[data-sky-phase="sunset"] { --sky-glow-left:rgba(181,113,168,.24); --sky-glow-right:rgba(255,156,96,.32); --sky-glow-center:rgba(255,194,140,.16); }
-.skyFrame[data-sky-phase="night"] { --sky-glow-left:rgba(111,126,196,.23); --sky-glow-right:rgba(138,174,211,.21); --sky-glow-center:rgba(159,179,218,.11); }
-.skyFrame[data-sky-phase="lateNight"] { --sky-glow-left:rgba(103,119,177,.22); --sky-glow-right:rgba(126,160,199,.19); --sky-glow-center:rgba(148,166,207,.1); }
-.skyFrame :global(.main-area) { background:radial-gradient(ellipse 48% 240px at 5% 0%,var(--sky-glow-left),transparent 100%),radial-gradient(ellipse 52% 260px at 95% 0%,var(--sky-glow-right),transparent 100%),linear-gradient(180deg,var(--sky-glow-center),transparent 240px),var(--dot-grid) 0 0 / 22px 22px,var(--paper); }
-.skyFrame :global(.sidebar) { background:linear-gradient(180deg,var(--sky-glow-left),#fff 190px); }
+.skyFrame[data-sky-phase="night"] { --sky-glow-left:rgba(111,126,196,.23); --sky-glow-right:rgba(138,174,211,.21); --sky-glow-center:rgba(159,179,218,.11); --header-glass:rgba(255,255,255,.76); --header-glass-quiet:rgba(255,255,255,.68); }
+.skyFrame[data-sky-phase="lateNight"] { --sky-glow-left:rgba(103,119,177,.22); --sky-glow-right:rgba(126,160,199,.19); --sky-glow-center:rgba(148,166,207,.1); --header-glass:rgba(255,255,255,.76); --header-glass-quiet:rgba(255,255,255,.68); }
+.skyFrame :global(.main-area) { background:radial-gradient(ellipse 48% 280px at 5% 0%,var(--sky-glow-left),transparent 100%),radial-gradient(ellipse 52% 300px at 95% 0%,var(--sky-glow-right),transparent 100%),linear-gradient(180deg,var(--sky-glow-center),transparent 300px),var(--dot-grid) 0 0 / 22px 22px,var(--paper); }
+.skyFrame :global(.sidebar) { background:linear-gradient(180deg,var(--sky-glow-left),#fff 260px); }
+.headerSurface :global(.header-search),
+.headerSurface :global(.stat-pill),
+.headerSurface :global(.notification-button),
+.headerSurface .weatherChip,
+.headerSurface .settingsButton { background:var(--header-glass); border:1px solid rgba(255,255,255,.42); box-shadow:0 2px 10px rgba(28,39,67,.07); backdrop-filter:blur(9px); -webkit-backdrop-filter:blur(9px); }
+.headerSurface :global(.header-search) { max-width:360px; height:38px; border-radius:999px; }
+.headerSurface :global(.header-search:focus-within) { background:rgba(255,255,255,.9); }
+.headerSurface :global(.header-search kbd) { background:rgba(255,255,255,.5); }
+.headerSurface :global(.header-actions) { gap:6px; }
+.headerSurface :global(.stat-pill) { min-height:40px; padding:4px 10px 4px 8px; border-radius:999px; grid-template-columns:19px auto; column-gap:5px; background:var(--header-glass-quiet); }
+.headerSurface :global(.stat-pill strong) { font-size:13px; line-height:15px; }
+.headerSurface :global(.stat-pill small) { font-size:9.5px; }
+.headerSurface :global(.header-divider) { background:rgba(255,255,255,.35); margin:0 1px; }
+.headerSurface :global(.notification-button) { width:34px; height:34px; border-radius:50%; }
 .widgetRoot { position:relative; z-index:10; display:flex; align-items:center; flex:0 0 auto; gap:7px; font-family:inherit; }
-.weatherChip { min-width:148px; max-width:190px; height:54px; display:flex; align-items:center; gap:9px; padding:7px 12px; color:#152c51; background:rgba(255,255,255,.81); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.8); box-shadow:0 3px 15px #20406112; border-radius:13px; }
-.weatherEmoji { font-size:26px; line-height:1; }
+.weatherChip { min-width:140px; max-width:178px; height:46px; display:flex; align-items:center; gap:7px; padding:4px 10px; color:#152c51; border-radius:999px; }
+.weatherEmoji { font-size:22px; line-height:1; }
 .weatherText { display:flex; min-width:0; flex-direction:column; gap:1px; }
-.weatherText strong { font-size:14px; font-weight:800; line-height:1.1; white-space:nowrap; }
+.weatherText strong { font-size:13px; font-weight:800; line-height:1.1; white-space:nowrap; }
 .weatherText span { font-size:10px; color:#526586; line-height:1.25; }
-.weatherText .cityLabel { display:block; font-size:11px; color:#2e4366; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:122px; }
-.metaLine { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.weatherText .cityLabel { display:block; font-size:9.5px; color:#2e4366; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:108px; }
+.metaLine { font-size:9px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .settingsButton { width:29px; height:29px; padding:0; border:1px solid rgba(49,95,132,.15); border-radius:9px; background:rgba(255,255,255,.9); color:#284263; font-size:17px; cursor:pointer; flex-shrink:0; }
+.headerSurface .settingsButton { width:32px; height:32px; border-radius:50%; }
 .settingsButton:hover { background:#ecfaff; }
 .settingsButton:focus-visible,.closeButton:focus-visible,.locationButton:focus-visible,.citySearchForm button:focus-visible,.citySearchForm input:focus-visible,.modeOption input:focus-visible { outline:3px solid #0f91aa; outline-offset:2px; }
 .popover { position:absolute; top:calc(100% + 16px); right:0; width:min(350px,calc(100vw - 20px)); border-radius:18px; background:#fff; padding:17px; box-shadow:0 18px 55px #132b4d2b; border:1px solid #e4eaf1; color:#1d3456; z-index:120; font-size:13px; }
@@ -58,5 +73,5 @@
 
 /* Header remains readable and functional at laptop/tablet/mobile widths. */
 @media(max-width:1199px){ .weatherChip { min-width:95px; max-width:118px; padding:7px; } .weatherEmoji { font-size:22px; } .weatherText .cityLabel,.weatherText .metaLine { display:none; } }
-@media(max-width:767px){ .weatherChip { min-width:0; width:auto; height:34px; padding:4px 7px; } .weatherEmoji { font-size:18px; } .weatherText strong { font-size:12px; } .weatherText .cityLabel,.weatherText .metaLine { display:none; } .settingsButton { width:26px; height:26px; } .popover { position:fixed; top:66px; left:10px; right:10px; width:auto; max-height:calc(100dvh - 76px); overflow-y:auto; } }
+@media(max-width:767px){ .weatherChip { min-width:0; width:auto; height:34px; padding:4px 7px; } .weatherEmoji { font-size:18px; } .weatherText strong { font-size:12px; } .weatherText .cityLabel,.weatherText .metaLine { display:none; } .settingsButton,.headerSurface .settingsButton { width:26px; height:26px; } .popover { position:fixed; top:66px; left:10px; right:10px; width:auto; max-height:calc(100dvh - 76px); overflow-y:auto; } }
 @media(max-width:560px){ .headerSurface :global(.brand) > span:last-child { display:none; } }
