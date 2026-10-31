@@ -1,0 +1,78 @@
+/* Keep the existing header controls above the decorative layer and let menus overflow. */
+.headerSurface { isolation:isolate; }
+.headerSurface > :not(.skyBackdrop) { position:relative; z-index:1; }
+.skyBackdrop { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0; transition:background 1.4s ease; border-bottom:1px solid rgba(56,99,131,.1); }
+.morning { --skyline-a:rgba(103,180,208,.28); --skyline-b:rgba(26,128,167,.22); --cloud:rgba(255,255,255,.8); background:linear-gradient(103deg,#f5fcff 0%,#caefff 45%,#83cfff 78%,#c1eafd 100%); }
+.afternoon { --skyline-a:rgba(172,133,128,.22); --skyline-b:rgba(93,147,177,.28); --cloud:rgba(255,250,226,.82); background:linear-gradient(103deg,#fffaf3 0%,#fae7cb 41%,#fbc28a 78%,#a0d5f7 100%); }
+.evening { --skyline-a:rgba(59,57,122,.45); --skyline-b:rgba(44,42,98,.5); --cloud:rgba(238,196,224,.65); background:linear-gradient(101deg,#f9f7ff 0%,#e1d4f6 40%,#f4a08f 66%,#765eae 100%); }
+.lateNight { --skyline-a:rgba(54,89,149,.55); --skyline-b:rgba(9,24,60,.78); --cloud:rgba(148,172,222,.18); background:linear-gradient(102deg,#f9fcff 0%,#e1ebff 39%,#3c578e 67%,#0f2349 100%); }
+.skyGlow { position:absolute; width:360px; height:140px; left:60%; top:-74px; border-radius:50%; background:radial-gradient(ellipse,#fff7ddcc 0%,#fff4cc00 71%); opacity:.9; }
+.sunMoon { position:absolute; right:28%; top:8px; width:38px; height:38px; border-radius:50%; background:#ffda71; box-shadow:0 0 0 10px #ffdc7525,0 0 45px #ffe5a2aa; transition:background 1.5s,box-shadow 1.5s; animation:iwSunFloat 9s ease-in-out infinite alternate; }
+.afternoon .sunMoon { background:#ffd18a; box-shadow:0 0 0 11px #ff9d6a1c,0 0 42px #ffc293bb; }
+.evening .sunMoon { top:28px; background:#ffd68c; box-shadow:0 0 0 11px #ffde8b22,0 0 42px #ffb07b99; }
+.lateNight .sunMoon { top:13px; width:33px; height:33px; background:#f5f2d6; box-shadow:0 0 0 8px #ddeaff20,0 0 35px #eef2ffd1; }
+.lateNight .sunMoon::after { content:""; position:absolute; width:29px; height:30px; border-radius:50%; top:-8px; right:-12px; background:#2f487f; }
+.cloud { position:absolute; height:14px; width:110px; border-radius:50px; background:var(--cloud); filter:blur(1px); opacity:.8; animation:iwCloudDrift 30s linear infinite alternate; }
+.cloud::before { content:""; position:absolute; left:21px; bottom:3px; border-radius:60%; width:44px; height:24px; background:inherit; }
+.cloud::after { content:""; position:absolute; left:51px; bottom:3px; border-radius:70%; width:37px; height:21px; background:inherit; }
+.cloudOne { top:43px; left:26%; }
+.cloudTwo { top:15px; left:76%; transform:scale(.65); animation-duration:42s; opacity:.56; }
+.stars { position:absolute; inset:0; opacity:0; transition:opacity 1s ease; }
+.lateNight .stars { opacity:1; }
+.stars span { position:absolute; height:2px; width:2px; background:#fff; border-radius:50%; box-shadow:0 0 7px 2px #cfe9ff; animation:iwTwinkle 2.5s ease-in-out infinite alternate; }
+.skyline { position:absolute; bottom:-2px; right:0; width:78%; height:64px; opacity:.65; }
+.skylineFar { fill:var(--skyline-a); }
+.skylineNear { fill:var(--skyline-b); }
+.lateNight .skyline { opacity:.93; }
+
+.widgetRoot { position:relative; z-index:10; display:flex; align-items:center; flex:0 0 auto; gap:7px; font-family:inherit; }
+.weatherChip { min-width:148px; max-width:190px; height:54px; display:flex; align-items:center; gap:9px; padding:7px 12px; color:#152c51; background:rgba(255,255,255,.81); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.8); box-shadow:0 3px 15px #20406112; border-radius:13px; }
+.weatherEmoji { font-size:26px; line-height:1; }
+.weatherText { display:flex; min-width:0; flex-direction:column; gap:1px; }
+.weatherText strong { font-size:14px; font-weight:800; line-height:1.1; white-space:nowrap; }
+.weatherText span { font-size:10px; color:#526586; line-height:1.25; }
+.weatherText .cityLabel { display:block; font-size:11px; color:#2e4366; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:122px; }
+.metaLine { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.settingsButton { width:29px; height:29px; padding:0; border:1px solid rgba(49,95,132,.15); border-radius:9px; background:rgba(255,255,255,.9); color:#284263; font-size:17px; cursor:pointer; flex-shrink:0; }
+.settingsButton:hover { background:#ecfaff; }
+.settingsButton:focus-visible,.closeButton:focus-visible,.locationButton:focus-visible,.citySearchForm button:focus-visible,.citySearchForm input:focus-visible,.modeOption input:focus-visible { outline:3px solid #0f91aa; outline-offset:2px; }
+.popover { position:absolute; top:calc(100% + 16px); right:0; width:min(350px,calc(100vw - 20px)); border-radius:18px; background:#fff; padding:17px; box-shadow:0 18px 55px #132b4d2b; border:1px solid #e4eaf1; color:#1d3456; z-index:120; font-size:13px; }
+.popoverHeading { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:13px; }
+.popoverHeading strong { display:block; font-size:16px; }
+.popoverHeading small,.modeOption small { display:block; color:#65768e; font-size:11px; margin-top:3px; }
+.closeButton { cursor:pointer; width:30px; height:30px; border:0; border-radius:9px; font-size:22px; background:#f0f4f8; color:#324760; }
+.modeOptions { display:flex; flex-direction:column; gap:6px; padding-bottom:13px; border-bottom:1px solid #e8edf2; }
+.modeOption { cursor:pointer; display:flex; gap:9px; align-items:center; padding:9px; border-radius:9px; border:1px solid #e9edf3; }
+.modeOption:has(input:checked) { border-color:#7ac7d4; background:#eafafd; }
+.modeOption input { accent-color:#078ca3; }
+.modeOption strong { display:block; font-size:12px; }
+.locationSection { padding-top:12px; }
+.locationSection>strong { display:block; margin-bottom:3px; }
+.locationSection p { font-size:11px; color:#65758e; margin:5px 0 10px; }
+.locationButton { border:1px solid #bbdbe4; background:#ecfaff; width:100%; padding:10px; color:#087e95; border-radius:9px; cursor:pointer; font-weight:700; }
+.locationButton:disabled { opacity:.55; cursor:wait; }
+.citySearchForm { display:flex; margin-top:9px; gap:5px; }
+.citySearchForm input { min-width:0; flex:1; border:1px solid #d7e0ea; border-radius:9px; padding:9px; color:#243b5a; background:#fff; }
+.citySearchForm button { cursor:pointer; border:0; background:#0f929e; border-radius:9px; padding:0 12px; color:white; font-weight:700; }
+.citySearchForm button:disabled { opacity:.6; }
+.cityResults { list-style:none; margin:8px 0 0; padding:0; max-height:154px; overflow:auto; border:1px solid #e6edf5; border-radius:10px; }
+.cityResults li+li { border-top:1px solid #ecf0f3; }
+.cityResults button { width:100%; cursor:pointer; text-align:left; border:0; background:#fff; padding:9px; color:#17395d; }
+.cityResults button:hover { background:#eafaff; }
+.cityResults strong,.cityResults small { display:block; }
+.cityResults small { font-size:11px; color:#5e7188; }
+.selectedCity { display:flex; align-items:center; justify-content:space-between; gap:6px; font-size:11px; margin-top:11px; }
+.selectedCity button { color:#b12d41; background:transparent; border:0; text-decoration:underline; cursor:pointer; }
+.locationSection .error { color:#a5382f; background:#fff2ed; padding:8px; border-radius:8px; }
+.credit { font-size:10px; color:#5d6e85; border-top:1px solid #e8edf2; padding-top:11px; margin-top:14px; }
+.credit a { color:#0b7895; }
+
+@keyframes iwSunFloat { 0% { transform:translateY(0) } 100% { transform:translateY(-5px) } }
+@keyframes iwCloudDrift { 0% { translate:-16px 0 } 100% { translate:28px 0 } }
+@keyframes iwTwinkle { 0% { opacity:.3; transform:scale(.7) } 100% { opacity:1; transform:scale(1.3) } }
+
+/* Header remains readable and functional at laptop/tablet/mobile widths. */
+@media(max-width:1199px){ .weatherChip { min-width:95px; max-width:118px; padding:7px; } .weatherEmoji { font-size:22px; } .weatherText .cityLabel,.weatherText .metaLine { display:none; } .skyline { width:68%; } }
+@media(max-width:767px){ .weatherChip { min-width:0; width:auto; height:34px; padding:4px 7px; } .weatherEmoji { font-size:18px; } .weatherText strong { font-size:12px; } .weatherText .cityLabel,.weatherText .metaLine { display:none; } .settingsButton { width:26px; height:26px; } .popover { position:fixed; top:66px; left:10px; right:10px; width:auto; max-height:calc(100dvh - 76px); overflow-y:auto; } .skyline { height:47px; } }
+@media(max-width:560px){ .headerSurface :global(.brand) > span:last-child { display:none; } }
+@media(prefers-reduced-motion:reduce){ .skyBackdrop,.sunMoon,.stars,.cloud { animation:none!important; transition:none!important; } .stars span { animation:none!important; } }
