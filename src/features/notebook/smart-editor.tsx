@@ -11,6 +11,12 @@ type PageSummary = Pick<Page, "id" | "position" | "paper" | "revision" | "update
 type Tool = "select" | "text" | "pen" | "marker" | "eraser";
 const pageSort = (a: PageSummary, b: PageSummary) => a.position - b.position || a.id.localeCompare(b.id);
 const validImage = (file: File) => ["image/png", "image/jpeg", "image/webp"].includes(file.type) && file.size <= 3145728;
+async function matchesImageSignature(file: File) {
+  const bytes = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  if (file.type === "image/png") return bytes.length >= 8 && [137, 80, 78, 71, 13, 10, 26, 10].every((value, index) => bytes[index] === value);
+  if (file.type === "image/jpeg") return bytes.length >= 3 && bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255;
+  return bytes.length >= 12 && String.fromCharCode(...bytes.slice(0, 4)) === "RIFF" && String.fromCharCode(...bytes.slice(8, 12)) === "WEBP";
+}
 const pathFor = (points: Point[]) => points.map((point) => `${point.x},${point.y}`).join(" ");
 
 export function SmartEditor({ bookId }: { bookId: string }) {
@@ -155,6 +161,7 @@ function PageCanvas({ db, bookId, pageId, userId, zoom, onChanged }: { db: Retur
   const [future, setFuture] = useState<PageDocument[]>([]);
   const pageRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const persistRef = useRef<() => Promise<void>>(async () => {});
   const docRef = useRef(doc), paperRef = useRef(paper), revisionRef = useRef(0), dirtyRef = useRef(false), savingRef = useRef(false), generationRef = useRef(0), baseDocRef = useRef<PageDocument>(emptyDocument());
   const drawingRef = useRef<{ id: number; points: Point[] } | null>(null);
   const key = draftKey(userId, pageId);
@@ -211,6 +218,12 @@ function PageCanvas({ db, bookId, pageId, userId, zoom, onChanged }: { db: Retur
   }, [db, key, pageId, onChanged, status]);
   useEffect(() => { if (!ready || !dirtyRef.current || status === "conflict" || status === "error") return; const timer = setTimeout(() => { void persist(); }, 900); return () => clearTimeout(timer); }, [ready, doc, paper, status, persist]);
   useEffect(() => { const online = () => { if (dirtyRef.current) void persist(); }; window.addEventListener("online", online); return () => window.removeEventListener("online", online); }, [persist]);
+  useEffect(() => { persistRef.current = persist; }, [persist]);
+  useEffect(() => {
+    const onVisibility = () => { if (document.visibilityState === "hidden") void persistRef.current(); };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => { document.removeEventListener("visibilitychange", onVisibility); void persistRef.current(); };
+  }, []);
 
   function change(next: PageDocument, undoable = true) {
     if (undoable) { setHistory((items) => [...items.slice(-39), docRef.current]); setFuture([]); }
@@ -235,6 +248,7 @@ function PageCanvas({ db, bookId, pageId, userId, zoom, onChanged }: { db: Retur
   }
   async function addImage(file: File) {
     if (!validImage(file)) { setMessage("Chỉ nhận PNG, JPEG hoặc WebP tối đa 3 MB."); setStatus("error"); return; }
+    if (!(await matchesImageSignature(file))) { setMessage("Tệp ảnh không đúng định dạng PNG, JPEG hoặc WebP."); setStatus("error"); return; }
     const ext = { "image/png": "png", "image/jpeg": "jpg", "image/webp": "webp" }[file.type]!;
     const path = `${userId}/${bookId}/${crypto.randomUUID()}.${ext}`;
     const result = await db.storage.from(IMAGE_BUCKET).upload(path, file, { contentType: file.type, upsert: false });
@@ -315,7 +329,7 @@ function PageCanvas({ db, bookId, pageId, userId, zoom, onChanged }: { db: Retur
   const labels = { saved: "Đã đồng bộ", local: "Đã lưu trên thiết bị", saving: "Đang lưu…", offline: "Ngoại tuyến — sẽ đồng bộ khi có mạng", error: "Lưu thất bại", conflict: "Xung đột phiên bản" };
   return <><div className="smart-toolbar"><div className="smart-tool-group">{([ ["select", MousePointer2, "Chọn"], ["text", Type, "Văn bản"], ["pen", Pencil, "Bút viết"], ["marker", Highlighter, "Bút đánh dấu"], ["eraser", RotateCcw, "Tẩy nét"] ] as const).map(([name, Icon, label]) => <button key={name} className={tool === name ? "active" : ""} aria-label={label} aria-pressed={tool === name} onClick={() => setTool(name)}><Icon size={17} /> <span>{label}</span></button>)}<button onClick={() => addText()}><Plus size={17} /> Thêm chữ</button><button onClick={() => fileRef.current?.click()}><FileImage size={17} /> Ảnh</button><input ref={fileRef} type="file" hidden accept="image/png,image/jpeg,image/webp" onChange={(event) => { const file = event.target.files?.[0]; if (file) void addImage(file); event.target.value = ""; }} /></div><div className="smart-tool-group"><button disabled={!history.length} aria-label="Hoàn tác nét hoặc đối tượng" onClick={undo}><Undo2 size={17} /></button><button disabled={!future.length} aria-label="Làm lại nét hoặc đối tượng" onClick={redo}><Redo2 size={17} /></button><input type="color" aria-label="Màu bút" value={color} onChange={(event) => setColor(event.target.value)} /><select aria-label="Độ dày bút" value={width} onChange={(event) => setWidth(Number(event.target.value))}><option value="2">Mảnh</option><option value="3">Vừa</option><option value="6">Đậm</option></select><select aria-label="Loại giấy" value={paper} onChange={(event) => changePaper(event.target.value as Paper)}><option value="blank">Giấy trắng</option><option value="ruled">Giấy kẻ dòng</option><option value="grid">Giấy ô vuông</option></select><label className="smart-finger"><input type="checkbox" checked={fingerInk} onChange={(event) => setFingerInk(event.target.checked)} /> Vẽ bằng ngón tay</label></div></div>
     <div className="smart-save-line"><span role="status" className={`smart-save-${status}`}>{labels[status]}</span>{message && <span role="alert">{message}</span>}{status === "error" && <button onClick={() => void persist()}>Thử lại</button>}{status === "conflict" && <><button onClick={() => void resolveConflict("copy")}>Tạo trang từ bản cục bộ</button><button onClick={() => void resolveConflict("server")}>Dùng bản máy chủ</button></>}</div>
-    <div className="smart-canvas-scroll" onPaste={(event) => { const image = Array.from(event.clipboardData.files).find(validImage); if (image) { event.preventDefault(); void addImage(image); } }} onDrop={(event) => { const image = Array.from(event.dataTransfer.files).find(validImage); if (image) { event.preventDefault(); void addImage(image); } }} onDragOver={(event) => { if (event.dataTransfer.types.includes("Files")) event.preventDefault(); }}><div className="smart-page-spacer" style={{ width: PAGE_WIDTH * zoom, height: PAGE_HEIGHT * zoom }}><div ref={pageRef} className={`smart-page ${paper}`} style={{ width: PAGE_WIDTH, height: PAGE_HEIGHT, transform: `scale(${zoom})` }} onClick={(event) => { if (tool === "text" && event.target === pageRef.current) { const p = localPoint(event.clientX, event.clientY); addText(p.x, p.y); } }}>
+    <div className="smart-canvas-scroll" onPaste={(event) => { const image = event.clipboardData.files[0]; if (image) { event.preventDefault(); void addImage(image); } }} onDrop={(event) => { const image = event.dataTransfer.files[0]; if (image) { event.preventDefault(); void addImage(image); } }} onDragOver={(event) => { if (event.dataTransfer.types.includes("Files")) event.preventDefault(); }}><div className="smart-page-spacer" style={{ width: PAGE_WIDTH * zoom, height: PAGE_HEIGHT * zoom }}><div ref={pageRef} className={`smart-page ${paper}`} style={{ width: PAGE_WIDTH, height: PAGE_HEIGHT, transform: `scale(${zoom})` }} onClick={(event) => { if (tool === "text" && event.target === pageRef.current) { const p = localPoint(event.clientX, event.clientY); addText(p.x, p.y); } }}>
       {doc.elements.map((element) => <div key={element.id} className={`smart-element ${element.type} ${selected === element.id ? "selected" : ""}`} style={{ left: element.x, top: element.y, width: element.width, height: element.height }} onClick={(event) => { event.stopPropagation(); setSelected(element.id); }}><div className="smart-element-handle" onPointerDown={(event) => moveElement(element.id, event)} aria-hidden="true" />{element.type === "text" ? <RichTextBlock element={element} editable={tool === "text"} onChange={(html) => change({ ...docRef.current, elements: docRef.current.elements.map((item) => item.id === element.id ? { ...item, html } : item) }, false)} /> : <img draggable={false} src={urls[element.path] ?? ""} alt="Ảnh trong sổ tay" />}{selected === element.id && <><button className="smart-element-delete" aria-label="Xóa đối tượng" onClick={() => { change({ ...docRef.current, elements: docRef.current.elements.filter((item) => item.id !== element.id) }); setSelected(""); }}>×</button><div className="smart-element-resize" onPointerDown={(event) => moveElement(element.id, event, true)} /></>}</div>)}
       <svg className={`smart-ink ${["pen", "marker", "eraser"].includes(tool) ? "drawing" : ""}`} style={{ touchAction: fingerInk ? "none" : "pan-x pan-y" }} viewBox={`0 0 ${PAGE_WIDTH} ${PAGE_HEIGHT}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerEnd} onPointerCancel={pointerEnd} onLostPointerCapture={pointerEnd}>{doc.strokes.map((stroke) => <polyline key={stroke.id} points={pathFor(stroke.points)} fill="none" stroke={stroke.color} strokeWidth={stroke.width} strokeOpacity={stroke.tool === "marker" ? 0.35 : 1} strokeLinecap="round" strokeLinejoin="round" />)}{inkPreview.length > 0 && <polyline points={pathFor(inkPreview)} fill="none" stroke={color} strokeWidth={tool === "marker" ? width * 4 : width} strokeOpacity={tool === "marker" ? 0.35 : 1} strokeLinecap="round" strokeLinejoin="round" />}</svg>
     </div></div></div>
