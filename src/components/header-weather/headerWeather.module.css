@@ -1,19 +1,19 @@
 /* Keep the existing header controls above the decorative layer and let menus overflow. */
-.headerSurface { isolation:isolate; border-bottom-color:transparent; background:linear-gradient(90deg,var(--sky-glow-left),var(--sky-glow-center) 50%,var(--sky-glow-right)),var(--paper); }
+.headerSurface { isolation:isolate; border-bottom-color:transparent; background:linear-gradient(90deg,var(--sky-edge-left),var(--sky-edge-center) 50%,var(--sky-edge-right)),var(--paper); }
 .headerSurface > :not(.skyBackdrop) { position:relative; z-index:1; }
 .skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; background-size:100% 100%; background-position:center bottom; background-repeat:no-repeat; filter:saturate(.82) contrast(.96); -webkit-mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); }
 .skyBackdrop::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(246,245,240,.08),rgba(246,245,240,.2)); }
 .nightSky::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,.84),rgba(255,255,255,.50) 25%,transparent 54%); }
-.skyFrame { --sky-glow-left:rgba(164,191,220,.2); --sky-glow-right:rgba(255,211,152,.2); --sky-glow-center:rgba(255,220,173,.1); --header-glass:rgba(255,255,255,.5); --header-glass-quiet:rgba(255,255,255,.36); }
-.skyFrame[data-sky-phase="earlyMorning"] { --sky-glow-left:rgba(180,166,218,.25); --sky-glow-right:rgba(255,185,141,.29); --sky-glow-center:rgba(255,210,175,.14); }
-.skyFrame[data-sky-phase="lateMorning"] { --sky-glow-left:rgba(139,198,222,.25); --sky-glow-right:rgba(252,218,156,.24); --sky-glow-center:rgba(198,230,229,.12); }
-.skyFrame[data-sky-phase="midday"] { --sky-glow-left:rgba(119,187,226,.27); --sky-glow-right:rgba(250,221,168,.21); --sky-glow-center:rgba(194,226,235,.12); }
-.skyFrame[data-sky-phase="lateAfternoon"] { --sky-glow-left:rgba(143,193,207,.23); --sky-glow-right:rgba(255,191,142,.28); --sky-glow-center:rgba(255,219,178,.12); }
-.skyFrame[data-sky-phase="sunset"] { --sky-glow-left:rgba(181,113,168,.24); --sky-glow-right:rgba(255,156,96,.32); --sky-glow-center:rgba(255,194,140,.16); }
-.skyFrame[data-sky-phase="night"] { --sky-glow-left:rgba(111,126,196,.23); --sky-glow-right:rgba(138,174,211,.21); --sky-glow-center:rgba(159,179,218,.11); --header-glass:rgba(255,255,255,.76); --header-glass-quiet:rgba(255,255,255,.68); }
-.skyFrame[data-sky-phase="lateNight"] { --sky-glow-left:rgba(103,119,177,.22); --sky-glow-right:rgba(126,160,199,.19); --sky-glow-center:rgba(148,166,207,.1); --header-glass:rgba(255,255,255,.76); --header-glass-quiet:rgba(255,255,255,.68); }
-.skyFrame :global(.main-area) { background:radial-gradient(ellipse 48% 280px at 5% 0%,var(--sky-glow-left),transparent 100%),radial-gradient(ellipse 52% 300px at 95% 0%,var(--sky-glow-right),transparent 100%),linear-gradient(180deg,var(--sky-glow-center),transparent 300px),var(--dot-grid) 0 0 / 22px 22px,var(--paper); }
-.skyFrame :global(.sidebar) { background:linear-gradient(180deg,var(--sky-glow-left),#fff 260px); }
+.skyFrame { --sky-edge-left:rgba(201,222,226,.78); --sky-edge-center:rgba(208,225,238,.78); --sky-edge-right:rgba(205,228,238,.78); --header-glass:rgba(255,255,255,.5); --header-glass-quiet:rgba(255,255,255,.36); }
+.skyFrame[data-sky-phase="earlyMorning"] { --sky-edge-left:rgba(229,186,190,.72); --sky-edge-center:rgba(241,202,141,.72); --sky-edge-right:rgba(236,184,180,.72); }
+.skyFrame[data-sky-phase="lateMorning"] { --sky-edge-left:rgba(201,222,226,.78); --sky-edge-center:rgba(208,225,238,.78); --sky-edge-right:rgba(205,228,238,.78); }
+.skyFrame[data-sky-phase="midday"] { --sky-edge-left:rgba(213,203,186,.74); --sky-edge-center:rgba(230,215,175,.74); --sky-edge-right:rgba(231,214,196,.74); }
+.skyFrame[data-sky-phase="lateAfternoon"] { --sky-edge-left:rgba(228,161,116,.74); --sky-edge-center:rgba(235,182,77,.74); --sky-edge-right:rgba(241,172,107,.74); }
+.skyFrame[data-sky-phase="sunset"] { --sky-edge-left:rgba(226,102,104,.76); --sky-edge-center:rgba(232,161,64,.78); --sky-edge-right:rgba(230,107,110,.76); }
+.skyFrame[data-sky-phase="night"] { --sky-edge-left:rgba(67,95,146,.68); --sky-edge-center:rgba(40,85,165,.68); --sky-edge-right:rgba(33,82,170,.68); --header-glass:rgba(255,255,255,.76); --header-glass-quiet:rgba(255,255,255,.68); }
+.skyFrame[data-sky-phase="lateNight"] { --sky-edge-left:rgba(63,82,156,.66); --sky-edge-center:rgba(47,75,155,.66); --sky-edge-right:rgba(58,82,169,.66); --header-glass:rgba(255,255,255,.76); --header-glass-quiet:rgba(255,255,255,.68); }
+.skyFrame :global(.main-area) { background:var(--dot-grid) 0 0 / 22px 22px,linear-gradient(180deg,transparent,var(--paper) 300px),linear-gradient(90deg,var(--sky-edge-left),var(--sky-edge-center) 50%,var(--sky-edge-right)) right top / 100vw 100%; }
+.skyFrame :global(.sidebar) { background:linear-gradient(180deg,transparent,#fff 260px),linear-gradient(90deg,var(--sky-edge-left),var(--sky-edge-center) 50%,var(--sky-edge-right)) left top / 100vw 100%; }
 .headerSurface :global(.header-search),
 .headerSurface :global(.stat-pill),
 .headerSurface :global(.notification-button),
