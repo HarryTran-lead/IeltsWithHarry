@@ -2,6 +2,8 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { fetchCurrentWeather, searchCities } from "../src/components/header-weather/weatherApi";
 import { formatLocalClock, phaseAt } from "../src/components/header-weather/time";
 import { CITY_KEY, readManualCity, saveManualCity } from "../src/components/header-weather/storage";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 afterEach(() => vi.unstubAllGlobals());
 
@@ -10,15 +12,24 @@ describe("header weather time and data", () => {
     const atSeoul = (hour: number, minute = 0) => phaseAt(
       new Date(Date.UTC(2026, 9, 31, hour - 9, minute)), "Asia/Seoul",
     );
-    expect(atSeoul(4, 59)).toBe("lateNight");
-    expect(atSeoul(5)).toBe("morning");
-    expect(atSeoul(11, 59)).toBe("morning");
-    expect(atSeoul(12)).toBe("afternoon");
-    expect(atSeoul(17, 59)).toBe("afternoon");
-    expect(atSeoul(18)).toBe("evening");
-    expect(atSeoul(21, 59)).toBe("evening");
-    expect(atSeoul(22)).toBe("lateNight");
+    const cases = [
+      [4, 59, "lateNight"], [5, 0, "earlyMorning"], [6, 59, "earlyMorning"],
+      [7, 0, "lateMorning"], [10, 59, "lateMorning"], [11, 0, "midday"],
+      [13, 59, "midday"], [14, 0, "lateAfternoon"], [16, 59, "lateAfternoon"],
+      [17, 0, "sunset"], [18, 59, "sunset"], [19, 0, "night"],
+      [21, 59, "night"], [22, 0, "lateNight"], [23, 59, "lateNight"],
+    ] as const;
+    for (const [hour, minute, phase] of cases) expect(atSeoul(hour, minute)).toBe(phase);
     expect(formatLocalClock(new Date("2026-10-31T03:00:00Z"), "Asia/Seoul")).toContain("12:00");
+  });
+
+  it("ships seven precomposed images with the expected 2172 × 160 dimensions", () => {
+    for (const phase of ["earlyMorning", "lateMorning", "midday", "lateAfternoon", "sunset", "night", "lateNight"]) {
+      const file = readFileSync(join(process.cwd(), "public", "harry-header-skies", `${phase}.png`));
+      expect(file.subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a");
+      expect(file.readUInt32BE(16)).toBe(2172);
+      expect(file.readUInt32BE(20)).toBe(160);
+    }
   });
 
   it("uses API weather only when a valid temperature is returned", async () => {

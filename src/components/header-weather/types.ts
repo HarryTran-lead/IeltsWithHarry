@@ -1,4 +1,4 @@
-export type DayPhase = 'morning' | 'afternoon' | 'evening' | 'lateNight';
+export type DayPhase = 'earlyMorning' | 'lateMorning' | 'midday' | 'lateAfternoon' | 'sunset' | 'night' | 'lateNight';
 export type HeaderDisplayMode = 'full' | 'sky' | 'off';
 
 export type SelectedLocation = {
