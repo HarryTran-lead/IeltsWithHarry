@@ -2,6 +2,7 @@
 .headerSurface { isolation:isolate; }
 .headerSurface > :not(.skyBackdrop) { position:relative; z-index:1; }
 .skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; background-size:100% 100%; background-position:center bottom; background-repeat:no-repeat; border-bottom:1px solid rgba(56,99,131,.1); }
+.skyBackdrop::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,.18); }
 .nightSky::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,.84),rgba(255,255,255,.50) 25%,transparent 54%); }
 .widgetRoot { position:relative; z-index:10; display:flex; align-items:center; flex:0 0 auto; gap:7px; font-family:inherit; }
 .weatherChip { min-width:148px; max-width:190px; height:54px; display:flex; align-items:center; gap:9px; padding:7px 12px; color:#152c51; background:rgba(255,255,255,.81); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.8); box-shadow:0 3px 15px #20406112; border-radius:13px; }
