@@ -302,17 +302,6 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
             Ielts<b>WithHarry</b>
           </span>
         </Link>
-        <button
-          type="button"
-          className="desktop-sidebar-toggle icon-button"
-          onClick={toggleSidebar}
-          aria-label={sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
-          aria-expanded={!sidebarCollapsed}
-          aria-controls="student-sidebar"
-          title={sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
-        >
-          {sidebarCollapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
-        </button>
         <div className="header-search">
           <Search size={17} />
           <input
@@ -445,6 +434,17 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           </div>
         </div>
       </header>
+      <button
+        type="button"
+        className="desktop-sidebar-toggle icon-button"
+        onClick={toggleSidebar}
+        aria-label={sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
+        aria-expanded={!sidebarCollapsed}
+        aria-controls="student-sidebar"
+        title={sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
+      >
+        {sidebarCollapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
+      </button>
       <aside id="student-sidebar" className={`sidebar ${menuOpen ? "open" : ""}`}>
         <div className="sidebar-mobile-head">
           <span>Menu</span>
