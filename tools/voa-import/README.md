@@ -53,6 +53,8 @@ The review command should only be used after **real human review**; it is not a 
 
 For the isolated learner Preview, use `scripts/dev_preview.py` as documented in `docs/VOA_DICTATION_DEV.md`. Its download and upload commands resume from the local checkpoint, and its export creates estimated segments without claiming review.
 
+To replace those estimated Preview cuts with audio-based sentence boundaries on the isolated development project, install `requirements-alignment.txt`, run `scripts/batch_word_timestamps.py`, then `scripts/align_voa_sentences.py`. Review the reported match rates and rejected sentences before running `scripts/write_aligned_sql.py --output data/import_aligned.sql`. Apply the generated file only with `supabase db query --linked --project-ref bhactqaxcvusmpeooxwi --file data/import_aligned.sql`. The import resets attempts tied to replaced Preview segments; it never sets human review flags. Source audio, model output, and generated SQL stay in the ignored local `data/` directory.
+
 ## Stage 3: Upload reviewed MP3 to **Cloudflare R2**
 
 Set the following secrets as environment variables in your secure worker:
