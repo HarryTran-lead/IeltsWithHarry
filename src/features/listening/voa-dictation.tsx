@@ -12,6 +12,8 @@ type Attempt = { segment_id: string; accuracy: number; answer: string; created_a
 type Mode = "type" | "read" | "gap";
 type Feedback = "idle" | "wrong" | "correct" | "skipped";
 const devPreview = process.env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES === "true";
+const publicPreview = process.env.NEXT_PUBLIC_VOA_PREVIEW === "true";
+const previewEnabled = devPreview || publicPreview;
 const clock = (ms: number) => `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, "0")}`;
 const normalize = (value: string) => value.toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
 function maskedAnswer(reference: string, typed: string) {
@@ -68,7 +70,7 @@ export function VoaDictation() {
 
   useEffect(() => { let alive = true; void db.from("voa_dictation_lessons")
     .select("id,title,topic,cefr,source_url,attribution,status,transcript")
-    .in("status", devPreview ? ["published", "uploaded"] : ["published"])
+    .in("status", devPreview ? ["published", "preview", "uploaded"] : publicPreview ? ["published", "preview"] : ["published"])
     .not("audio_object_key", "is", null)
     .order("created_at", { ascending: false }).then(({ data, error: failure }) => {
       if (!alive) return;
@@ -122,7 +124,7 @@ export function VoaDictation() {
   }, [db, lesson, segmentsReload]);
 
   const filtered = lessons.filter((item) => (level === "all" || item.cefr === level)
-    && (statusFilter === "all" || item.status === statusFilter)
+    && (statusFilter === "all" || (statusFilter === "trial" ? item.status !== "published" : item.status === statusFilter))
     && `${item.title} ${item.topic}`.toLowerCase().includes(query.trim().toLowerCase()))
     .sort((a, b) => sort === "latest" ? lessons.indexOf(a) - lessons.indexOf(b)
       : a.cefr.localeCompare(b.cefr) || a.topic.localeCompare(b.topic, undefined, { numeric: true }) || a.title.localeCompare(b.title, undefined, { numeric: true }));
@@ -238,13 +240,13 @@ export function VoaDictation() {
       {!lesson ? (
         <>
           <header className="voa-library-header">
-            <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/listening">Listening</Link><span>›</span><span>VOA Dictation</span></nav>
+            <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dashboard">Dashboard</Link><span>›</span><span>Dictation</span></nav>
             <div className="voa-library-heading">
-              <div><span className="voa-eyebrow">LUYỆN NGHE CHÉP CHÍNH TẢ</span><h1>VOA Dictation</h1><p>Chọn bài theo trình độ, nghe từng câu và luyện chép theo audio VOA.</p></div>
+              <div><span className="voa-eyebrow">LUYỆN NGHE CHÉP CHÍNH TẢ</span><h1>Dictation</h1><p>Chọn bài theo trình độ, nghe từng câu và luyện chép theo audio VOA.</p></div>
               <span className="voa-heading-icon" aria-hidden="true"><Headphones size={30} /></span>
             </div>
           </header>
-          {devPreview && <div className="voa-info-banner"><Info size={18} /><span>Bản dev: câu được căn tự động với audio và đang chờ nghe duyệt thủ công.</span></div>}
+          {previewEnabled && <div className="voa-info-banner"><Info size={18} /><span>Các bài thử nghiệm có transcript và mốc audio căn tự động, chưa được nghe duyệt thủ công.</span></div>}
           <section className="voa-stats" aria-label="Tổng quan thư viện">
             <div className="voa-stat-card"><span>Bài học có audio</span><strong>{loading ? "…" : lessons.length}</strong><small>VOA Learning English</small></div>
             <div className="voa-stat-card"><span>Trình độ</span><strong>{loading ? "…" : new Set(lessons.map((item) => item.cefr)).size}</strong><small>Trình độ trong thư viện</small></div>
@@ -260,10 +262,10 @@ export function VoaDictation() {
             <div className="voa-filter-bar">
               <label className="voa-search"><Search size={18} /><input value={query} onChange={(e) => { setQuery(e.target.value); setCatalogPage(1); }} placeholder="Tìm tên bài, ví dụ: vacation…" aria-label="Tìm bài VOA" /></label>
               <label>Trình độ<select value={level} onChange={(e) => { setLevel(e.target.value); setCatalogPage(1); }}><option value="all">Tất cả</option>{["A1","A2","B1","B2","C1","C2"].map((value) => <option key={value} value={value}>{value}</option>)}</select></label>
-              <label>Trạng thái<select value={statusFilter} onChange={(e) => { setStatusFilter(e.target.value); setCatalogPage(1); }}><option value="all">Tất cả</option><option value="published">Đã xuất bản</option>{devPreview && <option value="uploaded">Bài thử nghiệm</option>}</select></label>
+              <label>Trạng thái<select value={statusFilter} onChange={(e) => { setStatusFilter(e.target.value); setCatalogPage(1); }}><option value="all">Tất cả</option><option value="published">Đã xuất bản</option>{previewEnabled && <option value="trial">Bài thử nghiệm</option>}</select></label>
               <label>Sắp xếp<select value={sort} onChange={(e) => { setSort(e.target.value); setCatalogPage(1); }}><option value="curriculum">Theo số bài</option><option value="latest">Mới thêm</option></select></label>
             </div>
-            <div className="voa-library-count"><span>{loading ? "Đang tải…" : filtered.length + " bài học"}</span><span>{devPreview ? "Mốc tự động cần kiểm tra trước khi xuất bản" : "Nội dung đã được duyệt"}</span></div>
+            <div className="voa-library-count"><span>{loading ? "Đang tải…" : filtered.length + " bài học"}</span><span>{previewEnabled ? "Mốc tự động cần kiểm tra trước khi xuất bản" : "Nội dung đã được duyệt"}</span></div>
             {loading ? <p className="voa-empty" role="status">Đang tải thư viện VOA…</p> : visibleLessons.length ? (
               <div className="voa-catalog">{visibleLessons.map((item) => <button type="button" key={item.id} onClick={() => openLesson(item)}>
                 <span className="voa-card-top"><span className="voa-level-badge">{item.cefr} · {item.topic.includes("Level 2") ? "Level 2" : "Level 1"}</span><span className="voa-status-badge">{item.status === "published" ? "Đã xuất bản" : "Bản thử nghiệm"}</span></span>
@@ -276,9 +278,9 @@ export function VoaDictation() {
         </>
       ) : (
         <>
-          <nav className="voa-breadcrumb" aria-label="Đường dẫn"><button type="button" onClick={() => { audio.current?.pause(); fullAudio.current?.pause(); setLesson(null); window.scrollTo({ top: 0, behavior: "smooth" }); }}><ArrowLeft size={16} /> Thư viện VOA</button><span>›</span><span>{lesson.topic}</span></nav>
+          <nav className="voa-breadcrumb" aria-label="Đường dẫn"><button type="button" onClick={() => { audio.current?.pause(); fullAudio.current?.pause(); setLesson(null); window.scrollTo({ top: 0, behavior: "smooth" }); }}><ArrowLeft size={16} /> Thư viện Dictation</button><span>›</span><span>{lesson.topic}</span></nav>
           <header className="voa-lesson-header"><div><span className="voa-eyebrow">{lesson.cefr} · {lesson.topic}</span><h1>{lesson.title}</h1><p>Nghe và chép từng câu. Kiểm tra kết quả trước khi sang câu tiếp theo.</p></div><a href={lesson.source_url} target="_blank" rel="noreferrer">Bài gốc VOA ↗</a></header>
-          {devPreview && lesson.status === "uploaded" && <div className="voa-info-banner"><Info size={18} /><span>Bản thử nghiệm: transcript và mốc audio được căn tự động, chưa duyệt thủ công.</span></div>}
+          {previewEnabled && lesson.status !== "published" && <div className="voa-info-banner"><Info size={18} /><span>Bản thử nghiệm: transcript và mốc audio được căn tự động, chưa duyệt thủ công.</span></div>}
           <div className="voa-practice-layout">
             <div className="voa-practice-main">
               <section className="voa-audio-card voa-surface" aria-label="Audio của câu hiện tại">

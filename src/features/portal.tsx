@@ -57,6 +57,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <ContentLab />
         ) : section === "notebook" ? (
           smartNotebookV1 ? <SmartNotebook /> : <NotebookPage />
+        ) : section === "dictation" ? (
+          <VoaDictation />
         ) : section === "grammar" && skillMode !== "live" ? (
           <GrammarGarden />
         ) : skill === "vocabulary" && !skillMode ? (
@@ -75,8 +77,6 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <SpeakingMock />
         ) : skill === "listening" && skillMode === "youtube" ? (
           <YoutubeLab />
-        ) : skill === "listening" && skillMode === "voa" ? (
-          <VoaDictation />
         ) : skill === "listening" && skillMode === "vocabulary" ? (
           <ListeningVocabularyPage />
         ) : skill === "reading" && skillMode === "vocabulary" ? (
