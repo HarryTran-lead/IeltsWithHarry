@@ -66,6 +66,23 @@
 .dash-room-foot b { color: var(--navy); }
 .dash-room-foot .button { min-height: 38px; }
 
+.dash-leaderboard { padding: 18px; }
+.dash-leaderboard .card-head { margin-bottom: 2px; }
+.dash-leaderboard-caption { margin: 0 0 12px 48px; color: var(--muted); font-size: 12px; }
+.dash-leaderboard-list { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.dash-leaderboard-list li { display: flex; align-items: center; gap: 9px; min-width: 0; padding: 8px 2px; border-bottom: 1px solid var(--line); }
+.dash-leaderboard-list li:last-child { border-bottom: 0; }
+.dash-leaderboard-rank { flex: none; width: 20px; color: var(--muted); font-size: 13px; font-weight: 800; text-align: center; }
+.dash-leaderboard-rank.rank-1 { color: #cf8b19; }
+.dash-leaderboard-rank.rank-2 { color: #718297; }
+.dash-leaderboard-rank.rank-3 { color: #b97958; }
+.dash-leaderboard-avatar { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-strong); font-size: 14px; font-weight: 800; }
+.dash-leaderboard-name { flex: 1; min-width: 0; overflow: hidden; color: var(--navy); font-size: 13px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.dash-leaderboard-name small { color: var(--teal-strong); font-size: 11px; }
+.dash-leaderboard-days { display: flex; flex: none; align-items: center; gap: 3px; color: #c25a21; font-size: 14px; }
+.dash-leaderboard-days small { font-size: 11px; font-weight: 600; }
+.dash-leaderboard-empty { margin: 14px 0 2px; color: var(--muted); font-size: 13px; }
+
 /* Reserve room for the draggable quick notebook bubble beside this action. */
 @media (min-width: 901px) {
   .dashboard-grid .achievements .card-head .text-link { margin-right: 54px; }
