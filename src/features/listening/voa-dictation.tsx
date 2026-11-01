@@ -137,7 +137,8 @@ export function VoaDictation() {
   const active = segments.findIndex((item) => time * 1000 >= item.start_ms && time * 1000 < item.end_ms);
   const mastered = segments.filter((item) => Number(attempts[item.id]?.accuracy ?? 0) >= 80).length;
   const mistakes = segments.filter((item) => attempts[item.id] && Number(attempts[item.id].accuracy) < 80).length;
-  const skippedCount = segments.filter((item) => skipped[item.id]).length;
+  const skippedCount = segments.filter((item) => skipped[item.id] && Number(attempts[item.id]?.accuracy ?? 0) < 80).length;
+  const pendingCount = segments.length - mastered - skippedCount;
 
   function openLesson(item: Lesson) {
     audio.current?.pause(); fullAudio.current?.pause(); playingSegment.current = null;
@@ -246,7 +247,7 @@ export function VoaDictation() {
           {devPreview && <div className="voa-info-banner"><Info size={18} /><span>Bản dev: câu được căn tự động với audio và đang chờ nghe duyệt thủ công.</span></div>}
           <section className="voa-stats" aria-label="Tổng quan thư viện">
             <div className="voa-stat-card"><span>Bài học có audio</span><strong>{loading ? "…" : lessons.length}</strong><small>VOA Learning English</small></div>
-            <div className="voa-stat-card"><span>Trình độ</span><strong>{loading ? "…" : new Set(lessons.map((item) => item.cefr)).size}</strong><small>A1 đến C2 theo bài hiện có</small></div>
+            <div className="voa-stat-card"><span>Trình độ</span><strong>{loading ? "…" : new Set(lessons.map((item) => item.cefr)).size}</strong><small>Trình độ trong thư viện</small></div>
             <div className="voa-stat-card"><span>Câu đã căn audio</span><strong>{totalSentences === null ? "…" : totalSentences.toLocaleString("vi-VN")}</strong><small>Chọn câu để nghe riêng</small></div>
           </section>
           {featured && <section className="voa-featured" aria-label="Tiếp tục học">
@@ -289,7 +290,7 @@ export function VoaDictation() {
               </section>
               <section className="voa-exercise-card voa-surface">
                 {segments.length && segment ? <>
-                  <div className="voa-exercise-heading"><div><span className="voa-eyebrow">BUỔI LUYỆN TẬP</span><h2>Câu {segment.ordinal}<small> / {segments.length}</small></h2></div><span>{mastered} đã đạt · {skippedCount} bỏ qua · {segments.length - mastered - skippedCount} chưa đạt</span></div>
+                  <div className="voa-exercise-heading"><div><span className="voa-eyebrow">BUỔI LUYỆN TẬP</span><h2>Câu {segment.ordinal}<small> / {segments.length}</small></h2></div><span>{mastered} đã đạt · {skippedCount} bỏ qua · {pendingCount} chưa làm</span></div>
                   <div className="voa-meter" role="progressbar" aria-valuenow={mastered} aria-valuemin={0} aria-valuemax={segments.length} aria-label="Tiến độ câu đã đạt"><span style={{ width: (mastered / segments.length * 100) + "%" }} /></div>
                   <div className="voa-tabs" role="group" aria-label="Chế độ luyện nghe">{([["type","✍ Nghe & chép"],["gap","▤ Điền từ"],["read","◉ Nghe & đọc"]] as const).map(([id,label]) => <button type="button" key={id} aria-pressed={mode === id} onClick={() => { audio.current?.pause(); fullAudio.current?.pause(); playingSegment.current = null; setMode(id); setChecked(false); setFeedback("idle"); setAnswer(""); setGapInputs({}); }}>{label}</button>)}</div>
                   <div className="voa-task">
