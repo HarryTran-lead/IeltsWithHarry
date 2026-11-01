@@ -37,7 +37,7 @@ const nav = [
   { slug: "grammar", label: "Grammar", icon: BookOpen },
   { slug: "reading", label: "Reading", icon: FileText },
   { slug: "listening", label: "Listening", icon: Headphones },
-  { slug: "listening/voa", label: "VOA Dictation", icon: Headphones },
+  { slug: "dictation", label: "Dictation", icon: Headphones },
   { slug: "writing", label: "Writing", icon: PenLine },
   { slug: "speaking", label: "Speaking", icon: Mic },
   { slug: "media", label: "Media library", icon: Image },
@@ -57,7 +57,8 @@ const navGroups = [
   { label: "Học viên", slugs: ["users", "users/broadcast", "users/audit"] },
   { label: "Nội dung", slugs: ["curriculum", "media"] },
   { label: "IELTS Management", slugs: ["ielts-bank", "ai-content-factory"] },
-  { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "vocabulary/ielts-progress", "vocabulary/translation", "grammar", "reading", "listening", "listening/voa", "writing", "speaking"] },
+  { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "vocabulary/ielts-progress", "vocabulary/translation", "grammar", "reading", "listening", "writing", "speaking"] },
+  { label: "Luyện tập", slugs: ["dictation"] },
   { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/meaning-suggestions", "news/sync-logs"] },
 ];
 const descriptions: Record<string, string> = {
@@ -196,7 +197,7 @@ export function AdminEditor() {
     </>}
     {currentSkill && <>{lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><Sticker name="book" size={64} tilt={-8} /><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
     {section === "listening" && <YoutubeLessonsAdmin />}
-    {section === "listening/voa" && <VoaDictationAdmin />}
+    {(section === "dictation" || section === "listening/voa") && <VoaDictationAdmin />}
     {section === "vocabulary/library" && <VocabularyBank />}
     {section === "vocabulary/ielts-progress" && <VocabularyPhase5 />}
     {section === "vocabulary/translation" && <ViEnTranslationReview />}
