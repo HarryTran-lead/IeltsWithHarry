@@ -393,15 +393,17 @@ const maxCandidates = 6;
  * the AI's visual subject is searched first, then the article's main terms. At most
  * three per library so one library cannot crowd out the other.
  */
-async function gatherCandidates(title: string, body: string, query: string, fetcher: typeof fetch) {
+async function gatherCandidates(title: string, body: string, query: string, fetcher: typeof fetch, expanded = false) {
   const keywords = imageKeywords(title, body, query);
   if (keywords.length < 2) return [];
   const subject = query && words(query).length >= 2 ? words(query).join(" ") : "";
   // Vietnamese stories look for photos taken in Vietnam first; the AI rejects scenes from elsewhere.
   const local = subject && /\bviet ?nam(ese)?\b/i.test(`${title} ${body.slice(0, 1500)}`) && !/vietnam/.test(subject) ? `${subject} vietnam` : "";
-  // Keep anonymous Openverse usage within the daily search budget while still
-  // trying a second description when the first query finds no fitting photo.
-  const searches = [...new Set([local, subject, keywords.slice(0, 3).join(" ")].filter(Boolean))].slice(0, 2);
+  const bodyTerms = imageKeywords("", body).slice(0, 3).join(" ");
+  // Reserve the third query for articles whose first two searches found no
+  // suitable photo, keeping Openverse within its anonymous daily budget.
+  const searches = [...new Set([local, subject, keywords.slice(0, 3).join(" "), bodyTerms, keywords.slice(3, 6).join(" ")].filter(Boolean))]
+    .slice(expanded ? 2 : 0, expanded ? 3 : 2);
   const found = new Map<string, Candidate & { library: string }>();
   let failure: unknown = null;
   const libraries = ["openverse", "commons", "nasa"] as const;
@@ -411,7 +413,6 @@ async function gatherCandidates(title: string, body: string, query: string, fetc
       if (outcome.status === "rejected") { failure = outcome.reason; return; }
       for (const candidate of outcome.value) if (!found.has(candidate.value.image_url)) found.set(candidate.value.image_url, { ...candidate, library: libraries[index] });
     });
-    if (found.size >= maxCandidates * 2) break;
   }
   if (!found.size && failure) throw failure;
   const ranked = [...found.values()].sort((a, b) => b.score - a.score);
@@ -455,7 +456,7 @@ export const minimumImageFit = 7;
 
 /**
  * The best licensed illustration, chosen by Gemini looking at the candidate images
- * themselves (one request). Returns null when no candidate truly fits.
+ * themselves (up to two small batches). Returns null when no candidate truly fits.
  */
 /** `query` is the visual subject used for the search; it also guides an AI illustration. */
 type IllustrationResult = { image: Illustration | null; reason: string; query: string };
@@ -467,19 +468,31 @@ async function findNewsIllustrationResult(title: string, fetcher: typeof fetch =
     if (cause instanceof AiQuotaError) throw cause;
     return "";
   });
-  const candidates = await gatherCandidates(title, body, query, fetcher);
-  if (!candidates.length) return { image: null, reason: "No licensed image matched the article search", query };
-  const previews = (await Promise.all(candidates.map(async (candidate) => ({ candidate, image: await previewData(candidate.preview, fetcher) })))).filter((entry) => entry.image);
-  if (!previews.length) return { image: null, reason: "Licensed image previews were unavailable", query };
-  const parts = [
-    { text: `Article title: ${title}\nVisual subject: ${query || "(not given)"}\nArticle start: ${body.slice(0, 700)}` },
-    ...previews.flatMap((entry, index) => [{ text: `Image ${index + 1}: ${entry.candidate.value.image_alt.replace(/^Ảnh minh họa: /, "")}` }, { inlineData: entry.image! }]),
-  ];
-  const { data } = await geminiJson<{ best?: number; fit?: number }>(visionPrompt, parts, visionSchema, { fetcher, temperature: 0, maxOutputTokens: 200 });
-  const chosen = typeof data.best === "number" ? previews[data.best - 1] : undefined;
-  return chosen && (data.fit ?? 0) >= minimumImageFit
-    ? { image: chosen.candidate.value, reason: "", query }
-    : { image: null, reason: `AI found no suitable image (fit ${Math.max(0, Math.min(10, data.fit ?? 0))}/10)`, query };
+  const seen = new Set<string>();
+  let candidatesFound = false;
+  let previewsFound = false;
+  let bestFit = 0;
+  for (const expanded of [false, true]) {
+    const candidates = (await gatherCandidates(title, body, query, fetcher, expanded))
+      .filter((candidate) => !seen.has(candidate.value.image_url));
+    candidates.forEach((candidate) => seen.add(candidate.value.image_url));
+    if (!candidates.length) continue;
+    candidatesFound = true;
+    const batch = (await Promise.all(candidates.map(async (candidate) => ({ candidate, image: await previewData(candidate.preview, fetcher) })))).filter((entry) => entry.image);
+    if (!batch.length) continue;
+    previewsFound = true;
+    const parts = [
+      { text: `Article title: ${title}\nVisual subject: ${query || "(not given)"}\nArticle start: ${body.slice(0, 700)}` },
+      ...batch.flatMap((entry, index) => [{ text: `Image ${index + 1}: ${entry.candidate.value.image_alt.replace(/^Ảnh minh họa: /, "")}` }, { inlineData: entry.image! }]),
+    ];
+    const { data } = await geminiJson<{ best?: number; fit?: number }>(visionPrompt, parts, visionSchema, { fetcher, temperature: 0, maxOutputTokens: 200 });
+    const chosen = typeof data.best === "number" ? batch[data.best - 1] : undefined;
+    bestFit = Math.max(bestFit, data.fit ?? 0);
+    if (chosen && (data.fit ?? 0) >= minimumImageFit) return { image: chosen.candidate.value, reason: "", query };
+  }
+  if (!candidatesFound) return { image: null, reason: "No licensed image matched the article search", query };
+  if (!previewsFound) return { image: null, reason: "Licensed image previews were unavailable", query };
+  return { image: null, reason: `AI found no suitable image (best fit ${Math.max(0, Math.min(10, bestFit))}/10)`, query };
 }
 
 export async function findNewsIllustration(title: string, fetcher: typeof fetch = fetch, options: { body?: string; query?: string } = {}): Promise<Illustration | null> {
