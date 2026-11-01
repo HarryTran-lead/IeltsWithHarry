@@ -81,11 +81,6 @@ export function VocabularyLanding() {
         <h1>Bắt đầu với <em>10 từ hôm nay</em></h1>
         <p>Một buổi ngắn để học nghĩa, cách dùng và tự kiểm tra. Bạn có thể chọn bộ từ ở bên dưới.</p>
         <div className="vocabulary-landing-hero-actions"><Link href="/app/vocabulary/study?collection=ielts">Học 10 từ IELTS <ArrowRight size={17} /></Link><Link href="/app/vocabulary/review">Ôn từ đã lưu</Link></div>
-        <div className="vocabulary-landing-hero-stats" aria-label="Tiến độ từ vựng">
-          <span><BookOpen size={20} /><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><small>từ đã xem hoặc luyện</small></span>
-          <span><Bookmark size={20} /><strong>{ready ? saved.toLocaleString("vi-VN") : "…"}</strong><small>từ đã lưu</small></span>
-          <span><Layers3 size={20} /><strong>{cards.length}</strong><small>lựa chọn học tập</small></span>
-        </div>
       </div>
       <div className="vocabulary-landing-hero-art" aria-hidden="true"><span className="book book-one">IELTS</span><span className="book book-two">A1–C2</span><span className="book book-three">LISTENING</span><BookOpen size={68} strokeWidth={1.7} /><Sparkles className="spark" size={25} /></div>
     </header>

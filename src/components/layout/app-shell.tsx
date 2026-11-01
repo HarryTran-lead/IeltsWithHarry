@@ -178,8 +178,6 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const learningRoute = /^\/app\/(?:vocabulary\/(?:study|review|practice|listening|collocations|word-formation|translation)(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
-  const [focusOverride, setFocusOverride] = useState<{ pathname: string; enabled: boolean } | null>(null);
-  const focusMode = learningRoute && (focusOverride?.pathname === pathname ? focusOverride.enabled : true);
   const { online: studyOnline } = useStudyPresence();
   const learnerStreak = useLearnerStreak();
   const newsUnread = useNewsUnread(pathname, liveMode);
@@ -240,6 +238,15 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   }, []);
 
   useEffect(() => {
+    if (!learningRoute) return;
+    const frame = window.requestAnimationFrame(() => {
+      setSidebarCollapsed(false);
+      window.localStorage.setItem("ieltswithharry-sidebar-collapsed", "false");
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [learningRoute, pathname]);
+
+  useEffect(() => {
     function focusSearch(event: KeyboardEvent) {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
@@ -266,12 +273,6 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   }, []);
 
   function toggleSidebar() {
-    if (focusMode) {
-      setFocusOverride({ pathname, enabled: false });
-      setSidebarCollapsed(false);
-      window.localStorage.setItem("ieltswithharry-sidebar-collapsed", "false");
-      return;
-    }
     setSidebarCollapsed((current) => {
       window.localStorage.setItem("ieltswithharry-sidebar-collapsed", String(!current));
       return !current;
@@ -280,7 +281,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
 
   return (
     <div
-      className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""} ${focusMode ? "learning-focus" : ""} ${mode !== "off" ? weatherStyles.skyFrame : ""}`}
+      className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""} ${learningRoute ? "learning-focus" : ""} ${mode !== "off" ? weatherStyles.skyFrame : ""}`}
       data-sky-phase={mode !== "off" ? phase : undefined}
     >
       <header className={`topbar ${mode !== "off" ? weatherStyles.headerSurface : ""}`}>
@@ -304,14 +305,13 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           type="button"
           className="desktop-sidebar-toggle icon-button"
           onClick={toggleSidebar}
-          aria-label={focusMode || sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
-          aria-expanded={!focusMode && !sidebarCollapsed}
+          aria-label={sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
+          aria-expanded={!sidebarCollapsed}
           aria-controls="student-sidebar"
-          title={focusMode || sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
+          title={sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
         >
-          {focusMode || sidebarCollapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
+          {sidebarCollapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
         </button>
-        {learningRoute && !focusMode && <button type="button" className="learning-focus-button" onClick={() => setFocusOverride({ pathname, enabled: true })}>Tập trung học</button>}
         <div className="header-search">
           <Search size={17} />
           <input
@@ -551,7 +551,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           ),
         )}
       </nav>
-      {!focusMode && <NotebookWidget />}
+      {!learningRoute && <NotebookWidget />}
     </div>
   );
 }
