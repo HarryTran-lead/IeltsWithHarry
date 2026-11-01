@@ -1,18 +1,22 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- Community media uses Supabase CDN URLs and local blob previews. */
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   ArrowLeft, ArrowRight, Bell, Bookmark, Check, CheckCircle2, ChevronDown,
-  Flag, Heart, MessageCircle, MoreHorizontal, PenLine, Plus, Search,
+  Flag, Heart, ImagePlus, MessageCircle, MoreHorizontal, PenLine, Plus, Search, Video,
   Send, ShieldAlert, Sparkles, UsersRound, X,
 } from "lucide-react";
 import { demoMode } from "@/lib/runtime";
+import { createClient } from "@/lib/supabase/browser";
 
 type PostKind = "discussion" | "question" | "writing_review" | "speaking_review";
 type Topic = "IELTS" | "Grammar" | "Vocabulary" | "Writing" | "Speaking" | "Reading" | "Listening";
-type Post = { id: string; author_id: string; author_name: string; kind: PostKind; topic: Topic; title: string; body: string; status: string; accepted_comment_id: string | null; created_at: string; likes: number; comments: number; liked: boolean; saved: boolean };
+type PostMedia = { path: string; type: "image" | "video" };
+type Attachment = { file: File; preview: string; type: PostMedia["type"] };
+type Post = { id: string; author_id: string; author_name: string; kind: PostKind; topic: Topic; title: string; body: string; media: PostMedia[]; status: string; accepted_comment_id: string | null; created_at: string; likes: number; comments: number; liked: boolean; saved: boolean };
 type Comment = { id: string; post_id: string; parent_id: string | null; author_id: string; author_name: string; body: string; created_at: string };
 type Notification = { id: string; actor_name: string; post_id: string; kind: string; read_at: string | null; created_at: string };
 type Report = { id: string; post_id: string; reason: string; detail: string; created_at: string };
@@ -20,9 +24,9 @@ type FeedResult = { posts: Post[]; hasMore: boolean; userId: string };
 type DetailResult = { post: Post; replies: Comment[]; userId: string };
 
 const samplePosts: Post[] = [
-  { id: "sample-1", author_id: "sample", author_name: "Minh Anh", kind: "question", topic: "Grammar", title: "Phân biệt ‘despite’ và ‘although’ như thế nào?", body: "Mình thường nhầm khi làm Writing Task 2. Có ai giải thích giúp mình kèm ví dụ dễ hiểu không? Cảm ơn mọi người!", status: "published", accepted_comment_id: null, created_at: new Date().toISOString(), likes: 0, comments: 0, liked: false, saved: false },
-  { id: "sample-2", author_id: "sample", author_name: "Hoàng Nam", kind: "writing_review", topic: "Writing", title: "Nhờ mọi người góp ý bài Writing của mình", body: "Some people believe that studying abroad offers more opportunities than studying in their home country. To what extent do you agree or disagree?", status: "published", accepted_comment_id: null, created_at: new Date().toISOString(), likes: 0, comments: 0, liked: false, saved: false },
-  { id: "sample-3", author_id: "sample", author_name: "Lan Chi", kind: "discussion", topic: "Speaking", title: "Cách cải thiện phát âm /θ/ và /ð/?", body: "Mình hay phát âm thành /t/ và /d/. Có bài tập nào giúp luyện hai âm này không ạ?", status: "published", accepted_comment_id: null, created_at: new Date().toISOString(), likes: 0, comments: 0, liked: false, saved: false },
+  { id: "sample-1", author_id: "sample", author_name: "Minh Anh", kind: "question", topic: "Grammar", title: "Phân biệt ‘despite’ và ‘although’ như thế nào?", body: "Mình thường nhầm khi làm Writing Task 2. Có ai giải thích giúp mình kèm ví dụ dễ hiểu không? Cảm ơn mọi người!", media: [], status: "published", accepted_comment_id: null, created_at: new Date().toISOString(), likes: 0, comments: 0, liked: false, saved: false },
+  { id: "sample-2", author_id: "sample", author_name: "Hoàng Nam", kind: "writing_review", topic: "Writing", title: "Nhờ mọi người góp ý bài Writing của mình", body: "Some people believe that studying abroad offers more opportunities than studying in their home country. To what extent do you agree or disagree?", media: [], status: "published", accepted_comment_id: null, created_at: new Date().toISOString(), likes: 0, comments: 0, liked: false, saved: false },
+  { id: "sample-3", author_id: "sample", author_name: "Lan Chi", kind: "discussion", topic: "Speaking", title: "Cách cải thiện phát âm /θ/ và /ð/?", body: "Mình hay phát âm thành /t/ và /d/. Có bài tập nào giúp luyện hai âm này không ạ?", media: [], status: "published", accepted_comment_id: null, created_at: new Date().toISOString(), likes: 0, comments: 0, liked: false, saved: false },
 ];
 const tabs = [
   { label: "Tất cả", key: "all" }, { label: "Hỏi đáp", key: "question" },
@@ -35,6 +39,14 @@ const kinds: { key: PostKind; label: string }[] = [
 ];
 const topics: Topic[] = ["IELTS", "Grammar", "Vocabulary", "Writing", "Speaking", "Reading", "Listening"];
 const kindText: Record<PostKind, string> = { discussion: "Thảo luận", question: "Hỏi đáp", writing_review: "Writing Task", speaking_review: "Speaking" };
+const mediaExtensions: Record<string, string> = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "video/mp4": "mp4", "video/webm": "webm", "video/quicktime": "mov" };
+const imageLimit = 5 * 1024 * 1024;
+const videoLimit = 20 * 1024 * 1024;
+
+function mediaUrl(path: string) {
+  const base = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  return `${base}/storage/v1/object/public/community-media/${path.split("/").map(encodeURIComponent).join("/")}`;
+}
 
 async function api<T>(method: "GET" | "POST" | "PATCH", queryOrBody: string | object): Promise<T> {
   const response = await fetch(`/api/community${method === "GET" ? `?${queryOrBody}` : ""}`, {
@@ -58,7 +70,7 @@ function Avatar({ name }: { name: string }) {
   return <span className="community-avatar" aria-hidden="true">{name.trim().charAt(0).toLocaleUpperCase("vi-VN") || "H"}</span>;
 }
 
-function PostCard({ post, onAction, busy, userId }: { post: Post; onAction: (action: string, post: Post) => void; busy: boolean; userId: string }) {
+function PostCard({ post, onAction, busy, userId, expanded = false }: { post: Post; onAction: (action: string, post: Post) => void; busy: boolean; userId: string; expanded?: boolean }) {
   const [menu, setMenu] = useState(false);
   return <article className="community-post">
     <div className="community-post-head">
@@ -67,12 +79,17 @@ function PostCard({ post, onAction, busy, userId }: { post: Post; onAction: (act
       <span className={`community-topic topic-${post.topic.toLowerCase()}`}>{post.topic}</span>
       {!demoMode && <div className="community-menu-wrap"><button type="button" className="community-icon" aria-label="Tùy chọn bài viết" aria-expanded={menu} onClick={() => setMenu(!menu)}><MoreHorizontal size={19} /></button>{menu && <div className="community-menu">{post.author_id === userId ? <button onClick={() => { onAction("delete", post); setMenu(false); }}><X size={14} /> Xóa bài viết</button> : <><button onClick={() => { onAction("report", post); setMenu(false); }}><Flag size={14} /> Báo cáo</button><button onClick={() => { onAction("block", post); setMenu(false); }}><ShieldAlert size={14} /> Chặn tác giả</button></>}<button onClick={() => setMenu(false)}><X size={14} /> Đóng</button></div>}</div>}
     </div>
-    <Link className="community-post-body" href={`/app/community/posts/${post.id}`}>
+    <Link className={`community-post-body${expanded ? " expanded" : ""}`} href={`/app/community/posts/${post.id}`}>
       {post.kind !== "discussion" && <span className="community-kind">{kindText[post.kind]}</span>}
       <h2>{post.title}</h2>
       <p className={post.kind === "writing_review" ? "community-quote" : ""}>{post.body}</p>
       {post.accepted_comment_id && <span className="community-solved"><CheckCircle2 size={14} /> Đã giải đáp</span>}
     </Link>
+    {post.media?.length > 0 && <div className={`community-post-media${post.media.length > 1 ? " multiple" : ""}${expanded ? " expanded" : ""}`}>
+      {post.media.map((item) => item.type === "image"
+        ? <a key={item.path} href={mediaUrl(item.path)} target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh đính kèm"><img src={mediaUrl(item.path)} alt={`Ảnh đính kèm bài ${post.title}`} loading="lazy" /></a>
+        : <video key={item.path} src={mediaUrl(item.path)} controls playsInline preload={expanded ? "metadata" : "none"} aria-label={`Video đính kèm bài ${post.title}`} />)}
+    </div>}
     <div className="community-post-actions">
       <button type="button" className={post.liked ? "selected" : ""} disabled={busy || demoMode} onClick={() => onAction("like", post)} aria-label={post.liked ? "Bỏ thích" : "Thích bài viết"}><Heart size={18} fill={post.liked ? "currentColor" : "none"} /> {post.likes}</button>
       <Link href={`/app/community/posts/${post.id}`}><MessageCircle size={18} /> {post.comments} bình luận</Link>
@@ -91,13 +108,39 @@ function Composer({ onCreate }: { onCreate: (kind?: PostKind) => void }) {
 
 function CreateDialog({ initialKind, onClose, onCreated }: { initialKind: PostKind; onClose: () => void; onCreated: (id: string) => void }) {
   const dialogRef = useRef<HTMLElement>(null);
+  const imageInputRef = useRef<HTMLInputElement>(null), videoInputRef = useRef<HTMLInputElement>(null);
+  const previewUrlsRef = useRef<string[]>([]);
   const [kind, setKind] = useState<PostKind>(initialKind), [topic, setTopic] = useState<Topic>("IELTS");
   const [title, setTitle] = useState(""), [body, setBody] = useState(""), [error, setError] = useState(""), [busy, setBusy] = useState(false);
+  const [attachments, setAttachments] = useState<Attachment[]>([]), [uploadStatus, setUploadStatus] = useState("");
+  useEffect(() => () => { previewUrlsRef.current.forEach((url) => URL.revokeObjectURL(url)); }, []);
+  const close = useCallback(() => { if (!busy) onClose(); }, [busy, onClose]);
+  function selectFiles(event: React.ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(event.currentTarget.files ?? []);
+    event.currentTarget.value = "";
+    if (!files.length) return;
+    if (attachments.length + files.length > 4) { setError("Mỗi bài đăng được đính kèm tối đa 4 tệp."); return; }
+    if (files.filter((file) => file.type.startsWith("video/")).length + attachments.filter((item) => item.type === "video").length > 1) { setError("Mỗi bài đăng chỉ được kèm một video."); return; }
+    for (const file of files) {
+      const type = file.type.startsWith("image/") ? "image" : "video";
+      if (!mediaExtensions[file.type] || file.size === 0 || file.size > (type === "image" ? imageLimit : videoLimit)) {
+        setError(`Chỉ hỗ trợ JPG, PNG, WebP (tối đa 5 MB) hoặc MP4, WebM, MOV (tối đa 20 MB).`); return;
+      }
+    }
+    const selected = files.map((file) => ({ file, preview: URL.createObjectURL(file), type: file.type.startsWith("image/") ? "image" as const : "video" as const }));
+    previewUrlsRef.current.push(...selected.map((item) => item.preview));
+    setAttachments((current) => [...current, ...selected]); setError("");
+  }
+  function removeAttachment(preview: string) {
+    URL.revokeObjectURL(preview);
+    previewUrlsRef.current = previewUrlsRef.current.filter((url) => url !== preview);
+    setAttachments((current) => current.filter((item) => item.preview !== preview));
+  }
   useEffect(() => {
     const dialog = dialogRef.current;
     dialog?.querySelector<HTMLInputElement>("input")?.focus();
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape") close();
       if (event.key !== "Tab" || !dialog) return;
       const focusable = [...dialog.querySelectorAll<HTMLElement>('button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled])')];
       if (!focusable.length) return;
@@ -106,24 +149,52 @@ function CreateDialog({ initialKind, onClose, onCreated }: { initialKind: PostKi
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
+  }, [close]);
   async function submit(event: React.FormEvent) {
     event.preventDefault(); setError("");
     if (demoMode) { setError("Bản xem trước không lưu bài. Hãy đăng nhập vào hệ thống thật để đăng."); return; }
     setBusy(true);
-    try { const result = await api<{ id: string }>("POST", { action: "post", kind, topic, title, body }); onCreated(result.id); }
-    catch (cause) { setError(cause instanceof Error ? cause.message : "Không thể đăng bài"); }
-    finally { setBusy(false); }
+    let db: ReturnType<typeof createClient> | null = null;
+    const uploadedPaths: string[] = [];
+    try {
+      db = createClient();
+      const { data: { user }, error: authError } = await db.auth.getUser();
+      if (authError || !user) throw new Error("Bạn cần đăng nhập để đăng bài.");
+      const media: PostMedia[] = [];
+      for (const [index, item] of attachments.entries()) {
+        setUploadStatus(`Đang tải tệp ${index + 1}/${attachments.length}…`);
+        const path = `${user.id}/${crypto.randomUUID()}.${mediaExtensions[item.file.type]}`;
+        const uploaded = await db.storage.from("community-media").upload(path, item.file, { contentType: item.file.type, upsert: false });
+        if (uploaded.error) throw uploaded.error;
+        uploadedPaths.push(path);
+        media.push({ path, type: item.type });
+      }
+      setUploadStatus("Đang đăng bài…");
+      const result = await api<{ id: string }>("POST", { action: "post", kind, topic, title, body, media });
+      onCreated(result.id);
+    }
+    catch (cause) {
+      if (db && uploadedPaths.length) await db.storage.from("community-media").remove(uploadedPaths);
+      setError(cause instanceof Error ? cause.message : "Không thể đăng bài");
+    }
+    finally { setBusy(false); setUploadStatus(""); }
   }
-  return <div className="community-dialog-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}><section ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="community-dialog-title" className="community-dialog">
-    <header><h2 id="community-dialog-title">Tạo bài đăng</h2><button type="button" onClick={onClose} aria-label="Đóng"><X size={20} /></button></header>
+  return <div className="community-dialog-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}><section ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="community-dialog-title" className="community-dialog">
+    <header><h2 id="community-dialog-title">Tạo bài đăng</h2><button type="button" onClick={close} disabled={busy} aria-label="Đóng"><X size={20} /></button></header>
     <form onSubmit={submit}><div className="community-kind-tabs" role="group" aria-label="Loại bài viết">{kinds.map((option) => <button type="button" key={option.key} className={kind === option.key ? "active" : ""} onClick={() => setKind(option.key)}>{option.label}</button>)}</div>
       <label>Tiêu đề<input required minLength={8} maxLength={160} value={title} onChange={(event) => setTitle(event.target.value)} placeholder={kind === "question" ? "Bạn đang thắc mắc điều gì?" : "Đặt tiêu đề rõ ràng cho bài viết"} /></label>
       <label>Nội dung<textarea required minLength={20} maxLength={12000} rows={8} value={body} onChange={(event) => setBody(event.target.value)} placeholder={kind === "writing_review" ? "Dán bài viết và nêu phần bạn muốn nhận góp ý…" : "Viết nội dung hoặc câu hỏi của bạn…"} /></label>
+      <div className="community-attachments"><div className="community-attachment-actions"><span>Ảnh và video</span><button type="button" onClick={() => imageInputRef.current?.click()} disabled={busy || attachments.length >= 4}><ImagePlus size={16} /> Thêm ảnh</button><button type="button" onClick={() => videoInputRef.current?.click()} disabled={busy || attachments.length >= 4 || attachments.some((item) => item.type === "video")}><Video size={16} /> Thêm video</button></div>
+        <input ref={imageInputRef} type="file" accept="image/jpeg,image/png,image/webp" multiple hidden onChange={selectFiles} aria-label="Chọn ảnh" />
+        <input ref={videoInputRef} type="file" accept="video/mp4,video/webm,video/quicktime" hidden onChange={selectFiles} aria-label="Chọn video" />
+        <p>Tối đa 4 tệp · ảnh 5 MB/tệp · một video 20 MB.</p>
+        {attachments.length > 0 && <div className="community-attachment-preview">{attachments.map((item) => <div key={item.preview} className="community-attachment-item">{item.type === "image" ? <img src={item.preview} alt={item.file.name} /> : <video src={item.preview} preload="metadata" muted playsInline aria-label={item.file.name} />}<button type="button" onClick={() => removeAttachment(item.preview)} disabled={busy} aria-label={`Bỏ ${item.file.name}`}><X size={14} /></button><span title={item.file.name}>{item.file.name}</span></div>)}</div>}
+      </div>
       <div className="community-form-row"><label>Chủ đề<select value={topic} onChange={(event) => setTopic(event.target.value as Topic)}>{topics.map((value) => <option key={value}>{value}</option>)}</select></label><div className="community-visibility"><UsersRound size={16} /><span>Công khai với cộng đồng học tập</span></div></div>
       {kind === "speaking_review" && <p className="community-form-note">Hãy mô tả câu hỏi Speaking hoặc phần phát âm cần góp ý. Tải âm thanh sẽ được mở sau khi luồng lưu trữ riêng tư hoàn tất.</p>}
       {error && <p className="community-error" role="alert">{error}</p>}
-      <footer><button type="button" className="community-secondary" onClick={onClose}>Hủy</button><button type="submit" className="community-primary" disabled={busy || !title.trim() || !body.trim()}>{busy ? "Đang đăng…" : "Đăng bài"}</button></footer>
+      {uploadStatus && <p className="community-upload-status" role="status">{uploadStatus}</p>}
+      <footer><button type="button" className="community-secondary" onClick={close} disabled={busy}>Hủy</button><button type="submit" className="community-primary" disabled={busy || !title.trim() || !body.trim()}>{busy ? "Đang đăng…" : "Đăng bài"}</button></footer>
     </form>
   </section></div>;
 }
@@ -241,7 +312,7 @@ export function Community({ canManage = false }: { canManage?: boolean }) {
       {detailId ? <>
         <Link className="community-back" href="/app/community"><ArrowLeft size={16} /> Bảng tin cộng đồng</Link>
         {loading && !post ? <div className="community-skeleton" /> : post ? <>
-          <PostCard post={post} onAction={action} busy={busy} userId={userId} />
+          <PostCard post={post} onAction={action} busy={busy} userId={userId} expanded />
           <section className="community-comments"><div className="community-section-title"><h2>Câu trả lời ({replies.length})</h2>{post.kind === "question" && post.accepted_comment_id && <span className="community-solved"><CheckCircle2 size={15} /> Đã giải đáp</span>}</div>
             {replies.length ? replies.filter((item) => !item.parent_id).map((item) => <div className="community-comment" key={item.id}><Avatar name={item.author_name} /><div className="community-comment-content"><div><strong>{item.author_name}</strong><span> · {when(item.created_at)}</span>{post.accepted_comment_id === item.id && <em><Check size={13} /> Câu trả lời hữu ích nhất</em>}</div><p>{item.body}</p><div className="community-comment-actions"><button onClick={() => setReplyTo(item.id)}>Trả lời</button>{post.kind === "question" && post.author_id === userId && <button onClick={() => void accept(item.id)} disabled={busy}>{post.accepted_comment_id === item.id ? "Bỏ chọn" : "Chọn hữu ích nhất"}</button>}{item.author_id === userId && <button onClick={() => void deleteComment(item.id)} disabled={busy}>Xóa</button>}</div>{replies.filter((reply) => reply.parent_id === item.id).map((reply) => <div className="community-comment nested" key={reply.id}><Avatar name={reply.author_name} /><div><strong>{reply.author_name}</strong><span> · {when(reply.created_at)}</span><p>{reply.body}</p>{reply.author_id === userId && <button className="community-comment-delete" onClick={() => void deleteComment(reply.id)}>Xóa</button>}</div></div>)}</div></div>) : <p className="community-empty-inline">Chưa có phản hồi. Hãy bắt đầu cuộc thảo luận.</p>}
             {!demoMode && <form onSubmit={sendComment} className="community-comment-form"><label htmlFor="community-comment">Viết bình luận</label>{replyTo && <div className="community-replying">Đang trả lời bình luận <button type="button" onClick={() => setReplyTo(null)}>Hủy</button></div>}<textarea id="community-comment" minLength={2} maxLength={3000} required rows={3} placeholder="Góp ý cụ thể và tôn trọng người học khác…" value={comment} onChange={(event) => setComment(event.target.value)} /><button className="community-primary" disabled={busy || !comment.trim()}><Send size={15} /> Gửi bình luận</button></form>}
