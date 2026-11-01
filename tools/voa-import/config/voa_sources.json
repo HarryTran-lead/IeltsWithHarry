@@ -1,0 +1,32 @@
+{
+  "source_id": "voa_learning_english",
+  "source_site": "https://learningenglish.voanews.com",
+  "source_policy": "https://learningenglish.voanews.com/p/6861.html",
+  "source_terms": "https://learningenglish.voanews.com/p/6021.html",
+  "rss_catalog": "https://learningenglish.voanews.com/rssfeeds",
+  "index_pages": [
+    {"url": "https://learningenglish.voanews.com/p/5644.html", "category": "Lets Learn English Level 1", "cefr_suggestion": "A1-A2"},
+    {"url": "https://learningenglish.voanews.com/p/6765.html", "category": "Lets Learn English Level 2", "cefr_suggestion": "A2-B1"}
+  ],
+  "metadata_discovery": {
+    "rss_subscribe_links": true,
+    "index_pages": true,
+    "optional_sitemap_urls": [],
+    "additional_seed_article_urls": [],
+    "limit_per_sync": 1000,
+    "request_interval_seconds": 2.0,
+    "timeout_seconds": 20
+  },
+  "media": {
+    "audio_only": true,
+    "preferred_bitrate_kbps": 64,
+    "max_file_megabytes": 15,
+    "max_batch_megabytes": 50,
+    "max_total_megabytes": 150,
+    "stop_when_free_bytes_below": 52428800,
+    "store_original_file_once": true,
+    "publish_automatically": false
+  },
+  "eligible_audio_hosts": ["voa-audio.voanews.eu", "voa-audio-english.voanews.eu"],
+  "disabled_features": ["automatic_bulk_publishing", "tts_fallback", "download_videos", "youtube_download"]
+}

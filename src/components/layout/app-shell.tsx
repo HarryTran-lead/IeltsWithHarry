@@ -122,6 +122,7 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
       { label: "Full đề", href: "/app/reading?type=full_test", kind: "full" as const },
     ],
     listening: [
+      { label: "VOA Dictation", href: "/app/listening/voa" },
       { label: "1.200 từ IELTS Listening", href: "/app/listening/vocabulary" },
       { label: "Bài lẻ", href: "/app/listening?type=part", kind: "parent" as const },
       ...[1, 2, 3, 4].map((part): SkillPracticeLink => ({ label: `Section ${part}`, href: `/app/listening?type=part&part=${part}`, kind: "child" })),

@@ -28,6 +28,7 @@ const IeltsModePreview = dynamic(() => import("@/features/ielts/ielts-mode-previ
 const BankStudent = dynamic(() => import("@/features/ielts/bank-student").then((module) => module.BankStudent));
 const SpeakingMock = dynamic(() => import("@/features/ielts/speaking-mock").then((module) => module.SpeakingMock));
 const YoutubeLab = dynamic(() => import("@/features/listening/youtube-lab").then((module) => module.YoutubeLab));
+const VoaDictation = dynamic(() => import("@/features/listening/voa-dictation").then((module) => module.VoaDictation));
 const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage));
 const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage));
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden));
@@ -74,6 +75,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <SpeakingMock />
         ) : skill === "listening" && skillMode === "youtube" ? (
           <YoutubeLab />
+        ) : skill === "listening" && skillMode === "voa" ? (
+          <VoaDictation />
         ) : skill === "listening" && skillMode === "vocabulary" ? (
           <ListeningVocabularyPage />
         ) : skill === "reading" && skillMode === "vocabulary" ? (
