@@ -8,6 +8,8 @@ import {
   ChartNoAxesCombined,
   FlaskConical,
   Filter,
+  ChevronLeft,
+  ChevronRight,
   ChevronDown,
   Flame,
   GraduationCap,
@@ -32,8 +34,6 @@ import {
   Newspaper,
   UserRound,
   UsersRound,
-  PanelLeftClose,
-  PanelLeftOpen,
 } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { Tape } from "@/components/stickers/stickers";
@@ -443,7 +443,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         aria-controls="student-sidebar"
         title={sidebarCollapsed ? "Mở sidebar" : "Ẩn sidebar"}
       >
-        {sidebarCollapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
+        {sidebarCollapsed ? <ChevronRight size={15} strokeWidth={2.5} /> : <ChevronLeft size={15} strokeWidth={2.5} />}
       </button>
       <aside id="student-sidebar" className={`sidebar ${menuOpen ? "open" : ""}`}>
         <div className="sidebar-mobile-head">
