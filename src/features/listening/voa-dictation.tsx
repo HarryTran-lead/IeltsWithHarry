@@ -6,7 +6,7 @@ import { wordDifferences } from "@/lib/listening/youtube";
 import "./voa-dictation.css";
 
 type Lesson = { id: string; title: string; topic: string; cefr: string; source_url: string; attribution: string; status: string };
-type Segment = { id: string; ordinal: number; start_ms: number; end_ms: number; reference_text: string; speaker: string };
+type Segment = { id: string; ordinal: number; start_ms: number; end_ms: number; reference_text: string; speaker: string; virtual?: boolean };
 type Attempt = { segment_id: string; accuracy: number; answer: string; created_at: string };
 type Mode = "type" | "read" | "gap";
 type Feedback = "idle" | "wrong" | "correct" | "skipped";
@@ -20,6 +20,32 @@ function maskedAnswer(reference: string, typed: string) {
     if (first) { first = false; return word; }
     return heard.has(normalize(word)) ? word : "•".repeat(Math.min(word.length, 12));
   });
+}
+function expandSentences(rows: Segment[]): Segment[] {
+  const result: Segment[] = [];
+  for (const row of rows) {
+    const parts: string[] = [];
+    let current = "";
+    for (const token of row.reference_text.split(/(?<=[.!?]["”']?)\s+(?=[A-Z“"'])/u)) {
+      current = current ? `${current} ${token}` : token;
+      if (/\b(?:Mr|Mrs|Ms|Dr|St)\.$/i.test(current)) continue;
+      parts.push(current.trim()); current = "";
+    }
+    if (current) parts.push(current.trim());
+    if (parts.length <= 1 || row.end_ms - row.start_ms < parts.length * 500) {
+      result.push({ ...row, ordinal: result.length + 1 }); continue;
+    }
+    const weights = parts.map((part) => Math.max(1, normalize(part).split(" ").length));
+    const total = weights.reduce((sum, weight) => sum + weight, 0);
+    let elapsed = 0;
+    for (const [index, part] of parts.entries()) {
+      const start = row.start_ms + Math.round((row.end_ms - row.start_ms) * elapsed / total);
+      elapsed += weights[index];
+      const end = index === parts.length - 1 ? row.end_ms : row.start_ms + Math.round((row.end_ms - row.start_ms) * elapsed / total);
+      result.push({ ...row, id: `${row.id}:${index}`, ordinal: result.length + 1, start_ms: start, end_ms: end, reference_text: part, virtual: true });
+    }
+  }
+  return result;
 }
 
 export function VoaDictation() {
@@ -81,7 +107,7 @@ export function VoaDictation() {
         setSegmentsLoading(false);
         return;
       }
-      const loaded = (s.data ?? []) as Segment[];
+      const loaded = expandSentences((s.data ?? []) as Segment[]);
       setSegments(loaded);
       setSegmentsLoading(false);
 
@@ -93,6 +119,13 @@ export function VoaDictation() {
       if (a.error) { setError(a.error.message); return; }
       const latest: Record<string, Attempt> = {};
       for (const row of (a.data ?? []) as Attempt[]) if (!latest[row.segment_id]) latest[row.segment_id] = row;
+      try {
+        const stored = JSON.parse(localStorage.getItem(`voa-sentence-attempts:${lesson.id}`) ?? "{}");
+        if (stored && typeof stored === "object") for (const item of loaded) {
+          const attempt = stored[item.id];
+          if (item.virtual && attempt && attempt.segment_id === item.id && Number(attempt.accuracy) === 100) latest[item.id] = attempt;
+        }
+      } catch { /* Corrupt local progress does not prevent practicing. */ }
       setAttempts(latest);
       if (!selectionTouched.current) {
         const next = loaded.findIndex((item) => !latest[item.id] || Number(latest[item.id].accuracy) < 80);
@@ -161,10 +194,17 @@ export function VoaDictation() {
   async function submit() {
     if (!segment) return;
     const submitted = mode === "gap" ? gapWords.map((word,index) => /[\p{L}\p{N}]/u.test(word) && index % 6 === 0 ? (gapInputs[index] ?? "") : word).join("") : answer;
-    if (mode === "type" && normalize(submitted) !== normalize(segment.reference_text)) {
+    if (normalize(submitted) !== normalize(segment.reference_text)) {
       setFeedback("wrong"); setChecked(true); return;
     }
     if (!submitted.trim()) { setFeedback("wrong"); setChecked(true); return; }
+    if (segment.virtual) {
+      const saved: Attempt = { segment_id: segment.id, accuracy: 100, answer: submitted.trim(), created_at: new Date().toISOString() };
+      const next = { ...attempts, [segment.id]: saved };
+      setAttempts(next);
+      try { localStorage.setItem(`voa-sentence-attempts:${lesson?.id}`, JSON.stringify(Object.fromEntries(Object.entries(next).filter(([id]) => id.includes(":"))))); } catch { /* Practice stays available without local storage. */ }
+      setAnswer(submitted); setChecked(true); setFeedback("correct"); return;
+    }
     setError("");
     const { data: id, error: failure } = await db.rpc("submit_voa_dictation", { p_segment_id: segment.id, p_answer: submitted.trim(), p_mode: mode });
     if (failure) { setError(failure.message); return; }
