@@ -134,9 +134,10 @@ strong {
   scrollbar-color: #cfd2c8 transparent;
 }
 .app-frame {
+  --app-sidebar-width: 238px;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 244px minmax(0, 1fr);
+  grid-template-columns: var(--app-sidebar-width) minmax(0, 1fr);
   grid-template-rows: 72px minmax(0, 1fr);
 }
 .app-frame.sidebar-collapsed {
@@ -2708,7 +2709,8 @@ a.card:hover {
 }
 @media (max-width: 1100px) {
   .app-frame {
-    grid-template-columns: 220px minmax(0, 1fr);
+    --app-sidebar-width: 214px;
+    grid-template-columns: var(--app-sidebar-width) minmax(0, 1fr);
   }
   .brand {
     width: auto;
@@ -7052,21 +7054,21 @@ a.card:hover {
   .vocabulary-layout .listening-vocab-card, .vocabulary-layout .collocations-card { margin-inline: auto; }
 }
 
-/* The desktop sidebar control stays at the middle of its outer edge. */
+/* A small handle keeps the sidebar control clear of the learning content. */
 @media (min-width: 701px) {
   .app-frame .desktop-sidebar-toggle {
     position: fixed;
     top: calc(50vh + 36px);
-    left: 244px;
+    left: var(--app-sidebar-width);
     z-index: 40;
-    width: 30px;
-    height: 58px;
+    width: 20px;
+    height: 38px;
     margin: 0;
-    border: 1px solid #cfe2e5;
+    border: 1px solid #d5e7e8;
     border-left: 0;
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 8px 8px 0;
     background: #fff;
-    box-shadow: 4px 4px 13px #163d551c;
+    box-shadow: 2px 2px 7px #163d5517;
     color: #087f89;
     transform: translateY(-50%);
     cursor: pointer;
@@ -7075,7 +7077,4 @@ a.card:hover {
   .app-frame .desktop-sidebar-toggle:focus-visible { outline: 3px solid #48bec5; outline-offset: 2px; }
   .app-frame.sidebar-collapsed .desktop-sidebar-toggle { left: 0; }
   .app-frame.learning-focus .desktop-sidebar-toggle { top: calc(50vh + 28px); }
-}
-@media (min-width: 701px) and (max-width: 1100px) {
-  .app-frame:not(.sidebar-collapsed) .desktop-sidebar-toggle { left: 220px; }
 }
