@@ -15,8 +15,10 @@ export async function GET(_request: Request, context: { params: Promise<{ id: st
   const { data: claims } = await db.auth.getClaims();
   if (!claims?.claims) return new Response("Unauthorized", { status: 401 });
   const { data: lesson } = await db.from("voa_dictation_lessons")
-    .select("audio_object_key,status").eq("id", id).maybeSingle();
-  if (lesson?.status !== "published") {
+    .select("audio_object_key,status,r2_verified").eq("id", id).maybeSingle();
+  const testAudio = process.env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES === "true"
+    && lesson?.status === "uploaded" && lesson.r2_verified;
+  if (lesson?.status !== "published" && !testAudio) {
     const { data: admin } = await db.rpc("is_admin");
     if (!admin) return new Response("Not found", { status: 404 });
   }

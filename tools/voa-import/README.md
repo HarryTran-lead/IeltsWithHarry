@@ -10,7 +10,7 @@
 | Cloudflare R2 | Verified human-voice VOA MP3s, keyed by SHA256 | **Yes: production audio** |
 | Existing Supabase/PostgreSQL | Approved transcript, metadata, segment timestamps, learner scores | **Yes: production app data** |
 
-No TTS substitutions, no direct hotlink of source media for learner playback. The importer respects blocks and robots/access restrictions. Rights are verified per asset; third-party content is excluded. The user-facing system must not serve unreviewed audio.
+No TTS substitutions, no direct hotlink of source media for learner playback. The importer respects blocks and robots/access restrictions. Rights are verified per asset; third-party content is excluded. The isolated dev Preview can expose unreviewed official Conversation MP3s for testing when the dev operator explicitly requests it; these are labeled as test lessons and do not carry review flags.
 
 ## Setup
 
@@ -50,6 +50,8 @@ python scripts/verify_media.py --help
 ```
 
 The review command should only be used after **real human review**; it is not a permission bypass. The audio file downloads temporarily to `data/media` for verification.
+
+For the isolated learner Preview, use `scripts/dev_preview.py` as documented in `docs/VOA_DICTATION_DEV.md`. Its download and upload commands resume from the local checkpoint, and its export creates estimated segments without claiming review.
 
 ## Stage 3: Upload reviewed MP3 to **Cloudflare R2**
 
