@@ -183,14 +183,14 @@ describe("illustration search checked by AI vision", () => {
   /** Answers library searches, image downloads and the Gemini vision request. */
   const flickr = (license: string, extra: Record<string, unknown> = {}) => ({ title: "Concert crowd at night", url: "https://live.staticflickr.com/1/2_abc_b.jpg", creator: "Jane Doe", license, license_version: "2.0",
     license_url: license === "cc0" ? undefined : `https://creativecommons.org/licenses/${license}/2.0/`, foreign_landing_url: "https://www.flickr.com/photos/jane/2", provider: "flickr", width: 1024, height: 683, ...extra });
-  function fetcherFor(commons: unknown[], nasa: unknown[], vision: { best: number; fit: number }, openverse: unknown[] = []) {
-    const seen = { previews: [] as string[], prompts: [] as string[] };
+  function fetcherFor(commons: unknown[], nasa: unknown[], vision: { best: number; fit: number } | { best: number; fit: number }[], openverse: unknown[] | ((query: string) => unknown[]) = []) {
+    const seen = { previews: [] as string[], prompts: [] as string[], searches: [] as string[] };
     const fetcher = async (url: string | URL | Request, init?: RequestInit) => {
       const href = String(url);
       if (href.startsWith("https://images-api.nasa.gov/")) return new Response(JSON.stringify({ collection: { items: nasa } }), { status: 200 });
       if (href.startsWith("https://commons.wikimedia.org/w/api.php")) return new Response(JSON.stringify({ query: { pages: commons } }), { status: 200 });
-      if (href.startsWith("https://api.openverse.org/")) return new Response(JSON.stringify({ results: openverse }), { status: 200 });
-      if (href.includes("generativelanguage.googleapis.com")) { seen.prompts.push(String(init?.body)); return geminiReply(vision); }
+      if (href.startsWith("https://api.openverse.org/")) { const query = new URL(href).searchParams.get("q") ?? ""; seen.searches.push(query); return new Response(JSON.stringify({ results: typeof openverse === "function" ? openverse(query) : openverse }), { status: 200 }); }
+      if (href.includes("generativelanguage.googleapis.com")) { seen.prompts.push(String(init?.body)); return geminiReply(Array.isArray(vision) ? vision[Math.min(seen.prompts.length - 1, vision.length - 1)] : vision); }
       seen.previews.push(href);
       return new Response(new Uint8Array([255, 216, 255, 224]), { status: 200, headers: { "content-type": "image/jpeg" } });
     };
@@ -205,6 +205,7 @@ describe("illustration search checked by AI vision", () => {
     expect(seen.previews.some((url) => url.endsWith("~thumb.jpg"))).toBe(true);
     expect(seen.prompts[0]).toContain("inlineData");
     expect(seen.prompts[0]).toContain("spacecraft near the Moon");
+    expect(seen.searches).toHaveLength(2);
     expect(image).not.toBeNull();
   });
   it("uses no image when the AI finds none fitting or rates the best one low", async () => {
@@ -212,6 +213,16 @@ describe("illustration search checked by AI vision", () => {
     expect(await run(() => findNewsIllustration("Artemis spacecraft Moon mission", none.fetcher))).toBeNull();
     const weak = fetcherFor([commonsPage("Public domain")], [], { best: 1, fit: 5 });
     expect(await run(() => findNewsIllustration("Artemis spacecraft Moon mission", weak.fetcher))).toBeNull();
+  });
+  it("tries another real-photo search before falling back to generated art", async () => {
+    const laterPhoto = "https://live.staticflickr.com/1/5_hanoi_b.jpg";
+    const { fetcher, seen } = fetcherFor([], [], [{ best: 1, fit: 5 }, { best: 1, fit: 8 }], (query) => query === "resold hanoi"
+      ? [flickr("by", { title: "Hanoi concert tickets", url: laterPhoto, foreign_landing_url: "https://www.flickr.com/photos/jane/5" })]
+      : [flickr("by")]);
+    const image = await run(() => findNewsIllustration("Concert tickets resold in Hanoi", fetcher, { query: "concert crowd" }));
+    expect(seen.searches).toEqual(["concert crowd", "concert crowd tickets", "resold hanoi"]);
+    expect(seen.prompts.filter((prompt) => prompt.includes("inlineData"))).toHaveLength(2);
+    expect(image?.image_url).toBe(laterPhoto);
   });
   it("never offers unlicensed or third-party images to the AI", async () => {
     const { fetcher, seen } = fetcherFor([commonsPage("All rights reserved")], [nasaItem({ secondary_creator: "Intuitive Machines" })], { best: 1, fit: 10 });
@@ -222,7 +233,7 @@ describe("illustration search checked by AI vision", () => {
   it("asks for a visual subject when the article has none stored", async () => {
     const { fetcher, seen } = fetcherFor([commonsPage("Public domain")], [], { best: 1, fit: 9 });
     await run(() => findNewsIllustration("Artemis spacecraft Moon mission", fetcher, { body: "The spacecraft flew around the Moon." }));
-    expect(seen.prompts[0]).toContain("photographable subject");
+    expect(seen.prompts[0]).toContain("visual subject");
     expect(seen.prompts[1]).toContain("inlineData");
   });
   it("reports an exhausted AI quota before spending more image searches", async () => {
