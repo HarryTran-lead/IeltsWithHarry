@@ -5,6 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --app-header-height: 72px;
+  --app-sidebar-width: 238px;
   --navy: #10233f;
   --ink: #2a3f5f;
   --muted: #5d6f8c;
@@ -134,11 +136,10 @@ strong {
   scrollbar-color: #cfd2c8 transparent;
 }
 .app-frame {
-  --app-sidebar-width: 238px;
   min-height: 100vh;
   display: grid;
   grid-template-columns: var(--app-sidebar-width) minmax(0, 1fr);
-  grid-template-rows: 72px minmax(0, 1fr);
+  grid-template-rows: var(--app-header-height) minmax(0, 1fr);
 }
 .app-frame.sidebar-collapsed {
   grid-template-columns: 0 minmax(0, 1fr);
@@ -434,8 +435,8 @@ strong {
   grid-column: 1;
   grid-row: 2;
   position: sticky;
-  top: 72px;
-  height: calc(100vh - 72px);
+  top: var(--app-header-height);
+  height: calc(100vh - var(--app-header-height));
   padding: 14px 12px 14px;
   background: #fff;
   border-right: 1px solid var(--line);
@@ -2708,8 +2709,10 @@ a.card:hover {
   }
 }
 @media (max-width: 1100px) {
-  .app-frame {
+  :root {
     --app-sidebar-width: 214px;
+  }
+  .app-frame {
     grid-template-columns: var(--app-sidebar-width) minmax(0, 1fr);
   }
   .brand {
