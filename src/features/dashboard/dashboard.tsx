@@ -24,7 +24,7 @@ import { PlannerMini } from "@/features/planner/planner-widgets";
 import { useDemo } from "@/features/demo/demo-store";
 import { offsetISO, recommendations, skillColors, todayISO, type Skill } from "@/lib/demo-data";
 import { demoMode, releaseLocks } from "@/lib/runtime";
-import { LatestNews, StudyRoomCard } from "./dashboard-widgets";
+import { LatestNews, StreakLeaderboardCard, StudyRoomCard } from "./dashboard-widgets";
 import { StudyProgress } from "./study-progress";
 import { StageMap, useStageStops } from "@/features/learning/stage-map";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
@@ -338,6 +338,7 @@ export function Dashboard() {
       <aside className="dashboard-aside stagger">
         <StudyRoomCard />
         <PlannerMini />
+        <StreakLeaderboardCard />
         <Achievements />
       </aside>
     </div>
