@@ -6992,3 +6992,24 @@ a.card:hover {
 .nav-sub-links { display: flex; gap: 6px; padding: 2px 8px 8px 54px; }
 .nav-sub-links a { border-radius: 8px; padding: 5px 7px; color: var(--muted); font-size: 11px; font-weight: 700; text-decoration: none; }
 .nav-sub-links a:hover { background: #e5f4f3; color: var(--teal-strong); }
+
+/* Keep navigation available while giving active vocabulary lessons the full canvas. */
+.app-frame.learning-focus { grid-template-columns: 0 minmax(0, 1fr); grid-template-rows: 56px minmax(0, 1fr); }
+.learning-focus .sidebar { display: none; }
+.learning-focus .main-area { grid-column: 1 / -1; padding-top: 10px; }
+.learning-focus .vocab-header { margin-bottom: 10px; }
+.learning-focus .vocab-header h1 { margin: 2px 0; font-size: clamp(23px, 2.3vw, 30px); }
+.learning-focus .vocab-header p, .learning-focus .vocab-header-count { display: none; }
+.learning-focus .topbar { min-height: 56px; padding-inline: 18px; }
+.learning-focus .header-search, .learning-focus .header-actions .stat-pill, .learning-focus .header-actions .header-divider, .learning-focus .header-actions .popover-wrap:first-of-type { display: none; }
+.learning-focus .header-actions { margin-left: auto; }
+.learning-focus .bottom-nav { display: none; }
+.learning-focus-button { flex: none; border: 1px solid #b8dfdf; border-radius: 9px; padding: 7px 11px; background: #eaf8f7; color: #087f87; font: 800 12px var(--font-display); cursor: pointer; }
+.learning-focus-button:focus-visible { outline: 3px solid #48bec5; outline-offset: 2px; }
+@media (max-width: 700px) {
+  .app-frame.learning-focus { display: block; padding-bottom: 0; }
+  .learning-focus .topbar { height: 56px; }
+  .learning-focus .main-area { min-height: calc(100vh - 56px); padding: 8px 10px 24px; }
+  .learning-focus .sidebar.open { display: block; }
+  .learning-focus-button { display: none; }
+}
