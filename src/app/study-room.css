@@ -33,7 +33,8 @@
 
 .study-session-toggle{display:flex;align-items:center;gap:6px;padding:10px 13px;border:0;border-radius:14px;background:#20b7bc;color:#fff;font-size:12px;font-weight:850;white-space:nowrap;cursor:pointer}.study-session-toggle:hover{background:#148e99}
 .study-room-placeholder{min-height:calc(100vh - 140px)}
-.study-room-host.full{position:fixed;inset:88px 0 0 220px;z-index:15;overflow:auto;background:radial-gradient(circle at 70% 0,#eefaff,#f7fcfb 46%,#f2fafb);box-shadow:inset 0 1px #e6f0f2}
+.study-room-host.full{position:fixed;inset:var(--app-header-height,72px) 0 0 var(--app-sidebar-width,238px);z-index:15;overflow:auto;background:radial-gradient(circle at 70% 0,#eefaff,#f7fcfb 46%,#f2fafb);box-shadow:inset 0 1px #e6f0f2}
+.study-room-host.full .study-room-page{padding:22px 26px 35px}
 body:has(.app-frame.sidebar-collapsed) .study-room-host.full{left:0}
 .study-room-host.pip{position:fixed;right:24px;bottom:115px;z-index:82;display:flex;flex-direction:column;min-width:280px;min-height:310px;max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);overflow:hidden;border:1px solid #cbe7ea;border-radius:18px;background:#fff;box-shadow:0 22px 65px #143d5870}
 .study-pip-header{flex:none;display:flex;align-items:center;gap:7px;height:45px;padding:0 9px 0 12px;background:#f1fbfb;color:#27445e;border-bottom:1px solid #deedef;cursor:move;touch-action:none;user-select:none}
@@ -50,7 +51,6 @@ body:has(.app-frame.sidebar-collapsed) .study-room-host.full{left:0}
 .study-room-host.pip .study-room-main{flex:none;width:100%}.study-room-host.pip .study-visual-card{width:100%;border:0;border-radius:0;box-shadow:none}.study-room-host.pip .study-youtube,.study-room-host.pip .study-scene{width:100%;height:auto;aspect-ratio:16/9}.study-room-host.pip .study-visual-footer{display:none}
 .study-room-host.pip .study-chat-card{flex:1;width:100%;height:auto;min-height:0;border:0;border-top:1px solid #e1edf0;border-radius:0;box-shadow:none}
 .study-room-host.pip .study-chat-header{padding:8px 12px}.study-room-host.pip .study-chat-icon{width:31px;height:31px;border-radius:9px}.study-room-host.pip .study-chat-header strong{font-size:13px}.study-room-host.pip .study-chat-header span{font-size:10px}.study-room-host.pip .study-chat-messages{min-height:0;padding:10px;gap:9px}.study-room-host.pip .study-message p{font-size:11px;padding:7px 9px}.study-room-host.pip .study-chat-compose{margin:6px 9px 9px;padding:4px 4px 4px 9px}.study-room-host.pip .study-chat-compose input{font-size:11px}.study-room-host.pip .study-chat-compose button{width:31px;height:31px}.study-room-host.pip .study-chat-note{display:none}
-@media(max-width:1100px){.study-room-host.full{left:76px}}
 @media(max-width:700px){.study-room-host.full{inset:65px 0 64px 0}.study-room-host.full .study-room-page{padding:12px 12px 25px}.study-session-toggle{padding:8px;font-size:11px}.study-room-host.pip{bottom:145px}.study-room-host.pip .study-chat-empty img{width:55px;height:55px}.study-room-host.pip .study-chat-empty h2{font-size:14px}}
 .study-room-heading h1 .sticker{vertical-align:middle;margin:-6px 0 0 4px}.study-visual-sparkle.sticker{flex:none}
 .study-message.is-admin > div { border: 1px solid #f0ca72; border-radius: 14px; box-shadow: 0 4px 18px #c9823420; }
