@@ -31,7 +31,7 @@ function StudyScene() {
   </div>;
 }
 
-export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
+export function StudyRoom({ canManage = false, showVideo = true }: { canManage?: boolean; showVideo?: boolean }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentUser, setCurrentUser] = useState("");
   const { online, status, sessionActive, setSessionActive, studySeconds, subscribeMessages } = useStudyPresence();
@@ -200,12 +200,12 @@ export function StudyRoom({ canManage = false }: { canManage?: boolean }) {
       {videoMode === "harry" && <div className="study-music-controls"><Music2 size={18} /><span>Nhạc lofi tạo riêng</span><button type="button" className="study-play" onClick={() => void toggleMusic()} aria-label={musicPlaying ? "Tắt nhạc" : "Bật nhạc"}>{musicPlaying ? <Pause size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}{musicPlaying ? "Tạm dừng" : "Bật nhạc"}</button>{volume === 0 ? <VolumeX size={18} /> : <Volume2 size={18} />}<input type="range" aria-label="Âm lượng nhạc" min="0" max="100" value={volume} onChange={(event) => { const value = Number(event.target.value); setVolume(value); player.current?.setVolume(value / 100); }} /></div>}
     </section>
     <div className="study-room-grid">
-      <div className={`study-room-main ${videoMode === "youtube" ? "has-youtube" : ""}`}>
+      {showVideo && <div className={`study-room-main ${videoMode === "youtube" ? "has-youtube" : ""}`}>
         <section className="study-visual-card">
           {videoMode === "youtube" ? <div className="study-youtube"><iframe key={selectedStream.id} title={`${selectedStream.title} — ${selectedStream.channel} livestream`} src={`https://www.youtube-nocookie.com/embed/${selectedStream.id}?rel=0`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /></div> : <StudyScene />}
           <div className="study-visual-footer"><div><span className="study-on-air"><i /> {videoMode === "youtube" ? "YOUTUBE LIVE" : "STUDY SESSION"}</span><strong>{videoMode === "youtube" ? selectedStream.title : "Một góc nhỏ để tập trung mỗi ngày"}</strong><small>{videoMode === "youtube" ? <>{selectedStream.channel} · <a href={`https://www.youtube.com/watch?v=${selectedStream.id}`} target="_blank" rel="noopener noreferrer">Mở livestream trên YouTube ↗</a></> : "Hoạt cảnh và nhạc lặp tạo riêng cho IeltsWithHarry"}</small></div><Sticker name="headphones" size={40} tilt={8} className="study-visual-sparkle" /></div>
         </section>
-      </div>
+      </div>}
       <section className="study-chat-card" aria-label="Phòng chat cùng học"><header className="study-chat-header"><div className="study-chat-icon"><MessageCircle size={22} /></div><div><strong>Phòng chat chung</strong><span>{demoMode ? "Bản xem trước" : status === "live" ? "Đang kết nối trực tiếp" : status === "connecting" ? "Đang kết nối…" : "Chưa có kết nối trực tiếp"}</span></div><span className={`study-chat-status ${status}`} /></header>
         <div className="study-chat-messages" ref={listRef} aria-live="polite">{hasOlder && <button className="study-older" type="button" onClick={() => void loadOlder()} disabled={loadingOlder}>{loadingOlder ? "Đang tải…" : "Xem tin nhắn cũ"}</button>}{messages.length === 0 && <div className="study-chat-empty"><HarryMascot size={100} /><h2>Chào mừng vào phòng!</h2><p>Chia sẻ mục tiêu học hôm nay hoặc gửi lời chào tới mọi người nhé.</p></div>}{messages.map((item) => <article className={`study-message ${item.user_id === currentUser ? "mine" : ""} ${item.is_admin ? "is-admin" : ""}`} key={item.id}><span className="study-message-avatar">{item.is_admin ? <HarryMascot size={28} /> : item.display_name.slice(0, 1).toUpperCase()}</span><div><div className="study-message-meta">{item.is_admin && <span className="study-message-admin-label">ADMIN</span>}<strong>{item.user_id === currentUser ? "Bạn" : item.display_name}</strong><time dateTime={item.created_at}>{new Date(item.created_at).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}</time>{(item.user_id === currentUser || canManage) && <button type="button" onClick={() => void deleteMessage(item.id)} aria-label="Xóa tin nhắn"><Trash2 size={13} /></button>}</div><p>{item.body}</p></div></article>)}</div>
         {error && <p className="study-chat-error" role="alert">{error}</p>}
