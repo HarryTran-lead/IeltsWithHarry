@@ -5,11 +5,16 @@ import { communityEnabled, demoMode } from "@/lib/runtime";
 export const runtime = "nodejs";
 
 const uuid = z.string().uuid();
+const mediaInput = z.array(z.object({
+  path: z.string().max(100),
+  type: z.enum(["image", "video"]),
+})).max(4).refine((items) => items.filter((item) => item.type === "video").length <= 1, "Mỗi bài chỉ được kèm một video");
 const postInput = z.object({
   kind: z.enum(["discussion", "question", "writing_review", "speaking_review"]),
   topic: z.enum(["IELTS", "Grammar", "Vocabulary", "Writing", "Speaking", "Reading", "Listening"]),
   title: z.string().trim().min(8).max(160),
   body: z.string().trim().min(20).max(12000),
+  media: mediaInput.default([]),
 });
 const commentInput = z.object({ postId: uuid, body: z.string().trim().min(2).max(3000), parentId: uuid.nullable().optional() });
 
@@ -77,7 +82,7 @@ export async function GET(request: Request) {
       return Response.json({ post: (await enrich(db, user.id, [post]))[0], replies: comments ?? [], userId: user.id });
     }
     const page = Math.min(50, Math.max(0, Number(params.get("page") ?? 0) || 0));
-    let query = db.from("community_posts").select("id,author_id,author_name,kind,topic,title,body,status,accepted_comment_id,created_at").eq("status", "published").order("created_at", { ascending: false }).range(page * 12, page * 12 + 12);
+    let query = db.from("community_posts").select("id,author_id,author_name,kind,topic,title,body,media,status,accepted_comment_id,created_at").eq("status", "published").order("created_at", { ascending: false }).range(page * 12, page * 12 + 12);
     const kind = params.get("kind");
     if (kind === "review") query = query.in("kind", ["writing_review", "speaking_review"]);
     else if (["discussion", "question", "writing_review", "speaking_review"].includes(kind ?? "")) query = query.eq("kind", kind!);
@@ -144,9 +149,11 @@ export async function PATCH(request: Request) {
       if (error) throw new Error(error.message);
       if (!data) throw new Error("Không có quyền");
     } else if (input.action === "delete") {
-      const { data, error } = await db.from("community_posts").update({ status: "deleted" }).eq("id", id).eq("author_id", user.id).select("id").maybeSingle();
+      const { data, error } = await db.from("community_posts").update({ status: "deleted" }).eq("id", id).eq("author_id", user.id).select("id,media").maybeSingle();
       if (error) throw new Error(error.message);
       if (!data) throw new Error("Không có quyền");
+      const paths = Array.isArray(data.media) ? data.media.map((item: { path?: string }) => item.path).filter((path: unknown): path is string => typeof path === "string") : [];
+      if (paths.length) await db.storage.from("community-media").remove(paths);
     } else if (input.action === "deleteComment") {
       const { data, error } = await db.from("community_comments").update({ status: "deleted" }).eq("id", id).eq("author_id", user.id).select("id").maybeSingle();
       if (error) throw new Error(error.message);
