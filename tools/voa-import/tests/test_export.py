@@ -4,7 +4,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from voa_ingest.db import connect
-from voa_ingest.pipeline import export_staging
+from voa_ingest.pipeline import export_staging, export_catalog
 
 
 def test_only_uploaded_verified_media_exports_without_local_copy(tmp_path):
@@ -23,4 +23,7 @@ def test_only_uploaded_verified_media_exports_without_local_copy(tmp_path):
     row = json.loads(output.read_text(encoding="utf-8"))
     assert row["r2_key"] == f"dictation/voa/{digest}.mp3"
     assert "local_audio_path" not in row
+    catalog = tmp_path / "catalog.jsonl"
+    assert export_catalog(con, str(catalog)) == 2
+    assert all("transcript_candidate" not in json.loads(line) for line in catalog.read_text(encoding="utf-8").splitlines())
     con.close()

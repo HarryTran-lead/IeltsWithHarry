@@ -185,3 +185,16 @@ def export_staging(con, path: str):
             payload.update({'source_name':'VOA Learning English','license_status':'human_approved_pending_region_compliance','attribution':'VOA Learning English — learningenglish.voanews.com','publication_ready':False,'segments':[]})
             f.write(json.dumps(payload,ensure_ascii=False)+'\n');count+=1
     return count
+
+
+def export_catalog(con, path: str):
+    """Export minimal discovery metadata; never include unreviewed full text."""
+    out = Path(path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    count = 0
+    with out.open('w', encoding='utf-8') as f:
+        for row in con.execute("SELECT id,url,title,source_group,published,audio_url,third_party_warning,status FROM articles WHERE title!='' ORDER BY id"):
+            payload = {key: row[key] for key in ('id','url','title','source_group','published','audio_url','third_party_warning','status')}
+            f.write(json.dumps(payload, ensure_ascii=False) + '\n')
+            count += 1
+    return count

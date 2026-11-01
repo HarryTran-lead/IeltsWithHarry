@@ -30,9 +30,10 @@ python scripts/voa_ingest.py discover --contact you@example.com --max-items 1000
 python scripts/voa_ingest.py parse --contact you@example.com --limit 40
 python scripts/voa_ingest.py status
 python scripts/voa_ingest.py queue
+python scripts/voa_ingest.py export-catalog --output data/export_catalog.jsonl
 ```
 
-These commands contact the **official VOA site** and should run on a controlled worker/machine, never a frontend request. You can add approved official archive URLs to a newline-separated file and run:
+The `discover` and `parse` commands contact the **official VOA site** and should run on a controlled worker/machine, never a frontend request. `export-catalog` is an offline metadata-only export for the dev Admin queue; it does not include unreviewed transcript text. You can add approved official archive URLs to a newline-separated file and run:
 
 ```bash
 python scripts/voa_ingest.py seed-manifest --file source_urls.txt

@@ -19,6 +19,15 @@ describe("VOA dictation publication and learner isolation", () => {
         insert into auth.users values ('${admin}'),('${student}');`);
       await db.exec(readFileSync(resolve("supabase/migrations/202611010002_voa_dictation.sql"), "utf8"));
       await db.exec(readFileSync(resolve("supabase/migrations/202611010003_voa_published_lock.sql"), "utf8"));
+      await db.exec(readFileSync(resolve("supabase/migrations/202611010004_voa_attempt_scoring.sql"), "utf8"));
+      await db.exec(readFileSync(resolve("supabase/migrations/202611010005_voa_discovery_queue.sql"), "utf8"));
+      const scores = (await db.query<{ punctuation: number; missing: number; repeated: number }>(`select
+        public.voa_dictation_accuracy('Don''t stop, now!', 'dont stop now') as punctuation,
+        public.voa_dictation_accuracy('one two three four', 'one three four') as missing,
+        public.voa_dictation_accuracy('one one two', 'one two') as repeated`)).rows[0];
+      expect(Number(scores.punctuation)).toBe(100);
+      expect(Number(scores.missing)).toBe(75);
+      expect(Number(scores.repeated)).toBeCloseTo(66.67, 2);
       const lesson = (await db.query<{ id: string }>(`insert into public.voa_dictation_lessons
         (source_url,title,transcript,cefr,audio_object_key,audio_sha256,audio_bytes,status)
         values ('https://learningenglish.voanews.com/a/test/1234.html','VOA test lesson',
@@ -33,13 +42,19 @@ describe("VOA dictation publication and learner isolation", () => {
         rights_basis='VOA owned recording and transcript checked by editor',
         reviewer_id=$2,reviewed_at=now(),status='published' where id=$1`, [lesson.id, admin]);
       await expect(db.query("update public.voa_dictation_lessons set transcript='Changed without review' where id=$1", [lesson.id])).rejects.toThrow(/Revoke publication/);
-      await db.query("insert into public.voa_dictation_lessons(source_url,title) values ('https://learningenglish.voanews.com/a/draft/5678.html','Private draft lesson')");
+      await db.query("insert into public.voa_dictation_lessons(source_url,title,source_group,third_party_warning) values ('https://learningenglish.voanews.com/a/draft/5678.html','Private draft lesson','VOA Level 1',true)");
       await db.exec(`set role authenticated; set request.jwt.claim.sub='${student}';`);
       expect((await db.query("select id from public.voa_dictation_lessons")).rows).toHaveLength(1);
       await expect(db.query("insert into public.voa_dictation_attempts(user_id,segment_id,answer) values ($1,$2,'forged')", [admin, segment.id])).rejects.toThrow();
-      const attempt = (await db.query<{ id: string }>("select public.submit_voa_dictation($1,$2) as id", [segment.id, "This is the answer"])).rows[0];
+      const attempt = (await db.query<{ id: string }>("select public.submit_voa_dictation($1,$2,$3) as id", [segment.id, "This is the answer", "type"])).rows[0];
       expect(attempt.id).toBeTruthy();
-      expect((await db.query("select id from public.voa_dictation_attempts")).rows).toHaveLength(1);
+      const attempts = (await db.query<{ accuracy: number; mode: string }>("select accuracy,mode from public.voa_dictation_attempts")).rows;
+      expect(attempts).toHaveLength(1);
+      expect(Number(attempts[0].accuracy)).toBeLessThan(80);
+      expect(attempts[0].mode).toBe("type");
+      const perfect = (await db.query<{ id: string }>("select public.submit_voa_dictation($1,$2,$3) as id", [segment.id, "This is a reviewed and timed test transcript.", "gap"])).rows[0];
+      expect(perfect.id).toBeTruthy();
+      expect(Number((await db.query<{ accuracy: number }>("select accuracy from public.voa_dictation_attempts where id=$1", [perfect.id])).rows[0].accuracy)).toBe(100);
       expect((await db.query("update public.voa_dictation_lessons set status='uploaded' where id=$1", [lesson.id])).rowCount).toBe(0);
     } finally { await db.close(); }
   }, 30000);

@@ -16,7 +16,7 @@ BASE=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(BASE/'src'))
 from voa_ingest.db import connect, stats, upsert_discovery
 from voa_ingest.fetch import PoliteClient, ImportBlocked
-from voa_ingest.pipeline import discover, parse_pending, approve, download_approved, export_staging
+from voa_ingest.pipeline import discover, parse_pending, approve, download_approved, export_staging, export_catalog
 
 
 def make_parser():
@@ -49,6 +49,8 @@ def make_parser():
     dl.add_argument('--total-mb',type=int,default=None)
     ex=sub.add_parser('export',help='Export local reviewed media metadata (NOT publish)')
     ex.add_argument('--output',default='data/export_verified.jsonl')
+    catalog=sub.add_parser('export-catalog',help='Export minimal discovered metadata for the admin queue (NOT publish)')
+    catalog.add_argument('--output',default='data/export_catalog.jsonl')
     rej=sub.add_parser('reject',help='Reject a candidate after QA')
     rej.add_argument('--id',type=int,required=True)
     rej.add_argument('--notes',required=True)
@@ -91,6 +93,9 @@ def main(args=None):
         elif a.command=='export':
             count=export_staging(con,a.output)
             print(f'Exported {count} reviewed media candidates to {a.output} (NOT published)')
+        elif a.command=='export-catalog':
+            count=export_catalog(con,a.output)
+            print(f'Exported {count} metadata candidates to {a.output} (NOT published)')
         elif a.command=='reject':
             if len(a.notes.strip())<5:raise ValueError('Rejection reason required')
             con.execute("UPDATE articles SET status='rejected',review_notes=?,updated_at=CURRENT_TIMESTAMP WHERE id=?",(a.notes,a.id));con.commit()
