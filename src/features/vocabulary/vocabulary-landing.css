@@ -5,6 +5,10 @@
 .vocabulary-landing-hero h1{margin:6px 0;font:900 clamp(28px,2.9vw,43px)/1.12 var(--font-display);letter-spacing:-.035em}
 .vocabulary-landing-hero h1 em{color:#079ba4;font-style:normal}
 .vocabulary-landing-hero p{margin:0;color:#627b92;font-size:13px;line-height:1.45}
+.vocabulary-landing-hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:15px}
+.vocabulary-landing-hero-actions a{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:9px 15px;border:1px solid #a5d9d8;border-radius:10px;background:#fff;color:#087f87;font-size:12px;font-weight:850;text-decoration:none}
+.vocabulary-landing-hero-actions a:first-child{border-color:#078f98;background:#078f98;color:#fff}
+.vocabulary-landing-hero-actions a:hover{filter:brightness(.94)}
 .vocabulary-landing-hero-stats{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
 .vocabulary-landing-hero-stats>span{display:grid;grid-template-columns:24px auto;column-gap:8px;align-items:center;min-width:118px;padding:8px 11px;border:1px solid #e4f0f1;border-radius:12px;background:#ffffffd9;box-shadow:0 4px 14px #123e5210}
 .vocabulary-landing-hero-stats svg{grid-row:1/3;color:#08a19e}

@@ -44,8 +44,6 @@ export function VocabularyLanding() {
   const [category, setCategory] = useState<Category>("all");
   const [query, setQuery] = useState("");
   const saved = entries.filter((entry) => entry.kind === "word").length;
-  const total = counts.ielts !== undefined && counts.cefr !== undefined ? counts.ielts + counts.cefr : null;
-  const progress = total && studiedCount !== null ? Math.min(100, Math.round(studiedCount / total * 100)) : 0;
 
   useEffect(() => {
     if (!db) return;
@@ -79,13 +77,14 @@ export function VocabularyLanding() {
   return <main className="vocabulary-landing">
     <header className="vocabulary-landing-hero">
       <div className="vocabulary-landing-hero-copy">
-        <span className="vocabulary-landing-eyebrow">THƯ VIỆN TỪ VỰNG</span>
-        <h1>Hôm nay <em>bạn muốn học gì?</em></h1>
-        <p>Chọn một bộ từ phù hợp với mục tiêu của bạn, rồi bắt đầu học ngay.</p>
+        <span className="vocabulary-landing-eyebrow">HỌC TỪ VỰNG MỖI NGÀY</span>
+        <h1>Bắt đầu với <em>10 từ hôm nay</em></h1>
+        <p>Một buổi ngắn để học nghĩa, cách dùng và tự kiểm tra. Bạn có thể chọn bộ từ ở bên dưới.</p>
+        <div className="vocabulary-landing-hero-actions"><Link href="/app/vocabulary/study?collection=ielts">Học 10 từ IELTS <ArrowRight size={17} /></Link><Link href="/app/vocabulary/review">Ôn từ đã lưu</Link></div>
         <div className="vocabulary-landing-hero-stats" aria-label="Tiến độ từ vựng">
-          <span><BookOpen size={20} /><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><small>từ đã học</small></span>
+          <span><BookOpen size={20} /><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><small>từ đã xem hoặc luyện</small></span>
           <span><Bookmark size={20} /><strong>{ready ? saved.toLocaleString("vi-VN") : "…"}</strong><small>từ đã lưu</small></span>
-          <span><Layers3 size={20} /><strong>6</strong><small>bộ từ để học</small></span>
+          <span><Layers3 size={20} /><strong>{cards.length}</strong><small>lựa chọn học tập</small></span>
         </div>
       </div>
       <div className="vocabulary-landing-hero-art" aria-hidden="true"><span className="book book-one">IELTS</span><span className="book book-two">A1–C2</span><span className="book book-three">LISTENING</span><BookOpen size={68} strokeWidth={1.7} /><Sparkles className="spark" size={25} /></div>
@@ -112,7 +111,7 @@ export function VocabularyLanding() {
 
       <aside className="vocabulary-landing-side" aria-label="Tiến độ và gợi ý học">
         <section className="vocabulary-landing-continue"><span className="vocabulary-landing-eyebrow">BẮT ĐẦU NHANH</span><h2>Học từ IELTS hôm nay</h2><p>Chọn chủ đề và band gợi ý, sau đó luyện bằng thẻ hoặc bài tập.</p><Link href="/app/vocabulary/study?collection=ielts">Bắt đầu học <ArrowRight size={17} /></Link></section>
-        <section className="vocabulary-landing-progress"><div className="vocabulary-landing-side-heading"><h2>Tiến độ của bạn</h2><Target size={20} /></div><div className="vocabulary-landing-progress-number"><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><span>/ {total === null ? "…" : total.toLocaleString("vi-VN")} từ trong hai kho IELTS và A1–C2</span></div><div className="vocabulary-landing-progress-track" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label="Tiến độ học từ IELTS và A1–C2"><span style={{ width: `${progress}%` }} /></div><small>{progress}% đã học</small><div className="vocabulary-landing-progress-saved"><Bookmark size={17} /> Từ đã lưu <b>{ready ? saved : "…"}</b></div><Link href="/app/vocabulary/review">Ôn từ đã lưu <ArrowRight size={16} /></Link></section>
+        <section className="vocabulary-landing-progress"><div className="vocabulary-landing-side-heading"><h2>Việc học của bạn</h2><Target size={20} /></div><div className="vocabulary-landing-progress-number"><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><span>từ đã xem hoặc luyện</span></div><small>Đây là số từ bạn từng tương tác, chưa phải số từ đã thuộc.</small><div className="vocabulary-landing-progress-saved"><Bookmark size={17} /> Từ đã lưu <b>{ready ? saved : "…"}</b></div><Link href="/app/vocabulary/review">Ôn từ đã lưu <ArrowRight size={16} /></Link></section>
         <section className="vocabulary-landing-suggestion"><span className="vocabulary-landing-eyebrow">GỢI Ý HÔM NAY <Sparkles size={15} /></span><h2>Thử học qua nghe</h2><p>Chọn một trong 35 chủ đề của bộ IELTS Listening và luyện với 1.200 từ.</p><Link href="/app/vocabulary/listening"><Headphones size={18} /> Học IELTS Listening <ArrowRight size={16} /></Link></section>
         <section className="vocabulary-landing-side-actions"><h2>Luyện theo cách của bạn</h2><Link href="/app/vocabulary/study?collection=ielts&mode=cards"><Layers3 size={18} /> Thẻ lật <ArrowRight size={16} /></Link><Link href="/app/vocabulary/study?collection=ielts&mode=choice"><CheckCircle2 size={18} /> Trắc nghiệm <ArrowRight size={16} /></Link><Link href="/app/vocabulary/review"><RotateCcw size={18} /> Ôn tập <ArrowRight size={16} /></Link></section>
       </aside>
