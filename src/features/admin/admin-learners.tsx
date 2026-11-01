@@ -2,10 +2,11 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Ban, BellRing, CalendarPlus, ChevronLeft, ChevronRight, Flame, MessageCircleOff, Plus, Search, ShieldCheck, Target, Trash2, Unlock, UserRound } from "lucide-react";
+import { ArrowLeft, Ban, BellRing, CalendarPlus, ChevronLeft, ChevronRight, Flame, MessageCircleOff, Plus, Radio, Search, ShieldCheck, Target, Trash2, Unlock, UserRound } from "lucide-react";
 import { AccountAvatar } from "@/components/account/account-avatar";
 import { ActivityHeatmap } from "@/components/account/activity-heatmap";
 import { activeUntil, activityLabels, untilLabel, type LearnerOverview } from "@/lib/account";
+import { onlineLearnerIds } from "@/lib/learner-presence";
 import { createClient } from "@/lib/supabase/browser";
 import "./admin-learners.css";
 
@@ -31,12 +32,45 @@ function date(value: string | null | undefined, withTime = false) {
 }
 function tomorrow() { const day = new Date(); day.setDate(day.getDate() + 1); return day.toLocaleDateString("sv-SE"); }
 function Avatar({ name, size = 34 }: { name: string; size?: number }) { return <span className="learner-avatar"><AccountAvatar value={name} size={size} /></span>; }
-function StatusChips({ isAdmin, suspended, muted }: { isAdmin: boolean; suspended: string | null; muted: string | null }) {
+function StatusChips({ isAdmin, suspended, muted, online = false }: { isAdmin: boolean; suspended: string | null; muted: string | null; online?: boolean }) {
   return <span className="learner-chips">
+    {online && <span className="chip online"><i aria-hidden="true" /> Đang hoạt động</span>}
     {isAdmin && <span className="chip admin"><ShieldCheck size={12} /> Admin</span>}
     {activeUntil(suspended) && <span className="chip suspended"><Ban size={12} /> Đang khóa</span>}
     {activeUntil(muted) && <span className="chip muted"><MessageCircleOff size={12} /> Cấm chat</span>}
   </span>;
+}
+
+/** Presence is shared with the study room, but online and actively studying are separate flags. */
+function useOnlineLearners(db: ReturnType<typeof createClient>) {
+  const [onlineIds, setOnlineIds] = useState<Set<string> | null>(null);
+  useEffect(() => {
+    let mounted = true;
+    let channel: ReturnType<typeof db.channel> | null = null;
+    const { data: authEvents } = db.auth.onAuthStateChange((event, session) => {
+      if (event === "TOKEN_REFRESHED" && session) void db.realtime.setAuth(session.access_token);
+      if (event === "SIGNED_OUT" && mounted) setOnlineIds(null);
+    });
+    const sync = () => {
+      if (!mounted || !channel) return;
+      setOnlineIds(onlineLearnerIds(channel.presenceState()));
+    };
+    async function connect() {
+      const { data: { session } } = await db.auth.getSession();
+      if (!mounted || !session) return;
+      await db.realtime.setAuth(session.access_token);
+      if (!mounted) return;
+      channel = db.channel("study-together", { config: { private: true } });
+      channel.on("presence", { event: "sync" }, sync).subscribe((status) => {
+        if (!mounted) return;
+        if (status === "SUBSCRIBED") sync();
+        else if (status === "CHANNEL_ERROR" || status === "TIMED_OUT" || status === "CLOSED") setOnlineIds(null);
+      });
+    }
+    void connect();
+    return () => { mounted = false; authEvents.subscription.unsubscribe(); if (channel) void db.removeChannel(channel); };
+  }, [db]);
+  return onlineIds;
 }
 
 /** Runs an admin RPC and reports the outcome in plain words. */
@@ -55,6 +89,7 @@ function useAction(onDone: () => Promise<void> | void) {
 
 export function AdminLearners() {
   const db = useMemo(() => createClient(), []);
+  const onlineIds = useOnlineLearners(db);
   const [query, setQuery] = useState("");
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
@@ -77,11 +112,12 @@ export function AdminLearners() {
     weekAgo: new Date(Date.now() - 6 * 86400000).toLocaleDateString("sv-SE"),
   }));
   const total = rows?.[0]?.total_count ?? 0;
-  const list = (rows ?? []).filter((row) => filter === "all" ? true : filter === "active" ? (row.last_active ?? "") >= weekAgo
+  const list = (rows ?? []).filter((row) => filter === "all" ? true : filter === "online" ? onlineIds?.has(row.id) === true : filter === "active" ? (row.last_active ?? "") >= weekAgo
     : filter === "inactive" ? (row.last_active ?? "") < weekAgo : filter === "suspended" ? activeUntil(row.suspended_until)
     : filter === "muted" ? activeUntil(row.chat_muted_until) : row.is_admin);
   const tiles = [
     { label: "Tài khoản", value: total, icon: UserRound },
+    { label: "Đang hoạt động", value: onlineIds ? (rows ?? []).filter((row) => onlineIds.has(row.id)).length : "…", icon: Radio },
     { label: "Học hôm nay", value: (rows ?? []).filter((row) => row.last_active === today).length, icon: Flame },
     { label: "Học trong 7 ngày", value: (rows ?? []).filter((row) => (row.last_active ?? "") >= weekAgo).length, icon: CalendarPlus },
     { label: "Đang khóa / cấm chat", value: (rows ?? []).filter((row) => activeUntil(row.suspended_until) || activeUntil(row.chat_muted_until)).length, icon: Ban },
@@ -95,8 +131,8 @@ export function AdminLearners() {
       <div className="learner-toolbar">
         <label className="learner-search"><Search size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm theo tên hoặc email…" aria-label="Tìm học viên" /></label>
         <div className="learner-filters" role="group" aria-label="Lọc">
-          {[["all", "Tất cả"], ["active", "Học 7 ngày qua"], ["inactive", "Lâu không học"], ["suspended", "Đang khóa"], ["muted", "Cấm chat"], ["admin", "Admin"]].map(([id, label]) =>
-            <button key={id} type="button" className={filter === id ? "active" : ""} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label}</button>)}
+          {[["all", "Tất cả"], ["online", "Đang hoạt động"], ["active", "Học 7 ngày qua"], ["inactive", "Lâu không học"], ["suspended", "Đang khóa"], ["muted", "Cấm chat"], ["admin", "Admin"]].map(([id, label]) =>
+            <button key={id} type="button" className={filter === id ? "active" : ""} aria-pressed={filter === id} disabled={id === "online" && onlineIds === null} onClick={() => setFilter(id)}>{label}</button>)}
         </div>
       </div>
       {error && <p className="form-error" role="alert">{error}</p>}
@@ -105,7 +141,7 @@ export function AdminLearners() {
           <thead><tr><th>Học viên</th><th>Tham gia</th><th>Học gần nhất</th><th>Streak</th><th>30 ngày</th><th>Bài đã làm</th><th>Trạng thái</th><th aria-label="Mở" /></tr></thead>
           <tbody>
             {!rows ? <tr><td colSpan={8}><span className="skeleton learner-skeleton" /></td></tr>
-              : list.length === 0 ? <tr><td colSpan={8} className="learner-empty">Không có học viên phù hợp.</td></tr>
+              : list.length === 0 ? <tr><td colSpan={8} className="learner-empty">{filter === "online" && !onlineIds ? "Đang kết nối trạng thái hoạt động…" : "Không có học viên phù hợp."}</td></tr>
               : list.map((row) => <tr key={row.id}>
                 <td><Link href={`/admin/users/${row.id}`} className="learner-cell"><Avatar name={row.avatar} /><span><strong>{row.display_name}</strong><small>{row.email}</small></span></Link></td>
                 <td>{date(row.created_at)}</td>
@@ -113,7 +149,7 @@ export function AdminLearners() {
                 <td><span className={`learner-streak ${row.streak ? "lit" : ""}`}><Flame size={14} /> {row.streak}</span></td>
                 <td><span className="learner-days"><i style={{ width: `${Math.min(100, (row.active_days_30 / 30) * 100)}%` }} />{row.active_days_30}/30</span></td>
                 <td>{row.attempts}</td>
-                <td><StatusChips isAdmin={row.is_admin} suspended={row.suspended_until} muted={row.chat_muted_until} /></td>
+                <td><StatusChips isAdmin={row.is_admin} suspended={row.suspended_until} muted={row.chat_muted_until} online={onlineIds?.has(row.id)} /></td>
                 <td><Link href={`/admin/users/${row.id}`} className="learner-open" aria-label={`Quản lý ${row.display_name}`}><ChevronRight size={18} /></Link></td>
               </tr>)}
           </tbody>

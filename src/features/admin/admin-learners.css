@@ -20,7 +20,7 @@
 .button.danger { background: #d8463d; color: #fff; border-color: #d8463d; }
 .button.danger:hover { background: #bd352d; }
 
-.learner-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.learner-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 12px; }
 .learner-tile { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 2px 10px; padding: 14px 16px; }
 .learner-tile svg { grid-row: span 2; color: var(--teal-strong); }
 .learner-tile strong { color: var(--navy); font: 800 24px/1 var(--font-display); }
@@ -33,6 +33,7 @@
 .learner-filters { display: flex; flex-wrap: wrap; gap: 6px; }
 .learner-filters button { padding: 6px 11px; border: 1px solid var(--line); border-radius: 99px; background: #fff; color: var(--muted); font-size: 12.5px; font-weight: 700; }
 .learner-filters button.active { border-color: var(--teal-strong); background: var(--teal-strong); color: #fff; }
+.learner-filters button:disabled { cursor: wait; opacity: 0.5; }
 .learner-table-wrap { max-width: 100%; overflow-x: auto; }
 .learner-table { width: 100%; min-width: 860px; border-collapse: collapse; font-size: 13px; }
 .learner-table th { padding: 8px 10px; border-bottom: 1px solid var(--line); color: var(--subtle); font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; text-align: left; text-transform: uppercase; }
@@ -54,6 +55,8 @@
 .learner-chips { display: inline-flex; flex-wrap: wrap; gap: 4px; vertical-align: middle; }
 .chip { display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px; border-radius: 99px; background: var(--surface-2); color: var(--muted); font-size: 11px; font-weight: 700; white-space: nowrap; }
 .chip.admin { background: #e8f1fd; color: #2f69b3; }
+.chip.online { background: #e5f8ef; color: #147a55; }
+.chip.online i { width: 7px; height: 7px; border-radius: 50%; background: #1fbd85; }
 .chip.suspended { background: #fde8e6; color: #b4372f; }
 .chip.muted { background: #fff3dc; color: #a16207; }
 .learner-open { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; color: var(--muted); }
