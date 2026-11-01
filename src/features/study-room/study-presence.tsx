@@ -4,12 +4,12 @@ import { usePathname } from "next/navigation";
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
+import { activeLearnerCount } from "@/lib/learner-presence";
 
 export type StudyRoomMessage = { id: string; user_id: string; display_name: string; body: string; created_at: string; is_admin: boolean };
 export type RoomStatus = "connecting" | "live" | "offline";
 type MessageEvent = "INSERT" | "DELETE";
 type MessageListener = (event: MessageEvent, row: StudyRoomMessage) => void;
-type PresenceMeta = { active?: boolean };
 type StudyPresence = {
   online: number | null;
   status: RoomStatus;
@@ -20,6 +20,7 @@ type StudyPresence = {
 };
 
 const STREAK_SECONDS = 300;
+const ONLINE_IDLE_MS = 5 * 60 * 1000;
 
 const StudyPresenceContext = createContext<StudyPresence>({
   online: null,
@@ -31,8 +32,7 @@ const StudyPresenceContext = createContext<StudyPresence>({
 });
 
 function activeLearners(channel: ReturnType<ReturnType<typeof createClient>["channel"]>) {
-  return Object.values(channel.presenceState()).filter((metas) =>
-    (metas as PresenceMeta[]).some((meta) => meta.active === true)).length;
+  return activeLearnerCount(channel.presenceState());
 }
 
 export function useStudyPresence() {
@@ -48,6 +48,7 @@ export function StudyPresenceProvider({ children }: { children: React.ReactNode 
   const [sessionUser, setSessionUser] = useState(demoMode ? "demo" : "");
   const inRoom = pathname === "/app/study-together";
   const sessionActiveRef = useRef(sessionActive);
+  const lastInteractionRef = useRef(0);
   const syncTrackingRef = useRef<(() => Promise<void>) | null>(null);
   const listeners = useRef(new Set<MessageListener>());
 
@@ -92,10 +93,12 @@ export function StudyPresenceProvider({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     if (demoMode || !process.env.NEXT_PUBLIC_SUPABASE_URL) return;
+    lastInteractionRef.current = Date.now();
     const db = createClient();
     let active = true;
     let subscribed = false;
-    let tracked = false;
+    let tracked: { online: boolean; active: boolean } | null = null;
+    let syncing = false;
     let channel: ReturnType<typeof db.channel> | null = null;
     const { data: authEvents } = db.auth.onAuthStateChange((event, session) => {
       if (event === "TOKEN_REFRESHED" && session) void db.realtime.setAuth(session.access_token);
@@ -103,18 +106,32 @@ export function StudyPresenceProvider({ children }: { children: React.ReactNode 
     });
 
     async function syncTracking() {
-      if (!active || !subscribed || !channel) return;
-      if (sessionActiveRef.current && !tracked) {
-        const result = await channel.track({ active: true, joined_at: new Date().toISOString() });
-        tracked = result === "ok";
-        if (active && !sessionActiveRef.current && tracked) void syncTracking();
-      } else if (!sessionActiveRef.current && tracked) {
-        await channel.track({ active: false });
-        tracked = false;
-        if (active && sessionActiveRef.current) void syncTracking();
+      if (!active || !subscribed || !channel || syncing) return;
+      syncing = true;
+      try {
+        while (active && subscribed && channel) {
+          const online = document.visibilityState === "visible" && Date.now() - lastInteractionRef.current < ONLINE_IDLE_MS;
+          const next = { online, active: online && sessionActiveRef.current };
+          if (tracked?.online === next.online && tracked.active === next.active) break;
+          const result = await channel.track({ ...next, joined_at: new Date().toISOString() });
+          if (result !== "ok") break;
+          tracked = next;
+        }
+      } catch {
+        tracked = null;
+      } finally {
+        syncing = false;
       }
     }
     syncTrackingRef.current = syncTracking;
+    const markInteraction = () => { lastInteractionRef.current = Date.now(); void syncTracking(); };
+    const onVisibility = () => { if (document.visibilityState === "visible") lastInteractionRef.current = Date.now(); void syncTracking(); };
+    const idleTimer = window.setInterval(() => void syncTracking(), 30000);
+    window.addEventListener("pointerdown", markInteraction);
+    window.addEventListener("keydown", markInteraction);
+    window.addEventListener("wheel", markInteraction);
+    window.addEventListener("focus", markInteraction);
+    document.addEventListener("visibilitychange", onVisibility);
 
     async function connect() {
       const { data: { session } } = await db.auth.getSession();
@@ -143,7 +160,7 @@ export function StudyPresenceProvider({ children }: { children: React.ReactNode 
             void syncTracking();
           } else if (nextStatus === "CHANNEL_ERROR" || nextStatus === "TIMED_OUT" || nextStatus === "CLOSED") {
             subscribed = false;
-            tracked = false;
+            tracked = null;
             setStatus("offline");
             setOnline(null);
           }
@@ -154,6 +171,12 @@ export function StudyPresenceProvider({ children }: { children: React.ReactNode 
     return () => {
       active = false;
       syncTrackingRef.current = null;
+      window.clearInterval(idleTimer);
+      window.removeEventListener("pointerdown", markInteraction);
+      window.removeEventListener("keydown", markInteraction);
+      window.removeEventListener("wheel", markInteraction);
+      window.removeEventListener("focus", markInteraction);
+      document.removeEventListener("visibilitychange", onVisibility);
       authEvents.subscription.unsubscribe();
       if (channel) void db.removeChannel(channel);
     };
