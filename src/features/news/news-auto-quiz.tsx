@@ -10,7 +10,7 @@ import { addHighlight, highlightColors, parseHighlights, segments, type Highligh
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
 import { choiceTypes, gapTypes } from "@/lib/news/ielts-passage";
-import { parseArrowTableCompletion, parseTableCompletion } from "@/lib/news/table-completion";
+import { parseArrowTableCompletion, parseQuestionTableCompletion, parseTableCompletion } from "@/lib/news/table-completion";
 import "@/app/news-enrichment.css";
 
 export type { QuestionType };
@@ -278,7 +278,10 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
     {sections.map((section) => {
       const group = groups[section.type];
       const first = section.items[0].number; const last = section.items[section.items.length - 1].number;
-      const arrowTable = section.type === "table_completion" ? parseArrowTableCompletion(section.items.map(({ question }) => question.prompt)) : null;
+      const tablePrompts = section.items.map(({ question }) => question.prompt.replace(/\n\[W[123]\]$/, ""));
+      const arrowTable = section.type === "table_completion"
+        ? parseArrowTableCompletion(tablePrompts) ?? parseQuestionTableCompletion(tablePrompts)
+        : null;
       const noteWordLimits = section.type === "note_completion"
         ? section.items.map(({ question }) => noteWordLimitForPrompt(question.prompt)) : [];
       const sharedNoteWordLimit = noteWordLimits.length && noteWordLimits.every((limit) => limit === noteWordLimits[0])
