@@ -62,6 +62,10 @@ const groups = [
     ],
   },
   {
+    label: "Luyện tập",
+    links: [{ href: "/app/dictation", label: "Dictation", icon: Headphones, tone: "teal" }],
+  },
+  {
     label: "Tổng quan",
     links: [
       { href: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard, tone: "teal" },
