@@ -18,6 +18,7 @@ export const releaseLocks = process.env.NODE_ENV === "production" && process.env
 
 export function lockedLearnerPath(pathname: string) {
   if (!releaseLocks) return false;
+  if (pathname === "/app/reading/vocabulary") return false;
   return /^\/app\/(grammar|reading|listening|writing|speaking|question-bank|learn)(?:\/|$)/.test(pathname)
     || /^\/app\/vocabulary\/mode\//.test(pathname)
     || pathname === "/app/content-lab" || pathname.startsWith("/app/content-lab/")
