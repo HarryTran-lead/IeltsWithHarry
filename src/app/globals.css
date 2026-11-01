@@ -7010,3 +7010,44 @@ a.card:hover {
   .learning-focus .sidebar { top: 0; height: 100%; }
   .learning-focus .main-area { min-height: calc(100vh - 56px); padding: 8px 10px 24px; }
 }
+
+/* Vocabulary pages should open on the learning controls, close to the app shell. */
+.vocabulary-layout .main-area { padding: 5px 12px 30px; }
+.vocabulary-layout .vocabulary-landing { padding: 5px 6px 24px; }
+.vocabulary-layout .vocabulary-landing-hero { padding: 10px 16px; margin-bottom: 10px; }
+.vocabulary-layout .vocabulary-landing-hero-art { display: none; }
+.vocabulary-layout .vocabulary-landing-hero h1 { font-size: clamp(24px, 2vw, 30px); }
+.vocabulary-layout .vocab-hub { max-width: none; margin: 0; padding: 4px 6px 30px; }
+.vocabulary-layout .vocab-study-toolbar, .vocabulary-layout .vocab-study .vocab-study-board { width: min(100%, 1100px); max-width: 1100px; margin-left: 0; }
+
+.vocabulary-layout .listening-vocab-page, .vocabulary-layout .collocations-page, .vocabulary-layout .word-formation-page,
+.vocabulary-layout .reading-vocab-page, .vocabulary-layout .translation-page { box-sizing: border-box; width: 100%; max-width: none; margin: 0; padding: 5px 8px 30px; }
+.vocabulary-layout .listening-vocab-hero, .vocabulary-layout .collocations-header, .vocabulary-layout .word-formation-hero { margin: 5px 0 9px; }
+.vocabulary-layout .listening-vocab-hero h1, .vocabulary-layout .collocations-header h1, .vocabulary-layout .word-formation-hero h1 { font-size: clamp(24px, 2.3vw, 30px); margin: 2px 0 3px; }
+.vocabulary-layout .listening-vocab-hero p, .vocabulary-layout .collocations-header p, .vocabulary-layout .word-formation-hero p { font-size: 12px; line-height: 1.35; }
+.vocabulary-layout .listening-vocab-hero-icon, .vocabulary-layout .collocations-total, .vocabulary-layout .word-formation-hero > svg { display: none; }
+.vocabulary-layout .listening-vocab-back, .vocabulary-layout .collocations-top, .vocabulary-layout .word-formation-back { min-height: 25px; }
+.vocabulary-layout .listening-vocab-controls, .vocabulary-layout .collocations-toolbar { padding: 8px 10px; border-radius: 13px; }
+.vocabulary-layout .listening-vocab-controls select, .vocabulary-layout .collocations-toolbar select { height: 36px; }
+.vocabulary-layout .listening-vocab-stats, .vocabulary-layout .collocations-stats { padding: 6px 3px; gap: 17px; font-size: 13px; }
+.vocabulary-layout .listening-vocab-tabs { margin-bottom: 8px; }
+.vocabulary-layout .listening-vocab-tabs button { padding: 7px 12px; }
+.vocabulary-layout .listening-vocab-topics, .vocabulary-layout .listening-vocab-library, .vocabulary-layout .listening-vocab-study,
+.vocabulary-layout .collocations-study, .vocabulary-layout .collocations-library { padding: 16px; border-radius: 16px; }
+.vocabulary-layout .listening-vocab-topic-grid { margin-top: 12px; }
+.vocabulary-layout .listening-vocab-card, .vocabulary-layout .collocations-card { margin-left: 0; }
+.vocabulary-layout .collocations-progress { margin: 10px 0 12px; }
+.vocabulary-layout .word-formation-stats { gap: 17px; margin: 5px 0 10px; font-size: 13px; }
+.vocabulary-layout .word-formation-stats strong { font-size: 17px; }
+.vocabulary-layout .word-formation-layout { gap: 10px; }
+.vocabulary-layout .reading-vocab-back { margin-bottom: 6px; }
+.vocabulary-layout .reading-vocab-hero { padding: 10px 14px; }
+.vocabulary-layout .reading-vocab-stats { margin: 6px 0; }
+.vocabulary-layout .translation-heading { margin-bottom: 8px; }
+@media (max-width: 700px) {
+  .vocabulary-layout .main-area { padding: 4px 8px 22px; }
+  .vocabulary-layout .vocabulary-landing, .vocabulary-layout .vocab-hub,
+  .vocabulary-layout .listening-vocab-page, .vocabulary-layout .collocations-page, .vocabulary-layout .word-formation-page,
+  .vocabulary-layout .reading-vocab-page, .vocabulary-layout .translation-page { padding: 5px 4px 22px; }
+  .vocabulary-layout .listening-vocab-card, .vocabulary-layout .collocations-card { margin-inline: auto; }
+}

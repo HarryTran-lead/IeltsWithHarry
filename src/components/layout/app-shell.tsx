@@ -177,6 +177,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const { tasks, attempts, error, clearError } = useDemo();
   const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const vocabularyLayout = /^\/app\/(?:vocabulary(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
   const learningRoute = /^\/app\/(?:vocabulary\/(?:study|review|practice|listening|collocations|word-formation|translation)(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
   const { online: studyOnline } = useStudyPresence();
   const learnerStreak = useLearnerStreak();
@@ -281,7 +282,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
 
   return (
     <div
-      className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""} ${learningRoute ? "learning-focus" : ""} ${mode !== "off" ? weatherStyles.skyFrame : ""}`}
+      className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""} ${vocabularyLayout ? "vocabulary-layout" : ""} ${learningRoute ? "learning-focus" : ""} ${mode !== "off" ? weatherStyles.skyFrame : ""}`}
       data-sky-phase={mode !== "off" ? phase : undefined}
     >
       <header className={`topbar ${mode !== "off" ? weatherStyles.headerSurface : ""}`}>
