@@ -98,3 +98,23 @@ export function parseArrowTableCompletion(prompts: string[]): ArrowTable | null 
   if (!secondHeader || rows.some((row) => !row.label)) return null;
   return { instruction, headers: [firstHeader, secondHeader], rows };
 }
+
+/** Normalize one-row-per-question table prompts into a single shared table. */
+export function parseQuestionTableCompletion(prompts: string[]): ArrowTable | null {
+  if (!prompts.length) return null;
+  const rows = prompts.map((raw, index) => {
+    const prompt = raw.replace(/\r\n?/g, " ").replace(/\s+/g, " ").trim();
+    if ((prompt.match(/_{3,}|\.{3,}|…/g) ?? []).length !== 1) return null;
+    const colon = prompt.lastIndexOf(":");
+    const label = colon > 0 ? prompt.slice(0, colon).trim() : `Item ${index + 1}`;
+    const value = colon > 0 ? prompt.slice(colon + 1).trim() : prompt;
+    if (!label || !value || !blank.test(value)) return null;
+    return { label, value };
+  });
+  if (rows.some((row) => !row)) return null;
+  return {
+    instruction: "Complete the table using information from the article.",
+    headers: ["Information", "Details"],
+    rows: rows as { label: string; value: string }[],
+  };
+}
