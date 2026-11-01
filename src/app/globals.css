@@ -7051,3 +7051,31 @@ a.card:hover {
   .vocabulary-layout .reading-vocab-page, .vocabulary-layout .translation-page { padding: 5px 4px 22px; }
   .vocabulary-layout .listening-vocab-card, .vocabulary-layout .collocations-card { margin-inline: auto; }
 }
+
+/* The desktop sidebar control stays at the middle of its outer edge. */
+@media (min-width: 701px) {
+  .app-frame .desktop-sidebar-toggle {
+    position: fixed;
+    top: calc(50vh + 36px);
+    left: 244px;
+    z-index: 40;
+    width: 30px;
+    height: 58px;
+    margin: 0;
+    border: 1px solid #cfe2e5;
+    border-left: 0;
+    border-radius: 0 12px 12px 0;
+    background: #fff;
+    box-shadow: 4px 4px 13px #163d551c;
+    color: #087f89;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .app-frame .desktop-sidebar-toggle:hover { background: #e9f8f7; color: #075d69; }
+  .app-frame .desktop-sidebar-toggle:focus-visible { outline: 3px solid #48bec5; outline-offset: 2px; }
+  .app-frame.sidebar-collapsed .desktop-sidebar-toggle { left: 0; }
+  .app-frame.learning-focus .desktop-sidebar-toggle { top: calc(50vh + 28px); }
+}
+@media (min-width: 701px) and (max-width: 1100px) {
+  .app-frame:not(.sidebar-collapsed) .desktop-sidebar-toggle { left: 220px; }
+}
