@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 
 SOURCE_HOST = "learningenglish.voanews.com"
 AUDIO_HOSTS = frozenset(("voa-audio.voanews.eu", "voa-audio-english.voanews.eu"))
-ARTICLE = re.compile(r"^/(?:a|amp)/[^?#]+/\d+\.html$", re.I)
+ARTICLE = re.compile(r"^/(?:a|amp)/(?:[^?#]+/)?\d+\.html$", re.I)
 SPACES = re.compile(r"\s+")
 
 
