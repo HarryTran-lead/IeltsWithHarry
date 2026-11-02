@@ -41,7 +41,8 @@ export function ClipDictation() {
       .then(({ data, error: failure }) => {
         if (!alive) return;
         if (failure) setError(failure.message);
-        else setClips((data ?? []) as Clip[]);
+        else setClips(((data ?? []) as Clip[]).sort((a, b) =>
+          a.source_dataset.localeCompare(b.source_dataset) || a.title.localeCompare(b.title, undefined, { numeric: true })));
         setLoading(false);
       });
     return () => { alive = false; };
