@@ -44,6 +44,7 @@ export function VoaDictation() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [chosenLesson, setLesson] = useState<Lesson | null>(null);
   const [segments, setSegments] = useState<Segment[]>([]);
+  const [segmentsLessonId, setSegmentsLessonId] = useState("");
   const [segmentsLoading, setSegmentsLoading] = useState(false);
   const [segmentsError, setSegmentsError] = useState("");
   const [segmentsReload, setSegmentsReload] = useState(0);
@@ -110,16 +111,19 @@ export function VoaDictation() {
       }
       const loaded = (s.data ?? []) as Segment[];
       setSegments(loaded);
+      setSegmentsLessonId(lesson.id);
       setSegmentsLoading(false);
 
-      const a = await db.from("voa_dictation_attempts")
-        .select("segment_id,accuracy,answer,created_at,voa_dictation_segments!inner(lesson_id)")
-        .eq("voa_dictation_segments.lesson_id", lesson.id)
-        .order("created_at", { ascending: false }).limit(2000);
+      const batches = Array.from({ length: Math.ceil(loaded.length / 100) }, (_, index) => loaded.slice(index * 100, (index + 1) * 100).map((item) => item.id));
+      const results = await Promise.all(batches.map((ids) => db.from("voa_dictation_attempts")
+        .select("segment_id,accuracy,answer,created_at")
+        .in("segment_id", ids)
+        .order("created_at", { ascending: false }).limit(2000)));
       if (!alive) return;
-      if (a.error) { setError(a.error.message); return; }
+      const failed = results.find((result) => result.error);
+      if (failed?.error) { setError(failed.error.message); return; }
       const latest: Record<string, Attempt> = {};
-      for (const row of (a.data ?? []) as Attempt[]) if (!latest[row.segment_id]) latest[row.segment_id] = row;
+      for (const result of results) for (const row of (result.data ?? []) as Attempt[]) if (!latest[row.segment_id]) latest[row.segment_id] = row;
       setAttempts(latest);
       if (!selectionTouched.current) {
         const next = loaded.findIndex((item) => !latest[item.id] || Number(latest[item.id].accuracy) < 80);
@@ -157,7 +161,7 @@ export function VoaDictation() {
     audio.current?.pause(); fullAudio.current?.pause(); playingSegment.current = null;
     if (replayTimeout.current) clearTimeout(replayTimeout.current);
     if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current);
-    setLesson(item); setSegments([]); setAttempts({}); setSkipped({}); setSelected(0);
+    setLesson(item); setSegments([]); setSegmentsLessonId(""); setAttempts({}); setSkipped({}); setSelected(0);
     setAnswer(""); setGapInputs({}); setFeedback("idle"); setChecked(false);
     setSegmentsError(""); setSegmentsLoading(true); setReviewMistakes(false);
     setShowTranscript(false); setSegmentsReload((value) => value + 1);
@@ -317,7 +321,7 @@ export function VoaDictation() {
                     <div className="voa-task-navigation"><button type="button" disabled={selected === 0} onClick={() => choose(selected - 1)}><ArrowLeft size={16} /> Câu trước</button><button type="button" className="voa-primary-button" disabled={selected === segments.length - 1} onClick={() => choose(selected + 1)}>Câu tiếp theo <ArrowRight size={16} /></button></div>
                   </div>
                   <div className="voa-tip"><span aria-hidden="true">💡</span><div><strong>Mẹo luyện hiệu quả</strong><p>Nghe tối đa ba lượt, chép theo những gì bạn nghe được, rồi đối chiếu từng từ.</p></div></div>
-                </> : segmentsLoading ? <p role="status" className="voa-empty">Đang tải các câu và mốc thời gian…</p> : segmentsError ? <div role="alert" className="voa-alert"><p>Không tải được câu: {segmentsError}</p><button type="button" onClick={() => { setSegmentsError(""); setSegmentsLoading(true); setSegmentsReload((value) => value + 1); }}>Thử tải lại</button></div> : <p className="voa-empty">Bài này chưa có câu đã căn thời gian.</p>}
+                </> : segmentsError ? <div role="alert" className="voa-alert"><p>Không tải được câu: {segmentsError}</p><button type="button" onClick={() => { setSegmentsError(""); setSegmentsLoading(true); setSegmentsReload((value) => value + 1); }}>Thử tải lại</button></div> : segmentsLoading || segmentsLessonId !== lesson.id ? <p role="status" className="voa-empty">Đang tải các câu và mốc thời gian…</p> : <p className="voa-empty">Bài này chưa có câu đã căn thời gian.</p>}
               </section>
               {segments.length > 0 && mode === "read" && <details className="voa-full-transcript voa-surface" open={showTranscript} onToggle={(e) => setShowTranscript(e.currentTarget.open)}><summary><BookOpen size={18} /> Toàn bộ audio và transcript</summary><audio ref={fullAudio} controls preload="none" src={"/api/voa/audio/" + lesson.id} onPlay={() => { playingSegment.current = null; audio.current?.pause(); }} aria-label={"Audio toàn bài " + lesson.title} /><div className="voa-full-list">{segments.map((item,index) => <button type="button" key={item.id} onClick={() => { choose(index); playSegment(index); }}><time>{clock(item.start_ms)}</time> {item.reference_text}</button>)}</div></details>}
             </div>

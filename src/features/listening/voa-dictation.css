@@ -42,7 +42,7 @@
 .voa-detail-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:25px}
 .voa-detail-actions a{color:#00828e;text-decoration:none;font-size:13px;font-weight:700}
 .voa-detail-actions .voa-primary-button{margin-left:auto}
-@media(max-width:900px){.voa-bank-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.voa-bank-library{grid-template-columns:1fr}.voa-collection-filter{position:static}.voa-detail-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.voa-bank-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.voa-bank-library{grid-template-columns:1fr}.voa-collection-filter{position:static;display:flex;align-items:center;gap:6px;overflow-x:auto}.voa-collection-filter h2{margin:0 8px 0 0;white-space:nowrap}.voa-collection-filter button{width:auto;flex:none;white-space:nowrap}.voa-collection-filter p{display:none}.voa-detail-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.voa-bank-grid{grid-template-columns:1fr}.voa-bank-hero{align-items:start;flex-direction:column}.voa-bank-library .voa-catalog{grid-template-columns:1fr}.voa-detail-actions .voa-primary-button{margin-left:0;width:100%}}
 .voa-lab label{font-size:13px;font-weight:650;color:#627e99}
 .voa-breadcrumb{display:flex;align-items:center;gap:10px;margin:0 0 11px;color:#8ca0b5;font-size:13px}
