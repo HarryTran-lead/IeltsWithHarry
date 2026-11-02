@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, Search, Volume2 } from "lucide-react";
+import { ArrowRight, Check, Search, Volume2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import { CollocationEntry, CollocationProgress, nextCollocationProgress, recommendCollocations } from "@/lib/vocabulary/collocation-recommendations";
 import "./collocations-page.css";
+import { VocabPageHeader } from "./vocab-page-header";
 
 type Grade = CollocationProgress["last_grade"];
 const levels = ["all", "A1", "A2", "B1", "B2", "C1", "C2"];
@@ -84,8 +84,7 @@ export function CollocationsPage() {
   }
 
   return <main className="collocations-page">
-    <div className="collocations-top"><Link href="/app/vocabulary"><ArrowLeft size={17} /> Từ vựng</Link><span>BỘ COLLOCATIONS · A1–C2</span></div>
-    <header className="collocations-header"><div><h1>Học cụm từ <em>đúng lúc</em></h1><p>988 collocations song ngữ. Học cụm mới, ôn cụm đến hạn và xem tiến độ của bạn.</p></div><div className="collocations-total"><strong>{entries.length || 988}</strong><span>cụm từ trong bộ</span></div></header>
+    <VocabPageHeader label="Collocations · A1–C2" title={<>Học cụm từ <em>đúng lúc</em></>} description={`${(entries.length || 988).toLocaleString("vi-VN")} collocations song ngữ. Học cụm mới, ôn cụm đến hạn và xem tiến độ của bạn.`} />
     <section className="collocations-toolbar" aria-label="Chọn trình độ và cách học">
       <label>Trình độ<select value={level} onChange={(event) => changeLevel(event.target.value)}>{levels.map((item) => <option key={item} value={item}>{item === "all" ? "Tất cả A1–C2" : item}</option>)}</select></label>
       <label>Mỗi buổi<select value={daily} onChange={(event) => { setDaily(Number(event.target.value)); setSessionIds([]); setRevealed(false); }}>{dailyOptions.map((item) => <option key={item} value={item}>{item} cụm</option>)}</select></label>

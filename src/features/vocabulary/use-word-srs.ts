@@ -12,7 +12,7 @@ export type StudyWord = { headword: string; meaning: string; example: string; po
 /** FSRS schedules for the learner's word notebook. Words met in a study session are saved and scheduled here,
  * so everything learned comes back for review instead of only words saved by hand. */
 export function useWordSrs() {
-  const { addEntry, ready } = useNotebook();
+  const { addEntry, ready, entries } = useNotebook();
   const db = useMemo(() => demoMode ? null : createClient(), []);
   const [reviews, setReviews] = useState<Map<string, WordReview>>(new Map());
   const [loaded, setLoaded] = useState(demoMode);
@@ -45,15 +45,25 @@ export function useWordSrs() {
     return true;
   }, [db]);
 
+  /** The notebook entry for a studied word, created on first use. */
+  const ensureEntry = useCallback(async (word: StudyWord) => {
+    const meaning = word.meaning.trim().slice(0, 200);
+    if (!ready || !meaning) return undefined;
+    return addEntry({ kind: "word", title: word.headword.slice(0, 100), body: "", meaningVi: meaning, example: word.example.slice(0, 500),
+      partOfSpeech: word.pos.slice(0, 50), topic: word.topic.slice(0, 100) }, "/app/vocabulary/study");
+  }, [addEntry, ready]);
+
   /** Saves a studied word to the notebook (once) and gives it its first FSRS grade. Words already scheduled keep their history. */
   const learn = useCallback(async (word: StudyWord, value: ReviewGrade) => {
-    const meaning = word.meaning.trim().slice(0, 200);
-    if (!ready || !meaning) return;
-    const entry = await addEntry({ kind: "word", title: word.headword.slice(0, 100), body: "", meaningVi: meaning, example: word.example.slice(0, 500),
-      partOfSpeech: word.pos.slice(0, 50), topic: word.topic.slice(0, 100) }, "/app/vocabulary/study");
+    const entry = await ensureEntry(word);
     if (!entry || latest.current.has(entry.id)) return;
     await grade(entry, value);
-  }, [addEntry, grade, ready]);
+  }, [ensureEntry, grade]);
 
-  return { reviews, loaded, grade, learn };
+  const entryFor = useCallback((headword: string) => {
+    const key = headword.trim().replace(/\s+/g, " ").toLowerCase();
+    return entries.find((entry) => entry.kind === "word" && entry.title.trim().replace(/\s+/g, " ").toLowerCase() === key);
+  }, [entries]);
+
+  return { reviews, loaded, grade, learn, ensureEntry, entryFor };
 }

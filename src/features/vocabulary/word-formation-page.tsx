@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, RotateCcw, Search, Shuffle, Sparkles } from "lucide-react";
+import { ArrowRight, Check, RotateCcw, Search, Shuffle } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import {
@@ -12,6 +11,7 @@ import {
   type WordFormationMode, type WordFormationProgress, type WordPosition,
 } from "@/lib/vocabulary/word-formation";
 import "./word-formation-page.css";
+import { VocabPageHeader } from "./vocab-page-header";
 
 const labels: Record<WordFormationMode, string> = {
   family: "Điền họ từ", blank: "Điền dạng từ", choice: "Trắc nghiệm",
@@ -139,8 +139,7 @@ export function WordFormationPage() {
   }
 
   return <main className="word-formation-page">
-    <div className="word-formation-back"><Link href={root}><ArrowLeft size={17} /> Từ vựng</Link><span>WORD FORMATION LAB</span></div>
-    <header className="word-formation-hero"><div><span>300 HỌ TỪ · 7 CÁCH LUYỆN</span><h1>Một gốc từ, <em>nhiều cách dùng</em></h1><p>Nhận diện Noun, Verb, Adjective, Adverb và luyện đúng dạng trong câu.</p></div><Sparkles size={42} /></header>
+    <VocabPageHeader back={{ href: root, label: "Từ vựng" }} label="Word Formation · 300 họ từ" title={<>Một gốc từ, <em>nhiều cách dùng</em></>} description="Nhận diện Noun, Verb, Adjective, Adverb và luyện đúng dạng trong câu. 7 cách luyện." />
     <div className="word-formation-stats"><span><strong>{completed}</strong> / {eligible.length} đã làm</span><span><strong>{due}</strong> đến hạn ôn</span><span><strong>{wrong}</strong> cần luyện lại</span><span>Đang xem: <b>{labels[mode]}</b></span></div>
     {error && <p className="word-formation-error" role="alert">{error}</p>}
     {loading || !progressReady ? <div className="word-formation-empty">Đang tải Word Formation…</div>
