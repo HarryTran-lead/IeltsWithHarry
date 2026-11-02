@@ -32,7 +32,7 @@ export function VoaDictation() {
   const router = useRouter();
   const routeParts = pathname.split("/").filter(Boolean);
   const routeLessonId = routeParts[2] === "lessons" ? routeParts[3] : undefined;
-  const view = routeLessonId ? (routeParts[4] === "practice" ? "practice" : "detail") : routeParts[2] === "banks" ? "bank" : "home";
+  const view = routeLessonId ? "practice" : routeParts[2] === "banks" ? "bank" : "home";
   const db = useMemo(() => createClient(), []);
   const audio = useRef<HTMLAudioElement>(null);
   const fullAudio = useRef<HTMLAudioElement>(null);
@@ -167,7 +167,7 @@ export function VoaDictation() {
     setShowTranscript(false); setSegmentsReload((value) => value + 1);
     selectionTouched.current = false; setLastLessonId(item.id);
     try { window.localStorage.setItem("voa-last-lesson", item.id); } catch { /* Navigation still works. */ }
-    router.push(`/app/dictation/lessons/${item.id}`);
+    router.push(`/app/dictation/lessons/${item.id}/practice`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -291,14 +291,9 @@ export function VoaDictation() {
             {catalogPages > 1 && <div className="voa-pagination"><button type="button" disabled={catalogPage <= 1} onClick={() => setCatalogPage((value) => value - 1)}>← Trước</button><span>Trang {Math.min(catalogPage, catalogPages)}/{catalogPages}</span><button type="button" disabled={catalogPage >= catalogPages} onClick={() => setCatalogPage((value) => value + 1)}>Tiếp →</button></div>}
           </div></section>
         </>
-      ) : view === "detail" ? lesson ? (
+      ) : lesson ? (
         <>
-          <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dictation">Dictation</Link><span>›</span><Link href="/app/dictation/banks/voa">VOA Learning English</Link><span>›</span><span>Xem bài</span></nav>
-          <section className="voa-detail voa-surface"><span className="voa-eyebrow">THÔNG TIN TRƯỚC KHI HỌC</span><h1>{lesson.title}</h1><p>{lesson.topic} · {lesson.cefr} · VOA Learning English</p><div className="voa-detail-facts"><span><small>Trình độ</small><strong>{lesson.cefr}</strong></span><span><small>Nguồn</small><strong>VOA Learning English</strong></span><span><small>Trạng thái</small><strong>{lesson.status === "published" ? "Đã duyệt" : "Bản thử nghiệm"}</strong></span><span><small>Số câu</small><strong>{segmentsLoading ? "Đang tải…" : segments.length}</strong></span></div><p>Nghe từng câu hoặc đoạn audio, chép lại nội dung đã nghe và ôn các câu cần cải thiện.</p>{lesson.status !== "published" && <div className="voa-info-banner"><Info size={18} /><span>Mốc câu được căn tự động và có thể chưa khớp chính xác audio.</span></div>}{segmentsError && <p role="alert" className="voa-alert">{segmentsError}</p>}<div className="voa-detail-actions"><Link href="/app/dictation/banks/voa">← Chọn bài khác</Link><a href={lesson.source_url} target="_blank" rel="noreferrer">Bài gốc VOA ↗</a><button type="button" className="voa-primary-button" disabled={!segments.length} onClick={() => router.push(`/app/dictation/lessons/${lesson.id}/practice`)}>Bắt đầu luyện <ArrowRight size={17} /></button></div></section>
-        </>
-      ) : <p className="voa-empty" role="status">{loading ? "Đang tải bài học…" : "Không tìm thấy bài học này."}</p> : lesson ? (
-        <>
-          <header className="voa-lesson-header"><div><button type="button" className="voa-lesson-back" onClick={() => { audio.current?.pause(); fullAudio.current?.pause(); router.push(`/app/dictation/lessons/${lesson.id}`); window.scrollTo({ top: 0, behavior: "smooth" }); }}><ArrowLeft size={15} /> Thông tin bài</button><h1>{lesson.title}</h1><p>{lesson.cefr} · {lesson.topic}{previewEnabled && lesson.status !== "published" && <span className="voa-trial-note"> · Bản thử nghiệm, mốc audio căn tự động</span>}</p></div><a href={lesson.source_url} target="_blank" rel="noreferrer">Bài gốc VOA ↗</a></header>
+          <header className="voa-lesson-header"><div><button type="button" className="voa-lesson-back" onClick={() => { audio.current?.pause(); fullAudio.current?.pause(); router.push("/app/dictation/banks/voa"); window.scrollTo({ top: 0, behavior: "smooth" }); }}><ArrowLeft size={15} /> Thư viện bài học</button><h1>{lesson.title}</h1><p>{lesson.cefr} · {lesson.topic}{previewEnabled && lesson.status !== "published" && <span className="voa-trial-note"> · Bản thử nghiệm, mốc audio căn tự động</span>}</p></div><a href={lesson.source_url} target="_blank" rel="noreferrer">Bài gốc VOA ↗</a></header>
           <div className="voa-practice-layout">
             <div className="voa-practice-main">
               <section className="voa-exercise-card voa-surface">
