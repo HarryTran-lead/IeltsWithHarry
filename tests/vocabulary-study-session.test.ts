@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildLearnQueue, checkTyped, intervalLabel, requeue, reviewQueue, sessionGrade, wordState } from "../src/lib/vocabulary/study-session";
+import { buildLearnQueue, buildTest, checkTyped, intervalLabel, requeue, reviewQueue, sessionGrade, testCorrect, wordState } from "../src/lib/vocabulary/study-session";
 import type { WordReview } from "../src/lib/news/review";
 
 describe("Learn session queue", () => {
@@ -48,5 +48,27 @@ describe("review scheduling helpers", () => {
     const reviews = new Map([["late", review("late", "2026-01-02")], ["early", review("early", "2026-01-01")], ["future", review("future", "2099-01-01")]]);
     const queue = reviewQueue(entries, reviews, Date.parse("2026-02-01"), { fresh: 2, total: 50 });
     expect(queue.map((entry) => entry.id)).toEqual(["early", "late", "new1", "new2"]);
+  });
+});
+
+describe("mixed vocabulary test", () => {
+  const pool = ["one", "two", "three", "four", "five", "six"].map((title, index) => ({ id: String(index), title, meaningVi: `nghĩa ${index}` }));
+  let seed = 1;
+  const random = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+
+  it("mixes the four question kinds with the right answer among the options", () => {
+    const test = buildTest(pool, 6, random);
+    expect(test).toHaveLength(6);
+    expect(new Set(test.map((question) => question.kind))).toEqual(new Set(["meaning", "word", "type", "truefalse"]));
+    for (const question of test) {
+      if (question.kind !== "type") expect(question.options).toContain(question.answer);
+      expect(testCorrect(question, question.answer)).toBe(true);
+    }
+    const typed = test.find((question) => question.kind === "type")!;
+    expect(testCorrect(typed, typed.answer.toUpperCase())).toBe(true);
+  });
+
+  it("falls back to typing when there are too few words for options", () => {
+    expect(buildTest(pool.slice(0, 2), 2, random).every((question) => question.kind === "type")).toBe(true);
   });
 });

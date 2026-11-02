@@ -1,0 +1,61 @@
+/* Shared Vocabulary page header (hub, Collocations, Word Formation, Listening, Translation). */
+.vocab-page-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 4px 16px;
+  margin: 2px 0 16px;
+}
+.vocab-page-top {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 34px;
+}
+.vocab-page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0b8f98;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.vocab-page-label {
+  margin-left: auto;
+  color: #0b8f98;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.vocab-page-top > :last-child:not(.vocab-page-back):not(.vocab-page-label) { margin-left: 8px; }
+.vocab-page-title h1 {
+  margin: 0;
+  color: #13304f;
+  font: 800 clamp(26px, 2.4vw, 30px) / 1.15 var(--font-display);
+  letter-spacing: -0.02em;
+}
+.vocab-page-title h1 em { color: #0b8f98; font-style: normal; }
+.vocab-page-title p {
+  margin: 4px 0 0;
+  color: #5f768c;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.vocab-page-head .vocab-header-count {
+  padding: 7px 12px;
+  border: 1px solid #dce9ed;
+  border-radius: 999px;
+  background: #fff;
+  color: #0b8f98;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .vocab-page-head { grid-template-columns: minmax(0, 1fr); }
+  .vocab-page-head .vocab-header-count { justify-self: start; }
+  .vocab-page-label { display: none; }
+}

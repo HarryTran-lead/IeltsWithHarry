@@ -436,11 +436,11 @@ Không cần migration database. Từ học trong phiên được lưu vào Sổ
 | Chữ xám dưới 4.5:1 | Đã sửa 15 chỗ | các file CSS Vocabulary |
 | Ẩn bong bóng sổ tay trên mobile khi đang học | Đã làm | `globals.css` |
 | Sidebar: nhãn ngắn, thêm "Hôm nay", "Ôn tập", "Sổ từ & tiến độ" | Đã làm | `app-shell.tsx` |
-| Audio TTS sẵn cho từ + ví dụ (Gemini/Kokoro) | **Chưa làm**: vẫn dùng giọng trình duyệt, có công tắc "Tự phát âm" | cần job sinh audio |
-| Gộp Bộ thẻ vào Sổ từ, nút ☆ gắn sao | **Chưa làm** | |
-| Chế độ Kiểm tra trộn dạng (thay Mini quiz) | **Chưa làm** | |
-| Thư viện dạng danh sách dày + drawer chi tiết | **Một phần**: bỏ hình lặp, giảm huy hiệu; trang ngắn hơn ~25% | |
-| Đầu trang chung cho Collocations/Word Formation/Listening/Translation/Reading | **Chưa làm**: các màn này đã gần giống nhau | |
+| Phát âm chất lượng cao | Đã làm (04/11): bản ghi giọng người Wiktionary/Wikimedia (CC BY-SA, qua dictionaryapi.dev) cho từ, kèm IPA lấp chỗ thiếu ở bộ IELTS; câu ví dụ đọc bằng giọng Natural/Neural tốt nhất của thiết bị. Không dùng Gemini vì production chưa có `GEMINI_API_KEY` và quota miễn phí không đủ cho học viên | `lib/vocabulary/pronounce.ts` |
+| Gộp Bộ thẻ vào Sổ từ, nút ☆ gắn sao | Đã làm (04/11): thanh bộ thẻ trong Sổ từ, tạo/xoá bộ, thêm từ vào bộ, "Ôn bộ này", "Kiểm tra" theo bộ; sao trên Sổ từ, thẻ học và thẻ ôn (phím S). Sao là bộ thẻ đặc biệt "⭐ Đã gắn sao", không cần migration; `/decks` chuyển về Sổ từ | `use-decks.ts`, `vocabulary-hub.tsx` |
+| Chế độ Kiểm tra trộn dạng (thay Mini quiz) | Đã làm (04/11): 10/20/30 câu, 4 dạng (chọn nghĩa, chọn từ, gõ từ, đúng/sai), chấm khi nộp, "Ôn từ sai ngay" đưa từ sai vào ôn hôm nay | `study-session.ts` (`buildTest`), `vocabulary-hub.tsx` |
+| Thư viện dạng danh sách dày + chi tiết | Đã làm (04/11): mỗi từ một dòng, bấm mở ví dụ/nguồn; trang 4.451px → 1.953px (desktop) | `vocabulary-hub.tsx` (`LibraryRow`) |
+| Đầu trang chung cho Collocations/Word Formation/Listening/Translation | Đã làm (04/11). Reading Vocabulary (nằm dưới Reading) giữ đầu trang riêng | `vocab-page-header.tsx` |
 | Chuyển 450 mã màu sang token | **Một phần**: token mới cho phần đã viết lại | |
 
 Lưu ý vận hành: Sổ từ hiện tải tối đa 1.000 mục (trước là 500). Khi học viên học hơn ~1.000 từ, nên chuyển hàng ôn sang truy vấn phía server (`due_at <= now()`).

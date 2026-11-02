@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, BookOpen, Check, Headphones, Search, Volume2 } from "lucide-react";
+import { ArrowRight, BookOpen, Check, Headphones, Search, Volume2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import {
@@ -11,6 +10,7 @@ import {
   type ListeningProgress, type ListeningWord,
 } from "@/lib/listening/vocabulary";
 import "./listening-vocabulary-page.css";
+import { VocabPageHeader } from "@/features/vocabulary/vocab-page-header";
 
 type Mode = "cards" | "choice" | "dictation";
 type Tab = "topics" | "study" | "library";
@@ -115,8 +115,7 @@ export function ListeningVocabularyPage() {
   }
 
   return <main className="listening-vocab-page">
-    <div className="listening-vocab-back"><Link href={pathname.startsWith("/app/vocabulary/") ? "/app/vocabulary" : "/app/listening"}><ArrowLeft size={17} /> {pathname.startsWith("/app/vocabulary/") ? "Từ vựng" : "Listening"}</Link><span>BỘ TỪ VỰNG IELTS LISTENING</span></div>
-    <header className="listening-vocab-hero"><div><span className="listening-vocab-kicker">1.200 MỤC · 35 CHỦ ĐỀ</span><h1>Nghe được từ, <em>hiểu được ý</em></h1><p>Học theo chủ đề bằng thẻ nhớ, nghe chọn nghĩa và chép chính tả. Giọng đọc do trình duyệt tạo.</p></div><span className="listening-vocab-hero-icon"><Headphones size={45} /></span></header>
+    <VocabPageHeader back={pathname.startsWith("/app/vocabulary/") ? { href: "/app/vocabulary", label: "Từ vựng" } : { href: "/app/listening", label: "Listening" }} label="IELTS Listening · 1.200 mục · 35 chủ đề" title={<>Nghe được từ, <em>hiểu được ý</em></>} description="Học theo chủ đề bằng thẻ nhớ, nghe chọn nghĩa và chép chính tả. Giọng đọc do trình duyệt tạo." />
     <section className="listening-vocab-controls" aria-label="Bộ lọc học Listening">
       <label>Chủ đề<select value={topicId ?? "all"} onChange={(event) => changeScope(event.target.value === "all" ? null : Number(event.target.value))}><option value="all">Tất cả 35 chủ đề</option>{topics.map((topic) => <option value={topic.id} key={topic.id}>{topic.en} · {topic.vi}</option>)}</select></label>
       <label>Nhóm từ<select value={level} onChange={(event) => changeScope(topicId, event.target.value)}><option value="all">Tất cả</option><option value="Core">Core</option><option value="IELTS Listening">IELTS Listening</option></select></label>

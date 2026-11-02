@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
-import { ArrowLeft, ArrowRight, BookOpenCheck, Lightbulb, RotateCcw } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Lightbulb, RotateCcw } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import sourceTopics from "@/lib/vocabulary/ielts-topics.json";
@@ -11,6 +10,7 @@ import learningTopics from "@/lib/vocabulary/ielts-learning-topics.json";
 import { promptWordHints, type PromptHint } from "@/lib/vocabulary/vi-en-word-hints";
 import { chooseTranslationSession, compareTranslation, matchesCopiedWord, nextTranslationProgress, ratingForComparison, type TranslationExercise, type TranslationProgress, type WordComparison } from "@/lib/vocabulary/vi-en-translation";
 import "./vi-en-translation-page.css";
+import { VocabPageHeader } from "./vocab-page-header";
 
 type ModeFilter = "mixed" | "speaking" | "writing";
 type Selection = "new" | "due" | "all";
@@ -215,15 +215,9 @@ export function ViEnTranslationPage() {
   const sessionActive = Boolean(current || done);
 
   return <main className={"translation-page" + (sessionActive ? " is-active" : "")}>
-    <header className="translation-heading">
-      <div className="translation-heading-row">
-        <Link href="/app/vocabulary"><ArrowLeft size={17} /> Từ vựng</Link>
-        {sessionActive && <button type="button" className="translation-settings-toggle" aria-expanded={settingsOpen} onClick={() => setSettingsOpen((open) => !open)}>{settingsOpen ? "Ẩn bộ lọc" : "Đổi bộ lọc"}</button>}
-      </div>
-      <span>HỌC TỪ · CHÉP TỪ · VIẾT CÂU</span>
-      <h1>{sessionActive ? "Luyện dịch câu Việt → Anh" : "Viết câu tiếng Anh theo ý của bạn"}</h1>
-      {!sessionActive && <p>Chọn bài luyện, chép từ mục tiêu rồi viết câu. Kết quả được chấm theo từng từ.</p>}
-    </header>
+    <VocabPageHeader label="Học từ · Chép từ · Viết câu" title={sessionActive ? "Luyện dịch câu Việt → Anh" : <>Viết câu tiếng Anh <em>theo ý của bạn</em></>}
+      description={sessionActive ? undefined : "Chọn bài luyện, chép từ mục tiêu rồi viết câu. Kết quả được chấm theo từng từ."}
+      action={sessionActive && <button type="button" className="translation-settings-toggle" aria-expanded={settingsOpen} onClick={() => setSettingsOpen((open) => !open)}>{settingsOpen ? "Ẩn bộ lọc" : "Đổi bộ lọc"}</button>} />
 
     {(!sessionActive || settingsOpen) && <>
       <section className="translation-controls" aria-label="Chọn bài luyện dịch">

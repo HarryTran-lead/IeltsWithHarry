@@ -83,3 +83,30 @@ export function reviewQueue<T extends { id: string }>(entries: T[], reviewById: 
   const fresh = entries.filter((entry) => !reviewById.has(entry.id)).slice(0, limits.fresh);
   return [...due, ...fresh].slice(0, limits.total);
 }
+
+/** A mixed test like Quizlet's: pick the meaning, pick the word, type the word, or judge a pairing. */
+export type TestKind = "meaning" | "word" | "type" | "truefalse";
+export type TestQuestion<T> = { entry: T; kind: TestKind; options: string[]; answer: string; statement?: string };
+export const testKindLabels: Record<TestKind, string> = { meaning: "Chọn nghĩa", word: "Chọn từ", type: "Gõ từ", truefalse: "Đúng / Sai" };
+
+export function buildTest<T extends { id: string; title: string; meaningVi: string }>(pool: T[], count: number, random: () => number = Math.random): TestQuestion<T>[] {
+  const mix = <V,>(values: V[]) => values.map((value) => ({ value, key: random() })).sort((a, b) => a.key - b.key).map((item) => item.value);
+  const words = mix(pool.filter((entry) => entry.meaningVi.trim())).slice(0, count);
+  const kinds: TestKind[] = ["meaning", "word", "type", "truefalse"];
+  return words.map((entry, index) => {
+    const others = mix(pool.filter((other) => other.id !== entry.id && other.meaningVi !== entry.meaningVi));
+    const kind = others.length >= 3 ? kinds[index % kinds.length] : "type";
+    if (kind === "meaning") return { entry, kind, answer: entry.meaningVi, options: mix([entry.meaningVi, ...others.slice(0, 3).map((other) => other.meaningVi)]) };
+    if (kind === "word") return { entry, kind, answer: entry.title, options: mix([entry.title, ...others.slice(0, 3).map((other) => other.title)]) };
+    if (kind === "truefalse") {
+      const truth = random() < 0.5;
+      return { entry, kind, answer: truth ? "Đúng" : "Sai", options: ["Đúng", "Sai"], statement: truth ? entry.meaningVi : others[0].meaningVi };
+    }
+    return { entry, kind, answer: entry.title, options: [] };
+  });
+}
+
+/** Whether a test answer is right; typed answers use the same forgiving check as study. */
+export function testCorrect<T>(question: TestQuestion<T>, given: string) {
+  return question.kind === "type" ? checkTyped(given, question.answer) !== "wrong" : given === question.answer;
+}

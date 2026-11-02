@@ -138,3 +138,5 @@
   .vocab-rate{width:100%}
   .vocab-study kbd{display:none}
 }
+.vocab-study-card-tools{display:flex;align-items:center;gap:6px;margin:-4px 0 12px}
+.vocab-study-card-tools .vocab-study-speak{margin:0}

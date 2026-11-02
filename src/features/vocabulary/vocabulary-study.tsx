@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Check, Keyboard, Volume2, VolumeX, X } from "lucide-react";
+import { Check, Keyboard, Star, Volume2, VolumeX, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import type { ReviewGrade } from "@/lib/news/review";
@@ -15,7 +15,9 @@ import { ieltsBands } from "@/lib/vocabulary/ielts-bands";
 import { buildLearnQueue, checkTyped, requeue, sessionGrade, type LearnItem } from "@/lib/vocabulary/study-session";
 import { useStudiedWords } from "./use-studied-words";
 import { useWordSrs } from "./use-word-srs";
+import { useDecks } from "./use-decks";
 import { ExampleSentence } from "./example-sentence";
+import { pronounce, speakText, useIpa } from "@/lib/vocabulary/pronounce";
 import "./vocabulary-study-layout.css";
 
 type Word = {
@@ -39,19 +41,13 @@ const batchSize = 10;
 const clockNow = () => Date.now();
 const stageLabel = { intro: "Từ mới", choice: "Chọn nghĩa đúng", type: "Gõ lại từ" } as const;
 
-function speak(word: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(word);
-  utterance.lang = "en-US"; utterance.rate = 0.85;
-  window.speechSynthesis.speak(utterance);
-}
 
 export function VocabularyStudy() {
   const params = useSearchParams();
   const db = useMemo(() => demoMode ? null : createClient(), []);
   const { studiedCount, markStudied } = useStudiedWords();
   const srs = useWordSrs();
+  const decks = useDecks();
   const [collection, setCollection] = useState<"cefr" | "ielts">(() => params.get("collection") === "ielts" ? "ielts" : "cefr");
   const [topic, setTopic] = useState(() => [...sourceTopics, ...ieltsTopics, ...ieltsLearningTopics].includes(params.get("topic") ?? "") ? params.get("topic")! : "all");
   const [level, setLevel] = useState(() => [...cefrLevels, ...ieltsBands].some((item) => item === params.get("level")) ? params.get("level")! : "all");
@@ -167,6 +163,7 @@ export function VocabularyStudy() {
   const stage = mode === "learn" ? learnItem?.stage : mode === "cards" ? "intro" : mode === "choice" ? "choice" : mode === "type" ? "type" : undefined;
   const currentId = mode === "learn" ? learnItem?.id : deck[position];
   const current = currentId ? byId.get(currentId) : undefined;
+  const ipa = useIpa(current?.headword ?? "", current?.source_ipa ?? "");
   const optionKey = `${currentId}:${stage}:${mode === "learn" ? learnQueue.length : position}`;
   const options = useMemo(() => {
     if (!current) return [];
@@ -196,9 +193,15 @@ export function VocabularyStudy() {
   }
   function clearQuestion() { setFlipped(false); setAnswer(""); setPicked(""); setResult(null); if (advanceTimer.current) clearTimeout(advanceTimer.current); }
 
+  /** Starring saves the word to Sổ từ first, so stars work before the word is graded. */
+  async function star(word: Word) {
+    const entry = srs.entryFor(word.headword) ?? await srs.ensureEntry({ headword: word.headword, meaning: meaningOf(word), example: word.source_example_en, pos: word.pos, topic: word.topics[0] ?? "" });
+    if (entry) await decks.toggleStar(entry.id);
+  }
+
   function flip() {
     if (!current) return;
-    if (!flipped && autoSpeak) speak(current.headword);
+    if (!flipped && autoSpeak) void pronounce(current.headword);
     setFlipped((value) => !value);
   }
 
@@ -342,11 +345,11 @@ export function VocabularyStudy() {
         {mode === "learn" && <span className={`vocab-stage vocab-stage-${stage}`}>{stageLabel[stage]}{(misses[current.source_id] ?? 0) > 0 && stage !== "intro" ? " · làm lại" : ""}</span>}
         {stage === "intro" ? <div className={`vocab-study-card${flipped ? " is-revealed" : ""}`} onTouchStart={(event) => { touchX.current = event.touches[0].clientX; }} onTouchEnd={onTouchEnd}>
           <div className="vocab-study-card-word"><span>{current.pos || "TỪ VỰNG"} · {collection === "ielts" ? current.study_lane : level === "all" ? "CEFR" : level}</span>
-            <h2>{current.headword}</h2>{current.source_ipa && <p className="vocab-study-ipa">{current.source_ipa}</p>}
-            <button type="button" className="vocab-study-speak" onClick={() => speak(current.headword)} aria-label={`Nghe phát âm ${current.headword}`}><Volume2 size={17} /> Nghe</button>
-            <div id="vocab-study-definition" className={`vocab-study-card-definition${flipped ? " revealed" : ""}`} aria-live="polite">{flipped ? <><span>NGHĨA</span><h3>{meaningOf(current)}</h3>{collection === "cefr" && current.meaning_vi && <p>{current.source_definition_en}</p>}{current.source_example_en && <blockquote><ExampleSentence text={current.source_example_en} word={current.headword} /></blockquote>}</> : <p>{mode === "learn" ? "Đọc từ, nghe phát âm rồi lật thẻ để xem nghĩa và ví dụ." : "Nhớ nghĩa của từ này rồi lật thẻ để kiểm tra."}</p>}</div>
+            <h2>{current.headword}</h2>{ipa && <p className="vocab-study-ipa">{ipa}</p>}
+            <div className="vocab-study-card-tools"><button type="button" className="vocab-study-speak" onClick={() => void pronounce(current.headword)} aria-label={`Nghe phát âm ${current.headword}`}><Volume2 size={17} /> Nghe</button>{(() => { const entry = srs.entryFor(current.headword); const on = Boolean(entry && decks.starred.has(entry.id)); return <button type="button" className={`vocab-star${on ? " on" : ""}`} aria-pressed={on} aria-label={on ? "Bỏ gắn sao" : "Gắn sao từ này"} title="Gắn sao" onClick={() => void star(current)}><Star size={19} fill={on ? "currentColor" : "none"} /></button>; })()}</div>
+            <div id="vocab-study-definition" className={`vocab-study-card-definition${flipped ? " revealed" : ""}`} aria-live="polite">{flipped ? <><span>NGHĨA</span><h3>{meaningOf(current)}</h3>{collection === "cefr" && current.meaning_vi && <p>{current.source_definition_en}</p>}{current.source_example_en && <blockquote><ExampleSentence text={current.source_example_en} word={current.headword} /><button type="button" className="vocab-example-speak" aria-label="Nghe câu ví dụ" onClick={() => speakText(current.source_example_en)}><Volume2 size={15} /></button></blockquote>}</> : <p>{mode === "learn" ? "Đọc từ, nghe phát âm rồi lật thẻ để xem nghĩa và ví dụ." : "Nhớ nghĩa của từ này rồi lật thẻ để kiểm tra."}</p>}</div>
           </div>
-        </div> : stage === "choice" ? <div className="vocab-study-question"><div><span className="vocab-kicker">CHỌN NGHĨA ĐÚNG</span><h2>{current.headword} <button type="button" className="vocab-study-speak inline" onClick={() => speak(current.headword)} aria-label={`Nghe phát âm ${current.headword}`}><Volume2 size={18} /></button></h2></div></div>
+        </div> : stage === "choice" ? <div className="vocab-study-question"><div><span className="vocab-kicker">CHỌN NGHĨA ĐÚNG</span><h2>{current.headword} <button type="button" className="vocab-study-speak inline" onClick={() => void pronounce(current.headword)} aria-label={`Nghe phát âm ${current.headword}`}><Volume2 size={18} /></button></h2></div></div>
           : <div className="vocab-study-question"><div><span className="vocab-kicker">GÕ TỪ TIẾNG ANH CÓ NGHĨA</span><h2>{meaningOf(current)}</h2>{current.source_example_en && <p className="vocab-study-cloze">{current.source_example_en.replace(new RegExp(current.headword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "ig"), "_____")}</p>}</div></div>}
 
         {stage === "choice" && <div className="vocab-options">{options.map((item, index) => <button key={item.source_id} disabled={Boolean(result)} className={`${picked === item.source_id ? "selected" : ""} ${result && item.source_id === current.source_id ? "correct" : ""} ${result === "wrong" && picked === item.source_id ? "wrong" : ""}`} onClick={() => choose(item)}><kbd>{index + 1}</kbd>{meaningOf(item)}</button>)}</div>}
@@ -366,7 +369,7 @@ export function VocabularyStudy() {
             : <span className="vocab-study-keys"><Keyboard size={15} /> Bấm 1–4 để chọn</span>}
         </div>
       </> : null}
-      <p className="vocab-muted">{collection === "ielts" ? "Band là gợi ý học tập ước lượng, không phải band chính thức của từng từ." : <>Nguồn nghĩa Việt: <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noopener noreferrer">Thichhoc</a> / <a href="https://github.com/skypediacode/english-vietnamese-dictionary" target="_blank" rel="noopener noreferrer">Skypedia</a> (CC BY-SA 4.0). Định nghĩa Anh: <a href="https://en-word.net/" target="_blank" rel="noopener noreferrer">Open English WordNet</a>.</>}</p>
+      <p className="vocab-muted">Phát âm: bản ghi giọng người từ Wiktionary / Wikimedia Commons (CC BY-SA) khi có, còn lại dùng giọng đọc của thiết bị. {collection === "ielts" ? "Band là gợi ý học tập ước lượng, không phải band chính thức của từng từ." : <>Nguồn nghĩa Việt: <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noopener noreferrer">Thichhoc</a> / <a href="https://github.com/skypediacode/english-vietnamese-dictionary" target="_blank" rel="noopener noreferrer">Skypedia</a> (CC BY-SA 4.0). Định nghĩa Anh: <a href="https://en-word.net/" target="_blank" rel="noopener noreferrer">Open English WordNet</a>.</>}</p>
     </section>}
   </div>;
 }
