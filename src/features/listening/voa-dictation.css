@@ -140,6 +140,7 @@
 .voa-sentence-grid button.active{border-color:#59c1c8;background:#e7f8f8;color:#008997}
 .voa-sentence-grid button.passed{border-color:#a4e0d4;color:#008b78}
 .voa-sentence-grid button.skipped{border-color:#efcf9a;color:#a5752f}
+.voa-sentence-grid button.needs-review{border-color:#efcf9a;color:#a5752f;background:#fff9ed}
 .voa-sentence-grid button.playing{box-shadow:inset 0 0 0 2px #00a8a9}
 .voa-review-button{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:17px;width:100%;font-size:12px;font-weight:700}
 .voa-sentence-sidebar>small{margin-top:10px;color:#99aabd;text-align:center;font-size:11px}
