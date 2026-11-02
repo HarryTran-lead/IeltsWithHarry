@@ -29,6 +29,7 @@ const BankStudent = dynamic(() => import("@/features/ielts/bank-student").then((
 const SpeakingMock = dynamic(() => import("@/features/ielts/speaking-mock").then((module) => module.SpeakingMock));
 const YoutubeLab = dynamic(() => import("@/features/listening/youtube-lab").then((module) => module.YoutubeLab));
 const VoaDictation = dynamic(() => import("@/features/listening/voa-dictation").then((module) => module.VoaDictation));
+const ClipDictation = dynamic(() => import("@/features/listening/clip-dictation").then((module) => module.ClipDictation));
 const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage));
 const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage));
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden));
@@ -58,7 +59,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : section === "notebook" ? (
           smartNotebookV1 ? <SmartNotebook /> : <NotebookPage />
         ) : section === "dictation" ? (
-          <VoaDictation />
+          skillMode === "clips" || (skillMode === "banks" && ["numbers", "quick"].includes(pathname.split("/")[4])) ? <ClipDictation /> : <VoaDictation />
         ) : section === "grammar" && skillMode !== "live" ? (
           <GrammarGarden />
         ) : skill === "vocabulary" && !skillMode ? (
