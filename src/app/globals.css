@@ -7082,3 +7082,23 @@ a.card:hover {
   .app-frame.sidebar-collapsed .desktop-sidebar-toggle { left: 0; }
   .app-frame.learning-focus .desktop-sidebar-toggle { top: calc(50vh + 28px); }
 }
+
+/* Vocabulary readability (2026-11 audit): learning content is never under 12px, and Vietnamese meanings in lists are 13px. */
+.vocabulary-layout .word-formation-list > button > span,
+.vocabulary-layout .word-formation-list small,
+.vocabulary-layout .reading-vocab-page small { font-size: 13px; }
+.vocabulary-layout .word-formation-note,
+.vocabulary-layout .word-formation-prompt > span,
+.vocabulary-layout .word-formation-toolbar label,
+.vocabulary-layout .reading-vocab-topic,
+.vocabulary-layout .vocab-tag { font-size: 12px; }
+/* Library: no repeated topic picture, and the "not reviewed" note no longer outshines the meaning. */
+.vocabulary-layout .vocab-library-art { display: none; }
+.vocabulary-layout .vocab-library-card { gap: 8px; padding: 16px; }
+.vocabulary-layout .vocab-reference-badge { justify-self: start; padding: 0; border: 0; background: none; color: #5f768c; font-size: 12px; font-weight: 700; }
+.vocabulary-layout .vocab-library-card > strong { font-size: 16px; line-height: 1.45; }
+.vocabulary-layout .vocab-library-card small { font-size: 12.5px; }
+/* On phones the quick-notebook bubble would sit on the study controls; it stays on other pages. */
+@media (max-width: 700px) {
+  .learning-focus .notebook-bubble { display: none; }
+}

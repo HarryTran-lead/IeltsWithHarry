@@ -22,7 +22,8 @@ type NotebookStore = {
   error: string;
   clearError: () => void;
   /** Adds an entry linked to the current page, or to `sourcePath` when given (e.g. a page of the course book). */
-  addEntry: (input: NotebookInput, sourcePath?: string) => Promise<void>;
+  /** Resolves to the stored entry, or to the existing one when the word is already saved. */
+  addEntry: (input: NotebookInput, sourcePath?: string) => Promise<NotebookEntry | undefined>;
   updateEntry: (id: string, input: NotebookInput) => Promise<void>;
   removeEntry: (id: string) => Promise<void>;
   /** Records a study visit for a path the learner opened without navigating, e.g. a lesson opened over the course book. */
@@ -93,7 +94,8 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
         } catch { /* Damaged local demo data can be replaced with a fresh notebook. */ }
       } else {
         const [entryResult, visitResult] = await Promise.all([
-          supabase!.from("notebook_entries").select("*").order("created_at", { ascending: false }).limit(500),
+          // Words learned in Vocabulary sessions are saved here too, so the review queue needs more than 500.
+          supabase!.from("notebook_entries").select("*").order("created_at", { ascending: false }).limit(1000),
           supabase!.from("study_visits").select("*").order("visited_at", { ascending: false }).limit(200),
         ]);
         if (entryResult.error || visitResult.error) setError(entryResult.error?.message ?? visitResult.error!.message);
@@ -137,14 +139,18 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
     addEntry: async (input, sourceOverride) => {
       const valid = notebookInputSchema.parse(input);
       const wordKey = valid.kind === "word" ? valid.title.trim().replace(/\s+/g, " ").toLowerCase() : "";
-      if (wordKey && (pendingWords.current.has(wordKey) || entries.some((entry) => entry.kind === "word" && entry.title.trim().replace(/\s+/g, " ").toLowerCase() === wordKey))) return;
+      const existing = wordKey ? entries.find((entry) => entry.kind === "word" && entry.title.trim().replace(/\s+/g, " ").toLowerCase() === wordKey) : undefined;
+      if (existing) return existing;
+      if (wordKey && pendingWords.current.has(wordKey)) return;
       if (wordKey) pendingWords.current.add(wordKey);
       const linkedPath = sourceOverride ?? activePath;
       const sourcePath = visitTitle(linkedPath) ? linkedPath.slice(0, 300) : "";
       setError("");
       try { if (demoMode) {
         const now = new Date().toISOString();
-        setEntries((current) => [{ ...valid, id: crypto.randomUUID(), sourcePath, createdAt: now, updatedAt: now }, ...current]);
+        const created = { ...valid, id: crypto.randomUUID(), sourcePath, createdAt: now, updatedAt: now } as NotebookEntry;
+        setEntries((current) => [created, ...current]);
+        return created;
       } else {
         const result = await supabase!.from("notebook_entries").insert({
           kind: valid.kind, title: valid.title, body: valid.body,
@@ -155,7 +161,9 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
           if (wordKey && result.error.code === "23505") return;
           setError(result.error.message); throw result.error;
         }
-        setEntries((current) => [fromEntryRow(result.data as EntryRow), ...current]);
+        const created = fromEntryRow(result.data as EntryRow);
+        setEntries((current) => [created, ...current]);
+        return created;
       } } finally { if (wordKey) pendingWords.current.delete(wordKey); }
     },
     updateEntry: async (id, input) => {

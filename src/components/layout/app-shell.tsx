@@ -104,14 +104,15 @@ const links = groups.flatMap((group) => group.links);
 type SkillPracticeLink = { label: string; href: string; kind?: "parent" | "child" | "full" };
 const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
   vocabulary: [
+    { label: "Ôn tập", href: "/app/vocabulary/review" },
     { label: "Học từ IELTS", href: "/app/vocabulary/study?collection=ielts" },
     { label: "Học từ A1–C2", href: "/app/vocabulary/study?collection=cefr" },
-    { label: "1.200 từ IELTS Listening", href: "/app/vocabulary/listening" },
-    { label: "607 từ IELTS Reading 2026", href: "/app/reading/vocabulary" },
-    { label: "Collocations A1–C2", href: "/app/vocabulary/collocations" },
+    { label: "Từ IELTS Listening", href: "/app/vocabulary/listening" },
+    { label: "Từ IELTS Reading", href: "/app/reading/vocabulary" },
+    { label: "Collocations", href: "/app/vocabulary/collocations" },
     { label: "Word Formation", href: "/app/vocabulary/word-formation" },
-    { label: "Luyện dịch câu Việt → Anh", href: "/app/vocabulary/translation" },
-    { label: "Ôn từ đã lưu", href: "/app/vocabulary/review" },
+    { label: "Dịch câu Việt → Anh", href: "/app/vocabulary/translation" },
+    { label: "Sổ từ & tiến độ", href: "/app/vocabulary/notebook" },
   ],
   grammar: [
     { label: "Bài kiểm tra", href: "/app/grammar/tests" },
@@ -493,7 +494,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
                     {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
                   </Link>
                   {practiceLinks && <div id={`skill-practice-${skill}`} role="group" className={`nav-submenu ${examSkill ? "nav-exam-submenu" : ""}`} hidden={!expanded} aria-label={`Chế độ luyện ${label}`}>
-                    {!examSkill && <Link href={skill === "vocabulary" || skill === "grammar" ? href : `${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>{skill === "vocabulary" ? "Bắt đầu học" : skill === "grammar" ? "Lộ trình học" : "Tất cả chế độ"}</Link>}
+                    {!examSkill && <Link href={skill === "vocabulary" || skill === "grammar" ? href : `${href}#che-do-hoc`} className="nav-submenu-link" onClick={() => setMenuOpen(false)}>{skill === "vocabulary" ? "Hôm nay" : skill === "grammar" ? "Lộ trình học" : "Tất cả chế độ"}</Link>}
                     {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => {
                       const target = new URL(practice.href, "https://ieltswithharry.local");
                       const selected = examSkill

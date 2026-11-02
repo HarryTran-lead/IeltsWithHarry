@@ -11,7 +11,10 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import { useStudiedWords } from "./use-studied-words";
+import { useWordSrs } from "./use-word-srs";
+import { reviewQueue, wordState, wordStateLabels, type WordState } from "@/lib/vocabulary/study-session";
 import "./vocabulary-landing.css";
+import "./vocabulary-learning-loop.css";
 
 type Category = "all" | "ielts" | "cefr" | "collocations" | "listening" | "reading" | "families" | "translation" | "personal";
 type CollectionCard = {
@@ -43,7 +46,19 @@ export function VocabularyLanding() {
   const [counts, setCounts] = useState<{ ielts?: number; cefr?: number }>({});
   const [category, setCategory] = useState<Category>("all");
   const [query, setQuery] = useState("");
-  const saved = entries.filter((entry) => entry.kind === "word").length;
+  const savedWords = useMemo(() => entries.filter((entry) => entry.kind === "word"), [entries]);
+  const saved = savedWords.length;
+  const { reviews, loaded: reviewsLoaded } = useWordSrs();
+  const [now, setNow] = useState<number | null>(null);
+  useEffect(() => { void Promise.resolve().then(() => setNow(Date.now())); }, []);
+  // Today's plan: the review queue (overdue first, capped new words) and ten new words.
+  const dueToday = now !== null && ready && reviewsLoaded ? reviewQueue(savedWords, reviews, now).length : null;
+  const states = useMemo(() => {
+    const counts = { new: 0, learning: 0, reviewing: 0, mastered: 0 } as Record<WordState, number>;
+    savedWords.forEach((entry) => { counts[wordState(reviews.get(entry.id))] += 1; });
+    return counts;
+  }, [savedWords, reviews]);
+  const minutes = dueToday === null ? null : Math.max(5, Math.ceil(dueToday * 8 / 60) + 5);
 
   useEffect(() => {
     if (!db) return;
@@ -75,14 +90,18 @@ export function VocabularyLanding() {
     && `${card.title} ${card.detail} ${card.description}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
 
   return <main className="vocabulary-landing">
-    <header className="vocabulary-landing-hero">
+    <header className="vocabulary-landing-hero vocabulary-today">
       <div className="vocabulary-landing-hero-copy">
-        <span className="vocabulary-landing-eyebrow">HỌC TỪ VỰNG MỖI NGÀY</span>
-        <h1>Bắt đầu với <em>10 từ hôm nay</em></h1>
-        <p>Một buổi ngắn để học nghĩa, cách dùng và tự kiểm tra. Bạn có thể chọn bộ từ ở bên dưới.</p>
-        <div className="vocabulary-landing-hero-actions"><Link href="/app/vocabulary/study?collection=ielts">Học 10 từ IELTS <ArrowRight size={17} /></Link><Link href="/app/vocabulary/review">Ôn từ đã lưu</Link></div>
+        <span className="vocabulary-landing-eyebrow">HÔM NAY</span>
+        <h1>{dueToday ? <>Ôn <em>{dueToday} từ</em>, rồi học 10 từ mới</> : <>Bắt đầu với <em>10 từ hôm nay</em></>}</h1>
+        <p>{dueToday === null ? "Đang chuẩn bị kế hoạch học hôm nay…" : dueToday ? `Ôn từ đến hạn trước để không quên, sau đó học từ mới. Khoảng ${minutes} phút.` : "Không có từ đến hạn. Học 10 từ mới; chúng sẽ tự vào lịch ôn."}</p>
+        <div className="vocabulary-landing-hero-actions">{dueToday ? <><Link href="/app/vocabulary/review">Ôn {dueToday} từ đến hạn <ArrowRight size={17} /></Link><Link href="/app/vocabulary/study?collection=ielts">Học 10 từ mới</Link></> : <><Link href="/app/vocabulary/study?collection=ielts">Học 10 từ IELTS <ArrowRight size={17} /></Link><Link href="/app/vocabulary/study?collection=cefr">Học từ A1–C2</Link></>}</div>
       </div>
-      <div className="vocabulary-landing-hero-art" aria-hidden="true"><span className="book book-one">IELTS</span><span className="book book-two">A1–C2</span><span className="book book-three">LISTENING</span><BookOpen size={68} strokeWidth={1.7} /><Sparkles className="spark" size={25} /></div>
+      <ol className="vocabulary-today-steps" aria-label="Các bước học hôm nay">
+        <li className={dueToday ? "active" : "done"}><RotateCcw size={18} /><span><b>Ôn tập</b>{dueToday === null ? "…" : dueToday ? `${dueToday} thẻ` : "Không có thẻ"}</span></li>
+        <li className={dueToday ? "" : "active"}><Sparkles size={18} /><span><b>Học từ mới</b>10 từ · xem, chọn, gõ</span></li>
+        <li><CheckCircle2 size={18} /><span><b>Tự vào lịch ôn</b>FSRS nhắc lại đúng lúc</span></li>
+      </ol>
     </header>
 
     <div className="vocabulary-landing-layout">
@@ -106,7 +125,7 @@ export function VocabularyLanding() {
 
       <aside className="vocabulary-landing-side" aria-label="Tiến độ và gợi ý học">
         <section className="vocabulary-landing-continue"><span className="vocabulary-landing-eyebrow">BẮT ĐẦU NHANH</span><h2>Học từ IELTS hôm nay</h2><p>Chọn chủ đề và band gợi ý, sau đó luyện bằng thẻ hoặc bài tập.</p><Link href="/app/vocabulary/study?collection=ielts">Bắt đầu học <ArrowRight size={17} /></Link></section>
-        <section className="vocabulary-landing-progress"><div className="vocabulary-landing-side-heading"><h2>Việc học của bạn</h2><Target size={20} /></div><div className="vocabulary-landing-progress-number"><strong>{studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")}</strong><span>từ đã xem hoặc luyện</span></div><small>Đây là số từ bạn từng tương tác, chưa phải số từ đã thuộc.</small><div className="vocabulary-landing-progress-saved"><Bookmark size={17} /> Từ đã lưu <b>{ready ? saved : "…"}</b></div><Link href="/app/vocabulary/review">Ôn từ đã lưu <ArrowRight size={16} /></Link></section>
+        <section className="vocabulary-landing-progress"><div className="vocabulary-landing-side-heading"><h2>Sổ từ của bạn</h2><Target size={20} /></div><div className="vocabulary-landing-states">{(["learning", "reviewing", "mastered"] as WordState[]).map((state) => <div key={state}><span className={`vocab-state ${state}`}>{wordStateLabels[state]}</span><strong>{ready && reviewsLoaded ? states[state].toLocaleString("vi-VN") : "…"}</strong></div>)}</div><small>{ready ? `${saved.toLocaleString("vi-VN")} từ trong sổ · ${studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")} từ đã học qua.` : "…"} “Đã thuộc” là từ có khoảng ôn từ 21 ngày.</small><Link href="/app/vocabulary/progress">Xem tiến độ <ArrowRight size={16} /></Link></section>
         <section className="vocabulary-landing-suggestion"><span className="vocabulary-landing-eyebrow">GỢI Ý HÔM NAY <Sparkles size={15} /></span><h2>Thử học qua nghe</h2><p>Chọn một trong 35 chủ đề của bộ IELTS Listening và luyện với 1.200 từ.</p><Link href="/app/vocabulary/listening"><Headphones size={18} /> Học IELTS Listening <ArrowRight size={16} /></Link></section>
         <section className="vocabulary-landing-side-actions"><h2>Luyện theo cách của bạn</h2><Link href="/app/vocabulary/study?collection=ielts&mode=cards"><Layers3 size={18} /> Thẻ lật <ArrowRight size={16} /></Link><Link href="/app/vocabulary/study?collection=ielts&mode=choice"><CheckCircle2 size={18} /> Trắc nghiệm <ArrowRight size={16} /></Link><Link href="/app/vocabulary/review"><RotateCcw size={18} /> Ôn tập <ArrowRight size={16} /></Link></section>
       </aside>

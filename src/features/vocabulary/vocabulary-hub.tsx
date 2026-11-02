@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, BookOpen, Bookmark, Check, RotateCcw, Search, Volume2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, RotateCcw, Search, Trash2, Volume2 } from "lucide-react";
 import { useNotebook, type NotebookEntry } from "@/features/notebook/notebook-store";
 import { useDemo } from "@/features/demo/demo-store";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
-import { catalog, filterTerms, findTerm, makeQuiz, normalizeWord, quizScore, topics, type VocabularyQuestion, type VocabularyTerm } from "@/lib/vocabulary/catalog";
+import { catalog, filterTerms, findTerm, makeQuiz, normalizeWord, quizScore, type VocabularyQuestion, type VocabularyTerm } from "@/lib/vocabulary/catalog";
 import { nextWordReview, type ReviewGrade, type WordReview } from "@/lib/news/review";
 import sourceTopics from "@/lib/vocabulary/source-topics.json";
 import ieltsTopics from "@/lib/vocabulary/ielts-topics.json";
@@ -17,8 +17,11 @@ import { cefrLevels } from "@/lib/vocabulary/cefr-levels";
 import { ieltsBands } from "@/lib/vocabulary/ielts-bands";
 import { VocabularyStudy } from "@/features/vocabulary/vocabulary-study";
 import { VocabularyDecks } from "@/features/vocabulary/vocabulary-decks";
+import { intervalLabel, reviewQueue, wordState, wordStateLabels, type WordState } from "@/lib/vocabulary/study-session";
 import { TopicArt } from "@/components/illustrations/topic-art";
+import { ExampleSentence } from "@/features/vocabulary/example-sentence";
 import "@/app/vocabulary-hub.css";
+import "./vocabulary-learning-loop.css";
 
 type ReviewEvent = { notebook_entry_id: string; grade: ReviewGrade; reviewed_at: string };
 type PracticeAttempt = { id?: string; scope: string; score: number; total: number; wrong_words: string[]; submitted_at: string };
@@ -53,6 +56,18 @@ function speak(word: string) {
 function formatDate(value: string) {
   return new Intl.DateTimeFormat("vi-VN", { dateStyle: "medium" }).format(new Date(value));
 }
+
+const pageHeadings: Record<string, [string, string]> = {
+  overview: ["Từ vựng", "Học theo chủ đề và ôn lại đúng lúc."],
+  library: ["Thư viện từ", "Tra cứu theo bộ, chủ đề và band. Nghe, xem ví dụ hoặc lưu vào Sổ từ."],
+  notebook: ["Sổ từ", "Mọi từ bạn đã lưu hoặc đã học, kèm trạng thái ghi nhớ."],
+  decks: ["Bộ thẻ của bạn", "Nhóm các từ trong Sổ từ thành bộ riêng để ôn."],
+  review: ["Ôn tập", "Thẻ đến hạn trước, sau đó tối đa 20 từ mới mỗi phiên."],
+  practice: ["Kiểm tra", "Bài kiểm tra ngắn từ những từ trong Sổ từ."],
+  explore: ["Tra từ", "Xem nghĩa, IPA và ví dụ rồi lưu vào Sổ từ."],
+  progress: ["Tiến độ", "Mới · Đang học · Đang ôn · Đã thuộc (khoảng ôn từ 21 ngày)."],
+  learn: ["Chi tiết từ", "Nghĩa, ví dụ và cách dùng."],
+};
 
 export function VocabularyHub() {
   const pathname = usePathname();
@@ -122,11 +137,8 @@ export function VocabularyHub() {
   const saved = useMemo(() => entries.filter((entry): entry is WordEntry => entry.kind === "word"), [entries]);
   const savedByWord = useMemo(() => new Map(saved.map((entry) => [normalizeWord(entry.title), entry])), [saved]);
   const reviewById = useMemo(() => new Map(reviews.map((review) => [review.notebook_entry_id, review])), [reviews]);
-  const due = saved.filter((entry) => !reviewById.has(entry.id) || new Date(reviewById.get(entry.id)!.due_at).getTime() <= now);
-  const mastered = saved.filter((entry) => {
-    const latest = events.find((event) => event.notebook_entry_id === entry.id);
-    return latest ? latest.grade === "easy" : (reviewById.get(entry.id)?.repetitions ?? 0) >= 3;
-  }).length;
+  // Today's load: overdue cards plus a capped number of new words, the same queue the Review screen uses.
+  const due = reviewQueue(saved, reviewById, now);
   const today = new Date(now).toLocaleDateString("en-CA");
   const reviewedToday = events.filter((event) => new Date(event.reviewed_at).toLocaleDateString("en-CA") === today).length;
   const totalCorrect = attempts.reduce((count, item) => count + item.score, 0);
@@ -161,7 +173,10 @@ export function VocabularyHub() {
     const result = await db!.rpc("save_word_fsrs_review", { p_entry: entry.id, p_grade: grade, p_state: next.fsrs_state, p_request: crypto.randomUUID(), p_previous_reviewed_at: before?.last_reviewed_at ?? null });
     if (result.error) { setError(result.error.message); return false; }
     if (result.data === false) { setError("Từ này vừa được ôn ở nơi khác. Tải lại trang để xem lịch mới."); return false; }
-    setReviews((current) => [...current.filter((review) => review.notebook_entry_id !== entry.id), next]);
+    // The server stamps last_reviewed_at itself; keep its value so a second grade in the same session passes the check.
+    const stored = await db!.from("user_word_reviews").select("notebook_entry_id,due_at,interval_days,repetitions,last_reviewed_at,fsrs_state").eq("notebook_entry_id", entry.id).maybeSingle();
+    const saved = (stored.data as WordReview | null) ?? next;
+    setReviews((current) => [...current.filter((review) => review.notebook_entry_id !== entry.id), saved]);
     setEvents((current) => [event, ...current]);
     return true;
   }
@@ -190,22 +205,26 @@ export function VocabularyHub() {
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Không thêm được việc vào Planner."); }
   }
 
+  // The old overview and the unpaginated word list are replaced by the landing page and the library.
+  const retired = section === "overview" ? "/app/vocabulary" : section === "learn" && !parts[1] ? "/app/vocabulary/library" : "";
+  useEffect(() => { if (retired) router.replace(retired); }, [retired, router]);
+
   const common = { terms, saved, savedByWord, reviewById, due, events, attempts, saveWord, removeWord, gradeWord, saveAttempt };
+  const heading = pageHeadings[section] ?? pageHeadings.overview;
   return <div className={`content-page vocab-hub${section === "study" ? " vocab-hub-study" : ""}`}>
-    {section !== "study" && <><header className="vocab-header"><div><span className="eyebrow">IELTSWITHHARRY / VOCABULARY</span><h1>{section === "overview" ? "Học từ vựng hiệu quả hơn" : { learn: "Học từ mới", library: "Kho từ theo topic", notebook: "Từ đã lưu", decks: "Bộ thẻ của bạn", review: "Ôn tập", practice: "Luyện tập", explore: "Tra từ", progress: "Tiến độ từ vựng" }[section] ?? "Từ vựng"}</h1><p>Học theo chủ đề, lưu từ trong bài đọc và ôn lại đúng thời điểm.</p></div><span className="vocab-header-count">{saved.length} từ đã lưu</span></header><Link className="vocab-back" href="/app/vocabulary"><ArrowLeft size={16} /> Chọn cách học</Link></>}
+    {section !== "study" && <header className="vocab-page-head"><Link className="vocab-page-back" href="/app/vocabulary"><ArrowLeft size={16} /> Từ vựng</Link><div className="vocab-page-title"><h1>{heading[0]}</h1><p>{heading[1]}</p></div><span className="vocab-header-count">{notebookReady ? `${saved.length} từ trong sổ` : "…"}</span></header>}
     {(error || notebookError) && <p className="vocab-error" role="alert">{error || notebookError}</p>}
-    {((loading && needsHubData) || (!notebookReady && section !== "study")) ? <div className="vocab-panel">Đang tải từ vựng…</div>
-      : section === "overview" ? <Overview {...common} mastered={mastered} reviewedToday={reviewedToday} />
-      : section === "learn" && parts[1] ? <WordDetail wordId={parts[1]} terms={terms} savedByWord={savedByWord} saveWord={saveWord} gradeWord={gradeWord} events={events} back={`/app/vocabulary/learn?${searchParams.toString()}`} />
-      : section === "learn" ? <Learn terms={terms} savedByWord={savedByWord} />
+    {retired ? <div className="vocab-panel">Đang chuyển trang…</div>
+      : ((loading && needsHubData) || (!notebookReady && section !== "study")) ? <div className="vocab-panel">Đang tải từ vựng…</div>
+      : section === "learn" && parts[1] ? <WordDetail wordId={parts[1]} terms={terms} savedByWord={savedByWord} saveWord={saveWord} gradeWord={gradeWord} events={events} back="/app/vocabulary/library" />
       : section === "library" ? <Library savedByWord={savedByWord} saveWord={saveWord} />
       : section === "study" ? <VocabularyStudy />
       : section === "notebook" ? <SavedWords {...common} />
       : section === "decks" ? <VocabularyDecks saved={saved} due={due} reviewById={reviewById} gradeWord={gradeWord} />
-      : section === "review" ? <Review saved={saved} due={due} reviewById={reviewById} gradeWord={gradeWord} />
+      : section === "review" ? <Review saved={saved} reviewById={reviewById} gradeWord={gradeWord} />
       : section === "practice" ? <Practice {...common} />
       : section === "explore" ? <Explore key={searchParams.get("q") ?? ""} {...common} />
-      : section === "progress" ? <Progress saved={saved} mastered={mastered} due={due} reviewedToday={reviewedToday} totalCorrect={totalCorrect} totalQuestions={totalQuestions} attempts={attempts} addReviewTask={addReviewTask} />
+      : section === "progress" ? <Progress saved={saved} reviewById={reviewById} now={now} due={due} reviewedToday={reviewedToday} totalCorrect={totalCorrect} totalQuestions={totalQuestions} attempts={attempts} addReviewTask={addReviewTask} />
       : <div className="vocab-panel">Không tìm thấy mục này. <Link href="/app/vocabulary">Về tổng quan →</Link></div>}
   </div>;
 }
@@ -353,47 +372,6 @@ function Library({ savedByWord, saveWord }: Pick<Common, "savedByWord" | "saveWo
   </div>;
 }
 
-function Overview({ terms, saved, due, mastered, reviewedToday }: Common & { mastered: number; reviewedToday: number }) {
-  const features = [
-    { title: "Học từ mới", sub: "Chọn cấp độ và chủ đề", href: "learn", icon: BookOpen, tint: "lilac" },
-    { title: "Từ đã lưu", sub: "Xem các từ bạn đã lưu", href: "notebook", icon: Bookmark, tint: "mint" },
-    { title: "Ôn tập", sub: "Ôn từ cũ đúng thời điểm", href: "review", icon: RotateCcw, tint: "peach" },
-    { title: "Bộ thẻ của bạn", sub: "Nhóm và ôn các từ đã lưu", href: "decks", icon: Bookmark, tint: "lilac" },
-    { title: "Luyện tập", sub: "Kiểm tra mức độ ghi nhớ", href: "practice", icon: Check, tint: "blue" },
-    { title: "Tra từ", sub: "Xem nghĩa, IPA và ví dụ", href: "explore", icon: Search, tint: "pink" },
-    { title: "Từ A1–C2", sub: "Kho CEFR hiện có theo 36 nhãn nguồn", href: "library?collection=cefr", icon: BookOpen, tint: "mint" },
-    { title: "Từ IELTS Band 1–7+", sub: "25 topic với band học gợi ý", href: "library?collection=ielts", icon: BookOpen, tint: "blue" },
-    { title: "Thẻ lật & trò chơi", sub: "Flashcards, trắc nghiệm, gõ từ, ghép cặp", href: "study", icon: RotateCcw, tint: "lilac" },
-  ];
-  return <>
-    <div className="vocab-feature-grid">{features.map(({ title, sub, href, icon: Icon, tint }) => <Link href={`/app/vocabulary/${href}`} className={`vocab-feature ${tint}`} key={href}><span><Icon size={25} /></span><strong>{title}</strong><small>{sub}</small><ArrowRight size={18} className="vocab-feature-arrow" /></Link>)}</div>
-    <div className="vocab-overview-grid"><div><section className="vocab-panel vocab-continue"><div><span className="vocab-kicker">TIẾP TỤC HỌC</span><h2>{saved.length ? `Bạn đã lưu ${saved.length} từ` : "Bắt đầu với 5 từ đầu tiên"}</h2><p>{saved.length ? "Chọn chủ đề mới hoặc ôn lại các từ đã lưu từ bài đọc." : "Bộ từ được biên soạn sẵn có nghĩa và ví dụ song ngữ."}</p></div><Link className="vocab-button primary" href={saved.length && due.length ? "/app/vocabulary/review" : "/app/vocabulary/learn"}>{saved.length && due.length ? "Ôn tiếp" : "Bắt đầu học"} <ArrowRight size={16}/></Link></section><h2 className="vocab-section-title">Chủ đề phổ biến</h2><div className="vocab-topic-grid">{topics.map((topic) => <Link href={`/app/vocabulary/learn?topic=${encodeURIComponent(topic)}`} key={topic}><TopicArt localOnly topic={topic} className="vocab-topic-art" /><strong>{topic}</strong><span>{terms.filter((term) => term.topic === topic).length} từ</span></Link>)}</div></div><aside className="vocab-panel vocab-progress-side"><span className="vocab-kicker">TIẾN ĐỘ CỦA BẠN</span><div className="vocab-mini-stats"><div><strong>{saved.length}</strong><span>Đã lưu</span></div><div><strong>{mastered}</strong><span>Đã thuộc</span></div><div><strong>{due.length}</strong><span>Đến hạn</span></div><div><strong>{reviewedToday}</strong><span>Đã ôn hôm nay</span></div></div><Link className="vocab-button soft" href="/app/vocabulary/progress">Xem tiến độ <ArrowRight size={16}/></Link></aside></div>
-  </>;
-}
-
-function Learn({ terms, savedByWord }: Pick<Common, "terms" | "savedByWord">) {
-  const router = useRouter();
-  const params = useSearchParams();
-  const level = params.get("level") ?? "all";
-  const topic = params.get("topic") ?? "all";
-  const levels = ["all", ...new Set(terms.map((term) => term.level))];
-  const topicOptions = ["all", ...new Set(terms.map((term) => term.topic))];
-  const filtered = filterTerms(terms, level, topic);
-  function setFilter(nextLevel: string, nextTopic: string) {
-    const query = new URLSearchParams();
-    if (nextLevel !== "all") query.set("level", nextLevel);
-    if (nextTopic !== "all") query.set("topic", nextTopic);
-    router.replace(`/app/vocabulary/learn${query.size ? `?${query}` : ""}`);
-  }
-  const query = params.toString();
-  return <>
-    <section className="vocab-panel"><span className="vocab-kicker">HAI BỘ TỪ VỰNG</span><h2>CEFR A1–C2 và IELTS Band 1–7+</h2><p>Kho CEFR giữ nguyên nội dung và tiến độ cũ. Bộ IELTS có topic riêng và band học gợi ý từ dữ liệu nguồn.</p><Link className="vocab-button primary" href="/app/vocabulary/library">Mở hai bộ từ <ArrowRight size={16}/></Link></section>
-    <section className="vocab-panel"><h2>1. Chọn trình độ</h2><div className="vocab-choice-row">{levels.map((item) => <button key={item} className={item === level ? "selected" : ""} aria-pressed={item === level} onClick={() => setFilter(item, topic)}>{item === "all" ? "Tất cả" : item}</button>)}</div><h2>2. Chọn chủ đề</h2><div className="vocab-choice-row">{topicOptions.map((item) => <button key={item} className={item === topic ? "selected" : ""} aria-pressed={item === topic} onClick={() => setFilter(level, item)}>{item === "all" ? "Tất cả" : item} <small>{item === "all" ? terms.length : terms.filter((term) => term.topic === item).length}</small></button>)}</div></section>
-    <div className="vocab-section-heading"><h2>3. Danh sách từ ({filtered.length})</h2>{filtered.length > 0 && <Link className="vocab-button primary" href={`/app/vocabulary/learn/${encodeURIComponent(filtered[0].id)}${query ? `?${query}` : ""}`}>Bắt đầu học <ArrowRight size={16}/></Link>}</div>
-    <div className="vocab-word-list">{filtered.map((term) => <article key={term.id} className="vocab-word-row"><TopicArt localOnly topic={term.topic} word={term.word} className="vocab-row-art" /><div><strong>{term.word}</strong><span className="vocab-tag">{term.level}</span><p>{term.pos && `${term.pos} · `}{term.meaning} · {term.topic}</p></div><div><span>{savedByWord.has(normalizeWord(term.word)) ? "✓ Đã lưu" : ""}</span><Link className="vocab-button soft" href={`/app/vocabulary/learn/${encodeURIComponent(term.id)}${query ? `?${query}` : ""}`}>Xem từ <ArrowRight size={15}/></Link></div></article>)}{filtered.length === 0 && <div className="vocab-panel vocab-empty">Chưa có từ trong bộ lọc này. Hãy chọn trình độ hoặc chủ đề khác.</div>}</div>
-  </>;
-}
-
 function WordDetail({ wordId, terms, savedByWord, saveWord, gradeWord, events, back }: { wordId: string; terms: VocabularyTerm[]; savedByWord: Map<string, WordEntry>; saveWord: Common["saveWord"]; gradeWord: Common["gradeWord"]; events: ReviewEvent[]; back: string }) {
   const params = useSearchParams();
   const [busy, setBusy] = useState(false);
@@ -407,34 +385,85 @@ function WordDetail({ wordId, terms, savedByWord, saveWord, gradeWord, events, b
   return <><Link className="vocab-back" href={back}><ArrowLeft size={16}/> Về danh sách</Link><article className="vocab-panel vocab-detail"><div className="vocab-detail-top"><TopicArt localOnly topic={term.topic} word={term.word} className="vocab-detail-art" /><div><span className="vocab-tag">{term.topic} · {term.level}</span><h2>{term.word}</h2><p>{[term.ipa, term.pos].filter(Boolean).join(" · ")}</p></div><button className="vocab-icon-button" onClick={() => speak(term.word)} aria-label={`Nghe phát âm ${term.word}`}><Volume2 size={20}/></button></div><div className="vocab-meaning">{term.meaning}</div>{term.collocations.length > 0 && <><h3>Collocations</h3><div className="vocab-chips">{term.collocations.map((value) => <span key={value}>{value}</span>)}</div></>}{term.example && <><h3>Ví dụ</h3><p className="vocab-example">{term.example}</p>{term.vi && <p className="vocab-muted">{term.vi}</p>}</>}{term.synonyms && <><h3>Từ gần nghĩa</h3><p>{term.synonyms}</p></>}<div className="vocab-detail-actions"><button className={`vocab-button ${saved ? "soft" : "primary"}`} disabled={Boolean(saved)} onClick={() => void saveWord(term)}>{saved ? "✓ Đã lưu vào sổ" : "☆ Lưu vào sổ"}</button><button className="vocab-button soft" disabled={!saved || Boolean(mastered) || busy} onClick={() => void markMastered()}>{mastered ? "✓ Đã thuộc" : "Đánh dấu đã thuộc"}</button>{next && <Link className="vocab-button soft" href={`/app/vocabulary/learn/${encodeURIComponent(next.id)}?${params.toString()}`}>Từ tiếp theo <ArrowRight size={16}/></Link>}</div><small className="vocab-muted">Phát âm dùng giọng đọc của trình duyệt nếu thiết bị hỗ trợ.</small></article></>;
 }
 
-function SavedWords({ saved, removeWord }: Common) {
+function SavedWords({ saved, removeWord, reviewById }: Common) {
   const [search, setSearch] = useState("");
   const [topic, setTopic] = useState("all");
+  const [state, setState] = useState<"all" | WordState>("all");
   const [sort, setSort] = useState("newest");
   const rows = saved.filter((entry) => {
     const term = fromSaved(entry);
-    return (topic === "all" || term.topic === topic) && normalizeWord(`${entry.title} ${entry.meaningVi} ${term.topic}`).includes(normalizeWord(search));
+    return (topic === "all" || term.topic === topic) && (state === "all" || wordState(reviewById.get(entry.id)) === state)
+      && normalizeWord(`${entry.title} ${entry.meaningVi} ${term.topic}`).includes(normalizeWord(search));
   }).sort((a, b) => sort === "oldest" ? a.createdAt.localeCompare(b.createdAt) : b.createdAt.localeCompare(a.createdAt));
   const topicsInSaved = [...new Set(saved.map((entry) => fromSaved(entry).topic))];
-  return <><div className="vocab-panel vocab-filter-bar"><strong>{saved.length} từ đã lưu</strong><input aria-label="Tìm từ đã lưu" placeholder="Tìm từ, nghĩa hoặc chủ đề…" value={search} onChange={(event) => setSearch(event.target.value)} /><select aria-label="Lọc chủ đề" value={topic} onChange={(event) => setTopic(event.target.value)}><option value="all">Mọi chủ đề</option>{topicsInSaved.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Sắp xếp từ đã lưu" value={sort} onChange={(event) => setSort(event.target.value)}><option value="newest">Gần đây nhất</option><option value="oldest">Cũ nhất</option></select></div><div className="vocab-word-list">{rows.map((entry) => { const term = fromSaved(entry); return <article className="vocab-word-row" key={entry.id}><TopicArt localOnly topic={term.topic} word={entry.title} className="vocab-row-art" /><div><strong>{entry.title}</strong><span className="vocab-tag">{term.topic}</span><p>{entry.meaningVi} · {sourceName(entry.sourcePath)} · {formatDate(entry.createdAt)}</p></div><div>{term.ipa && <small>{term.ipa}</small>}<Link className="vocab-button soft" href={`/app/vocabulary/explore?q=${encodeURIComponent(entry.title)}`}>Xem chi tiết</Link><button className="vocab-button danger" onClick={() => void removeWord(entry)}>Bỏ lưu</button></div></article>; })}{rows.length === 0 && <div className="vocab-panel vocab-empty">{saved.length ? "Không có từ khớp bộ lọc." : <>Chưa có từ đã lưu. <Link href="/app/vocabulary/learn">Học 5 từ đầu tiên →</Link></>}</div>}</div></>;
+  return <><div className="vocab-panel vocab-filter-bar"><strong>{rows.length}/{saved.length} từ</strong><input aria-label="Tìm từ đã lưu" placeholder="Tìm từ, nghĩa hoặc chủ đề…" value={search} onChange={(event) => setSearch(event.target.value)} /><select aria-label="Lọc trạng thái" value={state} onChange={(event) => setState(event.target.value as "all" | WordState)}><option value="all">Mọi trạng thái</option>{(Object.keys(wordStateLabels) as WordState[]).map((item) => <option key={item} value={item}>{wordStateLabels[item]}</option>)}</select><select aria-label="Lọc chủ đề" value={topic} onChange={(event) => setTopic(event.target.value)}><option value="all">Mọi chủ đề</option>{topicsInSaved.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Sắp xếp từ đã lưu" value={sort} onChange={(event) => setSort(event.target.value)}><option value="newest">Gần đây nhất</option><option value="oldest">Cũ nhất</option></select></div>
+    <div className="vocab-dense-list">{rows.map((entry) => { const term = fromSaved(entry); const current = wordState(reviewById.get(entry.id)); return <article className="vocab-dense-row" key={entry.id}>
+      <div className="vocab-dense-main"><strong>{entry.title}</strong><span className={`vocab-state ${current}`}>{wordStateLabels[current]}</span><p>{entry.meaningVi}</p><small>{[term.topic, sourceName(entry.sourcePath), formatDate(entry.createdAt)].filter(Boolean).join(" · ")}</small></div>
+      <div className="vocab-dense-actions"><button className="vocab-icon-button" aria-label={`Nghe phát âm ${entry.title}`} onClick={() => speak(entry.title)}><Volume2 size={17} /></button><Link className="vocab-button soft" href={`/app/vocabulary/explore?q=${encodeURIComponent(entry.title)}`}>Chi tiết</Link><button className="vocab-icon-button subtle" aria-label={`Bỏ lưu ${entry.title}`} title="Bỏ lưu" onClick={() => void removeWord(entry)}><Trash2 size={16} /></button></div>
+    </article>; })}{rows.length === 0 && <div className="vocab-panel vocab-empty">{saved.length ? "Không có từ khớp bộ lọc." : <>Sổ từ còn trống. <Link href="/app/vocabulary/study?collection=ielts">Học 10 từ đầu tiên →</Link></>}</div>}</div></>;
 }
 
-function Review({ saved, due, reviewById, gradeWord }: Pick<Common, "saved" | "due" | "reviewById" | "gradeWord">) {
+const grades: { id: ReviewGrade; label: string }[] = [{ id: "again", label: "Quên" }, { id: "hard", label: "Khó" }, { id: "good", label: "Nhớ" }, { id: "easy", label: "Dễ" }];
+
+/** Review session: overdue cards first, then a few new words; each card shows when it would come back for every grade. */
+function Review({ saved, reviewById, gradeWord }: Pick<Common, "saved" | "reviewById" | "gradeWord">) {
+  const [startedAt] = useState(() => Date.now());
+  const [queue, setQueue] = useState(() => reviewQueue(saved, reviewById, startedAt).map((entry) => entry.id));
+  const [position, setPosition] = useState(0);
   const [revealed, setRevealed] = useState(false);
+  const [previews, setPreviews] = useState<Partial<Record<ReviewGrade, string>>>({});
   const [busy, setBusy] = useState(false);
-  const [done, setDone] = useState<string[]>([]);
-  const current = due.find((entry) => !done.includes(entry.id));
+  const [tally, setTally] = useState<Record<ReviewGrade, number>>({ again: 0, hard: 0, good: 0, easy: 0 });
+  const byId = useMemo(() => new Map(saved.map((entry) => [entry.id, entry])), [saved]);
+  const current = byId.get(queue[position] ?? "");
+  const term = current ? fromSaved(current) : null;
+  const left = queue.length - position;
+
+  function reveal() {
+    if (!current || revealed) return;
+    const at = new Date();
+    const previous = reviewById.get(current.id);
+    setPreviews(Object.fromEntries(grades.map(({ id }) => [id, intervalLabel(new Date(nextWordReview(previous, id, at).due_at).getTime() - at.getTime())])));
+    setRevealed(true);
+  }
   async function rate(grade: ReviewGrade) {
     if (!current || busy || !revealed) return;
     setBusy(true);
     const success = await gradeWord(current, grade);
-    if (success) { setDone((ids) => [...ids, current.id]); setRevealed(false); }
     setBusy(false);
+    if (!success) return;
+    setTally((value) => ({ ...value, [grade]: value[grade] + 1 }));
+    // A forgotten card comes back once at the end of this session, as in Anki's learning steps.
+    if (grade === "again" && queue.filter((id) => id === current.id).length < 2) setQueue((value) => [...value, current.id]);
+    setRevealed(false); setPreviews({}); setPosition((value) => value + 1);
   }
-  if (!current) return <div className="vocab-panel vocab-empty"><RotateCcw size={35}/><h2>{done.length ? `Đã ôn ${done.length} từ!` : "Hôm nay chưa có từ đến hạn"}</h2><p>{saved.length ? "Lịch ôn tiếp theo được lưu trong tài khoản của bạn." : "Lưu từ đầu tiên từ bài học hoặc Daily News để bắt đầu ôn."}</p><Link className="vocab-button primary" href={saved.length ? "/app/vocabulary/notebook" : "/app/vocabulary/learn"}>{saved.length ? "Mở từ đã lưu" : "Học từ mới"} <ArrowRight size={16}/></Link></div>;
-  const term = fromSaved(current);
-  const previous = reviewById.get(current.id);
-  return <div className="vocab-panel vocab-review"><div className="vocab-review-meta"><span className="vocab-kicker">FLASHCARD · {done.length + 1}/{due.length + done.length}</span><span>{previous ? `${previous.repetitions} lượt ôn` : "Thẻ mới"}</span></div><button className="vocab-flashcard" onClick={() => setRevealed((value) => !value)} aria-label={revealed ? "Ẩn nghĩa" : "Hiện nghĩa"}><span>{revealed ? "NGHĨA & VÍ DỤ" : "BẠN CÓ NHỚ TỪ NÀY?"}</span><TopicArt localOnly topic={term.topic} word={current.title} className="vocab-card-art" /><strong>{current.title}</strong>{term.ipa && <small>{term.ipa}</small>}{revealed ? <><b>{current.meaningVi}</b><em>{current.example}</em>{term.pos && <small>{term.pos}</small>}{term.collocations.length > 0 && <small>{term.collocations.slice(0, 2).join(" · ")}</small>}</> : <small>Nhấn để hiện nghĩa</small>}</button>{revealed && <div className="vocab-rating"><button disabled={busy} onClick={() => void rate("again")}>Again</button><button disabled={busy} onClick={() => void rate("hard")}>Hard</button><button disabled={busy} onClick={() => void rate("good")}>Good</button><button disabled={busy} onClick={() => void rate("easy")}>Easy</button></div>}<p className="vocab-muted">Lịch ôn dùng FSRS và lưu cùng lịch sử của từ. Thẻ có thể đến hạn lại sau vài phút.</p></div>;
+  useEffect(() => {
+    function onKey(event: KeyboardEvent) {
+      if (!current || event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
+      if ((event.key === " " || event.key === "Enter") && !revealed) { event.preventDefault(); reveal(); }
+      else if (revealed && /^[1-4]$/.test(event.key)) void rate(grades[Number(event.key) - 1].id);
+      else if (event.key.toLowerCase() === "p") speak(current.title);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
+  if (!queue.length) return <div className="vocab-panel vocab-empty"><RotateCcw size={35}/><h2>Hôm nay không có thẻ đến hạn</h2><p>{saved.length ? "Các từ trong Sổ từ đang được giãn cách. Học thêm từ mới để có thẻ ôn ngày mai." : "Học vài từ đầu tiên; chúng sẽ tự vào lịch ôn."}</p><Link className="vocab-button primary" href="/app/vocabulary/study?collection=ielts">Học từ mới <ArrowRight size={16}/></Link></div>;
+  if (!current || !term) return <div className="vocab-panel vocab-empty vocab-review-done"><Check size={35}/><h2>Xong phiên ôn: {position} thẻ</h2><p>Quên {tally.again} · Khó {tally.hard} · Nhớ {tally.good} · Dễ {tally.easy}</p><p>Thẻ sẽ quay lại theo lịch FSRS. Phiên tiếp theo ôn từ đến hạn trước, sau đó tới từ mới.</p><div className="vocab-detail-actions"><Link className="vocab-button primary" href="/app/vocabulary/study?collection=ielts">Học 10 từ mới <ArrowRight size={16}/></Link><Link className="vocab-button soft" href="/app/vocabulary/progress">Xem tiến độ</Link></div></div>;
+  const state = wordState(reviewById.get(current.id));
+  return <div className="vocab-panel vocab-review">
+    <div className="vocab-review-meta"><span>Thẻ {Math.min(position + 1, queue.length)}/{queue.length}</span><span className={`vocab-state ${state}`}>{wordStateLabels[state]}</span><span>còn ~{Math.max(1, Math.ceil(left * 8 / 60))} phút</span></div>
+    <div className="vocab-review-bar" aria-hidden="true"><i style={{ width: `${(position / queue.length) * 100}%` }} /></div>
+    <div className="vocab-review-card" role="group" aria-label={`Thẻ ôn: ${current.title}`}>
+      <span className="vocab-kicker">{revealed ? "NGHĨA & VÍ DỤ" : "BẠN CÓ NHỚ NGHĨA CỦA TỪ NÀY?"}</span>
+      <h2>{current.title}</h2>
+      <div className="vocab-review-sub">{[term.ipa, term.pos].filter(Boolean).join(" · ")}<button type="button" className="vocab-icon-button" aria-label={`Nghe phát âm ${current.title}`} onClick={() => speak(current.title)}><Volume2 size={18}/></button></div>
+      {revealed ? <div className="vocab-review-back"><strong>{current.meaningVi}</strong>{current.kind === "word" && current.definition && <p>{current.definition}</p>}{current.example && <blockquote><ExampleSentence text={current.example} word={current.title} /></blockquote>}</div>
+        : <button type="button" className="vocab-button primary vocab-review-reveal" onClick={reveal}>Hiện nghĩa <kbd>Space</kbd></button>}
+    </div>
+    {revealed && <div className="vocab-rating">{grades.map(({ id, label }, index) => <button key={id} className={`grade-${id}`} disabled={busy} onClick={() => void rate(id)}><strong>{label}</strong><small>{previews[id]}</small><kbd>{index + 1}</kbd></button>)}</div>}
+    <p className="vocab-muted">Phím tắt: Space hiện nghĩa · 1–4 chấm · P nghe. Lịch ôn dùng FSRS; thẻ “Quên” quay lại cuối phiên.</p>
+  </div>;
 }
 
 function Practice({ saved, attempts, saveAttempt }: Pick<Common, "saved" | "attempts" | "saveAttempt">) {
@@ -498,7 +527,24 @@ function Explore({ terms, saved, savedByWord, saveWord }: Pick<Common, "terms" |
   return <><form className="vocab-search" onSubmit={(event) => { event.preventDefault(); router.push(`/app/vocabulary/explore?q=${encodeURIComponent(normalizeWord(query))}`); }}><Search size={19}/><input value={query} onChange={(event) => setQuery(event.target.value)} aria-label="Tra từ tiếng Anh" placeholder="Ví dụ: influence, acquire, sustainable…"/><button className="vocab-button primary">Tra từ</button></form>{term ? <article className="vocab-panel vocab-detail"><div className="vocab-detail-top"><TopicArt localOnly topic={term.topic} word={term.word} className="vocab-detail-art" /><div><span className="vocab-tag">{term.topic} · {term.level}</span><h2>{term.word}</h2><p>{[term.ipa, term.pos].filter(Boolean).join(" · ")}</p></div><button className="vocab-icon-button" aria-label={`Nghe phát âm ${term.word}`} onClick={() => speak(term.word)}><Volume2 size={20}/></button></div><div className="vocab-meaning">{term.meaning}</div>{term.collocations.length > 0 && <><h3>Collocations</h3><div className="vocab-chips">{term.collocations.map((value) => <span key={value}>{value}</span>)}</div></>}{term.example && <><h3>Ví dụ</h3><p className="vocab-example">{term.example}</p>{term.vi && <p className="vocab-muted">{term.vi}</p>}</>}{term.synonyms && <><h3>Từ gần nghĩa</h3><p>{term.synonyms}</p></>}<button className="vocab-button primary" disabled={savedByWord.has(normalizeWord(term.word))} onClick={() => void saveWord(term)}>{savedByWord.has(normalizeWord(term.word)) ? "✓ Đã lưu" : "☆ Lưu vào sổ"}</button>{savedByWord.get(normalizeWord(term.word))?.sourceUrl && <p className="vocab-muted">Nguồn: <a href={savedByWord.get(normalizeWord(term.word))!.sourceUrl} target="_blank" rel="noopener noreferrer">Wiktionary</a> (CC BY-SA 4.0).</p>}</article> : remote ? <article className="vocab-panel vocab-detail"><div className="vocab-detail-top"><TopicArt localOnly topic={remote.word} word={remote.word} className="vocab-detail-art" /><div><span className="vocab-tag">TỪ ĐIỂN MỞ</span><h2>{remote.word}</h2><p>{remote.ipa}</p></div><button className="vocab-icon-button" aria-label={`Nghe phát âm ${remote.word}`} onClick={() => speak(remote.word)}><Volume2 size={20}/></button></div><div className="vocab-dictionary-meanings">{remote.meanings.map((item, index) => <div key={`${item.pos}-${index}`}><span className="vocab-tag">{item.pos}</span><p>{item.definition}</p>{item.meaningVi && <strong>Nghĩa Việt: {item.meaningVi}</strong>}{item.example && <em>{item.example}</em>}{item.synonyms.length > 0 && <small>Gần nghĩa: {item.synonyms.join(", ")}</small>}{item.antonyms.length > 0 && <small>Trái nghĩa: {item.antonyms.join(", ")}</small>}</div>)}</div>{!vietnamese && <label className="vocab-personal-meaning">Nguồn chưa có nghĩa tiếng Việt. Nhập nghĩa của bạn để lưu từ:<input maxLength={200} value={personalMeaning} onChange={(event) => setPersonalMeaning(event.target.value)} placeholder="Nghĩa tiếng Việt của từ này"/></label>}<button className="vocab-button primary" disabled={!remoteTerm} onClick={() => { if (remoteTerm) void saveWord(remoteTerm, remote.source.url); }}>☆ Lưu vào sổ</button><p className="vocab-muted">Nguồn: <a href="https://freedictionaryapi.com/" target="_blank" rel="noopener noreferrer">FreeDictionaryAPI.com</a> / <a href={remote.source.url} target="_blank" rel="noopener noreferrer">Wiktionary</a> · <a href={remote.source.licenseUrl} target="_blank" rel="noopener noreferrer">{remote.source.license}</a>. Nghĩa Việt hiển thị khi nguồn có bản dịch.</p></article> : <div className="vocab-panel vocab-empty"><Search size={31}/><h2>{remoteLoading ? "Đang tra từ…" : lookup ? `Chưa có kết quả cho “${lookup}”` : "Tra từ trong kho đã biên soạn"}</h2><p>{remoteError || "Tra trong bộ từ biên soạn và nguồn từ điển mở. Hệ thống không tự đoán nghĩa."}</p>{suggestions.length > 0 && <div className="vocab-chips">{suggestions.map((item) => <Link key={item.id} href={`/app/vocabulary/explore?q=${encodeURIComponent(item.word)}`}>{item.word}</Link>)}</div>}</div>}</>;
 }
 
-function Progress({ saved, mastered, due, reviewedToday, totalCorrect, totalQuestions, attempts, addReviewTask }: { saved: WordEntry[]; mastered: number; due: WordEntry[]; reviewedToday: number; totalCorrect: number; totalQuestions: number; attempts: PracticeAttempt[]; addReviewTask: () => Promise<void> }) {
-  const stats = [["Từ đã lưu", saved.length], ["Đã thuộc", mastered], ["Đến hạn ôn", due.length], ["Đã ôn hôm nay", reviewedToday], ["Tỉ lệ làm đúng", totalQuestions ? `${Math.round(totalCorrect / totalQuestions * 100)}%` : "—"]] as const;
-  return <><div className="vocab-stats">{stats.map(([label, value]) => <div className="vocab-panel" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><section className="vocab-panel"><h2>Hoạt động gần đây</h2>{attempts.length ? <div className="vocab-history">{attempts.slice(0, 10).map((attempt, index) => <div key={attempt.id ?? index}><span>{formatDate(attempt.submitted_at)}</span><strong>{attempt.score}/{attempt.total} câu đúng</strong><small>{attempt.wrong_words.length ? `Ôn thêm: ${attempt.wrong_words.join(", ")}` : "Hoàn thành tốt"}</small></div>)}</div> : <p>Chưa có bài luyện nào được hoàn thành.</p>}<div className="vocab-detail-actions"><Link className="vocab-button soft" href="/app/vocabulary/practice">Luyện tập <ArrowRight size={16}/></Link>{due.length > 0 && <button className="vocab-button primary" onClick={() => void addReviewTask()}>Thêm {due.length} từ cần ôn vào Planner</button>}</div></section></>;
+function Progress({ saved, reviewById, now, due, reviewedToday, totalCorrect, totalQuestions, attempts, addReviewTask }: { saved: WordEntry[]; reviewById: Map<string, WordReview>; now: number; due: WordEntry[]; reviewedToday: number; totalCorrect: number; totalQuestions: number; attempts: PracticeAttempt[]; addReviewTask: () => Promise<void> }) {
+  const counts = { new: 0, learning: 0, reviewing: 0, mastered: 0 } as Record<WordState, number>;
+  saved.forEach((entry) => { counts[wordState(reviewById.get(entry.id))] += 1; });
+  // Cards due on each of the next seven days, so learners can see tomorrow's load.
+  const startOfDay = new Date(now); startOfDay.setHours(0, 0, 0, 0);
+  const forecast = Array.from({ length: 7 }, (_, day) => {
+    const from = startOfDay.getTime() + day * 86_400_000;
+    const to = from + 86_400_000;
+    const count = saved.filter((entry) => { const review = reviewById.get(entry.id); if (!review) return false; const at = new Date(review.due_at).getTime(); return day === 0 ? at < to : at >= from && at < to; }).length;
+    return { label: day === 0 ? "Hôm nay" : day === 1 ? "Mai" : new Date(from).toLocaleDateString("vi-VN", { weekday: "short" }), count };
+  });
+  const peak = Math.max(1, ...forecast.map((item) => item.count));
+  return <>
+    <div className="vocab-state-grid">{(Object.keys(wordStateLabels) as WordState[]).map((state) => <div className={`vocab-panel vocab-state-tile ${state}`} key={state}><span className={`vocab-state ${state}`}>{wordStateLabels[state]}</span><strong>{counts[state]}</strong><small>{state === "new" ? "chưa ôn lần nào" : state === "learning" ? "đang ở bước học đầu" : state === "reviewing" ? "khoảng ôn < 21 ngày" : "khoảng ôn ≥ 21 ngày"}</small></div>)}</div>
+    <div className="vocab-progress-grid">
+      <section className="vocab-panel"><h2>Lịch ôn 7 ngày tới</h2><div className="vocab-forecast" role="img" aria-label={forecast.map((item) => `${item.label}: ${item.count} thẻ`).join(", ")}>{forecast.map((item) => <div key={item.label}><span>{item.count}</span><i style={{ height: `${Math.max(4, (item.count / peak) * 100)}%` }} /><small>{item.label}</small></div>)}</div><p className="vocab-muted">Đã ôn hôm nay: {reviewedToday} thẻ · Tỉ lệ làm đúng: {totalQuestions ? `${Math.round(totalCorrect / totalQuestions * 100)}%` : "—"}</p>
+        <div className="vocab-detail-actions">{due.length > 0 && <Link className="vocab-button primary" href="/app/vocabulary/review">Ôn {due.length} thẻ đến hạn <ArrowRight size={16}/></Link>}{due.length > 0 && <button className="vocab-button soft" onClick={() => void addReviewTask()}>Thêm vào Planner</button>}</div></section>
+      <section className="vocab-panel"><h2>Kiểm tra gần đây</h2>{attempts.length ? <div className="vocab-history">{attempts.slice(0, 8).map((attempt, index) => <div key={attempt.id ?? index}><span>{formatDate(attempt.submitted_at)}</span><strong>{attempt.score}/{attempt.total} câu đúng</strong><small>{attempt.wrong_words.length ? `Ôn thêm: ${attempt.wrong_words.join(", ")}` : "Hoàn thành tốt"}</small></div>)}</div> : <p>Chưa có bài kiểm tra nào.</p>}<Link className="vocab-button soft" href="/app/vocabulary/practice">Làm bài kiểm tra <ArrowRight size={16}/></Link></section>
+    </div>
+  </>;
 }
