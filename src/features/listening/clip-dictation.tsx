@@ -11,7 +11,10 @@ type Clip = { id: string; bank: "quick" | "numbers"; title: string; source_datas
 type Result = { accuracy: number; reference_text: string };
 type LastAttempt = { accuracy: number; is_skipped: boolean };
 const bankName = { quick: "Quick Dictation", numbers: "Numbers" };
+const PAGE_SIZE = 40;
 const clock = (ms: number) => ms < 10000 ? `${(ms / 1000).toFixed(1)}s` : `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, "0")}`;
+/** Learners see "Clip 001"; the dataset voice id stays in the source credit. */
+const clipLabel = (title: string) => title.replace(/\s*·\s*voice\s+\S+$/i, "");
 const normalize = (value: string) => value.toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
 function maskedAnswer(reference: string, typed: string) {
   const heard = new Set(normalize(typed).split(" "));
@@ -80,8 +83,8 @@ export function ClipDictation() {
   const clip = clips.find((item) => item.id === clipId);
   const items = clips.filter((item) => item.bank === bank);
   const filtered = items.filter((item) => `${item.title} ${item.source_dataset}`.toLowerCase().includes(query.trim().toLowerCase()));
-  const pageCount = Math.max(1, Math.ceil(filtered.length / 20));
-  const visible = filtered.slice((Math.min(page, pageCount) - 1) * 20, Math.min(page, pageCount) * 20);
+  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const visible = filtered.slice((Math.min(page, pageCount) - 1) * PAGE_SIZE, Math.min(page, pageCount) * PAGE_SIZE);
   const siblings = clip ? clips.filter((item) => item.bank === clip.bank) : [];
   const index = clip ? siblings.findIndex((item) => item.id === clip.id) : -1;
   const diff = result && !reveal ? wordDifferences(result.reference_text, answer) : [];
@@ -162,11 +165,11 @@ export function ClipDictation() {
       <header className="voa-library-heading"><div><span className="voa-eyebrow">KHO CLIP NGHE CHÉP</span><h1>{bankName[bank as keyof typeof bankName] ?? "Kho bài"}</h1><p>{bank === "numbers" ? "Nghe và ghi một chữ số từ 0 đến 9 ở mỗi clip." : "Nghe các câu ngắn từ bộ dữ liệu giọng đọc có transcript đi kèm."}</p></div></header>
       <div className="voa-info-banner"><span>Clip có audio và transcript từ cùng bộ dữ liệu nguồn. Bản thử nghiệm đang chờ nghe duyệt thủ công.</span></div>
       <section className="voa-library"><div className="voa-filter-bar voa-clip-filter"><label className="voa-search"><Search size={18} /><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="Tìm clip hoặc bộ dữ liệu…" aria-label="Tìm clip" /></label><span>{loading ? "Đang tải…" : `${filtered.length} clip có audio`}</span></div>
-        {loading ? <p className="voa-empty" role="status">Đang tải clip…</p> : visible.length ? <div className="voa-catalog voa-clip-catalog">{visible.map((item) => <button type="button" key={item.id} onClick={() => open(item)}><span className="voa-card-top"><span className="voa-level-badge">{item.source_dataset}</span><span className="voa-status-badge">Bản thử nghiệm</span></span><strong>{item.title}</strong><span className="voa-card-source">{clock(item.duration_ms)} · {item.attribution}</span><span className="voa-card-bottom">Nghe và chép <ArrowRight size={18} /></span></button>)}</div> : <p className="voa-empty">Kho này chưa có clip phù hợp.</p>}
+        {loading ? <p className="voa-empty" role="status">Đang tải clip…</p> : visible.length ? <div className="voa-clip-grid">{visible.map((item) => <button type="button" key={item.id} onClick={() => open(item)} title={item.attribution}><strong>{clipLabel(item.title)}</strong><span>{clock(item.duration_ms)}</span><ArrowRight size={16} aria-hidden="true" /></button>)}</div> : <p className="voa-empty">Kho này chưa có clip phù hợp.</p>}
         {pageCount > 1 && <div className="voa-pagination"><button type="button" disabled={page <= 1} onClick={() => setPage((value) => value - 1)}>← Trước</button><span>Trang {Math.min(page, pageCount)}/{pageCount}</span><button type="button" disabled={page >= pageCount} onClick={() => setPage((value) => value + 1)}>Tiếp →</button></div>}
       </section>
     </> : clip ? <>
-      <header className="voa-lesson-header"><div><button type="button" className="voa-lesson-back" onClick={() => { cancelReplay(); audio.current?.pause(); router.push(`/app/dictation/banks/${clip.bank}`); }}><ArrowLeft size={15} /> {bankName[clip.bank]}</button><h1>{clip.title}</h1><p>{clip.source_dataset} · Bản thử nghiệm</p></div></header>
+      <header className="voa-lesson-header"><div><button type="button" className="voa-lesson-back" onClick={() => { cancelReplay(); audio.current?.pause(); router.push(`/app/dictation/banks/${clip.bank}`); }}><ArrowLeft size={15} /> {bankName[clip.bank]}</button><h1>{clipLabel(clip.title)}</h1><p>{clock(clip.duration_ms)} · Bản thử nghiệm</p></div></header>
       <section className="voa-exercise-card voa-surface voa-clip-exercise"><div className="voa-exercise-heading"><div><span className="voa-eyebrow">BUỔI LUYỆN TẬP</span><h2>Clip {index + 1}<small> / {siblings.length}</small></h2></div><span>{lastAttempt === null ? "Chưa làm" : lastAttempt.is_skipped ? "Đã bỏ qua" : lastAttempt.accuracy >= 80 ? `Đã đạt · ${lastAttempt.accuracy}%` : `Cần ôn · ${lastAttempt.accuracy}%`}</span></div>
         <div className="voa-audio-inline">
           <div className="voa-audio-title"><div className="voa-audio-meta"><span>Audio clip hiện tại</span><small>{clock(clip.duration_ms)} · Tự dừng cuối clip</small></div>

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, Info, Pause, Play, RotateCcw, Search, Settings2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Clock3, Headphones, Info, Pause, Play, RotateCcw, Search, Settings2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { wordDifferences } from "@/lib/listening/youtube";
 import "./voa-dictation.css";
@@ -268,6 +268,15 @@ export function VoaDictation() {
     setFeedback("skipped"); setChecked(true); setShowFullAnswer(true);
   }
 
+  const banks = [
+    { name: "VOA Learning English", description: "Hội thoại theo khóa học Let’s Learn English. Nghe từng câu, chép và ôn lại câu sai.", href: "/app/dictation/banks/voa", count: loading ? null : lessons.length, unit: "bài có audio" },
+    { name: "Quick Dictation", description: "Bài nghe ngắn", href: "/app/dictation/banks/quick", count: clipBankCounts ? clipBankCounts.quick ?? 0 : null, unit: "clip có audio" },
+    { name: "Numbers", description: "Nghe và ghi số", href: "/app/dictation/banks/numbers", count: clipBankCounts ? clipBankCounts.numbers ?? 0 : null, unit: "clip có audio" },
+  ];
+  const openBanks = banks.filter((bank) => bank.count !== 0);
+  const upcomingBanks = [...banks.filter((bank) => bank.count === 0).map((bank) => [bank.name, bank.description]),
+    ["Daily Conversations", "Hội thoại đời thường"], ["News & Topics", "Tin tức và chủ đề"], ["Short Stories", "Truyện ngắn"], ["Spelling Names", "Đánh vần tên"]];
+
   return (
     <main className="voa-lab">
       {error && <p role="alert" className="voa-alert">{error}</p>}
@@ -276,14 +285,13 @@ export function VoaDictation() {
           <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dashboard">Dashboard</Link><span>›</span><span>Dictation</span></nav>
           <header className="voa-bank-hero"><div><span className="voa-eyebrow">DICTATION LIBRARY</span><h1>Chọn kho luyện nghe</h1><p>Chọn nguồn học, tìm bài rồi luyện nghe chép từng câu.</p></div>{featured && <button type="button" className="voa-primary-button" onClick={() => openLesson(featured)}>Tiếp tục bài đang học <ArrowRight size={17} /></button>}</header>
           {previewEnabled && <div className="voa-info-banner"><Info size={18} /><span>Bài VOA thử nghiệm có transcript và mốc audio căn tự động, chưa được nghe duyệt thủ công.</span></div>}
+          {/* Banks with lessons come first; banks still waiting for audio sit in a quieter "coming soon" row. */}
           <div className="voa-bank-grid">
-            <button type="button" className="voa-bank-card voa-surface" onClick={() => router.push("/app/dictation/banks/voa")}><span className="voa-bank-icon">🎧</span><span className="voa-bank-status">Đang mở</span><strong>VOA Learning English</strong><span>Hội thoại theo khóa học Let’s Learn English. Nghe từng câu, chép và ôn lại câu sai.</span><span className="voa-bank-foot">{loading ? "Đang tải…" : `${lessons.length} bài có audio`} <ArrowRight size={18} /></span></button>
-            {[["Daily Conversations","Hội thoại đời thường",""],["News & Topics","Tin tức và chủ đề",""],["Short Stories","Truyện ngắn",""],["Quick Dictation","Bài nghe ngắn","quick"],["Numbers","Nghe và ghi số","numbers"],["Spelling Names","Đánh vần tên",""]].map(([name,description,slug]) => {
-              const count = clipBankCounts?.[slug] ?? 0;
-              const bankLoading = Boolean(slug) && clipBankCounts === null;
-              return count ? <button type="button" key={name} className="voa-bank-card voa-surface" onClick={() => router.push(`/app/dictation/banks/${slug}`)}><span className="voa-bank-icon">🎧</span><span className="voa-bank-status">Đang mở</span><strong>{name}</strong><span>{description}</span><span className="voa-bank-foot">{count} clip có audio <ArrowRight size={18} /></span></button> : <div key={name} className="voa-bank-card voa-surface voa-bank-unavailable"><span className="voa-bank-icon">◌</span><span className="voa-bank-status">{bankLoading ? "Đang tải…" : "Chưa có bài"}</span><strong>{name}</strong><span>{description}</span><span className="voa-bank-foot">{bankLoading ? "Đang kiểm tra dữ liệu" : "Kho đang chuẩn bị dữ liệu nguồn"}</span></div>;
-            })}
+            {openBanks.map((bank) => bank.count === null
+              ? <div key={bank.name} className="voa-bank-card voa-surface voa-bank-unavailable"><span className="voa-bank-icon"><Headphones size={21} /></span><span className="voa-bank-status">Đang tải…</span><strong>{bank.name}</strong><span>{bank.description}</span><span className="voa-bank-foot">Đang kiểm tra dữ liệu</span></div>
+              : <button type="button" key={bank.name} className="voa-bank-card voa-surface" onClick={() => router.push(bank.href)}><span className="voa-bank-icon"><Headphones size={21} /></span><span className="voa-bank-status">Đang mở</span><strong>{bank.name}</strong><span>{bank.description}</span><span className="voa-bank-foot">{bank.count} {bank.unit} <ArrowRight size={18} /></span></button>)}
           </div>
+          <section className="voa-bank-upcoming" aria-label="Kho sắp ra mắt"><h2>Sắp ra mắt</h2><div>{upcomingBanks.map(([name, description]) => <div key={name}><Clock3 size={16} /><strong>{name}</strong><span>{description}</span></div>)}</div></section>
         </>
       ) : view === "bank" ? (
         <>
