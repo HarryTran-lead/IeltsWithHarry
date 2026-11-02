@@ -87,3 +87,13 @@ The website integration is in `supabase/migrations/202611010002_voa_dictation.sq
 ## Project status
 
 This folder contains the offline importer. It does not include a pre-downloaded corpus. R2 upload and historic archive completeness require separate verified access and review.
+
+## Clip bank quality audit
+
+Install `requirements-audit.txt` and cache the Faster Whisper `base.en` model before an offline audit. Run from the repository root:
+
+```bash
+python tools/voa-import/scripts/audit_clip_banks.py --data-dir tools/voa-import/data --report tools/voa-import/data/clip_qa_report.json
+```
+
+The audit checks the active 600 LibriTTS, 200 LJ Speech and 100 spoken digit clips for duplicate source IDs, silent or clipped WAVs and a 42 clip speech recognition sample. It cannot replace manual listening review of every recording. The report stays in the ignored local `data/` folder.
