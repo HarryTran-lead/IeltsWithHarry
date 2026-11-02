@@ -7029,7 +7029,7 @@ a.card:hover {
 .vocabulary-layout .reading-vocab-page, .vocabulary-layout .translation-page { box-sizing: border-box; width: 100%; max-width: none; margin: 0; padding: 5px 8px 30px; }
 .vocabulary-layout .listening-vocab-hero, .vocabulary-layout .collocations-header, .vocabulary-layout .word-formation-hero { margin: 5px 0 9px; }
 .vocabulary-layout .listening-vocab-hero h1, .vocabulary-layout .collocations-header h1, .vocabulary-layout .word-formation-hero h1 { font-size: clamp(24px, 2.3vw, 30px); margin: 2px 0 3px; }
-.vocabulary-layout .listening-vocab-hero p, .vocabulary-layout .collocations-header p, .vocabulary-layout .word-formation-hero p { font-size: 12px; line-height: 1.35; }
+.vocabulary-layout .listening-vocab-hero p, .vocabulary-layout .collocations-header p, .vocabulary-layout .word-formation-hero p { font-size: 14px; line-height: 1.45; }
 .vocabulary-layout .listening-vocab-hero-icon, .vocabulary-layout .collocations-total, .vocabulary-layout .word-formation-hero > svg { display: none; }
 .vocabulary-layout .listening-vocab-back, .vocabulary-layout .collocations-top, .vocabulary-layout .word-formation-back { min-height: 25px; }
 .vocabulary-layout .listening-vocab-controls, .vocabulary-layout .collocations-toolbar { padding: 8px 10px; border-radius: 13px; }
@@ -7040,7 +7040,8 @@ a.card:hover {
 .vocabulary-layout .listening-vocab-topics, .vocabulary-layout .listening-vocab-library, .vocabulary-layout .listening-vocab-study,
 .vocabulary-layout .collocations-study, .vocabulary-layout .collocations-library { padding: 16px; border-radius: 16px; }
 .vocabulary-layout .listening-vocab-topic-grid { margin-top: 12px; }
-.vocabulary-layout .listening-vocab-card, .vocabulary-layout .collocations-card { margin-left: 0; }
+/* The study card sits centred in its panel instead of leaving an empty strip on the right. */
+.vocabulary-layout .listening-vocab-card, .vocabulary-layout .collocations-card { margin-inline: auto; }
 .vocabulary-layout .collocations-progress { margin: 10px 0 12px; }
 .vocabulary-layout .word-formation-stats { gap: 17px; margin: 5px 0 10px; font-size: 13px; }
 .vocabulary-layout .word-formation-stats strong { font-size: 17px; }

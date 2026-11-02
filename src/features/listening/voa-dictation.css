@@ -193,3 +193,25 @@
 @media(max-width:1100px){.voa-audio-inline{grid-template-columns:1fr}.voa-audio-controls{justify-content:flex-end}.voa-catalog{grid-template-columns:repeat(2,minmax(0,1fr))}.voa-practice-layout{grid-template-columns:minmax(0,1fr) 220px}}
 @media(max-width:850px){.voa-filter-bar{grid-template-columns:minmax(0,1fr) repeat(2,120px)}.voa-filter-bar .voa-search{grid-column:1/-1}.voa-practice-layout{grid-template-columns:1fr}.voa-sentence-sidebar{position:static;max-height:none}.voa-sentence-grid{max-height:280px;grid-template-columns:repeat(4,minmax(0,1fr))}.voa-admin-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.voa-lab{padding:14px 14px 50px}.voa-library-heading{align-items:flex-start;flex-direction:column;gap:9px}.voa-lab .voa-continue-button{max-width:100%;width:100%}.voa-library-heading h1,.voa-lesson-header h1{font-size:27px}.voa-stats{gap:5px 12px}.voa-filter-bar{grid-template-columns:repeat(2,minmax(0,1fr));padding:12px}.voa-filter-bar .voa-search{grid-column:1/-1}.voa-catalog{grid-template-columns:1fr}.voa-library-count span:last-child{display:none}.voa-lesson-header{align-items:flex-start;flex-direction:column;gap:8px}.voa-exercise-card{padding:14px}.voa-audio-title{align-items:flex-start;flex-direction:column;gap:3px}.voa-audio-meta{flex-direction:column;gap:2px}.voa-audio-controls{flex-wrap:wrap;justify-content:flex-start}.voa-tabs button{font-size:11px;padding:8px 4px}.voa-exercise-heading{align-items:flex-start;flex-direction:column}.voa-answer-actions small{width:100%;margin-left:0}.voa-task-navigation button{padding:8px 9px;font-size:12px}.voa-sentence-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.voa-admin-segment{grid-template-columns:1fr 1fr}.voa-admin-segment textarea{grid-column:1/-1}}
+/* Library: banks still waiting for audio stay visible but out of the way. */
+.voa-bank-icon svg{display:block}
+.voa-bank-upcoming{margin-top:22px}
+.voa-bank-upcoming h2{margin:0 0 10px;color:var(--voa-muted);font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.voa-bank-upcoming>div{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.voa-bank-upcoming>div>div{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:2px 10px;padding:12px 14px;border:1px dashed #cfdde7;border-radius:13px;background:#fbfdfe;color:#7d93a6}
+.voa-bank-upcoming svg{grid-row:span 2;color:#9bb2c3}
+.voa-bank-upcoming strong{color:#4f6b83;font-size:14px}
+.voa-bank-upcoming span{font-size:12.5px}
+/* Clip banks: a dense numbered grid, so 800 short clips are easy to scan. */
+.voa-clip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}
+.voa-lab .voa-clip-grid button{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 8px;padding:12px 14px;border-radius:13px;text-align:left;transition:transform .15s,border-color .15s,box-shadow .15s}
+.voa-lab .voa-clip-grid button:hover{transform:translateY(-2px);border-color:#8bc5cf;box-shadow:0 8px 18px #17456612}
+.voa-clip-grid strong{font-size:15px}
+.voa-clip-grid span{grid-column:1;color:var(--voa-muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+.voa-clip-grid svg{grid-column:2;grid-row:1/span 2;color:#0a8c98}
+/* Practice: a bigger play button and answer text sized for reading back what you heard. */
+.voa-clip-player button{width:46px;height:46px;flex-basis:46px}
+.voa-lab .voa-task textarea{font-size:17px;line-height:1.55}
+.voa-answer-actions small{font-size:12.5px}
+.voa-clip-exercise{max-width:880px}
+@media(max-width:640px){.voa-clip-filter{flex-wrap:wrap}.voa-clip-filter .voa-search{flex-basis:100%}.voa-clip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
