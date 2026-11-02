@@ -1032,3 +1032,243 @@
   .news-home .news-feed-bar{grid-template-columns:minmax(0,1fr) auto}
   .news-home .news-random-picker .button{padding:6px 9px}
 }
+
+/* ── Polish pass: feed toolbar, compact phone cards, history rows, reading header ── */
+
+/* Topics own the first row and wrap on wide screens, so no topic hides behind the search box. */
+.news-home .news-feed-bar {
+  display: block;
+}
+.news-home .news-feed-bar .news-categories {
+  flex-wrap: wrap;
+  overflow: visible;
+  padding: 2px 0;
+}
+.news-feed-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+.news-home .news-feed-tools .news-feed-count {
+  flex: 1;
+  flex-wrap: nowrap;
+  min-width: 0;
+  margin: 0;
+}
+.news-feed-tools .news-feed-count span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.news-feed-tools .news-feed-search {
+  width: 240px;
+}
+.news-feed-tools .news-arrived {
+  flex: none;
+}
+
+/* Question types on a card read as small tags instead of 10px grey lines. */
+.news-card-quiz-types {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding-left: 0;
+  color: #4f6579;
+  font-size: 11px;
+}
+.news-card-quiz-types span {
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: #f1f4f8;
+  white-space: nowrap;
+}
+
+/* Learn cards keep their call to action on one baseline. */
+.news-learn-card {
+  display: flex;
+  flex-direction: column;
+}
+.news-learn-card strong {
+  margin-top: auto;
+}
+
+/* History: the three totals fill the row; read stories are one-line rows. */
+.news-hub .news-section > .news-stats {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+.news-history-list:not(.news-attempt-list) > article {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border: 1px solid #e7eef1;
+}
+.news-history-list:not(.news-attempt-list) > article > span {
+  flex: none;
+  width: 150px;
+  font-variant-numeric: tabular-nums;
+}
+.news-history-list:not(.news-attempt-list) > article > h3 {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--navy);
+  font-size: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.news-history-list:not(.news-attempt-list) > article > p {
+  flex: none;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.news-history-list:not(.news-attempt-list) > article > a {
+  flex: none;
+  font-size: 13.5px;
+}
+
+/* Reading progress is a status line, not something to press. */
+.news-finish:not(.is-done) .news-finish-main {
+  height: auto;
+  padding: 0;
+  background: transparent;
+  color: #3f6475;
+  font-weight: 700;
+}
+
+@container news (max-width: 860px) {
+  .news-feed-tools {
+    flex-wrap: wrap;
+  }
+  .news-home .news-feed-tools .news-feed-count {
+    flex-basis: 100%;
+  }
+  .news-feed-tools .news-feed-search {
+    flex: 1;
+    width: auto;
+  }
+}
+
+@container news (max-width: 640px) {
+  /* Topics scroll sideways on phones; the fade shows there is more. */
+  .news-home .news-feed-bar .news-categories {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-right: 28px;
+    mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent);
+  }
+  .news-tabs-list {
+    padding-right: 24px;
+    mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+  }
+  .news-history-list:not(.news-attempt-list) > article {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .news-history-list:not(.news-attempt-list) > article > span {
+    width: auto;
+  }
+  .news-history-list:not(.news-attempt-list) > article > h3 {
+    flex-basis: 100%;
+    order: 1;
+    white-space: normal;
+  }
+  .news-history-list:not(.news-attempt-list) > article > p {
+    order: 2;
+  }
+  /* Date and the reopen link share the top line; the headline gets the full width below. */
+  .news-history-list:not(.news-attempt-list) > article > a {
+    margin-left: auto;
+  }
+}
+
+/* Phones: a scannable list with the picture beside the headline, several stories per screen. */
+@container news (max-width: 560px) {
+  .news-hub .news-grid {
+    gap: 10px;
+  }
+  .news-page .news-card:not(.news-card-skeleton) {
+    display: grid;
+    grid-template-columns: 108px minmax(0, 1fr);
+    border-radius: 16px;
+  }
+  .news-page .news-card:not(.news-card-skeleton):hover {
+    transform: none;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-art {
+    height: auto;
+    min-height: 124px;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-art img {
+    border-radius: 0;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-art .sticker {
+    scale: 0.7;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-art small {
+    display: none;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-art .news-ai-art-badge {
+    right: auto;
+    bottom: 6px;
+    left: 6px;
+    font-size: 9px;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-flag {
+    top: 6px;
+    right: auto;
+    left: 6px;
+    padding: 2px 7px;
+    font-size: 10px;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-body {
+    padding: 10px 12px 12px;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-meta {
+    font-size: 11px;
+  }
+  .news-page .news-card:not(.news-card-skeleton) h3 {
+    margin: 4px 0 8px;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-quiz-wrap {
+    margin: 0 0 8px;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-quiz {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-quiz-types {
+    display: none;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-read {
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 10px;
+    font-size: 12.5px;
+  }
+  .news-page .news-card:not(.news-card-skeleton) .news-card-icons a,
+  .news-page .news-card:not(.news-card-skeleton) .news-card-icons button {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+}
+
+/* Phone article: one gutter instead of page plus card padding, and a headline that fits the screen. */
+@media (max-width: 600px) {
+  .news-detail-page .news-detail {
+    margin-inline: -4px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+  .news-detail-page .news-detail-intro h1 {
+    font-size: clamp(24px, 7vw, 28px);
+    line-height: 1.2;
+  }
+}

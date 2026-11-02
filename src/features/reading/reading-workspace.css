@@ -26,6 +26,8 @@
 .rw.is-read.no-tools .rw-body { grid-template-columns: minmax(0, 1fr); }
 .rw.is-read.no-tools .rw-side-pane, .rw.is-read .rw-questions, .rw.is-practice .rw-tools { display: none; }
 .rw.is-read .rw-tools { position: sticky; top: 148px; display: grid; gap: 1rem; }
+/* The side column runs the full passage height, so the sticky tools follow the reader down the page. */
+.rw.is-read .rw-side-pane { align-self: stretch; }
 .rw.is-read.tools-min .rw-body { grid-template-columns: minmax(0, 1fr) 48px; }
 .rw-tool { position: relative; }
 .rw-tool > .news-tool-card { padding-right: 3rem; }
