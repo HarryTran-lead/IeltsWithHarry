@@ -71,6 +71,7 @@ export function VoaDictation() {
   const [catalogPage, setCatalogPage] = useState(1);
   const [lastLessonId, setLastLessonId] = useState("");
   const [totalSentences, setTotalSentences] = useState<number | null>(null);
+  const [clipBankCounts, setClipBankCounts] = useState<Record<string, number> | null>(null);
   const [collection, setCollection] = useState("all");
   const [time, setTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -95,6 +96,16 @@ export function VoaDictation() {
     .select("id", { count: "exact", head: true }).then(({ count }) => {
       if (alive) setTotalSentences(count);
     }); return () => { alive = false; }; }, [db]);
+
+  useEffect(() => {
+    let alive = true;
+    void Promise.all(["quick", "numbers"].map(async (bank) => {
+      const { count } = await db.from("dictation_clips").select("id", { count: "exact", head: true })
+        .eq("bank", bank).in("status", ["preview", "published"]);
+      return [bank, count ?? 0] as const;
+    })).then((entries) => { if (alive) setClipBankCounts(Object.fromEntries(entries)); });
+    return () => { alive = false; };
+  }, [db]);
 
   useEffect(() => {
     if (!lesson) return;
@@ -257,7 +268,11 @@ export function VoaDictation() {
           {previewEnabled && <div className="voa-info-banner"><Info size={18} /><span>Bài VOA thử nghiệm có transcript và mốc audio căn tự động, chưa được nghe duyệt thủ công.</span></div>}
           <div className="voa-bank-grid">
             <button type="button" className="voa-bank-card voa-surface" onClick={() => router.push("/app/dictation/banks/voa")}><span className="voa-bank-icon">🎧</span><span className="voa-bank-status">Đang mở</span><strong>VOA Learning English</strong><span>Hội thoại theo khóa học Let’s Learn English. Nghe từng câu, chép và ôn lại câu sai.</span><span className="voa-bank-foot">{loading ? "Đang tải…" : `${lessons.length} bài có audio`} <ArrowRight size={18} /></span></button>
-            {[["Daily Conversations","Hội thoại đời thường"],["News & Topics","Tin tức và chủ đề"],["Short Stories","Truyện ngắn"],["Quick Dictation","Bài nghe ngắn"],["Numbers","Nghe và ghi số"],["Spelling Names","Đánh vần tên"]].map(([name,description]) => <div key={name} className="voa-bank-card voa-surface voa-bank-unavailable"><span className="voa-bank-icon">◌</span><span className="voa-bank-status">Chưa có bài</span><strong>{name}</strong><span>{description}</span><span className="voa-bank-foot">Kho đang chuẩn bị dữ liệu nguồn</span></div>)}
+            {[["Daily Conversations","Hội thoại đời thường",""],["News & Topics","Tin tức và chủ đề",""],["Short Stories","Truyện ngắn",""],["Quick Dictation","Bài nghe ngắn","quick"],["Numbers","Nghe và ghi số","numbers"],["Spelling Names","Đánh vần tên",""]].map(([name,description,slug]) => {
+              const count = clipBankCounts?.[slug] ?? 0;
+              const bankLoading = Boolean(slug) && clipBankCounts === null;
+              return count ? <button type="button" key={name} className="voa-bank-card voa-surface" onClick={() => router.push(`/app/dictation/banks/${slug}`)}><span className="voa-bank-icon">🎧</span><span className="voa-bank-status">Đang mở</span><strong>{name}</strong><span>{description}</span><span className="voa-bank-foot">{count} clip có audio <ArrowRight size={18} /></span></button> : <div key={name} className="voa-bank-card voa-surface voa-bank-unavailable"><span className="voa-bank-icon">◌</span><span className="voa-bank-status">{bankLoading ? "Đang tải…" : "Chưa có bài"}</span><strong>{name}</strong><span>{description}</span><span className="voa-bank-foot">{bankLoading ? "Đang kiểm tra dữ liệu" : "Kho đang chuẩn bị dữ liệu nguồn"}</span></div>;
+            })}
           </div>
         </>
       ) : view === "bank" ? (

@@ -92,6 +92,15 @@
 .voa-audio-controls button{display:grid;place-items:center;width:32px;height:32px;padding:0}
 .voa-audio-inline audio{grid-column:1/-1;width:100%;height:38px}
 .voa-audio-inline audio:not([controls]){display:none}
+.voa-clip-filter{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.voa-clip-filter .voa-search{flex:1;min-width:0}
+.voa-clip-filter>span{white-space:nowrap;color:var(--voa-muted);font-size:12px}
+.voa-clip-catalog{margin-top:14px}
+.voa-clip-exercise{max-width:1040px;margin-top:15px}
+.voa-clip-exercise .voa-audio-inline{margin:15px 0 18px}
+.voa-clip-exercise .voa-task textarea{min-height:100px}
+.voa-clip-credit{margin:12px 2px;color:var(--voa-muted);font-size:12px}
+.voa-clip-credit a{color:#087e91}
 .voa-exercise-card{padding:18px}
 .voa-exercise-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .voa-exercise-heading>div{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
