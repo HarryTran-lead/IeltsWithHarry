@@ -143,12 +143,20 @@
 .voa-sentence-grid button.playing{box-shadow:inset 0 0 0 2px #00a8a9}
 .voa-review-button{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:17px;width:100%;font-size:12px;font-weight:700}
 .voa-sentence-sidebar>small{margin-top:10px;color:#99aabd;text-align:center;font-size:11px}
-.voa-full-transcript{padding:18px}
-.voa-full-transcript summary{display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:750}
-.voa-full-transcript audio{display:block;width:100%;margin:14px 0}
-.voa-full-list{display:grid;gap:6px;max-height:390px;overflow:auto;margin:14px 0}
-.voa-full-list button{text-align:left;font-size:13px}
-.voa-full-list time{display:inline-block;min-width:46px;color:var(--voa-muted);font-variant-numeric:tabular-nums}
+.voa-read-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:5px 0 13px}
+.voa-read-heading h3{margin:0 0 3px;font-size:18px}
+.voa-read-heading p{margin:0;color:var(--voa-muted);font-size:12px}
+.voa-read-heading button{flex:none;color:#087f8b;font-size:12px;font-weight:700}
+.voa-read-heading button[aria-pressed=true]{background:#e8f7f6;border-color:#8acbd0}
+.voa-read-list{position:relative;display:grid;gap:7px;max-height:min(42vh,430px);min-height:130px;overflow-y:auto;scroll-behavior:smooth;overscroll-behavior:contain;padding:4px 6px 4px 1px}
+.voa-read-list button{display:grid;grid-template-columns:48px 52px minmax(0,1fr);align-items:start;gap:8px;text-align:left;padding:12px;border-color:#e2ebf1;background:#f8fbfd;font-size:14px;line-height:1.55}
+.voa-read-list button:hover{border-color:#91cad0}
+.voa-read-list button.active{border-color:#44b8bf;background:#e7f8f7;box-shadow:inset 3px 0 #008e99}
+.voa-read-list time,.voa-read-list button>span{color:var(--voa-muted);font-size:12px;font-weight:650;font-variant-numeric:tabular-nums}
+.voa-read-list button.active time,.voa-read-list button.active>span{color:#007e88}
+.voa-read-list strong{font-size:15px;font-weight:600;overflow-wrap:anywhere}
+.voa-read-note{margin:10px 0 0;color:var(--voa-muted);font-size:11px}
+@media(max-width:640px){.voa-read-heading{align-items:flex-start;flex-direction:column}.voa-read-list{max-height:45vh}.voa-read-list button{grid-template-columns:38px minmax(0,1fr);gap:2px 8px}.voa-read-list button strong{grid-column:2}}
 .voa-original-transcript{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.7;background:#f8fbfd;padding:16px;border-radius:10px}
 .voa-gap{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:17px;line-height:2.6}
 .voa-gap input{width:7em;text-align:center;padding:5px}
