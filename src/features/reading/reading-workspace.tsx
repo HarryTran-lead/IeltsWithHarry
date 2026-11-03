@@ -209,7 +209,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     function onPointer(event: PointerEvent) {
       const target = event.target as Element;
       if (popover && !target.closest?.(".rw-popover")) setPopover(null);
-      // Tools stay open until the reader closes them explicitly.
+      if (openTool && !target.closest?.(".rw-tools")) setOpenTool(null);
     }
     function onScroll() { if (popover) setPopover(null); }
     window.addEventListener("keydown", onKey);
