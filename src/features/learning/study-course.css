@@ -91,3 +91,31 @@
   .journey-node { left: var(--stop-x); width: 64px; height: 64px; top: 30px; }
   .journey-node svg { width: 25px; height: 25px; }
 }
+
+/* Path nodes take the lesson's skill colour (same tokens as the lesson template), so the path reads as a varied journey. */
+.journey-stop { --node: #8fa3a8; --node-dark: #6d8387; --node-soft: #eef3f4; }
+.journey-stop.skill-reading { --node: #ff6f5e; --node-dark: #d9503f; --node-soft: #fff0ed; }
+.journey-stop.skill-listening { --node: #14a7b3; --node-dark: #0b7f89; --node-soft: #e3f6f7; }
+.journey-stop.skill-writing { --node: #f5b31a; --node-dark: #c78a00; --node-soft: #fff6dc; }
+.journey-stop.skill-speaking { --node: #8b6cf0; --node-dark: #6a4fd0; --node-soft: #f1edff; }
+.journey-stop.is-upcoming .journey-node, .journey-stop.is-started .journey-node { background: var(--node-soft); box-shadow: 0 7px 0 #d3dee1, 0 12px 20px #113b4a14; color: var(--node); }
+.journey-stop.is-started .journey-node { background: color-mix(in srgb, var(--node) 55%, #fff); box-shadow: 0 7px 0 var(--node-dark); color: #fff; }
+.journey-stop.is-current .journey-node { width: 86px; height: 86px; top: 19px; background: var(--node); box-shadow: 0 8px 0 var(--node-dark), 0 0 0 8px color-mix(in srgb, var(--node) 18%, transparent); animation: journey-glow 2.4s ease-in-out infinite; }
+.journey-stop.is-current .journey-stop-label { border-color: var(--node); background: var(--node-soft); }
+.journey-stop-label small { color: var(--node-dark); }
+.journey-start { position: absolute; z-index: 3; top: -16px; left: var(--stop-x); padding: 7px 13px; transform: translateX(-50%); border: 2px solid #e1e9ec; border-radius: 12px; background: #fff; color: var(--node-dark); font-size: 12px; font-weight: 900; letter-spacing: .08em; white-space: nowrap; box-shadow: 0 4px 0 #e1e9ec; animation: journey-bob 1.6s ease-in-out infinite; }
+.journey-start::after { content: ""; position: absolute; bottom: -8px; left: 50%; width: 12px; height: 12px; transform: translateX(-50%) rotate(45deg); border-right: 2px solid #e1e9ec; border-bottom: 2px solid #e1e9ec; background: #fff; }
+.journey-harry { position: absolute; z-index: 2; top: 26px; }
+.journey-harry.is-right { left: calc(var(--stop-x) + 56px); }
+.journey-harry.is-left { left: calc(var(--stop-x) - 114px); }
+.journey-stop-link:has(.journey-harry.is-right) .journey-stop-label, .journey-stop-link:has(.journey-harry.is-left) .journey-stop-label { z-index: 3; }
+/* A slimmer course banner leaves room for the path on the first screen. */
+.study-course-head { padding: clamp(18px, 2.6vw, 26px) clamp(22px, 4vw, 36px); }
+.study-course-head h2 { font-size: clamp(22px, 2.8vw, 30px); }
+@keyframes journey-glow { 50% { box-shadow: 0 8px 0 var(--node-dark), 0 0 0 14px color-mix(in srgb, var(--node) 10%, transparent); } }
+@keyframes journey-bob { 50% { transform: translateX(-50%) translateY(-4px); } }
+@media (prefers-reduced-motion: reduce) { .journey-start, .journey-stop.is-current .journey-node { animation: none; } }
+@media (max-width: 680px) {
+  .journey-stop.is-current .journey-node { width: 70px; height: 70px; top: 26px; }
+  .journey-harry { display: none; }
+}

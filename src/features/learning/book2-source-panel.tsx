@@ -17,8 +17,8 @@ export function Book2SourcePanel({ content, practice = false }: { content: Book2
         return <p key={index} id={label ? `source-${passage.id}-paragraph-${label}` : undefined}>{paragraph}</p>;
       })}</div>
     </article>)}
-    {content.audios.map((audio) => <article className="book2-card book2-source" id={`source-${audio.id}`} key={audio.id}>
-      <h2><Headphones size={20} /> Bài nghe · {audio.title ?? audio.id}</h2>
+    {content.audios.map((audio, index) => <article className="book2-card book2-source" id={`source-${audio.id}`} key={audio.id}>
+      <h2><Headphones size={20} /> {audio.title ? `Bài nghe · ${audio.title}` : content.audios.length > 1 ? `Bài nghe ${index + 1}` : "Bài nghe"}</h2>
       {audio.audio_url ? <audio controls preload="metadata" src={audio.audio_url} /> : <p>Audio đang được bổ sung. Bài này chưa tính là bài luyện nghe hoàn chỉnh.</p>}
       {audio.transcript && <details id={`transcript-${audio.id}`}><summary>Hiện transcript sau khi nghe</summary><pre className="book2-transcript">{audio.transcript}</pre></details>}
     </article>)}

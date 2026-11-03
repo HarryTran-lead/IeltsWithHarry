@@ -10,6 +10,7 @@ import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { loadPracticeResults, subscribePracticeResults, type PracticeResult } from "./practice-results";
 import book2Catalog from "@/data/book2/catalog.json";
+import { Sticker } from "@/components/stickers/stickers";
 import "./study-course.css";
 
 type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: string; summary: string; sort_order: number; objective_count?: number; question_count?: number };
@@ -131,9 +132,11 @@ function JourneyUnit({ unit, unitIndex, shown, nextSlug, results, isDone, initia
       const previousX = lanePositions[(index + lanePositions.length - 1) % lanePositions.length];
       const side = x >= 50 ? "left" : "right";
       const score = result?.checked ? lesson.slug.startsWith("b2-") ? `${result.checked}/${result.total} đã làm · ${result.correct} đạt` : lesson.objective_count === 0 ? `${result.checked}/${result.total} đã tự đánh giá` : `${result.correct}/${result.checked} đúng` : status === "started" ? "Đã mở · tiếp tục" : status === "current" ? "Bài học tiếp theo" : "Chưa học";
-      return <li key={lesson.id} className={`journey-stop is-${status}`} style={{ "--stop-x": `${x}%` } as CSSProperties}>
+      return <li key={lesson.id} className={`journey-stop is-${status} skill-${lesson.skill.toLowerCase()}`} style={{ "--stop-x": `${x}%` } as CSSProperties}>
         {index > 0 && <svg className={`journey-connector ${lessonStatus(shown[index - 1], results[shown[index - 1].slug], isDone, nextSlug) === "complete" ? "is-complete" : ""}`} viewBox="0 0 100 124" preserveAspectRatio="none" aria-hidden="true"><path d={`M ${previousX} 0 C ${previousX} 52, ${x} 72, ${x} 124`} fill="none" vectorEffect="non-scaling-stroke" /></svg>}
         <Link href={`/app/lesson/${lesson.slug}`} className={`journey-stop-link label-${side}`} aria-current={status === "current" ? "step" : undefined} aria-label={`${skillLabels[lesson.skill] ?? lesson.skill}: ${lesson.title}. ${score}`}>
+          {status === "current" && <span className="journey-start" aria-hidden="true">{result?.checked ? "TIẾP TỤC" : "BẮT ĐẦU"}</span>}
+          {status === "current" && <Sticker name="harry" size={58} tilt={-6} float pop={false} className={`journey-harry ${side === "left" ? "is-right" : "is-left"}`} />}
           <span className="journey-node">{status === "complete" ? <Star size={31} fill="currentColor" /> : status === "review" ? <RotateCcw size={29} /> : <Icon size={30} strokeWidth={2.5} />}</span>
           <span className="journey-stop-label"><small>{skillLabels[lesson.skill] ?? lesson.skill} · Bài {unit.lessons.indexOf(lesson) + 1}</small><strong>{lesson.title}</strong><em>{score}</em></span>
         </Link>
