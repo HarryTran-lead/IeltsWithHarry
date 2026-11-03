@@ -10,7 +10,7 @@ import { activeUntil, activityLabels, avatarPhotoUrl, avatarStickers, untilLabel
 import { AccountAvatar } from "@/components/account/account-avatar";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { stages } from "@/lib/demo-data";
-import { demoMode, releaseLocks } from "@/lib/runtime";
+import { demoMode, learnStageAvailable } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrate } from "@/lib/celebrate";
 import "./profile.css";
@@ -205,7 +205,7 @@ function ProfileForm({ data, email, isAdmin, onSaved }: { data: LearnerOverview;
         <label>Tên hiển thị<input value={form.display_name} maxLength={80} onChange={(event) => set("display_name", event.target.value)} required /></label>
         <label>Band mục tiêu<select value={form.target_band} onChange={(event) => set("target_band", event.target.value)}>{bands.map((band) => <option key={band} value={band}>{band || "Chưa chọn"}</option>)}</select></label>
         <label>Ngày thi dự kiến<input type="date" value={form.exam_date} onChange={(event) => set("exam_date", event.target.value)} /></label>
-        <label>Chặng đang học<select value={form.stage_id} onChange={(event) => set("stage_id", event.target.value)}><option value="">Chưa chọn</option>{stages.map((stage) => <option key={stage.id} value={stage.id} disabled={releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id)}>{stage.range} · {stage.name}{releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id) ? " · Sắp mở" : ""}</option>)}</select></label>
+        <label>Chặng đang học<select value={form.stage_id} onChange={(event) => set("stage_id", event.target.value)}><option value="">Chưa chọn</option>{stages.map((stage) => <option key={stage.id} value={stage.id} disabled={!learnStageAvailable(stage.id)}>{stage.range} · {stage.name}{!learnStageAvailable(stage.id) ? " · Sắp mở" : ""}</option>)}</select></label>
         <label>Mục tiêu mỗi ngày<input type="number" min={1} max={20} value={form.daily_goal} onChange={(event) => set("daily_goal", Math.min(20, Math.max(1, Number(event.target.value) || 1)))} /></label>
         <label>Múi giờ<select value={form.timezone} onChange={(event) => set("timezone", event.target.value)}>{[...new Set([form.timezone, ...zones])].map((zone) => <option key={zone} value={zone}>{zone}</option>)}</select></label>
         <label className="profile-bio-field">Giới thiệu ngắn<textarea rows={3} maxLength={280} value={form.bio} onChange={(event) => set("bio", event.target.value)} placeholder="Ví dụ: Mình cần 6.5 để du học, mạnh Reading, yếu Speaking." /><small>{form.bio.length}/280</small></label>

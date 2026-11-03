@@ -10,15 +10,16 @@ import { getViewerRole } from "@/lib/viewer-role";
 import { skillMaterialSchema } from "@/lib/skill-material";
 
 export default async function LessonPage({ params }: { params: Promise<{ slug: string }> }) {
-  if (releaseLocks) notFound();
+  const { slug } = await params;
+  const isBook2Lesson = book2Catalog.units.some((unit) => unit.lessons.some((item) => item.slug === slug));
+  if (releaseLocks && !isBook2Lesson) notFound();
   if (demoMode) return <Portal canManage={(await getViewerRole()) === "admin"} />;
   if (!supabaseConfigured) return <main className="setup-notice"><h1>Backend setup required</h1><p>Connect Supabase to see published lessons.</p></main>;
-  const { slug } = await params;
   const supabase = await createClient();
   const { data: claims } = await supabase.auth.getClaims();
   if (!claims?.claims) redirect("/login");
   const { data: isAdmin } = await supabase.rpc("is_admin");
-  if (book2Catalog.units.some((unit) => unit.lessons.some((item) => item.slug === slug))) {
+  if (isBook2Lesson) {
     return <Book2LessonRoute slug={slug} canManage={isAdmin === true} />;
   }
   let lessonQuery = supabase.from("lessons").select("id,unit_id,slug,title,skill,summary").eq("slug", slug);

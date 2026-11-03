@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { ArrowRight, BookOpenText, Check, ChevronDown, Headphones, Mic2, PenLine, RotateCcw, Sparkles, Star, Trophy, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
-import { liveMode } from "@/lib/runtime";
+import { liveMode, releaseLocks } from "@/lib/runtime";
 import { stages } from "@/lib/demo-data";
 import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -19,11 +19,11 @@ export type StageCourse = { id: string; slug: string; title: string; description
 /** Published courses with their published units and lessons, grouped for the Learn page. Live mode only. */
 export function usePublishedCourses() {
   const supabase = useMemo(() => (liveMode ? createClient() : null), []);
-  const [courses, setCourses] = useState<StageCourse[]>([]);
-  const [loading, setLoading] = useState(liveMode);
+  const [courses, setCourses] = useState<StageCourse[]>(() => releaseLocks ? [book2Catalog as StageCourse] : []);
+  const [loading, setLoading] = useState(liveMode && !releaseLocks);
   const [error, setError] = useState("");
   useEffect(() => {
-    if (!supabase) return;
+    if (!supabase || releaseLocks) return;
     let active = true;
     void (async () => {
       const courseResult = await supabase.from("courses").select("id,slug,title,description,stage_id").eq("published", true).order("title");

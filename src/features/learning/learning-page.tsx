@@ -7,7 +7,6 @@ import {
   ArrowRight,
   Check,
   CircleCheck,
-  Headphones,
   Lightbulb,
   LockKeyhole,
   Target,
@@ -26,7 +25,7 @@ import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses"
 import { loadPracticeResults, type PracticeResult } from "./practice-results";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
-import { demoMode, lockedLearnerPath, releaseLocks } from "@/lib/runtime";
+import { demoMode, learnStageAvailable, lockedLearnerPath, productionLearnStage, releaseLocks } from "@/lib/runtime";
 import { ProfilePage } from "@/features/account/profile-page";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { SavedWordReview } from "@/features/news/saved-word-review";
@@ -98,7 +97,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   const { attempts } = useDemo();
   const { visits } = useNotebook();
   const recentCourse = visits.map((visit) => published.courses.find((course) => course.units.some((unit) => unit.lessons.some((lesson) => visit.path === `/app/lesson/${lesson.slug}`)))).find(Boolean);
-  const activeStageId = stageId ?? recentCourse?.stage_id ?? "foundation";
+  const activeStageId = stageId ?? recentCourse?.stage_id ?? (releaseLocks ? productionLearnStage : "foundation");
   const stageCourses = published.courses.filter((course) => course.stage_id === activeStageId && (activeStageId !== "ielts-builder" || course.slug === "english-skill-lab-book-2"));
   const stageLessons = stageCourses.flatMap((course) => course.units.flatMap((unit) => unit.lessons));
   const [results, setResults] = useState<Record<string, PracticeResult>>({});
@@ -123,7 +122,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
         <div><span className="eyebrow">CHẶNG {stages.indexOf(selected) + 1} · {selected.range}</span><h1>{selected.name}</h1></div>
         <span className="learn-stage-count"><strong>{explored}/{total || "…"}</strong> bài đã mở</span>
         {nextLesson ? <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? "Học tiếp" : "Bắt đầu học"} <ArrowRight size={16} /></Link> : !published.loading && total > 0 ? <span className="learn-mission-complete">Đã xem hết bài · chọn unit để ôn lại</span> : null}
-        <details><summary>Đổi chặng</summary><div className="learn-stage-menu">{stages.map((stage) => releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id) ? <span key={stage.id} aria-disabled="true"><b>{stage.range}</b> {stage.name} · Sắp mở</span> : <Link key={stage.id} href={`/app/learn/${stage.id}`} aria-current={stage.id === selected.id ? "page" : undefined}><b>{stage.range}</b> {stage.name}</Link>)}</div></details>
+        <details><summary>Đổi chặng</summary><div className="learn-stage-menu">{stages.map((stage) => !learnStageAvailable(stage.id) ? <span key={stage.id} aria-disabled="true"><b>{stage.range}</b> {stage.name} · Sắp mở</span> : <Link key={stage.id} href={`/app/learn/${stage.id}`} aria-current={stage.id === selected.id ? "page" : undefined}><b>{stage.range}</b> {stage.name}</Link>)}</div></details>
       </header> : <section className="learn-mission" aria-label="Bài học tiếp theo">
         <div className="learn-mission-main"><span className="eyebrow">HÀNH TRÌNH CỦA BẠN · {recentCourse ? "TIẾP TỤC CHẶNG ĐANG HỌC" : "BẮT ĐẦU TỪ ĐÂY"}</span>
           <h1>Một bài nhỏ hôm nay, một bước tiến ngày mai</h1>
@@ -144,7 +143,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           const courseList = published.courses.filter((course) => course.stage_id === stage.id && (stage.id !== "ielts-builder" || course.slug === "english-skill-lab-book-2"));
           const lessonTotal = courseList.reduce((sum, course) => sum + course.units.reduce((count, unit) => count + unit.lessons.length, 0), 0);
           const openedCount = courseList.flatMap((course) => course.units.flatMap((unit) => unit.lessons)).filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
-          const locked = releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id);
+          const locked = !learnStageAvailable(stage.id);
           const x = stageOffsets[index % stageOffsets.length];
           const previousX = stageOffsets[(index + stageOffsets.length - 1) % stageOffsets.length];
           const side = x >= 50 ? "left" : "right";

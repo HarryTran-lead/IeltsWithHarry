@@ -56,7 +56,7 @@ function WelcomeBanner() {
         <div className="welcome-row">
         <StreakWeek />
         <div className="welcome-actions">
-          {releaseLocks ? <button className="button primary" disabled>Learn · Sắp mở</button> : <Link href="/app/lesson/technology-digital-life" className="button primary">
+          {releaseLocks ? <Link href="/app/learn/ielts-builder" className="button primary">Học chặng 5.0–6.0 <ArrowRight size={16} /></Link> : <Link href="/app/lesson/technology-digital-life" className="button primary">
             Continue learning <ArrowRight size={16} />
           </Link>}
           <Link href="/app/planner" className="button ghost">
@@ -116,9 +116,7 @@ function LearningPath() {
             <p>From band 1.0 to 7.0+ — build your skills step by step.</p>
           </div>
         </div>
-        {releaseLocks ? <span className="link-pill" aria-disabled="true">Sắp mở</span> : <Link href="/app/learn" className="link-pill">
-          View all levels <ArrowRight size={15} />
-        </Link>}
+        <Link href={releaseLocks ? "/app/learn/ielts-builder" : "/app/learn"} className="link-pill">{releaseLocks ? "Chặng 5.0–6.0" : "View all levels"} <ArrowRight size={15} /></Link>
       </div>
       <StageMap stops={stops} />
       <div className="continue-card">
@@ -128,13 +126,10 @@ function LearningPath() {
           <Sticker name="abc" size={58} tilt={-4} delay={300} />
         </div>
         <div className="continue-body">
-          <span className="current-label">{demoMode ? "Current unit" : "Featured unit"}</span>
-          <h3>Technology &amp; Digital Life</h3>
-          <p>
-            Learn useful vocabulary, reading strategies, writing tasks and
-            speaking skills for real-world topics.
-          </p>
-          {releaseLocks ? <button className="button coral" disabled>Sắp mở</button> : <Link
+          <span className="current-label">{releaseLocks ? "Chặng đang mở" : demoMode ? "Current unit" : "Featured unit"}</span>
+          <h3>{releaseLocks ? "IELTS Builder 5.0–6.0" : "Technology & Digital Life"}</h3>
+          <p>{releaseLocks ? "Học theo nhóm câu ngắn, xem tư liệu khi làm bài và ôn lại những câu cần sửa." : "Learn useful vocabulary, reading strategies, writing tasks and speaking skills for real-world topics."}</p>
+          {releaseLocks ? <Link href="/app/learn/ielts-builder" className="button coral">Vào lộ trình <ArrowRight size={16} /></Link> : <Link
             href="/app/lesson/technology-digital-life"
             className="button coral"
           >
