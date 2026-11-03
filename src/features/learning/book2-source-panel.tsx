@@ -12,12 +12,15 @@ export function Book2SourcePanel({ content, practice = false }: { content: Book2
     {practice && <header className="book2-sources-heading"><h2>Tư liệu để làm bài</h2><p>Đọc, nghe hoặc xem số liệu ngay khi trả lời. Bài làm của bạn vẫn được giữ.</p></header>}
     {content.passages.map((passage) => <article className="book2-card book2-source" id={`source-${passage.id}`} key={passage.id}>
       <h2><BookOpenText size={20} /> Bài đọc · {passage.title ?? passage.id}</h2>
-      <div className="book2-passage">{passage.text.split(/\n\s*\n/).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
+      <div className="book2-passage">{passage.text.split(/\n\s*\n/).map((paragraph, index) => {
+        const label = paragraph.match(/^\[([A-Z])\]/)?.[1];
+        return <p key={index} id={label ? `source-${passage.id}-paragraph-${label}` : undefined}>{paragraph}</p>;
+      })}</div>
     </article>)}
     {content.audios.map((audio) => <article className="book2-card book2-source" id={`source-${audio.id}`} key={audio.id}>
       <h2><Headphones size={20} /> Bài nghe · {audio.title ?? audio.id}</h2>
       {audio.audio_url ? <audio controls preload="metadata" src={audio.audio_url} /> : <p>Audio đang được bổ sung. Bài này chưa tính là bài luyện nghe hoàn chỉnh.</p>}
-      {audio.transcript && <details><summary>Hiện transcript sau khi nghe</summary><pre className="book2-transcript">{audio.transcript}</pre></details>}
+      {audio.transcript && <details id={`transcript-${audio.id}`}><summary>Hiện transcript sau khi nghe</summary><pre className="book2-transcript">{audio.transcript}</pre></details>}
     </article>)}
     {content.visuals.map((visual) => <article className="book2-card book2-source" id={`source-${visual.id}`} key={visual.id}>
       <h2><Table2 size={20} /> {visual.title ?? visual.id}</h2>
