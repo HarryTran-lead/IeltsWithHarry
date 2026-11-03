@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { validateAdaptiveQuiz } from "../src/lib/news/adaptive-quiz";
+import { generateAdaptiveNewsQuiz, targetQuestionCount, validateAdaptiveQuiz } from "../src/lib/news/adaptive-quiz";
 import { choiceTypes, gapTypes, ieltsQuestionTypes, typesForKey, type IeltsQuestionType } from "../src/lib/news/ielts-passage";
 
 const quote = "Scientists used solar panels to power the research station during the summer.";
@@ -47,5 +47,57 @@ describe("adaptive IELTS passage quiz", () => {
     const groups = typesForKey("article-one");
     expect(groups).toHaveLength(3);
     expect(new Set(groups).size).toBe(3);
+  });
+  it("does not request thirteen questions from a repetitive long article", () => {
+    const sentence = "Researchers measured the same feature during the survey and wrote down the same result for the field station.";
+    expect(targetQuestionCount(Array(50).fill(sentence).join(" "))).toBe(1);
+    const varied = Array.from({ length: 40 }, (_, index) =>
+      `Researchers measured feature ${index + 1} during the survey and recorded its distinct result at the field station for later comparison with earlier observations across several seasons in the region.`).join(" ");
+    expect(targetQuestionCount(varied)).toBe(13);
+  });
+  it("reviews every flagged candidate in one call for a supported thirteen-question article", async () => {
+    const sentences = Array.from({ length: 40 }, (_, index) =>
+      `Researchers recorded detail${index + 1} during survey stage ${index + 1} and compared the measurement with earlier records to explain how the local environment changed across several months at the field station.`);
+    const passage = Array.from({ length: 8 }, (_, index) => sentences.slice(index * 5, index * 5 + 5).join(" ")).join("\n\n");
+    const requests: string[] = [];
+    const reply = (value: unknown) => new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] }), { status: 200 });
+    const fetcher = async (_url: string | URL | Request, init?: RequestInit) => {
+      const request = JSON.parse(String(init?.body)) as { systemInstruction: { parts: { text: string }[] } };
+      const system = request.systemInstruction.parts[0].text;
+      requests.push(system);
+      if (system.includes("Focused second-pass quality check")) {
+        const ids = [...system.matchAll(/"id":(\d+)/g)].map((match) => Number(match[1]));
+        return reply({ reviews: ids.map((id) => ({ id, action: "keep", reason: "Evidence and answer checked." })) });
+      }
+      let index = 0;
+      const questions = [...system.matchAll(/(\d+) ([a-z_]+) candidates \(\d+ kept\)/g)].flatMap((match) =>
+        Array.from({ length: Number(match[1]) }, () => {
+          const type = match[2] as IeltsQuestionType;
+          const number = ++index;
+          const options = type === "tfng" ? ["True", "False", "Not Given"] : type === "ynng" ? ["Yes", "No", "Not Given"] : ["First", "Second", "Third", "Fourth"];
+          const choice = choiceTypes.has(type);
+          const prompt = gapTypes.has(type)
+            ? `${type === "flow_chart_completion" ? `Step ${number}: ` : type === "table_completion" ? "Survey finding: " : ""}The researchers recorded ______ during survey stage ${number}.`
+            : type === "short_answer" ? `What did the researchers record during survey stage ${number}?`
+              : `Which option describes survey stage ${number}?`;
+          return { type, prompt, options: choice ? options : [], correct_index: choice ? 0 : -1,
+            answer: choice ? "" : `detail${number}`, supporting_sentence: sentences[number - 1], explanation,
+            option_notes: choice ? options.map(() => note) : [], needs_review: true, review_reason: "Check this fact." };
+        }));
+      return reply({ questions, image_query: "research field station" });
+    };
+    const previous = process.env.GEMINI_API_KEY; process.env.GEMINI_API_KEY = "test-key";
+    try {
+      const result = await generateAdaptiveNewsQuiz("Survey findings", passage, "long-article", fetcher as typeof fetch);
+      expect(result.questions).toHaveLength(13);
+      expect(new Set(result.questions.map((question) => question.type)).size).toBeGreaterThanOrEqual(2);
+      expect(requests).toHaveLength(2);
+      expect(requests[0]).toContain("Balance the set across difficulty");
+      const candidateCount = Number(requests[0].match(/Create (\d+) candidate questions/)?.[1]);
+      expect(candidateCount).toBeGreaterThan(13);
+      expect([...requests[1].matchAll(/"id":\d+/g)]).toHaveLength(candidateCount);
+    } finally {
+      if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous;
+    }
   });
 });

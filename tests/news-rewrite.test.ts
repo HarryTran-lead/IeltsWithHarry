@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { rankStories, readHotSignals, storyText, verifyRewrite, writeVietnamArticle, type RewriteSentence, type StoryCandidate } from "../src/lib/news/rewrite";
+import { rankStories, readHotSignals, rewriteLengthPlan, storyText, verifyRewrite, writeVietnamArticle, type RewriteSentence, type StoryCandidate } from "../src/lib/news/rewrite";
 import { choiceTypes, gapTypes, typesForKey } from "../src/lib/news/ielts-passage";
 import { newsHash, type NewsSource } from "../src/lib/news/providers";
 
@@ -34,12 +34,12 @@ describe("choosing the hottest story for young readers", () => {
     expect(ranked.map((item) => item.item.title)).toEqual(["Students flock to study cafes before university exams", "Rice exports rise in third quarter"]);
     expect(ranked[0].youth).toBeGreaterThan(ranked[1].youth);
   });
-  it("treats the same event in both outlets as hot", () => {
+  it("treats the same event in both outlets as hot and publishes one version", () => {
     const ranked = rankStories([
       story("https://e.vnexpress.net/news/life/arts/bigbang-hanoi-concert-tickets-1000010.html", "BigBang Hanoi concert tickets resold at high prices", 2),
       story("https://news.tuoitre.vn/bigbang-hanoi-concert-tickets-scalpers-103261025000000001.htm", "Scalpers resell BigBang Hanoi concert tickets", 3, ttSource),
     ], new Map(), now);
-    expect(ranked).toHaveLength(2);
+    expect(ranked).toHaveLength(1);
     expect(ranked[0].hot).toBe(20);
   });
 });
@@ -58,6 +58,16 @@ const small = { min: 50, max: 1000 };
 const swap = (index: number, change: Partial<RewriteSentence>) => article().map((paragraph, p) => p === 1 ? paragraph.map((sentence, s) => s === index ? { ...sentence, ...change } : sentence) : paragraph);
 
 describe("AI rewrite fact checks", () => {
+  it("reserves longer rewrites for sources with enough distinct content", () => {
+    const sentence = (index: number) => `The research team recorded finding ${index} during the survey and compared it with measurements from earlier months to explain changes at the site for local readers.`;
+    const short = Array.from({ length: 10 }, (_, index) => sentence(index)).join(" ");
+    const medium = Array.from({ length: 34 }, (_, index) => sentence(index)).join(" ");
+    const long = Array.from({ length: 68 }, (_, index) => sentence(index)).join(" ");
+    expect(rewriteLengthPlan(short)).toMatchObject({ min: 330, max: 450 });
+    expect(rewriteLengthPlan(medium)).toMatchObject({ min: 550, max: 700 });
+    expect(rewriteLengthPlan(long)).toMatchObject({ min: 1000, max: 1120 });
+    expect(rewriteLengthPlan(Array(70).fill(sentence(1)).join(" "))).toMatchObject({ min: 330, max: 450 });
+  });
   it("accepts paraphrased sentences that cite the source, including name stems", () => {
     const body = verifyRewrite(article(), source, small);
     expect(body.split("\n\n")).toHaveLength(5);
@@ -134,18 +144,18 @@ describe("AI rewrite pipeline", () => {
   const supported = (index: number) => index === 1 ? "BACKGROUND" : "SUPPORTED";
   const invented = { ...writerReply, sentences: [...writerReply.sentences, { paragraph: 5, text: "The rescue cost 900 dollars, officials in Hanoi said later.", source_quote: cited[0].source_quote }] };
 
-  it("writes, fact-checks, then quizzes the verified article in three requests", async () => {
+  it("writes and fact-checks in three requests, leaving an invalid quiz for the worker", async () => {
     const { result, requests } = await run(supported);
     expect(requests).toHaveLength(3);
     expect(requests[0]).toContain("Truth rules");
     expect(requests[1]).toContain("strict fact-checker");
     expect(requests[2]).toContain("IELTS Academic Reading");
     expect(requests[2]).not.toContain("SOURCE");
-    expect(result.questions).toHaveLength(12);
+    expect(result.questions).toHaveLength(0);
     expect(requests[0]).not.toContain("TARGET: Passage");
     expect(requests[2]).not.toContain("target band");
     expect(result.body.split(/\s+/).length).toBeGreaterThanOrEqual(280);
-    expect(result.imageQuery).toBe("forest hiking trail");
+    expect(result.imageQuery).toBe("");
   });
   it("rejects the article when the fact-checker finds an unsupported sentence", async () => {
     await expect(run((index) => index === 7 ? "UNSUPPORTED" : "SUPPORTED")).rejects.toThrow(/Fact-check UNSUPPORTED/);
