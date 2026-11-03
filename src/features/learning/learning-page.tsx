@@ -23,6 +23,7 @@ import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
 import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
+import { loadPracticeResults, type PracticeResult } from "./practice-results";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode, lockedLearnerPath, releaseLocks } from "@/lib/runtime";
@@ -32,45 +33,45 @@ import { SavedWordReview } from "@/features/news/saved-word-review";
 
 const modules = [
   {
-    name: "Vocabulary",
+    name: "Từ vựng",
     href: "/app/vocabulary",
     icon: "abc" as StickerName,
-    description: "Learn IELTS vocabulary from current articles and review saved words.",
+    description: "Học từ theo ngữ cảnh và ôn lại những từ đã lưu.",
     color: "mint",
   },
   {
-    name: "Grammar",
+    name: "Ngữ pháp",
     href: "/app/grammar",
     icon: "pencil" as StickerName,
-    description: "Identify grammar patterns in current English articles.",
+    description: "Nhận ra cấu trúc ngữ pháp và thử dùng trong câu của mình.",
     color: "blue",
   },
   {
-    name: "Reading",
+    name: "Đọc",
     href: "/app/reading",
     icon: "book" as StickerName,
-    description: "Read source credited articles and answer IELTS style questions.",
+    description: "Đọc bài ngắn, tìm bằng chứng và trả lời câu hỏi.",
     color: "coral",
   },
   {
-    name: "Listening",
+    name: "Nghe",
     href: "/app/listening",
     icon: "headphones" as StickerName,
-    description: "Listen to updated public domain recordings and take notes.",
+    description: "Nghe, ghi ý chính và kiểm tra mức độ hiểu.",
     color: "teal",
   },
   {
-    name: "Writing",
+    name: "Viết",
     href: "/app/writing",
     icon: "chart" as StickerName,
-    description: "Practise IELTS Academic Task 1 and Task 2 with current data.",
+    description: "Luyện Task 1 và Task 2, rồi đối chiếu bài mẫu.",
     color: "yellow",
   },
   {
-    name: "Speaking",
+    name: "Nói",
     href: "/app/speaking",
     icon: "mic" as StickerName,
-    description: "Use IELTS cue cards, a timer and recording to practise speaking.",
+    description: "Dùng cue card, đồng hồ và ghi âm để tự luyện nói.",
     color: "purple",
   },
 ];
@@ -96,12 +97,24 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   const published = usePublishedCourses();
   const { attempts } = useDemo();
   const { visits } = useNotebook();
-  const stageCourses = published.courses.filter((course) => course.stage_id === (stageId ?? "foundation"));
+  const recentCourse = visits.map((visit) => published.courses.find((course) => course.units.some((unit) => unit.lessons.some((lesson) => visit.path === `/app/lesson/${lesson.slug}`)))).find(Boolean);
+  const activeStageId = stageId ?? recentCourse?.stage_id ?? "foundation";
+  const stageCourses = published.courses.filter((course) => course.stage_id === activeStageId && (activeStageId !== "ielts-builder" || course.slug === "english-skill-lab-book-2"));
   const stageLessons = stageCourses.flatMap((course) => course.units.flatMap((unit) => unit.lessons));
+  const [results, setResults] = useState<Record<string, PracticeResult>>({});
+  const stageLessonSlugs = stageLessons.map((lesson) => lesson.slug).join(",");
+  useEffect(() => {
+    let active = true;
+    void loadPracticeResults(stageLessonSlugs.split(",").filter(Boolean)).then((found) => { if (active) setResults(found); }).catch(() => undefined);
+    return () => { active = false; };
+  }, [stageLessonSlugs]);
   const visited = new Set(visits.map((visit) => visit.path));
   const submitted = new Set(attempts.map((attempt) => attempt.lesson));
   const explored = stageLessons.filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
-  const nextLesson = stageLessons.find((lesson) => !visited.has(`/app/lesson/${lesson.slug}`) && !submitted.has(lesson.slug));
+  const nextLesson = stageLessons.find((lesson) => { const result = results[lesson.slug]; return result?.checked && result.checked < result.total; })
+    ?? stageLessons.find((lesson) => results[lesson.slug]?.needsReview)
+    ?? stageLessons.find((lesson) => visited.has(`/app/lesson/${lesson.slug}`) && !results[lesson.slug]?.checked)
+    ?? stageLessons.find((lesson) => !visited.has(`/app/lesson/${lesson.slug}`) && !submitted.has(lesson.slug));
   const total = stageLessons.length;
   return (
     <div className="content-page learn-overview">
@@ -112,10 +125,10 @@ function LearnOverview({ stageId }: { stageId?: string }) {
         {nextLesson ? <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? "Học tiếp" : "Bắt đầu học"} <ArrowRight size={16} /></Link> : !published.loading && total > 0 ? <span className="learn-mission-complete">Đã xem hết bài · chọn unit để ôn lại</span> : null}
         <details><summary>Đổi chặng</summary><div className="learn-stage-menu">{stages.map((stage) => releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id) ? <span key={stage.id} aria-disabled="true"><b>{stage.range}</b> {stage.name} · Sắp mở</span> : <Link key={stage.id} href={`/app/learn/${stage.id}`} aria-current={stage.id === selected.id ? "page" : undefined}><b>{stage.range}</b> {stage.name}</Link>)}</div></details>
       </header> : <section className="learn-mission" aria-label="Bài học tiếp theo">
-        <div className="learn-mission-main"><span className="eyebrow">HÀNH TRÌNH CỦA BẠN · BẮT ĐẦU TỪ ĐÂY</span>
+        <div className="learn-mission-main"><span className="eyebrow">HÀNH TRÌNH CỦA BẠN · {recentCourse ? "TIẾP TỤC CHẶNG ĐANG HỌC" : "BẮT ĐẦU TỪ ĐÂY"}</span>
           <h1>Một bài nhỏ hôm nay, một bước tiến ngày mai</h1>
           <p>Chọn chặng học phù hợp. Mỗi unit là một trạm, mỗi bài học là một bước tiến có thể nhìn thấy.</p>
-          {nextLesson && <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? "Tiếp tục hành trình" : "Bắt đầu bài đầu tiên"} <ArrowRight size={16} /></Link>}
+          {nextLesson && <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? `Tiếp tục ${stages.find((stage) => stage.id === activeStageId)?.range ?? "hành trình"}` : "Bắt đầu bài đầu tiên"} <ArrowRight size={16} /></Link>}
           {demoMode && !nextLesson && <Link className="button primary" href="/app/learn/foundation">Xem hành trình Foundation <ArrowRight size={16} /></Link>}
           {!nextLesson && !published.loading && total > 0 && <span className="learn-mission-complete">Đã khám phá hết bài học ở chặng này. Bạn có thể ôn lại hoặc làm bài kiểm tra cuối khóa.</span>}
         </div>
@@ -128,7 +141,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           <span>Vào từng chặng để xem unit, lọc kỹ năng và tiếp tục bài đang học. Mốc band là định hướng nội bộ.</span>
         </div>
         <div className="learn-stage-path">{stages.map((stage, index) => {
-          const courseList = published.courses.filter((course) => course.stage_id === stage.id);
+          const courseList = published.courses.filter((course) => course.stage_id === stage.id && (stage.id !== "ielts-builder" || course.slug === "english-skill-lab-book-2"));
           const lessonTotal = courseList.reduce((sum, course) => sum + course.units.reduce((count, unit) => count + unit.lessons.length, 0), 0);
           const openedCount = courseList.flatMap((course) => course.units.flatMap((unit) => unit.lessons)).filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
           const locked = releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id);
@@ -148,7 +161,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           <h2>
             {selected ? `Luyện thêm kỹ năng` : "Chọn kỹ năng"}
           </h2>
-          <span>Mỗi kỹ năng có một hoạt động mẫu hoàn chỉnh.</span>
+          <span>Chọn một kỹ năng để luyện thêm ngoài lộ trình chính.</span>
         </div>
         <div className="module-grid">
           {modules.filter((module) => !lockedLearnerPath(module.href)).map((module) => (
@@ -161,7 +174,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
               <h3>{module.name}</h3>
               <p>{module.description}</p>
               <b>
-                Start learning <ArrowRight size={15} />
+                Luyện ngay <ArrowRight size={15} />
               </b>
             </Link>
           ))}
@@ -209,7 +222,7 @@ function LessonOverview() {
               <h3>{module.name}</h3>
               <p>{module.description}</p>
               <b>
-                Practice now <ArrowRight size={15} />
+                Luyện ngay <ArrowRight size={15} />
               </b>
             </Link>
           ))}

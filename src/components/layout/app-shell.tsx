@@ -47,6 +47,7 @@ import { useStudyPresence } from "@/features/study-room/study-presence";
 import { NotificationBell } from "@/components/account/notification-bell";
 import { AccountAvatar } from "@/components/account/account-avatar";
 import { useNewsUnread } from "@/features/news/news-unread";
+import { subscribePracticeResults } from "@/features/learning/practice-results";
 import { catalogQuestionTypeIds, catalogQuestionTypes, catalogEntriesForSelection, type CatalogExam } from "@/lib/ielts-bank/catalog";
 import { HeaderSkyBackdrop, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather } from "@/components/header-weather";
 import weatherStyles from "@/components/header-weather/headerWeather.module.css";
@@ -192,9 +193,22 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
+  const [book2Practiced, setBook2Practiced] = useState(0);
   const searchInput = useRef<HTMLInputElement>(null);
   const completed = tasks.filter((t) => t.completed).length;
   const xp = 320 + Math.max(0, completed - 3) * 15 + attempts.length * 20;
+  useEffect(() => {
+    if (demoMode) return;
+    const db = createClient();
+    let active = true;
+    const loadCount = async () => {
+      const { count } = await db.from("package_practice_results").select("lesson_slug", { count: "exact", head: true }).like("lesson_slug", "b2-%").gt("checked", 0);
+      if (active && count !== null) setBook2Practiced(count);
+    };
+    void loadCount();
+    const unsubscribe = subscribePracticeResults((slug) => { if (slug.startsWith("b2-")) void loadCount(); });
+    return () => { active = false; unsubscribe(); };
+  }, []);
   const filtered = searchItems
     .filter((item) => !lockedLearnerPath(item.href) && item.label.toLowerCase().includes(query.toLowerCase()))
     .slice(0, 5);
@@ -370,7 +384,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           <div className="stat-pill level">
             <Trophy size={18} fill="#ffd15a" color="#d99a17" />
             <strong>{demoMode ? "Level 3" : `${completed} tasks`}</strong>
-            <small>{demoMode ? "Demo learner" : `${attempts.length} practices`}</small>
+            <small>{demoMode ? "Demo learner" : `${attempts.length + book2Practiced} bài đã luyện`}</small>
             {demoMode && <span className="level-bar" title={`${xp % 500}/500 XP tới level tiếp theo`}><i style={{ width: `${(xp % 500) / 5}%` }} /></span>}
           </div>
           <span className="header-divider" aria-hidden="true" />

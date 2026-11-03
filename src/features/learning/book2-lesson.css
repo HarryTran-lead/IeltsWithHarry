@@ -1,18 +1,33 @@
 .book2-page { max-width: 1100px; margin: 0 auto; padding-bottom: 80px; }
 .book2-route { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 18px; color: var(--muted); font-size: 13px; }
 .book2-route a { display: inline-flex; align-items: center; gap: 7px; color: var(--navy); font-weight: 800; }
-.book2-hero { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: clamp(24px, 4vw, 40px); border-radius: 28px; background: linear-gradient(120deg,#143f5f,#087b83); color: white; box-shadow: 0 18px 35px #123c5b26; }
+.book2-hero { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: clamp(20px, 3vw, 28px); border-radius: 22px; background: linear-gradient(120deg,#143f5f,#087b83); color: white; box-shadow: 0 12px 26px #123c5b20; }
 .book2-hero .eyebrow { color: #aaf0df; }
-.book2-hero h1 { max-width: 760px; margin: 8px 0; color: white; font-size: clamp(26px, 4vw, 42px); line-height: 1.13; }
+.book2-hero h1 { max-width: 760px; margin: 6px 0; color: white; font-size: clamp(24px, 3vw, 34px); line-height: 1.13; }
 .book2-hero p { margin: 0; color: #e4f5f4; }
 .book2-hero-score { flex: 0 0 auto; min-width: 140px; padding: 16px 20px; border: 1px solid #ffffff66; border-radius: 20px; background: #ffffff19; text-align: center; }
 .book2-hero-score strong { display: block; font-size: 27px; }
 .book2-hero-score span { font-size: 12px; }
+.book2-hero-score small { display: block; margin-top: 5px; color: #d5fff7; font-size: 11px; }
 .book2-steps { position: sticky; top: 8px; z-index: 6; display: flex; gap: 6px; margin: 18px 0 22px; padding: 6px; border: 1px solid #dce8e9; border-radius: 16px; background: #f8fbfbed; backdrop-filter: blur(12px); }
 .book2-steps button { flex: 1; min-height: 44px; border: 0; border-radius: 11px; background: transparent; color: #47606b; font-weight: 800; cursor: pointer; }
 .book2-steps button.active { background: #0d6571; color: white; box-shadow: 0 5px 14px #0c65702c; }
 .book2-steps span { opacity: .76; font-size: 12px; }
 .book2-stack { display: grid; gap: 18px; }
+.book2-sources { display: grid; gap: 18px; min-width: 0; }
+.book2-practice-layout { display: grid; gap: 18px; }
+.book2-practice-layout.has-sources { grid-template-columns: minmax(0, 1fr) minmax(320px, 39%); align-items: start; }
+.book2-practice-main { display: grid; gap: 18px; min-width: 0; }
+.book2-source-dock { min-width: 0; }
+.book2-practice-layout:not(.has-sources) .book2-source-dock { display: none; }
+.book2-practice-layout.has-sources .book2-source-dock { position: sticky; top: 82px; max-height: calc(100vh - 96px); overflow: auto; overscroll-behavior: contain; border-radius: 20px; }
+.book2-sources-practice { gap: 10px; }
+.book2-sources-heading { padding: 15px 18px; border-radius: 16px; background: #eaf6f4; }
+.book2-sources-heading h2 { margin: 0 0 4px; color: #153a52; font-size: 17px; }
+.book2-sources-heading p { margin: 0; color: #486773; font-size: 12px; line-height: 1.4; }
+.book2-source { scroll-margin-top: 90px; }
+.book2-sources-practice .book2-source { padding: 18px; border-radius: 16px; }
+.book2-sources-practice .book2-source h2 { font-size: 16px; }
 .book2-stack > .button { justify-self: start; }
 .book2-card { padding: clamp(22px, 3vw, 32px); border: 1px solid #dbe7e5; border-radius: 22px; background: #fff; box-shadow: 0 10px 30px #1645610b; }
 .book2-card h2 { display: flex; align-items: center; gap: 9px; margin: 0 0 16px; color: #153a52; font-size: clamp(19px, 2.3vw, 24px); }
@@ -26,6 +41,10 @@
 .book2-theory blockquote { margin: 12px 0 0; padding: 10px 14px; border-left: 4px solid #4ab2a8; background: white; color: #233e50; }
 .book2-theory blockquote small { display: block; color: #6b8288; }
 .book2-vocab { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; }
+.book2-vocab-group { margin-top: 10px; border: 1px solid #d8e9e5; border-radius: 12px; }
+.book2-vocab-group summary { padding: 12px 15px; color: #116875; font-weight: 800; cursor: pointer; }
+.book2-vocab-group .book2-vocab { padding: 0 12px 12px; }
+.book2-save-status { margin: 8px 0 0; color: #587581; font-size: 12px; text-align: right; }
 .book2-vocab > div { display: grid; gap: 4px; padding: 14px; border: 1px solid #e3eeec; border-radius: 12px; }
 .book2-vocab b { color: #116875; }
 .book2-passage { max-width: 78ch; font-size: 16px; }
@@ -39,12 +58,18 @@
 .book2-table-wrap th { background: #eff7f6; }
 .book2-practice-intro { background: #f5faf8; }
 .book2-practice-intro p { margin-bottom: 0; }
+.book2-practice-summary { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 10px; color: #266677; font-size: 13px; }
+.book2-exercise-tabs { display: flex; gap: 7px; flex-wrap: wrap; padding: 10px; border-radius: 16px; background: #eaf4f2; }
+.book2-exercise-tabs button { min-width: 53px; min-height: 44px; padding: 5px 9px; border: 1px solid #bedbd7; border-radius: 10px; background: white; color: #2b6570; font-weight: 800; cursor: pointer; }
+.book2-exercise-tabs button.active { border-color: #0d7b80; background: #0d7b80; color: white; }
+.book2-exercise-tabs small { display: block; font-size: 10px; font-weight: 600; }
 .book2-recorder { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .book2-exercise > header { padding-bottom: 14px; border-bottom: 1px solid #e4eeee; }
 .book2-exercise > header > span { color: #087881; font-size: 12px; font-weight: 900; }
 .book2-exercise > header h2 { margin: 4px 0; }
 .book2-exercise > header p { margin: 0; }
 .book2-question { padding: 22px 0; border-bottom: 1px solid #e8eeee; }
+.book2-question { scroll-margin-top: 90px; }
 .book2-question:last-child { border-bottom: 0; padding-bottom: 0; }
 .book2-question-head { display: flex; gap: 12px; margin-bottom: 14px; color: #173e54; }
 .book2-question-head > span { display: grid; flex: 0 0 28px; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: #e4f4f1; color: #087e7d; font-size: 13px; font-weight: 900; }
@@ -62,9 +87,23 @@
 .book2-feedback p { margin: 0 0 8px; }
 .book2-feedback p:last-child { margin-bottom: 0; }
 .book2-feedback small { color: #54736e; }
+.book2-source-jump, .book2-retry { margin: 7px 10px 0 0; padding: 7px 10px; border: 1px solid #b8d8d5; border-radius: 9px; background: white; color: #116b73; font-weight: 700; cursor: pointer; }
+.book2-self-rating { margin-top: 15px; padding-top: 12px; border-top: 1px solid #cbded8; }
+.book2-self-rating strong { color: #145365; }
+.book2-self-rating > div { display: flex; flex-wrap: wrap; gap: 7px; }
+.book2-self-rating button { padding: 8px 11px; border: 1px solid #b5d7d0; border-radius: 9px; background: white; color: #205b62; cursor: pointer; }
+.book2-self-rating button.active { border-color: #087b82; background: #087b82; color: white; }
+.book2-speaking-tools { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; margin: 15px 0 0 40px; }
+.book2-speaking-tools audio { width: min(100%, 270px); }
+.book2-speaking-tools small { flex-basis: 100%; color: #607b83; }
+.book2-review-list { display: grid; gap: 8px; }
+.book2-review-list button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; border: 1px solid #d6e8e3; border-radius: 11px; background: #f8fcfa; color: #1b4654; text-align: left; cursor: pointer; }
+.book2-review-list button span { min-width: 86px; color: #b05f2b; font-size: 11px; font-weight: 800; }
+.book2-review-list button strong { flex: 1; }
 .book2-review-tip { display: flex; align-items: center; gap: 8px; padding: 12px 15px; border-radius: 12px; background: #fff8e9; }
 .book2-checklist { list-style: none; padding: 0 !important; }
 .book2-checklist label { cursor: pointer; }
 .book2-checklist input { margin-right: 9px; accent-color: #0a7b7c; }
 .book2-next { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-@media (max-width: 620px) { .book2-hero { align-items: flex-start; flex-direction: column; } .book2-hero-score { min-width: 0; width: 100%; } .book2-steps { top: 0; } .book2-steps button { font-size: 12px; } .book2-options, .book2-answer, .book2-question textarea, .book2-question-actions, .book2-feedback { margin-left: 0; } }
+@media (max-width: 620px) { .book2-hero { align-items: flex-start; flex-direction: column; } .book2-hero-score { min-width: 0; width: 100%; } .book2-steps { top: 0; } .book2-steps button { font-size: 12px; } .book2-options, .book2-answer, .book2-question textarea, .book2-question-actions, .book2-feedback, .book2-speaking-tools { margin-left: 0; } .book2-review-list button { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 900px) { .book2-practice-layout.has-sources { display: flex; flex-direction: column; } .book2-practice-layout.has-sources .book2-source-dock { order: -1; top: 60px; width: 100%; max-height: min(36vh, 300px); border: 1px solid #b8d9d6; background: #f5fbf9; box-shadow: 0 8px 24px #153f4c1b; z-index: 5; } .book2-practice-main { width: 100%; } }
