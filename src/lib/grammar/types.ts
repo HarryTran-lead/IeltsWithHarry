@@ -47,13 +47,16 @@ export type GrammarResponse = {
   answer: string; status?: ReviewStatus; correct?: boolean | null; referenceAnswer?: string; explanation?: string;
   feedback?: string; errorTag?: string | null; updatedAt: string;
   first?: { answer: string; correct: boolean | null; at: string };
-  attempts?: number; wrongAt?: string; prompt?: string; order?: number[]; retrying?: boolean;
+  attempts?: number; wrongAt?: string; lastWrong?: string; prompt?: string; order?: number[]; retrying?: boolean;
 };
 export type GrammarGrade = { correct: boolean | null; referenceAnswer: string; explanation: string; feedback: string; errorTag: string | null };
+/** Spaced review of a whole lesson: `step` indexes the interval ladder in schedule.ts. */
+export type GrammarReview = { step: number; due: string; last?: string };
 export type GrammarLessonProgress = {
   theorySeen: boolean;
   responses: Record<string, GrammarResponse>;
   updatedAt: string;
+  review?: GrammarReview;
 };
 export type GrammarProgress = Record<string, GrammarLessonProgress>;
 
@@ -74,8 +77,9 @@ export function reviewedCount(progress?: GrammarLessonProgress) {
   return Object.entries(progress?.responses ?? {}).filter(([id, response]) => editorialId(id) &&(response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW")).length;
 }
 
+/** A lesson counts as learned once its teaching stages are done (it then has a review schedule). */
 export function practiced(progress?: GrammarLessonProgress, total = 30) {
-  return total > 0 && reviewedCount(progress) >= total;
+  return Boolean(progress?.review) || (total > 0 && reviewedCount(progress) >= total);
 }
 
 export const grammarTypeLabels: Record<GrammarPracticeItem["type"], string> = {
@@ -96,5 +100,6 @@ export function applyGrade(previous: GrammarResponse, answer: string, grade: Gra
     first: previous.first ?? { answer, correct: grade.correct, at: now },
     attempts: (previous.attempts ?? 0) + 1,
     ...(wrongAt ? { wrongAt } : {}),
+    ...(grade.correct === false ? { lastWrong: answer } : {}),
   };
 }

@@ -29,6 +29,7 @@ import { StudyProgress } from "./study-progress";
 import { StageMap, useStageStops } from "@/features/learning/stage-map";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { streakWeek } from "@/lib/account";
+import { GrammarTodayCard } from "@/features/grammar/grammar-today";
 import "./dashboard.css";
 
 const skillIcons: Partial<Record<Skill, typeof BookOpenText>> = {
@@ -329,6 +330,7 @@ export function Dashboard() {
         <LatestNews />
         <StudyProgress />
         <LearningPath />
+        <GrammarTodayCard />
         {releaseLocks ? <TodayGoal /> : <><div className="dashboard-duo">
           <TodayGoal />
           <PracticeNow />
