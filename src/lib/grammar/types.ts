@@ -7,29 +7,32 @@ export type GrammarCatalogLesson = {
   title: string;
   formula: string;
   example: string;
+  counts: Record<string, number>;
 };
 
-export type GrammarGuide = GrammarCatalogLesson & {
-  translation: string;
-  common_mistake: string;
-  mistake_explanation: string;
-  exception_note: string;
-  micro_rules: string[] | null;
-  guide: { title: string; body: string }[];
+export type GrammarGuide = {
+  code: string;
+  title: string;
+  objectives: string[];
+  sections: { heading: string; formula: string; explanation: string; examples: { en: string; vi?: string }[]; mistake?: { wrong: string; correct: string; why_vi: string } | null; note: string }[];
+  caveats: string[];
 };
 
 export type GrammarPracticeItem = {
-  item_id: string;
-  question: string;
-  reference_answer: string;
-  answer_explanation: string;
-  source_english: string;
-  source_vietnamese: string;
-  reuse_tier: string;
+  id: string;
+  stage: "guided" | "independent" | "mastery" | "spaced_review";
+  type: "mcq" | "fill_blank" | "error_choice" | "error_correction" | "sentence_ordering";
+  instruction: string;
+  prompt: string;
+  translation: string | null;
+  options: string[] | null;
+  chunks: string[];
+  hint: string | null;
+  publishable: boolean;
 };
 
 export type ReviewStatus = "UNDERSTOOD" | "NEED_REVIEW" | "SKIPPED";
-export type GrammarResponse = { answer: string; status?: ReviewStatus; revealed?: boolean; updatedAt: string };
+export type GrammarResponse = { answer: string; status?: ReviewStatus; correct?: boolean | null; referenceAnswer?: string; explanation?: string; feedback?: string; errorTag?: string | null; updatedAt: string };
 export type GrammarLessonProgress = {
   theorySeen: boolean;
   responses: Record<string, GrammarResponse>;
@@ -48,9 +51,9 @@ export const grammarWorlds: Record<GrammarLevel, { name: string; icon: string; d
 };
 
 export function reviewedCount(progress?: GrammarLessonProgress) {
-  return Object.values(progress?.responses ?? {}).filter((response) => response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW").length;
+  return Object.entries(progress?.responses ?? {}).filter(([id, response]) => /-Q\d+$/.test(id) && (response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW")).length;
 }
 
-export function practiced(progress?: GrammarLessonProgress) {
-  return reviewedCount(progress) === 30;
+export function practiced(progress?: GrammarLessonProgress, total = 30) {
+  return total > 0 && reviewedCount(progress) >= total;
 }
