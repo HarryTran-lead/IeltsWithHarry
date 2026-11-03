@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, RotateCcw } from "lucide-react";
+import { ArrowRight, BookOpenText, Check, ChevronDown, Headphones, Mic2, PenLine, RotateCcw, Sparkles, Star, Trophy, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
 import { stages } from "@/lib/demo-data";
 import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
-import { loadPracticeResults, resultTone, type PracticeResult } from "./practice-results";
+import { loadPracticeResults, type PracticeResult } from "./practice-results";
 import book2Catalog from "@/data/book2/catalog.json";
 import "./study-course.css";
 
@@ -71,10 +71,55 @@ export function StageLessons({ stageId, courses, loading, error }: { stageId: st
 
 /** A compact unit and skill syllabus with next actions and saved practice results. */
 function CourseViews({ courses, isDone }: { courses: StageCourse[]; isDone: (lesson: Lesson) => boolean }) {
-  return <div className="study-courses">{courses.map((course) => <StudyCourse key={course.id} course={course} isDone={isDone} />)}</div>;
+  const book2Primary = courses[0]?.slug === "english-skill-lab-book-2";
+  return <div className="study-courses">{courses.map((course, index) => index === 0 || !book2Primary
+    ? <StudyCourse key={course.id} course={course} isDone={isDone} />
+    : <details className="study-older-course" key={course.id}><summary><BookOpenText size={20} /><span><strong>Khóa học bổ trợ</strong><small>{course.title} · {course.units.reduce((sum, unit) => sum + unit.lessons.length, 0)} bài</small></span><ChevronDown size={18} /></summary><StudyCourse course={course} isDone={isDone} /></details>)}</div>;
 }
 
 const skillLabels: Record<string, string> = { Reading: "Đọc", Listening: "Nghe", Writing: "Viết", Speaking: "Nói", Vocabulary: "Từ vựng", Grammar: "Ngữ pháp" };
+const skillIcons: Record<string, LucideIcon> = { Reading: BookOpenText, Listening: Headphones, Writing: PenLine, Speaking: Mic2, Vocabulary: Sparkles, Grammar: PenLine };
+const unitColors = ["#0b8e92", "#2478bb", "#9955b0", "#b96331", "#397d5e", "#586ab2", "#9e587d", "#8d701d"];
+const lanePositions = [42, 55, 50, 38];
+
+function lessonStatus(lesson: Lesson, result: PracticeResult | undefined, isDone: (lesson: Lesson) => boolean, nextSlug: string | undefined) {
+  if (result?.checked && result.total > 0 && result.checked >= result.total && (lesson.objective_count === 0 || result.correct / result.checked >= 0.8)) return "complete";
+  if (result?.checked && lesson.objective_count !== 0 && result.correct / result.checked < 0.8) return "review";
+  if (lesson.slug === nextSlug) return "current";
+  if (result?.checked || isDone(lesson)) return "started";
+  return "upcoming";
+}
+
+function JourneyUnit({ unit, unitIndex, shown, nextSlug, results, isDone, initialOpen }: { unit: Unit; unitIndex: number; shown: Lesson[]; nextSlug?: string; results: Record<string, PracticeResult>; isDone: (lesson: Lesson) => boolean; initialOpen: boolean }) {
+  const [open, setOpen] = useState(initialOpen);
+  const practiced = unit.lessons.filter((lesson) => (results[lesson.slug]?.checked ?? 0) > 0).length;
+  const complete = unit.lessons.every((lesson) => lessonStatus(lesson, results[lesson.slug], isDone, nextSlug) === "complete");
+  const color = unitColors[unitIndex % unitColors.length];
+  return <section className={`journey-unit ${open ? "is-open" : ""}`} style={{ "--unit-color": color } as CSSProperties} aria-label={unit.title}>
+    <button type="button" className="journey-unit-header" aria-expanded={open} onClick={() => setOpen((value) => !value)}>
+      <span className="journey-unit-medal">{complete ? <Trophy size={25} /> : String(unitIndex + 1).padStart(2, "0")}</span>
+      <span className="journey-unit-copy"><small>UNIT {String(unitIndex + 1).padStart(2, "0")}{shown.some((lesson) => lesson.slug === nextSlug) ? " · ĐANG HỌC" : complete ? " · ĐÃ LUYỆN HẾT" : ""}</small><strong>{unit.title.replace(/^Unit \d+\s*·\s*/, "")}</strong><span>{practiced}/{unit.lessons.length} bài đã luyện</span></span>
+      <span className="journey-unit-open"><ChevronDown size={22} /></span>
+    </button>
+    <div className="journey-unit-progress" aria-label={`${practiced} trên ${unit.lessons.length} bài đã luyện`}><i style={{ width: `${practiced / unit.lessons.length * 100}%` }} /></div>
+    {open && <div className="journey-path"><ol>{shown.map((lesson, index) => {
+      const result = results[lesson.slug];
+      const status = lessonStatus(lesson, result, isDone, nextSlug);
+      const Icon = skillIcons[lesson.skill] ?? BookOpenText;
+      const x = lanePositions[index % lanePositions.length];
+      const previousX = lanePositions[(index + lanePositions.length - 1) % lanePositions.length];
+      const side = x >= 50 ? "left" : "right";
+      const score = result?.checked ? lesson.objective_count === 0 ? `${result.checked}/${result.total} đã tự đánh giá` : `${result.correct}/${result.checked} đúng` : status === "started" ? "Đã mở · tiếp tục" : status === "current" ? "Bài học tiếp theo" : "Chưa học";
+      return <li key={lesson.id} className={`journey-stop is-${status}`} style={{ "--stop-x": `${x}%` } as CSSProperties}>
+        {index > 0 && <svg className={`journey-connector ${lessonStatus(shown[index - 1], results[shown[index - 1].slug], isDone, nextSlug) === "complete" ? "is-complete" : ""}`} viewBox="0 0 100 124" preserveAspectRatio="none" aria-hidden="true"><path d={`M ${previousX} 0 C ${previousX} 52, ${x} 72, ${x} 124`} fill="none" vectorEffect="non-scaling-stroke" /></svg>}
+        <Link href={`/app/lesson/${lesson.slug}`} className={`journey-stop-link label-${side}`} aria-current={status === "current" ? "step" : undefined} aria-label={`${skillLabels[lesson.skill] ?? lesson.skill}: ${lesson.title}. ${score}`}>
+          <span className="journey-node">{status === "complete" ? <Star size={31} fill="currentColor" /> : status === "review" ? <RotateCcw size={29} /> : <Icon size={30} strokeWidth={2.5} />}</span>
+          <span className="journey-stop-label"><small>{skillLabels[lesson.skill] ?? lesson.skill} · Bài {index + 1}</small><strong>{lesson.title}</strong><em>{score}</em></span>
+        </Link>
+      </li>;
+    })}</ol><div className={`journey-finish ${complete ? "is-complete" : ""}`}><span><Trophy size={24} /></span><div><strong>{complete ? "Hoàn thành Unit!" : `Còn ${unit.lessons.length - practiced} bài trong Unit`}</strong><small>{complete ? "Bạn có thể quay lại ôn bất kỳ bài nào." : "Làm bài, xem phản hồi và quay lại phần cần ôn."}</small></div></div></div>}
+  </section>;
+}
 
 function StudyCourse({ course, isDone }: { course: StageCourse; isDone: (lesson: Lesson) => boolean }) {
   const [skill, setSkill] = useState("all");
@@ -86,17 +131,24 @@ function StudyCourse({ course, isDone }: { course: StageCourse; isDone: (lesson:
     return () => { active = false; };
   }, [lessons]);
   const practiced = lessons.filter((lesson) => (results[lesson.slug]?.checked ?? 0) > 0).length;
-  const next = lessons.find((lesson) => !results[lesson.slug] && !isDone(lesson)) ?? lessons.find((lesson) => !results[lesson.slug]) ?? lessons[0];
+  const completed = lessons.filter((lesson) => { const result = results[lesson.slug]; return result?.total && result.checked >= result.total && (lesson.objective_count === 0 || result.correct / result.checked >= 0.8); }).length;
+  const review = lessons.filter((lesson) => { const result = results[lesson.slug]; return result?.checked && lesson.objective_count !== 0 && result.correct / result.checked < 0.8; }).length;
+  const next = lessons.find((lesson) => !results[lesson.slug] && !isDone(lesson))
+    ?? lessons.find((lesson) => !results[lesson.slug])
+    ?? lessons.find((lesson) => { const result = results[lesson.slug]; return result && result.checked < result.total; })
+    ?? lessons.find((lesson) => { const result = results[lesson.slug]; return result?.checked && lesson.objective_count !== 0 && result.correct / result.checked < 0.8; })
+    ?? lessons[0];
+  const activeUnit = Math.max(0, course.units.findIndex((unit) => unit.lessons.some((lesson) => lesson.slug === next?.slug)));
   const options = ["all", ...new Set(lessons.map((lesson) => lesson.skill))];
   return <section className="study-course" aria-label={course.title}>
-    <header className="study-course-head"><div><span className="eyebrow">LỘ TRÌNH TỰ HỌC · {course.units.length} UNIT</span><h2>{course.title}</h2><p>{course.description}</p></div><div className="study-course-progress"><strong>{practiced}/{lessons.length}</strong><span>bài đã luyện</span><div className="study-course-bar"><i style={{ width: `${lessons.length ? practiced / lessons.length * 100 : 0}%` }} /></div></div></header>
-    <div className="study-course-actions">{next && <Link className="button primary" href={`/app/lesson/${next.slug}`}>Học tiếp: {next.title} <ArrowRight size={16} /></Link>}<span>Chọn kỹ năng hoặc mở một unit để học theo mục tiêu.</span></div>
+    <header className="study-course-head"><div><span className="eyebrow"><Sparkles size={15} /> LỘ TRÌNH TỰ HỌC · {course.units.length} UNIT</span><h2>{course.title}</h2><p>{course.description}</p></div><div className="study-course-progress"><strong>{practiced}<small>/{lessons.length}</small></strong><span>bài đã luyện</span><div className="study-course-bar"><i style={{ width: `${lessons.length ? practiced / lessons.length * 100 : 0}%` }} /></div></div></header>
+    <div className="study-course-actions"><div className="study-course-stats"><span><Star size={16} /> {completed} hoàn tất</span><span><RotateCcw size={16} /> {review} cần ôn</span></div>{next && <Link className="button primary" href={`/app/lesson/${next.slug}`}>Học tiếp: {next.title} <ArrowRight size={16} /></Link>}</div>
     <div className="study-skill-filter" role="group" aria-label="Lọc theo kỹ năng">{options.map((option) => <button key={option} type="button" className={skill === option ? "active" : ""} aria-pressed={skill === option} onClick={() => setSkill(option)}>{option === "all" ? "Tất cả" : skillLabels[option] ?? option}</button>)}</div>
+    <p className="journey-hint"><Check size={16} /> Chọn vòng tròn để vào bài. Bài đã học vẫn mở để ôn lại.</p>
     <div className="study-unit-list">{course.units.map((unit, unitIndex) => {
       const shown = unit.lessons.filter((lesson) => skill === "all" || lesson.skill === skill);
       if (!shown.length) return null;
-      const count = unit.lessons.filter((lesson) => results[lesson.slug]?.checked).length;
-      return <details key={unit.id} className="study-unit" open={unitIndex === 0 ? true : undefined}><summary><span className="study-unit-number">{String(unitIndex + 1).padStart(2, "0")}</span><span className="study-unit-title"><strong>{unit.title}</strong><small>{count}/{unit.lessons.length} bài đã luyện · {unit.lessons.length} bài</small></span><span className="study-unit-arrow">⌄</span></summary><div className="study-lesson-grid">{shown.map((lesson, index) => { const result = results[lesson.slug]; const tone = resultTone(result); return <Link key={lesson.id} className={`study-lesson ${tone}`} href={`/app/lesson/${lesson.slug}`}><span className="study-lesson-seq">{String(index + 1).padStart(2, "0")}</span><span className="study-lesson-body"><small>{skillLabels[lesson.skill] ?? lesson.skill} {result?.checked ? lesson.objective_count === 0 ? `· ${result.checked}/${result.total} đã tự đánh giá` : `· ${result.correct}/${result.checked} đúng` : isDone(lesson) ? "· Đã mở" : "· Chưa học"}</small><strong>{lesson.title}</strong>{lesson.summary && <span>{lesson.summary}</span>}</span>{result?.checked ? tone === "is-weak" ? <RotateCcw size={18} /> : <CheckCircle2 size={18} /> : <ArrowRight size={17} />}</Link>; })}</div></details>;
+      return <JourneyUnit key={`${unit.id}-${unitIndex === activeUnit}`} unit={unit} unitIndex={unitIndex} shown={shown} nextSlug={next?.slug} results={results} isDone={isDone} initialOpen={unitIndex === activeUnit} />;
     })}</div>
   </section>;
 }
