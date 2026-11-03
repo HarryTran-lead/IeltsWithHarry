@@ -106,6 +106,31 @@
 .b2-cta-bar > span { color: var(--b2-muted); font-size: 14px; }
 .b2-cta-bar b { color: var(--b2-text); }
 
+/* Interactive Learning Coach: Harry beside a speech bubble, inline so it never covers lesson content. */
+.b2-coach { position: relative; display: flex; align-items: flex-end; gap: 12px; animation: b2-in .3s ease; }
+.b2-coach-avatar { flex: 0 0 auto; }
+.b2-coach-bubble { position: relative; flex: 1; min-width: 0; padding: 14px 44px 14px 18px; border: 2px solid var(--b2); border-bottom-width: 4px; border-radius: 20px; background: #fff; }
+.b2-coach-bubble::before { content: ""; position: absolute; left: -9px; bottom: 16px; width: 14px; height: 14px; border-left: 2px solid var(--b2); border-bottom: 2px solid var(--b2); background: #fff; transform: rotate(45deg); }
+.b2-coach.is-wrong .b2-coach-bubble, .b2-coach.is-wrong .b2-coach-bubble::before { border-color: #f5a524; }
+.b2-coach.is-wrong .b2-coach-bubble { background: #fffaf0; }
+.b2-coach.is-wrong .b2-coach-bubble::before { background: #fffaf0; }
+.b2-coach-name { color: var(--b2-dark); font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.b2-coach-bubble p { margin: 4px 0 0; color: var(--b2-text); font-size: 15px; font-weight: 600; line-height: 1.55; animation: b2-in .25s ease; }
+.b2-coach-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+.b2-coach-actions:empty { display: none; }
+.b2-coach-chip { min-height: 34px; padding: 0 13px; border: 2px solid var(--b2-line); border-bottom-width: 3px; border-radius: 999px; background: var(--b2-soft); color: var(--b2-dark); font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
+.b2-coach-chip:active { transform: translateY(1px); border-bottom-width: 2px; }
+.b2-coach-link { display: inline-flex; align-items: center; gap: 5px; border: 0; background: none; color: var(--b2-muted); font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }
+.b2-coach-close { position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 28px; height: 28px; border: 0; border-radius: 8px; background: transparent; color: #93a4ae; cursor: pointer; }
+.b2-coach-close:hover { background: #eef3f5; color: var(--b2-text); }
+.b2-coach.is-compact .b2-coach-bubble { padding: 10px 40px 10px 14px; }
+.b2-coach.is-compact .b2-coach-bubble p { font-size: 14px; }
+.b2-coach-show { display: inline-flex; align-items: center; gap: 6px; justify-self: start; min-height: 34px; padding: 0 12px; border: 2px dashed var(--b2-line); border-radius: 999px; background: #fff; color: var(--b2-dark); font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
+.b2-coach-detail { display: grid; gap: 6px; margin-left: 70px; padding: 14px 18px; border-radius: 16px; background: var(--b2-soft); line-height: 1.55; }
+.b2-coach-detail strong { color: var(--b2-dark); font-size: 13px; }
+.b2-coach-detail ol, .b2-coach-detail ul { margin: 0 0 6px; padding-left: 20px; }
+.b2-goal .b2-bubble::before { display: none; }
+
 /* Practice focus: progress, question map, one question, answer sheet. The floating notebook bubble would cover the sheet. */
 body:has(.b2-focus) .notebook-bubble { display: none; }
 .b2-focus { gap: 14px; }
@@ -285,6 +310,9 @@ body:has(.b2-focus) .notebook-bubble { display: none; }
   .b2-card { padding: 16px 16px 16px 54px; }
   .b2-card-number { left: 14px; width: 28px; height: 28px; }
   .b2-goal .sticker { display: none; }
+  .b2-coach-avatar { width: 40px !important; }
+  .b2-coach { gap: 8px; }
+  .b2-coach-detail { margin-left: 0; }
   .b2-bubble::before { display: none; }
   .b2-cta-bar { flex-direction: column; align-items: stretch; padding: 12px; }
   .b2-cta-bar > span { text-align: center; font-size: 13px; }

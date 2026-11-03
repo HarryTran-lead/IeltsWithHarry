@@ -9,6 +9,7 @@ import { celebrate } from "@/lib/celebrate";
 import { savePracticeSnapshot } from "./practice-results";
 import { cacheBook2State, loadBook2State, saveBook2State, type Book2SavedState, type Book2Step } from "./book2-lesson-state";
 import { Book2SourcePanel } from "./book2-source-panel";
+import { Book2Coach, coachLines, type CoachScript } from "./book2-coach";
 import { book2AnswerCorrect, book2OptionOrder, evaluateBook2Progress, requiredBook2WritingWords } from "./book2-progress";
 import "./book2-lesson.css";
 
@@ -51,6 +52,10 @@ export type Book2Content = {
   audios: { id: string; title?: string; transcript?: string; audio_url?: string }[];
   visuals: { id: string; title?: string; headers?: string[]; rows?: (string | number)[][]; image_url?: string }[];
   exercises: Exercise[];
+  /** Scripted coach from the package; lessons without one get tips built from their questions. */
+  coach?: CoachScript;
+  /** The lesson this one was split from, whose saved answers it starts with. */
+  legacy_slug?: string;
 };
 type Nav = { previous: { slug: string; title: string } | null; next: { slug: string; title: string } | null; index: number; total: number } | null;
 
@@ -135,12 +140,14 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   // readable; an audio-only lesson starts open because the small player is the first thing the learner needs.
   const [sourcesOpen, setSourcesOpen] = useState(content.audios.length > 0 && !content.passages.length && !content.visuals.length);
   const [syncStatus, setSyncStatus] = useState<"saving" | "account" | "device">("saving");
+  const [coachTips, setCoachTips] = useState(false);
+  const [coachNote, setCoachNote] = useState("");
   const theme = skillThemes[lesson.skill] ?? skillThemes.Reading;
   const SkillIcon = theme.icon;
 
   useEffect(() => {
     let active = true;
-    void loadBook2State(lesson.slug).then((saved) => {
+    void loadBook2State(lesson.slug, content.legacy_slug).then((saved) => {
       if (!active) return;
       setAnswers(saved.answers); setChecked(saved.checked); setRatings(saved.ratings);
       setChecklist(saved.checklist); setStep(saved.step);
@@ -148,7 +155,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
       setRestored(true);
     }).catch(() => setRestored(true));
     return () => { active = false; };
-  }, [lesson.slug, questions.length]);
+  }, [lesson.slug, content.legacy_slug, questions.length]);
 
   useEffect(() => () => {
     if (recorder.current?.state === "recording") recorder.current.stop();
@@ -235,6 +242,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     goStep("practice");
   }
   function moveTo(index: number) {
+    setCoachNote(""); setCoachTips(false);
     if (index >= questions.length) { goStep("review"); return; }
     setPosition(Math.max(0, index));
     setTimer(null);
@@ -327,6 +335,35 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   const modelVisible = Boolean(current && openAnswer && (revealed[current.question_id] || checked[current.question_id]));
   const rated = Boolean(current && (ratings[current.question_id] ?? 0) > 0);
 
+  // Coach: the package script decides the phase for guided Writing/Speaking; other lessons react to the question.
+  const scripted = content.coach?.phases?.length ? content.coach : null;
+  const scriptPhase = !scripted ? undefined : content.coach?.mode === "speaking"
+    ? modelVisible ? "reflect" : current && (recordingId === current.question_id || (timer?.id === current.question_id && timer.phase === "speak")) ? "record" : timer?.id === current?.question_id && timer?.phase === "prepare" ? "plan" : "welcome"
+    : modelVisible ? "review" : value.trim() ? "draft" : "plan";
+  const coachPractice = coachLines({ script: scripted, moment: graded && !right ? "wrong" : "before", scriptPhase, skill: lesson.skill, itemType: current?.item_type, options: current?.options });
+  const coachIntro = coachLines({ script: scripted, moment: "intro", scriptPhase: scripted ? (content.coach?.mode === "speaking" || content.coach?.mode === "writing" ? "welcome" : undefined) : undefined, skill: lesson.skill, objective: content.lesson.learning_objectives[0]?.vi });
+  const coachReview = coachLines({ script: scripted, moment: "review", scriptPhase: scripted && (content.coach?.mode === "speaking" || content.coach?.mode === "writing") ? (content.coach.mode === "speaking" ? "reflect" : "review") : undefined, skill: lesson.skill, reviewTip: content.lesson.mini_review[0]?.vi || content.lesson.mini_review[0]?.en });
+  const coachDetail = coachTips && (content.lesson.strategies.length > 0 || content.lesson.mini_review.length > 0) ? <div className="b2-coach-detail">
+    {content.lesson.strategies.length > 0 && <><strong>Các bước gợi ý</strong><ol>{content.lesson.strategies.map((item, index) => <li key={index}>{item.vi || item.en}</li>)}</ol></>}
+    {content.lesson.mini_review.length > 0 && <><strong>Tự kiểm tra</strong><ul>{content.lesson.mini_review.map((item, index) => <li key={index}>{item.vi || item.en}</li>)}</ul></>}
+  </div> : null;
+  function coachAction(label: string) {
+    setCoachNote("");
+    if (/mẫu/i.test(label)) {
+      if (!current || !canReveal) { setCoachNote(step === "practice" ? "Viết hoặc nói xong phần của bạn trước, rồi mới xem mẫu để đối chiếu nhé." : "Bài mẫu mở sau khi bạn tự làm ở bước Luyện tập."); return; }
+      setRevealed((previous) => ({ ...previous, [current.question_id]: true }));
+      window.setTimeout(() => document.querySelector(".b2-model")?.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
+      return;
+    }
+    if (/ví dụ|gợi ý|checklist/i.test(label)) { setCoachTips((open) => !open); return; }
+    if (/chuẩn bị/i.test(label)) { if (step !== "practice") startPractice(); else if (current) setTimer({ id: current.question_id, phase: "prepare", ...speakingTimes(current.prompt_en) }); return; }
+    if (/nói|ghi âm/i.test(label) && current && step === "practice") { setTimer({ id: current.question_id, phase: "speak", ...speakingTimes(current.prompt_en), seconds: speakingTimes(current.prompt_en).speak }); if (recordingId !== current.question_id) void toggleRecording(current); return; }
+    if (/làm lại/i.test(label) && current) { answer(current, ""); return; }
+    if (/đánh giá/i.test(label)) { document.querySelector(".b2-sheet")?.scrollIntoView({ behavior: "smooth", block: "end" }); return; }
+    if (step !== "practice") { startPractice(); return; }
+    (document.querySelector(".b2-textarea, .b2-input") as HTMLElement | null)?.focus();
+  }
+
   // The listener reads the latest question and answer through this ref, updated after every render.
   useEffect(() => {
     keyHandler.current = (event: KeyboardEvent) => {
@@ -377,7 +414,9 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     {step !== "practice" && stepPath}
 
     {step === "learn" && <main className="b2-learn">
-      <section className="b2-goal"><Sticker name="harry" size={64} tilt={-4} pop={false} /><div className="b2-bubble"><strong>Sau bài này bạn làm được:</strong><ul>{content.lesson.learning_objectives.map((item, index) => <li key={index}>{item.vi || item.en}{item.vi && item.en && <small>{item.en}</small>}</li>)}</ul></div></section>
+      <Book2Coach lines={coachNote ? [coachNote] : coachIntro.lines} actions={coachIntro.actions} onAction={coachAction} />
+      {coachDetail}
+      <section className="b2-goal"><div className="b2-bubble"><strong>Sau bài này bạn làm được:</strong><ul>{content.lesson.learning_objectives.map((item, index) => <li key={index}>{item.vi || item.en}{item.vi && item.en && <small>{item.en}</small>}</li>)}</ul></div></section>
 
       {content.lesson.theory.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><BookOpenText size={18} /></span> Kiến thức cốt lõi</h2><div className="b2-cards">{content.lesson.theory.map((item, index) => <article className="b2-card" key={index}><span className="b2-card-number">{index + 1}</span><h3>{item.title}</h3><p>{item.content?.vi || item.content?.en}</p>{item.content?.vi && item.content.en && <details><summary>Đọc giải thích tiếng Anh</summary><p>{item.content.en}</p></details>}{item.example?.en && <blockquote><button type="button" className="b2-say" onClick={() => speak(item.example!.en!)} aria-label="Nghe ví dụ"><Volume2 size={15} /></button><span>{item.example.en}{item.example.vi && <small>{item.example.vi}</small>}</span></blockquote>}</article>)}</div></section>}
 
@@ -410,6 +449,8 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
           return <button type="button" key={item.question_id} className={`${state} ${index === position ? "is-current" : ""}`} onClick={() => moveTo(index)} aria-label={`Câu ${index + 1}`} aria-current={index === position ? "step" : undefined} />;
         })}</div>
 
+        <Book2Coach compact tone={graded && !right ? "is-wrong" : ""} lines={coachNote ? [coachNote] : coachPractice.lines} actions={coachPractice.actions} onAction={coachAction} key={`coach-${current.question_id}-${graded}-${scriptPhase ?? ""}`} />
+        {coachDetail}
         <article className={`b2-question ${graded ? right ? "is-right" : "is-wrong" : ""}`} key={current.question_id} id={"question-" + current.question_id}>
           <header className="b2-question-meta"><span>CÂU {position + 1}/{questions.length}</span>{currentGroup && <span>Phần {currentGroupIndex + 1}/{groups.length} · {currentGroup.title}</span>}</header>
           {currentGroup?.instruction && <p className="b2-instruction">{currentGroup.instruction.vi || currentGroup.instruction.en}</p>}
@@ -484,6 +525,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
         </div>
       </section>
 
+      <Book2Coach lines={coachReview.lines} actions={coachReview.actions.filter((label) => !/mẫu/i.test(label))} onAction={coachAction} />
       {problems.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><RotateCcw size={18} /></span> Câu cần làm tiếp hoặc sửa</h2><div className="b2-fix-list">{problems.map((item) => <div className="b2-fix" key={item.question_id}><button type="button" onClick={() => jumpTo(item)}><span className={!checked[item.question_id] ? "is-todo" : "is-wrong"}>{!checked[item.question_id] ? "Chưa làm" : "Cần sửa"}</span><strong>{item.prompt_vi || item.prompt_en}</strong><ArrowRight size={16} /></button>{sourceFor(item) && <button type="button" className="b2-fix-source" onClick={() => jumpTo(item, true)}>{item.evidence ? "Xem bằng chứng" : "Xem tư liệu"}</button>}</div>)}</div></section>}
 
       {content.lesson.mini_review.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><Check size={18} /></span> Tự kiểm tra trước khi qua bài</h2><ul className="b2-checklist">{content.lesson.mini_review.map((item, index) => <li key={index}><label><input type="checkbox" checked={Boolean(checklist[String(index)])} onChange={(event) => setChecklist((previous) => ({ ...previous, [index]: event.target.checked }))} /> <span>{item.vi || item.en}</span></label></li>)}</ul></section>}

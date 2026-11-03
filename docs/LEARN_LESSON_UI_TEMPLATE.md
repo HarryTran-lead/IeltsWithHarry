@@ -28,6 +28,25 @@ Lớp `b2-skill-<reading|listening|writing|speaking>` trên `.book2-page` đặt
 2. **Luyện tập (chế độ tập trung)**: ẩn hero; nút thoát, thanh tiến độ dày màu xanh lá, chuỗi đúng 🔥; dãy chấm câu để nhảy câu (xanh đúng, đỏ sai). Mỗi màn một câu: phương án là ô lớn có số (phím 1–9), câu điền nhấn Enter. Thanh dưới: Để sau / Kiểm tra → phản hồi xanh “Chính xác!” hoặc đỏ “Chưa đúng” kèm đáp án, lời giải, bằng chứng, Xem tư liệu, Làm lại, Tiếp tục (Enter). Câu mở: đếm từ có vạch đủ độ dài, đồng hồ Part, ghi âm, Xem bài mẫu → tự đánh giá 1–4 → Tiếp tục. Tư liệu vẫn cạnh câu hỏi trên desktop, thu gọn trên điện thoại.
 3. **Kết quả**: sticker theo kết quả, tiêu đề khích lệ, thẻ số liệu (độ chính xác, câu đúng, câu tự đánh giá, cần làm tiếp), pháo giấy khi đạt hết; nút chính là Làm tiếp/Sửa câu hoặc Bài tiếp theo; danh sách câu cần sửa dẫn thẳng về câu đó.
 
+## Interactive Learning Coach (`book2-coach.tsx`)
+
+Harry là Coach theo kịch bản, không phải AI. Coach nằm ngay trong trang, không phủ lên nội dung. Người học có thể bấm ✕ để ẩn (trình duyệt ghi nhớ lựa chọn này) và bấm "Nói cách khác" để nghe một câu gợi ý khác. Chuyển động tắt theo `prefers-reduced-motion`.
+
+- **Bài có kịch bản** (`content.coach`, lấy từ `m05_writing_speaking.coach_script` hoặc `m06_learning_coach`): phase đổi theo việc người học đang làm.
+  - Writing: welcome → plan (chưa gõ) → draft (đang viết) → review (đã mở bài mẫu).
+  - Speaking: welcome → plan (đang chuẩn bị 60 giây) → record (đang nói hoặc ghi âm) → reflect.
+  - Nút hành động của kịch bản gắn với thao tác thật: xem gợi ý hoặc checklist, bấm giờ chuẩn bị, nói và ghi âm, làm lại, tự đánh giá. Nút xem mẫu chỉ mở bài mẫu sau khi người học đã viết hoặc nói đủ.
+- **Bài không có kịch bản:** Coach chào theo kỹ năng ở bước Tìm hiểu. Trước mỗi câu, Coach đưa mẹo theo dạng câu (TRUE/FALSE/NOT GIVEN, YES/NO/NOT GIVEN, tiêu đề đoạn, điền từ, trắc nghiệm, ngữ pháp, câu mở). Khi trả lời sai, Coach đưa gợi ý sửa và khung chuyển sang tông vàng cam. Khi xong bài, Coach đọc câu tự kiểm tra đầu tiên của bài.
+
+## Nhập dữ liệu Book 2
+
+`python scripts/build-book-2.py <BOOK2_ALL_8_UNITS.zip>`, rồi chạy `python scripts/fix-book2-u01-items.py` và `node scripts/verify-book2-data.mjs`.
+
+- Unit có `is_published=false` không vào lộ trình, và file cũ của unit đó bị xoá. Hiện Unit 7 đang ở trạng thái này.
+- `m05_writing_speaking` thành hai bài "Luyện thêm" ở cuối unit. Bài làm được tự đánh giá, không chấm tự động.
+- `u06_speaking_refactor` tách bài Unit 6 Speaking L04 thành L04A–C, giữ nguyên mã câu. Bài mới đọc bài làm cũ của L04 qua `legacy_slug`.
+- Câu có `options` là chuỗi được đổi thành danh sách rỗng.
+
 ## Quy tắc khi thêm bài hoặc unit mới
 
 - Chỉ cần `lesson.skill` đúng một trong bốn kỹ năng; không thêm màu riêng cho từng unit trong bài học.
