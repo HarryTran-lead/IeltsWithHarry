@@ -16,6 +16,13 @@
 .learn-stage-menu a { display: flex; align-items: center; gap: 10px; padding: 9px 11px; border-radius: 9px; color: var(--navy); text-decoration: none; font-size: 13px; }
 .learn-stage-menu a:hover, .learn-stage-menu a[aria-current="page"] { background: #e7f8f6; }
 .learn-stage-menu b { color: #07898c; min-width: 62px; }
+.learn-stage-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; }
+.learn-stage-card { display: grid; gap: 8px; padding: 20px; border: 1px solid #d8e9e6; border-radius: 17px; background: linear-gradient(135deg,#f8fcfb,#eef8f6); text-decoration: none; transition: transform .15s,border-color .15s; }
+a.learn-stage-card:hover { transform: translateY(-2px); border-color: #62aaa5; }
+.learn-stage-card small { color: #087d81; font-size: 11px; font-weight: 900; }
+.learn-stage-card strong { color: #173c51; font-size: 20px; }
+.learn-stage-card span { display: flex; align-items: center; gap: 5px; color: #547079; font-size: 13px; }
+.learn-stage-card.is-locked { opacity: .55; }
 
 /* A single lesson now has three clear screens instead of several stacked cards. */
 .package-lesson-page { max-width: 1380px; }

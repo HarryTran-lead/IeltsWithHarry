@@ -12,6 +12,7 @@ import type { SkillMaterial } from "@/lib/skill-material";
 import { PackageLessonPractice, PracticeScoreReporter, type PackageLesson } from "./course-package-practice";
 import { savePracticeResult, type PracticeResult } from "./practice-results";
 import { Sticker } from "@/components/stickers/stickers";
+import { Book2LessonPage, type Book2Content } from "./book2-lesson";
 
 type Props = {
   lesson: { slug: string; title: string; skill: string; summary: string };
@@ -31,6 +32,7 @@ const steps = [
 ] as const;
 
 function stageHref(slug: string) {
+  if (slug.startsWith("b2-")) return "/app/learn/ielts-builder";
   if (slug.startsWith("foundation")) return "/app/learn/foundation";
   if (slug.startsWith("elementary")) return "/app/learn/elementary";
   if (slug.startsWith("preielts")) return "/app/learn/pre-ielts";
@@ -48,6 +50,10 @@ function Content({ packageContent, canManage, ...lessonProps }: Props) {
   const { ready } = useDemo();
   const { lesson, navigation } = lessonProps;
   const backHref = stageHref(lesson.slug);
+
+  if (packageContent.type === "book2") return ready
+    ? <Book2LessonPage lesson={lesson} content={packageContent as unknown as Book2Content} navigation={navigation} canManage={canManage} />
+    : <div className="content-page">Đang mở bài học…</div>;
 
   return <AppShell canManage={canManage}>{ready ? <div className="content-page package-lesson-page">
     <div className="package-route-bar"><Link href={backHref} className="package-back"><ArrowLeft size={16} /> Hành trình học</Link>{navigation && <><span>Bài {navigation.index}/{navigation.total}</span><div>{navigation.previous ? <Link href={`/app/lesson/${navigation.previous.slug}`} title={navigation.previous.title}><ArrowLeft size={15} /> Bài trước</Link> : <span>Đầu chặng</span>}{navigation.next ? <Link href={`/app/lesson/${navigation.next.slug}`} title={navigation.next.title}>Bài tiếp <ArrowRight size={15} /></Link> : <span>Cuối chặng</span>}</div></>}</div>
@@ -209,7 +215,7 @@ export function PackageLessonSteps({ packageContent, finish, onStepChange, ...le
           {!hasAuthoredQuestions && questions.length > 0 && <LessonDetail {...lessonProps} display="questions" />}
           <div className="package-panel-actions"><button type="button" className="button subtle" onClick={() => goTo(0)}>← Xem lại bài</button><button type="button" className="button primary" onClick={() => goTo(2)}>Đến bước ghi nhớ <ArrowRight size={17} /></button></div>
         </section>
-        <section className="package-step-panel" hidden={step !== 2} aria-label="Bước 3: Ghi nhớ"><div className="package-step-heading"><span>03 / 03</span><h2>Mang kiến thức sang bài tiếp theo</h2><p>Đối chiếu điều bạn vừa học với mục tiêu, rồi trở lại sách hoặc bản đồ để qua bài tiếp theo.</p></div>
+        <section className="package-step-panel" hidden={step !== 2} aria-label="Bước 3: Ghi nhớ"><div className="package-step-heading"><span>03 / 03</span><h2>Mang kiến thức sang bài tiếp theo</h2><p>Đối chiếu điều bạn vừa học với mục tiêu, rồi trở lại lộ trình để qua bài tiếp theo.</p></div>
           <PackageLessonPractice content={packageContent} lessonSlug={lesson.slug} lessonTitle={lesson.title} mode="review" />
           <div className="package-panel-actions"><button type="button" className="button subtle" onClick={() => goTo(1)}>← Luyện lại</button>{finish}</div>
         </section>
