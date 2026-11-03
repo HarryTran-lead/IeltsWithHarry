@@ -23,7 +23,10 @@ type SourceQuestion = {
 type SourceLesson = {
   id?: string; lesson_id?: string; title?: string; name_en?: string;
   sections?: Record<string, unknown>[];
-  learn?: { title?: string; objectives_vi?: string[]; rules?: Record<string, unknown>[]; caveats_vi?: string[] };
+  common_errors?: { wrong: string; correct: string; why_vi: string }[];
+  additional_common_errors?: { wrong: string; correct: string; why_vi: string }[];
+  exceptions?: string[]; usage_caveats_vi?: string[];
+  learn?: { title?: string; objectives_vi?: string[]; rules?: Record<string, unknown>[]; caveats_vi?: string[]; misconceptions?: { wrong: string; correct: string; why_vi: string }[]; exception_notes_vi?: string[] };
   learning_objectives?: string[];
 };
 
@@ -55,7 +58,8 @@ export function publicEditorialLesson(source: NonNullable<Awaited<ReturnType<typ
         mistake: part.common_mistake ?? null,
         note: part.exception_note_vi ?? part.note_vi ?? "",
       })),
-      caveats: lesson.learn?.caveats_vi ?? [],
+      mistakes: [...(lesson.common_errors ?? []), ...(lesson.additional_common_errors ?? []), ...(lesson.learn?.misconceptions ?? [])],
+      caveats: [...(lesson.exceptions ?? []), ...(lesson.usage_caveats_vi ?? []), ...(lesson.learn?.caveats_vi ?? []), ...(lesson.learn?.exception_notes_vi ?? [])],
     },
     items: questions.map((question) => ({
       id: question.id,

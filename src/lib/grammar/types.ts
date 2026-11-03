@@ -15,6 +15,7 @@ export type GrammarGuide = {
   title: string;
   objectives: string[];
   sections: { heading: string; formula: string; explanation: string; examples: { en: string; vi?: string }[]; mistake?: { wrong: string; correct: string; why_vi: string } | null; note: string }[];
+  mistakes: { wrong: string; correct: string; why_vi: string }[];
   caveats: string[];
 };
 
