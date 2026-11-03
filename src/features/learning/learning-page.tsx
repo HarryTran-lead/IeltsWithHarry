@@ -22,7 +22,6 @@ import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
 import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
-import { StageMap, stageStops } from "./stage-map";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode, lockedLearnerPath, releaseLocks } from "@/lib/runtime";
@@ -101,7 +100,6 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   const explored = stageLessons.filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
   const nextLesson = stageLessons.find((lesson) => !visited.has(`/app/lesson/${lesson.slug}`) && !submitted.has(lesson.slug));
   const total = stageLessons.length;
-  const stops = stageStops(published.courses, (slug) => visited.has(`/app/lesson/${slug}`) || submitted.has(slug));
   return (
     <div className="content-page learn-overview">
       {selected ? <header className="learn-stage-heading learn-stage-tools">
@@ -123,10 +121,16 @@ function LearnOverview({ stageId }: { stageId?: string }) {
       {selected && <StageLessons stageId={selected.id} {...published} />}
       {!selected && <section className="card section-card">
         <div className="section-head">
-          <h2>Bản đồ 7 chặng học</h2>
-          <span>Chọn chặng để xem từng unit và bài học. Mốc band là định hướng nội bộ.</span>
+          <h2>Chọn chặng tự học</h2>
+          <span>Vào từng chặng để xem unit, lọc kỹ năng và tiếp tục bài đang học. Mốc band là định hướng nội bộ.</span>
         </div>
-        <StageMap stops={stops} />
+        <div className="learn-stage-grid">{stages.map((stage, index) => {
+          const courseList = published.courses.filter((course) => course.stage_id === stage.id);
+          const lessonTotal = courseList.reduce((sum, course) => sum + course.units.reduce((count, unit) => count + unit.lessons.length, 0), 0);
+          const locked = releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id);
+          return locked ? <div key={stage.id} className="learn-stage-card is-locked"><small>CHẶNG {index + 1} · {stage.range}</small><strong>{stage.name}</strong><span>Sắp mở</span></div>
+            : <Link key={stage.id} href={`/app/learn/${stage.id}`} className="learn-stage-card"><small>CHẶNG {index + 1} · {stage.range}</small><strong>{stage.name}</strong><span>{lessonTotal ? `${lessonTotal} bài · ${courseList.length} khóa học` : "Khám phá chặng học"} <ArrowRight size={15} /></span></Link>;
+        })}</div>
       </section>}
       {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}
       <section className="card section-card">

@@ -1,6 +1,8 @@
 import { notFound, redirect } from "next/navigation";
 import { LessonShell } from "@/features/learning/lesson-detail";
 import { CoursePackageLessonShell } from "@/features/learning/course-package-lesson-shell";
+import { Book2LessonRoute } from "@/features/learning/book2-lesson-route";
+import book2Catalog from "@/data/book2/catalog.json";
 import { Portal } from "@/features/portal";
 import { demoMode, releaseLocks, supabaseConfigured } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/server";
@@ -16,6 +18,9 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const { data: claims } = await supabase.auth.getClaims();
   if (!claims?.claims) redirect("/login");
   const { data: isAdmin } = await supabase.rpc("is_admin");
+  if (book2Catalog.units.some((unit) => unit.lessons.some((item) => item.slug === slug))) {
+    return <Book2LessonRoute slug={slug} canManage={isAdmin === true} />;
+  }
   let lessonQuery = supabase.from("lessons").select("id,unit_id,slug,title,skill,summary").eq("slug", slug);
   if (isAdmin !== true) lessonQuery = lessonQuery.eq("published", true);
   const { data: lesson } = await lessonQuery.maybeSingle();

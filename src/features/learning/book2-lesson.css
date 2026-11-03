@@ -1,0 +1,70 @@
+.book2-page { max-width: 1100px; margin: 0 auto; padding-bottom: 80px; }
+.book2-route { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 18px; color: var(--muted); font-size: 13px; }
+.book2-route a { display: inline-flex; align-items: center; gap: 7px; color: var(--navy); font-weight: 800; }
+.book2-hero { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: clamp(24px, 4vw, 40px); border-radius: 28px; background: linear-gradient(120deg,#143f5f,#087b83); color: white; box-shadow: 0 18px 35px #123c5b26; }
+.book2-hero .eyebrow { color: #aaf0df; }
+.book2-hero h1 { max-width: 760px; margin: 8px 0; color: white; font-size: clamp(26px, 4vw, 42px); line-height: 1.13; }
+.book2-hero p { margin: 0; color: #e4f5f4; }
+.book2-hero-score { flex: 0 0 auto; min-width: 140px; padding: 16px 20px; border: 1px solid #ffffff66; border-radius: 20px; background: #ffffff19; text-align: center; }
+.book2-hero-score strong { display: block; font-size: 27px; }
+.book2-hero-score span { font-size: 12px; }
+.book2-steps { position: sticky; top: 8px; z-index: 6; display: flex; gap: 6px; margin: 18px 0 22px; padding: 6px; border: 1px solid #dce8e9; border-radius: 16px; background: #f8fbfbed; backdrop-filter: blur(12px); }
+.book2-steps button { flex: 1; min-height: 44px; border: 0; border-radius: 11px; background: transparent; color: #47606b; font-weight: 800; cursor: pointer; }
+.book2-steps button.active { background: #0d6571; color: white; box-shadow: 0 5px 14px #0c65702c; }
+.book2-steps span { opacity: .76; font-size: 12px; }
+.book2-stack { display: grid; gap: 18px; }
+.book2-stack > .button { justify-self: start; }
+.book2-card { padding: clamp(22px, 3vw, 32px); border: 1px solid #dbe7e5; border-radius: 22px; background: #fff; box-shadow: 0 10px 30px #1645610b; }
+.book2-card h2 { display: flex; align-items: center; gap: 9px; margin: 0 0 16px; color: #153a52; font-size: clamp(19px, 2.3vw, 24px); }
+.book2-card h3 { margin: 0 0 8px; color: #1c485e; font-size: 17px; }
+.book2-card p, .book2-card li { color: #324c58; line-height: 1.72; }
+.book2-card ul, .book2-card ol { display: grid; gap: 9px; margin: 0; padding-left: 24px; }
+.book2-card li small, .book2-vocab small, .book2-question-head small { display: block; color: #68808a; font-size: 13px; }
+.book2-theory { display: grid; gap: 16px; }
+.book2-theory article { padding: 18px; border-radius: 15px; background: #f4f9f8; }
+.book2-theory article p { margin: 0 0 10px; }
+.book2-theory blockquote { margin: 12px 0 0; padding: 10px 14px; border-left: 4px solid #4ab2a8; background: white; color: #233e50; }
+.book2-theory blockquote small { display: block; color: #6b8288; }
+.book2-vocab { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; }
+.book2-vocab > div { display: grid; gap: 4px; padding: 14px; border: 1px solid #e3eeec; border-radius: 12px; }
+.book2-vocab b { color: #116875; }
+.book2-passage { max-width: 78ch; font-size: 16px; }
+.book2-passage p { margin: 0 0 16px; }
+.book2-transcript { white-space: pre-wrap; font: inherit; line-height: 1.7; color: #304b56; }
+.book2-card audio { max-width: 100%; width: 460px; margin: 4px 0 15px; }
+.book2-visual { display: block; max-width: 100%; max-height: 430px; object-fit: contain; margin: 0 auto 18px; }
+.book2-table-wrap { max-width: 100%; overflow-x: auto; }
+.book2-table-wrap table { width: 100%; border-collapse: collapse; }
+.book2-table-wrap th, .book2-table-wrap td { padding: 10px 12px; border: 1px solid #dce9e8; text-align: left; }
+.book2-table-wrap th { background: #eff7f6; }
+.book2-practice-intro { background: #f5faf8; }
+.book2-practice-intro p { margin-bottom: 0; }
+.book2-recorder { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.book2-exercise > header { padding-bottom: 14px; border-bottom: 1px solid #e4eeee; }
+.book2-exercise > header > span { color: #087881; font-size: 12px; font-weight: 900; }
+.book2-exercise > header h2 { margin: 4px 0; }
+.book2-exercise > header p { margin: 0; }
+.book2-question { padding: 22px 0; border-bottom: 1px solid #e8eeee; }
+.book2-question:last-child { border-bottom: 0; padding-bottom: 0; }
+.book2-question-head { display: flex; gap: 12px; margin-bottom: 14px; color: #173e54; }
+.book2-question-head > span { display: grid; flex: 0 0 28px; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: #e4f4f1; color: #087e7d; font-size: 13px; font-weight: 900; }
+.book2-question-head strong { display: block; font-size: 16px; line-height: 1.5; }
+.book2-options { display: grid; gap: 9px; margin-left: 40px; }
+.book2-options label { display: flex; align-items: center; gap: 10px; padding: 11px 13px; border: 1px solid #dce7e8; border-radius: 11px; cursor: pointer; }
+.book2-options label:has(input:checked) { border-color: #108b8c; background: #effaf7; }
+.book2-options input { accent-color: #087c7b; }
+.book2-answer, .book2-question textarea { display: block; width: min(100%,780px); margin-left: 40px; padding: 12px 14px; border: 1px solid #bfd1d4; border-radius: 10px; background: white; font: inherit; color: #1e3e50; }
+.book2-question > small { display: block; margin: 6px 0 0 40px; color: #73858d; }
+.book2-question-actions { display: flex; align-items: center; gap: 12px; margin: 14px 0 0 40px; }
+.book2-correct { color: #167955; font-weight: 800; }
+.book2-incorrect { color: #a75d23; font-weight: 800; }
+.book2-feedback { margin: 14px 0 0 40px; padding: 15px 18px; border-radius: 12px; background: #eff8f4; }
+.book2-feedback p { margin: 0 0 8px; }
+.book2-feedback p:last-child { margin-bottom: 0; }
+.book2-feedback small { color: #54736e; }
+.book2-review-tip { display: flex; align-items: center; gap: 8px; padding: 12px 15px; border-radius: 12px; background: #fff8e9; }
+.book2-checklist { list-style: none; padding: 0 !important; }
+.book2-checklist label { cursor: pointer; }
+.book2-checklist input { margin-right: 9px; accent-color: #0a7b7c; }
+.book2-next { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 620px) { .book2-hero { align-items: flex-start; flex-direction: column; } .book2-hero-score { min-width: 0; width: 100%; } .book2-steps { top: 0; } .book2-steps button { font-size: 12px; } .book2-options, .book2-answer, .book2-question textarea, .book2-question-actions, .book2-feedback { margin-left: 0; } }

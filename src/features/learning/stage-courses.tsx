@@ -2,16 +2,17 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Map as MapIcon } from "lucide-react";
+import { ArrowRight, CheckCircle2, RotateCcw } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
 import { stages } from "@/lib/demo-data";
 import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
-import { courseChecks, LessonPath } from "./learning-path";
-import { CourseBook } from "./course-book";
+import { loadPracticeResults, resultTone, type PracticeResult } from "./practice-results";
+import book2Catalog from "@/data/book2/catalog.json";
+import "./study-course.css";
 
-type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: string; summary: string; sort_order: number };
+type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: string; summary: string; sort_order: number; objective_count?: number };
 type Unit = { id: string; course_id: string; slug: string; title: string; sort_order: number; lessons: Lesson[] };
 export type StageCourse = { id: string; slug: string; title: string; description: string; stage_id: string; units: Unit[] };
 
@@ -35,9 +36,10 @@ export function usePublishedCourses() {
       if (failure) { setError(failure.message); setLoading(false); return; }
       const lessons = (lessonResult.data ?? []) as Lesson[];
       const units = ((unitResult.data ?? []) as Omit<Unit, "lessons">[]).map((unit) => ({ ...unit, lessons: lessons.filter((lesson) => lesson.unit_id === unit.id) }));
-      setCourses(((courseResult.data ?? []) as Omit<StageCourse, "units">[])
+      setCourses([book2Catalog as StageCourse, ...((courseResult.data ?? []) as Omit<StageCourse, "units">[])
         .map((course) => ({ ...course, units: units.filter((unit) => unit.course_id === course.id && unit.lessons.length) }))
-        .filter((course) => course.units.length));
+        .filter((course) => course.units.length)]
+        .sort((a, b) => Number(b.slug === "english-skill-lab-book-2") - Number(a.slug === "english-skill-lab-book-2")));
       setLoading(false);
     })();
     return () => { active = false; };
@@ -67,25 +69,36 @@ export function StageLessons({ stageId, courses, loading, error }: { stageId: st
   return <CourseViews courses={stageCourses} isDone={isDone} />;
 }
 
-type CourseView = "book" | "map";
-
-/** Shows each course as a 3D coursebook (default) or as the study map; the choice is remembered. */
+/** A compact unit and skill syllabus with next actions and saved practice results. */
 function CourseViews({ courses, isDone }: { courses: StageCourse[]; isDone: (lesson: Lesson) => boolean }) {
-  // Only rendered after courses load in the browser, so storage can be read up front.
-  const [view, setView] = useState<CourseView>(() => {
-    try { return window.localStorage.getItem("course-view") === "map" ? "map" : "book"; } catch { return "book"; }
-  });
-  function choose(next: CourseView) {
-    setView(next);
-    try { window.localStorage.setItem("course-view", next); } catch { /* storage may be blocked */ }
-  }
-  const switcher = <div className="course-view-switch" role="group" aria-label="Kiểu hiển thị khóa học">
-    <button type="button" aria-pressed={view === "book"} onClick={() => choose("book")}><BookOpen size={15} /> Sách</button>
-    <button type="button" aria-pressed={view === "map"} onClick={() => choose("map")}><MapIcon size={15} /> Bản đồ</button>
-  </div>;
-  return <>{courses.map((course) => view === "book"
-    ? <CourseBook key={course.id} course={course} isDone={isDone} {...courseChecks(course)} toolbarStart={switcher} />
-    : <div key={course.id} className="course-map-view">{switcher}<LessonPath course={course} isDone={isDone} /></div>)}</>;
+  return <div className="study-courses">{courses.map((course) => <StudyCourse key={course.id} course={course} isDone={isDone} />)}</div>;
+}
+
+const skillLabels: Record<string, string> = { Reading: "Đọc", Listening: "Nghe", Writing: "Viết", Speaking: "Nói", Vocabulary: "Từ vựng", Grammar: "Ngữ pháp" };
+
+function StudyCourse({ course, isDone }: { course: StageCourse; isDone: (lesson: Lesson) => boolean }) {
+  const [skill, setSkill] = useState("all");
+  const [results, setResults] = useState<Record<string, PracticeResult>>({});
+  const lessons = useMemo(() => course.units.flatMap((unit) => unit.lessons), [course.units]);
+  useEffect(() => {
+    let active = true;
+    void loadPracticeResults(lessons.map((lesson) => lesson.slug)).then((value) => { if (active) setResults(value); }).catch(() => undefined);
+    return () => { active = false; };
+  }, [lessons]);
+  const practiced = lessons.filter((lesson) => (results[lesson.slug]?.checked ?? 0) > 0).length;
+  const next = lessons.find((lesson) => !results[lesson.slug] && !isDone(lesson)) ?? lessons.find((lesson) => !results[lesson.slug]) ?? lessons[0];
+  const options = ["all", ...new Set(lessons.map((lesson) => lesson.skill))];
+  return <section className="study-course" aria-label={course.title}>
+    <header className="study-course-head"><div><span className="eyebrow">LỘ TRÌNH TỰ HỌC · {course.units.length} UNIT</span><h2>{course.title}</h2><p>{course.description}</p></div><div className="study-course-progress"><strong>{practiced}/{lessons.length}</strong><span>bài đã luyện</span><div className="study-course-bar"><i style={{ width: `${lessons.length ? practiced / lessons.length * 100 : 0}%` }} /></div></div></header>
+    <div className="study-course-actions">{next && <Link className="button primary" href={`/app/lesson/${next.slug}`}>Học tiếp: {next.title} <ArrowRight size={16} /></Link>}<span>Chọn kỹ năng hoặc mở một unit để học theo mục tiêu.</span></div>
+    <div className="study-skill-filter" role="group" aria-label="Lọc theo kỹ năng">{options.map((option) => <button key={option} type="button" className={skill === option ? "active" : ""} aria-pressed={skill === option} onClick={() => setSkill(option)}>{option === "all" ? "Tất cả" : skillLabels[option] ?? option}</button>)}</div>
+    <div className="study-unit-list">{course.units.map((unit, unitIndex) => {
+      const shown = unit.lessons.filter((lesson) => skill === "all" || lesson.skill === skill);
+      if (!shown.length) return null;
+      const count = unit.lessons.filter((lesson) => results[lesson.slug]?.checked).length;
+      return <details key={unit.id} className="study-unit" open={unitIndex === 0 ? true : undefined}><summary><span className="study-unit-number">{String(unitIndex + 1).padStart(2, "0")}</span><span className="study-unit-title"><strong>{unit.title}</strong><small>{count}/{unit.lessons.length} bài đã luyện · {unit.lessons.length} bài</small></span><span className="study-unit-arrow">⌄</span></summary><div className="study-lesson-grid">{shown.map((lesson, index) => { const result = results[lesson.slug]; const tone = resultTone(result); return <Link key={lesson.id} className={`study-lesson ${tone}`} href={`/app/lesson/${lesson.slug}`}><span className="study-lesson-seq">{String(index + 1).padStart(2, "0")}</span><span className="study-lesson-body"><small>{skillLabels[lesson.skill] ?? lesson.skill} {result?.checked ? lesson.objective_count === 0 ? `· ${result.checked}/${result.total} đã tự đánh giá` : `· ${result.correct}/${result.checked} đúng` : isDone(lesson) ? "· Đã mở" : "· Chưa học"}</small><strong>{lesson.title}</strong>{lesson.summary && <span>{lesson.summary}</span>}</span>{result?.checked ? tone === "is-weak" ? <RotateCcw size={18} /> : <CheckCircle2 size={18} /> : <ArrowRight size={17} />}</Link>; })}</div></details>;
+    })}</div>
+  </section>;
 }
 
 /** On the Learn overview: one compact card per published course, linking to its stage. */
