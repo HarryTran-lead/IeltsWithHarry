@@ -48,9 +48,9 @@ export async function loadPracticeResults(slugs: string[]): Promise<Record<strin
 /** Book 2 shows the current attempt, including regressions, so review cannot disappear behind an old best score. */
 export async function savePracticeSnapshot(slug: string, result: PracticeResult) {
   known.set(slug, result);
-  listeners.forEach((listener) => listener(slug, result));
   if (demoMode) {
     try { localStorage.setItem(DEMO_KEY, JSON.stringify({ ...readDemo(), [slug]: result })); } catch { /* storage may be blocked */ }
+    listeners.forEach((listener) => listener(slug, result));
     return;
   }
   const supabase = createClient();
@@ -60,7 +60,8 @@ export async function savePracticeSnapshot(slug: string, result: PracticeResult)
     { user_id: userData.user.id, lesson_slug: slug, correct: result.correct, checked: result.checked, total: result.total, updated_at: new Date().toISOString() },
     { onConflict: "user_id,lesson_slug" },
   );
-  if (error) known.delete(slug);
+  if (error) { known.delete(slug); throw new Error(error.message); }
+  listeners.forEach((listener) => listener(slug, result));
 }
 
 /** Keeps the learner's best result for a lesson and tells open course books about it. */
