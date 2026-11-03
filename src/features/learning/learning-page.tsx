@@ -1,8 +1,23 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { Activity, ArrowRight, Check, CircleCheck, Lightbulb, Target, TrendingUp, Mic, RotateCcw, Save, Square, Volume2 } from "lucide-react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+import {
+  Activity,
+  ArrowRight,
+  Check,
+  CircleCheck,
+  Headphones,
+  Lightbulb,
+  LockKeyhole,
+  Target,
+  TrendingUp,
+  Mic,
+  RotateCcw,
+  Save,
+  Square,
+  Volume2,
+} from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
@@ -60,6 +75,8 @@ const modules = [
   },
 ];
 
+const stageOffsets = [42, 55, 50, 38];
+
 function PageIntro({
   eyebrow,
   title,
@@ -110,12 +127,19 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           <h2>Chọn chặng tự học</h2>
           <span>Vào từng chặng để xem unit, lọc kỹ năng và tiếp tục bài đang học. Mốc band là định hướng nội bộ.</span>
         </div>
-        <div className="learn-stage-grid">{stages.map((stage, index) => {
+        <div className="learn-stage-path">{stages.map((stage, index) => {
           const courseList = published.courses.filter((course) => course.stage_id === stage.id);
           const lessonTotal = courseList.reduce((sum, course) => sum + course.units.reduce((count, unit) => count + unit.lessons.length, 0), 0);
+          const openedCount = courseList.flatMap((course) => course.units.flatMap((unit) => unit.lessons)).filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
           const locked = releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id);
-          return locked ? <div key={stage.id} className="learn-stage-card is-locked"><small>CHẶNG {index + 1} · {stage.range}</small><strong>{stage.name}</strong><span>Sắp mở</span></div>
-            : <Link key={stage.id} href={`/app/learn/${stage.id}`} className="learn-stage-card"><small>CHẶNG {index + 1} · {stage.range}</small><strong>{stage.name}</strong><span>{lessonTotal ? `${lessonTotal} bài · ${courseList.length} khóa học` : "Khám phá chặng học"} <ArrowRight size={15} /></span></Link>;
+          const x = stageOffsets[index % stageOffsets.length];
+          const previousX = stageOffsets[(index + stageOffsets.length - 1) % stageOffsets.length];
+          const side = x >= 50 ? "left" : "right";
+          const node = <><span className="learn-stage-path-node">{locked ? <LockKeyhole size={27} /> : index + 1}</span><span className="learn-stage-path-label"><small>CHẶNG {index + 1} · {stage.range}</small><strong>{stage.name}</strong><em>{locked ? "Sắp mở" : lessonTotal ? `${openedCount}/${lessonTotal} bài đã mở` : "Khám phá chặng học"}</em></span></>;
+          return <div key={stage.id} className={`learn-stage-step ${locked ? "is-locked" : openedCount ? "is-started" : ""} label-${side}`} style={{ "--stage-x": `${x}%` } as CSSProperties}>
+            {index > 0 && <svg className="learn-stage-connector" viewBox="0 0 100 126" preserveAspectRatio="none" aria-hidden="true"><path d={`M ${previousX} 0 C ${previousX} 52, ${x} 74, ${x} 126`} fill="none" vectorEffect="non-scaling-stroke" /></svg>}
+            {locked ? <div className="learn-stage-path-link" aria-disabled="true">{node}</div> : <Link href={`/app/learn/${stage.id}`} className="learn-stage-path-link" aria-label={`${stage.name}, ${stage.range}, ${openedCount} trên ${lessonTotal} bài đã mở`}>{node}</Link>}
+          </div>;
         })}</div>
       </section>}
       {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}
