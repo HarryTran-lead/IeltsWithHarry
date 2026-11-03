@@ -1,6 +1,8 @@
 """Build the owner-supplied Book 2 archive into deployable Learn data.
 
-Usage: python scripts/build-book-2.py C:/path/to/BOOK2_ALL_8_UNITS.zip
+Usage: python scripts/build-book-2.py C:/path/to/BOOK2_ALL_8_UNITS.zip [--publish U07]
+
+--publish Uxx includes a unit marked is_published=false after the product owner has approved it.
 
 Units whose unit.json says is_published=false are left out of the catalog and their old files removed.
 Each unit's m05_writing_speaking becomes two "Luyện thêm" lessons after the unit, with its scripted coach.
@@ -15,6 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = Path(sys.argv[1]) if len(sys.argv) > 1 else None
+APPROVED = {sys.argv[index + 1].upper() for index, arg in enumerate(sys.argv[:-1]) if arg == "--publish"}
 if not ARCHIVE or not ARCHIVE.is_file():
     raise SystemExit("Pass BOOK2_ALL_8_UNITS.zip")
 
@@ -95,7 +98,7 @@ with zipfile.ZipFile(ARCHIVE) as archive:
                 item["options"] = []
         total += len(items)
         # An unpublished unit must not stay reachable through old lesson or media files.
-        if source.get("is_published") is False:
+        if source.get("is_published") is False and code not in APPROVED:
             hidden.append(code)
             for old in LESSONS.glob(f"b2-{code.lower()}-*.json"):
                 old.unlink()
@@ -165,7 +168,7 @@ with zipfile.ZipFile(ARCHIVE) as archive:
                         unit["lessons"].append(catalog_lesson(unit, part["id"], part["id"].lower(), part["title"], SKILLS[skill], summary, lesson_index, part_items))
                     continue
                 lesson_index += 1
-                save_json(LESSONS / f"{lesson_id.lower()}.json", lesson_content(code, lesson_id, lesson, passages, audios, visuals, exercises, source.get("m06_learning_coach")))
+                save_json(LESSONS / f"{lesson_id.lower()}.json", lesson_content(code, lesson_id, lesson, passages, audios, visuals, exercises, source.get("m06_learning_coach") if skill in ("R", "L") else None))
                 unit["lessons"].append(catalog_lesson(unit, lesson_id, lesson_id.lower(), lesson["title"], SKILLS[skill], summary, lesson_index, related))
         graded = [lesson for lesson in unit["lessons"]]
         if sum(len(exercise["questions"]) for lesson in graded for exercise in json.loads((LESSONS / f"{lesson['slug']}.json").read_text(encoding="utf-8"))["exercises"]) != len(items):

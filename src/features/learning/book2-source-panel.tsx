@@ -12,7 +12,8 @@ export function Book2SourcePanel({ content, practice = false }: { content: Book2
     {practice && <header className="book2-sources-heading"><h2>Tư liệu để làm bài</h2><p>Đọc, nghe hoặc xem số liệu ngay khi trả lời. Bài làm của bạn vẫn được giữ.</p></header>}
     {content.passages.map((passage) => <article className="book2-card book2-source" id={`source-${passage.id}`} key={passage.id}>
       <h2><BookOpenText size={20} /> Bài đọc · {passage.title ?? passage.id}</h2>
-      <div className="book2-passage">{passage.text.split(/\n\s*\n/).map((paragraph, index) => {
+      {/* Paragraphs are separated by a blank line, or by a single line break before a "[B]"-style label. */}
+      <div className="book2-passage">{passage.text.split(/\n\s*\n|\n(?=\[[A-Z]\])/).map((paragraph, index) => {
         const label = paragraph.match(/^\[([A-Z])\]/)?.[1];
         return <p key={index} id={label ? `source-${passage.id}-paragraph-${label}` : undefined}>{paragraph}</p>;
       })}</div>

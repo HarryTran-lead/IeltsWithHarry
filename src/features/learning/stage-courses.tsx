@@ -151,7 +151,14 @@ function StudyCourse({ course, isDone }: { course: StageCourse; isDone: (lesson:
   const lessons = useMemo(() => course.units.flatMap((unit) => unit.lessons), [course.units]);
   useEffect(() => {
     let active = true;
-    void loadPracticeResults(lessons.map((lesson) => lesson.slug)).then((value) => { if (active) setResults(value); }).catch(() => undefined);
+    // A result saved for an older edition of a lesson (different question count, e.g. the replaced Unit 7) is not shown.
+    void loadPracticeResults(lessons.map((lesson) => lesson.slug)).then((value) => {
+      if (!active) return;
+      setResults(Object.fromEntries(Object.entries(value).filter(([slug, result]) => {
+        const lesson = lessons.find((item) => item.slug === slug);
+        return !lesson?.question_count || !result.total || result.total === lesson.question_count;
+      })));
+    }).catch(() => undefined);
     const unsubscribe = subscribePracticeResults((slug, result) => {
       if (active && lessons.some((lesson) => lesson.slug === slug)) setResults((previous) => ({ ...previous, [slug]: result }));
     });

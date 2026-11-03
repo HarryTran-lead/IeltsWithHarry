@@ -337,12 +337,14 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
 
   // Coach: the package script decides the phase for guided Writing/Speaking; other lessons react to the question.
   const scripted = content.coach?.phases?.length ? content.coach : null;
-  const scriptPhase = !scripted ? undefined : content.coach?.mode === "speaking"
+  // Writing and Speaking scripts follow the task's own phases; other scripts (intro, before_question, wrong_answer, review) follow the moment.
+  const taskScript = content.coach?.mode === "writing" || content.coach?.mode === "speaking";
+  const scriptPhase = !scripted || !taskScript ? undefined : content.coach?.mode === "speaking"
     ? modelVisible ? "reflect" : current && (recordingId === current.question_id || (timer?.id === current.question_id && timer.phase === "speak")) ? "record" : timer?.id === current?.question_id && timer?.phase === "prepare" ? "plan" : "welcome"
     : modelVisible ? "review" : value.trim() ? "draft" : "plan";
   const coachPractice = coachLines({ script: scripted, moment: graded && !right ? "wrong" : "before", scriptPhase, skill: lesson.skill, itemType: current?.item_type, options: current?.options });
-  const coachIntro = coachLines({ script: scripted, moment: "intro", scriptPhase: scripted ? (content.coach?.mode === "speaking" || content.coach?.mode === "writing" ? "welcome" : undefined) : undefined, skill: lesson.skill, objective: content.lesson.learning_objectives[0]?.vi });
-  const coachReview = coachLines({ script: scripted, moment: "review", scriptPhase: scripted && (content.coach?.mode === "speaking" || content.coach?.mode === "writing") ? (content.coach.mode === "speaking" ? "reflect" : "review") : undefined, skill: lesson.skill, reviewTip: content.lesson.mini_review[0]?.vi || content.lesson.mini_review[0]?.en });
+  const coachIntro = coachLines({ script: scripted, moment: "intro", scriptPhase: taskScript ? "welcome" : undefined, skill: lesson.skill, objective: content.lesson.learning_objectives[0]?.vi });
+  const coachReview = coachLines({ script: scripted, moment: "review", scriptPhase: taskScript ? (content.coach?.mode === "speaking" ? "reflect" : "review") : undefined, skill: lesson.skill, reviewTip: content.lesson.mini_review[0]?.vi || content.lesson.mini_review[0]?.en });
   const coachDetail = coachTips && (content.lesson.strategies.length > 0 || content.lesson.mini_review.length > 0) ? <div className="b2-coach-detail">
     {content.lesson.strategies.length > 0 && <><strong>Các bước gợi ý</strong><ol>{content.lesson.strategies.map((item, index) => <li key={index}>{item.vi || item.en}</li>)}</ol></>}
     {content.lesson.mini_review.length > 0 && <><strong>Tự kiểm tra</strong><ul>{content.lesson.mini_review.map((item, index) => <li key={index}>{item.vi || item.en}</li>)}</ul></>}
