@@ -57,6 +57,8 @@ export type GrammarLessonProgress = {
   responses: Record<string, GrammarResponse>;
   updatedAt: string;
   review?: GrammarReview;
+  /** Best end-of-stage test score, kept on the stage's first lesson. */
+  chapterTest?: { best: number; passed: boolean; at: string };
 };
 export type GrammarProgress = Record<string, GrammarLessonProgress>;
 

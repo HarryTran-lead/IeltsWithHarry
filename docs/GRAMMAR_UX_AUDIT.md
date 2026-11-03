@@ -4,6 +4,17 @@
 - **Bản soát:** `main` @ `afa8e1a`, tức bộ đề biên tập A1–C2 (14.455 câu), cùng mã với production.
 - **Cách soát:** chạy chế độ demo trên máy với vai học viên, nên không ghi gì vào tài khoản thật. Kích thước màn: desktop 1366px và mobile 375px. Mình tự học như một học viên: đọc lý thuyết, làm câu đúng và câu sai, thử sắp xếp câu, mở Sổ ôn, Tiến độ và Bài kiểm tra. Số liệu dữ liệu đếm trực tiếp trên `src/data/grammar-editorial/`.
 
+## Trạng thái (03/11/2026)
+
+| Đợt | Nội dung | Commit |
+|---|---|---|
+| 1 | Sửa 6 lỗi chặn và lỗi đếm câu ôn cách quãng | `4602e7b` |
+| 2 | Buổi 12 câu, ôn cách quãng theo lịch, buổi ôn câu sai, thẻ Hôm nay | `a8be5a7` |
+| 3 | Màn học tập trung, lý thuyết một cột, lộ trình dọc, trang Tiến độ, biến màu và sàn cỡ chữ | `ea46a2a` |
+| 4 | Bài xếp lớp, kiểm tra cuối chặng, mục Dùng trong IELTS (B1 trở lên), liên kết bài từ nối trên tin thật | commit Đợt 4 |
+
+Các lỗi dữ liệu ở §4 (lời giải sai nội dung, biến mẫu trong dữ liệu gốc) vẫn cần người biên tập sửa trong bộ dữ liệu.
+
 ---
 
 ## 1. Tóm tắt

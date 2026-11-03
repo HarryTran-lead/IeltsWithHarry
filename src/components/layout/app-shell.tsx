@@ -115,7 +115,8 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     { label: "Sổ từ & tiến độ", href: "/app/vocabulary/notebook" },
   ],
   grammar: [
-    { label: "Bài kiểm tra", href: "/app/grammar/tests" },
+    { label: "Bài xếp lớp", href: "/app/grammar/placement" },
+    { label: "Kiểm tra chặng", href: "/app/grammar/tests" },
     { label: "Ôn tập & Sổ lỗi", href: "/app/grammar/review" },
     { label: "Tiến độ Grammar", href: "/app/grammar/progress" },
     { label: "Từ nối trong ngữ cảnh", href: "/app/grammar/live" },

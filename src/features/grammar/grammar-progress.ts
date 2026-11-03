@@ -6,13 +6,17 @@ import { demoMode } from "@/lib/runtime";
 import type { GrammarLessonProgress, GrammarProgress, GrammarResponse, GrammarReview } from "@/lib/grammar/types";
 
 const STORAGE = "ieltswithharry-grammar-v1";
-/** The table has no review column; the lesson schedule travels inside the responses JSON under this key. */
+/** The table has no review or test columns; the lesson schedule and stage test result travel inside the responses JSON under these keys. */
 const REVIEW_KEY = "_review";
+const CHAPTER_KEY = "_chapter";
 const emptyLesson = (): GrammarLessonProgress => ({ theorySeen: false, responses: {}, updatedAt: new Date().toISOString() });
 
 function fromRow(row: { theory_seen: boolean; responses: Record<string, unknown> | null; updated_at: string }): GrammarLessonProgress {
-  const { [REVIEW_KEY]: review, ...responses } = row.responses ?? {};
-  return { theorySeen: row.theory_seen, responses: responses as Record<string, GrammarResponse>, updatedAt: row.updated_at, ...(review ? { review: review as GrammarReview } : {}) };
+  const { [REVIEW_KEY]: review, [CHAPTER_KEY]: chapterTest, ...responses } = row.responses ?? {};
+  return {
+    theorySeen: row.theory_seen, responses: responses as Record<string, GrammarResponse>, updatedAt: row.updated_at,
+    ...(review ? { review: review as GrammarReview } : {}), ...(chapterTest ? { chapterTest: chapterTest as GrammarLessonProgress["chapterTest"] } : {}),
+  };
 }
 
 /** Grammar progress for the signed-in learner: a device copy plus account sync to `grammar_study_progress`. */
@@ -65,7 +69,7 @@ export function useGrammarProgress() {
         const db = createClient();
         const rows = Object.entries(progress).map(([lesson_code, value]) => ({
           lesson_code, theory_seen: value.theorySeen, updated_at: value.updatedAt,
-          responses: value.review ? { ...value.responses, [REVIEW_KEY]: value.review } : value.responses,
+          responses: { ...value.responses, ...(value.review ? { [REVIEW_KEY]: value.review } : {}), ...(value.chapterTest ? { [CHAPTER_KEY]: value.chapterTest } : {}) },
         }));
         const { error } = await db.from("grammar_study_progress").upsert(rows, { onConflict: "user_id,lesson_code" });
         if (error) throw error;

@@ -35,9 +35,11 @@ export function sessionScore(result: SessionResult) {
  * One practice session over a fixed list of questions. A question missed on its first try
  * comes back once at the end of the session; only that first try counts in the summary.
  */
-export function PracticeSession({ entries, progress, update, title, label, onFinish, onRule }: {
+export function PracticeSession({ entries, progress, update, title, label, onFinish, onRule, requeue = true }: {
   entries: SessionEntry[]; progress: GrammarProgress; update: GrammarUpdate; title: string;
   label: (entry: SessionEntry) => string; onFinish: (result: SessionResult) => void; onRule?: () => void;
+  /** Tests and placement score each question once, so misses do not come back. */
+  requeue?: boolean;
 }) {
   const [queue, setQueue] = useState(() => entries.map((_, index) => index));
   const [position, setPosition] = useState(0);
@@ -59,7 +61,7 @@ export function PracticeSession({ entries, progress, update, title, label, onFin
     const key = entryKey(entry);
     if (key in firstTry) return;
     setFirstTry({ ...firstTry, [key]: grade.correct });
-    if (grade.correct === false) setQueue([...queue, queue[position]]);
+    if (grade.correct === false && requeue) setQueue([...queue, queue[position]]);
   };
   const again = queue.indexOf(queue[position]) < position;
   return <>
@@ -75,7 +77,7 @@ export function PracticeSession({ entries, progress, update, title, label, onFin
       onAnswer={(patch) => patchResponse(update, entry, patch)} onGraded={graded} onNext={advance}
       onRetry={() => patchResponse(update, entry, { answer: "", order: [], retrying: true })}
       onSkip={() => { if (!response.status) patchResponse(update, entry, { status: "SKIPPED" }); advance(); }} />
-    <p className="gg-session-foot">Câu sai lần đầu sẽ quay lại cuối buổi. Bấm ✕ để dừng và xem kết quả.</p>
+    <p className="gg-session-foot">{requeue ? "Câu sai lần đầu sẽ quay lại cuối buổi. " : "Mỗi câu chỉ chấm một lần. "}Bấm ✕ để dừng và xem kết quả.</p>
   </>;
 }
 
