@@ -13,7 +13,7 @@ import book2Catalog from "@/data/book2/catalog.json";
 import { Sticker } from "@/components/stickers/stickers";
 import "./study-course.css";
 
-type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: string; summary: string; sort_order: number; objective_count?: number; question_count?: number };
+type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: string; summary: string; sort_order: number; objective_count?: number; question_count?: number; supplement?: boolean };
 type Unit = { id: string; course_id: string; slug: string; title: string; sort_order: number; lessons: Lesson[] };
 export type StageCourse = { id: string; slug: string; title: string; description: string; stage_id: string; units: Unit[] };
 
@@ -119,8 +119,8 @@ function JourneyUnit({ unit, unitIndex, shown, nextSlug, results, isDone, initia
   const color = unitColors[unitIndex % unitColors.length];
   return <section className={`journey-unit ${open ? "is-open" : ""}`} style={{ "--unit-color": color } as CSSProperties} aria-label={unit.title}>
     <button type="button" className="journey-unit-header" aria-expanded={open} onClick={() => setOpen((value) => !value)}>
-      <span className="journey-unit-medal">{complete ? <Trophy size={25} /> : String(unitIndex + 1).padStart(2, "0")}</span>
-      <span className="journey-unit-copy"><small>UNIT {String(unitIndex + 1).padStart(2, "0")}{shown.some((lesson) => lesson.slug === nextSlug) ? " · ĐANG HỌC" : complete ? " · ĐÃ LUYỆN HẾT" : ""}</small><strong>{unit.title.replace(/^Unit \d+\s*·\s*/, "")}</strong><span>{practiced}/{shown.length} bài {filtered ? "trong kỹ năng này" : "đã luyện"}</span></span>
+      <span className="journey-unit-medal">{complete ? <Trophy size={25} /> : String(unit.sort_order || unitIndex + 1).padStart(2, "0")}</span>
+      <span className="journey-unit-copy"><small>UNIT {String(unit.sort_order || unitIndex + 1).padStart(2, "0")}{shown.some((lesson) => lesson.slug === nextSlug) ? " · ĐANG HỌC" : complete ? " · ĐÃ LUYỆN HẾT" : ""}</small><strong>{unit.title.replace(/^Unit \d+\s*·\s*/, "")}</strong><span>{practiced}/{shown.length} bài {filtered ? "trong kỹ năng này" : "đã luyện"}</span></span>
       <span className="journey-unit-open"><ChevronDown size={22} /></span>
     </button>
     <div className="journey-unit-progress" aria-label={`${practiced} trên ${shown.length} bài đã luyện`}><i style={{ width: `${practiced / shown.length * 100}%` }} /></div>
@@ -138,7 +138,7 @@ function JourneyUnit({ unit, unitIndex, shown, nextSlug, results, isDone, initia
           {status === "current" && <span className="journey-start" aria-hidden="true">{result?.checked ? "TIẾP TỤC" : "BẮT ĐẦU"}</span>}
           {status === "current" && <Sticker name="harry" size={58} tilt={-6} float pop={false} className={`journey-harry ${side === "left" ? "is-right" : "is-left"}`} />}
           <span className="journey-node">{status === "complete" ? <Star size={31} fill="currentColor" /> : status === "review" ? <RotateCcw size={29} /> : <Icon size={30} strokeWidth={2.5} />}</span>
-          <span className="journey-stop-label"><small>{skillLabels[lesson.skill] ?? lesson.skill} · Bài {unit.lessons.indexOf(lesson) + 1}</small><strong>{lesson.title}</strong><em>{score}</em></span>
+          <span className="journey-stop-label"><small>{skillLabels[lesson.skill] ?? lesson.skill} · {lesson.supplement ? "Luyện thêm" : `Bài ${unit.lessons.indexOf(lesson) + 1}`}</small><strong>{lesson.title}</strong><em>{score}</em></span>
         </Link>
       </li>;
     })}</ol><div className={`journey-finish ${complete ? "is-complete" : ""}`}><span><Trophy size={24} /></span><div><strong>{complete ? "Hoàn thành Unit!" : `Còn ${shown.length - practiced} bài ${filtered ? "trong kỹ năng này" : "trong Unit"}`}</strong><small>{complete ? "Bạn có thể quay lại ôn bất kỳ bài nào." : "Làm bài, xem phản hồi và quay lại phần cần ôn."}</small></div></div></div>}

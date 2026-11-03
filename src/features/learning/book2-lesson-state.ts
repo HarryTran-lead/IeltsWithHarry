@@ -41,14 +41,32 @@ function legacyState(slug: string): Book2SavedState {
 }
 
 /** The existing account draft store holds this course's JSON state until a dedicated migration is available. */
-export async function loadBook2State(slug: string): Promise<Book2SavedState> {
+const isEmpty = (state: Book2SavedState) => !Object.keys(state.answers).length && !Object.keys(state.checked).length;
+
+/**
+ * A lesson split from an older one (Unit 6 Speaking L04 into L04A–C) starts from the older lesson's answers,
+ * which are keyed by the same question IDs; its position and step start fresh.
+ */
+function fromLegacy(state: Book2SavedState | null): Book2SavedState | null {
+  return state && !isEmpty(state) ? { ...state, step: "learn", exerciseIndex: 0, mastered: false, needsReview: false, updatedAt: 0 } : null;
+}
+
+export async function loadBook2State(slug: string, legacySlug?: string): Promise<Book2SavedState> {
   let cached: Book2SavedState | null = null;
   try { cached = parseState(localStorage.getItem(storageKey(slug))); } catch { /* storage may be disabled */ }
-  const local = cached ?? legacyState(slug);
+  let local = cached ?? legacyState(slug);
+  if (legacySlug && isEmpty(local)) {
+    try { local = fromLegacy(parseState(localStorage.getItem(storageKey(legacySlug)))) ?? local; } catch { /* storage may be disabled */ }
+  }
   if (!liveMode) return local;
   const supabase = createClient();
   const { data } = await supabase.from("writing_drafts").select("body").eq("lesson_slug", slug).maybeSingle();
-  const remote = parseState(data?.body ?? null);
+  let remote = parseState(data?.body ?? null);
+  if (!remote && legacySlug && isEmpty(local)) {
+    const legacy = await supabase.from("writing_drafts").select("body").eq("lesson_slug", legacySlug).maybeSingle();
+    remote = fromLegacy(parseState(legacy.data?.body ?? null));
+    if (remote) remote.updatedAt = 1;
+  }
   const selected = remote && remote.updatedAt > local.updatedAt ? remote : local;
   if (selected === remote) {
     try { localStorage.setItem(storageKey(slug), JSON.stringify(remote)); } catch { /* remote remains available */ }
