@@ -7,12 +7,13 @@ import { ArrowRight, BookOpen, Headphones, Mic, NotebookPen } from "lucide-react
 import { balancedCatalog, catalogGroups, catalogHref, catalogSkills, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { BankLibrary, ExamCard } from "./bank-library";
 import "./bank.css";
+import { Sticker, type StickerName } from "@/components/stickers/stickers";
 
 const skillCopy = {
-  Reading: { icon: BookOpen, title: "Reading", detail: "Đọc hiểu và luyện câu hỏi có đáp án", tone: "reading" },
-  Listening: { icon: Headphones, title: "Listening", detail: "Nghe bài có âm thanh và làm câu hỏi", tone: "listening" },
-  Writing: { icon: NotebookPen, title: "Writing", detail: "Chọn đúng Task 1 hoặc Task 2 để viết", tone: "writing" },
-  Speaking: { icon: Mic, title: "Speaking", detail: "Luyện theo Part 1, Part 2 và Part 3", tone: "speaking" },
+  Reading: { sticker: "book", icon: BookOpen, title: "Reading", detail: "Đọc hiểu và luyện câu hỏi có đáp án", tone: "reading" },
+  Listening: { sticker: "headphones", icon: Headphones, title: "Listening", detail: "Nghe bài có âm thanh và làm câu hỏi", tone: "listening" },
+  Writing: { sticker: "pencil", icon: NotebookPen, title: "Writing", detail: "Chọn đúng Task 1 hoặc Task 2 để viết", tone: "writing" },
+  Speaking: { sticker: "mic", icon: Mic, title: "Speaking", detail: "Luyện theo Part 1, Part 2 và Part 3", tone: "speaking" },
 } as const;
 
 async function loadCatalog(skill?: CatalogSkill): Promise<CatalogExam[]> {
@@ -54,10 +55,10 @@ export function BankCatalog() {
     {error && <p className="bank-catalog-state" role="alert">{error}</p>}
 
     {!loading && !error && !skill && <div className="bank-overview-grid">{catalogSkills.map((name) => {
-      const data = exams.filter((exam) => exam.skill === name), config = skillCopy[name], Icon = config.icon;
+      const data = exams.filter((exam) => exam.skill === name), config = skillCopy[name];
       const previews = balancedCatalog(data, catalogGroups[name].map((group) => group.id)).slice(0, name === "Writing" || name === "Speaking" ? 2 : 3);
       return <section className={`bank-overview-panel bank-tone-${config.tone}`} key={name}>
-        <div className="bank-overview-heading"><span className="bank-overview-icon"><Icon size={24} aria-hidden="true" /></span><div><span className="bank-catalog-kicker">{data.length} ĐỀ LUYỆN</span><h2>{config.title}</h2><p>{config.detail}</p></div></div>
+        <div className="bank-overview-heading"><span className="bank-overview-icon"><Sticker name={config.sticker as StickerName} size={42} tilt={-6} pop={false} /></span><div><span className="bank-catalog-kicker">{data.length} ĐỀ LUYỆN</span><h2>{config.title}</h2><p>{config.detail}</p></div></div>
         <div className="bank-overview-groups">{catalogGroups[name].filter((group) => groupCount(data, group.id)).map((group) => <Link key={group.id} href={catalogHref(name, group.id)}>{group.label}<b>{groupCount(data, group.id)}</b></Link>)}</div>
         <div className={`bank-overview-previews bl-grid bl-grid-${name.toLowerCase()}`}>{previews.map((exam) => <ExamCard key={exam.id} exam={exam} attempt={history.find((item) => item.exam_id === exam.id)} />)}</div>
         <Link className="bank-overview-more" href={catalogHref(name)}>Xem tất cả đề {name} <ArrowRight size={17} /></Link>

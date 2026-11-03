@@ -196,3 +196,31 @@
     translate: none;
   }
 }
+
+/* A small sticker in front of a heading or label, sitting on the text baseline. */
+.sticker.sticker-inline {
+  margin-right: 0.4em;
+  vertical-align: -0.35em;
+}
+
+/* Stickers placed in slots that were sized for line icons. */
+.voa-bank-icon:has(.sticker),
+.study-headphones:has(.sticker) {
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  transform: none;
+}
+.ielts-mode-preview-art .sticker svg {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  transform: none;
+}
+/* An unlit streak shows a faded flame until today's study. */
+.profile-streak:not(.is-lit) .sticker { filter: grayscale(1) opacity(0.55); }
+.translation-empty .sticker,
+.community-empty .sticker,
+.reading-vocab-empty .sticker { display: block; margin: 0 auto 6px; }

@@ -401,3 +401,4 @@
   .vocab-lib-tag { grid-column: 1; }
   .vocab-lib-actions { grid-column: 2; grid-row: 1 / span 3; }
 }
+.vocab-empty .sticker { display: block; margin: 0 auto 10px; }

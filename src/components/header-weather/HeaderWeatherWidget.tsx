@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { Settings2 } from 'lucide-react';
 import { useHeaderWeather } from './HeaderWeatherProvider';
 import { searchCities, weatherLabel, weatherSymbol } from './weatherApi';
 import { formatLocalClock, PHASE_LABELS } from './time';
@@ -94,7 +95,7 @@ export function HeaderWeatherWidget() {
         aria-expanded={open}
         title="Cài đặt hiệu ứng và thời tiết"
         onClick={() => setOpen((value) => !value)}
-      >⚙</button>
+      ><Settings2 size={16} aria-hidden="true" /></button>
       {open && (
         <section className={styles.popover} role="dialog" aria-label="Tùy chỉnh header thời tiết">
           <div className={styles.popoverHeading}>

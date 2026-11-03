@@ -2,17 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import {
-  ArrowRight, BookOpen, BookOpenCheck, Bookmark, Brain, CheckCircle2, GraduationCap,
-  Headphones, Layers3, Puzzle, RotateCcw, Search, Sparkles, Target,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, Headphones, Layers3, RotateCcw, Search, Sparkles, Target } from "lucide-react";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import { useStudiedWords } from "./use-studied-words";
 import { useWordSrs } from "./use-word-srs";
 import { reviewQueue, wordState, wordStateLabels, type WordState } from "@/lib/vocabulary/study-session";
+import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import "./vocabulary-landing.css";
 import "./vocabulary-learning-loop.css";
 
@@ -23,7 +20,7 @@ type CollectionCard = {
   description: string;
   href: string;
   category: Category;
-  icon: LucideIcon;
+  sticker: StickerName;
   art: string;
 };
 
@@ -77,14 +74,14 @@ export function VocabularyLanding() {
   }, [db]);
 
   const cards: CollectionCard[] = [
-    { title: "Từ vựng IELTS", detail: `${counts.ielts?.toLocaleString("vi-VN") ?? "…"} từ · 40 chủ đề`, description: "Học từ theo chủ đề và band gợi ý.", href: "/app/vocabulary/study?collection=ielts", category: "ielts", icon: GraduationCap, art: "ielts" },
-    { title: "Từ A1–C2", detail: `${counts.cefr?.toLocaleString("vi-VN") ?? "…"} từ · 36 chủ đề`, description: "Đi từ nền tảng đến nâng cao theo CEFR.", href: "/app/vocabulary/study?collection=cefr", category: "cefr", icon: Layers3, art: "cefr" },
-    { title: "Collocations A1–C2", detail: "988 cụm từ", description: "Ghép từ tự nhiên, xem ví dụ và ôn đúng hạn.", href: "/app/vocabulary/collocations", category: "collocations", icon: Puzzle, art: "collocations" },
-    { title: "Từ vựng IELTS Listening", detail: "1.200 từ · 35 chủ đề", description: "Luyện nghe, chọn nghĩa và chép chính tả.", href: "/app/vocabulary/listening", category: "listening", icon: Headphones, art: "listening" },
-    { title: "Từ vựng IELTS Reading", detail: "607 từ · 11 chủ đề", description: "Học theo câu, ôn SRS và theo lộ trình 84 ngày.", href: "/app/reading/vocabulary", category: "reading", icon: BookOpen, art: "reading" },
-    { title: "Word Families", detail: "300 họ từ", description: "Học noun, verb, adjective và adverb cùng nhau.", href: "/app/vocabulary/word-formation", category: "families", icon: Brain, art: "families" },
-    { title: "Luyện dịch câu Việt → Anh", detail: "40 chủ đề · Speaking & Writing", description: "Viết câu, xem bản mẫu và tự đánh giá. Câu mới mở sau khi biên tập.", href: "/app/vocabulary/translation", category: "translation", icon: BookOpenCheck, art: "reading" },
-    { title: "Từ đã lưu", detail: `${ready ? saved.toLocaleString("vi-VN") : "…"} từ của bạn`, description: "Mở sổ tay và học lại các từ đã đánh dấu.", href: "/app/vocabulary/review", category: "personal", icon: Bookmark, art: "saved" },
+    { title: "Từ vựng IELTS", detail: `${counts.ielts?.toLocaleString("vi-VN") ?? "…"} từ · 40 chủ đề`, description: "Học từ theo chủ đề và band gợi ý.", href: "/app/vocabulary/study?collection=ielts", category: "ielts", sticker: "cap", art: "ielts" },
+    { title: "Từ A1–C2", detail: `${counts.cefr?.toLocaleString("vi-VN") ?? "…"} từ · 36 chủ đề`, description: "Đi từ nền tảng đến nâng cao theo CEFR.", href: "/app/vocabulary/study?collection=cefr", category: "cefr", sticker: "chart", art: "cefr" },
+    { title: "Collocations A1–C2", detail: "988 cụm từ", description: "Ghép từ tự nhiên, xem ví dụ và ôn đúng hạn.", href: "/app/vocabulary/collocations", category: "collocations", sticker: "puzzle", art: "collocations" },
+    { title: "Từ vựng IELTS Listening", detail: "1.200 từ · 35 chủ đề", description: "Luyện nghe, chọn nghĩa và chép chính tả.", href: "/app/vocabulary/listening", category: "listening", sticker: "headphones", art: "listening" },
+    { title: "Từ vựng IELTS Reading", detail: "607 từ · 11 chủ đề", description: "Học theo câu, ôn SRS và theo lộ trình 84 ngày.", href: "/app/reading/vocabulary", category: "reading", sticker: "book", art: "reading" },
+    { title: "Word Families", detail: "300 họ từ", description: "Học noun, verb, adjective và adverb cùng nhau.", href: "/app/vocabulary/word-formation", category: "families", sticker: "tree", art: "families" },
+    { title: "Luyện dịch câu Việt → Anh", detail: "40 chủ đề · Speaking & Writing", description: "Viết câu, xem bản mẫu và tự đánh giá. Câu mới mở sau khi biên tập.", href: "/app/vocabulary/translation", category: "translation", sticker: "bubble", art: "reading" },
+    { title: "Từ đã lưu", detail: `${ready ? saved.toLocaleString("vi-VN") : "…"} từ của bạn`, description: "Mở sổ tay và học lại các từ đã đánh dấu.", href: "/app/vocabulary/review", category: "personal", sticker: "notebook", art: "saved" },
   ];
   const filteredCards = cards.filter((card) => (category === "all" || card.category === category)
     && `${card.title} ${card.detail} ${card.description}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
@@ -115,7 +112,7 @@ export function VocabularyLanding() {
         <div className="vocabulary-landing-section-head"><h2>{category === "all" ? "Tất cả bộ từ vựng" : categories.find((item) => item.id === category)?.label} <small>({filteredCards.length})</small></h2></div>
         {filteredCards.length ? <div className="vocabulary-landing-card-grid">
           {filteredCards.map((card) => <Link className="vocabulary-landing-card" href={card.href} key={card.title}>
-            <span className={`vocabulary-landing-card-art ${card.art}`}><card.icon size={52} strokeWidth={1.6} /></span>
+            <span className={`vocabulary-landing-card-art ${card.art}`}><Sticker name={card.sticker} size={56} tilt={-6} pop={false} /></span>
             <span className="vocabulary-landing-card-copy"><strong>{card.title}</strong><small>{card.detail}</small><span>{card.description}</span></span>
             <span className="vocabulary-landing-card-arrow"><ArrowRight size={18} /></span>
           </Link>)}

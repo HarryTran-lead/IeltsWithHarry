@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
-import { ArrowRight, BookOpenCheck, Lightbulb, RotateCcw } from "lucide-react";
+import { ArrowRight, Lightbulb, RotateCcw } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import sourceTopics from "@/lib/vocabulary/ielts-topics.json";
@@ -11,6 +11,7 @@ import { promptWordHints, type PromptHint } from "@/lib/vocabulary/vi-en-word-hi
 import { chooseTranslationSession, compareTranslation, matchesCopiedWord, nextTranslationProgress, ratingForComparison, type TranslationExercise, type TranslationProgress, type WordComparison } from "@/lib/vocabulary/vi-en-translation";
 import "./vi-en-translation-page.css";
 import { VocabPageHeader } from "./vocab-page-header";
+import { Sticker } from "@/components/stickers/stickers";
 
 type ModeFilter = "mixed" | "speaking" | "writing";
 type Selection = "new" | "due" | "all";
@@ -235,9 +236,9 @@ export function ViEnTranslationPage() {
     {loading && <section className="translation-empty">Đang tải bài luyện…</section>}
     {error && <p className="translation-error" role="alert">{error}</p>}
     {notice && <p className="translation-notice" role="status">{notice}</p>}
-    {!loading && !exercises.length && <section className="translation-empty"><BookOpenCheck size={32} /><h2>Chủ đề này chưa có câu luyện</h2><p>Hãy thử chủ đề khác.</p></section>}
-    {!loading && exercises.length > 0 && !sessionIds.length && <section className="translation-empty"><Lightbulb size={30} /><h2>Sẵn sàng luyện dịch</h2><p>{filtered.length} câu trong chủ đề này. Chọn số câu và bấm “Bắt đầu học”.</p></section>}
-    {done && <section className="translation-empty translation-done"><BookOpenCheck size={34} /><h2>Hoàn thành {sessionIds.length} câu</h2><p>Kết quả khớp từ đã được dùng để lên lịch ôn các câu cần luyện lại.</p><button className="translation-primary" type="button" onClick={start}><RotateCcw size={17} /> Luyện lượt khác</button></section>}
+    {!loading && !exercises.length && <section className="translation-empty"><Sticker name="book" size={64} tilt={-6} /><h2>Chủ đề này chưa có câu luyện</h2><p>Hãy thử chủ đề khác.</p></section>}
+    {!loading && exercises.length > 0 && !sessionIds.length && <section className="translation-empty"><Sticker name="bulb" size={64} tilt={6} /><h2>Sẵn sàng luyện dịch</h2><p>{filtered.length} câu trong chủ đề này. Chọn số câu và bấm “Bắt đầu học”.</p></section>}
+    {done && <section className="translation-empty translation-done"><Sticker name="star" size={64} tilt={6} /><h2>Hoàn thành {sessionIds.length} câu</h2><p>Kết quả khớp từ đã được dùng để lên lịch ôn các câu cần luyện lại.</p><button className="translation-primary" type="button" onClick={start}><RotateCcw size={17} /> Luyện lượt khác</button></section>}
 
     {current && <section ref={cardRef} className="translation-card" aria-label={"Câu " + (index + 1) + " trên " + sessionIds.length}>
       <div className="translation-card-top">

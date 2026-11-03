@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Clock3, Headphones, MessageCircle, Music2, Pause, Play, Send, Trash2, UsersRound, Volume2, VolumeX } from "lucide-react";
+import { Clock3, MessageCircle, Music2, Pause, Play, Send, Trash2, UsersRound, Volume2, VolumeX } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { Sticker } from "@/components/stickers/stickers";
 import { demoMode } from "@/lib/runtime";
@@ -24,8 +24,8 @@ function StudyScene() {
     <div className="study-window"><span className="study-moon" /><i /><i /><i /><i /><i /></div>
     <div className="study-scene-stars">✦ <span>✦</span> ✦</div>
     <div className="study-lamp"><span /></div>
-    <div className="study-student"><HarryMascot size={165} eager /><span className="study-headphones"><Headphones size={29} /></span></div>
-    <div className="study-desk"><div className="study-book"><span /><span /></div><span className="study-pencil" /><div className="study-mug">☕</div></div>
+    <div className="study-student"><HarryMascot size={165} eager /><span className="study-headphones"><Sticker name="headphones" size={46} tilt={-10} pop={false} /></span></div>
+    <div className="study-desk"><div className="study-book"><span /><span /></div><span className="study-pencil" /><div className="study-mug"><Sticker name="coffee" size={46} tilt={6} pop={false} /></div></div>
     <div className="study-wave" aria-hidden="true">{Array.from({ length: 12 }, (_, index) => <i key={index} />)}</div>
     <span className="study-scene-caption">STUDY WITH HARRY · 24/7 FOCUS VIBES</span>
   </div>;

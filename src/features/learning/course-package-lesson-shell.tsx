@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { ArrowLeft, ArrowRight, BookOpenText, Check, CircleHelp, Lightbulb, StickyNote, Target } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpenText, Check, CircleHelp, StickyNote, Target } from "lucide-react";
 import { AppShell } from "@/components/layout/app-shell";
 import { DemoProvider, useDemo } from "@/features/demo/demo-store";
 import { LessonDetail } from "@/features/learning/lesson-detail";
@@ -11,6 +11,7 @@ import { TopicArt } from "@/components/illustrations/topic-art";
 import type { SkillMaterial } from "@/lib/skill-material";
 import { PackageLessonPractice, PracticeScoreReporter, type PackageLesson } from "./course-package-practice";
 import { savePracticeResult, type PracticeResult } from "./practice-results";
+import { Sticker } from "@/components/stickers/stickers";
 
 type Props = {
   lesson: { slug: string; title: string; skill: string; summary: string };
@@ -176,7 +177,7 @@ export function PackageLessonSteps({ packageContent, finish, onStepChange, ...le
     {noteOpen && notebook && (
       <div className="v3-quick-note-box">
         <div className="v3-quick-note-head">
-          <strong>🗒️ Ghi chú nhanh vào Sổ tay ({lesson.title})</strong>
+          <strong><Sticker name="notebook" size={24} pop={false} className="sticker-inline" />Ghi chú nhanh vào Sổ tay ({lesson.title})</strong>
           <button type="button" className="button subtle" onClick={() => setNoteOpen(false)}>Đóng</button>
         </div>
         <textarea
@@ -213,7 +214,7 @@ export function PackageLessonSteps({ packageContent, finish, onStepChange, ...le
           <div className="package-panel-actions"><button type="button" className="button subtle" onClick={() => goTo(1)}>← Luyện lại</button>{finish}</div>
         </section>
       </main>
-      <aside className="package-lesson-aside"><div className="package-guide"><Lightbulb size={21} /><h3>Học sao cho dễ nhớ?</h3><p>{step === 0 ? "Đọc kỹ phần Coaching chuyên sâu, nghe phát âm các cụm từ và xem bản dịch ví dụ trước khi mở bài tập." : step === 1 ? "Làm từng câu trước khi xem đáp án. Bạn có thể bấm 💡 Gợi ý, 🌐 Dịch câu hỏi, 🔊 Nghe câu hoặc 🗒️ Lưu vào sổ tay ngay trên từng câu." : "Tự nói hoặc viết lại điều bạn nhớ được mà không nhìn bài, rồi đánh dấu checklist trước khi qua bài mới."}</p></div><div className="package-guide package-guide-quiet"><CircleHelp size={20} /><h3>Sổ tay & Cỡ chữ</h3><p>Dùng thanh công cụ A-/A+ phía trên để chỉnh cỡ chữ vừa mắt, hoặc bấm Ghi chú Sổ tay để lưu lại kiến thức quan trọng.</p></div></aside>
+      <aside className="package-lesson-aside"><div className="package-guide"><Sticker name="bulb" size={36} tilt={-8} pop={false} /><h3>Học sao cho dễ nhớ?</h3><p>{step === 0 ? "Đọc kỹ phần Coaching chuyên sâu, nghe phát âm các cụm từ và xem bản dịch ví dụ trước khi mở bài tập." : step === 1 ? "Làm từng câu trước khi xem đáp án. Bạn có thể bấm Gợi ý, Dịch câu hỏi, Nghe câu hoặc Lưu vào sổ tay ngay trên từng câu." : "Tự nói hoặc viết lại điều bạn nhớ được mà không nhìn bài, rồi đánh dấu checklist trước khi qua bài mới."}</p></div><div className="package-guide package-guide-quiet"><CircleHelp size={20} /><h3>Sổ tay & Cỡ chữ</h3><p>Dùng thanh công cụ A-/A+ phía trên để chỉnh cỡ chữ vừa mắt, hoặc bấm Ghi chú Sổ tay để lưu lại kiến thức quan trọng.</p></div></aside>
     </div>
   </PracticeScoreReporter.Provider>;
 }

@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { BookOpen, ExternalLink, Headphones, Mic, RotateCcw, Save, Volume2 } from "lucide-react";
+import { ExternalLink, Headphones, Mic, RotateCcw, Save, Volume2 } from "lucide-react";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { celebrateScore } from "@/lib/celebrate";
 import { PageHeader } from "@/components/ui/page-header";
 import type { IeltsLiveData, LiveArticle } from "@/lib/ielts/live";
 import { useIeltsData } from "./use-ielts-data";
 import "./ielts-live.css";
+import { Sticker } from "@/components/stickers/stickers";
 
 export type IeltsSkill = "vocabulary" | "grammar" | "reading" | "listening" | "writing" | "speaking";
 const skillNames: Record<IeltsSkill, string> = {
@@ -141,7 +142,7 @@ export function IeltsLivePage({ skill, mode }: { skill: IeltsSkill; mode?: strin
       {data.warnings.length > 0 && <div className="ielts-warning">{data.warnings.join(" ")}</div>}
       {skill !== "listening" && (skill !== "writing" || writingTask === 2) && article && <div className="ielts-picker"><label htmlFor="ielts-article">Bài nguồn</label><select id="ielts-article" value={article.id} onChange={(event) => { setArticleId(event.target.value); setAnswers([]); setScore(null); setDictionary(null); }}>{data.articles.map((item) => <option key={item.id} value={item.id}>{item.title} · {item.publisher}</option>)}</select></div>}
       {skill === "vocabulary" && article && <div className="ielts-panel">
-        <div className="ielts-panel-head"><div><span className="eyebrow">TỪ TRONG BÀI ĐỌC MỚI</span><h2>IELTS Vocabulary in context</h2></div><BookOpen size={25}/></div>
+        <div className="ielts-panel-head"><div><span className="eyebrow">TỪ TRONG BÀI ĐỌC MỚI</span><h2>IELTS Vocabulary in context</h2></div><Sticker name="book" size={44} tilt={6} pop={false} /></div>
         <p>Chọn từ xuất hiện trong bài để xem nghĩa, ví dụ gốc và lưu vào sổ tay. Danh sách làm mới theo bài nguồn.</p>
         <div className="ielts-chips">{vocabulary.map((word) => <button key={word} onClick={() => void lookup(word)}>{word}</button>)}</div>
         {lookupBusy && <p>Đang tra từ…</p>}{dictionary && <div className="ielts-result"><strong>{dictionary.word}</strong><p>{dictionary.definition}</p><p>{dictionary.meaningVi || "Chưa có nghĩa tiếng Việt; bạn có thể tự ghi vào sổ tay."}</p><button className="ielts-primary" onClick={() => void saveWord()}><Save size={16}/> Lưu từ</button></div>}

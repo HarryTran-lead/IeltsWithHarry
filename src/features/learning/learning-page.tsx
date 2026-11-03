@@ -2,21 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import {
-  Activity,
-  ArrowRight,
-  Check,
-  CircleCheck,
-  Headphones,
-  Lightbulb,
-  Target,
-  TrendingUp,
-  Mic,
-  RotateCcw,
-  Save,
-  Square,
-  Volume2,
-} from "lucide-react";
+import { Activity, ArrowRight, Check, CircleCheck, Lightbulb, Target, TrendingUp, Mic, RotateCcw, Save, Square, Volume2 } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
@@ -566,7 +552,7 @@ function ListeningPage() {
       <div className="practice-layout">
         <section className="card practice-main">
           <div className="audio-panel">
-            <Headphones size={34} />
+            <Sticker name="headphones" size={54} tilt={-6} pop={false} />
             <div>
               <h2>Listen to Lily</h2>
               <p>Short conversation · about 25 seconds</p>

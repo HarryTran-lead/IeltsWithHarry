@@ -199,7 +199,7 @@
 .voa-bank-upcoming h2{margin:0 0 10px;color:var(--voa-muted);font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 .voa-bank-upcoming>div{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
 .voa-bank-upcoming>div>div{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:2px 10px;padding:12px 14px;border:1px dashed #cfdde7;border-radius:13px;background:#fbfdfe;color:#7d93a6}
-.voa-bank-upcoming svg{grid-row:span 2;color:#9bb2c3}
+.voa-bank-upcoming .sticker{grid-row:span 2;filter:grayscale(.4) opacity(.8)}
 .voa-bank-upcoming strong{color:#4f6b83;font-size:14px}
 .voa-bank-upcoming span{font-size:12.5px}
 /* Clip banks: a dense numbered grid, so 800 short clips are easy to scan. */

@@ -7,6 +7,7 @@ import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, F
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import "./bank-library.css";
+import { Sticker } from "@/components/stickers/stickers";
 
 type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null };
 
@@ -315,7 +316,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   if (exam.skill === "Speaking") {
     const previews = exam.question_preview?.length ? exam.question_preview : exam.prompt_preview ? [exam.prompt_preview] : [];
     return <Link href={href} className="bl-card bl-card-speaking">
-      <span className="bl-mic"><Mic size={34} /><b>{partBadge(exam)}</b><small>{exam.duration_minutes} phút</small></span>
+      <span className="bl-mic"><Sticker name="mic" size={48} tilt={-6} pop={false} /><b>{partBadge(exam)}</b><small>{exam.duration_minutes} phút</small></span>
       <span className="bl-speaking-copy">
         <span className="bl-speaking-top"><strong className="bl-title">{sentence(exam.title.replace(/^Speaking Part \d:\s*/i, ""))}</strong><span className="bl-qcount">{exam.question_count ? `${exam.question_count} câu` : partBadge(exam)}</span></span>
         <ul>{previews.slice(0, 3).map((question) => <li key={question}>{question}</li>)}</ul>

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { BookOpenText, CalendarClock, CalendarDays, Check, Clock3, Flame, Languages, MessageCircleOff, Newspaper, Save, Target, Trophy } from "lucide-react";
+import { BookOpenText, CalendarClock, CalendarDays, Check, Clock3, Languages, MessageCircleOff, Newspaper, Save, Target, Trophy } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { ActivityHeatmap } from "@/components/account/activity-heatmap";
@@ -86,7 +86,7 @@ export function ProfilePage() {
         {profile.bio && <p className="profile-bio">{profile.bio}</p>}
       </div>
       <div className={`profile-streak ${streak.activeToday ? "is-lit" : ""}`}>
-        <Flame size={30} />
+        <Sticker name="flame" size={48} tilt={-6} pop={false} />
         <strong>{streak.current}</strong>
         <span>ngày liên tiếp</span>
         <small>{streak.activeToday ? "Hôm nay đã học ✓" : streak.current ? "Học hôm nay để giữ chuỗi!" : "Bắt đầu chuỗi mới hôm nay"}</small>
