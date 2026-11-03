@@ -72,8 +72,8 @@
 .gg-actionbar:not(.is-right):not(.is-wrong):not(.is-neutral) .gg-primary { margin-left: 0; }
 .gg-reference > small { margin-top: 4px; font-size: 12px; }
 
-/* Theory: one column of rules */
-.gg-theory { max-width: 820px; }
+/* Theory: one column of rules. The whole lesson page shares one readable width so header, tabs and rules line up centred. */
+.gg-lesson:not(.gg-focus) { max-width: 900px; }
 .gg-rules { display: grid; gap: 12px; margin-top: 14px; }
 .gg-rule { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; padding: 18px; border: 1px solid var(--gg-line); border-radius: var(--gg-radius); background: var(--gg-surface); }
 .gg-rule-number { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--gg-brand-soft); color: var(--gg-brand-ink); font-size: 13px; font-weight: 800; }
