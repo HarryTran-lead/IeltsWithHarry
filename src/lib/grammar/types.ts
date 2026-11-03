@@ -61,13 +61,13 @@ export type GrammarLessonProgress = {
 export type GrammarProgress = Record<string, GrammarLessonProgress>;
 
 export const grammarLevels: GrammarLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
-export const grammarWorlds: Record<GrammarLevel, { name: string; icon: string; description: string }> = {
-  A1: { name: "Khu vườn khởi đầu", icon: "🌱", description: "Xây dựng những câu tiếng Anh đầu tiên" },
-  A2: { name: "Thị trấn bầu trời", icon: "☁️", description: "Mở rộng câu và diễn đạt hằng ngày" },
-  B1: { name: "Thung lũng khám phá", icon: "⛰️", description: "Kết nối ý tưởng tự tin hơn" },
-  B2: { name: "Đỉnh núi thử thách", icon: "🏔️", description: "Diễn đạt lập luận linh hoạt" },
-  C1: { name: "Đài quan sát tri thức", icon: "🔭", description: "Tinh chỉnh sắc thái và độ chính xác" },
-  C2: { name: "Đỉnh cao ngôn ngữ", icon: "🏆", description: "Làm chủ cấu trúc nâng cao" },
+export const grammarWorlds: Record<GrammarLevel, { name: string; icon: string; sticker: string; description: string }> = {
+  A1: { name: "Khu vườn khởi đầu", icon: "🌱", sticker: "tree", description: "Xây dựng những câu tiếng Anh đầu tiên" },
+  A2: { name: "Thị trấn bầu trời", icon: "☁️", sticker: "plane", description: "Mở rộng câu và diễn đạt hằng ngày" },
+  B1: { name: "Thung lũng khám phá", icon: "⛰️", sticker: "mountain", description: "Kết nối ý tưởng tự tin hơn" },
+  B2: { name: "Đỉnh núi thử thách", icon: "🏔️", sticker: "target", description: "Diễn đạt lập luận linh hoạt" },
+  C1: { name: "Đài quan sát tri thức", icon: "🔭", sticker: "compass", description: "Tinh chỉnh sắc thái và độ chính xác" },
+  C2: { name: "Đỉnh cao ngôn ngữ", icon: "🏆", sticker: "rocket", description: "Làm chủ cấu trúc nâng cao" },
 };
 
 /** Editorial question ids (A1-01-Q01, A1-01-SR-01); older V5 response ids stay in storage but are not counted. */

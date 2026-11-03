@@ -6,6 +6,7 @@ import { clockNow, dueLessons, flaggedQuestions, formatDue, MIXED_REVIEW_SIZE } 
 import { reviewedCount, type GrammarLevel, type GrammarProgress } from "@/lib/grammar/types";
 import { catalog, continueLesson, lessonHref, lessonTotal, nextLesson, ROOT } from "./grammar-catalog";
 import { useGrammarProgress } from "./grammar-progress";
+import "./grammar-tokens.css";
 import "./grammar-today.css";
 
 /** The three things worth doing today: continue a lesson, a spaced review that is due, and open mistakes. */

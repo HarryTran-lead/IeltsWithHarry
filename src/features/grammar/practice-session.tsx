@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, Check, Languages, RotateCcw, X } from "lucide-react";
+import { ArrowRight, BookOpen, Check, Languages, RotateCcw, X } from "lucide-react";
 import { Sticker } from "@/components/stickers/stickers";
 import { applyGrade, grammarTypeLabels, type GrammarGrade, type GrammarPracticeItem, type GrammarProgress, type GrammarResponse } from "@/lib/grammar/types";
 import type { GrammarUpdate } from "./grammar-progress";
@@ -35,9 +35,9 @@ export function sessionScore(result: SessionResult) {
  * One practice session over a fixed list of questions. A question missed on its first try
  * comes back once at the end of the session; only that first try counts in the summary.
  */
-export function PracticeSession({ entries, progress, update, label, onFinish }: {
-  entries: SessionEntry[]; progress: GrammarProgress; update: GrammarUpdate;
-  label: (entry: SessionEntry) => string; onFinish: (result: SessionResult) => void;
+export function PracticeSession({ entries, progress, update, title, label, onFinish, onRule }: {
+  entries: SessionEntry[]; progress: GrammarProgress; update: GrammarUpdate; title: string;
+  label: (entry: SessionEntry) => string; onFinish: (result: SessionResult) => void; onRule?: () => void;
 }) {
   const [queue, setQueue] = useState(() => entries.map((_, index) => index));
   const [position, setPosition] = useState(0);
@@ -63,13 +63,19 @@ export function PracticeSession({ entries, progress, update, label, onFinish }: 
   };
   const again = queue.indexOf(queue[position]) < position;
   return <>
-    <div className="gg-practice-top"><div><span className="gg-eyebrow">{label(entry)} · {grammarTypeLabels[entry.item.type] ?? entry.item.type}{again ? " · làm lại" : ""}</span><h2>Câu {position + 1} / {queue.length}</h2></div><div className="gg-practice-bar"><span style={{ width: `${(position + 1) / queue.length * 100}%` }} /></div></div>
+    <div className="gg-focus-bar">
+      <button className="gg-focus-close" onClick={finish} aria-label="Dừng buổi và xem kết quả"><X size={18} /></button>
+      <div className="gg-focus-title"><strong>{title}</strong><span className="gg-practice-bar" role="progressbar" aria-label="Tiến độ buổi học" aria-valuemin={0} aria-valuemax={queue.length} aria-valuenow={position + 1}><span style={{ width: `${(position + 1) / queue.length * 100}%` }} /></span></div>
+      <span className="gg-focus-count">{position + 1}/{queue.length}</span>
+      {onRule && <button className="gg-focus-rule" onClick={onRule}><BookOpen size={15} aria-hidden="true" /> <span>Xem quy tắc</span></button>}
+    </div>
+    <span className="gg-eyebrow gg-focus-eyebrow">{label(entry)} · {grammarTypeLabels[entry.item.type] ?? entry.item.type}{again ? " · làm lại" : ""}</span>
     <QuestionCard key={`${entryKey(entry)}:${position}`} code={entry.code} item={entry.item} response={response} guided={entry.item.stage === "guided"}
       nextLabel={last ? "Xem kết quả buổi" : "Câu tiếp"}
       onAnswer={(patch) => patchResponse(update, entry, patch)} onGraded={graded} onNext={advance}
       onRetry={() => patchResponse(update, entry, { answer: "", order: [], retrying: true })}
       onSkip={() => { if (!response.status) patchResponse(update, entry, { status: "SKIPPED" }); advance(); }} />
-    <div className="gg-session-foot"><span>Câu sai lần đầu sẽ quay lại cuối buổi.</span><button className="gg-link-button" onClick={finish}>Dừng buổi và xem kết quả</button></div>
+    <p className="gg-session-foot">Câu sai lần đầu sẽ quay lại cuối buổi. Bấm ✕ để dừng và xem kết quả.</p>
   </>;
 }
 
@@ -165,17 +171,22 @@ function QuestionCard({ code, item, response, guided, nextLabel, onAnswer, onGra
       : ordering ? <><span className="gg-answer-label">Câu của bạn</span><div className={`gg-tray ${graded ? `is-${tone}` : ""}`}>{order.length ? order.map((position, slot) => <button key={slot} disabled={graded} onClick={() => pick(order.filter((_, other) => other !== slot))} aria-label={`Bỏ cụm ${item.chunks[position]}`}>{item.chunks[position]}</button>) : <span>Bấm các cụm bên dưới theo đúng thứ tự.</span>}</div>
         {!graded && <div className="gg-chunks">{item.chunks.map((chunk, position) => <button key={position} disabled={order.includes(position)} onClick={() => pick([...order, position])}>{chunk}</button>)}{order.length > 0 && <button className="gg-chunks-clear" onClick={() => pick([])}>Làm lại</button>}</div>}</>
       : <><label className="gg-answer-label" htmlFor="grammar-answer">Câu trả lời của bạn</label><input ref={inputRef} id="grammar-answer" className={`gg-answer-input ${graded ? `is-${tone}` : ""}`} value={response.answer} readOnly={graded} onChange={(event) => onAnswer({ answer: event.target.value })} placeholder={item.type === "error_correction" ? "Viết lại câu đúng…" : "Nhập đáp án rồi nhấn Enter"} autoComplete="off" autoCapitalize="off" spellCheck={false} enterKeyHint="done" /></>}
-    {!graded && <div className="gg-question-actions"><button disabled={!answer.trim() || checking} className="gg-primary" onClick={() => void submit()}>{checking ? "Đang kiểm tra…" : "Kiểm tra"}</button><button className="gg-secondary" onClick={onSkip}>Để sau</button><span className="gg-keys">{item.options ? `Phím 1–${item.options.length} để chọn · ` : ""}Enter để kiểm tra</span></div>}
     {error && <p role="alert" className="gg-skip-note">{error}</p>}
     <div ref={resultRef} className="gg-result" aria-live="polite">{graded && <div className={`gg-reference is-${tone}`}>
-      <strong className="gg-verdict">{tone === "right" ? <><Check size={18} aria-hidden="true" /> Chính xác!</> : tone === "wrong" ? <><X size={18} aria-hidden="true" /> Chưa đúng</> : "Tự đối chiếu với đáp án mẫu"}</strong>
       {tone !== "right" && <p><b>Đáp án:</b> {response.referenceAnswer}</p>}
       {tone === "wrong" && !item.options && <p><b>Bạn trả lời:</b> {response.answer}</p>}
       {response.feedback && <p>{response.feedback}</p>}
       {response.explanation && <p><b>Vì sao:</b> {response.explanation}</p>}
       {missedFirst && <p className="gg-first-note">Lần đầu bạn trả lời chưa đúng, nên câu này vẫn nằm trong Sổ ôn. Làm đúng vào một ngày khác để đưa nó ra.</p>}
-      <div className="gg-result-actions"><button ref={continueRef} className="gg-primary" onClick={onNext}>{nextLabel} <ArrowRight size={16} /></button><button className="gg-secondary" onClick={onRetry}><RotateCcw size={14} aria-hidden="true" /> Thử lại</button></div>
       <small>Kết quả dùng cho tự luyện trên dữ liệu biên tập, chưa phải chứng nhận năng lực.</small>
     </div>}</div>
+    <div className={`gg-actionbar ${graded ? `is-${tone}` : ""}`}>
+      {graded ? <><strong className="gg-verdict">{tone === "right" ? <><Check size={18} aria-hidden="true" /> Chính xác!</> : tone === "wrong" ? <><X size={18} aria-hidden="true" /> Chưa đúng<span className="gg-verdict-answer"> · Đáp án: {response.referenceAnswer}</span></> : "Tự đối chiếu với đáp án mẫu"}</strong>
+        <button className="gg-secondary" onClick={onRetry}><RotateCcw size={14} aria-hidden="true" /> Thử lại</button>
+        <button ref={continueRef} className="gg-primary" onClick={onNext}>{nextLabel} <ArrowRight size={16} /></button></>
+        : <><button className="gg-secondary" onClick={onSkip}>Để sau</button>
+          <span className="gg-keys">{item.options ? `Phím 1–${item.options.length} để chọn · ` : ""}Enter để kiểm tra</span>
+          <button disabled={!answer.trim() || checking} className="gg-primary" onClick={() => void submit()}>{checking ? "Đang kiểm tra…" : "Kiểm tra"}</button></>}
+    </div>
   </>;
 }
