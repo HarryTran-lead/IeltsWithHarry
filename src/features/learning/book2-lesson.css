@@ -97,7 +97,9 @@
 .book2-speaking-tools audio { width: min(100%, 270px); }
 .book2-speaking-tools small { flex-basis: 100%; color: #607b83; }
 .book2-review-list { display: grid; gap: 8px; }
+.book2-review-row { display: flex; align-items: stretch; gap: 7px; }
 .book2-review-list button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; border: 1px solid #d6e8e3; border-radius: 11px; background: #f8fcfa; color: #1b4654; text-align: left; cursor: pointer; }
+.book2-review-list .book2-review-source { flex: 0 0 132px; width: auto; justify-content: center; color: #0e7277; font-weight: 700; text-align: center; }
 .book2-review-list button span { min-width: 86px; color: #b05f2b; font-size: 11px; font-weight: 800; }
 .book2-review-list button strong { flex: 1; }
 .book2-review-tip { display: flex; align-items: center; gap: 8px; padding: 12px 15px; border-radius: 12px; background: #fff8e9; }
@@ -105,5 +107,5 @@
 .book2-checklist label { cursor: pointer; }
 .book2-checklist input { margin-right: 9px; accent-color: #0a7b7c; }
 .book2-next { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-@media (max-width: 620px) { .book2-hero { align-items: flex-start; flex-direction: column; } .book2-hero-score { min-width: 0; width: 100%; } .book2-steps { top: 0; } .book2-steps button { font-size: 12px; } .book2-options, .book2-answer, .book2-question textarea, .book2-question-actions, .book2-feedback, .book2-speaking-tools { margin-left: 0; } .book2-review-list button { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 620px) { .book2-hero { align-items: flex-start; flex-direction: column; } .book2-hero-score { min-width: 0; width: 100%; } .book2-steps { top: 0; } .book2-steps button { font-size: 12px; } .book2-options, .book2-answer, .book2-question textarea, .book2-question-actions, .book2-feedback, .book2-speaking-tools { margin-left: 0; } .book2-review-row { flex-direction: column; } .book2-review-list button { align-items: flex-start; flex-direction: column; } .book2-review-list .book2-review-source { flex-basis: auto; width: 100%; } }
 @media (max-width: 900px) { .book2-practice-layout.has-sources { display: flex; flex-direction: column; } .book2-practice-layout.has-sources .book2-source-dock { order: -1; top: 60px; width: 100%; max-height: min(36vh, 300px); border: 1px solid #b8d9d6; background: #f5fbf9; box-shadow: 0 8px 24px #153f4c1b; z-index: 5; } .book2-practice-main { width: 100%; } }

@@ -5,8 +5,9 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2, RotateCcw, Target } from "lucide-react";
 import { AppShell } from "@/components/layout/app-shell";
 import { savePracticeSnapshot } from "./practice-results";
-import { loadBook2State, saveBook2State, type Book2Step } from "./book2-lesson-state";
+import { cacheBook2State, loadBook2State, saveBook2State, type Book2SavedState, type Book2Step } from "./book2-lesson-state";
 import { Book2SourcePanel } from "./book2-source-panel";
+import { book2AnswerCorrect, evaluateBook2Progress, requiredBook2WritingWords } from "./book2-progress";
 import "./book2-lesson.css";
 
 type Bilingual = { en?: string; vi?: string };
@@ -49,16 +50,9 @@ export type Book2Content = {
 };
 type Nav = { previous: { slug: string; title: string } | null; next: { slug: string; title: string } | null; index: number; total: number } | null;
 
-const normalize = (value: string) => value.trim().toLocaleLowerCase().replace(/[.,!?]+$/g, "").replace(/\s+/g, " ");
 const wordsIn = (value: string) => value.trim() ? value.trim().split(/\s+/).length : 0;
 const isObjective = (item: Book2Item) => item.answer.kind === "objective";
-const isCorrect = (item: Book2Item, value: string) => (item.answer.accepted ?? []).some((key) => normalize(key) === normalize(value));
-function requiredWords(item: Book2Item) {
-  if (item.item_type !== "open_writing") return 0;
-  if (/\b250\b/.test(item.prompt_en)) return 250;
-  if (/\b150\b/.test(item.prompt_en)) return 150;
-  return 0;
-}
+const isCorrect = book2AnswerCorrect;
 function sourceFor(item: Book2Item) { return item.passage_id || item.audio_id || item.data_id; }
 
 export function Book2LessonPage({ lesson, content, navigation, canManage }: {
@@ -81,6 +75,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   const stream = useRef<MediaStream | null>(null);
   const recordingUrls = useRef<string[]>([]);
   const saveQueue = useRef<Promise<void>>(Promise.resolve());
+  const latestSave = useRef<{ state: Book2SavedState; snapshot: { correct: number; checked: number; total: number; mastered: boolean; needsReview: boolean } } | null>(null);
   const didRestorePosition = useRef(false);
   const [recordError, setRecordError] = useState("");
   const [syncStatus, setSyncStatus] = useState<"saving" | "account" | "device">("saving");
@@ -111,6 +106,15 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     recordingUrls.current.forEach((url) => URL.revokeObjectURL(url));
   }, []);
 
+  useEffect(() => () => {
+    const latest = latestSave.current;
+    if (!latest) return;
+    saveQueue.current = saveQueue.current.catch(() => undefined).then(async () => {
+      await saveBook2State(lesson.slug, latest.state);
+      await savePracticeSnapshot(lesson.slug, latest.snapshot);
+    }).catch(() => undefined);
+  }, [lesson.slug]);
+
   useEffect(() => {
     if (!timer) return;
     const interval = window.setInterval(() => setTimer((current) => {
@@ -121,37 +125,28 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     return () => window.clearInterval(interval);
   }, [timer]);
 
-  const objective = questions.filter(isObjective);
-  const open = questions.filter((item) => !isObjective(item));
-  const objectiveChecked = objective.filter((item) => checked[item.question_id]);
-  const objectiveCorrect = objectiveChecked.filter((item) => isCorrect(item, answers[item.question_id] ?? ""));
-  const openReviewed = open.filter((item) => (ratings[item.question_id] ?? 0) > 0);
-  const openReady = open.filter((item) => (ratings[item.question_id] ?? 0) >= 3);
-  const completedCount = objectiveChecked.length + openReviewed.length;
-  const mastered = completedCount === questions.length
-    && objectiveCorrect.length === objective.length
-    && openReady.length === open.length;
-  const needsReview = objectiveChecked.some((item) => !isCorrect(item, answers[item.question_id] ?? ""))
-    || openReviewed.some((item) => (ratings[item.question_id] ?? 0) < 3);
-  const problems = questions.filter((item) => !checked[item.question_id]
-    || (isObjective(item) ? !isCorrect(item, answers[item.question_id] ?? "") : (ratings[item.question_id] ?? 0) < 3));
+  const { objective, open, objectiveCorrect, openReviewed, openReady, completedCount, mastered, needsReview, problems } = evaluateBook2Progress(questions, answers, checked, ratings);
   const currentExercise = groups[exerciseIndex];
   const vocabularyGroups = Array.from({ length: Math.ceil(content.lesson.vocabulary.length / 7) }, (_, index) => content.lesson.vocabulary.slice(index * 7, (index + 1) * 7));
   const hasSources = content.passages.length + content.audios.length + content.visuals.length > 0;
 
   useEffect(() => {
     if (!restored) return;
+    const state: Book2SavedState = {
+      book2: 1, answers, checked, ratings, checklist, step, exerciseIndex,
+      mastered, needsReview, updatedAt: 0,
+    };
+    const snapshot = {
+      correct: objectiveCorrect.length + openReady.length,
+      checked: completedCount, total: questions.length, mastered, needsReview,
+    };
+    window.queueMicrotask(() => {
+      state.updatedAt = Date.now();
+      cacheBook2State(lesson.slug, state);
+      latestSave.current = { state, snapshot };
+    });
     const id = window.setTimeout(() => {
       setSyncStatus("saving");
-      const updatedAt = Date.now();
-      const state = {
-        book2: 1, answers, checked, ratings, checklist, step, exerciseIndex,
-        mastered, needsReview, updatedAt,
-      } as const;
-      const snapshot = {
-        correct: objectiveCorrect.length + openReady.length,
-        checked: completedCount, total: questions.length, mastered, needsReview,
-      };
       saveQueue.current = saveQueue.current.catch(() => undefined).then(async () => {
         const synced = await saveBook2State(lesson.slug, state);
         await savePracticeSnapshot(lesson.slug, snapshot);
@@ -168,21 +163,41 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   function answer(item: Book2Item, value: string) {
     setAnswers((previous) => ({ ...previous, [item.question_id]: value }));
     setChecked((previous) => ({ ...previous, [item.question_id]: false }));
-    if (!isObjective(item)) setRatings((previous) => { const next = { ...previous }; delete next[item.question_id]; return next; });
+    if (!isObjective(item)) {
+      setRatings((previous) => { const next = { ...previous }; delete next[item.question_id]; return next; });
+      setRevealed((previous) => { const next = { ...previous }; delete next[item.question_id]; return next; });
+    }
   }
   function check(item: Book2Item) {
     if (!answers[item.question_id]?.trim()) return;
     setChecked((previous) => ({ ...previous, [item.question_id]: true }));
   }
   function rate(item: Book2Item, value: number) {
+    const response = answers[item.question_id] ?? "";
+    const minimum = requiredBook2WritingWords(item.item_type, item.prompt_en, lesson.slug);
+    if ((!response.trim() && !recordings[item.question_id]) || (minimum > 0 && wordsIn(response) < minimum)) return;
     setRatings((previous) => ({ ...previous, [item.question_id]: value }));
     setChecked((previous) => ({ ...previous, [item.question_id]: true }));
   }
-  function jumpTo(item: Book2Item) {
+  function jumpTo(item: Book2Item, showSource = false) {
     const index = groups.findIndex((group) => group.questions.some((question) => question.question_id === item.question_id));
     setExerciseIndex(Math.max(index, 0)); setStep("practice");
     window.scrollTo({ top: 0, behavior: "smooth" });
-    window.setTimeout(() => document.getElementById("question-" + item.question_id)?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
+    window.setTimeout(() => {
+      if (showSource) jumpToSource(item);
+      else document.getElementById("question-" + item.question_id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
+  }
+  function jumpToSource(item: Book2Item) {
+    const source = sourceFor(item);
+    if (!source) return;
+    const transcript = document.getElementById(`transcript-${source}`) as HTMLDetailsElement | null;
+    if (transcript) transcript.open = true;
+    const paragraph = item.evidence?.match(/(?:paragraph\s+|\[)([A-Z])\]?/i)?.[1]?.toUpperCase();
+    const target = paragraph ? document.getElementById(`source-${source}-paragraph-${paragraph}`) : null;
+    const element = target ?? transcript ?? document.getElementById("source-" + source);
+    element?.scrollIntoView({ behavior: "smooth", block: "center" });
+    element?.animate([{ backgroundColor: "#fff0a8" }, { backgroundColor: "transparent" }], { duration: 2400 });
   }
   async function toggleRecording(item: Book2Item) {
     if (recordingId === item.question_id) {
@@ -245,7 +260,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
             const right = isCorrect(item, value);
             const openAnswer = !isObjective(item);
             const choices = Array.isArray(item.options) ? item.options : [];
-            const minimum = requiredWords(item);
+            const minimum = requiredBook2WritingWords(item.item_type, item.prompt_en, lesson.slug);
             const wordCount = wordsIn(value);
             const modelVisible = Boolean(revealed[item.question_id] || (openAnswer && show));
             const source = sourceFor(item);
@@ -267,7 +282,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
                   : <button type="button" className="button subtle" disabled={!value.trim()} onClick={() => check(item)}>Kiểm tra</button>}
                 {show && !openAnswer && <span className={right ? "book2-correct" : "book2-incorrect"}>{right ? "✓ Chính xác" : "↻ Cần ôn lại"}</span>}
               </div>
-              {show && !openAnswer && <div className="book2-feedback">{!right && <p><b>Đáp án:</b> {(item.answer.accepted ?? []).join(" / ")}</p>}{item.explanation_vi && <p>{item.explanation_vi}</p>}{item.explanation_en && <details><summary>Giải thích tiếng Anh</summary><p>{item.explanation_en}</p></details>}{item.evidence && <small>Bằng chứng: {item.evidence}</small>}{source && <button type="button" className="book2-source-jump" onClick={() => document.getElementById("source-" + source)?.scrollIntoView({ behavior: "smooth", block: "nearest" })}>Xem tư liệu liên quan</button>}{!right && <button type="button" className="book2-retry" onClick={() => { setChecked((previous) => ({ ...previous, [item.question_id]: false })); setAnswers((previous) => ({ ...previous, [item.question_id]: "" })); }}>Làm lại câu này</button>}</div>}
+              {show && !openAnswer && <div className="book2-feedback">{!right && <p><b>Đáp án:</b> {(item.answer.accepted ?? []).join(" / ")}</p>}{item.explanation_vi && <p>{item.explanation_vi}</p>}{item.explanation_en && <details><summary>Giải thích tiếng Anh</summary><p>{item.explanation_en}</p></details>}{item.evidence && <small>Bằng chứng: {item.evidence}</small>}{source && <button type="button" className="book2-source-jump" onClick={() => jumpToSource(item)}>Xem tư liệu liên quan</button>}{!right && <button type="button" className="book2-retry" onClick={() => { setChecked((previous) => ({ ...previous, [item.question_id]: false })); setAnswers((previous) => ({ ...previous, [item.question_id]: "" })); }}>Làm lại câu này</button>}</div>}
               {openAnswer && modelVisible && <div className="book2-feedback"><p><b>Bài mẫu:</b> {item.answer.model_en}</p>{item.answer.model_vi && <p>{item.answer.model_vi}</p>}{item.explanation_vi && <p>{item.explanation_vi}</p>}<div className="book2-self-rating"><strong>Tự đánh giá sau khi đối chiếu</strong><p>{lesson.skill === "Writing" ? "Đã trả lời đúng yêu cầu, có bố cục, từ vựng và ngữ pháp phù hợp?" : "Đã trả lời đủ ý, diễn đạt mạch lạc, dùng từ và phát âm rõ?"}</p><div>{[["1", "Chưa đạt"], ["2", "Cần sửa"], ["3", "Đạt"], ["4", "Vững"]].map(([number, label]) => <button type="button" key={number} className={ratings[item.question_id] === Number(number) ? "active" : ""} aria-pressed={ratings[item.question_id] === Number(number)} onClick={() => rate(item, Number(number))}>{number}. {label}</button>)}</div></div></div>}
             </article>;
           })}
@@ -279,7 +294,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
 
     {step === "review" && <main className="book2-stack">
       <section className="book2-card"><h2><CheckCircle2 size={20} /> Kết quả luyện tập</h2><p>{objective.length > 0 && "Trắc nghiệm/điền: " + objectiveCorrect.length + "/" + objective.length + " đúng. "}{open.length > 0 && "Câu mở: " + openReviewed.length + "/" + open.length + " đã tự đánh giá."}</p><p className={mastered ? "book2-correct" : "book2-incorrect"}>{mastered ? "Đã đạt mục tiêu bài này. Bạn có thể học tiếp hoặc ôn lại." : "Bài còn phần chưa đạt. Hãy xử lý các câu bên dưới trước khi học tiếp."}</p></section>
-      {problems.length > 0 && <section className="book2-card"><h2>Câu cần làm tiếp hoặc ôn lại</h2><div className="book2-review-list">{problems.map((item) => <button type="button" key={item.question_id} onClick={() => jumpTo(item)}><span>{!checked[item.question_id] ? "Chưa làm xong" : "Cần sửa"}</span><strong>{item.prompt_vi || item.prompt_en}</strong><ArrowRight size={16} /></button>)}</div></section>}
+      {problems.length > 0 && <section className="book2-card"><h2>Câu cần làm tiếp hoặc ôn lại</h2><div className="book2-review-list">{problems.map((item) => <div className="book2-review-row" key={item.question_id}><button type="button" onClick={() => jumpTo(item)}><span>{!checked[item.question_id] ? "Chưa làm xong" : "Cần sửa"}</span><strong>{item.prompt_vi || item.prompt_en}</strong><ArrowRight size={16} /></button>{sourceFor(item) && <button type="button" className="book2-review-source" onClick={() => jumpTo(item, true)}>{item.evidence ? "Xem bằng chứng" : "Xem tư liệu"}</button>}</div>)}</div></section>}
       {content.lesson.mini_review.length > 0 && <section className="book2-card"><h2>Tự kiểm tra trước khi qua bài</h2><ul className="book2-checklist">{content.lesson.mini_review.map((item, index) => <li key={index}><label><input type="checkbox" checked={Boolean(checklist[String(index)])} onChange={(event) => setChecklist((previous) => ({ ...previous, [index]: event.target.checked }))} /> {item.vi || item.en}</label></li>)}</ul></section>}
       {open.length > 0 && <section className="book2-card"><h2>Tiêu chí tự đánh giá bài {lesson.skill === "Writing" ? "viết" : "nói"}</h2>{lesson.skill === "Writing" ? <ul><li>Trả lời đúng đề: đủ ý chính và số liệu hoặc lập luận liên quan.</li><li>Mạch lạc: có mở, thân, kết và liên kết ý rõ.</li><li>Từ vựng: dùng từ chính xác, tránh lặp nguyên mẫu.</li><li>Ngữ pháp: câu đúng, có cấu trúc đa dạng và dễ hiểu.</li></ul> : <ul><li>Độ trôi chảy và mạch lạc: ý nối rõ, ít dừng quá lâu.</li><li>Từ vựng: từ phù hợp chủ đề, không lặp quá nhiều.</li><li>Ngữ pháp: câu đủ rõ và có cấu trúc đa dạng.</li><li>Phát âm: người nghe hiểu được trọng âm và âm cuối.</li></ul>}<p>Mức 1–4 chỉ để tự theo dõi, không quy đổi thành band IELTS.</p></section>}
       <div className="book2-next">{navigation?.previous && <Link className="button subtle" href={"/app/lesson/" + navigation.previous.slug}><ArrowLeft size={16} /> Bài trước</Link>}{!mastered && <button type="button" className="button primary" onClick={() => problems[0] && jumpTo(problems[0])}>Tiếp tục câu chưa đạt <RotateCcw size={16} /></button>}{navigation?.next ? <Link className={mastered ? "button primary" : "button subtle"} href={"/app/lesson/" + navigation.next.slug}>Bài tiếp theo <ArrowRight size={16} /></Link> : <Link className="button subtle" href="/app/learn/ielts-builder">Về lộ trình <ArrowRight size={16} /></Link>}</div>

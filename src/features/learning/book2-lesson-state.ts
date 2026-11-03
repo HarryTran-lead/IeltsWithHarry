@@ -20,6 +20,10 @@ export type Book2SavedState = {
 const emptyState = (): Book2SavedState => ({ book2: 1, answers: {}, checked: {}, ratings: {}, checklist: {}, step: "learn", exerciseIndex: 0, mastered: false, needsReview: false, updatedAt: 0 });
 const storageKey = (slug: string) => `book2-state:${slug}`;
 
+export function cacheBook2State(slug: string, state: Book2SavedState) {
+  try { localStorage.setItem(storageKey(slug), JSON.stringify(state)); } catch { /* remote sync may still work */ }
+}
+
 function parseState(value: string | null): Book2SavedState | null {
   if (!value) return null;
   try {
@@ -54,7 +58,7 @@ export async function loadBook2State(slug: string): Promise<Book2SavedState> {
 
 export async function saveBook2State(slug: string, state: Book2SavedState) {
   const body = JSON.stringify(state);
-  try { localStorage.setItem(storageKey(slug), body); } catch { /* account sync remains available */ }
+  cacheBook2State(slug, state);
   if (!liveMode) return false;
   if (body.length > 20000) throw new Error("Bản nháp quá dài để đồng bộ tài khoản.");
   const supabase = createClient();
