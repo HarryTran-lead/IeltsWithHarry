@@ -13,6 +13,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const { slug } = await params;
   const isBook2Lesson = book2Catalog.units.some((unit) => unit.lessons.some((item) => item.slug === slug));
   if (releaseLocks && !isBook2Lesson) notFound();
+  if (demoMode && isBook2Lesson) return <Book2LessonRoute slug={slug} canManage={false} />;
   if (demoMode) return <Portal canManage={(await getViewerRole()) === "admin"} />;
   if (!supabaseConfigured) return <main className="setup-notice"><h1>Backend setup required</h1><p>Connect Supabase to see published lessons.</p></main>;
   const supabase = await createClient();

@@ -16,10 +16,10 @@ type Lesson = { id: string; unit_id: string; slug: string; title: string; skill:
 type Unit = { id: string; course_id: string; slug: string; title: string; sort_order: number; lessons: Lesson[] };
 export type StageCourse = { id: string; slug: string; title: string; description: string; stage_id: string; units: Unit[] };
 
-/** Published courses with their published units and lessons, grouped for the Learn page. Live mode only. */
+/** Published courses with their published units and lessons, grouped for the Learn page. Book 2 is static, so demo mode shows it too. */
 export function usePublishedCourses() {
   const supabase = useMemo(() => (liveMode ? createClient() : null), []);
-  const [courses, setCourses] = useState<StageCourse[]>(() => releaseLocks ? [book2Catalog as StageCourse] : []);
+  const [courses, setCourses] = useState<StageCourse[]>(() => releaseLocks || !liveMode ? [book2Catalog as StageCourse] : []);
   const [loading, setLoading] = useState(liveMode && !releaseLocks);
   const [error, setError] = useState("");
   useEffect(() => {
@@ -55,7 +55,7 @@ export function lessonCount(courses: StageCourse[], stageId: string) {
 export function StageLessons({ stageId, courses, loading, error }: { stageId: string; courses: StageCourse[]; loading: boolean; error: string }) {
   const { attempts } = useDemo();
   const { visits } = useNotebook();
-  if (!liveMode) return null;
+  if (!liveMode && !courses.some((course) => course.stage_id === stageId)) return null;
   const stage = stages.find((item) => item.id === stageId);
   const stageCourses = courses.filter((course) => course.stage_id === stageId);
   const done = new Set(attempts.map((attempt) => attempt.lesson));
@@ -163,7 +163,7 @@ function StudyCourse({ course, isDone }: { course: StageCourse; isDone: (lesson:
   const options = ["all", ...new Set(lessons.map((lesson) => lesson.skill))];
   return <section className="study-course" aria-label={course.title}>
     <header className="study-course-head"><div><span className="eyebrow"><Sparkles size={15} /> LỘ TRÌNH TỰ HỌC · {course.units.length} UNIT</span><h2>{course.title}</h2><p>{course.description}</p></div><div className="study-course-progress"><strong>{practiced}<small>/{lessons.length}</small></strong><span>bài đã luyện</span><div className="study-course-bar"><i style={{ width: `${lessons.length ? practiced / lessons.length * 100 : 0}%` }} /></div></div></header>
-    <div className="study-course-actions"><div className="study-course-stats"><span><Star size={16} /> {completed} đạt mục tiêu</span><span><RotateCcw size={16} /> {review} cần ôn</span></div>{next && <Link className="button primary" href={`/app/lesson/${next.slug}`}>{results[next.slug]?.checked && !isComplete(next, results[next.slug]) ? "Tiếp tục bài đang dở" : "Học tiếp"}: {next.title} <ArrowRight size={16} /></Link>}</div>
+    <div className="study-course-actions"><div className="study-course-stats"><span><Star size={16} /> {completed} đạt mục tiêu</span><span><RotateCcw size={16} /> {review} cần ôn</span></div>{next && <Link className="button primary" href={`/app/lesson/${next.slug}`}>{(results[next.slug]?.checked ?? 0) > 0 && results[next.slug].checked < results[next.slug].total ? "Tiếp tục bài đang dở" : isReview(next, results[next.slug]) ? "Sửa câu chưa đạt" : "Học tiếp"}: {next.title} <ArrowRight size={16} /></Link>}</div>
     <div className="study-skill-filter" role="group" aria-label="Lọc theo kỹ năng">{options.map((option) => <button key={option} type="button" className={skill === option ? "active" : ""} aria-pressed={skill === option} onClick={() => setSkill(option)}>{option === "all" ? "Tất cả" : skillLabels[option] ?? option}</button>)}</div>
     <p className="journey-hint">{skill === "all" ? `${practiced}/${lessons.length} bài đã luyện toàn khóa` : `${filteredLessons.filter((lesson) => (results[lesson.slug]?.checked ?? 0) > 0).length}/${filteredLessons.length} bài ${skillLabels[skill] ?? skill} đã luyện · nút Học tiếp theo bộ lọc này`}</p>
     <p className="journey-hint"><Check size={16} /> Chọn vòng tròn để vào bài. Bài đã học vẫn mở để ôn lại.</p>
@@ -177,7 +177,7 @@ function StudyCourse({ course, isDone }: { course: StageCourse; isDone: (lesson:
 
 /** On the Learn overview: one compact card per published course, linking to its stage. */
 export function OpenCourses({ courses, loading }: { courses: StageCourse[]; loading: boolean }) {
-  if (!liveMode || loading || !courses.length) return null;
+  if (loading || !courses.length) return null;
   const visibleCourses = courses.filter((course) => course.stage_id !== "ielts-builder" || course.slug === "english-skill-lab-book-2");
   return <section className="card section-card">
     <div className="section-head"><h2>Khóa học đang mở</h2><span>Chọn một khóa để xem các unit và bài học.</span></div>

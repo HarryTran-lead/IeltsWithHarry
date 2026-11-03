@@ -115,25 +115,27 @@ function LearnOverview({ stageId }: { stageId?: string }) {
     ?? stageLessons.find((lesson) => visited.has(`/app/lesson/${lesson.slug}`) && !results[lesson.slug]?.checked)
     ?? stageLessons.find((lesson) => !visited.has(`/app/lesson/${lesson.slug}`) && !submitted.has(lesson.slug));
   const total = stageLessons.length;
+  // Practised means at least one answer was checked; opening a lesson is not progress.
+  const practiced = stageLessons.filter((lesson) => (results[lesson.slug]?.checked ?? 0) > 0).length;
+  const activeStage = stages.find((stage) => stage.id === activeStageId);
   return (
     <div className="content-page learn-overview">
       {selected ? <header className="learn-stage-heading learn-stage-tools">
         <Link href="/app/learn" aria-label="Toàn bộ lộ trình">← Lộ trình</Link>
         <div><span className="eyebrow">CHẶNG {stages.indexOf(selected) + 1} · {selected.range}</span><h1>{selected.name}</h1></div>
-        <span className="learn-stage-count"><strong>{explored}/{total || "…"}</strong> bài đã mở</span>
-        {nextLesson ? <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? "Học tiếp" : "Bắt đầu học"} <ArrowRight size={16} /></Link> : !published.loading && total > 0 ? <span className="learn-mission-complete">Đã xem hết bài · chọn unit để ôn lại</span> : null}
         <details><summary>Đổi chặng</summary><div className="learn-stage-menu">{stages.map((stage) => !learnStageAvailable(stage.id) ? <span key={stage.id} aria-disabled="true"><b>{stage.range}</b> {stage.name} · Sắp mở</span> : <Link key={stage.id} href={`/app/learn/${stage.id}`} aria-current={stage.id === selected.id ? "page" : undefined}><b>{stage.range}</b> {stage.name}</Link>)}</div></details>
       </header> : <section className="learn-mission" aria-label="Bài học tiếp theo">
-        <div className="learn-mission-main"><span className="eyebrow">HÀNH TRÌNH CỦA BẠN · {recentCourse ? "TIẾP TỤC CHẶNG ĐANG HỌC" : "BẮT ĐẦU TỪ ĐÂY"}</span>
+        <div className="learn-mission-main"><span className="eyebrow">{total && activeStage ? `CHẶNG ${stages.indexOf(activeStage) + 1} · ${activeStage.range} · ${activeStage.name.toUpperCase()}` : "HÀNH TRÌNH CỦA BẠN · BẮT ĐẦU TỪ ĐÂY"}</span>
           <h1>Một bài nhỏ hôm nay, một bước tiến ngày mai</h1>
           <p>Chọn chặng học phù hợp. Mỗi unit là một trạm, mỗi bài học là một bước tiến có thể nhìn thấy.</p>
-          {nextLesson && <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{explored ? `Tiếp tục ${stages.find((stage) => stage.id === activeStageId)?.range ?? "hành trình"}` : "Bắt đầu bài đầu tiên"} <ArrowRight size={16} /></Link>}
+          {nextLesson && <Link className="button primary" href={`/app/lesson/${nextLesson.slug}`}>{practiced || explored ? `Tiếp tục ${activeStage?.range ?? "hành trình"}` : "Bắt đầu bài đầu tiên"} <ArrowRight size={16} /></Link>}
           {demoMode && !nextLesson && <Link className="button primary" href="/app/learn/foundation">Xem hành trình Foundation <ArrowRight size={16} /></Link>}
           {!nextLesson && !published.loading && total > 0 && <span className="learn-mission-complete">Đã khám phá hết bài học ở chặng này. Bạn có thể ôn lại hoặc làm bài kiểm tra cuối khóa.</span>}
         </div>
-        <div className="learn-mission-progress"><span>LỘ TRÌNH HỌC</span><strong>{demoMode && !total ? "7" : explored}<small>{demoMode && !total ? " chặng" : `/${total || "…"}`}</small></strong><span>{demoMode && !total ? "mốc trong lộ trình" : "bài đã mở"}</span><div className="study-map-bar"><i style={{ width: `${total ? Math.round(explored / total * 100) : 0}%` }} /></div><small>{demoMode && !total ? "Đăng nhập để lưu tiến độ học" : `Bước kế tiếp: ${nextLesson?.title ?? (total ? "Ôn tập" : "Đang tải bài học")}`}</small></div>
+        <div className="learn-mission-progress"><span>LỘ TRÌNH HỌC</span><strong>{demoMode && !total ? "7" : practiced}<small>{demoMode && !total ? " chặng" : `/${total || "…"}`}</small></strong><span>{demoMode && !total ? "mốc trong lộ trình" : "bài đã luyện"}</span><div className="study-map-bar"><i style={{ width: `${total ? Math.round(practiced / total * 100) : 0}%` }} /></div><small>{demoMode && !total ? "Đăng nhập để lưu tiến độ học" : `Bài tiếp theo: ${nextLesson?.title ?? (total ? "Ôn tập" : "Đang tải bài học")}`}</small></div>
       </section>}
       {selected && <StageLessons stageId={selected.id} {...published} />}
+      {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}
       {!selected && <section className="card section-card">
         <div className="section-head">
           <h2>Chọn chặng tự học</h2>
@@ -154,7 +156,6 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           </div>;
         })}</div>
       </section>}
-      {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}
       <section className="card section-card">
         <div className="section-head">
           <h2>

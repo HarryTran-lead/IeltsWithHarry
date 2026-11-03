@@ -87,6 +87,16 @@
 .book2-feedback p { margin: 0 0 8px; }
 .book2-feedback p:last-child { margin-bottom: 0; }
 .book2-feedback small { color: #54736e; }
+.book2-feedback.is-wrong { background: #fff6ee; }
+/* After checking, the key is green with a tick and a wrong pick is orange with a cross; neither can change until retry. */
+.book2-options.is-graded label { cursor: default; }
+.book2-options label svg { flex: 0 0 auto; margin-left: auto; }
+.book2-options.is-graded label.is-correct { border-color: #1f9d6b; background: #eaf8f1; color: #135c40; font-weight: 700; }
+.book2-options.is-graded label.is-wrong { border-color: #d27b46; background: #fff3ea; color: #8a4316; }
+.book2-options.is-graded label:not(.is-correct, .is-wrong) { opacity: .7; }
+.book2-answer.is-correct { border-color: #1f9d6b; background: #f1fbf6; }
+.book2-answer.is-wrong { border-color: #d27b46; background: #fff6ef; }
+.book2-source-toggle { display: none; }
 .book2-source-jump, .book2-retry { margin: 7px 10px 0 0; padding: 7px 10px; border: 1px solid #b8d8d5; border-radius: 9px; background: white; color: #116b73; font-weight: 700; cursor: pointer; }
 .book2-self-rating { margin-top: 15px; padding-top: 12px; border-top: 1px solid #cbded8; }
 .book2-self-rating strong { color: #145365; }
@@ -108,4 +118,11 @@
 .book2-checklist input { margin-right: 9px; accent-color: #0a7b7c; }
 .book2-next { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 @media (max-width: 620px) { .book2-hero { align-items: flex-start; flex-direction: column; } .book2-hero-score { min-width: 0; width: 100%; } .book2-steps { top: 0; } .book2-steps button { font-size: 12px; } .book2-options, .book2-answer, .book2-question textarea, .book2-question-actions, .book2-feedback, .book2-speaking-tools { margin-left: 0; } .book2-review-row { flex-direction: column; } .book2-review-list button { align-items: flex-start; flex-direction: column; } .book2-review-list .book2-review-source { flex-basis: auto; width: 100%; } }
-@media (max-width: 900px) { .book2-practice-layout.has-sources { display: flex; flex-direction: column; } .book2-practice-layout.has-sources .book2-source-dock { order: -1; top: 60px; width: 100%; max-height: min(36vh, 300px); border: 1px solid #b8d9d6; background: #f5fbf9; box-shadow: 0 8px 24px #153f4c1b; z-index: 5; } .book2-practice-main { width: 100%; } }
+@media (max-width: 900px) { .book2-practice-layout.has-sources { display: flex; flex-direction: column; } .book2-practice-layout.has-sources .book2-source-dock { order: -1; top: 60px; width: 100%; max-height: min(36vh, 300px); border: 1px solid #b8d9d6; background: #f5fbf9; box-shadow: 0 8px 24px #153f4c1b; z-index: 5; } .book2-practice-main { width: 100%; }
+  /* Folded by default: a one-line bar opens the passage, audio or data, then scrolls inside a taller panel. */
+  .book2-source-toggle { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 48px; padding: 10px 16px; border: 0; background: #e3f3f0; color: #0d5f69; font: inherit; font-weight: 800; text-align: left; cursor: pointer; }
+  .book2-source-toggle svg { transition: transform .2s; }
+  .book2-source-dock.is-open .book2-source-toggle svg { transform: rotate(180deg); }
+  .book2-practice-layout.has-sources .book2-source-dock.is-open { max-height: min(50vh, 420px); }
+  .book2-source-dock:not(.is-open) .book2-sources { display: none; }
+  .book2-source-dock .book2-sources-heading { display: none; } }

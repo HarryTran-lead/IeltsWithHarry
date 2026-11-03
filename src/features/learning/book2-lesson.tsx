@@ -2,12 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2, RotateCcw, Target } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, CheckCircle2, ChevronDown, RotateCcw, Target, X } from "lucide-react";
 import { AppShell } from "@/components/layout/app-shell";
 import { savePracticeSnapshot } from "./practice-results";
 import { cacheBook2State, loadBook2State, saveBook2State, type Book2SavedState, type Book2Step } from "./book2-lesson-state";
 import { Book2SourcePanel } from "./book2-source-panel";
-import { book2AnswerCorrect, evaluateBook2Progress, requiredBook2WritingWords } from "./book2-progress";
+import { book2AnswerCorrect, book2OptionOrder, evaluateBook2Progress, requiredBook2WritingWords } from "./book2-progress";
 import "./book2-lesson.css";
 
 type Bilingual = { en?: string; vi?: string };
@@ -78,6 +78,8 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   const latestSave = useRef<{ state: Book2SavedState; snapshot: { correct: number; checked: number; total: number; mastered: boolean; needsReview: boolean } } | null>(null);
   const didRestorePosition = useRef(false);
   const [recordError, setRecordError] = useState("");
+  // On phones the source panel sits above the questions; it starts folded so the question stays readable.
+  const [sourcesOpen, setSourcesOpen] = useState(false);
   const [syncStatus, setSyncStatus] = useState<"saving" | "account" | "device">("saving");
 
   useEffect(() => {
@@ -184,20 +186,24 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     setExerciseIndex(Math.max(index, 0)); setStep("practice");
     window.scrollTo({ top: 0, behavior: "smooth" });
     window.setTimeout(() => {
-      if (showSource) jumpToSource(item);
+      if (showSource) { setSourcesOpen(true); jumpToSource(item); }
       else document.getElementById("question-" + item.question_id)?.scrollIntoView({ behavior: "smooth", block: "center" });
     }, 100);
   }
   function jumpToSource(item: Book2Item) {
     const source = sourceFor(item);
     if (!source) return;
-    const transcript = document.getElementById(`transcript-${source}`) as HTMLDetailsElement | null;
-    if (transcript) transcript.open = true;
-    const paragraph = item.evidence?.match(/(?:paragraph\s+|\[)([A-Z])\]?/i)?.[1]?.toUpperCase();
-    const target = paragraph ? document.getElementById(`source-${source}-paragraph-${paragraph}`) : null;
-    const element = target ?? transcript ?? document.getElementById("source-" + source);
-    element?.scrollIntoView({ behavior: "smooth", block: "center" });
-    element?.animate([{ backgroundColor: "#fff0a8" }, { backgroundColor: "transparent" }], { duration: 2400 });
+    setSourcesOpen(true);
+    // Wait a frame so a folded phone panel has opened before scrolling inside it.
+    window.setTimeout(() => {
+      const transcript = document.getElementById(`transcript-${source}`) as HTMLDetailsElement | null;
+      if (transcript) transcript.open = true;
+      const paragraph = item.evidence?.match(/(?:paragraph\s+|\[)([A-Z])\]?/i)?.[1]?.toUpperCase();
+      const target = paragraph ? document.getElementById(`source-${source}-paragraph-${paragraph}`) : null;
+      const element = target ?? transcript ?? document.getElementById("source-" + source);
+      element?.scrollIntoView({ behavior: "smooth", block: "center" });
+      element?.animate([{ backgroundColor: "#fff0a8" }, { backgroundColor: "transparent" }], { duration: 2400 });
+    }, 60);
   }
   async function toggleRecording(item: Book2Item) {
     if (recordingId === item.question_id) {
@@ -259,16 +265,23 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
             const show = Boolean(checked[item.question_id]);
             const right = isCorrect(item, value);
             const openAnswer = !isObjective(item);
-            const choices = Array.isArray(item.options) ? item.options : [];
+            const choices = Array.isArray(item.options) ? book2OptionOrder(item.question_id, item.item_type, item.options) : [];
+            // A checked objective answer stays locked and marked until the learner chooses to retry it.
+            const graded = show && !openAnswer;
+            const accepted = item.answer.accepted ?? [];
             const minimum = requiredBook2WritingWords(item.item_type, item.prompt_en, lesson.slug);
             const wordCount = wordsIn(value);
             const modelVisible = Boolean(revealed[item.question_id] || (openAnswer && show));
             const source = sourceFor(item);
             return <article className="book2-question" id={"question-" + item.question_id} key={item.question_id}>
               <div className="book2-question-head"><span>{index + 1}</span><div><strong>{item.prompt_en}</strong>{item.prompt_vi && item.prompt_vi !== item.prompt_en && <small>{item.prompt_vi}</small>}</div></div>
-              {choices.length > 0 ? <div className="book2-options">{choices.map((option) => <label key={option}><input type="radio" name={item.question_id} checked={value === option} onChange={() => answer(item, option)} /><span>{option}</span></label>)}</div>
+              {choices.length > 0 ? <div className={`book2-options ${graded ? "is-graded" : ""}`}>{choices.map((option) => {
+                const isKey = graded && accepted.includes(option);
+                const isWrongPick = graded && value === option && !right;
+                return <label key={option} className={isKey ? "is-correct" : isWrongPick ? "is-wrong" : undefined}><input type="radio" name={item.question_id} checked={value === option} disabled={graded} onChange={() => answer(item, option)} /><span>{option}</span>{isKey && <Check size={17} aria-label="Đáp án đúng" />}{isWrongPick && <X size={17} aria-label="Lựa chọn chưa đúng" />}</label>;
+              })}</div>
                 : openAnswer ? <textarea value={value} onChange={(event) => answer(item, event.target.value)} rows={item.item_type === "open_writing" ? 9 : 4} maxLength={12000} placeholder={item.item_type === "open_speaking" ? "Ghi ý chính sau khi nói hoặc ghi âm…" : "Viết câu trả lời của bạn…"} />
-                : <input className="book2-answer" value={value} onChange={(event) => answer(item, event.target.value)} placeholder="Nhập câu trả lời" />}
+                : <input className={`book2-answer ${graded ? right ? "is-correct" : "is-wrong" : ""}`} value={value} readOnly={graded} aria-invalid={graded && !right} onChange={(event) => answer(item, event.target.value)} onKeyDown={(event) => { if (event.key === "Enter" && !graded) check(item); }} placeholder="Nhập câu trả lời rồi nhấn Enter" />}
               {openAnswer && <small>{wordCount} từ{minimum ? " · Mục tiêu tối thiểu " + minimum + " từ" : ""}</small>}
               {item.item_type === "open_speaking" && <div className="book2-speaking-tools">
                 <button type="button" className="button subtle" onClick={() => setTimer({ id: item.question_id, phase: "prepare", seconds: /part 2/i.test(currentExercise.title + " " + item.prompt_en) ? 60 : 15 })}>Bắt đầu chuẩn bị</button>
@@ -279,17 +292,17 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
               </div>}
               <div className="book2-question-actions">
                 {openAnswer ? <button type="button" className="button subtle" disabled={(!value.trim() && !recordings[item.question_id]) || (minimum > 0 && wordCount < minimum)} onClick={() => setRevealed((previous) => ({ ...previous, [item.question_id]: true }))}>Xem bài mẫu để tự đối chiếu</button>
-                  : <button type="button" className="button subtle" disabled={!value.trim()} onClick={() => check(item)}>Kiểm tra</button>}
+                  : !graded && <button type="button" className="button subtle" disabled={!value.trim()} onClick={() => check(item)}>Kiểm tra</button>}
                 {show && !openAnswer && <span className={right ? "book2-correct" : "book2-incorrect"}>{right ? "✓ Chính xác" : "↻ Cần ôn lại"}</span>}
               </div>
-              {show && !openAnswer && <div className="book2-feedback">{!right && <p><b>Đáp án:</b> {(item.answer.accepted ?? []).join(" / ")}</p>}{item.explanation_vi && <p>{item.explanation_vi}</p>}{item.explanation_en && <details><summary>Giải thích tiếng Anh</summary><p>{item.explanation_en}</p></details>}{item.evidence && <small>Bằng chứng: {item.evidence}</small>}{source && <button type="button" className="book2-source-jump" onClick={() => jumpToSource(item)}>Xem tư liệu liên quan</button>}{!right && <button type="button" className="book2-retry" onClick={() => { setChecked((previous) => ({ ...previous, [item.question_id]: false })); setAnswers((previous) => ({ ...previous, [item.question_id]: "" })); }}>Làm lại câu này</button>}</div>}
+              {show && !openAnswer && <div className={`book2-feedback ${right ? "" : "is-wrong"}`} aria-live="polite">{!right && <p><b>Bạn trả lời:</b> {value} · <b>Đáp án:</b> {accepted.join(" / ")}</p>}{item.explanation_vi && <p>{item.explanation_vi}</p>}{item.explanation_en && <details><summary>Giải thích tiếng Anh</summary><p>{item.explanation_en}</p></details>}{item.evidence && <small>Bằng chứng: {item.evidence}</small>}{source && <button type="button" className="book2-source-jump" onClick={() => jumpToSource(item)}>Xem tư liệu liên quan</button>}{!right && <button type="button" className="book2-retry" onClick={() => { setChecked((previous) => ({ ...previous, [item.question_id]: false })); setAnswers((previous) => ({ ...previous, [item.question_id]: "" })); }}>Làm lại câu này</button>}</div>}
               {openAnswer && modelVisible && <div className="book2-feedback"><p><b>Bài mẫu:</b> {item.answer.model_en}</p>{item.answer.model_vi && <p>{item.answer.model_vi}</p>}{item.explanation_vi && <p>{item.explanation_vi}</p>}<div className="book2-self-rating"><strong>Tự đánh giá sau khi đối chiếu</strong><p>{lesson.skill === "Writing" ? "Đã trả lời đúng yêu cầu, có bố cục, từ vựng và ngữ pháp phù hợp?" : "Đã trả lời đủ ý, diễn đạt mạch lạc, dùng từ và phát âm rõ?"}</p><div>{[["1", "Chưa đạt"], ["2", "Cần sửa"], ["3", "Đạt"], ["4", "Vững"]].map(([number, label]) => <button type="button" key={number} className={ratings[item.question_id] === Number(number) ? "active" : ""} aria-pressed={ratings[item.question_id] === Number(number)} onClick={() => rate(item, Number(number))}>{number}. {label}</button>)}</div></div></div>}
             </article>;
           })}
         </section>}
         <div className="book2-next">{exerciseIndex > 0 && <button type="button" className="button subtle" onClick={() => { setExerciseIndex(exerciseIndex - 1); window.scrollTo({ top: 0, behavior: "smooth" }); }}><ArrowLeft size={16} /> Nhóm trước</button>}{exerciseIndex < groups.length - 1 ? <button type="button" className="button primary" onClick={() => { setExerciseIndex(exerciseIndex + 1); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Nhóm tiếp theo <ArrowRight size={16} /></button> : <button type="button" className="button primary" onClick={() => goStep("review")}>Tổng kết và ôn lại <ArrowRight size={16} /></button>}</div>
       </div>
-      <aside className="book2-source-dock"><Book2SourcePanel content={content} practice /></aside>
+      <aside className={`book2-source-dock ${sourcesOpen ? "is-open" : ""}`}><button type="button" className="book2-source-toggle" aria-expanded={sourcesOpen} onClick={() => setSourcesOpen((value) => !value)}>{sourcesOpen ? "Thu gọn tư liệu" : `Mở ${content.passages.length ? "bài đọc" : content.audios.length ? "bài nghe" : "số liệu"} để làm bài`}<ChevronDown size={18} /></button><Book2SourcePanel content={content} practice /></aside>
     </main>}
 
     {step === "review" && <main className="book2-stack">

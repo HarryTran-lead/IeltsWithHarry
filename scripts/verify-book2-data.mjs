@@ -16,6 +16,10 @@ for (const entry of lessons) {
     if (!audio.audio_url || !existsSync(join(root, "public", audio.audio_url.replace(/^\//, "")))) errors.push(`${entry.slug}: missing audio ${audio.id}`);
     if (!audio.transcript?.trim()) errors.push(`${entry.slug}: missing transcript ${audio.id}`);
   }
+  for (const exercise of data.exercises) {
+    if (!exercise.title?.trim() || exercise.title === exercise.id) errors.push(`${entry.slug}/${exercise.id}: exercise needs a learner-facing title`);
+    if (!exercise.instruction?.vi?.trim()) errors.push(`${entry.slug}/${exercise.id}: exercise needs a Vietnamese instruction`);
+  }
   for (const exercise of data.exercises) for (const item of exercise.questions) {
     questions++;
     if (!Array.isArray(item.options)) errors.push(`${entry.slug}/${item.question_id}: options must be an array`);

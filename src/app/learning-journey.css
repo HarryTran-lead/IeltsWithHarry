@@ -196,7 +196,7 @@ a.learn-stage-path-link:hover .learn-stage-path-node { transform: translateX(-50
 .learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > .study-map-bar,
 .learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > small { flex-basis: 100%; }
 .learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > strong { font-size: 22px; }
-.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-progress > small { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 @media (max-width: 780px) {
   .learn-overview .learn-mission:not(.learn-mission-selected) { grid-template-columns: 1fr; }
   .learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-main { grid-template-columns: 1fr; row-gap: 10px; }
