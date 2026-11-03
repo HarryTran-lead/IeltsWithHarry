@@ -10,12 +10,21 @@ export type GrammarCatalogLesson = {
   counts: Record<string, number>;
 };
 
+export type GrammarMistake = { wrong: string; correct: string; why: string };
+export type GrammarExample = { en: string; vi?: string };
+
 export type GrammarGuide = {
   code: string;
   title: string;
+  overview: string;
   objectives: string[];
-  sections: { heading: string; formula: string; explanation: string; examples: { en: string; vi?: string }[]; mistake?: { wrong: string; correct: string; why_vi: string } | null; note: string }[];
-  mistakes: { wrong: string; correct: string; why_vi: string }[];
+  sections: {
+    heading: string; formula: string; explanation: string; examples: GrammarExample[];
+    points: ({ text: string } & Partial<GrammarExample>)[];
+    table: { columns: string[]; rows: string[][] } | null;
+    mistake: GrammarMistake | null; note: string;
+  }[];
+  mistakes: GrammarMistake[];
   caveats: string[];
 };
 
@@ -33,7 +42,14 @@ export type GrammarPracticeItem = {
 };
 
 export type ReviewStatus = "UNDERSTOOD" | "NEED_REVIEW" | "SKIPPED";
-export type GrammarResponse = { answer: string; status?: ReviewStatus; correct?: boolean | null; referenceAnswer?: string; explanation?: string; feedback?: string; errorTag?: string | null; updatedAt: string };
+/** The latest result is shown on screen; `first` keeps the first submission so a retry cannot hide a mistake. */
+export type GrammarResponse = {
+  answer: string; status?: ReviewStatus; correct?: boolean | null; referenceAnswer?: string; explanation?: string;
+  feedback?: string; errorTag?: string | null; updatedAt: string;
+  first?: { answer: string; correct: boolean | null; at: string };
+  attempts?: number; wrongAt?: string; prompt?: string; order?: number[]; retrying?: boolean;
+};
+export type GrammarGrade = { correct: boolean | null; referenceAnswer: string; explanation: string; feedback: string; errorTag: string | null };
 export type GrammarLessonProgress = {
   theorySeen: boolean;
   responses: Record<string, GrammarResponse>;
@@ -51,10 +67,34 @@ export const grammarWorlds: Record<GrammarLevel, { name: string; icon: string; d
   C2: { name: "Đỉnh cao ngôn ngữ", icon: "🏆", description: "Làm chủ cấu trúc nâng cao" },
 };
 
+/** Editorial question ids (A1-01-Q01, A1-01-SR-01); older V5 response ids stay in storage but are not counted. */
+export const editorialId = (id: string) => /-(?:Q|SR-)\d+$/.test(id);
+
 export function reviewedCount(progress?: GrammarLessonProgress) {
-  return Object.entries(progress?.responses ?? {}).filter(([id, response]) => /-Q\d+$/.test(id) && (response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW")).length;
+  return Object.entries(progress?.responses ?? {}).filter(([id, response]) => editorialId(id) &&(response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW")).length;
 }
 
 export function practiced(progress?: GrammarLessonProgress, total = 30) {
   return total > 0 && reviewedCount(progress) >= total;
+}
+
+export const grammarTypeLabels: Record<GrammarPracticeItem["type"], string> = {
+  mcq: "Trắc nghiệm", fill_blank: "Điền từ", error_choice: "Chọn câu đúng", error_correction: "Sửa lỗi", sentence_ordering: "Sắp xếp câu",
+};
+
+const day = (iso: string) => new Date(iso).toDateString();
+
+/**
+ * Records a graded submission. A wrong answer keeps the question in the review list;
+ * only a correct answer on a later day takes it out, so retrying straight away does not erase the mistake.
+ */
+export function applyGrade(previous: GrammarResponse, answer: string, grade: GrammarGrade, prompt: string, now = new Date().toISOString()): GrammarResponse {
+  const wrongAt = grade.correct === false ? now : previous.wrongAt ?? (previous.status === "NEED_REVIEW" ? previous.updatedAt : undefined);
+  const status: ReviewStatus = grade.correct === false || (previous.status === "NEED_REVIEW" && wrongAt && day(wrongAt) === day(now)) ? "NEED_REVIEW" : "UNDERSTOOD";
+  return {
+    ...previous, ...grade, answer, prompt, status, updatedAt: now, retrying: false,
+    first: previous.first ?? { answer, correct: grade.correct, at: now },
+    attempts: (previous.attempts ?? 0) + 1,
+    ...(wrongAt ? { wrongAt } : {}),
+  };
 }
