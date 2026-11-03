@@ -3,10 +3,48 @@ export type Book2ScoredItem = {
   answer: { kind: string; accepted?: string[] };
 };
 
-/** Ignores case, accents, curly quotes, currency signs and "per cent" spelling, which IELTS markers do not penalise. */
+const numberWords: Record<string, number> = {
+  zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12,
+  thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19,
+  twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90,
+};
+const numberWord = `(?:${Object.keys(numberWords).join("|")}|hundred|thousand)`;
+const numberPhrase = new RegExp(`\\b${numberWord}(?:[\\s-]+(?:${numberWord}|and(?=[\\s-]+${numberWord})))*\\b`, "g");
+
+/**
+ * Spoken numbers become digits: "forty-three" is 43, "three hundred and forty-five thousand" is 345000,
+ * and "ten fifteen" stays two numbers, 10 15, so it matches the time 10:15.
+ */
+function spokenNumbers(phrase: string) {
+  const numbers: number[] = [];
+  let total = 0;
+  let current: number | null = null;
+  let last = "";
+  for (const word of phrase.split(/[\s-]+/).filter((item) => item !== "and")) {
+    if (word === "hundred") { current = (current ?? 1) * 100; last = "hundred"; continue; }
+    if (word === "thousand") { total += (current ?? 1) * 1000; current = 0; last = "thousand"; continue; }
+    const value = numberWords[word];
+    const kind = value >= 20 && value % 10 === 0 ? "tens" : value >= 10 ? "teen" : "unit";
+    const joins = current !== null && ((last === "tens" && kind === "unit") || last === "hundred" || last === "thousand");
+    if (current !== null && !joins) { numbers.push(total + current); total = 0; current = null; }
+    current = (current ?? 0) + value;
+    last = kind;
+  }
+  if (current !== null || total) numbers.push(total + (current ?? 0));
+  return numbers.join(" ");
+}
+
+/**
+ * Ignores what IELTS markers do not penalise: case, accents, curly quotes, contractions, currency signs,
+ * "per cent", a.m./p.m. spelling, numbers written as words, and Vietnamese-style 2,4 or 345.000.
+ */
 const normalize = (value: string) => value.normalize("NFD").replace(/[̀-ͯ]/g, "").toLocaleLowerCase()
-  .replace(/[‘’`]/g, "'").replace(/[“”]/g, "\"").replace(/&/g, " and ").replace(/\s*per ?cent\b/g, "%").replace(/\s+%/g, "%")
-  .replace(/[£$€]/g, "").replace(/\s+/g, " ").trim().replace(/[.,!?;:]+$/g, "").trim();
+  .replace(/[‘’`]/g, "'").replace(/[“”]/g, "\"")
+  .replace(/\bwon't\b/g, "will not").replace(/\bcan't\b/g, "cannot").replace(/\bcan not\b/g, "cannot").replace(/n't\b/g, " not")
+  .replace(/&/g, " and ").replace(/\s*per ?cent\b/g, "%").replace(/\s+%/g, "%").replace(/\b([ap])\.\s?m\b\.?/g, "$1m")
+  .replace(/[£$€]/g, "").replace(numberPhrase, spokenNumbers)
+  .replace(/(\d)[.,](?=\d{3}\b)/g, "$1").replace(/(\d)[.,:](?=\d)/g, "$1 ")
+  .replace(/[;,]/g, " ").replace(/\s+/g, " ").trim().replace(/[.!?:]+$/g, "").trim();
 /** A leading article does not change a short answer, so "the old harbour" matches "old harbour". */
 const withoutArticle = (value: string) => normalize(value).replace(/^(?:a|an|the) /, "");
 

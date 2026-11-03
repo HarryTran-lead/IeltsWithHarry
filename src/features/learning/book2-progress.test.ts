@@ -56,6 +56,22 @@ describe("Book 2 progress", () => {
     expect(book2AnswerCorrect(key(["a"]), "")).toBe(false);
   });
 
+  it("reads numbers written as words, Vietnamese separators, contractions and split blanks", () => {
+    const key = (accepted: string[]) => ({ question_id: "q", answer: { kind: "objective", accepted } });
+    expect(book2AnswerCorrect(key(["10:15"]), "ten fifteen")).toBe(true);
+    expect(book2AnswerCorrect(key(["5"]), "five")).toBe(true);
+    expect(book2AnswerCorrect(key(["5 pm"]), "5 p.m.")).toBe(true);
+    expect(book2AnswerCorrect(key(["43"]), "forty-three")).toBe(true);
+    expect(book2AnswerCorrect(key(["120"]), "one hundred and twenty")).toBe(true);
+    expect(book2AnswerCorrect(key(["345000"]), "345.000")).toBe(true);
+    expect(book2AnswerCorrect(key(["345000"]), "three hundred and forty-five thousand")).toBe(true);
+    expect(book2AnswerCorrect(key(["2.4"]), "2,4")).toBe(true);
+    expect(book2AnswerCorrect(key(["2.4"]), "24")).toBe(false);
+    expect(book2AnswerCorrect(key(["do not use"]), "don't use")).toBe(true);
+    expect(book2AnswerCorrect(key(["I’ll"]), "I will")).toBe(false);
+    expect(book2AnswerCorrect(key(["from;to"]), "from, to")).toBe(true);
+  });
+
   it("keeps ordered option sets and spreads correct answers across positions", () => {
     expect(book2OptionOrder("q1", "true_false_not_given", ["TRUE", "FALSE", "NOT GIVEN"])).toEqual(["TRUE", "FALSE", "NOT GIVEN"]);
     expect(book2OptionOrder("q1", "multiple_choice", ["A", "B", "C", "D"])).toEqual(["A", "B", "C", "D"]);
@@ -69,6 +85,8 @@ describe("Book 2 progress", () => {
         if (item.answer.kind !== "objective" || item.options.length < 3) continue;
         const shown = book2OptionOrder(item.question_id, item.item_type, item.options);
         expect([...shown].sort()).toEqual([...item.options].sort());
+        // Lenient matching must never turn a wrong option into a right one.
+        for (const option of item.options) expect(book2AnswerCorrect(item, option), `${item.question_id}: ${option}`).toBe(item.answer.accepted.includes(option));
         if (shown !== item.options) positions[shown.findIndex((option) => item.answer.accepted.includes(option))]++;
       }
     }
