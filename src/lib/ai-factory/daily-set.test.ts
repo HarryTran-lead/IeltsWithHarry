@@ -1,7 +1,7 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { checkFormat } from "../ielts-bank/format-rules";
 import type { ExamQuestion, NormalizedExam } from "../ielts-bank/schema";
-import { chooseDailySet, composeFullDraft, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPiece, type DailyPieces } from "./daily-set";
+import { chooseDailySet, composeFullDraft, continueTransientDraft, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPiece, type DailyPieces } from "./daily-set";
 
 const meta = { externalId: "piece", format: "Academic", mode: "practice", title: "A new practice item", topic: "Research",
   durationMinutes: 20, sourceUrl: "https://example.org", attribution: "Original", license: "Original", licenseUrl: "https://example.org",
@@ -39,6 +39,24 @@ function piece(skill: "Listening" | "Reading", part: number): DailyPiece {
 }
 
 describe("AI Factory daily set", () => {
+  it("continues the same piece after temporary model errors", async () => {
+    const create = vi.fn().mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
+      .mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
+      .mockResolvedValue("finished piece");
+    const wait = vi.fn(async () => {});
+    await expect(continueTransientDraft(create, wait)).resolves.toBe("finished piece");
+    expect(create).toHaveBeenCalledTimes(3);
+    expect(wait.mock.calls).toEqual([[30_000], [60_000]]);
+  });
+
+  it("does not repeatedly call the model after quota exhaustion", async () => {
+    const create = vi.fn().mockRejectedValue(new Error("AI Factory daily quota exhausted (HTTP 429)"));
+    const wait = vi.fn(async () => {});
+    await expect(continueTransientDraft(create, wait)).rejects.toThrow("daily quota exhausted");
+    expect(create).toHaveBeenCalledTimes(1);
+    expect(wait).not.toHaveBeenCalled();
+  });
+
   it("resumes from the first missing piece and uses one ID per UTC day", () => {
     const pieces: DailyPieces = { listening_part1: piece("Listening", 1), listening_part2: piece("Listening", 2) };
     expect(nextMissingPiece(pieces)).toBe("writing_task1_academic");

@@ -1,5 +1,5 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import { chooseDailySet, composeFullDraft, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPieces } from "../src/lib/ai-factory/daily-set";
+import { chooseDailySet, composeFullDraft, continueTransientDraft, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPieces } from "../src/lib/ai-factory/daily-set";
 import { factoryKinds, topicSeeds, type FactoryKind } from "../src/lib/ai-factory/kinds";
 import { recordFactoryDraft } from "../src/lib/ai-factory/produce";
 import { generateFactoryDraft } from "../src/lib/ai-factory/text-generation";
@@ -7,7 +7,7 @@ import { contentHash, validateExam } from "../src/lib/ielts-bank/schema";
 
 type Progress = { dailySet: true; setId: string; pieces: DailyPieces; materialized: string[]; quotaDay: string; longRequestsUsed: number; lastLongRequestAt?: string; completedAt?: string };
 type SetRow = { id: string; status: string; payload: Progress };
-const pause = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+const pause = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 const today = () => new Date().toISOString().slice(0, 10);
 
 async function save(client: SupabaseClient, row: SetRow, patch: Record<string, unknown> = {}) {
@@ -115,7 +115,7 @@ async function main() {
       const dayNumber = Math.floor(new Date(`${active.payload.setId.slice(4)}T00:00:00Z`).getTime() / 86_400_000);
       const { data: recent } = await client.from("ielts_exams").select("title").eq("source_id", "ai-factory").eq("skill", factoryKinds[chosen].skill).order("created_at", { ascending: false }).limit(30);
       const seeds = topicSeeds[chosen];
-      const draft = await generateFactoryDraft(chosen, seeds[dayNumber % seeds.length], {
+      const draft = await continueTransientDraft(() => generateFactoryDraft(chosen, seeds[dayNumber % seeds.length], {
         day: dayNumber, avoid: (recent ?? []).map((item) => item.title),
         beforeRequest: async () => {
           if (!chosen.startsWith("listening") && !chosen.startsWith("reading")) return;
@@ -124,6 +124,8 @@ async function main() {
           await pause(Math.max(0, 13_000 - (Date.now() - last)));
           active.payload.longRequestsUsed += 1; active.payload.lastLongRequestAt = new Date().toISOString(); await save(client, active);
         },
+      }), pause, (attempt, delay, failure) => {
+        console.warn(`${active.payload.setId} ${chosen}: ${failure.message}; retrying this piece (${attempt}/2) in ${delay / 1000}s`);
       });
       if (draft.warnings.length) throw new Error(`${chosen} failed format gate: ${draft.warnings.join("; ").slice(0, 800)}`);
       active.payload.pieces[chosen] = draft; await save(client, active);

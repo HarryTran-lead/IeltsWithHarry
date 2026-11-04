@@ -4,6 +4,8 @@ on:
   schedule:
     # One daily set, after Gemini's midnight Pacific free-tier reset.
     - cron: "27 8 * * *"
+    # Continue the same checkpointed set later if the model was temporarily unavailable.
+    - cron: "27 13 * * *"
   workflow_dispatch:
     inputs:
       probe_only:

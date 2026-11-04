@@ -22,6 +22,25 @@ export function dailySetId(date: Date): string {
   return `set-${date.toISOString().slice(0, 10)}`;
 }
 
+/** Resume the same missing piece after a temporary model failure. The caller checkpoints successful pieces. */
+export async function continueTransientDraft<T>(
+  create: () => Promise<T>,
+  wait: (milliseconds: number) => Promise<void>,
+  onRetry?: (attempt: number, milliseconds: number, error: Error) => void,
+): Promise<T> {
+  for (let restart = 0; ; restart += 1) {
+    try {
+      return await create();
+    } catch (error) {
+      const failure = error instanceof Error ? error : new Error(String(error));
+      if (restart >= 2 || !(/model unavailable \(HTTP 50[0234]\)/i.test(failure.message) || failure.name === "TimeoutError")) throw error;
+      const delay = 30_000 * (restart + 1);
+      onRetry?.(restart + 1, delay, failure);
+      await wait(delay);
+    }
+  }
+}
+
 /** An incomplete older set takes precedence; a completed set for today prevents a second one. */
 export function chooseDailySet<T extends { payload: { setId: string; completedAt?: string } }>(current: T | null, unfinished: T | null): T | "complete" | null {
   if (current?.payload.completedAt) return "complete";
