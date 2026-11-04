@@ -303,7 +303,14 @@ body:has(.b2-focus) .notebook-bubble { display: none; }
 .book2-card p, .book2-card li { color: #33495a; line-height: 1.72; }
 .book2-sources { display: grid; gap: 16px; min-width: 0; }
 .book2-practice-layout { display: grid; gap: 18px; }
-.book2-practice-layout.has-sources { grid-template-columns: minmax(0, 1fr) minmax(320px, 40%); align-items: start; }
+/* With a passage beside it, the page widens and the passage takes the larger column: it is what the learner reads. */
+.book2-page:has(.book2-practice-layout.has-sources) { max-width: 1320px; }
+.book2-practice-layout.has-sources { grid-template-columns: minmax(340px, 0.8fr) minmax(0, 1.2fr); align-items: start; }
+.has-sources .b2-question { padding: clamp(18px, 2vw, 24px); }
+.has-sources .b2-prompt { margin-top: 12px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.45; }
+.has-sources .b2-prompt-vi { font-size: 14px; }
+.has-sources .b2-option { min-height: 50px; padding: 10px 14px; font-size: 15px; }
+.has-sources .b2-input, .has-sources .b2-textarea { margin-top: 14px; padding: 12px 14px; font-size: 16px; }
 .book2-practice-main { display: grid; gap: 14px; min-width: 0; }
 .book2-source-dock { min-width: 0; }
 .book2-practice-layout:not(.has-sources) .book2-source-dock { display: none; }
@@ -316,6 +323,8 @@ body:has(.b2-focus) .notebook-bubble { display: none; }
 .book2-sources-practice .book2-source { padding: 18px; border-radius: 18px; }
 .book2-sources-practice .book2-source h2 { font-size: 16px; }
 .book2-passage { max-width: 78ch; font-size: 16px; }
+.book2-source-dock .book2-passage { max-width: none; }
+.book2-source-dock .book2-passage p { line-height: 1.75; }
 .book2-passage p { margin: 0 0 16px; }
 .book2-transcript { white-space: pre-wrap; font: inherit; line-height: 1.7; color: #304b56; }
 .book2-card audio { max-width: 100%; width: 460px; margin: 4px 0 15px; }
