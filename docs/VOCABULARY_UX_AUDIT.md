@@ -444,3 +444,42 @@ Không cần migration database. Từ học trong phiên được lưu vào Sổ
 | Chuyển 450 mã màu sang token | **Một phần**: token mới cho phần đã viết lại | |
 
 Lưu ý vận hành: Sổ từ hiện tải tối đa 1.000 mục (trước là 500). Khi học viên học hơn ~1.000 từ, nên chuyển hàng ôn sang truy vấn phía server (`due_at <= now()`).
+
+---
+
+## 11. Soát lần 2 (04/11/2026, production + demo, 1366px và 375px)
+
+Quét lại từng màn bằng thao tác thật và script đo DOM (tràn ngang, chữ < 12px, vùng bấm < 36px, ảnh lỗi). Đã sửa trên branch `claude/vocab-ux-fixes`:
+
+| Màn | Lỗi | Sửa |
+|---|---|---|
+| Học | Nút "Nghe" vỡ: icon nằm trên chữ, vùng bấm 34×53px (CSS còn trỏ selector cũ) | Nút viên thuốc 40px cạnh ☆ |
+| Học | Bấm chuột rồi nhấn Enter: phím tắt và nút đang focus cùng chạy, nhảy 2 bước (qua thẻ rồi lật luôn thẻ sau) | Phím đã xử lý thì `preventDefault`; bỏ qua Ctrl/Cmd/Alt |
+| Học | Buổi A1–C2 chỉ còn 6/10 từ: từ không có định nghĩa Anh bị loại dù có nghĩa Việt | Chỉ loại từ không có nghĩa nào |
+| Học | Từ dạng "a.m./A.M./am/AM": tiêu đề rối, Gõ từ bắt gõ cả chuỗi (gợi ý "15 ký tự"), câu ví dụ lộ đáp án "A.M." | Hiện "a.m." + "Cũng viết: …"; chấp nhận mọi dạng; che mọi dạng trong câu ví dụ |
+| Học | Thanh tiến độ đứng yên ở 0 suốt 15–20 thao tác đầu (chỉ tăng khi từ qua bước Gõ) | Tăng theo từng bước xong |
+| Học | Nhãn "· làm lại" hiện ngay khi vừa trả lời sai, và cả ở lần đầu sang bước Gõ | Chỉ hiện khi thẻ thật sự quay lại |
+| Học | Nhãn "Chọn nghĩa đúng" lặp 2 lần (pill + kicker) | Bỏ kicker trong chế độ Học |
+| Học | Loại từ A1–C2 tiếng Anh ("ADVERB") trong khi IELTS tiếng Việt; nhãn luôn là "CEFR" thay vì A1/B2… | Dịch loại từ; hiện mức CEFR của từ |
+| Học | Định nghĩa trùng nghĩa Việt hiện 2 lần | Ẩn khi trùng |
+| Học | Thẻ cao 52vh, chữ giữa thẻ, nút chính bị đẩy xuống mép màn | Thẻ thấp hơn, nội dung bắt đầu từ trên |
+| Ghép cặp | Mô tả "tính giờ" nhưng không thấy đồng hồ; ghép sai không biết cặp nào sai; cặp đúng chỉ mờ đi; buổi 6 từ chơi 5 + 1 cặp | Đồng hồ chạy, lắc đỏ 2 thẻ sai, ✓ xanh cho cặp đúng, chia nhóm đều (3 + 3), có hướng dẫn |
+| Demo | Màn Học trống trong demo mode | Dùng bộ từ mẫu |
+| Hôm nay | Thẻ "Từ đã lưu" ghi "Mở sổ tay" nhưng mở thẳng Ôn tập | Mở Sổ từ |
+| Hôm nay | "Sổ từ của bạn" thiếu trạng thái Mới nên 1 + 0 + 0 ≠ 113 từ | Đủ 4 trạng thái |
+| Hôm nay | Khối "Bắt đầu nhanh" lặp nút ở hero; không có lối vào Tra từ | Thay bằng ô Tra từ |
+| Hôm nay | 2 thẻ bước "Ôn tập / Học từ mới" trông bấm được nhưng không bấm được; `<main>` lồng trong `<main>` | Thành link; đổi sang `<div>` |
+| Ôn tập | Space sau khi hiện nghĩa cuộn trang; Ctrl+S / Ctrl+P bị bắt thành gắn sao / phát âm | Chặn cuộn; bỏ qua phím có modifier |
+| Ôn tập | Từ IELTS không có IPA | Lấy IPA từ từ điển như màn Học |
+| Sổ từ | Mobile: hàng tràn 6px; 113 từ = trang 12.400px | Sửa grid; hiện 40 từ, "Xem thêm" |
+| Sổ từ | Bấm thùng rác xoá ngay (mất cả lịch ôn, không hoàn tác); chọn bộ đã có ✓ là lặng lẽ bỏ khỏi bộ | Hỏi xác nhận; nhãn "+ Bộ" / "✓ Bộ · bỏ khỏi bộ" |
+| Tra từ | Kết quả từ điển: lưu xong nút vẫn "☆ Lưu vào sổ", bấm lại không có phản hồi | Hiện "✓ Đã lưu" |
+| Thư viện | Không có kết quả vẫn ghi "đang xem 0–0 / 0 từ" | Ẩn khi trống |
+| Kiểm tra | Đáp án nhiễu có thể trùng chữ nhau | Không lặp nghĩa/từ |
+| Chung | Link "← Từ vựng" cao 21px trên mọi màn; "Đổi bộ lọc" 30px | ≥ 36px |
+
+**Còn lại (chưa sửa, cần quyết định hoặc migration):**
+- Bộ A1–C2 vẫn học theo bảng chữ cái (`list_vocabulary_study_by_cefr` sắp `order by headword`): buổi 1 là "a.m., abandon, abandoned, aberration…", từ cùng gốc nằm chung một buổi nên đáp án nhiễu dễ nhầm. Cần sửa RPC để sắp theo CEFR rồi tần suất.
+- Bộ IELTS: "Band 1" gồm cụm động từ và nghĩa hiếm ("away" = "ở sân đối phương"); ước lượng band cần soát lại nội dung.
+- Truy vấn IELTS mất ~2,4 giây (`count: "exact"`), màn chỉ có chữ "Đang lấy bộ từ…".
+- Trang chủ ở demo hiện "… từ" mãi vì không có DB.

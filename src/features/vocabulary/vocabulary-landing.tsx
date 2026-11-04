@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowRight, CheckCircle2, Headphones, Layers3, RotateCcw, Search, Sparkles, Target } from "lucide-react";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { createClient } from "@/lib/supabase/browser";
@@ -43,6 +44,8 @@ export function VocabularyLanding() {
   const [counts, setCounts] = useState<{ ielts?: number; cefr?: number }>({});
   const [category, setCategory] = useState<Category>("all");
   const [query, setQuery] = useState("");
+  const [lookup, setLookup] = useState("");
+  const router = useRouter();
   const savedWords = useMemo(() => entries.filter((entry) => entry.kind === "word"), [entries]);
   const saved = savedWords.length;
   const { reviews, loaded: reviewsLoaded } = useWordSrs();
@@ -81,12 +84,12 @@ export function VocabularyLanding() {
     { title: "Từ vựng IELTS Reading", detail: "607 từ · 11 chủ đề", description: "Học theo câu, ôn SRS và theo lộ trình 84 ngày.", href: "/app/reading/vocabulary", category: "reading", sticker: "book", art: "reading" },
     { title: "Word Families", detail: "300 họ từ", description: "Học noun, verb, adjective và adverb cùng nhau.", href: "/app/vocabulary/word-formation", category: "families", sticker: "tree", art: "families" },
     { title: "Luyện dịch câu Việt → Anh", detail: "40 chủ đề · Speaking & Writing", description: "Viết câu, xem bản mẫu và tự đánh giá. Câu mới mở sau khi biên tập.", href: "/app/vocabulary/translation", category: "translation", sticker: "bubble", art: "reading" },
-    { title: "Từ đã lưu", detail: `${ready ? saved.toLocaleString("vi-VN") : "…"} từ của bạn`, description: "Mở sổ tay và học lại các từ đã đánh dấu.", href: "/app/vocabulary/review", category: "personal", sticker: "notebook", art: "saved" },
+    { title: "Từ đã lưu", detail: `${ready ? saved.toLocaleString("vi-VN") : "…"} từ của bạn`, description: "Mở Sổ từ: lọc, gắn sao và ôn lại từ đã lưu.", href: "/app/vocabulary/notebook", category: "personal", sticker: "notebook", art: "saved" },
   ];
   const filteredCards = cards.filter((card) => (category === "all" || card.category === category)
     && `${card.title} ${card.detail} ${card.description}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
 
-  return <main className="vocabulary-landing">
+  return <div className="vocabulary-landing">
     <header className="vocabulary-landing-hero vocabulary-today">
       <div className="vocabulary-landing-hero-copy">
         <span className="vocabulary-landing-eyebrow">HÔM NAY</span>
@@ -95,8 +98,8 @@ export function VocabularyLanding() {
         <div className="vocabulary-landing-hero-actions">{dueToday ? <><Link href="/app/vocabulary/review">Ôn {dueToday} từ đến hạn <ArrowRight size={17} /></Link><Link href="/app/vocabulary/study?collection=ielts">Học 10 từ mới</Link></> : <><Link href="/app/vocabulary/study?collection=ielts">Học 10 từ IELTS <ArrowRight size={17} /></Link><Link href="/app/vocabulary/study?collection=cefr">Học từ A1–C2</Link></>}</div>
       </div>
       <ol className="vocabulary-today-steps" aria-label="Các bước học hôm nay">
-        <li className={dueToday ? "active" : "done"}><RotateCcw size={18} /><span><b>Ôn tập</b>{dueToday === null ? "…" : dueToday ? `${dueToday} thẻ` : "Không có thẻ"}</span></li>
-        <li className={dueToday ? "" : "active"}><Sparkles size={18} /><span><b>Học từ mới</b>10 từ · xem, chọn, gõ</span></li>
+        <li className={dueToday ? "active" : "done"}><Link href="/app/vocabulary/review"><RotateCcw size={18} /><span><b>Ôn tập</b>{dueToday === null ? "…" : dueToday ? `${dueToday} thẻ` : "Không có thẻ"}</span></Link></li>
+        <li className={dueToday ? "" : "active"}><Link href="/app/vocabulary/study?collection=ielts"><Sparkles size={18} /><span><b>Học từ mới</b>10 từ · xem, chọn, gõ</span></Link></li>
         <li><CheckCircle2 size={18} /><span><b>Tự vào lịch ôn</b>FSRS nhắc lại đúng lúc</span></li>
       </ol>
     </header>
@@ -121,12 +124,12 @@ export function VocabularyLanding() {
       </div>
 
       <aside className="vocabulary-landing-side" aria-label="Tiến độ và gợi ý học">
-        <section className="vocabulary-landing-continue"><span className="vocabulary-landing-eyebrow">BẮT ĐẦU NHANH</span><h2>Học từ IELTS hôm nay</h2><p>Chọn chủ đề và band gợi ý, sau đó luyện bằng thẻ hoặc bài tập.</p><Link href="/app/vocabulary/study?collection=ielts">Bắt đầu học <ArrowRight size={17} /></Link></section>
-        <section className="vocabulary-landing-progress"><div className="vocabulary-landing-side-heading"><h2>Sổ từ của bạn</h2><Target size={20} /></div><div className="vocabulary-landing-states">{(["learning", "reviewing", "mastered"] as WordState[]).map((state) => <div key={state}><span className={`vocab-state ${state}`}>{wordStateLabels[state]}</span><strong>{ready && reviewsLoaded ? states[state].toLocaleString("vi-VN") : "…"}</strong></div>)}</div><small>{ready ? `${saved.toLocaleString("vi-VN")} từ trong sổ · ${studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")} từ đã học qua.` : "…"} “Đã thuộc” là từ có khoảng ôn từ 21 ngày.</small><Link href="/app/vocabulary/progress">Xem tiến độ <ArrowRight size={16} /></Link></section>
+        <section className="vocabulary-landing-continue"><span className="vocabulary-landing-eyebrow">TRA TỪ</span><h2>Gặp từ lạ?</h2><p>Tra nghĩa, nghe phát âm và lưu vào Sổ từ để ôn.</p><form className="vocabulary-landing-lookup" onSubmit={(event) => { event.preventDefault(); if (lookup.trim()) router.push(`/app/vocabulary/explore?q=${encodeURIComponent(lookup.trim())}`); }}><input value={lookup} onChange={(event) => setLookup(event.target.value)} placeholder="Ví dụ: sustainable" aria-label="Tra từ tiếng Anh" /><button type="submit" disabled={!lookup.trim()}>Tra <ArrowRight size={16} /></button></form></section>
+        <section className="vocabulary-landing-progress"><div className="vocabulary-landing-side-heading"><h2>Sổ từ của bạn</h2><Target size={20} /></div><div className="vocabulary-landing-states">{(["new", "learning", "reviewing", "mastered"] as WordState[]).map((state) => <div key={state}><span className={`vocab-state ${state}`}>{wordStateLabels[state]}</span><strong>{ready && reviewsLoaded ? states[state].toLocaleString("vi-VN") : "…"}</strong></div>)}</div><small>{ready ? `${saved.toLocaleString("vi-VN")} từ trong sổ · ${studiedCount === null ? "…" : studiedCount.toLocaleString("vi-VN")} từ đã học qua.` : "…"} “Đã thuộc” là từ có khoảng ôn từ 21 ngày.</small><Link href="/app/vocabulary/progress">Xem tiến độ <ArrowRight size={16} /></Link></section>
         <section className="vocabulary-landing-suggestion"><span className="vocabulary-landing-eyebrow">GỢI Ý HÔM NAY <Sparkles size={15} /></span><h2>Thử học qua nghe</h2><p>Chọn một trong 35 chủ đề của bộ IELTS Listening và luyện với 1.200 từ.</p><Link href="/app/vocabulary/listening"><Headphones size={18} /> Học IELTS Listening <ArrowRight size={16} /></Link></section>
         <section className="vocabulary-landing-side-actions"><h2>Luyện theo cách của bạn</h2><Link href="/app/vocabulary/study?collection=ielts&mode=cards"><Layers3 size={18} /> Thẻ lật <ArrowRight size={16} /></Link><Link href="/app/vocabulary/study?collection=ielts&mode=choice"><CheckCircle2 size={18} /> Trắc nghiệm <ArrowRight size={16} /></Link><Link href="/app/vocabulary/review"><RotateCcw size={18} /> Ôn tập <ArrowRight size={16} /></Link></section>
       </aside>
     </div>
     <p className="vocabulary-landing-note">Band trong bộ IELTS là gợi ý học tập ước lượng, không phải band chính thức của từng từ.</p>
-  </main>;
+  </div>;
 }

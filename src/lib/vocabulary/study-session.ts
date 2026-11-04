@@ -2,7 +2,7 @@ import type { ReviewGrade, WordReview } from "@/lib/news/review";
 
 /** One step of a Learn session: see the word, recognise it among options, then recall and type it. */
 export type LearnStage = "intro" | "choice" | "type";
-export type LearnItem = { id: string; stage: LearnStage };
+export type LearnItem = { id: string; stage: LearnStage; retry?: boolean };
 const stages: LearnStage[] = ["intro", "choice", "type"];
 
 /** Words are taught in small groups so each one comes back while it is still fresh. */
@@ -19,7 +19,21 @@ export function buildLearnQueue(ids: string[], groupSize = 5): LearnItem[] {
 export function requeue(queue: LearnItem[], item: LearnItem, gap = 3): LearnItem[] {
   const rest = queue.slice(1);
   const at = Math.min(gap, rest.length);
-  return [...rest.slice(0, at), item, ...rest.slice(at)];
+  return [...rest.slice(0, at), { ...item, retry: true }, ...rest.slice(at)];
+}
+
+/** Share of the session's steps done: a step still waiting in the queue (including a retry) is not done. */
+export function learnProgress(queue: LearnItem[], words: number) {
+  const total = words * stages.length;
+  return total ? (total - new Set(queue.map((item) => `${item.id}:${item.stage}`)).size) / total : 0;
+}
+
+/** Spelling variants written as one headword, like "a.m./A.M./am/AM", split into separate forms.
+ * Only splits when every part has the same letters, so "and/or" stays one word. */
+export function headwordForms(headword: string) {
+  const parts = headword.split("/").map((part) => part.trim()).filter(Boolean);
+  const letters = (value: string) => value.toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
+  return parts.length > 1 && parts.every((part) => letters(part) === letters(parts[0])) ? parts : [headword.trim()];
 }
 
 /** How a whole Learn session went for one word, as the first FSRS grade. */
@@ -46,10 +60,10 @@ function distance(a: string, b: string) {
 /** Typed answers forgive case, punctuation and, for longer words, a single typo. */
 export function checkTyped(typed: string, expected: string): "exact" | "close" | "wrong" {
   const given = normalizeAnswer(typed);
-  const target = normalizeAnswer(expected);
   if (!given) return "wrong";
-  if (given === target) return "exact";
-  return target.length >= 5 && distance(given, target) <= 1 ? "close" : "wrong";
+  const targets = headwordForms(expected).map(normalizeAnswer);
+  if (targets.includes(given)) return "exact";
+  return targets.some((target) => target.length >= 5 && distance(given, target) <= 1) ? "close" : "wrong";
 }
 
 /** Short Vietnamese label for when a card comes back, e.g. "6 phút" or "4 ngày". */
@@ -94,7 +108,13 @@ export function buildTest<T extends { id: string; title: string; meaningVi: stri
   const words = mix(pool.filter((entry) => entry.meaningVi.trim())).slice(0, count);
   const kinds: TestKind[] = ["meaning", "word", "type", "truefalse"];
   return words.map((entry, index) => {
-    const others = mix(pool.filter((other) => other.id !== entry.id && other.meaningVi !== entry.meaningVi));
+    // Distractors never repeat a meaning or a word, so two options can never read the same.
+    const seenMeanings = new Set([entry.meaningVi]);
+    const seenTitles = new Set([entry.title.toLowerCase()]);
+    const others = mix(pool.filter((other) => other.id !== entry.id)).filter((other) => {
+      if (seenMeanings.has(other.meaningVi) || seenTitles.has(other.title.toLowerCase())) return false;
+      seenMeanings.add(other.meaningVi); seenTitles.add(other.title.toLowerCase()); return true;
+    });
     const kind = others.length >= 3 ? kinds[index % kinds.length] : "type";
     if (kind === "meaning") return { entry, kind, answer: entry.meaningVi, options: mix([entry.meaningVi, ...others.slice(0, 3).map((other) => other.meaningVi)]) };
     if (kind === "word") return { entry, kind, answer: entry.title, options: mix([entry.title, ...others.slice(0, 3).map((other) => other.title)]) };

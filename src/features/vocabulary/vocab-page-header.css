@@ -17,6 +17,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  min-height: 36px;
   color: #0b8f98;
   font-size: 14px;
   font-weight: 800;
