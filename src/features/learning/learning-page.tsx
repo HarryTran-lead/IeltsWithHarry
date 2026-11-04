@@ -75,8 +75,6 @@ const modules = [
   },
 ];
 
-const stageOffsets = [42, 55, 50, 38];
-
 function PageIntro({
   eyebrow,
   title,
@@ -118,8 +116,17 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   // Practised means at least one answer was checked; opening a lesson is not progress.
   const practiced = stageLessons.filter((lesson) => (results[lesson.slug]?.checked ?? 0) > 0).length;
   const activeStage = stages.find((stage) => stage.id === activeStageId);
+  const currentIndex = stages.findIndex((stage) => stage.id === activeStageId);
+  const trackRef = useRef<HTMLOListElement>(null);
+  // On narrow screens the track scrolls sideways; start it with the current stage in view.
+  useEffect(() => {
+    const track = trackRef.current;
+    const stop = track?.querySelector<HTMLElement>(".is-current");
+    if (!track || !stop || track.scrollWidth <= track.clientWidth) return;
+    track.scrollLeft = stop.offsetLeft - (track.clientWidth - stop.offsetWidth) / 2;
+  }, [activeStageId]);
   return (
-    <div className="content-page learn-overview">
+    <div className="content-page learn-overview stagger">
       {selected ? <header className="learn-stage-heading learn-stage-tools">
         <Link href="/app/learn" aria-label="Toàn bộ lộ trình">← Lộ trình</Link>
         <div><span className="eyebrow">CHẶNG {stages.indexOf(selected) + 1} · {selected.range}</span><h1>{selected.name}</h1></div>
@@ -136,25 +143,34 @@ function LearnOverview({ stageId }: { stageId?: string }) {
       </section>}
       {selected && <StageLessons stageId={selected.id} {...published} />}
       {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}
-      {!selected && <section className="card section-card">
+      {!selected && <section className="card section-card learn-track-card">
         <div className="section-head">
           <h2>Chọn chặng tự học</h2>
           <span>Vào từng chặng để xem unit, lọc kỹ năng và tiếp tục bài đang học. Mốc band là định hướng nội bộ.</span>
         </div>
-        <div className="learn-stage-path">{stages.map((stage, index) => {
+        <ol className="learn-track" ref={trackRef} aria-label="Lộ trình các chặng">{stages.map((stage, index) => {
           const courseList = published.courses.filter((course) => course.stage_id === stage.id && (stage.id !== "ielts-builder" || course.slug === "english-skill-lab-book-2"));
           const lessonTotal = courseList.reduce((sum, course) => sum + course.units.reduce((count, unit) => count + unit.lessons.length, 0), 0);
           const openedCount = courseList.flatMap((course) => course.units.flatMap((unit) => unit.lessons)).filter((lesson) => visited.has(`/app/lesson/${lesson.slug}`) || submitted.has(lesson.slug)).length;
           const locked = !learnStageAvailable(stage.id);
-          const x = stageOffsets[index % stageOffsets.length];
-          const previousX = stageOffsets[(index + stageOffsets.length - 1) % stageOffsets.length];
-          const side = x >= 50 ? "left" : "right";
-          const node = <><span className="learn-stage-path-node">{locked ? <LockKeyhole size={27} /> : index + 1}</span><span className="learn-stage-path-label"><small>CHẶNG {index + 1} · {stage.range}</small><strong>{stage.name}</strong><em>{locked ? "Sắp mở" : lessonTotal ? `${openedCount}/${lessonTotal} bài đã mở` : "Khám phá chặng học"}</em></span></>;
-          return <div key={stage.id} className={`learn-stage-step ${locked ? "is-locked" : openedCount ? "is-started" : ""} label-${side}`} style={{ "--stage-x": `${x}%` } as CSSProperties}>
-            {index > 0 && <svg className="learn-stage-connector" viewBox="0 0 100 126" preserveAspectRatio="none" aria-hidden="true"><path d={`M ${previousX} 0 C ${previousX} 52, ${x} 74, ${x} 126`} fill="none" vectorEffect="non-scaling-stroke" /></svg>}
-            {locked ? <div className="learn-stage-path-link" aria-disabled="true">{node}</div> : <Link href={`/app/learn/${stage.id}`} className="learn-stage-path-link" aria-label={`${stage.name}, ${stage.range}, ${openedCount} trên ${lessonTotal} bài đã mở`}>{node}</Link>}
-          </div>;
-        })}</div>
+          const current = !locked && stage.id === activeStageId;
+          const done = !locked && !current && lessonTotal > 0 && openedCount >= lessonTotal;
+          // The connector fills only between open stages the learner has already reached.
+          const reached = index > 0 && !locked && learnStageAvailable(stages[index - 1].id) && index <= currentIndex;
+          const state = locked ? "is-locked" : current ? "is-current" : done ? "is-done" : "is-open";
+          const body = <>
+            <span className="learn-track-node">{locked ? <LockKeyhole size={22} /> : done ? <Check size={26} strokeWidth={3} /> : index + 1}</span>
+            <span className="learn-track-copy">
+              <small>CHẶNG {index + 1} · {stage.range}</small>
+              <strong>{stage.name}</strong>
+              <em>{locked ? "Sắp mở" : lessonTotal ? `${openedCount}/${lessonTotal} bài đã mở` : "Khám phá chặng học"}</em>
+              {current && <span className="learn-track-badge">Đang học</span>}
+            </span>
+          </>;
+          return <li key={stage.id} className={`learn-track-stop ${state}${reached ? " is-reached" : ""}`} style={{ "--i": index, "--ring": `${lessonTotal ? Math.round(openedCount / lessonTotal * 100) : 0}%` } as CSSProperties} aria-current={current ? "step" : undefined}>
+            {locked ? <div className="learn-track-link" aria-disabled="true">{body}</div> : <Link href={`/app/learn/${stage.id}`} className="learn-track-link" aria-label={`${stage.name}, ${stage.range}, ${openedCount} trên ${lessonTotal} bài đã mở`}>{body}</Link>}
+          </li>;
+        })}</ol>
       </section>}
       <section className="card section-card">
         <div className="section-head">

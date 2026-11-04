@@ -16,24 +16,68 @@
 .learn-stage-menu a { display: flex; align-items: center; gap: 10px; padding: 9px 11px; border-radius: 9px; color: var(--navy); text-decoration: none; font-size: 13px; }
 .learn-stage-menu a:hover, .learn-stage-menu a[aria-current="page"] { background: #e7f8f6; }
 .learn-stage-menu b { color: #07898c; min-width: 62px; }
-.learn-stage-path { max-width: 720px; margin: 8px auto 20px; padding: 4px 10px 24px; border-radius: 22px; background: linear-gradient(#f8fcfa,#fff); }
-.learn-stage-step { position: relative; height: 126px; }
-.learn-stage-connector { position: absolute; top: -63px; left: 0; width: 100%; height: 126px; pointer-events: none; }
-.learn-stage-connector path { stroke: #d7e6e1; stroke-width: 10; stroke-linecap: round; }
-.learn-stage-path-link { position: absolute; inset: 0; display: block; color: inherit; text-decoration: none; }
-a.learn-stage-path-link:focus-visible { outline: 3px solid #139599; outline-offset: -3px; border-radius: 14px; }
-.learn-stage-path-node { position: absolute; top: 25px; left: var(--stage-x); display: grid; width: 76px; height: 76px; place-items: center; transform: translateX(-50%); border: 5px solid #fff; border-radius: 50%; background: #18a49a; box-shadow: 0 7px 0 #0c7772,0 12px 22px #173e4d22; color: white; font-size: 25px; font-weight: 1000; transition: transform .15s; }
-a.learn-stage-path-link:hover .learn-stage-path-node { transform: translateX(-50%) translateY(-4px); }
-.learn-stage-step.is-locked .learn-stage-path-node { background: #b7c8c8; box-shadow: 0 7px 0 #95a9aa; }
-.learn-stage-step.is-started .learn-stage-path-node { background: #f1b648; box-shadow: 0 7px 0 #bf8727; }
-.learn-stage-path-label { position: absolute; top: 18px; display: grid; align-content: center; gap: 4px; width: min(245px,calc(45% - 24px)); min-height: 90px; padding: 10px 13px; border: 1px solid #dde9e6; border-radius: 15px; background: white; box-shadow: 0 5px 15px #173b4b0c; }
-.learn-stage-step.label-right .learn-stage-path-label { left: calc(var(--stage-x) + 54px); }
-.learn-stage-step.label-left .learn-stage-path-label { right: calc(100% - var(--stage-x) + 54px); text-align: right; }
-.learn-stage-path-label small { color: #11868a; font-size: 10px; font-weight: 900; }
-.learn-stage-path-label strong { color: #173d51; font-size: 17px; line-height: 1.2; }
-.learn-stage-path-label em { color: #6a828a; font-size: 11px; font-style: normal; }
-.learn-stage-step.is-locked .learn-stage-path-label { background: #f7f9f8; }
-@media(max-width:680px) { .learn-stage-path { padding-inline: 0; } .learn-stage-path-node { width: 64px; height: 64px; top: 31px; font-size: 20px; } .learn-stage-path-label { padding: 8px; } .learn-stage-step.label-right .learn-stage-path-label { left: calc(var(--stage-x) + 43px); } .learn-stage-step.label-left .learn-stage-path-label { right: calc(100% - var(--stage-x) + 43px); } .learn-stage-path-label strong { font-size: 14px; } }
+/* Stage track: one row of stops joined by a connector; it scrolls sideways when the card is narrow. */
+@property --ring { syntax: "<percentage>"; inherits: true; initial-value: 0%; }
+.learn-track-card { container-type: inline-size; }
+.learn-track { display: grid; grid-template-columns: repeat(7, minmax(124px, 1fr)); margin: 4px 0 0; padding: 16px 10px 14px; list-style: none; border: 1px solid #e3efec; border-radius: 20px; background: linear-gradient(#f4fbf9, #fff 80%); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: #cfe3e0 transparent; }
+/* Stops never animate themselves: a stacking context on a stop would let the next connector paint over its node. */
+.learn-track-stop { position: relative; min-width: 0; scroll-snap-align: center; }
+.learn-track-stop + .learn-track-stop::before, .learn-track-stop.is-reached::after { content: ""; position: absolute; top: 47px; left: -50%; width: 100%; height: 6px; border-radius: 99px; }
+.learn-track-stop::before, .learn-track-link { animation: rise-in .6s var(--ease-out) backwards; animation-delay: calc(var(--i) * 70ms + 120ms); }
+.learn-track-stop::before { animation-name: fade-in; }
+.learn-track-stop + .learn-track-stop::before { background: #dce9e6; }
+.learn-track-stop.is-locked::before, .learn-track-stop.is-locked + .learn-track-stop::before { background: repeating-linear-gradient(90deg, #d2dfdc 0 9px, transparent 9px 17px); }
+.learn-track-stop.is-reached::after { background: linear-gradient(90deg, #2fb889, var(--teal)); transform-origin: left; animation: track-fill .5s var(--ease-out) backwards; animation-delay: calc(var(--i) * 90ms + 420ms); }
+.learn-track-link { position: relative; z-index: 1; display: grid; justify-items: center; align-content: start; gap: 9px; height: 100%; padding: 0 5px; border-radius: 16px; color: inherit; text-align: center; text-decoration: none; }
+a.learn-track-link:focus-visible { outline: 3px solid #139599; outline-offset: -2px; }
+.learn-track-stop.is-locked .learn-track-link { cursor: default; }
+.learn-track-node { position: relative; display: grid; place-items: center; width: 62px; height: 62px; margin-top: 19px; border: 4px solid #fff; border-radius: 50%; background: linear-gradient(160deg, #22b5a9, #12938d); box-shadow: 0 6px 0 #0c7772, 0 12px 20px #173e4d22; color: #fff; font: 800 23px/1 var(--font-display); transition: translate .4s var(--ease-spring), box-shadow .3s var(--ease-out); }
+.learn-track-stop.is-locked .learn-track-node { background: linear-gradient(160deg, #cbd8d8, #b6c6c7); box-shadow: 0 6px 0 #9fb1b2, 0 10px 16px #173e4d14; }
+.learn-track-stop.is-done .learn-track-node { background: linear-gradient(160deg, #3cc495, #22a57c); box-shadow: 0 6px 0 #16805f, 0 12px 20px #173e4d22; }
+.learn-track-stop.is-current .learn-track-node { width: 80px; height: 80px; margin-top: 10px; font-size: 30px; background: linear-gradient(160deg, #f8cc63, #eca63a); box-shadow: 0 7px 0 #bf8727, 0 14px 26px #bf872740; animation: track-glow 2.6s ease-out 1.4s infinite; }
+/* The ring around the current stage shows how many of its lessons are opened. */
+.learn-track-stop.is-current .learn-track-node::before { content: ""; position: absolute; inset: -11px; border-radius: 50%; background: conic-gradient(var(--teal) var(--ring), #e3eeeb 0); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px)); mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px)); animation: ring-fill 1.4s var(--ease-out) .6s backwards; }
+a.learn-track-link:hover .learn-track-node { translate: 0 -4px; }
+a.learn-track-link:active .learn-track-node { translate: 0 1px; }
+.learn-track-copy { display: grid; justify-items: center; gap: 3px; width: 100%; max-width: 172px; padding: 8px 8px 10px; border: 1px solid transparent; border-radius: 14px; transition: translate .4s var(--ease-spring), background-color .3s, border-color .3s, box-shadow .3s; }
+.learn-track-copy small { color: #11868a; font-size: 10px; font-weight: 900; letter-spacing: .04em; white-space: nowrap; }
+.learn-track-copy strong { color: var(--navy); font: 800 16px/1.2 var(--font-display); }
+.learn-track-copy em { color: #6a828a; font-size: 11.5px; font-style: normal; }
+a.learn-track-link:hover .learn-track-copy { translate: 0 -2px; border-color: #cdebe6; background: #fff; box-shadow: 0 10px 22px -16px #173e4d55; }
+.learn-track-stop.is-locked .learn-track-copy small { color: #86a0a3; }
+.learn-track-stop.is-locked .learn-track-copy strong { color: #647b86; }
+.learn-track-stop.is-current .learn-track-copy, .learn-track-stop.is-current a.learn-track-link:hover .learn-track-copy { border-color: #f1d8a4; background: linear-gradient(#fff9ec, #fff); box-shadow: 0 12px 26px -16px #bf872788; }
+.learn-track-stop.is-current .learn-track-copy em { color: #94650f; font-weight: 700; }
+.learn-track-badge { margin-top: 3px; padding: 2px 9px; border-radius: 99px; background: #f1b648; color: #5a3a04; font-size: 10.5px; font-weight: 800; }
+@container (max-width: 940px) { .learn-track { -webkit-mask: linear-gradient(90deg, transparent, #000 18px, #000 calc(100% - 18px), transparent); mask: linear-gradient(90deg, transparent, #000 18px, #000 calc(100% - 18px), transparent); padding-inline: 18px; } }
+/* Phones: the shell gives 12px of gutter, the overview adds 4px to reach 16px. */
+@media (max-width: 520px) { .learn-overview { padding-inline: 4px; } .learn-track { grid-template-columns: repeat(7, 116px); } .learn-track-copy strong { font-size: 14.5px; } }
+@keyframes track-fill { from { scale: 0 1; } }
+@keyframes ring-fill { from { --ring: 0%; } }
+@keyframes track-glow {
+  0% { box-shadow: 0 7px 0 #bf8727, 0 14px 26px #bf872740, 0 0 0 0 #f1b64880; }
+  70%, 100% { box-shadow: 0 7px 0 #bf8727, 0 14px 26px #bf872740, 0 0 0 18px #f1b64800; }
+}
+
+/* Overview polish: a slowly drifting glow in the mission banner, a filling progress bar and livelier course tiles. */
+.learn-overview .learn-mission { position: relative; isolation: isolate; overflow: hidden; }
+.learn-overview .learn-mission::before, .learn-overview .learn-mission::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; }
+.learn-overview .learn-mission::before { top: -60%; left: -8%; width: 46%; aspect-ratio: 1; background: radial-gradient(closest-side, #b9efe4b0, transparent); animation: mission-drift 16s ease-in-out infinite alternate; }
+.learn-overview .learn-mission::after { right: 18%; bottom: -80%; width: 34%; aspect-ratio: 1; background: radial-gradient(closest-side, #ffe2a880, transparent); animation: mission-drift 19s ease-in-out -6s infinite alternate-reverse; }
+.learn-mission .button svg { transition: translate .35s var(--ease-spring); }
+.learn-mission .button:hover svg { translate: 3px 0; }
+.learn-mission-progress .study-map-bar i { animation: bar-fill 1.2s var(--ease-out) .4s backwards; }
+.learn-overview .open-course:hover { border-color: #a9ded9; }
+.learn-overview .open-course > svg { transition: translate .35s var(--ease-spring), color .3s; }
+.learn-overview .open-course:hover > svg { translate: 4px -50%; color: var(--teal-strong); }
+@keyframes mission-drift { to { translate: 28% 16%; scale: 1.15; } }
+@keyframes bar-fill { from { width: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .learn-track-link { animation-name: fade-in; }
+  .learn-track-stop.is-reached::after, .learn-track-stop.is-current .learn-track-node, .learn-track-stop.is-current .learn-track-node::before,
+  .learn-overview .learn-mission::before, .learn-overview .learn-mission::after, .learn-mission-progress .study-map-bar i { animation: none; }
+  a.learn-track-link:hover .learn-track-node, a.learn-track-link:hover .learn-track-copy, .learn-mission .button:hover svg, .learn-overview .open-course:hover > svg { translate: none; }
+}
 
 /* A single lesson now has three clear screens instead of several stacked cards. */
 .package-lesson-page { max-width: 1380px; }
