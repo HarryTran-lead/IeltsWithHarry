@@ -107,11 +107,13 @@ async function main() {
   }
   const active = row;
   if (active.payload.quotaDay !== today()) { active.payload.quotaDay = today(); active.payload.longRequestsUsed = 0; active.payload.lastLongRequestAt = undefined; await save(client, active); }
+  let lastTransientFailure = "";
   try {
     await materialize(client, active);
     let kind = nextMissingPiece(active.payload.pieces);
     while (kind) {
       const chosen: FactoryKind = kind;
+      lastTransientFailure = "";
       const dayNumber = Math.floor(new Date(`${active.payload.setId.slice(4)}T00:00:00Z`).getTime() / 86_400_000);
       const { data: recent } = await client.from("ielts_exams").select("title").eq("source_id", "ai-factory").eq("skill", factoryKinds[chosen].skill).order("created_at", { ascending: false }).limit(30);
       const seeds = topicSeeds[chosen];
@@ -124,8 +126,9 @@ async function main() {
           await pause(Math.max(0, 13_000 - (Date.now() - last)));
           active.payload.longRequestsUsed += 1; active.payload.lastLongRequestAt = new Date().toISOString(); await save(client, active);
         },
-      }), pause, (attempt, delay, failure) => {
-        console.warn(`${active.payload.setId} ${chosen}: ${failure.message}; retrying this piece (${attempt}/2) in ${delay / 1000}s`);
+      }), pause, chosen.startsWith("listening") || chosen.startsWith("reading") ? 19 : 5, (attempt, delay, failure) => {
+        lastTransientFailure = failure.message;
+        console.warn(`${active.payload.setId} ${chosen}: ${failure.message}; retrying this piece (continuation ${attempt}) in ${delay / 1000}s`);
       });
       if (draft.warnings.length) throw new Error(`${chosen} failed format gate: ${draft.warnings.join("; ").slice(0, 800)}`);
       active.payload.pieces[chosen] = draft; await save(client, active);
@@ -137,7 +140,7 @@ async function main() {
     console.log(`Completed ${active.payload.setId}; long model requests today: ${active.payload.longRequestsUsed}/20`);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    await save(client, active, { error: message.slice(0, 1000) });
+    await save(client, active, { error: `${message}${lastTransientFailure && lastTransientFailure !== message ? `; last model error: ${lastTransientFailure}` : ""}`.slice(0, 1000) });
     if (/daily request budget|daily quota exhausted|timeout/i.test(message)) { console.log(`${active.payload.setId} paused: ${message}`); return; }
     // A persistent server error needs a red workflow so a stalled set is visible.
     throw error;

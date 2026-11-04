@@ -26,6 +26,7 @@ export function dailySetId(date: Date): string {
 export async function continueTransientDraft<T>(
   create: () => Promise<T>,
   wait: (milliseconds: number) => Promise<void>,
+  maxRestarts: number,
   onRetry?: (attempt: number, milliseconds: number, error: Error) => void,
 ): Promise<T> {
   for (let restart = 0; ; restart += 1) {
@@ -33,8 +34,8 @@ export async function continueTransientDraft<T>(
       return await create();
     } catch (error) {
       const failure = error instanceof Error ? error : new Error(String(error));
-      if (restart >= 2 || !(/model unavailable \(HTTP 50[0234]\)/i.test(failure.message) || failure.name === "TimeoutError")) throw error;
-      const delay = 30_000 * (restart + 1);
+      if (restart >= maxRestarts || !(/model unavailable \(HTTP 50[0234]\)/i.test(failure.message) || failure.name === "TimeoutError")) throw error;
+      const delay = 60_000;
       onRetry?.(restart + 1, delay, failure);
       await wait(delay);
     }

@@ -42,17 +42,19 @@ describe("AI Factory daily set", () => {
   it("continues the same piece after temporary model errors", async () => {
     const create = vi.fn().mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
       .mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
+      .mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
+      .mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
       .mockResolvedValue("finished piece");
     const wait = vi.fn(async () => {});
-    await expect(continueTransientDraft(create, wait)).resolves.toBe("finished piece");
-    expect(create).toHaveBeenCalledTimes(3);
-    expect(wait.mock.calls).toEqual([[30_000], [60_000]]);
+    await expect(continueTransientDraft(create, wait, 19)).resolves.toBe("finished piece");
+    expect(create).toHaveBeenCalledTimes(5);
+    expect(wait.mock.calls).toEqual(Array(4).fill([60_000]));
   });
 
   it("does not repeatedly call the model after quota exhaustion", async () => {
     const create = vi.fn().mockRejectedValue(new Error("AI Factory daily quota exhausted (HTTP 429)"));
     const wait = vi.fn(async () => {});
-    await expect(continueTransientDraft(create, wait)).rejects.toThrow("daily quota exhausted");
+    await expect(continueTransientDraft(create, wait, 19)).rejects.toThrow("daily quota exhausted");
     expect(create).toHaveBeenCalledTimes(1);
     expect(wait).not.toHaveBeenCalled();
   });
