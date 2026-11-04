@@ -167,6 +167,19 @@
 .b2-notes article { display: grid; gap: 4px; padding: 14px; border: 2px dashed var(--b2); border-radius: 16px; background: #fff; }
 .b2-notes small { color: var(--b2-dark); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
 .b2-notes p { margin: 4px 0 0; color: var(--b2-muted); font-size: 14px; line-height: 1.5; }
+/* C05 and Task 1 paragraph frames, and C08 practice cards. */
+.b2-template { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.b2-template li { display: grid; gap: 4px; padding: 10px 12px; border-left: 4px solid var(--b2); border-radius: 10px; background: #f8fafb; }
+.b2-template small { color: var(--b2-dark); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
+.b2-template span { color: var(--b2-muted); font-size: 14px; line-height: 1.5; }
+.b2-template code { color: var(--b2-text); font: inherit; font-size: 15px; line-height: 1.55; white-space: pre-wrap; }
+.b2-template-when { margin: 8px 6px 0; color: var(--b2-muted); font-size: 14px; }
+.b2-practice-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.b2-practice-card { display: grid; align-content: start; gap: 8px; padding: 14px; border: 2px solid var(--b2-line); border-bottom-width: 4px; border-radius: 16px; background: #fff; }
+.b2-practice-card.is-open { border-color: var(--b2); }
+.b2-practice-card > small { color: var(--b2-dark); font-size: 12px; font-weight: 900; }
+.b2-practice-card > p { margin: 0; color: var(--b2-muted); font-size: 13px; line-height: 1.5; }
+.b2-practice-card .b2-textarea { margin-top: 0; font-size: 15px; }
 .b2-tip-when { color: #8a6400; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
 .b2-tips li em { color: #5b4a1c; font-size: 14px; }
 .b2-tip-limit { color: #8f5a22; font-size: 13px; }
@@ -361,6 +374,8 @@ body:has(.b2-focus) .notebook-bubble { display: none; }
   body:has(.b2-cta-bar) .notebook-bubble { display: none; }
   .b2-sheet, .b2-cta-bar { bottom: calc(78px + env(safe-area-inset-bottom)); }
   .book2-page { padding-bottom: 150px; }
+  /* A focused answer box scrolls clear of the action bar and the bottom navigation. */
+  .b2-input, .b2-textarea { scroll-margin-bottom: 170px; }
 }
 @media (max-width: 620px) {
   .b2-topbar .b2-sync span { display: none; }
@@ -385,6 +400,10 @@ body:has(.b2-focus) .notebook-bubble { display: none; }
   .b2-sheet-actions { display: grid; grid-template-columns: 1fr; }
   .b2-sheet-actions .b2-btn { width: 100%; }
   .b2-sheet-actions .b2-btn:last-child { order: -1; }
+  /* Before checking, "Để sau" and "Kiểm tra" share one row so the bar stays short and the answer box above it stays visible. */
+  .b2-sheet:not(.is-right, .is-wrong, .is-review) { padding: 10px; }
+  .b2-sheet:not(.is-right, .is-wrong, .is-review) .b2-sheet-actions { grid-template-columns: auto 1fr; }
+  .b2-sheet:not(.is-right, .is-wrong, .is-review) .b2-sheet-actions .b2-btn:last-child { order: 0; min-width: 0; }
   .b2-rating { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .b2-fix { flex-direction: column; }
   .b2-fix-source { min-height: 44px; }

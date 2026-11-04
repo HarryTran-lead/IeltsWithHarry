@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { BookOpenText, Check, Compass, Eye, Lightbulb, ListChecks, PenLine, TriangleAlert, Volume2, X } from "lucide-react";
+import { BookOpenText, Check, Compass, Eye, LayoutTemplate, Lightbulb, ListChecks, PenLine, Repeat, TriangleAlert, Volume2, X } from "lucide-react";
 
 /** The C09 teaching layer, normalised by scripts/build-book-2.py from each lesson's self_study_v3 sidecar. */
 export type Book2Teaching = {
@@ -17,6 +17,8 @@ export type Book2Teaching = {
   vocabulary?: { term: string; pos?: string; meaning?: string; example?: string; example_vi?: string }[];
   guided?: { title?: string; do?: string; hint?: string; pass?: string; feedback?: string; model?: string }[];
   note_map?: { label?: string; note?: string; sentence?: string }[];
+  templates?: { label?: string; when?: string; parts: { part?: string; guide?: string; frame?: string }[] }[];
+  cards?: { term?: string; front?: string; task?: string; model?: string }[];
   self_check?: string[];
   coach?: { trigger?: string; stage?: string; message?: string; example?: string }[];
   review_days?: number[];
@@ -27,7 +29,7 @@ export type CoachKind = "help" | "vocab" | "hint" | "wrong" | "review" | "praise
 
 /** Groups the package's coach triggers into the moments the lesson knows about. */
 export function teachingCoach(teaching: Book2Teaching | undefined, kind: CoachKind) {
-  const of = (trigger = "") => /vocab/.test(trigger) ? "vocab" : /guided_hint|requests_guided/.test(trigger) ? "hint"
+  const of = (trigger = "") => /vocab/.test(trigger) ? "vocab" : /guided_hint|requests_guided|blank_notes|short_first|needs_concrete|too_personal|unsupported|on_request/.test(trigger) ? "hint"
     : /correct_twice/.test(trigger) ? "praise"
       : /wrong|error|mistake|distractor|cannot_locate|missing|wrong_visual/.test(trigger) ? "wrong"
         : /submission|review|after|completes|revision/.test(trigger) ? "review" : "help";
@@ -70,6 +72,20 @@ function TermCard({ item, speak }: { item: NonNullable<Book2Teaching["vocabulary
   </div>;
 }
 
+/** C08 practice card: write your own sentence from the Vietnamese, then compare it with the example. */
+function PracticeCard({ card, speak }: { card: NonNullable<Book2Teaching["cards"]>[number]; speak: Speak }) {
+  const [draft, setDraft] = useState("");
+  const [compared, setCompared] = useState(false);
+  return <article className={`b2-practice-card ${compared ? "is-open" : ""}`}>
+    <small>{card.term}</small>
+    <strong>{card.front}</strong>
+    {card.task && <p>{card.task}</p>}
+    <textarea className="b2-textarea" rows={2} value={draft} onChange={(event) => setDraft(event.target.value)} placeholder="Câu tiếng Anh của bạn…" aria-label={`Câu của bạn với ${card.term}`} />
+    {!compared ? <button type="button" className="b2-btn b2-btn-ghost" disabled={!draft.trim()} onClick={() => setCompared(true)}>So với câu ví dụ</button>
+      : <div className="b2-guided-feedback"><p><b>Ví dụ:</b> {card.model} <button type="button" className="b2-say" onClick={() => speak(card.model ?? "")} aria-label="Nghe câu ví dụ"><Volume2 size={14} /></button></p><p>Không cần giống từng chữ: câu của bạn đã dùng “{card.term}” đúng nghĩa và đúng cấu trúc chưa?</p></div>}
+  </article>;
+}
+
 /** Learn-step blocks for a lesson that has the C09 teaching layer. */
 export function TeachingLearn({ teaching, speak, guidedDone, toggleGuided }: { teaching: Book2Teaching; speak: Speak; guidedDone: (index: number) => boolean; toggleGuided: (index: number) => void }) {
   const [shownFeedback, setShownFeedback] = useState<Record<number, boolean>>({});
@@ -95,11 +111,15 @@ export function TeachingLearn({ teaching, speak, guidedDone, toggleGuided }: { t
 
     {teaching.note_map?.length ? <Block icon={PenLine} title="Ghi chú một phút cho Part 2"><div className="b2-notes">{teaching.note_map.map((item, index) => <article key={index}><small>{item.label}</small><strong>{item.note}</strong>{item.sentence && <p>{item.sentence}</p>}</article>)}</div></Block> : null}
 
+    {teaching.templates?.length ? <Block icon={LayoutTemplate} title="Khung bài viết" note="Chọn một khung rồi điền ý của bạn">{teaching.templates.map((template, index) => <details className="b2-deck" key={index} open={index === 0}><summary>{template.label || `Khung ${index + 1}`}</summary>{template.when && <p className="b2-template-when">{template.when}</p>}<ol className="b2-template">{template.parts.map((part, partIndex) => <li key={partIndex}>{part.part && <small>{part.part}</small>}{part.guide && <span>{part.guide}</span>}{part.frame && <code>{part.frame}</code>}</li>)}</ol></details>)}</Block> : null}
+
     {teaching.tips?.length ? <Block icon={Lightbulb} title="Mẹo làm bài"><ol className="b2-tips">{teaching.tips.map((item, index) => <li key={index}>{item.when && <small className="b2-tip-when">{item.when}</small>}<strong>{item.do}</strong>{item.why && <span>{item.why}</span>}{item.example && <em>{item.example}</em>}{item.limit && <span className="b2-tip-limit">Không dùng khi: {item.limit}</span>}</li>)}</ol></Block> : null}
 
     {teaching.mistakes?.length ? <Block icon={TriangleAlert} title="Lỗi thường gặp"><div className="b2-mistakes">{teaching.mistakes.map((item, index) => <article key={index}>{item.wrong && <p className="b2-wrong"><X size={16} /> {item.wrong}</p>}{item.right && <p className="b2-right"><Check size={16} /> {item.right}</p>}{item.why && <small>{item.why}</small>}{item.check && <small className="b2-mistake-check">Tự kiểm tra: {item.check}</small>}</article>)}</div></Block> : null}
 
     {teaching.vocabulary?.length ? <Block icon={Volume2} title="Từ và cụm từ cần dùng" note={`${teaching.vocabulary.length} thẻ · bấm để lật`}>{vocabularyPages.map((items, page) => <details className="b2-deck" key={page} open={page === 0}><summary>Bộ thẻ {page + 1} · {items.length} từ</summary><div className="b2-words">{items.map((item) => <TermCard key={item.term} item={item} speak={speak} />)}</div></details>)}</Block> : null}
+
+    {teaching.cards?.length ? <Block icon={Repeat} title="Tự luyện dùng từ" note={`${teaching.cards.length} thẻ · viết câu rồi so sánh`}><div className="b2-practice-cards">{teaching.cards.map((card, index) => <PracticeCard key={index} card={card} speak={speak} />)}</div></Block> : null}
 
     {teaching.guided?.length ? <Block icon={ListChecks} title="Luyện có hướng dẫn" note={`${teaching.guided.filter((_, index) => guidedDone(index)).length}/${teaching.guided.length} bước`}>
       <ol className="b2-guided">{teaching.guided.map((item, index) => <li key={index} className={guidedDone(index) ? "is-done" : ""}>
