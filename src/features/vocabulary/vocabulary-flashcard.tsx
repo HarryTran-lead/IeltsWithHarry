@@ -16,21 +16,23 @@ type FlashcardWord = {
   source_example_vi: string;
 };
 
-export function VocabularyFlashcard({ word, collection, flipped, status, index, total, busy, onFlip, onMark, onMove }: {
+export function VocabularyFlashcard({ word, collection, flipped, onFlip, controls }: {
   word: FlashcardWord;
   collection: "cefr" | "ielts";
   flipped: boolean;
-  status?: CardStatus;
-  index: number;
-  total: number;
-  busy: boolean;
   onFlip: () => void;
-  onMark: (status: CardStatus) => void;
-  onMove: (direction: -1 | 1) => void;
+  controls?: {
+    status?: CardStatus;
+    index: number;
+    total: number;
+    busy: boolean;
+    onMark: (status: CardStatus) => void;
+    onMove: (direction: -1 | 1) => void;
+  };
 }) {
   const definition = word.meaning_vi && word.source_definition_en !== word.meaning_vi ? word.source_definition_en : "";
   return <>
-    <button type="button" className={`vocab-flip-card ${flipped ? "is-flipped" : ""}`} onClick={onFlip} disabled={busy}
+    <button type="button" className={`vocab-flip-card ${flipped ? "is-flipped" : ""}`} onClick={onFlip} disabled={controls?.busy}
       aria-label={flipped ? `Lật về mặt trước: ${word.headword}` : `Lật thẻ ${word.headword} để xem nghĩa và ví dụ`}
       aria-pressed={flipped}>
       <span className="vocab-flip-card-inner">
@@ -57,14 +59,14 @@ export function VocabularyFlashcard({ word, collection, flipped, status, index, 
         </span>
       </span>
     </button>
-    <div className="vocab-flip-card-actions">
-      <button type="button" className="vocab-study-arrow" onClick={() => onMove(-1)} disabled={busy || index === 0} aria-label="Thẻ trước" title="Thẻ trước"><ArrowLeft size={20} /></button>
+    {controls && <div className="vocab-flip-card-actions">
+      <button type="button" className="vocab-study-arrow" onClick={() => controls.onMove(-1)} disabled={controls.busy || controls.index === 0} aria-label="Thẻ trước" title="Thẻ trước"><ArrowLeft size={20} /></button>
       <div className="vocab-flip-card-status" role="group" aria-label="Đánh dấu mức độ thuộc từ">
-        <button type="button" className={status === "learning" ? "is-selected" : ""} aria-pressed={status === "learning"} disabled={busy} onClick={() => onMark("learning")}>Chưa thuộc</button>
-        <button type="button" className={status === "known" ? "is-selected" : ""} aria-pressed={status === "known"} disabled={busy} onClick={() => onMark("known")}>Đã thuộc</button>
+        <button type="button" className={controls.status === "learning" ? "is-selected" : ""} aria-pressed={controls.status === "learning"} disabled={controls.busy} onClick={() => controls.onMark("learning")}>Chưa thuộc</button>
+        <button type="button" className={controls.status === "known" ? "is-selected" : ""} aria-pressed={controls.status === "known"} disabled={controls.busy} onClick={() => controls.onMark("known")}>Đã thuộc</button>
       </div>
-      <button type="button" className="vocab-study-arrow" disabled={busy} onClick={() => onMove(1)} aria-label={index + 1 === total ? "Xem kết quả" : "Thẻ sau"} title={index + 1 === total ? "Xem kết quả" : "Thẻ sau"}><ArrowRight size={20} /></button>
-    </div>
-    {busy && <p className="vocab-flip-card-saving" role="status">Đang lưu trạng thái thẻ…</p>}
+      <button type="button" className="vocab-study-arrow" disabled={controls.busy} onClick={() => controls.onMove(1)} aria-label={controls.index + 1 === controls.total ? "Xem kết quả" : "Thẻ sau"} title={controls.index + 1 === controls.total ? "Xem kết quả" : "Thẻ sau"}><ArrowRight size={20} /></button>
+    </div>}
+    {controls?.busy && <p className="vocab-flip-card-saving" role="status">Đang lưu trạng thái thẻ…</p>}
   </>;
 }
