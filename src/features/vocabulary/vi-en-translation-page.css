@@ -104,8 +104,10 @@
 .translation-rating h3 { margin: 0 0 4px; color: #163a55; font-size: 18px; }
 .translation-rating > div > p { margin: 0 0 14px; color: #59778b; font-size: 13px; }
 .translation-rating-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-.translation-rating-options button { min-height: 70px; padding: 10px; border: 1px solid #c9dfe1; border-radius: 10px; background: #fff; color: #214b62; font-family: var(--font-display); text-align: left; cursor: pointer; }
-.translation-rating-options button:hover:not(:disabled), .translation-rating-options .is-selected { border-color: #078f99; background: #e2f5f2; }
+.translation-rating-options button { position: relative; min-height: 70px; padding: 10px; border: 1px solid #c9dfe1; border-radius: 10px; background: #fff; color: #214b62; font-family: var(--font-display); text-align: left; cursor: pointer; }
+.translation-rating-options button:hover:not(:disabled) { border-color: #78b8ba; }
+.translation-rating-options .is-selected { border-color: #078f99; background: #e2f5f2; }
+.translation-rating-options .is-selected::after { content: "✓"; position: absolute; top: 7px; right: 9px; color: #087f63; font-weight: 900; }
 .translation-rating-options button:disabled { cursor: default; }
 .translation-rating-options button strong, .translation-rating-options button small { display: block; }
 .translation-rating-options button strong { font-size: 14px; }
