@@ -83,7 +83,7 @@ export function VocabularyLanding() {
     { title: "Từ vựng IELTS Listening", detail: "1.200 từ · 35 chủ đề", description: "Luyện nghe, chọn nghĩa và chép chính tả.", href: "/app/vocabulary/listening", category: "listening", sticker: "headphones", art: "listening" },
     { title: "Từ vựng IELTS Reading", detail: "607 từ · 11 chủ đề", description: "Học theo câu, ôn SRS và theo lộ trình 84 ngày.", href: "/app/reading/vocabulary", category: "reading", sticker: "book", art: "reading" },
     { title: "Word Families", detail: "300 họ từ", description: "Học noun, verb, adjective và adverb cùng nhau.", href: "/app/vocabulary/word-formation", category: "families", sticker: "tree", art: "families" },
-    { title: "Luyện dịch câu Việt → Anh", detail: "40 chủ đề · Speaking & Writing", description: "Viết câu, xem bản mẫu và tự đánh giá. Câu mới mở sau khi biên tập.", href: "/app/vocabulary/translation", category: "translation", sticker: "bubble", art: "reading" },
+    { title: "Luyện dịch câu Việt → Anh", detail: "40 chủ đề · 145 mốc học", description: "Dịch câu, đối chiếu cách diễn đạt và tự chọn lịch ôn.", href: "/app/vocabulary/translation", category: "translation", sticker: "bubble", art: "reading" },
     { title: "Từ đã lưu", detail: `${ready ? saved.toLocaleString("vi-VN") : "…"} từ của bạn`, description: "Mở Sổ từ: lọc, gắn sao và ôn lại từ đã lưu.", href: "/app/vocabulary/notebook", category: "personal", sticker: "notebook", art: "saved" },
   ];
   const filteredCards = cards.filter((card) => (category === "all" || card.category === category)

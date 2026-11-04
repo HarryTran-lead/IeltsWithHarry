@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { chooseTranslationSession, compareTranslation, matchesCopiedWord, nextTranslationProgress, ratingForComparison, type TranslationExercise } from "./vi-en-translation";
+import { chooseTranslationSession, compareTranslation, matchesCopiedWord, nextTranslationProgress, type TranslationExercise } from "./vi-en-translation";
 
 const entry = (id: string): TranslationExercise => ({
   id, topic: "Cities & Urban Life", mode: "speaking", term: "urbanisation", meaning_vi: "đô thị hóa",
@@ -12,7 +12,7 @@ describe("VI to EN practice", () => {
     expect(chooseTranslationSession([entry("a"), entry("b")], [progress], "new", 10).map((item) => item.id)).toEqual(["b"]);
     expect(chooseTranslationSession([entry("a"), entry("b")], [progress], "due", 10, Date.parse("2026-10-29T00:11:00Z")).map((item) => item.id)).toEqual(["a"]);
   });
-  it("schedules review from the computed rating", () => {
+  it("schedules review from the learner's rating", () => {
     const first = nextTranslationProgress("a", undefined, "good", new Date("2026-10-29T00:00:00Z"));
     expect(first.interval_days).toBe(3);
     expect(first.attempts_count).toBe(1);
@@ -31,10 +31,9 @@ describe("VI to EN practice", () => {
     expect(result.extra).toBe(2);
     expect(result.referenceWords.filter((word) => !word.matched).map((word) => word.word)).toEqual(["in", "local", "areas"]);
   });
-  it("accepts the closest published alternative and assigns a review interval", () => {
+  it("selects the closest published alternative for comparison", () => {
     const result = compareTranslation("Wildlife needs protection", "We must protect wildlife.", ["Wildlife needs protection."]);
     expect(result.accuracy).toBe(100);
     expect(result.reference).toBe("Wildlife needs protection.");
-    expect(ratingForComparison(result)).toBe("easy");
   });
 });

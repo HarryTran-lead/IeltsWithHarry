@@ -8,7 +8,7 @@ import { demoMode } from "@/lib/runtime";
 import sourceTopics from "@/lib/vocabulary/ielts-topics.json";
 import learningTopics from "@/lib/vocabulary/ielts-learning-topics.json";
 import { promptWordHints, type PromptHint } from "@/lib/vocabulary/vi-en-word-hints";
-import { chooseTranslationSession, compareTranslation, matchesCopiedWord, nextTranslationProgress, ratingForComparison, type TranslationExercise, type TranslationProgress, type WordComparison } from "@/lib/vocabulary/vi-en-translation";
+import { chooseTranslationSession, compareTranslation, matchesCopiedWord, nextTranslationProgress, type TranslationExercise, type TranslationProgress, type TranslationRating, type WordComparison } from "@/lib/vocabulary/vi-en-translation";
 import "./vi-en-translation-page.css";
 import { VocabPageHeader } from "./vocab-page-header";
 import { Sticker } from "@/components/stickers/stickers";
@@ -17,6 +17,12 @@ type ModeFilter = "mixed" | "speaking" | "writing";
 type Selection = "new" | "due" | "all";
 type PracticeStage = "copy" | "write" | "result";
 const topics = [...sourceTopics, ...learningTopics].sort((a, b) => a.localeCompare(b));
+const ratingOptions: { value: TranslationRating; label: string; detail: string }[] = [
+  { value: "again", label: "Chưa nhớ", detail: "Ôn lại sau 10 phút" },
+  { value: "hard", label: "Khó", detail: "Ôn lại ngày mai" },
+  { value: "good", label: "Ổn", detail: "Ôn lại sau ít nhất 3 ngày" },
+  { value: "easy", label: "Dễ", detail: "Ôn lại sau ít nhất 7 ngày" },
+];
 
 function VietnamesePrompt({ prompt, hints }: { prompt: string; hints: PromptHint[] }) {
   let cursor = 0;
@@ -53,9 +59,13 @@ export function ViEnTranslationPage() {
   const [answer, setAnswer] = useState("");
   const [copiedWord, setCopiedWord] = useState("");
   const [stage, setStage] = useState<PracticeStage>("copy");
-  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [advancedOpen, setAdvancedOpen] = useState(false);
   const [copyError, setCopyError] = useState("");
   const [comparison, setComparison] = useState<WordComparison | null>(null);
+  const [rated, setRated] = useState<TranslationRating | null>(null);
+  const [attemptSaved, setAttemptSaved] = useState(false);
+  const [pendingRating, setPendingRating] = useState<TranslationRating | null>(null);
+  const [sessionRatings, setSessionRatings] = useState<TranslationRating[]>([]);
   const [hint, setHint] = useState(0);
   const cardRef = useRef<HTMLElement>(null);
   const copyInputRef = useRef<HTMLInputElement>(null);
@@ -117,7 +127,7 @@ export function ViEnTranslationPage() {
       if (!active) return;
       const list = (data ?? []) as TranslationExercise[];
       setExercises(list); setProgress(allProgress);
-      setSessionIds([]); setIndex(0); setAnswer(""); setCopiedWord(""); setStage("copy"); setCopyError(""); setComparison(null); setHint(0);
+      setSessionIds([]); setIndex(0); setAnswer(""); setCopiedWord(""); setStage("copy"); setCopyError(""); setComparison(null); setRated(null); setAttemptSaved(false); setPendingRating(null); setSessionRatings([]); setHint(0);
       if (target?.topic === topic && list.some((item) => item.id === target.id)) {
         setSessionIds([target.id]);
       } else {
@@ -144,6 +154,7 @@ export function ViEnTranslationPage() {
     && (!onlyStudied || !!item.canonical_source_key && studiedKeys.includes(item.canonical_source_key)));
   const studied = filtered.filter((item) => progressById.has(item.id)).length;
   const due = filtered.filter((item) => progressById.has(item.id) && Date.parse(progressById.get(item.id)!.due_at) <= now).length;
+  const available = selection === "new" ? filtered.length - studied : selection === "due" ? due : filtered.length;
   const current = exercises.find((item) => item.id === sessionIds[index]);
   const promptHints = useMemo(() => current ? promptWordHints(current.prompt_vi, [current.reference_en, ...current.alternatives].join(" "), current.term, current.meaning_vi ?? "") : [], [current]);
   const done = sessionIds.length > 0 && index >= sessionIds.length;
@@ -157,14 +168,14 @@ export function ViEnTranslationPage() {
     if (!current) return;
     if (stage === "copy") copyInputRef.current?.focus({ preventScroll: true });
     if (stage === "write") answerInputRef.current?.focus({ preventScroll: true });
-    if (stage === "result" && !saving) nextButtonRef.current?.focus({ preventScroll: true });
-  }, [current, stage, saving]);
+    if (stage === "result" && rated && !saving) nextButtonRef.current?.focus({ preventScroll: true });
+  }, [current, stage, saving, rated]);
 
   function start() {
     const picked = chooseTranslationSession(filtered, progress, selection, size);
     if (!picked.length) { setNotice(selection === "due" ? "Chưa có câu đến hạn ôn trong chủ đề này." : "Chưa có câu phù hợp. Hãy đổi bộ lọc."); return; }
     const ids = picked.map((item) => item.id);
-    setSessionIds(ids); setIndex(0); setAnswer(""); setCopiedWord(""); setStage("copy"); setSettingsOpen(false); setCopyError(""); setComparison(null); setHint(0); setNotice(""); setNow(Date.now());
+    setSessionIds(ids); setIndex(0); setAnswer(""); setCopiedWord(""); setStage("copy"); setCopyError(""); setComparison(null); setRated(null); setAttemptSaved(false); setPendingRating(null); setSessionRatings([]); setHint(0); setNotice(""); setNow(Date.now());
     window.localStorage.setItem(`vi-en-session:${topic}`, JSON.stringify({ ids, index: 0 }));
   }
 
@@ -183,26 +194,36 @@ export function ViEnTranslationPage() {
   async function checkSentence(skipped = false) {
     if (!current || saving || stage !== "write" || (!answer.trim() && !skipped)) return;
     const result = compareTranslation(skipped ? "" : answer, current.reference_en, current.alternatives);
+    if (skipped) setAnswer("");
     setComparison(result); setStage("result");
-    if (!db) return;
+  }
+
+  async function saveRating(rating: TranslationRating) {
+    if (!current || saving || rated || stage !== "result" || (pendingRating && pendingRating !== rating)) return;
+    if (!db) { setRated(rating); setSessionRatings((old) => [...old, rating]); return; }
     setSaving(true); setError("");
     const user = await db.auth.getUser();
     if (!user.data.user) { setError("Bạn cần đăng nhập để lưu tiến độ."); setSaving(false); return; }
-    const attempt = await db.from("user_vi_en_translation_attempts").insert({
-      user_id: user.data.user.id, exercise_id: current.id, submitted_en: skipped ? "" : answer.trim(), viewed_answer: true,
-      self_rating: ratingForComparison(result), source_revision: current.revision,
-    });
-    if (attempt.error) { setError(attempt.error.message); setSaving(false); return; }
-    const next = nextTranslationProgress(current.id, progressById.get(current.id), ratingForComparison(result), new Date(), user.data.user.id);
+    if (!attemptSaved) {
+      const attempt = await db.from("user_vi_en_translation_attempts").insert({
+        user_id: user.data.user.id, exercise_id: current.id, submitted_en: answer.trim(), viewed_answer: true,
+        self_rating: rating, source_revision: current.revision,
+      });
+      if (attempt.error) { setError(attempt.error.message); setSaving(false); return; }
+      setAttemptSaved(true); setPendingRating(rating);
+    }
+    const next = nextTranslationProgress(current.id, progressById.get(current.id), rating, new Date(), user.data.user.id);
     const saved = await db.from("user_vi_en_translation_progress").upsert(next, { onConflict: "user_id,exercise_id" });
     if (saved.error) { setError(`Đã lưu bài làm nhưng chưa cập nhật lịch ôn: ${saved.error.message}`); setSaving(false); return; }
     setProgress((old) => [...old.filter((item) => item.exercise_id !== current.id), next]);
+    setRated(rating); setSessionRatings((old) => [...old, rating]);
     setSaving(false); setNow(Date.parse(next.last_reviewed_at));
   }
 
   function next() {
     const nextIndex = index + 1;
-    setIndex(nextIndex); setAnswer(""); setCopiedWord(""); setStage("copy"); setCopyError(""); setComparison(null); setHint(0);
+    if (!rated || saving) return;
+    setIndex(nextIndex); setAnswer(""); setCopiedWord(""); setStage("copy"); setCopyError(""); setComparison(null); setRated(null); setAttemptSaved(false); setPendingRating(null); setHint(0);
     window.localStorage.setItem(`vi-en-session:${topic}`, JSON.stringify({ ids: sessionIds, index: nextIndex }));
   }
 
@@ -219,33 +240,41 @@ export function ViEnTranslationPage() {
   }
 
   const sessionActive = Boolean(current || done);
+  function leaveSession() {
+    if (((stage === "write" && answer.trim()) || (stage === "result" && !rated)) && !window.confirm("Câu hiện tại chưa được lưu. Bạn muốn chọn bài khác?")) return;
+    window.localStorage.removeItem(`vi-en-session:${topic}`);
+    setSessionIds([]); setIndex(0); setAnswer(""); setCopiedWord(""); setComparison(null); setRated(null); setAttemptSaved(false); setPendingRating(null); setSessionRatings([]); setStage("copy"); setError(""); setNotice("");
+  }
 
   return <main className={"translation-page" + (sessionActive ? " is-active" : "")}>
-    <VocabPageHeader label="Học từ · Chép từ · Viết câu" title={sessionActive ? "Luyện dịch câu Việt → Anh" : <>Viết câu tiếng Anh <em>theo ý của bạn</em></>}
-      description={sessionActive ? undefined : "Chọn bài luyện, chép từ mục tiêu rồi viết câu. Kết quả được chấm theo từng từ."}
-      action={sessionActive && <button type="button" className="translation-settings-toggle" aria-expanded={settingsOpen} onClick={() => setSettingsOpen((open) => !open)}>{settingsOpen ? "Ẩn bộ lọc" : "Đổi bộ lọc"}</button>} />
+    <VocabPageHeader label="Luyện dịch Việt → Anh" title={sessionActive ? "Luyện dịch câu Việt → Anh" : <>Viết câu tiếng Anh <em>theo ý của bạn</em></>}
+      description={sessionActive ? undefined : "Chọn câu, tự dịch, đối chiếu câu mẫu rồi đánh giá để lên lịch ôn phù hợp."}
+      action={sessionActive && <button type="button" className="translation-settings-toggle" onClick={leaveSession}>Chọn bài khác</button>} />
 
-    {(!sessionActive || settingsOpen) && <>
+    {!sessionActive && <>
       <section className="translation-controls" aria-label="Chọn bài luyện dịch">
-        <label>Chủ đề<select value={topic} onChange={(event) => { setLoading(true); setError(""); setMilestone("all"); setTopic(event.target.value); }}>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>
-        <label>Mốc học<select value={milestone} onChange={(event) => setMilestone(event.target.value)}><option value="all">Tất cả mốc</option>{milestones.map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
-        <label>Loại câu<select value={mode} onChange={(event) => { setMode(event.target.value as ModeFilter); setSessionIds([]); window.localStorage.removeItem("vi-en-session:" + topic); }}><option value="mixed">Speaking + Writing</option><option value="speaking">Speaking</option><option value="writing">Writing</option></select></label>
-        <label>Độ khó<select value={difficulty} onChange={(event) => setDifficulty(event.target.value)}><option value="all">Dễ + khó</option><option value="easy">Dễ</option><option value="hard">Khó</option></select></label>
+        <label className="translation-topic-field">Chủ đề<select value={topic} onChange={(event) => { setLoading(true); setError(""); setMilestone("all"); setTopic(event.target.value); }}>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>
         <label>Học / ôn<select value={selection} onChange={(event) => setSelection(event.target.value as Selection)}><option value="new">Câu chưa luyện</option><option value="due">Đến hạn ôn</option><option value="all">Tất cả câu</option></select></label>
         <label>Số câu<select value={size} onChange={(event) => setSize(Number(event.target.value))}><option value={5}>5 câu</option><option value={10}>10 câu</option><option value={20}>20 câu</option></select></label>
-        <label>Tìm từ<input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Từ mục tiêu…" /></label>
-        <button className="translation-primary" type="button" disabled={loading || !exercises.length} onClick={start}>{sessionIds.length ? "Bắt đầu lượt mới" : "Bắt đầu học"} <ArrowRight size={17} /></button>
-        <label className="translation-studied-filter"><input type="checkbox" checked={onlyStudied} onChange={(event) => setOnlyStudied(event.target.checked)} /> Chỉ luyện các từ đã học trong bộ IELTS ({studiedKeys.length})</label>
+        <div className="translation-control-footer"><span><strong>{available}</strong> câu phù hợp</span><button className="translation-primary" type="button" disabled={loading || available === 0} onClick={start}>Bắt đầu luyện <ArrowRight size={17} /></button></div>
+        <button className="translation-advanced-toggle" type="button" aria-expanded={advancedOpen} aria-controls="translation-advanced" onClick={() => setAdvancedOpen((open) => !open)}>{advancedOpen ? "Ẩn tùy chọn" : "Thêm tùy chọn"}</button>
+        {advancedOpen && <div className="translation-advanced" id="translation-advanced">
+          <label>Mốc học<select value={milestone} onChange={(event) => setMilestone(event.target.value)}><option value="all">Tất cả mốc</option>{milestones.map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
+          <label>Loại câu<select value={mode} onChange={(event) => setMode(event.target.value as ModeFilter)}><option value="mixed">Speaking + Writing</option><option value="speaking">Speaking</option><option value="writing">Writing</option></select></label>
+          <label>Độ khó<select value={difficulty} onChange={(event) => setDifficulty(event.target.value)}><option value="all">Dễ + khó</option><option value="easy">Dễ</option><option value="hard">Khó</option></select></label>
+          <label>Tìm từ<input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Từ mục tiêu…" /></label>
+          <label className="translation-studied-filter"><input type="checkbox" checked={onlyStudied} onChange={(event) => setOnlyStudied(event.target.checked)} /> Chỉ luyện các từ đã học trong bộ IELTS ({studiedKeys.length})</label>
+        </div>}
       </section>
-      <div className="translation-stats"><span><strong>{filtered.length}</strong> câu có thể học</span><span><strong>{studied}</strong> câu đã học</span><span><strong>{due}</strong> câu đến hạn ôn</span></div>
+      <div className="translation-stats"><span><strong>{filtered.length}</strong> câu trong bộ lọc</span><span><strong>{studied}</strong> câu đã luyện</span><span><strong>{due}</strong> câu đến hạn ôn</span></div>
     </>}
 
     {loading && <section className="translation-empty">Đang tải bài luyện…</section>}
     {error && <p className="translation-error" role="alert">{error}</p>}
     {notice && <p className="translation-notice" role="status">{notice}</p>}
     {!loading && !exercises.length && <section className="translation-empty"><Sticker name="book" size={64} tilt={-6} /><h2>Chủ đề này chưa có câu luyện</h2><p>Hãy thử chủ đề khác.</p></section>}
-    {!loading && exercises.length > 0 && !sessionIds.length && <section className="translation-empty"><Sticker name="bulb" size={64} tilt={6} /><h2>Sẵn sàng luyện dịch</h2><p>{filtered.length} câu trong chủ đề này. Chọn số câu và bấm “Bắt đầu học”.</p></section>}
-    {done && <section className="translation-empty translation-done"><Sticker name="star" size={64} tilt={6} /><h2>Hoàn thành {sessionIds.length} câu</h2><p>Kết quả khớp từ đã được dùng để lên lịch ôn các câu cần luyện lại.</p><button className="translation-primary" type="button" onClick={start}><RotateCcw size={17} /> Luyện lượt khác</button></section>}
+    {!loading && exercises.length > 0 && !sessionIds.length && <section className="translation-empty translation-ready"><Sticker name="bulb" size={56} tilt={6} /><h2>{available ? "Sẵn sàng luyện dịch" : "Không có câu phù hợp"}</h2><p>{available ? "Mỗi câu gồm từ mục tiêu, câu cần dịch và câu mẫu để đối chiếu. Bạn tự đánh giá sau khi xem đáp án." : "Hãy đổi chế độ học hoặc bộ lọc để chọn câu khác."}</p></section>}
+    {done && <section className="translation-empty translation-done"><Sticker name="star" size={64} tilt={6} /><h2>Hoàn thành {sessionIds.length} câu</h2><p>Đã lưu {sessionRatings.length} lượt tự đánh giá và lên lịch ôn theo mức bạn chọn.</p><div className="translation-done-actions"><button className="translation-primary" type="button" onClick={start}><RotateCcw size={17} /> Luyện lượt khác</button><button type="button" className="translation-settings-toggle" onClick={leaveSession}>Chọn bài khác</button></div></section>}
 
     {current && <section ref={cardRef} className="translation-card" aria-label={"Câu " + (index + 1) + " trên " + sessionIds.length}>
       <div className="translation-card-top">
@@ -261,7 +290,7 @@ export function ViEnTranslationPage() {
         <div className="translation-target-word"><strong lang="en">{current.term}</strong>{current.meaning_vi && <span>{current.meaning_vi}</span>}</div>
         <label className="translation-answer-label">Từ tiếng Anh của bạn<input ref={copyInputRef} value={copiedWord} onChange={(event) => { setCopiedWord(event.target.value); setCopyError(""); }} onKeyDown={onCopyKeyDown} placeholder="Gõ lại từ ở đây…" autoComplete="off" spellCheck={false} /></label>
         {copyError && <p className="translation-copy-error" role="alert">{copyError}</p>}
-        <div className="translation-actions"><button className="translation-primary" type="button" disabled={!copiedWord.trim()} onClick={checkCopiedWord}>Kiểm tra từ <ArrowRight size={17} /></button><span className="translation-key-hint"><kbd>Enter</kbd> để tiếp tục</span></div>
+        <div className="translation-actions"><button className="translation-primary" type="button" disabled={!copiedWord.trim()} onClick={checkCopiedWord}>Kiểm tra từ <ArrowRight size={17} /></button><button type="button" onClick={() => { setCopyError(""); setStage("write"); }}>Bỏ qua bước chép từ</button><span className="translation-key-hint"><kbd>Enter</kbd> để tiếp tục</span></div>
       </div>}
 
       {stage === "write" && <div className="translation-stage">
@@ -269,20 +298,22 @@ export function ViEnTranslationPage() {
         <h2>Dịch câu này sang tiếng Anh</h2>
         <p className="translation-target-inline">Từ mục tiêu: <b lang="en">{current.term}</b></p>
         <VietnamesePrompt prompt={current.prompt_vi} hints={promptHints} />
-        <p className="translation-hover-instruction">Rê chuột hoặc dùng Tab vào từ gạch chân để xem gợi ý riêng cho từ đó. <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noreferrer">Nguồn từ điển</a> (CC BY-SA 4.0).</p>
+        <p className="translation-hover-instruction">Chạm hoặc dùng Tab vào từ gạch chân để xem gợi ý. <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noreferrer">Nguồn từ điển</a> (CC BY-SA 4.0).</p>
         <div className="translation-hint-actions"><button type="button" onClick={() => setHint((old) => Math.min(old + 1, 2))} disabled={hint === 2}><Lightbulb size={16} /> {hint === 0 ? "Gợi ý từ" : hint === 1 ? "Gợi ý cấu trúc" : "Đã mở gợi ý"}</button>{hint >= 1 && <span>Từ mục tiêu: <b>{current.term}</b>{current.meaning_vi ? " · " + current.meaning_vi : ""}</span>}{hint >= 2 && <span>Mẫu dùng: {current.pattern || current.collocations || "Tự chọn cấu trúc phù hợp."}</span>}</div>
         <label className="translation-answer-label">Câu tiếng Anh của bạn<textarea ref={answerInputRef} rows={4} value={answer} onChange={(event) => setAnswer(event.target.value)} onKeyDown={onAnswerKeyDown} placeholder="Viết câu dịch của bạn ở đây…" spellCheck autoComplete="off" /></label>
         <div className="translation-actions"><button className="translation-primary" type="button" disabled={!answer.trim() || saving} onClick={() => void checkSentence()}>Kiểm tra câu <ArrowRight size={17} /></button><button type="button" disabled={saving} onClick={() => void checkSentence(true)}>Bỏ qua câu</button><span className="translation-key-hint"><kbd>Enter</kbd> nộp câu · <kbd>Shift</kbd> + <kbd>Enter</kbd> xuống dòng</span></div>
       </div>}
 
       {stage === "result" && comparison && <div className="translation-stage translation-result">
-        <span className="translation-step-label">03 / 03 · KẾT QUẢ</span>
-        <h2>Kết quả câu của bạn</h2>
-        <div className="translation-score" role="status"><strong>{comparison.matched}/{comparison.total} từ khớp · {comparison.accuracy}%</strong><span>{comparison.extra > 0 ? comparison.extra + " từ bạn viết chưa khớp câu mẫu." : "Không có từ thừa so với câu mẫu."}</span></div>
-        <div className="translation-actions"><button ref={nextButtonRef} className="translation-primary" type="button" disabled={saving} onClick={next}>{saving ? "Đang lưu…" : index + 1 === sessionIds.length ? "Xem tổng kết" : "Câu tiếp theo"} <ArrowRight size={17} /></button><span className="translation-key-hint"><kbd>Enter</kbd> để tiếp tục</span></div>
-        <div className="translation-word-diff"><div><b>Câu bạn viết</b><p>{comparison.answerWords.length ? comparison.answerWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>) : "Bạn đã bỏ qua câu này."}</p></div><div><b>Câu mẫu gần nhất</b><p lang="en">{comparison.referenceWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>)}</p></div></div>
-        <div className="translation-reference"><span>CÂU MẪU THAM KHẢO</span><p lang="en">{comparison.reference}</p>{current.alternatives.length > 0 && <small>Cách diễn đạt khác: {current.alternatives.join(" · ")}</small>}{current.editor_note && <small>{current.editor_note}</small>}</div>
-        <p className="translation-disclaimer">Điểm này đo các từ trùng với câu mẫu theo đúng thứ tự, chưa đánh giá đầy đủ ngữ pháp hoặc những cách diễn đạt khác vẫn đúng.</p>
+        <span className="translation-step-label">03 / 03 · ĐỐI CHIẾU VÀ TỰ ĐÁNH GIÁ</span>
+        <h2>So sánh cách diễn đạt</h2>
+        <p className="translation-stage-intro">Câu mẫu chỉ là một cách dịch. Hãy xem ý nghĩa, từ vựng và ngữ pháp trước khi chọn mức độ nhớ.</p>
+        <div className="translation-word-diff"><div><b>Câu bạn viết</b><p lang="en">{answer.trim() || "Bạn đã bỏ qua câu này."}</p></div><div className="translation-reference"><b>Câu mẫu tham khảo</b><p lang="en">{comparison.reference}</p></div></div>
+        {current.alternatives.length > 0 && <p className="translation-alternatives">Cách diễn đạt khác: <span lang="en">{current.alternatives.join(" · ")}</span></p>}
+        {current.editor_note && <p className="translation-editor-note">{current.editor_note}</p>}
+        {answer.trim() && <details className="translation-comparison"><summary>Xem những từ trùng với câu mẫu</summary><p>Phần gạch màu chỉ so sánh từ theo đúng thứ tự; cách dịch khác vẫn có thể đúng.</p><div className="translation-word-diff"><div><b>Câu bạn viết</b><p lang="en">{comparison.answerWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>)}</p></div><div><b>Câu mẫu</b><p lang="en">{comparison.referenceWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>)}</p></div></div></details>}
+        <div className="translation-rating" role="group" aria-label="Tự đánh giá mức độ nhớ"><div><h3>Bạn nhớ câu này đến mức nào?</h3><p>Chọn một mức để lưu bài và lên lịch ôn.</p></div><div className="translation-rating-options">{ratingOptions.map((option) => <button key={option.value} type="button" disabled={saving || !!rated || (!!pendingRating && pendingRating !== option.value)} className={rated === option.value || pendingRating === option.value ? "is-selected" : ""} onClick={() => void saveRating(option.value)}><strong>{option.label}</strong><small>{option.detail}</small></button>)}</div></div>
+        <div className="translation-actions">{rated ? <><span className="translation-saved" role="status">Đã lưu · {ratingOptions.find((option) => option.value === rated)?.detail}</span><button ref={nextButtonRef} className="translation-primary" type="button" onClick={next}>{index + 1 === sessionIds.length ? "Xem tổng kết" : "Câu tiếp theo"} <ArrowRight size={17} /></button></> : <><button type="button" disabled={saving || attemptSaved} onClick={() => { setComparison(null); setStage("write"); }}>Viết lại câu</button>{saving && <span role="status">Đang lưu đánh giá…</span>}</>}</div>
       </div>}
     </section>}
   </main>;

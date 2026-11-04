@@ -55,9 +55,6 @@ export function compareTranslation(answer: string, reference: string, alternativ
     .sort((a, b) => b.accuracy - a.accuracy || b.matched - a.matched)[0] ?? compareWithReference(answer, reference);
 }
 
-export function ratingForComparison(result: WordComparison): TranslationRating {
-  return result.accuracy >= 95 ? "easy" : result.accuracy >= 75 ? "good" : result.accuracy >= 45 ? "hard" : "again";
-}
 export type TranslationProgress = {
   exercise_id: string; first_seen_at: string; last_reviewed_at: string; due_at: string;
   interval_days: number; repetitions: number; last_rating: TranslationRating; attempts_count: number;
@@ -90,5 +87,10 @@ export function chooseTranslationSession(
     const state = byId.get(item.id);
     return selection === "all" || (selection === "new" ? !state : !!state && Date.parse(state.due_at) <= now);
   });
-  return [...candidates].sort(() => random() - 0.5).slice(0, size);
+  const shuffled = [...candidates];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, size);
 }

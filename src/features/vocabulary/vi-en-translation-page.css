@@ -19,13 +19,21 @@
 .translation-settings-toggle:hover { background: #eff9f8; }
 
 .translation-controls { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: end; gap: 10px; padding: 15px; border: 1px solid #e1eaed; border-radius: 17px; background: #fff; box-shadow: 0 8px 24px #173d5f0b; }
+.translation-controls .translation-topic-field { grid-column: span 2; }
 .translation-controls label { min-width: 0; color: #68819a; font-size: 11px; font-weight: 850; }
 .translation-controls select, .translation-controls input:not([type="checkbox"]) { display: block; width: 100%; height: 42px; margin-top: 5px; padding: 0 10px; border: 1px solid #d8e6eb; border-radius: 9px; background: #f8fbfc; color: #183858; font: 750 13px var(--font-display); }
 .translation-controls .translation-studied-filter { grid-column: 1 / -1; display: flex; align-items: center; gap: 7px; min-height: 24px; color: #285371; font-size: 12px; }
+.translation-control-footer { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 4px; }
+.translation-control-footer > span { color: #57748b; font-size: 13px; }
+.translation-control-footer > span strong { color: #087f89; font-size: 20px; }
+.translation-control-footer .translation-primary { min-width: 185px; }
+.translation-advanced-toggle { grid-column: 1 / -1; justify-self: start; border: 0; background: none; color: #087f89; font: 800 12px var(--font-display); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.translation-advanced { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: end; gap: 10px; padding-top: 12px; border-top: 1px solid #e4eef0; }
 .translation-studied-filter input { width: 16px; height: 16px; margin: 0; accent-color: #079fa5; }
 .translation-primary { display: inline-flex; justify-content: center; align-items: center; gap: 7px; min-height: 42px; padding: 0 16px; border: 0; border-radius: 9px; background: #079fa5; color: #fff; font: 850 13px var(--font-display); white-space: nowrap; cursor: pointer; }
 .translation-primary:disabled { background: #aacfd1; cursor: not-allowed; }
 .translation-primary:not(:disabled):hover { background: #078d95; }
+.translation-page button:focus-visible, .translation-page summary:focus-visible, .translation-controls input:focus-visible { outline: 3px solid #75d8d6; outline-offset: 2px; }
 .translation-stats { display: flex; flex-wrap: wrap; gap: 15px; margin: 10px 2px 14px; color: #70859a; font-size: 12px; }
 .translation-stats strong { color: #058e98; font-size: 15px; }
 
@@ -36,6 +44,8 @@
 .translation-error, .translation-notice { padding: 11px 14px; border-radius: 9px; background: #fff1ec; color: #a74532; font-size: 13px; }
 .translation-notice { background: #e8f8f7; color: #087f89; }
 .translation-done { width: 100%; }
+.translation-done-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.translation-ready { min-height: 190px; }
 
 .translation-card { width: 100%; box-sizing: border-box; min-height: 440px; padding: 22px clamp(18px, 3vw, 30px); border: 1px solid #dfe9ed; border-radius: 19px; background: #fff; box-shadow: 0 12px 28px #1c496511; scroll-margin-top: 108px; }
 .translation-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #078f99; font-size: 11px; font-weight: 900; letter-spacing: .05em; }
@@ -81,9 +91,27 @@
 .translation-word-diff { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
 .translation-word-diff > div { padding: 13px; border: 1px solid #e1eaed; border-radius: 10px; }
 .translation-word-diff b { color: #456b80; font-size: 12px; }
-.translation-word-diff p { margin: 8px 0 0; line-height: 1.8; }
+.translation-word-diff p { margin: 8px 0 0; color: #163a55; font-size: 16px; line-height: 1.7; overflow-wrap: anywhere; }
 .translation-word-diff .matched { color: #087f63; background: #e6f7ee; }
 .translation-word-diff .missed { color: #a33c35; background: #fff0ec; text-decoration: underline; }
+.translation-word-diff > .translation-reference { margin: 0; border-color: #bee6dc; background: #f2fbf7; }
+.translation-alternatives, .translation-editor-note { margin: 10px 0 0; color: #57748b; font-size: 13px; line-height: 1.5; }
+.translation-comparison { margin-top: 14px; padding: 11px 13px; border: 1px solid #dde9ec; border-radius: 10px; background: #fbfdfd; }
+.translation-comparison summary { color: #087f89; font-size: 13px; font-weight: 800; cursor: pointer; }
+.translation-comparison > p { margin: 8px 0; color: #678094; font-size: 12px; }
+.translation-comparison .translation-word-diff { margin-top: 8px; }
+.translation-rating { margin-top: 20px; padding: 18px; border: 1px solid #c7e5e1; border-radius: 14px; background: #f2faf8; }
+.translation-rating h3 { margin: 0 0 4px; color: #163a55; font-size: 18px; }
+.translation-rating > div > p { margin: 0 0 14px; color: #59778b; font-size: 13px; }
+.translation-rating-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.translation-rating-options button { min-height: 70px; padding: 10px; border: 1px solid #c9dfe1; border-radius: 10px; background: #fff; color: #214b62; font-family: var(--font-display); text-align: left; cursor: pointer; }
+.translation-rating-options button:hover:not(:disabled), .translation-rating-options .is-selected { border-color: #078f99; background: #e2f5f2; }
+.translation-rating-options button:disabled { cursor: default; }
+.translation-rating-options button strong, .translation-rating-options button small { display: block; }
+.translation-rating-options button strong { font-size: 14px; }
+.translation-rating-options button small { margin-top: 4px; color: #638196; font-size: 11px; line-height: 1.35; }
+.translation-saved { color: #087f63; font-size: 13px; font-weight: 800; }
+.translation-result > .translation-actions { justify-content: flex-end; }
 .translation-reference { margin-top: 12px; padding: 15px; border: 1px solid #bee6dc; border-radius: 12px; background: #f2fbf7; }
 .translation-reference > span { color: #078c86; font-size: 11px; font-weight: 900; letter-spacing: .08em; }
 .translation-reference p { margin: 7px 0 0; color: #133a55; font-size: 18px; font-weight: 800; line-height: 1.5; }
@@ -92,15 +120,26 @@
 
 @media (max-width: 900px) {
   .translation-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .translation-controls label:first-child, .translation-controls .translation-primary { grid-column: span 2; }
+  .translation-controls .translation-topic-field { grid-column: span 2; }
+  .translation-advanced { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .translation-rating-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 620px) {
   .translation-page { padding: 10px 12px 36px; }
   .translation-controls { gap: 8px; padding: 10px; }
-  .translation-controls label { font-size: 10px; }
-  .translation-controls select { font-size: 12px; }
+  .translation-controls label { font-size: 12px; }
+  .translation-controls select { font-size: 14px; }
+  .translation-control-footer { align-items: stretch; flex-direction: column; }
+  .translation-control-footer .translation-primary { width: 100%; }
+  .translation-advanced { grid-template-columns: 1fr; }
   .translation-card { min-height: 0; padding: 17px 14px; scroll-margin-top: 90px; }
+  .translation-card-top { align-items: flex-start; }
+  .translation-card-top span { overflow-wrap: anywhere; }
   .translation-word-diff { grid-template-columns: 1fr; }
   .translation-prompt { padding: 13px; }
   .translation-key-hint { width: 100%; margin-left: 0; }
+  .translation-rating { padding: 13px; }
+  .translation-rating-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .translation-result > .translation-actions { justify-content: stretch; }
+  .translation-result > .translation-actions .translation-primary { width: 100%; }
 }
