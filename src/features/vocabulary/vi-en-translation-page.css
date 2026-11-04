@@ -96,6 +96,8 @@
 .translation-word-diff .missed { color: #a33c35; background: #fff0ec; text-decoration: underline; }
 .translation-word-diff > .translation-reference { margin: 0; border-color: #bee6dc; background: #f2fbf7; }
 .translation-alternatives, .translation-editor-note { margin: 10px 0 0; color: #57748b; font-size: 13px; line-height: 1.5; }
+.translation-rating-shortcut { margin: -7px 0 16px; color: #537389; font-size: 12px; line-height: 1.5; }
+.translation-rating-shortcut kbd { display: inline-block; min-width: 18px; padding: 1px 4px; border: 1px solid #c9dee0; border-radius: 4px; background: #fff; color: #087f89; font: 800 11px var(--font-display); text-align: center; }
 .translation-comparison { margin-top: 14px; padding: 11px 13px; border: 1px solid #dde9ec; border-radius: 10px; background: #fbfdfd; }
 .translation-comparison summary { color: #087f89; font-size: 13px; font-weight: 800; cursor: pointer; }
 .translation-comparison > p { margin: 8px 0; color: #678094; font-size: 12px; }
@@ -104,7 +106,8 @@
 .translation-rating h3 { margin: 0 0 4px; color: #163a55; font-size: 18px; }
 .translation-rating > div > p { margin: 0 0 14px; color: #59778b; font-size: 13px; }
 .translation-rating-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-.translation-rating-options button { position: relative; min-height: 70px; padding: 10px; border: 1px solid #c9dfe1; border-radius: 10px; background: #fff; color: #214b62; font-family: var(--font-display); text-align: left; cursor: pointer; }
+.translation-rating-options button { position: relative; min-height: 70px; padding: 10px 10px 10px 39px; border: 1px solid #c9dfe1; border-radius: 10px; background: #fff; color: #214b62; font-family: var(--font-display); text-align: left; cursor: pointer; }
+.translation-rating-options button kbd { position: absolute; top: 10px; left: 9px; display: grid; place-items: center; width: 22px; height: 22px; border: 1px solid #c9dee0; border-radius: 6px; background: #f3f9f9; color: #087f89; font: 800 12px var(--font-display); }
 .translation-rating-options button:hover:not(:disabled) { border-color: #78b8ba; }
 .translation-rating-options .is-selected { border-color: #078f99; background: #e2f5f2; }
 .translation-rating-options .is-selected::after { content: "✓"; position: absolute; top: 7px; right: 9px; color: #087f63; font-weight: 900; }

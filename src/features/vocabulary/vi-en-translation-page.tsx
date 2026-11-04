@@ -70,6 +70,7 @@ export function ViEnTranslationPage() {
   const cardRef = useRef<HTMLElement>(null);
   const copyInputRef = useRef<HTMLInputElement>(null);
   const answerInputRef = useRef<HTMLTextAreaElement>(null);
+  const resultHeadingRef = useRef<HTMLHeadingElement>(null);
   const nextButtonRef = useRef<HTMLButtonElement>(null);
   const [loading, setLoading] = useState(!demoMode);
   const [now, setNow] = useState(() => Date.now());
@@ -168,6 +169,7 @@ export function ViEnTranslationPage() {
     if (!current) return;
     if (stage === "copy") copyInputRef.current?.focus({ preventScroll: true });
     if (stage === "write") answerInputRef.current?.focus({ preventScroll: true });
+    if (stage === "result" && !rated && !saving) resultHeadingRef.current?.focus({ preventScroll: true });
     if (stage === "result" && rated && !saving) nextButtonRef.current?.focus({ preventScroll: true });
   }, [current, stage, saving, rated]);
 
@@ -239,6 +241,14 @@ export function ViEnTranslationPage() {
     void checkSentence();
   }
 
+  function onCardKeyDown(event: KeyboardEvent<HTMLElement>) {
+    if (stage !== "result" || rated || saving || event.repeat || event.nativeEvent.isComposing || event.altKey || event.ctrlKey || event.metaKey) return;
+    const option = ratingOptions[Number(event.key) - 1];
+    if (!option || !/^[1-4]$/.test(event.key)) return;
+    event.preventDefault();
+    void saveRating(option.value);
+  }
+
   const sessionActive = Boolean(current || done);
   function leaveSession() {
     if (((stage === "write" && answer.trim()) || (stage === "result" && !rated)) && !window.confirm("Câu hiện tại chưa được lưu. Bạn muốn chọn bài khác?")) return;
@@ -276,7 +286,7 @@ export function ViEnTranslationPage() {
     {!loading && exercises.length > 0 && !sessionIds.length && <section className="translation-empty translation-ready"><Sticker name="bulb" size={56} tilt={6} /><h2>{available ? "Sẵn sàng luyện dịch" : "Không có câu phù hợp"}</h2><p>{available ? "Mỗi câu gồm từ mục tiêu, câu cần dịch và câu mẫu để đối chiếu. Bạn tự đánh giá sau khi xem đáp án." : "Hãy đổi chế độ học hoặc bộ lọc để chọn câu khác."}</p></section>}
     {done && <section className="translation-empty translation-done"><Sticker name="star" size={64} tilt={6} /><h2>Hoàn thành {sessionIds.length} câu</h2><p>Đã lưu {sessionRatings.length} lượt tự đánh giá và lên lịch ôn theo mức bạn chọn.</p><div className="translation-done-actions"><button className="translation-primary" type="button" onClick={start}><RotateCcw size={17} /> Luyện lượt khác</button><button type="button" className="translation-settings-toggle" onClick={leaveSession}>Chọn bài khác</button></div></section>}
 
-    {current && <section ref={cardRef} className="translation-card" aria-label={"Câu " + (index + 1) + " trên " + sessionIds.length}>
+    {current && <section ref={cardRef} className="translation-card" aria-label={"Câu " + (index + 1) + " trên " + sessionIds.length} onKeyDown={onCardKeyDown}>
       <div className="translation-card-top">
         <span>{current.mode === "speaking" ? "IELTS SPEAKING" : "IELTS WRITING"} · {topic}{current.milestone ? ` · ${current.milestone}` : ""}{current.difficulty ? ` · ${current.difficulty === "easy" ? "Dễ" : "Khó"}` : ""}</span>
         <strong>Câu {index + 1}/{sessionIds.length}</strong>
@@ -306,13 +316,14 @@ export function ViEnTranslationPage() {
 
       {stage === "result" && comparison && <div className="translation-stage translation-result">
         <span className="translation-step-label">03 / 03 · ĐỐI CHIẾU VÀ TỰ ĐÁNH GIÁ</span>
-        <h2>So sánh cách diễn đạt</h2>
+        <h2 ref={resultHeadingRef} tabIndex={-1}>So sánh cách diễn đạt</h2>
         <p className="translation-stage-intro">Câu mẫu chỉ là một cách dịch. Hãy xem ý nghĩa, từ vựng và ngữ pháp trước khi chọn mức độ nhớ.</p>
+        <p className="translation-rating-shortcut">Sau khi đối chiếu, nhấn <kbd>1</kbd>–<kbd>4</kbd> để đánh giá; nhấn <kbd>Enter</kbd> để sang câu tiếp.</p>
         <div className="translation-word-diff"><div><b>Câu bạn viết</b><p lang="en">{answer.trim() || "Bạn đã bỏ qua câu này."}</p></div><div className="translation-reference"><b>Câu mẫu tham khảo</b><p lang="en">{comparison.reference}</p></div></div>
         {current.alternatives.length > 0 && <p className="translation-alternatives">Cách diễn đạt khác: <span lang="en">{current.alternatives.join(" · ")}</span></p>}
         {current.editor_note && <p className="translation-editor-note">{current.editor_note}</p>}
         {answer.trim() && <details className="translation-comparison"><summary>Xem những từ trùng với câu mẫu</summary><p>Phần gạch màu chỉ so sánh từ theo đúng thứ tự; cách dịch khác vẫn có thể đúng.</p><div className="translation-word-diff"><div><b>Câu bạn viết</b><p lang="en">{comparison.answerWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>)}</p></div><div><b>Câu mẫu</b><p lang="en">{comparison.referenceWords.map((item, wordIndex) => <span key={wordIndex} className={item.matched ? "matched" : "missed"}>{item.word} </span>)}</p></div></div></details>}
-        <div className="translation-rating" role="group" aria-label="Tự đánh giá mức độ nhớ"><div><h3>Bạn nhớ câu này đến mức nào?</h3><p>Chọn một mức để lưu bài và lên lịch ôn.</p></div><div className="translation-rating-options">{ratingOptions.map((option) => <button key={option.value} type="button" aria-pressed={rated === option.value} disabled={saving || !!rated || (!!pendingRating && pendingRating !== option.value)} className={rated === option.value || pendingRating === option.value ? "is-selected" : ""} onClick={() => void saveRating(option.value)}><strong>{option.label}</strong><small>{option.detail}</small></button>)}</div></div>
+        <div className="translation-rating" role="group" aria-label="Tự đánh giá mức độ nhớ"><div><h3>Bạn nhớ câu này đến mức nào?</h3><p>Nhấn phím 1–4 hoặc chọn một mức để lưu bài và lên lịch ôn.</p></div><div className="translation-rating-options">{ratingOptions.map((option, optionIndex) => <button key={option.value} type="button" aria-keyshortcuts={String(optionIndex + 1)} aria-pressed={rated === option.value} disabled={saving || !!rated || (!!pendingRating && pendingRating !== option.value)} className={rated === option.value || pendingRating === option.value ? "is-selected" : ""} onClick={() => void saveRating(option.value)}><kbd aria-hidden="true">{optionIndex + 1}</kbd><strong>{option.label}</strong><small>{option.detail}</small></button>)}</div></div>
         <div className="translation-actions">{rated ? <><span className="translation-saved" role="status">Đã lưu · {ratingOptions.find((option) => option.value === rated)?.detail}</span><button ref={nextButtonRef} className="translation-primary" type="button" onClick={next}>{index + 1 === sessionIds.length ? "Xem tổng kết" : "Câu tiếp theo"} <ArrowRight size={17} /></button></> : <><button type="button" disabled={saving || attemptSaved} onClick={() => { setComparison(null); setStage("write"); }}>Viết lại câu</button>{saving && <span role="status">Đang lưu đánh giá…</span>}</>}</div>
       </div>}
     </section>}
