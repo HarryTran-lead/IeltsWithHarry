@@ -8,7 +8,7 @@ import io
 import numpy as np
 import soundfile as sf
 
-from worker import GeminiProvider, GeminiUnavailable, cached_segment, confirmed_gemini_key, full_duration_report, inspect_audio, main, normalize, part_cues, render_job, render_preferred_job, word_error_rate
+from worker import GeminiProvider, GeminiUnavailable, cached_segment, confirmed_gemini_key, full_duration_report, inspect_audio, main, normalize, part_cues, pronounce_phone_numbers, render_job, render_preferred_job, word_error_rate
 
 
 class AudioQualityTests(unittest.TestCase):
@@ -19,6 +19,7 @@ class AudioQualityTests(unittest.TestCase):
         sf.write(output, wave, 24000, format="WAV", subtype="PCM_16")
         class Response:
             ok = True
+            status_code = 200
             def json(self):
                 return {"steps": [{"content": [{"type": "audio", "data": base64.b64encode(output.getvalue()).decode()}]}]}
         provider = GeminiProvider("test-key")
@@ -41,6 +42,29 @@ class AudioQualityTests(unittest.TestCase):
         self.assertEqual(render.call_count, 2)
         self.assertIs(render.call_args.args[1], kokoro.return_value)
         self.assertEqual(render.call_args.kwargs["fallback_reason"], "Gemini TTS HTTP 429")
+
+    def test_short_429_retry_after_is_retried_once(self):
+        seconds = np.arange(24000) / 24000
+        output = io.BytesIO()
+        sf.write(output, (0.4 * np.sin(2 * np.pi * 220 * seconds)).astype(np.float32), 24000, format="WAV", subtype="PCM_16")
+
+        class Throttled:
+            ok = False
+            status_code = 429
+            headers = {"Retry-After": "1"}
+
+        class Success:
+            ok = True
+            status_code = 200
+            def json(self):
+                return {"steps": [{"content": [{"type": "audio", "data": base64.b64encode(output.getvalue()).decode()}]}]}
+
+        gemini = GeminiProvider("test-key")
+        with patch.object(gemini.session, "post", side_effect=[Throttled(), Success()]) as post, patch("worker.time.sleep") as sleep:
+            audio = gemini.synthesize_segment("The phone number is zero seven seven.", "bf_emma", 1.0)
+        self.assertEqual(post.call_count, 2)
+        sleep.assert_called_once_with(1.0)
+        self.assertTrue(gemini.validate_output(audio)["passed"])
 
     def test_gemini_requires_confirmed_free_tier_key(self):
         with patch.dict("worker.os.environ", {"AI_FACTORY_GEMINI_API_KEY": "test-key", "AI_FACTORY_FREE_TIER_ONLY": "true", "AI_FACTORY_FREE_TIER_CONFIRMED": "false"}):
@@ -100,16 +124,30 @@ class AudioQualityTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             normalize("<script>bad</script>")
 
+    def test_phone_number_is_spoken_digit_by_digit_without_changing_other_numbers(self):
+        self.assertEqual(pronounce_phone_numbers("My mobile number is 07700 900123."),
+                         "My mobile number is zero seven seven zero zero, nine zero zero one two three.")
+        self.assertEqual(pronounce_phone_numbers("Call me on 391-7632."),
+                         "Call me on three nine one, seven six three two.")
+        self.assertEqual(pronounce_phone_numbers("Our contact number is +44 20 7946 0958."),
+                         "Our contact number is plus four four, two zero, seven nine four six, zero nine five eight.")
+        self.assertEqual(pronounce_phone_numbers("The booking costs 12000 pounds on 2026-10-28."),
+                         "The booking costs 12000 pounds on 2026-10-28.")
+
     def test_word_error_rate(self):
         self.assertEqual(word_error_rate("The river is clear.", "The river is clear"), 0.0)
         self.assertEqual(word_error_rate("The river is clear", "The river clear"), 0.25)
 
     def test_four_sections_render_and_checkpoint_as_one_review_job(self):
         class Provider:
+            def __init__(self):
+                self.requests = []
+
             def list_voices(self):
                 return ["bf_emma"]
 
             def synthesize_segment(self, text, voice, pace):
+                self.requests.append(text)
                 seconds = np.arange(24000) / 24000
                 return (0.4 * np.sin(2 * np.pi * 220 * seconds)).astype(np.float32)
 
@@ -137,14 +175,19 @@ class AudioQualityTests(unittest.TestCase):
         sections = []
         for part in range(1, 5):
             sections.append({"sectionId": f"part-{part}", "turns": [
-                {"ordinal": ordinal, "speaker": "Teacher", "voice": "bf_emma", "text": f"Part {part} sentence {ordinal} for a clear recording."}
+                {"ordinal": ordinal, "speaker": "Teacher", "voice": "bf_emma", "text": "My phone number is 07700 900123." if part == 1 and ordinal == 0 else f"Part {part} sentence {ordinal} for a clear recording."}
                 for ordinal in range(2)
-            ], "evidence": {f"q{(part - 1) * 10 + number}": [number % 2] for number in range(1, 11)}, "answerPhrases": []})
+            ], "evidence": {f"q{(part - 1) * 10 + number}": [number % 2] for number in range(1, 11)}, "answerPhrases": ["07700 900123"] if part == 1 else []})
         database = Database()
-        with TemporaryDirectory() as temporary, patch("worker.CACHE_DIR", Path(temporary)), patch("worker.asr_report", return_value={"status": "completed"}), patch("worker.QUESTION_PREVIEW_SECONDS", 0.5), patch("worker.PART_REVIEW_SECONDS", 0.5), patch("worker.FINAL_REVIEW_SECONDS", 0.5), patch("worker.FULL_MIN_SECONDS", 0):
-            render_job(database, Provider(), {"id": "job-1", "payload": {"sections": sections}}, "lease")
+        provider = Provider()
+        with TemporaryDirectory() as temporary, patch("worker.CACHE_DIR", Path(temporary)), patch("worker.asr_report", return_value={"status": "completed"}) as asr, patch("worker.QUESTION_PREVIEW_SECONDS", 0.5), patch("worker.PART_REVIEW_SECONDS", 0.5), patch("worker.FINAL_REVIEW_SECONDS", 0.5), patch("worker.FULL_MIN_SECONDS", 0):
+            render_job(database, provider, {"id": "job-1", "payload": {"sections": sections}}, "lease")
         self.assertEqual(len(database.uploads), 4)
         self.assertEqual(len(database.tables["ai_factory_segments"]), 8)
+        self.assertEqual(database.tables["ai_factory_segments"][0]["canonical_text"], "My phone number is 07700 900123.")
+        self.assertIn("zero seven seven zero zero", database.tables["ai_factory_segments"][0]["normalized_text"])
+        self.assertIn("My phone number is zero seven seven zero zero, nine zero zero one two three.", provider.requests)
+        self.assertEqual(asr.call_args_list[0].args[2], ["zero seven seven zero zero, nine zero zero one two three"])
         self.assertTrue(database.tables["ai_factory_qa"]["passed"])
         self.assertTrue(database.tables["ai_factory_qa"]["technical"]["full_duration"]["passed"])
         self.assertEqual(database.tables["ai_factory_qa"]["technical"]["generation"]["actual_provider"], "kokoro")

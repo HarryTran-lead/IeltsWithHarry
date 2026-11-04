@@ -1,6 +1,7 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ChevronRight, GraduationCap, LogOut, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, ChevronRight, GraduationCap, LogOut, PanelLeftClose, PanelLeftOpen, type LucideIcon } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
 
 export type AdminNavItem = { href: string; label: string; icon: LucideIcon; active: boolean; onClick?: () => void };
@@ -26,8 +27,9 @@ export function AdminShell({
   onSignOut?: () => void;
   children: React.ReactNode;
 }) {
-  return <div className="admin-shell">
-    <aside className="admin-sidebar">
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  return <div className={`admin-shell${sidebarOpen ? "" : " admin-shell-collapsed"}`}>
+    <aside className="admin-sidebar" id="admin-sidebar">
       <Link href="/admin" className="admin-brand">
         <span className="admin-brand-mark"><HarryMascot size={34} /></span>
         <span><strong>IeltsWithHarry</strong><small>ADMIN PORTAL</small></span>
@@ -47,6 +49,7 @@ export function AdminShell({
     </aside>
     <div className="admin-main">
       <header className="admin-topbar">
+        <button type="button" className="admin-sidebar-toggle" aria-label={sidebarOpen ? "Đóng thanh điều hướng" : "Mở thanh điều hướng"} aria-controls="admin-sidebar" aria-expanded={sidebarOpen} onClick={() => setSidebarOpen((open) => !open)}>{sidebarOpen ? <PanelLeftClose size={19} /> : <PanelLeftOpen size={19} />}<span>{sidebarOpen ? "Thu gọn" : "Menu"}</span></button>
         <nav className="admin-breadcrumb" aria-label="Breadcrumb"><Link href="/admin">Admin</Link><ChevronRight size={14} /><span>{section}</span></nav>
         <span className={`admin-env ${mode}`}><i aria-hidden="true" />{mode === "demo" ? "Bản demo · lưu trong trình duyệt" : "Live · Supabase"}</span>
         <Link className="button subtle admin-topbar-link" href="/app/dashboard">Student portal <ArrowUpRight size={15} /></Link>

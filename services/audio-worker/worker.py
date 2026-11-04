@@ -132,8 +132,20 @@ class GeminiProvider:
             "generation_config": {"speech_config": [{"voice": self.voices[voice]}]},
         }
         try:
-            response = self.session.post("https://generativelanguage.googleapis.com/v1beta/interactions",
-                                         json=body, headers={"x-goog-api-key": self.api_key}, timeout=90)
+            for attempt in range(2):
+                response = self.session.post("https://generativelanguage.googleapis.com/v1beta/interactions",
+                                             json=body, headers={"x-goog-api-key": self.api_key}, timeout=90)
+                if response.status_code == 429 and attempt == 0:
+                    retry_header = getattr(response, "headers", {}).get("Retry-After", "")
+                    try:
+                        retry_seconds = float(retry_header)
+                    except (TypeError, ValueError):
+                        retry_seconds = 0
+                    # A brief per-minute throttle may clear. A long daily quota must fall back.
+                    if 0 < retry_seconds <= 15:
+                        time.sleep(retry_seconds)
+                        continue
+                break
             if not response.ok:
                 raise GeminiUnavailable(f"Gemini TTS HTTP {response.status_code}")
             payload = response.json()
@@ -174,6 +186,30 @@ def normalize(text: str) -> str:
     if not text or len(text) > 1000 or "<" in text or ">" in text:
         raise ValueError("Invalid dialogue turn")
     return text
+
+
+PHONE_DIGITS = ("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
+PHONE_SEQUENCE = re.compile(r"(?<![A-Za-z0-9])\+?\d(?:[ ()-]*\d){6,14}(?![A-Za-z0-9])")
+PHONE_CONTEXT = re.compile(r"\b(?:phone|telephone|mobile|dial|contact|call me|call us|text me|text us|my number|number is|number was)\b", re.I)
+
+
+def pronounce_phone_numbers(text: str) -> str:
+    """Give TTS digit words for likely phone numbers, while preserving the printed transcript."""
+    context = bool(PHONE_CONTEXT.search(text))
+
+    def replace(match: re.Match[str]) -> str:
+        original = match.group()
+        digits = re.sub(r"\D", "", original)
+        if re.fullmatch(r"(?:\d{4}-\d{2}-\d{2}|\d{1,2}-\d{1,2}-\d{4})", original):
+            return original
+        # Leading-zero local numbers are recognizable without a nearby phone label.
+        if not (context or original.startswith("+") or (len(digits) >= 9 and digits.startswith("0"))):
+            return original
+        groups = re.findall(r"\d+", original)
+        spoken = ", ".join(" ".join(PHONE_DIGITS[int(digit)] for digit in group) for group in groups)
+        return ("plus " if original.startswith("+") else "") + spoken
+
+    return PHONE_SEQUENCE.sub(replace, text)
 
 
 def inspect_audio(audio: np.ndarray, sample_rate: int, planned_pauses: list[tuple[int, int]] | None = None) -> dict:
@@ -392,13 +428,14 @@ def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str, *, 
                 raise ValueError(f"{section_id}: speaker voice changed")
             voice_by_speaker[speaker] = voice
             canonical = normalize(turn["text"])
+            spoken = pronounce_phone_numbers(canonical) if section_id == "part-1" else canonical
             pace = float(voices[voice]["pace"])
-            clip, cache_key = cached_segment(provider, canonical, voice, pace)
+            clip, cache_key = cached_segment(provider, spoken, voice, pace)
             start = cursor
             rendered.append(clip)
             cursor += len(clip)
             segments.append({"job_id": job["id"], "ordinal": len(all_segments) + ordinal, "speaker_id": speaker, "voice_id": voice,
-                             "pace": pace, "canonical_text": canonical, "normalized_text": canonical, "cache_key": cache_key,
+                             "pace": pace, "canonical_text": canonical, "normalized_text": spoken, "cache_key": cache_key,
                              "start_ms": round(start * 1000 / SAMPLE_RATE), "end_ms": round(cursor * 1000 / SAMPLE_RATE)})
             pause = np.zeros(int(SAMPLE_RATE * (0.42 if canonical.endswith(("?", "!")) else 0.32)), dtype=np.float32)
             rendered.append(pause)
@@ -442,7 +479,9 @@ def render_job(db: Supabase, provider: AudioProvider, job: dict, token: str, *, 
                 raise ValueError(f"{section_id}: MP3 duration does not match rendered audio")
             technical["encoded_duration_seconds"] = round(encoded_seconds, 3)
             db.update(job, token, {"lease_until": (datetime.now(timezone.utc) + timedelta(minutes=45)).isoformat()})
-            asr = asr_report(mp3, " ".join(turn["text"] for turn in turns), section.get("answerPhrases", []))
+            spoken_turns = [pronounce_phone_numbers(normalize(turn["text"])) if section_id == "part-1" else normalize(turn["text"]) for turn in turns]
+            spoken_answers = [pronounce_phone_numbers(phrase) if section_id == "part-1" else phrase for phrase in section.get("answerPhrases", [])]
+            asr = asr_report(mp3, " ".join(spoken_turns), spoken_answers)
             path = f"{job['id']}/{section_id}.mp3" if multi else f"{job['id']}/audio.mp3"
             encoded = mp3.read_bytes()
             db.upload(path, encoded)

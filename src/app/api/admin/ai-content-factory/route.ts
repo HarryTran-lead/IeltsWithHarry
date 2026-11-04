@@ -20,6 +20,16 @@ export async function GET() {
       client.from("ai_factory_jobs").select("status,error,payload").contains("payload", { dailySet: true }).order("created_at", { ascending: false }).limit(1),
     ]);
     for (const result of [settings, voices, jobs, usage, dailySet]) if (result.error) throw new Error(result.error.message);
+    const versionIds = [...new Set((jobs.data || []).map((job) => job.exam_version_id).filter((id): id is string => Boolean(id)))];
+    const examIds = [...new Set((jobs.data || []).map((job) => job.exam_id).filter((id): id is string => Boolean(id)))];
+    const [versions, exams] = await Promise.all([
+      versionIds.length ? client.from("ielts_exam_versions").select("id,content").in("id", versionIds) : Promise.resolve({ data: [], error: null }),
+      examIds.length ? client.from("ielts_exams").select("id,title,skill").in("id", examIds) : Promise.resolve({ data: [], error: null }),
+    ]);
+    if (versions.error) throw new Error(versions.error.message);
+    if (exams.error) throw new Error(exams.error.message);
+    const versionById = new Map((versions.data || []).map((version) => [version.id, version.content]));
+    const examById = new Map((exams.data || []).map((exam) => [exam.id, exam]));
     const rows = await Promise.all((jobs.data || []).filter((job) => !job.payload?.dailySet).map(async (job) => {
       let previewUrl: string | null = null;
       const previewUrls: { sectionId: string; url: string }[] = [];
@@ -32,7 +42,7 @@ export async function GET() {
         }
         previewUrl = previewUrls[0]?.url ?? null;
       }
-      return { ...job, previewUrl, previewUrls };
+      return { ...job, previewUrl, previewUrls, examContent: versionById.get(job.exam_version_id) ?? job.payload?.exam?.content ?? null, examTitle: examById.get(job.exam_id)?.title ?? job.payload?.exam?.title ?? null, skill: examById.get(job.exam_id)?.skill ?? job.payload?.exam?.skill ?? (job.kind === "listening_audio" ? "Listening" : job.kind) };
     }));
     const set = dailySet.data?.[0];
     return Response.json({ settings: settings.data, voices: voices.data, jobs: rows, usage: usage.data,

@@ -4733,6 +4733,15 @@ a.card:hover {
   background-size: 18px 18px;
   color: #dbe7f0;
 }
+.admin-shell-collapsed { grid-template-columns: 0 minmax(0, 1fr); }
+.admin-shell-collapsed .admin-sidebar { visibility: hidden; overflow: hidden; padding: 0; }
+.admin-sidebar-toggle {
+  display: inline-flex; align-items: center; gap: 7px; flex: none;
+  border: 1px solid var(--line); border-radius: 9px; background: #fff;
+  color: var(--navy); padding: 7px 10px; font: inherit; font-size: 12px;
+  font-weight: 700; cursor: pointer;
+}
+.admin-sidebar-toggle:hover { border-color: var(--teal-strong); color: var(--teal-strong); }
 .admin-brand {
   display: flex;
   align-items: center;
@@ -5509,6 +5518,7 @@ a.card:hover {
   .admin-shell {
     grid-template-columns: 216px minmax(0, 1fr);
   }
+  .admin-shell-collapsed { grid-template-columns: 0 minmax(0, 1fr); }
   .admin-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -5525,6 +5535,7 @@ a.card:hover {
     height: auto;
     padding: 12px;
   }
+  .admin-shell-collapsed .admin-sidebar { display: none; }
   .admin-brand {
     padding-bottom: 10px;
   }
