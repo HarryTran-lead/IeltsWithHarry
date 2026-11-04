@@ -9,6 +9,7 @@ import { celebrate } from "@/lib/celebrate";
 import { savePracticeSnapshot } from "./practice-results";
 import { cacheBook2State, loadBook2State, saveBook2State, type Book2SavedState, type Book2Step } from "./book2-lesson-state";
 import { Book2SourcePanel } from "./book2-source-panel";
+import { Book2TestSheet } from "./book2-test-sheet";
 import { Book2Coach, coachLines, type CoachScript } from "./book2-coach";
 import { TeachingLearn, teachingCoach, type Book2Teaching } from "./book2-teaching";
 import { book2OptionOrder, evaluateBook2Progress, requiredBook2WritingWords } from "./book2-progress";
@@ -120,6 +121,9 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
 }) {
   const questions = useMemo(() => content.exercises.flatMap((exercise) => exercise.questions), [content.exercises]);
   const groups = useMemo(() => makePracticeGroups(content.exercises), [content.exercises]);
+  // Reading and Listening are practised like the exam: every question listed, answered, then submitted once.
+  const testMode = lesson.skill === "Reading" || lesson.skill === "Listening";
+  const [blankWarning, setBlankWarning] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [ratings, setRatings] = useState<Record<string, number>>({});
@@ -268,6 +272,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
   function startPractice() {
+    if (testMode) { goStep("practice"); return; }
     const first = questions.findIndex((item) => !resolved(item));
     setPosition(first >= 0 ? first : 0);
     goStep("practice");
@@ -340,10 +345,33 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     setRatings((previous) => ({ ...previous, [item.question_id]: value }));
     setChecked((previous) => ({ ...previous, [item.question_id]: true }));
   }
+  /** Answer sheet: grades every filled-in objective answer in one request. Blank answers stay open. */
+  async function submitAll(evenIfBlank: boolean) {
+    const waiting = questions.filter((item) => isObjective(item) && !checked[item.question_id]);
+    const filled = waiting.filter((item) => answers[item.question_id]?.trim());
+    if (filled.length < waiting.length && !evenIfBlank) { setBlankWarning(waiting.length - filled.length); return; }
+    setBlankWarning(0);
+    if (!filled.length || pending) return;
+    setPending("sheet"); setRequestError("");
+    try {
+      const result = await callLesson<{ verdicts: Record<string, Verdict> }>({ action: "check", answers: Object.fromEntries(filled.map((item) => [item.question_id, answers[item.question_id]])) });
+      storeVerdicts(result.verdicts);
+      setChecked((previous) => ({ ...previous, ...Object.fromEntries(Object.keys(result.verdicts).map((id) => [id, true])) }));
+      window.setTimeout(() => document.getElementById("b2-test-summary")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+    } catch (error) {
+      setRequestError(error instanceof Error ? error.message : "Không chấm được bài. Thử lại sau.");
+    } finally { setPending(""); }
+  }
+  function retryWrong() {
+    const wrong = questions.filter((item) => isObjective(item) && checked[item.question_id] && !correct[item.question_id]);
+    wrong.forEach(retry);
+    if (wrong[0]) window.setTimeout(() => document.getElementById("question-" + wrong[0].question_id)?.scrollIntoView({ behavior: "smooth", block: "center" }), 60);
+  }
   function jumpTo(item: Book2Item, showSource = false) {
     const index = questions.findIndex((question) => question.question_id === item.question_id);
     setPosition(Math.max(index, 0)); setStep("practice");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (testMode) window.setTimeout(() => document.getElementById("question-" + item.question_id)?.scrollIntoView({ behavior: "smooth", block: "center" }), 120);
+    else window.scrollTo({ top: 0, behavior: "smooth" });
     if (showSource) window.setTimeout(() => jumpToSource(item), 100);
   }
   function jumpToSource(item: Book2Item) {
@@ -446,7 +474,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   // The listener reads the latest question and answer through this ref, updated after every render.
   useEffect(() => {
     keyHandler.current = (event: KeyboardEvent) => {
-      if (!current || event.ctrlKey || event.metaKey || event.altKey) return;
+      if (testMode || !current || event.ctrlKey || event.metaKey || event.altKey) return;
       const typing = event.target instanceof HTMLTextAreaElement || (event.target instanceof HTMLInputElement && event.target.type !== "radio");
       if (/^[1-9]$/.test(event.key) && !typing && choices.length && !graded) {
         const option = choices[Number(event.key) - 1];
@@ -514,10 +542,24 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
 
       <Book2SourcePanel content={content} transcripts={transcripts} canShowTranscript={canShowTranscript} onTranscript={(id) => void loadTranscript(id)} />
 
-      <div className="b2-cta-bar"><span><b>{questions.length} câu luyện tập</b> · làm từng câu, xem giải thích ngay</span><button type="button" className="b2-btn b2-btn-primary" onClick={startPractice}>{completedCount ? "Làm tiếp" : "Bắt đầu luyện tập"} <ArrowRight size={18} /></button></div>
+      <div className="b2-cta-bar"><span><b>{questions.length} câu luyện tập</b> · {testMode ? "làm hết rồi nộp bài một lần" : "làm từng câu, xem giải thích ngay"}</span><button type="button" className="b2-btn b2-btn-primary" onClick={startPractice}>{completedCount ? "Làm tiếp" : "Bắt đầu luyện tập"} <ArrowRight size={18} /></button></div>
     </main>}
 
-    {step === "practice" && current && <main className={hasSources ? "book2-practice-layout has-sources" : "book2-practice-layout"}>
+    {step === "practice" && testMode && <main className={hasSources ? "book2-practice-layout has-sources" : "book2-practice-layout"}>
+      <div className="book2-practice-main">
+        <div className="b2-focus-bar">
+          <button type="button" className="b2-icon-btn" onClick={() => goStep("learn")} aria-label="Thoát về phần Tìm hiểu"><X size={22} /></button>
+          <div className="b2-progress" role="progressbar" aria-valuemin={0} aria-valuemax={questions.length} aria-valuenow={completedCount} aria-label={`${completedCount} trên ${questions.length} câu đã chấm`}><i style={{ width: `${questions.length ? completedCount / questions.length * 100 : 0}%` }} /></div>
+        </div>
+        <Book2Coach compact collapsed={Boolean(teaching) && !taskScript} lines={coachNote ? [coachNote] : coachPractice.lines} actions={coachPractice.actions} onAction={coachAction} />
+        <Book2TestSheet groups={content.exercises} answers={answers} checked={checked} correct={correct} verdicts={verdicts} ratings={ratings} models={models} pending={pending === "sheet"} error={requestError} blankWarning={blankWarning}
+          onAnswer={(item, value) => { setBlankWarning(0); answer(item as Book2Item, value); }} onSubmit={(evenIfBlank) => void submitAll(evenIfBlank)} onRetryWrong={retryWrong} onFinish={() => goStep("review")}
+          onSource={(item) => jumpToSource(item as Book2Item)} onReveal={(item) => void revealModel(item as Book2Item)} onRate={(item, value) => rate(item as Book2Item, value)} />
+      </div>
+      <aside className={`book2-source-dock ${sourcesOpen ? "is-open" : ""}`}><button type="button" className="book2-source-toggle" aria-expanded={sourcesOpen} onClick={() => setSourcesOpen((open) => !open)}>{sourcesOpen ? "Thu gọn tư liệu" : `Mở ${content.passages.length ? "bài đọc" : content.audios.length ? "bài nghe" : "số liệu"} để làm bài`}<ChevronDown size={18} /></button><Book2SourcePanel content={content} practice transcripts={transcripts} canShowTranscript={canShowTranscript} onTranscript={(id) => void loadTranscript(id)} /></aside>
+    </main>}
+
+    {step === "practice" && !testMode && current && <main className={hasSources ? "book2-practice-layout has-sources" : "book2-practice-layout"}>
       <div className="book2-practice-main b2-focus">
         <div className="b2-focus-bar">
           <button type="button" className="b2-icon-btn" onClick={() => goStep("learn")} aria-label="Thoát về phần Tìm hiểu"><X size={22} /></button>
