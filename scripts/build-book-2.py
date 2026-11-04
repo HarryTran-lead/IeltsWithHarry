@@ -30,10 +30,12 @@ def save_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
 
-def lesson_content(code, lesson_id, lesson, passages, audios, visuals, exercises, coach=None):
+def lesson_content(code, lesson_id, lesson, passages, audios, visuals, exercises, coach=None, teaching=None):
     content = {"type": "book2", "book_id": "BOOK_2", "source_id": lesson_id, "unit_id": code, "lesson": {"title": lesson["title"], "duration_minutes": lesson.get("duration_minutes"), "learning_objectives": lesson.get("learning_objectives") or ([{"en": lesson["objective"], "vi": ""}] if lesson.get("objective") else []), "theory": lesson.get("theory", []), "vocabulary": lesson.get("vocabulary", []), "grammar": lesson.get("grammar", []), "strategies": lesson.get("strategies", []), "common_mistakes": lesson.get("common_mistakes", []), "mini_review": lesson.get("mini_review", []), "rubric": lesson.get("rubric")}, "passages": passages, "audios": audios, "visuals": visuals, "exercises": exercises}
     if coach:
         content["coach"] = coach
+    if teaching:
+        content["teaching"] = teaching
     return content
 
 def catalog_lesson(unit, lesson_id, slug, title, skill, summary, order, related, supplement=False):
@@ -41,6 +43,113 @@ def catalog_lesson(unit, lesson_id, slug, title, skill, summary, order, related,
     if supplement:
         entry["supplement"] = True
     return entry
+
+def text(*values):
+    """The first non-empty string among the values."""
+    for value in values:
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return ""
+
+def clean(rows):
+    """Drop rows whose every value is empty, and keys with empty values."""
+    result = []
+    for row in rows:
+        row = {key: value for key, value in row.items() if value not in ("", None, [], {})}
+        if any(isinstance(value, str) for value in row.values()):
+            result.append(row)
+    return result
+
+def teaching_layer(sidecar, media, data_visuals):
+    """
+    The C09 self_study_v3 sidecar holds learner-facing teaching in several skill-specific shapes
+    (c02 reading, c03 listening, c04/c05 writing, c06/part 2-3 speaking). This keeps one common shape and
+    leaves out editorial metadata, statuses and teacher-only material.
+    """
+    theory = sidecar.get("theory") or {}
+    reading = sidecar.get("c02_reading_deep_dive") or {}
+    listening = sidecar.get("c03_listening_deep_dive") or {}
+    task1 = sidecar.get("c04_task1") or {}
+    part1 = sidecar.get("c06_part1_revision") or {}
+    part23 = sidecar.get("speaking_part2_and_part3") or {}
+
+    concepts = [{"title": text(item.get("title")), "text": text(item.get("explanation_vi"))} for item in theory.get("deep_dive_sections", [])]
+    concepts += [{"title": text(item.get("heading")), "text": text(item.get("explanation_vi")), "can_do": text(item.get("what_learner_can_do"))} for item in task1.get("theory", [])]
+    explained = listening.get("theory_explained_vi") or {}
+    for key, title in (("what_vi", "Đây là gì?"), ("why_vi", "Vì sao cần?"), ("how_vi", "Làm thế nào?"), ("limits_vi", "Giới hạn")):
+        if text(explained.get(key)):
+            concepts.append({"title": title, "text": text(explained.get(key))})
+
+    examples = []
+    for item in reading.get("worked_examples", []):
+        examples.append({"question": text(item.get("task_en")), "source": text(item.get("source_en")), "answer": text(item.get("answer_en")), "evidence": text(item.get("evidence_exact_en")), "why": text(item.get("reasoning_vi")), "trap": text(item.get("why_common_wrong_answer_fails_vi"))})
+    for item in listening.get("worked_microcases", []):
+        examples.append({"question": text(item.get("question_en")), "predict": text(item.get("prediction_prompt_vi")), "source": text(item.get("source_script_en")), "answer": text(item.get("answer_en")), "evidence": text(item.get("source_evidence_verbatim")), "why": text(item.get("explanation_vi")), "trap": text(item.get("why_distractor_is_wrong_vi"))})
+    for item in task1.get("worked_examples", []):
+        examples.append({"question": text(item.get("question_en")), "source": text(item.get("observed_data")), "answer": text(item.get("teacher_answer_en")), "why": text(item.get("analysis_vi")), "try": text(item.get("try_it_vi"))})
+    for item in part1.get("prelearn_guided_examples", []):
+        examples.append({"question": text(item.get("question_en")), "answer": text(item.get("illustrative_answer_en")), "pattern": text(item.get("pattern_en")), "why": text(item.get("annotation_vi"))})
+    for item in part23.get("part3_worked_questions", []):
+        examples.append({"question": text(item.get("question")), "pattern": text(item.get("structure")), "answer": text(item.get("model_en")), "why": text(item.get("notes_vi"))})
+    if not examples:
+        for item in sidecar.get("worked_examples", []):
+            examples.append({"question": text(item.get("question_or_goal_en")), "notice": text(item.get("notice_vi")), "source": text(item.get("source_excerpt")), "answer": text(item.get("worked_answer_en")), "why": text(item.get("why_this_works_vi")), "trap": text(item.get("contrast_or_trap_vi"))})
+
+    tips = [{"when": text(item.get("when_vi")), "do": text(item.get("action_vi")), "why": text(item.get("why_vi"))} for item in reading.get("exam_tips_with_reason", [])]
+    tips += [{"when": text(item.get("stage")), "do": text(item.get("action_vi")), "why": text(item.get("why_vi")), "example": text(item.get("concrete_example_vi")), "limit": text(item.get("boundary_vi"))} for item in listening.get("strategies", [])]
+    tips += [{"when": text(item.get("when_to_apply_vi")), "do": text(item.get("tip_vi")), "why": text(item.get("why_vi")), "example": text(item.get("example_en"))} for item in task1.get("tips_explained", [])]
+    if not tips:
+        tips = [{"when": text(item.get("when_to_use_vi")), "do": text(item.get("do_this_vi")), "why": text(item.get("why_it_helps_vi")), "example": text(item.get("worked_example_vi")), "limit": text(item.get("when_not_to_use_vi"))} for item in sidecar.get("strategies_explained", [])]
+
+    mistakes = [{"wrong": text(item.get("incorrect")), "right": text(item.get("correction")), "why": text(item.get("because_vi")), "check": text(item.get("student_self_check_vi"))} for item in sidecar.get("common_mistakes_explained", [])]
+    for item in listening.get("common_mistakes", []) + task1.get("common_mistakes", []) + part1.get("common_mistakes", []):
+        mistakes.append({"wrong": text(item.get("wrong"), item.get("wrong_en")), "right": text(item.get("correct"), item.get("correct_en")), "why": text(item.get("why_vi"), item.get("explanation_vi")), "check": text(item.get("repair_drill_vi"))})
+
+    vocabulary = [{"term": text(item.get("term"), item.get("term_en")), "pos": text(item.get("part_of_speech"), item.get("pos")), "meaning": text(item.get("meaning_vi")), "example": text(item.get("example_en"), item.get("speaking_or_writing_example_en")), "example_vi": text(item.get("example_vi"))} for item in sidecar.get("vocabulary_and_collocations", []) + task1.get("vocabulary_and_collocations", []) + part1.get("topic_phrase_bank", [])]
+    seen = set()
+    vocabulary = [item for item in vocabulary if item["term"] and not (item["term"].lower() in seen or seen.add(item["term"].lower()))]
+
+    guided = [{"title": text(item.get("title")), "do": text(item.get("learner_instruction_vi")), "feedback": text(item.get("feedback_vi")), "model": text(item.get("worked_feedback_en"))} for item in task1.get("guided_ladder", [])]
+    guided = guided or [{"do": text(item.get("prompt_vi")), "pass": text(item.get("pass_condition"))} for item in reading.get("guided_practice", [])]
+    guided = guided or [{"do": text(item.get("instruction_vi")), "pass": text(item.get("expected_evidence"))} for item in listening.get("guided_practice", [])]
+    guided = guided or [{"do": text(item.get("instruction_vi")), "hint": text(item.get("contextual_prompt_vi"))} for item in sidecar.get("guided_practice_steps", [])]
+
+    coach = [{"trigger": text(item.get("trigger") if isinstance(item.get("trigger"), str) else (item.get("trigger") or {}).get("event")), "stage": text(item.get("stage")), "message": text(item.get("message_vi"))} for item in (sidecar.get("c08_coach_v3") or {}).get("events", [])]
+    coach += [{"trigger": text(item.get("trigger")), "message": text(item.get("message_vi"))} for item in reading.get("coach_reactions", []) + listening.get("contextual_coach", []) + task1.get("interactive_learning_coach", [])]
+    coach += [{"trigger": text(item.get("trigger")), "message": text(item.get("message_vi")), "example": text(item.get("micro_example"))} for item in (sidecar.get("interactive_learning_coach") or {}).get("contextual_events", [])]
+
+    visual = None
+    task1_visual = task1.get("visual") or {}
+    if task1_visual.get("asset"):
+        data = data_visuals.get(task1_visual.get("visual_data_id"), {})
+        visual = {"id": task1_visual.get("visual_data_id"), "title": data.get("title") or text(task1_visual.get("source_label_vi")), "image_url": media.get(task1_visual["asset"], ""), "headers": data.get("headers"), "rows": data.get("rows")}
+
+    review = sidecar.get("review_and_retake") or {}
+    layer = {
+        "title_vi": text(sidecar.get("title_vi")),
+        "outcome": text(sidecar.get("learning_outcome_vi")),
+        "why": text(sidecar.get("why_learn_this_vi"), reading.get("why_needed_vi")),
+        "overview": text(theory.get("overview_vi")),
+        "steps": clean([{"do": text(item.get("action_vi")), "why": text(item.get("why_vi"))} for item in theory.get("numbered_process", [])]),
+        "concepts": clean(concepts),
+        "boundary": text(theory.get("boundary_and_exception_vi"), reading.get("exam_boundary_vi")),
+        "micro_passage": text(reading.get("micro_passage_en")),
+        "before_listening": text(listening.get("before_listening_prompt_vi")),
+        "visual": visual if visual and (visual["image_url"] or visual.get("rows")) else None,
+        "examples": clean(examples),
+        "tips": clean(tips),
+        "mistakes": clean(mistakes),
+        "vocabulary": clean(vocabulary),
+        "guided": clean(guided),
+        "note_map": clean([{"label": text(item.get("label")), "note": text(item.get("example_note")), "sentence": text(item.get("sample_sentence"))} for item in part23.get("note_map", [])]),
+        "self_check": [value for value in task1.get("rubric_self_check_vi", []) + part1.get("self_check_rubric_vi", []) if isinstance(value, str)],
+        "coach": clean(coach),
+        "review_days": [day for day in review.get("spaced_review_schedule_suggestion_days", []) if isinstance(day, int)],
+    }
+    # The package often repeats the same sentence as "why" and as the theory overview.
+    if layer["overview"] == layer["why"]:
+        layer["overview"] = ""
+    return {key: value for key, value in layer.items() if value not in ("", None, [], {})}
 
 def supplement_lessons(code, unit, supplement, start_order):
     """Writing pilot task and Speaking Part 2 cue card from m05_writing_speaking, as open, self-assessed lessons."""
@@ -110,7 +219,7 @@ with zipfile.ZipFile(ARCHIVE) as archive:
         for member in archive.namelist():
             if member.startswith(base + "audio/") or member.startswith(base + "assets/"):
                 relative = member[len(base):]
-                if member.endswith("/") or not re.fullmatch(r"(?:audio|assets)/[A-Za-z0-9_.-]+", relative):
+                if member.endswith("/") or not re.fullmatch(r"(?:audio|assets)/(?:[A-Za-z0-9_.-]+/)*[A-Za-z0-9_.-]+", relative) or ".." in relative:
                     continue
                 target = MEDIA / code / relative
                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -150,6 +259,9 @@ with zipfile.ZipFile(ARCHIVE) as archive:
                 if sum(len(exercise["questions"]) for exercise in exercises) != len(related):
                     raise SystemExit(f"{code}: orphan exercise item in {lesson_id}")
                 summary = (lesson.get("learning_objectives") or [{}])[0].get("vi") or lesson.get("objective") or ""
+                # C09 teaching sidecar: units/Uxx/self_study_v3/<skill>-Lnn.json, named after the end of the lesson ID.
+                sidecar_name = f"{base}self_study_v3/{lesson_id.split('-', 2)[2]}.json"
+                teaching = teaching_layer(json.loads(archive.read(sidecar_name)), media, source.get("data_visuals", {})) if sidecar_name in archive.namelist() else None
                 parts = refactor.get("recommended_micro_lessons") if refactor.get("original_lesson_id") == lesson_id else None
                 if parts:
                     # Same exercises and question IDs, shown on three shorter screens; the old slug is kept as legacy state.
@@ -164,11 +276,11 @@ with zipfile.ZipFile(ARCHIVE) as archive:
                         part_passages = [value for value in passages if any(item.get("passage_id") == value["id"] for item in part_items)]
                         part_audios = [value for value in audios if any(item.get("audio_id") == value["id"] for item in part_items)]
                         part_visuals = [value for value in visuals if any((item.get("data_id") or item.get("asset_id")) == value["id"] for item in part_items)]
-                        save_json(LESSONS / f"{part['id'].lower()}.json", {**lesson_content(code, part["id"], part_lesson, part_passages, part_audios, part_visuals, chosen), "legacy_slug": lesson_id.lower()})
+                        save_json(LESSONS / f"{part['id'].lower()}.json", {**lesson_content(code, part["id"], part_lesson, part_passages, part_audios, part_visuals, chosen, teaching=teaching), "legacy_slug": lesson_id.lower()})
                         unit["lessons"].append(catalog_lesson(unit, part["id"], part["id"].lower(), part["title"], SKILLS[skill], summary, lesson_index, part_items))
                     continue
                 lesson_index += 1
-                save_json(LESSONS / f"{lesson_id.lower()}.json", lesson_content(code, lesson_id, lesson, passages, audios, visuals, exercises, source.get("m06_learning_coach") if skill in ("R", "L") else None))
+                save_json(LESSONS / f"{lesson_id.lower()}.json", lesson_content(code, lesson_id, lesson, passages, audios, visuals, exercises, source.get("m06_learning_coach") if skill in ("R", "L") else None, teaching))
                 unit["lessons"].append(catalog_lesson(unit, lesson_id, lesson_id.lower(), lesson["title"], SKILLS[skill], summary, lesson_index, related))
         graded = [lesson for lesson in unit["lessons"]]
         if sum(len(exercise["questions"]) for lesson in graded for exercise in json.loads((LESSONS / f"{lesson['slug']}.json").read_text(encoding="utf-8"))["exercises"]) != len(items):
