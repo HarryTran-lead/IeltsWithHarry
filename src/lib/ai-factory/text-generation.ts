@@ -83,7 +83,12 @@ export async function generateFactoryDraft(kind: FactoryKind, topic: string, opt
       reason = draft.warnings.join("; ").slice(0, 900);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      if (attempt === attempts || (error instanceof Error && error.name === "TimeoutError") || /model unavailable|daily quota exhausted|daily request budget|Could not checkpoint|free-tier project|Separate AI Factory free-tier key/i.test(message)) throw error;
+      const transientModelError = /model unavailable \(HTTP 50[0234]\)/i.test(message);
+      if (attempt === attempts || (error instanceof Error && error.name === "TimeoutError") || /daily quota exhausted|daily request budget|Could not checkpoint|free-tier project|Separate AI Factory free-tier key/i.test(message) || (/model unavailable/i.test(message) && !transientModelError)) throw error;
+      if (transientModelError) {
+        await new Promise((resolve) => setTimeout(resolve, attempt * 15_000));
+        continue;
+      }
       reason = message.slice(0, 900);
     }
   }

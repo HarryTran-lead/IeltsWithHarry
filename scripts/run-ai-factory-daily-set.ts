@@ -136,7 +136,8 @@ async function main() {
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     await save(client, active, { error: message.slice(0, 1000) });
-    if (/daily request budget|daily quota exhausted|timeout|model unavailable \(HTTP 5\d\d\)/i.test(message)) { console.log(`${active.payload.setId} paused: ${message}`); return; }
+    if (/daily request budget|daily quota exhausted|timeout/i.test(message)) { console.log(`${active.payload.setId} paused: ${message}`); return; }
+    // A persistent server error needs a red workflow so a stalled set is visible.
     throw error;
   }
 }

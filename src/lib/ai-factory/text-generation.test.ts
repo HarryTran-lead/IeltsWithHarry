@@ -69,6 +69,24 @@ describe("AI Factory text drafting", () => {
     expect(fetcher).toHaveBeenCalledTimes(1);
   });
 
+  it("retries a transient model 503 and counts both calls", async () => {
+    enableConfirmedFreeTier();
+    vi.useFakeTimers();
+    try {
+      const beforeRequest = vi.fn(async () => {});
+      const fetcher = vi.fn()
+        .mockResolvedValueOnce(Response.json({ error: { message: "overloaded" } }, { status: 503 }))
+        .mockResolvedValueOnce(Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(essay(validStatement)) }] } }] })) as typeof fetch;
+      const pending = generateFactoryDraft("writing_task2", "Public transport choices", { beforeRequest }, fetcher);
+      await vi.advanceTimersByTimeAsync(15_000);
+      expect((await pending).warnings).toEqual([]);
+      expect(beforeRequest).toHaveBeenCalledTimes(2);
+      expect(fetcher).toHaveBeenCalledTimes(2);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
   it("does not spend more requests retrying a timed-out model call", async () => {
     enableConfirmedFreeTier();
     const beforeRequest = vi.fn(async () => {});
