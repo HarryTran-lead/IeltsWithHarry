@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ChartNoAxesColumn, Check, CheckCircle2, Clock3, Highlighter, Languages, RotateCcw, Sparkles, TrendingDown, TrendingUp, XCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrateScore } from "@/lib/celebrate";
-import { usePracticeClock } from "@/features/reading/reading-workspace";
+import { usePracticeClock, useReadingEvidenceNavigation } from "@/features/reading/reading-workspace";
 import { addHighlight, highlightColors, parseHighlights, segments, type Highlight, type HighlightColor } from "@/lib/highlights";
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
@@ -18,6 +18,18 @@ export type TypeCount = { type: QuestionType; count: number };
 type Question = { id: string; sort_order: number; question_type: QuestionType; prompt: string; options: string[]; supporting_sentence: string };
 type Review = { id: string; correct: boolean; correctIndex: number | null; acceptedAnswers: string[] | null; explanation: string; optionNotes: string[] | null; supportingSentence: string };
 type SavedResult = { score: number; total: number; review: Review[]; answers: Record<string, string>; submittedAt: string; attempts: number; durationSeconds?: number | null };
+
+function EvidenceLink({ quote }: { quote: string }) {
+  const showEvidence = useReadingEvidenceNavigation();
+  const [missing, setMissing] = useState(false);
+  if (!quote.trim()) return null;
+  return <small className="news-evidence-link">
+    <button type="button" onClick={() => setMissing(!showEvidence?.(quote))} aria-label="Tìm câu dẫn chứng trong bài đọc">
+      <b>Câu dẫn chứng trong bài:</b> “{quote}” <span aria-hidden="true">↗</span>
+    </button>
+    {missing && <span role="status">Không tìm thấy câu này trong bài đọc.</span>}
+  </small>;
+}
 const ATTEMPT_COLUMNS = "id,article_id,score,total,submitted_at,partial,breakdown,duration_seconds";
 
 function parseFlowChartPrompt(prompt: string) {
@@ -322,7 +334,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
               <strong>Câu {number}: {review.correct ? "Chính xác!" : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
               {!review.correct && <p>Bạn trả lời: “{String(answers[question.id] ?? "")}”</p>}
               <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>
-              <small><b>Câu dẫn chứng trong bài:</b> “{review.supportingSentence}”</small>
+              <EvidenceLink quote={review.supportingSentence} />
             </div></div>;
           })}
         </>}
@@ -377,7 +389,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
               <strong>{review.correct ? "Chính xác! " : "Chưa đúng. "}{review.correctIndex !== null ? `Đáp án: ${question.question_type === "tfng" || question.question_type === "ynng" ? question.options[review.correctIndex].toUpperCase() : question.options[review.correctIndex]}` : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
               {!review.correct && !choice && <p>Bạn trả lời: “{String(value ?? "")}”</p>}
               <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>
-              <small><b>Câu dẫn chứng trong bài:</b> “{review.supportingSentence}”</small></div></div>}
+              <EvidenceLink quote={review.supportingSentence} /></div></div>}
           </div>;
         })}
       </div>;

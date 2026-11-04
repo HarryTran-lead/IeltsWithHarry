@@ -6,6 +6,7 @@ import { addHighlight, highlightColors, parseHighlightCache, parseHighlights, se
 import { Literata } from "next/font/google";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
+import { findEvidenceLocation, type EvidenceLocation } from "@/lib/news/evidence-location";
 import "./reading-workspace.css";
 
 // A book face for long passages, loaded only on pages with a reader.
@@ -26,6 +27,9 @@ type PracticeClock = { elapsed: () => number; restart: () => void };
 const PracticeClockContext = createContext<PracticeClock>({ elapsed: () => 0, restart: () => {} });
 /** Seconds on the practice timer, and a way to start it again for a new round. */
 export function usePracticeClock() { return useContext(PracticeClockContext); }
+const EvidenceNavigationContext = createContext<((quote: string) => boolean) | null>(null);
+/** Jump from a graded question's citation to its location in the passage. */
+export function useReadingEvidenceNavigation() { return useContext(EvidenceNavigationContext); }
 /** A panel beside the passage. Minimised panels become icons; `onSelect` panels open when the reader selects a word. */
 export type ReadingTool = { id: string; label: string; icon: React.ReactNode; count?: number; onSelect?: boolean; content: React.ReactNode };
 
@@ -85,6 +89,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   useEffect(() => { secondsRef.current = seconds; }, [seconds]);
   const practiceClock = useMemo<PracticeClock>(() => ({ elapsed: () => secondsRef.current, restart: () => { secondsRef.current = 0; setSeconds(0); } }), []);
   const [popover, setPopover] = useState<Popover | null>(null);
+  const [activeEvidence, setActiveEvidence] = useState<EvidenceLocation | null>(null);
   const [toolsMin, setToolsMin] = useState(false);
   const [openTool, setOpenTool] = useState<string | null>(null);
   const textRef = useRef<HTMLDivElement>(null);
@@ -98,6 +103,22 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   const saveQueue = useRef<Promise<void>>(Promise.resolve());
   const saveVersion = useRef(0);
   const practicing = mode === "practice";
+  const showEvidence = useCallback((quote: string) => {
+    const location = findEvidenceLocation(text, quote);
+    if (!location) return false;
+    setPopover(null);
+    setActiveEvidence(location);
+    setTab("passage");
+    return true;
+  }, [text]);
+  useEffect(() => {
+    if (!practicing || !activeEvidence || tab !== "passage") return;
+    const frame = requestAnimationFrame(() => {
+      const target = textRef.current?.querySelector("[data-evidence]") ?? textRef.current?.querySelector(`[data-p="${activeEvidence.paragraph}"]`);
+      target?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [activeEvidence, practicing, tab]);
   const total = practice?.answered.length ?? 0;
   const done = practice?.answered.filter(Boolean).length ?? 0;
   const graded = Boolean(practice?.correct?.length) && practice!.correct!.every((item) => item !== undefined);
@@ -291,7 +312,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     setPopover(null);
   }
 
-  function enterPractice() { readStartedAt.current = 0; setMode("practice"); setTab("passage"); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
+  function enterPractice() { readStartedAt.current = 0; setMode("practice"); setTab("passage"); setActiveEvidence(null); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
   function requestPractice() { if (practice?.setup) setSetupOpen(true); else enterPractice(); }
   function jump(number: number) {
     setTab("questions");
@@ -366,8 +387,9 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
         }}>
           {text.map((paragraph, index) => <div className="rw-para" key={index}>
             <span className="rw-letter" aria-hidden="true">{letter(index)}</span>
-            <p data-p={index} lang="en">{segments(paragraph, index, highlights).map((part) => part.highlight
-              ? <mark key={part.start} data-hl={part.highlight.id} className={`rw-mark ${part.highlight.color}`}>{part.text}</mark>
+            <p data-p={index} lang="en">{segments(paragraph, index, activeEvidence?.paragraph === index
+              ? addHighlight(highlights, { id: "active-evidence", p: index, start: activeEvidence.start, end: activeEvidence.end, color: "sun" }) : highlights).map((part) => part.highlight
+              ? <mark key={part.start} data-hl={part.highlight.id} data-evidence={part.highlight.id === "active-evidence" ? "true" : undefined} className={`rw-mark ${part.highlight.id === "active-evidence" ? "rw-evidence" : part.highlight.color}`}>{part.text}</mark>
               : <Fragment key={part.start}>{part.text}</Fragment>)}</p>
             {translation?.(index)}
           </div>)}
@@ -385,7 +407,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
         onPointerDown={drag} onKeyDown={(event) => { if (event.key === "ArrowLeft") setSplit((value) => Math.max(30, value - 4)); if (event.key === "ArrowRight") setSplit((value) => Math.min(70, value + 4)); }}><i /></div>}
       <div className="rw-pane rw-side-pane" ref={sideRef}>
         {toolPanel}
-        {practice && <div className="rw-questions"><PracticeClockContext.Provider value={practiceClock}>{practice.content}</PracticeClockContext.Provider></div>}
+        {practice && <div className="rw-questions"><PracticeClockContext.Provider value={practiceClock}><EvidenceNavigationContext.Provider value={showEvidence}>{practice.content}</EvidenceNavigationContext.Provider></PracticeClockContext.Provider></div>}
       </div>
     </div>
 

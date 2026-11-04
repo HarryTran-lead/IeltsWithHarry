@@ -54,6 +54,7 @@
 .rw-mark.sun { background: #ffe68f; }
 .rw-mark.mint { background: #bdeed6; }
 .rw-mark.rose { background: #ffcbd8; }
+.rw-mark.rw-evidence { background: #ffe078; box-shadow: 0 0 0 3px #f3b83b88; border-radius: 3px; pointer-events: none; }
 .rw-hint { display: flex; align-items: center; gap: 7px; max-width: 70ch; margin: 4px auto 18px; padding-top: 14px; border-top: 1px dashed var(--line); color: var(--subtle); font-size: 12.5px; }
 .rw-read-end { height: 1px; }
 .rw.is-read .rw-passage-pane > :not(.rw-text):not(.rw-hint) { max-width: 70ch; margin-left: auto; margin-right: auto; }
