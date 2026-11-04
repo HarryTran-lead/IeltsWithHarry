@@ -16,7 +16,22 @@ There are 330 C2 questions without Vietnamese translations, and the source QA
 report says no question has completed teacher review. Correct answers stay in
 the server bundle and are returned only after a learner submits a response.
 This dataset supports guided, independent, mastery and spaced review practice,
-but its results do not unlock levels, award XP or certify proficiency.
+but its practice results do not award XP or certify proficiency.
+
+## Level unlock
+
+A1 is open. A2 through C2 require a 20-question choice test drawn from the
+preceding level; 16 correct answers (80%) open the next level. Learners can
+retry with a new set. A signed, 30-minute test ticket binds the question IDs
+to the learner. The server grades the complete submission and saves a pass in
+`public.grammar_level_unlocks`; lesson API requests for locked levels return
+403, including direct URLs. Chapter tests remain separate and do not open
+levels. A score only controls the learning roadmap, not CEFR certification.
+
+Apply `supabase/migrations/202611040001_grammar_level_unlocks.sql` before
+deploying the code. Production needs its existing server-only
+`SUPABASE_SERVICE_ROLE_KEY`; `GRAMMAR_ASSESSMENT_SECRET` can be set as a
+separate ticket-signing key. The service role is the only writer for unlocks.
 
 Live learner progress continues in `public.grammar_study_progress` with its
 existing account-scoped RLS. Existing V5 response IDs remain in storage so the

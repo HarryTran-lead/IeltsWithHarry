@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useCallback, useRef, useState, useSyncExternalStore } from "react";
-import { ArrowLeft, ArrowRight, ClipboardCheck, Compass, RotateCcw } from "lucide-react";
+import { ArrowLeft, ArrowRight, ClipboardCheck, Compass, LockKeyhole, RotateCcw } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { clockNow } from "@/lib/grammar/schedule";
 import { grammarLevels, grammarWorlds, type GrammarLessonProgress, type GrammarLevel, type GrammarPracticeItem, type GrammarProgress } from "@/lib/grammar/types";
+import { isLevelOpen } from "@/lib/grammar/gate";
 import { catalog, lessonDone, ROOT } from "./grammar-catalog";
 import type { GrammarUpdate } from "./grammar-progress";
 import { PracticeSession, SessionSummary, sessionScore, type SessionEntry, type SessionResult } from "./practice-session";
@@ -120,7 +121,7 @@ function PlacementResult({ placement, onRetry }: { placement: Placement; onRetry
 
 type TestView = { type: "list" } | { type: "loading" } | { type: "session"; id: number; chapter: number; entries: SessionEntry[] } | { type: "summary"; chapter: number; result: SessionResult; passed: boolean };
 
-export function ChapterTestsPage({ progress, update, initialLevel }: { progress: GrammarProgress; update: GrammarUpdate; initialLevel: GrammarLevel }) {
+export function ChapterTestsPage({ progress, update, initialLevel, unlocked }: { progress: GrammarProgress; update: GrammarUpdate; initialLevel: GrammarLevel; unlocked: GrammarLevel[] }) {
   const [level, setLevel] = useState(initialLevel);
   const [view, setView] = useState<TestView>({ type: "list" });
   const [error, setError] = useState("");
@@ -165,8 +166,8 @@ export function ChapterTestsPage({ progress, update, initialLevel }: { progress:
 
   return <div className="gg-subpage">{back}<span className="gg-eyebrow">KIỂM TRA</span><h1>Kiểm tra cuối chặng</h1>
     <p>Mỗi chặng gồm 5 bài. Bài kiểm tra có {CHAPTER * TEST_PER_LESSON} câu Vận dụng trộn từ cả 5 bài, mỗi câu chấm một lần. Đạt khi đúng từ 80%.</p>
-    <Link className="gg-placement-cta" href={`${ROOT}/placement`}><Compass size={20} aria-hidden="true" /><span><strong>Chưa biết bắt đầu từ đâu?</strong><small>Làm bài xếp lớp khoảng 10 phút để được gợi ý cấp độ.</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
-    <nav className="gg-levels" aria-label="Chọn cấp độ">{grammarLevels.map((item) => <button type="button" className={item === level ? "selected" : ""} aria-pressed={item === level} key={item} onClick={() => setLevel(item)}><Sticker name={grammarWorlds[item].sticker as StickerName} size={30} pop={false} /><span><strong>{item}</strong><small>{levelChapters(item).length} chặng</small></span></button>)}</nav>
+    <Link className="gg-placement-cta" href={`${ROOT}/placement`}><Compass size={20} aria-hidden="true" /><span><strong>Muốn học cấp tiếp theo?</strong><small>Làm bài kiểm tra 20 câu và đạt ít nhất 80% để mở khóa.</small></span><ArrowRight size={16} aria-hidden="true" /></Link>
+    <nav className="gg-levels" aria-label="Chọn cấp độ">{grammarLevels.map((item) => <button type="button" className={item === level ? "selected" : ""} aria-pressed={item === level} disabled={!isLevelOpen(item, unlocked)} key={item} onClick={() => setLevel(item)}>{isLevelOpen(item, unlocked) ? <Sticker name={grammarWorlds[item].sticker as StickerName} size={30} pop={false} /> : <LockKeyhole size={24} aria-hidden="true" />}<span><strong>{item}</strong><small>{isLevelOpen(item, unlocked) ? `${levelChapters(item).length} chặng` : "Chưa mở"}</small></span></button>)}</nav>
     {error && <p role="alert" className="gg-skip-note">{error}</p>}
     <div className="gg-tests">{chapters.map((chunk, index) => {
       const learned = chunk.filter((lesson) => lessonDone(lesson, progress[lesson.code])).length;

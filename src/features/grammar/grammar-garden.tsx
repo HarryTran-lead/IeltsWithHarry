@@ -11,8 +11,10 @@ import { answered, clockNow, dueLessons, flaggedQuestions, formatDue, isDue, mai
 import { catalog, lessonDone, lessonHref, lessonTotal, nextLesson, ROOT } from "./grammar-catalog";
 import { useGrammarProgress, type GrammarUpdate } from "./grammar-progress";
 import { GrammarToday } from "./grammar-today";
-import { CHAPTER, ChapterTestsPage, PlacementPage, usePlacement } from "./grammar-tests";
+import { CHAPTER, ChapterTestsPage } from "./grammar-tests";
 import { PracticeSession, resetForSession, SessionSummary, sessionScore, type SessionEntry, type SessionResult } from "./practice-session";
+import { GRAMMAR_PASS_PERCENT, isLevelOpen } from "@/lib/grammar/gate";
+import { GrammarUnlockPage, LockedLevel, useGrammarUnlocks } from "./grammar-unlock";
 import "./grammar-tokens.css";
 import "./grammar-garden.css";
 import "./grammar-garden-layout.css";
@@ -37,29 +39,33 @@ export function GrammarGarden() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const { progress, ready, syncError, update } = useGrammarProgress();
+  const gate = useGrammarUnlocks();
   const parts = pathname.split("/");
   const route = parts[3] ?? "";
-  const placement = usePlacement();
-  const level = grammarLevels.includes(parts[4] as GrammarLevel) ? parts[4] as GrammarLevel : placement?.level ?? "A1";
+  const level = grammarLevels.includes(parts[4] as GrammarLevel) ? parts[4] as GrammarLevel : "A1";
   const testLevel = grammarLevels.includes(searchParams.get("level") as GrammarLevel) ? searchParams.get("level") as GrammarLevel : level;
+  if (!gate.ready) return <div className="gg gg-loading">Đang kiểm tra cấp độ đã mở…</div>;
   return <div className="gg" id="che-do-hoc">
     {syncError && <div className="gg-sync" role="status">{syncError}</div>}
-    {route === "lesson" ? (ready ? <LessonWorkspace key={parts[4]} code={parts[4]} progress={progress} update={update} initialTab={searchParams.get("tab") === "practice" ? "practice" : "theory"} initialStage={searchParams.get("stage") ?? "guided"} initialItem={searchParams.get("item") ?? ""} resume={searchParams.has("resume")} /> : <div className="gg-loading">Đang tải tiến độ…</div>)
+    {gate.error && <div className="gg-sync" role="alert">{gate.error}</div>}
+    {route === "lesson" ? (!isLevelOpen(parts[4]?.split("-")[0] as GrammarLevel, gate.unlocked) ? <LockedLevel level={parts[4]?.split("-")[0] as GrammarLevel} unlocked={gate.unlocked} /> : ready ? <LessonWorkspace key={parts[4]} code={parts[4]} progress={progress} update={update} initialTab={searchParams.get("tab") === "practice" ? "practice" : "theory"} initialStage={searchParams.get("stage") ?? "guided"} initialItem={searchParams.get("item") ?? ""} resume={searchParams.has("resume")} /> : <div className="gg-loading">Đang tải tiến độ…</div>)
       : route === "review" ? <ReviewPage progress={progress} update={update} />
-      : route === "progress" ? <ProgressPage progress={progress} ready={ready} />
-      : route === "tests" ? <ChapterTestsPage key={testLevel} progress={progress} update={update} initialLevel={testLevel} />
-      : route === "placement" ? <PlacementPage />
+      : route === "progress" ? <ProgressPage progress={progress} ready={ready} unlocked={gate.unlocked} />
+      : route === "tests" ? (isLevelOpen(testLevel, gate.unlocked) ? <ChapterTestsPage key={testLevel} progress={progress} update={update} initialLevel={testLevel} unlocked={gate.unlocked} /> : <LockedLevel level={testLevel} unlocked={gate.unlocked} />)
+      : route === "placement" ? <GrammarUnlockPage targetParam={searchParams.get("target")} unlocked={gate.unlocked} onUnlock={gate.unlock} />
+      : !isLevelOpen(level, gate.unlocked) ? <LockedLevel level={level} unlocked={gate.unlocked} />
       : <><div className="gg-crumb"><Link href={ROOT}><Sprout size={17} /> Grammar</Link><ChevronRight size={15} /><span>{level}</span></div>
-        <div className="gg-layout"><main className="gg-main">{ready && <GrammarToday progress={progress} level={level} />}<Roadmap level={level} progress={progress} ready={ready} chapterQuery={searchParams.get("chapter")} placed={Boolean(placement)} /></main><aside className="gg-aside"><SidebarProgress level={level} progress={progress} /></aside></div></>}
+        <div className="gg-layout"><main className="gg-main">{ready && <GrammarToday progress={progress} level={level} />}<Roadmap level={level} progress={progress} ready={ready} chapterQuery={searchParams.get("chapter")} unlocked={gate.unlocked} /></main><aside className="gg-aside"><SidebarProgress level={level} progress={progress} /></aside></div></>}
   </div>;
 }
 
-function Roadmap({ level, progress, ready, chapterQuery, placed }: { level: GrammarLevel; progress: GrammarProgress; ready: boolean; chapterQuery: string | null; placed: boolean }) {
+function Roadmap({ level, progress, ready, chapterQuery, unlocked }: { level: GrammarLevel; progress: GrammarProgress; ready: boolean; chapterQuery: string | null; unlocked: GrammarLevel[] }) {
   const [query, setQuery] = useState("");
   const lessons = catalog.filter((lesson) => lesson.level === level);
   const world = grammarWorlds[level];
   const counts = countForLevel(level, progress);
   const current = nextLesson(level, progress);
+  const nextLevel = grammarLevels[grammarLevels.indexOf(level) + 1];
   const now = clockNow();
   const chapters = Array.from({ length: Math.ceil(lessons.length / CHAPTER) }, (_, index) => lessons.slice(index * CHAPTER, (index + 1) * CHAPTER));
   const openChapter = Number(chapterQuery) || Math.floor(lessons.indexOf(current) / CHAPTER) + 1;
@@ -77,13 +83,13 @@ function Roadmap({ level, progress, ready, chapterQuery, placed }: { level: Gram
     </Link></li>;
   };
   return <>
-    {ready && !placed && !Object.keys(progress).length && <Link className="gg-placement-cta" href={`${ROOT}/placement`}><Compass size={20} aria-hidden="true" /><span><strong>Chưa biết bắt đầu từ cấp nào?</strong><small>Làm bài xếp lớp khoảng 10 phút để được gợi ý.</small></span><ArrowRight size={16} aria-hidden="true" /></Link>}
+    {ready && nextLevel && !isLevelOpen(nextLevel, unlocked) && <Link className="gg-placement-cta" href={`${ROOT}/placement?target=${nextLevel}`}><Compass size={20} aria-hidden="true" /><span><strong>Muốn lên cấp {nextLevel}?</strong><small>Làm đúng ít nhất 16/20 câu của cấp {level} để mở khóa.</small></span><ArrowRight size={16} aria-hidden="true" /></Link>}
     <section className="gg-hero gg-hero-garden">
       <div className="gg-hero-copy"><span className="gg-eyebrow">WORLD {grammarLevels.indexOf(level) + 1} · {level}</span><h1>{world.name}</h1><p>{world.description}</p>
         <div className="gg-hero-metric"><span>{counts.practiced}/{counts.total} bài đã học xong</span><span>{Math.round(counts.practiced / counts.total * 100)}%</span></div><div className="gg-meter"><span style={{ width: `${counts.practiced / counts.total * 100}%` }} /></div></div>
       <Sticker name={worldSticker(level)} size={84} tilt={-6} float className="gg-hero-sticker" />
     </section>
-    <nav className="gg-levels" id="gg-worlds" aria-label="Chọn cấp độ">{grammarLevels.map((item) => { const value = countForLevel(item, progress); return <Link className={item === level ? "selected" : ""} aria-current={item === level ? "page" : undefined} href={`${ROOT}/level/${item}`} key={item}><Sticker name={worldSticker(item)} size={30} pop={false} /><span><strong>{item}</strong><small>{ready ? `${value.practiced}/${value.total}` : `${value.total} bài`}</small></span></Link>; })}</nav>
+    <nav className="gg-levels" id="gg-worlds" aria-label="Chọn cấp độ">{grammarLevels.map((item) => { const value = countForLevel(item, progress); const open = isLevelOpen(item, unlocked); return <Link className={`${item === level ? "selected" : ""} ${open ? "" : "is-locked"}`} aria-current={item === level ? "page" : undefined} href={open ? `${ROOT}/level/${item}` : `${ROOT}/placement?target=${item}`} key={item}>{open ? <Sticker name={worldSticker(item)} size={30} pop={false} /> : <LockKeyhole size={24} aria-hidden="true" />}<span><strong>{item}</strong><small>{open ? ready ? `${value.practiced}/${value.total}` : `${value.total} bài` : "Chưa mở"}</small></span></Link>; })}</nav>
     <div className="gg-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={`Tìm trong ${level} (${lessons.length} bài)...`} aria-label="Tìm bài Grammar" />{query && <button onClick={() => setQuery("")}>Xóa</button>}</div>
     {query.trim() ? <ol className="gg-path">{found.length ? found.map((lesson) => node(lesson, lessons.indexOf(lesson) + 1)) : <p className="gg-path-empty">Không tìm thấy bài phù hợp.</p>}</ol>
       : <div className="gg-chapters">{chapters.map((chunk, index) => {
@@ -94,7 +100,7 @@ function Roadmap({ level, progress, ready, chapterQuery, placed }: { level: Gram
           <Link className={`gg-chapter-test ${progress[chunk[0].code]?.chapterTest?.passed ? "is-passed" : ""}`} href={`${ROOT}/tests?level=${level}`}><ClipboardCheck size={17} aria-hidden="true" /><span><strong>Kiểm tra chặng {index + 1}</strong><small>{progress[chunk[0].code]?.chapterTest ? `Cao nhất ${Math.round(progress[chunk[0].code]!.chapterTest!.best * 100)}%${progress[chunk[0].code]!.chapterTest!.passed ? " · Đã đạt" : ""}` : `${chunk.length * 3} câu trộn từ ${chunk.length} bài`}</small></span><ChevronRight size={16} aria-hidden="true" /></Link>
         </details>;
       })}</div>}
-    <div className="gg-preview-note">Dữ liệu đang là bản nháp biên tập, chưa được xác nhận để cấp chứng nhận năng lực. Kết quả chỉ giúp tự luyện và tìm câu cần ôn.</div>
+    <div className="gg-preview-note">A1 mở sẵn. Mỗi cấp tiếp theo yêu cầu đạt ít nhất {GRAMMAR_PASS_PERCENT}% trong bài kiểm tra 20 câu của cấp trước. Câu hỏi đang biên tập; kết quả chỉ dùng để mở lộ trình học, không phải chứng nhận năng lực.</div>
   </>;
 }
 
@@ -362,7 +368,7 @@ const DAY = 86_400_000;
 const startOfWeek = (time: number) => { const date = new Date(time); date.setHours(0, 0, 0, 0); date.setDate(date.getDate() - ((date.getDay() + 6) % 7)); return date.getTime(); };
 const shortDate = (time: number) => new Date(time).toLocaleDateString("vi-VN", { day: "numeric", month: "numeric" });
 
-function ProgressPage({ progress, ready }: { progress: GrammarProgress; ready: boolean }) {
+function ProgressPage({ progress, ready, unlocked }: { progress: GrammarProgress; ready: boolean; unlocked: GrammarLevel[] }) {
   const now = clockNow();
   const nowTime = new Date(now).getTime();
   const responses = Object.values(progress).flatMap((value) => Object.entries(value.responses).filter(([id]) => editorialId(id)).map(([, response]) => response));
@@ -383,7 +389,7 @@ function ProgressPage({ progress, ready }: { progress: GrammarProgress; ready: b
   const weakest = Object.entries(progress).map(([code, value]) => ({ code, lesson: catalog.find((item) => item.code === code), open: Object.entries(value.responses).filter(([id, response]) => editorialId(id) && response.status === "NEED_REVIEW").length }))
     .filter((row) => row.lesson && row.open > 0).sort((a, b) => b.open - a.open).slice(0, 5);
   const latest = [...weeks].reverse().find((week) => week.total);
-  return <div className="gg-subpage gg-progress"><Link className="gg-back" href={ROOT}><ArrowLeft size={16} /> Lộ trình Grammar</Link><span className="gg-eyebrow">TIẾN ĐỘ</span><h1>Hành trình Grammar</h1><p>Điểm luyện tập từ bản nháp biên tập, dùng để tự theo dõi, không phải chứng nhận cấp độ.</p>
+  return <div className="gg-subpage gg-progress"><Link className="gg-back" href={ROOT}><ArrowLeft size={16} /> Lộ trình Grammar</Link><span className="gg-eyebrow">TIẾN ĐỘ</span><h1>Hành trình Grammar</h1><p>Muốn mở cấp tiếp theo, hãy đạt ít nhất {GRAMMAR_PASS_PERCENT}% trong bài kiểm tra của cấp trước. Điểm luyện tập từng bài không thay thế bài kiểm tra này.</p>
     {!ready ? <div className="gg-loading">Đang tải tiến độ…</div> : <>
       <div className="gg-stat-tiles">
         <div><strong>{learned}</strong><span>Bài đã học xong</span></div>
@@ -402,6 +408,6 @@ function ProgressPage({ progress, ready }: { progress: GrammarProgress; ready: b
         </section>
       </div>
       {weakest.length > 0 && <section className="gg-panel"><h2>Bài còn nhiều câu sai</h2><div className="gg-weak">{weakest.map((row) => <Link key={row.code} href={`${ROOT}/lesson/${row.code}?resume=1`}><span>{row.code}</span><strong>{row.lesson!.title}</strong><small>{row.open} câu cần ôn</small><ArrowRight size={15} /></Link>)}</div><Link className="gg-side-link" href={`${ROOT}/review`}>Mở Sổ ôn <ArrowRight size={14} /></Link></section>}
-      <div className="gg-progress-levels">{grammarLevels.map((level) => { const value = countForLevel(level, progress); const levelDue = due.filter((code) => code.startsWith(level)).length; return <Link key={level} href={`${ROOT}/level/${level}`}><Sticker name={worldSticker(level)} size={40} pop={false} /><div><strong>{level} · {grammarWorlds[level].name}</strong><small>{value.practiced}/{value.total} bài học xong · {value.started} bài đã mở{levelDue ? ` · ${levelDue} bài đến hạn ôn` : ""}</small><div className="gg-meter"><span style={{ width: `${value.practiced / value.total * 100}%` }} /></div></div><ArrowRight size={17} /></Link>; })}</div>
+      <div className="gg-progress-levels">{grammarLevels.map((level) => { const value = countForLevel(level, progress); const levelDue = due.filter((code) => code.startsWith(level)).length; const open = isLevelOpen(level, unlocked); return <Link key={level} href={open ? `${ROOT}/level/${level}` : `${ROOT}/placement?target=${level}`}>{open ? <Sticker name={worldSticker(level)} size={40} pop={false} /> : <LockKeyhole size={30} aria-hidden="true" />}<div><strong>{level} · {grammarWorlds[level].name}</strong><small>{open ? `${value.practiced}/${value.total} bài học xong · ${value.started} bài đã mở${levelDue ? ` · ${levelDue} bài đến hạn ôn` : ""}` : "Chưa mở · kiểm tra lên cấp"}</small><div className="gg-meter"><span style={{ width: `${value.practiced / value.total * 100}%` }} /></div></div><ArrowRight size={17} /></Link>; })}</div>
     </>}</div>;
 }
