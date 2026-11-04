@@ -24,6 +24,9 @@ if not ARCHIVE or not ARCHIVE.is_file():
 CATALOG = ROOT / "src/data/book2/catalog.json"
 LESSONS = ROOT / "content/book2/lessons"
 MEDIA = ROOT / "public/book-2/media"
+# Recordings re-voiced by scripts/tts-book2-audio.mjs; the package's espeak drafts must not overwrite them.
+AUDIO_OVERRIDES = ROOT / "content/book2/audio-overrides.json"
+KEEP_MEDIA = set(json.loads(AUDIO_OVERRIDES.read_text(encoding="utf-8"))) if AUDIO_OVERRIDES.is_file() else set()
 SKILLS = {"R": "Reading", "W": "Writing", "L": "Listening", "S": "Speaking"}
 
 def save_json(path, value):
@@ -298,7 +301,8 @@ with zipfile.ZipFile(ARCHIVE) as archive:
                     continue
                 target = MEDIA / code / relative
                 target.parent.mkdir(parents=True, exist_ok=True)
-                target.write_bytes(archive.read(member))
+                if f"{code}/{relative}" not in KEEP_MEDIA or not target.is_file():
+                    target.write_bytes(archive.read(member))
                 media[relative] = f"/book-2/media/{code}/{relative}"
         supplement = source.get("m05_writing_speaking") or {}
         refactor = supplement.get("u06_speaking_refactor") or {}
