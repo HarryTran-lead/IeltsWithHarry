@@ -43,7 +43,8 @@ function Publish-Audio([string]$source, [string]$target) {
   if ($LASTEXITCODE -eq 0) { Write-Log "publish: no new audio"; return }
   $ready = Get-ReadyCount $target
   $message = Join-Path $cache "commit-message.txt"
-  Set-Content -Path $message -Encoding utf8 -Value "Add Skill Lab dictation audio ($ready of 300 lessons ready)`n`nGenerated with Gemini TTS and split and checked with Whisper by scripts/dictation-skill-lab-daily.ps1.`n`nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+  # Windows PowerShell's utf8 encoding adds a byte-order mark, which would end up in the commit subject.
+  [System.IO.File]::WriteAllText($message, "Add Skill Lab dictation audio ($ready of 300 lessons ready)`n`nGenerated with Gemini TTS and split and checked with Whisper by scripts/dictation-skill-lab-daily.ps1.`n`nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`n", (New-Object System.Text.UTF8Encoding $false))
   if ((& $git "commit -q -F `"$message`"") -ne 0) { Write-Log "publish failed: commit"; return }
   if ((& $git "push origin HEAD:main") -ne 0) {
     Write-Log "push rejected; rebasing on the latest main once"
