@@ -455,7 +455,7 @@ Quét lại từng màn bằng thao tác thật và script đo DOM (tràn ngang,
 |---|---|---|
 | Học | Nút "Nghe" vỡ: icon nằm trên chữ, vùng bấm 34×53px (CSS còn trỏ selector cũ) | Nút viên thuốc 40px cạnh ☆ |
 | Học | Bấm chuột rồi nhấn Enter: phím tắt và nút đang focus cùng chạy, nhảy 2 bước (qua thẻ rồi lật luôn thẻ sau) | Phím đã xử lý thì `preventDefault`; bỏ qua Ctrl/Cmd/Alt |
-| Học | Buổi A1–C2 chỉ còn 6/10 từ: từ không có định nghĩa Anh bị loại dù có nghĩa Việt | Chỉ loại từ không có nghĩa nào |
+| Học | Buổi A1–C2 chỉ còn 6/10 từ: từ không có định nghĩa Anh bị loại dù có nghĩa Việt | Chỉ giữ thêm từ có nghĩa Việt **đã biên tập**. Bản đầu (#50) giữ mọi nghĩa Việt, kéo theo nghĩa tự khớp sai ("a" → "ăng-strôm", "'s"), nên đã sửa lại |
 | Học | Từ dạng "a.m./A.M./am/AM": tiêu đề rối, Gõ từ bắt gõ cả chuỗi (gợi ý "15 ký tự"), câu ví dụ lộ đáp án "A.M." | Hiện "a.m." + "Cũng viết: …"; chấp nhận mọi dạng; che mọi dạng trong câu ví dụ |
 | Học | Thanh tiến độ đứng yên ở 0 suốt 15–20 thao tác đầu (chỉ tăng khi từ qua bước Gõ) | Tăng theo từng bước xong |
 | Học | Nhãn "· làm lại" hiện ngay khi vừa trả lời sai, và cả ở lần đầu sang bước Gõ | Chỉ hiện khi thẻ thật sự quay lại |
