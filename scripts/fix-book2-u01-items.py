@@ -8,7 +8,7 @@
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1] / "public/book-2/lessons"
+ROOT = Path(__file__).resolve().parents[1] / "content/book2/lessons"
 
 # Distractors from the same lesson word list, chosen to be close in meaning so the learner has to know the term.
 DISTRACTORS = {

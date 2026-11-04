@@ -22,7 +22,7 @@ if not ARCHIVE or not ARCHIVE.is_file():
     raise SystemExit("Pass BOOK2_ALL_8_UNITS.zip")
 
 CATALOG = ROOT / "src/data/book2/catalog.json"
-LESSONS = ROOT / "public/book-2/lessons"
+LESSONS = ROOT / "content/book2/lessons"
 MEDIA = ROOT / "public/book-2/media"
 SKILLS = {"R": "Reading", "W": "Writing", "L": "Listening", "S": "Speaking"}
 

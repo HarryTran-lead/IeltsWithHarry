@@ -4,8 +4,14 @@ import Image from "next/image";
 import { BookOpenText, Headphones, Table2 } from "lucide-react";
 import type { Book2Content } from "./book2-lesson";
 
-/** Keep the material needed to answer a question beside the questions. */
-export function Book2SourcePanel({ content, practice = false }: { content: Book2Content; practice?: boolean }) {
+/**
+ * Keep the material needed to answer a question beside the questions. Transcripts are not part of the lesson
+ * payload: the learner asks for one after answering a question about that recording, and the server returns it.
+ */
+export function Book2SourcePanel({ content, practice = false, transcripts = {}, canShowTranscript, onTranscript }: {
+  content: Book2Content; practice?: boolean;
+  transcripts?: Record<string, string>; canShowTranscript?: (audioId: string) => boolean; onTranscript?: (audioId: string) => void;
+}) {
   const hasSources = content.passages.length + content.audios.length + content.visuals.length > 0;
   if (!hasSources) return null;
   return <section className={`book2-sources ${practice ? "book2-sources-practice" : ""}`} aria-label="Tư liệu của bài">
@@ -21,7 +27,8 @@ export function Book2SourcePanel({ content, practice = false }: { content: Book2
     {content.audios.map((audio, index) => <article className="book2-card book2-source" id={`source-${audio.id}`} key={audio.id}>
       <h2><Headphones size={20} /> {audio.title ? `Bài nghe · ${audio.title}` : content.audios.length > 1 ? `Bài nghe ${index + 1}` : "Bài nghe"}</h2>
       {audio.audio_url ? <audio controls preload="metadata" src={audio.audio_url} /> : <p>Audio đang được bổ sung. Bài này chưa tính là bài luyện nghe hoàn chỉnh.</p>}
-      {audio.transcript && <details id={`transcript-${audio.id}`}><summary>Hiện transcript sau khi nghe</summary><pre className="book2-transcript">{audio.transcript}</pre></details>}
+      {transcripts[audio.id] ? <details id={`transcript-${audio.id}`} open><summary>Transcript</summary><pre className="book2-transcript">{transcripts[audio.id]}</pre></details>
+        : audio.has_transcript && onTranscript ? <div className="book2-transcript-ask"><button type="button" className="b2-pill" disabled={!canShowTranscript?.(audio.id)} onClick={() => onTranscript(audio.id)}>Hiện transcript sau khi nghe</button>{!canShowTranscript?.(audio.id) && <small>Nghe và trả lời ít nhất một câu của bài nghe này trước.</small>}</div> : null}
     </article>)}
     {content.visuals.map((visual) => <article className="book2-card book2-source" id={`source-${visual.id}`} key={visual.id}>
       <h2><Table2 size={20} /> {visual.title ?? visual.id}</h2>

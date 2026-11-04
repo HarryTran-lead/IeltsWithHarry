@@ -10,7 +10,7 @@ Every key was checked against its passage or transcript. This script:
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1] / "public/book-2/lessons"
+ROOT = Path(__file__).resolve().parents[1] / "content/book2/lessons"
 
 EXPLANATIONS = {
     "B2-U07-R-E01-Q001": "Đoạn B: trường có thể yêu cầu một portfolio, tức bộ sưu tập sản phẩm sáng tạo.",

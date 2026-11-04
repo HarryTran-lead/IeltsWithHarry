@@ -77,7 +77,7 @@ describe("Book 2 progress", () => {
     expect(book2OptionOrder("q1", "multiple_choice", ["A", "B", "C", "D"])).toEqual(["A", "B", "C", "D"]);
     expect(book2OptionOrder("q2", "multiple_choice", ["Wednesday", "Monday", "Either"]).at(-1)).toBe("Either");
     expect(book2OptionOrder("q3", "multiple_choice", ["x", "y", "z"])).toEqual(book2OptionOrder("q3", "multiple_choice", ["x", "y", "z"]));
-    const folder = join(process.cwd(), "public/book-2/lessons");
+    const folder = join(process.cwd(), "content/book2/lessons");
     const positions = [0, 0, 0, 0, 0, 0];
     for (const file of readdirSync(folder)) {
       const lesson = JSON.parse(readFileSync(join(folder, file), "utf8")) as { exercises: { questions: { question_id: string; item_type: string; options: string[]; answer: { kind: string; accepted: string[] } }[] }[] };

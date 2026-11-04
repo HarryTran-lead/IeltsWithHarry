@@ -1,7 +1,7 @@
 # Rebuild the four Unit 7 practice recordings from their authored transcripts.
 Add-Type -AssemblyName System.Speech
 $root = Resolve-Path (Join-Path $PSScriptRoot '..')
-$lessonDir = Join-Path $root 'public/book-2/lessons'
+$lessonDir = Join-Path $root 'content/book2/lessons'
 $outputDir = Join-Path $root 'public/book-2/media/U07/audio'
 New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
 

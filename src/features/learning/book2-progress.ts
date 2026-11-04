@@ -93,21 +93,24 @@ export function evaluateBook2Progress<T extends Book2ScoredItem>(
   answers: Record<string, string>,
   checked: Record<string, boolean>,
   ratings: Record<string, number>,
+  /** Server verdicts by question ID. Without it, answers are compared with the keys on the items (tests, tools). */
+  correct?: Record<string, boolean>,
 ) {
+  const right = (item: T) => correct ? correct[item.question_id] === true : book2AnswerCorrect(item, answers[item.question_id] ?? "");
   const objective = questions.filter((item) => item.answer.kind === "objective");
   const open = questions.filter((item) => item.answer.kind !== "objective");
   const objectiveChecked = objective.filter((item) => checked[item.question_id]);
-  const objectiveCorrect = objectiveChecked.filter((item) => book2AnswerCorrect(item, answers[item.question_id] ?? ""));
+  const objectiveCorrect = objectiveChecked.filter(right);
   const openReviewed = open.filter((item) => checked[item.question_id] && (ratings[item.question_id] ?? 0) > 0);
   const openReady = open.filter((item) => checked[item.question_id] && (ratings[item.question_id] ?? 0) >= 3);
   const completedCount = objectiveChecked.length + openReviewed.length;
   const mastered = questions.length > 0 && completedCount === questions.length
     && objectiveCorrect.length === objective.length && openReady.length === open.length;
-  const needsReview = objectiveChecked.some((item) => !book2AnswerCorrect(item, answers[item.question_id] ?? ""))
+  const needsReview = objectiveChecked.some((item) => !right(item))
     || openReviewed.some((item) => (ratings[item.question_id] ?? 0) < 3);
   const problems = questions.filter((item) => !checked[item.question_id]
     || (item.answer.kind === "objective"
-      ? !book2AnswerCorrect(item, answers[item.question_id] ?? "")
+      ? !right(item)
       : (ratings[item.question_id] ?? 0) < 3));
   return { objective, open, objectiveCorrect, openReviewed, openReady, completedCount, mastered, needsReview, problems };
 }

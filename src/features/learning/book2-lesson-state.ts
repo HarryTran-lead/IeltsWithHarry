@@ -8,6 +8,8 @@ export type Book2SavedState = {
   book2: 1;
   answers: Record<string, string>;
   checked: Record<string, boolean>;
+  /** Server verdicts for checked objective answers; older saves are re-checked when the lesson opens. */
+  correct?: Record<string, boolean>;
   ratings: Record<string, number>;
   checklist: Record<string, boolean>;
   step: Book2Step;
@@ -17,7 +19,7 @@ export type Book2SavedState = {
   updatedAt: number;
 };
 
-const emptyState = (): Book2SavedState => ({ book2: 1, answers: {}, checked: {}, ratings: {}, checklist: {}, step: "learn", exerciseIndex: 0, mastered: false, needsReview: false, updatedAt: 0 });
+const emptyState = (): Book2SavedState => ({ book2: 1, answers: {}, checked: {}, correct: {}, ratings: {}, checklist: {}, step: "learn", exerciseIndex: 0, mastered: false, needsReview: false, updatedAt: 0 });
 const storageKey = (slug: string) => `book2-state:${slug}`;
 
 export function cacheBook2State(slug: string, state: Book2SavedState) {

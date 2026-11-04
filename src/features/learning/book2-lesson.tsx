@@ -11,13 +11,13 @@ import { cacheBook2State, loadBook2State, saveBook2State, type Book2SavedState, 
 import { Book2SourcePanel } from "./book2-source-panel";
 import { Book2Coach, coachLines, type CoachScript } from "./book2-coach";
 import { TeachingLearn, teachingCoach, type Book2Teaching } from "./book2-teaching";
-import { book2AnswerCorrect, book2OptionOrder, evaluateBook2Progress, requiredBook2WritingWords } from "./book2-progress";
+import { book2OptionOrder, evaluateBook2Progress, requiredBook2WritingWords } from "./book2-progress";
 import "./book2-lesson.css";
 
 type Bilingual = { en?: string; vi?: string };
 type Book2Item = {
   question_id: string; item_type: string; prompt_en: string; prompt_vi?: string;
-  options?: string[]; answer: { kind: string; accepted?: string[]; model_en?: string; model_vi?: string };
+  options?: string[]; answer: { kind: string; accepted?: string[]; model_en?: string; model_vi?: string; has_model?: boolean };
   explanation_en?: string; explanation_vi?: string; evidence?: string;
   passage_id?: string; audio_id?: string; data_id?: string;
 };
@@ -50,7 +50,7 @@ export type Book2Content = {
     rubric?: { criteria?: string[]; self_rating_scale?: string } | null;
   };
   passages: { id: string; title?: string; text: string }[];
-  audios: { id: string; title?: string; transcript?: string; audio_url?: string }[];
+  audios: { id: string; title?: string; transcript?: string; audio_url?: string; has_transcript?: boolean }[];
   visuals: { id: string; title?: string; headers?: string[]; rows?: (string | number)[][]; image_url?: string }[];
   exercises: Exercise[];
   /** Scripted coach from the package; lessons without one get tips built from their questions. */
@@ -64,7 +64,9 @@ type Nav = { previous: { slug: string; title: string } | null; next: { slug: str
 
 const wordsIn = (value: string) => value.trim() ? value.trim().split(/\s+/).length : 0;
 const isObjective = (item: Book2Item) => item.answer.kind === "objective";
-const isCorrect = book2AnswerCorrect;
+/** What the lesson API returns once an objective answer is submitted. */
+type Verdict = { correct: boolean; accepted: string[]; explanation_vi?: string; explanation_en?: string; evidence?: string };
+type Model = { model_en: string; model_vi: string; explanation_vi: string };
 function sourceFor(item: Book2Item) { return item.passage_id || item.audio_id || item.data_id; }
 /** Reads English aloud with the browser voice, for model answers and stress words that have no recording. */
 function speak(text: string) {
@@ -143,6 +145,13 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   // readable; an audio-only lesson starts open because the small player is the first thing the learner needs.
   const [sourcesOpen, setSourcesOpen] = useState(content.audios.length > 0 && !content.passages.length && !content.visuals.length);
   const [syncStatus, setSyncStatus] = useState<"saving" | "account" | "device">("saving");
+  const [correct, setCorrect] = useState<Record<string, boolean>>({});
+  const [verdicts, setVerdicts] = useState<Record<string, Verdict>>({});
+  const [models, setModels] = useState<Record<string, Model>>({});
+  const [transcripts, setTranscripts] = useState<Record<string, string>>({});
+  const [pending, setPending] = useState("");
+  const [requestError, setRequestError] = useState("");
+  const rechecked = useRef(false);
   const [coachTips, setCoachTips] = useState(false);
   const [coachNote, setCoachNote] = useState("");
   const theme = skillThemes[lesson.skill] ?? skillThemes.Reading;
@@ -152,7 +161,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     let active = true;
     void loadBook2State(lesson.slug, content.legacy_slug).then((saved) => {
       if (!active) return;
-      setAnswers(saved.answers); setChecked(saved.checked); setRatings(saved.ratings);
+      setAnswers(saved.answers); setChecked(saved.checked); setRatings(saved.ratings); setCorrect(saved.correct ?? {});
       setChecklist(saved.checklist); setStep(saved.step);
       setPosition(Math.min(Math.max(saved.exerciseIndex, 0), Math.max(questions.length - 1, 0)));
       setRestored(true);
@@ -185,7 +194,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     return () => window.clearInterval(interval);
   }, [timer]);
 
-  const { objective, open, objectiveCorrect, openReviewed, openReady, completedCount, mastered, needsReview, problems } = evaluateBook2Progress(questions, answers, checked, ratings);
+  const { objective, open, objectiveCorrect, openReviewed, openReady, completedCount, mastered, needsReview, problems } = evaluateBook2Progress(questions, answers, checked, ratings, correct);
   const vocabularyGroups = Array.from({ length: Math.ceil(content.lesson.vocabulary.length / 8) }, (_, index) => content.lesson.vocabulary.slice(index * 8, (index + 1) * 8));
   const hasSources = content.passages.length + content.audios.length + content.visuals.length > 0;
   const current = questions[position];
@@ -197,7 +206,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   useEffect(() => {
     if (!restored) return;
     const state: Book2SavedState = {
-      book2: 1, answers, checked, ratings, checklist, step, exerciseIndex: position,
+      book2: 1, answers, checked, correct, ratings, checklist, step, exerciseIndex: position,
       mastered, needsReview, updatedAt: 0,
     };
     const snapshot = {
@@ -218,7 +227,26 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
       }).catch(() => setSyncStatus("device"));
     }, 700);
     return () => window.clearTimeout(id);
-  }, [lesson.slug, answers, checked, ratings, checklist, step, position, mastered, needsReview, restored, objectiveCorrect.length, openReady.length, completedCount, questions.length]);
+  }, [lesson.slug, answers, checked, correct, ratings, checklist, step, position, mastered, needsReview, restored, objectiveCorrect.length, openReady.length, completedCount, questions.length]);
+
+  async function callLesson<T>(body: Record<string, unknown>): Promise<T> {
+    const response = await fetch(`/api/book2/lessons/${lesson.slug}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const data = await response.json().catch(() => ({})) as T & { error?: string };
+    if (!response.ok) throw new Error(data.error || "Không kết nối được máy chủ. Thử lại sau.");
+    return data;
+  }
+  function storeVerdicts(found: Record<string, Verdict>) {
+    setVerdicts((previous) => ({ ...previous, ...found }));
+    setCorrect((previous) => ({ ...previous, ...Object.fromEntries(Object.entries(found).map(([id, verdict]) => [id, verdict.correct])) }));
+  }
+  // Saved answers come back without explanations, and older saves without verdicts: one request fetches both.
+  useEffect(() => {
+    if (!restored || rechecked.current) return;
+    rechecked.current = true;
+    const submitted = Object.fromEntries(questions.filter((item) => isObjective(item) && checked[item.question_id] && answers[item.question_id]?.trim()).map((item) => [item.question_id, answers[item.question_id]]));
+    if (!Object.keys(submitted).length) return;
+    void callLesson<{ verdicts: Record<string, Verdict> }>({ action: "check", answers: submitted }).then((result) => storeVerdicts(result.verdicts)).catch((error: unknown) => setRequestError(error instanceof Error ? error.message : "Không tải được lời giải."));
+  });
 
   // Finishing a lesson with every answer right earns one confetti burst.
   useEffect(() => {
@@ -251,23 +279,59 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     setTimer(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+  function forget(item: Book2Item) {
+    setCorrect((previous) => { const next = { ...previous }; delete next[item.question_id]; return next; });
+    setVerdicts((previous) => { const next = { ...previous }; delete next[item.question_id]; return next; });
+  }
   function answer(item: Book2Item, value: string) {
     setAnswers((previous) => ({ ...previous, [item.question_id]: value }));
     setChecked((previous) => ({ ...previous, [item.question_id]: false }));
+    forget(item);
     if (!isObjective(item)) {
       setRatings((previous) => { const next = { ...previous }; delete next[item.question_id]; return next; });
       setRevealed((previous) => { const next = { ...previous }; delete next[item.question_id]; return next; });
     }
   }
-  function check(item: Book2Item) {
+  async function check(item: Book2Item) {
     const value = answers[item.question_id] ?? "";
-    if (!value.trim()) return;
-    setChecked((previous) => ({ ...previous, [item.question_id]: true }));
-    setStreak((count) => isCorrect(item, value) ? count + 1 : 0);
+    if (!value.trim() || pending) return;
+    setPending(item.question_id); setRequestError("");
+    try {
+      const result = await callLesson<{ verdicts: Record<string, Verdict> }>({ action: "check", answers: { [item.question_id]: value } });
+      const verdict = result.verdicts[item.question_id];
+      if (!verdict) throw new Error("Máy chủ chưa chấm được câu này.");
+      storeVerdicts(result.verdicts);
+      setChecked((previous) => ({ ...previous, [item.question_id]: true }));
+      setStreak((count) => verdict.correct ? count + 1 : 0);
+    } catch (error) {
+      setRequestError(error instanceof Error ? error.message : "Không chấm được câu này. Thử lại sau.");
+    } finally { setPending(""); }
   }
   function retry(item: Book2Item) {
     setChecked((previous) => ({ ...previous, [item.question_id]: false }));
     setAnswers((previous) => ({ ...previous, [item.question_id]: "" }));
+    forget(item);
+  }
+  /** The model of an open question comes from the server once the response is long enough. */
+  async function revealModel(item: Book2Item) {
+    if (pending) return;
+    setPending(item.question_id); setRequestError("");
+    try {
+      const model = await callLesson<Model>({ action: "model", question_id: item.question_id, response: answers[item.question_id] ?? "", recorded: Boolean(recordings[item.question_id]) });
+      setModels((previous) => ({ ...previous, [item.question_id]: model }));
+      setRevealed((previous) => ({ ...previous, [item.question_id]: true }));
+      window.setTimeout(() => document.querySelector(".b2-model")?.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
+    } catch (error) {
+      setRequestError(error instanceof Error ? error.message : "Không tải được bài mẫu.");
+    } finally { setPending(""); }
+  }
+  const canShowTranscript = (audioId: string) => questions.some((item) => item.audio_id === audioId && checked[item.question_id] && Boolean(answers[item.question_id]?.trim()));
+  async function loadTranscript(audioId: string) {
+    const tried = Object.fromEntries(questions.filter((item) => item.audio_id === audioId && answers[item.question_id]?.trim()).map((item) => [item.question_id, answers[item.question_id]]));
+    try {
+      const result = await callLesson<{ transcript: string }>({ action: "transcript", audio_id: audioId, answers: tried });
+      setTranscripts((previous) => ({ ...previous, [audioId]: result.transcript }));
+    } catch (error) { setRequestError(error instanceof Error ? error.message : "Không tải được transcript."); }
   }
   function rate(item: Book2Item, value: number) {
     const response = answers[item.question_id] ?? "";
@@ -286,12 +350,14 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     const source = sourceFor(item);
     if (!source) return;
     setSourcesOpen(true);
+    if (content.audios.some((audio) => audio.id === source && audio.has_transcript) && !transcripts[source] && canShowTranscript(source)) void loadTranscript(source);
     // Wait a frame so a folded phone panel has opened before scrolling inside it.
     window.setTimeout(() => {
       const transcript = document.getElementById(`transcript-${source}`) as HTMLDetailsElement | null;
       if (transcript) transcript.open = true;
       // Evidence such as "R-B" names only the passage; the explanation then says which paragraph ("Đoạn C").
-      const paragraph = (item.evidence?.match(/(?:paragraph\s+|\[)([A-Z])\]?/i)?.[1] ?? item.explanation_vi?.match(/Đoạn ([A-H])\b/)?.[1])?.toUpperCase();
+      const verdict = verdicts[item.question_id];
+      const paragraph = (verdict?.evidence?.match(/(?:paragraph\s+|\[)([A-Z])\]?/i)?.[1] ?? verdict?.explanation_vi?.match(/Đoạn ([A-H])\b/)?.[1])?.toUpperCase();
       const target = paragraph ? document.getElementById(`source-${source}-paragraph-${paragraph}`) : null;
       const element = target ?? transcript ?? document.getElementById("source-" + source);
       element?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -330,12 +396,14 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   const value = current ? answers[current.question_id] ?? "" : "";
   const openAnswer = current ? !isObjective(current) : false;
   const graded = Boolean(current && checked[current.question_id] && !openAnswer);
-  const right = current ? isCorrect(current, value) : false;
+  const right = Boolean(current && correct[current.question_id]);
+  const verdict = current ? verdicts[current.question_id] : undefined;
+  const model = current ? models[current.question_id] : undefined;
   const choices = current && Array.isArray(current.options) ? book2OptionOrder(current.question_id, current.item_type, current.options) : [];
   const minimum = current ? requiredBook2WritingWords(current.item_type, current.prompt_en, lesson.slug) : 0;
   const wordCount = wordsIn(value);
   const canReveal = Boolean(current && (value.trim() || recordings[current.question_id]) && (!minimum || wordCount >= minimum));
-  const modelVisible = Boolean(current && openAnswer && (revealed[current.question_id] || checked[current.question_id]));
+  const modelVisible = Boolean(current && openAnswer && model && (revealed[current.question_id] || checked[current.question_id]));
   const rated = Boolean(current && (ratings[current.question_id] ?? 0) > 0);
 
   // Coach: the package script decides the phase for guided Writing/Speaking; other lessons react to the question.
@@ -363,8 +431,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
     setCoachNote("");
     if (/mẫu/i.test(label)) {
       if (!current || !canReveal) { setCoachNote(step === "practice" ? "Viết hoặc nói xong phần của bạn trước, rồi mới xem mẫu để đối chiếu nhé." : "Bài mẫu mở sau khi bạn tự làm ở bước Luyện tập."); return; }
-      setRevealed((previous) => ({ ...previous, [current.question_id]: true }));
-      window.setTimeout(() => document.querySelector(".b2-model")?.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
+      void revealModel(current);
       return;
     }
     if (/ví dụ|gợi ý|checklist/i.test(label)) { setCoachTips((open) => !open); return; }
@@ -445,7 +512,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
 
       {content.lesson.vocabulary.length > 0 && !teaching?.vocabulary?.length && <section className="b2-block"><h2><span className="b2-block-icon"><Volume2 size={18} /></span> Từ và cụm từ cần dùng <small>{content.lesson.vocabulary.length} thẻ · bấm để lật</small></h2>{vocabularyGroups.map((items, group) => <details className="b2-deck" key={group} open={group === 0}><summary>Bộ thẻ {group + 1} · {items.length} từ <ChevronDown size={18} /></summary><div className="b2-words">{items.map((item, index) => <WordCard key={index} term={item.term} meaning={item.meaning_vi} example={item.example_en} />)}</div></details>)}</section>}
 
-      <Book2SourcePanel content={content} />
+      <Book2SourcePanel content={content} transcripts={transcripts} canShowTranscript={canShowTranscript} onTranscript={(id) => void loadTranscript(id)} />
 
       <div className="b2-cta-bar"><span><b>{questions.length} câu luyện tập</b> · làm từng câu, xem giải thích ngay</span><button type="button" className="b2-btn b2-btn-primary" onClick={startPractice}>{completedCount ? "Làm tiếp" : "Bắt đầu luyện tập"} <ArrowRight size={18} /></button></div>
     </main>}
@@ -458,7 +525,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
           <span className={`b2-streak ${streak >= 2 ? "is-hot" : ""}`} title="Chuỗi câu đúng liên tiếp"><Flame size={18} /> {streak}</span>
         </div>
         <div className="b2-dots" aria-label="Chọn câu">{questions.map((item, index) => {
-          const state = !resolved(item) ? "" : isObjective(item) ? isCorrect(item, answers[item.question_id] ?? "") ? "is-right" : "is-wrong" : (ratings[item.question_id] ?? 0) >= 3 ? "is-right" : "is-wrong";
+          const state = !resolved(item) ? "" : isObjective(item) ? correct[item.question_id] ? "is-right" : "is-wrong" : (ratings[item.question_id] ?? 0) >= 3 ? "is-right" : "is-wrong";
           return <button type="button" key={item.question_id} className={`${state} ${index === position ? "is-current" : ""}`} onClick={() => moveTo(index)} aria-label={`Câu ${index + 1}`} aria-current={index === position ? "step" : undefined} />;
         })}</div>
 
@@ -472,7 +539,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
           {stressWord(current.prompt_en) && <button type="button" className="b2-pill" onClick={() => speak(stressWord(current.prompt_en)!)}><Volume2 size={15} /> Nghe từ “{stressWord(current.prompt_en)}”</button>}
 
           {choices.length > 0 ? <div className={`b2-options ${choices.length <= 3 && choices.every((option) => option.length < 18) ? "is-compact" : ""}`} role="radiogroup">{choices.map((option, index) => {
-            const isKey = graded && (current.answer.accepted ?? []).includes(option);
+            const isKey = graded && (verdict?.accepted ?? []).includes(option);
             const wrongPick = graded && value === option && !right;
             return <button type="button" role="radio" aria-checked={value === option} key={option} disabled={graded} className={`b2-option ${value === option ? "is-selected" : ""} ${isKey ? "is-key" : ""} ${wrongPick ? "is-miss" : ""}`} onClick={() => answer(current, option)}>
               <kbd>{index + 1}</kbd><span>{option}</span>{isKey && <Check size={20} strokeWidth={3} aria-label="Đáp án đúng" />}{wrongPick && <X size={20} strokeWidth={3} aria-label="Lựa chọn chưa đúng" />}
@@ -491,15 +558,16 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
             </>
               : <input className={`b2-input ${graded ? right ? "is-right" : "is-wrong" : ""}`} value={value} readOnly={graded} aria-invalid={graded && !right} onChange={(event) => answer(current, event.target.value)} placeholder="Gõ câu trả lời rồi nhấn Enter" autoFocus />}
 
-          {modelVisible && <div className="b2-model"><strong>Bài mẫu để đối chiếu</strong><p>{current.answer.model_en}</p>{current.item_type === "open_speaking" && current.answer.model_en && <button type="button" className="b2-pill" onClick={() => speak(current.answer.model_en!)}><Volume2 size={15} /> Nghe câu mẫu (giọng máy)</button>}{current.answer.model_vi && <p className="b2-prompt-vi">{current.answer.model_vi}</p>}{current.explanation_vi && <p className="b2-model-note">{current.explanation_vi}</p>}</div>}
+          {modelVisible && <div className="b2-model"><strong>Bài mẫu để đối chiếu</strong><p>{model?.model_en}</p>{current.item_type === "open_speaking" && model?.model_en && <button type="button" className="b2-pill" onClick={() => speak(model.model_en)}><Volume2 size={15} /> Nghe câu mẫu (giọng máy)</button>}{model?.model_vi && <p className="b2-prompt-vi">{model.model_vi}</p>}{model?.explanation_vi && <p className="b2-model-note">{model.explanation_vi}</p>}</div>}
+          {requestError && <p role="alert" className="b2-alert">{requestError}</p>}
         </article>
 
         {/* The answer sheet: one main action, then green or orange feedback that carries the explanation. */}
         <div className={`b2-sheet ${graded ? right ? "is-right" : "is-wrong" : modelVisible ? "is-review" : ""}`} aria-live="polite">
           {graded ? <>
-            <div className="b2-sheet-head"><span className="b2-sheet-icon">{right ? <Check size={24} strokeWidth={3} /> : <X size={24} strokeWidth={3} />}</span><div><strong>{right ? praise[position % praise.length] : "Chưa đúng"}</strong>{right && streak >= 3 && <span className="b2-sheet-streak"><Flame size={15} /> {streak} câu đúng liên tiếp</span>}{!right && <span>Đáp án: <b>{(current.answer.accepted ?? []).join(" / ")}</b></span>}</div></div>
-            {current.explanation_vi && <p className="b2-sheet-why">{current.explanation_vi}</p>}
-            {current.evidence && <small className="b2-sheet-evidence">Bằng chứng: {current.evidence}</small>}
+            <div className="b2-sheet-head"><span className="b2-sheet-icon">{right ? <Check size={24} strokeWidth={3} /> : <X size={24} strokeWidth={3} />}</span><div><strong>{right ? praise[position % praise.length] : "Chưa đúng"}</strong>{right && streak >= 3 && <span className="b2-sheet-streak"><Flame size={15} /> {streak} câu đúng liên tiếp</span>}{!right && <span>Đáp án: <b>{verdict ? verdict.accepted.join(" / ") : "đang tải…"}</b></span>}</div></div>
+            {verdict?.explanation_vi && <p className="b2-sheet-why">{verdict.explanation_vi}</p>}
+            {verdict?.evidence && <small className="b2-sheet-evidence">Bằng chứng: {verdict.evidence}</small>}
             <div className="b2-sheet-actions">
               {sourceFor(current) && <button type="button" className="b2-btn b2-btn-ghost" onClick={() => jumpToSource(current)}>Xem tư liệu</button>}
               {!right && <button type="button" className="b2-btn b2-btn-ghost" onClick={() => retry(current)}><RotateCcw size={16} /> Làm lại</button>}
@@ -511,14 +579,14 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
             <div className="b2-sheet-actions"><button type="button" className="b2-btn b2-btn-primary" disabled={!rated} onClick={() => moveTo(position + 1)}>{position + 1 < questions.length ? "Tiếp tục" : "Xem kết quả"} <ArrowRight size={18} /></button></div>
           </> : <div className="b2-sheet-actions">
             <button type="button" className="b2-btn b2-btn-ghost" onClick={() => moveTo(position + 1)}><SkipForward size={16} /> Để sau</button>
-            <button type="button" className="b2-btn b2-btn-primary" disabled={!canReveal} onClick={() => { setRevealed((previous) => ({ ...previous, [current.question_id]: true })); window.setTimeout(() => document.querySelector(".b2-model")?.scrollIntoView({ behavior: "smooth", block: "center" }), 80); }}>Xem bài mẫu</button>
+            <button type="button" className="b2-btn b2-btn-primary" disabled={!canReveal || pending === current.question_id} onClick={() => void revealModel(current)}>{pending === current.question_id ? "Đang mở…" : "Xem bài mẫu"}</button>
           </div> : <div className="b2-sheet-actions">
             <button type="button" className="b2-btn b2-btn-ghost" onClick={() => moveTo(position + 1)}><SkipForward size={16} /> Để sau</button>
             <button type="button" className="b2-btn b2-btn-primary" disabled={!value.trim()} onClick={() => check(current)}>Kiểm tra</button>
           </div>}
         </div>
       </div>
-      <aside className={`book2-source-dock ${sourcesOpen ? "is-open" : ""}`}><button type="button" className="book2-source-toggle" aria-expanded={sourcesOpen} onClick={() => setSourcesOpen((open) => !open)}>{sourcesOpen ? "Thu gọn tư liệu" : `Mở ${content.passages.length ? "bài đọc" : content.audios.length ? "bài nghe" : "số liệu"} để làm bài`}<ChevronDown size={18} /></button><Book2SourcePanel content={content} practice /></aside>
+      <aside className={`book2-source-dock ${sourcesOpen ? "is-open" : ""}`}><button type="button" className="book2-source-toggle" aria-expanded={sourcesOpen} onClick={() => setSourcesOpen((open) => !open)}>{sourcesOpen ? "Thu gọn tư liệu" : `Mở ${content.passages.length ? "bài đọc" : content.audios.length ? "bài nghe" : "số liệu"} để làm bài`}<ChevronDown size={18} /></button><Book2SourcePanel content={content} practice transcripts={transcripts} canShowTranscript={canShowTranscript} onTranscript={(id) => void loadTranscript(id)} /></aside>
     </main>}
 
     {step === "review" && <main className="b2-finish">
@@ -539,7 +607,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
       </section>
 
       <Book2Coach collapsed={Boolean(teaching) && !taskScript} lines={coachReview.lines} actions={coachReview.actions.filter((label) => !/mẫu/i.test(label))} onAction={coachAction} />
-      {problems.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><RotateCcw size={18} /></span> Câu cần làm tiếp hoặc sửa</h2><div className="b2-fix-list">{problems.map((item) => <div className="b2-fix" key={item.question_id}><button type="button" onClick={() => jumpTo(item)}><span className={!checked[item.question_id] ? "is-todo" : "is-wrong"}>{!checked[item.question_id] ? "Chưa làm" : "Cần sửa"}</span><strong>{item.prompt_vi || item.prompt_en}</strong><ArrowRight size={16} /></button>{sourceFor(item) && <button type="button" className="b2-fix-source" onClick={() => jumpTo(item, true)}>{item.evidence ? "Xem bằng chứng" : "Xem tư liệu"}</button>}</div>)}</div></section>}
+      {problems.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><RotateCcw size={18} /></span> Câu cần làm tiếp hoặc sửa</h2><div className="b2-fix-list">{problems.map((item) => <div className="b2-fix" key={item.question_id}><button type="button" onClick={() => jumpTo(item)}><span className={!checked[item.question_id] ? "is-todo" : "is-wrong"}>{!checked[item.question_id] ? "Chưa làm" : "Cần sửa"}</span><strong>{item.prompt_vi || item.prompt_en}</strong><ArrowRight size={16} /></button>{sourceFor(item) && <button type="button" className="b2-fix-source" onClick={() => jumpTo(item, true)}>{verdicts[item.question_id]?.evidence ? "Xem bằng chứng" : "Xem tư liệu"}</button>}</div>)}</div></section>}
 
       {teaching?.review_days?.length ? <p className="b2-callout is-info"><RotateCcw size={18} /> <span><b>Lịch ôn gợi ý:</b> quay lại bài này sau {teaching.review_days.join(", ")} ngày để nhớ lâu.</span></p> : null}
       {teaching?.self_check?.length ? <section className="b2-block"><h2><span className="b2-block-icon"><Target size={18} /></span> Tự chấm theo tiêu chí</h2><ul className="b2-criteria">{teaching.self_check.map((item) => <li key={item}>{item}</li>)}</ul></section> : null}

@@ -16,7 +16,8 @@ export function Book2LessonRoute({ slug, canManage }: { slug: string; canManage:
   const index = lessons.findIndex((lesson) => lesson.slug === slug);
   useEffect(() => {
     const controller = new AbortController();
-    void fetch(`/book-2/lessons/${slug}.json`, { signal: controller.signal }).then(async (response) => {
+    void fetch(`/api/book2/lessons/${slug}`, { signal: controller.signal, cache: "no-store" }).then(async (response) => {
+      if (response.status === 401) throw new Error("Hãy đăng nhập để mở bài học.");
       if (!response.ok) throw new Error("Không tải được dữ liệu bài học.");
       const value = await response.json() as Book2Content;
       if (value.book_id !== "BOOK_2" || value.source_id.toLowerCase() !== slug) throw new Error("Dữ liệu bài học không hợp lệ.");

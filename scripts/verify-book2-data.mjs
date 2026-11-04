@@ -8,7 +8,7 @@ const errors = [];
 let questions = 0;
 
 for (const entry of lessons) {
-  const path = join(root, "public/book-2/lessons", `${entry.slug}.json`);
+  const path = join(root, "content/book2/lessons", `${entry.slug}.json`);
   if (!existsSync(path)) { errors.push(`${entry.slug}: missing lesson`); continue; }
   const data = JSON.parse(readFileSync(path, "utf8"));
   const sourceIds = new Set([...data.passages, ...data.audios, ...data.visuals].map((item) => item.id));
