@@ -42,7 +42,7 @@ const batchSize = 10;
 const clockNow = () => Date.now();
 const stageLabel = { intro: "Từ mới", choice: "Chọn nghĩa đúng", type: "Gõ lại từ" } as const;
 /** The CEFR set labels parts of speech in English; show them in Vietnamese like the IELTS set. */
-const posNames: Record<string, string> = { noun: "Danh từ", verb: "Động từ", adjective: "Tính từ", adverb: "Trạng từ", preposition: "Giới từ", pronoun: "Đại từ", conjunction: "Liên từ", determiner: "Từ hạn định", interjection: "Thán từ", number: "Số từ", "modal verb": "Động từ khuyết thiếu", "phrasal verb": "Cụm động từ", phrase: "Cụm từ", idiom: "Thành ngữ" };
+const posNames: Record<string, string> = { "be-verb": "Động từ to be", "do-verb": "Trợ động từ do", "have-verb": "Trợ động từ have", noun: "Danh từ", verb: "Động từ", adjective: "Tính từ", adverb: "Trạng từ", preposition: "Giới từ", pronoun: "Đại từ", conjunction: "Liên từ", determiner: "Từ hạn định", interjection: "Thán từ", number: "Số từ", "modal verb": "Động từ khuyết thiếu", "phrasal verb": "Cụm động từ", phrase: "Cụm từ", idiom: "Thành ngữ" };
 const posLabel = (pos: string) => posNames[pos.trim().toLowerCase()] ?? pos;
 /** "a.m./A.M./am/AM" is shown, spoken and hinted as "a.m."; every form is accepted when typed. */
 const mainForm = (word: Word) => headwordForms(word.headword)[0];
@@ -164,10 +164,11 @@ export function VocabularyStudy() {
       }
       if (!active) return;
       const seen = new Set<string>();
-      // A CEFR word without an English definition is still learnable from its Vietnamese meaning.
+      // A CEFR word needs an English definition unless an editor reviewed its Vietnamese meaning:
+      // auto-matched meanings of entries with no definition are often wrong ("a" → "ăng-strôm").
       const batch = fetched.filter((word) => {
-        const meaning = collection === "ielts" ? word.source_definition_en : word.meaning_vi || word.source_definition_en;
-        if (!meaning?.trim() || seen.has(word.source_id)) return false;
+        const usable = word.source_definition_en?.trim() || (collection === "cefr" && word.meaning_status === "editor_reviewed" && word.meaning_vi?.trim());
+        if (!usable || seen.has(word.source_id)) return false;
         seen.add(word.source_id); return true;
       });
       setWords(batch); resetSession(batch, mode);
