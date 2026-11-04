@@ -1,0 +1,453 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-018",
+  "status": "draft",
+  "level": "L2",
+  "section": 1,
+  "topic": "Travel Arrangements",
+  "title": "Exchanging a Train Ticket",
+  "learning_objectives_vi": [
+    "Rèn corrected detail / distractors qua tình huống: A caller switches to a later train after a timetable update.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Central Rail customer services. What's your booking number?",
+      "translation_vi": "Xin chào, dịch vụ khách hàng Central Rail. Mã đặt vé của anh là gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "It's four eight two six. I bought a ticket for the six twenty train to Leeds.",
+      "translation_vi": "Là 4826. Tôi mua vé chuyến 6 giờ 20 đến Leeds.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That service has been cancelled. We can move you to the seven ten departure.",
+      "translation_vi": "Chuyến đó đã bị hủy. Chúng tôi có thể chuyển anh sang chuyến 7 giờ 10.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Does it still leave from platform two?",
+      "translation_vi": "Xe vẫn đi từ sân ga số hai chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "No. The replacement train uses platform five.",
+      "translation_vi": "Không. Tàu thay thế đi từ sân ga số năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I paid twenty-four pounds. Will there be an extra charge?",
+      "translation_vi": "Tôi đã trả 24 bảng. Có phụ phí không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Normally there is a six-pound change fee, but we will waive it because of the cancellation.",
+      "translation_vi": "Thông thường có phí đổi vé sáu bảng nhưng chúng tôi sẽ miễn vì chuyến tàu bị hủy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "That's helpful. Do I need a new paper ticket?",
+      "translation_vi": "Tốt quá. Tôi có cần vé giấy mới không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "No. Your updated e-ticket will be in the app within ten minutes.",
+      "translation_vi": "Không. Vé điện tử cập nhật sẽ có trên ứng dụng trong vòng 10 phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Thanks for your help.",
+      "translation_vi": "Cảm ơn đã hỗ trợ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Booking number: ____",
+      "correct_answers": [
+        "4826"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Mã đặt vé là 4826.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "ielts_section1_practice"
+      ],
+      "practice_aliases": [
+        "four eight two six"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Replacement departure: ____",
+      "correct_answers": [
+        "7:10",
+        "seven ten"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "6:20 là chuyến cũ bị hủy; chuyến mới là 7:10.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "New platform: ____",
+      "correct_answers": [
+        "5",
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Sân ga mới là số 5, không phải số 2.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why is the normal change fee not charged?",
+      "correct_answers": [
+        "Because of the cancellation"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nhân viên nói mức phí đổi vé bình thường là sáu bảng nhưng được miễn do chuyến bị hủy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "Because the passenger has a student pass",
+        "Because changes are always free",
+        "Because of the cancellation"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Updated ticket arrives within ____ minutes",
+      "correct_answers": [
+        "10",
+        "ten"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Vé cập nhật xuất hiện trên ứng dụng trong 10 phút.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T03).",
+      "correct_answers": [
+        "That service has been cancelled. We can move you to the seven ten departure."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nội dung cần chép: That service has been cancelled. We can move you to the seven ten departure. Nghĩa: Chuyến đó đã bị hủy. Chúng tôi có thể chuyển anh sang chuyến 7 giờ 10. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T07).",
+      "correct_answers": [
+        "Normally there is a six-pound change fee, but we will waive it because of the cancellation."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nội dung cần chép: Normally there is a six-pound change fee, but we will waive it because of the cancellation. Nghĩa: Thông thường có phí đổi vé sáu bảng nhưng chúng tôi sẽ miễn vì chuyến tàu bị hủy. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: No. The ____ uses platform five.",
+      "correct_answers": [
+        "replacement train"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “replacement train”. Câu đầy đủ: No. The replacement train uses platform five.. Nghĩa: Không. Tàu thay thế đi từ sân ga số năm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "transport_codes",
+        "changed_departure",
+        "platform",
+        "waived_fee"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "replacement train",
+      "pos": "noun phrase",
+      "meaning_vi": "tàu thay thế",
+      "example_en": "No. The replacement train uses platform five.",
+      "example_vi": "Không. Tàu thay thế đi từ sân ga số năm.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "platform",
+      "pos": "noun",
+      "meaning_vi": "sân ga",
+      "example_en": "Does it still leave from platform two?",
+      "example_vi": "Xe vẫn đi từ sân ga số hai chứ?",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "waive it",
+      "pos": "verb phrase",
+      "meaning_vi": "miễn khoản phí đó",
+      "example_en": "Normally there is a six-pound change fee, but we will waive it because of the cancellation.",
+      "example_vi": "Thông thường có phí đổi vé sáu bảng nhưng chúng tôi sẽ miễn vì chuyến tàu bị hủy.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "updated e-ticket",
+      "pos": "noun phrase",
+      "meaning_vi": "vé điện tử mới",
+      "example_en": "No. Your updated e-ticket will be in the app within ten minutes.",
+      "example_vi": "Không. Vé điện tử cập nhật sẽ có trên ứng dụng trong vòng 10 phút.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "2de1443cc9ec11e15ed115f571dac10aeccf943926662d3fa7f5ab6b5c742304",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

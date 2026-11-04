@@ -1,0 +1,510 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-008",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Transport Enquiries",
+  "learning_objectives_vi": [
+    "Nghe thay đổi bến và phân biệt lịch ngày thường, cuối tuần."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Bus information agent",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Traveller",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Central Bus Information. How may I help?",
+      "translation_vi": "Trung tâm thông tin xe buýt xin nghe. Tôi có thể giúp gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hello. Does bus twenty-six go to the science museum?",
+      "translation_vi": "Xin chào. Xe buýt số 26 có đến bảo tàng khoa học không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "It does, but the museum stop is closed this week.",
+      "translation_vi": "Có, nhưng trạm ở bảo tàng đóng cửa trong tuần này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Oh. Where should I get off instead?",
+      "translation_vi": "Ồ. Vậy tôi nên xuống ở đâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Get off at River Bridge and walk for five minutes.",
+      "translation_vi": "Xuống tại River Bridge rồi đi bộ năm phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "How often does the bus run on Sunday mornings?",
+      "translation_vi": "Sáng Chủ nhật xe chạy bao lâu một chuyến?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Every thirty minutes. The first one leaves at eight forty.",
+      "translation_vi": "Cứ ba mươi phút một chuyến. Chuyến đầu rời bến lúc 8 giờ 40.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I thought there was a bus at eight fifteen.",
+      "translation_vi": "Tôi tưởng có chuyến lúc 8 giờ 15.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "That is the weekday timetable. On Sundays, it starts later.",
+      "translation_vi": "Đó là lịch ngày thường. Vào Chủ nhật, xe bắt đầu muộn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Understood. Can I buy a ticket from the driver?",
+      "translation_vi": "Tôi hiểu rồi. Tôi có thể mua vé từ tài xế không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Yes, but you need to pay by card, not cash.",
+      "translation_vi": "Có, nhưng anh phải thanh toán bằng thẻ, không nhận tiền mặt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Thanks for explaining. I will take the first bus.",
+      "translation_vi": "Cảm ơn đã giải thích. Tôi sẽ đi chuyến đầu tiên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "short_answer",
+      "prompt": "Which bus does the traveller ask about?",
+      "correct_answers": [
+        "26",
+        "twenty-six"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Người khách hỏi tuyến bus twenty-six.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "short_answer",
+      "prompt": "Where should the traveller get off this week?",
+      "correct_answers": [
+        "River Bridge"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bến bảo tàng đóng, nên phải xuống ở River Bridge.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Sunday service interval: every ____ minutes.",
+      "correct_answers": [
+        "30",
+        "thirty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Every thirty minutes chỉ tần suất xe chạy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "First Sunday bus leaves at ____.",
+      "correct_answers": [
+        "8:40",
+        "08:40",
+        "eight forty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Chuyến chủ nhật đầu là eight forty; 8:15 là lịch ngày thường.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "How must the traveller pay?",
+      "correct_answers": [
+        "by card"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Tài xế chỉ nhận thanh toán by card, not cash.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T03 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "It does, but the museum stop is closed this week."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nhận diện thông báo đóng trạm. Nghĩa: Có, nhưng trạm ở bảo tàng đóng cửa trong tuần này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T07 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Every thirty minutes. The first one leaves at eight forty."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe tần suất xe và giờ đầu. Nghĩa: Cứ ba mươi phút một chuyến. Chuyến đầu rời bến lúc 8 giờ 40.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T09 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "That is the weekday timetable. On Sundays, it starts later."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt lịch ngày thường và Chủ nhật. Nghĩa: Đó là lịch ngày thường. Vào Chủ nhật, xe bắt đầu muộn hơn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T05 và điền từ/cụm từ bị thiếu: ____ at River Bridge and walk for five minutes.",
+      "correct_answers": [
+        "get off"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Get off ở đây nghĩa là xuống xe.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T07 và điền từ/cụm từ bị thiếu: ____. The first one leaves at eight forty.",
+      "correct_answers": [
+        "every thirty minutes"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Là khoảng cách giữa các chuyến, không phải thời lượng hành trình.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "bus",
+        "schedules",
+        "service_changes",
+        "payment"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "stop",
+      "pos": "noun",
+      "meaning_vi": "trạm dừng",
+      "example_en": "It does, but the museum stop is closed this week.",
+      "example_vi": "Có, nhưng trạm ở bảo tàng đóng cửa trong tuần này.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "get off",
+      "pos": "phrasal verb",
+      "meaning_vi": "xuống xe",
+      "example_en": "Get off at River Bridge and walk for five minutes.",
+      "example_vi": "Xuống tại River Bridge rồi đi bộ năm phút.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "timetable",
+      "pos": "noun",
+      "meaning_vi": "thời gian biểu",
+      "example_en": "That is the weekday timetable. On Sundays, it starts later.",
+      "example_vi": "Đó là lịch ngày thường. Vào Chủ nhật, xe bắt đầu muộn hơn.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "by card",
+      "pos": "adverbial phrase",
+      "meaning_vi": "bằng thẻ",
+      "example_en": "Yes, but you need to pay by card, not cash.",
+      "example_vi": "Có, nhưng anh phải thanh toán bằng thẻ, không nhận tiền mặt.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "bf29fed7a5e9564e283e80adb1ffe92432244ff117c990dd3bf77cba9c2aae93",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

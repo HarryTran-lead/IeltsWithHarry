@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-047",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Research Planning",
+  "title": "Research Planning – Meal-Kit Carbon Footprints",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Leah – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Daniel – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Amira – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our carbon-footprint proposal compares meal kits with supermarket shopping. I found a study claiming that delivery services are greener, but it excludes the energy used to manufacture the packaging.",
+      "translation_vi": "Đề xuất dấu chân carbon của ta so bộ nguyên liệu giao tận nhà với mua ở siêu thị. Mình thấy nghiên cứu nói giao hàng xanh hơn nhưng không tính năng lượng sản xuất bao bì.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "That exclusion could reverse the conclusion. Before comparing totals, we need to agree on the system boundary: what activities count, where the calculation starts and where it ends.",
+      "translation_vi": "Việc loại trừ ấy có thể đảo ngược kết luận. Trước khi so tổng, ta phải thống nhất ranh giới hệ thống: tính hoạt động nào và phép tính bắt đầu, kết thúc ở đâu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We could include growing, packaging, transport, storage and cooking, but we'd have little reliable data for domestic cooking. Different households use different appliances and preparation times.",
+      "translation_vi": "Ta có thể tính trồng trọt, đóng gói, vận chuyển, bảo quản và nấu ăn, nhưng dữ liệu nấu tại nhà không đáng tin lắm. Mỗi hộ dùng thiết bị và thời gian khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "What if we focus the project on distribution and packaging, and clearly state that it is not a complete comparison of life-cycle emissions? We have supplier records for those two stages.",
+      "translation_vi": "Hay ta tập trung vào phân phối và bao bì, nêu rõ đây không phải so sánh toàn vòng đời phát thải? Ta có hồ sơ nhà cung cấp cho hai giai đoạn đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That would be defensible. We also have to compare the same amount of food, not one meal kit with a week's supermarket purchases. Let's use emissions per prepared meal as the functional unit.",
+      "translation_vi": "Cách đó bảo vệ được. Ta còn phải so cùng lượng thực phẩm, không so một bộ bữa ăn với giỏ hàng cả tuần. Hãy dùng phát thải trên mỗi bữa được chuẩn bị làm đơn vị chức năng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The delivery company says its vans carry fifty orders, but that is maximum capacity, not the actual average. We should request route records rather than divide emissions by an optimistic number.",
+      "translation_vi": "Công ty giao hàng nói xe chở được năm mươi đơn, nhưng đó là sức chứa tối đa chứ không phải trung bình thực tế. Ta nên xin dữ liệu tuyến đường thay vì chia phát thải cho con số lạc quan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "If those records aren't available, we can present a range using several plausible loads. That would show how sensitive the result is instead of hiding uncertainty inside one tidy figure.",
+      "translation_vi": "Nếu không có hồ sơ, ta có thể trình bày khoảng giá trị theo vài mức tải hợp lý. Điều đó cho thấy độ nhạy của kết quả thay vì giấu bất định trong một số đẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "And the final presentation should distinguish measured inputs from estimates. A visually attractive chart won't make assumptions reliable, so each bar needs a clear note about its data source.",
+      "translation_vi": "Bài thuyết trình cuối phải tách số đo với số ước tính. Biểu đồ đẹp không làm giả định đáng tin, nên mỗi cột cần ghi nguồn dữ liệu rõ ràng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Then our revised question is about distribution and packaging emissions per meal, with explicit uncertainty ranges. We won't claim meal kits are universally greener than shopping in person.",
+      "translation_vi": "Vậy câu hỏi sửa là phát thải phân phối và bao bì trên mỗi bữa, kèm khoảng bất định rõ. Ta sẽ không khẳng định bộ giao tận nhà luôn xanh hơn tự đi mua.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why is the original emissions comparison potentially unfair?",
+      "correct_answers": [
+        "The study excludes emissions from manufacturing packaging"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Daniel nói: “Việc loại trừ ấy có thể đảo ngược kết luận. Trước khi so tổng, ta phải thống nhất ranh giới hệ thống: tính hoạt động nào và phép tính bắt đầu, kết thúc ở đâu.” Đáp án “The study excludes emissions from manufacturing packaging” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The study excludes emissions from manufacturing packaging",
+        "The meals may not represent equal portions",
+        "The van-load estimate is uncertain"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The group has little reliable domestic ____ data.",
+      "correct_answers": [
+        "cooking"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Ta có thể tính trồng trọt, đóng gói, vận chuyển, bảo quản và nấu ăn, nhưng dữ liệu nấu tại nhà không đáng tin lắm. Mỗi hộ dùng thiết bị và thời gian khác nhau.” Cụm cần điền nghe đúng nguyên văn là “cooking”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker points out that household cooking data are difficult to compare?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Người nói Amira (Speaker C) đưa ra ý này tại T03: “Ta có thể tính trồng trọt, đóng gói, vận chuyển, bảo quản và nấu ăn, nhưng dữ liệu nấu tại nhà không đáng tin lắm. Mỗi hộ dùng thiết bị và thời gian khác nhau.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why will the group display several possible delivery loads?",
+      "correct_answers": [
+        "To show how sensitive the result is to uncertain assumptions"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Leah nói: “Nếu không có hồ sơ, ta có thể trình bày khoảng giá trị theo vài mức tải hợp lý. Điều đó cho thấy độ nhạy của kết quả thay vì giấu bất định trong một số đẹp.” Đáp án “To show how sensitive the result is to uncertain assumptions” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To show how sensitive the result is to uncertain assumptions",
+        "To make the delivery total a single exact number",
+        "To exclude packaging from the calculation"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Each bar in the final chart will need a clear ____ note.",
+      "correct_answers": [
+        "data source"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Bài thuyết trình cuối phải tách số đo với số ước tính. Biểu đồ đẹp không làm giả định đáng tin, nên mỗi cột cần ghi nguồn dữ liệu rõ ràng.” Cụm cần điền nghe đúng nguyên văn là “data source”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What unit will the final comparison use?",
+      "correct_answers": [
+        "per meal"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy câu hỏi sửa là phát thải phân phối và bao bì trên mỗi bữa, kèm khoảng bất định rõ. Ta sẽ không khẳng định bộ giao tận nhà luôn xanh hơn tự đi mua.” Trả lời ngắn theo chi tiết “per meal”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "What if we focus the project on distribution and packaging, and clearly state that it is not a complete comparison of life-cycle emissions? We have supplier records for those two stages."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “What if we focus the project on distribution and packaging, and clearly state that it is not a complete comparison of life-cycle emissions? We have supplier records for those two stages.”\nBản dịch: Hay ta tập trung vào phân phối và bao bì, nêu rõ đây không phải so sánh toàn vòng đời phát thải? Ta có hồ sơ nhà cung cấp cho hai giai đoạn đó.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "If those records aren't available, we can present a range using several plausible loads. That would show how sensitive the result is instead of hiding uncertainty inside one tidy figure."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “If those records aren't available, we can present a range using several plausible loads. That would show how sensitive the result is instead of hiding uncertainty inside one tidy figure.”\nBản dịch: Nếu không có hồ sơ, ta có thể trình bày khoảng giá trị theo vài mức tải hợp lý. Điều đó cho thấy độ nhạy của kết quả thay vì giấu bất định trong một số đẹp.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền đúng phần thiếu: That exclusion could reverse the conclusion. Before comparing totals, we need to agree on the ____: what activities count, where the calculation starts and where it ends.",
+      "correct_answers": [
+        "system boundary"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “system boundary” nghĩa là ranh giới hệ thống. Đối chiếu: “That exclusion could reverse the conclusion. Before comparing totals, we need to agree on the system boundary: what activities count, where the calculation starts and where it ends.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "system boundary",
+      "pos": "n. phr.",
+      "meaning_vi": "ranh giới hệ thống",
+      "example_en": "That exclusion could reverse the conclusion. Before comparing totals, we need to agree on the system boundary: what activities count, where the calculation starts and where it ends.",
+      "example_vi": "Việc loại trừ ấy có thể đảo ngược kết luận. Trước khi so tổng, ta phải thống nhất ranh giới hệ thống: tính hoạt động nào và phép tính bắt đầu, kết thúc ở đâu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "life-cycle emissions",
+      "pos": "n. phr.",
+      "meaning_vi": "phát thải vòng đời",
+      "example_en": "What if we focus the project on distribution and packaging, and clearly state that it is not a complete comparison of life-cycle emissions? We have supplier records for those two stages.",
+      "example_vi": "Hay ta tập trung vào phân phối và bao bì, nêu rõ đây không phải so sánh toàn vòng đời phát thải? Ta có hồ sơ nhà cung cấp cho hai giai đoạn đó.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "functional unit",
+      "pos": "n. phr.",
+      "meaning_vi": "đơn vị chức năng",
+      "example_en": "That would be defensible. We also have to compare the same amount of food, not one meal kit with a week's supermarket purchases. Let's use emissions per prepared meal as the functional unit.",
+      "example_vi": "Cách đó bảo vệ được. Ta còn phải so cùng lượng thực phẩm, không so một bộ bữa ăn với giỏ hàng cả tuần. Hãy dùng phát thải trên mỗi bữa được chuẩn bị làm đơn vị chức năng.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "uncertainty ranges",
+      "pos": "n. phr.",
+      "meaning_vi": "khoảng bất định",
+      "example_en": "Then our revised question is about distribution and packaging emissions per meal, with explicit uncertainty ranges. We won't claim meal kits are universally greener than shopping in person.",
+      "example_vi": "Vậy câu hỏi sửa là phát thải phân phối và bao bì trên mỗi bữa, kèm khoảng bất định rõ. Ta sẽ không khẳng định bộ giao tận nhà luôn xanh hơn tự đi mua.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "45aa4adfdab6200dcd9aa654b1454ff5e666c28da918b3cf8c3468cd109267e9",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-033",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Biodiversity",
+  "title": "Camera Traps, Audio Surveys and Field Plots",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "A conservation team wants to understand whether a forest reserve supports a healthy range of animals. Their first option is a camera trap, which automatically photographs animals passing a sensor. Cameras work at night and do not require an observer to remain nearby. However, they tend to record larger ground-dwelling animals more readily than insects or birds high in the canopy.",
+      "translation_vi": "Nhóm bảo tồn muốn biết khu bảo tồn rừng có hỗ trợ nhiều loài động vật khỏe mạnh không. Lựa chọn đầu là bẫy ảnh, tự chụp khi động vật đi qua cảm biến. Camera hoạt động ban đêm và không cần người đứng cạnh. Tuy nhiên, nó thường ghi động vật lớn sống trên mặt đất dễ hơn côn trùng hay chim ở tán cao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "For birds and some insects, an acoustic monitor may be more informative. It records calls across many hours and allows researchers to compare activity at dawn with activity after dark. But calling rates vary by season, and traffic noise can hide quiet species. A machine that identifies calls is helpful only if its classifications are checked against reliable examples.",
+      "translation_vi": "Với chim và một số côn trùng, máy giám sát âm thanh có thể hữu ích hơn. Nó ghi tiếng qua nhiều giờ và giúp so hoạt động lúc bình minh với sau tối. Nhưng tần suất kêu thay đổi theo mùa, còn tiếng xe che loài ít tiếng. Máy nhận dạng tiếng chỉ có ích nếu kết quả phân loại được kiểm tra với mẫu đáng tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Field plots reveal a different dimension of biodiversity. Researchers mark fixed areas, identify plants and measure their size or cover. Because plants cannot move out of the frame during a survey, repeated plots can show gradual changes in vegetation. Still, a plot beside a footpath may be unrepresentative if visitors have altered the surrounding habitat.",
+      "translation_vi": "Ô mẫu thực địa cho biết một chiều đa dạng khác. Nhà nghiên cứu đánh dấu khu cố định, xác định cây và đo kích thước hoặc độ che phủ. Vì cây không chạy ra khỏi khung trong lúc khảo sát, ô lặp lại cho thấy thay đổi thảm thực vật dần dần. Tuy nhiên, ô cạnh lối đi có thể không đại diện nếu du khách đã làm biến đổi sinh cảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Comparisons require attention to detection probability, which is the chance that a species is recorded when it is actually present. A shy mammal might pass a camera only occasionally, and a silent bird may be missed by an audio device. A non-detection therefore differs from proof of absence. Repeated sampling and suitable statistical models can help researchers account for that distinction.",
+      "translation_vi": "So sánh cần chú ý xác suất phát hiện, tức cơ hội ghi nhận loài khi nó thực sự có mặt. Thú nhút nhát đôi khi mới đi qua camera, chim im lặng có thể bị máy ghi âm bỏ lỡ. Do đó, không phát hiện khác với chứng minh vắng mặt. Lấy mẫu lặp lại và mô hình thống kê phù hợp giúp xét sự khác biệt ấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Rather than declaring one method superior, a team might combine camera records, sound files and vegetation plots. If all three suggest that a restored corridor is becoming more diverse, confidence increases. If they disagree, the next step is to examine the season and sampling design. Good conservation evidence comes from understanding how a measurement was produced.",
+      "translation_vi": "Thay vì tuyên bố một cách tốt nhất, nhóm có thể kết hợp ảnh, âm thanh và ô thực vật. Nếu cả ba gợi ý hành lang phục hồi đang đa dạng hơn, độ tin cậy tăng. Nếu chúng bất đồng, bước tiếp theo là xem mùa và thiết kế lấy mẫu. Bằng chứng bảo tồn tốt đến từ hiểu phép đo đã được tạo ra thế nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "A camera trap photographs animals passing a ____.",
+      "correct_answers": [
+        "sensor"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Nhóm bảo tồn muốn biết khu bảo tồn rừng có hỗ trợ nhiều loài động vật khỏe mạnh không. Lựa chọn đầu là bẫy ảnh, tự chụp khi động vật đi qua cảm biến. Camera hoạt động ban đêm và không cần người đứng cạnh. Tuy nhiên, nó thường ghi động vật lớn sống trên mặt đất dễ hơn côn trùng hay chim ở tán cao. Đáp án cần chọn/điền: “sensor”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Acoustic monitoring can compare wildlife activity at dawn and after ____.",
+      "correct_answers": [
+        "dark"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Với chim và một số côn trùng, máy giám sát âm thanh có thể hữu ích hơn. Nó ghi tiếng qua nhiều giờ và giúp so hoạt động lúc bình minh với sau tối. Nhưng tần suất kêu thay đổi theo mùa, còn tiếng xe che loài ít tiếng. Máy nhận dạng tiếng chỉ có ích nếu kết quả phân loại được kiểm tra với mẫu đáng tin. Đáp án cần chọn/điền: “dark”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Researchers identify plants inside fixed field ____.",
+      "correct_answers": [
+        "plots"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Ô mẫu thực địa cho biết một chiều đa dạng khác. Nhà nghiên cứu đánh dấu khu cố định, xác định cây và đo kích thước hoặc độ che phủ. Vì cây không chạy ra khỏi khung trong lúc khảo sát, ô lặp lại cho thấy thay đổi thảm thực vật dần dần. Tuy nhiên, ô cạnh lối đi có thể không đại diện nếu du khách đã làm biến đổi sinh cảnh. Đáp án cần chọn/điền: “plots”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What does a non-detection fail to prove?",
+      "correct_answers": [
+        "That a species is absent"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: So sánh cần chú ý xác suất phát hiện, tức cơ hội ghi nhận loài khi nó thực sự có mặt. Thú nhút nhát đôi khi mới đi qua camera, chim im lặng có thể bị máy ghi âm bỏ lỡ. Do đó, không phát hiện khác với chứng minh vắng mặt. Lấy mẫu lặp lại và mô hình thống kê phù hợp giúp xét sự khác biệt ấy. Đáp án cần chọn/điền: “That a species is absent”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "mcq"
+      ],
+      "options": [
+        "That a species is absent",
+        "That sampling was repeated",
+        "That a camera was operating"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Which visual records were combined with sound files and vegetation plots?",
+      "correct_answers": [
+        "camera records"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người nói liệt kê “camera records, sound files and vegetation plots”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Which statement expresses the lecture’s conclusion?",
+      "correct_answers": [
+        "Different surveys detect different parts of biodiversity"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Thay vì tuyên bố một cách tốt nhất, nhóm có thể kết hợp ảnh, âm thanh và ô thực vật. Nếu cả ba gợi ý hành lang phục hồi đang đa dạng hơn, độ tin cậy tăng. Nếu chúng bất đồng, bước tiếp theo là xem mùa và thiết kế lấy mẫu. Bằng chứng bảo tồn tốt đến từ hiểu phép đo đã được tạo ra thế nào. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ],
+      "options": [
+        "Camera traps identify every species",
+        "Different surveys detect different parts of biodiversity",
+        "All methods have equal detection probability"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "For birds and some insects, an acoustic monitor may be more informative. It records calls across many hours and allows researchers to compare activity at dawn with activity after dark. But calling rates vary by season, and traffic noise can hide quiet species. A machine that identifies calls is helpful only if its classifications are checked against reliable examples."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Với chim và một số côn trùng, máy giám sát âm thanh có thể hữu ích hơn. Nó ghi tiếng qua nhiều giờ và giúp so hoạt động lúc bình minh với sau tối. Nhưng tần suất kêu thay đổi theo mùa, còn tiếng xe che loài ít tiếng. Máy nhận dạng tiếng chỉ có ích nếu kết quả phân loại được kiểm tra với mẫu đáng tin.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Comparisons require attention to detection probability, which is the chance that a species is recorded when it is actually present. A shy mammal might pass a camera only occasionally, and a silent bird may be missed by an audio device. A non-detection therefore differs from proof of absence. Repeated sampling and suitable statistical models can help researchers account for that distinction."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: So sánh cần chú ý xác suất phát hiện, tức cơ hội ghi nhận loài khi nó thực sự có mặt. Thú nhút nhát đôi khi mới đi qua camera, chim im lặng có thể bị máy ghi âm bỏ lỡ. Do đó, không phát hiện khác với chứng minh vắng mặt. Lấy mẫu lặp lại và mô hình thống kê phù hợp giúp xét sự khác biệt ấy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: A conservation team wants to understand whether a forest reserve supports a healthy range of animals. Their first option is a ____, which automatically photographs animals passing a sensor. Cameras work at night and do not require an observer to remain nearby. However, they tend to record larger ground-dwelling animals more readily than insects or birds high in the canopy.",
+      "correct_answers": [
+        "camera trap"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “camera trap”, nghĩa: bẫy ảnh. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "camera trap",
+      "pos": "n. phr.",
+      "meaning_vi": "bẫy ảnh",
+      "example_en": "A conservation team wants to understand whether a forest reserve supports a healthy range of animals. Their first option is a camera trap, which automatically photographs animals passing a sensor. Cameras work at night and do not require an observer to remain nearby. However, they tend to record larger ground-dwelling animals more readily than insects or birds high in the canopy.",
+      "example_vi": "Nhóm bảo tồn muốn biết khu bảo tồn rừng có hỗ trợ nhiều loài động vật khỏe mạnh không. Lựa chọn đầu là bẫy ảnh, tự chụp khi động vật đi qua cảm biến. Camera hoạt động ban đêm và không cần người đứng cạnh. Tuy nhiên, nó thường ghi động vật lớn sống trên mặt đất dễ hơn côn trùng hay chim ở tán cao.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "acoustic monitor",
+      "pos": "n. phr.",
+      "meaning_vi": "thiết bị giám sát âm thanh",
+      "example_en": "For birds and some insects, an acoustic monitor may be more informative. It records calls across many hours and allows researchers to compare activity at dawn with activity after dark. But calling rates vary by season, and traffic noise can hide quiet species. A machine that identifies calls is helpful only if its classifications are checked against reliable examples.",
+      "example_vi": "Với chim và một số côn trùng, máy giám sát âm thanh có thể hữu ích hơn. Nó ghi tiếng qua nhiều giờ và giúp so hoạt động lúc bình minh với sau tối. Nhưng tần suất kêu thay đổi theo mùa, còn tiếng xe che loài ít tiếng. Máy nhận dạng tiếng chỉ có ích nếu kết quả phân loại được kiểm tra với mẫu đáng tin.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "field plots",
+      "pos": "n. phr.",
+      "meaning_vi": "ô mẫu thực địa",
+      "example_en": "Field plots reveal a different dimension of biodiversity. Researchers mark fixed areas, identify plants and measure their size or cover. Because plants cannot move out of the frame during a survey, repeated plots can show gradual changes in vegetation. Still, a plot beside a footpath may be unrepresentative if visitors have altered the surrounding habitat.",
+      "example_vi": "Ô mẫu thực địa cho biết một chiều đa dạng khác. Nhà nghiên cứu đánh dấu khu cố định, xác định cây và đo kích thước hoặc độ che phủ. Vì cây không chạy ra khỏi khung trong lúc khảo sát, ô lặp lại cho thấy thay đổi thảm thực vật dần dần. Tuy nhiên, ô cạnh lối đi có thể không đại diện nếu du khách đã làm biến đổi sinh cảnh.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "detection probability",
+      "pos": "n. phr.",
+      "meaning_vi": "xác suất phát hiện",
+      "example_en": "Comparisons require attention to detection probability, which is the chance that a species is recorded when it is actually present. A shy mammal might pass a camera only occasionally, and a silent bird may be missed by an audio device. A non-detection therefore differs from proof of absence. Repeated sampling and suitable statistical models can help researchers account for that distinction.",
+      "example_vi": "So sánh cần chú ý xác suất phát hiện, tức cơ hội ghi nhận loài khi nó thực sự có mặt. Thú nhút nhát đôi khi mới đi qua camera, chim im lặng có thể bị máy ghi âm bỏ lỡ. Do đó, không phát hiện khác với chứng minh vắng mặt. Lấy mẫu lặp lại và mô hình thống kê phù hợp giúp xét sự khác biệt ấy.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "422e8300e7e17053821427903f82af846d8aec2df0a80db075574e4222771174",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

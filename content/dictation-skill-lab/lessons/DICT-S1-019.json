@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-019",
+  "status": "draft",
+  "level": "L2",
+  "section": 1,
+  "topic": "Renting Accommodation",
+  "title": "Correcting a Rental Advert",
+  "learning_objectives_vi": [
+    "Rèn corrected detail / distractors qua tình huống: An agent clarifies the rent and move-in date of an advertised flat.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Riverside Lettings. Are you calling about the flat on Garden Road?",
+      "translation_vi": "Xin chào, Riverside Lettings. Anh hỏi căn hộ ở đường Garden đúng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes. The online advert says the rent is eight hundred pounds including bills.",
+      "translation_vi": "Đúng. Quảng cáo ghi giá thuê 800 bảng đã gồm hóa đơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I'm afraid that's an old advert. The rent is now seven hundred and sixty pounds, excluding electricity.",
+      "translation_vi": "Rất tiếc đó là tin cũ. Giá thuê hiện là 760 bảng, chưa gồm điện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "So water is included but electricity isn't?",
+      "translation_vi": "Vậy nước được bao gồm nhưng điện thì không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "That's right. The deposit is one month's rent.",
+      "translation_vi": "Đúng. Tiền cọc bằng một tháng thuê.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "The advert also says it is available from the first of May.",
+      "translation_vi": "Quảng cáo cũng ghi có thể vào ở từ ngày 1 tháng Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The current tenant leaves late, so the new date is the sixth of May.",
+      "translation_vi": "Người thuê hiện tại chuyển đi muộn, nên ngày mới là 6 tháng Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Could I view it on Wednesday afternoon?",
+      "translation_vi": "Tôi có thể xem nhà chiều thứ Tư không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes, at three thirty. I'll send you the address by text.",
+      "translation_vi": "Được, lúc ba giờ ba mươi. Tôi sẽ gửi địa chỉ qua tin nhắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Great, thank you.",
+      "translation_vi": "Tốt quá, cảm ơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "New monthly rent: £____",
+      "correct_answers": [
+        "760"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Giá 800 bảng là thông tin cũ; giá mới là 760.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "ielts_section1_practice"
+      ],
+      "practice_aliases": [
+        "seven hundred and sixty"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Bill not included: ____",
+      "correct_answers": [
+        "electricity"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nước đã gồm nhưng điện chưa gồm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Deposit: ____ month's rent",
+      "correct_answers": [
+        "one",
+        "1"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tiền cọc bằng một tháng thuê.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Available from: ____ May",
+      "correct_answers": [
+        "6",
+        "6th",
+        "sixth"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Ngày 1 tháng Năm là ngày cũ; ngày mới là 6.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Viewing time: ____",
+      "correct_answers": [
+        "3:30",
+        "three thirty"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Lịch xem nhà là ba giờ ba mươi.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T03).",
+      "correct_answers": [
+        "I'm afraid that's an old advert. The rent is now seven hundred and sixty pounds, excluding electricity."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nội dung cần chép: I'm afraid that's an old advert. The rent is now seven hundred and sixty pounds, excluding electricity. Nghĩa: Rất tiếc đó là tin cũ. Giá thuê hiện là 760 bảng, chưa gồm điện. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T07).",
+      "correct_answers": [
+        "The current tenant leaves late, so the new date is the sixth of May."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nội dung cần chép: The current tenant leaves late, so the new date is the sixth of May. Nghĩa: Người thuê hiện tại chuyển đi muộn, nên ngày mới là 6 tháng Năm. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: I'm afraid that's an old advert. The rent is now seven hundred and sixty pounds, ____.",
+      "correct_answers": [
+        "excluding electricity"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “excluding electricity”. Câu đầy đủ: I'm afraid that's an old advert. The rent is now seven hundred and sixty pounds, excluding electricity.. Nghĩa: Rất tiếc đó là tin cũ. Giá thuê hiện là 760 bảng, chưa gồm điện.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "advert_revision",
+        "rent",
+        "utilities",
+        "move_in_date"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "advert",
+      "pos": "noun",
+      "meaning_vi": "tin quảng cáo",
+      "example_en": "Yes. The online advert says the rent is eight hundred pounds including bills.",
+      "example_vi": "Đúng. Quảng cáo ghi giá thuê 800 bảng đã gồm hóa đơn.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "excluding electricity",
+      "pos": "phrase",
+      "meaning_vi": "chưa bao gồm tiền điện",
+      "example_en": "I'm afraid that's an old advert. The rent is now seven hundred and sixty pounds, excluding electricity.",
+      "example_vi": "Rất tiếc đó là tin cũ. Giá thuê hiện là 760 bảng, chưa gồm điện.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "deposit",
+      "pos": "noun",
+      "meaning_vi": "tiền cọc",
+      "example_en": "That's right. The deposit is one month's rent.",
+      "example_vi": "Đúng. Tiền cọc bằng một tháng thuê.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "current tenant",
+      "pos": "noun phrase",
+      "meaning_vi": "người thuê hiện tại",
+      "example_en": "The current tenant leaves late, so the new date is the sixth of May.",
+      "example_vi": "Người thuê hiện tại chuyển đi muộn, nên ngày mới là 6 tháng Năm.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "1ac14faa9ec68dcd7a2250b5f37eb671dbed36b054827efa326869ce320ea9e9",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

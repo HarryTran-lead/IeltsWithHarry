@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-013",
+  "status": "draft",
+  "level": "L2",
+  "section": 1,
+  "topic": "Event Registration",
+  "title": "Joining a Community Fun Run",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A caller registers for a local event.",
+    "Nhận diện core information exchange và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Riverside Events Office.",
+      "translation_vi": "Xin chào, Văn phòng sự kiện Riverside.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'd like to join the family fun run.",
+      "translation_vi": "Tôi muốn tham gia cuộc chạy bộ gia đình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Great. The event is on Saturday the fourteenth.",
+      "translation_vi": "Tuyệt. Sự kiện diễn ra thứ Bảy ngày mười bốn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Where do runners meet?",
+      "translation_vi": "Người chạy sẽ tập trung ở đâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "At the east gate of Hill Park.",
+      "translation_vi": "Tại cổng phía đông của công viên Hill.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Is the entry fee ten pounds?",
+      "translation_vi": "Phí tham gia là mười bảng phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "It's eight pounds for adults, and children enter free.",
+      "translation_vi": "Người lớn trả tám bảng, trẻ em được tham gia miễn phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "When should we arrive?",
+      "translation_vi": "Chúng tôi nên đến lúc nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please arrive by eight forty-five to collect your number.",
+      "translation_vi": "Vui lòng đến trước tám giờ bốn mươi lăm để nhận số báo danh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Thank you. I'll register now.",
+      "translation_vi": "Cảm ơn. Tôi sẽ đăng ký ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Event day: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Sự kiện diễn ra vào thứ Bảy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Event date: the ____",
+      "correct_answers": [
+        "fourteenth"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Ngày mười bốn được nêu rõ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Meeting point: the ____ gate",
+      "correct_answers": [
+        "east"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung ở cổng phía đông, không phải cổng khác.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Adult entry fee: £____",
+      "correct_answers": [
+        "eight"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người gọi nêu mười bảng để hỏi, nhưng nhân viên xác nhận tám bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Arrive by ____",
+      "correct_answers": [
+        "eight forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Đây là thời gian phải có mặt để nhận số.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04 của nhân vật B.",
+      "correct_answers": [
+        "Where do runners meet?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Where do runners meet? Nghĩa: Người chạy sẽ tập trung ở đâu? Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T09 của nhân vật A.",
+      "correct_answers": [
+        "Please arrive by eight forty-five to collect your number."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Please arrive by eight forty-five to collect your number. Nghĩa: Vui lòng đến trước tám giờ bốn mươi lăm để nhận số báo danh. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: I'd like to join the family ____.",
+      "correct_answers": [
+        "fun run"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "fun run: cuộc chạy bộ giao lưu. Câu gốc: I'd like to join the family fun run.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dates",
+        "prices",
+        "registration",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "fun run",
+      "pos": "phrase",
+      "meaning_vi": "cuộc chạy bộ giao lưu",
+      "example_en": "I'd like to join the family fun run.",
+      "example_vi": "Tôi muốn tham gia cuộc chạy bộ gia đình.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "entry fee",
+      "pos": "phrase",
+      "meaning_vi": "phí tham gia",
+      "example_en": "Is the entry fee ten pounds?",
+      "example_vi": "Phí tham gia là mười bảng phải không?",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "east gate",
+      "pos": "phrase",
+      "meaning_vi": "cổng phía đông",
+      "example_en": "At the east gate of Hill Park.",
+      "example_vi": "Tại cổng phía đông của công viên Hill.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "collect your number",
+      "pos": "phrase",
+      "meaning_vi": "nhận số báo danh",
+      "example_en": "Please arrive by eight forty-five to collect your number.",
+      "example_vi": "Vui lòng đến trước tám giờ bốn mươi lăm để nhận số báo danh.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "5ee5e003c69100851d3f931011a298859cceb5a650f4498b8941245ba3cbea05",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

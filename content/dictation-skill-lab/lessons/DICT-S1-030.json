@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-030",
+  "status": "draft",
+  "level": "L3",
+  "section": 1,
+  "topic": "Delivery Services",
+  "title": "Changing the Delivery Address",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A buyer corrects shipping details before dispatch.",
+    "Nhận diện corrected detail / distractors và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "BrightBox Deliveries, Maria speaking.",
+      "translation_vi": "BrightBox Deliveries, Maria xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hello. I need to change the address on an order.",
+      "translation_vi": "Xin chào. Tôi cần đổi địa chỉ của một đơn hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Does it currently show eighteen Green Street?",
+      "translation_vi": "Địa chỉ hiện tại là số mười tám đường Green phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Yes, but I moved. The new number is eighty Green Street.",
+      "translation_vi": "Đúng, nhưng tôi chuyển nhà rồi. Số mới là tám mươi đường Green.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Thank you. And the postcode ends in seven B, correct?",
+      "translation_vi": "Cảm ơn. Và mã bưu điện kết thúc bằng 7B đúng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Not seven B. It's seven D, as in David.",
+      "translation_vi": "Không phải 7B. Là 7D, chữ D như trong David.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I have updated it. Your parcel is leaving tomorrow morning.",
+      "translation_vi": "Tôi đã cập nhật. Kiện hàng sẽ rời kho vào sáng mai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Will it arrive on Friday?",
+      "translation_vi": "Hàng có đến thứ Sáu không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The delivery date has moved to Saturday, before noon.",
+      "translation_vi": "Ngày giao đã chuyển sang thứ Bảy, trước buổi trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Thanks. Please text me when the driver is nearby.",
+      "translation_vi": "Cảm ơn. Hãy nhắn tin khi tài xế sắp đến nhé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "New house number: ____",
+      "correct_answers": [
+        "eighty"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Địa chỉ cũ số 18 được sửa thành 80.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Street name: ____ Street",
+      "correct_answers": [
+        "Green"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Cả hai địa chỉ đều ở đường Green.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Final postcode letter: ____",
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói sửa B thành D, như chữ đầu của David.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Parcel leaves the depot: tomorrow ____",
+      "correct_answers": [
+        "morning"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Hàng rời kho vào sáng mai.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "New delivery day: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thứ Sáu là ngày người gọi hỏi; ngày giao mới là thứ Bảy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04 của nhân vật B.",
+      "correct_answers": [
+        "Yes, but I moved. The new number is eighty Green Street."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Yes, but I moved. The new number is eighty Green Street. Nghĩa: Đúng, nhưng tôi chuyển nhà rồi. Số mới là tám mươi đường Green. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T09 của nhân vật A.",
+      "correct_answers": [
+        "The delivery date has moved to Saturday, before noon."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The delivery date has moved to Saturday, before noon. Nghĩa: Ngày giao đã chuyển sang thứ Bảy, trước buổi trưa. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: Thank you. And the ____ ends in seven B, correct?",
+      "correct_answers": [
+        "postcode"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "postcode: mã bưu điện. Câu gốc: Thank you. And the postcode ends in seven B, correct?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "spellings",
+        "numbers",
+        "corrections",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "postcode",
+      "pos": "word",
+      "meaning_vi": "mã bưu điện",
+      "example_en": "Thank you. And the postcode ends in seven B, correct?",
+      "example_vi": "Cảm ơn. Và mã bưu điện kết thúc bằng 7B đúng không?",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "updated",
+      "pos": "word",
+      "meaning_vi": "đã cập nhật",
+      "example_en": "I have updated it. Your parcel is leaving tomorrow morning.",
+      "example_vi": "Tôi đã cập nhật. Kiện hàng sẽ rời kho vào sáng mai.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "parcel",
+      "pos": "word",
+      "meaning_vi": "bưu kiện",
+      "example_en": "I have updated it. Your parcel is leaving tomorrow morning.",
+      "example_vi": "Tôi đã cập nhật. Kiện hàng sẽ rời kho vào sáng mai.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "driver",
+      "pos": "word",
+      "meaning_vi": "tài xế",
+      "example_en": "Thanks. Please text me when the driver is nearby.",
+      "example_vi": "Cảm ơn. Hãy nhắn tin khi tài xế sắp đến nhé.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "67d4e129727ca4ec5b6225b6126bdc0ea464f94448e0746f9f38cad0d6873abd",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

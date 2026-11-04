@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-020",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Academic Feedback",
+  "title": "Academic Feedback: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Mai – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Theo – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Rachel – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "My supervisor wrote that the simulation section lacks critical evaluation. I thought adding more screenshots would make the process clearer.",
+      "translation_vi": "Người hướng dẫn nhận xét phần mô phỏng thiếu đánh giá phản biện. Mình nghĩ thêm ảnh chụp màn hình sẽ giúp quy trình rõ hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Screenshots explain what you did, but not whether the simulation was appropriate. Did you compare its predictions with observed data?",
+      "translation_vi": "Ảnh giải thích bạn làm gì nhưng không cho biết mô phỏng có phù hợp không. Bạn có so sánh dự đoán với dữ liệu quan sát không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "She also highlighted the assumptions about traffic flow. If those are unrealistic, even a detailed model may give misleading results.",
+      "translation_vi": "Cô cũng đánh dấu các giả định về luồng giao thông. Nếu phi thực tế, mô hình chi tiết vẫn có thể cho kết quả sai lệch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I assumed every driver followed the suggested route. That clearly doesn't happen in the real world, especially during busy periods.",
+      "translation_vi": "Mình giả định tài xế nào cũng đi theo tuyến gợi ý. Thực tế rõ ràng không như vậy, nhất là giờ cao điểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Could you test a second scenario where only some drivers follow the signs? It would show how sensitive your conclusions are.",
+      "translation_vi": "Bạn có thể thử kịch bản thứ hai khi chỉ một phần tài xế theo biển báo không? Nó cho thấy kết luận nhạy với giả định đến đâu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "That's more useful than adding images. But choose the proportion carefully and explain why it is plausible, rather than picking a convenient number.",
+      "translation_vi": "Cách đó hữu ích hơn thêm ảnh. Nhưng hãy chọn tỷ lệ cẩn thận và giải thích tính hợp lý, không tùy tiện chọn số tiện lợi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I have a small dataset from the council's traffic survey. It gives a rough indication of how drivers respond to changed signs.",
+      "translation_vi": "Mình có bộ dữ liệu nhỏ từ khảo sát giao thông của hội đồng. Nó cho chỉ dấu sơ bộ về cách tài xế phản ứng khi biển báo đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Good. Use that as a starting estimate, but discuss its age and limited coverage. It shouldn't be presented as exact current behaviour.",
+      "translation_vi": "Tốt. Dùng làm ước tính ban đầu, nhưng bàn về độ cũ và phạm vi hạn chế. Không nên coi đó là hành vi hiện tại chính xác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "What did the supervisor say about the conclusion? I remember she questioned the claim that congestion would disappear entirely.",
+      "translation_vi": "Người hướng dẫn nói gì về kết luận? Mình nhớ cô nghi ngờ khẳng định ùn tắc sẽ biến mất hoàn toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Yes, she wants more cautious language. I should say the intervention may reduce delays under the tested conditions.",
+      "translation_vi": "Đúng, cô muốn dùng từ thận trọng hơn. Mình nên nói biện pháp có thể giảm chậm trễ trong điều kiện đã thử.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "So your revision needs a second scenario, comparison with the council data, and a limitations paragraph—not more screenshots.",
+      "translation_vi": "Vậy bản sửa cần kịch bản thứ hai, đối chiếu dữ liệu hội đồng và đoạn về hạn chế, chứ không cần thêm ảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "Exactly. Send the new results on Wednesday, and we can review the wording together before Friday's supervisor meeting.",
+      "translation_vi": "Chính xác. Gửi kết quả mới thứ Tư rồi ta cùng xem câu chữ trước cuộc họp với người hướng dẫn thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What is missing from Mai's simulation report?",
+      "correct_answers": [
+        "Evaluation of whether the model is appropriate"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Theo): “Ảnh giải thích bạn làm gì nhưng không cho biết mô phỏng có phù hợp không. Bạn có so sánh dự đoán với dữ liệu quan sát không?” Đáp án: “Evaluation of whether the model is appropriate”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Evaluation of whether the model is appropriate",
+        "More pictures of the interface",
+        "A longer introduction"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The original model assumes every driver follows the suggested ____.",
+      "correct_answers": [
+        "route"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng ở T04 (Mai): “Mình giả định tài xế nào cũng đi theo tuyến gợi ý. Thực tế rõ ràng không như vậy, nhất là giờ cao điểm.” Đáp án: “route”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "What alternative scenario does Theo suggest?",
+      "correct_answers": [
+        "Only some drivers follow the signs"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Theo): “Bạn có thể thử kịch bản thứ hai khi chỉ một phần tài xế theo biển báo không? Nó cho thấy kết luận nhạy với giả định đến đâu.” Đáp án: “Only some drivers follow the signs”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "The number of cars doubles",
+        "Only some drivers follow the signs",
+        "All streets are closed"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "The council dataset has limited ____.",
+      "correct_answers": [
+        "coverage"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Theo): “Tốt. Dùng làm ước tính ban đầu, nhưng bàn về độ cũ và phạm vi hạn chế. Không nên coi đó là hành vi hiện tại chính xác.” Đáp án: “coverage”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "How should Mai change the conclusion?",
+      "correct_answers": [
+        "Use cautious language about possible reduced delays"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Bằng chứng ở T10 (Mai): “Đúng, cô muốn dùng từ thận trọng hơn. Mình nên nói biện pháp có thể giảm chậm trễ trong điều kiện đã thử.” Đáp án: “Use cautious language about possible reduced delays”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Claim congestion ends completely",
+        "Avoid mentioning results",
+        "Use cautious language about possible reduced delays"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "When will they review wording before the supervisor meeting?",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Bằng chứng ở T12 (Rachel): “Chính xác. Gửi kết quả mới thứ Tư rồi ta cùng xem câu chữ trước cuộc họp với người hướng dẫn thứ Sáu.” Đáp án: “Wednesday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "I assumed every driver followed the suggested route. That clearly doesn't happen in the real world, especially during busy periods."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I assumed every driver followed the suggested route. That clearly doesn't happen in the real world, especially during busy periods.”\nNghĩa: Mình giả định tài xế nào cũng đi theo tuyến gợi ý. Thực tế rõ ràng không như vậy, nhất là giờ cao điểm.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "Good. Use that as a starting estimate, but discuss its age and limited coverage. It shouldn't be presented as exact current behaviour."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “Good. Use that as a starting estimate, but discuss its age and limited coverage. It shouldn't be presented as exact current behaviour.”\nNghĩa: Tốt. Dùng làm ước tính ban đầu, nhưng bàn về độ cũ và phạm vi hạn chế. Không nên coi đó là hành vi hiện tại chính xác.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: My supervisor wrote that the ____ section lacks critical evaluation. I thought adding more screenshots would make the process clearer.",
+      "correct_answers": [
+        "simulation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “simulation” (mô phỏng). Lời gốc: “My supervisor wrote that the simulation section lacks critical evaluation. I thought adding more screenshots would make the process clearer.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "simulation",
+      "pos": "n.",
+      "meaning_vi": "mô phỏng",
+      "example_en": "My supervisor wrote that the simulation section lacks critical evaluation. I thought adding more screenshots would make the process clearer.",
+      "example_vi": "Người hướng dẫn nhận xét phần mô phỏng thiếu đánh giá phản biện. Mình nghĩ thêm ảnh chụp màn hình sẽ giúp quy trình rõ hơn.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "traffic flow",
+      "pos": "n. phr.",
+      "meaning_vi": "luồng giao thông",
+      "example_en": "She also highlighted the assumptions about traffic flow. If those are unrealistic, even a detailed model may give misleading results.",
+      "example_vi": "Cô cũng đánh dấu các giả định về luồng giao thông. Nếu phi thực tế, mô hình chi tiết vẫn có thể cho kết quả sai lệch.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "observed data",
+      "pos": "n. phr.",
+      "meaning_vi": "dữ liệu quan sát",
+      "example_en": "Screenshots explain what you did, but not whether the simulation was appropriate. Did you compare its predictions with observed data?",
+      "example_vi": "Ảnh giải thích bạn làm gì nhưng không cho biết mô phỏng có phù hợp không. Bạn có so sánh dự đoán với dữ liệu quan sát không?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "cautious language",
+      "pos": "n. phr.",
+      "meaning_vi": "ngôn ngữ thận trọng",
+      "example_en": "Yes, she wants more cautious language. I should say the intervention may reduce delays under the tested conditions.",
+      "example_vi": "Đúng, cô muốn dùng từ thận trọng hơn. Mình nên nói biện pháp có thể giảm chậm trễ trong điều kiện đã thử.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c14286312222fc8818a7beb11fab1ef927f28fc9ec673904c563ad566c785ca9",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

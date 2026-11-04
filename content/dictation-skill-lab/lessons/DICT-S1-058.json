@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-058",
+  "status": "draft",
+  "level": "L5",
+  "section": 1,
+  "topic": "Event Registration",
+  "title": "Changing a Conference Ticket",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: An attendee changes from an in-person to an online workshop.",
+    "Nhận diện natural speed & paraphrase và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hillside Conference registration, Daniel speaking.",
+      "translation_vi": "Ban đăng ký hội nghị Hillside, Daniel xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I've booked the sustainability workshop, but I may not reach the venue because of the rail strike.",
+      "translation_vi": "Tôi đã đặt hội thảo phát triển bền vững, nhưng có thể không tới được vì đình công đường sắt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I see your in-person ticket under Morgan Lee. Would you like to cancel it?",
+      "translation_vi": "Tôi thấy vé trực tiếp tên Morgan Lee. Bạn muốn hủy vé à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Not if there's a way to join remotely. I still want to hear the speakers.",
+      "translation_vi": "Nếu có cách tham dự từ xa thì không. Tôi vẫn muốn nghe các diễn giả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We have a livestream option, but you'll need to switch before Wednesday at noon.",
+      "translation_vi": "Chúng tôi có tùy chọn phát trực tiếp, nhưng phải chuyển trước trưa thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Does the online ticket include the question-and-answer session?",
+      "translation_vi": "Vé trực tuyến có bao gồm phần hỏi đáp không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes, you can submit questions through the event platform, though you won't join the networking lunch.",
+      "translation_vi": "Có, bạn có thể gửi câu hỏi qua nền tảng sự kiện, nhưng không tham gia bữa trưa kết nối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I paid sixty-eight pounds originally. Will the new ticket be cheaper?",
+      "translation_vi": "Tôi đã trả 68 bảng. Vé mới có rẻ hơn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "It's forty-nine pounds. We'll return the difference to your original card after the event.",
+      "translation_vi": "Vé trực tuyến giá 49 bảng. Chênh lệch sẽ được hoàn về thẻ gốc sau sự kiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Will you send a new booking confirmation?",
+      "translation_vi": "Anh có gửi xác nhận đặt chỗ mới không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Yes, you'll get a link and access code by email on Thursday morning.",
+      "translation_vi": "Có, bạn sẽ nhận liên kết và mã truy cập qua email vào sáng thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Please make the change now. I don't want to miss the deadline.",
+      "translation_vi": "Hãy đổi vé ngay giúp tôi. Tôi không muốn lỡ hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Workshop topic: ____",
+      "correct_answers": [
+        "sustainability"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Hội thảo về phát triển bền vững.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Ticket change deadline: Wednesday at ____",
+      "correct_answers": [
+        "noon"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Muốn đổi vé phải làm trước trưa thứ Tư.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Online attendees cannot join the networking ____",
+      "correct_answers": [
+        "lunch"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tham gia trực tuyến vẫn được hỏi đáp nhưng không dự bữa trưa.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Original ticket price: £____",
+      "correct_answers": [
+        "sixty-eight"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Giá vé trực tiếp ban đầu là 68 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "How much is the online ticket?",
+      "correct_answers": [
+        "forty-nine"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Vé trực tuyến giá 49 bảng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "sixty-eight",
+        "forty-nine",
+        "eighty"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Access code arrives on Thursday ____",
+      "correct_answers": [
+        "morning"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Mã truy cập được gửi vào sáng thứ Năm.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "We have a livestream option, but you'll need to switch before Wednesday at noon."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: We have a livestream option, but you'll need to switch before Wednesday at noon. Nghĩa: Chúng tôi có tùy chọn phát trực tiếp, nhưng phải chuyển trước trưa thứ Tư. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: I've booked the sustainability workshop, but I may not reach the venue because of the ____.",
+      "correct_answers": [
+        "rail strike"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "rail strike: đình công đường sắt. Câu gốc: I've booked the sustainability workshop, but I may not reach the venue because of the rail strike.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "events",
+        "paraphrase",
+        "deadlines",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "rail strike",
+      "pos": "phrase",
+      "meaning_vi": "đình công đường sắt",
+      "example_en": "I've booked the sustainability workshop, but I may not reach the venue because of the rail strike.",
+      "example_vi": "Tôi đã đặt hội thảo phát triển bền vững, nhưng có thể không tới được vì đình công đường sắt.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "livestream option",
+      "pos": "phrase",
+      "meaning_vi": "hình thức xem trực tiếp qua mạng",
+      "example_en": "We have a livestream option, but you'll need to switch before Wednesday at noon.",
+      "example_vi": "Chúng tôi có tùy chọn phát trực tiếp, nhưng phải chuyển trước trưa thứ Tư.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "networking lunch",
+      "pos": "phrase",
+      "meaning_vi": "bữa trưa giao lưu",
+      "example_en": "Yes, you can submit questions through the event platform, though you won't join the networking lunch.",
+      "example_vi": "Có, bạn có thể gửi câu hỏi qua nền tảng sự kiện, nhưng không tham gia bữa trưa kết nối.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "access code",
+      "pos": "phrase",
+      "meaning_vi": "mã truy cập",
+      "example_en": "Yes, you'll get a link and access code by email on Thursday morning.",
+      "example_vi": "Có, bạn sẽ nhận liên kết và mã truy cập qua email vào sáng thứ Năm.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "816cad42ae3a26504237e2b17ba96ad0bf63e153a8cdd30aac5ce3c6f9804eda",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

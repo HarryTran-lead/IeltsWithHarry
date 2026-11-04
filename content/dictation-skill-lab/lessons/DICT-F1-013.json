@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-013",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Phone Numbers",
+  "learning_objectives_vi": [
+    "Nghe và chép chuỗi số",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "My number ends in zero four six two.",
+      "translation_vi": "Số của tôi kết thúc bằng 0462.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Please call eight one three five.",
+      "translation_vi": "Vui lòng gọi số 8135.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The last digits are seven seven two.",
+      "translation_vi": "Ba chữ số cuối là 772.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The extension is three zero nine.",
+      "translation_vi": "Số máy lẻ là 309.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Write down six four zero eight.",
+      "translation_vi": "Hãy ghi lại 6408.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The code is two five one four.",
+      "translation_vi": "Mã là 2514.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "My phone ends with nine zero three.",
+      "translation_vi": "Số điện thoại của tôi kết thúc bằng 903.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please repeat one eight one eight.",
+      "translation_vi": "Vui lòng nhắc lại 1818.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The final four digits are five two two six.",
+      "translation_vi": "Bốn chữ số cuối là 5226.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Call me on zero seven nine four.",
+      "translation_vi": "Hãy gọi tôi theo dãy số 0794.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "My number ends in zero four six two."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe chữ số riêng lẻ theo đúng thứ tự. Nghĩa: Số của tôi kết thúc bằng 0462.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please call eight one three five."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "one và three không được đổi vị trí. Nghĩa: Vui lòng gọi số 8135.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The last digits are seven seven two."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Lặp số 7 hai lần. Nghĩa: Ba chữ số cuối là 772.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The extension is three zero nine."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "zero có thể được đọc là oh trong một số ngữ cảnh. Nghĩa: Số máy lẻ là 309.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Write down six four zero eight."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Ghi đủ số 0 ở giữa chuỗi. Nghĩa: Hãy ghi lại 6408.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The code is two five one four."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Mỗi số được đọc tách riêng. Nghĩa: Mã là 2514.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "My phone ends with nine zero three."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Zero đứng giữa hai chữ số. Nghĩa: Số điện thoại của tôi kết thúc bằng 903.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please repeat one eight one eight."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Mẫu lặp 18 hai lần. Nghĩa: Vui lòng nhắc lại 1818.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The final four digits are five two two six."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Hai số 2 liền nhau. Nghĩa: Bốn chữ số cuối là 5226.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Call me on zero seven nine four."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Số đầu là zero, không được bỏ. Nghĩa: Hãy gọi tôi theo dãy số 0794.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T04: Số máy lẻ là gì?",
+      "correct_answers": [
+        "309"
+      ],
+      "options": [
+        "309",
+        "390"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Three zero nine giữ số 0 ở giữa. Hãy nghe lại lượt T04, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T09: Bốn số cuối là gì?",
+      "correct_answers": [
+        "5226"
+      ],
+      "options": [
+        "5226",
+        "5262"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói đọc five two two six. Hãy nghe lại lượt T09, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "number",
+      "pos": "noun",
+      "meaning_vi": "số điện thoại/mã số",
+      "example_en": "My number ends in zero four six two.",
+      "example_vi": "Số của tôi kết thúc bằng 0462.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "digits",
+      "pos": "noun",
+      "meaning_vi": "các chữ số",
+      "example_en": "The last digits are seven seven two.",
+      "example_vi": "Ba chữ số cuối là 772.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "extension",
+      "pos": "noun",
+      "meaning_vi": "số máy lẻ",
+      "example_en": "The extension is three zero nine.",
+      "example_vi": "Số máy lẻ là 309.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "code",
+      "pos": "noun",
+      "meaning_vi": "mã",
+      "example_en": "The code is two five one four.",
+      "example_vi": "Mã là 2514.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "51d8d2d9fcc8fd967237f157204454eb6be1248ae7ff188343181f90c03da51f",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

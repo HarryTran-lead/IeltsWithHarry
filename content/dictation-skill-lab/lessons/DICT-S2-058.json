@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-058",
+  "status": "draft",
+  "level": "L7",
+  "section": 2,
+  "topic": "Workplace Orientation",
+  "title": "The Research Facility: Access and Incident Reporting",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Workplace Orientation ở mức L7, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "All new staff joining the research facility must complete this induction, regardless of whether they work in the laboratories or in administrative roles. Today's briefing focuses on access control and reporting unexpected incidents.",
+      "translation_vi": "Mọi nhân viên mới vào cơ sở nghiên cứu đều phải học buổi định hướng này, dù làm trong phòng thí nghiệm hay hành chính. Buổi hôm nay tập trung kiểm soát ra vào và báo cáo sự cố bất ngờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Standard staff badges allow entry to the offices and training centre. The analytical laboratory requires a separate authorisation recorded in the security system, so a supervisor's verbal permission is insufficient.",
+      "translation_vi": "Thẻ nhân viên thông thường vào được văn phòng và trung tâm đào tạo. Phòng thí nghiệm phân tích cần quyền riêng ghi trong hệ thống an ninh nên lời cho phép miệng của giám sát viên không đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "If you notice faulty equipment, isolate it only when doing so is safe, then submit an incident report through the electronic register. Do not attempt an unsupervised repair.",
+      "translation_vi": "Nếu phát hiện thiết bị hỏng, chỉ cô lập nó khi an toàn rồi gửi báo cáo sự cố qua sổ điện tử. Không được tự sửa khi thiếu giám sát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The emergency meeting location has changed from the rear loading bay to the landscaped courtyard on the western side. This avoids conflict with delivery vehicles during an evacuation.",
+      "translation_vi": "Điểm tập kết khẩn cấp đổi từ khu bốc hàng phía sau sang sân cây xanh phía tây. Nhờ đó tránh xung đột xe giao hàng khi sơ tán.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Confidential research material must not be stored on personal devices. Approved laptops use an encrypted network, and staff receive access after completing the information-security module.",
+      "translation_vi": "Tài liệu nghiên cứu mật không được lưu trên thiết bị cá nhân. Máy tính xách tay được duyệt dùng mạng mã hóa, nhân viên được cấp quyền sau khi hoàn thành mô-đun bảo mật thông tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "A fire alarm test occurs every second Tuesday at eleven. Unlike the continuous evacuation signal, the test lasts only a few seconds and is announced beforehand by email.",
+      "translation_vi": "Thử chuông cháy diễn ra vào thứ Ba cách tuần lúc mười một giờ. Khác tín hiệu sơ tán liên tục, bài thử chỉ vài giây và được báo trước qua email.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please complete the online assessment by midnight on Thursday. Until your record shows a pass, your badge will not provide access to any laboratory areas.",
+      "translation_vi": "Hãy hoàn thành bài đánh giá trực tuyến trước nửa đêm thứ Năm. Cho đến khi hồ sơ hiện đạt, thẻ của bạn sẽ không vào được bất kỳ khu phòng thí nghiệm nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Analytical laboratory needs separate: ____",
+      "correct_answers": [
+        "authorisation"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Thẻ nhân viên thông thường vào được văn phòng và trung tâm đào tạo. Phòng thí nghiệm phân tích cần quyền riêng ghi trong hệ thống an ninh nên lời cho phép miệng của giám sát viên không đủ. Đáp án được nhắc trong đoạn T02: “authorisation”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Report faulty equipment using electronic: ____",
+      "correct_answers": [
+        "register"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nếu phát hiện thiết bị hỏng, chỉ cô lập nó khi an toàn rồi gửi báo cáo sự cố qua sổ điện tử. Không được tự sửa khi thiếu giám sát. Đáp án được nhắc trong đoạn T03: “register”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Assembly location moved to western: ____",
+      "correct_answers": [
+        "courtyard"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Điểm tập kết khẩn cấp đổi từ khu bốc hàng phía sau sang sân cây xanh phía tây. Nhờ đó tránh xung đột xe giao hàng khi sơ tán. Đáp án được nhắc trong đoạn T04: “courtyard”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Network for approved computers is: ____",
+      "correct_answers": [
+        "encrypted"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tài liệu nghiên cứu mật không được lưu trên thiết bị cá nhân. Máy tính xách tay được duyệt dùng mạng mã hóa, nhân viên được cấp quyền sau khi hoàn thành mô-đun bảo mật thông tin. Đáp án được nhắc trong đoạn T05: “encrypted”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Alarm test occurs every second?",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thử chuông cháy diễn ra vào thứ Ba cách tuần lúc mười một giờ. Khác tín hiệu sơ tán liên tục, bài thử chỉ vài giây và được báo trước qua email. Đáp án được nhắc trong đoạn T06: “Tuesday”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Online assessment due: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Hãy hoàn thành bài đánh giá trực tuyến trước nửa đêm thứ Năm. Cho đến khi hồ sơ hiện đạt, thẻ của bạn sẽ không vào được bất kỳ khu phòng thí nghiệm nào. Đáp án được nhắc trong đoạn T07: “Thursday”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "X01",
+      "type": "mcq",
+      "prompt": "Where is the new emergency meeting location?",
+      "options": [
+        "the rear loading bay",
+        "the training centre",
+        "the western courtyard"
+      ],
+      "correct_answers": [
+        "the western courtyard"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Điểm tập kết khẩn cấp đổi từ khu bốc hàng phía sau sang sân cây xanh phía tây. Nhờ đó tránh xung đột xe giao hàng khi sơ tán. Trong ba lựa chọn, đáp án chính xác là “the western courtyard”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "supplementary_mcq",
+        "distractor_detection",
+        "paraphrase"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "If you notice faulty equipment, isolate it only when doing so is safe, then submit an incident report through the electronic register. Do not attempt an unsupervised repair."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: If you notice faulty equipment, isolate it only when doing so is safe, then submit an incident report through the electronic register. Do not attempt an unsupervised repair. Nghĩa: Nếu phát hiện thiết bị hỏng, chỉ cô lập nó khi an toàn rồi gửi báo cáo sự cố qua sổ điện tử. Không được tự sửa khi thiếu giám sát. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "Confidential research material must not be stored on personal devices. Approved laptops use an encrypted network, and staff receive access after completing the information-security module."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Confidential research material must not be stored on personal devices. Approved laptops use an encrypted network, and staff receive access after completing the information-security module. Nghĩa: Tài liệu nghiên cứu mật không được lưu trên thiết bị cá nhân. Máy tính xách tay được duyệt dùng mạng mã hóa, nhân viên được cấp quyền sau khi hoàn thành mô-đun bảo mật thông tin. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: Standard staff badges allow entry to the offices and training centre. The analytical laboratory requires a separate ____ recorded in the security system, so a supervisor's verbal permission is insufficient.",
+      "correct_answers": [
+        "authorisation"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “authorisation” xuất hiện trong câu gốc: Standard staff badges allow entry to the offices and training centre. The analytical laboratory requires a separate authorisation recorded in the security system, so a supervisor's verbal permission is insufficient. Nghĩa: Thẻ nhân viên thông thường vào được văn phòng và trung tâm đào tạo. Phòng thí nghiệm phân tích cần quyền riêng ghi trong hệ thống an ninh nên lời cho phép miệng của giám sát viên không đủ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "authorisation",
+      "pos": "n.",
+      "meaning_vi": "quyền cho phép chính thức",
+      "example_en": "Standard staff badges allow entry to the offices and training centre. The analytical laboratory requires a separate authorisation recorded in the security system, so a supervisor's verbal permission is insufficient.",
+      "example_vi": "Thẻ nhân viên thông thường vào được văn phòng và trung tâm đào tạo. Phòng thí nghiệm phân tích cần quyền riêng ghi trong hệ thống an ninh nên lời cho phép miệng của giám sát viên không đủ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "incident report",
+      "pos": "n. phr.",
+      "meaning_vi": "báo cáo sự cố",
+      "example_en": "If you notice faulty equipment, isolate it only when doing so is safe, then submit an incident report through the electronic register. Do not attempt an unsupervised repair.",
+      "example_vi": "Nếu phát hiện thiết bị hỏng, chỉ cô lập nó khi an toàn rồi gửi báo cáo sự cố qua sổ điện tử. Không được tự sửa khi thiếu giám sát.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "encrypted network",
+      "pos": "n. phr.",
+      "meaning_vi": "mạng được mã hóa",
+      "example_en": "Confidential research material must not be stored on personal devices. Approved laptops use an encrypted network, and staff receive access after completing the information-security module.",
+      "example_vi": "Tài liệu nghiên cứu mật không được lưu trên thiết bị cá nhân. Máy tính xách tay được duyệt dùng mạng mã hóa, nhân viên được cấp quyền sau khi hoàn thành mô-đun bảo mật thông tin.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "confidential",
+      "pos": "adj.",
+      "meaning_vi": "bảo mật, mật",
+      "example_en": "Confidential research material must not be stored on personal devices. Approved laptops use an encrypted network, and staff receive access after completing the information-security module.",
+      "example_vi": "Tài liệu nghiên cứu mật không được lưu trên thiết bị cá nhân. Máy tính xách tay được duyệt dùng mạng mã hóa, nhân viên được cấp quyền sau khi hoàn thành mô-đun bảo mật thông tin.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "834b51700d4e44a26024c7380125b1019ac02840141df3876c9108e6e140da41",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

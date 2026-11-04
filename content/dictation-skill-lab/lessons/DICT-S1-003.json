@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-003",
+  "status": "draft",
+  "level": "L1",
+  "section": 1,
+  "topic": "Travel Arrangements",
+  "title": "A Day Coach Ticket",
+  "learning_objectives_vi": [
+    "Rèn core information exchange qua tình huống: A customer asks about a short coach trip to a seaside town.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Bay Coach Tickets.",
+      "translation_vi": "Chào buổi sáng, phòng vé Bay Coach.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Is there a coach to Seabrook on Saturday?",
+      "translation_vi": "Có xe khách đến Seabrook vào thứ Bảy không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes. The morning coach leaves at eight thirty.",
+      "translation_vi": "Có. Chuyến sáng rời đi lúc tám giờ ba mươi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "How much is a single ticket?",
+      "translation_vi": "Vé một chiều giá bao nhiêu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "It is twelve pounds.",
+      "translation_vi": "Giá mười hai bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Where does it leave from?",
+      "translation_vi": "Xe khởi hành ở đâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "From stand four, outside the station.",
+      "translation_vi": "Từ bến số bốn, bên ngoài nhà ga.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Thanks. I will take one ticket.",
+      "translation_vi": "Cảm ơn. Tôi lấy một vé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Destination: ____",
+      "correct_answers": [
+        "Seabrook"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đích đến được nói là Seabrook.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Travel day: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Người gọi yêu cầu chuyến thứ Bảy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Departure time: ____",
+      "correct_answers": [
+        "8:30",
+        "eight thirty"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Giờ khởi hành của chuyến sáng là tám giờ ba mươi.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Single ticket price: £____",
+      "correct_answers": [
+        "12",
+        "twelve"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Giá vé một chiều là 12 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Coach stand: ____",
+      "correct_answers": [
+        "4",
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Xe xuất phát tại stand four.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "places",
+        "days_dates",
+        "time",
+        "prices",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T03).",
+      "correct_answers": [
+        "Yes. The morning coach leaves at eight thirty."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nội dung cần chép: Yes. The morning coach leaves at eight thirty. Nghĩa: Có. Chuyến sáng rời đi lúc tám giờ ba mươi. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "places",
+        "days_dates",
+        "time",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật B (lượt T06).",
+      "correct_answers": [
+        "Where does it leave from?"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nội dung cần chép: Where does it leave from? Nghĩa: Xe khởi hành ở đâu? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "places",
+        "days_dates",
+        "time",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: How much is a ____?",
+      "correct_answers": [
+        "single ticket"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “single ticket”. Câu đầy đủ: How much is a single ticket?. Nghĩa: Vé một chiều giá bao nhiêu?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "places",
+        "days_dates",
+        "time",
+        "prices"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "coach",
+      "pos": "noun",
+      "meaning_vi": "xe khách",
+      "example_en": "Good morning, Bay Coach Tickets.",
+      "example_vi": "Chào buổi sáng, phòng vé Bay Coach.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "single ticket",
+      "pos": "noun phrase",
+      "meaning_vi": "vé một chiều",
+      "example_en": "How much is a single ticket?",
+      "example_vi": "Vé một chiều giá bao nhiêu?",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "stand",
+      "pos": "noun",
+      "meaning_vi": "bến đón xe",
+      "example_en": "From stand four, outside the station.",
+      "example_vi": "Từ bến số bốn, bên ngoài nhà ga.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "leaves at",
+      "pos": "verb phrase",
+      "meaning_vi": "khởi hành lúc",
+      "example_en": "Yes. The morning coach leaves at eight thirty.",
+      "example_vi": "Có. Chuyến sáng rời đi lúc tám giờ ba mươi.",
+      "source_turn_id": "T03"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "20cb7429654b0f2091fa6994a9b6bdb923a24fcde9f68f35420b17402f993291",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

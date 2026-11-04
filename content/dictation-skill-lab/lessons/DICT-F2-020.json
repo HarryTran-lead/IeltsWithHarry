@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-020",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Mixed Sentence Review",
+  "learning_objectives_vi": [
+    "Tổng hợp nghe câu độ dài tăng",
+    "Nghe ý chính toàn chuỗi, rồi phát lại từng câu để ghi chính xác."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Yesterday, I took an early train to the city.",
+      "translation_vi": "Hôm qua tôi đi chuyến tàu sớm vào thành phố.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "I was meeting my cousin near the museum.",
+      "translation_vi": "Tôi đã hẹn gặp anh họ gần bảo tàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The train was late, so I sent him a message.",
+      "translation_vi": "Tàu trễ nên tôi nhắn tin cho anh ấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "He said he'd wait outside the main entrance.",
+      "translation_vi": "Anh ấy nói sẽ đợi bên ngoài lối vào chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "When I arrived, he was buying two tickets.",
+      "translation_vi": "Khi tôi đến, anh ấy đang mua hai vé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "We went inside and looked at the old photographs.",
+      "translation_vi": "Chúng tôi vào trong và xem những tấm ảnh cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "After an hour, we decided to have lunch.",
+      "translation_vi": "Sau một giờ, chúng tôi quyết định ăn trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I wanted soup, but the café didn't have any.",
+      "translation_vi": "Tôi muốn ăn súp nhưng quán cà phê không còn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Instead, I ordered a sandwich and some tea.",
+      "translation_vi": "Thay vào đó, tôi gọi bánh mì kẹp và ít trà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Next month, we're going to visit the art gallery.",
+      "translation_vi": "Tháng sau, chúng tôi định đi thăm phòng tranh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Yesterday, I took an early train to the city."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Took là quá khứ của take; an early nối âm. Nghĩa: Hôm qua tôi đi chuyến tàu sớm vào thành phố.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I was meeting my cousin near the museum."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Was meeting diễn đạt cuộc hẹn trong bối cảnh quá khứ. Nghĩa: Tôi đã hẹn gặp anh họ gần bảo tàng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The train was late, so I sent him a message."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "So thể hiện kết quả; him là tân ngữ. Nghĩa: Tàu trễ nên tôi nhắn tin cho anh ấy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "He said he'd wait outside the main entrance."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "He'd ở đây = he would, không phải he had. Nghĩa: Anh ấy nói sẽ đợi bên ngoài lối vào chính.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "When I arrived, he was buying two tickets."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Arrived và was buying diễn tả hai thời điểm khác nhau. Nghĩa: Khi tôi đến, anh ấy đang mua hai vé.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We went inside and looked at the old photographs."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Went và looked đều là quá khứ. Nghĩa: Chúng tôi vào trong và xem những tấm ảnh cũ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "After an hour, we decided to have lunch."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "After an hour có an nối với hour âm /aʊə/. Nghĩa: Sau một giờ, chúng tôi quyết định ăn trưa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I wanted soup, but the café didn't have any."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Didn't have any: any thay cho soup đã đề cập. Nghĩa: Tôi muốn ăn súp nhưng quán cà phê không còn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Instead, I ordered a sandwich and some tea."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Instead báo sự thay đổi lựa chọn. Nghĩa: Thay vào đó, tôi gọi bánh mì kẹp và ít trà.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Next month, we're going to visit the art gallery."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "We're going to cho biết kế hoạch tương lai. Nghĩa: Tháng sau, chúng tôi định đi thăm phòng tranh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Vì sao người nói nhắn tin cho anh họ?",
+      "options": [
+        "the bus was full",
+        "the train was late",
+        "the museum was closed"
+      ],
+      "correct_answers": [
+        "the train was late"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "T03 nói train was late, so ... sent him a message.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "mixed"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Người nói đã gọi gì thay súp?",
+      "options": [
+        "a sandwich and some tea",
+        "a salad and juice",
+        "a bowl of soup"
+      ],
+      "correct_answers": [
+        "a sandwich and some tea"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Instead báo lựa chọn khác: a sandwich and some tea.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "mixed"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "main entrance",
+      "pos": "noun phrase",
+      "meaning_vi": "lối vào chính",
+      "example_en": "He said he'd wait outside the main entrance.",
+      "example_vi": "Anh ấy nói sẽ đợi bên ngoài lối vào chính.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "photographs",
+      "pos": "noun",
+      "meaning_vi": "ảnh chụp",
+      "example_en": "We went inside and looked at the old photographs.",
+      "example_vi": "Chúng tôi vào trong và xem những tấm ảnh cũ.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "instead",
+      "pos": "adverb",
+      "meaning_vi": "thay vào đó",
+      "example_en": "Instead, I ordered a sandwich and some tea.",
+      "example_vi": "Thay vào đó, tôi gọi bánh mì kẹp và ít trà.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "art gallery",
+      "pos": "noun phrase",
+      "meaning_vi": "phòng trưng bày nghệ thuật",
+      "example_en": "Next month, we're going to visit the art gallery.",
+      "example_vi": "Tháng sau, chúng tôi định đi thăm phòng tranh.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "37254f9ae6e23e2369c614f1dfd47e1a2f812a65f0b168525585561c4cb14928",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

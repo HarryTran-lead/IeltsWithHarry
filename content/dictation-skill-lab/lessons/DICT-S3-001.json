@@ -1,0 +1,402 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-001",
+  "status": "draft",
+  "level": "L3",
+  "section": 3,
+  "topic": "Group Projects",
+  "title": "Group Projects: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Anna – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ben – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Chloe – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We need to divide the tasks for our history exhibition. Can you research the old photographs, Ben?",
+      "translation_vi": "Chúng ta cần chia việc cho triển lãm lịch sử. Ben có thể tìm hiểu các ảnh cũ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I can, but I also promised to interview the museum volunteer on Friday afternoon.",
+      "translation_vi": "Mình có thể, nhưng mình đã hứa phỏng vấn tình nguyện viên bảo tàng vào chiều thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Then I'll choose the photographs. You could write the interview questions before Friday.",
+      "translation_vi": "Vậy mình sẽ chọn ảnh. Bạn có thể viết câu hỏi phỏng vấn trước thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "That sounds fair. Who will design the display labels? We have nearly forty objects.",
+      "translation_vi": "Nghe hợp lý đấy. Ai sẽ thiết kế nhãn trưng bày? Chúng ta có gần bốn mươi hiện vật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "C",
+      "text_en": "I can make the labels if you send me the final object list by Wednesday.",
+      "translation_vi": "Mình có thể làm nhãn nếu các bạn gửi danh sách hiện vật cuối cùng trước thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Wednesday is possible. Let's meet in the library at four to check our progress.",
+      "translation_vi": "Thứ Tư thì được. Hãy gặp nhau ở thư viện lúc bốn giờ để kiểm tra tiến độ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "I thought we agreed on three, but my seminar finishes at half past three.",
+      "translation_vi": "Mình tưởng đã hẹn lúc ba giờ, nhưng buổi hội thảo của mình kết thúc lúc ba rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "C",
+      "text_en": "Four is better for everyone. I'll bring a sample label so we can agree on the design.",
+      "translation_vi": "Bốn giờ hợp hơn với tất cả. Mình sẽ mang một nhãn mẫu để thống nhất thiết kế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why can't Ben research the photographs as well as conduct the interview?",
+      "correct_answers": [
+        "He has already arranged an interview"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Ben): “Mình có thể, nhưng mình đã hứa phỏng vấn tình nguyện viên bảo tàng vào chiều thứ Sáu.” Đáp án: “He has already arranged an interview”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "The museum is closed",
+        "He has already arranged an interview",
+        "He dislikes old images"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Anna agrees to select the ____ for the exhibition.",
+      "correct_answers": [
+        "photographs"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Anna): “Vậy mình sẽ chọn ảnh. Bạn có thể viết câu hỏi phỏng vấn trước thứ Sáu.” Đáp án: “photographs”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "short_answer",
+      "prompt": "By which day must the final object list be sent?",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Chloe): “Mình có thể làm nhãn nếu các bạn gửi danh sách hiện vật cuối cùng trước thứ Tư.” Đáp án: “Wednesday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "sentence_completion",
+      "prompt": "The students will meet in the library at ____.",
+      "correct_answers": [
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Anna): “Thứ Tư thì được. Hãy gặp nhau ở thư viện lúc bốn giờ để kiểm tra tiến độ.” Đáp án: “four”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "What was the original meeting time?",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bằng chứng ở T07 (Ben): “Mình tưởng đã hẹn lúc ba giờ, nhưng buổi hội thảo của mình kết thúc lúc ba rưỡi.” Đáp án: “three”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "three",
+        "four",
+        "half past three"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "matching",
+      "prompt": "Which speaker will bring a sample label?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Chloe): “Bốn giờ hợp hơn với tất cả. Mình sẽ mang một nhãn mẫu để thống nhất thiết kế.” Đáp án: “Speaker C”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "I can, but I also promised to interview the museum volunteer on Friday afternoon."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: “I can, but I also promised to interview the museum volunteer on Friday afternoon.”\nNghĩa: Mình có thể, nhưng mình đã hứa phỏng vấn tình nguyện viên bảo tàng vào chiều thứ Sáu.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T05 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "I can make the labels if you send me the final object list by Wednesday."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: “I can make the labels if you send me the final object list by Wednesday.”\nNghĩa: Mình có thể làm nhãn nếu các bạn gửi danh sách hiện vật cuối cùng trước thứ Tư.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: We need to divide the tasks for our history exhibition. Can you research the old ____, Ben?",
+      "correct_answers": [
+        "photographs"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “photographs” (các bức ảnh). Lời gốc: “We need to divide the tasks for our history exhibition. Can you research the old photographs, Ben?”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "photographs",
+      "pos": "n.",
+      "meaning_vi": "các bức ảnh",
+      "example_en": "We need to divide the tasks for our history exhibition. Can you research the old photographs, Ben?",
+      "example_vi": "Chúng ta cần chia việc cho triển lãm lịch sử. Ben có thể tìm hiểu các ảnh cũ không?",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "interview questions",
+      "pos": "n. phr.",
+      "meaning_vi": "câu hỏi phỏng vấn",
+      "example_en": "Then I'll choose the photographs. You could write the interview questions before Friday.",
+      "example_vi": "Vậy mình sẽ chọn ảnh. Bạn có thể viết câu hỏi phỏng vấn trước thứ Sáu.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "display labels",
+      "pos": "n. phr.",
+      "meaning_vi": "nhãn trưng bày",
+      "example_en": "That sounds fair. Who will design the display labels? We have nearly forty objects.",
+      "example_vi": "Nghe hợp lý đấy. Ai sẽ thiết kế nhãn trưng bày? Chúng ta có gần bốn mươi hiện vật.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "sample label",
+      "pos": "n. phr.",
+      "meaning_vi": "nhãn mẫu",
+      "example_en": "Four is better for everyone. I'll bring a sample label so we can agree on the design.",
+      "example_vi": "Bốn giờ hợp hơn với tất cả. Mình sẽ mang một nhãn mẫu để thống nhất thiết kế.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "9674e21d590bcfd78ab8ce80d61871ee7ab7dbd61db3706242272ae6a4dee547",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

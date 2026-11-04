@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-024",
+  "status": "draft",
+  "level": "L3",
+  "section": 1,
+  "topic": "Medical Appointments",
+  "title": "A Clinic Appointment Mix-up",
+  "learning_objectives_vi": [
+    "Luyện corrected detail / distractors trong tình huống: A clinic corrects a patient appointment and entrance details.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Orchard Medical Centre. How may I help?",
+      "translation_vi": "Trung tâm y tế Orchard xin nghe. Tôi có thể giúp gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I've received a text saying my appointment is on Friday at ten.",
+      "translation_vi": "Tôi nhận tin nhắn ghi lịch hẹn thứ Sáu lúc mười giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I'm sorry. That was sent before the doctor's timetable changed.",
+      "translation_vi": "Xin lỗi. Tin nhắn gửi trước khi lịch bác sĩ thay đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "So when should I come?",
+      "translation_vi": "Vậy tôi nên đến lúc nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Thursday at ten forty-five, if that's convenient.",
+      "translation_vi": "Thứ Năm lúc mười giờ bốn mươi lăm, nếu tiện cho bạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Thursday is fine. Should I use the front entrance?",
+      "translation_vi": "Thứ Năm được. Tôi vào cửa chính chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The front door is being repaired. Please use the side entrance near the car park.",
+      "translation_vi": "Cửa chính đang sửa. Hãy dùng lối bên cạnh bãi xe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "And do I need to fast before the check-up?",
+      "translation_vi": "Tôi có cần nhịn ăn trước buổi khám không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "No. It's a routine consultation, not a blood test.",
+      "translation_vi": "Không. Đây là buổi tư vấn thông thường, không phải xét nghiệm máu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "That's clear. Thank you for correcting the message.",
+      "translation_vi": "Tôi hiểu rồi. Cảm ơn đã đính chính tin nhắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Correct day: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Friday là thông báo cũ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Correct time: ____",
+      "correct_answers": [
+        "10:45"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Giờ đúng là 10:45.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Use the ____ entrance",
+      "correct_answers": [
+        "side"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Cửa trước đang sửa, đi cửa bên.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Appointment type: routine ____",
+      "correct_answers": [
+        "consultation"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Đây là buổi tư vấn thông thường.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Fasting before appointment? ____",
+      "correct_answers": [
+        "no"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Không cần nhịn ăn vì không xét nghiệm máu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T03).",
+      "correct_answers": [
+        "I'm sorry. That was sent before the doctor's timetable changed."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu chuẩn: I'm sorry. That was sent before the doctor's timetable changed. Nghĩa: Xin lỗi. Tin nhắn gửi trước khi lịch bác sĩ thay đổi. Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T07).",
+      "correct_answers": [
+        "The front door is being repaired. Please use the side entrance near the car park."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu chuẩn: The front door is being repaired. Please use the side entrance near the car park. Nghĩa: Cửa chính đang sửa. Hãy dùng lối bên cạnh bãi xe. Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: Thursday is fine. Should I use the front ____?",
+      "correct_answers": [
+        "entrance"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Cụm cần điền: entrance (lối vào). Câu gốc: Thursday is fine. Should I use the front entrance?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "corrected_schedule",
+        "instructions",
+        "medical",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "timetable",
+      "pos": "word",
+      "meaning_vi": "lịch làm việc",
+      "example_en": "I'm sorry. That was sent before the doctor's timetable changed.",
+      "example_vi": "Xin lỗi. Tin nhắn gửi trước khi lịch bác sĩ thay đổi.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "entrance",
+      "pos": "word",
+      "meaning_vi": "lối vào",
+      "example_en": "Thursday is fine. Should I use the front entrance?",
+      "example_vi": "Thứ Năm được. Tôi vào cửa chính chứ?",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "fast",
+      "pos": "word",
+      "meaning_vi": "nhịn ăn",
+      "example_en": "And do I need to fast before the check-up?",
+      "example_vi": "Tôi có cần nhịn ăn trước buổi khám không?",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "consultation",
+      "pos": "word",
+      "meaning_vi": "buổi khám tư vấn",
+      "example_en": "No. It's a routine consultation, not a blood test.",
+      "example_vi": "Không. Đây là buổi tư vấn thông thường, không phải xét nghiệm máu.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b5843f97006d755fe2820d1573d03e7d0701d505f52ce105ed15483bcdd5e0b2",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-035",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Human Psychology",
+  "title": "Correlation, Experiments and Replication",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "A newspaper headline announces that people who spend more time outdoors report better concentration. Does that prove outdoor time causes the improvement? Not necessarily. The researchers may have observed a correlation, which is a relationship between variables, without controlling all the factors that influence both. People who spend more time outdoors might also sleep differently or have less demanding schedules.",
+      "translation_vi": "Một tít báo nói người ở ngoài trời lâu hơn tự báo cáo tập trung tốt hơn. Điều đó chứng minh thời gian ngoài trời gây ra cải thiện sao? Chưa chắc. Nhà nghiên cứu có thể quan sát tương quan, tức liên hệ giữa các biến, mà chưa kiểm soát hết yếu tố ảnh hưởng cả hai. Người ra ngoài nhiều có thể ngủ khác hoặc có lịch bớt căng thẳng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "An experiment aims to test a proposed cause more directly. Researchers might randomly assign volunteers to take a short walk in a park or remain in an indoor room before performing the same attention task. Random allocation helps balance differences that would otherwise bias the groups. Nevertheless, even a carefully designed experiment has boundaries, including who volunteered and how long the effects were measured.",
+      "translation_vi": "Thí nghiệm nhằm kiểm tra nguyên nhân đề xuất trực tiếp hơn. Nhà nghiên cứu có thể phân ngẫu nhiên tình nguyện viên đi dạo ngắn trong công viên hoặc ở phòng trong nhà trước khi làm cùng bài chú ý. Phân bổ ngẫu nhiên giúp cân bằng khác biệt có thể làm lệch nhóm. Dù vậy, thí nghiệm thiết kế cẩn thận vẫn có giới hạn về người tham gia và thời gian đo tác động.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Measurement deserves attention too. A participant can describe feeling focused, while a computer task records reaction time or errors. These are related but distinct outcomes. If a study uses only a self-report question, conclusions about actual task performance should be cautious. Reliable instruments and transparent procedures make it easier for other researchers to evaluate the findings.",
+      "translation_vi": "Phép đo cũng cần chú ý. Người tham gia có thể nói cảm thấy tập trung, trong khi bài máy tính ghi thời gian phản ứng hoặc lỗi. Chúng liên quan nhưng là kết quả khác nhau. Nếu nghiên cứu chỉ hỏi tự báo cáo, cần thận trọng khi kết luận về thành tích nhiệm vụ thực. Công cụ đáng tin và quy trình minh bạch giúp người khác đánh giá kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A further test is replication. Another research team follows a similar procedure with a new group to see whether the pattern appears again. A failure to repeat a result does not automatically reveal fraud; contexts, sample sizes and chance can all matter. Repeated evidence helps distinguish a promising early finding from a dependable conclusion that applies beyond one small experiment.",
+      "translation_vi": "Kiểm tra thêm là tái lập. Nhóm khác theo quy trình tương tự với nhóm người mới để xem mẫu kết quả có xuất hiện lại. Không lặp được không tự động có nghĩa gian lận; bối cảnh, cỡ mẫu và ngẫu nhiên đều quan trọng. Bằng chứng lặp lại giúp phân biệt phát hiện ban đầu đáng quan tâm với kết luận đáng tin ngoài một thí nghiệm nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "In practice, psychologists compare evidence across observations, experiments and replications. Each method answers a slightly different question, and each can fail in different ways. Students evaluating a claim should ask who was studied, how behaviour was measured and which alternative explanations remain. Those questions are more informative than treating the word scientific as a guarantee of certainty.",
+      "translation_vi": "Thực tế, nhà tâm lý so bằng chứng quan sát, thí nghiệm và tái lập. Mỗi cách trả lời câu hỏi hơi khác và có những kiểu sai khác. Học viên đánh giá tuyên bố nên hỏi ai được nghiên cứu, hành vi được đo thế nào và còn giải thích khác nào. Các câu ấy hữu ích hơn việc coi chữ khoa học là bảo đảm chắc chắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "A relationship between two variables is called a ____.",
+      "correct_answers": [
+        "correlation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Một tít báo nói người ở ngoài trời lâu hơn tự báo cáo tập trung tốt hơn. Điều đó chứng minh thời gian ngoài trời gây ra cải thiện sao? Chưa chắc. Nhà nghiên cứu có thể quan sát tương quan, tức liên hệ giữa các biến, mà chưa kiểm soát hết yếu tố ảnh hưởng cả hai. Người ra ngoài nhiều có thể ngủ khác hoặc có lịch bớt căng thẳng. Đáp án cần chọn/điền: “correlation”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Random ____ helps balance differences between experimental groups.",
+      "correct_answers": [
+        "allocation"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Thí nghiệm nhằm kiểm tra nguyên nhân đề xuất trực tiếp hơn. Nhà nghiên cứu có thể phân ngẫu nhiên tình nguyện viên đi dạo ngắn trong công viên hoặc ở phòng trong nhà trước khi làm cùng bài chú ý. Phân bổ ngẫu nhiên giúp cân bằng khác biệt có thể làm lệch nhóm. Dù vậy, thí nghiệm thiết kế cẩn thận vẫn có giới hạn về người tham gia và thời gian đo tác động. Đáp án cần chọn/điền: “allocation”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Computer tasks can record reaction time and ____.",
+      "correct_answers": [
+        "errors"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Phép đo cũng cần chú ý. Người tham gia có thể nói cảm thấy tập trung, trong khi bài máy tính ghi thời gian phản ứng hoặc lỗi. Chúng liên quan nhưng là kết quả khác nhau. Nếu nghiên cứu chỉ hỏi tự báo cáo, cần thận trọng khi kết luận về thành tích nhiệm vụ thực. Công cụ đáng tin và quy trình minh bạch giúp người khác đánh giá kết quả. Đáp án cần chọn/điền: “errors”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What is replication in psychological research?",
+      "correct_answers": [
+        "Repeating a procedure with a new group"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Kiểm tra thêm là tái lập. Nhóm khác theo quy trình tương tự với nhóm người mới để xem mẫu kết quả có xuất hiện lại. Không lặp được không tự động có nghĩa gian lận; bối cảnh, cỡ mẫu và ngẫu nhiên đều quan trọng. Bằng chứng lặp lại giúp phân biệt phát hiện ban đầu đáng quan tâm với kết luận đáng tin ngoài một thí nghiệm nhỏ. Đáp án cần chọn/điền: “Repeating a procedure with a new group”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "mcq"
+      ],
+      "options": [
+        "Repeating a procedure with a new group",
+        "Changing the definition of a result",
+        "Using the same people without any new measures"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "sentence_completion",
+      "prompt": "Students evaluating a study should ask how ____ was measured.",
+      "correct_answers": [
+        "behaviour"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Lời giảng nêu “how behaviour was measured”; lấy nguyên từ “behaviour”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Which statement best captures the lecture?",
+      "correct_answers": [
+        "Research methods provide complementary evidence with distinct limits"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Thực tế, nhà tâm lý so bằng chứng quan sát, thí nghiệm và tái lập. Mỗi cách trả lời câu hỏi hơi khác và có những kiểu sai khác. Học viên đánh giá tuyên bố nên hỏi ai được nghiên cứu, hành vi được đo thế nào và còn giải thích khác nào. Các câu ấy hữu ích hơn việc coi chữ khoa học là bảo đảm chắc chắn. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ],
+      "options": [
+        "Any headline showing correlation proves causation",
+        "Research methods provide complementary evidence with distinct limits",
+        "One small experiment always establishes certainty"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "An experiment aims to test a proposed cause more directly. Researchers might randomly assign volunteers to take a short walk in a park or remain in an indoor room before performing the same attention task. Random allocation helps balance differences that would otherwise bias the groups. Nevertheless, even a carefully designed experiment has boundaries, including who volunteered and how long the effects were measured."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Thí nghiệm nhằm kiểm tra nguyên nhân đề xuất trực tiếp hơn. Nhà nghiên cứu có thể phân ngẫu nhiên tình nguyện viên đi dạo ngắn trong công viên hoặc ở phòng trong nhà trước khi làm cùng bài chú ý. Phân bổ ngẫu nhiên giúp cân bằng khác biệt có thể làm lệch nhóm. Dù vậy, thí nghiệm thiết kế cẩn thận vẫn có giới hạn về người tham gia và thời gian đo tác động.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "A further test is replication. Another research team follows a similar procedure with a new group to see whether the pattern appears again. A failure to repeat a result does not automatically reveal fraud; contexts, sample sizes and chance can all matter. Repeated evidence helps distinguish a promising early finding from a dependable conclusion that applies beyond one small experiment."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Kiểm tra thêm là tái lập. Nhóm khác theo quy trình tương tự với nhóm người mới để xem mẫu kết quả có xuất hiện lại. Không lặp được không tự động có nghĩa gian lận; bối cảnh, cỡ mẫu và ngẫu nhiên đều quan trọng. Bằng chứng lặp lại giúp phân biệt phát hiện ban đầu đáng quan tâm với kết luận đáng tin ngoài một thí nghiệm nhỏ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: A newspaper headline announces that people who spend more time outdoors report better concentration. Does that prove outdoor time causes the improvement? Not necessarily. The researchers may have observed a ____, which is a relationship between variables, without controlling all the factors that influence both. People who spend more time outdoors might also sleep differently or have less demanding schedules.",
+      "correct_answers": [
+        "correlation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “correlation”, nghĩa: tương quan. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "correlation",
+      "pos": "n.",
+      "meaning_vi": "tương quan",
+      "example_en": "A newspaper headline announces that people who spend more time outdoors report better concentration. Does that prove outdoor time causes the improvement? Not necessarily. The researchers may have observed a correlation, which is a relationship between variables, without controlling all the factors that influence both. People who spend more time outdoors might also sleep differently or have less demanding schedules.",
+      "example_vi": "Một tít báo nói người ở ngoài trời lâu hơn tự báo cáo tập trung tốt hơn. Điều đó chứng minh thời gian ngoài trời gây ra cải thiện sao? Chưa chắc. Nhà nghiên cứu có thể quan sát tương quan, tức liên hệ giữa các biến, mà chưa kiểm soát hết yếu tố ảnh hưởng cả hai. Người ra ngoài nhiều có thể ngủ khác hoặc có lịch bớt căng thẳng.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "Random allocation",
+      "pos": "n. phr.",
+      "meaning_vi": "phân bổ ngẫu nhiên",
+      "example_en": "An experiment aims to test a proposed cause more directly. Researchers might randomly assign volunteers to take a short walk in a park or remain in an indoor room before performing the same attention task. Random allocation helps balance differences that would otherwise bias the groups. Nevertheless, even a carefully designed experiment has boundaries, including who volunteered and how long the effects were measured.",
+      "example_vi": "Thí nghiệm nhằm kiểm tra nguyên nhân đề xuất trực tiếp hơn. Nhà nghiên cứu có thể phân ngẫu nhiên tình nguyện viên đi dạo ngắn trong công viên hoặc ở phòng trong nhà trước khi làm cùng bài chú ý. Phân bổ ngẫu nhiên giúp cân bằng khác biệt có thể làm lệch nhóm. Dù vậy, thí nghiệm thiết kế cẩn thận vẫn có giới hạn về người tham gia và thời gian đo tác động.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "self-report",
+      "pos": "n.",
+      "meaning_vi": "tự báo cáo",
+      "example_en": "Measurement deserves attention too. A participant can describe feeling focused, while a computer task records reaction time or errors. These are related but distinct outcomes. If a study uses only a self-report question, conclusions about actual task performance should be cautious. Reliable instruments and transparent procedures make it easier for other researchers to evaluate the findings.",
+      "example_vi": "Phép đo cũng cần chú ý. Người tham gia có thể nói cảm thấy tập trung, trong khi bài máy tính ghi thời gian phản ứng hoặc lỗi. Chúng liên quan nhưng là kết quả khác nhau. Nếu nghiên cứu chỉ hỏi tự báo cáo, cần thận trọng khi kết luận về thành tích nhiệm vụ thực. Công cụ đáng tin và quy trình minh bạch giúp người khác đánh giá kết quả.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "replication",
+      "pos": "n.",
+      "meaning_vi": "sự tái lập",
+      "example_en": "A further test is replication. Another research team follows a similar procedure with a new group to see whether the pattern appears again. A failure to repeat a result does not automatically reveal fraud; contexts, sample sizes and chance can all matter. Repeated evidence helps distinguish a promising early finding from a dependable conclusion that applies beyond one small experiment.",
+      "example_vi": "Kiểm tra thêm là tái lập. Nhóm khác theo quy trình tương tự với nhóm người mới để xem mẫu kết quả có xuất hiện lại. Không lặp được không tự động có nghĩa gian lận; bối cảnh, cỡ mẫu và ngẫu nhiên đều quan trọng. Bằng chứng lặp lại giúp phân biệt phát hiện ban đầu đáng quan tâm với kết luận đáng tin ngoài một thí nghiệm nhỏ.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "129ad70ed1c3978b1755fba592a5c3ea26a5c5458dc98d6635072fda497a1a86",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

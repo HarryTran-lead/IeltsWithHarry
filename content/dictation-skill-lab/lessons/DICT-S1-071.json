@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-071",
+  "status": "draft",
+  "level": "L7",
+  "section": 1,
+  "topic": "Gym Membership",
+  "title": "A Corporate Membership with Family Access",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: An employee evaluates subsidised membership against family access restrictions.",
+    "Nhận diện integrated information challenge và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to Westmoor Wellness. How can I help with your corporate membership?",
+      "translation_vi": "Chào mừng đến Westmoor Wellness. Tôi có thể hỗ trợ gì về hội viên doanh nghiệp?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "My employer covers part of the fee, but I also want my partner to use the facilities at weekends.",
+      "translation_vi": "Công ty tôi hỗ trợ một phần phí, nhưng tôi muốn bạn đời dùng cơ sở vào cuối tuần nữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The company scheme reduces the standard fifty-eight-pound monthly fee by twenty pounds, but it covers only the employee.",
+      "translation_vi": "Chương trình công ty giảm hai mươi bảng từ phí chuẩn năm mươi tám bảng/tháng, nhưng chỉ áp dụng cho nhân viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Could I add my partner through the family plan without losing that discount?",
+      "translation_vi": "Tôi có thể thêm người thân qua gói gia đình mà vẫn giữ giảm giá không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Not directly. Family membership costs seventy-four pounds in total and cannot be combined with the corporate subsidy.",
+      "translation_vi": "Không trực tiếp được. Gói gia đình giá tổng cộng bảy mươi bốn bảng và không cộng dồn hỗ trợ công ty.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That's more than I expected. What if we keep separate accounts?",
+      "translation_vi": "Cao hơn tôi nghĩ. Nếu chúng tôi giữ hai tài khoản riêng thì sao?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Your discounted employee account would be thirty-eight pounds. A weekend-only pass for your partner would add nineteen.",
+      "translation_vi": "Tài khoản nhân viên đã giảm còn ba mươi tám bảng. Vé chỉ cuối tuần cho người thân thêm mười chín bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "That seems cheaper overall. Does the weekend pass include swimming?",
+      "translation_vi": "Như vậy tổng có vẻ rẻ hơn. Vé cuối tuần có gồm hồ bơi không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes, swimming is included, but not instructor-led classes. Those require a separate booking.",
+      "translation_vi": "Có, được bơi, nhưng không gồm lớp có huấn luyện viên. Các lớp ấy phải đặt riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "How far in advance can my partner reserve a weekend slot?",
+      "translation_vi": "Người thân tôi được đặt khung giờ cuối tuần trước bao lâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Bookings open seven days ahead. If they cancel less than twelve hours beforehand, the pass counts as used.",
+      "translation_vi": "Mở đặt trước bảy ngày. Nếu hủy khi còn dưới mười hai giờ, vé vẫn tính đã dùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Then we'll take the two separate accounts. I'll activate mine through the employer portal tomorrow.",
+      "translation_vi": "Vậy chúng tôi dùng hai tài khoản riêng. Mai tôi sẽ kích hoạt của mình qua cổng công ty.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Standard individual monthly fee: £____",
+      "correct_answers": [
+        "fifty-eight"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Giá niêm yết là 58 bảng trước khi hỗ trợ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Employer reduction: £____",
+      "correct_answers": [
+        "twenty"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Công ty giảm 20 bảng từ giá chuẩn.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Family membership total monthly cost: £____",
+      "correct_answers": [
+        "seventy-four"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Gói gia đình 74 bảng và không ghép ưu đãi công ty.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Employee account after discount: £____",
+      "correct_answers": [
+        "thirty-eight"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Phí nhân viên sau giảm là 38 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "How much is the partner weekend pass?",
+      "correct_answers": [
+        "nineteen"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Vé cuối tuần cho người thân thêm 19 bảng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "nineteen",
+        "twenty",
+        "thirty-eight"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Cancellation penalty begins within ____ hours",
+      "correct_answers": [
+        "twelve"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Hủy khi còn dưới 12 giờ vẫn tính vé đã dùng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "Not directly. Family membership costs seventy-four pounds in total and cannot be combined with the corporate subsidy."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Not directly. Family membership costs seventy-four pounds in total and cannot be combined with the corporate subsidy. Nghĩa: Không trực tiếp được. Gói gia đình giá tổng cộng bảy mươi bốn bảng và không cộng dồn hỗ trợ công ty. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: Welcome to Westmoor Wellness. How can I help with your ____?",
+      "correct_answers": [
+        "corporate membership"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "corporate membership: hội viên doanh nghiệp. Câu gốc: Welcome to Westmoor Wellness. How can I help with your corporate membership?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "fees",
+        "conditions",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "corporate membership",
+      "pos": "phrase",
+      "meaning_vi": "hội viên doanh nghiệp",
+      "example_en": "Welcome to Westmoor Wellness. How can I help with your corporate membership?",
+      "example_vi": "Chào mừng đến Westmoor Wellness. Tôi có thể hỗ trợ gì về hội viên doanh nghiệp?",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "subsidy",
+      "pos": "word",
+      "meaning_vi": "khoản trợ cấp",
+      "example_en": "Not directly. Family membership costs seventy-four pounds in total and cannot be combined with the corporate subsidy.",
+      "example_vi": "Không trực tiếp được. Gói gia đình giá tổng cộng bảy mươi bốn bảng và không cộng dồn hỗ trợ công ty.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "weekend-only pass",
+      "pos": "phrase",
+      "meaning_vi": "vé chỉ dùng cuối tuần",
+      "example_en": "Your discounted employee account would be thirty-eight pounds. A weekend-only pass for your partner would add nineteen.",
+      "example_vi": "Tài khoản nhân viên đã giảm còn ba mươi tám bảng. Vé chỉ cuối tuần cho người thân thêm mười chín bảng.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "instructor-led classes",
+      "pos": "phrase",
+      "meaning_vi": "lớp có huấn luyện viên",
+      "example_en": "Yes, swimming is included, but not instructor-led classes. Those require a separate booking.",
+      "example_vi": "Có, được bơi, nhưng không gồm lớp có huấn luyện viên. Các lớp ấy phải đặt riêng.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "de43f4c253603af484f634dc4035cacb0bbb47dec7445c55c1f93fab8ad997ef",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

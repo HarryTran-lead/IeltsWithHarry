@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-037",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Field Trips",
+  "title": "Field Trips – Geothermal River Fieldwork",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Nora – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Alex – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Tessa – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The environmental field trip is meant to compare water quality upstream and downstream of the geothermal springs. Unfortunately, the access permit for the upper trail was withdrawn this morning.",
+      "translation_vi": "Chuyến thực địa môi trường nhằm so chất lượng nước phía thượng lưu và hạ lưu suối nước nóng. Không may, giấy phép vào đường mòn phía trên bị thu hồi sáng nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "If we sample only below the springs, we can't identify the difference the springs make. We'd be missing a reference point, so the original research question would no longer be answerable.",
+      "translation_vi": "Nếu chỉ lấy mẫu dưới suối, ta không xác định được tác động của suối. Thiếu điểm đối chứng thì không còn trả lời được câu hỏi nghiên cứu ban đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The park service has an existing upstream dataset from last month. It includes temperature and mineral readings, but the samples were collected after heavy rainfall, unlike our planned dry-weather visit.",
+      "translation_vi": "Ban quản lý công viên có bộ dữ liệu thượng lưu tháng trước, gồm nhiệt độ và khoáng chất, nhưng mẫu được lấy sau mưa lớn, khác với chuyến đi dự kiến thời tiết khô.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Using those values as if they were directly comparable would be risky. Could we instead study variations among three downstream sites and state explicitly that our work cannot isolate the springs' effect?",
+      "translation_vi": "Dùng số ấy như thể so sánh trực tiếp được là rủi ro. Ta có thể nghiên cứu khác biệt giữa ba điểm hạ lưu và nói rõ không tách được riêng tác động của suối không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That would be a narrower but honest project. We'll also need to avoid the southern bank because the ranger reported unstable ground near the sampling platform.",
+      "translation_vi": "Như vậy đề tài hẹp hơn nhưng trung thực. Ta cũng cần tránh bờ nam vì kiểm lâm báo nền đất gần sàn lấy mẫu không ổn định.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The safe access points are marked on the updated map. We can reach sites one and two by the wooden walkway, while site three requires a guide to supervise equipment near the water.",
+      "translation_vi": "Các điểm vào an toàn đã đánh dấu trên bản đồ mới. Ta tới điểm một và hai qua lối gỗ; điểm ba cần hướng dẫn viên giám sát thiết bị gần nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Let's measure temperature, conductivity and pH at the same depth. If we change depth between sites, observed differences might be due to sampling technique rather than water chemistry.",
+      "translation_vi": "Ta đo nhiệt độ, độ dẫn điện và pH ở cùng độ sâu. Nếu thay độ sâu giữa điểm, khác biệt quan sát được có thể do kỹ thuật lấy mẫu chứ không phải hóa học nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I was going to bring six students, but the new permit allows only four participants plus the guide. I'll reduce the group and arrange for others to analyse the laboratory results remotely.",
+      "translation_vi": "Mình định đưa sáu sinh viên, nhưng giấy phép mới chỉ cho bốn người cộng hướng dẫn viên. Mình sẽ giảm nhóm, để số còn lại phân tích kết quả trong phòng thí nghiệm từ xa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll inform the lecturer that we're comparing three downstream sites, not estimating the springs' overall impact. The field trip can still produce valid work if we report the changed scope clearly.",
+      "translation_vi": "Mình sẽ báo giảng viên rằng ta so ba điểm hạ lưu, không ước tính tác động tổng thể của suối. Chuyến đi vẫn có giá trị nếu nêu rõ thay đổi phạm vi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why is a downstream-only study insufficient for the original question?",
+      "correct_answers": [
+        "It lacks a reference point above the springs"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Alex nói: “Nếu chỉ lấy mẫu dưới suối, ta không xác định được tác động của suối. Thiếu điểm đối chứng thì không còn trả lời được câu hỏi nghiên cứu ban đầu.” Đáp án “It lacks a reference point above the springs” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The earlier samples followed heavy rainfall",
+        "It lacks a reference point above the springs",
+        "The ranger limits the number of participants"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The existing upstream samples were collected after ____ .",
+      "correct_answers": [
+        "heavy rainfall"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Ban quản lý công viên có bộ dữ liệu thượng lưu tháng trước, gồm nhiệt độ và khoáng chất, nhưng mẫu được lấy sau mưa lớn, khác với chuyến đi dự kiến thời tiết khô.” Cụm cần điền nghe đúng nguyên văn là “heavy rainfall”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes a narrower three-site downstream study?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Nora (Speaker A) đưa ra ý này tại T04: “Dùng số ấy như thể so sánh trực tiếp được là rủi ro. Ta có thể nghiên cứu khác biệt giữa ba điểm hạ lưu và nói rõ không tách được riêng tác động của suối không?”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why must measurements be taken at the same depth?",
+      "correct_answers": [
+        "Different depths could distort comparisons between sites"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Nora nói: “Ta đo nhiệt độ, độ dẫn điện và pH ở cùng độ sâu. Nếu thay độ sâu giữa điểm, khác biệt quan sát được có thể do kỹ thuật lấy mẫu chứ không phải hóa học nước.” Đáp án “Different depths could distort comparisons between sites” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The sensor gives different readings at different times",
+        "Different depths could distort comparisons between sites",
+        "Water temperature cannot be measured in daylight"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The revised permit allows only ____ participants plus the guide.",
+      "correct_answers": [
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Mình định đưa sáu sinh viên, nhưng giấy phép mới chỉ cho bốn người cộng hướng dẫn viên. Mình sẽ giảm nhóm, để số còn lại phân tích kết quả trong phòng thí nghiệm từ xa.” Cụm cần điền nghe đúng nguyên văn là “four”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "How many downstream sites are included in the final design?",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Mình sẽ báo giảng viên rằng ta so ba điểm hạ lưu, không ước tính tác động tổng thể của suối. Chuyến đi vẫn có giá trị nếu nêu rõ thay đổi phạm vi.” Trả lời ngắn theo chi tiết “three”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Using those values as if they were directly comparable would be risky. Could we instead study variations among three downstream sites and state explicitly that our work cannot isolate the springs' effect?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “Using those values as if they were directly comparable would be risky. Could we instead study variations among three downstream sites and state explicitly that our work cannot isolate the springs' effect?”\nBản dịch: Dùng số ấy như thể so sánh trực tiếp được là rủi ro. Ta có thể nghiên cứu khác biệt giữa ba điểm hạ lưu và nói rõ không tách được riêng tác động của suối không?\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Let's measure temperature, conductivity and pH at the same depth. If we change depth between sites, observed differences might be due to sampling technique rather than water chemistry."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “Let's measure temperature, conductivity and pH at the same depth. If we change depth between sites, observed differences might be due to sampling technique rather than water chemistry.”\nBản dịch: Ta đo nhiệt độ, độ dẫn điện và pH ở cùng độ sâu. Nếu thay độ sâu giữa điểm, khác biệt quan sát được có thể do kỹ thuật lấy mẫu chứ không phải hóa học nước.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: The environmental field trip is meant to compare water quality upstream and downstream of the geothermal springs. Unfortunately, the ____ for the upper trail was withdrawn this morning.",
+      "correct_answers": [
+        "access permit"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “access permit” nghĩa là giấy phép tiếp cận. Đối chiếu: “The environmental field trip is meant to compare water quality upstream and downstream of the geothermal springs. Unfortunately, the access permit for the upper trail was withdrawn this morning.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "access permit",
+      "pos": "n. phr.",
+      "meaning_vi": "giấy phép tiếp cận",
+      "example_en": "The environmental field trip is meant to compare water quality upstream and downstream of the geothermal springs. Unfortunately, the access permit for the upper trail was withdrawn this morning.",
+      "example_vi": "Chuyến thực địa môi trường nhằm so chất lượng nước phía thượng lưu và hạ lưu suối nước nóng. Không may, giấy phép vào đường mòn phía trên bị thu hồi sáng nay.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "reference point",
+      "pos": "n. phr.",
+      "meaning_vi": "điểm đối chứng",
+      "example_en": "If we sample only below the springs, we can't identify the difference the springs make. We'd be missing a reference point, so the original research question would no longer be answerable.",
+      "example_vi": "Nếu chỉ lấy mẫu dưới suối, ta không xác định được tác động của suối. Thiếu điểm đối chứng thì không còn trả lời được câu hỏi nghiên cứu ban đầu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "conductivity",
+      "pos": "n.",
+      "meaning_vi": "độ dẫn điện",
+      "example_en": "Let's measure temperature, conductivity and pH at the same depth. If we change depth between sites, observed differences might be due to sampling technique rather than water chemistry.",
+      "example_vi": "Ta đo nhiệt độ, độ dẫn điện và pH ở cùng độ sâu. Nếu thay độ sâu giữa điểm, khác biệt quan sát được có thể do kỹ thuật lấy mẫu chứ không phải hóa học nước.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "sampling technique",
+      "pos": "n. phr.",
+      "meaning_vi": "kỹ thuật lấy mẫu",
+      "example_en": "Let's measure temperature, conductivity and pH at the same depth. If we change depth between sites, observed differences might be due to sampling technique rather than water chemistry.",
+      "example_vi": "Ta đo nhiệt độ, độ dẫn điện và pH ở cùng độ sâu. Nếu thay độ sâu giữa điểm, khác biệt quan sát được có thể do kỹ thuật lấy mẫu chứ không phải hóa học nước.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e20ffeedbdc0bc6ce25d508fb168a0e0a6dc2c1b6c72ad519353e3cbd1a5b161",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

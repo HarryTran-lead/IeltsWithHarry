@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-058",
+  "status": "draft",
+  "level": "L7",
+  "section": 3,
+  "topic": "Course Selection",
+  "title": "Course Selection – Climate Course Timetable Conflict",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Emma – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ryan – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Zara – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I was offered a place on the Climate Economics module, but its computer laboratory overlaps with my compulsory internship briefing. The portal only showed a free lecture slot when I applied.",
+      "translation_vi": "Mình được nhận vào môn Kinh tế khí hậu, nhưng buổi thực hành máy trùng buổi hướng dẫn thực tập bắt buộc. Cổng đăng ký lúc nộp chỉ hiện tiết lý thuyết còn trống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Check whether the laboratory is a compulsory component. Some modules allow alternative groups, but the timetable notes for Climate Economics say attendance is assessed.",
+      "translation_vi": "Hãy xem phòng máy có bắt buộc không. Một số môn có nhóm thay thế, nhưng ghi chú môn Kinh tế khí hậu nói điểm danh được đánh giá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The coordinator confirmed there is only one laboratory group this term. She suggested requesting credit for independent study, but that wouldn't solve the actual learning requirement.",
+      "translation_vi": "Điều phối viên xác nhận kỳ này chỉ có một nhóm phòng máy. Cô gợi ý xin tín chỉ tự học, nhưng cách đó không giải quyết yêu cầu học thật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I could postpone the internship, though my placement host has already booked supervision time. Moving it would probably cost me the practical experience I need before graduation.",
+      "translation_vi": "Mình có thể hoãn thực tập, nhưng nơi nhận đã đặt lịch giám sát. Chuyển có lẽ khiến mình mất trải nghiệm thực hành cần trước khi tốt nghiệp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Then don't treat the module offer as the only option. Environmental Modelling has a different laboratory time and covers similar quantitative tools, though its policy content is narrower.",
+      "translation_vi": "Vậy đừng xem lời mời học là lựa chọn duy nhất. Mô hình môi trường có giờ phòng máy khác và dạy công cụ định lượng tương tự, dù phần chính sách hẹp hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "There's also a waitlist for a Climate Economics seminar next spring. However, joining that list does not reserve a place, so you should plan around a confirmed module now.",
+      "translation_vi": "Cũng có danh sách chờ hội thảo Kinh tế khí hậu mùa xuân. Nhưng đăng ký chờ không giữ chỗ, nên bạn nên lập kế hoạch theo môn đã được xác nhận ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Environmental Modelling actually fits my dissertation better, since I want to compare emissions scenarios. I was focusing on the module title rather than the methods I'd learn.",
+      "translation_vi": "Mô hình môi trường thực ra hợp luận văn hơn vì mình muốn so kịch bản phát thải. Mình đã chú ý tên môn hơn phương pháp sẽ học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Before switching, ask the adviser whether its credits satisfy your degree pathway. Similar content doesn't always meet the same formal requirement, especially across departments.",
+      "translation_vi": "Trước khi đổi, hãy hỏi cố vấn tín chỉ ấy có hợp lộ trình bằng cấp không. Nội dung tương tự không luôn thỏa yêu cầu chính thức, nhất là giữa các khoa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "The adviser has just confirmed the substitution in writing. So register for Environmental Modelling, keep the internship and withdraw from Climate Economics before the fee-free deadline on Friday.",
+      "translation_vi": "Cố vấn vừa xác nhận thay môn bằng văn bản. Vậy đăng ký Mô hình môi trường, giữ thực tập và rút khỏi Kinh tế khí hậu trước hạn không mất phí thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why can't Emma assume she can miss the computer laboratory?",
+      "correct_answers": [
+        "Attendance at the compulsory laboratory is assessed"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Ryan nói: “Hãy xem phòng máy có bắt buộc không. Một số môn có nhóm thay thế, nhưng ghi chú môn Kinh tế khí hậu nói điểm danh được đánh giá.” Đáp án “Attendance at the compulsory laboratory is assessed” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The alternative module has a different laboratory time",
+        "Attendance at the compulsory laboratory is assessed",
+        "The internship host already scheduled supervision"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The coordinator confirms only ____ laboratory group this term.",
+      "correct_answers": [
+        "one"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Điều phối viên xác nhận kỳ này chỉ có một nhóm phòng máy. Cô gợi ý xin tín chỉ tự học, nhưng cách đó không giải quyết yêu cầu học thật.” Cụm cần điền nghe đúng nguyên văn là “one”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker suggests Environmental Modelling as a substitute?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người nói Ryan (Speaker B) đưa ra ý này tại T05: “Vậy đừng xem lời mời học là lựa chọn duy nhất. Mô hình môi trường có giờ phòng máy khác và dạy công cụ định lượng tương tự, dù phần chính sách hẹp hơn.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why does Emma reconsider Environmental Modelling?",
+      "correct_answers": [
+        "Its methods align more closely with her dissertation"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Emma nói: “Mô hình môi trường thực ra hợp luận văn hơn vì mình muốn so kịch bản phát thải. Mình đã chú ý tên môn hơn phương pháp sẽ học.” Đáp án “Its methods align more closely with her dissertation” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The adviser has refused the substitution",
+        "Its methods align more closely with her dissertation",
+        "The course title fits her original plan better"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Ryan advises checking the formal degree ____ .",
+      "correct_answers": [
+        "pathway"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Trước khi đổi, hãy hỏi cố vấn tín chỉ ấy có hợp lộ trình bằng cấp không. Nội dung tương tự không luôn thỏa yêu cầu chính thức, nhất là giữa các khoa.” Cụm cần điền nghe đúng nguyên văn là “pathway”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "Which course does Emma finally register for?",
+      "correct_answers": [
+        "Environmental Modelling"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Cố vấn vừa xác nhận thay môn bằng văn bản. Vậy đăng ký Mô hình môi trường, giữ thực tập và rút khỏi Kinh tế khí hậu trước hạn không mất phí thứ Sáu.” Trả lời ngắn theo chi tiết “Environmental Modelling”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I could postpone the internship, though my placement host has already booked supervision time. Moving it would probably cost me the practical experience I need before graduation."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I could postpone the internship, though my placement host has already booked supervision time. Moving it would probably cost me the practical experience I need before graduation.”\nBản dịch: Mình có thể hoãn thực tập, nhưng nơi nhận đã đặt lịch giám sát. Chuyển có lẽ khiến mình mất trải nghiệm thực hành cần trước khi tốt nghiệp.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Environmental Modelling actually fits my dissertation better, since I want to compare emissions scenarios. I was focusing on the module title rather than the methods I'd learn."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “Environmental Modelling actually fits my dissertation better, since I want to compare emissions scenarios. I was focusing on the module title rather than the methods I'd learn.”\nBản dịch: Mô hình môi trường thực ra hợp luận văn hơn vì mình muốn so kịch bản phát thải. Mình đã chú ý tên môn hơn phương pháp sẽ học.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: I was offered a place on the Climate Economics module, but its computer laboratory overlaps with my ____ briefing. The portal only showed a free lecture slot when I applied.",
+      "correct_answers": [
+        "compulsory internship"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “compulsory internship” nghĩa là kỳ thực tập bắt buộc. Đối chiếu: “I was offered a place on the Climate Economics module, but its computer laboratory overlaps with my compulsory internship briefing. The portal only showed a free lecture slot when I applied.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "compulsory internship",
+      "pos": "n. phr.",
+      "meaning_vi": "kỳ thực tập bắt buộc",
+      "example_en": "I was offered a place on the Climate Economics module, but its computer laboratory overlaps with my compulsory internship briefing. The portal only showed a free lecture slot when I applied.",
+      "example_vi": "Mình được nhận vào môn Kinh tế khí hậu, nhưng buổi thực hành máy trùng buổi hướng dẫn thực tập bắt buộc. Cổng đăng ký lúc nộp chỉ hiện tiết lý thuyết còn trống.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "substitution",
+      "pos": "n.",
+      "meaning_vi": "sự thay thế môn",
+      "example_en": "The adviser has just confirmed the substitution in writing. So register for Environmental Modelling, keep the internship and withdraw from Climate Economics before the fee-free deadline on Friday.",
+      "example_vi": "Cố vấn vừa xác nhận thay môn bằng văn bản. Vậy đăng ký Mô hình môi trường, giữ thực tập và rút khỏi Kinh tế khí hậu trước hạn không mất phí thứ Sáu.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "degree pathway",
+      "pos": "n. phr.",
+      "meaning_vi": "lộ trình bằng cấp",
+      "example_en": "Before switching, ask the adviser whether its credits satisfy your degree pathway. Similar content doesn't always meet the same formal requirement, especially across departments.",
+      "example_vi": "Trước khi đổi, hãy hỏi cố vấn tín chỉ ấy có hợp lộ trình bằng cấp không. Nội dung tương tự không luôn thỏa yêu cầu chính thức, nhất là giữa các khoa.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "fee-free deadline",
+      "pos": "n. phr.",
+      "meaning_vi": "hạn rút không mất phí",
+      "example_en": "The adviser has just confirmed the substitution in writing. So register for Environmental Modelling, keep the internship and withdraw from Climate Economics before the fee-free deadline on Friday.",
+      "example_vi": "Cố vấn vừa xác nhận thay môn bằng văn bản. Vậy đăng ký Mô hình môi trường, giữ thực tập và rút khỏi Kinh tế khí hậu trước hạn không mất phí thứ Sáu.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "a4a9104bbc960d466db6f6500866b2779b50aaba78edb556d3109c5de61ad70b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

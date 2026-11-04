@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-029",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Environmental Campaigns",
+  "title": "A Neighbourhood Plan to Reduce Food Waste",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Environmental Campaigns và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Thank you for attending the food-waste reduction campaign briefing. Household surveys show that residents throw away more edible food than they realise, especially during busy working weeks.",
+      "translation_vi": "Cảm ơn tham dự buổi giảm lãng phí thực phẩm. Khảo sát cho thấy cư dân bỏ nhiều đồ ăn còn dùng được hơn họ nghĩ, nhất là tuần bận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Our first activity is a short demonstration of meal planning at the community kitchen. It begins at eleven ten on Saturday, not eleven thirty as announced in the earlier newsletter.",
+      "translation_vi": "Hoạt động đầu là hướng dẫn lên kế hoạch bữa ăn ở bếp cộng đồng. Bắt đầu 11:10 thứ Bảy, không phải 11:30 theo bản tin cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Families will receive a fridge guide explaining how to store vegetables safely. The guide is printed on washable material so it can be used repeatedly.",
+      "translation_vi": "Các gia đình nhận hướng dẫn bảo quản rau an toàn trên vật liệu lau được để dùng nhiều lần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The neighbourhood collection point is behind the market hall. Only suitable fruit and vegetable scraps should go into the compost bins; meat and dairy products are excluded.",
+      "translation_vi": "Điểm thu gom phía sau nhà chợ. Chỉ bỏ phần thừa rau quả thích hợp vào thùng ủ; không bỏ thịt và sữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Several shops have agreed to sell imperfect vegetables at a reduced price. These items may look unusual, but they are still safe and nutritious.",
+      "translation_vi": "Một số cửa hàng đồng ý bán rau có hình dáng không đẹp với giá giảm. Chúng vẫn an toàn và bổ dưỡng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Volunteers will record the weight of collected food waste every Friday. We initially considered counting the number of bags, but their different sizes made the results unreliable.",
+      "translation_vi": "Tình nguyện viên sẽ cân rác thực phẩm mỗi thứ Sáu. Ban đầu định đếm túi nhưng kích cỡ khác nhau khiến số liệu không đáng tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The campaign will last six weeks. After that, the council will compare results with the baseline survey and decide whether to install permanent composting facilities.",
+      "translation_vi": "Chiến dịch kéo dài sáu tuần. Sau đó hội đồng so kết quả với khảo sát đầu để quyết định có lắp khu ủ phân cố định không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please avoid leaving donations outside the market overnight. Food stored without refrigeration can become unsafe even when it looks fresh.",
+      "translation_vi": "Đừng để đồ tặng ngoài chợ qua đêm. Đồ ăn không làm lạnh có thể không an toàn dù trông còn tươi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Finally, residents can complete the feedback survey online or on paper. We particularly want comments about barriers to reducing waste, not just praise for the programme.",
+      "translation_vi": "Cuối cùng, cư dân có thể điền khảo sát trực tuyến hoặc trên giấy. Chúng tôi muốn nghe khó khăn khi giảm rác, không chỉ lời khen.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Revised demonstration time: ____",
+      "correct_answers": [
+        "eleven ten"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Giờ mới là 11:10 thay vì 11:30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "distractor"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Fridge guide printed on washable: ____",
+      "correct_answers": [
+        "material"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tài liệu in trên vật liệu lau được.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Compost bins accept vegetable: ____",
+      "correct_answers": [
+        "scraps"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Chấp nhận phần thừa rau quả, không nhận thịt sữa.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Which measure will volunteers use to compare collected waste?",
+      "correct_answers": [
+        "weight"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Cân trọng lượng thay vì đếm túi.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "distractor"
+      ],
+      "options": [
+        "number of bags",
+        "number of shops",
+        "weight"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Campaign duration in weeks: ____",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Chiến dịch sáu tuần.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Feedback may be submitted online or on: ____",
+      "correct_answers": [
+        "paper"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Có thể nộp bằng giấy hoặc trực tuyến.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Several shops have agreed to sell imperfect vegetables at a reduced price. These items may look unusual, but they are still safe and nutritious."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Several shops have agreed to sell imperfect vegetables at a reduced price. These items may look unusual, but they are still safe and nutritious. Nghĩa: Một số cửa hàng đồng ý bán rau có hình dáng không đẹp với giá giảm. Chúng vẫn an toàn và bổ dưỡng. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: The campaign will last six weeks. After that, the council will compare results with the baseline ____ and decide whether to install permanent composting facilities.",
+      "correct_answers": [
+        "survey"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "survey: khảo sát. Ngữ cảnh: Chiến dịch kéo dài sáu tuần. Sau đó hội đồng so kết quả với khảo sát đầu để quyết định có lắp khu ủ phân cố định không.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "survey",
+      "pos": "n.",
+      "meaning_vi": "khảo sát",
+      "example_en": "The campaign will last six weeks. After that, the council will compare results with the baseline survey and decide whether to install permanent composting facilities.",
+      "example_vi": "Chiến dịch kéo dài sáu tuần. Sau đó hội đồng so kết quả với khảo sát đầu để quyết định có lắp khu ủ phân cố định không.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "market",
+      "pos": "n.",
+      "meaning_vi": "khu chợ",
+      "example_en": "The neighbourhood collection point is behind the market hall. Only suitable fruit and vegetable scraps should go into the compost bins; meat and dairy products are excluded.",
+      "example_vi": "Điểm thu gom phía sau nhà chợ. Chỉ bỏ phần thừa rau quả thích hợp vào thùng ủ; không bỏ thịt và sữa.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "guide",
+      "pos": "n.",
+      "meaning_vi": "hướng dẫn viên",
+      "example_en": "Families will receive a fridge guide explaining how to store vegetables safely. The guide is printed on washable material so it can be used repeatedly.",
+      "example_vi": "Các gia đình nhận hướng dẫn bảo quản rau an toàn trên vật liệu lau được để dùng nhiều lần.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "demonstration",
+      "pos": "n.",
+      "meaning_vi": "buổi trình diễn",
+      "example_en": "Our first activity is a short demonstration of meal planning at the community kitchen. It begins at eleven ten on Saturday, not eleven thirty as announced in the earlier newsletter.",
+      "example_vi": "Hoạt động đầu là hướng dẫn lên kế hoạch bữa ăn ở bếp cộng đồng. Bắt đầu 11:10 thứ Bảy, không phải 11:30 theo bản tin cũ.",
+      "source_turn_id": "T02"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "9d26dd35e3f8d56662e0c02cecf1366cea5f871b373e979eb4f9f804362e345e",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

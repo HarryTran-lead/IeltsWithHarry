@@ -1,0 +1,394 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-006",
+  "status": "draft",
+  "level": "L2",
+  "section": 1,
+  "topic": "Course Registration",
+  "title": "An Evening Pottery Class",
+  "learning_objectives_vi": [
+    "Luyện core information exchange trong tình huống: A new learner asks about a beginners pottery class.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Willow Arts Centre.",
+      "translation_vi": "Xin chào, Trung tâm Nghệ thuật Willow.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hi. Is the beginners pottery class on Tuesday?",
+      "translation_vi": "Chào chị. Lớp gốm cho người mới bắt đầu có học thứ Ba không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes, Tuesday evenings at six.",
+      "translation_vi": "Đúng vậy, tối thứ Ba lúc sáu giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "How many weeks does it last?",
+      "translation_vi": "Khóa học kéo dài bao nhiêu tuần?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Six weeks. It costs seventy pounds.",
+      "translation_vi": "Sáu tuần. Học phí là bảy mươi bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Do I need to bring clay?",
+      "translation_vi": "Tôi có cần mang đất sét không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "No, we provide the clay. Please bring an apron.",
+      "translation_vi": "Không, chúng tôi cung cấp đất sét. Bạn hãy mang một chiếc tạp dề.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Thanks. Please put my name down: Mia Reed.",
+      "translation_vi": "Cảm ơn. Cho tôi đăng ký tên Mia Reed nhé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Class day: ____",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nhân viên xác nhận lớp vào thứ Ba.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Class begins at ____",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Lớp bắt đầu lúc sáu giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Course length: ____ weeks",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Khóa học kéo dài sáu tuần.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Course fee: £____",
+      "correct_answers": [
+        "70"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phí là seventy pounds.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Bring an ____",
+      "correct_answers": [
+        "apron"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Đất sét có sẵn; học viên cần tạp dề.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T03).",
+      "correct_answers": [
+        "Yes, Tuesday evenings at six."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu chuẩn: Yes, Tuesday evenings at six. Nghĩa: Đúng vậy, tối thứ Ba lúc sáu giờ. Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T07).",
+      "correct_answers": [
+        "No, we provide the clay. Please bring an apron."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu chuẩn: No, we provide the clay. Please bring an apron. Nghĩa: Không, chúng tôi cung cấp đất sét. Bạn hãy mang một chiếc tạp dề. Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: Hi. Is the beginners ____ class on Tuesday?",
+      "correct_answers": [
+        "pottery"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm cần điền: pottery (nghề làm gốm). Câu gốc: Hi. Is the beginners pottery class on Tuesday?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "days",
+        "prices",
+        "course_information",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "pottery",
+      "pos": "word",
+      "meaning_vi": "nghề làm gốm",
+      "example_en": "Hi. Is the beginners pottery class on Tuesday?",
+      "example_vi": "Chào chị. Lớp gốm cho người mới bắt đầu có học thứ Ba không?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "beginners",
+      "pos": "word",
+      "meaning_vi": "người mới bắt đầu",
+      "example_en": "Hi. Is the beginners pottery class on Tuesday?",
+      "example_vi": "Chào chị. Lớp gốm cho người mới bắt đầu có học thứ Ba không?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "clay",
+      "pos": "word",
+      "meaning_vi": "đất sét",
+      "example_en": "Do I need to bring clay?",
+      "example_vi": "Tôi có cần mang đất sét không?",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "apron",
+      "pos": "word",
+      "meaning_vi": "tạp dề",
+      "example_en": "No, we provide the clay. Please bring an apron.",
+      "example_vi": "Không, chúng tôi cung cấp đất sét. Bạn hãy mang một chiếc tạp dề.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "67398f45891869a0da476c7204cc2d5c1e4255ca9af2b56df02c80d2d52e13cc",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

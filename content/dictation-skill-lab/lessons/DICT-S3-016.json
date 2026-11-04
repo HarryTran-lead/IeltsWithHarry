@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-016",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Group Projects",
+  "title": "Group Projects: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Anna – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ben – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Chloe – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We need to decide how the public exhibition will explain our neighbourhood history project. I suggest organising the displays chronologically, starting with the oldest photographs.",
+      "translation_vi": "Ta cần quyết định cách triển lãm cộng đồng giải thích dự án lịch sử khu phố. Mình đề xuất trưng bày theo thời gian, bắt đầu từ ảnh cổ nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "That seems logical, but visitors might not understand why the changes mattered. Wouldn't themes such as housing and transport make the exhibition easier to follow?",
+      "translation_vi": "Nghe hợp lý, nhưng khách có thể không hiểu vì sao các thay đổi quan trọng. Chia theo nhà ở và giao thông chẳng phải dễ theo dõi hơn sao?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The museum coordinator said we only have three display tables. A fully chronological layout would require more space than that.",
+      "translation_vi": "Điều phối viên bảo tàng nói ta chỉ có ba bàn trưng bày. Bố cục hoàn toàn theo thời gian sẽ cần nhiều không gian hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I hadn't considered the tables. We could use two themes and include a small timeline above them, rather than giving each decade a separate display.",
+      "translation_vi": "Mình chưa nghĩ đến số bàn. Ta có thể dùng hai chủ đề và một dòng thời gian nhỏ phía trên, thay vì mỗi thập niên một bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I'd support that, provided we keep the interview recordings. They're much more engaging than written captions, especially for younger visitors.",
+      "translation_vi": "Mình ủng hộ nếu giữ bản ghi phỏng vấn. Chúng hấp dẫn hơn chú thích viết, nhất là với khách trẻ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "We can't leave headphones on every table because the equipment budget is limited. Perhaps one listening station beside the entrance would work.",
+      "translation_vi": "Ta không thể đặt tai nghe trên mọi bàn vì ngân sách thiết bị hạn chế. Có lẽ một trạm nghe cạnh lối vào sẽ phù hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That makes sense. Ben, could you select three short clips that relate directly to the housing and transport displays?",
+      "translation_vi": "Hợp lý. Ben chọn ba đoạn ghi âm ngắn liên quan trực tiếp đến trưng bày nhà ở và giao thông nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Yes, though I'll need permission from the interviewees before we use their voices in a public exhibition.",
+      "translation_vi": "Được, nhưng mình cần xin phép người được phỏng vấn trước khi phát giọng của họ tại triển lãm công cộng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll contact the museum about the permission form. They have a standard version we can adapt for this project.",
+      "translation_vi": "Mình sẽ liên hệ bảo tàng về mẫu đồng ý. Họ có mẫu chuẩn ta có thể điều chỉnh cho dự án.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The draft layout is due on Friday, isn't it? I can draw it tomorrow, once we confirm the size of the tables.",
+      "translation_vi": "Bố cục nháp hạn thứ Sáu, đúng không? Mai mình có thể vẽ sau khi xác nhận kích thước bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "Actually, Friday is the internal check. The coordinator needs the final design next Tuesday, so we have time for one revision.",
+      "translation_vi": "Thật ra thứ Sáu là buổi kiểm tra nội bộ. Điều phối viên cần thiết kế cuối vào thứ Ba tới nên ta có thời gian sửa một lần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "Let's agree on the thematic displays, a single timeline and one listening station, then send that proposal to the coordinator tonight.",
+      "translation_vi": "Hãy thống nhất trưng bày theo chủ đề, một dòng thời gian và một trạm nghe, rồi gửi đề xuất cho điều phối viên tối nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why does Ben prefer a thematic display?",
+      "correct_answers": [
+        "It can explain the significance of changes"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Ben): “Nghe hợp lý, nhưng khách có thể không hiểu vì sao các thay đổi quan trọng. Chia theo nhà ở và giao thông chẳng phải dễ theo dõi hơn sao?” Đáp án: “It can explain the significance of changes”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "It avoids visitor interviews",
+        "It can explain the significance of changes",
+        "It requires more photographs"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The museum has only ____ display tables.",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Chloe): “Điều phối viên bảo tàng nói ta chỉ có ba bàn trưng bày. Bố cục hoàn toàn theo thời gian sẽ cần nhiều không gian hơn.” Đáp án: “three”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "The revised plan will include a small ____.",
+      "correct_answers": [
+        "timeline"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng ở T04 (Anna): “Mình chưa nghĩ đến số bàn. Ta có thể dùng hai chủ đề và một dòng thời gian nhỏ phía trên, thay vì mỗi thập niên một bàn.” Đáp án: “timeline”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "matching",
+      "prompt": "Where will the single listening station be located?",
+      "correct_answers": [
+        "beside the entrance"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Chloe): “Ta không thể đặt tai nghe trên mọi bàn vì ngân sách thiết bị hạn chế. Có lẽ một trạm nghe cạnh lối vào sẽ phù hợp.” Đáp án: “beside the entrance”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "outside the museum",
+        "beside the entrance",
+        "on every table"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "What must happen before the interview clips can be played publicly?",
+      "correct_answers": [
+        "The interviewees must give permission"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Ben): “Được, nhưng mình cần xin phép người được phỏng vấn trước khi phát giọng của họ tại triển lãm công cộng.” Đáp án: “The interviewees must give permission”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "The interviewees must give permission",
+        "Visitors must pay extra",
+        "The clips must be longer"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "When does the coordinator need the final design?",
+      "correct_answers": [
+        "next Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Bằng chứng ở T11 (Ben): “Thật ra thứ Sáu là buổi kiểm tra nội bộ. Điều phối viên cần thiết kế cuối vào thứ Ba tới nên ta có thời gian sửa một lần.” Đáp án: “next Tuesday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "I hadn't considered the tables. We could use two themes and include a small timeline above them, rather than giving each decade a separate display."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I hadn't considered the tables. We could use two themes and include a small timeline above them, rather than giving each decade a separate display.”\nNghĩa: Mình chưa nghĩ đến số bàn. Ta có thể dùng hai chủ đề và một dòng thời gian nhỏ phía trên, thay vì mỗi thập niên một bàn.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "Yes, though I'll need permission from the interviewees before we use their voices in a public exhibition."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “Yes, though I'll need permission from the interviewees before we use their voices in a public exhibition.”\nNghĩa: Được, nhưng mình cần xin phép người được phỏng vấn trước khi phát giọng của họ tại triển lãm công cộng.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: We need to decide how the public exhibition will explain our neighbourhood history project. I suggest organising the displays ____, starting with the oldest photographs.",
+      "correct_answers": [
+        "chronologically"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “chronologically” (theo trình tự thời gian). Lời gốc: “We need to decide how the public exhibition will explain our neighbourhood history project. I suggest organising the displays chronologically, starting with the oldest photographs.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "chronologically",
+      "pos": "adv.",
+      "meaning_vi": "theo trình tự thời gian",
+      "example_en": "We need to decide how the public exhibition will explain our neighbourhood history project. I suggest organising the displays chronologically, starting with the oldest photographs.",
+      "example_vi": "Ta cần quyết định cách triển lãm cộng đồng giải thích dự án lịch sử khu phố. Mình đề xuất trưng bày theo thời gian, bắt đầu từ ảnh cổ nhất.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "thematic displays",
+      "pos": "n. phr.",
+      "meaning_vi": "trưng bày theo chủ đề",
+      "example_en": "Let's agree on the thematic displays, a single timeline and one listening station, then send that proposal to the coordinator tonight.",
+      "example_vi": "Hãy thống nhất trưng bày theo chủ đề, một dòng thời gian và một trạm nghe, rồi gửi đề xuất cho điều phối viên tối nay.",
+      "source_turn_id": "T12"
+    },
+    {
+      "term": "listening station",
+      "pos": "n. phr.",
+      "meaning_vi": "trạm nghe",
+      "example_en": "We can't leave headphones on every table because the equipment budget is limited. Perhaps one listening station beside the entrance would work.",
+      "example_vi": "Ta không thể đặt tai nghe trên mọi bàn vì ngân sách thiết bị hạn chế. Có lẽ một trạm nghe cạnh lối vào sẽ phù hợp.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "permission form",
+      "pos": "n. phr.",
+      "meaning_vi": "mẫu xin phép",
+      "example_en": "I'll contact the museum about the permission form. They have a standard version we can adapt for this project.",
+      "example_vi": "Mình sẽ liên hệ bảo tàng về mẫu đồng ý. Họ có mẫu chuẩn ta có thể điều chỉnh cho dự án.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "a38512d9797c6ae69a43b7064b43ea0a903f926a5c1efaa650fe5fee7a07c146",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-027",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Tourist Attractions",
+  "title": "The Heritage Site’s New Visitor Route",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Tourist Attractions và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện chỉ đường theo sơ đồ A–F, phân biệt điểm trước/sau và hướng trái/phải."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Today’s visit to the heritage site follows a new one-way route. The change protects the oldest rooms and prevents large groups from meeting in the narrow passageways.",
+      "translation_vi": "Chuyến tham quan di sản hôm nay đi tuyến một chiều mới để bảo vệ phòng cổ nhất và tránh hai đoàn gặp nhau ở lối hẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We enter from the south. The ticket booth is first on your left, while the accessible information desk is the first room on your right.",
+      "translation_vi": "Ta vào từ phía nam. Quầy vé ở đầu bên trái, quầy thông tin tiếp cận được ở phòng đầu bên phải.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The medieval kitchen lies in the back-left corner. Its display includes objects found during recent excavations, but the fragile cooking vessels must remain behind a protective barrier.",
+      "translation_vi": "Bếp thời trung cổ ở góc sau bên trái. Có hiện vật mới khai quật nhưng đồ nấu mong manh phải ở sau rào bảo vệ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The viewing platform is positioned in the back-right corner, overlooking the valley. It was closed over winter, although structural repairs have now been completed.",
+      "translation_vi": "Sàn ngắm cảnh ở góc sau bên phải nhìn xuống thung lũng. Mùa đông đóng cửa nhưng nay đã sửa xong.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The central room at the far end is a small exhibition about the restoration project. You should visit it before going outdoors because it explains why some walls look newer.",
+      "translation_vi": "Phòng giữa cuối là triển lãm nhỏ về dự án phục hồi. Nên xem trước khi ra ngoài vì nó giải thích vì sao vài bức tường trông mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "A standard adult ticket costs twelve pounds, but online tickets booked at least one day early cost ten. Both include the guided visit.",
+      "translation_vi": "Vé người lớn thường giá mười hai bảng, nhưng đặt online trước ít nhất một ngày còn mười bảng. Cả hai đều gồm tour hướng dẫn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The afternoon guided visit begins at two twenty. Our old schedule listed two o’clock, but visitors now need extra time to pass through the restoration display.",
+      "translation_vi": "Tour buổi chiều bắt đầu 2:20. Lịch cũ ghi hai giờ nhưng nay cần thêm thời gian qua triển lãm phục hồi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Visitors may take photographs without flash in the courtyard. Recording video inside the kitchen is not allowed because the working area is very narrow.",
+      "translation_vi": "Có thể chụp ảnh không flash trong sân. Không được quay video trong bếp vì chỗ làm việc rất hẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please return borrowed audio guides before leaving. The site shop closes at five, fifteen minutes before the main gate is locked.",
+      "translation_vi": "Hãy trả thiết bị hướng dẫn trước khi rời đi. Cửa hàng đóng lúc năm giờ, trước khi cổng chính khóa mười lăm phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Ticket booth on the plan: ____",
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Quầy vé là khu trước bên trái.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-027.svg"
+    },
+    {
+      "question_id": "Q02",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Viewing platform on the plan: ____",
+      "correct_answers": [
+        "C"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Sàn ngắm cảnh ở góc sau bên phải.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-027.svg"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Advance online adult ticket in pounds: ____",
+      "correct_answers": [
+        "ten"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Vé online đặt trước giá mười bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What time does the afternoon guided visit start?",
+      "correct_answers": [
+        "two twenty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Giờ mới là 2:20 thay vì 2:00.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "distractor"
+      ],
+      "options": [
+        "two twenty",
+        "two",
+        "five"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Photographs allowed without: ____",
+      "correct_answers": [
+        "flash"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Không dùng đèn flash.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Site shop closes at: ____",
+      "correct_answers": [
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Cửa hàng đóng lúc năm giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "The central room at the far end is a small exhibition about the restoration project. You should visit it before going outdoors because it explains why some walls look newer."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The central room at the far end is a small exhibition about the restoration project. You should visit it before going outdoors because it explains why some walls look newer. Nghĩa: Phòng giữa cuối là triển lãm nhỏ về dự án phục hồi. Nên xem trước khi ra ngoài vì nó giải thích vì sao vài bức tường trông mới. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: The ____ is positioned in the back-right corner, overlooking the valley. It was closed over winter, although structural repairs have now been completed.",
+      "correct_answers": [
+        "viewing platform"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "viewing platform: sàn ngắm cảnh. Ngữ cảnh: Sàn ngắm cảnh ở góc sau bên phải nhìn xuống thung lũng. Mùa đông đóng cửa nhưng nay đã sửa xong.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "viewing platform",
+      "pos": "n. phr.",
+      "meaning_vi": "sàn ngắm cảnh",
+      "example_en": "The viewing platform is positioned in the back-right corner, overlooking the valley. It was closed over winter, although structural repairs have now been completed.",
+      "example_vi": "Sàn ngắm cảnh ở góc sau bên phải nhìn xuống thung lũng. Mùa đông đóng cửa nhưng nay đã sửa xong.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "heritage",
+      "pos": "n.",
+      "meaning_vi": "di sản",
+      "example_en": "Today’s visit to the heritage site follows a new one-way route. The change protects the oldest rooms and prevents large groups from meeting in the narrow passageways.",
+      "example_vi": "Chuyến tham quan di sản hôm nay đi tuyến một chiều mới để bảo vệ phòng cổ nhất và tránh hai đoàn gặp nhau ở lối hẹp.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "guided visit",
+      "pos": "n. phr.",
+      "meaning_vi": "chuyến tham quan có hướng dẫn",
+      "example_en": "A standard adult ticket costs twelve pounds, but online tickets booked at least one day early cost ten. Both include the guided visit.",
+      "example_vi": "Vé người lớn thường giá mười hai bảng, nhưng đặt online trước ít nhất một ngày còn mười bảng. Cả hai đều gồm tour hướng dẫn.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "ticket booth",
+      "pos": "n. phr.",
+      "meaning_vi": "quầy vé",
+      "example_en": "We enter from the south. The ticket booth is first on your left, while the accessible information desk is the first room on your right.",
+      "example_vi": "Ta vào từ phía nam. Quầy vé ở đầu bên trái, quầy thông tin tiếp cận được ở phòng đầu bên phải.",
+      "source_turn_id": "T02"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "48930f1e8218ebfba887a9b9bc1a1963690c4c0c31625d70b43a66d24bb01375",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

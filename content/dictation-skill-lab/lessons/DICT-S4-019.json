@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-019",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Renewable Energy",
+  "title": "How Grids Respond to Variable Wind Generation",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Wind generation rises and falls with weather, creating a challenge for electricity-system operators. If output drops unexpectedly while demand remains high, another source of flexibility must respond. This does not mean that wind power is unusable. It means the operator has to plan for variation, just as traditional power stations are planned around maintenance and possible breakdowns.",
+      "translation_vi": "Sản lượng điện gió tăng giảm theo thời tiết, tạo thách thức cho người vận hành hệ thống. Nếu sản lượng bất ngờ giảm trong khi nhu cầu vẫn cao, nguồn linh hoạt khác phải phản ứng. Điều đó không có nghĩa điện gió không dùng được. Người vận hành phải lập kế hoạch cho biến động, cũng như nhà máy truyền thống cần tính đến bảo trì và sự cố.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "One response involves short-duration batteries. They can react quickly when generation changes and help balance supply and demand over several hours. However, a battery designed for evening demand may not cover an extended period of low wind. Storage duration therefore matters: two systems with the same peak power may deliver very different amounts of energy.",
+      "translation_vi": "Một giải pháp là pin lưu trữ thời gian ngắn. Chúng phản ứng nhanh khi sản lượng thay đổi và giúp cân bằng cung cầu trong vài giờ. Tuy nhiên, pin thiết kế cho nhu cầu buổi tối có thể không đủ trong đợt ít gió kéo dài. Vì thế, thời gian lưu trữ quan trọng: hai hệ có cùng công suất đỉnh có thể cấp tổng năng lượng rất khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Flexible demand can reduce the pressure. A water-treatment plant, for instance, may be able to adjust when it performs certain energy-intensive operations, provided essential services continue. Moving that consumption to a windy period reduces the need for backup generation at other times. Yet hospitals and other critical services cannot always shift their electricity use safely.",
+      "translation_vi": "Phụ tải linh hoạt có thể giảm áp lực. Chẳng hạn, nhà máy xử lý nước có thể thay đổi thời điểm làm một số việc tốn điện, miễn dịch vụ thiết yếu vẫn hoạt động. Chuyển tiêu thụ sang thời kỳ nhiều gió giảm nhu cầu phát dự phòng lúc khác. Nhưng bệnh viện và dịch vụ quan trọng không phải lúc nào cũng chuyển giờ dùng điện an toàn được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Geography adds another layer. Wind conditions differ between regions, so connecting networks across a wider area can sometimes smooth fluctuations. When one location is calm, another may still generate electricity. Nevertheless, shared weather systems can affect large regions at once, and building transmission lines involves cost, permissions and environmental review.",
+      "translation_vi": "Địa lý thêm một lớp vấn đề. Gió khác nhau giữa các vùng nên nối lưới diện rộng đôi khi làm dịu biến động. Khi nơi này lặng gió, nơi khác vẫn có thể phát điện. Nhưng hệ thống thời tiết chung có thể ảnh hưởng nhiều vùng cùng lúc, còn xây đường truyền tải tốn chi phí, giấy phép và đánh giá môi trường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The lesson for planners is to examine the complete system instead of evaluating one wind farm in isolation. Forecasting, storage, flexible demand and network connections each address a different part of the problem. No single tool provides perfect reliability. Their value depends on how well they are coordinated, including during rare but challenging weather conditions.",
+      "translation_vi": "Bài học cho nhà quy hoạch là xét toàn hệ thống thay vì đánh giá một trang trại gió riêng lẻ. Dự báo, lưu trữ, phụ tải linh hoạt và kết nối lưới giải quyết các phần khác nhau của vấn đề. Không công cụ nào đảm bảo độ tin cậy hoàn hảo. Giá trị của chúng phụ thuộc phối hợp tốt đến đâu, kể cả lúc thời tiết hiếm gặp nhưng khó khăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Electricity operators must plan for variations in wind ____ .",
+      "correct_answers": [
+        "power"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Sản lượng điện gió tăng giảm theo thời tiết, tạo thách thức cho người vận hành hệ thống. Nếu sản lượng bất ngờ giảm trong khi nhu cầu vẫn cao, nguồn linh hoạt khác phải phản ứng. Điều đó không có nghĩa điện gió không dùng được. Người vận hành phải lập kế hoạch cho biến động, cũng như nhà máy truyền thống cần tính đến bảo trì và sự cố. Đáp án cần chọn/điền: “power”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Two batteries with equal peak power may deliver different amounts of ____.",
+      "correct_answers": [
+        "energy"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Một giải pháp là pin lưu trữ thời gian ngắn. Chúng phản ứng nhanh khi sản lượng thay đổi và giúp cân bằng cung cầu trong vài giờ. Tuy nhiên, pin thiết kế cho nhu cầu buổi tối có thể không đủ trong đợt ít gió kéo dài. Vì thế, thời gian lưu trữ quan trọng: hai hệ có cùng công suất đỉnh có thể cấp tổng năng lượng rất khác. Đáp án cần chọn/điền: “energy”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "A water-treatment plant may shift energy-intensive ____.",
+      "correct_answers": [
+        "operations"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Phụ tải linh hoạt có thể giảm áp lực. Chẳng hạn, nhà máy xử lý nước có thể thay đổi thời điểm làm một số việc tốn điện, miễn dịch vụ thiết yếu vẫn hoạt động. Chuyển tiêu thụ sang thời kỳ nhiều gió giảm nhu cầu phát dự phòng lúc khác. Nhưng bệnh viện và dịch vụ quan trọng không phải lúc nào cũng chuyển giờ dùng điện an toàn được. Đáp án cần chọn/điền: “operations”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What can connecting different regions sometimes do?",
+      "correct_answers": [
+        "smooth fluctuations"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Địa lý thêm một lớp vấn đề. Gió khác nhau giữa các vùng nên nối lưới diện rộng đôi khi làm dịu biến động. Khi nơi này lặng gió, nơi khác vẫn có thể phát điện. Nhưng hệ thống thời tiết chung có thể ảnh hưởng nhiều vùng cùng lúc, còn xây đường truyền tải tốn chi phí, giấy phép và đánh giá môi trường. Đáp án cần chọn/điền: “smooth fluctuations”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "mcq"
+      ],
+      "options": [
+        "remove the need for transmission lines",
+        "eliminate all shared weather patterns",
+        "smooth fluctuations"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Name one tool mentioned alongside storage and flexible demand.",
+      "correct_answers": [
+        "forecasting"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Bài học cho nhà quy hoạch là xét toàn hệ thống thay vì đánh giá một trang trại gió riêng lẻ. Dự báo, lưu trữ, phụ tải linh hoạt và kết nối lưới giải quyết các phần khác nhau của vấn đề. Không công cụ nào đảm bảo độ tin cậy hoàn hảo. Giá trị của chúng phụ thuộc phối hợp tốt đến đâu, kể cả lúc thời tiết hiếm gặp nhưng khó khăn. Đáp án cần chọn/điền: “forecasting”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the best interpretation of the lecture?",
+      "correct_answers": [
+        "Reliability depends on coordinating several flexible resources"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Bài học cho nhà quy hoạch là xét toàn hệ thống thay vì đánh giá một trang trại gió riêng lẻ. Dự báo, lưu trữ, phụ tải linh hoạt và kết nối lưới giải quyết các phần khác nhau của vấn đề. Không công cụ nào đảm bảo độ tin cậy hoàn hảo. Giá trị của chúng phụ thuộc phối hợp tốt đến đâu, kể cả lúc thời tiết hiếm gặp nhưng khó khăn. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ],
+      "options": [
+        "Wind generation cannot contribute to the grid",
+        "A single battery solves every variation",
+        "Reliability depends on coordinating several flexible resources"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "One response involves short-duration batteries. They can react quickly when generation changes and help balance supply and demand over several hours. However, a battery designed for evening demand may not cover an extended period of low wind. Storage duration therefore matters: two systems with the same peak power may deliver very different amounts of energy."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Một giải pháp là pin lưu trữ thời gian ngắn. Chúng phản ứng nhanh khi sản lượng thay đổi và giúp cân bằng cung cầu trong vài giờ. Tuy nhiên, pin thiết kế cho nhu cầu buổi tối có thể không đủ trong đợt ít gió kéo dài. Vì thế, thời gian lưu trữ quan trọng: hai hệ có cùng công suất đỉnh có thể cấp tổng năng lượng rất khác.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Geography adds another layer. Wind conditions differ between regions, so connecting networks across a wider area can sometimes smooth fluctuations. When one location is calm, another may still generate electricity. Nevertheless, shared weather systems can affect large regions at once, and building transmission lines involves cost, permissions and environmental review."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Địa lý thêm một lớp vấn đề. Gió khác nhau giữa các vùng nên nối lưới diện rộng đôi khi làm dịu biến động. Khi nơi này lặng gió, nơi khác vẫn có thể phát điện. Nhưng hệ thống thời tiết chung có thể ảnh hưởng nhiều vùng cùng lúc, còn xây đường truyền tải tốn chi phí, giấy phép và đánh giá môi trường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T02 rồi điền phần thiếu: One response involves ____. They can react quickly when generation changes and help balance supply and demand over several hours. However, a battery designed for evening demand may not cover an extended period of low wind. Storage duration therefore matters: two systems with the same peak power may deliver very different amounts of energy.",
+      "correct_answers": [
+        "short-duration batteries"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án là “short-duration batteries”, nghĩa: pin lưu trữ ngắn hạn. Từ xuất hiện nguyên văn ở T02.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "short-duration batteries",
+      "pos": "n. phr.",
+      "meaning_vi": "pin lưu trữ ngắn hạn",
+      "example_en": "One response involves short-duration batteries. They can react quickly when generation changes and help balance supply and demand over several hours. However, a battery designed for evening demand may not cover an extended period of low wind. Storage duration therefore matters: two systems with the same peak power may deliver very different amounts of energy.",
+      "example_vi": "Một giải pháp là pin lưu trữ thời gian ngắn. Chúng phản ứng nhanh khi sản lượng thay đổi và giúp cân bằng cung cầu trong vài giờ. Tuy nhiên, pin thiết kế cho nhu cầu buổi tối có thể không đủ trong đợt ít gió kéo dài. Vì thế, thời gian lưu trữ quan trọng: hai hệ có cùng công suất đỉnh có thể cấp tổng năng lượng rất khác.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "Flexible demand",
+      "pos": "n. phr.",
+      "meaning_vi": "phụ tải linh hoạt",
+      "example_en": "Flexible demand can reduce the pressure. A water-treatment plant, for instance, may be able to adjust when it performs certain energy-intensive operations, provided essential services continue. Moving that consumption to a windy period reduces the need for backup generation at other times. Yet hospitals and other critical services cannot always shift their electricity use safely.",
+      "example_vi": "Phụ tải linh hoạt có thể giảm áp lực. Chẳng hạn, nhà máy xử lý nước có thể thay đổi thời điểm làm một số việc tốn điện, miễn dịch vụ thiết yếu vẫn hoạt động. Chuyển tiêu thụ sang thời kỳ nhiều gió giảm nhu cầu phát dự phòng lúc khác. Nhưng bệnh viện và dịch vụ quan trọng không phải lúc nào cũng chuyển giờ dùng điện an toàn được.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "Geography",
+      "pos": "n.",
+      "meaning_vi": "địa lý",
+      "example_en": "Geography adds another layer. Wind conditions differ between regions, so connecting networks across a wider area can sometimes smooth fluctuations. When one location is calm, another may still generate electricity. Nevertheless, shared weather systems can affect large regions at once, and building transmission lines involves cost, permissions and environmental review.",
+      "example_vi": "Địa lý thêm một lớp vấn đề. Gió khác nhau giữa các vùng nên nối lưới diện rộng đôi khi làm dịu biến động. Khi nơi này lặng gió, nơi khác vẫn có thể phát điện. Nhưng hệ thống thời tiết chung có thể ảnh hưởng nhiều vùng cùng lúc, còn xây đường truyền tải tốn chi phí, giấy phép và đánh giá môi trường.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "Forecasting",
+      "pos": "n.",
+      "meaning_vi": "dự báo",
+      "example_en": "The lesson for planners is to examine the complete system instead of evaluating one wind farm in isolation. Forecasting, storage, flexible demand and network connections each address a different part of the problem. No single tool provides perfect reliability. Their value depends on how well they are coordinated, including during rare but challenging weather conditions.",
+      "example_vi": "Bài học cho nhà quy hoạch là xét toàn hệ thống thay vì đánh giá một trang trại gió riêng lẻ. Dự báo, lưu trữ, phụ tải linh hoạt và kết nối lưới giải quyết các phần khác nhau của vấn đề. Không công cụ nào đảm bảo độ tin cậy hoàn hảo. Giá trị của chúng phụ thuộc phối hợp tốt đến đâu, kể cả lúc thời tiết hiếm gặp nhưng khó khăn.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "44c9e56084663360754266127d1826c389e8511f3abec069baa0bb71aaa5e172",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

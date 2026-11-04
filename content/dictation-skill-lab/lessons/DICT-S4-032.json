@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-032",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Marine Biology",
+  "title": "Three Ways of Monitoring Life Beneath the Sea",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Marine researchers have several ways to observe animals without disturbing them excessively. A diver can record fish along a fixed route, called a transect, and note their sizes and behaviour. This provides direct visual information, but poor visibility and the presence of the diver can affect what is seen. The method is also limited by safe diving depth and time.",
+      "translation_vi": "Nhà nghiên cứu biển có vài cách quan sát động vật mà hạn chế làm phiền chúng. Thợ lặn có thể ghi cá dọc tuyến cố định, gọi là tuyến khảo sát, cùng kích thước và hành vi. Cách này cho thông tin trực quan nhưng tầm nhìn kém và sự xuất hiện của thợ lặn có thể làm thay đổi những gì thấy được. Phương pháp còn bị giới hạn bởi độ sâu và thời gian lặn an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "An acoustic recorder offers a different type of evidence. It can remain underwater for long periods and capture the sounds produced by some fish and marine mammals. Yet silence does not prove an animal is absent. Some species rarely make detectable calls, and ship noise can mask quieter signals. Audio data therefore require careful identification and contextual interpretation.",
+      "translation_vi": "Máy ghi âm dưới nước cung cấp bằng chứng kiểu khác. Nó có thể ở dưới nước lâu và thu tiếng của một số cá và động vật có vú biển. Nhưng im lặng không chứng minh không có động vật. Một số loài ít phát tiếng dễ nhận diện, còn tiếng tàu che âm nhỏ. Vì thế, dữ liệu âm thanh đòi hỏi nhận dạng và diễn giải theo bối cảnh cẩn thận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A third approach examines environmental DNA, or eDNA, in a water sample. Organisms release tiny traces of genetic material into their surroundings. Laboratory tests can detect signals associated with particular species, even when they are not visible during a dive. However, currents may carry DNA away from its source, and the method does not automatically reveal the number of living animals.",
+      "translation_vi": "Cách thứ ba xét DNA môi trường, gọi là eDNA, trong mẫu nước. Sinh vật thải dấu vết vật liệu di truyền vào môi trường. Kiểm tra phòng thí nghiệm có thể phát hiện tín hiệu của loài cụ thể dù thợ lặn không nhìn thấy. Tuy nhiên, dòng chảy có thể mang DNA xa khỏi nguồn, và phương pháp không tự cho biết số lượng cá thể đang sống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "These methods answer overlapping but not identical questions. Transects may reveal visible behaviour, sound recordings may describe activity through the night, and eDNA may indicate that a species recently occurred in the area. Combining them can reduce blind spots. Before making comparisons, researchers also standardise sampling times, equipment settings and the locations examined.",
+      "translation_vi": "Các phương pháp trả lời những câu hỏi chồng lấn nhưng không giống nhau. Tuyến khảo sát cho thấy hành vi nhìn được, ghi âm mô tả hoạt động ban đêm, còn eDNA có thể chỉ ra loài đã xuất hiện gần đây. Kết hợp chúng giảm điểm mù. Trước khi so sánh, nhà nghiên cứu còn chuẩn hóa thời điểm lấy mẫu, cài đặt thiết bị và địa điểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Imagine a reef where divers see few fish but recorders capture many calls after sunset. The results are not necessarily contradictory; the species may be active at different times. Similarly, an eDNA signal might come from water moving through the reef. The correct interpretation draws on the strengths and limitations of every method rather than choosing a favourite technology.",
+      "translation_vi": "Hãy tưởng tượng rạn mà thợ lặn thấy ít cá nhưng máy ghi thu nhiều tiếng sau hoàng hôn. Hai kết quả không hẳn mâu thuẫn; loài có thể hoạt động vào thời điểm khác. Tương tự, tín hiệu eDNA có thể đến từ nước chảy qua rạn. Diễn giải đúng cần xét ưu, nhược điểm của từng phương pháp thay vì thiên vị một công nghệ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Divers may count fish along a fixed route called a ____.",
+      "correct_answers": [
+        "transect"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Nhà nghiên cứu biển có vài cách quan sát động vật mà hạn chế làm phiền chúng. Thợ lặn có thể ghi cá dọc tuyến cố định, gọi là tuyến khảo sát, cùng kích thước và hành vi. Cách này cho thông tin trực quan nhưng tầm nhìn kém và sự xuất hiện của thợ lặn có thể làm thay đổi những gì thấy được. Phương pháp còn bị giới hạn bởi độ sâu và thời gian lặn an toàn. Đáp án cần chọn/điền: “transect”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Underwater recordings can be obscured by ____ noise.",
+      "correct_answers": [
+        "ship"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Máy ghi âm dưới nước cung cấp bằng chứng kiểu khác. Nó có thể ở dưới nước lâu và thu tiếng của một số cá và động vật có vú biển. Nhưng im lặng không chứng minh không có động vật. Một số loài ít phát tiếng dễ nhận diện, còn tiếng tàu che âm nhỏ. Vì thế, dữ liệu âm thanh đòi hỏi nhận dạng và diễn giải theo bối cảnh cẩn thận. Đáp án cần chọn/điền: “ship”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Environmental ____ can be detected in samples of water.",
+      "correct_answers": [
+        "DNA"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Cách thứ ba xét DNA môi trường, gọi là eDNA, trong mẫu nước. Sinh vật thải dấu vết vật liệu di truyền vào môi trường. Kiểm tra phòng thí nghiệm có thể phát hiện tín hiệu của loài cụ thể dù thợ lặn không nhìn thấy. Tuy nhiên, dòng chảy có thể mang DNA xa khỏi nguồn, và phương pháp không tự cho biết số lượng cá thể đang sống. Đáp án cần chọn/điền: “DNA”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Which method can describe activity at night without a diver present?",
+      "correct_answers": [
+        "sound recordings"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Các phương pháp trả lời những câu hỏi chồng lấn nhưng không giống nhau. Tuyến khảo sát cho thấy hành vi nhìn được, ghi âm mô tả hoạt động ban đêm, còn eDNA có thể chỉ ra loài đã xuất hiện gần đây. Kết hợp chúng giảm điểm mù. Trước khi so sánh, nhà nghiên cứu còn chuẩn hóa thời điểm lấy mẫu, cài đặt thiết bị và địa điểm. Đáp án cần chọn/điền: “sound recordings”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "mcq"
+      ],
+      "options": [
+        "direct daytime transects",
+        "sound recordings",
+        "a printed map"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "When do reef recorders detect many calls in the example?",
+      "correct_answers": [
+        "after sunset"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Hãy tưởng tượng rạn mà thợ lặn thấy ít cá nhưng máy ghi thu nhiều tiếng sau hoàng hôn. Hai kết quả không hẳn mâu thuẫn; loài có thể hoạt động vào thời điểm khác. Tương tự, tín hiệu eDNA có thể đến từ nước chảy qua rạn. Diễn giải đúng cần xét ưu, nhược điểm của từng phương pháp thay vì thiên vị một công nghệ. Đáp án cần chọn/điền: “after sunset”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the lecture’s overall recommendation?",
+      "correct_answers": [
+        "Combine observation methods while considering their weaknesses"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Hãy tưởng tượng rạn mà thợ lặn thấy ít cá nhưng máy ghi thu nhiều tiếng sau hoàng hôn. Hai kết quả không hẳn mâu thuẫn; loài có thể hoạt động vào thời điểm khác. Tương tự, tín hiệu eDNA có thể đến từ nước chảy qua rạn. Diễn giải đúng cần xét ưu, nhược điểm của từng phương pháp thay vì thiên vị một công nghệ. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ],
+      "options": [
+        "Rely on only one modern instrument",
+        "Combine observation methods while considering their weaknesses",
+        "Treat any DNA signal as a population count"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "An acoustic recorder offers a different type of evidence. It can remain underwater for long periods and capture the sounds produced by some fish and marine mammals. Yet silence does not prove an animal is absent. Some species rarely make detectable calls, and ship noise can mask quieter signals. Audio data therefore require careful identification and contextual interpretation."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Máy ghi âm dưới nước cung cấp bằng chứng kiểu khác. Nó có thể ở dưới nước lâu và thu tiếng của một số cá và động vật có vú biển. Nhưng im lặng không chứng minh không có động vật. Một số loài ít phát tiếng dễ nhận diện, còn tiếng tàu che âm nhỏ. Vì thế, dữ liệu âm thanh đòi hỏi nhận dạng và diễn giải theo bối cảnh cẩn thận.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "These methods answer overlapping but not identical questions. Transects may reveal visible behaviour, sound recordings may describe activity through the night, and eDNA may indicate that a species recently occurred in the area. Combining them can reduce blind spots. Before making comparisons, researchers also standardise sampling times, equipment settings and the locations examined."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Các phương pháp trả lời những câu hỏi chồng lấn nhưng không giống nhau. Tuyến khảo sát cho thấy hành vi nhìn được, ghi âm mô tả hoạt động ban đêm, còn eDNA có thể chỉ ra loài đã xuất hiện gần đây. Kết hợp chúng giảm điểm mù. Trước khi so sánh, nhà nghiên cứu còn chuẩn hóa thời điểm lấy mẫu, cài đặt thiết bị và địa điểm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: Marine researchers have several ways to observe animals without disturbing them excessively. A diver can record fish along a fixed route, called a ____, and note their sizes and behaviour. This provides direct visual information, but poor visibility and the presence of the diver can affect what is seen. The method is also limited by safe diving depth and time.",
+      "correct_answers": [
+        "transect"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “transect”, nghĩa: tuyến khảo sát. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "transect",
+      "pos": "n.",
+      "meaning_vi": "tuyến khảo sát",
+      "example_en": "Marine researchers have several ways to observe animals without disturbing them excessively. A diver can record fish along a fixed route, called a transect, and note their sizes and behaviour. This provides direct visual information, but poor visibility and the presence of the diver can affect what is seen. The method is also limited by safe diving depth and time.",
+      "example_vi": "Nhà nghiên cứu biển có vài cách quan sát động vật mà hạn chế làm phiền chúng. Thợ lặn có thể ghi cá dọc tuyến cố định, gọi là tuyến khảo sát, cùng kích thước và hành vi. Cách này cho thông tin trực quan nhưng tầm nhìn kém và sự xuất hiện của thợ lặn có thể làm thay đổi những gì thấy được. Phương pháp còn bị giới hạn bởi độ sâu và thời gian lặn an toàn.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "acoustic recorder",
+      "pos": "n. phr.",
+      "meaning_vi": "máy ghi âm dưới nước",
+      "example_en": "An acoustic recorder offers a different type of evidence. It can remain underwater for long periods and capture the sounds produced by some fish and marine mammals. Yet silence does not prove an animal is absent. Some species rarely make detectable calls, and ship noise can mask quieter signals. Audio data therefore require careful identification and contextual interpretation.",
+      "example_vi": "Máy ghi âm dưới nước cung cấp bằng chứng kiểu khác. Nó có thể ở dưới nước lâu và thu tiếng của một số cá và động vật có vú biển. Nhưng im lặng không chứng minh không có động vật. Một số loài ít phát tiếng dễ nhận diện, còn tiếng tàu che âm nhỏ. Vì thế, dữ liệu âm thanh đòi hỏi nhận dạng và diễn giải theo bối cảnh cẩn thận.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "environmental DNA",
+      "pos": "n. phr.",
+      "meaning_vi": "DNA môi trường",
+      "example_en": "A third approach examines environmental DNA, or eDNA, in a water sample. Organisms release tiny traces of genetic material into their surroundings. Laboratory tests can detect signals associated with particular species, even when they are not visible during a dive. However, currents may carry DNA away from its source, and the method does not automatically reveal the number of living animals.",
+      "example_vi": "Cách thứ ba xét DNA môi trường, gọi là eDNA, trong mẫu nước. Sinh vật thải dấu vết vật liệu di truyền vào môi trường. Kiểm tra phòng thí nghiệm có thể phát hiện tín hiệu của loài cụ thể dù thợ lặn không nhìn thấy. Tuy nhiên, dòng chảy có thể mang DNA xa khỏi nguồn, và phương pháp không tự cho biết số lượng cá thể đang sống.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "sampling times",
+      "pos": "n. phr.",
+      "meaning_vi": "thời điểm lấy mẫu",
+      "example_en": "These methods answer overlapping but not identical questions. Transects may reveal visible behaviour, sound recordings may describe activity through the night, and eDNA may indicate that a species recently occurred in the area. Combining them can reduce blind spots. Before making comparisons, researchers also standardise sampling times, equipment settings and the locations examined.",
+      "example_vi": "Các phương pháp trả lời những câu hỏi chồng lấn nhưng không giống nhau. Tuyến khảo sát cho thấy hành vi nhìn được, ghi âm mô tả hoạt động ban đêm, còn eDNA có thể chỉ ra loài đã xuất hiện gần đây. Kết hợp chúng giảm điểm mù. Trước khi so sánh, nhà nghiên cứu còn chuẩn hóa thời điểm lấy mẫu, cài đặt thiết bị và địa điểm.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b19b4dd83172037bad9374f985a60ddac4b1b89866e601e7bb3c997416a7c165",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

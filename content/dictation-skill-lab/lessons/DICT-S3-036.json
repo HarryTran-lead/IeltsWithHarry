@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-036",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Research Methodology",
+  "title": "Research Methodology – Museum Learning Experiment",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Clara – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Owen – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Mei – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our museum wants to test whether visitors learn more from the interactive touchscreen than from printed labels. I suggested letting one group try the screen and another group read the labels.",
+      "translation_vi": "Bảo tàng muốn kiểm tra khách học được nhiều hơn từ màn hình tương tác hay nhãn in. Mình đề xuất một nhóm dùng màn hình, nhóm khác đọc nhãn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The groups might differ in age or prior knowledge, so any score difference wouldn't necessarily be caused by the display. We need a fairer allocation or a way to compare the same people.",
+      "translation_vi": "Các nhóm có thể khác tuổi hoặc kiến thức sẵn có, nên chênh lệch điểm chưa chắc do cách trưng bày. Ta cần phân nhóm công bằng hơn hoặc so sánh cùng người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "What if every participant sees both formats? Half could use the touchscreen first and half the printed labels first. That would counterbalance the order, although there might still be a learning effect.",
+      "translation_vi": "Hay mỗi người xem cả hai định dạng? Một nửa dùng màn hình trước, nửa kia đọc nhãn trước. Như vậy cân bằng thứ tự, dù vẫn có hiệu ứng học trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We should give each format different but similarly difficult artefacts, otherwise visitors may simply remember the answers from their first attempt. The curator can help us select matched pairs.",
+      "translation_vi": "Ta nên cho mỗi định dạng hiện vật khác nhau nhưng khó tương đương, nếu không khách chỉ nhớ đáp án lần đầu. Người phụ trách có thể giúp chọn các cặp tương đương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "And the test shouldn't be only a memory quiz immediately afterward. A short delayed question the next day might indicate whether the information was retained, rather than just noticed.",
+      "translation_vi": "Và bài kiểm tra không nên chỉ hỏi trí nhớ ngay sau đó. Một câu kiểm tra trễ vào hôm sau có thể cho thấy thông tin có được giữ lại hay chỉ vừa nhìn thấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Recruiting visitors for next-day contact requires consent. Perhaps we can invite a smaller volunteer panel rather than collect contact details from every museum visitor.",
+      "translation_vi": "Liên hệ khách hôm sau cần sự đồng ý. Có lẽ ta mời một nhóm tình nguyện nhỏ thay vì thu thông tin liên hệ của mọi khách tham quan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "For the immediate task, let's record completion time and one comprehension score, but avoid treating faster completion as proof of better learning. Some visitors may simply skip information.",
+      "translation_vi": "Ở bài ngay sau trải nghiệm, hãy ghi thời gian hoàn thành và một điểm hiểu bài, nhưng đừng coi hoàn thành nhanh là học tốt hơn. Một số khách có thể bỏ qua thông tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I can randomise which format appears first and prepare the matched artefacts. We should pilot the instructions with five visitors before recruiting the main sample.",
+      "translation_vi": "Mình có thể ngẫu nhiên hóa thứ tự định dạng và chuẩn bị hiện vật tương đương. Nên thử hướng dẫn với năm khách trước khi tuyển mẫu chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "So we'll use a counterbalanced design, a small consenting panel for delayed recall and a pilot of five people. That's a stronger comparison than simply dividing visitors into two unbalanced queues.",
+      "translation_vi": "Vậy ta dùng thiết kế cân bằng thứ tự, nhóm nhỏ đồng ý kiểm tra nhớ lại sau đó và thử với năm người. Cách này mạnh hơn chia khách thành hai hàng không cân bằng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What is the problem with assigning different visitors to the two displays without controls?",
+      "correct_answers": [
+        "Their prior knowledge and age may differ"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Owen nói: “Các nhóm có thể khác tuổi hoặc kiến thức sẵn có, nên chênh lệch điểm chưa chắc do cách trưng bày. Ta cần phân nhóm công bằng hơn hoặc so sánh cùng người.” Đáp án “Their prior knowledge and age may differ” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The screen and labels cover different topics",
+        "Visitors might complete the test at different speeds",
+        "Their prior knowledge and age may differ"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The team considers giving each participant ____ formats.",
+      "correct_answers": [
+        "both"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Hay mỗi người xem cả hai định dạng? Một nửa dùng màn hình trước, nửa kia đọc nhãn trước. Như vậy cân bằng thứ tự, dù vẫn có hiệu ứng học trước.” Cụm cần điền nghe đúng nguyên văn là “both”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker recommends a consenting volunteer panel for the delayed check?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói Mei (Speaker C) đưa ra ý này tại T06: “Liên hệ khách hôm sau cần sự đồng ý. Có lẽ ta mời một nhóm tình nguyện nhỏ thay vì thu thông tin liên hệ của mọi khách tham quan.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why should completion speed be interpreted cautiously?",
+      "correct_answers": [
+        "Some participants may simply skip information"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Clara nói: “Ở bài ngay sau trải nghiệm, hãy ghi thời gian hoàn thành và một điểm hiểu bài, nhưng đừng coi hoàn thành nhanh là học tốt hơn. Một số khách có thể bỏ qua thông tin.” Đáp án “Some participants may simply skip information” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The quiz is identical for both groups",
+        "The touchscreen records the wrong time",
+        "Some participants may simply skip information"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "They will pilot the instructions with ____ visitors.",
+      "correct_answers": [
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Mình có thể ngẫu nhiên hóa thứ tự định dạng và chuẩn bị hiện vật tương đương. Nên thử hướng dẫn với năm khách trước khi tuyển mẫu chính.” Cụm cần điền nghe đúng nguyên văn là “five”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What kind of design do they finally choose?",
+      "correct_answers": [
+        "counterbalanced"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy ta dùng thiết kế cân bằng thứ tự, nhóm nhỏ đồng ý kiểm tra nhớ lại sau đó và thử với năm người. Cách này mạnh hơn chia khách thành hai hàng không cân bằng.” Trả lời ngắn theo chi tiết “counterbalanced”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "We should give each format different but similarly difficult artefacts, otherwise visitors may simply remember the answers from their first attempt. The curator can help us select matched pairs."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “We should give each format different but similarly difficult artefacts, otherwise visitors may simply remember the answers from their first attempt. The curator can help us select matched pairs.”\nBản dịch: Ta nên cho mỗi định dạng hiện vật khác nhau nhưng khó tương đương, nếu không khách chỉ nhớ đáp án lần đầu. Người phụ trách có thể giúp chọn các cặp tương đương.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "For the immediate task, let's record completion time and one comprehension score, but avoid treating faster completion as proof of better learning. Some visitors may simply skip information."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “For the immediate task, let's record completion time and one comprehension score, but avoid treating faster completion as proof of better learning. Some visitors may simply skip information.”\nBản dịch: Ở bài ngay sau trải nghiệm, hãy ghi thời gian hoàn thành và một điểm hiểu bài, nhưng đừng coi hoàn thành nhanh là học tốt hơn. Một số khách có thể bỏ qua thông tin.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền đúng phần thiếu: The groups might differ in age or ____, so any score difference wouldn't necessarily be caused by the display. We need a fairer allocation or a way to compare the same people.",
+      "correct_answers": [
+        "prior knowledge"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “prior knowledge” nghĩa là kiến thức sẵn có. Đối chiếu: “The groups might differ in age or prior knowledge, so any score difference wouldn't necessarily be caused by the display. We need a fairer allocation or a way to compare the same people.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "prior knowledge",
+      "pos": "n. phr.",
+      "meaning_vi": "kiến thức sẵn có",
+      "example_en": "The groups might differ in age or prior knowledge, so any score difference wouldn't necessarily be caused by the display. We need a fairer allocation or a way to compare the same people.",
+      "example_vi": "Các nhóm có thể khác tuổi hoặc kiến thức sẵn có, nên chênh lệch điểm chưa chắc do cách trưng bày. Ta cần phân nhóm công bằng hơn hoặc so sánh cùng người.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "counterbalance",
+      "pos": "v.",
+      "meaning_vi": "cân bằng thứ tự",
+      "example_en": "What if every participant sees both formats? Half could use the touchscreen first and half the printed labels first. That would counterbalance the order, although there might still be a learning effect.",
+      "example_vi": "Hay mỗi người xem cả hai định dạng? Một nửa dùng màn hình trước, nửa kia đọc nhãn trước. Như vậy cân bằng thứ tự, dù vẫn có hiệu ứng học trước.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "retained",
+      "pos": "v.",
+      "meaning_vi": "được lưu giữ",
+      "example_en": "And the test shouldn't be only a memory quiz immediately afterward. A short delayed question the next day might indicate whether the information was retained, rather than just noticed.",
+      "example_vi": "Và bài kiểm tra không nên chỉ hỏi trí nhớ ngay sau đó. Một câu kiểm tra trễ vào hôm sau có thể cho thấy thông tin có được giữ lại hay chỉ vừa nhìn thấy.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "volunteer panel",
+      "pos": "n. phr.",
+      "meaning_vi": "nhóm người tình nguyện",
+      "example_en": "Recruiting visitors for next-day contact requires consent. Perhaps we can invite a smaller volunteer panel rather than collect contact details from every museum visitor.",
+      "example_vi": "Liên hệ khách hôm sau cần sự đồng ý. Có lẽ ta mời một nhóm tình nguyện nhỏ thay vì thu thông tin liên hệ của mọi khách tham quan.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "0e682256ac0e7411943fd07e5af3456704af24b4e0b588664988837ea231f3ed",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

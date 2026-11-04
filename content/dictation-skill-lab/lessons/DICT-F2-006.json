@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-006",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Present Simple",
+  "learning_objectives_vi": [
+    "Nhận diện -s/-es trong câu",
+    "Nghe trợ động từ và hình thái động từ, đối chiếu với chủ ngữ hoặc mốc thời gian."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "She takes the train to work every morning.",
+      "translation_vi": "Cô ấy đi tàu đến chỗ làm mỗi sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "My friends take the same train on Mondays.",
+      "translation_vi": "Các bạn tôi đi cùng chuyến tàu vào thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "He watches football after he finishes his homework.",
+      "translation_vi": "Cậu ấy xem bóng đá sau khi làm xong bài tập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The museum closes at six on weekdays.",
+      "translation_vi": "Bảo tàng đóng cửa lúc sáu giờ vào ngày thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I don't drink coffee before breakfast.",
+      "translation_vi": "Tôi không uống cà phê trước bữa sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Does your sister speak French at home?",
+      "translation_vi": "Em gái bạn có nói tiếng Pháp ở nhà không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We usually finish lunch before one o'clock.",
+      "translation_vi": "Chúng tôi thường ăn trưa xong trước một giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Our teacher gives us extra practice on Fridays.",
+      "translation_vi": "Giáo viên cho chúng tôi luyện thêm vào thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The bus doesn't stop near the old market.",
+      "translation_vi": "Xe buýt không dừng gần khu chợ cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "How often do they visit their grandparents?",
+      "translation_vi": "Họ thường thăm ông bà bao lâu một lần?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "She takes the train to work every morning."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Chủ ngữ she nên takes có /s/ cuối. Nghĩa: Cô ấy đi tàu đến chỗ làm mỗi sáng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My friends take the same train on Mondays."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "My friends là số nhiều nên take không thêm s. Nghĩa: Các bạn tôi đi cùng chuyến tàu vào thứ Hai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "He watches football after he finishes his homework."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Watches và finishes đều có đuôi /ɪz/. Nghĩa: Cậu ấy xem bóng đá sau khi làm xong bài tập.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The museum closes at six on weekdays."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Closes có /ɪz/ cuối; nghe rõ six. Nghĩa: Bảo tàng đóng cửa lúc sáu giờ vào ngày thường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I don't drink coffee before breakfast."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Don't phủ định với I; sau don't dùng động từ gốc. Nghĩa: Tôi không uống cà phê trước bữa sáng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Does your sister speak French at home?"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Does + speak, không phải speaks. Nghĩa: Em gái bạn có nói tiếng Pháp ở nhà không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We usually finish lunch before one o'clock."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Finish không thêm s vì chủ ngữ we. Nghĩa: Chúng tôi thường ăn trưa xong trước một giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Our teacher gives us extra practice on Fridays."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Gives có /z/ cuối; gives us có thể nối nhanh. Nghĩa: Giáo viên cho chúng tôi luyện thêm vào thứ Sáu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The bus doesn't stop near the old market."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Doesn't stop: stop ở nguyên thể sau doesn't. Nghĩa: Xe buýt không dừng gần khu chợ cũ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "How often do they visit their grandparents?"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "How often hỏi tần suất; do đi với they. Nghĩa: Họ thường thăm ông bà bao lâu một lần?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Bảo tàng đóng cửa lúc mấy giờ?",
+      "options": [
+        "seven",
+        "five",
+        "six"
+      ],
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "T04: closes at six.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Xe buýt có dừng gần chợ cũ không?",
+      "options": [
+        "not mentioned",
+        "no",
+        "yes"
+      ],
+      "correct_answers": [
+        "no"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Doesn't stop là phủ định.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "takes",
+      "pos": "verb",
+      "meaning_vi": "đi, sử dụng (ngôi thứ ba số ít)",
+      "example_en": "She takes the train to work every morning.",
+      "example_vi": "Cô ấy đi tàu đến chỗ làm mỗi sáng.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "watches",
+      "pos": "verb",
+      "meaning_vi": "xem (ngôi thứ ba số ít)",
+      "example_en": "He watches football after he finishes his homework.",
+      "example_vi": "Cậu ấy xem bóng đá sau khi làm xong bài tập.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "doesn't stop",
+      "pos": "verb phrase",
+      "meaning_vi": "không dừng",
+      "example_en": "The bus doesn't stop near the old market.",
+      "example_vi": "Xe buýt không dừng gần khu chợ cũ.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "how often",
+      "pos": "question phrase",
+      "meaning_vi": "bao lâu một lần",
+      "example_en": "How often do they visit their grandparents?",
+      "example_vi": "Họ thường thăm ông bà bao lâu một lần?",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b6a706b0c518f6818493aac96265b7af0bff68af01a156f3f6d32d7100f337c4",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

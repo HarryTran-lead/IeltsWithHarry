@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-007",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Letters N–Z",
+  "learning_objectives_vi": [
+    "Phân biệt các chữ cái dễ nhầm",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Start with the letter N.",
+      "translation_vi": "Bắt đầu bằng chữ N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The next letter is O.",
+      "translation_vi": "Chữ tiếp theo là O.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please write P, then Q.",
+      "translation_vi": "Hãy viết P rồi Q.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The code ends with R.",
+      "translation_vi": "Mã kết thúc bằng R.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Circle the letter S.",
+      "translation_vi": "Khoanh chữ S.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Now write T and U.",
+      "translation_vi": "Bây giờ viết T và U.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The label has V.",
+      "translation_vi": "Nhãn có chữ V.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please add W and X.",
+      "translation_vi": "Vui lòng thêm W và X.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The first letter is Y.",
+      "translation_vi": "Chữ đầu là Y.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The last letter is Z.",
+      "translation_vi": "Chữ cuối là Z.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Start with the letter N."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "N /en/ khác M /em/. Nghĩa: Bắt đầu bằng chữ N.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The next letter is O."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "O đọc /əʊ/ hoặc /oʊ/ tùy giọng. Nghĩa: Chữ tiếp theo là O.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please write P, then Q."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "P /piː/ khác Q /kjuː/. Nghĩa: Hãy viết P rồi Q.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The code ends with R."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "R đọc /ɑː/ trong giọng Anh chuẩn. Nghĩa: Mã kết thúc bằng R.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Circle the letter S."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "S đọc /es/. Nghĩa: Khoanh chữ S.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Now write T and U."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "T /tiː/, U /juː/. Nghĩa: Bây giờ viết T và U.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The label has V."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "V /viː/ khác B /biː/. Nghĩa: Nhãn có chữ V.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please add W and X."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "W /ˈdʌbəl.juː/, X /eks/. Nghĩa: Vui lòng thêm W và X.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The first letter is Y."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Y đọc /waɪ/. Nghĩa: Chữ đầu là Y.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The last letter is Z."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Z đọc /zed/ kiểu Anh; /ziː/ kiểu Mỹ. Nghĩa: Chữ cuối là Z.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T07: Nhãn ghi chữ nào?",
+      "correct_answers": [
+        "V"
+      ],
+      "options": [
+        "V",
+        "B"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "V đọc /viː/ khác B /biː/. Hãy nghe lại lượt T07, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T10: Chữ cái cuối là gì?",
+      "correct_answers": [
+        "Z"
+      ],
+      "options": [
+        "Z",
+        "C"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Z là chữ cuối; giọng Anh thường đọc zed. Hãy nghe lại lượt T10, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "letter",
+      "pos": "noun",
+      "meaning_vi": "chữ cái",
+      "example_en": "Start with the letter N.",
+      "example_vi": "Bắt đầu bằng chữ N.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "code",
+      "pos": "noun",
+      "meaning_vi": "mã",
+      "example_en": "The code ends with R.",
+      "example_vi": "Mã kết thúc bằng R.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "label",
+      "pos": "noun",
+      "meaning_vi": "nhãn",
+      "example_en": "The label has V.",
+      "example_vi": "Nhãn có chữ V.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "last",
+      "pos": "adjective",
+      "meaning_vi": "cuối cùng",
+      "example_en": "The last letter is Z.",
+      "example_vi": "Chữ cuối là Z.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "35467d603bf7e999c92ae875f29798410c04cc1cdde023af54e7bffe2abf39bf",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-020",
+  "status": "draft",
+  "level": "L2",
+  "section": 1,
+  "topic": "Job Applications",
+  "title": "An Interview Time Correction",
+  "learning_objectives_vi": [
+    "Rèn corrected detail / distractors qua tình huống: An applicant checks an interview after a change of shift needs.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, City Market recruitment. I'm calling about your application.",
+      "translation_vi": "Xin chào, bộ phận tuyển dụng City Market. Tôi gọi về hồ sơ ứng tuyển của bạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Oh, thank you. Is this for the temporary stock assistant job?",
+      "translation_vi": "Ồ, cảm ơn. Đây là công việc phụ kho tạm thời phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes. The advert mentioned weekend work, but we now need someone on Mondays and Wednesdays.",
+      "translation_vi": "Đúng. Tin tuyển dụng ghi làm cuối tuần, nhưng giờ chúng tôi cần người vào thứ Hai và thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Those days are fine. Is the interview still at eleven?",
+      "translation_vi": "Những ngày đó được. Phỏng vấn vẫn lúc 11 giờ chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Sorry, it's been moved to eleven forty-five, on Thursday.",
+      "translation_vi": "Xin lỗi, lịch đã chuyển sang 11 giờ 45, vào thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Where should I go when I arrive?",
+      "translation_vi": "Tôi nên đến đâu khi tới nơi?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please report to the staff entrance behind the supermarket.",
+      "translation_vi": "Vui lòng đến cửa nhân viên phía sau siêu thị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Do I need to bring a printed CV?",
+      "translation_vi": "Tôi có cần mang CV bản in không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "No, but bring photo identification. The pay is twelve pounds per hour.",
+      "translation_vi": "Không, nhưng cần giấy tờ tùy thân có ảnh. Lương 12 bảng một giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Understood. I'll see you on Thursday.",
+      "translation_vi": "Tôi hiểu rồi. Hẹn thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "New workdays: Mondays and ____",
+      "correct_answers": [
+        "Wednesdays"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Lịch làm mới là thứ Hai và thứ Tư, không phải cuối tuần.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Interview day: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Lịch phỏng vấn là thứ Năm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Interview time: ____",
+      "correct_answers": [
+        "11:45",
+        "eleven forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "11 giờ là giờ cũ; giờ mới là 11:45.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Entrance: ____ entrance",
+      "correct_answers": [
+        "staff"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Ứng viên phải đến lối vào dành cho nhân viên.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Hourly pay: £____",
+      "correct_answers": [
+        "12",
+        "twelve"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Mức lương là mười hai bảng mỗi giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T03).",
+      "correct_answers": [
+        "Yes. The advert mentioned weekend work, but we now need someone on Mondays and Wednesdays."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nội dung cần chép: Yes. The advert mentioned weekend work, but we now need someone on Mondays and Wednesdays. Nghĩa: Đúng. Tin tuyển dụng ghi làm cuối tuần, nhưng giờ chúng tôi cần người vào thứ Hai và thứ Tư. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T07).",
+      "correct_answers": [
+        "Please report to the staff entrance behind the supermarket."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nội dung cần chép: Please report to the staff entrance behind the supermarket. Nghĩa: Vui lòng đến cửa nhân viên phía sau siêu thị. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: No, but bring ____. The pay is twelve pounds per hour.",
+      "correct_answers": [
+        "photo identification"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “photo identification”. Câu đầy đủ: No, but bring photo identification. The pay is twelve pounds per hour.. Nghĩa: Không, nhưng cần giấy tờ tùy thân có ảnh. Lương 12 bảng một giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "shift_changes",
+        "interview_schedule",
+        "location",
+        "pay"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "recruitment",
+      "pos": "noun",
+      "meaning_vi": "tuyển dụng",
+      "example_en": "Hello, City Market recruitment. I'm calling about your application.",
+      "example_vi": "Xin chào, bộ phận tuyển dụng City Market. Tôi gọi về hồ sơ ứng tuyển của bạn.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "stock assistant",
+      "pos": "noun phrase",
+      "meaning_vi": "nhân viên phụ kho",
+      "example_en": "Oh, thank you. Is this for the temporary stock assistant job?",
+      "example_vi": "Ồ, cảm ơn. Đây là công việc phụ kho tạm thời phải không?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "a printed CV",
+      "pos": "noun phrase",
+      "meaning_vi": "CV bản in",
+      "example_en": "Do I need to bring a printed CV?",
+      "example_vi": "Tôi có cần mang CV bản in không?",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "photo identification",
+      "pos": "noun phrase",
+      "meaning_vi": "giấy tờ tùy thân có ảnh",
+      "example_en": "No, but bring photo identification. The pay is twelve pounds per hour.",
+      "example_vi": "Không, nhưng cần giấy tờ tùy thân có ảnh. Lương 12 bảng một giờ.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "6a0da8122a7707b4e0330efe58643f8ba79b7400a2c4c7962d712a22de0ddc9b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-043",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Course Selection",
+  "title": "Course Selection – Prerequisite Course Dilemma",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Emma – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ryan – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Zara – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I want to enrol in Applied Linguistics, but the system says I need Statistics for Language Research first. I completed an introductory statistics class last year; surely that should count?",
+      "translation_vi": "Mình muốn đăng ký Ngôn ngữ học ứng dụng nhưng hệ thống báo cần học Thống kê cho nghiên cứu ngôn ngữ trước. Năm ngoái mình đã học thống kê nhập môn, chắc được tính chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Not automatically. The course guide distinguishes a prerequisite from a recommended background. Your earlier class covers general methods, but the required module includes analysing language datasets.",
+      "translation_vi": "Không tự động đâu. Hướng dẫn học phần phân biệt môn tiên quyết và kiến thức khuyến nghị. Lớp cũ của bạn dạy phương pháp chung, còn môn bắt buộc có phân tích dữ liệu ngôn ngữ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The department sometimes grants an equivalence waiver if you submit the syllabus and assessment results. However, the committee meets only on alternate Thursdays, so an answer won't be immediate.",
+      "translation_vi": "Khoa đôi khi miễn yêu cầu tương đương nếu nộp đề cương và kết quả đánh giá. Nhưng hội đồng chỉ họp cách tuần vào thứ Năm nên không trả lời ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The enrolment deadline is next Tuesday. I had planned to take Applied Linguistics and the fieldwork seminar together, but the seminar also conflicts with my laboratory placement.",
+      "translation_vi": "Hạn đăng ký là thứ Ba tới. Mình định học Ngôn ngữ học ứng dụng cùng hội thảo thực địa, nhưng hội thảo còn trùng lịch thực tập phòng thí nghiệm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Could you take the statistics module this term and leave the fieldwork seminar for spring? That would satisfy the prerequisite without depending on a last-minute waiver.",
+      "translation_vi": "Bạn có thể học Thống kê kỳ này rồi để hội thảo thực địa sang mùa xuân không? Như vậy đáp ứng môn tiên quyết mà không phải trông vào miễn trừ phút cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "That seems sensible, but the spring seminar has limited places. You should ask the coordinator whether students on placement receive priority before making a final decision.",
+      "translation_vi": "Nghe hợp lý, nhưng hội thảo mùa xuân ít chỗ. Bạn nên hỏi điều phối viên xem sinh viên đang thực tập có được ưu tiên không trước khi quyết định.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I also checked the timetable: Statistics meets on Wednesday mornings, so it doesn't clash with my placement. I'll register for that now and submit the waiver request only as a backup.",
+      "translation_vi": "Mình vừa xem lịch: Thống kê học sáng thứ Tư nên không trùng kỳ thực tập. Mình sẽ đăng ký môn đó ngay, còn xin miễn trừ chỉ là dự phòng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Remember that the academic adviser must sign your revised plan. A place in the online basket isn't confirmed until the department approves the combination of modules.",
+      "translation_vi": "Nhớ rằng cố vấn học tập phải ký kế hoạch sửa. Có môn trong giỏ đăng ký trực tuyến chưa phải đã xác nhận, đến khi khoa duyệt tổ hợp môn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "So the immediate actions are to enrol in Statistics, request spring-seminar priority and obtain the adviser's signature. Applied Linguistics can wait until the prerequisite is formally satisfied.",
+      "translation_vi": "Vậy việc ngay là đăng ký Thống kê, xin ưu tiên hội thảo mùa xuân và lấy chữ ký cố vấn. Ngôn ngữ học ứng dụng chờ đến khi hoàn thành chính thức môn tiên quyết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why may Emma's previous statistics class not satisfy the requirement?",
+      "correct_answers": [
+        "The required module includes analysis of language datasets"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Ryan nói: “Không tự động đâu. Hướng dẫn học phần phân biệt môn tiên quyết và kiến thức khuyến nghị. Lớp cũ của bạn dạy phương pháp chung, còn môn bắt buộc có phân tích dữ liệu ngôn ngữ.” Đáp án “The required module includes analysis of language datasets” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The fieldwork seminar conflicts with a placement",
+        "The required module includes analysis of language datasets",
+        "The waiver committee meets infrequently"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The equivalence committee meets on alternate ____ .",
+      "correct_answers": [
+        "Thursdays"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Khoa đôi khi miễn yêu cầu tương đương nếu nộp đề cương và kết quả đánh giá. Nhưng hội đồng chỉ họp cách tuần vào thứ Năm nên không trả lời ngay.” Cụm cần điền nghe đúng nguyên văn là “Thursdays”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes taking Statistics now and leaving the seminar for spring?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người nói Ryan (Speaker B) đưa ra ý này tại T05: “Bạn có thể học Thống kê kỳ này rồi để hội thảo thực địa sang mùa xuân không? Như vậy đáp ứng môn tiên quyết mà không phải trông vào miễn trừ phút cuối.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why does Emma register for Statistics immediately?",
+      "correct_answers": [
+        "It fits her timetable and avoids depending on a waiver"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Emma nói: “Mình vừa xem lịch: Thống kê học sáng thứ Tư nên không trùng kỳ thực tập. Mình sẽ đăng ký môn đó ngay, còn xin miễn trừ chỉ là dự phòng.” Đáp án “It fits her timetable and avoids depending on a waiver” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The fieldwork seminar has no limited places",
+        "It fits her timetable and avoids depending on a waiver",
+        "The waiver request has already been approved"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The academic adviser must ____ the revised plan.",
+      "correct_answers": [
+        "sign"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Nhớ rằng cố vấn học tập phải ký kế hoạch sửa. Có môn trong giỏ đăng ký trực tuyến chưa phải đã xác nhận, đến khi khoa duyệt tổ hợp môn.” Cụm cần điền nghe đúng nguyên văn là “sign”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "Which course will Emma take first?",
+      "correct_answers": [
+        "Statistics"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy việc ngay là đăng ký Thống kê, xin ưu tiên hội thảo mùa xuân và lấy chữ ký cố vấn. Ngôn ngữ học ứng dụng chờ đến khi hoàn thành chính thức môn tiên quyết.” Trả lời ngắn theo chi tiết “Statistics”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "The enrolment deadline is next Tuesday. I had planned to take Applied Linguistics and the fieldwork seminar together, but the seminar also conflicts with my laboratory placement."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “The enrolment deadline is next Tuesday. I had planned to take Applied Linguistics and the fieldwork seminar together, but the seminar also conflicts with my laboratory placement.”\nBản dịch: Hạn đăng ký là thứ Ba tới. Mình định học Ngôn ngữ học ứng dụng cùng hội thảo thực địa, nhưng hội thảo còn trùng lịch thực tập phòng thí nghiệm.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I also checked the timetable: Statistics meets on Wednesday mornings, so it doesn't clash with my placement. I'll register for that now and submit the waiver request only as a backup."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “I also checked the timetable: Statistics meets on Wednesday mornings, so it doesn't clash with my placement. I'll register for that now and submit the waiver request only as a backup.”\nBản dịch: Mình vừa xem lịch: Thống kê học sáng thứ Tư nên không trùng kỳ thực tập. Mình sẽ đăng ký môn đó ngay, còn xin miễn trừ chỉ là dự phòng.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền đúng phần thiếu: Not automatically. The course guide distinguishes a ____ from a recommended background. Your earlier class covers general methods, but the required module includes analysing language datasets.",
+      "correct_answers": [
+        "prerequisite"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “prerequisite” nghĩa là môn học tiên quyết. Đối chiếu: “Not automatically. The course guide distinguishes a prerequisite from a recommended background. Your earlier class covers general methods, but the required module includes analysing language datasets.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "prerequisite",
+      "pos": "n.",
+      "meaning_vi": "môn học tiên quyết",
+      "example_en": "Not automatically. The course guide distinguishes a prerequisite from a recommended background. Your earlier class covers general methods, but the required module includes analysing language datasets.",
+      "example_vi": "Không tự động đâu. Hướng dẫn học phần phân biệt môn tiên quyết và kiến thức khuyến nghị. Lớp cũ của bạn dạy phương pháp chung, còn môn bắt buộc có phân tích dữ liệu ngôn ngữ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "equivalence waiver",
+      "pos": "n. phr.",
+      "meaning_vi": "giấy miễn yêu cầu tương đương",
+      "example_en": "The department sometimes grants an equivalence waiver if you submit the syllabus and assessment results. However, the committee meets only on alternate Thursdays, so an answer won't be immediate.",
+      "example_vi": "Khoa đôi khi miễn yêu cầu tương đương nếu nộp đề cương và kết quả đánh giá. Nhưng hội đồng chỉ họp cách tuần vào thứ Năm nên không trả lời ngay.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "laboratory placement",
+      "pos": "n. phr.",
+      "meaning_vi": "kỳ thực tập phòng thí nghiệm",
+      "example_en": "The enrolment deadline is next Tuesday. I had planned to take Applied Linguistics and the fieldwork seminar together, but the seminar also conflicts with my laboratory placement.",
+      "example_vi": "Hạn đăng ký là thứ Ba tới. Mình định học Ngôn ngữ học ứng dụng cùng hội thảo thực địa, nhưng hội thảo còn trùng lịch thực tập phòng thí nghiệm.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "academic adviser",
+      "pos": "n. phr.",
+      "meaning_vi": "cố vấn học tập",
+      "example_en": "Remember that the academic adviser must sign your revised plan. A place in the online basket isn't confirmed until the department approves the combination of modules.",
+      "example_vi": "Nhớ rằng cố vấn học tập phải ký kế hoạch sửa. Có môn trong giỏ đăng ký trực tuyến chưa phải đã xác nhận, đến khi khoa duyệt tổ hợp môn.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "66dfe1fc7bc25119fe856d61c3f0c0132e625be389bf9cb6e01cde48676df263",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

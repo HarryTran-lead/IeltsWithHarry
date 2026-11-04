@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-012",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Teens vs Tens",
+  "learning_objectives_vi": [
+    "Phân biệt thirteen/thirty",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Thirteen books are missing.",
+      "translation_vi": "Mười ba quyển sách bị thất lạc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Thirty books are ready.",
+      "translation_vi": "Ba mươi quyển sách đã sẵn sàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Fourteen seats are taken.",
+      "translation_vi": "Mười bốn ghế đã có người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Forty seats are free.",
+      "translation_vi": "Bốn mươi ghế còn trống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Fifteen tickets were sold.",
+      "translation_vi": "Mười lăm vé đã được bán.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Fifty tickets remain.",
+      "translation_vi": "Còn lại năm mươi vé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Sixteen people called.",
+      "translation_vi": "Mười sáu người đã gọi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Sixty people arrived.",
+      "translation_vi": "Sáu mươi người đã đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Seventeen bags are here.",
+      "translation_vi": "Có mười bảy chiếc túi ở đây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Seventy bags were delivered.",
+      "translation_vi": "Bảy mươi chiếc túi đã được giao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Thirteen books are missing."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "thirteen = 13, trọng âm thường ở -teen khi nói riêng. Nghĩa: Mười ba quyển sách bị thất lạc.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Thirty books are ready."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "thirty = 30, trọng âm âm tiết đầu. Nghĩa: Ba mươi quyển sách đã sẵn sàng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Fourteen seats are taken."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "fourteen = 14. Nghĩa: Mười bốn ghế đã có người.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Forty seats are free."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "forty = 40, không viết fourty. Nghĩa: Bốn mươi ghế còn trống.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Fifteen tickets were sold."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "fifteen = 15. Nghĩa: Mười lăm vé đã được bán.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Fifty tickets remain."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "fifty = 50. Nghĩa: Còn lại năm mươi vé.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Sixteen people called."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "sixteen = 16. Nghĩa: Mười sáu người đã gọi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Sixty people arrived."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "sixty = 60. Nghĩa: Sáu mươi người đã đến.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Seventeen bags are here."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "seventeen = 17. Nghĩa: Có mười bảy chiếc túi ở đây.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Seventy bags were delivered."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "seventy = 70. Nghĩa: Bảy mươi chiếc túi đã được giao.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T01: Số sách bị thiếu là bao nhiêu?",
+      "correct_answers": [
+        "13"
+      ],
+      "options": [
+        "13",
+        "30"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Thirteen = 13, có đuôi -teen. Hãy nghe lại lượt T01, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T06: Có bao nhiêu vé còn lại?",
+      "correct_answers": [
+        "50"
+      ],
+      "options": [
+        "15",
+        "50"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Fifty = 50, không phải fifteen. Hãy nghe lại lượt T06, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "thirteen",
+      "pos": "number",
+      "meaning_vi": "mười ba",
+      "example_en": "Thirteen books are missing.",
+      "example_vi": "Mười ba quyển sách bị thất lạc.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "thirty",
+      "pos": "number",
+      "meaning_vi": "ba mươi",
+      "example_en": "Thirty books are ready.",
+      "example_vi": "Ba mươi quyển sách đã sẵn sàng.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "fifteen",
+      "pos": "number",
+      "meaning_vi": "mười lăm",
+      "example_en": "Fifteen tickets were sold.",
+      "example_vi": "Mười lăm vé đã được bán.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "fifty",
+      "pos": "number",
+      "meaning_vi": "năm mươi",
+      "example_en": "Fifty tickets remain.",
+      "example_vi": "Còn lại năm mươi vé.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e565bd19d8748192c2c72578cd310515d8f7602014995c53c0ea1ffc6699c2c1",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

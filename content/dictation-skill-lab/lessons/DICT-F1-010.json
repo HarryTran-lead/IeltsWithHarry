@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-010",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Email and Website Spelling",
+  "learning_objectives_vi": [
+    "Nghe dấu chấm, gạch dưới, @",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Say anna dot lee at example dot com.",
+      "translation_vi": "Đọc địa chỉ anna.lee@example.com.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Write tom underscore gray at example dot org.",
+      "translation_vi": "Viết tom_gray@example.org.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The email is support at example dot net.",
+      "translation_vi": "Email là support@example.net.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The website is learn dash fast dot example.",
+      "translation_vi": "Tên website đọc là learn-fast.example.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "My address has a full stop.",
+      "translation_vi": "Địa chỉ của tôi có một dấu chấm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Please use a lower-case letter.",
+      "translation_vi": "Hãy dùng chữ cái viết thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The username has two numbers.",
+      "translation_vi": "Tên đăng nhập có hai chữ số.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The password begins with capital A.",
+      "translation_vi": "Mật khẩu bắt đầu bằng chữ A in hoa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "There is no space after the dot.",
+      "translation_vi": "Không có khoảng trắng sau dấu chấm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Read the slash in the web address.",
+      "translation_vi": "Đọc dấu gạch chéo trong địa chỉ web.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Say anna dot lee at example dot com."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "dot là dấu chấm, at là @. Nghĩa: Đọc địa chỉ anna.lee@example.com.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Write tom underscore gray at example dot org."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "underscore là dấu gạch dưới. Nghĩa: Viết tom_gray@example.org.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The email is support at example dot net."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Không bỏ qua at. Nghĩa: Email là support@example.net.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The website is learn dash fast dot example."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "dash là dấu gạch nối, khác underscore. Nghĩa: Tên website đọc là learn-fast.example.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "My address has a full stop."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "full stop cũng có thể gọi là dot trong địa chỉ. Nghĩa: Địa chỉ của tôi có một dấu chấm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please use a lower-case letter."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "lower-case đối lập upper-case. Nghĩa: Hãy dùng chữ cái viết thường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The username has two numbers."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Phân biệt username và password. Nghĩa: Tên đăng nhập có hai chữ số.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The password begins with capital A."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "capital A là chữ hoa A. Nghĩa: Mật khẩu bắt đầu bằng chữ A in hoa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "There is no space after the dot."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "space là dấu cách. Nghĩa: Không có khoảng trắng sau dấu chấm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Read the slash in the web address."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "slash là dấu /, không phải dash. Nghĩa: Đọc dấu gạch chéo trong địa chỉ web.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T02: Dấu nào xuất hiện trong địa chỉ?",
+      "correct_answers": [
+        "underscore"
+      ],
+      "options": [
+        "underscore",
+        "dash"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Người nói dùng từ underscore. Hãy nghe lại lượt T02, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T10: Dấu gạch nào được đọc?",
+      "correct_answers": [
+        "slash"
+      ],
+      "options": [
+        "slash",
+        "dash"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "slash là dấu /, dash là dấu -. Hãy nghe lại lượt T10, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "underscore",
+      "pos": "noun",
+      "meaning_vi": "dấu gạch dưới",
+      "example_en": "Write tom underscore gray at example dot org.",
+      "example_vi": "Viết tom_gray@example.org.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "website",
+      "pos": "noun",
+      "meaning_vi": "trang web",
+      "example_en": "The website is learn dash fast dot example.",
+      "example_vi": "Tên website đọc là learn-fast.example.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "username",
+      "pos": "noun",
+      "meaning_vi": "tên đăng nhập",
+      "example_en": "The username has two numbers.",
+      "example_vi": "Tên đăng nhập có hai chữ số.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "slash",
+      "pos": "noun",
+      "meaning_vi": "dấu gạch chéo",
+      "example_en": "Read the slash in the web address.",
+      "example_vi": "Đọc dấu gạch chéo trong địa chỉ web.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c328902563e2ae8ecfbcc791424e485bfbc3493b17308bb79256748430fdaf77",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

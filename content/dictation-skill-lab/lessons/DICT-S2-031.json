@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-031",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Museum Tours",
+  "title": "Restoration Workshop: A New Visitor Circuit",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Museum Tours ở mức L4, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Before you join today's restoration workshop, I need to explain a few changes to the museum's visitor route. Some of the spaces shown on last month's printed leaflet are temporarily closed.",
+      "translation_vi": "Trước khi tham gia buổi thực hành phục chế hôm nay, tôi cần giải thích vài thay đổi trong lộ trình tham quan bảo tàng. Một số không gian ghi trên tờ hướng dẫn tháng trước tạm đóng cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The main exhibition still opens at nine, but visitors booked for the workshop should collect a green wristband from the education desk rather than the ticket counter.",
+      "translation_vi": "Khu trưng bày chính vẫn mở lúc chín giờ, nhưng khách đăng ký buổi thực hành cần nhận vòng tay xanh tại bàn giáo dục thay vì quầy vé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We originally planned to meet in the ceramics room. However, the air-conditioning system there is being repaired, so the introductory talk will take place in the glass gallery on the first floor.",
+      "translation_vi": "Ban đầu chúng tôi dự định tập trung tại phòng gốm. Tuy nhiên hệ thống điều hòa ở đó đang sửa nên phần giới thiệu sẽ diễn ra tại phòng trưng bày kính ở tầng một.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please arrive by ten twenty. Although the demonstration begins at ten forty, staff must first distribute protective gloves and check that everyone has signed the visitor register.",
+      "translation_vi": "Vui lòng có mặt trước mười giờ hai mươi. Dù phần trình diễn bắt đầu lúc mười giờ bốn mươi, nhân viên cần phát găng tay bảo hộ và kiểm tra sổ đăng ký trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "During the session, you'll handle replicas rather than the original objects, because some of the collection is too fragile for regular contact. A conservator will explain how each replica was made.",
+      "translation_vi": "Trong buổi học, các bạn sẽ cầm bản sao thay vì hiện vật gốc vì một số đồ sưu tập quá mong manh để thường xuyên tiếp xúc. Một chuyên viên bảo quản sẽ giải thích cách tạo từng bản sao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Photography is permitted in the introduction area, but not at the examination tables. Please also leave drinks inside your bag until the group moves to the café at the end.",
+      "translation_vi": "Được chụp ảnh ở khu giới thiệu nhưng không được chụp tại bàn kiểm tra. Vui lòng cất đồ uống trong túi đến khi nhóm chuyển sang quán cà phê cuối buổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The workshop costs eighteen pounds; museum members receive a four-pound reduction. If you cannot attend, contact us before six this evening and we can transfer your booking to next Saturday.",
+      "translation_vi": "Buổi thực hành có giá mười tám bảng; hội viên bảo tàng được giảm bốn bảng. Nếu không thể tham dự, hãy liên hệ trước sáu giờ tối nay để chuyển đặt chỗ sang thứ Bảy tuần sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Collect a green wristband at the: ____",
+      "correct_answers": [
+        "education desk"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khu trưng bày chính vẫn mở lúc chín giờ, nhưng khách đăng ký buổi thực hành cần nhận vòng tay xanh tại bàn giáo dục thay vì quầy vé. Đáp án được nhắc trong đoạn T02: “education desk”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — The introduction has moved to the: ____",
+      "correct_answers": [
+        "glass gallery"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Ban đầu chúng tôi dự định tập trung tại phòng gốm. Tuy nhiên hệ thống điều hòa ở đó đang sửa nên phần giới thiệu sẽ diễn ra tại phòng trưng bày kính ở tầng một. Đáp án được nhắc trong đoạn T03: “glass gallery”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Arrive by: ____",
+      "correct_answers": [
+        "ten twenty"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Vui lòng có mặt trước mười giờ hai mươi. Dù phần trình diễn bắt đầu lúc mười giờ bốn mươi, nhân viên cần phát găng tay bảo hộ và kiểm tra sổ đăng ký trước. Đáp án được nhắc trong đoạn T04: “ten twenty”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — The demonstration starts at: ____",
+      "correct_answers": [
+        "ten forty"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Vui lòng có mặt trước mười giờ hai mươi. Dù phần trình diễn bắt đầu lúc mười giờ bốn mươi, nhân viên cần phát găng tay bảo hộ và kiểm tra sổ đăng ký trước. Đáp án được nhắc trong đoạn T04: “ten forty”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Participants handle?",
+      "correct_answers": [
+        "replicas"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Trong buổi học, các bạn sẽ cầm bản sao thay vì hiện vật gốc vì một số đồ sưu tập quá mong manh để thường xuyên tiếp xúc. Một chuyên viên bảo quản sẽ giải thích cách tạo từng bản sao. Đáp án được nhắc trong đoạn T05: “replicas”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Members receive a reduction of: ____",
+      "correct_answers": [
+        "four-pound"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Buổi thực hành có giá mười tám bảng; hội viên bảo tàng được giảm bốn bảng. Nếu không thể tham dự, hãy liên hệ trước sáu giờ tối nay để chuyển đặt chỗ sang thứ Bảy tuần sau. Đáp án được nhắc trong đoạn T07: “four-pound”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "We originally planned to meet in the ceramics room. However, the air-conditioning system there is being repaired, so the introductory talk will take place in the glass gallery on the first floor."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: We originally planned to meet in the ceramics room. However, the air-conditioning system there is being repaired, so the introductory talk will take place in the glass gallery on the first floor. Nghĩa: Ban đầu chúng tôi dự định tập trung tại phòng gốm. Tuy nhiên hệ thống điều hòa ở đó đang sửa nên phần giới thiệu sẽ diễn ra tại phòng trưng bày kính ở tầng một. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "During the session, you'll handle replicas rather than the original objects, because some of the collection is too fragile for regular contact. A conservator will explain how each replica was made."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: During the session, you'll handle replicas rather than the original objects, because some of the collection is too fragile for regular contact. A conservator will explain how each replica was made. Nghĩa: Trong buổi học, các bạn sẽ cầm bản sao thay vì hiện vật gốc vì một số đồ sưu tập quá mong manh để thường xuyên tiếp xúc. Một chuyên viên bảo quản sẽ giải thích cách tạo từng bản sao. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: The main exhibition still opens at nine, but visitors booked for the workshop should collect a green ____ from the education desk rather than the ticket counter.",
+      "correct_answers": [
+        "wristband"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “wristband” xuất hiện trong câu gốc: The main exhibition still opens at nine, but visitors booked for the workshop should collect a green wristband from the education desk rather than the ticket counter. Nghĩa: Khu trưng bày chính vẫn mở lúc chín giờ, nhưng khách đăng ký buổi thực hành cần nhận vòng tay xanh tại bàn giáo dục thay vì quầy vé.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "wristband",
+      "pos": "n.",
+      "meaning_vi": "vòng tay nhận diện",
+      "example_en": "The main exhibition still opens at nine, but visitors booked for the workshop should collect a green wristband from the education desk rather than the ticket counter.",
+      "example_vi": "Khu trưng bày chính vẫn mở lúc chín giờ, nhưng khách đăng ký buổi thực hành cần nhận vòng tay xanh tại bàn giáo dục thay vì quầy vé.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "replicas",
+      "pos": "n.",
+      "meaning_vi": "các bản sao",
+      "example_en": "During the session, you'll handle replicas rather than the original objects, because some of the collection is too fragile for regular contact. A conservator will explain how each replica was made.",
+      "example_vi": "Trong buổi học, các bạn sẽ cầm bản sao thay vì hiện vật gốc vì một số đồ sưu tập quá mong manh để thường xuyên tiếp xúc. Một chuyên viên bảo quản sẽ giải thích cách tạo từng bản sao.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "conservator",
+      "pos": "n.",
+      "meaning_vi": "chuyên viên bảo quản hiện vật",
+      "example_en": "During the session, you'll handle replicas rather than the original objects, because some of the collection is too fragile for regular contact. A conservator will explain how each replica was made.",
+      "example_vi": "Trong buổi học, các bạn sẽ cầm bản sao thay vì hiện vật gốc vì một số đồ sưu tập quá mong manh để thường xuyên tiếp xúc. Một chuyên viên bảo quản sẽ giải thích cách tạo từng bản sao.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "fragile",
+      "pos": "adj.",
+      "meaning_vi": "dễ vỡ, mong manh",
+      "example_en": "During the session, you'll handle replicas rather than the original objects, because some of the collection is too fragile for regular contact. A conservator will explain how each replica was made.",
+      "example_vi": "Trong buổi học, các bạn sẽ cầm bản sao thay vì hiện vật gốc vì một số đồ sưu tập quá mong manh để thường xuyên tiếp xúc. Một chuyên viên bảo quản sẽ giải thích cách tạo từng bản sao.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "dfb912480bf2f9264050d72e9583d03ddb549ff48e0978b25cc23aeb35736dde",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-049",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Renting Accommodation",
+  "title": "Moving into a Shared Student House",
+  "learning_objectives_vi": [
+    "Rèn natural speed & paraphrase qua tình huống: A prospective tenant asks about a student house and its contract requirements.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Stonebridge Student Housing. I'm Jack. What would you like to know?",
+      "translation_vi": "Xin chào, Stonebridge Student Housing. Tôi là Jack. Bạn cần biết gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm interested in the room on Orchard Lane, but the advert isn't clear about the contract.",
+      "translation_vi": "Tôi quan tâm phòng trên đường Orchard, nhưng quảng cáo chưa rõ hợp đồng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "It's a nine-month tenancy, starting on the first of September. You can renew it if the owner agrees.",
+      "translation_vi": "Hợp đồng thuê chín tháng, bắt đầu ngày 1 tháng Chín. Có thể gia hạn nếu chủ đồng ý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I had hoped for twelve months, but nine might work. How much is the rent?",
+      "translation_vi": "Tôi đã hy vọng thuê mười hai tháng, nhưng chín tháng cũng có thể được. Giá thuê bao nhiêu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "It's five hundred and twenty pounds per month. That includes water and broadband, but heating is separate.",
+      "translation_vi": "Giá 520 bảng mỗi tháng. Đã gồm nước và internet băng rộng, nhưng tiền sưởi trả riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Is the kitchen shared with all the other tenants?",
+      "translation_vi": "Nhà bếp dùng chung với tất cả người thuê khác à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes, four students share the kitchen. Your bedroom has its own bathroom.",
+      "translation_vi": "Đúng, bốn sinh viên dùng chung bếp. Phòng ngủ của bạn có phòng tắm riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Do I need someone to guarantee the rent? My parents live abroad.",
+      "translation_vi": "Tôi có cần người bảo lãnh tiền thuê không? Bố mẹ tôi sống ở nước ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We normally ask for a UK guarantor, but an advance payment of two months' rent is another option.",
+      "translation_vi": "Thông thường cần người bảo lãnh ở Anh, nhưng trả trước hai tháng tiền thuê là phương án khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll consider the advance payment. Can I inspect the room before signing?",
+      "translation_vi": "Tôi sẽ cân nhắc trả trước. Tôi có thể xem phòng trước khi ký không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Of course. We have a viewing on Wednesday at five, followed by a tour of the shared areas.",
+      "translation_vi": "Dĩ nhiên. Có lịch xem phòng thứ Tư lúc năm giờ, sau đó tham quan khu vực chung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "That suits me. Could you email a copy of the tenancy agreement first?",
+      "translation_vi": "Giờ đó hợp. Anh có thể gửi email bản hợp đồng thuê trước không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Certainly. I'll send it in a few minutes.",
+      "translation_vi": "Được. Tôi gửi trong vài phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Tenancy duration: ____ months",
+      "correct_answers": [
+        "9",
+        "nine"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Hợp đồng là chín tháng; mười hai tháng chỉ là mong muốn ban đầu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Monthly rent: £____",
+      "correct_answers": [
+        "520"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Giá thuê là 520 bảng mỗi tháng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "ielts_section1_practice"
+      ],
+      "practice_aliases": [
+        "five hundred and twenty"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Bill not included: ____",
+      "correct_answers": [
+        "heating"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tiền sưởi trả riêng; nước và broadband đã gồm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Shared kitchen users: ____ students",
+      "correct_answers": [
+        "4",
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Có bốn sinh viên dùng chung bếp.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "What can replace the UK guarantor?",
+      "correct_answers": [
+        "A two-month advance payment"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Có thể trả trước hai tháng tiền thuê thay cho người bảo lãnh.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "A two-month advance payment",
+        "A letter from a flatmate",
+        "A six-month contract"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Viewing day: ____",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Lịch xem phòng vào thứ Tư.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật B (lượt T08).",
+      "correct_answers": [
+        "Do I need someone to guarantee the rent? My parents live abroad."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nội dung cần chép: Do I need someone to guarantee the rent? My parents live abroad. Nghĩa: Tôi có cần người bảo lãnh tiền thuê không? Bố mẹ tôi sống ở nước ngoài. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: We normally ask for a UK guarantor, but an ____ of two months' rent is another option.",
+      "correct_answers": [
+        "advance payment"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “advance payment”. Câu đầy đủ: We normally ask for a UK guarantor, but an advance payment of two months' rent is another option.. Nghĩa: Thông thường cần người bảo lãnh ở Anh, nhưng trả trước hai tháng tiền thuê là phương án khác.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "tenancy_length",
+        "utilities",
+        "guarantor",
+        "viewing"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "tenancy",
+      "pos": "noun",
+      "meaning_vi": "thời hạn thuê nhà",
+      "example_en": "It's a nine-month tenancy, starting on the first of September. You can renew it if the owner agrees.",
+      "example_vi": "Hợp đồng thuê chín tháng, bắt đầu ngày 1 tháng Chín. Có thể gia hạn nếu chủ đồng ý.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "broadband",
+      "pos": "noun",
+      "meaning_vi": "internet băng rộng",
+      "example_en": "It's five hundred and twenty pounds per month. That includes water and broadband, but heating is separate.",
+      "example_vi": "Giá 520 bảng mỗi tháng. Đã gồm nước và internet băng rộng, nhưng tiền sưởi trả riêng.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "guarantor",
+      "pos": "noun",
+      "meaning_vi": "người bảo lãnh",
+      "example_en": "We normally ask for a UK guarantor, but an advance payment of two months' rent is another option.",
+      "example_vi": "Thông thường cần người bảo lãnh ở Anh, nhưng trả trước hai tháng tiền thuê là phương án khác.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "advance payment",
+      "pos": "noun phrase",
+      "meaning_vi": "khoản trả trước",
+      "example_en": "We normally ask for a UK guarantor, but an advance payment of two months' rent is another option.",
+      "example_vi": "Thông thường cần người bảo lãnh ở Anh, nhưng trả trước hai tháng tiền thuê là phương án khác.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "fda605e9fc599964076acb19bc098973c9f9fb19f60254ba301d586d366cb257",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

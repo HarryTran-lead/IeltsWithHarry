@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-049",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Student Presentations",
+  "title": "Student Presentations – Microplastics in Two Bays",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Hannah – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ravi – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Ella – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our marine science presentation compares microplastic particles found in fish from two bays. I was going to show total particles, but one bay had twice as many fish sampled.",
+      "translation_vi": "Bài thuyết trình khoa học biển so vi nhựa trong cá ở hai vịnh. Mình định biểu diễn tổng số hạt nhưng một vịnh lấy mẫu nhiều cá gấp đôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Then the totals aren't comparable. We should report particles per fish and show how variable the observations are, not imply the busier sampling effort means more contamination.",
+      "translation_vi": "Vậy tổng không so trực tiếp được. Ta nên báo số hạt trên mỗi con cá và thể hiện độ biến thiên, không ngụ ý lấy mẫu nhiều là nhiễm bẩn nhiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "I've checked the spreadsheet. A few fish had extremely high counts, so the mean is much higher than the median. We should discuss both rather than hide the unusual observations.",
+      "translation_vi": "Mình xem bảng tính rồi. Một số cá có số hạt cực cao khiến trung bình cao hơn trung vị nhiều. Ta nên bàn cả hai thay vì giấu điểm bất thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The draft graph starts its vertical axis at eight, which makes a small difference between bays appear enormous. We ought to start at zero for a simple bar chart.",
+      "translation_vi": "Biểu đồ nháp bắt đầu trục dọc tại tám làm chênh lệch nhỏ giữa hai vịnh trông khổng lồ. Với biểu đồ cột đơn giản, nên bắt đầu từ số không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Agreed, but let's not turn every result into a bar. A dot plot could display individual fish and make the limited sample visible. That may be more honest than two polished averages.",
+      "translation_vi": "Đồng ý, nhưng đừng biến mọi kết quả thành cột. Biểu đồ chấm có thể thể hiện từng con cá và cho thấy mẫu hạn chế, trung thực hơn hai trung bình đẹp mắt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "There's another complication: fish from Bay A were smaller on average. We should avoid claiming the bay itself caused the difference without considering body size and feeding patterns.",
+      "translation_vi": "Còn một vấn đề: cá ở vịnh A trung bình nhỏ hơn. Ta không nên khẳng định chính vịnh gây khác biệt khi chưa xét kích thước và kiểu ăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "For the discussion section, I can state that a size-adjusted analysis would be useful, but our dataset is too small for a confident causal comparison. We can explain the limitation clearly.",
+      "translation_vi": "Phần thảo luận mình có thể nói phân tích điều chỉnh theo kích thước sẽ hữu ích, nhưng dữ liệu quá ít để so nguyên nhân tự tin. Ta giải thích giới hạn rõ ràng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "The tutor asked us to distinguish detection from exposure. Finding particles in a sample doesn't by itself tell us how long the fish encountered them or what ecological effect followed.",
+      "translation_vi": "Giảng viên yêu cầu phân biệt phát hiện với mức phơi nhiễm. Tìm thấy hạt trong mẫu không tự nói cá gặp chúng bao lâu hay tác động sinh thái sau đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "So our final display will show individual observations, a zero-based scale and the sample-size warning. We'll discuss possible explanations without presenting association as proof of cause.",
+      "translation_vi": "Vậy bản cuối sẽ hiện từng quan sát, trục bắt đầu từ không và cảnh báo cỡ mẫu. Ta sẽ bàn cách giải thích khả dĩ nhưng không coi tương quan là bằng chứng nhân quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why are raw particle totals from the two bays not comparable?",
+      "correct_answers": [
+        "One bay had more fish sampled than the other"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Ravi nói: “Vậy tổng không so trực tiếp được. Ta nên báo số hạt trên mỗi con cá và thể hiện độ biến thiên, không ngụ ý lấy mẫu nhiều là nhiễm bẩn nhiều.” Đáp án “One bay had more fish sampled than the other” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "A few large observations raise the mean",
+        "One bay had more fish sampled than the other",
+        "The fish sizes differ between the two bays"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "A few extreme values make the mean higher than the ____ .",
+      "correct_answers": [
+        "median"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Mình xem bảng tính rồi. Một số cá có số hạt cực cao khiến trung bình cao hơn trung vị nhiều. Ta nên bàn cả hai thay vì giấu điểm bất thường.” Cụm cần điền nghe đúng nguyên văn là “median”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes a dot plot for individual fish observations?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người nói Ravi (Speaker B) đưa ra ý này tại T05: “Đồng ý, nhưng đừng biến mọi kết quả thành cột. Biểu đồ chấm có thể thể hiện từng con cá và cho thấy mẫu hạn chế, trung thực hơn hai trung bình đẹp mắt.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why is the claim that a bay caused the difference premature?",
+      "correct_answers": [
+        "Fish size and feeding patterns may also matter"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Hannah nói: “Phần thảo luận mình có thể nói phân tích điều chỉnh theo kích thước sẽ hữu ích, nhưng dữ liệu quá ít để so nguyên nhân tự tin. Ta giải thích giới hạn rõ ràng.” Đáp án “Fish size and feeding patterns may also matter” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The chart displays a causal relationship already established",
+        "Fish size and feeding patterns may also matter",
+        "All individual fish were measured at the same site"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The tutor says detection must be distinguished from ____ .",
+      "correct_answers": [
+        "exposure"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Giảng viên yêu cầu phân biệt phát hiện với mức phơi nhiễm. Tìm thấy hạt trong mẫu không tự nói cá gặp chúng bao lâu hay tác động sinh thái sau đó.” Cụm cần điền nghe đúng nguyên văn là “exposure”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What kind of scale will the final display use?",
+      "correct_answers": [
+        "zero-based"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy bản cuối sẽ hiện từng quan sát, trục bắt đầu từ không và cảnh báo cỡ mẫu. Ta sẽ bàn cách giải thích khả dĩ nhưng không coi tương quan là bằng chứng nhân quả.” Trả lời ngắn theo chi tiết “zero-based”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "The draft graph starts its vertical axis at eight, which makes a small difference between bays appear enormous. We ought to start at zero for a simple bar chart."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “The draft graph starts its vertical axis at eight, which makes a small difference between bays appear enormous. We ought to start at zero for a simple bar chart.”\nBản dịch: Biểu đồ nháp bắt đầu trục dọc tại tám làm chênh lệch nhỏ giữa hai vịnh trông khổng lồ. Với biểu đồ cột đơn giản, nên bắt đầu từ số không.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "For the discussion section, I can state that a size-adjusted analysis would be useful, but our dataset is too small for a confident causal comparison. We can explain the limitation clearly."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “For the discussion section, I can state that a size-adjusted analysis would be useful, but our dataset is too small for a confident causal comparison. We can explain the limitation clearly.”\nBản dịch: Phần thảo luận mình có thể nói phân tích điều chỉnh theo kích thước sẽ hữu ích, nhưng dữ liệu quá ít để so nguyên nhân tự tin. Ta giải thích giới hạn rõ ràng.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: Our marine science presentation compares ____ found in fish from two bays. I was going to show total particles, but one bay had twice as many fish sampled.",
+      "correct_answers": [
+        "microplastic particles"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “microplastic particles” nghĩa là các hạt vi nhựa. Đối chiếu: “Our marine science presentation compares microplastic particles found in fish from two bays. I was going to show total particles, but one bay had twice as many fish sampled.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "microplastic particles",
+      "pos": "n. phr.",
+      "meaning_vi": "các hạt vi nhựa",
+      "example_en": "Our marine science presentation compares microplastic particles found in fish from two bays. I was going to show total particles, but one bay had twice as many fish sampled.",
+      "example_vi": "Bài thuyết trình khoa học biển so vi nhựa trong cá ở hai vịnh. Mình định biểu diễn tổng số hạt nhưng một vịnh lấy mẫu nhiều cá gấp đôi.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "median",
+      "pos": "n.",
+      "meaning_vi": "trung vị",
+      "example_en": "I've checked the spreadsheet. A few fish had extremely high counts, so the mean is much higher than the median. We should discuss both rather than hide the unusual observations.",
+      "example_vi": "Mình xem bảng tính rồi. Một số cá có số hạt cực cao khiến trung bình cao hơn trung vị nhiều. Ta nên bàn cả hai thay vì giấu điểm bất thường.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "dot plot",
+      "pos": "n. phr.",
+      "meaning_vi": "biểu đồ chấm",
+      "example_en": "Agreed, but let's not turn every result into a bar. A dot plot could display individual fish and make the limited sample visible. That may be more honest than two polished averages.",
+      "example_vi": "Đồng ý, nhưng đừng biến mọi kết quả thành cột. Biểu đồ chấm có thể thể hiện từng con cá và cho thấy mẫu hạn chế, trung thực hơn hai trung bình đẹp mắt.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "causal comparison",
+      "pos": "n. phr.",
+      "meaning_vi": "so sánh nhằm suy luận nhân quả",
+      "example_en": "For the discussion section, I can state that a size-adjusted analysis would be useful, but our dataset is too small for a confident causal comparison. We can explain the limitation clearly.",
+      "example_vi": "Phần thảo luận mình có thể nói phân tích điều chỉnh theo kích thước sẽ hữu ích, nhưng dữ liệu quá ít để so nguyên nhân tự tin. Ta giải thích giới hạn rõ ràng.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "549ecb71d7012dbfd92d7592ebb551f2dbe20c1412be8c661ba7f2a9d4f3ae23",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

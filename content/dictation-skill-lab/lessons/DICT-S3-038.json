@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-038",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Internship Discussions",
+  "title": "Internship Discussions – Hospital Communication Internship",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Ivy – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Noah – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Rosa – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "During my hospital communications internship, the supervisor asked me to prepare a short case study about a patient-information campaign. I have photographs from the ward that would make it visually compelling.",
+      "translation_vi": "Trong kỳ thực tập truyền thông bệnh viện, người hướng dẫn yêu cầu mình làm nghiên cứu tình huống ngắn về chiến dịch thông tin bệnh nhân. Mình có ảnh trong khoa khiến bài hấp dẫn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Were the people in those photographs asked for permission? Hospital images can reveal identities even when names are removed, especially if room numbers and appointment boards are visible.",
+      "translation_vi": "Những người trong ảnh đã được xin phép chưa? Ảnh bệnh viện có thể lộ danh tính dù xóa tên, nhất là khi thấy số phòng và bảng lịch khám.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The communications policy requires written consent for identifiable photographs. It also says interns must not upload clinical material to personal cloud accounts, even temporarily for editing.",
+      "translation_vi": "Chính sách truyền thông đòi đồng ý bằng văn bản với ảnh có thể nhận diện. Nó còn cấm thực tập sinh tải tài liệu lâm sàng lên tài khoản đám mây cá nhân, kể cả để chỉnh tạm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Then I'll leave those pictures out. Could I use a diagram of the information flow instead, showing how reception staff hand out translated leaflets before appointments?",
+      "translation_vi": "Vậy mình bỏ ảnh. Mình có thể dùng sơ đồ luồng thông tin, cho thấy nhân viên lễ tân phát tờ hướng dẫn đã dịch trước cuộc hẹn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Yes, provided it shows the standard process rather than real patient records. We could also report aggregate leaflet counts without attaching any names, phone numbers or appointment times.",
+      "translation_vi": "Được, miễn sơ đồ phản ánh quy trình chung chứ không dùng hồ sơ bệnh nhân thật. Ta cũng có thể báo tổng số tờ phát mà không kèm tên, điện thoại hay giờ hẹn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Be cautious about the conclusion. If more people picked up a leaflet, that doesn't show they understood it. A short anonymous comprehension check would be more informative, if the ethics team approves.",
+      "translation_vi": "Hãy cẩn trọng khi kết luận. Nhiều người nhận tờ rơi không chứng tỏ họ hiểu. Kiểm tra hiểu bài ẩn danh ngắn sẽ hữu ích hơn nếu nhóm đạo đức duyệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I had planned to claim the campaign increased patient confidence, but we haven't measured confidence at all. I'll limit the case study to the distribution process and accessibility of translations.",
+      "translation_vi": "Mình định khẳng định chiến dịch tăng sự tự tin của bệnh nhân, nhưng chưa đo điều đó. Mình sẽ giới hạn nghiên cứu ở quy trình phát tài liệu và khả năng tiếp cận bản dịch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "The supervisor mentioned that the final draft must stay on the hospital's approved workstation. Can we ask for a review meeting on Thursday before anything is shared outside the department?",
+      "translation_vi": "Người hướng dẫn nói bản thảo cuối phải để trên máy đã phê duyệt của bệnh viện. Ta xin buổi duyệt thứ Năm trước khi chia sẻ ra ngoài khoa được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "That is the safest approach: a process diagram, anonymous counts and a departmental review. I'll help replace identifiable examples with fictional ones, clearly marked as illustrations rather than real patients.",
+      "translation_vi": "Đó là cách an toàn nhất: sơ đồ quy trình, số liệu ẩn danh và duyệt nội bộ. Mình sẽ giúp thay ví dụ có định danh bằng tình huống giả định, ghi rõ không phải bệnh nhân thật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why are hospital ward photographs potentially unsafe to use?",
+      "correct_answers": [
+        "They could identify patients through visual details"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Noah nói: “Những người trong ảnh đã được xin phép chưa? Ảnh bệnh viện có thể lộ danh tính dù xóa tên, nhất là khi thấy số phòng và bảng lịch khám.” Đáp án “They could identify patients through visual details” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "They could identify patients through visual details",
+        "The campaign includes several translations",
+        "The pictures were taken before the campaign"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Identifiable photographs require ____ consent.",
+      "correct_answers": [
+        "written"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Chính sách truyền thông đòi đồng ý bằng văn bản với ảnh có thể nhận diện. Nó còn cấm thực tập sinh tải tài liệu lâm sàng lên tài khoản đám mây cá nhân, kể cả để chỉnh tạm.” Cụm cần điền nghe đúng nguyên văn là “written”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes reporting anonymous leaflet counts?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người nói Noah (Speaker B) đưa ra ý này tại T05: “Được, miễn sơ đồ phản ánh quy trình chung chứ không dùng hồ sơ bệnh nhân thật. Ta cũng có thể báo tổng số tờ phát mà không kèm tên, điện thoại hay giờ hẹn.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why does Ivy revise the campaign's claimed impact?",
+      "correct_answers": [
+        "They have not measured patient confidence"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Ivy nói: “Mình định khẳng định chiến dịch tăng sự tự tin của bệnh nhân, nhưng chưa đo điều đó. Mình sẽ giới hạn nghiên cứu ở quy trình phát tài liệu và khả năng tiếp cận bản dịch.” Đáp án “They have not measured patient confidence” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "They have not measured patient confidence",
+        "The department has not approved a final poster",
+        "The number of leaflets was not recorded"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The final draft must remain on the hospital's approved ____ .",
+      "correct_answers": [
+        "workstation"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Người hướng dẫn nói bản thảo cuối phải để trên máy đã phê duyệt của bệnh viện. Ta xin buổi duyệt thứ Năm trước khi chia sẻ ra ngoài khoa được không?” Cụm cần điền nghe đúng nguyên văn là “workstation”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What kind of counts can be included in the final case study?",
+      "correct_answers": [
+        "anonymous counts"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Đó là cách an toàn nhất: sơ đồ quy trình, số liệu ẩn danh và duyệt nội bộ. Mình sẽ giúp thay ví dụ có định danh bằng tình huống giả định, ghi rõ không phải bệnh nhân thật.” Trả lời ngắn theo chi tiết “anonymous counts”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Then I'll leave those pictures out. Could I use a diagram of the information flow instead, showing how reception staff hand out translated leaflets before appointments?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “Then I'll leave those pictures out. Could I use a diagram of the information flow instead, showing how reception staff hand out translated leaflets before appointments?”\nBản dịch: Vậy mình bỏ ảnh. Mình có thể dùng sơ đồ luồng thông tin, cho thấy nhân viên lễ tân phát tờ hướng dẫn đã dịch trước cuộc hẹn không?\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I had planned to claim the campaign increased patient confidence, but we haven't measured confidence at all. I'll limit the case study to the distribution process and accessibility of translations."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “I had planned to claim the campaign increased patient confidence, but we haven't measured confidence at all. I'll limit the case study to the distribution process and accessibility of translations.”\nBản dịch: Mình định khẳng định chiến dịch tăng sự tự tin của bệnh nhân, nhưng chưa đo điều đó. Mình sẽ giới hạn nghiên cứu ở quy trình phát tài liệu và khả năng tiếp cận bản dịch.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T03 rồi điền đúng phần thiếu: The communications policy requires ____ for identifiable photographs. It also says interns must not upload clinical material to personal cloud accounts, even temporarily for editing.",
+      "correct_answers": [
+        "written consent"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “written consent” nghĩa là sự đồng ý bằng văn bản. Đối chiếu: “The communications policy requires written consent for identifiable photographs. It also says interns must not upload clinical material to personal cloud accounts, even temporarily for editing.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "written consent",
+      "pos": "n. phr.",
+      "meaning_vi": "sự đồng ý bằng văn bản",
+      "example_en": "The communications policy requires written consent for identifiable photographs. It also says interns must not upload clinical material to personal cloud accounts, even temporarily for editing.",
+      "example_vi": "Chính sách truyền thông đòi đồng ý bằng văn bản với ảnh có thể nhận diện. Nó còn cấm thực tập sinh tải tài liệu lâm sàng lên tài khoản đám mây cá nhân, kể cả để chỉnh tạm.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "aggregate",
+      "pos": "adj.",
+      "meaning_vi": "tổng hợp",
+      "example_en": "Yes, provided it shows the standard process rather than real patient records. We could also report aggregate leaflet counts without attaching any names, phone numbers or appointment times.",
+      "example_vi": "Được, miễn sơ đồ phản ánh quy trình chung chứ không dùng hồ sơ bệnh nhân thật. Ta cũng có thể báo tổng số tờ phát mà không kèm tên, điện thoại hay giờ hẹn.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "comprehension check",
+      "pos": "n. phr.",
+      "meaning_vi": "bài kiểm tra hiểu nội dung",
+      "example_en": "Be cautious about the conclusion. If more people picked up a leaflet, that doesn't show they understood it. A short anonymous comprehension check would be more informative, if the ethics team approves.",
+      "example_vi": "Hãy cẩn trọng khi kết luận. Nhiều người nhận tờ rơi không chứng tỏ họ hiểu. Kiểm tra hiểu bài ẩn danh ngắn sẽ hữu ích hơn nếu nhóm đạo đức duyệt.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "identifiable",
+      "pos": "adj.",
+      "meaning_vi": "có thể nhận diện",
+      "example_en": "The communications policy requires written consent for identifiable photographs. It also says interns must not upload clinical material to personal cloud accounts, even temporarily for editing.",
+      "example_vi": "Chính sách truyền thông đòi đồng ý bằng văn bản với ảnh có thể nhận diện. Nó còn cấm thực tập sinh tải tài liệu lâm sàng lên tài khoản đám mây cá nhân, kể cả để chỉnh tạm.",
+      "source_turn_id": "T03"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "1aa03a912e17db8c0964b353e40360988427c8fa28979f9e89fdeee658fd2e1a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

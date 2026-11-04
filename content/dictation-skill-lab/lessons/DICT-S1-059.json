@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-059",
+  "status": "draft",
+  "level": "L5",
+  "section": 1,
+  "topic": "Library Membership",
+  "title": "Booking a Quiet Study Room",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A library user reserves a room with special conditions.",
+    "Nhận diện natural speed & paraphrase và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Eastborough Library bookings, how can I assist?",
+      "translation_vi": "Bộ phận đặt chỗ thư viện Eastborough xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I need a quiet room to record an interview for a university project.",
+      "translation_vi": "Tôi cần phòng yên tĩnh để ghi âm cuộc phỏng vấn cho dự án đại học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We have individual study booths, but recording equipment isn't permitted in those.",
+      "translation_vi": "Chúng tôi có buồng học cá nhân, nhưng không được dùng thiết bị ghi âm ở đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Is there another space I could use?",
+      "translation_vi": "Có không gian nào khác tôi dùng được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The media room allows recording, provided you bring headphones and keep the door closed.",
+      "translation_vi": "Phòng truyền thông cho ghi âm, miễn là mang tai nghe và đóng cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That sounds suitable. Is it available on Tuesday afternoon?",
+      "translation_vi": "Nghe phù hợp đấy. Chiều thứ Ba có phòng trống không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "It's already booked from one until three, but you could have it from three thirty to five.",
+      "translation_vi": "Phòng đã có người đặt từ một đến ba giờ, nhưng bạn có thể dùng từ 3:30 đến 5 giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "An hour and a half is enough. Does it cost anything for students?",
+      "translation_vi": "Một tiếng rưỡi là đủ. Sinh viên có phải trả phí không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Not if you show your student card. Otherwise, the fee is nine pounds per hour.",
+      "translation_vi": "Miễn phí nếu bạn xuất trình thẻ sinh viên. Nếu không, phí là chín bảng mỗi giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll bring my card. Where do I collect the room key?",
+      "translation_vi": "Tôi sẽ mang thẻ. Tôi lấy chìa khóa phòng ở đâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "At the help desk on the first floor, beside the printers. Please arrive five minutes early.",
+      "translation_vi": "Tại quầy hỗ trợ tầng một, cạnh máy in. Hãy đến sớm năm phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Thank you. Please reserve that time for me.",
+      "translation_vi": "Cảm ơn. Hãy đặt khung giờ đó giúp tôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Recording not allowed in individual study ____",
+      "correct_answers": [
+        "booths"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Không được ghi âm trong buồng học cá nhân.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "Which room can be used for recording?",
+      "correct_answers": [
+        "media"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phòng media mới cho phép ghi âm.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "individual",
+        "media",
+        "archive"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Users must bring ____",
+      "correct_answers": [
+        "headphones"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Điều kiện là mang tai nghe và đóng cửa.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Room available from ____",
+      "correct_answers": [
+        "three thirty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Phòng có khách tới 3 giờ, sau đó trống từ 3:30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Free access requires a student ____",
+      "correct_answers": [
+        "card"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Sinh viên có thẻ thì không bị thu phí.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Room key collected at the help ____",
+      "correct_answers": [
+        "desk"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Lấy chìa khóa tại quầy hỗ trợ tầng một.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "The media room allows recording, provided you bring headphones and keep the door closed."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The media room allows recording, provided you bring headphones and keep the door closed. Nghĩa: Phòng truyền thông cho ghi âm, miễn là mang tai nghe và đóng cửa. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: We have individual ____, but recording equipment isn't permitted in those.",
+      "correct_answers": [
+        "study booths"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "study booths: buồng học cá nhân. Câu gốc: We have individual study booths, but recording equipment isn't permitted in those.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "paraphrase",
+        "room_booking",
+        "conditions",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "study booths",
+      "pos": "phrase",
+      "meaning_vi": "buồng học cá nhân",
+      "example_en": "We have individual study booths, but recording equipment isn't permitted in those.",
+      "example_vi": "Chúng tôi có buồng học cá nhân, nhưng không được dùng thiết bị ghi âm ở đó.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "media room",
+      "pos": "phrase",
+      "meaning_vi": "phòng truyền thông",
+      "example_en": "The media room allows recording, provided you bring headphones and keep the door closed.",
+      "example_vi": "Phòng truyền thông cho ghi âm, miễn là mang tai nghe và đóng cửa.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "student card",
+      "pos": "phrase",
+      "meaning_vi": "thẻ sinh viên",
+      "example_en": "Not if you show your student card. Otherwise, the fee is nine pounds per hour.",
+      "example_vi": "Miễn phí nếu bạn xuất trình thẻ sinh viên. Nếu không, phí là chín bảng mỗi giờ.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "help desk",
+      "pos": "phrase",
+      "meaning_vi": "quầy hỗ trợ",
+      "example_en": "At the help desk on the first floor, beside the printers. Please arrive five minutes early.",
+      "example_vi": "Tại quầy hỗ trợ tầng một, cạnh máy in. Hãy đến sớm năm phút.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "11bcb9b41c565e2207ac442b5e49e8f1504ce027cab51b0091dd531f40945c05",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

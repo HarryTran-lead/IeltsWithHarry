@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-025",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Transport Information",
+  "title": "Revised Services at Westhaven Station",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Transport Information và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Passengers travelling through Westhaven Station should listen carefully to the following update. Engineering work has affected several services, but the station itself remains open.",
+      "translation_vi": "Hành khách đi qua ga Westhaven lưu ý cập nhật sau. Việc sửa chữa ảnh hưởng vài chuyến nhưng ga vẫn mở.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The ten ten express to Northfield will leave from platform four, rather than platform two. This platform change does not affect the departure time.",
+      "translation_vi": "Tàu nhanh 10:10 đi Northfield rời sân ga bốn thay vì sân ga hai. Giờ khởi hành không đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The local service to Bayport is delayed by twenty-five minutes because a signalling system needs inspection. Passengers should remain in the waiting area until a new boarding announcement.",
+      "translation_vi": "Tàu địa phương đi Bayport trễ hai mươi lăm phút vì hệ thống tín hiệu cần kiểm tra. Hành khách nên chờ thông báo lên tàu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A replacement bus will carry passengers from Oakridge to Millford during the afternoon. The bus stop is outside the western exit, beside the taxi rank.",
+      "translation_vi": "Buổi chiều, xe buýt thay thế chở khách từ Oakridge đến Millford. Trạm xe ở ngoài cửa tây, cạnh bến taxi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Customers with bicycles may use the replacement bus only when space is available. Wheelchair users will be offered a separate accessible vehicle if required.",
+      "translation_vi": "Khách mang xe đạp chỉ được lên xe thay thế khi còn chỗ. Người dùng xe lăn có xe tiếp cận riêng khi cần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The information desk closes at six forty-five, although the ticket machines operate throughout the evening. Please check your journey online before leaving home.",
+      "translation_vi": "Quầy thông tin đóng lúc 6:45, nhưng máy bán vé hoạt động cả tối. Hãy kiểm tra chuyến trực tuyến trước khi rời nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We initially expected the repairs to finish on Friday, but engineers now believe normal services will return on Monday morning. The updated timetable will be released on Sunday.",
+      "translation_vi": "Ban đầu dự kiến sửa xong thứ Sáu nhưng kỹ sư nay cho rằng tàu bình thường trở lại sáng thứ Hai. Thời khóa biểu mới công bố Chủ nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "If you have already bought a ticket for a cancelled train, you may request a full refund. Passengers who choose to travel on a later service do not need to purchase another ticket.",
+      "translation_vi": "Nếu đã mua vé tàu bị hủy, bạn có thể xin hoàn tiền toàn bộ. Đi chuyến muộn hơn thì không cần mua vé mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We apologise for the inconvenience and ask passengers to allow additional travel time, especially those connecting to flights or long-distance coaches.",
+      "translation_vi": "Chúng tôi xin lỗi về bất tiện và mong hành khách dự phòng thêm thời gian, nhất là người nối chuyến bay hoặc xe đường dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Northfield express departure platform: ____",
+      "correct_answers": [
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chuyển từ sân ga hai sang sân ga bốn.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Bayport delay in minutes: ____",
+      "correct_answers": [
+        "twenty-five"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tàu Bayport trễ hai mươi lăm phút.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Replacement bus stop at western: ____",
+      "correct_answers": [
+        "exit"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Trạm xe thay thế ngoài cửa phía tây.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Information desk closes at: ____",
+      "correct_answers": [
+        "six forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Quầy đóng lúc 6:45.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "When are regular train services expected to resume?",
+      "correct_answers": [
+        "Monday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tàu bình thường trở lại thứ Hai thay vì thứ Sáu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "distractor"
+      ],
+      "options": [
+        "Friday",
+        "Sunday",
+        "Monday"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Refund amount for a cancelled train: ____",
+      "correct_answers": [
+        "full"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Được hoàn toàn bộ vé.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Customers with bicycles may use the replacement bus only when space is available. Wheelchair users will be offered a separate accessible vehicle if required."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Customers with bicycles may use the replacement bus only when space is available. Wheelchair users will be offered a separate accessible vehicle if required. Nghĩa: Khách mang xe đạp chỉ được lên xe thay thế khi còn chỗ. Người dùng xe lăn có xe tiếp cận riêng khi cần. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: The ten ten express to Northfield will leave from platform four, rather than platform two. This platform change does not affect the ____ time.",
+      "correct_answers": [
+        "departure"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "departure: giờ khởi hành. Ngữ cảnh: Tàu nhanh 10:10 đi Northfield rời sân ga bốn thay vì sân ga hai. Giờ khởi hành không đổi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "departure",
+      "pos": "n.",
+      "meaning_vi": "giờ khởi hành",
+      "example_en": "The ten ten express to Northfield will leave from platform four, rather than platform two. This platform change does not affect the departure time.",
+      "example_vi": "Tàu nhanh 10:10 đi Northfield rời sân ga bốn thay vì sân ga hai. Giờ khởi hành không đổi.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "platform",
+      "pos": "n.",
+      "meaning_vi": "sân ga",
+      "example_en": "The ten ten express to Northfield will leave from platform four, rather than platform two. This platform change does not affect the departure time.",
+      "example_vi": "Tàu nhanh 10:10 đi Northfield rời sân ga bốn thay vì sân ga hai. Giờ khởi hành không đổi.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "bus stop",
+      "pos": "n. phr.",
+      "meaning_vi": "trạm xe buýt",
+      "example_en": "A replacement bus will carry passengers from Oakridge to Millford during the afternoon. The bus stop is outside the western exit, beside the taxi rank.",
+      "example_vi": "Buổi chiều, xe buýt thay thế chở khách từ Oakridge đến Millford. Trạm xe ở ngoài cửa tây, cạnh bến taxi.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "timetable",
+      "pos": "n.",
+      "meaning_vi": "thời khóa biểu",
+      "example_en": "We initially expected the repairs to finish on Friday, but engineers now believe normal services will return on Monday morning. The updated timetable will be released on Sunday.",
+      "example_vi": "Ban đầu dự kiến sửa xong thứ Sáu nhưng kỹ sư nay cho rằng tàu bình thường trở lại sáng thứ Hai. Thời khóa biểu mới công bố Chủ nhật.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "9c6506c72878758fde8ecfdc3082c7aeb21a5b241b64b9eb940ccb5bd858cdce",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

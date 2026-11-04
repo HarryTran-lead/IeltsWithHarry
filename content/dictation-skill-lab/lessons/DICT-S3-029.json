@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-029",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Dissertation Planning",
+  "title": "Dissertation Planning: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Emma – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Peter – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Mira – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "My dissertation proposal focuses on how international students use informal language in group work, but the supervisor thinks the topic is too broad.",
+      "translation_vi": "Đề cương luận văn của mình nói về cách sinh viên quốc tế dùng ngôn ngữ thân mật khi làm nhóm, nhưng người hướng dẫn thấy quá rộng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Could you narrow it to how students request clarification? That would give you a specific interaction to examine.",
+      "translation_vi": "Bạn có thể thu hẹp vào cách sinh viên yêu cầu giải thích lại không? Như vậy có tương tác cụ thể để nghiên cứu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "It's a promising idea, but how will you obtain recordings? You can't simply record classmates without their informed consent.",
+      "translation_vi": "Ý tưởng hứa hẹn, nhưng bạn lấy bản ghi thế nào? Không thể tự ý ghi bạn cùng lớp khi chưa có đồng ý được thông tin đầy đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I was considering asking lecturers for recordings from previous seminars, though those students never agreed to join my project.",
+      "translation_vi": "Mình từng tính xin giảng viên bản ghi seminar cũ, dù các sinh viên đó chưa đồng ý tham gia dự án của mình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That would raise serious ethical problems. Why not recruit volunteers for a new, clearly explained discussion task?",
+      "translation_vi": "Việc đó gây vấn đề đạo đức nghiêm trọng. Sao không tuyển tình nguyện viên cho nhiệm vụ thảo luận mới, được giải thích rõ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Even then, students may feel pressured if their own lecturer invites them. Recruitment should happen through a neutral announcement.",
+      "translation_vi": "Ngay cả vậy, sinh viên có thể thấy bị ép nếu giảng viên của họ mời. Nên tuyển bằng thông báo trung lập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Good point. I could post a voluntary invitation on the student noticeboard and exclude anyone I supervise as a teaching assistant.",
+      "translation_vi": "Đúng. Mình có thể đăng lời mời tự nguyện ở bảng tin sinh viên và không tuyển ai mình đang trợ giảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Will you analyse the language quantitatively, counting clarification requests, or qualitatively, examining how speakers respond to them?",
+      "translation_vi": "Bạn sẽ phân tích định lượng bằng cách đếm lần yêu cầu làm rõ, hay định tính qua cách người nói phản hồi?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "At first I wanted both, but a detailed conversation analysis with six small groups might be more feasible than a large statistical comparison.",
+      "translation_vi": "Ban đầu mình muốn cả hai, nhưng phân tích hội thoại chi tiết với sáu nhóm nhỏ có thể khả thi hơn so sánh thống kê lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "C",
+      "text_en": "Make sure the consent form explains how recordings will be stored, who can access them and when they will be deleted.",
+      "translation_vi": "Nhớ nêu trong mẫu đồng ý cách lưu bản ghi, ai được truy cập và khi nào sẽ xóa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "And build in a way for participants to withdraw their data before analysis, without having to explain why.",
+      "translation_vi": "Và phải có cách cho người tham gia rút dữ liệu trước phân tích mà không cần nói lý do.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "I'll revise the scope and prepare an ethics application before contacting volunteers. The supervisor can review both documents on Tuesday.",
+      "translation_vi": "Mình sẽ sửa phạm vi và chuẩn bị hồ sơ đạo đức trước khi liên hệ tình nguyện viên. Người hướng dẫn xem hai tài liệu vào thứ Ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "How does Peter suggest narrowing the topic?",
+      "correct_answers": [
+        "Focus on requests for clarification"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Peter): “Bạn có thể thu hẹp vào cách sinh viên yêu cầu giải thích lại không? Như vậy có tương tác cụ thể để nghiên cứu.” Đáp án: “Focus on requests for clarification”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Focus on requests for clarification",
+        "Compare all campus languages",
+        "Study written assignments only"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Recordings require informed ____.",
+      "correct_answers": [
+        "consent"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Mira): “Ý tưởng hứa hẹn, nhưng bạn lấy bản ghi thế nào? Không thể tự ý ghi bạn cùng lớp khi chưa có đồng ý được thông tin đầy đủ.” Đáp án: “consent”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "How should volunteers be recruited?",
+      "correct_answers": [
+        "through a neutral announcement"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Mira): “Ngay cả vậy, sinh viên có thể thấy bị ép nếu giảng viên của họ mời. Nên tuyển bằng thông báo trung lập.” Đáp án: “through a neutral announcement”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "by automatic enrolment",
+        "through a neutral announcement",
+        "by pressure from lecturers"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "The new plan involves ____ small groups.",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Emma): “Ban đầu mình muốn cả hai, nhưng phân tích hội thoại chi tiết với sáu nhóm nhỏ có thể khả thi hơn so sánh thống kê lớn.” Đáp án: “six”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "Which issue must the consent form address?",
+      "correct_answers": [
+        "Storage and access to recordings"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Bằng chứng ở T10 (Mira): “Nhớ nêu trong mẫu đồng ý cách lưu bản ghi, ai được truy cập và khi nào sẽ xóa.” Đáp án: “Storage and access to recordings”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "The price of textbooks",
+        "The language of lectures",
+        "Storage and access to recordings"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What must Emma prepare before contacting volunteers?",
+      "correct_answers": [
+        "ethics application"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Bằng chứng ở T12 (Emma): “Mình sẽ sửa phạm vi và chuẩn bị hồ sơ đạo đức trước khi liên hệ tình nguyện viên. Người hướng dẫn xem hai tài liệu vào thứ Ba.” Đáp án: “ethics application”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "I was considering asking lecturers for recordings from previous seminars, though those students never agreed to join my project."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I was considering asking lecturers for recordings from previous seminars, though those students never agreed to join my project.”\nNghĩa: Mình từng tính xin giảng viên bản ghi seminar cũ, dù các sinh viên đó chưa đồng ý tham gia dự án của mình.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "Will you analyse the language quantitatively, counting clarification requests, or qualitatively, examining how speakers respond to them?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “Will you analyse the language quantitatively, counting clarification requests, or qualitatively, examining how speakers respond to them?”\nNghĩa: Bạn sẽ phân tích định lượng bằng cách đếm lần yêu cầu làm rõ, hay định tính qua cách người nói phản hồi?\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T03, điền từ/cụm từ bị thiếu: It's a promising idea, but how will you obtain recordings? You can't simply record classmates without their ____.",
+      "correct_answers": [
+        "informed consent"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Cụm cần nghe: “informed consent” (đồng ý được thông tin đầy đủ). Lời gốc: “It's a promising idea, but how will you obtain recordings? You can't simply record classmates without their informed consent.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "informed consent",
+      "pos": "n. phr.",
+      "meaning_vi": "đồng ý được thông tin đầy đủ",
+      "example_en": "It's a promising idea, but how will you obtain recordings? You can't simply record classmates without their informed consent.",
+      "example_vi": "Ý tưởng hứa hẹn, nhưng bạn lấy bản ghi thế nào? Không thể tự ý ghi bạn cùng lớp khi chưa có đồng ý được thông tin đầy đủ.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "neutral announcement",
+      "pos": "n. phr.",
+      "meaning_vi": "thông báo trung lập",
+      "example_en": "Even then, students may feel pressured if their own lecturer invites them. Recruitment should happen through a neutral announcement.",
+      "example_vi": "Ngay cả vậy, sinh viên có thể thấy bị ép nếu giảng viên của họ mời. Nên tuyển bằng thông báo trung lập.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "conversation analysis",
+      "pos": "n. phr.",
+      "meaning_vi": "phân tích hội thoại",
+      "example_en": "At first I wanted both, but a detailed conversation analysis with six small groups might be more feasible than a large statistical comparison.",
+      "example_vi": "Ban đầu mình muốn cả hai, nhưng phân tích hội thoại chi tiết với sáu nhóm nhỏ có thể khả thi hơn so sánh thống kê lớn.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "withdraw",
+      "pos": "v.",
+      "meaning_vi": "rút lại",
+      "example_en": "And build in a way for participants to withdraw their data before analysis, without having to explain why.",
+      "example_vi": "Và phải có cách cho người tham gia rút dữ liệu trước phân tích mà không cần nói lý do.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "2697fb88bfa38dbaeca5c4e78fcc08591721ee7039c48b4a4dbd5c693d5d493e",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

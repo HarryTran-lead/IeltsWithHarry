@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-055",
+  "status": "draft",
+  "level": "L7",
+  "section": 3,
+  "topic": "Time Management",
+  "title": "Time Management – Accessible Campus Map Launch",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Daisy – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Leo – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Sara – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our capstone team is building a multilingual campus map, and we promised a launch before orientation week. Translation, accessibility testing and the university's data approval all depend on different people.",
+      "translation_vi": "Nhóm dự án cuối khóa làm bản đồ trường đa ngôn ngữ và hứa ra mắt trước tuần định hướng. Dịch thuật, thử khả năng tiếp cận và duyệt dữ liệu phụ thuộc những người khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The schedule treats those tasks as if they can all finish independently, but the translators need stable place names and the accessibility testers need the near-final interface.",
+      "translation_vi": "Lịch coi các việc ấy như có thể xong độc lập, nhưng người dịch cần tên địa điểm ổn định và người thử tiếp cận cần giao diện gần hoàn chỉnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We should identify the critical path. If the facilities office changes building names on Friday, translation can't be approved on Thursday no matter how quickly volunteers work.",
+      "translation_vi": "Ta cần xác định đường găng. Nếu phòng cơ sở vật chất đổi tên tòa nhà thứ Sáu, phần dịch không thể được duyệt thứ Năm dù tình nguyện viên làm nhanh thế nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I was considering hiring extra translators, but that wouldn't resolve the delayed source data. Perhaps we should ask the facilities office to freeze the place-name list by Tuesday.",
+      "translation_vi": "Mình định thuê thêm người dịch, nhưng không giải quyết dữ liệu nguồn chậm. Có lẽ nên xin phòng cơ sở vật chất chốt danh sách tên địa điểm trước thứ Ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That helps. We also need a fallback if the accessible-route information isn't verified in time. Showing an untested wheelchair route could be more harmful than omitting that feature temporarily.",
+      "translation_vi": "Có ích đấy. Cũng cần phương án nếu thông tin tuyến dễ tiếp cận không được xác minh kịp. Hiện tuyến xe lăn chưa kiểm có thể hại hơn tạm không có tính năng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Could we release a limited map with building entrances and verified routes only, then expand it after independent testing? We must explain clearly which features remain unavailable.",
+      "translation_vi": "Ta có thể phát hành bản đồ giới hạn chỉ có lối vào và tuyến đã xác minh, rồi mở rộng sau kiểm thử độc lập không? Phải nói rõ tính năng nào chưa có.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The team might worry that a smaller launch looks unsuccessful, but an accurate minimum version is preferable to a polished system with wrong directions. Let's prioritise correctness over the number of languages.",
+      "translation_vi": "Nhóm có thể lo ra mắt nhỏ trông thất bại, nhưng bản tối thiểu chính xác tốt hơn hệ thống đẹp mà chỉ đường sai. Hãy ưu tiên độ đúng hơn số ngôn ngữ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I'll map the dependencies and insert a two-day buffer after data approval. The translators can prepare interface phrases meanwhile, but final place-name strings must remain locked until verification.",
+      "translation_vi": "Mình sẽ vẽ các phụ thuộc và thêm hai ngày dự phòng sau khi duyệt dữ liệu. Người dịch có thể chuẩn bị câu giao diện, nhưng tên nơi chốn chỉ chốt sau xác minh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Then the launch target remains orientation week, but the scope is conditional: verified entrances, approved names and tested routes. Everything else goes to a later release with its own review date.",
+      "translation_vi": "Vậy mục tiêu vẫn là tuần định hướng nhưng phạm vi có điều kiện: lối vào đã xác minh, tên đã duyệt và tuyến đã thử. Phần còn lại sang bản sau với lịch duyệt riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why can the original project schedule not be treated as parallel tasks?",
+      "correct_answers": [
+        "Translation and testing depend on approved data and an almost-finished interface"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Leo nói: “Lịch coi các việc ấy như có thể xong độc lập, nhưng người dịch cần tên địa điểm ổn định và người thử tiếp cận cần giao diện gần hoàn chỉnh.” Đáp án “Translation and testing depend on approved data and an almost-finished interface” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The map requires several language options",
+        "Translation and testing depend on approved data and an almost-finished interface",
+        "The current source list contains too many buildings"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The facilities office might change building names on ____ .",
+      "correct_answers": [
+        "Friday"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Ta cần xác định đường găng. Nếu phòng cơ sở vật chất đổi tên tòa nhà thứ Sáu, phần dịch không thể được duyệt thứ Năm dù tình nguyện viên làm nhanh thế nào.” Cụm cần điền nghe đúng nguyên văn là “Friday”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes freezing the source list of building names by Tuesday?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Daisy (Speaker A) đưa ra ý này tại T04: “Mình định thuê thêm người dịch, nhưng không giải quyết dữ liệu nguồn chậm. Có lẽ nên xin phòng cơ sở vật chất chốt danh sách tên địa điểm trước thứ Ba.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why is an unverified wheelchair route more serious than a missing feature?",
+      "correct_answers": [
+        "It could give harmful or incorrect directions"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Daisy nói: “Nhóm có thể lo ra mắt nhỏ trông thất bại, nhưng bản tối thiểu chính xác tốt hơn hệ thống đẹp mà chỉ đường sai. Hãy ưu tiên độ đúng hơn số ngôn ngữ.” Đáp án “It could give harmful or incorrect directions” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "A wheelchair route cannot be shown in multiple languages",
+        "It could give harmful or incorrect directions",
+        "An incomplete feature would look less polished"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Leo will insert a ____ buffer after data approval.",
+      "correct_answers": [
+        "two-day"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Mình sẽ vẽ các phụ thuộc và thêm hai ngày dự phòng sau khi duyệt dữ liệu. Người dịch có thể chuẩn bị câu giao diện, nhưng tên nơi chốn chỉ chốt sau xác minh.” Cụm cần điền nghe đúng nguyên văn là “two-day”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What event is the limited launch targeting?",
+      "correct_answers": [
+        "orientation week"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy mục tiêu vẫn là tuần định hướng nhưng phạm vi có điều kiện: lối vào đã xác minh, tên đã duyệt và tuyến đã thử. Phần còn lại sang bản sau với lịch duyệt riêng.” Trả lời ngắn theo chi tiết “orientation week”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I was considering hiring extra translators, but that wouldn't resolve the delayed source data. Perhaps we should ask the facilities office to freeze the place-name list by Tuesday."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I was considering hiring extra translators, but that wouldn't resolve the delayed source data. Perhaps we should ask the facilities office to freeze the place-name list by Tuesday.”\nBản dịch: Mình định thuê thêm người dịch, nhưng không giải quyết dữ liệu nguồn chậm. Có lẽ nên xin phòng cơ sở vật chất chốt danh sách tên địa điểm trước thứ Ba.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "The team might worry that a smaller launch looks unsuccessful, but an accurate minimum version is preferable to a polished system with wrong directions. Let's prioritise correctness over the number of languages."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “The team might worry that a smaller launch looks unsuccessful, but an accurate minimum version is preferable to a polished system with wrong directions. Let's prioritise correctness over the number of languages.”\nBản dịch: Nhóm có thể lo ra mắt nhỏ trông thất bại, nhưng bản tối thiểu chính xác tốt hơn hệ thống đẹp mà chỉ đường sai. Hãy ưu tiên độ đúng hơn số ngôn ngữ.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T03 rồi điền đúng phần thiếu: We should identify the ____. If the facilities office changes building names on Friday, translation can't be approved on Thursday no matter how quickly volunteers work.",
+      "correct_answers": [
+        "critical path"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “critical path” nghĩa là đường găng tiến độ. Đối chiếu: “We should identify the critical path. If the facilities office changes building names on Friday, translation can't be approved on Thursday no matter how quickly volunteers work.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "critical path",
+      "pos": "n. phr.",
+      "meaning_vi": "đường găng tiến độ",
+      "example_en": "We should identify the critical path. If the facilities office changes building names on Friday, translation can't be approved on Thursday no matter how quickly volunteers work.",
+      "example_vi": "Ta cần xác định đường găng. Nếu phòng cơ sở vật chất đổi tên tòa nhà thứ Sáu, phần dịch không thể được duyệt thứ Năm dù tình nguyện viên làm nhanh thế nào.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "source data",
+      "pos": "n. phr.",
+      "meaning_vi": "dữ liệu nguồn",
+      "example_en": "I was considering hiring extra translators, but that wouldn't resolve the delayed source data. Perhaps we should ask the facilities office to freeze the place-name list by Tuesday.",
+      "example_vi": "Mình định thuê thêm người dịch, nhưng không giải quyết dữ liệu nguồn chậm. Có lẽ nên xin phòng cơ sở vật chất chốt danh sách tên địa điểm trước thứ Ba.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "fallback",
+      "pos": "n.",
+      "meaning_vi": "phương án dự phòng",
+      "example_en": "That helps. We also need a fallback if the accessible-route information isn't verified in time. Showing an untested wheelchair route could be more harmful than omitting that feature temporarily.",
+      "example_vi": "Có ích đấy. Cũng cần phương án nếu thông tin tuyến dễ tiếp cận không được xác minh kịp. Hiện tuyến xe lăn chưa kiểm có thể hại hơn tạm không có tính năng.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "verified routes",
+      "pos": "n. phr.",
+      "meaning_vi": "các tuyến đã được xác minh",
+      "example_en": "Could we release a limited map with building entrances and verified routes only, then expand it after independent testing? We must explain clearly which features remain unavailable.",
+      "example_vi": "Ta có thể phát hành bản đồ giới hạn chỉ có lối vào và tuyến đã xác minh, rồi mở rộng sau kiểm thử độc lập không? Phải nói rõ tính năng nào chưa có.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "9a3a75efe82d913769c614d883805a2d15dd7aa9507b7a3d6c4f578319067ef6",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

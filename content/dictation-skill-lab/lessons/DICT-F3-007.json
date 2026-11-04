@@ -1,0 +1,508 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-007",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Shopping in a Store",
+  "learning_objectives_vi": [
+    "Phân biệt cỡ, màu, giá niêm yết và giá đã giảm."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Shop assistant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hi there. Can I help you find anything?",
+      "translation_vi": "Xin chào. Tôi có thể giúp anh tìm món gì không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes, I'm looking for a waterproof jacket for hiking.",
+      "translation_vi": "Vâng, tôi đang tìm áo khoác chống nước để đi bộ đường dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We have this blue one in medium and large.",
+      "translation_vi": "Chúng tôi có mẫu màu xanh này cỡ M và L.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Medium might be too small. Could I try the large?",
+      "translation_vi": "Cỡ M có lẽ hơi nhỏ. Tôi có thể thử cỡ L không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Certainly. The changing room is behind the shoe section.",
+      "translation_vi": "Tất nhiên. Phòng thử đồ ở phía sau khu bán giày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Thanks. It fits, but I prefer the dark green colour.",
+      "translation_vi": "Cảm ơn. Áo vừa, nhưng tôi thích màu xanh lá đậm hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We have dark green in large, but only online.",
+      "translation_vi": "Chúng tôi có màu xanh lá đậm cỡ L, nhưng chỉ bán trên mạng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Can I order it here and collect it tomorrow?",
+      "translation_vi": "Tôi có thể đặt tại đây và đến lấy ngày mai không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes. The regular price is seventy pounds, now reduced to fifty-five.",
+      "translation_vi": "Có. Giá thường là 70 bảng, nay giảm còn 55.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "That works for me. Can I return it if it does not fit?",
+      "translation_vi": "Được đấy. Tôi có thể trả lại nếu nó không vừa không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "You have fourteen days, as long as you keep the receipt.",
+      "translation_vi": "Anh có 14 ngày để trả, miễn là giữ hóa đơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Perfect. I will order the green jacket in large.",
+      "translation_vi": "Tuyệt. Tôi sẽ đặt áo xanh lá cỡ L.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "short_answer",
+      "prompt": "What item does the customer need?",
+      "correct_answers": [
+        "waterproof jacket"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khách cần waterproof jacket để đi hiking.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "short_answer",
+      "prompt": "What size does the customer try?",
+      "correct_answers": [
+        "large"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Khách xin thử large vì medium có thể nhỏ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "The changing room is behind the ____.",
+      "correct_answers": [
+        "shoe section"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Lời thoại: “The changing room is behind the shoe section.”",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Reduced price: £____.",
+      "correct_answers": [
+        "55",
+        "fifty-five"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Giá giảm là fifty-five, không phải giá gốc seventy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Return period: ____ days.",
+      "correct_answers": [
+        "14",
+        "fourteen"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Khách có fourteen days nếu giữ hóa đơn.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T04 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Medium might be too small. Could I try the large?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe tên các cỡ áo. Nghĩa: Cỡ M có lẽ hơi nhỏ. Tôi có thể thử cỡ L không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T07 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "We have dark green in large, but only online."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Phân biệt hàng tại cửa hàng và hàng online. Nghĩa: Chúng tôi có màu xanh lá đậm cỡ L, nhưng chỉ bán trên mạng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T09 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Yes. The regular price is seventy pounds, now reduced to fifty-five."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phát hiện giá ban đầu và giá mới. Nghĩa: Có. Giá thường là 70 bảng, nay giảm còn 55.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T05 và điền từ/cụm từ bị thiếu: Certainly. The ____ is behind the shoe section.",
+      "correct_answers": [
+        "changing room"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phòng thử đồ, khác với shoe section.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T11 và điền từ/cụm từ bị thiếu: You have fourteen days, as long as you ____.",
+      "correct_answers": [
+        "keep the receipt"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Điều kiện để trả hàng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "shopping",
+        "sizes",
+        "discounts",
+        "returns"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "waterproof",
+      "pos": "adjective",
+      "meaning_vi": "chống nước",
+      "example_en": "Yes, I'm looking for a waterproof jacket for hiking.",
+      "example_vi": "Vâng, tôi đang tìm áo khoác chống nước để đi bộ đường dài.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "changing room",
+      "pos": "noun phrase",
+      "meaning_vi": "phòng thử đồ",
+      "example_en": "Certainly. The changing room is behind the shoe section.",
+      "example_vi": "Tất nhiên. Phòng thử đồ ở phía sau khu bán giày.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "reduced",
+      "pos": "adjective",
+      "meaning_vi": "được giảm giá",
+      "example_en": "Yes. The regular price is seventy pounds, now reduced to fifty-five.",
+      "example_vi": "Có. Giá thường là 70 bảng, nay giảm còn 55.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "receipt",
+      "pos": "noun",
+      "meaning_vi": "hóa đơn",
+      "example_en": "You have fourteen days, as long as you keep the receipt.",
+      "example_vi": "Anh có 14 ngày để trả, miễn là giữ hóa đơn.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b3e1770f33cc476f640071822ca47cde9d6bc4b8ef52b1529183492382e0d976",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

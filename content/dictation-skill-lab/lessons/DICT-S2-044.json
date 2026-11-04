@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-044",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Environmental Campaigns",
+  "title": "Neighbourhood Repair and Reuse Week",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Environmental Campaigns ở mức L5, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good evening, and welcome to the launch of our repair-and-reuse week. The campaign encourages residents to extend the life of household items instead of replacing them immediately.",
+      "translation_vi": "Chào buổi tối và chào mừng tuần sửa chữa và tái sử dụng. Chiến dịch khuyến khích cư dân kéo dài tuổi thọ đồ gia dụng thay vì thay mới ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "On Saturday morning, a team of trained volunteers will repair small electrical appliances at the community hall. They cannot accept refrigerators or large items that require heavy lifting.",
+      "translation_vi": "Sáng thứ Bảy, nhóm tình nguyện viên được đào tạo sẽ sửa thiết bị điện nhỏ tại hội trường cộng đồng. Họ không nhận tủ lạnh hay vật nặng cần nâng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The clothes-mending session was planned for the same hall, but high demand means it has moved to the primary school's art room. Participants should bring their own garments.",
+      "translation_vi": "Buổi vá sửa quần áo định tổ chức cùng hội trường nhưng do nhu cầu cao đã chuyển đến phòng mỹ thuật trường tiểu học. Người tham gia tự mang quần áo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "If an item cannot be repaired, volunteers will explain whether its materials can be recycled. They will not promise to restore objects when replacement parts are unavailable.",
+      "translation_vi": "Nếu đồ vật không thể sửa, tình nguyện viên sẽ giải thích liệu vật liệu có tái chế được không. Họ không hứa khôi phục đồ khi thiếu linh kiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A short public talk on reducing electronic waste starts at one forty-five. It was advertised at two fifteen, so please check the updated programme at the entrance.",
+      "translation_vi": "Bài nói chuyện ngắn về giảm rác điện tử bắt đầu một giờ bốn mươi lăm. Trước đây quảng cáo hai giờ mười lăm, nên hãy xem lịch mới ở lối vào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "All repair activities are free, although visitors may make an optional donation towards tools and safety equipment. Donations do not give anyone priority in the queue.",
+      "translation_vi": "Mọi hoạt động sửa chữa miễn phí, dù khách có thể tự nguyện đóng góp cho dụng cụ và thiết bị bảo hộ. Quyên góp không giúp được ưu tiên xếp hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "After the event, we'll publish the total weight of material kept out of landfill. The aim is to measure actual waste reduction rather than simply counting the number of visitors.",
+      "translation_vi": "Sau sự kiện, chúng tôi sẽ công bố tổng khối lượng vật liệu không phải chôn lấp. Mục tiêu là đo lượng rác thực sự giảm thay vì chỉ đếm khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Appliances repaired at: ____",
+      "correct_answers": [
+        "community hall"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Sáng thứ Bảy, nhóm tình nguyện viên được đào tạo sẽ sửa thiết bị điện nhỏ tại hội trường cộng đồng. Họ không nhận tủ lạnh hay vật nặng cần nâng. Đáp án được nhắc trong đoạn T02: “community hall”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Clothes-mending moved to the: ____",
+      "correct_answers": [
+        "art room"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Buổi vá sửa quần áo định tổ chức cùng hội trường nhưng do nhu cầu cao đã chuyển đến phòng mỹ thuật trường tiểu học. Người tham gia tự mang quần áo. Đáp án được nhắc trong đoạn T03: “art room”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Unrepairable material may be: ____",
+      "correct_answers": [
+        "recycled"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nếu đồ vật không thể sửa, tình nguyện viên sẽ giải thích liệu vật liệu có tái chế được không. Họ không hứa khôi phục đồ khi thiếu linh kiện. Đáp án được nhắc trong đoạn T04: “recycled”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Electronic waste talk starts at: ____",
+      "correct_answers": [
+        "one forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bài nói chuyện ngắn về giảm rác điện tử bắt đầu một giờ bốn mươi lăm. Trước đây quảng cáo hai giờ mười lăm, nên hãy xem lịch mới ở lối vào. Đáp án được nhắc trong đoạn T05: “one forty-five”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Repair activities are?",
+      "correct_answers": [
+        "free"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Mọi hoạt động sửa chữa miễn phí, dù khách có thể tự nguyện đóng góp cho dụng cụ và thiết bị bảo hộ. Quyên góp không giúp được ưu tiên xếp hàng. Đáp án được nhắc trong đoạn T06: “free”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Campaign measures total: ____",
+      "correct_answers": [
+        "weight"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Sau sự kiện, chúng tôi sẽ công bố tổng khối lượng vật liệu không phải chôn lấp. Mục tiêu là đo lượng rác thực sự giảm thay vì chỉ đếm khách. Đáp án được nhắc trong đoạn T07: “weight”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "The clothes-mending session was planned for the same hall, but high demand means it has moved to the primary school's art room. Participants should bring their own garments."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The clothes-mending session was planned for the same hall, but high demand means it has moved to the primary school's art room. Participants should bring their own garments. Nghĩa: Buổi vá sửa quần áo định tổ chức cùng hội trường nhưng do nhu cầu cao đã chuyển đến phòng mỹ thuật trường tiểu học. Người tham gia tự mang quần áo. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "A short public talk on reducing electronic waste starts at one forty-five. It was advertised at two fifteen, so please check the updated programme at the entrance."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: A short public talk on reducing electronic waste starts at one forty-five. It was advertised at two fifteen, so please check the updated programme at the entrance. Nghĩa: Bài nói chuyện ngắn về giảm rác điện tử bắt đầu một giờ bốn mươi lăm. Trước đây quảng cáo hai giờ mười lăm, nên hãy xem lịch mới ở lối vào. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: On Saturday morning, a team of trained volunteers will repair small electrical appliances at the ____. They cannot accept refrigerators or large items that require heavy lifting.",
+      "correct_answers": [
+        "community hall"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “community hall” xuất hiện trong câu gốc: On Saturday morning, a team of trained volunteers will repair small electrical appliances at the community hall. They cannot accept refrigerators or large items that require heavy lifting. Nghĩa: Sáng thứ Bảy, nhóm tình nguyện viên được đào tạo sẽ sửa thiết bị điện nhỏ tại hội trường cộng đồng. Họ không nhận tủ lạnh hay vật nặng cần nâng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "mending",
+      "pos": "n.",
+      "meaning_vi": "việc vá sửa",
+      "example_en": "The clothes-mending session was planned for the same hall, but high demand means it has moved to the primary school's art room. Participants should bring their own garments.",
+      "example_vi": "Buổi vá sửa quần áo định tổ chức cùng hội trường nhưng do nhu cầu cao đã chuyển đến phòng mỹ thuật trường tiểu học. Người tham gia tự mang quần áo.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "electronic waste",
+      "pos": "n. phr.",
+      "meaning_vi": "rác thải điện tử",
+      "example_en": "A short public talk on reducing electronic waste starts at one forty-five. It was advertised at two fifteen, so please check the updated programme at the entrance.",
+      "example_vi": "Bài nói chuyện ngắn về giảm rác điện tử bắt đầu một giờ bốn mươi lăm. Trước đây quảng cáo hai giờ mười lăm, nên hãy xem lịch mới ở lối vào.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "landfill",
+      "pos": "n.",
+      "meaning_vi": "bãi chôn lấp",
+      "example_en": "After the event, we'll publish the total weight of material kept out of landfill. The aim is to measure actual waste reduction rather than simply counting the number of visitors.",
+      "example_vi": "Sau sự kiện, chúng tôi sẽ công bố tổng khối lượng vật liệu không phải chôn lấp. Mục tiêu là đo lượng rác thực sự giảm thay vì chỉ đếm khách.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "donation",
+      "pos": "n.",
+      "meaning_vi": "đóng góp tự nguyện",
+      "example_en": "All repair activities are free, although visitors may make an optional donation towards tools and safety equipment. Donations do not give anyone priority in the queue.",
+      "example_vi": "Mọi hoạt động sửa chữa miễn phí, dù khách có thể tự nguyện đóng góp cho dụng cụ và thiết bị bảo hộ. Quyên góp không giúp được ưu tiên xếp hàng.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "890628210ee37255e3110f10dff0eca7299e7c05075121630a6b721fa3a47dfe",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

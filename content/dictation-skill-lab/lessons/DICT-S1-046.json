@@ -1,0 +1,502 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-046",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Hotel Booking",
+  "title": "Rebooking a Family Suite",
+  "learning_objectives_vi": [
+    "Rèn natural speed & paraphrase qua tình huống: A family changes room allocation after a renovation and checks what is included.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Thank you for calling North Pier Hotel. My name is Daniel. How can I assist?",
+      "translation_vi": "Cảm ơn đã gọi khách sạn North Pier. Tôi là Daniel. Tôi có thể giúp gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm checking our family reservation for the eighteenth of August. We booked a sea-view suite for four people.",
+      "translation_vi": "Tôi kiểm tra đặt phòng gia đình ngày 18 tháng Tám. Chúng tôi đã đặt suite nhìn ra biển cho bốn người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I have it here under Elena Morris. Unfortunately, the sea-view rooms are being renovated that week.",
+      "translation_vi": "Tôi thấy đơn dưới tên Elena Morris. Tiếc là phòng nhìn ra biển đang sửa chữa tuần đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Oh, I hadn't heard about that. Will we need two separate rooms?",
+      "translation_vi": "Ồ, tôi chưa được thông báo. Chúng tôi phải ở hai phòng riêng à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Not necessarily. We can offer a family suite overlooking the courtyard, with two bedrooms connected by a door.",
+      "translation_vi": "Không hẳn. Chúng tôi có suite gia đình nhìn ra sân trong, gồm hai phòng ngủ thông nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That could work. Our youngest child is six, so we'd prefer not to be split up.",
+      "translation_vi": "Vậy cũng được. Con nhỏ nhất sáu tuổi nên chúng tôi không muốn bị tách phòng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The courtyard suite is actually twelve pounds less per night. We can also provide a travel cot free of charge.",
+      "translation_vi": "Suite sân trong rẻ hơn 12 bảng mỗi đêm. Chúng tôi cũng cung cấp cũi du lịch miễn phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We won't need the cot, but could you confirm whether breakfast is still included?",
+      "translation_vi": "Chúng tôi không cần cũi, nhưng anh xác nhận bữa sáng vẫn được bao gồm chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes, breakfast is included for all four guests. It is served in the conservatory because the main restaurant is closed.",
+      "translation_vi": "Có, bữa sáng cho cả bốn người vẫn gồm trong giá. Bữa ăn được phục vụ ở phòng kính vì nhà hàng chính đóng cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "And is parking still at the entrance?",
+      "translation_vi": "Và bãi đậu xe vẫn ở lối vào chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "During the renovation, please use the east car park. Take a ticket at the gate and we'll validate it at reception.",
+      "translation_vi": "Trong thời gian sửa chữa, vui lòng dùng bãi phía đông. Lấy vé tại cổng và chúng tôi xác nhận vé tại lễ tân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Fine. I'll accept the courtyard suite. Please email the updated confirmation before tonight.",
+      "translation_vi": "Được. Tôi nhận suite sân trong. Vui lòng gửi xác nhận cập nhật trước tối nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Of course, Mrs Morris. I'll make the changes now.",
+      "translation_vi": "Vâng, chị Morris. Tôi sẽ cập nhật ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Booking date: ____ August",
+      "correct_answers": [
+        "18",
+        "18th",
+        "eighteenth"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Ngày đặt phòng là 18 tháng Tám.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "What view does the replacement suite have?",
+      "correct_answers": [
+        "A view of the courtyard"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Sea-view suite không còn; suite mới nhìn ra sân trong.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "A view of the sea",
+        "A view of the car park",
+        "A view of the courtyard"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Price reduction per night: £____",
+      "correct_answers": [
+        "12",
+        "twelve"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Suite mới rẻ hơn mười hai bảng một đêm.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Breakfast location: the ____",
+      "correct_answers": [
+        "conservatory"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nhà hàng chính đóng; ăn sáng tại conservatory.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Parking location: ____ car park",
+      "correct_answers": [
+        "east"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Bãi đỗ mới nằm ở phía đông.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Requested confirmation method: ____",
+      "correct_answers": [
+        "email"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Khách yêu cầu gửi xác nhận bằng email.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật B (lượt T08).",
+      "correct_answers": [
+        "We won't need the cot, but could you confirm whether breakfast is still included?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nội dung cần chép: We won't need the cot, but could you confirm whether breakfast is still included? Nghĩa: Chúng tôi không cần cũi, nhưng anh xác nhận bữa sáng vẫn được bao gồm chứ? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: Yes, breakfast is included for all four guests. It is served in the ____ because the main restaurant is closed.",
+      "correct_answers": [
+        "conservatory"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “conservatory”. Câu đầy đủ: Yes, breakfast is included for all four guests. It is served in the conservatory because the main restaurant is closed.. Nghĩa: Có, bữa sáng cho cả bốn người vẫn gồm trong giá. Bữa ăn được phục vụ ở phòng kính vì nhà hàng chính đóng cửa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "paraphrase",
+        "room_reallocation",
+        "included_services",
+        "location_change"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "renovated",
+      "pos": "verb",
+      "meaning_vi": "được sửa chữa",
+      "example_en": "I have it here under Elena Morris. Unfortunately, the sea-view rooms are being renovated that week.",
+      "example_vi": "Tôi thấy đơn dưới tên Elena Morris. Tiếc là phòng nhìn ra biển đang sửa chữa tuần đó.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "courtyard",
+      "pos": "noun",
+      "meaning_vi": "sân trong",
+      "example_en": "Not necessarily. We can offer a family suite overlooking the courtyard, with two bedrooms connected by a door.",
+      "example_vi": "Không hẳn. Chúng tôi có suite gia đình nhìn ra sân trong, gồm hai phòng ngủ thông nhau.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "conservatory",
+      "pos": "noun",
+      "meaning_vi": "phòng kính",
+      "example_en": "Yes, breakfast is included for all four guests. It is served in the conservatory because the main restaurant is closed.",
+      "example_vi": "Có, bữa sáng cho cả bốn người vẫn gồm trong giá. Bữa ăn được phục vụ ở phòng kính vì nhà hàng chính đóng cửa.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "validate it",
+      "pos": "verb phrase",
+      "meaning_vi": "xác nhận vé đậu xe",
+      "example_en": "During the renovation, please use the east car park. Take a ticket at the gate and we'll validate it at reception.",
+      "example_vi": "Trong thời gian sửa chữa, vui lòng dùng bãi phía đông. Lấy vé tại cổng và chúng tôi xác nhận vé tại lễ tân.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "13fe4ebf5f145ab47460fb5f64e28cea2ca11b8ce559a7b1f8966ff581fd33c8",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

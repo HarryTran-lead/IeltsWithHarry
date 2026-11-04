@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-015",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Space Exploration",
+  "title": "Orbiters, Landers and Rovers: Mission Choices",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Space exploration depends on more than the moment a rocket leaves the ground. Missions begin with a scientific question: what do researchers hope to learn about a planet, a moon or the wider universe? The objective determines which instruments are useful and which measurements are essential. A spacecraft designed to map a surface may be unsuitable for collecting material directly from it.",
+      "translation_vi": "Khám phá không gian không chỉ là khoảnh khắc tên lửa rời bệ phóng. Nhiệm vụ bắt đầu từ câu hỏi khoa học: nhà nghiên cứu hy vọng học điều gì về hành tinh, mặt trăng hay vũ trụ rộng hơn? Mục tiêu quyết định thiết bị nào hữu ích và phép đo nào cần thiết. Tàu vũ trụ thiết kế để lập bản đồ bề mặt có thể không phù hợp lấy vật chất trực tiếp từ đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "An orbiter travels around a celestial body and can observe large regions repeatedly. Its cameras and sensors may examine terrain, temperature or changes over time. A lander, by contrast, studies a particular location at close range. The lander can take detailed measurements that are impossible from far above, but it lacks the broad coverage of an orbiter.",
+      "translation_vi": "Tàu quỹ đạo di chuyển quanh thiên thể và có thể quan sát lặp lại các vùng rộng. Camera và cảm biến của nó có thể xem địa hình, nhiệt độ hoặc thay đổi theo thời gian. Ngược lại, tàu đổ bộ nghiên cứu một địa điểm cụ thể ở khoảng cách gần. Nó đo chi tiết những thứ không thể từ xa phía trên nhưng thiếu phạm vi bao phủ rộng như tàu quỹ đạo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A rover adds mobility after landing. It can travel between sites and compare different rocks or surfaces, although each journey uses time and energy. Scientists must choose destinations carefully because rough terrain creates hazards. Mission teams often weigh the scientific value of a location against the risk that a vehicle could become trapped or damaged.",
+      "translation_vi": "Xe tự hành bổ sung khả năng di chuyển sau khi hạ cánh. Nó đi giữa các địa điểm, so sánh đá hoặc bề mặt khác nhau, dù mỗi hành trình tốn thời gian và năng lượng. Nhà khoa học phải chọn điểm đến cẩn thận vì địa hình gồ ghề gây nguy hiểm. Nhóm nhiệm vụ thường cân nhắc giá trị khoa học của địa điểm với rủi ro phương tiện mắc kẹt hoặc hỏng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Communication presents an additional challenge. Radio signals take time to cross large distances, so distant spacecraft cannot always be controlled as though they were robots in the next room. Some actions must follow pre-planned sequences or use limited autonomy. Engineers therefore design safeguards that allow a vehicle to respond to unexpected conditions while protecting important equipment.",
+      "translation_vi": "Liên lạc đặt ra thách thức thêm. Tín hiệu vô tuyến cần thời gian vượt khoảng cách lớn, nên tàu ở xa không phải lúc nào cũng được điều khiển như robot ở phòng kế bên. Một số hành động phải theo chuỗi lập kế hoạch trước hoặc dùng tính tự chủ hạn chế. Vì vậy kỹ sư thiết kế biện pháp bảo vệ cho phép phương tiện phản ứng với điều kiện bất ngờ mà vẫn bảo vệ thiết bị quan trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The major lesson is that mission design reflects trade-offs. An orbiter offers coverage, a lander offers local detail and a rover offers movement. Researchers may combine these systems, but every addition increases complexity. Success is not measured only by distance travelled. It is measured by whether the mission returns trustworthy evidence that answers its original scientific questions.",
+      "translation_vi": "Bài học lớn là thiết kế nhiệm vụ phản ánh sự đánh đổi. Tàu quỹ đạo có phạm vi rộng, tàu đổ bộ có chi tiết tại chỗ và xe tự hành có khả năng di chuyển. Nhà nghiên cứu có thể kết hợp chúng nhưng mỗi phần thêm tăng độ phức tạp. Thành công không chỉ đo bằng quãng đường bay mà bằng việc nhiệm vụ mang lại bằng chứng đáng tin trả lời câu hỏi khoa học ban đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Mission design begins with a scientific ____.",
+      "correct_answers": [
+        "question"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “question” nằm tại đoạn T01. Nội dung bằng chứng: Khám phá không gian không chỉ là khoảnh khắc tên lửa rời bệ phóng. Nhiệm vụ bắt đầu từ câu hỏi khoa học: nhà nghiên cứu hy vọng học điều gì về hành tinh, mặt trăng hay vũ trụ rộng hơn? Mục tiêu quyết định thiết bị nào hữu ích và phép đo nào cần thiết. Tàu vũ trụ thiết kế để lập bản đồ bề mặt có thể không phù hợp lấy vật chất trực tiếp từ đó.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "A spacecraft that repeatedly travels around a body is an ____.",
+      "correct_answers": [
+        "orbiter"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “orbiter” nằm tại đoạn T02. Nội dung bằng chứng: Tàu quỹ đạo di chuyển quanh thiên thể và có thể quan sát lặp lại các vùng rộng. Camera và cảm biến của nó có thể xem địa hình, nhiệt độ hoặc thay đổi theo thời gian. Ngược lại, tàu đổ bộ nghiên cứu một địa điểm cụ thể ở khoảng cách gần. Nó đo chi tiết những thứ không thể từ xa phía trên nhưng thiếu phạm vi bao phủ rộng như tàu quỹ đạo.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "A vehicle that moves between sites after landing is a ____.",
+      "correct_answers": [
+        "rover"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “rover” nằm tại đoạn T03. Nội dung bằng chứng: Xe tự hành bổ sung khả năng di chuyển sau khi hạ cánh. Nó đi giữa các địa điểm, so sánh đá hoặc bề mặt khác nhau, dù mỗi hành trình tốn thời gian và năng lượng. Nhà khoa học phải chọn điểm đến cẩn thận vì địa hình gồ ghề gây nguy hiểm. Nhóm nhiệm vụ thường cân nhắc giá trị khoa học của địa điểm với rủi ro phương tiện mắc kẹt hoặc hỏng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Distant spacecraft may need ____ because of communication travel time.",
+      "correct_answers": [
+        "pre-planned sequences"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “pre-planned sequences” nằm tại đoạn T04. Nội dung bằng chứng: Liên lạc đặt ra thách thức thêm. Tín hiệu vô tuyến cần thời gian vượt khoảng cách lớn, nên tàu ở xa không phải lúc nào cũng được điều khiển như robot ở phòng kế bên. Một số hành động phải theo chuỗi lập kế hoạch trước hoặc dùng tính tự chủ hạn chế. Vì vậy kỹ sư thiết kế biện pháp bảo vệ cho phép phương tiện phản ứng với điều kiện bất ngờ mà vẫn bảo vệ thiết bị quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Mission success depends on trustworthy ____.",
+      "correct_answers": [
+        "evidence"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “evidence” nằm tại đoạn T05. Nội dung bằng chứng: Bài học lớn là thiết kế nhiệm vụ phản ánh sự đánh đổi. Tàu quỹ đạo có phạm vi rộng, tàu đổ bộ có chi tiết tại chỗ và xe tự hành có khả năng di chuyển. Nhà nghiên cứu có thể kết hợp chúng nhưng mỗi phần thêm tăng độ phức tạp. Thành công không chỉ đo bằng quãng đường bay mà bằng việc nhiệm vụ mang lại bằng chứng đáng tin trả lời câu hỏi khoa học ban đầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Why might a mission team choose both an orbiter and a rover?",
+      "correct_answers": [
+        "One offers wide coverage and the other collects local detail"
+      ],
+      "options": [
+        "A rover can map every part of a planet from above",
+        "An orbiter automatically collects rock samples from the surface",
+        "One offers wide coverage and the other collects local detail"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Bài học lớn là thiết kế nhiệm vụ phản ánh sự đánh đổi. Tàu quỹ đạo có phạm vi rộng, tàu đổ bộ có chi tiết tại chỗ và xe tự hành có khả năng di chuyển. Nhà nghiên cứu có thể kết hợp chúng nhưng mỗi phần thêm tăng độ phức tạp. Thành công không chỉ đo bằng quãng đường bay mà bằng việc nhiệm vụ mang lại bằng chứng đáng tin trả lời câu hỏi khoa học ban đầu. Phương án chính xác: “One offers wide coverage and the other collects local detail”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "An orbiter travels around a celestial body and can observe large regions repeatedly. Its cameras and sensors may examine terrain, temperature or changes over time. A lander, by contrast, studies a particular location at close range. The lander can take detailed measurements that are impossible from far above, but it lacks the broad coverage of an orbiter."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Tàu quỹ đạo di chuyển quanh thiên thể và có thể quan sát lặp lại các vùng rộng. Camera và cảm biến của nó có thể xem địa hình, nhiệt độ hoặc thay đổi theo thời gian. Ngược lại, tàu đổ bộ nghiên cứu một địa điểm cụ thể ở khoảng cách gần. Nó đo chi tiết những thứ không thể từ xa phía trên nhưng thiếu phạm vi bao phủ rộng như tàu quỹ đạo.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Communication presents an additional challenge. Radio signals take time to cross large distances, so distant spacecraft cannot always be controlled as though they were robots in the next room. Some actions must follow pre-planned sequences or use limited autonomy. Engineers therefore design safeguards that allow a vehicle to respond to unexpected conditions while protecting important equipment."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Liên lạc đặt ra thách thức thêm. Tín hiệu vô tuyến cần thời gian vượt khoảng cách lớn, nên tàu ở xa không phải lúc nào cũng được điều khiển như robot ở phòng kế bên. Một số hành động phải theo chuỗi lập kế hoạch trước hoặc dùng tính tự chủ hạn chế. Vì vậy kỹ sư thiết kế biện pháp bảo vệ cho phép phương tiện phản ứng với điều kiện bất ngờ mà vẫn bảo vệ thiết bị quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền phần thiếu: An ____ travels around a celestial body and can observe large regions repeatedly.",
+      "correct_answers": [
+        "orbiter"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Điền “orbiter”, nghĩa: tàu quỹ đạo. Cụm từ này xuất hiện trong T02.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "orbiter",
+      "pos": "n.",
+      "meaning_vi": "tàu quỹ đạo",
+      "example_en": "An orbiter travels around a celestial body and can observe large regions repeatedly. Its cameras and sensors may examine terrain, temperature or changes over time. A lander, by contrast, studies a particular location at close range. The lander can take detailed measurements that are impossible from far above, but it lacks the broad coverage of an orbiter.",
+      "example_vi": "Tàu quỹ đạo di chuyển quanh thiên thể và có thể quan sát lặp lại các vùng rộng. Camera và cảm biến của nó có thể xem địa hình, nhiệt độ hoặc thay đổi theo thời gian. Ngược lại, tàu đổ bộ nghiên cứu một địa điểm cụ thể ở khoảng cách gần. Nó đo chi tiết những thứ không thể từ xa phía trên nhưng thiếu phạm vi bao phủ rộng như tàu quỹ đạo.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "lander",
+      "pos": "n.",
+      "meaning_vi": "tàu đổ bộ",
+      "example_en": "An orbiter travels around a celestial body and can observe large regions repeatedly. Its cameras and sensors may examine terrain, temperature or changes over time. A lander, by contrast, studies a particular location at close range. The lander can take detailed measurements that are impossible from far above, but it lacks the broad coverage of an orbiter.",
+      "example_vi": "Tàu quỹ đạo di chuyển quanh thiên thể và có thể quan sát lặp lại các vùng rộng. Camera và cảm biến của nó có thể xem địa hình, nhiệt độ hoặc thay đổi theo thời gian. Ngược lại, tàu đổ bộ nghiên cứu một địa điểm cụ thể ở khoảng cách gần. Nó đo chi tiết những thứ không thể từ xa phía trên nhưng thiếu phạm vi bao phủ rộng như tàu quỹ đạo.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "rover",
+      "pos": "n.",
+      "meaning_vi": "xe tự hành thăm dò",
+      "example_en": "A rover adds mobility after landing. It can travel between sites and compare different rocks or surfaces, although each journey uses time and energy. Scientists must choose destinations carefully because rough terrain creates hazards. Mission teams often weigh the scientific value of a location against the risk that a vehicle could become trapped or damaged.",
+      "example_vi": "Xe tự hành bổ sung khả năng di chuyển sau khi hạ cánh. Nó đi giữa các địa điểm, so sánh đá hoặc bề mặt khác nhau, dù mỗi hành trình tốn thời gian và năng lượng. Nhà khoa học phải chọn điểm đến cẩn thận vì địa hình gồ ghề gây nguy hiểm. Nhóm nhiệm vụ thường cân nhắc giá trị khoa học của địa điểm với rủi ro phương tiện mắc kẹt hoặc hỏng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "autonomy",
+      "pos": "n.",
+      "meaning_vi": "tính tự chủ",
+      "example_en": "Communication presents an additional challenge. Radio signals take time to cross large distances, so distant spacecraft cannot always be controlled as though they were robots in the next room. Some actions must follow pre-planned sequences or use limited autonomy. Engineers therefore design safeguards that allow a vehicle to respond to unexpected conditions while protecting important equipment.",
+      "example_vi": "Liên lạc đặt ra thách thức thêm. Tín hiệu vô tuyến cần thời gian vượt khoảng cách lớn, nên tàu ở xa không phải lúc nào cũng được điều khiển như robot ở phòng kế bên. Một số hành động phải theo chuỗi lập kế hoạch trước hoặc dùng tính tự chủ hạn chế. Vì vậy kỹ sư thiết kế biện pháp bảo vệ cho phép phương tiện phản ứng với điều kiện bất ngờ mà vẫn bảo vệ thiết bị quan trọng.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "ff455d8bc23bd5169d79a28fa699a0d781a21c188704890050b2adfb634f60ef",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

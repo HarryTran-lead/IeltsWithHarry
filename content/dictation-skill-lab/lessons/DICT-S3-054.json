@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-054",
+  "status": "draft",
+  "level": "L7",
+  "section": 3,
+  "topic": "Study Skills",
+  "title": "Study Skills – Peer Teaching versus Flashcards",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Amelia – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Tom – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Chloe – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "In the learning-science lab, we want to compare flashcards with peer teaching. Students say peer teaching feels harder, so some assume it must be less efficient.",
+      "translation_vi": "Trong phòng thí nghiệm khoa học học tập, ta muốn so thẻ ghi nhớ với dạy bạn học. Sinh viên nói dạy bạn khó hơn, nên một số cho rằng nó kém hiệu quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Feeling difficult doesn't necessarily mean learning is worse. Explaining a concept to someone else may reveal gaps, although the quality of feedback matters when the explanation is wrong.",
+      "translation_vi": "Cảm giác khó không nhất thiết nghĩa là học kém. Giải thích cho người khác có thể lộ lỗ hổng, dù chất lượng phản hồi quan trọng khi giải thích sai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Our initial plan lets students choose their preferred method. That creates self-selection: confident students might volunteer to teach while others select flashcards, making a fair comparison difficult.",
+      "translation_vi": "Kế hoạch đầu cho sinh viên tự chọn cách học. Như vậy có tự chọn: người tự tin dễ chọn dạy, người khác chọn thẻ, khiến so sánh công bằng khó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We could randomly assign the study method and give both groups the same material and learning time. But how do we ensure the teaching group doesn't spread misconceptions during practice?",
+      "translation_vi": "Ta có thể phân ngẫu nhiên phương pháp, cho hai nhóm cùng nội dung và thời lượng. Nhưng làm sao đảm bảo nhóm dạy không truyền hiểu sai lúc luyện?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Provide a short answer guide and allow a facilitator to correct major errors immediately. We should record when feedback occurs because that intervention may itself affect performance.",
+      "translation_vi": "Cho hướng dẫn đáp án ngắn và người hỗ trợ sửa lỗi nghiêm trọng ngay. Ta cần ghi lúc phản hồi xảy ra vì can thiệp đó cũng có thể ảnh hưởng kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "A quiz immediately afterward might only show which method prepares students for that exact quiz. Let's add a delayed test one week later to assess retention rather than short-term familiarity.",
+      "translation_vi": "Bài kiểm tra ngay sau đó có thể chỉ cho thấy cách nào chuẩn bị cho bài quiz ấy. Hãy thêm bài kiểm tra trễ sau một tuần để đo lưu giữ thay vì quen thuộc ngắn hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "What about the students' previous knowledge? If one group begins stronger, randomisation in a small class may not balance everything. We could give a brief baseline test before the session.",
+      "translation_vi": "Còn kiến thức trước đó? Nếu một nhóm mạnh sẵn, ngẫu nhiên trong lớp nhỏ chưa chắc cân hết. Ta có thể kiểm tra nền ngắn trước buổi học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Yes, and the outcome should include explanation quality, not only multiple-choice accuracy. Peer teaching might improve the ability to justify an answer even when recognition scores are similar.",
+      "translation_vi": "Đúng, kết quả nên có chất lượng giải thích, không chỉ độ đúng trắc nghiệm. Dạy bạn có thể cải thiện khả năng biện minh đáp án dù điểm nhận diện giống nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "So we'll randomise, give controlled feedback, measure baseline knowledge and retest after a week. That design is more informative than treating students' immediate preferences as evidence of effectiveness.",
+      "translation_vi": "Vậy ta chia ngẫu nhiên, phản hồi có kiểm soát, đo kiến thức nền và kiểm tra lại sau một tuần. Thiết kế đó có ích hơn coi sở thích tức thời là bằng chứng hiệu quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why might students' preferred study methods be a poor basis for comparison?",
+      "correct_answers": [
+        "Confidence may influence which method students choose"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Tom nói: “Cảm giác khó không nhất thiết nghĩa là học kém. Giải thích cho người khác có thể lộ lỗ hổng, dù chất lượng phản hồi quan trọng khi giải thích sai.” Đáp án “Confidence may influence which method students choose” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Prior knowledge may vary across students",
+        "Feedback quality could influence learning",
+        "Confidence may influence which method students choose"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Allowing students to choose their method creates ____ .",
+      "correct_answers": [
+        "self-selection"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Kế hoạch đầu cho sinh viên tự chọn cách học. Như vậy có tự chọn: người tự tin dễ chọn dạy, người khác chọn thẻ, khiến so sánh công bằng khó.” Cụm cần điền nghe đúng nguyên văn là “self-selection”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes randomly assigning students to study methods?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Amelia (Speaker A) đưa ra ý này tại T04: “Ta có thể phân ngẫu nhiên phương pháp, cho hai nhóm cùng nội dung và thời lượng. Nhưng làm sao đảm bảo nhóm dạy không truyền hiểu sai lúc luyện?”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why does Amelia propose a baseline test?",
+      "correct_answers": [
+        "To detect knowledge differences before the learning session"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Amelia nói: “Còn kiến thức trước đó? Nếu một nhóm mạnh sẵn, ngẫu nhiên trong lớp nhỏ chưa chắc cân hết. Ta có thể kiểm tra nền ngắn trước buổi học.” Đáp án “To detect knowledge differences before the learning session” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To decide which students should receive final grades",
+        "To remove the need for a delayed retention test",
+        "To detect knowledge differences before the learning session"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Tom says outcomes should include explanation ____ .",
+      "correct_answers": [
+        "quality"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Đúng, kết quả nên có chất lượng giải thích, không chỉ độ đúng trắc nghiệm. Dạy bạn có thể cải thiện khả năng biện minh đáp án dù điểm nhận diện giống nhau.” Cụm cần điền nghe đúng nguyên văn là “quality”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "When will the delayed retention test take place?",
+      "correct_answers": [
+        "after a week"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy ta chia ngẫu nhiên, phản hồi có kiểm soát, đo kiến thức nền và kiểm tra lại sau một tuần. Thiết kế đó có ích hơn coi sở thích tức thời là bằng chứng hiệu quả.” Trả lời ngắn theo chi tiết “after a week”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "We could randomly assign the study method and give both groups the same material and learning time. But how do we ensure the teaching group doesn't spread misconceptions during practice?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “We could randomly assign the study method and give both groups the same material and learning time. But how do we ensure the teaching group doesn't spread misconceptions during practice?”\nBản dịch: Ta có thể phân ngẫu nhiên phương pháp, cho hai nhóm cùng nội dung và thời lượng. Nhưng làm sao đảm bảo nhóm dạy không truyền hiểu sai lúc luyện?\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "What about the students' previous knowledge? If one group begins stronger, randomisation in a small class may not balance everything. We could give a brief baseline test before the session."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “What about the students' previous knowledge? If one group begins stronger, randomisation in a small class may not balance everything. We could give a brief baseline test before the session.”\nBản dịch: Còn kiến thức trước đó? Nếu một nhóm mạnh sẵn, ngẫu nhiên trong lớp nhỏ chưa chắc cân hết. Ta có thể kiểm tra nền ngắn trước buổi học.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: In the learning-science lab, we want to compare flashcards with ____.",
+      "correct_answers": [
+        "peer teaching"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “peer teaching” nghĩa là dạy cho bạn học. Đối chiếu: “In the learning-science lab, we want to compare flashcards with peer teaching. Students say peer teaching feels harder, so some assume it must be less efficient.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "peer teaching",
+      "pos": "n. phr.",
+      "meaning_vi": "dạy cho bạn học",
+      "example_en": "In the learning-science lab, we want to compare flashcards with peer teaching. Students say peer teaching feels harder, so some assume it must be less efficient.",
+      "example_vi": "Trong phòng thí nghiệm khoa học học tập, ta muốn so thẻ ghi nhớ với dạy bạn học. Sinh viên nói dạy bạn khó hơn, nên một số cho rằng nó kém hiệu quả.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "self-selection",
+      "pos": "n.",
+      "meaning_vi": "sự tự chọn",
+      "example_en": "Our initial plan lets students choose their preferred method. That creates self-selection: confident students might volunteer to teach while others select flashcards, making a fair comparison difficult.",
+      "example_vi": "Kế hoạch đầu cho sinh viên tự chọn cách học. Như vậy có tự chọn: người tự tin dễ chọn dạy, người khác chọn thẻ, khiến so sánh công bằng khó.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "baseline test",
+      "pos": "n. phr.",
+      "meaning_vi": "bài kiểm tra nền",
+      "example_en": "What about the students' previous knowledge? If one group begins stronger, randomisation in a small class may not balance everything. We could give a brief baseline test before the session.",
+      "example_vi": "Còn kiến thức trước đó? Nếu một nhóm mạnh sẵn, ngẫu nhiên trong lớp nhỏ chưa chắc cân hết. Ta có thể kiểm tra nền ngắn trước buổi học.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "delayed test",
+      "pos": "n. phr.",
+      "meaning_vi": "bài kiểm tra trì hoãn",
+      "example_en": "A quiz immediately afterward might only show which method prepares students for that exact quiz. Let's add a delayed test one week later to assess retention rather than short-term familiarity.",
+      "example_vi": "Bài kiểm tra ngay sau đó có thể chỉ cho thấy cách nào chuẩn bị cho bài quiz ấy. Hãy thêm bài kiểm tra trễ sau một tuần để đo lưu giữ thay vì quen thuộc ngắn hạn.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "8d1ceb6f112369e85bea1da45055173bf405887c43a5faa99c7b72d5baab16f8",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

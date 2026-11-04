@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-014",
+  "status": "draft",
+  "level": "L2",
+  "section": 1,
+  "topic": "Library Membership",
+  "title": "Getting a Library Card",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A new resident asks about local library membership.",
+    "Nhận diện core information exchange và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Elmwood Library.",
+      "translation_vi": "Chào buổi chiều, thư viện Elmwood xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hello. I want a library card. Is it free?",
+      "translation_vi": "Xin chào. Tôi muốn làm thẻ thư viện. Có miễn phí không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes, membership is free for local residents.",
+      "translation_vi": "Vâng, hội viên cư trú trong vùng được miễn phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "What should I bring?",
+      "translation_vi": "Tôi cần mang gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Please bring photo identification and proof of address.",
+      "translation_vi": "Hãy mang giấy tờ có ảnh và bằng chứng địa chỉ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Can I borrow books today?",
+      "translation_vi": "Hôm nay tôi mượn sách được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes. New members can borrow four books at a time.",
+      "translation_vi": "Được. Hội viên mới có thể mượn bốn cuốn cùng lúc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "When does the library close on Fridays?",
+      "translation_vi": "Thứ Sáu thư viện đóng cửa lúc nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "At five thirty, but it closes earlier on Sundays.",
+      "translation_vi": "Lúc năm giờ ba mươi, nhưng Chủ nhật đóng cửa sớm hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Great. I'll visit after lunch.",
+      "translation_vi": "Tuyệt. Tôi sẽ đến sau bữa trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Local membership fee: ____",
+      "correct_answers": [
+        "free"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Hội viên địa phương được miễn phí.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Bring photo identification and proof of ____",
+      "correct_answers": [
+        "address"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Cần giấy tờ xác minh địa chỉ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Maximum books for a new member: ____",
+      "correct_answers": [
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Hội viên mới mượn tối đa bốn cuốn cùng lúc.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Closing day mentioned: ____",
+      "correct_answers": [
+        "Fridays"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Khách hỏi cụ thể về ngày thứ Sáu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Friday closing time: ____",
+      "correct_answers": [
+        "five thirty"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thứ Sáu đóng cửa lúc 5 giờ 30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04 của nhân vật B.",
+      "correct_answers": [
+        "What should I bring?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: What should I bring? Nghĩa: Tôi cần mang gì? Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T09 của nhân vật A.",
+      "correct_answers": [
+        "At five thirty, but it closes earlier on Sundays."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: At five thirty, but it closes earlier on Sundays. Nghĩa: Lúc năm giờ ba mươi, nhưng Chủ nhật đóng cửa sớm hơn. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: Hello. I want a ____. Is it free?",
+      "correct_answers": [
+        "library card"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "library card: thẻ thư viện. Câu gốc: Hello. I want a library card. Is it free?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "library",
+        "documents",
+        "opening_hours",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "library card",
+      "pos": "phrase",
+      "meaning_vi": "thẻ thư viện",
+      "example_en": "Hello. I want a library card. Is it free?",
+      "example_vi": "Xin chào. Tôi muốn làm thẻ thư viện. Có miễn phí không?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "membership",
+      "pos": "word",
+      "meaning_vi": "tư cách hội viên",
+      "example_en": "Yes, membership is free for local residents.",
+      "example_vi": "Vâng, hội viên cư trú trong vùng được miễn phí.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "proof of address",
+      "pos": "phrase",
+      "meaning_vi": "bằng chứng địa chỉ",
+      "example_en": "Please bring photo identification and proof of address.",
+      "example_vi": "Hãy mang giấy tờ có ảnh và bằng chứng địa chỉ.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "borrow",
+      "pos": "word",
+      "meaning_vi": "mượn",
+      "example_en": "Can I borrow books today?",
+      "example_vi": "Hôm nay tôi mượn sách được không?",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e43436417c9641b626d75512257431b2c4c13b2dac2366e02d0741a2767d066e",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

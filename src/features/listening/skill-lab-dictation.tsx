@@ -1,0 +1,413 @@
+"use client";
+/*
+ * IELTS Skill Lab dictation bank (M16.2): 300 staged lessons from Foundation drills to Section 4.
+ * Lessons arrive without transcript or answers; every check is graded by /api/dictation/skill-lab.
+ * Each turn has its own Gemini TTS clip, so replay covers exactly one turn with a real length.
+ */
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, Check, Gauge, Headphones, Info, ListChecks, Pause, Play, RotateCcw, Search, Send, X } from "lucide-react";
+import { createClient } from "@/lib/supabase/browser";
+import { demoMode } from "@/lib/runtime";
+import { wordDifferences } from "@/lib/listening/youtube";
+import { loadPracticeResults, savePracticeResult, type PracticeResult } from "@/features/learning/practice-results";
+import type { CatalogEntry, GradedQuestion, LessonVocabulary, PublicLesson, PublicQuestion } from "@/lib/dictation-skill-lab/lessons";
+import "./voa-dictation.css";
+import "./skill-lab-dictation.css";
+
+type Mode = "practice" | "ielts";
+type Review = { transcript: { turn_id: string; speaker_id: string; text_en: string; translation_vi: string }[]; vocabulary: LessonVocabulary[] };
+type Draft = { mode: Mode; answers: Record<string, string>; results: Record<string, GradedQuestion>; submitted: boolean; played: boolean; review?: Review | null };
+
+const BASE = "/app/dictation/banks/skill-lab";
+const SLUG = (id: string) => `skill-lab:${id}`;
+const draftKey = (id: string) => `skill-lab-dictation:v1:${id}`;
+const stages = [
+  { id: "F1", label: "Foundation 1", detail: "Âm và từ dễ nhầm" },
+  { id: "F2", label: "Foundation 2", detail: "Câu ngắn, số và giờ" },
+  { id: "F3", label: "Foundation 3", detail: "Hội thoại ngắn" },
+  { id: "S1", label: "Section 1", detail: "Hội thoại đời sống" },
+  { id: "S2", label: "Section 2", detail: "Độc thoại đời sống" },
+  { id: "S3", label: "Section 3", detail: "Thảo luận học thuật" },
+  { id: "S4", label: "Section 4", detail: "Bài giảng học thuật" },
+] as const;
+const formats: Record<string, string> = { micro_drill: "Micro drill", sentence_drill: "Sentence drill", mini_conversation: "Hội thoại ngắn", section_bridge: "Section bridge", section_practice: "Section practice" };
+const accents: Record<string, string> = { british: "Anh", australian: "Úc", american: "Mỹ", new_zealand: "New Zealand" };
+const typeLabels: Record<string, string> = {
+  dictation: "Chép chính tả", gap_fill: "Điền từ còn thiếu", word_choice: "Chọn từ nghe được", mcq: "Trắc nghiệm", matching: "Nối thông tin",
+  map_labelling: "Gắn nhãn sơ đồ", form_completion: "Form completion", note_completion: "Note completion", table_completion: "Table completion",
+  sentence_completion: "Sentence completion", summary_completion: "Summary completion", short_answer: "Short answer",
+};
+const reasons: Record<string, string> = { empty_answer: "Bạn chưa nhập câu trả lời.", word_limit_exceeded: "Vượt giới hạn số từ của đề.", not_in_accepted_answers: "Chưa khớp đáp án." };
+const speeds = [0.75, 0.9, 1, 1.15];
+const stageOf = (id: string) => id.slice(5, 7);
+const clock = (ms: number) => `${Math.floor(ms / 60000)}:${String(Math.round(ms / 1000) % 60).padStart(2, "0")}`;
+
+function readDraft(id: string): Draft | null {
+  try { return JSON.parse(window.localStorage.getItem(draftKey(id)) ?? "null") as Draft | null; } catch { return null; }
+}
+function writeDraft(id: string, draft: Draft) {
+  try { window.localStorage.setItem(draftKey(id), JSON.stringify(draft)); } catch { /* Practice still works without storage. */ }
+}
+
+async function loadResults(ids: string[]): Promise<Record<string, PracticeResult>> {
+  if (demoMode) {
+    const found = await loadPracticeResults(ids.map(SLUG));
+    return Object.fromEntries(Object.entries(found).map(([slug, result]) => [slug.slice(10), result]));
+  }
+  const { data } = await createClient().from("package_practice_results").select("lesson_slug,correct,checked,total").like("lesson_slug", "skill-lab:%");
+  return Object.fromEntries((data ?? []).map((row) => [row.lesson_slug.slice(10), { correct: row.correct, checked: row.checked, total: row.total }]));
+}
+
+export function SkillLabDictation() {
+  const pathname = usePathname();
+  const lessonId = pathname.split("/")[5];
+  return lessonId ? <SkillLabLesson key={lessonId} lessonId={decodeURIComponent(lessonId)} /> : <SkillLabCatalog />;
+}
+
+function SkillLabCatalog() {
+  const router = useRouter();
+  const [lessons, setLessons] = useState<CatalogEntry[] | null>(null);
+  const [error, setError] = useState("");
+  const [results, setResults] = useState<Record<string, PracticeResult>>({});
+  const [stage, setStage] = useState("all");
+  const [query, setQuery] = useState("");
+  const [status, setStatus] = useState("all");
+  const [last, setLast] = useState("");
+
+  useEffect(() => {
+    let alive = true;
+    void fetch("/api/dictation/skill-lab").then(async (response) => {
+      const data = await response.json().catch(() => ({})) as { lessons?: CatalogEntry[]; error?: string };
+      if (!alive) return;
+      if (!response.ok || !data.lessons) { setError(data.error ?? "Không tải được kho bài."); setLessons([]); return; }
+      setLessons(data.lessons);
+      try { setLast(window.localStorage.getItem("skill-lab-last-lesson") ?? ""); } catch { /* optional */ }
+      loadResults(data.lessons.map((lesson) => lesson.lesson_id)).then((found) => { if (alive) setResults(found); }).catch(() => undefined);
+    });
+    return () => { alive = false; };
+  }, []);
+
+  const progress = (id: string) => {
+    const result = results[id];
+    if (!result || !result.checked) return "new";
+    return result.checked >= result.total ? "done" : "started";
+  };
+  const visible = (lessons ?? []).filter((lesson) => (stage === "all" || stageOf(lesson.lesson_id) === stage)
+    && (status === "all" || progress(lesson.lesson_id) === status)
+    && `${lesson.lesson_id} ${lesson.title} ${lesson.topic}`.toLowerCase().includes(query.trim().toLowerCase()));
+  const ready = (lessons ?? []).filter((lesson) => lesson.audio_ready);
+  const next = ready.find((lesson) => lesson.lesson_id === last) ?? ready.find((lesson) => progress(lesson.lesson_id) !== "done");
+  const counts = Object.fromEntries(stages.map((item) => [item.id, (lessons ?? []).filter((lesson) => stageOf(lesson.lesson_id) === item.id).length]));
+
+  return (
+    <div className="voa-lab sld-lab">
+      <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dictation">Dictation</Link><span>›</span><span>IELTS Skill Lab</span></nav>
+      <header className="voa-bank-hero">
+        <div><span className="voa-eyebrow">IELTS SKILL LAB · 300 BÀI</span><h1>Lộ trình nghe chép IELTS</h1>
+          <p>Đi từ âm dễ nhầm, câu ngắn, số và giờ đến Section 1–4. Mỗi lượt nghe có audio riêng để nghe lại đúng câu cần chép.</p></div>
+        {next && <button type="button" className="voa-primary-button" onClick={() => router.push(`${BASE}/${next.lesson_id}`)}>{next.lesson_id === last ? "Tiếp tục bài đang học" : "Bắt đầu bài tiếp theo"} <ArrowRight size={17} /></button>}
+      </header>
+      <p className="sld-draft-note"><Info size={15} /> Bản nháp M16.2: audio do Gemini TTS tạo và chưa được giáo viên nghe duyệt. Điểm ở đây là điểm luyện tập, không quy đổi ra Band IELTS.</p>
+      {error ? <section className="voa-surface sld-empty"><h2>Chưa mở được kho</h2><p>{error}</p></section> : (
+        <section className="voa-bank-library">
+          <aside className="voa-collection-filter voa-surface" aria-label="Chặng học">
+            <h2>Chặng học</h2>
+            <button type="button" className={stage === "all" ? "active" : ""} onClick={() => setStage("all")}><span>Tất cả</span><span>{lessons?.length ?? "…"}</span></button>
+            {stages.map((item) => <button type="button" key={item.id} className={stage === item.id ? "active" : ""} onClick={() => setStage(item.id)} title={item.detail}><span>{item.label}</span><span>{counts[item.id] || ""}</span></button>)}
+            <p>Foundation luyện tai nghe; Section bám dạng câu hỏi IELTS Listening.</p>
+          </aside>
+          <div className="voa-library">
+            <div className="sld-filter-bar">
+              <label className="sld-search"><Search size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm theo mã, tên bài, chủ đề" aria-label="Tìm bài" /></label>
+              <label>Trạng thái<select value={status} onChange={(event) => setStatus(event.target.value)}><option value="all">Tất cả</option><option value="new">Chưa học</option><option value="started">Đang học</option><option value="done">Đã nộp đủ</option></select></label>
+            </div>
+            {lessons === null ? <p className="sld-muted">Đang tải kho bài…</p> : !visible.length ? <p className="sld-muted">Không có bài phù hợp bộ lọc.</p> : (
+              <div className="sld-grid">
+                {visible.map((lesson) => {
+                  const result = results[lesson.lesson_id];
+                  const state = progress(lesson.lesson_id);
+                  return (
+                    <button type="button" key={lesson.lesson_id} className={`sld-card voa-surface sld-${state}`} disabled={!lesson.audio_ready} onClick={() => router.push(`${BASE}/${lesson.lesson_id}`)}>
+                      <span className="sld-card-top"><span className="sld-code">{lesson.lesson_id}</span><span className="sld-pill">{lesson.level}</span></span>
+                      <strong>{lesson.title}</strong>
+                      <span className="sld-card-meta">{lesson.topic} · {formats[lesson.content_format] ?? lesson.content_format}</span>
+                      <span className="sld-card-foot">
+                        <span>{lesson.questions} câu · {lesson.turns} lượt{lesson.duration_ms ? ` · ${clock(lesson.duration_ms)}` : ""}</span>
+                        <span>{!lesson.audio_ready ? "Đang tạo audio" : result?.checked ? `${result.correct}/${result.total} đúng` : "Chưa học"}</span>
+                      </span>
+                      {result?.checked ? <span className="sld-meter" aria-hidden><span style={{ width: `${Math.round((result.checked / Math.max(result.total, 1)) * 100)}%` }} /></span> : null}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+    </div>
+  );
+}
+
+function SkillLabLesson({ lessonId }: { lessonId: string }) {
+  const router = useRouter();
+  const audio = useRef<HTMLAudioElement>(null);
+  const continuous = useRef(false);
+  const current = useRef<number | null>(null);
+  const gapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [lesson, setLesson] = useState<PublicLesson | null>(null);
+  const [error, setError] = useState("");
+  const [mode, setMode] = useState<Mode>("practice");
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [results, setResults] = useState<Record<string, GradedQuestion>>({});
+  const [submitted, setSubmitted] = useState(false);
+  const [played, setPlayed] = useState(false);
+  const [review, setReview] = useState<Review | null>(null);
+  const [busy, setBusy] = useState("");
+  const [playing, setPlaying] = useState<number | null>(null);
+  const [playingAll, setPlayingAll] = useState(false);
+  const [speed, setSpeed] = useState(1);
+  const [restored, setRestored] = useState(false);
+
+  useEffect(() => {
+    let alive = true;
+    void fetch(`/api/dictation/skill-lab/${encodeURIComponent(lessonId)}`).then(async (response) => {
+      const data = await response.json().catch(() => ({})) as { lesson?: PublicLesson; error?: string };
+      if (!alive) return;
+      if (!response.ok || !data.lesson) { setError(data.error ?? "Không tải được bài."); return; }
+      setLesson(data.lesson);
+      const draft = readDraft(lessonId);
+      if (draft) { setMode(draft.mode); setAnswers(draft.answers ?? {}); setResults(draft.results ?? {}); setSubmitted(Boolean(draft.submitted)); setPlayed(Boolean(draft.played)); setReview(draft.review ?? null); }
+      setRestored(true);
+      try { window.localStorage.setItem("skill-lab-last-lesson", lessonId); } catch { /* optional */ }
+    });
+    return () => { alive = false; };
+  }, [lessonId]);
+
+  useEffect(() => { if (restored) writeDraft(lessonId, { mode, answers, results, submitted, played, review }); }, [restored, lessonId, mode, answers, results, submitted, played, review]);
+  useEffect(() => () => { if (gapTimer.current) clearTimeout(gapTimer.current); audio.current?.pause(); }, []);
+  useEffect(() => { if (audio.current) audio.current.playbackRate = speed; }, [speed]);
+
+  const turnIndex = useMemo(() => new Map((lesson?.turns ?? []).map((turn, index) => [turn.turn_id, index])), [lesson]);
+  const speakers = useMemo(() => Object.fromEntries((lesson?.speakers ?? []).map((speaker) => [speaker.speaker_id, speaker])), [lesson]);
+  const examLocked = mode === "ielts" && !submitted;
+
+  const stop = useCallback(() => {
+    continuous.current = false;
+    current.current = null;
+    if (gapTimer.current) clearTimeout(gapTimer.current);
+    audio.current?.pause();
+    setPlaying(null); setPlayingAll(false);
+  }, []);
+
+  function play(index: number, all = false) {
+    const player = audio.current;
+    const turn = lesson?.turns[index];
+    if (!player || !turn?.audio_url) return;
+    if (gapTimer.current) clearTimeout(gapTimer.current);
+    continuous.current = all;
+    setPlayingAll(all);
+    current.current = index;
+    player.src = turn.audio_url;
+    player.playbackRate = speed;
+    setPlaying(index);
+    void player.play().catch(() => { setPlaying(null); setError("Trình duyệt chưa phát được audio. Hãy bấm phát lại."); });
+  }
+  /** Reads the playing turn from a ref: a state value could be stale between the pause and ended events. */
+  function ended() {
+    const index = current.current;
+    if (index === null || !lesson) return;
+    if (continuous.current && index + 1 < lesson.turns.length) {
+      gapTimer.current = setTimeout(() => play(index + 1, true), 450);
+      return;
+    }
+    if (continuous.current && mode === "ielts") setPlayed(true);
+    continuous.current = false;
+    current.current = null;
+    setPlaying(null); setPlayingAll(false);
+  }
+
+  async function grade(questionIds?: string[]) {
+    if (!lesson) return;
+    setBusy(questionIds ? questionIds.join(",") : "all"); setError("");
+    try {
+      const response = await fetch(`/api/dictation/skill-lab/${lesson.lesson_id}/grade`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode, answers, ...(questionIds ? { question_ids: questionIds } : {}) }),
+      });
+      const data = await response.json().catch(() => ({})) as { results?: GradedQuestion[]; error?: string } & Partial<Review>;
+      if (!response.ok || !data.results) throw new Error(data.error ?? "Không chấm được bài.");
+      const next = { ...results, ...Object.fromEntries(data.results.map((item) => [item.question_id, item])) };
+      setResults(next);
+      if (!questionIds) { setSubmitted(true); setReview({ transcript: data.transcript ?? [], vocabulary: data.vocabulary ?? [] }); stop(); }
+      const checked = Object.keys(next).length;
+      const correct = Object.values(next).filter((item) => item.correct).length;
+      void savePracticeResult(SLUG(lesson.lesson_id), { correct, checked, total: lesson.questions.length }).catch(() => undefined);
+    } catch (failure) { setError(failure instanceof Error ? failure.message : "Không chấm được bài."); }
+    finally { setBusy(""); }
+  }
+
+  function restart(nextMode: Mode) {
+    stop();
+    setMode(nextMode); setAnswers({}); setResults({}); setSubmitted(false); setPlayed(false); setReview(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  if (error && !lesson) return <div className="voa-lab sld-lab"><nav className="voa-breadcrumb"><Link href={BASE}><ArrowLeft size={14} /> IELTS Skill Lab</Link></nav><section className="voa-surface sld-empty"><h2>Chưa mở được bài</h2><p>{error}</p></section></div>;
+  if (!lesson) return <div className="voa-lab sld-lab"><p className="sld-muted">Đang tải bài…</p></div>;
+
+  const correctCount = Object.values(results).filter((item) => item.correct).length;
+  const checkedCount = Object.keys(results).length;
+  const maps = [...new Set(lesson.questions.map((question) => question.map_url).filter(Boolean))] as string[];
+  const totalMs = lesson.turns.reduce((sum, turn) => sum + (turn.duration_ms ?? 0), 0);
+
+  return (
+    <div className="voa-lab sld-lab">
+      <header className="voa-lesson-header">
+        <div>
+          <button type="button" className="voa-lesson-back" onClick={() => { stop(); router.push(BASE); }}><ArrowLeft size={15} /> Thư viện Skill Lab</button>
+          <h1>{lesson.title}</h1>
+          <p>{[lesson.lesson_id, lesson.level, lesson.section ? `Section ${lesson.section}` : "Foundation", lesson.topic, formats[lesson.content_format] ?? lesson.content_format]
+            .filter((part, index, parts) => parts.indexOf(part) === index).join(" · ")}</p>
+        </div>
+        <div className="sld-mode" role="radiogroup" aria-label="Chế độ làm bài">
+          <button type="button" role="radio" aria-checked={mode === "practice"} className={mode === "practice" ? "active" : ""} onClick={() => mode !== "practice" && restart("practice")}><ListChecks size={15} /> Luyện tập</button>
+          <button type="button" role="radio" aria-checked={mode === "ielts"} className={mode === "ielts" ? "active" : ""} onClick={() => mode !== "ielts" && restart("ielts")}><Headphones size={15} /> Làm bài một lần</button>
+        </div>
+      </header>
+
+      <div className="voa-info-banner"><Info size={15} /><span>{mode === "practice"
+        ? "Luyện tập: nghe lại từng lượt bao nhiêu lần tùy ý, kiểm tra từng câu ngay. Đáp án biến thể (ví dụ số viết bằng chữ) được chấp nhận."
+        : "Làm bài một lần: audio phát liền một lượt, không nghe lại và không xem đáp án trước khi nộp. Chấm theo đúng đáp án và giới hạn số từ."}</span></div>
+      {lesson.learning_objectives_vi.length > 0 && <ul className="sld-goals">{lesson.learning_objectives_vi.map((goal) => <li key={goal}><Check size={14} /> {goal}</li>)}</ul>}
+
+      <section className="sld-player voa-surface" aria-label="Bài nghe">
+        <audio ref={audio} preload="none" onEnded={ended} />
+        <div className="sld-player-row">
+          {examLocked ? (
+            <button type="button" className="voa-primary-button" disabled={played || playing !== null} onClick={() => play(0, true)}>
+              <Play size={16} /> {played ? "Đã phát hết (1 lần)" : playing !== null ? `Đang phát lượt ${playing + 1}/${lesson.turns.length}` : "Phát bài nghe"}
+            </button>
+          ) : playing !== null && playingAll ? (
+            <button type="button" className="voa-primary-button" onClick={stop}><Pause size={16} /> Dừng</button>
+          ) : (
+            <button type="button" className="voa-primary-button" onClick={() => play(0, true)}><Play size={16} /> Phát cả bài</button>
+          )}
+          <span className="sld-muted">{lesson.turns.length} lượt · {clock(totalMs)} · giọng {[...new Set(lesson.speakers.map((speaker) => accents[speaker.accent] ?? speaker.accent))].join(", ")}</span>
+          <label className="sld-speed"><Gauge size={15} /> Tốc độ
+            <select value={speed} disabled={examLocked} onChange={(event) => setSpeed(Number(event.target.value))}>{speeds.map((value) => <option key={value} value={value}>{value}×</option>)}</select>
+          </label>
+        </div>
+        {!examLocked && (
+          <div className="sld-turns" aria-label="Nghe từng lượt">
+            {lesson.turns.map((turn, index) => (
+              <button type="button" key={turn.turn_id} className={`${playing === index ? "playing" : ""}${turn.flagged ? " flagged" : ""}`} disabled={!turn.audio_url} onClick={() => (playing === index ? stop() : play(index))}
+                title={`${speakers[turn.speaker_id]?.label ?? turn.speaker_id} · ${clock(turn.duration_ms ?? 0)}${turn.flagged ? " · máy kiểm tra chưa khớp hết, nên nghe đối chiếu" : ""}`}>
+                {playing === index ? <Pause size={13} /> : <Play size={13} />} {turn.turn_id}{lesson.speakers.length > 1 && <small>{speakers[turn.speaker_id]?.label ?? turn.speaker_id}</small>}
+              </button>
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* Static SVG plans from the lesson package; next/image adds nothing for vector files. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {maps.map((url) => <figure key={url} className="sld-map voa-surface"><img src={url} alt="Sơ đồ cho câu hỏi gắn nhãn" /><figcaption>Sơ đồ dùng cho các câu Map labelling</figcaption></figure>)}
+      {error && <p className="sld-error" role="alert">{error}</p>}
+
+      <ol className="sld-questions">
+        {lesson.questions.map((question, index) => (
+          <QuestionCard key={question.question_id} number={index + 1} question={question} value={answers[question.question_id] ?? ""} result={results[question.question_id]}
+            mode={mode} locked={submitted || (mode === "practice" && Boolean(results[question.question_id]))} busy={busy === question.question_id}
+            onChange={(value) => setAnswers((current) => ({ ...current, [question.question_id]: value }))}
+            onCheck={() => void grade([question.question_id])}
+            onRetry={() => setResults((current) => { const next = { ...current }; delete next[question.question_id]; return next; })}
+            onPlayEvidence={!examLocked ? () => { const at = turnIndex.get(question.evidence_turn_ids[0]); if (at !== undefined) play(at); } : undefined} />
+        ))}
+      </ol>
+
+      <section className="sld-submit voa-surface">
+        {submitted ? (
+          <>
+            <div><strong>{correctCount}/{lesson.questions.length} câu đúng</strong><span className="sld-muted">Điểm luyện tập, không quy đổi Band IELTS. {mode === "ielts" ? "Chấm theo chế độ một lần nghe." : ""}</span></div>
+            <div className="sld-submit-actions">
+              <button type="button" onClick={() => restart(mode)}><RotateCcw size={15} /> Làm lại</button>
+              <button type="button" className="voa-primary-button" onClick={() => router.push(BASE)}>Chọn bài khác <ArrowRight size={15} /></button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div><strong>{mode === "practice" ? `Đã kiểm tra ${checkedCount}/${lesson.questions.length} câu` : `Đã trả lời ${Object.values(answers).filter((value) => value.trim()).length}/${lesson.questions.length} câu`}</strong>
+              <span className="sld-muted">Nộp bài để xem toàn bộ transcript, bản dịch và từ vựng.</span></div>
+            <button type="button" className="voa-primary-button" disabled={busy === "all"} onClick={() => void grade()}><Send size={15} /> {busy === "all" ? "Đang chấm…" : "Nộp bài"}</button>
+          </>
+        )}
+      </section>
+
+      {review && (
+        <section className="sld-review voa-surface">
+          <h2>Transcript</h2>
+          <ol className="sld-transcript">
+            {review.transcript.map((turn, index) => (
+              <li key={turn.turn_id}>
+                <button type="button" aria-label={`Nghe ${turn.turn_id}`} onClick={() => (playing === index ? stop() : play(index))}>{playing === index ? <Pause size={13} /> : <Play size={13} />}</button>
+                <div><span className="sld-speaker">{turn.turn_id} · {speakers[turn.speaker_id]?.label ?? turn.speaker_id}</span><p>{turn.text_en}</p><p className="sld-vi">{turn.translation_vi}</p></div>
+              </li>
+            ))}
+          </ol>
+          {review.vocabulary.length > 0 && <>
+            <h2>Từ vựng trong bài</h2>
+            <dl className="sld-vocab">{review.vocabulary.map((word) => <div key={word.term}><dt>{word.term} <small>{word.pos}</small></dt><dd>{word.meaning_vi}<span>{word.example_en}</span></dd></div>)}</dl>
+          </>}
+        </section>
+      )}
+    </div>
+  );
+}
+
+function QuestionCard({ number, question, value, result, mode, locked, busy, onChange, onCheck, onRetry, onPlayEvidence }: {
+  number: number; question: PublicQuestion; value: string; result?: GradedQuestion; mode: Mode; locked: boolean; busy: boolean;
+  onChange: (value: string) => void; onCheck: () => void; onRetry: () => void; onPlayEvidence?: () => void;
+}) {
+  const choices = question.options ?? question.choices;
+  const inputId = `sld-${question.question_id}`;
+  const diff = result && question.type === "dictation" && !result.correct && value.trim() ? wordDifferences(result.accepted_answers[0] ?? "", value) : [];
+  return (
+    <li className={`sld-question voa-surface${result ? (result.correct ? " correct" : " wrong") : ""}`}>
+      <div className="sld-question-head">
+        <span className="sld-number">{number}</span>
+        <span className="sld-type">{typeLabels[question.type] ?? question.type}</span>
+        {question.instructions_en && <span className="sld-limit">{question.instructions_en}</span>}
+        {onPlayEvidence && mode === "practice" && <button type="button" className="sld-evidence" onClick={onPlayEvidence}><Headphones size={13} /> Nghe {question.evidence_turn_ids[0]}</button>}
+      </div>
+      <label htmlFor={choices ? undefined : inputId} className="sld-prompt">{question.prompt}</label>
+      {choices ? (
+        <div className="sld-options" role="radiogroup" aria-label={question.prompt}>
+          {choices.map((option) => (
+            <label key={option} className={value === option ? "chosen" : ""}>
+              <input type="radio" name={inputId} value={option} checked={value === option} disabled={locked} onChange={() => onChange(option)} /> {option}
+            </label>
+          ))}
+        </div>
+      ) : question.type === "dictation" ? (
+        <textarea id={inputId} rows={2} value={value} disabled={locked} spellCheck={false} autoComplete="off" placeholder="Gõ lại đúng câu bạn nghe được" onChange={(event) => onChange(event.target.value)} />
+      ) : (
+        <input id={inputId} value={value} disabled={locked} spellCheck={false} autoComplete="off" placeholder="Câu trả lời" onChange={(event) => onChange(event.target.value)}
+          onKeyDown={(event) => { if (event.key === "Enter" && mode === "practice" && !locked) onCheck(); }} />
+      )}
+      {mode === "practice" && !result && <div className="sld-question-actions"><button type="button" disabled={busy} onClick={onCheck}><Check size={14} /> {busy ? "Đang chấm…" : value.trim() ? "Kiểm tra" : "Xem đáp án"}</button></div>}
+      {result && (
+        <div className="sld-feedback">
+          <p className="sld-verdict">{result.correct ? <><Check size={15} /> Chính xác</> : <><X size={15} /> {reasons[result.reason] ?? "Chưa đúng."}{result.reason === "word_limit_exceeded" ? ` (đề cho tối đa ${result.allowed_words} từ, bạn viết ${result.found_words})` : ""}</>}
+            {typeof result.accuracy === "number" && !result.correct && result.accuracy > 0 ? <span className="sld-muted"> · nghe đúng {Math.round(result.accuracy * 100)}% từ</span> : null}</p>
+          {diff.length > 0 && <p className="sld-diff" aria-label="So sánh từng từ">{diff.map((item, index) => <span key={index} className={item.kind}>{item.word}</span>)}</p>}
+          {!result.correct && <p><strong>Đáp án:</strong> {result.accepted_answers.join(" / ")}</p>}
+          <p>{result.explanation_vi}</p>
+          {result.evidence.map((turn) => <blockquote key={turn.turn_id}><span>{turn.turn_id}</span> {turn.text_en}<small>{turn.translation_vi}</small></blockquote>)}
+          {mode === "practice" && !result.correct && <button type="button" className="sld-retry" onClick={onRetry}><RotateCcw size={13} /> Thử lại câu này</button>}
+        </div>
+      )}
+    </li>
+  );
+}

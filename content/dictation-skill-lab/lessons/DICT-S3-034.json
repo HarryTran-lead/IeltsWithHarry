@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-034",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Student Presentations",
+  "title": "Student Presentations – Food Waste Presentation",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Hannah – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ravi – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Ella – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I was thinking of opening our food-security presentation with a pie chart showing the proportions of different causes of food waste. The chart looks impressive, but the figures come from different years.",
+      "translation_vi": "Mình định mở bài thuyết trình an ninh lương thực bằng biểu đồ tròn về tỷ lệ các nguyên nhân gây lãng phí thực phẩm. Biểu đồ đẹp nhưng số liệu lấy từ những năm khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "That's misleading because the categories may overlap. A restaurant can waste food through both poor storage and over-ordering, so the slices aren't necessarily parts of one complete whole.",
+      "translation_vi": "Như vậy gây hiểu lầm vì các nhóm có thể trùng nhau. Nhà hàng có thể lãng phí do bảo quản kém lẫn đặt hàng quá nhiều, nên các lát không hẳn là phần của một tổng thể duy nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We could replace it with a bar chart showing food waste per household in three regions, but we would need to check whether the source measures weight or monetary value.",
+      "translation_vi": "Ta có thể thay bằng biểu đồ cột về lượng thực phẩm bỏ đi trên mỗi hộ ở ba khu vực, nhưng phải xem nguồn đo khối lượng hay giá trị tiền.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The dataset uses kilograms per household per week. The trouble is that household sizes differ. If we show kilograms per person instead, the comparison should be fairer.",
+      "translation_vi": "Bộ dữ liệu dùng kilogram mỗi hộ mỗi tuần. Vấn đề là quy mô hộ khác nhau. Nếu thể hiện kilogram trên mỗi người, so sánh sẽ công bằng hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I agree, though the figures are estimates, not direct measurements in every home. We should include a note about the survey method instead of presenting all values as perfectly precise.",
+      "translation_vi": "Mình đồng ý, dù đó là ước tính, không phải đo trực tiếp ở mọi nhà. Ta nên ghi chú phương pháp khảo sát thay vì trình bày tất cả như số đo chính xác tuyệt đối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The lecturer asked for a clear policy implication. Rather than listing five solutions, we could explain how smaller portions in university cafeterias might reduce waste without restricting choice.",
+      "translation_vi": "Giảng viên yêu cầu hàm ý chính sách rõ ràng. Thay vì liệt kê năm giải pháp, ta có thể giải thích suất ăn nhỏ hơn ở căng tin đại học giúp giảm lãng phí mà không hạn chế lựa chọn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We should be careful: students might simply return for a second portion. Our claim should be that portion choice may reduce plate waste, not that it guarantees a reduction in total food purchases.",
+      "translation_vi": "Phải cẩn thận: sinh viên có thể quay lại lấy suất thứ hai. Ta nên nói lựa chọn khẩu phần có thể giảm thức ăn thừa trên đĩa, chứ không đảm bảo giảm tổng lượng mua.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "For the opening, let's present one familiar cafeteria example, then the normalized bar chart, then the limitation and proposed pilot. That order will be easier to follow than beginning with an unexplained percentage.",
+      "translation_vi": "Phần mở đầu dùng ví dụ căng tin quen thuộc, rồi biểu đồ cột đã chuẩn hóa, tiếp đến giới hạn và thử nghiệm đề xuất. Trình tự đó dễ theo dõi hơn mở bằng tỷ lệ không giải thích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Fine. I'll rebuild the chart per person per week and mark the numbers as estimates. We can finish with a small-scale trial rather than an exaggerated promise about solving food waste.",
+      "translation_vi": "Được. Mình sẽ vẽ lại biểu đồ theo đầu người mỗi tuần và ghi rõ là số ước tính. Ta kết bằng thử nghiệm nhỏ thay vì hứa hẹn quá mức về giải quyết lãng phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why is the proposed pie chart misleading?",
+      "correct_answers": [
+        "Its categories can overlap and do not form a single whole"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Ravi nói: “Như vậy gây hiểu lầm vì các nhóm có thể trùng nhau. Nhà hàng có thể lãng phí do bảo quản kém lẫn đặt hàng quá nhiều, nên các lát không hẳn là phần của một tổng thể duy nhất.” Đáp án “Its categories can overlap and do not form a single whole” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The household sizes differ across regions",
+        "Its categories can overlap and do not form a single whole",
+        "The figures are expressed in the wrong currency"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Before normalisation, the proposed alternative chart would compare food waste per ____ .",
+      "correct_answers": [
+        "household"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Ta có thể thay bằng biểu đồ cột về lượng thực phẩm bỏ đi trên mỗi hộ ở ba khu vực, nhưng phải xem nguồn đo khối lượng hay giá trị tiền.” Cụm cần điền nghe đúng nguyên văn là “household”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes measuring food waste per person?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Hannah (Speaker A) đưa ra ý này tại T04: “Bộ dữ liệu dùng kilogram mỗi hộ mỗi tuần. Vấn đề là quy mô hộ khác nhau. Nếu thể hiện kilogram trên mỗi người, so sánh sẽ công bằng hơn.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why should the policy claim remain cautious?",
+      "correct_answers": [
+        "Smaller portions do not guarantee fewer total purchases"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Hannah nói: “Phải cẩn thận: sinh viên có thể quay lại lấy suất thứ hai. Ta nên nói lựa chọn khẩu phần có thể giảm thức ăn thừa trên đĩa, chứ không đảm bảo giảm tổng lượng mua.” Đáp án “Smaller portions do not guarantee fewer total purchases” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Every student will accept the smaller portion",
+        "Smaller portions do not guarantee fewer total purchases",
+        "The university already guarantees less food purchasing"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The group will present a familiar ____ example first.",
+      "correct_answers": [
+        "cafeteria"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Phần mở đầu dùng ví dụ căng tin quen thuộc, rồi biểu đồ cột đã chuẩn hóa, tiếp đến giới hạn và thử nghiệm đề xuất. Trình tự đó dễ theo dõi hơn mở bằng tỷ lệ không giải thích.” Cụm cần điền nghe đúng nguyên văn là “cafeteria”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What type of trial will conclude the presentation?",
+      "correct_answers": [
+        "small-scale trial"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Được. Mình sẽ vẽ lại biểu đồ theo đầu người mỗi tuần và ghi rõ là số ước tính. Ta kết bằng thử nghiệm nhỏ thay vì hứa hẹn quá mức về giải quyết lãng phí.” Trả lời ngắn theo chi tiết “small-scale trial”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "The dataset uses kilograms per household per week. The trouble is that household sizes differ. If we show kilograms per person instead, the comparison should be fairer."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “The dataset uses kilograms per household per week. The trouble is that household sizes differ. If we show kilograms per person instead, the comparison should be fairer.”\nBản dịch: Bộ dữ liệu dùng kilogram mỗi hộ mỗi tuần. Vấn đề là quy mô hộ khác nhau. Nếu thể hiện kilogram trên mỗi người, so sánh sẽ công bằng hơn.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "We should be careful: students might simply return for a second portion. Our claim should be that portion choice may reduce plate waste, not that it guarantees a reduction in total food purchases."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “We should be careful: students might simply return for a second portion. Our claim should be that portion choice may reduce plate waste, not that it guarantees a reduction in total food purchases.”\nBản dịch: Phải cẩn thận: sinh viên có thể quay lại lấy suất thứ hai. Ta nên nói lựa chọn khẩu phần có thể giảm thức ăn thừa trên đĩa, chứ không đảm bảo giảm tổng lượng mua.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: I was thinking of opening our ____ presentation with a pie chart showing the proportions of different causes of food waste. The chart looks impressive, but the figures come from different years.",
+      "correct_answers": [
+        "food-security"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “food-security” nghĩa là liên quan an ninh lương thực. Đối chiếu: “I was thinking of opening our food-security presentation with a pie chart showing the proportions of different causes of food waste. The chart looks impressive, but the figures come from different years.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "food-security",
+      "pos": "adj.",
+      "meaning_vi": "liên quan an ninh lương thực",
+      "example_en": "I was thinking of opening our food-security presentation with a pie chart showing the proportions of different causes of food waste. The chart looks impressive, but the figures come from different years.",
+      "example_vi": "Mình định mở bài thuyết trình an ninh lương thực bằng biểu đồ tròn về tỷ lệ các nguyên nhân gây lãng phí thực phẩm. Biểu đồ đẹp nhưng số liệu lấy từ những năm khác nhau.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "overlap",
+      "pos": "v.",
+      "meaning_vi": "trùng lắp",
+      "example_en": "That's misleading because the categories may overlap. A restaurant can waste food through both poor storage and over-ordering, so the slices aren't necessarily parts of one complete whole.",
+      "example_vi": "Như vậy gây hiểu lầm vì các nhóm có thể trùng nhau. Nhà hàng có thể lãng phí do bảo quản kém lẫn đặt hàng quá nhiều, nên các lát không hẳn là phần của một tổng thể duy nhất.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "normalized",
+      "pos": "adj.",
+      "meaning_vi": "được chuẩn hóa",
+      "example_en": "For the opening, let's present one familiar cafeteria example, then the normalized bar chart, then the limitation and proposed pilot. That order will be easier to follow than beginning with an unexplained percentage.",
+      "example_vi": "Phần mở đầu dùng ví dụ căng tin quen thuộc, rồi biểu đồ cột đã chuẩn hóa, tiếp đến giới hạn và thử nghiệm đề xuất. Trình tự đó dễ theo dõi hơn mở bằng tỷ lệ không giải thích.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "policy implication",
+      "pos": "n. phr.",
+      "meaning_vi": "hàm ý chính sách",
+      "example_en": "The lecturer asked for a clear policy implication. Rather than listing five solutions, we could explain how smaller portions in university cafeterias might reduce waste without restricting choice.",
+      "example_vi": "Giảng viên yêu cầu hàm ý chính sách rõ ràng. Thay vì liệt kê năm giải pháp, ta có thể giải thích suất ăn nhỏ hơn ở căng tin đại học giúp giảm lãng phí mà không hạn chế lựa chọn.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "9fa22dd10724eef12610331004f5b9589176c48019de66bb96d61cbaadd13b2a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-020",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Human Psychology",
+  "title": "Sleep, Retrieval Practice and Long-Term Learning",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Sleep is not simply an interruption between periods of learning. During sleep, the brain continues processes associated with stabilising and reorganising memories. Psychologists call part of this process consolidation. If someone studies new vocabulary and then sleeps, later recall may benefit compared with a schedule that involves prolonged wakefulness, although many factors affect the result.",
+      "translation_vi": "Giấc ngủ không đơn thuần là khoảng ngắt giữa các buổi học. Khi ngủ, não tiếp tục các quá trình gắn với việc ổn định và tổ chức lại ký ức. Nhà tâm lý gọi một phần quá trình đó là củng cố trí nhớ. Nếu học từ mới rồi ngủ, khả năng nhớ lại về sau có thể tốt hơn lịch thức kéo dài, dù nhiều yếu tố ảnh hưởng kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Memory also changes when we try to retrieve information. Testing yourself without looking at notes can strengthen later access to material, particularly when feedback corrects mistakes. This is often called retrieval practice. It is different from simply reading the same page again, which may feel fluent because the words look familiar without being easy to recall independently.",
+      "translation_vi": "Trí nhớ còn thay đổi khi ta cố truy xuất thông tin. Tự kiểm tra không nhìn ghi chú có thể tăng khả năng truy cập kiến thức sau này, nhất là khi phản hồi sửa lỗi. Đó thường gọi là luyện truy xuất. Nó khác với chỉ đọc lại trang sách, điều có thể tạo cảm giác trôi chảy vì từ ngữ quen mắt nhưng không dễ tự nhớ lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Spacing matters as well. Several short sessions spread across days often support long-term retention better than concentrating all the same study time into one evening. The gap between sessions forces some effortful reconstruction. Yet the ideal spacing depends on the material and the date when it will be needed. A fixed timetable should not be treated as a universal law.",
+      "translation_vi": "Giãn cách buổi học cũng quan trọng. Nhiều buổi ngắn trải qua các ngày thường hỗ trợ ghi nhớ dài hạn tốt hơn dồn cùng thời lượng vào một tối. Khoảng cách buộc não tái dựng thông tin với nỗ lực. Tuy nhiên, giãn cách lý tưởng tùy nội dung và thời điểm cần dùng. Một thời khóa biểu cố định không phải quy luật chung cho mọi trường hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Stress and emotion add complexity. An emotionally important event may draw attention and leave a strong impression, but that does not guarantee an accurate memory of every detail. High pressure can also interfere with the retrieval of information that was learned successfully. Therefore, improving performance requires considering both how material was studied and the conditions under which it is recalled.",
+      "translation_vi": "Căng thẳng và cảm xúc làm vấn đề phức tạp hơn. Sự kiện quan trọng về cảm xúc có thể hút chú ý và gây ấn tượng mạnh, nhưng không đảm bảo nhớ chính xác mọi chi tiết. Áp lực cao cũng có thể cản việc truy xuất nội dung đã học. Vì thế, cải thiện thành tích cần xét cả cách học và điều kiện lúc nhớ lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A sensible learning plan combines clear explanations, spaced retrieval and adequate sleep, then measures progress with unfamiliar questions. Students should not judge mastery merely by recognising an answer they have seen many times. The deeper lesson is causal: the activities surrounding learning influence what can be recalled later, not just the amount of time spent with an open book.",
+      "translation_vi": "Kế hoạch học hợp lý kết hợp giải thích rõ, truy xuất giãn cách và ngủ đủ, sau đó đo tiến bộ bằng câu hỏi lạ. Học sinh không nên đánh giá thành thạo chỉ vì nhận ra đáp án đã gặp nhiều lần. Bài học nhân–quả sâu hơn là những hoạt động quanh việc học ảnh hưởng đến khả năng nhớ sau này, không chỉ tổng thời gian mở sách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "The stabilising of memories is partly called ____.",
+      "correct_answers": [
+        "consolidation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Giấc ngủ không đơn thuần là khoảng ngắt giữa các buổi học. Khi ngủ, não tiếp tục các quá trình gắn với việc ổn định và tổ chức lại ký ức. Nhà tâm lý gọi một phần quá trình đó là củng cố trí nhớ. Nếu học từ mới rồi ngủ, khả năng nhớ lại về sau có thể tốt hơn lịch thức kéo dài, dù nhiều yếu tố ảnh hưởng kết quả. Đáp án cần chọn/điền: “consolidation”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Trying to recall material without notes is retrieval ____.",
+      "correct_answers": [
+        "practice"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Trí nhớ còn thay đổi khi ta cố truy xuất thông tin. Tự kiểm tra không nhìn ghi chú có thể tăng khả năng truy cập kiến thức sau này, nhất là khi phản hồi sửa lỗi. Đó thường gọi là luyện truy xuất. Nó khác với chỉ đọc lại trang sách, điều có thể tạo cảm giác trôi chảy vì từ ngữ quen mắt nhưng không dễ tự nhớ lại. Đáp án cần chọn/điền: “practice”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Short study sessions spread across days can support long-term ____.",
+      "correct_answers": [
+        "retention"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Giãn cách buổi học cũng quan trọng. Nhiều buổi ngắn trải qua các ngày thường hỗ trợ ghi nhớ dài hạn tốt hơn dồn cùng thời lượng vào một tối. Khoảng cách buộc não tái dựng thông tin với nỗ lực. Tuy nhiên, giãn cách lý tưởng tùy nội dung và thời điểm cần dùng. Một thời khóa biểu cố định không phải quy luật chung cho mọi trường hợp. Đáp án cần chọn/điền: “retention”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why may a strong emotional impression be misleading?",
+      "correct_answers": [
+        "It does not guarantee every detail is remembered accurately"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Căng thẳng và cảm xúc làm vấn đề phức tạp hơn. Sự kiện quan trọng về cảm xúc có thể hút chú ý và gây ấn tượng mạnh, nhưng không đảm bảo nhớ chính xác mọi chi tiết. Áp lực cao cũng có thể cản việc truy xuất nội dung đã học. Vì thế, cải thiện thành tích cần xét cả cách học và điều kiện lúc nhớ lại. Đáp án cần chọn/điền: “It does not guarantee every detail is remembered accurately”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "mcq"
+      ],
+      "options": [
+        "It guarantees exact recall",
+        "It always prevents learning",
+        "It does not guarantee every detail is remembered accurately"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What kind of questions should assess progress after repeated study?",
+      "correct_answers": [
+        "unfamiliar questions"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Kế hoạch học hợp lý kết hợp giải thích rõ, truy xuất giãn cách và ngủ đủ, sau đó đo tiến bộ bằng câu hỏi lạ. Học sinh không nên đánh giá thành thạo chỉ vì nhận ra đáp án đã gặp nhiều lần. Bài học nhân–quả sâu hơn là những hoạt động quanh việc học ảnh hưởng đến khả năng nhớ sau này, không chỉ tổng thời gian mở sách. Đáp án cần chọn/điền: “unfamiliar questions”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the lecture mainly about?",
+      "correct_answers": [
+        "Learning conditions influence what can be recalled later"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Kế hoạch học hợp lý kết hợp giải thích rõ, truy xuất giãn cách và ngủ đủ, sau đó đo tiến bộ bằng câu hỏi lạ. Học sinh không nên đánh giá thành thạo chỉ vì nhận ra đáp án đã gặp nhiều lần. Bài học nhân–quả sâu hơn là những hoạt động quanh việc học ảnh hưởng đến khả năng nhớ sau này, không chỉ tổng thời gian mở sách. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ],
+      "options": [
+        "Sleep interrupts memory formation completely",
+        "Only total study time matters",
+        "Learning conditions influence what can be recalled later"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Memory also changes when we try to retrieve information. Testing yourself without looking at notes can strengthen later access to material, particularly when feedback corrects mistakes. This is often called retrieval practice. It is different from simply reading the same page again, which may feel fluent because the words look familiar without being easy to recall independently."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Trí nhớ còn thay đổi khi ta cố truy xuất thông tin. Tự kiểm tra không nhìn ghi chú có thể tăng khả năng truy cập kiến thức sau này, nhất là khi phản hồi sửa lỗi. Đó thường gọi là luyện truy xuất. Nó khác với chỉ đọc lại trang sách, điều có thể tạo cảm giác trôi chảy vì từ ngữ quen mắt nhưng không dễ tự nhớ lại.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Stress and emotion add complexity. An emotionally important event may draw attention and leave a strong impression, but that does not guarantee an accurate memory of every detail. High pressure can also interfere with the retrieval of information that was learned successfully. Therefore, improving performance requires considering both how material was studied and the conditions under which it is recalled."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Căng thẳng và cảm xúc làm vấn đề phức tạp hơn. Sự kiện quan trọng về cảm xúc có thể hút chú ý và gây ấn tượng mạnh, nhưng không đảm bảo nhớ chính xác mọi chi tiết. Áp lực cao cũng có thể cản việc truy xuất nội dung đã học. Vì thế, cải thiện thành tích cần xét cả cách học và điều kiện lúc nhớ lại.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: Sleep is not simply an interruption between periods of learning. During sleep, the brain continues processes associated with stabilising and reorganising memories. Psychologists call part of this process ____. If someone studies new vocabulary and then sleeps, later recall may benefit compared with a schedule that involves prolonged wakefulness, although many factors affect the result.",
+      "correct_answers": [
+        "consolidation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “consolidation”, nghĩa: củng cố trí nhớ. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "consolidation",
+      "pos": "n.",
+      "meaning_vi": "củng cố trí nhớ",
+      "example_en": "Sleep is not simply an interruption between periods of learning. During sleep, the brain continues processes associated with stabilising and reorganising memories. Psychologists call part of this process consolidation. If someone studies new vocabulary and then sleeps, later recall may benefit compared with a schedule that involves prolonged wakefulness, although many factors affect the result.",
+      "example_vi": "Giấc ngủ không đơn thuần là khoảng ngắt giữa các buổi học. Khi ngủ, não tiếp tục các quá trình gắn với việc ổn định và tổ chức lại ký ức. Nhà tâm lý gọi một phần quá trình đó là củng cố trí nhớ. Nếu học từ mới rồi ngủ, khả năng nhớ lại về sau có thể tốt hơn lịch thức kéo dài, dù nhiều yếu tố ảnh hưởng kết quả.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "retrieval practice",
+      "pos": "n. phr.",
+      "meaning_vi": "luyện truy xuất",
+      "example_en": "Memory also changes when we try to retrieve information. Testing yourself without looking at notes can strengthen later access to material, particularly when feedback corrects mistakes. This is often called retrieval practice. It is different from simply reading the same page again, which may feel fluent because the words look familiar without being easy to recall independently.",
+      "example_vi": "Trí nhớ còn thay đổi khi ta cố truy xuất thông tin. Tự kiểm tra không nhìn ghi chú có thể tăng khả năng truy cập kiến thức sau này, nhất là khi phản hồi sửa lỗi. Đó thường gọi là luyện truy xuất. Nó khác với chỉ đọc lại trang sách, điều có thể tạo cảm giác trôi chảy vì từ ngữ quen mắt nhưng không dễ tự nhớ lại.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "retention",
+      "pos": "n.",
+      "meaning_vi": "khả năng ghi nhớ lâu dài",
+      "example_en": "Spacing matters as well. Several short sessions spread across days often support long-term retention better than concentrating all the same study time into one evening. The gap between sessions forces some effortful reconstruction. Yet the ideal spacing depends on the material and the date when it will be needed. A fixed timetable should not be treated as a universal law.",
+      "example_vi": "Giãn cách buổi học cũng quan trọng. Nhiều buổi ngắn trải qua các ngày thường hỗ trợ ghi nhớ dài hạn tốt hơn dồn cùng thời lượng vào một tối. Khoảng cách buộc não tái dựng thông tin với nỗ lực. Tuy nhiên, giãn cách lý tưởng tùy nội dung và thời điểm cần dùng. Một thời khóa biểu cố định không phải quy luật chung cho mọi trường hợp.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "stress",
+      "pos": "n.",
+      "meaning_vi": "căng thẳng",
+      "example_en": "Stress and emotion add complexity. An emotionally important event may draw attention and leave a strong impression, but that does not guarantee an accurate memory of every detail. High pressure can also interfere with the retrieval of information that was learned successfully. Therefore, improving performance requires considering both how material was studied and the conditions under which it is recalled.",
+      "example_vi": "Căng thẳng và cảm xúc làm vấn đề phức tạp hơn. Sự kiện quan trọng về cảm xúc có thể hút chú ý và gây ấn tượng mạnh, nhưng không đảm bảo nhớ chính xác mọi chi tiết. Áp lực cao cũng có thể cản việc truy xuất nội dung đã học. Vì thế, cải thiện thành tích cần xét cả cách học và điều kiện lúc nhớ lại.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "f4061677d73627ed66b2f4369d376cb54e10f30decb9ccf7ddf8a3015d8a66d9",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

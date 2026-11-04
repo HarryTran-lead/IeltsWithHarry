@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-036",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Memory & Learning",
+  "title": "Comparing Recognition and Recall Tests",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Suppose two classes study the same scientific terms. One class rereads definitions; the other answers short questions without looking at the list. Immediately afterwards, both groups may report confidence, yet that self-report does not establish which method will support later recall. To make the comparison meaningful, a researcher needs an outcome measure that reflects the knowledge students are expected to use.",
+      "translation_vi": "Giả sử hai lớp học cùng các thuật ngữ khoa học. Một lớp đọc lại định nghĩa; lớp kia trả lời câu hỏi ngắn mà không nhìn danh sách. Ngay sau đó, cả hai nhóm có thể cảm thấy tự tin, nhưng tự báo cáo đó không xác định phương pháp nào giúp nhớ về sau. Để so sánh có ý nghĩa, nhà nghiên cứu cần thước đo kết quả phản ánh kiến thức học sinh được kỳ vọng sử dụng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A recognition test presents possibilities and asks learners to identify the right one. A free-recall test requires an answer without those possibilities. Recognition may be useful for some goals, but it often provides more cues. If a course expects students to explain concepts independently, free recall is the closer match. Researchers call this alignment between practice and assessment an important design choice.",
+      "translation_vi": "Bài kiểm tra nhận diện đưa các lựa chọn để người học nhận ra đáp án đúng. Bài nhớ tự do yêu cầu trả lời mà không có các lựa chọn ấy. Nhận diện hữu ích cho một số mục tiêu nhưng thường cung cấp nhiều gợi ý hơn. Nếu khóa học yêu cầu học sinh tự giải thích khái niệm, nhớ tự do sát mục tiêu hơn. Các nhà nghiên cứu xem sự phù hợp giữa luyện tập và đánh giá là một quyết định thiết kế quan trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Timing introduces another complication. A test taken five minutes after study measures something different from a test taken two weeks later. Immediate performance may benefit from information still active in short-term processes. A delayed test gives a better indication of durable access, although it is also affected by what learners did during the interval. Both measures can be informative when their purposes are stated.",
+      "translation_vi": "Thời điểm tạo thêm một yếu tố phức tạp. Bài kiểm tra sau khi học năm phút đo điều khác với bài kiểm tra hai tuần sau. Kết quả tức thời có thể nhờ thông tin còn hoạt động trong các quá trình ngắn hạn. Bài kiểm tra trì hoãn cho thấy khả năng truy xuất bền vững tốt hơn, dù còn chịu ảnh hưởng của những gì người học làm trong khoảng nghỉ. Cả hai đều hữu ích khi mục đích được nêu rõ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A stronger experiment assigns participants to study conditions in a way that reduces pre-existing differences. It also keeps the material and available study time comparable. Otherwise, the apparent advantage might arise because one group received easier questions or spent longer practising. Even then, one sample cannot establish that a method will work equally well for every age and subject.",
+      "translation_vi": "Thí nghiệm vững hơn phân người tham gia vào các điều kiện học theo cách giảm khác biệt vốn có. Nó cũng giữ tài liệu và thời gian học tương đương. Nếu không, lợi thế có vẻ thấy được có thể do một nhóm nhận câu hỏi dễ hơn hoặc luyện lâu hơn. Dù vậy, một mẫu nghiên cứu cũng không chứng minh phương pháp hiệu quả như nhau ở mọi lứa tuổi và môn học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The practical lesson is not to reject one kind of test. Instead, match the assessment to the claim being made. If the question concerns lasting, independent understanding, delayed free recall deserves particular attention. If the question concerns recognising warning signs quickly, recognition may be appropriate. Clear research begins by deciding what successful learning actually means.",
+      "translation_vi": "Bài học thực tế không phải bác bỏ một loại kiểm tra. Thay vào đó, hãy chọn đánh giá phù hợp với điều cần kết luận. Nếu câu hỏi liên quan sự hiểu biết độc lập, bền vững, bài nhớ tự do sau một khoảng thời gian đặc biệt đáng chú ý. Nếu mục tiêu là nhận diện nhanh dấu hiệu cảnh báo, bài nhận diện có thể phù hợp. Nghiên cứu rõ ràng bắt đầu bằng việc xác định học thành công nghĩa là gì.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "A research comparison needs a suitable ____.",
+      "correct_answers": [
+        "outcome measure"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “outcome measure” nằm tại đoạn T01. Nội dung bằng chứng: Giả sử hai lớp học cùng các thuật ngữ khoa học. Một lớp đọc lại định nghĩa; lớp kia trả lời câu hỏi ngắn mà không nhìn danh sách. Ngay sau đó, cả hai nhóm có thể cảm thấy tự tin, nhưng tự báo cáo đó không xác định phương pháp nào giúp nhớ về sau. Để so sánh có ý nghĩa, nhà nghiên cứu cần thước đo kết quả phản ánh kiến thức học sinh được kỳ vọng sử dụng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "A test without answer choices is called ____.",
+      "correct_answers": [
+        "free recall"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “free recall” nằm tại đoạn T02. Nội dung bằng chứng: Bài kiểm tra nhận diện đưa các lựa chọn để người học nhận ra đáp án đúng. Bài nhớ tự do yêu cầu trả lời mà không có các lựa chọn ấy. Nhận diện hữu ích cho một số mục tiêu nhưng thường cung cấp nhiều gợi ý hơn. Nếu khóa học yêu cầu học sinh tự giải thích khái niệm, nhớ tự do sát mục tiêu hơn. Các nhà nghiên cứu xem sự phù hợp giữa luyện tập và đánh giá là một quyết định thiết kế quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "To measure lasting access, researchers use a ____.",
+      "correct_answers": [
+        "delayed test"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “delayed test” nằm tại đoạn T03. Nội dung bằng chứng: Thời điểm tạo thêm một yếu tố phức tạp. Bài kiểm tra sau khi học năm phút đo điều khác với bài kiểm tra hai tuần sau. Kết quả tức thời có thể nhờ thông tin còn hoạt động trong các quá trình ngắn hạn. Bài kiểm tra trì hoãn cho thấy khả năng truy xuất bền vững tốt hơn, dù còn chịu ảnh hưởng của những gì người học làm trong khoảng nghỉ. Cả hai đều hữu ích khi mục đích được nêu rõ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "sentence_completion",
+      "prompt": "Study groups should receive comparable material and ____.",
+      "correct_answers": [
+        "study time"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “study time” nằm tại đoạn T04. Nội dung bằng chứng: Thí nghiệm vững hơn phân người tham gia vào các điều kiện học theo cách giảm khác biệt vốn có. Nó cũng giữ tài liệu và thời gian học tương đương. Nếu không, lợi thế có vẻ thấy được có thể do một nhóm nhận câu hỏi dễ hơn hoặc luyện lâu hơn. Dù vậy, một mẫu nghiên cứu cũng không chứng minh phương pháp hiệu quả như nhau ở mọi lứa tuổi và môn học.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Assessments should be matched to the ____ being made.",
+      "correct_answers": [
+        "claim"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “claim” nằm tại đoạn T05. Nội dung bằng chứng: Bài học thực tế không phải bác bỏ một loại kiểm tra. Thay vào đó, hãy chọn đánh giá phù hợp với điều cần kết luận. Nếu câu hỏi liên quan sự hiểu biết độc lập, bền vững, bài nhớ tự do sau một khoảng thời gian đặc biệt đáng chú ý. Nếu mục tiêu là nhận diện nhanh dấu hiệu cảnh báo, bài nhận diện có thể phù hợp. Nghiên cứu rõ ràng bắt đầu bằng việc xác định học thành công nghĩa là gì.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "When is delayed free recall especially appropriate?",
+      "correct_answers": [
+        "When the goal is lasting independent understanding"
+      ],
+      "options": [
+        "When the goal is immediate recognition of a familiar list",
+        "When the goal is lasting independent understanding",
+        "When researchers mainly want the highest immediate confidence"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Bài học thực tế không phải bác bỏ một loại kiểm tra. Thay vào đó, hãy chọn đánh giá phù hợp với điều cần kết luận. Nếu câu hỏi liên quan sự hiểu biết độc lập, bền vững, bài nhớ tự do sau một khoảng thời gian đặc biệt đáng chú ý. Nếu mục tiêu là nhận diện nhanh dấu hiệu cảnh báo, bài nhận diện có thể phù hợp. Nghiên cứu rõ ràng bắt đầu bằng việc xác định học thành công nghĩa là gì. Phương án chính xác: “When the goal is lasting independent understanding”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "A recognition test presents possibilities and asks learners to identify the right one. A free-recall test requires an answer without those possibilities. Recognition may be useful for some goals, but it often provides more cues. If a course expects students to explain concepts independently, free recall is the closer match. Researchers call this alignment between practice and assessment an important design choice."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Bài kiểm tra nhận diện đưa các lựa chọn để người học nhận ra đáp án đúng. Bài nhớ tự do yêu cầu trả lời mà không có các lựa chọn ấy. Nhận diện hữu ích cho một số mục tiêu nhưng thường cung cấp nhiều gợi ý hơn. Nếu khóa học yêu cầu học sinh tự giải thích khái niệm, nhớ tự do sát mục tiêu hơn. Các nhà nghiên cứu xem sự phù hợp giữa luyện tập và đánh giá là một quyết định thiết kế quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "A stronger experiment assigns participants to study conditions in a way that reduces pre-existing differences. It also keeps the material and available study time comparable. Otherwise, the apparent advantage might arise because one group received easier questions or spent longer practising. Even then, one sample cannot establish that a method will work equally well for every age and subject."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Thí nghiệm vững hơn phân người tham gia vào các điều kiện học theo cách giảm khác biệt vốn có. Nó cũng giữ tài liệu và thời gian học tương đương. Nếu không, lợi thế có vẻ thấy được có thể do một nhóm nhận câu hỏi dễ hơn hoặc luyện lâu hơn. Dù vậy, một mẫu nghiên cứu cũng không chứng minh phương pháp hiệu quả như nhau ở mọi lứa tuổi và môn học.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Suppose two classes study the same scientific terms. One class rereads definitions; the other answers short questions without looking at the list. Immediately afterwards, both groups may report confidence, yet that self-report does not establish which method will support later recall. To make the comparison meaningful, a researcher needs an ____ that reflects the knowledge students are expected to use.",
+      "correct_answers": [
+        "outcome measure"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “outcome measure”, nghĩa: thước đo kết quả. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "outcome measure",
+      "pos": "n. phr.",
+      "meaning_vi": "thước đo kết quả",
+      "example_en": "Suppose two classes study the same scientific terms. One class rereads definitions; the other answers short questions without looking at the list. Immediately afterwards, both groups may report confidence, yet that self-report does not establish which method will support later recall. To make the comparison meaningful, a researcher needs an outcome measure that reflects the knowledge students are expected to use.",
+      "example_vi": "Giả sử hai lớp học cùng các thuật ngữ khoa học. Một lớp đọc lại định nghĩa; lớp kia trả lời câu hỏi ngắn mà không nhìn danh sách. Ngay sau đó, cả hai nhóm có thể cảm thấy tự tin, nhưng tự báo cáo đó không xác định phương pháp nào giúp nhớ về sau. Để so sánh có ý nghĩa, nhà nghiên cứu cần thước đo kết quả phản ánh kiến thức học sinh được kỳ vọng sử dụng.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "free recall",
+      "pos": "n. phr.",
+      "meaning_vi": "nhớ lại tự do",
+      "example_en": "A recognition test presents possibilities and asks learners to identify the right one. A free-recall test requires an answer without those possibilities. Recognition may be useful for some goals, but it often provides more cues. If a course expects students to explain concepts independently, free recall is the closer match. Researchers call this alignment between practice and assessment an important design choice.",
+      "example_vi": "Bài kiểm tra nhận diện đưa các lựa chọn để người học nhận ra đáp án đúng. Bài nhớ tự do yêu cầu trả lời mà không có các lựa chọn ấy. Nhận diện hữu ích cho một số mục tiêu nhưng thường cung cấp nhiều gợi ý hơn. Nếu khóa học yêu cầu học sinh tự giải thích khái niệm, nhớ tự do sát mục tiêu hơn. Các nhà nghiên cứu xem sự phù hợp giữa luyện tập và đánh giá là một quyết định thiết kế quan trọng.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "delayed test",
+      "pos": "n. phr.",
+      "meaning_vi": "kiểm tra sau một khoảng thời gian",
+      "example_en": "Timing introduces another complication. A test taken five minutes after study measures something different from a test taken two weeks later. Immediate performance may benefit from information still active in short-term processes. A delayed test gives a better indication of durable access, although it is also affected by what learners did during the interval. Both measures can be informative when their purposes are stated.",
+      "example_vi": "Thời điểm tạo thêm một yếu tố phức tạp. Bài kiểm tra sau khi học năm phút đo điều khác với bài kiểm tra hai tuần sau. Kết quả tức thời có thể nhờ thông tin còn hoạt động trong các quá trình ngắn hạn. Bài kiểm tra trì hoãn cho thấy khả năng truy xuất bền vững tốt hơn, dù còn chịu ảnh hưởng của những gì người học làm trong khoảng nghỉ. Cả hai đều hữu ích khi mục đích được nêu rõ.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "study conditions",
+      "pos": "n. phr.",
+      "meaning_vi": "điều kiện học tập",
+      "example_en": "A stronger experiment assigns participants to study conditions in a way that reduces pre-existing differences. It also keeps the material and available study time comparable. Otherwise, the apparent advantage might arise because one group received easier questions or spent longer practising. Even then, one sample cannot establish that a method will work equally well for every age and subject.",
+      "example_vi": "Thí nghiệm vững hơn phân người tham gia vào các điều kiện học theo cách giảm khác biệt vốn có. Nó cũng giữ tài liệu và thời gian học tương đương. Nếu không, lợi thế có vẻ thấy được có thể do một nhóm nhận câu hỏi dễ hơn hoặc luyện lâu hơn. Dù vậy, một mẫu nghiên cứu cũng không chứng minh phương pháp hiệu quả như nhau ở mọi lứa tuổi và môn học.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "5f7a6dbd309734ea5ed44d0cefac27db0e04f6073950dc45faba675d763f299d",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-001",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Daily Routines",
+  "learning_objectives_vi": [
+    "Nghe câu về thói quen",
+    "Nhận ra cụm ý nghĩa trước khi chép: ai làm gì, ở đâu, khi nào."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I usually wake up at half past six.",
+      "translation_vi": "Tôi thường thức dậy lúc sáu giờ rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "My sister gets dressed before breakfast.",
+      "translation_vi": "Em gái tôi thay quần áo trước bữa sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We walk to the bus stop together.",
+      "translation_vi": "Chúng tôi cùng đi bộ đến trạm xe buýt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Dad makes coffee while I pack my bag.",
+      "translation_vi": "Bố pha cà phê trong khi tôi xếp đồ vào cặp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I leave home at seven fifteen on weekdays.",
+      "translation_vi": "Tôi rời nhà lúc bảy giờ mười lăm vào ngày thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The first bus arrives just after seven.",
+      "translation_vi": "Chuyến xe buýt đầu tiên đến ngay sau bảy giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Sometimes I read a book on the way.",
+      "translation_vi": "Thỉnh thoảng tôi đọc sách trên đường đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I have lunch with my friends at noon.",
+      "translation_vi": "Tôi ăn trưa với bạn bè vào giữa trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "After school, I help my mother cook dinner.",
+      "translation_vi": "Sau giờ học, tôi giúp mẹ nấu bữa tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I go to bed earlier when I feel tired.",
+      "translation_vi": "Tôi đi ngủ sớm hơn khi cảm thấy mệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I usually wake up at half past six."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Usually đứng trước động từ thường; nhận ra cụm half past six. Nghĩa: Tôi thường thức dậy lúc sáu giờ rưỡi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My sister gets dressed before breakfast."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Gets có âm /s/ cuối; before có hai âm tiết. Nghĩa: Em gái tôi thay quần áo trước bữa sáng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We walk to the bus stop together."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Walk to thường nối mạch, không cần dừng giữa hai từ. Nghĩa: Chúng tôi cùng đi bộ đến trạm xe buýt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Dad makes coffee while I pack my bag."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Makes có âm /s/; while nối hai hành động cùng thời điểm. Nghĩa: Bố pha cà phê trong khi tôi xếp đồ vào cặp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I leave home at seven fifteen on weekdays."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe phân biệt seven và seventeen; weekdays có /z/ cuối. Nghĩa: Tôi rời nhà lúc bảy giờ mười lăm vào ngày thường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The first bus arrives just after seven."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Arrives kết thúc /z/, và just after có âm /t/ nhẹ. Nghĩa: Chuyến xe buýt đầu tiên đến ngay sau bảy giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Sometimes I read a book on the way."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Sometimes gồm hai trọng âm yếu/mạnh; on the way là một cụm. Nghĩa: Thỉnh thoảng tôi đọc sách trên đường đi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I have lunch with my friends at noon."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "At noon là 12 giờ trưa, không phải midnight. Nghĩa: Tôi ăn trưa với bạn bè vào giữa trưa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "After school, I help my mother cook dinner."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Help my nối liền; sau help có thể dùng động từ nguyên mẫu. Nghĩa: Sau giờ học, tôi giúp mẹ nấu bữa tối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I go to bed earlier when I feel tired."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Earlier là dạng so sánh hơn; go to bed là cụm động từ. Nghĩa: Tôi đi ngủ sớm hơn khi cảm thấy mệt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Người nói rời nhà lúc mấy giờ mười lăm?",
+      "options": [
+        "seven fifteen",
+        "six fifteen",
+        "seven fifty"
+      ],
+      "correct_answers": [
+        "seven fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu T05 có at seven fifteen; nghe phân biệt -teen và -ty.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Người nói ăn trưa khi nào?",
+      "options": [
+        "at night",
+        "at six",
+        "at noon"
+      ],
+      "correct_answers": [
+        "at noon"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "T08 nói at noon = 12 giờ trưa.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "wake up",
+      "pos": "phrasal verb",
+      "meaning_vi": "thức dậy",
+      "example_en": "I usually wake up at half past six.",
+      "example_vi": "Tôi thường thức dậy lúc sáu giờ rưỡi.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "gets dressed",
+      "pos": "verb phrase",
+      "meaning_vi": "mặc quần áo",
+      "example_en": "My sister gets dressed before breakfast.",
+      "example_vi": "Em gái tôi thay quần áo trước bữa sáng.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "on the way",
+      "pos": "phrase",
+      "meaning_vi": "trên đường",
+      "example_en": "Sometimes I read a book on the way.",
+      "example_vi": "Thỉnh thoảng tôi đọc sách trên đường đi.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "go to bed",
+      "pos": "verb phrase",
+      "meaning_vi": "đi ngủ",
+      "example_en": "I go to bed earlier when I feel tired.",
+      "example_vi": "Tôi đi ngủ sớm hơn khi cảm thấy mệt.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "43541f913332c401b5930a178cc66383f304da6f211918b132b2c2bc9de2420a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

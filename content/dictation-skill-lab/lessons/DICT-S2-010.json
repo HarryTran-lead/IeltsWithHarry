@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-010",
+  "status": "draft",
+  "level": "L3",
+  "section": 2,
+  "topic": "Transport Information",
+  "title": "Getting Around by the Town Shuttle",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Transport Information và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning. This is a short announcement about our free town shuttle.",
+      "translation_vi": "Chào buổi sáng. Đây là thông báo ngắn về xe trung chuyển miễn phí của thị trấn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The first bus leaves the station at seven fifteen.",
+      "translation_vi": "Chuyến xe đầu rời ga lúc 7:15.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Buses run every thirty minutes from the central bus stop.",
+      "translation_vi": "Xe chạy mỗi ba mươi phút từ trạm trung tâm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "You can travel to the hospital, the market and the riverside park.",
+      "translation_vi": "Bạn có thể đi tới bệnh viện, khu chợ và công viên ven sông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Passengers with large bags should use the space near the rear door.",
+      "translation_vi": "Hành khách có túi lớn nên dùng chỗ gần cửa sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The last shuttle leaves the park at eight in the evening.",
+      "translation_vi": "Chuyến cuối rời công viên lúc tám giờ tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Ask the driver if you are unsure which stop is closest to your destination.",
+      "translation_vi": "Hãy hỏi tài xế nếu không chắc trạm nào gần nơi cần đến nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — First bus departure time: ____",
+      "correct_answers": [
+        "seven fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Xe đầu chạy 7:15.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Service frequency in minutes: ____",
+      "correct_answers": [
+        "thirty"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Xe chạy mỗi ba mươi phút.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Shuttle starts from the central bus: ____",
+      "correct_answers": [
+        "stop"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Khởi hành từ trạm xe buýt trung tâm.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Large bags placed by the rear: ____",
+      "correct_answers": [
+        "door"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Túi lớn để gần cửa sau.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Last shuttle departure time: ____",
+      "correct_answers": [
+        "eight"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Chuyến cuối lúc tám giờ tối.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T03 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Buses run every thirty minutes from the central bus stop."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Buses run every thirty minutes from the central bus stop. Nghĩa: Xe chạy mỗi ba mươi phút từ trạm trung tâm. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Passengers with large bags should use the space near the rear door."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Passengers with large bags should use the space near the rear door. Nghĩa: Hành khách có túi lớn nên dùng chỗ gần cửa sau. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: Good morning. This is a short announcement about our free town ____.",
+      "correct_answers": [
+        "shuttle"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "shuttle: xe trung chuyển. Ngữ cảnh: Chào buổi sáng. Đây là thông báo ngắn về xe trung chuyển miễn phí của thị trấn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "shuttle",
+      "pos": "n.",
+      "meaning_vi": "xe trung chuyển",
+      "example_en": "Good morning. This is a short announcement about our free town shuttle.",
+      "example_vi": "Chào buổi sáng. Đây là thông báo ngắn về xe trung chuyển miễn phí của thị trấn.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "bus stop",
+      "pos": "n. phr.",
+      "meaning_vi": "trạm xe buýt",
+      "example_en": "Buses run every thirty minutes from the central bus stop.",
+      "example_vi": "Xe chạy mỗi ba mươi phút từ trạm trung tâm.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "hospital",
+      "pos": "n.",
+      "meaning_vi": "bệnh viện",
+      "example_en": "You can travel to the hospital, the market and the riverside park.",
+      "example_vi": "Bạn có thể đi tới bệnh viện, khu chợ và công viên ven sông.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "market",
+      "pos": "n.",
+      "meaning_vi": "khu chợ",
+      "example_en": "You can travel to the hospital, the market and the riverside park.",
+      "example_vi": "Bạn có thể đi tới bệnh viện, khu chợ và công viên ven sông.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "bfee12cdc3e6556bec05e85d0ce8b3206e131c6e8fe15b0a04db69f018399f03",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

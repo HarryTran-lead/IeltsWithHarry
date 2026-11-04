@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-053",
+  "status": "draft",
+  "level": "L7",
+  "section": 3,
+  "topic": "Internship Discussions",
+  "title": "Internship Discussions – Bus Corridor Impact Assessment",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Ivy – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Noah – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Rosa – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The city-planning internship team wants a summary of how the proposed bus corridor might affect small shops. The sponsor expects a positive recommendation by the end of the month.",
+      "translation_vi": "Nhóm thực tập quy hoạch đô thị cần tóm tắt tác động của hành lang xe buýt dự kiến tới cửa hàng nhỏ. Đơn vị tài trợ mong đề xuất tích cực vào cuối tháng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "But our interviews include concerns about delivery access and construction noise. If we suppress those comments because the sponsor prefers approval, the impact assessment becomes unreliable.",
+      "translation_vi": "Nhưng phỏng vấn có lo ngại về lối giao hàng và tiếng ồn xây dựng. Nếu giấu chúng vì nhà tài trợ muốn được duyệt, đánh giá tác động sẽ không đáng tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We can organise the findings by affected group and distinguish short-term disruption from potential longer-term benefits. That doesn't mean treating all opinions as equally supported by evidence.",
+      "translation_vi": "Ta có thể sắp kết quả theo nhóm bị ảnh hưởng và phân biệt gián đoạn ngắn hạn với lợi ích lâu dài tiềm năng. Điều đó không có nghĩa coi mọi ý kiến đều có chứng cứ ngang nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The transport model predicts shorter bus journeys, but it assumes a frequency that the agency hasn't funded yet. We shouldn't present the estimated savings as a guaranteed outcome.",
+      "translation_vi": "Mô hình giao thông dự báo thời gian xe buýt ngắn hơn, nhưng giả định tần suất mà cơ quan chưa cấp ngân sách. Không nên trình bày mức tiết kiệm ước tính như kết quả chắc chắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Exactly. Let's include a scenario based on the currently funded service as well as the expanded service. Readers can then see which benefits depend on additional resources.",
+      "translation_vi": "Đúng. Hãy đưa cả kịch bản dịch vụ đã được cấp tiền và kịch bản mở rộng. Người đọc sẽ thấy lợi ích nào phụ thuộc nguồn lực bổ sung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The sponsor also asked to see raw interview files. I think we should share anonymised themes and counts, not recordings containing identifiable shop owners without renewed consent.",
+      "translation_vi": "Nhà tài trợ còn xin file phỏng vấn gốc. Theo mình chỉ nên chia sẻ chủ đề ẩn danh và số liệu, không gửi bản ghi nhận diện chủ cửa hàng nếu chưa xin lại đồng ý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "For the recommendations, we could propose timed delivery bays during construction and a review six months after opening. Those address specific concerns without pretending no trade-offs exist.",
+      "translation_vi": "Phần đề xuất có thể gồm chỗ đỗ giao hàng theo giờ trong thi công và đánh giá lại sáu tháng sau khi mở. Như vậy xử lý lo ngại cụ thể mà không giả vờ không có đánh đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I'll draft the limitations and check which traffic assumptions are documented. The assessment should indicate what we know, what we estimate and what still requires a policy decision.",
+      "translation_vi": "Mình sẽ soạn phần giới hạn và kiểm tra giả định giao thông nào đã được ghi rõ. Báo cáo phải chỉ ra điều đã biết, điều ước tính và điều còn cần quyết định chính sách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Then our final submission will be balanced, with two service scenarios, protected interview data and mitigation measures. We won't promise a positive conclusion before examining the evidence.",
+      "translation_vi": "Vậy bài nộp cuối sẽ cân bằng, có hai kịch bản dịch vụ, dữ liệu phỏng vấn được bảo vệ và biện pháp giảm tác động. Ta không hứa kết luận tích cực trước khi xem chứng cứ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why is suppressing negative interview comments unacceptable?",
+      "correct_answers": [
+        "It would make the impact assessment unreliable"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Noah nói: “Nhưng phỏng vấn có lo ngại về lối giao hàng và tiếng ồn xây dựng. Nếu giấu chúng vì nhà tài trợ muốn được duyệt, đánh giá tác động sẽ không đáng tin.” Đáp án “It would make the impact assessment unreliable” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "It would make the impact assessment unreliable",
+        "The projected bus frequency is not fully funded",
+        "The report needs clearer mitigation measures"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The assessment distinguishes short-term disruption from potential ____ .",
+      "correct_answers": [
+        "longer-term benefits"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Ta có thể sắp kết quả theo nhóm bị ảnh hưởng và phân biệt gián đoạn ngắn hạn với lợi ích lâu dài tiềm năng. Điều đó không có nghĩa coi mọi ý kiến đều có chứng cứ ngang nhau.” Cụm cần điền nghe đúng nguyên văn là “longer-term benefits”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes organising findings by affected group?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Người nói Rosa (Speaker C) đưa ra ý này tại T03: “Ta có thể sắp kết quả theo nhóm bị ảnh hưởng và phân biệt gián đoạn ngắn hạn với lợi ích lâu dài tiềm năng. Điều đó không có nghĩa coi mọi ý kiến đều có chứng cứ ngang nhau.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What kind of measure is suggested during construction?",
+      "correct_answers": [
+        "Timed delivery bays for affected shops"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Ivy nói: “Phần đề xuất có thể gồm chỗ đỗ giao hàng theo giờ trong thi công và đánh giá lại sáu tháng sau khi mở. Như vậy xử lý lo ngại cụ thể mà không giả vờ không có đánh đổi.” Đáp án “Timed delivery bays for affected shops” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Timed delivery bays for affected shops",
+        "To demonstrate that no disruption is expected",
+        "To show the same predicted savings for every shop"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Noah will check the documented traffic ____ .",
+      "correct_answers": [
+        "assumptions"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Mình sẽ soạn phần giới hạn và kiểm tra giả định giao thông nào đã được ghi rõ. Báo cáo phải chỉ ra điều đã biết, điều ước tính và điều còn cần quyết định chính sách.” Cụm cần điền nghe đúng nguyên văn là “assumptions”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "How many service scenarios will be included?",
+      "correct_answers": [
+        "two"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy bài nộp cuối sẽ cân bằng, có hai kịch bản dịch vụ, dữ liệu phỏng vấn được bảo vệ và biện pháp giảm tác động. Ta không hứa kết luận tích cực trước khi xem chứng cứ.” Trả lời ngắn theo chi tiết “two”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "The transport model predicts shorter bus journeys, but it assumes a frequency that the agency hasn't funded yet. We shouldn't present the estimated savings as a guaranteed outcome."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “The transport model predicts shorter bus journeys, but it assumes a frequency that the agency hasn't funded yet. We shouldn't present the estimated savings as a guaranteed outcome.”\nBản dịch: Mô hình giao thông dự báo thời gian xe buýt ngắn hơn, nhưng giả định tần suất mà cơ quan chưa cấp ngân sách. Không nên trình bày mức tiết kiệm ước tính như kết quả chắc chắn.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "For the recommendations, we could propose timed delivery bays during construction and a review six months after opening. Those address specific concerns without pretending no trade-offs exist."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “For the recommendations, we could propose timed delivery bays during construction and a review six months after opening. Those address specific concerns without pretending no trade-offs exist.”\nBản dịch: Phần đề xuất có thể gồm chỗ đỗ giao hàng theo giờ trong thi công và đánh giá lại sáu tháng sau khi mở. Như vậy xử lý lo ngại cụ thể mà không giả vờ không có đánh đổi.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền đúng phần thiếu: But our interviews include concerns about delivery access and construction noise. If we suppress those comments because the sponsor prefers approval, the ____ becomes unreliable.",
+      "correct_answers": [
+        "impact assessment"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “impact assessment” nghĩa là đánh giá tác động. Đối chiếu: “But our interviews include concerns about delivery access and construction noise. If we suppress those comments because the sponsor prefers approval, the impact assessment becomes unreliable.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "impact assessment",
+      "pos": "n. phr.",
+      "meaning_vi": "đánh giá tác động",
+      "example_en": "But our interviews include concerns about delivery access and construction noise. If we suppress those comments because the sponsor prefers approval, the impact assessment becomes unreliable.",
+      "example_vi": "Nhưng phỏng vấn có lo ngại về lối giao hàng và tiếng ồn xây dựng. Nếu giấu chúng vì nhà tài trợ muốn được duyệt, đánh giá tác động sẽ không đáng tin.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "construction noise",
+      "pos": "n. phr.",
+      "meaning_vi": "tiếng ồn xây dựng",
+      "example_en": "But our interviews include concerns about delivery access and construction noise. If we suppress those comments because the sponsor prefers approval, the impact assessment becomes unreliable.",
+      "example_vi": "Nhưng phỏng vấn có lo ngại về lối giao hàng và tiếng ồn xây dựng. Nếu giấu chúng vì nhà tài trợ muốn được duyệt, đánh giá tác động sẽ không đáng tin.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "mitigation measures",
+      "pos": "n. phr.",
+      "meaning_vi": "biện pháp giảm tác động",
+      "example_en": "Then our final submission will be balanced, with two service scenarios, protected interview data and mitigation measures. We won't promise a positive conclusion before examining the evidence.",
+      "example_vi": "Vậy bài nộp cuối sẽ cân bằng, có hai kịch bản dịch vụ, dữ liệu phỏng vấn được bảo vệ và biện pháp giảm tác động. Ta không hứa kết luận tích cực trước khi xem chứng cứ.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "service scenarios",
+      "pos": "n. phr.",
+      "meaning_vi": "các kịch bản dịch vụ",
+      "example_en": "Then our final submission will be balanced, with two service scenarios, protected interview data and mitigation measures. We won't promise a positive conclusion before examining the evidence.",
+      "example_vi": "Vậy bài nộp cuối sẽ cân bằng, có hai kịch bản dịch vụ, dữ liệu phỏng vấn được bảo vệ và biện pháp giảm tác động. Ta không hứa kết luận tích cực trước khi xem chứng cứ.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "174ec9d63ed50a3646cc79cf8eca92a28c2af0b9e3f17bd00d3eea65e2f8ee74",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-048",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Public Parks",
+  "title": "Park Habitat Survey: A Guided Route",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Public Parks ở mức L5, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "This afternoon's guided survey is part of the park's wider biodiversity project. Rather than collecting plants, we'll observe signs of wildlife and record conditions that may affect where different species live.",
+      "translation_vi": "Buổi khảo sát có hướng dẫn chiều nay thuộc dự án đa dạng sinh học lớn hơn của công viên. Thay vì hái cây, chúng ta quan sát dấu vết động vật và ghi điều kiện ảnh hưởng nơi các loài sống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We meet at the southern information shelter at one ten. The birdwatching group also meets near the entrance, so make sure you join the team carrying blue recording boards.",
+      "translation_vi": "Chúng ta gặp nhau tại nhà thông tin phía nam lúc một giờ mười. Nhóm quan sát chim cũng họp gần cửa, nên hãy vào đúng đội cầm bảng ghi màu xanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The first observation area is the orchard, reached by following the left-hand path around the pond. We will note which trees have flowers and whether insects are visiting them.",
+      "translation_vi": "Khu quan sát đầu là vườn cây ăn quả, đi theo đường bên trái vòng quanh ao. Chúng ta ghi cây nào có hoa và liệu côn trùng có đến không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Next, we'll cross the small wooden bridge to the meadow. A previous route continued through the reeds, but that section is now closed to protect nesting water birds.",
+      "translation_vi": "Tiếp theo, ta qua cầu gỗ nhỏ đến đồng cỏ. Tuyến cũ đi xuyên lau sậy nhưng phần đó nay đóng để bảo vệ chim nước đang làm tổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The survey leader will demonstrate how to measure soil moisture without disturbing roots. Each group can record the readings, but specialist probes must be handled by trained staff.",
+      "translation_vi": "Trưởng nhóm khảo sát sẽ trình diễn đo độ ẩm đất mà không làm hại rễ. Mỗi nhóm được ghi kết quả nhưng đầu dò chuyên dụng phải do nhân viên được đào tạo sử dụng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "After the meadow, we'll return via the woodland track. Its surface may be muddy even without recent rain, so waterproof footwear is more useful than light trainers.",
+      "translation_vi": "Sau đồng cỏ, ta quay lại bằng đường xuyên rừng. Mặt đường có thể lầy ngay cả khi không mưa gần đây, nên giày chống nước hữu ích hơn giày thể thao mỏng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please hand in your observations by four fifteen at the visitor cabin. The research team will compare records from several routes before publishing a seasonal habitat report.",
+      "translation_vi": "Hãy nộp ghi chép trước bốn giờ mười lăm tại cabin du khách. Nhóm nghiên cứu sẽ so sánh dữ liệu nhiều tuyến trước khi công bố báo cáo môi trường sống theo mùa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Meet at the southern: ____",
+      "correct_answers": [
+        "information shelter"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chúng ta gặp nhau tại nhà thông tin phía nam lúc một giờ mười. Nhóm quan sát chim cũng họp gần cửa, nên hãy vào đúng đội cầm bảng ghi màu xanh. Đáp án được nhắc trong đoạn T02: “information shelter”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Survey group carries blue: ____",
+      "correct_answers": [
+        "recording boards"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chúng ta gặp nhau tại nhà thông tin phía nam lúc một giờ mười. Nhóm quan sát chim cũng họp gần cửa, nên hãy vào đúng đội cầm bảng ghi màu xanh. Đáp án được nhắc trong đoạn T02: “recording boards”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — First study area is the: ____",
+      "correct_answers": [
+        "orchard"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Khu quan sát đầu là vườn cây ăn quả, đi theo đường bên trái vòng quanh ao. Chúng ta ghi cây nào có hoa và liệu côn trùng có đến không. Đáp án được nhắc trong đoạn T03: “orchard”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Water-bird area is closed through the: ____",
+      "correct_answers": [
+        "reeds"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tiếp theo, ta qua cầu gỗ nhỏ đến đồng cỏ. Tuyến cũ đi xuyên lau sậy nhưng phần đó nay đóng để bảo vệ chim nước đang làm tổ. Đáp án được nhắc trong đoạn T04: “reeds”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Specialist instruments are?",
+      "correct_answers": [
+        "probes"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Trưởng nhóm khảo sát sẽ trình diễn đo độ ẩm đất mà không làm hại rễ. Mỗi nhóm được ghi kết quả nhưng đầu dò chuyên dụng phải do nhân viên được đào tạo sử dụng. Đáp án được nhắc trong đoạn T05: “probes”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Submit observations by: ____",
+      "correct_answers": [
+        "four fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Hãy nộp ghi chép trước bốn giờ mười lăm tại cabin du khách. Nhóm nghiên cứu sẽ so sánh dữ liệu nhiều tuyến trước khi công bố báo cáo môi trường sống theo mùa. Đáp án được nhắc trong đoạn T07: “four fifteen”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "X01",
+      "type": "mcq",
+      "prompt": "Why is the section through the reeds closed?",
+      "options": [
+        "to repair the footpath",
+        "to protect nesting birds",
+        "to collect soil samples"
+      ],
+      "correct_answers": [
+        "to protect nesting birds"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tiếp theo, ta qua cầu gỗ nhỏ đến đồng cỏ. Tuyến cũ đi xuyên lau sậy nhưng phần đó nay đóng để bảo vệ chim nước đang làm tổ. Trong ba lựa chọn, đáp án chính xác là “to protect nesting birds”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "supplementary_mcq",
+        "distractor_detection",
+        "paraphrase"
+      ]
+    },
+    {
+      "question_id": "M01",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the orchard?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Khu quan sát đầu là vườn cây ăn quả, đi theo đường bên trái vòng quanh ao. Chúng ta ghi cây nào có hoa và liệu côn trùng có đến không. Trên sơ đồ tuyến giả lập, orchard ứng với điểm B.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-048.svg"
+    },
+    {
+      "question_id": "M02",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the visitor cabin?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Hãy nộp ghi chép trước bốn giờ mười lăm tại cabin du khách. Nhóm nghiên cứu sẽ so sánh dữ liệu nhiều tuyến trước khi công bố báo cáo môi trường sống theo mùa. Trên sơ đồ tuyến giả lập, visitor cabin ứng với điểm F.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-048.svg"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "The first observation area is the orchard, reached by following the left-hand path around the pond. We will note which trees have flowers and whether insects are visiting them."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The first observation area is the orchard, reached by following the left-hand path around the pond. We will note which trees have flowers and whether insects are visiting them. Nghĩa: Khu quan sát đầu là vườn cây ăn quả, đi theo đường bên trái vòng quanh ao. Chúng ta ghi cây nào có hoa và liệu côn trùng có đến không. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "The survey leader will demonstrate how to measure soil moisture without disturbing roots. Each group can record the readings, but specialist probes must be handled by trained staff."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The survey leader will demonstrate how to measure soil moisture without disturbing roots. Each group can record the readings, but specialist probes must be handled by trained staff. Nghĩa: Trưởng nhóm khảo sát sẽ trình diễn đo độ ẩm đất mà không làm hại rễ. Mỗi nhóm được ghi kết quả nhưng đầu dò chuyên dụng phải do nhân viên được đào tạo sử dụng. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: We meet at the southern ____ at one ten. The birdwatching group also meets near the entrance, so make sure you join the team carrying blue recording boards.",
+      "correct_answers": [
+        "information shelter"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “information shelter” xuất hiện trong câu gốc: We meet at the southern information shelter at one ten. The birdwatching group also meets near the entrance, so make sure you join the team carrying blue recording boards. Nghĩa: Chúng ta gặp nhau tại nhà thông tin phía nam lúc một giờ mười. Nhóm quan sát chim cũng họp gần cửa, nên hãy vào đúng đội cầm bảng ghi màu xanh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "biodiversity",
+      "pos": "n.",
+      "meaning_vi": "đa dạng sinh học",
+      "example_en": "This afternoon's guided survey is part of the park's wider biodiversity project. Rather than collecting plants, we'll observe signs of wildlife and record conditions that may affect where different species live.",
+      "example_vi": "Buổi khảo sát có hướng dẫn chiều nay thuộc dự án đa dạng sinh học lớn hơn của công viên. Thay vì hái cây, chúng ta quan sát dấu vết động vật và ghi điều kiện ảnh hưởng nơi các loài sống.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "soil moisture",
+      "pos": "n. phr.",
+      "meaning_vi": "độ ẩm đất",
+      "example_en": "The survey leader will demonstrate how to measure soil moisture without disturbing roots. Each group can record the readings, but specialist probes must be handled by trained staff.",
+      "example_vi": "Trưởng nhóm khảo sát sẽ trình diễn đo độ ẩm đất mà không làm hại rễ. Mỗi nhóm được ghi kết quả nhưng đầu dò chuyên dụng phải do nhân viên được đào tạo sử dụng.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "waterproof footwear",
+      "pos": "n. phr.",
+      "meaning_vi": "giày chống nước",
+      "example_en": "After the meadow, we'll return via the woodland track. Its surface may be muddy even without recent rain, so waterproof footwear is more useful than light trainers.",
+      "example_vi": "Sau đồng cỏ, ta quay lại bằng đường xuyên rừng. Mặt đường có thể lầy ngay cả khi không mưa gần đây, nên giày chống nước hữu ích hơn giày thể thao mỏng.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "survey",
+      "pos": "n.",
+      "meaning_vi": "khảo sát",
+      "example_en": "This afternoon's guided survey is part of the park's wider biodiversity project. Rather than collecting plants, we'll observe signs of wildlife and record conditions that may affect where different species live.",
+      "example_vi": "Buổi khảo sát có hướng dẫn chiều nay thuộc dự án đa dạng sinh học lớn hơn của công viên. Thay vì hái cây, chúng ta quan sát dấu vết động vật và ghi điều kiện ảnh hưởng nơi các loài sống.",
+      "source_turn_id": "T01"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c3a063ec46b238d09ab925e7f11b7dbd03c95738c478214f04eb2727da436f9f",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-015",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Common Contractions",
+  "learning_objectives_vi": [
+    "Nghe I’m/you’re/we’ve/they’d",
+    "Theo dõi từ chức năng ngắn xen giữa từ mang nghĩa; nghe cả cụm không tách từng chữ."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I'm looking for my phone charger.",
+      "translation_vi": "Tôi đang tìm bộ sạc điện thoại của mình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "You're sitting in my usual seat.",
+      "translation_vi": "Bạn đang ngồi vào chỗ quen thuộc của tôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "She's already finished the homework.",
+      "translation_vi": "Cô ấy đã làm xong bài tập rồi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "He's working at the airport this week.",
+      "translation_vi": "Tuần này anh ấy đang làm việc ở sân bay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We're leaving before sunrise tomorrow.",
+      "translation_vi": "Ngày mai chúng tôi sẽ rời đi trước lúc mặt trời mọc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "They've moved to a quieter neighbourhood.",
+      "translation_vi": "Họ đã chuyển đến khu phố yên tĩnh hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I'd like to order a vegetarian meal.",
+      "translation_vi": "Tôi muốn gọi một suất ăn chay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "You'll receive an email by Friday.",
+      "translation_vi": "Bạn sẽ nhận được email muộn nhất vào thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We didn't know the museum was closed.",
+      "translation_vi": "Chúng tôi không biết bảo tàng đã đóng cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "It'll take about twenty minutes to get there.",
+      "translation_vi": "Sẽ mất khoảng hai mươi phút để đến đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I'm looking for my phone charger."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "I'm = I am, không phải I. Nghĩa: Tôi đang tìm bộ sạc điện thoại của mình.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "You're sitting in my usual seat."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "You're = you are; phân biệt your. Nghĩa: Bạn đang ngồi vào chỗ quen thuộc của tôi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "She's already finished the homework."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "She's trong câu này là she has, không phải she is. Nghĩa: Cô ấy đã làm xong bài tập rồi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "He's working at the airport this week."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "He's trong câu này là he is + working. Nghĩa: Tuần này anh ấy đang làm việc ở sân bay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We're leaving before sunrise tomorrow."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "We're = we are, khác were. Nghĩa: Ngày mai chúng tôi sẽ rời đi trước lúc mặt trời mọc.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "They've moved to a quieter neighbourhood."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "They've = they have + moved. Nghĩa: Họ đã chuyển đến khu phố yên tĩnh hơn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I'd like to order a vegetarian meal."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "I'd = I would trong I'd like to. Nghĩa: Tôi muốn gọi một suất ăn chay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "You'll receive an email by Friday."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "You'll = you will; by Friday chỉ hạn chót. Nghĩa: Bạn sẽ nhận được email muộn nhất vào thứ Sáu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We didn't know the museum was closed."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Didn't = did not, không phải did. Nghĩa: Chúng tôi không biết bảo tàng đã đóng cửa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "It'll take about twenty minutes to get there."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "It'll = it will; twenty minutes có nối âm. Nghĩa: Sẽ mất khoảng hai mươi phút để đến đó.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Bài tập của cô ấy ở trạng thái nào?",
+      "options": [
+        "not started",
+        "lost",
+        "already finished"
+      ],
+      "correct_answers": [
+        "already finished"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "She's already finished có nghĩa đã hoàn thành.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Người nói muốn gọi loại bữa ăn nào?",
+      "options": [
+        "seafood meal",
+        "vegetarian meal",
+        "chicken meal"
+      ],
+      "correct_answers": [
+        "vegetarian meal"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "I'd like to order a vegetarian meal.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "function_words"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "phone charger",
+      "pos": "noun phrase",
+      "meaning_vi": "bộ sạc điện thoại",
+      "example_en": "I'm looking for my phone charger.",
+      "example_vi": "Tôi đang tìm bộ sạc điện thoại của mình.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "already finished",
+      "pos": "verb phrase",
+      "meaning_vi": "đã hoàn thành rồi",
+      "example_en": "She's already finished the homework.",
+      "example_vi": "Cô ấy đã làm xong bài tập rồi.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "vegetarian meal",
+      "pos": "noun phrase",
+      "meaning_vi": "suất ăn chay",
+      "example_en": "I'd like to order a vegetarian meal.",
+      "example_vi": "Tôi muốn gọi một suất ăn chay.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "by Friday",
+      "pos": "prepositional phrase",
+      "meaning_vi": "muộn nhất vào thứ Sáu",
+      "example_en": "You'll receive an email by Friday.",
+      "example_vi": "Bạn sẽ nhận được email muộn nhất vào thứ Sáu.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "59a4704459a069c2294ce84d6d72fdcae18494268af5f417a44be44975473244",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

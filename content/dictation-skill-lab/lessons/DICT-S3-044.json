@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-044",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Dissertation Planning",
+  "title": "Dissertation Planning – Urban Light Pollution Dissertation",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Mina – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "David – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Yasmin – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "My dissertation was going to examine light pollution across the entire city using reports submitted by residents. The supervisor questioned whether those reports represent all neighbourhoods fairly.",
+      "translation_vi": "Luận văn mình định nghiên cứu ô nhiễm ánh sáng cả thành phố bằng phản ánh của người dân. Người hướng dẫn hỏi liệu những phản ánh ấy đại diện công bằng cho mọi khu không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Probably not. People who notice excessive lighting are more likely to submit reports, and residents without internet access are less likely to appear in the dataset.",
+      "translation_vi": "Có lẽ không. Người để ý ánh sáng quá mạnh dễ gửi phản ánh hơn, còn người không có internet ít xuất hiện trong dữ liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The city operates fixed light sensors, but they're concentrated downtown. We could combine those readings with a smaller set of measurements from residential streets selected systematically.",
+      "translation_vi": "Thành phố có cảm biến ánh sáng cố định, nhưng tập trung ở trung tâm. Ta có thể kết hợp số đo với một nhóm điểm ở đường dân cư được chọn có hệ thống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "If I selected one street from every district, would that solve the problem? Some districts have very different housing patterns, and a single street might be misleading.",
+      "translation_vi": "Nếu chọn một con phố mỗi quận thì có giải quyết không? Một số quận có kiểu nhà rất khác nhau, và chỉ một phố dễ gây hiểu sai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "A stratified design might work better. Group streets by housing density, then select several within each category. You could report variation across street types rather than claim a precise citywide average.",
+      "translation_vi": "Thiết kế lấy mẫu phân tầng có lẽ tốt hơn. Nhóm đường theo mật độ nhà ở rồi chọn vài tuyến mỗi nhóm. Bạn có thể báo khác biệt giữa loại đường thay vì khẳng định trung bình toàn thành phố chính xác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "But the equipment budget permits only twelve evening visits. That means we should narrow the study to two neighbouring districts with contrasting street layouts, not pretend to cover everything.",
+      "translation_vi": "Nhưng ngân sách thiết bị chỉ cho phép mười hai lượt đo buổi tối. Vì vậy nên thu hẹp về hai quận liền kề có kiểu đường khác nhau, không giả vờ khảo sát toàn bộ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Then I can retain the resident reports as context rather than treat them as unbiased measurements. I'll compare sensor readings at twelve selected points and discuss who is missing from the complaint data.",
+      "translation_vi": "Vậy mình giữ phản ánh cư dân làm bối cảnh thay vì coi là số đo không thiên lệch. Mình sẽ so số đo cảm biến ở mười hai điểm và bàn ai bị thiếu trong dữ liệu khiếu nại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Record weather, measurement time and nearby commercial lighting as well. Those factors might explain a high reading without reflecting the ordinary night-time conditions on that street.",
+      "translation_vi": "Cũng ghi thời tiết, giờ đo và ánh sáng thương mại gần đó. Những yếu tố ấy có thể giải thích số đo cao mà không phản ánh đêm bình thường trên con phố.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "We'll revise the dissertation title to a comparison of two districts and describe the sampling limitations openly. A carefully bounded conclusion is stronger than an unsupported claim about the whole city.",
+      "translation_vi": "Ta sửa tiêu đề thành so sánh hai quận và nêu công khai giới hạn lấy mẫu. Kết luận có phạm vi rõ mạnh hơn khẳng định thiếu chứng cứ về cả thành phố.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why may resident light-pollution reports be an unrepresentative sample?",
+      "correct_answers": [
+        "People who notice problems are more likely to report them"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, David nói: “Có lẽ không. Người để ý ánh sáng quá mạnh dễ gửi phản ánh hơn, còn người không có internet ít xuất hiện trong dữ liệu.” Đáp án “People who notice problems are more likely to report them” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "People who notice problems are more likely to report them",
+        "The fixed sensors are located mostly downtown",
+        "The study can afford only twelve visits"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The city's fixed light sensors are concentrated ____ .",
+      "correct_answers": [
+        "downtown"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Thành phố có cảm biến ánh sáng cố định, nhưng tập trung ở trung tâm. Ta có thể kết hợp số đo với một nhóm điểm ở đường dân cư được chọn có hệ thống.” Cụm cần điền nghe đúng nguyên văn là “downtown”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker points to the equipment budget as a reason to narrow the study?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói Yasmin (Speaker C) đưa ra ý này tại T06: “Nhưng ngân sách thiết bị chỉ cho phép mười hai lượt đo buổi tối. Vì vậy nên thu hẹp về hai quận liền kề có kiểu đường khác nhau, không giả vờ khảo sát toàn bộ.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "How will the team use resident reports in the revised study?",
+      "correct_answers": [
+        "As contextual evidence rather than unbiased measurements"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Mina nói: “Vậy mình giữ phản ánh cư dân làm bối cảnh thay vì coi là số đo không thiên lệch. Mình sẽ so số đo cảm biến ở mười hai điểm và bàn ai bị thiếu trong dữ liệu khiếu nại.” Đáp án “As contextual evidence rather than unbiased measurements” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "As contextual evidence rather than unbiased measurements",
+        "As the main source of exact light measurements",
+        "As proof that the whole city is equally affected"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Besides weather and nearby lighting, the measurements must record ____ .",
+      "correct_answers": [
+        "measurement time"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Cũng ghi thời tiết, giờ đo và ánh sáng thương mại gần đó. Những yếu tố ấy có thể giải thích số đo cao mà không phản ánh đêm bình thường trên con phố.” Cụm cần điền nghe đúng nguyên văn là “measurement time”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "How many districts will the dissertation compare?",
+      "correct_answers": [
+        "two"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Ta sửa tiêu đề thành so sánh hai quận và nêu công khai giới hạn lấy mẫu. Kết luận có phạm vi rõ mạnh hơn khẳng định thiếu chứng cứ về cả thành phố.” Trả lời ngắn theo chi tiết “two”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "If I selected one street from every district, would that solve the problem? Some districts have very different housing patterns, and a single street might be misleading."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “If I selected one street from every district, would that solve the problem? Some districts have very different housing patterns, and a single street might be misleading.”\nBản dịch: Nếu chọn một con phố mỗi quận thì có giải quyết không? Một số quận có kiểu nhà rất khác nhau, và chỉ một phố dễ gây hiểu sai.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Then I can retain the resident reports as context rather than treat them as unbiased measurements. I'll compare sensor readings at twelve selected points and discuss who is missing from the complaint data."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “Then I can retain the resident reports as context rather than treat them as unbiased measurements. I'll compare sensor readings at twelve selected points and discuss who is missing from the complaint data.”\nBản dịch: Vậy mình giữ phản ánh cư dân làm bối cảnh thay vì coi là số đo không thiên lệch. Mình sẽ so số đo cảm biến ở mười hai điểm và bàn ai bị thiếu trong dữ liệu khiếu nại.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: My dissertation was going to examine ____ across the entire city using reports submitted by residents. The supervisor questioned whether those reports represent all neighbourhoods fairly.",
+      "correct_answers": [
+        "light pollution"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “light pollution” nghĩa là ô nhiễm ánh sáng. Đối chiếu: “My dissertation was going to examine light pollution across the entire city using reports submitted by residents. The supervisor questioned whether those reports represent all neighbourhoods fairly.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "light pollution",
+      "pos": "n. phr.",
+      "meaning_vi": "ô nhiễm ánh sáng",
+      "example_en": "My dissertation was going to examine light pollution across the entire city using reports submitted by residents. The supervisor questioned whether those reports represent all neighbourhoods fairly.",
+      "example_vi": "Luận văn mình định nghiên cứu ô nhiễm ánh sáng cả thành phố bằng phản ánh của người dân. Người hướng dẫn hỏi liệu những phản ánh ấy đại diện công bằng cho mọi khu không.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "stratified design",
+      "pos": "n. phr.",
+      "meaning_vi": "thiết kế lấy mẫu phân tầng",
+      "example_en": "A stratified design might work better. Group streets by housing density, then select several within each category. You could report variation across street types rather than claim a precise citywide average.",
+      "example_vi": "Thiết kế lấy mẫu phân tầng có lẽ tốt hơn. Nhóm đường theo mật độ nhà ở rồi chọn vài tuyến mỗi nhóm. Bạn có thể báo khác biệt giữa loại đường thay vì khẳng định trung bình toàn thành phố chính xác.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "equipment budget",
+      "pos": "n. phr.",
+      "meaning_vi": "ngân sách thiết bị",
+      "example_en": "But the equipment budget permits only twelve evening visits. That means we should narrow the study to two neighbouring districts with contrasting street layouts, not pretend to cover everything.",
+      "example_vi": "Nhưng ngân sách thiết bị chỉ cho phép mười hai lượt đo buổi tối. Vì vậy nên thu hẹp về hai quận liền kề có kiểu đường khác nhau, không giả vờ khảo sát toàn bộ.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "sampling limitations",
+      "pos": "n. phr.",
+      "meaning_vi": "giới hạn lấy mẫu",
+      "example_en": "We'll revise the dissertation title to a comparison of two districts and describe the sampling limitations openly. A carefully bounded conclusion is stronger than an unsupported claim about the whole city.",
+      "example_vi": "Ta sửa tiêu đề thành so sánh hai quận và nêu công khai giới hạn lấy mẫu. Kết luận có phạm vi rõ mạnh hơn khẳng định thiếu chứng cứ về cả thành phố.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "4f37fd6743c162d1fa24b9876983369a395299a92e2965b1328dbd85d87c391a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

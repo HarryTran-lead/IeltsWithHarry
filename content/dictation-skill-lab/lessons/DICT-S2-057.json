@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-057",
+  "status": "draft",
+  "level": "L7",
+  "section": 2,
+  "topic": "Tourist Attractions",
+  "title": "Heritage Monument: Preservation and Visitor Limits",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Tourist Attractions ở mức L7, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to the restored hillside monument. The site receives thousands of visitors each year, but access is now carefully managed because parts of the structure are more vulnerable than they appear.",
+      "translation_vi": "Chào mừng đến di tích trên sườn đồi đã phục hồi. Khu vực đón hàng nghìn khách mỗi năm, nhưng nay kiểm soát tiếp cận chặt vì vài phần kết cấu mong manh hơn vẻ ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We begin at the interpretation centre below the hill, where an exhibition explains why the original stone stairway was closed. It remains visible from outside but cannot safely carry large groups.",
+      "translation_vi": "Ta bắt đầu tại trung tâm giới thiệu dưới đồi, nơi triển lãm giải thích lý do cầu thang đá gốc bị đóng. Vẫn có thể nhìn từ ngoài nhưng không chịu an toàn nhóm đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Visitors now climb a new path along the western slope. Please follow the numbered markers, as the narrower eastern route is reserved for archaeological staff carrying equipment.",
+      "translation_vi": "Du khách hiện đi lên theo đường mới dọc sườn phía tây. Hãy theo các mốc đánh số vì tuyến đông hẹp hơn dành cho nhân viên khảo cổ mang thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "At the upper platform, you'll see a carved stone panel. Experts once thought it recorded a military victory, but a recent translation suggests it describes a religious ceremony.",
+      "translation_vi": "Tại bục trên, bạn thấy một tấm đá chạm khắc. Chuyên gia từng nghĩ nó ghi chiến thắng quân sự, nhưng bản dịch gần đây cho thấy nó mô tả nghi lễ tôn giáo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The conservation team has covered part of the panel with a protective screen. This prevents moisture damage while allowing visitors to see the most important surviving details.",
+      "translation_vi": "Nhóm bảo tồn che một phần tấm đá bằng màn bảo vệ. Nó ngăn hư hại do ẩm trong khi vẫn cho khách nhìn các chi tiết còn lại quan trọng nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Guided groups must leave the upper platform after twenty minutes so that the number of people remains within the safety limit. Independent visitors may remain longer on the lower terrace.",
+      "translation_vi": "Nhóm có hướng dẫn phải rời bục trên sau hai mươi phút để đảm bảo giới hạn người an toàn. Khách tự do có thể ở lâu hơn ở sân hiên dưới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The visit finishes in the small archive room, where a digital model shows how the monument might have looked before its outer walls collapsed. This reconstruction is an interpretation, not a confirmed picture.",
+      "translation_vi": "Chuyến tham quan kết thúc tại phòng lưu trữ nhỏ, nơi mô hình số cho thấy di tích có thể từng trông ra sao trước khi tường ngoài sụp. Đây là tái dựng giả thuyết, không phải hình ảnh chắc chắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Visit begins at the: ____",
+      "correct_answers": [
+        "interpretation centre"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Ta bắt đầu tại trung tâm giới thiệu dưới đồi, nơi triển lãm giải thích lý do cầu thang đá gốc bị đóng. Vẫn có thể nhìn từ ngoài nhưng không chịu an toàn nhóm đông. Đáp án được nhắc trong đoạn T02: “interpretation centre”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — New ascent path follows western: ____",
+      "correct_answers": [
+        "slope"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Du khách hiện đi lên theo đường mới dọc sườn phía tây. Hãy theo các mốc đánh số vì tuyến đông hẹp hơn dành cho nhân viên khảo cổ mang thiết bị. Đáp án được nhắc trong đoạn T03: “slope”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Eastern route reserved for: ____",
+      "correct_answers": [
+        "archaeological staff"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Du khách hiện đi lên theo đường mới dọc sườn phía tây. Hãy theo các mốc đánh số vì tuyến đông hẹp hơn dành cho nhân viên khảo cổ mang thiết bị. Đáp án được nhắc trong đoạn T03: “archaeological staff”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Stone inscription may describe a religious: ____",
+      "correct_answers": [
+        "ceremony"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tại bục trên, bạn thấy một tấm đá chạm khắc. Chuyên gia từng nghĩ nó ghi chiến thắng quân sự, nhưng bản dịch gần đây cho thấy nó mô tả nghi lễ tôn giáo. Đáp án được nhắc trong đoạn T04: “ceremony”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Protective screen prevents?",
+      "correct_answers": [
+        "moisture"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nhóm bảo tồn che một phần tấm đá bằng màn bảo vệ. Nó ngăn hư hại do ẩm trong khi vẫn cho khách nhìn các chi tiết còn lại quan trọng nhất. Đáp án được nhắc trong đoạn T05: “moisture”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Groups have twenty minutes on upper: ____",
+      "correct_answers": [
+        "platform"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nhóm có hướng dẫn phải rời bục trên sau hai mươi phút để đảm bảo giới hạn người an toàn. Khách tự do có thể ở lâu hơn ở sân hiên dưới. Đáp án được nhắc trong đoạn T06: “platform”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "X01",
+      "type": "mcq",
+      "prompt": "What does the recent translation suggest about the stone panel?",
+      "options": [
+        "it describes a religious ceremony",
+        "it records a military victory",
+        "it lists building costs"
+      ],
+      "correct_answers": [
+        "it describes a religious ceremony"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tại bục trên, bạn thấy một tấm đá chạm khắc. Chuyên gia từng nghĩ nó ghi chiến thắng quân sự, nhưng bản dịch gần đây cho thấy nó mô tả nghi lễ tôn giáo. Trong ba lựa chọn, đáp án chính xác là “it describes a religious ceremony”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "supplementary_mcq",
+        "distractor_detection",
+        "paraphrase"
+      ]
+    },
+    {
+      "question_id": "M01",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the interpretation centre?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Ta bắt đầu tại trung tâm giới thiệu dưới đồi, nơi triển lãm giải thích lý do cầu thang đá gốc bị đóng. Vẫn có thể nhìn từ ngoài nhưng không chịu an toàn nhóm đông. Trên sơ đồ tuyến giả lập, interpretation centre ứng với điểm A.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-057.svg"
+    },
+    {
+      "question_id": "M02",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the upper platform?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tại bục trên, bạn thấy một tấm đá chạm khắc. Chuyên gia từng nghĩ nó ghi chiến thắng quân sự, nhưng bản dịch gần đây cho thấy nó mô tả nghi lễ tôn giáo. Trên sơ đồ tuyến giả lập, upper platform ứng với điểm D.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-057.svg"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "Visitors now climb a new path along the western slope. Please follow the numbered markers, as the narrower eastern route is reserved for archaeological staff carrying equipment."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Visitors now climb a new path along the western slope. Please follow the numbered markers, as the narrower eastern route is reserved for archaeological staff carrying equipment. Nghĩa: Du khách hiện đi lên theo đường mới dọc sườn phía tây. Hãy theo các mốc đánh số vì tuyến đông hẹp hơn dành cho nhân viên khảo cổ mang thiết bị. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "The conservation team has covered part of the panel with a protective screen. This prevents moisture damage while allowing visitors to see the most important surviving details."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The conservation team has covered part of the panel with a protective screen. This prevents moisture damage while allowing visitors to see the most important surviving details. Nghĩa: Nhóm bảo tồn che một phần tấm đá bằng màn bảo vệ. Nó ngăn hư hại do ẩm trong khi vẫn cho khách nhìn các chi tiết còn lại quan trọng nhất. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: We begin at the ____ below the hill, where an exhibition explains why the original stone stairway was closed. It remains visible from outside but cannot safely carry large groups.",
+      "correct_answers": [
+        "interpretation centre"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “interpretation centre” xuất hiện trong câu gốc: We begin at the interpretation centre below the hill, where an exhibition explains why the original stone stairway was closed. It remains visible from outside but cannot safely carry large groups. Nghĩa: Ta bắt đầu tại trung tâm giới thiệu dưới đồi, nơi triển lãm giải thích lý do cầu thang đá gốc bị đóng. Vẫn có thể nhìn từ ngoài nhưng không chịu an toàn nhóm đông.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "archaeological",
+      "pos": "adj.",
+      "meaning_vi": "thuộc khảo cổ",
+      "example_en": "Visitors now climb a new path along the western slope. Please follow the numbered markers, as the narrower eastern route is reserved for archaeological staff carrying equipment.",
+      "example_vi": "Du khách hiện đi lên theo đường mới dọc sườn phía tây. Hãy theo các mốc đánh số vì tuyến đông hẹp hơn dành cho nhân viên khảo cổ mang thiết bị.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "stone panel",
+      "pos": "n. phr.",
+      "meaning_vi": "tấm đá chạm khắc",
+      "example_en": "At the upper platform, you'll see a carved stone panel. Experts once thought it recorded a military victory, but a recent translation suggests it describes a religious ceremony.",
+      "example_vi": "Tại bục trên, bạn thấy một tấm đá chạm khắc. Chuyên gia từng nghĩ nó ghi chiến thắng quân sự, nhưng bản dịch gần đây cho thấy nó mô tả nghi lễ tôn giáo.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "conservation",
+      "pos": "n.",
+      "meaning_vi": "công tác bảo tồn",
+      "example_en": "The conservation team has covered part of the panel with a protective screen. This prevents moisture damage while allowing visitors to see the most important surviving details.",
+      "example_vi": "Nhóm bảo tồn che một phần tấm đá bằng màn bảo vệ. Nó ngăn hư hại do ẩm trong khi vẫn cho khách nhìn các chi tiết còn lại quan trọng nhất.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "digital model",
+      "pos": "n. phr.",
+      "meaning_vi": "mô hình kỹ thuật số",
+      "example_en": "The visit finishes in the small archive room, where a digital model shows how the monument might have looked before its outer walls collapsed. This reconstruction is an interpretation, not a confirmed picture.",
+      "example_vi": "Chuyến tham quan kết thúc tại phòng lưu trữ nhỏ, nơi mô hình số cho thấy di tích có thể từng trông ra sao trước khi tường ngoài sụp. Đây là tái dựng giả thuyết, không phải hình ảnh chắc chắn.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "bd54c30519d5143159b72813154c016fe55226edb584e2959c663f8c0358c0f2",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

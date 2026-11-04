@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-006",
+  "status": "draft",
+  "level": "L4",
+  "section": 3,
+  "topic": "Research Methodology",
+  "title": "Research Methodology: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Hannah – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Jack – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Priya – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "For the sleep experiment, we first suggested asking volunteers to drink coffee before bedtime.",
+      "translation_vi": "Đối với thí nghiệm về giấc ngủ, ban đầu chúng ta định yêu cầu tình nguyện viên uống cà phê trước giờ ngủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The ethics tutor rejected that plan because we cannot control how strongly people react to caffeine.",
+      "translation_vi": "Giảng viên đạo đức nghiên cứu bác phương án đó vì không thể kiểm soát mức phản ứng của mỗi người với caffeine.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Could we use a questionnaire about their ordinary habits instead of changing what they consume?",
+      "translation_vi": "Ta có thể dùng bảng hỏi về thói quen thường ngày thay vì thay đổi đồ họ uống không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "That would be safer, although people might not remember their exact bedtime for every night of the week.",
+      "translation_vi": "Như vậy an toàn hơn, dù mọi người có thể không nhớ chính xác giờ ngủ từng đêm trong tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We could ask them to keep a simple sleep diary for seven days. That records behaviour as it happens.",
+      "translation_vi": "Chúng ta có thể yêu cầu họ ghi nhật ký ngủ đơn giản trong bảy ngày. Như vậy ghi lại hành vi ngay khi xảy ra.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "I like that idea. Shall we recruit thirty students from the psychology class?",
+      "translation_vi": "Mình thích ý đó. Ta tuyển ba mươi sinh viên từ lớp tâm lý nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The supervisor advised a smaller pilot first, perhaps eight volunteers, to see whether the diary instructions are clear.",
+      "translation_vi": "Người hướng dẫn khuyên thử nghiệm nhỏ trước, khoảng tám người, để xem hướng dẫn nhật ký có rõ không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Right. After the pilot, we can revise the form and submit it for ethical approval.",
+      "translation_vi": "Đúng. Sau thử nghiệm nhỏ, ta sửa biểu mẫu và nộp phê duyệt đạo đức.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll draft the consent information; you two can prepare the diary template before Thursday's meeting.",
+      "translation_vi": "Mình sẽ soạn thông tin đồng ý tham gia; hai bạn chuẩn bị mẫu nhật ký trước cuộc họp thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why was the coffee experiment rejected?",
+      "correct_answers": [
+        "People may react differently to caffeine"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Jack): “Giảng viên đạo đức nghiên cứu bác phương án đó vì không thể kiểm soát mức phản ứng của mỗi người với caffeine.” Đáp án: “People may react differently to caffeine”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "There were too few cups",
+        "The lab was unavailable",
+        "People may react differently to caffeine"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Priya proposes using a ____ instead of changing participants' drinks.",
+      "correct_answers": [
+        "questionnaire"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Priya): “Ta có thể dùng bảng hỏi về thói quen thường ngày thay vì thay đổi đồ họ uống không?” Đáp án: “questionnaire”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Participants could keep a sleep diary for ____ days.",
+      "correct_answers": [
+        "seven"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Jack): “Chúng ta có thể yêu cầu họ ghi nhật ký ngủ đơn giản trong bảy ngày. Như vậy ghi lại hành vi ngay khi xảy ra.” Đáp án: “seven”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "short_answer",
+      "prompt": "How many volunteers are proposed for the pilot?",
+      "correct_answers": [
+        "eight"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bằng chứng ở T07 (Hannah): “Người hướng dẫn khuyên thử nghiệm nhỏ trước, khoảng tám người, để xem hướng dẫn nhật ký có rõ không.” Đáp án: “eight”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "matching",
+      "prompt": "What must the team obtain after revising the form?",
+      "correct_answers": [
+        "ethical approval"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Jack): “Đúng. Sau thử nghiệm nhỏ, ta sửa biểu mẫu và nộp phê duyệt đạo đức.” Đáp án: “ethical approval”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "course credit",
+        "ethical approval",
+        "equipment delivery"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Priya will draft the ____ information.",
+      "correct_answers": [
+        "consent"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Priya): “Mình sẽ soạn thông tin đồng ý tham gia; hai bạn chuẩn bị mẫu nhật ký trước cuộc họp thứ Năm.” Đáp án: “consent”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T03 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "Could we use a questionnaire about their ordinary habits instead of changing what they consume?"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: “Could we use a questionnaire about their ordinary habits instead of changing what they consume?”\nNghĩa: Ta có thể dùng bảng hỏi về thói quen thường ngày thay vì thay đổi đồ họ uống không?\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T06 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "I like that idea. Shall we recruit thirty students from the psychology class?"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: “I like that idea. Shall we recruit thirty students from the psychology class?”\nNghĩa: Mình thích ý đó. Ta tuyển ba mươi sinh viên từ lớp tâm lý nhé?\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02, điền từ/cụm từ bị thiếu: The ____ rejected that plan because we cannot control how strongly people react to caffeine.",
+      "correct_answers": [
+        "ethics tutor"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm cần nghe: “ethics tutor” (giảng viên đạo đức nghiên cứu). Lời gốc: “The ethics tutor rejected that plan because we cannot control how strongly people react to caffeine.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "ethics tutor",
+      "pos": "n. phr.",
+      "meaning_vi": "giảng viên đạo đức nghiên cứu",
+      "example_en": "The ethics tutor rejected that plan because we cannot control how strongly people react to caffeine.",
+      "example_vi": "Giảng viên đạo đức nghiên cứu bác phương án đó vì không thể kiểm soát mức phản ứng của mỗi người với caffeine.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "caffeine",
+      "pos": "n.",
+      "meaning_vi": "caffeine",
+      "example_en": "The ethics tutor rejected that plan because we cannot control how strongly people react to caffeine.",
+      "example_vi": "Giảng viên đạo đức nghiên cứu bác phương án đó vì không thể kiểm soát mức phản ứng của mỗi người với caffeine.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "sleep diary",
+      "pos": "n. phr.",
+      "meaning_vi": "nhật ký ngủ",
+      "example_en": "We could ask them to keep a simple sleep diary for seven days. That records behaviour as it happens.",
+      "example_vi": "Chúng ta có thể yêu cầu họ ghi nhật ký ngủ đơn giản trong bảy ngày. Như vậy ghi lại hành vi ngay khi xảy ra.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "ethical approval",
+      "pos": "n. phr.",
+      "meaning_vi": "phê duyệt đạo đức",
+      "example_en": "Right. After the pilot, we can revise the form and submit it for ethical approval.",
+      "example_vi": "Đúng. Sau thử nghiệm nhỏ, ta sửa biểu mẫu và nộp phê duyệt đạo đức.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c97ae6d70a072a0d0e80f8edc04429cd148ff5c7f8b4179472a2f17d06d6a3de",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

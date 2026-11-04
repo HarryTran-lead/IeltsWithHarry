@@ -1,0 +1,399 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-002",
+  "status": "draft",
+  "level": "L3",
+  "section": 3,
+  "topic": "Research Planning",
+  "title": "Research Planning: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Mina – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Omar – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Sofia – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our lecturer wants a clear research question about air quality near the school.",
+      "translation_vi": "Giảng viên muốn một câu hỏi nghiên cứu rõ ràng về chất lượng không khí gần trường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We could compare traffic at the north and south gates before classes begin.",
+      "translation_vi": "Chúng ta có thể so sánh giao thông ở cổng bắc và cổng nam trước giờ học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The south gate has building work this month, so that would affect our results.",
+      "translation_vi": "Tháng này cổng nam có công trình xây dựng, điều đó sẽ ảnh hưởng đến kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "C",
+      "text_en": "What about measuring the same gate at two different times of day?",
+      "translation_vi": "Hay là đo cùng một cổng vào hai thời điểm khác nhau trong ngày?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Morning and late afternoon would work. We'd need permission to place a sensor nearby.",
+      "translation_vi": "Buổi sáng và cuối chiều đều được. Chúng ta cần xin phép đặt cảm biến gần đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I'll email the site manager. Can you both find published studies to compare with ours?",
+      "translation_vi": "Mình sẽ gửi email cho quản lý địa điểm. Hai bạn tìm nghiên cứu đã công bố để đối chiếu nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "C",
+      "text_en": "I'll search the university database, but let's agree on the keywords first.",
+      "translation_vi": "Mình sẽ tìm trên cơ sở dữ liệu đại học, nhưng hãy thống nhất từ khóa trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Use air pollution and school traffic. We can review the articles on Thursday.",
+      "translation_vi": "Dùng từ khóa ô nhiễm không khí và giao thông trường học. Ta xem lại bài vào thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Omar initially suggests comparing traffic at the north and ____ gates.",
+      "correct_answers": [
+        "south"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Omar): “Chúng ta có thể so sánh giao thông ở cổng bắc và cổng nam trước giờ học.” Đáp án: “south”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "Why is the south gate unsuitable this month?",
+      "correct_answers": [
+        "Building work could affect the findings"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Mina): “Tháng này cổng nam có công trình xây dựng, điều đó sẽ ảnh hưởng đến kết quả.” Đáp án: “Building work could affect the findings”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Building work could affect the findings",
+        "There are no vehicles",
+        "The gate is closed permanently"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "short_answer",
+      "prompt": "What will be compared at the same gate?",
+      "correct_answers": [
+        "times of day"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng ở T04 (Sofia): “Hay là đo cùng một cổng vào hai thời điểm khác nhau trong ngày?” Đáp án: “times of day”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "sentence_completion",
+      "prompt": "They must obtain permission to install a ____.",
+      "correct_answers": [
+        "sensor"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Omar): “Buổi sáng và cuối chiều đều được. Chúng ta cần xin phép đặt cảm biến gần đó.” Đáp án: “sensor”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "matching",
+      "prompt": "Who will contact the site manager?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Mina): “Mình sẽ gửi email cho quản lý địa điểm. Hai bạn tìm nghiên cứu đã công bố để đối chiếu nhé?” Đáp án: “Speaker A”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker B",
+        "Speaker C",
+        "Speaker A"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "The team will review the articles on ____.",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Omar): “Dùng từ khóa ô nhiễm không khí và giao thông trường học. Ta xem lại bài vào thứ Năm.” Đáp án: “Thursday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "We could compare traffic at the north and south gates before classes begin."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: “We could compare traffic at the north and south gates before classes begin.”\nNghĩa: Chúng ta có thể so sánh giao thông ở cổng bắc và cổng nam trước giờ học.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T05 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "Morning and late afternoon would work. We'd need permission to place a sensor nearby."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: “Morning and late afternoon would work. We'd need permission to place a sensor nearby.”\nNghĩa: Buổi sáng và cuối chiều đều được. Chúng ta cần xin phép đặt cảm biến gần đó.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: Our lecturer wants a clear research question about ____ near the school.",
+      "correct_answers": [
+        "air quality"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “air quality” (chất lượng không khí). Lời gốc: “Our lecturer wants a clear research question about air quality near the school.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "air quality",
+      "pos": "n. phr.",
+      "meaning_vi": "chất lượng không khí",
+      "example_en": "Our lecturer wants a clear research question about air quality near the school.",
+      "example_vi": "Giảng viên muốn một câu hỏi nghiên cứu rõ ràng về chất lượng không khí gần trường.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "building work",
+      "pos": "n. phr.",
+      "meaning_vi": "công trình xây dựng",
+      "example_en": "The south gate has building work this month, so that would affect our results.",
+      "example_vi": "Tháng này cổng nam có công trình xây dựng, điều đó sẽ ảnh hưởng đến kết quả.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "sensor",
+      "pos": "n.",
+      "meaning_vi": "cảm biến",
+      "example_en": "Morning and late afternoon would work. We'd need permission to place a sensor nearby.",
+      "example_vi": "Buổi sáng và cuối chiều đều được. Chúng ta cần xin phép đặt cảm biến gần đó.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "keywords",
+      "pos": "n.",
+      "meaning_vi": "từ khóa",
+      "example_en": "I'll search the university database, but let's agree on the keywords first.",
+      "example_vi": "Mình sẽ tìm trên cơ sở dữ liệu đại học, nhưng hãy thống nhất từ khóa trước.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b7a02d3618eefb5aabc19cd380f012f837de5f770ac23a9b3289a6afe44241b5",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

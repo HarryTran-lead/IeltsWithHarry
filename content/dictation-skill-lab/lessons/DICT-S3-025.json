@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-025",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Time Management",
+  "title": "Time Management: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Anya – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "David – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Rosa – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our community campaign launches in three weeks, and I'm worried we've underestimated how long approval of the posters will take.",
+      "translation_vi": "Chiến dịch cộng đồng ra mắt trong ba tuần nữa, mình lo ta đánh giá thấp thời gian duyệt áp phích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The communications office usually needs five working days, but they said urgent requests might be reviewed sooner.",
+      "translation_vi": "Phòng truyền thông thường cần năm ngày làm việc, nhưng họ nói yêu cầu khẩn có thể được xem sớm hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "I wouldn't rely on an exception. We should plan around the standard deadline and keep a backup version that needs less approval.",
+      "translation_vi": "Mình không muốn dựa vào ngoại lệ. Ta nên theo hạn chuẩn và chuẩn bị bản dự phòng ít cần phê duyệt hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I had the design work scheduled for next Wednesday. If we wait until then, we won't have enough time for revisions.",
+      "translation_vi": "Mình dự tính làm thiết kế thứ Tư tới. Nếu chờ tới đó, ta không đủ thời gian sửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Could we draft the key messages today and ask the office to approve the wording before the graphics are final?",
+      "translation_vi": "Ta có thể soạn thông điệp hôm nay và xin phòng duyệt câu chữ trước khi đồ họa hoàn chỉnh không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "That's worth trying, but the office may still require the complete design. We should ask rather than assume their process.",
+      "translation_vi": "Đáng thử, nhưng phòng có thể vẫn yêu cầu thiết kế đầy đủ. Ta nên hỏi chứ không tự đoán quy trình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Meanwhile, the volunteers need training. I suggested a two-hour session on Saturday, but several people work weekends.",
+      "translation_vi": "Trong khi đó tình nguyện viên cần tập huấn. Mình đề xuất buổi hai giờ thứ Bảy, nhưng nhiều người làm cuối tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "What about a shorter online briefing on Thursday evening, followed by optional face-to-face practice for anyone handling equipment?",
+      "translation_vi": "Hay họp trực tuyến ngắn tối thứ Năm, rồi buổi thực hành trực tiếp tùy chọn cho ai dùng thiết bị?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "That divides the training appropriately. Everyone needs the safety instructions, but only a small group needs to operate the display screens.",
+      "translation_vi": "Cách đó chia tập huấn hợp lý. Ai cũng cần hướng dẫn an toàn, nhưng chỉ nhóm nhỏ vận hành màn hình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "We also need a final check two days before launch. If posters aren't ready, we can use the approved plain-text notice.",
+      "translation_vi": "Ta cũng cần kiểm tra cuối hai ngày trước ra mắt. Nếu áp phích chưa xong, có thể dùng thông báo chữ đã duyệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll contact communications today, and you can bring the training schedule to tomorrow's committee meeting.",
+      "translation_vi": "Mình sẽ liên hệ truyền thông hôm nay, còn bạn mang lịch tập huấn tới họp ban tổ chức ngày mai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "So the critical path is approval, not printing. Let's move the writing forward and keep the design work flexible.",
+      "translation_vi": "Vậy khâu quyết định tiến độ là phê duyệt, không phải in. Hãy đẩy việc viết lên trước và linh hoạt thiết kế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Standard poster approval takes five working ____.",
+      "correct_answers": [
+        "days"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (David): “Phòng truyền thông thường cần năm ngày làm việc, nhưng họ nói yêu cầu khẩn có thể được xem sớm hơn.” Đáp án: “days”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "Why does Rosa favour the standard deadline?",
+      "correct_answers": [
+        "Urgent approval cannot be relied upon"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Rosa): “Mình không muốn dựa vào ngoại lệ. Ta nên theo hạn chuẩn và chuẩn bị bản dự phòng ít cần phê duyệt hơn.” Đáp án: “Urgent approval cannot be relied upon”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Urgent approval cannot be relied upon",
+        "The printers are closed",
+        "The campaign has been cancelled"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which office must confirm whether wording alone can be approved?",
+      "correct_answers": [
+        "communications office"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Rosa): “Đáng thử, nhưng phòng có thể vẫn yêu cầu thiết kế đầy đủ. Ta nên hỏi chứ không tự đoán quy trình.” Đáp án: “communications office”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "student finance office",
+        "library office",
+        "communications office"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "The revised plan includes an online briefing on ____ evening.",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (David): “Hay họp trực tuyến ngắn tối thứ Năm, rồi buổi thực hành trực tiếp tùy chọn cho ai dùng thiết bị?” Đáp án: “Thursday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "Who needs the optional equipment practice?",
+      "correct_answers": [
+        "Only those operating display screens"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Rosa): “Cách đó chia tập huấn hợp lý. Ai cũng cần hướng dẫn an toàn, nhưng chỉ nhóm nhỏ vận hành màn hình.” Đáp án: “Only those operating display screens”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Only those operating display screens",
+        "Every campaign supporter",
+        "Only graphic designers"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What is the critical path for the campaign?",
+      "correct_answers": [
+        "approval"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Bằng chứng ở T12 (Rosa): “Vậy khâu quyết định tiến độ là phê duyệt, không phải in. Hãy đẩy việc viết lên trước và linh hoạt thiết kế.” Đáp án: “approval”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "I had the design work scheduled for next Wednesday. If we wait until then, we won't have enough time for revisions."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I had the design work scheduled for next Wednesday. If we wait until then, we won't have enough time for revisions.”\nNghĩa: Mình dự tính làm thiết kế thứ Tư tới. Nếu chờ tới đó, ta không đủ thời gian sửa.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "What about a shorter online briefing on Thursday evening, followed by optional face-to-face practice for anyone handling equipment?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “What about a shorter online briefing on Thursday evening, followed by optional face-to-face practice for anyone handling equipment?”\nNghĩa: Hay họp trực tuyến ngắn tối thứ Năm, rồi buổi thực hành trực tiếp tùy chọn cho ai dùng thiết bị?\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: Our community campaign launches in three weeks, and I'm worried we've underestimated how long ____ of the posters will take.",
+      "correct_answers": [
+        "approval"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “approval” (sự phê duyệt). Lời gốc: “Our community campaign launches in three weeks, and I'm worried we've underestimated how long approval of the posters will take.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "approval",
+      "pos": "n.",
+      "meaning_vi": "sự phê duyệt",
+      "example_en": "Our community campaign launches in three weeks, and I'm worried we've underestimated how long approval of the posters will take.",
+      "example_vi": "Chiến dịch cộng đồng ra mắt trong ba tuần nữa, mình lo ta đánh giá thấp thời gian duyệt áp phích.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "backup version",
+      "pos": "n. phr.",
+      "meaning_vi": "phiên bản dự phòng",
+      "example_en": "I wouldn't rely on an exception. We should plan around the standard deadline and keep a backup version that needs less approval.",
+      "example_vi": "Mình không muốn dựa vào ngoại lệ. Ta nên theo hạn chuẩn và chuẩn bị bản dự phòng ít cần phê duyệt hơn.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "online briefing",
+      "pos": "n. phr.",
+      "meaning_vi": "buổi thông tin trực tuyến",
+      "example_en": "What about a shorter online briefing on Thursday evening, followed by optional face-to-face practice for anyone handling equipment?",
+      "example_vi": "Hay họp trực tuyến ngắn tối thứ Năm, rồi buổi thực hành trực tiếp tùy chọn cho ai dùng thiết bị?",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "critical path",
+      "pos": "n. phr.",
+      "meaning_vi": "đường găng tiến độ",
+      "example_en": "So the critical path is approval, not printing. Let's move the writing forward and keep the design work flexible.",
+      "example_vi": "Vậy khâu quyết định tiến độ là phê duyệt, không phải in. Hãy đẩy việc viết lên trước và linh hoạt thiết kế.",
+      "source_turn_id": "T12"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "cea0838360a7da530107b662723649093bdab395a984152a197763a8c52f6387",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

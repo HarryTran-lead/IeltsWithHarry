@@ -1,0 +1,497 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-001",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Booking a Room",
+  "learning_objectives_vi": [
+    "Đặt phòng cơ bản và ghi đúng số đêm, giá phòng, giờ nhận phòng."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Hotel receptionist",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Guest",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Meadow Hotel. How can I help you?",
+      "translation_vi": "Xin chào, khách sạn Meadow đây. Tôi có thể giúp gì cho anh?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hello. I'd like a room for two nights, from Friday the sixth.",
+      "translation_vi": "Xin chào. Tôi muốn đặt phòng hai đêm, bắt đầu từ thứ Sáu ngày 6.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We have a single room for sixty pounds a night.",
+      "translation_vi": "Chúng tôi còn phòng đơn giá 60 bảng một đêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Is breakfast included in that price?",
+      "translation_vi": "Giá đó có bao gồm bữa sáng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "No, breakfast is eight pounds extra, but Wi-Fi is free.",
+      "translation_vi": "Không, bữa sáng tính thêm 8 bảng, nhưng Wi-Fi thì miễn phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Could I have a quiet room away from the road?",
+      "translation_vi": "Tôi có thể lấy phòng yên tĩnh, xa đường lớn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes. Room twenty-four faces the garden.",
+      "translation_vi": "Được. Phòng 24 nhìn ra khu vườn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "That sounds good. Can I check in before three?",
+      "translation_vi": "Nghe được đấy. Tôi có thể nhận phòng trước 3 giờ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "You can leave your bag here at noon, but check-in starts at three.",
+      "translation_vi": "Anh có thể gửi túi ở đây lúc trưa, nhưng giờ nhận phòng bắt đầu từ 3 giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "All right. Please book the garden room under Daniel Price.",
+      "translation_vi": "Được rồi. Vui lòng đặt phòng hướng vườn dưới tên Daniel Price.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Certainly, Mr Price. We will email your confirmation today.",
+      "translation_vi": "Vâng, anh Price. Chúng tôi sẽ gửi email xác nhận hôm nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "The guest stays for ____ nights.",
+      "correct_answers": [
+        "two",
+        "2"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Anh ấy nói “for two nights”, tức là ở hai đêm.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "The room costs £____ per night.",
+      "correct_answers": [
+        "60",
+        "sixty"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Giá phòng là sixty pounds một đêm, chưa tính bữa sáng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Breakfast costs an extra £____.",
+      "correct_answers": [
+        "8",
+        "eight"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bữa sáng là eight pounds extra, còn Wi-Fi được miễn phí.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Room number: ____.",
+      "correct_answers": [
+        "24",
+        "twenty-four"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Phòng hướng vườn là room twenty-four.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What time does check-in begin?",
+      "correct_answers": [
+        "three",
+        "3:00",
+        "3 pm",
+        "3 p.m."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Gửi hành lý lúc trưa không đồng nghĩa được nhận phòng; check-in bắt đầu lúc ba giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T02 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Hello. I'd like a room for two nights, from Friday the sixth."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nhận diện from Friday the sixth và two nights. Nghĩa: Xin chào. Tôi muốn đặt phòng hai đêm, bắt đầu từ thứ Sáu ngày 6.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T05 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "No, breakfast is eight pounds extra, but Wi-Fi is free."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt “eight pounds extra” với giá phòng. Nghĩa: Không, bữa sáng tính thêm 8 bảng, nhưng Wi-Fi thì miễn phí.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T09 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "You can leave your bag here at noon, but check-in starts at three."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe rõ leave your bag và check-in starts. Nghĩa: Anh có thể gửi túi ở đây lúc trưa, nhưng giờ nhận phòng bắt đầu từ 3 giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T03 và điền từ/cụm từ bị thiếu: We have a single room for ____ a night.",
+      "correct_answers": [
+        "sixty pounds"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Giá mỗi đêm được đọc bằng chữ, không đọc từng chữ số.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T07 và điền từ/cụm từ bị thiếu: Yes. Room twenty-four ____.",
+      "correct_answers": [
+        "faces the garden"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Faces ở đây nghĩa là hướng ra.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "booking",
+        "days_dates",
+        "prices",
+        "hotel_check_in"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "included",
+      "pos": "adjective",
+      "meaning_vi": "được bao gồm",
+      "example_en": "Is breakfast included in that price?",
+      "example_vi": "Giá đó có bao gồm bữa sáng không?",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "extra",
+      "pos": "adjective",
+      "meaning_vi": "tính thêm",
+      "example_en": "No, breakfast is eight pounds extra, but Wi-Fi is free.",
+      "example_vi": "Không, bữa sáng tính thêm 8 bảng, nhưng Wi-Fi thì miễn phí.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "faces the garden",
+      "pos": "verb phrase",
+      "meaning_vi": "hướng ra khu vườn",
+      "example_en": "Yes. Room twenty-four faces the garden.",
+      "example_vi": "Được. Phòng 24 nhìn ra khu vườn.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "confirmation",
+      "pos": "noun",
+      "meaning_vi": "sự xác nhận",
+      "example_en": "Certainly, Mr Price. We will email your confirmation today.",
+      "example_vi": "Vâng, anh Price. Chúng tôi sẽ gửi email xác nhận hôm nay.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "d6a3d05d297e81780c4e9a43d53dcde6f79fad53aa284a13470efb35ad932fbe",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

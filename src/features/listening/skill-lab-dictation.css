@@ -1,0 +1,92 @@
+/* IELTS Skill Lab dictation bank: catalog cards and the lesson player. Builds on voa-dictation.css tokens. */
+.sld-lab .sld-muted{color:var(--voa-muted);font-size:13px}
+.sld-draft-note{display:flex;align-items:flex-start;gap:8px;margin:0 0 16px;padding:10px 13px;border:1px solid #f0dcb4;border-radius:12px;background:#fff8ea;color:#7a5a1d;font-size:13px}
+.sld-draft-note svg{flex:none;margin-top:2px}
+.sld-empty{padding:22px}
+.sld-empty h2{margin-bottom:6px;font-size:19px}
+.sld-filter-bar{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:10px;align-items:end;margin-bottom:12px;padding:12px;border:1px solid var(--voa-line);border-radius:16px;background:#fff}
+.sld-filter-bar>label{display:grid;gap:5px}
+.sld-lab .sld-search{position:relative;display:block}
+.sld-search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#7f98ad}
+.sld-lab .sld-search input{width:100%;padding-left:36px}
+.sld-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.sld-lab .sld-card{display:flex;flex-direction:column;align-items:stretch;gap:6px;min-height:168px;padding:16px;text-align:left;position:relative;overflow:hidden}
+.sld-lab button.sld-card:not(:disabled):hover{border-color:#64b9c1;box-shadow:0 12px 28px #173e5c17;transform:translateY(-2px)}
+.sld-card-top{display:flex;justify-content:space-between;align-items:center}
+.sld-code{color:#008a99;font-size:11px;font-weight:800;letter-spacing:.06em}
+.sld-pill{border-radius:7px;background:#eef4f8;color:#4c6a82;padding:3px 7px;font-size:11px;font-weight:750}
+.sld-card strong{font-size:16px;line-height:1.3}
+.sld-card-meta{color:var(--voa-muted);font-size:12.5px}
+.sld-card-foot{display:flex;justify-content:space-between;gap:8px;margin-top:auto;padding-top:8px;color:#557089;font-size:12px;font-weight:650}
+.sld-card.sld-done .sld-card-foot span:last-child{color:#0b8a5a}
+.sld-meter{position:absolute;left:0;right:0;bottom:0;height:4px;background:#edf3f7}
+.sld-meter span{display:block;height:100%;background:#16a3a0}
+.sld-lab .sld-mode{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--voa-line);border-radius:12px;background:#fff}
+.sld-lab .sld-mode button{display:inline-flex;align-items:center;gap:6px;border:0;padding:8px 12px;font-size:13px;font-weight:700;color:#557089;background:transparent}
+.sld-lab .sld-mode button.active{background:#e6f6f6;color:#007f89}
+.sld-goals{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0 0 12px;padding:0;list-style:none;color:#466079;font-size:13px}
+.sld-goals li{display:flex;align-items:center;gap:6px}
+.sld-goals svg{color:#16a3a0}
+.sld-player{position:sticky;top:8px;z-index:3;padding:12px 14px;margin-bottom:14px}
+.sld-player-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.sld-lab .sld-speed{display:inline-flex;align-items:center;gap:6px;margin-left:auto}
+.sld-lab .sld-speed select{padding:6px 8px}
+.sld-turns{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;max-height:120px;overflow:auto}
+.sld-lab .sld-turns button{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;font-size:12px;font-weight:700;border-radius:9px}
+.sld-turns small{color:var(--voa-muted);font-weight:600;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sld-lab .sld-turns button.flagged{border-style:dashed;border-color:#e3b25f}
+.sld-lab .sld-turns button.playing{border-color:#008d98;background:#e8f7f7;color:#006e78}
+.sld-map{margin:0 0 14px;padding:12px;text-align:center}
+.sld-map img{max-width:100%;height:auto;max-height:420px}
+.sld-map figcaption{color:var(--voa-muted);font-size:12px}
+.sld-error{color:#b3261e;font-size:13px}
+.sld-questions{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.sld-question{padding:14px 16px;border-left:4px solid transparent}
+.sld-question.correct{border-left-color:#1ba672}
+.sld-question.wrong{border-left-color:#e0794a}
+.sld-question-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+.sld-number{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#eaf5f6;color:#007f89;font-size:12px;font-weight:800}
+.sld-type{color:#557089;font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:.04em}
+.sld-limit{border-radius:7px;background:#fff3df;color:#8a5a10;padding:3px 8px;font-size:11px;font-weight:800}
+.sld-lab .sld-evidence{display:inline-flex;align-items:center;gap:5px;margin-left:auto;padding:5px 9px;font-size:12px;font-weight:700;color:#087e91}
+.sld-lab .sld-prompt{display:block;margin-bottom:8px;color:var(--voa-ink);font-size:15px;font-weight:650;line-height:1.5}
+.sld-lab .sld-question input:not([type=radio]),.sld-lab .sld-question textarea{width:100%;min-height:0}
+.sld-lab .sld-question textarea{min-height:64px}
+.sld-options{display:grid;gap:6px}
+.sld-lab .sld-options label{display:flex;align-items:center;gap:9px;padding:9px 11px;border:1px solid var(--voa-line);border-radius:10px;color:var(--voa-ink);font-size:14px;font-weight:550;cursor:pointer}
+.sld-lab .sld-options label.chosen{border-color:#5fb9c0;background:#f0fafa}
+.sld-question-actions{display:flex;justify-content:flex-end;margin-top:8px}
+.sld-lab .sld-question-actions button,.sld-lab .sld-retry{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700}
+.sld-feedback{margin-top:10px;padding:10px 12px;border-radius:11px;background:#f6f9fb;font-size:13.5px}
+.sld-feedback p{margin:0 0 6px}
+.sld-verdict{display:flex;align-items:center;gap:6px;font-weight:800}
+.sld-question.correct .sld-verdict{color:#0b8a5a}
+.sld-question.wrong .sld-verdict{color:#b5532a}
+.sld-diff{display:flex;flex-wrap:wrap;gap:4px}
+.sld-diff span{padding:1px 5px;border-radius:5px}
+.sld-diff .correct{background:#e3f6ec;color:#0b6b46}
+.sld-diff .missing{background:#fde8df;color:#9c3d16;text-decoration:underline dotted}
+.sld-diff .incorrect{background:#eef1f4;color:#7b8794;text-decoration:line-through}
+.sld-feedback blockquote{margin:6px 0 0;padding:7px 10px;border-left:3px solid #9fd3d7;background:#fff;border-radius:0 8px 8px 0}
+.sld-feedback blockquote span{color:#008a99;font-size:11px;font-weight:800;margin-right:4px}
+.sld-feedback blockquote small{display:block;color:var(--voa-muted);margin-top:2px}
+.sld-submit{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:16px 0;padding:14px 16px}
+.sld-submit>div:first-child{display:grid;gap:2px}
+.sld-submit strong{font-size:17px}
+.sld-submit-actions{display:flex;gap:8px}
+.sld-lab .sld-submit-actions button{display:inline-flex;align-items:center;gap:6px}
+.sld-review{padding:16px}
+.sld-review h2{font-size:18px;margin:4px 0 10px}
+.sld-transcript{display:grid;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.sld-transcript li{display:flex;gap:10px;align-items:flex-start}
+.sld-lab .sld-transcript button{display:grid;place-items:center;flex:none;width:30px;height:30px;padding:0;border-radius:50%}
+.sld-transcript p{margin:0}
+.sld-speaker{color:#008a99;font-size:11px;font-weight:800}
+.sld-vi{color:var(--voa-muted);font-size:13px}
+.sld-vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:0}
+.sld-vocab div{padding:9px 11px;border:1px solid var(--voa-line);border-radius:10px}
+.sld-vocab dt{font-weight:800}
+.sld-vocab dt small{color:var(--voa-muted);font-weight:600}
+.sld-vocab dd{margin:2px 0 0;font-size:13px}
+.sld-vocab dd span{display:block;color:var(--voa-muted);font-style:italic}
+@media(max-width:700px){.sld-filter-bar{grid-template-columns:1fr}.sld-lab .sld-speed{margin-left:0}.voa-lesson-header{flex-direction:column;align-items:flex-start}}

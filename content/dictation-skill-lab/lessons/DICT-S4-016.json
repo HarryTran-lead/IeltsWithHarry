@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-016",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Climate Change",
+  "title": "Ocean Heat, Feedbacks and Climate Consequences",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Let us consider why warming continues even after a country begins cutting emissions. Carbon dioxide accumulates in the atmosphere, and some of its effects unfold slowly. The oceans absorb much of the excess heat, so their temperature does not respond instantly to changes at the surface. This delay is one reason that immediate action and long-term planning must be considered together.",
+      "translation_vi": "Hãy xem vì sao sự ấm lên vẫn tiếp diễn ngay cả khi một quốc gia bắt đầu cắt giảm phát thải. Carbon dioxide tích tụ trong khí quyển và một số tác động diễn ra chậm. Đại dương hấp thụ nhiều phần nhiệt dư nên nhiệt độ nước không phản ứng ngay với thay đổi ở bề mặt. Độ trễ này là lý do phải kết hợp hành động tức thời với kế hoạch lâu dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Another important mechanism is a feedback. For instance, bright snow and ice reflect considerable sunlight. When ice retreats, darker land or water becomes exposed and absorbs more energy. That extra absorption can produce further warming. This is called the ice-albedo feedback, and it illustrates how an initial change can alter the conditions that influence the next change.",
+      "translation_vi": "Một cơ chế quan trọng khác là phản hồi. Chẳng hạn, tuyết và băng sáng màu phản xạ nhiều ánh nắng. Khi băng thu hẹp, mặt đất hoặc nước tối màu lộ ra và hấp thụ nhiều năng lượng hơn. Sự hấp thụ bổ sung có thể gây nóng thêm. Đó gọi là phản hồi băng–suất phản chiếu, minh họa cách thay đổi ban đầu làm biến đổi điều kiện chi phối thay đổi tiếp theo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Not all feedbacks have the same strength, and some processes can moderate warming. This is why scientific assessments give ranges rather than a single universal figure. An uncertainty range does not imply that researchers are unsure whether greenhouse gases trap heat. It indicates limits in quantities such as how quickly clouds or regional rainfall patterns respond.",
+      "translation_vi": "Không phải mọi phản hồi đều mạnh như nhau, và một số quá trình có thể kìm bớt sự nóng lên. Vì vậy, các đánh giá khoa học đưa ra khoảng giá trị thay vì một con số áp dụng cho mọi nơi. Khoảng bất định không có nghĩa nhà khoa học nghi ngờ việc khí nhà kính giữ nhiệt; nó thể hiện giới hạn khi định lượng, ví dụ tốc độ phản ứng của mây hoặc mưa theo vùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The consequences can interact. Higher temperatures increase the atmosphere’s capacity to hold moisture, potentially contributing to more intense rainfall under suitable conditions. At the same time, evaporation may increase, placing pressure on soils during dry periods. It would be misleading to conclude that every location will simply become wetter or that every drought has one cause.",
+      "translation_vi": "Các hậu quả có thể tương tác với nhau. Nhiệt độ cao làm tăng khả năng khí quyển giữ hơi nước, có thể góp phần tạo mưa lớn hơn khi điều kiện phù hợp. Đồng thời, bốc hơi có thể tăng, gây áp lực lên độ ẩm đất trong mùa khô. Sẽ sai lệch nếu kết luận nơi nào cũng mưa nhiều hơn, hoặc mọi đợt hạn hán chỉ có một nguyên nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A practical response combines reducing emissions with preparing infrastructure. A coastal town might improve flood warnings while replacing high-emission heating systems. However, a new sea wall could shift risk towards neighbouring communities if it is poorly designed. Assessing consequences across a whole system, rather than celebrating one visible project, is essential to effective adaptation.",
+      "translation_vi": "Cách ứng phó thực tế là vừa giảm phát thải vừa chuẩn bị hạ tầng. Một thị trấn ven biển có thể cải thiện cảnh báo lũ trong khi thay hệ thống sưởi phát thải cao. Nhưng tường chắn biển mới nếu thiết kế kém có thể chuyển rủi ro sang cộng đồng lân cận. Cần đánh giá hệ quả trên toàn hệ thống thay vì chỉ ca ngợi một công trình dễ nhìn thấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "The ____ absorb much of the excess heat.",
+      "correct_answers": [
+        "oceans"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Hãy xem vì sao sự ấm lên vẫn tiếp diễn ngay cả khi một quốc gia bắt đầu cắt giảm phát thải. Carbon dioxide tích tụ trong khí quyển và một số tác động diễn ra chậm. Đại dương hấp thụ nhiều phần nhiệt dư nên nhiệt độ nước không phản ứng ngay với thay đổi ở bề mặt. Độ trễ này là lý do phải kết hợp hành động tức thời với kế hoạch lâu dài. Đáp án cần chọn/điền: “oceans”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Loss of bright ice exposes darker surfaces that ____ more energy.",
+      "correct_answers": [
+        "absorbs"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Một cơ chế quan trọng khác là phản hồi. Chẳng hạn, tuyết và băng sáng màu phản xạ nhiều ánh nắng. Khi băng thu hẹp, mặt đất hoặc nước tối màu lộ ra và hấp thụ nhiều năng lượng hơn. Sự hấp thụ bổ sung có thể gây nóng thêm. Đó gọi là phản hồi băng–suất phản chiếu, minh họa cách thay đổi ban đầu làm biến đổi điều kiện chi phối thay đổi tiếp theo. Đáp án cần chọn/điền: “absorbs”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Scientific assessments give ____ rather than one universal figure.",
+      "correct_answers": [
+        "ranges"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Không phải mọi phản hồi đều mạnh như nhau, và một số quá trình có thể kìm bớt sự nóng lên. Vì vậy, các đánh giá khoa học đưa ra khoảng giá trị thay vì một con số áp dụng cho mọi nơi. Khoảng bất định không có nghĩa nhà khoa học nghi ngờ việc khí nhà kính giữ nhiệt; nó thể hiện giới hạn khi định lượng, ví dụ tốc độ phản ứng của mây hoặc mưa theo vùng. Đáp án cần chọn/điền: “ranges”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What can warmer air contribute to when suitable conditions occur?",
+      "correct_answers": [
+        "more intense rainfall"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Các hậu quả có thể tương tác với nhau. Nhiệt độ cao làm tăng khả năng khí quyển giữ hơi nước, có thể góp phần tạo mưa lớn hơn khi điều kiện phù hợp. Đồng thời, bốc hơi có thể tăng, gây áp lực lên độ ẩm đất trong mùa khô. Sẽ sai lệch nếu kết luận nơi nào cũng mưa nhiều hơn, hoặc mọi đợt hạn hán chỉ có một nguyên nhân. Đáp án cần chọn/điền: “more intense rainfall”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "mcq"
+      ],
+      "options": [
+        "more intense rainfall",
+        "identical rainfall in every region",
+        "an end to evaporation"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Which existing systems might a coastal town improve to prepare for floods?",
+      "correct_answers": [
+        "flood warnings"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Cách ứng phó thực tế là vừa giảm phát thải vừa chuẩn bị hạ tầng. Một thị trấn ven biển có thể cải thiện cảnh báo lũ trong khi thay hệ thống sưởi phát thải cao. Nhưng tường chắn biển mới nếu thiết kế kém có thể chuyển rủi ro sang cộng đồng lân cận. Cần đánh giá hệ quả trên toàn hệ thống thay vì chỉ ca ngợi một công trình dễ nhìn thấy. Đáp án cần chọn/điền: “flood warnings”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the lecture mainly concerned with?",
+      "correct_answers": [
+        "Interactions and delays make climate responses complex"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Cách ứng phó thực tế là vừa giảm phát thải vừa chuẩn bị hạ tầng. Một thị trấn ven biển có thể cải thiện cảnh báo lũ trong khi thay hệ thống sưởi phát thải cao. Nhưng tường chắn biển mới nếu thiết kế kém có thể chuyển rủi ro sang cộng đồng lân cận. Cần đánh giá hệ quả trên toàn hệ thống thay vì chỉ ca ngợi một công trình dễ nhìn thấy. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ],
+      "options": [
+        "Local projects can eliminate global warming",
+        "Climate effects are immediate and uniform",
+        "Interactions and delays make climate responses complex"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Another important mechanism is a feedback. For instance, bright snow and ice reflect considerable sunlight. When ice retreats, darker land or water becomes exposed and absorbs more energy. That extra absorption can produce further warming. This is called the ice-albedo feedback, and it illustrates how an initial change can alter the conditions that influence the next change."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Một cơ chế quan trọng khác là phản hồi. Chẳng hạn, tuyết và băng sáng màu phản xạ nhiều ánh nắng. Khi băng thu hẹp, mặt đất hoặc nước tối màu lộ ra và hấp thụ nhiều năng lượng hơn. Sự hấp thụ bổ sung có thể gây nóng thêm. Đó gọi là phản hồi băng–suất phản chiếu, minh họa cách thay đổi ban đầu làm biến đổi điều kiện chi phối thay đổi tiếp theo.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "The consequences can interact. Higher temperatures increase the atmosphere’s capacity to hold moisture, potentially contributing to more intense rainfall under suitable conditions. At the same time, evaporation may increase, placing pressure on soils during dry periods. It would be misleading to conclude that every location will simply become wetter or that every drought has one cause."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Các hậu quả có thể tương tác với nhau. Nhiệt độ cao làm tăng khả năng khí quyển giữ hơi nước, có thể góp phần tạo mưa lớn hơn khi điều kiện phù hợp. Đồng thời, bốc hơi có thể tăng, gây áp lực lên độ ẩm đất trong mùa khô. Sẽ sai lệch nếu kết luận nơi nào cũng mưa nhiều hơn, hoặc mọi đợt hạn hán chỉ có một nguyên nhân.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: Let us consider why warming continues even after a country begins cutting emissions. Carbon dioxide accumulates in the atmosphere, and some of its effects unfold slowly. The oceans absorb much of the ____, so their temperature does not respond instantly to changes at the surface. This delay is one reason that immediate action and long-term planning must be considered together.",
+      "correct_answers": [
+        "excess heat"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “excess heat”, nghĩa: nhiệt dư. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "excess heat",
+      "pos": "n. phr.",
+      "meaning_vi": "nhiệt dư",
+      "example_en": "Let us consider why warming continues even after a country begins cutting emissions. Carbon dioxide accumulates in the atmosphere, and some of its effects unfold slowly. The oceans absorb much of the excess heat, so their temperature does not respond instantly to changes at the surface. This delay is one reason that immediate action and long-term planning must be considered together.",
+      "example_vi": "Hãy xem vì sao sự ấm lên vẫn tiếp diễn ngay cả khi một quốc gia bắt đầu cắt giảm phát thải. Carbon dioxide tích tụ trong khí quyển và một số tác động diễn ra chậm. Đại dương hấp thụ nhiều phần nhiệt dư nên nhiệt độ nước không phản ứng ngay với thay đổi ở bề mặt. Độ trễ này là lý do phải kết hợp hành động tức thời với kế hoạch lâu dài.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "feedback",
+      "pos": "n.",
+      "meaning_vi": "phản hồi",
+      "example_en": "Another important mechanism is a feedback. For instance, bright snow and ice reflect considerable sunlight. When ice retreats, darker land or water becomes exposed and absorbs more energy. That extra absorption can produce further warming. This is called the ice-albedo feedback, and it illustrates how an initial change can alter the conditions that influence the next change.",
+      "example_vi": "Một cơ chế quan trọng khác là phản hồi. Chẳng hạn, tuyết và băng sáng màu phản xạ nhiều ánh nắng. Khi băng thu hẹp, mặt đất hoặc nước tối màu lộ ra và hấp thụ nhiều năng lượng hơn. Sự hấp thụ bổ sung có thể gây nóng thêm. Đó gọi là phản hồi băng–suất phản chiếu, minh họa cách thay đổi ban đầu làm biến đổi điều kiện chi phối thay đổi tiếp theo.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "evaporation",
+      "pos": "n.",
+      "meaning_vi": "sự bốc hơi",
+      "example_en": "The consequences can interact. Higher temperatures increase the atmosphere’s capacity to hold moisture, potentially contributing to more intense rainfall under suitable conditions. At the same time, evaporation may increase, placing pressure on soils during dry periods. It would be misleading to conclude that every location will simply become wetter or that every drought has one cause.",
+      "example_vi": "Các hậu quả có thể tương tác với nhau. Nhiệt độ cao làm tăng khả năng khí quyển giữ hơi nước, có thể góp phần tạo mưa lớn hơn khi điều kiện phù hợp. Đồng thời, bốc hơi có thể tăng, gây áp lực lên độ ẩm đất trong mùa khô. Sẽ sai lệch nếu kết luận nơi nào cũng mưa nhiều hơn, hoặc mọi đợt hạn hán chỉ có một nguyên nhân.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "flood warnings",
+      "pos": "n. phr.",
+      "meaning_vi": "cảnh báo lũ",
+      "example_en": "A practical response combines reducing emissions with preparing infrastructure. A coastal town might improve flood warnings while replacing high-emission heating systems. However, a new sea wall could shift risk towards neighbouring communities if it is poorly designed. Assessing consequences across a whole system, rather than celebrating one visible project, is essential to effective adaptation.",
+      "example_vi": "Cách ứng phó thực tế là vừa giảm phát thải vừa chuẩn bị hạ tầng. Một thị trấn ven biển có thể cải thiện cảnh báo lũ trong khi thay hệ thống sưởi phát thải cao. Nhưng tường chắn biển mới nếu thiết kế kém có thể chuyển rủi ro sang cộng đồng lân cận. Cần đánh giá hệ quả trên toàn hệ thống thay vì chỉ ca ngợi một công trình dễ nhìn thấy.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "3f4b3260fce27c68379d85f9f609b78109954fb7fa96bc645be3153020c700d1",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

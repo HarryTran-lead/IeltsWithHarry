@@ -1,0 +1,502 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-050",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Job Applications",
+  "title": "Festival Staff Recruitment Call",
+  "learning_objectives_vi": [
+    "Rèn natural speed & paraphrase qua tình huống: An applicant confirms working hours and the selection process for an event.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, City Arts Festival staffing office. How can I help?",
+      "translation_vi": "Chào buổi sáng, văn phòng nhân sự lễ hội City Arts. Tôi có thể giúp gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm interested in the visitor assistant role advertised online. It says full-time for three weeks.",
+      "translation_vi": "Tôi quan tâm vị trí hỗ trợ khách đăng trên mạng. Tin ghi toàn thời gian trong ba tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The festival itself lasts three weeks, but the paid role is for two weeks, including the setup days.",
+      "translation_vi": "Lễ hội kéo dài ba tuần, nhưng công việc có lương trong hai tuần, gồm ngày chuẩn bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I see. Would I work in the evenings? I have a morning class on Wednesdays.",
+      "translation_vi": "Vậy à. Tôi có làm buổi tối không? Sáng thứ Tư tôi có lớp học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Most shifts run from two until nine, except on Saturdays when the team starts at eleven in the morning.",
+      "translation_vi": "Đa số ca từ hai giờ chiều đến chín giờ tối, trừ thứ Bảy đội bắt đầu lúc 11 giờ sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That should be fine. Where would the training take place?",
+      "translation_vi": "Lịch đó phù hợp. Đào tạo ở đâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "In the community hall beside the railway station, not at the festival site.",
+      "translation_vi": "Ở nhà sinh hoạt cộng đồng cạnh ga tàu, không phải địa điểm lễ hội.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "What documents should I bring to the interview?",
+      "translation_vi": "Tôi cần mang tài liệu gì đến phỏng vấn?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please bring photo ID and a brief reference from a previous employer if you have one.",
+      "translation_vi": "Vui lòng mang giấy tờ có ảnh và thư giới thiệu ngắn từ chủ cũ nếu có.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I can get a reference. Is there a short written test?",
+      "translation_vi": "Tôi có thể xin thư giới thiệu. Có bài kiểm tra viết ngắn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "No written test. We'll ask you to respond to a few visitor situations during the interview.",
+      "translation_vi": "Không có bài viết. Chúng tôi sẽ yêu cầu xử lý vài tình huống với khách trong lúc phỏng vấn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "And when will I hear whether I've been accepted?",
+      "translation_vi": "Khi nào tôi biết có được nhận không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "By next Tuesday. Please check your email, including the spam folder.",
+      "translation_vi": "Chậm nhất thứ Ba tuần tới. Vui lòng kiểm tra email, kể cả thư rác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Paid work lasts ____ weeks",
+      "correct_answers": [
+        "2",
+        "two"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Lễ hội ba tuần nhưng hợp đồng làm có lương hai tuần.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Most shifts finish at ____ p.m.",
+      "correct_answers": [
+        "9",
+        "nine"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đa số ca kết thúc lúc 9 giờ tối.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Saturday starting time: ____ a.m.",
+      "correct_answers": [
+        "11",
+        "eleven"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Thứ Bảy bắt đầu lúc 11 giờ sáng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Where will staff training take place?",
+      "correct_answers": [
+        "In the community hall"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Đào tạo tại community hall, không tại festival site.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "At the festival site",
+        "In the community hall",
+        "At the railway platform"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Optional document: employer ____",
+      "correct_answers": [
+        "reference"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nếu có, ứng viên mang thư giới thiệu từ chủ cũ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Decision communicated by next ____",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "explanation_vi": "Kết quả được thông báo chậm nhất thứ Ba tuần sau.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật B (lượt T08).",
+      "correct_answers": [
+        "What documents should I bring to the interview?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nội dung cần chép: What documents should I bring to the interview? Nghĩa: Tôi cần mang tài liệu gì đến phỏng vấn? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: I'm interested in the ____ role advertised online. It says full-time for three weeks.",
+      "correct_answers": [
+        "visitor assistant"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “visitor assistant”. Câu đầy đủ: I'm interested in the visitor assistant role advertised online. It says full-time for three weeks.. Nghĩa: Tôi quan tâm vị trí hỗ trợ khách đăng trên mạng. Tin ghi toàn thời gian trong ba tuần.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "shift_schedule",
+        "recruitment_process",
+        "documents",
+        "result_timing"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "visitor assistant",
+      "pos": "noun phrase",
+      "meaning_vi": "nhân viên hỗ trợ khách",
+      "example_en": "I'm interested in the visitor assistant role advertised online. It says full-time for three weeks.",
+      "example_vi": "Tôi quan tâm vị trí hỗ trợ khách đăng trên mạng. Tin ghi toàn thời gian trong ba tuần.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "setup days",
+      "pos": "noun phrase",
+      "meaning_vi": "ngày chuẩn bị",
+      "example_en": "The festival itself lasts three weeks, but the paid role is for two weeks, including the setup days.",
+      "example_vi": "Lễ hội kéo dài ba tuần, nhưng công việc có lương trong hai tuần, gồm ngày chuẩn bị.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "reference",
+      "pos": "noun",
+      "meaning_vi": "thư giới thiệu",
+      "example_en": "Please bring photo ID and a brief reference from a previous employer if you have one.",
+      "example_vi": "Vui lòng mang giấy tờ có ảnh và thư giới thiệu ngắn từ chủ cũ nếu có.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "spam folder",
+      "pos": "noun phrase",
+      "meaning_vi": "thư mục thư rác",
+      "example_en": "By next Tuesday. Please check your email, including the spam folder.",
+      "example_vi": "Chậm nhất thứ Ba tuần tới. Vui lòng kiểm tra email, kể cả thư rác.",
+      "source_turn_id": "T13"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "2e8c78b69fa03934a6218d13c32e1f628ab31f11caa5c76e29145803270817b3",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

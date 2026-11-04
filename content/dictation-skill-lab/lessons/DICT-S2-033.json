@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-033",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Public Parks",
+  "title": "Wet Meadow Conservation Walk",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Public Parks ở mức L4, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, everyone, and thank you for joining our new conservation walk through the wet meadow. This area is now protected, so today's route differs from the picnic trail printed on older maps.",
+      "translation_vi": "Chào buổi sáng và cảm ơn mọi người đã tham gia tuyến đi bộ bảo tồn mới qua đồng cỏ ẩm. Khu vực hiện được bảo vệ, nên lộ trình hôm nay khác đường dã ngoại trên bản đồ cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The walk begins at the eastern gate, beside the bicycle racks. We'll first follow the wooden boardwalk across the reeds rather than taking the shorter gravel path through the nesting area.",
+      "translation_vi": "Chuyến đi bắt đầu ở cổng phía đông, cạnh giá để xe đạp. Đầu tiên ta đi theo lối gỗ qua lau sậy thay vì đường sỏi ngắn hơn xuyên khu vực làm tổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Keep voices low near the first observation platform. Several ground-nesting birds return here in early spring, and sudden movement can cause them to leave their nests.",
+      "translation_vi": "Hãy nói nhỏ gần bục quan sát đầu tiên. Vài loài chim làm tổ trên mặt đất trở lại đây đầu mùa xuân, và chuyển động bất ngờ có thể khiến chúng rời tổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "After the platform, the boardwalk bends towards the pond. You may notice a closed gate on the left; it leads to a research plot that only the park's scientific staff can enter.",
+      "translation_vi": "Sau bục quan sát, lối gỗ vòng về phía ao. Bạn có thể thấy cổng đóng bên trái; cổng dẫn đến khu nghiên cứu chỉ dành cho nhân viên khoa học của công viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our ranger will demonstrate a water-quality test beside the small bridge. It takes about fifteen minutes, and volunteers will record temperature readings but won't collect samples themselves.",
+      "translation_vi": "Kiểm lâm viên sẽ trình diễn phép thử chất lượng nước cạnh cây cầu nhỏ. Mất khoảng mười lăm phút; tình nguyện viên ghi nhiệt độ nhưng không tự lấy mẫu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The final stop is the hide overlooking the grassland. Binoculars can be borrowed free of charge, provided you return them to the information cabin before half past one.",
+      "translation_vi": "Điểm cuối là chòi quan sát nhìn ra đồng cỏ. Có thể mượn ống nhòm miễn phí nếu trả lại tại cabin thông tin trước một giờ rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please wear shoes with good grip, because the boards may be slippery even when the weather is dry. Dogs must remain outside the protected meadow throughout the visit.",
+      "translation_vi": "Hãy mang giày bám tốt vì ván gỗ có thể trơn ngay cả khi trời khô. Chó phải ở ngoài đồng cỏ được bảo vệ trong suốt chuyến tham quan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — The walk starts at the: ____",
+      "correct_answers": [
+        "eastern gate"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chuyến đi bắt đầu ở cổng phía đông, cạnh giá để xe đạp. Đầu tiên ta đi theo lối gỗ qua lau sậy thay vì đường sỏi ngắn hơn xuyên khu vực làm tổ. Đáp án được nhắc trong đoạn T02: “eastern gate”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Visitors must use the wooden: ____",
+      "correct_answers": [
+        "boardwalk"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chuyến đi bắt đầu ở cổng phía đông, cạnh giá để xe đạp. Đầu tiên ta đi theo lối gỗ qua lau sậy thay vì đường sỏi ngắn hơn xuyên khu vực làm tổ. Đáp án được nhắc trong đoạn T02: “boardwalk”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Keep voices low at the: ____",
+      "correct_answers": [
+        "observation platform"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Hãy nói nhỏ gần bục quan sát đầu tiên. Vài loài chim làm tổ trên mặt đất trở lại đây đầu mùa xuân, và chuyển động bất ngờ có thể khiến chúng rời tổ. Đáp án được nhắc trong đoạn T03: “observation platform”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Research plot is restricted to: ____",
+      "correct_answers": [
+        "scientific staff"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Sau bục quan sát, lối gỗ vòng về phía ao. Bạn có thể thấy cổng đóng bên trái; cổng dẫn đến khu nghiên cứu chỉ dành cho nhân viên khoa học của công viên. Đáp án được nhắc trong đoạn T04: “scientific staff”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Demonstration takes about?",
+      "correct_answers": [
+        "fifteen minutes"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kiểm lâm viên sẽ trình diễn phép thử chất lượng nước cạnh cây cầu nhỏ. Mất khoảng mười lăm phút; tình nguyện viên ghi nhiệt độ nhưng không tự lấy mẫu. Đáp án được nhắc trong đoạn T05: “fifteen minutes”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Return binoculars before: ____",
+      "correct_answers": [
+        "half past one"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Điểm cuối là chòi quan sát nhìn ra đồng cỏ. Có thể mượn ống nhòm miễn phí nếu trả lại tại cabin thông tin trước một giờ rưỡi. Đáp án được nhắc trong đoạn T06: “half past one”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "M01",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the eastern gate?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chuyến đi bắt đầu ở cổng phía đông, cạnh giá để xe đạp. Đầu tiên ta đi theo lối gỗ qua lau sậy thay vì đường sỏi ngắn hơn xuyên khu vực làm tổ. Trên sơ đồ tuyến giả lập, eastern gate ứng với điểm A.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-033.svg"
+    },
+    {
+      "question_id": "M02",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the observation platform?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Hãy nói nhỏ gần bục quan sát đầu tiên. Vài loài chim làm tổ trên mặt đất trở lại đây đầu mùa xuân, và chuyển động bất ngờ có thể khiến chúng rời tổ. Trên sơ đồ tuyến giả lập, observation platform ứng với điểm B.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-033.svg"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "Keep voices low near the first observation platform. Several ground-nesting birds return here in early spring, and sudden movement can cause them to leave their nests."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Keep voices low near the first observation platform. Several ground-nesting birds return here in early spring, and sudden movement can cause them to leave their nests. Nghĩa: Hãy nói nhỏ gần bục quan sát đầu tiên. Vài loài chim làm tổ trên mặt đất trở lại đây đầu mùa xuân, và chuyển động bất ngờ có thể khiến chúng rời tổ. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "Our ranger will demonstrate a water-quality test beside the small bridge. It takes about fifteen minutes, and volunteers will record temperature readings but won't collect samples themselves."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Our ranger will demonstrate a water-quality test beside the small bridge. It takes about fifteen minutes, and volunteers will record temperature readings but won't collect samples themselves. Nghĩa: Kiểm lâm viên sẽ trình diễn phép thử chất lượng nước cạnh cây cầu nhỏ. Mất khoảng mười lăm phút; tình nguyện viên ghi nhiệt độ nhưng không tự lấy mẫu. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: The walk begins at the eastern gate, beside the bicycle racks. We'll first follow the wooden ____ across the reeds rather than taking the shorter gravel path through the nesting area.",
+      "correct_answers": [
+        "boardwalk"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “boardwalk” xuất hiện trong câu gốc: The walk begins at the eastern gate, beside the bicycle racks. We'll first follow the wooden boardwalk across the reeds rather than taking the shorter gravel path through the nesting area. Nghĩa: Chuyến đi bắt đầu ở cổng phía đông, cạnh giá để xe đạp. Đầu tiên ta đi theo lối gỗ qua lau sậy thay vì đường sỏi ngắn hơn xuyên khu vực làm tổ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "boardwalk",
+      "pos": "n.",
+      "meaning_vi": "lối đi lát ván gỗ",
+      "example_en": "The walk begins at the eastern gate, beside the bicycle racks. We'll first follow the wooden boardwalk across the reeds rather than taking the shorter gravel path through the nesting area.",
+      "example_vi": "Chuyến đi bắt đầu ở cổng phía đông, cạnh giá để xe đạp. Đầu tiên ta đi theo lối gỗ qua lau sậy thay vì đường sỏi ngắn hơn xuyên khu vực làm tổ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "nesting",
+      "pos": "adj.",
+      "meaning_vi": "đang làm tổ",
+      "example_en": "The walk begins at the eastern gate, beside the bicycle racks. We'll first follow the wooden boardwalk across the reeds rather than taking the shorter gravel path through the nesting area.",
+      "example_vi": "Chuyến đi bắt đầu ở cổng phía đông, cạnh giá để xe đạp. Đầu tiên ta đi theo lối gỗ qua lau sậy thay vì đường sỏi ngắn hơn xuyên khu vực làm tổ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "observation platform",
+      "pos": "n. phr.",
+      "meaning_vi": "bục quan sát",
+      "example_en": "Keep voices low near the first observation platform. Several ground-nesting birds return here in early spring, and sudden movement can cause them to leave their nests.",
+      "example_vi": "Hãy nói nhỏ gần bục quan sát đầu tiên. Vài loài chim làm tổ trên mặt đất trở lại đây đầu mùa xuân, và chuyển động bất ngờ có thể khiến chúng rời tổ.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "binoculars",
+      "pos": "n.",
+      "meaning_vi": "ống nhòm",
+      "example_en": "The final stop is the hide overlooking the grassland. Binoculars can be borrowed free of charge, provided you return them to the information cabin before half past one.",
+      "example_vi": "Điểm cuối là chòi quan sát nhìn ra đồng cỏ. Có thể mượn ống nhòm miễn phí nếu trả lại tại cabin thông tin trước một giờ rưỡi.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "a8636a1112cfc8a3f7a863100263e6adf7744c26c032dc5a335633f6ec5bb0a0",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

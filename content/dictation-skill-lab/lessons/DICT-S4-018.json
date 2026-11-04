@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-018",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Biodiversity",
+  "title": "The Ecological Consequences of Habitat Fragmentation",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Imagine a large woodland divided by a new road into several smaller patches. Although the total number of trees may change very little at first, animals cannot necessarily move between the patches as easily as before. This process is called habitat fragmentation. Its effects depend on which species need large territories, which can cross roads, and which avoid open spaces.",
+      "translation_vi": "Hãy tưởng tượng khu rừng lớn bị con đường mới chia thành các mảng nhỏ. Dù tổng số cây ban đầu có thể ít thay đổi, động vật không còn di chuyển giữa các mảng dễ như trước. Quá trình đó gọi là phân mảnh sinh cảnh. Tác động phụ thuộc loài nào cần lãnh thổ rộng, loài nào qua đường được và loài nào tránh nơi trống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Fragmentation also creates more edges between woodland and surrounding land. Conditions near an edge may be warmer, drier or more exposed to wind than deep inside a forest. Some birds benefit from edges, while shade-loving plants may decline. As a result, counting the remaining hectares of forest does not fully describe the quality of habitat that survives.",
+      "translation_vi": "Phân mảnh cũng tạo thêm rìa tiếp giáp giữa rừng và vùng đất xung quanh. Gần rìa có thể nóng hơn, khô hơn hoặc chịu gió hơn bên trong. Một số loài chim có lợi từ rìa, còn cây ưa bóng có thể giảm. Vì thế, chỉ đếm số hecta rừng còn lại không mô tả đủ chất lượng sinh cảnh sống sót.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Over time, isolated populations may exchange fewer individuals. This can reduce opportunities for gene flow, particularly if only a few animals breed within each patch. Low genetic variation may make adaptation harder under some conditions. However, genetic effects can develop slowly, so a brief survey immediately after construction may fail to detect the longer-term problem.",
+      "translation_vi": "Theo thời gian, các quần thể tách biệt có thể ít trao đổi cá thể. Điều này giảm cơ hội dòng gen, nhất là khi chỉ ít con sinh sản trong từng mảng. Biến dị di truyền thấp có thể khiến thích nghi khó hơn trong một số điều kiện. Nhưng tác động di truyền có thể diễn ra chậm, nên khảo sát ngắn ngay sau khi xây đường dễ bỏ sót vấn đề dài hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Wildlife corridors are sometimes proposed as a solution. These strips or bridges of suitable habitat can reconnect patches for particular species. Yet a corridor designed for a small mammal may be useless to an animal that requires dense tree cover. Corridors can also allow disease or invasive species to spread, so planning must consider ecological trade-offs.",
+      "translation_vi": "Hành lang sinh thái đôi khi được đề xuất làm giải pháp. Dải đất hoặc cầu có sinh cảnh phù hợp giúp nối các mảng với những loài nhất định. Nhưng hành lang thiết kế cho thú nhỏ có thể vô dụng với loài cần tán cây dày. Hành lang cũng có thể giúp dịch bệnh hoặc loài xâm lấn lan rộng, nên phải xét sự đánh đổi sinh thái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A sound monitoring programme measures movement and survival, not simply the number of corridors constructed. Cameras, tracking devices and repeated vegetation surveys can reveal whether animals actually use a connection. If the results are disappointing, managers may adjust the route or restore additional cover. The key lesson is that connectivity is a biological outcome, not merely a line on a map.",
+      "translation_vi": "Chương trình theo dõi tốt đo khả năng di chuyển và sống sót, chứ không chỉ đếm số hành lang đã xây. Camera, thiết bị theo dõi và khảo sát cây lặp lại cho biết động vật có thực sự dùng đường nối không. Nếu kết quả kém, người quản lý có thể chỉnh tuyến hoặc phục hồi thêm tán che. Bài học là kết nối sinh thái là kết quả sinh học, không chỉ là nét vẽ trên bản đồ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Breaking woodland into smaller patches is called habitat ____.",
+      "correct_answers": [
+        "fragmentation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Hãy tưởng tượng khu rừng lớn bị con đường mới chia thành các mảng nhỏ. Dù tổng số cây ban đầu có thể ít thay đổi, động vật không còn di chuyển giữa các mảng dễ như trước. Quá trình đó gọi là phân mảnh sinh cảnh. Tác động phụ thuộc loài nào cần lãnh thổ rộng, loài nào qua đường được và loài nào tránh nơi trống. Đáp án cần chọn/điền: “fragmentation”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "New boundaries can create warmer and drier forest ____.",
+      "correct_answers": [
+        "edges"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Phân mảnh cũng tạo thêm rìa tiếp giáp giữa rừng và vùng đất xung quanh. Gần rìa có thể nóng hơn, khô hơn hoặc chịu gió hơn bên trong. Một số loài chim có lợi từ rìa, còn cây ưa bóng có thể giảm. Vì thế, chỉ đếm số hecta rừng còn lại không mô tả đủ chất lượng sinh cảnh sống sót. Đáp án cần chọn/điền: “edges”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Isolation may reduce opportunities for gene ____.",
+      "correct_answers": [
+        "flow"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Theo thời gian, các quần thể tách biệt có thể ít trao đổi cá thể. Điều này giảm cơ hội dòng gen, nhất là khi chỉ ít con sinh sản trong từng mảng. Biến dị di truyền thấp có thể khiến thích nghi khó hơn trong một số điều kiện. Nhưng tác động di truyền có thể diễn ra chậm, nên khảo sát ngắn ngay sau khi xây đường dễ bỏ sót vấn đề dài hạn. Đáp án cần chọn/điền: “flow”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why might a wildlife corridor have unintended effects?",
+      "correct_answers": [
+        "It may allow disease or invasive species to spread"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Hành lang sinh thái đôi khi được đề xuất làm giải pháp. Dải đất hoặc cầu có sinh cảnh phù hợp giúp nối các mảng với những loài nhất định. Nhưng hành lang thiết kế cho thú nhỏ có thể vô dụng với loài cần tán cây dày. Hành lang cũng có thể giúp dịch bệnh hoặc loài xâm lấn lan rộng, nên phải xét sự đánh đổi sinh thái. Đáp án cần chọn/điền: “It may allow disease or invasive species to spread”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "mcq"
+      ],
+      "options": [
+        "It always restores full forest cover",
+        "It removes the need for monitoring",
+        "It may allow disease or invasive species to spread"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What do tracking devices help measure after a corridor is built?",
+      "correct_answers": [
+        "movement"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Chương trình theo dõi tốt đo khả năng di chuyển và sống sót, chứ không chỉ đếm số hành lang đã xây. Camera, thiết bị theo dõi và khảo sát cây lặp lại cho biết động vật có thực sự dùng đường nối không. Nếu kết quả kém, người quản lý có thể chỉnh tuyến hoặc phục hồi thêm tán che. Bài học là kết nối sinh thái là kết quả sinh học, không chỉ là nét vẽ trên bản đồ. Đáp án cần chọn/điền: “movement”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What does the lecture say about connectivity?",
+      "correct_answers": [
+        "It must be evaluated as an ecological outcome"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Chương trình theo dõi tốt đo khả năng di chuyển và sống sót, chứ không chỉ đếm số hành lang đã xây. Camera, thiết bị theo dõi và khảo sát cây lặp lại cho biết động vật có thực sự dùng đường nối không. Nếu kết quả kém, người quản lý có thể chỉnh tuyến hoặc phục hồi thêm tán che. Bài học là kết nối sinh thái là kết quả sinh học, không chỉ là nét vẽ trên bản đồ. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ],
+      "options": [
+        "It has the same benefits for every species",
+        "It is proved by drawing a line on a map",
+        "It must be evaluated as an ecological outcome"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Fragmentation also creates more edges between woodland and surrounding land. Conditions near an edge may be warmer, drier or more exposed to wind than deep inside a forest. Some birds benefit from edges, while shade-loving plants may decline. As a result, counting the remaining hectares of forest does not fully describe the quality of habitat that survives."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Phân mảnh cũng tạo thêm rìa tiếp giáp giữa rừng và vùng đất xung quanh. Gần rìa có thể nóng hơn, khô hơn hoặc chịu gió hơn bên trong. Một số loài chim có lợi từ rìa, còn cây ưa bóng có thể giảm. Vì thế, chỉ đếm số hecta rừng còn lại không mô tả đủ chất lượng sinh cảnh sống sót.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Wildlife corridors are sometimes proposed as a solution. These strips or bridges of suitable habitat can reconnect patches for particular species. Yet a corridor designed for a small mammal may be useless to an animal that requires dense tree cover. Corridors can also allow disease or invasive species to spread, so planning must consider ecological trade-offs."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Hành lang sinh thái đôi khi được đề xuất làm giải pháp. Dải đất hoặc cầu có sinh cảnh phù hợp giúp nối các mảng với những loài nhất định. Nhưng hành lang thiết kế cho thú nhỏ có thể vô dụng với loài cần tán cây dày. Hành lang cũng có thể giúp dịch bệnh hoặc loài xâm lấn lan rộng, nên phải xét sự đánh đổi sinh thái.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: Imagine a large woodland divided by a new road into several smaller patches. Although the total number of trees may change very little at first, animals cannot necessarily move between the patches as easily as before. This process is called ____. Its effects depend on which species need large territories, which can cross roads, and which avoid open spaces.",
+      "correct_answers": [
+        "habitat fragmentation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “habitat fragmentation”, nghĩa: phân mảnh sinh cảnh. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "habitat fragmentation",
+      "pos": "n. phr.",
+      "meaning_vi": "phân mảnh sinh cảnh",
+      "example_en": "Imagine a large woodland divided by a new road into several smaller patches. Although the total number of trees may change very little at first, animals cannot necessarily move between the patches as easily as before. This process is called habitat fragmentation. Its effects depend on which species need large territories, which can cross roads, and which avoid open spaces.",
+      "example_vi": "Hãy tưởng tượng khu rừng lớn bị con đường mới chia thành các mảng nhỏ. Dù tổng số cây ban đầu có thể ít thay đổi, động vật không còn di chuyển giữa các mảng dễ như trước. Quá trình đó gọi là phân mảnh sinh cảnh. Tác động phụ thuộc loài nào cần lãnh thổ rộng, loài nào qua đường được và loài nào tránh nơi trống.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "gene flow",
+      "pos": "n. phr.",
+      "meaning_vi": "dòng gen",
+      "example_en": "Over time, isolated populations may exchange fewer individuals. This can reduce opportunities for gene flow, particularly if only a few animals breed within each patch. Low genetic variation may make adaptation harder under some conditions. However, genetic effects can develop slowly, so a brief survey immediately after construction may fail to detect the longer-term problem.",
+      "example_vi": "Theo thời gian, các quần thể tách biệt có thể ít trao đổi cá thể. Điều này giảm cơ hội dòng gen, nhất là khi chỉ ít con sinh sản trong từng mảng. Biến dị di truyền thấp có thể khiến thích nghi khó hơn trong một số điều kiện. Nhưng tác động di truyền có thể diễn ra chậm, nên khảo sát ngắn ngay sau khi xây đường dễ bỏ sót vấn đề dài hạn.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "wildlife corridors",
+      "pos": "n. phr.",
+      "meaning_vi": "hành lang sinh thái",
+      "example_en": "Wildlife corridors are sometimes proposed as a solution. These strips or bridges of suitable habitat can reconnect patches for particular species. Yet a corridor designed for a small mammal may be useless to an animal that requires dense tree cover. Corridors can also allow disease or invasive species to spread, so planning must consider ecological trade-offs.",
+      "example_vi": "Hành lang sinh thái đôi khi được đề xuất làm giải pháp. Dải đất hoặc cầu có sinh cảnh phù hợp giúp nối các mảng với những loài nhất định. Nhưng hành lang thiết kế cho thú nhỏ có thể vô dụng với loài cần tán cây dày. Hành lang cũng có thể giúp dịch bệnh hoặc loài xâm lấn lan rộng, nên phải xét sự đánh đổi sinh thái.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "connectivity",
+      "pos": "n.",
+      "meaning_vi": "sự kết nối",
+      "example_en": "A sound monitoring programme measures movement and survival, not simply the number of corridors constructed. Cameras, tracking devices and repeated vegetation surveys can reveal whether animals actually use a connection. If the results are disappointing, managers may adjust the route or restore additional cover. The key lesson is that connectivity is a biological outcome, not merely a line on a map.",
+      "example_vi": "Chương trình theo dõi tốt đo khả năng di chuyển và sống sót, chứ không chỉ đếm số hành lang đã xây. Camera, thiết bị theo dõi và khảo sát cây lặp lại cho biết động vật có thực sự dùng đường nối không. Nếu kết quả kém, người quản lý có thể chỉnh tuyến hoặc phục hồi thêm tán che. Bài học là kết nối sinh thái là kết quả sinh học, không chỉ là nét vẽ trên bản đồ.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "411caeb35dcea20cb9d62a9c9c269b2c72e76fa5c0775c15ef3fdebb108c208f",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

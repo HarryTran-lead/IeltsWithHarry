@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-021",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Memory & Learning",
+  "title": "Sleep, Spacing and the Persistence of Memory",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "A student may remember a word immediately after learning it yet fail to recall it a week later. One reason is that memories are not fixed the moment information first appears. Over time, biological and cognitive processes help stabilise what was learned. Researchers call this consolidation. It is influenced by the type of material, previous knowledge and what happens after the initial lesson.",
+      "translation_vi": "Một học sinh có thể nhớ từ ngay sau khi học nhưng không nhớ được một tuần sau. Một lý do là trí nhớ không cố định ngay khi thông tin mới xuất hiện. Theo thời gian, các quá trình sinh học và nhận thức giúp ổn định điều vừa học. Nhà nghiên cứu gọi đó là củng cố trí nhớ. Quá trình này chịu ảnh hưởng của loại tài liệu, kiến thức trước đó và những gì xảy ra sau buổi học ban đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Sleep plays a role in many forms of memory consolidation, although it cannot replace practice. After learning a sequence of movements, for instance, a person may perform more smoothly following a period of sleep. The size of the improvement varies, and not every task follows the same pattern. The relevant point is that recovery and learning are connected rather than competing activities.",
+      "translation_vi": "Giấc ngủ đóng vai trò trong nhiều dạng củng cố trí nhớ, dù không thể thay thế việc luyện tập. Ví dụ, sau khi học một chuỗi động tác, một người có thể thực hiện trôi chảy hơn sau một giấc ngủ. Mức cải thiện khác nhau và không phải nhiệm vụ nào cũng theo cùng một kiểu. Điểm cần hiểu là nghỉ ngơi và học tập có liên quan, không phải hai hoạt động đối lập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The timing of practice also changes results. Massed practice puts many repetitions into one sitting. Spaced practice distributes them across several occasions. The second approach may feel harder because some details have faded between sessions. Yet trying to recover those details can strengthen later access, especially when the spacing is matched to the task and the learner.",
+      "translation_vi": "Thời điểm luyện tập cũng làm thay đổi kết quả. Luyện dồn đặt nhiều lần lặp vào một buổi. Luyện giãn cách phân bổ chúng qua nhiều thời điểm. Cách thứ hai có thể thấy khó hơn vì một số chi tiết đã mờ đi giữa các buổi. Tuy vậy, việc cố nhớ lại những chi tiết ấy có thể tăng khả năng truy xuất về sau, nhất là khi khoảng cách được điều chỉnh theo nhiệm vụ và người học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Errors can provide useful feedback if they are identified promptly. When a learner confidently recalls a wrong date, simply repeating the same question without correction may reinforce the mistake. A brief explanation of the correct date, followed by another retrieval opportunity, changes what is practised. Feedback works best when it is clear enough to guide the next attempt.",
+      "translation_vi": "Lỗi có thể tạo ra phản hồi hữu ích nếu được phát hiện kịp thời. Khi người học tự tin nhớ sai một ngày tháng, chỉ lặp lại câu hỏi mà không sửa có thể củng cố sai lầm. Một lời giải thích ngắn về ngày đúng, rồi cho thêm cơ hội tự nhớ lại, sẽ thay đổi nội dung được luyện. Phản hồi hiệu quả khi đủ rõ để định hướng lần thử tiếp theo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We should therefore avoid interpreting temporary difficulty as proof that a method has failed. An easy study session may produce impressive immediate results and weak later retention. A more effortful session may produce modest immediate scores and better long-term memory. The sensible comparison includes a delayed assessment, not just how fluent students feel while their notes are open.",
+      "translation_vi": "Vì vậy không nên coi khó khăn tạm thời là bằng chứng phương pháp thất bại. Một buổi học dễ có thể cho kết quả tức thời ấn tượng nhưng ghi nhớ về sau yếu. Buổi học đòi hỏi nỗ lực hơn có thể cho điểm ngay lúc đó vừa phải nhưng trí nhớ dài hạn tốt hơn. So sánh hợp lý cần có đánh giá sau một khoảng thời gian, không chỉ dựa vào cảm giác trôi chảy khi còn mở ghi chú.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "The process of stabilising what has been learned is called ____.",
+      "correct_answers": [
+        "consolidation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “consolidation” nằm tại đoạn T01. Nội dung bằng chứng: Một học sinh có thể nhớ từ ngay sau khi học nhưng không nhớ được một tuần sau. Một lý do là trí nhớ không cố định ngay khi thông tin mới xuất hiện. Theo thời gian, các quá trình sinh học và nhận thức giúp ổn định điều vừa học. Nhà nghiên cứu gọi đó là củng cố trí nhớ. Quá trình này chịu ảnh hưởng của loại tài liệu, kiến thức trước đó và những gì xảy ra sau buổi học ban đầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "A period of ____ can support memory consolidation.",
+      "correct_answers": [
+        "sleep"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “sleep” nằm tại đoạn T02. Nội dung bằng chứng: Giấc ngủ đóng vai trò trong nhiều dạng củng cố trí nhớ, dù không thể thay thế việc luyện tập. Ví dụ, sau khi học một chuỗi động tác, một người có thể thực hiện trôi chảy hơn sau một giấc ngủ. Mức cải thiện khác nhau và không phải nhiệm vụ nào cũng theo cùng một kiểu. Điểm cần hiểu là nghỉ ngơi và học tập có liên quan, không phải hai hoạt động đối lập.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Practice distributed over several occasions is called ____.",
+      "correct_answers": [
+        "Spaced practice"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “Spaced practice” nằm tại đoạn T03. Nội dung bằng chứng: Thời điểm luyện tập cũng làm thay đổi kết quả. Luyện dồn đặt nhiều lần lặp vào một buổi. Luyện giãn cách phân bổ chúng qua nhiều thời điểm. Cách thứ hai có thể thấy khó hơn vì một số chi tiết đã mờ đi giữa các buổi. Tuy vậy, việc cố nhớ lại những chi tiết ấy có thể tăng khả năng truy xuất về sau, nhất là khi khoảng cách được điều chỉnh theo nhiệm vụ và người học.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "short_answer",
+      "prompt": "What must follow an incorrect recall attempt to guide the next one?",
+      "correct_answers": [
+        "feedback"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “feedback” nằm tại đoạn T04. Nội dung bằng chứng: Lỗi có thể tạo ra phản hồi hữu ích nếu được phát hiện kịp thời. Khi người học tự tin nhớ sai một ngày tháng, chỉ lặp lại câu hỏi mà không sửa có thể củng cố sai lầm. Một lời giải thích ngắn về ngày đúng, rồi cho thêm cơ hội tự nhớ lại, sẽ thay đổi nội dung được luyện. Phản hồi hiệu quả khi đủ rõ để định hướng lần thử tiếp theo.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "To judge durable memory, include a ____.",
+      "correct_answers": [
+        "delayed assessment"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “delayed assessment” nằm tại đoạn T05. Nội dung bằng chứng: Vì vậy không nên coi khó khăn tạm thời là bằng chứng phương pháp thất bại. Một buổi học dễ có thể cho kết quả tức thời ấn tượng nhưng ghi nhớ về sau yếu. Buổi học đòi hỏi nỗ lực hơn có thể cho điểm ngay lúc đó vừa phải nhưng trí nhớ dài hạn tốt hơn. So sánh hợp lý cần có đánh giá sau một khoảng thời gian, không chỉ dựa vào cảm giác trôi chảy khi còn mở ghi chú.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the main warning about effective studying?",
+      "correct_answers": [
+        "Immediate ease does not guarantee later retention"
+      ],
+      "options": [
+        "Immediate ease does not guarantee later retention",
+        "Longer study sessions always prevent forgetting",
+        "Sleeping after study eliminates the need to practise"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Vì vậy không nên coi khó khăn tạm thời là bằng chứng phương pháp thất bại. Một buổi học dễ có thể cho kết quả tức thời ấn tượng nhưng ghi nhớ về sau yếu. Buổi học đòi hỏi nỗ lực hơn có thể cho điểm ngay lúc đó vừa phải nhưng trí nhớ dài hạn tốt hơn. So sánh hợp lý cần có đánh giá sau một khoảng thời gian, không chỉ dựa vào cảm giác trôi chảy khi còn mở ghi chú. Phương án chính xác: “Immediate ease does not guarantee later retention”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Sleep plays a role in many forms of memory consolidation, although it cannot replace practice. After learning a sequence of movements, for instance, a person may perform more smoothly following a period of sleep. The size of the improvement varies, and not every task follows the same pattern. The relevant point is that recovery and learning are connected rather than competing activities."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Giấc ngủ đóng vai trò trong nhiều dạng củng cố trí nhớ, dù không thể thay thế việc luyện tập. Ví dụ, sau khi học một chuỗi động tác, một người có thể thực hiện trôi chảy hơn sau một giấc ngủ. Mức cải thiện khác nhau và không phải nhiệm vụ nào cũng theo cùng một kiểu. Điểm cần hiểu là nghỉ ngơi và học tập có liên quan, không phải hai hoạt động đối lập.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Errors can provide useful feedback if they are identified promptly. When a learner confidently recalls a wrong date, simply repeating the same question without correction may reinforce the mistake. A brief explanation of the correct date, followed by another retrieval opportunity, changes what is practised. Feedback works best when it is clear enough to guide the next attempt."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Lỗi có thể tạo ra phản hồi hữu ích nếu được phát hiện kịp thời. Khi người học tự tin nhớ sai một ngày tháng, chỉ lặp lại câu hỏi mà không sửa có thể củng cố sai lầm. Một lời giải thích ngắn về ngày đúng, rồi cho thêm cơ hội tự nhớ lại, sẽ thay đổi nội dung được luyện. Phản hồi hiệu quả khi đủ rõ để định hướng lần thử tiếp theo.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: A student may remember a word immediately after learning it yet fail to recall it a week later. One reason is that memories are not fixed the moment information first appears. Over time, biological and cognitive processes help stabilise what was learned. Researchers call this ____. It is influenced by the type of material, previous knowledge and what happens after the initial lesson.",
+      "correct_answers": [
+        "consolidation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “consolidation”, nghĩa: sự củng cố trí nhớ. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "consolidation",
+      "pos": "n.",
+      "meaning_vi": "sự củng cố trí nhớ",
+      "example_en": "A student may remember a word immediately after learning it yet fail to recall it a week later. One reason is that memories are not fixed the moment information first appears. Over time, biological and cognitive processes help stabilise what was learned. Researchers call this consolidation. It is influenced by the type of material, previous knowledge and what happens after the initial lesson.",
+      "example_vi": "Một học sinh có thể nhớ từ ngay sau khi học nhưng không nhớ được một tuần sau. Một lý do là trí nhớ không cố định ngay khi thông tin mới xuất hiện. Theo thời gian, các quá trình sinh học và nhận thức giúp ổn định điều vừa học. Nhà nghiên cứu gọi đó là củng cố trí nhớ. Quá trình này chịu ảnh hưởng của loại tài liệu, kiến thức trước đó và những gì xảy ra sau buổi học ban đầu.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "Massed practice",
+      "pos": "n. phr.",
+      "meaning_vi": "luyện dồn",
+      "example_en": "The timing of practice also changes results. Massed practice puts many repetitions into one sitting. Spaced practice distributes them across several occasions. The second approach may feel harder because some details have faded between sessions. Yet trying to recover those details can strengthen later access, especially when the spacing is matched to the task and the learner.",
+      "example_vi": "Thời điểm luyện tập cũng làm thay đổi kết quả. Luyện dồn đặt nhiều lần lặp vào một buổi. Luyện giãn cách phân bổ chúng qua nhiều thời điểm. Cách thứ hai có thể thấy khó hơn vì một số chi tiết đã mờ đi giữa các buổi. Tuy vậy, việc cố nhớ lại những chi tiết ấy có thể tăng khả năng truy xuất về sau, nhất là khi khoảng cách được điều chỉnh theo nhiệm vụ và người học.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "Spaced practice",
+      "pos": "n. phr.",
+      "meaning_vi": "luyện giãn cách",
+      "example_en": "The timing of practice also changes results. Massed practice puts many repetitions into one sitting. Spaced practice distributes them across several occasions. The second approach may feel harder because some details have faded between sessions. Yet trying to recover those details can strengthen later access, especially when the spacing is matched to the task and the learner.",
+      "example_vi": "Thời điểm luyện tập cũng làm thay đổi kết quả. Luyện dồn đặt nhiều lần lặp vào một buổi. Luyện giãn cách phân bổ chúng qua nhiều thời điểm. Cách thứ hai có thể thấy khó hơn vì một số chi tiết đã mờ đi giữa các buổi. Tuy vậy, việc cố nhớ lại những chi tiết ấy có thể tăng khả năng truy xuất về sau, nhất là khi khoảng cách được điều chỉnh theo nhiệm vụ và người học.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "retention",
+      "pos": "n.",
+      "meaning_vi": "khả năng ghi nhớ về sau",
+      "example_en": "We should therefore avoid interpreting temporary difficulty as proof that a method has failed. An easy study session may produce impressive immediate results and weak later retention. A more effortful session may produce modest immediate scores and better long-term memory. The sensible comparison includes a delayed assessment, not just how fluent students feel while their notes are open.",
+      "example_vi": "Vì vậy không nên coi khó khăn tạm thời là bằng chứng phương pháp thất bại. Một buổi học dễ có thể cho kết quả tức thời ấn tượng nhưng ghi nhớ về sau yếu. Buổi học đòi hỏi nỗ lực hơn có thể cho điểm ngay lúc đó vừa phải nhưng trí nhớ dài hạn tốt hơn. So sánh hợp lý cần có đánh giá sau một khoảng thời gian, không chỉ dựa vào cảm giác trôi chảy khi còn mở ghi chú.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "cac9e1f7b3b788066ed01787373c18af583d0c8a7dd3087ffe5158f6371b6195",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

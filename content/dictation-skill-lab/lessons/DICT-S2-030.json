@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-030",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Public Events",
+  "title": "Information for Speakers at the Civic Innovation Fair",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Public Events và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện chỉ đường theo sơ đồ A–F, phân biệt điểm trước/sau và hướng trái/phải."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to the civic innovation fair. Whether you are presenting a new idea or simply attending a workshop, please listen to these changes to the programme.",
+      "translation_vi": "Chào mừng hội chợ đổi mới sáng tạo. Dù thuyết trình hay tham dự, xin nghe các thay đổi của chương trình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Registration takes place inside the south entrance. The speaker preparation room is immediately on your left, and the first-aid station is the first room on your right.",
+      "translation_vi": "Đăng ký bên trong cửa nam. Phòng chuẩn bị cho diễn giả ngay bên trái và trạm sơ cứu ở phòng đầu bên phải.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our demonstration laboratory is in the back-left corner. Exhibitors must not bring food inside because several electronic prototypes are set up there.",
+      "translation_vi": "Phòng trình diễn thí nghiệm ở góc sau bên trái. Đơn vị triển lãm không mang đồ ăn vào vì có nhiều mẫu thiết bị điện tử.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The main auditorium is located in the back-right corner. It seats two hundred people, but only ticket holders can enter the afternoon panel discussion.",
+      "translation_vi": "Hội trường chính ở góc sau bên phải, có hai trăm ghế, nhưng chỉ người có vé được dự tọa đàm chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The exhibition gallery occupies the central space at the far end. There will be short introductions from the inventors themselves, rather than recorded presentations.",
+      "translation_vi": "Phòng triển lãm ở giữa cuối khu. Nhà phát minh sẽ trực tiếp giới thiệu ngắn, không phát bản ghi sẵn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The opening keynote will now begin at ten fifty. It was originally scheduled for ten thirty, but two visiting speakers are arriving later than planned.",
+      "translation_vi": "Bài diễn thuyết mở đầu giờ mới là 10:50, thay vì 10:30 vì hai khách mời đến muộn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Workshop participants should collect coloured badges before entering a session. Blue badges indicate technology, while green badges are for social innovation projects.",
+      "translation_vi": "Người dự workshop cần lấy thẻ màu trước khi vào. Thẻ xanh dương là công nghệ, thẻ xanh lá cho dự án đổi mới xã hội.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Lunch vouchers may be used at any food stall outside. Please note that the voucher covers a main dish, but drinks must be purchased separately.",
+      "translation_vi": "Phiếu ăn trưa dùng được ở mọi gian ăn ngoài trời. Phiếu gồm món chính, đồ uống phải mua riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The closing presentation starts at four fifteen in the auditorium. We ask all presenters to return their name badges at registration before leaving.",
+      "translation_vi": "Phần trình bày kết thúc bắt đầu lúc 4:15 ở hội trường. Diễn giả vui lòng trả thẻ tên tại khu đăng ký trước khi về.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Speaker preparation room position: ____",
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phòng chuẩn bị diễn giả ngay bên trái.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-030.svg"
+    },
+    {
+      "question_id": "Q02",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Main auditorium position: ____",
+      "correct_answers": [
+        "C"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Hội trường ở góc sau bên phải.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-030.svg"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Auditorium capacity: ____",
+      "correct_answers": [
+        "two hundred"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Có hai trăm ghế.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "At what time will the opening keynote begin?",
+      "correct_answers": [
+        "ten fifty"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Giờ mới 10:50 thay vì 10:30.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "distractor"
+      ],
+      "options": [
+        "ten thirty",
+        "ten fifty",
+        "four fifteen"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Badge colour for social innovation: ____",
+      "correct_answers": [
+        "green"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thẻ xanh lá dành cho đổi mới xã hội.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Closing presentation starts at: ____",
+      "correct_answers": [
+        "four fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phần kết thúc lúc 4:15.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "The exhibition gallery occupies the central space at the far end. There will be short introductions from the inventors themselves, rather than recorded presentations."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The exhibition gallery occupies the central space at the far end. There will be short introductions from the inventors themselves, rather than recorded presentations. Nghĩa: Phòng triển lãm ở giữa cuối khu. Nhà phát minh sẽ trực tiếp giới thiệu ngắn, không phát bản ghi sẵn. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: ____ takes place inside the south entrance. The speaker preparation room is immediately on your left, and the first-aid station is the first room on your right.",
+      "correct_answers": [
+        "registration"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "registration: đăng ký. Ngữ cảnh: Đăng ký bên trong cửa nam. Phòng chuẩn bị cho diễn giả ngay bên trái và trạm sơ cứu ở phòng đầu bên phải.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "registration",
+      "pos": "n.",
+      "meaning_vi": "đăng ký",
+      "example_en": "Registration takes place inside the south entrance. The speaker preparation room is immediately on your left, and the first-aid station is the first room on your right.",
+      "example_vi": "Đăng ký bên trong cửa nam. Phòng chuẩn bị cho diễn giả ngay bên trái và trạm sơ cứu ở phòng đầu bên phải.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "auditorium",
+      "pos": "n.",
+      "meaning_vi": "hội trường",
+      "example_en": "The main auditorium is located in the back-right corner. It seats two hundred people, but only ticket holders can enter the afternoon panel discussion.",
+      "example_vi": "Hội trường chính ở góc sau bên phải, có hai trăm ghế, nhưng chỉ người có vé được dự tọa đàm chiều.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "programme",
+      "pos": "n.",
+      "meaning_vi": "chương trình",
+      "example_en": "Welcome to the civic innovation fair. Whether you are presenting a new idea or simply attending a workshop, please listen to these changes to the programme.",
+      "example_vi": "Chào mừng hội chợ đổi mới sáng tạo. Dù thuyết trình hay tham dự, xin nghe các thay đổi của chương trình.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "entrance",
+      "pos": "n.",
+      "meaning_vi": "lối vào",
+      "example_en": "Registration takes place inside the south entrance. The speaker preparation room is immediately on your left, and the first-aid station is the first room on your right.",
+      "example_vi": "Đăng ký bên trong cửa nam. Phòng chuẩn bị cho diễn giả ngay bên trái và trạm sơ cứu ở phòng đầu bên phải.",
+      "source_turn_id": "T02"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "554af88fe806291051535455b7468ef254e504cd43f37668077c4f962f40e80f",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-005",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Hobbies and Free Time",
+  "learning_objectives_vi": [
+    "Nghe mô tả sở thích",
+    "Nhận ra cụm ý nghĩa trước khi chép: ai làm gì, ở đâu, khi nào."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I play badminton with my neighbours on Saturdays.",
+      "translation_vi": "Tôi chơi cầu lông với hàng xóm vào thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "My sister enjoys painting small flowers.",
+      "translation_vi": "Em gái tôi thích vẽ những bông hoa nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We often watch documentaries about wild animals.",
+      "translation_vi": "Chúng tôi thường xem phim tài liệu về động vật hoang dã.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "He saves money to buy a second-hand guitar.",
+      "translation_vi": "Cậu ấy tiết kiệm tiền để mua đàn ghi-ta cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I prefer reading outside when the weather is cool.",
+      "translation_vi": "Tôi thích đọc sách ngoài trời hơn khi thời tiết mát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "My cousins are learning to swim this summer.",
+      "translation_vi": "Anh chị em họ của tôi đang học bơi hè này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "She practises the piano for twenty minutes daily.",
+      "translation_vi": "Cô ấy luyện đàn piano hai mươi phút mỗi ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "We joined a photography club last month.",
+      "translation_vi": "Chúng tôi tham gia câu lạc bộ nhiếp ảnh tháng trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I like hiking, but I don't enjoy camping.",
+      "translation_vi": "Tôi thích đi bộ đường dài, nhưng không thích cắm trại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "My dad spends Sunday mornings in his garden.",
+      "translation_vi": "Bố tôi dành các sáng Chủ nhật ở trong vườn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I play badminton with my neighbours on Saturdays."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Saturdays có âm /z/ cuối; with my có nối âm. Nghĩa: Tôi chơi cầu lông với hàng xóm vào thứ Bảy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My sister enjoys painting small flowers."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Enjoys đi với V-ing: painting. Nghĩa: Em gái tôi thích vẽ những bông hoa nhỏ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We often watch documentaries about wild animals."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Documentaries có nhiều âm tiết; chú ý trọng âm. Nghĩa: Chúng tôi thường xem phim tài liệu về động vật hoang dã.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "He saves money to buy a second-hand guitar."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "To buy chỉ mục đích; second-hand nghĩa là đã qua sử dụng. Nghĩa: Cậu ấy tiết kiệm tiền để mua đàn ghi-ta cũ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I prefer reading outside when the weather is cool."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Prefer đi với V-ing ở đây; outside nghe liền từ. Nghĩa: Tôi thích đọc sách ngoài trời hơn khi thời tiết mát.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My cousins are learning to swim this summer."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Are learning là tiếp diễn; to swim có to yếu. Nghĩa: Anh chị em họ của tôi đang học bơi hè này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "She practises the piano for twenty minutes daily."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Twenty có âm /t/; minutes kết thúc /ts/. Nghĩa: Cô ấy luyện đàn piano hai mươi phút mỗi ngày.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We joined a photography club last month."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Joined có /d/ cuối; last month diễn tả quá khứ. Nghĩa: Chúng tôi tham gia câu lạc bộ nhiếp ảnh tháng trước.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I like hiking, but I don't enjoy camping."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Don't thường có âm /t/ nhẹ; hiking khác camping. Nghĩa: Tôi thích đi bộ đường dài, nhưng không thích cắm trại.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My dad spends Sunday mornings in his garden."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Spends có /dz/ cuối; Sunday mornings chỉ thói quen. Nghĩa: Bố tôi dành các sáng Chủ nhật ở trong vườn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Cậu ấy tiết kiệm tiền để mua gì?",
+      "options": [
+        "a camera",
+        "a second-hand guitar",
+        "a new piano"
+      ],
+      "correct_answers": [
+        "a second-hand guitar"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "T04 nêu a second-hand guitar.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Người nói không thích hoạt động nào?",
+      "options": [
+        "camping",
+        "hiking",
+        "painting"
+      ],
+      "correct_answers": [
+        "camping"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "T09 nói I don't enjoy camping.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "badminton",
+      "pos": "noun",
+      "meaning_vi": "cầu lông",
+      "example_en": "I play badminton with my neighbours on Saturdays.",
+      "example_vi": "Tôi chơi cầu lông với hàng xóm vào thứ Bảy.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "documentaries",
+      "pos": "noun",
+      "meaning_vi": "phim tài liệu",
+      "example_en": "We often watch documentaries about wild animals.",
+      "example_vi": "Chúng tôi thường xem phim tài liệu về động vật hoang dã.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "second-hand",
+      "pos": "adjective",
+      "meaning_vi": "đã qua sử dụng",
+      "example_en": "He saves money to buy a second-hand guitar.",
+      "example_vi": "Cậu ấy tiết kiệm tiền để mua đàn ghi-ta cũ.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "photography club",
+      "pos": "noun phrase",
+      "meaning_vi": "câu lạc bộ nhiếp ảnh",
+      "example_en": "We joined a photography club last month.",
+      "example_vi": "Chúng tôi tham gia câu lạc bộ nhiếp ảnh tháng trước.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "1632b88e224bf38edce8b78469c81c947c87ab845366641c86b081b5038df179",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

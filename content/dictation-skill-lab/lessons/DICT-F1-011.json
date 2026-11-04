@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-011",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Numbers 0–20",
+  "learning_objectives_vi": [
+    "Nghe số đơn và dãy số",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Zero and one.",
+      "translation_vi": "Số không và số một.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Two or three?",
+      "translation_vi": "Hai hay ba?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Four, five, six.",
+      "translation_vi": "Bốn, năm, sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Seven and eight.",
+      "translation_vi": "Bảy và tám.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Nine or ten?",
+      "translation_vi": "Chín hay mười?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Eleven students arrived.",
+      "translation_vi": "Mười một học sinh đã đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Twelve chairs are ready.",
+      "translation_vi": "Mười hai chiếc ghế đã sẵn sàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Thirteen tickets remain.",
+      "translation_vi": "Còn lại mười ba tấm vé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Fourteen people joined.",
+      "translation_vi": "Mười bốn người đã tham gia.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Fifteen, sixteen, seventeen, eighteen, nineteen, twenty.",
+      "translation_vi": "Mười lăm, mười sáu, mười bảy, mười tám, mười chín, hai mươi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Zero and one."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "zero /ˈzɪərəʊ/ khác one /wʌn/. Nghĩa: Số không và số một.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Two or three?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "two /tuː/ khác three /θriː/. Nghĩa: Hai hay ba?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Four, five, six."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nhận diện ba số liên tục. Nghĩa: Bốn, năm, sáu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Seven and eight."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "eight có âm cuối /t/. Nghĩa: Bảy và tám.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Nine or ten?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "nine có phụ âm cuối /n/. Nghĩa: Chín hay mười?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Eleven students arrived."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "eleven có ba âm tiết. Nghĩa: Mười một học sinh đã đến.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Twelve chairs are ready."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "twelve kết thúc bằng /v/. Nghĩa: Mười hai chiếc ghế đã sẵn sàng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Thirteen tickets remain."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "thirteen là số 13. Nghĩa: Còn lại mười ba tấm vé.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Fourteen people joined."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "fourteen là số 14. Nghĩa: Mười bốn người đã tham gia.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Fifteen, sixteen, seventeen, eighteen, nineteen, twenty."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Chuỗi liên tục từ 15 đến 20; nghe đủ sáu số. Nghĩa: Mười lăm, mười sáu, mười bảy, mười tám, mười chín, hai mươi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T06: Có bao nhiêu học sinh đã đến?",
+      "correct_answers": [
+        "11"
+      ],
+      "options": [
+        "7",
+        "11"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Eleven = 11, khác seven = 7. Hãy nghe lại lượt T06, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T09: Có bao nhiêu người tham gia?",
+      "correct_answers": [
+        "14"
+      ],
+      "options": [
+        "14",
+        "40"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Fourteen = 14. Hãy nghe lại lượt T09, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "zero",
+      "pos": "number",
+      "meaning_vi": "số không",
+      "example_en": "Zero and one.",
+      "example_vi": "Số không và số một.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "eleven",
+      "pos": "number",
+      "meaning_vi": "mười một",
+      "example_en": "Eleven students arrived.",
+      "example_vi": "Mười một học sinh đã đến.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "twelve",
+      "pos": "number",
+      "meaning_vi": "mười hai",
+      "example_en": "Twelve chairs are ready.",
+      "example_vi": "Mười hai chiếc ghế đã sẵn sàng.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "twenty",
+      "pos": "number",
+      "meaning_vi": "hai mươi",
+      "example_en": "Fifteen, sixteen, seventeen, eighteen, nineteen, twenty.",
+      "example_vi": "Mười lăm, mười sáu, mười bảy, mười tám, mười chín, hai mươi.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "0db10a8e0820b63b63a162585810645091ed50bd83a9ea13533c82bf78740a8b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

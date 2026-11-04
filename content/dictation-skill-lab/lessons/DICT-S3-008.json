@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-008",
+  "status": "draft",
+  "level": "L4",
+  "section": 3,
+  "topic": "Internship Discussions",
+  "title": "Internship Discussions: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Nina – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Leo – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Holly – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The design studio offered me an internship, but I don't understand how the project rotations work.",
+      "translation_vi": "Xưởng thiết kế đã nhận mình thực tập, nhưng mình chưa hiểu cách luân chuyển dự án.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I worked there last summer. They used to move interns every week, but the schedule has changed.",
+      "translation_vi": "Mình từng làm ở đó mùa hè trước. Họ từng đổi nhóm mỗi tuần, nhưng lịch đã thay đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Now each intern stays with one team for the first three weeks to learn the software and routine.",
+      "translation_vi": "Giờ mỗi thực tập sinh ở cùng một nhóm trong ba tuần đầu để học phần mềm và quy trình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "That sounds better. I was worried I'd spend all my time watching rather than doing anything practical.",
+      "translation_vi": "Nghe tốt hơn. Mình lo sẽ chỉ đứng xem mà không làm việc thực tế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "You will produce a small prototype, but the supervisor must approve it before it goes to a client.",
+      "translation_vi": "Bạn sẽ làm mẫu thử nhỏ, nhưng người hướng dẫn phải duyệt trước khi gửi khách hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "You also need a weekly reflection, not a daily report. The university assessor reads those at the end.",
+      "translation_vi": "Bạn cũng cần bản phản ánh hằng tuần, không phải báo cáo hằng ngày. Giảng viên đánh giá sẽ đọc chúng vào cuối kỳ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Is the first meeting on Monday morning? My offer letter gives Tuesday instead.",
+      "translation_vi": "Buổi gặp đầu vào sáng thứ Hai à? Thư mời của mình ghi thứ Ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Tuesday is correct for new interns. Monday is the staff induction day, and you aren't expected to attend.",
+      "translation_vi": "Thứ Ba mới đúng cho thực tập sinh mới. Thứ Hai là ngày định hướng nhân viên, bạn không cần tham dự.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Take your laptop and identification, but the studio will provide access to the design applications.",
+      "translation_vi": "Mang laptop và giấy tờ tùy thân nhé, còn xưởng sẽ cấp quyền dùng các ứng dụng thiết kế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Interns now spend their first ____ weeks with one team.",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Holly): “Giờ mỗi thực tập sinh ở cùng một nhóm trong ba tuần đầu để học phần mềm và quy trình.” Đáp án: “three”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "What worries Nina about the internship?",
+      "correct_answers": [
+        "She may only observe rather than work"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng ở T04 (Nina): “Nghe tốt hơn. Mình lo sẽ chỉ đứng xem mà không làm việc thực tế.” Đáp án: “She may only observe rather than work”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "She may travel too far",
+        "She may have to teach classes",
+        "She may only observe rather than work"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "A supervisor must approve the small ____.",
+      "correct_answers": [
+        "prototype"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Leo): “Bạn sẽ làm mẫu thử nhỏ, nhưng người hướng dẫn phải duyệt trước khi gửi khách hàng.” Đáp án: “prototype”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "short_answer",
+      "prompt": "How often must interns write a reflection?",
+      "correct_answers": [
+        "weekly"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Holly): “Bạn cũng cần bản phản ánh hằng tuần, không phải báo cáo hằng ngày. Giảng viên đánh giá sẽ đọc chúng vào cuối kỳ.” Đáp án: “weekly”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "matching",
+      "prompt": "Which day is shown in the offer letter?",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bằng chứng ở T07 (Nina): “Buổi gặp đầu vào sáng thứ Hai à? Thư mời của mình ghi thứ Ba.” Đáp án: “Tuesday”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Monday",
+        "Friday",
+        "Tuesday"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "The studio provides access to the design ____.",
+      "correct_answers": [
+        "applications"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Holly): “Mang laptop và giấy tờ tùy thân nhé, còn xưởng sẽ cấp quyền dùng các ứng dụng thiết kế.” Đáp án: “applications”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T03 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "Now each intern stays with one team for the first three weeks to learn the software and routine."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: “Now each intern stays with one team for the first three weeks to learn the software and routine.”\nNghĩa: Giờ mỗi thực tập sinh ở cùng một nhóm trong ba tuần đầu để học phần mềm và quy trình.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T06 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "You also need a weekly reflection, not a daily report. The university assessor reads those at the end."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: “You also need a weekly reflection, not a daily report. The university assessor reads those at the end.”\nNghĩa: Bạn cũng cần bản phản ánh hằng tuần, không phải báo cáo hằng ngày. Giảng viên đánh giá sẽ đọc chúng vào cuối kỳ.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: The design studio offered me an ____, but I don't understand how the project rotations work.",
+      "correct_answers": [
+        "internship"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “internship” (kỳ thực tập). Lời gốc: “The design studio offered me an internship, but I don't understand how the project rotations work.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "internship",
+      "pos": "n.",
+      "meaning_vi": "kỳ thực tập",
+      "example_en": "The design studio offered me an internship, but I don't understand how the project rotations work.",
+      "example_vi": "Xưởng thiết kế đã nhận mình thực tập, nhưng mình chưa hiểu cách luân chuyển dự án.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "project rotations",
+      "pos": "n. phr.",
+      "meaning_vi": "luân chuyển dự án",
+      "example_en": "The design studio offered me an internship, but I don't understand how the project rotations work.",
+      "example_vi": "Xưởng thiết kế đã nhận mình thực tập, nhưng mình chưa hiểu cách luân chuyển dự án.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "prototype",
+      "pos": "n.",
+      "meaning_vi": "mẫu thử",
+      "example_en": "You will produce a small prototype, but the supervisor must approve it before it goes to a client.",
+      "example_vi": "Bạn sẽ làm mẫu thử nhỏ, nhưng người hướng dẫn phải duyệt trước khi gửi khách hàng.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "weekly reflection",
+      "pos": "n. phr.",
+      "meaning_vi": "bản phản ánh hằng tuần",
+      "example_en": "You also need a weekly reflection, not a daily report. The university assessor reads those at the end.",
+      "example_vi": "Bạn cũng cần bản phản ánh hằng tuần, không phải báo cáo hằng ngày. Giảng viên đánh giá sẽ đọc chúng vào cuối kỳ.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "72370b1c9c64cf11a9d2dbd14a5734860e3d4d6bda32a963cdda067acaf804b0",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

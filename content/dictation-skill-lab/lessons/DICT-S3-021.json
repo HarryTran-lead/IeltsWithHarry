@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-021",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Research Methodology",
+  "title": "Research Methodology: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Hannah – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Jack – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Priya – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We have to choose a research method for the campus noise study. I favour interviews because students can explain which sounds bother them most.",
+      "translation_vi": "Ta phải chọn phương pháp cho nghiên cứu tiếng ồn trong trường. Mình thích phỏng vấn vì sinh viên giải thích được âm thanh nào gây phiền nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Interviews could be insightful, but they wouldn't tell us the actual sound levels. The project brief specifically asks for measurable changes.",
+      "translation_vi": "Phỏng vấn có thể cho góc nhìn sâu, nhưng không nói mức âm thanh thực tế. Đề bài yêu cầu thay đổi có thể đo lường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "What if we combine a short questionnaire with sound readings from two locations? That gives us perception and measurement without too much work.",
+      "translation_vi": "Nếu kết hợp bảng hỏi ngắn với đo âm ở hai địa điểm thì sao? Ta có cảm nhận lẫn số đo mà không quá nhiều việc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I'm worried the questionnaire will produce superficial answers. People may tick boxes without thinking about the difference between volume and distraction.",
+      "translation_vi": "Mình lo bảng hỏi cho câu trả lời hời hợt. Người ta có thể tích ô mà không phân biệt độ lớn âm và sự xao nhãng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We could include one optional open question. But we still need a sampling plan that covers morning and afternoon study sessions.",
+      "translation_vi": "Ta có thể thêm một câu mở tự chọn. Nhưng vẫn cần kế hoạch lấy mẫu cho buổi sáng và chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The technician says the portable meter should stay in one position for fifteen minutes to produce a comparable average.",
+      "translation_vi": "Kỹ thuật viên nói máy đo cần giữ tại một chỗ mười lăm phút để cho trung bình có thể so sánh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Then let's avoid moving it every few minutes. We could measure the quiet floor and the group-work floor at matched times.",
+      "translation_vi": "Vậy đừng di chuyển máy mỗi vài phút. Ta đo tầng yên tĩnh và tầng học nhóm vào cùng thời điểm tương ứng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Fine, although exam week may not represent normal behaviour. We should mention that limitation and perhaps avoid collecting data next week.",
+      "translation_vi": "Được, dù tuần thi không đại diện hành vi bình thường. Ta nên nêu hạn chế và có lẽ tránh lấy dữ liệu tuần tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "The library manager suggested the week after, when regular classes resume. I can request permission for Tuesday and Thursday.",
+      "translation_vi": "Quản lý thư viện gợi ý tuần sau nữa khi học bình thường. Mình có thể xin phép cho thứ Ba và Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "What about interviews? I don't want to lose the opportunity to understand why identical sound levels affect students differently.",
+      "translation_vi": "Còn phỏng vấn? Mình không muốn mất cơ hội hiểu vì sao cùng mức âm ảnh hưởng sinh viên khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "Keep two short follow-up interviews as a qualitative check, not the main method. That's manageable alongside the measurements.",
+      "translation_vi": "Giữ hai cuộc phỏng vấn ngắn để kiểm tra định tính, không phải phương pháp chính. Điều đó làm được cùng số đo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "So our final design combines timed measurements, a short questionnaire and limited interviews, with the measurement data leading the analysis.",
+      "translation_vi": "Vậy thiết kế cuối kết hợp đo theo thời gian, bảng hỏi ngắn và phỏng vấn giới hạn, với dữ liệu đo làm trọng tâm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why aren't interviews enough on their own?",
+      "correct_answers": [
+        "They do not measure actual sound levels"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Jack): “Phỏng vấn có thể cho góc nhìn sâu, nhưng không nói mức âm thanh thực tế. Đề bài yêu cầu thay đổi có thể đo lường.” Đáp án: “They do not measure actual sound levels”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Students cannot describe noise",
+        "Interviews require a laboratory",
+        "They do not measure actual sound levels"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The mixed design includes a short ____.",
+      "correct_answers": [
+        "questionnaire"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Priya): “Nếu kết hợp bảng hỏi ngắn với đo âm ở hai địa điểm thì sao? Ta có cảm nhận lẫn số đo mà không quá nhiều việc.” Đáp án: “questionnaire”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Each sound reading should last ____ minutes.",
+      "correct_answers": [
+        "fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Priya): “Kỹ thuật viên nói máy đo cần giữ tại một chỗ mười lăm phút để cho trung bình có thể so sánh.” Đáp án: “fifteen”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "matching",
+      "prompt": "Who suggests collecting data after exam week?",
+      "correct_answers": [
+        "library manager"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Priya): “Quản lý thư viện gợi ý tuần sau nữa khi học bình thường. Mình có thể xin phép cho thứ Ba và Năm.” Đáp án: “library manager”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "technician",
+        "psychology lecturer",
+        "library manager"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "What role will the two follow-up interviews have?",
+      "correct_answers": [
+        "A limited qualitative check"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Bằng chứng ở T11 (Jack): “Giữ hai cuộc phỏng vấn ngắn để kiểm tra định tính, không phải phương pháp chính. Điều đó làm được cùng số đo.” Đáp án: “A limited qualitative check”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "A replacement for surveys",
+        "A limited qualitative check",
+        "The main measurement method"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "Which data will lead the final analysis?",
+      "correct_answers": [
+        "measurement data"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Bằng chứng ở T12 (Priya): “Vậy thiết kế cuối kết hợp đo theo thời gian, bảng hỏi ngắn và phỏng vấn giới hạn, với dữ liệu đo làm trọng tâm.” Đáp án: “measurement data”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "I'm worried the questionnaire will produce superficial answers. People may tick boxes without thinking about the difference between volume and distraction."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I'm worried the questionnaire will produce superficial answers. People may tick boxes without thinking about the difference between volume and distraction.”\nNghĩa: Mình lo bảng hỏi cho câu trả lời hời hợt. Người ta có thể tích ô mà không phân biệt độ lớn âm và sự xao nhãng.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "Fine, although exam week may not represent normal behaviour. We should mention that limitation and perhaps avoid collecting data next week."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “Fine, although exam week may not represent normal behaviour. We should mention that limitation and perhaps avoid collecting data next week.”\nNghĩa: Được, dù tuần thi không đại diện hành vi bình thường. Ta nên nêu hạn chế và có lẽ tránh lấy dữ liệu tuần tới.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: We have to choose a ____ for the campus noise study. I favour interviews because students can explain which sounds bother them most.",
+      "correct_answers": [
+        "research method"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “research method” (phương pháp nghiên cứu). Lời gốc: “We have to choose a research method for the campus noise study. I favour interviews because students can explain which sounds bother them most.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "research method",
+      "pos": "n. phr.",
+      "meaning_vi": "phương pháp nghiên cứu",
+      "example_en": "We have to choose a research method for the campus noise study. I favour interviews because students can explain which sounds bother them most.",
+      "example_vi": "Ta phải chọn phương pháp cho nghiên cứu tiếng ồn trong trường. Mình thích phỏng vấn vì sinh viên giải thích được âm thanh nào gây phiền nhất.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "sound levels",
+      "pos": "n. phr.",
+      "meaning_vi": "mức âm thanh",
+      "example_en": "Interviews could be insightful, but they wouldn't tell us the actual sound levels. The project brief specifically asks for measurable changes.",
+      "example_vi": "Phỏng vấn có thể cho góc nhìn sâu, nhưng không nói mức âm thanh thực tế. Đề bài yêu cầu thay đổi có thể đo lường.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "sampling plan",
+      "pos": "n. phr.",
+      "meaning_vi": "kế hoạch lấy mẫu",
+      "example_en": "We could include one optional open question. But we still need a sampling plan that covers morning and afternoon study sessions.",
+      "example_vi": "Ta có thể thêm một câu mở tự chọn. Nhưng vẫn cần kế hoạch lấy mẫu cho buổi sáng và chiều.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "qualitative check",
+      "pos": "n. phr.",
+      "meaning_vi": "kiểm tra định tính",
+      "example_en": "Keep two short follow-up interviews as a qualitative check, not the main method. That's manageable alongside the measurements.",
+      "example_vi": "Giữ hai cuộc phỏng vấn ngắn để kiểm tra định tính, không phải phương pháp chính. Điều đó làm được cùng số đo.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "d5335cba002004af6a9454895f51b0a1bcfd7490e6179c24f0c8d1af8f3f6793",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

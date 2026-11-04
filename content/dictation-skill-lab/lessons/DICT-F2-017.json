@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-017",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Linking Sounds",
+  "learning_objectives_vi": [
+    "Nghe nối phụ âm–nguyên âm",
+    "Dựa vào cấu trúc và nhịp lời nói để nhận ra liên kết âm, âm yếu và trọng âm."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Please turn off the light before you leave.",
+      "translation_vi": "Vui lòng tắt đèn trước khi rời đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Can I have an apple from that basket?",
+      "translation_vi": "Tôi có thể lấy một quả táo từ chiếc giỏ kia không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We arrived at the hotel after midnight.",
+      "translation_vi": "Chúng tôi đến khách sạn sau nửa đêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Take it away before the children see it.",
+      "translation_vi": "Mang nó đi trước khi bọn trẻ nhìn thấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The teacher wrote an example on the board.",
+      "translation_vi": "Giáo viên viết một ví dụ lên bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I need an extra hour to finish this.",
+      "translation_vi": "Tôi cần thêm một giờ để hoàn thành việc này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "She picked up the parcel at reception.",
+      "translation_vi": "Cô ấy nhặt gói hàng lên tại quầy lễ tân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Could you pass it over to your brother?",
+      "translation_vi": "Bạn chuyển nó cho anh trai bạn được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We saw an old bridge near the river.",
+      "translation_vi": "Chúng tôi nhìn thấy cây cầu cũ gần con sông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "He put on a jacket before going outside.",
+      "translation_vi": "Anh ấy mặc áo khoác trước khi ra ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "connected_speech",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Please turn off the light before you leave."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Turn off nối phụ âm cuối với nguyên âm đầu. Nghĩa: Vui lòng tắt đèn trước khi rời đi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Can I have an apple from that basket?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Have an nối âm /v/ với /ə/. Nghĩa: Tôi có thể lấy một quả táo từ chiếc giỏ kia không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We arrived at the hotel after midnight."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Arrived at có âm /d/ liên kết với nguyên âm. Nghĩa: Chúng tôi đến khách sạn sau nửa đêm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Take it away before the children see it."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Take it tạo liên kết /k/ với /ɪ/. Nghĩa: Mang nó đi trước khi bọn trẻ nhìn thấy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The teacher wrote an example on the board."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Wrote an nối liền ở ranh giới từ. Nghĩa: Giáo viên viết một ví dụ lên bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I need an extra hour to finish this."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Need an nối /d/ với nguyên âm đầu. Nghĩa: Tôi cần thêm một giờ để hoàn thành việc này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "She picked up the parcel at reception."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Picked up nối âm /t/ với /ʌ/. Nghĩa: Cô ấy nhặt gói hàng lên tại quầy lễ tân.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Could you pass it over to your brother?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Pass it nối phụ âm /s/ với /ɪ/. Nghĩa: Bạn chuyển nó cho anh trai bạn được không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We saw an old bridge near the river."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Saw an old thường nghe liền, phân chia theo nghĩa. Nghĩa: Chúng tôi nhìn thấy cây cầu cũ gần con sông.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "He put on a jacket before going outside."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Put on nối âm /t/ với nguyên âm /ɒ/. Nghĩa: Anh ấy mặc áo khoác trước khi ra ngoài.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Người nói yêu cầu tắt thứ gì?",
+      "options": [
+        "the radio",
+        "the light",
+        "the phone"
+      ],
+      "correct_answers": [
+        "the light"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Turn off the light = tắt đèn.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "connected_speech"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Họ nhìn thấy gì gần con sông?",
+      "options": [
+        "an old bridge",
+        "a new road",
+        "a small shop"
+      ],
+      "correct_answers": [
+        "an old bridge"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "T09 nói an old bridge near the river.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "connected_speech"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "turn off",
+      "pos": "phrasal verb",
+      "meaning_vi": "tắt (điện/thiết bị)",
+      "example_en": "Please turn off the light before you leave.",
+      "example_vi": "Vui lòng tắt đèn trước khi rời đi.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "have an apple",
+      "pos": "verb phrase",
+      "meaning_vi": "lấy/ăn một quả táo",
+      "example_en": "Can I have an apple from that basket?",
+      "example_vi": "Tôi có thể lấy một quả táo từ chiếc giỏ kia không?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "picked up",
+      "pos": "phrasal verb",
+      "meaning_vi": "đã nhặt lên",
+      "example_en": "She picked up the parcel at reception.",
+      "example_vi": "Cô ấy nhặt gói hàng lên tại quầy lễ tân.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "put on",
+      "pos": "phrasal verb",
+      "meaning_vi": "mặc vào",
+      "example_en": "He put on a jacket before going outside.",
+      "example_vi": "Anh ấy mặc áo khoác trước khi ra ngoài.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c729d43510a11fbf61d8c64affa0c344fd131f8cce99b29c537be890dfb058f3",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

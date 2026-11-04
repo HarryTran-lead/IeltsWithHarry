@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-011",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Negative Sentences",
+  "learning_objectives_vi": [
+    "Nghe not/don’t/didn’t",
+    "Nghe trợ động từ và hình thái động từ, đối chiếu với chủ ngữ hoặc mốc thời gian."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I don't need a new laptop this year.",
+      "translation_vi": "Năm nay tôi không cần máy tính mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "My sister doesn't eat meat on Fridays.",
+      "translation_vi": "Em gái tôi không ăn thịt vào thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We aren't ready to leave just yet.",
+      "translation_vi": "Chúng tôi vẫn chưa sẵn sàng đi ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "He didn't bring his umbrella this morning.",
+      "translation_vi": "Sáng nay cậu ấy đã không mang ô.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The shop isn't open after eight o'clock.",
+      "translation_vi": "Cửa hàng không mở cửa sau tám giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I can't hear the announcement from here.",
+      "translation_vi": "Tôi không nghe được thông báo từ chỗ này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "They haven't received the new timetable yet.",
+      "translation_vi": "Họ vẫn chưa nhận thời khóa biểu mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please don't forget your student card.",
+      "translation_vi": "Nhớ đừng quên thẻ học sinh nhé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "She won't be at the meeting tomorrow.",
+      "translation_vi": "Ngày mai cô ấy sẽ không có mặt ở cuộc họp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "No one was waiting at the bus stop.",
+      "translation_vi": "Không có ai đang đợi ở trạm xe buýt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I don't need a new laptop this year."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Don't + need, chú ý âm /t/ có thể nhẹ. Nghĩa: Năm nay tôi không cần máy tính mới.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My sister doesn't eat meat on Fridays."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Doesn't + eat nguyên thể, không thêm s. Nghĩa: Em gái tôi không ăn thịt vào thứ Sáu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We aren't ready to leave just yet."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Aren't = are not; yet nhấn ý chưa. Nghĩa: Chúng tôi vẫn chưa sẵn sàng đi ngay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "He didn't bring his umbrella this morning."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Didn't + bring; sau didn't không có brought. Nghĩa: Sáng nay cậu ấy đã không mang ô.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The shop isn't open after eight o'clock."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Isn't = is not, không phải is. Nghĩa: Cửa hàng không mở cửa sau tám giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I can't hear the announcement from here."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Can't và can rất dễ nhầm; nghe cả ngữ cảnh. Nghĩa: Tôi không nghe được thông báo từ chỗ này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "They haven't received the new timetable yet."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Haven't + received là hiện tại hoàn thành phủ định. Nghĩa: Họ vẫn chưa nhận thời khóa biểu mới.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Please don't forget your student card."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Don't forget là lời nhắc phủ định. Nghĩa: Nhớ đừng quên thẻ học sinh nhé.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "She won't be at the meeting tomorrow."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Won't = will not; khác want. Nghĩa: Ngày mai cô ấy sẽ không có mặt ở cuộc họp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "No one was waiting at the bus stop."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "No one diễn đạt phủ định dù không có not. Nghĩa: Không có ai đang đợi ở trạm xe buýt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Người nói nghe được thông báo không?",
+      "options": [
+        "not mentioned",
+        "no",
+        "yes"
+      ],
+      "correct_answers": [
+        "no"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Can't hear = không nghe được.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Ngày mai cô ấy có đến cuộc họp không?",
+      "options": [
+        "no",
+        "yes",
+        "not mentioned"
+      ],
+      "correct_answers": [
+        "no"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Won't be at the meeting = sẽ không có mặt.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "doesn't eat",
+      "pos": "verb phrase",
+      "meaning_vi": "không ăn",
+      "example_en": "My sister doesn't eat meat on Fridays.",
+      "example_vi": "Em gái tôi không ăn thịt vào thứ Sáu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "aren't ready",
+      "pos": "verb phrase",
+      "meaning_vi": "chưa sẵn sàng",
+      "example_en": "We aren't ready to leave just yet.",
+      "example_vi": "Chúng tôi vẫn chưa sẵn sàng đi ngay.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "announcement",
+      "pos": "noun",
+      "meaning_vi": "thông báo",
+      "example_en": "I can't hear the announcement from here.",
+      "example_vi": "Tôi không nghe được thông báo từ chỗ này.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "won't",
+      "pos": "modal contraction",
+      "meaning_vi": "sẽ không",
+      "example_en": "She won't be at the meeting tomorrow.",
+      "example_vi": "Ngày mai cô ấy sẽ không có mặt ở cuộc họp.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "86bbe3bfc80259295902d2ed0133d35ed0afadb2857e80298cf42ef17eb5ae99",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

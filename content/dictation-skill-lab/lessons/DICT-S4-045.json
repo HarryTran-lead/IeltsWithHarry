@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-045",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Space Exploration",
+  "title": "Evaluating Evidence of Ancient Water Beyond Earth",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Scientists seeking evidence of ancient water on another planet can use several different instruments. An orbital camera may reveal channels or layered terrain, but shape alone does not prove how a feature formed. Similar-looking patterns can result from different processes. Researchers therefore combine images with measurements of composition, texture and geological context before drawing conclusions.",
+      "translation_vi": "Nhà khoa học tìm bằng chứng về nước cổ trên hành tinh khác có thể dùng nhiều thiết bị. Camera quỹ đạo có thể cho thấy kênh hoặc địa hình phân lớp, nhưng hình dạng riêng nó không chứng minh đặc điểm hình thành thế nào. Các mô hình trông giống nhau có thể do quá trình khác nhau. Vì thế nhà nghiên cứu kết hợp ảnh với phép đo thành phần, kết cấu và bối cảnh địa chất trước khi kết luận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Spectroscopy examines how material interacts with different wavelengths of light. Certain minerals produce distinctive patterns that can suggest past chemical conditions. However, a spectral signature may be ambiguous when surfaces contain mixtures or dust. Scientists compare observations with laboratory references and check whether the same interpretation fits other measurements. A single colourful map is rarely the complete story.",
+      "translation_vi": "Quang phổ học nghiên cứu vật chất tương tác với các bước sóng ánh sáng khác nhau ra sao. Một số khoáng vật tạo mẫu đặc trưng gợi ý điều kiện hóa học quá khứ. Tuy nhiên dấu hiệu quang phổ có thể mơ hồ khi bề mặt gồm hỗn hợp hoặc bụi. Nhà khoa học so quan sát với mẫu tham chiếu trong lab và kiểm tra cách diễn giải có phù hợp phép đo khác không. Một bản đồ nhiều màu hiếm khi là toàn bộ câu chuyện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A lander or rover can examine rocks at much closer range. Detailed images may reveal grain size and arrangements that are difficult to see from orbit. Instruments may also identify the chemical composition of selected samples. The drawback is limited coverage: a few sites cannot represent an entire planet. Choosing where to study is therefore a major source of sampling bias.",
+      "translation_vi": "Tàu đổ bộ hoặc xe tự hành có thể nghiên cứu đá ở khoảng cách gần hơn nhiều. Ảnh chi tiết có thể cho thấy kích cỡ và cách sắp xếp hạt khó nhìn từ quỹ đạo. Thiết bị còn xác định thành phần hóa học của mẫu được chọn. Nhược điểm là phạm vi hẹp: vài địa điểm không đại diện cả hành tinh. Chọn nơi nghiên cứu vì vậy là nguồn thiên lệch lấy mẫu quan trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Sample-return missions could offer more precise analysis in laboratories on Earth, where larger and more flexible instruments are available. Yet collecting, protecting and transporting material is complex. A returned sample represents a very small location, and contamination must be considered. Greater analytical precision does not erase the need to understand where the material originated and how it was handled.",
+      "translation_vi": "Nhiệm vụ mang mẫu về có thể cho phân tích chính xác hơn trong phòng thí nghiệm Trái Đất, nơi có thiết bị lớn và linh hoạt hơn. Nhưng thu thập, bảo vệ và vận chuyển vật chất phức tạp. Mẫu mang về đại diện địa điểm rất nhỏ và cần xét nguy cơ nhiễm bẩn. Độ chính xác phân tích cao hơn không xóa nhu cầu hiểu nguồn gốc và cách xử lý vật liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The most convincing conclusions come from converging evidence. Orbital observations provide context, surface measurements add local detail and laboratory analysis can investigate particular samples. If results disagree, researchers revisit their assumptions rather than choosing the most exciting claim. The goal is not to find a single instrument that answers everything, but to build an explanation that survives several independent tests.",
+      "translation_vi": "Kết luận thuyết phục nhất đến từ bằng chứng hội tụ. Quan sát quỹ đạo cung cấp bối cảnh, đo trên bề mặt bổ sung chi tiết tại chỗ và phân tích phòng thí nghiệm nghiên cứu mẫu cụ thể. Nếu kết quả bất đồng, nhà nghiên cứu xem lại giả định thay vì chọn khẳng định hấp dẫn nhất. Mục tiêu không phải tìm một thiết bị trả lời mọi thứ mà xây lời giải thích chịu được nhiều kiểm tra độc lập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Planetary images should be interpreted with geological ____.",
+      "correct_answers": [
+        "context"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “context” nằm tại đoạn T01. Nội dung bằng chứng: Nhà khoa học tìm bằng chứng về nước cổ trên hành tinh khác có thể dùng nhiều thiết bị. Camera quỹ đạo có thể cho thấy kênh hoặc địa hình phân lớp, nhưng hình dạng riêng nó không chứng minh đặc điểm hình thành thế nào. Các mô hình trông giống nhau có thể do quá trình khác nhau. Vì thế nhà nghiên cứu kết hợp ảnh với phép đo thành phần, kết cấu và bối cảnh địa chất trước khi kết luận.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Studying interactions between material and light is called ____.",
+      "correct_answers": [
+        "Spectroscopy"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “Spectroscopy” nằm tại đoạn T02. Nội dung bằng chứng: Quang phổ học nghiên cứu vật chất tương tác với các bước sóng ánh sáng khác nhau ra sao. Một số khoáng vật tạo mẫu đặc trưng gợi ý điều kiện hóa học quá khứ. Tuy nhiên dấu hiệu quang phổ có thể mơ hồ khi bề mặt gồm hỗn hợp hoặc bụi. Nhà khoa học so quan sát với mẫu tham chiếu trong lab và kiểm tra cách diễn giải có phù hợp phép đo khác không. Một bản đồ nhiều màu hiếm khi là toàn bộ câu chuyện.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Examining only a few sites can introduce sampling ____.",
+      "correct_answers": [
+        "bias"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “bias” nằm tại đoạn T03. Nội dung bằng chứng: Tàu đổ bộ hoặc xe tự hành có thể nghiên cứu đá ở khoảng cách gần hơn nhiều. Ảnh chi tiết có thể cho thấy kích cỡ và cách sắp xếp hạt khó nhìn từ quỹ đạo. Thiết bị còn xác định thành phần hóa học của mẫu được chọn. Nhược điểm là phạm vi hẹp: vài địa điểm không đại diện cả hành tinh. Chọn nơi nghiên cứu vì vậy là nguồn thiên lệch lấy mẫu quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Returned extraterrestrial samples need protection from ____.",
+      "correct_answers": [
+        "contamination"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “contamination” nằm tại đoạn T04. Nội dung bằng chứng: Nhiệm vụ mang mẫu về có thể cho phân tích chính xác hơn trong phòng thí nghiệm Trái Đất, nơi có thiết bị lớn và linh hoạt hơn. Nhưng thu thập, bảo vệ và vận chuyển vật chất phức tạp. Mẫu mang về đại diện địa điểm rất nhỏ và cần xét nguy cơ nhiễm bẩn. Độ chính xác phân tích cao hơn không xóa nhu cầu hiểu nguồn gốc và cách xử lý vật liệu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Strong conclusions are built from ____ evidence.",
+      "correct_answers": [
+        "converging"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “converging” nằm tại đoạn T05. Nội dung bằng chứng: Kết luận thuyết phục nhất đến từ bằng chứng hội tụ. Quan sát quỹ đạo cung cấp bối cảnh, đo trên bề mặt bổ sung chi tiết tại chỗ và phân tích phòng thí nghiệm nghiên cứu mẫu cụ thể. Nếu kết quả bất đồng, nhà nghiên cứu xem lại giả định thay vì chọn khẳng định hấp dẫn nhất. Mục tiêu không phải tìm một thiết bị trả lời mọi thứ mà xây lời giải thích chịu được nhiều kiểm tra độc lập.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "How should scientists interpret an apparently water-shaped channel?",
+      "correct_answers": [
+        "Combine orbital images with compositional and local geological evidence"
+      ],
+      "options": [
+        "Its shape alone proves flowing water created it",
+        "Combine orbital images with compositional and local geological evidence",
+        "Ignore any surface measurements that contradict an orbital image"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Kết luận thuyết phục nhất đến từ bằng chứng hội tụ. Quan sát quỹ đạo cung cấp bối cảnh, đo trên bề mặt bổ sung chi tiết tại chỗ và phân tích phòng thí nghiệm nghiên cứu mẫu cụ thể. Nếu kết quả bất đồng, nhà nghiên cứu xem lại giả định thay vì chọn khẳng định hấp dẫn nhất. Mục tiêu không phải tìm một thiết bị trả lời mọi thứ mà xây lời giải thích chịu được nhiều kiểm tra độc lập. Phương án chính xác: “Combine orbital images with compositional and local geological evidence”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Spectroscopy examines how material interacts with different wavelengths of light. Certain minerals produce distinctive patterns that can suggest past chemical conditions. However, a spectral signature may be ambiguous when surfaces contain mixtures or dust. Scientists compare observations with laboratory references and check whether the same interpretation fits other measurements. A single colourful map is rarely the complete story."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Quang phổ học nghiên cứu vật chất tương tác với các bước sóng ánh sáng khác nhau ra sao. Một số khoáng vật tạo mẫu đặc trưng gợi ý điều kiện hóa học quá khứ. Tuy nhiên dấu hiệu quang phổ có thể mơ hồ khi bề mặt gồm hỗn hợp hoặc bụi. Nhà khoa học so quan sát với mẫu tham chiếu trong lab và kiểm tra cách diễn giải có phù hợp phép đo khác không. Một bản đồ nhiều màu hiếm khi là toàn bộ câu chuyện.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Sample-return missions could offer more precise analysis in laboratories on Earth, where larger and more flexible instruments are available. Yet collecting, protecting and transporting material is complex. A returned sample represents a very small location, and contamination must be considered. Greater analytical precision does not erase the need to understand where the material originated and how it was handled."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Nhiệm vụ mang mẫu về có thể cho phân tích chính xác hơn trong phòng thí nghiệm Trái Đất, nơi có thiết bị lớn và linh hoạt hơn. Nhưng thu thập, bảo vệ và vận chuyển vật chất phức tạp. Mẫu mang về đại diện địa điểm rất nhỏ và cần xét nguy cơ nhiễm bẩn. Độ chính xác phân tích cao hơn không xóa nhu cầu hiểu nguồn gốc và cách xử lý vật liệu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Scientists seeking evidence of ancient water on another planet can use several different instruments. An orbital camera may reveal channels or layered terrain, but shape alone does not prove how a feature formed. Similar-looking patterns can result from different processes. Researchers therefore combine images with measurements of composition, texture and ____ before drawing conclusions.",
+      "correct_answers": [
+        "geological context"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “geological context”, nghĩa: bối cảnh địa chất. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "geological context",
+      "pos": "n. phr.",
+      "meaning_vi": "bối cảnh địa chất",
+      "example_en": "Scientists seeking evidence of ancient water on another planet can use several different instruments. An orbital camera may reveal channels or layered terrain, but shape alone does not prove how a feature formed. Similar-looking patterns can result from different processes. Researchers therefore combine images with measurements of composition, texture and geological context before drawing conclusions.",
+      "example_vi": "Nhà khoa học tìm bằng chứng về nước cổ trên hành tinh khác có thể dùng nhiều thiết bị. Camera quỹ đạo có thể cho thấy kênh hoặc địa hình phân lớp, nhưng hình dạng riêng nó không chứng minh đặc điểm hình thành thế nào. Các mô hình trông giống nhau có thể do quá trình khác nhau. Vì thế nhà nghiên cứu kết hợp ảnh với phép đo thành phần, kết cấu và bối cảnh địa chất trước khi kết luận.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "Spectroscopy",
+      "pos": "n.",
+      "meaning_vi": "quang phổ học",
+      "example_en": "Spectroscopy examines how material interacts with different wavelengths of light. Certain minerals produce distinctive patterns that can suggest past chemical conditions. However, a spectral signature may be ambiguous when surfaces contain mixtures or dust. Scientists compare observations with laboratory references and check whether the same interpretation fits other measurements. A single colourful map is rarely the complete story.",
+      "example_vi": "Quang phổ học nghiên cứu vật chất tương tác với các bước sóng ánh sáng khác nhau ra sao. Một số khoáng vật tạo mẫu đặc trưng gợi ý điều kiện hóa học quá khứ. Tuy nhiên dấu hiệu quang phổ có thể mơ hồ khi bề mặt gồm hỗn hợp hoặc bụi. Nhà khoa học so quan sát với mẫu tham chiếu trong lab và kiểm tra cách diễn giải có phù hợp phép đo khác không. Một bản đồ nhiều màu hiếm khi là toàn bộ câu chuyện.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "sampling bias",
+      "pos": "n. phr.",
+      "meaning_vi": "thiên lệch lấy mẫu",
+      "example_en": "A lander or rover can examine rocks at much closer range. Detailed images may reveal grain size and arrangements that are difficult to see from orbit. Instruments may also identify the chemical composition of selected samples. The drawback is limited coverage: a few sites cannot represent an entire planet. Choosing where to study is therefore a major source of sampling bias.",
+      "example_vi": "Tàu đổ bộ hoặc xe tự hành có thể nghiên cứu đá ở khoảng cách gần hơn nhiều. Ảnh chi tiết có thể cho thấy kích cỡ và cách sắp xếp hạt khó nhìn từ quỹ đạo. Thiết bị còn xác định thành phần hóa học của mẫu được chọn. Nhược điểm là phạm vi hẹp: vài địa điểm không đại diện cả hành tinh. Chọn nơi nghiên cứu vì vậy là nguồn thiên lệch lấy mẫu quan trọng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "converging evidence",
+      "pos": "n. phr.",
+      "meaning_vi": "bằng chứng hội tụ",
+      "example_en": "The most convincing conclusions come from converging evidence. Orbital observations provide context, surface measurements add local detail and laboratory analysis can investigate particular samples. If results disagree, researchers revisit their assumptions rather than choosing the most exciting claim. The goal is not to find a single instrument that answers everything, but to build an explanation that survives several independent tests.",
+      "example_vi": "Kết luận thuyết phục nhất đến từ bằng chứng hội tụ. Quan sát quỹ đạo cung cấp bối cảnh, đo trên bề mặt bổ sung chi tiết tại chỗ và phân tích phòng thí nghiệm nghiên cứu mẫu cụ thể. Nếu kết quả bất đồng, nhà nghiên cứu xem lại giả định thay vì chọn khẳng định hấp dẫn nhất. Mục tiêu không phải tìm một thiết bị trả lời mọi thứ mà xây lời giải thích chịu được nhiều kiểm tra độc lập.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b3e815e3653f4818b278a476ae9ed0ff063369672a4b23741829672c61944ed3",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

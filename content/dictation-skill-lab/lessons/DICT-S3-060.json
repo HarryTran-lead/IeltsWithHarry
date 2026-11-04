@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-060",
+  "status": "draft",
+  "level": "L7",
+  "section": 3,
+  "topic": "Team Problem Solving",
+  "title": "Team Problem Solving – Research Citation Migration",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Sienna – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Marco – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Helen – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our research repository has thousands of old citations. Since the university changed its website, several links now lead to missing pages, and researchers are asking us to repair them quickly.",
+      "translation_vi": "Kho nghiên cứu có hàng nghìn trích dẫn cũ. Từ khi trường đổi website, một số liên kết dẫn tới trang không tồn tại, và nhà nghiên cứu yêu cầu ta sửa nhanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We could redirect every old address to the repository home page, but then a reader wouldn't reach the cited report. A technically functioning link isn't necessarily a useful scholarly reference.",
+      "translation_vi": "Ta có thể chuyển mọi địa chỉ cũ về trang chủ kho, nhưng độc giả sẽ không tới báo cáo được trích. Liên kết hoạt động về kỹ thuật chưa chắc là tài liệu tham khảo hữu ích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Many records have digital object identifiers, which should remain stable across website changes. For those, let's update the resolution target rather than invent new identifiers for the same publication.",
+      "translation_vi": "Nhiều hồ sơ có mã DOI, vốn nên ổn định qua đổi website. Với chúng, hãy cập nhật đích phân giải thay vì tạo mã mới cho cùng công bố.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The complication is that some documents have revised editions. If we point every citation to the latest file, someone discussing an earlier version may see different page numbers and conclusions.",
+      "translation_vi": "Vấn đề là một số tài liệu có bản sửa. Nếu mọi trích dẫn trỏ tới bản mới nhất, người bàn bản cũ có thể gặp số trang và kết luận khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Then each edition needs a persistent version record. The landing page can display relationships between versions, but it shouldn't silently replace the file that a citation originally referred to.",
+      "translation_vi": "Vậy mỗi ấn bản cần bản ghi phiên bản bền vững. Trang đích có thể thể hiện quan hệ giữa các bản, nhưng không được âm thầm thay file được trích ban đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "We also need an audit of the migration script. A small test set should include documents with one version, multiple versions and missing metadata before we run anything across the full repository.",
+      "translation_vi": "Ta còn cần kiểm toán script chuyển dữ liệu. Bộ thử nhỏ nên gồm tài liệu một bản, nhiều bản và thiếu metadata trước khi chạy khắp kho.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Could we prioritise records that appear in course reading lists? Students are using them this week, while the less frequently accessed archives could be repaired after the initial release.",
+      "translation_vi": "Ta có thể ưu tiên hồ sơ trong danh sách đọc môn học không? Sinh viên đang dùng tuần này, còn kho ít truy cập có thể sửa sau đợt phát hành đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Yes, but log every redirect and keep a rollback file. If the migration maps a citation incorrectly, we need a way to restore the previous target and investigate the cause.",
+      "translation_vi": "Được, nhưng phải ghi mọi chuyển hướng và giữ file hoàn tác. Nếu chuyển dữ liệu ánh xạ sai trích dẫn, ta cần cách khôi phục đích cũ và tìm nguyên nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "The agreed plan is a tested DOI repair, version-aware landing pages and a staged rollout starting with course lists. We will measure successful document access, not merely the number of links that return a response.",
+      "translation_vi": "Kế hoạch thống nhất là sửa DOI có thử nghiệm, trang đích biết phiên bản và triển khai theo đợt bắt đầu từ danh sách môn. Ta đo truy cập tài liệu thành công, không chỉ số liên kết trả phản hồi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why is redirecting every citation to the repository home page insufficient?",
+      "correct_answers": [
+        "Readers would no longer reach the specific cited report"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Marco nói: “Ta có thể chuyển mọi địa chỉ cũ về trang chủ kho, nhưng độc giả sẽ không tới báo cáo được trích. Liên kết hoạt động về kỹ thuật chưa chắc là tài liệu tham khảo hữu ích.” Đáp án “Readers would no longer reach the specific cited report” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Different editions require version records",
+        "Course reading lists contain urgent links",
+        "Readers would no longer reach the specific cited report"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Many repository records have digital object ____ .",
+      "correct_answers": [
+        "identifiers"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Nhiều hồ sơ có mã DOI, vốn nên ổn định qua đổi website. Với chúng, hãy cập nhật đích phân giải thay vì tạo mã mới cho cùng công bố.” Cụm cần điền nghe đúng nguyên văn là “identifiers”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker says each edition must keep a persistent version record?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người nói Marco (Speaker B) đưa ra ý này tại T05: “Vậy mỗi ấn bản cần bản ghi phiên bản bền vững. Trang đích có thể thể hiện quan hệ giữa các bản, nhưng không được âm thầm thay file được trích ban đầu.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why prioritise records used in course reading lists?",
+      "correct_answers": [
+        "Students need those references this week"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Sienna nói: “Ta có thể ưu tiên hồ sơ trong danh sách đọc môn học không? Sinh viên đang dùng tuần này, còn kho ít truy cập có thể sửa sau đợt phát hành đầu.” Đáp án “Students need those references this week” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To ensure the latest revision replaces every older cited version",
+        "To guarantee that the repository has only one page per journal",
+        "Students need those references this week"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Marco asks for a file enabling the team to ____ incorrect redirects.",
+      "correct_answers": [
+        "restore"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Được, nhưng phải ghi mọi chuyển hướng và giữ file hoàn tác. Nếu chuyển dữ liệu ánh xạ sai trích dẫn, ta cần cách khôi phục đích cũ và tìm nguyên nhân.” Cụm cần điền nghe đúng nguyên văn là “restore”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "Which lists will be repaired first during staged rollout?",
+      "correct_answers": [
+        "course lists"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Kế hoạch thống nhất là sửa DOI có thử nghiệm, trang đích biết phiên bản và triển khai theo đợt bắt đầu từ danh sách môn. Ta đo truy cập tài liệu thành công, không chỉ số liên kết trả phản hồi.” Trả lời ngắn theo chi tiết “course lists”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "The complication is that some documents have revised editions. If we point every citation to the latest file, someone discussing an earlier version may see different page numbers and conclusions."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “The complication is that some documents have revised editions. If we point every citation to the latest file, someone discussing an earlier version may see different page numbers and conclusions.”\nBản dịch: Vấn đề là một số tài liệu có bản sửa. Nếu mọi trích dẫn trỏ tới bản mới nhất, người bàn bản cũ có thể gặp số trang và kết luận khác.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Could we prioritise records that appear in course reading lists? Students are using them this week, while the less frequently accessed archives could be repaired after the initial release."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “Could we prioritise records that appear in course reading lists? Students are using them this week, while the less frequently accessed archives could be repaired after the initial release.”\nBản dịch: Ta có thể ưu tiên hồ sơ trong danh sách đọc môn học không? Sinh viên đang dùng tuần này, còn kho ít truy cập có thể sửa sau đợt phát hành đầu.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T03 rồi điền đúng phần thiếu: Many records have ____, which should remain stable across website changes. For those, let's update the resolution target rather than invent new identifiers for the same publication.",
+      "correct_answers": [
+        "digital object identifiers"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “digital object identifiers” nghĩa là mã định danh đối tượng số. Đối chiếu: “Many records have digital object identifiers, which should remain stable across website changes. For those, let's update the resolution target rather than invent new identifiers for the same publication.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "digital object identifiers",
+      "pos": "n. phr.",
+      "meaning_vi": "mã định danh đối tượng số",
+      "example_en": "Many records have digital object identifiers, which should remain stable across website changes. For those, let's update the resolution target rather than invent new identifiers for the same publication.",
+      "example_vi": "Nhiều hồ sơ có mã DOI, vốn nên ổn định qua đổi website. Với chúng, hãy cập nhật đích phân giải thay vì tạo mã mới cho cùng công bố.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "persistent version record",
+      "pos": "n. phr.",
+      "meaning_vi": "bản ghi phiên bản lâu dài",
+      "example_en": "Then each edition needs a persistent version record. The landing page can display relationships between versions, but it shouldn't silently replace the file that a citation originally referred to.",
+      "example_vi": "Vậy mỗi ấn bản cần bản ghi phiên bản bền vững. Trang đích có thể thể hiện quan hệ giữa các bản, nhưng không được âm thầm thay file được trích ban đầu.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "rollback file",
+      "pos": "n. phr.",
+      "meaning_vi": "tệp hoàn tác",
+      "example_en": "Yes, but log every redirect and keep a rollback file. If the migration maps a citation incorrectly, we need a way to restore the previous target and investigate the cause.",
+      "example_vi": "Được, nhưng phải ghi mọi chuyển hướng và giữ file hoàn tác. Nếu chuyển dữ liệu ánh xạ sai trích dẫn, ta cần cách khôi phục đích cũ và tìm nguyên nhân.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "staged rollout",
+      "pos": "n. phr.",
+      "meaning_vi": "triển khai theo từng đợt",
+      "example_en": "The agreed plan is a tested DOI repair, version-aware landing pages and a staged rollout starting with course lists. We will measure successful document access, not merely the number of links that return a response.",
+      "example_vi": "Kế hoạch thống nhất là sửa DOI có thử nghiệm, trang đích biết phiên bản và triển khai theo đợt bắt đầu từ danh sách môn. Ta đo truy cập tài liệu thành công, không chỉ số liên kết trả phản hồi.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e8c7d61b8ac8a63f7d884fae07b08d7778d672ae5c2bf742c245e0ad9e55aba4",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

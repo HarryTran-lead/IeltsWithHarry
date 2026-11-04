@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-054",
+  "status": "draft",
+  "level": "L6",
+  "section": 2,
+  "topic": "Local Festivals",
+  "title": "Arts Festival: Managing Multiple Venues",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Local Festivals ở mức L6, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to the volunteer briefing for this year's city arts festival. We are using five venues rather than three, so clear directions and accurate information will be especially important.",
+      "translation_vi": "Chào mừng buổi hướng dẫn tình nguyện viên lễ hội nghệ thuật thành phố năm nay. Chúng tôi sử dụng năm địa điểm thay vì ba nên chỉ đường rõ ràng và thông tin chính xác đặc biệt quan trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The opening exhibition is in the old courthouse, while the photography workshops are in the neighbouring design school. Several online listings still place both activities in the courthouse, which is incorrect.",
+      "translation_vi": "Triển lãm khai mạc tại tòa án cũ, còn lớp nhiếp ảnh ở trường thiết kế kế bên. Một số danh sách trực tuyến vẫn ghi cả hai hoạt động tại tòa án, điều này không đúng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Visitors can move between these buildings along the pedestrian lane. However, the public sculpture tour begins at the eastern square, not at the courtyard between the two buildings.",
+      "translation_vi": "Khách có thể đi giữa hai tòa theo đường đi bộ. Tuy nhiên tour điêu khắc công cộng bắt đầu ở quảng trường phía đông, không phải sân giữa hai tòa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A small shuttle connects the riverside theatre with the central gallery every twenty minutes. It is intended mainly for visitors with limited mobility, though empty seats may be offered to others.",
+      "translation_vi": "Xe trung chuyển nhỏ nối nhà hát ven sông với phòng trưng bày trung tâm mỗi hai mươi phút. Xe ưu tiên khách khó di chuyển, nhưng ghế trống có thể dành cho người khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The closing performance was advertised for seven thirty. Because the outdoor lighting needs additional testing, the performance will begin at eight, with doors opening half an hour earlier.",
+      "translation_vi": "Tiết mục bế mạc từng được quảng cáo bảy giờ ba mươi. Vì đèn ngoài trời cần thử thêm, chương trình bắt đầu tám giờ và mở cửa trước nửa giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Please direct anyone seeking accessible seating to the festival information team rather than promising a particular row. The seating plan depends on the needs of individual visitors.",
+      "translation_vi": "Hãy hướng người cần ghế tiếp cận đến đội thông tin lễ hội thay vì hứa một hàng ghế cụ thể. Sơ đồ ghế tùy nhu cầu từng khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Finally, all volunteers should return their identification badges to the desk beside the south gate by nine fifteen. The badges are reused at our next community event.",
+      "translation_vi": "Cuối cùng, mọi tình nguyện viên trả thẻ nhận dạng tại bàn cạnh cổng nam trước chín giờ mười lăm. Thẻ sẽ tái sử dụng ở sự kiện cộng đồng tiếp theo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Opening exhibition venue: ____",
+      "correct_answers": [
+        "old courthouse"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Triển lãm khai mạc tại tòa án cũ, còn lớp nhiếp ảnh ở trường thiết kế kế bên. Một số danh sách trực tuyến vẫn ghi cả hai hoạt động tại tòa án, điều này không đúng. Đáp án được nhắc trong đoạn T02: “old courthouse”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Photography workshops venue: ____",
+      "correct_answers": [
+        "design school"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Triển lãm khai mạc tại tòa án cũ, còn lớp nhiếp ảnh ở trường thiết kế kế bên. Một số danh sách trực tuyến vẫn ghi cả hai hoạt động tại tòa án, điều này không đúng. Đáp án được nhắc trong đoạn T02: “design school”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Sculpture tour begins at the: ____",
+      "correct_answers": [
+        "eastern square"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Khách có thể đi giữa hai tòa theo đường đi bộ. Tuy nhiên tour điêu khắc công cộng bắt đầu ở quảng trường phía đông, không phải sân giữa hai tòa. Đáp án được nhắc trong đoạn T03: “eastern square”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Shuttle operates every: ____",
+      "correct_answers": [
+        "twenty minutes"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Xe trung chuyển nhỏ nối nhà hát ven sông với phòng trưng bày trung tâm mỗi hai mươi phút. Xe ưu tiên khách khó di chuyển, nhưng ghế trống có thể dành cho người khác. Đáp án được nhắc trong đoạn T04: “twenty minutes”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Closing performance now starts at?",
+      "correct_answers": [
+        "eight"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tiết mục bế mạc từng được quảng cáo bảy giờ ba mươi. Vì đèn ngoài trời cần thử thêm, chương trình bắt đầu tám giờ và mở cửa trước nửa giờ. Đáp án được nhắc trong đoạn T05: “eight”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Volunteer badges due by: ____",
+      "correct_answers": [
+        "nine fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Cuối cùng, mọi tình nguyện viên trả thẻ nhận dạng tại bàn cạnh cổng nam trước chín giờ mười lăm. Thẻ sẽ tái sử dụng ở sự kiện cộng đồng tiếp theo. Đáp án được nhắc trong đoạn T07: “nine fifteen”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "X01",
+      "type": "mcq",
+      "prompt": "Where do the photography workshops take place?",
+      "options": [
+        "in the old courthouse",
+        "in the design school",
+        "in the central gallery"
+      ],
+      "correct_answers": [
+        "in the design school"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Triển lãm khai mạc tại tòa án cũ, còn lớp nhiếp ảnh ở trường thiết kế kế bên. Một số danh sách trực tuyến vẫn ghi cả hai hoạt động tại tòa án, điều này không đúng. Trong ba lựa chọn, đáp án chính xác là “in the design school”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "supplementary_mcq",
+        "distractor_detection",
+        "paraphrase"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "Visitors can move between these buildings along the pedestrian lane. However, the public sculpture tour begins at the eastern square, not at the courtyard between the two buildings."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Visitors can move between these buildings along the pedestrian lane. However, the public sculpture tour begins at the eastern square, not at the courtyard between the two buildings. Nghĩa: Khách có thể đi giữa hai tòa theo đường đi bộ. Tuy nhiên tour điêu khắc công cộng bắt đầu ở quảng trường phía đông, không phải sân giữa hai tòa. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "The closing performance was advertised for seven thirty. Because the outdoor lighting needs additional testing, the performance will begin at eight, with doors opening half an hour earlier."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The closing performance was advertised for seven thirty. Because the outdoor lighting needs additional testing, the performance will begin at eight, with doors opening half an hour earlier. Nghĩa: Tiết mục bế mạc từng được quảng cáo bảy giờ ba mươi. Vì đèn ngoài trời cần thử thêm, chương trình bắt đầu tám giờ và mở cửa trước nửa giờ. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: The opening exhibition is in the ____, while the photography workshops are in the neighbouring design school. Several online listings still place both activities in the courthouse, which is incorrect.",
+      "correct_answers": [
+        "old courthouse"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “old courthouse” xuất hiện trong câu gốc: The opening exhibition is in the old courthouse, while the photography workshops are in the neighbouring design school. Several online listings still place both activities in the courthouse, which is incorrect. Nghĩa: Triển lãm khai mạc tại tòa án cũ, còn lớp nhiếp ảnh ở trường thiết kế kế bên. Một số danh sách trực tuyến vẫn ghi cả hai hoạt động tại tòa án, điều này không đúng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "pedestrian lane",
+      "pos": "n. phr.",
+      "meaning_vi": "đường dành cho người đi bộ",
+      "example_en": "Visitors can move between these buildings along the pedestrian lane. However, the public sculpture tour begins at the eastern square, not at the courtyard between the two buildings.",
+      "example_vi": "Khách có thể đi giữa hai tòa theo đường đi bộ. Tuy nhiên tour điêu khắc công cộng bắt đầu ở quảng trường phía đông, không phải sân giữa hai tòa.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "sculpture tour",
+      "pos": "n. phr.",
+      "meaning_vi": "tour tham quan tượng điêu khắc",
+      "example_en": "Visitors can move between these buildings along the pedestrian lane. However, the public sculpture tour begins at the eastern square, not at the courtyard between the two buildings.",
+      "example_vi": "Khách có thể đi giữa hai tòa theo đường đi bộ. Tuy nhiên tour điêu khắc công cộng bắt đầu ở quảng trường phía đông, không phải sân giữa hai tòa.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "accessible seating",
+      "pos": "n. phr.",
+      "meaning_vi": "chỗ ngồi thuận tiện tiếp cận",
+      "example_en": "Please direct anyone seeking accessible seating to the festival information team rather than promising a particular row. The seating plan depends on the needs of individual visitors.",
+      "example_vi": "Hãy hướng người cần ghế tiếp cận đến đội thông tin lễ hội thay vì hứa một hàng ghế cụ thể. Sơ đồ ghế tùy nhu cầu từng khách.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "identification badges",
+      "pos": "n. phr.",
+      "meaning_vi": "thẻ nhận dạng",
+      "example_en": "Finally, all volunteers should return their identification badges to the desk beside the south gate by nine fifteen. The badges are reused at our next community event.",
+      "example_vi": "Cuối cùng, mọi tình nguyện viên trả thẻ nhận dạng tại bàn cạnh cổng nam trước chín giờ mười lăm. Thẻ sẽ tái sử dụng ở sự kiện cộng đồng tiếp theo.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "7a69da0898740b8da87b9faed5c299da88a8004750337639610a242615c45169",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

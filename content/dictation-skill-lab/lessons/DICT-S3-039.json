@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-039",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Study Skills",
+  "title": "Study Skills – Lecture Note-Taking Strategy",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Amelia – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Tom – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Chloe – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I downloaded the transcript of our economics lecture and highlighted nearly every sentence. It felt productive, but I couldn't explain the lecturer's main argument during the tutorial.",
+      "translation_vi": "Mình tải bản chép bài giảng kinh tế và tô sáng gần như mọi câu. Cảm giác khá hiệu quả, nhưng đến buổi thảo luận mình không giải thích được luận điểm chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Highlighting is useful only if you distinguish main claims from supporting details. Perhaps try listening once without reading, then writing a five-line outline from memory before opening the transcript.",
+      "translation_vi": "Tô sáng chỉ có ích khi phân biệt luận điểm chính với chi tiết hỗ trợ. Thử nghe một lần không đọc rồi viết dàn ý năm dòng từ trí nhớ trước khi mở transcript xem.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "I prefer pausing after each section and asking what evidence the lecturer used. When I simply copy phrases, I often remember terminology but not the reason a particular example matters.",
+      "translation_vi": "Mình thích dừng sau từng phần và hỏi giảng viên đã dùng bằng chứng gì. Khi chỉ chép cụm từ, mình hay nhớ thuật ngữ mà không hiểu ví dụ ấy có vai trò gì.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The problem is that some sections run for twelve minutes. If I pause too often, my notes lose the overall structure. Could I first mark the lecturer's transitions, such as contrasts and conclusions?",
+      "translation_vi": "Vấn đề là có phần kéo dài mười hai phút. Nếu dừng quá thường, ghi chú mất cấu trúc tổng thể. Mình có thể đánh dấu từ chuyển ý như đối lập và kết luận trước không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That sounds reasonable. Listen for the headings and signposting on the first pass. On the second, fill gaps using short paraphrases instead of transcribing every sentence exactly.",
+      "translation_vi": "Nghe vậy hợp lý. Lượt đầu nghe đề mục và tín hiệu chuyển ý. Lượt hai điền thiếu bằng diễn đạt ngắn của mình thay vì chép chính xác từng câu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "For revision, let's test each other without the transcript. We can ask why the lecturer rejected the first explanation, not just what that explanation was called.",
+      "translation_vi": "Khi ôn, ta hỏi nhau không nhìn transcript. Có thể hỏi vì sao giảng viên bác bỏ cách giải thích đầu tiên, chứ không chỉ hỏi nó tên gì.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I also need to stop treating unfamiliar vocabulary as a reason to restart the recording. If the word isn't central, I can infer the meaning and check it after the section ends.",
+      "translation_vi": "Mình cũng cần thôi coi từ lạ là lý do nghe lại từ đầu. Nếu nó không cốt yếu, mình có thể đoán nghĩa rồi tra sau khi đoạn kết thúc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Let's try this method with the next lecture: a first-pass outline, a second-pass evidence check and three retrieval questions. We'll compare the results with your old highlighting method.",
+      "translation_vi": "Hãy thử với bài giảng sau: dàn ý lượt một, kiểm bằng chứng lượt hai và ba câu tự nhớ. Ta sẽ so kết quả với cách tô sáng cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Agreed. The measure should be whether you can explain the argument a day later, not how colourful the transcript looks. I'll prepare the retrieval questions for Friday.",
+      "translation_vi": "Đồng ý. Thước đo nên là bạn giải thích được lập luận ngày hôm sau, không phải bản chép nhiều màu ra sao. Mình sẽ chuẩn bị câu hỏi tự nhớ cho thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why does Tom criticise highlighting almost every sentence?",
+      "correct_answers": [
+        "It fails to distinguish important claims from supporting details"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Tom nói: “Tô sáng chỉ có ích khi phân biệt luận điểm chính với chi tiết hỗ trợ. Thử nghe một lần không đọc rồi viết dàn ý năm dòng từ trí nhớ trước khi mở transcript xem.” Đáp án “It fails to distinguish important claims from supporting details” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The lecture contains too many unfamiliar terms",
+        "The outline was written after the tutorial",
+        "It fails to distinguish important claims from supporting details"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Chloe prefers stopping after each ____ .",
+      "correct_answers": [
+        "section"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Mình thích dừng sau từng phần và hỏi giảng viên đã dùng bằng chứng gì. Khi chỉ chép cụm từ, mình hay nhớ thuật ngữ mà không hiểu ví dụ ấy có vai trò gì.” Cụm cần điền nghe đúng nguyên văn là “section”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker recommends testing each other without the transcript?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói Chloe (Speaker C) đưa ra ý này tại T06: “Khi ôn, ta hỏi nhau không nhìn transcript. Có thể hỏi vì sao giảng viên bác bỏ cách giải thích đầu tiên, chứ không chỉ hỏi nó tên gì.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What does Amelia decide about unfamiliar nonessential vocabulary?",
+      "correct_answers": [
+        "Infer it and check after the section ends"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Amelia nói: “Mình cũng cần thôi coi từ lạ là lý do nghe lại từ đầu. Nếu nó không cốt yếu, mình có thể đoán nghĩa rồi tra sau khi đoạn kết thúc.” Đáp án “Infer it and check after the section ends” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Restart the entire recording at every unknown word",
+        "Ignore any passage containing technical vocabulary",
+        "Infer it and check after the section ends"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Tom recommends ____ retrieval questions.",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Hãy thử với bài giảng sau: dàn ý lượt một, kiểm bằng chứng lượt hai và ba câu tự nhớ. Ta sẽ so kết quả với cách tô sáng cũ.” Cụm cần điền nghe đúng nguyên văn là “three”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "When will Chloe prepare the retrieval questions?",
+      "correct_answers": [
+        "Friday"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Đồng ý. Thước đo nên là bạn giải thích được lập luận ngày hôm sau, không phải bản chép nhiều màu ra sao. Mình sẽ chuẩn bị câu hỏi tự nhớ cho thứ Sáu.” Trả lời ngắn theo chi tiết “Friday”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "The problem is that some sections run for twelve minutes. If I pause too often, my notes lose the overall structure. Could I first mark the lecturer's transitions, such as contrasts and conclusions?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “The problem is that some sections run for twelve minutes. If I pause too often, my notes lose the overall structure. Could I first mark the lecturer's transitions, such as contrasts and conclusions?”\nBản dịch: Vấn đề là có phần kéo dài mười hai phút. Nếu dừng quá thường, ghi chú mất cấu trúc tổng thể. Mình có thể đánh dấu từ chuyển ý như đối lập và kết luận trước không?\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I also need to stop treating unfamiliar vocabulary as a reason to restart the recording. If the word isn't central, I can infer the meaning and check it after the section ends."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “I also need to stop treating unfamiliar vocabulary as a reason to restart the recording. If the word isn't central, I can infer the meaning and check it after the section ends.”\nBản dịch: Mình cũng cần thôi coi từ lạ là lý do nghe lại từ đầu. Nếu nó không cốt yếu, mình có thể đoán nghĩa rồi tra sau khi đoạn kết thúc.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: I downloaded the transcript of our economics lecture and highlighted nearly every sentence. It felt productive, but I couldn't explain the lecturer's ____ during the tutorial.",
+      "correct_answers": [
+        "main argument"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “main argument” nghĩa là luận điểm chính. Đối chiếu: “I downloaded the transcript of our economics lecture and highlighted nearly every sentence. It felt productive, but I couldn't explain the lecturer's main argument during the tutorial.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "main argument",
+      "pos": "n. phr.",
+      "meaning_vi": "luận điểm chính",
+      "example_en": "I downloaded the transcript of our economics lecture and highlighted nearly every sentence. It felt productive, but I couldn't explain the lecturer's main argument during the tutorial.",
+      "example_vi": "Mình tải bản chép bài giảng kinh tế và tô sáng gần như mọi câu. Cảm giác khá hiệu quả, nhưng đến buổi thảo luận mình không giải thích được luận điểm chính.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "supporting details",
+      "pos": "n. phr.",
+      "meaning_vi": "chi tiết hỗ trợ",
+      "example_en": "Highlighting is useful only if you distinguish main claims from supporting details. Perhaps try listening once without reading, then writing a five-line outline from memory before opening the transcript.",
+      "example_vi": "Tô sáng chỉ có ích khi phân biệt luận điểm chính với chi tiết hỗ trợ. Thử nghe một lần không đọc rồi viết dàn ý năm dòng từ trí nhớ trước khi mở transcript xem.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "signposting",
+      "pos": "n.",
+      "meaning_vi": "tín hiệu chuyển ý",
+      "example_en": "That sounds reasonable. Listen for the headings and signposting on the first pass. On the second, fill gaps using short paraphrases instead of transcribing every sentence exactly.",
+      "example_vi": "Nghe vậy hợp lý. Lượt đầu nghe đề mục và tín hiệu chuyển ý. Lượt hai điền thiếu bằng diễn đạt ngắn của mình thay vì chép chính xác từng câu.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "retrieval questions",
+      "pos": "n. phr.",
+      "meaning_vi": "câu hỏi tự nhớ lại",
+      "example_en": "Let's try this method with the next lecture: a first-pass outline, a second-pass evidence check and three retrieval questions. We'll compare the results with your old highlighting method.",
+      "example_vi": "Hãy thử với bài giảng sau: dàn ý lượt một, kiểm bằng chứng lượt hai và ba câu tự nhớ. Ta sẽ so kết quả với cách tô sáng cũ.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "1931b8a8732f7886db2876124441682d33b785169013eb9ee979c6369c73c433",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

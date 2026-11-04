@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-024",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Study Skills",
+  "title": "Study Skills: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Grace – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Sam – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Jules – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our learning science seminar asks us to compare spaced practice with rereading. I assumed rereading was faster because students feel familiar with the material.",
+      "translation_vi": "Seminar khoa học học tập yêu cầu so sánh ôn cách quãng với đọc lại. Mình nghĩ đọc lại nhanh hơn vì sinh viên thấy quen nội dung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "That feeling can be misleading. The paper we read found that familiarity doesn't necessarily predict recall several days later.",
+      "translation_vi": "Cảm giác đó có thể đánh lừa. Bài nghiên cứu cho thấy quen thuộc không nhất thiết dự đoán nhớ lại sau vài ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We should be careful not to claim spaced practice is always better for every task. The study only tested vocabulary over one week.",
+      "translation_vi": "Ta không nên nói ôn cách quãng luôn tốt hơn cho mọi việc. Nghiên cứu chỉ thử từ vựng trong một tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "That's fair. Instead of debating which technique is universally best, we could explain when each approach is useful.",
+      "translation_vi": "Đúng. Thay vì tranh luận cách nào tốt tuyệt đối, ta giải thích khi nào mỗi cách hữu ích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "For the demonstration, I proposed showing the same word list twice in one session, but that doesn't illustrate spacing.",
+      "translation_vi": "Để minh họa, mình đề xuất cho xem cùng danh sách từ hai lần trong một buổi, nhưng vậy không thể hiện khoảng cách thời gian.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "We could give the class a short quiz at the start, then return to a few items after the discussion. It isn't a full experiment, but it demonstrates retrieval.",
+      "translation_vi": "Ta có thể cho lớp bài kiểm tra ngắn lúc đầu, rồi quay lại vài mục sau thảo luận. Không phải thí nghiệm đầy đủ nhưng minh họa nhớ lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We shouldn't present the quiz results as research evidence, though. Our classmates are a convenience group, and the interval is very short.",
+      "translation_vi": "Nhưng đừng coi kết quả kiểm tra là chứng cứ nghiên cứu. Bạn cùng lớp là nhóm thuận tiện và khoảng cách rất ngắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Agreed. It's just an activity. The published studies should support the claims we make about long-term retention.",
+      "translation_vi": "Đồng ý. Đó chỉ là hoạt động. Nghiên cứu công bố mới hỗ trợ nhận định về lưu giữ dài hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I can create a comparison table showing the study design, the retention test and the limits of each paper.",
+      "translation_vi": "Mình có thể tạo bảng so sánh thiết kế, bài kiểm tra ghi nhớ và hạn chế của từng nghiên cứu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I'll cover the practical advice for students, including how to schedule reviews instead of reading notes repeatedly the night before an exam.",
+      "translation_vi": "Mình sẽ nêu lời khuyên cho sinh viên, gồm cách xếp lịch ôn thay vì đọc ghi chú lặp lại đêm trước thi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "Then I'll introduce the evidence, and we can end with a short discussion of the uncertainty, rather than a simple ranking.",
+      "translation_vi": "Vậy mình giới thiệu chứng cứ, rồi kết bằng thảo luận về điều chưa chắc chắn thay vì xếp hạng đơn giản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "That structure answers the seminar question and makes clear the difference between an engaging classroom demonstration and a controlled study.",
+      "translation_vi": "Cấu trúc đó trả lời yêu cầu seminar và làm rõ khác biệt giữa minh họa trên lớp với nghiên cứu có kiểm soát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What is the problem with feeling familiar with reread material?",
+      "correct_answers": [
+        "Familiarity may not predict later recall"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Sam): “Cảm giác đó có thể đánh lừa. Bài nghiên cứu cho thấy quen thuộc không nhất thiết dự đoán nhớ lại sau vài ngày.” Đáp án: “Familiarity may not predict later recall”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "It always proves mastery",
+        "It prevents note-taking",
+        "Familiarity may not predict later recall"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The study only tested ____ over one week.",
+      "correct_answers": [
+        "vocabulary"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Jules): “Ta không nên nói ôn cách quãng luôn tốt hơn cho mọi việc. Nghiên cứu chỉ thử từ vựng trong một tuần.” Đáp án: “vocabulary”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "What does the proposed classroom quiz demonstrate?",
+      "correct_answers": [
+        "retrieval"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Jules): “Ta có thể cho lớp bài kiểm tra ngắn lúc đầu, rồi quay lại vài mục sau thảo luận. Không phải thí nghiệm đầy đủ nhưng minh họa nhớ lại.” Đáp án: “retrieval”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "retrieval",
+        "a controlled long-term trial",
+        "reading fluency"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why shouldn't the quiz be treated as research evidence?",
+      "correct_answers": [
+        "The sample and interval are too limited"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bằng chứng ở T07 (Grace): “Nhưng đừng coi kết quả kiểm tra là chứng cứ nghiên cứu. Bạn cùng lớp là nhóm thuận tiện và khoảng cách rất ngắn.” Đáp án: “The sample and interval are too limited”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "The questions are too difficult",
+        "Nobody participates",
+        "The sample and interval are too limited"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Jules will create a comparison ____.",
+      "correct_answers": [
+        "table"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Jules): “Mình có thể tạo bảng so sánh thiết kế, bài kiểm tra ghi nhớ và hạn chế của từng nghiên cứu.” Đáp án: “table”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What is the classroom demonstration contrasted with?",
+      "correct_answers": [
+        "controlled study"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Bằng chứng ở T12 (Jules): “Cấu trúc đó trả lời yêu cầu seminar và làm rõ khác biệt giữa minh họa trên lớp với nghiên cứu có kiểm soát.” Đáp án: “controlled study”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "That's fair. Instead of debating which technique is universally best, we could explain when each approach is useful."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “That's fair. Instead of debating which technique is universally best, we could explain when each approach is useful.”\nNghĩa: Đúng. Thay vì tranh luận cách nào tốt tuyệt đối, ta giải thích khi nào mỗi cách hữu ích.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "Agreed. It's just an activity. The published studies should support the claims we make about long-term retention."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “Agreed. It's just an activity. The published studies should support the claims we make about long-term retention.”\nNghĩa: Đồng ý. Đó chỉ là hoạt động. Nghiên cứu công bố mới hỗ trợ nhận định về lưu giữ dài hạn.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: Our learning science seminar asks us to compare ____ with rereading. I assumed rereading was faster because students feel familiar with the material.",
+      "correct_answers": [
+        "spaced practice"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “spaced practice” (luyện tập cách quãng). Lời gốc: “Our learning science seminar asks us to compare spaced practice with rereading. I assumed rereading was faster because students feel familiar with the material.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "spaced practice",
+      "pos": "n. phr.",
+      "meaning_vi": "luyện tập cách quãng",
+      "example_en": "Our learning science seminar asks us to compare spaced practice with rereading. I assumed rereading was faster because students feel familiar with the material.",
+      "example_vi": "Seminar khoa học học tập yêu cầu so sánh ôn cách quãng với đọc lại. Mình nghĩ đọc lại nhanh hơn vì sinh viên thấy quen nội dung.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "recall",
+      "pos": "n.",
+      "meaning_vi": "khả năng nhớ lại",
+      "example_en": "That feeling can be misleading. The paper we read found that familiarity doesn't necessarily predict recall several days later.",
+      "example_vi": "Cảm giác đó có thể đánh lừa. Bài nghiên cứu cho thấy quen thuộc không nhất thiết dự đoán nhớ lại sau vài ngày.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "controlled study",
+      "pos": "n. phr.",
+      "meaning_vi": "nghiên cứu có kiểm soát",
+      "example_en": "That structure answers the seminar question and makes clear the difference between an engaging classroom demonstration and a controlled study.",
+      "example_vi": "Cấu trúc đó trả lời yêu cầu seminar và làm rõ khác biệt giữa minh họa trên lớp với nghiên cứu có kiểm soát.",
+      "source_turn_id": "T12"
+    },
+    {
+      "term": "retention",
+      "pos": "n.",
+      "meaning_vi": "duy trì trí nhớ",
+      "example_en": "Agreed. It's just an activity. The published studies should support the claims we make about long-term retention.",
+      "example_vi": "Đồng ý. Đó chỉ là hoạt động. Nghiên cứu công bố mới hỗ trợ nhận định về lưu giữ dài hạn.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "97e537eea613d2104df0b50d5f0de38e6a4a07b2d11c318eb6248b56900ed52b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

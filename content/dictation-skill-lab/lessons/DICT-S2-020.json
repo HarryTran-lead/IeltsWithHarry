@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-020",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Library Facilities",
+  "title": "The Library’s New Learning Spaces",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Library Facilities và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện chỉ đường theo sơ đồ A–F, phân biệt điểm trước/sau và hướng trái/phải."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "This afternoon I will show you how to use the library following our recent expansion. The original reading hall remains, but the services around it have been reorganised.",
+      "translation_vi": "Chiều nay tôi hướng dẫn dùng thư viện sau đợt mở rộng. Sảnh đọc cũ vẫn còn, nhưng dịch vụ xung quanh được sắp xếp lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "From the entrance on the south side, the returns kiosk is the first point on the right. The children’s reading corner is immediately on the left, beside the windows.",
+      "translation_vi": "Từ cửa phía nam, quầy trả sách tự động ở ngay bên phải. Góc đọc trẻ em ở ngay bên trái cạnh cửa sổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The local history archive is now in the back-left room. It used to occupy the front area, but fragile documents required better temperature control.",
+      "translation_vi": "Kho lịch sử địa phương nay ở phòng sau bên trái. Trước kia ở phía trước, nhưng tài liệu mong manh cần nhiệt độ ổn định hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "For group assignments, use the large room at the back-right. Students can speak at a normal level there, while the central room at the far end is reserved for silent individual study.",
+      "translation_vi": "Làm bài nhóm dùng phòng lớn sau bên phải. Sinh viên có thể nói bình thường, còn phòng giữa phía cuối dành cho tự học yên lặng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Bookings for group rooms can be made fourteen days in advance. We previously allowed only seven days, so the website has been updated to reflect the new rule.",
+      "translation_vi": "Có thể đặt phòng nhóm trước mười bốn ngày. Trước đây chỉ bảy ngày nên website đã cập nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "A library card is free, but replacement cards cost three pounds. Remember that digital access does not require a physical card once your account is activated.",
+      "translation_vi": "Thẻ thư viện miễn phí nhưng thay thẻ mất ba bảng. Sau khi kích hoạt tài khoản, truy cập số không cần thẻ vật lý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The digital archive holds maps, interviews and old newspapers. You may download the maps for personal study, although permission is required before publishing any images.",
+      "translation_vi": "Kho số có bản đồ, phỏng vấn và báo cũ. Có thể tải bản đồ để học cá nhân, nhưng phải xin phép trước khi xuất bản hình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Weekend workshops take place on the first Saturday of each month. The next session covers basic family-history research rather than photography, which was last month’s subject.",
+      "translation_vi": "Buổi thực hành cuối tuần diễn ra thứ Bảy đầu mỗi tháng. Buổi tới học nghiên cứu lịch sử gia đình, không phải nhiếp ảnh của tháng trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "If you have any questions, speak to the volunteer at the entrance. The building closes at eight tonight, but computer access ends fifteen minutes earlier.",
+      "translation_vi": "Nếu có câu hỏi, hãy gặp tình nguyện viên ở cửa. Tòa nhà đóng lúc tám giờ tối, nhưng máy tính ngừng sử dụng sớm hơn mười lăm phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Children’s reading corner on plan: ____",
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Góc đọc trẻ em ở phía trước bên trái.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-020.svg"
+    },
+    {
+      "question_id": "Q02",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Local history archive on plan: ____",
+      "correct_answers": [
+        "A"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kho lịch sử ở phía sau bên trái.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-020.svg"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "How many days ahead can students book a group room?",
+      "correct_answers": [
+        "fourteen"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Được đặt trước mười bốn ngày, không phải bảy.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "distractor"
+      ],
+      "options": [
+        "seven",
+        "fourteen",
+        "thirty"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Replacement card fee in pounds: ____",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Phí thay thẻ là ba bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Next weekend workshop topic: ____",
+      "correct_answers": [
+        "family-history research"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Buổi tới về nghiên cứu lịch sử gia đình.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Building closing time tonight: ____",
+      "correct_answers": [
+        "eight"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tòa nhà đóng lúc tám, máy tính ngừng trước đó.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Bookings for group rooms can be made fourteen days in advance. We previously allowed only seven days, so the website has been updated to reflect the new rule."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Bookings for group rooms can be made fourteen days in advance. We previously allowed only seven days, so the website has been updated to reflect the new rule. Nghĩa: Có thể đặt phòng nhóm trước mười bốn ngày. Trước đây chỉ bảy ngày nên website đã cập nhật. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: The local history ____ is now in the back-left room. It used to occupy the front area, but fragile documents required better temperature control.",
+      "correct_answers": [
+        "archive"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "archive: kho lưu trữ. Ngữ cảnh: Kho lịch sử địa phương nay ở phòng sau bên trái. Trước kia ở phía trước, nhưng tài liệu mong manh cần nhiệt độ ổn định hơn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "archive",
+      "pos": "n.",
+      "meaning_vi": "kho lưu trữ",
+      "example_en": "The local history archive is now in the back-left room. It used to occupy the front area, but fragile documents required better temperature control.",
+      "example_vi": "Kho lịch sử địa phương nay ở phòng sau bên trái. Trước kia ở phía trước, nhưng tài liệu mong manh cần nhiệt độ ổn định hơn.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "entrance",
+      "pos": "n.",
+      "meaning_vi": "lối vào",
+      "example_en": "From the entrance on the south side, the returns kiosk is the first point on the right. The children’s reading corner is immediately on the left, beside the windows.",
+      "example_vi": "Từ cửa phía nam, quầy trả sách tự động ở ngay bên phải. Góc đọc trẻ em ở ngay bên trái cạnh cửa sổ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "room",
+      "pos": "n.",
+      "meaning_vi": "phòng",
+      "example_en": "The local history archive is now in the back-left room. It used to occupy the front area, but fragile documents required better temperature control.",
+      "example_vi": "Kho lịch sử địa phương nay ở phòng sau bên trái. Trước kia ở phía trước, nhưng tài liệu mong manh cần nhiệt độ ổn định hơn.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "volunteer",
+      "pos": "n.",
+      "meaning_vi": "tình nguyện viên",
+      "example_en": "If you have any questions, speak to the volunteer at the entrance. The building closes at eight tonight, but computer access ends fifteen minutes earlier.",
+      "example_vi": "Nếu có câu hỏi, hãy gặp tình nguyện viên ở cửa. Tòa nhà đóng lúc tám giờ tối, nhưng máy tính ngừng sử dụng sớm hơn mười lăm phút.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "478dc03534a00abc3258d9ef26c4cb5a6f9f59901079a903cb63ba597386857e",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

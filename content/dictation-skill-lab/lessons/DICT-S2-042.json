@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-042",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Tourist Attractions",
+  "title": "A Guided Visit to the Coastal Observatory",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Tourist Attractions ở mức L5, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to the coastal observatory. Today's visit includes several outdoor viewing points, so I'd like to explain the order of activities before we leave the visitor building.",
+      "translation_vi": "Chào mừng đến đài quan sát ven biển. Chuyến tham quan hôm nay gồm vài điểm ngắm ngoài trời, nên tôi sẽ giải thích thứ tự hoạt động trước khi rời tòa nhà đón khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Our first stop is the weather station at the top of the slope. The old path beside the café is closed, so we'll use the wider track running behind the exhibition hall.",
+      "translation_vi": "Điểm đầu là trạm khí tượng trên đỉnh dốc. Đường cũ cạnh quán cà phê đóng, nên ta đi đường rộng phía sau phòng triển lãm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "At the station, a researcher will show you how wind speed is measured. Visitors may photograph the instruments, but they must not touch the sensors or change the settings.",
+      "translation_vi": "Tại trạm, một nhà nghiên cứu sẽ trình diễn cách đo tốc độ gió. Khách được chụp dụng cụ nhưng không được chạm cảm biến hay thay đổi cài đặt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The second stop is the sea-bird platform, which is reached by crossing the wooden footbridge. Please move in small groups because the bridge can only hold ten people at once.",
+      "translation_vi": "Điểm thứ hai là bục ngắm chim biển, đến đó phải qua cầu gỗ. Hãy đi theo nhóm nhỏ vì cầu chỉ chịu được mười người một lúc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We had hoped to include the lighthouse, but renovation work continues there. Instead, we'll visit the audio room, where recordings reveal how whales communicate over long distances.",
+      "translation_vi": "Chúng tôi định đưa hải đăng vào tour nhưng nơi đó vẫn đang sửa. Thay vào đó sẽ đến phòng âm thanh để nghe bản ghi cho thấy cá voi giao tiếp ở khoảng cách xa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The tour concludes at a small exhibition about coastal erosion. It opens at two fifteen, and staff will stay afterward to answer questions about the shoreline.",
+      "translation_vi": "Tour kết thúc ở một triển lãm nhỏ về xói lở bờ biển. Triển lãm mở lúc hai giờ mười lăm và nhân viên sẽ ở lại trả lời thắc mắc về đường bờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Anyone requiring step-free access should tell us now, so we can arrange transport up the slope rather than asking you to walk the steep track.",
+      "translation_vi": "Ai cần lối đi không bậc thang hãy báo ngay để chúng tôi bố trí phương tiện lên dốc thay vì yêu cầu đi đường dốc đứng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — First stop is the: ____",
+      "correct_answers": [
+        "weather station"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Điểm đầu là trạm khí tượng trên đỉnh dốc. Đường cũ cạnh quán cà phê đóng, nên ta đi đường rộng phía sau phòng triển lãm. Đáp án được nhắc trong đoạn T02: “weather station”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Alternative path runs behind: ____",
+      "correct_answers": [
+        "exhibition hall"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Điểm đầu là trạm khí tượng trên đỉnh dốc. Đường cũ cạnh quán cà phê đóng, nên ta đi đường rộng phía sau phòng triển lãm. Đáp án được nhắc trong đoạn T02: “exhibition hall”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Instrument used to measure: ____",
+      "correct_answers": [
+        "wind speed"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tại trạm, một nhà nghiên cứu sẽ trình diễn cách đo tốc độ gió. Khách được chụp dụng cụ nhưng không được chạm cảm biến hay thay đổi cài đặt. Đáp án được nhắc trong đoạn T03: “wind speed”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Maximum people on bridge: ____",
+      "correct_answers": [
+        "ten"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Điểm thứ hai là bục ngắm chim biển, đến đó phải qua cầu gỗ. Hãy đi theo nhóm nhỏ vì cầu chỉ chịu được mười người một lúc. Đáp án được nhắc trong đoạn T04: “ten”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Lighthouse replaced by the?",
+      "correct_answers": [
+        "audio room"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Chúng tôi định đưa hải đăng vào tour nhưng nơi đó vẫn đang sửa. Thay vào đó sẽ đến phòng âm thanh để nghe bản ghi cho thấy cá voi giao tiếp ở khoảng cách xa. Đáp án được nhắc trong đoạn T05: “audio room”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Final exhibition opens at: ____",
+      "correct_answers": [
+        "two fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tour kết thúc ở một triển lãm nhỏ về xói lở bờ biển. Triển lãm mở lúc hai giờ mười lăm và nhân viên sẽ ở lại trả lời thắc mắc về đường bờ. Đáp án được nhắc trong đoạn T06: “two fifteen”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "At the station, a researcher will show you how wind speed is measured. Visitors may photograph the instruments, but they must not touch the sensors or change the settings."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: At the station, a researcher will show you how wind speed is measured. Visitors may photograph the instruments, but they must not touch the sensors or change the settings. Nghĩa: Tại trạm, một nhà nghiên cứu sẽ trình diễn cách đo tốc độ gió. Khách được chụp dụng cụ nhưng không được chạm cảm biến hay thay đổi cài đặt. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "We had hoped to include the lighthouse, but renovation work continues there. Instead, we'll visit the audio room, where recordings reveal how whales communicate over long distances."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: We had hoped to include the lighthouse, but renovation work continues there. Instead, we'll visit the audio room, where recordings reveal how whales communicate over long distances. Nghĩa: Chúng tôi định đưa hải đăng vào tour nhưng nơi đó vẫn đang sửa. Thay vào đó sẽ đến phòng âm thanh để nghe bản ghi cho thấy cá voi giao tiếp ở khoảng cách xa. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: Our first stop is the ____ at the top of the slope. The old path beside the café is closed, so we'll use the wider track running behind the exhibition hall.",
+      "correct_answers": [
+        "weather station"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “weather station” xuất hiện trong câu gốc: Our first stop is the weather station at the top of the slope. The old path beside the café is closed, so we'll use the wider track running behind the exhibition hall. Nghĩa: Điểm đầu là trạm khí tượng trên đỉnh dốc. Đường cũ cạnh quán cà phê đóng, nên ta đi đường rộng phía sau phòng triển lãm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "observatory",
+      "pos": "n.",
+      "meaning_vi": "đài quan sát",
+      "example_en": "Welcome to the coastal observatory. Today's visit includes several outdoor viewing points, so I'd like to explain the order of activities before we leave the visitor building.",
+      "example_vi": "Chào mừng đến đài quan sát ven biển. Chuyến tham quan hôm nay gồm vài điểm ngắm ngoài trời, nên tôi sẽ giải thích thứ tự hoạt động trước khi rời tòa nhà đón khách.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "sensors",
+      "pos": "n.",
+      "meaning_vi": "các cảm biến",
+      "example_en": "At the station, a researcher will show you how wind speed is measured. Visitors may photograph the instruments, but they must not touch the sensors or change the settings.",
+      "example_vi": "Tại trạm, một nhà nghiên cứu sẽ trình diễn cách đo tốc độ gió. Khách được chụp dụng cụ nhưng không được chạm cảm biến hay thay đổi cài đặt.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "coastal erosion",
+      "pos": "n. phr.",
+      "meaning_vi": "xói mòn bờ biển",
+      "example_en": "The tour concludes at a small exhibition about coastal erosion. It opens at two fifteen, and staff will stay afterward to answer questions about the shoreline.",
+      "example_vi": "Tour kết thúc ở một triển lãm nhỏ về xói lở bờ biển. Triển lãm mở lúc hai giờ mười lăm và nhân viên sẽ ở lại trả lời thắc mắc về đường bờ.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "footbridge",
+      "pos": "n.",
+      "meaning_vi": "cầu đi bộ",
+      "example_en": "The second stop is the sea-bird platform, which is reached by crossing the wooden footbridge. Please move in small groups because the bridge can only hold ten people at once.",
+      "example_vi": "Điểm thứ hai là bục ngắm chim biển, đến đó phải qua cầu gỗ. Hãy đi theo nhóm nhỏ vì cầu chỉ chịu được mười người một lúc.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "a30751dc8f1be035c3b5fcdb376dfba187991921be71f8487aaf4ddd89fa4cda",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

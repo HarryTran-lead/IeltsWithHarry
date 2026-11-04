@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-051",
+  "status": "draft",
+  "level": "L7",
+  "section": 3,
+  "topic": "Research Methodology",
+  "title": "Research Methodology – Virtual-Reality Gallery Evaluation",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Clara – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Owen – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Mei – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The virtual-reality gallery study asks whether an immersive tour improves visitors' understanding of ancient architecture. Our initial design lets participants try the headset and then examine a photograph.",
+      "translation_vi": "Nghiên cứu phòng trưng bày thực tế ảo hỏi liệu chuyến tham quan nhập vai có cải thiện hiểu biết về kiến trúc cổ không. Thiết kế ban đầu cho người tham gia thử kính rồi xem ảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "That order creates a problem. Once someone has explored the building in virtual reality, they may already know its layout, making the photograph task easier for reasons unrelated to its format.",
+      "translation_vi": "Thứ tự đó gây vấn đề. Sau khi khám phá công trình trong VR, họ có thể đã biết bố cục, khiến bài ảnh dễ hơn vì lý do không liên quan đến định dạng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We can counterbalance the order and use two buildings with comparable complexity. However, those buildings must also be unfamiliar to participants, or prior visits might skew their performance.",
+      "translation_vi": "Ta có thể cân bằng thứ tự và dùng hai công trình có độ phức tạp tương đương. Nhưng chúng cũng phải xa lạ với người tham gia, nếu không trải nghiệm trước có thể làm lệch kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Should we exclude anyone who has visited the historical sites? That might make the sample too narrow. Perhaps a short screening questionnaire can measure familiarity instead of rejecting all such visitors.",
+      "translation_vi": "Có nên loại tất cả ai từng thăm địa điểm không? Như thế mẫu quá hẹp. Có lẽ bảng hỏi sàng lọc ngắn đo mức quen thuộc thay vì loại hết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I favour recording prior familiarity, then balancing the groups where possible. We should also monitor motion sickness, because participants who feel unwell may stop early and provide incomplete responses.",
+      "translation_vi": "Mình thiên về ghi mức quen trước rồi cân bằng nhóm nếu được. Cũng phải theo dõi say chuyển động vì người khó chịu có thể dừng sớm và trả lời thiếu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The ethics committee insists that participation can end immediately without penalty. We need a clear non-VR alternative, but we must report such departures rather than quietly remove them from analysis.",
+      "translation_vi": "Hội đồng đạo đức yêu cầu người tham gia được dừng ngay không bị phạt. Ta cần lựa chọn không dùng VR rõ ràng, nhưng phải báo việc rút lui chứ không âm thầm loại khỏi phân tích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "For outcomes, let's distinguish enjoyment from spatial understanding. A visitor may love the headset while failing to remember where the entrance or central hall was located.",
+      "translation_vi": "Với kết quả, hãy tách mức thích thú khỏi hiểu không gian. Người xem có thể rất thích kính nhưng không nhớ lối vào hay sảnh trung tâm ở đâu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We can test layout understanding with the same type of diagram question for both formats, and record satisfaction separately. A brief pilot should confirm neither building is substantially harder.",
+      "translation_vi": "Ta có thể kiểm tra hiểu bố cục bằng cùng loại câu sơ đồ cho hai định dạng và ghi hài lòng riêng. Thử nghiệm ngắn cần xác nhận không công trình nào khó hơn đáng kể.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Then the study becomes a counterbalanced comparison with familiarity screening, an opt-out option and separate learning measures. That's more complex, but it avoids confusing novelty with educational benefit.",
+      "translation_vi": "Vậy nghiên cứu thành so sánh cân bằng thứ tự, sàng lọc mức quen, cho phép rút lui và đo học tập riêng. Phức tạp hơn nhưng tránh nhầm tính mới lạ với lợi ích giáo dục.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why is a fixed VR-first sequence problematic?",
+      "correct_answers": [
+        "Prior exploration could improve later photograph performance"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Owen nói: “Thứ tự đó gây vấn đề. Sau khi khám phá công trình trong VR, họ có thể đã biết bố cục, khiến bài ảnh dễ hơn vì lý do không liên quan đến định dạng.” Đáp án “Prior exploration could improve later photograph performance” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Some users become uncomfortable in the headset",
+        "Visitors differ in prior experience of the buildings",
+        "Prior exploration could improve later photograph performance"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The team suggests two buildings with comparable ____ .",
+      "correct_answers": [
+        "complexity"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Ta có thể cân bằng thứ tự và dùng hai công trình có độ phức tạp tương đương. Nhưng chúng cũng phải xa lạ với người tham gia, nếu không trải nghiệm trước có thể làm lệch kết quả.” Cụm cần điền nghe đúng nguyên văn là “complexity”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker asks whether previously familiar visitors should all be excluded?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Clara (Speaker A) đưa ra ý này tại T04: “Có nên loại tất cả ai từng thăm địa điểm không? Như thế mẫu quá hẹp. Có lẽ bảng hỏi sàng lọc ngắn đo mức quen thuộc thay vì loại hết.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why should enjoyment and spatial understanding be separate outcomes?",
+      "correct_answers": [
+        "Visitors may enjoy VR without remembering the layout"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Clara nói: “Với kết quả, hãy tách mức thích thú khỏi hiểu không gian. Người xem có thể rất thích kính nhưng không nhớ lối vào hay sảnh trung tâm ở đâu.” Đáp án “Visitors may enjoy VR without remembering the layout” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Satisfaction is impossible to measure separately",
+        "Every spatial task produces identical scores",
+        "Visitors may enjoy VR without remembering the layout"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The team will record ____ separately.",
+      "correct_answers": [
+        "satisfaction"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Ta có thể kiểm tra hiểu bố cục bằng cùng loại câu sơ đồ cho hai định dạng và ghi hài lòng riêng. Thử nghiệm ngắn cần xác nhận không công trình nào khó hơn đáng kể.” Cụm cần điền nghe đúng nguyên văn là “satisfaction”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What type of comparison will the team use?",
+      "correct_answers": [
+        "counterbalanced"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy nghiên cứu thành so sánh cân bằng thứ tự, sàng lọc mức quen, cho phép rút lui và đo học tập riêng. Phức tạp hơn nhưng tránh nhầm tính mới lạ với lợi ích giáo dục.” Trả lời ngắn theo chi tiết “counterbalanced”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Should we exclude anyone who has visited the historical sites? That might make the sample too narrow. Perhaps a short screening questionnaire can measure familiarity instead of rejecting all such visitors."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “Should we exclude anyone who has visited the historical sites? That might make the sample too narrow. Perhaps a short screening questionnaire can measure familiarity instead of rejecting all such visitors.”\nBản dịch: Có nên loại tất cả ai từng thăm địa điểm không? Như thế mẫu quá hẹp. Có lẽ bảng hỏi sàng lọc ngắn đo mức quen thuộc thay vì loại hết.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "For outcomes, let's distinguish enjoyment from spatial understanding. A visitor may love the headset while failing to remember where the entrance or central hall was located."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “For outcomes, let's distinguish enjoyment from spatial understanding. A visitor may love the headset while failing to remember where the entrance or central hall was located.”\nBản dịch: Với kết quả, hãy tách mức thích thú khỏi hiểu không gian. Người xem có thể rất thích kính nhưng không nhớ lối vào hay sảnh trung tâm ở đâu.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: The virtual-reality gallery study asks whether an ____ improves visitors' understanding of ancient architecture. Our initial design lets participants try the headset and then examine a photograph.",
+      "correct_answers": [
+        "immersive tour"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “immersive tour” nghĩa là chuyến tham quan nhập vai. Đối chiếu: “The virtual-reality gallery study asks whether an immersive tour improves visitors' understanding of ancient architecture. Our initial design lets participants try the headset and then examine a photograph.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "immersive tour",
+      "pos": "n. phr.",
+      "meaning_vi": "chuyến tham quan nhập vai",
+      "example_en": "The virtual-reality gallery study asks whether an immersive tour improves visitors' understanding of ancient architecture. Our initial design lets participants try the headset and then examine a photograph.",
+      "example_vi": "Nghiên cứu phòng trưng bày thực tế ảo hỏi liệu chuyến tham quan nhập vai có cải thiện hiểu biết về kiến trúc cổ không. Thiết kế ban đầu cho người tham gia thử kính rồi xem ảnh.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "counterbalance",
+      "pos": "v.",
+      "meaning_vi": "cân bằng thứ tự",
+      "example_en": "We can counterbalance the order and use two buildings with comparable complexity. However, those buildings must also be unfamiliar to participants, or prior visits might skew their performance.",
+      "example_vi": "Ta có thể cân bằng thứ tự và dùng hai công trình có độ phức tạp tương đương. Nhưng chúng cũng phải xa lạ với người tham gia, nếu không trải nghiệm trước có thể làm lệch kết quả.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "prior familiarity",
+      "pos": "n. phr.",
+      "meaning_vi": "mức quen thuộc từ trước",
+      "example_en": "I favour recording prior familiarity, then balancing the groups where possible. We should also monitor motion sickness, because participants who feel unwell may stop early and provide incomplete responses.",
+      "example_vi": "Mình thiên về ghi mức quen trước rồi cân bằng nhóm nếu được. Cũng phải theo dõi say chuyển động vì người khó chịu có thể dừng sớm và trả lời thiếu.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "spatial understanding",
+      "pos": "n. phr.",
+      "meaning_vi": "khả năng hiểu bố cục không gian",
+      "example_en": "For outcomes, let's distinguish enjoyment from spatial understanding. A visitor may love the headset while failing to remember where the entrance or central hall was located.",
+      "example_vi": "Với kết quả, hãy tách mức thích thú khỏi hiểu không gian. Người xem có thể rất thích kính nhưng không nhớ lối vào hay sảnh trung tâm ở đâu.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e075ab1240693a617fbb4359b69c65d28cc10e2b9b8e375fcbcf58cc3b02c8f7",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

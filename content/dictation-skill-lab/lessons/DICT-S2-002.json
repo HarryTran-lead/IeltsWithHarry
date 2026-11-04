@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-002",
+  "status": "draft",
+  "level": "L2",
+  "section": 2,
+  "topic": "City Tours",
+  "title": "An Easy Walk Through Oldbridge",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề City Tours và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello everyone. Our Oldbridge walking tour will take just under an hour, so there is no need to hurry.",
+      "translation_vi": "Xin chào mọi người. Tour đi bộ Oldbridge chưa đến một giờ nên không cần vội.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We start beside the clock tower at ten o’clock, where our guide is holding a yellow umbrella.",
+      "translation_vi": "Chúng ta bắt đầu cạnh tháp đồng hồ lúc mười giờ; hướng dẫn viên cầm ô vàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "From there, we walk to the market square and stop outside the old bakery.",
+      "translation_vi": "Từ đó, chúng ta đi đến quảng trường chợ và dừng trước tiệm bánh cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please use the pedestrian crossing rather than walking across the busy road.",
+      "translation_vi": "Hãy đi qua vạch dành cho người đi bộ thay vì băng qua đường đông xe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A bottle of water is useful, but you do not need to bring lunch because the tour finishes before midday.",
+      "translation_vi": "Nên mang chai nước, nhưng không cần mang bữa trưa vì tour kết thúc trước trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The final stop is the riverside garden, where you can take pictures of the bridge.",
+      "translation_vi": "Điểm dừng cuối là vườn ven sông, nơi các bạn chụp hình cây cầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Length of tour: under one: ____",
+      "correct_answers": [
+        "hour"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tour kéo dài chưa đến một giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Tour starting point: ____",
+      "correct_answers": [
+        "clock tower"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bắt đầu cạnh tháp đồng hồ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Guide carries a yellow: ____",
+      "correct_answers": [
+        "umbrella"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Hướng dẫn viên cầm ô vàng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Stop outside the old: ____",
+      "correct_answers": [
+        "bakery"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tour dừng trước tiệm bánh cũ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Final stop: ____",
+      "correct_answers": [
+        "riverside garden"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Điểm dừng cuối là vườn ven sông.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T03 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "From there, we walk to the market square and stop outside the old bakery."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: From there, we walk to the market square and stop outside the old bakery. Nghĩa: Từ đó, chúng ta đi đến quảng trường chợ và dừng trước tiệm bánh cũ. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "A bottle of water is useful, but you do not need to bring lunch because the tour finishes before midday."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: A bottle of water is useful, but you do not need to bring lunch because the tour finishes before midday. Nghĩa: Nên mang chai nước, nhưng không cần mang bữa trưa vì tour kết thúc trước trưa. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: Hello everyone. Our Oldbridge ____ will take just under an hour, so there is no need to hurry.",
+      "correct_answers": [
+        "walking tour"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "walking tour: chuyến tham quan đi bộ. Ngữ cảnh: Xin chào mọi người. Tour đi bộ Oldbridge chưa đến một giờ nên không cần vội.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "walking tour",
+      "pos": "n. phr.",
+      "meaning_vi": "chuyến tham quan đi bộ",
+      "example_en": "Hello everyone. Our Oldbridge walking tour will take just under an hour, so there is no need to hurry.",
+      "example_vi": "Xin chào mọi người. Tour đi bộ Oldbridge chưa đến một giờ nên không cần vội.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "pedestrian",
+      "pos": "n.",
+      "meaning_vi": "người đi bộ",
+      "example_en": "Please use the pedestrian crossing rather than walking across the busy road.",
+      "example_vi": "Hãy đi qua vạch dành cho người đi bộ thay vì băng qua đường đông xe.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "market",
+      "pos": "n.",
+      "meaning_vi": "khu chợ",
+      "example_en": "From there, we walk to the market square and stop outside the old bakery.",
+      "example_vi": "Từ đó, chúng ta đi đến quảng trường chợ và dừng trước tiệm bánh cũ.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "guide",
+      "pos": "n.",
+      "meaning_vi": "hướng dẫn viên",
+      "example_en": "We start beside the clock tower at ten o’clock, where our guide is holding a yellow umbrella.",
+      "example_vi": "Chúng ta bắt đầu cạnh tháp đồng hồ lúc mười giờ; hướng dẫn viên cầm ô vàng.",
+      "source_turn_id": "T02"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "94dd4d99f64c48727e74a7300ba9afb1b376fcf2b3712ca79a0a90a3d9632dc9",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

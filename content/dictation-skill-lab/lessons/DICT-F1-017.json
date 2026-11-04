@@ -1,0 +1,483 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-017",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Months and Seasons",
+  "learning_objectives_vi": [
+    "Nghe tháng và mùa",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "It is cold in January.",
+      "translation_vi": "Trời lạnh vào tháng Một.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "My birthday is in February.",
+      "translation_vi": "Sinh nhật tôi vào tháng Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Spring starts in March.",
+      "translation_vi": "Mùa xuân bắt đầu vào tháng Ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The flowers bloom in April.",
+      "translation_vi": "Hoa nở vào tháng Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The park opens in May.",
+      "translation_vi": "Công viên mở cửa vào tháng Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Our holiday begins in June.",
+      "translation_vi": "Kỳ nghỉ của chúng tôi bắt đầu vào tháng Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "July is usually hot.",
+      "translation_vi": "Tháng Bảy thường nóng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The trip is in August.",
+      "translation_vi": "Chuyến đi vào tháng Tám.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "School starts in September.",
+      "translation_vi": "Trường học bắt đầu vào tháng Chín.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The festival is in October.",
+      "translation_vi": "Lễ hội diễn ra vào tháng Mười.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "November is often rainy.",
+      "translation_vi": "Tháng Mười Một thường có mưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Winter begins in December.",
+      "translation_vi": "Mùa đông bắt đầu vào tháng Mười Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "It is cold in January."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "January có ba hoặc bốn âm tiết tùy tốc độ. Nghĩa: Trời lạnh vào tháng Một.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "My birthday is in February."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "February có âm /r/ dễ bị bỏ sót khi viết. Nghĩa: Sinh nhật tôi vào tháng Hai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Spring starts in March."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "spring là mùa xuân. Nghĩa: Mùa xuân bắt đầu vào tháng Ba.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The flowers bloom in April."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "April nhấn âm tiết đầu. Nghĩa: Hoa nở vào tháng Tư.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The park opens in May."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "May cũng là tên tháng. Nghĩa: Công viên mở cửa vào tháng Năm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Our holiday begins in June."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "June có âm /dʒ/ đầu. Nghĩa: Kỳ nghỉ của chúng tôi bắt đầu vào tháng Sáu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "July is usually hot."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "July nhấn âm tiết hai. Nghĩa: Tháng Bảy thường nóng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The trip is in August."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "August nhấn âm tiết đầu. Nghĩa: Chuyến đi vào tháng Tám.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "School starts in September."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "September nhấn âm tiết hai. Nghĩa: Trường học bắt đầu vào tháng Chín.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The festival is in October."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "October nhấn âm tiết hai. Nghĩa: Lễ hội diễn ra vào tháng Mười.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "dictation",
+      "prompt": "Nghe lượt T11 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "November is often rainy."
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "November nhấn âm tiết hai. Nghĩa: Tháng Mười Một thường có mưa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "dictation",
+      "prompt": "Nghe lượt T12 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Winter begins in December."
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "December nhấn âm tiết hai. Nghĩa: Mùa đông bắt đầu vào tháng Mười Hai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "T02: Sinh nhật rơi vào tháng nào?",
+      "correct_answers": [
+        "February"
+      ],
+      "options": [
+        "February",
+        "January"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "February là tháng Hai. Hãy nghe lại lượt T02, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "T12: Mùa đông bắt đầu trong tháng nào?",
+      "correct_answers": [
+        "December"
+      ],
+      "options": [
+        "November",
+        "December"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "December là tháng Mười Hai. Hãy nghe lại lượt T12, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "January",
+      "pos": "noun",
+      "meaning_vi": "tháng Một",
+      "example_en": "It is cold in January.",
+      "example_vi": "Trời lạnh vào tháng Một.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "February",
+      "pos": "noun",
+      "meaning_vi": "tháng Hai",
+      "example_en": "My birthday is in February.",
+      "example_vi": "Sinh nhật tôi vào tháng Hai.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "September",
+      "pos": "noun",
+      "meaning_vi": "tháng Chín",
+      "example_en": "School starts in September.",
+      "example_vi": "Trường học bắt đầu vào tháng Chín.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "December",
+      "pos": "noun",
+      "meaning_vi": "tháng Mười Hai",
+      "example_en": "Winter begins in December.",
+      "example_vi": "Mùa đông bắt đầu vào tháng Mười Hai.",
+      "source_turn_id": "T12"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "d7608e2ade74188134c6ee592c681b513944933782cfba03d448837208aa0549",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

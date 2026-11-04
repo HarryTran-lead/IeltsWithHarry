@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-024",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Transport and Tickets",
+  "learning_objectives_vi": [
+    "Nghe phương tiện và vé",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The bus leaves at seven.",
+      "translation_vi": "Xe buýt rời đi lúc bảy giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "I take the train to work.",
+      "translation_vi": "Tôi đi tàu đến chỗ làm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The taxi is waiting outside.",
+      "translation_vi": "Taxi đang đợi bên ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We rented two bicycles.",
+      "translation_vi": "Chúng tôi thuê hai chiếc xe đạp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The ferry crosses the river.",
+      "translation_vi": "Phà băng qua sông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "My ticket is one-way.",
+      "translation_vi": "Vé của tôi là vé một chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "She bought a return ticket.",
+      "translation_vi": "Cô ấy mua vé khứ hồi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The platform is number four.",
+      "translation_vi": "Sân ga số bốn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please keep your boarding pass.",
+      "translation_vi": "Vui lòng giữ thẻ lên máy bay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The tram stops near the station.",
+      "translation_vi": "Tàu điện dừng gần nhà ga.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The bus leaves at seven."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "bus khác van. Nghĩa: Xe buýt rời đi lúc bảy giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "I take the train to work."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "train là tàu hỏa. Nghĩa: Tôi đi tàu đến chỗ làm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The taxi is waiting outside."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "taxi có âm /ks/. Nghĩa: Taxi đang đợi bên ngoài.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "We rented two bicycles."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "bicycles là số nhiều. Nghĩa: Chúng tôi thuê hai chiếc xe đạp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The ferry crosses the river."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "ferry là phà. Nghĩa: Phà băng qua sông.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "My ticket is one-way."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "one-way đối lập return ticket. Nghĩa: Vé của tôi là vé một chiều.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "She bought a return ticket."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "return ticket là vé khứ hồi. Nghĩa: Cô ấy mua vé khứ hồi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The platform is number four."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "platform là sân ga. Nghĩa: Sân ga số bốn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please keep your boarding pass."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "boarding pass khác ticket thường. Nghĩa: Vui lòng giữ thẻ lên máy bay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The tram stops near the station."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "tram là tàu điện đường phố. Nghĩa: Tàu điện dừng gần nhà ga.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T06: Loại vé là gì?",
+      "correct_answers": [
+        "one-way"
+      ],
+      "options": [
+        "one-way",
+        "return"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "One-way là vé một chiều. Hãy nghe lại lượt T06, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T08: Sân ga số mấy?",
+      "correct_answers": [
+        "four"
+      ],
+      "options": [
+        "four",
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Platform number four. Hãy nghe lại lượt T08, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "bus",
+      "pos": "noun",
+      "meaning_vi": "xe buýt",
+      "example_en": "The bus leaves at seven.",
+      "example_vi": "Xe buýt rời đi lúc bảy giờ.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "train",
+      "pos": "noun",
+      "meaning_vi": "tàu hỏa",
+      "example_en": "I take the train to work.",
+      "example_vi": "Tôi đi tàu đến chỗ làm.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "one-way",
+      "pos": "adjective",
+      "meaning_vi": "một chiều",
+      "example_en": "My ticket is one-way.",
+      "example_vi": "Vé của tôi là vé một chiều.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "platform",
+      "pos": "noun",
+      "meaning_vi": "sân ga",
+      "example_en": "The platform is number four.",
+      "example_vi": "Sân ga số bốn.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b1fcde70ca648f1fb9343c8fc20691d66b5ea566d331d753681d97beb83dd60d",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

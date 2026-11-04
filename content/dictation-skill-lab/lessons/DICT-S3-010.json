@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-010",
+  "status": "draft",
+  "level": "L4",
+  "section": 3,
+  "topic": "Time Management",
+  "title": "Time Management: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Anna – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ben – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Chloe – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We have three deadlines next week: the lab report, the statistics quiz and the group poster.",
+      "translation_vi": "Tuần tới có ba hạn: báo cáo phòng thí nghiệm, bài kiểm tra thống kê và áp phích nhóm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I thought the poster was due first, but the course page says Friday, after the quiz on Wednesday.",
+      "translation_vi": "Mình tưởng áp phích đến hạn đầu tiên, nhưng trang môn học ghi thứ Sáu, sau bài kiểm tra thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The lab report is still due Tuesday evening. That one will take the longest to edit.",
+      "translation_vi": "Báo cáo thí nghiệm vẫn đến hạn tối thứ Ba. Phần đó mất nhiều thời gian sửa nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We could divide the report into sections and work separately, although the results need a consistent explanation.",
+      "translation_vi": "Ta có thể chia báo cáo thành các phần để làm riêng, dù kết quả cần giải thích thống nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Let's write the interpretation together tomorrow morning. We can split the formatting work later.",
+      "translation_vi": "Hãy cùng viết phần diễn giải vào sáng mai. Sau đó chia việc định dạng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "I'll prepare the figures tonight and leave comments where I think the calculations need checking.",
+      "translation_vi": "Tối nay mình chuẩn bị biểu đồ và để ghi chú ở chỗ phép tính cần kiểm tra.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Then I'll revise the introduction, and Ben can verify the references against the original studies.",
+      "translation_vi": "Vậy mình sửa mở bài, còn Ben kiểm tra tài liệu tham khảo với nghiên cứu gốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We should reserve Thursday for the poster rather than trying to finish everything on the same day.",
+      "translation_vi": "Nên dành thứ Năm làm áp phích thay vì cố xong mọi thứ trong một ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Agreed. I'll share a calendar with the deadlines and our individual tasks this afternoon.",
+      "translation_vi": "Đồng ý. Chiều nay mình sẽ chia sẻ lịch hạn nộp và việc riêng của từng người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "The statistics quiz takes place on ____.",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Ben): “Mình tưởng áp phích đến hạn đầu tiên, nhưng trang môn học ghi thứ Sáu, sau bài kiểm tra thứ Tư.” Đáp án: “Wednesday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "Which task is due on Tuesday evening?",
+      "correct_answers": [
+        "The lab report"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Chloe): “Báo cáo thí nghiệm vẫn đến hạn tối thứ Ba. Phần đó mất nhiều thời gian sửa nhất.” Đáp án: “The lab report”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "The lab report",
+        "The group poster",
+        "The statistics quiz"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "The group will write the ____ together.",
+      "correct_answers": [
+        "interpretation"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Ben): “Hãy cùng viết phần diễn giải vào sáng mai. Sau đó chia việc định dạng.” Đáp án: “interpretation”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "matching",
+      "prompt": "Who will prepare the figures?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Chloe): “Tối nay mình chuẩn bị biểu đồ và để ghi chú ở chỗ phép tính cần kiểm tra.” Đáp án: “Speaker C”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker B",
+        "Speaker C",
+        "Speaker A"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What will Ben verify?",
+      "correct_answers": [
+        "references"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bằng chứng ở T07 (Anna): “Vậy mình sửa mở bài, còn Ben kiểm tra tài liệu tham khảo với nghiên cứu gốc.” Đáp án: “references”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "The group reserves ____ for the poster.",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Ben): “Nên dành thứ Năm làm áp phích thay vì cố xong mọi thứ trong một ngày.” Đáp án: “Thursday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T03 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "The lab report is still due Tuesday evening. That one will take the longest to edit."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: “The lab report is still due Tuesday evening. That one will take the longest to edit.”\nNghĩa: Báo cáo thí nghiệm vẫn đến hạn tối thứ Ba. Phần đó mất nhiều thời gian sửa nhất.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T06 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "I'll prepare the figures tonight and leave comments where I think the calculations need checking."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: “I'll prepare the figures tonight and leave comments where I think the calculations need checking.”\nNghĩa: Tối nay mình chuẩn bị biểu đồ và để ghi chú ở chỗ phép tính cần kiểm tra.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: We have three ____ next week: the lab report, the statistics quiz and the group poster.",
+      "correct_answers": [
+        "deadlines"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “deadlines” (các hạn nộp). Lời gốc: “We have three deadlines next week: the lab report, the statistics quiz and the group poster.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "deadlines",
+      "pos": "n.",
+      "meaning_vi": "các hạn nộp",
+      "example_en": "We have three deadlines next week: the lab report, the statistics quiz and the group poster.",
+      "example_vi": "Tuần tới có ba hạn: báo cáo phòng thí nghiệm, bài kiểm tra thống kê và áp phích nhóm.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "statistics quiz",
+      "pos": "n. phr.",
+      "meaning_vi": "bài kiểm tra thống kê",
+      "example_en": "We have three deadlines next week: the lab report, the statistics quiz and the group poster.",
+      "example_vi": "Tuần tới có ba hạn: báo cáo phòng thí nghiệm, bài kiểm tra thống kê và áp phích nhóm.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "interpretation",
+      "pos": "n.",
+      "meaning_vi": "phần diễn giải",
+      "example_en": "Let's write the interpretation together tomorrow morning. We can split the formatting work later.",
+      "example_vi": "Hãy cùng viết phần diễn giải vào sáng mai. Sau đó chia việc định dạng.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "references",
+      "pos": "n.",
+      "meaning_vi": "tài liệu tham khảo",
+      "example_en": "Then I'll revise the introduction, and Ben can verify the references against the original studies.",
+      "example_vi": "Vậy mình sửa mở bài, còn Ben kiểm tra tài liệu tham khảo với nghiên cứu gốc.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "740d128140dded3fca617d81f76bde50b92f3eed8d7886cbb1aea5c0e35973e5",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

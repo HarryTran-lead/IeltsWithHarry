@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-048",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "University Assignments",
+  "title": "University Assignments – Bronze Ornament Provenance",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Sophie – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ben – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Isabel – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "For the archaeology assignment, I was going to argue that the bronze ornament came from the northern settlement because an old museum label says so. The catalogue, however, uses a question mark.",
+      "translation_vi": "Với bài khảo cổ, mình định lập luận món đồ đồng đến từ khu định cư phía bắc vì nhãn bảo tàng cũ ghi vậy. Nhưng danh mục lại đặt dấu hỏi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The label was written decades after the excavation. We should look for the original field notebooks before repeating its claim as a fact. Labels can reflect interpretations that later changed.",
+      "translation_vi": "Nhãn được viết hàng chục năm sau khai quật. Ta nên tìm sổ ghi hiện trường gốc trước khi lặp lại khẳng định như sự thật. Nhãn có thể phản ánh cách hiểu đã đổi sau này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "I found scanned notebooks, but two pages are missing. The surviving entry mentions a trench near the river, not the northern settlement. It may refer to another ornament in the collection.",
+      "translation_vi": "Mình tìm được sổ quét, nhưng thiếu hai trang. Ghi chép còn lại nói về hố khai quật cạnh sông chứ không phải khu phía bắc. Có thể nó nói về món đồ khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "That means neither source settles the provenance. Could we compare the ornament's style with well-documented objects while making clear that visual similarity doesn't establish where it was found?",
+      "translation_vi": "Như vậy không nguồn nào xác định được xuất xứ. Ta có thể so kiểu dáng với đồ vật có hồ sơ rõ nhưng nói rõ giống hình thức không chứng minh nơi tìm thấy không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Yes, although we must distinguish the place an object was made from the place where it was buried. Those can be different, particularly if objects were traded between communities.",
+      "translation_vi": "Được, nhưng phải phân biệt nơi chế tác với nơi chôn vùi. Hai nơi có thể khác nhau, nhất là khi đồ vật được trao đổi giữa cộng đồng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The assignment rubric rewards evaluating uncertainty rather than producing a dramatic conclusion. We could devote a section to the missing excavation pages and explain how the gaps limit interpretation.",
+      "translation_vi": "Tiêu chí bài tập coi trọng đánh giá bất định hơn kết luận kịch tính. Ta dành một phần cho những trang khai quật bị thiếu và giải thích thiếu sót giới hạn diễn giải ra sao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I also noticed that three websites quote the museum label as though they are independent sources. We shouldn't count those repetitions as separate confirmation of the same claim.",
+      "translation_vi": "Mình thấy ba website đều trích nhãn bảo tàng như thể là nguồn độc lập. Không nên coi các lần lặp ấy là ba bằng chứng xác nhận riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Let's build an evidence table with source date, proximity to the excavation and level of certainty. That way readers can see why the older, seemingly precise label isn't necessarily the strongest evidence.",
+      "translation_vi": "Hãy lập bảng bằng chứng ghi ngày nguồn, mức gần sự kiện khai quật và độ chắc. Người đọc sẽ thấy vì sao nhãn cũ nghe rất cụ thể chưa chắc là chứng cứ mạnh nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Our conclusion will state that the ornament's origin remains unresolved, with several plausible interpretations. That's a better historical argument than choosing a location simply because one label names it.",
+      "translation_vi": "Kết luận của ta sẽ nói nguồn gốc món đồ chưa được xác định, có vài cách hiểu hợp lý. Lập luận lịch sử đó tốt hơn chọn địa điểm chỉ vì một nhãn đã viết tên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why should the old museum label not be treated as decisive?",
+      "correct_answers": [
+        "It was written long after excavation and may reflect later interpretation"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Ben nói: “Nhãn được viết hàng chục năm sau khai quật. Ta nên tìm sổ ghi hiện trường gốc trước khi lặp lại khẳng định như sự thật. Nhãn có thể phản ánh cách hiểu đã đổi sau này.” Đáp án “It was written long after excavation and may reflect later interpretation” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The scan of the excavation diary has missing pages",
+        "The object's visual style resembles another site",
+        "It was written long after excavation and may reflect later interpretation"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Two pages of the scanned notebooks are ____ .",
+      "correct_answers": [
+        "missing"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Mình tìm được sổ quét, nhưng thiếu hai trang. Ghi chép còn lại nói về hố khai quật cạnh sông chứ không phải khu phía bắc. Có thể nó nói về món đồ khác.” Cụm cần điền nghe đúng nguyên văn là “missing”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker suggests comparing styles without claiming proven provenance?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Sophie (Speaker A) đưa ra ý này tại T04: “Như vậy không nguồn nào xác định được xuất xứ. Ta có thể so kiểu dáng với đồ vật có hồ sơ rõ nhưng nói rõ giống hình thức không chứng minh nơi tìm thấy không?”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why are repeated website quotations weak confirmation?",
+      "correct_answers": [
+        "The sites may all depend on the same museum label"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Sophie nói: “Mình thấy ba website đều trích nhãn bảo tàng như thể là nguồn độc lập. Không nên coi các lần lặp ấy là ba bằng chứng xác nhận riêng.” Đáp án “The sites may all depend on the same museum label” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The websites were all written in the same decade",
+        "The museum label contained a spelling correction",
+        "The sites may all depend on the same museum label"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The evidence table will include the source ____ .",
+      "correct_answers": [
+        "date"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Hãy lập bảng bằng chứng ghi ngày nguồn, mức gần sự kiện khai quật và độ chắc. Người đọc sẽ thấy vì sao nhãn cũ nghe rất cụ thể chưa chắc là chứng cứ mạnh nhất.” Cụm cần điền nghe đúng nguyên văn là “date”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "How certain is the ornament's origin at the end?",
+      "correct_answers": [
+        "unresolved"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Kết luận của ta sẽ nói nguồn gốc món đồ chưa được xác định, có vài cách hiểu hợp lý. Lập luận lịch sử đó tốt hơn chọn địa điểm chỉ vì một nhãn đã viết tên.” Trả lời ngắn theo chi tiết “unresolved”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "That means neither source settles the provenance. Could we compare the ornament's style with well-documented objects while making clear that visual similarity doesn't establish where it was found?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “That means neither source settles the provenance. Could we compare the ornament's style with well-documented objects while making clear that visual similarity doesn't establish where it was found?”\nBản dịch: Như vậy không nguồn nào xác định được xuất xứ. Ta có thể so kiểu dáng với đồ vật có hồ sơ rõ nhưng nói rõ giống hình thức không chứng minh nơi tìm thấy không?\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I also noticed that three websites quote the museum label as though they are independent sources. We shouldn't count those repetitions as separate confirmation of the same claim."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “I also noticed that three websites quote the museum label as though they are independent sources. We shouldn't count those repetitions as separate confirmation of the same claim.”\nBản dịch: Mình thấy ba website đều trích nhãn bảo tàng như thể là nguồn độc lập. Không nên coi các lần lặp ấy là ba bằng chứng xác nhận riêng.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền đúng phần thiếu: The label was written decades after the excavation. We should look for the original ____ before repeating its claim as a fact. Labels can reflect interpretations that later changed.",
+      "correct_answers": [
+        "field notebooks"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “field notebooks” nghĩa là sổ ghi chép hiện trường. Đối chiếu: “The label was written decades after the excavation. We should look for the original field notebooks before repeating its claim as a fact. Labels can reflect interpretations that later changed.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "field notebooks",
+      "pos": "n. phr.",
+      "meaning_vi": "sổ ghi chép hiện trường",
+      "example_en": "The label was written decades after the excavation. We should look for the original field notebooks before repeating its claim as a fact. Labels can reflect interpretations that later changed.",
+      "example_vi": "Nhãn được viết hàng chục năm sau khai quật. Ta nên tìm sổ ghi hiện trường gốc trước khi lặp lại khẳng định như sự thật. Nhãn có thể phản ánh cách hiểu đã đổi sau này.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "provenance",
+      "pos": "n.",
+      "meaning_vi": "nguồn gốc xuất xứ",
+      "example_en": "That means neither source settles the provenance. Could we compare the ornament's style with well-documented objects while making clear that visual similarity doesn't establish where it was found?",
+      "example_vi": "Như vậy không nguồn nào xác định được xuất xứ. Ta có thể so kiểu dáng với đồ vật có hồ sơ rõ nhưng nói rõ giống hình thức không chứng minh nơi tìm thấy không?",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "excavation",
+      "pos": "n.",
+      "meaning_vi": "khai quật",
+      "example_en": "The label was written decades after the excavation. We should look for the original field notebooks before repeating its claim as a fact. Labels can reflect interpretations that later changed.",
+      "example_vi": "Nhãn được viết hàng chục năm sau khai quật. Ta nên tìm sổ ghi hiện trường gốc trước khi lặp lại khẳng định như sự thật. Nhãn có thể phản ánh cách hiểu đã đổi sau này.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "independent sources",
+      "pos": "n. phr.",
+      "meaning_vi": "các nguồn độc lập",
+      "example_en": "I also noticed that three websites quote the museum label as though they are independent sources. We shouldn't count those repetitions as separate confirmation of the same claim.",
+      "example_vi": "Mình thấy ba website đều trích nhãn bảo tàng như thể là nguồn độc lập. Không nên coi các lần lặp ấy là ba bằng chứng xác nhận riêng.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b2ba133901903bfae3de68d549e29277ff0a09b6c15417db7693c7da8a150522",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-017",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Marine Biology",
+  "title": "Why Coral Reefs Bleach and Sometimes Recover",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Coral reefs offer a clear example of cause and effect in marine ecosystems. Corals are animals, but many reef-building species live with microscopic algae inside their tissues. The algae use sunlight to produce energy-rich compounds, while the coral provides a sheltered environment. This partnership helps explain how reefs can flourish in some waters that contain relatively few dissolved nutrients.",
+      "translation_vi": "Rạn san hô cho thấy rõ quan hệ nguyên nhân–kết quả trong hệ sinh thái biển. San hô là động vật, nhưng nhiều loài tạo rạn sống cùng tảo hiển vi bên trong mô. Tảo dùng nắng tạo hợp chất giàu năng lượng, còn san hô cung cấp nơi trú ẩn. Quan hệ cộng sinh này lý giải vì sao rạn có thể phát triển trong một số vùng nước tương đối ít dinh dưỡng hòa tan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Prolonged exposure to unusually warm water can disrupt this relationship. The coral may expel the algae or lose their pigments, leaving the colony looking pale. We call this coral bleaching. A bleached coral is not necessarily dead, but it has lost an important source of energy and may be less able to grow or survive further stress.",
+      "translation_vi": "Việc tiếp xúc lâu với nước ấm bất thường có thể phá vỡ mối quan hệ ấy. San hô có thể đẩy tảo ra hoặc tảo mất sắc tố, khiến tập đoàn san hô trông nhợt nhạt. Đó là hiện tượng tẩy trắng san hô. San hô bị tẩy trắng không nhất thiết đã chết, nhưng mất nguồn năng lượng quan trọng và có thể khó phát triển hay chống chịu thêm căng thẳng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The duration of heat exposure is crucial. A brief warm spell is different from a marine heatwave that lasts for weeks. Some colonies recover if conditions improve, whereas repeated events may leave little time for repair. Species also vary in their tolerance. Consequently, recording water temperature alone is not enough; researchers need information on exposure time and coral condition.",
+      "translation_vi": "Thời gian chịu nhiệt là yếu tố then chốt. Đợt ấm ngắn khác với sóng nhiệt biển kéo dài nhiều tuần. Một số tập đoàn hồi phục nếu điều kiện tốt lên, nhưng các đợt lặp lại có thể không để đủ thời gian phục hồi. Mức chịu đựng cũng khác nhau theo loài. Do đó, chỉ ghi nhiệt độ nước chưa đủ; cần biết thời gian tiếp xúc và tình trạng san hô.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Local pressures can amplify the damage. Sediment washed from construction sites may block sunlight or cover living surfaces. Pollution and destructive fishing can reduce the resilience of a reef. Removing these pressures will not prevent a regional heatwave, but it may leave the ecosystem better able to recover. This distinction is important when evaluating local management projects.",
+      "translation_vi": "Các áp lực địa phương có thể làm hại nặng thêm. Bùn cát từ công trường có thể che ánh sáng hoặc phủ bề mặt sống. Ô nhiễm và đánh bắt gây hại có thể làm giảm sức chống chịu của rạn. Loại bỏ chúng không ngăn được sóng nhiệt khu vực, nhưng có thể giúp hệ sinh thái hồi phục tốt hơn. Phân biệt này quan trọng khi đánh giá quản lý tại địa phương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Monitoring teams therefore combine temperature loggers, photographs and surveys of living coral cover. They compare the same sites across several seasons rather than relying on a single dramatic image. Their question is not only whether bleaching occurred, but how much healthy tissue returned afterwards. That longer view separates an immediate response from an enduring ecological change.",
+      "translation_vi": "Vì vậy, nhóm theo dõi kết hợp thiết bị ghi nhiệt, ảnh và khảo sát độ phủ san hô sống. Họ so sánh cùng địa điểm qua nhiều mùa thay vì dựa vào một ảnh gây ấn tượng. Câu hỏi không chỉ là có tẩy trắng hay không, mà còn là bao nhiêu mô khỏe mạnh trở lại sau đó. Cách nhìn dài hạn phân biệt phản ứng tức thời với thay đổi sinh thái kéo dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Reef-building corals often contain microscopic ____ in their tissues.",
+      "correct_answers": [
+        "algae"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Rạn san hô cho thấy rõ quan hệ nguyên nhân–kết quả trong hệ sinh thái biển. San hô là động vật, nhưng nhiều loài tạo rạn sống cùng tảo hiển vi bên trong mô. Tảo dùng nắng tạo hợp chất giàu năng lượng, còn san hô cung cấp nơi trú ẩn. Quan hệ cộng sinh này lý giải vì sao rạn có thể phát triển trong một số vùng nước tương đối ít dinh dưỡng hòa tan. Đáp án cần chọn/điền: “algae”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Unusual warmth can lead to coral ____.",
+      "correct_answers": [
+        "bleaching"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Việc tiếp xúc lâu với nước ấm bất thường có thể phá vỡ mối quan hệ ấy. San hô có thể đẩy tảo ra hoặc tảo mất sắc tố, khiến tập đoàn san hô trông nhợt nhạt. Đó là hiện tượng tẩy trắng san hô. San hô bị tẩy trắng không nhất thiết đã chết, nhưng mất nguồn năng lượng quan trọng và có thể khó phát triển hay chống chịu thêm căng thẳng. Đáp án cần chọn/điền: “bleaching”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Researchers should measure the length of heat ____ as well as temperature.",
+      "correct_answers": [
+        "exposure"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Thời gian chịu nhiệt là yếu tố then chốt. Đợt ấm ngắn khác với sóng nhiệt biển kéo dài nhiều tuần. Một số tập đoàn hồi phục nếu điều kiện tốt lên, nhưng các đợt lặp lại có thể không để đủ thời gian phục hồi. Mức chịu đựng cũng khác nhau theo loài. Do đó, chỉ ghi nhiệt độ nước chưa đủ; cần biết thời gian tiếp xúc và tình trạng san hô. Đáp án cần chọn/điền: “exposure”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What is the effect of removing local pollution?",
+      "correct_answers": [
+        "It may improve the reef’s ability to recover"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Các áp lực địa phương có thể làm hại nặng thêm. Bùn cát từ công trường có thể che ánh sáng hoặc phủ bề mặt sống. Ô nhiễm và đánh bắt gây hại có thể làm giảm sức chống chịu của rạn. Loại bỏ chúng không ngăn được sóng nhiệt khu vực, nhưng có thể giúp hệ sinh thái hồi phục tốt hơn. Phân biệt này quan trọng khi đánh giá quản lý tại địa phương. Đáp án cần chọn/điền: “It may improve the reef’s ability to recover”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "mcq"
+      ],
+      "options": [
+        "It prevents every marine heatwave",
+        "It makes coral completely heat resistant",
+        "It may improve the reef’s ability to recover"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Which devices help researchers record water temperature?",
+      "correct_answers": [
+        "temperature loggers"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Vì vậy, nhóm theo dõi kết hợp thiết bị ghi nhiệt, ảnh và khảo sát độ phủ san hô sống. Họ so sánh cùng địa điểm qua nhiều mùa thay vì dựa vào một ảnh gây ấn tượng. Câu hỏi không chỉ là có tẩy trắng hay không, mà còn là bao nhiêu mô khỏe mạnh trở lại sau đó. Cách nhìn dài hạn phân biệt phản ứng tức thời với thay đổi sinh thái kéo dài. Đáp án cần chọn/điền: “temperature loggers”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Which conclusion is supported by the lecture?",
+      "correct_answers": [
+        "Bleaching risk depends on heat stress and other pressures"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Vì vậy, nhóm theo dõi kết hợp thiết bị ghi nhiệt, ảnh và khảo sát độ phủ san hô sống. Họ so sánh cùng địa điểm qua nhiều mùa thay vì dựa vào một ảnh gây ấn tượng. Câu hỏi không chỉ là có tẩy trắng hay không, mà còn là bao nhiêu mô khỏe mạnh trở lại sau đó. Cách nhìn dài hạn phân biệt phản ứng tức thời với thay đổi sinh thái kéo dài. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ],
+      "options": [
+        "One photograph proves a reef is recovering",
+        "Every pale coral is already dead",
+        "Bleaching risk depends on heat stress and other pressures"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Prolonged exposure to unusually warm water can disrupt this relationship. The coral may expel the algae or lose their pigments, leaving the colony looking pale. We call this coral bleaching. A bleached coral is not necessarily dead, but it has lost an important source of energy and may be less able to grow or survive further stress."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Việc tiếp xúc lâu với nước ấm bất thường có thể phá vỡ mối quan hệ ấy. San hô có thể đẩy tảo ra hoặc tảo mất sắc tố, khiến tập đoàn san hô trông nhợt nhạt. Đó là hiện tượng tẩy trắng san hô. San hô bị tẩy trắng không nhất thiết đã chết, nhưng mất nguồn năng lượng quan trọng và có thể khó phát triển hay chống chịu thêm căng thẳng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Local pressures can amplify the damage. Sediment washed from construction sites may block sunlight or cover living surfaces. Pollution and destructive fishing can reduce the resilience of a reef. Removing these pressures will not prevent a regional heatwave, but it may leave the ecosystem better able to recover. This distinction is important when evaluating local management projects."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Các áp lực địa phương có thể làm hại nặng thêm. Bùn cát từ công trường có thể che ánh sáng hoặc phủ bề mặt sống. Ô nhiễm và đánh bắt gây hại có thể làm giảm sức chống chịu của rạn. Loại bỏ chúng không ngăn được sóng nhiệt khu vực, nhưng có thể giúp hệ sinh thái hồi phục tốt hơn. Phân biệt này quan trọng khi đánh giá quản lý tại địa phương.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: Coral reefs offer a clear example of cause and effect in marine ecosystems. Corals are animals, but many reef-building species live with ____ inside their tissues. The algae use sunlight to produce energy-rich compounds, while the coral provides a sheltered environment. This partnership helps explain how reefs can flourish in some waters that contain relatively few dissolved nutrients.",
+      "correct_answers": [
+        "microscopic algae"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “microscopic algae”, nghĩa: tảo hiển vi. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "microscopic algae",
+      "pos": "n. phr.",
+      "meaning_vi": "tảo hiển vi",
+      "example_en": "Coral reefs offer a clear example of cause and effect in marine ecosystems. Corals are animals, but many reef-building species live with microscopic algae inside their tissues. The algae use sunlight to produce energy-rich compounds, while the coral provides a sheltered environment. This partnership helps explain how reefs can flourish in some waters that contain relatively few dissolved nutrients.",
+      "example_vi": "Rạn san hô cho thấy rõ quan hệ nguyên nhân–kết quả trong hệ sinh thái biển. San hô là động vật, nhưng nhiều loài tạo rạn sống cùng tảo hiển vi bên trong mô. Tảo dùng nắng tạo hợp chất giàu năng lượng, còn san hô cung cấp nơi trú ẩn. Quan hệ cộng sinh này lý giải vì sao rạn có thể phát triển trong một số vùng nước tương đối ít dinh dưỡng hòa tan.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "coral bleaching",
+      "pos": "n. phr.",
+      "meaning_vi": "tẩy trắng san hô",
+      "example_en": "Prolonged exposure to unusually warm water can disrupt this relationship. The coral may expel the algae or lose their pigments, leaving the colony looking pale. We call this coral bleaching. A bleached coral is not necessarily dead, but it has lost an important source of energy and may be less able to grow or survive further stress.",
+      "example_vi": "Việc tiếp xúc lâu với nước ấm bất thường có thể phá vỡ mối quan hệ ấy. San hô có thể đẩy tảo ra hoặc tảo mất sắc tố, khiến tập đoàn san hô trông nhợt nhạt. Đó là hiện tượng tẩy trắng san hô. San hô bị tẩy trắng không nhất thiết đã chết, nhưng mất nguồn năng lượng quan trọng và có thể khó phát triển hay chống chịu thêm căng thẳng.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "heat exposure",
+      "pos": "n. phr.",
+      "meaning_vi": "mức tiếp xúc với nhiệt",
+      "example_en": "The duration of heat exposure is crucial. A brief warm spell is different from a marine heatwave that lasts for weeks. Some colonies recover if conditions improve, whereas repeated events may leave little time for repair. Species also vary in their tolerance. Consequently, recording water temperature alone is not enough; researchers need information on exposure time and coral condition.",
+      "example_vi": "Thời gian chịu nhiệt là yếu tố then chốt. Đợt ấm ngắn khác với sóng nhiệt biển kéo dài nhiều tuần. Một số tập đoàn hồi phục nếu điều kiện tốt lên, nhưng các đợt lặp lại có thể không để đủ thời gian phục hồi. Mức chịu đựng cũng khác nhau theo loài. Do đó, chỉ ghi nhiệt độ nước chưa đủ; cần biết thời gian tiếp xúc và tình trạng san hô.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "resilience",
+      "pos": "n.",
+      "meaning_vi": "khả năng chống chịu",
+      "example_en": "Local pressures can amplify the damage. Sediment washed from construction sites may block sunlight or cover living surfaces. Pollution and destructive fishing can reduce the resilience of a reef. Removing these pressures will not prevent a regional heatwave, but it may leave the ecosystem better able to recover. This distinction is important when evaluating local management projects.",
+      "example_vi": "Các áp lực địa phương có thể làm hại nặng thêm. Bùn cát từ công trường có thể che ánh sáng hoặc phủ bề mặt sống. Ô nhiễm và đánh bắt gây hại có thể làm giảm sức chống chịu của rạn. Loại bỏ chúng không ngăn được sóng nhiệt khu vực, nhưng có thể giúp hệ sinh thái hồi phục tốt hơn. Phân biệt này quan trọng khi đánh giá quản lý tại địa phương.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "0ef5830a17272caab397766ce04259aeb914a110e9c2078ba43648308e097e4e",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

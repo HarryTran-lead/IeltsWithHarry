@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-072",
+  "status": "draft",
+  "level": "L7",
+  "section": 1,
+  "topic": "Customer Complaints",
+  "title": "An Exchange with a Partial Refund",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A complaint involving several invoice items is resolved.",
+    "Nhận diện integrated information challenge và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Crestline Appliances. This is the returns team.",
+      "translation_vi": "Chào buổi chiều, bộ phận đổi trả Crestline Appliances xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm calling about order CL-nine-three-two. It contained a coffee grinder and a milk frother.",
+      "translation_vi": "Tôi gọi về đơn CL-chín-ba-hai, gồm máy xay cà phê và máy tạo bọt sữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I can see that order. Which item has the problem?",
+      "translation_vi": "Tôi đã thấy đơn hàng. Mặt hàng nào có vấn đề?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "The grinder works, but its lid is cracked. The frother is fine; I simply ordered the wrong colour.",
+      "translation_vi": "Máy xay chạy tốt nhưng nắp nứt. Máy tạo bọt không lỗi; tôi chỉ đặt nhầm màu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We can replace the grinder's lid at no cost. For the frother, an exchange is possible if the seal hasn't been opened.",
+      "translation_vi": "Chúng tôi có thể thay nắp máy xay miễn phí. Máy tạo bọt có thể đổi nếu còn nguyên niêm phong.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "The frother is unopened. I paid thirty-six pounds for the white one, but I now want the black model.",
+      "translation_vi": "Máy tạo bọt còn nguyên. Tôi trả ba mươi sáu bảng cho màu trắng, giờ muốn màu đen.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The black model is four pounds cheaper. We'll refund that difference after we receive the white one.",
+      "translation_vi": "Mẫu màu đen rẻ hơn bốn bảng. Chúng tôi sẽ hoàn phần chênh sau khi nhận lại mẫu trắng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Would I need to pay for the return postage?",
+      "translation_vi": "Tôi có phải trả phí bưu điện để gửi lại không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "No for the cracked lid, but colour changes normally carry a three-pound return fee. I'll waive it this time.",
+      "translation_vi": "Không thu phí với nắp bị nứt, còn đổi màu thường mất ba bảng. Lần này tôi miễn phí ấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Thanks. Should I send both products back together?",
+      "translation_vi": "Cảm ơn. Tôi có cần gửi cả hai món cùng nhau không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Only the white frother. We'll post the new lid directly. Please write the return code RK-five-seven on the package.",
+      "translation_vi": "Chỉ gửi máy tạo bọt trắng. Chúng tôi sẽ gửi trực tiếp nắp mới. Viết mã trả hàng RK-năm-bảy trên kiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Understood. I'll keep the grinder and post the frother this afternoon.",
+      "translation_vi": "Tôi hiểu rồi. Tôi giữ máy xay và gửi máy tạo bọt chiều nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Order reference: CL-____",
+      "correct_answers": [
+        "nine-three-two"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Mã đơn được đọc CL-932.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Damaged grinder part: ____",
+      "correct_answers": [
+        "lid"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Chỉ có nắp máy xay bị nứt.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Frother exchange requires an unopened ____",
+      "correct_answers": [
+        "seal"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đổi máy tạo bọt yêu cầu niêm phong chưa mở.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Black frother price difference: £____",
+      "correct_answers": [
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Mẫu đen rẻ hơn 4 bảng nên hoàn chênh lệch.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "What standard return fee has been waived?",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phí đổi màu thường là 3 bảng, nhưng lần này miễn.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "four",
+        "three",
+        "six"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Return code: RK-____",
+      "correct_answers": [
+        "five-seven"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Mã trả hàng bắt đầu RK-57.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "We can replace the grinder's lid at no cost. For the frother, an exchange is possible if the seal hasn't been opened."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: We can replace the grinder's lid at no cost. For the frother, an exchange is possible if the seal hasn't been opened. Nghĩa: Chúng tôi có thể thay nắp máy xay miễn phí. Máy tạo bọt có thể đổi nếu còn nguyên niêm phong. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: I'm calling about order CL-nine-three-two. It contained a coffee grinder and a ____.",
+      "correct_answers": [
+        "milk frother"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "milk frother: máy tạo bọt sữa. Câu gốc: I'm calling about order CL-nine-three-two. It contained a coffee grinder and a milk frother.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "refunds",
+        "exceptions",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "milk frother",
+      "pos": "phrase",
+      "meaning_vi": "máy tạo bọt sữa",
+      "example_en": "I'm calling about order CL-nine-three-two. It contained a coffee grinder and a milk frother.",
+      "example_vi": "Tôi gọi về đơn CL-chín-ba-hai, gồm máy xay cà phê và máy tạo bọt sữa.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "seal",
+      "pos": "word",
+      "meaning_vi": "niêm phong",
+      "example_en": "We can replace the grinder's lid at no cost. For the frother, an exchange is possible if the seal hasn't been opened.",
+      "example_vi": "Chúng tôi có thể thay nắp máy xay miễn phí. Máy tạo bọt có thể đổi nếu còn nguyên niêm phong.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "return postage",
+      "pos": "phrase",
+      "meaning_vi": "phí gửi hàng trả lại",
+      "example_en": "Would I need to pay for the return postage?",
+      "example_vi": "Tôi có phải trả phí bưu điện để gửi lại không?",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "waive",
+      "pos": "word",
+      "meaning_vi": "miễn / bỏ qua khoản phí",
+      "example_en": "No for the cracked lid, but colour changes normally carry a three-pound return fee. I'll waive it this time.",
+      "example_vi": "Không thu phí với nắp bị nứt, còn đổi màu thường mất ba bảng. Lần này tôi miễn phí ấy.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "9c5667d7e79a137441f8c4d048728f57bdd0889db02a6017be6e2e8b10e53055",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

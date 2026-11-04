@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-015",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Room and Reference Numbers",
+  "learning_objectives_vi": [
+    "Nghe số phòng và mã đơn giản",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your room is one zero five.",
+      "translation_vi": "Phòng của bạn là 105.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Meet me in room two twelve.",
+      "translation_vi": "Gặp tôi ở phòng 212.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The bus is number thirty-six.",
+      "translation_vi": "Xe buýt số 36.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The order code is A, seven, B.",
+      "translation_vi": "Mã đơn hàng là A7B.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Please go to room four sixteen.",
+      "translation_vi": "Vui lòng đến phòng 416.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The desk number is eight zero three.",
+      "translation_vi": "Số bàn là 803.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The reference ends with K, nine.",
+      "translation_vi": "Mã tham chiếu kết thúc bằng K9.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Your ticket number is twenty-four.",
+      "translation_vi": "Số vé của bạn là 24.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The locker is number sixty-two.",
+      "translation_vi": "Tủ khóa số 62.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Write B, four, zero, D.",
+      "translation_vi": "Viết mã B40D.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "numbers_prices",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Your room is one zero five."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "zero đứng giữa 1 và 5. Nghĩa: Phòng của bạn là 105.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Meet me in room two twelve."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "two twelve trong ngữ cảnh số phòng thường là 212. Nghĩa: Gặp tôi ở phòng 212.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The bus is number thirty-six."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "thirty-six khác thirteen six. Nghĩa: Xe buýt số 36.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The order code is A, seven, B."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nhận diện cả chữ cái và số. Nghĩa: Mã đơn hàng là A7B.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please go to room four sixteen."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "four sixteen là 416 trong số phòng. Nghĩa: Vui lòng đến phòng 416.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The desk number is eight zero three."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Không bỏ qua số 0. Nghĩa: Số bàn là 803.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The reference ends with K, nine."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "K và nine là hai ký tự khác loại. Nghĩa: Mã tham chiếu kết thúc bằng K9.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Your ticket number is twenty-four."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "twenty-four có gạch nối trong văn viết. Nghĩa: Số vé của bạn là 24.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The locker is number sixty-two."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "sixty-two khác sixteen two. Nghĩa: Tủ khóa số 62.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Write B, four, zero, D."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Giữ thứ tự ký tự chữ và số. Nghĩa: Viết mã B40D.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T01: Số phòng là gì?",
+      "correct_answers": [
+        "105"
+      ],
+      "options": [
+        "105",
+        "150"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "One zero five = 105. Hãy nghe lại lượt T01, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T10: Mã có dạng nào?",
+      "correct_answers": [
+        "B40D"
+      ],
+      "options": [
+        "B04D",
+        "B40D"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Bốn ký tự theo thứ tự B, four, zero, D. Hãy nghe lại lượt T10, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "room",
+      "pos": "noun",
+      "meaning_vi": "phòng",
+      "example_en": "Your room is one zero five.",
+      "example_vi": "Phòng của bạn là 105.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "code",
+      "pos": "noun",
+      "meaning_vi": "mã",
+      "example_en": "The order code is A, seven, B.",
+      "example_vi": "Mã đơn hàng là A7B.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "reference",
+      "pos": "noun",
+      "meaning_vi": "mã tham chiếu",
+      "example_en": "The reference ends with K, nine.",
+      "example_vi": "Mã tham chiếu kết thúc bằng K9.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "locker",
+      "pos": "noun",
+      "meaning_vi": "tủ khóa",
+      "example_en": "The locker is number sixty-two.",
+      "example_vi": "Tủ khóa số 62.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "2b69175a08d71e444836fd9a464f28eb66fff0c8d49482a65ece88412d823c8a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,512 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-013",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Renting a Room",
+  "learning_objectives_vi": [
+    "Nghe điều kiện thuê, tiện nghi và lịch xem phòng."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Property agent",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student renter",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello. Are you calling about the room on Park Road?",
+      "translation_vi": "Xin chào. Bạn gọi về căn phòng trên đường Park phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes. Is the room still available for next month?",
+      "translation_vi": "Vâng. Phòng còn trống cho tháng tới không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "It is. The rent is four hundred and twenty pounds a month.",
+      "translation_vi": "Còn. Tiền thuê là 420 bảng một tháng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Does that include electricity and water?",
+      "translation_vi": "Giá đó có bao gồm điện và nước không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Water is included, but you pay for electricity separately.",
+      "translation_vi": "Đã bao gồm nước, nhưng tiền điện phải trả riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I see. Is there a desk for studying?",
+      "translation_vi": "Tôi hiểu. Có bàn để học không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes, a desk, a chair and a small wardrobe.",
+      "translation_vi": "Có, một bàn, một ghế và tủ quần áo nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Could I visit the room on Friday after work?",
+      "translation_vi": "Tôi có thể xem phòng vào thứ Sáu sau giờ làm không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Friday is difficult. How about Saturday at eleven?",
+      "translation_vi": "Thứ Sáu hơi khó. Thứ Bảy lúc 11 giờ nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Saturday at eleven works. Is the building near a bus stop?",
+      "translation_vi": "Thứ Bảy lúc 11 giờ được. Tòa nhà có gần trạm xe buýt không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Yes, the nearest stop is about three minutes away.",
+      "translation_vi": "Có, trạm gần nhất cách khoảng ba phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Great. Please text me the address before Saturday.",
+      "translation_vi": "Tuyệt. Vui lòng nhắn địa chỉ cho tôi trước thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "short_answer",
+      "prompt": "Which road is the room on?",
+      "correct_answers": [
+        "Park Road"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Người môi giới nói căn phòng trên Park Road.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Monthly rent: £____.",
+      "correct_answers": [
+        "420"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Giá thuê four hundred and twenty pounds.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ],
+      "practice_aliases": [
+        "four hundred and twenty"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "short_answer",
+      "prompt": "Which utility is not included in the rent?",
+      "correct_answers": [
+        "electricity"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tiền nước đã bao gồm, nhưng electricity phải trả riêng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Room viewing day and time: Saturday at ____.",
+      "correct_answers": [
+        "11:00",
+        "11 am",
+        "eleven"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thứ Sáu không được; chọn Saturday at eleven.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Walk to the bus stop: about ____ minutes.",
+      "correct_answers": [
+        "3",
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Trạm xe cách khoảng three minutes đi bộ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T03 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "It is. The rent is four hundred and twenty pounds a month."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe số tiền thuê 420. Nghĩa: Còn. Tiền thuê là 420 bảng một tháng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T05 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Water is included, but you pay for electricity separately."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe dịch vụ đã bao gồm và chưa bao gồm. Nghĩa: Đã bao gồm nước, nhưng tiền điện phải trả riêng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T09 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Friday is difficult. How about Saturday at eleven?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phát hiện ngày hẹn xem phòng đã đổi. Nghĩa: Thứ Sáu hơi khó. Thứ Bảy lúc 11 giờ nhé?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T05 và điền từ/cụm từ bị thiếu: Water is included, but you pay for ____.",
+      "correct_answers": [
+        "electricity separately"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đặc biệt chú ý separately = tính riêng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T09 và điền từ/cụm từ bị thiếu: Friday is difficult. How about ____?",
+      "correct_answers": [
+        "Saturday at eleven"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Giờ hẹn cuối cùng khác ngày đề nghị ban đầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "accommodation",
+        "rent",
+        "facilities",
+        "appointments"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "available",
+      "pos": "adjective",
+      "meaning_vi": "còn trống/có sẵn",
+      "example_en": "Yes. Is the room still available for next month?",
+      "example_vi": "Vâng. Phòng còn trống cho tháng tới không?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "rent",
+      "pos": "noun",
+      "meaning_vi": "tiền thuê",
+      "example_en": "It is. The rent is four hundred and twenty pounds a month.",
+      "example_vi": "Còn. Tiền thuê là 420 bảng một tháng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "separately",
+      "pos": "adverb",
+      "meaning_vi": "riêng biệt",
+      "example_en": "Water is included, but you pay for electricity separately.",
+      "example_vi": "Đã bao gồm nước, nhưng tiền điện phải trả riêng.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "wardrobe",
+      "pos": "noun",
+      "meaning_vi": "tủ quần áo",
+      "example_en": "Yes, a desk, a chair and a small wardrobe.",
+      "example_vi": "Có, một bàn, một ghế và tủ quần áo nhỏ.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "9c6c35aabf8b3c351605fc5b72595f8d7d7da089b46189d792848c01bd09ca18",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

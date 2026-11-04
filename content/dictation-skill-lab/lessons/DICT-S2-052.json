@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-052",
+  "status": "draft",
+  "level": "L6",
+  "section": 2,
+  "topic": "Campus Orientation",
+  "title": "Navigating the Research Campus During Renovations",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Campus Orientation ở mức L6, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning. This briefing is for visiting research students who will use the north campus while several older buildings are being renovated. The route between facilities is less direct than it appears online.",
+      "translation_vi": "Chào buổi sáng. Buổi hướng dẫn dành cho sinh viên nghiên cứu đến khuôn viên bắc khi vài tòa nhà cũ đang sửa. Tuyến giữa các cơ sở không còn trực tiếp như hiển thị trực tuyến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We start from the administration building beside the north gate. To reach the experimental laboratory, follow the covered path eastwards until you reach a courtyard with a circular sculpture.",
+      "translation_vi": "Ta bắt đầu ở tòa hành chính cạnh cổng bắc. Để đến phòng thí nghiệm, đi theo lối có mái về phía đông tới sân trong có tượng tròn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Turn left at the sculpture and continue to the glass entrance. The direct passage from the café is closed because technicians are replacing the ventilation system underneath it.",
+      "translation_vi": "Rẽ trái ở tượng rồi tiếp tục đến lối vào bằng kính. Lối trực tiếp từ quán cà phê đóng vì kỹ thuật viên đang thay hệ thống thông gió phía dưới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The sample-preparation room is in the east wing, but staff must check your induction certificate before issuing a temporary key. You cannot borrow another student's access card.",
+      "translation_vi": "Phòng chuẩn bị mẫu ở cánh đông, nhưng nhân viên phải kiểm tra chứng nhận định hướng trước khi cấp chìa tạm. Không được mượn thẻ ra vào của sinh viên khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "For data analysis, you should use the computing suite on the second floor of the library. It was moved from Building C last month when the electrical upgrade began.",
+      "translation_vi": "Để phân tích dữ liệu, hãy dùng phòng máy trên tầng hai thư viện. Phòng chuyển từ Tòa C tháng trước khi bắt đầu nâng cấp điện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "A short safety workshop begins at one twenty in the seminar room. Attendance is compulsory for anyone working with chemical samples, including students who have completed similar training elsewhere.",
+      "translation_vi": "Buổi an toàn ngắn bắt đầu lúc một giờ hai mươi trong phòng hội thảo. Mọi người làm việc với mẫu hóa chất đều phải dự, kể cả ai đã học tương tự nơi khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "If your visit lasts beyond Friday, renew the temporary key at the administration desk. Security staff cannot extend access permission at laboratory entrances.",
+      "translation_vi": "Nếu chuyến làm việc kéo dài qua thứ Sáu, hãy gia hạn chìa khóa tạm tại bàn hành chính. Nhân viên an ninh không thể gia hạn quyền vào tại cửa phòng thí nghiệm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Research students start from the: ____",
+      "correct_answers": [
+        "administration building"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Ta bắt đầu ở tòa hành chính cạnh cổng bắc. Để đến phòng thí nghiệm, đi theo lối có mái về phía đông tới sân trong có tượng tròn. Đáp án được nhắc trong đoạn T02: “administration building”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Follow covered path towards the: ____",
+      "correct_answers": [
+        "eastwards"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Ta bắt đầu ở tòa hành chính cạnh cổng bắc. Để đến phòng thí nghiệm, đi theo lối có mái về phía đông tới sân trong có tượng tròn. Đáp án được nhắc trong đoạn T02: “eastwards”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Turn left at the circular: ____",
+      "correct_answers": [
+        "sculpture"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Rẽ trái ở tượng rồi tiếp tục đến lối vào bằng kính. Lối trực tiếp từ quán cà phê đóng vì kỹ thuật viên đang thay hệ thống thông gió phía dưới. Đáp án được nhắc trong đoạn T03: “sculpture”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Sample room located in: ____",
+      "correct_answers": [
+        "east wing"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phòng chuẩn bị mẫu ở cánh đông, nhưng nhân viên phải kiểm tra chứng nhận định hướng trước khi cấp chìa tạm. Không được mượn thẻ ra vào của sinh viên khác. Đáp án được nhắc trong đoạn T04: “east wing”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Computing suite is in the?",
+      "correct_answers": [
+        "library"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Để phân tích dữ liệu, hãy dùng phòng máy trên tầng hai thư viện. Phòng chuyển từ Tòa C tháng trước khi bắt đầu nâng cấp điện. Đáp án được nhắc trong đoạn T05: “library”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Safety workshop begins at: ____",
+      "correct_answers": [
+        "one twenty"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Buổi an toàn ngắn bắt đầu lúc một giờ hai mươi trong phòng hội thảo. Mọi người làm việc với mẫu hóa chất đều phải dự, kể cả ai đã học tương tự nơi khác. Đáp án được nhắc trong đoạn T06: “one twenty”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "X01",
+      "type": "mcq",
+      "prompt": "Where is the computing suite now?",
+      "options": [
+        "in Building C",
+        "in the café",
+        "in the library"
+      ],
+      "correct_answers": [
+        "in the library"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Để phân tích dữ liệu, hãy dùng phòng máy trên tầng hai thư viện. Phòng chuyển từ Tòa C tháng trước khi bắt đầu nâng cấp điện. Trong ba lựa chọn, đáp án chính xác là “in the library”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "supplementary_mcq",
+        "distractor_detection",
+        "paraphrase"
+      ]
+    },
+    {
+      "question_id": "M01",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the administration building?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Ta bắt đầu ở tòa hành chính cạnh cổng bắc. Để đến phòng thí nghiệm, đi theo lối có mái về phía đông tới sân trong có tượng tròn. Trên sơ đồ tuyến giả lập, administration building ứng với điểm A.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-052.svg"
+    },
+    {
+      "question_id": "M02",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the library?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Để phân tích dữ liệu, hãy dùng phòng máy trên tầng hai thư viện. Phòng chuyển từ Tòa C tháng trước khi bắt đầu nâng cấp điện. Trên sơ đồ tuyến giả lập, library ứng với điểm E.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-052.svg"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "Turn left at the sculpture and continue to the glass entrance. The direct passage from the café is closed because technicians are replacing the ventilation system underneath it."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Turn left at the sculpture and continue to the glass entrance. The direct passage from the café is closed because technicians are replacing the ventilation system underneath it. Nghĩa: Rẽ trái ở tượng rồi tiếp tục đến lối vào bằng kính. Lối trực tiếp từ quán cà phê đóng vì kỹ thuật viên đang thay hệ thống thông gió phía dưới. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "For data analysis, you should use the computing suite on the second floor of the library. It was moved from Building C last month when the electrical upgrade began."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: For data analysis, you should use the computing suite on the second floor of the library. It was moved from Building C last month when the electrical upgrade began. Nghĩa: Để phân tích dữ liệu, hãy dùng phòng máy trên tầng hai thư viện. Phòng chuyển từ Tòa C tháng trước khi bắt đầu nâng cấp điện. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: We start from the ____ beside the north gate. To reach the experimental laboratory, follow the covered path eastwards until you reach a courtyard with a circular sculpture.",
+      "correct_answers": [
+        "administration building"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “administration building” xuất hiện trong câu gốc: We start from the administration building beside the north gate. To reach the experimental laboratory, follow the covered path eastwards until you reach a courtyard with a circular sculpture. Nghĩa: Ta bắt đầu ở tòa hành chính cạnh cổng bắc. Để đến phòng thí nghiệm, đi theo lối có mái về phía đông tới sân trong có tượng tròn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "ventilation system",
+      "pos": "n. phr.",
+      "meaning_vi": "hệ thống thông gió",
+      "example_en": "Turn left at the sculpture and continue to the glass entrance. The direct passage from the café is closed because technicians are replacing the ventilation system underneath it.",
+      "example_vi": "Rẽ trái ở tượng rồi tiếp tục đến lối vào bằng kính. Lối trực tiếp từ quán cà phê đóng vì kỹ thuật viên đang thay hệ thống thông gió phía dưới.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "temporary key",
+      "pos": "n. phr.",
+      "meaning_vi": "chìa khóa tạm",
+      "example_en": "The sample-preparation room is in the east wing, but staff must check your induction certificate before issuing a temporary key. You cannot borrow another student's access card.",
+      "example_vi": "Phòng chuẩn bị mẫu ở cánh đông, nhưng nhân viên phải kiểm tra chứng nhận định hướng trước khi cấp chìa tạm. Không được mượn thẻ ra vào của sinh viên khác.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "chemical samples",
+      "pos": "n. phr.",
+      "meaning_vi": "mẫu hóa chất",
+      "example_en": "A short safety workshop begins at one twenty in the seminar room. Attendance is compulsory for anyone working with chemical samples, including students who have completed similar training elsewhere.",
+      "example_vi": "Buổi an toàn ngắn bắt đầu lúc một giờ hai mươi trong phòng hội thảo. Mọi người làm việc với mẫu hóa chất đều phải dự, kể cả ai đã học tương tự nơi khác.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "seminar room",
+      "pos": "n. phr.",
+      "meaning_vi": "phòng hội thảo",
+      "example_en": "A short safety workshop begins at one twenty in the seminar room. Attendance is compulsory for anyone working with chemical samples, including students who have completed similar training elsewhere.",
+      "example_vi": "Buổi an toàn ngắn bắt đầu lúc một giờ hai mươi trong phòng hội thảo. Mọi người làm việc với mẫu hóa chất đều phải dự, kể cả ai đã học tương tự nơi khác.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "ccb960dcc8c54689d6157e0be175c3ba56446d03b3b76144dc7d7a970d1e0772",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

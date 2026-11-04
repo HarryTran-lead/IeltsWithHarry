@@ -75,6 +75,7 @@ export function VoaDictation() {
   const [lastLessonId, setLastLessonId] = useState("");
   const [totalSentences, setTotalSentences] = useState<number | null>(null);
   const [clipBankCounts, setClipBankCounts] = useState<Record<string, number> | null>(null);
+  const [skillLabCount, setSkillLabCount] = useState<number | null>(null);
   const [collection, setCollection] = useState("all");
   const [time, setTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -99,6 +100,16 @@ export function VoaDictation() {
     .select("id", { count: "exact", head: true }).then(({ count }) => {
       if (alive) setTotalSentences(count);
     }); return () => { alive = false; }; }, [db]);
+
+  useEffect(() => {
+    let alive = true;
+    // The Skill Lab bank lives in content files; the API answers 403 where it is not open yet.
+    void fetch("/api/dictation/skill-lab").then(async (response) => {
+      const data = response.ok ? await response.json().catch(() => null) as { lessons?: { audio_ready: boolean }[] } | null : null;
+      if (alive) setSkillLabCount(data?.lessons?.filter((lesson) => lesson.audio_ready).length ?? 0);
+    }).catch(() => { if (alive) setSkillLabCount(0); });
+    return () => { alive = false; };
+  }, []);
 
   useEffect(() => {
     let alive = true;
@@ -270,6 +281,7 @@ export function VoaDictation() {
   }
 
   const banks = [
+    { name: "IELTS Skill Lab", description: "Lộ trình 300 bài từ âm dễ nhầm, số và giờ đến Section 1–4 với dạng câu hỏi IELTS.", href: "/app/dictation/banks/skill-lab", count: skillLabCount, unit: "bài có audio" },
     { name: "VOA Learning English", description: "Hội thoại theo khóa học Let’s Learn English. Nghe từng câu, chép và ôn lại câu sai.", href: "/app/dictation/banks/voa", count: loading ? null : lessons.length, unit: "bài có audio" },
     { name: "Quick Dictation", description: "Bài nghe ngắn", href: "/app/dictation/banks/quick", count: clipBankCounts ? clipBankCounts.quick ?? 0 : null, unit: "clip có audio" },
     { name: "Numbers", description: "Nghe và ghi số", href: "/app/dictation/banks/numbers", count: clipBankCounts ? clipBankCounts.numbers ?? 0 : null, unit: "clip có audio" },

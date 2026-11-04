@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-033",
+  "status": "draft",
+  "level": "L3",
+  "section": 1,
+  "topic": "Travel Arrangements",
+  "title": "Choosing an Airport Transfer",
+  "learning_objectives_vi": [
+    "Rèn constraints and options qua tình huống: A visitor weighs airport train and shuttle options with luggage.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Airport Link. What journey are you planning?",
+      "translation_vi": "Xin chào, Airport Link. Anh muốn đi tuyến nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm arriving at North Airport on Friday with two large suitcases.",
+      "translation_vi": "Tôi đến sân bay North vào thứ Sáu với hai va li lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The express train takes twenty minutes, but you must change at Central Station.",
+      "translation_vi": "Tàu tốc hành mất 20 phút, nhưng anh phải đổi tàu ở ga Central.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "That sounds difficult with the bags. Is there a direct shuttle?",
+      "translation_vi": "Có vẻ khó với hành lý. Có xe trung chuyển đi thẳng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes, the hotel shuttle takes forty minutes and drops passengers at the main entrance.",
+      "translation_vi": "Có, xe trung chuyển của khách sạn mất 40 phút và trả khách ở cửa chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "How often does it leave?",
+      "translation_vi": "Xe chạy bao lâu một chuyến?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Every thirty minutes, and the last service is at ten thirty at night.",
+      "translation_vi": "Ba mươi phút một chuyến, chuyến cuối lúc 10 giờ 30 tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "My flight lands at nine fifteen. I think I'll choose the shuttle.",
+      "translation_vi": "Máy bay hạ cánh lúc 9 giờ 15. Tôi nghĩ mình chọn xe trung chuyển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "A ticket costs fourteen pounds, and large luggage is included.",
+      "translation_vi": "Vé 14 bảng và đã bao gồm hành lý lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Good. Please book one seat.",
+      "translation_vi": "Tốt. Vui lòng đặt một chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Traveller brings two large ____",
+      "correct_answers": [
+        "suitcases"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khách có hai va li lớn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Shuttle travel time: ____ minutes",
+      "correct_answers": [
+        "40",
+        "forty"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Xe shuttle mất bốn mươi phút.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Last shuttle departure: ____ p.m.",
+      "correct_answers": [
+        "10:30",
+        "ten thirty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Chuyến cuối là mười giờ ba mươi tối.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Which transport option does the passenger choose?",
+      "correct_answers": [
+        "A hotel shuttle"
+      ],
+      "evidence_turn_ids": [
+        "T05",
+        "T08"
+      ],
+      "explanation_vi": "Shuttle đi thẳng nên khách quyết định chọn thay cho tàu cần chuyển tuyến.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "An express train",
+        "A hotel shuttle",
+        "A taxi"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "One shuttle ticket: £____",
+      "correct_answers": [
+        "14",
+        "fourteen"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Giá một vé shuttle là 14 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T03).",
+      "correct_answers": [
+        "The express train takes twenty minutes, but you must change at Central Station."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nội dung cần chép: The express train takes twenty minutes, but you must change at Central Station. Nghĩa: Tàu tốc hành mất 20 phút, nhưng anh phải đổi tàu ở ga Central. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T07).",
+      "correct_answers": [
+        "Every thirty minutes, and the last service is at ten thirty at night."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nội dung cần chép: Every thirty minutes, and the last service is at ten thirty at night. Nghĩa: Ba mươi phút một chuyến, chuyến cuối lúc 10 giờ 30 tối. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: The ____ takes twenty minutes, but you must change at Central Station.",
+      "correct_answers": [
+        "express train"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “express train”. Câu đầy đủ: The express train takes twenty minutes, but you must change at Central Station.. Nghĩa: Tàu tốc hành mất 20 phút, nhưng anh phải đổi tàu ở ga Central.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "transport_comparison",
+        "constraints",
+        "departure_times",
+        "luggage"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "express train",
+      "pos": "noun phrase",
+      "meaning_vi": "tàu tốc hành",
+      "example_en": "The express train takes twenty minutes, but you must change at Central Station.",
+      "example_vi": "Tàu tốc hành mất 20 phút, nhưng anh phải đổi tàu ở ga Central.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "change at",
+      "pos": "verb phrase",
+      "meaning_vi": "đổi tuyến tại",
+      "example_en": "The express train takes twenty minutes, but you must change at Central Station.",
+      "example_vi": "Tàu tốc hành mất 20 phút, nhưng anh phải đổi tàu ở ga Central.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "shuttle",
+      "pos": "noun",
+      "meaning_vi": "xe trung chuyển",
+      "example_en": "That sounds difficult with the bags. Is there a direct shuttle?",
+      "example_vi": "Có vẻ khó với hành lý. Có xe trung chuyển đi thẳng không?",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "large luggage",
+      "pos": "noun phrase",
+      "meaning_vi": "hành lý lớn",
+      "example_en": "A ticket costs fourteen pounds, and large luggage is included.",
+      "example_vi": "Vé 14 bảng và đã bao gồm hành lý lớn.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "1ea712cd11a9970380a6ecd3e3fc980a12d03f06a876a1418ce29bc1c072da53",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

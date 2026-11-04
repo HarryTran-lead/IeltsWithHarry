@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-029",
+  "status": "draft",
+  "level": "L3",
+  "section": 1,
+  "topic": "Library Membership",
+  "title": "Renewing an Overdue Library Loan",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A borrower calls about a book renewal.",
+    "Nhận diện corrected detail / distractors và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Oakfield Library, good afternoon.",
+      "translation_vi": "Thư viện Oakfield, chào buổi chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm calling about a history book I borrowed last week.",
+      "translation_vi": "Tôi gọi về cuốn sách lịch sử đã mượn tuần trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Is it the blue book on medieval towns?",
+      "translation_vi": "Có phải cuốn màu xanh nói về các thị trấn thời trung cổ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "No, it's the green one on Roman roads.",
+      "translation_vi": "Không, là cuốn màu xanh lá về đường sá La Mã.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Right. It was due back yesterday, on the eighth.",
+      "translation_vi": "Đúng rồi. Hạn trả là hôm qua, ngày tám.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Can I renew it until the fifteenth?",
+      "translation_vi": "Tôi gia hạn đến ngày mười lăm được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes, but because somebody has reserved it, the new date is the twelfth.",
+      "translation_vi": "Được, nhưng vì có người đặt trước nên hạn mới là ngày mười hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Will I need to pay a fee?",
+      "translation_vi": "Tôi có phải trả phí không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "No, renewals are free. Please return it to the front desk.",
+      "translation_vi": "Không, gia hạn miễn phí. Hãy trả sách tại quầy phía trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "All right. I'll come on the eleventh to be safe.",
+      "translation_vi": "Được. Tôi sẽ đến ngày mười một cho chắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Book subject: Roman ____",
+      "correct_answers": [
+        "roads"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Khách xác nhận cuốn sách nói về Roman roads, không phải medieval towns.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Previous return date: the ____",
+      "correct_answers": [
+        "eighth"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Hạn trả cũ là ngày tám.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "New final return date: the ____",
+      "correct_answers": [
+        "twelfth"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Khách đề nghị ngày 15 nhưng nhân viên chỉ cho tới ngày 12.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Renewal charge: ____",
+      "correct_answers": [
+        "free"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Gia hạn không thu phí.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Return location: the front ____",
+      "correct_answers": [
+        "desk"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phải trả sách tại quầy trước.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04 của nhân vật B.",
+      "correct_answers": [
+        "No, it's the green one on Roman roads."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: No, it's the green one on Roman roads. Nghĩa: Không, là cuốn màu xanh lá về đường sá La Mã. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T09 của nhân vật A.",
+      "correct_answers": [
+        "No, renewals are free. Please return it to the front desk."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: No, renewals are free. Please return it to the front desk. Nghĩa: Không, gia hạn miễn phí. Hãy trả sách tại quầy phía trước. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: I'm calling about a history book I ____ last week.",
+      "correct_answers": [
+        "borrowed"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "borrowed: đã mượn. Câu gốc: I'm calling about a history book I borrowed last week.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dates",
+        "corrections",
+        "library",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "borrowed",
+      "pos": "word",
+      "meaning_vi": "đã mượn",
+      "example_en": "I'm calling about a history book I borrowed last week.",
+      "example_vi": "Tôi gọi về cuốn sách lịch sử đã mượn tuần trước.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "due back",
+      "pos": "phrase",
+      "meaning_vi": "đến hạn trả",
+      "example_en": "Right. It was due back yesterday, on the eighth.",
+      "example_vi": "Đúng rồi. Hạn trả là hôm qua, ngày tám.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "renew",
+      "pos": "word",
+      "meaning_vi": "gia hạn",
+      "example_en": "Can I renew it until the fifteenth?",
+      "example_vi": "Tôi gia hạn đến ngày mười lăm được không?",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "reserved",
+      "pos": "word",
+      "meaning_vi": "được người khác đặt trước",
+      "example_en": "Yes, but because somebody has reserved it, the new date is the twelfth.",
+      "example_vi": "Được, nhưng vì có người đặt trước nên hạn mới là ngày mười hai.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c1ce9c08848bda4847e914abfea1cf0721e2aaae836c37d48861329b8cd52f42",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

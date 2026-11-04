@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-008",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Past Simple",
+  "learning_objectives_vi": [
+    "Nghe quá khứ và -ed",
+    "Nghe trợ động từ và hình thái động từ, đối chiếu với chủ ngữ hoặc mốc thời gian."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I missed the first bus yesterday morning.",
+      "translation_vi": "Tôi lỡ chuyến xe buýt đầu tiên sáng hôm qua.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "She visited her grandparents last weekend.",
+      "translation_vi": "Cô ấy đến thăm ông bà cuối tuần trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We watched a short film after dinner.",
+      "translation_vi": "Chúng tôi xem phim ngắn sau bữa tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "He bought a new notebook at the bookshop.",
+      "translation_vi": "Cậu ấy đã mua quyển vở mới ở hiệu sách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The children went home before the storm started.",
+      "translation_vi": "Bọn trẻ về nhà trước khi cơn bão bắt đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I didn't understand the last question.",
+      "translation_vi": "Tôi đã không hiểu câu hỏi cuối cùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Did you call the teacher this morning?",
+      "translation_vi": "Sáng nay bạn đã gọi cho giáo viên chưa?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "My brother found his keys under the sofa.",
+      "translation_vi": "Anh trai tôi tìm thấy chìa khóa dưới ghế sô-pha.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "They arrived at the airport just after midnight.",
+      "translation_vi": "Họ đến sân bay ngay sau nửa đêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "We stayed indoors because it rained all afternoon.",
+      "translation_vi": "Chúng tôi ở trong nhà vì trời mưa cả buổi chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I missed the first bus yesterday morning."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Missed có âm /t/ cuối, không thêm âm tiết /ɪd/. Nghĩa: Tôi lỡ chuyến xe buýt đầu tiên sáng hôm qua.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "She visited her grandparents last weekend."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Visited có đuôi /ɪd/ tạo thêm âm tiết. Nghĩa: Cô ấy đến thăm ông bà cuối tuần trước.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We watched a short film after dinner."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Watched có /t/ cuối. Nghĩa: Chúng tôi xem phim ngắn sau bữa tối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "He bought a new notebook at the bookshop."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bought là quá khứ bất quy tắc của buy. Nghĩa: Cậu ấy đã mua quyển vở mới ở hiệu sách.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The children went home before the storm started."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Went là quá khứ của go; started có /ɪd/ cuối. Nghĩa: Bọn trẻ về nhà trước khi cơn bão bắt đầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I didn't understand the last question."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Didn't + understand nguyên thể, không dùng understood. Nghĩa: Tôi đã không hiểu câu hỏi cuối cùng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Did you call the teacher this morning?"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Did + call nguyên thể. Nghĩa: Sáng nay bạn đã gọi cho giáo viên chưa?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My brother found his keys under the sofa."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Found là quá khứ của find, khác sound. Nghĩa: Anh trai tôi tìm thấy chìa khóa dưới ghế sô-pha.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "They arrived at the airport just after midnight."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Arrived kết thúc /d/; at the thường phát âm nhẹ. Nghĩa: Họ đến sân bay ngay sau nửa đêm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We stayed indoors because it rained all afternoon."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Stayed có /d/ cuối; rained cũng /d/. Nghĩa: Chúng tôi ở trong nhà vì trời mưa cả buổi chiều.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Người nói đã lỡ phương tiện nào?",
+      "options": [
+        "the last bus",
+        "the first bus",
+        "the train"
+      ],
+      "correct_answers": [
+        "the first bus"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "T01 có missed the first bus.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Họ đến sân bay vào lúc nào?",
+      "options": [
+        "just after midnight",
+        "just before noon",
+        "at five"
+      ],
+      "correct_answers": [
+        "just after midnight"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "T09: just after midnight.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "missed",
+      "pos": "verb",
+      "meaning_vi": "đã bỏ lỡ",
+      "example_en": "I missed the first bus yesterday morning.",
+      "example_vi": "Tôi lỡ chuyến xe buýt đầu tiên sáng hôm qua.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "visited",
+      "pos": "verb",
+      "meaning_vi": "đã thăm",
+      "example_en": "She visited her grandparents last weekend.",
+      "example_vi": "Cô ấy đến thăm ông bà cuối tuần trước.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "bought",
+      "pos": "verb",
+      "meaning_vi": "đã mua",
+      "example_en": "He bought a new notebook at the bookshop.",
+      "example_vi": "Cậu ấy đã mua quyển vở mới ở hiệu sách.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "midnight",
+      "pos": "noun",
+      "meaning_vi": "nửa đêm",
+      "example_en": "They arrived at the airport just after midnight.",
+      "example_vi": "Họ đến sân bay ngay sau nửa đêm.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "0429257f98769e95f0d80859514218ac81fc64f0306c907a1ab1a1b2b04cf08b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

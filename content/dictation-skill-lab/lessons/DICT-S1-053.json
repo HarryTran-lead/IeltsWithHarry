@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-053",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Banking Services",
+  "title": "A Payment That Appeared Twice",
+  "learning_objectives_vi": [
+    "Luyện natural speed & paraphrase trong tình huống: A customer clarifies a banking transaction before making a complaint.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, I've noticed two charges for the same restaurant bill on my statement, and I'm worried I've paid twice.",
+      "translation_vi": "Xin chào, tôi thấy hai khoản trừ cho cùng hóa đơn nhà hàng trong sao kê và lo đã trả hai lần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I can help investigate. Were both entries listed as completed payments?",
+      "translation_vi": "Tôi có thể kiểm tra. Cả hai dòng đều là khoản thanh toán hoàn tất à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Not exactly. One says completed, while the other is marked pending. Both show forty-six pounds.",
+      "translation_vi": "Không hẳn. Một dòng ghi đã hoàn tất, dòng kia đang chờ. Cả hai đều là bốn mươi sáu bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "In that case, the pending entry may be a temporary authorisation. It isn't necessarily a second payment.",
+      "translation_vi": "Vậy dòng đang chờ có thể là khoản giữ tiền tạm thời, chưa chắc là thanh toán lần hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "So I shouldn't cancel my card straight away?",
+      "translation_vi": "Vậy tôi không cần hủy thẻ ngay?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "There's no sign of card misuse from this description. Wait two business days and see whether the pending entry disappears.",
+      "translation_vi": "Từ mô tả này chưa thấy dấu hiệu dùng thẻ trái phép. Hãy chờ hai ngày làm việc xem khoản chờ có biến mất không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "If it doesn't disappear, who should I contact?",
+      "translation_vi": "Nếu nó không biến mất thì liên hệ ai?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Call our disputes team on the number printed on the back of the card, rather than the general enquiries line.",
+      "translation_vi": "Hãy gọi nhóm xử lý tranh chấp theo số sau thẻ thay vì tổng đài tư vấn chung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I've also set an alert for purchases over fifty pounds. Would this transaction trigger it?",
+      "translation_vi": "Tôi cũng đặt thông báo cho khoản mua trên năm mươi bảng. Giao dịch này có kích hoạt không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "No, because each entry is only forty-six pounds. You can lower the alert threshold in your app.",
+      "translation_vi": "Không, vì mỗi dòng chỉ có bốn mươi sáu bảng. Bạn có thể giảm ngưỡng trong ứng dụng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Right. I'll monitor the statement and call the disputes team if necessary.",
+      "translation_vi": "Vâng. Tôi sẽ theo dõi sao kê và gọi nhóm tranh chấp nếu cần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Amount of each entry: £____",
+      "correct_answers": [
+        "46"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Mỗi dòng giao dịch 46 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "How is the second payment entry marked?",
+      "correct_answers": [
+        "pending"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Dòng thứ hai chưa hoàn tất.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "pending",
+        "cancelled",
+        "completed"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Wait ____ business days",
+      "correct_answers": [
+        "two"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nhân viên khuyên chờ hai ngày làm việc.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Contact the ____ team if unresolved",
+      "correct_answers": [
+        "disputes"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nếu không biến mất thì gọi nhóm tranh chấp.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Current purchase alert threshold: £____",
+      "correct_answers": [
+        "50"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Đặt thông báo cho giao dịch trên 50 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Where to change alert: banking ____",
+      "correct_answers": [
+        "app"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Có thể điều chỉnh trong ứng dụng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T05).",
+      "correct_answers": [
+        "So I shouldn't cancel my card straight away?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu chuẩn: So I shouldn't cancel my card straight away? Nghĩa: Vậy tôi không cần hủy thẻ ngay? Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: Hello, I've noticed two charges for the same restaurant bill on my ____, and I'm worried I've paid twice.",
+      "correct_answers": [
+        "statement"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần điền: statement (sao kê). Câu gốc: Hello, I've noticed two charges for the same restaurant bill on my statement, and I'm worried I've paid twice.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "status_distinction",
+        "conditional_action",
+        "financial_terms",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "statement",
+      "pos": "word",
+      "meaning_vi": "sao kê",
+      "example_en": "Hello, I've noticed two charges for the same restaurant bill on my statement, and I'm worried I've paid twice.",
+      "example_vi": "Xin chào, tôi thấy hai khoản trừ cho cùng hóa đơn nhà hàng trong sao kê và lo đã trả hai lần.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "pending",
+      "pos": "word",
+      "meaning_vi": "đang chờ xử lý",
+      "example_en": "Not exactly. One says completed, while the other is marked pending. Both show forty-six pounds.",
+      "example_vi": "Không hẳn. Một dòng ghi đã hoàn tất, dòng kia đang chờ. Cả hai đều là bốn mươi sáu bảng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "temporary authorisation",
+      "pos": "phrase",
+      "meaning_vi": "khoản giữ tiền tạm thời",
+      "example_en": "In that case, the pending entry may be a temporary authorisation. It isn't necessarily a second payment.",
+      "example_vi": "Vậy dòng đang chờ có thể là khoản giữ tiền tạm thời, chưa chắc là thanh toán lần hai.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "threshold",
+      "pos": "word",
+      "meaning_vi": "ngưỡng",
+      "example_en": "No, because each entry is only forty-six pounds. You can lower the alert threshold in your app.",
+      "example_vi": "Không, vì mỗi dòng chỉ có bốn mươi sáu bảng. Bạn có thể giảm ngưỡng trong ứng dụng.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "80466b237249c00c681920a1a3883b46c3740c784219eef04ef60e15578b57d1",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

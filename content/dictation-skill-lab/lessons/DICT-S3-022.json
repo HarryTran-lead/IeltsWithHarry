@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-022",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Field Trips",
+  "title": "Field Trips: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Eva – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Tom – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Luca – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We need to revise the coastal field trip because the marine reserve has restricted access to the eastern rock pools this month.",
+      "translation_vi": "Ta cần sửa chuyến khảo sát ven biển vì khu bảo tồn biển hạn chế vào các hồ đá phía đông tháng này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Could we switch to the western shore? It has similar species, although the tide reaches the sampling sites earlier.",
+      "translation_vi": "Ta chuyển sang bờ tây được không? Có loài tương tự dù thủy triều đến chỗ lấy mẫu sớm hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The field officer said we can use the western site if we arrive before eight thirty and stay above the marked boundary.",
+      "translation_vi": "Cán bộ thực địa nói có thể dùng bờ tây nếu đến trước tám rưỡi và ở phía trên ranh giới đánh dấu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Our coach was booked for nine. I could ask for an earlier departure, but that increases the cost per student.",
+      "translation_vi": "Xe đã đặt lúc chín giờ. Mình có thể xin khởi hành sớm hơn nhưng chi phí mỗi sinh viên tăng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The department has a small contingency fund. Perhaps the lecturer would approve the difference if we explain the safety reason.",
+      "translation_vi": "Khoa có quỹ dự phòng nhỏ. Có lẽ giảng viên sẽ duyệt chênh lệch nếu ta giải thích lý do an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Before we do that, let's check whether the reserve's education centre offers equipment. We might save money by borrowing their quadrats.",
+      "translation_vi": "Trước đó, hãy xem trung tâm giáo dục khu bảo tồn có thiết bị không. Mượn khung lấy mẫu có thể tiết kiệm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "They have quadrats, but students must bring their own waterproof notebooks. The kit list from last semester is out of date.",
+      "translation_vi": "Họ có khung lấy mẫu, nhưng sinh viên phải tự mang sổ chống nước. Danh sách đồ từ kỳ trước đã cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We should also adjust the research question. Different tidal conditions may affect which species we observe and make direct comparison risky.",
+      "translation_vi": "Ta cũng nên sửa câu hỏi nghiên cứu. Điều kiện thủy triều khác có thể ảnh hưởng loài quan sát và khiến so sánh trực tiếp rủi ro.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "The lecturer suggested focusing on distribution within the western shore, rather than comparing it with last year's eastern-site data.",
+      "translation_vi": "Giảng viên đề xuất tập trung phân bố trong bờ tây, thay vì so với dữ liệu bờ đông năm ngoái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "That seems sensible. I'll revise the worksheet and include a clear rule about the boundary so nobody wanders into the restricted area.",
+      "translation_vi": "Hợp lý. Mình sẽ sửa phiếu và ghi rõ quy định ranh giới để không ai đi lạc vào vùng cấm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll contact the coach company and ask about a seven-thirty departure. We need the exact cost before seeking approval.",
+      "translation_vi": "Mình sẽ hỏi hãng xe về giờ đi bảy rưỡi. Ta cần chi phí chính xác trước khi xin duyệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "Once the field officer confirms the route, we can send students the final schedule and the revised equipment list.",
+      "translation_vi": "Khi cán bộ xác nhận tuyến, ta gửi sinh viên lịch cuối cùng và danh sách thiết bị sửa đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What is the drawback of using the western shore?",
+      "correct_answers": [
+        "The tide reaches sampling sites earlier"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Tom): “Ta chuyển sang bờ tây được không? Có loài tương tự dù thủy triều đến chỗ lấy mẫu sớm hơn.” Đáp án: “The tide reaches sampling sites earlier”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "The bus cannot park",
+        "The tide reaches sampling sites earlier",
+        "There are no marine species"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The students must arrive before ____.",
+      "correct_answers": [
+        "eight thirty"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Luca): “Cán bộ thực địa nói có thể dùng bờ tây nếu đến trước tám rưỡi và ở phía trên ranh giới đánh dấu.” Đáp án: “eight thirty”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Where could the team borrow sampling quadrats?",
+      "correct_answers": [
+        "reserve education centre"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Luca): “Trước đó, hãy xem trung tâm giáo dục khu bảo tồn có thiết bị không. Mượn khung lấy mẫu có thể tiết kiệm.” Đáp án: “reserve education centre”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "coach company",
+        "university library",
+        "reserve education centre"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Different tidal conditions make direct ____ risky.",
+      "correct_answers": [
+        "comparison"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Tom): “Ta cũng nên sửa câu hỏi nghiên cứu. Điều kiện thủy triều khác có thể ảnh hưởng loài quan sát và khiến so sánh trực tiếp rủi ro.” Đáp án: “comparison”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "What will the revised research focus on?",
+      "correct_answers": [
+        "Distribution within the western shore"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Luca): “Giảng viên đề xuất tập trung phân bố trong bờ tây, thay vì so với dữ liệu bờ đông năm ngoái.” Đáp án: “Distribution within the western shore”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Distribution within the western shore",
+        "Changes at the eastern site",
+        "Tourist numbers on the coast"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "Which departure time will Tom request from the coach company?",
+      "correct_answers": [
+        "seven-thirty"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Bằng chứng ở T11 (Tom): “Mình sẽ hỏi hãng xe về giờ đi bảy rưỡi. Ta cần chi phí chính xác trước khi xin duyệt.” Đáp án: “seven-thirty”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "Our coach was booked for nine. I could ask for an earlier departure, but that increases the cost per student."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “Our coach was booked for nine. I could ask for an earlier departure, but that increases the cost per student.”\nNghĩa: Xe đã đặt lúc chín giờ. Mình có thể xin khởi hành sớm hơn nhưng chi phí mỗi sinh viên tăng.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "We should also adjust the research question. Different tidal conditions may affect which species we observe and make direct comparison risky."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “We should also adjust the research question. Different tidal conditions may affect which species we observe and make direct comparison risky.”\nNghĩa: Ta cũng nên sửa câu hỏi nghiên cứu. Điều kiện thủy triều khác có thể ảnh hưởng loài quan sát và khiến so sánh trực tiếp rủi ro.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: We need to revise the coastal field trip because the ____ has restricted access to the eastern rock pools this month.",
+      "correct_answers": [
+        "marine reserve"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “marine reserve” (khu bảo tồn biển). Lời gốc: “We need to revise the coastal field trip because the marine reserve has restricted access to the eastern rock pools this month.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "marine reserve",
+      "pos": "n. phr.",
+      "meaning_vi": "khu bảo tồn biển",
+      "example_en": "We need to revise the coastal field trip because the marine reserve has restricted access to the eastern rock pools this month.",
+      "example_vi": "Ta cần sửa chuyến khảo sát ven biển vì khu bảo tồn biển hạn chế vào các hồ đá phía đông tháng này.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "sampling sites",
+      "pos": "n. phr.",
+      "meaning_vi": "địa điểm lấy mẫu",
+      "example_en": "Could we switch to the western shore? It has similar species, although the tide reaches the sampling sites earlier.",
+      "example_vi": "Ta chuyển sang bờ tây được không? Có loài tương tự dù thủy triều đến chỗ lấy mẫu sớm hơn.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "quadrats",
+      "pos": "n.",
+      "meaning_vi": "khung lấy mẫu",
+      "example_en": "Before we do that, let's check whether the reserve's education centre offers equipment. We might save money by borrowing their quadrats.",
+      "example_vi": "Trước đó, hãy xem trung tâm giáo dục khu bảo tồn có thiết bị không. Mượn khung lấy mẫu có thể tiết kiệm.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "tidal conditions",
+      "pos": "n. phr.",
+      "meaning_vi": "điều kiện thủy triều",
+      "example_en": "We should also adjust the research question. Different tidal conditions may affect which species we observe and make direct comparison risky.",
+      "example_vi": "Ta cũng nên sửa câu hỏi nghiên cứu. Điều kiện thủy triều khác có thể ảnh hưởng loài quan sát và khiến so sánh trực tiếp rủi ro.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "5b5a2765ff636a6d3c705bad90bb1261da25d8ad84306a93495fee90946a8a1f",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

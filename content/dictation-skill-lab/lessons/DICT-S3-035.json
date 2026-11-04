@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-035",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Academic Feedback",
+  "title": "Academic Feedback – Critical Annotated Bibliography",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Linh – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Jack – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Priya – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "My tutor commented that the annotated bibliography reads like a series of isolated summaries. I described each study accurately, so I wasn't sure what was missing from the assignment.",
+      "translation_vi": "Giảng viên nhận xét thư mục chú giải của mình chỉ như chuỗi tóm tắt rời rạc. Mình mô tả mỗi nghiên cứu khá đúng nên không hiểu bài còn thiếu gì.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Perhaps the problem is that you never compare the studies. Two articles may examine the same phenomenon but reach different conclusions because one uses interviews and the other uses experiments.",
+      "translation_vi": "Có lẽ vấn đề là bạn chưa so sánh các nghiên cứu. Hai bài có thể nghiên cứu cùng hiện tượng nhưng kết luận khác nhau vì một bài dùng phỏng vấn, bài kia dùng thí nghiệm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The marking rubric asks for critical connections. You could introduce each group of sources with a sentence identifying the question they address, then discuss why their methods produce different evidence.",
+      "translation_vi": "Tiêu chí chấm yêu cầu liên kết mang tính phản biện. Bạn có thể giới thiệu từng nhóm nguồn bằng câu nêu câu hỏi họ xử lý, rồi bàn vì sao phương pháp tạo ra bằng chứng khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I organised the references alphabetically because that's how a bibliography usually works. Would changing to thematic sections make it harder for the examiner to find individual publications?",
+      "translation_vi": "Mình sắp nguồn theo bảng chữ cái vì thư mục thường như vậy. Chuyển thành nhóm chủ đề có khiến người chấm khó tìm từng tài liệu hơn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "You can still provide an alphabetical reference list at the end. The main discussion doesn't have to follow that order; it should follow your argument about conflicting findings.",
+      "translation_vi": "Bạn vẫn có danh sách tài liệu theo chữ cái ở cuối. Phần thảo luận chính không cần theo thứ tự ấy; nó nên bám lập luận về các kết quả mâu thuẫn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "And avoid claiming a study is weak merely because it has few participants. A small qualitative sample can be suitable if the researchers want detailed accounts rather than population estimates.",
+      "translation_vi": "Và đừng cho rằng nghiên cứu yếu chỉ vì ít người tham gia. Mẫu định tính nhỏ có thể phù hợp nếu tác giả muốn ghi chép sâu chứ không ước tính cho cả dân số.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That helps. I'll create three sections: recruitment methods, participant experiences and limitations. Under each heading, I'll compare what the sources can establish instead of repeating each abstract.",
+      "translation_vi": "Như vậy rõ rồi. Mình sẽ tạo ba phần: cách tuyển mẫu, trải nghiệm người tham gia và giới hạn. Dưới mỗi phần mình so sánh nguồn chứng minh được gì, thay vì lặp lại phần tóm tắt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Ask the tutor whether brief methodological evaluations count toward the word limit. I recall the limit applies to annotations, not the final reference list, but the instructions are easy to misread.",
+      "translation_vi": "Hãy hỏi giảng viên xem nhận xét ngắn về phương pháp có tính vào giới hạn từ không. Mình nhớ giới hạn áp dụng cho chú giải, không phải danh mục cuối, nhưng hướng dẫn dễ đọc nhầm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll check the handbook. For now, the key revision is a thematic argument supported by comparisons, with the reference list remaining alphabetical. That directly addresses the feedback rather than adding more summaries.",
+      "translation_vi": "Mình sẽ kiểm tra sổ tay. Hiện thay đổi chính là lập luận theo chủ đề dựa trên so sánh, còn danh mục tài liệu vẫn theo chữ cái. Điều đó xử lý đúng góp ý thay vì thêm tóm tắt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What does Jack see as the weakness of the bibliography?",
+      "correct_answers": [
+        "It does not compare studies that approach similar issues differently"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Jack nói: “Có lẽ vấn đề là bạn chưa so sánh các nghiên cứu. Hai bài có thể nghiên cứu cùng hiện tượng nhưng kết luận khác nhau vì một bài dùng phỏng vấn, bài kia dùng thí nghiệm.” Đáp án “It does not compare studies that approach similar issues differently” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "It does not compare studies that approach similar issues differently",
+        "The references are not in alphabetical order",
+        "Too few studies use large samples"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The rubric requests ____ connections between sources.",
+      "correct_answers": [
+        "critical"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Tiêu chí chấm yêu cầu liên kết mang tính phản biện. Bạn có thể giới thiệu từng nhóm nguồn bằng câu nêu câu hỏi họ xử lý, rồi bàn vì sao phương pháp tạo ra bằng chứng khác nhau.” Cụm cần điền nghe đúng nguyên văn là “critical”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker explains how to keep the reference list alphabetical?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người nói Jack (Speaker B) đưa ra ý này tại T05: “Bạn vẫn có danh sách tài liệu theo chữ cái ở cuối. Phần thảo luận chính không cần theo thứ tự ấy; nó nên bám lập luận về các kết quả mâu thuẫn.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Which kinds of thematic sections will the revised bibliography use?",
+      "correct_answers": [
+        "Recruitment, participant experiences and limitations"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Linh nói: “Như vậy rõ rồi. Mình sẽ tạo ba phần: cách tuyển mẫu, trải nghiệm người tham gia và giới hạn. Dưới mỗi phần mình so sánh nguồn chứng minh được gì, thay vì lặp lại phần tóm tắt.” Đáp án “Recruitment, participant experiences and limitations” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Recruitment, participant experiences and limitations",
+        "Publication dates, study locations and authors",
+        "Only the findings most favourable to the writer"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The annotation word limit may exclude the final ____ .",
+      "correct_answers": [
+        "reference list"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Hãy hỏi giảng viên xem nhận xét ngắn về phương pháp có tính vào giới hạn từ không. Mình nhớ giới hạn áp dụng cho chú giải, không phải danh mục cuối, nhưng hướng dẫn dễ đọc nhầm.” Cụm cần điền nghe đúng nguyên văn là “reference list”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What order will the final reference list retain?",
+      "correct_answers": [
+        "alphabetical"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Mình sẽ kiểm tra sổ tay. Hiện thay đổi chính là lập luận theo chủ đề dựa trên so sánh, còn danh mục tài liệu vẫn theo chữ cái. Điều đó xử lý đúng góp ý thay vì thêm tóm tắt.” Trả lời ngắn theo chi tiết “alphabetical”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I organised the references alphabetically because that's how a bibliography usually works. Would changing to thematic sections make it harder for the examiner to find individual publications?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I organised the references alphabetically because that's how a bibliography usually works. Would changing to thematic sections make it harder for the examiner to find individual publications?”\nBản dịch: Mình sắp nguồn theo bảng chữ cái vì thư mục thường như vậy. Chuyển thành nhóm chủ đề có khiến người chấm khó tìm từng tài liệu hơn không?\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "That helps. I'll create three sections: recruitment methods, participant experiences and limitations. Under each heading, I'll compare what the sources can establish instead of repeating each abstract."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “That helps. I'll create three sections: recruitment methods, participant experiences and limitations. Under each heading, I'll compare what the sources can establish instead of repeating each abstract.”\nBản dịch: Như vậy rõ rồi. Mình sẽ tạo ba phần: cách tuyển mẫu, trải nghiệm người tham gia và giới hạn. Dưới mỗi phần mình so sánh nguồn chứng minh được gì, thay vì lặp lại phần tóm tắt.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: My tutor commented that the ____ reads like a series of isolated summaries. I described each study accurately, so I wasn't sure what was missing from the assignment.",
+      "correct_answers": [
+        "annotated bibliography"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “annotated bibliography” nghĩa là thư mục có chú giải. Đối chiếu: “My tutor commented that the annotated bibliography reads like a series of isolated summaries. I described each study accurately, so I wasn't sure what was missing from the assignment.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "annotated bibliography",
+      "pos": "n. phr.",
+      "meaning_vi": "thư mục có chú giải",
+      "example_en": "My tutor commented that the annotated bibliography reads like a series of isolated summaries. I described each study accurately, so I wasn't sure what was missing from the assignment.",
+      "example_vi": "Giảng viên nhận xét thư mục chú giải của mình chỉ như chuỗi tóm tắt rời rạc. Mình mô tả mỗi nghiên cứu khá đúng nên không hiểu bài còn thiếu gì.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "critical connections",
+      "pos": "n. phr.",
+      "meaning_vi": "liên kết phân tích phản biện",
+      "example_en": "The marking rubric asks for critical connections. You could introduce each group of sources with a sentence identifying the question they address, then discuss why their methods produce different evidence.",
+      "example_vi": "Tiêu chí chấm yêu cầu liên kết mang tính phản biện. Bạn có thể giới thiệu từng nhóm nguồn bằng câu nêu câu hỏi họ xử lý, rồi bàn vì sao phương pháp tạo ra bằng chứng khác nhau.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "qualitative sample",
+      "pos": "n. phr.",
+      "meaning_vi": "mẫu nghiên cứu định tính",
+      "example_en": "And avoid claiming a study is weak merely because it has few participants. A small qualitative sample can be suitable if the researchers want detailed accounts rather than population estimates.",
+      "example_vi": "Và đừng cho rằng nghiên cứu yếu chỉ vì ít người tham gia. Mẫu định tính nhỏ có thể phù hợp nếu tác giả muốn ghi chép sâu chứ không ước tính cho cả dân số.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "thematic sections",
+      "pos": "n. phr.",
+      "meaning_vi": "các phần theo chủ đề",
+      "example_en": "I organised the references alphabetically because that's how a bibliography usually works. Would changing to thematic sections make it harder for the examiner to find individual publications?",
+      "example_vi": "Mình sắp nguồn theo bảng chữ cái vì thư mục thường như vậy. Chuyển thành nhóm chủ đề có khiến người chấm khó tìm từng tài liệu hơn không?",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "86257eebf80db550ac1d5ef4f094ef712be81d5874092f41b5fda69e7e7a82a8",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

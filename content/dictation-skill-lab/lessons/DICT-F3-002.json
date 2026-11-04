@@ -1,0 +1,494 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-002",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Buying Tickets",
+  "learning_objectives_vi": [
+    "Phân biệt tàu thẳng và tàu chuyển; ghi giờ, giá và sân ga."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Station clerk",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Passenger",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Morning. Where would you like to travel today?",
+      "translation_vi": "Chào buổi sáng. Hôm nay anh muốn đi đến đâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I need a return ticket to Brighton for Saturday, please.",
+      "translation_vi": "Tôi cần vé khứ hồi đến Brighton vào thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The direct train leaves at eight ten in the morning.",
+      "translation_vi": "Tàu chạy thẳng khởi hành lúc 8 giờ 10 sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Is there a later train? Eight ten is a bit early.",
+      "translation_vi": "Có chuyến nào muộn hơn không? 8 giờ 10 hơi sớm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "There is one at nine twenty, but you must change at Lewes.",
+      "translation_vi": "Có chuyến lúc 9 giờ 20, nhưng anh phải đổi tàu tại Lewes.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I'll take the direct train. How much is the return fare?",
+      "translation_vi": "Tôi sẽ đi chuyến thẳng. Vé khứ hồi giá bao nhiêu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "It is eighteen pounds fifty with your student card.",
+      "translation_vi": "Giá là 18 bảng 50 nếu anh có thẻ sinh viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Great. Which platform does it leave from?",
+      "translation_vi": "Tốt quá. Tàu khởi hành từ sân ga nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Platform four. The train back leaves Brighton at six forty.",
+      "translation_vi": "Sân ga số 4. Chuyến về rời Brighton lúc 6 giờ 40.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Thanks. I will arrive early and find the platform.",
+      "translation_vi": "Cảm ơn. Tôi sẽ đến sớm và tìm sân ga.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Please remember to bring your student card with you.",
+      "translation_vi": "Nhớ mang theo thẻ sinh viên nhé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "transport",
+        "tickets",
+        "times",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Destination: ____.",
+      "correct_answers": [
+        "Brighton"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Hành khách yêu cầu vé khứ hồi đến Brighton.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Direct departure time: ____.",
+      "correct_answers": [
+        "8:10",
+        "08:10",
+        "eight ten"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Eight ten là giờ khởi hành của chuyến thẳng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "short_answer",
+      "prompt": "Where must passengers change on the later train?",
+      "correct_answers": [
+        "Lewes"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Chuyến 9:20 phải chuyển tàu ở Lewes; người khách chọn chuyến khác.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Student return fare: £____.",
+      "correct_answers": [
+        "18.50",
+        "18.5"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Eighteen pounds fifty là 18,50 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Departure platform: ____.",
+      "correct_answers": [
+        "4",
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Clerk nói platform four, không phải số chuyến tàu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T02 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "I need a return ticket to Brighton for Saturday, please."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nhận diện return ticket và địa điểm. Nghĩa: Tôi cần vé khứ hồi đến Brighton vào thứ Bảy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T05 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "There is one at nine twenty, but you must change at Lewes."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe đổi giờ và yêu cầu chuyển tàu. Nghĩa: Có chuyến lúc 9 giờ 20, nhưng anh phải đổi tàu tại Lewes.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T09 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Platform four. The train back leaves Brighton at six forty."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe rõ platform và giờ chuyến về. Nghĩa: Sân ga số 4. Chuyến về rời Brighton lúc 6 giờ 40.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T03 và điền từ/cụm từ bị thiếu: The direct train leaves at ____ in the morning.",
+      "correct_answers": [
+        "eight ten"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Eight ten = 8:10, không phải 8:50.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T07 và điền từ/cụm từ bị thiếu: It is eighteen pounds fifty with your ____.",
+      "correct_answers": [
+        "student card"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Điều kiện giảm giá được nêu sau số tiền.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "transport",
+        "tickets",
+        "times",
+        "prices"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "return ticket",
+      "pos": "noun phrase",
+      "meaning_vi": "vé khứ hồi",
+      "example_en": "I need a return ticket to Brighton for Saturday, please.",
+      "example_vi": "Tôi cần vé khứ hồi đến Brighton vào thứ Bảy.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "direct train",
+      "pos": "noun phrase",
+      "meaning_vi": "tàu đi thẳng",
+      "example_en": "The direct train leaves at eight ten in the morning.",
+      "example_vi": "Tàu chạy thẳng khởi hành lúc 8 giờ 10 sáng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "change at",
+      "pos": "verb phrase",
+      "meaning_vi": "chuyển tàu tại",
+      "example_en": "There is one at nine twenty, but you must change at Lewes.",
+      "example_vi": "Có chuyến lúc 9 giờ 20, nhưng anh phải đổi tàu tại Lewes.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "platform",
+      "pos": "noun",
+      "meaning_vi": "sân ga",
+      "example_en": "Platform four. The train back leaves Brighton at six forty.",
+      "example_vi": "Sân ga số 4. Chuyến về rời Brighton lúc 6 giờ 40.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "f4307d5d713d34ef63fd6869fc888c84f4091d67232761376a956a3250ed01bb",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-043",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Workplace Orientation",
+  "title": "Joining a New Production Team",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Workplace Orientation ở mức L5, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to the manufacturing company's new employee induction. During today's tour, I will explain how to move between departments and where to obtain help once you begin work on Monday.",
+      "translation_vi": "Chào mừng đến buổi định hướng nhân viên mới của công ty sản xuất. Trong tour hôm nay, tôi sẽ giải thích cách di chuyển giữa bộ phận và nơi xin hỗ trợ khi bắt đầu làm thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The morning briefing starts in the training suite on the first floor. Some invitations say Meeting Room Six, but that room is being used for equipment inspections this week.",
+      "translation_vi": "Buổi phổ biến sáng bắt đầu ở khu đào tạo tầng một. Một số thư mời ghi Phòng Họp Sáu, nhưng tuần này phòng đó dùng để kiểm tra thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "After the briefing, you'll visit the quality-control laboratory. Employees may observe the testing process, but only trained technicians can operate instruments inside the marked safety zone.",
+      "translation_vi": "Sau buổi phổ biến, các bạn tham quan phòng kiểm định chất lượng. Nhân viên được quan sát quá trình thử nghiệm nhưng chỉ kỹ thuật viên đã đào tạo mới được vận hành thiết bị trong vùng an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Your personal access card opens the main offices and staff dining room. It does not give you access to the storage warehouse, for which a supervisor must provide separate permission.",
+      "translation_vi": "Thẻ ra vào cá nhân mở được văn phòng chính và phòng ăn nhân viên. Thẻ không mở kho chứa; cần giám sát viên cấp quyền riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Lunch is provided at twelve twenty in the dining room, although you should tell the catering team beforehand if you have any food allergies.",
+      "translation_vi": "Bữa trưa được phục vụ lúc mười hai giờ hai mươi trong phòng ăn, nhưng cần báo trước cho đội suất ăn nếu bạn dị ứng thực phẩm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The final session will cover reporting equipment faults. Please use the maintenance portal rather than sending individual emails, because the portal assigns urgent issues to an on-duty engineer.",
+      "translation_vi": "Buổi cuối hướng dẫn báo lỗi thiết bị. Hãy dùng cổng bảo trì thay vì gửi email riêng vì cổng tự giao lỗi khẩn cho kỹ sư trực.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Before leaving, hand your completed induction checklist to the human resources desk. You must complete the online fire-safety module by Friday to keep your access card active.",
+      "translation_vi": "Trước khi về, nộp bảng kiểm định hướng đã hoàn thành tại bàn nhân sự. Phải hoàn tất mô-đun an toàn cháy trực tuyến trước thứ Sáu để thẻ tiếp tục hoạt động.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Morning briefing room: ____",
+      "correct_answers": [
+        "training suite"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Buổi phổ biến sáng bắt đầu ở khu đào tạo tầng một. Một số thư mời ghi Phòng Họp Sáu, nhưng tuần này phòng đó dùng để kiểm tra thiết bị. Đáp án được nhắc trong đoạn T02: “training suite”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Laboratory visited: ____",
+      "correct_answers": [
+        "quality-control"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Sau buổi phổ biến, các bạn tham quan phòng kiểm định chất lượng. Nhân viên được quan sát quá trình thử nghiệm nhưng chỉ kỹ thuật viên đã đào tạo mới được vận hành thiết bị trong vùng an toàn. Đáp án được nhắc trong đoạn T03: “quality-control”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Warehouse requires permission from a: ____",
+      "correct_answers": [
+        "supervisor"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Thẻ ra vào cá nhân mở được văn phòng chính và phòng ăn nhân viên. Thẻ không mở kho chứa; cần giám sát viên cấp quyền riêng. Đáp án được nhắc trong đoạn T04: “supervisor”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Lunch starts at: ____",
+      "correct_answers": [
+        "twelve twenty"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bữa trưa được phục vụ lúc mười hai giờ hai mươi trong phòng ăn, nhưng cần báo trước cho đội suất ăn nếu bạn dị ứng thực phẩm. Đáp án được nhắc trong đoạn T05: “twelve twenty”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Report faults through?",
+      "correct_answers": [
+        "maintenance portal"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Buổi cuối hướng dẫn báo lỗi thiết bị. Hãy dùng cổng bảo trì thay vì gửi email riêng vì cổng tự giao lỗi khẩn cho kỹ sư trực. Đáp án được nhắc trong đoạn T06: “maintenance portal”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Finish fire-safety module by: ____",
+      "correct_answers": [
+        "Friday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Trước khi về, nộp bảng kiểm định hướng đã hoàn thành tại bàn nhân sự. Phải hoàn tất mô-đun an toàn cháy trực tuyến trước thứ Sáu để thẻ tiếp tục hoạt động. Đáp án được nhắc trong đoạn T07: “Friday”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "After the briefing, you'll visit the quality-control laboratory. Employees may observe the testing process, but only trained technicians can operate instruments inside the marked safety zone."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: After the briefing, you'll visit the quality-control laboratory. Employees may observe the testing process, but only trained technicians can operate instruments inside the marked safety zone. Nghĩa: Sau buổi phổ biến, các bạn tham quan phòng kiểm định chất lượng. Nhân viên được quan sát quá trình thử nghiệm nhưng chỉ kỹ thuật viên đã đào tạo mới được vận hành thiết bị trong vùng an toàn. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "Lunch is provided at twelve twenty in the dining room, although you should tell the catering team beforehand if you have any food allergies."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Lunch is provided at twelve twenty in the dining room, although you should tell the catering team beforehand if you have any food allergies. Nghĩa: Bữa trưa được phục vụ lúc mười hai giờ hai mươi trong phòng ăn, nhưng cần báo trước cho đội suất ăn nếu bạn dị ứng thực phẩm. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: The morning briefing starts in the ____ on the first floor. Some invitations say Meeting Room Six, but that room is being used for equipment inspections this week.",
+      "correct_answers": [
+        "training suite"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “training suite” xuất hiện trong câu gốc: The morning briefing starts in the training suite on the first floor. Some invitations say Meeting Room Six, but that room is being used for equipment inspections this week. Nghĩa: Buổi phổ biến sáng bắt đầu ở khu đào tạo tầng một. Một số thư mời ghi Phòng Họp Sáu, nhưng tuần này phòng đó dùng để kiểm tra thiết bị.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "quality-control laboratory",
+      "pos": "n. phr.",
+      "meaning_vi": "phòng kiểm định chất lượng",
+      "example_en": "After the briefing, you'll visit the quality-control laboratory. Employees may observe the testing process, but only trained technicians can operate instruments inside the marked safety zone.",
+      "example_vi": "Sau buổi phổ biến, các bạn tham quan phòng kiểm định chất lượng. Nhân viên được quan sát quá trình thử nghiệm nhưng chỉ kỹ thuật viên đã đào tạo mới được vận hành thiết bị trong vùng an toàn.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "access card",
+      "pos": "n. phr.",
+      "meaning_vi": "thẻ ra vào",
+      "example_en": "Your personal access card opens the main offices and staff dining room. It does not give you access to the storage warehouse, for which a supervisor must provide separate permission.",
+      "example_vi": "Thẻ ra vào cá nhân mở được văn phòng chính và phòng ăn nhân viên. Thẻ không mở kho chứa; cần giám sát viên cấp quyền riêng.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "maintenance portal",
+      "pos": "n. phr.",
+      "meaning_vi": "cổng báo cáo bảo trì",
+      "example_en": "The final session will cover reporting equipment faults. Please use the maintenance portal rather than sending individual emails, because the portal assigns urgent issues to an on-duty engineer.",
+      "example_vi": "Buổi cuối hướng dẫn báo lỗi thiết bị. Hãy dùng cổng bảo trì thay vì gửi email riêng vì cổng tự giao lỗi khẩn cho kỹ sư trực.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "induction checklist",
+      "pos": "n. phr.",
+      "meaning_vi": "bảng kiểm định hướng nhân viên",
+      "example_en": "Before leaving, hand your completed induction checklist to the human resources desk. You must complete the online fire-safety module by Friday to keep your access card active.",
+      "example_vi": "Trước khi về, nộp bảng kiểm định hướng đã hoàn thành tại bàn nhân sự. Phải hoàn tất mô-đun an toàn cháy trực tuyến trước thứ Sáu để thẻ tiếp tục hoạt động.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "a05fd6d100f77705f43416cc5a6dfc11bcfb9fcb767608983db4a2f47674e122",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

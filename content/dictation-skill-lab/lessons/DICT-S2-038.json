@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-038",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Volunteer Programmes",
+  "title": "Mentoring New Volunteers at the Food Pantry",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Volunteer Programmes ở mức L5, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Thanks for volunteering with the Oakfield food pantry this term. Unlike the one-off collection drive, this programme involves weekly shifts and direct contact with residents who use our services.",
+      "translation_vi": "Cảm ơn các bạn tình nguyện tại kho thực phẩm Oakfield học kỳ này. Khác đợt quyên góp một lần, chương trình gồm ca làm hằng tuần và tiếp xúc trực tiếp với cư dân dùng dịch vụ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Your first shift will be on Thursday, although the welcome message sent earlier mentioned Wednesday. We moved the start to allow staff to complete their safeguarding training.",
+      "translation_vi": "Ca đầu là thứ Năm dù thư chào mừng trước đó ghi thứ Tư. Chúng tôi đổi lịch để nhân viên hoàn thành đào tạo bảo vệ người tham gia.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please use the side entrance next to the pharmacy; the main glass doors are reserved for visitors collecting food parcels. A volunteer supervisor will give you a yellow name badge.",
+      "translation_vi": "Vui lòng dùng cửa bên cạnh hiệu thuốc; cửa kính chính dành cho khách đến nhận gói thực phẩm. Người giám sát sẽ phát bảng tên màu vàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "During your first hour, you'll check expiry dates and separate items that need refrigeration. You should never decide on your own whether a damaged package is safe to distribute.",
+      "translation_vi": "Trong giờ đầu, bạn kiểm tra hạn dùng và tách hàng cần làm lạnh. Bạn tuyệt đối không tự quyết định gói hàng hỏng có an toàn để phát hay không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "After the break, a mentor will show you how to greet visitors and explain the collection system. You won't be asked to discuss their personal financial circumstances.",
+      "translation_vi": "Sau giờ nghỉ, người hướng dẫn sẽ chỉ cách đón khách và giải thích hệ thống nhận hàng. Bạn không phải hỏi về tình hình tài chính cá nhân của họ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Please arrive at eight forty-five for the briefing; distribution begins at nine thirty. If you cannot attend, send a message to the volunteer coordinator before seven that morning.",
+      "translation_vi": "Vui lòng đến tám giờ bốn mươi lăm để nghe phổ biến; phát hàng bắt đầu lúc chín giờ ba mươi. Nếu không thể đến, hãy nhắn điều phối viên trước bảy giờ sáng hôm đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "At the end of each month, volunteers can join a short reflection meeting to suggest changes. We record practical ideas, but residents' names must never appear in the notes.",
+      "translation_vi": "Cuối mỗi tháng, tình nguyện viên có thể họp rút kinh nghiệm và đề xuất cải tiến. Chúng tôi ghi ý tưởng thực tế nhưng không ghi tên cư dân trong biên bản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — First shift is on: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Ca đầu là thứ Năm dù thư chào mừng trước đó ghi thứ Tư. Chúng tôi đổi lịch để nhân viên hoàn thành đào tạo bảo vệ người tham gia. Đáp án được nhắc trong đoạn T02: “Thursday”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Volunteers enter beside the: ____",
+      "correct_answers": [
+        "pharmacy"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Vui lòng dùng cửa bên cạnh hiệu thuốc; cửa kính chính dành cho khách đến nhận gói thực phẩm. Người giám sát sẽ phát bảng tên màu vàng. Đáp án được nhắc trong đoạn T03: “pharmacy”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Yellow badge issued by a: ____",
+      "correct_answers": [
+        "supervisor"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Vui lòng dùng cửa bên cạnh hiệu thuốc; cửa kính chính dành cho khách đến nhận gói thực phẩm. Người giám sát sẽ phát bảng tên màu vàng. Đáp án được nhắc trong đoạn T03: “supervisor”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — First task includes checking: ____",
+      "correct_answers": [
+        "expiry dates"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Trong giờ đầu, bạn kiểm tra hạn dùng và tách hàng cần làm lạnh. Bạn tuyệt đối không tự quyết định gói hàng hỏng có an toàn để phát hay không. Đáp án được nhắc trong đoạn T04: “expiry dates”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Briefing starts at?",
+      "correct_answers": [
+        "eight forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Vui lòng đến tám giờ bốn mươi lăm để nghe phổ biến; phát hàng bắt đầu lúc chín giờ ba mươi. Nếu không thể đến, hãy nhắn điều phối viên trước bảy giờ sáng hôm đó. Đáp án được nhắc trong đoạn T06: “eight forty-five”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Distribution begins at: ____",
+      "correct_answers": [
+        "nine thirty"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Vui lòng đến tám giờ bốn mươi lăm để nghe phổ biến; phát hàng bắt đầu lúc chín giờ ba mươi. Nếu không thể đến, hãy nhắn điều phối viên trước bảy giờ sáng hôm đó. Đáp án được nhắc trong đoạn T06: “nine thirty”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "Please use the side entrance next to the pharmacy; the main glass doors are reserved for visitors collecting food parcels. A volunteer supervisor will give you a yellow name badge."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Please use the side entrance next to the pharmacy; the main glass doors are reserved for visitors collecting food parcels. A volunteer supervisor will give you a yellow name badge. Nghĩa: Vui lòng dùng cửa bên cạnh hiệu thuốc; cửa kính chính dành cho khách đến nhận gói thực phẩm. Người giám sát sẽ phát bảng tên màu vàng. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "After the break, a mentor will show you how to greet visitors and explain the collection system. You won't be asked to discuss their personal financial circumstances."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: After the break, a mentor will show you how to greet visitors and explain the collection system. You won't be asked to discuss their personal financial circumstances. Nghĩa: Sau giờ nghỉ, người hướng dẫn sẽ chỉ cách đón khách và giải thích hệ thống nhận hàng. Bạn không phải hỏi về tình hình tài chính cá nhân của họ. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: Your first shift will be on Thursday, although the welcome message sent earlier mentioned Wednesday. We moved the start to allow staff to complete their ____ training.",
+      "correct_answers": [
+        "safeguarding"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “safeguarding” xuất hiện trong câu gốc: Your first shift will be on Thursday, although the welcome message sent earlier mentioned Wednesday. We moved the start to allow staff to complete their safeguarding training. Nghĩa: Ca đầu là thứ Năm dù thư chào mừng trước đó ghi thứ Tư. Chúng tôi đổi lịch để nhân viên hoàn thành đào tạo bảo vệ người tham gia.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "safeguarding",
+      "pos": "n.",
+      "meaning_vi": "công tác bảo vệ người dễ bị tổn thương",
+      "example_en": "Your first shift will be on Thursday, although the welcome message sent earlier mentioned Wednesday. We moved the start to allow staff to complete their safeguarding training.",
+      "example_vi": "Ca đầu là thứ Năm dù thư chào mừng trước đó ghi thứ Tư. Chúng tôi đổi lịch để nhân viên hoàn thành đào tạo bảo vệ người tham gia.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "expiry dates",
+      "pos": "n.",
+      "meaning_vi": "hạn sử dụng",
+      "example_en": "During your first hour, you'll check expiry dates and separate items that need refrigeration. You should never decide on your own whether a damaged package is safe to distribute.",
+      "example_vi": "Trong giờ đầu, bạn kiểm tra hạn dùng và tách hàng cần làm lạnh. Bạn tuyệt đối không tự quyết định gói hàng hỏng có an toàn để phát hay không.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "food parcels",
+      "pos": "n.",
+      "meaning_vi": "các gói thực phẩm hỗ trợ",
+      "example_en": "Please use the side entrance next to the pharmacy; the main glass doors are reserved for visitors collecting food parcels. A volunteer supervisor will give you a yellow name badge.",
+      "example_vi": "Vui lòng dùng cửa bên cạnh hiệu thuốc; cửa kính chính dành cho khách đến nhận gói thực phẩm. Người giám sát sẽ phát bảng tên màu vàng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "reflection meeting",
+      "pos": "n. phr.",
+      "meaning_vi": "buổi họp rút kinh nghiệm",
+      "example_en": "At the end of each month, volunteers can join a short reflection meeting to suggest changes. We record practical ideas, but residents' names must never appear in the notes.",
+      "example_vi": "Cuối mỗi tháng, tình nguyện viên có thể họp rút kinh nghiệm và đề xuất cải tiến. Chúng tôi ghi ý tưởng thực tế nhưng không ghi tên cư dân trong biên bản.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "ff4877b107603912fde9e6f546301a8374d231240b357569d9bfafa2c2e7c499",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

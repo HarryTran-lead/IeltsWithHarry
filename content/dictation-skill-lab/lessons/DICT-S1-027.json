@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-027",
+  "status": "draft",
+  "level": "L3",
+  "section": 1,
+  "topic": "Customer Complaints",
+  "title": "A Missing Part in the Box",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A customer corrects a product complaint.",
+    "Nhận diện corrected detail / distractors và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Northside Electronics support.",
+      "translation_vi": "Xin chào, bộ phận hỗ trợ Northside Electronics.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I received a new desk fan, but it seems incomplete.",
+      "translation_vi": "Tôi vừa nhận quạt bàn mới, nhưng có vẻ thiếu phụ kiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Was the power cable missing?",
+      "translation_vi": "Có phải thiếu dây nguồn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "No, the cable is there. It's the small plastic stand that's missing.",
+      "translation_vi": "Không, dây nguồn có rồi. Thiếu chiếc chân đế nhựa nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I see. Was the parcel delivered yesterday?",
+      "translation_vi": "Tôi hiểu rồi. Bưu kiện được giao hôm qua à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "It actually arrived on Tuesday, not Wednesday.",
+      "translation_vi": "Thực ra hàng đến thứ Ba, không phải thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We can send the stand separately without charge.",
+      "translation_vi": "Chúng tôi có thể gửi riêng chân đế miễn phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Will it arrive this weekend?",
+      "translation_vi": "Nó sẽ đến vào cuối tuần này chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Our next delivery is Monday. We'll email a tracking number tonight.",
+      "translation_vi": "Đợt giao tiếp theo là thứ Hai. Tối nay chúng tôi sẽ gửi mã theo dõi qua email.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "That's fine. My reference is NF-four-two-six.",
+      "translation_vi": "Được rồi. Mã tham chiếu của tôi là NF-bốn-hai-sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Item ordered: desk ____",
+      "correct_answers": [
+        "fan"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Sản phẩm là quạt bàn.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Missing part: plastic ____",
+      "correct_answers": [
+        "stand"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Không phải dây nguồn, mà là chân đế nhựa bị thiếu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Original arrival day: ____",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Khách sửa Wednesday thành Tuesday.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Replacement stand will be sent ____.",
+      "correct_answers": [
+        "without charge"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nhân viên nói sẽ gửi giá đỡ thay thế “without charge”, tức không tính phí.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Expected delivery day: ____",
+      "correct_answers": [
+        "Monday"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Không giao cuối tuần; đợt tiếp theo là thứ Hai.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04 của nhân vật B.",
+      "correct_answers": [
+        "No, the cable is there. It's the small plastic stand that's missing."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: No, the cable is there. It's the small plastic stand that's missing. Nghĩa: Không, dây nguồn có rồi. Thiếu chiếc chân đế nhựa nhỏ. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T09 của nhân vật A.",
+      "correct_answers": [
+        "Our next delivery is Monday. We'll email a tracking number tonight."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Our next delivery is Monday. We'll email a tracking number tonight. Nghĩa: Đợt giao tiếp theo là thứ Hai. Tối nay chúng tôi sẽ gửi mã theo dõi qua email. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: I received a new ____, but it seems incomplete.",
+      "correct_answers": [
+        "desk fan"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "desk fan: quạt bàn. Câu gốc: I received a new desk fan, but it seems incomplete.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "complaints",
+        "corrected_information",
+        "delivery",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "desk fan",
+      "pos": "phrase",
+      "meaning_vi": "quạt bàn",
+      "example_en": "I received a new desk fan, but it seems incomplete.",
+      "example_vi": "Tôi vừa nhận quạt bàn mới, nhưng có vẻ thiếu phụ kiện.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "power cable",
+      "pos": "phrase",
+      "meaning_vi": "dây nguồn",
+      "example_en": "Was the power cable missing?",
+      "example_vi": "Có phải thiếu dây nguồn không?",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "plastic stand",
+      "pos": "phrase",
+      "meaning_vi": "chân đế nhựa",
+      "example_en": "No, the cable is there. It's the small plastic stand that's missing.",
+      "example_vi": "Không, dây nguồn có rồi. Thiếu chiếc chân đế nhựa nhỏ.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "tracking number",
+      "pos": "phrase",
+      "meaning_vi": "mã theo dõi đơn hàng",
+      "example_en": "Our next delivery is Monday. We'll email a tracking number tonight.",
+      "example_vi": "Đợt giao tiếp theo là thứ Hai. Tối nay chúng tôi sẽ gửi mã theo dõi qua email.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "dd1c56997387a85a03655410b1f968045940d89d8fc97853d2716448c12722db",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

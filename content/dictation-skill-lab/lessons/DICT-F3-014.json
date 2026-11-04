@@ -1,0 +1,512 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-014",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Customer Support",
+  "learning_objectives_vi": [
+    "Nghe mô tả sự cố, hướng dẫn và mã hỗ trợ."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Support agent",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Swift Internet Support. What is the problem?",
+      "translation_vi": "Xin chào, bộ phận hỗ trợ Swift Internet. Anh đang gặp vấn đề gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "My home internet has stopped working since last night.",
+      "translation_vi": "Internet ở nhà tôi ngừng hoạt động từ tối qua.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I am sorry. Are all the lights on your router off?",
+      "translation_vi": "Tôi rất tiếc. Có phải tất cả đèn trên bộ định tuyến đều tắt không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "No, the power light is green, but the internet light is red.",
+      "translation_vi": "Không, đèn nguồn màu xanh lá, nhưng đèn internet màu đỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Please turn the router off for thirty seconds, then restart it.",
+      "translation_vi": "Vui lòng tắt bộ định tuyến trong 30 giây rồi khởi động lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I tried that twice this morning. Nothing changed.",
+      "translation_vi": "Sáng nay tôi đã thử hai lần. Không có gì thay đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Understood. We can send a technician tomorrow afternoon.",
+      "translation_vi": "Tôi hiểu. Chúng tôi có thể cử kỹ thuật viên đến vào chiều mai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Could someone come in the morning? I have work later.",
+      "translation_vi": "Có ai đến buổi sáng được không? Sau đó tôi phải đi làm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The earliest available visit is at one thirty tomorrow.",
+      "translation_vi": "Lịch sớm nhất còn trống là 1 giờ 30 chiều mai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "All right. Please send a text before the technician arrives.",
+      "translation_vi": "Được rồi. Vui lòng nhắn tin trước khi kỹ thuật viên đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Certainly. Your reference number is six eight four two.",
+      "translation_vi": "Vâng. Mã yêu cầu hỗ trợ của anh là 6842.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Thank you. I will keep the phone nearby tomorrow.",
+      "translation_vi": "Cảm ơn. Ngày mai tôi sẽ để điện thoại bên cạnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "short_answer",
+      "prompt": "When did the internet stop working?",
+      "correct_answers": [
+        "last night"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Mất internet từ last night.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "short_answer",
+      "prompt": "What colour is the internet light?",
+      "correct_answers": [
+        "red"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đèn nguồn xanh, nhưng internet light màu đỏ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Router should be off for ____ seconds.",
+      "correct_answers": [
+        "30",
+        "thirty"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nhân viên đề nghị tắt router trong thirty seconds.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Technician visit: tomorrow at ____.",
+      "correct_answers": [
+        "1:30",
+        "1:30 pm",
+        "13:30"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Lịch sớm nhất là one thirty tomorrow; không có lịch buổi sáng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Reference number: ____.",
+      "correct_answers": [
+        "6842"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Người hỗ trợ đọc four digits six eight four two.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ],
+      "practice_aliases": [
+        "6 8 4 2"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T04 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "No, the power light is green, but the internet light is red."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt màu đèn nguồn và đèn internet. Nghĩa: Không, đèn nguồn màu xanh lá, nhưng đèn internet màu đỏ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T09 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "The earliest available visit is at one thirty tomorrow."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe giờ thực tế sau yêu cầu đổi lịch. Nghĩa: Lịch sớm nhất còn trống là 1 giờ 30 chiều mai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T11 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Certainly. Your reference number is six eight four two."
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Chép bốn chữ số mã hỗ trợ. Nghĩa: Vâng. Mã yêu cầu hỗ trợ của anh là 6842.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T05 và điền từ/cụm từ bị thiếu: Please turn the router off for ____, then restart it.",
+      "correct_answers": [
+        "thirty seconds"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Thời gian tắt thiết bị trước khi khởi động lại.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T11 và điền từ/cụm từ bị thiếu: Certainly. Your reference number is ____.",
+      "correct_answers": [
+        "six eight four two"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Các chữ số phải nghe riêng từng số.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "customer_support",
+        "technical_problem",
+        "appointments",
+        "reference_numbers"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "router",
+      "pos": "noun",
+      "meaning_vi": "bộ định tuyến",
+      "example_en": "I am sorry. Are all the lights on your router off?",
+      "example_vi": "Tôi rất tiếc. Có phải tất cả đèn trên bộ định tuyến đều tắt không?",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "restart",
+      "pos": "verb",
+      "meaning_vi": "khởi động lại",
+      "example_en": "Please turn the router off for thirty seconds, then restart it.",
+      "example_vi": "Vui lòng tắt bộ định tuyến trong 30 giây rồi khởi động lại.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "technician",
+      "pos": "noun",
+      "meaning_vi": "kỹ thuật viên",
+      "example_en": "Understood. We can send a technician tomorrow afternoon.",
+      "example_vi": "Tôi hiểu. Chúng tôi có thể cử kỹ thuật viên đến vào chiều mai.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "reference number",
+      "pos": "noun phrase",
+      "meaning_vi": "mã tham chiếu hỗ trợ",
+      "example_en": "Certainly. Your reference number is six eight four two.",
+      "example_vi": "Vâng. Mã yêu cầu hỗ trợ của anh là 6842.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c7423a3bedb1e63b56584f24788fdeb0778bce471e57bd2d25496e0e94ba3dcc",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}
