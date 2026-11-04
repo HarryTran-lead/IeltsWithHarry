@@ -7023,7 +7023,8 @@ a.card:hover {
 .vocabulary-layout .vocabulary-landing-hero-art { display: none; }
 .vocabulary-layout .vocabulary-landing-hero h1 { font-size: clamp(24px, 2vw, 30px); }
 .vocabulary-layout .vocab-hub { max-width: none; margin: 0; padding: 4px 6px 30px; }
-.vocabulary-layout .vocab-study-toolbar, .vocabulary-layout .vocab-study .vocab-study-board { width: min(100%, 1100px); max-width: 1100px; margin-left: 0; }
+/* Centred, so the study column does not hug the left edge when the sidebar is hidden or the screen is wide. */
+.vocabulary-layout .vocab-study > *, .vocabulary-layout .vocab-study > .vocab-study-board { box-sizing: border-box; width: min(100%, 1100px); max-width: 1100px; margin-inline: auto; }
 
 .vocabulary-layout .listening-vocab-page, .vocabulary-layout .collocations-page, .vocabulary-layout .word-formation-page,
 .vocabulary-layout .reading-vocab-page, .vocabulary-layout .translation-page { box-sizing: border-box; width: 100%; max-width: none; margin: 0; padding: 5px 8px 30px; }
