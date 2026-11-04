@@ -47,6 +47,16 @@ Harry là Coach theo kịch bản, không phải AI. Coach nằm ngay trong tran
 - `u06_speaking_refactor` tách bài Unit 6 Speaking L04 thành L04A–C, giữ nguyên mã câu. Bài mới đọc bài làm cũ của L04 qua `legacy_slug`.
 - Câu có `options` là chuỗi được đổi thành danh sách rỗng.
 
+## Lớp dạy học C09 (`book2-teaching.tsx`)
+
+`build-book-2.py` đọc `units/Uxx/self_study_v3/<kỹ năng>-Lnn.json` và rút gọn thành `content.teaching`. Bước này bỏ metadata biên tập, các trạng thái và tài liệu dành riêng cho giáo viên. Mỗi kỹ năng dùng một định dạng nguồn khác nhau (c02 Đọc, c03 Nghe, c04 Viết Task 1, c06 và Part 2/3 Nói), nhưng sau bước này đều thành chung các trường sau: các bước làm, hiểu sâu, lưu ý, biểu đồ, ví dụ mẫu, mẹo, lỗi thường gặp, từ vựng, luyện có hướng dẫn, ghi chú Part 2, tiêu chí tự chấm, Coach và lịch ôn.
+
+- **Bước Tìm hiểu:** khi một bài có lớp dạy học, các khối mới thay cho các khối cũ có nội dung tương ứng. Ví dụ mẫu luôn bắt người học tự nghĩ trước, rồi mới mở đáp án kèm bằng chứng, lý do và bẫy cần tránh. Các bước luyện có hướng dẫn đánh dấu được và được lưu như checklist.
+- **Coach C08:** mặc định thu gọn thành nút "Hỏi Coach Harry" và chỉ tự mở khi người học trả lời sai. Các trigger trong gói được gom thành 5 nhóm: trợ giúp, từ vựng, gợi ý, khi sai, khi ôn.
+- **Màn kết quả:** có thêm lịch ôn gợi ý (sau 1, 3, 7 ngày) và tiêu chí tự chấm.
+
+Dữ liệu C09 còn mâu thuẫn, cần bên nội dung xử lý. Ví dụ ở U01 W-L03: câu hỏi dùng `W-HOUSING-01` (Eastbank, 2011–2023), phần dạy học dùng biểu đồ `C04-U01-W03-LINE` (Northvale, 2006–2026), còn `writing_model` lại tham chiếu `W-HOUSING-04` (2000–2025). Vì vậy bài mẫu của câu hỏi vẫn lấy từ `items.jsonl`, không lấy từ `writing_model`.
+
 ## Quy tắc khi thêm bài hoặc unit mới
 
 - Chỉ cần `lesson.skill` đúng một trong bốn kỹ năng; không thêm màu riêng cho từng unit trong bài học.

@@ -80,13 +80,17 @@ export function coachLines({ script, moment, skill, itemType, options, objective
 }
 
 /** Harry as a skippable, inline coach. It never covers lesson content and "Nói cách khác" rephrases the tip. */
-export function Book2Coach({ lines, actions = [], onAction, compact = false, tone = "" }: {
+export function Book2Coach({ lines, actions = [], onAction, compact = false, tone = "", collapsed = false }: {
   lines: string[]; actions?: string[]; onAction?: (label: string) => void; compact?: boolean; tone?: "" | "is-wrong";
+  /** C09 lessons keep the coach folded until the learner asks for help. */
+  collapsed?: boolean;
 }) {
   const [hidden, setHidden] = useCoachHidden();
   const [turn, setTurn] = useState(0);
+  const [asked, setAsked] = useState(false);
   if (!lines.length) return null;
   if (hidden) return <button type="button" className="b2-coach-show" onClick={() => setHidden(false)}><MessageCircle size={15} /> Bật Coach</button>;
+  if (collapsed && !asked) return <button type="button" className="b2-coach-ask" onClick={() => setAsked(true)}><Sticker name="harry" size={30} tilt={-6} pop={false} /> Cần trợ giúp? Hỏi Coach Harry</button>;
   const line = lines[turn % lines.length];
   return <aside className={`b2-coach ${compact ? "is-compact" : ""} ${tone}`} aria-label="Coach học tập" aria-live="polite">
     <Sticker name="harry" size={compact ? 44 : 58} tilt={-6} pop={false} className="b2-coach-avatar" />

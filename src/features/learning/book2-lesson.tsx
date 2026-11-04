@@ -10,6 +10,7 @@ import { savePracticeSnapshot } from "./practice-results";
 import { cacheBook2State, loadBook2State, saveBook2State, type Book2SavedState, type Book2Step } from "./book2-lesson-state";
 import { Book2SourcePanel } from "./book2-source-panel";
 import { Book2Coach, coachLines, type CoachScript } from "./book2-coach";
+import { TeachingLearn, teachingCoach, type Book2Teaching } from "./book2-teaching";
 import { book2AnswerCorrect, book2OptionOrder, evaluateBook2Progress, requiredBook2WritingWords } from "./book2-progress";
 import "./book2-lesson.css";
 
@@ -56,6 +57,8 @@ export type Book2Content = {
   coach?: CoachScript;
   /** The lesson this one was split from, whose saved answers it starts with. */
   legacy_slug?: string;
+  /** C09 teaching layer: worked examples, tips, mistakes, guided steps and coach events. */
+  teaching?: Book2Teaching;
 };
 type Nav = { previous: { slug: string; title: string } | null; next: { slug: string; title: string } | null; index: number; total: number } | null;
 
@@ -345,6 +348,13 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
   const coachPractice = coachLines({ script: scripted, moment: graded && !right ? "wrong" : "before", scriptPhase, skill: lesson.skill, itemType: current?.item_type, options: current?.options });
   const coachIntro = coachLines({ script: scripted, moment: "intro", scriptPhase: taskScript ? "welcome" : undefined, skill: lesson.skill, objective: content.lesson.learning_objectives[0]?.vi });
   const coachReview = coachLines({ script: scripted, moment: "review", scriptPhase: taskScript ? (content.coach?.mode === "speaking" ? "reflect" : "review") : undefined, skill: lesson.skill, reviewTip: content.lesson.mini_review[0]?.vi || content.lesson.mini_review[0]?.en });
+  const teaching = content.teaching;
+  const fromTeaching = (kind: Parameters<typeof teachingCoach>[1], fallback: string[]) => { const lines = teachingCoach(teaching, kind); return lines.length ? lines : fallback; };
+  if (teaching && !taskScript) {
+    coachIntro.lines = fromTeaching("help", coachIntro.lines).concat(teachingCoach(teaching, "vocab"));
+    coachPractice.lines = graded && !right ? fromTeaching("wrong", coachPractice.lines) : fromTeaching("hint", coachPractice.lines);
+    coachReview.lines = mastered ? fromTeaching("praise", coachReview.lines).concat(teachingCoach(teaching, "review")) : fromTeaching("review", coachReview.lines);
+  }
   const coachDetail = coachTips && (content.lesson.strategies.length > 0 || content.lesson.mini_review.length > 0) ? <div className="b2-coach-detail">
     {content.lesson.strategies.length > 0 && <><strong>Các bước gợi ý</strong><ol>{content.lesson.strategies.map((item, index) => <li key={index}>{item.vi || item.en}</li>)}</ol></>}
     {content.lesson.mini_review.length > 0 && <><strong>Tự kiểm tra</strong><ul>{content.lesson.mini_review.map((item, index) => <li key={index}>{item.vi || item.en}</li>)}</ul></>}
@@ -409,18 +419,19 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
       <div className="b2-hero-copy">
         <span className="b2-eyebrow">{theme.label.toUpperCase()} · KHOẢNG {content.lesson.duration_minutes ?? 40} PHÚT · {questions.length} CÂU</span>
         <h1>{lesson.title}</h1>
-        <p>{content.lesson.learning_objectives[0]?.vi || "Học ngắn, tự làm, xem lý do và sửa lỗi trước khi qua bài."}</p>
+        <p>{content.teaching?.outcome || content.lesson.learning_objectives[0]?.vi || "Học ngắn, tự làm, xem lý do và sửa lỗi trước khi qua bài."}</p>
       </div>
       <ProgressRing value={questions.length ? completedCount / questions.length : 0} size={76}><b>{questions.length ? Math.round(completedCount / questions.length * 100) : 0}%</b><small>đã làm</small></ProgressRing>
     </header>}
     {step !== "practice" && stepPath}
 
     {step === "learn" && <main className="b2-learn">
-      <Book2Coach lines={coachNote ? [coachNote] : coachIntro.lines} actions={coachIntro.actions} onAction={coachAction} />
+      <Book2Coach collapsed={Boolean(teaching) && !taskScript} lines={coachNote ? [coachNote] : coachIntro.lines} actions={coachIntro.actions} onAction={coachAction} />
       {coachDetail}
-      <section className="b2-goal"><div className="b2-bubble"><strong>Sau bài này bạn làm được:</strong><ul>{content.lesson.learning_objectives.map((item, index) => <li key={index}>{item.vi || item.en}{item.vi && item.en && <small>{item.en}</small>}</li>)}</ul></div></section>
+      <section className="b2-goal"><div className="b2-bubble"><strong>Sau bài này bạn làm được:</strong><ul>{content.lesson.learning_objectives.map((item, index) => <li key={index}>{item.vi || item.en}{item.vi && item.en && <small>{item.en}</small>}</li>)}</ul>{teaching?.why && <p className="b2-why"><b>Vì sao học bài này:</b> {teaching.why}</p>}</div></section>
+      {teaching && <TeachingLearn teaching={teaching} speak={speak} guidedDone={(index) => Boolean(checklist[`g${index}`])} toggleGuided={(index) => setChecklist((previous) => ({ ...previous, [`g${index}`]: !previous[`g${index}`] }))} />}
 
-      {content.lesson.theory.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><BookOpenText size={18} /></span> Kiến thức cốt lõi</h2><div className="b2-cards">{content.lesson.theory.map((item, index) => <article className="b2-card" key={index}><span className="b2-card-number">{index + 1}</span><h3>{item.title}</h3><p>{item.content?.vi || item.content?.en}</p>{item.content?.vi && item.content.en && <details><summary>Đọc giải thích tiếng Anh</summary><p>{item.content.en}</p></details>}{item.example?.en && <blockquote><button type="button" className="b2-say" onClick={() => speak(item.example!.en!)} aria-label="Nghe ví dụ"><Volume2 size={15} /></button><span>{item.example.en}{item.example.vi && <small>{item.example.vi}</small>}</span></blockquote>}</article>)}</div></section>}
+      {content.lesson.theory.length > 0 && !teaching?.concepts?.length && <section className="b2-block"><h2><span className="b2-block-icon"><BookOpenText size={18} /></span> Kiến thức cốt lõi</h2><div className="b2-cards">{content.lesson.theory.map((item, index) => <article className="b2-card" key={index}><span className="b2-card-number">{index + 1}</span><h3>{item.title}</h3><p>{item.content?.vi || item.content?.en}</p>{item.content?.vi && item.content.en && <details><summary>Đọc giải thích tiếng Anh</summary><p>{item.content.en}</p></details>}{item.example?.en && <blockquote><button type="button" className="b2-say" onClick={() => speak(item.example!.en!)} aria-label="Nghe ví dụ"><Volume2 size={15} /></button><span>{item.example.en}{item.example.vi && <small>{item.example.vi}</small>}</span></blockquote>}</article>)}</div></section>}
 
       {content.lesson.grammar.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><PenLine size={18} /></span> Cấu trúc cần nhớ</h2><div className="b2-formulas">{content.lesson.grammar.map((item, index) => {
         const formula = item.formula || item.form;
@@ -428,11 +439,11 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
         return <article key={index}>{item.title && <small>{item.title}</small>}{formula && <code>{formula}</code>}{meaning && <p>{meaning}</p>}{item.example && <blockquote><button type="button" className="b2-say" onClick={() => speak(item.example!)} aria-label="Nghe ví dụ"><Volume2 size={15} /></button><span>{item.example}</span></blockquote>}</article>;
       })}</div></section>}
 
-      {content.lesson.strategies.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><Lightbulb size={18} /></span> Mẹo làm bài</h2><ol className="b2-tips">{content.lesson.strategies.map((item, index) => <li key={index}><strong>{item.topic}</strong><span>{item.vi || item.en}</span></li>)}</ol></section>}
+      {content.lesson.strategies.length > 0 && !teaching?.tips?.length && <section className="b2-block"><h2><span className="b2-block-icon"><Lightbulb size={18} /></span> Mẹo làm bài</h2><ol className="b2-tips">{content.lesson.strategies.map((item, index) => <li key={index}><strong>{item.topic}</strong><span>{item.vi || item.en}</span></li>)}</ol></section>}
 
-      {content.lesson.common_mistakes.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><TriangleAlert size={18} /></span> Lỗi thường gặp</h2><div className="b2-mistakes">{content.lesson.common_mistakes.map((item, index) => <article key={index}><p className="b2-wrong"><X size={16} /> {item.wrong}</p><p className="b2-right"><Check size={16} /> {item.correct}</p>{(item.reason?.vi || item.reason?.en) && <small>{item.reason?.vi || item.reason?.en}</small>}</article>)}</div></section>}
+      {content.lesson.common_mistakes.length > 0 && !teaching?.mistakes?.length && <section className="b2-block"><h2><span className="b2-block-icon"><TriangleAlert size={18} /></span> Lỗi thường gặp</h2><div className="b2-mistakes">{content.lesson.common_mistakes.map((item, index) => <article key={index}><p className="b2-wrong"><X size={16} /> {item.wrong}</p><p className="b2-right"><Check size={16} /> {item.correct}</p>{(item.reason?.vi || item.reason?.en) && <small>{item.reason?.vi || item.reason?.en}</small>}</article>)}</div></section>}
 
-      {content.lesson.vocabulary.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><Volume2 size={18} /></span> Từ và cụm từ cần dùng <small>{content.lesson.vocabulary.length} thẻ · bấm để lật</small></h2>{vocabularyGroups.map((items, group) => <details className="b2-deck" key={group} open={group === 0}><summary>Bộ thẻ {group + 1} · {items.length} từ <ChevronDown size={18} /></summary><div className="b2-words">{items.map((item, index) => <WordCard key={index} term={item.term} meaning={item.meaning_vi} example={item.example_en} />)}</div></details>)}</section>}
+      {content.lesson.vocabulary.length > 0 && !teaching?.vocabulary?.length && <section className="b2-block"><h2><span className="b2-block-icon"><Volume2 size={18} /></span> Từ và cụm từ cần dùng <small>{content.lesson.vocabulary.length} thẻ · bấm để lật</small></h2>{vocabularyGroups.map((items, group) => <details className="b2-deck" key={group} open={group === 0}><summary>Bộ thẻ {group + 1} · {items.length} từ <ChevronDown size={18} /></summary><div className="b2-words">{items.map((item, index) => <WordCard key={index} term={item.term} meaning={item.meaning_vi} example={item.example_en} />)}</div></details>)}</section>}
 
       <Book2SourcePanel content={content} />
 
@@ -451,7 +462,7 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
           return <button type="button" key={item.question_id} className={`${state} ${index === position ? "is-current" : ""}`} onClick={() => moveTo(index)} aria-label={`Câu ${index + 1}`} aria-current={index === position ? "step" : undefined} />;
         })}</div>
 
-        <Book2Coach compact tone={graded && !right ? "is-wrong" : ""} lines={coachNote ? [coachNote] : coachPractice.lines} actions={coachPractice.actions} onAction={coachAction} key={`coach-${current.question_id}-${graded}-${scriptPhase ?? ""}`} />
+        <Book2Coach compact collapsed={Boolean(teaching) && !taskScript && !(graded && !right)} tone={graded && !right ? "is-wrong" : ""} lines={coachNote ? [coachNote] : coachPractice.lines} actions={coachPractice.actions} onAction={coachAction} key={`coach-${current.question_id}-${graded}-${scriptPhase ?? ""}`} />
         {coachDetail}
         <article className={`b2-question ${graded ? right ? "is-right" : "is-wrong" : ""}`} key={current.question_id} id={"question-" + current.question_id}>
           <header className="b2-question-meta"><span>CÂU {position + 1}/{questions.length}</span>{currentGroup && <span>Phần {currentGroupIndex + 1}/{groups.length} · {currentGroup.title}</span>}</header>
@@ -527,9 +538,11 @@ export function Book2LessonPage({ lesson, content, navigation, canManage }: {
         </div>
       </section>
 
-      <Book2Coach lines={coachReview.lines} actions={coachReview.actions.filter((label) => !/mẫu/i.test(label))} onAction={coachAction} />
+      <Book2Coach collapsed={Boolean(teaching) && !taskScript} lines={coachReview.lines} actions={coachReview.actions.filter((label) => !/mẫu/i.test(label))} onAction={coachAction} />
       {problems.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><RotateCcw size={18} /></span> Câu cần làm tiếp hoặc sửa</h2><div className="b2-fix-list">{problems.map((item) => <div className="b2-fix" key={item.question_id}><button type="button" onClick={() => jumpTo(item)}><span className={!checked[item.question_id] ? "is-todo" : "is-wrong"}>{!checked[item.question_id] ? "Chưa làm" : "Cần sửa"}</span><strong>{item.prompt_vi || item.prompt_en}</strong><ArrowRight size={16} /></button>{sourceFor(item) && <button type="button" className="b2-fix-source" onClick={() => jumpTo(item, true)}>{item.evidence ? "Xem bằng chứng" : "Xem tư liệu"}</button>}</div>)}</div></section>}
 
+      {teaching?.review_days?.length ? <p className="b2-callout is-info"><RotateCcw size={18} /> <span><b>Lịch ôn gợi ý:</b> quay lại bài này sau {teaching.review_days.join(", ")} ngày để nhớ lâu.</span></p> : null}
+      {teaching?.self_check?.length ? <section className="b2-block"><h2><span className="b2-block-icon"><Target size={18} /></span> Tự chấm theo tiêu chí</h2><ul className="b2-criteria">{teaching.self_check.map((item) => <li key={item}>{item}</li>)}</ul></section> : null}
       {content.lesson.mini_review.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><Check size={18} /></span> Tự kiểm tra trước khi qua bài</h2><ul className="b2-checklist">{content.lesson.mini_review.map((item, index) => <li key={index}><label><input type="checkbox" checked={Boolean(checklist[String(index)])} onChange={(event) => setChecklist((previous) => ({ ...previous, [index]: event.target.checked }))} /> <span>{item.vi || item.en}</span></label></li>)}</ul></section>}
 
       {open.length > 0 && <section className="b2-block"><h2><span className="b2-block-icon"><Target size={18} /></span> Tiêu chí tự đánh giá bài {lesson.skill === "Writing" ? "viết" : "nói"}</h2><ul className="b2-criteria">{(lesson.skill === "Writing" ? ["Trả lời đúng đề: đủ ý chính và số liệu hoặc lập luận liên quan.", "Mạch lạc: có mở, thân, kết và liên kết ý rõ.", "Từ vựng: dùng từ chính xác, tránh lặp nguyên mẫu.", "Ngữ pháp: câu đúng, có cấu trúc đa dạng và dễ hiểu."] : ["Trôi chảy và mạch lạc: ý nối rõ, ít dừng quá lâu.", "Từ vựng: từ phù hợp chủ đề, không lặp quá nhiều.", "Ngữ pháp: câu đủ rõ và có cấu trúc đa dạng.", "Phát âm: người nghe hiểu được trọng âm và âm cuối."]).map((text) => <li key={text}>{text}</li>)}</ul><p className="b2-muted">Mức 1–4 chỉ để tự theo dõi, không quy đổi thành band IELTS.</p></section>}
