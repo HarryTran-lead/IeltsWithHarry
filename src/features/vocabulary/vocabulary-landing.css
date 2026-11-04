@@ -93,3 +93,17 @@
 .vocabulary-landing-states .vocab-state{font-size:11.5px;padding:2px 7px}
 @media(max-width:850px){.vocabulary-today{grid-template-columns:1fr}}
 @media(max-width:600px){.vocabulary-today-steps{display:none}}
+/* UX pass (2026-11-04) */
+.vocabulary-today-steps li{padding:0}
+.vocabulary-today-steps li>a{display:flex;align-items:center;gap:10px;width:100%;padding:9px 12px;color:inherit;text-decoration:none;border-radius:inherit}
+.vocabulary-today-steps li>a:hover{background:#f2fbfa}
+.vocabulary-today-steps li:last-child{padding:9px 12px}
+.vocabulary-landing-states{grid-template-columns:repeat(2,minmax(0,1fr))}
+.vocabulary-landing-states .vocab-state{font-size:12px}
+.vocabulary-landing-lookup{display:flex;gap:6px;margin-top:10px}
+.vocabulary-landing-lookup input{flex:1;min-width:0;min-height:40px;padding:0 12px;border:1px solid #cfe3e6;border-radius:10px;background:#fff;color:#183859;font:650 14px var(--font-display)}
+.vocabulary-landing-lookup input:focus{outline:3px solid #bfe8e9;border-color:#0b8f98}
+.vocabulary-landing-lookup button{display:inline-flex;align-items:center;gap:4px;min-height:40px;padding:0 14px;border:0;border-radius:10px;background:#078f98;color:#fff;font:800 14px var(--font-display);cursor:pointer}
+.vocabulary-landing-lookup button:disabled{opacity:.5;cursor:default}
+.vocabulary-landing-tabs button{min-height:36px}
+.vocabulary-landing-eyebrow{font-size:12px}

@@ -402,3 +402,9 @@
   .vocab-lib-actions { grid-column: 2; grid-row: 1 / span 3; }
 }
 .vocab-empty .sticker { display: block; margin: 0 auto 10px; }
+/* UX pass (2026-11-04): on phones a long word plus its state pill pushed rows 6px past the screen edge. */
+@media (max-width: 760px) {
+  .vocab-dense-main { grid-template-columns: minmax(0, max-content) auto; }
+  .vocab-dense-word { min-width: 0; overflow-wrap: anywhere; }
+}
+.vocab-show-more { display: flex; width: 100%; justify-content: center; margin-top: 10px; min-height: 44px; }

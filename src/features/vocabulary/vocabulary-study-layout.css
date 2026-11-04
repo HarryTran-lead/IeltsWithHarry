@@ -140,3 +140,19 @@
 }
 .vocab-study-card-tools{display:flex;align-items:center;gap:6px;margin:-4px 0 12px}
 .vocab-study-card-tools .vocab-study-speak{margin:0}
+/* UX pass (2026-11-04): the speak button moved into .vocab-study-card-tools, so it lost its pill style and its icon stacked above the label. */
+.vocab-study-card-tools .vocab-study-speak{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid #cfe6e8;border-radius:999px;background:#fff}
+.vocab-study-card-tools .vocab-star{width:40px;height:40px}
+.vocab-study-forms{margin:-4px 0 6px;color:var(--vs-muted);font-size:14px}
+/* A shorter card keeps the main button in view on laptop screens; content starts at the top instead of floating mid-card. */
+.vocab-study-card{min-height:min(40vh,340px);align-content:start}
+.vocab-study-match-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.vocab-study-match-clock{flex:none;padding:4px 10px;border-radius:999px;background:var(--vs-teal-soft);color:var(--vs-teal);font:850 13px var(--font-display);font-variant-numeric:tabular-nums}
+.vocab-study-match-help{margin:0;color:var(--vs-muted);font-size:13.5px}
+.vocab-study-board-match .vocab-match-grid button{display:flex;align-items:center;gap:8px;font-size:15px;line-height:1.4}
+.vocab-study-board-match .vocab-match-grid button:disabled{opacity:1;border-color:#b5e3cd;background:var(--vs-good-soft);color:#4f7a68}
+.vocab-study-board-match .vocab-match-grid button:disabled svg{flex:none;color:var(--vs-good)}
+.vocab-study-board-match .vocab-match-grid button.wrong{border-color:var(--vs-bad);background:var(--vs-bad-soft);animation:vocab-shake .2s}
+@media(prefers-reduced-motion:reduce){.vocab-study-board-match .vocab-match-grid button.wrong{animation:none}}
+@media(max-width:650px){.vocab-study-card{min-height:0}.vocab-study-board-match .vocab-match-grid button{font-size:14px}}
+.vocab-study-toolbar-heading>button{min-height:36px}
