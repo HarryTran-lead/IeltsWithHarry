@@ -18,7 +18,7 @@
 .translation-settings-toggle { padding: 7px 11px; border: 1px solid #cfe4e7; border-radius: 9px; background: #fff; color: #087f89; font: 800 12px var(--font-display); cursor: pointer; }
 .translation-settings-toggle:hover { background: #eff9f8; }
 
-.translation-controls { display: grid; grid-template-columns: 2fr 1.25fr 1.2fr .7fr 1fr auto; align-items: end; gap: 10px; padding: 15px; border: 1px solid #e1eaed; border-radius: 17px; background: #fff; box-shadow: 0 8px 24px #173d5f0b; }
+.translation-controls { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: end; gap: 10px; padding: 15px; border: 1px solid #e1eaed; border-radius: 17px; background: #fff; box-shadow: 0 8px 24px #173d5f0b; }
 .translation-controls label { min-width: 0; color: #68819a; font-size: 11px; font-weight: 850; }
 .translation-controls select, .translation-controls input:not([type="checkbox"]) { display: block; width: 100%; height: 42px; margin-top: 5px; padding: 0 10px; border: 1px solid #d8e6eb; border-radius: 9px; background: #f8fbfc; color: #183858; font: 750 13px var(--font-display); }
 .translation-controls .translation-studied-filter { grid-column: 1 / -1; display: flex; align-items: center; gap: 7px; min-height: 24px; color: #285371; font-size: 12px; }

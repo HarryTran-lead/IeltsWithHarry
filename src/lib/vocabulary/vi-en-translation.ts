@@ -2,6 +2,7 @@ export type TranslationMode = "speaking" | "writing";
 export type TranslationRating = "again" | "hard" | "good" | "easy";
 export type TranslationExercise = {
   id: string; topic: string; mode: TranslationMode; term: string; meaning_vi: string; canonical_source_key?: string | null;
+  milestone?: string | null; difficulty?: "easy" | "hard";
   pattern: string; collocations: string; prompt_vi: string; reference_en: string;
   alternatives: string[]; editor_note: string; revision: number;
 };

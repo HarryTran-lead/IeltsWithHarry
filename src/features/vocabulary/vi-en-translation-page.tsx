@@ -43,6 +43,8 @@ export function ViEnTranslationPage() {
   const [exercises, setExercises] = useState<TranslationExercise[]>([]);
   const [progress, setProgress] = useState<TranslationProgress[]>([]);
   const [mode, setMode] = useState<ModeFilter>("mixed");
+  const [milestone, setMilestone] = useState("all");
+  const [difficulty, setDifficulty] = useState("all");
   const [search, setSearch] = useState("");
   const [selection, setSelection] = useState<Selection>("new");
   const [size, setSize] = useState(10);
@@ -100,7 +102,7 @@ export function ViEnTranslationPage() {
     let active = true;
     void (async () => {
       const { data, error: exerciseError } = await db.from("vi_en_translation_exercises")
-        .select("id,topic,mode,term,meaning_vi,canonical_source_key,pattern,collocations,prompt_vi,reference_en,alternatives,editor_note,revision")
+        .select("id,topic,mode,milestone,difficulty,term,meaning_vi,canonical_source_key,pattern,collocations,prompt_vi,reference_en,alternatives,editor_note,revision")
         .eq("status", "published").eq("topic", topic).order("id").range(0, 999);
       if (exerciseError) throw exerciseError;
       const allProgress: TranslationProgress[] = [];
@@ -134,7 +136,10 @@ export function ViEnTranslationPage() {
   }, [db, topic, target]);
 
   const progressById = useMemo(() => new Map(progress.map((item) => [item.exercise_id, item])), [progress]);
+  const milestones = [...new Set(exercises.map((item) => item.milestone).filter((value): value is string => Boolean(value)))].sort();
   const filtered = exercises.filter((item) => (mode === "mixed" || item.mode === mode)
+    && (milestone === "all" || item.milestone === milestone)
+    && (difficulty === "all" || item.difficulty === difficulty)
     && item.term.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase())
     && (!onlyStudied || !!item.canonical_source_key && studiedKeys.includes(item.canonical_source_key)));
   const studied = filtered.filter((item) => progressById.has(item.id)).length;
@@ -222,8 +227,10 @@ export function ViEnTranslationPage() {
 
     {(!sessionActive || settingsOpen) && <>
       <section className="translation-controls" aria-label="Chọn bài luyện dịch">
-        <label>Chủ đề<select value={topic} onChange={(event) => { setLoading(true); setError(""); setTopic(event.target.value); }}>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>
+        <label>Chủ đề<select value={topic} onChange={(event) => { setLoading(true); setError(""); setMilestone("all"); setTopic(event.target.value); }}>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>
+        <label>Mốc học<select value={milestone} onChange={(event) => setMilestone(event.target.value)}><option value="all">Tất cả mốc</option>{milestones.map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
         <label>Loại câu<select value={mode} onChange={(event) => { setMode(event.target.value as ModeFilter); setSessionIds([]); window.localStorage.removeItem("vi-en-session:" + topic); }}><option value="mixed">Speaking + Writing</option><option value="speaking">Speaking</option><option value="writing">Writing</option></select></label>
+        <label>Độ khó<select value={difficulty} onChange={(event) => setDifficulty(event.target.value)}><option value="all">Dễ + khó</option><option value="easy">Dễ</option><option value="hard">Khó</option></select></label>
         <label>Học / ôn<select value={selection} onChange={(event) => setSelection(event.target.value as Selection)}><option value="new">Câu chưa luyện</option><option value="due">Đến hạn ôn</option><option value="all">Tất cả câu</option></select></label>
         <label>Số câu<select value={size} onChange={(event) => setSize(Number(event.target.value))}><option value={5}>5 câu</option><option value={10}>10 câu</option><option value={20}>20 câu</option></select></label>
         <label>Tìm từ<input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Từ mục tiêu…" /></label>
@@ -242,7 +249,7 @@ export function ViEnTranslationPage() {
 
     {current && <section ref={cardRef} className="translation-card" aria-label={"Câu " + (index + 1) + " trên " + sessionIds.length}>
       <div className="translation-card-top">
-        <span>{current.mode === "speaking" ? "IELTS SPEAKING" : "IELTS WRITING"} · {topic}</span>
+        <span>{current.mode === "speaking" ? "IELTS SPEAKING" : "IELTS WRITING"} · {topic}{current.milestone ? ` · ${current.milestone}` : ""}{current.difficulty ? ` · ${current.difficulty === "easy" ? "Dễ" : "Khó"}` : ""}</span>
         <strong>Câu {index + 1}/{sessionIds.length}</strong>
       </div>
       <div className="translation-track" role="progressbar" aria-label="Tiến độ lượt luyện" aria-valuemin={0} aria-valuemax={sessionIds.length} aria-valuenow={index + (stage === "result" ? 1 : 0)}><span style={{ width: String(((index + (stage === "result" ? 1 : 0)) / sessionIds.length) * 100) + "%" }} /></div>
