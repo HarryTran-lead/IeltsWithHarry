@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { generateAdaptiveNewsQuiz, targetQuestionCount, validateAdaptiveQuiz } from "../src/lib/news/adaptive-quiz";
+import { generateAdaptiveNewsQuiz, longestSharedQuestionPhrase, looksLikeDirectLookup, targetQuestionCount, validateAdaptiveQuiz } from "../src/lib/news/adaptive-quiz";
 import { choiceTypes, gapTypes, ieltsQuestionTypes, typesForKey, type IeltsQuestionType } from "../src/lib/news/ielts-passage";
 
 const quote = "Scientists used solar panels to power the research station during the summer.";
@@ -43,6 +43,20 @@ describe("adaptive IELTS passage quiz", () => {
     partial.questions.slice(0, 3).forEach((question) => { question.supporting_sentence = "A fabricated sentence about the Moon."; });
     expect(validateAdaptiveQuiz(partial, body, selected, 2)).toHaveLength(3);
   });
+  it("drops copied evidence clues and a uniquely copied multiple-choice answer", () => {
+    expect(longestSharedQuestionPhrase(
+      "What did scientists use to power the research station during the summer?", quote,
+    )).toBeGreaterThanOrEqual(6);
+    const direct = generated(["mcq"]);
+    direct.questions[0].prompt = "What did scientists use to power the research station during the summer?";
+    direct.questions[1].prompt = "What did the scientists power?";
+    direct.questions[1].options = ["the research station", "the city power grid", "the nearby laboratory"];
+    const kept = validateAdaptiveQuiz(direct, body, ["mcq"], 2);
+    expect(kept).toHaveLength(2);
+    expect(kept.every((question) => question.prompt !== direct.questions[0].prompt && question.prompt !== direct.questions[1].prompt)).toBe(true);
+    expect(looksLikeDirectLookup("What did researchers record during survey stage 4?", "Researchers recorded soil temperature during survey stage 4 for comparison.")).toBe(true);
+    expect(looksLikeDirectLookup("Which measurement was documented during phase 4?", "Researchers recorded soil temperature during survey stage 4 for comparison.")).toBe(false);
+  });
   it("assigns varied question groups", () => {
     const groups = typesForKey("article-one");
     expect(groups).toHaveLength(3);
@@ -76,10 +90,15 @@ describe("adaptive IELTS passage quiz", () => {
           const number = ++index;
           const options = type === "tfng" ? ["True", "False", "Not Given"] : type === "ynng" ? ["Yes", "No", "Not Given"] : ["First", "Second", "Third", "Fourth"];
           const choice = choiceTypes.has(type);
-          const prompt = gapTypes.has(type)
-            ? `${type === "flow_chart_completion" ? `Step ${number}: ` : type === "table_completion" ? "Survey finding: " : ""}The researchers recorded ______ during survey stage ${number}.`
-            : type === "short_answer" ? `What did the researchers record during survey stage ${number}?`
-              : `Which option describes survey stage ${number}?`;
+          const prompt = number % 3 === 0
+            ? gapTypes.has(type)
+              ? `${type === "flow_chart_completion" ? `Step ${number}: ` : type === "table_completion" ? "Survey finding: " : ""}Researchers recorded ______ during survey stage ${number}.`
+              : type === "short_answer" ? `What did researchers record during survey stage ${number}?`
+                : `Which option describes researchers recording survey stage ${number}?`
+            : gapTypes.has(type)
+            ? `${type === "flow_chart_completion" ? `Step ${number}: ` : type === "table_completion" ? "Survey finding: " : ""}The team documented ______ for later comparison in phase ${number}.`
+            : type === "short_answer" ? `Which measurement was documented in phase ${number}?`
+              : `Which interpretation best fits phase ${number}?`;
           return { type, prompt, options: choice ? options : [], correct_index: choice ? 0 : -1,
             answer: choice ? "" : `detail${number}`, supporting_sentence: sentences[number - 1], explanation,
             option_notes: choice ? options.map(() => note) : [], needs_review: true, review_reason: "Check this fact." };
@@ -90,6 +109,9 @@ describe("adaptive IELTS passage quiz", () => {
     try {
       const result = await generateAdaptiveNewsQuiz("Survey findings", passage, "long-article", fetcher as typeof fetch);
       expect(result.questions).toHaveLength(13);
+      const directCount = result.questions.filter((question) => looksLikeDirectLookup(question.prompt, question.supporting_sentence)).length;
+      expect(directCount).toBeGreaterThan(0);
+      expect(directCount).toBeLessThanOrEqual(3);
       expect(new Set(result.questions.map((question) => question.type)).size).toBeGreaterThanOrEqual(2);
       expect(requests).toHaveLength(2);
       expect(requests[0]).toContain("Balance the set across difficulty");
