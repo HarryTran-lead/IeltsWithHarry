@@ -17,9 +17,8 @@ import { buildLearnQueue, checkTyped, headwordForms, learnProgress, requeue, ses
 import { useStudiedWords } from "./use-studied-words";
 import { useWordSrs } from "./use-word-srs";
 import { useDecks } from "./use-decks";
-import { ExampleSentence } from "./example-sentence";
 import { VocabularyFlashcard, type CardStatus } from "./vocabulary-flashcard";
-import { pronounce, speakText, useIpa } from "@/lib/vocabulary/pronounce";
+import { pronounce, useIpa } from "@/lib/vocabulary/pronounce";
 import "./vocabulary-study-layout.css";
 import "./vocabulary-flashcard.css";
 
@@ -44,9 +43,6 @@ const batchSize = 10;
 /** Wall-clock time for the Match timer, read only in event handlers. */
 const clockNow = () => Date.now();
 const stageLabel = { intro: "Từ mới", choice: "Chọn nghĩa đúng", type: "Gõ lại từ" } as const;
-/** The CEFR set labels parts of speech in English; show them in Vietnamese like the IELTS set. */
-const posNames: Record<string, string> = { "be-verb": "Động từ to be", "do-verb": "Trợ động từ do", "have-verb": "Trợ động từ have", noun: "Danh từ", verb: "Động từ", adjective: "Tính từ", adverb: "Trạng từ", preposition: "Giới từ", pronoun: "Đại từ", conjunction: "Liên từ", determiner: "Từ hạn định", interjection: "Thán từ", number: "Số từ", "modal verb": "Động từ khuyết thiếu", "phrasal verb": "Cụm động từ", phrase: "Cụm từ", idiom: "Thành ngữ" };
-const posLabel = (pos: string) => posNames[pos.trim().toLowerCase()] ?? pos;
 /** "a.m./A.M./am/AM" is shown, spoken and hinted as "a.m."; every form is accepted when typed. */
 const mainForm = (word: Word) => headwordForms(word.headword)[0];
 const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -402,13 +398,11 @@ export function VocabularyStudy() {
         {matched.length === pairs.length && <div className="vocab-feedback correct">Hoàn thành {pairs.length} cặp! {!lastGroup ? <button className="vocab-button primary" onClick={() => { setMatchGroup((group) => group + 1); setMatched([]); setMatchError(false); }}>5 cặp tiếp theo →</button> : <button className="vocab-button primary" onClick={finishSession}>Xem kết quả buổi học →</button>}</div>}
       </> : current && stage ? <>
         {mode === "learn" && <span className={`vocab-stage vocab-stage-${stage}`}>{stageLabel[stage]}{learnItem?.retry ? " · làm lại" : ""}</span>}
-        {stage === "intro" ? mode === "cards" ? <VocabularyFlashcard word={{ ...current, source_ipa: ipa }} collection={collection} flipped={flipped} status={cardStatuses[current.source_id]} index={position} total={deck.length} busy={savingCards} onFlip={flip} onMark={(status) => setCardStatuses((value) => ({ ...value, [current.source_id]: status }))} onMove={moveCard} /> : <div className={`vocab-study-card${flipped ? " is-revealed" : ""}`}>
-          <div className="vocab-study-card-word"><span>{posLabel(current.pos) || "Từ vựng"} · {collection === "ielts" ? current.study_lane : current.cefr || (level === "all" ? "CEFR" : level)}</span>
-            <h2>{mainForm(current)}</h2>{headwordForms(current.headword).length > 1 && <p className="vocab-study-forms">Cũng viết: {headwordForms(current.headword).slice(1).join(" · ")}</p>}{ipa && <p className="vocab-study-ipa">{ipa}</p>}
-            <div className="vocab-study-card-tools"><button type="button" className="vocab-study-speak" onClick={() => void pronounce(mainForm(current))} aria-label={`Nghe phát âm ${mainForm(current)}`}><Volume2 size={17} /> Nghe</button>{(() => { const entry = srs.entryFor(current.headword); const on = Boolean(entry && decks.starred.has(entry.id)); return <button type="button" className={`vocab-star${on ? " on" : ""}`} aria-pressed={on} aria-label={on ? "Bỏ gắn sao" : "Gắn sao từ này"} title="Gắn sao" onClick={() => void star(current)}><Star size={19} fill={on ? "currentColor" : "none"} /></button>; })()}</div>
-            <div id="vocab-study-definition" className={`vocab-study-card-definition${flipped ? " revealed" : ""}`} aria-live="polite">{flipped ? <><span>NGHĨA</span><h3>{meaningOf(current)}</h3>{collection === "cefr" && current.meaning_vi && current.source_definition_en !== current.meaning_vi && <p>{current.source_definition_en}</p>}{current.source_example_en && <blockquote><ExampleSentence text={current.source_example_en} word={mainForm(current)} /><button type="button" className="vocab-example-speak" aria-label="Nghe câu ví dụ" onClick={() => speakText(current.source_example_en)}><Volume2 size={15} /></button></blockquote>}</> : <p>{mode === "learn" ? "Đọc từ, nghe phát âm rồi lật thẻ để xem nghĩa và ví dụ." : "Nhớ nghĩa của từ này rồi lật thẻ để kiểm tra."}</p>}</div>
-          </div>
-        </div> : stage === "choice" ? <div className="vocab-study-question"><div>{mode !== "learn" && <span className="vocab-kicker">CHỌN NGHĨA ĐÚNG</span>}<h2>{mainForm(current)} <button type="button" className="vocab-study-speak inline" onClick={() => void pronounce(mainForm(current))} aria-label={`Nghe phát âm ${mainForm(current)}`}><Volume2 size={18} /></button></h2></div></div>
+        {stage === "intro" ? <>
+          <VocabularyFlashcard word={{ ...current, source_ipa: ipa }} collection={collection} flipped={flipped} onFlip={flip}
+            controls={mode === "cards" ? { status: cardStatuses[current.source_id], index: position, total: deck.length, busy: savingCards, onMark: (status) => setCardStatuses((value) => ({ ...value, [current.source_id]: status })), onMove: moveCard } : undefined} />
+          {mode === "learn" && <div className="vocab-study-card-tools"><button type="button" className="vocab-study-speak" onClick={() => void pronounce(mainForm(current))} aria-label={`Nghe phát âm ${mainForm(current)}`}><Volume2 size={17} /> Nghe</button>{(() => { const entry = srs.entryFor(current.headword); const on = Boolean(entry && decks.starred.has(entry.id)); return <button type="button" className={`vocab-star${on ? " on" : ""}`} aria-pressed={on} aria-label={on ? "Bỏ gắn sao" : "Gắn sao từ này"} title="Gắn sao" onClick={() => void star(current)}><Star size={19} fill={on ? "currentColor" : "none"} /></button>; })()}</div>}
+        </> : stage === "choice" ? <div className="vocab-study-question"><div>{mode !== "learn" && <span className="vocab-kicker">CHỌN NGHĨA ĐÚNG</span>}<h2>{mainForm(current)} <button type="button" className="vocab-study-speak inline" onClick={() => void pronounce(mainForm(current))} aria-label={`Nghe phát âm ${mainForm(current)}`}><Volume2 size={18} /></button></h2></div></div>
           : <div className="vocab-study-question"><div><span className="vocab-kicker">{mode === "learn" ? "NGHĨA" : "GÕ TỪ TIẾNG ANH CÓ NGHĨA"}</span><h2>{meaningOf(current)}</h2>{current.source_example_en && <p className="vocab-study-cloze">{current.source_example_en.replace(new RegExp(headwordForms(current.headword).sort((a, b) => b.length - a.length).map(escapeRegExp).join("|"), "ig"), "_____")}</p>}</div></div>}
 
         {stage === "choice" && <div className="vocab-options">{options.map((item, index) => <button key={item.source_id} disabled={Boolean(result)} className={`${picked === item.source_id ? "selected" : ""} ${result && item.source_id === current.source_id ? "correct" : ""} ${result === "wrong" && picked === item.source_id ? "wrong" : ""}`} onClick={() => choose(item)}><kbd>{index + 1}</kbd>{meaningOf(item)}</button>)}</div>}
@@ -420,7 +414,7 @@ export function VocabularyStudy() {
           {result === "wrong" && stage === "type" && <button type="button" className="vocab-overrule" onClick={overrule}>Tôi đã đúng</button>}</p>}
 
         {mode !== "cards" && <div className="vocab-study-actions">
-          {stage === "intro" && !flipped ? <button className="vocab-button primary" onClick={flip}>Lật thẻ · Xem nghĩa <kbd>Space</kbd></button>
+          {stage === "intro" && !flipped ? null
             : stage === "intro" ? <button className="vocab-button primary" onClick={advance}>Tiếp tục <kbd>Enter</kbd></button>
             : stage === "type" && !result ? <button className="vocab-button primary" disabled={!answer.trim()} onClick={check}>Kiểm tra <kbd>Enter</kbd></button>
             : result ? <button className="vocab-button primary" onClick={advance}>Tiếp tục <kbd>Enter</kbd></button>
