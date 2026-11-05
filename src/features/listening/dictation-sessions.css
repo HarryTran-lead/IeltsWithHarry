@@ -119,3 +119,17 @@
 .voa-stage-section h2 .voa-stage-map-link{margin-left:10px;color:#087e91;font-size:13px;font-weight:750;text-decoration:none}
 /* Links styled as buttons (the shared button rules only cover <button>). */
 .slp-page a.voa-primary-button,.slp-page a.voa-continue-button,.slp-outcome a.voa-primary-button,.dq-page a.voa-primary-button{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:10px;text-decoration:none;white-space:nowrap}
+/* Dictation home: personal progress on the stage cards */
+.voa-stage-meter{display:block;width:100%;height:6px;margin-top:10px;border-radius:99px;background:#e6eef3;overflow:hidden}
+.voa-stage-meter span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#008d98,#3cc4a8)}
+.voa-lab .voa-stage-card.is-suggested{border-color:#e8a33d;box-shadow:0 0 0 3px #f6dfb6}
+.voa-stage-suggested{position:absolute;right:16px;top:16px;border-radius:99px;background:#fff3df;color:#8a5a10;padding:3px 8px;font-size:11px;font-weight:800}
+/* Quick Dictation: sets of 20 */
+.voa-set-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.voa-lab .voa-set-card{display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:16px;text-align:left}
+.voa-lab .voa-set-card:hover{border-color:#64b9c1;box-shadow:0 12px 28px #173e5c17}
+.voa-set-top{display:flex;justify-content:space-between;align-items:center}
+.voa-set-top strong{font-size:17px}
+.voa-set-top span{border-radius:99px;background:#eef4f8;color:#4c6a82;padding:3px 8px;font-size:11px;font-weight:800}
+.voa-set-meta{color:var(--voa-muted);font-size:12.5px}
+.voa-set-foot{display:flex;justify-content:space-between;align-items:center;margin-top:4px;color:#008b97;font-size:12.5px;font-weight:750}

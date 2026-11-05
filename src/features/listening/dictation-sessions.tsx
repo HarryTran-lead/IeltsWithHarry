@@ -8,13 +8,15 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, Gauge, Info, Pause, Play, RotateCcw, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Info, Pause, Play, RotateCcw, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import { wordDifferences } from "@/lib/listening/youtube";
 import { percentPassed } from "@/lib/dictation/pass";
 import { listPracticeResults, savePracticeSnapshot } from "@/features/learning/practice-results";
 import { TURN_SLUG } from "./skill-lab-dictation";
+import { ClipProgress, PlaybackControls, usePlaybackSettings } from "./dictation-playback";
+import "./dictation-playback.css";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
 import "./dictation-sessions.css";
@@ -25,8 +27,6 @@ export type SentenceItem = {
   audio: { src: string; startMs?: number; endMs?: number };
   check: (answer: string) => Promise<CheckResult>;
 };
-
-const speeds = [0.75, 0.9, 1, 1.15];
 
 async function checkSkillLab(lessonId: string, turnId: string, answer: string): Promise<CheckResult> {
   const response = await fetch(`/api/dictation/skill-lab/${lessonId}/dictation`, {
@@ -61,7 +61,9 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
   const [results, setResults] = useState<Record<string, CheckResult & { skipped?: boolean }>>({});
   const [busy, setBusy] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [speed, setSpeed] = useState(1);
+  const settings = usePlaybackSettings();
+  const replaysLeft = useRef(0);
+  const replayTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [reveal, setReveal] = useState(false);
   const [error, setError] = useState("");
   const [played, setPlayed] = useState<Record<string, boolean>>({});
@@ -71,17 +73,32 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
   const done = index >= items.length;
 
   function play() {
-    const player = audio.current;
-    if (!player || !item || (exam && played[item.key])) return;
+    if (!audio.current || !item || (exam && played[item.key])) return;
     if (exam) setPlayed((current) => ({ ...current, [item.key]: true }));
-    const { src, startMs = 0 } = item.audio;
-    if (!player.src.endsWith(src)) player.src = src;
-    const start = () => { player.currentTime = startMs / 1000; player.playbackRate = speed; void player.play().catch(() => setError("Không phát được audio. Bấm phát lại.")); };
-    if (player.readyState >= 1) start(); else player.addEventListener("loadedmetadata", start, { once: true });
+    // An exam sentence plays once at normal speed; practice follows the learner's speed and auto-replay.
+    cancelReplay();
+    replaysLeft.current = exam ? 0 : settings.autoReplay;
+    startClip();
+  }
+  function startClip() {
+    const element = audio.current;
+    if (!element || !item) return;
+    if (!element.src.endsWith(item.audio.src)) element.src = item.audio.src;
+    const go = () => { element.currentTime = (item.audio.startMs ?? 0) / 1000; element.playbackRate = exam ? 1 : settings.speed; void element.play().catch(() => setError("Không phát được audio. Bấm phát lại.")); };
+    if (element.readyState >= 1) go(); else element.addEventListener("loadedmetadata", go, { once: true });
+  }
+  function cancelReplay() {
+    replaysLeft.current = 0;
+    if (replayTimer.current) clearTimeout(replayTimer.current);
+    replayTimer.current = null;
+  }
+  function clipEnded() {
+    setPlaying(false);
+    if (replaysLeft.current > 0) { replaysLeft.current -= 1; replayTimer.current = setTimeout(startClip, settings.replayDelay * 1000); }
   }
   function onTime() {
-    const player = audio.current;
-    if (player && item?.audio.endMs !== undefined && player.currentTime * 1000 >= item.audio.endMs) player.pause();
+    const element = audio.current;
+    if (element && item?.audio.endMs !== undefined && !element.paused && element.currentTime * 1000 >= item.audio.endMs) { element.pause(); clipEnded(); }
   }
   async function check(skip = false) {
     if (!item || busy || (!skip && !answer.trim())) return;
@@ -95,6 +112,7 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
     finally { setBusy(false); }
   }
   function next() {
+    cancelReplay();
     audio.current?.pause();
     setIndex((value) => value + 1); setAnswer(""); setReveal(false); setError("");
     window.setTimeout(() => input.current?.focus(), 0);
@@ -133,12 +151,13 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
     <section className="dq-session voa-surface" aria-label={`Câu ${index + 1} trên ${items.length}`}>
       <div className="dq-session-head"><span className="voa-eyebrow">CÂU {index + 1}/{items.length} · {item.source}</span><small className="sld-muted">{item.title}</small></div>
       <div className="dq-dots" aria-hidden>{items.map((entry, position) => <span key={entry.key} className={position === index ? "current" : results[entry.key]?.passed ? "passed" : results[entry.key] ? "failed" : ""} />)}</div>
-      <audio ref={audio} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} onTimeUpdate={onTime} />
+      <audio ref={audio} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={clipEnded} onTimeUpdate={onTime} />
       <div className="dq-player">
-        <button type="button" className="dq-play" disabled={exam && played[item.key] && !playing} aria-label={playing ? "Tạm dừng" : "Nghe câu"} onClick={() => (playing ? (!exam && audio.current?.pause()) : play())}>{playing ? <Pause size={26} fill="currentColor" /> : <Play size={26} fill="currentColor" />}</button>
+        <button type="button" className="dq-play" disabled={exam && played[item.key] && !playing} aria-label={playing ? "Tạm dừng" : "Nghe câu"} onClick={() => { if (playing) { if (!exam) { cancelReplay(); audio.current?.pause(); } } else play(); }}>{playing ? <Pause size={26} fill="currentColor" /> : <Play size={26} fill="currentColor" />}</button>
         {exam ? <span className="sld-muted">{played[item.key] ? "Đã nghe (mỗi câu chỉ nghe một lần)" : "Bấm để nghe — mỗi câu chỉ nghe một lần"}</span> : <button type="button" onClick={play}><RotateCcw size={15} /> Nghe lại</button>}
-        <label className="sld-speed"><Gauge size={15} /> Tốc độ<select value={speed} onChange={(event) => { const value = Number(event.target.value); setSpeed(value); if (audio.current) audio.current.playbackRate = value; }}>{speeds.map((value) => <option key={value} value={value}>{value}×</option>)}</select></label>
+        <PlaybackControls settings={settings} lockSpeed={exam} />
       </div>
+      <ClipProgress audio={audio} startMs={item.audio.startMs} endMs={item.audio.endMs} />
       <textarea ref={input} className="sld-dictation-answer" rows={2} value={answer} autoFocus spellCheck={false} autoComplete="off" autoCapitalize="off" placeholder="Gõ câu bạn nghe được…"
         onChange={(event) => { setAnswer(event.target.value); if (result) { setResults((current) => { const copy = { ...current }; delete copy[item.key]; return copy; }); setReveal(false); } }}
         onKeyDown={(event) => {

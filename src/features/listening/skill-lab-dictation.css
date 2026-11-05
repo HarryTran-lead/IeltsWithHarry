@@ -165,3 +165,32 @@
   .sld-lab .sld-mode button{flex:none;white-space:nowrap}
   .sld-shortcuts{display:none}
 }
+
+/* Wave 4: illustrated lesson cards with a progress ring */
+.sld-lab .sld-card{display:grid;grid-template-columns:76px minmax(0,1fr);grid-template-rows:auto auto 1fr auto;column-gap:14px;row-gap:5px;align-items:start}
+.sld-card>:not(.sld-card-art):not(.sld-meter){grid-column:2}
+.sld-card-art{grid-row:1/5;position:relative;display:grid;place-items:center;width:76px;height:76px;border-radius:18px;background:#f1f8fa}
+.sld-card-art img{width:52px;height:52px;object-fit:contain}
+.sld-ring{position:absolute;inset:-4px;width:84px;height:84px;transform:rotate(-90deg);pointer-events:none}
+.sld-ring circle{fill:none;stroke-width:2.2}
+.sld-ring circle:first-child{stroke:#e3eef3}
+.sld-ring circle:last-child{stroke:#16a3a0;stroke-linecap:round;transition:stroke-dasharray .4s}
+.sld-card.sld-done .sld-ring circle:last-child{stroke:#1ba672}
+.sld-card-art b{position:absolute;right:-6px;bottom:-6px;padding:2px 6px;border-radius:99px;background:#fff;border:1px solid #d7e4ee;color:#00707a;font-size:10.5px;font-weight:800}
+.sld-card.sld-new .sld-card-art b{display:none}
+.sld-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+@media(max-width:600px){.sld-lab .sld-card{grid-template-columns:60px minmax(0,1fr)}.sld-card-art{width:60px;height:60px;border-radius:14px}.sld-card-art img{width:40px;height:40px}.sld-ring{width:68px;height:68px}}
+
+/* One-pass mode: reading time, clock, plan beside the questions */
+.sld-preview{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:12px;background:#fff3df;color:#7a5410;font-size:13px;font-weight:700}
+.sld-preview b{font-size:20px;font-variant-numeric:tabular-nums}
+.sld-lab .sld-preview button{padding:5px 10px;font-size:12px;font-weight:750}
+.sld-exam-clock{padding:6px 10px;border-radius:10px;background:#eef4f8;color:#2f5f6e;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+.sld-map-layout{display:grid;grid-template-columns:minmax(260px,400px) minmax(0,1fr);gap:16px;align-items:start}
+.sld-map-aside{position:sticky;top:96px}
+.sld-map-aside .sld-map{margin:0}
+@media(max-width:1000px){.sld-map-layout{display:block}.sld-map-aside{position:static}.sld-map-aside .sld-map{margin:0 0 14px}}
+/* Step buttons keep their label on one line; the row wraps or scrolls instead. */
+.sld-lab .sld-steps{flex-wrap:wrap;justify-content:flex-end}
+.sld-lab .sld-steps button{white-space:nowrap}
+@media(max-width:700px){.sld-lab .sld-steps{flex-wrap:nowrap;justify-content:flex-start}}

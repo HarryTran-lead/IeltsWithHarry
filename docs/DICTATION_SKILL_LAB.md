@@ -47,6 +47,14 @@ On the product owner's decision (5 Nov 2026), every lesson whose turns all have 
 - **Lesson steps**: 1 Nghe & chép → 2 Câu hỏi → 3 Làm bài một lần (optional) → Tổng kết. The summary shows sentences passed, questions right, words met (with "Lưu vào Sổ tay"), sentences to redo, and the next unfinished lesson of the stage (or the stage check when none is left). Finishing every sentence plays a small celebration.
 - **Weekly goal** (3/5/7/10 lessons, default 5; saved as `skill-lab-goal:weekly`): counts lessons whose every sentence passed since Monday. Shown on the path page and as "Dictation tuần này" on the Dashboard.
 
+## Interface (wave 4)
+
+- **Shared playback** (`dictation-playback.tsx`): one speed list (0.5–1.5×), auto-replay 0–5 times with a 0.5–3 s pause, remembered in this browser and shared by Skill Lab, Luyện nhanh, Sổ câu sai, VOA and Quick. A thin bar shows the time of the sentence that is playing. One-pass mode and placement/stage checks always play at 1×, once.
+- **Lesson cards** have the topic illustration (`topicIllustration`), a progress ring for sentences passed, and Vietnamese labels (Cấp 1, Luyện âm, Luyện câu, Hội thoại ngắn, Làm quen Section, Luyện Section). Lesson IDs are no longer shown to learners.
+- **Dictation page** stage cards show lessons done per stage and highlight the stage suggested by the placement.
+- **Làm bài một lần**: 30 seconds to read the questions (with "Nghe ngay"), then a running clock. On wide screens the map sits beside the questions and stays in view.
+- **Quick Dictation** is presented as advanced practice (audiobook sentences in older English) and grouped into sets of 20, shortest first, each with its own progress; previous/next stay inside the set.
+
 ## Audio production (Gemini TTS)
 
 Each turn is its own clip, so a replay covers exactly one turn and timestamps come from real clip lengths. The text sent to Gemini is the transcript, word for word. Accent and pace go only into the speech-style annotation: L1 slow, L2 slightly slow, L3/Foundation calm, Sections at natural exam pace. Each accent has a main female and male voice. Named characters get a voice of matching gender, and no two speakers in a lesson share one.

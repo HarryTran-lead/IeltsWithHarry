@@ -7,7 +7,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, Flag, Gauge, Headphones, Info, ListChecks, Pause, Play, RotateCcw, Search, Send, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Flag, Headphones, Info, ListChecks, Pause, Play, RotateCcw, Search, Send, X } from "lucide-react";
 import { wordDifferences } from "@/lib/listening/youtube";
 import { listPracticeResults, savePracticeResult, savePracticeSnapshot, type PracticeResult } from "@/features/learning/practice-results";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -16,6 +16,9 @@ import { skillLabStages, skillLabStageOf, skillLabStageUrl } from "@/lib/dictati
 import { dictationSkills } from "@/lib/dictation-skill-lab/skills";
 import { dictationPassed } from "@/lib/dictation/pass";
 import { celebrate } from "@/lib/celebrate";
+import { topicIllustration } from "@/lib/topic-illustration";
+import { ClipProgress, PlaybackControls, usePlaybackSettings } from "./dictation-playback";
+import "./dictation-playback.css";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
 import "./dictation-sessions.css";
@@ -37,7 +40,8 @@ export const TURN_SLUG = (lessonId: string, turnId: string) => `skill-lab-turn:$
 export const turnPassed = (result: DictationResult | undefined) => Boolean(result && !result.skipped
   && (result.passed ?? (result.reference_text ? dictationPassed(result.reference_text, result.accuracy) : result.accuracy >= 0.8)));
 const draftKey = (id: string) => `skill-lab-dictation:v1:${id}`;
-const formats: Record<string, string> = { micro_drill: "Micro drill", sentence_drill: "Sentence drill", mini_conversation: "Hội thoại ngắn", section_bridge: "Section bridge", section_practice: "Section practice" };
+const formats: Record<string, string> = { micro_drill: "Luyện âm", sentence_drill: "Luyện câu", mini_conversation: "Hội thoại ngắn", section_bridge: "Làm quen Section", section_practice: "Luyện Section" };
+const levelLabel = (level: string) => level.replace(/^L(\d)$/, "Cấp $1");
 const accents: Record<string, string> = { british: "Anh", australian: "Úc", american: "Mỹ", new_zealand: "New Zealand" };
 const typeLabels: Record<string, string> = {
   dictation: "Chép chính tả", gap_fill: "Điền từ còn thiếu", word_choice: "Chọn từ nghe được", mcq: "Trắc nghiệm", matching: "Nối thông tin",
@@ -45,7 +49,6 @@ const typeLabels: Record<string, string> = {
   sentence_completion: "Sentence completion", summary_completion: "Summary completion", short_answer: "Short answer",
 };
 const reasons: Record<string, string> = { empty_answer: "Bạn chưa nhập câu trả lời.", word_limit_exceeded: "Vượt giới hạn số từ của đề.", not_in_accepted_answers: "Chưa khớp đáp án." };
-const speeds = [0.75, 0.9, 1, 1.15];
 const clock = (ms: number) => `${Math.floor(ms / 60000)}:${String(Math.round(ms / 1000) % 60).padStart(2, "0")}`;
 const normalize = (value: string) => value.toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
 function maskedAnswer(reference: string, typed: string) {
@@ -148,9 +151,16 @@ function SkillLabCatalog({ stageId }: { stageId: string }) {
                 {visible.map((lesson) => {
                   const { dictation, questions } = results[lesson.lesson_id] ?? {};
                   const state = progress(lesson);
+                  const share = dictation ? Math.min(1, dictation.correct / Math.max(lesson.turns, 1)) : 0;
                   return (
                     <button type="button" key={lesson.lesson_id} className={`sld-card voa-surface sld-${state}`} onClick={() => router.push(`${BASE}/${lesson.lesson_id}`)}>
-                      <span className="sld-card-top"><span className="sld-code">{lesson.level} · {formats[lesson.content_format] ?? lesson.content_format}</span><span className={`sld-pill sld-pill-${state}`}>{state === "done" ? "Đã xong" : state === "started" ? "Đang học" : "Mới"}</span></span>
+                      <span className="sld-card-art" aria-hidden>
+                        {/* eslint-disable-next-line @next/next/no-img-element -- small static topic SVG */}
+                        <img src={topicIllustration(`${lesson.topic} ${lesson.title}`).src} alt="" loading="lazy" />
+                        <svg className="sld-ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5" /><circle cx="18" cy="18" r="15.5" style={{ strokeDasharray: `${share * 97.4} 97.4` }} /></svg>
+                        <b>{Math.round(share * 100)}%</b>
+                      </span>
+                      <span className="sld-card-top"><span className="sld-code">{levelLabel(lesson.level)} · {formats[lesson.content_format] ?? lesson.content_format}</span><span className={`sld-pill sld-pill-${state}`}>{state === "done" ? "Đã xong" : state === "started" ? "Đang học" : "Mới"}</span></span>
                       <strong>{lesson.title}</strong>
                       <span className="sld-card-meta">{lesson.topic} · {lesson.turns} câu nghe{lesson.duration_ms ? ` · ${clock(lesson.duration_ms)}` : ""}</span>
                       <span className="sld-card-foot">
@@ -185,11 +195,18 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
   const [showDictationAnswer, setShowDictationAnswer] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [played, setPlayed] = useState(false);
+  /** One-pass mode: seconds left to read the questions before the recording starts, and when it started. */
+  const [previewLeft, setPreviewLeft] = useState<number | null>(null);
+  const [examStartedAt, setExamStartedAt] = useState<number | null>(null);
+  const [now, setNow] = useState(() => Date.now());
   const [review, setReview] = useState<Review | null>(null);
   const [busy, setBusy] = useState("");
   const [playing, setPlaying] = useState<number | null>(null);
   const [playingAll, setPlayingAll] = useState(false);
-  const [speed, setSpeed] = useState(1);
+  const settings = usePlaybackSettings();
+  const replaysLeft = useRef(0);
+  // One-pass mode always plays at normal speed.
+  const speed = mode === "ielts" ? 1 : settings.speed;
   const [selectedTurn, setSelectedTurn] = useState(0);
   const [dictationTurn, setDictationTurn] = useState(0);
   const [practiceTurn, setPracticeTurn] = useState(0);
@@ -241,6 +258,17 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
   useEffect(() => { if (restored) writeDraft(lessonId, { mode, answers, results, dictationAnswers, dictationResults, submitted, played, selectedTurn, dictationTurn, practiceTurn, review }); }, [restored, lessonId, mode, answers, results, dictationAnswers, dictationResults, submitted, played, selectedTurn, dictationTurn, practiceTurn, review]);
   useEffect(() => () => { if (gapTimer.current) clearTimeout(gapTimer.current); audio.current?.pause(); }, []);
   useEffect(() => { if (audio.current) audio.current.playbackRate = speed; }, [speed]);
+  useEffect(() => {
+    if (previewLeft === null) return;
+    if (previewLeft <= 0) { setPreviewLeft(null); setExamStartedAt(Date.now()); play(0, true); return; } // eslint-disable-line react-hooks/set-state-in-effect -- the countdown ends by starting the recording
+    const timer = window.setTimeout(() => setPreviewLeft((value) => (value === null ? null : value - 1)), 1000);
+    return () => window.clearTimeout(timer);
+  }, [previewLeft]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (examStartedAt === null || submitted) return;
+    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, [examStartedAt, submitted]);
 
   const turnIndex = useMemo(() => new Map((lesson?.turns ?? []).map((turn, index) => [turn.turn_id, index])), [lesson]);
   const speakers = useMemo(() => Object.fromEntries((lesson?.speakers ?? []).map((speaker) => [speaker.speaker_id, speaker])), [lesson]);
@@ -290,6 +318,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
     current.current = index;
     player.src = turn.audio_url;
     player.playbackRate = speed;
+    replaysLeft.current = all || mode === "ielts" ? 0 : settings.autoReplay;
     setPlaying(index);
     void player.play().catch(() => { setPlaying(null); setError("Trình duyệt chưa phát được audio. Hãy bấm phát lại."); });
   }
@@ -297,6 +326,12 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
   function ended() {
     const index = current.current;
     if (index === null || !lesson) return;
+    // Auto-replay of a single sentence, as set in the shared playback settings.
+    if (!continuous.current && replaysLeft.current > 0) {
+      replaysLeft.current -= 1;
+      gapTimer.current = setTimeout(() => { const element = audio.current; if (!element || current.current !== index) return; element.currentTime = 0; element.playbackRate = speed; void element.play().catch(() => undefined); }, settings.replayDelay * 1000);
+      return;
+    }
     if (continuous.current && index + 1 < lesson.turns.length) {
       gapTimer.current = setTimeout(() => play(index + 1, true), 450);
       return;
@@ -371,8 +406,8 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
 
   function restart(nextMode: Mode) {
     stop();
+    setPreviewLeft(null); setExamStartedAt(null);
     setMode(nextMode); setAnswers({}); setResults({}); setSubmitted(false); setPlayed(false); setSelectedTurn(nextMode === "dictation" ? dictationTurn : 0); setPracticeTurn(0); setReview(null);
-    if (nextMode === "ielts") setSpeed(1);
     setShowDictationAnswer(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -407,7 +442,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
         <div>
           <button type="button" className="voa-lesson-back" onClick={() => { stop(); router.push(skillLabStageUrl(skillLabStageOf(lesson.lesson_id))); }}><ArrowLeft size={15} /> {skillLabStages.find((stage) => stage.id === skillLabStageOf(lesson.lesson_id))?.label} IELTS</button>
           <h1>{lesson.title}</h1>
-          <p>{[lesson.lesson_id, lesson.level, lesson.section ? `Section ${lesson.section}` : "Foundation", lesson.topic, formats[lesson.content_format] ?? lesson.content_format]
+          <p>{[levelLabel(lesson.level), lesson.section ? `Section ${lesson.section}` : "Foundation", lesson.topic, formats[lesson.content_format] ?? lesson.content_format]
             .filter((part, index, parts) => parts.indexOf(part) === index).join(" · ")}</p>
         </div>
         <nav className="sld-mode sld-steps" aria-label="Các bước của bài">
@@ -429,24 +464,22 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
         <audio ref={audio} preload="none" onEnded={ended} />
         <div className="sld-player-row">
           {examLocked ? (
-            <button type="button" className="voa-primary-button" disabled={played || playing !== null} onClick={() => play(0, true)}>
-              <Play size={16} /> {played ? "Đã phát hết (1 lần)" : playing !== null ? `Đang phát câu ${playing + 1}/${lesson.turns.length}` : "Phát bài nghe"}
+            previewLeft !== null ? <span className="sld-preview"><b>{previewLeft}s</b> đọc câu hỏi trước khi nghe <button type="button" onClick={() => setPreviewLeft(0)}>Nghe ngay</button></span> : <>
+            <button type="button" className="voa-primary-button" disabled={played || playing !== null} onClick={() => setPreviewLeft(30)}>
+              <Play size={16} /> {played ? "Đã phát hết (1 lần)" : playing !== null ? `Đang phát câu ${playing + 1}/${lesson.turns.length}` : "Bắt đầu (30 giây đọc đề)"}
             </button>
+            {examStartedAt !== null && <span className="sld-exam-clock" title="Thời gian làm bài">⏱ {clock(now - examStartedAt)}</span>}</>
           ) : playing !== null && (playingAll || mode !== "ielts") ? (
             <button type="button" className="voa-primary-button" onClick={stop}><Pause size={16} /> Dừng</button>
           ) : (
             <button ref={playButtonRef} type="button" className="voa-primary-button" onClick={() => mode === "ielts" ? play(0, true) : play(selectedTurn)}><Play size={16} /> {mode === "ielts" ? "Phát cả bài" : `Nghe câu ${selectedTurn + 1}`}</button>
           )}
           <span className="sld-muted">{mode !== "ielts" ? `Câu ${selectedTurn + 1}/${lesson.turns.length} · ${clock(activeTurn?.duration_ms ?? 0)}` : `${lesson.turns.length} câu nghe · ${clock(totalMs)}`} · giọng {[...new Set(lesson.speakers.map((speaker) => accents[speaker.accent] ?? speaker.accent))].join(", ")}</span>
-          <label className="sld-speed"><Gauge size={15} /> Tốc độ
-            <select value={speed} disabled={examLocked} onChange={(event) => setSpeed(Number(event.target.value))}>{speeds.map((value) => <option key={value} value={value}>{value}×</option>)}</select>
-          </label>
+          <PlaybackControls settings={settings} lockSpeed={mode === "ielts"} />
         </div>
+        <ClipProgress audio={audio} />
       </section>
 
-      {/* Static SVG plans from the lesson package; next/image adds nothing for vector files. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      {mode !== "dictation" && maps.map((url) => <figure key={url} className="sld-map voa-surface"><img src={url} alt="Sơ đồ cho câu hỏi gắn nhãn" /><figcaption>Sơ đồ dùng cho các câu Map labelling</figcaption></figure>)}
       {error && <p className="sld-error" role="alert">{error}</p>}
 
       {mode === "practice" && activeTurn && <div className="sld-turn-heading"><div><span className="voa-eyebrow">LUYỆN TẬP · CÂU NGHE {selectedTurn + 1}/{lesson.turns.length}</span><h2>{`Câu ${selectedTurn + 1}`}{lesson.speakers.length > 1 ? ` · ${speakers[activeTurn.speaker_id]?.label ?? activeTurn.speaker_id}` : ""}</h2><p>{activeQuestions.length ? `${activeQuestions.length} câu hỏi cho câu nghe này. Nghe câu này rồi trả lời trước khi sang câu tiếp.` : "Câu này không có câu hỏi riêng. Nghe xong hãy chuyển sang câu tiếp."}</p></div></div>}
@@ -478,6 +511,10 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
           {orderedQuestions.length > 0 && <button type="button" className="voa-primary-button" onClick={() => changeMode("practice")}>Sang bước 2: Câu hỏi <ArrowRight size={14} /></button>}
           <button type="button" onClick={() => changeMode("summary")}>Xem tổng kết</button></div>}
       </section>}
+      {/* With a plan, it stays beside the questions on wide screens so it is in view while answering. */}
+      <div className={mode !== "dictation" && maps.length ? "sld-map-layout" : "sld-map-layout-none"}>
+      {/* eslint-disable-next-line @next/next/no-img-element -- static SVG plans from the lesson package */}
+      {mode !== "dictation" && maps.length > 0 && <aside className="sld-map-aside">{maps.map((url) => <figure key={url} className="sld-map voa-surface"><img src={url} alt="Sơ đồ cho câu hỏi gắn nhãn" /><figcaption>Sơ đồ dùng cho các câu Map labelling</figcaption></figure>)}</aside>}
       {activeQuestions.length > 0 && <ol className="sld-questions">
         {activeQuestions.map((question) => (
           <QuestionCard key={question.question_id} number={questionNumber.get(question.question_id) ?? 0} question={question} value={answers[question.question_id] ?? ""} result={results[question.question_id]}
@@ -489,6 +526,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
             turnLabel={(turnId) => `câu ${(turnIndex.get(turnId) ?? 0) + 1}`} />
         ))}
       </ol>}
+      </div>
 
       {mode !== "ielts" && <nav className="sld-turn-nav voa-surface" aria-label="Chuyển câu nghe"><button type="button" disabled={selectedTurn === 0} onClick={() => chooseTurn(selectedTurn - 1)}><ArrowLeft size={16} /> Câu trước</button><span>{selectedTurn + 1} / {lesson.turns.length}</span><button ref={nextTurnButtonRef} type="button" className="voa-primary-button" disabled={selectedTurn === lesson.turns.length - 1} onClick={() => chooseTurn(selectedTurn + 1)}>Câu tiếp <ArrowRight size={16} /></button></nav>}
 
