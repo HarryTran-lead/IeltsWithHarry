@@ -499,10 +499,16 @@ function Review({ saved, reviewById, gradeWord, deckName = "", starred, toggleSt
     const success = await gradeWord(current, grade);
     setBusy(false);
     if (!success) return;
-    setRated((value) => ({ ...value, [position]: grade }));
+    const nextRated = { ...rated, [position]: grade };
+    const repeat = grade === "again" && queue.filter((id) => id === current.id).length < 2;
+    const nextQueue = repeat ? [...queue, current.id] : queue;
+    setRated(nextRated);
     setTally((value) => ({ ...value, [grade]: value[grade] + 1 }));
     // A forgotten card comes back once at the end of this session, as in Anki's learning steps.
-    if (grade === "again" && queue.filter((id) => id === current.id).length < 2) setQueue((value) => [...value, current.id]);
+    if (repeat) setQueue(nextQueue);
+    const nextPosition = position + 1 < nextQueue.length ? position + 1 : nextQueue.findIndex((_, index) => !nextRated[index]);
+    if (nextPosition >= 0) { setPosition(nextPosition); setRevealed(false); }
+    else setComplete(true);
   }
   useEffect(() => {
     function onKey(event: KeyboardEvent) {

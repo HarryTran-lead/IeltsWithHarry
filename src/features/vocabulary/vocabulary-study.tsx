@@ -225,13 +225,13 @@ export function VocabularyStudy() {
       .catch((cause) => setError(cause instanceof Error ? cause.message : "Chưa lưu được lịch ôn cho từ này."));
   }, [collection, markStudied, meaningOf, srs]);
 
-  async function finishSession() {
+  async function finishSession(statuses = cardStatuses) {
     if (savingCards) return;
     if (mode === "cards") {
       setSavingCards(true);
       try {
         for (const word of words) {
-          const status = cardStatuses[word.source_id];
+          const status = statuses[word.source_id];
           if (!status || graded.current.has(word.source_id)) continue;
           const entry = srs.entryFor(word.headword) ?? await srs.ensureEntry({ headword: word.headword, meaning: meaningOf(word), example: word.source_example_en, pos: word.pos, topic: word.topics[0] ?? "" });
           if (!entry || !await srs.grade(entry, status === "known" ? "good" : "again")) throw new Error("Chưa lưu được trạng thái thẻ. Hãy thử lại.");
@@ -268,6 +268,14 @@ export function VocabularyStudy() {
     if (target >= deck.length) { void finishSession(); return; }
     setPosition(target);
     setFlipped(false);
+  }
+
+  function markCard(status: CardStatus) {
+    if (!current || savingCards) return;
+    const statuses = { ...cardStatuses, [current.source_id]: status };
+    setCardStatuses(statuses);
+    if (position + 1 >= deck.length) void finishSession(statuses);
+    else moveCard(1);
   }
 
   function advance() {
@@ -395,12 +403,12 @@ export function VocabularyStudy() {
         <p className="vocab-study-match-help">Bấm một từ ở cột trái, rồi bấm nghĩa của nó ở cột phải.</p>
         <div className="vocab-match-grid"><div>{pairs.map((item) => <button key={item.source_id} disabled={matched.includes(item.source_id)} className={`${pickedWord === item.source_id ? "active" : ""}${wrongPair?.[0] === item.source_id ? " wrong" : ""}`} onClick={() => pick(item.source_id, "")}>{matched.includes(item.source_id) && <Check size={16} />}{mainForm(item)}</button>)}</div><div>{definitions.map((item) => <button key={item.source_id} disabled={matched.includes(item.source_id)} className={`${pickedDefinition === item.source_id ? "active" : ""}${wrongPair?.[1] === item.source_id ? " wrong" : ""}`} onClick={() => pick("", item.source_id)}>{matched.includes(item.source_id) && <Check size={16} />}{meaningOf(item)}</button>)}</div></div>
         {matchError && <p className="vocab-feedback wrong" role="status">Chưa đúng cặp. Thử ghép lại nhé.</p>}
-        {matched.length === pairs.length && <div className="vocab-feedback correct">Hoàn thành {pairs.length} cặp! {!lastGroup ? <button className="vocab-button primary" onClick={() => { setMatchGroup((group) => group + 1); setMatched([]); setMatchError(false); }}>5 cặp tiếp theo →</button> : <button className="vocab-button primary" onClick={finishSession}>Xem kết quả buổi học →</button>}</div>}
+        {matched.length === pairs.length && <div className="vocab-feedback correct">Hoàn thành {pairs.length} cặp! {!lastGroup ? <button className="vocab-button primary" onClick={() => { setMatchGroup((group) => group + 1); setMatched([]); setMatchError(false); }}>5 cặp tiếp theo →</button> : <button className="vocab-button primary" onClick={() => void finishSession()}>Xem kết quả buổi học →</button>}</div>}
       </> : current && stage ? <>
         {mode === "learn" && <span className={`vocab-stage vocab-stage-${stage}`}>{stageLabel[stage]}{learnItem?.retry ? " · làm lại" : ""}</span>}
         {stage === "intro" ? <>
           <VocabularyFlashcard word={{ ...current, source_ipa: ipa }} collection={collection} flipped={flipped} onFlip={flip}
-            controls={mode === "cards" ? { status: cardStatuses[current.source_id], index: position, total: deck.length, busy: savingCards, onMark: (status) => setCardStatuses((value) => ({ ...value, [current.source_id]: status })), onMove: moveCard } : undefined} />
+            controls={mode === "cards" ? { status: cardStatuses[current.source_id], index: position, total: deck.length, busy: savingCards, onMark: markCard, onMove: moveCard } : undefined} />
           {mode === "learn" && <div className="vocab-study-card-tools"><button type="button" className="vocab-study-speak" onClick={() => void pronounce(mainForm(current))} aria-label={`Nghe phát âm ${mainForm(current)}`}><Volume2 size={17} /> Nghe</button>{(() => { const entry = srs.entryFor(current.headword); const on = Boolean(entry && decks.starred.has(entry.id)); return <button type="button" className={`vocab-star${on ? " on" : ""}`} aria-pressed={on} aria-label={on ? "Bỏ gắn sao" : "Gắn sao từ này"} title="Gắn sao" onClick={() => void star(current)}><Star size={19} fill={on ? "currentColor" : "none"} /></button>; })()}</div>}
         </> : stage === "choice" ? <div className="vocab-study-question"><div>{mode !== "learn" && <span className="vocab-kicker">CHỌN NGHĨA ĐÚNG</span>}<h2>{mainForm(current)} <button type="button" className="vocab-study-speak inline" onClick={() => void pronounce(mainForm(current))} aria-label={`Nghe phát âm ${mainForm(current)}`}><Volume2 size={18} /></button></h2></div></div>
           : <div className="vocab-study-question"><div><span className="vocab-kicker">{mode === "learn" ? "NGHĨA" : "GÕ TỪ TIẾNG ANH CÓ NGHĨA"}</span><h2>{meaningOf(current)}</h2>{current.source_example_en && <p className="vocab-study-cloze">{current.source_example_en.replace(new RegExp(headwordForms(current.headword).sort((a, b) => b.length - a.length).map(escapeRegExp).join("|"), "ig"), "_____")}</p>}</div></div>}
