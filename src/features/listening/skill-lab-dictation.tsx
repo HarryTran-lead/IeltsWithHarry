@@ -14,6 +14,7 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import type { CatalogEntry, GradedQuestion, LessonVocabulary, PublicLesson, PublicQuestion } from "@/lib/dictation-skill-lab/lessons";
 import { skillLabStages, skillLabStageOf, skillLabStageUrl } from "@/lib/dictation-skill-lab/stages";
 import { dictationSkills } from "@/lib/dictation-skill-lab/skills";
+import { dictationPassed } from "@/lib/dictation/pass";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
 
@@ -30,7 +31,9 @@ const SLUG = (id: string) => `skill-lab:${id}`;
 /** Sentence results live in package_practice_results too, so progress follows the learner across devices. */
 export const DICTATION_SLUG = (id: string) => `skill-lab-dictation:${id}`;
 export const TURN_SLUG = (lessonId: string, turnId: string) => `skill-lab-turn:${lessonId}/${turnId}`;
-export const turnPassed = (result: DictationResult | undefined) => Boolean(result && !result.skipped && (result.passed ?? result.accuracy >= 0.8));
+/** Results saved before the focus-word rule have no `passed`; judge them again with the sentence-length rule. */
+export const turnPassed = (result: DictationResult | undefined) => Boolean(result && !result.skipped
+  && (result.passed ?? (result.reference_text ? dictationPassed(result.reference_text, result.accuracy) : result.accuracy >= 0.8)));
 const draftKey = (id: string) => `skill-lab-dictation:v1:${id}`;
 const formats: Record<string, string> = { micro_drill: "Micro drill", sentence_drill: "Sentence drill", mini_conversation: "Hội thoại ngắn", section_bridge: "Section bridge", section_practice: "Section practice" };
 const accents: Record<string, string> = { british: "Anh", australian: "Úc", american: "Mỹ", new_zealand: "New Zealand" };
