@@ -207,7 +207,6 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
   const [practiceTurn, setPracticeTurn] = useState(0);
   const [restored, setRestored] = useState(false);
   const autoPlayedOnOpen = useRef(false);
-  const turnPanelRef = useRef<HTMLElement>(null);
   const dictationFeedbackRef = useRef<HTMLDivElement>(null);
   const playButtonRef = useRef<HTMLButtonElement>(null);
   const nextTurnButtonRef = useRef<HTMLButtonElement>(null);
@@ -344,7 +343,6 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
     if (mode === "practice") setPracticeTurn(index);
     setShowDictationAnswer(false);
     setRevealedWords(0);
-    turnPanelRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
     window.setTimeout(() => {
       if (mode === "dictation") document.getElementById("sld-dictation-answer")?.focus({ preventScroll: true });
       else playButtonRef.current?.focus({ preventScroll: true });
@@ -453,7 +451,6 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
       void savePracticeSnapshot(TURN_SLUG(lesson.lesson_id, turnId), { correct: turnPassed(result) ? 1 : 0, checked: 1, total: 1 }).catch(() => undefined);
       void savePracticeSnapshot(DICTATION_SLUG(lesson.lesson_id), { correct: passedNow, checked: lesson.turns.filter((turn) => Boolean(next[turn.turn_id])).length, total: lesson.turns.length }).catch(() => undefined);
       window.setTimeout(() => {
-        dictationFeedbackRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
         document.getElementById("sld-dictation-answer")?.focus({ preventScroll: true });
       }, 0);
     } catch (failure) { setError(failure instanceof Error ? failure.message : "Không kiểm tra được câu chép."); }
@@ -562,7 +559,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
           : "Làm bài một lần: audio phát liền một lượt, không nghe lại và không xem đáp án trước khi nộp. Chấm theo đúng đáp án và giới hạn số từ."}</span></div>
       {mode !== "dictation" && lesson.learning_objectives_vi.length > 0 && <ul className="sld-goals">{lesson.learning_objectives_vi.map((goal) => <li key={goal}><Check size={14} /> {goal}</li>)}</ul>}
 
-      <section ref={turnPanelRef} className="sld-player voa-surface" aria-label={mode === "ielts" ? "Bài nghe" : "Câu nghe hiện tại"}>
+      <section className="sld-player voa-surface" aria-label={mode === "ielts" ? "Bài nghe" : "Câu nghe hiện tại"}>
         <audio ref={audio} preload="metadata" onError={() => { stop(); setError("Không tải được audio câu này. Hãy bấm nghe lại."); }} onEnded={ended} onTimeUpdate={(event) => {
           const end = segmentEnd.current;
           if (end !== null && end !== undefined && event.currentTarget.currentTime >= end / 1000 - 0.03) ended();
@@ -606,7 +603,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
             else if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); dictationEnter(); }
           }} />
         {activeDictationResult && <DictationFeedback result={activeDictationResult} answer={dictationAnswers[activeTurn.turn_id] ?? ""} reveal={revealDictation} revealedWords={revealedWords} feedbackRef={dictationFeedbackRef}
-          onReveal={() => { setRevealedWords((shown) => nextHintCount(activeDictationResult.reference_text ?? "", dictationAnswers[activeTurn.turn_id] ?? "", shown)); play(selectedTurn); document.getElementById("sld-dictation-answer")?.focus(); }} topic={lesson.topic} sourcePath={`${BASE}/${lesson.lesson_id}`}
+          onReveal={() => { setRevealedWords((shown) => nextHintCount(activeDictationResult.reference_text ?? "", dictationAnswers[activeTurn.turn_id] ?? "", shown)); play(selectedTurn); document.getElementById("sld-dictation-answer")?.focus({ preventScroll: true }); }} topic={lesson.topic} sourcePath={`${BASE}/${lesson.lesson_id}`}
           onEnter={dictationEnter} />}
         <div className="sld-dictation-actions"><div><button type="button" className="voa-primary-button" disabled={Boolean(busy)} onClick={dictationEnter}><Check size={15} /> {busy === `dictation:${activeTurn.turn_id}` ? "Đang kiểm tra…" : activeDictationResult && !turnPassed(activeDictationResult) && !activeDictationResult.skipped ? "Gợi ý / Kiểm tra" : "Kiểm tra"}</button>
           <button type="button" onClick={() => play(selectedTurn)} className="sld-replay-inline"><RotateCcw size={15} /> Nghe lại</button>
