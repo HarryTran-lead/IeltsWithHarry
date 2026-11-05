@@ -2,11 +2,43 @@ import { describe, expect, it } from "vitest";
 import { countWordsNumbers, gradeAnswer } from "../src/lib/dictation-skill-lab/grade";
 import { catalog, getStoredLesson, gradeLesson, sentenceUnits, speakerLabel, splitSentences, toPublicLesson, type StoredLesson } from "../src/lib/dictation-skill-lab/lessons";
 import { voicesFor } from "../src/lib/dictation-skill-lab/tts-plan";
+import { correctPrefixWords, maskedAnswer, nextHintCount } from "../src/lib/dictation-skill-lab/hints";
 import { skillLabOpenToLearners } from "../src/lib/dictation-skill-lab/preview";
 
 const lesson = (id: string) => getStoredLesson(id) as StoredLesson;
 const question = (id: string, qid: string) => lesson(id).questions.find((item) => item.question_id === qid)!;
 const COMPLETION = new Set(["form_completion", "note_completion", "table_completion", "sentence_completion", "summary_completion", "short_answer"]);
+
+describe("contextual dictation hints", () => {
+  const reference = "When people discuss climate change, they often start with an unusually hot afternoon or a violent storm.";
+
+  it("continues after the words already written correctly", () => {
+    const typed = "when people discuss climate change they often start with";
+    expect(correctPrefixWords(reference, typed)).toBe(9);
+    expect(nextHintCount(reference, typed, 0)).toBe(10);
+    expect(maskedAnswer(reference, 10)).toMatch(/^When people discuss climate change, they often start with an /);
+  });
+
+  it("reveals with when the learner is still writing that word", () => {
+    const typed = "when people discuss climate change they often start wit";
+    expect(correctPrefixWords(reference, typed)).toBe(8);
+    expect(nextHintCount(reference, typed, 0)).toBe(9);
+    expect(maskedAnswer(reference, 9)).toMatch(/^When people discuss climate change, they often start with •/);
+  });
+
+  it("reveals the wrong word at its position, then one word per Enter", () => {
+    const typed = "when people discuss climete change they often start with";
+    expect(correctPrefixWords(reference, typed)).toBe(3);
+    expect(nextHintCount(reference, typed, 0)).toBe(4);
+    expect(nextHintCount(reference, typed, 4)).toBe(5);
+    expect(maskedAnswer(reference, 4)).toMatch(/^When people discuss climate •/);
+  });
+
+  it("handles an empty answer and typographic apostrophes", () => {
+    expect(nextHintCount(reference, "", 0)).toBe(1);
+    expect(correctPrefixWords("It's changing.", "it’s")).toBe(1);
+  });
+});
 
 describe("Skill Lab bank integrity (M16.2)", () => {
   const all = catalog().map((entry) => lesson(entry.lesson_id));

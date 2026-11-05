@@ -12,6 +12,7 @@ import { ArrowLeft, ArrowRight, Check, Info, Pause, Play, RotateCcw, X } from "l
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import { percentPassed } from "@/lib/dictation/pass";
+import { correctPrefixWords, maskedAnswer, nextHintCount, wordCount } from "@/lib/dictation-skill-lab/hints";
 import { listPracticeResults, savePracticeSnapshot } from "@/features/learning/practice-results";
 import { TURN_PREFIX, TURN_SLUG } from "./skill-lab-dictation";
 import { ClipProgress, PlaybackControls, useControlReplay, usePlaybackSettings } from "./dictation-playback";
@@ -26,15 +27,6 @@ export type SentenceItem = {
   audio: { src: string; startMs?: number; endMs?: number };
   check: (answer: string) => Promise<CheckResult>;
 };
-
-const wordCount = (text: string) => (text.match(/[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*/gu) ?? []).length;
-function maskedAnswer(reference: string, revealedWords: number) {
-  let index = 0;
-  return reference.replace(/[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*/gu, (word) => {
-    index += 1;
-    return index <= revealedWords ? word : "•".repeat(Math.min(word.length, 12));
-  });
-}
 
 async function checkSkillLab(lessonId: string, turnId: string, answer: string): Promise<CheckResult> {
   const response = await fetch(`/api/dictation/skill-lab/${lessonId}/dictation`, {
@@ -143,7 +135,7 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
       setCheckedAnswer(answer);
       if (exam) { next(); return; }
       setReveal(skip || checked.passed);
-      if (!skip && !checked.passed) setRevealedWords((count) => Math.min(count + 1, wordCount(checked.reference)));
+      if (!skip && !checked.passed) setRevealedWords((count) => nextHintCount(checked.reference, answer, count));
     } catch (failure) { setError(failure instanceof Error ? failure.message : "Không kiểm tra được câu này."); }
     finally { setBusy(false); }
   }
@@ -201,7 +193,7 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
           else if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
             event.preventDefault();
             if (result && (result.passed || result.skipped)) next();
-            else if (result && !exam && answer === checkedAnswer) { setRevealedWords((count) => Math.min(count + 1, wordCount(result.reference))); play(); }
+            else if (result && !exam && answer === checkedAnswer) { setRevealedWords((count) => nextHintCount(result.reference, answer, count)); play(); }
             else void check();
           }
         }} />
@@ -212,14 +204,14 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
           <p className="sld-reference">{result.reference}</p>
           {result.translation && <small>{result.translation}</small>}
           {result.explanation && <p className="sld-explanation"><Info size={14} /> {result.explanation}</p>}
-        </> : <><p>{maskedAnswer(result.reference, revealedWords)}</p>
-          {revealedWords < wordCount(result.reference)
-            ? <button type="button" onClick={() => { setRevealedWords((count) => Math.min(count + 1, wordCount(result.reference))); play(); input.current?.focus(); }}>Gợi ý từ tiếp theo (Enter)</button>
+        </> : <><p>{maskedAnswer(result.reference, Math.max(revealedWords, correctPrefixWords(result.reference, answer)))}</p>
+          {Math.max(revealedWords, correctPrefixWords(result.reference, answer)) < wordCount(result.reference)
+            ? <button type="button" onClick={() => { setRevealedWords((count) => nextHintCount(result.reference, answer, count)); play(); input.current?.focus(); }}>Gợi ý từ tiếp theo (Enter)</button>
             : <small>Đã gợi ý hết từ. Hãy chép lại cả câu cho đúng.</small>}</>}
       </div>}
       <div className="sld-dictation-actions"><div>
         {result && (result.passed || result.skipped) ? <button type="button" className="voa-primary-button" onClick={next}>{index + 1 < items.length ? "Câu tiếp" : "Xem kết quả"} <ArrowRight size={15} /></button>
-          : <button type="button" className="voa-primary-button" disabled={busy || (exam && !answer.trim())} onClick={() => { if (result && !exam && answer === checkedAnswer) { setRevealedWords((count) => Math.min(count + 1, wordCount(result.reference))); play(); } else void check(); }}><Check size={15} /> {busy ? "Đang kiểm tra…" : exam ? "Nộp câu này" : "Gợi ý / Kiểm tra"}</button>}
+          : <button type="button" className="voa-primary-button" disabled={busy || (exam && !answer.trim())} onClick={() => { if (result && !exam && answer === checkedAnswer) { setRevealedWords((count) => nextHintCount(result.reference, answer, count)); play(); } else void check(); }}><Check size={15} /> {busy ? "Đang kiểm tra…" : exam ? "Nộp câu này" : "Gợi ý / Kiểm tra"}</button>}
         {!(result && (result.passed || result.skipped)) && <button type="button" disabled={busy} onClick={() => void check(true)}>{exam ? "Không nghe được · Câu tiếp" : "Bỏ qua · Xem đáp án"}</button>}
         {result && !result.passed && !result.skipped && <button type="button" onClick={next}>Để sau <ArrowRight size={15} /></button>}
       </div><span className="sld-muted sld-shortcuts">{exam ? "Enter nộp câu này và sang câu tiếp" : "Enter: kiểm tra hoặc lộ thêm 1 từ; chép đúng rồi sang câu tiếp · Ctrl nghe lại"}</span></div>
