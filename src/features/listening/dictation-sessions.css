@@ -117,3 +117,5 @@
 .sld-summary-redo small{flex:1;color:var(--voa-muted)}
 @media(max-width:600px){.sld-summary-stats{grid-template-columns:1fr}}
 .voa-stage-section h2 .voa-stage-map-link{margin-left:10px;color:#087e91;font-size:13px;font-weight:750;text-decoration:none}
+/* Links styled as buttons (the shared button rules only cover <button>). */
+.slp-page a.voa-primary-button,.slp-page a.voa-continue-button,.slp-outcome a.voa-primary-button,.dq-page a.voa-primary-button{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:10px;text-decoration:none;white-space:nowrap}
