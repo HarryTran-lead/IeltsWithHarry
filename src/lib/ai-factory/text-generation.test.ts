@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { generateFactoryDraft, generateTextPractice } from "./text-generation";
+import { classifyModelFailure, generateFactoryDraft, generateTextPractice } from "./text-generation";
 
 afterEach(() => vi.unstubAllEnvs());
 
@@ -64,9 +64,29 @@ describe("AI Factory text drafting", () => {
     enableConfirmedFreeTier();
     const beforeRequest = vi.fn(async () => {});
     const fetcher = vi.fn(async () => Response.json({ error: { message: "Requests per day exceeded" } }, { status: 429 })) as typeof fetch;
-    await expect(generateFactoryDraft("reading_passage1", "How bees navigate", { beforeRequest }, fetcher)).rejects.toThrow("daily quota exhausted");
+    await expect(generateFactoryDraft("reading_passage1", "How bees navigate", { beforeRequest }, fetcher)).rejects.toThrow("HTTP 429 (daily_quota)");
     expect(beforeRequest).toHaveBeenCalledTimes(1);
     expect(fetcher).toHaveBeenCalledTimes(1);
+  });
+
+  it("distinguishes daily quota from short-term rate limits", () => {
+    expect(classifyModelFailure(429, '{"error":{"message":"Requests per day exceeded"}}')).toBe("daily_quota");
+    expect(classifyModelFailure(429, '{"error":{"message":"Too many tokens per minute"}}')).toBe("rate_limit");
+    expect(classifyModelFailure(429, '{"error":{"status":"RESOURCE_EXHAUSTED"}}')).toBe("quota_unknown");
+    expect(classifyModelFailure(503, '{"error":{"message":"overloaded"}}')).toBe("unavailable");
+  });
+
+  it("uses one 3.7 Flash request for the unsaved passage probe", async () => {
+    enableConfirmedFreeTier();
+    const fetcher = vi.fn(async (url: string) => {
+      expect(url).toContain("models/gemini-3.7-flash:generateContent");
+      return Response.json({ error: { message: "overloaded" } }, { status: 503 });
+    }) as typeof fetch;
+    await expect(generateFactoryDraft("reading_passage2", "Ancient Roman concrete", {
+      model: "gemini-3.7-flash", maxAttempts: 1, retryTransient: false,
+    }, fetcher)).rejects.toThrow("gemini-3.7-flash HTTP 503");
+    expect(fetcher).toHaveBeenCalledTimes(1);
+    expect(String(vi.mocked(fetcher).mock.calls[0][0])).toContain("models/gemini-3.7-flash:generateContent");
   });
 
   it("retries a transient model 503 and counts both calls", async () => {

@@ -1,6 +1,7 @@
 import { checkFormat } from "../ielts-bank/format-rules";
 import { validateExam, type NormalizedExam } from "../ielts-bank/schema";
 import type { FactoryKind } from "./kinds";
+import { FactoryModelError } from "./text-generation";
 import type { generateFactoryDraft } from "./text-generation";
 
 export const dailyPieceKinds = [
@@ -22,24 +23,27 @@ export function dailySetId(date: Date): string {
   return `set-${date.toISOString().slice(0, 10)}`;
 }
 
-/** Resume the same missing piece after a temporary model failure. The caller checkpoints successful pieces. */
-export async function continueTransientDraft<T>(
-  create: () => Promise<T>,
+/** A bounded retry on the primary model, then two attempts on the free-tier fallback. */
+export async function continueWithFallback<T>(
+  create: (model: string) => Promise<T>,
   wait: (milliseconds: number) => Promise<void>,
-  maxRestarts: number,
-  onRetry?: (attempt: number, milliseconds: number, error: Error) => void,
+  primary: string,
+  fallback: string,
+  onRetry?: (model: string, nextModel: string, milliseconds: number, error: FactoryModelError) => Promise<void>,
 ): Promise<T> {
-  for (let restart = 0; ; restart += 1) {
+  const models = primary === fallback ? [primary, primary] : [primary, primary, fallback, fallback];
+  const delays = [30_000, 90_000, 180_000];
+  for (let attempt = 0; attempt < models.length; attempt += 1) {
     try {
-      return await create();
+      return await create(models[attempt]);
     } catch (error) {
-      const failure = error instanceof Error ? error : new Error(String(error));
-      if (restart >= maxRestarts || !(/model unavailable \(HTTP 50[0234]\)/i.test(failure.message) || failure.name === "TimeoutError")) throw error;
-      const delay = 60_000;
-      onRetry?.(restart + 1, delay, failure);
+      if (!(error instanceof FactoryModelError) || error.failure !== "unavailable" || attempt === models.length - 1) throw error;
+      const delay = delays[attempt];
+      await onRetry?.(models[attempt], models[attempt + 1], delay, error);
       await wait(delay);
     }
   }
+  throw new Error("AI Factory model fallback was not attempted");
 }
 
 /** An incomplete older set takes precedence; a completed set for today prevents a second one. */

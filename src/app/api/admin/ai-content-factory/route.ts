@@ -4,6 +4,7 @@ import { contentHash, contentSchema, validateExam } from "@/lib/ielts-bank/schem
 import { pilotContent, pilotPayload } from "@/lib/ai-factory/pilot";
 import { createTextPracticeJob } from "@/lib/ai-factory/produce";
 import { defaultKind, factoryKinds, type FactoryKind } from "@/lib/ai-factory/kinds";
+import { dailyPieceKinds } from "@/lib/ai-factory/daily-set";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -47,7 +48,10 @@ export async function GET() {
     const set = dailySet.data?.[0];
     return Response.json({ settings: settings.data, voices: voices.data, jobs: rows, usage: usage.data,
       dailySet: set ? { setId: set.payload?.setId, completedPieces: Object.keys(set.payload?.pieces ?? {}).length,
-        totalPieces: 11, longRequestsUsed: set.payload?.longRequestsUsed ?? 0, completedAt: set.payload?.completedAt ?? null, error: set.error } : null,
+        totalPieces: dailyPieceKinds.length, missingPieces: dailyPieceKinds.filter((kind) => !set.payload?.pieces?.[kind]),
+        activeKind: set.payload?.activeKind ?? null, quotaDay: set.payload?.quotaDay ?? null,
+        longRequestsUsed: set.payload?.longRequestsUsed ?? 0, lastModelFailure: set.payload?.lastModelFailure ?? null,
+        completedAt: set.payload?.completedAt ?? null, error: set.error } : null,
       textProviderReady: Boolean(process.env.AI_FACTORY_GEMINI_API_KEY && process.env.AI_FACTORY_FREE_TIER_ONLY === "true" && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true") });
   } catch (error) { return requestError(error); }
 }

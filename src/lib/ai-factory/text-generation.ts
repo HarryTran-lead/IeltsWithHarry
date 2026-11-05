@@ -5,19 +5,38 @@ import { briefFor, buildDraft, defaultKind, factoryKinds, isReadingKind, outputS
 
 export type { FactoryKind, TextSkill } from "./kinds";
 type ModelUsage = { inputTokens: number | null; outputTokens: number | null };
-type Options = { day?: number; avoid?: string[]; beforeRequest?: (model: string) => Promise<void> };
+type Options = { day?: number; avoid?: string[]; model?: string; maxAttempts?: number; retryTransient?: boolean; beforeRequest?: (model: string) => Promise<void> };
+
+export type FactoryModelFailure = "unavailable" | "daily_quota" | "rate_limit" | "quota_unknown" | "other";
+export class FactoryModelError extends Error {
+  constructor(public readonly model: string, public readonly status: number, public readonly failure: FactoryModelFailure) {
+    super(`AI Factory ${model} HTTP ${status} (${failure})`);
+    this.name = "FactoryModelError";
+  }
+}
+
+export function classifyModelFailure(status: number, body: string): FactoryModelFailure {
+  if (status === 429) {
+    if (/quota_exceeded|per.?day|daily|requests_per_day|RPD/i.test(body)) return "daily_quota";
+    if (/rate_limit_exceeded|too_many_requests|per.?minute|per.?second|RPM|TPM/i.test(body)) return "rate_limit";
+    return "quota_unknown";
+  }
+  if ([500, 502, 503, 504].includes(status)) return "unavailable";
+  return "other";
+}
 
 const topicSchema = z.string().trim().min(4).max(100);
 const isLong = (kind: FactoryKind) => kind.startsWith("listening") || isReadingKind(kind);
 
-async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], fetcher: typeof fetch, retryReason = "", beforeRequest?: Options["beforeRequest"]): Promise<{ value: unknown; model: string; usage: ModelUsage }> {
+async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], fetcher: typeof fetch, retryReason = "", beforeRequest?: Options["beforeRequest"], modelOverride?: string): Promise<{ value: unknown; model: string; usage: ModelUsage }> {
   if (process.env.AI_FACTORY_FREE_TIER_CONFIRMED !== "true" || process.env.AI_FACTORY_FREE_TIER_ONLY !== "true") throw new Error("AI Factory free-tier project has not been confirmed");
   const key = process.env.AI_FACTORY_GEMINI_API_KEY;
   if (!key) throw new Error("Separate AI Factory free-tier key is not configured");
   // Long Listening and Reading drafts need the stronger Flash model to meet the format gate; short tasks use Flash-Lite.
   const long = isLong(brief.kind);
   const configured = long ? process.env.AI_FACTORY_LONG_MODEL : process.env.AI_FACTORY_TEXT_MODEL;
-  const model = /^[\w.-]+$/.test(configured ?? "") ? configured! : long ? "gemini-3.8-flash" : "gemini-3.5-flash-lite";
+  const chosen = modelOverride ?? configured;
+  const model = /^[\w.-]+$/.test(chosen ?? "") ? chosen! : long ? "gemini-3.8-flash" : "gemini-3.5-flash-lite";
   await beforeRequest?.(model);
   const response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
     method: "POST", cache: "no-store", signal: AbortSignal.timeout(long ? 360000 : 60000),
@@ -36,9 +55,8 @@ async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], f
     }),
   });
   if (!response.ok) {
-    const detail = (await response.text()).slice(0, 1000);
-    if (response.status === 429 || /per day|quota|resource exhausted/i.test(detail)) throw new Error(`AI Factory daily quota exhausted (HTTP ${response.status})`);
-    throw new Error(`AI Factory model unavailable (HTTP ${response.status}); no draft was published`);
+    const detail = (await response.text()).slice(0, 2000);
+    throw new FactoryModelError(model, response.status, classifyModelFailure(response.status, detail));
   }
   const raw = await response.json() as { candidates?: { finishReason?: string; content?: { parts?: { text?: string }[] } }[]; usageMetadata?: { promptTokenCount?: number; candidatesTokenCount?: number } };
   const candidate = raw.candidates?.[0];
@@ -51,7 +69,7 @@ async function callFreeTierModel(brief: Brief, topic: string, avoid: string[], f
 async function draftOnce(kind: FactoryKind, topic: string, options: Options, fetcher: typeof fetch, retryReason = "") {
   const cleanTopic = topicSchema.parse(topic);
   const brief = briefFor(kind, options.day ?? 0);
-  const { value, model, usage } = await callFreeTierModel(brief, cleanTopic, options.avoid ?? [], fetcher, retryReason, options.beforeRequest);
+  const { value, model, usage } = await callFreeTierModel(brief, cleanTopic, options.avoid ?? [], fetcher, retryReason, options.beforeRequest, options.model);
   const id = randomUUID();
   const skill = factoryKinds[kind].skill;
   const sourceUrl = "https://ieltswithharry.vercel.app/app/question-bank";
@@ -68,7 +86,7 @@ async function draftOnce(kind: FactoryKind, topic: string, options: Options, fet
 /** One draft of the given kind. A draft that fails the format gate is regenerated with the reasons:
  *  twice more for long Listening and Reading drafts, once for the short tasks. */
 export async function generateFactoryDraft(kind: FactoryKind, topic: string, options: Options = {}, fetcher: typeof fetch = fetch) {
-  const attempts = isLong(kind) ? 3 : 2;
+  const attempts = options.maxAttempts ?? (isLong(kind) ? 3 : 2);
   const usage: ModelUsage = { inputTokens: 0, outputTokens: 0 };
   const add = (more: ModelUsage) => {
     usage.inputTokens = usage.inputTokens == null || more.inputTokens == null ? null : usage.inputTokens + more.inputTokens;
@@ -83,8 +101,8 @@ export async function generateFactoryDraft(kind: FactoryKind, topic: string, opt
       reason = draft.warnings.join("; ").slice(0, 900);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
-      const transientModelError = /model unavailable \(HTTP 50[0234]\)/i.test(message);
-      if (attempt === attempts || (error instanceof Error && error.name === "TimeoutError") || /daily quota exhausted|daily request budget|Could not checkpoint|free-tier project|Separate AI Factory free-tier key/i.test(message) || (/model unavailable/i.test(message) && !transientModelError)) throw error;
+      const transientModelError = error instanceof FactoryModelError && error.failure === "unavailable";
+      if (attempt === attempts || (error instanceof Error && error.name === "TimeoutError") || (error instanceof FactoryModelError && (!transientModelError || options.retryTransient === false)) || /daily request budget|Could not checkpoint|free-tier project|Separate AI Factory free-tier key/i.test(message)) throw error;
       if (transientModelError) {
         await new Promise((resolve) => setTimeout(resolve, attempt * 15_000));
         continue;

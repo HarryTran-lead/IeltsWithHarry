@@ -12,6 +12,10 @@ on:
         description: Check model connectivity with a tiny request without creating a set
         type: boolean
         default: false
+      probe_passage2:
+        description: Generate one Reading Passage 2 with 3.7 Flash and validate it without writing to Supabase
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -77,6 +81,9 @@ jobs:
       - name: Install project dependencies
         if: steps.config.outputs.configured == 'true' && !inputs.probe_only
         run: npm ci --ignore-scripts
+      - name: Probe Reading Passage 2 on 3.7 Flash without saving
+        if: steps.config.outputs.configured == 'true' && github.event_name == 'workflow_dispatch' && inputs.probe_passage2 && !inputs.probe_only
+        run: npx tsx scripts/probe-ai-factory-passage.ts
       - name: Create or resume today's review-only IELTS set
-        if: steps.config.outputs.configured == 'true' && !inputs.probe_only
+        if: steps.config.outputs.configured == 'true' && !inputs.probe_only && !inputs.probe_passage2
         run: npx tsx scripts/run-ai-factory-daily-set.ts

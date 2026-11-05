@@ -1,7 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
 import { checkFormat } from "../ielts-bank/format-rules";
 import type { ExamQuestion, NormalizedExam } from "../ielts-bank/schema";
-import { chooseDailySet, composeFullDraft, continueTransientDraft, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPiece, type DailyPieces } from "./daily-set";
+import { chooseDailySet, composeFullDraft, continueWithFallback, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPiece, type DailyPieces } from "./daily-set";
+import { FactoryModelError } from "./text-generation";
 
 const meta = { externalId: "piece", format: "Academic", mode: "practice", title: "A new practice item", topic: "Research",
   durationMinutes: 20, sourceUrl: "https://example.org", attribution: "Original", license: "Original", licenseUrl: "https://example.org",
@@ -39,22 +40,20 @@ function piece(skill: "Listening" | "Reading", part: number): DailyPiece {
 }
 
 describe("AI Factory daily set", () => {
-  it("continues the same piece after temporary model errors", async () => {
-    const create = vi.fn().mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
-      .mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
-      .mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
-      .mockRejectedValueOnce(new Error("AI Factory model unavailable (HTTP 503)"))
+  it("tries the primary twice, then the free-tier fallback after HTTP 503", async () => {
+    const create = vi.fn().mockRejectedValueOnce(new FactoryModelError("gemini-3.8-flash", 503, "unavailable"))
+      .mockRejectedValueOnce(new FactoryModelError("gemini-3.8-flash", 503, "unavailable"))
       .mockResolvedValue("finished piece");
     const wait = vi.fn(async () => {});
-    await expect(continueTransientDraft(create, wait, 19)).resolves.toBe("finished piece");
-    expect(create).toHaveBeenCalledTimes(5);
-    expect(wait.mock.calls).toEqual(Array(4).fill([60_000]));
+    await expect(continueWithFallback(create, wait, "gemini-3.8-flash", "gemini-3.7-flash")).resolves.toBe("finished piece");
+    expect(create.mock.calls).toEqual([["gemini-3.8-flash"], ["gemini-3.8-flash"], ["gemini-3.7-flash"]]);
+    expect(wait.mock.calls).toEqual([[30_000], [90_000]]);
   });
 
-  it("does not repeatedly call the model after quota exhaustion", async () => {
-    const create = vi.fn().mockRejectedValue(new Error("AI Factory daily quota exhausted (HTTP 429)"));
+  it("stops on HTTP 429 without switching models", async () => {
+    const create = vi.fn().mockRejectedValue(new FactoryModelError("gemini-3.8-flash", 429, "rate_limit"));
     const wait = vi.fn(async () => {});
-    await expect(continueTransientDraft(create, wait, 19)).rejects.toThrow("daily quota exhausted");
+    await expect(continueWithFallback(create, wait, "gemini-3.8-flash", "gemini-3.7-flash")).rejects.toThrow("HTTP 429");
     expect(create).toHaveBeenCalledTimes(1);
     expect(wait).not.toHaveBeenCalled();
   });
