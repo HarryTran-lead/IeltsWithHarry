@@ -37,7 +37,7 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
           </div>
           <div>
             <h3>Học</h3>
-            <Link href="/courses">Lộ trình 7 chặng</Link>
+            <Link href="/courses">Lộ trình 4 chặng</Link>
             <Link href="/about">Về IeltsWithHarry</Link>
           </div>
           <div>

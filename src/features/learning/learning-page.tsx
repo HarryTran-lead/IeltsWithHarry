@@ -95,7 +95,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
   const { attempts } = useDemo();
   const { visits } = useNotebook();
   const recentCourse = visits.map((visit) => published.courses.find((course) => course.units.some((unit) => unit.lessons.some((lesson) => visit.path === `/app/lesson/${lesson.slug}`)))).find(Boolean);
-  const activeStageId = stageId ?? recentCourse?.stage_id ?? (releaseLocks ? productionLearnStage : "foundation");
+  const activeStageId = stageId ?? (recentCourse && learnStageAvailable(recentCourse.stage_id) ? recentCourse.stage_id : undefined) ?? (releaseLocks ? productionLearnStage : "foundation");
   const stageCourses = published.courses.filter((course) => course.stage_id === activeStageId && (activeStageId !== "ielts-builder" || course.slug === "english-skill-lab-book-2"));
   const stageLessons = stageCourses.flatMap((course) => course.units.flatMap((unit) => unit.lessons));
   const [results, setResults] = useState<Record<string, PracticeResult>>({});
@@ -139,7 +139,7 @@ function LearnOverview({ stageId }: { stageId?: string }) {
           {demoMode && !nextLesson && <Link className="button primary" href="/app/learn/foundation">Xem hành trình Foundation <ArrowRight size={16} /></Link>}
           {!nextLesson && !published.loading && total > 0 && <span className="learn-mission-complete">Đã khám phá hết bài học ở chặng này. Bạn có thể ôn lại hoặc làm bài kiểm tra cuối khóa.</span>}
         </div>
-        <div className="learn-mission-progress"><span>LỘ TRÌNH HỌC</span><strong>{demoMode && !total ? "7" : practiced}<small>{demoMode && !total ? " chặng" : `/${total || "…"}`}</small></strong><span>{demoMode && !total ? "mốc trong lộ trình" : "bài đã luyện"}</span><div className="study-map-bar"><i style={{ width: `${total ? Math.round(practiced / total * 100) : 0}%` }} /></div><small>{demoMode && !total ? "Đăng nhập để lưu tiến độ học" : `Bài tiếp theo: ${nextLesson?.title ?? (total ? "Ôn tập" : "Đang tải bài học")}`}</small></div>
+        <div className="learn-mission-progress"><span>LỘ TRÌNH HỌC</span><strong>{demoMode && !total ? stages.length : practiced}<small>{demoMode && !total ? " chặng" : `/${total || "…"}`}</small></strong><span>{demoMode && !total ? "mốc trong lộ trình" : "bài đã luyện"}</span><div className="study-map-bar"><i style={{ width: `${total ? Math.round(practiced / total * 100) : 0}%` }} /></div><small>{demoMode && !total ? "Đăng nhập để lưu tiến độ học" : `Bài tiếp theo: ${nextLesson?.title ?? (total ? "Ôn tập" : "Đang tải bài học")}`}</small></div>
       </section>}
       {selected && <StageLessons stageId={selected.id} {...published} />}
       {!selected && <OpenCourses courses={published.courses} loading={published.loading} />}

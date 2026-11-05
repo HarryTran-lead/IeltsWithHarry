@@ -16,15 +16,16 @@ export const smartNotebookV1 = liveMode && process.env.NEXT_PUBLIC_SMART_NOTEBOO
 /** Keep launch locks in production; the isolated develop Preview can expose work in progress. */
 export const releaseLocks = process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES !== "true";
 export const productionLearnStage = "ielts-builder";
+const releasedLearnStages = ["ielts-starter", "ielts-builder", "ielts-advanced"];
 
 export function learnStageAvailable(stageId: string) {
-  return !releaseLocks || stageId === productionLearnStage;
+  return !releaseLocks || releasedLearnStages.includes(stageId);
 }
 
 export function lockedLearnerPath(pathname: string) {
   if (!releaseLocks) return false;
   if (pathname === "/app/reading/vocabulary") return false;
-  if (pathname === "/app/learn" || pathname === `/app/learn/${productionLearnStage}`) return false;
+  if (pathname === "/app/learn" || (pathname.startsWith("/app/learn/") && learnStageAvailable(pathname.slice("/app/learn/".length)))) return false;
   if (/^\/app\/lesson\/b2-[a-z0-9-]+$/.test(pathname)) return false;
   return /^\/app\/(reading|listening|writing|speaking|question-bank|learn)(?:\/|$)/.test(pathname)
     || /^\/app\/vocabulary\/mode\//.test(pathname)

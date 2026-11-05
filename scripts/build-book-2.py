@@ -266,7 +266,7 @@ with zipfile.ZipFile(ARCHIVE) as archive:
         raise SystemExit("Manifest question counts do not add up")
     # The learner-facing course title is edited in the catalog, so a rebuild keeps it.
     title = json.loads(CATALOG.read_text(encoding="utf-8")).get("title") if CATALOG.exists() else None
-    course = {"id": "book2-course", "slug": "english-skill-lab-book-2", "title": title or "English Skill Lab · Book 2 (5.0–6.0)", "description": "", "stage_id": "ielts-builder", "units": []}
+    course = {"id": "book2-course", "slug": "english-skill-lab-book-2", "title": title or "English Skill Lab · Book 2", "description": "", "stage_id": "ielts-builder", "units": []}
     total = 0
     hidden = []
     for unit_index, code in enumerate(manifest["units"], 1):

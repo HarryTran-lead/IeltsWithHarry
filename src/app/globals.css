@@ -3871,7 +3871,7 @@ a.card:hover {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
 .roadmap-track::before {
@@ -3904,6 +3904,8 @@ a.card:hover {
   box-shadow: var(--shadow-lg);
   border-color: #a6dcde;
 }
+.roadmap-stop[aria-disabled="true"] { opacity: 0.65; cursor: not-allowed; }
+.roadmap-stop[aria-disabled="true"]:hover { translate: none; box-shadow: var(--shadow); border-color: var(--line); }
 .roadmap-stop .sticker {
   margin-bottom: 12px;
 }

@@ -4,6 +4,7 @@ import { ArrowRight, CalendarDays, Check, Headphones, NotebookPen, Newspaper, Us
 import { Doodle, Sticker, Tape, type StickerName } from "@/components/stickers/stickers";
 import { FlipWordCard } from "@/components/fx/flip-word-card";
 import { stages } from "@/lib/demo-data";
+import { learnStageAvailable } from "@/lib/runtime";
 import { getViewerRole } from "@/lib/viewer-role";
 
 const skills: { name: string; sticker: StickerName; text: string; tone: string }[] = [
@@ -15,7 +16,7 @@ const skills: { name: string; sticker: StickerName; text: string; tone: string }
   { name: "Speaking", sticker: "mic", text: "Chuẩn bị ý, bấm giờ và ghi âm với cue card từ các chủ đề đang diễn ra.", tone: "lavender" },
 ];
 
-const stageStickers: StickerName[] = ["abc", "pencil", "book", "headphones", "chart", "rocket", "star"];
+const stageStickers: StickerName[] = ["abc", "book", "rocket", "star"];
 
 export default async function GuestHome() {
   const role = await getViewerRole();
@@ -33,7 +34,7 @@ export default async function GuestHome() {
         </div>
         <small>Khách có thể xem khóa học. Đăng nhập để luyện tập và lưu tiến độ.</small>
         <dl className="guest-facts">
-          <div><dt>7</dt><dd>chặng học, band 1.0 → 7.0+</dd></div>
+          <div><dt>4</dt><dd>chặng học, hướng tới band 7.5</dd></div>
           <div><dt>6</dt><dd>kỹ năng IELTS trong một nơi</dd></div>
           <div><dt>1</dt><dd>sổ tay cho mọi ghi chú</dd></div>
         </dl>
@@ -51,7 +52,7 @@ export default async function GuestHome() {
         </div>
         <Sticker name="harry" size={150} tilt={-5} float className="board-harry" />
         <Sticker name="bubble" label="Hello!" size={96} tilt={9} delay={200} className="board-bubble" />
-        <Sticker name="star" label="7.0+" size={74} tilt={-12} delay={320} float className="board-star" />
+        <Sticker name="star" label="7.5" size={74} tilt={-12} delay={320} float className="board-star" />
         <Sticker name="plane" size={70} tilt={6} delay={420} className="board-plane" />
         <Sticker name="headphones" size={60} tilt={-14} delay={520} className="board-headphones" />
         <Doodle name="swirl" className="board-swirl" />
@@ -79,18 +80,18 @@ export default async function GuestHome() {
       <div className="guest-section-head">
         <div>
           <span className="eyebrow">LỘ TRÌNH</span>
-          <h2>Bảy chặng, từ những từ đầu tiên đến IELTS tự tin</h2>
+          <h2>Bốn chặng từ Foundation đến Level 3</h2>
         </div>
         <Link href="/courses" className="button subtle">Xem chi tiết lộ trình <ArrowRight size={16} /></Link>
       </div>
       <ol className="roadmap-track">
         {stages.map((stage, index) => <li key={stage.id}>
-          <Link href={`/courses/${stage.id}`} className="roadmap-stop">
+          {learnStageAvailable(stage.id) ? <Link href={`/courses/${stage.id}`} className="roadmap-stop">
             <Sticker name={stageStickers[index]} size={44} tilt={index % 2 ? 8 : -8} pop={false} />
             <span className="roadmap-band">{stage.range}</span>
             <strong>{stage.name}</strong>
             <small>{stage.description}</small>
-          </Link>
+          </Link> : <div className="roadmap-stop" aria-disabled="true"><Sticker name={stageStickers[index]} size={44} pop={false} /><span className="roadmap-band">{stage.range}</span><strong>{stage.name}</strong><small>Sắp mở</small></div>}
         </li>)}
       </ol>
       <p className="guest-footnote">Các chặng là mốc định hướng, không phải điểm IELTS chính thức.</p>
@@ -161,7 +162,7 @@ export default async function GuestHome() {
       <div>
         <span className="hand-note">Small steps. Big progress!</span>
         <h2>Chọn một bước nhỏ hôm nay</h2>
-        <p>Khám phá bảy chặng học và các bài mẫu trước khi tạo tài khoản.</p>
+        <p>Khám phá bốn chặng học và các bài mẫu trước khi tạo tài khoản.</p>
         <div className="guest-actions">
           <Link href="/register" className="button primary">Bắt đầu học <ArrowRight size={17} /></Link>
           <Link href="/courses" className="button subtle">Khám phá khóa học</Link>

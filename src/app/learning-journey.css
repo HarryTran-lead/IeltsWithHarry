@@ -19,7 +19,7 @@
 /* Stage track: one row of stops joined by a connector; it scrolls sideways when the card is narrow. */
 @property --ring { syntax: "<percentage>"; inherits: true; initial-value: 0%; }
 .learn-track-card { container-type: inline-size; }
-.learn-track { display: grid; grid-template-columns: repeat(7, minmax(124px, 1fr)); margin: 4px 0 0; padding: 16px 10px 14px; list-style: none; border: 1px solid #e3efec; border-radius: 20px; background: linear-gradient(#f4fbf9, #fff 80%); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: #cfe3e0 transparent; }
+.learn-track { display: grid; grid-template-columns: repeat(4, minmax(160px, 1fr)); margin: 4px 0 0; padding: 16px 10px 14px; list-style: none; border: 1px solid #e3efec; border-radius: 20px; background: linear-gradient(#f4fbf9, #fff 80%); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: #cfe3e0 transparent; }
 /* Stops never animate themselves: a stacking context on a stop would let the next connector paint over its node. */
 .learn-track-stop { position: relative; min-width: 0; scroll-snap-align: center; }
 .learn-track-stop + .learn-track-stop::before, .learn-track-stop.is-reached::after { content: ""; position: absolute; top: 47px; left: -50%; width: 100%; height: 6px; border-radius: 99px; }
@@ -51,7 +51,7 @@ a.learn-track-link:hover .learn-track-copy { translate: 0 -2px; border-color: #c
 .learn-track-badge { margin-top: 3px; padding: 2px 9px; border-radius: 99px; background: #f1b648; color: #5a3a04; font-size: 10.5px; font-weight: 800; }
 @container (max-width: 940px) { .learn-track { -webkit-mask: linear-gradient(90deg, transparent, #000 18px, #000 calc(100% - 18px), transparent); mask: linear-gradient(90deg, transparent, #000 18px, #000 calc(100% - 18px), transparent); padding-inline: 18px; } }
 /* Phones: the shell gives 12px of gutter, the overview adds 4px to reach 16px. */
-@media (max-width: 520px) { .learn-overview { padding-inline: 4px; } .learn-track { grid-template-columns: repeat(7, 116px); } .learn-track-copy strong { font-size: 14.5px; } }
+@media (max-width: 520px) { .learn-overview { padding-inline: 4px; } .learn-track { grid-template-columns: repeat(4, 140px); } .learn-track-copy strong { font-size: 14.5px; } }
 @keyframes track-fill { from { scale: 0 1; } }
 @keyframes ring-fill { from { --ring: 0%; } }
 @keyframes track-glow {
