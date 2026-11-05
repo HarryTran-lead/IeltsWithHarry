@@ -44,6 +44,35 @@ export function usePlaybackSettings() {
 
 export type PlaybackSettings = ReturnType<typeof usePlaybackSettings>;
 
+/** Replay on a standalone Ctrl press, without intercepting Ctrl+C or other shortcuts. */
+export function useControlReplay(replay: () => void, enabled = true) {
+  const replayRef = useRef(replay);
+  useEffect(() => { replayRef.current = replay; });
+  useEffect(() => {
+    if (!enabled) return;
+    let standalone = false;
+    const down = (event: KeyboardEvent) => {
+      if (event.key === "Control") {
+        if (!event.repeat) standalone = true;
+      } else if (event.ctrlKey) standalone = false;
+    };
+    const up = (event: KeyboardEvent) => {
+      if (event.key !== "Control") return;
+      if (standalone) replayRef.current();
+      standalone = false;
+    };
+    const reset = () => { standalone = false; };
+    window.addEventListener("keydown", down);
+    window.addEventListener("keyup", up);
+    window.addEventListener("blur", reset);
+    return () => {
+      window.removeEventListener("keydown", down);
+      window.removeEventListener("keyup", up);
+      window.removeEventListener("blur", reset);
+    };
+  }, [enabled]);
+}
+
 /** Speed select and a small panel for auto-replay. `lockSpeed` keeps exam playback at normal speed. */
 export function PlaybackControls({ settings, lockSpeed = false, showReplay = true }: { settings: PlaybackSettings; lockSpeed?: boolean; showReplay?: boolean }) {
   const [open, setOpen] = useState(false);
@@ -73,7 +102,7 @@ export function PlaybackControls({ settings, lockSpeed = false, showReplay = tru
           <label>Nghỉ giữa các lần<select value={settings.replayDelay} onChange={(event) => settings.setReplayDelay(Number(event.target.value))}>
             {[0.5, 1, 1.5, 2, 3].map((seconds) => <option key={seconds} value={seconds}>{seconds} giây</option>)}
           </select></label>
-          <p>Ctrl + Enter: nghe lại · Enter: kiểm tra. Áp dụng cho mọi kho Dictation.</p>
+          <p>Ctrl: nghe lại câu hiện tại · Enter: kiểm tra. Cài đặt tốc độ và phát lại áp dụng cho mọi kho Dictation.</p>
         </div>}
       </>}
     </div>

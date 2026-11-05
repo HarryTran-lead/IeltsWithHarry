@@ -16,7 +16,7 @@ import { skillLabStages, skillLabStageOf, skillLabStageUrl } from "@/lib/dictati
 import { dictationSkills } from "@/lib/dictation-skill-lab/skills";
 import { celebrate } from "@/lib/celebrate";
 import { topicIllustration } from "@/lib/topic-illustration";
-import { ClipProgress, PlaybackControls, usePlaybackSettings } from "./dictation-playback";
+import { ClipProgress, PlaybackControls, useControlReplay, usePlaybackSettings } from "./dictation-playback";
 import "./dictation-playback.css";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
@@ -267,6 +267,12 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
   useEffect(() => { if (restored) writeDraft(lessonId, { version: 2, mode, answers, results, dictationAnswers, dictationResults, submitted, played, selectedTurn, dictationTurn, practiceTurn, review }); }, [restored, lessonId, mode, answers, results, dictationAnswers, dictationResults, submitted, played, selectedTurn, dictationTurn, practiceTurn, review]);
   useEffect(() => () => { if (gapTimer.current) clearTimeout(gapTimer.current); if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current); audio.current?.pause(); }, []);
   useEffect(() => { if (audio.current) audio.current.playbackRate = speed; }, [speed]);
+  useControlReplay(() => play(selectedTurn), mode === "dictation" && Boolean(lesson));
+  useEffect(() => {
+    if (!lesson || mode !== "dictation") return;
+    const timer = window.setTimeout(() => document.getElementById("sld-dictation-answer")?.focus({ preventScroll: true }), 0);
+    return () => window.clearTimeout(timer);
+  }, [lesson, mode, selectedTurn]);
   useEffect(() => {
     if (previewLeft === null) return;
     if (previewLeft <= 0) { setPreviewLeft(null); setExamStartedAt(Date.now()); play(0, true); return; } // eslint-disable-line react-hooks/set-state-in-effect -- the countdown ends by starting the recording
@@ -594,14 +600,14 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
           <button type="button" onClick={() => play(selectedTurn)} className="sld-replay-inline"><RotateCcw size={15} /> Nghe lại</button>
           <button type="button" disabled={Boolean(busy)} onClick={() => void checkDictation(true)}>Bỏ qua · Xem đáp án</button>
           {activeDictationResult && (turnPassed(activeDictationResult) || activeDictationResult.skipped) && selectedTurn < lesson.turns.length - 1 && <button type="button" onClick={() => chooseTurn(selectedTurn + 1, true)}>Câu tiếp <ArrowRight size={15} /></button>}
-        </div><span className="sld-muted sld-shortcuts">Enter: kiểm tra hoặc lộ thêm 1 từ; chép đúng rồi Enter sang câu và tự phát · Ctrl + Enter nghe lại</span></div>
+        </div><span className="sld-muted sld-shortcuts">Enter: kiểm tra hoặc lộ thêm 1 từ; chép đúng rồi Enter sang câu và tự phát · Ctrl nghe lại</span></div>
       </section>}
       {mode === "dictation" && <section className="sld-dictation-progress voa-surface" aria-label="Tiến độ nghe chép">
         <div className="sld-dictation-progress-head"><strong>Các câu trong bài</strong><span>{dictationPassedCount}/{lesson.turns.length} đã đạt</span></div>
         <div className="sld-dictation-meter" aria-hidden="true"><span style={{ width: `${100 * dictationPassedCount / lesson.turns.length}%` }} /></div>
         <nav className="sld-dictation-grid" aria-label="Chọn câu nghe">{lesson.turns.map((turn, index) => {
           const result = dictationResults[turn.turn_id];
-          return <button type="button" key={turn.turn_id} aria-current={index === selectedTurn ? "step" : undefined} aria-label={`Câu ${index + 1}${result ? turnPassed(result) ? ", đã đạt" : result.skipped ? ", đã bỏ qua" : ", cần làm lại" : ""}`} className={`${index === selectedTurn ? "active " : ""}${result ? result.skipped ? "skipped" : turnPassed(result) ? "passed" : "retry" : ""}`} onClick={() => chooseTurn(index)}>{index + 1}{turnPassed(result) ? <Check size={13} /> : null}</button>;
+          return <button type="button" key={turn.turn_id} aria-current={index === selectedTurn ? "step" : undefined} aria-label={`Câu ${index + 1}${result ? turnPassed(result) ? ", đã đạt" : result.skipped ? ", đã bỏ qua" : ", cần làm lại" : ""}`} className={`${index === selectedTurn ? "active " : ""}${result ? result.skipped ? "skipped" : turnPassed(result) ? "passed" : "retry" : ""}`} onClick={() => chooseTurn(index, true)}>{index + 1}{turnPassed(result) ? <Check size={13} /> : null}</button>;
         })}</nav>
         {dictationDone && <div className="sld-dictation-done"><Check size={15} /> Bạn đã chép đạt cả bài.
           {orderedQuestions.length > 0 && <button type="button" className="voa-primary-button" onClick={() => changeMode("practice")}>Sang bước 2: Câu hỏi <ArrowRight size={14} /></button>}
@@ -624,7 +630,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
       </ol>}
       </div>
 
-      {mode !== "ielts" && <nav className="sld-turn-nav voa-surface" aria-label="Chuyển câu nghe"><button type="button" disabled={selectedTurn === 0} onClick={() => chooseTurn(selectedTurn - 1)}><ArrowLeft size={16} /> Câu trước</button><span>{selectedTurn + 1} / {lesson.turns.length}</span><button ref={nextTurnButtonRef} type="button" className="voa-primary-button" disabled={selectedTurn === lesson.turns.length - 1} onClick={() => chooseTurn(selectedTurn + 1)}>Câu tiếp <ArrowRight size={16} /></button></nav>}
+      {mode !== "ielts" && <nav className="sld-turn-nav voa-surface" aria-label="Chuyển câu nghe"><button type="button" disabled={selectedTurn === 0} onClick={() => chooseTurn(selectedTurn - 1, mode === "dictation")}><ArrowLeft size={16} /> Câu trước</button><span>{selectedTurn + 1} / {lesson.turns.length}</span><button ref={nextTurnButtonRef} type="button" className="voa-primary-button" disabled={selectedTurn === lesson.turns.length - 1} onClick={() => chooseTurn(selectedTurn + 1, mode === "dictation")}>Câu tiếp <ArrowRight size={16} /></button></nav>}
 
       {mode !== "dictation" && (mode === "ielts" || selectedTurn === lesson.turns.length - 1 || submitted) && <section className="sld-submit voa-surface">
         {submitted ? (

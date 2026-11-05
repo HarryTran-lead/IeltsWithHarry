@@ -14,7 +14,7 @@ import { demoMode } from "@/lib/runtime";
 import { percentPassed } from "@/lib/dictation/pass";
 import { listPracticeResults, savePracticeSnapshot } from "@/features/learning/practice-results";
 import { TURN_PREFIX, TURN_SLUG } from "./skill-lab-dictation";
-import { ClipProgress, PlaybackControls, usePlaybackSettings } from "./dictation-playback";
+import { ClipProgress, PlaybackControls, useControlReplay, usePlaybackSettings } from "./dictation-playback";
 import "./dictation-playback.css";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
@@ -82,6 +82,12 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
   const item = items[index];
   const result = item ? results[item.key] : undefined;
   const done = index >= items.length;
+  useControlReplay(() => play(), !exam && !done);
+  useEffect(() => {
+    if (done) return;
+    const timer = window.setTimeout(() => input.current?.focus({ preventScroll: true }), 0);
+    return () => window.clearTimeout(timer);
+  }, [index, done]);
 
   function play() {
     if (!audio.current || !item || (exam && played[item.key])) return;
@@ -212,7 +218,7 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
           : <button type="button" className="voa-primary-button" disabled={busy || (exam && !answer.trim())} onClick={() => { if (result && !exam && answer === checkedAnswer) { setRevealedWords((count) => Math.min(count + 1, wordCount(result.reference))); play(); } else void check(); }}><Check size={15} /> {busy ? "Đang kiểm tra…" : exam ? "Nộp câu này" : "Gợi ý / Kiểm tra"}</button>}
         {!(result && (result.passed || result.skipped)) && <button type="button" disabled={busy} onClick={() => void check(true)}>{exam ? "Không nghe được · Câu tiếp" : "Bỏ qua · Xem đáp án"}</button>}
         {result && !result.passed && !result.skipped && <button type="button" onClick={next}>Để sau <ArrowRight size={15} /></button>}
-      </div><span className="sld-muted sld-shortcuts">{exam ? "Enter nộp câu này và sang câu tiếp" : "Enter: kiểm tra hoặc lộ thêm 1 từ; chép đúng rồi sang câu tiếp · Ctrl + Enter nghe lại"}</span></div>
+      </div><span className="sld-muted sld-shortcuts">{exam ? "Enter nộp câu này và sang câu tiếp" : "Enter: kiểm tra hoặc lộ thêm 1 từ; chép đúng rồi sang câu tiếp · Ctrl nghe lại"}</span></div>
     </section>
   );
 }
