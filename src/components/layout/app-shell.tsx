@@ -95,7 +95,7 @@ const groups = [
   {
     label: "Không gian học",
     links: [
-      { href: "/app/notebook", label: "Notebook", icon: NotebookPen, tone: "sun" },
+      { href: "/app/notebook", label: "Ghi chú", icon: NotebookPen, tone: "sun" },
       { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical, tone: "coral" },
     ],
   },

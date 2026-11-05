@@ -9,6 +9,7 @@ import { useDemo } from "@/features/demo/demo-store";
 import { NotebookPage, QuickForm } from "./notebook-ui";
 import { useNotebook, type NotebookEntry } from "./notebook-store";
 import { SmartEditor } from "./smart-editor";
+import { QuickNotesWorkspace } from "./quick-notes-workspace";
 import { SmartCoverPicker, SmartCreateDialog } from "./smart-create-dialog";
 import { covers, documentSchema, papers, type Book, type Cover, type PageDocument, type Paper, type TextElement } from "./smart-model";
 import "./smart-notebook.css";
@@ -44,7 +45,7 @@ function activityTime(value: string) {
 export function SmartNotebook() {
   const pathname = usePathname();
   const id = pathname.split("/")[3];
-  return id ? <SmartEditor bookId={id} /> : <Library />;
+  return id === "library" ? <Library /> : id ? <SmartEditor bookId={id} /> : <QuickNotesWorkspace />;
 }
 
 function Library() {

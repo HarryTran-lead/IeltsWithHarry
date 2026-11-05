@@ -10,7 +10,7 @@ import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook, type NotebookEntry } from "./notebook-store";
 import type { NotebookInput } from "@/lib/validation/notebook";
 
-type QuickTab = "note" | "word" | "recent";
+type QuickTab = "note" | "recent";
 const when = (value: string) => new Intl.DateTimeFormat("vi-VN", { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
 const bubblePositionKey = "ieltswithharry-notebook-bubble-top";
 const bubbleSize = 56;
@@ -27,7 +27,7 @@ export function QuickForm({ kind, onSaved, entry }: { kind: "note" | "word"; onS
   async function submit(event: React.FormEvent) {
     event.preventDefault();
     const input: NotebookInput = kind === "note"
-      ? { kind, title, body, meaningVi: "", example: "" }
+      ? { kind, title: (title.trim() || body.trim().split("\n")[0] || "Ghi chú mới").slice(0, 100), body, meaningVi: "", example: "" }
       : { kind, title, body: "", meaningVi, example };
     setBusy(true);
     try { if (entry) await updateEntry(entry.id, input); else await addEntry(input); setTitle(""); setBody(""); setMeaningVi(""); setExample(""); onSaved(); }
@@ -35,8 +35,8 @@ export function QuickForm({ kind, onSaved, entry }: { kind: "note" | "word"; onS
     finally { setBusy(false); }
   }
   return <form className="notebook-form" onSubmit={submit}>
-    <label>{kind === "note" ? "Tiêu đề ghi chú" : "Từ hoặc cụm từ"}<input required maxLength={100} value={title} onChange={(event) => setTitle(event.target.value)} placeholder={kind === "note" ? "Ví dụ: Cách dùng Present Simple" : "Ví dụ: convenient"} /></label>
-    {kind === "note" ? <label>Nội dung<textarea required maxLength={100000} rows={12} value={body} onChange={(event) => setBody(event.target.value)} placeholder="Ghi lại điều bạn vừa học, mẹo nhớ, câu hỏi cần ôn…" /></label> : <><label>Nghĩa tiếng Việt<input required maxLength={200} value={meaningVi} onChange={(event) => setMeaningVi(event.target.value)} placeholder="thuận tiện" /></label><label>Câu ví dụ<input maxLength={500} value={example} onChange={(event) => setExample(event.target.value)} placeholder="Online lessons are convenient." /></label></>}
+    <label>{kind === "note" ? "Tiêu đề (có thể để trống)" : "Từ hoặc cụm từ"}<input required={kind === "word"} maxLength={100} value={title} onChange={(event) => setTitle(event.target.value)} placeholder={kind === "note" ? "Ví dụ: Cách dùng Present Simple" : "Ví dụ: convenient"} /></label>
+    {kind === "note" ? <label>Nội dung<textarea required maxLength={100000} rows={5} value={body} onChange={(event) => setBody(event.target.value)} placeholder="Ghi lại điều bạn vừa học, mẹo nhớ, câu hỏi cần ôn…" /></label> : <><label>Nghĩa tiếng Việt<input required maxLength={200} value={meaningVi} onChange={(event) => setMeaningVi(event.target.value)} placeholder="thuận tiện" /></label><label>Câu ví dụ<input maxLength={500} value={example} onChange={(event) => setExample(event.target.value)} placeholder="Online lessons are convenient." /></label></>}
     <p className="notebook-source"><Link2 size={14} /> {entry?.sourcePath ? "Giữ liên kết tới trang nguồn" : pathname === "/app/notebook" ? "Ghi trực tiếp trong sổ tay" : "Tự gắn nguồn từ trang bạn đang xem"}</p>
     {error && <p className="form-error" role="alert">{error}</p>}
     <button type="submit" className="button primary" disabled={busy}>{busy ? "Đang lưu…" : entry ? "Lưu thay đổi" : kind === "note" ? "Lưu ghi chú" : "Lưu từ mới"}</button>
@@ -45,7 +45,7 @@ export function QuickForm({ kind, onSaved, entry }: { kind: "note" | "word"; onS
 
 export function NotebookWidget() {
   const pathname = usePathname();
-  const { entries, visits, ready } = useNotebook();
+  const { entries, ready } = useNotebook();
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<QuickTab>("note");
   const [bubbleTop, setBubbleTop] = useState<number | null>(null);
@@ -117,17 +117,16 @@ export function NotebookWidget() {
     setOpen(true);
   }
   const recent = [
-    ...entries.map((entry) => ({ id: entry.id, title: entry.kind === "word" ? `Từ mới: ${entry.title}` : entry.title, date: entry.createdAt, icon: entry.kind === "word" ? <Languages size={16} /> : <NotebookPen size={16} /> })),
-    ...visits.map((visit) => ({ id: visit.id, title: visit.title, date: visit.visitedAt, icon: <BookOpenText size={16} /> })),
+    ...entries.filter((entry) => entry.kind === "note").map((entry) => ({ id: entry.id, title: entry.title, date: entry.updatedAt, icon: <NotebookPen size={16} /> })),
   ].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
 
   return <>
-    <button type="button" className={`notebook-bubble${dragging ? " is-dragging" : ""}`} style={bubbleTop === null ? undefined : { top: bubbleTop, bottom: "auto" }} aria-label="Mở sổ tay nhanh. Kéo lên xuống hoặc dùng phím mũi tên để đổi vị trí" title="Sổ tay · kéo lên hoặc xuống để đổi vị trí" aria-expanded={open} onPointerDown={onBubblePointerDown} onPointerMove={onBubblePointerMove} onPointerUp={onBubblePointerEnd} onPointerCancel={onBubblePointerEnd} onKeyDown={onBubbleKeyDown} onClick={openBubble}><MessageCircleMore size={25} /></button>
+    <button type="button" className={`notebook-bubble${dragging ? " is-dragging" : ""}`} style={bubbleTop === null ? undefined : { top: bubbleTop, bottom: "auto" }} aria-label="Mở ghi chú nhanh. Kéo lên xuống hoặc dùng phím mũi tên để đổi vị trí" title="Ghi chú nhanh · kéo lên hoặc xuống để đổi vị trí" aria-expanded={open} onPointerDown={onBubblePointerDown} onPointerMove={onBubblePointerMove} onPointerUp={onBubblePointerEnd} onPointerCancel={onBubblePointerEnd} onKeyDown={onBubbleKeyDown} onClick={openBubble}><MessageCircleMore size={25} /></button>
     {open && <><button type="button" className="notebook-backdrop" aria-label="Đóng sổ tay" onClick={() => setOpen(false)} /><aside className="notebook-drawer" style={drawerStyle} role="dialog" aria-modal="true" aria-label="Sổ tay nhanh">
-      <header className="notebook-drawer-head"><div><span className="eyebrow">CÔNG CỤ HỌC NHANH</span><h2>Sổ tay của bạn</h2><p>Ghi lại ngay, xem lại bất cứ lúc nào.</p></div><button ref={closeButton} type="button" className="icon-button" aria-label="Đóng sổ tay" onClick={() => setOpen(false)}><X size={20} /></button></header>
-      <div className="notebook-quick-tabs" role="tablist" aria-label="Công cụ sổ tay"><button type="button" role="tab" aria-selected={tab === "note"} className={tab === "note" ? "active" : ""} onClick={() => setTab("note")}><NotebookPen size={15} /> Ghi chú</button><button type="button" role="tab" aria-selected={tab === "word"} className={tab === "word" ? "active" : ""} onClick={() => setTab("word")}><Languages size={15} /> Từ mới</button><button type="button" role="tab" aria-selected={tab === "recent"} className={tab === "recent" ? "active" : ""} onClick={() => setTab("recent")}><History size={15} /> Gần đây</button></div>
+      <header className="notebook-drawer-head"><div><span className="eyebrow">CÔNG CỤ HỌC NHANH</span><h2>Ghi chú nhanh</h2><p>Lưu điều vừa học và trở lại bài sau.</p></div><button ref={closeButton} type="button" className="icon-button" aria-label="Đóng ghi chú" onClick={() => setOpen(false)}><X size={20} /></button></header>
+      <div className="notebook-quick-tabs" role="tablist" aria-label="Công cụ ghi chú"><button type="button" role="tab" aria-selected={tab === "note"} className={tab === "note" ? "active" : ""} onClick={() => setTab("note")}><NotebookPen size={15} /> Ghi chú nhanh</button><button type="button" role="tab" aria-selected={tab === "recent"} className={tab === "recent" ? "active" : ""} onClick={() => setTab("recent")}><History size={15} /> Đã ghi</button></div>
       <div className="notebook-drawer-body">{!ready ? <p>Đang mở sổ tay…</p> : tab === "recent" ? <div className="notebook-recent">{recent.length ? recent.map((item) => <div key={item.id}><span className="notebook-recent-icon">{item.icon}</span><div><strong>{item.title}</strong><small>{when(item.date)}</small></div></div>) : <p>Chưa có hoạt động. Mở một bài học hoặc lưu ghi chú đầu tiên.</p>}</div> : <QuickForm key={tab} kind={tab} onSaved={() => setTab("recent")} />}</div>
-      <footer><Link href="/app/notebook" onClick={() => setOpen(false)}>Mở sổ tay đầy đủ →</Link></footer>
+      <footer><Link href="/app/notebook" onClick={() => setOpen(false)}>Xem ghi chú của tôi →</Link></footer>
     </aside></>}
   </>;
 }
