@@ -171,6 +171,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
   const [practiceTurn, setPracticeTurn] = useState(0);
   const [restored, setRestored] = useState(false);
   const turnPanelRef = useRef<HTMLElement>(null);
+  const dictationFeedbackRef = useRef<HTMLDivElement>(null);
   const playButtonRef = useRef<HTMLButtonElement>(null);
   const nextTurnButtonRef = useRef<HTMLButtonElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
@@ -186,11 +187,12 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
       const draft = readDraft(lessonId);
       if (draft) {
         const clampTurn = (value: number) => Math.max(0, Math.min(loadedLesson.turns.length - 1, value));
-        setMode(draft.mode ?? "dictation"); setAnswers(draft.answers ?? {}); setResults(draft.results ?? {});
+        setMode("dictation"); setAnswers(draft.answers ?? {}); setResults(draft.results ?? {});
         setDictationAnswers(draft.dictationAnswers ?? {}); setDictationResults(draft.dictationResults ?? {});
         setSubmitted(Boolean(draft.submitted)); setPlayed(Boolean(draft.played)); setReview(draft.review ?? null);
-        setSelectedTurn(clampTurn(draft.selectedTurn ?? 0));
-        setDictationTurn(clampTurn(draft.dictationTurn ?? (draft.mode === "dictation" ? draft.selectedTurn ?? 0 : 0)));
+        const savedDictationTurn = clampTurn(draft.dictationTurn ?? (draft.mode === "dictation" ? draft.selectedTurn ?? 0 : 0));
+        setSelectedTurn(savedDictationTurn);
+        setDictationTurn(savedDictationTurn);
         setPracticeTurn(clampTurn(draft.practiceTurn ?? (draft.mode === "practice" ? draft.selectedTurn ?? 0 : 0)));
       }
       setRestored(true);
@@ -277,7 +279,10 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
       if (!response.ok || !data.reference_text) throw new Error(data.error ?? "Không kiểm tra được câu chép.");
       setDictationResults((current) => ({ ...current, [turnId]: { ...data, skipped: skip } }));
       setShowDictationAnswer(skip || data.correct);
-      if (data.accuracy >= 0.8 || skip) window.setTimeout(() => (selectedTurn < lesson.turns.length - 1 ? nextTurnButtonRef : playButtonRef).current?.focus(), 0);
+      window.setTimeout(() => {
+        dictationFeedbackRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        dictationFeedbackRef.current?.focus({ preventScroll: true });
+      }, 0);
     } catch (failure) { setError(failure instanceof Error ? failure.message : "Không kiểm tra được câu chép."); }
     finally { setBusy(""); }
   }
@@ -333,7 +338,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
   const revealDictation = showDictationAnswer || Boolean(activeDictationResult?.skipped || activeDictationResult?.correct);
 
   return (
-    <div className="voa-lab sld-lab">
+    <div className={`voa-lab sld-lab${mode === "dictation" ? " sld-dictation-view" : ""}`}>
       <header className="voa-lesson-header">
         <div>
           <button type="button" className="voa-lesson-back" onClick={() => { stop(); router.push(skillLabStageUrl(skillLabStageOf(lesson.lesson_id))); }}><ArrowLeft size={15} /> {skillLabStages.find((stage) => stage.id === skillLabStageOf(lesson.lesson_id))?.label} IELTS</button>
@@ -349,7 +354,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
       </header>
 
       <div className="voa-info-banner"><Info size={15} /><span>{mode === "dictation"
-        ? "Nghe & chép: nghe từng lượt, gõ nguyên câu rồi kiểm tra. Enter để kiểm tra, Ctrl + Enter để nghe lại."
+        ? "Nghe từng lượt, chép câu và kiểm tra ngay."
         : mode === "practice" ? "Luyện tập: trả lời các dạng câu hỏi theo từng lượt nghe, kiểm tra ngay và nghe lại tùy ý."
           : "Làm bài một lần: audio phát liền một lượt, không nghe lại và không xem đáp án trước khi nộp. Chấm theo đúng đáp án và giới hạn số từ."}</span></div>
       {mode !== "dictation" && lesson.learning_objectives_vi.length > 0 && <ul className="sld-goals">{lesson.learning_objectives_vi.map((goal) => <li key={goal}><Check size={14} /> {goal}</li>)}</ul>}
@@ -375,25 +380,32 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
 
       {/* Static SVG plans from the lesson package; next/image adds nothing for vector files. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {maps.map((url) => <figure key={url} className="sld-map voa-surface"><img src={url} alt="Sơ đồ cho câu hỏi gắn nhãn" /><figcaption>Sơ đồ dùng cho các câu Map labelling</figcaption></figure>)}
+      {mode !== "dictation" && maps.map((url) => <figure key={url} className="sld-map voa-surface"><img src={url} alt="Sơ đồ cho câu hỏi gắn nhãn" /><figcaption>Sơ đồ dùng cho các câu Map labelling</figcaption></figure>)}
       {error && <p className="sld-error" role="alert">{error}</p>}
 
-      {mode !== "ielts" && activeTurn && <div className="sld-turn-heading"><div><span className="voa-eyebrow">{mode === "dictation" ? "NGHE & CHÉP" : "LUYỆN TẬP"} · LƯỢT {selectedTurn + 1}/{lesson.turns.length}</span><h2>{activeTurn.turn_id}{lesson.speakers.length > 1 ? ` · ${speakers[activeTurn.speaker_id]?.label ?? activeTurn.speaker_id}` : ""}</h2><p>{mode === "dictation" ? "Nghe và gõ lại đúng những từ được nói trong lượt này." : activeQuestions.length ? `${activeQuestions.length} câu hỏi cho lượt này. Nghe và kiểm tra trước khi sang lượt tiếp.` : "Lượt này không có câu hỏi riêng. Nghe xong hãy chuyển sang lượt tiếp."}</p></div></div>}
+      {mode === "practice" && activeTurn && <div className="sld-turn-heading"><div><span className="voa-eyebrow">LUYỆN TẬP · LƯỢT {selectedTurn + 1}/{lesson.turns.length}</span><h2>{activeTurn.turn_id}{lesson.speakers.length > 1 ? ` · ${speakers[activeTurn.speaker_id]?.label ?? activeTurn.speaker_id}` : ""}</h2><p>{activeQuestions.length ? `${activeQuestions.length} câu hỏi cho lượt này. Nghe và kiểm tra trước khi sang lượt tiếp.` : "Lượt này không có câu hỏi riêng. Nghe xong hãy chuyển sang lượt tiếp."}</p></div></div>}
       {mode === "dictation" && activeTurn && <section className="sld-dictation voa-surface" aria-label={`Chép lượt ${activeTurn.turn_id}`}>
-        <label htmlFor="sld-dictation-answer">Nhập câu bạn nghe được</label>
-        <textarea id="sld-dictation-answer" className="sld-dictation-answer" rows={3} value={dictationAnswers[activeTurn.turn_id] ?? ""} spellCheck={false} autoComplete="off" placeholder="Viết những gì bạn nghe được ở đây…"
+        <div className="sld-dictation-heading"><label htmlFor="sld-dictation-answer">Nghe & chép · {activeTurn.turn_id}</label><span>Lượt {selectedTurn + 1}/{lesson.turns.length}</span></div>
+        <textarea id="sld-dictation-answer" className="sld-dictation-answer" rows={2} value={dictationAnswers[activeTurn.turn_id] ?? ""} spellCheck={false} autoComplete="off" placeholder="Gõ câu bạn nghe được…"
           onChange={(event) => { const value = event.target.value; setDictationAnswers((current) => ({ ...current, [activeTurn.turn_id]: value })); setDictationResults((current) => { const next = { ...current }; delete next[activeTurn.turn_id]; return next; }); setShowDictationAnswer(false); }}
           onKeyDown={(event) => {
             if (event.key === "Enter" && event.ctrlKey) { event.preventDefault(); play(selectedTurn); }
             else if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); if (activeDictationResult && (activeDictationResult.accuracy >= 0.8 || activeDictationResult.skipped) && selectedTurn < lesson.turns.length - 1) chooseTurn(selectedTurn + 1); else void checkDictation(); }
           }} />
-        <div className="sld-dictation-actions"><div><button type="button" className="voa-primary-button" disabled={Boolean(busy) || !(dictationAnswers[activeTurn.turn_id] ?? "").trim()} onClick={() => void checkDictation()}><Check size={15} /> {busy === `dictation:${activeTurn.turn_id}` ? "Đang kiểm tra…" : "Kiểm tra"}</button>
-          <button type="button" disabled={Boolean(busy)} onClick={() => void checkDictation(true)}>Bỏ qua · Xem đáp án</button></div><span className="sld-muted">Enter kiểm tra · Ctrl + Enter nghe lại</span></div>
-        {activeDictationResult && <div className={`sld-dictation-feedback ${activeDictationResult.accuracy >= 0.8 ? "correct" : "wrong"}`} role="status"><strong>{activeDictationResult.skipped ? "Đã bỏ qua lượt này" : activeDictationResult.correct ? "Chính xác!" : activeDictationResult.accuracy >= 0.8 ? `Đã đạt · đúng ${Math.round(activeDictationResult.accuracy * 100)}% từ` : `Đúng ${Math.round(activeDictationResult.accuracy * 100)}% từ · nghe và thử lại`}</strong>
+        {activeDictationResult && <div ref={dictationFeedbackRef} tabIndex={-1} className={`sld-dictation-feedback ${activeDictationResult.accuracy >= 0.8 ? "correct" : "wrong"}`} role="status" onKeyDown={(event) => {
+          if (event.target !== event.currentTarget || event.key !== "Enter" || event.nativeEvent.isComposing) return;
+          event.preventDefault();
+          if ((activeDictationResult.accuracy >= 0.8 || activeDictationResult.skipped) && selectedTurn < lesson.turns.length - 1) chooseTurn(selectedTurn + 1);
+          else document.getElementById("sld-dictation-answer")?.focus();
+        }}><strong>{activeDictationResult.skipped ? "Đã bỏ qua lượt này" : activeDictationResult.correct ? "Chính xác!" : activeDictationResult.accuracy >= 0.8 ? `Đã đạt · đúng ${Math.round(activeDictationResult.accuracy * 100)}% từ` : `Đúng ${Math.round(activeDictationResult.accuracy * 100)}% từ · nghe và thử lại`}</strong>
           <p>{revealDictation ? activeDictationResult.reference_text : maskedAnswer(activeDictationResult.reference_text, dictationAnswers[activeTurn.turn_id] ?? "")}</p>
           {!revealDictation && <button type="button" onClick={() => setShowDictationAnswer(true)}>Hiện toàn bộ đáp án</button>}
           {revealDictation && <small>{activeDictationResult.translation_vi}</small>}
         </div>}
+        <div className="sld-dictation-actions"><div><button type="button" className="voa-primary-button" disabled={Boolean(busy) || !(dictationAnswers[activeTurn.turn_id] ?? "").trim()} onClick={() => void checkDictation()}><Check size={15} /> {busy === `dictation:${activeTurn.turn_id}` ? "Đang kiểm tra…" : "Kiểm tra"}</button>
+          <button type="button" disabled={Boolean(busy)} onClick={() => void checkDictation(true)}>Bỏ qua · Xem đáp án</button>
+          {activeDictationResult && (activeDictationResult.accuracy >= 0.8 || activeDictationResult.skipped) && selectedTurn < lesson.turns.length - 1 && <button type="button" onClick={() => chooseTurn(selectedTurn + 1)}>Lượt tiếp <ArrowRight size={15} /></button>}
+        </div><span className="sld-muted">Enter kiểm tra / sang lượt tiếp · Ctrl + Enter nghe lại</span></div>
       </section>}
       {mode === "dictation" && <section className="sld-dictation-progress voa-surface" aria-label="Tiến độ nghe chép">
         <div className="sld-dictation-progress-head"><strong>Danh sách lượt</strong><span>{Object.values(dictationResults).filter((item) => !item.skipped && item.accuracy >= 0.8).length}/{lesson.turns.length} đã đạt</span></div>
