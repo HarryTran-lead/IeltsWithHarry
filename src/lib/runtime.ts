@@ -16,7 +16,7 @@ export const smartNotebookV1 = liveMode && process.env.NEXT_PUBLIC_SMART_NOTEBOO
 /** Keep launch locks in production; the isolated develop Preview can expose work in progress. */
 export const releaseLocks = process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES !== "true";
 export const productionLearnStage = "ielts-builder";
-const releasedLearnStages = ["ielts-starter", "ielts-builder", "ielts-advanced"];
+const releasedLearnStages = [productionLearnStage];
 
 export function learnStageAvailable(stageId: string) {
   return !releaseLocks || releasedLearnStages.includes(stageId);
