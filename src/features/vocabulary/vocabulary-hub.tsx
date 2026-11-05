@@ -18,13 +18,14 @@ import { ieltsBands } from "@/lib/vocabulary/ielts-bands";
 import { VocabularyStudy } from "@/features/vocabulary/vocabulary-study";
 import { STAR_DECK, useDecks } from "@/features/vocabulary/use-decks";
 import { VocabPageHeader } from "@/features/vocabulary/vocab-page-header";
-import { buildTest, intervalLabel, reviewQueue, testCorrect, testKindLabels, wordState, wordStateLabels, type TestQuestion, type WordState } from "@/lib/vocabulary/study-session";
+import { buildTest, reviewQueue, testCorrect, testKindLabels, wordState, wordStateLabels, type TestQuestion, type WordState } from "@/lib/vocabulary/study-session";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { Sticker } from "@/components/stickers/stickers";
-import { ExampleSentence } from "@/features/vocabulary/example-sentence";
-import { pronounce, speakText, useIpa } from "@/lib/vocabulary/pronounce";
+import { VocabularyFlashcard } from "@/features/vocabulary/vocabulary-flashcard";
+import { pronounce, useIpa } from "@/lib/vocabulary/pronounce";
 import "@/app/vocabulary-hub.css";
 import "./vocabulary-learning-loop.css";
+import "./vocabulary-flashcard.css";
 
 type ReviewEvent = { notebook_entry_id: string; grade: ReviewGrade; reviewed_at: string };
 type PracticeAttempt = { id?: string; scope: string; score: number; total: number; wrong_words: string[]; submitted_at: string };
@@ -466,47 +467,51 @@ function SavedWords({ saved, removeWord, reviewById, decks }: Common & { decks: 
     {rows.length > shown && <button type="button" className="vocab-button soft vocab-show-more" onClick={() => setShown((value) => value + 40)}>Xem thêm {Math.min(40, rows.length - shown)} từ · còn {rows.length - shown}</button>}</>;
 }
 
-const grades: { id: ReviewGrade; label: string }[] = [{ id: "again", label: "Quên" }, { id: "hard", label: "Khó" }, { id: "good", label: "Nhớ" }, { id: "easy", label: "Dễ" }];
-
-/** Review session: overdue cards first, then a few new words; each card shows when it would come back for every grade. */
+/** Review session: overdue cards first, then a few new words. A forgotten card returns once. */
 function Review({ saved, reviewById, gradeWord, deckName = "", starred, toggleStar }: Pick<Common, "saved" | "reviewById" | "gradeWord"> & { deckName?: string; starred: Set<string>; toggleStar: (entryId: string) => Promise<void> }) {
   const [startedAt] = useState(() => Date.now());
   const [queue, setQueue] = useState(() => reviewQueue(saved, reviewById, startedAt).map((entry) => entry.id));
   const [position, setPosition] = useState(0);
   const [revealed, setRevealed] = useState(false);
-  const [previews, setPreviews] = useState<Partial<Record<ReviewGrade, string>>>({});
+  const [rated, setRated] = useState<Record<number, ReviewGrade>>({});
+  const [complete, setComplete] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [tally, setTally] = useState<Record<ReviewGrade, number>>({ again: 0, hard: 0, good: 0, easy: 0 });
+  const [tally, setTally] = useState({ again: 0, good: 0 });
   const byId = useMemo(() => new Map(saved.map((entry) => [entry.id, entry])), [saved]);
   const current = byId.get(queue[position] ?? "");
   const term = current ? fromSaved(current) : null;
   const ipa = useIpa(current?.title ?? "", term?.ipa ?? "");
-  const left = queue.length - position;
+  const left = queue.length - Object.keys(rated).length;
 
-  function reveal() {
-    if (!current || revealed) return;
-    const at = new Date();
-    const previous = reviewById.get(current.id);
-    setPreviews(Object.fromEntries(grades.map(({ id }) => [id, intervalLabel(new Date(nextWordReview(previous, id, at).due_at).getTime() - at.getTime())])));
-    setRevealed(true);
+  function move(direction: -1 | 1) {
+    if (busy) return;
+    const target = position + direction;
+    if (target >= 0 && target < queue.length) { setPosition(target); setRevealed(false); return; }
+    if (direction === 1) {
+      const unfinished = queue.findIndex((_, index) => !rated[index]);
+      if (unfinished >= 0) { setPosition(unfinished); setRevealed(false); }
+      else setComplete(true);
+    }
   }
-  async function rate(grade: ReviewGrade) {
-    if (!current || busy || !revealed) return;
+  async function rate(grade: "again" | "good") {
+    if (!current || busy || rated[position]) return;
     setBusy(true);
     const success = await gradeWord(current, grade);
     setBusy(false);
     if (!success) return;
+    setRated((value) => ({ ...value, [position]: grade }));
     setTally((value) => ({ ...value, [grade]: value[grade] + 1 }));
     // A forgotten card comes back once at the end of this session, as in Anki's learning steps.
     if (grade === "again" && queue.filter((id) => id === current.id).length < 2) setQueue((value) => [...value, current.id]);
-    setRevealed(false); setPreviews({}); setPosition((value) => value + 1);
   }
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
       if (!current || event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement || event.target instanceof HTMLSelectElement || event.ctrlKey || event.metaKey || event.altKey) return;
-      if (event.key === " ") { event.preventDefault(); reveal(); }
-      else if (event.key === "Enter" && !revealed) { event.preventDefault(); reveal(); }
-      else if (revealed && /^[1-4]$/.test(event.key)) void rate(grades[Number(event.key) - 1].id);
+      if (event.key === " ") { event.preventDefault(); setRevealed((value) => !value); }
+      else if (event.key === "1") void rate("again");
+      else if (event.key === "2") void rate("good");
+      else if (event.key === "ArrowLeft") { event.preventDefault(); move(-1); }
+      else if (event.key === "ArrowRight") { event.preventDefault(); move(1); }
       else if (event.key.toLowerCase() === "p") speak(current.title);
       else if (event.key.toLowerCase() === "s") void toggleStar(current.id);
     }
@@ -515,22 +520,16 @@ function Review({ saved, reviewById, gradeWord, deckName = "", starred, toggleSt
   });
 
   if (!queue.length) return <div className="vocab-panel vocab-empty"><Sticker name="calendar" size={66} tilt={-6} /><h2>{deckName ? `Bộ “${deckName}” không có thẻ đến hạn` : "Hôm nay không có thẻ đến hạn"}</h2><p>{saved.length ? "Các từ trong Sổ từ đang được giãn cách. Học thêm từ mới để có thẻ ôn ngày mai." : "Học vài từ đầu tiên; chúng sẽ tự vào lịch ôn."}</p><Link className="vocab-button primary" href="/app/vocabulary/study?collection=ielts">Học từ mới <ArrowRight size={16}/></Link></div>;
-  if (!current || !term) return <div className="vocab-panel vocab-empty vocab-review-done"><Sticker name="star" size={66} tilt={6} /><h2>Xong phiên ôn: {position} thẻ</h2><p>Quên {tally.again} · Khó {tally.hard} · Nhớ {tally.good} · Dễ {tally.easy}</p><p>Thẻ sẽ quay lại theo lịch FSRS. Phiên tiếp theo ôn từ đến hạn trước, sau đó tới từ mới.</p><div className="vocab-detail-actions"><Link className="vocab-button primary" href="/app/vocabulary/study?collection=ielts">Học 10 từ mới <ArrowRight size={16}/></Link><Link className="vocab-button soft" href="/app/vocabulary/progress">Xem tiến độ</Link></div></div>;
+  if (complete || !current || !term) return <div className="vocab-panel vocab-empty vocab-review-done"><Sticker name="star" size={66} tilt={6} /><h2>Xong phiên ôn: {Object.keys(rated).length} thẻ</h2><p>Chưa thuộc {tally.again} · Đã thuộc {tally.good}</p><p>Thẻ sẽ quay lại theo lịch FSRS. Phiên tiếp theo ôn từ đến hạn trước, sau đó tới từ mới.</p><div className="vocab-detail-actions"><Link className="vocab-button primary" href="/app/vocabulary/study?collection=ielts">Học 10 từ mới <ArrowRight size={16}/></Link><Link className="vocab-button soft" href="/app/vocabulary/progress">Xem tiến độ</Link></div></div>;
   const state = wordState(reviewById.get(current.id));
   return <div className="vocab-panel vocab-review">
     {deckName && <p className="vocab-review-deck">Đang ôn bộ <b>{deckName}</b> · <Link href="/app/vocabulary/review">Ôn tất cả</Link></p>}
     <div className="vocab-review-meta"><span>Thẻ {Math.min(position + 1, queue.length)}/{queue.length}</span><span className={`vocab-state ${state}`}>{wordStateLabels[state]}</span><span>còn ~{Math.max(1, Math.ceil(left * 8 / 60))} phút</span></div>
-    <div className="vocab-review-bar" aria-hidden="true"><i style={{ width: `${(position / queue.length) * 100}%` }} /></div>
-    <div className="vocab-review-card" role="group" aria-label={`Thẻ ôn: ${current.title}`}>
-      <button type="button" className={`vocab-star vocab-review-star${starred.has(current.id) ? " on" : ""}`} aria-pressed={starred.has(current.id)} aria-label={starred.has(current.id) ? "Bỏ gắn sao" : "Gắn sao"} title="Gắn sao (S)" onClick={() => void toggleStar(current.id)}><Star size={20} fill={starred.has(current.id) ? "currentColor" : "none"} /></button>
-      <span className="vocab-kicker">{revealed ? "NGHĨA & VÍ DỤ" : "BẠN CÓ NHỚ NGHĨA CỦA TỪ NÀY?"}</span>
-      <h2>{current.title}</h2>
-      <div className="vocab-review-sub">{[ipa, term.pos].filter(Boolean).join(" · ")}<button type="button" className="vocab-icon-button" aria-label={`Nghe phát âm ${current.title}`} onClick={() => speak(current.title)}><Volume2 size={18}/></button></div>
-      {revealed ? <div className="vocab-review-back"><strong>{current.meaningVi}</strong>{current.kind === "word" && current.definition && <p>{current.definition}</p>}{current.example && <blockquote><ExampleSentence text={current.example} word={current.title} /><button type="button" className="vocab-example-speak" aria-label="Nghe câu ví dụ" onClick={() => speakText(current.example)}><Volume2 size={15} /></button></blockquote>}</div>
-        : <button type="button" className="vocab-button primary vocab-review-reveal" onClick={reveal}>Hiện nghĩa <kbd>Space</kbd></button>}
-    </div>
-    {revealed && <div className="vocab-rating">{grades.map(({ id, label }, index) => <button key={id} className={`grade-${id}`} disabled={busy} onClick={() => void rate(id)}><strong>{label}</strong><small>{previews[id]}</small><kbd>{index + 1}</kbd></button>)}</div>}
-    <p className="vocab-muted">Phím tắt: Space hiện nghĩa · 1–4 chấm · P nghe · S gắn sao. Lịch ôn dùng FSRS; thẻ “Quên” quay lại cuối phiên.</p>
+    <div className="vocab-review-bar" aria-hidden="true"><i style={{ width: `${((queue.length - left) / queue.length) * 100}%` }} /></div>
+    <VocabularyFlashcard word={{ source_id: current.id, headword: current.title, pos: term.pos, study_lane: term.level, topics: [term.topic], source_ipa: ipa, meaning_vi: current.meaningVi, source_definition_en: current.definition || "", source_pattern: term.collocations?.join(" · ") || "", source_examples_en: [current.example || term.example].filter(Boolean), source_example_vi: term.vi || "" }} collection="cefr" flipped={revealed} onFlip={() => setRevealed((value) => !value)} />
+    <div className="vocab-review-tools"><button type="button" className="vocab-icon-button" aria-label={`Nghe phát âm ${current.title}`} onClick={() => speak(current.title)}><Volume2 size={18}/></button><button type="button" className={`vocab-star${starred.has(current.id) ? " on" : ""}`} aria-pressed={starred.has(current.id)} aria-label={starred.has(current.id) ? "Bỏ gắn sao" : "Gắn sao"} title="Gắn sao (S)" onClick={() => void toggleStar(current.id)}><Star size={20} fill={starred.has(current.id) ? "currentColor" : "none"} /></button></div>
+    <div className="vocab-flip-card-actions"><button type="button" className="vocab-study-arrow" disabled={busy || position === 0} onClick={() => move(-1)} aria-label="Thẻ trước" title="Thẻ trước"><ArrowLeft size={20} /></button><div className="vocab-flip-card-status" role="group" aria-label="Đánh dấu mức độ thuộc từ"><button type="button" className={rated[position] === "again" ? "is-selected" : ""} aria-pressed={rated[position] === "again"} disabled={busy || Boolean(rated[position])} onClick={() => void rate("again")}>Chưa thuộc</button><button type="button" className={rated[position] === "good" ? "is-selected" : ""} aria-pressed={rated[position] === "good"} disabled={busy || Boolean(rated[position])} onClick={() => void rate("good")}>Đã thuộc</button></div><button type="button" className="vocab-study-arrow" disabled={busy} onClick={() => move(1)} aria-label={position + 1 === queue.length ? "Xem kết quả" : "Thẻ sau"} title={position + 1 === queue.length ? "Xem kết quả" : "Thẻ sau"}><ArrowRight size={20} /></button></div>
+    <p className="vocab-muted">Bấm vào thẻ hoặc Space để lật · 1/2 đánh dấu · ←/→ chuyển thẻ · P nghe · S gắn sao. Thẻ “Chưa thuộc” quay lại cuối phiên.</p>
   </div>;
 }
 

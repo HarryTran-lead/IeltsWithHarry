@@ -96,7 +96,14 @@
   max-width: 760px;
   margin: 0 auto;
   padding: 18px 20px 16px;
+  --vs-ink: var(--vl-ink);
+  --vs-muted: var(--vl-muted);
+  --vs-line: var(--vl-line);
+  --vs-teal-soft: var(--vl-teal-soft);
 }
+.vocab-review-tools { display: flex; justify-content: center; align-items: center; gap: 9px; }
+.vocab-review .vocab-flip-card { margin-bottom: 10px; }
+.vocab-review .vocab-flip-card-actions { margin: 14px 0 4px; }
 .vocab-review-meta {
   display: flex;
   align-items: center;
