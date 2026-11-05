@@ -7,10 +7,10 @@ import { createClient } from "@/lib/supabase/browser";
 import { wordDifferences } from "@/lib/listening/youtube";
 import "./voa-dictation.css";
 
-type Clip = { id: string; bank: "quick" | "numbers"; title: string; source_dataset: string; source_url: string; license_url: string; attribution: string; duration_ms: number; status: string };
+type Clip = { id: string; bank: "quick"; title: string; source_dataset: string; source_url: string; license_url: string; attribution: string; duration_ms: number; status: string };
 type Result = { accuracy: number; reference_text: string };
 type LastAttempt = { accuracy: number; is_skipped: boolean };
-const bankName = { quick: "Quick Dictation", numbers: "Numbers" };
+const bankName = { quick: "Quick Dictation" };
 const PAGE_SIZE = 40;
 const clock = (ms: number) => ms < 10000 ? `${(ms / 1000).toFixed(1)}s` : `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, "0")}`;
 /** Learners see "Clip 001"; the dataset voice id stays in the source credit. */
@@ -31,7 +31,7 @@ export function ClipDictation() {
   const router = useRouter();
   const parts = pathname.split("/").filter(Boolean);
   const clipId = parts[2] === "clips" ? parts[3] : "";
-  const bank = parts[2] === "banks" && (parts[3] === "quick" || parts[3] === "numbers") ? parts[3] : "";
+  const bank = parts[2] === "banks" && parts[3] === "quick" ? "quick" : "";
   const audio = useRef<HTMLAudioElement>(null);
   const replayTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const replaysLeft = useRef(0);
@@ -58,7 +58,7 @@ export function ClipDictation() {
     let alive = true;
     void db.from("dictation_clips")
       .select("id,bank,title,source_dataset,source_url,license_url,attribution,duration_ms,status")
-      .in("status", ["preview", "published"]).order("source_id").limit(1000)
+      .eq("bank", "quick").in("status", ["preview", "published"]).order("source_id").limit(1000)
       .then(({ data, error: failure }) => {
         if (!alive) return;
         if (failure) setError(failure.message);
@@ -162,7 +162,7 @@ export function ClipDictation() {
     {error && <p role="alert" className="voa-alert">{error}</p>}
     {!clipId ? <>
       <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dictation">Dictation</Link><span>›</span><span>{bankName[bank as keyof typeof bankName] ?? "Kho bài"}</span></nav>
-      <header className="voa-library-heading"><div><span className="voa-eyebrow">KHO CLIP NGHE CHÉP</span><h1>{bankName[bank as keyof typeof bankName] ?? "Kho bài"}</h1><p>{bank === "numbers" ? "Nghe và ghi một chữ số từ 0 đến 9 ở mỗi clip." : "Nghe các câu ngắn từ bộ dữ liệu giọng đọc có transcript đi kèm."}</p></div></header>
+      <header className="voa-library-heading"><div><span className="voa-eyebrow">KHO CLIP NGHE CHÉP</span><h1>{bankName[bank as keyof typeof bankName] ?? "Kho bài"}</h1><p>Nghe các câu ngắn từ bộ dữ liệu giọng đọc có transcript đi kèm.</p></div></header>
       <div className="voa-info-banner"><span>Clip có audio và transcript từ cùng bộ dữ liệu nguồn. Bản thử nghiệm đang chờ nghe duyệt thủ công.</span></div>
       <section className="voa-library"><div className="voa-filter-bar voa-clip-filter"><label className="voa-search"><Search size={18} /><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="Tìm clip hoặc bộ dữ liệu…" aria-label="Tìm clip" /></label><span>{loading ? "Đang tải…" : `${filtered.length} clip có audio`}</span></div>
         {loading ? <p className="voa-empty" role="status">Đang tải clip…</p> : visible.length ? <div className="voa-clip-grid">{visible.map((item) => <button type="button" key={item.id} onClick={() => open(item)} title={item.attribution}><strong>{clipLabel(item.title)}</strong><span>{clock(item.duration_ms)}</span><ArrowRight size={16} aria-hidden="true" /></button>)}</div> : <p className="voa-empty">Kho này chưa có clip phù hợp.</p>}
@@ -183,8 +183,8 @@ export function ClipDictation() {
           <audio ref={audio} preload="metadata" src={`/api/dictation/clip/${clip.id}`} onTimeUpdate={(event) => setTime(event.currentTarget.currentTime)} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={onEnded} onError={() => setError("Không phát được audio của clip này.")} />
         </div>
         <div className="voa-task">
-          <div className="voa-task-heading"><h3>{clip.bank === "numbers" ? "Ghi chữ số bạn nghe được" : "Chép câu bạn nghe được"}</h3></div>
-          <textarea rows={3} value={answer} onChange={(event) => { setAnswer(event.target.value); setResult(null); setReveal(false); setShowFullAnswer(false); }} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); if (result && (reveal || result.accuracy >= 80) && index < siblings.length - 1) open(siblings[index + 1]); else void submit(); } }} placeholder={clip.bank === "numbers" ? "Nhập một chữ số từ 0 đến 9…" : "Viết những gì bạn nghe được…"} aria-label="Câu trả lời của bạn" autoComplete="off" spellCheck={false} />
+          <div className="voa-task-heading"><h3>Chép câu bạn nghe được</h3></div>
+          <textarea rows={3} value={answer} onChange={(event) => { setAnswer(event.target.value); setResult(null); setReveal(false); setShowFullAnswer(false); }} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); if (result && (reveal || result.accuracy >= 80) && index < siblings.length - 1) open(siblings[index + 1]); else void submit(); } }} placeholder="Viết những gì bạn nghe được…" aria-label="Câu trả lời của bạn" autoComplete="off" spellCheck={false} />
           <div className="voa-answer-actions">
             {result && (reveal || result.accuracy >= 80) && index < siblings.length - 1 ? <button type="button" className="voa-primary-button" onClick={() => open(siblings[index + 1])}>Clip tiếp <ArrowRight size={17} /></button> : <button type="button" className="voa-primary-button" disabled={busy || !answer.trim()} onClick={() => void submit()}>Kiểm tra <Check size={17} /></button>}
             <button type="button" disabled={busy || reveal} onClick={() => void skip()}>{reveal ? "Đã bỏ qua" : "Bỏ qua · Xem đáp án"}</button>

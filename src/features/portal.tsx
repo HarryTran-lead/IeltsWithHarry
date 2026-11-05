@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
-import { usePathname } from "next/navigation";
-import { Suspense } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { Suspense, useEffect } from "react";
 import { DemoProvider, useDemo } from "@/features/demo/demo-store";
 import { AppShell } from "@/components/layout/app-shell";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
@@ -40,6 +40,12 @@ export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
 }
 
+function RetiredNumbersBank() {
+  const router = useRouter();
+  useEffect(() => { router.replace("/app/dictation"); }, [router]);
+  return <div className="content-page">Đang mở kho Dictation…</div>;
+}
+
 function PortalContent({ canManage }: { canManage: boolean }) {
   const pathname = usePathname();
   const { ready } = useDemo();
@@ -61,7 +67,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           smartNotebookV1 ? <SmartNotebook /> : <NotebookPage />
         ) : section === "dictation" ? (
           skillMode === "banks" && pathname.split("/")[4] === "skill-lab" ? <SkillLabDictation />
-            : skillMode === "clips" || (skillMode === "banks" && ["numbers", "quick"].includes(pathname.split("/")[4])) ? <ClipDictation /> : <VoaDictation />
+            : skillMode === "banks" && pathname.split("/")[4] === "numbers" ? <RetiredNumbersBank />
+              : skillMode === "clips" || (skillMode === "banks" && pathname.split("/")[4] === "quick") ? <ClipDictation /> : <VoaDictation />
         ) : section === "grammar" && skillMode !== "live" ? (
           <GrammarGarden />
         ) : skill === "vocabulary" && !skillMode ? (

@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Info, Pause, Play, RotateCcw, Search, Settings2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { wordDifferences } from "@/lib/listening/youtube";
+import { skillLabStages, skillLabStageOf, skillLabStageUrl } from "@/lib/dictation-skill-lab/stages";
 import "./voa-dictation.css";
 import { Sticker } from "@/components/stickers/stickers";
 
@@ -75,7 +76,7 @@ export function VoaDictation() {
   const [lastLessonId, setLastLessonId] = useState("");
   const [totalSentences, setTotalSentences] = useState<number | null>(null);
   const [clipBankCounts, setClipBankCounts] = useState<Record<string, number> | null>(null);
-  const [skillLabCount, setSkillLabCount] = useState<number | null>(null);
+  const [skillLabCounts, setSkillLabCounts] = useState<Record<string, number> | null>(null);
   const [collection, setCollection] = useState("all");
   const [time, setTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -103,17 +104,20 @@ export function VoaDictation() {
 
   useEffect(() => {
     let alive = true;
-    // The Skill Lab bank lives in content files; the API answers 403 where it is not open yet.
+    // Skill Lab lessons live in content files; only count lessons with complete audio.
     void fetch("/api/dictation/skill-lab").then(async (response) => {
-      const data = response.ok ? await response.json().catch(() => null) as { lessons?: { audio_ready: boolean }[] } | null : null;
-      if (alive) setSkillLabCount(data?.lessons?.filter((lesson) => lesson.audio_ready).length ?? 0);
-    }).catch(() => { if (alive) setSkillLabCount(0); });
+      const data = response.ok ? await response.json().catch(() => null) as { lessons?: { lesson_id: string; audio_ready: boolean }[] } | null : null;
+      if (!alive) return;
+      const counts = Object.fromEntries(skillLabStages.map((stage) => [stage.id, 0]));
+      for (const lesson of data?.lessons ?? []) if (lesson.audio_ready) counts[skillLabStageOf(lesson.lesson_id)] = (counts[skillLabStageOf(lesson.lesson_id)] ?? 0) + 1;
+      setSkillLabCounts(counts);
+    }).catch(() => { if (alive) setSkillLabCounts(Object.fromEntries(skillLabStages.map((stage) => [stage.id, 0]))); });
     return () => { alive = false; };
   }, []);
 
   useEffect(() => {
     let alive = true;
-    void Promise.all(["quick", "numbers"].map(async (bank) => {
+    void Promise.all(["quick"].map(async (bank) => {
       const { count } = await db.from("dictation_clips").select("id", { count: "exact", head: true })
         .eq("bank", bank).in("status", ["preview", "published"]);
       return [bank, count ?? 0] as const;
@@ -281,14 +285,10 @@ export function VoaDictation() {
   }
 
   const banks = [
-    { name: "IELTS Skill Lab", description: "Lộ trình 300 bài từ âm dễ nhầm, số và giờ đến Section 1–4 với dạng câu hỏi IELTS.", href: "/app/dictation/banks/skill-lab", count: skillLabCount, unit: "bài có audio" },
     { name: "VOA Learning English", description: "Hội thoại theo khóa học Let’s Learn English. Nghe từng câu, chép và ôn lại câu sai.", href: "/app/dictation/banks/voa", count: loading ? null : lessons.length, unit: "bài có audio" },
     { name: "Quick Dictation", description: "Bài nghe ngắn", href: "/app/dictation/banks/quick", count: clipBankCounts ? clipBankCounts.quick ?? 0 : null, unit: "clip có audio" },
-    { name: "Numbers", description: "Nghe và ghi số", href: "/app/dictation/banks/numbers", count: clipBankCounts ? clipBankCounts.numbers ?? 0 : null, unit: "clip có audio" },
   ];
   const openBanks = banks.filter((bank) => bank.count !== 0);
-  const upcomingBanks = [...banks.filter((bank) => bank.count === 0).map((bank) => [bank.name, bank.description]),
-    ["Daily Conversations", "Hội thoại đời thường"], ["News & Topics", "Tin tức và chủ đề"], ["Short Stories", "Truyện ngắn"], ["Spelling Names", "Đánh vần tên"]];
 
   return (
     <main className="voa-lab">
@@ -296,15 +296,23 @@ export function VoaDictation() {
       {view === "home" ? (
         <>
           <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dashboard">Dashboard</Link><span>›</span><span>Dictation</span></nav>
-          <header className="voa-bank-hero"><div><span className="voa-eyebrow">DICTATION LIBRARY</span><h1>Chọn kho luyện nghe</h1><p>Chọn nguồn học, tìm bài rồi luyện nghe chép từng câu.</p></div>{featured && <button type="button" className="voa-primary-button" onClick={() => openLesson(featured)}>Tiếp tục bài đang học <ArrowRight size={17} /></button>}</header>
+          <header className="voa-bank-hero"><div><span className="voa-eyebrow">DICTATION LIBRARY</span><h1>Chọn bài luyện nghe</h1><p>Vào thẳng chặng IELTS hoặc chọn kho nghe chép khác.</p></div>{featured && <button type="button" className="voa-primary-button" onClick={() => openLesson(featured)}>Tiếp tục VOA <ArrowRight size={17} /></button>}</header>
           {previewEnabled && <div className="voa-info-banner"><Info size={18} /><span>Bài VOA thử nghiệm có transcript và mốc audio căn tự động, chưa được nghe duyệt thủ công.</span></div>}
-          {/* Banks with lessons come first; banks still waiting for audio sit in a quieter "coming soon" row. */}
+          <section className="voa-stage-section" aria-label="Các chặng IELTS"><h2>Chặng nghe chép IELTS</h2><div className="voa-bank-grid voa-stage-grid">
+            {skillLabStages.map((stage) => {
+              const count = skillLabCounts?.[stage.id] ?? 0;
+              return <button type="button" key={stage.id} className="voa-bank-card voa-surface voa-stage-card" disabled={skillLabCounts !== null && count === 0} onClick={() => router.push(skillLabStageUrl(stage.id))}>
+                <span className="voa-stage-code">{stage.id}</span><strong>{stage.label} IELTS</strong><span>{stage.detail}</span>
+                <span className="voa-bank-foot">{skillLabCounts === null ? "Đang tải bài…" : `${count} bài có audio`}{count > 0 && <ArrowRight size={18} />}</span>
+              </button>;
+            })}
+          </div></section>
+          <section className="voa-stage-section" aria-label="Kho nghe chép khác"><h2>Kho nghe chép khác</h2>
           <div className="voa-bank-grid">
             {openBanks.map((bank) => bank.count === null
               ? <div key={bank.name} className="voa-bank-card voa-surface voa-bank-unavailable"><span className="voa-bank-icon"><Sticker name="headphones" size={44} tilt={-6} pop={false} /></span><span className="voa-bank-status">Đang tải…</span><strong>{bank.name}</strong><span>{bank.description}</span><span className="voa-bank-foot">Đang kiểm tra dữ liệu</span></div>
               : <button type="button" key={bank.name} className="voa-bank-card voa-surface" onClick={() => router.push(bank.href)}><span className="voa-bank-icon"><Sticker name="headphones" size={44} tilt={-6} pop={false} /></span><span className="voa-bank-status">Đang mở</span><strong>{bank.name}</strong><span>{bank.description}</span><span className="voa-bank-foot">{bank.count} {bank.unit} <ArrowRight size={18} /></span></button>)}
-          </div>
-          <section className="voa-bank-upcoming" aria-label="Kho sắp ra mắt"><h2>Sắp ra mắt</h2><div>{upcomingBanks.map(([name, description]) => <div key={name}><Sticker name="clock" size={34} tilt={-6} pop={false} /><strong>{name}</strong><span>{description}</span></div>)}</div></section>
+          </div></section>
         </>
       ) : view === "bank" ? (
         <>
