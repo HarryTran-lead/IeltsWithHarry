@@ -13,9 +13,16 @@ on:
         type: boolean
         default: false
       probe_passage2:
-        description: Generate one Reading Passage 2 with 3.7 Flash and validate it without writing to Supabase
+        description: Generate one Reading Passage 2 with the selected Flash model without saving it
         type: boolean
         default: false
+      probe_model:
+        description: Flash model for the Reading Passage 2 probe
+        type: choice
+        options:
+          - gemini-3.7-flash
+          - gemini-3.6-flash
+        default: gemini-3.7-flash
 
 permissions:
   contents: read
@@ -36,6 +43,7 @@ jobs:
       AI_FACTORY_FREE_TIER_ONLY: "true"
       AI_FACTORY_TEXT_MODEL: ${{ vars.AI_FACTORY_TEXT_MODEL }}
       AI_FACTORY_LONG_MODEL: ${{ vars.AI_FACTORY_LONG_MODEL }}
+      AI_FACTORY_PROBE_MODEL: ${{ inputs.probe_model }}
     steps:
       - name: Check free-tier configuration
         id: config
@@ -81,7 +89,7 @@ jobs:
       - name: Install project dependencies
         if: steps.config.outputs.configured == 'true' && !inputs.probe_only
         run: npm ci --ignore-scripts
-      - name: Probe Reading Passage 2 on 3.7 Flash without saving
+      - name: Probe Reading Passage 2 without saving
         if: steps.config.outputs.configured == 'true' && github.event_name == 'workflow_dispatch' && inputs.probe_passage2 && !inputs.probe_only
         run: npx tsx scripts/probe-ai-factory-passage.ts
       - name: Create or resume today's review-only IELTS set

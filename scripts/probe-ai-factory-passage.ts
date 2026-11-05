@@ -11,8 +11,10 @@ async function main() {
   const day = Math.floor(Date.parse(`${setId.slice(4)}T00:00:00Z`) / 86_400_000);
   const kind = "reading_passage2";
   const topic = topicSeeds[kind][day % topicSeeds[kind].length];
+  const model = process.env.AI_FACTORY_PROBE_MODEL || "gemini-3.7-flash";
+  if (!["gemini-3.7-flash", "gemini-3.6-flash"].includes(model)) throw new Error("Unsupported probe model");
 
-  const draft = await generateFactoryDraft(kind, topic, { day, model: "gemini-3.7-flash", maxAttempts: 1, retryTransient: false });
+  const draft = await generateFactoryDraft(kind, topic, { day, model, maxAttempts: 1, retryTransient: false });
   const section = draft.exam.content.sections[0];
   console.log(JSON.stringify({ kind, model: draft.model, title: draft.exam.title, passageWords: section.passage.trim().split(/\s+/).length,
     questions: section.questions.length, warnings: draft.warnings, usage: draft.usage }, null, 2));
