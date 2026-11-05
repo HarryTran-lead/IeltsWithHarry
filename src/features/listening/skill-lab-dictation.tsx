@@ -214,6 +214,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
   const [dictationTurn, setDictationTurn] = useState(0);
   const [practiceTurn, setPracticeTurn] = useState(0);
   const [restored, setRestored] = useState(false);
+  const autoPlayedOnOpen = useRef(false);
   const turnPanelRef = useRef<HTMLElement>(null);
   const dictationFeedbackRef = useRef<HTMLDivElement>(null);
   const playButtonRef = useRef<HTMLButtonElement>(null);
@@ -273,6 +274,15 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
     const timer = window.setTimeout(() => document.getElementById("sld-dictation-answer")?.focus({ preventScroll: true }), 0);
     return () => window.clearTimeout(timer);
   }, [lesson, mode, selectedTurn]);
+  useEffect(() => {
+    if (!lesson || !restored || mode !== "dictation" || autoPlayedOnOpen.current) return;
+    const timer = window.setTimeout(() => {
+      if (autoPlayedOnOpen.current) return;
+      autoPlayedOnOpen.current = true;
+      play(selectedTurn, false, false, true);
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [lesson, restored, mode, selectedTurn]); // eslint-disable-line react-hooks/exhaustive-deps -- play uses the current lesson and sentence at the scheduled render
   useEffect(() => {
     if (previewLeft === null) return;
     if (previewLeft <= 0) { setPreviewLeft(null); setExamStartedAt(Date.now()); play(0, true); return; } // eslint-disable-line react-hooks/set-state-in-effect -- the countdown ends by starting the recording
@@ -350,10 +360,11 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
     if (autoPlay) window.setTimeout(() => play(index), 0);
   }
 
-  function play(index: number, all = false, sourceTurn = false) {
+  function play(index: number, all = false, sourceTurn = false, automatic = false) {
     const player = audio.current;
     const turn = lesson?.turns[index];
     if (!player || !turn?.audio_url) return;
+    setError("");
     if (gapTimer.current) clearTimeout(gapTimer.current);
     continuous.current = all;
     setPlayingAll(all);
@@ -370,7 +381,13 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
       player.currentTime = turn.start_ms / 1000;
       segmentEnd.current = endMs;
       player.playbackRate = speed;
-      void player.play().then(() => watchBoundary(index)).catch(() => { if (current.current === index) { stop(); setError("Trình duyệt chưa phát được audio. Hãy bấm phát lại."); } });
+      void player.play().then(() => watchBoundary(index)).catch((failure: unknown) => {
+        if (current.current !== index) return;
+        stop();
+        setError(automatic && failure instanceof DOMException && failure.name === "NotAllowedError"
+          ? "Trình duyệt chặn tự phát âm thanh. Bấm Nghe câu để bắt đầu."
+          : "Trình duyệt chưa phát được audio. Hãy bấm phát lại.");
+      });
     };
     if (player.readyState >= 1) start();
     else {
@@ -555,7 +572,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
       {mode !== "dictation" && lesson.learning_objectives_vi.length > 0 && <ul className="sld-goals">{lesson.learning_objectives_vi.map((goal) => <li key={goal}><Check size={14} /> {goal}</li>)}</ul>}
 
       <section ref={turnPanelRef} className="sld-player voa-surface" aria-label={mode === "ielts" ? "Bài nghe" : "Câu nghe hiện tại"}>
-        <audio ref={audio} preload="metadata" onEnded={ended} onTimeUpdate={(event) => {
+        <audio ref={audio} preload="metadata" onError={() => { stop(); setError("Không tải được audio câu này. Hãy bấm nghe lại."); }} onEnded={ended} onTimeUpdate={(event) => {
           const end = segmentEnd.current;
           if (end !== null && end !== undefined && event.currentTarget.currentTime >= end / 1000 - 0.03) ended();
         }} />
