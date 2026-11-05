@@ -124,8 +124,8 @@ export default async function GuestHome() {
         </article>
         <article className="guest-tool tool-notebook lift">
           <div className="guest-tool-icon"><NotebookPen size={20} /></div>
-          <h3>Sổ tay</h3>
-          <p>Nút nổi ghi nhanh từ mọi trang; ghi chú, từ mới và lịch sử học nằm trên một dòng thời gian.</p>
+          <h3>Ghi chú học tập</h3>
+          <p>Ghi chú nhanh ngay khi học, tìm lại theo nội dung và mở lại bài học nguồn chỉ với một chạm.</p>
           <Sticker name="notebook" size={64} tilt={-6} pop={false} className="guest-tool-sticker" />
         </article>
         <article className="guest-tool tool-planner lift">
