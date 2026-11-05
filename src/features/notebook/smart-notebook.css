@@ -82,3 +82,5 @@
 .smart-tool-primary .smart-write-button{min-width:82px;background:#e2f5f4;color:#087781;font-weight:800}
 .smart-tool-primary .smart-write-button:hover{background:#c9eeeb}
 @media(min-width:751px){.smart-canvas-scroll{height:min(82vh,1123px);min-height:680px}}
+.smart-page.is-writing{cursor:text}
+.smart-page.is-writing.is-blank::after{content:"Nhấp vào trang để bắt đầu viết…";position:absolute;top:100px;left:80px;color:#9aaeb8;font-size:20px;pointer-events:none}
