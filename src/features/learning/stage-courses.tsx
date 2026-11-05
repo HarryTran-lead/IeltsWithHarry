@@ -19,9 +19,9 @@ export type StageCourse = { id: string; slug: string; title: string; description
 
 /** Published courses with their published units and lessons, grouped for the Learn page. Book 2 is static, so demo mode shows it too. */
 export function usePublishedCourses() {
-  const supabase = useMemo(() => (liveMode ? createClient() : null), []);
+  const supabase = useMemo(() => (liveMode && !releaseLocks ? createClient() : null), []);
   const [courses, setCourses] = useState<StageCourse[]>(() => [book2Catalog as StageCourse]);
-  const [loading, setLoading] = useState(liveMode);
+  const [loading, setLoading] = useState(liveMode && !releaseLocks);
   const [error, setError] = useState("");
   useEffect(() => {
     if (!supabase) return;

@@ -19,17 +19,15 @@ describe("Four-stage production rollout", () => {
     expect(book2.units.flatMap((unit) => unit.lessons)).toHaveLength(144);
   });
 
-  it("opens published Level 1–3 stages while keeping legacy stages locked", async () => {
+  it("opens only Level 2 in production", async () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
     vi.resetModules();
     const { learnStageAvailable, lockedLearnerPath } = await import("../src/lib/runtime");
 
-    for (const stage of ["ielts-starter", "ielts-builder", "ielts-advanced"]) {
-      expect(learnStageAvailable(stage)).toBe(true);
-      expect(lockedLearnerPath(`/app/learn/${stage}`)).toBe(false);
-    }
-    for (const stage of ["foundation", "elementary", "pre-ielts", "mastery"]) {
+    expect(learnStageAvailable("ielts-builder")).toBe(true);
+    expect(lockedLearnerPath("/app/learn/ielts-builder")).toBe(false);
+    for (const stage of ["foundation", "ielts-starter", "ielts-advanced", "elementary", "pre-ielts", "mastery"]) {
       expect(learnStageAvailable(stage)).toBe(false);
       expect(lockedLearnerPath(`/app/learn/${stage}`)).toBe(true);
     }
