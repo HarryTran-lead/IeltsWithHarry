@@ -1,5 +1,6 @@
 export { HeaderWeatherProvider, useHeaderWeather } from './HeaderWeatherProvider';
 export { HeaderSkyBackdrop } from './HeaderSkyBackdrop';
+export { HeaderWeatherEffects } from './HeaderWeatherEffects';
 export { HeaderWeatherWidget } from './HeaderWeatherWidget';
 export { phaseAt, formatLocalClock, PHASE_LABELS } from './time';
 export { weatherLabel, weatherSymbol } from './weatherApi';
