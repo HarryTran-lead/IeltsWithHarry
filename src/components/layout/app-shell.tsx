@@ -26,8 +26,6 @@ import {
   Settings,
   ShieldCheck,
   SpellCheck,
-  Star,
-  Trophy,
   X,
   Bell,
   LogOut,
@@ -383,18 +381,6 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
             <strong>{demoMode ? 12 : learnerStreak?.current ?? "…"}</strong>
             <small>ngày liên tiếp</small>
           </Link>
-          <div className="stat-pill xp" title="Kinh nghiệm học tập">
-            <Star size={18} fill="#ffd15a" color="#e0a020" />
-            <strong>{demoMode ? xp : xpTotal?.toLocaleString("vi-VN") ?? "…"}</strong>
-            <small>XP</small>
-          </div>
-          <div className="stat-pill level">
-            <Trophy size={18} fill="#ffd15a" color="#d99a17" />
-            <strong>{demoMode ? "Level 3" : xpTotal === null ? "Cấp …" : `Cấp ${liveProgress.level}`}</strong>
-            <small>{demoMode ? "Demo learner" : xpTotal === null ? "Đang tải XP" : rankForLevel(liveProgress.level)}</small>
-            <span className="level-bar" title={demoMode ? `${xp % 500}/500 XP tới level tiếp theo` : `${liveProgress.earned}/${liveProgress.required} XP tới cấp ${liveProgress.level + 1}`}><i style={{ width: demoMode ? `${(xp % 500) / 5}%` : `${liveProgress.percent}%` }} /></span>
-          </div>
-          <span className="header-divider" aria-hidden="true" />
           <div className="popover-wrap">
             {!demoMode ? <NotificationBell open={notificationsOpen} onToggle={() => { setNotificationsOpen(!notificationsOpen); setProfileOpen(false); }} /> : <><button
               className="icon-button notification-button"
@@ -419,16 +405,23 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           </div>
           <div className="popover-wrap">
             <button
-              className="avatar-button"
-              aria-label="Open profile menu"
+              className="avatar-button profile-trigger"
+              aria-label={`Mở menu hồ sơ, cấp ${demoMode ? 3 : xpTotal === null ? "đang tải" : liveProgress.level}, ${demoMode ? xp : xpTotal?.toLocaleString("vi-VN") ?? "đang tải"} XP`}
               aria-expanded={profileOpen}
+              title={demoMode ? `${xp % 500}/500 XP tới cấp tiếp theo` : xpTotal === null ? "Đang tải XP" : `${rankForLevel(liveProgress.level)} · ${liveProgress.earned}/${liveProgress.required} XP tới cấp ${liveProgress.level + 1}`}
               onClick={() => {
                 setProfileOpen(!profileOpen);
                 setNotificationsOpen(false);
               }}
             >
-              {demoMode ? <span><UserRound size={18} strokeWidth={2.2} /></span> : canManage ? <HarryMascot size={34} /> : <AvatarFrame avatar={avatar} frame={avatarFrame} size={34} />}
-              <ChevronDown size={15} />
+              <span className="profile-trigger-avatar">
+                {demoMode ? <span className="profile-demo-avatar"><UserRound size={18} strokeWidth={2.2} /></span> : canManage ? <HarryMascot size={34} /> : <AvatarFrame avatar={avatar} frame={avatarFrame} size={34} />}
+                <ChevronDown size={13} />
+              </span>
+              <span className="profile-trigger-progress">
+                <span><b>{demoMode ? "Cấp 3" : xpTotal === null ? "Cấp …" : `Cấp ${liveProgress.level}`}</b><small>{demoMode ? xp : xpTotal?.toLocaleString("vi-VN") ?? "…"} XP</small></span>
+                <span className="level-bar"><i style={{ width: demoMode ? `${(xp % 500) / 5}%` : `${liveProgress.percent}%` }} /></span>
+              </span>
             </button>
             {profileOpen && (
               <div className="small-popover profile-menu">
