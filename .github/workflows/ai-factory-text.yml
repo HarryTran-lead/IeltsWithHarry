@@ -23,6 +23,13 @@ on:
           - gemini-3.7-flash
           - gemini-3.6-flash
         default: gemini-3.7-flash
+      probe_mode:
+        description: Full passage with questions, or diagnostic tiny and passage-only requests
+        type: choice
+        options:
+          - full
+          - diagnostic
+        default: full
 
 permissions:
   contents: read
@@ -44,6 +51,7 @@ jobs:
       AI_FACTORY_TEXT_MODEL: ${{ vars.AI_FACTORY_TEXT_MODEL }}
       AI_FACTORY_LONG_MODEL: ${{ vars.AI_FACTORY_LONG_MODEL }}
       AI_FACTORY_PROBE_MODEL: ${{ inputs.probe_model }}
+      AI_FACTORY_PROBE_MODE: ${{ inputs.probe_mode }}
     steps:
       - name: Check free-tier configuration
         id: config
