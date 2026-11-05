@@ -38,6 +38,15 @@ On the product owner's decision (5 Nov 2026), every lesson whose turns all have 
 - **Streak:** `supabase/migrations/202611060001_dictation_streak_activity.sql` adds activity triggers to the VOA, Quick and practice-result tables. It is **not applied yet**; apply it with the usual migration workflow. Until then, saving a word to the notebook and completing the Planner task already count toward the streak.
 - **Shortcuts:** Ctrl + Enter replays the sentence in every bank (a lone Ctrl no longer plays audio, so copy and paste are safe). On phones the bottom bar hides while typing and the notebook bubble hides during practice.
 
+## Path, checks and lesson steps (wave 3)
+
+- **Path map** (`/app/dictation/banks/skill-lab`): the seven stages F1 → S4 with lessons done, the next lesson, and an end-of-stage check. A stage is suggested once 70% of the previous stage's lessons are done (every sentence passed) or its check is passed; later stages are never hard-locked, only labelled "Nên học sau".
+- **Placement** (`/skill-lab/placement`): about 10 short sentences from F1 upward, each heard once, answers shown at the end. `recommendStage()` in `path.ts` suggests the first stage with under half the sentences passed or under 80% word accuracy; if every tested stage went well, the stage after the highest one tested (Section 4 sentences are too long for a placement). Saved as `skill-lab-placement:<stage>`.
+- **End-of-stage check** (`/skill-lab/stage/<id>/test`): ten sentences of that stage, heard once; 80% passes. Best result saved as `skill-lab-stagetest:<stage>`.
+- `GET /api/dictation/skill-lab/check?kind=placement|stage&stage=S1` returns the sentences (audio only); each answer is checked through `/[id]/dictation`, and misses go to Sổ câu sai.
+- **Lesson steps**: 1 Nghe & chép → 2 Câu hỏi → 3 Làm bài một lần (optional) → Tổng kết. The summary shows sentences passed, questions right, words met (with "Lưu vào Sổ tay"), sentences to redo, and the next unfinished lesson of the stage (or the stage check when none is left). Finishing every sentence plays a small celebration.
+- **Weekly goal** (3/5/7/10 lessons, default 5; saved as `skill-lab-goal:weekly`): counts lessons whose every sentence passed since Monday. Shown on the path page and as "Dictation tuần này" on the Dashboard.
+
 ## Audio production (Gemini TTS)
 
 Each turn is its own clip, so a replay covers exactly one turn and timestamps come from real clip lengths. The text sent to Gemini is the transcript, word for word. Accent and pace go only into the speech-style annotation: L1 slow, L2 slightly slow, L3/Foundation calm, Sections at natural exam pace. Each accent has a main female and male voice. Named characters get a voice of matching gender, and no two speakers in a lesson share one.

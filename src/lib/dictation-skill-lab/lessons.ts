@@ -51,15 +51,16 @@ export type GradedQuestion = GradeResult & {
 };
 
 let lessonCache: Map<string, StoredLesson> | null = null;
-let manifestCache: { mtime: number; value: Manifest } | null = null;
+let manifestCache: { mtime: number; checked: number; value: Manifest } | null = null;
 
-/** Re-read when the file changes, so newly voiced turns appear without a restart. */
+/** Re-read when the file changes (checked at most once a second), so newly voiced turns appear without a restart. */
 function manifest(): Manifest {
+  if (manifestCache && Date.now() - manifestCache.checked < 1000) return manifestCache.value;
   const path = join(root, "audio-manifest.json");
   let mtime = 0;
   try { mtime = statSync(path).mtimeMs; } catch { return { status: "missing", turns: {} }; }
-  if (manifestCache?.mtime === mtime) return manifestCache.value;
-  try { manifestCache = { mtime, value: JSON.parse(readFileSync(path, "utf8")) as Manifest }; }
+  if (manifestCache?.mtime === mtime) { manifestCache.checked = Date.now(); return manifestCache.value; }
+  try { manifestCache = { mtime, checked: Date.now(), value: JSON.parse(readFileSync(path, "utf8")) as Manifest }; }
   catch { return manifestCache?.value ?? { status: "missing", turns: {} }; }
   return manifestCache.value;
 }

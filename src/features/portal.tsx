@@ -33,6 +33,8 @@ const ClipDictation = dynamic(() => import("@/features/listening/clip-dictation"
 const SkillLabDictation = dynamic(() => import("@/features/listening/skill-lab-dictation").then((module) => module.SkillLabDictation));
 const DictationQuickPractice = dynamic(() => import("@/features/listening/dictation-sessions").then((module) => module.DictationQuickPractice));
 const DictationReview = dynamic(() => import("@/features/listening/dictation-sessions").then((module) => module.DictationReview));
+const SkillLabPath = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.SkillLabPath));
+const SkillLabCheck = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.SkillLabCheck));
 const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage));
 const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage));
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden));
@@ -70,7 +72,14 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : section === "dictation" ? (
           skillMode === "practice" ? <Suspense fallback={<div className="content-page">Đang mở Luyện nhanh…</div>}><DictationQuickPractice /></Suspense>
             : skillMode === "review" ? <DictationReview />
-            : skillMode === "banks" && pathname.split("/")[4] === "skill-lab" ? <SkillLabDictation />
+            : skillMode === "banks" && pathname.split("/")[4] === "skill-lab" ? (() => {
+              // /skill-lab → path map · /skill-lab/placement · /skill-lab/stage/S1/test → checks · otherwise stage catalog or lesson
+              const [, , , , , page, stage, extra] = pathname.split("/");
+              if (!page) return <SkillLabPath />;
+              if (page === "placement") return <SkillLabCheck />;
+              if (page === "stage" && extra === "test") return <SkillLabCheck key={stage} stage={stage} />;
+              return <SkillLabDictation />;
+            })()
             : skillMode === "banks" && pathname.split("/")[4] === "numbers" ? <RetiredNumbersBank />
               : skillMode === "clips" || (skillMode === "banks" && pathname.split("/")[4] === "quick") ? <ClipDictation /> : <VoaDictation />
         ) : section === "grammar" && skillMode !== "live" ? (

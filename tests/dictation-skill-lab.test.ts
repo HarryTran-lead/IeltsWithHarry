@@ -168,3 +168,20 @@ describe("Dictation skills", () => {
     expect(turnSkills("The sheep is near the gate.", "F1")).toEqual(["sounds"]);
   });
 });
+
+import { recommendStage, weekStart } from "../src/lib/dictation-skill-lab/path";
+
+describe("Skill Lab path", () => {
+  it("suggests the first stage the learner did not handle", () => {
+    const strong = (stage: string) => ({ stage, accuracy: 1, passed: true });
+    expect(recommendStage([strong("F1"), strong("F1"), strong("F2"), { stage: "F3", accuracy: 0.6, passed: false }, strong("S1")])).toBe("F3");
+    expect(recommendStage([strong("F1"), { stage: "F2", accuracy: 0.85, passed: false }, { stage: "F2", accuracy: 0.9, passed: true }, strong("S1")])).toBe("S2");
+    expect(recommendStage([strong("S4")])).toBe("S4");
+    expect(recommendStage([{ stage: "F1", accuracy: 0.5, passed: false }])).toBe("F1");
+  });
+
+  it("starts the week on Monday", () => {
+    expect(weekStart(new Date(2026, 10, 5, 15, 0)).getDay()).toBe(1);
+    expect(weekStart(new Date(2026, 10, 8, 9, 0)).getDate()).toBe(2);
+  });
+});

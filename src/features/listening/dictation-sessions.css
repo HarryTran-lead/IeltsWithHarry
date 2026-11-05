@@ -50,3 +50,70 @@
 .voa-today-card small{margin-top:auto;color:#008b97;font-weight:750}
 .voa-today-card.is-primary{border-color:#9fd8dc;background:linear-gradient(135deg,#effafa,#fff)}
 @media(max-width:900px){.voa-today{grid-template-columns:1fr}}
+
+/* Skill Lab path: placement, weekly goal, stage map */
+.slp-top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px;margin-bottom:20px}
+.slp-placement{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:16px}
+.slp-placement>svg{color:#e8a33d;flex:none}
+.slp-placement>div{display:grid;gap:3px;flex:1;min-width:200px}
+.slp-placement a{text-decoration:none}
+.slp-goal-card{padding:14px 16px}
+.slp-goal{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.slp-goal>svg{color:#008d98;flex:none}
+.slp-goal>div{display:grid;gap:5px;flex:1;min-width:160px}
+.slp-goal .sld-meter-inline{display:block;flex:none;width:100%}
+.slp-goal-select{display:grid;gap:3px;font-size:12px}
+.slp-map{position:relative;display:grid;gap:14px;margin:0;padding:0 0 0 4px;list-style:none}
+.slp-map::before{content:"";position:absolute;left:25px;top:24px;bottom:24px;width:3px;border-radius:3px;background:linear-gradient(#9fd8dc,#dfe9f0)}
+.slp-stage{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start}
+.slp-node{position:relative;z-index:1;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:3px solid #fff;background:#e8f3f5;color:#007f89;font-size:13px;font-weight:850;box-shadow:0 4px 12px #173e5c1f}
+.slp-stage.active .slp-node{background:#008d98;color:#fff}
+.slp-stage.passed .slp-node{background:#1ba672;color:#fff}
+.slp-stage.later .slp-node{background:#eef2f5;color:#8aa0b2}
+.slp-stage.recommended .slp-card{border-color:#e8a33d;box-shadow:0 0 0 3px #f6dfb6}
+.slp-card{padding:14px 16px}
+.slp-stage.later .slp-card{opacity:.82}
+.slp-card-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.slp-card-head>div{display:grid;gap:2px}
+.slp-card-head strong{font-size:17px}
+.slp-card-head span{color:var(--voa-muted);font-size:13px}
+.slp-chip{flex:none;border-radius:99px;background:#eef4f8;color:#4c6a82!important;padding:4px 10px;font-size:11.5px!important;font-weight:800}
+.slp-chip.ok{background:#e3f6ec;color:#0b7a50!important}
+.slp-meter-row{display:flex;align-items:center;gap:10px;margin:10px 0 4px}
+.slp-meter-row small{flex:none;color:var(--voa-muted);font-weight:700}
+.slp-hint,.slp-test-score{display:flex;align-items:center;gap:6px;margin:6px 0 0;color:#7a6a4a;font-size:12.5px}
+.slp-test-score{color:#3f6276}
+.slp-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:10px}
+.slp-actions a{display:inline-flex;align-items:center;gap:5px;color:#087e91;font-size:13px;font-weight:750;text-decoration:none}
+.slp-actions .voa-primary-button,.slp-dashboard-card .voa-primary-button{padding:8px 13px;border-radius:10px;border:1px solid #008d98;background:#008d98;color:#fff;font-weight:750}
+.slp-outcome{margin-bottom:14px;padding:16px 18px;border-color:#9fd8dc;background:linear-gradient(135deg,#effafa,#fff)}
+.slp-outcome strong{font-size:20px}
+.slp-outcome p{margin:6px 0 10px}
+.slp-outcome div{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.slp-outcome a{color:#087e91;font-weight:750}
+.slp-dashboard-card{display:grid;gap:10px;padding:18px 20px;border:1px solid #dbe7ef;border-radius:20px;background:#fff;box-shadow:0 8px 22px #173e5c0d}
+.slp-dashboard-head{display:flex;justify-content:space-between;align-items:center}
+.slp-dashboard-head a{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;text-decoration:none}
+.slp-dashboard-card .slp-actions a:not(.voa-primary-button){color:#087e91}
+@media(max-width:800px){.slp-top{grid-template-columns:1fr}.slp-map::before{left:21px}.slp-stage{grid-template-columns:36px minmax(0,1fr);gap:10px}.slp-node{width:36px;height:36px;font-size:11px}}
+
+/* Lesson steps and summary */
+.sld-lab .sld-steps button.done{color:#0b7a50}
+.sld-lab .sld-steps button.done svg{color:#1ba672}
+.sld-summary{display:grid;gap:12px}
+.sld-summary-hero{padding:20px}
+.sld-summary-hero h2{margin:4px 0 12px;font-size:26px}
+.sld-summary-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sld-summary-stats div{display:grid;gap:2px;padding:12px;border-radius:12px;background:#f3f8fb}
+.sld-summary-stats strong{font-size:24px;color:#007f89}
+.sld-summary-stats span{color:var(--voa-muted);font-size:12.5px}
+.sld-summary-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:14px}
+.sld-summary-actions a:not(.voa-primary-button){color:#087e91;font-weight:750}
+.sld-summary-actions a.voa-primary-button{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:10px;text-decoration:none}
+.sld-summary-block{padding:16px}
+.sld-summary-block h3{margin:0 0 10px;font-size:16px}
+.sld-summary-redo{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.sld-summary-redo li{display:flex;align-items:center;gap:10px}
+.sld-summary-redo small{flex:1;color:var(--voa-muted)}
+@media(max-width:600px){.sld-summary-stats{grid-template-columns:1fr}}
+.voa-stage-section h2 .voa-stage-map-link{margin-left:10px;color:#087e91;font-size:13px;font-weight:750;text-decoration:none}

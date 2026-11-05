@@ -30,7 +30,11 @@ import { StageMap, useStageStops } from "@/features/learning/stage-map";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { streakWeek } from "@/lib/account";
 import { GrammarTodayCard } from "@/features/grammar/grammar-today";
+import dynamic from "next/dynamic";
 import "./dashboard.css";
+
+/** Loaded on demand: the Skill Lab path module is large and only needs its weekly summary here. */
+const DictationWeekCard = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.DictationWeekCard));
 
 const skillIcons: Partial<Record<Skill, typeof BookOpenText>> = {
   Reading: BookOpenText,
@@ -326,6 +330,7 @@ export function Dashboard() {
         <StudyProgress />
         <LearningPath />
         <GrammarTodayCard />
+        <DictationWeekCard />
         {releaseLocks ? <TodayGoal /> : <><div className="dashboard-duo">
           <TodayGoal />
           <PracticeNow />

@@ -21,7 +21,7 @@ import "./dictation-sessions.css";
 
 type CheckResult = { passed: boolean; accuracy: number; reference: string; translation?: string; explanation?: string; missedFocus?: string[]; focus?: string[] };
 export type SentenceItem = {
-  key: string; title: string; source: "Skill Lab" | "VOA" | "Quick";
+  key: string; title: string; source: "Skill Lab" | "VOA" | "Quick"; group?: string;
   audio: { src: string; startMs?: number; endMs?: number };
   check: (answer: string) => Promise<CheckResult>;
 };
@@ -39,13 +39,21 @@ async function checkSkillLab(lessonId: string, turnId: string, answer: string): 
   return { passed, accuracy: data.accuracy ?? 0, reference: data.reference_text, translation: data.translation_vi, explanation: data.explanation_vi, missedFocus: data.missed_focus, focus: data.focus };
 }
 
-const skillLabItem = (lessonId: string, turnId: string, title: string, audioUrl: string): SentenceItem => ({
-  key: `skill:${lessonId}/${turnId}`, title, source: "Skill Lab", audio: { src: audioUrl },
+export type RunnerResult = { key: string; group?: string; passed: boolean; accuracy: number };
+
+export const skillLabItem = (lessonId: string, turnId: string, title: string, audioUrl: string, group?: string): SentenceItem => ({
+  key: `skill:${lessonId}/${turnId}`, title, source: "Skill Lab", audio: { src: audioUrl }, group,
   check: (answer) => checkSkillLab(lessonId, turnId, answer),
 });
 
 /** Plays one sentence, takes the learner's answer and shows the same feedback in every bank. */
-export function SentenceRunner({ items, onFinish, finishLabel }: { items: SentenceItem[]; onFinish: () => void; finishLabel: string }) {
+/**
+ * `exam`: each sentence plays once, answers are not shown until the end, and `onComplete` receives
+ * the results (placement and end-of-stage checks).
+ */
+export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onComplete }: {
+  items: SentenceItem[]; onFinish: () => void; finishLabel: string; exam?: boolean; onComplete?: (results: RunnerResult[]) => void;
+}) {
   const audio = useRef<HTMLAudioElement>(null);
   const input = useRef<HTMLTextAreaElement>(null);
   const [index, setIndex] = useState(0);
@@ -56,13 +64,16 @@ export function SentenceRunner({ items, onFinish, finishLabel }: { items: Senten
   const [speed, setSpeed] = useState(1);
   const [reveal, setReveal] = useState(false);
   const [error, setError] = useState("");
+  const [played, setPlayed] = useState<Record<string, boolean>>({});
+  const reported = useRef(false);
   const item = items[index];
   const result = item ? results[item.key] : undefined;
   const done = index >= items.length;
 
   function play() {
     const player = audio.current;
-    if (!player || !item) return;
+    if (!player || !item || (exam && played[item.key])) return;
+    if (exam) setPlayed((current) => ({ ...current, [item.key]: true }));
     const { src, startMs = 0 } = item.audio;
     if (!player.src.endsWith(src)) player.src = src;
     const start = () => { player.currentTime = startMs / 1000; player.playbackRate = speed; void player.play().catch(() => setError("Không phát được audio. Bấm phát lại.")); };
@@ -78,6 +89,7 @@ export function SentenceRunner({ items, onFinish, finishLabel }: { items: Senten
     try {
       const checked = await item.check(skip ? "" : answer);
       setResults((current) => ({ ...current, [item.key]: { ...checked, passed: !skip && checked.passed, skipped: skip } }));
+      if (exam) { next(); return; }
       setReveal(skip || checked.passed);
     } catch (failure) { setError(failure instanceof Error ? failure.message : "Không kiểm tra được câu này."); }
     finally { setBusy(false); }
@@ -87,7 +99,12 @@ export function SentenceRunner({ items, onFinish, finishLabel }: { items: Senten
     setIndex((value) => value + 1); setAnswer(""); setReveal(false); setError("");
     window.setTimeout(() => input.current?.focus(), 0);
   }
-  useEffect(() => { if (item) window.setTimeout(play, 150); /* play each new sentence once */ }, [index]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (item && !exam) window.setTimeout(play, 150); /* practice plays each new sentence once */ }, [index]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (!done || reported.current || !onComplete) return;
+    reported.current = true;
+    onComplete(items.map((entry) => ({ key: entry.key, group: entry.group, passed: Boolean(results[entry.key]?.passed), accuracy: results[entry.key]?.accuracy ?? 0 })));
+  }, [done, items, results, onComplete]);
 
   if (done) {
     const list = items.map((entry) => ({ entry, result: results[entry.key] }));
@@ -96,7 +113,7 @@ export function SentenceRunner({ items, onFinish, finishLabel }: { items: Senten
       <section className="dq-summary voa-surface" aria-live="polite">
         <span className="voa-eyebrow">KẾT QUẢ</span>
         <h2>{passed}/{items.length} câu đạt</h2>
-        <p className="sld-muted">Câu chưa đạt được lưu vào Sổ câu sai để ôn lại sau.</p>
+        <p className="sld-muted">{exam ? "Đáp án từng câu ở dưới. " : ""}Câu chưa đạt được lưu vào Sổ câu sai để ôn lại sau.</p>
         <ol className="dq-summary-list">{list.map(({ entry, result: value }) => <li key={entry.key} className={value?.passed ? "passed" : "failed"}>
           {value?.passed ? <Check size={15} /> : <X size={15} />}<div><strong>{value?.reference ?? entry.title}</strong><small>{entry.source} · {entry.title}</small></div></li>)}</ol>
         <div className="dq-summary-actions">
@@ -118,14 +135,14 @@ export function SentenceRunner({ items, onFinish, finishLabel }: { items: Senten
       <div className="dq-dots" aria-hidden>{items.map((entry, position) => <span key={entry.key} className={position === index ? "current" : results[entry.key]?.passed ? "passed" : results[entry.key] ? "failed" : ""} />)}</div>
       <audio ref={audio} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} onTimeUpdate={onTime} />
       <div className="dq-player">
-        <button type="button" className="dq-play" aria-label={playing ? "Tạm dừng" : "Nghe câu"} onClick={() => (playing ? audio.current?.pause() : play())}>{playing ? <Pause size={26} fill="currentColor" /> : <Play size={26} fill="currentColor" />}</button>
-        <button type="button" onClick={play}><RotateCcw size={15} /> Nghe lại</button>
+        <button type="button" className="dq-play" disabled={exam && played[item.key] && !playing} aria-label={playing ? "Tạm dừng" : "Nghe câu"} onClick={() => (playing ? (!exam && audio.current?.pause()) : play())}>{playing ? <Pause size={26} fill="currentColor" /> : <Play size={26} fill="currentColor" />}</button>
+        {exam ? <span className="sld-muted">{played[item.key] ? "Đã nghe (mỗi câu chỉ nghe một lần)" : "Bấm để nghe — mỗi câu chỉ nghe một lần"}</span> : <button type="button" onClick={play}><RotateCcw size={15} /> Nghe lại</button>}
         <label className="sld-speed"><Gauge size={15} /> Tốc độ<select value={speed} onChange={(event) => { const value = Number(event.target.value); setSpeed(value); if (audio.current) audio.current.playbackRate = value; }}>{speeds.map((value) => <option key={value} value={value}>{value}×</option>)}</select></label>
       </div>
       <textarea ref={input} className="sld-dictation-answer" rows={2} value={answer} autoFocus spellCheck={false} autoComplete="off" autoCapitalize="off" placeholder="Gõ câu bạn nghe được…"
         onChange={(event) => { setAnswer(event.target.value); if (result) { setResults((current) => { const copy = { ...current }; delete copy[item.key]; return copy; }); setReveal(false); } }}
         onKeyDown={(event) => {
-          if (event.key === "Enter" && event.ctrlKey) { event.preventDefault(); play(); }
+          if (event.key === "Enter" && event.ctrlKey) { event.preventDefault(); if (!exam) play(); }
           else if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); if (result && (result.passed || result.skipped)) next(); else void check(); }
         }} />
       {error && <p className="sld-error" role="alert">{error}</p>}
@@ -140,10 +157,10 @@ export function SentenceRunner({ items, onFinish, finishLabel }: { items: Senten
       </div>}
       <div className="sld-dictation-actions"><div>
         {result && (result.passed || result.skipped) ? <button type="button" className="voa-primary-button" onClick={next}>{index + 1 < items.length ? "Câu tiếp" : "Xem kết quả"} <ArrowRight size={15} /></button>
-          : <button type="button" className="voa-primary-button" disabled={busy || !answer.trim()} onClick={() => void check()}><Check size={15} /> {busy ? "Đang kiểm tra…" : "Kiểm tra"}</button>}
-        {!(result && (result.passed || result.skipped)) && <button type="button" disabled={busy} onClick={() => void check(true)}>Bỏ qua · Xem đáp án</button>}
+          : <button type="button" className="voa-primary-button" disabled={busy || !answer.trim()} onClick={() => void check()}><Check size={15} /> {busy ? "Đang kiểm tra…" : exam ? "Nộp câu này" : "Kiểm tra"}</button>}
+        {!(result && (result.passed || result.skipped)) && <button type="button" disabled={busy} onClick={() => void check(true)}>{exam ? "Không nghe được · Câu tiếp" : "Bỏ qua · Xem đáp án"}</button>}
         {result && !result.passed && !result.skipped && <button type="button" onClick={next}>Để sau <ArrowRight size={15} /></button>}
-      </div><span className="sld-muted sld-shortcuts">Enter kiểm tra / sang câu tiếp · Ctrl + Enter nghe lại</span></div>
+      </div><span className="sld-muted sld-shortcuts">{exam ? "Enter nộp câu này và sang câu tiếp" : "Enter kiểm tra / sang câu tiếp · Ctrl + Enter nghe lại"}</span></div>
     </section>
   );
 }

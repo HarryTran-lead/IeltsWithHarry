@@ -307,7 +307,7 @@ export function VoaDictation() {
         <>
           <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dashboard">Dashboard</Link><span>›</span><span>Dictation</span></nav>
           <header className="voa-bank-hero"><div><span className="voa-eyebrow">DICTATION LIBRARY</span><h1>Luyện nghe chép</h1><p>Đi theo lộ trình IELTS, luyện nhanh một kỹ năng, hoặc ôn lại những câu chưa đạt.</p></div>
-            <button type="button" className="voa-primary-button" onClick={() => router.push(lastSkillLab ? `/app/dictation/banks/skill-lab/${lastSkillLab}` : skillLabStageUrl("F1"))}>{lastSkillLab ? "Tiếp tục lộ trình IELTS" : "Bắt đầu lộ trình IELTS"} <ArrowRight size={17} /></button></header>
+            <button type="button" className="voa-primary-button" onClick={() => router.push(lastSkillLab ? `/app/dictation/banks/skill-lab/${lastSkillLab}` : "/app/dictation/banks/skill-lab")}>{lastSkillLab ? "Tiếp tục lộ trình IELTS" : "Bắt đầu lộ trình IELTS"} <ArrowRight size={17} /></button></header>
           <section className="voa-today" aria-label="Hôm nay">
             <Link className="voa-today-card voa-surface is-primary" href="/app/dictation/practice"><strong>Luyện nhanh 5 phút</strong><span>10 câu theo một kỹ năng: số và giờ, đánh vần, ngày tháng, chỉ đường…</span><small>Chọn kỹ năng →</small></Link>
             <Link className="voa-today-card voa-surface" href="/app/dictation/review"><strong>Sổ câu sai</strong><span>Các câu chưa đạt ở mọi kho, chép lại đến khi đạt.</span><small>Ôn câu sai →</small></Link>
@@ -317,7 +317,7 @@ export function VoaDictation() {
               catch { setPlannerState("error"); }
             }}><strong>Đặt lịch hôm nay</strong><span>Thêm “Dictation 15 phút” vào Planner. Đánh dấu xong trong Planner để giữ chuỗi ngày học.</span><small>{plannerState === "added" ? "Đã thêm vào Planner ✓" : plannerState === "saving" ? "Đang thêm…" : plannerState === "error" ? "Chưa thêm được, thử lại" : "Thêm vào Planner →"}</small></button>
           </section>
-          <section className="voa-stage-section" aria-label="Các chặng IELTS"><h2>Chặng nghe chép IELTS</h2><div className="voa-bank-grid voa-stage-grid">
+          <section className="voa-stage-section" aria-label="Các chặng IELTS"><h2>Chặng nghe chép IELTS <Link className="voa-stage-map-link" href="/app/dictation/banks/skill-lab">Xem bản đồ lộ trình →</Link></h2><div className="voa-bank-grid voa-stage-grid">
             {skillLabStages.map((stage) => {
               const count = skillLabCounts?.[stage.id] ?? 0;
               return <button type="button" key={stage.id} className="voa-bank-card voa-surface voa-stage-card" disabled={skillLabCounts !== null && count === 0} onClick={() => router.push(skillLabStageUrl(stage.id))}>

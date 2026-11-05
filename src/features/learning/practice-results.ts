@@ -49,7 +49,8 @@ export async function loadPracticeResults(slugs: string[]): Promise<Record<strin
 export async function savePracticeSnapshot(slug: string, result: PracticeResult) {
   known.set(slug, result);
   if (demoMode) {
-    try { localStorage.setItem(DEMO_KEY, JSON.stringify({ ...readDemo(), [slug]: result })); } catch { /* storage may be blocked */ }
+    // The save time lets the weekly Dictation goal count this week's lessons, as updated_at does in live mode.
+    try { localStorage.setItem(DEMO_KEY, JSON.stringify({ ...readDemo(), [slug]: { ...result, updatedAt: new Date().toISOString() } })); } catch { /* storage may be blocked */ }
     listeners.forEach((listener) => listener(slug, result));
     return;
   }
