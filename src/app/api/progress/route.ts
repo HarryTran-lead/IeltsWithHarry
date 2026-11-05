@@ -30,7 +30,7 @@ export async function GET(request: Request) {
       db.from("exercise_attempts").select("lesson_slug,submitted_at").gte("submitted_at", since).lt("submitted_at", until).limit(500),
       db.from("package_practice_results").select("lesson_slug,updated_at").gte("updated_at", since).lt("updated_at", until).limit(500),
       db.from("study_visits").select("visited_at").gte("visited_at", since).lt("visited_at", until).limit(500),
-      db.from("learner_activity_days").select("day").gte("day", from).lte("day", to),
+      db.from("learner_activity_days").select("day").gt("events", 0).gte("day", from).lte("day", to),
       db.from("voa_dictation_attempts").select("created_at").eq("user_id", user.id).gte("created_at", since).lt("created_at", until).limit(1000),
       db.from("dictation_clip_attempts").select("created_at").eq("user_id", user.id).gte("created_at", since).lt("created_at", until).limit(1000),
     ]);

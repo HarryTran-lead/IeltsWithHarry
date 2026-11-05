@@ -23,6 +23,7 @@ const actionLabels: Record<string, string> = {
   create_user: "Tạo tài khoản",
   suspend: "Khóa tài khoản", unsuspend: "Mở khóa tài khoản", mute_chat: "Cấm chat", unmute_chat: "Bỏ cấm chat", grant_admin: "Cấp quyền admin",
   revoke_admin: "Thu quyền admin", notify: "Gửi thông báo", broadcast: "Thông báo cả lớp", assign_task: "Giao nhiệm vụ", set_goal: "Đặt mục tiêu ngày",
+  restore_streak: "Khôi phục chuỗi",
 };
 
 function until(days: string) { return days === "forever" ? "infinity" : new Date(Date.now() + Number(days) * 86400000).toISOString(); }
@@ -222,6 +223,8 @@ export function AdminLearnerDetail({ id }: { id: string }) {
   if (error) return <div className="learners"><Link href="/admin/users" className="learner-back"><ArrowLeft size={16} /> Danh sách học viên</Link><p className="form-error" role="alert">{error}</p></div>;
   if (!detail) return <div className="learners" aria-busy="true"><span className="skeleton learner-skeleton tall" /></div>;
   const { profile, account, controls, streak, stats } = detail;
+  const previousDay = streak.days.filter((day) => day.day < streak.today).at(-1)?.day;
+  const missedDays = previousDay ? Math.round((Date.parse(`${streak.today}T00:00:00Z`) - Date.parse(`${previousDay}T00:00:00Z`)) / 86400000) - 1 : 0;
   const suspended = activeUntil(controls?.suspendedUntil);
   const muted = activeUntil(controls?.chatMutedUntil);
   const setControls = (patch: { suspended?: string | null; suspendedReason?: string; muted?: string | null; mutedReason?: string }) => db.rpc("admin_set_account_controls", {
@@ -253,6 +256,7 @@ export function AdminLearnerDetail({ id }: { id: string }) {
     <div className="learner-detail-grid">
       <div className="learner-main">
         <div className="learner-stats">{tiles.map(([label, value, hint]) => <div key={label} className="card"><span>{label}</span><strong>{value}</strong>{hint && <small>{hint}</small>}</div>)}</div>
+        <section className="card section-card learner-recovery"><div className="section-head"><h2>Khôi phục chuỗi</h2><span>Admin</span></div><p>{missedDays >= 1 && missedDays <= 3 ? `Học viên đã bỏ lỡ ${missedDays} ngày. Admin có thể khôi phục trực tiếp và hệ thống sẽ ghi nhật ký.` : "Chỉ khôi phục được khi học viên bỏ lỡ từ 1 đến 3 ngày gần nhất."}</p><button type="button" className="button subtle" disabled={!!busy || missedDays < 1 || missedDays > 3} onClick={() => void run("restore-streak", "Đã khôi phục chuỗi.", () => db.rpc("admin_restore_streak", { p_user: id }))}><Flame size={15} /> Khôi phục chuỗi</button></section>
         <section className="card section-card"><div className="section-head"><h2>Lịch học</h2><span>{streak.activeToday ? "Hôm nay đã học" : "Hôm nay chưa học"}</span></div><ActivityHeatmap days={streak.days} today={streak.today} /></section>
         <section className="card section-card">
           <div className="section-head"><h2>Hoạt động gần đây</h2><span>{detail.timeline.length} mục mới nhất</span></div>
@@ -429,7 +433,7 @@ export function AdminAudit() {
           <td>{row.admin_id ? names[row.admin_id] ?? "Admin" : "—"}</td>
           <td><strong>{actionLabels[row.action] ?? row.action}</strong></td>
           <td>{row.target_user ? <Link href={`/admin/users/${row.target_user}`}>{names[row.target_user] ?? "Học viên"}</Link> : "Cả lớp"}</td>
-          <td className="audit-details">{[row.details.title, row.details.reason, row.details.goal && `${row.details.goal} nhiệm vụ/ngày`, row.details.until && untilLabel(String(row.details.until))].filter(Boolean).join(" · ")}</td>
+          <td className="audit-details">{[row.details.title, row.details.reason, row.details.goal && `${row.details.goal} nhiệm vụ/ngày`, row.details.days && `${row.details.days} ngày`, row.details.until && untilLabel(String(row.details.until))].filter(Boolean).join(" · ")}</td>
         </tr>)}</tbody>
       </table></div>}
   </section>;

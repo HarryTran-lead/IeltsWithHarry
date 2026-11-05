@@ -27,6 +27,7 @@
 .activity-heatmap i.level-2 { background: #6fcfcf; }
 .activity-heatmap i.level-3 { background: #1aa6ae; }
 .activity-heatmap i.level-4 { background: #0a7f89; }
+.activity-heatmap i.recovered { background: #fff1d6; box-shadow: inset 0 0 0 2px #e7a85a; }
 .activity-heatmap i.today { outline: 2px solid #ffb347; outline-offset: 1px; }
 .activity-heatmap i.future { background: transparent; }
 .activity-heatmap-legend { grid-column: 2; display: flex; align-items: center; justify-content: flex-end; gap: 3px; color: var(--subtle); font-size: 11px; }

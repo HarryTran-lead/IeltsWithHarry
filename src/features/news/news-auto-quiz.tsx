@@ -18,6 +18,7 @@ export type TypeCount = { type: QuestionType; count: number };
 type Question = { id: string; sort_order: number; question_type: QuestionType; prompt: string; options: string[]; supporting_sentence: string };
 type Review = { id: string; correct: boolean; correctIndex: number | null; acceptedAnswers: string[] | null; explanation: string; optionNotes: string[] | null; supportingSentence: string };
 type SavedResult = { score: number; total: number; review: Review[]; answers: Record<string, string>; submittedAt: string; attempts: number; durationSeconds?: number | null };
+type RecoveryFeedback = { active: boolean; required: number; completed: number; restoredToday: boolean };
 
 function EvidenceLink({ quote }: { quote: string }) {
   const showEvidence = useReadingEvidenceNavigation();
@@ -120,6 +121,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
   // Time spent on the round shown in the result card; the practice timer restarts with each new round.
   const [duration, setDuration] = useState<number | null>(null);
   const [history, setHistory] = useState<PracticeAttempt[]>([]);
+  const [recoveryFeedback, setRecoveryFeedback] = useState<RecoveryFeedback | null>(null);
   const clock = usePracticeClock();
   const resultRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -264,6 +266,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
     }
     setBusy(false);
     if (!review) return;
+    const recovery = await db.rpc("streak_recovery_status");
+    if (!recovery.error) setRecoveryFeedback(recovery.data as RecoveryFeedback);
     if (!partial) window.dispatchEvent(new Event("learner-xp-updated"));
     const result = review;
     setReviews((current) => ({ ...current, ...Object.fromEntries(result.map((item) => [item.id, item])) }));
@@ -402,7 +406,10 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
         const items = shown.filter((question) => question.question_type === type);
         return [type, { correct: items.filter((question) => reviews[question.id]?.correct).length, total: items.length }];
       }))])}
-      saved={saved && !partial ? saved : null} history={history} onRetry={retry} /></div>}
+      saved={saved && !partial ? saved : null} history={history} onRetry={retry} />
+      {recoveryFeedback?.restoredToday ? <p role="status">Đã khôi phục chuỗi học! <Link href="/app/profile">Xem hồ sơ →</Link></p>
+        : recoveryFeedback?.active ? <p role="status">Thử thách khôi phục chuỗi: {recoveryFeedback.completed}/{recoveryFeedback.required} bài đạt yêu cầu. Chỉ bài đã đọc xong và trả lời đúng toàn bộ câu hỏi mới được tính. <Link href="/app/profile">Xem tiến độ →</Link></p> : null}
+    </div>}
   </section>;
 }
 function QuizResult({ score, total, partial, duration, breakdown, saved, history, onRetry }: {

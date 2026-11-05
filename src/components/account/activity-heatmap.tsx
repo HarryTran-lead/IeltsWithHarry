@@ -10,8 +10,8 @@ export function ActivityHeatmap({ days, today, weeks = 18 }: { days: StreakDay[]
     <div className="activity-heatmap-days" aria-hidden="true">{dayNames.map((name, index) => <span key={index}>{name}</span>)}</div>
     <div className="activity-heatmap-grid">
       {grid.map((week) => <div key={week[0].date} className="activity-heatmap-week">
-        {week.map((cell) => <i key={cell.date} title={cell.future ? undefined : `${cell.date}: ${cell.events} hoạt động`}
-          className={cell.future ? "future" : `level-${Math.min(4, cell.events)}${cell.date === today ? " today" : ""}`} />)}
+        {week.map((cell) => <i key={cell.date} title={cell.future ? undefined : cell.recovered ? `${cell.date}: ngày được khôi phục` : `${cell.date}: ${cell.events} hoạt động`}
+          className={cell.future ? "future" : `level-${Math.min(4, cell.events)}${cell.recovered ? " recovered" : ""}${cell.date === today ? " today" : ""}`} />)}
       </div>)}
     </div>
     <div className="activity-heatmap-legend" aria-hidden="true">Ít <i className="level-0" /><i className="level-1" /><i className="level-2" /><i className="level-3" /><i className="level-4" /> Nhiều</div>

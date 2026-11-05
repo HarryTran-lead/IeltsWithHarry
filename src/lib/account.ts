@@ -50,12 +50,12 @@ function shift(day: string, offset: number) {
 
 /** Monday-first weeks ending with the week of `today`, for an activity calendar. */
 export function heatmapWeeks(days: StreakDay[], today: string, weeks = 18) {
-  const events = new Map(days.map((item) => [item.day, item.events]));
+  const activity = new Map(days.map((item) => [item.day, item]));
   const weekday = (new Date(`${today}T00:00:00Z`).getUTCDay() + 6) % 7;
   const start = shift(today, -weekday - (weeks - 1) * 7);
   return Array.from({ length: weeks }, (_, week) => Array.from({ length: 7 }, (_, index) => {
     const date = shift(start, week * 7 + index);
-    return { date, events: events.get(date) ?? 0, future: date > today };
+    return { date, events: activity.get(date)?.events ?? 0, recovered: activity.get(date)?.kinds.includes("streak_recovery") ?? false, future: date > today };
   }));
 }
 

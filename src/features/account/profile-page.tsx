@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { BookOpenText, CalendarClock, CalendarDays, Check, Clock3, Languages, MessageCircleOff, Newspaper, Save, Target, Trophy } from "lucide-react";
+import { BookOpenText, CalendarClock, CalendarDays, Check, Clock3, Flame, Languages, MessageCircleOff, Newspaper, Save, Target, Trophy } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { ActivityHeatmap } from "@/components/account/activity-heatmap";
@@ -19,6 +19,7 @@ import "./profile.css";
 
 const bands = ["", "3.0", "3.5", "4.0", "4.5", "5.0", "5.5", "6.0", "6.5", "7.0", "7.5", "8.0", "8.5", "9.0"];
 const zones = ["Asia/Ho_Chi_Minh", "Asia/Bangkok", "Asia/Singapore", "Asia/Tokyo", "Asia/Seoul", "Australia/Sydney", "Europe/London", "Europe/Berlin", "America/New_York", "America/Los_Angeles"];
+type RecoveryStatus = { missed: number; eligible: boolean; active: boolean; required: number; completed: number };
 
 function dateLabel(value: string) { return new Intl.DateTimeFormat("vi-VN", { dateStyle: "medium" }).format(new Date(value)); }
 function ago(value: string) {
@@ -48,13 +49,17 @@ export function ProfilePage() {
   const [xp, setXp] = useState(0);
   const [frameBusy, setFrameBusy] = useState(false);
   const [frameError, setFrameError] = useState("");
+  const [recovery, setRecovery] = useState<RecoveryStatus | null>(null);
+  const [recoveryBusy, setRecoveryBusy] = useState(false);
+  const [recoveryError, setRecoveryError] = useState("");
   const load = useCallback(async () => {
     if (!db) return;
-    const [overview, user, admin, progress] = await Promise.all([db.rpc("learner_overview"), db.auth.getUser(), db.rpc("is_admin"), db.rpc("learner_xp_summary")]);
+    const [overview, user, admin, progress, recoveryStatus] = await Promise.all([db.rpc("learner_overview"), db.auth.getUser(), db.rpc("is_admin"), db.rpc("learner_xp_summary"), db.rpc("streak_recovery_status")]);
     if (overview.error) setError(overview.error.message); else setData(overview.data as LearnerOverview);
     if (!progress.error) setXp(Number((progress.data as { xp?: number } | null)?.xp ?? 0));
     setEmail(user.data.user?.email ?? "");
     setIsAdmin(admin.data === true);
+    if (!recoveryStatus.error) setRecovery(recoveryStatus.data as RecoveryStatus);
   }, [db]);
   useEffect(() => { void Promise.resolve().then(load); }, [load]);
 
@@ -71,6 +76,14 @@ export function ProfilePage() {
     setFrameBusy(false);
     if (updateError) { setFrameError(updateError.message); return; }
     window.dispatchEvent(new Event("account-avatar-updated"));
+    await load();
+  }
+  async function recoverStreak(asAdmin: boolean) {
+    if (!db) return;
+    setRecoveryBusy(true); setRecoveryError("");
+    const result = asAdmin ? await db.rpc("admin_restore_streak", { p_user: profile.id }) : await db.rpc("streak_recovery_start");
+    setRecoveryBusy(false);
+    if (result.error) { setRecoveryError(result.error.message); return; }
     await load();
   }
   const stage = stages.find((item) => item.id === profile.stage_id);
@@ -110,6 +123,18 @@ export function ProfilePage() {
         <small>Kỷ lục: {streak.longest} ngày</small>
       </div>
     </section>
+
+    {recovery?.eligible && <section className="card section-card profile-recovery" aria-label="Khôi phục chuỗi học">
+      <div className="section-head"><h2><Flame size={19} /> Khôi phục chuỗi</h2><span>Bạn đã bỏ lỡ {recovery.missed} ngày.</span></div>
+      <p>Đọc {recovery.required} bài báo khác nhau và trả lời đúng toàn bộ câu hỏi của mỗi bài để nối lại chuỗi.</p>
+      {recovery.active ? <>
+        <strong role="status">Đã hoàn thành {recovery.completed}/{recovery.required} lượt đọc và trả lời đúng.</strong>
+        <Link href="/app/news" className="button primary">Chọn bài báo chưa đọc</Link>
+        <small>Chỉ tính bài được đọc xong và làm đủ quiz sau khi bắt đầu thử thách. Hoàn thành trong hôm nay theo múi giờ hồ sơ.</small>
+      </> : <button type="button" className="button primary" disabled={recoveryBusy} onClick={() => void recoverStreak(false)}>{recoveryBusy ? "Đang bắt đầu…" : `Bắt đầu thử thách ${recovery.required} bài`}</button>}
+      {isAdmin && <button type="button" className="button subtle" disabled={recoveryBusy} onClick={() => void recoverStreak(true)}>Admin khôi phục chuỗi ngay</button>}
+      {recoveryError && <p className="form-error" role="alert">{recoveryError}</p>}
+    </section>}
 
     {!isAdmin && <section className="card section-card profile-frame-section">
       <div className="section-head"><h2>Bộ khung avatar</h2><span>Khung hiện cạnh tên của bạn trong Cộng đồng.</span></div>
