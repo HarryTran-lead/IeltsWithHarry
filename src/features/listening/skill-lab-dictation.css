@@ -1,7 +1,5 @@
 /* IELTS Skill Lab dictation bank: catalog cards and the lesson player. Builds on voa-dictation.css tokens. */
 .sld-lab .sld-muted{color:var(--voa-muted);font-size:13px}
-.sld-draft-note{display:flex;align-items:flex-start;gap:8px;margin:0 0 16px;padding:10px 13px;border:1px solid #f0dcb4;border-radius:12px;background:#fff8ea;color:#7a5a1d;font-size:13px}
-.sld-draft-note svg{flex:none;margin-top:2px}
 .sld-empty{padding:22px}
 .sld-empty h2{margin-bottom:6px;font-size:19px}
 .sld-catalog-library{margin-top:16px}

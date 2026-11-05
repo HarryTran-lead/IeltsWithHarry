@@ -23,7 +23,8 @@ export type StoredLesson = {
   content_format: string; speakers: LessonSpeaker[]; turns: LessonTurn[]; questions: LessonQuestion[]; vocabulary: LessonVocabulary[];
   qa: Record<string, unknown>;
 };
-type ManifestTurn = { file: string; duration_ms: number; voice: string; accent: string; auto_check: "pass" | "suspect"; asr_check?: "pass" | "review"; text_sha256: string };
+type SentenceTiming = { start_ms: number; end_ms: number };
+type ManifestTurn = { file: string; duration_ms: number; voice: string; accent: string; auto_check: "pass" | "suspect"; asr_check?: "pass" | "review"; text_sha256: string; sentences?: SentenceTiming[] };
 type Manifest = { status: string; turns: Record<string, ManifestTurn> };
 
 export const LESSON_ID = /^DICT-(F[1-3]|S[1-4])-\d{3}$/;
@@ -35,7 +36,7 @@ export type PublicLesson = {
   lesson_id: string; title: string; topic: string; level: string; section: number; content_format: string; learning_objectives_vi: string[];
   speakers: { speaker_id: string; label: string; accent: string }[];
   /** `flagged`: the automatic speech-recognition check could not confirm every word of this clip. */
-  turns: { turn_id: string; speaker_id: string; audio_url: string | null; duration_ms: number | null; flagged: boolean }[];
+  turns: { turn_id: string; source_turn_id: string; speaker_id: string; audio_url: string | null; duration_ms: number | null; start_ms: number; end_ms: number | null; flagged: boolean }[];
   questions: PublicQuestion[];
   audio_ready: boolean;
   review_status: "draft_unreviewed";
@@ -86,13 +87,41 @@ function turnAudio(lesson: StoredLesson, turnId: string) {
 
 /** A lesson opens only when every turn has a generated clip; generation is still not teacher verification. */
 export function audioReady(lesson: StoredLesson) {
-  return lesson.turns.every((turn) => turnAudio(lesson, turn.turn_id));
+  return lesson.turns.every((turn) => {
+    const audio = turnAudio(lesson, turn.turn_id);
+    const count = splitSentences(turn.text_en).length;
+    return Boolean(audio && (count === 1 || audio.sentences?.length === count));
+  });
 }
 
 /** "Anna — university student" → "Anna"; generic roles keep their first descriptive part. */
 export function speakerLabel(speaker: LessonSpeaker) {
   const [first] = speaker.role.split(/\s+[—–-]\s+|\s*\/\s*|\s*\(/);
   return (first || `Speaker ${speaker.speaker_id}`).trim();
+}
+
+export function splitSentences(text: string) {
+  return text.trim().split(/(?<=[.!?])\s+(?=["'A-Z0-9])/).map((part) => part.trim()).filter(Boolean);
+}
+
+function splitTranslation(text: string) {
+  return text.trim().split(/(?<=[.!?])\s+(?=["'\p{Lu}0-9])/u).map((part) => part.trim()).filter(Boolean);
+}
+
+/** One playable, gradable sentence; the original turn remains the evidence unit for IELTS questions. */
+export function sentenceUnits(lesson: StoredLesson) {
+  return lesson.turns.flatMap((turn) => {
+    const audio = turnAudio(lesson, turn.turn_id);
+    const parts = splitSentences(turn.text_en);
+    const translations = splitTranslation(turn.translation_vi);
+    const timings = audio?.sentences?.length === parts.length ? audio.sentences : null;
+    return parts.map((text, index) => ({
+      id: parts.length === 1 ? turn.turn_id : `${turn.turn_id}-S${String(index + 1).padStart(2, "0")}`,
+      source: turn, text, translation: translations.length === parts.length ? translations[index] : index === parts.length - 1 ? turn.translation_vi : "",
+      start_ms: timings?.[index].start_ms ?? 0,
+      end_ms: timings?.[index].end_ms ?? (parts.length === 1 ? audio?.duration_ms ?? null : null), audio,
+    }));
+  });
 }
 
 function letterRange(prompt: string) {
@@ -109,9 +138,10 @@ export function toPublicLesson(lesson: StoredLesson): PublicLesson {
     lesson_id: lesson.lesson_id, title: lesson.title, topic: lesson.topic, level: lesson.level, section: lesson.section,
     content_format: lesson.content_format, learning_objectives_vi: lesson.learning_objectives_vi,
     speakers: lesson.speakers.map((speaker) => ({ speaker_id: speaker.speaker_id, label: labels[speaker.speaker_id], accent: speaker.accent_requested })),
-    turns: lesson.turns.map((turn) => {
-      const audio = turnAudio(lesson, turn.turn_id);
-      return { turn_id: turn.turn_id, speaker_id: turn.speaker_id, audio_url: audio?.file ?? null, duration_ms: audio?.duration_ms ?? null,
+    turns: sentenceUnits(lesson).map((unit) => {
+      const audio = unit.audio;
+      return { turn_id: unit.id, source_turn_id: unit.source.turn_id, speaker_id: unit.source.speaker_id, audio_url: audio?.file ?? null,
+        duration_ms: unit.end_ms === null ? null : unit.end_ms - unit.start_ms, start_ms: unit.start_ms, end_ms: unit.end_ms,
         flagged: Boolean(audio && audio.asr_check !== "pass") };
     }),
     questions: lesson.questions.map((question) => {
@@ -132,7 +162,8 @@ export function toPublicLesson(lesson: StoredLesson): PublicLesson {
 export function catalog(): CatalogEntry[] {
   return [...lessons().values()].map((lesson) => ({
     lesson_id: lesson.lesson_id, title: lesson.title, topic: lesson.topic, level: lesson.level, section: lesson.section, content_format: lesson.content_format,
-    turns: lesson.turns.length, questions: lesson.questions.filter((question) => question.type !== "dictation").length,
+    turns: lesson.turns.reduce((count, turn) => count + splitSentences(turn.text_en).length, 0),
+    questions: lesson.questions.filter((question) => question.type !== "dictation").length,
     duration_ms: lesson.turns.reduce((sum, turn) => sum + (turnAudio(lesson, turn.turn_id)?.duration_ms ?? 0), 0),
     audio_ready: audioReady(lesson),
     skill_tags: [...new Set(lesson.questions.flatMap((question) => question.question_tags))].slice(0, 8),

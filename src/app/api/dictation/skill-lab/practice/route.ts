@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { skillLabAccess } from "@/lib/dictation-skill-lab/access";
-import { allLessons, audioReady, turnAudioUrl, turnDurationMs } from "@/lib/dictation-skill-lab/lessons";
+import { allLessons, audioReady, sentenceUnits } from "@/lib/dictation-skill-lab/lessons";
 import { dictationSkills, isDictationSkill, turnSkills } from "@/lib/dictation-skill-lab/skills";
 
 /**
@@ -13,8 +13,8 @@ export async function GET(request: Request) {
   const url = new URL(request.url);
   const skill = url.searchParams.get("skill") ?? "";
   const size = Math.max(5, Math.min(20, Number(url.searchParams.get("n")) || 10));
-  const pool = allLessons().filter(audioReady).flatMap((lesson) => lesson.turns.map((turn) => ({
-    lesson, turn, skills: turnSkills(turn.text_en, lesson.lesson_id.slice(5, 7)),
+  const pool = allLessons().filter(audioReady).flatMap((lesson) => sentenceUnits(lesson).map((unit) => ({
+    lesson, unit, skills: turnSkills(unit.text, lesson.lesson_id.slice(5, 7)),
   })));
   if (!skill) {
     const counts = Object.fromEntries(dictationSkills.map((item) => [item.id, pool.filter((entry) => entry.skills.includes(item.id)).length]));
@@ -26,9 +26,10 @@ export async function GET(request: Request) {
     const other = Math.floor(Math.random() * (index + 1));
     [matching[index], matching[other]] = [matching[other], matching[index]];
   }
-  const items = matching.slice(0, size).map(({ lesson, turn }) => ({
-    lesson_id: lesson.lesson_id, lesson_title: lesson.title, turn_id: turn.turn_id,
-    audio_url: turnAudioUrl(lesson, turn.turn_id), duration_ms: turnDurationMs(lesson, turn.turn_id),
+  const items = matching.slice(0, size).map(({ lesson, unit }) => ({
+    lesson_id: lesson.lesson_id, lesson_title: lesson.title, turn_id: unit.id,
+    audio_url: unit.audio?.file, start_ms: unit.start_ms, end_ms: unit.end_ms,
+    duration_ms: unit.end_ms === null ? null : unit.end_ms - unit.start_ms,
   }));
   return NextResponse.json({ skill, items }, { headers: { "Cache-Control": "private, no-store" } });
 }

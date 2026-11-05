@@ -157,11 +157,11 @@ export function SkillLabCheck({ stage }: { stage?: string }) {
   useEffect(() => {
     let alive = true;
     void fetch(`/api/dictation/skill-lab/check?${stage ? `kind=stage&stage=${stage}` : "kind=placement"}`).then(async (response) => {
-      const data = await response.json().catch(() => ({})) as { items?: { stage: string; lesson_id: string; lesson_title: string; turn_id: string; audio_url: string }[]; error?: string };
+      const data = await response.json().catch(() => ({})) as { items?: { stage: string; lesson_id: string; lesson_title: string; turn_id: string; audio_url: string; start_ms: number; end_ms: number }[]; error?: string };
       if (!alive) return;
       if (!response.ok || !data.items) { setError(data.error ?? "Không tải được bài kiểm tra."); return; }
       if (data.items.length < 5) { setError("Chặng này chưa đủ câu có audio để làm bài kiểm tra."); return; }
-      setItems(data.items.map((entry) => skillLabItem(entry.lesson_id, entry.turn_id, entry.lesson_title, entry.audio_url, entry.stage)));
+      setItems(data.items.map((entry) => skillLabItem(entry.lesson_id, entry.turn_id, entry.lesson_title, entry.audio_url, entry.stage, entry.start_ms, entry.end_ms)));
     });
     return () => { alive = false; };
   }, [stage, round]);

@@ -11,10 +11,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Info, Pause, Play, RotateCcw, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
-import { wordDifferences } from "@/lib/listening/youtube";
 import { percentPassed } from "@/lib/dictation/pass";
 import { listPracticeResults, savePracticeSnapshot } from "@/features/learning/practice-results";
-import { TURN_SLUG } from "./skill-lab-dictation";
+import { TURN_PREFIX, TURN_SLUG } from "./skill-lab-dictation";
 import { ClipProgress, PlaybackControls, usePlaybackSettings } from "./dictation-playback";
 import "./dictation-playback.css";
 import "./voa-dictation.css";
@@ -27,6 +26,15 @@ export type SentenceItem = {
   audio: { src: string; startMs?: number; endMs?: number };
   check: (answer: string) => Promise<CheckResult>;
 };
+
+const wordCount = (text: string) => (text.match(/[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*/gu) ?? []).length;
+function maskedAnswer(reference: string, revealedWords: number) {
+  let index = 0;
+  return reference.replace(/[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*/gu, (word) => {
+    index += 1;
+    return index <= revealedWords ? word : "•".repeat(Math.min(word.length, 12));
+  });
+}
 
 async function checkSkillLab(lessonId: string, turnId: string, answer: string): Promise<CheckResult> {
   const response = await fetch(`/api/dictation/skill-lab/${lessonId}/dictation`, {
@@ -41,8 +49,8 @@ async function checkSkillLab(lessonId: string, turnId: string, answer: string): 
 
 export type RunnerResult = { key: string; group?: string; passed: boolean; accuracy: number };
 
-export const skillLabItem = (lessonId: string, turnId: string, title: string, audioUrl: string, group?: string): SentenceItem => ({
-  key: `skill:${lessonId}/${turnId}`, title, source: "Skill Lab", audio: { src: audioUrl }, group,
+export const skillLabItem = (lessonId: string, turnId: string, title: string, audioUrl: string, group?: string, startMs?: number, endMs?: number): SentenceItem => ({
+  key: `skill:${lessonId}/${turnId}`, title, source: "Skill Lab", audio: { src: audioUrl, startMs, endMs }, group,
   check: (answer) => checkSkillLab(lessonId, turnId, answer),
 });
 
@@ -56,6 +64,7 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
 }) {
   const audio = useRef<HTMLAudioElement>(null);
   const input = useRef<HTMLTextAreaElement>(null);
+  const boundaryFrame = useRef<number | null>(null);
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [results, setResults] = useState<Record<string, CheckResult & { skipped?: boolean }>>({});
@@ -65,6 +74,8 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
   const replaysLeft = useRef(0);
   const replayTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [reveal, setReveal] = useState(false);
+  const [revealedWords, setRevealedWords] = useState(0);
+  const [checkedAnswer, setCheckedAnswer] = useState("");
   const [error, setError] = useState("");
   const [played, setPlayed] = useState<Record<string, boolean>>({});
   const reported = useRef(false);
@@ -84,7 +95,7 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
     const element = audio.current;
     if (!element || !item) return;
     if (!element.src.endsWith(item.audio.src)) element.src = item.audio.src;
-    const go = () => { element.currentTime = (item.audio.startMs ?? 0) / 1000; element.playbackRate = exam ? 1 : settings.speed; void element.play().catch(() => setError("Không phát được audio. Bấm phát lại.")); };
+    const go = () => { element.currentTime = (item.audio.startMs ?? 0) / 1000; element.playbackRate = exam ? 1 : settings.speed; void element.play().then(watchBoundary).catch(() => setError("Không phát được audio. Bấm phát lại.")); };
     if (element.readyState >= 1) go(); else element.addEventListener("loadedmetadata", go, { once: true });
   }
   function cancelReplay() {
@@ -93,31 +104,49 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
     replayTimer.current = null;
   }
   function clipEnded() {
+    if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current);
+    boundaryFrame.current = null;
+    audio.current?.pause();
     setPlaying(false);
     if (replaysLeft.current > 0) { replaysLeft.current -= 1; replayTimer.current = setTimeout(startClip, settings.replayDelay * 1000); }
   }
+  function watchBoundary() {
+    if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current);
+    const tick = () => {
+      const player = audio.current;
+      if (!player || player.paused) return;
+      if (item?.audio.endMs !== undefined && player.currentTime * 1000 >= item.audio.endMs - 15) { clipEnded(); return; }
+      boundaryFrame.current = requestAnimationFrame(tick);
+    };
+    boundaryFrame.current = requestAnimationFrame(tick);
+  }
   function onTime() {
     const element = audio.current;
-    if (element && item?.audio.endMs !== undefined && !element.paused && element.currentTime * 1000 >= item.audio.endMs) { element.pause(); clipEnded(); }
+    if (element && item?.audio.endMs !== undefined && !element.paused && element.currentTime * 1000 >= item.audio.endMs) clipEnded();
   }
   async function check(skip = false) {
-    if (!item || busy || (!skip && !answer.trim())) return;
+    if (!item || busy || (!skip && !answer.trim() && exam)) return;
     setBusy(true); setError("");
     try {
       const checked = await item.check(skip ? "" : answer);
       setResults((current) => ({ ...current, [item.key]: { ...checked, passed: !skip && checked.passed, skipped: skip } }));
+      setCheckedAnswer(answer);
       if (exam) { next(); return; }
       setReveal(skip || checked.passed);
+      if (!skip && !checked.passed) setRevealedWords((count) => Math.min(count + 1, wordCount(checked.reference)));
     } catch (failure) { setError(failure instanceof Error ? failure.message : "Không kiểm tra được câu này."); }
     finally { setBusy(false); }
   }
   function next() {
     cancelReplay();
+    if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current);
+    boundaryFrame.current = null;
     audio.current?.pause();
-    setIndex((value) => value + 1); setAnswer(""); setReveal(false); setError("");
+    setIndex((value) => value + 1); setAnswer(""); setReveal(false); setRevealedWords(0); setCheckedAnswer(""); setError("");
     window.setTimeout(() => input.current?.focus(), 0);
   }
   useEffect(() => { if (item && !exam) window.setTimeout(play, 150); /* practice plays each new sentence once */ }, [index]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => () => { if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current); if (replayTimer.current) clearTimeout(replayTimer.current); }, []);
   useEffect(() => {
     if (!done || reported.current || !onComplete) return;
     reported.current = true;
@@ -142,16 +171,13 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
     );
   }
 
-  const diff = result && reveal && answer.trim() && !result.skipped ? wordDifferences(result.reference, answer) : [];
-  const focusWords = new Set((result?.focus ?? []).flatMap((phrase) => phrase.toLowerCase().split(/\s+/)));
-  const verdict = !result ? "" : result.skipped ? "Đã bỏ qua câu này" : result.passed && result.accuracy >= 0.999 ? "Chính xác!" : result.passed ? `Đã đạt · đúng ${Math.round(result.accuracy * 100)}% từ`
-    : result.missedFocus?.length ? `Chưa đạt · sai từ trọng tâm: ${result.missedFocus.join(", ")}`
-      : result.accuracy >= 0.8 ? `Chưa đạt · câu ngắn cần đúng từng từ (${Math.round(result.accuracy * 100)}%)` : `Đúng ${Math.round(result.accuracy * 100)}% từ · nghe lại và thử lần nữa`;
+  const verdict = !result ? "" : result.skipped ? "Đã bỏ qua câu này" : result.passed ? "Chính xác!"
+    : `Chưa đúng · nghe lại, chép đủ từng từ (${Math.round(result.accuracy * 100)}%)`;
   return (
     <section className="dq-session voa-surface" aria-label={`Câu ${index + 1} trên ${items.length}`}>
       <div className="dq-session-head"><span className="voa-eyebrow">CÂU {index + 1}/{items.length} · {item.source}</span><small className="sld-muted">{item.title}</small></div>
       <div className="dq-dots" aria-hidden>{items.map((entry, position) => <span key={entry.key} className={position === index ? "current" : results[entry.key]?.passed ? "passed" : results[entry.key] ? "failed" : ""} />)}</div>
-      <audio ref={audio} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={clipEnded} onTimeUpdate={onTime} />
+      <audio ref={audio} preload="none" onPlay={() => setPlaying(true)} onPause={() => { setPlaying(false); if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current); boundaryFrame.current = null; }} onEnded={clipEnded} onTimeUpdate={onTime} />
       <div className="dq-player">
         <button type="button" className="dq-play" disabled={exam && played[item.key] && !playing} aria-label={playing ? "Tạm dừng" : "Nghe câu"} onClick={() => { if (playing) { if (!exam) { cancelReplay(); audio.current?.pause(); } } else play(); }}>{playing ? <Pause size={26} fill="currentColor" /> : <Play size={26} fill="currentColor" />}</button>
         {exam ? <span className="sld-muted">{played[item.key] ? "Đã nghe (mỗi câu chỉ nghe một lần)" : "Bấm để nghe — mỗi câu chỉ nghe một lần"}</span> : <button type="button" onClick={play}><RotateCcw size={15} /> Nghe lại</button>}
@@ -159,27 +185,34 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
       </div>
       <ClipProgress audio={audio} startMs={item.audio.startMs} endMs={item.audio.endMs} />
       <textarea ref={input} className="sld-dictation-answer" rows={2} value={answer} autoFocus spellCheck={false} autoComplete="off" autoCapitalize="off" placeholder="Gõ câu bạn nghe được…"
-        onChange={(event) => { setAnswer(event.target.value); if (result) { setResults((current) => { const copy = { ...current }; delete copy[item.key]; return copy; }); setReveal(false); } }}
+        onChange={(event) => { setAnswer(event.target.value); if (result?.passed || result?.skipped) { setResults((current) => { const copy = { ...current }; delete copy[item.key]; return copy; }); setReveal(false); setRevealedWords(0); } }}
         onKeyDown={(event) => {
           if (event.key === "Enter" && event.ctrlKey) { event.preventDefault(); if (!exam) play(); }
-          else if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); if (result && (result.passed || result.skipped)) next(); else void check(); }
+          else if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
+            event.preventDefault();
+            if (result && (result.passed || result.skipped)) next();
+            else if (result && !exam && answer === checkedAnswer) { setRevealedWords((count) => Math.min(count + 1, wordCount(result.reference))); play(); }
+            else void check();
+          }
         }} />
       {error && <p className="sld-error" role="alert">{error}</p>}
       {result && <div className={`sld-dictation-feedback ${result.passed ? "correct" : result.skipped ? "skipped" : "wrong"}`} role="status">
         <strong>{verdict}</strong>
         {reveal ? <>
-          {diff.length > 0 && !result.passed ? <p className="sld-diff">{diff.map((word, position) => <span key={position} className={`${word.kind}${focusWords.has(word.word) ? " focus" : ""}`}>{word.word}</span>)}</p> : null}
           <p className="sld-reference">{result.reference}</p>
           {result.translation && <small>{result.translation}</small>}
           {result.explanation && <p className="sld-explanation"><Info size={14} /> {result.explanation}</p>}
-        </> : <button type="button" onClick={() => setReveal(true)}>Hiện đáp án và so sánh từng từ</button>}
+        </> : <><p>{maskedAnswer(result.reference, revealedWords)}</p>
+          {revealedWords < wordCount(result.reference)
+            ? <button type="button" onClick={() => { setRevealedWords((count) => Math.min(count + 1, wordCount(result.reference))); play(); input.current?.focus(); }}>Gợi ý từ tiếp theo (Enter)</button>
+            : <small>Đã gợi ý hết từ. Hãy chép lại cả câu cho đúng.</small>}</>}
       </div>}
       <div className="sld-dictation-actions"><div>
         {result && (result.passed || result.skipped) ? <button type="button" className="voa-primary-button" onClick={next}>{index + 1 < items.length ? "Câu tiếp" : "Xem kết quả"} <ArrowRight size={15} /></button>
-          : <button type="button" className="voa-primary-button" disabled={busy || !answer.trim()} onClick={() => void check()}><Check size={15} /> {busy ? "Đang kiểm tra…" : exam ? "Nộp câu này" : "Kiểm tra"}</button>}
+          : <button type="button" className="voa-primary-button" disabled={busy || (exam && !answer.trim())} onClick={() => { if (result && !exam && answer === checkedAnswer) { setRevealedWords((count) => Math.min(count + 1, wordCount(result.reference))); play(); } else void check(); }}><Check size={15} /> {busy ? "Đang kiểm tra…" : exam ? "Nộp câu này" : "Gợi ý / Kiểm tra"}</button>}
         {!(result && (result.passed || result.skipped)) && <button type="button" disabled={busy} onClick={() => void check(true)}>{exam ? "Không nghe được · Câu tiếp" : "Bỏ qua · Xem đáp án"}</button>}
         {result && !result.passed && !result.skipped && <button type="button" onClick={next}>Để sau <ArrowRight size={15} /></button>}
-      </div><span className="sld-muted sld-shortcuts">{exam ? "Enter nộp câu này và sang câu tiếp" : "Enter kiểm tra / sang câu tiếp · Ctrl + Enter nghe lại"}</span></div>
+      </div><span className="sld-muted sld-shortcuts">{exam ? "Enter nộp câu này và sang câu tiếp" : "Enter: kiểm tra hoặc lộ thêm 1 từ; chép đúng rồi sang câu tiếp · Ctrl + Enter nghe lại"}</span></div>
     </section>
   );
 }
@@ -210,10 +243,10 @@ export function DictationQuickPractice() {
     if (!skill) return;
     let alive = true;
     void fetch(`/api/dictation/skill-lab/practice?skill=${encodeURIComponent(skill)}&n=10`).then(async (response) => {
-      const data = await response.json().catch(() => ({})) as { items?: { lesson_id: string; lesson_title: string; turn_id: string; audio_url: string }[]; error?: string };
+      const data = await response.json().catch(() => ({})) as { items?: { lesson_id: string; lesson_title: string; turn_id: string; audio_url: string; start_ms: number; end_ms: number }[]; error?: string };
       if (!alive) return;
       if (!response.ok || !data.items) { setError(data.error ?? "Không tải được bộ câu."); return; }
-      setItems(data.items.map((entry) => skillLabItem(entry.lesson_id, entry.turn_id, entry.lesson_title, entry.audio_url)));
+      setItems(data.items.map((entry) => skillLabItem(entry.lesson_id, entry.turn_id, entry.lesson_title, entry.audio_url, undefined, entry.start_ms, entry.end_ms)));
     });
     return () => { alive = false; };
   }, [skill, round]);
@@ -247,14 +280,24 @@ type Mistake = { item: SentenceItem; at: string };
 async function loadMistakes(): Promise<Mistake[]> {
   const found: Mistake[] = [];
   const lessonTitles = new Map<string, string>();
-  const turnRows = await listPracticeResults("skill-lab-turn:");
+  const turnRows = await listPracticeResults(TURN_PREFIX);
   const catalog = await fetch("/api/dictation/skill-lab").then((response) => response.ok ? response.json() : { lessons: [] }).catch(() => ({ lessons: [] })) as { lessons?: { lesson_id: string; title: string }[] };
   for (const lesson of catalog.lessons ?? []) lessonTitles.set(lesson.lesson_id, lesson.title);
+  const lessonIds = [...new Set(Object.keys(turnRows).map((slug) => slug.slice(TURN_PREFIX.length).split("/")[0]).filter(Boolean))];
+  const playable = new Map<string, { audio_url: string | null; start_ms: number; end_ms: number | null }>();
+  for (let start = 0; start < lessonIds.length; start += 12) {
+    await Promise.all(lessonIds.slice(start, start + 12).map(async (id) => {
+      const data = await fetch(`/api/dictation/skill-lab/${encodeURIComponent(id)}`).then((response) => response.ok ? response.json() : null).catch(() => null) as { lesson?: { turns?: { turn_id: string; audio_url: string | null; start_ms: number; end_ms: number | null }[] } } | null;
+      for (const turn of data?.lesson?.turns ?? []) playable.set(`${id}/${turn.turn_id}`, turn);
+    }));
+  }
   for (const [slug, row] of Object.entries(turnRows)) {
     if (row.correct) continue;
-    const [lessonId, turnId] = slug.slice("skill-lab-turn:".length).split("/");
+    const [lessonId, turnId] = slug.slice(TURN_PREFIX.length).split("/");
     if (!lessonId || !turnId) continue;
-    found.push({ at: row.updatedAt ?? "", item: skillLabItem(lessonId, turnId, `${lessonTitles.get(lessonId) ?? lessonId} · câu ${Number(turnId.slice(1))}`, `/dictation-skill-lab/audio/${lessonId}/${turnId}.mp3`) });
+    const turn = playable.get(`${lessonId}/${turnId}`);
+    if (!turn?.audio_url) continue;
+    found.push({ at: row.updatedAt ?? "", item: skillLabItem(lessonId, turnId, `${lessonTitles.get(lessonId) ?? lessonId} · ${turnId}`, turn.audio_url, undefined, turn.start_ms, turn.end_ms ?? undefined) });
   }
   if (demoMode) return found;
   const db = createClient();

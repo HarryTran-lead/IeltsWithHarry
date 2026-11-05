@@ -82,6 +82,9 @@ try {
   Invoke-Logged $tts | Out-Null
   Write-Log "split and Whisper check"
   Invoke-Logged "`"$Python`" -X utf8 -u scripts/dictation-skill-lab-split.py --verify-existing" | Out-Null
+  Write-Log "align transcript sentence boundaries"
+  Invoke-Logged "`"$Python`" -X utf8 -u scripts/dictation-sentence-timings.py --fast" | Out-Null
+  Invoke-Logged "`"$Python`" -X utf8 -u scripts/dictation-sentence-timings.py --refine-fast" | Out-Null
 
   if ($PublishRepo) { Publish-Audio $repo $PublishRepo }
 

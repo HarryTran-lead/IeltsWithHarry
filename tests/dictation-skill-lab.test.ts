@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { countWordsNumbers, gradeAnswer } from "../src/lib/dictation-skill-lab/grade";
-import { catalog, getStoredLesson, gradeLesson, speakerLabel, toPublicLesson, type StoredLesson } from "../src/lib/dictation-skill-lab/lessons";
+import { catalog, getStoredLesson, gradeLesson, sentenceUnits, speakerLabel, splitSentences, toPublicLesson, type StoredLesson } from "../src/lib/dictation-skill-lab/lessons";
 import { voicesFor } from "../src/lib/dictation-skill-lab/tts-plan";
 import { skillLabOpenToLearners } from "../src/lib/dictation-skill-lab/preview";
 
@@ -47,6 +47,37 @@ describe("Skill Lab bank integrity (M16.2)", () => {
       const json = JSON.stringify(toPublicLesson(item));
       expect(json).not.toMatch(/correct_answers|explanation_vi|text_en|translation_vi|practice_aliases/);
       for (const turn of item.turns) if (turn.text_en.length > 25) expect(json.includes(turn.text_en), `${item.lesson_id} ${turn.turn_id}`).toBe(false);
+    }
+  });
+
+  it("plays the Section 4 lecture as individual sentences with bounded audio", () => {
+    const stored = lesson("DICT-S4-001");
+    const units = sentenceUnits(stored);
+    const publicLesson = toPublicLesson(stored);
+    expect(units.length).toBeGreaterThan(stored.turns.length);
+    expect(units.slice(0, 4).map((unit) => unit.text)).toEqual(splitSentences(stored.turns[0].text_en));
+    expect(units[0].translation).not.toBe(stored.turns[0].translation_vi);
+    expect(publicLesson.turns.map((turn) => turn.turn_id)).toEqual(units.map((unit) => unit.id));
+    for (const turn of publicLesson.turns) {
+      expect(turn.end_ms).toBeGreaterThan(turn.start_ms);
+      expect(stored.turns.some((source) => source.turn_id === turn.source_turn_id)).toBe(true);
+    }
+  });
+
+  it("splits every audio-ready lesson across all stages by its transcript sentences", () => {
+    for (const entry of catalog().filter((item) => item.audio_ready)) {
+      const stored = lesson(entry.lesson_id);
+      const expected = stored.turns.reduce((count, turn) => count + splitSentences(turn.text_en).length, 0);
+      const units = sentenceUnits(stored);
+      expect(units.length, entry.lesson_id).toBe(expected);
+      expect(entry.turns, entry.lesson_id).toBe(expected);
+      expect(units.every((unit) => unit.audio?.file && unit.end_ms !== null && unit.end_ms > unit.start_ms), entry.lesson_id).toBe(true);
+      for (const turn of stored.turns) {
+        const clips = units.filter((unit) => unit.source.turn_id === turn.turn_id);
+        expect(clips[0].start_ms, `${entry.lesson_id}/${turn.turn_id}`).toBe(0);
+        expect(clips.at(-1)?.end_ms, `${entry.lesson_id}/${turn.turn_id}`).toBe(clips[0].audio?.duration_ms);
+        for (let index = 1; index < clips.length; index += 1) expect(clips[index].start_ms).toBe(clips[index - 1].end_ms);
+      }
     }
   });
 
