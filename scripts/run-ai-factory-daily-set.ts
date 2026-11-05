@@ -152,8 +152,11 @@ async function main() {
     const last = active.payload.lastModelFailure;
     const detail = last ? `${last.kind}: ${last.model} HTTP ${last.status} (${last.reason})` : message;
     await save(client, active, { error: detail.slice(0, 1000) });
-    if (/daily request budget|timeout/i.test(message) || (error instanceof FactoryModelError && error.failure !== "other")) { console.log(`${active.payload.setId} paused: ${message}; last model error: ${last ? detail : "none"}`); return; }
-    // A persistent server error needs a red workflow so a stalled set is visible.
+    if (/daily request budget|timeout/i.test(message) || (error instanceof FactoryModelError && ["daily_quota", "rate_limit", "quota_unknown"].includes(error.failure))) {
+      console.log(`${active.payload.setId} paused: ${message}; last model error: ${last ? detail : "none"}`);
+      return;
+    }
+    // Persistent server errors stay visible as failed Actions runs as well as in the admin status.
     throw error;
   }
 }
