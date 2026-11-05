@@ -56,7 +56,7 @@ function WelcomeBanner() {
         <div className="welcome-row">
         <StreakWeek />
         <div className="welcome-actions">
-          {releaseLocks ? <Link href="/app/learn/ielts-builder" className="button primary">Học chặng 5.0–6.0 <ArrowRight size={16} /></Link> : <Link href="/app/lesson/technology-digital-life" className="button primary">
+          {releaseLocks ? <Link href="/app/learn/ielts-builder" className="button primary">Học Level 2 <ArrowRight size={16} /></Link> : <Link href="/app/lesson/technology-digital-life" className="button primary">
             Continue learning <ArrowRight size={16} />
           </Link>}
           <Link href="/app/planner" className="button ghost">
@@ -113,10 +113,10 @@ function LearningPath() {
           <HeadIcon icon={Route} />
           <div>
             <h2>Your Learning Path</h2>
-            <p>From band 1.0 to 7.0+ — build your skills step by step.</p>
+            <p>4 chặng từ Foundation đến Level 3, hướng tới band 7.5.</p>
           </div>
         </div>
-        <Link href={releaseLocks ? "/app/learn/ielts-builder" : "/app/learn"} className="link-pill">{releaseLocks ? "Chặng 5.0–6.0" : "View all levels"} <ArrowRight size={15} /></Link>
+        <Link href="/app/learn" className="link-pill">Xem 4 chặng <ArrowRight size={15} /></Link>
       </div>
       <StageMap stops={stops} />
       <div className="continue-card">
@@ -127,7 +127,7 @@ function LearningPath() {
         </div>
         <div className="continue-body">
           <span className="current-label">{releaseLocks ? "Chặng đang mở" : demoMode ? "Current unit" : "Featured unit"}</span>
-          <h3>{releaseLocks ? "IELTS Builder 5.0–6.0" : "Technology & Digital Life"}</h3>
+          <h3>{releaseLocks ? "Level 2 · English Skill Lab Book 2" : "Technology & Digital Life"}</h3>
           <p>{releaseLocks ? "Học theo nhóm câu ngắn, xem tư liệu khi làm bài và ôn lại những câu cần sửa." : "Learn useful vocabulary, reading strategies, writing tasks and speaking skills for real-world topics."}</p>
           {releaseLocks ? <Link href="/app/learn/ielts-builder" className="button coral">Vào lộ trình <ArrowRight size={16} /></Link> : <Link
             href="/app/lesson/technology-digital-life"

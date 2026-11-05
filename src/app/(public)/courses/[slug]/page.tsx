@@ -2,25 +2,26 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Sticker, Tape, type StickerName } from "@/components/stickers/stickers";
-import { stages } from "@/lib/demo-data";
-import { liveMode, releaseLocks } from "@/lib/runtime";
+import { displayCourseTitle, stages } from "@/lib/demo-data";
+import { learnStageAvailable, liveMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/server";
 export default async function CoursePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  if (releaseLocks) notFound();
   const { slug } = await params;
   const stage = stages.find((item) => item.id === slug);
+  if (stage && !learnStageAvailable(stage.id)) notFound();
   if (!stage && liveMode) {
     const supabase = await createClient();
     const { data: course } = await supabase.from("courses").select("id,title,description,stage_id").eq("slug", slug).eq("published", true).maybeSingle();
+    if (course && !learnStageAvailable(course.stage_id)) notFound();
     if (course) {
       const { data: units } = await supabase.from("units").select("id,title").eq("course_id", course.id).eq("published", true).order("sort_order");
       const unitIds = (units ?? []).map((unit) => unit.id);
       const { data: lessons } = unitIds.length ? await supabase.from("lessons").select("id,unit_id,slug,title,skill,summary").in("unit_id", unitIds).eq("published", true).order("sort_order") : { data: [] };
-      return <div className="public-container"><span className="eyebrow">PUBLISHED COURSE</span><h1>{course.title}</h1><p>{course.description}</p>{(units ?? []).map((unit) => <section className="card public-message" key={unit.id}><h2>{unit.title}</h2>{(lessons ?? []).filter((lesson) => lesson.unit_id === unit.id).map((lesson) => <p key={lesson.id}><Link href={`/app/lesson/${lesson.slug}`}>{lesson.skill} · {lesson.title} →</Link></p>)}</section>)}</div>;
+      return <div className="public-container"><span className="eyebrow">PUBLISHED COURSE</span><h1>{displayCourseTitle(course.stage_id, course.title)}</h1><p>{course.description}</p>{(units ?? []).map((unit) => <section className="card public-message" key={unit.id}><h2>{unit.title}</h2>{(lessons ?? []).filter((lesson) => lesson.unit_id === unit.id).map((lesson) => <p key={lesson.id}><Link href={`/app/lesson/${lesson.slug}`}>{lesson.skill} · {lesson.title} →</Link></p>)}</section>)}</div>;
     }
   }
   if (!stage) notFound();
@@ -37,7 +38,7 @@ export default async function CoursePage({
           <p>{stage.description}</p>
         </div>
         <div className="sticker-cluster">
-          <Sticker name="star" label={stage.range.split("–")[0]} size={100} tilt={-8} float />
+          <Sticker name="star" label={["4.5", "5.5", "6.5", "7.5"][index]} size={100} tilt={-8} float />
           <Sticker name="book" size={60} tilt={-10} delay={140} />
           <Sticker name="pencil" size={48} tilt={14} delay={240} />
         </div>
@@ -60,7 +61,7 @@ export default async function CoursePage({
         <aside className="card stage-neighbours">
           <h3>Roadmap</h3>
           <ol>
-            {stages.map((item) => <li key={item.id} className={item.id === stage.id ? "current" : ""}><Link href={`/courses/${item.id}`}><span>{item.range}</span>{item.name}</Link></li>)}
+            {stages.map((item) => <li key={item.id} className={item.id === stage.id ? "current" : ""}>{learnStageAvailable(item.id) ? <Link href={`/courses/${item.id}`}><span>{item.range}</span>{item.name}</Link> : <span aria-disabled="true">{item.range} · {item.name} · Sắp mở</span>}</li>)}
           </ol>
         </aside>
       </div>

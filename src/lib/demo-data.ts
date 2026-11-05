@@ -36,54 +36,40 @@ export type Stage = {
 export const stages: Stage[] = [
   {
     id: "foundation",
-    range: "1.0–2.0",
+    range: "Dưới 4.0 → 4.0–4.5",
     name: "Foundation",
-    description: "Build everyday words and simple sentences.",
-    status: "done",
-  },
-  {
-    id: "elementary",
-    range: "2.0–3.0",
-    name: "Elementary",
-    description: "Speak and write about familiar topics.",
-    status: "done",
-  },
-  {
-    id: "pre-ielts",
-    range: "3.0–4.0",
-    name: "Pre-IELTS",
-    description: "Develop confident core skills.",
-    status: "done",
+    description: "Làm quen với IELTS và xây nền tảng để hướng tới band 4.0–4.5.",
+    status: "future",
   },
   {
     id: "ielts-starter",
-    range: "4.0–5.0",
-    name: "IELTS Starter",
-    description: "Practice task formats and clear answers.",
-    status: "current",
+    range: "4.0–4.5 → 5.0–5.5",
+    name: "Level 1",
+    description: "Luyện các dạng bài IELTS để hướng tới band 5.0–5.5.",
+    status: "future",
   },
   {
     id: "ielts-builder",
-    range: "5.0–6.0",
-    name: "IELTS Builder",
-    description: "Strengthen accuracy and fluency.",
-    status: "future",
+    range: "5.5 → 6.0–6.5",
+    name: "Level 2",
+    description: "Tăng độ chính xác và sự trôi chảy để hướng tới band 6.0–6.5.",
+    status: "current",
   },
   {
     id: "ielts-advanced",
-    range: "6.0–7.0",
-    name: "IELTS Advanced",
-    description: "Work with complex academic content.",
-    status: "future",
-  },
-  {
-    id: "mastery",
-    range: "7.0+",
-    name: "Mastery",
-    description: "Refine expression and exam strategy.",
+    range: "6.5 → 7.0–7.5",
+    name: "Level 3",
+    description: "Luyện nội dung học thuật nâng cao để hướng tới band 7.0–7.5.",
     status: "future",
   },
 ];
+
+/** Keep published legacy course titles aligned with the new learner roadmap. */
+export function displayCourseTitle(stageId: string, title: string) {
+  if (stageId === "ielts-starter" && title.startsWith("IELTS Starter 4.0–5.0")) return "Level 1 · Bài luyện theo chủ đề";
+  if (stageId === "ielts-advanced" && title.startsWith("IELTS Advanced 6.0–7.0")) return "Level 3 · Bài luyện theo chủ đề";
+  return title;
+}
 
 export const skillColors: Record<Skill, string> = {
   Reading: "#f06b6b",

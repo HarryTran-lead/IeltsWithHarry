@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpenText, Check, ChevronDown, Headphones, Mic2, PenLine, RotateCcw, Sparkles, Star, Trophy, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode, releaseLocks } from "@/lib/runtime";
-import { stages } from "@/lib/demo-data";
+import { displayCourseTitle, stages } from "@/lib/demo-data";
 import { useDemo } from "@/features/demo/demo-store";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { loadPracticeResults, subscribePracticeResults, type PracticeResult } from "./practice-results";
@@ -20,11 +20,11 @@ export type StageCourse = { id: string; slug: string; title: string; description
 /** Published courses with their published units and lessons, grouped for the Learn page. Book 2 is static, so demo mode shows it too. */
 export function usePublishedCourses() {
   const supabase = useMemo(() => (liveMode ? createClient() : null), []);
-  const [courses, setCourses] = useState<StageCourse[]>(() => releaseLocks || !liveMode ? [book2Catalog as StageCourse] : []);
-  const [loading, setLoading] = useState(liveMode && !releaseLocks);
+  const [courses, setCourses] = useState<StageCourse[]>(() => [book2Catalog as StageCourse]);
+  const [loading, setLoading] = useState(liveMode);
   const [error, setError] = useState("");
   useEffect(() => {
-    if (!supabase || releaseLocks) return;
+    if (!supabase) return;
     let active = true;
     void (async () => {
       const courseResult = await supabase.from("courses").select("id,slug,title,description,stage_id").eq("published", true).order("title");
@@ -39,7 +39,7 @@ export function usePublishedCourses() {
       const units = ((unitResult.data ?? []) as Omit<Unit, "lessons">[]).map((unit) => ({ ...unit, lessons: lessons.filter((lesson) => lesson.unit_id === unit.id) }));
       setCourses([book2Catalog as StageCourse, ...((courseResult.data ?? []) as Omit<StageCourse, "units">[])
         .map((course) => ({ ...course, units: units.filter((unit) => unit.course_id === course.id && unit.lessons.length) }))
-        .filter((course) => course.units.length)]
+        .filter((course) => course.units.length && (!releaseLocks || ["ielts-starter", "ielts-advanced"].includes(course.stage_id)))]
         .sort((a, b) => Number(b.slug === "english-skill-lab-book-2") - Number(a.slug === "english-skill-lab-book-2")));
       setLoading(false);
     })();
@@ -62,8 +62,8 @@ export function StageLessons({ stageId, courses, loading, error }: { stageId: st
   const done = new Set(attempts.map((attempt) => attempt.lesson));
   const opened = new Set(visits.map((visit) => visit.path));
 
-  if (loading) return <section className="card section-card stage-lessons" aria-busy="true"><div className="stage-lessons-loading"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div></section>;
-  if (error) return <p className="form-error" role="alert">Không tải được bài học: {error}</p>;
+  if (loading && !stageCourses.length) return <section className="card section-card stage-lessons" aria-busy="true"><div className="stage-lessons-loading"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div></section>;
+  if (error && !stageCourses.length) return <p className="form-error" role="alert">Không tải được bài học: {error}</p>;
   if (!stageCourses.length) return <section className="card section-card stage-lessons-empty"><h2>Bài học của chặng {stage?.name ?? ""}</h2><p>Chặng này đang được biên soạn. Bạn có thể luyện các kỹ năng bên dưới trong lúc chờ.</p></section>;
 
   const isDone = (lesson: Lesson) => done.has(lesson.slug) || opened.has(`/app/lesson/${lesson.slug}`);
@@ -75,7 +75,7 @@ function CourseViews({ courses, isDone }: { courses: StageCourse[]; isDone: (les
   const book2Primary = courses[0]?.slug === "english-skill-lab-book-2";
   return <div className="study-courses">{courses.map((course, index) => index === 0 || !book2Primary
     ? <StudyCourse key={course.id} course={course} isDone={isDone} />
-    : <details className="study-older-course" key={course.id}><summary><BookOpenText size={20} /><span><strong>Khóa học bổ trợ</strong><small>{course.title} · {course.units.reduce((sum, unit) => sum + unit.lessons.length, 0)} bài</small></span><ChevronDown size={18} /></summary><StudyCourse course={course} isDone={isDone} /></details>)}</div>;
+    : <details className="study-older-course" key={course.id}><summary><BookOpenText size={20} /><span><strong>Khóa học bổ trợ</strong><small>{displayCourseTitle(course.stage_id, course.title)} · {course.units.reduce((sum, unit) => sum + unit.lessons.length, 0)} bài</small></span><ChevronDown size={18} /></summary><StudyCourse course={course} isDone={isDone} /></details>)}</div>;
 }
 
 const skillLabels: Record<string, string> = { Reading: "Đọc", Listening: "Nghe", Writing: "Viết", Speaking: "Nói", Vocabulary: "Từ vựng", Grammar: "Ngữ pháp" };
@@ -171,8 +171,8 @@ function StudyCourse({ course, isDone }: { course: StageCourse; isDone: (lesson:
   const next = nextLesson(filteredLessons, results, isDone);
   const activeUnit = Math.max(0, course.units.findIndex((unit) => unit.lessons.some((lesson) => lesson.slug === next?.slug)));
   const options = ["all", ...new Set(lessons.map((lesson) => lesson.skill))];
-  return <section className="study-course" aria-label={course.title}>
-    <header className="study-course-head"><div><span className="eyebrow"><Sparkles size={15} /> LỘ TRÌNH TỰ HỌC · {course.units.length} UNIT</span><h2>{course.title}</h2><p>{course.description}</p></div><div className="study-course-progress"><strong>{practiced}<small>/{lessons.length}</small></strong><span>bài đã luyện</span><div className="study-course-bar"><i style={{ width: `${lessons.length ? practiced / lessons.length * 100 : 0}%` }} /></div></div></header>
+  return <section className="study-course" aria-label={displayCourseTitle(course.stage_id, course.title)}>
+    <header className="study-course-head"><div><span className="eyebrow"><Sparkles size={15} /> LỘ TRÌNH TỰ HỌC · {course.units.length} UNIT</span><h2>{displayCourseTitle(course.stage_id, course.title)}</h2><p>{course.description}</p></div><div className="study-course-progress"><strong>{practiced}<small>/{lessons.length}</small></strong><span>bài đã luyện</span><div className="study-course-bar"><i style={{ width: `${lessons.length ? practiced / lessons.length * 100 : 0}%` }} /></div></div></header>
     <div className="study-course-actions"><div className="study-course-stats"><span><Star size={16} /> {completed} đạt mục tiêu</span><span><RotateCcw size={16} /> {review} cần ôn</span></div>{next && <Link className="button primary" href={`/app/lesson/${next.slug}`}>{(results[next.slug]?.checked ?? 0) > 0 && results[next.slug].checked < results[next.slug].total ? "Tiếp tục bài đang dở" : isReview(next, results[next.slug]) ? "Sửa câu chưa đạt" : "Học tiếp"}: {next.title} <ArrowRight size={16} /></Link>}</div>
     <div className="study-skill-filter" role="group" aria-label="Lọc theo kỹ năng">{options.map((option) => <button key={option} type="button" className={skill === option ? "active" : ""} aria-pressed={skill === option} onClick={() => setSkill(option)}>{option === "all" ? "Tất cả" : skillLabels[option] ?? option}</button>)}</div>
     <p className="journey-hint">{skill === "all" ? `${practiced}/${lessons.length} bài đã luyện toàn khóa` : `${filteredLessons.filter((lesson) => (results[lesson.slug]?.checked ?? 0) > 0).length}/${filteredLessons.length} bài ${skillLabels[skill] ?? skill} đã luyện · nút Học tiếp theo bộ lọc này`}</p>
@@ -196,7 +196,7 @@ export function OpenCourses({ courses, loading }: { courses: StageCourse[]; load
       const total = course.units.reduce((sum, unit) => sum + unit.lessons.length, 0);
       return <Link key={course.id} href={`/app/learn/${course.stage_id}`} className="open-course lift">
         <span className="course-stage-band">{stage?.range ?? course.stage_id}</span>
-        <b>{course.title}</b>
+        <b>{displayCourseTitle(course.stage_id, course.title)}</b>
         <small>{stage?.name} · {course.slug.includes("foundation-journey") ? `${course.units.length - 1} unit + 5 bài khởi động` : `${course.units.length} unit`} · {total} bài</small>
         <ArrowRight size={16} />
       </Link>;
