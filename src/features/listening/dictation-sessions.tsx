@@ -102,7 +102,11 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
     if (!element || !item) return;
     if (!element.src.endsWith(item.audio.src)) element.src = item.audio.src;
     const go = () => { element.currentTime = (item.audio.startMs ?? 0) / 1000; element.playbackRate = exam ? 1 : settings.speed; void element.play().then(watchBoundary).catch(() => setError("Không phát được audio. Bấm phát lại.")); };
-    if (element.readyState >= 1) go(); else element.addEventListener("loadedmetadata", go, { once: true });
+    if (element.readyState >= 1) go();
+    else {
+      element.addEventListener("loadedmetadata", go, { once: true });
+      element.load();
+    }
   }
   function cancelReplay() {
     replaysLeft.current = 0;
@@ -183,7 +187,7 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
     <section className="dq-session voa-surface" aria-label={`Câu ${index + 1} trên ${items.length}`}>
       <div className="dq-session-head"><span className="voa-eyebrow">CÂU {index + 1}/{items.length} · {item.source}</span><small className="sld-muted">{item.title}</small></div>
       <div className="dq-dots" aria-hidden>{items.map((entry, position) => <span key={entry.key} className={position === index ? "current" : results[entry.key]?.passed ? "passed" : results[entry.key] ? "failed" : ""} />)}</div>
-      <audio ref={audio} preload="none" onPlay={() => setPlaying(true)} onPause={() => { setPlaying(false); if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current); boundaryFrame.current = null; }} onEnded={clipEnded} onTimeUpdate={onTime} />
+      <audio ref={audio} preload="metadata" onPlay={() => setPlaying(true)} onPause={() => { setPlaying(false); if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current); boundaryFrame.current = null; }} onEnded={clipEnded} onTimeUpdate={onTime} />
       <div className="dq-player">
         <button type="button" className="dq-play" disabled={exam && played[item.key] && !playing} aria-label={playing ? "Tạm dừng" : "Nghe câu"} onClick={() => { if (playing) { if (!exam) { cancelReplay(); audio.current?.pause(); } } else play(); }}>{playing ? <Pause size={26} fill="currentColor" /> : <Play size={26} fill="currentColor" />}</button>
         {exam ? <span className="sld-muted">{played[item.key] ? "Đã nghe (mỗi câu chỉ nghe một lần)" : "Bấm để nghe — mỗi câu chỉ nghe một lần"}</span> : <button type="button" onClick={play}><RotateCcw size={15} /> Nghe lại</button>}

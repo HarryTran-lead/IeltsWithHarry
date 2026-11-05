@@ -372,7 +372,11 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
       player.playbackRate = speed;
       void player.play().then(() => watchBoundary(index)).catch(() => { if (current.current === index) { stop(); setError("Trình duyệt chưa phát được audio. Hãy bấm phát lại."); } });
     };
-    if (player.readyState >= 1) start(); else player.addEventListener("loadedmetadata", start, { once: true });
+    if (player.readyState >= 1) start();
+    else {
+      player.addEventListener("loadedmetadata", start, { once: true });
+      player.load();
+    }
   }
   function watchBoundary(index: number) {
     if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current);
@@ -551,7 +555,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
       {mode !== "dictation" && lesson.learning_objectives_vi.length > 0 && <ul className="sld-goals">{lesson.learning_objectives_vi.map((goal) => <li key={goal}><Check size={14} /> {goal}</li>)}</ul>}
 
       <section ref={turnPanelRef} className="sld-player voa-surface" aria-label={mode === "ielts" ? "Bài nghe" : "Câu nghe hiện tại"}>
-        <audio ref={audio} preload="none" onEnded={ended} onTimeUpdate={(event) => {
+        <audio ref={audio} preload="metadata" onEnded={ended} onTimeUpdate={(event) => {
           const end = segmentEnd.current;
           if (end !== null && end !== undefined && event.currentTarget.currentTime >= end / 1000 - 0.03) ended();
         }} />
