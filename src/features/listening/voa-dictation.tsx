@@ -5,9 +5,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Info, Pause, Play, RotateCcw, Search, Settings2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { wordDifferences } from "@/lib/listening/youtube";
+import { percentPassed } from "@/lib/dictation/pass";
 import { skillLabStages, skillLabStageOf, skillLabStageUrl } from "@/lib/dictation-skill-lab/stages";
 import "./voa-dictation.css";
 import { Sticker } from "@/components/stickers/stickers";
+import { useDemo } from "@/features/demo/demo-store";
+import { todayISO } from "@/lib/demo-data";
+import "./dictation-sessions.css";
 
 type Lesson = { id: string; title: string; topic: string; cefr: string; source_url: string; attribution: string; status: string };
 type Segment = { id: string; ordinal: number; start_ms: number; end_ms: number; reference_text: string; speaker: string };
@@ -20,6 +24,9 @@ const previewEnabled = devPreview || publicPreview;
 const clock = (ms: number) => `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, "0")}`;
 const clipClock = (ms: number) => ms < 10000 ? `${(ms / 1000).toFixed(1)}s` : clock(ms);
 const normalize = (value: string) => value.toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
+/** Same pass rule as every Dictation bank: short sentences must be exact. */
+const segmentPassed = (segment: Segment, attempt: Attempt | undefined) => Boolean(attempt && percentPassed(segment.reference_text, Number(attempt.accuracy)));
+
 function maskedAnswer(reference: string, typed: string) {
   const heard = new Set(normalize(typed).split(" "));
   let first = true;
@@ -82,6 +89,9 @@ export function VoaDictation() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [lastSkillLab, setLastSkillLab] = useState("");
+  const [plannerState, setPlannerState] = useState<"idle" | "saving" | "added" | "error">("idle");
+  const { addTask } = useDemo();
 
   useEffect(() => { let alive = true; void db.from("voa_dictation_lessons")
     .select("id,title,topic,cefr,source_url,attribution,status")
@@ -91,7 +101,7 @@ export function VoaDictation() {
       if (!alive) return;
       if (failure) setError(failure.message);
       else setLessons((data ?? []) as Lesson[]);
-      try { setLastLessonId(window.localStorage.getItem("voa-last-lesson") ?? ""); } catch { /* Catalog works without local storage. */ }
+      try { setLastLessonId(window.localStorage.getItem("voa-last-lesson") ?? ""); setLastSkillLab(window.localStorage.getItem("skill-lab-last-lesson") ?? ""); } catch { /* Catalog works without local storage. */ }
       setLoading(false);
     }); return () => { alive = false; }; }, [db]);
 
@@ -155,7 +165,7 @@ export function VoaDictation() {
       for (const result of results) for (const row of (result.data ?? []) as Attempt[]) if (!latest[row.segment_id]) latest[row.segment_id] = row;
       setAttempts(latest);
       if (!selectionTouched.current) {
-        const next = loaded.findIndex((item) => !latest[item.id] || Number(latest[item.id].accuracy) < 80);
+        const next = loaded.findIndex((item) => !segmentPassed(item, latest[item.id]));
         setSelected(next < 0 ? Math.max(0, loaded.length - 1) : next);
       }
     })().catch((failure: unknown) => {
@@ -181,9 +191,9 @@ export function VoaDictation() {
   const expected = diff.filter((item) => item.kind !== "incorrect").length;
   const gapWords = segment?.reference_text.split(/(\s+)/) ?? [];
   const active = segments.findIndex((item) => time * 1000 >= item.start_ms && time * 1000 < item.end_ms);
-  const mastered = segments.filter((item) => Number(attempts[item.id]?.accuracy ?? 0) >= 80).length;
-  const mistakes = segments.filter((item) => !skipped[item.id] && attempts[item.id] && Number(attempts[item.id].accuracy) < 80).length;
-  const skippedCount = segments.filter((item) => skipped[item.id] && Number(attempts[item.id]?.accuracy ?? 0) < 80).length;
+  const mastered = segments.filter((item) => segmentPassed(item, attempts[item.id])).length;
+  const mistakes = segments.filter((item) => !skipped[item.id] && attempts[item.id] && !segmentPassed(item, attempts[item.id])).length;
+  const skippedCount = segments.filter((item) => skipped[item.id] && !segmentPassed(item, attempts[item.id])).length;
   const pendingCount = segments.length - mastered - mistakes - skippedCount;
 
   useEffect(() => {
@@ -255,7 +265,7 @@ export function VoaDictation() {
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
       if (settingsOpen || !segments.length) return;
-      if (event.ctrlKey && !event.altKey && !event.shiftKey && event.key === "Control") { event.preventDefault(); playSegment(); }
+      if (event.ctrlKey && !event.altKey && !event.shiftKey && event.key === "Enter") { event.preventDefault(); playSegment(); return; }
       if (event.key === "`" && !(event.target instanceof HTMLInputElement) && !(event.target instanceof HTMLTextAreaElement)) {
         event.preventDefault(); if (audio.current?.paused) { if (mode === "read" || playingSegment.current === selected) void audio.current.play(); else playSegment(); } else audio.current?.pause();
       }
@@ -276,7 +286,7 @@ export function VoaDictation() {
     setAnswer(submitted);
     setAttempts((current) => ({ ...current, [segment.id]: saved.data as Attempt }));
     setChecked(true);
-    setFeedback(normalize(submitted) === normalize(segment.reference_text) ? "correct" : "wrong");
+    setFeedback(normalize(submitted) === normalize(segment.reference_text) || percentPassed(segment.reference_text, Number(saved.data.accuracy)) ? "correct" : "wrong");
   }
   function skip() {
     if (!segment) return;
@@ -296,8 +306,17 @@ export function VoaDictation() {
       {view === "home" ? (
         <>
           <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dashboard">Dashboard</Link><span>›</span><span>Dictation</span></nav>
-          <header className="voa-bank-hero"><div><span className="voa-eyebrow">DICTATION LIBRARY</span><h1>Chọn bài luyện nghe</h1><p>Vào thẳng chặng IELTS hoặc chọn kho nghe chép khác.</p></div>{featured && <button type="button" className="voa-primary-button" onClick={() => openLesson(featured)}>Tiếp tục VOA <ArrowRight size={17} /></button>}</header>
-          {previewEnabled && <div className="voa-info-banner"><Info size={18} /><span>Bài VOA thử nghiệm có transcript và mốc audio căn tự động, chưa được nghe duyệt thủ công.</span></div>}
+          <header className="voa-bank-hero"><div><span className="voa-eyebrow">DICTATION LIBRARY</span><h1>Luyện nghe chép</h1><p>Đi theo lộ trình IELTS, luyện nhanh một kỹ năng, hoặc ôn lại những câu chưa đạt.</p></div>
+            <button type="button" className="voa-primary-button" onClick={() => router.push(lastSkillLab ? `/app/dictation/banks/skill-lab/${lastSkillLab}` : skillLabStageUrl("F1"))}>{lastSkillLab ? "Tiếp tục lộ trình IELTS" : "Bắt đầu lộ trình IELTS"} <ArrowRight size={17} /></button></header>
+          <section className="voa-today" aria-label="Hôm nay">
+            <Link className="voa-today-card voa-surface is-primary" href="/app/dictation/practice"><strong>Luyện nhanh 5 phút</strong><span>10 câu theo một kỹ năng: số và giờ, đánh vần, ngày tháng, chỉ đường…</span><small>Chọn kỹ năng →</small></Link>
+            <Link className="voa-today-card voa-surface" href="/app/dictation/review"><strong>Sổ câu sai</strong><span>Các câu chưa đạt ở mọi kho, chép lại đến khi đạt.</span><small>Ôn câu sai →</small></Link>
+            <button type="button" className="voa-today-card voa-surface" disabled={plannerState === "saving" || plannerState === "added"} onClick={async () => {
+              setPlannerState("saving");
+              try { await addTask({ title: "Dictation 15 phút", skill: "Listening", date: todayISO(), time: "", completed: false, priority: "Medium", lesson: "dictation" }); setPlannerState("added"); }
+              catch { setPlannerState("error"); }
+            }}><strong>Đặt lịch hôm nay</strong><span>Thêm “Dictation 15 phút” vào Planner. Đánh dấu xong trong Planner để giữ chuỗi ngày học.</span><small>{plannerState === "added" ? "Đã thêm vào Planner ✓" : plannerState === "saving" ? "Đang thêm…" : plannerState === "error" ? "Chưa thêm được, thử lại" : "Thêm vào Planner →"}</small></button>
+          </section>
           <section className="voa-stage-section" aria-label="Các chặng IELTS"><h2>Chặng nghe chép IELTS</h2><div className="voa-bank-grid voa-stage-grid">
             {skillLabStages.map((stage) => {
               const count = skillLabCounts?.[stage.id] ?? 0;
@@ -362,9 +381,9 @@ export function VoaDictation() {
                   <div className="voa-tabs" role="group" aria-label="Chế độ luyện nghe">{([["type","Nghe & chép"],["gap","Điền từ"],["read","Nghe & đọc"]] as const).map(([id,label]) => <button type="button" key={id} aria-pressed={mode === id} onClick={() => { audio.current?.pause(); playingSegment.current = null; if (audio.current && segment) { audio.current.currentTime = segment.start_ms / 1000; setTime(audio.current.currentTime); } setMode(id); setChecked(false); setFeedback("idle"); setAnswer(""); setGapInputs({}); if (id === "read") setReadFollow(true); }}>{label}</button>)}</div>
                   <div className="voa-task">
                     {mode === "read" ? <><div className="voa-read-heading"><div><h3>Đọc theo audio</h3><p>Phát liên tục toàn bài. Câu đang nghe sẽ sáng lên theo mốc thời gian; bấm câu để nghe từ đó.</p></div><button type="button" aria-pressed={readFollow} onClick={() => setReadFollow((value) => !value)}>{readFollow ? "Đang theo dõi câu" : "Theo dõi câu đang phát"}</button></div><div className="voa-read-list" ref={readList} aria-label="Transcript theo thời gian">{segments.map((item, index) => <button type="button" key={item.id} ref={(node) => { readRows.current[item.id] = node; }} className={selected === index ? "active" : ""} aria-current={selected === index ? "true" : undefined} onClick={() => { setReadFollow(true); choose(index); playSegment(index); }}><time>{clock(item.start_ms)}</time><span>Câu {item.ordinal}</span><strong>{item.reference_text}</strong></button>)}</div><p className="voa-read-note">Mốc câu được căn tự động và có thể lệch audio ở một số bài thử nghiệm.</p></> : <>
-                      <div className="voa-task-heading"><h3>{mode === "type" ? "Nhập câu bạn nghe được" : "Điền các từ còn thiếu"}</h3><span className="voa-task-status">{Number(attempts[segment.id]?.accuracy ?? 0) >= 80 ? "Đã đạt" : skipped[segment.id] ? "Đã bỏ qua" : attempts[segment.id] ? "Cần ôn" : "Chưa làm"}</span></div>
-                      {mode === "gap" ? <div className="voa-gap" aria-label="Điền từ còn thiếu">{gapWords.map((word,index) => /[\p{L}\p{N}]/u.test(word) && index % 6 === 0 ? <input key={index} aria-label={"Từ còn thiếu " + (Math.floor(index/6)+1)} value={gapInputs[index]??""} onChange={(e)=>{setGapInputs((current)=>({...current,[index]:e.target.value}));setChecked(false);setFeedback("idle");}} /> : <span key={index}>{word}</span>)}</div> : <textarea rows={4} value={answer} onChange={(e) => { setAnswer(e.target.value); setChecked(false); setFeedback("idle"); }} onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); void submit(); } }} aria-label="Câu trả lời của bạn" placeholder="Viết những gì bạn nghe được ở đây…" autoComplete="off" spellCheck={false} />}
-                      <div className="voa-answer-actions">{feedback === "idle" || feedback === "wrong" ? <><button type="button" className="voa-primary-button" onClick={() => void submit()}>Kiểm tra đáp án <Check size={17} /></button><button type="button" onClick={skip}>Bỏ qua</button></> : <button type="button" onClick={() => playSegment()}><RotateCcw size={17} /> Nghe lại</button>}<small>Enter để kiểm tra · Ctrl để nghe lại</small></div>
+                      <div className="voa-task-heading"><h3>{mode === "type" ? "Nhập câu bạn nghe được" : "Điền các từ còn thiếu"}</h3><span className="voa-task-status">{segmentPassed(segment, attempts[segment.id]) ? "Đã đạt" : skipped[segment.id] ? "Đã bỏ qua" : attempts[segment.id] ? "Cần ôn" : "Chưa làm"}</span></div>
+                      {mode === "gap" ? <div className="voa-gap" aria-label="Điền từ còn thiếu">{gapWords.map((word,index) => /[\p{L}\p{N}]/u.test(word) && index % 6 === 0 ? <input key={index} aria-label={"Từ còn thiếu " + (Math.floor(index/6)+1)} value={gapInputs[index]??""} onChange={(e)=>{setGapInputs((current)=>({...current,[index]:e.target.value}));setChecked(false);setFeedback("idle");}} /> : <span key={index}>{word}</span>)}</div> : <textarea rows={4} value={answer} onChange={(e) => { setAnswer(e.target.value); setChecked(false); setFeedback("idle"); }} onKeyDown={(e) => { if (e.key === "Enter" && e.ctrlKey) return; if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); void submit(); } }} aria-label="Câu trả lời của bạn" placeholder="Viết những gì bạn nghe được ở đây…" autoComplete="off" spellCheck={false} />}
+                      <div className="voa-answer-actions">{feedback === "idle" || feedback === "wrong" ? <><button type="button" className="voa-primary-button" onClick={() => void submit()}>Kiểm tra đáp án <Check size={17} /></button><button type="button" onClick={skip}>Bỏ qua</button></> : <button type="button" onClick={() => playSegment()}><RotateCcw size={17} /> Nghe lại</button>}<small>Enter để kiểm tra · Ctrl + Enter để nghe lại</small></div>
                       {checked && <div className={["voa-feedback",feedback].join(" ")} aria-live="polite"><strong>{feedback === "correct" ? "Chính xác!" : feedback === "skipped" ? "Đã bỏ qua câu này" : "Chưa đúng, nghe và thử lại"}</strong>{feedback === "wrong" && <>{attempts[segment.id] && <p>Điểm lần này: {Number(attempts[segment.id].accuracy)}%</p>}<p className="voa-answer-hint">{showFullAnswer || showAnswerImmediately ? segment.reference_text : maskedAnswer(segment.reference_text, answer)}</p><label className="voa-inline-check"><input type="checkbox" checked={showAnswerImmediately} onChange={(e) => setShowAnswerImmediately(e.target.checked)} /> Hiện đáp án ngay khi kiểm tra</label><label className="voa-inline-check"><input type="checkbox" checked={showFullAnswer} onChange={(e) => setShowFullAnswer(e.target.checked)} /> Hiện toàn bộ đáp án</label></>}{feedback !== "wrong" && <><p className="voa-transcript">{segment.reference_text}</p>{feedback === "correct" && <p>Điểm đã lưu: {Number(attempts[segment.id]?.accuracy ?? 0)}% · Đúng {correct}/{expected} từ</p>}</>}{feedback === "wrong" && showFullAnswer && <div className="voa-diff">{diff.map((item,index) => <span key={index} className={item.kind}>{item.word}</span>)}</div>}</div>}
                     </>}
                     <div className="voa-task-navigation"><button type="button" disabled={selected === 0} onClick={() => { if (mode === "read") { choose(selected - 1); playSegment(selected - 1); } else choose(selected - 1); }}><ArrowLeft size={16} /> Câu trước</button><button type="button" className="voa-primary-button" disabled={selected === segments.length - 1} onClick={() => { if (mode === "read") { choose(selected + 1); playSegment(selected + 1); } else choose(selected + 1); }}>Câu tiếp theo <ArrowRight size={16} /></button></div>
@@ -373,11 +392,11 @@ export function VoaDictation() {
                 </> : segmentsError ? <div role="alert" className="voa-alert"><p>Không tải được câu: {segmentsError}</p><button type="button" onClick={() => { setSegmentsError(""); setSegmentsLoading(true); setSegmentsReload((value) => value + 1); }}>Thử tải lại</button></div> : segmentsLoading || segmentsLessonId !== lesson.id ? <p role="status" className="voa-empty">Đang tải các câu và mốc thời gian…</p> : <p className="voa-empty">Bài này chưa có câu đã căn thời gian.</p>}
               </section>
             </div>
-            {segments.length > 0 && <aside className="voa-sentence-sidebar voa-surface"><div className="voa-sidebar-head"><h2>Danh sách câu</h2><strong>{mode === "read" ? selected + 1 : mastered}/{segments.length}</strong></div>{mode !== "read" && <div className="voa-sidebar-legend"><span>● Đạt</span><span>● Cần ôn</span><span>● Chưa làm</span></div>}<nav aria-label="Các câu trong bài" className="voa-sentence-grid">{segments.map((item,index) => mode !== "read" && reviewMistakes && !(attempts[item.id] && Number(attempts[item.id].accuracy) < 80 && !skipped[item.id]) ? null : <button type="button" key={item.id} className={[selected === index ? "active" : "", active === index ? "playing" : "", mode !== "read" && Number(attempts[item.id]?.accuracy ?? 0) >= 80 ? "passed" : mode !== "read" && skipped[item.id] ? "skipped" : mode !== "read" && attempts[item.id] ? "needs-review" : ""].filter(Boolean).join(" ")} onClick={() => { choose(index); playSegment(index); }} title={"Câu " + item.ordinal + " · " + clock(item.start_ms) + "–" + clock(item.end_ms)}><span>Câu {item.ordinal}</span>{mode !== "read" && Number(attempts[item.id]?.accuracy ?? 0) >= 80 && <Check size={13} />}</button>)}{mode !== "read" && reviewMistakes && mistakes === 0 && <p>Chưa có câu sai cần ôn.</p>}</nav>{mode !== "read" && <button type="button" className="voa-review-button" aria-pressed={reviewMistakes} onClick={() => setReviewMistakes((value) => !value)}><RotateCcw size={16} /> {reviewMistakes ? "Xem tất cả câu" : "Ôn câu cần cải thiện"}</button>}<small>{mode === "read" ? "Chọn câu để phát từ mốc đó." : "Chọn một câu để nghe và chép lại."}</small></aside>}
+            {segments.length > 0 && <aside className="voa-sentence-sidebar voa-surface"><div className="voa-sidebar-head"><h2>Danh sách câu</h2><strong>{mode === "read" ? selected + 1 : mastered}/{segments.length}</strong></div>{mode !== "read" && <div className="voa-sidebar-legend"><span>● Đạt</span><span>● Cần ôn</span><span>● Chưa làm</span></div>}<nav aria-label="Các câu trong bài" className="voa-sentence-grid">{segments.map((item,index) => mode !== "read" && reviewMistakes && !(attempts[item.id] && !segmentPassed(item, attempts[item.id]) && !skipped[item.id]) ? null : <button type="button" key={item.id} className={[selected === index ? "active" : "", active === index ? "playing" : "", mode !== "read" && segmentPassed(item, attempts[item.id]) ? "passed" : mode !== "read" && skipped[item.id] ? "skipped" : mode !== "read" && attempts[item.id] ? "needs-review" : ""].filter(Boolean).join(" ")} onClick={() => { choose(index); playSegment(index); }} title={"Câu " + item.ordinal + " · " + clock(item.start_ms) + "–" + clock(item.end_ms)}><span>Câu {item.ordinal}</span>{mode !== "read" && segmentPassed(item, attempts[item.id]) && <Check size={13} />}</button>)}{mode !== "read" && reviewMistakes && mistakes === 0 && <p>Chưa có câu sai cần ôn.</p>}</nav>{mode !== "read" && <button type="button" className="voa-review-button" aria-pressed={reviewMistakes} onClick={() => setReviewMistakes((value) => !value)}><RotateCcw size={16} /> {reviewMistakes ? "Xem tất cả câu" : "Ôn câu cần cải thiện"}</button>}<small>{mode === "read" ? "Chọn câu để phát từ mốc đó." : "Chọn một câu để nghe và chép lại."}</small></aside>}
           </div>
         </>
       ) : <p className="voa-empty" role="status">{loading ? "Đang tải bài học…" : "Không tìm thấy bài học này."}</p>}
-      {settingsOpen && lesson && <div className="voa-modal-backdrop" role="presentation" onClick={() => setSettingsOpen(false)}><div className="voa-settings" role="dialog" aria-modal="true" aria-label="Cài đặt nghe chép" onClick={(e) => e.stopPropagation()}><h3>Cài đặt nghe chép</h3><p>Phím nghe lại: Ctrl · Phát/tạm dừng: phím dấu huyền · Xóa câu đang nhập: Esc</p><label>Tự động phát lại <select value={autoReplay} onChange={(e) => setAutoReplay(Number(e.target.value))}>{Array.from({length:11},(_,n) => <option key={n} value={n}>{n === 0 ? "Không" : n + " lần"}</option>)}</select></label><label>Khoảng nghỉ giữa các lần phát <select value={replayDelay} onChange={(e) => setReplayDelay(Number(e.target.value))}>{[0.5,1,1.5,2,2.5,3].map((n) => <option key={n} value={n}>{n} giây</option>)}</select></label><button type="button" onClick={() => setSettingsOpen(false)}>Đóng</button></div></div>}
+      {settingsOpen && lesson && <div className="voa-modal-backdrop" role="presentation" onClick={() => setSettingsOpen(false)}><div className="voa-settings" role="dialog" aria-modal="true" aria-label="Cài đặt nghe chép" onClick={(e) => e.stopPropagation()}><h3>Cài đặt nghe chép</h3><p>Nghe lại: Ctrl + Enter · Phát/tạm dừng: phím dấu huyền · Xóa câu đang nhập: Esc</p><label>Tự động phát lại <select value={autoReplay} onChange={(e) => setAutoReplay(Number(e.target.value))}>{Array.from({length:11},(_,n) => <option key={n} value={n}>{n === 0 ? "Không" : n + " lần"}</option>)}</select></label><label>Khoảng nghỉ giữa các lần phát <select value={replayDelay} onChange={(e) => setReplayDelay(Number(e.target.value))}>{[0.5,1,1.5,2,2.5,3].map((n) => <option key={n} value={n}>{n} giây</option>)}</select></label><button type="button" onClick={() => setSettingsOpen(false)}>Đóng</button></div></div>}
     </main>
   );
 }

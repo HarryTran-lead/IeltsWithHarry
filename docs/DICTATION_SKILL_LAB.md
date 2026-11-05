@@ -26,6 +26,18 @@ The **IELTS Skill Lab** bank in Dictation (`/app/dictation/banks/skill-lab`) hol
 
 On the product owner's decision (5 Nov 2026), every lesson whose turns all have audio is open in production to signed-in learners. Lessons still waiting for audio show "Đang tạo audio" and cannot be opened. No lesson has teacher sign-off yet, so the bank carries a draft note and machine-flagged clips have a dashed outline in the player. Guests are asked to sign in. Set `DICTATION_SKILL_LAB_LOCKED=true` in the server environment to close the bank to learners (admins keep access). An IELTS teacher should still read and listen to each lesson (content, answers, audio, accent, names and numbers).
 
+## Learning modes and progress (November 2026 update)
+
+- **Pass rule (all banks, `src/lib/dictation/pass.ts`):** a sentence of six words or fewer must be exact; longer sentences pass at 80% of words. In Skill Lab a sentence also fails when a *focus word* is wrong: the answer of another question that relies on the same turn and is spoken in it (the "sheep" of a ship/sheep drill, a price, a spelled name). `focusFor()` in `lessons.ts` derives these.
+- **Nghe & chép** checks one sentence through `POST /api/dictation/skill-lab/[id]/dictation`. After the check it returns the transcript, translation, the lesson's explanation for that sentence and its new words, with "Lưu vào Sổ tay". Results are saved per sentence (`skill-lab-turn:<lesson>/<turn>`) and per lesson (`skill-lab-dictation:<lesson>`) in `package_practice_results`, so they follow the learner across devices and show on the lesson cards.
+- **Luyện tập** and **Làm bài một lần** contain only the IELTS-style questions, numbered in listening order. Dictation sentences are no longer repeated there.
+- **Luyện nhanh** (`/app/dictation/practice`): ten random sentences for one skill (`skills.ts`: numbers, spelling, dates, sounds, places, everyday, academic). `GET /api/dictation/skill-lab/practice` returns counts, or a set with audio only.
+- **Sổ câu sai** (`/app/dictation/review`): sentences whose latest attempt did not pass in Skill Lab, VOA and Quick (Quick uses its 80% line because its transcript stays on the server until an attempt). Passing a sentence removes it.
+- **Dashboard / Progress:** Skill Lab results count as Listening; VOA and Quick attempts count once per day per bank.
+- **Planner:** "Đặt lịch hôm nay" on the Dictation page adds "Dictation 15 phút", which links back to Dictation.
+- **Streak:** `supabase/migrations/202611060001_dictation_streak_activity.sql` adds activity triggers to the VOA, Quick and practice-result tables. It is **not applied yet**; apply it with the usual migration workflow. Until then, saving a word to the notebook and completing the Planner task already count toward the streak.
+- **Shortcuts:** Ctrl + Enter replays the sentence in every bank (a lone Ctrl no longer plays audio, so copy and paste are safe). On phones the bottom bar hides while typing and the notebook bubble hides during practice.
+
 ## Audio production (Gemini TTS)
 
 Each turn is its own clip, so a replay covers exactly one turn and timestamps come from real clip lengths. The text sent to Gemini is the transcript, word for word. Accent and pace go only into the speech-style annotation: L1 slow, L2 slightly slow, L3/Foundation calm, Sections at natural exam pace. Each accent has a main female and male voice. Named characters get a voice of matching gender, and no two speakers in a lesson share one.

@@ -36,6 +36,8 @@ export function localDay(at: string | Date, timeZone: string) {
 
 /** Reads the skill from a lesson slug such as `starter-u01-reading-city-gardens`. */
 export function skillFromSlug(slug: string): ProgressSkill | "other" {
+  // Dictation results (Skill Lab lessons and sentences) are Listening practice.
+  if (/^skill-lab(?:-dictation|-turn)?:/.test(slug)) return "Listening";
   const match = /(?:^|-)(reading|listening|writing|speaking)(?:-|$)/.exec(slug.toLowerCase());
   return match ? progressSkills.find((skill) => skill.toLowerCase() === match[1])! : "other";
 }

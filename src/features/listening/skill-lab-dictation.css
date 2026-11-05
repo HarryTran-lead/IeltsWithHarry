@@ -136,3 +136,32 @@
 .sld-vocab dd{margin:2px 0 0;font-size:13px}
 .sld-vocab dd span{display:block;color:var(--voa-muted);font-style:italic}
 @media(max-width:700px){.sld-filter-bar{grid-template-columns:1fr}.sld-lab .sld-speed{margin-left:0}.voa-lesson-header{flex-direction:column;align-items:flex-start}.sld-lab .sld-mode{width:100%;flex-wrap:wrap}.sld-lab .sld-mode button{flex:1;justify-content:center;white-space:nowrap}.sld-dictation{padding:14px}.sld-dictation-view .sld-dictation{padding:11px}.sld-turn-nav{padding:10px}.sld-lab .sld-turn-nav button{min-width:0}.sld-turn-nav>span{font-size:12px}}
+
+/* Wave 1–2: stage progress, skill filter, sentence feedback, saved words */
+.sld-stage-progress{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 12px;padding:12px 14px;border:1px solid var(--voa-line);border-radius:14px;background:#fff}
+.sld-stage-progress strong{font-size:15px}
+.sld-meter-inline{flex:1 1 160px;height:8px;border-radius:99px;background:#e8f0f5;overflow:hidden}
+.sld-meter-inline span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#16a3a0,#3cc4a8)}
+.sld-skill-chips{display:flex;gap:6px;margin:-2px 0 12px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
+.sld-lab .sld-skill-chips button{flex:none;padding:6px 12px;border-radius:99px;font-size:12.5px;font-weight:700;color:#4c6a82}
+.sld-lab .sld-skill-chips button[aria-pressed=true]{border-color:#008d98;background:#e6f6f6;color:#00707a}
+.sld-pill-done{background:#e3f6ec;color:#0b7a50}
+.sld-pill-started{background:#fff3df;color:#8a5a10}
+.sld-dictation-feedback.skipped{border-color:#e4d6bb;background:#fbf7ee}
+.sld-diff .focus{outline:2px solid #e8a33d;outline-offset:1px}
+.sld-reference{font-weight:650}
+.sld-explanation{display:flex;gap:6px;align-items:flex-start;margin:8px 0 0;padding:8px 10px;border-radius:9px;background:#eef7f8;color:#2f5f6e;font-size:13px}
+.sld-explanation svg{flex:none;margin-top:2px;color:#008d98}
+.sld-turn-words{display:grid;gap:6px;margin-top:8px;font-size:13px}
+.sld-turn-words>span{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.sld-lab .sld-save-word{display:inline-flex;align-items:center;gap:4px;margin-left:4px;padding:3px 9px;border-radius:99px;font-size:12px;font-weight:700;color:#087e91;border-color:#b9dce3;background:#f2fafb}
+.sld-vocab .sld-save-word{margin:6px 0 0}
+.sld-dictation-done{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 0;color:#0b7a50;font-size:13px;font-weight:650}
+.sld-lab .sld-dictation-done button{padding:0;border:0;background:none;color:#087e91;font-weight:800;text-decoration:underline}
+.sld-lab .sld-replay-inline{display:inline-flex;align-items:center;gap:5px}
+
+@media(max-width:700px){
+  .sld-lab .sld-mode{display:flex;width:100%;overflow-x:auto}
+  .sld-lab .sld-mode button{flex:none;white-space:nowrap}
+  .sld-shortcuts{display:none}
+}

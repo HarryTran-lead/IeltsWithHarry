@@ -5,11 +5,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Pause, Play, RotateCcw, Search, Settings2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { wordDifferences } from "@/lib/listening/youtube";
+import { percentPassed } from "@/lib/dictation/pass";
 import "./voa-dictation.css";
 
 type Clip = { id: string; bank: "quick"; title: string; source_dataset: string; source_url: string; license_url: string; attribution: string; duration_ms: number; status: string };
 type Result = { accuracy: number; reference_text: string };
-type LastAttempt = { accuracy: number; is_skipped: boolean };
+type LastAttempt = { accuracy: number; is_skipped: boolean; passed?: boolean };
 const bankName = { quick: "Quick Dictation" };
 const PAGE_SIZE = 40;
 const clock = (ms: number) => ms < 10000 ? `${(ms / 1000).toFixed(1)}s` : `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, "0")}`;
@@ -88,6 +89,7 @@ export function ClipDictation() {
   const siblings = clip ? clips.filter((item) => item.bank === clip.bank) : [];
   const index = clip ? siblings.findIndex((item) => item.id === clip.id) : -1;
   const diff = result && !reveal ? wordDifferences(result.reference_text, answer) : [];
+  const passed = Boolean(result && percentPassed(result.reference_text, Number(result.accuracy)));
 
   function cancelReplay() {
     if (replayTimeout.current) clearTimeout(replayTimeout.current);
@@ -118,7 +120,7 @@ export function ClipDictation() {
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
       if (!clip || settingsOpen) return;
-      if (event.key === "Control" && event.ctrlKey && !event.altKey && !event.shiftKey) {
+      if (event.key === "Enter" && event.ctrlKey && !event.altKey && !event.shiftKey) {
         event.preventDefault(); playFromStart();
       } else if (event.key === "`" && !(event.target instanceof HTMLInputElement) && !(event.target instanceof HTMLTextAreaElement)) {
         event.preventDefault();
@@ -146,7 +148,7 @@ export function ClipDictation() {
     setBusy(false);
     if (failure) { setError(failure.message); return; }
     const checked = data as Result;
-    setResult(checked); setLastAttempt({ accuracy: Number(checked.accuracy), is_skipped: false }); setReveal(false);
+    setResult(checked); setLastAttempt({ accuracy: Number(checked.accuracy), is_skipped: false, passed: percentPassed(checked.reference_text, Number(checked.accuracy)) }); setReveal(false);
   }
 
   async function skip() {
@@ -170,7 +172,7 @@ export function ClipDictation() {
       </section>
     </> : clip ? <>
       <header className="voa-lesson-header"><div><button type="button" className="voa-lesson-back" onClick={() => { cancelReplay(); audio.current?.pause(); router.push(`/app/dictation/banks/${clip.bank}`); }}><ArrowLeft size={15} /> {bankName[clip.bank]}</button><h1>{clipLabel(clip.title)}</h1><p>{clock(clip.duration_ms)} · Bản thử nghiệm</p></div></header>
-      <section className="voa-exercise-card voa-surface voa-clip-exercise"><div className="voa-exercise-heading"><div><span className="voa-eyebrow">BUỔI LUYỆN TẬP</span><h2>Clip {index + 1}<small> / {siblings.length}</small></h2></div><span>{lastAttempt === null ? "Chưa làm" : lastAttempt.is_skipped ? "Đã bỏ qua" : lastAttempt.accuracy >= 80 ? `Đã đạt · ${lastAttempt.accuracy}%` : `Cần ôn · ${lastAttempt.accuracy}%`}</span></div>
+      <section className="voa-exercise-card voa-surface voa-clip-exercise"><div className="voa-exercise-heading"><div><span className="voa-eyebrow">BUỔI LUYỆN TẬP</span><h2>Clip {index + 1}<small> / {siblings.length}</small></h2></div><span>{lastAttempt === null ? "Chưa làm" : lastAttempt.is_skipped ? "Đã bỏ qua" : (lastAttempt.passed ?? lastAttempt.accuracy >= 80) ? `Đã đạt · ${lastAttempt.accuracy}%` : `Cần ôn · ${lastAttempt.accuracy}%`}</span></div>
         <div className="voa-audio-inline">
           <div className="voa-audio-title"><div className="voa-audio-meta"><span>Audio clip hiện tại</span><small>{clock(clip.duration_ms)} · Tự dừng cuối clip</small></div>
             <div className="voa-audio-controls">
@@ -184,16 +186,16 @@ export function ClipDictation() {
         </div>
         <div className="voa-task">
           <div className="voa-task-heading"><h3>Chép câu bạn nghe được</h3></div>
-          <textarea rows={3} value={answer} onChange={(event) => { setAnswer(event.target.value); setResult(null); setReveal(false); setShowFullAnswer(false); }} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); if (result && (reveal || result.accuracy >= 80) && index < siblings.length - 1) open(siblings[index + 1]); else void submit(); } }} placeholder="Viết những gì bạn nghe được…" aria-label="Câu trả lời của bạn" autoComplete="off" spellCheck={false} />
+          <textarea rows={3} value={answer} onChange={(event) => { setAnswer(event.target.value); setResult(null); setReveal(false); setShowFullAnswer(false); }} onKeyDown={(event) => { if (event.key === "Enter" && event.ctrlKey) return; if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); if (result && (reveal || passed) && index < siblings.length - 1) open(siblings[index + 1]); else void submit(); } }} placeholder="Viết những gì bạn nghe được…" aria-label="Câu trả lời của bạn" autoComplete="off" spellCheck={false} />
           <div className="voa-answer-actions">
-            {result && (reveal || result.accuracy >= 80) && index < siblings.length - 1 ? <button type="button" className="voa-primary-button" onClick={() => open(siblings[index + 1])}>Clip tiếp <ArrowRight size={17} /></button> : <button type="button" className="voa-primary-button" disabled={busy || !answer.trim()} onClick={() => void submit()}>Kiểm tra <Check size={17} /></button>}
+            {result && (reveal || passed) && index < siblings.length - 1 ? <button type="button" className="voa-primary-button" onClick={() => open(siblings[index + 1])}>Clip tiếp <ArrowRight size={17} /></button> : <button type="button" className="voa-primary-button" disabled={busy || !answer.trim()} onClick={() => void submit()}>Kiểm tra <Check size={17} /></button>}
             <button type="button" disabled={busy || reveal} onClick={() => void skip()}>{reveal ? "Đã bỏ qua" : "Bỏ qua · Xem đáp án"}</button>
-            <small>Enter: {result && (reveal || result.accuracy >= 80) ? "clip tiếp" : "kiểm tra"} · Ctrl: nghe lại</small>
+            <small>Enter: {result && (reveal || passed) ? "clip tiếp" : "kiểm tra"} · Ctrl + Enter: nghe lại</small>
           </div>
-          {result && <div className={`voa-feedback ${reveal ? "skipped" : result.accuracy >= 80 ? "correct" : "wrong"}`} aria-live="polite">
-            <strong>{reveal ? "Đã bỏ qua" : result.accuracy >= 80 ? "Đã đạt" : "Cần ôn thêm"}</strong>
+          {result && <div className={`voa-feedback ${reveal ? "skipped" : passed ? "correct" : "wrong"}`} aria-live="polite">
+            <strong>{reveal ? "Đã bỏ qua" : passed ? "Đã đạt" : "Cần ôn thêm"}</strong>
             {!reveal && <p>Độ chính xác: {Number(result.accuracy)}%</p>}
-            {reveal || result.accuracy >= 80 ? <p className="voa-transcript">{result.reference_text}</p> : <>
+            {reveal || passed ? <p className="voa-transcript">{result.reference_text}</p> : <>
               <p className="voa-answer-hint">{showAnswerImmediately || showFullAnswer ? result.reference_text : maskedAnswer(result.reference_text, answer)}</p>
               <label className="voa-inline-check"><input type="checkbox" checked={showAnswerImmediately} onChange={(event) => setShowAnswerImmediately(event.target.checked)} /> Hiện đáp án ngay khi kiểm tra</label>
               <label className="voa-inline-check"><input type="checkbox" checked={showFullAnswer} onChange={(event) => setShowFullAnswer(event.target.checked)} /> So sánh từng từ</label>
@@ -204,6 +206,6 @@ export function ClipDictation() {
         <div className="voa-task-navigation"><button type="button" disabled={index <= 0} onClick={() => open(siblings[index - 1])}><ArrowLeft size={16} /> Clip trước</button><button type="button" className="voa-primary-button" disabled={index < 0 || index >= siblings.length - 1} onClick={() => open(siblings[index + 1])}>Clip tiếp <ArrowRight size={16} /></button></div>
       </section><p className="voa-clip-credit">Nguồn: <a href={clip.source_url} target="_blank" rel="noreferrer">{clip.attribution}</a> · <a href={clip.license_url} target="_blank" rel="noreferrer">Giấy phép</a></p>
     </> : <p className="voa-empty" role="status">{loading ? "Đang tải clip…" : "Không tìm thấy clip này."}</p>}
-    {settingsOpen && <div className="voa-modal-backdrop" role="presentation" onClick={() => setSettingsOpen(false)}><div className="voa-settings" role="dialog" aria-modal="true" aria-label="Cài đặt nghe chép" onClick={(event) => event.stopPropagation()}><h3>Cài đặt nghe chép</h3><p>Ctrl: nghe lại · Phím dấu huyền: phát/tạm dừng · Esc: xóa câu đang nhập</p><label>Tự động phát lại <select value={autoReplay} onChange={(event) => setAutoReplay(Number(event.target.value))}>{Array.from({ length: 11 }, (_, count) => <option key={count} value={count}>{count === 0 ? "Không" : `${count} lần`}</option>)}</select></label><label>Khoảng nghỉ giữa các lần phát <select value={replayDelay} onChange={(event) => setReplayDelay(Number(event.target.value))}>{[0.5, 1, 1.5, 2, 2.5, 3].map((seconds) => <option key={seconds} value={seconds}>{seconds} giây</option>)}</select></label><button type="button" onClick={() => setSettingsOpen(false)}>Đóng</button></div></div>}
+    {settingsOpen && <div className="voa-modal-backdrop" role="presentation" onClick={() => setSettingsOpen(false)}><div className="voa-settings" role="dialog" aria-modal="true" aria-label="Cài đặt nghe chép" onClick={(event) => event.stopPropagation()}><h3>Cài đặt nghe chép</h3><p>Ctrl + Enter: nghe lại · Phím dấu huyền: phát/tạm dừng · Esc: xóa câu đang nhập</p><label>Tự động phát lại <select value={autoReplay} onChange={(event) => setAutoReplay(Number(event.target.value))}>{Array.from({ length: 11 }, (_, count) => <option key={count} value={count}>{count === 0 ? "Không" : `${count} lần`}</option>)}</select></label><label>Khoảng nghỉ giữa các lần phát <select value={replayDelay} onChange={(event) => setReplayDelay(Number(event.target.value))}>{[0.5, 1, 1.5, 2, 2.5, 3].map((seconds) => <option key={seconds} value={seconds}>{seconds} giây</option>)}</select></label><button type="button" onClick={() => setSettingsOpen(false)}>Đóng</button></div></div>}
   </main>;
 }

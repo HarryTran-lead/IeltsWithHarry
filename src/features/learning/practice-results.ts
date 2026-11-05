@@ -95,3 +95,21 @@ export function resultTone(result: PracticeResult | undefined) {
   const ratio = result.correct / result.checked;
   return ratio >= 0.8 ? "is-strong" : ratio >= 0.5 ? "is-fair" : "is-weak";
 }
+
+/** Every stored result whose slug starts with `prefix`, with the time it was last saved (live mode only). */
+export async function listPracticeResults(prefix: string): Promise<Record<string, PracticeResult & { updatedAt?: string }>> {
+  if (demoMode) {
+    return Object.fromEntries(Object.entries(readDemo()).filter(([slug]) => slug.startsWith(prefix)));
+  }
+  const supabase = createClient();
+  const found: Record<string, PracticeResult & { updatedAt?: string }> = {};
+  // PostgREST pages at 1000 rows; a learner can hold one row per dictation sentence.
+  for (let from = 0; from < 5000; from += 1000) {
+    const { data, error } = await supabase.from("package_practice_results").select("lesson_slug,correct,checked,total,updated_at")
+      .like("lesson_slug", `${prefix.replace(/[%_]/g, "\$&")}%`).order("lesson_slug").range(from, from + 999);
+    if (error) throw new Error(error.message);
+    for (const row of data ?? []) found[row.lesson_slug] = { correct: row.correct, checked: row.checked, total: row.total, updatedAt: row.updated_at };
+    if ((data ?? []).length < 1000) break;
+  }
+  return found;
+}

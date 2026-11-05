@@ -31,6 +31,8 @@ const YoutubeLab = dynamic(() => import("@/features/listening/youtube-lab").then
 const VoaDictation = dynamic(() => import("@/features/listening/voa-dictation").then((module) => module.VoaDictation));
 const ClipDictation = dynamic(() => import("@/features/listening/clip-dictation").then((module) => module.ClipDictation));
 const SkillLabDictation = dynamic(() => import("@/features/listening/skill-lab-dictation").then((module) => module.SkillLabDictation));
+const DictationQuickPractice = dynamic(() => import("@/features/listening/dictation-sessions").then((module) => module.DictationQuickPractice));
+const DictationReview = dynamic(() => import("@/features/listening/dictation-sessions").then((module) => module.DictationReview));
 const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage));
 const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage));
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden));
@@ -66,7 +68,9 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : section === "notebook" ? (
           smartNotebookV1 ? <SmartNotebook /> : <NotebookPage />
         ) : section === "dictation" ? (
-          skillMode === "banks" && pathname.split("/")[4] === "skill-lab" ? <SkillLabDictation />
+          skillMode === "practice" ? <Suspense fallback={<div className="content-page">Đang mở Luyện nhanh…</div>}><DictationQuickPractice /></Suspense>
+            : skillMode === "review" ? <DictationReview />
+            : skillMode === "banks" && pathname.split("/")[4] === "skill-lab" ? <SkillLabDictation />
             : skillMode === "banks" && pathname.split("/")[4] === "numbers" ? <RetiredNumbersBank />
               : skillMode === "clips" || (skillMode === "banks" && pathname.split("/")[4] === "quick") ? <ClipDictation /> : <VoaDictation />
         ) : section === "grammar" && skillMode !== "live" ? (

@@ -1,0 +1,52 @@
+/* "Luyện nhanh" and "Sổ câu sai": skill cards, the shared sentence runner and its summary. */
+.dq-skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.dq-page .dq-skill-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:132px;padding:18px;text-align:left}
+.dq-page button.dq-skill-card:not(:disabled):hover{border-color:#64b9c1;box-shadow:0 12px 28px #173e5c17;transform:translateY(-2px)}
+.dq-skill-card strong{font-size:17px}
+.dq-skill-card span{color:var(--voa-muted);font-size:13px;line-height:1.45}
+.dq-skill-card small{margin-top:auto;color:#008b97;font-weight:750}
+.dq-skill-card svg{position:absolute;right:16px;bottom:16px;color:#008b97}
+.dq-session{max-width:760px;padding:18px}
+.dq-session-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+.dq-dots{display:flex;gap:5px;margin:10px 0 14px}
+.dq-dots span{flex:1;height:6px;border-radius:99px;background:#e6eef3}
+.dq-dots .current{background:#8fd3d6}
+.dq-dots .passed{background:#1ba672}
+.dq-dots .failed{background:#e0794a}
+.dq-player{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px}
+.dq-page .dq-play{display:grid;place-items:center;width:58px;height:58px;padding:0;border:0;border-radius:50%;background:#008d98;color:#fff;box-shadow:0 8px 18px #008d9833}
+.dq-page .dq-player>button:not(.dq-play){display:inline-flex;align-items:center;gap:6px}
+.dq-session .sld-dictation-answer{width:100%;min-height:72px}
+.dq-session .sld-dictation-feedback{margin-top:10px;padding:10px 12px;border:1px solid var(--voa-line);border-radius:12px;background:#f7fafc}
+.dq-session .sld-dictation-feedback.correct{border-color:#bfe6d2;background:#f0faf5}
+.dq-session .sld-dictation-feedback.wrong{border-color:#f1cdbb;background:#fff6f1}
+.dq-session .sld-dictation-feedback p{margin:6px 0 0}
+.dq-session .sld-dictation-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
+.dq-session .sld-dictation-actions>div{display:flex;flex-wrap:wrap;gap:8px}
+.dq-summary{max-width:760px;padding:20px}
+.dq-summary h2{margin:4px 0;font-size:26px}
+.dq-summary-list{display:grid;gap:8px;margin:14px 0;padding:0;list-style:none}
+.dq-summary-list li{display:flex;gap:9px;align-items:flex-start;padding:9px 11px;border:1px solid var(--voa-line);border-radius:11px}
+.dq-summary-list li.passed svg{color:#1ba672}
+.dq-summary-list li.failed svg{color:#d2643a}
+.dq-summary-list li div{display:grid;gap:2px}
+.dq-summary-list small{color:var(--voa-muted)}
+.dq-summary-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.dq-back{margin-top:14px;font-size:13px}
+.dq-back a{display:inline-flex;align-items:center;gap:5px;color:#087e91;font-weight:700;text-decoration:none}
+.dq-review-counts{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 12px;color:var(--voa-muted);font-size:13px}
+.dq-review-counts strong{color:var(--voa-ink);font-size:18px}
+.dq-review-list{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.dq-review-list li{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 14px}
+.dq-review-list li>span:nth-child(2){flex:1;min-width:180px}
+.dq-source{border-radius:7px;background:#eef4f8;color:#4c6a82;padding:3px 8px;font-size:11px;font-weight:800}
+
+/* Dictation home: "Hôm nay" shortcuts */
+.voa-today{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:4px 0 22px}
+.voa-lab .voa-today-card{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:118px;padding:16px;text-align:left;text-decoration:none;color:var(--voa-ink)}
+.voa-lab .voa-today-card:hover{border-color:#64b9c1;box-shadow:0 12px 28px #173e5c17}
+.voa-today-card strong{font-size:16px}
+.voa-today-card span{color:var(--voa-muted);font-size:13px;line-height:1.45}
+.voa-today-card small{margin-top:auto;color:#008b97;font-weight:750}
+.voa-today-card.is-primary{border-color:#9fd8dc;background:linear-gradient(135deg,#effafa,#fff)}
+@media(max-width:900px){.voa-today{grid-template-columns:1fr}}

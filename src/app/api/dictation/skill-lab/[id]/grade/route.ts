@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { skillLabAccess } from "@/lib/dictation-skill-lab/access";
 import { audioReady, getStoredLesson, gradeLesson, lessonReview } from "@/lib/dictation-skill-lab/lessons";
 
-type Body = { mode?: unknown; answers?: unknown; question_ids?: unknown };
+type Body = { mode?: unknown; answers?: unknown; question_ids?: unknown; submit?: unknown };
 
 /**
  * Grades on the server from the stored answer key. Practice checks one or more questions and
@@ -21,10 +21,13 @@ export async function POST(request: Request, context: { params: Promise<{ id: st
   const answers = Object.fromEntries(Object.entries(body.answers as Record<string, unknown>)
     .filter(([key, value]) => /^[A-Z]\d{2}$/.test(key) && typeof value === "string").slice(0, 200)) as Record<string, string>;
   const ids = Array.isArray(body.question_ids) ? body.question_ids.filter((id): id is string => typeof id === "string").slice(0, 200) : null;
-  const results = gradeLesson(lesson, answers, mode, ids ?? undefined);
+  // Dictation sentences are checked one by one in "Nghe & chép"; a lesson submission grades the IELTS-style questions.
+  const submitted = body.submit === true || !ids;
+  const questionIds = ids ?? lesson.questions.filter((question) => question.type !== "dictation").map((question) => question.question_id);
+  const results = gradeLesson(lesson, answers, mode, questionIds);
   const correct = results.filter((item) => item.correct).length;
   return NextResponse.json({
-    mode, results, correct, total: lesson.questions.length,
-    ...(ids ? {} : lessonReview(lesson)),
+    mode, results, correct, total: lesson.questions.filter((question) => question.type !== "dictation").length,
+    ...(submitted ? lessonReview(lesson) : {}),
   }, { headers: { "Cache-Control": "private, no-store" } });
 }

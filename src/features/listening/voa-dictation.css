@@ -216,3 +216,15 @@
 .voa-answer-actions small{font-size:12.5px}
 .voa-clip-exercise{max-width:880px}
 @media(max-width:640px){.voa-clip-filter{flex-wrap:wrap}.voa-clip-filter .voa-search{flex-basis:100%}.voa-clip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Phones: keep the answer box and buttons clear of the app's bottom bar and notebook bubble. */
+@media(max-width:700px){
+  .voa-lab{padding-bottom:132px}
+  body:has(.voa-lab textarea:focus, .voa-lab input:not([type=radio]):not([type=range]):focus) .bottom-nav{display:none}
+  body:has(.voa-practice-layout, .sld-player, .voa-clip-exercise, .dq-session) .notebook-bubble{display:none}
+  .voa-practice-layout{display:flex;flex-direction:column}
+  .voa-practice-layout .voa-sentence-sidebar{order:-1}
+  .voa-sentence-sidebar .voa-sentence-grid{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding-bottom:4px}
+  .voa-sentence-sidebar .voa-sentence-grid button{flex:none}
+  .voa-answer-actions small{display:none}
+}

@@ -5,7 +5,8 @@
  */
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { acceptedAnswers, gradeAnswer, type GradeMode, type GradeResult } from "./grade";
+import { acceptedAnswers, gradeAnswer, normalizeAnswer, type GradeMode, type GradeResult } from "./grade";
+import { turnSkills, type DictationSkillId } from "./skills";
 
 const root = join(process.cwd(), "content/dictation-skill-lab");
 
@@ -41,7 +42,8 @@ export type PublicLesson = {
 };
 export type CatalogEntry = {
   lesson_id: string; title: string; topic: string; level: string; section: number; content_format: string;
-  turns: number; questions: number; duration_ms: number; audio_ready: boolean; skill_tags: string[];
+  /** `questions` counts the IELTS-style questions; dictation sentences are the `turns`. */
+  turns: number; questions: number; duration_ms: number; audio_ready: boolean; skill_tags: string[]; skills: DictationSkillId[];
 };
 export type GradedQuestion = GradeResult & {
   question_id: string; accepted_answers: string[]; explanation_vi: string;
@@ -60,6 +62,10 @@ function manifest(): Manifest {
   try { manifestCache = { mtime, value: JSON.parse(readFileSync(path, "utf8")) as Manifest }; }
   catch { return manifestCache?.value ?? { status: "missing", turns: {} }; }
   return manifestCache.value;
+}
+
+export function allLessons(): StoredLesson[] {
+  return [...lessons().values()];
 }
 
 function lessons(): Map<string, StoredLesson> {
@@ -125,10 +131,11 @@ export function toPublicLesson(lesson: StoredLesson): PublicLesson {
 export function catalog(): CatalogEntry[] {
   return [...lessons().values()].map((lesson) => ({
     lesson_id: lesson.lesson_id, title: lesson.title, topic: lesson.topic, level: lesson.level, section: lesson.section, content_format: lesson.content_format,
-    turns: lesson.turns.length, questions: lesson.questions.length,
+    turns: lesson.turns.length, questions: lesson.questions.filter((question) => question.type !== "dictation").length,
     duration_ms: lesson.turns.reduce((sum, turn) => sum + (turnAudio(lesson, turn.turn_id)?.duration_ms ?? 0), 0),
     audio_ready: audioReady(lesson),
     skill_tags: [...new Set(lesson.questions.flatMap((question) => question.question_tags))].slice(0, 8),
+    skills: [...new Set(lesson.turns.flatMap((turn) => turnSkills(turn.text_en, lesson.lesson_id.slice(5, 7))))],
   }));
 }
 
@@ -157,4 +164,34 @@ export function lessonReview(lesson: StoredLesson) {
     transcript: lesson.turns.map((turn) => ({ turn_id: turn.turn_id, speaker_id: turn.speaker_id, text_en: turn.text_en, translation_vi: turn.translation_vi })),
     vocabulary: lesson.vocabulary,
   };
+}
+
+export function turnAudioUrl(lesson: StoredLesson, turnId: string) {
+  return turnAudio(lesson, turnId)?.file ?? null;
+}
+
+export function turnDurationMs(lesson: StoredLesson, turnId: string) {
+  return turnAudio(lesson, turnId)?.duration_ms ?? null;
+}
+
+/**
+ * Words the lesson is about in one sentence: answers of the other questions that rely on this turn
+ * and are said in it (the "sheep" of a ship/sheep drill, a price, a spelled name).
+ */
+export function focusFor(lesson: StoredLesson, turnId: string) {
+  const turn = lesson.turns.find((item) => item.turn_id === turnId);
+  if (!turn) return [];
+  const spoken = ` ${normalizeAnswer(turn.text_en)} `;
+  const phrases = lesson.questions
+    .filter((question) => question.type !== "dictation" && question.evidence_turn_ids.includes(turnId))
+    .flatMap((question) => question.correct_answers.slice(0, 1))
+    .map((answer) => answer.trim())
+    .filter((answer) => answer && answer.length <= 40 && spoken.includes(` ${normalizeAnswer(answer)} `));
+  return [...new Set(phrases.map((phrase) => phrase.toLowerCase()))];
+}
+
+/** Teaching note and words for one sentence, shown only after the learner has checked it. */
+export function turnNotes(lesson: StoredLesson, turnId: string) {
+  const explanation = lesson.questions.find((question) => question.type === "dictation" && question.evidence_turn_ids.includes(turnId))?.explanation_vi ?? "";
+  return { explanation_vi: explanation, vocabulary: lesson.vocabulary.filter((word) => word.source_turn_id === turnId) };
 }

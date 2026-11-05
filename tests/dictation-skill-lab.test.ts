@@ -133,3 +133,38 @@ describe("Skill Lab TTS voice plan and access", () => {
     expect(skillLabOpenToLearners({ DICTATION_SKILL_LAB_LOCKED: "true" })).toBe(false);
   });
 });
+
+import { dictationPassed, missingFocus, percentPassed } from "../src/lib/dictation/pass";
+import { turnSkills } from "../src/lib/dictation-skill-lab/skills";
+import { focusFor } from "../src/lib/dictation-skill-lab/lessons";
+
+describe("Dictation pass rule", () => {
+  it("fails a minimal-pair sentence when the focus word is wrong", () => {
+    const lesson = getStoredLesson("DICT-F1-001")!;
+    expect(focusFor(lesson, "T01")).toEqual(["sheep"]);
+    const missed = missingFocus(focusFor(lesson, "T01"), "The ship is near the gate");
+    expect(missed).toEqual(["sheep"]);
+    expect(dictationPassed("The sheep is near the gate.", 0.83, missed)).toBe(false);
+  });
+
+  it("requires every word in a sentence of six words or fewer", () => {
+    expect(dictationPassed("The sheep is near the gate.", 0.83)).toBe(false);
+    expect(dictationPassed("The sheep is near the gate.", 1)).toBe(true);
+    expect(percentPassed("Please go to room four sixteen today.", 86)).toBe(true);
+  });
+
+  it("matches focus words regardless of case and punctuation", () => {
+    expect(missingFocus(["sixty pounds"], "It costs SIXTY pounds!")).toEqual([]);
+    expect(missingFocus(["no"], "Nope.")).toEqual(["no"]);
+  });
+});
+
+describe("Dictation skills", () => {
+  it("tags sentences by what they train", () => {
+    expect(turnSkills("My name is Emma. E, M, M, A.", "F1")).toContain("spelling");
+    expect(turnSkills("It costs sixty pounds a night.", "S1")).toContain("numbers");
+    expect(turnSkills("The festival is on Saturday the twenty-third.", "F2")).toContain("dates");
+    expect(turnSkills("Turn left at the main entrance.", "S2")).toContain("places");
+    expect(turnSkills("The sheep is near the gate.", "F1")).toEqual(["sounds"]);
+  });
+});

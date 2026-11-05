@@ -24,13 +24,15 @@ export async function GET(request: Request) {
     // A day boundary in any time zone lies within a day of UTC midnight.
     const since = `${addDays(from, -1)}T00:00:00Z`, until = `${addDays(to, 2)}T00:00:00Z`;
 
-    const [bank, exercises, practice, visits, streakDays] = await Promise.all([
+    const [bank, exercises, practice, visits, streakDays, voaDictation, clipDictation] = await Promise.all([
       bankClient().from("ielts_attempts").select("started_at,submitted_at,state,ielts_exams(skill,duration_minutes)")
         .eq("user_id", user.id).gte("started_at", `${addDays(from, -2)}T00:00:00Z`).lt("started_at", until).limit(500),
       db.from("exercise_attempts").select("lesson_slug,submitted_at").gte("submitted_at", since).lt("submitted_at", until).limit(500),
       db.from("package_practice_results").select("lesson_slug,updated_at").gte("updated_at", since).lt("updated_at", until).limit(500),
       db.from("study_visits").select("visited_at").gte("visited_at", since).lt("visited_at", until).limit(500),
       db.from("learner_activity_days").select("day").gte("day", from).lte("day", to),
+      db.from("voa_dictation_attempts").select("created_at").eq("user_id", user.id).gte("created_at", since).lt("created_at", until).limit(1000),
+      db.from("dictation_clip_attempts").select("created_at").eq("user_id", user.id).gte("created_at", since).lt("created_at", until).limit(1000),
     ]);
     const failure = bank.error || exercises.error || practice.error || visits.error || streakDays.error;
     if (failure) throw new Error(failure.message);
@@ -53,10 +55,23 @@ export async function GET(request: Request) {
     }
     // Course practice keeps only its latest result per lesson; skip it when the same lesson was already graded that day.
     for (const row of practice.data ?? []) {
+      // One row per dictation sentence: the lesson's own "skill-lab-dictation:" row already counts the session.
+      if (row.lesson_slug.startsWith("skill-lab-turn:")) continue;
       if (exerciseDays.has(`${row.lesson_slug}@${localDay(row.updated_at, timezone)}`)) continue;
       items.push({ at: row.updated_at, skill: skillOf(row.lesson_slug), counted: true, minutes: 0 });
     }
     for (const row of visits.data ?? []) items.push({ at: row.visited_at, skill: "other", counted: false, minutes: 0 });
+    // VOA and Quick dictation keep one row per checked sentence; count one practice per day for each bank.
+    // Their tables may be missing on an older database, so a failed read only drops these items.
+    for (const rows of [voaDictation.error ? [] : voaDictation.data ?? [], clipDictation.error ? [] : clipDictation.data ?? []]) {
+      const days = new Set<string>();
+      for (const row of rows) {
+        const day = localDay(row.created_at, timezone);
+        if (days.has(day)) continue;
+        days.add(day);
+        items.push({ at: row.created_at, skill: "Listening", counted: true, minutes: 0 });
+      }
+    }
 
     const goals: ProgressGoals = {
       overall: band(profile.target_band), Reading: band(profile.target_reading), Listening: band(profile.target_listening),
