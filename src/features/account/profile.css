@@ -9,6 +9,19 @@
 
 .profile-hero { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 22px; padding: 22px 24px; overflow: hidden; background: var(--dot-grid) 0 0 / 18px 18px, linear-gradient(120deg, #e8f7f5, #fffaf0); }
 .profile-avatar { display: grid; place-items: center; width: 112px; height: 112px; border: 3px solid #fff; border-radius: 30px; background: #fff; box-shadow: var(--shadow); rotate: -3deg; }
+.profile-level{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:4px 9px;max-width:330px;margin:8px 0;color:var(--navy)}
+.profile-level strong{padding:3px 8px;border-radius:7px;background:#e3f4ef;color:#087f76;font-size:12px;white-space:nowrap}
+.profile-level span{font-size:12px;font-weight:700}
+.profile-level>div{grid-column:1/-1;height:7px;overflow:hidden;border-radius:99px;background:#dcece9}
+.profile-level>div i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#32c5b2,#2d88bd)}
+.profile-level small{grid-column:1/-1;color:var(--muted);font-size:11px}
+.profile-frame-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;margin-top:14px}
+.profile-frame-option{display:grid;justify-items:center;gap:5px;min-height:132px;padding:13px 7px;border:1px solid var(--line);border-radius:15px;background:#fff;color:var(--navy);cursor:pointer}
+.profile-frame-option:hover:not(:disabled){border-color:#5bbfc3;background:#f5fcfb}
+.profile-frame-option.selected{border-color:#119ba4;box-shadow:0 0 0 2px #bcece9;background:#f2fbf9}
+.profile-frame-option:disabled{cursor:not-allowed;opacity:.48;filter:grayscale(.8)}
+.profile-frame-option strong{font-size:12px}.profile-frame-option small{color:var(--muted);font-size:10px}
+.profile-frame-option:focus-visible{outline:3px solid #49b9c2;outline-offset:2px}
 .profile-id h1 { margin: 2px 0 2px; font-size: clamp(22px, 2.4vw, 30px); }
 .profile-id > p { margin: 0; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
 .profile-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }

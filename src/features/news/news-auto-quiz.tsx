@@ -264,6 +264,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
     }
     setBusy(false);
     if (!review) return;
+    if (!partial) window.dispatchEvent(new Event("learner-xp-updated"));
     const result = review;
     setReviews((current) => ({ ...current, ...Object.fromEntries(result.map((item) => [item.id, item])) }));
     setDuration(seconds);

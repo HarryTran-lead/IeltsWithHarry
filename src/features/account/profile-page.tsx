@@ -8,6 +8,8 @@ import { HeadIcon } from "@/components/ui/head-icon";
 import { ActivityHeatmap } from "@/components/account/activity-heatmap";
 import { activeUntil, activityLabels, avatarPhotoUrl, avatarStickers, untilLabel, type LearnerOverview } from "@/lib/account";
 import { AccountAvatar } from "@/components/account/account-avatar";
+import { AvatarFrame } from "@/components/account/avatar-frame";
+import { avatarFrames, levelProgress, rankForLevel } from "@/lib/gamification";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { stages } from "@/lib/demo-data";
 import { demoMode, learnStageAvailable } from "@/lib/runtime";
@@ -43,10 +45,14 @@ export function ProfilePage() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
+  const [xp, setXp] = useState(0);
+  const [frameBusy, setFrameBusy] = useState(false);
+  const [frameError, setFrameError] = useState("");
   const load = useCallback(async () => {
     if (!db) return;
-    const [overview, user, admin] = await Promise.all([db.rpc("learner_overview"), db.auth.getUser(), db.rpc("is_admin")]);
+    const [overview, user, admin, progress] = await Promise.all([db.rpc("learner_overview"), db.auth.getUser(), db.rpc("is_admin"), db.rpc("learner_xp_summary")]);
     if (overview.error) setError(overview.error.message); else setData(overview.data as LearnerOverview);
+    if (!progress.error) setXp(Number((progress.data as { xp?: number } | null)?.xp ?? 0));
     setEmail(user.data.user?.email ?? "");
     setIsAdmin(admin.data === true);
   }, [db]);
@@ -57,6 +63,16 @@ export function ProfilePage() {
   if (!data) return <div className="content-page profile-page" aria-busy="true"><span className="skeleton profile-skeleton" /><span className="skeleton profile-skeleton short" /></div>;
 
   const { profile, streak, stats, controls } = data;
+  const progress = levelProgress(xp);
+  async function equipFrame(frame: string) {
+    if (!db || progress.level < (avatarFrames.find((item) => item.id === frame)?.level ?? Infinity)) return;
+    setFrameBusy(true); setFrameError("");
+    const { error: updateError } = await db.from("profiles").update({ avatar_frame: frame }).eq("id", profile.id);
+    setFrameBusy(false);
+    if (updateError) { setFrameError(updateError.message); return; }
+    window.dispatchEvent(new Event("account-avatar-updated"));
+    await load();
+  }
   const stage = stages.find((item) => item.id === profile.stage_id);
   // Counted from the learner's local "today" that the server already worked out.
   const daysToExam = profile.exam_date ? Math.round((Date.parse(`${profile.exam_date}T00:00:00Z`) - Date.parse(`${streak.today}T00:00:00Z`)) / 86400000) : null;
@@ -72,10 +88,11 @@ export function ProfilePage() {
 
   return <div className="content-page profile-page">
     <section className="card profile-hero">
-      <div className="profile-avatar">{isAdmin ? <HarryMascot size={84} /> : <AccountAvatar value={profile.avatar} size={84} />}</div>
+      <div className="profile-avatar">{isAdmin ? <HarryMascot size={84} /> : <AvatarFrame avatar={profile.avatar} frame={profile.avatar_frame} size={94} />}</div>
       <div className="profile-id">
         <span className="eyebrow">HỒ SƠ HỌC VIÊN</span>
         <h1>{profile.display_name}</h1>
+        <div className="profile-level"><strong>Cấp {progress.level}</strong><span>{rankForLevel(progress.level)} · {xp.toLocaleString("vi-VN")} XP</span><div role="progressbar" aria-label="Tiến độ lên cấp" aria-valuemin={0} aria-valuemax={progress.required} aria-valuenow={progress.earned}><i style={{ width: `${progress.percent}%` }} /></div><small>{progress.earned}/{progress.required} XP tới cấp {progress.level + 1}</small></div>
         <p>{email} · Tham gia {dateLabel(profile.created_at)}</p>
         <div className="profile-chips">
           {profile.target_band && <span className="chip-target"><Target size={14} /> Mục tiêu {Number(profile.target_band).toFixed(1)}</span>}
@@ -93,6 +110,19 @@ export function ProfilePage() {
         <small>Kỷ lục: {streak.longest} ngày</small>
       </div>
     </section>
+
+    {!isAdmin && <section className="card section-card profile-frame-section">
+      <div className="section-head"><h2>Bộ khung avatar</h2><span>Khung hiện cạnh tên của bạn trong Cộng đồng.</span></div>
+      <div className="profile-frame-grid">{avatarFrames.map((frame) => {
+        const unlocked = progress.level >= frame.level;
+        const selected = (profile.avatar_frame ?? "classic") === frame.id;
+        return <button key={frame.id} type="button" className={`profile-frame-option ${selected ? "selected" : ""}`} disabled={!unlocked || frameBusy} aria-pressed={selected} onClick={() => void equipFrame(frame.id)}>
+          <AvatarFrame avatar={profile.avatar} frame={frame.id} size={64} />
+          <strong>{frame.label}</strong><small>{unlocked ? selected ? "Đang dùng" : "Chọn khung" : `Mở ở cấp ${frame.level}`}</small>
+        </button>;
+      })}</div>
+      {frameError && <p className="form-error" role="alert">Không lưu được khung: {frameError}</p>}
+    </section>}
 
     {muted && <p className="profile-notice" role="status"><MessageCircleOff size={18} /> Bạn đang bị tạm cấm chat trong phòng cùng học {untilLabel(controls?.chatMutedUntil)}.{controls?.chatMutedReason && ` Lý do: ${controls.chatMutedReason}`}</p>}
 

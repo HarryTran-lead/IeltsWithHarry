@@ -45,9 +45,9 @@ import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
 import { useStudyPresence } from "@/features/study-room/study-presence";
 import { NotificationBell } from "@/components/account/notification-bell";
-import { AccountAvatar } from "@/components/account/account-avatar";
+import { AvatarFrame } from "@/components/account/avatar-frame";
+import { levelProgress, rankForLevel } from "@/lib/gamification";
 import { useNewsUnread } from "@/features/news/news-unread";
-import { subscribePracticeResults } from "@/features/learning/practice-results";
 import { catalogQuestionTypeIds, catalogQuestionTypes, catalogEntriesForSelection, type CatalogExam } from "@/lib/ielts-bank/catalog";
 import { HeaderSkyBackdrop, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather } from "@/components/header-weather";
 import weatherStyles from "@/components/header-weather/headerWeather.module.css";
@@ -191,25 +191,16 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const newsUnread = useNewsUnread(pathname, liveMode);
   const [profileOpen, setProfileOpen] = useState(false);
   const [avatar, setAvatar] = useState("harry");
+  const [avatarFrame, setAvatarFrame] = useState("classic");
+  const [xpTotal, setXpTotal] = useState<number | null>(null);
+  const [loginBonus, setLoginBonus] = useState(0);
+  const liveProgress = levelProgress(xpTotal ?? 0);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
-  const [book2Practiced, setBook2Practiced] = useState(0);
   const searchInput = useRef<HTMLInputElement>(null);
   const completed = tasks.filter((t) => t.completed).length;
   const xp = 320 + Math.max(0, completed - 3) * 15 + attempts.length * 20;
-  useEffect(() => {
-    if (demoMode) return;
-    const db = createClient();
-    let active = true;
-    const loadCount = async () => {
-      const { count } = await db.from("package_practice_results").select("lesson_slug", { count: "exact", head: true }).like("lesson_slug", "b2-%").gt("checked", 0);
-      if (active && count !== null) setBook2Practiced(count);
-    };
-    void loadCount();
-    const unsubscribe = subscribePracticeResults((slug) => { if (slug.startsWith("b2-")) void loadCount(); });
-    return () => { active = false; unsubscribe(); };
-  }, []);
   const filtered = searchItems
     .filter((item) => !lockedLearnerPath(item.href) && item.label.toLowerCase().includes(query.toLowerCase()))
     .slice(0, 5);
@@ -285,13 +276,27 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
     async function loadAvatar() {
       const { data: user } = await db.auth.getUser();
       if (!user.user) return;
-      const { data } = await db.from("profiles").select("avatar").eq("id", user.user.id).maybeSingle();
+      const [{ data }, claim] = await Promise.all([
+        db.from("profiles").select("avatar,avatar_frame").eq("id", user.user.id).maybeSingle(),
+        db.rpc("claim_daily_login_xp"),
+      ]);
       if (active && data?.avatar) setAvatar(data.avatar);
+      if (active && data?.avatar_frame) setAvatarFrame(data.avatar_frame);
+      if (active && !claim.error && Number(claim.data) === 5) setLoginBonus(5);
+      const summary = await db.rpc("learner_xp_summary");
+      if (active && !summary.error) setXpTotal(Number((summary.data as { xp?: number } | null)?.xp ?? 0));
     }
     void loadAvatar();
     window.addEventListener("account-avatar-updated", loadAvatar);
-    return () => { active = false; window.removeEventListener("account-avatar-updated", loadAvatar); };
-  }, []);
+    window.addEventListener("learner-xp-updated", loadAvatar);
+    return () => { active = false; window.removeEventListener("account-avatar-updated", loadAvatar); window.removeEventListener("learner-xp-updated", loadAvatar); };
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!loginBonus) return;
+    const timer = window.setTimeout(() => setLoginBonus(0), 5000);
+    return () => window.clearTimeout(timer);
+  }, [loginBonus]);
 
   function toggleSidebar() {
     setSidebarCollapsed((current) => {
@@ -371,22 +376,23 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           )}
         </div>
         <div className="header-actions">
+          {loginBonus > 0 && <span className="login-xp-toast" role="status">+5 XP · Đăng nhập hôm nay</span>}
           <HeaderWeatherWidget />
           <Link href="/app/progress" className="stat-pill streak" title="Chuỗi ngày học">
             <Flame size={18} fill="#ff9b3d" color="#ef6a24" />
             <strong>{demoMode ? 12 : learnerStreak?.current ?? "…"}</strong>
             <small>ngày liên tiếp</small>
           </Link>
-          {demoMode && <div className="stat-pill xp" title="XP points">
+          <div className="stat-pill xp" title="Kinh nghiệm học tập">
             <Star size={18} fill="#ffd15a" color="#e0a020" />
-            <strong>{xp}</strong>
+            <strong>{demoMode ? xp : xpTotal?.toLocaleString("vi-VN") ?? "…"}</strong>
             <small>XP</small>
-          </div>}
+          </div>
           <div className="stat-pill level">
             <Trophy size={18} fill="#ffd15a" color="#d99a17" />
-            <strong>{demoMode ? "Level 3" : `${completed} tasks`}</strong>
-            <small>{demoMode ? "Demo learner" : `${attempts.length + book2Practiced} bài đã luyện`}</small>
-            {demoMode && <span className="level-bar" title={`${xp % 500}/500 XP tới level tiếp theo`}><i style={{ width: `${(xp % 500) / 5}%` }} /></span>}
+            <strong>{demoMode ? "Level 3" : xpTotal === null ? "Cấp …" : `Cấp ${liveProgress.level}`}</strong>
+            <small>{demoMode ? "Demo learner" : xpTotal === null ? "Đang tải XP" : rankForLevel(liveProgress.level)}</small>
+            <span className="level-bar" title={demoMode ? `${xp % 500}/500 XP tới level tiếp theo` : `${liveProgress.earned}/${liveProgress.required} XP tới cấp ${liveProgress.level + 1}`}><i style={{ width: demoMode ? `${(xp % 500) / 5}%` : `${liveProgress.percent}%` }} /></span>
           </div>
           <span className="header-divider" aria-hidden="true" />
           <div className="popover-wrap">
@@ -421,7 +427,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
                 setNotificationsOpen(false);
               }}
             >
-              {demoMode ? <span><UserRound size={18} strokeWidth={2.2} /></span> : canManage ? <HarryMascot size={34} /> : <AccountAvatar value={avatar} size={34} />}
+              {demoMode ? <span><UserRound size={18} strokeWidth={2.2} /></span> : canManage ? <HarryMascot size={34} /> : <AvatarFrame avatar={avatar} frame={avatarFrame} size={34} />}
               <ChevronDown size={15} />
             </button>
             {profileOpen && (

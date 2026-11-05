@@ -1,0 +1,12 @@
+.avatar-frame{--frame-a:#b7c9d2;--frame-b:#f7fbfc;--frame-glow:#80a6b440;position:relative;display:inline-grid;flex:none;place-items:center;isolation:isolate;vertical-align:middle;border-radius:50%;background:conic-gradient(from -20deg,var(--frame-a),var(--frame-b),var(--frame-a),var(--frame-b),var(--frame-a));box-shadow:0 0 0 2px #fff,0 3px 12px var(--frame-glow)}
+.avatar-frame::before{content:"";position:absolute;inset:5%;border:1px solid #ffffffb8;border-radius:50%;pointer-events:none;z-index:1}
+.avatar-frame::after{content:"✦";position:absolute;top:-8%;right:-4%;display:grid;place-items:center;width:27%;height:27%;border:2px solid #fff;border-radius:50%;background:var(--frame-a);color:#fff;font-size:clamp(8px,1.5em,15px);line-height:1;box-shadow:0 2px 7px var(--frame-glow);z-index:2}
+.avatar-frame>.account-avatar-art{z-index:0;background:#fff}
+.avatar-frame--classic::after{content:"";display:none}
+.avatar-frame--leaf{--frame-a:#43b889;--frame-b:#ddf8da;--frame-glow:#43b88950}.avatar-frame--leaf::after{content:"✿"}
+.avatar-frame--compass{--frame-a:#298fbd;--frame-b:#d7f4ff;--frame-glow:#298fbd50}.avatar-frame--compass::after{content:"✧"}
+.avatar-frame--flame{--frame-a:#f37441;--frame-b:#ffe1a2;--frame-glow:#e96a3d60}.avatar-frame--flame::after{content:"✦"}
+.avatar-frame--book{--frame-a:#8f68cc;--frame-b:#eee2ff;--frame-glow:#8f68cc55}.avatar-frame--book::after{content:"✣"}
+.avatar-frame--mountain{--frame-a:#4385a1;--frame-b:#d7edf4;--frame-glow:#4385a155}.avatar-frame--mountain::after{content:"◆"}
+.avatar-frame--crown{--frame-a:#dca843;--frame-b:#fff1b8;--frame-glow:#dca84365}.avatar-frame--crown::after{content:"♛"}
+.login-xp-toast{position:fixed;right:18px;bottom:18px;z-index:80;padding:11px 16px;border:1px solid #b5e8d6;border-radius:12px;background:#e8fbf2;color:#087856;box-shadow:0 8px 28px #134b3930;font-size:13px;font-weight:800}

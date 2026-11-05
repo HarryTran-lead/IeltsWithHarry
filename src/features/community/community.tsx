@@ -9,12 +9,14 @@ import {
   Send, ShieldAlert, Sparkles, UsersRound, X,
 } from "lucide-react";
 import { demoMode } from "@/lib/runtime";
+import { AvatarFrame } from "@/components/account/avatar-frame";
 import { Sticker } from "@/components/stickers/stickers";
 
 type PostKind = "discussion" | "question" | "writing_review" | "speaking_review";
 type Topic = "IELTS" | "Grammar" | "Vocabulary" | "Writing" | "Speaking" | "Reading" | "Listening";
-type Post = { id: string; author_id: string; author_name: string; kind: PostKind; topic: Topic; title: string; body: string; status: string; accepted_comment_id: string | null; created_at: string; likes: number; comments: number; liked: boolean; saved: boolean };
-type Comment = { id: string; post_id: string; parent_id: string | null; author_id: string; author_name: string; body: string; created_at: string };
+type AuthorCard = { avatar: string; frame: string; level: number } | null;
+type Post = { id: string; author_id: string; author_name: string; author_card?: AuthorCard; kind: PostKind; topic: Topic; title: string; body: string; status: string; accepted_comment_id: string | null; created_at: string; likes: number; comments: number; liked: boolean; saved: boolean };
+type Comment = { id: string; post_id: string; parent_id: string | null; author_id: string; author_name: string; author_card?: AuthorCard; body: string; created_at: string };
 type Notification = { id: string; actor_name: string; post_id: string; kind: string; read_at: string | null; created_at: string };
 type Report = { id: string; post_id: string; reason: string; detail: string; created_at: string };
 type FeedResult = { posts: Post[]; hasMore: boolean; userId: string };
@@ -55,16 +57,21 @@ function when(value: string) {
   return new Date(value).toLocaleDateString("vi-VN");
 }
 
-function Avatar({ name }: { name: string }) {
-  return <span className="community-avatar" aria-hidden="true">{name.trim().charAt(0).toLocaleUpperCase("vi-VN") || "H"}</span>;
+function Avatar({ name, card, small = false }: { name: string; card?: AuthorCard; small?: boolean }) {
+  return card ? <AvatarFrame avatar={card.avatar} frame={card.frame} size={small ? 35 : 43} alt={`Ảnh đại diện của ${name}`} />
+    : <span className="community-avatar" aria-hidden="true">{name.trim().charAt(0).toLocaleUpperCase("vi-VN") || "H"}</span>;
+}
+
+function Level({ card }: { card?: AuthorCard }) {
+  return card && Number.isFinite(card.level) ? <span className="community-level" title={`Cấp học tập ${card.level}`}>Lv.{card.level}</span> : null;
 }
 
 function PostCard({ post, onAction, busy, userId }: { post: Post; onAction: (action: string, post: Post) => void; busy: boolean; userId: string }) {
   const [menu, setMenu] = useState(false);
   return <article className="community-post">
     <div className="community-post-head">
-      <Avatar name={post.author_name} />
-      <div className="community-post-author"><strong>{post.author_name}</strong><span>· {when(post.created_at)}</span></div>
+      <Avatar name={post.author_name} card={post.author_card} />
+      <div className="community-post-author"><strong>{post.author_name}</strong><Level card={post.author_card} /><span>· {when(post.created_at)}</span></div>
       <span className={`community-topic topic-${post.topic.toLowerCase()}`}>{post.topic}</span>
       {!demoMode && <div className="community-menu-wrap"><button type="button" className="community-icon" aria-label="Tùy chọn bài viết" aria-expanded={menu} onClick={() => setMenu(!menu)}><MoreHorizontal size={19} /></button>{menu && <div className="community-menu">{post.author_id === userId ? <button onClick={() => { onAction("delete", post); setMenu(false); }}><X size={14} /> Xóa bài viết</button> : <><button onClick={() => { onAction("report", post); setMenu(false); }}><Flag size={14} /> Báo cáo</button><button onClick={() => { onAction("block", post); setMenu(false); }}><ShieldAlert size={14} /> Chặn tác giả</button></>}<button onClick={() => setMenu(false)}><X size={14} /> Đóng</button></div>}</div>}
     </div>
@@ -244,7 +251,7 @@ export function Community({ canManage = false }: { canManage?: boolean }) {
         {loading && !post ? <div className="community-skeleton" /> : post ? <>
           <PostCard post={post} onAction={action} busy={busy} userId={userId} />
           <section className="community-comments"><div className="community-section-title"><h2>Câu trả lời ({replies.length})</h2>{post.kind === "question" && post.accepted_comment_id && <span className="community-solved"><CheckCircle2 size={15} /> Đã giải đáp</span>}</div>
-            {replies.length ? replies.filter((item) => !item.parent_id).map((item) => <div className="community-comment" key={item.id}><Avatar name={item.author_name} /><div className="community-comment-content"><div><strong>{item.author_name}</strong><span> · {when(item.created_at)}</span>{post.accepted_comment_id === item.id && <em><Check size={13} /> Câu trả lời hữu ích nhất</em>}</div><p>{item.body}</p><div className="community-comment-actions"><button onClick={() => setReplyTo(item.id)}>Trả lời</button>{post.kind === "question" && post.author_id === userId && <button onClick={() => void accept(item.id)} disabled={busy}>{post.accepted_comment_id === item.id ? "Bỏ chọn" : "Chọn hữu ích nhất"}</button>}{item.author_id === userId && <button onClick={() => void deleteComment(item.id)} disabled={busy}>Xóa</button>}</div>{replies.filter((reply) => reply.parent_id === item.id).map((reply) => <div className="community-comment nested" key={reply.id}><Avatar name={reply.author_name} /><div><strong>{reply.author_name}</strong><span> · {when(reply.created_at)}</span><p>{reply.body}</p>{reply.author_id === userId && <button className="community-comment-delete" onClick={() => void deleteComment(reply.id)}>Xóa</button>}</div></div>)}</div></div>) : <p className="community-empty-inline">Chưa có phản hồi. Hãy bắt đầu cuộc thảo luận.</p>}
+            {replies.length ? replies.filter((item) => !item.parent_id).map((item) => <div className="community-comment" key={item.id}><Avatar name={item.author_name} card={item.author_card} small /><div className="community-comment-content"><div><strong>{item.author_name}</strong><Level card={item.author_card} /><span> · {when(item.created_at)}</span>{post.accepted_comment_id === item.id && <em><Check size={13} /> Câu trả lời hữu ích nhất</em>}</div><p>{item.body}</p><div className="community-comment-actions"><button onClick={() => setReplyTo(item.id)}>Trả lời</button>{post.kind === "question" && post.author_id === userId && <button onClick={() => void accept(item.id)} disabled={busy}>{post.accepted_comment_id === item.id ? "Bỏ chọn" : "Chọn hữu ích nhất"}</button>}{item.author_id === userId && <button onClick={() => void deleteComment(item.id)} disabled={busy}>Xóa</button>}</div>{replies.filter((reply) => reply.parent_id === item.id).map((reply) => <div className="community-comment nested" key={reply.id}><Avatar name={reply.author_name} card={reply.author_card} small /><div><strong>{reply.author_name}</strong><Level card={reply.author_card} /><span> · {when(reply.created_at)}</span><p>{reply.body}</p>{reply.author_id === userId && <button className="community-comment-delete" onClick={() => void deleteComment(reply.id)}>Xóa</button>}</div></div>)}</div></div>) : <p className="community-empty-inline">Chưa có phản hồi. Hãy bắt đầu cuộc thảo luận.</p>}
             {!demoMode && <form onSubmit={sendComment} className="community-comment-form"><label htmlFor="community-comment">Viết bình luận</label>{replyTo && <div className="community-replying">Đang trả lời bình luận <button type="button" onClick={() => setReplyTo(null)}>Hủy</button></div>}<textarea id="community-comment" minLength={2} maxLength={3000} required rows={3} placeholder="Góp ý cụ thể và tôn trọng người học khác…" value={comment} onChange={(event) => setComment(event.target.value)} /><button className="community-primary" disabled={busy || !comment.trim()}><Send size={15} /> Gửi bình luận</button></form>}
           </section>
         </> : !loading && <section className="community-empty">Không tìm thấy bài viết. <Link href="/app/community">Quay về bảng tin</Link></section>}

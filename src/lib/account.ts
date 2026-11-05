@@ -12,7 +12,7 @@ export function avatarPhotoUrl(value: unknown) {
 export type StreakDay = { day: string; events: number; kinds: string[] };
 export type Streak = { current: number; longest: number; today: string; activeToday: boolean; totalDays: number; days: StreakDay[] };
 export type AccountControls = { suspendedUntil: string | null; suspendedReason: string; chatMutedUntil: string | null; chatMutedReason: string };
-export type LearnerProfile = { id: string; display_name: string; timezone: string; daily_goal: number; bio: string; target_band: number | null; exam_date: string | null; stage_id: string | null; avatar: string; created_at: string };
+export type LearnerProfile = { id: string; display_name: string; timezone: string; daily_goal: number; bio: string; target_band: number | null; exam_date: string | null; stage_id: string | null; avatar: string; avatar_frame?: string; created_at: string };
 export type TimelineItem = { kind: string; at: string; title: string; score?: number; total?: number; link?: string };
 export type LearnerOverview = {
   profile: LearnerProfile;

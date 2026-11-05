@@ -28,13 +28,26 @@ async function context() {
   return { db, user: data.user };
 }
 
+async function authorCards(db: Awaited<ReturnType<typeof createClient>>, ids: string[]) {
+  const unique = [...new Set(ids)].filter(Boolean);
+  if (!unique.length) return {};
+  const cards: Record<string, { avatar: string; frame: string; level: number }> = {};
+  for (let index = 0; index < unique.length; index += 50) {
+    const { data, error } = await db.rpc("community_author_cards", { p_ids: unique.slice(index, index + 50) });
+    if (error) throw new Error(error.message);
+    Object.assign(cards, data ?? {});
+  }
+  return cards;
+}
+
 async function enrich(db: Awaited<ReturnType<typeof createClient>>, userId: string, posts: Record<string, unknown>[]) {
   if (!posts.length) return [];
   const ids = posts.map((post) => String(post.id));
-  const [likes, comments, bookmarks] = await Promise.all([
+  const [likes, comments, bookmarks, cards] = await Promise.all([
     db.from("community_reactions").select("post_id,user_id").in("post_id", ids),
     db.from("community_comments").select("post_id").in("post_id", ids).eq("status", "published"),
     db.from("community_bookmarks").select("post_id").in("post_id", ids).eq("user_id", userId),
+    authorCards(db, posts.map((post) => String(post.author_id))),
   ]);
   const failure = likes.error || comments.error || bookmarks.error;
   if (failure) throw new Error(failure.message);
@@ -46,7 +59,7 @@ async function enrich(db: Awaited<ReturnType<typeof createClient>>, userId: stri
   }
   for (const row of comments.data ?? []) commentCount.set(row.post_id, (commentCount.get(row.post_id) ?? 0) + 1);
   for (const row of bookmarks.data ?? []) saved.add(row.post_id);
-  return posts.map((post) => ({ ...post, likes: likeCount.get(String(post.id)) ?? 0, comments: commentCount.get(String(post.id)) ?? 0, liked: liked.has(String(post.id)), saved: saved.has(String(post.id)) }));
+  return posts.map((post) => ({ ...post, author_card: cards[String(post.author_id)] ?? null, likes: likeCount.get(String(post.id)) ?? 0, comments: commentCount.get(String(post.id)) ?? 0, liked: liked.has(String(post.id)), saved: saved.has(String(post.id)) }));
 }
 
 export async function GET(request: Request) {
@@ -74,7 +87,8 @@ export async function GET(request: Request) {
       if (!post || post.status !== "published" && post.author_id !== user.id && !admin) return Response.json({ error: "Bài viết không tồn tại hoặc đã bị ẩn" }, { status: 404 });
       const { data: comments, error: commentsError } = await db.from("community_comments").select("id,post_id,parent_id,author_id,author_name,body,status,created_at").eq("post_id", id).eq("status", "published").order("created_at", { ascending: true });
       if (commentsError) throw new Error(commentsError.message);
-      return Response.json({ post: (await enrich(db, user.id, [post]))[0], replies: comments ?? [], userId: user.id });
+      const cards = await authorCards(db, (comments ?? []).map((comment) => comment.author_id));
+      return Response.json({ post: (await enrich(db, user.id, [post]))[0], replies: (comments ?? []).map((comment) => ({ ...comment, author_card: cards[comment.author_id] ?? null })), userId: user.id });
     }
     const page = Math.min(50, Math.max(0, Number(params.get("page") ?? 0) || 0));
     let query = db.from("community_posts").select("id,author_id,author_name,kind,topic,title,body,status,accepted_comment_id,created_at").eq("status", "published").order("created_at", { ascending: false }).range(page * 12, page * 12 + 12);
