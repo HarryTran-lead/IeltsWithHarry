@@ -19,6 +19,7 @@ describe("learner input validation", () => {
   });
   it("requires meaningful notebook notes and vocabulary meanings", () => {
     expect(notebookInputSchema.safeParse({ kind: "note", title: "Grammar", body: "  ", meaningVi: "", example: "" }).success).toBe(false);
+    expect(notebookInputSchema.safeParse({ kind: "note", title: "Long document", body: "a".repeat(6000), meaningVi: "", example: "" }).success).toBe(true);
     expect(notebookInputSchema.safeParse({ kind: "word", title: "device", body: "", meaningVi: "thiết bị", example: "a device" }).success).toBe(true);
     expect(notebookInputSchema.safeParse({ kind: "word", title: "device", body: "", meaningVi: "", example: "" }).success).toBe(false);
   });

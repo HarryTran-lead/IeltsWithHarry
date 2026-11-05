@@ -76,3 +76,9 @@
 .smart-library-tools{grid-template-columns:minmax(220px,1fr) auto auto auto}.smart-folder-filter{display:flex;align-items:center;gap:4px;height:45px;padding:0 8px;border:1px solid #e6eaee;border-radius:11px;background:#fff;color:#66809a}.smart-folder-filter select{max-width:95px;border:0;outline:0;background:transparent;color:#496686;font-size:13px;font-weight:650}.smart-book-info p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.smart-cover-picker{width:min(680px,100%)}
 @media(max-width:850px){.smart-library-tools{grid-template-columns:1fr auto}.smart-library-tools .smart-search{grid-column:1/-1}.smart-folder-filter{justify-self:start}}
 @media(max-width:500px){.smart-library-tools{grid-template-columns:1fr}.smart-library-tools .smart-search{grid-column:auto}}
+
+/* Give the document editor room to write without shrinking the A4 page. */
+.content-page.smart-editor{max-width:1600px}
+.smart-tool-primary .smart-write-button{min-width:82px;background:#e2f5f4;color:#087781;font-weight:800}
+.smart-tool-primary .smart-write-button:hover{background:#c9eeeb}
+@media(min-width:751px){.smart-canvas-scroll{height:min(82vh,1123px);min-height:680px}}
