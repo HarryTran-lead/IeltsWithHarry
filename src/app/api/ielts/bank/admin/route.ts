@@ -143,9 +143,11 @@ export async function POST(request: Request) {
       const warnings = validateExam({ ...exam, topic: undefined, difficulty: undefined, aiGenerated: false, upstreamVersion: "admin-upload" });
       const { data, error } = await client.rpc("ielts_upsert_import", { p_source: "manual", p_external: exam.externalId, p_meta: { skill: exam.skill, title: exam.title, format: exam.format, mode: exam.mode, duration_minutes: exam.durationMinutes, license: exam.license, license_url: exam.licenseUrl, source_url: exam.sourceUrl, attribution: exam.attribution, ai_generated: false }, p_content: exam.content, p_hash: contentHash(exam.content), p_upstream: "admin-upload", p_warnings: warnings });
       if (error) throw new Error(error.message);
-      const { data: saved } = await client.from("ielts_exams").select("id,current_version_id").eq("source_id", "manual").eq("external_id", exam.externalId).single();
-      if (saved) await client.from("ielts_review_log").insert({ exam_id: saved.id, version_id: saved.current_version_id, actor_id: user.id, action: "manual_permission_confirmed", note: `${exam.sourceUrl} · ${exam.license}` });
-      return Response.json({ status: data, warnings });
+      const { data: saved, error: savedError } = await client.from("ielts_exams").select("id,current_version_id").eq("source_id", "manual").eq("external_id", exam.externalId).single();
+      if (savedError || !saved) throw new Error(savedError?.message || "Imported exam unavailable");
+      const { error: logError } = await client.from("ielts_review_log").insert({ exam_id: saved.id, version_id: saved.current_version_id, actor_id: user.id, action: "manual_permission_confirmed", note: `${exam.sourceUrl} · ${exam.license}` });
+      if (logError) throw new Error(logError.message);
+      return Response.json({ status: data, warnings, examId: saved.id });
     }
     return Response.json(await reviewExam(body.examId, body.action, user.id, body.note));
   } catch (error) { return requestError(error); }
