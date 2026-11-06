@@ -7,13 +7,14 @@ import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
 import { AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
 import { TestRunner } from "./bank-test";
+import { ReadingReview } from "./bank-reading-review";
 import { WritingFeedbackPanel, WritingStudio } from "./bank-writing";
 import { SpeakingStudio } from "./bank-speaking";
 import { speakingItems } from "./speaking-kit";
 import "./bank.css";
 
 type Exam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; content?: ExamContent };
-type Attempt = { id: string; state: string; started_at: string; answers: Record<string,string>; flags: string[]; notes: Record<string,string>; content?: ExamContent; ielts_exams?: Exam };
+type Attempt = { id: string; state: string; started_at: string; submitted_at?: string; answers: Record<string,string>; flags: string[]; notes: Record<string,string>; content?: ExamContent; ielts_exams?: Exam };
 type Result = { score: number; total: number; review: { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string }[] };
 async function api(path: string, body?: unknown) { const response = await fetch(`/api/ielts/bank/${path}`, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined); const data = await response.json(); if (!response.ok) throw new Error(data.error || "Request failed"); return data; }
 
@@ -24,6 +25,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0);
   const [dueDate, setDueDate] = useState(""), [scheduled, setScheduled] = useState(false);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle"), [confirming, setConfirming] = useState(false);
+  const [leaving, setLeaving] = useState(false);
   const loadAttempt = useCallback(async (id: string) => { const data = await api(`attempt?id=${encodeURIComponent(id)}`); setAttempt(data.attempt); setExam(data.attempt.ielts_exams || null); setAnswers(data.attempt.answers || {}); setFlags(data.attempt.flags || []); setNotes(data.attempt.notes || {}); setResult(data.result); setClock(Date.now()); }, []);
   useEffect(() => { let live = true; const run = async () => { try { if (resultId || attemptId) { await loadAttempt(resultId || attemptId!); return; } if (examId) { setAttempt(null); setResult(null); setAnswers({}); setFlags([]); setActive(0); const data = await api(`library?id=${encodeURIComponent(examId)}`); if (!live) return; setExam(data.exam); const part = Number(requestedPart); const section = data.exam.content?.sections?.filter((item: { questions: unknown[] }) => item.questions.length)?.[part - 1]; const saved = sessionStorage.getItem(`ielts-attempt:${examId}:${section?.id ?? "full"}`); if (saved) await loadAttempt(saved); } } catch (e) { if (live) setError(String(e)); } }; void run(); return () => { live = false; }; }, [examId, resultId, attemptId, requestedPart, loadAttempt]);
   useEffect(() => { const interval = setInterval(() => setClock(Date.now()), 1000); return () => clearInterval(interval); }, []);
@@ -34,9 +36,9 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const partMinutes = exam && attempt ? attemptMinutes(exam.skill, exam.duration_minutes, attempt.notes) : 0;
   const remaining = attempt && partMinutes ? Math.max(0, partMinutes * 60 - Math.floor((clock - new Date(attempt.started_at).getTime()) / 1000)) : 0;
   useEffect(() => { if (!attempt || attempt.state !== "in_progress") return; const timer = setTimeout(() => { setSaveState("saving"); void api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes }).then((data) => { setSaveState("saved"); if (typeof data.score === "number") { setResult(data); setAttempt({ ...attempt, state: "expired" }); } }).catch((e) => { setSaveState("error"); setError(String(e)); }); }, 1200); return () => clearTimeout(timer); }, [answers, flags, notes, attempt]);
-  const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, answers, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted" }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}:${attempt.notes?.__section ?? "full"}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, busy, exam]);
+  const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, answers, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted", submitted_at: new Date().toISOString() }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}:${attempt.notes?.__section ?? "full"}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, busy, exam]);
   useEffect(() => { if (clock && attempt?.state === "in_progress" && exam && remaining === 0) { const timer = setTimeout(() => void submit(true), 0); return () => clearTimeout(timer); } }, [clock, attempt?.state, exam, remaining, submit]);
-  async function start(scope?: { section: string; ids: string[] }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id, sectionId: scope?.section }); sessionStorage.setItem(`ielts-attempt:${exam.id}:${scope?.section ?? "full"}`, data.attempt.id); setAttempt(data.attempt); setNotes(data.attempt.notes || {}); setClock(Date.now()); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
+  async function start(scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: 30 | 45 | 60 }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id, sectionId: scope?.section, ...options }); sessionStorage.setItem(`ielts-attempt:${exam.id}:${scope?.section ?? "full"}`, data.attempt.id); setAttempt(data.attempt); setNotes(data.attempt.notes || {}); setClock(Date.now()); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
   const bankSkill = catalogSkills.find((value) => value === exam?.skill);
   // A part-only practice keeps its question ids in the notes; scores and reviews then cover that part.
   const scope = notes.__scope ? notes.__scope.split(",").filter(Boolean) : null;
@@ -66,6 +68,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     const score = scope && result.total ? review.filter((item) => item.correct).length : result.score;
     const skill = exam?.skill || attempt?.ielts_exams?.skill || "Reading";
     const attemptRef = attempt?.id || resultId;
+    if (skill === "Reading" && content && review.length) return <ReadingReview title={exam?.title || attempt?.ielts_exams?.title || "Bài Reading"} content={content} review={review} format={exam?.format || "Academic"} startedAt={attempt?.started_at} submittedAt={attempt?.submitted_at} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}${part > 0 ? `?part=${part}` : ""}` : undefined} onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
     return <ExamResult title={attempt?.ielts_exams?.title || exam?.title || "Bài luyện"} skill={skill} format={exam?.format} score={total ? score : null} total={total} review={review} response={response} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}${part > 0 ? `?part=${part}` : ""}` : undefined}
       numberOf={questions.length ? numberOf : undefined}
       extra={skill === "Writing" && attemptRef && response ? <WritingFeedbackPanel attemptId={attemptRef} type={exam?.practice_type} essay={response} /> : undefined}
@@ -73,7 +76,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
       onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
   }
   if (!exam) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
-  if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} onStart={(scope) => void start(scope)} scheduleSlot={<div className="bx-schedule">
+  if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} onStart={(scope, options) => void start(scope, options)} scheduleSlot={<div className="bx-schedule">
     <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} aria-label="Ngày luyện" />
     <button type="button" className="bx-ghost" disabled={!dueDate || busy} onClick={() => { void api("attempt", { action: "schedule", examId: exam.id, dueDate }).then(() => setScheduled(true)).catch((e) => setError(String(e))); }}>Lưu lịch</button>
     {scheduled && <span role="status">Đã thêm vào Study Planner.</span>}
@@ -85,10 +88,11 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const dialog = confirming && <SubmitDialog unanswered={inScope.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />;
   // Reading and Listening run as a full test sheet; Writing and Speaking as studios.
   if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run ${exam.skill === "Reading" ? "bx-exam-mode" : ""} bl-tone-${toneOf(exam.skill)}`}>
-    <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onExit={exam.skill === "Reading" ? () => { void exitAttempt(); } : undefined} onSubmit={() => setConfirming(true)} />
+    <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onExit={exam.skill === "Reading" ? () => setLeaving(true) : undefined} onSubmit={() => setConfirming(true)} />
     {error && <p className="bx-error" role="alert">{error}</p>}
     <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} />
     {dialog}
+    {leaving && <div className="bx-dialog-backdrop" role="presentation"><section className="bx-dialog" role="dialog" aria-modal="true" aria-labelledby="bx-leave-title"><h2 id="bx-leave-title">Rời bài làm?</h2><p>Bài làm hiện tại sẽ được lưu. Bạn có thể quay lại từ ngân hàng đề để tiếp tục.</p><div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={() => setLeaving(false)}>Tiếp tục làm</button><button type="button" className="bx-submit" disabled={busy} onClick={() => { void exitAttempt(); }}>{busy ? "Đang lưu…" : "Lưu và rời bài"}</button></div></section></div>}
   </main>;
   if (content && exam.skill === "Writing") return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
     <ExamBar exam={exam} answered={0} total={0} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />

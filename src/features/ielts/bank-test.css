@@ -190,6 +190,20 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bt-context-copy strong { white-space: nowrap; }
 .bt-context-copy span { color: #657284; font-size: 13px; }
 .bx-exam-mode .bt-context { flex: none; min-height: 54px; padding: 8px 22px; border-bottom: 1px solid #dfe3e5; background: #f5f5f2; }
+.bx-exam-mode .bt-body { position: relative; }
+.bx-exam-mode .bt-context .bt-tools { position: relative; }
+.bx-exam-mode .bt-settings { position: absolute; top: 39px; right: 0; z-index: 45; display: flex; align-items: center; gap: 8px; min-width: 185px; padding: 10px; border: 1px solid #dbe5e4; border-radius: 8px; background: #fff; box-shadow: 0 12px 28px #152e3533; }
+.bx-exam-mode .bt-settings span { flex: 1; font-size: 12px; font-weight: 700; }
+.bx-exam-mode .bt-tool-rail { position: absolute; top: 0; bottom: 0; left: 0; z-index: 5; display: flex; flex-direction: column; gap: 10px; width: 82px; padding: 24px 8px; border-right: 1px solid #dde5e5; background: #fafbf9; }
+.bx-exam-mode .bt-tool-rail button { display: grid; justify-items: center; gap: 3px; padding: 8px 2px; border: 1px solid #bee0d6; border-radius: 7px; background: #fff; color: #087d68; font: 700 11px Arial, sans-serif; cursor: pointer; }
+.bx-exam-mode .bt-tool-rail button small { color: #637c77; font-size: 10px; }
+.bx-exam-mode .bt-body.has-tools .bt-passage { padding-left: 106px; }
+.bx-exam-mode .bt-notes { position: fixed; top: 124px; right: 0; bottom: 62px; z-index: 50; width: min(330px, 80vw); border-left: 1px solid #dce6e5; border-radius: 0; background: #f8fbf8; box-shadow: -12px 0 30px #203c3c22; }
+.bx-exam-mode .bt-notes header, .bx-exam-mode .bt-notes small { color: #173349; }
+.bx-exam-mode .bt-notes textarea { flex: 1; border-color: #cbdad8; background: #fff; color: #173349; font: 14px/1.5 Arial, sans-serif; }
+.bx-exam-mode .bt-lookup { position: fixed; left: 94px; bottom: 78px; z-index: 55; display: grid; gap: 8px; max-width: 290px; padding: 15px; border: 1px solid #cce2da; border-radius: 9px; background: #fff; box-shadow: 0 14px 30px #203c3c33; }
+.bx-exam-mode .bt-lookup > button { justify-self: end; border: 0; background: none; cursor: pointer; }
+.bx-exam-mode .bt-lookup a { color: #087d68; font-size: 13px; font-weight: 700; }
 .bx-exam-mode .bt-context-copy strong { color: #25344a; font-size: 15px; }
 .bx-exam-mode .bt-tools { justify-content: flex-end; flex-wrap: nowrap; gap: 5px; }
 .bx-exam-mode .bt-tools button { height: 32px; border-color: #d7dcdf; border-radius: 5px; background: #fff; }
@@ -247,6 +261,10 @@ body:has(.bx-exam-mode) { overflow: hidden; }
   .bx-exam-mode .bt-tools button { width: 30px; padding: 0; justify-content: center; }
   .bx-exam-mode .bt-tools button:has(.lucide-notebook-pen) { width: auto; padding: 0 7px; font-size: 11px; }
   .bx-exam-mode .bt-passage, .bx-exam-mode .bt-questions { padding: 16px 14px 24px; }
+  .bx-exam-mode .bt-tool-rail { width: 46px; padding: 8px 3px; }
+  .bx-exam-mode .bt-tool-rail button { font-size: 0; }
+  .bx-exam-mode .bt-tool-rail button small { font-size: 9px; }
+  .bx-exam-mode .bt-body.has-tools .bt-passage { padding-left: 58px; }
   .bx-exam-mode .bt-passage { font-size: calc(13.5px * var(--bt-scale)); }
   .bx-exam-mode .bt-questions { font-size: calc(13px * var(--bt-scale)); }
   .bx-exam-mode .bt-part-list { gap: 10px; }

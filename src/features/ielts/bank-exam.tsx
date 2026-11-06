@@ -14,7 +14,7 @@ import "./bank-exam.css";
 export { RichText };
 
 export type BankExam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; topic?: string | null; content?: ExamContent };
-export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string };
+export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string; evidence?: { quote: string; paragraph: string } | null };
 
 export const toneOf = (skill: string) => librarySkills[skill as CatalogSkill]?.tone ?? "reading";
 
@@ -46,10 +46,13 @@ const beforeYouStart: Record<string, string[]> = {
 };
 
 /** The exam's cover page: what it is, what to expect, and when to practise it. */
-export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }) => void; scheduleSlot: ReactNode }) {
+export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: 30 | 45 | 60 }) => void; scheduleSlot: ReactNode }) {
   const searchParams = useSearchParams();
   const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
   const partNumber = Number(searchParams.get("part"));
+  const [readingPart, setReadingPart] = useState(Number.isInteger(partNumber) && partNumber > 0 ? partNumber : 0);
+  const [readingView, setReadingView] = useState<"practice" | "exam">("practice");
+  const [readingMinutes, setReadingMinutes] = useState<30 | 45 | 60>(60);
   const selectedPart = (exam.skill === "Reading" || exam.skill === "Listening") && Number.isInteger(partNumber) && partNumber > 0 ? parts[partNumber - 1] : undefined;
   const partName = (index: number) => exam.skill === "Listening" ? `Part ${index + 1}` : `Passage ${index + 1}`;
   const questions = selectedPart?.questions ?? examQuestions(exam.content);
@@ -58,6 +61,24 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
   const types = [...new Set(questions.map((question) => typeLabel(question.type)))];
   const Icon = skillIcon[exam.skill as keyof typeof skillIcon] ?? ListChecks;
   const preview = exam.skill === "Speaking" ? questions.slice(0, 3).map((question) => question.prompt) : [];
+  if (exam.skill === "Reading") {
+    const chosen = readingPart > 0 ? parts[readingPart - 1] : undefined;
+    const count = chosen ? chosen.questions.length : examQuestions(exam.content).length;
+    return <main className="bx-page bx-reading-launch bl-tone-reading">
+      <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> Reading</Link><span>/</span>Chuẩn bị làm bài</nav>
+      <header className="br-launch-head"><span className="bx-kicker">IELTS Reading</span><h1>{exam.title}</h1><p>Chọn phần muốn luyện và giao diện phù hợp trước khi bắt đầu. Bài làm được lưu tự động.</p></header>
+      <section className="br-launch-card"><h2><span>1</span> Bạn muốn làm bài thế nào?</h2><div className="br-launch-choices">
+        <label className={`br-launch-choice ${readingPart === 0 ? "is-on" : ""}`}><input type="radio" name="reading-part" checked={readingPart === 0} onChange={() => setReadingPart(0)} /><strong>Làm full đề</strong><small>{examQuestions(exam.content).length} câu · 3 passages</small><span className="br-duration">Thời gian <select value={readingMinutes} disabled={readingPart !== 0} onChange={(event) => setReadingMinutes(Number(event.target.value) as 30 | 45 | 60)} aria-label="Thời gian làm full đề"><option value={60}>60 phút</option><option value={45}>45 phút</option><option value={30}>30 phút</option></select></span></label>
+        <div className={`br-launch-choice br-launch-parts ${readingPart > 0 ? "is-on" : ""}`}><strong>Luyện từng passage</strong><small>Mỗi passage 20 phút</small>{parts.map((part, index) => <label key={part.id}><input type="radio" name="reading-part" checked={readingPart === index + 1} onChange={() => setReadingPart(index + 1)} /><span>Passage {index + 1}</span><small>{part.questions.length} câu</small></label>)}</div>
+      </div></section>
+      <section className="br-launch-card"><h2><span>2</span> Chọn giao diện làm bài</h2><div className="br-launch-choices">
+        <label className={`br-launch-choice ${readingView === "practice" ? "is-on" : ""}`}><input type="radio" name="reading-view" checked={readingView === "practice"} onChange={() => setReadingView("practice")} /><strong>Giao diện luyện tập</strong><small>Tô sáng bài đọc, ghi chú, tra từ và chỉnh cỡ chữ.</small></label>
+        <label className={`br-launch-choice ${readingView === "exam" ? "is-on" : ""}`}><input type="radio" name="reading-view" checked={readingView === "exam"} onChange={() => setReadingView("exam")} /><strong>Giao diện thi thật</strong><small>Tập trung vào bài đọc, câu hỏi, đồng hồ và bảng câu.</small></label>
+      </div></section>
+      <div className="br-launch-footer"><span>{count} câu · {chosen ? 20 : readingMinutes} phút · {readingView === "practice" ? "Luyện tập" : "Thi thật"}</span><button type="button" className="bx-start" disabled={busy} onClick={() => onStart(chosen ? { section: chosen.id, ids: chosen.questions.map((question) => question.id) } : undefined, { view: readingView, minutes: readingPart === 0 ? readingMinutes : undefined })}>{busy ? "Đang mở đề…" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button></div>
+      {error && <p className="bx-error" role="alert">{error}</p>}
+    </main>;
+  }
   return <main className={`bx-page bl-tone-${toneOf(exam.skill)}`}>
     <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {exam.skill}</Link><span>/</span>{selectedLabel}</nav>
     <section className="bx-hero">

@@ -113,7 +113,9 @@ export function attemptContent(content: ExamContent, notes: Record<string, strin
 }
 
 export function attemptMinutes(skill: string, examMinutes: number, notes: Record<string, string> | null | undefined) {
-  return notes?.__section ? skill === "Reading" ? 20 : skill === "Listening" ? 10 : examMinutes : examMinutes;
+  if (notes?.__section) return skill === "Reading" ? 20 : skill === "Listening" ? 10 : examMinutes;
+  const selected = Number(notes?.__minutes);
+  return skill === "Reading" && [30, 45, 60].includes(selected) ? selected : examMinutes;
 }
 /** The scored key of an option: "G — text" → G, "iii — text" → iii, " — B. text" → B, "C. text" → C; plain keys pass through. */
 export function qOptionKey(value: string) {
