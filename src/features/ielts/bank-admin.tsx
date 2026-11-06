@@ -1,51 +1,188 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
 
-type Exam = { id: string; title: string; skill: string; status: string; mode: string; attribution: string; license: string; source_url: string; ielts_exam_versions: { content: unknown; warnings: string[]; revision: number } | null };
+import { useCallback, useEffect, useRef, useState } from "react";
+import { AlertTriangle, ArrowLeft, BookOpenText, Check, ChevronLeft, ChevronRight, Eye, FileJson2, Headphones, Mic, PenLine, Plus, RefreshCw, Search, Settings2, Trash2, Upload, X } from "lucide-react";
+import type { ExamContent } from "@/lib/ielts-bank/schema";
+import { BankAdminPreview } from "./bank-admin-preview";
+import "./bank-admin.css";
+
+type Skill = "Reading" | "Listening" | "Writing" | "Speaking";
+type Workspace = "library" | "import" | "sources" | "activity";
+type DetailTab = "preview" | "content" | "metadata";
+type Version = { id: string; content: ExamContent; warnings: string[]; revision: number; upstream_version: string; created_at: string } | null;
+type Exam = { id: string; title: string; skill: Skill; status: string; mode: string; format: string; practice_type: string; topic: string | null; difficulty: string | null; duration_minutes: number; source_id: string; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; updated_at: string; current_version_id: string | null; published_version_id: string | null; ielts_exam_versions?: { warnings: string[]; revision: number } | null };
+type Detail = { exam: Exam; currentVersion: Version; publishedVersion: Version };
 type Source = { id: string; name: string; enabled: boolean; approved: boolean; license: string; sync_hours: number; last_synced_at: string | null };
 type Job = { id: string; source_id: string; status: string; inserted: number; updated: number; skipped: number; failed: number; started_at: string };
-type StudentAttempt = { id: string; user_id: string; state: string; score: number | null; total: number | null; started_at: string; ielts_exams: { title: string; skill: string } };
-export function BankAdmin() {
-  const [exams, setExams] = useState<Exam[]>([]), [sources, setSources] = useState<Source[]>([]), [jobs, setJobs] = useState<Job[]>([]), [attempts, setAttempts] = useState<StudentAttempt[]>([]);
-  const [selected, setSelected] = useState<Exam | null>(null), [draft, setDraft] = useState(""), [filter, setFilter] = useState(""), [skillFilter, setSkillFilter] = useState(""), [sourceFilter, setSourceFilter] = useState(""), [topicFilter, setTopicFilter] = useState(""), [difficultyFilter, setDifficultyFilter] = useState(""), [query, setQuery] = useState(""), [page, setPage] = useState(0), [total, setTotal] = useState(0), [message, setMessage] = useState(""), [busy, setBusy] = useState(false);
-  const [manualJson, setManualJson] = useState(""), [permission, setPermission] = useState(false);
-  const [jobItems, setJobItems] = useState<{ external_id: string; status: string; detail: string }[]>([]), [openJob, setOpenJob] = useState("");
+type Attempt = { id: string; user_id: string; state: string; score: number | null; total: number | null; started_at: string; ielts_exams: { title: string; skill: string } | null };
+type Meta = { title: string; topic: string; difficulty: string; format: string; mode: string; durationMinutes: number; attribution: string; license: string; licenseUrl: string; sourceUrl: string };
+
+const skills: { id: Skill; icon: typeof BookOpenText; color: string }[] = [
+  { id: "Reading", icon: BookOpenText, color: "teal" },
+  { id: "Listening", icon: Headphones, color: "blue" },
+  { id: "Writing", icon: PenLine, color: "amber" },
+  { id: "Speaking", icon: Mic, color: "coral" },
+];
+const statusNames: Record<string, string> = { needs_review: "Chờ duyệt", ready: "Đã duyệt", published: "Đã xuất bản", rejected: "Từ chối", archived: "Lưu trữ" };
+const metaFrom = (exam: Exam): Meta => ({ title: exam.title, topic: exam.topic ?? "", difficulty: exam.difficulty ?? "", format: exam.format, mode: exam.mode, durationMinutes: exam.duration_minutes, attribution: exam.attribution, license: exam.license, licenseUrl: exam.license_url, sourceUrl: exam.source_url });
+const failure = (error: unknown) => error instanceof Error ? error.message : String(error);
+
+export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
+  const [workspace, setWorkspace] = useState<Workspace>("library");
+  const [skill, setSkill] = useState<Skill | "">(skillScope ?? "");
+  const [status, setStatus] = useState("");
+  const [source, setSource] = useState("");
+  const [search, setSearch] = useState("");
+  const [delayedSearch, setDelayedSearch] = useState("");
+  const loadGeneration = useRef(0);
+  const detailGeneration = useRef(0);
+  const [page, setPage] = useState(0);
+  const [exams, setExams] = useState<Exam[]>([]);
+  const [total, setTotal] = useState(0);
+  const [counts, setCounts] = useState<Record<string, number>>({});
+  const [sources, setSources] = useState<Source[]>([]);
+  const [pausedSkills, setPausedSkills] = useState<Skill[]>([]);
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [attempts, setAttempts] = useState<Attempt[]>([]);
+  const [detail, setDetail] = useState<Detail | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [detailTab, setDetailTab] = useState<DetailTab>("preview");
+  const [versionView, setVersionView] = useState<"current" | "published">("current");
+  const [draft, setDraft] = useState("");
+  const [meta, setMeta] = useState<Meta | null>(null);
+  const [manualJson, setManualJson] = useState("");
+  const [permission, setPermission] = useState(false);
+  const [jobItems, setJobItems] = useState<{ external_id: string; status: string; detail: string }[]>([]);
+  const [openJob, setOpenJob] = useState("");
+  const [notice, setNotice] = useState("");
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (skillScope) { void Promise.resolve().then(() => setSkill(skillScope)); return; }
+    const requested = new URLSearchParams(window.location.search).get("skill");
+    if (skills.some((item) => item.id === requested)) void Promise.resolve().then(() => setSkill(requested as Skill));
+  }, [skillScope]);
+  useEffect(() => { const timer = window.setTimeout(() => setDelayedSearch(search), 250); return () => window.clearTimeout(timer); }, [search]);
+
   const load = useCallback(async () => {
-    const params = new URLSearchParams({ status: filter, skill: skillFilter, source_id: sourceFilter, topic: topicFilter, difficulty: difficultyFilter, q: query, page: String(page) });
-    const response = await fetch(`/api/ielts/bank/admin?${params}`);
+    const generation = ++loadGeneration.current;
+    const params = new URLSearchParams({ page: String(page), skill, status, source_id: source, q: delayedSearch.trim() });
+    const response = await fetch(`/api/ielts/bank/admin?${params}`, { cache: "no-store" });
     const data = await response.json();
-    if (!response.ok) throw new Error(data.error);
-    setExams(data.exams || []); setSources(data.sources || []); setJobs(data.jobs || []); setAttempts(data.attempts || []); setTotal(data.total || 0);
-  }, [filter, skillFilter, sourceFilter, topicFilter, difficultyFilter, query, page]);
-  useEffect(() => { void Promise.resolve().then(load).catch((e) => setMessage(String(e))); }, [load]);
-  async function command(body: Record<string, unknown>) {
-    setBusy(true); setMessage("");
+    if (!response.ok) throw new Error(data.error || "Không tải được kho đề");
+    if (generation !== loadGeneration.current) return;
+    setExams(data.exams ?? []); setTotal(data.total ?? 0); setCounts(data.skillCounts ?? {});
+    setSources(data.sources ?? []); setJobs(data.jobs ?? []); setAttempts(data.attempts ?? []);
+    setPausedSkills((data.pausedSkills ?? []).filter((item: { paused: boolean }) => item.paused).map((item: { skill: Skill }) => item.skill));
+  }, [page, skill, status, source, delayedSearch]);
+  useEffect(() => { let live = true; Promise.resolve().then(() => load()).catch((cause) => { if (live) setError(failure(cause)); }).finally(() => { if (live) setLoading(false); }); return () => { live = false; }; }, [load]);
+
+  const loadDetail = useCallback(async (id: string) => {
+    const generation = ++detailGeneration.current;
+    const response = await fetch(`/api/ielts/bank/admin?examId=${encodeURIComponent(id)}`, { cache: "no-store" });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Không mở được đề");
+    const item = data as Detail;
+    if (generation !== detailGeneration.current) return item;
+    setDetail(item);
+    setDraft(JSON.stringify(item.currentVersion?.content ?? {}, null, 2));
+    setMeta(metaFrom(item.exam));
+    return item;
+  }, []);
+  useEffect(() => { if (!selectedId) return; let live = true; Promise.resolve().then(() => loadDetail(selectedId)).catch((cause) => { if (live) setError(failure(cause)); }); return () => { live = false; }; }, [selectedId, loadDetail]);
+  useEffect(() => { if (!selectedId) return; const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") setSelectedId(null); }; window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey); }, [selectedId]);
+
+  function open(exam: Exam, tab: DetailTab = "preview") {
+    detailGeneration.current++;
+    setError(""); setNotice(""); setDetail(null); setSelectedId(exam.id); setDetailTab(tab); setVersionView("current");
+  }
+  async function command(body: Record<string, unknown>, success = "Đã lưu thay đổi.") {
+    setBusy(true); setError(""); setNotice("");
     try {
       let data: Record<string, unknown> = {};
       for (let batch = 0; batch < (body.action === "sync" ? 100 : 1); batch++) {
         const response = await fetch("/api/ielts/bank/admin", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
         data = await response.json();
-        if (!response.ok) throw new Error(String(data.error));
-        setMessage(JSON.stringify(data));
+        if (!response.ok) throw new Error(String(data.error || "Thao tác thất bại"));
         if (data.status !== "running") break;
         if (data.busy) await new Promise((resolve) => setTimeout(resolve, 1000));
       }
       await load();
-    } catch (error) { setMessage(String(error)); } finally { setBusy(false); }
+      if (selectedId && !["delete", "deleteSkill"].includes(String(body.action))) await loadDetail(selectedId);
+      setNotice(body.action === "deleteSkill" ? `Đã xóa ${data.deleted ?? 0} đề ${body.skill}.` : success);
+      return true;
+    } catch (cause) { setError(failure(cause)); return false; }
+    finally { setBusy(false); }
   }
-  return <div className="bank-admin">
-    <section className="card admin-list"><h2>Nguồn dữ liệu</h2><p>Chỉ nhập nguồn đã được xác minh giấy phép. Nội dung mới luôn vào hàng chờ duyệt.</p>
-      {sources.filter((source) => ["bandready", "ielts-ai-dataset"].includes(source.id)).map((source) => <div className="admin-row" key={source.id}><div><strong>{source.name}</strong><small>{source.license} · Đồng bộ {source.sync_hours} giờ · {source.last_synced_at ? new Date(source.last_synced_at).toLocaleString("vi-VN") : "Chưa đồng bộ"}</small></div><div><label><input type="checkbox" checked={source.enabled} onChange={(e) => void command({ action: "source", sourceId: source.id, enabled: e.target.checked })} /> Bật</label><label>Chu kỳ (giờ) <input type="number" min={1} max={720} defaultValue={source.sync_hours} onBlur={(e) => { const value = Number(e.target.value); if (value !== source.sync_hours && value >= 1 && value <= 720) void command({ action: "source", sourceId: source.id, syncHours: value }); }} style={{ width: 70 }} /></label></div><div><button className="button subtle" disabled={busy} onClick={() => void command({ action: "sync", sourceId: source.id, dryRun: true })}>Xem trước</button><button className="button primary" disabled={busy} onClick={() => void command({ action: "sync", sourceId: source.id })}>Sync now</button></div></div>)}
-    </section>
-    <section className="card admin-list"><h2>Nhập JSON thủ công</h2><p>Tệp phải theo schema chuẩn hóa trong hướng dẫn. Nội dung sẽ vào hàng chờ duyệt, không xuất bản tự động.</p><input type="file" accept=".json,application/json" onChange={(e) => { const file = e.target.files?.[0]; if (!file) return; if (file.size > 1_500_000) { setMessage("Tệp vượt quá 1.5 MB"); return; } void file.text().then(setManualJson); }} /><textarea aria-label="Nội dung JSON nhập thủ công" value={manualJson} onChange={(e) => setManualJson(e.target.value)} rows={6} style={{ width: "100%", fontFamily: "monospace" }} /><label><input type="checkbox" checked={permission} onChange={(e) => setPermission(e.target.checked)} /> Tôi xác nhận có quyền tái sử dụng và xuất bản nội dung này.</label><button className="button primary" disabled={busy || !permission || !manualJson} onClick={() => { try { void command({ action: "manual", permissionConfirmed: true, exam: JSON.parse(manualJson) }); } catch { setMessage("JSON không hợp lệ"); } }}>Nhập vào hàng chờ</button></section>
-    <section className="card admin-list"><h2>Import jobs</h2>{jobs.map((job) => <div className="admin-row" key={job.id}><div><strong>{job.source_id} · {job.status}</strong><small>{new Date(job.started_at).toLocaleString("vi-VN")}</small></div><span>+{job.inserted} / ↻{job.updated} / ={job.skipped} / lỗi {job.failed}</span><button className="button subtle" onClick={() => { setOpenJob(job.id); void fetch(`/api/ielts/bank/admin?jobId=${job.id}`).then((r) => r.json()).then((data) => setJobItems(data.items || [])).catch((e) => setMessage(String(e))); }}>Chi tiết</button>{job.status === "running" && <button className="button subtle" onClick={() => void command({ action: "cancel", jobId: job.id })}>Hủy</button>}</div>)}{openJob && <div><h3>100 mục gần nhất · {openJob}</h3>{jobItems.map((item, i) => <p key={`${item.external_id}:${i}`}><strong>{item.status}</strong> {item.external_id} {item.detail}</p>)}</div>}</section>
-    <section className="card admin-list"><div className="admin-section-head"><h2>Ngân hàng câu hỏi & hàng chờ duyệt ({total})</h2><div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}><input aria-label="Tìm theo tiêu đề" placeholder="Tìm tiêu đề" value={query} onChange={(e) => { setPage(0); setQuery(e.target.value); }} /><input aria-label="Lọc chủ đề" placeholder="Chủ đề" value={topicFilter} onChange={(e) => { setPage(0); setTopicFilter(e.target.value); }} /><input aria-label="Lọc độ khó" placeholder="Độ khó" value={difficultyFilter} onChange={(e) => { setPage(0); setDifficultyFilter(e.target.value); }} /><select aria-label="Lọc kỹ năng" value={skillFilter} onChange={(e) => { setPage(0); setSkillFilter(e.target.value); }}><option value="">Mọi kỹ năng</option>{["Reading","Listening","Writing","Speaking"].map((v) => <option key={v}>{v}</option>)}</select><select aria-label="Lọc nguồn" value={sourceFilter} onChange={(e) => { setPage(0); setSourceFilter(e.target.value); }}><option value="">Mọi nguồn</option>{sources.map((v) => <option key={v.id} value={v.id}>{v.name}</option>)}</select><select aria-label="Lọc trạng thái" value={filter} onChange={(e) => { setPage(0); setFilter(e.target.value); }}><option value="">Tất cả</option>{["needs_review","ready","published","rejected","archived"].map((v) => <option key={v}>{v}</option>)}</select></div></div>
-      {exams.map((exam) => <div className="admin-row" key={exam.id}><div><strong>{exam.title}</strong><small>{exam.skill} · {exam.mode} · {exam.attribution} · {exam.license} · {exam.status}</small><small>{exam.ielts_exam_versions?.warnings?.join(", ") || "Không có cảnh báo"}</small></div><button className="button subtle" onClick={() => { setSelected(exam); setDraft(JSON.stringify(exam.ielts_exam_versions?.content, null, 2)); }}>Xem & sửa</button></div>)}
-      {!exams.length && <p>Chưa có nội dung. Chọn nguồn và chạy đồng bộ.</p>}
-      <div style={{ display: "flex", gap: 8 }}><button className="button subtle" disabled={page === 0} onClick={() => setPage(page - 1)}>← Trang trước</button><span>Trang {page + 1}</span><button className="button subtle" disabled={(page+1)*25 >= total} onClick={() => setPage(page + 1)}>Trang sau →</button></div>
-    </section>
-    {selected && <section className="card admin-list"><h2>{selected.title}</h2><p>Nguồn: <a href={selected.source_url} target="_blank" rel="noreferrer">{selected.attribution}</a> · {selected.license} · revision {selected.ielts_exam_versions?.revision}</p><label htmlFor="bank-json">Nội dung chuẩn hóa (JSON)</label><textarea id="bank-json" value={draft} onChange={(e) => setDraft(e.target.value)} rows={18} style={{ width: "100%", fontFamily: "monospace" }} /><div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}><button className="button subtle" disabled={busy} onClick={() => { try { void command({ action: "edit", examId: selected.id, content: JSON.parse(draft) }); } catch { setMessage("JSON không hợp lệ"); } }}>Lưu revision</button><button className="button subtle" disabled={busy} onClick={() => void command({ action: "ready", examId: selected.id })}>Duyệt</button><button className="button primary" disabled={busy} onClick={() => void command({ action: "publish", examId: selected.id })}>Xuất bản</button><button className="button subtle" disabled={busy} onClick={() => void command({ action: "reject", examId: selected.id })}>Từ chối</button><button className="button subtle" onClick={() => setSelected(null)}>Đóng</button></div></section>}
-    <section className="card admin-list"><h2>Kết quả học viên gần đây</h2>{attempts.map((item) => <div className="admin-row" key={item.id}><div><strong>{item.ielts_exams?.title || "Bài luyện"}</strong><small>{item.ielts_exams?.skill} · Học viên {item.user_id.slice(0, 8)} · {new Date(item.started_at).toLocaleString("vi-VN")}</small></div><span>{item.state} · {item.score === null ? "Chưa chấm" : `${item.score}/${item.total}`}</span></div>)}{!attempts.length && <p>Chưa có lượt làm đề.</p>}</section>
-    {message && <p role="status" className="card" style={{ overflowWrap: "anywhere", padding: 16 }}>{message}</p>}
+  async function deleteExam(exam: Exam) {
+    if (window.prompt(`Xóa vĩnh viễn đề “${exam.title}” cùng lịch sử làm bài? Nhập XÓA để tiếp tục.`) !== "XÓA") return;
+    if (await command({ action: "delete", examId: exam.id }, `Đã xóa đề “${exam.title}”.`)) { setSelectedId(null); setDetail(null); }
+  }
+  async function deleteSkill() {
+    if (!skill) return;
+    const confirmation = window.prompt(`Xóa toàn bộ ${counts[skill] ?? 0} đề ${skill}, các bản sửa và lượt làm liên quan? Nhập DELETE ${skill} để tiếp tục.`);
+    if (confirmation !== `DELETE ${skill}`) return;
+    if (await command({ action: "deleteSkill", skill, confirmation })) { setSelectedId(null); setDetail(null); setPage(0); }
+  }
+  async function saveContent() {
+    if (!detail?.currentVersion) return;
+    try { await command({ action: "edit", examId: detail.exam.id, expectedVersionId: detail.currentVersion.id, content: JSON.parse(draft) }, "Đã lưu bản sửa mới vào hàng chờ duyệt."); }
+    catch { setError("JSON không hợp lệ."); }
+  }
+  async function saveMeta() { if (detail && meta) await command({ action: "metadata", examId: detail.exam.id, ...meta }, "Đã cập nhật thông tin đề."); }
+  async function showJob(id: string) {
+    setOpenJob(id); setError("");
+    try { const response = await fetch(`/api/ielts/bank/admin?jobId=${id}`); const data = await response.json(); if (!response.ok) throw new Error(data.error); setJobItems(data.items ?? []); }
+    catch (cause) { setError(failure(cause)); }
+  }
+
+  const selectedVersion = versionView === "published" ? detail?.publishedVersion : detail?.currentVersion;
+  const selectedExam = detail?.exam;
+  const hasPublic = Boolean(selectedExam?.published_version_id);
+  const warnings = detail?.currentVersion?.warnings ?? [];
+  const canPublish = Boolean(detail?.currentVersion && warnings.length === 0 && ["ready", "published"].includes(selectedExam?.status ?? ""));
+
+  return <div className="ba-root">
+    <div className="ba-topline"><div><span className="ba-eyebrow">QUẢN LÝ KHO ĐỀ</span><p>Kiểm tra đề thực tế, đáp án và trạng thái trước khi học viên nhìn thấy.</p></div><button type="button" className="ba-refresh" onClick={() => void load()}><RefreshCw size={16} /> Làm mới</button></div>
+    <nav className="ba-workspaces" aria-label="Khu quản lý ngân hàng IELTS">
+      {([ ["library", "Kho đề"], ["import", "Nhập đề"], ["sources", "Nguồn & đồng bộ"], ["activity", "Hoạt động"] ] as const).map(([id, label]) => <button type="button" key={id} className={workspace === id ? "active" : ""} aria-current={workspace === id ? "page" : undefined} onClick={() => setWorkspace(id)}>{label}</button>)}
+    </nav>
+    {error && <p className="ba-message is-error" role="alert">{error}</p>}
+    {notice && <p className="ba-message" role="status"><Check size={16} />{notice}</p>}
+
+    {workspace === "library" && <>
+      {!skillScope && <div className="ba-skill-grid"><button type="button" className={`ba-skill-card all ${skill === "" ? "active" : ""}`} onClick={() => { setSkill(""); setPage(0); }}><span>TẤT CẢ</span><strong>{Object.values(counts).reduce((sum, value) => sum + value, 0)}</strong><small>đề trong kho</small></button>{skills.map(({ id, icon: Icon, color }) => <button type="button" key={id} className={`ba-skill-card ${color} ${skill === id ? "active" : ""}`} onClick={() => { setSkill(id); setPage(0); }}><Icon size={21} /><span>{id}</span><strong>{counts[id] ?? 0}</strong><small>đề trong kho</small></button>)}</div>}
+      <section className="ba-list-card">
+        <div className="ba-list-head"><div><span className="ba-eyebrow">DANH SÁCH ĐỀ</span><h2>{skill || "Bốn kỹ năng"} <small>{total}</small></h2></div><p>Chọn một đề để xem đúng giao diện thi, đối chiếu đáp án và quản lý phiên bản.</p></div>
+        <div className="ba-filters"><label className="ba-search"><Search size={17} /><input value={search} onChange={(event) => { setSearch(event.target.value); setPage(0); }} placeholder="Tìm tên đề..." aria-label="Tìm tên đề" /></label><select aria-label="Trạng thái" value={status} onChange={(event) => { setStatus(event.target.value); setPage(0); }}><option value="">Mọi trạng thái</option>{Object.entries(statusNames).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select><select aria-label="Nguồn đề" value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="">Mọi nguồn</option>{sources.map((item) => <option value={item.id} key={item.id}>{item.name}</option>)}</select></div>
+        {loading ? <p className="ba-empty">Đang tải ngân hàng đề…</p> : exams.length ? <div className="ba-exams">{exams.map((exam) => { const Icon = skills.find((item) => item.id === exam.skill)?.icon ?? BookOpenText; const live = Boolean(exam.published_version_id); const changed = live && exam.current_version_id !== exam.published_version_id; return <article className="ba-exam" key={exam.id}><span className={`ba-exam-icon ${exam.skill.toLowerCase()}`}><Icon size={21} /></span><div className="ba-exam-copy"><div className="ba-exam-title"><h3>{exam.title}</h3>{live && <span className="ba-live">Đang công khai</span>}{changed && <span className="ba-draft">Có bản sửa mới</span>}</div><p>{exam.skill} · {exam.practice_type?.replaceAll("_", " ")} · {exam.format} · {exam.duration_minutes} phút</p><small>{exam.source_id} · bản {exam.ielts_exam_versions?.revision ?? "—"} · cập nhật {new Date(exam.updated_at).toLocaleDateString("vi-VN")}</small></div><span className={`ba-status ${exam.status}`}>{statusNames[exam.status] ?? exam.status}</span><div className="ba-row-actions"><button type="button" onClick={() => open(exam)}><Eye size={16} /> Xem đề</button><button type="button" onClick={() => open(exam, "content")}>Quản lý <ChevronRight size={16} /></button></div></article>; })}</div> : <div className="ba-empty"><BookOpenText size={30} /><h3>Chưa có đề phù hợp</h3><p>Đổi bộ lọc hoặc nhập một đề đã được kiểm duyệt.</p><button type="button" onClick={() => setWorkspace("import")}><Plus size={16} /> Nhập đề</button></div>}
+        <div className="ba-pagination"><span>Trang {page + 1} · {total} đề</span><div><button type="button" disabled={page === 0} onClick={() => setPage(page - 1)}><ChevronLeft size={16} /> Trước</button><button type="button" disabled={(page + 1) * 25 >= total} onClick={() => setPage(page + 1)}>Sau <ChevronRight size={16} /></button></div></div>
+      </section>
+      {skill && <section className="ba-danger"><div><AlertTriangle size={20} /><span><strong>Làm sạch toàn bộ kho {skill}</strong><small>Xóa đề, phiên bản và lượt làm liên quan. Đồng bộ tự động của kỹ năng này sẽ tạm dừng; nhập thủ công vẫn hoạt động.</small></span></div><button type="button" disabled={busy || !counts[skill]} onClick={() => void deleteSkill()}><Trash2 size={16} /> Xóa {counts[skill] ?? 0} đề {skill}</button></section>}
+    </>}
+
+    {workspace === "import" && <section className="ba-ops-card"><div className="ba-ops-head"><Upload size={22} /><div><h2>Nhập đề đã kiểm duyệt</h2><p>Nhập một đề theo schema JSON chuẩn hóa. Đề vào hàng chờ duyệt; học viên chỉ thấy sau khi bạn xuất bản.</p></div></div><input type="file" accept=".json,application/json" onChange={(event) => { const file = event.target.files?.[0]; if (!file) return; if (file.size > 1_500_000) { setError("Tệp vượt quá 1,5 MB."); return; } void file.text().then(setManualJson); }} /><label className="ba-field">Nội dung JSON<textarea value={manualJson} onChange={(event) => setManualJson(event.target.value)} rows={17} spellCheck={false} placeholder='{"externalId":"...","skill":"Reading",...}' /></label><label className="ba-check"><input type="checkbox" checked={permission} onChange={(event) => setPermission(event.target.checked)} /> Tôi xác nhận có quyền tái sử dụng và xuất bản nội dung này.</label><button type="button" className="button primary" disabled={busy || !permission || !manualJson.trim()} onClick={() => { try { void command({ action: "manual", permissionConfirmed: true, exam: JSON.parse(manualJson) }, "Đã nhập đề vào hàng chờ duyệt."); } catch { setError("JSON không hợp lệ."); } }}>Nhập vào hàng chờ</button></section>}
+
+    {workspace === "sources" && <section className="ba-ops-card"><div className="ba-ops-head"><RefreshCw size={22} /><div><h2>Đồng bộ theo kỹ năng</h2><p>Kho vừa làm sạch sẽ không tự nhận lại đề cũ. Bạn vẫn có thể nhập đề đã duyệt thủ công.</p></div></div>{skills.map((item) => <div className="ba-source-row" key={item.id}><div><h3>{item.id}</h3><p>{pausedSkills.includes(item.id) ? "Đang tạm dừng nhập tự động" : "Cho phép nhập tự động từ nguồn đang bật"}</p></div><label><input type="checkbox" checked={!pausedSkills.includes(item.id)} disabled={busy} onChange={(event) => void command({ action: "pauseSkillSync", skill: item.id, paused: !event.target.checked }, event.target.checked ? `Đã bật đồng bộ ${item.id}.` : `Đã tạm dừng đồng bộ ${item.id}.`)} /> Cho phép đồng bộ</label></div>)}</section>}
+    {workspace === "sources" && <><section className="ba-ops-card"><div className="ba-ops-head"><Settings2 size={22} /><div><h2>Nguồn dữ liệu</h2><p>Đồng bộ chỉ lấy nguồn có giấy phép được xác minh. Đề mới phải qua bước duyệt.</p></div></div>{sources.filter((item) => ["bandready", "ielts-ai-dataset"].includes(item.id)).map((item) => <div className="ba-source-row" key={item.id}><div><h3>{item.name}</h3><p>{item.license} · {item.last_synced_at ? `Lần cuối ${new Date(item.last_synced_at).toLocaleString("vi-VN")}` : "Chưa đồng bộ"}</p></div><label><input type="checkbox" checked={item.enabled} disabled={busy} onChange={(event) => void command({ action: "source", sourceId: item.id, enabled: event.target.checked })} /> Bật nguồn</label><label>Chu kỳ <input type="number" min={1} max={720} defaultValue={item.sync_hours} onBlur={(event) => { const value = Number(event.target.value); if (value !== item.sync_hours && value >= 1 && value <= 720) void command({ action: "source", sourceId: item.id, syncHours: value }); }} /> giờ</label><div><button type="button" disabled={busy} onClick={() => void command({ action: "sync", sourceId: item.id, dryRun: true }, "Đã chạy xem trước.")}>Xem trước</button><button type="button" disabled={busy || !item.enabled} onClick={() => void command({ action: "sync", sourceId: item.id }, "Đã đồng bộ nguồn.")}>Đồng bộ</button></div></div>)}</section><section className="ba-ops-card"><h2>Lịch sử đồng bộ</h2>{jobs.map((job) => <div className="ba-job-row" key={job.id}><span><strong>{job.source_id} · {job.status}</strong><small>{new Date(job.started_at).toLocaleString("vi-VN")}</small></span><span>+{job.inserted} · sửa {job.updated} · bỏ qua {job.skipped} · lỗi {job.failed}</span><button type="button" onClick={() => void showJob(job.id)}>Chi tiết</button>{job.status === "running" && <button type="button" onClick={() => void command({ action: "cancel", jobId: job.id })}>Hủy</button>}</div>)}{openJob && <div className="ba-job-details"><h3>100 mục gần nhất</h3>{jobItems.map((item, index) => <p key={`${item.external_id}:${index}`}><b>{item.status}</b> {item.external_id} {item.detail}</p>)}</div>}</section></>}
+
+    {workspace === "activity" && <section className="ba-ops-card"><h2>Lượt làm đề gần đây</h2><p>Lịch sử này cũng bị xóa khi xóa vĩnh viễn đề tương ứng.</p>{attempts.length ? attempts.map((item) => <div className="ba-job-row" key={item.id}><span><strong>{item.ielts_exams?.title ?? "Bài luyện"}</strong><small>{item.ielts_exams?.skill} · học viên {item.user_id.slice(0, 8)} · {new Date(item.started_at).toLocaleString("vi-VN")}</small></span><span>{item.state} · {item.score == null ? "Chờ chấm" : `${item.score}/${item.total}`}</span></div>) : <p className="ba-empty">Chưa có lượt làm đề.</p>}</section>}
+
+    {selectedId && <div className="ba-overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedId(null); }}><section className="ba-detail" role="dialog" aria-modal="true" aria-label={`Quản lý đề ${selectedExam?.title ?? ""}`}>
+      <header className="ba-detail-head"><button type="button" className="ba-back" onClick={() => setSelectedId(null)}><ArrowLeft size={18} /> Kho đề</button><div><span className="ba-eyebrow">{selectedExam?.skill ?? "ĐANG TẢI"} · {selectedExam?.source_id ?? ""}</span><h2>{selectedExam?.title ?? "Đang tải đề…"}</h2></div><button type="button" className="ba-close" aria-label="Đóng" autoFocus onClick={() => setSelectedId(null)}><X size={20} /></button></header>
+      {error && <p className="ba-message is-error" role="alert">{error}</p>}
+      {detail && <><div className="ba-detail-meta"><span className={`ba-status ${selectedExam?.status}`}>{statusNames[selectedExam?.status ?? ""] ?? selectedExam?.status}</span>{hasPublic && <span className="ba-live">Học viên đang thấy bản {detail.publishedVersion?.revision}</span>}{hasPublic && detail.currentVersion?.id !== detail.publishedVersion?.id && <span className="ba-draft">Bản sửa {detail.currentVersion?.revision} chưa xuất bản</span>}<span>{selectedExam?.practice_type?.replaceAll("_", " ")} · {selectedExam?.format}</span></div>
+        {warnings.length > 0 && <div className="ba-warnings"><AlertTriangle size={18} /><span>Chưa thể duyệt: {warnings.join(", ")}</span></div>}
+        <div className="ba-detail-actions"><button type="button" disabled={busy || warnings.length > 0 || selectedExam?.status === "ready"} onClick={() => void command({ action: "ready", examId: selectedId }, "Đề đã sẵn sàng xuất bản.")}><Check size={16} /> Duyệt</button><button type="button" className="primary" disabled={busy || !canPublish} onClick={() => void command({ action: "publish", examId: selectedId }, "Đề đã xuất bản cho học viên.")}>Xuất bản</button><button type="button" disabled={busy || !hasPublic} onClick={() => void command({ action: "unpublish", examId: selectedId }, "Đã gỡ đề khỏi kho học viên.")}>Gỡ xuất bản</button><button type="button" className="danger" disabled={busy} onClick={() => void deleteExam(detail.exam)}><Trash2 size={16} /> Xóa đề</button></div>
+        <nav className="ba-detail-tabs" aria-label="Chế độ xem đề">{([ ["preview", "Xem như học viên", Eye], ["content", "Sửa nội dung", FileJson2], ["metadata", "Thông tin đề", Settings2] ] as const).map(([tab, label, Icon]) => <button type="button" key={tab} className={detailTab === tab ? "active" : ""} onClick={() => setDetailTab(tab)}><Icon size={16} /> {label}</button>)}</nav>
+        <div className="ba-detail-body">
+          {detailTab === "preview" && <><div className="ba-version-switch"><span>Phiên bản xem trước</span><button type="button" className={versionView === "current" ? "active" : ""} onClick={() => setVersionView("current")}>Bản đang sửa · {detail.currentVersion?.revision ?? "—"}</button><button type="button" disabled={!detail.publishedVersion} className={versionView === "published" ? "active" : ""} onClick={() => setVersionView("published")}>Bản học viên thấy · {detail.publishedVersion?.revision ?? "—"}</button></div>{selectedVersion && <BankAdminPreview key={selectedVersion.id} exam={{ ...detail.exam, content: selectedVersion.content }} content={selectedVersion.content} />}</>}
+          {detailTab === "content" && <div className="ba-editor"><div><h3>Nội dung chuẩn hóa · bản {detail.currentVersion?.revision ?? "—"}</h3><p>Lưu tạo một revision mới. Nếu đề đang công khai, học viên vẫn thấy bản đã xuất bản cho đến khi bạn duyệt và xuất bản bản mới.</p></div><label className="ba-field">JSON đề thi<textarea value={draft} onChange={(event) => setDraft(event.target.value)} rows={26} spellCheck={false} /></label><button type="button" className="button primary" disabled={busy} onClick={() => void saveContent()}>Lưu bản sửa</button></div>}
+          {detailTab === "metadata" && meta && <form className="ba-editor" onSubmit={(event) => { event.preventDefault(); void saveMeta(); }}><div><h3>Thông tin & nguồn đề</h3><p>{hasPublic ? "Gỡ xuất bản trước khi sửa các thông tin học viên nhìn thấy." : "Các thay đổi ở đây cập nhật thông tin hiển thị của đề."}</p></div><div className="ba-meta-grid">{([ ["title", "Tên đề"], ["topic", "Chủ đề"], ["difficulty", "Độ khó"], ["format", "Định dạng"], ["mode", "Chế độ"], ["attribution", "Ghi nguồn"], ["license", "Giấy phép"], ["sourceUrl", "URL nguồn"], ["licenseUrl", "URL giấy phép"] ] as const).map(([key, label]) => <label className="ba-field" key={key}>{label}<input value={meta[key]} disabled={hasPublic} onChange={(event) => setMeta({ ...meta, [key]: event.target.value })} /></label>)}<label className="ba-field">Thời gian (phút)<input type="number" min={1} max={240} value={meta.durationMinutes} disabled={hasPublic} onChange={(event) => setMeta({ ...meta, durationMinutes: Number(event.target.value) })} /></label></div><button type="submit" className="button primary" disabled={busy || hasPublic}>Lưu thông tin</button></form>}
+        </div>
+      </>}
+    </section></div>}
   </div>;
 }

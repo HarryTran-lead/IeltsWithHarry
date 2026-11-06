@@ -65,6 +65,10 @@ const descriptions: Record<string, string> = {
   overview: "Quản lý nội dung học tập theo từng kỹ năng và theo dõi trạng thái xuất bản.",
   curriculum: "Tạo khóa học, unit và bài học trước khi nhập nội dung cho từng kỹ năng.",
   media: "Quản lý hình minh họa và âm thanh dùng trong bài học.",
+  reading: "Quản lý kho đề Reading, duyệt đáp án và biên soạn bài học trong lộ trình.",
+  listening: "Quản lý kho đề Listening, kiểm tra audio, đáp án và bài học trong lộ trình.",
+  writing: "Quản lý đề Writing, xem bài thi của học viên và biên soạn bài học.",
+  speaking: "Quản lý đề Speaking, xem phòng thi và biên soạn bài học.",
   users: "Theo dõi hoạt động, streak và kiểm soát tài khoản từng học viên: khóa, cấm chat, giao nhiệm vụ, đặt mục tiêu, gửi thông báo.",
   "users/broadcast": "Gửi thông báo, giao nhiệm vụ và đặt mục tiêu ngày cho cả lớp cùng lúc.",
   "users/audit": "Mọi thao tác của admin trên tài khoản học viên đều được ghi lại ở đây.",
@@ -82,6 +86,8 @@ export function AdminEditor() {
   const section = learnerId ? "users" : nav.some((item) => item.slug === segment) ? segment : "overview";
   const sectionLabel = nav.find((item) => item.slug === section)?.label ?? "Tổng quan";
   const currentSkill = skillTabs.find((item) => item.toLowerCase() === section);
+  const bankSkill = currentSkill && (["Reading", "Listening", "Writing", "Speaking"] as string[]).includes(currentSkill) ? currentSkill as "Reading" | "Listening" | "Writing" | "Speaking" : null;
+  const [skillView, setSkillView] = useState<"lessons" | "bank">("bank");
   const [courses, setCourses] = useState<Course[]>([]);
   const [units, setUnits] = useState<Unit[]>([]);
   const [lessons, setLessons] = useState<Lesson[]>([]);
@@ -195,7 +201,7 @@ export function AdminEditor() {
       </div></div>)}
     </section>)}
     </>}
-    {currentSkill && <>{lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><Sticker name="book" size={64} tilt={-8} /><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
+    {currentSkill && <>{bankSkill && <nav className="admin-skill-switch" aria-label={`Quản lý ${bankSkill}`}><button type="button" className={skillView === "lessons" ? "active" : ""} onClick={() => setSkillView("lessons")}>Bài học {bankSkill}</button><button type="button" className={skillView === "bank" ? "active" : ""} onClick={() => setSkillView("bank")}>Kho đề {bankSkill}</button><span>Bài học trong lộ trình và đề luyện thi là hai kho riêng.</span></nav>}{skillView === "bank" && bankSkill ? <BankAdmin skillScope={bankSkill} /> : lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><Sticker name="book" size={64} tilt={-8} /><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
     {section === "listening" && <YoutubeLessonsAdmin />}
     {(section === "dictation" || section === "listening/voa") && <VoaDictationAdmin />}
     {section === "vocabulary/library" && <VocabularyBank />}

@@ -16,7 +16,6 @@ export async function GET(request: Request) {
     for (let offset = 0; ; offset += pageSize) {
       let query = client.from("ielts_exams")
         .select("id,title,skill,practice_type,format,duration_minutes,attribution,license,ai_generated,created_at,topic,difficulty,source_id,published_version_id")
-        .eq("status", "published")
         .not("published_version_id", "is", null)
         .order("created_at", { ascending: false })
         .order("id", { ascending: true })

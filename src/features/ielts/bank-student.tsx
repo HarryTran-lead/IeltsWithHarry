@@ -136,7 +136,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   </main>;
 }
 
-function BankVisual({ visual }: { visual: unknown }) {
+export function BankVisual({ visual }: { visual: unknown }) {
   if (!visual || typeof visual !== "object" || Array.isArray(visual)) return null;
   const spec = visual as Record<string, unknown>;
   const panels = Array.isArray(spec.panels) ? spec.panels : [];

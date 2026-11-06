@@ -107,7 +107,7 @@ export async function enrichIeltsCovers(client: BankDb, fetcher: typeof fetch = 
   const { data: rows, error } = await client
     .from("ielts_exams")
     .select("id,skill,practice_type,title,topic,created_at,ielts_exam_versions!ielts_published_version_fk(content)")
-    .eq("status", "published")
+    .not("published_version_id", "is", null)
     .is("cover_image_url", null)
     .in("skill", ["Reading", "Listening", "Writing"] as CatalogSkill[])
     .neq("practice_type", "task1_academic")
