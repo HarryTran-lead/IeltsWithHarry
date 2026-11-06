@@ -79,12 +79,14 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const numbers = useMemo(() => new Map(allQuestions.map((question, index) => [question.id, index + 1])), [allQuestions]);
   const sections = useMemo(() => content.sections.filter((section) => section.questions.length && (!scope || section.questions.some((question) => scope.includes(question.id)))), [content, scope]);
   const [part, setPart] = useState(0);
+  const [split, setSplit] = useState(50);
   const [autoPlayPart, setAutoPlayPart] = useState<number | null>(null);
   const [scale, setScale] = useState(1);
   const [notesOpen, setNotesOpen] = useState(false);
   const [marks, setMarks] = useState<Mark[]>([]);
   const [selection, setSelection] = useState<{ x: number; y: number; mark: Mark } | null>(null);
   const passage = useRef<HTMLDivElement>(null);
+  const body = useRef<HTMLDivElement>(null);
   const section = sections[Math.min(part, sections.length - 1)];
   const groups = useMemo(() => groupQuestions(section?.questions ?? []), [section]);
   const props: AnswerProps = {
@@ -127,22 +129,37 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   }
 
   if (!section) return <p className="bx-muted">Đề này chưa có câu hỏi.</p>;
-  const label = (index: number) => listening ? `Part ${content.sections.indexOf(sections[index]) + 1}` : `Passage ${content.sections.indexOf(sections[index]) + 1}`;
+  const scopedPart = Number(notes.__part);
+  const label = (index: number) => {
+    const number = sections.length === 1 && Number.isInteger(scopedPart) && scopedPart > 0 ? scopedPart : content.sections.indexOf(sections[index]) + 1;
+    return `${listening ? "Part" : "Passage"} ${number}`;
+  };
+  const firstNumber = numbers.get(section.questions[0]?.id) ?? 1;
+  const lastNumber = numbers.get(section.questions.at(-1)?.id ?? "") ?? section.questions.length;
+  const resize = (clientX: number) => {
+    if (!body.current) return;
+    const bounds = body.current.getBoundingClientRect();
+    setSplit(Math.round(Math.max(30, Math.min(70, ((clientX - bounds.left) / bounds.width) * 100))));
+  };
 
   return <div className={`bt-runner ${listening ? "is-listening" : "is-reading"}`} style={{ "--bt-scale": scale } as CSSProperties}>
-    <div className="bt-tools" role="toolbar" aria-label="Công cụ làm bài">
+    <div className="bt-context"><div className="bt-context-copy"><strong>{label(part)}</strong><span>{listening ? "Listen and answer" : "Read the text and answer"} questions {firstNumber}–{lastNumber}</span></div><div className="bt-tools" role="toolbar" aria-label="Công cụ làm bài">
       <button type="button" onClick={() => setScale((value) => Math.max(0.85, Math.round((value - 0.1) * 10) / 10))} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button>
       <button type="button" onClick={() => setScale((value) => Math.min(1.4, Math.round((value + 0.1) * 10) / 10))} aria-label="Chữ lớn hơn"><AArrowUp size={17} /></button>
       {!listening && canHighlight() && <span className="bt-tool-hint"><Highlighter size={15} /> Bôi đen chữ trong bài đọc để tô sáng</span>}
       {marks.some((mark) => mark.section === section.id) && <button type="button" onClick={() => setMarks(marks.filter((mark) => mark.section !== section.id))}><Eraser size={16} /> Xóa tô sáng</button>}
       <button type="button" className={notesOpen ? "is-on" : ""} onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={16} /> Ghi chú</button>
-    </div>
+    </div></div>
 
-    <div className={`bt-body ${listening ? "" : "is-split"}`}>
+    <div ref={body} className={`bt-body ${listening ? "" : "is-split"}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
       {!listening && <article className="bt-passage" ref={passage} onMouseUp={captureSelection} onKeyUp={captureSelection}>
         <h2>{section.title}</h2>
         {section.passage.split(/\n\s*\n/).map((paragraph, index) => <p key={index} data-paragraph={index}><RichText text={paragraph} /></p>)}
       </article>}
+      {!listening && <div className="bt-divider" role="separator" aria-label="Độ rộng bài đọc" aria-orientation="vertical" aria-valuemin={30} aria-valuemax={70} aria-valuenow={split} tabIndex={0}
+        onPointerDown={(event) => { if (window.matchMedia("(min-width: 901px)").matches) { event.currentTarget.setPointerCapture(event.pointerId); resize(event.clientX); } }}
+        onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }}
+        onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>}
       <div className="bt-questions">
         {listening && <header className="bt-part-head"><span>{label(part)}</span><h2>{section.title}</h2></header>}
         {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} />)}

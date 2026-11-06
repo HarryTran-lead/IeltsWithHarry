@@ -90,7 +90,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
 }
 
 /** The fixed bar above an attempt: title, progress, timer, fullscreen and submit. */
-export function ExamBar({ exam, answered, total, remaining, busy, saveState, onSubmit }: { exam: BankExam; answered: number; total: number; remaining: number; busy: boolean; saveState: "idle" | "saving" | "saved" | "error"; onSubmit: () => void }) {
+export function ExamBar({ exam, answered, total, remaining, busy, saveState, onSubmit, onExit }: { exam: BankExam; answered: number; total: number; remaining: number; busy: boolean; saveState: "idle" | "saving" | "saved" | "error"; onSubmit: () => void; onExit?: () => void }) {
   const [fullscreen, setFullscreen] = useState(false);
   useEffect(() => {
     const sync = () => setFullscreen(Boolean(document.fullscreenElement));
@@ -99,10 +99,15 @@ export function ExamBar({ exam, answered, total, remaining, busy, saveState, onS
   }, []);
   const minutes = Math.floor(remaining / 60), seconds = remaining % 60;
   const tone = remaining <= 60 ? "is-danger" : remaining <= 300 ? "is-warning" : "";
-  return <header className="bx-bar">
-    <div className="bx-bar-title"><span className="bx-skill-chip">{exam.skill}</span><div><strong>{exam.title}</strong><small>{total ? `Đã làm ${answered}/${total} câu` : "Bài viết tự do"} · {saveState === "saving" ? "Đang lưu…" : saveState === "saved" ? "Đã lưu" : saveState === "error" ? "Chưa lưu được" : "Tự động lưu"}</small></div></div>
+  return <header className={`bx-bar ${exam.skill === "Reading" && onExit ? "bx-test-bar" : ""}`}>
+    <div className="bx-bar-title">{onExit && exam.skill === "Reading" ? <span className="bx-test-brand">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/ieltswithharry-mascot.webp" alt="" />
+      <span>Ielts<b>WithHarry</b></span>
+    </span> : <span className="bx-skill-chip">{exam.skill}</span>}<div><strong>{exam.title}</strong><small>{total ? `Đã làm ${answered}/${total} câu` : "Bài viết tự do"} · {saveState === "saving" ? "Đang lưu…" : saveState === "saved" ? "Đã lưu" : saveState === "error" ? "Chưa lưu được" : "Tự động lưu"}</small></div></div>
     <span className={`bx-timer ${tone}`} role="timer" aria-label={`Còn ${minutes} phút ${seconds} giây`}><Clock3 size={16} /> {minutes}:{String(seconds).padStart(2, "0")}</span>
     <div className="bx-bar-actions">
+      {onExit && <button type="button" className="bx-ghost bx-exit" disabled={busy} onClick={onExit}><ArrowLeft size={17} /><span>Rời bài</span></button>}
       <button type="button" className="bx-ghost" onClick={() => { if (document.fullscreenElement) void document.exitFullscreen(); else void document.documentElement.requestFullscreen?.(); }} aria-label={fullscreen ? "Thoát toàn màn hình" : "Toàn màn hình"}>{fullscreen ? <Minimize2 size={17} /> : <Maximize2 size={17} />}<span>{fullscreen ? "Thu nhỏ" : "Toàn màn hình"}</span></button>
       <button type="button" className="bx-submit" disabled={busy} onClick={onSubmit}>Nộp bài</button>
     </div>

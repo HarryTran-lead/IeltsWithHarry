@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { attemptContent, attemptMinutes, type ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
@@ -18,6 +18,7 @@ type Result = { score: number; total: number; review: { id: string; given: strin
 async function api(path: string, body?: unknown) { const response = await fetch(`/api/ielts/bank/${path}`, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined); const data = await response.json(); if (!response.ok) throw new Error(data.error || "Request failed"); return data; }
 
 export function BankStudent({ examId, resultId, attemptId }: { examId?: string; resultId?: string; attemptId?: string }) {
+  const router = useRouter();
   const requestedPart = useSearchParams().get("part");
   const [exam, setExam] = useState<Exam | null>(null), [attempt, setAttempt] = useState<Attempt | null>(null), [result, setResult] = useState<Result | null>(null);
   const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0);
@@ -44,6 +45,14 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const backHref = bankSkill && (bankSkill === "Reading" || bankSkill === "Listening") && Number.isInteger(part) && part > 0
     ? `${catalogHref(bankSkill, bankSkill === "Reading" ? "passage" : "part")}&part=${part}`
     : bankSkill ? catalogHref(bankSkill, exam?.practice_type) : "/app/question-bank";
+  const exitAttempt = async () => {
+    if (!attempt) return;
+    setBusy(true);
+    try {
+      await api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes });
+      router.push(backHref);
+    } catch (e) { setError(String(e)); setBusy(false); }
+  };
   if (!examId && !resultId && !attemptId) return <BankCatalog />;
   if (error && !exam && !attempt) return <main className="bx-page"><p className="bx-error" role="alert">{error}</p><Link className="bx-ghost" href="/app/dashboard">Về trang chủ</Link></main>;
   if (resultId || result) {
@@ -75,8 +84,8 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const setAnswer = (id: string, value: string) => setAnswers({ ...answers, [id]: value });
   const dialog = confirming && <SubmitDialog unanswered={inScope.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />;
   // Reading and Listening run as a full test sheet; Writing and Speaking as studios.
-  if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
-    <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
+  if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run ${exam.skill === "Reading" ? "bx-exam-mode" : ""} bl-tone-${toneOf(exam.skill)}`}>
+    <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onExit={exam.skill === "Reading" ? () => { void exitAttempt(); } : undefined} onSubmit={() => setConfirming(true)} />
     {error && <p className="bx-error" role="alert">{error}</p>}
     <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} />
     {dialog}
