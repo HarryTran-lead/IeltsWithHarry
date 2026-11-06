@@ -85,7 +85,6 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const [scale, setScale] = useState(1);
   const [notesOpen, setNotesOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [lookup, setLookup] = useState("");
   const [marks, setMarks] = useState<Mark[]>([]);
   const [selection, setSelection] = useState<{ x: number; y: number; mark: Mark } | null>(null);
   const passage = useRef<HTMLDivElement>(null);
@@ -132,18 +131,11 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     setSelection({ x: box.left + box.width / 2, y: box.top, mark: { section: section.id, paragraph: Number(paragraph.dataset.paragraph), start, end } });
   }
 
-  function lookUpSelection() {
-    const word = window.getSelection()?.toString().trim().replace(/\s+/g, " ").slice(0, 80) || "";
-    setLookup(word || "Hãy bôi đen một từ trong bài đọc trước.");
-  }
-
   useEffect(() => {
     if (!practiceTools) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.altKey || event.ctrlKey || event.metaKey || (event.target as HTMLElement)?.closest("input,textarea,select,button")) return;
       const key = event.key.toLowerCase();
-      if (key === "n") { event.preventDefault(); setNotesOpen((value) => !value); }
-      if (key === "t") { event.preventDefault(); lookUpSelection(); }
       if (key === "h" && selection) { event.preventDefault(); setMarks((value) => [...value, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); }
     };
     window.addEventListener("keydown", onKey);
@@ -166,7 +158,6 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
 
   return <div className={`bt-runner ${listening ? "is-listening" : "is-reading"}`} style={{ "--bt-scale": scale } as CSSProperties}>
     <div className="bt-context"><div className="bt-context-copy"><strong>{label(part)}</strong><span>{listening ? "Listen and answer" : "Read the text and answer"} questions {firstNumber}–{lastNumber}</span></div><div className="bt-tools" role="toolbar" aria-label="Công cụ làm bài">
-      {practiceTools && <button type="button" className={notesOpen ? "is-on" : ""} onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={16} /> Xem note</button>}
       {!listening && <button type="button" className={settingsOpen ? "is-on" : ""} onClick={() => setSettingsOpen(!settingsOpen)}>Cài đặt</button>}
       {settingsOpen && !listening && <div className="bt-settings" role="group" aria-label="Cài đặt giao diện"><span>Cỡ chữ</span>
       <button type="button" onClick={() => setScale((value) => Math.max(0.85, Math.round((value - 0.1) * 10) / 10))} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button>
@@ -176,9 +167,9 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       {listening && <><button type="button" onClick={() => setScale((value) => Math.max(0.85, Math.round((value - 0.1) * 10) / 10))} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button><button type="button" onClick={() => setScale((value) => Math.min(1.4, Math.round((value + 0.1) * 10) / 10))} aria-label="Chữ lớn hơn"><AArrowUp size={17} /></button><button type="button" className={notesOpen ? "is-on" : ""} onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={16} /> Ghi chú</button></>}
     </div></div>
 
-    <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${practiceTools ? "has-tools" : ""} ${notesOpen && practiceTools ? "has-notes" : ""}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
-      {practiceTools && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" onClick={() => { if (selection) { setMarks([...marks, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); } else passage.current?.focus(); }}><Highlighter size={19} />Tô sáng<small>H</small></button><button type="button" onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={19} />Ghi chú<small>N</small></button><button type="button" onClick={lookUpSelection}>Tra từ<small>T</small></button></aside>}
-      {!listening && <article className="bt-passage" ref={passage} onMouseUp={captureSelection} onKeyUp={captureSelection}>
+    <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${practiceTools ? "has-tools" : ""}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
+      {practiceTools && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" title="Bôi đen đoạn văn rồi bấm Tô sáng hoặc phím H" onClick={() => { if (selection) { setMarks([...marks, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); } else passage.current?.focus(); }}><Highlighter size={19} />Tô sáng<small>H</small></button></aside>}
+      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={captureSelection} onKeyUp={captureSelection}>
         <h2>{section.title}</h2>
         {section.passage.split(/\n\s*\n/).map((paragraph, index) => <p key={index} data-paragraph={index}><RichText text={paragraph} /></p>)}
       </article>}
@@ -202,7 +193,6 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       <textarea value={notes.__general || ""} maxLength={2000} onChange={(event) => setNotes({ ...notes, __general: event.target.value })} placeholder="Từ khóa, paraphrase, câu cần xem lại…" />
       <small>Ghi chú được lưu cùng bài làm.</small>
     </aside>}
-    {lookup && <div className="bt-lookup" role="dialog" aria-label="Tra từ"><button type="button" aria-label="Đóng" onClick={() => setLookup("")}><X size={15} /></button>{lookup.startsWith("Hãy bôi") ? <p>{lookup}</p> : <><b>{lookup}</b><a href={`https://dictionary.cambridge.org/dictionary/english/${encodeURIComponent(lookup)}`} target="_blank" rel="noreferrer">Mở từ điển Cambridge ↗</a></>}</div>}
 
     <footer className="bt-dock">
       {listening && section.audioUrl && <AudioDock key={section.id} src={section.audioUrl} title={section.title}
