@@ -49,6 +49,10 @@ describe("Skill Lab bank integrity (M16.2)", () => {
     expect(all.reduce((sum, item) => sum + item.questions.length, 0)).toBe(2776);
   });
 
+  it("keeps all 300 lessons playable after publishing audio", () => {
+    expect(catalog().filter((entry) => entry.audio_ready)).toHaveLength(300);
+  });
+
   it("points every question at existing evidence turns and valid options", () => {
     for (const item of all) {
       const turns = new Set(item.turns.map((turn) => turn.turn_id));

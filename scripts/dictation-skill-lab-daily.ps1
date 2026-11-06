@@ -20,11 +20,19 @@ param(
 
 function Get-ReadyCount([string]$root) {
   $turns = (Get-Content (Join-Path $root "content\dictation-skill-lab\audio-manifest.json") -Raw -Encoding utf8 | ConvertFrom-Json).turns
-  $voiced = @{}; foreach ($name in $turns.PSObject.Properties.Name) { $voiced[$name] = $true }
   $count = 0
   foreach ($file in Get-ChildItem (Join-Path $root "content\dictation-skill-lab\lessons") -Filter *.json) {
     $lesson = Get-Content $file.FullName -Raw -Encoding utf8 | ConvertFrom-Json
-    if (@($lesson.turns | Where-Object { -not $voiced["$($lesson.lesson_id)/$($_.turn_id)"] }).Count -eq 0) { $count += 1 }
+    $ready = $true
+    foreach ($turn in $lesson.turns) {
+      $entry = $turns.PSObject.Properties["$($lesson.lesson_id)/$($turn.turn_id)"].Value
+      $sentences = @([regex]::Split($turn.text_en.Trim(), '(?<=[.!?])\s+(?=["''A-Z0-9])') | Where-Object { $_.Trim() })
+      if (-not $entry -or ($sentences.Count -gt 1 -and @($entry.sentences | Where-Object { $_ }).Count -ne $sentences.Count)) {
+        $ready = $false
+        break
+      }
+    }
+    if ($ready) { $count += 1 }
   }
   return $count
 }
@@ -36,6 +44,12 @@ function Publish-Audio([string]$source, [string]$target) {
   if ((& $git "fetch origin main") -ne 0) { Write-Log "publish skipped: fetch failed"; return }
   if ((& $git "checkout --detach origin/main") -ne 0) { Write-Log "publish skipped: checkout failed"; return }
   if (-not (Test-Path (Join-Path $target "src\lib\dictation-skill-lab\lessons.ts"))) { Write-Log "publish skipped: Skill Lab code is not on main"; return }
+  $before = Get-ReadyCount $target
+  $incoming = Get-ReadyCount $source
+  if ($incoming -lt $before) {
+    Write-Log "publish skipped: incoming manifest opens only $incoming lesson(s), down from $before on main; sentence timings may be missing"
+    return
+  }
   cmd /c "robocopy `"$source\public\dictation-skill-lab\audio`" `"$target\public\dictation-skill-lab\audio`" /E /NFL /NDL /NJH /NJS /NP >> `"$log`" 2>&1" | Out-Null
   Copy-Item (Join-Path $source "content\dictation-skill-lab\audio-manifest.json") (Join-Path $target "content\dictation-skill-lab\audio-manifest.json") -Force
   & $git "add public/dictation-skill-lab/audio content/dictation-skill-lab/audio-manifest.json" | Out-Null
