@@ -293,8 +293,11 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   const usage = !section && exam.attempt_count ? <span className="bl-usage"><PlayCircle size={13} /> {exam.attempt_count.toLocaleString("vi-VN")} lượt làm</span> : <span className="bl-usage"><Clock3 size={13} /> {duration} phút</span>;
   const cta = <span className="bl-cta">{attempt?.state === "in_progress" ? "Làm tiếp" : attempt ? "Luyện lại" : "Luyện đề"} <ArrowRight size={15} /></span>;
 
+  const readingFullCover = exam.skill === "Reading" && exam.practice_type === "full_test" && !section;
   const suppliedReadingTest = exam.skill === "Reading" ? /^English Skill Lab · Reading Test (0[1-5])$/.exec(exam.title) : null;
-  const coverUrl = suppliedReadingTest
+  const coverUrl = readingFullCover
+    ? null
+    : suppliedReadingTest
     ? section && section.part >= 1 && section.part <= 3
       ? `/images/ielts/reading/test-${suppliedReadingTest[1]}-passage-${section.part}.png`
       : null
@@ -335,7 +338,12 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   return <Link href={href} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {coverUrl ? <figure className="bl-art"><img src={coverUrl} alt="" loading="lazy" /></figure> : <TopicArt topic={artTopic(exam)} className="bl-art" />}
+      {readingFullCover ? <figure className="bl-art bl-brand-art">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/ieltswithharry-mascot.webp" alt="" loading="lazy" />
+        <span className="bl-brand-wordmark">Ielts<b>WithHarry</b></span>
+        <small>IELTS READING</small>
+      </figure> : coverUrl ? <figure className="bl-art"><img src={coverUrl} alt="" loading="lazy" /></figure> : <TopicArt topic={artTopic(exam)} className="bl-art" />}
       {usage}
       <b className="bl-badge">{section ? `${exam.skill === "Reading" ? "Passage" : "Section"} ${section.part}` : partBadge(exam)}</b>
       {aiCover && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
