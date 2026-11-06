@@ -39,7 +39,7 @@ export async function GET(request: Request) {
     ]);
     const error = exams.error || sourceRows.error || jobs.error || attempts.error || skillCounts.find((item) => item.error)?.error;
     if (error) throw new Error(error.message);
-    return Response.json({ exams: exams.data, total: exams.count, sources: sourceRows.data, jobs: jobs.data, attempts: attempts.data, pausedSkills: pauses.error ? [] : pauses.data, skillCounts: Object.fromEntries(["Reading", "Listening", "Writing", "Speaking"].map((skill, index) => [skill, skillCounts[index].count ?? 0])) }, { headers: { "Cache-Control": "private, no-store" } });
+    return Response.json({ exams: exams.data, total: exams.count, sources: sourceRows.data, jobs: jobs.data, attempts: attempts.data, schemaReady: !pauses.error, pausedSkills: pauses.error ? [] : pauses.data, skillCounts: Object.fromEntries(["Reading", "Listening", "Writing", "Speaking"].map((skill, index) => [skill, skillCounts[index].count ?? 0])) }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) { return requestError(error); }
 }
 

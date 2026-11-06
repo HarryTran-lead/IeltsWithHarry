@@ -12,6 +12,7 @@
 .ba-workspaces button.active { background: #fff; color: #087c83; box-shadow: 0 2px 8px #17364d12; }
 .ba-message { display: flex; gap: 9px; align-items: center; margin: 0; padding: 12px 15px; border: 1px solid #b6e4dc; border-radius: 12px; background: #e8faf5; color: #096c62; font-weight: 750; }
 .ba-message.is-error { border-color: #f4c7bf; background: #fff2ee; color: #a33a2a; }
+.ba-message.is-pending { border-color: #eadab5; background: #fff9e9; color: #80601c; }
 .ba-skill-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
 .ba-skill-card { min-height: 132px; display: grid; justify-items: start; align-content: space-between; padding: 18px; border: 1px solid #e2e9eb; border-radius: 19px; background: #fff; box-shadow: 0 5px 18px #17364d08; text-align: left; color: #244763; }
 .ba-skill-card:hover, .ba-skill-card.active { border-color: #2d9da3; box-shadow: 0 8px 26px #0e82921a; transform: translateY(-1px); }
