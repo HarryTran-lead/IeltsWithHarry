@@ -30,11 +30,11 @@ async function define(word: string): Promise<Partial<Lookup>> {
   return {};
 }
 
-export function NewsReadingTools({ articleId, title, paragraphs, onReadEnd, practice, children }: { articleId: string; title: string; paragraphs: string[]; onReadEnd?: () => void; practice?: ReadingPractice; children: React.ReactNode }) {
+export function NewsReadingTools({ articleId, title, paragraphs, initialTranslations, onReadEnd, practice, children }: { articleId: string; title: string; paragraphs: string[]; initialTranslations?: string[] | null; onReadEnd?: () => void; practice?: ReadingPractice; children: React.ReactNode }) {
   const db = useMemo(() => createClient(), []);
   const { entries, ready, addEntry } = useNotebook();
   const [bilingual, setBilingual] = useState(false);
-  const [translations, setTranslations] = useState<string[]>([]);
+  const [translations, setTranslations] = useState<string[]>(() => initialTranslations?.length === paragraphs.length ? initialTranslations : []);
   const [translationProgress, setTranslationProgress] = useState(0);
   const [translating, setTranslating] = useState(false);
   const [translationError, setTranslationError] = useState("");
@@ -102,22 +102,23 @@ export function NewsReadingTools({ articleId, title, paragraphs, onReadEnd, prac
     }
   }
 
-  async function showBilingual() {
-    if (bilingual) { setBilingual(false); return; }
-    if (translations.length === paragraphs.length) { setBilingual(true); return; }
+  async function showBilingual(force = false) {
+    if (bilingual && !force) { setBilingual(false); return; }
+    if (!force && translations.length === paragraphs.length && translations.every((value) => typeof value === "string")) { setBilingual(true); return; }
     setTranslating(true); setTranslationError(""); setTranslationProgress(0);
+    setBilingual(true);
     try {
-      const result = await translateEnglishToVietnamese(paragraphs, setTranslationProgress);
-      setTranslations(result); setBilingual(true);
+      const result = await translateEnglishToVietnamese(paragraphs, setTranslationProgress, (index, value) => setTranslations((current) => { const next = [...current]; next[index] = value; return next; }));
+      setTranslations(result);
     } catch (error) {
       setTranslationError(error instanceof Error ? error.message : "Không thể dịch bài đọc.");
     } finally { setTranslating(false); }
   }
 
-  return <ReadingWorkspace docKey={`news:${articleId}`} title={title} paragraphs={paragraphs} onSelectWord={lookUpWord} lookupPreview={lookup ? { word: lookup.word, meaning: lookup.meaningVi, loading: lookupBusy } : null} onReadEnd={onReadEnd} practice={practice}
-    translation={bilingual ? (index) => <p lang="vi" className="rw-translation">{translations[index]}</p> : undefined}
-    toolbar={<button className="button subtle" type="button" disabled={translating} onClick={()=>void showBilingual()}><Languages size={16}/>{translating?`Đang dịch ${translationProgress}/${paragraphs.length}…`:bilingual?"Chỉ tiếng Anh":"Xem song ngữ"}</button>}
-    after={<>{translationError&&<p className="form-error" role="alert">{translationError}</p>}{children}</>}
+  return <ReadingWorkspace docKey={`news:${articleId}`} title={title} paragraphs={paragraphs} onSelectWord={lookUpWord} onTranslateSelection={async (text) => (await translateEnglishToVietnamese([text]))[0]} lookupPreview={lookup ? { word: lookup.word, meaning: lookup.meaningVi, loading: lookupBusy } : null} onReadEnd={onReadEnd} practice={practice}
+    translation={bilingual ? (index) => translations[index] ? <p lang="vi" className="rw-translation">{translations[index]}</p> : null : undefined}
+    toolbar={<><button className="button subtle" type="button" disabled={translating} onClick={()=>void showBilingual()}><Languages size={16}/>{translating?`Đang dịch ${translationProgress}/${paragraphs.length}…`:bilingual?"Chỉ tiếng Anh":"Xem song ngữ"}</button>{translationError && <span className="news-translation-error" role="alert">{translationError} <button type="button" onClick={() => void showBilingual(true)}>Thử lại</button></span>}</>}
+    after={<>{children}</>}
     tools={[
       { id: "lookup", label: "Tra từ trong bài", icon: <Search size={18}/>, onSelect: true, content:
         <section className="news-tool-card is-compact">

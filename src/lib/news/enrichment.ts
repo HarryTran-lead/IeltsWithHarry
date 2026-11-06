@@ -555,8 +555,19 @@ async function createAiIllustration(db: Db, article: Claim, query: string, fetch
 export async function enrichNews({ scheduled = false }: { scheduled?: boolean } = {}) {
   const db = newsAdminClient();
   const settings = await loadNewsSettings(db);
-  const result = { imagesChecked: 0, imagesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[] };
+  const result = { imagesChecked: 0, imagesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, translationsChecked: 0, translationsAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[] };
   if (result.paused) return result;
+  // Use three scheduled slots per hour to translate stored full-text articles.
+  // The other slots remain available for image, quiz and rewrite work.
+  if (!scheduled || new Date().getUTCMinutes() % 20 === 5) {
+    const { translateNextNewsArticle } = await import("./article-translation");
+    const translated = await translateNextNewsArticle(db, fetch, new Date().getUTCMinutes() !== 25);
+    result.translationsChecked = translated.checked;
+    result.translationsAdded = translated.added;
+    if (translated.error) result.errors.push(`Translation: ${translated.error}`);
+    if (translated.quotaLimited) result.quotaLimited = true;
+    if (translated.checked) return result;
+  }
   // On scheduled runs, give the available AI capacity to recent article images
   // first. Quiz and rewrite work use the other ten-minute slots.
   // Loaded on demand: rewrite.ts builds on this module's quiz helpers.

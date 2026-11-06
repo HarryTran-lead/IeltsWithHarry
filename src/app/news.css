@@ -37,3 +37,4 @@
 /* Article page: a compact lead so the text starts on the first screen. */
 .news-detail-lead{grid-template-columns:minmax(0,300px) minmax(0,1fr);align-items:start;padding-bottom:1.1rem}.news-detail-lead .news-detail-art{height:190px;border-radius:18px}.news-detail-intro h1{margin:.3rem 0 .4rem;font-size:clamp(1.6rem,2.3vw,2.4rem);line-height:1.18}.news-detail-intro>p{margin:.2rem 0}.news-detail-intro>.news-rights-note{margin:.8rem 0 0;padding:.7rem .9rem;font-size:.86rem}.news-detail-page .news-detail .rw{margin-top:1.2rem}
 @media(max-width:800px){.news-detail-lead{grid-template-columns:1fr}.news-detail-lead .news-detail-art{height:170px}}
+.news-translation-error{display:inline-flex;align-items:center;gap:6px;max-width:320px;color:#a74337;font-size:12px;line-height:1.35}.news-translation-error button{border:0;background:transparent;color:#086f79;font-weight:800;text-decoration:underline;cursor:pointer}

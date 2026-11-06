@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
-import { AArrowDown, AArrowUp, BookOpenText, Clock3, Columns2, Highlighter, ListChecks, Minimize2, PanelRightOpen, Timer, Trash2, X } from "lucide-react";
+import { AArrowDown, AArrowUp, BookOpenText, Clock3, Columns2, Highlighter, Languages, ListChecks, Minimize2, PanelRightOpen, Timer, Trash2, X } from "lucide-react";
 import { addHighlight, highlightColors, parseHighlightCache, parseHighlights, segments, trimRange, type Highlight, type HighlightColor } from "@/lib/highlights";
 import { Literata } from "next/font/google";
 import { createClient } from "@/lib/supabase/browser";
@@ -19,7 +19,7 @@ const TOOLS_KEY = "ieltswithharry-reader-tools";
 const colorName: Record<HighlightColor, string> = { sun: "vàng", mint: "xanh", rose: "hồng" };
 
 type Range = Pick<Highlight, "p" | "start" | "end">;
-type Popover = { x: number; y: number; below: boolean; touch: boolean; ranges?: Range[]; mark?: string; word?: string };
+type Popover = { x: number; y: number; below: boolean; touch: boolean; ranges?: Range[]; mark?: string; word?: string; selectedText?: string };
 
 /** Questions shown beside the passage in practice mode. `setup` opens before a news practice starts. */
 export type ReadingPractice = { answered: boolean[]; content: React.ReactNode; setup?: React.ReactNode; correct?: (boolean | undefined)[] };
@@ -59,12 +59,13 @@ function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below
  * at the bottom. Highlights are synced to the learner account with a scoped
  * local copy; text size is a device preference.
  */
-export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSelectWord, lookupPreview, onReadEnd, toolbar, tools, after, practice }: {
+export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, toolbar, tools, after, practice }: {
   docKey: string;
   title: string;
   paragraphs: string[];
   translation?: (index: number) => React.ReactNode;
   onSelectWord?: (word: string) => void;
+  onTranslateSelection?: (text: string) => Promise<string>;
   lookupPreview?: { word: string; meaning: string; loading: boolean } | null;
   onReadEnd?: () => void;
   toolbar?: React.ReactNode;
@@ -89,6 +90,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   useEffect(() => { secondsRef.current = seconds; }, [seconds]);
   const practiceClock = useMemo<PracticeClock>(() => ({ elapsed: () => secondsRef.current, restart: () => { secondsRef.current = 0; setSeconds(0); } }), []);
   const [popover, setPopover] = useState<Popover | null>(null);
+  const [selectionTranslation, setSelectionTranslation] = useState<{ source: string; result: string; busy: boolean } | null>(null);
   const [activeEvidence, setActiveEvidence] = useState<EvidenceLocation | null>(null);
   const [toolsMin, setToolsMin] = useState(false);
   const [openTool, setOpenTool] = useState<string | null>(null);
@@ -294,8 +296,9 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     const word = selection.toString().trim();
     const lookupWord = !practicing && onSelectWord && /^[A-Za-z][A-Za-z'-]*$/.test(word) ? word.toLowerCase() : undefined;
     const position = anchor(range.getBoundingClientRect(), event.type.startsWith("touch"));
-    if (lookupWord) { const margin = Math.min(170, window.innerWidth / 2); position.x = Math.max(margin, Math.min(window.innerWidth - margin, position.x)); }
-    setPopover({ ...position, ranges, word: lookupWord });
+    if (lookupWord || onTranslateSelection) { const margin = Math.min(onTranslateSelection ? 220 : 170, window.innerWidth / 2); position.x = Math.max(margin, Math.min(window.innerWidth - margin, position.x)); }
+    setSelectionTranslation(null);
+    setPopover({ ...position, ranges, word: lookupWord, selectedText: word });
     if (lookupWord && onSelectWord) {
       onSelectWord(word);
       if (toolsMin) setOpenTool(tools?.find((tool) => tool.onSelect)?.id ?? null);
@@ -310,6 +313,18 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       window.getSelection()?.removeAllRanges();
     }
     setPopover(null);
+  }
+
+  async function translateSelection() {
+    if (!popover?.selectedText || !onTranslateSelection || selectionTranslation?.busy) return;
+    const source = popover.selectedText;
+    setSelectionTranslation({ source, result: "", busy: true });
+    try {
+      const result = await onTranslateSelection(source);
+      setSelectionTranslation({ source, result, busy: false });
+    } catch (error) {
+      setSelectionTranslation({ source, result: error instanceof Error ? error.message : "Chưa dịch được đoạn đã chọn.", busy: false });
+    }
   }
 
   function enterPractice() { readStartedAt.current = 0; setMode("practice"); setTab("passage"); setActiveEvidence(null); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
@@ -433,7 +448,9 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     {popover && <div className={`rw-popover ${popover.below ? "below" : ""} ${popover.touch ? "touch" : ""}`} style={{ left: popover.x, top: popover.y }} role="dialog" aria-label="Highlight">
       {highlightColors.map((color) => <button type="button" key={color} className={`rw-swatch ${color}`} onClick={() => paint(color)} aria-label={`Highlight màu ${colorName[color]}`} />)}
       {popover.mark && <button type="button" className="rw-unmark" onClick={() => { save(highlights.filter((item) => item.id !== popover.mark)); setPopover(null); }}><X size={14} /> Bỏ</button>}
+      {popover.selectedText && onTranslateSelection && !practicing && <button type="button" className="rw-translate-selection" disabled={popover.selectedText.length > 3500 || selectionTranslation?.busy} onClick={() => void translateSelection()} title={popover.selectedText.length > 3500 ? "Chọn tối đa 3.500 ký tự để dịch" : "Dịch phần đã chọn"}><Languages size={14} /> {selectionTranslation?.busy ? "Đang dịch…" : "Dịch đoạn chọn"}</button>}
       {popover.word && <span className="rw-lookup-preview" role="status"><strong>{popover.word}</strong>{lookupPreview?.word === popover.word ? lookupPreview.loading ? "Đang tra nghĩa…" : lookupPreview.meaning || "Chưa có nghĩa tiếng Việt" : "Đang tra nghĩa…"}</span>}
+      {selectionTranslation && selectionTranslation.source === popover.selectedText && selectionTranslation.result && <span className="rw-selection-translation" lang="vi" role="status">{selectionTranslation.result}</span>}
     </div>}
   </div>;
 }
