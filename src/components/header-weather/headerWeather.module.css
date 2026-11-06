@@ -41,11 +41,11 @@
 .headerSurface :global(.header-divider) { background:rgba(255,255,255,.35); margin:0 1px; }
 .headerSurface :global(.notification-button) { width:32px; height:32px; border:0; border-radius:50%; background:rgba(255,255,255,.3); box-shadow:none; }
 .widgetRoot { position:relative; z-index:10; display:flex; align-items:center; flex:0 0 auto; gap:4px; font-family:inherit; }
-.weatherChip { min-width:0; width:104px; max-width:108px; height:34px; display:flex; align-items:center; gap:5px; padding:4px 8px; color:#152c51; border-radius:999px; }
+.weatherChip { min-width:0; width:104px; max-width:108px; height:34px; display:flex; align-items:center; gap:5px; padding:4px 8px; color:#152c51; border-radius:999px; overflow:hidden; }
 .headerSurface .weatherChip { background:rgba(255,255,255,.48); border-color:rgba(255,255,255,.3); box-shadow:none; }
 .weatherEmoji { font-size:22px; line-height:1; }
 .weatherText { display:flex; min-width:0; flex-direction:column; gap:1px; }
-.weatherText strong { font-size:13px; font-weight:800; line-height:1.1; white-space:nowrap; }
+.weatherText strong { display:block; max-width:100%; overflow:hidden; text-overflow:ellipsis; font-size:13px; font-weight:800; line-height:1.1; white-space:nowrap; }
 .weatherText span { font-size:10px; color:#344b68; line-height:1.25; }
 .weatherText strong .weatherFullValue,.weatherText strong .weatherCompactValue { color:inherit; font-size:inherit; line-height:inherit; }
 .weatherCompactValue { display:none; }

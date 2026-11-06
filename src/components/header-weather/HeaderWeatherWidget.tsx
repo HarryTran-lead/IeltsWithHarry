@@ -75,11 +75,11 @@ export function HeaderWeatherWidget() {
   return (
     <div className={styles.widgetRoot} ref={root}>
       {active && (
-        <div className={styles.weatherChip} aria-live="polite">
+        <div className={styles.weatherChip} aria-live="polite" title={!location ? 'Chọn thành phố trong cài đặt thời tiết' : undefined}>
           <span className={styles.weatherEmoji} aria-hidden="true">{weather ? weatherSymbol(weather.weatherCode, weather.isDay) : '🧭'}</span>
           <div className={styles.weatherText}>
             <strong>
-              <span className={styles.weatherFullValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : location ? '--°C' : 'Chọn thành phố'}</span>
+              <span className={styles.weatherFullValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : location ? '--°C' : 'Chọn TP'}</span>
               <span className={styles.weatherCompactValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : '--°C'}</span>
             </strong>
             <span className={styles.cityLabel} title={location?.name || 'Chưa chọn vị trí'}>{location?.name || 'Thời tiết theo vị trí'}</span>
