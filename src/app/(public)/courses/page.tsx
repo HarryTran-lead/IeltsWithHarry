@@ -3,12 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { displayCourseTitle, stages } from "@/lib/demo-data";
 import { learnStageAvailable, liveMode } from "@/lib/runtime";
-import { createClient } from "@/lib/supabase/server";
+import { getPublicCourses } from "@/lib/public-courses";
 
 const stageStickers: StickerName[] = ["abc", "book", "rocket", "star"];
 
 export default async function CoursesPage() {
-  const courses = liveMode ? (await (await createClient()).from("courses").select("slug,title,description,stage_id").eq("published", true).order("title")).data ?? [] : [];
+  const courses = liveMode ? await getPublicCourses().catch(() => []) : [];
   const visibleCourses = courses.filter((course) => learnStageAvailable(course.stage_id));
   return (
     <div className="public-container">

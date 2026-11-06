@@ -1,3 +1,7 @@
+import "../news.css";
+import "../community.css";
+import "../study-room.css";
+import "../learning-journey.css";
 import { redirect } from "next/navigation";
 import { SuspendedNotice } from "@/components/account/suspended-notice";
 import { StudyPresenceProvider } from "@/features/study-room/study-presence";
