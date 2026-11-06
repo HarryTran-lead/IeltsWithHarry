@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { initialScene, sceneReducer } from './sceneTransition';
-import { MODE_KEY, readMode, saveMode } from './storage';
+import { MODE_KEY, STRENGTH_KEY, readMode, readStrength, saveMode, saveStrength } from './storage';
 import { nextPhase, PHASE_SEQUENCE, phaseAt } from './time';
 import { isRainyWeather } from './weatherApi';
 
@@ -58,5 +58,15 @@ describe('header mode persistence', () => {
     expect(readMode()).toBe('full');
     values.set(MODE_KEY, 'broken');
     expect(readMode()).toBe('full');
+  });
+
+  it('uses light effects by default and restores a user-selected strength', () => {
+    expect(readStrength()).toBe('light');
+    values.set(STRENGTH_KEY, 'broken');
+    expect(readStrength()).toBe('light');
+    saveStrength('strong');
+    expect(readStrength()).toBe('strong');
+    saveStrength('light');
+    expect(readStrength()).toBe('light');
   });
 });

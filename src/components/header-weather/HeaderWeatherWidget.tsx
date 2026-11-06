@@ -17,7 +17,7 @@ const MODES: { value: HeaderDisplayMode; title: string; detail: string }[] = [
 /** Place inside existing right header actions, BEFORE streak/tasks/bell/avatar. */
 export function HeaderWeatherWidget() {
   const state = useHeaderWeather();
-  const { hydrated, mode, setMode, location, chooseCity, clearCity, requestCurrentLocation,
+  const { hydrated, mode, setMode, strength, setStrength, location, chooseCity, clearCity, requestCurrentLocation,
     locating, locationError, weather, weatherLoading, weatherError, now, timezone, phase } = state;
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -110,6 +110,20 @@ export function HeaderWeatherWidget() {
               </label>
             ))}
           </div>
+          <fieldset className={styles.strengthOptions}>
+            <legend>Độ mạnh hiệu ứng</legend>
+            <p>Áp dụng cho nắng, mây, sương và mưa trên các trang học.</p>
+            <div>
+              <label className={styles.strengthOption}>
+                <input type="radio" name="header-weather-strength" checked={strength === 'light'} onChange={() => setStrength('light')} />
+                <span>Nhẹ</span>
+              </label>
+              <label className={styles.strengthOption}>
+                <input type="radio" name="header-weather-strength" checked={strength === 'strong'} onChange={() => setStrength('strong')} />
+                <span>Mạnh</span>
+              </label>
+            </div>
+          </fieldset>
           <div className={styles.locationSection}>
             <strong>Thành phố hiển thị</strong>
             <p>Chỉ hỏi quyền khi bạn bấm nút. Tọa độ GPS được làm tròn, gửi trực tiếp đến Open-Meteo để lấy thời tiết và không được lưu trên thiết bị hay máy chủ của chúng tôi.</p>

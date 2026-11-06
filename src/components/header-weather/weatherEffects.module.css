@@ -9,9 +9,11 @@
   -webkit-mask-image: linear-gradient(#000 0%, #000 30%, rgba(0,0,0,.85) 48%, rgba(0,0,0,.4) 72%, transparent 100%);
   mask-image: linear-gradient(#000 0%, #000 30%, rgba(0,0,0,.85) 48%, rgba(0,0,0,.4) 72%, transparent 100%);
 }
-.effect[data-intensity="light"] { opacity: .68; }
-.effect[data-intensity="medium"] { opacity: .84; }
-.effect[data-intensity="strong"] { opacity: 1; }
+.effect[data-intensity="light"] { --weather-opacity: .68; }
+.effect[data-intensity="medium"] { --weather-opacity: .84; }
+.effect[data-intensity="strong"] { --weather-opacity: 1; }
+.effect[data-strength="light"] { opacity: calc(var(--weather-opacity, 1) * .35); }
+.effect[data-strength="strong"] { opacity: var(--weather-opacity, 1); }
 .effect > div, .effect canvas { position: absolute; inset: 0; pointer-events: none; }
 .rainLayer { background: linear-gradient(180deg, rgba(54,85,113,.23), transparent 70%); }
 .rainCanvas { display: block; width: 100%; height: 100%; z-index: 1; }

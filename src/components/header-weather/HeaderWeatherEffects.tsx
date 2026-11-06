@@ -114,12 +114,12 @@ function RainCanvas({ intensity }: { intensity: WeatherIntensity }) {
 
 /** Decorative overlay at the top of the learner dashboard; the live API decides its scene. */
 export function HeaderWeatherEffects() {
-  const { hydrated, mode, weather } = useHeaderWeather();
+  const { hydrated, mode, strength, weather } = useHeaderWeather();
   if (!hydrated || mode !== 'full') return null;
   const { effect, intensity } = effectForWeather(weather);
   if (effect === 'none') return null;
 
-  return <div className={styles.effect} data-effect={effect} data-intensity={intensity} aria-hidden="true">
+  return <div className={styles.effect} data-effect={effect} data-intensity={intensity} data-strength={strength} aria-hidden="true">
     {effect === 'rain' && <div className={styles.rainLayer}>
       <span className={`${styles.rainCloud} ${styles.rainCloudOne}`} />
       <span className={`${styles.rainCloud} ${styles.rainCloudTwo}`} />

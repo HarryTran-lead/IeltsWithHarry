@@ -1,7 +1,8 @@
-import type { HeaderDisplayMode, SelectedLocation } from './types';
+import type { HeaderDisplayMode, HeaderEffectStrength, SelectedLocation } from './types';
 
 export const MODE_KEY = 'ieltswithharry:headerWeatherMode:v1';
 export const CITY_KEY = 'ieltswithharry:headerWeatherCity:v1';
+export const STRENGTH_KEY = 'ieltswithharry:headerWeatherStrength:v1';
 
 export function readMode(): HeaderDisplayMode {
   try {
@@ -12,6 +13,15 @@ export function readMode(): HeaderDisplayMode {
 
 export function saveMode(mode: HeaderDisplayMode): void {
   try { window.localStorage.setItem(MODE_KEY, mode); } catch { /* storage blocked */ }
+}
+
+export function readStrength(): HeaderEffectStrength {
+  try { return window.localStorage.getItem(STRENGTH_KEY) === 'strong' ? 'strong' : 'light'; }
+  catch { return 'light'; }
+}
+
+export function saveStrength(strength: HeaderEffectStrength): void {
+  try { window.localStorage.setItem(STRENGTH_KEY, strength); } catch { /* storage blocked */ }
 }
 
 // Persist an explicitly chosen city, never GPS coordinates or geolocation permission state.

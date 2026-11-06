@@ -556,7 +556,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
       <main className="main-area">
         {error && <div className="save-error" role="alert">{error} <button onClick={clearError} aria-label="Dismiss error">×</button></div>}
         <div className="page-enter" key={section}>{children}</div>
-        {pathname === "/app/dashboard" && <HeaderWeatherEffects />}
+        <HeaderWeatherEffects />
       </main>
       <nav className="bottom-nav" aria-label="Mobile navigation">
         {links.filter(({ href }) => ["/app/dashboard", "/app/learn", "/app/study-together", "/app/planner"].includes(href)).map(

@@ -54,7 +54,7 @@
 .settingsButton { width:29px; height:29px; padding:0; border:1px solid rgba(49,95,132,.15); border-radius:9px; background:rgba(255,255,255,.9); color:#284263; font-size:17px; cursor:pointer; flex-shrink:0; }
 .headerSurface .settingsButton { width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,.45); box-shadow:none; }
 .settingsButton:hover { background:#ecfaff; }
-.settingsButton:focus-visible,.closeButton:focus-visible,.locationButton:focus-visible,.citySearchForm button:focus-visible,.citySearchForm input:focus-visible,.modeOption input:focus-visible { outline:3px solid #0f91aa; outline-offset:2px; }
+.settingsButton:focus-visible,.closeButton:focus-visible,.locationButton:focus-visible,.citySearchForm button:focus-visible,.citySearchForm input:focus-visible,.modeOption input:focus-visible,.strengthOption input:focus-visible { outline:3px solid #0f91aa; outline-offset:2px; }
 .popover { position:absolute; top:calc(100% + 16px); right:0; width:min(350px,calc(100vw - 20px)); border-radius:18px; background:#fff; padding:17px; box-shadow:0 18px 55px #132b4d2b; border:1px solid #e4eaf1; color:#1d3456; z-index:120; font-size:13px; }
 .popoverHeading { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:13px; }
 .popoverHeading strong { display:block; font-size:16px; }
@@ -65,6 +65,13 @@
 .modeOption:has(input:checked) { border-color:#7ac7d4; background:#eafafd; }
 .modeOption input { accent-color:#078ca3; }
 .modeOption strong { display:block; font-size:12px; }
+.strengthOptions { margin:12px 0 0; padding:0 0 13px; border:0; border-bottom:1px solid #e8edf2; }
+.strengthOptions legend { padding:0; font-size:12px; font-weight:800; }
+.strengthOptions p { margin:3px 0 9px; color:#65768e; font-size:11px; }
+.strengthOptions > div { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+.strengthOption { display:flex; align-items:center; gap:8px; padding:9px; border:1px solid #e9edf3; border-radius:9px; font-size:12px; font-weight:700; cursor:pointer; }
+.strengthOption:has(input:checked) { border-color:#7ac7d4; background:#eafafd; }
+.strengthOption input { accent-color:#078ca3; }
 .locationSection { padding-top:12px; }
 .locationSection>strong { display:block; margin-bottom:3px; }
 .locationSection p { font-size:11px; color:#65758e; margin:5px 0 10px; }
