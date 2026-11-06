@@ -1,4 +1,5 @@
 /* "Luyện nhanh" and "Sổ câu sai": skill cards, the shared sentence runner and its summary. */
+.voa-lab.dq-practice-page > *{width:100%;max-width:760px;margin-inline:auto}
 .dq-skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
 .dq-page .dq-skill-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:132px;padding:18px;text-align:left}
 .dq-page button.dq-skill-card:not(:disabled):hover{border-color:#64b9c1;box-shadow:0 12px 28px #173e5c17;transform:translateY(-2px)}

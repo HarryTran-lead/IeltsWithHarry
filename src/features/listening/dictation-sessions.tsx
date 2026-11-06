@@ -255,7 +255,7 @@ export function DictationQuickPractice() {
 
   const current = skills?.find((item) => item.id === skill);
   return (
-    <div className="voa-lab sld-lab dq-page">
+    <div className="voa-lab sld-lab dq-page dq-practice-page">
       <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dictation">Dictation</Link><span>›</span>{skill ? <><Link href="/app/dictation/practice">Luyện nhanh</Link><span>›</span><span>{current?.label ?? "Bộ câu"}</span></> : <span>Luyện nhanh</span>}</nav>
       <header className="voa-bank-hero"><div><span className="voa-eyebrow">LUYỆN NHANH · 5 PHÚT</span><h1>{current ? current.label : "Luyện riêng một kỹ năng nghe"}</h1>
         <p>{current ? `${current.detail}. 10 câu ngẫu nhiên từ các bài IELTS Skill Lab.` : "Chọn một kỹ năng. Mỗi bộ có 10 câu ngẫu nhiên, nghe và chép từng câu, không cần đi theo bài."}</p></div></header>
