@@ -1,11 +1,15 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Expand, GripHorizontal, Maximize2, MessageCircle, Minimize2, PanelTopClose, Pause, Play, X } from "lucide-react";
-import { StudyRoom } from "./study-room";
 import { useStudyPresence } from "./study-presence";
+
+const StudyRoom = dynamic(() => import("./study-room").then((module) => module.StudyRoom), {
+  loading: () => <div className="study-room-page">Đang mở phòng học…</div>,
+});
 
 type Bounds = { x: number; y: number; width: number; height: number };
 type Gesture = { kind: "drag" | "resize"; startX: number; startY: number; bounds: Bounds };

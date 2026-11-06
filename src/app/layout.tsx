@@ -1,34 +1,32 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "./news.css";
-import "./community.css";
-import "./study-room.css";
 import "./stickers.css";
 import "./motion.css";
 import "./playful.css";
 import "./page-head.css";
-import "./learning-journey.css";
 import { Be_Vietnam_Pro, Bricolage_Grotesque, Patrick_Hand } from "next/font/google";
 import { StickerDefs } from "@/components/stickers/stickers";
 import { InteractionLayer } from "@/components/fx/interaction-layer";
 import { cn } from "@/lib/utils";
 
 const body = Be_Vietnam_Pro({
-  subsets: ["latin", "vietnamese"],
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-sans",
   display: "swap",
 });
 const display = Bricolage_Grotesque({
-  subsets: ["latin", "vietnamese"],
+  subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  preload: false,
 });
 const hand = Patrick_Hand({
-  subsets: ["latin", "vietnamese"],
+  subsets: ["latin"],
   weight: "400",
   variable: "--font-hand",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
