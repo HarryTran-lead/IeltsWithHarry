@@ -64,6 +64,8 @@ describe('header mode persistence', () => {
     expect(readStrength()).toBe('light');
     values.set(STRENGTH_KEY, 'broken');
     expect(readStrength()).toBe('light');
+    saveStrength('medium');
+    expect(readStrength()).toBe('medium');
     saveStrength('strong');
     expect(readStrength()).toBe('strong');
     saveStrength('light');

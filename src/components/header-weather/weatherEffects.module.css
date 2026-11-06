@@ -13,6 +13,7 @@
 .effect[data-intensity="medium"] { --weather-opacity: .84; }
 .effect[data-intensity="strong"] { --weather-opacity: 1; }
 .effect[data-strength="light"] { opacity: calc(var(--weather-opacity, 1) * .35); }
+.effect[data-strength="medium"] { opacity: calc(var(--weather-opacity, 1) * .65); }
 .effect[data-strength="strong"] { opacity: var(--weather-opacity, 1); }
 .effect > div, .effect canvas { position: absolute; inset: 0; pointer-events: none; }
 .rainLayer { background: linear-gradient(180deg, rgba(54,85,113,.23), transparent 70%); }

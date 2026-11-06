@@ -16,7 +16,10 @@ export function saveMode(mode: HeaderDisplayMode): void {
 }
 
 export function readStrength(): HeaderEffectStrength {
-  try { return window.localStorage.getItem(STRENGTH_KEY) === 'strong' ? 'strong' : 'light'; }
+  try {
+    const stored = window.localStorage.getItem(STRENGTH_KEY);
+    return stored === 'medium' || stored === 'strong' ? stored : 'light';
+  }
   catch { return 'light'; }
 }
 

@@ -68,7 +68,7 @@
 .strengthOptions { margin:12px 0 0; padding:0 0 13px; border:0; border-bottom:1px solid #e8edf2; }
 .strengthOptions legend { padding:0; font-size:12px; font-weight:800; }
 .strengthOptions p { margin:3px 0 9px; color:#65768e; font-size:11px; }
-.strengthOptions > div { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+.strengthOptions > div { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; }
 .strengthOption { display:flex; align-items:center; gap:8px; padding:9px; border:1px solid #e9edf3; border-radius:9px; font-size:12px; font-weight:700; cursor:pointer; }
 .strengthOption:has(input:checked) { border-color:#7ac7d4; background:#eafafd; }
 .strengthOption input { accent-color:#078ca3; }

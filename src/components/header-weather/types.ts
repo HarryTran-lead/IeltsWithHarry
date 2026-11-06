@@ -1,6 +1,6 @@
 export type DayPhase = 'earlyMorning' | 'lateMorning' | 'midday' | 'lateAfternoon' | 'sunset' | 'night' | 'lateNight';
 export type HeaderDisplayMode = 'full' | 'sky' | 'off';
-export type HeaderEffectStrength = 'light' | 'strong';
+export type HeaderEffectStrength = 'light' | 'medium' | 'strong';
 
 export type SelectedLocation = {
   name: string;

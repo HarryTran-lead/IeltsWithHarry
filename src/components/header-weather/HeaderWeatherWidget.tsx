@@ -119,6 +119,10 @@ export function HeaderWeatherWidget() {
                 <span>Nhẹ</span>
               </label>
               <label className={styles.strengthOption}>
+                <input type="radio" name="header-weather-strength" checked={strength === 'medium'} onChange={() => setStrength('medium')} />
+                <span>Vừa</span>
+              </label>
+              <label className={styles.strengthOption}>
                 <input type="radio" name="header-weather-strength" checked={strength === 'strong'} onChange={() => setStrength('strong')} />
                 <span>Mạnh</span>
               </label>
