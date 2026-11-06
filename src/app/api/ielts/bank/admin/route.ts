@@ -31,15 +31,17 @@ export async function GET(request: Request) {
     if (status === "public") examsQuery = examsQuery.not("published_version_id", "is", null);
     else if (status) examsQuery = examsQuery.eq("status", status);
     const search = url.searchParams.get("q")?.trim(); if (search) examsQuery = examsQuery.ilike("title", `%${search.replace(/[%_]/g, "")}%`);
-    const [exams, sourceRows, jobs, attempts, pauses, ...skillCounts] = await Promise.all([
+    const skills = ["Reading", "Listening", "Writing", "Speaking"];
+    const [exams, sourceRows, jobs, attempts, pauses, skillCounts, publishedCounts] = await Promise.all([
       examsQuery, client.from("ielts_sources").select("*").order("id"), client.from("ielts_import_jobs").select("*").order("started_at", { ascending: false }).limit(30),
       client.from("ielts_attempts").select("id,user_id,state,score,total,started_at,submitted_at,ielts_exams(title,skill)").order("started_at", { ascending: false }).limit(30),
       client.from("ielts_import_skill_pauses").select("skill,paused"),
-      ...["Reading", "Listening", "Writing", "Speaking"].map((skill) => client.from("ielts_exams").select("id", { count: "exact", head: true }).eq("skill", skill)),
+      Promise.all(skills.map((skill) => client.from("ielts_exams").select("id", { count: "exact", head: true }).eq("skill", skill))),
+      Promise.all(skills.map((skill) => client.from("ielts_exams").select("id", { count: "exact", head: true }).eq("skill", skill).not("published_version_id", "is", null))),
     ]);
-    const error = exams.error || sourceRows.error || jobs.error || attempts.error || skillCounts.find((item) => item.error)?.error;
+    const error = exams.error || sourceRows.error || jobs.error || attempts.error || skillCounts.find((item) => item.error)?.error || publishedCounts.find((item) => item.error)?.error;
     if (error) throw new Error(error.message);
-    return Response.json({ exams: exams.data, total: exams.count, sources: sourceRows.data, jobs: jobs.data, attempts: attempts.data, schemaReady: !pauses.error, pausedSkills: pauses.error ? [] : pauses.data, skillCounts: Object.fromEntries(["Reading", "Listening", "Writing", "Speaking"].map((skill, index) => [skill, skillCounts[index].count ?? 0])) }, { headers: { "Cache-Control": "private, no-store" } });
+    return Response.json({ exams: exams.data, total: exams.count, sources: sourceRows.data, jobs: jobs.data, attempts: attempts.data, schemaReady: !pauses.error, pausedSkills: pauses.error ? [] : pauses.data, skillCounts: Object.fromEntries(skills.map((skill, index) => [skill, skillCounts[index].count ?? 0])), publishedCounts: Object.fromEntries(skills.map((skill, index) => [skill, publishedCounts[index].count ?? 0])) }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) { return requestError(error); }
 }
 
@@ -51,6 +53,8 @@ const command = z.discriminatedUnion("action", [
   z.object({ action: z.literal("metadata"), examId: z.uuid(), title: z.string().trim().min(3).max(160), topic: z.string().trim().max(160), difficulty: z.string().trim().max(80), format: z.string().trim().min(1).max(80), mode: z.string().trim().min(1).max(80), durationMinutes: z.number().int().min(1).max(240), attribution: z.string().trim().min(2).max(200), license: z.string().trim().min(2).max(80), sourceUrl: z.url(), licenseUrl: z.url() }),
   z.object({ action: z.literal("delete"), examId: z.uuid() }),
   z.object({ action: z.literal("deleteSkill"), skill: z.enum(["Reading", "Listening", "Writing", "Speaking"]), confirmation: z.string() }),
+  z.object({ action: z.literal("unpublishMany"), examIds: z.array(z.uuid()).min(1).max(100) }),
+  z.object({ action: z.literal("unpublishSkill"), skill: z.enum(["Reading", "Listening", "Writing", "Speaking"]) }),
   z.object({ action: z.literal("pauseSkillSync"), skill: z.enum(["Reading", "Listening", "Writing", "Speaking"]), paused: z.boolean() }),
   z.object({ action: z.literal("manual"), permissionConfirmed: z.literal(true), exam: z.object({ externalId: z.string().min(1).max(200), skill: z.enum(["Reading","Listening","Writing","Speaking"]), title: z.string().min(3).max(160), format: z.string().max(80).default("Academic"), mode: z.string().max(80).default("practice"), durationMinutes: z.number().int().min(1).max(240), sourceUrl: z.url(), license: z.string().min(2).max(80), licenseUrl: z.url(), attribution: z.string().min(2).max(200), content: contentSchema }) }),
   z.object({ action: z.enum(["ready", "publish", "reject", "archive", "unpublish"]), examId: z.uuid(), note: z.string().max(2000).optional() }),
@@ -101,6 +105,32 @@ export async function POST(request: Request) {
       const { data, error } = await client.rpc("ielts_delete_skill_exams", { p_skill: body.skill });
       if (error) throw new Error(error.message);
       return Response.json({ ok: true, deleted: data });
+    }
+    if (body.action === "unpublishMany" || body.action === "unpublishSkill") {
+      let query = client.from("ielts_exams").select("id,current_version_id,ielts_exam_versions!ielts_current_version_fk(warnings)").not("published_version_id", "is", null);
+      query = body.action === "unpublishMany" ? query.in("id", [...new Set(body.examIds)]) : query.eq("skill", body.skill).order("id").limit(200);
+      const { data: candidates, error: lookupError } = await query;
+      if (lookupError) throw new Error(lookupError.message);
+      if (!candidates?.length) return Response.json({ ok: true, unpublished: 0, status: "completed" });
+      const updated = [] as { id: string; current_version_id: string | null }[];
+      for (const status of ["ready", "needs_review"] as const) {
+        const ids = candidates.filter((item) => {
+          const version = Array.isArray(item.ielts_exam_versions) ? item.ielts_exam_versions[0] : item.ielts_exam_versions;
+          return (version != null && version.warnings.length === 0) === (status === "ready");
+        }).map((item) => item.id);
+        if (!ids.length) continue;
+        const { data, error } = await client.from("ielts_exams")
+          .update({ published_version_id: null, status, updated_at: new Date().toISOString() })
+          .in("id", ids).not("published_version_id", "is", null)
+          .select("id,current_version_id");
+        if (error) throw new Error(error.message);
+        updated.push(...(data ?? []));
+      }
+      if (updated.length) {
+        const { error: logError } = await client.from("ielts_review_log").insert(updated.map((item) => ({ exam_id: item.id, version_id: item.current_version_id, actor_id: user.id, action: "unpublish", note: "Gỡ xuất bản hàng loạt" })));
+        if (logError) throw new Error(`Đã gỡ xuất bản nhưng không ghi được nhật ký: ${logError.message}`);
+      }
+      return Response.json({ ok: true, unpublished: updated.length, status: body.action === "unpublishSkill" && candidates.length === 200 ? "running" : "completed" });
     }
     if (body.action === "pauseSkillSync") {
       const { error } = await client.from("ielts_import_skill_pauses").upsert({ skill: body.skill, paused: body.paused, updated_at: new Date().toISOString() }, { onConflict: "skill" });

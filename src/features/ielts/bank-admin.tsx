@@ -41,6 +41,8 @@ export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
   const [exams, setExams] = useState<Exam[]>([]);
   const [total, setTotal] = useState(0);
   const [counts, setCounts] = useState<Record<string, number>>({});
+  const [publishedCounts, setPublishedCounts] = useState<Record<string, number>>({});
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [sources, setSources] = useState<Source[]>([]);
   const [pausedSkills, setPausedSkills] = useState<Skill[]>([]);
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -75,7 +77,8 @@ export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "Không tải được kho đề");
     if (generation !== loadGeneration.current) return;
-    setExams(data.exams ?? []); setTotal(data.total ?? 0); setCounts(data.skillCounts ?? {});
+    setExams(data.exams ?? []); setTotal(data.total ?? 0); setCounts(data.skillCounts ?? {}); setPublishedCounts(data.publishedCounts ?? {});
+    setSelectedIds((ids) => ids.filter((id) => (data.exams ?? []).some((exam: Exam) => exam.id === id && exam.published_version_id)));
     setSchemaReady(data.schemaReady === true);
     setSources(data.sources ?? []); setJobs(data.jobs ?? []); setAttempts(data.attempts ?? []);
     setPausedSkills((data.pausedSkills ?? []).filter((item: { paused: boolean }) => item.paused).map((item: { skill: Skill }) => item.skill));
@@ -105,18 +108,22 @@ export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
     setBusy(true); setError(""); setNotice("");
     try {
       let data: Record<string, unknown> = {};
-      for (let batch = 0; batch < (body.action === "sync" ? 100 : 1); batch++) {
+      let unpublished = 0;
+      let completed = false;
+      for (let batch = 0; batch < (["sync", "unpublishSkill"].includes(String(body.action)) ? 100 : 1); batch++) {
         const response = await fetch("/api/ielts/bank/admin", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
         data = await response.json();
         if (!response.ok) throw new Error(String(data.error || "Thao tác thất bại"));
-        if (data.status !== "running") break;
+        unpublished += Number(data.unpublished ?? 0);
+        if (data.status !== "running") { completed = true; break; }
         if (data.busy) await new Promise((resolve) => setTimeout(resolve, 1000));
       }
+      if (!completed) throw new Error("Thao tác chưa hoàn tất. Hãy làm mới danh sách và thử lại.");
       await load();
       if (selectedId && !["delete", "deleteSkill"].includes(String(body.action))) await loadDetail(selectedId);
-      setNotice(body.action === "deleteSkill" ? `Đã xóa ${data.deleted ?? 0} đề ${body.skill}.` : success);
+      setNotice(body.action === "deleteSkill" ? `Đã xóa ${data.deleted ?? 0} đề ${body.skill}.` : body.action === "unpublishSkill" ? `Đã gỡ xuất bản ${unpublished} đề ${body.skill}.` : body.action === "unpublishMany" ? `Đã gỡ xuất bản ${unpublished} đề đã chọn.` : success);
       return true;
-    } catch (cause) { setError(failure(cause)); return false; }
+    } catch (cause) { setError(failure(cause)); await load().catch(() => undefined); return false; }
     finally { setBusy(false); }
   }
   async function deleteExam(exam: Exam) {
@@ -129,6 +136,14 @@ export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
     const confirmation = window.prompt(`Xóa toàn bộ ${counts[skill] ?? 0} đề ${skill}, các bản sửa và lượt làm liên quan? Nhập DELETE ${skill} để tiếp tục.`);
     if (confirmation !== `DELETE ${skill}`) return;
     if (await command({ action: "deleteSkill", skill, confirmation })) { setSelectedId(null); setDetail(null); setPage(0); }
+  }
+  async function unpublishSelected() {
+    if (!selectedIds.length || !window.confirm(`Gỡ xuất bản ${selectedIds.length} đề đã chọn? Học viên sẽ không thấy các đề này nữa.`)) return;
+    if (await command({ action: "unpublishMany", examIds: selectedIds })) setSelectedIds([]);
+  }
+  async function unpublishSkill() {
+    if (!skill || !publishedCounts[skill] || !window.confirm(`Gỡ xuất bản toàn bộ ${publishedCounts[skill]} đề ${skill} đang hiển thị cho học viên, kể cả các trang khác?`)) return;
+    if (await command({ action: "unpublishSkill", skill })) setSelectedIds([]);
   }
   async function saveContent() {
     if (!detail?.currentVersion) return;
@@ -149,6 +164,8 @@ export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
   const canPublish = Boolean(detail?.currentVersion && warnings.length === 0 && ["ready", "published"].includes(selectedExam?.status ?? ""));
   const firstResult = total ? page * 25 + 1 : 0;
   const lastResult = Math.min((page + 1) * 25, total);
+  const visiblePublishedIds = exams.filter((exam) => Boolean(exam.published_version_id)).map((exam) => exam.id);
+  const allVisibleSelected = visiblePublishedIds.length > 0 && visiblePublishedIds.every((id) => selectedIds.includes(id));
 
   return <div className="ba-root">
     <div className="ba-topline"><div><span className="ba-eyebrow">QUẢN LÝ KHO ĐỀ</span><p>Kiểm tra đề thực tế, đáp án và trạng thái trước khi học viên nhìn thấy.</p></div><button type="button" className="ba-refresh" onClick={() => void load()}><RefreshCw size={16} /> Làm mới</button></div>
@@ -160,13 +177,20 @@ export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
     {!loading && !schemaReady && <p className="ba-message is-pending" role="status"><AlertTriangle size={17} /> Chức năng xóa đề và đồng bộ theo kỹ năng đang chờ cập nhật database. Xem, sửa và xuất bản đề vẫn hoạt động.</p>}
 
     {workspace === "library" && <>
-      {!skillScope && <div className="ba-skill-grid"><button type="button" className={`ba-skill-card all ${skill === "" ? "active" : ""}`} onClick={() => { setSkill(""); setPage(0); }}><span>TẤT CẢ</span><strong>{Object.values(counts).reduce((sum, value) => sum + value, 0)}</strong><small>đề trong kho</small></button>{skills.map(({ id, icon: Icon, color }) => <button type="button" key={id} className={`ba-skill-card ${color} ${skill === id ? "active" : ""}`} onClick={() => { setSkill(id); setPage(0); }}><Icon size={21} /><span>{id}</span><strong>{counts[id] ?? 0}</strong><small>đề trong kho</small></button>)}</div>}
+      {!skillScope && <div className="ba-skill-grid"><button type="button" className={`ba-skill-card all ${skill === "" ? "active" : ""}`} onClick={() => { setSkill(""); setPage(0); setSelectedIds([]); }}><span>TẤT CẢ</span><strong>{Object.values(counts).reduce((sum, value) => sum + value, 0)}</strong><small>đề trong kho</small></button>{skills.map(({ id, icon: Icon, color }) => <button type="button" key={id} className={`ba-skill-card ${color} ${skill === id ? "active" : ""}`} onClick={() => { setSkill(id); setPage(0); setSelectedIds([]); }}><Icon size={21} /><span>{id}</span><strong>{counts[id] ?? 0}</strong><small>đề trong kho</small></button>)}</div>}
       <section className="ba-list-card">
         <div className="ba-list-head"><div><span className="ba-eyebrow">KHO ĐỀ LUYỆN THI</span><h2>{skill ? `Đề ${skill}` : "Tất cả đề IELTS"} <small>{total}</small></h2><p>Chọn “Xem bài thi” để làm thử và xem đáp án. Các nút bên phải dùng để duyệt, xuất bản hoặc sửa đề.</p></div><button type="button" className="ba-add" onClick={() => setWorkspace("import")}><Plus size={16} /> Nhập đề đã duyệt</button></div>
-        <nav className="ba-status-tabs" aria-label="Lọc đề theo trạng thái">{statusTabs.map((tab) => <button key={tab.value} type="button" className={status === tab.value ? "active" : ""} aria-current={status === tab.value ? "page" : undefined} onClick={() => { setStatus(tab.value); setPage(0); }}>{tab.label}</button>)}</nav>
-        <div className="ba-filters"><label className="ba-search"><Search size={17} /><input value={search} onChange={(event) => { setSearch(event.target.value); setPage(0); }} placeholder="Tìm theo tên đề" aria-label="Tìm theo tên đề" /></label><label className="ba-filter-field">Nguồn đề<select value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="">Tất cả nguồn</option>{sources.map((item) => <option value={item.id} key={item.id}>{item.name}</option>)}</select></label><label className="ba-filter-field">Trạng thái khác<select aria-label="Trạng thái khác" value={statusTabs.some((tab) => tab.value === status) ? "" : status} onChange={(event) => { setStatus(event.target.value); setPage(0); }}><option value="">Chọn trạng thái</option><option value="rejected">Từ chối</option><option value="archived">Lưu trữ</option></select></label></div>
-        {loading ? <p className="ba-empty">Đang tải ngân hàng đề…</p> : exams.length ? <div className="ba-table-scroll"><table className="ba-table"><thead><tr><th scope="col">Tên đề</th>{!skillScope && <th scope="col">Kỹ năng</th>}<th scope="col">Học viên thấy?</th><th scope="col">Biên tập</th><th scope="col">Cập nhật</th><th scope="col">Thao tác</th></tr></thead><tbody>{exams.map((exam) => { const live = Boolean(exam.published_version_id); const changed = live && exam.current_version_id !== exam.published_version_id; const warningCount = exam.ielts_exam_versions?.warnings?.length ?? 0; const canApprove = !["ready", "published"].includes(exam.status) && warningCount === 0; const canRelease = ["ready", "published"].includes(exam.status) && warningCount === 0; return <tr key={exam.id}><td><button type="button" className="ba-name" onClick={() => open(exam)}>{exam.title}</button><span className="ba-subline">{exam.format} · {exam.duration_minutes} phút · {exam.source_id}</span></td>{!skillScope && <td><span className="ba-skill-label">{exam.skill}</span></td>}<td>{live ? <span className="ba-live">Đang hiển thị</span> : <span className="ba-hidden">Chưa hiển thị</span>}{changed && <span className="ba-subline">Có bản sửa chưa xuất bản</span>}</td><td><span className={`ba-status ${exam.status}`}>{statusNames[exam.status] ?? exam.status}</span><span className="ba-subline">Bản {exam.ielts_exam_versions?.revision ?? "—"}{warningCount > 0 ? ` · ${warningCount} lỗi cần sửa` : ""}</span></td><td><span className="ba-date">{new Date(exam.updated_at).toLocaleDateString("vi-VN")}</span></td><td><div className="ba-table-actions"><button type="button" className="ba-view" onClick={() => open(exam)}><Eye size={15} /> Xem bài thi</button><button type="button" onClick={() => open(exam, "content")}>Sửa</button>{canApprove && <button type="button" disabled={busy} onClick={() => void command({ action: "ready", examId: exam.id }, `Đã duyệt đề “${exam.title}”.`)}>Duyệt</button>}{canRelease && (!live || changed) && <button type="button" disabled={busy} onClick={() => void command({ action: "publish", examId: exam.id }, `Đã xuất bản đề “${exam.title}”.`)}>{live ? "Xuất bản bản sửa" : "Xuất bản"}</button>}{live && <button type="button" disabled={busy} onClick={() => void command({ action: "unpublish", examId: exam.id }, `Đã gỡ đề “${exam.title}”.`)}>Gỡ xuất bản</button>}<button type="button" className="ba-delete" disabled={busy || !schemaReady} aria-label={`Xóa đề ${exam.title}`} title="Xóa đề" onClick={() => void deleteExam(exam)}><Trash2 size={15} /></button></div></td></tr>; })}</tbody></table></div> : <div className="ba-empty"><BookOpenText size={30} /><h3>{search || status || source ? "Không có đề phù hợp" : `Kho đề ${skill || "IELTS"} đang trống`}</h3><p>{search || status || source ? "Thử tìm tên khác hoặc đổi bộ lọc." : "Hãy nhập bộ đề đã được kiểm duyệt để bắt đầu."}</p><button type="button" onClick={() => { setStatus(""); setSource(""); setSearch(""); setWorkspace("import"); }}><Plus size={16} /> Nhập đề</button></div>}
-        <div className="ba-pagination"><span>Đang xem {firstResult}–{lastResult} trên {total} đề</span><div><button type="button" disabled={page === 0} onClick={() => setPage(page - 1)}><ChevronLeft size={16} /> Trước</button><button type="button" disabled={(page + 1) * 25 >= total} onClick={() => setPage(page + 1)}>Trang {page + 1} <ChevronRight size={16} /></button></div></div>
+        <nav className="ba-status-tabs" aria-label="Lọc đề theo trạng thái">{statusTabs.map((tab) => <button key={tab.value} type="button" className={status === tab.value ? "active" : ""} aria-current={status === tab.value ? "page" : undefined} onClick={() => { setStatus(tab.value); setPage(0); setSelectedIds([]); }}>{tab.label}</button>)}</nav>
+        <div className="ba-filters"><label className="ba-search"><Search size={17} /><input value={search} onChange={(event) => { setSearch(event.target.value); setPage(0); setSelectedIds([]); }} placeholder="Tìm theo tên đề" aria-label="Tìm theo tên đề" /></label><label className="ba-filter-field">Nguồn đề<select value={source} onChange={(event) => { setSource(event.target.value); setPage(0); setSelectedIds([]); }}><option value="">Tất cả nguồn</option>{sources.map((item) => <option value={item.id} key={item.id}>{item.name}</option>)}</select></label><label className="ba-filter-field">Trạng thái khác<select aria-label="Trạng thái khác" value={statusTabs.some((tab) => tab.value === status) ? "" : status} onChange={(event) => { setStatus(event.target.value); setPage(0); setSelectedIds([]); }}><option value="">Chọn trạng thái</option><option value="rejected">Từ chối</option><option value="archived">Lưu trữ</option></select></label></div>
+        <div className="ba-bulk-bar">
+          <span>{selectedIds.length ? `Đã chọn ${selectedIds.length} đề đang hiển thị` : "Đánh dấu ô để chọn nhiều đề trên trang này."}</span>
+          <div>
+            {selectedIds.length > 0 && <><button type="button" className="ba-bulk-primary" disabled={busy} onClick={() => void unpublishSelected()}>Gỡ xuất bản {selectedIds.length} đề đã chọn</button><button type="button" disabled={busy} onClick={() => setSelectedIds([])}>Bỏ chọn</button></>}
+            {skill && (publishedCounts[skill] ?? 0) > 0 && <button type="button" disabled={busy} onClick={() => void unpublishSkill()}>Gỡ toàn bộ {publishedCounts[skill]} đề {skill} đã xuất bản</button>}
+          </div>
+        </div>
+        {loading ? <p className="ba-empty">Đang tải ngân hàng đề…</p> : exams.length ? <div className="ba-table-scroll"><table className="ba-table"><thead><tr><th scope="col" className="ba-select-cell"><input type="checkbox" aria-label="Chọn tất cả đề đã xuất bản trên trang này" title="Chọn các đề đã xuất bản trên trang này" checked={allVisibleSelected} disabled={busy || visiblePublishedIds.length === 0} onChange={(event) => setSelectedIds(event.target.checked ? visiblePublishedIds : [])} /></th><th scope="col">Tên đề</th>{!skillScope && <th scope="col">Kỹ năng</th>}<th scope="col">Học viên thấy?</th><th scope="col">Biên tập</th><th scope="col">Cập nhật</th><th scope="col">Thao tác</th></tr></thead><tbody>{exams.map((exam) => { const live = Boolean(exam.published_version_id); const changed = live && exam.current_version_id !== exam.published_version_id; const warningCount = exam.ielts_exam_versions?.warnings?.length ?? 0; const canApprove = !["ready", "published"].includes(exam.status) && warningCount === 0; const canRelease = ["ready", "published"].includes(exam.status) && warningCount === 0; return <tr key={exam.id}><td className="ba-select-cell"><input type="checkbox" aria-label={`Chọn đề ${exam.title}`} checked={selectedIds.includes(exam.id)} disabled={!live || busy} onChange={(event) => setSelectedIds((ids) => event.target.checked ? [...ids, exam.id] : ids.filter((id) => id !== exam.id))} /></td><td><button type="button" className="ba-name" onClick={() => open(exam)}>{exam.title}</button><span className="ba-subline">{exam.format} · {exam.duration_minutes} phút · {exam.source_id}</span></td>{!skillScope && <td><span className="ba-skill-label">{exam.skill}</span></td>}<td>{live ? <span className="ba-live">Đang hiển thị</span> : <span className="ba-hidden">Chưa hiển thị</span>}{changed && <span className="ba-subline">Có bản sửa chưa xuất bản</span>}</td><td><span className={`ba-status ${exam.status}`}>{statusNames[exam.status] ?? exam.status}</span><span className="ba-subline">Bản {exam.ielts_exam_versions?.revision ?? "—"}{warningCount > 0 ? ` · ${warningCount} lỗi cần sửa` : ""}</span></td><td><span className="ba-date">{new Date(exam.updated_at).toLocaleDateString("vi-VN")}</span></td><td><div className="ba-table-actions"><button type="button" className="ba-view" onClick={() => open(exam)}><Eye size={15} /> Xem bài thi</button><button type="button" onClick={() => open(exam, "content")}>Sửa</button>{canApprove && <button type="button" disabled={busy} onClick={() => void command({ action: "ready", examId: exam.id }, `Đã duyệt đề “${exam.title}”.`)}>Duyệt</button>}{canRelease && (!live || changed) && <button type="button" disabled={busy} onClick={() => void command({ action: "publish", examId: exam.id }, `Đã xuất bản đề “${exam.title}”.`)}>{live ? "Xuất bản bản sửa" : "Xuất bản"}</button>}{live && <button type="button" disabled={busy} onClick={() => void command({ action: "unpublish", examId: exam.id }, `Đã gỡ đề “${exam.title}”.`)}>Gỡ xuất bản</button>}<button type="button" className="ba-delete" disabled={busy || !schemaReady} aria-label={`Xóa đề ${exam.title}`} title="Xóa đề" onClick={() => void deleteExam(exam)}><Trash2 size={15} /></button></div></td></tr>; })}</tbody></table></div> : <div className="ba-empty"><BookOpenText size={30} /><h3>{search || status || source ? "Không có đề phù hợp" : `Kho đề ${skill || "IELTS"} đang trống`}</h3><p>{search || status || source ? "Thử tìm tên khác hoặc đổi bộ lọc." : "Hãy nhập bộ đề đã được kiểm duyệt để bắt đầu."}</p><button type="button" onClick={() => { setStatus(""); setSource(""); setSearch(""); setWorkspace("import"); }}><Plus size={16} /> Nhập đề</button></div>}
+        <div className="ba-pagination"><span>Đang xem {firstResult}–{lastResult} trên {total} đề</span><div><button type="button" disabled={page === 0} onClick={() => { setPage(page - 1); setSelectedIds([]); }}><ChevronLeft size={16} /> Trước</button><button type="button" disabled={(page + 1) * 25 >= total} onClick={() => { setPage(page + 1); setSelectedIds([]); }}>Trang {page + 1} <ChevronRight size={16} /></button></div></div>
       </section>
       {skill && <section className="ba-danger"><div><AlertTriangle size={20} /><span><strong>Làm sạch toàn bộ kho {skill}</strong><small>Xóa đề, phiên bản và lượt làm liên quan. Đồng bộ tự động của kỹ năng này sẽ tạm dừng; nhập thủ công vẫn hoạt động.</small></span></div><button type="button" disabled={busy || !schemaReady || !counts[skill]} title={!schemaReady ? "Chờ cập nhật database" : undefined} onClick={() => void deleteSkill()}><Trash2 size={16} /> Xóa {counts[skill] ?? 0} đề {skill}</button></section>}
     </>}
