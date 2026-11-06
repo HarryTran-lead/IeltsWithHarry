@@ -26,7 +26,10 @@ export async function GET(request: Request) {
       return Response.json({ items: data });
     }
     let examsQuery = client.from("ielts_exams").select("id,title,skill,status,mode,format,practice_type,topic,difficulty,duration_minutes,source_id,attribution,license,license_url,source_url,ai_generated,updated_at,current_version_id,published_version_id,ielts_exam_versions!ielts_current_version_fk(warnings,revision)", { count: "exact" }).order("updated_at", { ascending: false }).range(page * 25, page * 25 + 24);
-    for (const filter of ["skill", "status", "source_id", "topic", "difficulty"] as const) if (url.searchParams.get(filter)) examsQuery = examsQuery.eq(filter, url.searchParams.get(filter)!);
+    for (const filter of ["skill", "source_id", "topic", "difficulty"] as const) if (url.searchParams.get(filter)) examsQuery = examsQuery.eq(filter, url.searchParams.get(filter)!);
+    const status = url.searchParams.get("status");
+    if (status === "public") examsQuery = examsQuery.not("published_version_id", "is", null);
+    else if (status) examsQuery = examsQuery.eq("status", status);
     const search = url.searchParams.get("q")?.trim(); if (search) examsQuery = examsQuery.ilike("title", `%${search.replace(/[%_]/g, "")}%`);
     const [exams, sourceRows, jobs, attempts, pauses, ...skillCounts] = await Promise.all([
       examsQuery, client.from("ielts_sources").select("*").order("id"), client.from("ielts_import_jobs").select("*").order("started_at", { ascending: false }).limit(30),

@@ -30,18 +30,18 @@ describe("admin creates learner account", () => {
   });
 
   it("creates a confirmed learner with a strong password and an audit record", async () => {
-    const response = await POST(request({ name: " Example User ", email: "PERSON@example.org" }));
+    const response = await POST(request({ name: " Example User ", email: "PERSON@example.org", password: "StrongPassword123!" }));
     const result = await response.json();
     expect(response.status).toBe(201);
     expect(response.headers.get("Cache-Control")).toBe("no-store");
-    expect(result.password.length).toBeGreaterThanOrEqual(30);
-    expect(createUser).toHaveBeenCalledWith({ email: "person@example.org", password: result.password, email_confirm: true, user_metadata: { display_name: "Example User" } });
+    expect(result).not.toHaveProperty("password");
+    expect(createUser).toHaveBeenCalledWith({ email: "person@example.org", password: "StrongPassword123!", email_confirm: true, user_metadata: { display_name: "Example User" } });
     expect(auditInsert).toHaveBeenCalledWith({ admin_id: "admin-id", target_user: "learner-id", action: "create_user", details: { email: "person@example.org", display_name: "Example User" } });
   });
 
   it("rolls back a newly created account when audit logging fails", async () => {
     auditInsert.mockResolvedValue({ error: { message: "database unavailable" } });
-    const response = await POST(request({ name: "Example User", email: "person@example.org" }));
+    const response = await POST(request({ name: "Example User", email: "person@example.org", password: "StrongPassword123!" }));
     expect(response.status).toBe(500);
     expect(deleteUser).toHaveBeenCalledWith("learner-id");
   });
