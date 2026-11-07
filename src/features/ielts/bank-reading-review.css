@@ -50,6 +50,8 @@ body:has(.br-review) { overflow: hidden; }
 .br-passage p.is-evidence { border-left: 3px solid #50b996; padding-left: 10px; background: #f2faf4; }.br-passage mark { padding: 2px 0; background: #a9e0c4; color: inherit; }
 .br-divider { display: grid; place-items: center; background: #d9dfe1; cursor: col-resize; touch-action: none; }.br-divider span { padding: 10px 3px; border: 1px solid #c6d0d2; border-radius: 4px; background: #fff; }
 .br-group { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #e3e9e9; }.br-group h2 { margin: 0 0 12px; font-size: 21px; }.br-instructions { margin: 0 0 20px; color: #3f4c56; line-height: 1.6; }
+.br-group-media { display: grid; place-items: center; margin: 0 0 18px; padding: 12px; border: 1px solid #dce5e8; border-radius: 8px; background: #fff; }
+.br-group-media img { display: block; max-width: 100%; max-height: 440px; object-fit: contain; }
 .br-question { margin: 0 0 19px; padding: 16px; border: 1px solid #e0e7e9; border-radius: 10px; scroll-margin-top: 16px; }.br-question-title { display: flex; align-items: flex-start; gap: 10px; line-height: 1.55; }
 .br-question-title > span { display: grid; place-items: center; flex: none; width: 28px; height: 28px; border-radius: 50%; background: #e7f1f2; font-size: 13px; font-weight: 800; }.br-question-title > div { flex: 1; min-width: 0; }
 .br-question-title button { flex: none; padding: 4px 8px; border: 0; background: none; color: #0b8f87; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }

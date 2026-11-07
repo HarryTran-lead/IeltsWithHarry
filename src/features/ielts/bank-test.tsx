@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type Dispatch, type SetStateAction } from "react";
 import { AArrowDown, AArrowUp, ChevronLeft, ChevronRight, Eraser, Highlighter, NotebookPen, Pause, Play, RotateCcw, RotateCw, X } from "lucide-react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import { RichText, type BankExam } from "./bank-exam";
@@ -42,28 +42,41 @@ function rangeAt(root: Node, start: number, end: number) {
   return null;
 }
 
-/** Plays one section's recording with ±5 s, speed and a seek bar, docked at the bottom of the test. */
-function AudioDock({ src, title, autoPlayNext, onEnded }: { src: string; title: string; autoPlayNext?: boolean; onEnded?: () => void }) {
+function printedListeningLayout(passage: string, numbers: number[]) {
+  const block = passage.split(/(?=\*\*Questions\s+\d+[–-]\d+\*\*)/).find((chunk) => {
+    const range = /^\*\*Questions\s+(\d+)[–-](\d+)\*\*/.exec(chunk.trim());
+    return range && numbers[0] >= Number(range[1]) && numbers.at(-1)! <= Number(range[2]);
+  });
+  const layout = block?.trim().split("\n").slice(2).join("\n").trim();
+  return layout && numbers.every((number) => layout.includes(`**${number}**`)) ? layout : undefined;
+}
+
+/** Practice allows playback controls; exam mode starts each part once and never offers rewind. */
+function AudioDock({ src, title, autoPlayNext, onEnded, examMode, started, finished, initialPosition, onStart, onProgress }: { src: string; title: string; autoPlayNext?: boolean; onEnded?: () => void; examMode: boolean; started: boolean; finished: boolean; initialPosition: number; onStart: () => void; onProgress: (seconds: number) => void }) {
   const audio = useRef<HTMLAudioElement>(null);
+  const savedSecond = useRef(Math.floor(initialPosition / 5) * 5);
   const [playing, setPlaying] = useState(false), [time, setTime] = useState(0), [duration, setDuration] = useState(0), [rate, setRate] = useState(1), [volume, setVolume] = useState(1);
+  const [playError, setPlayError] = useState("");
   useEffect(() => {
-    if (autoPlayNext) void audio.current?.play().catch(() => { /* Browser may require another tap. */ });
-  }, [autoPlayNext]);
+    if (autoPlayNext && !examMode) void audio.current?.play().catch(() => { /* Browser may require another tap. */ });
+  }, [autoPlayNext, examMode]);
   const clock = (value: number) => `${String(Math.floor(value / 60)).padStart(2, "0")}:${String(Math.floor(value % 60)).padStart(2, "0")}`;
   const skip = (seconds: number) => { if (audio.current) audio.current.currentTime = Math.max(0, Math.min(duration, audio.current.currentTime + seconds)); };
   return <div className="bt-audio" aria-label={`Bản ghi: ${title}`}>
-    <audio ref={audio} src={src} preload="metadata" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={onEnded} onTimeUpdate={(event) => setTime(event.currentTarget.currentTime)} onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)} />
-    <input className="bt-seek" type="range" min={0} max={duration || 0} step={0.1} value={time} onChange={(event) => { if (audio.current) audio.current.currentTime = Number(event.target.value); }} aria-label="Tua bản ghi" style={{ "--progress": `${duration ? (time / duration) * 100 : 0}%` } as CSSProperties} />
+    <audio ref={audio} src={src} preload="metadata" onPlay={() => { setPlaying(true); setPlayError(""); if (examMode && !started) onStart(); }} onPause={() => setPlaying(false)} onEnded={() => { setPlaying(false); onEnded?.(); }} onTimeUpdate={(event) => { const seconds = event.currentTarget.currentTime; setTime(seconds); if (examMode && !finished && Math.floor(seconds / 5) * 5 > savedSecond.current) { savedSecond.current = Math.floor(seconds / 5) * 5; onProgress(savedSecond.current); } }} onLoadedMetadata={(event) => { const length = event.currentTarget.duration || 0; setDuration(length); if (examMode && started && !finished && initialPosition > 0) event.currentTarget.currentTime = Math.min(initialPosition, Math.max(0, length - 1)); }} />
+    <input className="bt-seek" type="range" min={0} max={duration || 0} step={0.1} value={time} disabled={examMode} onChange={(event) => { if (audio.current && !examMode) audio.current.currentTime = Number(event.target.value); }} aria-label={examMode ? "Tiến độ bản ghi" : "Tua bản ghi"} style={{ "--progress": `${duration ? (time / duration) * 100 : 0}%` } as CSSProperties} />
     <div className="bt-audio-row">
       <span className="bt-audio-time">{clock(time)} / {clock(duration)}</span>
       <label className="bt-volume"><span className="sr-only">Âm lượng</span><input type="range" min={0} max={1} step={0.05} value={volume} onChange={(event) => { const value = Number(event.target.value); setVolume(value); if (audio.current) audio.current.volume = value; }} /></label>
-      <div className="bt-audio-main">
+      {examMode ? <div className="bt-audio-status" role="status">{playing ? "Đang phát bản ghi" : started && !finished ? <button type="button" onClick={() => { void audio.current?.play().catch(() => setPlayError("Không phát được âm thanh. Kiểm tra loa rồi thử lại.")); }}>Tiếp tục nghe</button> : finished ? "Đã phát bản ghi" : "Sẵn sàng phát"}</div> : <div className="bt-audio-main">
         <button type="button" onClick={() => skip(-5)} aria-label="Lùi 5 giây"><RotateCcw size={18} /></button>
-        <button type="button" className="bt-play" onClick={() => { const element = audio.current; if (!element) return; if (element.paused) void element.play(); else element.pause(); }} aria-label={playing ? "Tạm dừng" : "Phát"}>{playing ? <Pause size={20} /> : <Play size={20} />}</button>
+        <button type="button" className="bt-play" onClick={() => { const element = audio.current; if (!element) return; if (element.paused) void element.play().catch(() => setPlayError("Không phát được âm thanh. Kiểm tra loa rồi thử lại.")); else element.pause(); }} aria-label={playing ? "Tạm dừng" : "Phát"}>{playing ? <Pause size={20} /> : <Play size={20} />}</button>
         <button type="button" onClick={() => skip(5)} aria-label="Tiến 5 giây"><RotateCw size={18} /></button>
-      </div>
-      <label className="bt-speed">Tốc độ <select value={rate} onChange={(event) => { const value = Number(event.target.value); setRate(value); if (audio.current) audio.current.playbackRate = value; }}>{[0.75, 1, 1.25, 1.5].map((value) => <option key={value} value={value}>{value}x</option>)}</select></label>
+      </div>}
+      {!examMode && <label className="bt-speed">Tốc độ <select value={rate} onChange={(event) => { const value = Number(event.target.value); setRate(value); if (audio.current) audio.current.playbackRate = value; }}>{[0.75, 1, 1.25, 1.5].map((value) => <option key={value} value={value}>{value}x</option>)}</select></label>}
     </div>
+    {playError && (!examMode || started) && <small className="bt-audio-error" role="alert">{playError}</small>}
+    {examMode && !started && <div className="bt-audio-gate" role="dialog" aria-modal="true" aria-labelledby="bt-audio-gate-title"><div><span>IELTS Listening</span><h2 id="bt-audio-gate-title">{title}</h2><p>Bản ghi sẽ phát một lần. Trong giao diện thi thật, bạn không thể tạm dừng hoặc tua lại.</p><button type="button" onClick={() => { void audio.current?.play().catch(() => setPlayError("Không phát được âm thanh. Kiểm tra loa rồi thử lại.")); }}><Play size={18} /> Phát và bắt đầu</button>{playError && <small role="alert">{playError}</small>}</div></div>}
   </div>;
 }
 
@@ -80,7 +93,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   flags: string[];
   setFlags: (flags: string[]) => void;
   notes: Record<string, string>;
-  setNotes: (notes: Record<string, string>) => void;
+  setNotes: Dispatch<SetStateAction<Record<string, string>>>;
   onFinish: () => void;
 }) {
   const listening = exam.skill === "Listening";
@@ -96,6 +109,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const [notesOpen, setNotesOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [markError, setMarkError] = useState("");
+  const [navigationError, setNavigationError] = useState("");
   const marks = useMemo(() => savedMarks(notes.reading_highlights), [notes.reading_highlights]);
   const setMarks = useCallback((next: Mark[] | ((previous: Mark[]) => Mark[])) => {
     const updated = typeof next === "function" ? next(marks) : next;
@@ -115,6 +129,11 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   };
 
   const goTo = useCallback((sectionIndex: number, questionId?: string, playNext = false) => {
+    if (listening && notes.__view === "exam" && sectionIndex !== part && !playNext && section && (notes.listening_played || "").split(",").includes(section.id) && !(notes.listening_finished || "").split(",").includes(section.id)) {
+      setNavigationError("Hãy nghe hết bản ghi của Part hiện tại trước khi chuyển Part.");
+      return;
+    }
+    setNavigationError("");
     setPart(sectionIndex);
     setAutoPlayPart(playNext ? sectionIndex : null);
     setSelection(null);
@@ -123,7 +142,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       target?.scrollIntoView({ behavior: "smooth", block: questionId ? "center" : "start" });
       (target?.querySelector("input:not([type=radio]):not([type=checkbox])") as HTMLInputElement | null)?.focus({ preventScroll: true });
     }, 60);
-  }, []);
+  }, [listening, notes, part, section]);
 
   // Paint saved highlights for the visible passage with the CSS Custom Highlight API (no DOM changes).
   useEffect(() => {
@@ -196,12 +215,13 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
         onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>}
       <div className="bt-questions">
         {listening && <header className="bt-part-head"><span>{label(part)}</span><h2>{section.title}</h2></header>}
-        {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} />)}
+        {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} printed={listening && group.kind === "gap" ? printedListeningLayout(section.passage, group.questions.map((question) => question.number)) : undefined} />)}
         <div className="bt-part-end">{part + 1 < sections.length ? <button type="button" className="bx-next" onClick={() => goTo(part + 1)}>Sang {label(part + 1)} <ChevronRight size={17} /></button> : <button type="button" className="bx-submit" onClick={onFinish}>Hoàn thành & nộp bài</button>}</div>
       </div>
     </div>
 
     {markError && <p className="bt-mark-error" role="status">{markError}</p>}
+    {navigationError && <p className="bt-mark-error" role="status">{navigationError}</p>}
     {canMark && selection && <div className="bt-mark-pop" style={{ left: selection.x, top: selection.y }}>
       <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => { setMarks([...marks, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); }}><Highlighter size={15} /> Tô sáng</button>
     </div>}
@@ -213,10 +233,9 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     </aside>}
 
     <footer className="bt-dock">
-      {listening && section.audioUrl && <AudioDock key={section.id} src={section.audioUrl} title={section.title}
+      {listening && section.audioUrl && <AudioDock key={section.id} src={section.audioUrl} title={section.title} examMode={notes.__view === "exam"} started={(notes.listening_played || "").split(",").includes(section.id)} finished={(notes.listening_finished || "").split(",").includes(section.id)} initialPosition={Number(notes[`listening_position_${section.id}`]) || 0} onStart={() => setNotes((current) => ({ ...current, listening_played: [...new Set([...(current.listening_played || "").split(",").filter(Boolean), section.id])].join(",") }))} onProgress={(seconds) => setNotes((current) => ({ ...current, [`listening_position_${section.id}`]: String(seconds) }))}
         autoPlayNext={autoPlayPart === part}
-        onEnded={exam.mode === "full_test" && sections.length === 4 && part + 1 < sections.length
-          ? () => goTo(part + 1, undefined, true) : undefined} />}
+        onEnded={() => { if (notes.__view === "exam") { setNotes((current) => ({ ...current, listening_finished: [...new Set([...(current.listening_finished || "").split(",").filter(Boolean), section.id])].join(",") })); if (!scope && sections.length === 4 && part + 1 < sections.length) goTo(part + 1, undefined, true); } }} />}
       <nav className="bt-parts" aria-label="Chọn câu hỏi">
         <button type="button" className="bt-arrow" disabled={part === 0} onClick={() => goTo(part - 1)} aria-label="Phần trước"><ChevronLeft size={18} /></button>
         <div className="bt-part-list">{sections.map((item, index) => <div key={item.id} className={`bt-part ${index === part ? "is-current" : ""}`}>

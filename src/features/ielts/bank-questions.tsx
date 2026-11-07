@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- Reviewed exam media can use external hosts outside Next's image allowlist. */
 
 import { Fragment, useState, type ReactNode } from "react";
 import { Flag } from "lucide-react";
@@ -72,9 +73,9 @@ function richBlocks(text: string, gap: (key: string, number?: number) => ReactNo
   const out: ReactNode[] = [];
   for (let index = 0; index < lines.length; index++) {
     const line = lines[index];
-    if (/^\s*\|/.test(line)) {
+    if (/^\s*\|/.test(line) || /\s\|\s/.test(line)) {
       const rows: string[][] = [];
-      while (index < lines.length && /^\s*\|/.test(lines[index])) {
+      while (index < lines.length && (/^\s*\|/.test(lines[index]) || /\s\|\s/.test(lines[index]))) {
         const cells = lines[index].trim().replace(/^\||\|$/g, "").split("|").map((cell) => cell.trim());
         if (!cells.every((cell) => /^:?-{2,}:?$/.test(cell))) rows.push(cells);
         index++;
@@ -130,6 +131,16 @@ function GapGroup({ group, props }: { group: QuestionGroup; props: AnswerProps }
   </div>;
 }
 
+/** Preserve the printed form, notes or table when the imported Listening part carries its original layout. */
+function PrintedGapGroup({ group, props, printed }: { group: QuestionGroup; props: AnswerProps; printed: string }) {
+  let next = 0;
+  const byNumber = new Map(group.questions.map((question) => [props.numberOf(question.id), question]));
+  return <div className="bq-printed">{richBlocks(printed, (_key, number) => {
+    const question = number === undefined ? group.questions[next++] : byNumber.get(number);
+    return question ? <GapInput question={question} props={props} /> : <span className="bq-blank" />;
+  })}</div>;
+}
+
 function ChoiceList({ question, props, options, many = false }: { question: ExamQuestion; props: AnswerProps; options: { key: string; label: string }[]; many?: boolean }) {
   const value = props.answers[question.id] || "";
   const picked = many ? value.split(",").filter(Boolean) : [value];
@@ -144,6 +155,32 @@ function ChoiceList({ question, props, options, many = false }: { question: Exam
       </label>;
     })}</div>
   </div>;
+}
+
+/** A "Choose TWO/THREE" stem is one set of options, stored as one answer per numbered slot. */
+function ManyGroup({ group, props }: { group: QuestionGroup; props: AnswerProps }) {
+  const sets: ExamQuestion[][] = [];
+  for (const question of group.questions) {
+    const last = sets.at(-1);
+    if (question.group && last?.[0].group === question.group) last.push(question);
+    else sets.push([question]);
+  }
+  const options = group.options.map((option) => ({ key: optionKey(option), label: optionLabel(option) }));
+  return <div className="bq-many-groups">{sets.map((questions) => {
+    if (questions.length === 1) return <ChoiceList key={questions[0].id} question={questions[0]} props={props} many options={options} />;
+    const picked = questions.map((question) => props.answers[question.id]).filter(Boolean);
+    const choose = (key: string) => {
+      const next = picked.includes(key) ? picked.filter((value) => value !== key) : [...picked, key];
+      if (next.length > questions.length) return;
+      next.sort();
+      questions.forEach((question, index) => props.setAnswer(question.id, next[index] || ""));
+    };
+    return <fieldset className="bq-many-set" key={questions[0].id}>
+      <legend>{questions[0].prompt}</legend>
+      <p>Chọn {questions.length} đáp án cho câu {props.numberOf(questions[0].id)}–{props.numberOf(questions.at(-1)!.id)}.</p>
+      <div className="bq-many-options">{options.map((option) => <label key={option.key} className={picked.includes(option.key) ? "is-on" : ""}><input type="checkbox" checked={picked.includes(option.key)} onChange={() => choose(option.key)} /><b>{option.key}</b><span>{option.label}</span></label>)}</div>
+    </fieldset>;
+  })}</div>;
 }
 
 /** Matching information / labelling: a grid with one row per question and one column per letter. */
@@ -209,13 +246,16 @@ export function groupRange(group: QuestionGroup, numberOf: (id: string) => numbe
 }
 
 /** One "Questions 1–7" block with its instructions and the right answer controls for its type. */
-export function QuestionGroupView({ group, props }: { group: QuestionGroup; props: AnswerProps }) {
+export function QuestionGroupView({ group, props, printed }: { group: QuestionGroup; props: AnswerProps; printed?: string }) {
+  const media = group.questions.find((question) => question.mediaUrl);
   return <section className="bq-group" aria-label={groupRange(group, props.numberOf)}>
     <h3>{groupRange(group, props.numberOf)}</h3>
     {group.instructions && <div className="bq-instructions">{richBlocks(group.instructions, () => <span className="bq-blank" />)}</div>}
-    {group.kind === "gap" ? <GapGroup group={group} props={props} />
+    {media?.mediaUrl && <figure className="bq-media"><a href={media.mediaUrl} target="_blank" rel="noreferrer" aria-label="Mở sơ đồ hoặc bản đồ cỡ lớn"><img src={media.mediaUrl} alt={media.mediaReference || `Sơ đồ cho ${groupRange(group, props.numberOf)}`} loading="lazy" /></a><figcaption>Bấm vào hình để xem cỡ lớn.</figcaption></figure>}
+    {group.kind === "gap" ? printed ? <PrintedGapGroup group={group} props={props} printed={printed} /> : <GapGroup group={group} props={props} />
       : group.kind === "matrix" ? <Matrix group={group} props={props} />
       : group.kind === "pick" ? <PickGroup group={group} props={props} />
+      : group.kind === "many" ? <ManyGroup group={group} props={props} />
       : group.questions.map((question) => <ChoiceList key={question.id} question={question} props={props} many={group.kind === "many"} options={group.kind === "judge" ? judgeOptions(question.type) : question.options.map((option) => ({ key: optionKey(option), label: optionLabel(option) }))} />)}
   </section>;
 }

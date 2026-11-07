@@ -84,7 +84,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const q = questions[active]; const section = content?.sections.find((s) => s.questions.some((item) => item.id === q?.id)) || content?.sections[0];
   const inScope = scope ? questions.filter((item) => scope.includes(item.id)) : questions;
   const answered = inScope.filter((item) => answers[item.id]).length;
-  const setAnswer = (id: string, value: string) => setAnswers({ ...answers, [id]: value });
+  const setAnswer = (id: string, value: string) => setAnswers((current) => ({ ...current, [id]: value }));
   const dialog = confirming && <SubmitDialog unanswered={inScope.length - answered} flagged={flags.length} busy={busy} reading={exam.skill === "Reading"} onCancel={() => setConfirming(false)} onConfirm={(difficulty) => { setConfirming(false); void submit(false, difficulty); }} />;
   // Reading and Listening run as a full test sheet; Writing and Speaking as studios.
   if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run bx-exam-mode ${exam.skill === "Listening" ? "bx-listening-mode" : ""} ${notes.__view !== "exam" ? "bx-practice-mode" : "bx-real-mode"} bl-tone-${toneOf(exam.skill)}`}>
