@@ -9,9 +9,9 @@ import { optionKey, optionLabel, groupQuestions } from "./bank-questions";
 import { RichText } from "./rich-text";
 import "./bank-reading-review.css";
 
-type Props = { title: string; content: ExamContent; review: ReviewItem[]; format: string; startedAt?: string; submittedAt?: string; backHref: string; retryHref?: string; onRetry?: () => void };
+type Props = { title: string; content: ExamContent; review: ReviewItem[]; format: string; difficulty?: string; startedAt?: string; submittedAt?: string; backHref: string; retryHref?: string; onRetry?: () => void };
 
-export function ReadingReview({ title, content, review, format, startedAt, submittedAt, backHref, retryHref, onRetry }: Props) {
+export function ReadingReview({ title, content, review, format, difficulty, startedAt, submittedAt, backHref, retryHref, onRetry }: Props) {
   const [summary, setSummary] = useState(true);
   const [part, setPart] = useState(0);
   const [active, setActive] = useState<string | null>(null);
@@ -26,6 +26,7 @@ export function ReadingReview({ title, content, review, format, startedAt, submi
   const skipped = review.filter((item) => !item.given).length;
   const band = estimateBand("Reading", format, correct, review.length);
   const duration = startedAt && submittedAt ? Math.max(0, Math.round((new Date(submittedAt).getTime() - new Date(startedAt).getTime()) / 60000)) : null;
+  const difficultyLabel = difficulty === "easy" ? "Dễ" : difficulty === "balanced" ? "Vừa sức" : difficulty === "hard" ? "Khó" : null;
   const section = sections[Math.min(part, sections.length - 1)];
   const evidence = active ? result.get(active)?.evidence : null;
   const groups = groupQuestions(section?.questions || []);
@@ -43,7 +44,7 @@ export function ReadingReview({ title, content, review, format, startedAt, submi
   if (summary) return <main className="bx-page br-summary bl-tone-reading"><nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> Reading</Link><span>/</span>Kết quả</nav>
     <section className="br-summary-card"><span className="bx-kicker">Kết quả Reading</span><h1>{title}</h1><p>Xem tổng quan bài làm, rồi mở lại đề để đối chiếu từng câu với bài đọc.</p>
       <div className="br-summary-score"><strong>{band === null ? "—" : band.toFixed(1)}<small>Band ước tính</small></strong><span>{correct}<small>Đúng</small></span><span>{wrong}<small>Sai</small></span><span>{skipped}<small>Bỏ qua</small></span></div>
-      <dl className="br-summary-facts"><div><dt>Tổng số câu</dt><dd>{review.length}</dd></div><div><dt>Tỉ lệ đúng</dt><dd>{review.length ? Math.round(correct / review.length * 100) : 0}%</dd></div>{duration !== null && <div><dt>Thời gian làm</dt><dd>{duration} phút</dd></div>}{submittedAt && <div><dt>Ngày nộp</dt><dd>{new Date(submittedAt).toLocaleString("vi-VN")}</dd></div>}</dl>
+      <dl className="br-summary-facts"><div><dt>Tổng số câu</dt><dd>{review.length}</dd></div><div><dt>Tỉ lệ đúng</dt><dd>{review.length ? Math.round(correct / review.length * 100) : 0}%</dd></div>{duration !== null && <div><dt>Thời gian làm</dt><dd>{duration} phút</dd></div>}{submittedAt && <div><dt>Ngày nộp</dt><dd>{new Date(submittedAt).toLocaleString("vi-VN")}</dd></div>}{difficultyLabel && <div><dt>Bạn đánh giá đề</dt><dd>{difficultyLabel}</dd></div>}</dl>
       <div className="br-summary-actions"><button type="button" className="bx-start" onClick={() => setSummary(false)}>Xem lại bài làm <ChevronRight size={18} /></button>{onRetry ? <button type="button" className="bx-ghost" onClick={onRetry}><RotateCcw size={16} /> Làm lại</button> : retryHref && <Link href={retryHref} className="bx-ghost"><RotateCcw size={16} /> Làm lại</Link>}</div>
       <small>Band chỉ là ước tính từ bài luyện tập.</small>
     </section></main>;

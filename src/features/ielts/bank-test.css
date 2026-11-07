@@ -12,6 +12,7 @@
 .bt-passage p { margin: 0 0 14px; color: #1f2d3d; line-height: 1.75; }
 ::highlight(bank-mark) { background-color: #ffe17a; color: inherit; }
 .bt-mark-pop { position: fixed; z-index: 60; transform: translate(-50%, calc(-100% - 8px)); }
+.bt-mark-error { position: fixed; z-index: 60; right: 20px; bottom: 84px; max-width: min(360px, calc(100vw - 40px)); margin: 0; padding: 11px 14px; border: 1px solid #e9b8a9; border-radius: 8px; background: #fff4f0; color: #854432; font-size: 13px; font-weight: 700; box-shadow: 0 12px 30px #172f3c24; }
 .bt-mark-pop button { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border: 0; border-radius: 10px; background: #14284b; color: #fff; font: inherit; font-size: 13px; font-weight: 800; box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5); cursor: pointer; }
 .bt-questions { display: grid; gap: 14px; min-width: 0; font-size: calc(15px * var(--bt-scale)); }
 .bt-part-head span { color: var(--bl-accent); font-size: 12px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, CalendarPlus, Check, CircleAlert, Clock3, Flag, Headphones, ListChecks, Maximize2, Mic, Minimize2, NotebookPen, RotateCcw, ShieldCheck, Square, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
+import { readingFullMinutes, readingPassageMinutes } from "@/lib/ielts-bank/schema";
 import { catalogGroups, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { librarySkills } from "./bank-library";
 import { RichText } from "./rich-text";
@@ -15,6 +16,7 @@ export { RichText };
 
 export type BankExam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; topic?: string | null; content?: ExamContent };
 export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string; evidence?: { quote: string; paragraph: string } | null };
+export type ReadingDifficulty = "easy" | "balanced" | "hard";
 
 export const toneOf = (skill: string) => librarySkills[skill as CatalogSkill]?.tone ?? "reading";
 
@@ -46,13 +48,14 @@ const beforeYouStart: Record<string, string[]> = {
 };
 
 /** The exam's cover page: what it is, what to expect, and when to practise it. */
-export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: 30 | 45 | 60 }) => void; scheduleSlot: ReactNode }) {
+export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number }) => void; scheduleSlot: ReactNode }) {
   const searchParams = useSearchParams();
   const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
   const partNumber = Number(searchParams.get("part"));
   const [readingPart, setReadingPart] = useState(Number.isInteger(partNumber) && partNumber > 0 ? partNumber : 0);
   const [readingView, setReadingView] = useState<"practice" | "exam">("practice");
-  const [readingMinutes, setReadingMinutes] = useState<30 | 45 | 60>(60);
+  const [readingMinutes, setReadingMinutes] = useState<number>(60);
+  const [passageMinutes, setPassageMinutes] = useState<number>(20);
   const selectedPart = (exam.skill === "Reading" || exam.skill === "Listening") && Number.isInteger(partNumber) && partNumber > 0 ? parts[partNumber - 1] : undefined;
   const partName = (index: number) => exam.skill === "Listening" ? `Part ${index + 1}` : `Passage ${index + 1}`;
   const questions = selectedPart?.questions ?? examQuestions(exam.content);
@@ -68,14 +71,14 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
       <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> Reading</Link><span>/</span>Chuẩn bị làm bài</nav>
       <header className="br-launch-head"><span className="bx-kicker">IELTS Reading</span><h1>{exam.title}</h1><p>Chọn phần muốn luyện và giao diện phù hợp trước khi bắt đầu. Bài làm được lưu tự động.</p></header>
       <section className="br-launch-card"><h2><span>1</span> Bạn muốn làm bài thế nào?</h2><div className="br-launch-choices">
-        <label className={`br-launch-choice ${readingPart === 0 ? "is-on" : ""}`}><input type="radio" name="reading-part" checked={readingPart === 0} onChange={() => setReadingPart(0)} /><strong>Làm full đề</strong><small>{examQuestions(exam.content).length} câu · 3 passages</small><span className="br-duration">Thời gian <select value={readingMinutes} disabled={readingPart !== 0} onChange={(event) => setReadingMinutes(Number(event.target.value) as 30 | 45 | 60)} aria-label="Thời gian làm full đề"><option value={60}>60 phút</option><option value={45}>45 phút</option><option value={30}>30 phút</option></select></span></label>
-        <div className={`br-launch-choice br-launch-parts ${readingPart > 0 ? "is-on" : ""}`}><strong>Luyện từng passage</strong><small>Mỗi passage 20 phút</small>{parts.map((part, index) => <label key={part.id}><input type="radio" name="reading-part" checked={readingPart === index + 1} onChange={() => setReadingPart(index + 1)} /><span>Passage {index + 1}</span><small>{part.questions.length} câu</small></label>)}</div>
+        <label className={`br-launch-choice ${readingPart === 0 ? "is-on" : ""}`}><input type="radio" name="reading-part" checked={readingPart === 0} onChange={() => setReadingPart(0)} /><strong>Làm full đề</strong><small>{examQuestions(exam.content).length} câu · {parts.length} passages</small><span className="br-duration">Thời gian <select value={readingMinutes} disabled={readingPart !== 0} onChange={(event) => setReadingMinutes(Number(event.target.value))} aria-label="Thời gian làm full đề">{readingFullMinutes.map((minutes) => <option key={minutes} value={minutes}>{minutes} phút</option>)}</select></span></label>
+        <div className={`br-launch-choice br-launch-parts ${readingPart > 0 ? "is-on" : ""}`}><strong>Luyện từng passage</strong><span className="br-duration">Thời gian <select value={passageMinutes} disabled={readingPart === 0} onChange={(event) => setPassageMinutes(Number(event.target.value))} aria-label="Thời gian làm từng passage">{readingPassageMinutes.map((minutes) => <option key={minutes} value={minutes}>{minutes} phút</option>)}</select></span><small>Chọn một passage để luyện riêng</small>{parts.map((part, index) => <label key={part.id}><input type="radio" name="reading-part" checked={readingPart === index + 1} onChange={() => setReadingPart(index + 1)} /><span>Passage {index + 1}</span><small>{part.questions.length} câu</small></label>)}</div>
       </div></section>
       <section className="br-launch-card"><h2><span>2</span> Chọn giao diện làm bài</h2><div className="br-launch-choices">
         <label className={`br-launch-choice ${readingView === "practice" ? "is-on" : ""}`}><input type="radio" name="reading-view" checked={readingView === "practice"} onChange={() => setReadingView("practice")} /><strong>Giao diện luyện tập</strong><small>Tô sáng bài đọc và chỉnh cỡ chữ.</small></label>
         <label className={`br-launch-choice ${readingView === "exam" ? "is-on" : ""}`}><input type="radio" name="reading-view" checked={readingView === "exam"} onChange={() => setReadingView("exam")} /><strong>Giao diện thi thật</strong><small>Tập trung vào bài đọc, câu hỏi, đồng hồ và bảng câu.</small></label>
       </div></section>
-      <div className="br-launch-footer"><span>{count} câu · {chosen ? 20 : readingMinutes} phút · {readingView === "practice" ? "Luyện tập" : "Thi thật"}</span><button type="button" className="bx-start" disabled={busy} onClick={() => onStart(chosen ? { section: chosen.id, ids: chosen.questions.map((question) => question.id) } : undefined, { view: readingView, minutes: readingPart === 0 ? readingMinutes : undefined })}>{busy ? "Đang mở đề…" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button></div>
+      <div className="br-launch-footer"><span>{count} câu · {chosen ? passageMinutes : readingMinutes} phút · {readingView === "practice" ? "Luyện tập" : "Thi thật"}</span><button type="button" className="bx-start" disabled={busy} onClick={() => onStart(chosen ? { section: chosen.id, ids: chosen.questions.map((question) => question.id) } : undefined, { view: readingView, minutes: chosen ? passageMinutes : readingMinutes })}>{busy ? "Đang mở đề…" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button></div>
       {error && <p className="bx-error" role="alert">{error}</p>}
     </main>;
   }
@@ -215,8 +218,9 @@ export function SpeakingAnswer({ value, onChange, index }: { value: string; onCh
 }
 
 /** Asks before submitting, with what is still unanswered or flagged. */
-export function SubmitDialog({ unanswered, flagged, busy, onCancel, onConfirm }: { unanswered: number; flagged: number; busy: boolean; onCancel: () => void; onConfirm: () => void }) {
+export function SubmitDialog({ unanswered, flagged, busy, reading = false, onCancel, onConfirm }: { unanswered: number; flagged: number; busy: boolean; reading?: boolean; onCancel: () => void; onConfirm: (difficulty?: ReadingDifficulty) => void }) {
   const confirm = useRef<HTMLButtonElement>(null);
+  const [difficulty, setDifficulty] = useState<ReadingDifficulty | undefined>();
   useEffect(() => { confirm.current?.focus(); const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onCancel(); }; window.addEventListener("keydown", escape); return () => window.removeEventListener("keydown", escape); }, [onCancel]);
   return <div className="bx-dialog-layer" role="dialog" aria-modal="true" aria-labelledby="bx-submit-title">
     <button type="button" className="bx-dialog-backdrop" aria-label="Đóng" tabIndex={-1} onClick={onCancel} />
@@ -224,7 +228,8 @@ export function SubmitDialog({ unanswered, flagged, busy, onCancel, onConfirm }:
       <button type="button" className="bx-dialog-close" onClick={onCancel} aria-label="Đóng"><X size={18} /></button>
       <h2 id="bx-submit-title">Nộp bài ngay?</h2>
       {unanswered || flagged ? <ul>{unanswered > 0 && <li><CircleAlert size={16} /> Còn <b>{unanswered}</b> câu chưa trả lời</li>}{flagged > 0 && <li><Flag size={16} /> <b>{flagged}</b> câu đang đánh dấu xem lại</li>}</ul> : <p>Bạn đã trả lời tất cả câu hỏi.</p>}
-      <div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={onConfirm}>{busy ? "Đang nộp…" : "Nộp bài"}</button></div>
+      {reading && <fieldset className="bx-difficulty"><legend>Độ khó của đề với bạn <small>(không bắt buộc)</small></legend><div>{([['easy', 'Dễ'], ['balanced', 'Vừa sức'], ['hard', 'Khó']] as const).map(([value, label]) => <label key={value} className={difficulty === value ? "is-on" : ""}><input type="radio" name="reading-difficulty" value={value} checked={difficulty === value} onChange={() => setDifficulty(value)} />{label}</label>)}</div></fieldset>}
+      <div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={() => onConfirm(difficulty)}>{busy ? "Đang nộp…" : "Nộp bài"}</button></div>
     </div>
   </div>;
 }

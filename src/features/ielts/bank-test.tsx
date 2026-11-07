@@ -8,6 +8,15 @@ import { groupQuestions, QuestionGroupView, type AnswerProps } from "./bank-ques
 import "./bank-test.css";
 
 type Mark = { section: string; paragraph: number; start: number; end: number };
+function savedMarks(value: string | undefined): Mark[] {
+  if (!value) return [];
+  try {
+    const parsed: unknown = JSON.parse(value);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((item): item is [string, number, number, number] => Array.isArray(item) && item.length === 4 && typeof item[0] === "string" && item.slice(1).every((part) => Number.isInteger(part) && part >= 0) && item[3] > item[2])
+      .map(([section, paragraph, start, end]) => ({ section, paragraph, start, end }));
+  } catch { return []; }
+}
 const canHighlight = () => typeof window !== "undefined" && "Highlight" in window && Boolean((CSS as unknown as { highlights?: unknown }).highlights);
 
 /** Text offset of a point inside a paragraph element, counting only text nodes. */
@@ -85,7 +94,14 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const [scale, setScale] = useState(1);
   const [notesOpen, setNotesOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [marks, setMarks] = useState<Mark[]>([]);
+  const [markError, setMarkError] = useState("");
+  const marks = useMemo(() => savedMarks(notes.reading_highlights), [notes.reading_highlights]);
+  const setMarks = useCallback((next: Mark[] | ((previous: Mark[]) => Mark[])) => {
+    const updated = typeof next === "function" ? next(marks) : next;
+    const encoded = JSON.stringify(updated.map(({ section, paragraph, start, end }) => [section, paragraph, start, end]));
+    if (encoded.length <= 1900) { setNotes({ ...notes, reading_highlights: encoded }); setMarkError(""); }
+    else setMarkError("Đã đạt giới hạn tô sáng cho bài này. Xóa vài đoạn để tiếp tục.");
+  }, [marks, notes, setNotes]);
   const [selection, setSelection] = useState<{ x: number; y: number; mark: Mark } | null>(null);
   const passage = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
@@ -140,7 +156,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [practiceTools, selection]);
+  }, [practiceTools, selection, setMarks]);
 
   if (!section) return <p className="bx-muted">Đề này chưa có câu hỏi.</p>;
   const scopedPart = Number(notes.__part);
@@ -184,6 +200,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       </div>
     </div>
 
+    {markError && <p className="bt-mark-error" role="status">{markError}</p>}
     {practiceTools && selection && <div className="bt-mark-pop" style={{ left: selection.x, top: selection.y }}>
       <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => { setMarks([...marks, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); }}><Highlighter size={15} /> Tô sáng</button>
     </div>}

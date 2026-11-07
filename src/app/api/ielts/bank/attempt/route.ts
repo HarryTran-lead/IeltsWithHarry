@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { bankClient, requestError, submitAttempt, viewer } from "@/lib/ielts-bank/server";
-import { attemptContent, attemptMinutes, contentSchema, publicContent, scoreAnswers } from "@/lib/ielts-bank/schema";
+import { attemptContent, attemptMinutes, contentSchema, publicContent, readingFullMinutes, readingPassageMinutes, scoreAnswers } from "@/lib/ielts-bank/schema";
 import { learnerSkillAvailable, releaseLocks } from "@/lib/runtime";
 import readingEvidence from "@/data/ielts-reading-evidence.json";
 export const runtime = "nodejs";
@@ -10,10 +10,10 @@ function withEvidence(result: ReturnType<typeof scoreAnswers>) {
 }
 
 const bodySchema = z.discriminatedUnion("action", [
-  z.object({ action: z.literal("start"), examId: z.uuid(), sectionId: z.string().min(1).max(100).optional(), view: z.enum(["practice", "exam"]).optional(), minutes: z.union([z.literal(30), z.literal(45), z.literal(60)]).optional() }),
+  z.object({ action: z.literal("start"), examId: z.uuid(), sectionId: z.string().min(1).max(100).optional(), view: z.enum(["practice", "exam"]).optional(), minutes: z.number().int().optional() }),
   z.object({ action: z.literal("schedule"), examId: z.uuid(), dueDate: z.iso.date() }),
   z.object({ action: z.literal("save"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(2000)).optional() }),
-  z.object({ action: z.literal("submit"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), expired: z.boolean().optional() }),
+  z.object({ action: z.literal("submit"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), expired: z.boolean().optional(), difficulty: z.enum(["easy", "balanced", "hard"]).optional() }),
 ]);
 export async function POST(request: Request) {
   try {
@@ -22,6 +22,9 @@ export async function POST(request: Request) {
       const { data: exam, error } = await client.from("ielts_exams").select("id,skill,published_version_id").eq("id", body.examId).not("published_version_id", "is", null).single();
       if (error || !exam) throw new Error("Exam unavailable");
       if (!learnerSkillAvailable(exam.skill)) return unavailable();
+      if (body.minutes !== undefined && (exam.skill !== "Reading" || !(body.sectionId ? readingPassageMinutes : readingFullMinutes).some((value) => value === body.minutes))) {
+        return Response.json({ error: "Thời gian làm bài không hợp lệ." }, { status: 400 });
+      }
       let notes: Record<string, string> = {};
       if (body.sectionId) {
         if (exam.skill !== "Reading" && exam.skill !== "Listening") throw new Error("Section practice unavailable");
@@ -33,7 +36,7 @@ export async function POST(request: Request) {
         if (!section) throw new Error("Section unavailable");
         notes = { __section: section.id, __part: String(sectionIndex + 1), __scope: section.questions.map((question) => question.id).join(",") };
       }
-      if (exam.skill === "Reading") notes = { ...notes, __view: body.view || "practice", ...(body.sectionId ? {} : body.minutes ? { __minutes: String(body.minutes) } : {}) };
+      if (exam.skill === "Reading") notes = { ...notes, __view: body.view || "practice", ...(body.minutes !== undefined ? { __minutes: String(body.minutes) } : {}) };
       const { data, error: insertError } = await client.from("ielts_attempts").insert({ user_id: user.id, exam_id: exam.id, version_id: exam.published_version_id, notes }).select("id,started_at,state,answers,flags,notes").single();
       if (insertError) throw new Error(insertError.message);
       return Response.json({ attempt: data });
@@ -64,7 +67,7 @@ export async function POST(request: Request) {
       const linkedExam = Array.isArray(existing.ielts_exams) ? existing.ielts_exams[0] : existing.ielts_exams;
       if (!learnerSkillAvailable(linkedExam?.skill)) return unavailable();
     }
-    return Response.json(withEvidence(await submitAttempt(body.attemptId, user.id, body.answers, body.expired ? "expired" : "submitted")));
+    return Response.json(withEvidence(await submitAttempt(body.attemptId, user.id, body.answers, body.expired ? "expired" : "submitted", body.difficulty)));
   } catch (error) { return requestError(error); }
 }
 export async function GET(request: Request) {

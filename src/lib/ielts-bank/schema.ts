@@ -112,10 +112,17 @@ export function attemptContent(content: ExamContent, notes: Record<string, strin
   return section ? { ...content, sections: [section] } : content;
 }
 
+export const readingFullMinutes = [50, 55, 60, 65, 70] as const;
+export const readingPassageMinutes = [10, 15, 20, 25, 30] as const;
+
 export function attemptMinutes(skill: string, examMinutes: number, notes: Record<string, string> | null | undefined) {
-  if (notes?.__section) return skill === "Reading" ? 20 : skill === "Listening" ? 10 : examMinutes;
   const selected = Number(notes?.__minutes);
-  return skill === "Reading" && [30, 45, 60].includes(selected) ? selected : examMinutes;
+  if (notes?.__section) {
+    if (skill === "Reading") return readingPassageMinutes.some((value) => value === selected) ? selected : 20;
+    return skill === "Listening" ? 10 : examMinutes;
+  }
+  // Keep the duration of attempts started before the current time choices changed.
+  return skill === "Reading" && ([...readingFullMinutes, 30, 45] as number[]).includes(selected) ? selected : examMinutes;
 }
 /** The scored key of an option: "G — text" → G, "iii — text" → iii, " — B. text" → B, "C. text" → C; plain keys pass through. */
 export function qOptionKey(value: string) {

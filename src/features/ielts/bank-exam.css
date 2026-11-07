@@ -144,6 +144,13 @@
 .bx-dialog p { margin: 0; color: #56697b; }
 .bx-dialog-close { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: #6d8296; cursor: pointer; }
 .bx-dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+.bx-difficulty { min-width: 0; margin: 2px 0 0; padding: 0; border: 0; }
+.bx-difficulty legend { margin-bottom: 9px; color: #30495b; font-size: 13px; font-weight: 800; }
+.bx-difficulty legend small { color: #748798; font-weight: 500; }
+.bx-difficulty > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.bx-difficulty label { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 38px; padding: 5px; border: 1px solid #d5e0e3; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 700; }
+.bx-difficulty label.is-on { border-color: #0b9b90; background: #eaf8f4; color: #087e74; }
+.bx-difficulty input { margin: 0; accent-color: #0b9b90; }
 
 /* Result */
 .bx-result-hero { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 26px; padding: 24px 26px; border: 1px solid #e3ecf1; border-radius: 24px; background: var(--dot-grid) 0 0 / 18px 18px, linear-gradient(115deg, var(--bl-wash), #fffdf7 60%); }
