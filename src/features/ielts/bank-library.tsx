@@ -295,17 +295,17 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
 
   const readingFullCover = exam.skill === "Reading" && exam.practice_type === "full_test" && !section;
   const suppliedReadingTest = exam.skill === "Reading"
-    ? /^english-skill-lab-reading-0(0[1-5])$/i.exec(exam.external_id ?? "")?.[1]
-      ?? /^English Skill Lab · Reading Test (0[1-5])(?: \(Bản luyện thử\))?$/.exec(exam.title)?.[1]
+    ? /^english-skill-lab-reading-0(0[1-7])$/i.exec(exam.external_id ?? "")?.[1]
+      ?? /^English Skill Lab · Reading Test (0[1-7])(?: \(Bản luyện thử\))?$/.exec(exam.title)?.[1]
     : undefined;
   const coverUrl = readingFullCover
     ? null
     : suppliedReadingTest
     ? section && section.part >= 1 && section.part <= 3
-      ? `/images/ielts/reading/test-${suppliedReadingTest}-passage-${section.part}.png`
+      ? `/images/ielts/reading/test-${suppliedReadingTest}-passage-${section.part}.${Number(suppliedReadingTest) >= 6 ? "webp" : "png"}`
       : null
     : exam.image_url;
-  const aiCover = Boolean(!exam.visual && coverUrl?.includes("/ielts-images/covers/"));
+  const aiCover = Boolean(!exam.visual && (coverUrl?.includes("/ielts-images/covers/") || (section && suppliedReadingTest && Number(suppliedReadingTest) >= 6)));
   if (exam.skill === "Writing") {
     const kind = writingKind(exam);
     return <Link href={href} className="bl-card bl-card-writing">
