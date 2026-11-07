@@ -2,7 +2,8 @@ import { readFileSync } from "node:fs";
 import { contentSchema, qOptionKey, scoreAnswers, validateExam, type NormalizedExam } from "../src/lib/ielts-bank/schema";
 
 const bundle = JSON.parse(readFileSync(process.argv[2], "utf8"));
-if (bundle.kind !== "ielts-reading-admin-bundle" || bundle.exams?.length !== 5) throw new Error("Expected five Reading exams");
+const expectedCount = Number(process.argv[3] || 5);
+if (bundle.kind !== "ielts-reading-admin-bundle" || bundle.exams?.length !== expectedCount) throw new Error(`Expected ${expectedCount} Reading exams`);
 for (const raw of bundle.exams) {
   const exam = raw as NormalizedExam;
   exam.content = contentSchema.parse(raw.content);
