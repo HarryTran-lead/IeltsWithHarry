@@ -24,3 +24,12 @@ Checked 2026-11-07 against YouPass pages that are publicly readable. The signed-
 | Short answer and sentence completion | [Assignment Feedback](https://youpass.vn/thi-thu/listening/10204) | Numbered text input with the group's instructions and word limit. |
 
 Current YouPass account-only screens, exact spacing, colors, audio progression across a full four-Part test, and result-review controls still require direct browser inspection. The product uses its own branding and exam media; no YouPass imagery or questions were imported.
+
+## Follow-up implementation
+
+- Review transcript is split into speaker turns, with the answer evidence highlighted in its spoken line.
+- A Part-only result displays that Part's original number and only the questions included in the attempt.
+- For "Choose TWO/THREE", review lists every accepted letter for the shared group, because their order does not affect scoring. Evidence follows the learner's selected letter.
+- Flow-chart completion now places answer slots in the printed sequence, followed by the option bank.
+
+The user chose to continue using public YouPass pages. The account-only screens above remain unverified.

@@ -48,6 +48,12 @@ body:has(.br-review) { overflow: hidden; }
 .br-passage audio { display: block; width: 100%; margin: 0 0 25px; }
 .br-passage h2 { margin: 0 0 15px; padding-bottom: 9px; border-bottom: 1px solid #dce5e9; color: #2c6587; font-size: 17px; }
 .br-passage p.is-evidence { border-left: 3px solid #50b996; padding-left: 10px; background: #f2faf4; }.br-passage mark { padding: 2px 0; background: #a9e0c4; color: inherit; }
+.br-transcript { display: grid; gap: 8px; }
+.br-transcript p { display: grid; grid-template-columns: minmax(90px, 22%) minmax(0, 1fr); gap: 12px; margin: 0; padding: 9px 12px; border-radius: 7px; font-size: 14px; line-height: 1.6; }
+.br-transcript p:nth-child(odd) { background: #f6f9fa; }
+.br-transcript p.is-evidence { background: #e9f7ee; }
+.br-transcript strong { color: #286b8f; }
+.br-transcript span { min-width: 0; }
 .br-divider { display: grid; place-items: center; background: #d9dfe1; cursor: col-resize; touch-action: none; }.br-divider span { padding: 10px 3px; border: 1px solid #c6d0d2; border-radius: 4px; background: #fff; }
 .br-group { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #e3e9e9; }.br-group h2 { margin: 0 0 12px; font-size: 21px; }.br-instructions { margin: 0 0 20px; color: #3f4c56; line-height: 1.6; }
 .br-group-media { display: grid; place-items: center; margin: 0 0 18px; padding: 12px; border: 1px solid #dce5e8; border-radius: 8px; background: #fff; }

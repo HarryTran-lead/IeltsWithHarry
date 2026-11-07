@@ -42,12 +42,14 @@ function rangeAt(root: Node, start: number, end: number) {
   return null;
 }
 
-function printedListeningLayout(passage: string, numbers: number[]) {
+function printedListeningLayout(passage: string, numbers: number[], flowChart = false) {
   const block = passage.split(/(?=\*\*Questions\s+\d+[–-]\d+\*\*)/).find((chunk) => {
     const range = /^\*\*Questions\s+(\d+)[–-](\d+)\*\*/.exec(chunk.trim());
     return range && numbers[0] >= Number(range[1]) && numbers.at(-1)! <= Number(range[2]);
   });
-  const layout = block?.trim().split("\n").slice(2).join("\n").trim();
+  const lines = block?.trim().split("\n").slice(2) || [];
+  const lastGap = flowChart ? lines.findLastIndex((line) => line.includes(`**${numbers.at(-1)}**`)) : -1;
+  const layout = (flowChart && lastGap >= 0 ? lines.slice(0, lastGap + 1) : lines).join("\n").trim();
   return layout && numbers.every((number) => layout.includes(`**${number}**`)) ? layout : undefined;
 }
 
@@ -215,7 +217,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
         onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>}
       <div className="bt-questions">
         {listening && <header className="bt-part-head"><span>{label(part)}</span><h2>{section.title}</h2></header>}
-        {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} printed={listening && group.kind === "gap" ? printedListeningLayout(section.passage, group.questions.map((question) => question.number)) : undefined} />)}
+        {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} printed={listening && (group.kind === "gap" || /flow[_-]?chart[_-]completion/.test(group.type)) ? printedListeningLayout(section.passage, group.questions.map((question) => question.number), group.kind === "pick") : undefined} />)}
         <div className="bt-part-end">{part + 1 < sections.length ? <button type="button" className="bx-next" onClick={() => goTo(part + 1)}>Sang {label(part + 1)} <ChevronRight size={17} /></button> : <button type="button" className="bx-submit" onClick={onFinish}>Hoàn thành & nộp bài</button>}</div>
       </div>
     </div>

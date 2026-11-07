@@ -200,29 +200,31 @@ function Matrix({ group, props }: { group: QuestionGroup; props: AnswerProps }) 
 }
 
 /** Headings, sentence endings, people or word banks: drag an option onto a slot, or tap an option then a slot. */
-function PickGroup({ group, props }: { group: QuestionGroup; props: AnswerProps }) {
+function PickGroup({ group, props, printed }: { group: QuestionGroup; props: AnswerProps; printed?: string }) {
   const [held, setHeld] = useState<string | null>(null);
   const options = group.options.map((option) => ({ key: optionKey(option), label: optionLabel(option) }));
   const labelOf = (key: string) => options.find((option) => option.key === key);
   const used = new Set(group.questions.map((question) => props.answers[question.id]).filter(Boolean));
   const place = (questionId: string, key: string) => { props.setAnswer(questionId, key); setHeld(null); };
+  const slot = (question: ExamQuestion) => {
+    const chosen = props.answers[question.id] ? labelOf(props.answers[question.id]) : undefined;
+    return <span key={question.id} id={`q-${question.id}`} className={`bq-slot ${chosen ? "is-filled" : ""} ${held ? "is-ready" : ""}`}
+      onDragOver={(event) => event.preventDefault()}
+      onDrop={(event) => { event.preventDefault(); const key = event.dataTransfer.getData("text/plain"); if (key) place(question.id, key); }}>
+      <NumberBadge number={props.numberOf(question.id)} flagged={props.flags.includes(question.id)} onFlag={() => props.toggleFlag(question.id)} />
+      <button type="button" onClick={() => { if (held) place(question.id, held); else if (chosen) props.setAnswer(question.id, ""); }} aria-label={chosen ? `Câu ${props.numberOf(question.id)}: ${chosen.key}. Bấm để bỏ chọn` : `Đặt đáp án vào câu ${props.numberOf(question.id)}`}>
+        {chosen ? <><b>{chosen.key}</b> {chosen.label !== chosen.key && chosen.label}</> : <i>{held ? "Bấm để đặt vào đây" : "Kéo đáp án vào đây"}</i>}
+      </button>
+    </span>;
+  };
+  const byNumber = new Map(group.questions.map((question) => [props.numberOf(question.id), question]));
   return <div className="bq-pick">
-    <ol className="bq-slots">{group.questions.map((question) => {
-      const chosen = props.answers[question.id] ? labelOf(props.answers[question.id]) : undefined;
-      return <li key={question.id} id={`q-${question.id}`}>
-        <span className="bq-slot-stem">{richBlocks(question.prompt, () => null)}</span>
-        <span
-          className={`bq-slot ${chosen ? "is-filled" : ""} ${held ? "is-ready" : ""}`}
-          onDragOver={(event) => event.preventDefault()}
-          onDrop={(event) => { event.preventDefault(); const key = event.dataTransfer.getData("text/plain"); if (key) place(question.id, key); }}
-        >
-          <NumberBadge number={props.numberOf(question.id)} flagged={props.flags.includes(question.id)} onFlag={() => props.toggleFlag(question.id)} />
-          <button type="button" onClick={() => { if (held) place(question.id, held); else if (chosen) props.setAnswer(question.id, ""); }} aria-label={chosen ? `Câu ${props.numberOf(question.id)}: ${chosen.key}. Bấm để bỏ chọn` : `Đặt đáp án vào câu ${props.numberOf(question.id)}`}>
-            {chosen ? <><b>{chosen.key}</b> {chosen.label !== chosen.key && chosen.label}</> : <i>{held ? "Bấm để đặt vào đây" : "Kéo đáp án vào đây"}</i>}
-          </button>
-        </span>
-      </li>;
-    })}</ol>
+    {printed ? <div className="bq-flow-sheet">{richBlocks(printed, (_key, number) => {
+      const question = number === undefined ? undefined : byNumber.get(number);
+      return question ? slot(question) : <span className="bq-blank" />;
+    })}</div> : <ol className="bq-slots">{group.questions.map((question) => <li key={question.id}>
+      <span className="bq-slot-stem">{richBlocks(question.prompt, () => null)}</span>{slot(question)}
+    </li>)}</ol>}
     <div className="bq-bank">
       <small>Kéo đáp án thả vào ô trống, hoặc bấm chọn đáp án rồi bấm vào ô trống.</small>
       <div>{options.map((option) => <button
@@ -254,7 +256,7 @@ export function QuestionGroupView({ group, props, printed }: { group: QuestionGr
     {media?.mediaUrl && <figure className="bq-media"><a href={media.mediaUrl} target="_blank" rel="noreferrer" aria-label="Mở sơ đồ hoặc bản đồ cỡ lớn"><img src={media.mediaUrl} alt={media.mediaReference || `Sơ đồ cho ${groupRange(group, props.numberOf)}`} loading="lazy" /></a><figcaption>Bấm vào hình để xem cỡ lớn.</figcaption></figure>}
     {group.kind === "gap" ? printed ? <PrintedGapGroup group={group} props={props} printed={printed} /> : <GapGroup group={group} props={props} />
       : group.kind === "matrix" ? <Matrix group={group} props={props} />
-      : group.kind === "pick" ? <PickGroup group={group} props={props} />
+      : group.kind === "pick" ? <PickGroup group={group} props={props} printed={printed} />
       : group.kind === "many" ? <ManyGroup group={group} props={props} />
       : group.questions.map((question) => <ChoiceList key={question.id} question={question} props={props} many={group.kind === "many"} options={group.kind === "judge" ? judgeOptions(question.type) : question.options.map((option) => ({ key: optionKey(option), label: optionLabel(option) }))} />)}
   </section>;

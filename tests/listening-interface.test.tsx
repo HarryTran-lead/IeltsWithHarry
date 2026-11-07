@@ -42,4 +42,13 @@ describe("Listening question layouts", () => {
     expect((html.match(/type=\"checkbox\"/g) || []).length).toBe(5);
     expect(html).toContain("Chọn 2 đáp án cho câu 11–12");
   });
+
+  it("places flow-chart answer slots inside the printed sequence", () => {
+    const options = ["A — A summary", "B — A reminder", "C — A question"];
+    const group = groupQuestions([question(25, "flow_chart_completion", "Step one", options), question(26, "flow_chart_completion", "Step two", options)])[0];
+    const html = renderToStaticMarkup(<QuestionGroupView group={group} props={props} printed={"**Proposed system**\nStep one: **25** __________\nStep two: **26** __________"} />);
+    expect(html).toContain("bq-flow-sheet");
+    expect((html.match(/class=\"bq-slot /g) || []).length).toBe(2);
+    expect(html).toContain("bq-bank");
+  });
 });

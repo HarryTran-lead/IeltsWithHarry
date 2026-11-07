@@ -93,6 +93,11 @@
 .bq-printed .bq-table-wrap { max-width: 100%; }
 .bq-printed .bq-table { min-width: 500px; }
 .bq-printed .bq-table th { background: #f2f7f8; }
+.bq-flow-sheet { display: grid; gap: 0; justify-items: center; }
+.bq-flow-sheet > p { position: relative; width: min(100%, 660px); margin: 0 0 26px; padding: 14px 16px; border: 1px solid #cfdde5; border-radius: 9px; background: #f8fbfc; line-height: 1.8; }
+.bq-flow-sheet > p:first-child { margin-bottom: 14px; border: 0; background: transparent; color: #234a64; font-weight: 800; text-align: center; }
+.bq-flow-sheet > p:not(:last-child):not(:first-child)::after { content: "↓"; position: absolute; top: calc(100% + 2px); left: 50%; color: #5788a5; font-size: 18px; font-weight: 800; }
+.bq-flow-sheet .bq-slot { display: inline-flex; min-width: 180px; margin: 0 4px; vertical-align: middle; }
 .bq-many-groups { display: grid; gap: 16px; }
 .bq-many-set { min-width: 0; margin: 0; padding: 14px 16px 16px; border: 1px solid #dce5e8; border-radius: 10px; }
 .bq-many-set legend { padding: 0 6px; color: #203f54; font-weight: 800; }
