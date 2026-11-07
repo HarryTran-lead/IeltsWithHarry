@@ -9,7 +9,7 @@ import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelecti
 import "./bank-library.css";
 import { Sticker } from "@/components/stickers/stickers";
 
-type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null };
+type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null };
 
 export const librarySkills: Record<CatalogSkill, { icon: typeof BookOpen; href: string; tone: string }> = {
   Reading: { icon: BookOpen, href: "/app/reading", tone: "reading" },
@@ -233,7 +233,10 @@ function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryVie
   const currentPage = Math.min(page, pageCount - 1);
   const visible = filtered.slice(currentPage * 12, (currentPage + 1) * 12);
   const latest = new Map<string, Attempt>();
-  for (const attempt of attempts) if (!latest.has(attempt.exam_id)) latest.set(attempt.exam_id, attempt);
+  for (const attempt of attempts) {
+    const key = `${attempt.exam_id}:${attempt.notes?.__part || "full"}`;
+    if (!latest.has(key)) latest.set(key, attempt);
+  }
 
   const name = isReading ? "Passage" : "Section";
   const heading = full ? "Full đề" : part ? `${name} ${part}` : "Bài lẻ";
@@ -243,7 +246,7 @@ function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryVie
       <div className="bl-results-head"><div><span className="bl-results-kicker">{skill.toUpperCase()} · NGÂN HÀNG ĐỀ</span><h2>{heading}</h2><p>{loading ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><div className="bl-results-controls"><label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên bài hoặc chủ đề…" aria-label={`Tìm đề ${skill}`} /></label></div></div>
       {error && <p className="bl-state" role="alert">{error}</p>}
       {loading && <div className="bl-grid bl-grid-sectioned">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
-      {!loading && !error && <div className="bl-grid bl-grid-sectioned">{visible.map((entry) => <ExamCard key={`${entry.exam.id}:${entry.part ?? "full"}`} exam={entry.exam} attempt={entry.splitFromFull ? undefined : latest.get(entry.exam.id)} section={entry.splitFromFull && entry.part ? { part: entry.part, title: entry.title, questionTypes: entry.questionTypes, questionCount: entry.questionCount } : undefined} />)}</div>}
+      {!loading && !error && <div className="bl-grid bl-grid-sectioned">{visible.map((entry) => <ExamCard key={`${entry.exam.id}:${entry.part ?? "full"}`} exam={entry.exam} attempt={latest.get(`${entry.exam.id}:${entry.splitFromFull ? entry.part : "full"}`)} section={entry.splitFromFull && entry.part ? { part: entry.part, title: entry.title, questionTypes: entry.questionTypes, questionCount: entry.questionCount } : undefined} />)}</div>}
       {!loading && !error && !visible.length && <p className="bl-state">Chưa có bài phù hợp. Hãy thử dạng câu hỏi khác, đổi từ khóa hoặc chọn phần khác trong sidebar.</p>}
       {!loading && pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.getElementById("ngan-hang-de")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
     </div>
@@ -288,7 +291,7 @@ function AttemptChip({ attempt }: { attempt?: Attempt }) {
 
 /** One exam on the shelf; its shape follows the skill, like a printed practice book. */
 export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attempt?: Attempt; section?: { part: number; title: string; questionTypes: string[]; questionCount: number } }) {
-  const href = section ? `/app/question-bank/exam/${exam.id}?part=${section.part}` : attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : `/app/question-bank/exam/${exam.id}`;
+  const href = attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : section ? `/app/question-bank/exam/${exam.id}?part=${section.part}` : `/app/question-bank/exam/${exam.id}`;
   const duration = section ? exam.skill === "Reading" ? 20 : 10 : exam.duration_minutes;
   const usage = !section && exam.attempt_count ? <span className="bl-usage"><PlayCircle size={13} /> {exam.attempt_count.toLocaleString("vi-VN")} lượt làm</span> : <span className="bl-usage"><Clock3 size={13} /> {duration} phút</span>;
   const cta = <span className="bl-cta">{attempt?.state === "in_progress" ? "Làm tiếp" : attempt ? "Luyện lại" : "Luyện đề"} <ArrowRight size={15} /></span>;

@@ -226,8 +226,9 @@ export function SpeakingAnswer({ value, onChange, index }: { value: string; onCh
 /** Asks before submitting, with what is still unanswered or flagged. */
 export function SubmitDialog({ unanswered, flagged, busy, reading = false, onCancel, onConfirm }: { unanswered: number; flagged: number; busy: boolean; reading?: boolean; onCancel: () => void; onConfirm: (difficulty?: ReadingDifficulty) => void }) {
   const confirm = useRef<HTMLButtonElement>(null);
+  const continueButton = useRef<HTMLButtonElement>(null);
   const [difficulty, setDifficulty] = useState<ReadingDifficulty | undefined>();
-  useEffect(() => { confirm.current?.focus(); const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onCancel(); }; window.addEventListener("keydown", escape); return () => window.removeEventListener("keydown", escape); }, [onCancel]);
+  useEffect(() => { (unanswered || flagged ? continueButton : confirm).current?.focus(); const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onCancel(); }; window.addEventListener("keydown", escape); return () => window.removeEventListener("keydown", escape); }, [onCancel, unanswered, flagged]);
   return <div className="bx-dialog-layer" role="dialog" aria-modal="true" aria-labelledby="bx-submit-title">
     <button type="button" className="bx-dialog-backdrop" aria-label="Đóng" tabIndex={-1} onClick={onCancel} />
     <div className="bx-dialog">
@@ -235,7 +236,7 @@ export function SubmitDialog({ unanswered, flagged, busy, reading = false, onCan
       <h2 id="bx-submit-title">Nộp bài ngay?</h2>
       {unanswered || flagged ? <ul>{unanswered > 0 && <li><CircleAlert size={16} /> Còn <b>{unanswered}</b> câu chưa trả lời</li>}{flagged > 0 && <li><Flag size={16} /> <b>{flagged}</b> câu đang đánh dấu xem lại</li>}</ul> : <p>Bạn đã trả lời tất cả câu hỏi.</p>}
       {reading && <fieldset className="bx-difficulty"><legend>Độ khó của đề với bạn <small>(không bắt buộc)</small></legend><div>{([['easy', 'Dễ'], ['balanced', 'Vừa sức'], ['hard', 'Khó']] as const).map(([value, label]) => <label key={value} className={difficulty === value ? "is-on" : ""}><input type="radio" name="reading-difficulty" value={value} checked={difficulty === value} onChange={() => setDifficulty(value)} />{label}</label>)}</div></fieldset>}
-      <div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={() => onConfirm(difficulty)}>{busy ? "Đang nộp…" : "Nộp bài"}</button></div>
+      <div className="bx-dialog-actions"><button ref={continueButton} type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={() => onConfirm(difficulty)}>{busy ? "Đang nộp…" : "Nộp bài"}</button></div>
     </div>
   </div>;
 }

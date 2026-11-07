@@ -76,6 +76,10 @@ def convert(source, teacher, test_number):
             raw_answer = key["answer"]
             answers = [str(value) for value in (raw_answer if isinstance(raw_answer, list) else [raw_answer])]
             answers += [str(value) for value in key.get("acceptable_alternatives", [])]
+            # The passage says "a mechanical defect"; both this two-word phrase and
+            # "defect" satisfy Test 06 Q13's NO MORE THAN TWO WORDS instruction.
+            if test_number == 6 and number == 13 and "defect" in [value.lower() for value in answers]:
+                answers.append("mechanical defect")
             answers = list(dict.fromkeys(answers))
             explanation = key.get("explanation_vi") or key.get("explanation_en") or ""
             if key.get("evidence_quote"):

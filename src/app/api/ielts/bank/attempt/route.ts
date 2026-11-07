@@ -40,7 +40,7 @@ export async function POST(request: Request) {
       if (exam.skill === "Reading" || exam.skill === "Listening") notes = { ...notes, __view: body.view || "practice", ...(body.minutes !== undefined ? { __minutes: String(body.minutes) } : {}) };
       const { data, error: insertError } = await client.from("ielts_attempts").insert({ user_id: user.id, exam_id: exam.id, version_id: exam.published_version_id, notes }).select("id,started_at,state,answers,flags,notes").single();
       if (insertError) throw new Error(insertError.message);
-      return Response.json({ attempt: data });
+      return Response.json({ attempt: data, serverNow: Date.now() });
     }
     if (body.action === "schedule") {
       const { data: exam, error } = await client.from("ielts_exams").select("id,title,skill").eq("id", body.examId).not("published_version_id", "is", null).single();
@@ -87,9 +87,9 @@ export async function GET(request: Request) {
       if (data.state !== "in_progress" && linkedExam?.skill === "Listening") {
         visibleContent.sections = visibleContent.sections.map((section, index) => ({ ...section, transcript: scopedContent.sections[index]?.transcript || "" }));
       }
-      return Response.json({ attempt: { ...data, ielts_exam_versions: undefined, content: visibleContent }, result });
+      return Response.json({ attempt: { ...data, ielts_exam_versions: undefined, content: visibleContent }, result, serverNow: Date.now() });
     }
-    let query = client.from("ielts_attempts").select("id,exam_id,version_id,state,score,total,started_at,submitted_at,ielts_exams!inner(title,skill)").eq("user_id", user.id).order("started_at", { ascending: false }).limit(30);
+    let query = client.from("ielts_attempts").select("id,exam_id,version_id,state,score,total,started_at,submitted_at,notes,ielts_exams!inner(title,skill)").eq("user_id", user.id).order("started_at", { ascending: false }).limit(30);
     if (releaseLocks) query = query.in("ielts_exams.skill", ["Reading", "Listening"]);
     const { data, error } = await query;
     if (error) throw new Error(error.message);
