@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { ArrowLeft, ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
+import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import { estimateBand, type ReviewItem, typeLabel } from "./bank-exam";
 import { optionKey, optionLabel, groupQuestions } from "./bank-questions";
 import { RichText } from "./rich-text";
@@ -12,9 +13,9 @@ import { ReadingShare } from "./reading-share";
 import { ListeningTranscript } from "./listening-transcript";
 import "./bank-reading-review.css";
 
-type Props = { title: string; skill?: "Reading" | "Listening"; content: ExamContent; review: ReviewItem[]; format: string; attemptId?: string; partNumber?: number; difficulty?: string; startedAt?: string; submittedAt?: string; backHref: string; retryHref?: string; onRetry?: () => void };
+type Props = { title: string; skill?: "Reading" | "Listening"; content: ExamContent; review: ReviewItem[]; format: string; attribution?: string; attemptId?: string; partNumber?: number; startedAt?: string; submittedAt?: string; backHref: string; retryHref?: string; onRetry?: () => void };
 
-export function ReadingReview({ title, skill = "Reading", content, review, format, attemptId, partNumber, difficulty, startedAt, submittedAt, backHref, retryHref, onRetry }: Props) {
+export function ReadingReview({ title, skill = "Reading", content, review, format, attribution, attemptId, partNumber, startedAt, submittedAt, backHref, retryHref, onRetry }: Props) {
   const [summary, setSummary] = useState(true);
   const [guided, setGuided] = useState(false);
   const [part, setPart] = useState(0);
@@ -31,11 +32,11 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   const correct = review.filter((item) => item.correct).length;
   const wrong = review.filter((item) => !item.correct && item.given).length;
   const skipped = review.filter((item) => !item.given).length;
-  const uncalibrated = skill === "Reading" && /bản luyện thử|chưa hiệu chuẩn/i.test(title);
+  const uncalibrated = skill === "Reading" && (/bản luyện thử|chưa hiệu chuẩn/i.test(`${title} ${attribution ?? ""}`));
+  const displayTitle = displayExamTitle(title);
   const band = uncalibrated ? null : estimateBand(skill, format, correct, review.length);
   const accuracy = review.length ? Math.round(correct / review.length * 100) : 0;
   const duration = startedAt && submittedAt ? Math.max(0, Math.round((new Date(submittedAt).getTime() - new Date(startedAt).getTime()) / 60000)) : null;
-  const difficultyLabel = difficulty === "easy" ? "Dễ" : difficulty === "balanced" ? "Vừa sức" : difficulty === "hard" ? "Khó" : null;
   const section = sections[Math.min(part, sections.length - 1)];
   const sectionLabel = (index: number) => `${skill === "Listening" ? "Part" : "Passage"} ${content.sections.length === 1 && partNumber && partNumber > 0 ? partNumber : sections[index].originalIndex + 1}`;
   const selectedReview = active ? result.get(active) : null;
@@ -67,16 +68,15 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   };
 
   if (summary) return <main className={`bx-page br-summary bl-tone-${skill.toLowerCase()}`}><nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {skill}</Link><span>/</span>Kết quả</nav>
-    <section className="br-summary-card"><span className="bx-kicker">KẾT QUẢ BÀI LÀM</span><h1>{title}</h1><p>Kiểm tra kết quả rồi mở lại bài để đối chiếu đáp án với {skill === "Listening" ? "transcript và âm thanh" : "từng đoạn đọc"}.</p>
+    <section className="br-summary-card"><span className="bx-kicker">KẾT QUẢ BÀI LÀM</span><h1>{displayTitle}</h1><p>Kiểm tra kết quả rồi mở lại bài để đối chiếu đáp án với {skill === "Listening" ? "transcript và âm thanh" : "từng đoạn đọc"}.</p>
       <div className="br-result-hero"><strong>{uncalibrated ? `${accuracy}%` : band === null ? "—" : band.toFixed(1)}<small>{uncalibrated ? "Tỉ lệ đúng" : "Band ước tính"}</small></strong><div><span>Đã hoàn thành bài {skill}</span><b>{correct}/{review.length} câu đúng</b><small>{accuracy}% chính xác</small></div></div>
-      <div className="br-result-table-wrap"><table className="br-result-table"><caption>Chi tiết bài làm</caption><thead><tr><th>Đề</th><th>Thời gian</th><th>Ngày nộp</th><th>Tổng câu</th><th>Đúng</th><th>Sai</th><th>Bỏ qua</th><th>Tỉ lệ đúng</th></tr></thead><tbody><tr><td>{title}</td><td>{duration === null ? "—" : `${duration} phút`}</td><td>{submittedAt ? new Date(submittedAt).toLocaleDateString("vi-VN") : "—"}</td><td>{review.length}</td><td className="is-right">{correct}</td><td className="is-wrong">{wrong}</td><td>{skipped}</td><td>{review.length ? Math.round(correct / review.length * 100) : 0}%</td></tr></tbody></table></div>
-      {difficultyLabel && <p className="br-summary-difficulty">Bạn đánh giá đề: <strong>{difficultyLabel}</strong></p>}
+      <div className="br-result-table-wrap"><table className="br-result-table"><caption>Chi tiết bài làm</caption><thead><tr><th>Đề</th><th>Thời gian</th><th>Ngày nộp</th><th>Tổng câu</th><th>Đúng</th><th>Sai</th><th>Bỏ qua</th><th>Tỉ lệ đúng</th></tr></thead><tbody><tr><td>{displayTitle}</td><td>{duration === null ? "—" : `${duration} phút`}</td><td>{submittedAt ? new Date(submittedAt).toLocaleDateString("vi-VN") : "—"}</td><td>{review.length}</td><td className="is-right">{correct}</td><td className="is-wrong">{wrong}</td><td>{skipped}</td><td>{review.length ? Math.round(correct / review.length * 100) : 0}%</td></tr></tbody></table></div>
       <div className="br-summary-actions"><button type="button" className="bx-start" onClick={() => setSummary(false)}>Xem lại bài làm <ChevronRight size={18} /></button><button type="button" className="bx-ghost" onClick={startGuided}>Ôn từng bước</button>{onRetry ? <button type="button" className="bx-ghost" onClick={onRetry}><RotateCcw size={16} /> Làm lại</button> : retryHref && <Link href={retryHref} className="bx-ghost"><RotateCcw size={16} /> Làm lại</Link>}{skill === "Reading" && attemptId && <ReadingShare attemptId={attemptId} />}</div>
-      <small>{uncalibrated ? "Bộ luyện thử chưa hiệu chuẩn. Kết quả chỉ phản ánh số câu đúng, chưa quy đổi thành IELTS Band." : "Band chỉ là ước tính từ bài luyện tập."}</small>
+      <small>{uncalibrated ? "Đề chưa hiệu chuẩn. Kết quả chỉ phản ánh số câu đúng, chưa quy đổi thành IELTS Band." : "Band chỉ là ước tính từ bài luyện tập."}</small>
     </section></main>;
 
   return <main className={`br-review bl-tone-${skill.toLowerCase()}`} style={{ "--br-left": `${split}%` } as CSSProperties}>
-    <header className="br-review-head"><Link href={backHref} aria-label="Về ngân hàng đề"><ArrowLeft size={18} /></Link><div><strong>{title}</strong><small>{guided ? `Ôn từng bước · Câu ${guidedIndex + 1}/${questions.length}` : `Xem lại bài ${skill} · ${correct}/${review.length} câu đúng${uncalibrated ? " · Bản luyện thử" : ` · Band ${band?.toFixed(1) ?? "—"}`}`}</small></div>{skill === "Reading" && attemptId && <ReadingShare attemptId={attemptId} />}{guided ? <button type="button" onClick={() => setGuided(false)}>Thoát ôn tập</button> : <button type="button" onClick={startGuided}>Ôn từng bước</button>}<button type="button" onClick={() => { setGuided(false); setSummary(true); }}>Xem kết quả</button></header>
+    <header className="br-review-head"><Link href={backHref} aria-label="Về ngân hàng đề"><ArrowLeft size={18} /></Link><div><strong>{displayTitle}</strong><small>{guided ? `Ôn từng bước · Câu ${guidedIndex + 1}/${questions.length}` : `Xem lại bài ${skill} · ${correct}/${review.length} câu đúng${uncalibrated ? "" : ` · Band ${band?.toFixed(1) ?? "—"}`}`}</small></div>{skill === "Reading" && attemptId && <ReadingShare attemptId={attemptId} />}{guided ? <button type="button" onClick={() => setGuided(false)}>Thoát ôn tập</button> : <button type="button" onClick={startGuided}>Ôn từng bước</button>}<button type="button" onClick={() => { setGuided(false); setSummary(true); }}>Xem kết quả</button></header>
     <div className="br-review-body" ref={body}>
       <article className="br-passage" aria-label={skill === "Listening" ? "Bản ghi và transcript" : "Bài đọc"}><span>{sectionLabel(part)}</span><h1>{section?.title}</h1>{skill === "Listening" && section?.audioUrl && <audio controls preload="metadata" src={section.audioUrl} aria-label={`Nghe lại ${section.title}`} />}{skill === "Listening" && <h2>Transcript</h2>}{skill === "Listening" && (section?.transcript ? <ListeningTranscript transcript={section.transcript} evidence={evidenceQuote} /> : <p>Part này chưa có transcript để đối chiếu.</p>)}{skill === "Reading" && section?.passage.split(/\n\s*\n/).map((paragraph, index) => { const letter = evidence?.paragraph.split("-").at(-1); const matchingParagraph = Boolean(letter && paragraph.startsWith(`**${letter}**`)); const start = evidence?.quote ? paragraph.toLowerCase().indexOf(evidence.quote.toLowerCase()) : -1; return <p key={index} className={matchingParagraph || start >= 0 ? "is-evidence" : undefined}>{start >= 0 && evidence ? <><RichText text={paragraph.slice(0, start)} /><mark><RichText text={paragraph.slice(start, start + evidence.quote.length)} /></mark><RichText text={paragraph.slice(start + evidence.quote.length)} /></> : <RichText text={paragraph} />}</p>; })}</article>
       <div className="br-divider" role="separator" tabIndex={0} aria-label="Độ rộng bài đọc" aria-orientation="vertical" aria-valuemin={30} aria-valuemax={70} aria-valuenow={split} onPointerDown={(event) => { if (window.matchMedia("(min-width: 901px)").matches) { event.currentTarget.setPointerCapture(event.pointerId); resize(event.clientX); } }} onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }} onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>

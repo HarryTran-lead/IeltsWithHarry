@@ -11,9 +11,7 @@
 .bt-passage h2 { margin: 0 0 14px; font: 800 calc(21px * var(--bt-scale)) / 1.25 var(--font-display), sans-serif; text-align: center; }
 .bt-passage p { margin: 0 0 14px; color: #1f2d3d; line-height: 1.75; }
 ::highlight(bank-mark) { background-color: #ffe17a; color: inherit; }
-.bt-mark-pop { position: fixed; z-index: 60; transform: translate(-50%, calc(-100% - 8px)); }
 .bt-mark-error { position: fixed; z-index: 60; right: 20px; bottom: 84px; max-width: min(360px, calc(100vw - 40px)); margin: 0; padding: 11px 14px; border: 1px solid #e9b8a9; border-radius: 8px; background: #fff4f0; color: #854432; font-size: 13px; font-weight: 700; box-shadow: 0 12px 30px #172f3c24; }
-.bt-mark-pop button { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border: 0; border-radius: 10px; background: #14284b; color: #fff; font: inherit; font-size: 13px; font-weight: 800; box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5); cursor: pointer; }
 .bt-questions { display: grid; gap: 14px; min-width: 0; font-size: calc(15px * var(--bt-scale)); }
 .bt-part-head span { color: var(--bl-accent); font-size: 12px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
 .bt-part-head h2 { margin: 2px 0 0; font: 800 22px/1.25 var(--font-display), sans-serif; }
@@ -327,6 +325,20 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bx-real-mode .bt-passage, .bx-real-mode .bt-questions { background: #fff; }
 .bx-real-mode .bt-dock { background: #eaeeee; }
 .bx-page.bx-exam-mode.bx-listening-mode { --bl-accent: #2774a7; --bl-wash: #ebf5fc; }
+
+/* Reading uses one text face across the launch, passage, questions and controls. */
+.bx-reading-mode { font-family: var(--font-sans), system-ui, sans-serif; }
+.bx-reading-mode .bx-test-brand, .bx-reading-mode .bx-timer,
+.bx-reading-mode .bt-passage h2, .bx-reading-mode .bq-group h3,
+.bx-reading-mode .bt-context-copy strong, .bx-reading-mode .bt-part-name,
+.bx-reading-mode .br-practice-ribbon, .bx-reading-mode .bt-tool-rail button { font-family: var(--font-sans), system-ui, sans-serif; letter-spacing: normal; }
+.bx-reading-mode .bt-passage { font-size: calc(16px * var(--bt-scale)); line-height: 1.7; }
+.bx-reading-mode .bt-passage h2 { font-size: calc(20px * var(--bt-scale)); line-height: 1.35; text-align: left; }
+.bx-reading-mode .bt-questions { font-size: calc(15px * var(--bt-scale)); line-height: 1.6; }
+.bx-reading-mode .bq-group h3 { font-size: calc(17px * var(--bt-scale)); line-height: 1.35; }
+.bx-reading-mode .bt-passage, .bx-reading-mode .bt-questions { color: #213444; }
+.bx-reading-mode .bt-passage p { color: #213444; }
+@media (max-width: 600px) { .bx-reading-mode .bt-passage { font-size: calc(15px * var(--bt-scale)); }.bx-reading-mode .bt-questions { font-size: calc(14px * var(--bt-scale)); } }
 .bx-listening-mode .bt-runner.is-listening { display: flex; flex: 1; flex-direction: column; gap: 0; min-height: 0; padding: 0; }
 .bx-listening-mode .bt-body { flex: 1; min-height: 0; overflow: hidden; }
 .bx-listening-mode .bt-questions { display: block; height: 100%; max-width: 1020px; margin: auto; padding: 24px clamp(18px, 4vw, 50px) 60px; overflow-y: auto; background: #fff; }

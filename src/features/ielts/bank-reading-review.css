@@ -74,3 +74,6 @@ body:has(.br-review) { overflow: hidden; }
 @media (max-width: 650px) { .br-review-head { flex-wrap: wrap; gap: 7px; padding: 8px; }.br-review-head > div:not(.br-share-layer) { flex-basis: calc(100% - 45px); }.br-review-head small { font-size: 10px; }.br-review-head > button { font-size: 12px; }.br-passage, .br-questions { padding: 16px 14px 36px; }.br-summary-facts { grid-template-columns: 1fr; }.br-question-title { flex-wrap: wrap; }.br-question-title button { margin-left: 38px; }.br-review-dock { padding: 6px; }.br-review-dock > a { font-size: 12px; white-space: nowrap; } }
 @media (max-width: 650px) { .br-result-hero { gap: 14px; padding: 16px; }.br-result-hero > strong { width: 82px; height: 82px; font-size: 30px; }.br-result-hero > div b { font-size: 20px; } }
 @media (max-width: 650px) { .br-question-title > div { flex-basis: calc(100% - 40px); }.br-question-title button { margin-left: 38px; padding: 8px 0; } }
+.br-summary, .br-review { font-family: var(--font-sans), system-ui, sans-serif; }
+.br-summary-card h1, .br-result-hero > strong, .br-result-hero > div b,
+.br-passage h1, .br-questions h2 { font-family: var(--font-sans), system-ui, sans-serif; letter-spacing: normal; }

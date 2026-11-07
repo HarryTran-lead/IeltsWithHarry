@@ -119,7 +119,6 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     if (encoded.length <= 1900) { setNotes({ ...notes, reading_highlights: encoded }); setMarkError(""); }
     else setMarkError("Đã đạt giới hạn tô sáng cho bài này. Xóa vài đoạn để tiếp tục.");
   }, [marks, notes, setNotes]);
-  const [selection, setSelection] = useState<{ x: number; y: number; mark: Mark } | null>(null);
   const passage = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
   const section = sections[Math.min(part, sections.length - 1)];
@@ -138,7 +137,6 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     setNavigationError("");
     setPart(sectionIndex);
     setAutoPlayPart(playNext ? sectionIndex : null);
-    setSelection(null);
     window.setTimeout(() => {
       const target = questionId ? document.getElementById(`q-${questionId}`) : document.querySelector(".bt-questions");
       target?.scrollIntoView({ behavior: "smooth", block: questionId ? "center" : "start" });
@@ -156,29 +154,31 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     return () => { registry.delete("bank-mark"); };
   }, [marks, section, scale]);
 
-  function captureSelection() {
+  const captureSelection = useCallback(() => {
     if (!canMark) return;
     const chosen = window.getSelection();
-    if (!chosen || chosen.isCollapsed || !passage.current || !section) { setSelection(null); return; }
+    if (!chosen || chosen.isCollapsed || !passage.current || !section) return;
     const range = chosen.getRangeAt(0);
     const paragraph = (range.startContainer.parentElement?.closest("[data-paragraph]") as HTMLElement | null);
-    if (!paragraph || !passage.current.contains(paragraph) || !paragraph.contains(range.endContainer)) { setSelection(null); return; }
+    if (!paragraph || !passage.current.contains(paragraph) || !paragraph.contains(range.endContainer)) return;
     const start = offsetIn(paragraph, range.startContainer, range.startOffset), end = offsetIn(paragraph, range.endContainer, range.endOffset);
     if (end <= start) return;
-    const box = range.getBoundingClientRect();
-    setSelection({ x: box.left + box.width / 2, y: box.top, mark: { section: section.id, paragraph: Number(paragraph.dataset.paragraph), start, end } });
-  }
+    if (!canHighlight()) { setMarkError("Trình duyệt này chưa hỗ trợ tô sáng. Hãy cập nhật trình duyệt rồi thử lại."); return; }
+    const mark = { section: section.id, paragraph: Number(paragraph.dataset.paragraph), start, end };
+    setMarks((previous) => previous.some((item) => item.section === mark.section && item.paragraph === mark.paragraph && item.start === mark.start && item.end === mark.end) ? previous : [...previous, mark]);
+    chosen.removeAllRanges();
+  }, [canMark, section, setMarks]);
 
   useEffect(() => {
     if (!canMark) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.altKey || event.ctrlKey || event.metaKey || (event.target as HTMLElement)?.closest("input,textarea,select,button")) return;
       const key = event.key.toLowerCase();
-      if (key === "h" && selection) { event.preventDefault(); setMarks((value) => [...value, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); }
+      if (key === "h" && !window.getSelection()?.isCollapsed) { event.preventDefault(); captureSelection(); }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [canMark, selection, setMarks]);
+  }, [canMark, captureSelection]);
 
   if (!section) return <p className="bx-muted">Đề này chưa có câu hỏi.</p>;
   const scopedPart = Number(notes.__part);
@@ -206,8 +206,8 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     </div></div>
 
     <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${showRail ? "has-tools" : ""}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
-      {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" title="Bôi đen đoạn văn rồi bấm Tô sáng hoặc phím H" onClick={() => { if (selection) { setMarks([...marks, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); } else passage.current?.focus(); }}><Highlighter size={19} />Tô sáng<small>H</small></button></aside>}
-      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={captureSelection} onKeyUp={captureSelection}>
+      {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" title="Bôi đen đoạn văn để tô sáng ngay" onMouseDown={(event) => event.preventDefault()} onClick={captureSelection}><Highlighter size={19} />Tô sáng<small>Chọn chữ</small></button></aside>}
+      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={captureSelection}>
         <h2>{section.title}</h2>
         {section.passage.split(/\n\s*\n/).map((paragraph, index) => <p key={index} data-paragraph={index}><RichText text={paragraph} /></p>)}
       </article>}
@@ -224,9 +224,6 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
 
     {markError && <p className="bt-mark-error" role="status">{markError}</p>}
     {navigationError && <p className="bt-mark-error" role="status">{navigationError}</p>}
-    {canMark && selection && <div className="bt-mark-pop" style={{ left: selection.x, top: selection.y }}>
-      <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => { setMarks([...marks, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); }}><Highlighter size={15} /> Tô sáng</button>
-    </div>}
 
     {notesOpen && <aside className="bt-notes" aria-label="Ghi chú">
       <header><b>Ghi chú</b><button type="button" onClick={() => setNotesOpen(false)} aria-label="Đóng"><X size={16} /></button></header>

@@ -8,6 +8,7 @@ import { TopicArt } from "@/components/illustrations/topic-art";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { listeningFullMinutes, listeningPartMinutes, readingFullMinutes, readingPassageMinutes } from "@/lib/ielts-bank/schema";
 import { catalogGroups, type CatalogSkill } from "@/lib/ielts-bank/catalog";
+import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import { librarySkills } from "./bank-library";
 import { RichText } from "./rich-text";
 import "./bank-exam.css";
@@ -16,7 +17,6 @@ export { RichText };
 
 export type BankExam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; topic?: string | null; content?: ExamContent };
 export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string; evidence?: { quote: string; paragraph: string } | null };
-export type ReadingDifficulty = "easy" | "balanced" | "hard";
 
 export const toneOf = (skill: string) => librarySkills[skill as CatalogSkill]?.tone ?? "reading";
 
@@ -72,7 +72,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
     const count = chosen ? chosen.questions.length : examQuestions(exam.content).length;
     return <main className={`bx-reading-launch bl-tone-${toneOf(exam.skill)}`}>
       <div className="br-launch-dialog" role="dialog" aria-modal="true" aria-labelledby="br-launch-title">
-        <header className="br-launch-head"><div><span className="bx-kicker">IELTS {exam.skill}</span><h1 id="br-launch-title">{exam.title}</h1></div><Link href={backHref} aria-label="Đóng và về danh sách đề"><X size={19} /></Link></header>
+        <header className="br-launch-head"><div><span className="bx-kicker">IELTS {exam.skill}</span><h1 id="br-launch-title">{displayExamTitle(exam.title)}</h1></div><Link href={backHref} aria-label="Đóng và về danh sách đề"><X size={19} /></Link></header>
         <div className="br-launch-scroll">
           <section className="br-launch-card"><h2>Bước 1: Chọn chế độ luyện tập</h2><div className="br-launch-choices">
             <div className={`br-launch-choice ${readingPart === 0 ? "is-on" : ""}`}><div className="br-launch-choice-head"><strong>Làm full test</strong><select value={readingMinutes} onChange={(event) => setReadingMinutes(Number(event.target.value))} aria-label="Thời gian làm full đề">{fullTimes.map((minutes) => <option key={minutes} value={minutes}>{minutes} phút</option>)}</select></div><small>Làm toàn bộ bài {exam.skill}</small><label><input type="radio" name="exam-part" checked={readingPart === 0} onChange={() => setReadingPart(0)} /><span>Full test</span><em>{examQuestions(exam.content).length} câu</em></label></div>
@@ -94,7 +94,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
       <div className="bx-hero-art"><TopicArt topic={`${(exam.topic ?? "").replace(/^topic_/, "")} ${exam.title}`} className="bx-art" /><span className="bx-hero-icon"><Icon size={22} /></span></div>
       <div className="bx-hero-copy">
         <span className="bx-kicker">{exam.skill} · {selectedLabel}</span>
-        <h1>{selectedPart && !/^(?:reading\s+)?passage\s*\d+\s*$|^(?:listening\s+)?(?:section|part)\s*\d+\s*$/i.test(selectedPart.title) ? selectedPart.title : exam.title}</h1>
+        <h1>{selectedPart && !/^(?:reading\s+)?passage\s*\d+\s*$|^(?:listening\s+)?(?:section|part)\s*\d+\s*$/i.test(selectedPart.title) ? selectedPart.title : displayExamTitle(exam.title)}</h1>
         <div className="bx-facts">
           <span><Clock3 size={15} /> {duration} phút</span>
           {questions.length > 0 && <span><ListChecks size={15} /> {questions.length} câu hỏi</span>}
@@ -134,7 +134,7 @@ export function ExamBar({ exam, answered, total, remaining, busy, saveState, onS
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/ieltswithharry-mascot.webp" alt="" />
       <span>Ielts<b>WithHarry</b></span>
-    </span> : <span className="bx-skill-chip">{exam.skill}</span>}<div><strong>{exam.title}</strong><small>{total ? `Đã làm ${answered}/${total} câu` : "Bài viết tự do"} · {saveState === "saving" ? "Đang lưu…" : saveState === "saved" ? "Đã lưu" : saveState === "error" ? "Chưa lưu được" : "Tự động lưu"}</small></div></div>
+    </span> : <span className="bx-skill-chip">{exam.skill}</span>}<div><strong>{displayExamTitle(exam.title)}</strong><small>{total ? `Đã làm ${answered}/${total} câu` : "Bài viết tự do"} · {saveState === "saving" ? "Đang lưu…" : saveState === "saved" ? "Đã lưu" : saveState === "error" ? "Chưa lưu được" : "Tự động lưu"}</small></div></div>
     <span className={`bx-timer ${tone}`} role="timer" aria-label={`Còn ${minutes} phút ${seconds} giây`}><Clock3 size={16} /> {minutes}:{String(seconds).padStart(2, "0")}</span>
     <div className="bx-bar-actions">
       {onExit && <button type="button" className="bx-ghost bx-exit" disabled={busy} onClick={onExit}><ArrowLeft size={17} /><span>Rời bài</span></button>}
@@ -224,10 +224,9 @@ export function SpeakingAnswer({ value, onChange, index }: { value: string; onCh
 }
 
 /** Asks before submitting, with what is still unanswered or flagged. */
-export function SubmitDialog({ unanswered, flagged, busy, reading = false, onCancel, onConfirm }: { unanswered: number; flagged: number; busy: boolean; reading?: boolean; onCancel: () => void; onConfirm: (difficulty?: ReadingDifficulty) => void }) {
+export function SubmitDialog({ unanswered, flagged, busy, onCancel, onConfirm }: { unanswered: number; flagged: number; busy: boolean; onCancel: () => void; onConfirm: () => void }) {
   const confirm = useRef<HTMLButtonElement>(null);
   const continueButton = useRef<HTMLButtonElement>(null);
-  const [difficulty, setDifficulty] = useState<ReadingDifficulty | undefined>();
   useEffect(() => { (unanswered || flagged ? continueButton : confirm).current?.focus(); const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onCancel(); }; window.addEventListener("keydown", escape); return () => window.removeEventListener("keydown", escape); }, [onCancel, unanswered, flagged]);
   return <div className="bx-dialog-layer" role="dialog" aria-modal="true" aria-labelledby="bx-submit-title">
     <button type="button" className="bx-dialog-backdrop" aria-label="Đóng" tabIndex={-1} onClick={onCancel} />
@@ -235,8 +234,7 @@ export function SubmitDialog({ unanswered, flagged, busy, reading = false, onCan
       <button type="button" className="bx-dialog-close" onClick={onCancel} aria-label="Đóng"><X size={18} /></button>
       <h2 id="bx-submit-title">Nộp bài ngay?</h2>
       {unanswered || flagged ? <ul>{unanswered > 0 && <li><CircleAlert size={16} /> Còn <b>{unanswered}</b> câu chưa trả lời</li>}{flagged > 0 && <li><Flag size={16} /> <b>{flagged}</b> câu đang đánh dấu xem lại</li>}</ul> : <p>Bạn đã trả lời tất cả câu hỏi.</p>}
-      {reading && <fieldset className="bx-difficulty"><legend>Độ khó của đề với bạn <small>(không bắt buộc)</small></legend><div>{([['easy', 'Dễ'], ['balanced', 'Vừa sức'], ['hard', 'Khó']] as const).map(([value, label]) => <label key={value} className={difficulty === value ? "is-on" : ""}><input type="radio" name="reading-difficulty" value={value} checked={difficulty === value} onChange={() => setDifficulty(value)} />{label}</label>)}</div></fieldset>}
-      <div className="bx-dialog-actions"><button ref={continueButton} type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={() => onConfirm(difficulty)}>{busy ? "Đang nộp…" : "Nộp bài"}</button></div>
+      <div className="bx-dialog-actions"><button ref={continueButton} type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={onConfirm}>{busy ? "Đang nộp…" : "Nộp bài"}</button></div>
     </div>
   </div>;
 }

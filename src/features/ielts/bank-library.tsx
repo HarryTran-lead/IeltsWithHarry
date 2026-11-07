@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, Filter, Headphones, Mic, NotebookPen, PlayCircle, Search, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
+import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import "./bank-library.css";
 import { Sticker } from "@/components/stickers/stickers";
 
@@ -203,7 +204,7 @@ function LegacyBankLibraryView({ skill, exams, attempts, loading, error }: Libra
       </div>
       {skill === "Reading" && kindOptions.length > 0 && <div className="bl-reading-types" role="group" aria-label="Lọc Reading theo dạng câu hỏi"><strong>Dạng câu hỏi</strong>{kindOptions.map((item) => <button type="button" key={item.id} aria-pressed={kinds.includes(item.id)} onClick={() => toggle(kinds, setKinds, item.id)}>{item.label} <small>{item.count}</small></button>)}</div>}
     </div>
-    {readingFull.length > 0 && <section className="bl-reading-parts"><div><h3>Luyện từng Passage từ đề full</h3><p>Passage 1, 2, 3 có đồng hồ 20 phút và kết quả riêng. Bạn cũng có thể mở đề full để làm cả ba.</p></div><div className="bl-reading-part-grid">{readingFull.flatMap((exam) => [1, 2, 3].map((part) => <Link key={`${exam.id}-${part}`} href={`/app/question-bank/exam/${exam.id}?part=${part}`}><span>PASSAGE {part}</span><strong>{exam.title}</strong><small>20 phút · bài làm riêng <ArrowRight size={14} /></small></Link>))}</div></section>}
+    {readingFull.length > 0 && <section className="bl-reading-parts"><div><h3>Luyện từng Passage từ đề full</h3><p>Passage 1, 2, 3 có đồng hồ 20 phút và kết quả riêng. Bạn cũng có thể mở đề full để làm cả ba.</p></div><div className="bl-reading-part-grid">{readingFull.flatMap((exam) => [1, 2, 3].map((part) => <Link key={`${exam.id}-${part}`} href={`/app/question-bank/exam/${exam.id}?part=${part}`}><span>PASSAGE {part}</span><strong>{displayExamTitle(exam.title)}</strong><small>20 phút · bài làm riêng <ArrowRight size={14} /></small></Link>))}</div></section>}
     {error && <p className="bl-state" role="alert">{error}</p>}
     {loading && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{Array.from({ length: 8 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
     {!loading && !error && <div className={`bl-grid bl-grid-${skill.toLowerCase()}`}>{visible.map((exam) => <ExamCard key={exam.id} exam={exam} attempt={latest.get(exam.id)} />)}</div>}
@@ -321,7 +322,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       </span>
       <span className="bl-writing-copy">
         <span className="bl-writing-meta"><span>{exam.practice_type === "task2" ? "Task 2" : exam.practice_type === "task1_general" ? "Task 1 · GT" : "Task 1 · Academic"}</span><AttemptChip attempt={attempt} /></span>
-        <strong className="bl-title">{exam.title}</strong>
+        <strong className="bl-title">{displayExamTitle(exam.title)}</strong>
         {exam.prompt_preview && <span className="bl-prompt">{exam.prompt_preview}</span>}
         <span className="bl-foot">{usage}<span>{sourceLabel(exam)}</span>{cta}</span>
       </span>
@@ -355,7 +356,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       {aiCover && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
     </span>
     <span className="bl-body">
-      <strong className="bl-title">{section?.title ?? exam.title}</strong>
+      <strong className="bl-title">{displayExamTitle(section?.title ?? exam.title)}</strong>
       {types.length > 0 ? <ul className="bl-types">{types.slice(0, 3).map((item) => <li key={item.id}>{item.label}</li>)}</ul>
         : <span className="bl-types-plain">{section?.questionCount || exam.question_count ? `${section?.questionCount ?? exam.question_count} câu hỏi` : exam.format} · {duration} phút</span>}
       <span className="bl-foot"><AttemptChip attempt={attempt} /><span className="bl-source">{sourceLabel(exam)}</span>{cta}</span>

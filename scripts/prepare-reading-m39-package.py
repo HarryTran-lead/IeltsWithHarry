@@ -114,7 +114,7 @@ def convert(source, teacher, test_number):
     return {
         "externalId": f"english-skill-lab-reading-{test_number:03d}",
         "skill": "Reading",
-        "title": f"English Skill Lab · Reading Test {test_number:02d} (Bản luyện thử)",
+        "title": f"English Skill Lab · Reading Test {test_number:02d}",
         "format": "Academic",
         "mode": "practice",
         "durationMinutes": 60,
