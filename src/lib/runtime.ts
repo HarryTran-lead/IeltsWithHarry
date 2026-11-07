@@ -16,7 +16,7 @@ export const smartNotebookV1 = liveMode && process.env.NEXT_PUBLIC_SMART_NOTEBOO
 /** Keep launch locks in production; the isolated develop Preview can expose work in progress. */
 export const releaseLocks = process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES !== "true";
 export function learnerSkillAvailable(skill: string | null | undefined) {
-  return !releaseLocks || skill === "Reading" || skill === "reading";
+  return !releaseLocks || ["Reading", "reading", "Listening", "listening"].includes(skill ?? "");
 }
 export const productionLearnStage = "ielts-builder";
 const releasedLearnStages = [productionLearnStage];
@@ -27,7 +27,7 @@ export function learnStageAvailable(stageId: string) {
 
 export function lockedLearnerPath(pathname: string) {
   if (!releaseLocks) return false;
-  if (["/app/reading", "/app/reading/live", "/app/reading/vocabulary"].includes(pathname)) return false;
+  if (["/app/reading", "/app/reading/live", "/app/reading/vocabulary", "/app/listening"].includes(pathname)) return false;
   if (/^\/app\/question-bank\/(?:exam|attempt|result)\/[^/]+$/.test(pathname)) return false;
   if (pathname === "/app/learn" || (pathname.startsWith("/app/learn/") && learnStageAvailable(pathname.slice("/app/learn/".length)))) return false;
   if (/^\/app\/lesson\/b2-[a-z0-9-]+$/.test(pathname)) return false;

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { bankClient, requestError, submitAttempt, viewer } from "@/lib/ielts-bank/server";
-import { attemptContent, attemptMinutes, contentSchema, publicContent, readingFullMinutes, readingPassageMinutes, scoreAnswers } from "@/lib/ielts-bank/schema";
+import { attemptContent, attemptMinutes, contentSchema, publicContent, listeningFullMinutes, listeningPartMinutes, readingFullMinutes, readingPassageMinutes, scoreAnswers } from "@/lib/ielts-bank/schema";
 import { learnerSkillAvailable, releaseLocks } from "@/lib/runtime";
 import readingEvidence from "@/data/ielts-reading-evidence.json";
 export const runtime = "nodejs";
@@ -22,7 +22,8 @@ export async function POST(request: Request) {
       const { data: exam, error } = await client.from("ielts_exams").select("id,skill,published_version_id").eq("id", body.examId).not("published_version_id", "is", null).single();
       if (error || !exam) throw new Error("Exam unavailable");
       if (!learnerSkillAvailable(exam.skill)) return unavailable();
-      if (body.minutes !== undefined && (exam.skill !== "Reading" || !(body.sectionId ? readingPassageMinutes : readingFullMinutes).some((value) => value === body.minutes))) {
+      const allowedMinutes = exam.skill === "Reading" ? body.sectionId ? readingPassageMinutes : readingFullMinutes : exam.skill === "Listening" ? body.sectionId ? listeningPartMinutes : listeningFullMinutes : [];
+      if (body.minutes !== undefined && !allowedMinutes.some((value) => value === body.minutes)) {
         return Response.json({ error: "Thời gian làm bài không hợp lệ." }, { status: 400 });
       }
       let notes: Record<string, string> = {};
@@ -36,7 +37,7 @@ export async function POST(request: Request) {
         if (!section) throw new Error("Section unavailable");
         notes = { __section: section.id, __part: String(sectionIndex + 1), __scope: section.questions.map((question) => question.id).join(",") };
       }
-      if (exam.skill === "Reading") notes = { ...notes, __view: body.view || "practice", ...(body.minutes !== undefined ? { __minutes: String(body.minutes) } : {}) };
+      if (exam.skill === "Reading" || exam.skill === "Listening") notes = { ...notes, __view: body.view || "practice", ...(body.minutes !== undefined ? { __minutes: String(body.minutes) } : {}) };
       const { data, error: insertError } = await client.from("ielts_attempts").insert({ user_id: user.id, exam_id: exam.id, version_id: exam.published_version_id, notes }).select("id,started_at,state,answers,flags,notes").single();
       if (insertError) throw new Error(insertError.message);
       return Response.json({ attempt: data });
@@ -80,11 +81,16 @@ export async function GET(request: Request) {
       if (!learnerSkillAvailable(linkedExam?.skill)) return unavailable();
       const version = Array.isArray(data.ielts_exam_versions) ? data.ielts_exam_versions[0] : data.ielts_exam_versions;
       const content = contentSchema.parse(version.content);
-      const result = data.state === "in_progress" ? null : withEvidence(scoreAnswers(attemptContent(content, data.notes), data.answers));
-      return Response.json({ attempt: { ...data, ielts_exam_versions: undefined, content: publicContent(attemptContent(content, data.notes)) }, result });
+      const scopedContent = attemptContent(content, data.notes);
+      const result = data.state === "in_progress" ? null : withEvidence(scoreAnswers(scopedContent, data.answers));
+      const visibleContent = publicContent(scopedContent);
+      if (data.state !== "in_progress" && linkedExam?.skill === "Listening") {
+        visibleContent.sections = visibleContent.sections.map((section, index) => ({ ...section, transcript: scopedContent.sections[index]?.transcript || "" }));
+      }
+      return Response.json({ attempt: { ...data, ielts_exam_versions: undefined, content: visibleContent }, result });
     }
     let query = client.from("ielts_attempts").select("id,exam_id,version_id,state,score,total,started_at,submitted_at,ielts_exams!inner(title,skill)").eq("user_id", user.id).order("started_at", { ascending: false }).limit(30);
-    if (releaseLocks) query = query.eq("ielts_exams.skill", "Reading");
+    if (releaseLocks) query = query.in("ielts_exams.skill", ["Reading", "Listening"]);
     const { data, error } = await query;
     if (error) throw new Error(error.message);
     return Response.json({ attempts: data });

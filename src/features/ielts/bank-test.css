@@ -264,3 +264,40 @@ body:has(.bx-exam-mode) { overflow: hidden; }
   .bx-exam-mode .bt-arrow { display: none; }
   .bx-exam-mode .bt-finish { margin-left: 0; }
 }
+
+/* Practice and real-test presentations share the same answers and timer, but use distinct shells. */
+.br-practice-ribbon { display: flex; align-items: center; gap: 32px; flex: none; height: 42px; padding: 0 20px; background: #8edab3; color: #215947; font: 700 13px Arial, sans-serif; }
+.br-practice-ribbon strong { font-size: 17px; letter-spacing: -.04em; }.br-practice-ribbon strong span { color: #087f83; }
+.br-practice-ribbon nav { display: flex; align-items: center; gap: 10px; flex: 1; }.br-practice-ribbon nav span + span { padding-left: 10px; border-left: 1px solid #60b395; }
+.br-practice-ribbon small { font-size: 11px; font-weight: 700; }
+.bx-practice-mode .bx-test-bar { min-height: 48px; padding-block: 5px; background: #fff1e5; border-bottom-color: #eddcc9; }
+.bx-practice-mode .bx-test-brand { display: none; }
+.bx-practice-mode .bx-timer { padding: 7px 13px; border-radius: 20px; background: #f9eee4; color: #a24a3b; font-size: 14px; }
+.bx-practice-mode .bx-timer.is-danger { background: #d84a3c; color: #fff; }
+.bx-practice-mode .bt-context { min-height: 38px; padding-block: 4px; background: #fff8f1; }
+.bx-practice-mode .bt-context-copy strong { color: #9a4638; }
+.bx-practice-mode .bt-body { background: #fff9f3; }
+.bx-practice-mode .bt-passage, .bx-practice-mode .bt-questions { background: #fffaf5; }
+.bx-practice-mode .bt-passage p { color: #292b2e; }
+.bx-practice-mode .bt-tool-rail { background: #fff; border-right-color: #eadfd2; }
+.bx-practice-mode .bt-tool-rail button { border-color: #9ccdae; color: #138c62; }
+.bx-practice-mode .bt-divider { background: #ebdfd0; }
+.bx-practice-mode .bt-dock { background: #fff1e5; border-top-color: #ebdcca; }
+.bx-practice-mode .bt-part > div button { border-radius: 50%; border-color: #c4e5cc; color: #148d63; }
+.bx-practice-mode .bt-part > div button.is-answered { background: #cbeed4; border-color: #54b579; color: #107446; }
+.bx-real-mode .bt-context { background: #edf0f0; }
+.bx-real-mode .bt-passage, .bx-real-mode .bt-questions { background: #fff; }
+.bx-real-mode .bt-dock { background: #eaeeee; }
+.bx-page.bx-exam-mode.bx-listening-mode { --bl-accent: #2774a7; --bl-wash: #ebf5fc; }
+.bx-listening-mode .bt-runner.is-listening { display: flex; flex: 1; flex-direction: column; gap: 0; min-height: 0; padding: 0; }
+.bx-listening-mode .bt-body { flex: 1; min-height: 0; overflow: hidden; }
+.bx-listening-mode .bt-questions { display: block; height: 100%; max-width: 1020px; margin: auto; padding: 24px clamp(18px, 4vw, 50px) 60px; overflow-y: auto; background: #fff; }
+.bx-listening-mode .bt-part-head { display: grid; gap: 4px; margin: 0 0 24px; padding: 0 0 14px; border-bottom: 1px solid #dfe8ed; }
+.bx-listening-mode .bt-part-head span { color: #2476aa; }
+.bx-listening-mode .bt-dock { display: flex; flex-direction: column; gap: 0; padding: 0 18px 8px; }
+.bx-listening-mode .bt-audio { flex: none; width: min(940px, 100%); margin: 0 auto 5px; padding: 8px 14px; border-radius: 9px; box-shadow: none; }
+.bx-listening-mode .bt-parts { width: 100%; min-height: 46px; }
+.bx-listening-mode.bx-practice-mode .bt-questions { background: #fffaf5; }
+.bx-listening-mode.bx-practice-mode .bt-context-copy strong { color: #2476aa; }
+@media (max-width: 650px) { .bx-listening-mode .bt-questions { padding: 16px 14px 35px; }.bx-listening-mode .bt-dock { padding-inline: 7px; }.bx-listening-mode .bt-audio-row { grid-template-columns: auto 1fr auto; gap: 6px; }.bx-listening-mode .bt-volume { display: none; }.bx-listening-mode .bt-speed { padding-inline: 4px; }.bx-listening-mode .bt-audio-main { gap: 2px; }.bx-listening-mode .bt-audio-main button { width: 30px; height: 30px; }.bx-listening-mode .bt-audio-main .bt-play { width: 36px; height: 36px; } }
+@media (max-width: 600px) { .br-practice-ribbon { gap: 10px; height: 34px; padding-inline: 9px; }.br-practice-ribbon strong { font-size: 13px; }.br-practice-ribbon small { display: none; }.br-practice-ribbon nav { justify-content: flex-end; font-size: 10px; } }

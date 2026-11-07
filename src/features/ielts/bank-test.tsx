@@ -84,7 +84,8 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   onFinish: () => void;
 }) {
   const listening = exam.skill === "Listening";
-  const practiceTools = !listening && notes.__view !== "exam";
+  const canMark = !listening;
+  const showRail = canMark && notes.__view !== "exam";
   const allQuestions = useMemo(() => content.sections.flatMap((section) => section.questions), [content]);
   const numbers = useMemo(() => new Map(allQuestions.map((question) => [question.id, question.number])), [allQuestions]);
   const sections = useMemo(() => content.sections.filter((section) => section.questions.length && (!scope || section.questions.some((question) => scope.includes(question.id)))), [content, scope]);
@@ -135,7 +136,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   }, [marks, section, scale]);
 
   function captureSelection() {
-    if (!practiceTools) return;
+    if (!canMark) return;
     const chosen = window.getSelection();
     if (!chosen || chosen.isCollapsed || !passage.current || !section) { setSelection(null); return; }
     const range = chosen.getRangeAt(0);
@@ -148,7 +149,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   }
 
   useEffect(() => {
-    if (!practiceTools) return;
+    if (!canMark) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.altKey || event.ctrlKey || event.metaKey || (event.target as HTMLElement)?.closest("input,textarea,select,button")) return;
       const key = event.key.toLowerCase();
@@ -156,7 +157,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [practiceTools, selection, setMarks]);
+  }, [canMark, selection, setMarks]);
 
   if (!section) return <p className="bx-muted">Đề này chưa có câu hỏi.</p>;
   const scopedPart = Number(notes.__part);
@@ -180,11 +181,11 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       <button type="button" onClick={() => setScale((value) => Math.min(1.4, Math.round((value + 0.1) * 10) / 10))} aria-label="Chữ lớn hơn"><AArrowUp size={17} /></button>
       {marks.some((mark) => mark.section === section.id) && <button type="button" onClick={() => setMarks(marks.filter((mark) => mark.section !== section.id))}><Eraser size={16} /> Xóa tô sáng</button>}
       </div>}
-      {listening && <><button type="button" onClick={() => setScale((value) => Math.max(0.85, Math.round((value - 0.1) * 10) / 10))} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button><button type="button" onClick={() => setScale((value) => Math.min(1.4, Math.round((value + 0.1) * 10) / 10))} aria-label="Chữ lớn hơn"><AArrowUp size={17} /></button><button type="button" className={notesOpen ? "is-on" : ""} onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={16} /> Ghi chú</button></>}
+      {listening && <><button type="button" onClick={() => setScale((value) => Math.max(0.85, Math.round((value - 0.1) * 10) / 10))} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button><button type="button" onClick={() => setScale((value) => Math.min(1.4, Math.round((value + 0.1) * 10) / 10))} aria-label="Chữ lớn hơn"><AArrowUp size={17} /></button>{notes.__view !== "exam" && <button type="button" className={notesOpen ? "is-on" : ""} onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={16} /> Ghi chú</button>}</>}
     </div></div>
 
-    <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${practiceTools ? "has-tools" : ""}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
-      {practiceTools && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" title="Bôi đen đoạn văn rồi bấm Tô sáng hoặc phím H" onClick={() => { if (selection) { setMarks([...marks, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); } else passage.current?.focus(); }}><Highlighter size={19} />Tô sáng<small>H</small></button></aside>}
+    <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${showRail ? "has-tools" : ""}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
+      {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" title="Bôi đen đoạn văn rồi bấm Tô sáng hoặc phím H" onClick={() => { if (selection) { setMarks([...marks, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); } else passage.current?.focus(); }}><Highlighter size={19} />Tô sáng<small>H</small></button></aside>}
       {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={captureSelection} onKeyUp={captureSelection}>
         <h2>{section.title}</h2>
         {section.passage.split(/\n\s*\n/).map((paragraph, index) => <p key={index} data-paragraph={index}><RichText text={paragraph} /></p>)}
@@ -201,7 +202,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     </div>
 
     {markError && <p className="bt-mark-error" role="status">{markError}</p>}
-    {practiceTools && selection && <div className="bt-mark-pop" style={{ left: selection.x, top: selection.y }}>
+    {canMark && selection && <div className="bt-mark-pop" style={{ left: selection.x, top: selection.y }}>
       <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => { setMarks([...marks, selection.mark]); setSelection(null); window.getSelection()?.removeAllRanges(); }}><Highlighter size={15} /> Tô sáng</button>
     </div>}
 
