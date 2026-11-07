@@ -36,6 +36,7 @@ export type CatalogExam = {
   topic?: string | null;
   difficulty?: string | null;
   source_id?: string;
+  external_id?: string;
   published_version_id?: string;
   /** Card details from ielts_catalog_summary; absent when the summary is unavailable. */
   question_types?: string[];

@@ -294,12 +294,15 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   const cta = <span className="bl-cta">{attempt?.state === "in_progress" ? "Làm tiếp" : attempt ? "Luyện lại" : "Luyện đề"} <ArrowRight size={15} /></span>;
 
   const readingFullCover = exam.skill === "Reading" && exam.practice_type === "full_test" && !section;
-  const suppliedReadingTest = exam.skill === "Reading" ? /^English Skill Lab · Reading Test (0[1-5])$/.exec(exam.title) : null;
+  const suppliedReadingTest = exam.skill === "Reading"
+    ? /^english-skill-lab-reading-0(0[1-5])$/i.exec(exam.external_id ?? "")?.[1]
+      ?? /^English Skill Lab · Reading Test (0[1-5])(?: \(Bản luyện thử\))?$/.exec(exam.title)?.[1]
+    : undefined;
   const coverUrl = readingFullCover
     ? null
     : suppliedReadingTest
     ? section && section.part >= 1 && section.part <= 3
-      ? `/images/ielts/reading/test-${suppliedReadingTest[1]}-passage-${section.part}.png`
+      ? `/images/ielts/reading/test-${suppliedReadingTest}-passage-${section.part}.png`
       : null
     : exam.image_url;
   const aiCover = Boolean(!exam.visual && coverUrl?.includes("/ielts-images/covers/"));
