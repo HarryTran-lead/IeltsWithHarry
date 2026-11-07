@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { X } from "lucide-react";
 import { attemptContent, attemptMinutes, type ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
@@ -93,7 +94,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     {error && <p className="bx-error" role="alert">{error}</p>}
     <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} />
     {dialog}
-    {leaving && <div className="bx-dialog-backdrop" role="presentation"><section className="bx-dialog" role="dialog" aria-modal="true" aria-labelledby="bx-leave-title"><h2 id="bx-leave-title">Rời bài làm?</h2><p>Bài làm hiện tại sẽ được lưu. Bạn có thể quay lại từ ngân hàng đề để tiếp tục.</p><div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={() => setLeaving(false)}>Tiếp tục làm</button><button type="button" className="bx-submit" disabled={busy} onClick={() => { void exitAttempt(); }}>{busy ? "Đang lưu…" : "Lưu và rời bài"}</button></div></section></div>}
+    {leaving && <div className="bx-dialog-layer"><button type="button" className="bx-dialog-backdrop" aria-label="Tiếp tục làm bài" tabIndex={-1} onClick={() => setLeaving(false)} /><section className="bx-dialog" role="dialog" aria-modal="true" aria-labelledby="bx-leave-title"><button type="button" className="bx-dialog-close" aria-label="Đóng" onClick={() => setLeaving(false)}><X size={18} /></button><h2 id="bx-leave-title">Rời bài làm?</h2><p>Bài làm hiện tại sẽ được lưu. Bạn có thể quay lại từ ngân hàng đề để tiếp tục.</p><div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={() => setLeaving(false)}>Tiếp tục làm</button><button type="button" className="bx-submit" disabled={busy} onClick={() => { void exitAttempt(); }}>{busy ? "Đang lưu…" : "Lưu và rời bài"}</button></div></section></div>}
   </main>;
   if (content && exam.skill === "Writing") return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
     <ExamBar exam={exam} answered={0} total={0} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
