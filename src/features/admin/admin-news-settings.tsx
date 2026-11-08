@@ -28,7 +28,7 @@ export function AdminNewsSettings({ db, settings, eligible, reload, setError, se
       auto_enrich_enabled: draft.auto_enrich_enabled,
       quiz_prompt: draft.quiz_prompt.trim(),
       daily_quiz_limit: draft.daily_quiz_limit,
-      daily_rewrite_limit: draft.daily_rewrite_limit,
+      daily_rewrite_limit: 0,
       updated_at: new Date().toISOString(),
     }).eq("id", true);
     setBusy(false);
@@ -57,7 +57,7 @@ export function AdminNewsSettings({ db, settings, eligible, reload, setError, se
         <label className="admin-check wide"><input type="checkbox" checked={draft.auto_sync_enabled} onChange={(event) => setDraft({ ...draft, auto_sync_enabled: event.target.checked })}/> Tự đồng bộ nguồn tin</label>
         <label className="admin-check wide"><input type="checkbox" checked={draft.auto_enrich_enabled} onChange={(event) => setDraft({ ...draft, auto_enrich_enabled: event.target.checked })}/> Tự tìm ảnh và tạo quiz</label>
         <label>Giới hạn quiz tự tạo mỗi ngày<input type="number" min={1} max={50} value={draft.daily_quiz_limit} onChange={(event) => setDraft({ ...draft, daily_quiz_limit: Number(event.target.value) })}/></label>
-        <label>Tin Việt Nam do AI viết mỗi ngày<input type="number" min={0} max={30} value={draft.daily_rewrite_limit ?? 0} onChange={(event) => setDraft({ ...draft, daily_rewrite_limit: Number(event.target.value) })}/><small>Bài được duyệt dùng ít nhất 4 lượt Gemini: viết bài, kiểm tra dữ kiện, kiểm tra tính độc lập và tạo câu hỏi. Bản nháp cần sửa hoặc bộ câu hỏi cần duyệt lại sẽ dùng thêm lượt. Đặt 0 để tắt.</small></label>
+        <p className="wide">Luồng AI viết lại từ báo đã khóa. Bài mới từ dữ kiện được tạo tại mục Bài từ dữ kiện và chờ duyệt.</p>
         <label className="wide">Hướng dẫn thêm cho AI<textarea rows={8} maxLength={4000} value={draft.quiz_prompt} onChange={(event) => setDraft({ ...draft, quiz_prompt: event.target.value })} placeholder="Ví dụ: Ưu tiên câu hỏi ở mức B1–B2, câu ngắn và dễ hiểu..."/><small>Mỗi bài là một Passage và có 12 câu thuộc 3 dạng được chọn ngẫu nhiên trong 14 dạng IELTS Reading; đáp án điền tối đa 3 từ và mỗi câu phải có dẫn chứng nguyên văn.</small></label>
         <button className="button primary" disabled={busy}>{busy ? "Đang lưu…" : "Lưu cấu hình"}</button>
       </form>

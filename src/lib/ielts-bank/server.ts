@@ -1,6 +1,7 @@
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { randomUUID } from "node:crypto";
 import { createClient } from "@/lib/supabase/server";
+import { assertPublishRightsEvidence, type RightsEvidence } from "@/lib/content-rights";
 import { demoMode } from "@/lib/runtime";
 import { attemptContent, attemptMinutes, contentHash, contentSchema, scoreAnswers, validateExam, type ExamContent, type NormalizedExam } from "./schema";
 import { createConnector, sources, type SourceId } from "./connectors";
@@ -219,6 +220,19 @@ export async function reviewExam(examId: string, action: "ready" | "publish" | "
     const liveWarnings = validateExam({ ...exam, externalId: exam.external_id, durationMinutes: exam.duration_minutes, sourceUrl: exam.source_url, licenseUrl: exam.license_url, aiGenerated: exam.ai_generated, upstreamVersion: "review", content: contentSchema.parse(version.content) });
     if (liveWarnings.length) throw new Error(`Resolve validation warnings before approval: ${liveWarnings.join(", ")}`);
     if (action === "publish" && !["ready", "published"].includes(exam.status)) throw new Error("Mark exam ready before publishing");
+    if (action === "publish") {
+      if (String(exam.external_id ?? "").startsWith("ESL-PILOT-2026-")) throw new Error("Original pilot tests remain blocked pending editorial and rights review");
+      const content = contentSchema.parse(version.content);
+      const assets = [
+        ...content.sections.flatMap((section) => section.audioUrl ? [{ kind: "audio" as const, url: section.audioUrl }] : []),
+        ...content.sections.flatMap((section) => section.questions.flatMap((question) => question.mediaUrl ? [{ kind: /\.(mp3|wav|m4a|ogg)(?:\?|$)/i.test(question.mediaUrl) ? "audio" as const : "image" as const, url: question.mediaUrl }] : [])),
+        ...(content.imageUrl ? [{ kind: "image" as const, url: content.imageUrl }] : []),
+      ];
+      const rights = await client.from("content_rights_evidence").select("asset_kind,asset_url,author_name,rights_holder,permission_document_ref,permission_scope,web_publication_allowed,commercial_use_allowed,modification_translation_allowed,source_package_name,source_package_sha256")
+        .eq("content_kind", "ielts_exam").eq("content_id", examId);
+      if (rights.error) throw new Error(`Rights evidence unavailable: ${rights.error.message}`);
+      assertPublishRightsEvidence((rights.data ?? []) as RightsEvidence[], assets);
+    }
     if (exam.source_id === "ai-factory") {
       const { data: audioReview, error: audioError } = await client.from("ai_factory_jobs").select("id").eq("exam_id", examId).eq("exam_version_id", exam.current_version_id).eq("status", "approved").limit(1);
       if (audioError || !audioReview?.length) throw new Error("Content Factory QA and human review required");

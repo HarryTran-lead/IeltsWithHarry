@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { fetchGovUkBody, fetchOceanServiceBody, providers, type FetchResult, type NewsBodyCandidate, type NewsSource } from "./providers";
 import { loadNewsSettings } from "./settings";
+import { pauseLegacyPressRewrites } from "./rights-pause";
 
 const nasaArchiveFeed = "https://www.nasa.gov/news-release/feed/";
 /** Teaser-only feeds and how their article text is read. */
@@ -119,6 +120,7 @@ export async function backfillNews(pages: number[]) {
 
 export async function syncNews({ scheduled = false }: { scheduled?: boolean } = {}) {
   const db = newsAdminClient();
+  await pauseLegacyPressRewrites(db);
   const settings = await loadNewsSettings(db);
   if (scheduled && !settings.auto_sync_enabled) return [];
   const { data: sources, error } = await db.from("news_sources").select("*").eq("enabled", true).order("created_at").limit(25);

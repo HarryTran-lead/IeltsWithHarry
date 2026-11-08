@@ -9,10 +9,12 @@ import { Sticker } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { AdminShell, type AdminNavGroup } from "./admin-shell";
 import { createClient } from "@/lib/supabase/browser";
+import { assertPublishRightsEvidence, type RightsEvidence } from "@/lib/content-rights";
 import { LessonContentEditor } from "./lesson-content-editor";
 import { MediaLibrary } from "./media-library";
 import { skillMaterialSchema, type SkillName } from "@/lib/skill-material";
 import { AdminNews } from "./admin-news";
+import { AdminRightsEvidence } from "./admin-rights-evidence";
 import { VocabularyBank } from "./vocabulary-bank";
 import { VocabularyPhase5 } from "./vocabulary-phase5";
 import { ViEnTranslationReview } from "./vi-en-translation-review";
@@ -30,6 +32,7 @@ const nav = [
   { slug: "users/broadcast", label: "Thông báo & giao bài", icon: Megaphone },
   { slug: "users/audit", label: "Nhật ký admin", icon: History },
   { slug: "curriculum", label: "Lộ trình & bài học", icon: GraduationCap },
+  { slug: "rights", label: "Hồ sơ quyền", icon: ScrollText },
   { slug: "vocabulary", label: "Vocabulary", icon: Languages },
   { slug: "vocabulary/library", label: "Kho từ & nhập ZIP", icon: LibraryBig },
   { slug: "vocabulary/ielts-progress", label: "IELTS · tiến độ chủ đề", icon: ListChecks },
@@ -46,6 +49,7 @@ const nav = [
   { slug: "news", label: "Daily News", icon: Newspaper },
   { slug: "news/settings", label: "News settings", icon: Settings2 },
   { slug: "news/manual", label: "Add news", icon: FilePlus2 },
+  { slug: "news/facts", label: "Bài từ dữ kiện", icon: FilePlus2 },
   { slug: "news/sources", label: "News sources", icon: Rss },
   { slug: "news/review", label: "News review", icon: ListChecks },
   { slug: "news/articles", label: "Learning articles", icon: BookOpen },
@@ -55,15 +59,16 @@ const nav = [
 const navGroups = [
   { label: "Tổng quan", slugs: ["overview"] },
   { label: "Học viên", slugs: ["users", "users/broadcast", "users/audit"] },
-  { label: "Nội dung", slugs: ["curriculum", "media"] },
+  { label: "Nội dung", slugs: ["curriculum", "rights", "media"] },
   { label: "IELTS Management", slugs: ["ielts-bank", "ai-content-factory"] },
   { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "vocabulary/ielts-progress", "vocabulary/translation", "grammar", "reading", "listening", "writing", "speaking"] },
   { label: "Luyện tập", slugs: ["dictation"] },
-  { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/sources", "news/review", "news/articles", "news/meaning-suggestions", "news/sync-logs"] },
+  { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/facts", "news/sources", "news/review", "news/articles", "news/meaning-suggestions", "news/sync-logs"] },
 ];
 const descriptions: Record<string, string> = {
   overview: "Quản lý nội dung học tập theo từng kỹ năng và theo dõi trạng thái xuất bản.",
   curriculum: "Tạo khóa học, unit và bài học trước khi nhập nội dung cho từng kỹ năng.",
+  rights: "Lưu tác giả, chủ sở hữu và văn bản cho phép trước khi xuất bản nội dung.",
   media: "Quản lý hình minh họa và âm thanh dùng trong bài học.",
   reading: "Quản lý kho đề Reading, duyệt đáp án và biên soạn bài học trong lộ trình.",
   listening: "Quản lý kho đề Listening, kiểm tra audio, đáp án và bài học trong lộ trình.",
@@ -130,11 +135,17 @@ export function AdminEditor() {
 
   async function change(table: "courses" | "units" | "lessons", id: string, patch: Record<string, string | boolean>) {
     setError("");
+    const assets: { kind: "audio" | "image"; url: string | null }[] = [];
     if (table === "lessons" && patch.published === true) {
       const lesson = lessons.find((item) => item.id === id);
       const material = await supabase.from("lesson_materials").select("content").eq("lesson_id", id).maybeSingle();
       const parsed = skillMaterialSchema.safeParse(material.data?.content);
       if (material.error || !parsed.success || parsed.data.skill !== lesson?.skill) { setError("Hãy lưu dữ liệu riêng của kỹ năng trước khi xuất bản bài học."); return; }
+      if (parsed.data.figure.url) assets.push({ kind: "image", url: parsed.data.figure.url });
+      if (parsed.data.skill === "Listening" && parsed.data.audioUrl) assets.push({ kind: "audio", url: parsed.data.audioUrl });
+      const blocks = await supabase.from("lesson_blocks").select("kind,body").eq("lesson_id", id).eq("kind", "audio");
+      if (blocks.error) { setError(blocks.error.message); return; }
+      for (const block of blocks.data ?? []) assets.push({ kind: "audio", url: /^https:\/\//.test(block.body) ? block.body : null });
       if (["Reading", "Listening", "Grammar"].includes(lesson.skill)) {
         const questions = await supabase.from("exercise_questions").select("id").eq("lesson_id", id).limit(1);
         if (questions.error || !questions.data?.length) { setError("Bài này cần ít nhất một câu hỏi có đáp án trước khi xuất bản."); return; }
@@ -143,6 +154,13 @@ export function AdminEditor() {
         const words = await supabase.from("vocabulary_entries").select("id").eq("lesson_id", id).limit(1);
         if (words.error || !words.data?.length) { setError("Bài Vocabulary cần ít nhất một từ trước khi xuất bản."); return; }
       }
+    }
+    if (patch.published === true && table !== "units") {
+      const evidence = await supabase.from("content_rights_evidence").select("asset_kind,asset_url,author_name,rights_holder,permission_document_ref,permission_scope,web_publication_allowed,commercial_use_allowed,modification_translation_allowed,source_package_name,source_package_sha256")
+        .eq("content_kind", table === "courses" ? "course" : "lesson").eq("content_id", id);
+      if (evidence.error) { setError(`Không đọc được hồ sơ quyền: ${evidence.error.message}`); return; }
+      try { assertPublishRightsEvidence((evidence.data ?? []) as RightsEvidence[], assets); }
+      catch (cause) { setError(cause instanceof Error ? cause.message : "Thiếu hồ sơ quyền."); return; }
     }
     const { error } = await supabase.from(table).update(patch).eq("id", id);
     if (error) setError(error.message); else await load();
@@ -196,6 +214,7 @@ export function AdminEditor() {
     ]).map((group) => <section key={group.table} className="card admin-list"><div className="admin-section-head"><h2>{group.title}</h2><span className="admin-count">{group.rows.length}</span></div>{!group.rows.length && <p className="admin-muted">No items yet.</p>}
       {group.rows.map((item) => <div className="admin-row" key={item.id}><div><strong>{item.title}</strong><small>/{item.slug}</small></div><StatusPill published={item.published} /><div>
         <button className="button subtle" onClick={() => { const name = window.prompt("New title", item.title)?.trim(); if (name) void change(group.table, item.id, { title: name }); }}>Rename</button>
+        {group.table !== "units" && <Link className="button subtle" href={`/admin/rights?kind=${group.table === "courses" ? "course" : "lesson"}&id=${item.id}`}>Hồ sơ quyền</Link>}
         <button className="button subtle" onClick={() => void change(group.table, item.id, { published: !item.published })}>{item.published ? "Unpublish" : "Publish"}</button>
         <button className="button subtle" onClick={() => void remove(group.table, item.id)}>Delete</button>
       </div></div>)}
@@ -208,6 +227,7 @@ export function AdminEditor() {
     {section === "vocabulary/ielts-progress" && <VocabularyPhase5 />}
     {section === "vocabulary/translation" && <ViEnTranslationReview />}
     {section === "media" && <MediaLibrary />}
+    {section === "rights" && <AdminRightsEvidence />}
     {section === "ielts-bank" && <BankAdmin />}
     {section === "ai-content-factory" && <AiContentFactory />}
     {section.startsWith("news") && <AdminNews section={section} />}
