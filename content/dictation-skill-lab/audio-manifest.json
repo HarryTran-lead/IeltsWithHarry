@@ -16023,24 +16023,24 @@
   },
   "DICT-S1-003/T08": {
    "file": "/dictation-skill-lab/audio/DICT-S1-003/T08.mp3",
-   "duration_ms": 2061,
+   "duration_ms": 2445,
    "voice": "Charon",
    "accent": "british",
    "style": "Read exactly the words given, with a Southern British English accent, speaking slowly and very clearly, with each word distinct but still natural, not robotic. Each item is a separate recording: leave a clear pause of about two seconds after each item.",
    "model": "gemini-3.8-flash-lite-tts",
-   "batch": "2026-11-04T18-58-39-854Z-a4fe47d36e",
+   "batch": "2026-11-08T08-34-42-312Z-c2f2b0bf29",
    "batch_size": 24,
-   "text_sha256": "54148db6eaac8416867e195b345ac4138c26ae36d231ce4260ee2764b86f4abf",
-   "audio_sha256": "369ddae34e440ec2230cef3496dc00df184343221b0f9dc308ad50c3d4ccde11",
-   "words_per_second": 2.91,
+   "text_sha256": "4bae5bdb49d4634826ae201e599d816c641976582da9b24d7bc447de881a8f3a",
+   "audio_sha256": "b50b5bc75ace24cf2a9db5e27b632d191193f74c4f2efc2efe1a27e5f851541a",
+   "words_per_second": 2.05,
    "asr_model": "base.en",
-   "asr_wer": 0.273,
-   "asr_check": "review",
-   "generated_at": "2026-11-04T18:58:39.860Z",
+   "asr_wer": 0.0,
+   "asr_check": "pass",
+   "generated_at": "2026-11-08T08:34:42.315Z",
    "sentences": [
     {
      "start_ms": 0,
-     "end_ms": 2061
+     "end_ms": 2445
     }
    ],
    "timing_source": "single_sentence"
