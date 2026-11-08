@@ -7,6 +7,7 @@ import { Check } from "lucide-react";
 import { Sticker, Tape } from "@/components/stickers/stickers";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode, emailDeliveryReady, googleAuthEnabled, phoneAuthEnabled, supabaseConfigured } from "@/lib/runtime";
+import { studentReturnPath } from "@/lib/auth-return";
 
 type AuthMode = "login" | "register" | "forgot" | "reset";
 type Identifier = "email" | "phone";
@@ -35,7 +36,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
 
   async function goToAccount() {
     const { data: isAdmin } = await createClient().rpc("is_admin");
-    router.replace(isAdmin === true ? "/admin" : "/app/dashboard");
+    router.replace(isAdmin === true ? "/admin" : studentReturnPath(new URLSearchParams(location.search).get("next")) ?? "/app/dashboard");
     router.refresh();
   }
 
@@ -118,7 +119,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
     try {
       const response = await fetch("/auth/demo", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ role }) });
       if (!response.ok) throw new Error("Không mở được phiên demo. Hãy thử lại.");
-      router.push(role === "admin" ? "/admin" : "/app/dashboard"); router.refresh();
+      router.push(role === "admin" ? "/admin" : studentReturnPath(new URLSearchParams(location.search).get("next")) ?? "/app/dashboard"); router.refresh();
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Không mở được phiên demo."); }
     finally { setBusy(false); }
   }
