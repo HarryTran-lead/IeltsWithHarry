@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-012",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Food science and microbial processes",
+  "title": "Why Fermentation Changes Food",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "food_fermentation",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Fermentation is often treated as a traditional cooking trick, but it is also a biological process involving microorganisms. Depending on the food, microbes transform sugars and other compounds, changing flavour, texture and sometimes storage life. The key feature is microbial activity, rather than simply leaving food at room temperature and hoping for a desirable result.",
+      "translation_vi": "Lên men thường bị xem như mẹo nấu ăn truyền thống nhưng thực chất là quá trình sinh học có vi sinh vật. Tùy thực phẩm, vi sinh vật biến đổi đường và hợp chất khác, làm đổi vị, kết cấu và đôi khi thời gian bảo quản. Điểm chính là hoạt động vi sinh chứ không phải cứ để thức ăn ngoài phòng là lên men tốt.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A familiar group involved in some fermented foods is lactic acid bacteria. They use available carbohydrates and can produce acids, which alter taste and the surrounding environment. The process is associated with lactic acid, but different foods contain different microbial communities and end products. There is no single chemical recipe that describes every fermented product.",
+      "translation_vi": "Một nhóm quen thuộc là vi khuẩn lactic. Chúng dùng carbohydrate sẵn có và tạo axit, làm đổi mùi vị cùng môi trường quanh nó. Quá trình liên quan axit lactic nhưng mỗi thực phẩm có cộng đồng vi sinh và sản phẩm cuối khác nhau. Không có một công thức hóa học mô tả mọi món lên men.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yeasts are particularly important in other processes. As they use sugars, some strains release carbon dioxide, which can create bubbles or make dough rise. Bakers may judge activity partly by gas production, although the amount of gas alone does not establish whether a process has been safe or complete. Temperature and ingredients influence what happens.",
+      "translation_vi": "Nấm men quan trọng với quá trình khác. Khi sử dụng đường, một số dòng tạo khí carbon dioxide, giúp tạo bọt hoặc làm bột nở. Thợ bánh có thể quan sát lượng khí tạo ra, nhưng khí nhiều chưa đủ kết luận quá trình an toàn hoặc hoàn thành. Nhiệt độ và nguyên liệu cũng ảnh hưởng.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The initial mixture also matters. Salt concentration, available sugar and acidity can favour some organisms over others. Food scientists call this a form of selective environment, because the conditions help certain populations grow while restricting others. This explains why copying the appearance of a fermented food without controlling its ingredients can be unreliable.",
+      "translation_vi": "Hỗn hợp ban đầu quan trọng: nồng độ muối, đường có sẵn và độ axit có thể thuận lợi cho vi sinh này và hạn chế loại khác. Khoa học thực phẩm gọi đó là môi trường chọn lọc. Vì thế bắt chước hình thức món lên men mà không kiểm soát nguyên liệu không đáng tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Microbial communities also change through time. A species that grows rapidly at the beginning may be replaced by another as acidity rises or nutrients decline. This sequence is known as microbial succession. Researchers may sample a product at several stages rather than examining only the final jar, because the organisms present at the end cannot explain every earlier transformation.",
+      "translation_vi": "Cộng đồng vi sinh thay đổi theo thời gian. Loài phát triển nhanh lúc đầu có thể bị loài khác thay khi axit tăng hoặc dưỡng chất giảm. Chuỗi thay thế đó gọi là diễn thế vi sinh. Nhà nghiên cứu lấy mẫu ở nhiều giai đoạn chứ không chỉ bình thành phẩm, bởi vi sinh cuối kỳ không giải thích mọi biến đổi trước đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Fermentation can affect the chemical accessibility of nutrients as well. Some processes break down compounds that are difficult to digest or alter how minerals interact with food components. Scientists study these nutritional changes through controlled measurements. The results depend on the recipe and do not justify claiming that every fermented food is automatically healthier than its original ingredients.",
+      "translation_vi": "Lên men có thể thay đổi khả năng tiếp cận dưỡng chất. Một số quá trình phân giải chất khó tiêu hoặc thay đổi liên kết khoáng với thành phần thức ăn. Nhà khoa học đo các biến đổi dinh dưỡng trong điều kiện kiểm soát. Kết quả tùy công thức, không thể khẳng định mọi món lên men đều lành hơn nguyên liệu gốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "In scientific comparisons, researchers may prepare several batches from the same starting ingredients. They change one factor while holding others constant, allowing a more credible conclusion about its effects. The arrangement is a controlled experiment. Without it, a difference in flavour could come from several unrecorded variables rather than the factor under investigation.",
+      "translation_vi": "Trong so sánh khoa học, nhà nghiên cứu tạo nhiều mẻ từ cùng nguyên liệu đầu, chỉ đổi một yếu tố và giữ yếu tố khác cố định để kết luận đáng tin hơn. Đó là thí nghiệm có đối chứng. Nếu không, vị khác biệt có thể do nhiều biến không ghi lại chứ không phải yếu tố muốn tìm hiểu.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Finally, scientific understanding and safe practice must be kept together. A pleasant smell or attractive colour does not prove food is safe. Commercial producers rely on monitored processes, hygiene and suitable testing. For consumers, the appropriate conclusion is to use validated methods, rather than improvising an untested procedure with perishable ingredients. Fermentation is powerful precisely because microbes can transform food.",
+      "translation_vi": "Cuối cùng hiểu biết khoa học phải đi kèm an toàn. Mùi dễ chịu hay màu đẹp không chứng minh thực phẩm an toàn. Nhà sản xuất dựa vào quy trình theo dõi, vệ sinh và kiểm nghiệm phù hợp. Người dùng nên theo phương pháp đã kiểm chứng thay vì tự nghĩ quy trình chưa thử với nguyên liệu dễ hỏng. Lên men mạnh vì vi sinh có thể biến đổi thực phẩm.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Fermentation depends on controlled ____ rather than food standing alone.",
+      "correct_answers": [
+        "microbial activity"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The key feature is microbial activity, rather than simply leaving food at room temperature and hoping for a desirable result.",
+      "explanation_vi": "Microbial activity là hoạt động chuyển hóa của vi sinh vật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Certain bacteria produce ____ during fermentation.",
+      "correct_answers": [
+        "lactic acid"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "A familiar group involved in some fermented foods is lactic acid bacteria.",
+      "explanation_vi": "Lactic acid là một sản phẩm của vi khuẩn lactic.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Bakers can observe yeast activity through ____.",
+      "correct_answers": [
+        "gas production"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Bakers may judge activity partly by gas production, although the amount of gas alone does not establish whether a process has been safe or complete.",
+      "explanation_vi": "Gas production là sự tạo khí từ quá trình chuyển hóa đường.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Conditions favouring some microbes create a ____.",
+      "correct_answers": [
+        "selective environment"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Food scientists call this a form of selective environment, because the conditions help certain populations grow while restricting others.",
+      "explanation_vi": "Selective environment là môi trường chỉ phù hợp một số nhóm sinh vật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Changes in the dominant microbial species are ____.",
+      "correct_answers": [
+        "microbial succession"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "This sequence is known as microbial succession.",
+      "explanation_vi": "Microbial succession là sự thay thế tuần tự của các nhóm vi sinh vật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Scientists measure possible ____ in a fermented product.",
+      "correct_answers": [
+        "nutritional changes"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Scientists study these nutritional changes through controlled measurements.",
+      "explanation_vi": "Nutritional changes là những thay đổi thành phần hoặc khả năng hấp thu chất dinh dưỡng.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "Changing one variable at a time is part of a ____.",
+      "correct_answers": [
+        "controlled experiment"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The arrangement is a controlled experiment.",
+      "explanation_vi": "Controlled experiment giúp tách tác động của yếu tố đang nghiên cứu.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "Safe preparation requires ____ rather than improvised procedures.",
+      "correct_answers": [
+        "validated methods"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "For consumers, the appropriate conclusion is to use validated methods, rather than improvising an untested procedure with perishable ingredients.",
+      "explanation_vi": "Validated methods là phương pháp đã được kiểm chứng trong điều kiện an toàn.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "food_fermentation",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "A familiar group involved in some fermented foods is lactic acid bacteria."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 0,
+      "source_char_end": 74,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "A familiar group involved in some fermented foods is lactic acid bacteria.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Food scientists call this a form of selective environment, because the conditions help certain populations grow while restricting others."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 121,
+      "source_char_end": 258,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Food scientists call this a form of selective environment, because the conditions help certain populations grow while restricting others.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Some processes break down compounds that are difficult to digest or alter how minerals interact with food components. Scientists study these nutritional changes through controlled measurements."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 73,
+      "source_char_end": 266,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Some processes break down compounds that are difficult to digest or alter how minerals interact with food components. Scientists study these nutritional changes through controlled measurements.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "For consumers, the appropriate conclusion is to use validated methods, rather than improvising an untested procedure with perishable ingredients."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 222,
+      "source_char_end": 367,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "For consumers, the appropriate conclusion is to use validated methods, rather than improvising an untested procedure with perishable ingredients.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Bakers may judge activity partly by ____, although the amount of gas alone does not establish whether a process has been safe or complete.",
+      "correct_answers": [
+        "gas production"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Bakers may judge activity partly by gas production, although the amount of gas alone does not establish whether a process has been safe or complete.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: The arrangement is a ____.",
+      "correct_answers": [
+        "controlled experiment"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The arrangement is a controlled experiment.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-012-V01",
+      "expression_en": "microbial activity",
+      "meaning_vi": "hoạt động của vi sinh vật",
+      "part_of_speech": "noun phrase",
+      "example_en": "The key feature is microbial activity, rather than simply leaving food at room temperature and hoping for a desirable result.",
+      "example_vi": "Lên men thường bị xem như mẹo nấu ăn truyền thống nhưng thực chất là quá trình sinh học có vi sinh vật. Tùy thực phẩm, vi sinh vật biến đổi đường và hợp chất khác, làm đổi vị, kết cấu và đôi khi thời gian bảo quản. Điểm chính là hoạt động vi sinh chứ không phải cứ để thức ăn ngoài phòng là lên men tốt.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-012-V02",
+      "expression_en": "lactic acid",
+      "meaning_vi": "axit lactic",
+      "part_of_speech": "noun phrase",
+      "example_en": "A familiar group involved in some fermented foods is lactic acid bacteria.",
+      "example_vi": "Một nhóm quen thuộc là vi khuẩn lactic. Chúng dùng carbohydrate sẵn có và tạo axit, làm đổi mùi vị cùng môi trường quanh nó. Quá trình liên quan axit lactic nhưng mỗi thực phẩm có cộng đồng vi sinh và sản phẩm cuối khác nhau. Không có một công thức hóa học mô tả mọi món lên men.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-012-V03",
+      "expression_en": "gas production",
+      "meaning_vi": "sự tạo khí",
+      "part_of_speech": "noun phrase",
+      "example_en": "Bakers may judge activity partly by gas production, although the amount of gas alone does not establish whether a process has been safe or complete.",
+      "example_vi": "Nấm men quan trọng với quá trình khác. Khi sử dụng đường, một số dòng tạo khí carbon dioxide, giúp tạo bọt hoặc làm bột nở. Thợ bánh có thể quan sát lượng khí tạo ra, nhưng khí nhiều chưa đủ kết luận quá trình an toàn hoặc hoàn thành. Nhiệt độ và nguyên liệu cũng ảnh hưởng.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-012-V04",
+      "expression_en": "selective environment",
+      "meaning_vi": "môi trường mang tính chọn lọc",
+      "part_of_speech": "noun phrase",
+      "example_en": "Food scientists call this a form of selective environment, because the conditions help certain populations grow while restricting others.",
+      "example_vi": "Hỗn hợp ban đầu quan trọng: nồng độ muối, đường có sẵn và độ axit có thể thuận lợi cho vi sinh này và hạn chế loại khác. Khoa học thực phẩm gọi đó là môi trường chọn lọc. Vì thế bắt chước hình thức món lên men mà không kiểm soát nguyên liệu không đáng tin.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-012-V05",
+      "expression_en": "microbial succession",
+      "meaning_vi": "sự diễn thế vi sinh vật",
+      "part_of_speech": "noun phrase",
+      "example_en": "This sequence is known as microbial succession.",
+      "example_vi": "Cộng đồng vi sinh thay đổi theo thời gian. Loài phát triển nhanh lúc đầu có thể bị loài khác thay khi axit tăng hoặc dưỡng chất giảm. Chuỗi thay thế đó gọi là diễn thế vi sinh. Nhà nghiên cứu lấy mẫu ở nhiều giai đoạn chứ không chỉ bình thành phẩm, bởi vi sinh cuối kỳ không giải thích mọi biến đổi trước đó.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-012-V06",
+      "expression_en": "nutritional changes",
+      "meaning_vi": "những thay đổi dinh dưỡng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Scientists study these nutritional changes through controlled measurements.",
+      "example_vi": "Lên men có thể thay đổi khả năng tiếp cận dưỡng chất. Một số quá trình phân giải chất khó tiêu hoặc thay đổi liên kết khoáng với thành phần thức ăn. Nhà khoa học đo các biến đổi dinh dưỡng trong điều kiện kiểm soát. Kết quả tùy công thức, không thể khẳng định mọi món lên men đều lành hơn nguyên liệu gốc.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "a4d7b114c81be0eb4cd3bde297c27500cf4a8114c3dc0dbb29a291bc7095161e",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_04",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "Fermentation depends on controlled ____ rather than food standing alone."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Certain bacteria produce ____ during fermentation."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Bakers can observe yeast activity through ____."
+          },
+          {
+            "question_id": "Q04",
+            "prompt": "Conditions favouring some microbes create a ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04"
+        ]
+      },
+      {
+        "group_id": "IELTS_FLOW_05_06",
+        "type": "flow_chart_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "ordered_flow_steps",
+        "group_heading": "Process and assessment steps",
+        "items": [
+          {
+            "question_id": "Q05",
+            "prompt": "Changes in the dominant microbial species are ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Scientists measure possible ____ in a fermented product."
+          }
+        ],
+        "question_ids": [
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SENTENCE_07_08",
+        "type": "sentence_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "numbered_sentences",
+        "group_heading": "Conclusions from the lecture",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Changing one variable at a time is part of a ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Safe preparation requires ____ rather than improvised procedures."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 448,
+    "estimated_audio_minutes_at_135_wpm": 3.32,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

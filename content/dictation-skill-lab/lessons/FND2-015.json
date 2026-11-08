@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-015",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "/ʃ/ versus /s/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt /ʃ/ versus /s/.",
+    "Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "A ship passed the lighthouse at noon.",
+      "translation_vi": "Một con tàu đi ngang ngọn hải đăng lúc trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "ship",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Take a sip before the tea gets cold.",
+      "translation_vi": "Hãy nhấp một ngụm trước khi trà nguội.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "sip",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "She works at the health centre.",
+      "translation_vi": "Cô ấy làm việc tại trung tâm y tế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "she",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I can see the entrance from here.",
+      "translation_vi": "Tôi có thể nhìn thấy lối vào từ đây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "see",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We walked along the shore at sunset.",
+      "translation_vi": "Chúng tôi đi dọc bờ biển lúc hoàng hôn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "shore",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "My feet are sore after the hike.",
+      "translation_vi": "Chân tôi đau sau buổi đi bộ đường dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "sore",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "He found a shell by the water.",
+      "translation_vi": "Anh ấy tìm thấy một vỏ sò bên mép nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "shell",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "They sell fresh flowers outside.",
+      "translation_vi": "Họ bán hoa tươi ở bên ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "sell",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Bring one clean sheet for the bed.",
+      "translation_vi": "Hãy mang một tấm ga giường sạch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "sheet",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "There is one empty seat by the door.",
+      "translation_vi": "Có một chỗ ngồi trống cạnh cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "sh_vs_s"
+      ],
+      "target_word": "seat",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A ship passed the lighthouse at noon."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe ship / sip (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Một con tàu đi ngang ngọn hải đăng lúc trưa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "ship / sip (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Take a sip before the tea gets cold."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe ship / sip (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Hãy nhấp một ngụm trước khi trà nguội.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "ship / sip (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "She works at the health centre."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe she / see (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Cô ấy làm việc tại trung tâm y tế.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "she / see (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I can see the entrance from here."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe she / see (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Tôi có thể nhìn thấy lối vào từ đây.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "she / see (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We walked along the shore at sunset."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe shore / sore (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Chúng tôi đi dọc bờ biển lúc hoàng hôn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "shore / sore (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "My feet are sore after the hike."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe shore / sore (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Chân tôi đau sau buổi đi bộ đường dài.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "shore / sore (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "He found a shell by the water."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe shell / sell (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Anh ấy tìm thấy một vỏ sò bên mép nước.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "shell / sell (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "They sell fresh flowers outside."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe shell / sell (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Họ bán hoa tươi ở bên ngoài.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "shell / sell (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Bring one clean sheet for the bed."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe sheet / seat (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Hãy mang một tấm ga giường sạch.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "sheet / seat (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "There is one empty seat by the door."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe sheet / seat (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục). Nghĩa: Có một chỗ ngồi trống cạnh cửa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "sheet / seat (Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "ship"
+      ],
+      "options": [
+        "ship",
+        "sip"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt ship và sip. Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "sh_vs_s"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "see"
+      ],
+      "options": [
+        "see",
+        "she"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt she và see. Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "sh_vs_s"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "shore"
+      ],
+      "options": [
+        "shore",
+        "sore"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt shore và sore. Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "sh_vs_s"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "sell"
+      ],
+      "options": [
+        "sell",
+        "shell"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt shell và sell. Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "sh_vs_s"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "sheet"
+      ],
+      "options": [
+        "sheet",
+        "seat"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt sheet và seat. Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "sh_vs_s"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "ship",
+      "pos": "target",
+      "meaning_vi": "tàu thủy",
+      "example_en": "A ship passed the lighthouse at noon.",
+      "example_vi": "Một con tàu đi ngang ngọn hải đăng lúc trưa.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "sh_vs_s"
+    },
+    {
+      "term": "sip",
+      "pos": "target",
+      "meaning_vi": "nhấp một ngụm",
+      "example_en": "Take a sip before the tea gets cold.",
+      "example_vi": "Hãy nhấp một ngụm trước khi trà nguội.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "sh_vs_s"
+    },
+    {
+      "term": "she",
+      "pos": "target",
+      "meaning_vi": "cô ấy",
+      "example_en": "She works at the health centre.",
+      "example_vi": "Cô ấy làm việc tại trung tâm y tế.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "sh_vs_s"
+    },
+    {
+      "term": "see",
+      "pos": "target",
+      "meaning_vi": "nhìn thấy",
+      "example_en": "I can see the entrance from here.",
+      "example_vi": "Tôi có thể nhìn thấy lối vào từ đây.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "sh_vs_s"
+    },
+    {
+      "term": "shore",
+      "pos": "target",
+      "meaning_vi": "bờ biển",
+      "example_en": "We walked along the shore at sunset.",
+      "example_vi": "Chúng tôi đi dọc bờ biển lúc hoàng hôn.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "sh_vs_s"
+    },
+    {
+      "term": "sore",
+      "pos": "target",
+      "meaning_vi": "đau nhức",
+      "example_en": "My feet are sore after the hike.",
+      "example_vi": "Chân tôi đau sau buổi đi bộ đường dài.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "sh_vs_s"
+    },
+    {
+      "term": "shell",
+      "pos": "target",
+      "meaning_vi": "vỏ sò",
+      "example_en": "He found a shell by the water.",
+      "example_vi": "Anh ấy tìm thấy một vỏ sò bên mép nước.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "sh_vs_s"
+    },
+    {
+      "term": "sell",
+      "pos": "target",
+      "meaning_vi": "bán",
+      "example_en": "They sell fresh flowers outside.",
+      "example_vi": "Họ bán hoa tươi ở bên ngoài.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "sh_vs_s"
+    },
+    {
+      "term": "sheet",
+      "pos": "target",
+      "meaning_vi": "tấm ga/tờ giấy",
+      "example_en": "Bring one clean sheet for the bed.",
+      "example_vi": "Hãy mang một tấm ga giường sạch.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "sh_vs_s"
+    },
+    {
+      "term": "seat",
+      "pos": "target",
+      "meaning_vi": "chỗ ngồi",
+      "example_en": "There is one empty seat by the door.",
+      "example_vi": "Có một chỗ ngồi trống cạnh cửa.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "sh_vs_s"
+    }
+  ],
+  "micro_skill_id": "sh_vs_s",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "ship",
+        "sip"
+      ],
+      [
+        "she",
+        "see"
+      ],
+      [
+        "shore",
+        "sore"
+      ],
+      [
+        "shell",
+        "sell"
+      ],
+      [
+        "sheet",
+        "seat"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Phân biệt /ʃ/ và /s/ ở đầu từ và trong lời nói liên tục"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "806de46e9b1c06c31dffcfddc8d653e06303eb52baea1e92cd3884416e630ff5",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "/ʃ/ có vị trí lưỡi lùi hơn /s/; nghe sự khác biệt trong ship/sip.",
+    "worked_contrasts": [
+      {
+        "contrast": "ship / sip",
+        "meaning_vi": "tàu thủy / nhấp một ngụm",
+        "teacher_note_vi": "/ʃ/ có vị trí lưỡi lùi hơn /s/; nghe sự khác biệt trong ship/sip."
+      },
+      {
+        "contrast": "she / see",
+        "meaning_vi": "cô ấy / nhìn thấy",
+        "teacher_note_vi": "/ʃ/ có vị trí lưỡi lùi hơn /s/; nghe sự khác biệt trong ship/sip."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Nhầm các từ có sh và s chỉ vì cả hai đều giống tiếng gió.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

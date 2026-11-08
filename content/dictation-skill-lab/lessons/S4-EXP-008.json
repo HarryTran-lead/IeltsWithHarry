@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-008",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Hydrology and stormwater planning",
+  "title": "How Cities Manage Heavy Rain",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "stormwater_systems",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Urban flooding is often blamed on one spectacular storm, but the severity of its effects depends on how the city was built. Roads and roofs prevent rainwater from entering soil. Hydrologists call these surfaces impermeable surfaces, because water flows across them rather than soaking through. Their distribution matters as much as their total area, particularly near low-lying streets.",
+      "translation_vi": "Ngập đô thị thường bị đổ cho một cơn mưa lớn, nhưng mức thiệt hại còn tùy thành phố được xây thế nào. Đường và mái nhà ngăn nước ngấm đất. Nhà thủy văn gọi đó là bề mặt không thấm, khiến nước chảy tràn. Vị trí bề mặt này quan trọng không kém tổng diện tích, nhất là gần đường trũng.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Traditional drainage systems collect water quickly and carry it into underground pipes. That approach can reduce standing water locally, but downstream pipes have limited capacity. During intense rainfall, the system may experience peak discharge, the highest flow rate over a short period. A design that handles average rain well may fail when many drains deliver water simultaneously.",
+      "translation_vi": "Hệ thống thoát nước truyền thống thu nước nhanh vào ống ngầm. Điều này giảm nước đọng cục bộ nhưng ống phía dưới có giới hạn. Khi mưa lớn xuất hiện lưu lượng đỉnh, tức tốc độ nước chảy lớn nhất trong một khoảng ngắn. Hệ thống chịu được mưa trung bình vẫn có thể quá tải khi nhiều cống đổ về cùng lúc.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "One alternative is to hold water temporarily near where it falls. A shallow planted area can collect runoff and release it slowly into the ground. Such a feature is often called a rain garden. It is not simply an ornamental flower bed; its soil layers and overflow route must be designed to manage water safely.",
+      "translation_vi": "Cách khác là giữ nước tạm ngay nơi mưa xuống. Vùng trũng trồng cây gom nước chảy tràn và cho thấm chậm. Công trình này gọi là vườn mưa. Nó không chỉ là bồn hoa trang trí; lớp đất và đường tràn phải được thiết kế an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Some roads use paving materials that allow rain to move through tiny openings. This approach, known as permeable paving, can reduce runoff where soil conditions permit. But it needs maintenance: fine material can clog the openings, and unsuitable ground may prevent proper infiltration. The installation is therefore not a universal replacement for drainage pipes.",
+      "translation_vi": "Một số đường dùng vật liệu lát có lỗ nhỏ để nước xuyên qua, gọi là lát thấm nước. Cách này giảm nước chảy tràn nơi đất phù hợp nhưng cần bảo trì: cặn mịn làm tắc lỗ và nền đất xấu ngăn thấm. Vì vậy không thể thay toàn bộ cống bằng loại gạch này.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "For larger developments, engineers may create a basin that fills during storms and empties gradually afterwards. A detention basin delays the arrival of floodwater downstream rather than making rainfall disappear. It requires space, safe access and regular inspection. If the basin is already full before a second storm, its remaining capacity may be much lower.",
+      "translation_vi": "Với khu xây dựng lớn, kỹ sư có thể tạo hồ điều tiết đầy nước khi mưa và xả từ từ sau đó. Hồ giữ tạm làm chậm nước đổ xuống hạ lưu chứ không làm mất mưa. Nó cần diện tích, an toàn tiếp cận và kiểm tra. Nếu hồ chưa rút trước cơn mưa thứ hai, dung tích còn ít.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "To compare designs, planners create computer models representing different storms and ground conditions. A model is useful, but only if its assumptions are understood. Engineers check its predictions against recorded flood observations, including where water collected and how long it remained. A model fitted to one neighbourhood may not transfer reliably to another with different drainage or topography.",
+      "translation_vi": "Để so phương án, quy hoạch dùng mô hình máy tính cho các cơn mưa và mặt đất khác nhau. Mô hình chỉ hữu ích khi hiểu giả định. Kỹ sư đối chiếu dự đoán với quan sát ngập thực tế: nơi nước tụ và thời gian tồn đọng. Mô hình phù hợp phường này chưa chắc áp được nơi khác có địa hình và cống khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Design also involves deciding who bears the risk. Protecting a city centre by directing water towards a less wealthy residential area would raise serious fairness questions. Planners should examine distributional impacts, meaning how benefits and costs are shared among different communities. Technical efficiency is not sufficient when an apparently successful project transfers harm elsewhere.",
+      "translation_vi": "Thiết kế còn là quyết định ai gánh rủi ro. Bảo vệ trung tâm bằng cách dồn nước sang khu dân cư thu nhập thấp gây vấn đề công bằng. Nhà quy hoạch phải xem tác động phân bổ: lợi ích và chi phí chia cho các cộng đồng thế nào. Hiệu quả kỹ thuật là chưa đủ nếu dự án chỉ chuyển thiệt hại đi nơi khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The final lesson is that resilience comes from combining strategies. Pipes, planted areas, warning systems and careful land-use planning each solve different problems. Rather than promising that a city will never flood, managers should build adaptive capacity, the ability to adjust as rainfall patterns, population and infrastructure change. A flexible response remains useful when the future is uncertain.",
+      "translation_vi": "Kết luận: khả năng chống chịu đến từ kết hợp cống, vùng cây, cảnh báo và quản lý sử dụng đất. Thay vì hứa không bao giờ ngập, nên tạo năng lực thích ứng: khả năng thay đổi khi mưa, dân số và hạ tầng biến động. Phương án linh hoạt hữu ích khi tương lai bất định.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "Roads and roofs are examples of ____.",
+      "correct_answers": [
+        "impermeable surfaces"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Hydrologists call these surfaces impermeable surfaces, because water flows across them rather than soaking through.",
+      "explanation_vi": "Impermeable surfaces là bề mặt nước khó thẩm thấu qua.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "The maximum short-term flow rate is known as ____.",
+      "correct_answers": [
+        "peak discharge"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "During intense rainfall, the system may experience peak discharge, the highest flow rate over a short period.",
+      "explanation_vi": "Peak discharge là lưu lượng cực đại trong đợt mưa.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "A shallow planted feature designed to absorb runoff is a ____.",
+      "correct_answers": [
+        "rain garden"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Such a feature is often called a rain garden.",
+      "explanation_vi": "Rain garden là vườn trũng chủ động giữ và thấm nước mưa.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Paving that lets water pass through is called ____.",
+      "correct_answers": [
+        "permeable paving"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "This approach, known as permeable paving, can reduce runoff where soil conditions permit.",
+      "explanation_vi": "Permeable paving là loại bề mặt lát có khả năng thấm nước.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "A basin that temporarily stores stormwater is a ____.",
+      "correct_answers": [
+        "detention basin"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "A detention basin delays the arrival of floodwater downstream rather than making rainfall disappear.",
+      "explanation_vi": "Detention basin là hồ giữ nước mưa tạm, sau đó xả chậm.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Model predictions are checked against recorded ____.",
+      "correct_answers": [
+        "flood observations"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Engineers check its predictions against recorded flood observations, including where water collected and how long it remained.",
+      "explanation_vi": "Flood observations là dữ liệu đo ngập đã xảy ra ngoài thực địa.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Fairness requires analysing a project's ____.",
+      "correct_answers": [
+        "distributional impacts"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Planners should examine distributional impacts, meaning how benefits and costs are shared among different communities.",
+      "explanation_vi": "Distributional impacts phản ánh sự phân bổ lợi ích và tổn thất giữa các nhóm dân cư.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "The ability to adjust to changing risks is ____.",
+      "correct_answers": [
+        "adaptive capacity"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Rather than promising that a city will never flood, managers should build adaptive capacity, the ability to adjust as rainfall patterns, population and infrastructure change.",
+      "explanation_vi": "Adaptive capacity là năng lực điều chỉnh theo hoàn cảnh mới.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "stormwater_systems",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "During intense rainfall, the system may experience peak discharge, the highest flow rate over a short period."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 181,
+      "source_char_end": 290,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "During intense rainfall, the system may experience peak discharge, the highest flow rate over a short period.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "This approach, known as permeable paving, can reduce runoff where soil conditions permit."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 79,
+      "source_char_end": 168,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "This approach, known as permeable paving, can reduce runoff where soil conditions permit.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Engineers check its predictions against recorded flood observations, including where water collected and how long it remained."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 168,
+      "source_char_end": 294,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Engineers check its predictions against recorded flood observations, including where water collected and how long it remained.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Rather than promising that a city will never flood, managers should build adaptive capacity, the ability to adjust as rainfall patterns, population and infrastructure change."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 168,
+      "source_char_end": 342,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Rather than promising that a city will never flood, managers should build adaptive capacity, the ability to adjust as rainfall patterns, population and infrastructure change.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Such a feature is often called a ____.",
+      "correct_answers": [
+        "rain garden"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Such a feature is often called a rain garden.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Planners should examine ____, meaning how benefits and costs are shared among different communities.",
+      "correct_answers": [
+        "distributional impacts"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Planners should examine distributional impacts, meaning how benefits and costs are shared among different communities.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-008-V01",
+      "expression_en": "impermeable surfaces",
+      "meaning_vi": "bề mặt không thấm nước",
+      "part_of_speech": "noun phrase",
+      "example_en": "Hydrologists call these surfaces impermeable surfaces, because water flows across them rather than soaking through.",
+      "example_vi": "Ngập đô thị thường bị đổ cho một cơn mưa lớn, nhưng mức thiệt hại còn tùy thành phố được xây thế nào. Đường và mái nhà ngăn nước ngấm đất. Nhà thủy văn gọi đó là bề mặt không thấm, khiến nước chảy tràn. Vị trí bề mặt này quan trọng không kém tổng diện tích, nhất là gần đường trũng.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-008-V02",
+      "expression_en": "peak discharge",
+      "meaning_vi": "lưu lượng đỉnh",
+      "part_of_speech": "noun phrase",
+      "example_en": "During intense rainfall, the system may experience peak discharge, the highest flow rate over a short period.",
+      "example_vi": "Hệ thống thoát nước truyền thống thu nước nhanh vào ống ngầm. Điều này giảm nước đọng cục bộ nhưng ống phía dưới có giới hạn. Khi mưa lớn xuất hiện lưu lượng đỉnh, tức tốc độ nước chảy lớn nhất trong một khoảng ngắn. Hệ thống chịu được mưa trung bình vẫn có thể quá tải khi nhiều cống đổ về cùng lúc.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-008-V03",
+      "expression_en": "rain garden",
+      "meaning_vi": "vườn mưa",
+      "part_of_speech": "noun phrase",
+      "example_en": "Such a feature is often called a rain garden.",
+      "example_vi": "Cách khác là giữ nước tạm ngay nơi mưa xuống. Vùng trũng trồng cây gom nước chảy tràn và cho thấm chậm. Công trình này gọi là vườn mưa. Nó không chỉ là bồn hoa trang trí; lớp đất và đường tràn phải được thiết kế an toàn.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-008-V04",
+      "expression_en": "permeable paving",
+      "meaning_vi": "vật liệu lát thấm nước",
+      "part_of_speech": "noun phrase",
+      "example_en": "This approach, known as permeable paving, can reduce runoff where soil conditions permit.",
+      "example_vi": "Một số đường dùng vật liệu lát có lỗ nhỏ để nước xuyên qua, gọi là lát thấm nước. Cách này giảm nước chảy tràn nơi đất phù hợp nhưng cần bảo trì: cặn mịn làm tắc lỗ và nền đất xấu ngăn thấm. Vì vậy không thể thay toàn bộ cống bằng loại gạch này.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-008-V05",
+      "expression_en": "detention basin",
+      "meaning_vi": "hồ giữ nước mưa tạm thời",
+      "part_of_speech": "noun phrase",
+      "example_en": "A detention basin delays the arrival of floodwater downstream rather than making rainfall disappear.",
+      "example_vi": "Với khu xây dựng lớn, kỹ sư có thể tạo hồ điều tiết đầy nước khi mưa và xả từ từ sau đó. Hồ giữ tạm làm chậm nước đổ xuống hạ lưu chứ không làm mất mưa. Nó cần diện tích, an toàn tiếp cận và kiểm tra. Nếu hồ chưa rút trước cơn mưa thứ hai, dung tích còn ít.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-008-V06",
+      "expression_en": "flood observations",
+      "meaning_vi": "quan sát tình trạng ngập",
+      "part_of_speech": "noun phrase",
+      "example_en": "Engineers check its predictions against recorded flood observations, including where water collected and how long it remained.",
+      "example_vi": "Để so phương án, quy hoạch dùng mô hình máy tính cho các cơn mưa và mặt đất khác nhau. Mô hình chỉ hữu ích khi hiểu giả định. Kỹ sư đối chiếu dự đoán với quan sát ngập thực tế: nơi nước tụ và thời gian tồn đọng. Mô hình phù hợp phường này chưa chắc áp được nơi khác có địa hình và cống khác.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "21959de7f2cbe62bfc0dd182305fb68c98a7642b94f51f909b9250791d9a80f9",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_03",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "Roads and roofs are examples of ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "The maximum short-term flow rate is known as ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "A shallow planted feature designed to absorb runoff is a ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ]
+      },
+      {
+        "group_id": "IELTS_TABLE_04_06",
+        "type": "table_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "two_column_table",
+        "group_heading": "Methods and comparisons",
+        "items": [
+          {
+            "question_id": "Q04",
+            "prompt": "Paving that lets water pass through is called ____."
+          },
+          {
+            "question_id": "Q05",
+            "prompt": "A basin that temporarily stores stormwater is a ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Model predictions are checked against recorded ____."
+          }
+        ],
+        "question_ids": [
+          "Q04",
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SUMMARY_07_08",
+        "type": "summary_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "connected_summary",
+        "group_heading": "Interpretation and conclusions",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Fairness requires analysing a project's ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "The ability to adjust to changing risks is ____."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 449,
+    "estimated_audio_minutes_at_135_wpm": 3.33,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -6,6 +6,7 @@ assertDeploymentEnvironment(process.env);
 const avatarOrigin = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const avatarPattern = avatarOrigin ? new URL("/storage/v1/object/public/user-avatars/**", avatarOrigin) : null;
 
+const mockFiles = ["./content/listening-mocks/tests/*.json", "./content/dictation-skill-lab/audio-manifest.json"];
 const skillLabFiles = ["./content/dictation-skill-lab/lessons/*.json", "./content/dictation-skill-lab/audio-manifest.json"];
 
 const nextConfig: NextConfig = {
@@ -16,6 +17,8 @@ const nextConfig: NextConfig = {
     "/api/book2/**": ["./content/book2/lessons/**/*.json"],
     "/api/dictation/skill-lab": skillLabFiles,
     "/api/dictation/skill-lab/**": skillLabFiles,
+    "/api/listening/mocks": mockFiles,
+    "/api/listening/mocks/**": mockFiles,
   },
   images: { remotePatterns: [
     { protocol: "https", hostname: "www.noaa.gov", pathname: "/sites/default/files/**" },

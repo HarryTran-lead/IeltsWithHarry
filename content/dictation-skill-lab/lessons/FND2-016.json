@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-016",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "/tʃ/ versus /ʃ/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt /tʃ/ versus /ʃ/.",
+    "/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "A small chip fell off the plate.",
+      "translation_vi": "Một mảnh nhỏ bị sứt khỏi chiếc đĩa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "chip",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The ship arrived before sunrise.",
+      "translation_vi": "Con tàu cập bến trước lúc mặt trời mọc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "ship",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Chew your food slowly.",
+      "translation_vi": "Hãy nhai thức ăn từ từ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "chew",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "My left shoe is still wet.",
+      "translation_vi": "Chiếc giày trái của tôi vẫn còn ướt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "shoe",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Please choose a seat near the window.",
+      "translation_vi": "Hãy chọn một chỗ gần cửa sổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "choose",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Leave your shoes by the entrance.",
+      "translation_vi": "Hãy để giày của bạn cạnh lối vào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "shoes",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Put the chair beside the table.",
+      "translation_vi": "Đặt chiếc ghế cạnh bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "chair",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Could we share the last piece of cake?",
+      "translation_vi": "Chúng ta chia nhau miếng bánh cuối được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "share",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The tickets are quite cheap today.",
+      "translation_vi": "Vé hôm nay khá rẻ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "cheap",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Several sheep were grazing by the road.",
+      "translation_vi": "Vài con cừu đang gặm cỏ bên đường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ch_vs_sh"
+      ],
+      "target_word": "sheep",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A small chip fell off the plate."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe chip / ship (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Một mảnh nhỏ bị sứt khỏi chiếc đĩa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "chip / ship (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The ship arrived before sunrise."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe chip / ship (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Con tàu cập bến trước lúc mặt trời mọc.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "chip / ship (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Chew your food slowly."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe chew / shoe (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Hãy nhai thức ăn từ từ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "chew / shoe (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "My left shoe is still wet."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe chew / shoe (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Chiếc giày trái của tôi vẫn còn ướt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "chew / shoe (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please choose a seat near the window."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe choose / shoes (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Hãy chọn một chỗ gần cửa sổ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "choose / shoes (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Leave your shoes by the entrance."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe choose / shoes (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Hãy để giày của bạn cạnh lối vào.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "choose / shoes (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Put the chair beside the table."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe chair / share (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Đặt chiếc ghế cạnh bàn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "chair / share (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Could we share the last piece of cake?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe chair / share (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Chúng ta chia nhau miếng bánh cuối được không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "chair / share (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The tickets are quite cheap today."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe cheap / sheep (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Vé hôm nay khá rẻ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "cheap / sheep (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Several sheep were grazing by the road."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe cheap / sheep (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát). Nghĩa: Vài con cừu đang gặm cỏ bên đường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "cheap / sheep (/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "chip"
+      ],
+      "options": [
+        "chip",
+        "ship"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt chip và ship. /tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ch_vs_sh"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "shoe"
+      ],
+      "options": [
+        "shoe",
+        "chew"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt chew và shoe. /tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ch_vs_sh"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "choose"
+      ],
+      "options": [
+        "choose",
+        "shoes"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt choose và shoes. /tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ch_vs_sh"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "share"
+      ],
+      "options": [
+        "share",
+        "chair"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt chair và share. /tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ch_vs_sh"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "cheap"
+      ],
+      "options": [
+        "cheap",
+        "sheep"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt cheap và sheep. /tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ch_vs_sh"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "chip",
+      "pos": "target",
+      "meaning_vi": "mảnh nhỏ bị sứt",
+      "example_en": "A small chip fell off the plate.",
+      "example_vi": "Một mảnh nhỏ bị sứt khỏi chiếc đĩa.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "ch_vs_sh"
+    },
+    {
+      "term": "ship",
+      "pos": "target",
+      "meaning_vi": "tàu thủy",
+      "example_en": "The ship arrived before sunrise.",
+      "example_vi": "Con tàu cập bến trước lúc mặt trời mọc.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "ch_vs_sh"
+    },
+    {
+      "term": "chew",
+      "pos": "target",
+      "meaning_vi": "nhai",
+      "example_en": "Chew your food slowly.",
+      "example_vi": "Hãy nhai thức ăn từ từ.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "ch_vs_sh"
+    },
+    {
+      "term": "shoe",
+      "pos": "target",
+      "meaning_vi": "giày",
+      "example_en": "My left shoe is still wet.",
+      "example_vi": "Chiếc giày trái của tôi vẫn còn ướt.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "ch_vs_sh"
+    },
+    {
+      "term": "choose",
+      "pos": "target",
+      "meaning_vi": "chọn",
+      "example_en": "Please choose a seat near the window.",
+      "example_vi": "Hãy chọn một chỗ gần cửa sổ.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "ch_vs_sh"
+    },
+    {
+      "term": "shoes",
+      "pos": "target",
+      "meaning_vi": "giày (số nhiều)",
+      "example_en": "Leave your shoes by the entrance.",
+      "example_vi": "Hãy để giày của bạn cạnh lối vào.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "ch_vs_sh"
+    },
+    {
+      "term": "chair",
+      "pos": "target",
+      "meaning_vi": "ghế",
+      "example_en": "Put the chair beside the table.",
+      "example_vi": "Đặt chiếc ghế cạnh bàn.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "ch_vs_sh"
+    },
+    {
+      "term": "share",
+      "pos": "target",
+      "meaning_vi": "chia sẻ",
+      "example_en": "Could we share the last piece of cake?",
+      "example_vi": "Chúng ta chia nhau miếng bánh cuối được không?",
+      "source_turn_id": "T08",
+      "phoneme_focus": "ch_vs_sh"
+    },
+    {
+      "term": "cheap",
+      "pos": "target",
+      "meaning_vi": "rẻ",
+      "example_en": "The tickets are quite cheap today.",
+      "example_vi": "Vé hôm nay khá rẻ.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "ch_vs_sh"
+    },
+    {
+      "term": "sheep",
+      "pos": "target",
+      "meaning_vi": "cừu",
+      "example_en": "Several sheep were grazing by the road.",
+      "example_vi": "Vài con cừu đang gặm cỏ bên đường.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "ch_vs_sh"
+    }
+  ],
+  "micro_skill_id": "ch_vs_sh",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "chip",
+        "ship"
+      ],
+      [
+        "chew",
+        "shoe"
+      ],
+      [
+        "choose",
+        "shoes"
+      ],
+      [
+        "chair",
+        "share"
+      ],
+      [
+        "cheap",
+        "sheep"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "/tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "4e644925d29805ea32d37813b08a375821f4f0b33d922799386a7035d6eaea46",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Phân biệt tiếng bật /t/ ở đầu /tʃ/ với tiếng xát liên tục /ʃ/.",
+    "worked_contrasts": [
+      {
+        "contrast": "chip / ship",
+        "meaning_vi": "mảnh nhỏ bị sứt / tàu thủy",
+        "teacher_note_vi": "Phân biệt tiếng bật /t/ ở đầu /tʃ/ với tiếng xát liên tục /ʃ/."
+      },
+      {
+        "contrast": "chew / shoe",
+        "meaning_vi": "nhai / giày",
+        "teacher_note_vi": "Phân biệt tiếng bật /t/ ở đầu /tʃ/ với tiếng xát liên tục /ʃ/."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Nghe ship thành chip hoặc chọn nghĩa từ ngữ cảnh mà không phân biệt âm đầu.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

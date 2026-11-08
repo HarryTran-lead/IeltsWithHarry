@@ -23,7 +23,7 @@ export type GradeResult = {
   accuracy?: number;
 };
 
-export const COMPLETION_TYPES = new Set(["form_completion", "note_completion", "table_completion", "sentence_completion", "summary_completion", "short_answer"]);
+export const COMPLETION_TYPES = new Set(["form_completion", "note_completion", "table_completion", "sentence_completion", "summary_completion", "flow_chart_completion", "short_answer"]);
 
 export function normalizeAnswer(value: string) {
   return String(value).normalize("NFKC").replace(/[‘’]/g, "'").toLowerCase()

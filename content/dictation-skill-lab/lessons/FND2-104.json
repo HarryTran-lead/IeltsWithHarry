@@ -1,0 +1,622 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-104",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M20 – mixed_conversations",
+  "title": "Parcel collection and identity check",
+  "learning_objectives_vi": [
+    "Nghe mã hàng, giấy tờ và thời hạn nhận hàng trong hội thoại.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Speaker 1",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Speaker 2",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, I'm here to collect a parcel for Maya Patel.",
+      "translation_vi": "Xin chào, tôi đến lấy kiện hàng cho Maya Patel.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "Maya Patel",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "Maya Patel",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Could you spell the surname for me, please?",
+      "translation_vi": "Bạn vui lòng đánh vần họ được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "surname",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "họ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "It's P-A-T-E-L.",
+      "translation_vi": "Là P-A-T-E-L.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "P-A-T-E-L",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chữ cái P-A-T-E-L",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Thank you. Do you have the collection reference?",
+      "translation_vi": "Cảm ơn. Bạn có mã nhận hàng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "collection reference",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mã nhận hàng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes, the number is six four nine two.",
+      "translation_vi": "Có, mã là sáu bốn chín hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "six four nine two",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sáu bốn chín hai",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That parcel arrived yesterday, but I need photo identification.",
+      "translation_vi": "Kiện hàng đến hôm qua nhưng tôi cần giấy tờ tùy thân có ảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "photo identification",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "giấy tờ có ảnh",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Will my driving licence be acceptable?",
+      "translation_vi": "Giấy phép lái xe có được chấp nhận không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "driving licence",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bằng lái xe",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Yes. Please sign on the screen beside your name.",
+      "translation_vi": "Được. Vui lòng ký trên màn hình bên cạnh tên bạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "sign on the screen",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ký trên màn hình",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Is there a fee because I collected it late?",
+      "translation_vi": "Có phí vì tôi đến lấy muộn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "collected it late",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "lấy muộn",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "No, we hold parcels for seven days at no charge.",
+      "translation_vi": "Không, chúng tôi giữ hàng bảy ngày miễn phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "parcel_and_spelling",
+        "mixed_conversations"
+      ],
+      "target_value": "seven days",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bảy ngày",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Hello, I'm here to collect a parcel for Maya Patel."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Hello, I'm here to collect a parcel for Maya Patel. Nghĩa: Xin chào, tôi đến lấy kiện hàng cho Maya Patel.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could you spell the surname for me, please?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Could you spell the surname for me, please? Nghĩa: Bạn vui lòng đánh vần họ được không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "It's P-A-T-E-L."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: It's P-A-T-E-L. Nghĩa: Là P-A-T-E-L.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Thank you. Do you have the collection reference?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Thank you. Do you have the collection reference? Nghĩa: Cảm ơn. Bạn có mã nhận hàng không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Yes, the number is six four nine two."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Yes, the number is six four nine two. Nghĩa: Có, mã là sáu bốn chín hai.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "That parcel arrived yesterday, but I need photo identification."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: That parcel arrived yesterday, but I need photo identification. Nghĩa: Kiện hàng đến hôm qua nhưng tôi cần giấy tờ tùy thân có ảnh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Will my driving licence be acceptable?"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Will my driving licence be acceptable? Nghĩa: Giấy phép lái xe có được chấp nhận không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Yes. Please sign on the screen beside your name."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Yes. Please sign on the screen beside your name. Nghĩa: Được. Vui lòng ký trên màn hình bên cạnh tên bạn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Is there a fee because I collected it late?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Is there a fee because I collected it late? Nghĩa: Có phí vì tôi đến lấy muộn không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "No, we hold parcels for seven days at no charge."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: No, we hold parcels for seven days at no charge. Nghĩa: Không, chúng tôi giữ hàng bảy ngày miễn phí.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “giấy tờ có ảnh”.",
+      "correct_answers": [
+        "photo identification"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “photo identification” trong câu: That parcel arrived yesterday, but I need photo identification. Nghĩa: Kiện hàng đến hôm qua nhưng tôi cần giấy tờ tùy thân có ảnh.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “bằng lái xe”.",
+      "correct_answers": [
+        "driving licence"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “driving licence” trong câu: Will my driving licence be acceptable? Nghĩa: Giấy phép lái xe có được chấp nhận không?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “ký trên màn hình”.",
+      "correct_answers": [
+        "sign on the screen"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “sign on the screen” trong câu: Yes. Please sign on the screen beside your name. Nghĩa: Được. Vui lòng ký trên màn hình bên cạnh tên bạn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 6,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “lấy muộn”.",
+      "correct_answers": [
+        "collected it late"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “collected it late” trong câu: Is there a fee because I collected it late? Nghĩa: Có phí vì tôi đến lấy muộn không?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “bảy ngày”.",
+      "correct_answers": [
+        "seven days"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “seven days” trong câu: No, we hold parcels for seven days at no charge. Nghĩa: Không, chúng tôi giữ hàng bảy ngày miễn phí.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Maya Patel",
+      "pos": "phrase",
+      "meaning_vi": "Maya Patel",
+      "example_en": "Hello, I'm here to collect a parcel for Maya Patel.",
+      "example_vi": "Xin chào, tôi đến lấy kiện hàng cho Maya Patel.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "surname",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "họ",
+      "example_en": "Could you spell the surname for me, please?",
+      "example_vi": "Bạn vui lòng đánh vần họ được không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "P-A-T-E-L",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "chữ cái P-A-T-E-L",
+      "example_en": "It's P-A-T-E-L.",
+      "example_vi": "Là P-A-T-E-L.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "collection reference",
+      "pos": "phrase",
+      "meaning_vi": "mã nhận hàng",
+      "example_en": "Thank you. Do you have the collection reference?",
+      "example_vi": "Cảm ơn. Bạn có mã nhận hàng không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "six four nine two",
+      "pos": "phrase",
+      "meaning_vi": "sáu bốn chín hai",
+      "example_en": "Yes, the number is six four nine two.",
+      "example_vi": "Có, mã là sáu bốn chín hai.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "photo identification",
+      "pos": "phrase",
+      "meaning_vi": "giấy tờ có ảnh",
+      "example_en": "That parcel arrived yesterday, but I need photo identification.",
+      "example_vi": "Kiện hàng đến hôm qua nhưng tôi cần giấy tờ tùy thân có ảnh.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "parcel_and_spelling",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "mixed_conversations",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-104-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "2f6ea01aa879565ef7150267b97df19377bc52d23ed1af3e723b25aed4429991"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe mã hàng, giấy tờ và thời hạn nhận hàng trong hội thoại.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "We said Monday first, but Tuesday is confirmed.",
+        "written_value": "Tuesday",
+        "teacher_note_vi": "Thông tin sau từ but mới là lựa chọn cuối cùng."
+      },
+      {
+        "spoken_example": "Is that fifteen or fifty? I mean fifteen.",
+        "written_value": "fifteen",
+        "teacher_note_vi": "Phải nghe câu sửa để không lấy thông tin ban đầu."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": false,
+    "phonetic_note": "Kiểm tra rõ lượt thoại và diễn biến hội thoại trên audio thật."
+  }
+}

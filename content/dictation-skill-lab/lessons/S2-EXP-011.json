@@ -1,0 +1,627 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S2-EXP-011",
+  "status": "draft_pending_audio",
+  "level": "L5",
+  "section": 2,
+  "topic": "Community event",
+  "title": "Orchard Lane Health & Wellbeing Fair",
+  "learning_objectives_vi": [
+    "Lần theo những lối đi đa dạng trên bản đồ, không dựa vào bố cục ô lưới.",
+    "Nhận diện mốc cố định rồi kết hợp hướng la bàn để chọn đúng vị trí.",
+    "Phân biệt những thông tin cũ và thông tin cuối cùng trong câu hỏi điền từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "map_navigation",
+    "compass_orientation",
+    "detail_accuracy",
+    "distractor_rejection"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Venue guide",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, and welcome to Orchard Lane Health & Wellbeing Fair. Some facilities are in separate wings or at the ends of smaller paths, so please follow the map carefully. Begin at east festival gate and use the fairground route; the north arrow stays at the top of your plan.",
+      "translation_vi": "Chào mừng đến Orchard Lane Health & Wellbeing Fair. Hãy tìm east festival gate trên sơ đồ, sau đó đi theo fairground route. Mũi tên chỉ hướng Bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "map_reading"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "This is an information event, not an emergency medical service; urgent cases should use the normal emergency procedures. The fixed landmarks are labelled by name, while the places you need to identify are marked only A to H. Listen for a landmark and a direction; do not guess from the order of letters.",
+      "translation_vi": "Các mốc cố định có tên sẵn, còn những vị trí cần xác định được đánh dấu A đến H. Hãy nghe mốc và hướng di chuyển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "compass"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Now find the First Aid Tent. From that landmark, look east to the nearest lettered point. That's where you'll find Screening Suite. Don't confuse it with the other lettered buildings further away.",
+      "translation_vi": "Hãy xác định mốc First Aid Tent trên sơ đồ. Screening Suite nằm ngay phía đông của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_B"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "First locate the Water Station on the visitor plan. You'll find Nutrition Corner at the lettered location immediately south-east of it. Check the position against the nearest other buildings before moving on.",
+      "translation_vi": "Hãy xác định mốc Water Station trên sơ đồ. Nutrition Corner nằm ngay phía đông nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_A"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "If you're looking for Mobility Lab, use the Main Stage as your reference point. Choose the nearest lettered location directly north of that landmark. Other marked areas are for different activities.",
+      "translation_vi": "Hãy xác định mốc Main Stage trên sơ đồ. Mobility Lab nằm ngay phía bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_E"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "There's a useful sign for the Picnic Tables on the plan. Immediately north-west of it is a lettered location: that's where you'll find First Aid Point. People sometimes choose the more distant area, but that isn't the right one.",
+      "translation_vi": "Hãy xác định mốc Picnic Tables trên sơ đồ. First Aid Point nằm ngay phía tây bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_H"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "There is also a useful change to note: Each health talk lasts 25 minutes, followed by a short question session.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Before you arrive, remember this: Bring your booking code for the screening appointments rather than a paper ticket.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Turning to the practical information, The advice clinic starts at 9:45; the hall itself opens at nine.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "As for booking details, There is a suggested donation of two pounds for the community transport fund, but entry is free.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Please respect the privacy of anyone speaking to staff in the advice areas. The visitor team at Orchard Lane Health & Wellbeing Fair will answer any remaining questions after the tour.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "closing"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Screening Suite",
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Now find the First Aid Tent. From that landmark, look east to the nearest lettered point. That's where you'll find Screening Suite. Don't confuse it with the other lettered buildings further away.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc First Aid Tent, rồi nhìn ngay phía đông. Khu được đánh dấu B là Screening Suite.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-011"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Nutrition Corner",
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "First locate the Water Station on the visitor plan. You'll find Nutrition Corner at the lettered location immediately south-east of it. Check the position against the nearest other buildings before moving on.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Water Station, rồi nhìn ngay phía đông nam. Khu được đánh dấu A là Nutrition Corner.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-011"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Mobility Lab",
+      "correct_answers": [
+        "E"
+      ],
+      "correct_option": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "If you're looking for Mobility Lab, use the Main Stage as your reference point. Choose the nearest lettered location directly north of that landmark. Other marked areas are for different activities.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Main Stage, rồi nhìn ngay phía bắc. Khu được đánh dấu E là Mobility Lab.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-011"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "First Aid Point",
+      "correct_answers": [
+        "H"
+      ],
+      "correct_option": "H",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "There's a useful sign for the Picnic Tables on the plan. Immediately north-west of it is a lettered location: that's where you'll find First Aid Point. People sometimes choose the more distant area, but that isn't the right one.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Picnic Tables, rồi nhìn ngay phía tây bắc. Khu được đánh dấu H là First Aid Point.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-011"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Talk duration: ____",
+      "correct_answers": [
+        "25 minutes"
+      ],
+      "spoken_answer": "25 minutes",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Each health talk lasts 25 minutes, followed by a short question session.",
+      "explanation_vi": "Nghe thông tin cuối cùng về talk duration; đáp án là “25 minutes”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Registration requirement: ____",
+      "correct_answers": [
+        "booking code"
+      ],
+      "spoken_answer": "booking code",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Bring your booking code for the screening appointments rather than a paper ticket.",
+      "explanation_vi": "Nghe thông tin cuối cùng về registration requirement; đáp án là “booking code”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Advice clinic starts: ____",
+      "correct_answers": [
+        "9:45"
+      ],
+      "spoken_answer": "9:45",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The advice clinic starts at 9:45; the hall itself opens at nine.",
+      "explanation_vi": "Nghe thông tin cuối cùng về advice clinic starts; đáp án là “9:45”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Optional donation: ____",
+      "correct_answers": [
+        "two pounds"
+      ],
+      "spoken_answer": "two pounds",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "There is a suggested donation of two pounds for the community transport fund, but entry is free.",
+      "explanation_vi": "Nghe thông tin cuối cùng về optional donation; đáp án là “two pounds”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "MAP_Q01_TO_04",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place. Follow the named landmarks and directions in the audio.",
+      "map_asset_id": "M22-MAP-011",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_011.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "group_id": "NOTES_Q05_TO_08",
+      "question_ids": [
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer."
+    }
+  ],
+  "vocabulary": [
+    {
+      "expression_en": "Screening Suite",
+      "meaning_vi": "Vị trí Screening Suite trên sơ đồ; luyện nghe định hướng tương đối so với First Aid Tent.",
+      "part_of_speech": "noun phrase",
+      "example_en": "Now find the First Aid Tent. From that landmark, look east to the nearest lettered point. That's where you'll find Screening Suite. Don't confuse it with the other lettered buildings further away.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Nutrition Corner",
+      "meaning_vi": "Vị trí Nutrition Corner trên sơ đồ; luyện nghe định hướng tương đối so với Water Station.",
+      "part_of_speech": "noun phrase",
+      "example_en": "First locate the Water Station on the visitor plan. You'll find Nutrition Corner at the lettered location immediately south-east of it. Check the position against the nearest other buildings before moving on.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Mobility Lab",
+      "meaning_vi": "Vị trí Mobility Lab trên sơ đồ; luyện nghe định hướng tương đối so với Main Stage.",
+      "part_of_speech": "noun phrase",
+      "example_en": "If you're looking for Mobility Lab, use the Main Stage as your reference point. Choose the nearest lettered location directly north of that landmark. Other marked areas are for different activities.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "First Aid Point",
+      "meaning_vi": "Vị trí First Aid Point trên sơ đồ; luyện nghe định hướng tương đối so với Picnic Tables.",
+      "part_of_speech": "noun phrase",
+      "example_en": "There's a useful sign for the Picnic Tables on the plan. Immediately north-west of it is a lettered location: that's where you'll find First Aid Point. People sometimes choose the more distant area, but that isn't the right one.",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "cd64954244bd38d05ba10735d26a252b69124e247b1f104a5f4a63db3090773e",
+    "generation_strategy": "one_continuous_monologue",
+    "aligned_turns": false
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Map Labelling yêu cầu tìm lối vào, mũi tên Bắc, các mốc cố định và con đường nối chúng. Không mặc định mọi lối vào ở phía Nam, không suy vị trí chỉ từ thứ tự A–H.",
+      "worked_examples": [
+        {
+          "prompt": "The activity area is immediately east of the old clock.",
+          "reason_vi": "Tìm Old Clock có ghi tên trên sơ đồ; từ đó nhìn sang phía Đông (bên phải nếu Bắc ở trên) để xác định ô chữ cái."
+        }
+      ],
+      "common_mistakes_vi": [
+        "Giả định mọi bản đồ đều có lối vào phía Nam.",
+        "Chọn chữ cái trước khi nghe mốc cố định.",
+        "Bỏ qua các từ immediately, across, rather than và north-east."
+      ]
+    },
+    "after_submit": {
+      "unlock_transcript": true,
+      "unlock_answers": true,
+      "dictation_turns": [
+        "T03",
+        "T07"
+      ]
+    }
+  },
+  "map_asset": {
+    "map_asset_id": "M22-MAP-011",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_011.svg",
+    "orientation": "NORTH UP / ENTRANCE VARIES BY PLAN",
+    "location_key_server_only": {
+      "Screening Suite": "B",
+      "Nutrition Corner": "A",
+      "Mobility Lab": "E",
+      "First Aid Point": "H"
+    },
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true,
+    "layout_type": "festival",
+    "source_map_version": "m22-map-v2-distinct",
+    "entry_point": "EAST FESTIVAL GATE",
+    "route_name": "fairground route",
+    "letter_coordinates_server_only": {
+      "B": {
+        "x": 760,
+        "y": 190
+      },
+      "A": {
+        "x": 535,
+        "y": 420
+      },
+      "E": {
+        "x": 140,
+        "y": 350
+      },
+      "H": {
+        "x": 160,
+        "y": 170
+      },
+      "D": {
+        "x": 345,
+        "y": 215
+      },
+      "C": {
+        "x": 540,
+        "y": 155
+      },
+      "F": {
+        "x": 690,
+        "y": 355
+      },
+      "G": {
+        "x": 320,
+        "y": 385
+      }
+    },
+    "reference_landmarks_server_only": [
+      {
+        "name": "First Aid Tent",
+        "x": 695,
+        "y": 190,
+        "letter": "B"
+      },
+      {
+        "name": "Water Station",
+        "x": 483,
+        "y": 368,
+        "letter": "A"
+      },
+      {
+        "name": "Main Stage",
+        "x": 140,
+        "y": 417,
+        "letter": "E"
+      },
+      {
+        "name": "Picnic Tables",
+        "x": 212,
+        "y": 222,
+        "letter": "H"
+      }
+    ],
+    "direction_evidence_server_only": {
+      "Q01": {
+        "landmark": "First Aid Tent",
+        "compass_direction": "east",
+        "answer_letter": "B"
+      },
+      "Q02": {
+        "landmark": "Water Station",
+        "compass_direction": "south-east",
+        "answer_letter": "A"
+      },
+      "Q03": {
+        "landmark": "Main Stage",
+        "compass_direction": "north",
+        "answer_letter": "E"
+      },
+      "Q04": {
+        "landmark": "Picnic Tables",
+        "compass_direction": "north-west",
+        "answer_letter": "H"
+      }
+    }
+  },
+  "qa": {
+    "automated_data_validation": "passed_scope_spatial_reference_and_text_containment",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "human_map_approved": false,
+    "human_translation_approved": false,
+    "release_eligible": false,
+    "estimated_word_count": 344,
+    "visual_diversity_review": "pending_human_check",
+    "previous_map_replaced_reason": "identical_2x4_grid_template"
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "authoring_milestone": "M22",
+    "reference_copying": false,
+    "target_bank": "training"
+  },
+  "release_metadata": {
+    "version": "m22.1.0-distinct-maps",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "replace_draft_only_or_explicit_version_migration",
+    "target_bank": "training",
+    "no_bands": true
+  }
+}

@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-006",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Historic fort visitor route",
+  "title": "Clifftop Heritage Fort: Visitor Route",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "map_navigation",
+    "visitor_safety"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, I am Tane, a guide at Clifftop Heritage Fort. We are reopening sections of the grounds after conservation work, but the paths remain narrow in places. I will begin with today’s arrangements and then describe the route on the plan you were given.",
+      "translation_vi": "Chào chiều, tôi là Tane, hướng dẫn viên Pháo đài Clifftop. Một số khu mới mở lại sau bảo tồn, nhưng lối đi vẫn hẹp. Trước tiên là lịch, sau đó là sơ đồ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The conservation team has reopened the eastern wall, but the underground passage is still closed for repairs. Please do not attempt to enter it from either end.",
+      "translation_vi": "Đội bảo tồn đã mở lại tường phía đông, nhưng đường ngầm vẫn đóng để sửa; đừng cố đi vào từ hai đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We offer guided tours every ninety minutes. Today the next available tour starts at one forty-five, since the noon departure is fully booked.",
+      "translation_vi": "Có tour mỗi chín mươi phút. Tour còn chỗ tiếp theo lúc một giờ bốn mươi lăm vì chuyến trưa đầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Visitors must wear shoes with a firm grip because the stone steps can be slippery. Open sandals are not suitable, even in dry weather.",
+      "translation_vi": "Khách phải mang giày có độ bám chắc vì bậc đá trơn; dép hở không phù hợp kể cả trời khô.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The exhibition on coastal defence includes an audio presentation. Visitors with hearing difficulties can request a printed transcript at the visitor counter.",
+      "translation_vi": "Triển lãm phòng thủ bờ biển có thuyết minh âm thanh; người khó nghe có thể xin bản chép in ở quầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The fort café accepts cards, but the outdoor donation box takes coins only. The income supports the restoration of old stonework.",
+      "translation_vi": "Quán cà phê nhận thẻ, nhưng hộp quyên góp ngoài trời chỉ nhận tiền xu để hỗ trợ tu bổ đá cổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Conservation work can sometimes be frustrating for visitors, because an attractive-looking space may remain out of reach. The team has to balance public access with protecting old stone and timber. Even a small change in moisture can affect materials that have survived for hundreds of years.",
+      "translation_vi": "Công tác bảo tồn có thể gây tiếc nuối khi khu đẹp vẫn đóng. Đội ngũ phải cân bằng tiếp cận công chúng với bảo vệ đá và gỗ cổ; thay đổi độ ẩm nhỏ cũng có thể ảnh hưởng vật liệu hàng trăm năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please look at your plan now. The main gate is at the bottom and the ranger point is in the centre, where the stone paths intersect. All directions are given as if you were standing at the gate facing north.",
+      "translation_vi": "Hãy xem sơ đồ: cổng chính ở dưới, chốt kiểm lâm ở giữa nơi các đường đá gặp nhau. Hướng được tính khi đứng ở cổng nhìn về phía bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "From the ranger point, the signal tower is directly north, at the far end of the central path. It once carried flags to ships approaching the harbour.",
+      "translation_vi": "Từ chốt kiểm lâm, tháp tín hiệu ở chính bắc cuối đường giữa, từng dùng cờ báo cho tàu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The old powder store is in the north-west corner, beyond the steep steps on the left. This building has thicker walls than the rooms near the main gate.",
+      "translation_vi": "Kho thuốc súng cũ ở góc tây bắc, qua bậc dốc bên trái, tường dày hơn các phòng gần cổng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The sea-view platform is in the middle of the eastern side, right of the ranger point. People often mistake the north-east lookout for it, but that area has no handrail.",
+      "translation_vi": "Bệ ngắm biển ở giữa phía đông, bên phải chốt; không phải chỗ ngắm phía đông bắc thiếu lan can.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Our small archaeology room is just west of the ranger point, halfway along the fort. The original objects are kept behind glass there.",
+      "translation_vi": "Phòng khảo cổ nhỏ nằm ngay phía tây chốt kiểm lâm, giữa khu; cổ vật được bảo quản sau kính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The sheltered picnic area is in the south-west corner, immediately inside the gate on your left. Please use that space rather than sitting against the historic walls.",
+      "translation_vi": "Khu picnic có mái ở tây nam, ngay bên trái cổng; đừng ngồi tựa tường cổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Some of the information boards were written with help from descendants of people who worked at the fort. They describe ordinary duties such as preparing food, carrying supplies and keeping watch, not just military events. This makes the visit relevant to people interested in social history as well as defence.",
+      "translation_vi": "Một số bảng thông tin được viết với con cháu người từng làm tại pháo đài, kể về nấu ăn, vận chuyển, canh gác chứ không chỉ quân sự, hữu ích cho người quan tâm lịch sử xã hội.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The fort is a historic site, not a playground. Keep to the marked paths and allow extra time if someone in your group needs to rest.",
+      "translation_vi": "Pháo đài là di tích, không phải sân chơi. Chỉ đi trên đường đánh dấu và dành thời gian nghỉ nếu cần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Still closed: underground ____.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The conservation team has reopened the eastern wall, but the underground passage is still closed for repairs. Please do not attempt to enter it from either end.",
+      "explanation_vi": "Đội bảo tồn đã mở lại tường phía đông, nhưng đường ngầm vẫn đóng để sửa; đừng cố đi vào từ hai đầu.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "passage"
+      ],
+      "spoken_answer": "passage",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Next tour departure: ____.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "We offer guided tours every ninety minutes. Today the next available tour starts at one forty-five, since the noon departure is fully booked.",
+      "explanation_vi": "Có tour mỗi chín mươi phút. Tour còn chỗ tiếp theo lúc một giờ bốn mươi lăm vì chuyến trưa đầy.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "one forty-five"
+      ],
+      "spoken_answer": "one forty-five",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Recommended footwear: shoes with a firm ____.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Visitors must wear shoes with a firm grip because the stone steps can be slippery. Open sandals are not suitable, even in dry weather.",
+      "explanation_vi": "Khách phải mang giày có độ bám chắc vì bậc đá trơn; dép hở không phù hợp kể cả trời khô.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "grip"
+      ],
+      "spoken_answer": "grip",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Alternative to audio: printed ____.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The exhibition on coastal defence includes an audio presentation. Visitors with hearing difficulties can request a printed transcript at the visitor counter.",
+      "explanation_vi": "Triển lãm phòng thủ bờ biển có thuyết minh âm thanh; người khó nghe có thể xin bản chép in ở quầy.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "transcript"
+      ],
+      "spoken_answer": "transcript",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Outdoor donations: ____ only.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The fort café accepts cards, but the outdoor donation box takes coins only. The income supports the restoration of old stonework.",
+      "explanation_vi": "Quán cà phê nhận thẻ, nhưng hộp quyên góp ngoài trời chỉ nhận tiền xu để hỗ trợ tu bổ đá cổ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "coins"
+      ],
+      "spoken_answer": "coins",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Signal tower",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "From the ranger point, the signal tower is directly north, at the far end of the central path. It once carried flags to ships approaching the harbour.",
+      "explanation_vi": "Từ chốt kiểm lâm, tháp tín hiệu ở chính bắc cuối đường giữa, từng dùng cờ báo cho tàu.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-006",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_006.svg"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Powder store",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "The old powder store is in the north-west corner, beyond the steep steps on the left. This building has thicker walls than the rooms near the main gate.",
+      "explanation_vi": "Kho thuốc súng cũ ở góc tây bắc, qua bậc dốc bên trái, tường dày hơn các phòng gần cổng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-006",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_006.svg"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Sea-view platform",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The sea-view platform is in the middle of the eastern side, right of the ranger point. People often mistake the north-east lookout for it, but that area has no handrail.",
+      "explanation_vi": "Bệ ngắm biển ở giữa phía đông, bên phải chốt; không phải chỗ ngắm phía đông bắc thiếu lan can.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "E"
+      ],
+      "correct_option": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-006",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_006.svg"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Archaeology room",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Our small archaeology room is just west of the ranger point, halfway along the fort. The original objects are kept behind glass there.",
+      "explanation_vi": "Phòng khảo cổ nhỏ nằm ngay phía tây chốt kiểm lâm, giữa khu; cổ vật được bảo quản sau kính.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-006",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_006.svg"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Sheltered picnic area",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "The sheltered picnic area is in the south-west corner, immediately inside the gate on your left. Please use that space rather than sitting against the historic walls.",
+      "explanation_vi": "Khu picnic có mái ở tây nam, ngay bên trái cổng; đừng ngồi tựa tường cổ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "visitor_safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-006",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_006.svg"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "map_asset_id": "M26-MAP-006",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_006.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "1e29f237d6773c386030c88d4b1216e34926f0c11380b9548e417d365e605156",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.4,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  },
+  "map_asset": {
+    "map_asset_id": "M26-MAP-006",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_006.svg",
+    "format": "svg",
+    "orientation": "NORTH UP / MAIN ENTRANCE SOUTH",
+    "question_ids": [
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10"
+    ],
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true
+  }
+}

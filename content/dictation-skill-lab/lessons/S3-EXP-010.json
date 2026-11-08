@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-010",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Ecology and citizen science",
+  "title": "Assessing a Citizen Science Bird Survey",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "data_quality",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "You have downloaded hundreds of bird sightings from a citizen science platform. Before making a map of species diversity, consider how people decide where and when to report what they see.",
+      "translation_vi": "Các em tải hàng trăm quan sát chim từ nền tảng khoa học cộng đồng. Trước khi vẽ bản đồ đa dạng loài, phải xét người ta chọn nơi và lúc ghi nhận ra sao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Most reports come from the lake trail because it is easy to reach. The woodland has fewer records, but that does not necessarily mean fewer birds live there.",
+      "translation_vi": "Phần lớn báo cáo từ đường ven hồ vì dễ đến. Khu rừng có ít ghi nhận chưa chắc ít chim hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "And the platform allows photographs, but some rare species were reported without any image or sound recording. Those reports might be genuine, although we should not treat uncertain identifications as confirmed.",
+      "translation_vi": "Nền tảng cho gửi ảnh, nhưng vài loài hiếm không có ảnh hay tiếng ghi âm. Có thể đúng, nhưng không nên xem nhận diện chưa chắc là đã xác nhận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Start with records that meet a clear verification standard, and show uncertainty separately. Do not silently delete doubtful sightings, because readers should understand how the final dataset was selected.",
+      "translation_vi": "Bắt đầu từ bản ghi đạt chuẩn xác minh rõ ràng, trình bày dữ liệu chưa chắc riêng. Đừng âm thầm xóa ghi nhận nghi ngờ; người đọc phải biết cách chọn dữ liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We could compare counts between the lake and woodland, but observation effort differs. Some volunteers stayed for three hours, while others recorded a single bird during a five-minute walk.",
+      "translation_vi": "Có thể so số chim giữa hồ và rừng nhưng công sức quan sát khác. Có người ở ba tiếng, người chỉ ghi một chim trong chuyến đi năm phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "If we use sightings per hour rather than raw counts, that may improve the comparison. We'd still need to acknowledge that birds are easier to spot in open water than in dense trees.",
+      "translation_vi": "Nếu dùng số ghi nhận mỗi giờ thay tổng thô, so sánh tốt hơn. Tuy vậy chim dễ nhìn ở mặt nước hơn cây rậm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Exactly. State those differences in detectability and avoid claiming that your figures represent the true bird population. These observations are useful for patterns, not precise estimates of every species.",
+      "translation_vi": "Đúng. Nêu khác biệt khả năng phát hiện, đừng nói số đó là quần thể thật. Quan sát hữu ích để tìm mẫu hình, không định lượng chính xác mọi loài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I suggest narrowing the poster to changes along the lake trail during spring, where reporting effort is better documented. That is a smaller question, but one we can support more honestly.",
+      "translation_vi": "Em đề nghị thu hẹp poster thành thay đổi dọc đường ven hồ vào mùa xuân, nơi có dữ liệu công sức quan sát rõ hơn. Câu hỏi nhỏ nhưng chắc hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll calculate observation time for each visit and flag records without a duration. That lets us show which comparisons are based on complete effort data and which are not.",
+      "translation_vi": "Em sẽ tính thời gian quan sát từng chuyến và gắn cờ bản ghi thiếu thời lượng để phân biệt so sánh có dữ liệu đầy đủ với không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll create a record-checking guide, showing what evidence is needed for a rare-species report. Volunteers should see the criteria before submitting their next observation.",
+      "translation_vi": "Em sẽ soạn hướng dẫn kiểm tra bản ghi, nêu bằng chứng cần cho loài hiếm. Tình nguyện viên nên biết tiêu chí trước khi báo lần tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "I can ask the conservation office whether we can share the aggregated findings publicly. We must not publish the exact nesting sites of vulnerable birds.",
+      "translation_vi": "Thầy sẽ hỏi cơ quan bảo tồn có thể công khai kết quả tổng hợp không. Không được đăng chính xác tổ của loài dễ bị tổn thương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll redesign the map so sensitive locations are blurred into broad areas and verified sightings are visually distinct from uncertain ones. Clarity must not come at the expense of conservation.",
+      "translation_vi": "Em sẽ làm lại bản đồ để vị trí nhạy cảm được làm mờ thành vùng rộng, ghi nhận đã xác minh khác với chưa chắc. Dễ hiểu không được hại bảo tồn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Your final claim should be modest: where effort was recorded consistently, some seasonal patterns appear. That is more defensible than announcing a change in the entire regional bird population.",
+      "translation_vi": "Kết luận nên thận trọng: ở nơi ghi công sức nhất quán có thể thấy xu hướng mùa. Điều đó vững hơn tuyên bố cả quần thể chim vùng đã đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "data_quality",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why does the woodland have fewer sighting records?",
+      "correct_answers": [
+        "It may receive less observation effort"
+      ],
+      "options": [
+        "It may receive less observation effort",
+        "It contains no suitable trees",
+        "All of its birds migrate in winter"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Most reports come from the lake trail because it is easy to reach. The woodland has fewer records, but that does not necessarily mean fewer birds live there.",
+      "explanation_vi": "Ít bản ghi có thể vì ít người đến quan sát.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "data_quality"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "How should uncertain identifications be handled?",
+      "correct_answers": [
+        "Displayed separately using a verification standard"
+      ],
+      "options": [
+        "Automatically counted as confirmed",
+        "Discarded without explanation",
+        "Displayed separately using a verification standard"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Start with records that meet a clear verification standard, and show uncertainty separately. Do not silently delete doubtful sightings, because readers should understand how the final dataset was selected.",
+      "explanation_vi": "Phải có chuẩn xác minh và báo riêng độ bất định.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "data_quality"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What measure could improve the comparison between sites?",
+      "correct_answers": [
+        "Sightings per observation hour"
+      ],
+      "options": [
+        "Number of volunteers registered",
+        "Sightings per observation hour",
+        "Total photographs uploaded"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "If we use sightings per hour rather than raw counts, that may improve the comparison. We'd still need to acknowledge that birds are easier to spot in open water than in dense trees.",
+      "explanation_vi": "Chuẩn hóa theo công sức quan sát theo giờ.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "data_quality"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: a narrower springtime study at the lake?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I suggest narrowing the poster to changes along the lake trail during spring, where reporting effort is better documented. That is a smaller question, but one we can support more honestly.",
+      "explanation_vi": "Đề cập trong lượt T08 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "data_quality"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: calculate observation duration and flag missing data?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I'll calculate observation time for each visit and flag records without a duration. That lets us show which comparisons are based on complete effort data and which are not.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "data_quality"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: publish criteria for verifying unusual sightings?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll create a record-checking guide, showing what evidence is needed for a rare-species report. Volunteers should see the criteria before submitting their next observation.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "data_quality"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: seek permission while protecting nesting sites?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I can ask the conservation office whether we can share the aggregated findings publicly. We must not publish the exact nesting sites of vulnerable birds.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "data_quality"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: redesign maps to conceal sensitive locations?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll redesign the map so sensitive locations are blurred into broad areas and verified sightings are visually distinct from uncertain ones. Clarity must not come at the expense of conservation.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "data_quality"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "And the platform allows photographs, but some rare species were reported without any image or sound recording. Those reports might be genuine, although we should not treat uncertain identifications as confirmed."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "And the platform allows photographs, but some rare species were reported without any image or sound recording. Those reports might be genuine, although we should not treat uncertain identifications as confirmed.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "data_quality"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "We could compare counts between the lake and woodland, but observation effort differs. Some volunteers stayed for three hours, while others recorded a single bird during a five-minute walk."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "We could compare counts between the lake and woodland, but observation effort differs. Some volunteers stayed for three hours, while others recorded a single bird during a five-minute walk.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "data_quality"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "Exactly. State those differences in detectability and avoid claiming that your figures represent the true bird population. These observations are useful for patterns, not precise estimates of every species."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Exactly. State those differences in detectability and avoid claiming that your figures represent the true bird population. These observations are useful for patterns, not precise estimates of every species.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "data_quality"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói A.",
+      "correct_answers": [
+        "I can ask the conservation office whether we can share the aggregated findings publicly. We must not publish the exact nesting sites of vulnerable birds."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I can ask the conservation office whether we can share the aggregated findings publicly. We must not publish the exact nesting sites of vulnerable birds.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "data_quality"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: You have downloaded hundreds of bird sightings from a ____ platform. Before making a map of species diversity, consider how people decide where and when to report what they see.",
+      "correct_answers": [
+        "citizen science"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "You have downloaded hundreds of bird sightings from a citizen science platform. Before making a map of species diversity, consider how people decide where and when to report what they see.",
+      "explanation_vi": "Cụm nghe được là “citizen science” (khoa học cộng đồng); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "data_quality"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: You have downloaded hundreds of bird ____s from a citizen science platform. Before making a map of species diversity, consider how people decide where and when to report what they see.",
+      "correct_answers": [
+        "sighting"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "You have downloaded hundreds of bird sightings from a citizen science platform. Before making a map of species diversity, consider how people decide where and when to report what they see.",
+      "explanation_vi": "Cụm nghe được là “sighting” (lần ghi nhận chim); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "data_quality"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-010-V01",
+      "expression_en": "citizen science",
+      "meaning_vi": "khoa học cộng đồng",
+      "part_of_speech": "noun phrase",
+      "example_en": "You have downloaded hundreds of bird sightings from a citizen science platform. Before making a map of species diversity, consider how people decide where and when to report what they see.",
+      "example_vi": "Các em tải hàng trăm quan sát chim từ nền tảng khoa học cộng đồng. Trước khi vẽ bản đồ đa dạng loài, phải xét người ta chọn nơi và lúc ghi nhận ra sao.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-010-V02",
+      "expression_en": "sighting",
+      "meaning_vi": "lần ghi nhận chim",
+      "part_of_speech": "noun phrase",
+      "example_en": "You have downloaded hundreds of bird sightings from a citizen science platform. Before making a map of species diversity, consider how people decide where and when to report what they see.",
+      "example_vi": "Các em tải hàng trăm quan sát chim từ nền tảng khoa học cộng đồng. Trước khi vẽ bản đồ đa dạng loài, phải xét người ta chọn nơi và lúc ghi nhận ra sao.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-010-V03",
+      "expression_en": "verification standard",
+      "meaning_vi": "chuẩn xác minh",
+      "part_of_speech": "noun phrase",
+      "example_en": "Start with records that meet a clear verification standard, and show uncertainty separately. Do not silently delete doubtful sightings, because readers should understand how the final dataset was selected.",
+      "example_vi": "Bắt đầu từ bản ghi đạt chuẩn xác minh rõ ràng, trình bày dữ liệu chưa chắc riêng. Đừng âm thầm xóa ghi nhận nghi ngờ; người đọc phải biết cách chọn dữ liệu.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-010-V04",
+      "expression_en": "observation effort",
+      "meaning_vi": "công sức quan sát",
+      "part_of_speech": "noun phrase",
+      "example_en": "We could compare counts between the lake and woodland, but observation effort differs. Some volunteers stayed for three hours, while others recorded a single bird during a five-minute walk.",
+      "example_vi": "Có thể so số chim giữa hồ và rừng nhưng công sức quan sát khác. Có người ở ba tiếng, người chỉ ghi một chim trong chuyến đi năm phút.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-010-V05",
+      "expression_en": "detectability",
+      "meaning_vi": "khả năng phát hiện",
+      "part_of_speech": "noun phrase",
+      "example_en": "Exactly. State those differences in detectability and avoid claiming that your figures represent the true bird population. These observations are useful for patterns, not precise estimates of every species.",
+      "example_vi": "Đúng. Nêu khác biệt khả năng phát hiện, đừng nói số đó là quần thể thật. Quan sát hữu ích để tìm mẫu hình, không định lượng chính xác mọi loài.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-010-V06",
+      "expression_en": "aggregated findings",
+      "meaning_vi": "kết quả tổng hợp",
+      "part_of_speech": "noun phrase",
+      "example_en": "I can ask the conservation office whether we can share the aggregated findings publicly. We must not publish the exact nesting sites of vulnerable birds.",
+      "example_vi": "Thầy sẽ hỏi cơ quan bảo tồn có thể công khai kết quả tổng hợp không. Không được đăng chính xác tổ của loài dễ bị tổn thương.",
+      "evidence_turn_id": "T11",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "bbbe2c27c814677b333c4a1627602cdb55af131e5ae267a21464afa6ac044b46",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 378,
+    "estimated_audio_minutes_at_135_wpm": 2.8,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

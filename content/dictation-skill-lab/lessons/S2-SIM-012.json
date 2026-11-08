@@ -1,0 +1,806 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-012",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Urban transport changes",
+  "title": "Greystone Transport Pilot: Public Information",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "matching",
+    "public_transport",
+    "policy"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, I am Morgan from Greystone Transport Office. Our six-month trial is meant to make journeys safer and more reliable. Residents have heard several proposals, but only some are taking effect now. I will explain five measures and the specific problem each is intended to solve.",
+      "translation_vi": "Xin chào, tôi là Morgan từ văn phòng giao thông Greystone. Thử nghiệm sáu tháng nhằm tăng an toàn và đúng giờ. Tôi sẽ nói năm biện pháp và vấn đề mỗi biện pháp giải quyết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The priority traffic signal at the bus interchange holds the green phase briefly when a late bus approaches. Its purpose is to reduce delays on heavily used routes.",
+      "translation_vi": "Đèn ưu tiên ở bến chuyển tuyến giữ xanh thêm chút khi xe buýt trễ tới, nhằm giảm chậm trễ trên tuyến đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The new raised crossing outside the primary school forces vehicles to slow down. It was chosen after parents reported several near misses at pickup time.",
+      "translation_vi": "Lối qua đường nâng cao trước trường tiểu học buộc xe chạy chậm, sau nhiều phản ánh suýt va chạm lúc đón trẻ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Real-time screens at major stops will show how long passengers actually have to wait, using live vehicle locations instead of the printed timetable.",
+      "translation_vi": "Màn hình thời gian thực ở trạm lớn hiện thời gian chờ dựa trên vị trí xe, không chỉ theo lịch in.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The redesigned cycle lane separates bicycles from turning cars using a low protective kerb. This aims to reduce conflict at the busiest junction.",
+      "translation_vi": "Làn xe đạp mới ngăn xe đạp khỏi ô tô rẽ bằng gờ bảo vệ thấp, giảm xung đột ở nút đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The neighbourhood minibus will run a loop between outlying streets and the medical centre. It provides an alternative for people who currently face a long walk to the main bus route.",
+      "translation_vi": "Xe buýt nhỏ khu dân cư chạy vòng từ các phố xa đến trung tâm y tế, giúp người phải đi bộ xa tới tuyến chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The trial has prompted debate, and that is healthy. Some residents argue that improving bus routes should come before cycle lanes, while others believe safer cycling reduces pressure on public transport. The office will examine how these measures work together instead of treating them as competing projects.",
+      "translation_vi": "Thử nghiệm gây tranh luận lành mạnh: có người ưu tiên xe buýt, người khác tin làn xe đạp an toàn giảm áp lực. Văn phòng sẽ đánh giá cách các biện pháp phối hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Those are the changes on the street. Let me explain how passengers can use the trial and where they should direct feedback if their route is disrupted.",
+      "translation_vi": "Đó là các thay đổi ngoài đường. Sau đây là cách hành khách sử dụng và phản hồi nếu tuyến bị ảnh hưởng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The minibus trial begins on the first Monday in October, not at the beginning of September as previously suggested. The vehicles need further safety checks.",
+      "translation_vi": "Xe buýt nhỏ thử từ thứ Hai đầu tiên tháng Mười, không phải tháng Chín như dự kiến, do cần kiểm tra an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Passengers can buy the same day ticket on the minibus as on the ordinary bus network. A separate ticket is not required for the local service.",
+      "translation_vi": "Hành khách dùng cùng vé ngày trên xe buýt nhỏ và tuyến thường, không cần vé riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "A map of all changes can be collected at the community centre. The older map posted at the station has not yet been updated.",
+      "translation_vi": "Bản đồ thay đổi có ở trung tâm cộng đồng; bản cũ ở nhà ga chưa cập nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "During the first month, survey workers will ask about journey time rather than passengers’ income. The aim is to measure how reliable services are.",
+      "translation_vi": "Trong tháng đầu, nhân viên khảo sát hỏi thời gian di chuyển chứ không hỏi thu nhập, để đo độ ổn định tuyến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Feedback about unsafe crossings should be submitted through the dedicated safety form. Ordinary complaints about bus fares belong on a different council webpage.",
+      "translation_vi": "Phản hồi về lối qua nguy hiểm qua mẫu an toàn chuyên dụng; khiếu nại giá vé ở trang khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Our first assessment will compare results on ordinary weekdays with periods when schools are closed. That matters because traffic patterns can look very different across the year. A single successful journey, or even a difficult one, cannot tell us whether a whole transport scheme is effective.",
+      "translation_vi": "Đánh giá đầu sẽ so ngày thường với kỳ nghỉ trường vì giao thông thay đổi theo năm. Một chuyến thuận lợi hoặc khó khăn không đủ kết luận toàn bộ hệ thống hiệu quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The pilot will be reviewed after the first two months and again at its end. Changes will be based on measured results, not only on the number of comments received.",
+      "translation_vi": "Thử nghiệm được xem xét sau hai tháng đầu và cuối kỳ; điều chỉnh dựa trên kết quả đo, không chỉ lượng góp ý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Bus priority signal",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The priority traffic signal at the bus interchange holds the green phase briefly when a late bus approaches. Its purpose is to reduce delays on heavily used routes.",
+      "explanation_vi": "Đèn ưu tiên ở bến chuyển tuyến giữ xanh thêm chút khi xe buýt trễ tới, nhằm giảm chậm trễ trên tuyến đông.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        {
+          "key": "A",
+          "text": "More accurate waiting information"
+        },
+        {
+          "key": "B",
+          "text": "Slower vehicles near children"
+        },
+        {
+          "key": "C",
+          "text": "Access from outlying streets"
+        },
+        {
+          "key": "D",
+          "text": "Reducing delays for buses"
+        },
+        {
+          "key": "E",
+          "text": "Lowering ticket prices"
+        },
+        {
+          "key": "F",
+          "text": "Reducing bicycle–car conflict"
+        }
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Raised school crossing",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The new raised crossing outside the primary school forces vehicles to slow down. It was chosen after parents reported several near misses at pickup time.",
+      "explanation_vi": "Lối qua đường nâng cao trước trường tiểu học buộc xe chạy chậm, sau nhiều phản ánh suýt va chạm lúc đón trẻ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        {
+          "key": "A",
+          "text": "More accurate waiting information"
+        },
+        {
+          "key": "B",
+          "text": "Slower vehicles near children"
+        },
+        {
+          "key": "C",
+          "text": "Access from outlying streets"
+        },
+        {
+          "key": "D",
+          "text": "Reducing delays for buses"
+        },
+        {
+          "key": "E",
+          "text": "Lowering ticket prices"
+        },
+        {
+          "key": "F",
+          "text": "Reducing bicycle–car conflict"
+        }
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Live arrival screens",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Real-time screens at major stops will show how long passengers actually have to wait, using live vehicle locations instead of the printed timetable.",
+      "explanation_vi": "Màn hình thời gian thực ở trạm lớn hiện thời gian chờ dựa trên vị trí xe, không chỉ theo lịch in.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        {
+          "key": "A",
+          "text": "More accurate waiting information"
+        },
+        {
+          "key": "B",
+          "text": "Slower vehicles near children"
+        },
+        {
+          "key": "C",
+          "text": "Access from outlying streets"
+        },
+        {
+          "key": "D",
+          "text": "Reducing delays for buses"
+        },
+        {
+          "key": "E",
+          "text": "Lowering ticket prices"
+        },
+        {
+          "key": "F",
+          "text": "Reducing bicycle–car conflict"
+        }
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Protected cycle lane",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The redesigned cycle lane separates bicycles from turning cars using a low protective kerb. This aims to reduce conflict at the busiest junction.",
+      "explanation_vi": "Làn xe đạp mới ngăn xe đạp khỏi ô tô rẽ bằng gờ bảo vệ thấp, giảm xung đột ở nút đông.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        {
+          "key": "A",
+          "text": "More accurate waiting information"
+        },
+        {
+          "key": "B",
+          "text": "Slower vehicles near children"
+        },
+        {
+          "key": "C",
+          "text": "Access from outlying streets"
+        },
+        {
+          "key": "D",
+          "text": "Reducing delays for buses"
+        },
+        {
+          "key": "E",
+          "text": "Lowering ticket prices"
+        },
+        {
+          "key": "F",
+          "text": "Reducing bicycle–car conflict"
+        }
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Neighbourhood minibus",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The neighbourhood minibus will run a loop between outlying streets and the medical centre. It provides an alternative for people who currently face a long walk to the main bus route.",
+      "explanation_vi": "Xe buýt nhỏ khu dân cư chạy vòng từ các phố xa đến trung tâm y tế, giúp người phải đi bộ xa tới tuyến chính.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        {
+          "key": "A",
+          "text": "More accurate waiting information"
+        },
+        {
+          "key": "B",
+          "text": "Slower vehicles near children"
+        },
+        {
+          "key": "C",
+          "text": "Access from outlying streets"
+        },
+        {
+          "key": "D",
+          "text": "Reducing delays for buses"
+        },
+        {
+          "key": "E",
+          "text": "Lowering ticket prices"
+        },
+        {
+          "key": "F",
+          "text": "Reducing bicycle–car conflict"
+        }
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Trial starts in ____.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The minibus trial begins on the first Monday in October, not at the beginning of September as previously suggested. The vehicles need further safety checks.",
+      "explanation_vi": "Xe buýt nhỏ thử từ thứ Hai đầu tiên tháng Mười, không phải tháng Chín như dự kiến, do cần kiểm tra an toàn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "October"
+      ],
+      "spoken_answer": "October",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Accepted fare: ordinary ____ ticket.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Passengers can buy the same day ticket on the minibus as on the ordinary bus network. A separate ticket is not required for the local service.",
+      "explanation_vi": "Hành khách dùng cùng vé ngày trên xe buýt nhỏ và tuyến thường, không cần vé riêng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "day"
+      ],
+      "spoken_answer": "day",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Updated maps available at the ____ centre.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "A map of all changes can be collected at the community centre. The older map posted at the station has not yet been updated.",
+      "explanation_vi": "Bản đồ thay đổi có ở trung tâm cộng đồng; bản cũ ở nhà ga chưa cập nhật.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "community"
+      ],
+      "spoken_answer": "community",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Main survey measure: journey ____.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "During the first month, survey workers will ask about journey time rather than passengers’ income. The aim is to measure how reliable services are.",
+      "explanation_vi": "Trong tháng đầu, nhân viên khảo sát hỏi thời gian di chuyển chứ không hỏi thu nhập, để đo độ ổn định tuyến.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "time"
+      ],
+      "spoken_answer": "time",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Crossing feedback: online safety ____.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "Feedback about unsafe crossings should be submitted through the dedicated safety form. Ordinary complaints about bus fares belong on a different council webpage.",
+      "explanation_vi": "Phản hồi về lối qua nguy hiểm qua mẫu an toàn chuyên dụng; khiếu nại giá vé ở trang khác.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_transport",
+        "policy"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "form"
+      ],
+      "spoken_answer": "form",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–F. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "More accurate waiting information"
+        },
+        {
+          "key": "B",
+          "text": "Slower vehicles near children"
+        },
+        {
+          "key": "C",
+          "text": "Access from outlying streets"
+        },
+        {
+          "key": "D",
+          "text": "Reducing delays for buses"
+        },
+        {
+          "key": "E",
+          "text": "Lowering ticket prices"
+        },
+        {
+          "key": "F",
+          "text": "Reducing bicycle–car conflict"
+        }
+      ]
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "8f3ebfd20fc5db29bf0bf1d0c75d223e61ffe660ea41472b9e7d8af7ccccbaeb",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.32,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

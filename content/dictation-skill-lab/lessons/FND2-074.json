@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-074",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Vocabulary",
+  "title": "Commuting and public transport",
+  "learning_objectives_vi": [
+    "Nghe phương tiện, chuyển tuyến, thanh toán và thông báo trì hoãn.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The bus was delayed because of roadworks near the station.",
+      "translation_vi": "Xe buýt bị chậm vì sửa đường gần nhà ga.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "roadworks",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "công trình sửa đường",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "I missed the earlier train and had to wait for the next service.",
+      "translation_vi": "Tôi lỡ chuyến tàu sớm và phải đợi chuyến tiếp theo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "train",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tàu hỏa",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "You need to change at the central stop for the airport route.",
+      "translation_vi": "Bạn cần đổi tuyến ở trạm trung tâm để đi sân bay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "central stop",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trạm trung tâm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The pedestrian crossing is just beyond the roundabout.",
+      "translation_vi": "Vạch sang đường cho người đi bộ nằm ngay sau vòng xuyến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "crossing",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "vạch qua đường",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I usually cycle to work, but I'll take the tram when it rains.",
+      "translation_vi": "Tôi thường đạp xe đi làm, nhưng sẽ đi tàu điện khi mưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "tram",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tàu điện",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The platform number has changed from four to six.",
+      "translation_vi": "Số sân ga đã đổi từ bốn sang sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "six",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sáu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "There's a diversion today, so the journey will take longer.",
+      "translation_vi": "Hôm nay đường bị chuyển hướng nên chuyến đi sẽ mất nhiều thời gian hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "diversion",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chuyển hướng giao thông",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The ticket machine isn't accepting cash, only contactless payment.",
+      "translation_vi": "Máy bán vé không nhận tiền mặt, chỉ nhận thanh toán không tiếp xúc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "contactless",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "không tiếp xúc",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We got off one stop too early and walked the rest of the way.",
+      "translation_vi": "Chúng tôi xuống sớm hơn một trạm và đi bộ quãng còn lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "walked",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đi bộ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The driver announced a short delay before reaching the terminal.",
+      "translation_vi": "Tài xế thông báo chậm một chút trước khi đến bến cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "commuting",
+        "vocabulary"
+      ],
+      "target_value": "delay",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chậm trễ",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The bus was delayed because of roadworks near the station."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The bus was delayed because of roadworks near the station. Nghĩa: Xe buýt bị chậm vì sửa đường gần nhà ga.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I missed the earlier train and had to wait for the next service."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I missed the earlier train and had to wait for the next service. Nghĩa: Tôi lỡ chuyến tàu sớm và phải đợi chuyến tiếp theo.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "You need to change at the central stop for the airport route."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: You need to change at the central stop for the airport route. Nghĩa: Bạn cần đổi tuyến ở trạm trung tâm để đi sân bay.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The pedestrian crossing is just beyond the roundabout."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The pedestrian crossing is just beyond the roundabout. Nghĩa: Vạch sang đường cho người đi bộ nằm ngay sau vòng xuyến.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I usually cycle to work, but I'll take the tram when it rains."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I usually cycle to work, but I'll take the tram when it rains. Nghĩa: Tôi thường đạp xe đi làm, nhưng sẽ đi tàu điện khi mưa.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The platform number has changed from four to six."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The platform number has changed from four to six. Nghĩa: Số sân ga đã đổi từ bốn sang sáu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "There's a diversion today, so the journey will take longer."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: There's a diversion today, so the journey will take longer. Nghĩa: Hôm nay đường bị chuyển hướng nên chuyến đi sẽ mất nhiều thời gian hơn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The ticket machine isn't accepting cash, only contactless payment."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The ticket machine isn't accepting cash, only contactless payment. Nghĩa: Máy bán vé không nhận tiền mặt, chỉ nhận thanh toán không tiếp xúc.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We got off one stop too early and walked the rest of the way."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We got off one stop too early and walked the rest of the way. Nghĩa: Chúng tôi xuống sớm hơn một trạm và đi bộ quãng còn lại.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The driver announced a short delay before reaching the terminal."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The driver announced a short delay before reaching the terminal. Nghĩa: Tài xế thông báo chậm một chút trước khi đến bến cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "commuting"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Sân ga mới là số mấy? (viết chữ tiếng Anh) Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: six (sáu). Dẫn chứng: The platform number has changed from four to six. Nghĩa: Số sân ga đã đổi từ bốn sang sáu.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "commuting",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Yếu tố nào khiến chuyến đi lâu hơn? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "diversion"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: diversion (chuyển hướng giao thông). Dẫn chứng: There's a diversion today, so the journey will take longer. Nghĩa: Hôm nay đường bị chuyển hướng nên chuyến đi sẽ mất nhiều thời gian hơn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "commuting",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Máy bán vé nhận hình thức thanh toán nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "contactless"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: contactless (không tiếp xúc). Dẫn chứng: The ticket machine isn't accepting cash, only contactless payment. Nghĩa: Máy bán vé không nhận tiền mặt, chỉ nhận thanh toán không tiếp xúc.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "commuting",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Nhóm đã di chuyển tiếp bằng cách nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "walked"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: walked (đi bộ). Dẫn chứng: We got off one stop too early and walked the rest of the way. Nghĩa: Chúng tôi xuống sớm hơn một trạm và đi bộ quãng còn lại.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "commuting",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Tài xế thông báo vấn đề gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "delay"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: delay (chậm trễ). Dẫn chứng: The driver announced a short delay before reaching the terminal. Nghĩa: Tài xế thông báo chậm một chút trước khi đến bến cuối.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "commuting",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "roadworks",
+      "pos": "noun (contextual)",
+      "meaning_vi": "công trình sửa đường",
+      "example_en": "The bus was delayed because of roadworks near the station.",
+      "example_vi": "Xe buýt bị chậm vì sửa đường gần nhà ga.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "train",
+      "pos": "noun (contextual)",
+      "meaning_vi": "tàu hỏa",
+      "example_en": "I missed the earlier train and had to wait for the next service.",
+      "example_vi": "Tôi lỡ chuyến tàu sớm và phải đợi chuyến tiếp theo.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "central stop",
+      "pos": "noun phrase",
+      "meaning_vi": "trạm trung tâm",
+      "example_en": "You need to change at the central stop for the airport route.",
+      "example_vi": "Bạn cần đổi tuyến ở trạm trung tâm để đi sân bay.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "crossing",
+      "pos": "noun (contextual)",
+      "meaning_vi": "vạch qua đường",
+      "example_en": "The pedestrian crossing is just beyond the roundabout.",
+      "example_vi": "Vạch sang đường cho người đi bộ nằm ngay sau vòng xuyến.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "tram",
+      "pos": "noun (contextual)",
+      "meaning_vi": "tàu điện",
+      "example_en": "I usually cycle to work, but I'll take the tram when it rains.",
+      "example_vi": "Tôi thường đạp xe đi làm, nhưng sẽ đi tàu điện khi mưa.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "six",
+      "pos": "noun (contextual)",
+      "meaning_vi": "sáu",
+      "example_en": "The platform number has changed from four to six.",
+      "example_vi": "Số sân ga đã đổi từ bốn sang sáu.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "commuting",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe phương tiện, chuyển tuyến, thanh toán và thông báo trì hoãn.",
+    "category": "vocabulary",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-074-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "68a37bb02e7840ec7c7c62241792d395e09b7ebbde0a91664852796c64e7b7ff",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe phương tiện, chuyển tuyến, thanh toán và thông báo trì hoãn.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The shop was out of tea, so I bought coffee instead.",
+        "written_value": "coffee",
+        "teacher_note_vi": "So/instead báo lựa chọn thay thế; tea chỉ là thông tin cũ."
+      },
+      {
+        "spoken_example": "The receipt is in the bag, beside the charger.",
+        "written_value": "receipt",
+        "teacher_note_vi": "Dựa câu hỏi để chọn đúng đồ vật, không chọn mọi từ vựng nghe thấy."
+      }
+    ],
+    "learning_steps": [
+      "Đọc nghĩa và ví dụ mới, chú ý từ loại, ngữ cảnh dùng từ.",
+      "Nghe mỗi câu một lần để dự đoán từ đích, sau đó chép cả câu.",
+      "Làm năm câu kiểm tra thông tin có ngữ cảnh mà không xem đáp án.",
+      "Cuối bài thử hai câu chưa gặp; nếu sai, quay về kỹ năng nhỏ tương ứng."
+    ],
+    "common_mistakes": [
+      "Nhầm số sân ga cũ với số được thông báo mới.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Từ/cụm nào phù hợp với câu hỏi, và từ bị phủ định có phải đáp án không?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

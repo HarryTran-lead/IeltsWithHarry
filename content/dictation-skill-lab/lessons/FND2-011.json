@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-011",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "Initial /p/ versus /b/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt initial /p/ versus /b/.",
+    "Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Pack a warm jumper for the trip.",
+      "translation_vi": "Hãy gói một chiếc áo len ấm cho chuyến đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "pack",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Come back before the museum closes.",
+      "translation_vi": "Hãy quay lại trước khi bảo tàng đóng cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "back",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The farmer has a little pig.",
+      "translation_vi": "Người nông dân có một con lợn nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "pig",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "There is a big tree near the barn.",
+      "translation_vi": "Có một cây lớn gần nhà kho.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "big",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "You can pay at the front desk.",
+      "translation_vi": "Bạn có thể thanh toán ở quầy lễ tân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "pay",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The fishing boat crossed the bay.",
+      "translation_vi": "Chiếc thuyền đánh cá băng qua vịnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "bay",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I bought one ripe pear at the market.",
+      "translation_vi": "Tôi mua một quả lê chín ở chợ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "pear",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "A bear appeared at the edge of the forest.",
+      "translation_vi": "Một con gấu xuất hiện ở bìa rừng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "bear",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We will meet outside the park.",
+      "translation_vi": "Chúng ta sẽ gặp nhau bên ngoài công viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "park",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I heard the dog bark twice.",
+      "translation_vi": "Tôi nghe con chó sủa hai lần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_p_b"
+      ],
+      "target_word": "bark",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Pack a warm jumper for the trip."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe pack / back (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Hãy gói một chiếc áo len ấm cho chuyến đi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pack / back (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Come back before the museum closes."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe pack / back (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Hãy quay lại trước khi bảo tàng đóng cửa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pack / back (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The farmer has a little pig."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe pig / big (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Người nông dân có một con lợn nhỏ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pig / big (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "There is a big tree near the barn."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe pig / big (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Có một cây lớn gần nhà kho.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pig / big (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "You can pay at the front desk."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe pay / bay (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Bạn có thể thanh toán ở quầy lễ tân.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pay / bay (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The fishing boat crossed the bay."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe pay / bay (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Chiếc thuyền đánh cá băng qua vịnh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pay / bay (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I bought one ripe pear at the market."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe pear / bear (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Tôi mua một quả lê chín ở chợ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pear / bear (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A bear appeared at the edge of the forest."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe pear / bear (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Một con gấu xuất hiện ở bìa rừng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pear / bear (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We will meet outside the park."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe park / bark (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Chúng ta sẽ gặp nhau bên ngoài công viên.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "park / bark (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I heard the dog bark twice."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe park / bark (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ). Nghĩa: Tôi nghe con chó sủa hai lần.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "park / bark (Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "pack"
+      ],
+      "options": [
+        "pack",
+        "back"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt pack và back. Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_p_b"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "big"
+      ],
+      "options": [
+        "big",
+        "pig"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt pig và big. Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_p_b"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "pay"
+      ],
+      "options": [
+        "pay",
+        "bay"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt pay và bay. Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_p_b"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "bear"
+      ],
+      "options": [
+        "bear",
+        "pear"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt pear và bear. Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_p_b"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "park"
+      ],
+      "options": [
+        "park",
+        "bark"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt park và bark. Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_p_b"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "pack",
+      "pos": "target",
+      "meaning_vi": "đóng gói",
+      "example_en": "Pack a warm jumper for the trip.",
+      "example_vi": "Hãy gói một chiếc áo len ấm cho chuyến đi.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "initial_p_b"
+    },
+    {
+      "term": "back",
+      "pos": "target",
+      "meaning_vi": "quay lại",
+      "example_en": "Come back before the museum closes.",
+      "example_vi": "Hãy quay lại trước khi bảo tàng đóng cửa.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "initial_p_b"
+    },
+    {
+      "term": "pig",
+      "pos": "target",
+      "meaning_vi": "lợn",
+      "example_en": "The farmer has a little pig.",
+      "example_vi": "Người nông dân có một con lợn nhỏ.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "initial_p_b"
+    },
+    {
+      "term": "big",
+      "pos": "target",
+      "meaning_vi": "lớn",
+      "example_en": "There is a big tree near the barn.",
+      "example_vi": "Có một cây lớn gần nhà kho.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "initial_p_b"
+    },
+    {
+      "term": "pay",
+      "pos": "target",
+      "meaning_vi": "thanh toán",
+      "example_en": "You can pay at the front desk.",
+      "example_vi": "Bạn có thể thanh toán ở quầy lễ tân.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "initial_p_b"
+    },
+    {
+      "term": "bay",
+      "pos": "target",
+      "meaning_vi": "vịnh",
+      "example_en": "The fishing boat crossed the bay.",
+      "example_vi": "Chiếc thuyền đánh cá băng qua vịnh.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "initial_p_b"
+    },
+    {
+      "term": "pear",
+      "pos": "target",
+      "meaning_vi": "quả lê",
+      "example_en": "I bought one ripe pear at the market.",
+      "example_vi": "Tôi mua một quả lê chín ở chợ.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "initial_p_b"
+    },
+    {
+      "term": "bear",
+      "pos": "target",
+      "meaning_vi": "gấu",
+      "example_en": "A bear appeared at the edge of the forest.",
+      "example_vi": "Một con gấu xuất hiện ở bìa rừng.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "initial_p_b"
+    },
+    {
+      "term": "park",
+      "pos": "target",
+      "meaning_vi": "công viên",
+      "example_en": "We will meet outside the park.",
+      "example_vi": "Chúng ta sẽ gặp nhau bên ngoài công viên.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "initial_p_b"
+    },
+    {
+      "term": "bark",
+      "pos": "target",
+      "meaning_vi": "sủa",
+      "example_en": "I heard the dog bark twice.",
+      "example_vi": "Tôi nghe con chó sủa hai lần.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "initial_p_b"
+    }
+  ],
+  "micro_skill_id": "initial_p_b",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "pack",
+        "back"
+      ],
+      [
+        "pig",
+        "big"
+      ],
+      [
+        "pay",
+        "bay"
+      ],
+      [
+        "pear",
+        "bear"
+      ],
+      [
+        "park",
+        "bark"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Nghe sự khác nhau giữa /p/ và /b/ ở đầu từ"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "7e7ee1d178672533ce73817405d78ac4f03d0691254716af8db0f9b09fdef3d1",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Ở đầu từ, /p/ thường có hơi bật mạnh hơn /b/ trong tiếng Anh; thử nghe luồng hơi khi phát âm.",
+    "worked_contrasts": [
+      {
+        "contrast": "pack / back",
+        "meaning_vi": "đóng gói / quay lại",
+        "teacher_note_vi": "Ở đầu từ, /p/ thường có hơi bật mạnh hơn /b/ trong tiếng Anh; thử nghe luồng hơi khi phát âm."
+      },
+      {
+        "contrast": "pig / big",
+        "meaning_vi": "lợn / lớn",
+        "teacher_note_vi": "Ở đầu từ, /p/ thường có hơi bật mạnh hơn /b/ trong tiếng Anh; thử nghe luồng hơi khi phát âm."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Dựa vào chữ viết hoặc coi /p/ và /b/ là cùng âm.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

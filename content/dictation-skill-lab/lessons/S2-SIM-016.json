@@ -1,0 +1,720 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-016",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Community film festival announcement",
+  "title": "Cedar Film Weekend: Accessibility Update",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "mcq_reasoning",
+    "accessibility",
+    "culture"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good evening, and welcome to the Cedar Film Weekend information session. I am Devon, the event access officer. Our screenings take place across several community venues, and the arrangements have changed after we tested them with audiences last month. I will explain the reasons before covering practical details.",
+      "translation_vi": "Chào buổi tối. Tôi là Devon, phụ trách tiếp cận sự kiện phim Cedar. Các buổi chiếu ở nhiều địa điểm, đã đổi cách tổ chức sau khi thử với khán giả tháng trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We decided not to use the upstairs cinema for the opening film. Although it has better sound, the ground-floor hall has step-free access and space for wheelchairs beside ordinary seats.",
+      "translation_vi": "Không dùng rạp tầng trên cho phim khai mạc dù âm tốt hơn; hội trường tầng trệt có đường không bậc và chỗ xe lăn cạnh ghế thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Several visitors asked for subtitles during international films. We will show open captions on the main screen rather than provide individual handheld devices, which proved difficult to read in the dark.",
+      "translation_vi": "Khách muốn phụ đề; chúng tôi hiện phụ đề trực tiếp trên màn hình thay vì máy cầm tay khó đọc trong tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The discussion following the documentary will be shorter than originally planned. The director is joining by video link and cannot stay after her next appointment begins.",
+      "translation_vi": "Buổi thảo luận sau phim tài liệu ngắn hơn dự kiến vì đạo diễn tham gia qua video và có lịch sau đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We considered offering a single quiet screening, but feedback showed that many people prefer flexible seating at ordinary events. Every venue will therefore have a small low-stimulation area.",
+      "translation_vi": "Chúng tôi từng định chỉ một suất chiếu yên tĩnh, nhưng khách muốn lựa chọn ghế linh hoạt ở sự kiện thường; mỗi nơi có khu ít kích thích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The weekend programme includes several short films made by local students. We selected them to encourage younger filmmakers, rather than because their technical equipment was the most expensive.",
+      "translation_vi": "Chương trình có phim ngắn của học sinh địa phương để khuyến khích nhà làm phim trẻ, không vì họ dùng thiết bị đắt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The planning team worked with people who use captions, audio description and step-free access. We learned that one solution rarely meets everyone’s needs. For example, a quiet seating area may help some visitors but be unsuitable for others who rely on clear sound, so choice is important.",
+      "translation_vi": "Đội tổ chức làm việc với người dùng phụ đề, mô tả âm thanh và lối không bậc. Một giải pháp hiếm khi đáp ứng mọi người; khu yên tĩnh giúp người này nhưng không hợp người cần nghe rõ, nên cần lựa chọn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Before you leave, please take note of how to book assistance and where to find the updated screening information. These details apply to every venue in the weekend programme.",
+      "translation_vi": "Trước khi về, hãy chú ý cách đặt hỗ trợ và nơi xem lịch chiếu cập nhật, áp dụng cho tất cả địa điểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The opening screening starts at seven twenty on Friday evening, although the doors will open forty minutes beforehand for seating.",
+      "translation_vi": "Buổi chiếu khai mạc bắt đầu lúc bảy giờ hai mươi tối thứ Sáu; mở cửa trước bốn mươi phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Visitors who need wheelchair spaces should email the access team before Thursday. The standard booking form does not show every suitable seating position.",
+      "translation_vi": "Khách cần chỗ xe lăn nên email đội tiếp cận trước thứ Năm; mẫu đặt vé thường không hiển thị đủ ghế phù hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "A printed large-text programme will be available at the front desk. You do not have to request this version in advance.",
+      "translation_vi": "Có chương trình in chữ lớn tại quầy trước, không cần đặt trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The post-film talks will take place in the community lounge, not in the auditorium itself. That makes it easier for other audiences to enter the next screening.",
+      "translation_vi": "Buổi nói chuyện sau phim ở phòng sinh hoạt cộng đồng, không trong khán phòng, để khách khác vào suất tiếp theo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "For transport home, a free shuttle will stop beside the library entrance. The bus stop opposite the theatre remains in use for regular city services.",
+      "translation_vi": "Xe đưa đón miễn phí đón gần cổng thư viện; trạm đối diện nhà hát vẫn dành cho xe thành phố.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "We are collecting feedback privately after the weekend. Visitors may comment on the viewing experience without sharing any information about a disability or personal circumstances. The aim is to improve future screenings while respecting the privacy of everyone who attends.",
+      "translation_vi": "Sau cuối tuần sẽ nhận góp ý riêng tư. Khách có thể đánh giá trải nghiệm mà không tiết lộ khuyết tật hay hoàn cảnh cá nhân, để cải thiện các suất sau và tôn trọng riêng tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We want visitors to enjoy the films without having to solve logistical problems on the day. Our volunteers will remain available at each venue entrance.",
+      "translation_vi": "Chúng tôi muốn khách thưởng thức phim thay vì lo hậu cần trong ngày; tình nguyện viên có mặt ở mỗi lối vào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why was the ground-floor hall chosen?",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We decided not to use the upstairs cinema for the opening film. Although it has better sound, the ground-floor hall has step-free access and space for wheelchairs beside ordinary seats.",
+      "explanation_vi": "Không dùng rạp tầng trên cho phim khai mạc dù âm tốt hơn; hội trường tầng trệt có đường không bậc và chỗ xe lăn cạnh ghế thường.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "It offers better step-free access"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "It has a larger screen"
+        },
+        {
+          "key": "B",
+          "text": "It is cheaper to operate"
+        },
+        {
+          "key": "C",
+          "text": "It offers better step-free access"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "How will captions be provided?",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Several visitors asked for subtitles during international films. We will show open captions on the main screen rather than provide individual handheld devices, which proved difficult to read in the dark.",
+      "explanation_vi": "Khách muốn phụ đề; chúng tôi hiện phụ đề trực tiếp trên màn hình thay vì máy cầm tay khó đọc trong tối.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "On the main screen"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "On the main screen"
+        },
+        {
+          "key": "B",
+          "text": "Through handheld devices"
+        },
+        {
+          "key": "C",
+          "text": "On printed sheets"
+        }
+      ],
+      "correct_option": "A"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why is the discussion shorter?",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The discussion following the documentary will be shorter than originally planned. The director is joining by video link and cannot stay after her next appointment begins.",
+      "explanation_vi": "Buổi thảo luận sau phim tài liệu ngắn hơn dự kiến vì đạo diễn tham gia qua video và có lịch sau đó.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "The director has limited time"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "The venue closes early"
+        },
+        {
+          "key": "B",
+          "text": "The audience voted to cancel it"
+        },
+        {
+          "key": "C",
+          "text": "The director has limited time"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What change will be available at all venues?",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "We considered offering a single quiet screening, but feedback showed that many people prefer flexible seating at ordinary events. Every venue will therefore have a small low-stimulation area.",
+      "explanation_vi": "Chúng tôi từng định chỉ một suất chiếu yên tĩnh, nhưng khách muốn lựa chọn ghế linh hoạt ở sự kiện thường; mỗi nơi có khu ít kích thích.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A low-stimulation seating area"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Free headphones"
+        },
+        {
+          "key": "B",
+          "text": "An extra outdoor screening"
+        },
+        {
+          "key": "C",
+          "text": "A low-stimulation seating area"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why are student films included?",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The weekend programme includes several short films made by local students. We selected them to encourage younger filmmakers, rather than because their technical equipment was the most expensive.",
+      "explanation_vi": "Chương trình có phim ngắn của học sinh địa phương để khuyến khích nhà làm phim trẻ, không vì họ dùng thiết bị đắt.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "To support emerging filmmakers"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To support emerging filmmakers"
+        },
+        {
+          "key": "B",
+          "text": "To demonstrate expensive cameras"
+        },
+        {
+          "key": "C",
+          "text": "To replace international films"
+        }
+      ],
+      "correct_option": "A"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Friday opening screening: ____.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The opening screening starts at seven twenty on Friday evening, although the doors will open forty minutes beforehand for seating.",
+      "explanation_vi": "Buổi chiếu khai mạc bắt đầu lúc bảy giờ hai mươi tối thứ Sáu; mở cửa trước bốn mươi phút.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "seven twenty"
+      ],
+      "spoken_answer": "seven twenty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Wheelchair requests: contact the ____ team.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Visitors who need wheelchair spaces should email the access team before Thursday. The standard booking form does not show every suitable seating position.",
+      "explanation_vi": "Khách cần chỗ xe lăn nên email đội tiếp cận trước thứ Năm; mẫu đặt vé thường không hiển thị đủ ghế phù hợp.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "access"
+      ],
+      "spoken_answer": "access",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Accessible printed programme: ____ text.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "A printed large-text programme will be available at the front desk. You do not have to request this version in advance.",
+      "explanation_vi": "Có chương trình in chữ lớn tại quầy trước, không cần đặt trước.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "large"
+      ],
+      "spoken_answer": "large",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Post-film discussion venue: community ____.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "The post-film talks will take place in the community lounge, not in the auditorium itself. That makes it easier for other audiences to enter the next screening.",
+      "explanation_vi": "Buổi nói chuyện sau phim ở phòng sinh hoạt cộng đồng, không trong khán phòng, để khách khác vào suất tiếp theo.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "lounge"
+      ],
+      "spoken_answer": "lounge",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Free shuttle stops by the library ____.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "For transport home, a free shuttle will stop beside the library entrance. The bus stop opposite the theatre remains in use for regular city services.",
+      "explanation_vi": "Xe đưa đón miễn phí đón gần cổng thư viện; trạm đối diện nhà hát vẫn dành cho xe thành phố.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "accessibility",
+        "culture"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "entrance"
+      ],
+      "spoken_answer": "entrance",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "6e804a237751c14eccb2e561d2d49178243d544e45fb397aa5ce4d4c24c9479d",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.32,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

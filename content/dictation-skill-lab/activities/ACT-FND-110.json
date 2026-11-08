@@ -1,0 +1,149 @@
+{
+  "schema_version": "m33.1.0",
+  "activity_id": "ACT-FND-110",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "foundation_micro_practice",
+  "origin_bank": "foundation_training",
+  "source_lesson_id": "FND2-110",
+  "source_zip": "English_Skill_Lab_Dictation_M20_Foundation_D_30_Full_Content.zip",
+  "reuse_parent_id": "FND2-110",
+  "variant": "base",
+  "title": "Workplace handover and deadlines — luyện nghe trọng tâm",
+  "category": "mixed_dialogue",
+  "category_vi": "Hội thoại đời sống",
+  "micro_skill_id": "handover_priorities",
+  "skill_tags": [
+    "foundation",
+    "handover_priorities",
+    "micro_practice",
+    "mixed_dialogue"
+  ],
+  "source_audio_id": "foundation-training/FND2-110/T02",
+  "source_segments": [
+    {
+      "source_audio_id": "foundation-training/FND2-110/T01",
+      "source_audio_id_type": "logical_turn_key_not_physical_asset",
+      "source_lesson_id": "FND2-110",
+      "source_turn_id": "T01",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "source_transcript_sha256": "95ad4c49a369c45bf58cb778846b2ee68f844fc9e8990cecd9ff9a0c9a469d54",
+      "source_speaker_id": "A",
+      "audio_state": "not_generated",
+      "alignment_state": "pending_alignment"
+    },
+    {
+      "source_audio_id": "foundation-training/FND2-110/T02",
+      "source_audio_id_type": "logical_turn_key_not_physical_asset",
+      "source_lesson_id": "FND2-110",
+      "source_turn_id": "T02",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "source_transcript_sha256": "adab2a71289b5a189e9e058390abb8808c789f8536ad62603030961fa27ad6fb",
+      "source_speaker_id": "B",
+      "audio_state": "not_generated",
+      "alignment_state": "pending_alignment"
+    }
+  ],
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "clip_timing_scope": "turn_level_asset_or_verified_offsets_only",
+  "playback": {
+    "first_listen_replays": 1,
+    "guided_phase_max_replays": 4,
+    "speech_rate": 1.0,
+    "autoplay_transcript": false,
+    "clip_order": "sequence",
+    "inter_turn_gap_ms": 350
+  },
+  "questions": [
+    {
+      "question_id": "ACT-FND-110-Q1",
+      "phase": "first_listen",
+      "type": "dialogue_detail_cloze",
+      "prompt_vi": "Nghe hội thoại ngắn, viết đúng chi tiết được nói ở lượt sau. Trong lượt thoại cuối, điền vào chỗ trống: Sure. The customer report is already in the ________.",
+      "correct_answers": [
+        "shared folder"
+      ],
+      "answer_format": "text_entry",
+      "normalization_policy": "casefold_trim_surrounding_whitespace_and_terminal_punctuation",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "play_turn_ids": [
+        "T01",
+        "T02"
+      ],
+      "explanation_vi": "Thông tin cần nghe là “shared folder”. Từ/cụm này có nghĩa: thư mục chung. Đối chiếu với câu gốc khi xem transcript sau khi hoàn thành.",
+      "evidence": {
+        "source_sentence_en": "Sure. The customer report is already in the shared folder.",
+        "source_translation_vi": "Được. Báo cáo khách hàng đã ở thư mục chung.",
+        "focus_value": "shared folder",
+        "focus_kind": "lexical_phrase",
+        "origin_lesson_id": "FND2-110",
+        "origin_turn_id": "T02",
+        "origin_lesson_skill": "handover_priorities",
+        "evidence_sha256": "adab2a71289b5a189e9e058390abb8808c789f8536ad62603030961fa27ad6fb"
+      },
+      "score_weight": 1
+    },
+    {
+      "question_id": "ACT-FND-110-Q2",
+      "phase": "guided_replay",
+      "type": "full_sentence_dictation",
+      "prompt_vi": "Nghe lại lượt thoại cuối và chép đầy đủ câu tiếng Anh.",
+      "correct_answers": [
+        "Sure. The customer report is already in the shared folder."
+      ],
+      "answer_format": "text_entry",
+      "normalization_policy": "casefold_trim_whitespace_and_terminal_punctuation_preserve_words",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "play_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu đúng: “Sure. The customer report is already in the shared folder.” — Được. Báo cáo khách hàng đã ở thư mục chung.",
+      "evidence": {
+        "source_sentence_en": "Sure. The customer report is already in the shared folder.",
+        "source_translation_vi": "Được. Báo cáo khách hàng đã ở thư mục chung.",
+        "focus_value": "shared folder",
+        "focus_kind": "lexical_phrase",
+        "origin_lesson_id": "FND2-110",
+        "origin_turn_id": "T02",
+        "origin_lesson_skill": "handover_priorities",
+        "evidence_sha256": "adab2a71289b5a189e9e058390abb8808c789f8536ad62603030961fa27ad6fb"
+      },
+      "score_weight": 1
+    }
+  ],
+  "answer_release": "post_activity_submit_only",
+  "feedback_release": "post_activity_submit_only",
+  "grading_is_band_estimate": false,
+  "exposure_rules": {
+    "source_bank": "training",
+    "pretest_reuse_permitted": true,
+    "never_accept_protected_or_unseen_source": true,
+    "do_not_mix_with_mock_source": true,
+    "log_first_exposure": true,
+    "log_replays": true,
+    "log_retention_reviews": true,
+    "source_scope": "training_source_only"
+  },
+  "rights_status": "pending_tts_audio_terms_review",
+  "source_content_status": "authored_draft",
+  "source_audio_status": "not_generated",
+  "review": {
+    "content_editor": "pending",
+    "audio_listening": "pending",
+    "rights_clearance": "pending",
+    "teacher_signoff": "pending",
+    "publish_ready": false
+  },
+  "notes_vi": "Hoạt động luyện tập trích từ lượt thoại gốc M17–M20. Không có audio thật/timestamp ở gói nguồn. Không công bố trước transcript/đáp án."
+}

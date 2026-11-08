@@ -1,0 +1,658 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-025",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M17 – Numbers",
+  "title": "Phone-number corrections in conversation",
+  "learning_objectives_vi": [
+    "Nghe chính xác phone-number corrections in conversation.",
+    "Nghe bản sửa cuối cùng; thông tin ban đầu có thể chỉ là nhiễu",
+    "Chuyển lời đọc thành chữ số/mã chính xác, không đoán theo ý nghĩa."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Caller",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Agent",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I wrote down seven three eight four.",
+      "translation_vi": "A: Tôi đã ghi 7384.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "7384",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Sorry, the last digit is five, so it is seven three eight five.",
+      "translation_vi": "B: Xin lỗi, chữ số cuối là 5, vậy là 7385.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "7385",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Did you say zero eight five six?",
+      "translation_vi": "A: Bạn nói 0856 phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "0856",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "No, zero eight five nine. The last digit is nine.",
+      "translation_vi": "B: Không, là 0859. Chữ số cuối là 9.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "0859",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I have the extension as two four six.",
+      "translation_vi": "A: Tôi ghi số máy lẻ là 246.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "246",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "It is two four eight, not six.",
+      "translation_vi": "B: Là 248, không phải số 6.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "248",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Was the first part double five, one zero?",
+      "translation_vi": "A: Phần đầu có phải là 5510 không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "5510",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "It is double five, one two.",
+      "translation_vi": "B: Là 5512.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "5512",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I have nine six zero written here.",
+      "translation_vi": "A: Tôi ghi 960 ở đây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "960",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Change the middle digit to seven: nine seven zero.",
+      "translation_vi": "B: Đổi chữ số giữa thành 7: 970.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "number_correction",
+        "digit_string"
+      ],
+      "target_value": "970",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I wrote down seven three eight four."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: A: Tôi đã ghi 7384.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "T01: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "7384"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 7384. Ngữ cảnh: A: Tôi đã ghi 7384.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Sorry, the last digit is five, so it is seven three eight five."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: B: Xin lỗi, chữ số cuối là 5, vậy là 7385.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "T02: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "7385"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 7385. Ngữ cảnh: B: Xin lỗi, chữ số cuối là 5, vậy là 7385.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Did you say zero eight five six?"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: A: Bạn nói 0856 phải không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "T03: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "0856"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 0856. Ngữ cảnh: A: Bạn nói 0856 phải không?",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "No, zero eight five nine. The last digit is nine."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: B: Không, là 0859. Chữ số cuối là 9.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "T04: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "0859"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 0859. Ngữ cảnh: B: Không, là 0859. Chữ số cuối là 9.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I have the extension as two four six."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: A: Tôi ghi số máy lẻ là 246.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "T05: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "246"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 246. Ngữ cảnh: A: Tôi ghi số máy lẻ là 246.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "It is two four eight, not six."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: B: Là 248, không phải số 6.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Was the first part double five, one zero?"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: A: Phần đầu có phải là 5510 không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "It is double five, one two."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: B: Là 5512.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I have nine six zero written here."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: A: Tôi ghi 960 ở đây.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Change the middle digit to seven: nine seven zero."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe number_correction. Nghĩa: B: Đổi chữ số giữa thành 7: 970.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "number_correction"
+      ],
+      "max_replays_practice": 5
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "7384",
+      "pos": "digit_string",
+      "meaning_vi": "7384 (digit_string)",
+      "example_en": "I wrote down seven three eight four.",
+      "example_vi": "A: Tôi đã ghi 7384.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "7385",
+      "pos": "digit_string",
+      "meaning_vi": "7385 (digit_string)",
+      "example_en": "Sorry, the last digit is five, so it is seven three eight five.",
+      "example_vi": "B: Xin lỗi, chữ số cuối là 5, vậy là 7385.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "0856",
+      "pos": "digit_string",
+      "meaning_vi": "0856 (digit_string)",
+      "example_en": "Did you say zero eight five six?",
+      "example_vi": "A: Bạn nói 0856 phải không?",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "0859",
+      "pos": "digit_string",
+      "meaning_vi": "0859 (digit_string)",
+      "example_en": "No, zero eight five nine. The last digit is nine.",
+      "example_vi": "B: Không, là 0859. Chữ số cuối là 9.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "246",
+      "pos": "digit_string",
+      "meaning_vi": "246 (digit_string)",
+      "example_en": "I have the extension as two four six.",
+      "example_vi": "A: Tôi ghi số máy lẻ là 246.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "248",
+      "pos": "digit_string",
+      "meaning_vi": "248 (digit_string)",
+      "example_en": "It is two four eight, not six.",
+      "example_vi": "B: Là 248, không phải số 6.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "5510",
+      "pos": "digit_string",
+      "meaning_vi": "5510 (digit_string)",
+      "example_en": "Was the first part double five, one zero?",
+      "example_vi": "A: Phần đầu có phải là 5510 không?",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "5512",
+      "pos": "digit_string",
+      "meaning_vi": "5512 (digit_string)",
+      "example_en": "It is double five, one two.",
+      "example_vi": "B: Là 5512.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "960",
+      "pos": "digit_string",
+      "meaning_vi": "960 (digit_string)",
+      "example_en": "I have nine six zero written here.",
+      "example_vi": "A: Tôi ghi 960 ở đây.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "970",
+      "pos": "digit_string",
+      "meaning_vi": "970 (digit_string)",
+      "example_en": "Change the middle digit to seven: nine seven zero.",
+      "example_vi": "B: Đổi chữ số giữa thành 7: 970.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "micro_skill_id": "number_correction",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "5_correction_pairs",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Nghe bản sửa cuối cùng; thông tin ban đầu có thể chỉ là nhiễu"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "06abc4ee23815fba752f79721789195dcc7d69c26711338902a7eb7ac08de1fb",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft; numeric normalization and pronunciation require teacher/audio QA.",
+      "Fictional UK phone number ranges used for instructional safety; do not dial."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Khi người nói đính chính, câu cuối xác nhận mới là giá trị được dùng trong đặt chỗ.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "not four one two, but four one three",
+        "written_value": "413",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      },
+      {
+        "spoken_example": "not seven five, but seven nine",
+        "written_value": "79",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      }
+    ],
+    "learning_steps": [
+      "Xem quy tắc và hai ví dụ bên dưới trước khi bắt đầu.",
+      "Nghe mỗi câu một lần, chép toàn câu hoặc nhập thông tin số theo yêu cầu.",
+      "Đối chiếu chữ/số và vị trí sai sau khi nộp; nghe lại từng câu khi cần.",
+      "Kiểm tra bằng 2 câu mới chưa xuất hiện trong nội dung luyện."
+    ],
+    "common_mistakes": [
+      "Đáp án cuối cùng phải lấy sau khi nghe sửa, không lấy con số đầu tiên.",
+      "Không dùng lại câu quen thuộc để chứng minh độ vững của kỹ năng."
+    ],
+    "before_audio_question": "Thông tin cần nghe là số lượng, số điện thoại, giờ, tiền hay mã chữ-số?"
+  }
+}

@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-007",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "/eɪ/ versus /aɪ/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt /eɪ/ versus /aɪ/.",
+    "Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our train is running late today.",
+      "translation_vi": "Tàu của chúng tôi hôm nay bị trễ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "late",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The kitchen light is still on.",
+      "translation_vi": "Đèn bếp vẫn đang bật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "light",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The hotel rate includes breakfast.",
+      "translation_vi": "Giá phòng khách sạn bao gồm bữa sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "rate",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Turn right at the next crossing.",
+      "translation_vi": "Rẽ phải ở giao lộ tiếp theo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "right",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I do not want to fail this course.",
+      "translation_vi": "Tôi không muốn trượt khóa học này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "fail",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Please save the file before closing.",
+      "translation_vi": "Hãy lưu tệp trước khi đóng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "file",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "She has a pain in her shoulder.",
+      "translation_vi": "Cô ấy bị đau ở vai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "pain",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "A tall pine grows behind the house.",
+      "translation_vi": "Một cây thông cao mọc sau nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "pine",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Could you wait near the entrance?",
+      "translation_vi": "Bạn có thể đợi gần lối vào không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "wait",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The entrance has a white sign.",
+      "translation_vi": "Lối vào có một biển báo màu trắng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "ay_vs_eye"
+      ],
+      "target_word": "white",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our train is running late today."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe late / light (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Tàu của chúng tôi hôm nay bị trễ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "late / light (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The kitchen light is still on."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe late / light (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Đèn bếp vẫn đang bật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "late / light (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The hotel rate includes breakfast."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe rate / right (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Giá phòng khách sạn bao gồm bữa sáng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "rate / right (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Turn right at the next crossing."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe rate / right (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Rẽ phải ở giao lộ tiếp theo.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "rate / right (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I do not want to fail this course."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe fail / file (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Tôi không muốn trượt khóa học này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "fail / file (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please save the file before closing."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe fail / file (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Hãy lưu tệp trước khi đóng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "fail / file (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "She has a pain in her shoulder."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe pain / pine (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Cô ấy bị đau ở vai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pain / pine (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A tall pine grows behind the house."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe pain / pine (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Một cây thông cao mọc sau nhà.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pain / pine (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Could you wait near the entrance?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe wait / white (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Bạn có thể đợi gần lối vào không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "wait / white (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The entrance has a white sign."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe wait / white (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau). Nghĩa: Lối vào có một biển báo màu trắng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "wait / white (Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "late"
+      ],
+      "options": [
+        "late",
+        "light"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt late và light. Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ay_vs_eye"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "right"
+      ],
+      "options": [
+        "right",
+        "rate"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt rate và right. Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ay_vs_eye"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "fail"
+      ],
+      "options": [
+        "fail",
+        "file"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt fail và file. Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ay_vs_eye"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "pine"
+      ],
+      "options": [
+        "pine",
+        "pain"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt pain và pine. Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ay_vs_eye"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "wait"
+      ],
+      "options": [
+        "wait",
+        "white"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt wait và white. Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "ay_vs_eye"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "late",
+      "pos": "target",
+      "meaning_vi": "muộn",
+      "example_en": "Our train is running late today.",
+      "example_vi": "Tàu của chúng tôi hôm nay bị trễ.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "ay_vs_eye"
+    },
+    {
+      "term": "light",
+      "pos": "target",
+      "meaning_vi": "đèn",
+      "example_en": "The kitchen light is still on.",
+      "example_vi": "Đèn bếp vẫn đang bật.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "ay_vs_eye"
+    },
+    {
+      "term": "rate",
+      "pos": "target",
+      "meaning_vi": "giá/phí",
+      "example_en": "The hotel rate includes breakfast.",
+      "example_vi": "Giá phòng khách sạn bao gồm bữa sáng.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "ay_vs_eye"
+    },
+    {
+      "term": "right",
+      "pos": "target",
+      "meaning_vi": "bên phải",
+      "example_en": "Turn right at the next crossing.",
+      "example_vi": "Rẽ phải ở giao lộ tiếp theo.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "ay_vs_eye"
+    },
+    {
+      "term": "fail",
+      "pos": "target",
+      "meaning_vi": "thất bại",
+      "example_en": "I do not want to fail this course.",
+      "example_vi": "Tôi không muốn trượt khóa học này.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "ay_vs_eye"
+    },
+    {
+      "term": "file",
+      "pos": "target",
+      "meaning_vi": "tệp",
+      "example_en": "Please save the file before closing.",
+      "example_vi": "Hãy lưu tệp trước khi đóng.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "ay_vs_eye"
+    },
+    {
+      "term": "pain",
+      "pos": "target",
+      "meaning_vi": "cơn đau",
+      "example_en": "She has a pain in her shoulder.",
+      "example_vi": "Cô ấy bị đau ở vai.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "ay_vs_eye"
+    },
+    {
+      "term": "pine",
+      "pos": "target",
+      "meaning_vi": "thông",
+      "example_en": "A tall pine grows behind the house.",
+      "example_vi": "Một cây thông cao mọc sau nhà.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "ay_vs_eye"
+    },
+    {
+      "term": "wait",
+      "pos": "target",
+      "meaning_vi": "đợi",
+      "example_en": "Could you wait near the entrance?",
+      "example_vi": "Bạn có thể đợi gần lối vào không?",
+      "source_turn_id": "T09",
+      "phoneme_focus": "ay_vs_eye"
+    },
+    {
+      "term": "white",
+      "pos": "target",
+      "meaning_vi": "trắng",
+      "example_en": "The entrance has a white sign.",
+      "example_vi": "Lối vào có một biển báo màu trắng.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "ay_vs_eye"
+    }
+  ],
+  "micro_skill_id": "ay_vs_eye",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "late",
+        "light"
+      ],
+      [
+        "rate",
+        "right"
+      ],
+      [
+        "fail",
+        "file"
+      ],
+      [
+        "pain",
+        "pine"
+      ],
+      [
+        "wait",
+        "white"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Đừng chỉ nhìn chữ: late và light có hai nguyên âm đôi khác nhau"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "fd8e9368730804af2be2c873acb438f15fac2c08e89d92b87aa6fd54b9fbfe8b",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nguyên âm đôi /eɪ/ ở late/rate khác /aɪ/ ở light/right; cả hai thay đổi chất âm trong một âm tiết.",
+    "worked_contrasts": [
+      {
+        "contrast": "late / light",
+        "meaning_vi": "muộn / đèn",
+        "teacher_note_vi": "Nguyên âm đôi /eɪ/ ở late/rate khác /aɪ/ ở light/right; cả hai thay đổi chất âm trong một âm tiết."
+      },
+      {
+        "contrast": "rate / right",
+        "meaning_vi": "giá/phí / bên phải",
+        "teacher_note_vi": "Nguyên âm đôi /eɪ/ ở late/rate khác /aɪ/ ở light/right; cả hai thay đổi chất âm trong một âm tiết."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Nghe sót phần cuối của nguyên âm đôi.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

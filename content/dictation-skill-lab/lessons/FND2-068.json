@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-068",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Dates",
+  "title": "Routine appointments and bookings",
+  "learning_objectives_vi": [
+    "Nắm thông tin lịch hẹn trong tình huống dịch vụ sức khỏe thường gặp.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The health check is on Tuesday morning, and no preparation is needed.",
+      "translation_vi": "Buổi kiểm tra sức khỏe vào sáng thứ Ba và không cần chuẩn bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "Tuesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Ba",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Please arrive ten minutes early for your appointment on Thursday.",
+      "translation_vi": "Hãy đến sớm mười phút cho cuộc hẹn thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "Thursday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Năm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Your routine eye test has moved from Wednesday to Friday.",
+      "translation_vi": "Lịch kiểm tra mắt định kỳ đã chuyển từ thứ Tư sang thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "Friday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Sáu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The reception desk is open on Monday, but the specialist comes on Tuesday.",
+      "translation_vi": "Quầy lễ tân mở thứ Hai nhưng chuyên viên đến thứ Ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "Tuesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Ba",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I can attend the morning session on Saturday, not the afternoon one.",
+      "translation_vi": "Tôi có thể tham gia buổi sáng thứ Bảy, không phải buổi chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "Saturday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Bảy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The wellness workshop runs every Wednesday during the summer.",
+      "translation_vi": "Buổi hướng dẫn chăm sóc sức khỏe diễn ra mỗi thứ Tư trong mùa hè.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "Wednesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Tư",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The vaccination information session is scheduled for Thursday evening.",
+      "translation_vi": "Buổi cung cấp thông tin tiêm chủng được xếp lịch tối thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "Thursday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Năm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The appointment is now at nine on Friday, rather than eleven.",
+      "translation_vi": "Cuộc hẹn giờ là chín giờ thứ Sáu thay vì mười một giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "nine",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chín giờ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We can offer a later slot on Monday if the early one is difficult.",
+      "translation_vi": "Chúng tôi có thể sắp xếp lịch muộn hơn thứ Hai nếu lịch sớm không phù hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "Monday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Hai",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The physiotherapy introduction takes place on Sunday afternoon.",
+      "translation_vi": "Buổi giới thiệu vật lý trị liệu diễn ra chiều Chủ nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "routine_appointments",
+        "dates"
+      ],
+      "target_value": "Sunday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "Chủ nhật",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The health check is on Tuesday morning, and no preparation is needed."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The health check is on Tuesday morning, and no preparation is needed. Nghĩa: Buổi kiểm tra sức khỏe vào sáng thứ Ba và không cần chuẩn bị.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please arrive ten minutes early for your appointment on Thursday."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please arrive ten minutes early for your appointment on Thursday. Nghĩa: Hãy đến sớm mười phút cho cuộc hẹn thứ Năm.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Your routine eye test has moved from Wednesday to Friday."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Your routine eye test has moved from Wednesday to Friday. Nghĩa: Lịch kiểm tra mắt định kỳ đã chuyển từ thứ Tư sang thứ Sáu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The reception desk is open on Monday, but the specialist comes on Tuesday."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The reception desk is open on Monday, but the specialist comes on Tuesday. Nghĩa: Quầy lễ tân mở thứ Hai nhưng chuyên viên đến thứ Ba.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I can attend the morning session on Saturday, not the afternoon one."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I can attend the morning session on Saturday, not the afternoon one. Nghĩa: Tôi có thể tham gia buổi sáng thứ Bảy, không phải buổi chiều.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The wellness workshop runs every Wednesday during the summer."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The wellness workshop runs every Wednesday during the summer. Nghĩa: Buổi hướng dẫn chăm sóc sức khỏe diễn ra mỗi thứ Tư trong mùa hè.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The vaccination information session is scheduled for Thursday evening."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The vaccination information session is scheduled for Thursday evening. Nghĩa: Buổi cung cấp thông tin tiêm chủng được xếp lịch tối thứ Năm.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The appointment is now at nine on Friday, rather than eleven."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The appointment is now at nine on Friday, rather than eleven. Nghĩa: Cuộc hẹn giờ là chín giờ thứ Sáu thay vì mười một giờ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We can offer a later slot on Monday if the early one is difficult."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We can offer a later slot on Monday if the early one is difficult. Nghĩa: Chúng tôi có thể sắp xếp lịch muộn hơn thứ Hai nếu lịch sớm không phù hợp.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The physiotherapy introduction takes place on Sunday afternoon."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The physiotherapy introduction takes place on Sunday afternoon. Nghĩa: Buổi giới thiệu vật lý trị liệu diễn ra chiều Chủ nhật.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "routine_appointments"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Buổi hướng dẫn diễn ra thứ mấy hằng tuần? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: Wednesday (thứ Tư). Dẫn chứng: The wellness workshop runs every Wednesday during the summer. Nghĩa: Buổi hướng dẫn chăm sóc sức khỏe diễn ra mỗi thứ Tư trong mùa hè.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "routine_appointments",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Buổi cung cấp thông tin vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: Thursday (thứ Năm). Dẫn chứng: The vaccination information session is scheduled for Thursday evening. Nghĩa: Buổi cung cấp thông tin tiêm chủng được xếp lịch tối thứ Năm.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "routine_appointments",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Giờ hẹn mới là mấy giờ? (viết chữ) Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "nine"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: nine (chín giờ). Dẫn chứng: The appointment is now at nine on Friday, rather than eleven. Nghĩa: Cuộc hẹn giờ là chín giờ thứ Sáu thay vì mười một giờ.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "routine_appointments",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Lịch thay thế thuộc thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Monday"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: Monday (thứ Hai). Dẫn chứng: We can offer a later slot on Monday if the early one is difficult. Nghĩa: Chúng tôi có thể sắp xếp lịch muộn hơn thứ Hai nếu lịch sớm không phù hợp.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "routine_appointments",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Buổi giới thiệu vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Sunday"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: Sunday (Chủ nhật). Dẫn chứng: The physiotherapy introduction takes place on Sunday afternoon. Nghĩa: Buổi giới thiệu vật lý trị liệu diễn ra chiều Chủ nhật.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "routine_appointments",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Tuesday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Ba",
+      "example_en": "The health check is on Tuesday morning, and no preparation is needed.",
+      "example_vi": "Buổi kiểm tra sức khỏe vào sáng thứ Ba và không cần chuẩn bị.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Thursday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Năm",
+      "example_en": "Please arrive ten minutes early for your appointment on Thursday.",
+      "example_vi": "Hãy đến sớm mười phút cho cuộc hẹn thứ Năm.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Friday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Sáu",
+      "example_en": "Your routine eye test has moved from Wednesday to Friday.",
+      "example_vi": "Lịch kiểm tra mắt định kỳ đã chuyển từ thứ Tư sang thứ Sáu.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Tuesday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Ba",
+      "example_en": "The reception desk is open on Monday, but the specialist comes on Tuesday.",
+      "example_vi": "Quầy lễ tân mở thứ Hai nhưng chuyên viên đến thứ Ba.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Saturday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Bảy",
+      "example_en": "I can attend the morning session on Saturday, not the afternoon one.",
+      "example_vi": "Tôi có thể tham gia buổi sáng thứ Bảy, không phải buổi chiều.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Wednesday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Tư",
+      "example_en": "The wellness workshop runs every Wednesday during the summer.",
+      "example_vi": "Buổi hướng dẫn chăm sóc sức khỏe diễn ra mỗi thứ Tư trong mùa hè.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "routine_appointments",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nắm thông tin lịch hẹn trong tình huống dịch vụ sức khỏe thường gặp.",
+    "category": "dates",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-068-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "d438f397dc5c4dc22f767d0ccd3c39ff73749e18a9efa81933c8fc776f2a0ee0",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nắm thông tin lịch hẹn trong tình huống dịch vụ sức khỏe thường gặp.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The booking was for Tuesday, but it is now on Sunday.",
+        "written_value": "Sunday",
+        "teacher_note_vi": "Từ but/now báo hiệu ngày cuối cùng đã thay đổi."
+      },
+      {
+        "spoken_example": "The early appointment is at nine; the class begins at ten.",
+        "written_value": "ten",
+        "teacher_note_vi": "Xác định đang được hỏi giờ hẹn hay giờ lớp học, không lấy số xuất hiện đầu."
+      }
+    ],
+    "learning_steps": [
+      "Đọc ví dụ hướng dẫn phân biệt lịch cũ và lịch chốt.",
+      "Nghe một lần, khoanh cụm chỉ lịch cuối cùng hoặc đối tượng được hỏi.",
+      "Làm Dictation và câu hỏi rút thông tin; chỉ mở transcript sau khi nộp.",
+      "Kiểm tra chuyển giao bằng hai câu audio chưa gặp, lần nghe đầu."
+    ],
+    "common_mistakes": [
+      "Nhầm giờ cũ với giờ mới, hoặc lịch của người khác.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Đâu là thông tin cuối cùng, và nó thuộc mốc thời gian nào?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

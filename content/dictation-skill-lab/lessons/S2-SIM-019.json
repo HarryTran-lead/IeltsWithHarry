@@ -1,0 +1,720 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-019",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Residential community orientation",
+  "title": "Redwood Housing: New Residents Welcome",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "public_services",
+    "community_living",
+    "mcq_reasoning"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, everyone. I am Jordan, the resident liaison officer at Redwood Housing. Moving into a new development can be confusing because construction and public services overlap for a few months. I will explain the essentials first and then discuss some policies that residents have asked us to clarify.",
+      "translation_vi": "Chào mọi người, tôi là Jordan, phụ trách cư dân khu Redwood. Chuyển vào khu mới dễ khó hiểu vì công trình và dịch vụ chồng chéo. Tôi sẽ nói điều cần biết rồi giải thích quy định.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Our resident support desk is now on the ground floor of Block Three. The temporary desk in Block One will close after Friday.",
+      "translation_vi": "Quầy hỗ trợ cư dân hiện ở tầng trệt tòa Ba; quầy tạm ở tòa Một đóng sau thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Household recycling bins are beside the east service road. Please flatten cardboard boxes before placing them in the marked containers.",
+      "translation_vi": "Thùng tái chế gia đình cạnh đường dịch vụ phía đông; gấp phẳng thùng bìa trước khi bỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A parcel collection locker has been installed near the main lobby. You will receive a code by text message when an item is ready.",
+      "translation_vi": "Tủ nhận bưu kiện gần sảnh chính; có mã gửi qua tin nhắn khi hàng sẵn sàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The community meeting room can be reserved through the residents’ portal. Please avoid asking the security team to make bookings because they do not manage the calendar.",
+      "translation_vi": "Phòng sinh hoạt cộng đồng đặt qua cổng cư dân; bảo vệ không quản lý lịch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Quiet hours begin at ten thirty in the evening. During this period we ask people to keep music low and avoid drilling into walls.",
+      "translation_vi": "Giờ yên tĩnh bắt đầu lúc mười giờ ba mươi tối; hạn chế nhạc to và khoan tường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Some facilities are shared because it would be wasteful to duplicate them in every block. The community room, parcel system and garden are intended to bring neighbours together, though residents should also have the option of using quiet private space. Managing both needs requires clear rules and respectful communication.",
+      "translation_vi": "Một số tiện ích dùng chung để tránh lãng phí. Phòng sinh hoạt, tủ hàng, vườn giúp hàng xóm kết nối nhưng vẫn cần không gian riêng yên tĩnh; cần quy định rõ và giao tiếp tôn trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "There are also a few reasons behind the rules, and I want to explain those rather than just read out a list of prohibitions.",
+      "translation_vi": "Một vài quy định có lý do cụ thể; tôi muốn giải thích thay vì chỉ đọc các điều cấm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We have limited the use of the rooftop terrace during strong winds. The issue is safety near the glass barriers, not concerns about the view or noise.",
+      "translation_vi": "Hạn chế sân thượng khi gió mạnh vì an toàn gần lan can kính, không phải vì cảnh hay tiếng ồn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Residents asked for reserved visitor parking beside each block. We decided on a shared short-stay area instead, as spaces would otherwise remain empty while others were overcrowded.",
+      "translation_vi": "Cư dân muốn chỗ đỗ khách riêng từng tòa; chúng tôi chọn khu đỗ ngắn hạn chung vì tránh chỗ trống trong khi nơi khác quá tải.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The garden beds will be maintained by a volunteer group with staff support. Individual residents should not apply chemicals themselves, because this would make the treatment inconsistent.",
+      "translation_vi": "Vườn do nhóm tình nguyện và nhân viên chăm; từng cư dân không tự dùng hóa chất vì sẽ xử lý không đồng nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The playground is open during daylight hours. We chose that rule because the lighting has not yet passed its final inspection, rather than because neighbours complained about children.",
+      "translation_vi": "Sân chơi mở ban ngày vì đèn chưa kiểm định xong, không phải do hàng xóm phàn nàn về trẻ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Many people wanted a printed notice for every change. To reduce waste, we will post routine updates online, but urgent water-supply interruptions will still be notified by text message.",
+      "translation_vi": "Nhiều người muốn thông báo giấy; để giảm rác, tin thường lên web, còn cúp nước khẩn vẫn nhắn tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "We are also planning a resident-led committee. Its purpose is to raise concerns and suggest improvements, not to replace professional maintenance or decide private disputes. We will invite nominations after more households have moved in, so new residents have a fair opportunity to participate.",
+      "translation_vi": "Chúng tôi dự định có ủy ban cư dân để góp ý và đề xuất, không thay đội bảo trì hay xử tranh chấp riêng. Sẽ nhận ứng viên khi có thêm gia đình chuyển đến để công bằng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "If you have a question about your own apartment, our office can help privately after this meeting. Please keep common areas clear for other residents.",
+      "translation_vi": "Nếu có câu hỏi về căn hộ, văn phòng sẽ hỗ trợ riêng sau cuộc họp. Hãy giữ khu chung thông thoáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Resident support desk: Block ____.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Our resident support desk is now on the ground floor of Block Three. The temporary desk in Block One will close after Friday.",
+      "explanation_vi": "Quầy hỗ trợ cư dân hiện ở tầng trệt tòa Ba; quầy tạm ở tòa Một đóng sau thứ Sáu.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "Three"
+      ],
+      "spoken_answer": "Three",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Flatten cardboard ____ before disposal.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Household recycling bins are beside the east service road. Please flatten cardboard boxes before placing them in the marked containers.",
+      "explanation_vi": "Thùng tái chế gia đình cạnh đường dịch vụ phía đông; gấp phẳng thùng bìa trước khi bỏ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "boxes"
+      ],
+      "spoken_answer": "boxes",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Parcel locker access code sent by text ____.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "A parcel collection locker has been installed near the main lobby. You will receive a code by text message when an item is ready.",
+      "explanation_vi": "Tủ nhận bưu kiện gần sảnh chính; có mã gửi qua tin nhắn khi hàng sẵn sàng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "message"
+      ],
+      "spoken_answer": "message",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Book meeting rooms via residents’ ____.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The community meeting room can be reserved through the residents’ portal. Please avoid asking the security team to make bookings because they do not manage the calendar.",
+      "explanation_vi": "Phòng sinh hoạt cộng đồng đặt qua cổng cư dân; bảo vệ không quản lý lịch.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "portal"
+      ],
+      "spoken_answer": "portal",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Quiet hours start at ____.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Quiet hours begin at ten thirty in the evening. During this period we ask people to keep music low and avoid drilling into walls.",
+      "explanation_vi": "Giờ yên tĩnh bắt đầu lúc mười giờ ba mươi tối; hạn chế nhạc to và khoan tường.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "ten thirty"
+      ],
+      "spoken_answer": "ten thirty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why may the rooftop terrace be closed?",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "We have limited the use of the rooftop terrace during strong winds. The issue is safety near the glass barriers, not concerns about the view or noise.",
+      "explanation_vi": "Hạn chế sân thượng khi gió mạnh vì an toàn gần lan can kính, không phải vì cảnh hay tiếng ồn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "Because of safety in high winds"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To prevent noise"
+        },
+        {
+          "key": "B",
+          "text": "Because of safety in high winds"
+        },
+        {
+          "key": "C",
+          "text": "To allow cleaning"
+        }
+      ],
+      "correct_option": "B"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why is visitor parking shared?",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Residents asked for reserved visitor parking beside each block. We decided on a shared short-stay area instead, as spaces would otherwise remain empty while others were overcrowded.",
+      "explanation_vi": "Cư dân muốn chỗ đỗ khách riêng từng tòa; chúng tôi chọn khu đỗ ngắn hạn chung vì tránh chỗ trống trong khi nơi khác quá tải.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "To use available spaces more efficiently"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To use available spaces more efficiently"
+        },
+        {
+          "key": "B",
+          "text": "To encourage visitors to use bicycles"
+        },
+        {
+          "key": "C",
+          "text": "Because no vehicles are allowed inside"
+        }
+      ],
+      "correct_option": "A"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Who will maintain the garden beds?",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The garden beds will be maintained by a volunteer group with staff support. Individual residents should not apply chemicals themselves, because this would make the treatment inconsistent.",
+      "explanation_vi": "Vườn do nhóm tình nguyện và nhân viên chăm; từng cư dân không tự dùng hóa chất vì sẽ xử lý không đồng nhất.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A volunteer group supported by staff"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "An outside commercial team alone"
+        },
+        {
+          "key": "B",
+          "text": "Individual households independently"
+        },
+        {
+          "key": "C",
+          "text": "A volunteer group supported by staff"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why does the playground close after dark?",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "The playground is open during daylight hours. We chose that rule because the lighting has not yet passed its final inspection, rather than because neighbours complained about children.",
+      "explanation_vi": "Sân chơi mở ban ngày vì đèn chưa kiểm định xong, không phải do hàng xóm phàn nàn về trẻ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "The lighting is awaiting approval"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "The lighting is awaiting approval"
+        },
+        {
+          "key": "B",
+          "text": "Children are too noisy"
+        },
+        {
+          "key": "C",
+          "text": "The gates are damaged"
+        }
+      ],
+      "correct_option": "A"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "How will urgent water interruptions be communicated?",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "Many people wanted a printed notice for every change. To reduce waste, we will post routine updates online, but urgent water-supply interruptions will still be notified by text message.",
+      "explanation_vi": "Nhiều người muốn thông báo giấy; để giảm rác, tin thường lên web, còn cúp nước khẩn vẫn nhắn tin.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "public_services",
+        "community_living",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "By text message"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "By a weekly letter"
+        },
+        {
+          "key": "B",
+          "text": "By text message"
+        },
+        {
+          "key": "C",
+          "text": "Only through the residents’ portal"
+        }
+      ],
+      "correct_option": "B"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "b9060bdb3e87759493eb409dcbae4e3b3caaa43088537b0d5334ad0bd2d0878f",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.3,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

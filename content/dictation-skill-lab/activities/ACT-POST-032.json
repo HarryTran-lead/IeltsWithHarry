@@ -1,0 +1,242 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-032",
+  "activity_id": "ACT-POST-032",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 2,
+  "title": "Greystone Transport Pilot: Public Information — Sửa lỗi sau bài thi",
+  "source_bank": "section_simulation",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M26",
+  "source_package": "English_Skill_Lab_Dictation_M26_Section_2_Exam_Simulation_20_Full_Content.zip",
+  "source_entry_path": "English_Skill_Lab_M26/01_LESSONS_SERVER_ONLY/S2-SIM-012.json",
+  "source_test_id": null,
+  "source_lesson_id": "S2-SIM-012",
+  "source_part_id": null,
+  "reuse_parent_id": "S2-SIM-012",
+  "source_question_id": "Q03",
+  "source_audio_id": "assessment/section_simulation/S2-SIM-012",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T02",
+    "T03",
+    "T04"
+  ],
+  "segment_timing": {
+    "T02": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "077ac1a3ad1a1e935e3f1685ddbc6d0c36d5f6f974fe842ebf8131e5bea8a76e"
+    },
+    "T03": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "1115ed0b9e11a7c97c7378fba5ebb882f084071a56caea8aebd13904417f2bee"
+    },
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "c5c00a9851c5c7bab428d8e0093adfe13679f1770ad62e626ce0d2dd87ce4f9b"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "3f625281240d08b9593c250caff9e265bb0a846a20db4222d4c7e3e658f3927f",
+  "anchor_turn_id": "T04",
+  "teacher_only_evidence_text_en": "Real-time screens at major stops will show how long passengers actually have to wait, using live vehicle locations instead of the printed timetable.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-032-01",
+      "phase": "guided_relisten",
+      "mode": "single_choice",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Live arrival screens",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": [
+        {
+          "key": "A",
+          "text": "More accurate waiting information"
+        },
+        {
+          "key": "B",
+          "text": "Slower vehicles near children"
+        },
+        {
+          "key": "C",
+          "text": "Access from outlying streets"
+        },
+        {
+          "key": "D",
+          "text": "Reducing delays for buses"
+        },
+        {
+          "key": "E",
+          "text": "Lowering ticket prices"
+        },
+        {
+          "key": "F",
+          "text": "Reducing bicycle–car conflict"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A"
+      ],
+      "spoken_answer": null,
+      "word_limit": null,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q03",
+      "source_question_type": "matching",
+      "play_turn_ids": [
+        "T04"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "teacher_explanation_vi": "Màn hình thời gian thực ở trạm lớn hiện thời gian chờ dựa trên vị trí xe, không chỉ theo lịch in.",
+      "feedback_vi": "Đáp án gốc: A. Đối chiếu với các lượt thoại T04; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-032-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q03",
+      "source_question_prompt_en": "Live arrival screens",
+      "choices": [
+        {
+          "key": "T02",
+          "excerpt_en": "The priority traffic signal at the bus interchange holds the green phase briefly when a late bus approaches. Its purpose is to reduce delays on heavily used routes.",
+          "source_turn_id": "T02"
+        },
+        {
+          "key": "T04",
+          "excerpt_en": "Real-time screens at major stops will show how long passengers actually have to wait, using live vehicle locations instead of the printed timetable.",
+          "source_turn_id": "T04"
+        },
+        {
+          "key": "T03",
+          "excerpt_en": "The new raised crossing outside the primary school forces vehicles to slow down. It was chosen after parents reported several near misses at pickup time.",
+          "source_turn_id": "T03"
+        }
+      ],
+      "correct_answers": [
+        "T04"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_text_sha256": "c5c00a9851c5c7bab428d8e0093adfe13679f1770ad62e626ce0d2dd87ce4f9b",
+      "play_turn_ids": [
+        "T02",
+        "T04",
+        "T03"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T04. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-032-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "…me screens at major stops will show how long  [____] , using live vehicle locations instead of the…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "passengers actually have to wait"
+      ],
+      "play_turn_ids": [
+        "T04"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "source_excerpt_exact": "passengers actually have to wait",
+      "evidence_char_start": 52,
+      "evidence_char_end": 84,
+      "source_turn_sha256": "c5c00a9851c5c7bab428d8e0093adfe13679f1770ad62e626ce0d2dd87ce4f9b",
+      "feedback_vi": "Cụm nghe-chép chính xác là “passengers actually have to wait”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "A"
+    ],
+    "original_correct_option": "A",
+    "evidence_turn_ids": [
+      "T04"
+    ],
+    "raw_question_evidence_excerpt_en": "Real-time screens at major stops will show how long passengers actually have to wait, using live vehicle locations instead of the printed timetable.",
+    "original_explanation_vi": "Màn hình thời gian thực ở trạm lớn hiện thời gian chờ dựa trên vị trí xe, không chỉ theo lịch in."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_2",
+    "matching",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q03",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "S2-SIM-012",
+    "gate_kind": "section_simulation_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

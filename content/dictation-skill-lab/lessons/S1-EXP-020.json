@@ -1,0 +1,827 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-020",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Train travel booking",
+  "title": "Planning a Rail Journey with a Bicycle",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "route_changes",
+    "bicycle_booking",
+    "ticket_options",
+    "connections"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "Hello, I'd like advice about a return train journey to Fairhaven next month. I'll be taking a bicycle as well.",
+      "translation_vi": "Xin chào, tôi muốn hỏi hành trình tàu khứ hồi tới Fairhaven tháng tới. Tôi mang theo xe đạp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Certainly. Where are you travelling from, and will you need a bicycle space on both journeys?",
+      "translation_vi": "Được. Anh đi từ đâu và cần chỗ để xe đạp cho cả hai lượt chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "B",
+      "text_en": "I'll leave from Westport. I thought there was a direct service, but the journey planner now shows a change.",
+      "translation_vi": "Tôi đi từ Westport. Tôi nghĩ có tàu thẳng, nhưng ứng dụng hành trình hiện phải chuyển tàu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The direct service is suspended during track repairs. You'll need to change at Millford and continue on the coastal line.",
+      "translation_vi": "Tàu thẳng tạm dừng do sửa đường ray. Anh phải đổi tàu tại Millford rồi đi tuyến ven biển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That's okay. I'm looking at Saturday the fifth, ideally leaving after eight in the morning.",
+      "translation_vi": "Không sao. Tôi xem thứ Bảy ngày 5, tốt nhất xuất phát sau tám giờ sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "There's an eight ten train, but all bicycle spaces on that service are full. The nine twenty has two spaces left.",
+      "translation_vi": "Có tàu 8:10 nhưng hết chỗ xe đạp. Chuyến 9:20 còn hai chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "Then I'll take the nine twenty. How much time will I have to change trains at Millford?",
+      "translation_vi": "Tôi chọn 9:20. Tôi có bao lâu để chuyển tàu ở Millford?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "You'll have twenty-two minutes, which should be enough. The connecting train usually leaves from Platform Four.",
+      "translation_vi": "Anh có 22 phút, thường là đủ. Tàu nối chuyến thường ở sân ga số 4.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "Good. Is the return ticket cheaper than buying two single journeys, or are the prices the same?",
+      "translation_vi": "Được. Vé khứ hồi có rẻ hơn mua hai vé một chiều không, hay bằng giá?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "For that weekend, the off-peak return is thirty-six pounds. Two singles would cost forty-four altogether.",
+      "translation_vi": "Cuối tuần đó, vé khứ hồi ngoài cao điểm 36 bảng. Hai vé lẻ cộng lại 44.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll book the return. Do I need to reserve my bicycle separately, even though the train ticket is already paid for?",
+      "translation_vi": "Tôi mua khứ hồi. Có cần đặt chỗ xe đạp riêng dù đã trả tiền vé tàu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Yes, bicycle reservations are free but compulsory on the coastal service. Please add one for both directions.",
+      "translation_vi": "Có, đặt xe đạp miễn phí nhưng bắt buộc trên tuyến ven biển. Hãy thêm cho cả hai chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "I was going to travel back Sunday evening, but I may stay longer. Can I choose Monday afternoon instead?",
+      "translation_vi": "Ban đầu tôi định về tối Chủ Nhật nhưng có thể ở thêm. Tôi chọn chiều thứ Hai được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Monday is possible. The two forty return has bicycle space, whereas the four ten is already fully booked.",
+      "translation_vi": "Thứ Hai được. Chuyến 2:40 chiều còn chỗ xe đạp, 4:10 hết rồi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "B",
+      "text_en": "Let's choose two forty on Monday. Is there a lift at Millford? Carrying the bike up stairs would be difficult.",
+      "translation_vi": "Vậy chọn 2:40 chiều thứ Hai. Ở Millford có thang máy không? Khiêng xe lên cầu thang khá khó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "A",
+      "text_en": "The station has a lift between platforms, but it closes for maintenance after nine at night, so your daytime connection is fine.",
+      "translation_vi": "Ga có thang máy giữa các sân ga, nhưng đóng bảo trì sau chín giờ tối, nên chuyển tàu ban ngày ổn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Interchange station: ____",
+      "correct_answers": [
+        "Millford"
+      ],
+      "spoken_answer": "Millford",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tàu thẳng ngừng, phải đổi tại Millford.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "change at Millford",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Outbound departure: ____",
+      "correct_answers": [
+        "nine twenty",
+        "9:20"
+      ],
+      "spoken_answer": "nine twenty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tàu 8:10 hết chỗ xe đạp nên chọn 9:20.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "nine twenty",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Connection time: ____ minutes",
+      "correct_answers": [
+        "twenty-two",
+        "22"
+      ],
+      "spoken_answer": "twenty-two",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Có 22 phút chuyển tàu.",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "twenty-two minutes",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Which platform usually serves the connecting train?",
+      "correct_answers": [
+        "Platform Four"
+      ],
+      "options": [
+        "Platform Two",
+        "Platform Four",
+        "Platform Seven"
+      ],
+      "correct_option": "B",
+      "scoring_policy": "strict",
+      "explanation_vi": "Tàu nối chuyến thường xuất phát sân ga 4.",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Platform Four",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Off-peak return fare: £____",
+      "correct_answers": [
+        "thirty-six",
+        "36"
+      ],
+      "spoken_answer": "thirty-six",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Vé khứ hồi là 36 bảng, hai vé lẻ 44.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "thirty-six pounds",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Bicycle reservation charge: ____",
+      "correct_answers": [
+        "free"
+      ],
+      "spoken_answer": "free",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Đặt chỗ xe đạp miễn phí nhưng bắt buộc.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "reservations are free",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Return day: ____",
+      "correct_answers": [
+        "Monday"
+      ],
+      "spoken_answer": "Monday",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Chuyến về đã đổi từ Chủ Nhật sang thứ Hai.",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "Monday is possible",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Which Monday service has space for the bicycle?",
+      "correct_answers": [
+        "two forty"
+      ],
+      "options": [
+        "four ten",
+        "both services",
+        "two forty"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Chỉ chuyến 2:40 chiều còn chỗ xe đạp.",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "two forty return",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "The direct service is suspended during track repairs. You'll need to change at Millford and continue on the coastal line."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tàu thẳng tạm dừng do sửa đường ray. Anh phải đổi tàu tại Millford rồi đi tuyến ven biển.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "Then I'll take the nine twenty. How much time will I have to change trains at Millford?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tôi chọn 9:20. Tôi có bao lâu để chuyển tàu ở Millford?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "For that weekend, the off-peak return is thirty-six pounds. Two singles would cost forty-four altogether."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Cuối tuần đó, vé khứ hồi ngoài cao điểm 36 bảng. Hai vé lẻ cộng lại 44.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "Monday is possible. The two forty return has bicycle space, whereas the four ten is already fully booked."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Thứ Hai được. Chuyến 2:40 chiều còn chỗ xe đạp, 4:10 hết rồi.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: The direct service is suspended during track repairs. You'll need to change at ____ and continue on the coastal line.",
+      "correct_answers": [
+        "Millford"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tàu thẳng ngừng, phải đổi tại Millford.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: Then I'll take the ____. How much time will I have to change trains at Millford?",
+      "correct_answers": [
+        "nine twenty"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tàu 8:10 hết chỗ xe đạp nên chọn 9:20.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "route_changes",
+        "bicycle_booking",
+        "ticket_options",
+        "connections"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-020-V01",
+      "expression_en": "return train journey",
+      "meaning_vi": "hành trình tàu khứ hồi",
+      "part_of_speech": "noun phrase",
+      "example_en": "Hello, I'd like advice about a return train journey to Fairhaven next month. I'll be taking a bicycle as well.",
+      "example_vi": "Xin chào, tôi muốn hỏi hành trình tàu khứ hồi tới Fairhaven tháng tới. Tôi mang theo xe đạp.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-020-V02",
+      "expression_en": "direct service",
+      "meaning_vi": "chuyến tàu chạy thẳng",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll leave from Westport. I thought there was a direct service, but the journey planner now shows a change.",
+      "example_vi": "Tôi đi từ Westport. Tôi nghĩ có tàu thẳng, nhưng ứng dụng hành trình hiện phải chuyển tàu.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-020-V03",
+      "expression_en": "track repairs",
+      "meaning_vi": "việc sửa đường ray",
+      "part_of_speech": "noun phrase",
+      "example_en": "The direct service is suspended during track repairs. You'll need to change at Millford and continue on the coastal line.",
+      "example_vi": "Tàu thẳng tạm dừng do sửa đường ray. Anh phải đổi tàu tại Millford rồi đi tuyến ven biển.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-020-V04",
+      "expression_en": "bicycle spaces",
+      "meaning_vi": "chỗ để xe đạp",
+      "part_of_speech": "noun phrase",
+      "example_en": "There's an eight ten train, but all bicycle spaces on that service are full. The nine twenty has two spaces left.",
+      "example_vi": "Có tàu 8:10 nhưng hết chỗ xe đạp. Chuyến 9:20 còn hai chỗ.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-020-V05",
+      "expression_en": "off-peak return",
+      "meaning_vi": "vé khứ hồi ngoài cao điểm",
+      "part_of_speech": "noun phrase",
+      "example_en": "For that weekend, the off-peak return is thirty-six pounds. Two singles would cost forty-four altogether.",
+      "example_vi": "Cuối tuần đó, vé khứ hồi ngoài cao điểm 36 bảng. Hai vé lẻ cộng lại 44.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-020-V06",
+      "expression_en": "compulsory",
+      "meaning_vi": "bắt buộc",
+      "part_of_speech": "adjective",
+      "example_en": "Yes, bicycle reservations are free but compulsory on the coastal service. Please add one for both directions.",
+      "example_vi": "Có, đặt xe đạp miễn phí nhưng bắt buộc trên tuyến ven biển. Hãy thêm cho cả hai chiều.",
+      "evidence_turn_id": "T12",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "7f88a65228765908d0dad10d3d11a9d0685fe968034dc6c1eb3f1f8e308edc98",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 293,
+    "estimated_audio_minutes_at_135_wpm": 2.17,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

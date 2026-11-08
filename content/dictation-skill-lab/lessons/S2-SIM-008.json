@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-008",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Science discovery centre plan",
+  "title": "Lakeside Science Centre: Exhibits and Events",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "map_navigation",
+    "public_science"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, everyone. I am Oliver, the education officer at Lakeside Science Centre. We have updated several displays to make them more interactive, but we want visitors to understand the safety limits too. I will go over the day’s programme before explaining the rooms on your map.",
+      "translation_vi": "Xin chào, tôi là Oliver, cán bộ giáo dục Trung tâm Khoa học Lakeside. Chúng tôi cập nhật trưng bày tương tác nhưng cần tuân thủ an toàn. Trước hết là lịch rồi đến sơ đồ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The astronomy presentation begins at half past eleven, rather than at noon as stated in the printed brochure. The presenter has another commitment after lunch.",
+      "translation_vi": "Buổi thuyết trình thiên văn bắt đầu mười một giờ ba mươi, không phải trưa như tờ rơi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Visitors can try the motion simulator from age twelve. Younger children may watch through the window but cannot enter the moving cabin.",
+      "translation_vi": "Khách từ mười hai tuổi được thử mô phỏng chuyển động; trẻ nhỏ hơn có thể xem qua kính nhưng không vào buồng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The centre offers a short robotics demonstration every hour. To reserve a seat, please use the touch-screen kiosk near the entrance instead of asking in the café.",
+      "translation_vi": "Trung tâm trình diễn robot mỗi giờ; đặt ghế bằng ki-ốt cảm ứng gần cổng, không hỏi tại quán.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "School visitors are given a practical worksheet that guides them through three displays. Teachers should collect it from the education desk before the group splits up.",
+      "translation_vi": "Đoàn trường nhận phiếu thực hành hướng dẫn ba khu; giáo viên lấy ở bàn giáo dục trước khi nhóm tách ra.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The temporary exhibition about sound is on the ground floor. It was previously advertised upstairs, but moving equipment there proved too difficult.",
+      "translation_vi": "Triển lãm âm thanh tạm thời ở tầng trệt; trước quảng cáo tầng trên nhưng khó chuyển thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "One aim of the centre is to show that science is not only about finding the correct answer immediately. Many displays ask visitors to make a prediction, try something, and change their explanation after seeing the result. Our staff encourage questions, including questions to which they may not yet know the answer.",
+      "translation_vi": "Trung tâm muốn cho thấy khoa học không chỉ là trả lời đúng ngay. Nhiều khu yêu cầu dự đoán, thử và sửa cách giải thích sau kết quả. Nhân viên khuyến khích cả câu hỏi chưa có đáp án.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The building plan has the entrance on the southern edge and the experiment help point right in the middle. I will describe five rooms that may be hard to find from the general signs.",
+      "translation_vi": "Sơ đồ có cổng phía nam và điểm hỗ trợ thí nghiệm ở chính giữa. Tôi sẽ hướng dẫn năm phòng khó tìm qua biển chung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The renewable-energy lab is in the north-east corner, past the staircase. Inside, visitors can test how small solar panels respond to different lighting conditions.",
+      "translation_vi": "Phòng năng lượng tái tạo ở góc đông bắc, qua cầu thang, thử tấm pin nhỏ dưới ánh sáng khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Our space exploration room is directly north of the experiment help point, at the end of the central passage. You will see a large model of a satellite outside.",
+      "translation_vi": "Phòng khám phá không gian ở ngay phía bắc điểm hỗ trợ, cuối hành lang giữa, có mô hình vệ tinh lớn bên ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The sound tunnel is to the west of the help point, halfway through the building. It has padded walls so people can compare echoes without disturbing other exhibits.",
+      "translation_vi": "Đường hầm âm thanh nằm phía tây điểm hỗ trợ, giữa tòa nhà, có tường đệm để thử tiếng vang.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The water science corner is immediately right of the entrance, in the south-east corner. It is designed with lower benches for younger visitors.",
+      "translation_vi": "Góc khoa học nước ngay bên phải cổng, ở đông nam, bàn thấp cho khách nhỏ tuổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "For the engineering challenge room, continue straight ahead after entering. It occupies the southern section of the central passage, before you reach the experiment help point in the middle of the building.",
+      "translation_vi": "Phòng thử thách kỹ thuật ở ngay phía trước sau cổng, phần phía nam hành lang giữa, trước điểm hỗ trợ thí nghiệm nằm giữa tòa nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "You may notice that some experiments are repeated at different times of day. This is intentional, because children learn a great deal by seeing that the same basic process can produce slightly different results. Please do not change equipment settings unless a demonstrator asks you to.",
+      "translation_vi": "Một số thí nghiệm lặp vào thời điểm khác nhau để trẻ thấy cùng quy trình có thể cho kết quả hơi khác. Đừng tự chỉnh thiết bị nếu nhân viên chưa yêu cầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "If you are unsure whether an exhibit is suitable for young children, ask a demonstrator before using it. We hope you enjoy experimenting safely.",
+      "translation_vi": "Nếu không chắc trưng bày phù hợp trẻ nhỏ hay không, hãy hỏi nhân viên trước khi sử dụng. Chúc trải nghiệm an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "map_navigation",
+        "public_science"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Astronomy talk: ____.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The astronomy presentation begins at half past eleven, rather than at noon as stated in the printed brochure. The presenter has another commitment after lunch.",
+      "explanation_vi": "Buổi thuyết trình thiên văn bắt đầu mười một giờ ba mươi, không phải trưa như tờ rơi.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "half past eleven"
+      ],
+      "spoken_answer": "half past eleven",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Simulator minimum age: ____.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Visitors can try the motion simulator from age twelve. Younger children may watch through the window but cannot enter the moving cabin.",
+      "explanation_vi": "Khách từ mười hai tuổi được thử mô phỏng chuyển động; trẻ nhỏ hơn có thể xem qua kính nhưng không vào buồng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "twelve"
+      ],
+      "spoken_answer": "twelve",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Reserve a robotics seat via the ____ kiosk.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The centre offers a short robotics demonstration every hour. To reserve a seat, please use the touch-screen kiosk near the entrance instead of asking in the café.",
+      "explanation_vi": "Trung tâm trình diễn robot mỗi giờ; đặt ghế bằng ki-ốt cảm ứng gần cổng, không hỏi tại quán.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "touch-screen"
+      ],
+      "spoken_answer": "touch-screen",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "School groups collect a practical ____.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "School visitors are given a practical worksheet that guides them through three displays. Teachers should collect it from the education desk before the group splits up.",
+      "explanation_vi": "Đoàn trường nhận phiếu thực hành hướng dẫn ba khu; giáo viên lấy ở bàn giáo dục trước khi nhóm tách ra.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "worksheet"
+      ],
+      "spoken_answer": "worksheet",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Sound exhibition is on the ____ floor.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The temporary exhibition about sound is on the ground floor. It was previously advertised upstairs, but moving equipment there proved too difficult.",
+      "explanation_vi": "Triển lãm âm thanh tạm thời ở tầng trệt; trước quảng cáo tầng trên nhưng khó chuyển thiết bị.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "ground"
+      ],
+      "spoken_answer": "ground",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Renewable-energy lab",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The renewable-energy lab is in the north-east corner, past the staircase. Inside, visitors can test how small solar panels respond to different lighting conditions.",
+      "explanation_vi": "Phòng năng lượng tái tạo ở góc đông bắc, qua cầu thang, thử tấm pin nhỏ dưới ánh sáng khác nhau.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-008",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_008.svg"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Space exploration room",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Our space exploration room is directly north of the experiment help point, at the end of the central passage. You will see a large model of a satellite outside.",
+      "explanation_vi": "Phòng khám phá không gian ở ngay phía bắc điểm hỗ trợ, cuối hành lang giữa, có mô hình vệ tinh lớn bên ngoài.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-008",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_008.svg"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Sound tunnel",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The sound tunnel is to the west of the help point, halfway through the building. It has padded walls so people can compare echoes without disturbing other exhibits.",
+      "explanation_vi": "Đường hầm âm thanh nằm phía tây điểm hỗ trợ, giữa tòa nhà, có tường đệm để thử tiếng vang.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-008",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_008.svg"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Water science corner",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "The water science corner is immediately right of the entrance, in the south-east corner. It is designed with lower benches for younger visitors.",
+      "explanation_vi": "Góc khoa học nước ngay bên phải cổng, ở đông nam, bàn thấp cho khách nhỏ tuổi.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "H"
+      ],
+      "correct_option": "H",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-008",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_008.svg"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Engineering challenge room",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "For the engineering challenge room, continue straight ahead after entering. It occupies the southern section of the central passage, before you reach the experiment help point in the middle of the building.",
+      "explanation_vi": "Phòng thử thách kỹ thuật ở ngay phía trước sau cổng, phần phía nam hành lang giữa, trước điểm hỗ trợ thí nghiệm nằm giữa tòa nhà.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_science"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "G"
+      ],
+      "correct_option": "G",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-008",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_008.svg"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "map_asset_id": "M26-MAP-008",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_008.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "4e6af737f18d092bd4651e69648761bba9595955ca94714ff165aa8304adc8a5",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.41,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  },
+  "map_asset": {
+    "map_asset_id": "M26-MAP-008",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_008.svg",
+    "format": "svg",
+    "orientation": "NORTH UP / MAIN ENTRANCE SOUTH",
+    "question_ids": [
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10"
+    ],
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true
+  }
+}

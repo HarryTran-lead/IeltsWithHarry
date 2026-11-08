@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-006",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Materials science and life-cycle assessment",
+  "title": "The Hidden Costs of a Battery",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "battery_lifecycle",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "When assessing a rechargeable battery, focusing only on what happens when it powers a device leaves out most of the story. Scientists use life-cycle assessment to trace environmental effects from obtaining raw materials to manufacturing, use and disposal. The boundaries chosen for that assessment are crucial: two reports may disagree simply because they include different stages.",
+      "translation_vi": "Khi đánh giá pin sạc, chỉ nhìn lúc pin chạy thiết bị sẽ bỏ sót phần lớn câu chuyện. Các nhà khoa học dùng đánh giá vòng đời để theo dõi tác động môi trường từ khai thác nguyên liệu đến chế tạo, sử dụng và xử lý. Ranh giới đánh giá rất quan trọng: hai báo cáo có thể khác kết quả chỉ vì xét các giai đoạn khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The first stage usually includes mining and refining materials. These activities require energy, water and infrastructure, and their impacts vary according to geography. To compare different batteries fairly, researchers define a functional unit, such as one unit of electricity delivered over the battery's working life. Comparing batteries merely by physical weight can be misleading when their capacities differ.",
+      "translation_vi": "Giai đoạn đầu gồm khai thác và tinh chế nguyên liệu, tiêu tốn năng lượng, nước và hạ tầng; tác động tùy địa điểm. Để so pin công bằng, nhà nghiên cứu xác định đơn vị chức năng, chẳng hạn lượng điện cung cấp suốt đời pin. Chỉ so trọng lượng pin dễ gây sai khi dung lượng khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A battery's chemistry affects how it performs and what materials it requires. Some designs offer high energy density, meaning they store a great deal of electricity relative to their mass. Others may prioritise cost or stability. We should not confuse energy density with total storage: a small battery can be dense in energy yet hold less electricity than a much larger one.",
+      "translation_vi": "Hóa học pin quyết định hiệu năng và nguyên liệu. Một số thiết kế có mật độ năng lượng cao: chứa nhiều điện so với khối lượng. Loại khác ưu tiên giá hoặc độ ổn định. Không nên nhầm mật độ năng lượng với tổng dung lượng; pin nhỏ có thể có mật độ cao nhưng chứa ít điện hơn pin lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The manufacturing stage also matters. Drying electrodes, preparing components and operating clean production environments can demand substantial energy. The resulting emissions depend on the electricity supply used by factories. A plant powered mainly by cleaner sources may have a different manufacturing footprint from an otherwise similar plant powered by more carbon-intensive electricity.",
+      "translation_vi": "Chế tạo pin cũng quan trọng. Sấy điện cực, chuẩn bị bộ phận và duy trì môi trường sản xuất sạch đều dùng nhiều năng lượng. Lượng phát thải tùy nguồn điện nhà máy. Nhà máy dùng điện sạch có dấu chân môi trường sản xuất khác nơi dùng điện từ nguồn phát thải cao dù quy trình tương tự.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "During use, batteries gradually lose their ability to hold charge. Researchers monitor capacity fade, often recording performance over repeated charging cycles. The rate depends on temperature, charging patterns and the particular design. It would be incorrect to claim that all batteries decline in the same way simply because they have undergone the same number of cycles.",
+      "translation_vi": "Trong sử dụng, pin dần mất khả năng tích điện. Nhà nghiên cứu theo dõi suy giảm dung lượng qua các chu kỳ sạc. Tốc độ giảm tùy nhiệt độ, thói quen sạc và thiết kế. Không thể kết luận mọi pin suy giảm giống nhau chỉ vì cùng số chu kỳ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "One possible response is to give a battery a second application when it no longer meets the demands of its original equipment. For instance, some retired vehicle batteries may be examined for stationary storage. But suitability must be tested carefully, including safety and remaining performance. This strategy is called second-life use; it is an option, not an automatic benefit.",
+      "translation_vi": "Một hướng xử lý là dùng pin vào nhiệm vụ khác khi không còn đạt yêu cầu thiết bị gốc, ví dụ pin xe cũ có thể thử làm lưu trữ cố định. Nhưng phải kiểm tra an toàn và hiệu năng còn lại. Cách đó gọi là sử dụng đời thứ hai, là một khả năng chứ không tự động có lợi.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "At the end of use, materials can sometimes be recovered. The effectiveness of recycling systems depends on collection, transport, the chemistry involved and how pure the recovered materials become. A theoretically recyclable battery may not be recycled in practice if facilities are inaccessible or collection rates are low. Policies therefore need to address the whole chain.",
+      "translation_vi": "Cuối vòng đời, một số vật liệu có thể thu hồi. Hiệu quả hệ thống tái chế tùy thu gom, vận chuyển, hóa học pin và độ tinh khiết nguyên liệu thu hồi. Pin có thể tái chế về mặt lý thuyết vẫn không được tái chế nếu thiếu cơ sở hoặc thu gom yếu. Chính sách phải xét cả chuỗi.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The overall message is that there is no meaningful environmental ranking without stating assumptions. Battery size, lifetime, electricity sources and collection practices can all alter the result. Good comparisons report system boundaries openly, allowing readers to see which activities were counted. That transparency is more useful than a simple label declaring one technology completely clean.",
+      "translation_vi": "Thông điệp chung: không thể xếp hạng môi trường nếu không nêu giả định. Kích cỡ, tuổi thọ, nguồn điện và cách thu gom đều đổi kết quả. So sánh tốt phải công bố ranh giới hệ thống, cho người đọc biết hoạt động nào được tính; điều đó giá trị hơn nhãn “sạch hoàn toàn”.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "A method covering production, use and disposal is ____.",
+      "correct_answers": [
+        "life-cycle assessment"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Scientists use life-cycle assessment to trace environmental effects from obtaining raw materials to manufacturing, use and disposal.",
+      "explanation_vi": "Life-cycle assessment là phân tích tác động xuyên suốt vòng đời sản phẩm.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Fair comparison requires a common ____ rather than battery weight.",
+      "correct_answers": [
+        "functional unit"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "To compare different batteries fairly, researchers define a functional unit, such as one unit of electricity delivered over the battery's working life.",
+      "explanation_vi": "Functional unit là thước đo chức năng chuẩn để so sản phẩm.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Electricity stored per unit of mass is described by ____.",
+      "correct_answers": [
+        "energy density"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Some designs offer high energy density, meaning they store a great deal of electricity relative to their mass.",
+      "explanation_vi": "Energy density chỉ lượng năng lượng so với khối lượng, không phải tổng công suất.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Factory energy sources influence the battery's ____.",
+      "correct_answers": [
+        "manufacturing footprint"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "A plant powered mainly by cleaner sources may have a different manufacturing footprint from an otherwise similar plant powered by more carbon-intensive electricity.",
+      "explanation_vi": "Manufacturing footprint là tác động môi trường của giai đoạn chế tạo.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Gradual loss of charge-holding ability is called ____.",
+      "correct_answers": [
+        "capacity fade"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Researchers monitor capacity fade, often recording performance over repeated charging cycles.",
+      "explanation_vi": "Capacity fade là hiện tượng dung lượng khả dụng suy giảm theo thời gian.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Reusing retired batteries in other applications is ____.",
+      "correct_answers": [
+        "second-life use"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "This strategy is called second-life use; it is an option, not an automatic benefit.",
+      "explanation_vi": "Second-life use là dùng pin cũ cho mục đích mới sau khi kiểm tra.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "Recovery of materials depends on effective ____.",
+      "correct_answers": [
+        "recycling systems"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The effectiveness of recycling systems depends on collection, transport, the chemistry involved and how pure the recovered materials become.",
+      "explanation_vi": "Recycling systems bao gồm thu gom và xử lý, không chỉ công nghệ phân tách.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "Transparent studies clearly state their ____.",
+      "correct_answers": [
+        "system boundaries"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Good comparisons report system boundaries openly, allowing readers to see which activities were counted.",
+      "explanation_vi": "System boundaries xác định những công đoạn được đưa vào phép tính.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "battery_lifecycle",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "To compare different batteries fairly, researchers define a functional unit, such as one unit of electricity delivered over the battery's working life."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 170,
+      "source_char_end": 321,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "To compare different batteries fairly, researchers define a functional unit, such as one unit of electricity delivered over the battery's working life.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "A plant powered mainly by cleaner sources may have a different manufacturing footprint from an otherwise similar plant powered by more carbon-intensive electricity."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 229,
+      "source_char_end": 393,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "A plant powered mainly by cleaner sources may have a different manufacturing footprint from an otherwise similar plant powered by more carbon-intensive electricity.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "This strategy is called second-life use; it is an option, not an automatic benefit."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 298,
+      "source_char_end": 381,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "This strategy is called second-life use; it is an option, not an automatic benefit.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Good comparisons report system boundaries openly, allowing readers to see which activities were counted."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 197,
+      "source_char_end": 301,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Good comparisons report system boundaries openly, allowing readers to see which activities were counted.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Some designs offer high ____, meaning they store a great deal of electricity relative to their mass.",
+      "correct_answers": [
+        "energy density"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Some designs offer high energy density, meaning they store a great deal of electricity relative to their mass.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: The effectiveness of ____ depends on collection, transport, the chemistry involved and how pure the recovered materials become.",
+      "correct_answers": [
+        "recycling systems"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The effectiveness of recycling systems depends on collection, transport, the chemistry involved and how pure the recovered materials become.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-006-V01",
+      "expression_en": "life-cycle assessment",
+      "meaning_vi": "đánh giá vòng đời",
+      "part_of_speech": "noun phrase",
+      "example_en": "Scientists use life-cycle assessment to trace environmental effects from obtaining raw materials to manufacturing, use and disposal.",
+      "example_vi": "Khi đánh giá pin sạc, chỉ nhìn lúc pin chạy thiết bị sẽ bỏ sót phần lớn câu chuyện. Các nhà khoa học dùng đánh giá vòng đời để theo dõi tác động môi trường từ khai thác nguyên liệu đến chế tạo, sử dụng và xử lý. Ranh giới đánh giá rất quan trọng: hai báo cáo có thể khác kết quả chỉ vì xét các giai đoạn khác nhau.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-006-V02",
+      "expression_en": "functional unit",
+      "meaning_vi": "đơn vị chức năng để so sánh",
+      "part_of_speech": "noun phrase",
+      "example_en": "To compare different batteries fairly, researchers define a functional unit, such as one unit of electricity delivered over the battery's working life.",
+      "example_vi": "Giai đoạn đầu gồm khai thác và tinh chế nguyên liệu, tiêu tốn năng lượng, nước và hạ tầng; tác động tùy địa điểm. Để so pin công bằng, nhà nghiên cứu xác định đơn vị chức năng, chẳng hạn lượng điện cung cấp suốt đời pin. Chỉ so trọng lượng pin dễ gây sai khi dung lượng khác nhau.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-006-V03",
+      "expression_en": "energy density",
+      "meaning_vi": "mật độ năng lượng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Some designs offer high energy density, meaning they store a great deal of electricity relative to their mass.",
+      "example_vi": "Hóa học pin quyết định hiệu năng và nguyên liệu. Một số thiết kế có mật độ năng lượng cao: chứa nhiều điện so với khối lượng. Loại khác ưu tiên giá hoặc độ ổn định. Không nên nhầm mật độ năng lượng với tổng dung lượng; pin nhỏ có thể có mật độ cao nhưng chứa ít điện hơn pin lớn.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-006-V04",
+      "expression_en": "manufacturing footprint",
+      "meaning_vi": "dấu chân môi trường của sản xuất",
+      "part_of_speech": "noun phrase",
+      "example_en": "A plant powered mainly by cleaner sources may have a different manufacturing footprint from an otherwise similar plant powered by more carbon-intensive electricity.",
+      "example_vi": "Chế tạo pin cũng quan trọng. Sấy điện cực, chuẩn bị bộ phận và duy trì môi trường sản xuất sạch đều dùng nhiều năng lượng. Lượng phát thải tùy nguồn điện nhà máy. Nhà máy dùng điện sạch có dấu chân môi trường sản xuất khác nơi dùng điện từ nguồn phát thải cao dù quy trình tương tự.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-006-V05",
+      "expression_en": "capacity fade",
+      "meaning_vi": "sự suy giảm dung lượng pin",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers monitor capacity fade, often recording performance over repeated charging cycles.",
+      "example_vi": "Trong sử dụng, pin dần mất khả năng tích điện. Nhà nghiên cứu theo dõi suy giảm dung lượng qua các chu kỳ sạc. Tốc độ giảm tùy nhiệt độ, thói quen sạc và thiết kế. Không thể kết luận mọi pin suy giảm giống nhau chỉ vì cùng số chu kỳ.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-006-V06",
+      "expression_en": "second-life use",
+      "meaning_vi": "việc tái sử dụng ở vòng đời thứ hai",
+      "part_of_speech": "noun phrase",
+      "example_en": "This strategy is called second-life use; it is an option, not an automatic benefit.",
+      "example_vi": "Một hướng xử lý là dùng pin vào nhiệm vụ khác khi không còn đạt yêu cầu thiết bị gốc, ví dụ pin xe cũ có thể thử làm lưu trữ cố định. Nhưng phải kiểm tra an toàn và hiệu năng còn lại. Cách đó gọi là sử dụng đời thứ hai, là một khả năng chứ không tự động có lợi.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "32f0747f59d21a784e8df4808e30c4ea6cce744e4f70843dbf6ea30d74bdf8ae",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_04",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "A method covering production, use and disposal is ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Fair comparison requires a common ____ rather than battery weight."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Electricity stored per unit of mass is described by ____."
+          },
+          {
+            "question_id": "Q04",
+            "prompt": "Factory energy sources influence the battery's ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04"
+        ]
+      },
+      {
+        "group_id": "IELTS_FLOW_05_06",
+        "type": "flow_chart_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "ordered_flow_steps",
+        "group_heading": "Process and assessment steps",
+        "items": [
+          {
+            "question_id": "Q05",
+            "prompt": "Gradual loss of charge-holding ability is called ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Reusing retired batteries in other applications is ____."
+          }
+        ],
+        "question_ids": [
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SENTENCE_07_08",
+        "type": "sentence_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "numbered_sentences",
+        "group_heading": "Conclusions from the lecture",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Recovery of materials depends on effective ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Transparent studies clearly state their ____."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 454,
+    "estimated_audio_minutes_at_135_wpm": 3.36,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

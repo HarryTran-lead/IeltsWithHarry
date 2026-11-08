@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-065",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Dates",
+  "title": "Appointments and time slots",
+  "learning_objectives_vi": [
+    "Phân biệt thứ, giờ bắt đầu và khung giờ mới.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The parent meeting starts at half past six on Monday evening.",
+      "translation_vi": "Họp phụ huynh bắt đầu lúc sáu giờ rưỡi tối thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "Monday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Hai",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "I booked the earlier slot on Thursday because I finish work at four.",
+      "translation_vi": "Tôi đặt khung giờ sớm hơn vào thứ Năm vì tôi tan làm lúc bốn giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "Thursday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Năm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The clinic has a morning slot on Wednesday, but the afternoon is full.",
+      "translation_vi": "Phòng khám còn lịch sáng thứ Tư nhưng buổi chiều đã kín.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "Wednesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Tư",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Friday's appointment has moved from nine to eleven in the morning.",
+      "translation_vi": "Cuộc hẹn thứ Sáu đã chuyển từ chín sang mười một giờ sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "eleven",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mười một",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We can offer an evening appointment on Tuesday after seven.",
+      "translation_vi": "Chúng tôi có thể sắp xếp lịch buổi tối vào thứ Ba sau bảy giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "Tuesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Ba",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The school tour starts at a quarter to ten on Saturday.",
+      "translation_vi": "Chuyến tham quan trường bắt đầu lúc chín giờ bốn mươi lăm thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "Saturday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Bảy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please be here by eight on Wednesday; the doors close at half past.",
+      "translation_vi": "Vui lòng đến trước tám giờ thứ Tư; cửa đóng lúc tám giờ rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "Wednesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Tư",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The adviser can call you at noon on Thursday, rather than in the evening.",
+      "translation_vi": "Cố vấn có thể gọi lúc trưa thứ Năm thay vì tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "noon",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "giữa trưa",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The training starts on Friday at nine, and registration opens at eight.",
+      "translation_vi": "Buổi tập bắt đầu lúc chín giờ thứ Sáu; đăng ký mở từ tám giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "nine",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chín giờ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Your table is reserved for Sunday at six, not at seven.",
+      "translation_vi": "Bàn của bạn được đặt lúc sáu giờ Chủ nhật, không phải bảy giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "time_slot_changes",
+        "dates"
+      ],
+      "target_value": "six",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sáu giờ",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The parent meeting starts at half past six on Monday evening."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The parent meeting starts at half past six on Monday evening. Nghĩa: Họp phụ huynh bắt đầu lúc sáu giờ rưỡi tối thứ Hai.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I booked the earlier slot on Thursday because I finish work at four."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I booked the earlier slot on Thursday because I finish work at four. Nghĩa: Tôi đặt khung giờ sớm hơn vào thứ Năm vì tôi tan làm lúc bốn giờ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The clinic has a morning slot on Wednesday, but the afternoon is full."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The clinic has a morning slot on Wednesday, but the afternoon is full. Nghĩa: Phòng khám còn lịch sáng thứ Tư nhưng buổi chiều đã kín.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Friday's appointment has moved from nine to eleven in the morning."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Friday's appointment has moved from nine to eleven in the morning. Nghĩa: Cuộc hẹn thứ Sáu đã chuyển từ chín sang mười một giờ sáng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We can offer an evening appointment on Tuesday after seven."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We can offer an evening appointment on Tuesday after seven. Nghĩa: Chúng tôi có thể sắp xếp lịch buổi tối vào thứ Ba sau bảy giờ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The school tour starts at a quarter to ten on Saturday."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The school tour starts at a quarter to ten on Saturday. Nghĩa: Chuyến tham quan trường bắt đầu lúc chín giờ bốn mươi lăm thứ Bảy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please be here by eight on Wednesday; the doors close at half past."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please be here by eight on Wednesday; the doors close at half past. Nghĩa: Vui lòng đến trước tám giờ thứ Tư; cửa đóng lúc tám giờ rưỡi.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The adviser can call you at noon on Thursday, rather than in the evening."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The adviser can call you at noon on Thursday, rather than in the evening. Nghĩa: Cố vấn có thể gọi lúc trưa thứ Năm thay vì tối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The training starts on Friday at nine, and registration opens at eight."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The training starts on Friday at nine, and registration opens at eight. Nghĩa: Buổi tập bắt đầu lúc chín giờ thứ Sáu; đăng ký mở từ tám giờ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Your table is reserved for Sunday at six, not at seven."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Your table is reserved for Sunday at six, not at seven. Nghĩa: Bàn của bạn được đặt lúc sáu giờ Chủ nhật, không phải bảy giờ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "time_slot_changes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Chuyến tham quan diễn ra vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: Saturday (thứ Bảy). Dẫn chứng: The school tour starts at a quarter to ten on Saturday. Nghĩa: Chuyến tham quan trường bắt đầu lúc chín giờ bốn mươi lăm thứ Bảy.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "time_slot_changes",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Cần có mặt vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: Wednesday (thứ Tư). Dẫn chứng: Please be here by eight on Wednesday; the doors close at half past. Nghĩa: Vui lòng đến trước tám giờ thứ Tư; cửa đóng lúc tám giờ rưỡi.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "time_slot_changes",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Cố vấn có thể gọi vào thời điểm nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "noon"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: noon (giữa trưa). Dẫn chứng: The adviser can call you at noon on Thursday, rather than in the evening. Nghĩa: Cố vấn có thể gọi lúc trưa thứ Năm thay vì tối.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "time_slot_changes",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Buổi tập bắt đầu lúc mấy giờ? (viết chữ tiếng Anh) Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "nine"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: nine (chín giờ). Dẫn chứng: The training starts on Friday at nine, and registration opens at eight. Nghĩa: Buổi tập bắt đầu lúc chín giờ thứ Sáu; đăng ký mở từ tám giờ.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "time_slot_changes",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Bàn được đặt lúc mấy giờ? (viết chữ tiếng Anh) Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: six (sáu giờ). Dẫn chứng: Your table is reserved for Sunday at six, not at seven. Nghĩa: Bàn của bạn được đặt lúc sáu giờ Chủ nhật, không phải bảy giờ.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "time_slot_changes",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Monday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Hai",
+      "example_en": "The parent meeting starts at half past six on Monday evening.",
+      "example_vi": "Họp phụ huynh bắt đầu lúc sáu giờ rưỡi tối thứ Hai.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Thursday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Năm",
+      "example_en": "I booked the earlier slot on Thursday because I finish work at four.",
+      "example_vi": "Tôi đặt khung giờ sớm hơn vào thứ Năm vì tôi tan làm lúc bốn giờ.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Wednesday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Tư",
+      "example_en": "The clinic has a morning slot on Wednesday, but the afternoon is full.",
+      "example_vi": "Phòng khám còn lịch sáng thứ Tư nhưng buổi chiều đã kín.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "eleven",
+      "pos": "ordinal / numeral",
+      "meaning_vi": "mười một",
+      "example_en": "Friday's appointment has moved from nine to eleven in the morning.",
+      "example_vi": "Cuộc hẹn thứ Sáu đã chuyển từ chín sang mười một giờ sáng.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Tuesday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Ba",
+      "example_en": "We can offer an evening appointment on Tuesday after seven.",
+      "example_vi": "Chúng tôi có thể sắp xếp lịch buổi tối vào thứ Ba sau bảy giờ.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Saturday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Bảy",
+      "example_en": "The school tour starts at a quarter to ten on Saturday.",
+      "example_vi": "Chuyến tham quan trường bắt đầu lúc chín giờ bốn mươi lăm thứ Bảy.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "time_slot_changes",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Phân biệt thứ, giờ bắt đầu và khung giờ mới.",
+    "category": "dates",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-065-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "bcedddfda6086a2797f16ab9bee1af88eaa8159f4d7095c1edc7d2830f5251e7",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Phân biệt thứ, giờ bắt đầu và khung giờ mới.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The booking was for Tuesday, but it is now on Sunday.",
+        "written_value": "Sunday",
+        "teacher_note_vi": "Từ but/now báo hiệu ngày cuối cùng đã thay đổi."
+      },
+      {
+        "spoken_example": "The early appointment is at nine; the class begins at ten.",
+        "written_value": "ten",
+        "teacher_note_vi": "Xác định đang được hỏi giờ hẹn hay giờ lớp học, không lấy số xuất hiện đầu."
+      }
+    ],
+    "learning_steps": [
+      "Đọc ví dụ hướng dẫn phân biệt lịch cũ và lịch chốt.",
+      "Nghe một lần, khoanh cụm chỉ lịch cuối cùng hoặc đối tượng được hỏi.",
+      "Làm Dictation và câu hỏi rút thông tin; chỉ mở transcript sau khi nộp.",
+      "Kiểm tra chuyển giao bằng hai câu audio chưa gặp, lần nghe đầu."
+    ],
+    "common_mistakes": [
+      "Nhầm giờ mở đăng ký với giờ sự kiện bắt đầu.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Đâu là thông tin cuối cùng, và nó thuộc mốc thời gian nào?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

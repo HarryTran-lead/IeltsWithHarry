@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-003",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Cognitive psychology and recall",
+  "title": "Why Remembering Changes a Memory",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "memory_reconstruction",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Memory is not a video recording waiting untouched in a cupboard. Recalling an event involves reconstructing details from several sources, including the original experience and what we learned afterwards. Psychologists therefore distinguish the original event from the person's recollection. That distinction becomes especially important when people describe an incident repeatedly over several months.",
+      "translation_vi": "Ký ức không phải video nguyên vẹn. Khi nhớ lại, ta tái dựng từ trải nghiệm ban đầu và kiến thức tiếp nhận về sau. Tâm lý học phân biệt sự kiện gốc với hồi tưởng của người chứng kiến; điều này đặc biệt quan trọng khi một người kể lại sự việc nhiều lần trong nhiều tháng.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "During initial learning, the brain links different features into a representation. Information about sights, sounds and meaning is integrated through a process called encoding. Paying attention matters, but emotion and existing knowledge can also shape which details are encoded. A person may remember the embarrassment of a mistake more strongly than the colour of a nearby wall.",
+      "translation_vi": "Khi học, não liên kết nhiều đặc điểm thành biểu diễn trí nhớ. Thông tin về hình ảnh, âm thanh và ý nghĩa được đưa vào qua quá trình mã hóa. Chú ý quan trọng, nhưng cảm xúc và kiến thức có sẵn cũng ảnh hưởng chi tiết được ghi nhớ; người ta có thể nhớ cảm giác xấu hổ hơn màu tường bên cạnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Later, a familiar smell or a particular song can trigger an episode. Researchers call such reminders retrieval cues. They are helpful when they resemble the original situation, yet they can also encourage mistaken associations. For instance, a classroom photograph might bring back a lesson while making two separate lessons feel as though they happened on the same day.",
+      "translation_vi": "Sau đó, mùi quen hoặc bài hát kích hoạt ký ức. Những dấu gợi nhớ gọi là retrieval cues. Chúng hữu ích khi giống bối cảnh gốc nhưng cũng có thể gây liên tưởng nhầm. Ảnh lớp học có thể gợi lại bài cũ và khiến hai buổi học khác nhau như diễn ra cùng ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A crucial finding from experimental psychology is that questions themselves can affect later answers. If someone is asked how fast cars were moving when they crashed, the verb may suggest a different speed from a milder description. This is a form of leading language. It does not mean witnesses deliberately lie; the wording changes what seems plausible during reconstruction.",
+      "translation_vi": "Thí nghiệm tâm lý cho thấy câu hỏi có thể ảnh hưởng lời kể về sau. Hỏi xe lao vào nhau nhanh đến mức nào có thể gợi mức tốc độ khác cách mô tả nhẹ hơn. Đó là ngôn ngữ định hướng (leading language). Nhân chứng không nhất thiết nói dối; chính cách hỏi làm thay đổi điều họ cho là hợp lý.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Another effect occurs when people learn a false detail after an event. They may later mix that detail into what they believe they saw. Researchers term this the misinformation effect. In teaching demonstrations, students may confidently remember an object mentioned in a later story even though it was absent from the original clip. Confidence alone is not proof of accuracy.",
+      "translation_vi": "Khi người ta nghe một chi tiết sai sau sự kiện, họ có thể trộn nó vào điều tin rằng đã nhìn thấy. Đó là hiệu ứng thông tin sai. Trong ví dụ dạy học, sinh viên có thể rất tự tin nhớ một đồ vật chỉ xuất hiện trong câu chuyện kể sau, không hề có trong video gốc. Tự tin không đồng nghĩa chính xác.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "It would be a mistake, though, to conclude that remembering is always harmful. Asking learners to retrieve an idea without looking at their notes can strengthen later recall. This is often called retrieval practice. Its benefit comes from actively recovering information, not merely rereading it. The important condition is to give corrective feedback when the remembered answer is wrong.",
+      "translation_vi": "Tuy nhiên không thể kết luận nhớ lại luôn có hại. Yêu cầu người học tự nhớ kiến thức không nhìn tài liệu có thể giúp ghi nhớ lâu. Đó là luyện truy xuất trí nhớ, hữu ích vì phải chủ động hồi tưởng thay vì đọc lại. Điều kiện là cần phản hồi đúng khi câu trả lời sai.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Evidence quality also depends on the interval between an experience and the later report. As time passes, smaller details are lost and new information may become mixed in. Researchers record the retention interval when designing experiments, so differences between groups are not attributed to a teaching method when one group simply had longer to forget.",
+      "translation_vi": "Chất lượng trí nhớ cũng phụ thuộc khoảng cách từ sự kiện đến lúc kể lại. Thời gian lâu làm mất chi tiết nhỏ và thêm thông tin mới. Nhà nghiên cứu phải ghi khoảng thời gian lưu giữ khi lập thí nghiệm, tránh gán sự khác biệt cho cách dạy trong khi một nhóm có thời gian quên lâu hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "In practice, we should treat memory with respect but not as an exact transcript. Researchers use neutral questions, compare reports with independent evidence and identify information introduced later. Meanwhile, teachers can use carefully designed retrieval exercises to support learning. Both applications rest on the same insight: remembering is an active process, not the simple replay of a file.",
+      "translation_vi": "Trong thực tế, nên tôn trọng ký ức nhưng không coi đó là bản chép chính xác. Nhà nghiên cứu đặt câu hỏi trung lập, so với chứng cứ độc lập và xác định thông tin thêm về sau. Giáo viên có thể dùng bài tập hồi tưởng để cải thiện học tập. Cả hai dựa trên thực tế rằng ghi nhớ lại là một quá trình chủ động.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Researchers distinguish an event from the person's later ____.",
+      "correct_answers": [
+        "recollection"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Psychologists therefore distinguish the original event from the person's recollection.",
+      "explanation_vi": "Recollection là ký ức được hồi tưởng và có thể thay đổi.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "The process of forming an initial memory representation is ____.",
+      "correct_answers": [
+        "encoding"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Information about sights, sounds and meaning is integrated through a process called encoding.",
+      "explanation_vi": "Encoding là bước đưa thông tin vào biểu diễn trí nhớ ban đầu.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Smells and songs that trigger memories are examples of ____.",
+      "correct_answers": [
+        "retrieval cues"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers call such reminders retrieval cues.",
+      "explanation_vi": "Retrieval cue là tín hiệu hỗ trợ truy xuất trí nhớ.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Questions containing suggestive wording use ____.",
+      "correct_answers": [
+        "leading language"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "This is a form of leading language.",
+      "explanation_vi": "Leading language hướng người trả lời tới một cách hiểu nhất định.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Incorporating false later details illustrates the ____.",
+      "correct_answers": [
+        "misinformation effect"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Researchers term this the misinformation effect.",
+      "explanation_vi": "Hiệu ứng thông tin sai là khi ký ức bị chi tiết bổ sung sai lệch tác động.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Recalling information without looking at notes is ____.",
+      "correct_answers": [
+        "retrieval practice"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "This is often called retrieval practice.",
+      "explanation_vi": "Retrieval practice là cách học chủ động lôi kiến thức khỏi trí nhớ.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "Experiments record the ____ between learning and later recall.",
+      "correct_answers": [
+        "retention interval"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Researchers record the retention interval when designing experiments, so differences between groups are not attributed to a teaching method when one group simply had longer to forget.",
+      "explanation_vi": "Retention interval là khoảng thời gian từ lúc ghi nhớ đến lúc kiểm tra lại.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "The lecture describes remembering as an ____ rather than passive playback.",
+      "correct_answers": [
+        "active process"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Both applications rest on the same insight: remembering is an active process, not the simple replay of a file.",
+      "explanation_vi": "Nhớ lại mang tính xây dựng chủ động, không phải phát lại bản ghi cũ.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "memory_reconstruction",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Information about sights, sounds and meaning is integrated through a process called encoding."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 83,
+      "source_char_end": 176,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Information about sights, sounds and meaning is integrated through a process called encoding.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "This is a form of leading language. It does not mean witnesses deliberately lie; the wording changes what seems plausible during reconstruction."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 233,
+      "source_char_end": 377,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "This is a form of leading language. It does not mean witnesses deliberately lie; the wording changes what seems plausible during reconstruction.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "This is often called retrieval practice. Its benefit comes from actively recovering information, not merely rereading it."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 175,
+      "source_char_end": 296,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "This is often called retrieval practice. Its benefit comes from actively recovering information, not merely rereading it.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Both applications rest on the same insight: remembering is an active process, not the simple replay of a file."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 289,
+      "source_char_end": 399,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Both applications rest on the same insight: remembering is an active process, not the simple replay of a file.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Researchers call such reminders ____.",
+      "correct_answers": [
+        "retrieval cues"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers call such reminders retrieval cues.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Researchers record the ____ when designing experiments, so differences between groups are not attributed to a teaching method when one group simply had longer to forget.",
+      "correct_answers": [
+        "retention interval"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Researchers record the retention interval when designing experiments, so differences between groups are not attributed to a teaching method when one group simply had longer to forget.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-003-V01",
+      "expression_en": "recollection",
+      "meaning_vi": "sự hồi tưởng",
+      "part_of_speech": "noun",
+      "example_en": "Psychologists therefore distinguish the original event from the person's recollection.",
+      "example_vi": "Ký ức không phải video nguyên vẹn. Khi nhớ lại, ta tái dựng từ trải nghiệm ban đầu và kiến thức tiếp nhận về sau. Tâm lý học phân biệt sự kiện gốc với hồi tưởng của người chứng kiến; điều này đặc biệt quan trọng khi một người kể lại sự việc nhiều lần trong nhiều tháng.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-003-V02",
+      "expression_en": "encoding",
+      "meaning_vi": "mã hóa thông tin thành trí nhớ",
+      "part_of_speech": "noun",
+      "example_en": "Information about sights, sounds and meaning is integrated through a process called encoding.",
+      "example_vi": "Khi học, não liên kết nhiều đặc điểm thành biểu diễn trí nhớ. Thông tin về hình ảnh, âm thanh và ý nghĩa được đưa vào qua quá trình mã hóa. Chú ý quan trọng, nhưng cảm xúc và kiến thức có sẵn cũng ảnh hưởng chi tiết được ghi nhớ; người ta có thể nhớ cảm giác xấu hổ hơn màu tường bên cạnh.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-003-V03",
+      "expression_en": "retrieval cues",
+      "meaning_vi": "tín hiệu gợi nhớ",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers call such reminders retrieval cues.",
+      "example_vi": "Sau đó, mùi quen hoặc bài hát kích hoạt ký ức. Những dấu gợi nhớ gọi là retrieval cues. Chúng hữu ích khi giống bối cảnh gốc nhưng cũng có thể gây liên tưởng nhầm. Ảnh lớp học có thể gợi lại bài cũ và khiến hai buổi học khác nhau như diễn ra cùng ngày.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-003-V04",
+      "expression_en": "leading language",
+      "meaning_vi": "ngôn ngữ mang tính gợi ý",
+      "part_of_speech": "noun phrase",
+      "example_en": "This is a form of leading language.",
+      "example_vi": "Thí nghiệm tâm lý cho thấy câu hỏi có thể ảnh hưởng lời kể về sau. Hỏi xe lao vào nhau nhanh đến mức nào có thể gợi mức tốc độ khác cách mô tả nhẹ hơn. Đó là ngôn ngữ định hướng (leading language). Nhân chứng không nhất thiết nói dối; chính cách hỏi làm thay đổi điều họ cho là hợp lý.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-003-V05",
+      "expression_en": "misinformation effect",
+      "meaning_vi": "hiệu ứng thông tin sai",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers term this the misinformation effect.",
+      "example_vi": "Khi người ta nghe một chi tiết sai sau sự kiện, họ có thể trộn nó vào điều tin rằng đã nhìn thấy. Đó là hiệu ứng thông tin sai. Trong ví dụ dạy học, sinh viên có thể rất tự tin nhớ một đồ vật chỉ xuất hiện trong câu chuyện kể sau, không hề có trong video gốc. Tự tin không đồng nghĩa chính xác.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-003-V06",
+      "expression_en": "retrieval practice",
+      "meaning_vi": "luyện tập truy xuất trí nhớ",
+      "part_of_speech": "noun phrase",
+      "example_en": "This is often called retrieval practice.",
+      "example_vi": "Tuy nhiên không thể kết luận nhớ lại luôn có hại. Yêu cầu người học tự nhớ kiến thức không nhìn tài liệu có thể giúp ghi nhớ lâu. Đó là luyện truy xuất trí nhớ, hữu ích vì phải chủ động hồi tưởng thay vì đọc lại. Điều kiện là cần phản hồi đúng khi câu trả lời sai.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "c0ed9d72d13fb38a7e9bad9a32d2196208a3fcfec63632f7034b3fea14937cbe",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_04",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "Researchers distinguish an event from the person's later ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "The process of forming an initial memory representation is ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Smells and songs that trigger memories are examples of ____."
+          },
+          {
+            "question_id": "Q04",
+            "prompt": "Questions containing suggestive wording use ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04"
+        ]
+      },
+      {
+        "group_id": "IELTS_FLOW_05_06",
+        "type": "flow_chart_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "ordered_flow_steps",
+        "group_heading": "Process and assessment steps",
+        "items": [
+          {
+            "question_id": "Q05",
+            "prompt": "Incorporating false later details illustrates the ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Recalling information without looking at notes is ____."
+          }
+        ],
+        "question_ids": [
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SENTENCE_07_08",
+        "type": "sentence_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "numbered_sentences",
+        "group_heading": "Conclusions from the lecture",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Experiments record the ____ between learning and later recall."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "The lecture describes remembering as an ____ rather than passive playback."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 459,
+    "estimated_audio_minutes_at_135_wpm": 3.4,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

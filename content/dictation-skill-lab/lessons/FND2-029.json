@@ -1,0 +1,652 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-029",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M17 – Numbers",
+  "title": "Booking references: letters and numbers",
+  "learning_objectives_vi": [
+    "Nghe chính xác booking references: letters and numbers.",
+    "Chép chính xác chữ và số; không đổi chữ O thành số 0",
+    "Chuyển lời đọc thành chữ số/mã chính xác, không đoán theo ý nghĩa."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your booking code is A seven C four.",
+      "translation_vi": "Mã đặt chỗ của bạn là A7C4.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "A7C4",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The reference is B two nine D.",
+      "translation_vi": "Mã tham chiếu là B29D.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "B29D",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please write M five zero K.",
+      "translation_vi": "Hãy viết M50K.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "M50K",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The parcel ID is R six one T.",
+      "translation_vi": "Mã bưu kiện là R61T.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "R61T",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Your ticket has the code F three eight P.",
+      "translation_vi": "Vé của bạn có mã F38P.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "F38P",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The repair code is L seven two B.",
+      "translation_vi": "Mã sửa chữa là L72B.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "L72B",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The order number is X four zero N.",
+      "translation_vi": "Mã đơn hàng là X40N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "X40N",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Our group code is C nine five H.",
+      "translation_vi": "Mã nhóm của chúng tôi là C95H.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "C95H",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The equipment code is Q eight six S.",
+      "translation_vi": "Mã thiết bị là Q86S.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "Q86S",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Please check reference D one four V.",
+      "translation_vi": "Hãy kiểm tra mã tham chiếu D14V.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "alphanumeric_codes",
+        "alphanumeric"
+      ],
+      "target_value": "D14V",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Your booking code is A seven C four."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Mã đặt chỗ của bạn là A7C4.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "T01: Nghe lượt này rồi nhập đúng chữ cái và chữ số của mã, không thêm dấu cách.",
+      "correct_answers": [
+        "A7C4"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Kết quả cần ghi: A7C4. Ngữ cảnh: Mã đặt chỗ của bạn là A7C4.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "alphanumeric"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "alphanumeric",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The reference is B two nine D."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Mã tham chiếu là B29D.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "T02: Nghe lượt này rồi nhập đúng chữ cái và chữ số của mã, không thêm dấu cách.",
+      "correct_answers": [
+        "B29D"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kết quả cần ghi: B29D. Ngữ cảnh: Mã tham chiếu là B29D.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "alphanumeric"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "alphanumeric",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please write M five zero K."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Hãy viết M50K.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "T03: Nghe lượt này rồi nhập đúng chữ cái và chữ số của mã, không thêm dấu cách.",
+      "correct_answers": [
+        "M50K"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kết quả cần ghi: M50K. Ngữ cảnh: Hãy viết M50K.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "alphanumeric"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "alphanumeric",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The parcel ID is R six one T."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Mã bưu kiện là R61T.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "T04: Nghe lượt này rồi nhập đúng chữ cái và chữ số của mã, không thêm dấu cách.",
+      "correct_answers": [
+        "R61T"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Kết quả cần ghi: R61T. Ngữ cảnh: Mã bưu kiện là R61T.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "alphanumeric"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "alphanumeric",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Your ticket has the code F three eight P."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Vé của bạn có mã F38P.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "T05: Nghe lượt này rồi nhập đúng chữ cái và chữ số của mã, không thêm dấu cách.",
+      "correct_answers": [
+        "F38P"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kết quả cần ghi: F38P. Ngữ cảnh: Vé của bạn có mã F38P.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "alphanumeric"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "alphanumeric",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The repair code is L seven two B."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Mã sửa chữa là L72B.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The order number is X four zero N."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Mã đơn hàng là X40N.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our group code is C nine five H."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Mã nhóm của chúng tôi là C95H.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The equipment code is Q eight six S."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Mã thiết bị là Q86S.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please check reference D one four V."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe alphanumeric_codes. Nghĩa: Hãy kiểm tra mã tham chiếu D14V.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "alphanumeric_codes"
+      ],
+      "max_replays_practice": 5
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "A7C4",
+      "pos": "alphanumeric",
+      "meaning_vi": "A7C4 (alphanumeric)",
+      "example_en": "Your booking code is A seven C four.",
+      "example_vi": "Mã đặt chỗ của bạn là A7C4.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "B29D",
+      "pos": "alphanumeric",
+      "meaning_vi": "B29D (alphanumeric)",
+      "example_en": "The reference is B two nine D.",
+      "example_vi": "Mã tham chiếu là B29D.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "M50K",
+      "pos": "alphanumeric",
+      "meaning_vi": "M50K (alphanumeric)",
+      "example_en": "Please write M five zero K.",
+      "example_vi": "Hãy viết M50K.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "R61T",
+      "pos": "alphanumeric",
+      "meaning_vi": "R61T (alphanumeric)",
+      "example_en": "The parcel ID is R six one T.",
+      "example_vi": "Mã bưu kiện là R61T.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "F38P",
+      "pos": "alphanumeric",
+      "meaning_vi": "F38P (alphanumeric)",
+      "example_en": "Your ticket has the code F three eight P.",
+      "example_vi": "Vé của bạn có mã F38P.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "L72B",
+      "pos": "alphanumeric",
+      "meaning_vi": "L72B (alphanumeric)",
+      "example_en": "The repair code is L seven two B.",
+      "example_vi": "Mã sửa chữa là L72B.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "X40N",
+      "pos": "alphanumeric",
+      "meaning_vi": "X40N (alphanumeric)",
+      "example_en": "The order number is X four zero N.",
+      "example_vi": "Mã đơn hàng là X40N.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "C95H",
+      "pos": "alphanumeric",
+      "meaning_vi": "C95H (alphanumeric)",
+      "example_en": "Our group code is C nine five H.",
+      "example_vi": "Mã nhóm của chúng tôi là C95H.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "Q86S",
+      "pos": "alphanumeric",
+      "meaning_vi": "Q86S (alphanumeric)",
+      "example_en": "The equipment code is Q eight six S.",
+      "example_vi": "Mã thiết bị là Q86S.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "D14V",
+      "pos": "alphanumeric",
+      "meaning_vi": "D14V (alphanumeric)",
+      "example_en": "Please check reference D one four V.",
+      "example_vi": "Hãy kiểm tra mã tham chiếu D14V.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "micro_skill_id": "alphanumeric_codes",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_distinct_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Chép chính xác chữ và số; không đổi chữ O thành số 0"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "2f2b7fb1dd055d1683ea17c1fedaa332d80e5e53840f021b36ef146b7ca672ef",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft; numeric normalization and pronunciation require teacher/audio QA.",
+      "Fictional UK phone number ranges used for instructional safety; do not dial."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Trong mã A–Z + chữ số, chữ cái O khác số 0. TTS phải đọc tên từng chữ cái.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "K three B nine",
+        "written_value": "K3B9",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      },
+      {
+        "spoken_example": "M two zero P",
+        "written_value": "M20P",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      }
+    ],
+    "learning_steps": [
+      "Xem quy tắc và hai ví dụ bên dưới trước khi bắt đầu.",
+      "Nghe mỗi câu một lần, chép toàn câu hoặc nhập thông tin số theo yêu cầu.",
+      "Đối chiếu chữ/số và vị trí sai sau khi nộp; nghe lại từng câu khi cần.",
+      "Kiểm tra bằng 2 câu mới chưa xuất hiện trong nội dung luyện."
+    ],
+    "common_mistakes": [
+      "Không tự đổi chữ O thành số 0 hoặc xóa số 0 giữa mã.",
+      "Không dùng lại câu quen thuộc để chứng minh độ vững của kỹ năng."
+    ],
+    "before_audio_question": "Thông tin cần nghe là số lượng, số điện thoại, giờ, tiền hay mã chữ-số?"
+  }
+}

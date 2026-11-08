@@ -1,0 +1,826 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-009",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Weekend food workshop",
+  "title": "Booking a Market Cooking Demonstration",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "food_preferences",
+    "fees",
+    "venue",
+    "booking_details"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Market Kitchen Workshops. Are you enquiring about our weekend demonstrations?",
+      "translation_vi": "Chào buổi sáng, lớp bếp Market Kitchen xin nghe. Chị muốn hỏi các buổi hướng dẫn cuối tuần?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes. Two of my friends and I would like to learn some simple dishes using seasonal vegetables.",
+      "translation_vi": "Đúng. Tôi và hai người bạn muốn học vài món đơn giản từ rau củ theo mùa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We have a pasta workshop and a vegetable curry workshop. The pasta one uses eggs, so it may not suit everyone.",
+      "translation_vi": "Chúng tôi có lớp mì pasta và cà ri rau. Lớp pasta dùng trứng nên có thể không phù hợp tất cả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "One of my friends can't eat eggs. We'll choose the vegetable curry class, provided it isn't very spicy.",
+      "translation_vi": "Một người bạn không ăn trứng được. Chúng tôi chọn lớp cà ri rau nếu không quá cay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "That's fine. You add the spices yourself, and our instructor explains how to make a mild version.",
+      "translation_vi": "Được. Người học tự thêm gia vị, giảng viên sẽ chỉ cách nấu ít cay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Excellent. I found a date on Sunday the eighth, but is that session still running?",
+      "translation_vi": "Tuyệt. Tôi thấy lịch Chủ Nhật ngày 8; buổi đó còn tổ chức không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The eighth has been cancelled because the market is closed for maintenance. The replacement class is on Sunday the fifteenth.",
+      "translation_vi": "Ngày 8 hủy do chợ đóng bảo trì. Lớp thay thế vào Chủ Nhật ngày 15.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "The fifteenth works. I assume it's at the main demonstration kitchen beside the fish stalls?",
+      "translation_vi": "Ngày 15 được. Lớp ở bếp trình diễn chính cạnh quầy cá phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Usually, yes, but for this session we're using the upstairs studio above the bakery. It has more space for small groups.",
+      "translation_vi": "Thường là vậy, nhưng lần này dùng phòng studio tầng trên, phía trên tiệm bánh; rộng hơn cho nhóm nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "We'll find it. What time should we arrive? I know the market itself opens at eight.",
+      "translation_vi": "Chúng tôi sẽ tìm được. Nên tới lúc nào? Tôi biết chợ mở từ tám giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Please arrive by nine forty-five. The demonstration starts at ten, and everyone needs to wash their hands first.",
+      "translation_vi": "Hãy tới trước 9:45. Hướng dẫn bắt đầu lúc mười giờ và mọi người cần rửa tay trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "And the price? The website lists twenty pounds, but there's a note about a group offer.",
+      "translation_vi": "Còn giá? Trên web ghi 20 bảng nhưng có nhắc ưu đãi nhóm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "For three people booking together, it's sixteen pounds each. The normal individual rate remains twenty.",
+      "translation_vi": "Ba người đặt cùng được giá 16 bảng mỗi người. Vé lẻ vẫn 20.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Great. Do we need to bring ingredients, especially vegetables, or will they be provided?",
+      "translation_vi": "Tốt quá. Chúng tôi có phải mang nguyên liệu, nhất là rau củ, hay đã được chuẩn bị?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Everything's provided except an apron. Bring one if you have it; otherwise you can borrow a washable one.",
+      "translation_vi": "Tất cả có sẵn trừ tạp dề. Hãy mang nếu có, hoặc mượn loại giặt được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I'll ask the others. Please reserve three places under the name Clarke; I'll confirm by tonight.",
+      "translation_vi": "Tôi hỏi hai bạn. Hãy giữ ba chỗ dưới tên Clarke; tối nay tôi sẽ xác nhận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "prompt": "Why is the pasta workshop unsuitable?",
+      "correct_answers": [
+        "uses eggs"
+      ],
+      "options": [
+        "too expensive",
+        "too early",
+        "uses eggs"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Mì pasta dùng trứng, một học viên không ăn được.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "pasta one uses eggs",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Chosen class: vegetable ____",
+      "correct_answers": [
+        "curry"
+      ],
+      "spoken_answer": "curry",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tránh lớp pasta vì có người không ăn trứng.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "vegetable curry class",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Replacement class date: Sunday the ____",
+      "correct_answers": [
+        "fifteenth"
+      ],
+      "spoken_answer": "fifteenth",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lớp ngày 8 bị hủy và đổi sang ngày 15.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Sunday the fifteenth",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Classroom: upstairs studio above the ____",
+      "correct_answers": [
+        "bakery"
+      ],
+      "spoken_answer": "bakery",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Buổi này không tổ chức cạnh quầy cá.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "above the bakery",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Arrival time: ____",
+      "correct_answers": [
+        "nine forty-five",
+        "9:45"
+      ],
+      "spoken_answer": "nine forty-five",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phải đến trước khi buổi hướng dẫn bắt đầu lúc mười.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "by nine forty-five",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Group price per person: £____",
+      "correct_answers": [
+        "sixteen",
+        "16"
+      ],
+      "spoken_answer": "sixteen",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Ba người đặt cùng được giá 16 bảng.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "sixteen pounds each",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Item to bring: ____",
+      "correct_answers": [
+        "apron"
+      ],
+      "spoken_answer": "apron",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Nguyên liệu có sẵn, nên mang tạp dề.",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "except an apron",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "How many places does the customer reserve?",
+      "correct_answers": [
+        "three"
+      ],
+      "options": [
+        "three",
+        "two",
+        "four"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Khách đặt ba chỗ cho nhóm.",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "reserve three places",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "One of my friends can't eat eggs. We'll choose the vegetable curry class, provided it isn't very spicy."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Một người bạn không ăn trứng được. Chúng tôi chọn lớp cà ri rau nếu không quá cay.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "The eighth has been cancelled because the market is closed for maintenance. The replacement class is on Sunday the fifteenth."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Ngày 8 hủy do chợ đóng bảo trì. Lớp thay thế vào Chủ Nhật ngày 15.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "We'll find it. What time should we arrive? I know the market itself opens at eight."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Chúng tôi sẽ tìm được. Nên tới lúc nào? Tôi biết chợ mở từ tám giờ.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "Great. Do we need to bring ingredients, especially vegetables, or will they be provided?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Tốt quá. Chúng tôi có phải mang nguyên liệu, nhất là rau củ, hay đã được chuẩn bị?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: One of my friends can't eat eggs. We'll choose the vegetable ____ class, provided it isn't very spicy.",
+      "correct_answers": [
+        "curry"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tránh lớp pasta vì có người không ăn trứng.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: The eighth has been cancelled because the market is closed for maintenance. The replacement class is on Sunday the ____.",
+      "correct_answers": [
+        "fifteenth"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Lớp ngày 8 bị hủy và đổi sang ngày 15.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "food_preferences",
+        "fees",
+        "venue",
+        "booking_details"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-009-V01",
+      "expression_en": "seasonal vegetables",
+      "meaning_vi": "rau củ theo mùa",
+      "part_of_speech": "noun phrase",
+      "example_en": "Yes. Two of my friends and I would like to learn some simple dishes using seasonal vegetables.",
+      "example_vi": "Đúng. Tôi và hai người bạn muốn học vài món đơn giản từ rau củ theo mùa.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-009-V02",
+      "expression_en": "mild version",
+      "meaning_vi": "phiên bản ít cay",
+      "part_of_speech": "noun phrase",
+      "example_en": "That's fine. You add the spices yourself, and our instructor explains how to make a mild version.",
+      "example_vi": "Được. Người học tự thêm gia vị, giảng viên sẽ chỉ cách nấu ít cay.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-009-V03",
+      "expression_en": "replacement class",
+      "meaning_vi": "lớp thay thế",
+      "part_of_speech": "noun phrase",
+      "example_en": "The eighth has been cancelled because the market is closed for maintenance. The replacement class is on Sunday the fifteenth.",
+      "example_vi": "Ngày 8 hủy do chợ đóng bảo trì. Lớp thay thế vào Chủ Nhật ngày 15.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-009-V04",
+      "expression_en": "upstairs studio",
+      "meaning_vi": "phòng học tầng trên",
+      "part_of_speech": "noun phrase",
+      "example_en": "Usually, yes, but for this session we're using the upstairs studio above the bakery. It has more space for small groups.",
+      "example_vi": "Thường là vậy, nhưng lần này dùng phòng studio tầng trên, phía trên tiệm bánh; rộng hơn cho nhóm nhỏ.",
+      "evidence_turn_id": "T09",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-009-V05",
+      "expression_en": "group offer",
+      "meaning_vi": "ưu đãi theo nhóm",
+      "part_of_speech": "noun phrase",
+      "example_en": "And the price? The website lists twenty pounds, but there's a note about a group offer.",
+      "example_vi": "Còn giá? Trên web ghi 20 bảng nhưng có nhắc ưu đãi nhóm.",
+      "evidence_turn_id": "T12",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-009-V06",
+      "expression_en": "apron",
+      "meaning_vi": "tạp dề",
+      "part_of_speech": "noun",
+      "example_en": "Everything's provided except an apron. Bring one if you have it; otherwise you can borrow a washable one.",
+      "example_vi": "Tất cả có sẵn trừ tạp dề. Hãy mang nếu có, hoặc mượn loại giặt được.",
+      "evidence_turn_id": "T15",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "ff930a6664a52a71396a892226634003ab203bf8f38ee4a37d18eacf9e7130ef",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 269,
+    "estimated_audio_minutes_at_135_wpm": 1.99,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

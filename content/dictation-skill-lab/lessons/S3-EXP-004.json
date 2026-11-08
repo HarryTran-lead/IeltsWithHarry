@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-004",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Engineering group assessment",
+  "title": "Analysing Remote Teamwork in Engineering",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "group_discussion",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "You have called your report 'The Failure of Remote Teamwork', but your preliminary notes show both difficulties and benefits. An academic title should not decide the conclusion before the interviews begin.",
+      "translation_vi": "Các em đặt tên báo cáo 'Thất bại khi làm nhóm từ xa', nhưng ghi chú ban đầu có cả khó khăn và lợi ích. Tên học thuật không nên định sẵn kết luận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I chose that title because two groups missed their deadlines. However, one of them lost access to specialist software during the project, which is not necessarily a problem caused by working remotely.",
+      "translation_vi": "Em chọn tên vì hai nhóm trễ hạn. Nhưng một nhóm mất quyền dùng phần mềm chuyên dụng, chưa chắc do làm từ xa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Exactly. Another group worked remotely and finished early because they shared a clear design log. We need to distinguish communication arrangements from access to equipment.",
+      "translation_vi": "Đúng. Một nhóm khác làm từ xa mà xong sớm vì có nhật ký thiết kế rõ ràng. Phải phân biệt tổ chức giao tiếp với quyền dùng thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Rename the study around coordination practices rather than success or failure. Then ask how teams allocated tasks and recorded decisions. That gives you observations you can compare without assuming one model is best.",
+      "translation_vi": "Hãy đặt đề tài về cách phối hợp, không phải thành công hay thất bại. Hỏi nhóm chia việc và ghi quyết định ra sao, để so sánh không thiên kiến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "For evidence, I wanted to use the final project grades, but some groups had more demanding prototypes. Their marks may reflect technical difficulty rather than how well they worked together.",
+      "translation_vi": "Em muốn dùng điểm dự án cuối kỳ, nhưng vài nhóm làm mẫu thử khó hơn. Điểm có thể phản ánh độ khó kỹ thuật thay vì phối hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "We should examine meeting records alongside interviews, perhaps counting unresolved decisions. A team can meet frequently yet leave every important issue open, so meeting frequency alone is not a reliable indicator.",
+      "translation_vi": "Nên xem biên bản họp cùng phỏng vấn, chẳng hạn đếm quyết định chưa giải quyết. Họp nhiều mà việc vẫn treo thì tần suất họp không đáng tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Good distinction. Use the number of unresolved decisions as one indicator, but check whether the meeting records are complete. A neat-looking log can be misleading if people made decisions privately.",
+      "translation_vi": "Phân biệt đó tốt. Dùng số quyết định chưa chốt làm một chỉ báo nhưng phải xem biên bản đủ không; nhật ký đẹp có thể sai nếu mọi người quyết qua tin nhắn riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Perhaps we can interview six teams, three mainly remote and three mainly on campus, though hybrid arrangements complicate the labels. I suggest we record actual meeting patterns rather than force each team into one category.",
+      "translation_vi": "Có thể phỏng vấn sáu nhóm, ba chủ yếu từ xa và ba ở trường, nhưng nhóm lai khó phân loại. Em đề xuất ghi cách họp thực tế thay vì ép nhãn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I can contact the course leader for permission to review anonymised meeting logs. We must not circulate comments naming individual students or blaming them for delays.",
+      "translation_vi": "Thầy sẽ liên hệ trưởng môn xin xem nhật ký họp đã ẩn danh. Không được phát tán nhận xét nêu tên hay đổ lỗi cho cá nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll draft interview prompts that ask for one recent disagreement and how it was resolved. An example should reveal more than asking whether the team communicates effectively.",
+      "translation_vi": "Em sẽ soạn câu hỏi yêu cầu kể một bất đồng gần đây và cách giải quyết, hữu ích hơn hỏi chung nhóm giao tiếp có hiệu quả không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "I'll prepare a simple timeline for each case so interview claims can be checked against recorded milestones. Where evidence disagrees, we should report the discrepancy rather than hide it.",
+      "translation_vi": "Em sẽ lập dòng thời gian mỗi trường hợp để đối chiếu lời phỏng vấn với mốc ghi nhận. Nếu dữ kiện mâu thuẫn, cần báo rõ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll compare how tasks were assigned and whether owners changed during the project. That may explain why some deadlines slipped even when the team had plenty of meetings.",
+      "translation_vi": "Em sẽ so sánh cách giao nhiệm vụ và người phụ trách có đổi không. Điều đó có thể giải thích trễ hạn dù nhóm họp nhiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Submit a revised research title and your coding framework on Friday. A careful comparison of coordination is more valuable than a dramatic claim about remote work.",
+      "translation_vi": "Nộp tiêu đề sửa và khung mã hóa vào thứ Sáu. So sánh phối hợp cẩn thận có giá trị hơn kết luận giật gân về làm việc từ xa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "group_discussion",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why is one team’s missed deadline hard to interpret?",
+      "correct_answers": [
+        "The team lost access to specialist software"
+      ],
+      "options": [
+        "The team lost access to specialist software",
+        "Its members refused to attend interviews",
+        "It worked only at night"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I chose that title because two groups missed their deadlines. However, one of them lost access to specialist software during the project, which is not necessarily a problem caused by working remotely.",
+      "explanation_vi": "Trễ hạn có thể do mất quyền dùng phần mềm.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "group_discussion"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What should the revised study focus on?",
+      "correct_answers": [
+        "Practices for coordinating work"
+      ],
+      "options": [
+        "The quality of the final prototypes alone",
+        "Why remote teams always fail",
+        "Practices for coordinating work"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Rename the study around coordination practices rather than success or failure. Then ask how teams allocated tasks and recorded decisions. That gives you observations you can compare without assuming one model is best.",
+      "explanation_vi": "Đề tài mới tập trung cách phối hợp làm việc.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "group_discussion"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What indicator is suggested beyond meeting frequency?",
+      "correct_answers": [
+        "Decisions left unresolved"
+      ],
+      "options": [
+        "Number of cameras used",
+        "The size of the meeting room",
+        "Decisions left unresolved"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "We should examine meeting records alongside interviews, perhaps counting unresolved decisions. A team can meet frequently yet leave every important issue open, so meeting frequency alone is not a reliable indicator.",
+      "explanation_vi": "Đếm các quyết định còn treo thay vì chỉ số lần họp.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "group_discussion"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: a study of actual meeting patterns?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Perhaps we can interview six teams, three mainly remote and three mainly on campus, though hybrid arrangements complicate the labels. I suggest we record actual meeting patterns rather than force each team into one category.",
+      "explanation_vi": "Đề cập trong lượt T08 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "group_discussion"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: obtain permission for anonymised logs?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I can contact the course leader for permission to review anonymised meeting logs. We must not circulate comments naming individual students or blaming them for delays.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "group_discussion"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: request a concrete example of disagreement?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll draft interview prompts that ask for one recent disagreement and how it was resolved. An example should reveal more than asking whether the team communicates effectively.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "group_discussion"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: build timelines to check claims?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll prepare a simple timeline for each case so interview claims can be checked against recorded milestones. Where evidence disagrees, we should report the discrepancy rather than hide it.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "group_discussion"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: compare changes in task ownership?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll compare how tasks were assigned and whether owners changed during the project. That may explain why some deadlines slipped even when the team had plenty of meetings.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "group_discussion"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "Exactly. Another group worked remotely and finished early because they shared a clear design log. We need to distinguish communication arrangements from access to equipment."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Exactly. Another group worked remotely and finished early because they shared a clear design log. We need to distinguish communication arrangements from access to equipment.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "group_discussion"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "For evidence, I wanted to use the final project grades, but some groups had more demanding prototypes. Their marks may reflect technical difficulty rather than how well they worked together."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "For evidence, I wanted to use the final project grades, but some groups had more demanding prototypes. Their marks may reflect technical difficulty rather than how well they worked together.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "group_discussion"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "Good distinction. Use the number of unresolved decisions as one indicator, but check whether the meeting records are complete. A neat-looking log can be misleading if people made decisions privately."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Good distinction. Use the number of unresolved decisions as one indicator, but check whether the meeting records are complete. A neat-looking log can be misleading if people made decisions privately.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "group_discussion"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói C.",
+      "correct_answers": [
+        "I'll prepare a simple timeline for each case so interview claims can be checked against recorded milestones. Where evidence disagrees, we should report the discrepancy rather than hide it."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll prepare a simple timeline for each case so interview claims can be checked against recorded milestones. Where evidence disagrees, we should report the discrepancy rather than hide it.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "group_discussion"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: You have called your report 'The Failure of Remote Teamwork', but your ____ show both difficulties and benefits. An academic title should not decide the conclusion before the interviews begin.",
+      "correct_answers": [
+        "preliminary notes"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "You have called your report 'The Failure of Remote Teamwork', but your preliminary notes show both difficulties and benefits. An academic title should not decide the conclusion before the interviews begin.",
+      "explanation_vi": "Cụm nghe được là “preliminary notes” (ghi chú sơ bộ); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "group_discussion"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T03 và điền cụm bị thiếu: Exactly. Another group worked remotely and finished early because they shared a clear ____. We need to distinguish communication arrangements from access to equipment.",
+      "correct_answers": [
+        "design log"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Exactly. Another group worked remotely and finished early because they shared a clear design log. We need to distinguish communication arrangements from access to equipment.",
+      "explanation_vi": "Cụm nghe được là “design log” (nhật ký thiết kế); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "group_discussion"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-004-V01",
+      "expression_en": "preliminary notes",
+      "meaning_vi": "ghi chú sơ bộ",
+      "part_of_speech": "noun phrase",
+      "example_en": "You have called your report 'The Failure of Remote Teamwork', but your preliminary notes show both difficulties and benefits. An academic title should not decide the conclusion before the interviews begin.",
+      "example_vi": "Các em đặt tên báo cáo 'Thất bại khi làm nhóm từ xa', nhưng ghi chú ban đầu có cả khó khăn và lợi ích. Tên học thuật không nên định sẵn kết luận.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-004-V02",
+      "expression_en": "design log",
+      "meaning_vi": "nhật ký thiết kế",
+      "part_of_speech": "noun phrase",
+      "example_en": "Exactly. Another group worked remotely and finished early because they shared a clear design log. We need to distinguish communication arrangements from access to equipment.",
+      "example_vi": "Đúng. Một nhóm khác làm từ xa mà xong sớm vì có nhật ký thiết kế rõ ràng. Phải phân biệt tổ chức giao tiếp với quyền dùng thiết bị.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-004-V03",
+      "expression_en": "allocated tasks",
+      "meaning_vi": "phân chia nhiệm vụ",
+      "part_of_speech": "noun phrase",
+      "example_en": "Rename the study around coordination practices rather than success or failure. Then ask how teams allocated tasks and recorded decisions. That gives you observations you can compare without assuming one model is best.",
+      "example_vi": "Hãy đặt đề tài về cách phối hợp, không phải thành công hay thất bại. Hỏi nhóm chia việc và ghi quyết định ra sao, để so sánh không thiên kiến.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-004-V04",
+      "expression_en": "unresolved decisions",
+      "meaning_vi": "quyết định chưa giải quyết",
+      "part_of_speech": "noun phrase",
+      "example_en": "We should examine meeting records alongside interviews, perhaps counting unresolved decisions. A team can meet frequently yet leave every important issue open, so meeting frequency alone is not a reliable indicator.",
+      "example_vi": "Nên xem biên bản họp cùng phỏng vấn, chẳng hạn đếm quyết định chưa giải quyết. Họp nhiều mà việc vẫn treo thì tần suất họp không đáng tin.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-004-V05",
+      "expression_en": "hybrid arrangements",
+      "meaning_vi": "mô hình kết hợp",
+      "part_of_speech": "noun phrase",
+      "example_en": "Perhaps we can interview six teams, three mainly remote and three mainly on campus, though hybrid arrangements complicate the labels. I suggest we record actual meeting patterns rather than force each team into one category.",
+      "example_vi": "Có thể phỏng vấn sáu nhóm, ba chủ yếu từ xa và ba ở trường, nhưng nhóm lai khó phân loại. Em đề xuất ghi cách họp thực tế thay vì ép nhãn.",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-004-V06",
+      "expression_en": "coding framework",
+      "meaning_vi": "khung mã hóa dữ liệu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Submit a revised research title and your coding framework on Friday. A careful comparison of coordination is more valuable than a dramatic claim about remote work.",
+      "example_vi": "Nộp tiêu đề sửa và khung mã hóa vào thứ Sáu. So sánh phối hợp cẩn thận có giá trị hơn kết luận giật gân về làm việc từ xa.",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "f4a6d7c2f4678ff3b5da4f69871d46027f72f62699ecc962b15fcebac9a3603e",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 383,
+    "estimated_audio_minutes_at_135_wpm": 2.84,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

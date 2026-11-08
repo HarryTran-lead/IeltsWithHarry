@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-010",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Structural engineering",
+  "title": "Why Bridges Need to Move",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "A bridge may appear rigid, but successful bridges are designed to move a little. They respond to temperature, passing vehicles and wind. Engineers do not try to eliminate every movement; instead they distinguish normal behaviour from warning signs. We will look at the devices and measurements used to make that distinction.",
+      "meaning_vi": "Cầu được thiết kế để chuyển động có kiểm soát và cần hệ thống giám sát.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "An observer standing on a bridge may notice a slight vibration as a lorry passes. The feeling is real, but whether it matters depends on the structure's design and operating conditions. Engineers use models and measurements to distinguish expected response from deterioration. That distinction prevents both needless alarm and dangerous complacency.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "Metal and concrete expand with heat through thermal expansion. To avoid damage, engineers often include an expansion joint at a suitable location. Without room for this movement, repeated seasonal changes could place unnecessary stress on the structure. A joint may make a small noise as traffic crosses it, but the noise alone does not show that the bridge is unsafe. Inspectors need to check the actual movement and the condition of nearby materials.",
+      "meaning_vi": "Cầu giãn nở theo nhiệt độ và cần khe co giãn phù hợp.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "The weight of vehicles produces a temporary live load, while the structure's own weight is a dead load. Engineers calculate both, because a busy road bridge experiences a very different pattern from a quiet footbridge. They also consider the distribution of vehicles rather than only the number on the bridge. Two heavy trucks close together may have a different effect from the same trucks separated by several minutes.",
+      "meaning_vi": "Hoạt tải từ xe khác với tĩnh tải của kết cấu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "Tiny movements can be monitored with strain gauges attached to selected parts of the structure. Wind response may be studied using an accelerometer, which records changes in motion. Neither instrument is a substitute for visual inspection. A sensor can detect a changing pattern, but engineers still need to decide whether the cause is ordinary traffic, a weather event or damage. A good monitoring system combines measurements with knowledge of how the structure was designed.",
+      "meaning_vi": "Cảm biến biến dạng và gia tốc giúp giám sát cầu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "One long-term concern is metal fatigue, damage that can accumulate after many repeated loading cycles even when each individual load is moderate. A second concern is corrosion, which can affect steel exposed to water and salts. The two processes are different but may interact. Engineers inspect details such as welds and drainage points because an apparently small defect can become more serious when it is repeatedly stressed or kept wet.",
+      "meaning_vi": "Mỏi kim loại và ăn mòn là hai nguy cơ tích lũy khác nhau.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "The team may establish a baseline reading when a new monitoring system is installed, then investigate changes outside the expected range. However, a sensible alarm threshold must allow for normal temperature and traffic effects. Setting it too low creates constant false warnings; setting it too high risks missing a useful signal. The best threshold is informed by engineering analysis and adjusted as the team learns how the bridge behaves.",
+      "meaning_vi": "Đường cơ sở và ngưỡng cảnh báo phải tính tới biến động bình thường.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Large structures are also maintained by teams over decades. A sensor installed today may be replaced, and road conditions may change. Good records allow new engineers to understand earlier decisions and compare readings collected with different equipment. Maintenance is therefore partly an information-management problem, not simply a question of replacing worn components.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "Bridge safety therefore depends on controlled flexibility and continuous judgement. A structure that moves is not necessarily failing; the task is to recognise when its pattern of movement changes for a meaningful reason.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Bridges respond to temperature through ____.",
+      "correct_answers": [
+        "thermal expansion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Metal and concrete expand with heat through thermal expansion.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 44,
+        "end_char": 61
+      },
+      "explanation_vi": "Đáp án “thermal expansion” được nói trực tiếp trong phần bài giảng này. Cầu giãn nở theo nhiệt độ và cần khe co giãn phù hợp.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Movement is accommodated by an ____.",
+      "correct_answers": [
+        "expansion joint"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "To avoid damage, engineers often include an expansion joint at a suitable location.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 107,
+        "end_char": 122
+      },
+      "explanation_vi": "Đáp án “expansion joint” được nói trực tiếp trong phần bài giảng này. Cầu giãn nở theo nhiệt độ và cần khe co giãn phù hợp.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Traffic contributes a ____.",
+      "correct_answers": [
+        "live load"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The weight of vehicles produces a temporary live load, while the structure's own weight is a dead load.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 44,
+        "end_char": 53
+      },
+      "explanation_vi": "Đáp án “live load” được nói trực tiếp trong phần bài giảng này. Hoạt tải từ xe khác với tĩnh tải của kết cấu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "The bridge's own weight is its ____.",
+      "correct_answers": [
+        "dead load"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The weight of vehicles produces a temporary live load, while the structure's own weight is a dead load.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 93,
+        "end_char": 102
+      },
+      "explanation_vi": "Đáp án “dead load” được nói trực tiếp trong phần bài giảng này. Hoạt tải từ xe khác với tĩnh tải của kết cấu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Small deformations can be monitored by ____.",
+      "correct_answers": [
+        "strain gauges"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Tiny movements can be monitored with strain gauges attached to selected parts of the structure.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 37,
+        "end_char": 50
+      },
+      "explanation_vi": "Đáp án “strain gauges” được nói trực tiếp trong phần bài giảng này. Cảm biến biến dạng và gia tốc giúp giám sát cầu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Changes in vibration can be measured with an ____.",
+      "correct_answers": [
+        "accelerometer"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Wind response may be studied using an accelerometer, which records changes in motion.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 134,
+        "end_char": 147
+      },
+      "explanation_vi": "Đáp án “accelerometer” được nói trực tiếp trong phần bài giảng này. Cảm biến biến dạng và gia tốc giúp giám sát cầu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Repeated stress may lead to ____.",
+      "correct_answers": [
+        "metal fatigue"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "One long-term concern is metal fatigue, damage that can accumulate after many repeated loading cycles even when each individual load is moderate.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 25,
+        "end_char": 38
+      },
+      "explanation_vi": "Đáp án “metal fatigue” được nói trực tiếp trong phần bài giảng này. Mỏi kim loại và ăn mòn là hai nguy cơ tích lũy khác nhau.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Exposure to moisture and salts can cause ____.",
+      "correct_answers": [
+        "corrosion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A second concern is corrosion, which can affect steel exposed to water and salts.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 166,
+        "end_char": 175
+      },
+      "explanation_vi": "Đáp án “corrosion” được nói trực tiếp trong phần bài giảng này. Mỏi kim loại và ăn mòn là hai nguy cơ tích lũy khác nhau.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Initial measurements provide a ____.",
+      "correct_answers": [
+        "baseline reading"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The team may establish a baseline reading when a new monitoring system is installed, then investigate changes outside the expected range.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 25,
+        "end_char": 41
+      },
+      "explanation_vi": "Đáp án “baseline reading” được nói trực tiếp trong phần bài giảng này. Đường cơ sở và ngưỡng cảnh báo phải tính tới biến động bình thường.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Unexpected movements can trigger an ____.",
+      "correct_answers": [
+        "alarm threshold"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "However, a sensible alarm threshold must allow for normal temperature and traffic effects.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 158,
+        "end_char": 173
+      },
+      "explanation_vi": "Đáp án “alarm threshold” được nói trực tiếp trong phần bài giảng này. Đường cơ sở và ngưỡng cảnh báo phải tính tới biến động bình thường.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "title_en": "Why Bridges Need to Move — Notes",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "title_en": "Why Bridges Need to Move — Table",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "table_completion",
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": [
+          "Main point",
+          "Detail"
+        ]
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Cầu được thiết kế để chuyển động có kiểm soát và cần hệ thống giám sát.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "4537d0021fde4cc4eabb4c2aaece5895f6da1a3ab05c3e549e6b3293163c72f2",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.86,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

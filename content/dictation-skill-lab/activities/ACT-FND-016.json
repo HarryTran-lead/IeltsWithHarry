@@ -1,0 +1,166 @@
+{
+  "schema_version": "m33.1.0",
+  "activity_id": "ACT-FND-016",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "foundation_micro_practice",
+  "origin_bank": "foundation_training",
+  "source_lesson_id": "FND2-016",
+  "source_zip": "English_Skill_Lab_Dictation_M17_Foundation_30_Full_Content.zip",
+  "reuse_parent_id": "FND2-016",
+  "variant": "base",
+  "title": "/tʃ/ versus /ʃ/ — cặp âm PAIR-01",
+  "category": "sound_contrasts",
+  "category_vi": "Phân biệt âm và hình thái",
+  "micro_skill_id": "ch_vs_sh",
+  "skill_tags": [
+    "ch_vs_sh",
+    "foundation",
+    "micro_practice",
+    "sound_contrasts"
+  ],
+  "source_audio_id": "foundation-training/FND2-016/T02",
+  "source_segments": [
+    {
+      "source_audio_id": "foundation-training/FND2-016/T01",
+      "source_audio_id_type": "logical_turn_key_not_physical_asset",
+      "source_lesson_id": "FND2-016",
+      "source_turn_id": "T01",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "source_transcript_sha256": "7485d2e343dc1d83285cf1f3dcb654950c367833fecd1a88bbcc9464aee48a5a",
+      "source_speaker_id": "A",
+      "audio_state": "not_generated",
+      "alignment_state": "pending_alignment"
+    },
+    {
+      "source_audio_id": "foundation-training/FND2-016/T02",
+      "source_audio_id_type": "logical_turn_key_not_physical_asset",
+      "source_lesson_id": "FND2-016",
+      "source_turn_id": "T02",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "source_transcript_sha256": "4c870074781c3d06f20b31178940c0dc0609996b02cd2e4d343718b78e3b178c",
+      "source_speaker_id": "A",
+      "audio_state": "not_generated",
+      "alignment_state": "pending_alignment"
+    }
+  ],
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "clip_timing_scope": "turn_level_asset_or_verified_offsets_only",
+  "playback": {
+    "first_listen_replays": 1,
+    "guided_phase_max_replays": 4,
+    "speech_rate": 1.0,
+    "autoplay_transcript": false,
+    "clip_order": "sequence",
+    "inter_turn_gap_ms": 350
+  },
+  "questions": [
+    {
+      "question_id": "ACT-FND-016-Q1",
+      "phase": "first_listen",
+      "type": "audio_word_discrimination",
+      "prompt_vi": "Nghe đoạn A. Từ nào được phát âm trong câu?",
+      "options": [
+        {
+          "value": "chip",
+          "label": "chip"
+        },
+        {
+          "value": "ship",
+          "label": "ship"
+        }
+      ],
+      "correct_answers": [
+        "chip"
+      ],
+      "answer_format": "option_value",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "play_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “chip”. Đối chiếu âm thanh với “ship”. /tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát",
+      "evidence": {
+        "source_sentence_en": "A small chip fell off the plate.",
+        "source_translation_vi": "Một mảnh nhỏ bị sứt khỏi chiếc đĩa.",
+        "focus_value": "chip",
+        "focus_kind": "phoneme_word",
+        "origin_lesson_id": "FND2-016",
+        "origin_turn_id": "T01",
+        "origin_lesson_skill": "ch_vs_sh",
+        "evidence_sha256": "7485d2e343dc1d83285cf1f3dcb654950c367833fecd1a88bbcc9464aee48a5a"
+      },
+      "score_weight": 1
+    },
+    {
+      "question_id": "ACT-FND-016-Q2",
+      "phase": "guided_contrast",
+      "type": "audio_word_discrimination",
+      "prompt_vi": "Nghe đoạn B. Từ nào được phát âm trong câu?",
+      "options": [
+        {
+          "value": "chip",
+          "label": "chip"
+        },
+        {
+          "value": "ship",
+          "label": "ship"
+        }
+      ],
+      "correct_answers": [
+        "ship"
+      ],
+      "answer_format": "option_value",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "play_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án là “ship”. Đối chiếu âm thanh với “chip”. /tʃ/ có âm bật đầu /t/; /ʃ/ chỉ là âm xát",
+      "evidence": {
+        "source_sentence_en": "The ship arrived before sunrise.",
+        "source_translation_vi": "Con tàu cập bến trước lúc mặt trời mọc.",
+        "focus_value": "ship",
+        "focus_kind": "phoneme_word",
+        "origin_lesson_id": "FND2-016",
+        "origin_turn_id": "T02",
+        "origin_lesson_skill": "ch_vs_sh",
+        "evidence_sha256": "4c870074781c3d06f20b31178940c0dc0609996b02cd2e4d343718b78e3b178c"
+      },
+      "score_weight": 1
+    }
+  ],
+  "answer_release": "post_activity_submit_only",
+  "feedback_release": "post_activity_submit_only",
+  "grading_is_band_estimate": false,
+  "exposure_rules": {
+    "source_bank": "training",
+    "pretest_reuse_permitted": true,
+    "never_accept_protected_or_unseen_source": true,
+    "do_not_mix_with_mock_source": true,
+    "log_first_exposure": true,
+    "log_replays": true,
+    "log_retention_reviews": true,
+    "source_scope": "training_source_only"
+  },
+  "rights_status": "pending_tts_terms_review",
+  "source_content_status": "authored_draft",
+  "source_audio_status": "not_generated",
+  "review": {
+    "content_editor": "pending",
+    "audio_listening": "pending",
+    "rights_clearance": "pending",
+    "teacher_signoff": "pending",
+    "publish_ready": false
+  },
+  "notes_vi": "Hoạt động luyện tập trích từ lượt thoại gốc M17–M20. Không có audio thật/timestamp ở gói nguồn. Không công bố trước transcript/đáp án."
+}

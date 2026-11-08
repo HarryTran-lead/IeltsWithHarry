@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-014",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Agricultural technology and data interpretation",
+  "title": "Using Sensors to Farm More Precisely",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "precision_farming",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Modern farming increasingly uses sensors to provide information about conditions in particular parts of a field. The goal is not simply to buy more technology; it is to make decisions that reflect local variation. We call this approach precision agriculture. It can help managers compare zones that appear uniform from a distance but differ in water availability or plant growth.",
+      "translation_vi": "Nông nghiệp hiện đại ngày càng dùng cảm biến để hiểu các vùng khác nhau trong ruộng. Mục tiêu không chỉ mua công nghệ mà là ra quyết định theo biến thiên tại chỗ. Cách đó gọi là nông nghiệp chính xác; nó giúp so các vùng nhìn giống nhau từ xa nhưng khác độ ẩm hay tốc độ cây lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "One common measurement concerns the water held in soil. Devices placed at different depths may estimate soil moisture, which changes after rain, irrigation or evaporation. Yet a reading at one point does not represent the whole field. The number of sensors and their positions must be chosen in relation to soil types and crop roots.",
+      "translation_vi": "Chỉ số phổ biến là lượng nước trong đất. Thiết bị đặt ở các độ sâu ước lượng độ ẩm đất, thay đổi sau mưa, tưới hay bay hơi. Nhưng số đo tại một điểm không đại diện cả ruộng. Số lượng và vị trí cảm biến phải chọn theo loại đất và bộ rễ cây trồng.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Sensors are not perfectly reliable forever. They may drift, lose power or become affected by local damage. Farmers therefore perform sensor calibration, comparing readings with a reference measurement and making adjustments when necessary. Without calibration, a system could recommend watering a field that is already sufficiently wet, wasting resources and potentially harming plant roots.",
+      "translation_vi": "Cảm biến không chính xác mãi: có thể lệch, hết pin hoặc hỏng cục bộ. Nông dân cần hiệu chuẩn cảm biến, so với phép đo chuẩn và chỉnh khi cần. Nếu không, hệ thống có thể khuyên tưới vùng đã đủ ẩm, lãng phí nước và có thể hại rễ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Information from drones or satellites adds a wider view. Images can reveal variation in vegetation, but colour alone does not show why plants differ. Analysts often calculate a vegetation index from combinations of reflected light. The index helps identify patterns, yet stress caused by pests, drought or nutrient shortages may produce similar signals.",
+      "translation_vi": "Ảnh drone hay vệ tinh cho góc nhìn rộng. Chúng thấy khác biệt cây xanh nhưng màu sắc không giải thích nguyên nhân. Chuyên gia tính chỉ số thực vật từ nhiều dải ánh sáng phản xạ. Chỉ số giúp nhìn quy luật, nhưng sâu bệnh, khô hạn hoặc thiếu dinh dưỡng có thể tạo tín hiệu giống nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Field observations remain essential for interpreting those images. If a patch looks unhealthy, someone must inspect the plants and soil before deciding on treatment. This process is called ground verification. It prevents farmers from treating a sensor pattern as a diagnosis and applying a chemical or fertiliser without adequate evidence.",
+      "translation_vi": "Quan sát trực tiếp vẫn thiết yếu để giải thích ảnh. Nếu khu vực trông yếu, cần kiểm cây và đất trước khi xử lý. Việc đó gọi là xác minh thực địa, tránh coi mẫu cảm biến là chẩn đoán rồi dùng thuốc hoặc phân bón thiếu bằng chứng.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Where equipment permits, farmers may supply different amounts of water or nutrients to different zones. This is often termed variable application. It may improve efficiency, but only if the recommendations are reliable and the extra equipment costs can be justified. For a very small farm, simpler monitoring might be more appropriate than a complex automated system.",
+      "translation_vi": "Nếu thiết bị cho phép, người trồng cung cấp lượng nước hay dưỡng chất khác nhau cho từng vùng, gọi là phân bổ thay đổi theo vị trí. Cách này có thể hiệu quả hơn nhưng cần khuyến nghị đáng tin và chi phí hợp lý. Với ruộng nhỏ, theo dõi đơn giản đôi khi phù hợp hơn hệ tự động phức tạp.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The resulting data also need protection. Records can reveal financial information, yields and patterns of land use. When farm software transfers data to outside companies, managers should ask about data ownership and access. A technically excellent tool may still be unsuitable if the grower cannot retrieve or control the information collected on their own land.",
+      "translation_vi": "Dữ liệu tạo ra cũng phải bảo vệ. Bản ghi có thể lộ thông tin tài chính, năng suất và sử dụng đất. Khi phần mềm gửi dữ liệu cho công ty khác, người quản lý phải hỏi quyền sở hữu và truy cập dữ liệu. Công cụ tốt về kỹ thuật vẫn có thể không phù hợp nếu nông dân không lấy lại hay kiểm soát dữ liệu từ đất của mình.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The most sensible assessment compares decisions and outcomes, not the number of gadgets installed. Researchers look at water used, crop performance and management costs across comparable plots. The purpose is practical efficiency, where technology delivers a useful result for a reasonable investment. Information becomes valuable only when it changes a decision for the better.",
+      "translation_vi": "Đánh giá hợp lý nên so quyết định và kết quả chứ không đếm thiết bị. Nhà nghiên cứu xem lượng nước, cây trồng và chi phí ở các ô ruộng tương đương. Mục tiêu là hiệu quả thực tế: công nghệ mang lợi ích hữu ích so với đầu tư. Thông tin chỉ có giá trị nếu giúp quyết định tốt hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "Managing field differences with data is known as ____.",
+      "correct_answers": [
+        "precision agriculture"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "We call this approach precision agriculture.",
+      "explanation_vi": "Precision agriculture là canh tác dựa trên dữ liệu để xử lý sự khác nhau của từng vùng.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "Sensors at different depths can measure ____.",
+      "correct_answers": [
+        "soil moisture"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Devices placed at different depths may estimate soil moisture, which changes after rain, irrigation or evaporation.",
+      "explanation_vi": "Soil moisture là nước có trong đất, cần xét theo chiều sâu.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "Checking devices against a reference involves ____.",
+      "correct_answers": [
+        "sensor calibration"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Farmers therefore perform sensor calibration, comparing readings with a reference measurement and making adjustments when necessary.",
+      "explanation_vi": "Sensor calibration là hiệu chuẩn thiết bị bằng nguồn tham chiếu.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Reflectance data can be converted into a ____.",
+      "correct_answers": [
+        "vegetation index"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Analysts often calculate a vegetation index from combinations of reflected light.",
+      "explanation_vi": "Vegetation index là chỉ số tính từ ánh sáng phản xạ liên quan tình trạng thảm thực vật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "On-site checks of mapped patterns provide ____.",
+      "correct_answers": [
+        "ground verification"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "This process is called ground verification.",
+      "explanation_vi": "Ground verification là xác nhận dữ liệu từ xa bằng kiểm tra ngoài đồng.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Delivering different input amounts across zones is ____.",
+      "correct_answers": [
+        "variable application"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "This is often termed variable application.",
+      "explanation_vi": "Variable application cho phép thay đổi lượng tưới hoặc bón theo vùng.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Growers should clarify ____ before sharing farm records.",
+      "correct_answers": [
+        "data ownership"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "When farm software transfers data to outside companies, managers should ask about data ownership and access.",
+      "explanation_vi": "Data ownership là quyền sở hữu và kiểm soát dữ liệu nông trại.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "The overall aim is to improve ____, not device numbers.",
+      "correct_answers": [
+        "practical efficiency"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The purpose is practical efficiency, where technology delivers a useful result for a reasonable investment.",
+      "explanation_vi": "Practical efficiency nghĩa là hiệu quả thực tế của canh tác.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "precision_farming",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Devices placed at different depths may estimate soil moisture, which changes after rain, irrigation or evaporation."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 56,
+      "source_char_end": 171,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Devices placed at different depths may estimate soil moisture, which changes after rain, irrigation or evaporation.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Analysts often calculate a vegetation index from combinations of reflected light."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 150,
+      "source_char_end": 231,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Analysts often calculate a vegetation index from combinations of reflected light.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Where equipment permits, farmers may supply different amounts of water or nutrients to different zones. This is often termed variable application."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 0,
+      "source_char_end": 146,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Where equipment permits, farmers may supply different amounts of water or nutrients to different zones. This is often termed variable application.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "The purpose is practical efficiency, where technology delivers a useful result for a reasonable investment."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 194,
+      "source_char_end": 301,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The purpose is practical efficiency, where technology delivers a useful result for a reasonable investment.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Farmers therefore perform ____, comparing readings with a reference measurement and making adjustments when necessary.",
+      "correct_answers": [
+        "sensor calibration"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Farmers therefore perform sensor calibration, comparing readings with a reference measurement and making adjustments when necessary.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: When farm software transfers data to outside companies, managers should ask about ____ and access.",
+      "correct_answers": [
+        "data ownership"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "When farm software transfers data to outside companies, managers should ask about data ownership and access.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-014-V01",
+      "expression_en": "precision agriculture",
+      "meaning_vi": "nông nghiệp chính xác",
+      "part_of_speech": "noun phrase",
+      "example_en": "We call this approach precision agriculture.",
+      "example_vi": "Nông nghiệp hiện đại ngày càng dùng cảm biến để hiểu các vùng khác nhau trong ruộng. Mục tiêu không chỉ mua công nghệ mà là ra quyết định theo biến thiên tại chỗ. Cách đó gọi là nông nghiệp chính xác; nó giúp so các vùng nhìn giống nhau từ xa nhưng khác độ ẩm hay tốc độ cây lớn.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-014-V02",
+      "expression_en": "soil moisture",
+      "meaning_vi": "độ ẩm đất",
+      "part_of_speech": "noun phrase",
+      "example_en": "Devices placed at different depths may estimate soil moisture, which changes after rain, irrigation or evaporation.",
+      "example_vi": "Chỉ số phổ biến là lượng nước trong đất. Thiết bị đặt ở các độ sâu ước lượng độ ẩm đất, thay đổi sau mưa, tưới hay bay hơi. Nhưng số đo tại một điểm không đại diện cả ruộng. Số lượng và vị trí cảm biến phải chọn theo loại đất và bộ rễ cây trồng.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-014-V03",
+      "expression_en": "sensor calibration",
+      "meaning_vi": "hiệu chuẩn cảm biến",
+      "part_of_speech": "noun phrase",
+      "example_en": "Farmers therefore perform sensor calibration, comparing readings with a reference measurement and making adjustments when necessary.",
+      "example_vi": "Cảm biến không chính xác mãi: có thể lệch, hết pin hoặc hỏng cục bộ. Nông dân cần hiệu chuẩn cảm biến, so với phép đo chuẩn và chỉnh khi cần. Nếu không, hệ thống có thể khuyên tưới vùng đã đủ ẩm, lãng phí nước và có thể hại rễ.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-014-V04",
+      "expression_en": "vegetation index",
+      "meaning_vi": "chỉ số thực vật",
+      "part_of_speech": "noun phrase",
+      "example_en": "Analysts often calculate a vegetation index from combinations of reflected light.",
+      "example_vi": "Ảnh drone hay vệ tinh cho góc nhìn rộng. Chúng thấy khác biệt cây xanh nhưng màu sắc không giải thích nguyên nhân. Chuyên gia tính chỉ số thực vật từ nhiều dải ánh sáng phản xạ. Chỉ số giúp nhìn quy luật, nhưng sâu bệnh, khô hạn hoặc thiếu dinh dưỡng có thể tạo tín hiệu giống nhau.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-014-V05",
+      "expression_en": "ground verification",
+      "meaning_vi": "xác minh ngoài thực địa",
+      "part_of_speech": "noun phrase",
+      "example_en": "This process is called ground verification.",
+      "example_vi": "Quan sát trực tiếp vẫn thiết yếu để giải thích ảnh. Nếu khu vực trông yếu, cần kiểm cây và đất trước khi xử lý. Việc đó gọi là xác minh thực địa, tránh coi mẫu cảm biến là chẩn đoán rồi dùng thuốc hoặc phân bón thiếu bằng chứng.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-014-V06",
+      "expression_en": "variable application",
+      "meaning_vi": "việc điều chỉnh lượng đầu vào theo vùng",
+      "part_of_speech": "noun phrase",
+      "example_en": "This is often termed variable application.",
+      "example_vi": "Nếu thiết bị cho phép, người trồng cung cấp lượng nước hay dưỡng chất khác nhau cho từng vùng, gọi là phân bổ thay đổi theo vị trí. Cách này có thể hiệu quả hơn nhưng cần khuyến nghị đáng tin và chi phí hợp lý. Với ruộng nhỏ, theo dõi đơn giản đôi khi phù hợp hơn hệ tự động phức tạp.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "0525a5dc9c84738228f5a411156dafa5b9c53f5bb8bcee32ba3536f017bdf255",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_03",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "Managing field differences with data is known as ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Sensors at different depths can measure ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Checking devices against a reference involves ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ]
+      },
+      {
+        "group_id": "IELTS_TABLE_04_06",
+        "type": "table_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "two_column_table",
+        "group_heading": "Methods and comparisons",
+        "items": [
+          {
+            "question_id": "Q04",
+            "prompt": "Reflectance data can be converted into a ____."
+          },
+          {
+            "question_id": "Q05",
+            "prompt": "On-site checks of mapped patterns provide ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Delivering different input amounts across zones is ____."
+          }
+        ],
+        "question_ids": [
+          "Q04",
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SUMMARY_07_08",
+        "type": "summary_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "connected_summary",
+        "group_heading": "Interpretation and conclusions",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Growers should clarify ____ before sharing farm records."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "The overall aim is to improve ____, not device numbers."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 437,
+    "estimated_audio_minutes_at_135_wpm": 3.24,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-034",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Numbers",
+  "title": "Measurements and decimal points",
+  "learning_objectives_vi": [
+    "Nghe được measurements and decimal points trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (measurement).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The desk is one point four metres long.",
+      "translation_vi": "Chiếc bàn dài 1,4 mét.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "measurement"
+      ],
+      "target_value": "1.4 m",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The package weighs two point seven kilograms.",
+      "translation_vi": "Gói hàng nặng 2,7 ki-lô-gam.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "measurement"
+      ],
+      "target_value": "2.7 kg",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The walking route is three point five kilometres.",
+      "translation_vi": "Tuyến đường đi bộ dài 3,5 ki-lô-mét.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "measurement"
+      ],
+      "target_value": "3.5 km",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The bottle holds zero point seven five litres.",
+      "translation_vi": "Chai có dung tích 0,75 lít.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "measurement"
+      ],
+      "target_value": "0.75 L",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The temperature fell to minus four degrees overnight.",
+      "translation_vi": "Nhiệt độ giảm xuống âm 4 độ qua đêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "temperature"
+      ],
+      "target_value": "-4°C",
+      "target_kind": "temperature",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The fabric is sixty-five centimetres wide.",
+      "translation_vi": "Tấm vải rộng 65 xen-ti-mét.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "measurement"
+      ],
+      "target_value": "65 cm",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The cable needs to be twelve point eight metres long.",
+      "translation_vi": "Dây cáp cần dài 12,8 mét.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "measurement"
+      ],
+      "target_value": "12.8 m",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The sample contains zero point three grams of salt.",
+      "translation_vi": "Mẫu chứa 0,3 gam muối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "measurement"
+      ],
+      "target_value": "0.3 g",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The room temperature is twenty-one point five degrees Celsius.",
+      "translation_vi": "Nhiệt độ phòng là 21,5 độ C.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "temperature"
+      ],
+      "target_value": "21.5°C",
+      "target_kind": "temperature",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The narrow path is just ninety centimetres across.",
+      "translation_vi": "Con đường nhỏ chỉ rộng 90 xen-ti-mét.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "measurement",
+        "measurement"
+      ],
+      "target_value": "90 cm",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The desk is one point four metres long."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The desk is one point four metres long. Nghĩa: Chiếc bàn dài 1,4 mét. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The package weighs two point seven kilograms."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: The package weighs two point seven kilograms. Nghĩa: Gói hàng nặng 2,7 ki-lô-gam. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The walking route is three point five kilometres."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The walking route is three point five kilometres. Nghĩa: Tuyến đường đi bộ dài 3,5 ki-lô-mét. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bottle holds zero point seven five litres."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The bottle holds zero point seven five litres. Nghĩa: Chai có dung tích 0,75 lít. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The temperature fell to minus four degrees overnight."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The temperature fell to minus four degrees overnight. Nghĩa: Nhiệt độ giảm xuống âm 4 độ qua đêm. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The fabric is sixty-five centimetres wide."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The fabric is sixty-five centimetres wide. Nghĩa: Tấm vải rộng 65 xen-ti-mét. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The cable needs to be twelve point eight metres long."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The cable needs to be twelve point eight metres long. Nghĩa: Dây cáp cần dài 12,8 mét. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The sample contains zero point three grams of salt."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The sample contains zero point three grams of salt. Nghĩa: Mẫu chứa 0,3 gam muối. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The room temperature is twenty-one point five degrees Celsius."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The room temperature is twenty-one point five degrees Celsius. Nghĩa: Nhiệt độ phòng là 21,5 độ C. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The narrow path is just ninety centimetres across."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The narrow path is just ninety centimetres across. Nghĩa: Con đường nhỏ chỉ rộng 90 xen-ti-mét. Lưu ý: Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "measurement"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập giá trị và đơn vị đo được xác nhận trong câu.",
+      "correct_answers": [
+        "65 cm"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 65 cm. Nội dung: Tấm vải rộng 65 xen-ti-mét.",
+      "scoring_policy": "canonical_measurement_server",
+      "target_kind": "measurement",
+      "question_tags": [
+        "short_answer",
+        "measurement",
+        "measurement"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập giá trị và đơn vị đo được xác nhận trong câu.",
+      "correct_answers": [
+        "12.8 m"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 12.8 m. Nội dung: Dây cáp cần dài 12,8 mét.",
+      "scoring_policy": "canonical_measurement_server",
+      "target_kind": "measurement",
+      "question_tags": [
+        "short_answer",
+        "measurement",
+        "measurement"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập giá trị và đơn vị đo được xác nhận trong câu.",
+      "correct_answers": [
+        "0.3 g"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 0.3 g. Nội dung: Mẫu chứa 0,3 gam muối.",
+      "scoring_policy": "canonical_measurement_server",
+      "target_kind": "measurement",
+      "question_tags": [
+        "short_answer",
+        "measurement",
+        "measurement"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập nhiệt độ được xác nhận trong câu.",
+      "correct_answers": [
+        "21.5°C"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 21.5°C. Nội dung: Nhiệt độ phòng là 21,5 độ C.",
+      "scoring_policy": "canonical_temperature_server",
+      "target_kind": "temperature",
+      "question_tags": [
+        "short_answer",
+        "measurement",
+        "temperature"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập giá trị và đơn vị đo được xác nhận trong câu.",
+      "correct_answers": [
+        "90 cm"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 90 cm. Nội dung: Con đường nhỏ chỉ rộng 90 xen-ti-mét.",
+      "scoring_policy": "canonical_measurement_server",
+      "target_kind": "measurement",
+      "question_tags": [
+        "short_answer",
+        "measurement",
+        "measurement"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "weigh",
+      "pos": "v",
+      "meaning_vi": "cân nặng",
+      "example_en": "Please weigh the parcel before posting it.",
+      "example_vi": "Vui lòng cân bưu kiện trước khi gửi.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "kilometre",
+      "pos": "n",
+      "meaning_vi": "ki-lô-mét",
+      "example_en": "The route is one kilometre longer than before.",
+      "example_vi": "Tuyến đường dài hơn trước một ki-lô-mét.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "centimetre",
+      "pos": "n",
+      "meaning_vi": "xen-ti-mét",
+      "example_en": "Move the shelf one centimetre to the left.",
+      "example_vi": "Dịch kệ sang trái một xen-ti-mét.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "sample",
+      "pos": "n",
+      "meaning_vi": "mẫu",
+      "example_en": "The sample contains zero point three grams of salt.",
+      "example_vi": "Mẫu chứa 0,3 gam muối.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "temperature",
+      "pos": "n",
+      "meaning_vi": "nhiệt độ",
+      "example_en": "The temperature fell to minus four degrees overnight.",
+      "example_vi": "Nhiệt độ giảm xuống âm 4 độ qua đêm.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "length",
+      "pos": "n",
+      "meaning_vi": "chiều dài",
+      "example_en": "Measure the length of the table.",
+      "example_vi": "Đo chiều dài của chiếc bàn.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "measurement",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+    "category": "numbers",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-034-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "4a109aee5369ebc4a113ba2d7238a2bd810cbf8f33f4304069e0833c9d36cbc6",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe 'point', đơn vị đo và số thập phân; không nhầm centimet với mét.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "two point five metres",
+        "written_value": "2.5 m",
+        "teacher_note_vi": "Point là dấu thập phân."
+      },
+      {
+        "spoken_example": "minus three degrees Celsius",
+        "written_value": "-3°C",
+        "teacher_note_vi": "Minus là dấu âm."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn tiêu đề kỹ năng và đọc hai ví dụ có giải thích trước khi nghe.",
+      "Nghe một lần và thử ghi số/chữ; không xem transcript trước khi nộp.",
+      "Sau khi nộp, so sánh từ khóa mục tiêu, số 0 và thông tin đã được sửa.",
+      "Làm hai câu đánh giá chưa gặp ở lần nghe đầu và ghi số lần phát lại."
+    ],
+    "common_mistakes": [
+      "Chọn số đầu tiên được nhắc tới thay vì số được xác nhận cuối cùng.",
+      "Bỏ số 0 đầu trong mã hoặc làm tròn số thập phân."
+    ],
+    "before_audio_question": "Đây là số lượng, số tiền, mã, phần trăm hay đơn vị đo? Dữ kiện cuối cùng có được sửa không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

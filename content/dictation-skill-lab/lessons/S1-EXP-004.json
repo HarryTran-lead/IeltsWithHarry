@@ -1,0 +1,825 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-004",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Community gardening membership",
+  "title": "Joining a Community Garden",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "eligibility",
+    "locations",
+    "availability",
+    "schedule"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "Hello, I'm calling about a plot in the Riverside Community Garden. I moved into the area last month.",
+      "translation_vi": "Xin chào, tôi gọi hỏi thuê luống đất ở vườn cộng đồng Riverside. Tôi mới chuyển tới đây tháng trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Welcome to the neighbourhood. We have individual plots and a shared growing area, depending on how much time you have.",
+      "translation_vi": "Chào mừng đến khu phố. Chúng tôi có luống riêng và khu trồng chung, tùy thời gian của anh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "B",
+      "text_en": "I'd prefer a small plot of my own. I thought there was a waiting list of nearly a year.",
+      "translation_vi": "Tôi thích luống nhỏ riêng. Tôi nghe nói phải chờ gần một năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "That used to be true, but two people moved away. We have one plot available now near the greenhouse.",
+      "translation_vi": "Trước đây đúng, nhưng hai người đã chuyển đi. Hiện còn một luống gần nhà kính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That sounds good. Is it the one beside the pond? I don't want anything that gets flooded in winter.",
+      "translation_vi": "Hay đấy. Có phải luống cạnh ao không? Tôi không muốn chỗ bị ngập mùa đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "No, the pond is on the other side. This plot is behind the greenhouse, where the ground is slightly higher.",
+      "translation_vi": "Không, ao ở phía bên kia. Luống này phía sau nhà kính, nền đất cao hơn một chút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "Perfect. Do members pay a monthly fee, or do they pay once for the whole growing season?",
+      "translation_vi": "Tốt. Hội viên đóng phí hàng tháng hay một lần cho cả mùa trồng?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "A standard plot costs forty-eight pounds per year. The shared beds are cheaper, at twenty, but you must follow a weekly rota.",
+      "translation_vi": "Luống riêng 48 bảng một năm. Luống chung rẻ hơn, 20 bảng, nhưng phải theo lịch phân công hàng tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "Forty-eight is reasonable. I'd like to grow beans and tomatoes, though I don't own many tools yet.",
+      "translation_vi": "48 bảng hợp lý. Tôi muốn trồng đậu và cà chua, nhưng chưa có nhiều dụng cụ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "We lend spades and watering cans. Everyone brings their own gloves because sharing them can be unhygienic.",
+      "translation_vi": "Chúng tôi cho mượn xẻng và bình tưới. Mọi người tự mang găng tay vì dùng chung không vệ sinh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "Right. I work on Saturdays, so I might miss the usual members' meeting. When do you meet?",
+      "translation_vi": "Tôi làm việc thứ Bảy nên có thể bỏ lỡ buổi họp hội viên. Khi nào mọi người họp?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "We changed the meeting from Saturday afternoon to Wednesday evening, starting at seven. Attendance is encouraged, not compulsory.",
+      "translation_vi": "Chúng tôi chuyển từ chiều thứ Bảy sang tối thứ Tư, bắt đầu lúc bảy giờ. Khuyến khích tham dự nhưng không bắt buộc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "That's much better. I'd also like to bring my ten-year-old nephew occasionally to help with planting.",
+      "translation_vi": "Tốt hơn nhiều. Thỉnh thoảng tôi muốn dẫn cháu trai mười tuổi tới phụ trồng cây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Children are welcome with an adult, but please keep them away from the tool shed unless a coordinator is present.",
+      "translation_vi": "Trẻ em được tới cùng người lớn, nhưng phải tránh nhà dụng cụ nếu không có người phụ trách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "B",
+      "text_en": "No problem. Do I pick up the gate key at the library, or will someone meet me there?",
+      "translation_vi": "Không vấn đề. Tôi lấy chìa cổng ở thư viện hay có người gặp tại vườn?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "A",
+      "text_en": "Collect it from the garden office, which opens on Monday mornings. We'll email the office address with your membership form.",
+      "translation_vi": "Hãy lấy chìa tại văn phòng khu vườn, mở sáng thứ Hai. Chúng tôi sẽ email địa chỉ cùng mẫu hội viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Available plot is near the ____",
+      "correct_answers": [
+        "greenhouse"
+      ],
+      "spoken_answer": "greenhouse",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Có một luống gần nhà kính đang trống.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "near the greenhouse",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Ground level of available plot: slightly ____",
+      "correct_answers": [
+        "higher"
+      ],
+      "spoken_answer": "higher",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Luống có nền hơi cao, tránh khu ngập mùa đông.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "ground is slightly higher",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Annual individual plot fee: £____",
+      "correct_answers": [
+        "forty-eight",
+        "48"
+      ],
+      "spoken_answer": "forty-eight",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giá 48 bảng là theo năm, không theo tháng.",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "forty-eight pounds per year",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Which equipment must members bring themselves?",
+      "correct_answers": [
+        "gloves"
+      ],
+      "options": [
+        "gloves",
+        "spades",
+        "watering cans"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Xẻng và bình tưới được cho mượn, găng tay phải tự mang.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "own gloves",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Meeting day: ____",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "spoken_answer": "Wednesday",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Buổi họp đã chuyển từ thứ Bảy sang thứ Tư.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Wednesday evening",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Meeting starts at ____",
+      "correct_answers": [
+        "seven"
+      ],
+      "spoken_answer": "seven",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Bắt đầu lúc bảy giờ tối.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "starting at seven",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "What is the rule for children?",
+      "correct_answers": [
+        "come with an adult"
+      ],
+      "options": [
+        "visit alone",
+        "come with an adult",
+        "work in the tool shed freely"
+      ],
+      "correct_option": "B",
+      "scoring_policy": "strict",
+      "explanation_vi": "Trẻ được phép tham gia khi đi cùng người lớn.",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "Children are welcome with an adult",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Gate key collected from the garden ____",
+      "correct_answers": [
+        "office"
+      ],
+      "spoken_answer": "office",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lấy chìa tại văn phòng vườn, không phải thư viện.",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "garden office",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "That used to be true, but two people moved away. We have one plot available now near the greenhouse."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Trước đây đúng, nhưng hai người đã chuyển đi. Hiện còn một luống gần nhà kính.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "Perfect. Do members pay a monthly fee, or do they pay once for the whole growing season?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tốt. Hội viên đóng phí hàng tháng hay một lần cho cả mùa trồng?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "We lend spades and watering cans. Everyone brings their own gloves because sharing them can be unhygienic."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Chúng tôi cho mượn xẻng và bình tưới. Mọi người tự mang găng tay vì dùng chung không vệ sinh.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "Children are welcome with an adult, but please keep them away from the tool shed unless a coordinator is present."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Trẻ em được tới cùng người lớn, nhưng phải tránh nhà dụng cụ nếu không có người phụ trách.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: That used to be true, but two people moved away. We have one plot available now near the ____.",
+      "correct_answers": [
+        "greenhouse"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Có một luống gần nhà kính đang trống.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: No, the pond is on the other side. This plot is behind the greenhouse, where the ground is slightly ____.",
+      "correct_answers": [
+        "higher"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Luống có nền hơi cao, tránh khu ngập mùa đông.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "eligibility",
+        "locations",
+        "availability",
+        "schedule"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-004-V01",
+      "expression_en": "waiting list",
+      "meaning_vi": "danh sách chờ",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'd prefer a small plot of my own. I thought there was a waiting list of nearly a year.",
+      "example_vi": "Tôi thích luống nhỏ riêng. Tôi nghe nói phải chờ gần một năm.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-004-V02",
+      "expression_en": "shared growing area",
+      "meaning_vi": "khu trồng chung",
+      "part_of_speech": "noun phrase",
+      "example_en": "Welcome to the neighbourhood. We have individual plots and a shared growing area, depending on how much time you have.",
+      "example_vi": "Chào mừng đến khu phố. Chúng tôi có luống riêng và khu trồng chung, tùy thời gian của anh.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-004-V03",
+      "expression_en": "greenhouse",
+      "meaning_vi": "nhà kính",
+      "part_of_speech": "noun",
+      "example_en": "That used to be true, but two people moved away. We have one plot available now near the greenhouse.",
+      "example_vi": "Trước đây đúng, nhưng hai người đã chuyển đi. Hiện còn một luống gần nhà kính.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-004-V04",
+      "expression_en": "watering cans",
+      "meaning_vi": "bình tưới nước",
+      "part_of_speech": "noun phrase",
+      "example_en": "We lend spades and watering cans. Everyone brings their own gloves because sharing them can be unhygienic.",
+      "example_vi": "Chúng tôi cho mượn xẻng và bình tưới. Mọi người tự mang găng tay vì dùng chung không vệ sinh.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-004-V05",
+      "expression_en": "weekly rota",
+      "meaning_vi": "lịch phân công hàng tuần",
+      "part_of_speech": "noun phrase",
+      "example_en": "A standard plot costs forty-eight pounds per year. The shared beds are cheaper, at twenty, but you must follow a weekly rota.",
+      "example_vi": "Luống riêng 48 bảng một năm. Luống chung rẻ hơn, 20 bảng, nhưng phải theo lịch phân công hàng tuần.",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-004-V06",
+      "expression_en": "gate key",
+      "meaning_vi": "chìa khóa cổng",
+      "part_of_speech": "noun phrase",
+      "example_en": "No problem. Do I pick up the gate key at the library, or will someone meet me there?",
+      "example_vi": "Không vấn đề. Tôi lấy chìa cổng ở thư viện hay có người gặp tại vườn?",
+      "evidence_turn_id": "T15",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "8446cd3041585119dc74b1f2f5ea1cf1b5895e542ad0a3fef550162d93bcc003",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 297,
+    "estimated_audio_minutes_at_135_wpm": 2.2,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

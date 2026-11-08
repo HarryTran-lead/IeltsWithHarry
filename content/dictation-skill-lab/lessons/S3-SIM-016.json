@@ -1,0 +1,988 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-016",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Media history and archival methodology",
+  "title": "Reconstructing an Early Radio Broadcast",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "We have three versions of a historical broadcast, but the audio quality and dates disagree.",
+      "meaning_vi": "B: Có ba bản ghi chương trình phát thanh cổ với ngày tháng khác nhau; cần xác minh nguồn trước khi phục chế.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "That is a problem of provenance before it is a problem of sound restoration.",
+      "meaning_vi": "B: Có ba bản ghi chương trình phát thanh cổ với ngày tháng khác nhau; cần xác minh nguồn trước khi phục chế.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Keep a photograph of the box label, but explain that the annotation was added much later and cannot establish the broadcast date.",
+      "meaning_vi": "C: Giữ ảnh nhãn hộp nhưng ghi chú ngày thêm sau.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The station ledger is our strongest independent record of when the programme actually aired.",
+      "meaning_vi": "A: Sổ lịch phát sóng là chứng cứ độc lập chính.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The file transfers are another source of uncertainty. Each time an archive copy was made, someone may have changed playback speed or introduced new noise without documenting it.",
+      "meaning_vi": "B: Mỗi lần sao chép lưu trữ có thể đổi tốc độ hoặc thêm nhiễu mà không ghi lại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "It is easy to mistake a cleaner sound for a more historically accurate recording.",
+      "meaning_vi": "C: Âm thanh sạch hơn không nhất thiết đúng lịch sử hơn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "Exclude the version produced with the strongest filter. Several consonants are missing and we cannot reverse that processing reliably.",
+      "meaning_vi": "B: Loại bản lọc nhiễu quá mạnh làm mất phụ âm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "C",
+      "text_en": "The studio photograph will help visitors imagine the equipment, but it cannot confirm which recording they are listening to.",
+      "meaning_vi": "C: Ảnh studio chỉ minh họa thiết bị.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "We should keep both the raw file and the edited version so every step is reversible.",
+      "meaning_vi": "B: Cần giữ tệp gốc và bản đã sửa để có thể đảo ngược các bước.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The performer’s contract has restrictions we do not understand. Ask the archive rights officer before publishing the reconstructed voice clip.",
+      "meaning_vi": "A: Phải hỏi cán bộ bản quyền trước khi công bố đoạn diễn lại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "The label says 1937, but that date was written on the box in the 1970s. We cannot assume the recording was made in 1937 simply because somebody annotated it later.",
+      "meaning_vi": "C: Năm ghi trên hộp được thêm nhiều thập kỷ sau, không chứng minh năm thu.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Never edit the only surviving source file. Work from a checksum-verified copy and record every filter and speed adjustment, because future researchers may interpret the recording differently.",
+      "meaning_vi": "A: Không sửa tệp nguồn duy nhất; dùng bản sao kiểm tra checksum và lưu mọi bước lọc.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "The noise filter removes hiss, but it also cuts the quieter consonants from the presenter’s voice. Cleaning the recording too aggressively could erase evidence rather than recover it.",
+      "meaning_vi": "B: Lọc nhiễu quá mạnh có thể xóa phụ âm nhỏ trong giọng gốc.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "If the archival record remains contradictory, say so in the gallery label.",
+      "meaning_vi": "A: Nếu hồ sơ lưu trữ mâu thuẫn, phải nói rõ trong nhãn triển lãm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Before guessing from the accent, compare the surviving station programme schedules. If a particular speech was broadcast on only one date, that gives us a stronger starting point.",
+      "meaning_vi": "A: Đối chiếu lịch phát thanh còn lưu thay vì đoán từ giọng nói.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "C",
+      "text_en": "The final exhibition could include a modern actor reading a missing announcement. That is acceptable if the replacement is clearly labelled as a reconstruction, not passed off as the surviving broadcast.",
+      "meaning_vi": "C: Phần diễn đọc thay phải gắn nhãn phục dựng rõ ràng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "C",
+      "text_en": "The visitor should be able to hear how our interpretation changes when the uncertain date is accepted or rejected. That makes the reconstruction an argument, not just a polished sound clip.",
+      "meaning_vi": "C: Khách nên nghe khác biệt giữa hai cách hiểu niên đại, không chỉ một clip được đánh bóng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "C",
+      "text_en": "I will prepare a short listening comparison that does not conceal the original hiss.",
+      "meaning_vi": "C: Tôi sẽ chuẩn bị phần so sánh nghe mà không che tiếng nhiễu gốc.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "B",
+      "text_en": "The most interesting story is how we decide which copy is trustworthy. Visitors can hear two versions and examine the records that support or challenge each one.",
+      "meaning_vi": "B: Triển lãm giải thích cách đánh giá các bản ghi cạnh tranh.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "A",
+      "text_en": "A transparent reconstruction can be fascinating, provided the audience knows which sounds are authentic and which are modern interpretations.",
+      "meaning_vi": "A: Bản phục dựng phải phân biệt âm thanh gốc và phần diễn giải hiện đại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Box label dated 1937",
+      "options": [
+        {
+          "key": "A",
+          "text": "Repeat the recording with a new actor"
+        },
+        {
+          "key": "B",
+          "text": "Refer to the rights specialist"
+        },
+        {
+          "key": "C",
+          "text": "Use as the main dating source"
+        },
+        {
+          "key": "D",
+          "text": "Anonymise the archive donor"
+        },
+        {
+          "key": "E",
+          "text": "Use for period illustration only"
+        },
+        {
+          "key": "F",
+          "text": "Retain with a dating caution"
+        },
+        {
+          "key": "G",
+          "text": "Exclude because the processing destroyed detail"
+        }
+      ],
+      "correct_option": "F",
+      "correct_answers": [
+        "F"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Keep a photograph of the box label, but explain that the annotation was added much later and cannot establish the broadcast date.",
+      "explanation_vi": "C: Giữ ảnh nhãn hộp nhưng ghi chú ngày thêm sau.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Station transmission ledger",
+      "options": [
+        {
+          "key": "A",
+          "text": "Repeat the recording with a new actor"
+        },
+        {
+          "key": "B",
+          "text": "Refer to the rights specialist"
+        },
+        {
+          "key": "C",
+          "text": "Use as the main dating source"
+        },
+        {
+          "key": "D",
+          "text": "Anonymise the archive donor"
+        },
+        {
+          "key": "E",
+          "text": "Use for period illustration only"
+        },
+        {
+          "key": "F",
+          "text": "Retain with a dating caution"
+        },
+        {
+          "key": "G",
+          "text": "Exclude because the processing destroyed detail"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "C"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The station ledger is our strongest independent record of when the programme actually aired.",
+      "explanation_vi": "A: Sổ lịch phát sóng là chứng cứ độc lập chính.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Over-filtered audio version",
+      "options": [
+        {
+          "key": "A",
+          "text": "Repeat the recording with a new actor"
+        },
+        {
+          "key": "B",
+          "text": "Refer to the rights specialist"
+        },
+        {
+          "key": "C",
+          "text": "Use as the main dating source"
+        },
+        {
+          "key": "D",
+          "text": "Anonymise the archive donor"
+        },
+        {
+          "key": "E",
+          "text": "Use for period illustration only"
+        },
+        {
+          "key": "F",
+          "text": "Retain with a dating caution"
+        },
+        {
+          "key": "G",
+          "text": "Exclude because the processing destroyed detail"
+        }
+      ],
+      "correct_option": "G",
+      "correct_answers": [
+        "G"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Exclude the version produced with the strongest filter. Several consonants are missing and we cannot reverse that processing reliably.",
+      "explanation_vi": "B: Loại bản lọc nhiễu quá mạnh làm mất phụ âm.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Photograph of studio equipment",
+      "options": [
+        {
+          "key": "A",
+          "text": "Repeat the recording with a new actor"
+        },
+        {
+          "key": "B",
+          "text": "Refer to the rights specialist"
+        },
+        {
+          "key": "C",
+          "text": "Use as the main dating source"
+        },
+        {
+          "key": "D",
+          "text": "Anonymise the archive donor"
+        },
+        {
+          "key": "E",
+          "text": "Use for period illustration only"
+        },
+        {
+          "key": "F",
+          "text": "Retain with a dating caution"
+        },
+        {
+          "key": "G",
+          "text": "Exclude because the processing destroyed detail"
+        }
+      ],
+      "correct_option": "E",
+      "correct_answers": [
+        "E"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The studio photograph will help visitors imagine the equipment, but it cannot confirm which recording they are listening to.",
+      "explanation_vi": "C: Ảnh studio chỉ minh họa thiết bị.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Uncleared performer contract",
+      "options": [
+        {
+          "key": "A",
+          "text": "Repeat the recording with a new actor"
+        },
+        {
+          "key": "B",
+          "text": "Refer to the rights specialist"
+        },
+        {
+          "key": "C",
+          "text": "Use as the main dating source"
+        },
+        {
+          "key": "D",
+          "text": "Anonymise the archive donor"
+        },
+        {
+          "key": "E",
+          "text": "Use for period illustration only"
+        },
+        {
+          "key": "F",
+          "text": "Retain with a dating caution"
+        },
+        {
+          "key": "G",
+          "text": "Exclude because the processing destroyed detail"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "B"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "The performer’s contract has restrictions we do not understand. Ask the archive rights officer before publishing the reconstructed voice clip.",
+      "explanation_vi": "A: Phải hỏi cán bộ bản quyền trước khi công bố đoạn diễn lại.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What is the main reason the earliest copy is uncertain?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The presenter spoke too quickly"
+        },
+        {
+          "key": "B",
+          "text": "It is missing the opening music"
+        },
+        {
+          "key": "C",
+          "text": "Its date was added decades after the recording"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Its date was added decades after the recording"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The label says 1937, but that date was written on the box in the 1970s. We cannot assume the recording was made in 1937 simply because somebody annotated it later.",
+      "explanation_vi": "C: Năm ghi trên hộp được thêm nhiều thập kỷ sau, không chứng minh năm thu.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why might aggressive sound cleaning be harmful?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It could remove parts of the original speech"
+        },
+        {
+          "key": "B",
+          "text": "It would make the audio louder"
+        },
+        {
+          "key": "C",
+          "text": "It requires extra storage space"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "It could remove parts of the original speech"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "The noise filter removes hiss, but it also cuts the quieter consonants from the presenter’s voice. Cleaning the recording too aggressively could erase evidence rather than recover it.",
+      "explanation_vi": "B: Lọc nhiễu quá mạnh có thể xóa phụ âm nhỏ trong giọng gốc.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What does the tutor recommend comparing first?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Interviews with contemporary students"
+        },
+        {
+          "key": "B",
+          "text": "Independent station programme schedules"
+        },
+        {
+          "key": "C",
+          "text": "The popularity of modern radio dramas"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Independent station programme schedules"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "Before guessing from the accent, compare the surviving station programme schedules. If a particular speech was broadcast on only one date, that gives us a stronger starting point.",
+      "explanation_vi": "A: Đối chiếu lịch phát thanh còn lưu thay vì đoán từ giọng nói.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "How will missing material be presented?",
+      "options": [
+        {
+          "key": "A",
+          "text": "As seamless original audio"
+        },
+        {
+          "key": "B",
+          "text": "As subtitles without any indication"
+        },
+        {
+          "key": "C",
+          "text": "As clearly labelled reconstructed segments"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "As clearly labelled reconstructed segments"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "The final exhibition could include a modern actor reading a missing announcement. That is acceptable if the replacement is clearly labelled as a reconstruction, not passed off as the surviving broadcast.",
+      "explanation_vi": "C: Phần diễn đọc thay phải gắn nhãn phục dựng rõ ràng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What is the proposed focus of the exhibit?",
+      "options": [
+        {
+          "key": "A",
+          "text": "How historians evaluate competing copies"
+        },
+        {
+          "key": "B",
+          "text": "Demonstrating the newest audio software"
+        },
+        {
+          "key": "C",
+          "text": "Ranking presenters by accent"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "How historians evaluate competing copies"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "The most interesting story is how we decide which copy is trustworthy. Visitors can hear two versions and examine the records that support or challenge each one.",
+      "explanation_vi": "B: Triển lãm giải thích cách đánh giá các bản ghi cạnh tranh.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Repeat the recording with a new actor"
+        },
+        {
+          "key": "B",
+          "text": "Refer to the rights specialist"
+        },
+        {
+          "key": "C",
+          "text": "Use as the main dating source"
+        },
+        {
+          "key": "D",
+          "text": "Anonymise the archive donor"
+        },
+        {
+          "key": "E",
+          "text": "Use for period illustration only"
+        },
+        {
+          "key": "F",
+          "text": "Retain with a dating caution"
+        },
+        {
+          "key": "G",
+          "text": "Exclude because the processing destroyed detail"
+        }
+      ]
+    },
+    {
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "B: Có ba bản ghi chương trình phát thanh cổ với ngày tháng khác nhau; cần xác minh nguồn trước khi phục chế.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "7a44560823b0733bfbe4b0820a20979ba457621bdeacbd33598811a4e01ff00a",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.06,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

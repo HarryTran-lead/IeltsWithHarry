@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-010",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "Final /s/ versus /z/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt final /s/ versus /z/.",
+    "Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The bus stops at the library.",
+      "translation_vi": "Xe buýt dừng ở thư viện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "bus",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "There is a quiet buzz in the room.",
+      "translation_vi": "Trong phòng có tiếng vo ve khe khẽ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "buzz",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please put more ice in the glass.",
+      "translation_vi": "Hãy cho thêm đá vào cốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "ice",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Her eyes were red from the smoke.",
+      "translation_vi": "Mắt cô ấy đỏ vì khói.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "eyes",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A familiar face appeared at the door.",
+      "translation_vi": "Một gương mặt quen thuộc xuất hiện ở cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "face",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The project has entered a new phase.",
+      "translation_vi": "Dự án đã bước sang giai đoạn mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "phase",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The price has increased this week.",
+      "translation_vi": "Giá đã tăng trong tuần này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "price",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The first prize is a new bicycle.",
+      "translation_vi": "Giải nhất là một chiếc xe đạp mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "prize",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The lid is loose, so hold it carefully.",
+      "translation_vi": "Nắp bị lỏng nên hãy cầm cẩn thận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "loose",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Do not lose the receipt for the jacket.",
+      "translation_vi": "Đừng làm mất hóa đơn của chiếc áo khoác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_s_z"
+      ],
+      "target_word": "lose",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bus stops at the library."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe bus / buzz (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Xe buýt dừng ở thư viện.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "bus / buzz (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "There is a quiet buzz in the room."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe bus / buzz (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Trong phòng có tiếng vo ve khe khẽ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "bus / buzz (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please put more ice in the glass."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe ice / eyes (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Hãy cho thêm đá vào cốc.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "ice / eyes (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Her eyes were red from the smoke."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe ice / eyes (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Mắt cô ấy đỏ vì khói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "ice / eyes (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A familiar face appeared at the door."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe face / phase (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Một gương mặt quen thuộc xuất hiện ở cửa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "face / phase (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The project has entered a new phase."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe face / phase (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Dự án đã bước sang giai đoạn mới.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "face / phase (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The price has increased this week."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe price / prize (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Giá đã tăng trong tuần này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price / prize (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The first prize is a new bicycle."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe price / prize (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Giải nhất là một chiếc xe đạp mới.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price / prize (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The lid is loose, so hold it carefully."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe loose / lose (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Nắp bị lỏng nên hãy cầm cẩn thận.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "loose / lose (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Do not lose the receipt for the jacket."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe loose / lose (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm). Nghĩa: Đừng làm mất hóa đơn của chiếc áo khoác.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "loose / lose (Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "bus"
+      ],
+      "options": [
+        "bus",
+        "buzz"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt bus và buzz. Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_s_z"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "eyes"
+      ],
+      "options": [
+        "eyes",
+        "ice"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt ice và eyes. Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_s_z"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "face"
+      ],
+      "options": [
+        "face",
+        "phase"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt face và phase. Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_s_z"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "prize"
+      ],
+      "options": [
+        "prize",
+        "price"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt price và prize. Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_s_z"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "loose"
+      ],
+      "options": [
+        "loose",
+        "lose"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt loose và lose. Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_s_z"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "bus",
+      "pos": "target",
+      "meaning_vi": "xe buýt",
+      "example_en": "The bus stops at the library.",
+      "example_vi": "Xe buýt dừng ở thư viện.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "final_s_z"
+    },
+    {
+      "term": "buzz",
+      "pos": "target",
+      "meaning_vi": "tiếng vo ve",
+      "example_en": "There is a quiet buzz in the room.",
+      "example_vi": "Trong phòng có tiếng vo ve khe khẽ.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "final_s_z"
+    },
+    {
+      "term": "ice",
+      "pos": "target",
+      "meaning_vi": "đá lạnh",
+      "example_en": "Please put more ice in the glass.",
+      "example_vi": "Hãy cho thêm đá vào cốc.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "final_s_z"
+    },
+    {
+      "term": "eyes",
+      "pos": "target",
+      "meaning_vi": "đôi mắt",
+      "example_en": "Her eyes were red from the smoke.",
+      "example_vi": "Mắt cô ấy đỏ vì khói.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "final_s_z"
+    },
+    {
+      "term": "face",
+      "pos": "target",
+      "meaning_vi": "khuôn mặt",
+      "example_en": "A familiar face appeared at the door.",
+      "example_vi": "Một gương mặt quen thuộc xuất hiện ở cửa.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "final_s_z"
+    },
+    {
+      "term": "phase",
+      "pos": "target",
+      "meaning_vi": "giai đoạn",
+      "example_en": "The project has entered a new phase.",
+      "example_vi": "Dự án đã bước sang giai đoạn mới.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "final_s_z"
+    },
+    {
+      "term": "price",
+      "pos": "target",
+      "meaning_vi": "giá tiền",
+      "example_en": "The price has increased this week.",
+      "example_vi": "Giá đã tăng trong tuần này.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "final_s_z"
+    },
+    {
+      "term": "prize",
+      "pos": "target",
+      "meaning_vi": "giải thưởng",
+      "example_en": "The first prize is a new bicycle.",
+      "example_vi": "Giải nhất là một chiếc xe đạp mới.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "final_s_z"
+    },
+    {
+      "term": "loose",
+      "pos": "target",
+      "meaning_vi": "lỏng",
+      "example_en": "The lid is loose, so hold it carefully.",
+      "example_vi": "Nắp bị lỏng nên hãy cầm cẩn thận.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "final_s_z"
+    },
+    {
+      "term": "lose",
+      "pos": "target",
+      "meaning_vi": "mất/đánh mất",
+      "example_en": "Do not lose the receipt for the jacket.",
+      "example_vi": "Đừng làm mất hóa đơn của chiếc áo khoác.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "final_s_z"
+    }
+  ],
+  "micro_skill_id": "final_s_z",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "bus",
+        "buzz"
+      ],
+      [
+        "ice",
+        "eyes"
+      ],
+      [
+        "face",
+        "phase"
+      ],
+      [
+        "price",
+        "prize"
+      ],
+      [
+        "loose",
+        "lose"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Đối chiếu /s/ và /z/ ở cuối từ; đặc biệt quan trọng với từ gần âm"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "234b3734dbf1279cde350332d2247167e7d2fbbff1f7c840bf6225a158375e53",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Cuối từ, /s/ không rung còn /z/ rung; nghe đoạn kéo dài phụ âm thay vì chỉ nguyên âm.",
+    "worked_contrasts": [
+      {
+        "contrast": "bus / buzz",
+        "meaning_vi": "xe buýt / tiếng vo ve",
+        "teacher_note_vi": "Cuối từ, /s/ không rung còn /z/ rung; nghe đoạn kéo dài phụ âm thay vì chỉ nguyên âm."
+      },
+      {
+        "contrast": "ice / eyes",
+        "meaning_vi": "đá lạnh / đôi mắt",
+        "teacher_note_vi": "Cuối từ, /s/ không rung còn /z/ rung; nghe đoạn kéo dài phụ âm thay vì chỉ nguyên âm."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Nhầm price/prize, loose/lose hoặc bỏ đuôi số nhiều.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

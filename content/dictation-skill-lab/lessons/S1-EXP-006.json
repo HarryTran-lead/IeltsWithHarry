@@ -1,0 +1,828 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-006",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Theatre ticket booking",
+  "title": "Reserving Seats at a Community Theatre",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "seat_types",
+    "concessions",
+    "dates",
+    "accessibility"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "Hello, I'd like to book tickets for The Lantern Players' new comedy. I heard there was an extra performance added.",
+      "translation_vi": "Xin chào, tôi muốn đặt vé vở hài mới của đoàn Lantern Players. Tôi nghe có thêm suất diễn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Yes, we added a Sunday matinee because Friday and Saturday evenings sold out quite quickly.",
+      "translation_vi": "Đúng, chúng tôi thêm suất chiều Chủ Nhật vì tối thứ Sáu và thứ Bảy hết vé nhanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "B",
+      "text_en": "Sunday would be ideal. What time does it start? My mother doesn't like going out late.",
+      "translation_vi": "Chủ Nhật phù hợp. Mấy giờ bắt đầu? Mẹ tôi không thích đi về muộn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The doors open at one thirty, and the performance itself begins at two fifteen. There's a short interval after the first act.",
+      "translation_vi": "Mở cửa 1:30, vở diễn bắt đầu 2:15. Có nghỉ ngắn sau màn một.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I'd like three seats. I saw stalls tickets for eighteen pounds, although my mother might prefer somewhere with fewer steps.",
+      "translation_vi": "Tôi muốn ba ghế. Tôi thấy ghế tầng dưới 18 bảng, nhưng mẹ có lẽ thích nơi ít bậc thang.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Our accessible row is at the back of the stalls. It costs the same, and there's level access from the side entrance.",
+      "translation_vi": "Hàng ghế dễ tiếp cận ở cuối tầng dưới. Giá như nhau và có lối ngang từ cửa bên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "That's perfect. Could we take seats in that row? One of us is a student, by the way.",
+      "translation_vi": "Hoàn hảo. Chúng tôi lấy ghế hàng đó nhé? Có một người trong nhóm là sinh viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The student ticket is twelve pounds, provided they bring a valid card. The other two would pay the normal rate.",
+      "translation_vi": "Vé sinh viên 12 bảng nếu mang thẻ hợp lệ. Hai người còn lại trả giá thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "Fine. I was planning to pick up the tickets at the box office, but I might arrive just before the show.",
+      "translation_vi": "Được. Tôi định lấy vé tại phòng vé, nhưng có thể tới sát giờ diễn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "We can email electronic tickets instead. They have a QR code, so you can go straight to the side entrance.",
+      "translation_vi": "Chúng tôi có thể gửi vé điện tử qua email, có mã QR nên chị vào thẳng cửa bên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "Please do. Is there a café? My mother would like a cup of tea before the performance.",
+      "translation_vi": "Xin gửi email. Có quán cà phê không? Mẹ tôi muốn uống trà trước giờ diễn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The café is closed for repairs, but the foyer kiosk serves hot drinks. It opens at one forty-five.",
+      "translation_vi": "Quán đang đóng để sửa, nhưng quầy sảnh bán đồ uống nóng. Mở lúc 1:45.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "Good. One last question: can we exchange tickets if my mother's appointment is moved to Sunday?",
+      "translation_vi": "Tốt. Tôi hỏi thêm: có đổi vé được nếu lịch khám của mẹ chuyển sang Chủ Nhật không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "We can exchange them up to forty-eight hours beforehand, although we can't offer cash refunds for cancellations.",
+      "translation_vi": "Có thể đổi trước giờ diễn tối thiểu 48 tiếng, nhưng không hoàn tiền mặt khi hủy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "B",
+      "text_en": "All right. Put the reservation under the surname Marsh, and send the confirmation to the email on my account.",
+      "translation_vi": "Được. Đặt dưới họ Marsh và gửi xác nhận tới email trên tài khoản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "A",
+      "text_en": "Certainly. I'll hold those three accessible-row seats for fifteen minutes while you complete the payment online.",
+      "translation_vi": "Được. Tôi giữ ba ghế hàng dễ tiếp cận trong 15 phút để chị thanh toán online.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Extra performance day: ____",
+      "correct_answers": [
+        "Sunday"
+      ],
+      "spoken_answer": "Sunday",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Suất bổ sung vào Chủ Nhật.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Sunday matinee",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Performance begins at ____",
+      "correct_answers": [
+        "two fifteen",
+        "2:15"
+      ],
+      "spoken_answer": "two fifteen",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Mở cửa 1:30, bắt đầu biểu diễn 2:15.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "begins at two fifteen",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Normal stalls ticket: £____",
+      "correct_answers": [
+        "eighteen",
+        "18"
+      ],
+      "spoken_answer": "eighteen",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giá ghế thường là 18 bảng.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "eighteen pounds",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Where are the accessible seats?",
+      "correct_answers": [
+        "back of stalls"
+      ],
+      "options": [
+        "front balcony",
+        "upper circle",
+        "back of stalls"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Hàng ghế dễ tiếp cận ở cuối tầng dưới.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "back of the stalls",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Student ticket: £____",
+      "correct_answers": [
+        "twelve",
+        "12"
+      ],
+      "spoken_answer": "twelve",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cần thẻ sinh viên hợp lệ để mua giá 12 bảng.",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "twelve pounds",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "How will the tickets be delivered?",
+      "correct_answers": [
+        "email"
+      ],
+      "options": [
+        "email",
+        "post",
+        "box office collection"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Vé điện tử gửi email, dùng mã QR.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "email electronic tickets",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Hot drinks available at the foyer ____",
+      "correct_answers": [
+        "kiosk"
+      ],
+      "spoken_answer": "kiosk",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Quán café đóng, quầy sảnh vẫn bán đồ uống nóng.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "foyer kiosk",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Ticket exchanges allowed up to ____ hours before",
+      "correct_answers": [
+        "forty-eight",
+        "48"
+      ],
+      "spoken_answer": "forty-eight",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Đổi vé tối thiểu 48 giờ trước suất diễn.",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "forty-eight hours beforehand",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "The doors open at one thirty, and the performance itself begins at two fifteen. There's a short interval after the first act."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Mở cửa 1:30, vở diễn bắt đầu 2:15. Có nghỉ ngắn sau màn một.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "That's perfect. Could we take seats in that row? One of us is a student, by the way."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Hoàn hảo. Chúng tôi lấy ghế hàng đó nhé? Có một người trong nhóm là sinh viên.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "We can email electronic tickets instead. They have a QR code, so you can go straight to the side entrance."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Chúng tôi có thể gửi vé điện tử qua email, có mã QR nên chị vào thẳng cửa bên.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "We can exchange them up to forty-eight hours beforehand, although we can't offer cash refunds for cancellations."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Có thể đổi trước giờ diễn tối thiểu 48 tiếng, nhưng không hoàn tiền mặt khi hủy.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: Yes, we added a ____ matinee because Friday and Saturday evenings sold out quite quickly.",
+      "correct_answers": [
+        "Sunday"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Suất bổ sung vào Chủ Nhật.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: The doors open at one thirty, and the performance itself begins at ____. There's a short interval after the first act.",
+      "correct_answers": [
+        "two fifteen"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Mở cửa 1:30, bắt đầu biểu diễn 2:15.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "seat_types",
+        "concessions",
+        "dates",
+        "accessibility"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-006-V01",
+      "expression_en": "matinee",
+      "meaning_vi": "suất diễn ban ngày",
+      "part_of_speech": "noun",
+      "example_en": "Yes, we added a Sunday matinee because Friday and Saturday evenings sold out quite quickly.",
+      "example_vi": "Đúng, chúng tôi thêm suất chiều Chủ Nhật vì tối thứ Sáu và thứ Bảy hết vé nhanh.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-006-V02",
+      "expression_en": "stalls",
+      "meaning_vi": "khu ghế tầng dưới của nhà hát",
+      "part_of_speech": "noun",
+      "example_en": "I'd like three seats. I saw stalls tickets for eighteen pounds, although my mother might prefer somewhere with fewer steps.",
+      "example_vi": "Tôi muốn ba ghế. Tôi thấy ghế tầng dưới 18 bảng, nhưng mẹ có lẽ thích nơi ít bậc thang.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-006-V03",
+      "expression_en": "accessible row",
+      "meaning_vi": "hàng ghế dễ tiếp cận",
+      "part_of_speech": "noun phrase",
+      "example_en": "Our accessible row is at the back of the stalls. It costs the same, and there's level access from the side entrance.",
+      "example_vi": "Hàng ghế dễ tiếp cận ở cuối tầng dưới. Giá như nhau và có lối ngang từ cửa bên.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-006-V04",
+      "expression_en": "valid card",
+      "meaning_vi": "thẻ hợp lệ",
+      "part_of_speech": "noun phrase",
+      "example_en": "The student ticket is twelve pounds, provided they bring a valid card. The other two would pay the normal rate.",
+      "example_vi": "Vé sinh viên 12 bảng nếu mang thẻ hợp lệ. Hai người còn lại trả giá thường.",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-006-V05",
+      "expression_en": "electronic tickets",
+      "meaning_vi": "vé điện tử",
+      "part_of_speech": "noun phrase",
+      "example_en": "We can email electronic tickets instead. They have a QR code, so you can go straight to the side entrance.",
+      "example_vi": "Chúng tôi có thể gửi vé điện tử qua email, có mã QR nên chị vào thẳng cửa bên.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-006-V06",
+      "expression_en": "exchange tickets",
+      "meaning_vi": "đổi vé",
+      "part_of_speech": "verb phrase",
+      "example_en": "Good. One last question: can we exchange tickets if my mother's appointment is moved to Sunday?",
+      "example_vi": "Tốt. Tôi hỏi thêm: có đổi vé được nếu lịch khám của mẹ chuyển sang Chủ Nhật không?",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "857bb74584d0d121866cc651fb73eba58e6d6d39747f982787432bb585386496",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 297,
+    "estimated_audio_minutes_at_135_wpm": 2.2,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

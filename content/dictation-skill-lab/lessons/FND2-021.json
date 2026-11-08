@@ -1,0 +1,652 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-021",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M17 – Numbers",
+  "title": "Teen versus tens in everyday speech",
+  "learning_objectives_vi": [
+    "Nghe chính xác teen versus tens in everyday speech.",
+    "Chú ý trọng âm -teen và -ty; không suy đoán đáp án từ bối cảnh",
+    "Chuyển lời đọc thành chữ số/mã chính xác, không đoán theo ý nghĩa."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The class has thirteen students today.",
+      "translation_vi": "Hôm nay lớp có mười ba học sinh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "13",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The hall has thirty seats altogether.",
+      "translation_vi": "Hội trường có tổng cộng ba mươi chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "30",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We need fourteen clean plates.",
+      "translation_vi": "Chúng ta cần mười bốn chiếc đĩa sạch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "14",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Forty people registered for the workshop.",
+      "translation_vi": "Bốn mươi người đăng ký hội thảo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "40",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I counted fifteen boxes in the storeroom.",
+      "translation_vi": "Tôi đếm được mười lăm chiếc hộp trong kho.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "15",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The bus can carry fifty passengers.",
+      "translation_vi": "Xe buýt có thể chở năm mươi hành khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "50",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "There are sixteen pages in this booklet.",
+      "translation_vi": "Có mười sáu trang trong tập sách nhỏ này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "16",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Sixty volunteers will attend on Sunday.",
+      "translation_vi": "Sáu mươi tình nguyện viên sẽ tham dự vào Chủ nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "60",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Seventeen people came to the morning talk.",
+      "translation_vi": "Mười bảy người đến buổi nói chuyện sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "17",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Seventy tickets were sold before noon.",
+      "translation_vi": "Bảy mươi vé đã được bán trước buổi trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "teen_ty_numbers",
+        "integer"
+      ],
+      "target_value": "70",
+      "target_kind": "integer",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The class has thirteen students today."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Hôm nay lớp có mười ba học sinh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "T01: Nghe lượt này rồi nhập con số bằng chữ số.",
+      "correct_answers": [
+        "13"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 13. Ngữ cảnh: Hôm nay lớp có mười ba học sinh.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "integer"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "integer",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The hall has thirty seats altogether."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Hội trường có tổng cộng ba mươi chỗ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "T02: Nghe lượt này rồi nhập con số bằng chữ số.",
+      "correct_answers": [
+        "30"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 30. Ngữ cảnh: Hội trường có tổng cộng ba mươi chỗ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "integer"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "integer",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We need fourteen clean plates."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Chúng ta cần mười bốn chiếc đĩa sạch.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "T03: Nghe lượt này rồi nhập con số bằng chữ số.",
+      "correct_answers": [
+        "14"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 14. Ngữ cảnh: Chúng ta cần mười bốn chiếc đĩa sạch.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "integer"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "integer",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Forty people registered for the workshop."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Bốn mươi người đăng ký hội thảo.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "T04: Nghe lượt này rồi nhập con số bằng chữ số.",
+      "correct_answers": [
+        "40"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 40. Ngữ cảnh: Bốn mươi người đăng ký hội thảo.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "integer"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "integer",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I counted fifteen boxes in the storeroom."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Tôi đếm được mười lăm chiếc hộp trong kho.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "T05: Nghe lượt này rồi nhập con số bằng chữ số.",
+      "correct_answers": [
+        "15"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 15. Ngữ cảnh: Tôi đếm được mười lăm chiếc hộp trong kho.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "integer"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "integer",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bus can carry fifty passengers."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Xe buýt có thể chở năm mươi hành khách.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "There are sixteen pages in this booklet."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Có mười sáu trang trong tập sách nhỏ này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Sixty volunteers will attend on Sunday."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Sáu mươi tình nguyện viên sẽ tham dự vào Chủ nhật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Seventeen people came to the morning talk."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Mười bảy người đến buổi nói chuyện sáng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Seventy tickets were sold before noon."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe teen_ty_numbers. Nghĩa: Bảy mươi vé đã được bán trước buổi trưa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "teen_ty_numbers"
+      ],
+      "max_replays_practice": 5
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "13",
+      "pos": "integer",
+      "meaning_vi": "13 (integer)",
+      "example_en": "The class has thirteen students today.",
+      "example_vi": "Hôm nay lớp có mười ba học sinh.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "30",
+      "pos": "integer",
+      "meaning_vi": "30 (integer)",
+      "example_en": "The hall has thirty seats altogether.",
+      "example_vi": "Hội trường có tổng cộng ba mươi chỗ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "14",
+      "pos": "integer",
+      "meaning_vi": "14 (integer)",
+      "example_en": "We need fourteen clean plates.",
+      "example_vi": "Chúng ta cần mười bốn chiếc đĩa sạch.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "40",
+      "pos": "integer",
+      "meaning_vi": "40 (integer)",
+      "example_en": "Forty people registered for the workshop.",
+      "example_vi": "Bốn mươi người đăng ký hội thảo.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "15",
+      "pos": "integer",
+      "meaning_vi": "15 (integer)",
+      "example_en": "I counted fifteen boxes in the storeroom.",
+      "example_vi": "Tôi đếm được mười lăm chiếc hộp trong kho.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "50",
+      "pos": "integer",
+      "meaning_vi": "50 (integer)",
+      "example_en": "The bus can carry fifty passengers.",
+      "example_vi": "Xe buýt có thể chở năm mươi hành khách.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "16",
+      "pos": "integer",
+      "meaning_vi": "16 (integer)",
+      "example_en": "There are sixteen pages in this booklet.",
+      "example_vi": "Có mười sáu trang trong tập sách nhỏ này.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "60",
+      "pos": "integer",
+      "meaning_vi": "60 (integer)",
+      "example_en": "Sixty volunteers will attend on Sunday.",
+      "example_vi": "Sáu mươi tình nguyện viên sẽ tham dự vào Chủ nhật.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "17",
+      "pos": "integer",
+      "meaning_vi": "17 (integer)",
+      "example_en": "Seventeen people came to the morning talk.",
+      "example_vi": "Mười bảy người đến buổi nói chuyện sáng.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "70",
+      "pos": "integer",
+      "meaning_vi": "70 (integer)",
+      "example_en": "Seventy tickets were sold before noon.",
+      "example_vi": "Bảy mươi vé đã được bán trước buổi trưa.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "micro_skill_id": "teen_ty_numbers",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_distinct_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Chú ý trọng âm -teen và -ty; không suy đoán đáp án từ bối cảnh"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "dc4e0d19593bf95b45d8e664b34df0b27a2228a590ddeb9ea903d0899aaf90ef",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft; numeric normalization and pronunciation require teacher/audio QA.",
+      "Fictional UK phone number ranges used for instructional safety; do not dial."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Từ -teen thường nhấn phần -teen; từ -ty nhấn âm tiết đầu. Hãy so sánh trước khi nhìn chữ.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "eighteen",
+        "written_value": "18",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      },
+      {
+        "spoken_example": "eighty",
+        "written_value": "80",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      }
+    ],
+    "learning_steps": [
+      "Xem quy tắc và hai ví dụ bên dưới trước khi bắt đầu.",
+      "Nghe mỗi câu một lần, chép toàn câu hoặc nhập thông tin số theo yêu cầu.",
+      "Đối chiếu chữ/số và vị trí sai sau khi nộp; nghe lại từng câu khi cần.",
+      "Kiểm tra bằng 2 câu mới chưa xuất hiện trong nội dung luyện."
+    ],
+    "common_mistakes": [
+      "Phải phân biệt âm nghe được, không điền theo con số có vẻ hợp lý.",
+      "Không dùng lại câu quen thuộc để chứng minh độ vững của kỹ năng."
+    ],
+    "before_audio_question": "Thông tin cần nghe là số lượng, số điện thoại, giờ, tiền hay mã chữ-số?"
+  }
+}

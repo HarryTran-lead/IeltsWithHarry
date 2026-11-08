@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-005",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Coastal geography field methods",
+  "title": "Planning a Coastal Erosion Field Survey",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "fieldwork_planning",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "For the coast project, decide whether your priority is measuring beach movement or asking residents how they perceive risk. You have mixed both aims, but our field trip lasts only two days.",
+      "translation_vi": "Với nghiên cứu bờ biển, các em cần chọn đo biến động bãi biển hay hỏi người dân nhận thức rủi ro. Hai mục tiêu trộn lẫn nhưng chuyến đi chỉ có hai ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I want to measure the beach profile because we can compare it with last year's class data. The problem is that their measurements used different reference points, so direct comparison might be unreliable.",
+      "translation_vi": "Em muốn đo mặt cắt bãi vì có dữ liệu lớp năm trước. Tuy nhiên họ dùng các mốc khác nên so trực tiếp có thể không đáng tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Interviews could reveal how residents use the shore, but asking about past erosion relies on memory. A storm may make people recall one dramatic event rather than the gradual change over several years.",
+      "translation_vi": "Phỏng vấn cho biết người dân dùng bờ thế nào, nhưng hỏi xói lở quá khứ dựa vào trí nhớ; bão dễ khiến họ nhớ sự kiện nổi bật hơn thay đổi từ từ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Choose the physical survey as the main study and treat residents' comments as context only. Locate a permanent benchmark before taking measurements, and photograph the method rather than people's properties.",
+      "translation_vi": "Chọn khảo sát địa hình làm nghiên cứu chính, ý kiến dân chỉ bổ trợ. Tìm mốc chuẩn cố định trước khi đo và chụp quy trình thay vì nhà dân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The tide timetable worries me. The previous group surveyed at low tide, but our first afternoon is close to high tide. We may not have a safe access route to the lower beach.",
+      "translation_vi": "Em lo lịch thủy triều. Nhóm trước khảo sát lúc triều thấp, còn chiều đầu của ta gần triều cao; có thể không xuống bãi thấp an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Then do the measurements on the following morning, when the tide is falling, and use the afternoon to check equipment and mark our starting point. That seems safer than rushing a survey.",
+      "translation_vi": "Vậy đo sáng hôm sau khi triều xuống; chiều đầu kiểm thiết bị và đánh dấu điểm đầu. An toàn hơn việc khảo sát vội.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That is sensible, but watch the weather forecast as well. A falling tide does not guarantee safe conditions if waves are large. The field leader can cancel measurements without losing marks.",
+      "translation_vi": "Hợp lý nhưng phải xem dự báo thời tiết. Triều xuống vẫn nguy hiểm nếu sóng lớn. Trưởng nhóm có quyền hủy đo mà không bị trừ điểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Our plan can include three transects instead of six. I would rather repeat three accurate lines than collect a larger set of inconsistent measurements that we cannot interpret.",
+      "translation_vi": "Kế hoạch có thể đo ba tuyến cắt thay vì sáu. Em muốn lặp ba tuyến chính xác hơn nhiều số đo thiếu nhất quán khó phân tích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll review last year's photographs to see whether we can identify the same fixed reference point. If not, we must report that the historic comparison is limited.",
+      "translation_vi": "Em sẽ xem ảnh năm trước có tìm được cùng mốc chuẩn không. Nếu không, phải ghi rằng so sánh lịch sử bị hạn chế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll calibrate the measuring rods and record the instrument settings in a shared sheet. Otherwise we might confuse an equipment difference with real erosion between the two surveys.",
+      "translation_vi": "Em sẽ hiệu chuẩn thước đo và ghi cài đặt vào bảng chung, tránh nhầm sai khác thiết bị với xói lở thật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "I will check the university's safety protocol and confirm who can make a stop decision. No research result is important enough to justify ignoring a warning from the field leader.",
+      "translation_vi": "Thầy sẽ kiểm tra quy trình an toàn và xác nhận ai được quyết định dừng. Không kết quả nào đáng để phớt lờ cảnh báo trưởng nhóm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "I'll draw the site sketch and label the benchmark, access steps and safe waiting area. Everyone should understand the layout before we carry equipment down to the beach.",
+      "translation_vi": "Em sẽ vẽ sơ đồ khu vực, đánh dấu mốc chuẩn, bậc xuống và nơi chờ an toàn. Mọi người cần hiểu địa hình trước khi mang thiết bị xuống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Bring the revised risk assessment to tomorrow's meeting. I want a small, defensible dataset rather than an ambitious set of numbers collected in unsafe conditions.",
+      "translation_vi": "Ngày mai mang đánh giá rủi ro đã sửa. Thầy muốn bộ dữ liệu nhỏ mà tin cậy hơn nhiều số liệu thu trong điều kiện không an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "fieldwork_planning",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What is the main problem with last year’s measurements?",
+      "correct_answers": [
+        "Different reference points were used"
+      ],
+      "options": [
+        "Different reference points were used",
+        "They were taken in winter only",
+        "No photographs were taken"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I want to measure the beach profile because we can compare it with last year's class data. The problem is that their measurements used different reference points, so direct comparison might be unreliable.",
+      "explanation_vi": "Năm trước dùng mốc tham chiếu khác.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "fieldwork_planning"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Which aspect becomes the main focus?",
+      "correct_answers": [
+        "A physical beach survey"
+      ],
+      "options": [
+        "Property prices near the coast",
+        "Residents’ memories of storms",
+        "A physical beach survey"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Choose the physical survey as the main study and treat residents' comments as context only. Locate a permanent benchmark before taking measurements, and photograph the method rather than people's properties.",
+      "explanation_vi": "Thầy chọn khảo sát địa hình làm nội dung chính.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "fieldwork_planning"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "When does the group decide to collect measurements?",
+      "correct_answers": [
+        "The following morning"
+      ],
+      "options": [
+        "The following morning",
+        "Late at night",
+        "The first afternoon at high tide"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Then do the measurements on the following morning, when the tide is falling, and use the afternoon to check equipment and mark our starting point. That seems safer than rushing a survey.",
+      "explanation_vi": "Sáng hôm sau triều xuống thích hợp hơn.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "fieldwork_planning"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why does the student want fewer transects?",
+      "correct_answers": [
+        "To improve consistency of repeated measurements"
+      ],
+      "options": [
+        "To include more interviewees",
+        "To improve consistency of repeated measurements",
+        "To shorten the final presentation"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Our plan can include three transects instead of six. I would rather repeat three accurate lines than collect a larger set of inconsistent measurements that we cannot interpret.",
+      "explanation_vi": "Ưu tiên lặp tuyến đo chính xác.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "fieldwork_planning"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: check old photographs for a reference point?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I'll review last year's photographs to see whether we can identify the same fixed reference point. If not, we must report that the historic comparison is limited.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "fieldwork_planning"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: calibrate the measuring instruments?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll calibrate the measuring rods and record the instrument settings in a shared sheet. Otherwise we might confuse an equipment difference with real erosion between the two surveys.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "fieldwork_planning"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: confirm the stop-work safety protocol?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I will check the university's safety protocol and confirm who can make a stop decision. No research result is important enough to justify ignoring a warning from the field leader.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "fieldwork_planning"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: draw a sketch of the site and access routes?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll draw the site sketch and label the benchmark, access steps and safe waiting area. Everyone should understand the layout before we carry equipment down to the beach.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "fieldwork_planning"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "Interviews could reveal how residents use the shore, but asking about past erosion relies on memory. A storm may make people recall one dramatic event rather than the gradual change over several years."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Interviews could reveal how residents use the shore, but asking about past erosion relies on memory. A storm may make people recall one dramatic event rather than the gradual change over several years.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "fieldwork_planning"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "The tide timetable worries me. The previous group surveyed at low tide, but our first afternoon is close to high tide. We may not have a safe access route to the lower beach."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The tide timetable worries me. The previous group surveyed at low tide, but our first afternoon is close to high tide. We may not have a safe access route to the lower beach.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "fieldwork_planning"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "That is sensible, but watch the weather forecast as well. A falling tide does not guarantee safe conditions if waves are large. The field leader can cancel measurements without losing marks."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "That is sensible, but watch the weather forecast as well. A falling tide does not guarantee safe conditions if waves are large. The field leader can cancel measurements without losing marks.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "fieldwork_planning"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói A.",
+      "correct_answers": [
+        "I will check the university's safety protocol and confirm who can make a stop decision. No research result is important enough to justify ignoring a warning from the field leader."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I will check the university's safety protocol and confirm who can make a stop decision. No research result is important enough to justify ignoring a warning from the field leader.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "fieldwork_planning"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T02 và điền cụm bị thiếu: I want to measure the ____ because we can compare it with last year's class data. The problem is that their measurements used different reference points, so direct comparison might be unreliable.",
+      "correct_answers": [
+        "beach profile"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I want to measure the beach profile because we can compare it with last year's class data. The problem is that their measurements used different reference points, so direct comparison might be unreliable.",
+      "explanation_vi": "Cụm nghe được là “beach profile” (mặt cắt địa hình bãi biển); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "fieldwork_planning"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T02 và điền cụm bị thiếu: I want to measure the beach profile because we can compare it with last year's class data. The problem is that their measurements used different ____s, so direct comparison might be unreliable.",
+      "correct_answers": [
+        "reference point"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I want to measure the beach profile because we can compare it with last year's class data. The problem is that their measurements used different reference points, so direct comparison might be unreliable.",
+      "explanation_vi": "Cụm nghe được là “reference point” (mốc tham chiếu); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "fieldwork_planning"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-005-V01",
+      "expression_en": "beach profile",
+      "meaning_vi": "mặt cắt địa hình bãi biển",
+      "part_of_speech": "noun phrase",
+      "example_en": "I want to measure the beach profile because we can compare it with last year's class data. The problem is that their measurements used different reference points, so direct comparison might be unreliable.",
+      "example_vi": "Em muốn đo mặt cắt bãi vì có dữ liệu lớp năm trước. Tuy nhiên họ dùng các mốc khác nên so trực tiếp có thể không đáng tin.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-005-V02",
+      "expression_en": "reference point",
+      "meaning_vi": "mốc tham chiếu",
+      "part_of_speech": "noun phrase",
+      "example_en": "I want to measure the beach profile because we can compare it with last year's class data. The problem is that their measurements used different reference points, so direct comparison might be unreliable.",
+      "example_vi": "Em muốn đo mặt cắt bãi vì có dữ liệu lớp năm trước. Tuy nhiên họ dùng các mốc khác nên so trực tiếp có thể không đáng tin.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-005-V03",
+      "expression_en": "benchmark",
+      "meaning_vi": "mốc chuẩn",
+      "part_of_speech": "noun phrase",
+      "example_en": "Choose the physical survey as the main study and treat residents' comments as context only. Locate a permanent benchmark before taking measurements, and photograph the method rather than people's properties.",
+      "example_vi": "Chọn khảo sát địa hình làm nghiên cứu chính, ý kiến dân chỉ bổ trợ. Tìm mốc chuẩn cố định trước khi đo và chụp quy trình thay vì nhà dân.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-005-V04",
+      "expression_en": "tide timetable",
+      "meaning_vi": "bảng giờ thủy triều",
+      "part_of_speech": "adjective/adverb (verify)",
+      "example_en": "The tide timetable worries me. The previous group surveyed at low tide, but our first afternoon is close to high tide. We may not have a safe access route to the lower beach.",
+      "example_vi": "Em lo lịch thủy triều. Nhóm trước khảo sát lúc triều thấp, còn chiều đầu của ta gần triều cao; có thể không xuống bãi thấp an toàn.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-005-V05",
+      "expression_en": "transect",
+      "meaning_vi": "tuyến khảo sát cắt ngang",
+      "part_of_speech": "noun phrase",
+      "example_en": "Our plan can include three transects instead of six. I would rather repeat three accurate lines than collect a larger set of inconsistent measurements that we cannot interpret.",
+      "example_vi": "Kế hoạch có thể đo ba tuyến cắt thay vì sáu. Em muốn lặp ba tuyến chính xác hơn nhiều số đo thiếu nhất quán khó phân tích.",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-005-V06",
+      "expression_en": "risk assessment",
+      "meaning_vi": "đánh giá rủi ro",
+      "part_of_speech": "noun phrase",
+      "example_en": "Bring the revised risk assessment to tomorrow's meeting. I want a small, defensible dataset rather than an ambitious set of numbers collected in unsafe conditions.",
+      "example_vi": "Ngày mai mang đánh giá rủi ro đã sửa. Thầy muốn bộ dữ liệu nhỏ mà tin cậy hơn nhiều số liệu thu trong điều kiện không an toàn.",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "a9a51a4ebfb0c0291b9eee61115e766b37e4fa4c02db3b648453591400cf4724",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 390,
+    "estimated_audio_minutes_at_135_wpm": 2.89,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

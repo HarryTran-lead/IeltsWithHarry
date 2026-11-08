@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-110",
+  "activity_id": "ACT-POST-110",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 2,
+  "title": "Exploring the Old Textile Mill — Sửa lỗi sau bài thi",
+  "source_bank": "full_mock_part",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M30",
+  "source_package": "English_Skill_Lab_Dictation_M30_Full_Listening_Mocks_06-10.zip",
+  "source_entry_path": "ESL_Dictation_M30_Full_Mocks_06_10/01_TESTS_SERVER_ONLY/M30-LISTENING-MOCK-08.SERVER_ONLY.json",
+  "source_test_id": "M30-LISTENING-MOCK-08",
+  "source_lesson_id": null,
+  "source_part_id": "M30-LISTENING-MOCK-08-P2",
+  "reuse_parent_id": "M30-LISTENING-MOCK-08-P2",
+  "source_question_id": "Q08",
+  "source_audio_id": "assessment/full_mock_part/M30-LISTENING-MOCK-08-P2",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T02",
+    "T03",
+    "T11"
+  ],
+  "segment_timing": {
+    "T02": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "2378e5467fd099c96bdfed03b13481210d0934e611acf6b5a3a676365279ee27"
+    },
+    "T03": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "5a8d014558c5a18df22c4359b6f02c8d74e482f7586df5c316004913de1790df"
+    },
+    "T11": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "c25ac842f23102d547516eeb2506ae7b0cd14914c63bcc9c7cdd98cab84b718e"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "bcc39a2b3ba27216a6e0496550cde5f3cd5bcaaaf888202c2039f041a47ab8a8",
+  "anchor_turn_id": "T11",
+  "teacher_only_evidence_text_en": "The step-free visitor route is marked with a blue line. Red markings indicate staff-only spaces and the green arrows lead to the emergency exits. Use the blue line if you require lift access between the galleries.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-110-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Colour of step-free route: ____",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "blue"
+      ],
+      "spoken_answer": "blue",
+      "word_limit": 2,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q08",
+      "source_question_type": "note_completion",
+      "play_turn_ids": [
+        "T11"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "teacher_explanation_vi": "Đáp án dự kiến: blue. Hãy đối chiếu phát ngôn tại T11; phần diễn đạt lại và các đáp án thay thế phải được giáo viên xác nhận.",
+      "feedback_vi": "Đáp án gốc: blue. Đối chiếu với các lượt thoại T11; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-110-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q08",
+      "source_question_prompt_en": "Colour of step-free route: ____",
+      "choices": [
+        {
+          "key": "T02",
+          "excerpt_en": "…Steam engines were added decades later, and electricity came much later still. The small wheel preserved outside illustrates the original arrangement, although it is not powerful enough to operate today's demonstration equipment.",
+          "source_turn_id": "T02"
+        },
+        {
+          "key": "T11",
+          "excerpt_en": "The step-free visitor route is marked with a blue line. Red markings indicate staff-only spaces and the green arrows lead to the emergency exits. Use the blue line if you require lift access between the galleries.",
+          "source_turn_id": "T11"
+        },
+        {
+          "key": "T03",
+          "excerpt_en": "…e daily routines are often missing from technical histories of factories. It includes school records and testimony from families. The directors' portraits are displayed upstairs, but they are not the focus of this opening section.",
+          "source_turn_id": "T03"
+        }
+      ],
+      "correct_answers": [
+        "T11"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_text_sha256": "c25ac842f23102d547516eeb2506ae7b0cd14914c63bcc9c7cdd98cab84b718e",
+      "play_turn_ids": [
+        "T02",
+        "T11",
+        "T03"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T11. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-110-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "…The step-free visitor route is  [____] .…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "marked with a blue line"
+      ],
+      "play_turn_ids": [
+        "T11"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "source_excerpt_exact": "marked with a blue line",
+      "evidence_char_start": 31,
+      "evidence_char_end": 54,
+      "source_turn_sha256": "c25ac842f23102d547516eeb2506ae7b0cd14914c63bcc9c7cdd98cab84b718e",
+      "feedback_vi": "Cụm nghe-chép chính xác là “marked with a blue line”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "blue"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T11"
+    ],
+    "raw_question_evidence_excerpt_en": "The step-free visitor route is marked with a blue line. Red markings indicate staff-only spaces and the green arrows lead to the emergency exits. Use the blue line if you require lift access between the galleries.",
+    "original_explanation_vi": "Đáp án dự kiến: blue. Hãy đối chiếu phát ngôn tại T11; phần diễn đạt lại và các đáp án thay thế phải được giáo viên xác nhận."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_2",
+    "note_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q08",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "M30-LISTENING-MOCK-08",
+    "gate_kind": "whole_mock_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

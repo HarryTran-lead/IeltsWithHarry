@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-013",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Urban sociology",
+  "title": "The Social Role of a Public Library",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "A public library is not merely a building that lends books. In many communities it provides study space, access to computers and a place where people can spend time without purchasing anything. Sociologists study these functions by asking who uses a library, what prevents others from using it and how the design of the space influences everyday behaviour.",
+      "meaning_vi": "Thư viện công cộng được đánh giá như một hạ tầng xã hội đa chức năng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "A library can mean different things to two people in the same neighbourhood. One comes for a book, another for a reliable internet connection, and a third for a calm place between work and home. If evaluators count only loans, they miss much of that activity. The research challenge is to describe an institution serving several needs at once.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "Researchers often describe a library as part of a city's social infrastructure: the physical places that help people meet and participate in community life. An important feature is its free access, because a person can enter without paying for a product. Yet being free does not automatically make a service equally usable. Opening hours, transport connections and language barriers can determine whether residents are actually able to benefit from the space.",
+      "meaning_vi": "Thư viện là hạ tầng xã hội, nhưng miễn phí chưa đồng nghĩa ai cũng tiếp cận được.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "To understand patterns of use, a study might combine a visitor survey with discreet observations of how people occupy different areas. The team could also collect an activity diary from volunteers who record why they came and what they accomplished. Borrowing statistics alone are inadequate: a student may spend hours preparing for an examination without checking out a book. At the same time, self-reported satisfaction may not reflect the experiences of people who rarely visit.",
+      "meaning_vi": "Khảo sát và nhật ký hoạt động giúp thấy mục đích sử dụng ngoài việc mượn sách.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "Libraries must balance a quiet zone for concentrated work with spaces where discussion is welcome. Staff may use flexible furniture to change an area from individual study to a small workshop. These decisions create trade-offs. A lively children's programme can encourage families, but noise may disturb someone preparing for a qualification. The design challenge is to support different activities without pretending that all visitors want the same atmosphere.",
+      "meaning_vi": "Không gian yên tĩnh và đồ đạc linh hoạt giúp phục vụ nhiều nhóm.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Providing computers can reduce aspects of the digital divide, but devices alone are not enough. Many visitors also need digital literacy support to complete forms, evaluate information or use unfamiliar software. A library's success should therefore not be measured simply by counting terminals. It matters whether people can finish the tasks that brought them there and whether help is available without embarrassing those who are new to a technology.",
+      "meaning_vi": "Máy tính và hỗ trợ kỹ năng số cùng góp phần giảm khoảng cách số.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "For a fair evaluation, researchers should examine non-users as well as current visitors, because the people absent from the building may face the greatest barriers. They should also compare results across neighbourhoods rather than assuming one central branch represents an entire city. A small local branch may be less impressive architecturally but much easier to reach. Social value is partly about proximity, trust and the ability to enter on an ordinary day.",
+      "meaning_vi": "Cần khảo sát cả người không đến thư viện và khác biệt giữa các khu dân cư.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "An increase in visitor numbers is not always an unqualified success. More people may mean a service has become useful, but overcrowding can also make quiet study difficult. The study must ask what kinds of activities the building can support and whether services remain welcoming for those who use them less confidently.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "The value of a library cannot be reduced to one headline figure. It lies in the combination of space, access, support and the everyday relationships that make a community more capable of learning together.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Places supporting community interaction are ____.",
+      "correct_answers": [
+        "social infrastructure"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers often describe a library as part of a city's social infrastructure: the physical places that help people meet and participate in community life.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 57,
+        "end_char": 78
+      },
+      "explanation_vi": "Đáp án “social infrastructure” được nói trực tiếp trong phần bài giảng này. Thư viện là hạ tầng xã hội, nhưng miễn phí chưa đồng nghĩa ai cũng tiếp cận được.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "A library's low-barrier role depends on ____.",
+      "correct_answers": [
+        "free access"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "An important feature is its free access, because a person can enter without paying for a product.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 185,
+        "end_char": 196
+      },
+      "explanation_vi": "Đáp án “free access” được nói trực tiếp trong phần bài giảng này. Thư viện là hạ tầng xã hội, nhưng miễn phí chưa đồng nghĩa ai cũng tiếp cận được.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Researchers can ask users to complete a ____.",
+      "correct_answers": [
+        "visitor survey"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "To understand patterns of use, a study might combine a visitor survey with discreet observations of how people occupy different areas.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 55,
+        "end_char": 69
+      },
+      "explanation_vi": "Đáp án “visitor survey” được nói trực tiếp trong phần bài giảng này. Khảo sát và nhật ký hoạt động giúp thấy mục đích sử dụng ngoài việc mượn sách.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Volunteers may document their visits in an ____.",
+      "correct_answers": [
+        "activity diary"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The team could also collect an activity diary from volunteers who record why they came and what they accomplished.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 166,
+        "end_char": 180
+      },
+      "explanation_vi": "Đáp án “activity diary” được nói trực tiếp trong phần bài giảng này. Khảo sát và nhật ký hoạt động giúp thấy mục đích sử dụng ngoài việc mượn sách.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Concentrated individual work benefits from a ____.",
+      "correct_answers": [
+        "quiet zone"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Libraries must balance a quiet zone for concentrated work with spaces where discussion is welcome.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 25,
+        "end_char": 35
+      },
+      "explanation_vi": "Đáp án “quiet zone” được nói trực tiếp trong phần bài giảng này. Không gian yên tĩnh và đồ đạc linh hoạt giúp phục vụ nhiều nhóm.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Rooms can be adapted using ____.",
+      "correct_answers": [
+        "flexible furniture"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Staff may use flexible furniture to change an area from individual study to a small workshop.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 113,
+        "end_char": 131
+      },
+      "explanation_vi": "Đáp án “flexible furniture” được nói trực tiếp trong phần bài giảng này. Không gian yên tĩnh và đồ đạc linh hoạt giúp phục vụ nhiều nhóm.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Computer access may reduce the ____.",
+      "correct_answers": [
+        "digital divide"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Providing computers can reduce aspects of the digital divide, but devices alone are not enough.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 46,
+        "end_char": 60
+      },
+      "explanation_vi": "Đáp án “digital divide” được nói trực tiếp trong phần bài giảng này. Máy tính và hỗ trợ kỹ năng số cùng góp phần giảm khoảng cách số.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Users may also require help developing ____.",
+      "correct_answers": [
+        "digital literacy"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Many visitors also need digital literacy support to complete forms, evaluate information or use unfamiliar software.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 120,
+        "end_char": 136
+      },
+      "explanation_vi": "Đáp án “digital literacy” được nói trực tiếp trong phần bài giảng này. Máy tính và hỗ trợ kỹ năng số cùng góp phần giảm khoảng cách số.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Researchers must also investigate ____.",
+      "correct_answers": [
+        "non-users"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "For a fair evaluation, researchers should examine non-users as well as current visitors, because the people absent from the building may face the greatest barriers.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 50,
+        "end_char": 59
+      },
+      "explanation_vi": "Đáp án “non-users” được nói trực tiếp trong phần bài giảng này. Cần khảo sát cả người không đến thư viện và khác biệt giữa các khu dân cư.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Access can differ between city ____.",
+      "correct_answers": [
+        "neighbourhoods"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "They should also compare results across neighbourhoods rather than assuming one central branch represents an entire city.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 205,
+        "end_char": 219
+      },
+      "explanation_vi": "Đáp án “neighbourhoods” được nói trực tiếp trong phần bài giảng này. Cần khảo sát cả người không đến thư viện và khác biệt giữa các khu dân cư.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "title_en": "The Social Role of a Public Library — Notes",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "title_en": "The Social Role of a Public Library — Table",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "table_completion",
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": [
+          "Main point",
+          "Detail"
+        ]
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Thư viện công cộng được đánh giá như một hạ tầng xã hội đa chức năng.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "d73faeef82690068bc5a97b33e9e121d22fced5b59b8c3472c54c90c9e43cc1b",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.99,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

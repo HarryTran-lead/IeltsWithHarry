@@ -1,0 +1,317 @@
+{
+  "schema_version": "m34.1.0",
+  "activity_id": "ACT-SEC-064",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Digitising a Local History Archive — Nhận diện người nói và đề xuất",
+  "section": 3,
+  "source_lesson_id": "S3-EXP-012",
+  "source_milestone": "M23",
+  "source_zip": "English_Skill_Lab_Dictation_M23_Section_3_Expanded_Practice_20_Full_Content.zip",
+  "reuse_parent_id": "S3-EXP-012",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S3-EXP-012/T09",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S3-EXP-012/T01",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-012",
+      "source_turn_id": "T01",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "5cffb99ac747ee3bd4567756bb81dddaa3d05dfdd22008e8b7b929dc732a4e56",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-012/T02",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-012",
+      "source_turn_id": "T02",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "177333787a424045b9c98bbc864748a6da771332b2906e43171b380d7eefd3af",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-012/T03",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-012",
+      "source_turn_id": "T03",
+      "source_speaker_id": "C",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "f7d2d80972ac8d6e8633d9a70754d741a0fff16cd305d5a26170e2a6b467e105",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-012/T09",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-012",
+      "source_turn_id": "T09",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "8b71322c3495caa1e6de9153748b4fa8e11f621d99a8ca87f151b924f01bd453",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-012/T12",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-012",
+      "source_turn_id": "T12",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "6e544055072349787991f0627b6943ec4e48ff347d085a47f6f1b3558b0f5ed9",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Digital humanities archive project",
+  "drill_skill": "speaker_attribution",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_3",
+    "speaker_identification",
+    "matching",
+    "role_tracking"
+  ],
+  "teacher_notes": {
+    "goal": "Xác định ai đề xuất, đồng ý hoặc nhận trách nhiệm trong hội thoại nhiều người.",
+    "theory": "Matching theo người nói yêu cầu gắn ý với đúng nguồn phát biểu. Người thứ hai có thể chỉ nhắc lại ý của người thứ nhất.",
+    "tip": "Theo dõi A/B/C, và từ chỉ vai trò: I can…, let me…, I suggest…; kiểm tra phát biểu của đúng người.",
+    "mistakes": [
+      "Gắn đề xuất cho người tán thành thay vì người đề xuất.",
+      "Nhầm lượt thoại liền kề có cùng chủ đề."
+    ],
+    "worked_example": "Ví dụ ngoài đề: Student B says “I’ll analyse the data”; Student C says “Great idea”. → Nhiệm vụ phân tích thuộc B."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T01",
+      "T02",
+      "T03",
+      "T09",
+      "T12"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_speaker_turns; never use timestamps until aligned",
+    "speaker_voice_samples_required": true,
+    "speaker_voice_reference_turns": [
+      {
+        "speaker_id": "A",
+        "speaker_role": "University tutor / seminar adviser",
+        "sample_turn_id": "T01"
+      },
+      {
+        "speaker_id": "B",
+        "speaker_role": "University student 1",
+        "sample_turn_id": "T02"
+      },
+      {
+        "speaker_id": "C",
+        "speaker_role": "University student 2",
+        "sample_turn_id": "T03"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-064-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q05",
+      "origin_question_type": "matching",
+      "type": "single_choice",
+      "prompt_en": "Which speaker is associated with this proposal or responsibility: check rights to display images and captions?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Xác định người phát biểu đúng, không chỉ người nhắc lại ý.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A — course tutor"
+        },
+        {
+          "value": "B",
+          "label": "B — first student"
+        },
+        {
+          "value": "C",
+          "label": "C — second student"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T09"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I will contact the historical society about permissions for public display and for the handwritten captions. These may have different restrictions, even when the photograph itself can be shared.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-064-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q08",
+      "origin_question_type": "matching",
+      "type": "single_choice",
+      "prompt_en": "Which speaker is associated with this proposal or responsibility: create consistent place names and synonyms?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Xác định người phát biểu đúng, không chỉ người nhắc lại ý.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A — course tutor"
+        },
+        {
+          "value": "B",
+          "label": "B — first student"
+        },
+        {
+          "value": "C",
+          "label": "C — second student"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T12"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll build a controlled list of place names and alternative terms. We should not erase local expressions, but we need a way for searches using different names to reach the same photographs.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-064-Q3",
+      "phase": "focused_dictation_repair",
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại lượt thoại rồi chép đúng ba từ còn thiếu trong đoạn trích (không viết cả câu).",
+      "prompt_en": "…names and alternative terms. We should not ____, but we need a way for searches…",
+      "word_limit": 3,
+      "correct_answers": [
+        "erase local expressions"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T12"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "erase local expressions",
+      "evidence_char_start": 81,
+      "evidence_char_end": 104,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Cụm cần ghi chính xác là “erase local expressions”. Nghe lại vị trí này và đối chiếu các âm cuối, từ chức năng và trọng âm.",
+      "origin_question_id": null,
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S3-EXP-012",
+    "source_question_ids": [
+      "Q05",
+      "Q08"
+    ],
+    "source_turn_ids": [
+      "T01",
+      "T02",
+      "T03",
+      "T09",
+      "T12"
+    ],
+    "source_transcript_sha256_map": {
+      "T09": "8b71322c3495caa1e6de9153748b4fa8e11f621d99a8ca87f151b924f01bd453",
+      "T12": "6e544055072349787991f0627b6943ec4e48ff347d085a47f6f1b3558b0f5ed9",
+      "T01": "5cffb99ac747ee3bd4567756bb81dddaa3d05dfdd22008e8b7b929dc732a4e56",
+      "T02": "177333787a424045b9c98bbc864748a6da771332b2906e43171b380d7eefd3af",
+      "T03": "f7d2d80972ac8d6e8633d9a70754d741a0fff16cd305d5a26170e2a6b467e105"
+    },
+    "provenance": "original_training_2026_m21_m23_m24",
+    "copied_source_has_human_signoff": false,
+    "source_confidence": "authored_draft_not_independently_validated"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "pending",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "insert_only_idempotent",
+  "version": "m34.1.0"
+}

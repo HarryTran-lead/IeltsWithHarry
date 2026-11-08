@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-003",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Maritime archaeology",
+  "title": "Learning from Shipwreck Timbers",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "A wooden shipwreck can be read as a record of construction techniques, past trade and environmental change. The difficulty is that the wood is not preserved evenly: one plank may be almost intact while the next has lost much of its structure. In today's lecture, we will follow the investigation from first survey to conservation, without assuming that any single clue supplies the whole story.",
+      "meaning_vi": "Bài giảng nghiên cứu xác tàu gỗ thông qua khảo sát, xác định niên đại và bảo tồn.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "A wreck lies in a setting that can both protect and threaten it. Sediment may shelter wood from oxygen, while strong currents expose parts of the vessel to damage. Divers can be tempted to recover the most attractive object first. Archaeologists resist that temptation because the spatial arrangement of ordinary materials often reveals more than a dramatic isolated find.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "Before divers remove an object, they produce a detailed site plan showing where each visible component lies. In deep water, a sonar survey may help reveal the outline of the wreck even when visibility is poor. The two methods answer different questions. Sonar can locate a broad shape, whereas the diagram records the relationships between particular planks, containers and fittings. Once these pieces are lifted, their original positions cannot simply be reconstructed from memory, so documentation comes before excavation.",
+      "meaning_vi": "Nhà khảo cổ ghi sơ đồ hiện trường và có thể dùng sonar trước khi trục vớt.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "The pattern of growth rings sometimes allows investigators to use dendrochronology to estimate when the tree was felled. However, the method works best where a suitable regional sequence exists for comparison. The species of timber can be studied through wood anatomy, using the structure of its cells rather than its colour alone. These results can suggest where the material grew, but they do not automatically identify the port at which the ship was built. Timber was often traded over considerable distances.",
+      "meaning_vi": "Vòng năm và cấu trúc tế bào gỗ cung cấp manh mối về niên đại, nguồn gốc.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "Small wooden pegs and metal fasteners show how the vessel was assembled. A long joining method known as a scarf joint may connect two shorter pieces into a longer beam. The spacing of ribs also offers evidence about how the hull supported its outer planking. It is important not to assign a single date to a technique just because it resembles one used in a familiar ship. Craftspeople adapted designs, and repairs made during a vessel's working life can mix old and new methods.",
+      "meaning_vi": "Mối nối gỗ và khung sườn tàu giúp nghiên cứu kỹ thuật đóng tàu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "When waterlogged wood is exposed to air, it may shrink or collapse as it dries. Conservators therefore replace part of the water with polyethylene glycol, a substance that can support fragile cell walls. Another option for some objects is freeze drying, which removes frozen moisture under controlled conditions. Both approaches require specialist equipment and long treatment periods. They are not interchangeable solutions, and a conservator will choose a method according to the condition of each timber and the resources available.",
+      "meaning_vi": "Gỗ ngâm nước cần ổn định bằng hóa chất hoặc sấy thăng hoa phù hợp.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "Finally, artefacts found with the ship can reveal its activities. Containers with similar manufacturing marks may indicate a shared trade network, but they could also have been reused. For this reason the team creates a finds catalogue recording the material, location and condition of every object. A final interpretation must weigh several independent clues rather than selecting the most exciting item. The goal is a defensible account of how the vessel was used, not a dramatic story built from one attractive discovery.",
+      "meaning_vi": "Hàng hóa và danh mục hiện vật giúp tái dựng hoạt động của con tàu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Even after conservation, interpretation remains provisional. A later discovery might show that a ship carried mixed cargo, or that one repaired section came from a different timber source. Good museum displays distinguish between what investigators observed and what they infer from it. This practice makes the research useful to future scholars rather than turning an uncertain interpretation into permanent fact.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "A shipwreck is valuable because its parts were once connected in a working object. Careful recording preserves those relationships long after excavation changes the site.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "The first record of artefact positions is a ____.",
+      "correct_answers": [
+        "site plan"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Before divers remove an object, they produce a detailed site plan showing where each visible component lies.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 56,
+        "end_char": 65
+      },
+      "explanation_vi": "Đáp án “site plan” được nói trực tiếp trong phần bài giảng này. Nhà khảo cổ ghi sơ đồ hiện trường và có thể dùng sonar trước khi trục vớt.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Broad outlines in poor visibility can be detected through a ____.",
+      "correct_answers": [
+        "sonar survey"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "In deep water, a sonar survey may help reveal the outline of the wreck even when visibility is poor.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 126,
+        "end_char": 138
+      },
+      "explanation_vi": "Đáp án “sonar survey” được nói trực tiếp trong phần bài giảng này. Nhà khảo cổ ghi sơ đồ hiện trường và có thể dùng sonar trước khi trục vớt.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Tree-ring comparison is called ____.",
+      "correct_answers": [
+        "dendrochronology"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The pattern of growth rings sometimes allows investigators to use dendrochronology to estimate when the tree was felled.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 66,
+        "end_char": 82
+      },
+      "explanation_vi": "Đáp án “dendrochronology” được nói trực tiếp trong phần bài giảng này. Vòng năm và cấu trúc tế bào gỗ cung cấp manh mối về niên đại, nguồn gốc.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Timber species can be investigated using ____.",
+      "correct_answers": [
+        "wood anatomy"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The species of timber can be studied through wood anatomy, using the structure of its cells rather than its colour alone.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 255,
+        "end_char": 267
+      },
+      "explanation_vi": "Đáp án “wood anatomy” được nói trực tiếp trong phần bài giảng này. Vòng năm và cấu trúc tế bào gỗ cung cấp manh mối về niên đại, nguồn gốc.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "A long join between wooden members is a ____.",
+      "correct_answers": [
+        "scarf joint"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "A long joining method known as a scarf joint may connect two shorter pieces into a longer beam.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 106,
+        "end_char": 117
+      },
+      "explanation_vi": "Đáp án “scarf joint” được nói trực tiếp trong phần bài giảng này. Mối nối gỗ và khung sườn tàu giúp nghiên cứu kỹ thuật đóng tàu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "The supporting curved frames of a hull are its ____.",
+      "correct_answers": [
+        "ribs"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The spacing of ribs also offers evidence about how the hull supported its outer planking.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 184,
+        "end_char": 188
+      },
+      "explanation_vi": "Đáp án “ribs” được nói trực tiếp trong phần bài giảng này. Mối nối gỗ và khung sườn tàu giúp nghiên cứu kỹ thuật đóng tàu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "A conservation chemical used for waterlogged wood is ____.",
+      "correct_answers": [
+        "polyethylene glycol"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Conservators therefore replace part of the water with polyethylene glycol, a substance that can support fragile cell walls.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 134,
+        "end_char": 153
+      },
+      "explanation_vi": "Đáp án “polyethylene glycol” được nói trực tiếp trong phần bài giảng này. Gỗ ngâm nước cần ổn định bằng hóa chất hoặc sấy thăng hoa phù hợp.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "One controlled removal process is ____.",
+      "correct_answers": [
+        "freeze drying"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Another option for some objects is freeze drying, which removes frozen moisture under controlled conditions.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 239,
+        "end_char": 252
+      },
+      "explanation_vi": "Đáp án “freeze drying” được nói trực tiếp trong phần bài giảng này. Gỗ ngâm nước cần ổn định bằng hóa chất hoặc sấy thăng hoa phù hợp.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Related cargo containers may suggest a ____.",
+      "correct_answers": [
+        "trade network"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Containers with similar manufacturing marks may indicate a shared trade network, but they could also have been reused.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 132,
+        "end_char": 145
+      },
+      "explanation_vi": "Đáp án “trade network” được nói trực tiếp trong phần bài giảng này. Hàng hóa và danh mục hiện vật giúp tái dựng hoạt động của con tàu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Individual recovered objects are recorded in a ____.",
+      "correct_answers": [
+        "finds catalogue"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "For this reason the team creates a finds catalogue recording the material, location and condition of every object.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 220,
+        "end_char": 235
+      },
+      "explanation_vi": "Đáp án “finds catalogue” được nói trực tiếp trong phần bài giảng này. Hàng hóa và danh mục hiện vật giúp tái dựng hoạt động của con tàu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "title_en": "Learning from Shipwreck Timbers — Flow chart",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "flow_chart_completion",
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": "top_to_bottom",
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "title_en": "Learning from Shipwreck Timbers — Notes",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Bài giảng nghiên cứu xác tàu gỗ thông qua khảo sát, xác định niên đại và bảo tồn.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "cd6147cd26e87c6d5b8767cf145b86199bbee94d4a4137d99a7928235fcf4a54",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 4.39,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

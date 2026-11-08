@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-044",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M18 – Spelling",
+  "title": "Names with G, J, C and Z",
+  "learning_objectives_vi": [
+    "Nghe được names with g, j, c and z trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (g_j_c_z).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The participant is Giles, G, I, L, E, S.",
+      "translation_vi": "Người tham gia tên Giles, đánh vần G–I–L–E–S.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Giles",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Please enter Jasper, J, A, S, P, E, R.",
+      "translation_vi": "Vui lòng nhập Jasper, đánh vần J–A–S–P–E–R.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Jasper",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The first name is Chloe: C, H, L, O, E.",
+      "translation_vi": "Tên là Chloe, đánh vần C–H–L–O–E.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Chloe",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The visitor is called Zara, Z, A, R, A.",
+      "translation_vi": "Khách tham quan tên Zara, đánh vần Z–A–R–A.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Zara",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our guide is Gemma, G, E, M, M, A.",
+      "translation_vi": "Hướng dẫn viên tên Gemma, đánh vần G–E–M–M–A.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Gemma",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The booking belongs to Jonah: J, O, N, A, H.",
+      "translation_vi": "Lịch đặt chỗ thuộc về Jonah, đánh vần J–O–N–A–H.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Jonah",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The volunteer is called Cora, C, O, R, A.",
+      "translation_vi": "Tình nguyện viên tên Cora, đánh vần C–O–R–A.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Cora",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The survey assistant is Zoe, Z, O, E.",
+      "translation_vi": "Trợ lý khảo sát tên Zoe, đánh vần Z–O–E.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Zoe",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Write Griffin: G, R, I, F, F, I, N.",
+      "translation_vi": "Hãy viết Griffin, đánh vần G–R–I–F–F–I–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Griffin",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "His name is Julian: J, U, L, I, A, N.",
+      "translation_vi": "Anh ấy tên Julian, đánh vần J–U–L–I–A–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "g_j_c_z",
+        "name"
+      ],
+      "target_value": "Julian",
+      "target_kind": "name",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The participant is Giles, G, I, L, E, S."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The participant is Giles, G, I, L, E, S. Nghĩa: Người tham gia tên Giles, đánh vần G–I–L–E–S. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please enter Jasper, J, A, S, P, E, R."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Please enter Jasper, J, A, S, P, E, R. Nghĩa: Vui lòng nhập Jasper, đánh vần J–A–S–P–E–R. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The first name is Chloe: C, H, L, O, E."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The first name is Chloe: C, H, L, O, E. Nghĩa: Tên là Chloe, đánh vần C–H–L–O–E. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The visitor is called Zara, Z, A, R, A."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The visitor is called Zara, Z, A, R, A. Nghĩa: Khách tham quan tên Zara, đánh vần Z–A–R–A. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our guide is Gemma, G, E, M, M, A."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Our guide is Gemma, G, E, M, M, A. Nghĩa: Hướng dẫn viên tên Gemma, đánh vần G–E–M–M–A. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The booking belongs to Jonah: J, O, N, A, H."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The booking belongs to Jonah: J, O, N, A, H. Nghĩa: Lịch đặt chỗ thuộc về Jonah, đánh vần J–O–N–A–H. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The volunteer is called Cora, C, O, R, A."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The volunteer is called Cora, C, O, R, A. Nghĩa: Tình nguyện viên tên Cora, đánh vần C–O–R–A. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The survey assistant is Zoe, Z, O, E."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The survey assistant is Zoe, Z, O, E. Nghĩa: Trợ lý khảo sát tên Zoe, đánh vần Z–O–E. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Write Griffin: G, R, I, F, F, I, N."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Write Griffin: G, R, I, F, F, I, N. Nghĩa: Hãy viết Griffin, đánh vần G–R–I–F–F–I–N. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "His name is Julian: J, U, L, I, A, N."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: His name is Julian: J, U, L, I, A, N. Nghĩa: Anh ấy tên Julian, đánh vần J–U–L–I–A–N. Lưu ý: Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "g_j_c_z"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Jonah"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Jonah. Nội dung: Lịch đặt chỗ thuộc về Jonah, đánh vần J–O–N–A–H.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "g_j_c_z",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Cora"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Cora. Nội dung: Tình nguyện viên tên Cora, đánh vần C–O–R–A.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "g_j_c_z",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Zoe"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Zoe. Nội dung: Trợ lý khảo sát tên Zoe, đánh vần Z–O–E.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "g_j_c_z",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Griffin"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Griffin. Nội dung: Hãy viết Griffin, đánh vần G–R–I–F–F–I–N.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "g_j_c_z",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Julian"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Julian. Nội dung: Anh ấy tên Julian, đánh vần J–U–L–I–A–N.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "g_j_c_z",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "surname",
+      "pos": "n",
+      "meaning_vi": "họ",
+      "example_en": "Please spell your surname for the receptionist.",
+      "example_vi": "Vui lòng đánh vần họ cho lễ tân.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "first name",
+      "pos": "n",
+      "meaning_vi": "tên",
+      "example_en": "The first name is Chloe: C, H, L, O, E.",
+      "example_vi": "Tên là Chloe, đánh vần C–H–L–O–E.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "spell",
+      "pos": "v",
+      "meaning_vi": "đánh vần",
+      "example_en": "Could you spell your surname slowly, please?",
+      "example_vi": "Bạn có thể đánh vần họ chậm lại được không?",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "letter",
+      "pos": "n",
+      "meaning_vi": "chữ cái",
+      "example_en": "The first letter is B, not P.",
+      "example_vi": "Chữ cái đầu là B, không phải P.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "registration",
+      "pos": "n",
+      "meaning_vi": "việc đăng ký",
+      "example_en": "Registration closes at five in the afternoon.",
+      "example_vi": "Việc đăng ký kết thúc lúc năm giờ chiều.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "applicant",
+      "pos": "n",
+      "meaning_vi": "người nộp đơn",
+      "example_en": "Each applicant must spell their surname clearly.",
+      "example_vi": "Mỗi ứng viên phải đánh vần họ rõ ràng.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "g_j_c_z",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+    "category": "spelling",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-044-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "69810ae7516e7ef36c49a1b998a3f47d226bd4788ef6320d530b994b926765dc",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Phân biệt G/J và C/Z theo tên chữ cái, không đoán qua cách phát âm tên.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "G, E, M",
+        "written_value": "GEM",
+        "teacher_note_vi": "G không phải J."
+      },
+      {
+        "spoken_example": "Z, O, E",
+        "written_value": "ZOE",
+        "teacher_note_vi": "Z không phải C."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn quy tắc nhận diện chữ cái và dấu câu, đọc hai ví dụ.",
+      "Nghe chuỗi được đánh vần, ghi lại từng ký tự ngay khi nghe.",
+      "Chỉ xem transcript/đáp án sau khi nộp, rà từng chữ/dấu nối.",
+      "Dùng hai câu chưa gặp để kiểm tra trong một lần nghe với giọng khác."
+    ],
+    "common_mistakes": [
+      "Suy đoán cách viết tên theo phát âm thay vì ký tự đánh vần.",
+      "Bỏ chữ lặp, dấu gạch nối, dấu nháy hoặc số 0 trong mã."
+    ],
+    "before_audio_question": "Người nói đang đọc tên, mã chữ-số, email, tên miền hay postcode? Có từ double, hyphen, underscore không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

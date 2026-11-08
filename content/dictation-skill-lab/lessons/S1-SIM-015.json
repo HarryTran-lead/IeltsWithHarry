@@ -1,0 +1,832 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-015",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Registering for a visiting mobile library",
+  "title": "Applying for a Mobile Library Card",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "library_services",
+    "opening_times",
+    "registration",
+    "fees",
+    "borrowing_rules"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Mobile library librarian",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "New member",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, County Mobile Library Service. My name's Grace. Are you calling about a route, or do you need help registering?",
+      "translation_vi": "Xin chào, Dịch vụ Thư viện Lưu động Hạt, tôi là Grace. Anh hỏi về tuyến xe hay muốn đăng ký?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Both, really. I've recently moved to a small village and the nearest permanent library is a long bus journey away.",
+      "translation_vi": "Cả hai. Tôi mới chuyển đến làng nhỏ, thư viện cố định gần nhất phải đi xe buýt rất xa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our mobile van is called Book Rover. It carries novels, children's books and large-print editions, although specialist textbooks must be requested.",
+      "translation_vi": "Xe lưu động tên Book Rover. Mang tiểu thuyết, sách trẻ em và chữ to, nhưng giáo trình chuyên ngành phải yêu cầu trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Book Rover sounds convenient. Does it stop at Maple End? That's the name of the village where I'm living now.",
+      "translation_vi": "Book Rover nghe tiện. Xe có dừng ở Maple End, làng tôi đang sống, không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes, but the stop has moved from the village green to the community clinic because the old turning space became unsafe.",
+      "translation_vi": "Có, nhưng điểm dừng đã chuyển từ bãi cỏ làng sang trạm y tế cộng đồng vì chỗ quay xe cũ không an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I'll go to the clinic, then. Which day does it come? Someone mentioned Thursday, but that might be the school van.",
+      "translation_vi": "Vậy tôi đến trạm y tế. Xe đến thứ mấy? Có người nói thứ Năm nhưng có thể là xe của trường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Book Rover visits Maple End on Wednesday. Thursday is indeed the school service and isn't open for general borrowing.",
+      "translation_vi": "Book Rover đến Maple End vào thứ Tư. Thứ Năm là xe phục vụ trường, không cho người dân mượn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Wednesday is good. I work from home that day. Is it there in the morning or around lunchtime?",
+      "translation_vi": "Thứ Tư được. Hôm đó tôi làm ở nhà. Xe tới buổi sáng hay gần trưa?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The van arrives at eleven forty and normally stays for fifty minutes, unless severe weather makes the roads unsafe.",
+      "translation_vi": "Xe đến lúc mười một giờ bốn mươi và thường đỗ năm mươi phút, trừ khi thời tiết xấu nguy hiểm đường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll visit just after it arrives. Do I need to bring an official letter proving that I live in the village?",
+      "translation_vi": "Tôi sẽ đến ngay khi xe tới. Có cần mang thư chính thức xác nhận sống tại làng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "No, just photo identification. We'll take your address verbally and give you a temporary card immediately.",
+      "translation_vi": "Không, chỉ cần giấy tờ có ảnh. Chúng tôi hỏi địa chỉ miệng và cấp thẻ tạm ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "That's easy. I especially need books with larger lettering because I've been getting headaches from small print.",
+      "translation_vi": "Dễ rồi. Tôi đặc biệt cần sách chữ to vì hay đau đầu khi đọc chữ nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "We have a large-print shelf. If a title isn't on the van, we can reserve it from the county collection for the following visit.",
+      "translation_vi": "Có kệ sách chữ to. Nếu sách không có trên xe, chúng tôi có thể đặt từ kho hạt cho chuyến sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Great. How many books can a new member take? I don't want to carry too much on the walk home.",
+      "translation_vi": "Tuyệt. Hội viên mới mượn tối đa bao nhiêu cuốn? Tôi không muốn mang quá nhiều khi đi bộ về.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The borrowing limit is six books at a time. There isn't a joining fee, and new members have the same limit as everyone else.",
+      "translation_vi": "Giới hạn mượn sáu cuốn cùng lúc. Không có phí gia nhập, hội viên mới được như người khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Six is plenty. How long can I keep them? I know the mobile library doesn't visit every week.",
+      "translation_vi": "Sáu cuốn là nhiều. Tôi mượn được bao lâu? Xe thư viện không đến mỗi tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "Books are loaned for three weeks. If the van skips a visit because of a public holiday, we extend the due date automatically.",
+      "translation_vi": "Sách được mượn ba tuần. Nếu xe bỏ lượt do ngày lễ, chúng tôi tự gia hạn ngày trả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "That's useful. Could I renew online instead of taking the books to the van when I'm particularly busy?",
+      "translation_vi": "Hữu ích. Tôi có thể gia hạn trực tuyến thay vì mang sách tới xe khi quá bận không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "Yes, you may renew through the website once, provided nobody has reserved the title. After that, you need to return the book.",
+      "translation_vi": "Có, anh gia hạn qua web một lần nếu không ai đặt cuốn đó. Sau đó phải trả sách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "Understood. Is there a charge if a book is a couple of days late? I sometimes travel unexpectedly for work.",
+      "translation_vi": "Tôi hiểu. Trả trễ vài ngày có phí không? Tôi đôi khi đi công tác đột xuất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "We don't charge daily late fees. We simply suspend further borrowing if an item is overdue by more than a month.",
+      "translation_vi": "Chúng tôi không thu phí trễ từng ngày, chỉ tạm dừng mượn nếu quá hạn hơn một tháng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "That's fair. I'll come to the clinic on Wednesday and bring my passport so I can sign up for Book Rover.",
+      "translation_vi": "Hợp lý. Tôi sẽ đến trạm y tế thứ Tư, mang hộ chiếu đăng ký Book Rover.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Name of the mobile library: ____",
+      "correct_answers": [
+        "Book Rover"
+      ],
+      "spoken_answer": "Book Rover",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Xe thư viện tên Book Rover.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "called Book Rover",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "New stop location: community ____",
+      "correct_answers": [
+        "clinic"
+      ],
+      "spoken_answer": "clinic",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Điểm dừng mới ở trạm y tế cộng đồng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "community clinic",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Visiting day: ____",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "spoken_answer": "Wednesday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Book Rover đến thứ Tư.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "on Wednesday",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Arrival time: ____",
+      "correct_answers": [
+        "eleven forty",
+        "11:40"
+      ],
+      "spoken_answer": "eleven forty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Xe lưu động đến lúc 11:40 và đỗ khoảng 50 phút; đây là giờ đến, không phải giờ rời đi.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "at eleven forty",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Document required: photo ____",
+      "correct_answers": [
+        "identification"
+      ],
+      "spoken_answer": "identification",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Chỉ cần giấy tờ tùy thân có ảnh.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "photo identification",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Maximum number of books: ____",
+      "correct_answers": [
+        "six",
+        "6"
+      ],
+      "spoken_answer": "six",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Mượn tối đa sáu cuốn.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "six books at a time",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "How long is the standard loan period?",
+      "correct_answers": [
+        "Three weeks"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "One week"
+        },
+        {
+          "key": "B",
+          "text": "Six weeks"
+        },
+        {
+          "key": "C",
+          "text": "Three weeks"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Thời hạn mượn ba tuần.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "loaned for three weeks",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "When can a book be renewed online?",
+      "correct_answers": [
+        "When nobody else has reserved it"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "When nobody else has reserved it"
+        },
+        {
+          "key": "B",
+          "text": "Only on the van's visiting day"
+        },
+        {
+          "key": "C",
+          "text": "Whenever a book is overdue"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Gia hạn web khi không ai đặt cuốn đó.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "provided nobody has reserved the title",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What happens if a book is overdue by more than a month?",
+      "correct_answers": [
+        "Further borrowing is suspended"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "A daily fine is doubled"
+        },
+        {
+          "key": "B",
+          "text": "Further borrowing is suspended"
+        },
+        {
+          "key": "C",
+          "text": "The member must pay a joining fee"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Quá hạn một tháng sẽ tạm dừng mượn thêm.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "suspend further borrowing",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What will the caller bring to register?",
+      "correct_answers": [
+        "A passport"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "A letter from the village council"
+        },
+        {
+          "key": "B",
+          "text": "A permanent library card"
+        },
+        {
+          "key": "C",
+          "text": "A passport"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Khách mang hộ chiếu để đăng ký.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T22"
+      ],
+      "evidence_excerpt_en": "bring my passport",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "library_services",
+        "opening_times",
+        "registration",
+        "fees",
+        "borrowing_rules"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "19421ab3b22a539588d48a59b4a1333e2dd58b0f689b3ff7d7b90d76cff8f050",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.29,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

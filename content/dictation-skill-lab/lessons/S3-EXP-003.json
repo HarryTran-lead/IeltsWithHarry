@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-003",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Museum visitor evaluation",
+  "title": "Testing a Museum Audio Guide",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "evaluation_design",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The museum will lend you its new audio guide, but the curator wants evidence that visitors can follow the route, not simply evidence that the narration sounds impressive. How might you test that?",
+      "translation_vi": "Bảo tàng cho mượn audio guide mới, nhưng quản lý muốn biết khách đi đúng tuyến không, không chỉ nghe thuyết minh hay. Các em sẽ kiểm tra thế nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We could ask people whether they enjoyed it at the exit. My worry is that they might say yes just to be polite, even if they missed two galleries and got lost halfway through.",
+      "translation_vi": "Ta có thể hỏi khách có thích không khi ra cổng. Em lo họ trả lời lịch sự dù bỏ lỡ hai phòng trưng bày và lạc giữa đường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "A route-completion task might be more useful. Give each visitor a simple map and check whether they reach three exhibits without asking staff. That measures navigation instead of general satisfaction.",
+      "translation_vi": "Bài hoàn thành tuyến sẽ hữu ích hơn: đưa khách sơ đồ, xem họ tới ba hiện vật mà không nhờ nhân viên không. Như vậy đo điều hướng thay vì mức hài lòng chung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I agree with the task, but do not hand out a map containing every turn. Then you would be testing the map rather than the audio. Include only the gallery names and their relative positions.",
+      "translation_vi": "Thầy đồng ý nhưng đừng đưa bản đồ ghi mọi chỗ rẽ, kẻo thành kiểm tra sơ đồ thay vì audio. Chỉ ghi tên và vị trí tương đối các phòng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Another issue is that the guide uses technical terms such as provenance. The script explains the word eventually, but visitors may lose interest before that explanation arrives. We should check comprehension at the actual point of use.",
+      "translation_vi": "Một vấn đề khác: bài hướng dẫn dùng thuật ngữ như provenance. Lời đọc có giải thích sau nhưng khách có thể mất tập trung trước đó; nên hỏi hiểu ngay lúc từ xuất hiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "We could test a version where the explanation comes first, then compare it with the original recording. Yet we'd need to keep the exhibits and route identical, otherwise the comparison would be meaningless.",
+      "translation_vi": "Có thể thử bản giải thích trước rồi so với bản gốc. Nhưng hiện vật và đường đi phải giữ như nhau, nếu không so sánh sẽ vô nghĩa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Exactly. Keep the route constant and change only the timing of the explanation. Also recruit both frequent museum visitors and first-time visitors; their familiarity with the building may affect the results.",
+      "translation_vi": "Đúng. Giữ nguyên tuyến, chỉ thay vị trí giải thích. Tuyển cả người đi bảo tàng thường xuyên lẫn lần đầu vì độ quen thuộc tòa nhà ảnh hưởng kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I thought twenty participants would be enough, but dividing them across two recordings and two experience groups gives us very small sets. Maybe this should remain a pilot study rather than a firm comparison.",
+      "translation_vi": "Em tưởng 20 người đủ, nhưng chia hai bản thu và hai nhóm kinh nghiệm thì mỗi nhóm quá nhỏ. Có lẽ đây chỉ nên là nghiên cứu thử.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll prepare the three navigation checkpoints and ensure the observer records hesitation, not just wrong turns. A visitor who stops repeatedly may be struggling even if they eventually reach the right room.",
+      "translation_vi": "Em sẽ chuẩn bị ba điểm kiểm tra và ghi cả lúc ngập ngừng, không chỉ rẽ sai. Khách dừng nhiều lần có thể vẫn khó khăn dù cuối cùng đến đúng phòng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I'll speak with museum staff about accessible routes, particularly where lifts replace stairs. We cannot describe one route as equally easy for every visitor without checking those alternatives.",
+      "translation_vi": "Thầy sẽ trao đổi với nhân viên về tuyến tiếp cận, đặc biệt chỗ dùng thang máy thay cầu thang. Không thể nói một tuyến dễ như nhau với mọi người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "And I can time the pauses between entering a gallery and selecting the next direction, while making sure the stopwatch is not visible. We do not want visitors to feel hurried.",
+      "translation_vi": "Em có thể đo thời gian dừng từ lúc vào phòng đến khi chọn hướng tiếp theo nhưng giấu đồng hồ, tránh khiến khách thấy bị thúc giục.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "I'll run a short verbal debrief after the task, asking which instruction caused confusion rather than whether the whole guide was good. Specific feedback should give the curator something actionable.",
+      "translation_vi": "Em sẽ hỏi ngắn sau bài, tập trung chỉ dẫn nào gây khó hiểu thay vì hỏi cả hướng dẫn có hay không; phản hồi cụ thể mới hữu ích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Present this as a usability pilot with clear limitations. If the second recording helps, we can recommend a larger test, not claim that every visitor will navigate successfully.",
+      "translation_vi": "Hãy trình bày là khảo sát thử tính dễ sử dụng và nêu giới hạn. Nếu bản hai tốt hơn, đề xuất thử lớn hơn chứ không khẳng định mọi khách đều đi được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "evaluation_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why is an exit satisfaction question insufficient?",
+      "correct_answers": [
+        "Visitors may answer politely despite getting lost"
+      ],
+      "options": [
+        "It takes too long for staff to administer",
+        "It excludes families with children",
+        "Visitors may answer politely despite getting lost"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We could ask people whether they enjoyed it at the exit. My worry is that they might say yes just to be polite, even if they missed two galleries and got lost halfway through.",
+      "explanation_vi": "Người tham gia có thể trả lời lịch sự dù thật ra gặp khó khăn.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "evaluation_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What should the visitors’ map contain?",
+      "correct_answers": [
+        "Gallery names and approximate positions"
+      ],
+      "options": [
+        "Gallery names and approximate positions",
+        "Detailed turn-by-turn instructions",
+        "Only photographs of exhibits"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "I agree with the task, but do not hand out a map containing every turn. Then you would be testing the map rather than the audio. Include only the gallery names and their relative positions.",
+      "explanation_vi": "Bản đồ chỉ nên có tên phòng và vị trí tương đối.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "evaluation_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Which variable should be changed between recordings?",
+      "correct_answers": [
+        "When a technical term is explained"
+      ],
+      "options": [
+        "The number of paintings on display",
+        "When a technical term is explained",
+        "The order of the galleries"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "We could test a version where the explanation comes first, then compare it with the original recording. Yet we'd need to keep the exhibits and route identical, otherwise the comparison would be meaningless.",
+      "explanation_vi": "Chỉ thay thời điểm giải nghĩa thuật ngữ.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "evaluation_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why is the proposed sample suitable mainly for a pilot?",
+      "correct_answers": [
+        "Subgroups would be very small"
+      ],
+      "options": [
+        "No visitors can listen to audio guides",
+        "Subgroups would be very small",
+        "The museum closes during the study"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I thought twenty participants would be enough, but dividing them across two recordings and two experience groups gives us very small sets. Maybe this should remain a pilot study rather than a firm comparison.",
+      "explanation_vi": "Chia 20 người theo nhiều nhóm tạo mẫu con quá nhỏ.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "evaluation_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: create navigation checkpoints?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I'll prepare the three navigation checkpoints and ensure the observer records hesitation, not just wrong turns. A visitor who stops repeatedly may be struggling even if they eventually reach the right room.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "evaluation_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: check accessibility alternatives?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll speak with museum staff about accessible routes, particularly where lifts replace stairs. We cannot describe one route as equally easy for every visitor without checking those alternatives.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "evaluation_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: record pauses without pressuring visitors?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "And I can time the pauses between entering a gallery and selecting the next direction, while making sure the stopwatch is not visible. We do not want visitors to feel hurried.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "evaluation_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: ask for specific confusion after the task?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll run a short verbal debrief after the task, asking which instruction caused confusion rather than whether the whole guide was good. Specific feedback should give the curator something actionable.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "evaluation_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "A route-completion task might be more useful. Give each visitor a simple map and check whether they reach three exhibits without asking staff. That measures navigation instead of general satisfaction."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A route-completion task might be more useful. Give each visitor a simple map and check whether they reach three exhibits without asking staff. That measures navigation instead of general satisfaction.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "evaluation_design"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "Another issue is that the guide uses technical terms such as provenance. The script explains the word eventually, but visitors may lose interest before that explanation arrives. We should check comprehension at the actual point of use."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Another issue is that the guide uses technical terms such as provenance. The script explains the word eventually, but visitors may lose interest before that explanation arrives. We should check comprehension at the actual point of use.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "evaluation_design"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "Exactly. Keep the route constant and change only the timing of the explanation. Also recruit both frequent museum visitors and first-time visitors; their familiarity with the building may affect the results."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Exactly. Keep the route constant and change only the timing of the explanation. Also recruit both frequent museum visitors and first-time visitors; their familiarity with the building may affect the results.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "evaluation_design"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói B.",
+      "correct_answers": [
+        "And I can time the pauses between entering a gallery and selecting the next direction, while making sure the stopwatch is not visible. We do not want visitors to feel hurried."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "And I can time the pauses between entering a gallery and selecting the next direction, while making sure the stopwatch is not visible. We do not want visitors to feel hurried.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "evaluation_design"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: The museum will lend you its new audio guide, but the ____ wants evidence that visitors can follow the route, not simply evidence that the narration sounds impressive. How might you test that?",
+      "correct_answers": [
+        "curator"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The museum will lend you its new audio guide, but the curator wants evidence that visitors can follow the route, not simply evidence that the narration sounds impressive. How might you test that?",
+      "explanation_vi": "Cụm nghe được là “curator” (người phụ trách bộ sưu tập); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "evaluation_design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T03 và điền cụm bị thiếu: A ____ might be more useful. Give each visitor a simple map and check whether they reach three exhibits without asking staff. That measures navigation instead of general satisfaction.",
+      "correct_answers": [
+        "route-completion task"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A route-completion task might be more useful. Give each visitor a simple map and check whether they reach three exhibits without asking staff. That measures navigation instead of general satisfaction.",
+      "explanation_vi": "Cụm nghe được là “route-completion task” (bài hoàn thành tuyến); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "evaluation_design"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-003-V01",
+      "expression_en": "curator",
+      "meaning_vi": "người phụ trách bộ sưu tập",
+      "part_of_speech": "noun phrase",
+      "example_en": "The museum will lend you its new audio guide, but the curator wants evidence that visitors can follow the route, not simply evidence that the narration sounds impressive. How might you test that?",
+      "example_vi": "Bảo tàng cho mượn audio guide mới, nhưng quản lý muốn biết khách đi đúng tuyến không, không chỉ nghe thuyết minh hay. Các em sẽ kiểm tra thế nào?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-003-V02",
+      "expression_en": "route-completion task",
+      "meaning_vi": "bài hoàn thành tuyến",
+      "part_of_speech": "noun phrase",
+      "example_en": "A route-completion task might be more useful. Give each visitor a simple map and check whether they reach three exhibits without asking staff. That measures navigation instead of general satisfaction.",
+      "example_vi": "Bài hoàn thành tuyến sẽ hữu ích hơn: đưa khách sơ đồ, xem họ tới ba hiện vật mà không nhờ nhân viên không. Như vậy đo điều hướng thay vì mức hài lòng chung.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-003-V03",
+      "expression_en": "provenance",
+      "meaning_vi": "nguồn gốc hiện vật",
+      "part_of_speech": "noun phrase",
+      "example_en": "Another issue is that the guide uses technical terms such as provenance. The script explains the word eventually, but visitors may lose interest before that explanation arrives. We should check comprehension at the actual point of use.",
+      "example_vi": "Một vấn đề khác: bài hướng dẫn dùng thuật ngữ như provenance. Lời đọc có giải thích sau nhưng khách có thể mất tập trung trước đó; nên hỏi hiểu ngay lúc từ xuất hiện.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-003-V04",
+      "expression_en": "keep the route constant",
+      "meaning_vi": "giữ nguyên tuyến",
+      "part_of_speech": "verb phrase",
+      "example_en": "Exactly. Keep the route constant and change only the timing of the explanation. Also recruit both frequent museum visitors and first-time visitors; their familiarity with the building may affect the results.",
+      "example_vi": "Đúng. Giữ nguyên tuyến, chỉ thay vị trí giải thích. Tuyển cả người đi bảo tàng thường xuyên lẫn lần đầu vì độ quen thuộc tòa nhà ảnh hưởng kết quả.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-003-V05",
+      "expression_en": "pilot study",
+      "meaning_vi": "nghiên cứu thử",
+      "part_of_speech": "noun phrase",
+      "example_en": "I thought twenty participants would be enough, but dividing them across two recordings and two experience groups gives us very small sets. Maybe this should remain a pilot study rather than a firm comparison.",
+      "example_vi": "Em tưởng 20 người đủ, nhưng chia hai bản thu và hai nhóm kinh nghiệm thì mỗi nhóm quá nhỏ. Có lẽ đây chỉ nên là nghiên cứu thử.",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-003-V06",
+      "expression_en": "verbal debrief",
+      "meaning_vi": "trao đổi ngắn sau hoạt động",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll run a short verbal debrief after the task, asking which instruction caused confusion rather than whether the whole guide was good. Specific feedback should give the curator something actionable.",
+      "example_vi": "Em sẽ hỏi ngắn sau bài, tập trung chỉ dẫn nào gây khó hiểu thay vì hỏi cả hướng dẫn có hay không; phản hồi cụ thể mới hữu ích.",
+      "evidence_turn_id": "T12",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "b7732ac534a5c6e61ff5b80f402e8bf9b12148e9d5afaa228e516920c9230d31",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 416,
+    "estimated_audio_minutes_at_135_wpm": 3.08,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

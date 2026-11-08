@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-008",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Educational technology evaluation",
+  "title": "Evaluating a Language Learning App",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "learning_outcomes",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your app review is energetic, but you have confused engagement with learning. A student can open an app every day without becoming better at understanding spoken instructions. What change will you try to observe?",
+      "translation_vi": "Bài đánh giá ứng dụng nhiệt tình nhưng em nhầm tương tác với học. Học viên mở app mỗi ngày chưa chắc nghe hướng dẫn tốt hơn; em muốn quan sát thay đổi nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The company sent us statistics about daily logins and badges. I thought those figures proved the app was effective, but they tell us little about what users can do outside the application.",
+      "translation_vi": "Công ty gửi thống kê đăng nhập và huy hiệu. Em tưởng chứng minh hiệu quả, nhưng số đó ít nói về năng lực ngoài ứng dụng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We could compare scores on new listening tasks before and after a short study period. The tasks must use different voices and sentences from the app; otherwise we would mainly measure familiarity.",
+      "translation_vi": "Ta có thể so điểm bài nghe mới trước và sau giai đoạn học. Bài phải dùng giọng và câu khác ứng dụng, nếu không chủ yếu đo độ quen.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "That is a better outcome measure. Make the pre-test and post-test similar in difficulty but not identical, and keep the test items separate from the students' practice content.",
+      "translation_vi": "Đó là thước đo tốt hơn. Đề trước và sau cần tương đương độ khó nhưng không giống hệt, và phải tách khỏi nội dung đã luyện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The app offers optional hints, so some users replay a sentence five times while others answer on the first listen. Raw accuracy would make those two behaviours look equivalent.",
+      "translation_vi": "Ứng dụng có gợi ý, nên có người nghe năm lần, người trả lời lần đầu. Chỉ xem độ chính xác sẽ khiến hai cách học trông như nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Let's record first-attempt accuracy separately from assisted accuracy. That way improvement in independent listening will not be confused with success achieved after several hints.",
+      "translation_vi": "Hãy lưu độ đúng lần đầu riêng với độ đúng có hỗ trợ, để không nhầm nghe độc lập với kết quả sau nhiều gợi ý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Also interview a few learners about whether the practice fits their routines. Usability matters, although it should not replace the listening measure. If someone stops because the navigation is confusing, note that separately.",
+      "translation_vi": "Cũng nên phỏng vấn vài người về việc luyện có phù hợp sinh hoạt không. Tính dễ dùng quan trọng nhưng không thay thế đo nghe; nếu bỏ vì điều hướng rối, ghi riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I suggest a two-week trial with first-year students, but we should avoid selecting only the most enthusiastic volunteers. We could invite the entire seminar group and then report who declined.",
+      "translation_vi": "Em đề xuất thử hai tuần với sinh viên năm nhất nhưng tránh chỉ chọn người rất hào hứng; mời cả lớp seminar rồi báo số từ chối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I can ask the course coordinator for permission and ensure joining the trial does not affect grades. Students who decline should still receive the normal learning materials.",
+      "translation_vi": "Thầy sẽ xin phép điều phối môn và bảo đảm tham gia không ảnh hưởng điểm. Người từ chối vẫn nhận tài liệu học thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll design the unseen listening items and have another student review whether any of them accidentally reuse phrases from the app. The assessment bank must remain hidden during practice.",
+      "translation_vi": "Em sẽ thiết kế bài nghe chưa gặp, nhờ người khác rà có vô tình lấy lại cụm của app không. Kho đánh giá phải ẩn khi luyện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "I'll interview a small sample about the app's navigation and when they choose to use hints. Their comments may help explain results, but won't substitute for the independent test.",
+      "translation_vi": "Em sẽ phỏng vấn mẫu nhỏ về điều hướng và khi nào họ dùng gợi ý. Bình luận có thể giải thích kết quả nhưng không thay bài test độc lập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll extract anonymous usage figures, including replays and hint requests, without keeping personal identifiers in the analysis spreadsheet. We need patterns of behaviour, not named profiles.",
+      "translation_vi": "Em sẽ lấy thống kê ẩn danh gồm số lần nghe lại và xin gợi ý, không lưu danh tính trong bảng phân tích. Ta cần mẫu hành vi chứ không phải hồ sơ cá nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Present learning, engagement and usability as three separate findings. If they tell different stories, that is interesting evidence rather than an inconvenient result to be hidden.",
+      "translation_vi": "Trình bày kết quả học, mức sử dụng và tính dễ dùng thành ba kết quả riêng. Nếu chúng khác nhau, đó là dữ liệu thú vị chứ không nên giấu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "learning_outcomes",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why are the app’s badge statistics insufficient?",
+      "correct_answers": [
+        "They do not demonstrate learning outside the app"
+      ],
+      "options": [
+        "They contain too many spelling errors",
+        "They do not demonstrate learning outside the app",
+        "They do not identify the app’s developer"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The company sent us statistics about daily logins and badges. I thought those figures proved the app was effective, but they tell us little about what users can do outside the application.",
+      "explanation_vi": "Lượt đăng nhập và huy hiệu không chứng minh năng lực thực.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "learning_outcomes"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What does the tutor say about the pre- and post-tests?",
+      "correct_answers": [
+        "They must be comparable but use different items"
+      ],
+      "options": [
+        "They must be comparable but use different items",
+        "They should repeat exactly the same questions",
+        "They should rely on users’ favourite audio"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "That is a better outcome measure. Make the pre-test and post-test similar in difficulty but not identical, and keep the test items separate from the students' practice content.",
+      "explanation_vi": "Hai đề phải tương đương chứ không trùng nội dung.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "learning_outcomes"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Which two accuracy measures should be separated?",
+      "correct_answers": [
+        "Independent and assisted performance"
+      ],
+      "options": [
+        "Independent and assisted performance",
+        "English and mathematics grades",
+        "Morning and evening attendance"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Let's record first-attempt accuracy separately from assisted accuracy. That way improvement in independent listening will not be confused with success achieved after several hints.",
+      "explanation_vi": "Tách lần nghe đầu và kết quả có hỗ trợ.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "learning_outcomes"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "How should students be recruited for the trial?",
+      "correct_answers": [
+        "Invite a whole seminar and record refusals"
+      ],
+      "options": [
+        "Invite only students with badges",
+        "Invite a whole seminar and record refusals",
+        "Select only the top app users"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I suggest a two-week trial with first-year students, but we should avoid selecting only the most enthusiastic volunteers. We could invite the entire seminar group and then report who declined.",
+      "explanation_vi": "Mời cả lớp và báo số từ chối để giảm thiên lệch tự chọn.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "learning_outcomes"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: protect grading fairness and get course permission?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I can ask the course coordinator for permission and ensure joining the trial does not affect grades. Students who decline should still receive the normal learning materials.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "learning_outcomes"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: create unseen test items and check for leakage?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll design the unseen listening items and have another student review whether any of them accidentally reuse phrases from the app. The assessment bank must remain hidden during practice.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "learning_outcomes"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: interview learners about navigation?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll interview a small sample about the app's navigation and when they choose to use hints. Their comments may help explain results, but won't substitute for the independent test.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "learning_outcomes"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: analyse anonymous replay and hint statistics?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll extract anonymous usage figures, including replays and hint requests, without keeping personal identifiers in the analysis spreadsheet. We need patterns of behaviour, not named profiles.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "learning_outcomes"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "We could compare scores on new listening tasks before and after a short study period. The tasks must use different voices and sentences from the app; otherwise we would mainly measure familiarity."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "We could compare scores on new listening tasks before and after a short study period. The tasks must use different voices and sentences from the app; otherwise we would mainly measure familiarity.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "learning_outcomes"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "The app offers optional hints, so some users replay a sentence five times while others answer on the first listen. Raw accuracy would make those two behaviours look equivalent."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The app offers optional hints, so some users replay a sentence five times while others answer on the first listen. Raw accuracy would make those two behaviours look equivalent.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "learning_outcomes"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "Also interview a few learners about whether the practice fits their routines. Usability matters, although it should not replace the listening measure. If someone stops because the navigation is confusing, note that separately."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Also interview a few learners about whether the practice fits their routines. Usability matters, although it should not replace the listening measure. If someone stops because the navigation is confusing, note that separately.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "learning_outcomes"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói C.",
+      "correct_answers": [
+        "I'll interview a small sample about the app's navigation and when they choose to use hints. Their comments may help explain results, but won't substitute for the independent test."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll interview a small sample about the app's navigation and when they choose to use hints. Their comments may help explain results, but won't substitute for the independent test.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "learning_outcomes"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: Your app review is energetic, but you have confused ____ with learning. A student can open an app every day without becoming better at understanding spoken instructions. What change will you try to observe?",
+      "correct_answers": [
+        "engagement"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Your app review is energetic, but you have confused engagement with learning. A student can open an app every day without becoming better at understanding spoken instructions. What change will you try to observe?",
+      "explanation_vi": "Cụm nghe được là “engagement” (mức độ tương tác); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "learning_outcomes"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T04 và điền cụm bị thiếu: That is a better ____. Make the pre-test and post-test similar in difficulty but not identical, and keep the test items separate from the students' practice content.",
+      "correct_answers": [
+        "outcome measure"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "That is a better outcome measure. Make the pre-test and post-test similar in difficulty but not identical, and keep the test items separate from the students' practice content.",
+      "explanation_vi": "Cụm nghe được là “outcome measure” (thước đo kết quả); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "learning_outcomes"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-008-V01",
+      "expression_en": "engagement",
+      "meaning_vi": "mức độ tương tác",
+      "part_of_speech": "noun phrase",
+      "example_en": "Your app review is energetic, but you have confused engagement with learning. A student can open an app every day without becoming better at understanding spoken instructions. What change will you try to observe?",
+      "example_vi": "Bài đánh giá ứng dụng nhiệt tình nhưng em nhầm tương tác với học. Học viên mở app mỗi ngày chưa chắc nghe hướng dẫn tốt hơn; em muốn quan sát thay đổi nào?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-008-V02",
+      "expression_en": "outcome measure",
+      "meaning_vi": "thước đo kết quả",
+      "part_of_speech": "noun phrase",
+      "example_en": "That is a better outcome measure. Make the pre-test and post-test similar in difficulty but not identical, and keep the test items separate from the students' practice content.",
+      "example_vi": "Đó là thước đo tốt hơn. Đề trước và sau cần tương đương độ khó nhưng không giống hệt, và phải tách khỏi nội dung đã luyện.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-008-V03",
+      "expression_en": "pre-test",
+      "meaning_vi": "kiểm tra trước can thiệp",
+      "part_of_speech": "noun phrase",
+      "example_en": "That is a better outcome measure. Make the pre-test and post-test similar in difficulty but not identical, and keep the test items separate from the students' practice content.",
+      "example_vi": "Đó là thước đo tốt hơn. Đề trước và sau cần tương đương độ khó nhưng không giống hệt, và phải tách khỏi nội dung đã luyện.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-008-V04",
+      "expression_en": "first-attempt accuracy",
+      "meaning_vi": "độ chính xác lần đầu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Let's record first-attempt accuracy separately from assisted accuracy. That way improvement in independent listening will not be confused with success achieved after several hints.",
+      "example_vi": "Hãy lưu độ đúng lần đầu riêng với độ đúng có hỗ trợ, để không nhầm nghe độc lập với kết quả sau nhiều gợi ý.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-008-V05",
+      "expression_en": "usability",
+      "meaning_vi": "tính dễ sử dụng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Also interview a few learners about whether the practice fits their routines. Usability matters, although it should not replace the listening measure. If someone stops because the navigation is confusing, note that separately.",
+      "example_vi": "Cũng nên phỏng vấn vài người về việc luyện có phù hợp sinh hoạt không. Tính dễ dùng quan trọng nhưng không thay thế đo nghe; nếu bỏ vì điều hướng rối, ghi riêng.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-008-V06",
+      "expression_en": "personal identifiers",
+      "meaning_vi": "thông tin nhận diện cá nhân",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll extract anonymous usage figures, including replays and hint requests, without keeping personal identifiers in the analysis spreadsheet. We need patterns of behaviour, not named profiles.",
+      "example_vi": "Em sẽ lấy thống kê ẩn danh gồm số lần nghe lại và xin gợi ý, không lưu danh tính trong bảng phân tích. Ta cần mẫu hành vi chứ không phải hồ sơ cá nhân.",
+      "evidence_turn_id": "T12",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "136468f09bb1f3c8dd7fb75c95e7806034b8c55f19f5998cacaeac781d261adf",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 379,
+    "estimated_audio_minutes_at_135_wpm": 2.81,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

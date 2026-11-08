@@ -1,0 +1,259 @@
+{
+  "schema_version": "m34.2.0",
+  "activity_id": "ACT-SEC-119",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Silverbrook Science Discovery Centre — Dẫn đường trên bản đồ và sửa lỗi",
+  "section": 2,
+  "source_lesson_id": "S2-EXP-009",
+  "source_milestone": "M22",
+  "source_zip": "English_Skill_Lab_Dictation_M22_Section_2_Expanded_Practice_20.zip",
+  "reuse_parent_id": "S2-EXP-009",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S2-EXP-009/T04",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S2-EXP-009/T04",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-009",
+      "source_turn_id": "T04",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "0ba6948bec40a421fed6ae48e6ab9e07d5f47d320ddd573ef80ba6ae7e0b4598",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S2-EXP-009/T07",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-009",
+      "source_turn_id": "T07",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "73e1b5d006627031587de00f9fe38ccb72f0db952fe959fe505f605b8aa566d1",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Science outreach",
+  "drill_skill": "map_distractor_transfer",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_2",
+    "map_navigation",
+    "compass_orientation",
+    "note_completion",
+    "focused_dictation"
+  ],
+  "teacher_notes": {
+    "goal": "Phân biệt vị trí theo hướng Bắc/Nam/Đông/Tây, sau đó xác minh thông tin thực tế được nói.",
+    "theory": "Map Labelling: trước tiên tìm đúng cổng vào (có thể ở các hướng khác nhau), sau đó theo lối đi và mốc cố định trên sơ đồ để suy ra chữ cái.",
+    "tip": "Không mặc định cổng nằm phía Nam; đối chiếu mốc cố định và hướng la bàn trước khi chọn.",
+    "mistakes": [
+      "Tưởng mọi bản đồ có cấu trúc hai hàng.",
+      "Không xác định đúng tên mốc cố định.",
+      "Nhầm hướng tương đối khi bản đồ khác nhau."
+    ],
+    "worked_example": "Ví dụ khác: “The rehearsal area is at the far north-east corner.” → ô góc trên bên phải của sơ đồ."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T04",
+      "T07"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_source_turns_verified_only"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-119-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q02",
+      "origin_question_type": "map_labelling",
+      "type": "map_labelling",
+      "prompt_en": "Which letter marks Microscope Lab?",
+      "prompt_vi": "Nghe mốc cố định, xác định hướng tương đối rồi chọn chữ cái trên bản đồ.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A"
+        },
+        {
+          "value": "B",
+          "label": "B"
+        },
+        {
+          "value": "C",
+          "label": "C"
+        },
+        {
+          "value": "D",
+          "label": "D"
+        },
+        {
+          "value": "E",
+          "label": "E"
+        },
+        {
+          "value": "F",
+          "label": "F"
+        },
+        {
+          "value": "G",
+          "label": "G"
+        },
+        {
+          "value": "H",
+          "label": "H"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_009.svg",
+      "map_asset_id": "M22-MAP-009",
+      "play_turn_ids": [
+        "T04"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "There's a useful sign for the Demo Stage on the plan. Immediately north-west of it is a lettered location: that's where you'll find Microscope Lab. People sometimes choose the more distant area, but that isn't the right one.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Demo Stage, rồi nhìn ngay phía tây bắc. Khu được đánh dấu C là Microscope Lab.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-119-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q05",
+      "origin_question_type": "note_completion",
+      "type": "spoken_word_completion",
+      "prompt_en": "Robot show begins: ____",
+      "prompt_vi": "Lắng nghe chi tiết đã được xác nhận, bỏ qua thông tin cũ.",
+      "options": null,
+      "correct_answers": [
+        "1:35"
+      ],
+      "correct_option": null,
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "play_turn_ids": [
+        "T07"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The robot demonstration begins at 1:35; please ignore the 1:15 time printed on last month’s flyer.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Nghe thông tin cuối cùng về robot show begins; đáp án là “1:35”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-119-Q3",
+      "phase": "focused_dictation_repair",
+      "origin_question_id": null,
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại và chép chính xác cụm chỉ vị trí bị ẩn (không viết cả câu).",
+      "prompt_en": "There's a useful sign for ____ on the plan. Immediately north-west of it is a lettered location: that's where you'll find Microscope Lab. People sometimes choose the more distant area, but that isn't the right one.",
+      "word_limit": 3,
+      "correct_answers": [
+        "the Demo Stage"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T04"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "the Demo Stage",
+      "evidence_char_start": 26,
+      "evidence_char_end": 40,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Nghe mốc định hướng trong câu thoại mới, đối chiếu cách viết chính xác sau khi nộp.",
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S2-EXP-009",
+    "source_question_ids": [
+      "Q02",
+      "Q05"
+    ],
+    "source_turn_ids": [
+      "T04",
+      "T07"
+    ],
+    "source_transcript_sha256_map": {
+      "T04": "4f0fd4e2415680d09387cf05a77dace5211413cba203e7bf9d6c7fca500f1617",
+      "T07": "73e1b5d006627031587de00f9fe38ccb72f0db952fe959fe505f605b8aa566d1"
+    },
+    "provenance": "original_training_2026_m22",
+    "source_confidence": "authored_draft_requires_human_signoff"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "passed_structural",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "conditional_replace_draft_only_must_not_override_exposed_record",
+  "version": "m34.2.0",
+  "signpost_annotation_server_only": {
+    "signpost": "however",
+    "function": "contrast",
+    "source_turn_preview_server_only": "Why can spreading practice help? One explanation is that some forgetting makes later retrieval more demanding. Recovering an idea from memory may strengthen its availability for future use. Researchers discuss retrieval effort as part of this process. However, if the material is forgotten so completely that recall always fails, additional support may be needed."
+  },
+  "content_source_version": "m22.1.0-distinct-maps",
+  "release_eligible": false
+}

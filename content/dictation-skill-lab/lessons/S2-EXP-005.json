@@ -1,0 +1,627 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S2-EXP-005",
+  "status": "draft_pending_audio",
+  "level": "L5",
+  "section": 2,
+  "topic": "Creative workshops",
+  "title": "Crescent City Arts House",
+  "learning_objectives_vi": [
+    "Lần theo những lối đi đa dạng trên bản đồ, không dựa vào bố cục ô lưới.",
+    "Nhận diện mốc cố định rồi kết hợp hướng la bàn để chọn đúng vị trí.",
+    "Phân biệt những thông tin cũ và thông tin cuối cùng trong câu hỏi điền từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "map_navigation",
+    "compass_orientation",
+    "detail_accuracy",
+    "distractor_rejection"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Venue guide",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to Crescent City Arts House. Please use the new visitor plan rather than an old photograph or timetable. Today's route is marked as the courtyard walk. On this plan, north is at the top, and the entrance is labelled south entrance.",
+      "translation_vi": "Chào mừng đến Crescent City Arts House. Hãy tìm south entrance trên sơ đồ, sau đó đi theo courtyard walk. Mũi tên chỉ hướng Bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "map_reading"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "You can observe most demonstrations without registering, but hands-on sessions are managed separately for safety. The fixed landmarks are labelled by name, while the places you need to identify are marked only A to H. Listen for a landmark and a direction; do not guess from the order of letters.",
+      "translation_vi": "Các mốc cố định có tên sẵn, còn những vị trí cần xác định được đánh dấu A đến H. Hãy nghe mốc và hướng di chuyển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "compass"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "If you're looking for Supply Store, use the Old Well as your reference point. Choose the nearest lettered location directly north of that landmark. Other marked areas are for different activities.",
+      "translation_vi": "Hãy xác định mốc Old Well trên sơ đồ. Supply Store nằm ngay phía bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_H"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "There's a useful sign for the Gallery Arch on the plan. Immediately north-west of it is a lettered location: that's where you'll find Photography Lab. People sometimes choose the more distant area, but that isn't the right one.",
+      "translation_vi": "Hãy xác định mốc Gallery Arch trên sơ đồ. Photography Lab nằm ngay phía tây bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_F"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Now find the Courtyard Tree. From that landmark, look south-west to the nearest lettered point. That's where you'll find Ceramics Room. Don't confuse it with the other lettered buildings further away.",
+      "translation_vi": "Hãy xác định mốc Courtyard Tree trên sơ đồ. Ceramics Room nằm ngay phía tây nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_A"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "First locate the Stone Bench on the visitor plan. You'll find Gallery Annex at the lettered location immediately south-east of it. Check the position against the nearest other buildings before moving on.",
+      "translation_vi": "Hãy xác định mốc Stone Bench trên sơ đồ. Gallery Annex nằm ngay phía đông nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_C"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Turning to the practical information, The public clay demonstration starts at 2:20, not at two o’clock as the early programme said.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "As for booking details, The bookable textile workshop costs eleven pounds including materials.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "There is also a useful change to note: Photography spaces are released for booking each Tuesday, rather than at the weekend.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Before you arrive, remember this: Please keep your receipt if you plan to collect a fired ceramic piece next week.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Paintings in the temporary display are not for sale through the front desk; speak to the individual artists instead. The visitor team at Crescent City Arts House will answer any remaining questions after the tour.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "closing"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Supply Store",
+      "correct_answers": [
+        "H"
+      ],
+      "correct_option": "H",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "If you're looking for Supply Store, use the Old Well as your reference point. Choose the nearest lettered location directly north of that landmark. Other marked areas are for different activities.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Old Well, rồi nhìn ngay phía bắc. Khu được đánh dấu H là Supply Store.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-005"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Photography Lab",
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "There's a useful sign for the Gallery Arch on the plan. Immediately north-west of it is a lettered location: that's where you'll find Photography Lab. People sometimes choose the more distant area, but that isn't the right one.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Gallery Arch, rồi nhìn ngay phía tây bắc. Khu được đánh dấu F là Photography Lab.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-005"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Ceramics Room",
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Now find the Courtyard Tree. From that landmark, look south-west to the nearest lettered point. That's where you'll find Ceramics Room. Don't confuse it with the other lettered buildings further away.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Courtyard Tree, rồi nhìn ngay phía tây nam. Khu được đánh dấu A là Ceramics Room.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-005"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Gallery Annex",
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "First locate the Stone Bench on the visitor plan. You'll find Gallery Annex at the lettered location immediately south-east of it. Check the position against the nearest other buildings before moving on.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Stone Bench, rồi nhìn ngay phía đông nam. Khu được đánh dấu C là Gallery Annex.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-005"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Free demonstration time: ____",
+      "correct_answers": [
+        "2:20"
+      ],
+      "spoken_answer": "2:20",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The public clay demonstration starts at 2:20, not at two o’clock as the early programme said.",
+      "explanation_vi": "Nghe thông tin cuối cùng về free demonstration time; đáp án là “2:20”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Advance workshop fee: ____",
+      "correct_answers": [
+        "eleven pounds"
+      ],
+      "spoken_answer": "eleven pounds",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The bookable textile workshop costs eleven pounds including materials.",
+      "explanation_vi": "Nghe thông tin cuối cùng về advance workshop fee; đáp án là “eleven pounds”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Photography booking day: ____",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "spoken_answer": "Tuesday",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Photography spaces are released for booking each Tuesday, rather than at the weekend.",
+      "explanation_vi": "Nghe thông tin cuối cùng về photography booking day; đáp án là “Tuesday”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Collection requirement: ____",
+      "correct_answers": [
+        "receipt"
+      ],
+      "spoken_answer": "receipt",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Please keep your receipt if you plan to collect a fired ceramic piece next week.",
+      "explanation_vi": "Nghe thông tin cuối cùng về collection requirement; đáp án là “receipt”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "MAP_Q01_TO_04",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place. Follow the named landmarks and directions in the audio.",
+      "map_asset_id": "M22-MAP-005",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_005.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "group_id": "NOTES_Q05_TO_08",
+      "question_ids": [
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer."
+    }
+  ],
+  "vocabulary": [
+    {
+      "expression_en": "Supply Store",
+      "meaning_vi": "Vị trí Supply Store trên sơ đồ; luyện nghe định hướng tương đối so với Old Well.",
+      "part_of_speech": "noun phrase",
+      "example_en": "If you're looking for Supply Store, use the Old Well as your reference point. Choose the nearest lettered location directly north of that landmark. Other marked areas are for different activities.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Photography Lab",
+      "meaning_vi": "Vị trí Photography Lab trên sơ đồ; luyện nghe định hướng tương đối so với Gallery Arch.",
+      "part_of_speech": "noun phrase",
+      "example_en": "There's a useful sign for the Gallery Arch on the plan. Immediately north-west of it is a lettered location: that's where you'll find Photography Lab. People sometimes choose the more distant area, but that isn't the right one.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Ceramics Room",
+      "meaning_vi": "Vị trí Ceramics Room trên sơ đồ; luyện nghe định hướng tương đối so với Courtyard Tree.",
+      "part_of_speech": "noun phrase",
+      "example_en": "Now find the Courtyard Tree. From that landmark, look south-west to the nearest lettered point. That's where you'll find Ceramics Room. Don't confuse it with the other lettered buildings further away.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Gallery Annex",
+      "meaning_vi": "Vị trí Gallery Annex trên sơ đồ; luyện nghe định hướng tương đối so với Stone Bench.",
+      "part_of_speech": "noun phrase",
+      "example_en": "First locate the Stone Bench on the visitor plan. You'll find Gallery Annex at the lettered location immediately south-east of it. Check the position against the nearest other buildings before moving on.",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "1326991eca4f440281acbf5a25345a7026cb3dd5de7a19779934b2ec43b4e1bc",
+    "generation_strategy": "one_continuous_monologue",
+    "aligned_turns": false
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Map Labelling yêu cầu tìm lối vào, mũi tên Bắc, các mốc cố định và con đường nối chúng. Không mặc định mọi lối vào ở phía Nam, không suy vị trí chỉ từ thứ tự A–H.",
+      "worked_examples": [
+        {
+          "prompt": "The activity area is immediately east of the old clock.",
+          "reason_vi": "Tìm Old Clock có ghi tên trên sơ đồ; từ đó nhìn sang phía Đông (bên phải nếu Bắc ở trên) để xác định ô chữ cái."
+        }
+      ],
+      "common_mistakes_vi": [
+        "Giả định mọi bản đồ đều có lối vào phía Nam.",
+        "Chọn chữ cái trước khi nghe mốc cố định.",
+        "Bỏ qua các từ immediately, across, rather than và north-east."
+      ]
+    },
+    "after_submit": {
+      "unlock_transcript": true,
+      "unlock_answers": true,
+      "dictation_turns": [
+        "T03",
+        "T07"
+      ]
+    }
+  },
+  "map_asset": {
+    "map_asset_id": "M22-MAP-005",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_005.svg",
+    "orientation": "NORTH UP / ENTRANCE VARIES BY PLAN",
+    "location_key_server_only": {
+      "Supply Store": "H",
+      "Photography Lab": "F",
+      "Ceramics Room": "A",
+      "Gallery Annex": "C"
+    },
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true,
+    "layout_type": "courtyard",
+    "source_map_version": "m22-map-v2-distinct",
+    "entry_point": "SOUTH ENTRANCE",
+    "route_name": "courtyard walk",
+    "letter_coordinates_server_only": {
+      "H": {
+        "x": 150,
+        "y": 360
+      },
+      "F": {
+        "x": 170,
+        "y": 200
+      },
+      "A": {
+        "x": 735,
+        "y": 210
+      },
+      "C": {
+        "x": 555,
+        "y": 440
+      },
+      "G": {
+        "x": 320,
+        "y": 155
+      },
+      "B": {
+        "x": 590,
+        "y": 150
+      },
+      "D": {
+        "x": 725,
+        "y": 390
+      },
+      "E": {
+        "x": 330,
+        "y": 420
+      }
+    },
+    "reference_landmarks_server_only": [
+      {
+        "name": "Old Well",
+        "x": 150,
+        "y": 427,
+        "letter": "H"
+      },
+      {
+        "name": "Gallery Arch",
+        "x": 222,
+        "y": 252,
+        "letter": "F"
+      },
+      {
+        "name": "Courtyard Tree",
+        "x": 787,
+        "y": 158,
+        "letter": "A"
+      },
+      {
+        "name": "Stone Bench",
+        "x": 503,
+        "y": 388,
+        "letter": "C"
+      }
+    ],
+    "direction_evidence_server_only": {
+      "Q01": {
+        "landmark": "Old Well",
+        "compass_direction": "north",
+        "answer_letter": "H"
+      },
+      "Q02": {
+        "landmark": "Gallery Arch",
+        "compass_direction": "north-west",
+        "answer_letter": "F"
+      },
+      "Q03": {
+        "landmark": "Courtyard Tree",
+        "compass_direction": "south-west",
+        "answer_letter": "A"
+      },
+      "Q04": {
+        "landmark": "Stone Bench",
+        "compass_direction": "south-east",
+        "answer_letter": "C"
+      }
+    }
+  },
+  "qa": {
+    "automated_data_validation": "passed_scope_spatial_reference_and_text_containment",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "human_map_approved": false,
+    "human_translation_approved": false,
+    "release_eligible": false,
+    "estimated_word_count": 334,
+    "visual_diversity_review": "pending_human_check",
+    "previous_map_replaced_reason": "identical_2x4_grid_template"
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "authoring_milestone": "M22",
+    "reference_copying": false,
+    "target_bank": "training"
+  },
+  "release_metadata": {
+    "version": "m22.1.0-distinct-maps",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "replace_draft_only_or_explicit_version_migration",
+    "target_bank": "training",
+    "no_bands": true
+  }
+}

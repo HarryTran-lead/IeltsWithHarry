@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-002",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Botanical garden visitor plan",
+  "title": "Westfield Botanical Gardens: Visitor Briefing",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "map_navigation",
+    "public_facilities"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, everyone. I am Evelyn, one of the guides at Westfield Botanical Gardens. Before we start, there are a few changes to this month’s programme. We are trialling a slower walking route so that visitors can enjoy the displays without rushing between the areas.",
+      "translation_vi": "Chào mọi người. Tôi là Evelyn, hướng dẫn viên Vườn thực vật Westfield. Tháng này có thay đổi chương trình, với tuyến đi chậm hơn để khách ngắm khu trưng bày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The rose collection is being replanted, so our main guided tour this week concentrates on native grasses rather than flowering borders. These plants are especially important to local insects.",
+      "translation_vi": "Bộ sưu tập hoa hồng đang trồng lại; tour tuần này tập trung vào cỏ bản địa, quan trọng với côn trùng địa phương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Guided visits begin at eleven fifteen, not at eleven as the old website suggests. Please arrive ten minutes beforehand so we can allocate visitors to smaller groups.",
+      "translation_vi": "Tour bắt đầu lúc mười một giờ mười lăm, không phải mười một giờ như web cũ; hãy đến sớm mười phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We can lend visitors a lightweight folding stool if they cannot stand comfortably for long. There is no need to bring a camping chair from home.",
+      "translation_vi": "Chúng tôi cho mượn ghế gấp nhẹ nếu khách không đứng lâu được; không cần mang ghế dã ngoại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "School groups must contact our education office by email, because the general booking form does not collect details about allergies and supervision.",
+      "translation_vi": "Các đoàn học sinh phải email cho văn phòng giáo dục vì mẫu đặt chỗ chung không thu thập thông tin dị ứng và giám sát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "A small contribution is welcome, but garden admission remains free on Wednesdays. Paid specialist workshops are advertised separately at the ticket desk.",
+      "translation_vi": "Có thể quyên góp, nhưng vào vườn miễn phí thứ Tư; workshop chuyên sâu tính phí riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Our gardeners have also changed the way they care for the collection. Instead of watering every bed at the same time, they measure soil moisture and adjust the schedule to individual plant groups. That has made the grounds more sustainable, though the results take several seasons to become obvious.",
+      "translation_vi": "Người làm vườn đã chuyển từ tưới đồng loạt sang đo độ ẩm đất rồi điều chỉnh theo từng nhóm cây. Việc này bền vững hơn nhưng cần vài mùa mới thấy rõ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please turn to the printed garden plan now. The entrance is at the bottom, and the visitor information kiosk stands in the centre where the three main paths meet. I will describe five places you may want to visit.",
+      "translation_vi": "Bây giờ hãy xem sơ đồ: cổng ở phía dưới, quầy thông tin nằm chính giữa nơi ba đường gặp nhau. Tôi sẽ chỉ năm địa điểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Starting from the information kiosk, the seed library is in the room directly to the west, halfway along the garden. A sign still mentions a former tool shed there, but the seeds have moved in.",
+      "translation_vi": "Từ quầy thông tin, thư viện hạt giống nằm ngay phía tây, giữa vườn. Biển cũ còn ghi kho dụng cụ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "For the butterfly shelter, follow the path uphill to the north-east corner. It is beyond the cactus bed, not beside the main gate as shown on last season’s leaflet.",
+      "translation_vi": "Đến nhà bướm, theo lối lên đồi về góc đông bắc, qua vườn xương rồng; không phải gần cổng chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The water-wise demonstration plot is immediately beyond the main gate, on the southern part of the central path before you reach the information kiosk. Look for the signs about plants that tolerate dry conditions.",
+      "translation_vi": "Khu minh họa tiết kiệm nước nằm ngay sau cổng chính, ở đoạn phía nam trục đường giữa trước khi đến quầy thông tin, có biển về cây chịu hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Our hillside lookout is the northernmost point of the central path, directly above the kiosk. The path ends there, so you cannot continue through the wooded boundary.",
+      "translation_vi": "Điểm ngắm cảnh trên đồi ở điểm cuối cùng phía bắc của trục đường giữa, thẳng phía trên quầy thông tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Finally, the new orchid house is in the eastern middle section, to the right of the kiosk. The glass building in the south-east corner is a greenhouse for staff and is closed to visitors.",
+      "translation_vi": "Nhà lan mới ở chính giữa phía đông, bên phải quầy. Nhà kính phía đông nam dành cho nhân viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Please remember that the garden is a living research site as well as a place to relax. A path may occasionally be closed while researchers count insects or check young plants. These short closures are designed to protect the work and do not mean the garden itself is shutting for the day.",
+      "translation_vi": "Vườn vừa là nơi thư giãn vừa là cơ sở nghiên cứu. Đường có thể đóng ngắn khi nhà nghiên cứu đếm côn trùng hoặc kiểm tra cây non; không có nghĩa cả vườn đóng cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The northern paths are sometimes muddy after rain, so check with a volunteer before taking a wheelchair onto the hillside. Thank you for supporting the gardens.",
+      "translation_vi": "Đường phía bắc đôi khi lầy sau mưa; hãy hỏi tình nguyện viên trước khi đưa xe lăn lên đồi. Cảm ơn mọi người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Main tour topic: native ____.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The rose collection is being replanted, so our main guided tour this week concentrates on native grasses rather than flowering borders. These plants are especially important to local insects.",
+      "explanation_vi": "Bộ sưu tập hoa hồng đang trồng lại; tour tuần này tập trung vào cỏ bản địa, quan trọng với côn trùng địa phương.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "grasses"
+      ],
+      "spoken_answer": "grasses",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Tour start time: ____.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Guided visits begin at eleven fifteen, not at eleven as the old website suggests. Please arrive ten minutes beforehand so we can allocate visitors to smaller groups.",
+      "explanation_vi": "Tour bắt đầu lúc mười một giờ mười lăm, không phải mười một giờ như web cũ; hãy đến sớm mười phút.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "eleven fifteen"
+      ],
+      "spoken_answer": "eleven fifteen",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Available to borrow: folding ____.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "We can lend visitors a lightweight folding stool if they cannot stand comfortably for long. There is no need to bring a camping chair from home.",
+      "explanation_vi": "Chúng tôi cho mượn ghế gấp nhẹ nếu khách không đứng lâu được; không cần mang ghế dã ngoại.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "stool"
+      ],
+      "spoken_answer": "stool",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "School groups contact the ____ office.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "School groups must contact our education office by email, because the general booking form does not collect details about allergies and supervision.",
+      "explanation_vi": "Các đoàn học sinh phải email cho văn phòng giáo dục vì mẫu đặt chỗ chung không thu thập thông tin dị ứng và giám sát.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "education"
+      ],
+      "spoken_answer": "education",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Free admission day: ____.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A small contribution is welcome, but garden admission remains free on Wednesdays. Paid specialist workshops are advertised separately at the ticket desk.",
+      "explanation_vi": "Có thể quyên góp, nhưng vào vườn miễn phí thứ Tư; workshop chuyên sâu tính phí riêng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "Wednesdays"
+      ],
+      "spoken_answer": "Wednesdays",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Seed library",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Starting from the information kiosk, the seed library is in the room directly to the west, halfway along the garden. A sign still mentions a former tool shed there, but the seeds have moved in.",
+      "explanation_vi": "Từ quầy thông tin, thư viện hạt giống nằm ngay phía tây, giữa vườn. Biển cũ còn ghi kho dụng cụ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-002",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_002.svg"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Butterfly shelter",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "For the butterfly shelter, follow the path uphill to the north-east corner. It is beyond the cactus bed, not beside the main gate as shown on last season’s leaflet.",
+      "explanation_vi": "Đến nhà bướm, theo lối lên đồi về góc đông bắc, qua vườn xương rồng; không phải gần cổng chính.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-002",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_002.svg"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Water-wise plot",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The water-wise demonstration plot is immediately beyond the main gate, on the southern part of the central path before you reach the information kiosk. Look for the signs about plants that tolerate dry conditions.",
+      "explanation_vi": "Khu minh họa tiết kiệm nước nằm ngay sau cổng chính, ở đoạn phía nam trục đường giữa trước khi đến quầy thông tin, có biển về cây chịu hạn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "G"
+      ],
+      "correct_option": "G",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-002",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_002.svg"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Hillside lookout",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Our hillside lookout is the northernmost point of the central path, directly above the kiosk. The path ends there, so you cannot continue through the wooded boundary.",
+      "explanation_vi": "Điểm ngắm cảnh trên đồi ở điểm cuối cùng phía bắc của trục đường giữa, thẳng phía trên quầy thông tin.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-002",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_002.svg"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Orchid house",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "Finally, the new orchid house is in the eastern middle section, to the right of the kiosk. The glass building in the south-east corner is a greenhouse for staff and is closed to visitors.",
+      "explanation_vi": "Nhà lan mới ở chính giữa phía đông, bên phải quầy. Nhà kính phía đông nam dành cho nhân viên.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "public_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "E"
+      ],
+      "correct_option": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-002",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_002.svg"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "map_asset_id": "M26-MAP-002",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_002.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "b13cfcfd370a3886bbb3642d165e31a0b67f65c0b55141a1aaa468f46da0d3f9",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.67,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  },
+  "map_asset": {
+    "map_asset_id": "M26-MAP-002",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_002.svg",
+    "format": "svg",
+    "orientation": "NORTH UP / MAIN ENTRANCE SOUTH",
+    "question_ids": [
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10"
+    ],
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true
+  }
+}

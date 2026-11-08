@@ -1,0 +1,830 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-003",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Travel arrangements",
+  "title": "Booking an Island Ferry with Luggage",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "times",
+    "baggage",
+    "changes",
+    "meeting_points"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Bayline Ferries, ticket office. How can I help you this morning?",
+      "translation_vi": "Phòng vé Bayline Ferries xin nghe. Tôi có thể giúp gì sáng nay?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm travelling to Northmere Island with my daughter next weekend. We don't have a car, and I want to check the passenger timetable.",
+      "translation_vi": "Tôi đi đảo Northmere cùng con gái cuối tuần sau. Chúng tôi không mang ô tô và muốn hỏi giờ tàu khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "There are three Saturday sailings. The first leaves at eight twenty, the second at eleven ten, and the last at four forty.",
+      "translation_vi": "Thứ Bảy có ba chuyến, lúc 8:20, 11:10 và 4:40.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "The eight twenty might be difficult because we're coming by train. Could we take the eleven ten instead?",
+      "translation_vi": "Chuyến 8:20 có lẽ khó vì chúng tôi đến bằng tàu hỏa. Có thể đi chuyến 11:10 không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes, although check-in closes twenty minutes before departure. I'd recommend arriving at the harbour by ten forty.",
+      "translation_vi": "Được, nhưng quầy làm thủ tục đóng hai mươi phút trước giờ đi. Tôi khuyên nên tới cảng trước 10:40.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That's useful. Will we need printed tickets? I don't have access to a printer at the moment.",
+      "translation_vi": "Hữu ích quá. Có phải in vé không? Hiện tôi không có máy in.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "No. You can show the barcode on your phone. Just make sure the screen is bright enough at the boarding gate.",
+      "translation_vi": "Không cần. Chị có thể hiện mã vạch trên điện thoại. Chỉ cần màn hình đủ sáng tại cổng lên tàu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We also have a folding pushchair and a large backpack. Is there an extra luggage charge?",
+      "translation_vi": "Chúng tôi còn có xe đẩy gấp gọn và ba lô lớn. Có phụ phí hành lý không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The pushchair travels free. One bag is included per passenger, but an additional suitcase would cost six pounds.",
+      "translation_vi": "Xe đẩy miễn phí. Mỗi khách được mang một túi; va li thêm tốn sáu bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Fine. My daughter is nine, so I assume she needs a child ticket rather than an adult fare.",
+      "translation_vi": "Được. Con gái tôi chín tuổi, chắc dùng vé trẻ em chứ không phải vé người lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "That's right. The adult return is twenty-four pounds, and the child return is twelve. Both include the return journey on Sunday.",
+      "translation_vi": "Đúng. Vé khứ hồi người lớn 24 bảng, trẻ em 12 bảng; đều gồm chiều về Chủ Nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "We originally planned to come back Sunday morning, but our hotel offers breakfast until ten. What's the later boat?",
+      "translation_vi": "Ban đầu chúng tôi định về sáng Chủ Nhật, nhưng khách sạn phục vụ bữa sáng đến mười giờ. Chuyến muộn hơn là mấy giờ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The Sunday afternoon return leaves at three fifteen. You can choose that now without paying a change fee.",
+      "translation_vi": "Chuyến về chiều Chủ Nhật khởi hành 3:15. Chị có thể chọn ngay không phải trả phí đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Let's do that. Is the departure pier next to the railway station, or is there a walk?",
+      "translation_vi": "Vậy chọn chuyến đó. Bến tàu ngay cạnh ga xe lửa hay phải đi bộ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "It's a seven-minute walk. Follow the signs to Pier Three; Pier One is used by the fishing boats.",
+      "translation_vi": "Đi bộ bảy phút. Theo biển chỉ dẫn tới Bến số Ba; Bến Một dành cho tàu đánh cá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Great. Please send the details to my email, and I'll complete the booking when I get home this evening.",
+      "translation_vi": "Tốt. Hãy gửi chi tiết tới email của tôi; tối nay về nhà tôi sẽ hoàn tất đặt vé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Chosen Saturday sailing: ____",
+      "correct_answers": [
+        "eleven ten",
+        "11:10"
+      ],
+      "spoken_answer": "eleven ten",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khách từ bỏ chuyến 8:20 vì khó kết nối với tàu hỏa.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "eleven ten instead",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Recommended arrival: ____",
+      "correct_answers": [
+        "ten forty",
+        "10:40"
+      ],
+      "spoken_answer": "ten forty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Nhân viên khuyên đến cảng trước 10:40.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "by ten forty",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "What can passengers show instead of a printed ticket?",
+      "correct_answers": [
+        "barcode on phone"
+      ],
+      "options": [
+        "passport photograph",
+        "payment receipt",
+        "barcode on phone"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Mã vạch trên điện thoại thay cho vé in.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "barcode on your phone",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Additional suitcase fee: £____",
+      "correct_answers": [
+        "six",
+        "6"
+      ],
+      "spoken_answer": "six",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Chỉ túi thứ hai mới bị tính phụ phí.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "six pounds",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Child return fare: £____",
+      "correct_answers": [
+        "twelve",
+        "12"
+      ],
+      "spoken_answer": "twelve",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Vé khứ hồi trẻ em là mười hai bảng.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "child return is twelve",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Sunday return departure: ____",
+      "correct_answers": [
+        "three fifteen",
+        "3:15"
+      ],
+      "spoken_answer": "three fifteen",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khách chọn chuyến chiều thay vì sáng.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "three fifteen",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Boarding point: Pier ____",
+      "correct_answers": [
+        "Three",
+        "3"
+      ],
+      "spoken_answer": "Three",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Theo biển chỉ dẫn đến bến số Ba.",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "Pier Three",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "How far is the pier from the station?",
+      "correct_answers": [
+        "seven-minute walk"
+      ],
+      "options": [
+        "seven-minute walk",
+        "directly beside it",
+        "twenty-minute bus ride"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Có thể đi bộ bảy phút từ ga tới bến.",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "seven-minute walk",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "The eight twenty might be difficult because we're coming by train. Could we take the eleven ten instead?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Chuyến 8:20 có lẽ khó vì chúng tôi đến bằng tàu hỏa. Có thể đi chuyến 11:10 không?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "No. You can show the barcode on your phone. Just make sure the screen is bright enough at the boarding gate."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Không cần. Chị có thể hiện mã vạch trên điện thoại. Chỉ cần màn hình đủ sáng tại cổng lên tàu.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "Fine. My daughter is nine, so I assume she needs a child ticket rather than an adult fare."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Được. Con gái tôi chín tuổi, chắc dùng vé trẻ em chứ không phải vé người lớn.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "Let's do that. Is the departure pier next to the railway station, or is there a walk?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Vậy chọn chuyến đó. Bến tàu ngay cạnh ga xe lửa hay phải đi bộ?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: The eight twenty might be difficult because we're coming by train. Could we take the ____ instead?",
+      "correct_answers": [
+        "eleven ten"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Khách từ bỏ chuyến 8:20 vì khó kết nối với tàu hỏa.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: Yes, although check-in closes twenty minutes before departure. I'd recommend arriving at the harbour by ____.",
+      "correct_answers": [
+        "ten forty"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nhân viên khuyên đến cảng trước 10:40.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "times",
+        "baggage",
+        "changes",
+        "meeting_points"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-003-V01",
+      "expression_en": "passenger timetable",
+      "meaning_vi": "lịch tàu cho hành khách",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'm travelling to Northmere Island with my daughter next weekend. We don't have a car, and I want to check the passenger timetable.",
+      "example_vi": "Tôi đi đảo Northmere cùng con gái cuối tuần sau. Chúng tôi không mang ô tô và muốn hỏi giờ tàu khách.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-003-V02",
+      "expression_en": "check-in closes",
+      "meaning_vi": "đóng quầy làm thủ tục",
+      "part_of_speech": "verb phrase",
+      "example_en": "Yes, although check-in closes twenty minutes before departure. I'd recommend arriving at the harbour by ten forty.",
+      "example_vi": "Được, nhưng quầy làm thủ tục đóng hai mươi phút trước giờ đi. Tôi khuyên nên tới cảng trước 10:40.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-003-V03",
+      "expression_en": "boarding gate",
+      "meaning_vi": "cổng lên tàu",
+      "part_of_speech": "noun phrase",
+      "example_en": "No. You can show the barcode on your phone. Just make sure the screen is bright enough at the boarding gate.",
+      "example_vi": "Không cần. Chị có thể hiện mã vạch trên điện thoại. Chỉ cần màn hình đủ sáng tại cổng lên tàu.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-003-V04",
+      "expression_en": "additional suitcase",
+      "meaning_vi": "va li bổ sung",
+      "part_of_speech": "noun phrase",
+      "example_en": "The pushchair travels free. One bag is included per passenger, but an additional suitcase would cost six pounds.",
+      "example_vi": "Xe đẩy miễn phí. Mỗi khách được mang một túi; va li thêm tốn sáu bảng.",
+      "evidence_turn_id": "T09",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-003-V05",
+      "expression_en": "return journey",
+      "meaning_vi": "chuyến đi chiều về",
+      "part_of_speech": "noun phrase",
+      "example_en": "That's right. The adult return is twenty-four pounds, and the child return is twelve. Both include the return journey on Sunday.",
+      "example_vi": "Đúng. Vé khứ hồi người lớn 24 bảng, trẻ em 12 bảng; đều gồm chiều về Chủ Nhật.",
+      "evidence_turn_id": "T11",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-003-V06",
+      "expression_en": "departure pier",
+      "meaning_vi": "bến xuất phát",
+      "part_of_speech": "noun phrase",
+      "example_en": "Let's do that. Is the departure pier next to the railway station, or is there a walk?",
+      "example_vi": "Vậy chọn chuyến đó. Bến tàu ngay cạnh ga xe lửa hay phải đi bộ?",
+      "evidence_turn_id": "T14",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "447d88339cdc1fb4cc636a3cbae8954f52286032e83a4117a3d1db99d14cfc66",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 293,
+    "estimated_audio_minutes_at_135_wpm": 2.17,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

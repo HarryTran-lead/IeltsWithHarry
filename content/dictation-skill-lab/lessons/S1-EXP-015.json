@@ -1,0 +1,824 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-015",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Community volunteer registration",
+  "title": "Volunteering for a River Clean-up",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "changes",
+    "meeting_point",
+    "equipment",
+    "safety"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Greenbank Volunteers. Thanks for calling. Are you interested in our river clean-up day?",
+      "translation_vi": "Xin chào, nhóm tình nguyện Greenbank. Cảm ơn đã gọi. Chị quan tâm ngày dọn sạch bờ sông?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes. I can come with my cousin, but we don't have much experience with organised volunteer events.",
+      "translation_vi": "Vâng. Tôi tới cùng em họ, nhưng chưa tham gia sự kiện tình nguyện nhiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That's absolutely fine. The coordinators give a short safety briefing before anyone starts collecting rubbish.",
+      "translation_vi": "Không sao. Điều phối viên sẽ hướng dẫn an toàn trước khi mọi người thu rác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I saw the event advertised for Saturday the sixth. My cousin mentioned it might have been postponed.",
+      "translation_vi": "Tôi thấy sự kiện đăng thứ Bảy ngày 6. Em tôi bảo có thể đã hoãn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes, the river path is being repaired that weekend. We've moved the clean-up to Saturday the thirteenth.",
+      "translation_vi": "Đúng, đường ven sông đang sửa cuối tuần đó. Chúng tôi chuyển sang thứ Bảy ngày 13.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Good, that date is better. Does everyone meet at the visitor centre near the old bridge?",
+      "translation_vi": "Tốt, ngày đó hợp hơn. Mọi người tập trung ở trung tâm du khách gần cầu cũ à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Not this time. Please meet by the boathouse at the northern end of the park. Look for the green flag.",
+      "translation_vi": "Không phải lần này. Hãy gặp gần nhà thuyền đầu bắc công viên, tìm lá cờ xanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Will we need to bring gloves and bags? I can buy some before the event if necessary.",
+      "translation_vi": "Có cần mang găng và túi không? Tôi có thể mua trước nếu cần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We'll supply gloves, rubbish bags and litter pickers. Bring a reusable water bottle and wear sturdy footwear.",
+      "translation_vi": "Chúng tôi phát găng, túi rác và kẹp rác. Hãy mang bình nước dùng lại và giày chắc chắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Perfect. I'm a little worried about being near the water. Will we actually have to go into the river?",
+      "translation_vi": "Tuyệt. Tôi hơi lo gần nước. Có phải xuống lòng sông không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "No, volunteers remain on the marked paths. Only trained staff work in the water or handle anything sharp.",
+      "translation_vi": "Không, tình nguyện viên ở trên đường đánh dấu. Chỉ nhân viên được đào tạo mới xuống nước hay xử lý vật sắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "That's reassuring. How long is the activity? My cousin has another appointment at lunchtime.",
+      "translation_vi": "Yên tâm rồi. Hoạt động kéo dài bao lâu? Em họ có lịch khác lúc trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Registration opens at eight forty-five and the clean-up ends at eleven thirty. You're welcome to leave after the briefing if needed.",
+      "translation_vi": "Đăng ký từ 8:45 và dọn đến 11:30. Có thể về sau buổi hướng dẫn nếu cần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "We can stay until the end. Are refreshments available, or is it better to bring our own food?",
+      "translation_vi": "Chúng tôi ở đến cuối. Có đồ ăn nhẹ hay nên mang thức ăn?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We'll provide fruit and tea afterwards. There isn't a lunch service, so bring a snack if you expect to be hungry.",
+      "translation_vi": "Sau đó có trái cây và trà. Không phục vụ bữa trưa nên hãy mang đồ ăn nhẹ nếu cần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Lovely. Please put down two volunteers under the surname Okafor, and send the details by email.",
+      "translation_vi": "Tốt. Ghi hai tình nguyện viên họ Okafor và gửi thông tin qua email.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Revised event date: Saturday the ____",
+      "correct_answers": [
+        "thirteenth"
+      ],
+      "spoken_answer": "thirteenth",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Sự kiện dời từ ngày 6 sang ngày 13.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Saturday the thirteenth",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "New meeting place: the ____",
+      "correct_answers": [
+        "boathouse"
+      ],
+      "spoken_answer": "boathouse",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Điểm tập trung bên nhà thuyền, không phải trung tâm khách.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "by the boathouse",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Flag colour: ____",
+      "correct_answers": [
+        "green"
+      ],
+      "spoken_answer": "green",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tìm cờ xanh để nhận diện điểm gặp.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "green flag",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Which item must volunteers bring themselves?",
+      "correct_answers": [
+        "water bottle"
+      ],
+      "options": [
+        "rubbish bags",
+        "gloves",
+        "water bottle"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Nhóm cung cấp găng và túi rác; cần mang bình nước.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Bring a reusable water bottle",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Who is allowed to work in the water?",
+      "correct_answers": [
+        "trained staff"
+      ],
+      "options": [
+        "trained staff",
+        "all volunteers",
+        "children with parents"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Chỉ nhân viên được đào tạo mới làm việc dưới nước.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Only trained staff work in the water",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Registration begins at ____",
+      "correct_answers": [
+        "eight forty-five"
+      ],
+      "spoken_answer": "eight forty-five",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Đăng ký lúc 8:45.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "at eight forty-five",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Clean-up ends at ____",
+      "correct_answers": [
+        "eleven thirty"
+      ],
+      "spoken_answer": "eleven thirty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Sự kiện kết thúc lúc 11:30.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "ends at eleven thirty",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Volunteer surname: ____",
+      "correct_answers": [
+        "Okafor"
+      ],
+      "spoken_answer": "Okafor",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Họ người đăng ký là Okafor.",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "surname Okafor",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "I saw the event advertised for Saturday the sixth. My cousin mentioned it might have been postponed."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tôi thấy sự kiện đăng thứ Bảy ngày 6. Em tôi bảo có thể đã hoãn.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "Not this time. Please meet by the boathouse at the northern end of the park. Look for the green flag."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Không phải lần này. Hãy gặp gần nhà thuyền đầu bắc công viên, tìm lá cờ xanh.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "Perfect. I'm a little worried about being near the water. Will we actually have to go into the river?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tuyệt. Tôi hơi lo gần nước. Có phải xuống lòng sông không?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "We can stay until the end. Are refreshments available, or is it better to bring our own food?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Chúng tôi ở đến cuối. Có đồ ăn nhẹ hay nên mang thức ăn?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: Yes, the river path is being repaired that weekend. We've moved the clean-up to Saturday the ____.",
+      "correct_answers": [
+        "thirteenth"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Sự kiện dời từ ngày 6 sang ngày 13.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: Not this time. Please meet by the ____ at the northern end of the park. Look for the green flag.",
+      "correct_answers": [
+        "boathouse"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Điểm tập trung bên nhà thuyền, không phải trung tâm khách.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "changes",
+        "meeting_point",
+        "equipment",
+        "safety"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-015-V01",
+      "expression_en": "river clean-up",
+      "meaning_vi": "hoạt động dọn rác bờ sông",
+      "part_of_speech": "noun phrase",
+      "example_en": "Hello, Greenbank Volunteers. Thanks for calling. Are you interested in our river clean-up day?",
+      "example_vi": "Xin chào, nhóm tình nguyện Greenbank. Cảm ơn đã gọi. Chị quan tâm ngày dọn sạch bờ sông?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-015-V02",
+      "expression_en": "safety briefing",
+      "meaning_vi": "hướng dẫn an toàn",
+      "part_of_speech": "noun phrase",
+      "example_en": "That's absolutely fine. The coordinators give a short safety briefing before anyone starts collecting rubbish.",
+      "example_vi": "Không sao. Điều phối viên sẽ hướng dẫn an toàn trước khi mọi người thu rác.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-015-V03",
+      "expression_en": "litter pickers",
+      "meaning_vi": "dụng cụ kẹp rác",
+      "part_of_speech": "noun phrase",
+      "example_en": "We'll supply gloves, rubbish bags and litter pickers. Bring a reusable water bottle and wear sturdy footwear.",
+      "example_vi": "Chúng tôi phát găng, túi rác và kẹp rác. Hãy mang bình nước dùng lại và giày chắc chắn.",
+      "evidence_turn_id": "T09",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-015-V04",
+      "expression_en": "sturdy footwear",
+      "meaning_vi": "giày dép chắc chắn",
+      "part_of_speech": "noun phrase",
+      "example_en": "We'll supply gloves, rubbish bags and litter pickers. Bring a reusable water bottle and wear sturdy footwear.",
+      "example_vi": "Chúng tôi phát găng, túi rác và kẹp rác. Hãy mang bình nước dùng lại và giày chắc chắn.",
+      "evidence_turn_id": "T09",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-015-V05",
+      "expression_en": "marked paths",
+      "meaning_vi": "lối đi được đánh dấu",
+      "part_of_speech": "noun phrase",
+      "example_en": "No, volunteers remain on the marked paths. Only trained staff work in the water or handle anything sharp.",
+      "example_vi": "Không, tình nguyện viên ở trên đường đánh dấu. Chỉ nhân viên được đào tạo mới xuống nước hay xử lý vật sắc.",
+      "evidence_turn_id": "T11",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-015-V06",
+      "expression_en": "refreshments",
+      "meaning_vi": "đồ ăn/uống nhẹ",
+      "part_of_speech": "noun",
+      "example_en": "We can stay until the end. Are refreshments available, or is it better to bring our own food?",
+      "example_vi": "Chúng tôi ở đến cuối. Có đồ ăn nhẹ hay nên mang thức ăn?",
+      "evidence_turn_id": "T14",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "bf77082f6861d21dce4bcf704e9aca321b701319b705e160266db4dab0f9e94f",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 277,
+    "estimated_audio_minutes_at_135_wpm": 2.05,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

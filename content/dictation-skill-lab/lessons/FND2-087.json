@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-087",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Connected Speech",
+  "title": "Weak function-word groups",
+  "learning_objectives_vi": [
+    "Nhận diện cụm giới từ và từ chức năng trong câu nối liền.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Could you send the form to the front desk before noon?",
+      "translation_vi": "Bạn có thể gửi mẫu đơn đến quầy trước trước trưa không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "to the",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đến quầy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "This packet is for the new students, not for the staff.",
+      "translation_vi": "Gói này dành cho học viên mới, không phải nhân viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "for the",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "dành cho",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "One of the keys belongs to the caretaker downstairs.",
+      "translation_vi": "Một trong các chìa khóa thuộc về người trông coi ở tầng dưới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "of the",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trong số",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We need to be at the gate a little before seven.",
+      "translation_vi": "Chúng ta cần có mặt tại cổng sớm hơn bảy giờ một chút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "at the",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tại cổng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The manager asked me to go over the changes with you.",
+      "translation_vi": "Quản lý yêu cầu tôi xem lại các thay đổi cùng bạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "to go",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đi để",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Can I have a glass of water while we wait?",
+      "translation_vi": "Tôi có thể xin một cốc nước trong khi chờ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "of water",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nước",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I'd like to check the time of the last train.",
+      "translation_vi": "Tôi muốn kiểm tra giờ của chuyến tàu cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "of the",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "của",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please leave a note for the person on duty tonight.",
+      "translation_vi": "Hãy để lời nhắn cho người trực tối nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "for the",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "cho người",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "A number of people have asked about the new timetable.",
+      "translation_vi": "Một số người đã hỏi về thời khóa biểu mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "of people",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "người",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The end of the queue is beside the information counter.",
+      "translation_vi": "Cuối hàng người xếp nằm cạnh quầy thông tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "weak_forms",
+        "connected_speech"
+      ],
+      "target_value": "of the",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "của hàng",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could you send the form to the front desk before noon?"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Could you send the form to the front desk before noon? Nghĩa: Bạn có thể gửi mẫu đơn đến quầy trước trước trưa không?",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "This packet is for the new students, not for the staff."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: This packet is for the new students, not for the staff. Nghĩa: Gói này dành cho học viên mới, không phải nhân viên.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "One of the keys belongs to the caretaker downstairs."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: One of the keys belongs to the caretaker downstairs. Nghĩa: Một trong các chìa khóa thuộc về người trông coi ở tầng dưới.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We need to be at the gate a little before seven."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We need to be at the gate a little before seven. Nghĩa: Chúng ta cần có mặt tại cổng sớm hơn bảy giờ một chút.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The manager asked me to go over the changes with you."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The manager asked me to go over the changes with you. Nghĩa: Quản lý yêu cầu tôi xem lại các thay đổi cùng bạn.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Can I have a glass of water while we wait?"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Can I have a glass of water while we wait? Nghĩa: Tôi có thể xin một cốc nước trong khi chờ không?",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I'd like to check the time of the last train."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I'd like to check the time of the last train. Nghĩa: Tôi muốn kiểm tra giờ của chuyến tàu cuối.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please leave a note for the person on duty tonight."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please leave a note for the person on duty tonight. Nghĩa: Hãy để lời nhắn cho người trực tối nay.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "A number of people have asked about the new timetable."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: A number of people have asked about the new timetable. Nghĩa: Một số người đã hỏi về thời khóa biểu mới.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The end of the queue is beside the information counter."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The end of the queue is beside the information counter. Nghĩa: Cuối hàng người xếp nằm cạnh quầy thông tin.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "weak_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Cụm từ nào theo sau glass? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "of water"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: of water (nước). Dẫn chứng: Can I have a glass of water while we wait? Nghĩa: Tôi có thể xin một cốc nước trong khi chờ không?",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "weak_forms",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Cụm từ nào theo sau time? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "of the"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: of the (của). Dẫn chứng: I'd like to check the time of the last train. Nghĩa: Tôi muốn kiểm tra giờ của chuyến tàu cuối.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "weak_forms",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Cụm từ nào đứng trước person? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "for the"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: for the (cho người). Dẫn chứng: Please leave a note for the person on duty tonight. Nghĩa: Hãy để lời nhắn cho người trực tối nay.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "weak_forms",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Cụm từ nào theo sau number? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "of people"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: of people (người). Dẫn chứng: A number of people have asked about the new timetable. Nghĩa: Một số người đã hỏi về thời khóa biểu mới.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "weak_forms",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Cụm từ nào nối end và queue? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "of the"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: of the (của hàng). Dẫn chứng: The end of the queue is beside the information counter. Nghĩa: Cuối hàng người xếp nằm cạnh quầy thông tin.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "weak_forms",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "to the",
+      "pos": "prepositional phrase",
+      "meaning_vi": "đến quầy",
+      "example_en": "Could you send the form to the front desk before noon?",
+      "example_vi": "Bạn có thể gửi mẫu đơn đến quầy trước trước trưa không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "for the",
+      "pos": "prepositional phrase",
+      "meaning_vi": "dành cho",
+      "example_en": "This packet is for the new students, not for the staff.",
+      "example_vi": "Gói này dành cho học viên mới, không phải nhân viên.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "of the",
+      "pos": "prepositional phrase",
+      "meaning_vi": "trong số",
+      "example_en": "One of the keys belongs to the caretaker downstairs.",
+      "example_vi": "Một trong các chìa khóa thuộc về người trông coi ở tầng dưới.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "at the",
+      "pos": "prepositional phrase",
+      "meaning_vi": "tại cổng",
+      "example_en": "We need to be at the gate a little before seven.",
+      "example_vi": "Chúng ta cần có mặt tại cổng sớm hơn bảy giờ một chút.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "to go",
+      "pos": "prepositional phrase",
+      "meaning_vi": "đi để",
+      "example_en": "The manager asked me to go over the changes with you.",
+      "example_vi": "Quản lý yêu cầu tôi xem lại các thay đổi cùng bạn.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "of water",
+      "pos": "prepositional phrase",
+      "meaning_vi": "nước",
+      "example_en": "Can I have a glass of water while we wait?",
+      "example_vi": "Tôi có thể xin một cốc nước trong khi chờ không?",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "weak_forms",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nhận diện cụm giới từ và từ chức năng trong câu nối liền.",
+    "category": "connected_speech",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-087-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "ed9df68ea64da24753c9b67611832292e8538b3435dacaea72f12541ff93a56d",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nhận diện cụm giới từ và từ chức năng trong câu nối liền.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "I've sent it to the office.",
+        "written_value": "I've / to the",
+        "teacher_note_vi": "Dạng chữ viết không thay đổi dù khi nói có thể nối âm hoặc nhược âm."
+      },
+      {
+        "spoken_example": "Could you pick it up after lunch?",
+        "written_value": "pick it up",
+        "teacher_note_vi": "Nhóm ba từ có thể nối âm; cần nghe và chép đúng thứ tự."
+      }
+    ],
+    "learning_steps": [
+      "Đọc lý thuyết, so sánh phần chữ viết với khả năng nối âm của giọng tự nhiên.",
+      "Nghe một lần, chép đúng chữ viết chuẩn, không tự thêm dạng phát âm khẩu ngữ.",
+      "Nghe lại đoạn khó sau khi nộp và đối chiếu transcript.",
+      "TTS phải được nghe duyệt: không chấm đạt nếu âm thực tế không có đặc điểm nhắm đến."
+    ],
+    "common_mistakes": [
+      "Bỏ sót of/to/for/the khi chép vì các từ này có thể không được nhấn mạnh.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Đâu là ranh giới các từ và hình thức viết chuẩn của cụm nghe được?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": "Các dạng nối âm/nhược âm chỉ là mục tiêu; phải nghe kiểm TTS thật trước khi gắn nhãn học thành thạo."
+  }
+}

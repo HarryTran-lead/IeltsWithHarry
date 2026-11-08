@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-004",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Neuroscience of sleep and cognition",
+  "title": "What Sleep Does for Learning",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "sleep_learning",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Students sometimes treat sleep as time taken away from learning. Yet a growing body of research suggests that sleep contributes to how newly acquired information is retained. We should separate hours spent studying from the later ability to retrieve knowledge. The relevant process is memory consolidation, in which recently learned material becomes more stable over time.",
+      "translation_vi": "Nhiều sinh viên coi ngủ là thời gian bị lấy mất khỏi việc học. Nhưng nghiên cứu cho thấy giấc ngủ góp phần duy trì kiến thức mới. Cần phân biệt thời gian học với khả năng nhớ lại sau đó. Quá trình liên quan là củng cố trí nhớ, giúp kiến thức mới ổn định hơn theo thời gian.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Sleep is not uniform. During the night, the brain passes through recurring stages with different patterns of activity. One stage is called slow-wave sleep, which features large, relatively slow electrical patterns. It is often discussed in connection with certain kinds of factual memory, although the relationship is more complicated than any simple rule that one stage stores one topic.",
+      "translation_vi": "Giấc ngủ không đồng nhất. Não đi qua các giai đoạn hoạt động lặp lại. Một giai đoạn gọi là giấc ngủ sóng chậm, có các sóng điện lớn và chậm. Nó thường được nghiên cứu liên quan đến trí nhớ sự kiện, nhưng không thể đơn giản khẳng định mỗi giai đoạn chỉ lưu một loại kiến thức.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "During another stage, called REM sleep, the eyes move rapidly while the sleeper remains largely still. Researchers have explored links with emotional processing and skill learning. However, people do not need to memorise stage names to benefit from adequate rest. A practical principle is to maintain a regular schedule, so the body has a predictable opportunity to sleep.",
+      "translation_vi": "Ở giai đoạn REM, mắt chuyển động nhanh còn cơ thể phần lớn bất động. Nhà nghiên cứu tìm hiểu liên hệ với xử lý cảm xúc và kỹ năng. Người học không cần thuộc tên giai đoạn mới ngủ tốt; nguyên tắc thực tế là giữ lịch ngủ đều đặn để cơ thể có cơ hội ngủ dự đoán được.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The effect of a late-night revision session depends partly on what happens next. Learners who spend an extra hour rereading notes may feel fluent immediately, yet this feeling can be misleading. A better comparison is how well they answer questions after a delayed test. That test separates momentary familiarity from knowledge retained beyond the study session.",
+      "translation_vi": "Hiệu quả của học khuya phụ thuộc điều xảy ra sau đó. Đọc lại ghi chú thêm một giờ có thể tạo cảm giác rất quen, nhưng dễ đánh lừa. So sánh tốt hơn là làm bài kiểm tra sau một khoảng chờ; nó phân biệt cảm giác quen tức thời với kiến thức còn lưu giữ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Fatigue may also interfere with attention while material is first presented. If a student repeatedly loses focus during a lecture, they may never encode the information clearly enough to remember it later. This is an attention problem before it is a memory problem. Sleeping more cannot recover details that were never properly noticed in the first place.",
+      "translation_vi": "Mệt mỏi có thể ảnh hưởng chú ý ngay khi tiếp nhận kiến thức. Sinh viên mất tập trung liên tục có thể chưa từng mã hóa đủ rõ thông tin để nhớ lại. Đây trước hết là vấn đề chú ý rồi mới là trí nhớ; ngủ thêm không thể khôi phục những chi tiết chưa từng được tiếp nhận tốt.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Researchers studying the effects of sleep need to control other factors. People who sleep little may also differ in stress, workload or access to quiet bedrooms. In a properly designed experiment, investigators try to reduce such confounding variables. Otherwise an apparent advantage for longer sleepers might partly reflect circumstances unrelated to sleep duration itself.",
+      "translation_vi": "Nghiên cứu về ngủ phải kiểm soát yếu tố khác: người ngủ ít còn khác về stress, khối lượng việc hoặc phòng ngủ yên tĩnh. Thí nghiệm tốt cố giảm các biến gây nhiễu, nếu không lợi thế của người ngủ lâu có thể phần nào do hoàn cảnh khác chứ không phải chỉ số giờ ngủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "There is also an important distinction between total sleep time and sleep quality. Someone may spend eight hours in bed while waking repeatedly. Another person may sleep fewer hours but with little disturbance. Researchers sometimes use sleep diaries to track bedtimes and awakenings across a week, although diaries depend on what participants remember and report accurately.",
+      "translation_vi": "Cần phân biệt tổng số giờ ngủ với chất lượng. Có người nằm giường tám tiếng nhưng tỉnh nhiều lần, người khác ngủ ít hơn mà liền mạch. Nhà nghiên cứu đôi khi dùng nhật ký giấc ngủ để ghi giờ lên giường và thức giấc trong tuần, nhưng nó phụ thuộc trí nhớ và độ trung thực của người ghi.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "For learners, the conclusion is not that one extra hour of sleep guarantees a higher grade. Outcomes depend on individuals, the task and the wider learning routine. The sensible strategy is to combine adequate rest with active revision, such as recalling ideas and applying them to unfamiliar questions. Neither study time nor sleep should be considered in isolation.",
+      "translation_vi": "Kết luận không phải ngủ thêm một giờ chắc chắn tăng điểm. Kết quả tùy người, nhiệm vụ và thói quen học. Cách hợp lý là kết hợp nghỉ ngơi với ôn tập chủ động như tự nhớ ý và áp dụng vào câu hỏi lạ. Không nên xem thời gian học hay giấc ngủ riêng lẻ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "Stabilising recently learned information is known as ____.",
+      "correct_answers": [
+        "memory consolidation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The relevant process is memory consolidation, in which recently learned material becomes more stable over time.",
+      "explanation_vi": "Memory consolidation là củng cố biểu diễn trí nhớ sau khi học.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "One stage of sleep with large, slow brain signals is ____.",
+      "correct_answers": [
+        "slow-wave sleep"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "One stage is called slow-wave sleep, which features large, relatively slow electrical patterns.",
+      "explanation_vi": "Slow-wave sleep là tên giai đoạn có hoạt động điện chậm.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "A consistent sleep routine involves keeping a ____.",
+      "correct_answers": [
+        "regular schedule"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A practical principle is to maintain a regular schedule, so the body has a predictable opportunity to sleep.",
+      "explanation_vi": "Regular schedule là lịch ngủ đều đặn, không phải ngủ bù tùy hứng.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Long-term learning is better evaluated with a ____.",
+      "correct_answers": [
+        "delayed test"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "A better comparison is how well they answer questions after a delayed test.",
+      "explanation_vi": "Delayed test là bài kiểm tra thực hiện sau một khoảng thời gian, không phải ngay sau học.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Missing information during a lecture may initially be an ____.",
+      "correct_answers": [
+        "attention problem"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "This is an attention problem before it is a memory problem.",
+      "explanation_vi": "Nguyên nhân ban đầu có thể nằm ở khả năng chú ý khi nghe giảng.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Investigators need to control ____ such as stress and workload.",
+      "correct_answers": [
+        "confounding variables"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "In a properly designed experiment, investigators try to reduce such confounding variables.",
+      "explanation_vi": "Confounding variables là yếu tố khác cùng tác động đến kết quả.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Participants can record night-time awakenings in ____.",
+      "correct_answers": [
+        "sleep diaries"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Researchers sometimes use sleep diaries to track bedtimes and awakenings across a week, although diaries depend on what participants remember and report accurately.",
+      "explanation_vi": "Sleep diaries là nhật ký ghi thông tin ngủ và thức.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Adequate sleep should be combined with ____.",
+      "correct_answers": [
+        "active revision"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The sensible strategy is to combine adequate rest with active revision, such as recalling ideas and applying them to unfamiliar questions.",
+      "explanation_vi": "Active revision gồm hồi tưởng và vận dụng thay vì chỉ đọc thụ động.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "sleep_learning",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "One stage is called slow-wave sleep, which features large, relatively slow electrical patterns."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 119,
+      "source_char_end": 214,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "One stage is called slow-wave sleep, which features large, relatively slow electrical patterns.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "A better comparison is how well they answer questions after a delayed test."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 195,
+      "source_char_end": 270,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "A better comparison is how well they answer questions after a delayed test.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "In a properly designed experiment, investigators try to reduce such confounding variables."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 162,
+      "source_char_end": 252,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "In a properly designed experiment, investigators try to reduce such confounding variables.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "The sensible strategy is to combine adequate rest with active revision, such as recalling ideas and applying them to unfamiliar questions."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 165,
+      "source_char_end": 303,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The sensible strategy is to combine adequate rest with active revision, such as recalling ideas and applying them to unfamiliar questions.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: A practical principle is to maintain a ____, so the body has a predictable opportunity to sleep.",
+      "correct_answers": [
+        "regular schedule"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A practical principle is to maintain a regular schedule, so the body has a predictable opportunity to sleep.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Researchers sometimes use ____ to track bedtimes and awakenings across a week, although diaries depend on what participants remember and report accurately.",
+      "correct_answers": [
+        "sleep diaries"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Researchers sometimes use sleep diaries to track bedtimes and awakenings across a week, although diaries depend on what participants remember and report accurately.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-004-V01",
+      "expression_en": "memory consolidation",
+      "meaning_vi": "sự củng cố trí nhớ",
+      "part_of_speech": "noun phrase",
+      "example_en": "The relevant process is memory consolidation, in which recently learned material becomes more stable over time.",
+      "example_vi": "Nhiều sinh viên coi ngủ là thời gian bị lấy mất khỏi việc học. Nhưng nghiên cứu cho thấy giấc ngủ góp phần duy trì kiến thức mới. Cần phân biệt thời gian học với khả năng nhớ lại sau đó. Quá trình liên quan là củng cố trí nhớ, giúp kiến thức mới ổn định hơn theo thời gian.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-004-V02",
+      "expression_en": "slow-wave sleep",
+      "meaning_vi": "giấc ngủ sóng chậm",
+      "part_of_speech": "noun phrase",
+      "example_en": "One stage is called slow-wave sleep, which features large, relatively slow electrical patterns.",
+      "example_vi": "Giấc ngủ không đồng nhất. Não đi qua các giai đoạn hoạt động lặp lại. Một giai đoạn gọi là giấc ngủ sóng chậm, có các sóng điện lớn và chậm. Nó thường được nghiên cứu liên quan đến trí nhớ sự kiện, nhưng không thể đơn giản khẳng định mỗi giai đoạn chỉ lưu một loại kiến thức.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-004-V03",
+      "expression_en": "regular schedule",
+      "meaning_vi": "lịch sinh hoạt đều đặn",
+      "part_of_speech": "noun phrase",
+      "example_en": "A practical principle is to maintain a regular schedule, so the body has a predictable opportunity to sleep.",
+      "example_vi": "Ở giai đoạn REM, mắt chuyển động nhanh còn cơ thể phần lớn bất động. Nhà nghiên cứu tìm hiểu liên hệ với xử lý cảm xúc và kỹ năng. Người học không cần thuộc tên giai đoạn mới ngủ tốt; nguyên tắc thực tế là giữ lịch ngủ đều đặn để cơ thể có cơ hội ngủ dự đoán được.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-004-V04",
+      "expression_en": "delayed test",
+      "meaning_vi": "bài kiểm tra sau một khoảng thời gian",
+      "part_of_speech": "noun phrase",
+      "example_en": "A better comparison is how well they answer questions after a delayed test.",
+      "example_vi": "Hiệu quả của học khuya phụ thuộc điều xảy ra sau đó. Đọc lại ghi chú thêm một giờ có thể tạo cảm giác rất quen, nhưng dễ đánh lừa. So sánh tốt hơn là làm bài kiểm tra sau một khoảng chờ; nó phân biệt cảm giác quen tức thời với kiến thức còn lưu giữ.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-004-V05",
+      "expression_en": "attention problem",
+      "meaning_vi": "vấn đề về sự chú ý",
+      "part_of_speech": "noun phrase",
+      "example_en": "This is an attention problem before it is a memory problem.",
+      "example_vi": "Mệt mỏi có thể ảnh hưởng chú ý ngay khi tiếp nhận kiến thức. Sinh viên mất tập trung liên tục có thể chưa từng mã hóa đủ rõ thông tin để nhớ lại. Đây trước hết là vấn đề chú ý rồi mới là trí nhớ; ngủ thêm không thể khôi phục những chi tiết chưa từng được tiếp nhận tốt.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-004-V06",
+      "expression_en": "confounding variables",
+      "meaning_vi": "các biến gây nhiễu",
+      "part_of_speech": "noun phrase",
+      "example_en": "In a properly designed experiment, investigators try to reduce such confounding variables.",
+      "example_vi": "Nghiên cứu về ngủ phải kiểm soát yếu tố khác: người ngủ ít còn khác về stress, khối lượng việc hoặc phòng ngủ yên tĩnh. Thí nghiệm tốt cố giảm các biến gây nhiễu, nếu không lợi thế của người ngủ lâu có thể phần nào do hoàn cảnh khác chứ không phải chỉ số giờ ngủ.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "1ca1414812aebe80f4b49a9cd2a3a22ccc3b4fa13e4c20e6ffc8a7f5a23070ac",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_03",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "Stabilising recently learned information is known as ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "One stage of sleep with large, slow brain signals is ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "A consistent sleep routine involves keeping a ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ]
+      },
+      {
+        "group_id": "IELTS_TABLE_04_06",
+        "type": "table_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "two_column_table",
+        "group_heading": "Methods and comparisons",
+        "items": [
+          {
+            "question_id": "Q04",
+            "prompt": "Long-term learning is better evaluated with a ____."
+          },
+          {
+            "question_id": "Q05",
+            "prompt": "Missing information during a lecture may initially be an ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Investigators need to control ____ such as stress and workload."
+          }
+        ],
+        "question_ids": [
+          "Q04",
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SUMMARY_07_08",
+        "type": "summary_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "connected_summary",
+        "group_heading": "Interpretation and conclusions",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Participants can record night-time awakenings in ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Adequate sleep should be combined with ____."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 454,
+    "estimated_audio_minutes_at_135_wpm": 3.36,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

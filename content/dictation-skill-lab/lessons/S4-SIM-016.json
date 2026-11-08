@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-016",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Underground air quality",
+  "title": "Air Beneath the City",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "Most air-quality discussions focus on busy roads, but crowded underground stations create their own conditions. Trains, tunnels and ventilation systems affect the concentration and movement of particles. We will examine how researchers measure the air that passengers breathe, and why an apparently simple reading needs to be interpreted carefully.",
+      "meaning_vi": "Chất lượng không khí ga tàu ngầm liên quan bụi, thông gió và vận hành.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "A commuter might step from a busy pavement into a station and assume that being indoors means the air is protected from traffic. In reality, the station has its own sources of particles and may exchange air with the surface in complex ways. Measuring conditions in both places helps reveal what the environment actually does rather than what its appearance suggests.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "A major concern in enclosed transport spaces is particulate matter, a broad term for tiny particles suspended in air. A researcher may use an optical counter to estimate the number of particles within different size ranges. However, the instrument does not identify each particle's chemical composition. A high count may indicate a need for further investigation, but a number alone cannot reveal the precise source or the health implications of every material present.",
+      "meaning_vi": "Bụi mịn được đo số lượng nhưng kết quả không tự chỉ ra thành phần hóa học.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "Particles may come partly from brake wear as vehicles slow down, and partly from disturbance of settled dust when passengers move. The station's ventilation rate determines how quickly air is exchanged with outside areas. Increasing airflow can lower some concentrations, but the benefit depends on outdoor air quality and where fresh air enters. Engineers therefore need to consider the system as a whole rather than simply setting every fan to its maximum speed.",
+      "meaning_vi": "Mòn phanh và tốc độ thông gió là hai nhân tố ảnh hưởng chất lượng không khí.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "Researchers compare conditions on the station platform with those inside a train and at street level. They also record passenger density, since crowding can alter airflow and increase the disturbance of dust. Measurements must cover more than one busy period. A station can produce very different readings before sunrise, during the morning peak and late at night when cleaning work takes place. Good sampling therefore reflects ordinary operating conditions rather than a single dramatic result.",
+      "meaning_vi": "Cần đo ở sân ga, trong tàu và ghi nhận mức độ đông khách.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Some teams collect filters for chemical analysis to distinguish metals, minerals and other components of the collected material. A portable noise monitor may also be useful in a wider study of environmental conditions, though noise and particles are separate exposures. The key lesson is to avoid confusing measurement categories. An instrument designed to count particles cannot tell us whether people find a station unpleasant because of sound, temperature or poor information.",
+      "meaning_vi": "Phân tích hóa học bổ sung đo bụi; tiếng ồn là một yếu tố khác.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "A practical improvement may involve filter maintenance and redesigning how air passes through busy areas. Researchers should compare conditions with a control station or a suitable period before the intervention, otherwise changes in weather or passenger numbers may be mistaken for success. Long-term monitoring is especially valuable because equipment performance and travel patterns evolve. An effective study links engineering action to reliable evidence of what actually changed.",
+      "meaning_vi": "Bảo trì lọc và điểm đối chứng giúp đánh giá hiệu quả cải thiện.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Transport authorities need evidence that can guide maintenance without alarming passengers unnecessarily. A single high measurement on a cleaning night may have little to do with normal rush-hour exposure. Researchers must use clear sampling plans and report limitations before recommending costly engineering changes.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "Air underground is shaped by technology, crowd behaviour and conditions outside the station. Accurate measurements are the starting point for improvements, not the final explanation of every risk.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Tiny airborne particles are called ____.",
+      "correct_answers": [
+        "particulate matter"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A major concern in enclosed transport spaces is particulate matter, a broad term for tiny particles suspended in air.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 48,
+        "end_char": 66
+      },
+      "explanation_vi": "Đáp án “particulate matter” được nói trực tiếp trong phần bài giảng này. Bụi mịn được đo số lượng nhưng kết quả không tự chỉ ra thành phần hóa học.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Particle numbers can be estimated with an ____.",
+      "correct_answers": [
+        "optical counter"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A researcher may use an optical counter to estimate the number of particles within different size ranges.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 142,
+        "end_char": 157
+      },
+      "explanation_vi": "Đáp án “optical counter” được nói trực tiếp trong phần bài giảng này. Bụi mịn được đo số lượng nhưng kết quả không tự chỉ ra thành phần hóa học.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "One transport-related particle source is ____.",
+      "correct_answers": [
+        "brake wear"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Particles may come partly from brake wear as vehicles slow down, and partly from disturbance of settled dust when passengers move.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 31,
+        "end_char": 41
+      },
+      "explanation_vi": "Đáp án “brake wear” được nói trực tiếp trong phần bài giảng này. Mòn phanh và tốc độ thông gió là hai nhân tố ảnh hưởng chất lượng không khí.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Air exchange is influenced by the ____.",
+      "correct_answers": [
+        "ventilation rate"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The station's ventilation rate determines how quickly air is exchanged with outside areas.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 145,
+        "end_char": 161
+      },
+      "explanation_vi": "Đáp án “ventilation rate” được nói trực tiếp trong phần bài giảng này. Mòn phanh và tốc độ thông gió là hai nhân tố ảnh hưởng chất lượng không khí.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "One important measurement site is the ____.",
+      "correct_answers": [
+        "station platform"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Researchers compare conditions on the station platform with those inside a train and at street level.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 38,
+        "end_char": 54
+      },
+      "explanation_vi": "Đáp án “station platform” được nói trực tiếp trong phần bài giảng này. Cần đo ở sân ga, trong tàu và ghi nhận mức độ đông khách.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Crowding can be described by ____.",
+      "correct_answers": [
+        "passenger density"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "They also record passenger density, since crowding can alter airflow and increase the disturbance of dust.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 119,
+        "end_char": 136
+      },
+      "explanation_vi": "Đáp án “passenger density” được nói trực tiếp trong phần bài giảng này. Cần đo ở sân ga, trong tàu và ghi nhận mức độ đông khách.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Collected particles can undergo ____.",
+      "correct_answers": [
+        "chemical analysis"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Some teams collect filters for chemical analysis to distinguish metals, minerals and other components of the collected material.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 31,
+        "end_char": 48
+      },
+      "explanation_vi": "Đáp án “chemical analysis” được nói trực tiếp trong phần bài giảng này. Phân tích hóa học bổ sung đo bụi; tiếng ồn là một yếu tố khác.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "A separate environmental measure may use a ____.",
+      "correct_answers": [
+        "noise monitor"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A portable noise monitor may also be useful in a wider study of environmental conditions, though noise and particles are separate exposures.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 140,
+        "end_char": 153
+      },
+      "explanation_vi": "Đáp án “noise monitor” được nói trực tiếp trong phần bài giảng này. Phân tích hóa học bổ sung đo bụi; tiếng ồn là một yếu tố khác.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Air systems may require improved ____.",
+      "correct_answers": [
+        "filter maintenance"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "A practical improvement may involve filter maintenance and redesigning how air passes through busy areas.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 36,
+        "end_char": 54
+      },
+      "explanation_vi": "Đáp án “filter maintenance” được nói trực tiếp trong phần bài giảng này. Bảo trì lọc và điểm đối chứng giúp đánh giá hiệu quả cải thiện.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Results can be compared with a ____.",
+      "correct_answers": [
+        "control station"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Researchers should compare conditions with a control station or a suitable period before the intervention, otherwise changes in weather or passenger numbers may be mistaken for success.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 151,
+        "end_char": 166
+      },
+      "explanation_vi": "Đáp án “control station” được nói trực tiếp trong phần bài giảng này. Bảo trì lọc và điểm đối chứng giúp đánh giá hiệu quả cải thiện.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "title_en": "Air Beneath the City — Notes",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "title_en": "Air Beneath the City — Summary",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "summary_completion",
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Chất lượng không khí ga tàu ngầm liên quan bụi, thông gió và vận hành.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "dfeb822176a9233737014905896eb00287ea97ec447423e21ccd4ba23269a480",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.86,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

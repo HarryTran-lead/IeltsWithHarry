@@ -1,0 +1,652 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-022",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M17 – Numbers",
+  "title": "Prices: teen amounts and tens",
+  "learning_objectives_vi": [
+    "Nghe chính xác prices: teen amounts and tens.",
+    "Không chỉ nhìn giá trị số; nghe đủ đơn vị pound và pence",
+    "Chuyển lời đọc thành chữ số/mã chính xác, không đoán theo ý nghĩa."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The notebook costs thirteen pounds.",
+      "translation_vi": "Quyển sổ tay giá mười ba bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£13",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The backpack costs thirty pounds.",
+      "translation_vi": "Chiếc ba lô giá ba mươi bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£30",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "You can rent a helmet for fourteen pounds.",
+      "translation_vi": "Bạn có thể thuê mũ bảo hiểm với giá mười bốn bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£14",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The day pass is forty pounds for adults.",
+      "translation_vi": "Vé ngày dành cho người lớn giá bốn mươi bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£40",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A small locker costs fifteen pounds.",
+      "translation_vi": "Tủ khóa nhỏ giá mười lăm bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£15",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "A large locker costs fifty pounds for the week.",
+      "translation_vi": "Tủ khóa lớn giá năm mươi bảng cho cả tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£50",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The repair fee is sixteen pounds.",
+      "translation_vi": "Phí sửa chữa là mười sáu bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£16",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The annual membership is sixty pounds.",
+      "translation_vi": "Phí thành viên hằng năm là sáu mươi bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£60",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The museum guidebook is seventeen pounds.",
+      "translation_vi": "Sách hướng dẫn bảo tàng giá mười bảy bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£17",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The guided tour for a group is seventy pounds.",
+      "translation_vi": "Tour có hướng dẫn cho cả nhóm giá bảy mươi bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "price_contrast",
+        "currency"
+      ],
+      "target_value": "£70",
+      "target_kind": "currency",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The notebook costs thirteen pounds."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Quyển sổ tay giá mười ba bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "T01: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£13"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £13. Ngữ cảnh: Quyển sổ tay giá mười ba bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The backpack costs thirty pounds."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Chiếc ba lô giá ba mươi bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "T02: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£30"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £30. Ngữ cảnh: Chiếc ba lô giá ba mươi bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "You can rent a helmet for fourteen pounds."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Bạn có thể thuê mũ bảo hiểm với giá mười bốn bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "T03: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£14"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £14. Ngữ cảnh: Bạn có thể thuê mũ bảo hiểm với giá mười bốn bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The day pass is forty pounds for adults."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Vé ngày dành cho người lớn giá bốn mươi bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "T04: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£40"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £40. Ngữ cảnh: Vé ngày dành cho người lớn giá bốn mươi bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A small locker costs fifteen pounds."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Tủ khóa nhỏ giá mười lăm bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "T05: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£15"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £15. Ngữ cảnh: Tủ khóa nhỏ giá mười lăm bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A large locker costs fifty pounds for the week."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Tủ khóa lớn giá năm mươi bảng cho cả tuần.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The repair fee is sixteen pounds."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Phí sửa chữa là mười sáu bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The annual membership is sixty pounds."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Phí thành viên hằng năm là sáu mươi bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The museum guidebook is seventeen pounds."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Sách hướng dẫn bảo tàng giá mười bảy bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The guided tour for a group is seventy pounds."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe price_contrast. Nghĩa: Tour có hướng dẫn cho cả nhóm giá bảy mươi bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "price_contrast"
+      ],
+      "max_replays_practice": 5
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "£13",
+      "pos": "currency",
+      "meaning_vi": "£13 (currency)",
+      "example_en": "The notebook costs thirteen pounds.",
+      "example_vi": "Quyển sổ tay giá mười ba bảng.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "£30",
+      "pos": "currency",
+      "meaning_vi": "£30 (currency)",
+      "example_en": "The backpack costs thirty pounds.",
+      "example_vi": "Chiếc ba lô giá ba mươi bảng.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "£14",
+      "pos": "currency",
+      "meaning_vi": "£14 (currency)",
+      "example_en": "You can rent a helmet for fourteen pounds.",
+      "example_vi": "Bạn có thể thuê mũ bảo hiểm với giá mười bốn bảng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "£40",
+      "pos": "currency",
+      "meaning_vi": "£40 (currency)",
+      "example_en": "The day pass is forty pounds for adults.",
+      "example_vi": "Vé ngày dành cho người lớn giá bốn mươi bảng.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "£15",
+      "pos": "currency",
+      "meaning_vi": "£15 (currency)",
+      "example_en": "A small locker costs fifteen pounds.",
+      "example_vi": "Tủ khóa nhỏ giá mười lăm bảng.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "£50",
+      "pos": "currency",
+      "meaning_vi": "£50 (currency)",
+      "example_en": "A large locker costs fifty pounds for the week.",
+      "example_vi": "Tủ khóa lớn giá năm mươi bảng cho cả tuần.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "£16",
+      "pos": "currency",
+      "meaning_vi": "£16 (currency)",
+      "example_en": "The repair fee is sixteen pounds.",
+      "example_vi": "Phí sửa chữa là mười sáu bảng.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "£60",
+      "pos": "currency",
+      "meaning_vi": "£60 (currency)",
+      "example_en": "The annual membership is sixty pounds.",
+      "example_vi": "Phí thành viên hằng năm là sáu mươi bảng.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "£17",
+      "pos": "currency",
+      "meaning_vi": "£17 (currency)",
+      "example_en": "The museum guidebook is seventeen pounds.",
+      "example_vi": "Sách hướng dẫn bảo tàng giá mười bảy bảng.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "£70",
+      "pos": "currency",
+      "meaning_vi": "£70 (currency)",
+      "example_en": "The guided tour for a group is seventy pounds.",
+      "example_vi": "Tour có hướng dẫn cho cả nhóm giá bảy mươi bảng.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "micro_skill_id": "price_contrast",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_distinct_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Không chỉ nhìn giá trị số; nghe đủ đơn vị pound và pence"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "48a9e40ace34c4269e9c42fefdb221c5f0db1cd1e2ec83be86ebc8de86170738",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft; numeric normalization and pronunciation require teacher/audio QA.",
+      "Fictional UK phone number ranges used for instructional safety; do not dial."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe số trước đơn vị tiền tệ. Thirteen pounds không phải thirty pounds.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "eleven pounds",
+        "written_value": "£11",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      },
+      {
+        "spoken_example": "twenty pounds",
+        "written_value": "£20",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      }
+    ],
+    "learning_steps": [
+      "Xem quy tắc và hai ví dụ bên dưới trước khi bắt đầu.",
+      "Nghe mỗi câu một lần, chép toàn câu hoặc nhập thông tin số theo yêu cầu.",
+      "Đối chiếu chữ/số và vị trí sai sau khi nộp; nghe lại từng câu khi cần.",
+      "Kiểm tra bằng 2 câu mới chưa xuất hiện trong nội dung luyện."
+    ],
+    "common_mistakes": [
+      "Giữ đơn vị tiền tệ và không tính tổng khi đề chỉ hỏi giá được đọc.",
+      "Không dùng lại câu quen thuộc để chứng minh độ vững của kỹ năng."
+    ],
+    "before_audio_question": "Thông tin cần nghe là số lượng, số điện thoại, giờ, tiền hay mã chữ-số?"
+  }
+}

@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-019",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Environmental design and behaviour",
+  "title": "Evaluating Recycling Labels on Campus",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "behavioural_evaluation",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The campus wants to redesign recycling labels, and your proposal assumes that brighter colours will solve contamination. Before choosing colours, what mistakes are actually being made at the bins?",
+      "translation_vi": "Trường muốn sửa nhãn phân loại rác, nhưng đề cương cho rằng màu sáng giải quyết bỏ rác sai. Trước khi chọn màu, cần biết lỗi nào thật sự xảy ra.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We saw people placing coffee cups in the paper bin. I assumed they were careless, but the packaging has a paper surface and the label shows a similar-looking cardboard cup.",
+      "translation_vi": "Em thấy người ta bỏ cốc cà phê vào thùng giấy và tưởng họ bất cẩn, nhưng cốc có bề mặt giấy và hình trên nhãn giống cốc bìa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "It might be a design problem, not a motivation problem. We should identify confusing items and check local recycling rules, because a material accepted in one city may be rejected here.",
+      "translation_vi": "Có thể là lỗi thiết kế chứ không phải ý thức. Phải xác định món dễ nhầm và kiểm tra quy tắc địa phương vì vật liệu được nhận ở nơi này có thể bị từ chối ở nơi khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Start by observing errors anonymously and verifying the disposal rules with facilities staff. Do not create a label promising that an item is recyclable before checking the actual collection system.",
+      "translation_vi": "Bắt đầu quan sát lỗi ẩn danh và xác minh quy định với nhân viên cơ sở vật chất. Không gắn nhãn 'tái chế được' trước khi kiểm tra hệ thống thu gom thực.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Our draft includes small icons for twelve categories, which looks sophisticated but may be impossible to read while someone is carrying a tray. More information could make decisions slower.",
+      "translation_vi": "Bản nháp có biểu tượng nhỏ cho 12 loại, trông chuyên nghiệp nhưng khó đọc khi đang cầm khay. Nhiều thông tin có thể khiến quyết định chậm hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Try three clear pictures of the items most often sorted incorrectly, accompanied by simple text. We could compare the new label with the existing one at the same group of bins.",
+      "translation_vi": "Hãy thử ba hình rõ của món hay phân loại sai nhất kèm chữ đơn giản. Có thể so nhãn mới với nhãn cũ ở cùng nhóm thùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That makes sense. Keep the physical location and bin openings constant while labels change. Otherwise any improvement could come from moving the bins closer to the exit.",
+      "translation_vi": "Hợp lý. Giữ vị trí và miệng thùng không đổi khi thay nhãn, nếu không hiệu quả có thể do dời thùng ra gần cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I suggest checking sorting accuracy during both a quiet morning and a crowded lunch period. People under time pressure may interpret labels differently from people who have time to stop.",
+      "translation_vi": "Em đề xuất kiểm tra độ đúng sáng vắng và giờ trưa đông. Người đang vội có thể đọc nhãn khác người có thời gian dừng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll create the new signs using actual photographs of local packaging rather than generic international symbols. That may reduce confusion about products that look different in this region.",
+      "translation_vi": "Em sẽ tạo biển mới bằng ảnh bao bì địa phương thay biểu tượng quốc tế chung, giảm nhầm sản phẩm có hình dạng khác ở vùng này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I will confirm the accepted materials with the waste contractor and facilities manager. We need a correct answer key before assessing anyone's sorting behaviour.",
+      "translation_vi": "Thầy sẽ xác nhận vật liệu được nhận với đơn vị thu gom và quản lý cơ sở. Phải có đáp án đúng trước khi chấm hành vi phân loại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll test whether the wording can be understood from a short distance and by people unfamiliar with campus. If it requires a long explanation, the label has failed its immediate purpose.",
+      "translation_vi": "Em sẽ kiểm tra biển đọc được từ khoảng cách ngắn và bởi người không quen trường không. Nếu cần giải thích dài, biển không đạt mục đích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "I'll record anonymised counts of items placed correctly and incorrectly, with no photographs of identifiable students. We are evaluating the sign, not individual behaviour.",
+      "translation_vi": "Em sẽ ghi số món bỏ đúng và sai ẩn danh, không chụp sinh viên nhận diện được. Ta đánh giá biển, không đánh giá từng người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The report should recommend a label only if it reduces errors for the materials actually collected. Bright colours may help, but reliable instructions matter more than visual novelty.",
+      "translation_vi": "Báo cáo chỉ nên khuyến nghị nhãn nếu giảm lỗi với vật liệu thực được thu. Màu đẹp có thể giúp nhưng hướng dẫn đúng quan trọng hơn mới lạ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "behavioural_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why are coffee cups often put in the wrong bin?",
+      "correct_answers": [
+        "They look similar to paper packaging shown on the sign"
+      ],
+      "options": [
+        "The paper bin is always locked",
+        "They look similar to paper packaging shown on the sign",
+        "Students are charged for recycling cups"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We saw people placing coffee cups in the paper bin. I assumed they were careless, but the packaging has a paper surface and the label shows a similar-looking cardboard cup.",
+      "explanation_vi": "Bao bì và biểu tượng trên biển gây hiểu nhầm.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "behavioural_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What must be checked before designing new labels?",
+      "correct_answers": [
+        "Local rules for what is collected"
+      ],
+      "options": [
+        "The students’ favourite colours",
+        "Local rules for what is collected",
+        "The price of waste bins in other countries"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Start by observing errors anonymously and verifying the disposal rules with facilities staff. Do not create a label promising that an item is recyclable before checking the actual collection system.",
+      "explanation_vi": "Phải xác minh quy tắc thu gom thực.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "behavioural_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What design is suggested instead of twelve small icons?",
+      "correct_answers": [
+        "Three clear pictures of frequently confused items"
+      ],
+      "options": [
+        "No images or words at all",
+        "A long list of technical recycling codes",
+        "Three clear pictures of frequently confused items"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Try three clear pictures of the items most often sorted incorrectly, accompanied by simple text. We could compare the new label with the existing one at the same group of bins.",
+      "explanation_vi": "Ba ảnh món hay nhầm kèm chữ đơn giản.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "behavioural_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why study both quiet and crowded periods?",
+      "correct_answers": [
+        "Time pressure can change how labels are read"
+      ],
+      "options": [
+        "The contractor collects only in the morning",
+        "Time pressure can change how labels are read",
+        "Bins are different sizes each hour"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I suggest checking sorting accuracy during both a quiet morning and a crowded lunch period. People under time pressure may interpret labels differently from people who have time to stop.",
+      "explanation_vi": "Người vội có thể xử lý nhãn khác.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "behavioural_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: create signs using locally familiar packaging?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I'll create the new signs using actual photographs of local packaging rather than generic international symbols. That may reduce confusion about products that look different in this region.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "behavioural_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: verify accepted waste materials?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I will confirm the accepted materials with the waste contractor and facilities manager. We need a correct answer key before assessing anyone's sorting behaviour.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "behavioural_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: test readability for unfamiliar visitors?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll test whether the wording can be understood from a short distance and by people unfamiliar with campus. If it requires a long explanation, the label has failed its immediate purpose.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "behavioural_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: count errors without identifying individuals?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll record anonymised counts of items placed correctly and incorrectly, with no photographs of identifiable students. We are evaluating the sign, not individual behaviour.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "behavioural_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "It might be a design problem, not a motivation problem. We should identify confusing items and check local recycling rules, because a material accepted in one city may be rejected here."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "It might be a design problem, not a motivation problem. We should identify confusing items and check local recycling rules, because a material accepted in one city may be rejected here.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "behavioural_evaluation"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "Our draft includes small icons for twelve categories, which looks sophisticated but may be impossible to read while someone is carrying a tray. More information could make decisions slower."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Our draft includes small icons for twelve categories, which looks sophisticated but may be impossible to read while someone is carrying a tray. More information could make decisions slower.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "behavioural_evaluation"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "That makes sense. Keep the physical location and bin openings constant while labels change. Otherwise any improvement could come from moving the bins closer to the exit."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "That makes sense. Keep the physical location and bin openings constant while labels change. Otherwise any improvement could come from moving the bins closer to the exit.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "behavioural_evaluation"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói B.",
+      "correct_answers": [
+        "I'll test whether the wording can be understood from a short distance and by people unfamiliar with campus. If it requires a long explanation, the label has failed its immediate purpose."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll test whether the wording can be understood from a short distance and by people unfamiliar with campus. If it requires a long explanation, the label has failed its immediate purpose.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "behavioural_evaluation"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: The campus wants to redesign ____s, and your proposal assumes that brighter colours will solve contamination. Before choosing colours, what mistakes are actually being made at the bins?",
+      "correct_answers": [
+        "recycling label"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The campus wants to redesign recycling labels, and your proposal assumes that brighter colours will solve contamination. Before choosing colours, what mistakes are actually being made at the bins?",
+      "explanation_vi": "Cụm nghe được là “recycling label” (nhãn phân loại tái chế); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "behavioural_evaluation"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: The campus wants to redesign recycling labels, and your proposal assumes that brighter colours will solve ____. Before choosing colours, what mistakes are actually being made at the bins?",
+      "correct_answers": [
+        "contamination"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The campus wants to redesign recycling labels, and your proposal assumes that brighter colours will solve contamination. Before choosing colours, what mistakes are actually being made at the bins?",
+      "explanation_vi": "Cụm nghe được là “contamination” (lẫn rác sai loại); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "behavioural_evaluation"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-019-V01",
+      "expression_en": "recycling label",
+      "meaning_vi": "nhãn phân loại tái chế",
+      "part_of_speech": "noun phrase",
+      "example_en": "The campus wants to redesign recycling labels, and your proposal assumes that brighter colours will solve contamination. Before choosing colours, what mistakes are actually being made at the bins?",
+      "example_vi": "Trường muốn sửa nhãn phân loại rác, nhưng đề cương cho rằng màu sáng giải quyết bỏ rác sai. Trước khi chọn màu, cần biết lỗi nào thật sự xảy ra.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-019-V02",
+      "expression_en": "contamination",
+      "meaning_vi": "lẫn rác sai loại",
+      "part_of_speech": "noun phrase",
+      "example_en": "The campus wants to redesign recycling labels, and your proposal assumes that brighter colours will solve contamination. Before choosing colours, what mistakes are actually being made at the bins?",
+      "example_vi": "Trường muốn sửa nhãn phân loại rác, nhưng đề cương cho rằng màu sáng giải quyết bỏ rác sai. Trước khi chọn màu, cần biết lỗi nào thật sự xảy ra.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-019-V03",
+      "expression_en": "disposal rules",
+      "meaning_vi": "quy định xử lý rác",
+      "part_of_speech": "noun phrase",
+      "example_en": "Start by observing errors anonymously and verifying the disposal rules with facilities staff. Do not create a label promising that an item is recyclable before checking the actual collection system.",
+      "example_vi": "Bắt đầu quan sát lỗi ẩn danh và xác minh quy định với nhân viên cơ sở vật chất. Không gắn nhãn 'tái chế được' trước khi kiểm tra hệ thống thu gom thực.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-019-V04",
+      "expression_en": "sorting accuracy",
+      "meaning_vi": "độ chính xác phân loại",
+      "part_of_speech": "noun phrase",
+      "example_en": "I suggest checking sorting accuracy during both a quiet morning and a crowded lunch period. People under time pressure may interpret labels differently from people who have time to stop.",
+      "example_vi": "Em đề xuất kiểm tra độ đúng sáng vắng và giờ trưa đông. Người đang vội có thể đọc nhãn khác người có thời gian dừng.",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-019-V05",
+      "expression_en": "waste contractor",
+      "meaning_vi": "đơn vị thu gom rác",
+      "part_of_speech": "noun phrase",
+      "example_en": "I will confirm the accepted materials with the waste contractor and facilities manager. We need a correct answer key before assessing anyone's sorting behaviour.",
+      "example_vi": "Thầy sẽ xác nhận vật liệu được nhận với đơn vị thu gom và quản lý cơ sở. Phải có đáp án đúng trước khi chấm hành vi phân loại.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-019-V06",
+      "expression_en": "visual novelty",
+      "meaning_vi": "tính mới về hình ảnh",
+      "part_of_speech": "noun phrase",
+      "example_en": "The report should recommend a label only if it reduces errors for the materials actually collected. Bright colours may help, but reliable instructions matter more than visual novelty.",
+      "example_vi": "Báo cáo chỉ nên khuyến nghị nhãn nếu giảm lỗi với vật liệu thực được thu. Màu đẹp có thể giúp nhưng hướng dẫn đúng quan trọng hơn mới lạ.",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "ade3399453b6bff6fa316909bcb7636f4322cf9deb49417cb2a7b7bddaeef522",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 372,
+    "estimated_audio_minutes_at_135_wpm": 2.76,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

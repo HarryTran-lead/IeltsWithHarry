@@ -1,0 +1,1005 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-007",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Field ecology and measurement",
+  "title": "Investigating Light Pollution and Moths",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "We counted moth visits around two streetlights last weekend.",
+      "meaning_vi": "B: Nhóm đếm bướm đêm ở hai đèn đường; giảng viên yêu cầu xét cách quan sát trước khi kết luận.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "C",
+      "text_en": "The numbers look dramatically different.",
+      "meaning_vi": "B: Nhóm đếm bướm đêm ở hai đèn đường; giảng viên yêu cầu xét cách quan sát trước khi kết luận.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Before calling that a biological effect, we need to examine the sites and the way you observed them.",
+      "meaning_vi": "B: Nhóm đếm bướm đêm ở hai đèn đường; giảng viên yêu cầu xét cách quan sát trước khi kết luận.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The bright lamp stood beside bare pavement, while the dim one was surrounded by shrubs. Vegetation could explain part of the difference, so the sites do not isolate light intensity.",
+      "meaning_vi": "A: Hai vị trí khác nhau nhiều về thảm thực vật nên chưa tách được ảnh hưởng ánh sáng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The wattage printed on the lamp housing is not the exposure experienced by insects. We should measure illumination where the moths move, not merely copy specifications from the box.",
+      "meaning_vi": "B: Đo độ sáng ở nơi bướm bay thay vì dùng công suất in trên đèn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Some volunteers counted insects that approached a lamp and then flew away. Others counted only those that landed, so our definition of a visit also needs to be standardised.",
+      "meaning_vi": "C: Tình nguyện viên định nghĩa lần ghé đèn khác nhau, cần thống nhất cách đếm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "We can still learn a great deal from the failed comparison; it tells us what to control next time.",
+      "meaning_vi": "B: So sánh thất bại vẫn giúp biết cần kiểm soát gì ở lần sau.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "C",
+      "text_en": "The first evening was warm and still, but the second had a cold wind. That could suppress flying activity even if the lighting were identical, so we need matched weather conditions.",
+      "meaning_vi": "C: Thời tiết hai đêm khác nhau, ảnh hưởng hoạt động bay.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Choose two sites with similar plants, then alternate the observers between them at fixed intervals. That should reduce the chance that one person’s counting habits determine the result.",
+      "meaning_vi": "A: Chọn hai điểm tương tự và luân phiên người quan sát theo khoảng cố định.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "C",
+      "text_en": "I will add humidity and wind speed to the observation sheet so we do not lose that context.",
+      "meaning_vi": "C: Tôi sẽ thêm độ ẩm và gió vào phiếu quan sát.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "Even if we see more moths circling a lamp, that does not prove the local population is healthier. Attraction can concentrate individuals without increasing their overall numbers.",
+      "meaning_vi": "B: Bướm tụ quanh đèn nhiều không chứng minh quần thể khỏe hơn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "The manufacturer’s sheet is useful for describing equipment, but it should not be treated as our actual field measurement.",
+      "meaning_vi": "C: Thông số hãng chỉ làm nền về thiết bị.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "We could run a short practice session using the same video before the next field trip. That would reveal disagreements while there is still time to fix the counting protocol.",
+      "meaning_vi": "B: Nên tập đếm trên cùng video trước khi khảo sát để phát hiện chỗ hiểu khác.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Keep the windy-evening observations with an explicit weather warning. We can show why conditions matter, but not combine them uncritically with calm-night counts.",
+      "meaning_vi": "A: Giữ số liệu đêm gió kèm cảnh báo điều kiện thời tiết.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Please do not handle protected insects just to obtain a cleaner photograph.",
+      "meaning_vi": "A: Không được bắt động vật được bảo vệ chỉ để chụp ảnh rõ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Two volunteers confused similar moth groups. We need to pilot the guide again with photographs before the next session.",
+      "meaning_vi": "B: Cần thử lại hướng dẫn nhận diện vì tình nguyện viên nhầm nhóm bướm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "C",
+      "text_en": "The location records are complete and accurate. They will anchor our site comparison and allow another class to repeat the route.",
+      "meaning_vi": "C: Tọa độ bẫy là cơ sở chính cho so sánh địa điểm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "A",
+      "text_en": "Remember that an apparent attraction effect is not automatically a population effect. We are watching movements around lamps at particular times, not tracking births or survival.",
+      "meaning_vi": "A: Mức hút quanh đèn không phải chỉ số sinh sản hoặc sống sót của cả quần thể.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "B",
+      "text_en": "A careful limitation is more convincing than an exaggerated conclusion.",
+      "meaning_vi": "B: Nêu giới hạn cẩn thận sẽ thuyết phục hơn kết luận phóng đại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "A",
+      "text_en": "Crop the residents’ faces from the night photographs before putting any image online. We did not ask for permission to publish identifiable people.",
+      "meaning_vi": "A: Cắt hoặc che mặt cư dân trong ảnh đêm trước khi đăng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "C",
+      "text_en": "Our final poster will distinguish moth abundance, attraction to lamps and the behaviour we actually managed to observe.",
+      "meaning_vi": "C: Poster sẽ tách số lượng bướm, mức hút bởi đèn và hành vi thực đo.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What is the biggest problem with the first two sites?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They use different battery types"
+        },
+        {
+          "key": "B",
+          "text": "One is closer to the university library"
+        },
+        {
+          "key": "C",
+          "text": "They differ greatly in surrounding vegetation"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "They differ greatly in surrounding vegetation"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The bright lamp stood beside bare pavement, while the dim one was surrounded by shrubs. Vegetation could explain part of the difference, so the sites do not isolate light intensity.",
+      "explanation_vi": "A: Hai vị trí khác nhau nhiều về thảm thực vật nên chưa tách được ảnh hưởng ánh sáng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "How will the group measure light exposure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Take readings where insects actually fly"
+        },
+        {
+          "key": "B",
+          "text": "Estimate brightness from photographs"
+        },
+        {
+          "key": "C",
+          "text": "Rely on the lamp manufacturer’s rating"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Take readings where insects actually fly"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The wattage printed on the lamp housing is not the exposure experienced by insects. We should measure illumination where the moths move, not merely copy specifications from the box.",
+      "explanation_vi": "B: Đo độ sáng ở nơi bướm bay thay vì dùng công suất in trên đèn.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why are the evening counts not directly comparable?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The volunteer teams were different ages"
+        },
+        {
+          "key": "B",
+          "text": "The weather changed between observations"
+        },
+        {
+          "key": "C",
+          "text": "One team counted more species"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "The weather changed between observations"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The first evening was warm and still, but the second had a cold wind. That could suppress flying activity even if the lighting were identical, so we need matched weather conditions.",
+      "explanation_vi": "C: Thời tiết hai đêm khác nhau, ảnh hưởng hoạt động bay.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What is the revised sampling strategy?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Collect moths in jars for several days"
+        },
+        {
+          "key": "B",
+          "text": "Survey only the brightest lamp"
+        },
+        {
+          "key": "C",
+          "text": "Alternate observations between paired locations"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Alternate observations between paired locations"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Choose two sites with similar plants, then alternate the observers between them at fixed intervals. That should reduce the chance that one person’s counting habits determine the result.",
+      "explanation_vi": "A: Chọn hai điểm tương tự và luân phiên người quan sát theo khoảng cố định.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What conclusion should be avoided?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A higher count proves a healthier moth population"
+        },
+        {
+          "key": "B",
+          "text": "Light affects where moths gather"
+        },
+        {
+          "key": "C",
+          "text": "Wind may change moth activity"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A higher count proves a healthier moth population"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Even if we see more moths circling a lamp, that does not prove the local population is healthier. Attraction can concentrate individuals without increasing their overall numbers.",
+      "explanation_vi": "B: Bướm tụ quanh đèn nhiều không chứng minh quần thể khỏe hơn.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Lamp manufacturer sheet",
+      "options": [
+        {
+          "key": "A",
+          "text": "Exclude as an invented record"
+        },
+        {
+          "key": "B",
+          "text": "Remove identifiable people"
+        },
+        {
+          "key": "C",
+          "text": "Retain with an environmental-condition warning"
+        },
+        {
+          "key": "D",
+          "text": "Use as the spatial reference"
+        },
+        {
+          "key": "E",
+          "text": "Ask a taxonomist to identify it"
+        },
+        {
+          "key": "F",
+          "text": "Use as technical background only"
+        },
+        {
+          "key": "G",
+          "text": "Pilot the classification guide again"
+        }
+      ],
+      "correct_option": "F",
+      "correct_answers": [
+        "F"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "The manufacturer’s sheet is useful for describing equipment, but it should not be treated as our actual field measurement.",
+      "explanation_vi": "C: Thông số hãng chỉ làm nền về thiết bị.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "First windy-evening counts",
+      "options": [
+        {
+          "key": "A",
+          "text": "Exclude as an invented record"
+        },
+        {
+          "key": "B",
+          "text": "Remove identifiable people"
+        },
+        {
+          "key": "C",
+          "text": "Retain with an environmental-condition warning"
+        },
+        {
+          "key": "D",
+          "text": "Use as the spatial reference"
+        },
+        {
+          "key": "E",
+          "text": "Ask a taxonomist to identify it"
+        },
+        {
+          "key": "F",
+          "text": "Use as technical background only"
+        },
+        {
+          "key": "G",
+          "text": "Pilot the classification guide again"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "C"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "Keep the windy-evening observations with an explicit weather warning. We can show why conditions matter, but not combine them uncritically with calm-night counts.",
+      "explanation_vi": "A: Giữ số liệu đêm gió kèm cảnh báo điều kiện thời tiết.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Observer identification guide",
+      "options": [
+        {
+          "key": "A",
+          "text": "Exclude as an invented record"
+        },
+        {
+          "key": "B",
+          "text": "Remove identifiable people"
+        },
+        {
+          "key": "C",
+          "text": "Retain with an environmental-condition warning"
+        },
+        {
+          "key": "D",
+          "text": "Use as the spatial reference"
+        },
+        {
+          "key": "E",
+          "text": "Ask a taxonomist to identify it"
+        },
+        {
+          "key": "F",
+          "text": "Use as technical background only"
+        },
+        {
+          "key": "G",
+          "text": "Pilot the classification guide again"
+        }
+      ],
+      "correct_option": "G",
+      "correct_answers": [
+        "G"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "Two volunteers confused similar moth groups. We need to pilot the guide again with photographs before the next session.",
+      "explanation_vi": "B: Cần thử lại hướng dẫn nhận diện vì tình nguyện viên nhầm nhóm bướm.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Geo-tagged trap locations",
+      "options": [
+        {
+          "key": "A",
+          "text": "Exclude as an invented record"
+        },
+        {
+          "key": "B",
+          "text": "Remove identifiable people"
+        },
+        {
+          "key": "C",
+          "text": "Retain with an environmental-condition warning"
+        },
+        {
+          "key": "D",
+          "text": "Use as the spatial reference"
+        },
+        {
+          "key": "E",
+          "text": "Ask a taxonomist to identify it"
+        },
+        {
+          "key": "F",
+          "text": "Use as technical background only"
+        },
+        {
+          "key": "G",
+          "text": "Pilot the classification guide again"
+        }
+      ],
+      "correct_option": "D",
+      "correct_answers": [
+        "D"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "The location records are complete and accurate. They will anchor our site comparison and allow another class to repeat the route.",
+      "explanation_vi": "C: Tọa độ bẫy là cơ sở chính cho so sánh địa điểm.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Photographs showing residents",
+      "options": [
+        {
+          "key": "A",
+          "text": "Exclude as an invented record"
+        },
+        {
+          "key": "B",
+          "text": "Remove identifiable people"
+        },
+        {
+          "key": "C",
+          "text": "Retain with an environmental-condition warning"
+        },
+        {
+          "key": "D",
+          "text": "Use as the spatial reference"
+        },
+        {
+          "key": "E",
+          "text": "Ask a taxonomist to identify it"
+        },
+        {
+          "key": "F",
+          "text": "Use as technical background only"
+        },
+        {
+          "key": "G",
+          "text": "Pilot the classification guide again"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "B"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T20"
+      ],
+      "evidence_excerpt_en": "Crop the residents’ faces from the night photographs before putting any image online. We did not ask for permission to publish identifiable people.",
+      "explanation_vi": "A: Cắt hoặc che mặt cư dân trong ảnh đêm trước khi đăng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Exclude as an invented record"
+        },
+        {
+          "key": "B",
+          "text": "Remove identifiable people"
+        },
+        {
+          "key": "C",
+          "text": "Retain with an environmental-condition warning"
+        },
+        {
+          "key": "D",
+          "text": "Use as the spatial reference"
+        },
+        {
+          "key": "E",
+          "text": "Ask a taxonomist to identify it"
+        },
+        {
+          "key": "F",
+          "text": "Use as technical background only"
+        },
+        {
+          "key": "G",
+          "text": "Pilot the classification guide again"
+        }
+      ]
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "B: Nhóm đếm bướm đêm ở hai đèn đường; giảng viên yêu cầu xét cách quan sát trước khi kết luận.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "c6c821ff0655c0ae5677445f0a2a3a9a3db83fdb6f737dffa214abb37a68e019",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.17,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

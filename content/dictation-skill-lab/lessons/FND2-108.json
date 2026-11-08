@@ -1,0 +1,622 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-108",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M20 – mixed_conversations",
+  "title": "Home repair appointment",
+  "learning_objectives_vi": [
+    "Xác định sự cố, khung giờ kỹ thuật viên đến và hướng xử lý.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Speaker 1",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Speaker 2",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, I'm calling about a leaking kitchen tap.",
+      "translation_vi": "Xin chào, tôi gọi vì vòi bếp bị rò nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "leaking kitchen tap",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "vòi bếp bị rò",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Has the leak become worse since yesterday?",
+      "translation_vi": "Nó có rò mạnh hơn từ hôm qua không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "worse",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tệ hơn",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A little, and there's water under the sink.",
+      "translation_vi": "Một chút, và có nước dưới bồn rửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "under the sink",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "dưới bồn rửa",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "We can send a plumber tomorrow between ten and twelve.",
+      "translation_vi": "Chúng tôi có thể cử thợ ống nước ngày mai từ mười đến mười hai giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "plumber",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thợ sửa ống nước",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I won't be home until eleven thirty.",
+      "translation_vi": "Tôi sẽ không ở nhà trước mười một giờ rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "eleven thirty",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "11 giờ 30",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Then the afternoon slot from one to three may suit you better.",
+      "translation_vi": "Vậy khung chiều từ một đến ba giờ có thể hợp hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "one to three",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "từ một đến ba giờ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes, please book that instead of the morning visit.",
+      "translation_vi": "Vâng, đặt khung đó thay vì lượt sáng nhé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "instead of the morning visit",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thay cho lượt sáng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Could you turn off the water supply if it gets worse?",
+      "translation_vi": "Bạn có thể khóa nguồn nước nếu nó nặng hơn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "water supply",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nguồn nước",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I'll do that if the tap starts dripping faster.",
+      "translation_vi": "Tôi sẽ làm vậy nếu vòi chảy nhanh hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "dripping faster",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nhỏ giọt nhanh hơn",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "All right. The plumber will call before arriving.",
+      "translation_vi": "Được. Thợ sẽ gọi trước khi đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "repair_reschedule",
+        "mixed_conversations"
+      ],
+      "target_value": "before arriving",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trước khi đến",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Hello, I'm calling about a leaking kitchen tap."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Hello, I'm calling about a leaking kitchen tap. Nghĩa: Xin chào, tôi gọi vì vòi bếp bị rò nước.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Has the leak become worse since yesterday?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Has the leak become worse since yesterday? Nghĩa: Nó có rò mạnh hơn từ hôm qua không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "A little, and there's water under the sink."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: A little, and there's water under the sink. Nghĩa: Một chút, và có nước dưới bồn rửa.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We can send a plumber tomorrow between ten and twelve."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: We can send a plumber tomorrow between ten and twelve. Nghĩa: Chúng tôi có thể cử thợ ống nước ngày mai từ mười đến mười hai giờ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I won't be home until eleven thirty."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: I won't be home until eleven thirty. Nghĩa: Tôi sẽ không ở nhà trước mười một giờ rưỡi.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Then the afternoon slot from one to three may suit you better."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: Then the afternoon slot from one to three may suit you better. Nghĩa: Vậy khung chiều từ một đến ba giờ có thể hợp hơn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Yes, please book that instead of the morning visit."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Yes, please book that instead of the morning visit. Nghĩa: Vâng, đặt khung đó thay vì lượt sáng nhé.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could you turn off the water supply if it gets worse?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Could you turn off the water supply if it gets worse? Nghĩa: Bạn có thể khóa nguồn nước nếu nó nặng hơn không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I'll do that if the tap starts dripping faster."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: I'll do that if the tap starts dripping faster. Nghĩa: Tôi sẽ làm vậy nếu vòi chảy nhanh hơn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "All right. The plumber will call before arriving."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: All right. The plumber will call before arriving. Nghĩa: Được. Thợ sẽ gọi trước khi đến.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “từ một đến ba giờ”.",
+      "correct_answers": [
+        "one to three"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “one to three” trong câu: Then the afternoon slot from one to three may suit you better. Nghĩa: Vậy khung chiều từ một đến ba giờ có thể hợp hơn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “thay cho lượt sáng”.",
+      "correct_answers": [
+        "instead of the morning visit"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “instead of the morning visit” trong câu: Yes, please book that instead of the morning visit. Nghĩa: Vâng, đặt khung đó thay vì lượt sáng nhé.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 7,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “nguồn nước”.",
+      "correct_answers": [
+        "water supply"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “water supply” trong câu: Could you turn off the water supply if it gets worse? Nghĩa: Bạn có thể khóa nguồn nước nếu nó nặng hơn không?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “nhỏ giọt nhanh hơn”.",
+      "correct_answers": [
+        "dripping faster"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “dripping faster” trong câu: I'll do that if the tap starts dripping faster. Nghĩa: Tôi sẽ làm vậy nếu vòi chảy nhanh hơn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “trước khi đến”.",
+      "correct_answers": [
+        "before arriving"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “before arriving” trong câu: All right. The plumber will call before arriving. Nghĩa: Được. Thợ sẽ gọi trước khi đến.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "leaking kitchen tap",
+      "pos": "phrase",
+      "meaning_vi": "vòi bếp bị rò",
+      "example_en": "Hello, I'm calling about a leaking kitchen tap.",
+      "example_vi": "Xin chào, tôi gọi vì vòi bếp bị rò nước.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "worse",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "tệ hơn",
+      "example_en": "Has the leak become worse since yesterday?",
+      "example_vi": "Nó có rò mạnh hơn từ hôm qua không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "under the sink",
+      "pos": "phrase",
+      "meaning_vi": "dưới bồn rửa",
+      "example_en": "A little, and there's water under the sink.",
+      "example_vi": "Một chút, và có nước dưới bồn rửa.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "plumber",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "thợ sửa ống nước",
+      "example_en": "We can send a plumber tomorrow between ten and twelve.",
+      "example_vi": "Chúng tôi có thể cử thợ ống nước ngày mai từ mười đến mười hai giờ.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "eleven thirty",
+      "pos": "phrase",
+      "meaning_vi": "11 giờ 30",
+      "example_en": "I won't be home until eleven thirty.",
+      "example_vi": "Tôi sẽ không ở nhà trước mười một giờ rưỡi.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "one to three",
+      "pos": "phrase",
+      "meaning_vi": "từ một đến ba giờ",
+      "example_en": "Then the afternoon slot from one to three may suit you better.",
+      "example_vi": "Vậy khung chiều từ một đến ba giờ có thể hợp hơn.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "repair_reschedule",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "mixed_conversations",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-108-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "35e98380aba330054ae680fdb9f3a58014bd24d6fdb432ba789a6792339687a5"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Xác định sự cố, khung giờ kỹ thuật viên đến và hướng xử lý.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "We said Monday first, but Tuesday is confirmed.",
+        "written_value": "Tuesday",
+        "teacher_note_vi": "Thông tin sau từ but mới là lựa chọn cuối cùng."
+      },
+      {
+        "spoken_example": "Is that fifteen or fifty? I mean fifteen.",
+        "written_value": "fifteen",
+        "teacher_note_vi": "Phải nghe câu sửa để không lấy thông tin ban đầu."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": false,
+    "phonetic_note": "Kiểm tra rõ lượt thoại và diễn biến hội thoại trên audio thật."
+  }
+}

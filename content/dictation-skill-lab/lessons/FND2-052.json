@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-052",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Spelling",
+  "title": "British-style postcodes: letters and digits",
+  "learning_objectives_vi": [
+    "Nghe được british-style postcodes: letters and digits trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (postcode).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The postcode on the form is A B one, two C D.",
+      "translation_vi": "Mã bưu chính trên mẫu là AB1 2CD.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "AB1 2CD",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "For the parcel, write N W three, four E F.",
+      "translation_vi": "Với bưu kiện, hãy viết NW3 4EF.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "NW3 4EF",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our example postcode is M one, five G H.",
+      "translation_vi": "Mã bưu chính ví dụ của chúng tôi là M1 5GH.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "M1 5GH",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please enter B N two, six J K.",
+      "translation_vi": "Vui lòng nhập BN2 6JK.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "BN2 6JK",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The delivery area code is E C one, seven L M.",
+      "translation_vi": "Mã khu vực giao hàng là EC1 7LM.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "EC1 7LM",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The label shows L S four, eight N P.",
+      "translation_vi": "Nhãn ghi LS4 8NP.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "LS4 8NP",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The registration uses C F three, two R T.",
+      "translation_vi": "Đăng ký dùng mã CF3 2RT.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "CF3 2RT",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "We have S W nine, one U V as the sample.",
+      "translation_vi": "Chúng tôi có mã mẫu SW9 1UV.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "SW9 1UV",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The sample postcode starts with P O five, then three W X.",
+      "translation_vi": "Mã bưu chính mẫu bắt đầu PO5 rồi 3WX.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "PO5 3WX",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "On the screen, the code reads G two, four Y Z.",
+      "translation_vi": "Trên màn hình mã hiển thị G2 4YZ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "postcode",
+        "postcode"
+      ],
+      "target_value": "G2 4YZ",
+      "target_kind": "postcode",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The postcode on the form is A B one, two C D."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The postcode on the form is A B one, two C D. Nghĩa: Mã bưu chính trên mẫu là AB1 2CD. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "For the parcel, write N W three, four E F."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: For the parcel, write N W three, four E F. Nghĩa: Với bưu kiện, hãy viết NW3 4EF. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our example postcode is M one, five G H."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Our example postcode is M one, five G H. Nghĩa: Mã bưu chính ví dụ của chúng tôi là M1 5GH. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please enter B N two, six J K."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Please enter B N two, six J K. Nghĩa: Vui lòng nhập BN2 6JK. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The delivery area code is E C one, seven L M."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The delivery area code is E C one, seven L M. Nghĩa: Mã khu vực giao hàng là EC1 7LM. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The label shows L S four, eight N P."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The label shows L S four, eight N P. Nghĩa: Nhãn ghi LS4 8NP. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The registration uses C F three, two R T."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The registration uses C F three, two R T. Nghĩa: Đăng ký dùng mã CF3 2RT. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We have S W nine, one U V as the sample."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: We have S W nine, one U V as the sample. Nghĩa: Chúng tôi có mã mẫu SW9 1UV. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The sample postcode starts with P O five, then three W X."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The sample postcode starts with P O five, then three W X. Nghĩa: Mã bưu chính mẫu bắt đầu PO5 rồi 3WX. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "On the screen, the code reads G two, four Y Z."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: On the screen, the code reads G two, four Y Z. Nghĩa: Trên màn hình mã hiển thị G2 4YZ. Lưu ý: Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "postcode"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập mã bưu chính được xác nhận trong câu.",
+      "correct_answers": [
+        "LS4 8NP"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Giữ đúng chữ, số và khoảng trắng trong postcode. Đáp án: LS4 8NP. Nội dung: Nhãn ghi LS4 8NP.",
+      "scoring_policy": "canonical_postcode_server",
+      "target_kind": "postcode",
+      "question_tags": [
+        "short_answer",
+        "postcode",
+        "postcode"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập mã bưu chính được xác nhận trong câu.",
+      "correct_answers": [
+        "CF3 2RT"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Giữ đúng chữ, số và khoảng trắng trong postcode. Đáp án: CF3 2RT. Nội dung: Đăng ký dùng mã CF3 2RT.",
+      "scoring_policy": "canonical_postcode_server",
+      "target_kind": "postcode",
+      "question_tags": [
+        "short_answer",
+        "postcode",
+        "postcode"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập mã bưu chính được xác nhận trong câu.",
+      "correct_answers": [
+        "SW9 1UV"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Giữ đúng chữ, số và khoảng trắng trong postcode. Đáp án: SW9 1UV. Nội dung: Chúng tôi có mã mẫu SW9 1UV.",
+      "scoring_policy": "canonical_postcode_server",
+      "target_kind": "postcode",
+      "question_tags": [
+        "short_answer",
+        "postcode",
+        "postcode"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập mã bưu chính được xác nhận trong câu.",
+      "correct_answers": [
+        "PO5 3WX"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Giữ đúng chữ, số và khoảng trắng trong postcode. Đáp án: PO5 3WX. Nội dung: Mã bưu chính mẫu bắt đầu PO5 rồi 3WX.",
+      "scoring_policy": "canonical_postcode_server",
+      "target_kind": "postcode",
+      "question_tags": [
+        "short_answer",
+        "postcode",
+        "postcode"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập mã bưu chính được xác nhận trong câu.",
+      "correct_answers": [
+        "G2 4YZ"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Giữ đúng chữ, số và khoảng trắng trong postcode. Đáp án: G2 4YZ. Nội dung: Trên màn hình mã hiển thị G2 4YZ.",
+      "scoring_policy": "canonical_postcode_server",
+      "target_kind": "postcode",
+      "question_tags": [
+        "short_answer",
+        "postcode",
+        "postcode"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "postcode",
+      "pos": "n",
+      "meaning_vi": "mã bưu chính",
+      "example_en": "The postcode on the form is A B one, two C D.",
+      "example_vi": "Mã bưu chính trên mẫu là AB1 2CD.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "delivery area",
+      "pos": "n",
+      "meaning_vi": "khu vực giao hàng",
+      "example_en": "The delivery area code is E C one, seven L M.",
+      "example_vi": "Mã khu vực giao hàng là EC1 7LM.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "outward code",
+      "pos": "n",
+      "meaning_vi": "phần đầu mã bưu chính",
+      "example_en": "The outward code comes before the space in a British postcode.",
+      "example_vi": "Phần đầu mã bưu chính Anh nằm trước dấu cách.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "inward code",
+      "pos": "n",
+      "meaning_vi": "phần cuối mã bưu chính",
+      "example_en": "The inward code is the final three characters of a British postcode.",
+      "example_vi": "Phần cuối của mã bưu chính Anh gồm ba ký tự cuối.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "letter",
+      "pos": "n",
+      "meaning_vi": "chữ cái",
+      "example_en": "The first letter is B, not P.",
+      "example_vi": "Chữ cái đầu là B, không phải P.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "digit",
+      "pos": "n",
+      "meaning_vi": "chữ số",
+      "example_en": "Do not omit the first digit of the code.",
+      "example_vi": "Đừng bỏ chữ số đầu tiên của mã.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "postcode",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+    "category": "spelling",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-052-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "fbe3ed2174927af0c0b17326a40deb0aa8814923f03b9e83bb5abf0aed4f3c8e",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Đọc đúng chuỗi chữ-số, giữ một dấu cách trước ba ký tự cuối.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "A B one, two C D",
+        "written_value": "AB1 2CD",
+        "teacher_note_vi": "Giữ dấu cách trước ba ký tự cuối."
+      },
+      {
+        "spoken_example": "N W three, four E F",
+        "written_value": "NW3 4EF",
+        "teacher_note_vi": "Chữ cái và chữ số không thay cho nhau."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn quy tắc nhận diện chữ cái và dấu câu, đọc hai ví dụ.",
+      "Nghe chuỗi được đánh vần, ghi lại từng ký tự ngay khi nghe.",
+      "Chỉ xem transcript/đáp án sau khi nộp, rà từng chữ/dấu nối.",
+      "Dùng hai câu chưa gặp để kiểm tra trong một lần nghe với giọng khác."
+    ],
+    "common_mistakes": [
+      "Suy đoán cách viết tên theo phát âm thay vì ký tự đánh vần.",
+      "Bỏ chữ lặp, dấu gạch nối, dấu nháy hoặc số 0 trong mã."
+    ],
+    "before_audio_question": "Người nói đang đọc tên, mã chữ-số, email, tên miền hay postcode? Có từ double, hyphen, underscore không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

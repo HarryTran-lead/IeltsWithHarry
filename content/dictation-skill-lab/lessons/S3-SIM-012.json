@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-012",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Landscape ecology and spatial data",
+  "title": "Making a Wildlife Corridor Map",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "C",
+      "text_en": "Our initial map linked three woodland patches.",
+      "meaning_vi": "C: Bản đồ kết nối ba mảng rừng ban đầu đẹp mắt nhưng cần đối chiếu quan sát thực địa.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "It looked convincing until we compared it with field observations.",
+      "meaning_vi": "C: Bản đồ kết nối ba mảng rừng ban đầu đẹp mắt nhưng cần đối chiếu quan sát thực địa.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Let us decide which proposed connections are genuinely supported.",
+      "meaning_vi": "C: Bản đồ kết nối ba mảng rừng ban đầu đẹp mắt nhưng cần đối chiếu quan sát thực địa.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "C",
+      "text_en": "Keep the blocked-camera records, but mark those nights as unreliable rather than interpreting the zeros as absence.",
+      "meaning_vi": "C: Giữ dữ liệu camera bị che nhưng đánh dấu đêm không đáng tin.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The crossing photographs are the strongest independent evidence for the proposed passage location.",
+      "meaning_vi": "B: Ảnh động vật đi qua cống là chứng cứ chính.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "The field notes show animal footprints near a hedge, but a footprint alone cannot tell us whether the whole stretch is regularly used as a corridor. We need repeated observations.",
+      "meaning_vi": "B: Dấu chân gần hàng rào chưa chứng minh cả tuyến thường được động vật sử dụng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "C",
+      "text_en": "A missing observation is very different from an observation showing absence.",
+      "meaning_vi": "C: Không quan sát thấy khác với quan sát thấy không tồn tại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "An aerial tourism map helps orient readers, although it was made for visitors and cannot measure habitat quality.",
+      "meaning_vi": "A: Bản đồ du lịch trên không chỉ hỗ trợ định hướng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "The interview notes contain full names and addresses. Prepare an anonymous summary for the public report.",
+      "meaning_vi": "C: Tóm tắt ẩn danh ghi chép phỏng vấn chủ đất.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I will distinguish private land from public right-of-way on the draft map.",
+      "meaning_vi": "B: Tôi sẽ tách đất tư và đường công cộng trên bản đồ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The species list is almost ten years old. It is worth repeating the survey rather than assuming the same communities remain.",
+      "meaning_vi": "A: Danh mục loài đã cũ, cần khảo sát lại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The straight route looks efficient on screen, but it crosses a busy road where we found no safe animal passage. Distance alone cannot determine a functional corridor.",
+      "meaning_vi": "A: Tuyến thẳng băng qua đường đông xe mà không có lối qua an toàn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Your map should distinguish the physical possibility of movement from evidence of actual movement. They are related questions, but planning decisions can go wrong if they are treated as identical.",
+      "meaning_vi": "A: Phân biệt nơi có thể di chuyển và nơi đã có bằng chứng động vật đi qua.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "The camera records show crossings near the old culvert. Combine those with the woodland cover rather than with tourist paths or the apparent straight-line distance.",
+      "meaning_vi": "B: Dùng điểm động vật qua đường và độ che phủ sinh cảnh để chọn tuyến.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Give the model a range of plausible routes instead of one solid coloured line.",
+      "meaning_vi": "A: Mô hình nên trình bày một số tuyến khả thi thay vì một đường chắc chắn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "C",
+      "text_en": "We assumed the southern site had no activity. In fact weeds blocked the camera’s field of view for several nights, so a zero count there cannot be trusted.",
+      "meaning_vi": "C: Camera phía nam bị cây che tầm nhìn nên số 0 chưa đáng tin.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "A shaded corridor on a map can imply changes to privately managed land. Speak to the landowners before publicly suggesting a route across their properties.",
+      "meaning_vi": "A: Cần trao đổi với chủ đất trước khi công bố tuyến đi qua đất tư.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "C",
+      "text_en": "In the next field trip we can note vegetation gaps and barriers on the ground, then compare those observations with the boundaries produced by our computer model.",
+      "meaning_vi": "C: Lần khảo sát tới sẽ ghi khe hở cây và rào chắn để đối chiếu với mô hình máy tính.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "C",
+      "text_en": "I will list the assumptions beside the GIS output so another team can test them.",
+      "meaning_vi": "C: Tôi sẽ liệt kê giả định bên cạnh kết quả GIS.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "We have only distant images of the culvert. A careful daylight survey can establish whether its entrance is passable, without disturbing wildlife at night.",
+      "meaning_vi": "B: Ưu tiên khảo sát cống cũ ban ngày để xem có thể đi qua hay không.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "Please make the limits of the spatial model visible in the final map legend. An apparently continuous green band may contain a fence, an exposed crossing or private land. If readers cannot see those obstacles, the map could encourage interventions that are ecologically ineffective and socially unacceptable.",
+      "meaning_vi": "A: Chú giải bản đồ phải thể hiện rào chắn, đường trống và đất tư; một dải xanh liền không chứng minh động vật đi được.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "final_critical_discussion"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "We can offer a transparent planning map with areas of uncertainty, not a promise that animals will use every proposed path.",
+      "meaning_vi": "B: Chỉ nên đề xuất bản đồ quy hoạch có ghi vùng bất định.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Blocked-camera records",
+      "options": [
+        {
+          "key": "A",
+          "text": "Collect fresh observations"
+        },
+        {
+          "key": "B",
+          "text": "Retain with a visibility warning"
+        },
+        {
+          "key": "C",
+          "text": "Publish only in anonymous form"
+        },
+        {
+          "key": "D",
+          "text": "Seek local planning consent"
+        },
+        {
+          "key": "E",
+          "text": "Exclude because species names are unconfirmed"
+        },
+        {
+          "key": "F",
+          "text": "Use for geographic orientation only"
+        },
+        {
+          "key": "G",
+          "text": "Use as the decisive spatial evidence"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "B"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Keep the blocked-camera records, but mark those nights as unreliable rather than interpreting the zeros as absence.",
+      "explanation_vi": "C: Giữ dữ liệu camera bị che nhưng đánh dấu đêm không đáng tin.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Culvert crossing photographs",
+      "options": [
+        {
+          "key": "A",
+          "text": "Collect fresh observations"
+        },
+        {
+          "key": "B",
+          "text": "Retain with a visibility warning"
+        },
+        {
+          "key": "C",
+          "text": "Publish only in anonymous form"
+        },
+        {
+          "key": "D",
+          "text": "Seek local planning consent"
+        },
+        {
+          "key": "E",
+          "text": "Exclude because species names are unconfirmed"
+        },
+        {
+          "key": "F",
+          "text": "Use for geographic orientation only"
+        },
+        {
+          "key": "G",
+          "text": "Use as the decisive spatial evidence"
+        }
+      ],
+      "correct_option": "G",
+      "correct_answers": [
+        "G"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The crossing photographs are the strongest independent evidence for the proposed passage location.",
+      "explanation_vi": "B: Ảnh động vật đi qua cống là chứng cứ chính.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Aerial tourism map",
+      "options": [
+        {
+          "key": "A",
+          "text": "Collect fresh observations"
+        },
+        {
+          "key": "B",
+          "text": "Retain with a visibility warning"
+        },
+        {
+          "key": "C",
+          "text": "Publish only in anonymous form"
+        },
+        {
+          "key": "D",
+          "text": "Seek local planning consent"
+        },
+        {
+          "key": "E",
+          "text": "Exclude because species names are unconfirmed"
+        },
+        {
+          "key": "F",
+          "text": "Use for geographic orientation only"
+        },
+        {
+          "key": "G",
+          "text": "Use as the decisive spatial evidence"
+        }
+      ],
+      "correct_option": "F",
+      "correct_answers": [
+        "F"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "An aerial tourism map helps orient readers, although it was made for visitors and cannot measure habitat quality.",
+      "explanation_vi": "A: Bản đồ du lịch trên không chỉ hỗ trợ định hướng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Landowner interview notes",
+      "options": [
+        {
+          "key": "A",
+          "text": "Collect fresh observations"
+        },
+        {
+          "key": "B",
+          "text": "Retain with a visibility warning"
+        },
+        {
+          "key": "C",
+          "text": "Publish only in anonymous form"
+        },
+        {
+          "key": "D",
+          "text": "Seek local planning consent"
+        },
+        {
+          "key": "E",
+          "text": "Exclude because species names are unconfirmed"
+        },
+        {
+          "key": "F",
+          "text": "Use for geographic orientation only"
+        },
+        {
+          "key": "G",
+          "text": "Use as the decisive spatial evidence"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "C"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The interview notes contain full names and addresses. Prepare an anonymous summary for the public report.",
+      "explanation_vi": "C: Tóm tắt ẩn danh ghi chép phỏng vấn chủ đất.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Old biodiversity list",
+      "options": [
+        {
+          "key": "A",
+          "text": "Collect fresh observations"
+        },
+        {
+          "key": "B",
+          "text": "Retain with a visibility warning"
+        },
+        {
+          "key": "C",
+          "text": "Publish only in anonymous form"
+        },
+        {
+          "key": "D",
+          "text": "Seek local planning consent"
+        },
+        {
+          "key": "E",
+          "text": "Exclude because species names are unconfirmed"
+        },
+        {
+          "key": "F",
+          "text": "Use for geographic orientation only"
+        },
+        {
+          "key": "G",
+          "text": "Use as the decisive spatial evidence"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The species list is almost ten years old. It is worth repeating the survey rather than assuming the same communities remain.",
+      "explanation_vi": "A: Danh mục loài đã cũ, cần khảo sát lại.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why did the direct corridor fail the first review?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It crossed a busy road without a safe passage"
+        },
+        {
+          "key": "B",
+          "text": "It passed through open fields"
+        },
+        {
+          "key": "C",
+          "text": "It was longer than the alternative"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "It crossed a busy road without a safe passage"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "The straight route looks efficient on screen, but it crosses a busy road where we found no safe animal passage. Distance alone cannot determine a functional corridor.",
+      "explanation_vi": "A: Tuyến thẳng băng qua đường đông xe mà không có lối qua an toàn.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What information will guide the new route?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Property prices in nearby villages"
+        },
+        {
+          "key": "B",
+          "text": "Recorded crossing points and habitat cover"
+        },
+        {
+          "key": "C",
+          "text": "Tourist walking preferences"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Recorded crossing points and habitat cover"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "The camera records show crossings near the old culvert. Combine those with the woodland cover rather than with tourist paths or the apparent straight-line distance.",
+      "explanation_vi": "B: Dùng điểm động vật qua đường và độ che phủ sinh cảnh để chọn tuyến.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why is the camera evidence incomplete?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The animals were too small to identify"
+        },
+        {
+          "key": "B",
+          "text": "The memory cards were overwritten"
+        },
+        {
+          "key": "C",
+          "text": "One camera faced an overgrown entrance"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "One camera faced an overgrown entrance"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "We assumed the southern site had no activity. In fact weeds blocked the camera’s field of view for several nights, so a zero count there cannot be trusted.",
+      "explanation_vi": "C: Camera phía nam bị cây che tầm nhìn nên số 0 chưa đáng tin.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What does the tutor advise about landowners?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Consult them before publishing a proposed route"
+        },
+        {
+          "key": "B",
+          "text": "Ignore property boundaries during planning"
+        },
+        {
+          "key": "C",
+          "text": "Send them the final map only"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Consult them before publishing a proposed route"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "A shaded corridor on a map can imply changes to privately managed land. Speak to the landowners before publicly suggesting a route across their properties.",
+      "explanation_vi": "A: Cần trao đổi với chủ đất trước khi công bố tuyến đi qua đất tư.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What is the next fieldwork priority?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Take more aerial photographs of houses"
+        },
+        {
+          "key": "B",
+          "text": "Survey the neglected culvert in daylight"
+        },
+        {
+          "key": "C",
+          "text": "Count every animal in the district"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Survey the neglected culvert in daylight"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T20"
+      ],
+      "evidence_excerpt_en": "We have only distant images of the culvert. A careful daylight survey can establish whether its entrance is passable, without disturbing wildlife at night.",
+      "explanation_vi": "B: Ưu tiên khảo sát cống cũ ban ngày để xem có thể đi qua hay không.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Collect fresh observations"
+        },
+        {
+          "key": "B",
+          "text": "Retain with a visibility warning"
+        },
+        {
+          "key": "C",
+          "text": "Publish only in anonymous form"
+        },
+        {
+          "key": "D",
+          "text": "Seek local planning consent"
+        },
+        {
+          "key": "E",
+          "text": "Exclude because species names are unconfirmed"
+        },
+        {
+          "key": "F",
+          "text": "Use for geographic orientation only"
+        },
+        {
+          "key": "G",
+          "text": "Use as the decisive spatial evidence"
+        }
+      ]
+    },
+    {
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "C: Bản đồ kết nối ba mảng rừng ban đầu đẹp mắt nhưng cần đối chiếu quan sát thực địa.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "ec1048a740b298e3dbd17d9807f70d1b44471b1f016a49802a084f97748a6a2a",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.19,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

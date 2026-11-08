@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { skillLabAccess } from "@/lib/dictation-skill-lab/access";
+import { stageForLesson } from "@/lib/dictation-skill-lab/stages";
 import { allLessons, audioReady, sentenceUnits } from "@/lib/dictation-skill-lab/lessons";
 import { dictationSkills, isDictationSkill, turnSkills } from "@/lib/dictation-skill-lab/skills";
 
@@ -14,7 +15,7 @@ export async function GET(request: Request) {
   const skill = url.searchParams.get("skill") ?? "";
   const size = Math.max(5, Math.min(20, Number(url.searchParams.get("n")) || 10));
   const pool = allLessons().filter(audioReady).flatMap((lesson) => sentenceUnits(lesson).map((unit) => ({
-    lesson, unit, skills: turnSkills(unit.text, lesson.lesson_id.slice(5, 7)),
+    lesson, unit, skills: turnSkills(unit.text, stageForLesson(lesson.lesson_id, lesson.level)),
   })));
   if (!skill) {
     const counts = Object.fromEntries(dictationSkills.map((item) => [item.id, pool.filter((entry) => entry.skills.includes(item.id)).length]));

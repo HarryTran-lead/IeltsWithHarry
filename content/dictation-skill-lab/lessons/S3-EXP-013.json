@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-013",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Soil ecology sampling methods",
+  "title": "Planning a Soil Biodiversity Investigation",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "sampling_strategy",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your soil project proposes collecting samples from the botanical garden and the roadside. Before you dig, explain whether the aim is to compare the two sites or to measure the effect of traffic on soil organisms.",
+      "translation_vi": "Đề tài đất lấy mẫu vườn thực vật và ven đường. Trước khi đào, hãy nói mục tiêu so hai nơi hay đo ảnh hưởng giao thông đến sinh vật đất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I had written that traffic reduces biodiversity, but that seems premature. The garden receives compost and irrigation, while the roadside gets neither, so traffic is not the only difference.",
+      "translation_vi": "Em viết giao thông làm giảm đa dạng sinh học, nhưng kết luận sớm. Vườn có phân ủ và tưới, còn ven đường không; giao thông không phải khác biệt duy nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Maybe we can frame it as a comparison of soil communities under different management conditions. That would be less ambitious but would match the information we can actually collect.",
+      "translation_vi": "Có thể đặt thành so sánh quần xã đất ở điều kiện quản lý khác nhau. Mục tiêu khiêm tốn hơn nhưng sát dữ liệu thực thu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Use that broader framing. Do not claim a single causal factor from two contrasting locations. Record obvious management practices so readers can interpret the comparison cautiously.",
+      "translation_vi": "Hãy dùng cách đặt rộng hơn. Không khẳng định một nhân tố gây ra từ hai điểm khác nhau; ghi cách quản lý để người đọc diễn giải thận trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Our first sampling plan picked the easiest spots, all near the paths. Those places are probably more compacted because people walk there, and that could affect what organisms we find.",
+      "translation_vi": "Kế hoạch đầu chọn chỗ dễ đào sát lối đi. Đất ở đó có thể bị nén do người qua lại và ảnh hưởng sinh vật tìm thấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "We could mark a grid and choose positions using random numbers, within places where sampling is permitted. That would reduce the temptation to select only patches that look promising.",
+      "translation_vi": "Ta có thể kẻ lưới và chọn vị trí bằng số ngẫu nhiên trong khu được phép, giảm xu hướng chọn mảng đất trông 'hứa hẹn'.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Good. Collect samples at a consistent depth and record moisture, because a wetter sample may contain more visible organisms even if the underlying community is similar.",
+      "translation_vi": "Tốt. Lấy ở độ sâu đồng nhất và ghi độ ẩm vì mẫu ướt có thể nhìn thấy nhiều sinh vật hơn dù quần xã tương tự.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I suggest taking four small samples at each location rather than one large scoop. That would give us some sense of within-site variation without removing excessive soil from the garden.",
+      "translation_vi": "Em đề xuất bốn mẫu nhỏ mỗi nơi thay một xẻng lớn, thấy biến động nội bộ mà không lấy quá nhiều đất của vườn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll test the organism identification guide on a small set before fieldwork. If we cannot reliably separate categories, it is better to use broader labels than invent precise species names.",
+      "translation_vi": "Em sẽ thử hướng dẫn nhận diện trên mẫu nhỏ. Nếu khó phân biệt, dùng nhóm rộng hơn thay vì đặt tên loài chính xác giả tạo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll create a randomised site map and list the selected points so the group can find them again. We should not quietly replace a difficult location with a more convenient one.",
+      "translation_vi": "Em sẽ lập bản đồ điểm lấy mẫu ngẫu nhiên để nhóm quay lại được; không tự đổi điểm khó thành điểm tiện mà không ghi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "I can obtain the garden's sampling permission and check which planted areas are protected. The fact that a place is open to visitors does not mean we can remove soil there.",
+      "translation_vi": "Thầy sẽ xin phép lấy mẫu và kiểm tra khu trồng được bảo vệ. Nơi mở cho khách không có nghĩa được lấy đất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "I'll prepare the labels with site, depth and collection time before we enter the field. If bags are marked only after sampling, we could accidentally swap two otherwise identical-looking containers.",
+      "translation_vi": "Em sẽ chuẩn bị nhãn nơi, độ sâu, thời gian trước khi đi; nếu ghi sau dễ đổi nhầm các túi giống nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The final report should state what the sampling design supports and where it falls short. A transparent study of two sites is preferable to an unsupported claim about traffic pollution.",
+      "translation_vi": "Báo cáo cuối phải nêu thiết kế chứng minh gì và giới hạn ở đâu. Nghiên cứu minh bạch hai điểm tốt hơn kết luận vô căn cứ về ô nhiễm giao thông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "sampling_strategy",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why can traffic not be identified as the sole cause?",
+      "correct_answers": [
+        "The sites also differ in watering and compost"
+      ],
+      "options": [
+        "Soil organisms cannot be counted",
+        "The sites also differ in watering and compost",
+        "Traffic has never been measured anywhere"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I had written that traffic reduces biodiversity, but that seems premature. The garden receives compost and irrigation, while the roadside gets neither, so traffic is not the only difference.",
+      "explanation_vi": "Hai nơi khác cả tưới nước và phân ủ.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "sampling_strategy"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What should the project mainly compare?",
+      "correct_answers": [
+        "Soil communities under different management"
+      ],
+      "options": [
+        "The effects of traffic alone",
+        "The cost of gardening tools",
+        "Soil communities under different management"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Use that broader framing. Do not claim a single causal factor from two contrasting locations. Record obvious management practices so readers can interpret the comparison cautiously.",
+      "explanation_vi": "Chuyển mục tiêu sang so điều kiện quản lý.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "sampling_strategy"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "How should sampling positions be chosen?",
+      "correct_answers": [
+        "Randomly from a permitted grid"
+      ],
+      "options": [
+        "Randomly from a permitted grid",
+        "Where organisms are easiest to see",
+        "Only beside the walking path"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "We could mark a grid and choose positions using random numbers, within places where sampling is permitted. That would reduce the temptation to select only patches that look promising.",
+      "explanation_vi": "Chọn ngẫu nhiên trong vùng được phép.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "sampling_strategy"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: four small samples at each location?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I suggest taking four small samples at each location rather than one large scoop. That would give us some sense of within-site variation without removing excessive soil from the garden.",
+      "explanation_vi": "Đề cập trong lượt T08 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "sampling_strategy"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: test the organism identification categories?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I'll test the organism identification guide on a small set before fieldwork. If we cannot reliably separate categories, it is better to use broader labels than invent precise species names.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "sampling_strategy"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: map the randomly selected sampling points?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll create a randomised site map and list the selected points so the group can find them again. We should not quietly replace a difficult location with a more convenient one.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "sampling_strategy"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: confirm permission and protected areas?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I can obtain the garden's sampling permission and check which planted areas are protected. The fact that a place is open to visitors does not mean we can remove soil there.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "sampling_strategy"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: prepare sample labels before fieldwork?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll prepare the labels with site, depth and collection time before we enter the field. If bags are marked only after sampling, we could accidentally swap two otherwise identical-looking containers.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "sampling_strategy"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "Maybe we can frame it as a comparison of soil communities under different management conditions. That would be less ambitious but would match the information we can actually collect."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Maybe we can frame it as a comparison of soil communities under different management conditions. That would be less ambitious but would match the information we can actually collect.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "sampling_strategy"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "Our first sampling plan picked the easiest spots, all near the paths. Those places are probably more compacted because people walk there, and that could affect what organisms we find."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Our first sampling plan picked the easiest spots, all near the paths. Those places are probably more compacted because people walk there, and that could affect what organisms we find.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "sampling_strategy"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "Good. Collect samples at a consistent depth and record moisture, because a wetter sample may contain more visible organisms even if the underlying community is similar."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Good. Collect samples at a consistent depth and record moisture, because a wetter sample may contain more visible organisms even if the underlying community is similar.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "sampling_strategy"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói A.",
+      "correct_answers": [
+        "I can obtain the garden's sampling permission and check which planted areas are protected. The fact that a place is open to visitors does not mean we can remove soil there."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I can obtain the garden's sampling permission and check which planted areas are protected. The fact that a place is open to visitors does not mean we can remove soil there.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "sampling_strategy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T02 và điền cụm bị thiếu: I had written that traffic reduces ____, but that seems premature. The garden receives compost and irrigation, while the roadside gets neither, so traffic is not the only difference.",
+      "correct_answers": [
+        "biodiversity"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I had written that traffic reduces biodiversity, but that seems premature. The garden receives compost and irrigation, while the roadside gets neither, so traffic is not the only difference.",
+      "explanation_vi": "Cụm nghe được là “biodiversity” (đa dạng sinh học); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "sampling_strategy"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T03 và điền cụm bị thiếu: Maybe we can frame it as a comparison of ____ under different management conditions. That would be less ambitious but would match the information we can actually collect.",
+      "correct_answers": [
+        "soil communities"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Maybe we can frame it as a comparison of soil communities under different management conditions. That would be less ambitious but would match the information we can actually collect.",
+      "explanation_vi": "Cụm nghe được là “soil communities” (quần xã sinh vật đất); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "sampling_strategy"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-013-V01",
+      "expression_en": "biodiversity",
+      "meaning_vi": "đa dạng sinh học",
+      "part_of_speech": "noun phrase",
+      "example_en": "I had written that traffic reduces biodiversity, but that seems premature. The garden receives compost and irrigation, while the roadside gets neither, so traffic is not the only difference.",
+      "example_vi": "Em viết giao thông làm giảm đa dạng sinh học, nhưng kết luận sớm. Vườn có phân ủ và tưới, còn ven đường không; giao thông không phải khác biệt duy nhất.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-013-V02",
+      "expression_en": "soil communities",
+      "meaning_vi": "quần xã sinh vật đất",
+      "part_of_speech": "noun phrase",
+      "example_en": "Maybe we can frame it as a comparison of soil communities under different management conditions. That would be less ambitious but would match the information we can actually collect.",
+      "example_vi": "Có thể đặt thành so sánh quần xã đất ở điều kiện quản lý khác nhau. Mục tiêu khiêm tốn hơn nhưng sát dữ liệu thực thu.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-013-V03",
+      "expression_en": "compacted",
+      "meaning_vi": "bị nén chặt",
+      "part_of_speech": "noun phrase",
+      "example_en": "Our first sampling plan picked the easiest spots, all near the paths. Those places are probably more compacted because people walk there, and that could affect what organisms we find.",
+      "example_vi": "Kế hoạch đầu chọn chỗ dễ đào sát lối đi. Đất ở đó có thể bị nén do người qua lại và ảnh hưởng sinh vật tìm thấy.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-013-V04",
+      "expression_en": "random numbers",
+      "meaning_vi": "số ngẫu nhiên",
+      "part_of_speech": "noun phrase",
+      "example_en": "We could mark a grid and choose positions using random numbers, within places where sampling is permitted. That would reduce the temptation to select only patches that look promising.",
+      "example_vi": "Ta có thể kẻ lưới và chọn vị trí bằng số ngẫu nhiên trong khu được phép, giảm xu hướng chọn mảng đất trông 'hứa hẹn'.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-013-V05",
+      "expression_en": "consistent depth",
+      "meaning_vi": "độ sâu lấy mẫu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Good. Collect samples at a consistent depth and record moisture, because a wetter sample may contain more visible organisms even if the underlying community is similar.",
+      "example_vi": "Tốt. Lấy ở độ sâu đồng nhất và ghi độ ẩm vì mẫu ướt có thể nhìn thấy nhiều sinh vật hơn dù quần xã tương tự.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-013-V06",
+      "expression_en": "identification guide",
+      "meaning_vi": "hướng dẫn nhận diện",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll test the organism identification guide on a small set before fieldwork. If we cannot reliably separate categories, it is better to use broader labels than invent precise species names.",
+      "example_vi": "Em sẽ thử hướng dẫn nhận diện trên mẫu nhỏ. Nếu khó phân biệt, dùng nhóm rộng hơn thay vì đặt tên loài chính xác giả tạo.",
+      "evidence_turn_id": "T09",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "100fc917aa548018d05d27ecbabf725be2814a98548c176e653ca960aadf87f7",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 387,
+    "estimated_audio_minutes_at_135_wpm": 2.87,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

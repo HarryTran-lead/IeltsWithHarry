@@ -35,6 +35,7 @@ const DictationQuickPractice = dynamic(() => import("@/features/listening/dictat
 const DictationReview = dynamic(() => import("@/features/listening/dictation-sessions").then((module) => module.DictationReview));
 const SkillLabPath = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.SkillLabPath));
 const SkillLabCheck = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.SkillLabCheck));
+const ListeningMock = dynamic(() => import("@/features/listening/listening-mock").then((module) => module.ListeningMock));
 const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage));
 const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage));
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden));
@@ -98,6 +99,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : skill === "speaking" && skillMode === "mock" ? (
           <SpeakingMock />
+        ) : skill === "listening" && skillMode === "mock" ? (
+          <ListeningMock />
         ) : skill === "listening" && skillMode === "youtube" ? (
           <YoutubeLab />
         ) : skill === "listening" && skillMode === "vocabulary" ? (

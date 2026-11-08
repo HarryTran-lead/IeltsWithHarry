@@ -41,7 +41,8 @@ describe("contextual dictation hints", () => {
 });
 
 describe("Skill Lab bank integrity (M16.2)", () => {
-  const all = catalog().map((entry) => lesson(entry.lesson_id));
+  // The M16.2 lessons (DICT-*) must stay exactly as they were; M49L lessons are checked below.
+  const all = catalog().filter((entry) => entry.lesson_id.startsWith("DICT-")).map((entry) => lesson(entry.lesson_id));
 
   it("keeps 300 lessons, 2702 turns and 2776 question IDs", () => {
     expect(all).toHaveLength(300);
@@ -50,7 +51,7 @@ describe("Skill Lab bank integrity (M16.2)", () => {
   });
 
   it("keeps all 300 lessons playable after publishing audio", () => {
-    expect(catalog().filter((entry) => entry.audio_ready)).toHaveLength(300);
+    expect(catalog().filter((entry) => entry.audio_ready && entry.lesson_id.startsWith("DICT-"))).toHaveLength(300);
   });
 
   it("points every question at existing evidence turns and valid options", () => {
@@ -250,5 +251,76 @@ describe("Skill Lab path", () => {
   it("starts the week on Monday", () => {
     expect(weekStart(new Date(2026, 10, 5, 15, 0)).getDay()).toBe(1);
     expect(weekStart(new Date(2026, 10, 8, 9, 0)).getDate()).toBe(2);
+  });
+});
+
+
+import { getStoredMock, gradeMock, mockCatalog, toPublicMock } from "../src/lib/listening-mocks/mocks";
+import { stageForLesson } from "../src/lib/dictation-skill-lab/stages";
+
+describe("M49L add-only import", () => {
+  const added = catalog().filter((entry) => !entry.lesson_id.startsWith("DICT-"));
+
+  it("adds 280 lessons beside the 300 existing ones and places them in stages", () => {
+    expect(added).toHaveLength(280);
+    expect(catalog()).toHaveLength(580);
+    expect(stageForLesson("FND2-001", "L1")).toBe("F1");
+    expect(stageForLesson("FND2-050", "L2")).toBe("F2");
+    expect(stageForLesson("S2-EXP-001", "L4")).toBe("S2");
+    expect(stageForLesson("S4-SIM-020", "L7")).toBe("S4");
+    expect(added.every((entry) => entry.stage === stageForLesson(entry.lesson_id, entry.level))).toBe(true);
+  });
+
+  it("keeps answers and transcripts out of the new lessons sent to the player", () => {
+    for (const entry of added) {
+      const stored = lesson(entry.lesson_id);
+      const json = JSON.stringify(toPublicLesson(stored));
+      expect(json, entry.lesson_id).not.toMatch(/correct_answers|explanation_vi|text_en|translation_vi|evidence_excerpt_en|location_key_server_only/);
+      for (const turn of stored.turns) if (turn.text_en.length > 30) expect(json.includes(turn.text_en), `${entry.lesson_id} ${turn.turn_id}`).toBe(false);
+    }
+  });
+
+  it("grades options shown as letters with text", () => {
+    const mcq = lesson("S1-SIM-001").questions.find((q) => q.type === "mcq" && q.options && typeof q.options[0] !== "string")!;
+    const option = mcq.options!.find((item) => typeof item !== "string" && item.text === mcq.correct_answers[0]) as { key: string; text: string };
+    expect(gradeLesson(lesson("S1-SIM-001"), { [mcq.question_id]: `${option.key} · ${option.text}` }, "ielts", [mcq.question_id])[0].correct).toBe(true);
+    const matching = lesson("S3-EXP-001").questions.find((q) => q.type === "matching")!;
+    const shown = (matching.options as string[]).find((item) => item.startsWith(matching.correct_answers[0]))!;
+    expect(gradeLesson(lesson("S3-EXP-001"), { [matching.question_id]: shown }, "ielts", [matching.question_id])[0].correct).toBe(true);
+  });
+
+  it("uses the trained word of a Foundation drill as a focus word", () => {
+    const stored = lesson("FND2-001");
+    expect(focusFor(stored, "T01")).toContain("ship");
+  });
+});
+
+describe("Listening mock tests", () => {
+  it("loads 20 tests of 4 parts and 40 questions", () => {
+    expect(mockCatalog()).toHaveLength(20);
+    const test = getStoredMock("M29-LISTENING-MOCK-01")!;
+    expect(test.parts).toHaveLength(4);
+    expect(test.parts.flatMap((part) => part.questions)).toHaveLength(40);
+  });
+
+  it("sends no transcript, answers or explanations before submission", () => {
+    for (const entry of mockCatalog()) {
+      const json = JSON.stringify(toPublicMock(getStoredMock(entry.test_id)!));
+      expect(json, entry.test_id).not.toMatch(/"(?:correct_answers|accepted_answers|explanation_vi|text_en|evidence_turn_ids|evidence_excerpt_en|spoken_answer)"/);
+      const stored = getStoredMock(entry.test_id)!;
+      for (const part of stored.parts) for (const turn of part.turns) if (turn.text_en.length > 40) expect(json.includes(turn.text_en), `${entry.test_id} ${turn.turn_id}`).toBe(false);
+    }
+  });
+
+  it("scores a perfect paper 40/40, with independent credit for choose-two questions", () => {
+    const test = getStoredMock("M29-LISTENING-MOCK-02")!;
+    const answers: Record<string, string> = {};
+    for (const part of test.parts) for (const q of part.questions) answers[String(q.test_question_number)] = (q.accepted_answers ?? q.correct_answers)[0];
+    expect(gradeMock(test, answers).filter((result) => result.correct)).toHaveLength(40);
+    const pair = test.parts.flatMap((part) => part.questions).filter((q) => q.question_type === "mcq_choose_two");
+    const swapped = { ...answers, [pair[0].test_question_number]: pair[1].correct_answers[0], [pair[1].test_question_number]: pair[0].correct_answers[0] };
+    expect(gradeMock(test, swapped).filter((result) => result.correct)).toHaveLength(40);
+    const oneWrong = { ...answers, [pair[1].test_question_number]: "A" === pair[0].correct_answers[0] ? "E" : "A" };
+    expect(gradeMock(test, oneWrong).filter((result) => result.correct).length).toBeGreaterThanOrEqual(38);
   });
 });

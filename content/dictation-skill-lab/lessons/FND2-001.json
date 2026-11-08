@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-001",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "Long /iː/ versus short /ɪ/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt long /iː/ versus short /ɪ/.",
+    "/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We saw a ship beyond the bridge.",
+      "translation_vi": "Chúng tôi thấy một con tàu phía bên kia cây cầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "ship",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We saw a sheep beyond the bridge.",
+      "translation_vi": "Chúng tôi thấy một con cừu phía bên kia cây cầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "sheep",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please take the seat by the door.",
+      "translation_vi": "Hãy ngồi vào chiếc ghế cạnh cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "seat",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please sit by the door.",
+      "translation_vi": "Hãy ngồi cạnh cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "sit",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "They leave the village at dawn.",
+      "translation_vi": "Họ rời làng lúc bình minh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "leave",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "They live in the village near the coast.",
+      "translation_vi": "Họ sống ở ngôi làng gần bờ biển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "live",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I feel better after the break.",
+      "translation_vi": "Tôi cảm thấy khỏe hơn sau giờ nghỉ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "feel",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Could you fill this bottle for me?",
+      "translation_vi": "Bạn đổ đầy chai này giúp tôi được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "fill",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Can you hear the beat of the drum?",
+      "translation_vi": "Bạn có nghe thấy nhịp trống không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "beat",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Only a bit of the cake remains.",
+      "translation_vi": "Chỉ còn lại một chút bánh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "long_i_short_i"
+      ],
+      "target_word": "bit",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We saw a ship beyond the bridge."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe ship / sheep (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Chúng tôi thấy một con tàu phía bên kia cây cầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "ship / sheep (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We saw a sheep beyond the bridge."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe ship / sheep (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Chúng tôi thấy một con cừu phía bên kia cây cầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "ship / sheep (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please take the seat by the door."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe seat / sit (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Hãy ngồi vào chiếc ghế cạnh cửa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "seat / sit (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please sit by the door."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe seat / sit (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Hãy ngồi cạnh cửa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "seat / sit (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "They leave the village at dawn."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe leave / live (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Họ rời làng lúc bình minh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "leave / live (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "They live in the village near the coast."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe leave / live (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Họ sống ở ngôi làng gần bờ biển.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "leave / live (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I feel better after the break."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe feel / fill (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Tôi cảm thấy khỏe hơn sau giờ nghỉ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "feel / fill (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Could you fill this bottle for me?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe feel / fill (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Bạn đổ đầy chai này giúp tôi được không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "feel / fill (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Can you hear the beat of the drum?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe beat / bit (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Bạn có nghe thấy nhịp trống không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "beat / bit (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Only a bit of the cake remains."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe beat / bit (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh). Nghĩa: Chỉ còn lại một chút bánh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "beat / bit (/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "ship"
+      ],
+      "options": [
+        "ship",
+        "sheep"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt ship và sheep. /iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "long_i_short_i"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "sit"
+      ],
+      "options": [
+        "sit",
+        "seat"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt seat và sit. /iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "long_i_short_i"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "leave"
+      ],
+      "options": [
+        "leave",
+        "live"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt leave và live. /iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "long_i_short_i"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "fill"
+      ],
+      "options": [
+        "fill",
+        "feel"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt feel và fill. /iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "long_i_short_i"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "beat"
+      ],
+      "options": [
+        "beat",
+        "bit"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt beat và bit. /iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "long_i_short_i"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "ship",
+      "pos": "target",
+      "meaning_vi": "tàu thủy",
+      "example_en": "We saw a ship beyond the bridge.",
+      "example_vi": "Chúng tôi thấy một con tàu phía bên kia cây cầu.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "long_i_short_i"
+    },
+    {
+      "term": "sheep",
+      "pos": "target",
+      "meaning_vi": "cừu",
+      "example_en": "We saw a sheep beyond the bridge.",
+      "example_vi": "Chúng tôi thấy một con cừu phía bên kia cây cầu.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "long_i_short_i"
+    },
+    {
+      "term": "seat",
+      "pos": "target",
+      "meaning_vi": "chỗ ngồi",
+      "example_en": "Please take the seat by the door.",
+      "example_vi": "Hãy ngồi vào chiếc ghế cạnh cửa.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "long_i_short_i"
+    },
+    {
+      "term": "sit",
+      "pos": "target",
+      "meaning_vi": "ngồi",
+      "example_en": "Please sit by the door.",
+      "example_vi": "Hãy ngồi cạnh cửa.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "long_i_short_i"
+    },
+    {
+      "term": "leave",
+      "pos": "target",
+      "meaning_vi": "rời đi",
+      "example_en": "They leave the village at dawn.",
+      "example_vi": "Họ rời làng lúc bình minh.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "long_i_short_i"
+    },
+    {
+      "term": "live",
+      "pos": "target",
+      "meaning_vi": "sống",
+      "example_en": "They live in the village near the coast.",
+      "example_vi": "Họ sống ở ngôi làng gần bờ biển.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "long_i_short_i"
+    },
+    {
+      "term": "feel",
+      "pos": "target",
+      "meaning_vi": "cảm thấy",
+      "example_en": "I feel better after the break.",
+      "example_vi": "Tôi cảm thấy khỏe hơn sau giờ nghỉ.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "long_i_short_i"
+    },
+    {
+      "term": "fill",
+      "pos": "target",
+      "meaning_vi": "đổ đầy",
+      "example_en": "Could you fill this bottle for me?",
+      "example_vi": "Bạn đổ đầy chai này giúp tôi được không?",
+      "source_turn_id": "T08",
+      "phoneme_focus": "long_i_short_i"
+    },
+    {
+      "term": "beat",
+      "pos": "target",
+      "meaning_vi": "nhịp",
+      "example_en": "Can you hear the beat of the drum?",
+      "example_vi": "Bạn có nghe thấy nhịp trống không?",
+      "source_turn_id": "T09",
+      "phoneme_focus": "long_i_short_i"
+    },
+    {
+      "term": "bit",
+      "pos": "target",
+      "meaning_vi": "một chút",
+      "example_en": "Only a bit of the cake remains.",
+      "example_vi": "Chỉ còn lại một chút bánh.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "long_i_short_i"
+    }
+  ],
+  "micro_skill_id": "long_i_short_i",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "ship",
+        "sheep"
+      ],
+      [
+        "seat",
+        "sit"
+      ],
+      [
+        "leave",
+        "live"
+      ],
+      [
+        "feel",
+        "fill"
+      ],
+      [
+        "beat",
+        "bit"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "/iː/ kéo dài hơn /ɪ/; phân biệt bằng âm nghe được, không chỉ ngữ cảnh"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "d04b5bfd04d9a02e2f109d9bc7d4cc43381ebc5fd13efba35b19e3b4454ca9ca",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe độ dài của nguyên âm và chất âm: /iː/ dài, căng; /ɪ/ ngắn, lỏng.",
+    "worked_contrasts": [
+      {
+        "contrast": "ship / sheep",
+        "meaning_vi": "tàu thủy / cừu",
+        "teacher_note_vi": "Nghe độ dài của nguyên âm và chất âm: /iː/ dài, căng; /ɪ/ ngắn, lỏng."
+      },
+      {
+        "contrast": "seat / sit",
+        "meaning_vi": "chỗ ngồi / ngồi",
+        "teacher_note_vi": "Nghe độ dài của nguyên âm và chất âm: /iː/ dài, căng; /ɪ/ ngắn, lỏng."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Chỉ nhìn chữ ee/ea mà không kiểm tra từ thật; phát lại quá nhiều rồi nhầm trí nhớ với năng lực nghe.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

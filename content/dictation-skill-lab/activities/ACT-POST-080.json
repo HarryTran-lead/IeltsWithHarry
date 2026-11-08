@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-080",
+  "activity_id": "ACT-POST-080",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 4,
+  "title": "Keeping Digital Culture Alive — Sửa lỗi sau bài thi",
+  "source_bank": "section_simulation",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M28",
+  "source_package": "English_Skill_Lab_Dictation_M28_Section_4_Exam_Simulation_20_Full_Content.zip",
+  "source_entry_path": "ESL_Dictation_M28_Section4_Exam_Simulation/01_LESSONS_SERVER_ONLY/S4-SIM-020.json",
+  "source_test_id": null,
+  "source_lesson_id": "S4-SIM-020",
+  "source_part_id": null,
+  "reuse_parent_id": "S4-SIM-020",
+  "source_question_id": "Q05",
+  "source_audio_id": "assessment/section_simulation/S4-SIM-020",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T03",
+    "T04",
+    "T05"
+  ],
+  "segment_timing": {
+    "T03": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "0faec013b132f9d64720f0c37d850719c871a2eb4906740955af517b98ca29dd"
+    },
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "293b7827a19d9cd0247971a0f8a6a9a54920fade686cf4afb7a9955133411654"
+    },
+    "T05": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "dddced6496142ed576118e25633c52d5ab018225b3193f293afb0f6342fceb49"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "c855c654a1e128eefefd3d5eb15f229654d00b23b3ae2eef060c45e22cbbec8c",
+  "anchor_turn_id": "T05",
+  "teacher_only_evidence_text_en": "Digital objects often depend on external services that no longer operate, such as a remote server used for shared interaction. They may also require input devices that are rare today, including unusual controllers or sensors. A modern copy can run yet fail to reproduce the original experience if these components are ignored. Conservators sometimes record video demonstrations and detailed descriptions from people who used the work while the complete system still functioned.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-080-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Some digital works depend on unavailable ____.",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "external services"
+      ],
+      "spoken_answer": "external services",
+      "word_limit": 2,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q05",
+      "source_question_type": "flow_chart_completion",
+      "play_turn_ids": [
+        "T05"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "teacher_explanation_vi": "Đáp án “external services” được nói trực tiếp trong phần bài giảng này. Dịch vụ bên ngoài và thiết bị điều khiển là phần quan trọng của tác phẩm số.",
+      "feedback_vi": "Đáp án gốc: external services. Đối chiếu với các lượt thoại T05; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-080-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q05",
+      "source_question_prompt_en": "Some digital works depend on unavailable ____.",
+      "choices": [
+        {
+          "key": "T05",
+          "excerpt_en": "…objects often depend on external services that no longer operate, such as a remote server used for shared interaction. They may also require input devices that are rare today, including unusual controllers or sensors. A modern co…",
+          "source_turn_id": "T05"
+        },
+        {
+          "key": "T03",
+          "excerpt_en": "…e original media. The team also records file metadata, including formats and other technical details needed to interpret the copy. This is different from simply keeping a folder of screenshots. An interactive work may depend on fi…",
+          "source_turn_id": "T03"
+        },
+        {
+          "key": "T04",
+          "excerpt_en": "…her is migration, converting files into a newer format. This approach may retain older interactions but can be difficult to maintain, while conversion may improve access at the cost of changing how a work looks or behaves. Conserv…",
+          "source_turn_id": "T04"
+        }
+      ],
+      "correct_answers": [
+        "T05"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_text_sha256": "dddced6496142ed576118e25633c52d5ab018225b3193f293afb0f6342fceb49",
+      "play_turn_ids": [
+        "T05",
+        "T03",
+        "T04"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T05. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-080-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "…Digital objects often  [____]  no longer operate, such as a remote server u…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "depend on external services that"
+      ],
+      "play_turn_ids": [
+        "T05"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "source_excerpt_exact": "depend on external services that",
+      "evidence_char_start": 22,
+      "evidence_char_end": 54,
+      "source_turn_sha256": "dddced6496142ed576118e25633c52d5ab018225b3193f293afb0f6342fceb49",
+      "feedback_vi": "Cụm nghe-chép chính xác là “depend on external services that”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "external services"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T05"
+    ],
+    "raw_question_evidence_excerpt_en": "Digital objects often depend on external services that no longer operate, such as a remote server used for shared interaction.",
+    "original_explanation_vi": "Đáp án “external services” được nói trực tiếp trong phần bài giảng này. Dịch vụ bên ngoài và thiết bị điều khiển là phần quan trọng của tác phẩm số."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_4",
+    "flow_chart_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q05",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "S4-SIM-020",
+    "gate_kind": "section_simulation_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

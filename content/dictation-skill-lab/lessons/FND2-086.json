@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-086",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Connected Speech",
+  "title": "Everyday contractions",
+  "learning_objectives_vi": [
+    "Nhận dạng dạng rút gọn trong câu đầy đủ và sắc thái phủ định.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I've already checked the address, so we can leave now.",
+      "translation_vi": "Tôi đã kiểm tra địa chỉ rồi nên chúng ta có thể đi ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "I've",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tôi đã",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "She's waiting near the entrance with the spare tickets.",
+      "translation_vi": "Cô ấy đang đợi gần lối vào cùng vé dự phòng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "She's",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "cô ấy đang",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We'd better call before the office closes for lunch.",
+      "translation_vi": "Tốt hơn chúng ta nên gọi trước khi văn phòng nghỉ trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "We'd",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chúng ta nên",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "They've changed the platform number since this morning.",
+      "translation_vi": "Họ đã đổi số sân ga từ sáng nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "They've",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "họ đã",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "It isn't the first door; try the one at the end.",
+      "translation_vi": "Không phải cửa đầu; hãy thử cửa cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "isn't",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "không phải",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "We'll meet outside the station if the weather stays dry.",
+      "translation_vi": "Chúng ta sẽ gặp ngoài ga nếu trời không mưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "We'll",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chúng ta sẽ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I haven't found the receipt, but I still have the box.",
+      "translation_vi": "Tôi chưa tìm thấy hóa đơn nhưng vẫn còn hộp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "haven't",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chưa",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "You shouldn't leave the window open overnight.",
+      "translation_vi": "Bạn không nên để cửa sổ mở suốt đêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "shouldn't",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "không nên",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "There'll be another bus in about twenty minutes.",
+      "translation_vi": "Sẽ có một xe buýt nữa sau khoảng hai mươi phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "There'll",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sẽ có",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I couldn't hear the announcement over the traffic noise.",
+      "translation_vi": "Tôi không nghe được thông báo vì tiếng xe cộ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "contractions",
+        "connected_speech"
+      ],
+      "target_value": "couldn't",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "không thể",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I've already checked the address, so we can leave now."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I've already checked the address, so we can leave now. Nghĩa: Tôi đã kiểm tra địa chỉ rồi nên chúng ta có thể đi ngay.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "She's waiting near the entrance with the spare tickets."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: She's waiting near the entrance with the spare tickets. Nghĩa: Cô ấy đang đợi gần lối vào cùng vé dự phòng.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We'd better call before the office closes for lunch."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We'd better call before the office closes for lunch. Nghĩa: Tốt hơn chúng ta nên gọi trước khi văn phòng nghỉ trưa.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "They've changed the platform number since this morning."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: They've changed the platform number since this morning. Nghĩa: Họ đã đổi số sân ga từ sáng nay.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "It isn't the first door; try the one at the end."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: It isn't the first door; try the one at the end. Nghĩa: Không phải cửa đầu; hãy thử cửa cuối.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We'll meet outside the station if the weather stays dry."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We'll meet outside the station if the weather stays dry. Nghĩa: Chúng ta sẽ gặp ngoài ga nếu trời không mưa.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I haven't found the receipt, but I still have the box."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I haven't found the receipt, but I still have the box. Nghĩa: Tôi chưa tìm thấy hóa đơn nhưng vẫn còn hộp.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "You shouldn't leave the window open overnight."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: You shouldn't leave the window open overnight. Nghĩa: Bạn không nên để cửa sổ mở suốt đêm.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "There'll be another bus in about twenty minutes."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: There'll be another bus in about twenty minutes. Nghĩa: Sẽ có một xe buýt nữa sau khoảng hai mươi phút.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I couldn't hear the announcement over the traffic noise."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I couldn't hear the announcement over the traffic noise. Nghĩa: Tôi không nghe được thông báo vì tiếng xe cộ.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "contractions"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Dạng rút gọn chỉ tương lai của chúng ta là gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "We'll"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: We'll (chúng ta sẽ). Dẫn chứng: We'll meet outside the station if the weather stays dry. Nghĩa: Chúng ta sẽ gặp ngoài ga nếu trời không mưa.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "contractions",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Dạng phủ định rút gọn với have là gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "haven't"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: haven't (chưa). Dẫn chứng: I haven't found the receipt, but I still have the box. Nghĩa: Tôi chưa tìm thấy hóa đơn nhưng vẫn còn hộp.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "contractions",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Dạng rút gọn diễn đạt không nên là gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "shouldn't"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: shouldn't (không nên). Dẫn chứng: You shouldn't leave the window open overnight. Nghĩa: Bạn không nên để cửa sổ mở suốt đêm.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "contractions",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Dạng rút gọn chỉ sẽ có là gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "There'll"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: There'll (sẽ có). Dẫn chứng: There'll be another bus in about twenty minutes. Nghĩa: Sẽ có một xe buýt nữa sau khoảng hai mươi phút.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "contractions",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Dạng phủ định quá khứ của can là gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "couldn't"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: couldn't (không thể). Dẫn chứng: I couldn't hear the announcement over the traffic noise. Nghĩa: Tôi không nghe được thông báo vì tiếng xe cộ.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "contractions",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "I've",
+      "pos": "contraction",
+      "meaning_vi": "tôi đã",
+      "example_en": "I've already checked the address, so we can leave now.",
+      "example_vi": "Tôi đã kiểm tra địa chỉ rồi nên chúng ta có thể đi ngay.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "She's",
+      "pos": "contraction",
+      "meaning_vi": "cô ấy đang",
+      "example_en": "She's waiting near the entrance with the spare tickets.",
+      "example_vi": "Cô ấy đang đợi gần lối vào cùng vé dự phòng.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "We'd",
+      "pos": "contraction",
+      "meaning_vi": "chúng ta nên",
+      "example_en": "We'd better call before the office closes for lunch.",
+      "example_vi": "Tốt hơn chúng ta nên gọi trước khi văn phòng nghỉ trưa.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "They've",
+      "pos": "contraction",
+      "meaning_vi": "họ đã",
+      "example_en": "They've changed the platform number since this morning.",
+      "example_vi": "Họ đã đổi số sân ga từ sáng nay.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "isn't",
+      "pos": "contraction",
+      "meaning_vi": "không phải",
+      "example_en": "It isn't the first door; try the one at the end.",
+      "example_vi": "Không phải cửa đầu; hãy thử cửa cuối.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "We'll",
+      "pos": "contraction",
+      "meaning_vi": "chúng ta sẽ",
+      "example_en": "We'll meet outside the station if the weather stays dry.",
+      "example_vi": "Chúng ta sẽ gặp ngoài ga nếu trời không mưa.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "contractions",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nhận dạng dạng rút gọn trong câu đầy đủ và sắc thái phủ định.",
+    "category": "connected_speech",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-086-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "2c729dbead2155db206ffd25f34a0543c3288f20b429dacfd853770de4acaa25",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nhận dạng dạng rút gọn trong câu đầy đủ và sắc thái phủ định.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "I've sent it to the office.",
+        "written_value": "I've / to the",
+        "teacher_note_vi": "Dạng chữ viết không thay đổi dù khi nói có thể nối âm hoặc nhược âm."
+      },
+      {
+        "spoken_example": "Could you pick it up after lunch?",
+        "written_value": "pick it up",
+        "teacher_note_vi": "Nhóm ba từ có thể nối âm; cần nghe và chép đúng thứ tự."
+      }
+    ],
+    "learning_steps": [
+      "Đọc lý thuyết, so sánh phần chữ viết với khả năng nối âm của giọng tự nhiên.",
+      "Nghe một lần, chép đúng chữ viết chuẩn, không tự thêm dạng phát âm khẩu ngữ.",
+      "Nghe lại đoạn khó sau khi nộp và đối chiếu transcript.",
+      "TTS phải được nghe duyệt: không chấm đạt nếu âm thực tế không có đặc điểm nhắm đến."
+    ],
+    "common_mistakes": [
+      "Không nghe được âm tiết ngắn của dạng rút gọn.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Đâu là ranh giới các từ và hình thức viết chuẩn của cụm nghe được?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": "Các dạng nối âm/nhược âm chỉ là mục tiêu; phải nghe kiểm TTS thật trước khi gắn nhãn học thành thạo."
+  }
+}

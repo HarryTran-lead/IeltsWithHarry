@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-008",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Public history methods",
+  "title": "When Communities Map Their Own History",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "Official maps usually record streets, buildings and property boundaries. They may miss the places residents remember: an informal market, a playground that disappeared or a route used during seasonal flooding. Public historians work with communities to document such experiences, but they must do so without treating every memory as an exact record.",
+      "meaning_vi": "Lịch sử cộng đồng kết hợp phỏng vấn, bản đồ ký ức và tài liệu lưu trữ.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "A resident may remember a railway crossing as the centre of neighbourhood life, while a municipal map shows only an ordinary road. Both records are meaningful, but they answer different questions. The historical project becomes richer when researchers accept that a place can have a social identity not captured by its official name.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "A common starting point is oral history, in which people describe events they experienced and researchers record their accounts. The interviewer's open questions help avoid steering a person toward a preferred answer. Asking 'Tell me about the square' can reveal unexpected memories, whereas asking 'Was the square always dangerous?' introduces an assumption. Researchers document the date and conditions of each interview so future readers understand how the evidence was collected.",
+      "meaning_vi": "Lịch sử truyền miệng cần câu hỏi mở và ghi chép điều kiện phỏng vấn.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "People may draw a memory map showing landmarks that mattered to them, even if the shapes and distances are not geographically exact. The team can then compare these drawings with archive photographs from different periods. A photograph might confirm that a market existed, but it may not reveal why residents valued it. Conversely, a shared memory can identify a site worth investigating even when no photograph survives. The methods complement rather than replace one another.",
+      "meaning_vi": "Bản đồ ký ức bổ sung ý nghĩa xã hội cho ảnh tư liệu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "Researchers have to consider selection bias when volunteers come mainly from one age group or neighbourhood. They also need informed consent before publishing personal stories, especially when an account mentions other people or sensitive events. Historical interest does not cancel an individual's right to control identifiable information. A project may therefore keep an interview in a restricted archive rather than placing the whole recording on a public website.",
+      "meaning_vi": "Thiên lệch chọn mẫu và sự đồng ý tự nguyện đều rất quan trọng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "When two memories disagree, investigators use source triangulation to compare them with independent records rather than immediately declaring one person wrong. A school register or old planning document may help establish a date, while interviewees explain how an event felt. Time can compress memories and blur sequences, so disagreement sometimes tells us more about different perspectives than about deception. The purpose is to construct a careful history with visible uncertainties.",
+      "meaning_vi": "Đối chiếu nhiều nguồn giúp giải quyết mâu thuẫn nhưng không xóa sự bất định.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "After research, the team may make a public digital atlas with selected stories and maps. It should include a clear correction process so residents can challenge a mistaken caption or request the removal of private information. Community heritage projects are not finished when a website goes live. They need continuing relationships, accurate attribution and procedures for repairing errors discovered later. The result should be something residents can question and improve.",
+      "meaning_vi": "Bản đồ số cộng đồng phải có cơ chế đính chính và bảo vệ quyền riêng tư.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "One danger is that digital presentation makes uncertain evidence look more authoritative than it is. A marker on an interactive map can appear precise even when the source description says 'somewhere near the old cinema'. Responsible projects signal approximate locations, give dates where possible and invite corrections. Accessibility is valuable only when paired with transparency.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "Community mapping is valuable precisely because it adds human experiences to formal geographic records. Its credibility, however, depends on ethical methods, independent checks and respect for uncertainties.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Recorded personal recollections are a form of ____.",
+      "correct_answers": [
+        "oral history"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A common starting point is oral history, in which people describe events they experienced and researchers record their accounts.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 27,
+        "end_char": 39
+      },
+      "explanation_vi": "Đáp án “oral history” được nói trực tiếp trong phần bài giảng này. Lịch sử truyền miệng cần câu hỏi mở và ghi chép điều kiện phỏng vấn.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Interviewers should begin with ____.",
+      "correct_answers": [
+        "open questions"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The interviewer's open questions help avoid steering a person toward a preferred answer.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 147,
+        "end_char": 161
+      },
+      "explanation_vi": "Đáp án “open questions” được nói trực tiếp trong phần bài giảng này. Lịch sử truyền miệng cần câu hỏi mở và ghi chép điều kiện phỏng vấn.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Residents can draw a personal ____.",
+      "correct_answers": [
+        "memory map"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "People may draw a memory map showing landmarks that mattered to them, even if the shapes and distances are not geographically exact.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 18,
+        "end_char": 28
+      },
+      "explanation_vi": "Đáp án “memory map” được nói trực tiếp trong phần bài giảng này. Bản đồ ký ức bổ sung ý nghĩa xã hội cho ảnh tư liệu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Old visual evidence may come from ____.",
+      "correct_answers": [
+        "archive photographs"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The team can then compare these drawings with archive photographs from different periods.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 179,
+        "end_char": 198
+      },
+      "explanation_vi": "Đáp án “archive photographs” được nói trực tiếp trong phần bài giảng này. Bản đồ ký ức bổ sung ý nghĩa xã hội cho ảnh tư liệu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "An unrepresentative group of contributors can create ____.",
+      "correct_answers": [
+        "selection bias"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Researchers have to consider selection bias when volunteers come mainly from one age group or neighbourhood.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 29,
+        "end_char": 43
+      },
+      "explanation_vi": "Đáp án “selection bias” được nói trực tiếp trong phần bài giảng này. Thiên lệch chọn mẫu và sự đồng ý tự nguyện đều rất quan trọng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Publication of personal accounts requires ____.",
+      "correct_answers": [
+        "informed consent"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "They also need informed consent before publishing personal stories, especially when an account mentions other people or sensitive events.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 124,
+        "end_char": 140
+      },
+      "explanation_vi": "Đáp án “informed consent” được nói trực tiếp trong phần bài giảng này. Thiên lệch chọn mẫu và sự đồng ý tự nguyện đều rất quan trọng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Comparing independent evidence is ____.",
+      "correct_answers": [
+        "source triangulation"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "When two memories disagree, investigators use source triangulation to compare them with independent records rather than immediately declaring one person wrong.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 46,
+        "end_char": 66
+      },
+      "explanation_vi": "Đáp án “source triangulation” được nói trực tiếp trong phần bài giảng này. Đối chiếu nhiều nguồn giúp giải quyết mâu thuẫn nhưng không xóa sự bất định.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "A dated administrative record might be a ____.",
+      "correct_answers": [
+        "planning document"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A school register or old planning document may help establish a date, while interviewees explain how an event felt.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 185,
+        "end_char": 202
+      },
+      "explanation_vi": "Đáp án “planning document” được nói trực tiếp trong phần bài giảng này. Đối chiếu nhiều nguồn giúp giải quyết mâu thuẫn nhưng không xóa sự bất định.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "A public interactive map may be called a ____.",
+      "correct_answers": [
+        "digital atlas"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "After research, the team may make a public digital atlas with selected stories and maps.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 43,
+        "end_char": 56
+      },
+      "explanation_vi": "Đáp án “digital atlas” được nói trực tiếp trong phần bài giảng này. Bản đồ số cộng đồng phải có cơ chế đính chính và bảo vệ quyền riêng tư.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "The project needs a clear ____ for mistakes.",
+      "correct_answers": [
+        "correction process"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "It should include a clear correction process so residents can challenge a mistaken caption or request the removal of private information.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 115,
+        "end_char": 133
+      },
+      "explanation_vi": "Đáp án “correction process” được nói trực tiếp trong phần bài giảng này. Bản đồ số cộng đồng phải có cơ chế đính chính và bảo vệ quyền riêng tư.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "title_en": "When Communities Map Their Own History — Notes",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "title_en": "When Communities Map Their Own History — Summary",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "summary_completion",
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Lịch sử cộng đồng kết hợp phỏng vấn, bản đồ ký ức và tài liệu lưu trữ.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "c4fa0d4b9fc5dba931dde802f6f557226c291b2717cbe3a795ab3e533d8575bc",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.86,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

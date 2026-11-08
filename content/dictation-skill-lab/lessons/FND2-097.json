@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-097",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M20 – connected_speech",
+  "title": "Natural reductions and rapid responses",
+  "learning_objectives_vi": [
+    "Hiểu đáp lời ngắn và cấu trúc tự nhiên; không giả định TTS đã tạo nhược âm.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I'll get back to you as soon as I have the figures.",
+      "translation_vi": "Tôi sẽ phản hồi ngay khi có các con số.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "get back to you",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "phản hồi bạn",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We have to head out before the roads get busy.",
+      "translation_vi": "Chúng ta phải lên đường trước khi đường đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "head out",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "lên đường",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I need a minute to figure out the new code.",
+      "translation_vi": "Tôi cần một phút để tìm hiểu mã mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "figure out",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tìm ra hoặc hiểu ra",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "That sounds good, but let me check the date.",
+      "translation_vi": "Nghe ổn đấy nhưng để tôi kiểm tra ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "let me check",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "để tôi kiểm tra",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Could you hang on while I find your booking?",
+      "translation_vi": "Bạn vui lòng chờ máy trong lúc tôi tìm đặt chỗ nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "hang on",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đợi một chút",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I was about to step outside when the courier arrived.",
+      "translation_vi": "Tôi đang chuẩn bị bước ra ngoài thì người giao hàng tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "about to step outside",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sắp bước ra ngoài",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "It turns out the office closes at half past four.",
+      "translation_vi": "Hóa ra văn phòng đóng cửa lúc bốn giờ rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "turns out",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "hóa ra",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "We'd better make sure the address is correct.",
+      "translation_vi": "Tốt hơn chúng ta nên chắc chắn địa chỉ đúng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "make sure",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bảo đảm rằng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I don't think we've got enough time for another stop.",
+      "translation_vi": "Tôi không nghĩ chúng ta đủ thời gian cho một điểm dừng nữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "enough time",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đủ thời gian",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Just give me a second to bring up the document.",
+      "translation_vi": "Cho tôi một giây để mở tài liệu lên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rapid_responses",
+        "connected_speech"
+      ],
+      "target_value": "bring up the document",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mở tài liệu lên",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I'll get back to you as soon as I have the figures."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: I'll get back to you as soon as I have the figures. Nghĩa: Tôi sẽ phản hồi ngay khi có các con số.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We have to head out before the roads get busy."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: We have to head out before the roads get busy. Nghĩa: Chúng ta phải lên đường trước khi đường đông.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I need a minute to figure out the new code."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: I need a minute to figure out the new code. Nghĩa: Tôi cần một phút để tìm hiểu mã mới.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "That sounds good, but let me check the date."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: That sounds good, but let me check the date. Nghĩa: Nghe ổn đấy nhưng để tôi kiểm tra ngày.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could you hang on while I find your booking?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Could you hang on while I find your booking? Nghĩa: Bạn vui lòng chờ máy trong lúc tôi tìm đặt chỗ nhé?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I was about to step outside when the courier arrived."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: I was about to step outside when the courier arrived. Nghĩa: Tôi đang chuẩn bị bước ra ngoài thì người giao hàng tới.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "It turns out the office closes at half past four."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: It turns out the office closes at half past four. Nghĩa: Hóa ra văn phòng đóng cửa lúc bốn giờ rưỡi.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We'd better make sure the address is correct."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: We'd better make sure the address is correct. Nghĩa: Tốt hơn chúng ta nên chắc chắn địa chỉ đúng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I don't think we've got enough time for another stop."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: I don't think we've got enough time for another stop. Nghĩa: Tôi không nghĩ chúng ta đủ thời gian cho một điểm dừng nữa.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Just give me a second to bring up the document."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: Just give me a second to bring up the document. Nghĩa: Cho tôi một giây để mở tài liệu lên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “sắp bước ra ngoài”.",
+      "correct_answers": [
+        "about to step outside"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “about to step outside” trong câu: I was about to step outside when the courier arrived. Nghĩa: Tôi đang chuẩn bị bước ra ngoài thì người giao hàng tới.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 6,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “hóa ra”.",
+      "correct_answers": [
+        "turns out"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “turns out” trong câu: It turns out the office closes at half past four. Nghĩa: Hóa ra văn phòng đóng cửa lúc bốn giờ rưỡi.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “bảo đảm rằng”.",
+      "correct_answers": [
+        "make sure"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “make sure” trong câu: We'd better make sure the address is correct. Nghĩa: Tốt hơn chúng ta nên chắc chắn địa chỉ đúng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “đủ thời gian”.",
+      "correct_answers": [
+        "enough time"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “enough time” trong câu: I don't think we've got enough time for another stop. Nghĩa: Tôi không nghĩ chúng ta đủ thời gian cho một điểm dừng nữa.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “mở tài liệu lên”.",
+      "correct_answers": [
+        "bring up the document"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “bring up the document” trong câu: Just give me a second to bring up the document. Nghĩa: Cho tôi một giây để mở tài liệu lên.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 6,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "get back to you",
+      "pos": "phrase",
+      "meaning_vi": "phản hồi bạn",
+      "example_en": "I'll get back to you as soon as I have the figures.",
+      "example_vi": "Tôi sẽ phản hồi ngay khi có các con số.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "head out",
+      "pos": "phrase",
+      "meaning_vi": "lên đường",
+      "example_en": "We have to head out before the roads get busy.",
+      "example_vi": "Chúng ta phải lên đường trước khi đường đông.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "figure out",
+      "pos": "phrase",
+      "meaning_vi": "tìm ra hoặc hiểu ra",
+      "example_en": "I need a minute to figure out the new code.",
+      "example_vi": "Tôi cần một phút để tìm hiểu mã mới.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "let me check",
+      "pos": "phrase",
+      "meaning_vi": "để tôi kiểm tra",
+      "example_en": "That sounds good, but let me check the date.",
+      "example_vi": "Nghe ổn đấy nhưng để tôi kiểm tra ngày.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "hang on",
+      "pos": "phrase",
+      "meaning_vi": "đợi một chút",
+      "example_en": "Could you hang on while I find your booking?",
+      "example_vi": "Bạn vui lòng chờ máy trong lúc tôi tìm đặt chỗ nhé?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "about to step outside",
+      "pos": "phrase",
+      "meaning_vi": "sắp bước ra ngoài",
+      "example_en": "I was about to step outside when the courier arrived.",
+      "example_vi": "Tôi đang chuẩn bị bước ra ngoài thì người giao hàng tới.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "rapid_responses",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "connected_speech",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-097-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "58f575fa34f7ceb964d1c98c65056b2f4b6f75d4b239ed78042506dde99c56ad"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Hiểu đáp lời ngắn và cấu trúc tự nhiên; không giả định TTS đã tạo nhược âm.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "Could you take it away?",
+        "written_value": "take it away",
+        "teacher_note_vi": "Khi phụ âm đứng trước nguyên âm, các tiếng có thể nối nhưng chữ viết vẫn tách từ."
+      },
+      {
+        "spoken_example": "There is a note on the desk.",
+        "written_value": "a note on the desk",
+        "teacher_note_vi": "Từ chức năng không nhấn vẫn cần chép đầy đủ; kiểm tra thực tế cách đọc qua audio."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": true,
+    "phonetic_note": "Các biến thể connected speech khác nhau theo giọng, ngữ cảnh và tốc độ; cần giáo viên nghe file thật."
+  }
+}

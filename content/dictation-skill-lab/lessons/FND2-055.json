@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-055",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Spelling",
+  "title": "Mixed forms: names, email and codes",
+  "learning_objectives_vi": [
+    "Nghe được mixed forms: names, email and codes trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (mixed_forms).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The guest's surname is Fenwick, F, E, N, W, I, C, K.",
+      "translation_vi": "Họ vị khách là Fenwick, đánh vần F–E–N–W–I–C–K.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "name"
+      ],
+      "target_value": "Fenwick",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The booking code is R, seven, A, two.",
+      "translation_vi": "Mã đặt chỗ là R–7–A–2.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "alphanumeric"
+      ],
+      "target_value": "R7A2",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please use contact dot south at example dot org.",
+      "translation_vi": "Vui lòng dùng contact.south@example.org.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "email"
+      ],
+      "target_value": "contact.south@example.org",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The first name on the badge is Leah, L, E, A, H.",
+      "translation_vi": "Tên trên thẻ là Leah, đánh vần L–E–A–H.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "name"
+      ],
+      "target_value": "Leah",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The document reference is K, four, M, nine.",
+      "translation_vi": "Mã tài liệu là K–4–M–9.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "alphanumeric"
+      ],
+      "target_value": "K4M9",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The contact's surname is Hollis, H, O, double L, I, S.",
+      "translation_vi": "Họ người liên hệ là Hollis, đánh vần H–O–L–L–I–S.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "name"
+      ],
+      "target_value": "Hollis",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Our email is team underscore blue at example dot net.",
+      "translation_vi": "Email của chúng tôi là team_blue@example.net.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "email"
+      ],
+      "target_value": "team_blue@example.net",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The parcel code is Q, five, T, zero.",
+      "translation_vi": "Mã bưu kiện là Q–5–T–0.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "alphanumeric"
+      ],
+      "target_value": "Q5T0",
+      "target_kind": "alphanumeric",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please enter the family name Pritchard, P, R, I, T, C, H, A, R, D.",
+      "translation_vi": "Vui lòng nhập họ Pritchard, đánh vần P–R–I–T–C–H–A–R–D.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "name"
+      ],
+      "target_value": "Pritchard",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The online address is clinic dot example dot com.",
+      "translation_vi": "Địa chỉ trực tuyến là clinic.example.com.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "mixed_forms",
+        "domain"
+      ],
+      "target_value": "clinic.example.com",
+      "target_kind": "domain",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The guest's surname is Fenwick, F, E, N, W, I, C, K."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The guest's surname is Fenwick, F, E, N, W, I, C, K. Nghĩa: Họ vị khách là Fenwick, đánh vần F–E–N–W–I–C–K. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The booking code is R, seven, A, two."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: The booking code is R, seven, A, two. Nghĩa: Mã đặt chỗ là R–7–A–2. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please use contact dot south at example dot org."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Please use contact dot south at example dot org. Nghĩa: Vui lòng dùng contact.south@example.org. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The first name on the badge is Leah, L, E, A, H."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The first name on the badge is Leah, L, E, A, H. Nghĩa: Tên trên thẻ là Leah, đánh vần L–E–A–H. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The document reference is K, four, M, nine."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The document reference is K, four, M, nine. Nghĩa: Mã tài liệu là K–4–M–9. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The contact's surname is Hollis, H, O, double L, I, S."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The contact's surname is Hollis, H, O, double L, I, S. Nghĩa: Họ người liên hệ là Hollis, đánh vần H–O–L–L–I–S. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our email is team underscore blue at example dot net."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Our email is team underscore blue at example dot net. Nghĩa: Email của chúng tôi là team_blue@example.net. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The parcel code is Q, five, T, zero."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The parcel code is Q, five, T, zero. Nghĩa: Mã bưu kiện là Q–5–T–0. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please enter the family name Pritchard, P, R, I, T, C, H, A, R, D."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Please enter the family name Pritchard, P, R, I, T, C, H, A, R, D. Nghĩa: Vui lòng nhập họ Pritchard, đánh vần P–R–I–T–C–H–A–R–D. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The online address is clinic dot example dot com."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The online address is clinic dot example dot com. Nghĩa: Địa chỉ trực tuyến là clinic.example.com. Lưu ý: Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_forms"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Hollis"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Hollis. Nội dung: Họ người liên hệ là Hollis, đánh vần H–O–L–L–I–S.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "mixed_forms",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập địa chỉ email được xác nhận trong câu.",
+      "correct_answers": [
+        "team_blue@example.net"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Dấu chấm, gạch dưới và gạch nối phải chính xác. Đáp án: team_blue@example.net. Nội dung: Email của chúng tôi là team_blue@example.net.",
+      "scoring_policy": "canonical_email_server",
+      "target_kind": "email",
+      "question_tags": [
+        "short_answer",
+        "mixed_forms",
+        "email"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập mã chữ-số được xác nhận trong câu.",
+      "correct_answers": [
+        "Q5T0"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: Q5T0. Nội dung: Mã bưu kiện là Q–5–T–0.",
+      "scoring_policy": "canonical_alphanumeric_server",
+      "target_kind": "alphanumeric",
+      "question_tags": [
+        "short_answer",
+        "mixed_forms",
+        "alphanumeric"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Pritchard"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Pritchard. Nội dung: Vui lòng nhập họ Pritchard, đánh vần P–R–I–T–C–H–A–R–D.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "mixed_forms",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập tên miền được xác nhận trong câu.",
+      "correct_answers": [
+        "clinic.example.com"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: clinic.example.com. Nội dung: Địa chỉ trực tuyến là clinic.example.com.",
+      "scoring_policy": "canonical_domain_server",
+      "target_kind": "domain",
+      "question_tags": [
+        "short_answer",
+        "mixed_forms",
+        "domain"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "reference",
+      "pos": "n",
+      "meaning_vi": "mã tham chiếu",
+      "example_en": "The document reference is K, four, M, nine.",
+      "example_vi": "Mã tài liệu là K–4–M–9.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "access code",
+      "pos": "n",
+      "meaning_vi": "mã truy cập",
+      "example_en": "Please enter the access code before opening the locker.",
+      "example_vi": "Vui lòng nhập mã truy cập trước khi mở tủ.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "digit",
+      "pos": "n",
+      "meaning_vi": "chữ số",
+      "example_en": "Do not omit the first digit of the code.",
+      "example_vi": "Đừng bỏ chữ số đầu tiên của mã.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "label",
+      "pos": "n",
+      "meaning_vi": "nhãn",
+      "example_en": "Check the label before sending the parcel.",
+      "example_vi": "Kiểm tra nhãn trước khi gửi bưu kiện.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "extension",
+      "pos": "n",
+      "meaning_vi": "số máy lẻ",
+      "example_en": "Dial extension two four six after the main number.",
+      "example_vi": "Bấm số máy lẻ 246 sau số chính.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "confirm",
+      "pos": "v",
+      "meaning_vi": "xác nhận",
+      "example_en": "Please confirm the final booking number.",
+      "example_vi": "Vui lòng xác nhận mã đặt chỗ cuối cùng.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "mixed_forms",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+    "category": "spelling",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-055-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "47a2bd3bfbef746efafccc8b8067fa0f7733f57ecac03b184434646d3d7654cf",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Kết hợp các định dạng trong biểu mẫu; biết lúc nào đang nghe tên, mã hoặc email.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "R, nine, B",
+        "written_value": "R9B",
+        "teacher_note_vi": "Giữ kiểu chữ-số hỗn hợp."
+      },
+      {
+        "spoken_example": "a dot b at example dot com",
+        "written_value": "a.b@example.com",
+        "teacher_note_vi": "Ghi đúng dấu chấm trong email."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn quy tắc nhận diện chữ cái và dấu câu, đọc hai ví dụ.",
+      "Nghe chuỗi được đánh vần, ghi lại từng ký tự ngay khi nghe.",
+      "Chỉ xem transcript/đáp án sau khi nộp, rà từng chữ/dấu nối.",
+      "Dùng hai câu chưa gặp để kiểm tra trong một lần nghe với giọng khác."
+    ],
+    "common_mistakes": [
+      "Suy đoán cách viết tên theo phát âm thay vì ký tự đánh vần.",
+      "Bỏ chữ lặp, dấu gạch nối, dấu nháy hoặc số 0 trong mã."
+    ],
+    "before_audio_question": "Người nói đang đọc tên, mã chữ-số, email, tên miền hay postcode? Có từ double, hyphen, underscore không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

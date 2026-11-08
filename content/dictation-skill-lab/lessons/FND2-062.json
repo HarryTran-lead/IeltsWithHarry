@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-062",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Dates",
+  "title": "Opening days and public events",
+  "learning_objectives_vi": [
+    "Phân biệt ngày bán vé, mở cửa, đóng cửa, xem trước và tham quan.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The art fair opens on the fifth of April and closes on Sunday.",
+      "translation_vi": "Hội chợ nghệ thuật mở cửa ngày 5 tháng Tư và kết thúc Chủ nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Sunday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "Chủ nhật",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Tickets go on sale on Monday, two weeks before the concert.",
+      "translation_vi": "Vé bắt đầu được bán vào thứ Hai, hai tuần trước buổi hòa nhạc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Monday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Hai",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The museum will remain closed until Thursday because of maintenance.",
+      "translation_vi": "Bảo tàng vẫn đóng cửa đến thứ Năm vì bảo trì.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Thursday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Năm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The street market starts at dawn on Saturday and finishes before lunch.",
+      "translation_vi": "Chợ đường phố bắt đầu lúc rạng sáng thứ Bảy và kết thúc trước bữa trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Saturday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Bảy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our exhibition opens on Friday, although the preview is on Wednesday.",
+      "translation_vi": "Triển lãm mở cửa thứ Sáu dù buổi xem trước diễn ra thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Friday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Sáu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The swimming pool reopens on Tuesday after its safety inspection.",
+      "translation_vi": "Hồ bơi mở cửa lại thứ Ba sau đợt kiểm tra an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Tuesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Ba",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please note that the library closes early on Thursday this month.",
+      "translation_vi": "Xin lưu ý thư viện đóng cửa sớm vào thứ Năm trong tháng này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Thursday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Năm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Visitors can enter on Sunday, but the guided tour is only on Saturday.",
+      "translation_vi": "Khách có thể vào Chủ nhật, nhưng chuyến tham quan có hướng dẫn chỉ có vào thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Saturday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Bảy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The festival was due to start on Monday; the opening is now on Tuesday.",
+      "translation_vi": "Lễ hội dự định bắt đầu thứ Hai; lễ khai mạc nay là thứ Ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Tuesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Ba",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Free admission ends on Wednesday, so book before the weekend.",
+      "translation_vi": "Chính sách vào cửa miễn phí kết thúc thứ Tư, vì vậy hãy đặt trước cuối tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "event_calendar",
+        "dates"
+      ],
+      "target_value": "Wednesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Tư",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The art fair opens on the fifth of April and closes on Sunday."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The art fair opens on the fifth of April and closes on Sunday. Nghĩa: Hội chợ nghệ thuật mở cửa ngày 5 tháng Tư và kết thúc Chủ nhật.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Tickets go on sale on Monday, two weeks before the concert."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Tickets go on sale on Monday, two weeks before the concert. Nghĩa: Vé bắt đầu được bán vào thứ Hai, hai tuần trước buổi hòa nhạc.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The museum will remain closed until Thursday because of maintenance."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The museum will remain closed until Thursday because of maintenance. Nghĩa: Bảo tàng vẫn đóng cửa đến thứ Năm vì bảo trì.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The street market starts at dawn on Saturday and finishes before lunch."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The street market starts at dawn on Saturday and finishes before lunch. Nghĩa: Chợ đường phố bắt đầu lúc rạng sáng thứ Bảy và kết thúc trước bữa trưa.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Our exhibition opens on Friday, although the preview is on Wednesday."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Our exhibition opens on Friday, although the preview is on Wednesday. Nghĩa: Triển lãm mở cửa thứ Sáu dù buổi xem trước diễn ra thứ Tư.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The swimming pool reopens on Tuesday after its safety inspection."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The swimming pool reopens on Tuesday after its safety inspection. Nghĩa: Hồ bơi mở cửa lại thứ Ba sau đợt kiểm tra an toàn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please note that the library closes early on Thursday this month."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please note that the library closes early on Thursday this month. Nghĩa: Xin lưu ý thư viện đóng cửa sớm vào thứ Năm trong tháng này.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Visitors can enter on Sunday, but the guided tour is only on Saturday."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Visitors can enter on Sunday, but the guided tour is only on Saturday. Nghĩa: Khách có thể vào Chủ nhật, nhưng chuyến tham quan có hướng dẫn chỉ có vào thứ Bảy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The festival was due to start on Monday; the opening is now on Tuesday."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The festival was due to start on Monday; the opening is now on Tuesday. Nghĩa: Lễ hội dự định bắt đầu thứ Hai; lễ khai mạc nay là thứ Ba.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Free admission ends on Wednesday, so book before the weekend."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Free admission ends on Wednesday, so book before the weekend. Nghĩa: Chính sách vào cửa miễn phí kết thúc thứ Tư, vì vậy hãy đặt trước cuối tuần.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "event_calendar"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Hồ bơi mở cửa lại vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: Tuesday (thứ Ba). Dẫn chứng: The swimming pool reopens on Tuesday after its safety inspection. Nghĩa: Hồ bơi mở cửa lại thứ Ba sau đợt kiểm tra an toàn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "event_calendar",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Thư viện đóng cửa sớm vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: Thursday (thứ Năm). Dẫn chứng: Please note that the library closes early on Thursday this month. Nghĩa: Xin lưu ý thư viện đóng cửa sớm vào thứ Năm trong tháng này.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "event_calendar",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Chuyến tham quan có hướng dẫn vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: Saturday (thứ Bảy). Dẫn chứng: Visitors can enter on Sunday, but the guided tour is only on Saturday. Nghĩa: Khách có thể vào Chủ nhật, nhưng chuyến tham quan có hướng dẫn chỉ có vào thứ Bảy.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "event_calendar",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Lễ khai mạc mới diễn ra vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: Tuesday (thứ Ba). Dẫn chứng: The festival was due to start on Monday; the opening is now on Tuesday. Nghĩa: Lễ hội dự định bắt đầu thứ Hai; lễ khai mạc nay là thứ Ba.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "event_calendar",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Vào cửa miễn phí kết thúc vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: Wednesday (thứ Tư). Dẫn chứng: Free admission ends on Wednesday, so book before the weekend. Nghĩa: Chính sách vào cửa miễn phí kết thúc thứ Tư, vì vậy hãy đặt trước cuối tuần.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "event_calendar",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Sunday",
+      "pos": "time expression",
+      "meaning_vi": "Chủ nhật",
+      "example_en": "The art fair opens on the fifth of April and closes on Sunday.",
+      "example_vi": "Hội chợ nghệ thuật mở cửa ngày 5 tháng Tư và kết thúc Chủ nhật.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Monday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Hai",
+      "example_en": "Tickets go on sale on Monday, two weeks before the concert.",
+      "example_vi": "Vé bắt đầu được bán vào thứ Hai, hai tuần trước buổi hòa nhạc.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Thursday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Năm",
+      "example_en": "The museum will remain closed until Thursday because of maintenance.",
+      "example_vi": "Bảo tàng vẫn đóng cửa đến thứ Năm vì bảo trì.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Saturday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Bảy",
+      "example_en": "The street market starts at dawn on Saturday and finishes before lunch.",
+      "example_vi": "Chợ đường phố bắt đầu lúc rạng sáng thứ Bảy và kết thúc trước bữa trưa.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Friday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Sáu",
+      "example_en": "Our exhibition opens on Friday, although the preview is on Wednesday.",
+      "example_vi": "Triển lãm mở cửa thứ Sáu dù buổi xem trước diễn ra thứ Tư.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Tuesday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Ba",
+      "example_en": "The swimming pool reopens on Tuesday after its safety inspection.",
+      "example_vi": "Hồ bơi mở cửa lại thứ Ba sau đợt kiểm tra an toàn.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "event_calendar",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Phân biệt ngày bán vé, mở cửa, đóng cửa, xem trước và tham quan.",
+    "category": "dates",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-062-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "42de6121fdd801876576914207fc9af3bbe15544594a5d2adfb8c6ba169bc16f",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Phân biệt ngày bán vé, mở cửa, đóng cửa, xem trước và tham quan.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The booking was for Tuesday, but it is now on Sunday.",
+        "written_value": "Sunday",
+        "teacher_note_vi": "Từ but/now báo hiệu ngày cuối cùng đã thay đổi."
+      },
+      {
+        "spoken_example": "The early appointment is at nine; the class begins at ten.",
+        "written_value": "ten",
+        "teacher_note_vi": "Xác định đang được hỏi giờ hẹn hay giờ lớp học, không lấy số xuất hiện đầu."
+      }
+    ],
+    "learning_steps": [
+      "Đọc ví dụ hướng dẫn phân biệt lịch cũ và lịch chốt.",
+      "Nghe một lần, khoanh cụm chỉ lịch cuối cùng hoặc đối tượng được hỏi.",
+      "Làm Dictation và câu hỏi rút thông tin; chỉ mở transcript sau khi nộp.",
+      "Kiểm tra chuyển giao bằng hai câu audio chưa gặp, lần nghe đầu."
+    ],
+    "common_mistakes": [
+      "Nhầm ngày diễn ra sự kiện với ngày bán vé.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Đâu là thông tin cuối cùng, và nó thuộc mốc thời gian nào?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

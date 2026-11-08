@@ -1,0 +1,833 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-008",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Using a railway station left-luggage service",
+  "title": "Station Luggage Storage Enquiry",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "travel_services",
+    "opening_hours",
+    "prices",
+    "safety",
+    "payment"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Station storage assistant",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Traveller",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Central Station luggage desk. Emma speaking. Are you calling about lost property, or would you like to leave a bag with us?",
+      "translation_vi": "Quầy hành lý ga Trung tâm, Emma đây. Anh gọi về đồ thất lạc hay muốn gửi hành lý?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'd like to leave a suitcase. My train arrives early tomorrow, but my hotel won't let me check in until the afternoon.",
+      "translation_vi": "Tôi muốn gửi va li. Tàu đến sớm ngày mai nhưng khách sạn chiều mới cho nhận phòng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "No problem. The service is called Left Luggage. Lost property is handled by the railway company upstairs, so you've reached the right desk.",
+      "translation_vi": "Không vấn đề. Dịch vụ tên Left Luggage. Đồ thất lạc do công ty đường sắt tầng trên xử lý, anh gọi đúng quầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Good. I'll have one large suitcase and a small backpack. Do both count as separate items, or can I pack them together?",
+      "translation_vi": "Tốt. Tôi có một va li lớn và ba lô nhỏ. Tính riêng hay gộp được?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Each stored piece counts separately. If the backpack fits inside the suitcase, we'll charge only for the case you hand over.",
+      "translation_vi": "Mỗi món gửi tính riêng. Nếu ba lô nằm trong va li, chỉ tính va li anh giao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I'll put the backpack inside, then. The case is quite heavy, though; is there a maximum weight?",
+      "translation_vi": "Tôi sẽ để ba lô trong va li. Nhưng va li khá nặng, có giới hạn cân nặng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We accept cases up to twenty kilograms. Anything heavier must go to the staffed parcel counter near platform eight.",
+      "translation_vi": "Chúng tôi nhận va li tối đa hai mươi kg. Nặng hơn phải tới quầy kiện hàng có nhân viên gần sân ga tám.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Mine is about eighteen kilograms, so that should be fine. When does the luggage desk open in the morning?",
+      "translation_vi": "Va li khoảng mười tám kg, vậy được. Quầy mở cửa buổi sáng lúc nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We open at seven fifteen. The website still says seven, but that was before the revised winter timetable.",
+      "translation_vi": "Chúng tôi mở bảy giờ mười lăm. Website còn ghi bảy giờ, đó là lịch mùa đông cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "My train arrives at seven twenty-five, so I won't have to wait long. Is there an entrance closer than the main station hall?",
+      "translation_vi": "Tàu đến bảy giờ hai mươi lăm, không phải chờ lâu. Có lối vào gần hơn sảnh chính không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The desk is beside the north exit. It's just beyond the ticket machines; avoid the south tunnel because it's being repaired.",
+      "translation_vi": "Quầy cạnh cửa ra phía bắc, ngay sau máy bán vé. Tránh đường hầm phía nam đang sửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "That will save time. How much is the charge if I leave the case until about four in the afternoon?",
+      "translation_vi": "Tiết kiệm thời gian. Phí bao nhiêu nếu tôi gửi tới khoảng bốn giờ chiều?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "For up to twelve hours, the price is eleven pounds. The shorter four-hour option is six pounds, but it wouldn't cover your visit.",
+      "translation_vi": "Tối đa mười hai giờ giá mười một bảng. Gói bốn giờ là sáu bảng nhưng không đủ chuyến đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "I'll pay for twelve hours. Is there a printed ticket to collect the bag, or do you send a code to my phone?",
+      "translation_vi": "Tôi chọn mười hai giờ. Có phiếu giấy nhận va li hay mã gửi điện thoại?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We issue a printed receipt with a collection number. Please keep it, as staff need to see it when you return.",
+      "translation_vi": "Chúng tôi cấp biên lai in có mã nhận. Hãy giữ vì nhân viên cần xem khi quay lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I sometimes lose small slips of paper. Would a photograph of the receipt work if the original disappears?",
+      "translation_vi": "Tôi hay làm mất giấy nhỏ. Chụp ảnh biên lai có dùng được nếu mất bản gốc không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "A photo alone isn't enough. We would also need an identity document and a description of the case before releasing it.",
+      "translation_vi": "Chỉ ảnh là không đủ. Chúng tôi cần thêm giấy tờ tùy thân và mô tả va li trước khi trả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "Understood. My suitcase has a red strap. I'll keep the receipt safely inside my jacket instead of putting it in another bag.",
+      "translation_vi": "Hiểu rồi. Va li có dây đỏ. Tôi sẽ giữ biên lai trong áo khoác thay vì bỏ vào túi khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "One safety rule: we won't store loose batteries or camping fuel, even if they're packed carefully with clothing.",
+      "translation_vi": "Một quy định an toàn: không nhận pin rời hoặc nhiên liệu cắm trại, dù đóng gói cẩn thận với quần áo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "I have a power bank in the backpack. I'll carry that with me and leave only clothes inside the suitcase.",
+      "translation_vi": "Tôi có sạc dự phòng trong ba lô. Tôi sẽ mang theo và chỉ để quần áo trong va li.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "Payment is by card or contactless. Our cash machine was removed last month, and the desk no longer accepts banknotes.",
+      "translation_vi": "Thanh toán bằng thẻ hoặc chạm. Máy thu tiền mặt đã dỡ tháng trước, quầy không nhận tiền giấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "Fine, I've got a bank card. Thank you for explaining everything; I'll find the north exit tomorrow morning.",
+      "translation_vi": "Được, tôi có thẻ ngân hàng. Cảm ơn đã giải thích; sáng mai tôi sẽ tìm cửa bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Name of the service: ____",
+      "correct_answers": [
+        "Left Luggage"
+      ],
+      "spoken_answer": "Left Luggage",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Dịch vụ gửi hành lý gọi Left Luggage.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "called Left Luggage",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Maximum suitcase weight: ____ kilograms",
+      "correct_answers": [
+        "twenty",
+        "20"
+      ],
+      "spoken_answer": "twenty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giới hạn 20 kg áp dụng cho quầy gửi hành lý; va li quá cân phải chuyển sang quầy kiện hàng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "twenty kilograms",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Opening time: ____",
+      "correct_answers": [
+        "seven fifteen",
+        "7:15"
+      ],
+      "spoken_answer": "seven fifteen",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giờ mới là 7:15, website ghi giờ cũ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "at seven fifteen",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Desk is near the ____ exit",
+      "correct_answers": [
+        "north"
+      ],
+      "spoken_answer": "north",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Quầy gần cửa bắc.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "north exit",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Charge for up to 12 hours: £____",
+      "correct_answers": [
+        "eleven",
+        "11"
+      ],
+      "spoken_answer": "eleven",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Gói mười hai giờ là 11 bảng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "eleven pounds",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Collection document: printed ____",
+      "correct_answers": [
+        "receipt"
+      ],
+      "spoken_answer": "receipt",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cần biên lai giấy để nhận lại va li.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "printed receipt",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What is needed if the traveller loses the receipt?",
+      "correct_answers": [
+        "Identification and a bag description"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Only a photograph of the receipt"
+        },
+        {
+          "key": "B",
+          "text": "Identification and a bag description"
+        },
+        {
+          "key": "C",
+          "text": "A new train ticket"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Cần giấy tờ và mô tả hành lý.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "identity document and a description of the case",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What will the traveller remove from the suitcase?",
+      "correct_answers": [
+        "A power bank"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "A red luggage strap"
+        },
+        {
+          "key": "B",
+          "text": "The spare clothing"
+        },
+        {
+          "key": "C",
+          "text": "A power bank"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Khách sẽ mang sạc dự phòng bên người.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T20"
+      ],
+      "evidence_excerpt_en": "I'll carry that with me",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Which payment method can be used?",
+      "correct_answers": [
+        "Bank card"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Bank card"
+        },
+        {
+          "key": "B",
+          "text": "Cash banknotes only"
+        },
+        {
+          "key": "C",
+          "text": "Postal money order"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Có thể dùng thẻ.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "Payment is by card or contactless",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What will the traveller do next morning?",
+      "correct_answers": [
+        "Go to the station's north exit"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Find the south tunnel"
+        },
+        {
+          "key": "B",
+          "text": "Go to the station's north exit"
+        },
+        {
+          "key": "C",
+          "text": "Visit the lost-property office upstairs"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Khách sẽ đi cửa bắc.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T22"
+      ],
+      "evidence_excerpt_en": "find the north exit tomorrow morning",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "travel_services",
+        "opening_hours",
+        "prices",
+        "safety",
+        "payment"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "71410d443e8e65e7823f21b041b3d4bf975d463b8d72519060bd70ad739d2986",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.34,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

@@ -1,0 +1,627 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S2-EXP-015",
+  "status": "draft_pending_audio",
+  "level": "L6",
+  "section": 2,
+  "topic": "Performance venue",
+  "title": "Seaport Music & Performance Hub",
+  "learning_objectives_vi": [
+    "Lần theo những lối đi đa dạng trên bản đồ, không dựa vào bố cục ô lưới.",
+    "Nhận diện mốc cố định rồi kết hợp hướng la bàn để chọn đúng vị trí.",
+    "Phân biệt những thông tin cũ và thông tin cuối cùng trong câu hỏi điền từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "map_navigation",
+    "compass_orientation",
+    "detail_accuracy",
+    "distractor_rejection"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Venue guide",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, and welcome to Seaport Music & Performance Hub. Some facilities are in separate wings or at the ends of smaller paths, so please follow the map carefully. Begin at south foyer and use the performance ring; the north arrow stays at the top of your plan.",
+      "translation_vi": "Chào mừng đến Seaport Music & Performance Hub. Hãy tìm south foyer trên sơ đồ, sau đó đi theo performance ring. Mũi tên chỉ hướng Bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "map_reading"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Only ticket holders may enter the stage area once the evening rehearsal has started. The fixed landmarks are labelled by name, while the places you need to identify are marked only A to H. Listen for a landmark and a direction; do not guess from the order of letters.",
+      "translation_vi": "Các mốc cố định có tên sẵn, còn những vị trí cần xác định được đánh dấu A đến H. Hãy nghe mốc và hướng di chuyển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "compass"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Now find the Main Stage. From that landmark, look south-east to the nearest lettered point. That's where you'll find Black Box Stage. Don't confuse it with the other lettered buildings further away.",
+      "translation_vi": "Hãy xác định mốc Main Stage trên sơ đồ. Black Box Stage nằm ngay phía đông nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_F"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "First locate the Box Office on the visitor plan. You'll find Instrument Check at the lettered location immediately south of it. Check the position against the nearest other buildings before moving on.",
+      "translation_vi": "Hãy xác định mốc Box Office trên sơ đồ. Instrument Check nằm ngay phía nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_D"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "If you're looking for Vocal Studio, use the Sound Booth as your reference point. Choose the nearest lettered location directly north of that landmark. Other marked areas are for different activities.",
+      "translation_vi": "Hãy xác định mốc Sound Booth trên sơ đồ. Vocal Studio nằm ngay phía bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_E"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "There's a useful sign for the Cafe Atrium on the plan. Immediately north-west of it is a lettered location: that's where you'll find Rehearsal Room. People sometimes choose the more distant area, but that isn't the right one.",
+      "translation_vi": "Hãy xác định mốc Cafe Atrium trên sơ đồ. Rehearsal Room nằm ngay phía tây bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_B"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "There is also a useful change to note: Doors open at 6:25, not half past six as printed on the first batch of tickets.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Before you arrive, remember this: Students receive a reduction of four pounds on the standard concert ticket.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Turning to the practical information, Instruments borrowed for home practice may be kept for one week.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "As for booking details, You must show photo ID when collecting a reserved instrument.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Please keep mobile phones on silent near the recording booth, even while waiting outside. The visitor team at Seaport Music & Performance Hub will answer any remaining questions after the tour.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "closing"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Black Box Stage",
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Now find the Main Stage. From that landmark, look south-east to the nearest lettered point. That's where you'll find Black Box Stage. Don't confuse it with the other lettered buildings further away.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Main Stage, rồi nhìn ngay phía đông nam. Khu được đánh dấu F là Black Box Stage.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-015"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Instrument Check",
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "First locate the Box Office on the visitor plan. You'll find Instrument Check at the lettered location immediately south of it. Check the position against the nearest other buildings before moving on.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Box Office, rồi nhìn ngay phía nam. Khu được đánh dấu D là Instrument Check.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-015"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Vocal Studio",
+      "correct_answers": [
+        "E"
+      ],
+      "correct_option": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "If you're looking for Vocal Studio, use the Sound Booth as your reference point. Choose the nearest lettered location directly north of that landmark. Other marked areas are for different activities.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Sound Booth, rồi nhìn ngay phía bắc. Khu được đánh dấu E là Vocal Studio.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-015"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Rehearsal Room",
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "There's a useful sign for the Cafe Atrium on the plan. Immediately north-west of it is a lettered location: that's where you'll find Rehearsal Room. People sometimes choose the more distant area, but that isn't the right one.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Cafe Atrium, rồi nhìn ngay phía tây bắc. Khu được đánh dấu B là Rehearsal Room.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-015"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Doors open: ____",
+      "correct_answers": [
+        "6:25"
+      ],
+      "spoken_answer": "6:25",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Doors open at 6:25, not half past six as printed on the first batch of tickets.",
+      "explanation_vi": "Nghe thông tin cuối cùng về doors open; đáp án là “6:25”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Student discount: ____",
+      "correct_answers": [
+        "four pounds"
+      ],
+      "spoken_answer": "four pounds",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Students receive a reduction of four pounds on the standard concert ticket.",
+      "explanation_vi": "Nghe thông tin cuối cùng về student discount; đáp án là “four pounds”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Instrument loan period: ____",
+      "correct_answers": [
+        "one week"
+      ],
+      "spoken_answer": "one week",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Instruments borrowed for home practice may be kept for one week.",
+      "explanation_vi": "Nghe thông tin cuối cùng về instrument loan period; đáp án là “one week”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Collection document: ____",
+      "correct_answers": [
+        "photo ID"
+      ],
+      "spoken_answer": "photo ID",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "You must show photo ID when collecting a reserved instrument.",
+      "explanation_vi": "Nghe thông tin cuối cùng về collection document; đáp án là “photo ID”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "MAP_Q01_TO_04",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place. Follow the named landmarks and directions in the audio.",
+      "map_asset_id": "M22-MAP-015",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_015.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "group_id": "NOTES_Q05_TO_08",
+      "question_ids": [
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer."
+    }
+  ],
+  "vocabulary": [
+    {
+      "expression_en": "Black Box Stage",
+      "meaning_vi": "Vị trí Black Box Stage trên sơ đồ; luyện nghe định hướng tương đối so với Main Stage.",
+      "part_of_speech": "noun phrase",
+      "example_en": "Now find the Main Stage. From that landmark, look south-east to the nearest lettered point. That's where you'll find Black Box Stage. Don't confuse it with the other lettered buildings further away.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Instrument Check",
+      "meaning_vi": "Vị trí Instrument Check trên sơ đồ; luyện nghe định hướng tương đối so với Box Office.",
+      "part_of_speech": "noun phrase",
+      "example_en": "First locate the Box Office on the visitor plan. You'll find Instrument Check at the lettered location immediately south of it. Check the position against the nearest other buildings before moving on.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Vocal Studio",
+      "meaning_vi": "Vị trí Vocal Studio trên sơ đồ; luyện nghe định hướng tương đối so với Sound Booth.",
+      "part_of_speech": "noun phrase",
+      "example_en": "If you're looking for Vocal Studio, use the Sound Booth as your reference point. Choose the nearest lettered location directly north of that landmark. Other marked areas are for different activities.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Rehearsal Room",
+      "meaning_vi": "Vị trí Rehearsal Room trên sơ đồ; luyện nghe định hướng tương đối so với Cafe Atrium.",
+      "part_of_speech": "noun phrase",
+      "example_en": "There's a useful sign for the Cafe Atrium on the plan. Immediately north-west of it is a lettered location: that's where you'll find Rehearsal Room. People sometimes choose the more distant area, but that isn't the right one.",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "aa2a9e505d998af0efd5bd525043ea5a0c505a3e81568e5ac0ffabce36b598bb",
+    "generation_strategy": "one_continuous_monologue",
+    "aligned_turns": false
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Map Labelling yêu cầu tìm lối vào, mũi tên Bắc, các mốc cố định và con đường nối chúng. Không mặc định mọi lối vào ở phía Nam, không suy vị trí chỉ từ thứ tự A–H.",
+      "worked_examples": [
+        {
+          "prompt": "The activity area is immediately east of the old clock.",
+          "reason_vi": "Tìm Old Clock có ghi tên trên sơ đồ; từ đó nhìn sang phía Đông (bên phải nếu Bắc ở trên) để xác định ô chữ cái."
+        }
+      ],
+      "common_mistakes_vi": [
+        "Giả định mọi bản đồ đều có lối vào phía Nam.",
+        "Chọn chữ cái trước khi nghe mốc cố định.",
+        "Bỏ qua các từ immediately, across, rather than và north-east."
+      ]
+    },
+    "after_submit": {
+      "unlock_transcript": true,
+      "unlock_answers": true,
+      "dictation_turns": [
+        "T03",
+        "T07"
+      ]
+    }
+  },
+  "map_asset": {
+    "map_asset_id": "M22-MAP-015",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_015.svg",
+    "orientation": "NORTH UP / ENTRANCE VARIES BY PLAN",
+    "location_key_server_only": {
+      "Black Box Stage": "F",
+      "Instrument Check": "D",
+      "Vocal Studio": "E",
+      "Rehearsal Room": "B"
+    },
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true,
+    "layout_type": "music",
+    "source_map_version": "m22-map-v2-distinct",
+    "entry_point": "SOUTH FOYER",
+    "route_name": "performance ring",
+    "letter_coordinates_server_only": {
+      "F": {
+        "x": 755,
+        "y": 220
+      },
+      "D": {
+        "x": 495,
+        "y": 440
+      },
+      "E": {
+        "x": 135,
+        "y": 300
+      },
+      "B": {
+        "x": 175,
+        "y": 150
+      },
+      "G": {
+        "x": 365,
+        "y": 180
+      },
+      "H": {
+        "x": 560,
+        "y": 150
+      },
+      "A": {
+        "x": 690,
+        "y": 395
+      },
+      "C": {
+        "x": 290,
+        "y": 405
+      }
+    },
+    "reference_landmarks_server_only": [
+      {
+        "name": "Main Stage",
+        "x": 703,
+        "y": 168,
+        "letter": "F"
+      },
+      {
+        "name": "Box Office",
+        "x": 495,
+        "y": 373,
+        "letter": "D"
+      },
+      {
+        "name": "Sound Booth",
+        "x": 135,
+        "y": 367,
+        "letter": "E"
+      },
+      {
+        "name": "Cafe Atrium",
+        "x": 227,
+        "y": 202,
+        "letter": "B"
+      }
+    ],
+    "direction_evidence_server_only": {
+      "Q01": {
+        "landmark": "Main Stage",
+        "compass_direction": "south-east",
+        "answer_letter": "F"
+      },
+      "Q02": {
+        "landmark": "Box Office",
+        "compass_direction": "south",
+        "answer_letter": "D"
+      },
+      "Q03": {
+        "landmark": "Sound Booth",
+        "compass_direction": "north",
+        "answer_letter": "E"
+      },
+      "Q04": {
+        "landmark": "Cafe Atrium",
+        "compass_direction": "north-west",
+        "answer_letter": "B"
+      }
+    }
+  },
+  "qa": {
+    "automated_data_validation": "passed_scope_spatial_reference_and_text_containment",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "human_map_approved": false,
+    "human_translation_approved": false,
+    "release_eligible": false,
+    "estimated_word_count": 332,
+    "visual_diversity_review": "pending_human_check",
+    "previous_map_replaced_reason": "identical_2x4_grid_template"
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "authoring_milestone": "M22",
+    "reference_copying": false,
+    "target_bank": "training"
+  },
+  "release_metadata": {
+    "version": "m22.1.0-distinct-maps",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "replace_draft_only_or_explicit_version_migration",
+    "target_bank": "training",
+    "no_bands": true
+  }
+}

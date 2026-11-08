@@ -7,32 +7,39 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { acceptedAnswers, gradeAnswer, normalizeAnswer, type GradeMode, type GradeResult } from "./grade";
 import { turnSkills, type DictationSkillId } from "./skills";
+import { stageForLesson, type SkillLabStageId } from "./stages";
 
 const root = join(process.cwd(), "content/dictation-skill-lab");
 
 export type LessonSpeaker = { speaker_id: string; role: string; tts_voice_id: string | null; accent_requested: string };
-export type LessonTurn = { turn_id: string; speaker_id: string; text_en: string; translation_vi: string; skill_tags: string[] };
+export type LessonTurn = { turn_id: string; speaker_id: string; text_en: string; translation_vi: string | null; skill_tags: string[]; target_word?: string };
+/** M49L lessons give options as {key, text}; M16 lessons as plain text. */
+export type LessonOption = string | { key: string; text: string };
 export type LessonQuestion = {
-  question_id: string; type: string; prompt: string; correct_answers: string[]; options?: string[]; evidence_turn_ids: string[];
+  question_id: string; type: string; prompt: string; correct_answers: string[]; options?: LessonOption[]; evidence_turn_ids: string[];
   explanation_vi: string; scoring_policy: string; question_tags: string[]; word_limit?: number; instructions_en?: string;
-  practice_aliases?: string[]; map_asset?: string;
+  practice_aliases?: string[]; map_asset?: string; map_asset_id?: string;
 };
 export type LessonVocabulary = { term: string; pos: string; meaning_vi: string; example_en: string; example_vi: string; source_turn_id: string };
 export type StoredLesson = {
   lesson_id: string; status: string; level: string; section: number; topic: string; title: string; learning_objectives_vi: string[];
-  content_format: string; speakers: LessonSpeaker[]; turns: LessonTurn[]; questions: LessonQuestion[]; vocabulary: LessonVocabulary[];
+  content_format: string; speakers: LessonSpeaker[]; turns: LessonTurn[]; questions: LessonQuestion[]; vocabulary?: LessonVocabulary[];
   qa: Record<string, unknown>;
+  /** M49L Section 2 plans: the client-safe SVG; its location key stays server-side. */
+  map_asset?: { map_asset_id: string; asset_path: string };
 };
 type SentenceTiming = { start_ms: number; end_ms: number };
 type ManifestTurn = { file: string; duration_ms: number; voice: string; accent: string; auto_check: "pass" | "suspect"; asr_check?: "pass" | "review"; text_sha256: string; sentences?: SentenceTiming[] };
 type Manifest = { status: string; turns: Record<string, ManifestTurn> };
 
-export const LESSON_ID = /^DICT-(F[1-3]|S[1-4])-\d{3}$/;
+/** M16 (DICT-F1-001) and M49L (FND2-001, S2-EXP-001, S3-SIM-001) lesson IDs. */
+export const LESSON_ID = /^(?:DICT-(?:F[1-3]|S[1-4])|FND2|S[1-4]-(?:EXP|SIM))-\d{3}$/;
 
 export type PublicQuestion = Pick<LessonQuestion, "question_id" | "type" | "prompt" | "evidence_turn_ids" | "word_limit" | "instructions_en"> & {
   options?: string[]; map_url?: string; choices?: string[];
 };
 export type PublicLesson = {
+  stage: SkillLabStageId;
   lesson_id: string; title: string; topic: string; level: string; section: number; content_format: string; learning_objectives_vi: string[];
   speakers: { speaker_id: string; label: string; accent: string }[];
   /** `flagged`: the automatic speech-recognition check could not confirm every word of this clip. */
@@ -42,6 +49,7 @@ export type PublicLesson = {
   review_status: "draft_unreviewed";
 };
 export type CatalogEntry = {
+  stage: SkillLabStageId;
   lesson_id: string; title: string; topic: string; level: string; section: number; content_format: string;
   /** `questions` counts the IELTS-style questions; dictation sentences are the `turns`. */
   turns: number; questions: number; duration_ms: number; audio_ready: boolean; skill_tags: string[]; skills: DictationSkillId[];
@@ -113,11 +121,11 @@ export function sentenceUnits(lesson: StoredLesson) {
   return lesson.turns.flatMap((turn) => {
     const audio = turnAudio(lesson, turn.turn_id);
     const parts = splitSentences(turn.text_en);
-    const translations = splitTranslation(turn.translation_vi);
+    const translations = splitTranslation(turn.translation_vi ?? "");
     const timings = audio?.sentences?.length === parts.length ? audio.sentences : null;
     return parts.map((text, index) => ({
       id: parts.length === 1 ? turn.turn_id : `${turn.turn_id}-S${String(index + 1).padStart(2, "0")}`,
-      source: turn, text, translation: translations.length === parts.length ? translations[index] : index === parts.length - 1 ? turn.translation_vi : "",
+      source: turn, text, translation: translations.length === parts.length ? translations[index] : index === parts.length - 1 ? turn.translation_vi ?? "" : "",
       start_ms: timings?.[index].start_ms ?? 0,
       end_ms: timings?.[index].end_ms ?? (parts.length === 1 ? audio?.duration_ms ?? null : null), audio,
     }));
@@ -135,6 +143,7 @@ function letterRange(prompt: string) {
 export function toPublicLesson(lesson: StoredLesson): PublicLesson {
   const labels = Object.fromEntries(lesson.speakers.map((speaker) => [speaker.speaker_id, speakerLabel(speaker)]));
   return {
+    stage: stageForLesson(lesson.lesson_id, lesson.level),
     lesson_id: lesson.lesson_id, title: lesson.title, topic: lesson.topic, level: lesson.level, section: lesson.section,
     content_format: lesson.content_format, learning_objectives_vi: lesson.learning_objectives_vi,
     speakers: lesson.speakers.map((speaker) => ({ speaker_id: speaker.speaker_id, label: labels[speaker.speaker_id], accent: speaker.accent_requested })),
@@ -148,10 +157,13 @@ export function toPublicLesson(lesson: StoredLesson): PublicLesson {
       const item: PublicQuestion = { question_id: question.question_id, type: question.type, prompt: question.prompt, evidence_turn_ids: question.evidence_turn_ids };
       if (question.word_limit) item.word_limit = question.word_limit;
       if (question.instructions_en) item.instructions_en = question.instructions_en;
-      if (question.options) item.options = question.type === "matching"
-        ? question.options.map((option) => { const id = option.match(/^Speaker ([A-Z])$/)?.[1]; return id && labels[id] ? `${option} · ${labels[id]}` : option; })
-        : question.options;
+      if (question.options) item.options = question.options.map((option) => {
+        if (typeof option !== "string") return `${option.key} · ${option.text}`;
+        const id = question.type === "matching" ? option.match(/^Speaker ([A-Z])$/)?.[1] : undefined;
+        return id && labels[id] ? `${option} · ${labels[id]}` : option;
+      });
       if (question.map_asset) { item.map_url = `/dictation-skill-lab/${question.map_asset}`; item.choices = letterRange(question.prompt); }
+      else if (question.type === "map_labelling" && lesson.map_asset?.asset_path) item.map_url = `/dictation-skill-lab/maps/${lesson.map_asset.asset_path.split("/").pop()}`;
       return item;
     }),
     audio_ready: audioReady(lesson),
@@ -161,20 +173,31 @@ export function toPublicLesson(lesson: StoredLesson): PublicLesson {
 
 export function catalog(): CatalogEntry[] {
   return [...lessons().values()].map((lesson) => ({
+    stage: stageForLesson(lesson.lesson_id, lesson.level),
     lesson_id: lesson.lesson_id, title: lesson.title, topic: lesson.topic, level: lesson.level, section: lesson.section, content_format: lesson.content_format,
     turns: lesson.turns.reduce((count, turn) => count + splitSentences(turn.text_en).length, 0),
     questions: lesson.questions.filter((question) => question.type !== "dictation").length,
     duration_ms: lesson.turns.reduce((sum, turn) => sum + (turnAudio(lesson, turn.turn_id)?.duration_ms ?? 0), 0),
     audio_ready: audioReady(lesson),
     skill_tags: [...new Set(lesson.questions.flatMap((question) => question.question_tags))].slice(0, 8),
-    skills: [...new Set(lesson.turns.flatMap((turn) => turnSkills(turn.text_en, lesson.lesson_id.slice(5, 7))))],
+    skills: [...new Set(lesson.turns.flatMap((turn) => turnSkills(turn.text_en, stageForLesson(lesson.lesson_id, lesson.level))))],
   }));
 }
 
-/** Matching options are shown with a name ("Speaker C · Chloe"); grade against the stored option. */
+/**
+ * Map a chosen option back to what the answer key stores: the letter when answers are letters
+ * ("B · Library safety box", "B — first student" -> "B"), the text when options were shown as
+ * "A · text" but answers are text, and "Speaker C" for "Speaker C · Chloe".
+ */
 function storedAnswer(question: LessonQuestion, answer: string) {
-  if (question.type !== "matching") return answer;
-  return answer.replace(/^(Speaker [A-Z]) · .+$/, "$1");
+  if (!question.options) return answer;
+  const letterKey = question.correct_answers.every((value) => /^[A-Z]$/.test(value.trim()));
+  const keyed = /^([A-Z])(?:\s*[·—–-]\s*|\s*$)(.*)$/.exec(answer.trim());
+  if (letterKey && keyed) return keyed[1];
+  const speaker = /^(Speaker [A-Z]) · .+$/.exec(answer);
+  if (speaker) return speaker[1];
+  if (keyed && question.options.some((option) => typeof option !== "string")) return keyed[2].trim();
+  return answer;
 }
 
 export function gradeLesson(lesson: StoredLesson, answers: Record<string, string>, mode: GradeMode, questionIds?: string[]): GradedQuestion[] {
@@ -186,15 +209,15 @@ export function gradeLesson(lesson: StoredLesson, answers: Record<string, string
     accepted_answers: acceptedAnswers(question, mode),
     explanation_vi: question.explanation_vi,
     evidence: question.evidence_turn_ids.map((id) => turns.get(id)).filter((turn): turn is LessonTurn => Boolean(turn))
-      .map((turn) => ({ turn_id: turn.turn_id, text_en: turn.text_en, translation_vi: turn.translation_vi })),
+      .map((turn) => ({ turn_id: turn.turn_id, text_en: turn.text_en, translation_vi: turn.translation_vi ?? "" })),
   }));
 }
 
 /** Full transcript and word list, only returned with a whole-lesson submission. */
 export function lessonReview(lesson: StoredLesson) {
   return {
-    transcript: lesson.turns.map((turn) => ({ turn_id: turn.turn_id, speaker_id: turn.speaker_id, text_en: turn.text_en, translation_vi: turn.translation_vi })),
-    vocabulary: lesson.vocabulary,
+    transcript: lesson.turns.map((turn) => ({ turn_id: turn.turn_id, speaker_id: turn.speaker_id, text_en: turn.text_en, translation_vi: turn.translation_vi ?? "" })),
+    vocabulary: lesson.vocabulary ?? [],
   };
 }
 
@@ -219,11 +242,13 @@ export function focusFor(lesson: StoredLesson, turnId: string) {
     .flatMap((question) => question.correct_answers.slice(0, 1))
     .map((answer) => answer.trim())
     .filter((answer) => answer && answer.length <= 40 && spoken.includes(` ${normalizeAnswer(answer)} `));
+  // M49L Foundation turns name the word they train ("ship" in a ship/sheep drill).
+  if (turn.target_word && spoken.includes(` ${normalizeAnswer(turn.target_word)} `)) phrases.push(turn.target_word);
   return [...new Set(phrases.map((phrase) => phrase.toLowerCase()))];
 }
 
 /** Teaching note and words for one sentence, shown only after the learner has checked it. */
 export function turnNotes(lesson: StoredLesson, turnId: string) {
   const explanation = lesson.questions.find((question) => question.type === "dictation" && question.evidence_turn_ids.includes(turnId))?.explanation_vi ?? "";
-  return { explanation_vi: explanation, vocabulary: lesson.vocabulary.filter((word) => word.source_turn_id === turnId) };
+  return { explanation_vi: explanation, vocabulary: (lesson.vocabulary ?? []).filter((word) => word.source_turn_id === turnId) };
 }

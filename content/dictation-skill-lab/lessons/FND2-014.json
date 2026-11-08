@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-014",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "Initial /ð/ versus /d/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt initial /ð/ versus /d/.",
+    "/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Finish the form, then sign it.",
+      "translation_vi": "Điền xong mẫu đơn rồi hãy ký.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "then",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The children made a den from blankets.",
+      "translation_vi": "Bọn trẻ làm một cái lều trú bằng chăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "den",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "They arrived after the lecture began.",
+      "translation_vi": "Họ đến sau khi bài giảng bắt đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "they",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The first day of the course was busy.",
+      "translation_vi": "Ngày đầu tiên của khóa học rất bận rộn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "day",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The station is just over there.",
+      "translation_vi": "Nhà ga ở ngay đằng kia.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "there",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I do not dare cross the river alone.",
+      "translation_vi": "Tôi không dám băng qua sông một mình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "dare",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Those seats are already reserved.",
+      "translation_vi": "Những chỗ ngồi kia đã được đặt trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "those",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I sometimes doze on the evening train.",
+      "translation_vi": "Đôi khi tôi ngủ gật trên chuyến tàu tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "doze",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "It was cold, though we still went out.",
+      "translation_vi": "Trời lạnh, dù vậy chúng tôi vẫn ra ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "though",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Let the dough rise for an hour.",
+      "translation_vi": "Hãy để bột nhào nở trong một giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "voiced_th_vs_d"
+      ],
+      "target_word": "dough",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Finish the form, then sign it."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe then / den (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Điền xong mẫu đơn rồi hãy ký.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "then / den (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The children made a den from blankets."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe then / den (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Bọn trẻ làm một cái lều trú bằng chăn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "then / den (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "They arrived after the lecture began."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe they / day (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Họ đến sau khi bài giảng bắt đầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "they / day (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The first day of the course was busy."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe they / day (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Ngày đầu tiên của khóa học rất bận rộn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "they / day (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The station is just over there."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe there / dare (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Nhà ga ở ngay đằng kia.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "there / dare (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I do not dare cross the river alone."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe there / dare (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Tôi không dám băng qua sông một mình.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "there / dare (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Those seats are already reserved."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe those / doze (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Những chỗ ngồi kia đã được đặt trước.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "those / doze (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I sometimes doze on the evening train."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe those / doze (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Đôi khi tôi ngủ gật trên chuyến tàu tối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "those / doze (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "It was cold, though we still went out."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe though / dough (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Trời lạnh, dù vậy chúng tôi vẫn ra ngoài.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "though / dough (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Let the dough rise for an hour."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe though / dough (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu). Nghĩa: Hãy để bột nhào nở trong một giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "though / dough (/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "then"
+      ],
+      "options": [
+        "then",
+        "den"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt then và den. /ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "voiced_th_vs_d"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "day"
+      ],
+      "options": [
+        "day",
+        "they"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt they và day. /ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "voiced_th_vs_d"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "there"
+      ],
+      "options": [
+        "there",
+        "dare"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt there và dare. /ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "voiced_th_vs_d"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "doze"
+      ],
+      "options": [
+        "doze",
+        "those"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt those và doze. /ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "voiced_th_vs_d"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "though"
+      ],
+      "options": [
+        "though",
+        "dough"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt though và dough. /ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "voiced_th_vs_d"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "then",
+      "pos": "target",
+      "meaning_vi": "sau đó",
+      "example_en": "Finish the form, then sign it.",
+      "example_vi": "Điền xong mẫu đơn rồi hãy ký.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "voiced_th_vs_d"
+    },
+    {
+      "term": "den",
+      "pos": "target",
+      "meaning_vi": "lều/nơi trú nhỏ",
+      "example_en": "The children made a den from blankets.",
+      "example_vi": "Bọn trẻ làm một cái lều trú bằng chăn.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "voiced_th_vs_d"
+    },
+    {
+      "term": "they",
+      "pos": "target",
+      "meaning_vi": "họ",
+      "example_en": "They arrived after the lecture began.",
+      "example_vi": "Họ đến sau khi bài giảng bắt đầu.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "voiced_th_vs_d"
+    },
+    {
+      "term": "day",
+      "pos": "target",
+      "meaning_vi": "ngày",
+      "example_en": "The first day of the course was busy.",
+      "example_vi": "Ngày đầu tiên của khóa học rất bận rộn.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "voiced_th_vs_d"
+    },
+    {
+      "term": "there",
+      "pos": "target",
+      "meaning_vi": "ở đó",
+      "example_en": "The station is just over there.",
+      "example_vi": "Nhà ga ở ngay đằng kia.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "voiced_th_vs_d"
+    },
+    {
+      "term": "dare",
+      "pos": "target",
+      "meaning_vi": "dám",
+      "example_en": "I do not dare cross the river alone.",
+      "example_vi": "Tôi không dám băng qua sông một mình.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "voiced_th_vs_d"
+    },
+    {
+      "term": "those",
+      "pos": "target",
+      "meaning_vi": "những ... kia",
+      "example_en": "Those seats are already reserved.",
+      "example_vi": "Những chỗ ngồi kia đã được đặt trước.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "voiced_th_vs_d"
+    },
+    {
+      "term": "doze",
+      "pos": "target",
+      "meaning_vi": "ngủ gật",
+      "example_en": "I sometimes doze on the evening train.",
+      "example_vi": "Đôi khi tôi ngủ gật trên chuyến tàu tối.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "voiced_th_vs_d"
+    },
+    {
+      "term": "though",
+      "pos": "target",
+      "meaning_vi": "mặc dù",
+      "example_en": "It was cold, though we still went out.",
+      "example_vi": "Trời lạnh, dù vậy chúng tôi vẫn ra ngoài.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "voiced_th_vs_d"
+    },
+    {
+      "term": "dough",
+      "pos": "target",
+      "meaning_vi": "bột nhào",
+      "example_en": "Let the dough rise for an hour.",
+      "example_vi": "Hãy để bột nhào nở trong một giờ.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "voiced_th_vs_d"
+    }
+  ],
+  "micro_skill_id": "voiced_th_vs_d",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "then",
+        "den"
+      ],
+      [
+        "they",
+        "day"
+      ],
+      [
+        "there",
+        "dare"
+      ],
+      [
+        "those",
+        "doze"
+      ],
+      [
+        "though",
+        "dough"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "/ð/ trong they không phải /d/ trong day; cần nghe đúng âm đầu"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "905452f32f72c9136780d25834600615b06e54590411581917ea49edac681eb7",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Âm /ð/ là âm xát hữu thanh giữa răng; /d/ được bật từ lợi/răng.",
+    "worked_contrasts": [
+      {
+        "contrast": "then / den",
+        "meaning_vi": "sau đó / lều/nơi trú nhỏ",
+        "teacher_note_vi": "Âm /ð/ là âm xát hữu thanh giữa răng; /d/ được bật từ lợi/răng."
+      },
+      {
+        "contrast": "they / day",
+        "meaning_vi": "họ / ngày",
+        "teacher_note_vi": "Âm /ð/ là âm xát hữu thanh giữa răng; /d/ được bật từ lợi/răng."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Nhầm they/day và those/doze khi nghe tốc độ tự nhiên.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

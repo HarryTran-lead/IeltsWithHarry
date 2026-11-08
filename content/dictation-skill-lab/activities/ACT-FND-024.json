@@ -1,0 +1,134 @@
+{
+  "schema_version": "m33.1.0",
+  "activity_id": "ACT-FND-024",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "foundation_micro_practice",
+  "origin_bank": "foundation_training",
+  "source_lesson_id": "FND2-024",
+  "source_zip": "English_Skill_Lab_Dictation_M17_Foundation_30_Full_Content.zip",
+  "reuse_parent_id": "FND2-024",
+  "variant": "base",
+  "title": "Double digits, triple digits and zero — luyện nghe trọng tâm",
+  "category": "numbers",
+  "category_vi": "Số, giá tiền, mã số",
+  "micro_skill_id": "phone_repetition",
+  "skill_tags": [
+    "foundation",
+    "micro_practice",
+    "numbers",
+    "phone_repetition"
+  ],
+  "source_audio_id": "foundation-training/FND2-024/T01",
+  "source_segments": [
+    {
+      "source_audio_id": "foundation-training/FND2-024/T01",
+      "source_audio_id_type": "logical_turn_key_not_physical_asset",
+      "source_lesson_id": "FND2-024",
+      "source_turn_id": "T01",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "source_transcript_sha256": "6d5244702249f469691ce51647031b6adde7f54d2ab20bb8aa13537261a2246e",
+      "source_speaker_id": "A",
+      "audio_state": "not_generated",
+      "alignment_state": "pending_alignment"
+    }
+  ],
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "clip_timing_scope": "turn_level_asset_or_verified_offsets_only",
+  "playback": {
+    "first_listen_replays": 1,
+    "guided_phase_max_replays": 4,
+    "speech_rate": 1.0,
+    "autoplay_transcript": false,
+    "clip_order": "sequence",
+    "inter_turn_gap_ms": 0
+  },
+  "questions": [
+    {
+      "question_id": "ACT-FND-024-Q1",
+      "phase": "first_listen",
+      "type": "numeric_detail_entry",
+      "prompt_vi": "Nghe và nhập đầy đủ chuỗi chữ số, giữ số 0 ở đầu.",
+      "correct_answers": [
+        "77416"
+      ],
+      "answer_format": "text_entry",
+      "normalization_policy": "strict_structure_case_insensitive_preserve_leading_zero_and_internal_symbols",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "play_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Thông tin cần nghe là “77416”. Đối chiếu với câu gốc khi xem transcript sau khi hoàn thành.",
+      "evidence": {
+        "source_sentence_en": "The last five digits are double seven, four, one, six.",
+        "source_translation_vi": "Năm chữ số cuối là 77416.",
+        "focus_value": "77416",
+        "focus_kind": "digit_string",
+        "origin_lesson_id": "FND2-024",
+        "origin_turn_id": "T01",
+        "origin_lesson_skill": "phone_repetition",
+        "evidence_sha256": "6d5244702249f469691ce51647031b6adde7f54d2ab20bb8aa13537261a2246e"
+      },
+      "score_weight": 1
+    },
+    {
+      "question_id": "ACT-FND-024-Q2",
+      "phase": "guided_replay",
+      "type": "full_sentence_dictation",
+      "prompt_vi": "Nghe lại một lần và chép nguyên câu tiếng Anh.",
+      "correct_answers": [
+        "The last five digits are double seven, four, one, six."
+      ],
+      "answer_format": "text_entry",
+      "normalization_policy": "casefold_trim_whitespace_and_terminal_punctuation_preserve_words",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "play_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu đúng: “The last five digits are double seven, four, one, six.” — Năm chữ số cuối là 77416.",
+      "evidence": {
+        "source_sentence_en": "The last five digits are double seven, four, one, six.",
+        "source_translation_vi": "Năm chữ số cuối là 77416.",
+        "focus_value": "77416",
+        "focus_kind": "digit_string",
+        "origin_lesson_id": "FND2-024",
+        "origin_turn_id": "T01",
+        "origin_lesson_skill": "phone_repetition",
+        "evidence_sha256": "6d5244702249f469691ce51647031b6adde7f54d2ab20bb8aa13537261a2246e"
+      },
+      "score_weight": 1
+    }
+  ],
+  "answer_release": "post_activity_submit_only",
+  "feedback_release": "post_activity_submit_only",
+  "grading_is_band_estimate": false,
+  "exposure_rules": {
+    "source_bank": "training",
+    "pretest_reuse_permitted": true,
+    "never_accept_protected_or_unseen_source": true,
+    "do_not_mix_with_mock_source": true,
+    "log_first_exposure": true,
+    "log_replays": true,
+    "log_retention_reviews": true,
+    "source_scope": "training_source_only"
+  },
+  "rights_status": "pending_tts_terms_review",
+  "source_content_status": "authored_draft",
+  "source_audio_status": "not_generated",
+  "review": {
+    "content_editor": "pending",
+    "audio_listening": "pending",
+    "rights_clearance": "pending",
+    "teacher_signoff": "pending",
+    "publish_ready": false
+  },
+  "notes_vi": "Hoạt động luyện tập trích từ lượt thoại gốc M17–M20. Không có audio thật/timestamp ở gói nguồn. Không công bố trước transcript/đáp án."
+}

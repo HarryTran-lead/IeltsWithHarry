@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-004",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Community festival grounds",
+  "title": "Meadowbrook Summer Festival: Arrival Information",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "map_navigation",
+    "event_rules"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to Meadowbrook’s summer festival. I am Carlos, the site manager, and this is a short orientation for volunteers and ticket holders. It may seem busy at the entrance, but the event is designed so that families can move between activities without crossing vehicle routes.",
+      "translation_vi": "Chào mừng lễ hội mùa hè Meadowbrook. Tôi là Carlos, quản lý địa điểm. Khu được thiết kế để các gia đình đi lại không cắt ngang tuyến xe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The site opens to the public at nine forty-five. Performers may enter earlier, but visitors should not join the equipment queues near the loading gate.",
+      "translation_vi": "Khu lễ hội mở cửa cho khách lúc chín giờ bốn mươi lăm; nghệ sĩ được vào sớm, còn khách không đứng xếp hàng chỗ dỡ hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "To reduce rubbish, visitors are encouraged to bring their own reusable cups. Water refill points are available on both sides of the main path.",
+      "translation_vi": "Để giảm rác, khách nên mang cốc tái sử dụng; có điểm châm nước ở hai bên lối chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The morning performance will take place under the covered stage, regardless of light rain. Only strong winds will require an announcement about cancellation.",
+      "translation_vi": "Tiết mục sáng diễn ở sân khấu có mái dù mưa nhẹ; chỉ gió mạnh mới phải thông báo hủy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The charity stall collects clean coats, rather than general household items. Please make sure any donation has working buttons or zips.",
+      "translation_vi": "Quầy từ thiện nhận áo khoác sạch, không nhận đồ gia dụng; hãy kiểm tra nút và khóa kéo còn tốt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Lost children should be brought to the help tent, not to the security vehicle by the side fence. A trained family-support volunteer will remain with them.",
+      "translation_vi": "Trẻ bị lạc nên đưa đến lều hỗ trợ, không đưa đến xe an ninh cạnh hàng rào; có tình nguyện viên phụ trách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The organisers have spent several months speaking with nearby residents. Some were concerned about noise late in the evening, while others wanted more activities for families with young children. The final programme tries to balance both needs and includes several quieter sessions away from the busiest part of the field.",
+      "translation_vi": "Ban tổ chức đã trao đổi với dân cư xung quanh nhiều tháng. Một số lo tiếng ồn tối, số khác muốn thêm hoạt động gia đình; lịch cuối cùng cân bằng hai nhu cầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Let us look at the grounds map. The public entrance is at the bottom, and the central help tent marks the meeting point for anyone who becomes separated from their group. I will describe where several attractions have moved.",
+      "translation_vi": "Hãy xem sơ đồ: cổng công cộng ở dưới, lều hỗ trợ ở giữa là điểm hẹn khi lạc nhau. Tôi sẽ nói các khu đã chuyển vị trí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The food court is just to the right of the central help tent, halfway up the main field. The small stand near the entrance serves only hot drinks.",
+      "translation_vi": "Khu ẩm thực nằm ngay bên phải lều hỗ trợ, giữa sân; quầy gần cổng chỉ bán đồ nóng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The storytelling tent has moved to the south-west corner, immediately inside the entrance on the left. The previous northern location is now reserved for performers.",
+      "translation_vi": "Lều kể chuyện chuyển về tây nam, ngay bên trái khi vào cổng; địa điểm phía bắc cũ dành cho nghệ sĩ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The craft demonstration area is in the north-west corner. Follow the western path all the way up, past the field games, until you see the long canvas shelter.",
+      "translation_vi": "Khu trình diễn thủ công ở tây bắc; theo lối bên trái lên hết, qua trò chơi sân cỏ tới mái bạt dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The accessible viewing platform sits at the far northern end of the central path. It offers a clear view of the main stage without crossing the crowd.",
+      "translation_vi": "Bệ ngắm dành cho người cần tiếp cận ở cực bắc trục đường giữa, nhìn rõ sân khấu không phải băng qua đám đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The first-aid station is directly ahead after you come through the main entrance, at the southern end of the central route before the help tent. Please keep the access lane clear for medical staff.",
+      "translation_vi": "Trạm sơ cứu nằm thẳng phía trước sau cổng chính, tại đầu phía nam trục đường giữa trước lều hỗ trợ. Hãy giữ thông đường cho nhân viên y tế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "The event also serves as a trial of a new volunteer system. Helpers are assigned to broad zones rather than individual stalls, so they can respond quickly when queues suddenly become long. Please be patient if a volunteer asks you to wait a moment while they assist someone else.",
+      "translation_vi": "Lễ hội cũng thử hệ thống tình nguyện mới: mỗi người phụ trách khu vực thay vì một quầy, để hỗ trợ chỗ đông bất ngờ. Hãy kiên nhẫn khi tình nguyện viên đang giúp người khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We have volunteers stationed beside the help tent throughout the day. They can explain accessibility arrangements or help you locate your group.",
+      "translation_vi": "Tình nguyện viên trực ở lều hỗ trợ suốt ngày, giúp khách về đường tiếp cận hoặc tìm nhóm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "map_navigation",
+        "event_rules"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Public gates open at ____.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The site opens to the public at nine forty-five. Performers may enter earlier, but visitors should not join the equipment queues near the loading gate.",
+      "explanation_vi": "Khu lễ hội mở cửa cho khách lúc chín giờ bốn mươi lăm; nghệ sĩ được vào sớm, còn khách không đứng xếp hàng chỗ dỡ hàng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "nine forty-five"
+      ],
+      "spoken_answer": "nine forty-five",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Bring a reusable ____.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "To reduce rubbish, visitors are encouraged to bring their own reusable cups. Water refill points are available on both sides of the main path.",
+      "explanation_vi": "Để giảm rác, khách nên mang cốc tái sử dụng; có điểm châm nước ở hai bên lối chính.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "cup"
+      ],
+      "spoken_answer": "cup",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Performance sheltered by a covered ____.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The morning performance will take place under the covered stage, regardless of light rain. Only strong winds will require an announcement about cancellation.",
+      "explanation_vi": "Tiết mục sáng diễn ở sân khấu có mái dù mưa nhẹ; chỉ gió mạnh mới phải thông báo hủy.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "stage"
+      ],
+      "spoken_answer": "stage",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Clothing donation: clean ____.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The charity stall collects clean coats, rather than general household items. Please make sure any donation has working buttons or zips.",
+      "explanation_vi": "Quầy từ thiện nhận áo khoác sạch, không nhận đồ gia dụng; hãy kiểm tra nút và khóa kéo còn tốt.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "coats"
+      ],
+      "spoken_answer": "coats",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Lost children: go to the ____ tent.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Lost children should be brought to the help tent, not to the security vehicle by the side fence. A trained family-support volunteer will remain with them.",
+      "explanation_vi": "Trẻ bị lạc nên đưa đến lều hỗ trợ, không đưa đến xe an ninh cạnh hàng rào; có tình nguyện viên phụ trách.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "help"
+      ],
+      "spoken_answer": "help",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Food court",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The food court is just to the right of the central help tent, halfway up the main field. The small stand near the entrance serves only hot drinks.",
+      "explanation_vi": "Khu ẩm thực nằm ngay bên phải lều hỗ trợ, giữa sân; quầy gần cổng chỉ bán đồ nóng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "E"
+      ],
+      "correct_option": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-004",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_004.svg"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Storytelling tent",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "The storytelling tent has moved to the south-west corner, immediately inside the entrance on the left. The previous northern location is now reserved for performers.",
+      "explanation_vi": "Lều kể chuyện chuyển về tây nam, ngay bên trái khi vào cổng; địa điểm phía bắc cũ dành cho nghệ sĩ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-004",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_004.svg"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Craft demonstration",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The craft demonstration area is in the north-west corner. Follow the western path all the way up, past the field games, until you see the long canvas shelter.",
+      "explanation_vi": "Khu trình diễn thủ công ở tây bắc; theo lối bên trái lên hết, qua trò chơi sân cỏ tới mái bạt dài.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-004",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_004.svg"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "Accessible viewing platform",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "The accessible viewing platform sits at the far northern end of the central path. It offers a clear view of the main stage without crossing the crowd.",
+      "explanation_vi": "Bệ ngắm dành cho người cần tiếp cận ở cực bắc trục đường giữa, nhìn rõ sân khấu không phải băng qua đám đông.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-004",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_004.svg"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "map_labelling",
+      "prompt": "First-aid station",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "The first-aid station is directly ahead after you come through the main entrance, at the southern end of the central route before the help tent. Please keep the access lane clear for medical staff.",
+      "explanation_vi": "Trạm sơ cứu nằm thẳng phía trước sau cổng chính, tại đầu phía nam trục đường giữa trước lều hỗ trợ. Hãy giữ thông đường cho nhân viên y tế.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "event_rules"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "G"
+      ],
+      "correct_option": "G",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-004",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_004.svg"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "map_asset_id": "M26-MAP-004",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_004.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "ffe3f47aeb5f8b50bd7472a5f7fc3cd97d54dda315298fa01f44a565f74deb25",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.45,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  },
+  "map_asset": {
+    "map_asset_id": "M26-MAP-004",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_004.svg",
+    "format": "svg",
+    "orientation": "NORTH UP / MAIN ENTRANCE SOUTH",
+    "question_ids": [
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10"
+    ],
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true
+  }
+}

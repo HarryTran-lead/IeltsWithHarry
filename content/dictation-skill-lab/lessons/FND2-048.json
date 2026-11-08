@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-048",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Spelling",
+  "title": "Street and building names",
+  "learning_objectives_vi": [
+    "Nghe được street and building names trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (street_spelling).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The office is on Orchard Lane, spelled O, R, C, H, A, R, D.",
+      "translation_vi": "Văn phòng nằm trên đường Orchard Lane; Orchard đánh vần O–R–C–H–A–R–D.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "street_name"
+      ],
+      "target_value": "Orchard",
+      "target_kind": "street_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Please meet us on Hazel Road: H, A, Z, E, L.",
+      "translation_vi": "Vui lòng gặp chúng tôi trên đường Hazel Road; Hazel đánh vần H–A–Z–E–L.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "street_name"
+      ],
+      "target_value": "Hazel",
+      "target_kind": "street_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The school entrance is on Willow Street, W, I, double L, O, W.",
+      "translation_vi": "Lối vào trường ở đường Willow Street; Willow đánh vần W–I–L–L–O–W.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "street_name"
+      ],
+      "target_value": "Willow",
+      "target_kind": "street_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The new clinic is near Cedar Avenue: C, E, D, A, R.",
+      "translation_vi": "Phòng khám mới gần đường Cedar Avenue; Cedar đánh vần C–E–D–A–R.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "street_name"
+      ],
+      "target_value": "Cedar",
+      "target_kind": "street_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The gallery has moved to Brook Lane, B, R, O, O, K.",
+      "translation_vi": "Phòng tranh chuyển đến Brook Lane; Brook đánh vần B–R–O–O–K.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "street_name"
+      ],
+      "target_value": "Brook",
+      "target_kind": "street_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The event is at Maple Hall, M, A, P, L, E.",
+      "translation_vi": "Sự kiện diễn ra tại Maple Hall; Maple đánh vần M–A–P–L–E.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "building_name"
+      ],
+      "target_value": "Maple",
+      "target_kind": "building_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The workshop is held in Linden House: L, I, N, D, E, N.",
+      "translation_vi": "Hội thảo tổ chức tại Linden House; Linden đánh vần L–I–N–D–E–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "building_name"
+      ],
+      "target_value": "Linden",
+      "target_kind": "building_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The bicycle shop is on Quarry Road, Q, U, A, R, R, Y.",
+      "translation_vi": "Cửa hàng xe đạp ở Quarry Road; Quarry đánh vần Q–U–A–R–R–Y.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "street_name"
+      ],
+      "target_value": "Quarry",
+      "target_kind": "street_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The café is inside Rowan Court: R, O, W, A, N.",
+      "translation_vi": "Quán cà phê nằm trong Rowan Court; Rowan đánh vần R–O–W–A–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "building_name"
+      ],
+      "target_value": "Rowan",
+      "target_kind": "building_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The visitor centre stands on Falcon Street, F, A, L, C, O, N.",
+      "translation_vi": "Trung tâm khách tham quan trên Falcon Street; Falcon đánh vần F–A–L–C–O–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "street_spelling",
+        "street_name"
+      ],
+      "target_value": "Falcon",
+      "target_kind": "street_name",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The office is on Orchard Lane, spelled O, R, C, H, A, R, D."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The office is on Orchard Lane, spelled O, R, C, H, A, R, D. Nghĩa: Văn phòng nằm trên đường Orchard Lane; Orchard đánh vần O–R–C–H–A–R–D. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please meet us on Hazel Road: H, A, Z, E, L."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Please meet us on Hazel Road: H, A, Z, E, L. Nghĩa: Vui lòng gặp chúng tôi trên đường Hazel Road; Hazel đánh vần H–A–Z–E–L. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The school entrance is on Willow Street, W, I, double L, O, W."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The school entrance is on Willow Street, W, I, double L, O, W. Nghĩa: Lối vào trường ở đường Willow Street; Willow đánh vần W–I–L–L–O–W. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The new clinic is near Cedar Avenue: C, E, D, A, R."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The new clinic is near Cedar Avenue: C, E, D, A, R. Nghĩa: Phòng khám mới gần đường Cedar Avenue; Cedar đánh vần C–E–D–A–R. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The gallery has moved to Brook Lane, B, R, O, O, K."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The gallery has moved to Brook Lane, B, R, O, O, K. Nghĩa: Phòng tranh chuyển đến Brook Lane; Brook đánh vần B–R–O–O–K. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The event is at Maple Hall, M, A, P, L, E."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The event is at Maple Hall, M, A, P, L, E. Nghĩa: Sự kiện diễn ra tại Maple Hall; Maple đánh vần M–A–P–L–E. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The workshop is held in Linden House: L, I, N, D, E, N."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The workshop is held in Linden House: L, I, N, D, E, N. Nghĩa: Hội thảo tổ chức tại Linden House; Linden đánh vần L–I–N–D–E–N. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bicycle shop is on Quarry Road, Q, U, A, R, R, Y."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The bicycle shop is on Quarry Road, Q, U, A, R, R, Y. Nghĩa: Cửa hàng xe đạp ở Quarry Road; Quarry đánh vần Q–U–A–R–R–Y. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The café is inside Rowan Court: R, O, W, A, N."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The café is inside Rowan Court: R, O, W, A, N. Nghĩa: Quán cà phê nằm trong Rowan Court; Rowan đánh vần R–O–W–A–N. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The visitor centre stands on Falcon Street, F, A, L, C, O, N."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The visitor centre stands on Falcon Street, F, A, L, C, O, N. Nghĩa: Trung tâm khách tham quan trên Falcon Street; Falcon đánh vần F–A–L–C–O–N. Lưu ý: Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "street_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập tên tòa nhà được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Maple"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: Maple. Nội dung: Sự kiện diễn ra tại Maple Hall; Maple đánh vần M–A–P–L–E.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "building_name",
+      "question_tags": [
+        "short_answer",
+        "street_spelling",
+        "building_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập tên tòa nhà được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Linden"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: Linden. Nội dung: Hội thảo tổ chức tại Linden House; Linden đánh vần L–I–N–D–E–N.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "building_name",
+      "question_tags": [
+        "short_answer",
+        "street_spelling",
+        "building_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập tên đường được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Quarry"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: Quarry. Nội dung: Cửa hàng xe đạp ở Quarry Road; Quarry đánh vần Q–U–A–R–R–Y.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "street_name",
+      "question_tags": [
+        "short_answer",
+        "street_spelling",
+        "street_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập tên tòa nhà được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Rowan"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: Rowan. Nội dung: Quán cà phê nằm trong Rowan Court; Rowan đánh vần R–O–W–A–N.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "building_name",
+      "question_tags": [
+        "short_answer",
+        "street_spelling",
+        "building_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập tên đường được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Falcon"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: Falcon. Nội dung: Trung tâm khách tham quan trên Falcon Street; Falcon đánh vần F–A–L–C–O–N.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "street_name",
+      "question_tags": [
+        "short_answer",
+        "street_spelling",
+        "street_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "lane",
+      "pos": "n",
+      "meaning_vi": "đường nhỏ",
+      "example_en": "The office is on Orchard Lane, spelled O, R, C, H, A, R, D.",
+      "example_vi": "Văn phòng nằm trên đường Orchard Lane; Orchard đánh vần O–R–C–H–A–R–D.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "avenue",
+      "pos": "n",
+      "meaning_vi": "đại lộ",
+      "example_en": "The new clinic is near Cedar Avenue: C, E, D, A, R.",
+      "example_vi": "Phòng khám mới gần đường Cedar Avenue; Cedar đánh vần C–E–D–A–R.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "entrance",
+      "pos": "n",
+      "meaning_vi": "lối vào",
+      "example_en": "The school entrance is on Willow Street, W, I, double L, O, W.",
+      "example_vi": "Lối vào trường ở đường Willow Street; Willow đánh vần W–I–L–L–O–W.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "building",
+      "pos": "n",
+      "meaning_vi": "tòa nhà",
+      "example_en": "The building is next to the library.",
+      "example_vi": "Tòa nhà nằm cạnh thư viện.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "courtyard",
+      "pos": "n",
+      "meaning_vi": "sân trong",
+      "example_en": "The courtyard is behind the main hall.",
+      "example_vi": "Sân trong nằm phía sau hội trường chính.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "clinic",
+      "pos": "n",
+      "meaning_vi": "phòng khám",
+      "example_en": "The new clinic is near Cedar Avenue: C, E, D, A, R.",
+      "example_vi": "Phòng khám mới gần đường Cedar Avenue; Cedar đánh vần C–E–D–A–R.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "street_spelling",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+    "category": "spelling",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-048-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "aff1e1ca992651f8e0831d27809bd9e427e89b19644de99429ee068e2c4fda47",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Tách tên riêng khỏi Road/Lane/Street/Avenue; đánh vần phần quan trọng.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "H, A, Z, E, L",
+        "written_value": "HAZEL",
+        "teacher_note_vi": "Tách phần tên đường khỏi Road."
+      },
+      {
+        "spoken_example": "W, I, L, L, O, W",
+        "written_value": "WILLOW",
+        "teacher_note_vi": "Tên đường có hai chữ L."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn quy tắc nhận diện chữ cái và dấu câu, đọc hai ví dụ.",
+      "Nghe chuỗi được đánh vần, ghi lại từng ký tự ngay khi nghe.",
+      "Chỉ xem transcript/đáp án sau khi nộp, rà từng chữ/dấu nối.",
+      "Dùng hai câu chưa gặp để kiểm tra trong một lần nghe với giọng khác."
+    ],
+    "common_mistakes": [
+      "Suy đoán cách viết tên theo phát âm thay vì ký tự đánh vần.",
+      "Bỏ chữ lặp, dấu gạch nối, dấu nháy hoặc số 0 trong mã."
+    ],
+    "before_audio_question": "Người nói đang đọc tên, mã chữ-số, email, tên miền hay postcode? Có từ double, hyphen, underscore không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

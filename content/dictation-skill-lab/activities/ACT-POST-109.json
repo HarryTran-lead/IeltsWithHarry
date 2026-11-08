@@ -1,0 +1,226 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-109",
+  "activity_id": "ACT-POST-109",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 1,
+  "title": "Borrowing Equipment from a Digital Media Library — Sửa lỗi sau bài thi",
+  "source_bank": "full_mock_part",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M30",
+  "source_package": "English_Skill_Lab_Dictation_M30_Full_Listening_Mocks_06-10.zip",
+  "source_entry_path": "ESL_Dictation_M30_Full_Mocks_06_10/01_TESTS_SERVER_ONLY/M30-LISTENING-MOCK-08.SERVER_ONLY.json",
+  "source_test_id": "M30-LISTENING-MOCK-08",
+  "source_lesson_id": null,
+  "source_part_id": "M30-LISTENING-MOCK-08-P1",
+  "reuse_parent_id": "M30-LISTENING-MOCK-08-P1",
+  "source_question_id": "Q04",
+  "source_audio_id": "assessment/full_mock_part/M30-LISTENING-MOCK-08-P1",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T04",
+    "T05",
+    "T12",
+    "T13"
+  ],
+  "segment_timing": {
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "667d04f042a50815dc6f1dae98f13d1838be1c14c25e274c6095356e048606b6"
+    },
+    "T05": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "074ac93bec88e0761507baa924dd3fbbfb728562875d94532a75a7feb0da4f4a"
+    },
+    "T12": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "bb4ab9632fd1bdbfb38a0e1790edff4b252bc44849389333f2fdb6c145df2d20"
+    },
+    "T13": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "de0ca54edae16bf723dfb2452a667c76b5259ae42dc4120cd5cb787b153e0bdd"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "3fa7a53efbc62e8e9541fa50ae6ce3fbf0199efa27aea13e94e1c7a3e91fd151",
+  "anchor_turn_id": "T13",
+  "teacher_only_evidence_text_en": "Bring your student card, because the special lending allowance belongs to enrolled students. A photo of the card is insufficient; staff must see the original when you collect the kit.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-109-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Required document: ____",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "student card"
+      ],
+      "spoken_answer": "student card",
+      "word_limit": 3,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q04",
+      "source_question_type": "form_completion",
+      "play_turn_ids": [
+        "T12",
+        "T13"
+      ],
+      "evidence_turn_ids": [
+        "T12",
+        "T13"
+      ],
+      "teacher_explanation_vi": "Đáp án dự kiến: student card. Hãy đối chiếu phát ngôn tại T12, T13; phần diễn đạt lại và các đáp án thay thế phải được giáo viên xác nhận.",
+      "feedback_vi": "Đáp án gốc: student card. Đối chiếu với các lượt thoại T12, T13; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-109-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q04",
+      "source_question_prompt_en": "Required document: ____",
+      "choices": [
+        {
+          "key": "T13",
+          "excerpt_en": "Bring your student card, because the special lending allowance belongs to enrolled students. A photo of the card is insufficient; staff must see the original when you collect the kit.",
+          "source_turn_id": "T13"
+        },
+        {
+          "key": "T04",
+          "excerpt_en": "The camera has stabilisation, but I will be interviewing people outside. I think I should also reserve a tripod.",
+          "source_turn_id": "T04"
+        },
+        {
+          "key": "T05",
+          "excerpt_en": "That is sensible. A tripod supports a fixed interview shot; we have portable lights too, but these are booked separately and are not essential for daytime filming.",
+          "source_turn_id": "T05"
+        }
+      ],
+      "correct_answers": [
+        "T13"
+      ],
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_text_sha256": "de0ca54edae16bf723dfb2452a667c76b5259ae42dc4120cd5cb787b153e0bdd",
+      "play_turn_ids": [
+        "T13",
+        "T04",
+        "T05"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T13. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-109-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "[____]  the special lending allowance belongs to enr…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "Bring your student card, because"
+      ],
+      "play_turn_ids": [
+        "T13"
+      ],
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "source_excerpt_exact": "Bring your student card, because",
+      "evidence_char_start": 0,
+      "evidence_char_end": 32,
+      "source_turn_sha256": "de0ca54edae16bf723dfb2452a667c76b5259ae42dc4120cd5cb787b153e0bdd",
+      "feedback_vi": "Cụm nghe-chép chính xác là “Bring your student card, because”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "student card"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T12",
+      "T13"
+    ],
+    "raw_question_evidence_excerpt_en": "I have a driving licence and a bank statement. Is either one needed? Bring your student card, because the special lending allowance belongs to enrolled students. A photo of the card is insufficient; staff must see the original when you collect the kit.",
+    "original_explanation_vi": "Đáp án dự kiến: student card. Hãy đối chiếu phát ngôn tại T12, T13; phần diễn đạt lại và các đáp án thay thế phải được giáo viên xác nhận."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_1",
+    "form_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q04",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "M30-LISTENING-MOCK-08",
+    "gate_kind": "whole_mock_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-013",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Environmental chemistry and sampling",
+  "title": "Tracking Microplastics in Rivers",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "microplastic_sampling",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Microplastics are small plastic particles found in many environmental settings, but measuring their abundance is less straightforward than collecting a bottle of river water. Samples vary with the season, depth and location. Before comparing results, researchers must define a sampling strategy, which specifies where, when and how the material will be collected. Without it, numbers from different studies can be difficult to interpret.",
+      "translation_vi": "Vi nhựa là hạt nhựa nhỏ hiện diện nhiều môi trường, nhưng đo số lượng phức tạp hơn lấy một chai nước sông. Mẫu thay đổi theo mùa, độ sâu và nơi lấy. Trước khi so, phải xác định chiến lược lấy mẫu: ở đâu, khi nào và bằng cách gì. Không có nó, số giữa nghiên cứu khó diễn giải.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Different tools capture particles of different sizes. A fine filter may retain material that a wide-meshed net allows to pass through. Scientists report the relevant mesh size, because two teams can collect different apparent quantities in the same river simply by using different nets. This technical detail affects which particles are included in the final count.",
+      "translation_vi": "Các dụng cụ giữ hạt kích cỡ khác nhau. Bộ lọc mịn giữ vật liệu mà lưới thưa cho lọt. Nhà khoa học phải ghi kích thước mắt lưới vì hai nhóm có thể đếm khác nhau ngay cùng dòng sông chỉ do lưới khác nhau. Chi tiết kỹ thuật này quyết định hạt nào nằm trong kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "One difficulty is contamination during collection and analysis. Fibres from laboratory clothing or plastic containers may enter the sample. Researchers therefore prepare a blank sample, which follows the handling procedure without containing the target river material. If particles appear in that blank, the team has evidence that the procedure itself may have introduced contaminants.",
+      "translation_vi": "Khó khăn là nhiễm bẩn khi lấy và phân tích. Sợi từ áo thí nghiệm hoặc hộp nhựa có thể rơi vào mẫu. Vì vậy cần mẫu trắng: đi qua thao tác tương tự nhưng không chứa nước sông mục tiêu. Nếu mẫu trắng có hạt, chính quy trình có thể đã thêm chất bẩn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Visual inspection can identify suspicious fragments, but appearance alone does not demonstrate that every fibre is plastic. Some natural materials have similar shapes. Researchers may use spectroscopic analysis to investigate the chemical composition of a particle. The method is valuable but can be expensive, which sometimes limits how many suspected particles a project can confirm.",
+      "translation_vi": "Quan sát mắt thường nhận ra mảnh nghi ngờ, nhưng hình dạng không chứng minh mọi sợi đều là nhựa; vật liệu tự nhiên có thể giống. Nhà nghiên cứu dùng phân tích quang phổ để kiểm tra thành phần hóa học hạt. Phương pháp hữu ích nhưng tốn chi phí nên có nghiên cứu chỉ kiểm tra một phần mẫu.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Counts must also be linked to a denominator. Reporting fifty particles means little unless readers know whether they came from a litre of water or a much larger volume. Scientists calculate a particle concentration so results are expressed relative to a defined quantity of water or sediment. A dramatic-looking count can be less concerning once the sampled volume is considered.",
+      "translation_vi": "Số lượng đếm phải kèm mẫu số. Năm mươi hạt chưa có nhiều ý nghĩa nếu không biết từ một lít hay thể tích lớn hơn. Nhà khoa học tính nồng độ hạt theo đơn vị nước hoặc trầm tích xác định. Con số đếm trông lớn có thể ít nổi bật hơn nếu biết lượng mẫu.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "A single measurement can also be influenced by unusual weather. After heavy rain, a river may carry more surface runoff, while low flows might allow particles to settle. Researchers record flow conditions during sampling to avoid comparing unlike situations. A difference across months may reflect the river's behaviour as well as changes in plastic entering it.",
+      "translation_vi": "Một lần đo bị thời tiết ảnh hưởng. Sau mưa lớn, sông mang nước chảy tràn nhiều hơn; khi nước thấp, hạt có thể lắng. Cần ghi điều kiện dòng chảy lúc lấy mẫu để không so hai tình huống khác nhau. Chênh lệch giữa tháng có thể do chuyển động sông lẫn lượng nhựa mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "There is an additional problem when reporting the proportion of different materials. Some analysis techniques identify particles more confidently than others, and very small particles may fall below detection limits. The resulting measurement uncertainty should be acknowledged. Reporting extra decimal places cannot remove uncertainty caused by sampling and identification choices.",
+      "translation_vi": "Khi báo tỷ lệ vật liệu còn khó khăn: một số kỹ thuật nhận diện chắc hơn kỹ thuật khác, hạt rất nhỏ có thể dưới giới hạn phát hiện. Phải nêu độ bất định đo lường. Thêm chữ số thập phân không loại bỏ bất định từ cách lấy và nhận diện mẫu.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The broader scientific aim is to identify patterns that can guide effective prevention. Comparing locations upstream and downstream from possible sources may be informative, but it does not automatically prove a cause. Investigators combine measurements with knowledge of local activities. Good research requires multiple lines of evidence rather than relying on one striking sample.",
+      "translation_vi": "Mục tiêu rộng hơn là tìm quy luật để phòng ngừa hiệu quả. So vị trí thượng và hạ lưu nguồn nghi ngờ hữu ích nhưng không tự động chứng minh nguyên nhân. Nhà nghiên cứu kết hợp đo với hiểu biết hoạt động địa phương. Nghiên cứu tốt cần nhiều dòng bằng chứng chứ không phụ thuộc mẫu nổi bật duy nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Reliable comparisons begin with a clear ____.",
+      "correct_answers": [
+        "sampling strategy"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Before comparing results, researchers must define a sampling strategy, which specifies where, when and how the material will be collected.",
+      "explanation_vi": "Sampling strategy là kế hoạch chọn địa điểm, thời điểm và phương pháp lấy mẫu.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Results from different nets depend on their ____.",
+      "correct_answers": [
+        "mesh size"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Scientists report the relevant mesh size, because two teams can collect different apparent quantities in the same river simply by using different nets.",
+      "explanation_vi": "Mesh size là kích thước mắt lưới quyết định ngưỡng hạt thu được.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "A control used to detect laboratory contamination is a ____.",
+      "correct_answers": [
+        "blank sample"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers therefore prepare a blank sample, which follows the handling procedure without containing the target river material.",
+      "explanation_vi": "Blank sample là mẫu kiểm soát không chứa chất cần phân tích.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Confirming a particle's chemical identity may require ____.",
+      "correct_answers": [
+        "spectroscopic analysis"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Researchers may use spectroscopic analysis to investigate the chemical composition of a particle.",
+      "explanation_vi": "Spectroscopic analysis dùng đặc trưng quang phổ để xác định vật liệu.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_TABLE_05_06",
+      "type": "table_completion",
+      "prompt": "Results should be reported as a ____ rather than an isolated count.",
+      "correct_answers": [
+        "particle concentration"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Scientists calculate a particle concentration so results are expressed relative to a defined quantity of water or sediment.",
+      "explanation_vi": "Particle concentration là lượng hạt trên một đơn vị mẫu.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_TABLE_05_06",
+      "type": "table_completion",
+      "prompt": "Field teams record river ____ when taking samples.",
+      "correct_answers": [
+        "flow conditions"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Researchers record flow conditions during sampling to avoid comparing unlike situations.",
+      "explanation_vi": "Flow conditions cho biết lưu lượng và trạng thái dòng nước ảnh hưởng kết quả.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Limitations in identification contribute to ____.",
+      "correct_answers": [
+        "measurement uncertainty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The resulting measurement uncertainty should be acknowledged.",
+      "explanation_vi": "Measurement uncertainty phản ánh mức độ không chắc của phép đo.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Sound conclusions require ____ of evidence.",
+      "correct_answers": [
+        "multiple lines"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Good research requires multiple lines of evidence rather than relying on one striking sample.",
+      "explanation_vi": "Multiple lines of evidence nghĩa là nhiều nguồn bằng chứng độc lập bổ sung nhau.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "microplastic_sampling",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Scientists report the relevant mesh size, because two teams can collect different apparent quantities in the same river simply by using different nets."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 135,
+      "source_char_end": 286,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Scientists report the relevant mesh size, because two teams can collect different apparent quantities in the same river simply by using different nets.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Researchers may use spectroscopic analysis to investigate the chemical composition of a particle."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 168,
+      "source_char_end": 265,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Researchers may use spectroscopic analysis to investigate the chemical composition of a particle.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Researchers record flow conditions during sampling to avoid comparing unlike situations."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 170,
+      "source_char_end": 258,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Researchers record flow conditions during sampling to avoid comparing unlike situations.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Good research requires multiple lines of evidence rather than relying on one striking sample."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 290,
+      "source_char_end": 383,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Good research requires multiple lines of evidence rather than relying on one striking sample.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Researchers therefore prepare a ____, which follows the handling procedure without containing the target river material.",
+      "correct_answers": [
+        "blank sample"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers therefore prepare a blank sample, which follows the handling procedure without containing the target river material.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: The resulting ____ should be acknowledged.",
+      "correct_answers": [
+        "measurement uncertainty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The resulting measurement uncertainty should be acknowledged.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-013-V01",
+      "expression_en": "sampling strategy",
+      "meaning_vi": "chiến lược lấy mẫu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Before comparing results, researchers must define a sampling strategy, which specifies where, when and how the material will be collected.",
+      "example_vi": "Vi nhựa là hạt nhựa nhỏ hiện diện nhiều môi trường, nhưng đo số lượng phức tạp hơn lấy một chai nước sông. Mẫu thay đổi theo mùa, độ sâu và nơi lấy. Trước khi so, phải xác định chiến lược lấy mẫu: ở đâu, khi nào và bằng cách gì. Không có nó, số giữa nghiên cứu khó diễn giải.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-013-V02",
+      "expression_en": "mesh size",
+      "meaning_vi": "kích thước mắt lưới",
+      "part_of_speech": "noun phrase",
+      "example_en": "Scientists report the relevant mesh size, because two teams can collect different apparent quantities in the same river simply by using different nets.",
+      "example_vi": "Các dụng cụ giữ hạt kích cỡ khác nhau. Bộ lọc mịn giữ vật liệu mà lưới thưa cho lọt. Nhà khoa học phải ghi kích thước mắt lưới vì hai nhóm có thể đếm khác nhau ngay cùng dòng sông chỉ do lưới khác nhau. Chi tiết kỹ thuật này quyết định hạt nào nằm trong kết quả.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-013-V03",
+      "expression_en": "blank sample",
+      "meaning_vi": "mẫu trắng kiểm soát",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers therefore prepare a blank sample, which follows the handling procedure without containing the target river material.",
+      "example_vi": "Khó khăn là nhiễm bẩn khi lấy và phân tích. Sợi từ áo thí nghiệm hoặc hộp nhựa có thể rơi vào mẫu. Vì vậy cần mẫu trắng: đi qua thao tác tương tự nhưng không chứa nước sông mục tiêu. Nếu mẫu trắng có hạt, chính quy trình có thể đã thêm chất bẩn.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-013-V04",
+      "expression_en": "spectroscopic analysis",
+      "meaning_vi": "phân tích quang phổ",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers may use spectroscopic analysis to investigate the chemical composition of a particle.",
+      "example_vi": "Quan sát mắt thường nhận ra mảnh nghi ngờ, nhưng hình dạng không chứng minh mọi sợi đều là nhựa; vật liệu tự nhiên có thể giống. Nhà nghiên cứu dùng phân tích quang phổ để kiểm tra thành phần hóa học hạt. Phương pháp hữu ích nhưng tốn chi phí nên có nghiên cứu chỉ kiểm tra một phần mẫu.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-013-V05",
+      "expression_en": "particle concentration",
+      "meaning_vi": "nồng độ hạt",
+      "part_of_speech": "noun phrase",
+      "example_en": "Scientists calculate a particle concentration so results are expressed relative to a defined quantity of water or sediment.",
+      "example_vi": "Số lượng đếm phải kèm mẫu số. Năm mươi hạt chưa có nhiều ý nghĩa nếu không biết từ một lít hay thể tích lớn hơn. Nhà khoa học tính nồng độ hạt theo đơn vị nước hoặc trầm tích xác định. Con số đếm trông lớn có thể ít nổi bật hơn nếu biết lượng mẫu.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-013-V06",
+      "expression_en": "flow conditions",
+      "meaning_vi": "điều kiện dòng chảy",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers record flow conditions during sampling to avoid comparing unlike situations.",
+      "example_vi": "Một lần đo bị thời tiết ảnh hưởng. Sau mưa lớn, sông mang nước chảy tràn nhiều hơn; khi nước thấp, hạt có thể lắng. Cần ghi điều kiện dòng chảy lúc lấy mẫu để không so hai tình huống khác nhau. Chênh lệch giữa tháng có thể do chuyển động sông lẫn lượng nhựa mới.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "d9afa46398e5cdfe83b8b84bdafce1a9fd9578d3bf64b75515eafdefeff4699d",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_04",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "Reliable comparisons begin with a clear ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Results from different nets depend on their ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "A control used to detect laboratory contamination is a ____."
+          },
+          {
+            "question_id": "Q04",
+            "prompt": "Confirming a particle's chemical identity may require ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04"
+        ]
+      },
+      {
+        "group_id": "IELTS_TABLE_05_06",
+        "type": "table_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "two_column_table",
+        "group_heading": "Methods and comparisons",
+        "items": [
+          {
+            "question_id": "Q05",
+            "prompt": "Results should be reported as a ____ rather than an isolated count."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Field teams record river ____ when taking samples."
+          }
+        ],
+        "question_ids": [
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SUMMARY_07_08",
+        "type": "summary_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "connected_summary",
+        "group_heading": "Interpretation and conclusions",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Limitations in identification contribute to ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Sound conclusions require ____ of evidence."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 448,
+    "estimated_audio_minutes_at_135_wpm": 3.32,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

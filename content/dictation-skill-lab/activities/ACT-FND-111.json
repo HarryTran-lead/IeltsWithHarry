@@ -1,0 +1,166 @@
+{
+  "schema_version": "m33.1.0",
+  "activity_id": "ACT-FND-111",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "foundation_micro_practice",
+  "origin_bank": "foundation_training",
+  "source_lesson_id": "FND2-003",
+  "source_zip": "English_Skill_Lab_Dictation_M17_Foundation_30_Full_Content.zip",
+  "reuse_parent_id": "FND2-003",
+  "variant": "extra",
+  "title": "/æ/ versus /ʌ/ — cặp âm PAIR-02",
+  "category": "sound_contrasts",
+  "category_vi": "Phân biệt âm và hình thái",
+  "micro_skill_id": "a_vs_uh",
+  "skill_tags": [
+    "a_vs_uh",
+    "foundation",
+    "micro_practice",
+    "sound_contrasts"
+  ],
+  "source_audio_id": "foundation-training/FND2-003/T04",
+  "source_segments": [
+    {
+      "source_audio_id": "foundation-training/FND2-003/T03",
+      "source_audio_id_type": "logical_turn_key_not_physical_asset",
+      "source_lesson_id": "FND2-003",
+      "source_turn_id": "T03",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "source_transcript_sha256": "9ac922534ee076ad143e9a431d1142021025f4df7e2ebcd127065df4294c9d7b",
+      "source_speaker_id": "A",
+      "audio_state": "not_generated",
+      "alignment_state": "pending_alignment"
+    },
+    {
+      "source_audio_id": "foundation-training/FND2-003/T04",
+      "source_audio_id_type": "logical_turn_key_not_physical_asset",
+      "source_lesson_id": "FND2-003",
+      "source_turn_id": "T04",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "source_transcript_sha256": "2871e45e5969796fb746d012530be1ad9a1d499f249988b7d91277381a9ad28b",
+      "source_speaker_id": "A",
+      "audio_state": "not_generated",
+      "alignment_state": "pending_alignment"
+    }
+  ],
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "clip_timing_scope": "turn_level_asset_or_verified_offsets_only",
+  "playback": {
+    "first_listen_replays": 1,
+    "guided_phase_max_replays": 4,
+    "speech_rate": 1.0,
+    "autoplay_transcript": false,
+    "clip_order": "sequence",
+    "inter_turn_gap_ms": 350
+  },
+  "questions": [
+    {
+      "question_id": "ACT-FND-111-Q1",
+      "phase": "first_listen",
+      "type": "audio_word_discrimination",
+      "prompt_vi": "Nghe đoạn A. Từ nào được phát âm trong câu?",
+      "options": [
+        {
+          "value": "cup",
+          "label": "cup"
+        },
+        {
+          "value": "cap",
+          "label": "cap"
+        }
+      ],
+      "correct_answers": [
+        "cap"
+      ],
+      "answer_format": "option_value",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "play_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án là “cap”. Đối chiếu âm thanh với “cup”. Phân biệt /æ/ trong cat với /ʌ/ trong cut",
+      "evidence": {
+        "source_sentence_en": "She lost her cap at the park.",
+        "source_translation_vi": "Cô ấy làm mất mũ ở công viên.",
+        "focus_value": "cap",
+        "focus_kind": "phoneme_word",
+        "origin_lesson_id": "FND2-003",
+        "origin_turn_id": "T03",
+        "origin_lesson_skill": "a_vs_uh",
+        "evidence_sha256": "9ac922534ee076ad143e9a431d1142021025f4df7e2ebcd127065df4294c9d7b"
+      },
+      "score_weight": 1
+    },
+    {
+      "question_id": "ACT-FND-111-Q2",
+      "phase": "guided_contrast",
+      "type": "audio_word_discrimination",
+      "prompt_vi": "Nghe đoạn B. Từ nào được phát âm trong câu?",
+      "options": [
+        {
+          "value": "cup",
+          "label": "cup"
+        },
+        {
+          "value": "cap",
+          "label": "cap"
+        }
+      ],
+      "correct_answers": [
+        "cup"
+      ],
+      "answer_format": "option_value",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "play_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án là “cup”. Đối chiếu âm thanh với “cap”. Phân biệt /æ/ trong cat với /ʌ/ trong cut",
+      "evidence": {
+        "source_sentence_en": "She lost her cup at the park.",
+        "source_translation_vi": "Cô ấy làm mất cốc ở công viên.",
+        "focus_value": "cup",
+        "focus_kind": "phoneme_word",
+        "origin_lesson_id": "FND2-003",
+        "origin_turn_id": "T04",
+        "origin_lesson_skill": "a_vs_uh",
+        "evidence_sha256": "2871e45e5969796fb746d012530be1ad9a1d499f249988b7d91277381a9ad28b"
+      },
+      "score_weight": 1
+    }
+  ],
+  "answer_release": "post_activity_submit_only",
+  "feedback_release": "post_activity_submit_only",
+  "grading_is_band_estimate": false,
+  "exposure_rules": {
+    "source_bank": "training",
+    "pretest_reuse_permitted": true,
+    "never_accept_protected_or_unseen_source": true,
+    "do_not_mix_with_mock_source": true,
+    "log_first_exposure": true,
+    "log_replays": true,
+    "log_retention_reviews": true,
+    "source_scope": "training_source_only"
+  },
+  "rights_status": "pending_tts_terms_review",
+  "source_content_status": "authored_draft",
+  "source_audio_status": "not_generated",
+  "review": {
+    "content_editor": "pending",
+    "audio_listening": "pending",
+    "rights_clearance": "pending",
+    "teacher_signoff": "pending",
+    "publish_ready": false
+  },
+  "notes_vi": "Hoạt động luyện tập trích từ lượt thoại gốc M17–M20. Không có audio thật/timestamp ở gói nguồn. Không công bố trước transcript/đáp án."
+}

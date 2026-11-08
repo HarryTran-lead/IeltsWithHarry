@@ -1,0 +1,865 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-019",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Booking an energy-efficiency home visit",
+  "title": "Arranging a Home Energy Survey",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "home_services",
+    "appointments",
+    "energy",
+    "paperwork",
+    "fees"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Home energy advice service coordinator",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Homeowner",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Green Home Advice Line, this is Marcus. Are you enquiring about an energy survey or looking for funding for new heating?",
+      "translation_vi": "Đường dây Tư vấn Nhà Xanh, Marcus đây. Chị hỏi khảo sát năng lượng hay hỗ trợ tiền thay hệ thống sưởi?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "An energy survey first. Our living room feels cold even when the heating is on, and we'd like to understand why.",
+      "translation_vi": "Tôi muốn khảo sát năng lượng trước. Phòng khách vẫn lạnh dù bật sưởi, muốn hiểu nguyên nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We offer a basic assessment called Heat Check. A trained adviser examines insulation, draughts and household energy use.",
+      "translation_vi": "Chúng tôi có đánh giá cơ bản Heat Check. Chuyên viên xem cách nhiệt, gió lùa và mức tiêu thụ năng lượng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Heat Check seems sensible. I don't want to agree to new windows before someone has looked at the existing ones.",
+      "translation_vi": "Heat Check nghe hợp lý. Tôi không muốn thay cửa sổ trước khi có người xem cửa hiện tại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "That's a sensible approach. Sometimes relatively small gaps around a door can cause discomfort without requiring a major replacement.",
+      "translation_vi": "Đó là hướng hợp lý. Đôi khi khe hở nhỏ quanh cửa gây khó chịu mà không cần thay toàn bộ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Exactly. I'd prefer to start with simple improvements if the evidence supports them, rather than paying for unnecessary building work.",
+      "translation_vi": "Đúng vậy. Tôi thích bắt đầu với cách cải thiện đơn giản nếu có bằng chứng, thay vì trả tiền cho sửa chữa không cần thiết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Quite right. We can visit terraced houses, flats and detached homes, although older properties sometimes take a little longer.",
+      "translation_vi": "Đúng vậy. Chúng tôi đến nhà liền kề, căn hộ và nhà riêng, nhưng nhà cũ đôi khi lâu hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Ours is a terraced house. Can you come next Tuesday? I'm working from home that day and can show the adviser around.",
+      "translation_vi": "Nhà tôi là nhà liền kề. Anh đến thứ Ba tới được không? Hôm đó tôi làm tại nhà, có thể dẫn đi xem.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Tuesday is full, but there's an appointment on Thursday. Friday morning is also free, though it's farther into the week.",
+      "translation_vi": "Thứ Ba đã kín, nhưng còn thứ Năm. Sáng thứ Sáu cũng trống nhưng muộn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Thursday would be better. What time should I expect the adviser? I have a video meeting around lunchtime.",
+      "translation_vi": "Thứ Năm tốt hơn. Chuyên viên đến lúc mấy giờ? Tôi có họp video gần trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The earliest Thursday slot is nine fifteen. A visit usually lasts just over an hour, so you should be finished before eleven.",
+      "translation_vi": "Giờ sớm nhất thứ Năm là chín giờ mười lăm. Khảo sát hơn một giờ, nên trước mười một giờ sẽ xong.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "That's ideal. Will the adviser need access to the loft? It's full of boxes, but I can clear a small path.",
+      "translation_vi": "Lý tưởng. Chuyên viên cần lên gác mái không? Đầy thùng nhưng tôi có thể dọn lối nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Yes, loft access is useful for inspecting insulation. Please make sure the hatch can be opened safely without moving heavy furniture.",
+      "translation_vi": "Có, cần vào gác để xem cách nhiệt. Hãy bảo đảm mở cửa lên an toàn, không phải chuyển đồ nặng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "I'll check the hatch. Our energy bills increased sharply last winter, so I'd like advice based on those figures too.",
+      "translation_vi": "Tôi sẽ kiểm tra. Hóa đơn năng lượng tăng mạnh mùa đông trước, muốn tư vấn dựa trên số liệu đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Please have your most recent electricity bill available. A gas bill helps as well, but the electricity statement is the essential one.",
+      "translation_vi": "Hãy chuẩn bị hóa đơn điện gần nhất. Hóa đơn gas cũng hữu ích, nhưng giấy điện là bắt buộc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I can print that. How much will the survey cost? I heard the council was subsidising some home visits.",
+      "translation_vi": "Tôi in được. Khảo sát giá bao nhiêu? Tôi nghe hội đồng hỗ trợ một số buổi đến nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "For residents in this postcode, the Heat Check survey is free. Private contractors may charge, but our service is council-funded.",
+      "translation_vi": "Với cư dân mã bưu chính này, Heat Check miễn phí. Thợ tư nhân có thể tính tiền, nhưng dịch vụ được hội đồng tài trợ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "Excellent. My surname is Bellamy, B E L L A M Y. You'll find the house number in the form I sent yesterday.",
+      "translation_vi": "Tuyệt. Họ tôi là Bellamy, B E L L A M Y. Số nhà có trong mẫu gửi hôm qua.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "Thank you, Ms Bellamy. The adviser won't carry out building work during the visit; they'll make recommendations for possible improvements.",
+      "translation_vi": "Cảm ơn cô Bellamy. Chuyên viên sẽ không sửa chữa tại buổi đến; họ đưa đề xuất cải thiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "That's fine. I'd rather understand the options before contacting installers. Will I get the findings in writing?",
+      "translation_vi": "Được. Tôi muốn hiểu lựa chọn trước khi tìm thợ. Có nhận kết quả bằng văn bản không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "Yes. We email a written report within seven working days. It includes suggested priorities but isn't a quotation for building work.",
+      "translation_vi": "Có. Chúng tôi email báo cáo trong bảy ngày làm việc, gồm ưu tiên đề xuất nhưng không phải báo giá sửa nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "Seven days is reasonable. I can also ask our neighbour about similar problems, since their house is built to the same design.",
+      "translation_vi": "Bảy ngày ổn. Tôi còn hỏi hàng xóm vì nhà họ thiết kế giống nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T23",
+      "speaker_id": "A",
+      "text_en": "That's useful, although each home is assessed separately. Please keep the heating switched on at its normal setting before we arrive.",
+      "translation_vi": "Hữu ích, nhưng mỗi nhà được đánh giá riêng. Hãy để hệ thống sưởi ở mức bình thường trước khi chúng tôi đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T24",
+      "speaker_id": "B",
+      "text_en": "I'll do that. I'll clear the loft hatch, have the electricity bill ready and see the adviser Thursday at nine fifteen.",
+      "translation_vi": "Tôi sẽ làm. Tôi dọn cửa gác, chuẩn bị hóa đơn điện và gặp chuyên viên thứ Năm lúc chín giờ mười lăm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Name of the assessment: ____",
+      "correct_answers": [
+        "Heat Check"
+      ],
+      "spoken_answer": "Heat Check",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tên đánh giá là Heat Check.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "called Heat Check",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Type of property: ____ house",
+      "correct_answers": [
+        "terraced"
+      ],
+      "spoken_answer": "terraced",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Nhà thuộc loại liền kề.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "terraced house",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Appointment day: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "spoken_answer": "Thursday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lịch chốt là thứ Năm.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "appointment on Thursday",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Start time: ____",
+      "correct_answers": [
+        "nine fifteen",
+        "9:15"
+      ],
+      "spoken_answer": "nine fifteen",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giờ khảo sát 9:15.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "slot is nine fifteen",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Area to make accessible: the ____",
+      "correct_answers": [
+        "loft"
+      ],
+      "spoken_answer": "loft",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cần mở lối lên gác mái.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "loft access",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Required document: electricity ____",
+      "correct_answers": [
+        "bill"
+      ],
+      "spoken_answer": "bill",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cần hóa đơn điện gần nhất.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "electricity bill",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What will the survey cost the homeowner?",
+      "correct_answers": [
+        "Nothing"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Nothing"
+        },
+        {
+          "key": "B",
+          "text": "The fee charged by private contractors"
+        },
+        {
+          "key": "C",
+          "text": "An hourly council charge"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Khảo sát được miễn phí cho cư dân phù hợp.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "survey is free",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What will the adviser do during the visit?",
+      "correct_answers": [
+        "Recommend improvements"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Install new windows"
+        },
+        {
+          "key": "B",
+          "text": "Recommend improvements"
+        },
+        {
+          "key": "C",
+          "text": "Replace the heating system"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Chuyên viên chỉ khảo sát, đề xuất, không thi công.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "make recommendations for possible improvements",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "When will the written report arrive?",
+      "correct_answers": [
+        "Within seven working days"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Immediately after the visit"
+        },
+        {
+          "key": "B",
+          "text": "After the next heating season"
+        },
+        {
+          "key": "C",
+          "text": "Within seven working days"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Báo cáo được gửi trong bảy ngày làm việc.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "within seven working days",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What should be done with the heating before the visit?",
+      "correct_answers": [
+        "Leave it at the usual setting"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Leave it at the usual setting"
+        },
+        {
+          "key": "B",
+          "text": "Switch it off for a full day"
+        },
+        {
+          "key": "C",
+          "text": "Turn it to maximum temperature"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Nên để sưởi ở mức dùng bình thường.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T23"
+      ],
+      "evidence_excerpt_en": "heating switched on at its normal setting",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "home_services",
+        "appointments",
+        "energy",
+        "paperwork",
+        "fees"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "93b6cae325ad6d5d61713d1c475a2e1d00443e08ded8ba51b5526d98c20f697a",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.61,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

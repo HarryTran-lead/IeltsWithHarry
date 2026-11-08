@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-038",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Numbers",
+  "title": "Numbers in warehouse logistics",
+  "learning_objectives_vi": [
+    "Nghe được numbers in warehouse logistics trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (logistics).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The delivery contains one hundred and forty cartons.",
+      "translation_vi": "Lô hàng giao gồm 140 thùng carton.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "integer"
+      ],
+      "target_value": "140",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Please place the fragile boxes on shelf number twenty-seven.",
+      "translation_vi": "Vui lòng đặt các thùng dễ vỡ lên kệ số 27.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "integer"
+      ],
+      "target_value": "27",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our driver will use bay number sixteen at the warehouse.",
+      "translation_vi": "Tài xế của chúng tôi sẽ dùng khoang số 16 tại nhà kho.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "integer"
+      ],
+      "target_value": "16",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "There are two hundred and five labels ready to print.",
+      "translation_vi": "Có 205 nhãn đã sẵn sàng để in.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "integer"
+      ],
+      "target_value": "205",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The order includes ninety-eight reusable containers.",
+      "translation_vi": "Đơn hàng gồm 98 hộp đựng tái sử dụng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "integer"
+      ],
+      "target_value": "98",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The storage temperature must stay at four degrees Celsius.",
+      "translation_vi": "Nhiệt độ bảo quản phải duy trì ở mức 4 độ C.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "temperature"
+      ],
+      "target_value": "4°C",
+      "target_kind": "temperature",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The shipment weighs just under twenty kilos, precisely nineteen point eight.",
+      "translation_vi": "Lô hàng nặng dưới 20 ki-lô-gam, chính xác là 19,8.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "measurement"
+      ],
+      "target_value": "19.8 kg",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The loading team has thirty-two minutes for the next batch.",
+      "translation_vi": "Nhóm bốc xếp có 32 phút cho lô tiếp theo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "integer"
+      ],
+      "target_value": "32",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The receiving department is on floor number twelve.",
+      "translation_vi": "Bộ phận tiếp nhận ở tầng số 12.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "integer"
+      ],
+      "target_value": "12",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The replacement order is for two hundred and thirty items.",
+      "translation_vi": "Đơn hàng thay thế gồm 230 món.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "logistics",
+        "integer"
+      ],
+      "target_value": "230",
+      "target_kind": "integer",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The delivery contains one hundred and forty cartons."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The delivery contains one hundred and forty cartons. Nghĩa: Lô hàng giao gồm 140 thùng carton. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please place the fragile boxes on shelf number twenty-seven."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Please place the fragile boxes on shelf number twenty-seven. Nghĩa: Vui lòng đặt các thùng dễ vỡ lên kệ số 27. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our driver will use bay number sixteen at the warehouse."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Our driver will use bay number sixteen at the warehouse. Nghĩa: Tài xế của chúng tôi sẽ dùng khoang số 16 tại nhà kho. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "There are two hundred and five labels ready to print."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: There are two hundred and five labels ready to print. Nghĩa: Có 205 nhãn đã sẵn sàng để in. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The order includes ninety-eight reusable containers."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The order includes ninety-eight reusable containers. Nghĩa: Đơn hàng gồm 98 hộp đựng tái sử dụng. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The storage temperature must stay at four degrees Celsius."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The storage temperature must stay at four degrees Celsius. Nghĩa: Nhiệt độ bảo quản phải duy trì ở mức 4 độ C. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The shipment weighs just under twenty kilos, precisely nineteen point eight."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The shipment weighs just under twenty kilos, precisely nineteen point eight. Nghĩa: Lô hàng nặng dưới 20 ki-lô-gam, chính xác là 19,8. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The loading team has thirty-two minutes for the next batch."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The loading team has thirty-two minutes for the next batch. Nghĩa: Nhóm bốc xếp có 32 phút cho lô tiếp theo. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The receiving department is on floor number twelve."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The receiving department is on floor number twelve. Nghĩa: Bộ phận tiếp nhận ở tầng số 12. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The replacement order is for two hundred and thirty items."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The replacement order is for two hundred and thirty items. Nghĩa: Đơn hàng thay thế gồm 230 món. Lưu ý: Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập nhiệt độ được xác nhận trong câu.",
+      "correct_answers": [
+        "4°C"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 4°C. Nội dung: Nhiệt độ bảo quản phải duy trì ở mức 4 độ C.",
+      "scoring_policy": "canonical_temperature_server",
+      "target_kind": "temperature",
+      "question_tags": [
+        "short_answer",
+        "logistics",
+        "temperature"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập giá trị và đơn vị đo được xác nhận trong câu.",
+      "correct_answers": [
+        "19.8 kg"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 19.8 kg. Nội dung: Lô hàng nặng dưới 20 ki-lô-gam, chính xác là 19,8.",
+      "scoring_policy": "canonical_measurement_server",
+      "target_kind": "measurement",
+      "question_tags": [
+        "short_answer",
+        "logistics",
+        "measurement"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "32"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 32. Nội dung: Nhóm bốc xếp có 32 phút cho lô tiếp theo.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "logistics",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "12"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 12. Nội dung: Bộ phận tiếp nhận ở tầng số 12.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "logistics",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "230"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 230. Nội dung: Đơn hàng thay thế gồm 230 món.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "logistics",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "shipment",
+      "pos": "n",
+      "meaning_vi": "lô hàng",
+      "example_en": "The shipment weighs just under twenty kilos, precisely nineteen point eight.",
+      "example_vi": "Lô hàng nặng dưới 20 ki-lô-gam, chính xác là 19,8.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "warehouse",
+      "pos": "n",
+      "meaning_vi": "nhà kho",
+      "example_en": "Our driver will use bay number sixteen at the warehouse.",
+      "example_vi": "Tài xế của chúng tôi sẽ dùng khoang số 16 tại nhà kho.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "storage",
+      "pos": "n",
+      "meaning_vi": "việc lưu kho",
+      "example_en": "The storage temperature must stay at four degrees Celsius.",
+      "example_vi": "Nhiệt độ bảo quản phải duy trì ở mức 4 độ C.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "carton",
+      "pos": "n",
+      "meaning_vi": "thùng carton",
+      "example_en": "Each carton contains twelve books.",
+      "example_vi": "Mỗi thùng carton chứa mười hai cuốn sách.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "loading bay",
+      "pos": "n",
+      "meaning_vi": "khoang bốc dỡ",
+      "example_en": "The driver is waiting at loading bay three.",
+      "example_vi": "Tài xế đang chờ ở khoang bốc dỡ số ba.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "receiving",
+      "pos": "n",
+      "meaning_vi": "việc tiếp nhận",
+      "example_en": "The receiving department is on floor number twelve.",
+      "example_vi": "Bộ phận tiếp nhận ở tầng số 12.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "logistics",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+    "category": "numbers",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-038-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "b704f7ed05db95d275a36d64675e74cfdbc4b8a06c9ca0fec44ad6b0f8c510c4",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe số lượng, vị trí, hàng và số lô trong logistics; chép đúng số được nói.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "one hundred and five cartons",
+        "written_value": "105",
+        "teacher_note_vi": "Có 0 ở hàng chục."
+      },
+      {
+        "spoken_example": "six point four kilos",
+        "written_value": "6.4 kg",
+        "teacher_note_vi": "Đơn vị là ki-lô-gam."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn tiêu đề kỹ năng và đọc hai ví dụ có giải thích trước khi nghe.",
+      "Nghe một lần và thử ghi số/chữ; không xem transcript trước khi nộp.",
+      "Sau khi nộp, so sánh từ khóa mục tiêu, số 0 và thông tin đã được sửa.",
+      "Làm hai câu đánh giá chưa gặp ở lần nghe đầu và ghi số lần phát lại."
+    ],
+    "common_mistakes": [
+      "Chọn số đầu tiên được nhắc tới thay vì số được xác nhận cuối cùng.",
+      "Bỏ số 0 đầu trong mã hoặc làm tròn số thập phân."
+    ],
+    "before_audio_question": "Đây là số lượng, số tiền, mã, phần trăm hay đơn vị đo? Dữ kiện cuối cùng có được sửa không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

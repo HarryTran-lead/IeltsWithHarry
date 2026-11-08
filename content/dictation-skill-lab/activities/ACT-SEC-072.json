@@ -1,0 +1,254 @@
+{
+  "schema_version": "m34.2.0",
+  "activity_id": "ACT-SEC-072",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Westmill Makers Market — Dẫn đường trên bản đồ và sửa lỗi",
+  "section": 2,
+  "source_lesson_id": "S2-EXP-012",
+  "source_milestone": "M22",
+  "source_zip": "English_Skill_Lab_Dictation_M22_Section_2_Expanded_Practice_20.zip",
+  "reuse_parent_id": "S2-EXP-012",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S2-EXP-012/T03",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S2-EXP-012/T03",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-012",
+      "source_turn_id": "T03",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "46a0cb8f3b4e8772a072b2bcb7c1b900e4a91a459e5c5957778b1fea7bbba8a4",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S2-EXP-012/T10",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-012",
+      "source_turn_id": "T10",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "234b5176da463a4717536d3a60b3fd6acb0320c67a361e0fe534184d33b2ca00",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Weekend market",
+  "drill_skill": "map_direction_navigation",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_2",
+    "map_navigation",
+    "compass_orientation",
+    "note_completion",
+    "focused_dictation"
+  ],
+  "teacher_notes": {
+    "goal": "Phân biệt vị trí theo hướng Bắc/Nam/Đông/Tây, sau đó xác minh thông tin thực tế được nói.",
+    "theory": "Map Labelling: trước tiên tìm đúng cổng vào (có thể ở các hướng khác nhau), sau đó theo lối đi và mốc cố định trên sơ đồ để suy ra chữ cái.",
+    "tip": "Không mặc định cổng nằm phía Nam; đối chiếu mốc cố định và hướng la bàn trước khi chọn.",
+    "mistakes": [
+      "Tưởng mọi bản đồ có cấu trúc hai hàng.",
+      "Không xác định đúng tên mốc cố định.",
+      "Nhầm hướng tương đối khi bản đồ khác nhau."
+    ],
+    "worked_example": "Ví dụ khác: “The rehearsal area is at the far north-east corner.” → ô góc trên bên phải của sơ đồ."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T03",
+      "T10"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_source_turns_verified_only"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-072-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q01",
+      "origin_question_type": "map_labelling",
+      "type": "map_labelling",
+      "prompt_en": "Which letter marks Repair Cafe?",
+      "prompt_vi": "Nghe mốc cố định, xác định hướng tương đối rồi chọn chữ cái trên bản đồ.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A"
+        },
+        {
+          "value": "B",
+          "label": "B"
+        },
+        {
+          "value": "C",
+          "label": "C"
+        },
+        {
+          "value": "D",
+          "label": "D"
+        },
+        {
+          "value": "E",
+          "label": "E"
+        },
+        {
+          "value": "F",
+          "label": "F"
+        },
+        {
+          "value": "G",
+          "label": "G"
+        },
+        {
+          "value": "H",
+          "label": "H"
+        }
+      ],
+      "correct_answers": [
+        "H"
+      ],
+      "correct_option": "H",
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_012.svg",
+      "map_asset_id": "M22-MAP-012",
+      "play_turn_ids": [
+        "T03"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "First locate the Central Clock on the visitor plan. You'll find Repair Cafe at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Central Clock, rồi nhìn ngay phía tây bắc. Khu được đánh dấu H là Repair Cafe.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-072-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q08",
+      "origin_question_type": "note_completion",
+      "type": "spoken_word_completion",
+      "prompt_en": "Item for collection: ____",
+      "prompt_vi": "Lắng nghe chi tiết đã được xác nhận, bỏ qua thông tin cũ.",
+      "options": null,
+      "correct_answers": [
+        "numbered tag"
+      ],
+      "correct_option": null,
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "play_turn_ids": [
+        "T10"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "You need the numbered tag to collect anything left at the repair cafe.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Nghe thông tin cuối cùng về item for collection; đáp án là “numbered tag”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-072-Q3",
+      "phase": "focused_dictation_repair",
+      "origin_question_id": null,
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại và chép chính xác cụm chỉ vị trí bị ẩn (không viết cả câu).",
+      "prompt_en": "First locate ____ on the visitor plan. You'll find Repair Cafe at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "word_limit": 3,
+      "correct_answers": [
+        "the Central Clock"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T03"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "the Central Clock",
+      "evidence_char_start": 13,
+      "evidence_char_end": 30,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Nghe mốc định hướng trong câu thoại mới, đối chiếu cách viết chính xác sau khi nộp.",
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S2-EXP-012",
+    "source_question_ids": [
+      "Q01",
+      "Q08"
+    ],
+    "source_turn_ids": [
+      "T03",
+      "T10"
+    ],
+    "source_transcript_sha256_map": {
+      "T03": "58978a3be250b648a8f0d87db20a888a7b1f5ff1b79b574ea3ca4d9baa248012",
+      "T10": "234b5176da463a4717536d3a60b3fd6acb0320c67a361e0fe534184d33b2ca00"
+    },
+    "provenance": "original_training_2026_m22",
+    "source_confidence": "authored_draft_requires_human_signoff"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "passed_structural",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "conditional_replace_draft_only_must_not_override_exposed_record",
+  "version": "m34.2.0",
+  "content_source_version": "m22.1.0-distinct-maps",
+  "release_eligible": false
+}

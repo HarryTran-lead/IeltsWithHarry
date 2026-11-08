@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-148",
+  "activity_id": "ACT-POST-148",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 4,
+  "title": "Measuring Success in Seagrass Restoration — Sửa lỗi sau bài thi",
+  "source_bank": "full_mock_part",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M32",
+  "source_package": "English_Skill_Lab_Dictation_M32_Full_Listening_Mocks_16-20.zip",
+  "source_entry_path": "ESL_Dictation_M32_Full_Mocks_16_20/01_TESTS_SERVER_ONLY/M32-LISTENING-MOCK-17.SERVER_ONLY.json",
+  "source_test_id": "M32-LISTENING-MOCK-17",
+  "source_lesson_id": null,
+  "source_part_id": "M32-LISTENING-MOCK-17-P4",
+  "reuse_parent_id": "M32-LISTENING-MOCK-17-P4",
+  "source_question_id": "Q07",
+  "source_audio_id": "assessment/full_mock_part/M32-LISTENING-MOCK-17-P4",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": "M32-AUD-17-P4",
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T03",
+    "T04",
+    "T12"
+  ],
+  "segment_timing": {
+    "T03": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "95c959f96e648b11997b22321d67195681d89385bf82cd4757e9d5eeacd3ad31"
+    },
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "13b9b0a8ca88e05ce97b06247d77df4191bfe8c031b93af987dc5706115fefd2"
+    },
+    "T12": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "4e868498bebbfdd297f0e9bda352efe5108dfb22a4c52efb06a92e6cc09921cd"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "ff76d803d4e97ff0389479a443e537b659725e970dd26344f51eb4ee5d9498dc",
+  "anchor_turn_id": "T12",
+  "teacher_only_evidence_text_en": "Let me illustrate that with a practical issue. Boat anchors can damage seagrass by scraping leaves and uprooting underground stems. Mooring arrangements and visitor information may reduce this pressure, but restrictions need local consultation and monitoring rather than relying only on signs.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-148-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "One threat from recreational vessels: ____",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "boat anchors"
+      ],
+      "spoken_answer": "boat anchors",
+      "word_limit": 3,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q07",
+      "source_question_type": "summary_completion",
+      "play_turn_ids": [
+        "T12"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "teacher_explanation_vi": "Đáp án biên soạn: boat anchors. Giáo viên phải nghe âm thanh, đối chiếu câu nói T12 và kiểm tra tính duy nhất của câu trả lời.",
+      "feedback_vi": "Đáp án gốc: boat anchors. Đối chiếu với các lượt thoại T12; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-148-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q07",
+      "source_question_prompt_en": "One threat from recreational vessels: ____",
+      "choices": [
+        {
+          "key": "T12",
+          "excerpt_en": "…with a practical issue. Boat anchors can damage seagrass by scraping leaves and uprooting underground stems. Mooring arrangements and visitor information may reduce this pressure, but restrictions need local consultation and moni…",
+          "source_turn_id": "T12"
+        },
+        {
+          "key": "T04",
+          "excerpt_en": "…ater cloudy by reducing the light that passes through it. Waves, boats and runoff can disturb fine particles. A planting site that is physically sheltered may still be unsuitable if sediment repeatedly enters from nearby channels.",
+          "source_turn_id": "T04"
+        },
+        {
+          "key": "T03",
+          "excerpt_en": "…depth and clarity of the water matter when choosing restoration areas. Light can decline when suspended particles increase. The same bed may receive enough light during one season and too little during another, complicating compar…",
+          "source_turn_id": "T03"
+        }
+      ],
+      "correct_answers": [
+        "T12"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_text_sha256": "4e868498bebbfdd297f0e9bda352efe5108dfb22a4c52efb06a92e6cc09921cd",
+      "play_turn_ids": [
+        "T12",
+        "T04",
+        "T03"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T12. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-148-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "… [____]  by scraping leaves and uprooting underground…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "Boat anchors can damage seagrass"
+      ],
+      "play_turn_ids": [
+        "T12"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "source_excerpt_exact": "Boat anchors can damage seagrass",
+      "evidence_char_start": 47,
+      "evidence_char_end": 79,
+      "source_turn_sha256": "4e868498bebbfdd297f0e9bda352efe5108dfb22a4c52efb06a92e6cc09921cd",
+      "feedback_vi": "Cụm nghe-chép chính xác là “Boat anchors can damage seagrass”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "boat anchors"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T12"
+    ],
+    "raw_question_evidence_excerpt_en": "Let me illustrate that with a practical issue. Boat anchors can damage seagrass by scraping leaves and uprooting underground stems. Mooring arrangements and visitor information may reduce this pressure, but restrictions need local consultation and monitoring rather than relying only on signs.",
+    "original_explanation_vi": "Đáp án biên soạn: boat anchors. Giáo viên phải nghe âm thanh, đối chiếu câu nói T12 và kiểm tra tính duy nhất của câu trả lời."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_4",
+    "summary_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q07",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "M32-LISTENING-MOCK-17",
+    "gate_kind": "whole_mock_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-045",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M18 – Spelling",
+  "title": "Double letters in surnames",
+  "learning_objectives_vi": [
+    "Nghe được double letters in surnames trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (double_letters).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The surname is Bellamy, B, E, double L, A, M, Y.",
+      "translation_vi": "Họ là Bellamy, đánh vần B–E–L–L–A–M–Y.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Bellamy",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Please note Hadden: H, A, double D, E, N.",
+      "translation_vi": "Vui lòng ghi Hadden, đánh vần H–A–D–D–E–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Hadden",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The booking is for Nella, N, E, double L, A.",
+      "translation_vi": "Đặt chỗ cho Nella, đánh vần N–E–L–L–A.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Nella",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Write the surname Tanner: T, A, double N, E, R.",
+      "translation_vi": "Hãy viết họ Tanner, đánh vần T–A–N–N–E–R.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Tanner",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our visitor is called Poppy, P, O, double P, Y.",
+      "translation_vi": "Khách tham quan tên Poppy, đánh vần P–O–P–P–Y.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Poppy",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The driver is Rossi: R, O, double S, I.",
+      "translation_vi": "Tài xế tên Rossi, đánh vần R–O–S–S–I.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Rossi",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The new trainer is called Keene, K, double E, N, E.",
+      "translation_vi": "Huấn luyện viên mới tên Keene, đánh vần K–E–E–N–E.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Keene",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The surname is Abbott, A, double B, O, double T.",
+      "translation_vi": "Họ là Abbott, đánh vần A–B–B–O–T–T.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Abbott",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please spell the name Mullen: M, U, double L, E, N.",
+      "translation_vi": "Vui lòng đánh vần tên Mullen: M–U–L–L–E–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Mullen",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The form says Duffy, D, U, double F, Y.",
+      "translation_vi": "Mẫu đơn ghi Duffy, đánh vần D–U–F–F–Y.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "double_letters",
+        "name"
+      ],
+      "target_value": "Duffy",
+      "target_kind": "name",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The surname is Bellamy, B, E, double L, A, M, Y."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The surname is Bellamy, B, E, double L, A, M, Y. Nghĩa: Họ là Bellamy, đánh vần B–E–L–L–A–M–Y. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please note Hadden: H, A, double D, E, N."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Please note Hadden: H, A, double D, E, N. Nghĩa: Vui lòng ghi Hadden, đánh vần H–A–D–D–E–N. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The booking is for Nella, N, E, double L, A."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The booking is for Nella, N, E, double L, A. Nghĩa: Đặt chỗ cho Nella, đánh vần N–E–L–L–A. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Write the surname Tanner: T, A, double N, E, R."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Write the surname Tanner: T, A, double N, E, R. Nghĩa: Hãy viết họ Tanner, đánh vần T–A–N–N–E–R. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our visitor is called Poppy, P, O, double P, Y."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Our visitor is called Poppy, P, O, double P, Y. Nghĩa: Khách tham quan tên Poppy, đánh vần P–O–P–P–Y. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The driver is Rossi: R, O, double S, I."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The driver is Rossi: R, O, double S, I. Nghĩa: Tài xế tên Rossi, đánh vần R–O–S–S–I. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The new trainer is called Keene, K, double E, N, E."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The new trainer is called Keene, K, double E, N, E. Nghĩa: Huấn luyện viên mới tên Keene, đánh vần K–E–E–N–E. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The surname is Abbott, A, double B, O, double T."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The surname is Abbott, A, double B, O, double T. Nghĩa: Họ là Abbott, đánh vần A–B–B–O–T–T. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please spell the name Mullen: M, U, double L, E, N."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Please spell the name Mullen: M, U, double L, E, N. Nghĩa: Vui lòng đánh vần tên Mullen: M–U–L–L–E–N. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The form says Duffy, D, U, double F, Y."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The form says Duffy, D, U, double F, Y. Nghĩa: Mẫu đơn ghi Duffy, đánh vần D–U–F–F–Y. Lưu ý: Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "double_letters"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Rossi"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Rossi. Nội dung: Tài xế tên Rossi, đánh vần R–O–S–S–I.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "double_letters",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Keene"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Keene. Nội dung: Huấn luyện viên mới tên Keene, đánh vần K–E–E–N–E.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "double_letters",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Abbott"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Abbott. Nội dung: Họ là Abbott, đánh vần A–B–B–O–T–T.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "double_letters",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Mullen"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Mullen. Nội dung: Vui lòng đánh vần tên Mullen: M–U–L–L–E–N.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "double_letters",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Duffy"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Duffy. Nội dung: Mẫu đơn ghi Duffy, đánh vần D–U–F–F–Y.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "double_letters",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "hyphen",
+      "pos": "n",
+      "meaning_vi": "dấu gạch nối",
+      "example_en": "Put a hyphen between the two parts of the name.",
+      "example_vi": "Đặt dấu gạch nối giữa hai phần của tên.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "apostrophe",
+      "pos": "n",
+      "meaning_vi": "dấu nháy đơn",
+      "example_en": "The surname includes an apostrophe after the first letter.",
+      "example_vi": "Họ có dấu nháy đơn sau chữ cái đầu.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "double letter",
+      "pos": "n",
+      "meaning_vi": "hai chữ cái giống nhau",
+      "example_en": "A double letter means two identical letters together.",
+      "example_vi": "Một cặp chữ lặp nghĩa là hai chữ giống nhau đứng liền nhau.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "surname",
+      "pos": "n",
+      "meaning_vi": "họ",
+      "example_en": "The surname is Bellamy, B, E, double L, A, M, Y.",
+      "example_vi": "Họ là Bellamy, đánh vần B–E–L–L–A–M–Y.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "punctuation",
+      "pos": "n",
+      "meaning_vi": "dấu câu",
+      "example_en": "The punctuation in the email address must be exact.",
+      "example_vi": "Dấu câu trong địa chỉ email phải chính xác.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "exact spelling",
+      "pos": "n",
+      "meaning_vi": "cách viết chính xác",
+      "example_en": "Ask for the exact spelling of the surname.",
+      "example_vi": "Hãy hỏi cách viết chính xác của họ.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "double_letters",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+    "category": "spelling",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-045-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "cf6c676522f6b9af9b58363a26c54921ff76a944a10bce9383000d77bc745443",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe 'double' và hiểu hai chữ cái liên tiếp, không bỏ bớt một chữ.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "B, double E",
+        "written_value": "BEE",
+        "teacher_note_vi": "Double E nghĩa là EE."
+      },
+      {
+        "spoken_example": "T, double S, A",
+        "written_value": "TSSA",
+        "teacher_note_vi": "Double S là SS, không phải một S."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn quy tắc nhận diện chữ cái và dấu câu, đọc hai ví dụ.",
+      "Nghe chuỗi được đánh vần, ghi lại từng ký tự ngay khi nghe.",
+      "Chỉ xem transcript/đáp án sau khi nộp, rà từng chữ/dấu nối.",
+      "Dùng hai câu chưa gặp để kiểm tra trong một lần nghe với giọng khác."
+    ],
+    "common_mistakes": [
+      "Suy đoán cách viết tên theo phát âm thay vì ký tự đánh vần.",
+      "Bỏ chữ lặp, dấu gạch nối, dấu nháy hoặc số 0 trong mã."
+    ],
+    "before_audio_question": "Người nói đang đọc tên, mã chữ-số, email, tên miền hay postcode? Có từ double, hyphen, underscore không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

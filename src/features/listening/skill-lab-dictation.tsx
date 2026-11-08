@@ -107,7 +107,7 @@ function SkillLabCatalog({ stageId }: { stageId: string }) {
     return (dictation?.checked || questions?.checked) ? "started" : "new";
   };
   const stage = skillLabStages.find((item) => item.id === stageId);
-  const inStage = (lessons ?? []).filter((lesson) => lesson.audio_ready && (!stage || skillLabStageOf(lesson.lesson_id) === stage.id));
+  const inStage = (lessons ?? []).filter((lesson) => lesson.audio_ready && (!stage || skillLabStageOf(lesson) === stage.id));
   const visible = inStage.filter((lesson) => (status === "all" || progress(lesson) === status)
     && (skill === "all" || lesson.skills.includes(skill as CatalogEntry["skills"][number]))
     && `${lesson.title} ${lesson.topic}`.toLowerCase().includes(query.trim().toLowerCase()));
@@ -539,7 +539,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
     <div className={`voa-lab sld-lab${mode === "dictation" ? " sld-dictation-view" : ""}`}>
       <header className="voa-lesson-header">
         <div>
-          <button type="button" className="voa-lesson-back" onClick={() => { stop(); router.push(skillLabStageUrl(skillLabStageOf(lesson.lesson_id))); }}><ArrowLeft size={15} /> {skillLabStages.find((stage) => stage.id === skillLabStageOf(lesson.lesson_id))?.label} IELTS</button>
+          <button type="button" className="voa-lesson-back" onClick={() => { stop(); router.push(skillLabStageUrl(skillLabStageOf(lesson))); }}><ArrowLeft size={15} /> {skillLabStages.find((stage) => stage.id === skillLabStageOf(lesson))?.label} IELTS</button>
           <h1>{lesson.title}</h1>
           <p>{[levelLabel(lesson.level), lesson.section ? `Section ${lesson.section}` : "Foundation", lesson.topic, formats[lesson.content_format] ?? lesson.content_format]
             .filter((part, index, parts) => parts.indexOf(part) === index).join(" · ")}</p>
@@ -792,12 +792,12 @@ function LessonSummary({ lesson, dictationResults, questionResults, questions, o
 }) {
   const router = useRouter();
   const [next, setNext] = useState<CatalogEntry | null | undefined>(undefined);
-  const stage = skillLabStageOf(lesson.lesson_id);
+  const stage = skillLabStageOf(lesson);
   useEffect(() => {
     let alive = true;
     Promise.all([fetch("/api/dictation/skill-lab").then((response) => response.json() as Promise<{ lessons?: CatalogEntry[] }>), loadResults()]).then(([data, progress]) => {
       if (!alive) return;
-      const inStage = (data.lessons ?? []).filter((item) => item.audio_ready && skillLabStageOf(item.lesson_id) === stage);
+      const inStage = (data.lessons ?? []).filter((item) => item.audio_ready && skillLabStageOf(item) === stage);
       const after = inStage.findIndex((item) => item.lesson_id === lesson.lesson_id);
       const isDone = (item: CatalogEntry) => item.lesson_id === lesson.lesson_id || (progress[item.lesson_id]?.dictation?.correct ?? 0) >= item.turns;
       setNext([...inStage.slice(after + 1), ...inStage.slice(0, Math.max(0, after))].find((item) => !isDone(item)) ?? null);

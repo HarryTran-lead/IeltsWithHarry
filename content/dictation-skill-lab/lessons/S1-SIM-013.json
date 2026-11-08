@@ -1,0 +1,831 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-013",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Arranging pet grooming services",
+  "title": "Booking a Dog Grooming Appointment",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "booking",
+    "pet_care",
+    "service_choices",
+    "timing",
+    "health_information"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Pet grooming salon receptionist",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Dog owner",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Happy Tails Grooming, good afternoon. This is Mia. Would you like to book for a dog or ask about our cat service?",
+      "translation_vi": "Chào chiều, Tiệm làm đẹp thú cưng Happy Tails, Mia đây. Chị muốn đặt cho chó hay hỏi dịch vụ mèo?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "For a dog, please. I've adopted a small spaniel, and I'd like to book her first professional grooming appointment.",
+      "translation_vi": "Tôi đặt cho chó. Tôi mới nhận nuôi spaniel nhỏ và muốn đặt buổi chăm sóc chuyên nghiệp đầu tiên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Congratulations. Our first-visit package is called Gentle Start. It's designed for nervous dogs and includes breaks between stages.",
+      "translation_vi": "Chúc mừng. Gói lần đầu tên Gentle Start, dành cho chó dễ lo lắng, có nghỉ giữa các bước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Gentle Start would be best. She was quite frightened at the vet last week, so I don't want to rush her.",
+      "translation_vi": "Gentle Start hợp nhất. Tuần trước nó sợ ở bác sĩ thú y nên tôi không muốn thúc ép.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "What's her name? We label the appointment card, because sometimes two dogs of the same breed arrive together.",
+      "translation_vi": "Tên nó là gì? Chúng tôi ghi trên thẻ lịch vì đôi khi hai chó cùng giống đến cùng lúc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Her name is Pippa, P I P P A. She responds much better to her name than to a whistle.",
+      "translation_vi": "Tên nó là Pippa, P I P P A. Nó phản ứng với tên tốt hơn tiếng huýt sáo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Pippa, lovely. She's a small dog, so a first visit is normally around an hour, not the ninety minutes we reserve for large breeds.",
+      "translation_vi": "Pippa, dễ thương. Chó nhỏ nên lần đầu thường khoảng một giờ, không phải chín mươi phút dành cho chó lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "An hour should be fine. I'm off work on Monday, although the nursery run makes early mornings difficult.",
+      "translation_vi": "Một giờ thì được. Tôi nghỉ làm thứ Hai, dù đưa con đến nhà trẻ khiến sáng sớm khó sắp xếp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Our next Monday appointment is at eleven ten. We also have eight thirty, but that wouldn't fit your morning routine.",
+      "translation_vi": "Lịch trống thứ Hai tới là mười một giờ mười. Có cả tám rưỡi nhưng không hợp lịch sáng của chị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Eleven ten is perfect. Does the package include nail trimming? Her claws are rather long at the moment.",
+      "translation_vi": "Mười một giờ mười rất phù hợp. Gói có cắt móng không? Móng nó khá dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Yes, nail trimming and a gentle wash are included. Teeth cleaning is a different service, and we won't add it without asking.",
+      "translation_vi": "Có cắt móng và tắm nhẹ. Vệ sinh răng là dịch vụ khác, không tự thêm khi chưa hỏi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Please leave out teeth cleaning for now. She has a sensitive stomach and hasn't liked new treatments since her adoption.",
+      "translation_vi": "Chưa làm vệ sinh răng nhé. Nó nhạy dạ dày và không quen điều trị mới từ khi được nhận nuôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "That's fine. We use fragrance-free shampoo for dogs with sensitive skin. Let us know about any diagnosed conditions in advance.",
+      "translation_vi": "Được. Chúng tôi dùng dầu tắm không hương liệu cho chó da nhạy cảm. Hãy báo trước bệnh đã chẩn đoán.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "No diagnosed skin condition, but I'd prefer the fragrance-free shampoo anyway. Strong smells sometimes make her sneeze.",
+      "translation_vi": "Không có bệnh da được chẩn đoán, nhưng tôi thích dầu không mùi. Mùi mạnh đôi khi làm nó hắt hơi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "I'll note that preference. The Gentle Start package is thirty-four pounds, with no extra fee for the special shampoo.",
+      "translation_vi": "Tôi ghi lại. Gói Gentle Start giá ba mươi bốn bảng, không phụ thu dầu đặc biệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Good. Is there anything I should bring besides her lead? She's only been with us for three weeks.",
+      "translation_vi": "Tốt. Tôi nên mang gì ngoài dây dắt? Nó mới ở với nhà tôi ba tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "Please bring her vaccination record. We also advise owners not to feed a large meal immediately before the appointment.",
+      "translation_vi": "Hãy mang hồ sơ tiêm chủng. Chúng tôi cũng khuyên không cho ăn bữa lớn ngay trước buổi hẹn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "I have the record in a folder. Could I stay with her in the grooming room? She gets distressed when I leave.",
+      "translation_vi": "Tôi có hồ sơ trong bìa. Tôi ở lại phòng chăm sóc được không? Nó buồn khi tôi đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "Owners may wait in reception, but we keep the grooming room quiet. We'll phone you if she struggles and needs a break.",
+      "translation_vi": "Chủ có thể đợi ở quầy, nhưng phòng chăm sóc cần yên tĩnh. Chúng tôi gọi nếu chó quá căng và cần nghỉ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "I'll wait at reception. I noticed parking spaces in front, though the sign suggests they're reserved for another business.",
+      "translation_vi": "Tôi sẽ đợi ở quầy. Tôi thấy chỗ đỗ phía trước nhưng biển ghi dành cho doanh nghiệp khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "Use the short-stay parking behind the bakery. Please don't park in the florist's spaces, even if they happen to be empty.",
+      "translation_vi": "Hãy dùng bãi đỗ ngắn hạn phía sau tiệm bánh. Đừng đỗ chỗ tiệm hoa dù đang trống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "Thanks, Mia. I'll bring Pippa's vaccination record and arrive a little before eleven ten on Monday.",
+      "translation_vi": "Cảm ơn Mia. Tôi sẽ mang hồ sơ tiêm chủng của Pippa và đến trước mười một giờ mười thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Name of first-visit package: ____",
+      "correct_answers": [
+        "Gentle Start"
+      ],
+      "spoken_answer": "Gentle Start",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Gói lần đầu là Gentle Start.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "called Gentle Start",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Dog's name: ____",
+      "correct_answers": [
+        "Pippa"
+      ],
+      "spoken_answer": "Pippa",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tên con chó là Pippa, được chủ nói rõ và đánh vần từng chữ cái để ghi đúng hồ sơ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "name is Pippa",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Usual visit duration: ____",
+      "correct_answers": [
+        "an hour"
+      ],
+      "spoken_answer": "an hour",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Thời lượng khoảng một giờ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "around an hour",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Appointment day: ____",
+      "correct_answers": [
+        "Monday"
+      ],
+      "spoken_answer": "Monday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lịch trống tiếp theo là thứ Hai; đây là ngày chủ đồng ý đặt buổi chăm sóc đầu tiên.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Monday appointment",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Appointment time: ____",
+      "correct_answers": [
+        "eleven ten",
+        "11:10"
+      ],
+      "spoken_answer": "eleven ten",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giờ chốt là 11:10, khác với lựa chọn 8:30 không phù hợp lịch buổi sáng của chủ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "at eleven ten",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Preferred shampoo: ____",
+      "correct_answers": [
+        "fragrance-free"
+      ],
+      "spoken_answer": "fragrance-free",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Chủ muốn dầu tắm không hương liệu.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "prefer the fragrance-free shampoo",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "How much does the first-visit package cost?",
+      "correct_answers": [
+        "Thirty-four pounds"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Thirty-four pounds"
+        },
+        {
+          "key": "B",
+          "text": "Forty pounds"
+        },
+        {
+          "key": "C",
+          "text": "Twenty-four pounds"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Gói lần đầu giá 34 bảng.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "thirty-four pounds",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Which document should the owner bring?",
+      "correct_answers": [
+        "Vaccination record"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Pet insurance policy"
+        },
+        {
+          "key": "B",
+          "text": "Vaccination record"
+        },
+        {
+          "key": "C",
+          "text": "Previous grooming receipt"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Cần hồ sơ tiêm chủng.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "bring her vaccination record",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Where can the owner wait?",
+      "correct_answers": [
+        "At reception"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "In the grooming room"
+        },
+        {
+          "key": "B",
+          "text": "In the veterinarian's office"
+        },
+        {
+          "key": "C",
+          "text": "At reception"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Chủ chỉ đợi tại quầy.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "wait in reception",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Where should the car be parked?",
+      "correct_answers": [
+        "Behind the bakery"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Behind the bakery"
+        },
+        {
+          "key": "B",
+          "text": "In the florist's spaces"
+        },
+        {
+          "key": "C",
+          "text": "Across the grooming-room door"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Đỗ tại bãi phía sau tiệm bánh.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "parking behind the bakery",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "booking",
+        "pet_care",
+        "service_choices",
+        "timing",
+        "health_information"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T14",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "056a41fa6fc487d8bd2e732ddd65f2c7665e5363aba298572e397f02f80aa583",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.21,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

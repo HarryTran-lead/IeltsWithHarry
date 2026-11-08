@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-016",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Oral history and interview ethics",
+  "title": "Recording Oral Histories of a Changing Neighbourhood",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "qualitative_research",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your neighbourhood history project has a strong idea, but the interview guide asks people to remember exact dates from fifty years ago. How will you handle details that memory cannot reliably supply?",
+      "translation_vi": "Đề tài lịch sử khu phố hay, nhưng hướng dẫn phỏng vấn yêu cầu nhớ ngày chính xác cách đây 50 năm. Các em xử lý chi tiết trí nhớ không chắc ra sao?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "My grandmother can describe where the market stood, yet she is unsure whether it moved in 1978 or 1980. I wrote down the earlier date because it matched a story I had already heard.",
+      "translation_vi": "Bà em nhớ chợ ở đâu nhưng không chắc dời năm 1978 hay 1980. Em ghi năm sớm vì khớp câu chuyện em từng nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "That could introduce confirmation bias. We should record her uncertainty in the transcript and compare the account with planning documents, without making her sound less credible simply because she cannot give a date.",
+      "translation_vi": "Đó có thể là thiên lệch xác nhận. Phải ghi sự không chắc trong transcript và đối chiếu tài liệu quy hoạch, nhưng không xem bà kém đáng tin chỉ vì quên ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Exactly. Treat personal recollections as evidence of experience, not a substitute for every official record. Keep uncertain dates marked as uncertain and use archival sources where precision is necessary.",
+      "translation_vi": "Đúng. Ký ức cá nhân là bằng chứng trải nghiệm, không thay mọi hồ sơ chính thức. Đánh dấu ngày chưa chắc và dùng lưu trữ khi cần chính xác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I also drafted leading questions such as 'Was the new road a disaster for residents?' They may push interviewees towards our preferred interpretation rather than let them describe mixed experiences.",
+      "translation_vi": "Em còn soạn câu dẫn dắt như 'Con đường mới có phải thảm họa?' Câu đó đẩy người trả lời theo cách hiểu mình thích thay vì kể trải nghiệm đa chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Try asking what changed after the road opened, then follow up with an invitation to explain positive and negative effects. That makes space for disagreement without pretending everyone remembers the same thing.",
+      "translation_vi": "Hãy hỏi điều gì thay đổi khi mở đường, rồi mời nói mặt tốt và xấu; tạo chỗ cho bất đồng và không giả mọi người nhớ giống nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes. Explain that interviewees can skip questions and choose whether their names appear in any public exhibition. Consent for an interview is not automatically consent to publish an audio recording online.",
+      "translation_vi": "Đúng. Giải thích người tham gia có quyền bỏ câu và chọn có nêu tên khi triển lãm hay không. Đồng ý phỏng vấn không tự động là đồng ý đăng ghi âm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I suggest a small trial with two residents from different generations. We can check whether the questions make sense before approaching people who have experienced more sensitive events.",
+      "translation_vi": "Em đề xuất thử hai cư dân thuộc thế hệ khác nhau để xem câu hỏi dễ hiểu trước khi gặp người trải qua sự kiện nhạy cảm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I can contact the local archive about historical maps and permission to reproduce them. Those sources may help locate old streets without asking participants to provide exact addresses.",
+      "translation_vi": "Thầy sẽ liên hệ kho lưu trữ địa phương xin bản đồ và quyền sao lại; nguồn này giúp xác định đường cũ mà không cần hỏi địa chỉ chi tiết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll revise the prompts to include open questions and optional follow-ups. I will also remove the claim in the introduction that redevelopment was universally harmful.",
+      "translation_vi": "Em sẽ sửa câu hỏi mở và gợi ý hỏi tiếp tùy chọn, bỏ khẳng định trong phần mở đầu rằng tái phát triển gây hại cho mọi người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "I'll develop a system for marking uncertain dates and contradictory recollections in the transcript. We should never quietly edit a disagreement into one tidy version of the past.",
+      "translation_vi": "Em sẽ lập ký hiệu cho ngày chưa chắc và ký ức mâu thuẫn trong bản chép. Không được âm thầm sửa bất đồng thành một lịch sử gọn ghẽ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll prepare a consent checklist with separate boxes for recording, quotation and public display. Participants should understand they can agree to one use without accepting the others.",
+      "translation_vi": "Em sẽ chuẩn bị phiếu đồng ý có ô riêng cho ghi âm, trích dẫn và công bố. Người tham gia có thể đồng ý một việc mà không đồng ý việc khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Bring a revised interview guide and separate publication consent form next week. The most responsible oral history preserves voices, context and uncertainty rather than manufacturing a single definitive story.",
+      "translation_vi": "Tuần sau mang hướng dẫn phỏng vấn và phiếu đồng ý công bố riêng. Lịch sử truyền miệng có trách nhiệm giữ tiếng nói, bối cảnh và điều chưa chắc, không dựng chuyện duy nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "qualitative_research",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why was one date entered incorrectly as certain?",
+      "correct_answers": [
+        "It fitted a story the researcher already knew"
+      ],
+      "options": [
+        "It fitted a story the researcher already knew",
+        "The interviewee showed a written receipt",
+        "The archive confirmed it beyond doubt"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "My grandmother can describe where the market stood, yet she is unsure whether it moved in 1978 or 1980. I wrote down the earlier date because it matched a story I had already heard.",
+      "explanation_vi": "Người nghiên cứu chọn năm vì phù hợp kỳ vọng sẵn có.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "qualitative_research"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "How should uncertain historical dates be treated?",
+      "correct_answers": [
+        "Marked as uncertain and checked against records"
+      ],
+      "options": [
+        "Marked as uncertain and checked against records",
+        "Deleted from every transcript",
+        "Presented as exact whenever possible"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Exactly. Treat personal recollections as evidence of experience, not a substitute for every official record. Keep uncertain dates marked as uncertain and use archival sources where precision is necessary.",
+      "explanation_vi": "Giữ mức độ bất định, tra tài liệu khi cần.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "qualitative_research"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What is wrong with asking whether the road was a disaster?",
+      "correct_answers": [
+        "It encourages a particular response"
+      ],
+      "options": [
+        "It encourages a particular response",
+        "It asks for a specific year",
+        "It requires advanced geographical knowledge"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Try asking what changed after the road opened, then follow up with an invitation to explain positive and negative effects. That makes space for disagreement without pretending everyone remembers the same thing.",
+      "explanation_vi": "Câu hỏi dẫn dắt một cách trả lời.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "qualitative_research"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: a trial with residents of different generations?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I suggest a small trial with two residents from different generations. We can check whether the questions make sense before approaching people who have experienced more sensitive events.",
+      "explanation_vi": "Đề cập trong lượt T08 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "qualitative_research"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: obtain maps and reproduction permission?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I can contact the local archive about historical maps and permission to reproduce them. Those sources may help locate old streets without asking participants to provide exact addresses.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "qualitative_research"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: rewrite interview prompts to be open-ended?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll revise the prompts to include open questions and optional follow-ups. I will also remove the claim in the introduction that redevelopment was universally harmful.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "qualitative_research"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: mark uncertainty and contradictions in transcripts?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll develop a system for marking uncertain dates and contradictory recollections in the transcript. We should never quietly edit a disagreement into one tidy version of the past.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "qualitative_research"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: separate consent for recording and publication?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll prepare a consent checklist with separate boxes for recording, quotation and public display. Participants should understand they can agree to one use without accepting the others.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "qualitative_research"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "That could introduce confirmation bias. We should record her uncertainty in the transcript and compare the account with planning documents, without making her sound less credible simply because she cannot give a date."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "That could introduce confirmation bias. We should record her uncertainty in the transcript and compare the account with planning documents, without making her sound less credible simply because she cannot give a date.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "qualitative_research"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "I also drafted leading questions such as 'Was the new road a disaster for residents?' They may push interviewees towards our preferred interpretation rather than let them describe mixed experiences."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "I also drafted leading questions such as 'Was the new road a disaster for residents?' They may push interviewees towards our preferred interpretation rather than let them describe mixed experiences.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "qualitative_research"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "Yes. Explain that interviewees can skip questions and choose whether their names appear in any public exhibition. Consent for an interview is not automatically consent to publish an audio recording online."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Yes. Explain that interviewees can skip questions and choose whether their names appear in any public exhibition. Consent for an interview is not automatically consent to publish an audio recording online.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "qualitative_research"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói C.",
+      "correct_answers": [
+        "I'll develop a system for marking uncertain dates and contradictory recollections in the transcript. We should never quietly edit a disagreement into one tidy version of the past."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll develop a system for marking uncertain dates and contradictory recollections in the transcript. We should never quietly edit a disagreement into one tidy version of the past.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "qualitative_research"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T13 và điền cụm bị thiếu: Bring a revised interview guide and separate publication consent form next week. The most responsible ____ preserves voices, context and uncertainty rather than manufacturing a single definitive story.",
+      "correct_answers": [
+        "oral history"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "Bring a revised interview guide and separate publication consent form next week. The most responsible oral history preserves voices, context and uncertainty rather than manufacturing a single definitive story.",
+      "explanation_vi": "Cụm nghe được là “oral history” (lịch sử truyền miệng); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "qualitative_research"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T03 và điền cụm bị thiếu: That could introduce ____. We should record her uncertainty in the transcript and compare the account with planning documents, without making her sound less credible simply because she cannot give a date.",
+      "correct_answers": [
+        "confirmation bias"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "That could introduce confirmation bias. We should record her uncertainty in the transcript and compare the account with planning documents, without making her sound less credible simply because she cannot give a date.",
+      "explanation_vi": "Cụm nghe được là “confirmation bias” (thiên lệch xác nhận); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "qualitative_research"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-016-V01",
+      "expression_en": "oral history",
+      "meaning_vi": "lịch sử truyền miệng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Bring a revised interview guide and separate publication consent form next week. The most responsible oral history preserves voices, context and uncertainty rather than manufacturing a single definitive story.",
+      "example_vi": "Tuần sau mang hướng dẫn phỏng vấn và phiếu đồng ý công bố riêng. Lịch sử truyền miệng có trách nhiệm giữ tiếng nói, bối cảnh và điều chưa chắc, không dựng chuyện duy nhất.",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-016-V02",
+      "expression_en": "confirmation bias",
+      "meaning_vi": "thiên lệch xác nhận",
+      "part_of_speech": "noun phrase",
+      "example_en": "That could introduce confirmation bias. We should record her uncertainty in the transcript and compare the account with planning documents, without making her sound less credible simply because she cannot give a date.",
+      "example_vi": "Đó có thể là thiên lệch xác nhận. Phải ghi sự không chắc trong transcript và đối chiếu tài liệu quy hoạch, nhưng không xem bà kém đáng tin chỉ vì quên ngày.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-016-V03",
+      "expression_en": "archival sources",
+      "meaning_vi": "nguồn lưu trữ",
+      "part_of_speech": "noun phrase",
+      "example_en": "Exactly. Treat personal recollections as evidence of experience, not a substitute for every official record. Keep uncertain dates marked as uncertain and use archival sources where precision is necessary.",
+      "example_vi": "Đúng. Ký ức cá nhân là bằng chứng trải nghiệm, không thay mọi hồ sơ chính thức. Đánh dấu ngày chưa chắc và dùng lưu trữ khi cần chính xác.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-016-V04",
+      "expression_en": "leading questions",
+      "meaning_vi": "câu hỏi dẫn dắt",
+      "part_of_speech": "noun phrase",
+      "example_en": "I also drafted leading questions such as 'Was the new road a disaster for residents?' They may push interviewees towards our preferred interpretation rather than let them describe mixed experiences.",
+      "example_vi": "Em còn soạn câu dẫn dắt như 'Con đường mới có phải thảm họa?' Câu đó đẩy người trả lời theo cách hiểu mình thích thay vì kể trải nghiệm đa chiều.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-016-V05",
+      "expression_en": "publication consent",
+      "meaning_vi": "đồng ý công bố",
+      "part_of_speech": "noun phrase",
+      "example_en": "Bring a revised interview guide and separate publication consent form next week. The most responsible oral history preserves voices, context and uncertainty rather than manufacturing a single definitive story.",
+      "example_vi": "Tuần sau mang hướng dẫn phỏng vấn và phiếu đồng ý công bố riêng. Lịch sử truyền miệng có trách nhiệm giữ tiếng nói, bối cảnh và điều chưa chắc, không dựng chuyện duy nhất.",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-016-V06",
+      "expression_en": "contradictory recollections",
+      "meaning_vi": "ký ức mâu thuẫn",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll develop a system for marking uncertain dates and contradictory recollections in the transcript. We should never quietly edit a disagreement into one tidy version of the past.",
+      "example_vi": "Em sẽ lập ký hiệu cho ngày chưa chắc và ký ức mâu thuẫn trong bản chép. Không được âm thầm sửa bất đồng thành một lịch sử gọn ghẽ.",
+      "evidence_turn_id": "T11",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "19259f8db3615213354ccbbd3ad67bf5394ced8be38601b52b1152646dfa7f17",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 386,
+    "estimated_audio_minutes_at_135_wpm": 2.86,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

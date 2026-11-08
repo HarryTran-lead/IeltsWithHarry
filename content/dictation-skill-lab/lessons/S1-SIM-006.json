@@ -1,0 +1,830 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-006",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Registering for a local meal plan",
+  "title": "Community Kitchen Meal Plan",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "subscriptions",
+    "allergies",
+    "collection_times",
+    "fees",
+    "preferences"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Community kitchen assistant",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "New customer",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Willow Kitchen. I'm Harriet. Are you asking about our café meals, or the weekly take-home meal service?",
+      "translation_vi": "Chào chiều, Bếp Willow, tôi là Harriet. Anh muốn hỏi món ăn tại quán hay dịch vụ suất ăn mang về hằng tuần?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The take-home service. I work late on several evenings, and I'd like something healthier than the food near my office.",
+      "translation_vi": "Dịch vụ mang về. Tôi thường làm muộn vài tối và muốn ăn lành mạnh hơn đồ gần văn phòng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We call that service the Evening Box. We prepare ready-to-heat meals in reusable containers, so customers only need a microwave or oven.",
+      "translation_vi": "Dịch vụ tên Evening Box. Chúng tôi nấu sẵn trong hộp tái dùng; khách chỉ cần lò vi sóng hoặc lò nướng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I saw a plan called Lunch Basket as well, but evenings are my real problem. Can I start with just one week?",
+      "translation_vi": "Tôi còn thấy gói Lunch Basket, nhưng bữa tối mới khó. Tôi dùng thử một tuần được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Certainly. Our meal plans run Monday to Friday, with an optional Saturday box for people working weekends.",
+      "translation_vi": "Được. Gói suất ăn từ thứ Hai đến thứ Sáu, có thể đặt thêm thứ Bảy cho người làm cuối tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Monday to Friday is enough for me. I need to pick up after work, and I usually leave the office shortly after six.",
+      "translation_vi": "Thứ Hai đến thứ Sáu là đủ. Tôi cần lấy sau giờ làm, thường rời văn phòng ngay sau sáu giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Our collection window is six thirty to seven fifteen in the evening. It's later than the café's normal closing time.",
+      "translation_vi": "Giờ nhận từ sáu rưỡi đến bảy giờ mười lăm tối, muộn hơn giờ đóng cửa quán thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "That works. Is the collection point at the café counter? The website shows an entrance on another street.",
+      "translation_vi": "Được đấy. Nhận ở quầy quán phải không? Website chỉ có lối vào ở phố khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Use the side door on Orchard Lane. The café counter shuts at six, but the kitchen staff stay on for collections.",
+      "translation_vi": "Hãy dùng cửa phụ trên Orchard Lane. Quầy quán đóng lúc sáu, nhưng nhân viên bếp ở lại để giao suất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll remember Orchard Lane. I'm vegetarian most days, although I do occasionally eat fish when visiting family.",
+      "translation_vi": "Tôi sẽ nhớ Orchard Lane. Hầu hết ngày tôi ăn chay, dù đôi khi ăn cá lúc thăm gia đình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "For a regular subscription we can mark your choice as vegetarian. You'll still be able to change individual meals before the weekly deadline.",
+      "translation_vi": "Gói thường kỳ có thể đánh dấu ăn chay. Anh vẫn đổi món từng ngày trước hạn hằng tuần được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Vegetarian, please. One thing matters even more: I can't eat peanuts, so I need to know how your kitchen handles them.",
+      "translation_vi": "Tôi chọn ăn chay. Quan trọng hơn là tôi không ăn được đậu phộng, muốn biết bếp xử lý thế nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Our menu lists allergens, but the kitchen uses shared equipment. We cannot guarantee meals are suitable for severe peanut allergies.",
+      "translation_vi": "Thực đơn ghi chất gây dị ứng nhưng bếp dùng chung thiết bị; không thể bảo đảm an toàn với dị ứng đậu phộng nặng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Thanks for explaining. Mine is a mild intolerance, not a severe allergy, but I'll check the individual labels before ordering.",
+      "translation_vi": "Cảm ơn đã giải thích. Tôi chỉ không dung nạp nhẹ, không dị ứng nặng, nhưng sẽ xem nhãn từng món.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "A five-day plan costs thirty-two pounds. Single meals are seven pounds each, so the plan is cheaper if you collect all five.",
+      "translation_vi": "Gói năm ngày giá ba mươi hai bảng. Món lẻ bảy bảng, nên gói tiết kiệm nếu lấy cả năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I'll choose the five-day plan. Can I return the containers the following week, or must they be washed and brought back daily?",
+      "translation_vi": "Tôi lấy gói năm ngày. Tôi trả hộp tuần sau được không hay phải rửa mang lại mỗi ngày?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "Please rinse them and return them by Friday of the following week. We charge a deposit only if containers repeatedly go missing.",
+      "translation_vi": "Hãy tráng hộp và trả trước thứ Sáu tuần kế. Chúng tôi chỉ thu cọc nếu hộp liên tục thất lạc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "I can manage that. I take the bus, so carrying five containers at once might be awkward. Are they all collected on Monday?",
+      "translation_vi": "Tôi làm được. Tôi đi xe buýt nên mang năm hộp một lúc bất tiện. Có lấy tất cả vào thứ Hai không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "No, the meals are collected individually on the day they're prepared. That also means the food stays fresher.",
+      "translation_vi": "Không, mỗi ngày lấy phần của ngày đó. Như vậy đồ ăn cũng tươi hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "Excellent. What happens if I have to work away on Wednesday and miss that day's box?",
+      "translation_vi": "Hay. Nếu thứ Tư tôi đi công tác và không lấy phần hôm đó thì sao?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "You can suspend a day's meal by noon on the previous working day. We credit that meal to the next week's plan.",
+      "translation_vi": "Anh có thể tạm dừng trước trưa ngày làm việc liền trước. Chúng tôi chuyển giá trị bữa đó sang tuần sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "That flexibility helps. Please email me the menu so I can check the labels and start next Monday.",
+      "translation_vi": "Linh hoạt quá. Hãy email thực đơn để tôi xem nhãn và bắt đầu thứ Hai tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Name of the take-home service: ____",
+      "correct_answers": [
+        "Evening Box"
+      ],
+      "spoken_answer": "Evening Box",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Dịch vụ mang về tên Evening Box.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "service the Evening Box",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Regular service days: Monday to ____",
+      "correct_answers": [
+        "Friday"
+      ],
+      "spoken_answer": "Friday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Gói tiêu chuẩn phục vụ tới thứ Sáu.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Monday to Friday",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Collection opens at ____ in the evening",
+      "correct_answers": [
+        "six thirty"
+      ],
+      "spoken_answer": "six thirty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Bắt đầu nhận 6:30 tối.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "six thirty to seven fifteen",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Collection entrance: ____ Lane",
+      "correct_answers": [
+        "Orchard"
+      ],
+      "spoken_answer": "Orchard",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Nhận hàng ở cửa phụ trên Orchard Lane.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Orchard Lane",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Chosen diet: ____",
+      "correct_answers": [
+        "vegetarian"
+      ],
+      "spoken_answer": "vegetarian",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khách chọn chế độ ăn chay.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "choice as vegetarian",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Kitchen equipment is ____",
+      "correct_answers": [
+        "shared"
+      ],
+      "spoken_answer": "shared",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Bếp dùng chung thiết bị, cần thận trọng với dị ứng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "kitchen uses shared equipment",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "How much does the chosen five-day plan cost?",
+      "correct_answers": [
+        "Thirty-two pounds"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Thirty-five pounds"
+        },
+        {
+          "key": "B",
+          "text": "Seven pounds"
+        },
+        {
+          "key": "C",
+          "text": "Thirty-two pounds"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Giá gói 5 ngày là 32 bảng; 7 bảng là giá món lẻ.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "five-day plan costs thirty-two pounds",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "When must containers be returned?",
+      "correct_answers": [
+        "By Friday of the following week"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "By Friday of the following week"
+        },
+        {
+          "key": "B",
+          "text": "Every evening"
+        },
+        {
+          "key": "C",
+          "text": "Before the next meal is collected"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Trả hộp trước thứ Sáu tuần kế.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "by Friday of the following week",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "How are the five meals collected?",
+      "correct_answers": [
+        "One meal on each preparation day"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "All five meals on Monday"
+        },
+        {
+          "key": "B",
+          "text": "One meal on each preparation day"
+        },
+        {
+          "key": "C",
+          "text": "Three meals on Friday"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Mỗi ngày nhận một suất mới nấu.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "collected individually on the day they're prepared",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What happens after a meal is suspended in time?",
+      "correct_answers": [
+        "Its value is credited to the next week"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "It is delivered by courier"
+        },
+        {
+          "key": "B",
+          "text": "The customer loses the full payment"
+        },
+        {
+          "key": "C",
+          "text": "Its value is credited to the next week"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Bữa được chuyển giá trị sang gói tuần sau.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "credit that meal to the next week's plan",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "subscriptions",
+        "allergies",
+        "collection_times",
+        "fees",
+        "preferences"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T13",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "1383842d3300f43cdfb746d4f6747f53d2c74af53466b1347317c370fef4e9c9",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.3,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

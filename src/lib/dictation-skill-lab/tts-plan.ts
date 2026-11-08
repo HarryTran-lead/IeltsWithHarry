@@ -28,10 +28,12 @@ function hash(text: string) {
   return value;
 }
 
+/** A known first name anywhere in the role: "Anna — student", "Workshop employee: Mara". */
 function genderOf(role: string): "female" | "male" | null {
-  const name = role.trim().split(/[\s–—-]+/)[0]?.toLowerCase() ?? "";
-  if (femaleNames.has(name)) return "female";
-  if (maleNames.has(name)) return "male";
+  for (const word of role.toLowerCase().split(/[^a-z]+/).filter(Boolean)) {
+    if (femaleNames.has(word)) return "female";
+    if (maleNames.has(word)) return "male";
+  }
   return null;
 }
 

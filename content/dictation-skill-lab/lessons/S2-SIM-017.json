@@ -1,0 +1,720 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-017",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "City heritage guided walk",
+  "title": "The Lantern Trail: Guided Walk Briefing",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "directions",
+    "notes",
+    "mcq_reasoning"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to the Lantern Trail evening walk. I am Maisie, one of the city heritage guides. This route follows streets that have changed greatly over the last century, and we will compare old images with what you see today. Let me start with arrangements, then explain some decisions about the route.",
+      "translation_vi": "Chào mừng tour đi bộ đêm Lantern Trail. Tôi là Maisie, hướng dẫn di sản. Chúng ta sẽ so ảnh cũ với đường phố ngày nay. Trước tiên là lịch, sau đó giải thích tuyến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The walk begins at the old clock tower, rather than outside the railway station. The station square is being repaired and cannot safely hold a group.",
+      "translation_vi": "Tour bắt đầu ở tháp đồng hồ cũ, không phải nhà ga vì quảng trường ga đang sửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The group sets off at six forty-five. Please check in fifteen minutes earlier so the guide can confirm everyone is present.",
+      "translation_vi": "Nhóm xuất phát lúc sáu giờ bốn mươi lăm; điểm danh sớm mười lăm phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A small torch is useful on the narrow lanes. Your phone light will work too, but everyone must keep both hands free on the steepest steps.",
+      "translation_vi": "Đèn pin nhỏ hữu ích ở ngõ hẹp; đèn điện thoại cũng được, nhưng ở bậc dốc cần rảnh hai tay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The most fragile building on our route is the former glassworks, where the exterior walls have recently been strengthened. Visitors cannot go inside.",
+      "translation_vi": "Tòa nhà dễ hỏng nhất là xưởng kính cũ, tường ngoài vừa được gia cố; khách không được vào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Our final stop is the riverside footbridge. From there it is a short walk to the bus station, and the guide can point out the best route.",
+      "translation_vi": "Điểm cuối là cầu đi bộ ven sông; từ đó đi bộ ngắn tới bến xe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "A walk like this is not simply a list of old buildings. Streets reveal how people worked, travelled and spent their free time, and sometimes the most ordinary corner has the most interesting story. Our guides use local archives, but they also welcome memories from residents who remember the area as it was.",
+      "translation_vi": "Tour không chỉ liệt kê công trình cổ. Đường phố cho thấy cách người dân làm việc, đi lại, giải trí; góc bình thường có thể có câu chuyện hay. Hướng dẫn viên dùng tư liệu và ký ức dân cư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Before setting off, I want to explain why a few locations have been included or left out. Understanding those choices will help you see how the city has changed.",
+      "translation_vi": "Trước khi đi, tôi giải thích vì sao một số điểm được đưa vào hay bỏ đi, để mọi người hiểu sự thay đổi đô thị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We have excluded the castle courtyard this year. The site is attractive, but the wooden walkway is too narrow for the number of visitors on an evening tour.",
+      "translation_vi": "Năm nay bỏ sân lâu đài vì lối gỗ quá hẹp cho lượng khách tour tối dù khu rất đẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "At the old market, we will stop beside the former weighing house. The guide chose it because the structure reveals how merchants checked goods, rather than because it offers the best photograph.",
+      "translation_vi": "Ở chợ cũ, dừng cạnh nhà cân hàng để thấy thương nhân kiểm tra hàng hóa, không phải vì góc chụp đẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The guide will show two photographs of the same street, taken fifty years apart. They help explain how traffic altered the neighbourhood rather than simply show changes in clothing.",
+      "translation_vi": "Hướng dẫn viên cho xem hai ảnh cùng phố cách nhau năm mươi năm, minh họa giao thông đã thay đổi khu vực, không chỉ trang phục.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "If rain becomes heavy, the group will not cancel immediately. We will replace the exposed riverside segment with a short visit to the covered arcade nearby.",
+      "translation_vi": "Nếu mưa lớn, không hủy ngay; thay đoạn ven sông lộ thiên bằng thăm hành lang thương mại có mái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "A visitor asked whether the walk is suitable for children. Older children who can manage a brisk hour are welcome, but the route is not designed for pushchairs because of steps.",
+      "translation_vi": "Có người hỏi về trẻ em. Trẻ lớn đi nhanh một giờ có thể tham gia, nhưng xe đẩy không phù hợp vì có bậc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "The route has been tested with groups of different sizes. Large groups need longer at crossings, while smaller groups can stop more easily to examine details. Your guide may adjust the pace slightly, but the order of the main historical stops remains the same.",
+      "translation_vi": "Tuyến đã thử với nhóm nhiều quy mô. Nhóm đông cần lâu hơn khi qua đường, nhóm nhỏ dễ dừng xem chi tiết. Hướng dẫn viên có thể đổi nhịp nhưng giữ thứ tự điểm chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Please stay with your group at street crossings. Your guide will identify each stopping point, and the walk will finish close to the bus station.",
+      "translation_vi": "Hãy đi cùng nhóm lúc băng đường. Hướng dẫn viên báo từng điểm dừng; tour kết thúc gần bến xe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Meeting point: old ____ tower.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The walk begins at the old clock tower, rather than outside the railway station. The station square is being repaired and cannot safely hold a group.",
+      "explanation_vi": "Tour bắt đầu ở tháp đồng hồ cũ, không phải nhà ga vì quảng trường ga đang sửa.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "clock"
+      ],
+      "spoken_answer": "clock",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Departure time: ____.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The group sets off at six forty-five. Please check in fifteen minutes earlier so the guide can confirm everyone is present.",
+      "explanation_vi": "Nhóm xuất phát lúc sáu giờ bốn mươi lăm; điểm danh sớm mười lăm phút.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "six forty-five"
+      ],
+      "spoken_answer": "six forty-five",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Recommended item: small ____.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "A small torch is useful on the narrow lanes. Your phone light will work too, but everyone must keep both hands free on the steepest steps.",
+      "explanation_vi": "Đèn pin nhỏ hữu ích ở ngõ hẹp; đèn điện thoại cũng được, nhưng ở bậc dốc cần rảnh hai tay.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "torch"
+      ],
+      "spoken_answer": "torch",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Historic industrial building: former ____.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The most fragile building on our route is the former glassworks, where the exterior walls have recently been strengthened. Visitors cannot go inside.",
+      "explanation_vi": "Tòa nhà dễ hỏng nhất là xưởng kính cũ, tường ngoài vừa được gia cố; khách không được vào.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "glassworks"
+      ],
+      "spoken_answer": "glassworks",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Final stop: riverside ____.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Our final stop is the riverside footbridge. From there it is a short walk to the bus station, and the guide can point out the best route.",
+      "explanation_vi": "Điểm cuối là cầu đi bộ ven sông; từ đó đi bộ ngắn tới bến xe.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "footbridge"
+      ],
+      "spoken_answer": "footbridge",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why is the castle courtyard omitted?",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "We have excluded the castle courtyard this year. The site is attractive, but the wooden walkway is too narrow for the number of visitors on an evening tour.",
+      "explanation_vi": "Năm nay bỏ sân lâu đài vì lối gỗ quá hẹp cho lượng khách tour tối dù khu rất đẹp.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "Its walkway cannot accommodate the group"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "It is under archaeological excavation"
+        },
+        {
+          "key": "B",
+          "text": "Its walkway cannot accommodate the group"
+        },
+        {
+          "key": "C",
+          "text": "It is too far from the town centre"
+        }
+      ],
+      "correct_option": "B"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why will the group visit the weighing house?",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "At the old market, we will stop beside the former weighing house. The guide chose it because the structure reveals how merchants checked goods, rather than because it offers the best photograph.",
+      "explanation_vi": "Ở chợ cũ, dừng cạnh nhà cân hàng để thấy thương nhân kiểm tra hàng hóa, không phải vì góc chụp đẹp.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "To see evidence of past trading practices"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To see evidence of past trading practices"
+        },
+        {
+          "key": "B",
+          "text": "To buy traditional food"
+        },
+        {
+          "key": "C",
+          "text": "To take a panoramic photograph"
+        }
+      ],
+      "correct_option": "A"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What will the photographs mainly illustrate?",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The guide will show two photographs of the same street, taken fifty years apart. They help explain how traffic altered the neighbourhood rather than simply show changes in clothing.",
+      "explanation_vi": "Hướng dẫn viên cho xem hai ảnh cùng phố cách nhau năm mươi năm, minh họa giao thông đã thay đổi khu vực, không chỉ trang phục.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "The impact of transport on the area"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Changes in local fashion"
+        },
+        {
+          "key": "B",
+          "text": "Differences in building materials"
+        },
+        {
+          "key": "C",
+          "text": "The impact of transport on the area"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What happens in heavy rain?",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "If rain becomes heavy, the group will not cancel immediately. We will replace the exposed riverside segment with a short visit to the covered arcade nearby.",
+      "explanation_vi": "Nếu mưa lớn, không hủy ngay; thay đoạn ven sông lộ thiên bằng thăm hành lang thương mại có mái.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A sheltered section replaces part of the route"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "The walk is postponed to another day"
+        },
+        {
+          "key": "B",
+          "text": "A sheltered section replaces part of the route"
+        },
+        {
+          "key": "C",
+          "text": "Everyone returns to the station"
+        }
+      ],
+      "correct_option": "B"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What does the guide say about families?",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "A visitor asked whether the walk is suitable for children. Older children who can manage a brisk hour are welcome, but the route is not designed for pushchairs because of steps.",
+      "explanation_vi": "Có người hỏi về trẻ em. Trẻ lớn đi nhanh một giờ có thể tham gia, nhưng xe đẩy không phù hợp vì có bậc.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "directions",
+        "notes",
+        "mcq_reasoning"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "Older children may join, but pushchairs are unsuitable"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Older children may join, but pushchairs are unsuitable"
+        },
+        {
+          "key": "B",
+          "text": "Only adults may take part"
+        },
+        {
+          "key": "C",
+          "text": "Every part of the route is wheelchair-accessible"
+        }
+      ],
+      "correct_option": "A"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "18e528fd3597a639292fe22cfe391c7084d6ec4ebe2699b4e939a2a63c7971db",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.49,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

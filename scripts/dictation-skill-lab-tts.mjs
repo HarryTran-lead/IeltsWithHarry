@@ -46,8 +46,28 @@ const lessons = readdirSync(lessonsDir).filter((file) => file.endsWith(".json"))
   .map((file) => JSON.parse(readFileSync(join(lessonsDir, file), "utf8")))
   .filter((lesson) => !only.size || only.has(lesson.lesson_id));
 
+// Listening mock parts named in content/listening-mocks/audio-priority.json are voiced first, before any
+// Dictation lesson; each part is treated like a lesson (its own speakers), one clip per turn.
+const mocksDir = join(root, "content/listening-mocks/tests");
+const priorityPath = join(root, "content/listening-mocks/audio-priority.json");
+const priorityTests = existsSync(priorityPath) ? JSON.parse(readFileSync(priorityPath, "utf8")).tests ?? [] : [];
+const mockParts = priorityTests.filter((id) => !only.size || only.has(id)).flatMap((id, testIndex) => {
+  const path = join(mocksDir, `${id}.json`);
+  if (!existsSync(path)) return [];
+  const test = JSON.parse(readFileSync(path, "utf8"));
+  return test.parts.map((part) => ({
+    lesson_id: part.part_id, level: "L6", section: part.part_number, content_format: "listening_mock", rank: testIndex,
+    speakers: part.speakers.map((speaker) => ({ ...speaker, role: speaker.role ?? "", accent_requested: speaker.accent_requested ?? "british" })),
+    turns: part.turns,
+  }));
+});
+/** Mocks first, then Dictation lessons from basic to advanced (L1 → L7), then by ID. */
+const rankOf = (lesson) => lesson.content_format === "listening_mock" ? lesson.rank : 100 + Number(String(lesson.level).replace(/\D/g, "") || 9);
+const units = [...mockParts, ...lessons].map((lesson) => ({ lesson, rank: rankOf(lesson) }))
+  .sort((a, b) => a.rank - b.rank || a.lesson.lesson_id.localeCompare(b.lesson.lesson_id));
+
 const pending = [];
-for (const lesson of lessons) {
+for (const { lesson, rank } of units) {
   const voices = voicesFor(lesson);
   const speakers = Object.fromEntries(lesson.speakers.map((speaker) => [speaker.speaker_id, speaker]));
   for (const turn of lesson.turns) {
@@ -55,7 +75,7 @@ for (const lesson of lessons) {
     if (!speaker) throw new Error(`${lesson.lesson_id}/${turn.turn_id}: unknown speaker ${turn.speaker_id}`);
     const key = `${lesson.lesson_id}/${turn.turn_id}`;
     const job = { key, lesson: lesson.lesson_id, turn: turn.turn_id, text: turn.text_en, voice: voices[turn.speaker_id], accent: speaker.accent_requested,
-      style: styleFor(lesson, speaker), file: `/dictation-skill-lab/audio/${lesson.lesson_id}/${turn.turn_id}.mp3` };
+      style: styleFor(lesson, speaker), file: `/dictation-skill-lab/audio/${lesson.lesson_id}/${turn.turn_id}.mp3`, rank };
     const done = manifest.turns[key];
     const flagged = done && done.asr_check !== "pass";
     const current = done && done.text_sha256 === sha256(job.text) && done.voice === job.voice && existsSync(join(root, "public", job.file));
@@ -83,7 +103,8 @@ function makeBatches(jobs) {
   return batches;
 }
 
-const queue = makeBatches(pending);
+// A batch goes in the queue at the rank of its most basic turn, so mocks and easy lessons are voiced first.
+const queue = makeBatches(pending).sort((a, b) => Math.min(...a.map((job) => job.rank)) - Math.min(...b.map((job) => job.rank)));
 console.log(`${lessons.length} lesson(s), ${pending.length} turn(s) to voice in ${queue.length} request(s) (${pending.reduce((sum, job) => sum + job.text.length, 0)} characters); models ${models.join(" → ")}`);
 if (dryRun) { for (const batch of queue.slice(0, 5)) console.log(batch.length, batch[0].voice, batch.map((job) => job.key).join(" ")); process.exit(0); }
 const apiKey = process.env.GEMINI_API_KEY;

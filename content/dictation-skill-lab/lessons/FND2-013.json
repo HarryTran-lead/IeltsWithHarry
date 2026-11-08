@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-013",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "Initial /θ/ versus /t/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt initial /θ/ versus /t/.",
+    "Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The book is thin but useful.",
+      "translation_vi": "Quyển sách mỏng nhưng hữu ích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "thin",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The biscuits are kept in a tin.",
+      "translation_vi": "Bánh quy được cất trong hộp thiếc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "tin",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please thank the volunteers for helping.",
+      "translation_vi": "Hãy cảm ơn các tình nguyện viên đã giúp đỡ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "thank",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The water tank is behind the building.",
+      "translation_vi": "Bể nước nằm phía sau tòa nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "tank",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I thought the shop opened at nine.",
+      "translation_vi": "Tôi đã nghĩ cửa hàng mở lúc chín giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "thought",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "My aunt taught me how to sew.",
+      "translation_vi": "Dì tôi đã dạy tôi cách may vá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "taught",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We need three more chairs.",
+      "translation_vi": "Chúng ta cần thêm ba chiếc ghế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "three",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "A large tree shades the café.",
+      "translation_vi": "Một cây lớn che bóng cho quán cà phê.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "tree",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "This soup is too thick for me.",
+      "translation_vi": "Món súp này quá đặc đối với tôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "thick",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Put a tick beside your preferred option.",
+      "translation_vi": "Hãy đánh dấu tích cạnh lựa chọn bạn thích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "th_vs_t"
+      ],
+      "target_word": "tick",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The book is thin but useful."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe thin / tin (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Quyển sách mỏng nhưng hữu ích.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thin / tin (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The biscuits are kept in a tin."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe thin / tin (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Bánh quy được cất trong hộp thiếc.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thin / tin (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please thank the volunteers for helping."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe thank / tank (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Hãy cảm ơn các tình nguyện viên đã giúp đỡ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thank / tank (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The water tank is behind the building."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe thank / tank (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Bể nước nằm phía sau tòa nhà.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thank / tank (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I thought the shop opened at nine."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe thought / taught (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Tôi đã nghĩ cửa hàng mở lúc chín giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thought / taught (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "My aunt taught me how to sew."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe thought / taught (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Dì tôi đã dạy tôi cách may vá.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thought / taught (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We need three more chairs."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe three / tree (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Chúng ta cần thêm ba chiếc ghế.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "three / tree (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A large tree shades the café."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe three / tree (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Một cây lớn che bóng cho quán cà phê.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "three / tree (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "This soup is too thick for me."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe thick / tick (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Món súp này quá đặc đối với tôi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thick / tick (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Put a tick beside your preferred option."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe thick / tick (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin). Nghĩa: Hãy đánh dấu tích cạnh lựa chọn bạn thích.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thick / tick (Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "thin"
+      ],
+      "options": [
+        "thin",
+        "tin"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt thin và tin. Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "th_vs_t"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "tank"
+      ],
+      "options": [
+        "tank",
+        "thank"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt thank và tank. Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "th_vs_t"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "thought"
+      ],
+      "options": [
+        "thought",
+        "taught"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt thought và taught. Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "th_vs_t"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "tree"
+      ],
+      "options": [
+        "tree",
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt three và tree. Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "th_vs_t"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "thick"
+      ],
+      "options": [
+        "thick",
+        "tick"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt thick và tick. Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "th_vs_t"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "thin",
+      "pos": "target",
+      "meaning_vi": "mỏng",
+      "example_en": "The book is thin but useful.",
+      "example_vi": "Quyển sách mỏng nhưng hữu ích.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "th_vs_t"
+    },
+    {
+      "term": "tin",
+      "pos": "target",
+      "meaning_vi": "hộp thiếc",
+      "example_en": "The biscuits are kept in a tin.",
+      "example_vi": "Bánh quy được cất trong hộp thiếc.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "th_vs_t"
+    },
+    {
+      "term": "thank",
+      "pos": "target",
+      "meaning_vi": "cảm ơn",
+      "example_en": "Please thank the volunteers for helping.",
+      "example_vi": "Hãy cảm ơn các tình nguyện viên đã giúp đỡ.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "th_vs_t"
+    },
+    {
+      "term": "tank",
+      "pos": "target",
+      "meaning_vi": "bể chứa",
+      "example_en": "The water tank is behind the building.",
+      "example_vi": "Bể nước nằm phía sau tòa nhà.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "th_vs_t"
+    },
+    {
+      "term": "thought",
+      "pos": "target",
+      "meaning_vi": "đã nghĩ",
+      "example_en": "I thought the shop opened at nine.",
+      "example_vi": "Tôi đã nghĩ cửa hàng mở lúc chín giờ.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "th_vs_t"
+    },
+    {
+      "term": "taught",
+      "pos": "target",
+      "meaning_vi": "đã dạy",
+      "example_en": "My aunt taught me how to sew.",
+      "example_vi": "Dì tôi đã dạy tôi cách may vá.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "th_vs_t"
+    },
+    {
+      "term": "three",
+      "pos": "target",
+      "meaning_vi": "ba",
+      "example_en": "We need three more chairs.",
+      "example_vi": "Chúng ta cần thêm ba chiếc ghế.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "th_vs_t"
+    },
+    {
+      "term": "tree",
+      "pos": "target",
+      "meaning_vi": "cây",
+      "example_en": "A large tree shades the café.",
+      "example_vi": "Một cây lớn che bóng cho quán cà phê.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "th_vs_t"
+    },
+    {
+      "term": "thick",
+      "pos": "target",
+      "meaning_vi": "đặc/dày",
+      "example_en": "This soup is too thick for me.",
+      "example_vi": "Món súp này quá đặc đối với tôi.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "th_vs_t"
+    },
+    {
+      "term": "tick",
+      "pos": "target",
+      "meaning_vi": "dấu tích",
+      "example_en": "Put a tick beside your preferred option.",
+      "example_vi": "Hãy đánh dấu tích cạnh lựa chọn bạn thích.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "th_vs_t"
+    }
+  ],
+  "micro_skill_id": "th_vs_t",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "thin",
+        "tin"
+      ],
+      [
+        "thank",
+        "tank"
+      ],
+      [
+        "thought",
+        "taught"
+      ],
+      [
+        "three",
+        "tree"
+      ],
+      [
+        "thick",
+        "tick"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Đặt đầu lưỡi giữa răng khi phát âm /θ/ trong thin, khác /t/ trong tin"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "519456d12737937a0e2b99ec8703a1dd940506c3b24f8efb1d684314a7e9a0f5",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Âm /θ/ là âm xát qua răng, còn /t/ là âm tắc. So sánh thin/tin, three/tree.",
+    "worked_contrasts": [
+      {
+        "contrast": "thin / tin",
+        "meaning_vi": "mỏng / hộp thiếc",
+        "teacher_note_vi": "Âm /θ/ là âm xát qua răng, còn /t/ là âm tắc. So sánh thin/tin, three/tree."
+      },
+      {
+        "contrast": "thank / tank",
+        "meaning_vi": "cảm ơn / bể chứa",
+        "teacher_note_vi": "Âm /θ/ là âm xát qua răng, còn /t/ là âm tắc. So sánh thin/tin, three/tree."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Chuyển mọi /θ/ thành /t/ theo thói quen phát âm tiếng Việt.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

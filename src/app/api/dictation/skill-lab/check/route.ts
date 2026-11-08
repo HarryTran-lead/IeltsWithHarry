@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { skillLabAccess } from "@/lib/dictation-skill-lab/access";
+import { stageForLesson } from "@/lib/dictation-skill-lab/stages";
 import { allLessons, audioReady, sentenceUnits } from "@/lib/dictation-skill-lab/lessons";
 import { placementPlan, STAGE_TEST_SIZE, stageIds, type StageId } from "@/lib/dictation-skill-lab/path";
 import { sentenceWords } from "@/lib/dictation-skill-lab/skills";
@@ -33,7 +34,7 @@ export async function GET(request: Request) {
       const limit = kind === "stage" ? 80 : /^DICT-S3/.test(lesson.lesson_id) ? 40 : 24;
       return words >= 4 && words <= limit;
     })
-    .map((unit) => ({ lesson, unit, stage: lesson.lesson_id.slice(5, 7) })));
+    .map((unit) => ({ lesson, unit, stage: stageForLesson(lesson.lesson_id, lesson.level) })));
   const pick = (stageId: string, count: number) => shuffle(pool.filter((entry) => entry.stage === stageId)).slice(0, count);
   const chosen = kind === "placement"
     ? stageIds.flatMap((stageId) => pick(stageId, placementPlan[stageId]))

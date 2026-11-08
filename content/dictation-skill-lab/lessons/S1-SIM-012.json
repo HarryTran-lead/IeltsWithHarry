@@ -1,0 +1,833 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-012",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Booking a bicycle inspection service",
+  "title": "Bicycle Safety Inspection Booking",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "repair_appointments",
+    "technical_terms",
+    "costs",
+    "safety",
+    "collection"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Cycling workshop mechanic",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Cyclist",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Parkside Cycles, this is Ben in the service department. Are you booking a full repair or our quick safety inspection?",
+      "translation_vi": "Xin chào Parkside Cycles, tôi là Ben ở bộ phận dịch vụ. Anh muốn sửa toàn bộ hay kiểm tra an toàn nhanh?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Just a safety inspection, I think. I'm planning a longer cycle ride next month and want to make sure everything is reliable.",
+      "translation_vi": "Chắc là kiểm tra an toàn. Tháng sau tôi đạp đường dài và muốn bảo đảm xe hoạt động tốt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That's our Road Check service. It includes tyres, brakes and steering, but doesn't automatically include replacing worn components.",
+      "translation_vi": "Đó là dịch vụ Road Check. Gồm lốp, phanh và tay lái nhưng không tự động thay linh kiện mòn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Road Check sounds right. I've had a strange squeak from the rear wheel whenever I slow down on a hill.",
+      "translation_vi": "Road Check phù hợp. Bánh sau phát tiếng kêu lạ mỗi khi tôi giảm tốc xuống dốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "That could be the rear brake pads. We'll inspect them, although we can't diagnose the problem properly over the phone.",
+      "translation_vi": "Có thể do má phanh sau. Chúng tôi sẽ kiểm tra, dù không thể chẩn đoán chính xác qua điện thoại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Fine. What day is your workshop quietest? I have a meeting on Friday afternoon but most other times are flexible.",
+      "translation_vi": "Được. Ngày nào xưởng ít bận nhất? Tôi họp chiều thứ Sáu, còn thời gian khác khá linh hoạt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Tuesday morning is usually quieter. Wednesday is devoted to deliveries, and the mechanics are fully booked on Saturday.",
+      "translation_vi": "Sáng thứ Ba thường vắng hơn. Thứ Tư nhận hàng, thợ đã kín lịch thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Let's go for Tuesday. Could I bring the bike in at around nine, before I start work?",
+      "translation_vi": "Vậy thứ Ba. Tôi có thể mang xe lúc khoảng chín giờ, trước khi bắt đầu làm việc không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We can offer nine forty. The inspection takes about forty minutes, but you don't need to stay while we work.",
+      "translation_vi": "Chúng tôi có giờ chín giờ bốn mươi. Kiểm tra khoảng bốn mươi phút, anh không cần ở lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Nine forty is possible. My bike has an unusual tyre size. Will that make the check slower?",
+      "translation_vi": "Chín giờ bốn mươi được. Xe dùng cỡ lốp không thường. Có làm kiểm tra lâu hơn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Not for inspection. The tyre pressure is easy to measure. The model you described probably uses twenty-eight-inch wheels, correct?",
+      "translation_vi": "Không ảnh hưởng kiểm tra. Áp suất lốp đo dễ. Mẫu anh nói có lẽ dùng bánh hai mươi tám inch, đúng chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Yes, twenty-eight inches. The last shop wrote twenty-six on the form, but they were looking at a different bicycle.",
+      "translation_vi": "Đúng, hai mươi tám inch. Cửa hàng trước ghi hai mươi sáu do nhìn nhầm xe khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Thanks for confirming. The standard Road Check fee is sixteen pounds, and we'll ask before replacing anything extra.",
+      "translation_vi": "Cảm ơn xác nhận. Phí Road Check thường là mười sáu bảng; chúng tôi sẽ hỏi trước khi thay thêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "That's affordable. I might need a new bell too, but I'd like to choose one myself after I know the inspection result.",
+      "translation_vi": "Giá ổn. Có thể tôi cần chuông mới, nhưng muốn tự chọn sau khi biết kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Of course. Could you tell me the frame colour, so we don't confuse your bike with another one in the rack?",
+      "translation_vi": "Tất nhiên. Anh cho màu khung xe để tránh nhầm xe khác trong giá nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "It's dark orange, with a silver bottle holder. Most of the bikes outside your shop seem to be black or blue.",
+      "translation_vi": "Khung màu cam đậm, có giá giữ chai bạc. Hầu hết xe ngoài tiệm màu đen hoặc xanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "That's distinctive. If a brake cable needs replacement, we can usually finish it the same afternoon, subject to parts being available.",
+      "translation_vi": "Dễ nhận biết. Nếu cần thay dây phanh, thường xong chiều hôm đó nếu có linh kiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "Good. And if the bike needs major work? I wouldn't want you to start something expensive without checking with me.",
+      "translation_vi": "Tốt. Nếu xe cần sửa lớn thì sao? Tôi không muốn anh tự sửa tốn tiền trước khi hỏi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "Any repair above twenty pounds requires your approval by phone. Otherwise we'll stop and explain the problem before proceeding.",
+      "translation_vi": "Bất cứ sửa chữa nào trên hai mươi bảng phải được anh chấp thuận qua điện thoại. Không thì dừng và giải thích trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "That helps. Where should I leave the bicycle on arrival? The workshop entrance looks different from the shop's front door.",
+      "translation_vi": "Tốt. Tôi để xe ở đâu khi đến? Lối xưởng khác cửa trước cửa hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "Bring it to the service hatch at the back, next to the bicycle pump. Don't lock it to the fence outside.",
+      "translation_vi": "Mang xe đến cửa giao dịch dịch vụ phía sau, cạnh bơm xe. Đừng khóa xe vào hàng rào ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "I know the place. I'll be there Tuesday at nine forty and leave the orange bike at the back hatch.",
+      "translation_vi": "Tôi biết rồi. Thứ Ba lúc chín giờ bốn mươi tôi sẽ mang xe cam đến cửa sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Type of inspection: ____ Check",
+      "correct_answers": [
+        "Road"
+      ],
+      "spoken_answer": "Road",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Dịch vụ tên Road Check.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Road Check service",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Possible cause of squeaking: rear ____",
+      "correct_answers": [
+        "brake pads"
+      ],
+      "spoken_answer": "brake pads",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Má phanh sau là nguyên nhân có thể, chưa được chẩn đoán chắc chắn.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "rear brake pads",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Chosen day: ____",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "spoken_answer": "Tuesday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Thứ Ba là ngày xưởng ít bận, khác với thứ Tư dành cho giao hàng và thứ Bảy đã kín lịch.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Tuesday morning",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Appointment time: ____",
+      "correct_answers": [
+        "nine forty",
+        "9:40"
+      ],
+      "spoken_answer": "nine forty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giờ được đề nghị là 9:40, không phải thời gian khách dự định ban đầu khoảng chín giờ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "offer nine forty",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Wheel size: ____ inches",
+      "correct_answers": [
+        "twenty-eight",
+        "28"
+      ],
+      "spoken_answer": "twenty-eight",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Bánh 28 inch, không phải 26.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "twenty-eight-inch wheels",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Standard inspection fee: £____",
+      "correct_answers": [
+        "sixteen",
+        "16"
+      ],
+      "spoken_answer": "sixteen",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phí kiểm tra 16 bảng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "sixteen pounds",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Why does the mechanic ask for the frame colour?",
+      "correct_answers": [
+        "To identify the bicycle correctly"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To decide the inspection price"
+        },
+        {
+          "key": "B",
+          "text": "To match tyre pressure"
+        },
+        {
+          "key": "C",
+          "text": "To identify the bicycle correctly"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Tránh nhầm xe của khách.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "so we don't confuse your bike",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "When might a replacement brake cable be fitted?",
+      "correct_answers": [
+        "The same afternoon if a part is available"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "The same afternoon if a part is available"
+        },
+        {
+          "key": "B",
+          "text": "Only after a month"
+        },
+        {
+          "key": "C",
+          "text": "Before the bicycle is inspected"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Có linh kiện thì thay dây trong chiều hôm đó.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "same afternoon, subject to parts being available",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What must happen for repairs costing over £20?",
+      "correct_answers": [
+        "The customer must approve by phone"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "The bike is sold for parts"
+        },
+        {
+          "key": "B",
+          "text": "The customer must approve by phone"
+        },
+        {
+          "key": "C",
+          "text": "The mechanic proceeds automatically"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Chi phí trên 20 bảng cần khách chấp thuận.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "requires your approval by phone",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Where should the cyclist leave the bike?",
+      "correct_answers": [
+        "At the service hatch at the back"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "On the fence outside"
+        },
+        {
+          "key": "B",
+          "text": "At the shop's front cash desk"
+        },
+        {
+          "key": "C",
+          "text": "At the service hatch at the back"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Để xe ở cửa dịch vụ phía sau.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "service hatch at the back",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "repair_appointments",
+        "technical_terms",
+        "costs",
+        "safety",
+        "collection"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T13",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "efd770d48e581031c2492a1079ac9c362ff05e4cf0ee869d8b3160516840af6f",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.21,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

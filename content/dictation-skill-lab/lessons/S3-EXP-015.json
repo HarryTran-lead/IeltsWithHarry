@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-015",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Energy efficiency in student accommodation",
+  "title": "Auditing Energy Use in Student Housing",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "measurement_bias",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your energy audit could help the housing office, but your figures only cover one building in winter. What question can you answer without assuming that every residence hall uses energy in the same way?",
+      "translation_vi": "Kiểm toán năng lượng có thể giúp văn phòng ký túc, nhưng số liệu chỉ một tòa mùa đông. Các em trả lời được gì mà không giả mọi tòa tiêu thụ giống nhau?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We found high electricity use on three cold evenings. I immediately blamed residents leaving lights on, but heating is electric in that building and probably accounts for much of the increase.",
+      "translation_vi": "Em thấy điện cao ba tối lạnh và vội đổ lỗi sinh viên không tắt đèn, nhưng tòa đó sưởi điện nên có thể là nguyên nhân chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We should separate heating from lighting if sub-meter data are available. Without that breakdown, a poster telling students to turn off bulbs would make a weak argument about the biggest source of consumption.",
+      "translation_vi": "Nên tách sưởi và chiếu sáng nếu có công tơ phụ. Không có phân tách mà bảo tắt đèn là lập luận yếu về nguồn điện lớn nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Ask the housing office for aggregated sub-meter readings and explain any gaps. The goal is to identify major uses, not assign personal blame to individual residents.",
+      "translation_vi": "Hãy xin số đo công tơ phụ tổng hợp và giải thích chỗ thiếu. Mục tiêu xác định nguồn dùng chính, không đổ lỗi từng người ở.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I thought of installing plug-in meters in students' rooms, but that would require permission and could reveal personal routines. It seems unnecessary if building-level data answer our main question.",
+      "translation_vi": "Em định đặt công tơ cắm trong phòng, nhưng cần xin phép và có thể lộ nếp sống riêng. Không cần nếu số liệu cấp tòa trả lời được câu hỏi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Let's use building-level readings and weather records instead. Then we can see whether colder days correspond to larger consumption without tracking anyone's private activity.",
+      "translation_vi": "Hãy dùng số liệu cấp tòa cùng thời tiết. Như vậy xem ngày lạnh có đi cùng tiêu thụ lớn không mà không theo dõi hoạt động riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That approach is more proportionate. Include occupancy as well, because holidays change how many people are in residence. A drop in use during a vacation does not necessarily show greater efficiency.",
+      "translation_vi": "Cách đó phù hợp hơn. Ghi cả số người ở vì kỳ nghỉ thay đổi lượng cư dân. Điện giảm kỳ nghỉ chưa chắc là tiết kiệm hiệu quả hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "For a pilot, I'd compare two ordinary teaching weeks with similar weather, then calculate electricity use per occupied room. We should avoid making claims from just one unusually cold night.",
+      "translation_vi": "Em đề xuất so hai tuần học thường có thời tiết tương tự, tính điện trên mỗi phòng có người; tránh suy từ một đêm rét bất thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll develop graphs that show energy use alongside temperature and occupied rooms. The axes need clear units, otherwise a visually dramatic line could suggest a relationship that is not there.",
+      "translation_vi": "Em sẽ làm đồ thị điện bên cạnh nhiệt độ và phòng có người; trục cần đơn vị rõ, nếu không đường gấp khúc có thể gợi quan hệ sai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I can speak with the housing facilities team about the meter definitions. Sometimes a labelled 'heating' meter also includes hot water, so the categories must be checked.",
+      "translation_vi": "Thầy sẽ hỏi bộ phận cơ sở vật chất về định nghĩa công tơ. Đôi khi nhãn 'sưởi' cũng gồm nước nóng, phải kiểm tra nhóm số liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "I'll request the weather and occupancy records in anonymous, aggregated form. We have no need to know which student was in which room on any specific date.",
+      "translation_vi": "Em sẽ xin dữ liệu thời tiết và số phòng có người dạng tổng hợp ẩn danh. Không cần biết sinh viên nào ở phòng nào từng ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll draft practical recommendations and grade each one by the evidence we actually have. Changing thermostats may be relevant; blaming people's habits without direct evidence is not.",
+      "translation_vi": "Em sẽ soạn khuyến nghị và xếp độ chắc theo chứng cứ. Điều chỉnh nhiệt độ có thể phù hợp, còn trách thói quen người ở nếu không có số liệu thì không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Prepare a report for the housing office that separates observations, possible explanations and recommendations. A cautious audit is far more useful than a confident but unsupported campaign.",
+      "translation_vi": "Chuẩn bị báo cáo phân biệt quan sát, giải thích khả dĩ và khuyến nghị. Kiểm toán thận trọng hữu ích hơn chiến dịch tự tin mà không có chứng cứ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "measurement_bias",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What probably explains high electricity use on cold evenings?",
+      "correct_answers": [
+        "The building’s heating"
+      ],
+      "options": [
+        "The building’s heating",
+        "Lights being left on in corridors only",
+        "Students charging electric vehicles"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We found high electricity use on three cold evenings. I immediately blamed residents leaving lights on, but heating is electric in that building and probably accounts for much of the increase.",
+      "explanation_vi": "Tòa dùng sưởi điện nên trời lạnh tiêu thụ tăng.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "measurement_bias"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What data does the tutor request?",
+      "correct_answers": [
+        "Aggregated readings from different meters"
+      ],
+      "options": [
+        "Photographs inside every bedroom",
+        "Individual students’ phone records",
+        "Aggregated readings from different meters"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Ask the housing office for aggregated sub-meter readings and explain any gaps. The goal is to identify major uses, not assign personal blame to individual residents.",
+      "explanation_vi": "Xin số liệu tổng hợp công tơ phụ.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "measurement_bias"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why avoid meters in individual bedrooms?",
+      "correct_answers": [
+        "They could reveal private routines"
+      ],
+      "options": [
+        "They cannot measure electricity at all",
+        "They could reveal private routines",
+        "They are prohibited in every country"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Let's use building-level readings and weather records instead. Then we can see whether colder days correspond to larger consumption without tracking anyone's private activity.",
+      "explanation_vi": "Đo trong phòng ảnh hưởng riêng tư không cần thiết.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "measurement_bias"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What is the proposed basis for comparison?",
+      "correct_answers": [
+        "Use per occupied room over similar weeks"
+      ],
+      "options": [
+        "Use per occupied room over similar weeks",
+        "Compare only the coldest day of the year",
+        "Compare individual students by name"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "For a pilot, I'd compare two ordinary teaching weeks with similar weather, then calculate electricity use per occupied room. We should avoid making claims from just one unusually cold night.",
+      "explanation_vi": "Tính điện trên mỗi phòng có người và so tuần tương tự.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "measurement_bias"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: build graphs with clearly labelled units?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I'll develop graphs that show energy use alongside temperature and occupied rooms. The axes need clear units, otherwise a visually dramatic line could suggest a relationship that is not there.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "measurement_bias"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: clarify what each meter measures?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I can speak with the housing facilities team about the meter definitions. Sometimes a labelled 'heating' meter also includes hot water, so the categories must be checked.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "measurement_bias"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: request anonymous occupancy and weather records?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll request the weather and occupancy records in anonymous, aggregated form. We have no need to know which student was in which room on any specific date.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "measurement_bias"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: write evidence-graded recommendations?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll draft practical recommendations and grade each one by the evidence we actually have. Changing thermostats may be relevant; blaming people's habits without direct evidence is not.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "measurement_bias"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "We should separate heating from lighting if sub-meter data are available. Without that breakdown, a poster telling students to turn off bulbs would make a weak argument about the biggest source of consumption."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "We should separate heating from lighting if sub-meter data are available. Without that breakdown, a poster telling students to turn off bulbs would make a weak argument about the biggest source of consumption.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "measurement_bias"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "I thought of installing plug-in meters in students' rooms, but that would require permission and could reveal personal routines. It seems unnecessary if building-level data answer our main question."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "I thought of installing plug-in meters in students' rooms, but that would require permission and could reveal personal routines. It seems unnecessary if building-level data answer our main question.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "measurement_bias"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "That approach is more proportionate. Include occupancy as well, because holidays change how many people are in residence. A drop in use during a vacation does not necessarily show greater efficiency."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "That approach is more proportionate. Include occupancy as well, because holidays change how many people are in residence. A drop in use during a vacation does not necessarily show greater efficiency.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "measurement_bias"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói C.",
+      "correct_answers": [
+        "I'll request the weather and occupancy records in anonymous, aggregated form. We have no need to know which student was in which room on any specific date."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll request the weather and occupancy records in anonymous, aggregated form. We have no need to know which student was in which room on any specific date.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "measurement_bias"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: Your ____ could help the housing office, but your figures only cover one building in winter. What question can you answer without assuming that every residence hall uses energy in the same way?",
+      "correct_answers": [
+        "energy audit"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Your energy audit could help the housing office, but your figures only cover one building in winter. What question can you answer without assuming that every residence hall uses energy in the same way?",
+      "explanation_vi": "Cụm nghe được là “energy audit” (kiểm toán năng lượng); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "measurement_bias"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T02 và điền cụm bị thiếu: We found high electricity use on three cold evenings. I immediately blamed residents leaving lights on, but ____ is electric in that building and probably accounts for much of the increase.",
+      "correct_answers": [
+        "heating"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We found high electricity use on three cold evenings. I immediately blamed residents leaving lights on, but heating is electric in that building and probably accounts for much of the increase.",
+      "explanation_vi": "Cụm nghe được là “heating” (hệ thống sưởi điện); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "measurement_bias"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-015-V01",
+      "expression_en": "energy audit",
+      "meaning_vi": "kiểm toán năng lượng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Your energy audit could help the housing office, but your figures only cover one building in winter. What question can you answer without assuming that every residence hall uses energy in the same way?",
+      "example_vi": "Kiểm toán năng lượng có thể giúp văn phòng ký túc, nhưng số liệu chỉ một tòa mùa đông. Các em trả lời được gì mà không giả mọi tòa tiêu thụ giống nhau?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-015-V02",
+      "expression_en": "heating",
+      "meaning_vi": "hệ thống sưởi điện",
+      "part_of_speech": "noun phrase",
+      "example_en": "We found high electricity use on three cold evenings. I immediately blamed residents leaving lights on, but heating is electric in that building and probably accounts for much of the increase.",
+      "example_vi": "Em thấy điện cao ba tối lạnh và vội đổ lỗi sinh viên không tắt đèn, nhưng tòa đó sưởi điện nên có thể là nguyên nhân chính.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-015-V03",
+      "expression_en": "sub-meter readings",
+      "meaning_vi": "số đo công tơ phụ",
+      "part_of_speech": "noun phrase",
+      "example_en": "Ask the housing office for aggregated sub-meter readings and explain any gaps. The goal is to identify major uses, not assign personal blame to individual residents.",
+      "example_vi": "Hãy xin số đo công tơ phụ tổng hợp và giải thích chỗ thiếu. Mục tiêu xác định nguồn dùng chính, không đổ lỗi từng người ở.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-015-V04",
+      "expression_en": "aggregated",
+      "meaning_vi": "đã tổng hợp",
+      "part_of_speech": "noun phrase",
+      "example_en": "Ask the housing office for aggregated sub-meter readings and explain any gaps. The goal is to identify major uses, not assign personal blame to individual residents.",
+      "example_vi": "Hãy xin số đo công tơ phụ tổng hợp và giải thích chỗ thiếu. Mục tiêu xác định nguồn dùng chính, không đổ lỗi từng người ở.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-015-V05",
+      "expression_en": "occupancy",
+      "meaning_vi": "tỷ lệ có người ở",
+      "part_of_speech": "noun phrase",
+      "example_en": "That approach is more proportionate. Include occupancy as well, because holidays change how many people are in residence. A drop in use during a vacation does not necessarily show greater efficiency.",
+      "example_vi": "Cách đó phù hợp hơn. Ghi cả số người ở vì kỳ nghỉ thay đổi lượng cư dân. Điện giảm kỳ nghỉ chưa chắc là tiết kiệm hiệu quả hơn.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-015-V06",
+      "expression_en": "thermostats",
+      "meaning_vi": "bộ điều nhiệt",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll draft practical recommendations and grade each one by the evidence we actually have. Changing thermostats may be relevant; blaming people's habits without direct evidence is not.",
+      "example_vi": "Em sẽ soạn khuyến nghị và xếp độ chắc theo chứng cứ. Điều chỉnh nhiệt độ có thể phù hợp, còn trách thói quen người ở nếu không có số liệu thì không.",
+      "evidence_turn_id": "T12",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "536f1f932b32ec9fc2671128207a3a8caec94a7418830f100c4037013dd4555e",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 376,
+    "estimated_audio_minutes_at_135_wpm": 2.79,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

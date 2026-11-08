@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-036",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Numbers",
+  "title": "Long reference numbers and leading zeros",
+  "learning_objectives_vi": [
+    "Nghe được long reference numbers and leading zeros trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (digit_string).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Please enter reference zero zero six two four eight.",
+      "translation_vi": "Hãy nhập mã tham chiếu 006248.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "006248",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The storage locker code is nine zero four double seven one.",
+      "translation_vi": "Mã tủ đồ là 904771.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "904771",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "For the parcel, note number three five zero zero eight six.",
+      "translation_vi": "Với bưu kiện, hãy ghi số 350086.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "350086",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The temporary access number is double four eight zero two five.",
+      "translation_vi": "Mã truy cập tạm thời là 448025.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "448025",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The permit code starts with zero eight zero nine four three.",
+      "translation_vi": "Mã giấy phép bắt đầu bằng 080943.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "080943",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Your queue reference ends in seven two double five zero.",
+      "translation_vi": "Mã thứ tự của bạn kết thúc bằng 72550.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "72550",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The equipment ID is one zero zero nine six two.",
+      "translation_vi": "Mã thiết bị là 100962.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "100962",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The delivery label shows six three zero zero one four.",
+      "translation_vi": "Nhãn giao hàng ghi 630014.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "630014",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please quote the final six digits, zero two nine eight seven six.",
+      "translation_vi": "Vui lòng đọc sáu chữ số cuối: 029876.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "029876",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The file number is eight double one zero three nine.",
+      "translation_vi": "Số hồ sơ là 811039.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "digit_string",
+        "digit_string"
+      ],
+      "target_value": "811039",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please enter reference zero zero six two four eight."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Please enter reference zero zero six two four eight. Nghĩa: Hãy nhập mã tham chiếu 006248. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The storage locker code is nine zero four double seven one."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: The storage locker code is nine zero four double seven one. Nghĩa: Mã tủ đồ là 904771. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "For the parcel, note number three five zero zero eight six."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: For the parcel, note number three five zero zero eight six. Nghĩa: Với bưu kiện, hãy ghi số 350086. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The temporary access number is double four eight zero two five."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The temporary access number is double four eight zero two five. Nghĩa: Mã truy cập tạm thời là 448025. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The permit code starts with zero eight zero nine four three."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The permit code starts with zero eight zero nine four three. Nghĩa: Mã giấy phép bắt đầu bằng 080943. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Your queue reference ends in seven two double five zero."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: Your queue reference ends in seven two double five zero. Nghĩa: Mã thứ tự của bạn kết thúc bằng 72550. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The equipment ID is one zero zero nine six two."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The equipment ID is one zero zero nine six two. Nghĩa: Mã thiết bị là 100962. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The delivery label shows six three zero zero one four."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The delivery label shows six three zero zero one four. Nghĩa: Nhãn giao hàng ghi 630014. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please quote the final six digits, zero two nine eight seven six."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Please quote the final six digits, zero two nine eight seven six. Nghĩa: Vui lòng đọc sáu chữ số cuối: 029876. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The file number is eight double one zero three nine."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The file number is eight double one zero three nine. Nghĩa: Số hồ sơ là 811039. Lưu ý: Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digit_string"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập mã chữ số (giữ số 0 ở đầu) được xác nhận trong câu.",
+      "correct_answers": [
+        "72550"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Giữ nguyên tất cả chữ số và số 0 đầu. Đáp án: 72550. Nội dung: Mã thứ tự của bạn kết thúc bằng 72550.",
+      "scoring_policy": "canonical_digit_string_server",
+      "target_kind": "digit_string",
+      "question_tags": [
+        "short_answer",
+        "digit_string",
+        "digit_string"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập mã chữ số (giữ số 0 ở đầu) được xác nhận trong câu.",
+      "correct_answers": [
+        "100962"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Giữ nguyên tất cả chữ số và số 0 đầu. Đáp án: 100962. Nội dung: Mã thiết bị là 100962.",
+      "scoring_policy": "canonical_digit_string_server",
+      "target_kind": "digit_string",
+      "question_tags": [
+        "short_answer",
+        "digit_string",
+        "digit_string"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập mã chữ số (giữ số 0 ở đầu) được xác nhận trong câu.",
+      "correct_answers": [
+        "630014"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Giữ nguyên tất cả chữ số và số 0 đầu. Đáp án: 630014. Nội dung: Nhãn giao hàng ghi 630014.",
+      "scoring_policy": "canonical_digit_string_server",
+      "target_kind": "digit_string",
+      "question_tags": [
+        "short_answer",
+        "digit_string",
+        "digit_string"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập mã chữ số (giữ số 0 ở đầu) được xác nhận trong câu.",
+      "correct_answers": [
+        "029876"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Giữ nguyên tất cả chữ số và số 0 đầu. Đáp án: 029876. Nội dung: Vui lòng đọc sáu chữ số cuối: 029876.",
+      "scoring_policy": "canonical_digit_string_server",
+      "target_kind": "digit_string",
+      "question_tags": [
+        "short_answer",
+        "digit_string",
+        "digit_string"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập mã chữ số (giữ số 0 ở đầu) được xác nhận trong câu.",
+      "correct_answers": [
+        "811039"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Giữ nguyên tất cả chữ số và số 0 đầu. Đáp án: 811039. Nội dung: Số hồ sơ là 811039.",
+      "scoring_policy": "canonical_digit_string_server",
+      "target_kind": "digit_string",
+      "question_tags": [
+        "short_answer",
+        "digit_string",
+        "digit_string"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "reference",
+      "pos": "n",
+      "meaning_vi": "mã tham chiếu",
+      "example_en": "Please enter reference zero zero six two four eight.",
+      "example_vi": "Hãy nhập mã tham chiếu 006248.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "access code",
+      "pos": "n",
+      "meaning_vi": "mã truy cập",
+      "example_en": "Please enter the access code before opening the locker.",
+      "example_vi": "Vui lòng nhập mã truy cập trước khi mở tủ.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "digit",
+      "pos": "n",
+      "meaning_vi": "chữ số",
+      "example_en": "Do not omit the first digit of the code.",
+      "example_vi": "Đừng bỏ chữ số đầu tiên của mã.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "label",
+      "pos": "n",
+      "meaning_vi": "nhãn",
+      "example_en": "The delivery label shows six three zero zero one four.",
+      "example_vi": "Nhãn giao hàng ghi 630014.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "extension",
+      "pos": "n",
+      "meaning_vi": "số máy lẻ",
+      "example_en": "Dial extension two four six after the main number.",
+      "example_vi": "Bấm số máy lẻ 246 sau số chính.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "confirm",
+      "pos": "v",
+      "meaning_vi": "xác nhận",
+      "example_en": "Please confirm the final booking number.",
+      "example_vi": "Vui lòng xác nhận mã đặt chỗ cuối cùng.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "digit_string",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+    "category": "numbers",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-036-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "f41841b047454666f84e81594812ca9b958329af920d8201c8675aea020d86ca",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Dãy mã phải giữ số 0 đầu, không tự thêm dấu phẩy như số lượng.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "zero zero five",
+        "written_value": "005",
+        "teacher_note_vi": "Giữ hai số 0 đầu."
+      },
+      {
+        "spoken_example": "double seven four",
+        "written_value": "774",
+        "teacher_note_vi": "Double lặp chữ số đúng hai lần."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn tiêu đề kỹ năng và đọc hai ví dụ có giải thích trước khi nghe.",
+      "Nghe một lần và thử ghi số/chữ; không xem transcript trước khi nộp.",
+      "Sau khi nộp, so sánh từ khóa mục tiêu, số 0 và thông tin đã được sửa.",
+      "Làm hai câu đánh giá chưa gặp ở lần nghe đầu và ghi số lần phát lại."
+    ],
+    "common_mistakes": [
+      "Chọn số đầu tiên được nhắc tới thay vì số được xác nhận cuối cùng.",
+      "Bỏ số 0 đầu trong mã hoặc làm tròn số thập phân."
+    ],
+    "before_audio_question": "Đây là số lượng, số tiền, mã, phần trăm hay đơn vị đo? Dữ kiện cuối cùng có được sửa không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

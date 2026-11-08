@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-007",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Sports park site plan",
+  "title": "Silverlake Sports Park: Weekend Facilities",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "map_navigation",
+    "sports_facilities"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning. My name is Nisha, and I manage weekend activities at Silverlake Sports Park. The main entrance appears at the bottom of your map, while the central welcome kiosk is where the paved routes meet. There are some temporary changes because of a drainage project.",
+      "translation_vi": "Chào buổi sáng, tôi là Nisha, phụ trách hoạt động cuối tuần ở Công viên Silverlake. Cổng chính dưới sơ đồ, quầy chào đón ở giữa. Có thay đổi tạm vì dự án thoát nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The bicycle training circuit lies in the south-west corner, immediately to the left after the gate. This is the place for beginner riders, not the northern path used by runners.",
+      "translation_vi": "Vòng tập xe đạp ở góc tây nam, bên trái ngay khi vào cổng; dành cho người mới, không phải đường chạy phía bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "If you are looking for the climbing wall, head to the north-east corner. It is the highest structure on the grounds and stands beyond the central courts.",
+      "translation_vi": "Tường leo núi ở đông bắc, công trình cao nhất, ở sau các sân giữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The adapted-games court is west of the welcome kiosk, halfway through the park. It has a smooth surface designed for players who use wheelchairs.",
+      "translation_vi": "Sân thể thao thích ứng nằm phía tây quầy, giữa công viên, mặt sân phẳng cho người dùng xe lăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The outdoor yoga deck is to the east of the kiosk, beside the line of trees. The quiet setting is different from the noisy pool building by the entrance.",
+      "translation_vi": "Sàn yoga ngoài trời ở phía đông quầy, cạnh hàng cây, yên tĩnh hơn tòa hồ bơi gần cổng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Our running club meets under a marked shelter just inside the entrance on the right, in the south-east corner. This is convenient for members arriving from the street without crossing the busiest playing courts.",
+      "translation_vi": "Câu lạc bộ chạy bộ tập hợp dưới mái che ngay bên phải sau cổng, ở góc đông nam, thuận tiện cho người từ phố tới mà không phải qua các sân đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The drainage works have forced us to rethink how people move through the park. We used to encourage everyone to take the shortest path between courts, but heavy foot traffic damaged the grass. The marked routes now spread visitors more evenly and protect areas recovering from repeated use.",
+      "translation_vi": "Công trình thoát nước khiến công viên đổi hướng đi. Đường tắt giữa các sân trước đây làm hỏng cỏ; lối đánh dấu mới phân tán khách và bảo vệ khu đang phục hồi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I should also explain the booking arrangements before you set off. Several classes are open to visitors, but our coaches need to know about accessibility requirements in advance.",
+      "translation_vi": "Trước khi đi, tôi giải thích việc đặt chỗ. Nhiều lớp mở cho khách nhưng huấn luyện viên cần biết yêu cầu tiếp cận trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The Saturday beginner cycling class is now at eight thirty. It was moved earlier to avoid the busiest period on the shared paths.",
+      "translation_vi": "Lớp đạp xe nhập môn thứ Bảy bắt đầu lúc tám giờ ba mươi, được chuyển sớm để tránh giờ đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Participants in the adapted-games session may borrow sports wheelchairs at no charge. Please ask at the welcome kiosk before the class begins.",
+      "translation_vi": "Người tham gia thể thao thích ứng được mượn xe lăn thể thao miễn phí; hỏi ở quầy trước lớp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The family fitness programme requires advance registration online. Arriving early does not guarantee a place because we limit each group to twelve people.",
+      "translation_vi": "Chương trình thể dục gia đình cần đăng ký online; đến sớm cũng không đảm bảo chỗ vì mỗi nhóm tối đa mười hai người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The park café is closed for repairs, but a mobile food van is parked outside the entrance. Please do not take meals onto the playing surfaces.",
+      "translation_vi": "Quán công viên đang sửa, nhưng xe bán đồ ăn đỗ ngoài cổng. Không mang đồ ăn lên sân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Anyone joining the running club after dark should bring a reflective vest. We supply water, but visibility equipment remains each runner’s responsibility.",
+      "translation_vi": "Người chạy sau tối phải mang áo phản quang. Chúng tôi cấp nước, nhưng mỗi người tự lo trang bị dễ thấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "The park has been designed for people with different levels of experience. Some spaces are mainly for organised groups, but others can be used informally by anyone who wants gentle exercise. Our staff are happy to help people decide which activity is suitable without pressuring them into a class.",
+      "translation_vi": "Công viên phục vụ nhiều trình độ: có khu cho nhóm tổ chức và khu tập nhẹ tự do. Nhân viên giúp chọn hoạt động phù hợp mà không ép đăng ký lớp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Our volunteers in yellow jackets can answer questions throughout the site. Do not cross the maintenance fencing, even if it seems to offer a shorter route.",
+      "translation_vi": "Tình nguyện viên áo vàng hỗ trợ khắp nơi. Đừng vượt hàng rào bảo trì dù có vẻ đường ngắn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Bicycle training circuit",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The bicycle training circuit lies in the south-west corner, immediately to the left after the gate. This is the place for beginner riders, not the northern path used by runners.",
+      "explanation_vi": "Vòng tập xe đạp ở góc tây nam, bên trái ngay khi vào cổng; dành cho người mới, không phải đường chạy phía bắc.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-007",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_007.svg"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Climbing wall",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "If you are looking for the climbing wall, head to the north-east corner. It is the highest structure on the grounds and stands beyond the central courts.",
+      "explanation_vi": "Tường leo núi ở đông bắc, công trình cao nhất, ở sau các sân giữa.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-007",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_007.svg"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Adapted-games court",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The adapted-games court is west of the welcome kiosk, halfway through the park. It has a smooth surface designed for players who use wheelchairs.",
+      "explanation_vi": "Sân thể thao thích ứng nằm phía tây quầy, giữa công viên, mặt sân phẳng cho người dùng xe lăn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-007",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_007.svg"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Outdoor yoga deck",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The outdoor yoga deck is to the east of the kiosk, beside the line of trees. The quiet setting is different from the noisy pool building by the entrance.",
+      "explanation_vi": "Sàn yoga ngoài trời ở phía đông quầy, cạnh hàng cây, yên tĩnh hơn tòa hồ bơi gần cổng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "E"
+      ],
+      "correct_option": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-007",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_007.svg"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Running-club shelter",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Our running club meets under a marked shelter just inside the entrance on the right, in the south-east corner. This is convenient for members arriving from the street without crossing the busiest playing courts.",
+      "explanation_vi": "Câu lạc bộ chạy bộ tập hợp dưới mái che ngay bên phải sau cổng, ở góc đông nam, thuận tiện cho người từ phố tới mà không phải qua các sân đông.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "H"
+      ],
+      "correct_option": "H",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-007",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_007.svg"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Beginner cycling starts at ____.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The Saturday beginner cycling class is now at eight thirty. It was moved earlier to avoid the busiest period on the shared paths.",
+      "explanation_vi": "Lớp đạp xe nhập môn thứ Bảy bắt đầu lúc tám giờ ba mươi, được chuyển sớm để tránh giờ đông.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "eight thirty"
+      ],
+      "spoken_answer": "eight thirty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Equipment available: sports ____.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Participants in the adapted-games session may borrow sports wheelchairs at no charge. Please ask at the welcome kiosk before the class begins.",
+      "explanation_vi": "Người tham gia thể thao thích ứng được mượn xe lăn thể thao miễn phí; hỏi ở quầy trước lớp.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "wheelchairs"
+      ],
+      "spoken_answer": "wheelchairs",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Register for family fitness ____.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The family fitness programme requires advance registration online. Arriving early does not guarantee a place because we limit each group to twelve people.",
+      "explanation_vi": "Chương trình thể dục gia đình cần đăng ký online; đến sớm cũng không đảm bảo chỗ vì mỗi nhóm tối đa mười hai người.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "online"
+      ],
+      "spoken_answer": "online",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Food available from a mobile ____.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "The park café is closed for repairs, but a mobile food van is parked outside the entrance. Please do not take meals onto the playing surfaces.",
+      "explanation_vi": "Quán công viên đang sửa, nhưng xe bán đồ ăn đỗ ngoài cổng. Không mang đồ ăn lên sân.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "van"
+      ],
+      "spoken_answer": "van",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Evening runners need a reflective ____.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "Anyone joining the running club after dark should bring a reflective vest. We supply water, but visibility equipment remains each runner’s responsibility.",
+      "explanation_vi": "Người chạy sau tối phải mang áo phản quang. Chúng tôi cấp nước, nhưng mỗi người tự lo trang bị dễ thấy.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "sports_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "vest"
+      ],
+      "spoken_answer": "vest",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "map_asset_id": "M26-MAP-007",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_007.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "2bcf8cbc503a045c209116df4dc7ac94510531082073bf3c2901b5bca9b94c8b",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.39,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  },
+  "map_asset": {
+    "map_asset_id": "M26-MAP-007",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_007.svg",
+    "format": "svg",
+    "orientation": "NORTH UP / MAIN ENTRANCE SOUTH",
+    "question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05"
+    ],
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true
+  }
+}

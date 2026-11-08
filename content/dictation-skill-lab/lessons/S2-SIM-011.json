@@ -1,0 +1,806 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-011",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Coastal conservation volunteering",
+  "title": "Baypoint Shoreline Project: Volunteer Briefing",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "matching",
+    "volunteering",
+    "safety"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, volunteers. I am Leah, the coordinator of the Baypoint Shoreline Project. We do different jobs along the bay, and it is important that each team understands the task it has been assigned. The weather forecast looks good, but our activities still follow the coastal safety plan.",
+      "translation_vi": "Chào các tình nguyện viên. Tôi là Leah, điều phối dự án bờ biển Baypoint. Mỗi đội có nhiệm vụ riêng, mọi hoạt động theo kế hoạch an toàn dù thời tiết tốt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The dune team will plant native grasses on the exposed slopes. They will use shallow hand tools, since deep digging can damage the fragile roots already holding the sand together.",
+      "translation_vi": "Đội đụn cát trồng cỏ bản địa trên sườn trống, dùng dụng cụ nông để không hỏng rễ đang giữ cát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The wildlife team is counting nesting birds from a marked distance. They must use binoculars and record locations without approaching the nests or disturbing the adults.",
+      "translation_vi": "Đội động vật hoang dã đếm chim làm tổ từ khoảng cách đánh dấu, dùng ống nhòm và không đến sát tổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The plastics team will collect lightweight packaging from the upper beach. They will record the most common brands to help us identify where the rubbish may be coming from.",
+      "translation_vi": "Đội nhựa thu bao bì nhẹ trên bãi cao, ghi các nhãn xuất hiện nhiều để xác định nguồn rác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The water-quality team will take samples from three stream outlets. These need to be labelled immediately to avoid confusing results from different parts of the catchment.",
+      "translation_vi": "Đội chất lượng nước lấy mẫu ở ba cửa suối, dán nhãn ngay để không nhầm kết quả từng vùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The access team is checking the boardwalk for loose boards and damaged signs. They will report repairs to council contractors, rather than carrying out structural work themselves.",
+      "translation_vi": "Đội tiếp cận kiểm tra ván gỗ và biển hỏng, báo nhà thầu hội đồng sửa chứ không tự thi công.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The project was established after local residents noticed that many small changes along the shoreline were not being recorded. One photograph can show litter on a beach, but repeated measurements reveal whether a problem is getting worse. Our volunteers therefore collect evidence as well as carry out practical work.",
+      "translation_vi": "Dự án hình thành khi dân nhận thấy nhiều thay đổi nhỏ ở bờ biển không được ghi nhận. Ảnh đơn lẻ cho thấy rác, còn đo lặp giúp biết vấn đề có tệ hơn không. Tình nguyện viên vừa làm vừa ghi dữ liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Now I will move from the team roles to practical instructions. Please listen carefully, especially if you have attended one of our older volunteer sessions.",
+      "translation_vi": "Giờ chuyển từ phân công đội sang hướng dẫn thực tế. Hãy chú ý, nhất là người từng dự các buổi cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Every volunteer must register at the blue tent before starting, even if they are part of a group that visited last month. This allows us to account for everyone.",
+      "translation_vi": "Mọi tình nguyện viên phải đăng ký ở lều xanh trước khi bắt đầu, kể cả đã đến tháng trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Please bring a refillable bottle and a sun hat. We supply gloves and bags for litter collection, but personal drinking water is each volunteer’s responsibility.",
+      "translation_vi": "Hãy mang chai nước châm lại và mũ nắng; chúng tôi cấp găng và bao rác nhưng mỗi người tự lo nước uống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Our safety briefing is at eight twenty-five. Anyone who arrives after that must wait for the second briefing, rather than join a team already in the field.",
+      "translation_vi": "Hướng dẫn an toàn lúc tám giờ hai mươi lăm. Người đến muộn phải chờ lượt hai, không tự nhập đội ngoài hiện trường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The team leaders use orange flags to mark temporary exclusion zones. These are not shortcuts; they show places where people must not enter.",
+      "translation_vi": "Trưởng nhóm dùng cờ cam đánh dấu vùng tạm cấm vào, không phải lối tắt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "At the end, please return all tools to the equipment trailer. Do not leave them on the sand, where visitors could trip or children might pick them up.",
+      "translation_vi": "Cuối buổi trả dụng cụ vào xe kéo thiết bị, không để trên cát gây vấp ngã.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "At the end of the season, we share a short report with local schools and community groups. The report describes trends but does not identify individual volunteers. We hope it encourages people to see conservation as a long-term responsibility, not only a one-day clean-up.",
+      "translation_vi": "Cuối mùa chúng tôi chia sẻ báo cáo ngắn với trường và cộng đồng. Báo cáo nêu xu hướng, không nêu cá nhân, khuyến khích bảo tồn dài hạn chứ không chỉ dọn một ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We will gather for a short review when everyone returns. If you notice an injured animal or an unsafe object, inform your leader rather than attempting to handle it alone.",
+      "translation_vi": "Chúng ta sẽ họp ngắn khi mọi người trở về. Nếu thấy động vật bị thương hay vật nguy hiểm, báo trưởng nhóm, đừng tự xử lý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Dune team",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The dune team will plant native grasses on the exposed slopes. They will use shallow hand tools, since deep digging can damage the fragile roots already holding the sand together.",
+      "explanation_vi": "Đội đụn cát trồng cỏ bản địa trên sườn trống, dùng dụng cụ nông để không hỏng rễ đang giữ cát.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sampling stream outlets"
+        },
+        {
+          "key": "B",
+          "text": "Planting to stabilise sand"
+        },
+        {
+          "key": "C",
+          "text": "Inspecting a public pathway"
+        },
+        {
+          "key": "D",
+          "text": "Observing nesting birds"
+        },
+        {
+          "key": "E",
+          "text": "Cleaning visitor toilets"
+        },
+        {
+          "key": "F",
+          "text": "Recording discarded packaging"
+        }
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Wildlife team",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The wildlife team is counting nesting birds from a marked distance. They must use binoculars and record locations without approaching the nests or disturbing the adults.",
+      "explanation_vi": "Đội động vật hoang dã đếm chim làm tổ từ khoảng cách đánh dấu, dùng ống nhòm và không đến sát tổ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sampling stream outlets"
+        },
+        {
+          "key": "B",
+          "text": "Planting to stabilise sand"
+        },
+        {
+          "key": "C",
+          "text": "Inspecting a public pathway"
+        },
+        {
+          "key": "D",
+          "text": "Observing nesting birds"
+        },
+        {
+          "key": "E",
+          "text": "Cleaning visitor toilets"
+        },
+        {
+          "key": "F",
+          "text": "Recording discarded packaging"
+        }
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Plastics team",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The plastics team will collect lightweight packaging from the upper beach. They will record the most common brands to help us identify where the rubbish may be coming from.",
+      "explanation_vi": "Đội nhựa thu bao bì nhẹ trên bãi cao, ghi các nhãn xuất hiện nhiều để xác định nguồn rác.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sampling stream outlets"
+        },
+        {
+          "key": "B",
+          "text": "Planting to stabilise sand"
+        },
+        {
+          "key": "C",
+          "text": "Inspecting a public pathway"
+        },
+        {
+          "key": "D",
+          "text": "Observing nesting birds"
+        },
+        {
+          "key": "E",
+          "text": "Cleaning visitor toilets"
+        },
+        {
+          "key": "F",
+          "text": "Recording discarded packaging"
+        }
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Water-quality team",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The water-quality team will take samples from three stream outlets. These need to be labelled immediately to avoid confusing results from different parts of the catchment.",
+      "explanation_vi": "Đội chất lượng nước lấy mẫu ở ba cửa suối, dán nhãn ngay để không nhầm kết quả từng vùng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sampling stream outlets"
+        },
+        {
+          "key": "B",
+          "text": "Planting to stabilise sand"
+        },
+        {
+          "key": "C",
+          "text": "Inspecting a public pathway"
+        },
+        {
+          "key": "D",
+          "text": "Observing nesting birds"
+        },
+        {
+          "key": "E",
+          "text": "Cleaning visitor toilets"
+        },
+        {
+          "key": "F",
+          "text": "Recording discarded packaging"
+        }
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Access team",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The access team is checking the boardwalk for loose boards and damaged signs. They will report repairs to council contractors, rather than carrying out structural work themselves.",
+      "explanation_vi": "Đội tiếp cận kiểm tra ván gỗ và biển hỏng, báo nhà thầu hội đồng sửa chứ không tự thi công.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sampling stream outlets"
+        },
+        {
+          "key": "B",
+          "text": "Planting to stabilise sand"
+        },
+        {
+          "key": "C",
+          "text": "Inspecting a public pathway"
+        },
+        {
+          "key": "D",
+          "text": "Observing nesting birds"
+        },
+        {
+          "key": "E",
+          "text": "Cleaning visitor toilets"
+        },
+        {
+          "key": "F",
+          "text": "Recording discarded packaging"
+        }
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Registration point: the ____ tent.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Every volunteer must register at the blue tent before starting, even if they are part of a group that visited last month. This allows us to account for everyone.",
+      "explanation_vi": "Mọi tình nguyện viên phải đăng ký ở lều xanh trước khi bắt đầu, kể cả đã đến tháng trước.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "blue"
+      ],
+      "spoken_answer": "blue",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Bring drinking water in a refillable ____.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Please bring a refillable bottle and a sun hat. We supply gloves and bags for litter collection, but personal drinking water is each volunteer’s responsibility.",
+      "explanation_vi": "Hãy mang chai nước châm lại và mũ nắng; chúng tôi cấp găng và bao rác nhưng mỗi người tự lo nước uống.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "bottle"
+      ],
+      "spoken_answer": "bottle",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Safety briefing: ____.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Our safety briefing is at eight twenty-five. Anyone who arrives after that must wait for the second briefing, rather than join a team already in the field.",
+      "explanation_vi": "Hướng dẫn an toàn lúc tám giờ hai mươi lăm. Người đến muộn phải chờ lượt hai, không tự nhập đội ngoài hiện trường.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "eight twenty-five"
+      ],
+      "spoken_answer": "eight twenty-five",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Exclusion zones marked by ____ flags.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "The team leaders use orange flags to mark temporary exclusion zones. These are not shortcuts; they show places where people must not enter.",
+      "explanation_vi": "Trưởng nhóm dùng cờ cam đánh dấu vùng tạm cấm vào, không phải lối tắt.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "orange"
+      ],
+      "spoken_answer": "orange",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Return tools to the equipment ____.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "At the end, please return all tools to the equipment trailer. Do not leave them on the sand, where visitors could trip or children might pick them up.",
+      "explanation_vi": "Cuối buổi trả dụng cụ vào xe kéo thiết bị, không để trên cát gây vấp ngã.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "volunteering",
+        "safety"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "trailer"
+      ],
+      "spoken_answer": "trailer",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–F. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Sampling stream outlets"
+        },
+        {
+          "key": "B",
+          "text": "Planting to stabilise sand"
+        },
+        {
+          "key": "C",
+          "text": "Inspecting a public pathway"
+        },
+        {
+          "key": "D",
+          "text": "Observing nesting birds"
+        },
+        {
+          "key": "E",
+          "text": "Cleaning visitor toilets"
+        },
+        {
+          "key": "F",
+          "text": "Recording discarded packaging"
+        }
+      ]
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "3aea977d814f919b144b210a5568ec6f88bf52b1f7e64fe67e6cbf64d6fb8dd9",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.45,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

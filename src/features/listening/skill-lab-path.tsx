@@ -78,7 +78,7 @@ export function SkillLabPath() {
     const recommended = data.placement ? stageIndex(data.placement.stage) : 0;
     let previousOpen = true;
     return skillLabStages.map((stage, index) => {
-      const ready = data.lessons.filter((lesson) => lesson.audio_ready && skillLabStageOf(lesson.lesson_id) === stage.id);
+      const ready = data.lessons.filter((lesson) => lesson.audio_ready && skillLabStageOf(lesson) === stage.id);
       const done = ready.filter((lesson) => lessonDone(lesson, data.progress));
       const started = ready.some((lesson) => data.progress[lesson.lesson_id]?.dictation?.checked || data.progress[lesson.lesson_id]?.questions?.checked);
       const test = data.tests[stage.id];
@@ -206,7 +206,7 @@ export function DictationWeekCard() {
     let alive = true;
     loadPath().then((data) => {
       if (!alive) return;
-      const next = data.lessons.find((lesson) => lesson.audio_ready && !lessonDone(lesson, data.progress) && (!data.placement || stageIndex(skillLabStageOf(lesson.lesson_id)) >= stageIndex(data.placement.stage)));
+      const next = data.lessons.find((lesson) => lesson.audio_ready && !lessonDone(lesson, data.progress) && (!data.placement || stageIndex(skillLabStageOf(lesson)) >= stageIndex(data.placement.stage)));
       setState({ done: lessonsThisWeek(data.progress, data.lessons), goal: data.goal, next: next?.lesson_id });
     }).catch(() => undefined);
     return () => { alive = false; };

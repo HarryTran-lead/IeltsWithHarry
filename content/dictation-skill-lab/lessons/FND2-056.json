@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-056",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Dates",
+  "title": "Ordinal dates in bookings",
+  "learning_objectives_vi": [
+    "Nghe được ordinal dates in bookings trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (ordinals).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The training course starts on the third of February.",
+      "translation_vi": "Khóa đào tạo bắt đầu ngày 3 tháng Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "3 February",
+      "target_kind": "date",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Your appointment is on the thirteenth of March.",
+      "translation_vi": "Lịch hẹn của bạn là ngày 13 tháng Ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "13 March",
+      "target_kind": "date",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The application closes on the thirtieth of April.",
+      "translation_vi": "Hạn nộp đơn là ngày 30 tháng Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "30 April",
+      "target_kind": "date",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We will meet on the twenty-first of May.",
+      "translation_vi": "Chúng ta sẽ gặp nhau vào ngày 21 tháng Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "21 May",
+      "target_kind": "date",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The exhibition opens on the fifteenth of June.",
+      "translation_vi": "Triển lãm khai mạc ngày 15 tháng Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "15 June",
+      "target_kind": "date",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The camp begins on the eighteenth of July.",
+      "translation_vi": "Trại hè bắt đầu ngày 18 tháng Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "18 July",
+      "target_kind": "date",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The test is scheduled for the second of August.",
+      "translation_vi": "Bài kiểm tra được lên lịch ngày 2 tháng Tám.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "2 August",
+      "target_kind": "date",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please arrive on the twenty-ninth of September.",
+      "translation_vi": "Vui lòng đến vào ngày 29 tháng Chín.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "29 September",
+      "target_kind": "date",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The visitor centre reopens on the eleventh of October.",
+      "translation_vi": "Trung tâm khách tham quan mở lại ngày 11 tháng Mười.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "11 October",
+      "target_kind": "date",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Our last session is on the twenty-third of November.",
+      "translation_vi": "Buổi cuối cùng của chúng ta vào ngày 23 tháng Mười Một.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "ordinals",
+        "date"
+      ],
+      "target_value": "23 November",
+      "target_kind": "date",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The training course starts on the third of February."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The training course starts on the third of February. Nghĩa: Khóa đào tạo bắt đầu ngày 3 tháng Hai. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Your appointment is on the thirteenth of March."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Your appointment is on the thirteenth of March. Nghĩa: Lịch hẹn của bạn là ngày 13 tháng Ba. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The application closes on the thirtieth of April."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The application closes on the thirtieth of April. Nghĩa: Hạn nộp đơn là ngày 30 tháng Tư. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We will meet on the twenty-first of May."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: We will meet on the twenty-first of May. Nghĩa: Chúng ta sẽ gặp nhau vào ngày 21 tháng Năm. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The exhibition opens on the fifteenth of June."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The exhibition opens on the fifteenth of June. Nghĩa: Triển lãm khai mạc ngày 15 tháng Sáu. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The camp begins on the eighteenth of July."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The camp begins on the eighteenth of July. Nghĩa: Trại hè bắt đầu ngày 18 tháng Bảy. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The test is scheduled for the second of August."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The test is scheduled for the second of August. Nghĩa: Bài kiểm tra được lên lịch ngày 2 tháng Tám. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please arrive on the twenty-ninth of September."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Please arrive on the twenty-ninth of September. Nghĩa: Vui lòng đến vào ngày 29 tháng Chín. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The visitor centre reopens on the eleventh of October."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The visitor centre reopens on the eleventh of October. Nghĩa: Trung tâm khách tham quan mở lại ngày 11 tháng Mười. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our last session is on the twenty-third of November."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: Our last session is on the twenty-third of November. Nghĩa: Buổi cuối cùng của chúng ta vào ngày 23 tháng Mười Một. Lưu ý: Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "ordinals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập ngày và tháng được xác nhận trong câu.",
+      "correct_answers": [
+        "18 July"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Ghi ngày-tháng, không tự đoán năm. Đáp án: 18 July. Nội dung: Trại hè bắt đầu ngày 18 tháng Bảy.",
+      "scoring_policy": "canonical_date_server",
+      "target_kind": "date",
+      "question_tags": [
+        "short_answer",
+        "ordinals",
+        "date"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập ngày và tháng được xác nhận trong câu.",
+      "correct_answers": [
+        "2 August"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Ghi ngày-tháng, không tự đoán năm. Đáp án: 2 August. Nội dung: Bài kiểm tra được lên lịch ngày 2 tháng Tám.",
+      "scoring_policy": "canonical_date_server",
+      "target_kind": "date",
+      "question_tags": [
+        "short_answer",
+        "ordinals",
+        "date"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập ngày và tháng được xác nhận trong câu.",
+      "correct_answers": [
+        "29 September"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Ghi ngày-tháng, không tự đoán năm. Đáp án: 29 September. Nội dung: Vui lòng đến vào ngày 29 tháng Chín.",
+      "scoring_policy": "canonical_date_server",
+      "target_kind": "date",
+      "question_tags": [
+        "short_answer",
+        "ordinals",
+        "date"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập ngày và tháng được xác nhận trong câu.",
+      "correct_answers": [
+        "11 October"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Ghi ngày-tháng, không tự đoán năm. Đáp án: 11 October. Nội dung: Trung tâm khách tham quan mở lại ngày 11 tháng Mười.",
+      "scoring_policy": "canonical_date_server",
+      "target_kind": "date",
+      "question_tags": [
+        "short_answer",
+        "ordinals",
+        "date"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập ngày và tháng được xác nhận trong câu.",
+      "correct_answers": [
+        "23 November"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Ghi ngày-tháng, không tự đoán năm. Đáp án: 23 November. Nội dung: Buổi cuối cùng của chúng ta vào ngày 23 tháng Mười Một.",
+      "scoring_policy": "canonical_date_server",
+      "target_kind": "date",
+      "question_tags": [
+        "short_answer",
+        "ordinals",
+        "date"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "appointment",
+      "pos": "n",
+      "meaning_vi": "lịch hẹn",
+      "example_en": "Your appointment is on the thirteenth of March.",
+      "example_vi": "Lịch hẹn của bạn là ngày 13 tháng Ba.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "deadline",
+      "pos": "n",
+      "meaning_vi": "hạn cuối",
+      "example_en": "The deadline falls on the tenth of March.",
+      "example_vi": "Hạn cuối rơi vào ngày 10 tháng Ba.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "registration",
+      "pos": "n",
+      "meaning_vi": "việc đăng ký",
+      "example_en": "Registration closes at five in the afternoon.",
+      "example_vi": "Việc đăng ký kết thúc lúc năm giờ chiều.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "postpone",
+      "pos": "v",
+      "meaning_vi": "hoãn",
+      "example_en": "We need to postpone the meeting until Friday.",
+      "example_vi": "Chúng tôi cần hoãn cuộc họp đến thứ Sáu.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "reschedule",
+      "pos": "v",
+      "meaning_vi": "đổi lịch",
+      "example_en": "Can we reschedule the interview for Monday?",
+      "example_vi": "Chúng ta có thể dời buổi phỏng vấn sang thứ Hai không?",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "rehearsal",
+      "pos": "n",
+      "meaning_vi": "buổi tổng duyệt",
+      "example_en": "The final rehearsal is on Thursday evening.",
+      "example_vi": "Buổi tổng duyệt cuối là tối thứ Năm.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "ordinals",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+    "category": "dates",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-056-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "c4159eab5b142616783b0dde32d37412010cc3981daa945440fc2d4525bd3e2b",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Chuyển ngày đọc bằng số thứ tự sang ngày-tháng; không nhầm thirteenth/thirtieth.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "the thirteenth of May",
+        "written_value": "13 May",
+        "teacher_note_vi": "Thirteenth là ngày 13."
+      },
+      {
+        "spoken_example": "the thirtieth of May",
+        "written_value": "30 May",
+        "teacher_note_vi": "Thirtieth là ngày 30."
+      }
+    ],
+    "learning_steps": [
+      "Đọc cách nhận diện số thứ tự và tháng trước khi nghe.",
+      "Nghe ngày, tháng và năm nếu có; phân biệt ngày ban đầu và ngày thay thế.",
+      "Chỉ mở đáp án sau khi nộp, sửa lỗi 13/30 và 14/40 nếu gặp.",
+      "Thử hai câu ngày tháng mới, chỉ tính lần nghe đầu vào mastery."
+    ],
+    "common_mistakes": [
+      "Nhầm thứ tự ngày/tháng vì thói quen ghi dạng số mơ hồ.",
+      "Chọn ngày bị hủy thay vì lịch đã chuyển."
+    ],
+    "before_audio_question": "Ngày được đọc theo kiểu “the sixth of May” hay “May the sixth”? Có năm hay thay đổi lịch không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

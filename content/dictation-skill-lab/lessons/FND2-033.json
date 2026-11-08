@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-033",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Numbers",
+  "title": "Prices, deposits and refunds",
+  "learning_objectives_vi": [
+    "Nghe được prices, deposits and refunds trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (currency).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The refundable deposit is twenty-five pounds fifty.",
+      "translation_vi": "Tiền đặt cọc có thể hoàn là 25 bảng 50 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£25.50",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "You only pay eight pounds seventy-five for the evening class.",
+      "translation_vi": "Bạn chỉ trả 8 bảng 75 xu cho lớp buổi tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£8.75",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The booking fee was twelve pounds, but the new fee is fourteen pounds.",
+      "translation_vi": "Phí đặt chỗ trước đây là 12 bảng, nhưng phí mới là 14 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£14",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A full refund of nineteen pounds ninety-nine has been approved.",
+      "translation_vi": "Khoản hoàn tiền đầy đủ 19 bảng 99 xu đã được chấp thuận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£19.99",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Students can rent a bicycle for six pounds forty per hour.",
+      "translation_vi": "Sinh viên có thể thuê xe đạp với giá 6 bảng 40 xu mỗi giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£6.40",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The replacement card costs two pounds twenty.",
+      "translation_vi": "Thẻ thay thế có giá 2 bảng 20 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£2.20",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The restaurant has reduced the set-menu price to twenty-eight pounds.",
+      "translation_vi": "Nhà hàng đã giảm giá thực đơn cố định xuống 28 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£28",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The charge for late collection is three pounds fifty.",
+      "translation_vi": "Phí nhận đồ muộn là 3 bảng 50 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£3.50",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The maximum reimbursement is forty-five pounds.",
+      "translation_vi": "Khoản hoàn trả tối đa là 45 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£45",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The final balance to pay is eleven pounds thirty.",
+      "translation_vi": "Số tiền còn phải thanh toán là 11 bảng 30 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "currency",
+        "currency"
+      ],
+      "target_value": "£11.30",
+      "target_kind": "currency",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The refundable deposit is twenty-five pounds fifty."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The refundable deposit is twenty-five pounds fifty. Nghĩa: Tiền đặt cọc có thể hoàn là 25 bảng 50 xu. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "You only pay eight pounds seventy-five for the evening class."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: You only pay eight pounds seventy-five for the evening class. Nghĩa: Bạn chỉ trả 8 bảng 75 xu cho lớp buổi tối. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The booking fee was twelve pounds, but the new fee is fourteen pounds."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The booking fee was twelve pounds, but the new fee is fourteen pounds. Nghĩa: Phí đặt chỗ trước đây là 12 bảng, nhưng phí mới là 14 bảng. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A full refund of nineteen pounds ninety-nine has been approved."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: A full refund of nineteen pounds ninety-nine has been approved. Nghĩa: Khoản hoàn tiền đầy đủ 19 bảng 99 xu đã được chấp thuận. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Students can rent a bicycle for six pounds forty per hour."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Students can rent a bicycle for six pounds forty per hour. Nghĩa: Sinh viên có thể thuê xe đạp với giá 6 bảng 40 xu mỗi giờ. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The replacement card costs two pounds twenty."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The replacement card costs two pounds twenty. Nghĩa: Thẻ thay thế có giá 2 bảng 20 xu. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The restaurant has reduced the set-menu price to twenty-eight pounds."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The restaurant has reduced the set-menu price to twenty-eight pounds. Nghĩa: Nhà hàng đã giảm giá thực đơn cố định xuống 28 bảng. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The charge for late collection is three pounds fifty."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The charge for late collection is three pounds fifty. Nghĩa: Phí nhận đồ muộn là 3 bảng 50 xu. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The maximum reimbursement is forty-five pounds."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The maximum reimbursement is forty-five pounds. Nghĩa: Khoản hoàn trả tối đa là 45 bảng. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The final balance to pay is eleven pounds thirty."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The final balance to pay is eleven pounds thirty. Nghĩa: Số tiền còn phải thanh toán là 11 bảng 30 xu. Lưu ý: Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "currency"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập số tiền được xác nhận trong câu.",
+      "correct_answers": [
+        "£2.20"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: £2.20. Nội dung: Thẻ thay thế có giá 2 bảng 20 xu.",
+      "scoring_policy": "canonical_currency_server",
+      "target_kind": "currency",
+      "question_tags": [
+        "short_answer",
+        "currency",
+        "currency"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập số tiền được xác nhận trong câu.",
+      "correct_answers": [
+        "£28"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: £28. Nội dung: Nhà hàng đã giảm giá thực đơn cố định xuống 28 bảng.",
+      "scoring_policy": "canonical_currency_server",
+      "target_kind": "currency",
+      "question_tags": [
+        "short_answer",
+        "currency",
+        "currency"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập số tiền được xác nhận trong câu.",
+      "correct_answers": [
+        "£3.50"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: £3.50. Nội dung: Phí nhận đồ muộn là 3 bảng 50 xu.",
+      "scoring_policy": "canonical_currency_server",
+      "target_kind": "currency",
+      "question_tags": [
+        "short_answer",
+        "currency",
+        "currency"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập số tiền được xác nhận trong câu.",
+      "correct_answers": [
+        "£45"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: £45. Nội dung: Khoản hoàn trả tối đa là 45 bảng.",
+      "scoring_policy": "canonical_currency_server",
+      "target_kind": "currency",
+      "question_tags": [
+        "short_answer",
+        "currency",
+        "currency"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập số tiền được xác nhận trong câu.",
+      "correct_answers": [
+        "£11.30"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: £11.30. Nội dung: Số tiền còn phải thanh toán là 11 bảng 30 xu.",
+      "scoring_policy": "canonical_currency_server",
+      "target_kind": "currency",
+      "question_tags": [
+        "short_answer",
+        "currency",
+        "currency"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "deposit",
+      "pos": "n",
+      "meaning_vi": "tiền đặt cọc",
+      "example_en": "The refundable deposit is twenty-five pounds fifty.",
+      "example_vi": "Tiền đặt cọc có thể hoàn là 25 bảng 50 xu.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "refund",
+      "pos": "n",
+      "meaning_vi": "khoản hoàn tiền",
+      "example_en": "A full refund of nineteen pounds ninety-nine has been approved.",
+      "example_vi": "Khoản hoàn tiền đầy đủ 19 bảng 99 xu đã được chấp thuận.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "balance",
+      "pos": "n",
+      "meaning_vi": "số dư còn lại",
+      "example_en": "The final balance to pay is eleven pounds thirty.",
+      "example_vi": "Số tiền còn phải thanh toán là 11 bảng 30 xu.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "reimbursement",
+      "pos": "n",
+      "meaning_vi": "khoản bồi hoàn",
+      "example_en": "The maximum reimbursement is forty-five pounds.",
+      "example_vi": "Khoản hoàn trả tối đa là 45 bảng.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "booking fee",
+      "pos": "n",
+      "meaning_vi": "phí đặt chỗ",
+      "example_en": "The booking fee was twelve pounds, but the new fee is fourteen pounds.",
+      "example_vi": "Phí đặt chỗ trước đây là 12 bảng, nhưng phí mới là 14 bảng.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "charge",
+      "pos": "n",
+      "meaning_vi": "khoản phí",
+      "example_en": "The charge for late collection is three pounds fifty.",
+      "example_vi": "Phí nhận đồ muộn là 3 bảng 50 xu.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "currency",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+    "category": "numbers",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-033-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "f92f671af60f5cb2d8176837bb716263a31ca572c88a3297c59acc54df50cb96",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Phân biệt phí đặt cọc, phí cuối cùng, khoản hoàn và các số tiền có phần lẻ.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "four pounds fifty",
+        "written_value": "£4.50",
+        "teacher_note_vi": "Pounds và pence tạo một số tiền."
+      },
+      {
+        "spoken_example": "seventy pence",
+        "written_value": "£0.70",
+        "teacher_note_vi": "Không được viết £70."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn tiêu đề kỹ năng và đọc hai ví dụ có giải thích trước khi nghe.",
+      "Nghe một lần và thử ghi số/chữ; không xem transcript trước khi nộp.",
+      "Sau khi nộp, so sánh từ khóa mục tiêu, số 0 và thông tin đã được sửa.",
+      "Làm hai câu đánh giá chưa gặp ở lần nghe đầu và ghi số lần phát lại."
+    ],
+    "common_mistakes": [
+      "Chọn số đầu tiên được nhắc tới thay vì số được xác nhận cuối cùng.",
+      "Bỏ số 0 đầu trong mã hoặc làm tròn số thập phân."
+    ],
+    "before_audio_question": "Đây là số lượng, số tiền, mã, phần trăm hay đơn vị đo? Dữ kiện cuối cùng có được sửa không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

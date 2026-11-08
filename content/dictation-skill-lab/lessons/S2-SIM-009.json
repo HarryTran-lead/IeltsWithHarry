@@ -1,0 +1,806 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-009",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Recycling services and community facilities",
+  "title": "Clearwater District: Household Recycling",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "matching",
+    "public_services",
+    "recycling"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Thank you for coming to the Clearwater district recycling briefing. My name is Serena, and I manage the local collection network. The system changed in September, so the colours of the bins alone will not tell you where everything belongs. I will explain five common materials first, then the practical arrangements for collections.",
+      "translation_vi": "Cảm ơn tham dự buổi hướng dẫn tái chế Clearwater. Tôi là Serena, phụ trách mạng lưới thu gom. Quy định thay đổi từ tháng Chín, nên chỉ nhìn màu thùng rác là chưa đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Household batteries should no longer go into the red roadside container. They now belong in a small sealed box inside the public library, where staff can monitor damaged batteries and arrange safe transport.",
+      "translation_vi": "Pin gia dụng không còn bỏ thùng đỏ ven đường; hãy mang tới hộp kín trong thư viện công cộng để nhân viên xử lý an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "If you have soft plastic wrappers, take them to the collection point beside the supermarket checkout. Roadside sorting equipment cannot reliably handle thin film, which becomes tangled around the machines.",
+      "translation_vi": "Bao bì nhựa mềm được nhận ở điểm gần quầy thu ngân siêu thị; máy phân loại ven đường không xử lý được màng mỏng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Leftover paint and solvents must be taken to the controlled-waste depot. Even nearly empty tins can contain liquid chemicals, so please do not pour them into street drains.",
+      "translation_vi": "Sơn và dung môi thừa phải đưa tới điểm rác nguy hại; hộp gần rỗng vẫn có hóa chất, không đổ xuống cống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Grass cuttings and small branches can be placed in the compostable green sacks supplied by the district. We collect these separately from normal rubbish so they can become soil improver.",
+      "translation_vi": "Cỏ cắt và cành nhỏ cho vào bao xanh có thể ủ do quận phát; thu riêng để làm phân cải tạo đất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Wearable clothes should go to the community charity warehouse. Please wash them first, and do not mix them with broken household textiles that cannot be reused.",
+      "translation_vi": "Quần áo còn mặc được gửi đến kho từ thiện cộng đồng; hãy giặt trước, không trộn với vải hỏng không tái sử dụng được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "It may help to know why the sorting rules have changed. A material that can technically be recycled is not always suitable for the machinery available locally. If a collection contains the wrong objects, an entire load may need expensive extra sorting, so simple separation at home still matters.",
+      "translation_vi": "Quy định phân loại đổi vì vật liệu tái chế được về lý thuyết chưa chắc hợp máy địa phương. Nếu có vật sai, cả xe phải phân loại lại tốn kém; việc tách rác tại nhà rất quan trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "That explains where the materials go. There are also a few changes to when our services operate and how residents can request help with unusually large items.",
+      "translation_vi": "Đó là nơi xử lý từng loại vật liệu. Sau đây là thay đổi về lịch hoạt động và cách yêu cầu hỗ trợ cho đồ lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Regular garden-waste collections take place on Thursdays, although household rubbish is still collected on Tuesdays. Set the green sacks out before seven in the morning.",
+      "translation_vi": "Thu rác vườn thứ Năm, còn rác sinh hoạt thứ Ba. Đặt bao xanh ra trước bảy giờ sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "For an unwanted refrigerator, you must request a bulky-item pickup online. Drivers cannot add large appliances to an ordinary collection route without a booking.",
+      "translation_vi": "Muốn bỏ tủ lạnh, cần đăng ký lấy đồ lớn trực tuyến; xe thường không tự nhận thêm thiết bị lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The new recycling helpline is staffed by trained volunteers, not by the commercial waste company. Calls are answered until six each weekday evening.",
+      "translation_vi": "Đường dây hỗ trợ tái chế do tình nguyện viên đã đào tạo trực, không phải công ty rác; trả lời đến sáu giờ tối ngày thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "If your collection is missed, residents should report the problem within forty-eight hours. Photos of the sacks may help, but the report itself is the essential step.",
+      "translation_vi": "Nếu xe bỏ sót, người dân nên báo trong vòng bốn mươi tám giờ; ảnh có thể hữu ích nhưng báo cáo là bước bắt buộc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "We are opening a repair café at the old post office. Volunteers will offer basic advice on household objects before residents decide whether to replace them.",
+      "translation_vi": "Chúng tôi mở quán sửa đồ ở bưu điện cũ; tình nguyện viên tư vấn trước khi mọi người quyết định mua thay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "We are also working with neighbourhood groups to make the service easier for people who have limited storage space. A pilot project in small apartment blocks will test shared containers. Results from that trial will inform future changes, but the rules I have described today remain in force for ordinary households.",
+      "translation_vi": "Chúng tôi hợp tác khu dân cư để hỗ trợ người thiếu chỗ chứa rác. Chung cư nhỏ sẽ thử thùng chung; kết quả dùng cho thay đổi sau, còn quy định hôm nay vẫn áp dụng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The council website contains a printable guide, but please use the latest edition; older charts show the wrong locations. Your questions are welcome after this briefing.",
+      "translation_vi": "Trang hội đồng có hướng dẫn in được; nhớ dùng bản mới vì sơ đồ cũ ghi sai địa điểm. Có thể đặt câu hỏi sau buổi này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Household batteries",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Household batteries should no longer go into the red roadside container. They now belong in a small sealed box inside the public library, where staff can monitor damaged batteries and arrange safe transport.",
+      "explanation_vi": "Pin gia dụng không còn bỏ thùng đỏ ven đường; hãy mang tới hộp kín trong thư viện công cộng để nhân viên xử lý an toàn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        {
+          "key": "A",
+          "text": "Controlled-waste depot"
+        },
+        {
+          "key": "B",
+          "text": "Library safety box"
+        },
+        {
+          "key": "C",
+          "text": "Community charity warehouse"
+        },
+        {
+          "key": "D",
+          "text": "Supermarket collection point"
+        },
+        {
+          "key": "E",
+          "text": "Regular roadside bin"
+        },
+        {
+          "key": "F",
+          "text": "District compostable sacks"
+        }
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Soft plastic wrappers",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "If you have soft plastic wrappers, take them to the collection point beside the supermarket checkout. Roadside sorting equipment cannot reliably handle thin film, which becomes tangled around the machines.",
+      "explanation_vi": "Bao bì nhựa mềm được nhận ở điểm gần quầy thu ngân siêu thị; máy phân loại ven đường không xử lý được màng mỏng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        {
+          "key": "A",
+          "text": "Controlled-waste depot"
+        },
+        {
+          "key": "B",
+          "text": "Library safety box"
+        },
+        {
+          "key": "C",
+          "text": "Community charity warehouse"
+        },
+        {
+          "key": "D",
+          "text": "Supermarket collection point"
+        },
+        {
+          "key": "E",
+          "text": "Regular roadside bin"
+        },
+        {
+          "key": "F",
+          "text": "District compostable sacks"
+        }
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Paint and solvents",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Leftover paint and solvents must be taken to the controlled-waste depot. Even nearly empty tins can contain liquid chemicals, so please do not pour them into street drains.",
+      "explanation_vi": "Sơn và dung môi thừa phải đưa tới điểm rác nguy hại; hộp gần rỗng vẫn có hóa chất, không đổ xuống cống.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        {
+          "key": "A",
+          "text": "Controlled-waste depot"
+        },
+        {
+          "key": "B",
+          "text": "Library safety box"
+        },
+        {
+          "key": "C",
+          "text": "Community charity warehouse"
+        },
+        {
+          "key": "D",
+          "text": "Supermarket collection point"
+        },
+        {
+          "key": "E",
+          "text": "Regular roadside bin"
+        },
+        {
+          "key": "F",
+          "text": "District compostable sacks"
+        }
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Garden cuttings",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Grass cuttings and small branches can be placed in the compostable green sacks supplied by the district. We collect these separately from normal rubbish so they can become soil improver.",
+      "explanation_vi": "Cỏ cắt và cành nhỏ cho vào bao xanh có thể ủ do quận phát; thu riêng để làm phân cải tạo đất.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        {
+          "key": "A",
+          "text": "Controlled-waste depot"
+        },
+        {
+          "key": "B",
+          "text": "Library safety box"
+        },
+        {
+          "key": "C",
+          "text": "Community charity warehouse"
+        },
+        {
+          "key": "D",
+          "text": "Supermarket collection point"
+        },
+        {
+          "key": "E",
+          "text": "Regular roadside bin"
+        },
+        {
+          "key": "F",
+          "text": "District compostable sacks"
+        }
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Wearable clothes",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Wearable clothes should go to the community charity warehouse. Please wash them first, and do not mix them with broken household textiles that cannot be reused.",
+      "explanation_vi": "Quần áo còn mặc được gửi đến kho từ thiện cộng đồng; hãy giặt trước, không trộn với vải hỏng không tái sử dụng được.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        {
+          "key": "A",
+          "text": "Controlled-waste depot"
+        },
+        {
+          "key": "B",
+          "text": "Library safety box"
+        },
+        {
+          "key": "C",
+          "text": "Community charity warehouse"
+        },
+        {
+          "key": "D",
+          "text": "Supermarket collection point"
+        },
+        {
+          "key": "E",
+          "text": "Regular roadside bin"
+        },
+        {
+          "key": "F",
+          "text": "District compostable sacks"
+        }
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Garden-waste collection day: ____.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Regular garden-waste collections take place on Thursdays, although household rubbish is still collected on Tuesdays. Set the green sacks out before seven in the morning.",
+      "explanation_vi": "Thu rác vườn thứ Năm, còn rác sinh hoạt thứ Ba. Đặt bao xanh ra trước bảy giờ sáng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "Thursdays"
+      ],
+      "spoken_answer": "Thursdays",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Bulky-item collection requires online ____.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "For an unwanted refrigerator, you must request a bulky-item pickup online. Drivers cannot add large appliances to an ordinary collection route without a booking.",
+      "explanation_vi": "Muốn bỏ tủ lạnh, cần đăng ký lấy đồ lớn trực tuyến; xe thường không tự nhận thêm thiết bị lớn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "booking"
+      ],
+      "spoken_answer": "booking",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Helpline closes at ____ each weekday.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The new recycling helpline is staffed by trained volunteers, not by the commercial waste company. Calls are answered until six each weekday evening.",
+      "explanation_vi": "Đường dây hỗ trợ tái chế do tình nguyện viên đã đào tạo trực, không phải công ty rác; trả lời đến sáu giờ tối ngày thường.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "six"
+      ],
+      "spoken_answer": "six",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Report a missed collection within ____ hours.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "If your collection is missed, residents should report the problem within forty-eight hours. Photos of the sacks may help, but the report itself is the essential step.",
+      "explanation_vi": "Nếu xe bỏ sót, người dân nên báo trong vòng bốn mươi tám giờ; ảnh có thể hữu ích nhưng báo cáo là bước bắt buộc.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "forty-eight"
+      ],
+      "spoken_answer": "forty-eight",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Repair café location: old ____.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "We are opening a repair café at the old post office. Volunteers will offer basic advice on household objects before residents decide whether to replace them.",
+      "explanation_vi": "Chúng tôi mở quán sửa đồ ở bưu điện cũ; tình nguyện viên tư vấn trước khi mọi người quyết định mua thay.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "public_services",
+        "recycling"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "post office"
+      ],
+      "spoken_answer": "post office",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–F. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Controlled-waste depot"
+        },
+        {
+          "key": "B",
+          "text": "Library safety box"
+        },
+        {
+          "key": "C",
+          "text": "Community charity warehouse"
+        },
+        {
+          "key": "D",
+          "text": "Supermarket collection point"
+        },
+        {
+          "key": "E",
+          "text": "Regular roadside bin"
+        },
+        {
+          "key": "F",
+          "text": "District compostable sacks"
+        }
+      ]
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "4307db158fcc36d5c5c1a55ceb84c69526e86c1afd080bab217ef0f86de26b09",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.54,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

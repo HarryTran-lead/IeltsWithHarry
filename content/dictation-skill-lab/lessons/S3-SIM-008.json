@@ -1,0 +1,988 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-008",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Higher education assessment design",
+  "title": "Assessing an Online Peer-Review Course",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We are comparing student feedback before and after the peer-review workshop.",
+      "meaning_vi": "A: Nhóm đánh giá phản hồi ngang hàng; lời khen thân thiện chưa chắc có ích.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "C",
+      "text_en": "My concern is that students sometimes praise comments that are friendly but not helpful.",
+      "meaning_vi": "A: Nhóm đánh giá phản hồi ngang hàng; lời khen thân thiện chưa chắc có ích.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "B",
+      "text_en": "Include satisfaction results as context, but do not claim they measure better writing. Enjoyment and achievement are different outcomes.",
+      "meaning_vi": "B: Khảo sát hài lòng chỉ làm bối cảnh, không đo cải thiện bài viết.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Once names are removed, the revised drafts can become the main evidence of changes in argument quality.",
+      "meaning_vi": "A: Bản thảo đã ẩn danh là chứng cứ chính về chất lượng chỉnh sửa.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Students may interpret a reviewer’s tone differently from the usefulness of the proposed edit. Our rubric needs to capture whether a comment identifies a problem and suggests an actionable response.",
+      "meaning_vi": "A: Rubric phải xét góp ý có nêu vấn đề và hành động sửa được hay không, không chỉ giọng điệu.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "I had not realised how much a pleasant comment can differ from constructive feedback.",
+      "meaning_vi": "C: Lời nhận xét dễ chịu khác với góp ý giúp cải thiện.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "C",
+      "text_en": "Keep those first ratings, but explain that friendships may have influenced the judgements. We cannot treat them as blinded scores.",
+      "meaning_vi": "C: Giữ điểm đánh giá lời nhận xét với cảnh báo thiên vị bạn bè.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "The first rubric form omitted the category for evidence. We need to pilot a corrected form before using it to score the next set.",
+      "meaning_vi": "B: Cần thử lại rubric vì mẫu cũ thiếu tiêu chí chứng cứ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "We should score the original and revised versions without telling the markers which is which.",
+      "meaning_vi": "B: Nên chấm bài gốc và bài sửa mà không cho biết thứ tự.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The screenshots contain student names and personal remarks. Remove them from the shared folder until consent and anonymisation have been addressed.",
+      "meaning_vi": "A: Loại ảnh chụp tin nhắn riêng chứa danh tính khỏi thư mục dùng chung.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Platform time tells us about engagement, not learning. Our main outcome should be the quality of revisions students make to their drafts after receiving peer feedback.",
+      "meaning_vi": "A: Chỉ số chính là chất lượng chỉnh sửa bài viết sau phản hồi, không phải thời gian dùng nền tảng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "We should resist turning one sentence of criticism into a single numerical score without keeping the actual revision it prompted. The evidence is in the change to the draft.",
+      "meaning_vi": "C: Không nên biến nhận xét thành điểm số mà bỏ qua thay đổi thực tế trong bài viết.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "C",
+      "text_en": "The first ratings looked very generous. Then we discovered students knew whose comments they were judging, and several admitted awarding higher marks to their friends.",
+      "meaning_vi": "C: Đánh giá ban đầu thiên vị bạn bè vì không ẩn danh.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Check that the sample includes students who struggled, not just those who enjoyed the activity.",
+      "meaning_vi": "A: Mẫu cần cả sinh viên gặp khó khăn, không chỉ người thích hoạt động.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We should remove names from the drafts and ask two independent markers to judge the revisions. That would give us evidence beyond the students’ own satisfaction ratings.",
+      "meaning_vi": "A: Nên giấu tên bản thảo và nhờ hai người chấm độc lập.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "The most helpful comment was only two sentences, but it identified a missing counterargument and suggested a fix. A long paragraph saying excellent work did not help the writer revise anything.",
+      "meaning_vi": "B: Góp ý ngắn nhưng cụ thể có thể hữu ích hơn lời khen dài.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "B",
+      "text_en": "I can put the comments and revised paragraphs together for the independent markers, but mask student names and remove the original reviewer identities.",
+      "meaning_vi": "B: Có thể ghép góp ý với đoạn sửa để chấm độc lập, đồng thời ẩn danh người học và người nhận xét.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "C",
+      "text_en": "I can write up the checklist questions and test whether students interpret them consistently.",
+      "meaning_vi": "C: Tôi sẽ thử xem học viên hiểu checklist có thống nhất không.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "C",
+      "text_en": "For the next workshop, let each reviewer use a checklist that requires at least one actionable suggestion. We should test whether it changes the revision quality before making it permanent.",
+      "meaning_vi": "C: Thử checklist yêu cầu ít nhất một góp ý có thể thực hiện.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "The report can distinguish whether students liked the workshop from whether their revisions actually improved.",
+      "meaning_vi": "B: Báo cáo phân biệt mức yêu thích và hiệu quả sửa bài thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Student satisfaction survey",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pilot a corrected instrument"
+        },
+        {
+          "key": "B",
+          "text": "Keep with a potential friendship-bias warning"
+        },
+        {
+          "key": "C",
+          "text": "Send to a professional editor"
+        },
+        {
+          "key": "D",
+          "text": "Discard because no responses exist"
+        },
+        {
+          "key": "E",
+          "text": "Treat as background perception data"
+        },
+        {
+          "key": "F",
+          "text": "Use to measure improvement"
+        },
+        {
+          "key": "G",
+          "text": "Restrict and anonymise personal material"
+        }
+      ],
+      "correct_option": "E",
+      "correct_answers": [
+        "E"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Include satisfaction results as context, but do not claim they measure better writing. Enjoyment and achievement are different outcomes.",
+      "explanation_vi": "B: Khảo sát hài lòng chỉ làm bối cảnh, không đo cải thiện bài viết.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Anonymous revised drafts",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pilot a corrected instrument"
+        },
+        {
+          "key": "B",
+          "text": "Keep with a potential friendship-bias warning"
+        },
+        {
+          "key": "C",
+          "text": "Send to a professional editor"
+        },
+        {
+          "key": "D",
+          "text": "Discard because no responses exist"
+        },
+        {
+          "key": "E",
+          "text": "Treat as background perception data"
+        },
+        {
+          "key": "F",
+          "text": "Use to measure improvement"
+        },
+        {
+          "key": "G",
+          "text": "Restrict and anonymise personal material"
+        }
+      ],
+      "correct_option": "F",
+      "correct_answers": [
+        "F"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Once names are removed, the revised drafts can become the main evidence of changes in argument quality.",
+      "explanation_vi": "A: Bản thảo đã ẩn danh là chứng cứ chính về chất lượng chỉnh sửa.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Friendly-comment ratings",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pilot a corrected instrument"
+        },
+        {
+          "key": "B",
+          "text": "Keep with a potential friendship-bias warning"
+        },
+        {
+          "key": "C",
+          "text": "Send to a professional editor"
+        },
+        {
+          "key": "D",
+          "text": "Discard because no responses exist"
+        },
+        {
+          "key": "E",
+          "text": "Treat as background perception data"
+        },
+        {
+          "key": "F",
+          "text": "Use to measure improvement"
+        },
+        {
+          "key": "G",
+          "text": "Restrict and anonymise personal material"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "B"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Keep those first ratings, but explain that friendships may have influenced the judgements. We cannot treat them as blinded scores.",
+      "explanation_vi": "C: Giữ điểm đánh giá lời nhận xét với cảnh báo thiên vị bạn bè.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Broken rubric form",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pilot a corrected instrument"
+        },
+        {
+          "key": "B",
+          "text": "Keep with a potential friendship-bias warning"
+        },
+        {
+          "key": "C",
+          "text": "Send to a professional editor"
+        },
+        {
+          "key": "D",
+          "text": "Discard because no responses exist"
+        },
+        {
+          "key": "E",
+          "text": "Treat as background perception data"
+        },
+        {
+          "key": "F",
+          "text": "Use to measure improvement"
+        },
+        {
+          "key": "G",
+          "text": "Restrict and anonymise personal material"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The first rubric form omitted the category for evidence. We need to pilot a corrected form before using it to score the next set.",
+      "explanation_vi": "B: Cần thử lại rubric vì mẫu cũ thiếu tiêu chí chứng cứ.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Private message screenshots",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pilot a corrected instrument"
+        },
+        {
+          "key": "B",
+          "text": "Keep with a potential friendship-bias warning"
+        },
+        {
+          "key": "C",
+          "text": "Send to a professional editor"
+        },
+        {
+          "key": "D",
+          "text": "Discard because no responses exist"
+        },
+        {
+          "key": "E",
+          "text": "Treat as background perception data"
+        },
+        {
+          "key": "F",
+          "text": "Use to measure improvement"
+        },
+        {
+          "key": "G",
+          "text": "Restrict and anonymise personal material"
+        }
+      ],
+      "correct_option": "G",
+      "correct_answers": [
+        "G"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "The screenshots contain student names and personal remarks. Remove them from the shared folder until consent and anonymisation have been addressed.",
+      "explanation_vi": "A: Loại ảnh chụp tin nhắn riêng chứa danh tính khỏi thư mục dùng chung.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What is the central outcome of the evaluation?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The time students spend on the platform"
+        },
+        {
+          "key": "B",
+          "text": "The quality of changes in revised drafts"
+        },
+        {
+          "key": "C",
+          "text": "The number of positive comments"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "The quality of changes in revised drafts"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Platform time tells us about engagement, not learning. Our main outcome should be the quality of revisions students make to their drafts after receiving peer feedback.",
+      "explanation_vi": "A: Chỉ số chính là chất lượng chỉnh sửa bài viết sau phản hồi, không phải thời gian dùng nền tảng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why were the first feedback ratings unreliable?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The rating scale was printed upside down"
+        },
+        {
+          "key": "B",
+          "text": "Some comments were longer than others"
+        },
+        {
+          "key": "C",
+          "text": "Students rated comments from their friends more highly"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Students rated comments from their friends more highly"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "The first ratings looked very generous. Then we discovered students knew whose comments they were judging, and several admitted awarding higher marks to their friends.",
+      "explanation_vi": "C: Đánh giá ban đầu thiên vị bạn bè vì không ẩn danh.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What change does the tutor suggest?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Have independent markers assess anonymous drafts"
+        },
+        {
+          "key": "B",
+          "text": "Allow students to select the highest score"
+        },
+        {
+          "key": "C",
+          "text": "Ask reviewers to vote publicly"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Have independent markers assess anonymous drafts"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "We should remove names from the drafts and ask two independent markers to judge the revisions. That would give us evidence beyond the students’ own satisfaction ratings.",
+      "explanation_vi": "A: Nên giấu tên bản thảo và nhờ hai người chấm độc lập.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What did the pilot reveal about comment length?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Longer comments were always better"
+        },
+        {
+          "key": "B",
+          "text": "Specific short advice could be more useful than long praise"
+        },
+        {
+          "key": "C",
+          "text": "Students refused to read short comments"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Specific short advice could be more useful than long praise"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "The most helpful comment was only two sentences, but it identified a missing counterargument and suggested a fix. A long paragraph saying excellent work did not help the writer revise anything.",
+      "explanation_vi": "B: Góp ý ngắn nhưng cụ thể có thể hữu ích hơn lời khen dài.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Which improvement will be tested next?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Removing the opportunity to disagree"
+        },
+        {
+          "key": "B",
+          "text": "Automatic marks for each comment"
+        },
+        {
+          "key": "C",
+          "text": "A checklist requiring one actionable suggestion"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "A checklist requiring one actionable suggestion"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "For the next workshop, let each reviewer use a checklist that requires at least one actionable suggestion. We should test whether it changes the revision quality before making it permanent.",
+      "explanation_vi": "C: Thử checklist yêu cầu ít nhất một góp ý có thể thực hiện.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Pilot a corrected instrument"
+        },
+        {
+          "key": "B",
+          "text": "Keep with a potential friendship-bias warning"
+        },
+        {
+          "key": "C",
+          "text": "Send to a professional editor"
+        },
+        {
+          "key": "D",
+          "text": "Discard because no responses exist"
+        },
+        {
+          "key": "E",
+          "text": "Treat as background perception data"
+        },
+        {
+          "key": "F",
+          "text": "Use to measure improvement"
+        },
+        {
+          "key": "G",
+          "text": "Restrict and anonymise personal material"
+        }
+      ]
+    },
+    {
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "A: Nhóm đánh giá phản hồi ngang hàng; lời khen thân thiện chưa chắc có ích.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "902e86709f9103844e0c5b336e40eb26b53a62679ef7c3789d129d1efc46f154",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.0,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

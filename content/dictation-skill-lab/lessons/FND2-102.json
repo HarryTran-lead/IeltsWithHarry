@@ -1,0 +1,622 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-102",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M20 – mixed_conversations",
+  "title": "Restaurant order with an allergy request",
+  "learning_objectives_vi": [
+    "Theo dõi thay đổi thực đơn, yêu cầu không dùng nguyên liệu và giá.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Speaker 1",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Speaker 2",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hi, could we have a table for three near the window?",
+      "translation_vi": "Chào bạn, cho chúng tôi bàn ba người gần cửa sổ được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "three",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ba người",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Certainly. Would you like to see today's specials?",
+      "translation_vi": "Tất nhiên. Các bạn muốn xem món đặc biệt hôm nay không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "today's specials",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "món đặc biệt hôm nay",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes. Is the mushroom soup made with cream?",
+      "translation_vi": "Có. Súp nấm có dùng kem sữa không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "cream",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "kem sữa",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "It is, but our tomato soup contains no dairy.",
+      "translation_vi": "Có, nhưng súp cà chua không có sữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "tomato soup",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "súp cà chua",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I'll take the tomato soup. My friend has a nut allergy.",
+      "translation_vi": "Tôi chọn súp cà chua. Bạn tôi bị dị ứng các loại hạt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "nut allergy",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "dị ứng hạt",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I'll ask the kitchen to check every ingredient.",
+      "translation_vi": "Tôi sẽ nhờ bếp kiểm tra từng nguyên liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "every ingredient",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "từng nguyên liệu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Could we also have two chicken wraps without sauce?",
+      "translation_vi": "Cho thêm hai bánh cuốn gà không sốt nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "without sauce",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "không sốt",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Of course. The wraps are eight pounds each.",
+      "translation_vi": "Tất nhiên. Mỗi phần bánh giá tám bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "eight pounds",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tám bảng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Actually, make one wrap vegetarian, please.",
+      "translation_vi": "Thật ra hãy đổi một phần sang nhân chay nhé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "vegetarian",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chay",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "So that's one chicken wrap, one vegetarian wrap and one tomato soup.",
+      "translation_vi": "Vậy là một bánh gà, một bánh chay và một súp cà chua.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "food_order_modifications",
+        "mixed_conversations"
+      ],
+      "target_value": "one vegetarian wrap",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "một bánh cuốn chay",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Hi, could we have a table for three near the window?"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Hi, could we have a table for three near the window? Nghĩa: Chào bạn, cho chúng tôi bàn ba người gần cửa sổ được không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Certainly. Would you like to see today's specials?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Certainly. Would you like to see today's specials? Nghĩa: Tất nhiên. Các bạn muốn xem món đặc biệt hôm nay không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Yes. Is the mushroom soup made with cream?"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Yes. Is the mushroom soup made with cream? Nghĩa: Có. Súp nấm có dùng kem sữa không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "It is, but our tomato soup contains no dairy."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: It is, but our tomato soup contains no dairy. Nghĩa: Có, nhưng súp cà chua không có sữa.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I'll take the tomato soup. My friend has a nut allergy."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: I'll take the tomato soup. My friend has a nut allergy. Nghĩa: Tôi chọn súp cà chua. Bạn tôi bị dị ứng các loại hạt.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I'll ask the kitchen to check every ingredient."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: I'll ask the kitchen to check every ingredient. Nghĩa: Tôi sẽ nhờ bếp kiểm tra từng nguyên liệu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could we also have two chicken wraps without sauce?"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Could we also have two chicken wraps without sauce? Nghĩa: Cho thêm hai bánh cuốn gà không sốt nhé?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Of course. The wraps are eight pounds each."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Of course. The wraps are eight pounds each. Nghĩa: Tất nhiên. Mỗi phần bánh giá tám bảng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Actually, make one wrap vegetarian, please."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Actually, make one wrap vegetarian, please. Nghĩa: Thật ra hãy đổi một phần sang nhân chay nhé.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "So that's one chicken wrap, one vegetarian wrap and one tomato soup."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: So that's one chicken wrap, one vegetarian wrap and one tomato soup. Nghĩa: Vậy là một bánh gà, một bánh chay và một súp cà chua.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “từng nguyên liệu”.",
+      "correct_answers": [
+        "every ingredient"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “every ingredient” trong câu: I'll ask the kitchen to check every ingredient. Nghĩa: Tôi sẽ nhờ bếp kiểm tra từng nguyên liệu.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “không sốt”.",
+      "correct_answers": [
+        "without sauce"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “without sauce” trong câu: Could we also have two chicken wraps without sauce? Nghĩa: Cho thêm hai bánh cuốn gà không sốt nhé?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “tám bảng”.",
+      "correct_answers": [
+        "eight pounds"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “eight pounds” trong câu: Of course. The wraps are eight pounds each. Nghĩa: Tất nhiên. Mỗi phần bánh giá tám bảng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “chay”.",
+      "correct_answers": [
+        "vegetarian"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “vegetarian” trong câu: Actually, make one wrap vegetarian, please. Nghĩa: Thật ra hãy đổi một phần sang nhân chay nhé.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 3,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “một bánh cuốn chay”.",
+      "correct_answers": [
+        "one vegetarian wrap"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “one vegetarian wrap” trong câu: So that's one chicken wrap, one vegetarian wrap and one tomato soup. Nghĩa: Vậy là một bánh gà, một bánh chay và một súp cà chua.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "three",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "ba người",
+      "example_en": "Hi, could we have a table for three near the window?",
+      "example_vi": "Chào bạn, cho chúng tôi bàn ba người gần cửa sổ được không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "today's specials",
+      "pos": "phrase",
+      "meaning_vi": "món đặc biệt hôm nay",
+      "example_en": "Certainly. Would you like to see today's specials?",
+      "example_vi": "Tất nhiên. Các bạn muốn xem món đặc biệt hôm nay không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "cream",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "kem sữa",
+      "example_en": "Yes. Is the mushroom soup made with cream?",
+      "example_vi": "Có. Súp nấm có dùng kem sữa không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "tomato soup",
+      "pos": "phrase",
+      "meaning_vi": "súp cà chua",
+      "example_en": "It is, but our tomato soup contains no dairy.",
+      "example_vi": "Có, nhưng súp cà chua không có sữa.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "nut allergy",
+      "pos": "phrase",
+      "meaning_vi": "dị ứng hạt",
+      "example_en": "I'll take the tomato soup. My friend has a nut allergy.",
+      "example_vi": "Tôi chọn súp cà chua. Bạn tôi bị dị ứng các loại hạt.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "every ingredient",
+      "pos": "phrase",
+      "meaning_vi": "từng nguyên liệu",
+      "example_en": "I'll ask the kitchen to check every ingredient.",
+      "example_vi": "Tôi sẽ nhờ bếp kiểm tra từng nguyên liệu.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "food_order_modifications",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "mixed_conversations",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-102-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "eabbc86aed141b44a59b3c76d4aa220658746064780ab952a9f14ba091d1bdc0"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Theo dõi thay đổi thực đơn, yêu cầu không dùng nguyên liệu và giá.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "We said Monday first, but Tuesday is confirmed.",
+        "written_value": "Tuesday",
+        "teacher_note_vi": "Thông tin sau từ but mới là lựa chọn cuối cùng."
+      },
+      {
+        "spoken_example": "Is that fifteen or fifty? I mean fifteen.",
+        "written_value": "fifteen",
+        "teacher_note_vi": "Phải nghe câu sửa để không lấy thông tin ban đầu."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": false,
+    "phonetic_note": "Kiểm tra rõ lượt thoại và diễn biến hội thoại trên audio thật."
+  }
+}

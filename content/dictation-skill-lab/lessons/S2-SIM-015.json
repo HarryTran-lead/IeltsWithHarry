@@ -1,0 +1,720 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-015",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Market operations announcement",
+  "title": "Hillcrest Farmers Market: Seasonal Schedule",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "mcq_reasoning",
+    "local_market",
+    "schedule"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Kia ora, everyone. I am Renee, the coordinator of Hillcrest Farmers Market. We are reopening the outdoor section after winter and making some changes based on visitor feedback. I will explain why the changes matter, then describe the practical arrangements for stallholders and shoppers.",
+      "translation_vi": "Chào mọi người. Tôi là Renee, điều phối Chợ Nông sản Hillcrest. Khu ngoài trời mở lại sau mùa đông và thay đổi theo phản hồi khách. Tôi sẽ giải thích lý do rồi nêu lịch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "At first, we planned to move every stall indoors. Instead, only vendors selling products that need refrigeration will be in the covered hall, while others stay in the open square.",
+      "translation_vi": "Đầu tiên dự định chuyển mọi quầy vào trong; cuối cùng chỉ hàng cần làm lạnh ở sảnh có mái, quầy khác ở quảng trường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We have lengthened the lunch break between cooking demonstrations. Visitors told us they could not reach another stall before the next talk began, so the gap now allows more time to browse.",
+      "translation_vi": "Đã kéo dài khoảng nghỉ giữa buổi nấu vì khách không kịp ghé các quầy khác; giờ có thêm thời gian mua sắm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The market is introducing shared crates to reduce packaging waste. Vendors may still use paper bags, but the crates are intended mainly for moving vegetables between stalls and collection points.",
+      "translation_vi": "Chợ dùng thùng chung để giảm bao bì. Túi giấy vẫn được phép, nhưng thùng chủ yếu chuyển rau giữa quầy và điểm lấy hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A small performance space has been planned, but there will be no amplified music before midday. Nearby residents need a quieter start, especially on weekends.",
+      "translation_vi": "Có khu biểu diễn nhỏ, nhưng trước trưa không khuếch đại âm nhạc để cư dân gần đó được yên tĩnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "We will trial a collection service for advance orders. Rather than asking shoppers to visit each stall, staff will prepare one combined pickup area near the gate.",
+      "translation_vi": "Thử nghiệm nhận hàng đặt trước: nhân viên chuẩn bị một điểm lấy hàng chung gần cổng thay vì khách đến từng quầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Local producers asked us to focus on the quality of the market experience rather than simply expanding the number of stalls. Crowded aisles can make shopping stressful, especially for people with children or mobility needs. We have therefore adjusted the spacing between displays even though this leaves slightly fewer pitches.",
+      "translation_vi": "Nhà sản xuất địa phương muốn chất lượng trải nghiệm hơn số quầy. Lối đông gây căng thẳng, nhất là gia đình và người khó đi lại, nên chợ tăng khoảng cách dù giảm chỗ bán.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "For those planning to visit regularly, I will now give some details about times, facilities and the support available to new traders.",
+      "translation_vi": "Ai định ghé thường xuyên hãy chú ý giờ, tiện ích và hỗ trợ người bán mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The outdoor market now starts at eight fifteen on Saturdays. The Sunday farmers’ breakfast still begins at nine, as it did last year.",
+      "translation_vi": "Chợ ngoài trời bắt đầu lúc tám giờ mười lăm thứ Bảy; bữa sáng Chủ nhật vẫn lúc chín giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Anyone applying for a new food stall must first submit a hygiene certificate. Photographs of products alone are not enough to complete an application.",
+      "translation_vi": "Người đăng ký quầy thực phẩm phải nộp giấy chứng nhận vệ sinh; chỉ ảnh sản phẩm là chưa đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Reusable shopping baskets can be borrowed near the western entrance. You return them to the same desk before leaving the market.",
+      "translation_vi": "Có thể mượn giỏ mua sắm tái sử dụng gần cổng tây, trả ở cùng bàn trước khi rời chợ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "An advice session for new growers will take place in the community tent. The session is free, but only twenty seats are available.",
+      "translation_vi": "Có buổi tư vấn người trồng mới ở lều cộng đồng, miễn phí nhưng chỉ hai mươi ghế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "We post weather-related changes on the market website before six in the morning. Social media messages sometimes appear later, so the website is the main source.",
+      "translation_vi": "Thông báo thay đổi do thời tiết trên web chợ trước sáu giờ sáng; mạng xã hội có thể đăng muộn nên web là nguồn chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Market volunteers will also collect anonymous feedback about how visitors move through the site. They are interested in whether signs are easy to follow, not in what individuals choose to purchase. Small improvements in navigation may do as much for the market as adding another popular vendor.",
+      "translation_vi": "Tình nguyện viên khảo sát ẩn danh cách khách di chuyển, quan tâm biển chỉ dẫn chứ không mua gì. Cải thiện tìm đường có thể hữu ích như thêm quầy nổi tiếng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We hope the market will remain a place to buy local food and meet producers directly. The organisers welcome suggestions, but please follow the published rules for food safety.",
+      "translation_vi": "Chúng tôi mong chợ là nơi mua thực phẩm địa phương và gặp nhà sản xuất. Mọi góp ý được hoan nghênh nhưng cần tuân thủ an toàn thực phẩm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Which stalls will move into the covered hall?",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "At first, we planned to move every stall indoors. Instead, only vendors selling products that need refrigeration will be in the covered hall, while others stay in the open square.",
+      "explanation_vi": "Đầu tiên dự định chuyển mọi quầy vào trong; cuối cùng chỉ hàng cần làm lạnh ở sảnh có mái, quầy khác ở quảng trường.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "Those selling chilled products"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "All traders"
+        },
+        {
+          "key": "B",
+          "text": "Those selling chilled products"
+        },
+        {
+          "key": "C",
+          "text": "Only flower sellers"
+        }
+      ],
+      "correct_option": "B"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why is the interval between demonstrations longer?",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "We have lengthened the lunch break between cooking demonstrations. Visitors told us they could not reach another stall before the next talk began, so the gap now allows more time to browse.",
+      "explanation_vi": "Đã kéo dài khoảng nghỉ giữa buổi nấu vì khách không kịp ghé các quầy khác; giờ có thêm thời gian mua sắm.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "To let visitors explore stalls"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To let visitors explore stalls"
+        },
+        {
+          "key": "B",
+          "text": "To give chefs more preparation time"
+        },
+        {
+          "key": "C",
+          "text": "To reduce electricity use"
+        }
+      ],
+      "correct_option": "A"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What is the main purpose of shared crates?",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The market is introducing shared crates to reduce packaging waste. Vendors may still use paper bags, but the crates are intended mainly for moving vegetables between stalls and collection points.",
+      "explanation_vi": "Chợ dùng thùng chung để giảm bao bì. Túi giấy vẫn được phép, nhưng thùng chủ yếu chuyển rau giữa quầy và điểm lấy hàng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "To transport produce with less packaging"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To display flowers"
+        },
+        {
+          "key": "B",
+          "text": "To protect glass bottles"
+        },
+        {
+          "key": "C",
+          "text": "To transport produce with less packaging"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why is amplified music restricted in the morning?",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "A small performance space has been planned, but there will be no amplified music before midday. Nearby residents need a quieter start, especially on weekends.",
+      "explanation_vi": "Có khu biểu diễn nhỏ, nhưng trước trưa không khuếch đại âm nhạc để cư dân gần đó được yên tĩnh.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "To protect nearby residents from noise"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To protect nearby residents from noise"
+        },
+        {
+          "key": "B",
+          "text": "Because musicians arrive late"
+        },
+        {
+          "key": "C",
+          "text": "Because the speakers are being repaired"
+        }
+      ],
+      "correct_option": "A"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What is new about advance orders?",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "We will trial a collection service for advance orders. Rather than asking shoppers to visit each stall, staff will prepare one combined pickup area near the gate.",
+      "explanation_vi": "Thử nghiệm nhận hàng đặt trước: nhân viên chuẩn bị một điểm lấy hàng chung gần cổng thay vì khách đến từng quầy.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "They can be collected at one point"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "They must be paid for in cash"
+        },
+        {
+          "key": "B",
+          "text": "They can only contain vegetables"
+        },
+        {
+          "key": "C",
+          "text": "They can be collected at one point"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Saturday market opens at ____.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The outdoor market now starts at eight fifteen on Saturdays. The Sunday farmers’ breakfast still begins at nine, as it did last year.",
+      "explanation_vi": "Chợ ngoài trời bắt đầu lúc tám giờ mười lăm thứ Bảy; bữa sáng Chủ nhật vẫn lúc chín giờ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "eight fifteen"
+      ],
+      "spoken_answer": "eight fifteen",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "New food traders must provide a hygiene ____.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Anyone applying for a new food stall must first submit a hygiene certificate. Photographs of products alone are not enough to complete an application.",
+      "explanation_vi": "Người đăng ký quầy thực phẩm phải nộp giấy chứng nhận vệ sinh; chỉ ảnh sản phẩm là chưa đủ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "certificate"
+      ],
+      "spoken_answer": "certificate",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Borrow reusable shopping ____.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Reusable shopping baskets can be borrowed near the western entrance. You return them to the same desk before leaving the market.",
+      "explanation_vi": "Có thể mượn giỏ mua sắm tái sử dụng gần cổng tây, trả ở cùng bàn trước khi rời chợ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "baskets"
+      ],
+      "spoken_answer": "baskets",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Growers’ advice session: community ____.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "An advice session for new growers will take place in the community tent. The session is free, but only twenty seats are available.",
+      "explanation_vi": "Có buổi tư vấn người trồng mới ở lều cộng đồng, miễn phí nhưng chỉ hai mươi ghế.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "tent"
+      ],
+      "spoken_answer": "tent",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Weather changes announced on the market ____.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "We post weather-related changes on the market website before six in the morning. Social media messages sometimes appear later, so the website is the main source.",
+      "explanation_vi": "Thông báo thay đổi do thời tiết trên web chợ trước sáu giờ sáng; mạng xã hội có thể đăng muộn nên web là nguồn chính.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "local_market",
+        "schedule"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "website"
+      ],
+      "spoken_answer": "website",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "62ca73e0d56e5b5e285183be11f0134326e12e74b1c472bd0c2f945d23a232c9",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.36,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

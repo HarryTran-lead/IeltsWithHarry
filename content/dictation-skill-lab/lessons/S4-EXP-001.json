@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-001",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Urban climate and microclimates",
+  "title": "Why Some Streets Stay Hot at Night",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "urban_heat",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "When we discuss heat in a city, it is tempting to begin with the weather forecast. But two streets in the same city can feel remarkably different after sunset. In a teaching survey, we compared roads with similar traffic yet different surfaces. The most useful starting point was surface temperature, rather than the temperature reported at the airport.",
+      "translation_vi": "Khi bàn về nhiệt độ đô thị, ta thường nhìn dự báo thời tiết. Tuy nhiên hai con phố trong cùng thành phố có thể nóng lạnh rất khác sau hoàng hôn. Trong khảo sát minh họa, chúng tôi so sánh các đường có giao thông tương tự nhưng bề mặt khác nhau. Chỉ số nên bắt đầu là nhiệt độ bề mặt, không phải nhiệt độ ở sân bay.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A paved square absorbs solar energy during the afternoon and releases it gradually when the air cools. If a pavement is dark, more sunlight is absorbed; if it is pale, more can be reflected. Scientists describe that reflective property as albedo. The term matters because a surface that looks attractive may still trap considerable heat.",
+      "translation_vi": "Quảng trường lát đá hấp thụ năng lượng mặt trời ban chiều rồi nhả dần khi trời mát. Mặt đường tối màu hấp thụ nhiều hơn; màu nhạt phản xạ nhiều hơn. Giới khoa học gọi mức phản xạ đó là albedo. Bề mặt có vẻ đẹp vẫn có thể giữ nhiệt mạnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Buildings influence the process too. Tall blocks can shade pedestrians at noon, which sounds entirely beneficial. Yet close rows of buildings also restrict the movement of cooling winds after sunset. The combined effect depends on their spacing and height. That explains why simply adding more shade structures does not always lower night-time discomfort.",
+      "translation_vi": "Các tòa nhà cao che nắng trưa nhưng hàng nhà quá sát lại cản các luồng gió làm mát sau hoàng hôn. Hiệu quả ròng tùy khoảng cách và chiều cao nhà. Vì vậy, chỉ thêm bóng râm chưa chắc làm giảm cảm giác nóng ban đêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Trees do more than cast shadows. Their leaves transfer water into the atmosphere, which can cool the surrounding air when moisture evaporates. This process is called transpiration. However, trees require suitable soil and water; planting them into tiny sealed pits may keep them alive without providing much cooling. The lesson is to plan for roots, not just branches.",
+      "translation_vi": "Cây không chỉ tạo bóng râm. Lá đưa nước vào không khí và quá trình bay hơi có thể làm mát không gian; quá trình đó là thoát hơi nước (transpiration). Nhưng cây cần đất và nước; trồng trong hốc đất nhỏ bị bịt kín thường giảm hiệu quả làm mát. Cần thiết kế không gian cho rễ nữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our illustrative street comparison included one tree-lined road and one broad road with almost no vegetation. At first the shaded road appeared cooler in every period. After a night of heavy rain, however, the temperature difference narrowed because wet surfaces behaved differently. This reminds us to record recent rainfall before comparing readings from separate days.",
+      "translation_vi": "Trong so sánh minh họa, đường có cây thường mát hơn đường rộng ít cây. Sau một đêm mưa lớn, chênh lệch thu hẹp vì mặt đường ướt có đặc tính nhiệt khác. Vì thế, cần ghi lượng mưa gần đây trước khi so kết quả các ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The next complication concerns people, rather than instruments. Someone who works outdoors for six hours experiences heat differently from someone crossing a road for three minutes. A useful public-health measure is therefore exposure time. Counting hot locations without recording how long people remain there may direct investment towards places that are merely busy.",
+      "translation_vi": "Khó khăn tiếp theo liên quan con người. Người làm ngoài trời sáu giờ chịu nhiệt khác người băng qua đường ba phút. Vì vậy cần đo thời gian tiếp xúc. Chỉ đếm nơi nóng mà bỏ qua thời gian người dân ở đó có thể dẫn đầu tư sai chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Cities can test several responses before redesigning an entire district. Temporary shade, reflective paint and small planted areas offer different benefits and costs. We recommended measuring changes at pedestrian height, because sensors fixed on roofs do not describe what a person waiting for a bus actually experiences. The height of a measurement can change its meaning.",
+      "translation_vi": "Thành phố có thể thử mái che tạm, sơn phản xạ và mảng cây nhỏ trước khi cải tạo diện rộng. Nên đặt máy đo ngang tầm người đi bộ, bởi cảm biến trên mái nhà không phản ánh nhiệt độ người chờ xe buýt cảm nhận. Vị trí đo ảnh hưởng ý nghĩa kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Finally, urban cooling is not a contest to find one perfect material. A pale pavement may reduce heating but increase glare; dense trees offer shade but require maintenance. The defensible strategy is to combine methods and evaluate local conditions before copying a solution from another neighbourhood. Good urban design responds to its users, climate and available water.",
+      "translation_vi": "Cuối cùng, giảm nóng đô thị không phải chọn một vật liệu hoàn hảo. Mặt đường sáng giảm hấp thụ nhiệt nhưng dễ gây chói; cây dày tạo bóng râm nhưng cần chăm sóc. Cách tốt hơn là kết hợp giải pháp và đánh giá điều kiện địa phương trước khi sao chép từ khu vực khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "The survey first measured ____ instead of relying on airport figures.",
+      "correct_answers": [
+        "surface temperature"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The most useful starting point was surface temperature, rather than the temperature reported at the airport.",
+      "explanation_vi": "Bài giảng phân biệt nhiệt độ của mặt đường với nhiệt độ không khí ở trạm dự báo.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "The reflectivity of a surface is known as its ____.",
+      "correct_answers": [
+        "albedo"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Scientists describe that reflective property as albedo.",
+      "explanation_vi": "Albedo chỉ khả năng phản xạ ánh sáng của bề mặt, không phải nhiệt độ đo được.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Closely spaced buildings can obstruct ____ at night.",
+      "correct_answers": [
+        "cooling winds"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Yet close rows of buildings also restrict the movement of cooling winds after sunset.",
+      "explanation_vi": "Đáp án nói về luồng gió mang khí mát bị nhà cao tầng cản lại.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Cooling by water released from leaves involves ____.",
+      "correct_answers": [
+        "transpiration"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "This process is called transpiration.",
+      "explanation_vi": "Transpiration là quá trình thoát hơi nước của cây.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_TABLE_05_06",
+      "type": "table_completion",
+      "prompt": "Researchers should record ____ when interpreting readings from different days.",
+      "correct_answers": [
+        "recent rainfall"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "This reminds us to record recent rainfall before comparing readings from separate days.",
+      "explanation_vi": "Mưa trước khi đo là biến có thể làm sai kết luận về tác dụng riêng của cây xanh.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_TABLE_05_06",
+      "type": "table_completion",
+      "prompt": "A risk assessment should consider people's ____ in hot locations.",
+      "correct_answers": [
+        "exposure time"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A useful public-health measure is therefore exposure time.",
+      "explanation_vi": "Thời gian tiếp xúc nhiệt là yếu tố nguy cơ, khác số lượt người qua lại.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "For street-level comfort, sensors should be installed at ____.",
+      "correct_answers": [
+        "pedestrian height"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "We recommended measuring changes at pedestrian height, because sensors fixed on roofs do not describe what a person waiting for a bus actually experiences.",
+      "explanation_vi": "Cảm giác của người đi bộ phải được đo ở độ cao gần người đi bộ.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Solutions should be selected after evaluating ____.",
+      "correct_answers": [
+        "local conditions"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The defensible strategy is to combine methods and evaluate local conditions before copying a solution from another neighbourhood.",
+      "explanation_vi": "Bài giảng kết luận phải xét điều kiện từng địa phương thay vì dùng một phương án chung.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "urban_heat",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Scientists describe that reflective property as albedo. The term matters because a surface that looks attractive may still trap considerable heat."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 191,
+      "source_char_end": 337,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Scientists describe that reflective property as albedo. The term matters because a surface that looks attractive may still trap considerable heat.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Their leaves transfer water into the atmosphere, which can cool the surrounding air when moisture evaporates. This process is called transpiration."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 33,
+      "source_char_end": 180,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Their leaves transfer water into the atmosphere, which can cool the surrounding air when moisture evaporates. This process is called transpiration.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Someone who works outdoors for six hours experiences heat differently from someone crossing a road for three minutes. A useful public-health measure is therefore exposure time."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 64,
+      "source_char_end": 240,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Someone who works outdoors for six hours experiences heat differently from someone crossing a road for three minutes. A useful public-health measure is therefore exposure time.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "The defensible strategy is to combine methods and evaluate local conditions before copying a solution from another neighbourhood."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 174,
+      "source_char_end": 303,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The defensible strategy is to combine methods and evaluate local conditions before copying a solution from another neighbourhood.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Yet close rows of buildings also restrict the movement of ____ after sunset.",
+      "correct_answers": [
+        "cooling winds"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Yet close rows of buildings also restrict the movement of cooling winds after sunset.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: We recommended measuring changes at ____, because sensors fixed on roofs do not describe what a person waiting for a bus actually experiences.",
+      "correct_answers": [
+        "pedestrian height"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "We recommended measuring changes at pedestrian height, because sensors fixed on roofs do not describe what a person waiting for a bus actually experiences.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-001-V01",
+      "expression_en": "surface temperature",
+      "meaning_vi": "nhiệt độ bề mặt",
+      "part_of_speech": "noun phrase",
+      "example_en": "The most useful starting point was surface temperature, rather than the temperature reported at the airport.",
+      "example_vi": "Khi bàn về nhiệt độ đô thị, ta thường nhìn dự báo thời tiết. Tuy nhiên hai con phố trong cùng thành phố có thể nóng lạnh rất khác sau hoàng hôn. Trong khảo sát minh họa, chúng tôi so sánh các đường có giao thông tương tự nhưng bề mặt khác nhau. Chỉ số nên bắt đầu là nhiệt độ bề mặt, không phải nhiệt độ ở sân bay.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-001-V02",
+      "expression_en": "albedo",
+      "meaning_vi": "khả năng phản xạ ánh sáng của bề mặt",
+      "part_of_speech": "noun",
+      "example_en": "Scientists describe that reflective property as albedo.",
+      "example_vi": "Quảng trường lát đá hấp thụ năng lượng mặt trời ban chiều rồi nhả dần khi trời mát. Mặt đường tối màu hấp thụ nhiều hơn; màu nhạt phản xạ nhiều hơn. Giới khoa học gọi mức phản xạ đó là albedo. Bề mặt có vẻ đẹp vẫn có thể giữ nhiệt mạnh.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-001-V03",
+      "expression_en": "cooling winds",
+      "meaning_vi": "luồng gió làm mát",
+      "part_of_speech": "noun phrase",
+      "example_en": "Yet close rows of buildings also restrict the movement of cooling winds after sunset.",
+      "example_vi": "Các tòa nhà cao che nắng trưa nhưng hàng nhà quá sát lại cản các luồng gió làm mát sau hoàng hôn. Hiệu quả ròng tùy khoảng cách và chiều cao nhà. Vì vậy, chỉ thêm bóng râm chưa chắc làm giảm cảm giác nóng ban đêm.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-001-V04",
+      "expression_en": "transpiration",
+      "meaning_vi": "sự thoát hơi nước của lá cây",
+      "part_of_speech": "noun",
+      "example_en": "This process is called transpiration.",
+      "example_vi": "Cây không chỉ tạo bóng râm. Lá đưa nước vào không khí và quá trình bay hơi có thể làm mát không gian; quá trình đó là thoát hơi nước (transpiration). Nhưng cây cần đất và nước; trồng trong hốc đất nhỏ bị bịt kín thường giảm hiệu quả làm mát. Cần thiết kế không gian cho rễ nữa.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-001-V05",
+      "expression_en": "recent rainfall",
+      "meaning_vi": "lượng mưa gần đây",
+      "part_of_speech": "noun phrase",
+      "example_en": "This reminds us to record recent rainfall before comparing readings from separate days.",
+      "example_vi": "Trong so sánh minh họa, đường có cây thường mát hơn đường rộng ít cây. Sau một đêm mưa lớn, chênh lệch thu hẹp vì mặt đường ướt có đặc tính nhiệt khác. Vì thế, cần ghi lượng mưa gần đây trước khi so kết quả các ngày.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-001-V06",
+      "expression_en": "exposure time",
+      "meaning_vi": "thời gian tiếp xúc",
+      "part_of_speech": "noun phrase",
+      "example_en": "A useful public-health measure is therefore exposure time.",
+      "example_vi": "Khó khăn tiếp theo liên quan con người. Người làm ngoài trời sáu giờ chịu nhiệt khác người băng qua đường ba phút. Vì vậy cần đo thời gian tiếp xúc. Chỉ đếm nơi nóng mà bỏ qua thời gian người dân ở đó có thể dẫn đầu tư sai chỗ.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "e5c533e51ec69fb184fbbbc7b7d0566f5c8ca798d4cfd041a8b117c63bc65e3a",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_04",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "The survey first measured ____ instead of relying on airport figures."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "The reflectivity of a surface is known as its ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Closely spaced buildings can obstruct ____ at night."
+          },
+          {
+            "question_id": "Q04",
+            "prompt": "Cooling by water released from leaves involves ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04"
+        ]
+      },
+      {
+        "group_id": "IELTS_TABLE_05_06",
+        "type": "table_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "two_column_table",
+        "group_heading": "Methods and comparisons",
+        "items": [
+          {
+            "question_id": "Q05",
+            "prompt": "Researchers should record ____ when interpreting readings from different days."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "A risk assessment should consider people's ____ in hot locations."
+          }
+        ],
+        "question_ids": [
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SUMMARY_07_08",
+        "type": "summary_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "connected_summary",
+        "group_heading": "Interpretation and conclusions",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "For street-level comfort, sensors should be installed at ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Solutions should be selected after evaluating ____."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 445,
+    "estimated_audio_minutes_at_135_wpm": 3.3,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-019",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Coastal dune ecology",
+  "title": "Holding Sand in Place",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "Sand dunes along a coast are not fixed hills. Wind moves grains, plants slow that movement and storms can reshape a beach within hours. Coastal managers sometimes try to hold dunes in place, but excessive intervention can prevent the natural processes that make them useful. We will consider how dunes develop and how a restoration project can be evaluated.",
+      "meaning_vi": "Cồn cát ven biển thay đổi động và có thể phục hồi nhờ thực vật, quản lý lối đi.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "A beach visitor sees a dune as part of the scenery. To a coastal scientist it is also a temporary store of sand shaped by wind, waves and vegetation. A walkway that protects one part of a dune may alter how people use another. Effective management therefore starts by observing the whole coastal system, including the behaviour of visitors.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "Wind transports loose grains through saltation, in which sand hops in short movements close to the surface. Small obstacles can create a sand trap where grains accumulate. A fence may initially help sand build up, but its position matters: installed in the wrong place, it can redirect wind in an undesirable way. Dune formation is a process of repeated movement and deposition, not the simple addition of a single pile of material.",
+      "meaning_vi": "Cát di chuyển nhảy cóc; vật cản giữ cát có thể định hướng bồi tụ.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "Plants such as beach grasses help stabilise dunes through their root systems and by slowing wind near the surface. However, repeated foot traffic can damage stems and expose loose sand, especially along informal shortcuts. The problem is not that every visitor is harmful, but that movement becomes concentrated in fragile areas. Managers may build a raised walkway so people can reach the beach without cutting new paths across the vegetation.",
+      "meaning_vi": "Rễ cây giữ cát còn việc dẫm đạp liên tục có thể phá thảm thực vật.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "A dune also changes during extreme weather. Large waves can remove sand from the front face through storm erosion, while calmer periods may allow some natural recovery as sediment returns. Judging a project after one storm would therefore be misleading. Researchers compare several seasons and recognise that a coastline is naturally dynamic. The aim is often to preserve the dune's capacity to change, rather than forcing it to remain exactly where it stood on a particular map.",
+      "meaning_vi": "Bão gây xói lở nhưng bờ cát cũng có thể hồi phục tự nhiên.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Teams monitor dune shape with repeated elevation surveys and sometimes use aerial photography to observe a wider coastal section. They also record vegetation cover, which indicates how much ground is protected by plants. No single number is sufficient: a dune may be tall but sparsely vegetated, or relatively low yet well connected to the beach. The data must be interpreted with respect to wave exposure and the movement of available sand.",
+      "meaning_vi": "Đo cao độ và độ phủ thực vật bổ sung cho nhau trong theo dõi cồn cát.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "Restoration may involve planting locally adapted native grasses and creating a designated access path to concentrate visitor movement. The choice should be tested, not simply copied from another coastline with different winds and sand supply. Success might mean fewer damaged areas and better sediment retention rather than a perfectly smooth dune surface. Community participation is helpful because long-term care depends on how people actually use the beach.",
+      "meaning_vi": "Trồng cỏ bản địa và đường tiếp cận cố định hỗ trợ phục hồi cồn cát.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Restoration goals must be realistic about change. A high dune might be reduced by a storm without the project necessarily failing. Managers should decide in advance what outcomes matter, such as protecting plant cover or reducing damage from shortcuts. Regular measurements make it possible to distinguish gradual improvement from short-lived changes.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "Dunes protect coasts partly because they are able to absorb and release sand. Protecting their processes often matters more than preserving a single shape.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Hopping movement of sand is ____.",
+      "correct_answers": [
+        "saltation"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Wind transports loose grains through saltation, in which sand hops in short movements close to the surface.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 37,
+        "end_char": 46
+      },
+      "explanation_vi": "Đáp án “saltation” được nói trực tiếp trong phần bài giảng này. Cát di chuyển nhảy cóc; vật cản giữ cát có thể định hướng bồi tụ.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "An obstacle that promotes deposition acts as a ____.",
+      "correct_answers": [
+        "sand trap"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Small obstacles can create a sand trap where grains accumulate.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 137,
+        "end_char": 146
+      },
+      "explanation_vi": "Đáp án “sand trap” được nói trực tiếp trong phần bài giảng này. Cát di chuyển nhảy cóc; vật cản giữ cát có thể định hướng bồi tụ.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Plants hold sand partly with their ____.",
+      "correct_answers": [
+        "root systems"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Plants such as beach grasses help stabilise dunes through their root systems and by slowing wind near the surface.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 64,
+        "end_char": 76
+      },
+      "explanation_vi": "Đáp án “root systems” được nói trực tiếp trong phần bài giảng này. Rễ cây giữ cát còn việc dẫm đạp liên tục có thể phá thảm thực vật.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Concentrated visitor movement is ____.",
+      "correct_answers": [
+        "foot traffic"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "However, repeated foot traffic can damage stems and expose loose sand, especially along informal shortcuts.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 133,
+        "end_char": 145
+      },
+      "explanation_vi": "Đáp án “foot traffic” được nói trực tiếp trong phần bài giảng này. Rễ cây giữ cát còn việc dẫm đạp liên tục có thể phá thảm thực vật.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Heavy waves can cause ____.",
+      "correct_answers": [
+        "storm erosion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Large waves can remove sand from the front face through storm erosion, while calmer periods may allow some natural recovery as sediment returns.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 100,
+        "end_char": 113
+      },
+      "explanation_vi": "Đáp án “storm erosion” được nói trực tiếp trong phần bài giảng này. Bão gây xói lở nhưng bờ cát cũng có thể hồi phục tự nhiên.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Sand may return through ____.",
+      "correct_answers": [
+        "natural recovery"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Large waves can remove sand from the front face through storm erosion, while calmer periods may allow some natural recovery as sediment returns.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 151,
+        "end_char": 167
+      },
+      "explanation_vi": "Đáp án “natural recovery” được nói trực tiếp trong phần bài giảng này. Bão gây xói lở nhưng bờ cát cũng có thể hồi phục tự nhiên.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Changes in dune height can be recorded by ____.",
+      "correct_answers": [
+        "elevation surveys"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Teams monitor dune shape with repeated elevation surveys and sometimes use aerial photography to observe a wider coastal section.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 39,
+        "end_char": 56
+      },
+      "explanation_vi": "Đáp án “elevation surveys” được nói trực tiếp trong phần bài giảng này. Đo cao độ và độ phủ thực vật bổ sung cho nhau trong theo dõi cồn cát.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Plant protection can be measured as ____.",
+      "correct_answers": [
+        "vegetation cover"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "They also record vegetation cover, which indicates how much ground is protected by plants.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 147,
+        "end_char": 163
+      },
+      "explanation_vi": "Đáp án “vegetation cover” được nói trực tiếp trong phần bài giảng này. Đo cao độ và độ phủ thực vật bổ sung cho nhau trong theo dõi cồn cát.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "A restoration scheme can plant ____.",
+      "correct_answers": [
+        "native grasses"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Restoration may involve planting locally adapted native grasses and creating a designated access path to concentrate visitor movement.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 49,
+        "end_char": 63
+      },
+      "explanation_vi": "Đáp án “native grasses” được nói trực tiếp trong phần bài giảng này. Trồng cỏ bản địa và đường tiếp cận cố định hỗ trợ phục hồi cồn cát.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Visitors can be directed along an ____.",
+      "correct_answers": [
+        "access path"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Restoration may involve planting locally adapted native grasses and creating a designated access path to concentrate visitor movement.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 90,
+        "end_char": 101
+      },
+      "explanation_vi": "Đáp án “access path” được nói trực tiếp trong phần bài giảng này. Trồng cỏ bản địa và đường tiếp cận cố định hỗ trợ phục hồi cồn cát.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "title_en": "Holding Sand in Place — Notes",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "title_en": "Holding Sand in Place — Summary",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "summary_completion",
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Cồn cát ven biển thay đổi động và có thể phục hồi nhờ thực vật, quản lý lối đi.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "07f01d8eb29a3669c902530e70d41e80d6bab7cb11eacdd5e235cd24d8b8b7f2",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.93,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

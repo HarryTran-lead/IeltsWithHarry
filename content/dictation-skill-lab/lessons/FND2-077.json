@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-077",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M19 – Vocabulary",
+  "title": "Study routines and assignments",
+  "learning_objectives_vi": [
+    "Nhận diện từ vựng học tập trong những câu có ngữ cảnh.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I highlighted the key terms before reading the chapter.",
+      "translation_vi": "Tôi tô sáng các thuật ngữ chính trước khi đọc chương sách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "terms",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thuật ngữ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The teacher recommended reviewing our notes every evening.",
+      "translation_vi": "Giáo viên khuyên xem lại ghi chú mỗi tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "notes",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ghi chú",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We split the project into smaller tasks to meet the deadline.",
+      "translation_vi": "Chúng tôi chia dự án thành các nhiệm vụ nhỏ để kịp hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "tasks",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nhiệm vụ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I practise new vocabulary by using it in short conversations.",
+      "translation_vi": "Tôi luyện từ mới bằng cách dùng chúng trong hội thoại ngắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "vocabulary",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "từ vựng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The assignment needs references, not just a personal opinion.",
+      "translation_vi": "Bài tập cần nguồn tham khảo, không chỉ quan điểm cá nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "references",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tài liệu tham khảo",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Could you explain the instructions before we start the experiment?",
+      "translation_vi": "Bạn giải thích hướng dẫn trước khi chúng ta bắt đầu thí nghiệm được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "instructions",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "hướng dẫn",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I recorded the lecture so I could review the examples later.",
+      "translation_vi": "Tôi ghi âm bài giảng để có thể xem lại ví dụ sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "lecture",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bài giảng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The tutor asked for a summary, not a complete translation.",
+      "translation_vi": "Gia sư yêu cầu bản tóm tắt, không phải bản dịch đầy đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "summary",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tóm tắt",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We compared our answers before submitting the worksheet.",
+      "translation_vi": "Chúng tôi so sánh đáp án trước khi nộp phiếu bài tập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "answers",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đáp án",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The final paragraph should explain your conclusion clearly.",
+      "translation_vi": "Đoạn cuối phải giải thích kết luận rõ ràng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "study_skills",
+        "vocabulary"
+      ],
+      "target_value": "conclusion",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "kết luận",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I highlighted the key terms before reading the chapter."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I highlighted the key terms before reading the chapter. Nghĩa: Tôi tô sáng các thuật ngữ chính trước khi đọc chương sách.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The teacher recommended reviewing our notes every evening."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The teacher recommended reviewing our notes every evening. Nghĩa: Giáo viên khuyên xem lại ghi chú mỗi tối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We split the project into smaller tasks to meet the deadline."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We split the project into smaller tasks to meet the deadline. Nghĩa: Chúng tôi chia dự án thành các nhiệm vụ nhỏ để kịp hạn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I practise new vocabulary by using it in short conversations."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I practise new vocabulary by using it in short conversations. Nghĩa: Tôi luyện từ mới bằng cách dùng chúng trong hội thoại ngắn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The assignment needs references, not just a personal opinion."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The assignment needs references, not just a personal opinion. Nghĩa: Bài tập cần nguồn tham khảo, không chỉ quan điểm cá nhân.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could you explain the instructions before we start the experiment?"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Could you explain the instructions before we start the experiment? Nghĩa: Bạn giải thích hướng dẫn trước khi chúng ta bắt đầu thí nghiệm được không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I recorded the lecture so I could review the examples later."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I recorded the lecture so I could review the examples later. Nghĩa: Tôi ghi âm bài giảng để có thể xem lại ví dụ sau.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The tutor asked for a summary, not a complete translation."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The tutor asked for a summary, not a complete translation. Nghĩa: Gia sư yêu cầu bản tóm tắt, không phải bản dịch đầy đủ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We compared our answers before submitting the worksheet."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We compared our answers before submitting the worksheet. Nghĩa: Chúng tôi so sánh đáp án trước khi nộp phiếu bài tập.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The final paragraph should explain your conclusion clearly."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The final paragraph should explain your conclusion clearly. Nghĩa: Đoạn cuối phải giải thích kết luận rõ ràng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "study_skills"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Người nói muốn được giải thích điều gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "instructions"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: instructions (hướng dẫn). Dẫn chứng: Could you explain the instructions before we start the experiment? Nghĩa: Bạn giải thích hướng dẫn trước khi chúng ta bắt đầu thí nghiệm được không?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "study_skills",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Người nói đã ghi âm nội dung nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "lecture"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: lecture (bài giảng). Dẫn chứng: I recorded the lecture so I could review the examples later. Nghĩa: Tôi ghi âm bài giảng để có thể xem lại ví dụ sau.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "study_skills",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Gia sư yêu cầu dạng bài nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "summary"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: summary (tóm tắt). Dẫn chứng: The tutor asked for a summary, not a complete translation. Nghĩa: Gia sư yêu cầu bản tóm tắt, không phải bản dịch đầy đủ.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "study_skills",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Nhóm đã so sánh điều gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "answers"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: answers (đáp án). Dẫn chứng: We compared our answers before submitting the worksheet. Nghĩa: Chúng tôi so sánh đáp án trước khi nộp phiếu bài tập.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "study_skills",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Đoạn cuối cần giải thích nội dung gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "conclusion"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: conclusion (kết luận). Dẫn chứng: The final paragraph should explain your conclusion clearly. Nghĩa: Đoạn cuối phải giải thích kết luận rõ ràng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "study_skills",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "terms",
+      "pos": "noun (contextual)",
+      "meaning_vi": "thuật ngữ",
+      "example_en": "I highlighted the key terms before reading the chapter.",
+      "example_vi": "Tôi tô sáng các thuật ngữ chính trước khi đọc chương sách.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "notes",
+      "pos": "noun (contextual)",
+      "meaning_vi": "ghi chú",
+      "example_en": "The teacher recommended reviewing our notes every evening.",
+      "example_vi": "Giáo viên khuyên xem lại ghi chú mỗi tối.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "tasks",
+      "pos": "noun (contextual)",
+      "meaning_vi": "nhiệm vụ",
+      "example_en": "We split the project into smaller tasks to meet the deadline.",
+      "example_vi": "Chúng tôi chia dự án thành các nhiệm vụ nhỏ để kịp hạn.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "vocabulary",
+      "pos": "noun (contextual)",
+      "meaning_vi": "từ vựng",
+      "example_en": "I practise new vocabulary by using it in short conversations.",
+      "example_vi": "Tôi luyện từ mới bằng cách dùng chúng trong hội thoại ngắn.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "references",
+      "pos": "noun (contextual)",
+      "meaning_vi": "tài liệu tham khảo",
+      "example_en": "The assignment needs references, not just a personal opinion.",
+      "example_vi": "Bài tập cần nguồn tham khảo, không chỉ quan điểm cá nhân.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "instructions",
+      "pos": "noun (contextual)",
+      "meaning_vi": "hướng dẫn",
+      "example_en": "Could you explain the instructions before we start the experiment?",
+      "example_vi": "Bạn giải thích hướng dẫn trước khi chúng ta bắt đầu thí nghiệm được không?",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "study_skills",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nhận diện từ vựng học tập trong những câu có ngữ cảnh.",
+    "category": "vocabulary",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-077-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "c54eac730f747802aefe80ad61b0d8236ceda91c0143a544071ee8ea704f3b11",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nhận diện từ vựng học tập trong những câu có ngữ cảnh.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The shop was out of tea, so I bought coffee instead.",
+        "written_value": "coffee",
+        "teacher_note_vi": "So/instead báo lựa chọn thay thế; tea chỉ là thông tin cũ."
+      },
+      {
+        "spoken_example": "The receipt is in the bag, beside the charger.",
+        "written_value": "receipt",
+        "teacher_note_vi": "Dựa câu hỏi để chọn đúng đồ vật, không chọn mọi từ vựng nghe thấy."
+      }
+    ],
+    "learning_steps": [
+      "Đọc nghĩa và ví dụ mới, chú ý từ loại, ngữ cảnh dùng từ.",
+      "Nghe mỗi câu một lần để dự đoán từ đích, sau đó chép cả câu.",
+      "Làm năm câu kiểm tra thông tin có ngữ cảnh mà không xem đáp án.",
+      "Cuối bài thử hai câu chưa gặp; nếu sai, quay về kỹ năng nhỏ tương ứng."
+    ],
+    "common_mistakes": [
+      "Bỏ qua phủ định not và trả lời loại bài sai.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Từ/cụm nào phù hợp với câu hỏi, và từ bị phủ định có phải đáp án không?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

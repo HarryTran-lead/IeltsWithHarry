@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-050",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Spelling",
+  "title": "Email addresses and punctuation",
+  "learning_objectives_vi": [
+    "Nghe được email addresses and punctuation trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (email_spelling).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Send the form to max dot lee at example dot com.",
+      "translation_vi": "Gửi mẫu đơn đến max.lee@example.com.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "max.lee@example.com",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The contact is nina underscore park at example dot org.",
+      "translation_vi": "Địa chỉ liên hệ là nina_park@example.org.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "nina_park@example.org",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please write help hyphen desk at example dot net.",
+      "translation_vi": "Vui lòng ghi help-desk@example.net.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "help-desk@example.net",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Our inbox is bookings dot north at example dot com.",
+      "translation_vi": "Hộp thư của chúng tôi là bookings.north@example.com.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "bookings.north@example.com",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Use emma two seven at example dot org for the registration.",
+      "translation_vi": "Dùng emma27@example.org để đăng ký.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "emma27@example.org",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "My address is tom underscore reed at example dot net.",
+      "translation_vi": "Email của tôi là tom_reed@example.net.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "tom_reed@example.net",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The event team uses city dot tours at example dot com.",
+      "translation_vi": "Nhóm sự kiện dùng email city.tours@example.com.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "city.tours@example.com",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Write info hyphen west at example dot org.",
+      "translation_vi": "Hãy viết info-west@example.org.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "info-west@example.org",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The library email is reading dot room at example dot net.",
+      "translation_vi": "Email thư viện là reading.room@example.net.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "reading.room@example.net",
+      "target_kind": "email",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Contact the organiser at arts underscore day at example dot com.",
+      "translation_vi": "Liên hệ ban tổ chức tại arts_day@example.com.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "email_spelling",
+        "email"
+      ],
+      "target_value": "arts_day@example.com",
+      "target_kind": "email",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Send the form to max dot lee at example dot com."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Send the form to max dot lee at example dot com. Nghĩa: Gửi mẫu đơn đến max.lee@example.com. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The contact is nina underscore park at example dot org."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: The contact is nina underscore park at example dot org. Nghĩa: Địa chỉ liên hệ là nina_park@example.org. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please write help hyphen desk at example dot net."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Please write help hyphen desk at example dot net. Nghĩa: Vui lòng ghi help-desk@example.net. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our inbox is bookings dot north at example dot com."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Our inbox is bookings dot north at example dot com. Nghĩa: Hộp thư của chúng tôi là bookings.north@example.com. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Use emma two seven at example dot org for the registration."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Use emma two seven at example dot org for the registration. Nghĩa: Dùng emma27@example.org để đăng ký. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "My address is tom underscore reed at example dot net."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: My address is tom underscore reed at example dot net. Nghĩa: Email của tôi là tom_reed@example.net. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The event team uses city dot tours at example dot com."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The event team uses city dot tours at example dot com. Nghĩa: Nhóm sự kiện dùng email city.tours@example.com. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Write info hyphen west at example dot org."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Write info hyphen west at example dot org. Nghĩa: Hãy viết info-west@example.org. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The library email is reading dot room at example dot net."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The library email is reading dot room at example dot net. Nghĩa: Email thư viện là reading.room@example.net. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Contact the organiser at arts underscore day at example dot com."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: Contact the organiser at arts underscore day at example dot com. Nghĩa: Liên hệ ban tổ chức tại arts_day@example.com. Lưu ý: Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "email_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập địa chỉ email được xác nhận trong câu.",
+      "correct_answers": [
+        "tom_reed@example.net"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Dấu chấm, gạch dưới và gạch nối phải chính xác. Đáp án: tom_reed@example.net. Nội dung: Email của tôi là tom_reed@example.net.",
+      "scoring_policy": "canonical_email_server",
+      "target_kind": "email",
+      "question_tags": [
+        "short_answer",
+        "email_spelling",
+        "email"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập địa chỉ email được xác nhận trong câu.",
+      "correct_answers": [
+        "city.tours@example.com"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Dấu chấm, gạch dưới và gạch nối phải chính xác. Đáp án: city.tours@example.com. Nội dung: Nhóm sự kiện dùng email city.tours@example.com.",
+      "scoring_policy": "canonical_email_server",
+      "target_kind": "email",
+      "question_tags": [
+        "short_answer",
+        "email_spelling",
+        "email"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập địa chỉ email được xác nhận trong câu.",
+      "correct_answers": [
+        "info-west@example.org"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Dấu chấm, gạch dưới và gạch nối phải chính xác. Đáp án: info-west@example.org. Nội dung: Hãy viết info-west@example.org.",
+      "scoring_policy": "canonical_email_server",
+      "target_kind": "email",
+      "question_tags": [
+        "short_answer",
+        "email_spelling",
+        "email"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập địa chỉ email được xác nhận trong câu.",
+      "correct_answers": [
+        "reading.room@example.net"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Dấu chấm, gạch dưới và gạch nối phải chính xác. Đáp án: reading.room@example.net. Nội dung: Email thư viện là reading.room@example.net.",
+      "scoring_policy": "canonical_email_server",
+      "target_kind": "email",
+      "question_tags": [
+        "short_answer",
+        "email_spelling",
+        "email"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập địa chỉ email được xác nhận trong câu.",
+      "correct_answers": [
+        "arts_day@example.com"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Dấu chấm, gạch dưới và gạch nối phải chính xác. Đáp án: arts_day@example.com. Nội dung: Liên hệ ban tổ chức tại arts_day@example.com.",
+      "scoring_policy": "canonical_email_server",
+      "target_kind": "email",
+      "question_tags": [
+        "short_answer",
+        "email_spelling",
+        "email"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "underscore",
+      "pos": "n",
+      "meaning_vi": "dấu gạch dưới",
+      "example_en": "The contact is nina underscore park at example dot org.",
+      "example_vi": "Địa chỉ liên hệ là nina_park@example.org.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "dot",
+      "pos": "n",
+      "meaning_vi": "dấu chấm",
+      "example_en": "Send the form to max dot lee at example dot com.",
+      "example_vi": "Gửi mẫu đơn đến max.lee@example.com.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "at sign",
+      "pos": "n",
+      "meaning_vi": "ký hiệu @",
+      "example_en": "Use the at sign between your username and the domain.",
+      "example_vi": "Dùng ký hiệu @ giữa tên người dùng và tên miền.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "inbox",
+      "pos": "n",
+      "meaning_vi": "hộp thư",
+      "example_en": "Our inbox is bookings dot north at example dot com.",
+      "example_vi": "Hộp thư của chúng tôi là bookings.north@example.com.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "domain",
+      "pos": "n",
+      "meaning_vi": "tên miền",
+      "example_en": "Check the domain after the at sign.",
+      "example_vi": "Kiểm tra tên miền sau ký hiệu @.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "contact address",
+      "pos": "n",
+      "meaning_vi": "địa chỉ liên hệ",
+      "example_en": "Write your contact address at the top of the form.",
+      "example_vi": "Ghi địa chỉ liên hệ của bạn ở đầu mẫu đơn.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "email_spelling",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+    "category": "spelling",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-050-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "1f937f900bd54d2675fcf46e86c47cc554c0ad137f5785ffb802d156cadfef00",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe 'at', 'dot', 'hyphen', 'underscore'; địa chỉ chỉ dùng miền ví dụ.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "sam dot lee at example dot com",
+        "written_value": "sam.lee@example.com",
+        "teacher_note_vi": "dot là dấu chấm, at là @."
+      },
+      {
+        "spoken_example": "team underscore x at example dot org",
+        "written_value": "team_x@example.org",
+        "teacher_note_vi": "underscore là dấu gạch dưới."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn quy tắc nhận diện chữ cái và dấu câu, đọc hai ví dụ.",
+      "Nghe chuỗi được đánh vần, ghi lại từng ký tự ngay khi nghe.",
+      "Chỉ xem transcript/đáp án sau khi nộp, rà từng chữ/dấu nối.",
+      "Dùng hai câu chưa gặp để kiểm tra trong một lần nghe với giọng khác."
+    ],
+    "common_mistakes": [
+      "Suy đoán cách viết tên theo phát âm thay vì ký tự đánh vần.",
+      "Bỏ chữ lặp, dấu gạch nối, dấu nháy hoặc số 0 trong mã."
+    ],
+    "before_audio_question": "Người nói đang đọc tên, mã chữ-số, email, tên miền hay postcode? Có từ double, hyphen, underscore không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

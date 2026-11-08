@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-014",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Hearing health and sound exposure",
+  "title": "Investigating Hearing Comfort at Music Venues",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "risk_communication",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your project on concert sound levels is timely, but the current proposal reads like a campaign to ban loud music. Our assignment is to evaluate evidence and recommend reasonable communication, not decide policy in advance.",
+      "translation_vi": "Đề tài âm lượng hòa nhạc phù hợp, nhưng đề cương giống chiến dịch cấm nhạc lớn. Bài tập là đánh giá bằng chứng và đề xuất truyền thông, không định sẵn chính sách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I was going to count how many audience members asked for earplugs. Yet the venue told me it rarely advertises free earplugs, so the number requesting them says little about actual interest.",
+      "translation_vi": "Em định đếm người xin nút tai, nhưng địa điểm ít quảng bá nút tai miễn phí nên số người xin không phản ánh nhu cầu thật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We might ask people whether they know earplugs are available. Still, a survey immediately after a concert could capture excitement rather than thoughtful responses about risk.",
+      "translation_vi": "Có thể hỏi khách có biết nút tai sẵn không. Nhưng khảo sát ngay sau buổi diễn có thể ghi cảm xúc hào hứng hơn nhận thức rủi ro.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Use a short survey before the event and measure whether clear signs improve awareness. You are testing communication, not trying to diagnose anyone's hearing from a questionnaire.",
+      "translation_vi": "Hãy khảo sát ngắn trước buổi diễn và đo biển hướng dẫn rõ có tăng nhận biết không. Các em kiểm tra truyền thông, không chẩn đoán thính lực qua bảng hỏi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We also planned to compare two concerts, but their audiences and music styles differ. A difference in requests might reflect the kind of event rather than the signs themselves.",
+      "translation_vi": "Bọn em định so hai buổi diễn nhưng khán giả và thể loại nhạc khác. Khác biệt số người xin có thể do sự kiện chứ không do biển hướng dẫn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Let's compare two entrances during the same event, while making sure the signs and earplugs are equally accessible. We should also note which entrance people used rather than assuming exposure was equal.",
+      "translation_vi": "Hãy so hai lối vào cùng sự kiện, bảo đảm biển và nút tai đều dễ tiếp cận, đồng thời ghi khách dùng lối nào thay vì cho rằng giống nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That design is stronger, but check with the venue before assigning signage. Nobody should be denied hearing protection for the sake of an experiment; both groups must have access to free earplugs.",
+      "translation_vi": "Thiết kế tốt hơn nhưng hỏi đơn vị tổ chức trước khi bố trí biển. Không ai bị từ chối bảo vệ tai vì thí nghiệm; cả hai nhóm đều được nhận nút tai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I suggest recording how many visitors notice the signs, then asking a brief awareness question. Counting earplug collection alone might miss people who already brought their own protection.",
+      "translation_vi": "Em đề xuất ghi số khách chú ý biển rồi hỏi ngắn về nhận biết. Đếm người lấy nút tai sẽ bỏ sót ai mang đồ bảo vệ riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll create the observation form for the two entrances and distinguish people who notice a sign from those who collect earplugs. Those behaviours answer different questions.",
+      "translation_vi": "Em sẽ lập mẫu quan sát hai lối vào, phân biệt người nhìn biển và người lấy nút tai; hai hành vi trả lời câu hỏi khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll draft the information signs using neutral language, explaining where protection is available without implying that visitors have behaved irresponsibly. We should test whether the wording is easy to read.",
+      "translation_vi": "Em sẽ soạn biển thông tin trung lập, nói nơi nhận đồ bảo vệ mà không ám chỉ khách vô trách nhiệm; cần thử độ dễ đọc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "I can secure permission from the venue and confirm the ethical boundary: no participant is encouraged to stand closer to speakers or remain in unsafe conditions.",
+      "translation_vi": "Thầy sẽ xin phép địa điểm và xác nhận giới hạn đạo đức: không khuyến khích ai đứng gần loa hơn hoặc ở trong điều kiện không an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll prepare the pre-event question and remove any item asking whether someone's hearing has been permanently damaged. We are not qualified to make that kind of assessment.",
+      "translation_vi": "Em sẽ chuẩn bị câu hỏi trước sự kiện và bỏ câu hỏi tai ai bị tổn hại vĩnh viễn; nhóm không đủ chuyên môn đánh giá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The best result may be a practical recommendation about information signs, with clear limits. Do not turn a small awareness study into a medical claim about long-term hearing loss.",
+      "translation_vi": "Kết quả tốt nhất có thể là khuyến nghị về biển thông tin cùng giới hạn rõ; đừng biến khảo sát nhận biết nhỏ thành kết luận y khoa về mất thính lực lâu dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "risk_communication",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why is earplug collection an incomplete measure of demand?",
+      "correct_answers": [
+        "Free earplugs are rarely advertised"
+      ],
+      "options": [
+        "Free earplugs are rarely advertised",
+        "The venue bans earplugs at concerts",
+        "Visitors have to pay a large fee"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I was going to count how many audience members asked for earplugs. Yet the venue told me it rarely advertises free earplugs, so the number requesting them says little about actual interest.",
+      "explanation_vi": "Khách có thể không biết có nút tai miễn phí.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "risk_communication"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "When should awareness be surveyed?",
+      "correct_answers": [
+        "Before the concert begins"
+      ],
+      "options": [
+        "Several months after the concert",
+        "Only after the final song",
+        "Before the concert begins"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Use a short survey before the event and measure whether clear signs improve awareness. You are testing communication, not trying to diagnose anyone's hearing from a questionnaire.",
+      "explanation_vi": "Khảo sát trước sự kiện để giảm ảnh hưởng cảm xúc sau buổi diễn.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "risk_communication"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What design improves comparability?",
+      "correct_answers": [
+        "Two entrances during the same event"
+      ],
+      "options": [
+        "One event and a nearby cinema",
+        "Two entirely different concerts",
+        "Two entrances during the same event"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Let's compare two entrances during the same event, while making sure the signs and earplugs are equally accessible. We should also note which entrance people used rather than assuming exposure was equal.",
+      "explanation_vi": "So hai lối vào cùng một sự kiện.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "risk_communication"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why count both sign awareness and earplug use?",
+      "correct_answers": [
+        "Some people bring their own protection"
+      ],
+      "options": [
+        "Signs are illegal at music venues",
+        "Some people bring their own protection",
+        "Earplugs can only be used outdoors"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I suggest recording how many visitors notice the signs, then asking a brief awareness question. Counting earplug collection alone might miss people who already brought their own protection.",
+      "explanation_vi": "Đếm lấy nút tai bỏ sót người tự mang.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "risk_communication"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: record separate observations at entrances?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I'll create the observation form for the two entrances and distinguish people who notice a sign from those who collect earplugs. Those behaviours answer different questions.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "risk_communication"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: write neutral and readable information signs?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll draft the information signs using neutral language, explaining where protection is available without implying that visitors have behaved irresponsibly. We should test whether the wording is easy to read.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "risk_communication"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: obtain venue permission and safeguard participants?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I can secure permission from the venue and confirm the ethical boundary: no participant is encouraged to stand closer to speakers or remain in unsafe conditions.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "risk_communication"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: remove medical-diagnosis questions?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll prepare the pre-event question and remove any item asking whether someone's hearing has been permanently damaged. We are not qualified to make that kind of assessment.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "risk_communication"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "We might ask people whether they know earplugs are available. Still, a survey immediately after a concert could capture excitement rather than thoughtful responses about risk."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "We might ask people whether they know earplugs are available. Still, a survey immediately after a concert could capture excitement rather than thoughtful responses about risk.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "risk_communication"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "We also planned to compare two concerts, but their audiences and music styles differ. A difference in requests might reflect the kind of event rather than the signs themselves."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "We also planned to compare two concerts, but their audiences and music styles differ. A difference in requests might reflect the kind of event rather than the signs themselves.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "risk_communication"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "That design is stronger, but check with the venue before assigning signage. Nobody should be denied hearing protection for the sake of an experiment; both groups must have access to free earplugs."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "That design is stronger, but check with the venue before assigning signage. Nobody should be denied hearing protection for the sake of an experiment; both groups must have access to free earplugs.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "risk_communication"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói A.",
+      "correct_answers": [
+        "I can secure permission from the venue and confirm the ethical boundary: no participant is encouraged to stand closer to speakers or remain in unsafe conditions."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I can secure permission from the venue and confirm the ethical boundary: no participant is encouraged to stand closer to speakers or remain in unsafe conditions.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "risk_communication"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T03 và điền cụm bị thiếu: We might ask people whether they know ____ are available. Still, a survey immediately after a concert could capture excitement rather than thoughtful responses about risk.",
+      "correct_answers": [
+        "earplugs"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "We might ask people whether they know earplugs are available. Still, a survey immediately after a concert could capture excitement rather than thoughtful responses about risk.",
+      "explanation_vi": "Cụm nghe được là “earplugs” (nút bịt tai); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "risk_communication"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T02 và điền cụm bị thiếu: I was going to count how many ____ asked for earplugs. Yet the venue told me it rarely advertises free earplugs, so the number requesting them says little about actual interest.",
+      "correct_answers": [
+        "audience members"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I was going to count how many audience members asked for earplugs. Yet the venue told me it rarely advertises free earplugs, so the number requesting them says little about actual interest.",
+      "explanation_vi": "Cụm nghe được là “audience members” (khán giả); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "risk_communication"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-014-V01",
+      "expression_en": "earplugs",
+      "meaning_vi": "nút bịt tai",
+      "part_of_speech": "noun phrase",
+      "example_en": "I was going to count how many audience members asked for earplugs. Yet the venue told me it rarely advertises free earplugs, so the number requesting them says little about actual interest.",
+      "example_vi": "Em định đếm người xin nút tai, nhưng địa điểm ít quảng bá nút tai miễn phí nên số người xin không phản ánh nhu cầu thật.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-014-V02",
+      "expression_en": "audience members",
+      "meaning_vi": "khán giả",
+      "part_of_speech": "noun phrase",
+      "example_en": "I was going to count how many audience members asked for earplugs. Yet the venue told me it rarely advertises free earplugs, so the number requesting them says little about actual interest.",
+      "example_vi": "Em định đếm người xin nút tai, nhưng địa điểm ít quảng bá nút tai miễn phí nên số người xin không phản ánh nhu cầu thật.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-014-V03",
+      "expression_en": "awareness",
+      "meaning_vi": "truyền thông về rủi ro",
+      "part_of_speech": "noun phrase",
+      "example_en": "Use a short survey before the event and measure whether clear signs improve awareness. You are testing communication, not trying to diagnose anyone's hearing from a questionnaire.",
+      "example_vi": "Hãy khảo sát ngắn trước buổi diễn và đo biển hướng dẫn rõ có tăng nhận biết không. Các em kiểm tra truyền thông, không chẩn đoán thính lực qua bảng hỏi.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-014-V04",
+      "expression_en": "signage",
+      "meaning_vi": "hệ thống biển thông tin",
+      "part_of_speech": "noun phrase",
+      "example_en": "That design is stronger, but check with the venue before assigning signage. Nobody should be denied hearing protection for the sake of an experiment; both groups must have access to free earplugs.",
+      "example_vi": "Thiết kế tốt hơn nhưng hỏi đơn vị tổ chức trước khi bố trí biển. Không ai bị từ chối bảo vệ tai vì thí nghiệm; cả hai nhóm đều được nhận nút tai.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-014-V05",
+      "expression_en": "hearing protection",
+      "meaning_vi": "bảo vệ thính giác",
+      "part_of_speech": "noun phrase",
+      "example_en": "That design is stronger, but check with the venue before assigning signage. Nobody should be denied hearing protection for the sake of an experiment; both groups must have access to free earplugs.",
+      "example_vi": "Thiết kế tốt hơn nhưng hỏi đơn vị tổ chức trước khi bố trí biển. Không ai bị từ chối bảo vệ tai vì thí nghiệm; cả hai nhóm đều được nhận nút tai.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-014-V06",
+      "expression_en": "ethical boundary",
+      "meaning_vi": "giới hạn đạo đức",
+      "part_of_speech": "noun phrase",
+      "example_en": "I can secure permission from the venue and confirm the ethical boundary: no participant is encouraged to stand closer to speakers or remain in unsafe conditions.",
+      "example_vi": "Thầy sẽ xin phép địa điểm và xác nhận giới hạn đạo đức: không khuyến khích ai đứng gần loa hơn hoặc ở trong điều kiện không an toàn.",
+      "evidence_turn_id": "T11",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "89a0cff64d627218a7006ea848a6d5c6ad97a0f2dd6be8e0fdc79046fc518d13",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 379,
+    "estimated_audio_minutes_at_135_wpm": 2.81,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

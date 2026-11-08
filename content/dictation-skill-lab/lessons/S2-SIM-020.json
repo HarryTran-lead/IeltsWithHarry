@@ -1,0 +1,720 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-020",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Museum evening lecture programme",
+  "title": "Oceanview Maritime Talks: Evening Programme",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "notes",
+    "mcq_reasoning",
+    "cultural_programme"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good evening, and welcome to the Oceanview Maritime Talks series. I am Mei, the public programmes officer. Each talk explores a different aspect of local coastal life, but the venue and reservation system have been updated. I will cover the practical arrangements and then explain the choices behind this season’s programme.",
+      "translation_vi": "Chào buổi tối, tôi là Mei, phụ trách chương trình công chúng Oceanview Maritime Talks. Mỗi buổi nói về đời sống ven biển; địa điểm và cách đặt đã thay đổi. Tôi sẽ giới thiệu lịch rồi lý do chọn chủ đề.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "This season the talks begin at six twenty, rather than seven. The change allows visitors to catch the final public bus after each event.",
+      "translation_vi": "Mùa này tọa đàm bắt đầu lúc sáu giờ hai mươi thay vì bảy, để khách kịp chuyến xe buýt cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The new venue is the harbour education room, not the upstairs gallery. There is more space for questions and step-free access.",
+      "translation_vi": "Địa điểm mới là phòng giáo dục cảng, không phải phòng trưng bày tầng trên; có chỗ hỏi đáp và đường không bậc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Every visitor should reserve a free ticket online. Walk-in seats cannot be guaranteed because the room holds fewer people than the main auditorium.",
+      "translation_vi": "Mỗi khách nên đặt vé miễn phí trực tuyến; đến trực tiếp không chắc có chỗ vì phòng nhỏ hơn khán phòng lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The final session includes a short demonstration of traditional knot-making. The materials will be supplied, so participants do not need to bring rope.",
+      "translation_vi": "Buổi cuối có trình diễn thắt nút dây truyền thống; có vật liệu sẵn nên không cần mang dây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The museum offers an audio description service on request. Please contact the programmes office at least two days before the event if you need it.",
+      "translation_vi": "Bảo tàng có mô tả âm thanh nếu yêu cầu; liên hệ văn phòng chương trình ít nhất hai ngày trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Many people associate the waterfront with dramatic voyages, but the museum also studies the ordinary work that supported ships in port. Food suppliers, repair teams and families all shaped maritime history. This series brings together written documents and personal memories to make those less visible stories easier to understand.",
+      "translation_vi": "Nhiều người liên tưởng bến cảng với hành trình lớn, nhưng bảo tàng cũng nghiên cứu việc thường ngày của người cung ứng, sửa tàu và gia đình. Chuỗi tọa đàm ghép tài liệu với ký ức cá nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I would also like to explain how we selected this season’s speakers and materials. There is more to the programme than the titles might suggest.",
+      "translation_vi": "Tôi muốn giải thích thêm cách chọn diễn giả và tư liệu; chương trình có nhiều nội dung hơn tên buổi nói.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Our first speaker is a coastal engineer who studies old breakwaters. We invited her to explain how earlier structures continue to influence present-day harbour safety.",
+      "translation_vi": "Diễn giả đầu là kỹ sư bờ biển nghiên cứu đê chắn sóng cổ, giải thích cấu trúc cũ vẫn ảnh hưởng an toàn cảng nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The second talk uses letters written by lighthouse keepers. We chose these sources because they show daily routines that official accident reports rarely describe.",
+      "translation_vi": "Buổi hai dùng thư của người giữ hải đăng, thể hiện sinh hoạt thường nhật mà báo cáo tai nạn chính thức ít ghi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "A planned talk on shipwreck treasure has been replaced with a session about coastal migration. The committee wanted a topic that connected the harbour to the experiences of local families.",
+      "translation_vi": "Buổi về kho báu tàu đắm thay bằng di cư ven biển để kết nối cảng với trải nghiệm gia đình địa phương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Several visitors expected the knot-making session to be a competitive event. In fact, the purpose is to demonstrate a practical skill slowly, not to test how fast anyone can work.",
+      "translation_vi": "Một số khách tưởng buổi thắt nút là thi đấu; thực ra để minh họa kỹ năng chậm, không chấm tốc độ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "At the end of each event, visitors may leave questions on a card. We use the cards to plan future topics, rather than to judge the performance of individual presenters.",
+      "translation_vi": "Cuối mỗi sự kiện khách ghi câu hỏi trên thẻ; dùng để lên chủ đề tương lai, không chấm điểm diễn giả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "The organisers will review the series after its first three events. We are interested in whether visitors feel able to ask questions, not simply whether the talks are well attended. A smaller but engaged audience can contribute valuable observations that improve the museum’s understanding of local history.",
+      "translation_vi": "Ban tổ chức đánh giá sau ba buổi đầu, quan tâm khách có dám hỏi chứ không chỉ số người đến. Nhóm nhỏ nhưng tích cực có thể góp quan sát hữu ích cho hiểu biết lịch sử.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We hope visitors will bring their questions and memories. If you have a family photograph or document to share, speak to the museum archivist after the talk.",
+      "translation_vi": "Chúng tôi mong khách mang câu hỏi và ký ức. Nếu có ảnh hoặc tài liệu gia đình, hãy gặp lưu trữ viên sau buổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Talks begin at ____.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "This season the talks begin at six twenty, rather than seven. The change allows visitors to catch the final public bus after each event.",
+      "explanation_vi": "Mùa này tọa đàm bắt đầu lúc sáu giờ hai mươi thay vì bảy, để khách kịp chuyến xe buýt cuối.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "six twenty"
+      ],
+      "spoken_answer": "six twenty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Venue: harbour ____ room.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The new venue is the harbour education room, not the upstairs gallery. There is more space for questions and step-free access.",
+      "explanation_vi": "Địa điểm mới là phòng giáo dục cảng, không phải phòng trưng bày tầng trên; có chỗ hỏi đáp và đường không bậc.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "education"
+      ],
+      "spoken_answer": "education",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Tickets should be booked ____.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Every visitor should reserve a free ticket online. Walk-in seats cannot be guaranteed because the room holds fewer people than the main auditorium.",
+      "explanation_vi": "Mỗi khách nên đặt vé miễn phí trực tuyến; đến trực tiếp không chắc có chỗ vì phòng nhỏ hơn khán phòng lớn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "online"
+      ],
+      "spoken_answer": "online",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Final-session demonstration: traditional ____.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The final session includes a short demonstration of traditional knot-making. The materials will be supplied, so participants do not need to bring rope.",
+      "explanation_vi": "Buổi cuối có trình diễn thắt nút dây truyền thống; có vật liệu sẵn nên không cần mang dây.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "knot-making"
+      ],
+      "spoken_answer": "knot-making",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "note_completion",
+      "prompt": "Audio-description requests: at least ____ days ahead.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The museum offers an audio description service on request. Please contact the programmes office at least two days before the event if you need it.",
+      "explanation_vi": "Bảo tàng có mô tả âm thanh nếu yêu cầu; liên hệ văn phòng chương trình ít nhất hai ngày trước.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "two"
+      ],
+      "spoken_answer": "two",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What will the first speaker mainly discuss?",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Our first speaker is a coastal engineer who studies old breakwaters. We invited her to explain how earlier structures continue to influence present-day harbour safety.",
+      "explanation_vi": "Diễn giả đầu là kỹ sư bờ biển nghiên cứu đê chắn sóng cổ, giải thích cấu trúc cũ vẫn ảnh hưởng an toàn cảng nay.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "The continuing impact of historic structures"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Modern fishing equipment"
+        },
+        {
+          "key": "B",
+          "text": "The continuing impact of historic structures"
+        },
+        {
+          "key": "C",
+          "text": "Tourist accommodation around the harbour"
+        }
+      ],
+      "correct_option": "B"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why were the lighthouse letters selected?",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "The second talk uses letters written by lighthouse keepers. We chose these sources because they show daily routines that official accident reports rarely describe.",
+      "explanation_vi": "Buổi hai dùng thư của người giữ hải đăng, thể hiện sinh hoạt thường nhật mà báo cáo tai nạn chính thức ít ghi.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "They describe ordinary working life"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "They describe ordinary working life"
+        },
+        {
+          "key": "B",
+          "text": "They contain instructions for repairing lights"
+        },
+        {
+          "key": "C",
+          "text": "They are the oldest documents in the museum"
+        }
+      ],
+      "correct_option": "A"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why was the shipwreck talk replaced?",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "A planned talk on shipwreck treasure has been replaced with a session about coastal migration. The committee wanted a topic that connected the harbour to the experiences of local families.",
+      "explanation_vi": "Buổi về kho báu tàu đắm thay bằng di cư ven biển để kết nối cảng với trải nghiệm gia đình địa phương.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "The new topic is more relevant to local families"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "The artefacts are under repair"
+        },
+        {
+          "key": "B",
+          "text": "The speaker became unavailable"
+        },
+        {
+          "key": "C",
+          "text": "The new topic is more relevant to local families"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What is the focus of the knot-making session?",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Several visitors expected the knot-making session to be a competitive event. In fact, the purpose is to demonstrate a practical skill slowly, not to test how fast anyone can work.",
+      "explanation_vi": "Một số khách tưởng buổi thắt nút là thi đấu; thực ra để minh họa kỹ năng chậm, không chấm tốc độ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "Understanding a practical technique"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Speed and competition"
+        },
+        {
+          "key": "B",
+          "text": "Understanding a practical technique"
+        },
+        {
+          "key": "C",
+          "text": "A historical drama performance"
+        }
+      ],
+      "correct_option": "B"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "How will the question cards be used?",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "At the end of each event, visitors may leave questions on a card. We use the cards to plan future topics, rather than to judge the performance of individual presenters.",
+      "explanation_vi": "Cuối mỗi sự kiện khách ghi câu hỏi trên thẻ; dùng để lên chủ đề tương lai, không chấm điểm diễn giả.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "notes",
+        "mcq_reasoning",
+        "cultural_programme"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "To identify future subjects"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To identify future subjects"
+        },
+        {
+          "key": "B",
+          "text": "To evaluate speakers individually"
+        },
+        {
+          "key": "C",
+          "text": "To select a prize winner"
+        }
+      ],
+      "correct_option": "A"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "c60fbca9ea8fd232a8d664b42455153ba1818d0def7c4c945be57616c0b665b4",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.36,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

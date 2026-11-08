@@ -1,0 +1,832 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-001",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Booking a guided coastal walk",
+  "title": "Accessible Coastal Walk Registration",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "accessible_services",
+    "dates",
+    "fees",
+    "booking_changes",
+    "equipment"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor-centre booking clerk",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Walk participant",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Westhaven Visitor Centre. You're through to Ellie. How may I help you with the guided walks this weekend?",
+      "translation_vi": "Chào chiều, Trung tâm Khách Westhaven, Ellie xin nghe. Tôi có thể giúp gì về các chuyến đi bộ có hướng dẫn cuối tuần này?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm arranging an outing for my father. He can walk short distances but avoids steep steps, so I wanted some advice first.",
+      "translation_vi": "Tôi đang tổ chức chuyến đi cho bố. Ông đi bộ được quãng ngắn nhưng tránh bậc thang dốc, nên muốn hỏi trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Then the lower coastal route would suit him better. We call it the Harbour Path; the cliff route involves eighty uneven steps.",
+      "translation_vi": "Vậy tuyến ven biển phía dưới phù hợp hơn. Chúng tôi gọi là Harbour Path; tuyến vách đá có tám mươi bậc không đều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "The Harbour Path sounds ideal. I saw a photograph of the cliff walk online, but easy access matters more than the view.",
+      "translation_vi": "Harbour Path nghe hợp lý. Tôi thấy ảnh tuyến vách đá trên mạng, nhưng dễ tiếp cận quan trọng hơn cảnh đẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The next accessible group goes out on Saturday. Friday's walk is for experienced hikers, and Sunday's guide is away at a training course.",
+      "translation_vi": "Nhóm dễ đi tiếp theo khởi hành thứ Bảy. Thứ Sáu dành cho người đi bộ kinh nghiệm, còn Chủ nhật hướng dẫn viên đi tập huấn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Saturday should be fine. Does it start at ten, as the leaflet says? My father needs time for his morning medication.",
+      "translation_vi": "Thứ Bảy được. Có bắt đầu lúc mười giờ như tờ rơi không? Bố tôi cần thời gian uống thuốc buổi sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The leaflet is out of date. We now meet at nine thirty, although the actual walk doesn't begin until ten fifteen.",
+      "translation_vi": "Tờ rơi đã cũ. Giờ tập trung là chín rưỡi, nhưng chuyến đi thật sự bắt đầu lúc mười giờ mười lăm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Right, nine thirty for meeting. Do we gather at the car park, or should we come directly to the visitor centre?",
+      "translation_vi": "Vâng, chín rưỡi tập trung. Chúng tôi đến bãi xe hay thẳng trung tâm khách?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please wait beside the lighthouse entrance. The main car park is being resurfaced, so visitors should use the eastern gate.",
+      "translation_vi": "Hãy đợi cạnh lối vào ngọn hải đăng. Bãi xe chính đang làm lại mặt đường, nên khách dùng cổng phía đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll write down lighthouse entrance. There will be two adults, and my niece may come if the weather looks reasonable.",
+      "translation_vi": "Tôi ghi lối vào hải đăng. Sẽ có hai người lớn; cháu gái có thể đi nếu thời tiết ổn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "A standard adult ticket is eighteen pounds. Your father qualifies for the reduced rate of twelve pounds if he brings proof of age.",
+      "translation_vi": "Vé người lớn thường là mười tám bảng. Bố anh được mức ưu đãi mười hai bảng nếu mang giấy xác nhận tuổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "That's helpful. Is the child ticket separate? She's eleven, though I don't want to book her until I've spoken to her parents.",
+      "translation_vi": "Hữu ích quá. Vé trẻ em riêng phải không? Cháu mười một tuổi, nhưng tôi chưa muốn đặt trước khi hỏi bố mẹ cháu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Children under twelve join free, but please tell us in advance. We limit the group to ten people because of the narrow boardwalk.",
+      "translation_vi": "Trẻ dưới mười hai tuổi được đi miễn phí, nhưng hãy báo trước. Chúng tôi giới hạn nhóm mười người do cầu gỗ hẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Understood. For the reservation, my surname is Mercer, M E R C E R. My father has the same surname.",
+      "translation_vi": "Tôi hiểu. Họ tôi là Mercer, đánh vần M E R C E R. Bố tôi cũng cùng họ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Thank you, Mr Mercer. I can reserve two places provisionally; just confirm the third person by Thursday evening.",
+      "translation_vi": "Cảm ơn ông Mercer. Tôi có thể giữ tạm hai chỗ; hãy xác nhận người thứ ba trước tối thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "One more thing: can we bring our own walking poles? The photograph shows a wooden bridge with a raised edge.",
+      "translation_vi": "Thêm một điều: chúng tôi có thể mang gậy đi bộ riêng không? Trong ảnh có một cây cầu gỗ có mép nhô lên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "Poles are welcome, but the guide asks visitors to keep their rubber tips fitted, so the boardwalk isn't scratched.",
+      "translation_vi": "Có thể mang gậy, nhưng hướng dẫn viên yêu cầu giữ đầu cao su để không làm xước cầu gỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "My father has poles with metal ends. I'll buy rubber tips rather than leave his poles at home, since they help his balance.",
+      "translation_vi": "Gậy của bố tôi có đầu kim loại. Tôi sẽ mua đầu cao su thay vì để gậy ở nhà vì chúng giúp ông giữ thăng bằng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "That's sensible. In case of heavy rain we won't cancel entirely; we'll move the talk indoors and offer a shorter sheltered route.",
+      "translation_vi": "Hợp lý. Nếu mưa lớn, chúng tôi không hủy hoàn toàn; buổi giới thiệu chuyển vào trong nhà và sẽ đi tuyến ngắn có mái che.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "So we'd still meet at the lighthouse? I don't want him waiting outdoors if the weather becomes unpleasant.",
+      "translation_vi": "Vậy vẫn gặp ở hải đăng phải không? Tôi không muốn bố phải đợi ngoài trời nếu thời tiết xấu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "In heavy rain, the meeting place changes to the exhibition room, which is just inside the visitor centre's eastern entrance.",
+      "translation_vi": "Nếu mưa lớn, nơi gặp chuyển sang phòng triển lãm ngay bên trong lối vào phía đông của trung tâm khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "Perfect. Please reserve the two adult spaces now. I'll bring the proof of age and check the forecast before Thursday.",
+      "translation_vi": "Tuyệt. Hãy giữ hai chỗ người lớn. Tôi sẽ mang giấy xác nhận tuổi và xem dự báo trước thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Recommended route: the ____",
+      "correct_answers": [
+        "Harbour Path"
+      ],
+      "spoken_answer": "Harbour Path",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tuyến Harbour Path dễ đi hơn tuyến vách đá nhiều bậc.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "the Harbour Path; the cliff route",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Day of the accessible walk: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "spoken_answer": "Saturday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Nhóm phù hợp khởi hành vào thứ Bảy.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "goes out on Saturday",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Meeting time: ____",
+      "correct_answers": [
+        "nine thirty",
+        "9:30"
+      ],
+      "spoken_answer": "nine thirty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tập trung 9:30, không phải lúc đi bộ 10:15.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "meet at nine thirty",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Meeting landmark: ____ entrance",
+      "correct_answers": [
+        "lighthouse"
+      ],
+      "spoken_answer": "lighthouse",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Điểm gặp tại lối vào hải đăng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "beside the lighthouse entrance",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Reduced adult fare: £____",
+      "correct_answers": [
+        "twelve",
+        "12"
+      ],
+      "spoken_answer": "twelve",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giá ưu đãi là 12 bảng; 18 bảng là giá thường.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "rate of twelve pounds",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Surname for the booking: ____",
+      "correct_answers": [
+        "Mercer"
+      ],
+      "spoken_answer": "Mercer",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Họ được nêu và đánh vần là Mercer.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "surname is Mercer",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What must visitors do if they use walking poles?",
+      "correct_answers": [
+        "Fit rubber tips"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Fit rubber tips"
+        },
+        {
+          "key": "B",
+          "text": "Leave the poles at home"
+        },
+        {
+          "key": "C",
+          "text": "Keep the metal ends exposed"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Hướng dẫn viên yêu cầu đầu cao su để tránh làm xước cầu.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "keep their rubber tips fitted",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Why will the visitor buy a small accessory?",
+      "correct_answers": [
+        "To make the poles suitable for the path"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To replace a broken pole"
+        },
+        {
+          "key": "B",
+          "text": "To make the poles suitable for the path"
+        },
+        {
+          "key": "C",
+          "text": "To help his niece walk faster"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Đầu cao su giúp dùng được gậy đang có trên cầu gỗ.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T18"
+      ],
+      "evidence_excerpt_en": "I'll buy rubber tips rather than leave his poles at home",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What happens in heavy rain?",
+      "correct_answers": [
+        "An indoor talk and a shorter route"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "A full refund with no activity"
+        },
+        {
+          "key": "B",
+          "text": "The cliff walk starts earlier"
+        },
+        {
+          "key": "C",
+          "text": "An indoor talk and a shorter route"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Kế hoạch mưa gồm buổi nói chuyện trong nhà và tuyến đi ngắn hơn.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "move the talk indoors and offer a shorter sheltered route",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Where should participants go if heavy rain changes the plan?",
+      "correct_answers": [
+        "The exhibition room"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "The exhibition room"
+        },
+        {
+          "key": "B",
+          "text": "The lighthouse steps"
+        },
+        {
+          "key": "C",
+          "text": "The main car park"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Nếu mưa lớn điểm gặp chuyển vào phòng triển lãm.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "meeting place changes to the exhibition room",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "accessible_services",
+        "dates",
+        "fees",
+        "booking_changes",
+        "equipment"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T14",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "eb80d88d7666ce2496f3c7a0b1337962f79aca102235332006060ae611db19c8",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.41,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

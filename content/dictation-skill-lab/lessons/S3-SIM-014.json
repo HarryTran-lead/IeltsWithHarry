@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-014",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Building physics and indoor air quality",
+  "title": "Planning a Student Housing Ventilation Study",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "C",
+      "text_en": "We expected older halls to have the worst ventilation.",
+      "meaning_vi": "C: Tưởng ký túc xá cũ thông gió kém nhất nhưng số đo không phản ánh vậy.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yet the first measurements do not follow building age.",
+      "meaning_vi": "C: Tưởng ký túc xá cũ thông gió kém nhất nhưng số đo không phản ánh vậy.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That tells us to examine how rooms are used before drawing a conclusion.",
+      "meaning_vi": "C: Tưởng ký túc xá cũ thông gió kém nhất nhưng số đo không phản ánh vậy.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "C",
+      "text_en": "Exclude the misplaced sensor sample from the comparison, because the instrument was outside the agreed measuring position.",
+      "meaning_vi": "C: Loại mẫu cảm biến đặt sai vị trí khỏi so sánh.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The repeated occupied-room readings, collected using the same protocol, will support the main comparison.",
+      "meaning_vi": "B: Số đo lặp theo quy trình chung là chứng cứ chính.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "The first-year students sometimes share rooms, so one logged bedroom may represent two occupants. A room-level measurement must not be mistaken for an individual health record.",
+      "meaning_vi": "B: Một phòng có thể có hai người; số đo phòng không phải hồ sơ sức khỏe cá nhân.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "We should also note that a high reading does not diagnose a person with an illness.",
+      "meaning_vi": "B: Chỉ số cao không có nghĩa chẩn đoán bệnh cho một người.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Include the floor plans to show room layouts, but they cannot tell us air-change rates by themselves.",
+      "meaning_vi": "A: Sơ đồ mặt bằng chỉ mô tả bố trí phòng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "The maintenance logs are useful, though several requests were never marked as completed. Note that uncertainty when interpreting them.",
+      "meaning_vi": "C: Nhật ký bảo trì cần ghi chú mục chưa rõ đã hoàn tất.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "C",
+      "text_en": "I can log the number of occupants without recording the names of residents.",
+      "meaning_vi": "C: Tôi có thể ghi số người trong phòng mà không ghi tên.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Remove identifiable room numbers from the public report; residents did not consent to being singled out.",
+      "meaning_vi": "A: Ẩn số phòng có thể nhận dạng cư dân trong báo cáo công khai.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Two rooms in the same old hall had very different readings. One was crowded with closed windows and the other was almost empty with windows open. Age was not the only influence.",
+      "meaning_vi": "B: Phòng cùng tòa nhà có số người và cách mở cửa khác nên khác số đo.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Make sure the instruments have settled before taking the readings, especially after moving them through a corridor. The recording protocol matters as much as the number on the screen.",
+      "meaning_vi": "A: Cần chờ cảm biến ổn định sau khi di chuyển trước khi đo.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "We are not assessing furniture or decoration. Track carbon-dioxide changes while rooms are occupied, together with the number of people and whether windows are open.",
+      "meaning_vi": "A: Dùng biến thiên CO2 khi có người cùng dữ liệu số người và cửa sổ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The sensors need time to stabilise before each reading.",
+      "meaning_vi": "A: Cần để cảm biến ổn định trước khi đọc giá trị.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "C",
+      "text_en": "One exceptionally low reading came from a sensor beside a wide-open window, contrary to the placement protocol. We must flag the measurement error, not remove it simply for being unusual.",
+      "meaning_vi": "C: Giá trị bất thường do đặt cảm biến sai cạnh cửa mở.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "If we visit one hall at breakfast and another in the evening, the occupancy patterns will not match. Choose comparable occupied periods for the repeated measurements.",
+      "meaning_vi": "A: Lấy mẫu trong các khoảng có người tương đương.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "C",
+      "text_en": "If maintenance fixes a blocked vent halfway through the study, we should record that intervention instead of treating every subsequent change as random fluctuation.",
+      "meaning_vi": "C: Nếu thông gió được sửa giữa nghiên cứu thì phải ghi lại, không coi thay đổi là ngẫu nhiên.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "B",
+      "text_en": "Our recommendations can prioritise easy maintenance checks before expensive building work.",
+      "meaning_vi": "B: Khuyến nghị nên ưu tiên kiểm tra bảo trì đơn giản trước công trình đắt tiền.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "A campus-wide window replacement would be disproportionate. Start with targeted maintenance checks where repeated readings remain poor after accounting for occupancy.",
+      "meaning_vi": "B: Thử kiểm tra bảo dưỡng có mục tiêu ở phòng liên tục có chỉ số kém.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "B",
+      "text_en": "I will also check whether the same rooms were sampled after changes to the maintenance schedule. If a blocked vent was repaired, those new readings should be analysed separately instead of being quietly pooled with the earlier values. Otherwise a real intervention could vanish inside an average.",
+      "meaning_vi": "B: Phải tách số đo trước và sau khi sửa lỗ thông gió, tránh gộp làm mất tác động can thiệp.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "final_critical_discussion"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "A",
+      "text_en": "The results can inform a practical maintenance review, provided we separate ventilation effects from occupancy and window use.",
+      "meaning_vi": "A: Cần phân biệt ảnh hưởng thông gió, số người và việc mở cửa.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Misplaced-window sensor sample",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the core repeated dataset"
+        },
+        {
+          "key": "B",
+          "text": "Refer to a ventilation manufacturer"
+        },
+        {
+          "key": "C",
+          "text": "Illustrate the building layout only"
+        },
+        {
+          "key": "D",
+          "text": "Exclude because the protocol was broken"
+        },
+        {
+          "key": "E",
+          "text": "Retake after changing the sampling schedule"
+        },
+        {
+          "key": "F",
+          "text": "Retain with incomplete-record warning"
+        },
+        {
+          "key": "G",
+          "text": "Anonymise location identifiers"
+        }
+      ],
+      "correct_option": "D",
+      "correct_answers": [
+        "D"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Exclude the misplaced sensor sample from the comparison, because the instrument was outside the agreed measuring position.",
+      "explanation_vi": "C: Loại mẫu cảm biến đặt sai vị trí khỏi so sánh.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Repeated occupied-room readings",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the core repeated dataset"
+        },
+        {
+          "key": "B",
+          "text": "Refer to a ventilation manufacturer"
+        },
+        {
+          "key": "C",
+          "text": "Illustrate the building layout only"
+        },
+        {
+          "key": "D",
+          "text": "Exclude because the protocol was broken"
+        },
+        {
+          "key": "E",
+          "text": "Retake after changing the sampling schedule"
+        },
+        {
+          "key": "F",
+          "text": "Retain with incomplete-record warning"
+        },
+        {
+          "key": "G",
+          "text": "Anonymise location identifiers"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The repeated occupied-room readings, collected using the same protocol, will support the main comparison.",
+      "explanation_vi": "B: Số đo lặp theo quy trình chung là chứng cứ chính.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Hall floor plans",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the core repeated dataset"
+        },
+        {
+          "key": "B",
+          "text": "Refer to a ventilation manufacturer"
+        },
+        {
+          "key": "C",
+          "text": "Illustrate the building layout only"
+        },
+        {
+          "key": "D",
+          "text": "Exclude because the protocol was broken"
+        },
+        {
+          "key": "E",
+          "text": "Retake after changing the sampling schedule"
+        },
+        {
+          "key": "F",
+          "text": "Retain with incomplete-record warning"
+        },
+        {
+          "key": "G",
+          "text": "Anonymise location identifiers"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "C"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Include the floor plans to show room layouts, but they cannot tell us air-change rates by themselves.",
+      "explanation_vi": "A: Sơ đồ mặt bằng chỉ mô tả bố trí phòng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Maintenance request logs",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the core repeated dataset"
+        },
+        {
+          "key": "B",
+          "text": "Refer to a ventilation manufacturer"
+        },
+        {
+          "key": "C",
+          "text": "Illustrate the building layout only"
+        },
+        {
+          "key": "D",
+          "text": "Exclude because the protocol was broken"
+        },
+        {
+          "key": "E",
+          "text": "Retake after changing the sampling schedule"
+        },
+        {
+          "key": "F",
+          "text": "Retain with incomplete-record warning"
+        },
+        {
+          "key": "G",
+          "text": "Anonymise location identifiers"
+        }
+      ],
+      "correct_option": "F",
+      "correct_answers": [
+        "F"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The maintenance logs are useful, though several requests were never marked as completed. Note that uncertainty when interpreting them.",
+      "explanation_vi": "C: Nhật ký bảo trì cần ghi chú mục chưa rõ đã hoàn tất.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Individual room numbers",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the core repeated dataset"
+        },
+        {
+          "key": "B",
+          "text": "Refer to a ventilation manufacturer"
+        },
+        {
+          "key": "C",
+          "text": "Illustrate the building layout only"
+        },
+        {
+          "key": "D",
+          "text": "Exclude because the protocol was broken"
+        },
+        {
+          "key": "E",
+          "text": "Retake after changing the sampling schedule"
+        },
+        {
+          "key": "F",
+          "text": "Retain with incomplete-record warning"
+        },
+        {
+          "key": "G",
+          "text": "Anonymise location identifiers"
+        }
+      ],
+      "correct_option": "G",
+      "correct_answers": [
+        "G"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Remove identifiable room numbers from the public report; residents did not consent to being singled out.",
+      "explanation_vi": "A: Ẩn số phòng có thể nhận dạng cư dân trong báo cáo công khai.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why was building age a poor predictor?",
+      "options": [
+        {
+          "key": "A",
+          "text": "New buildings used identical fans"
+        },
+        {
+          "key": "B",
+          "text": "Occupancy and window habits varied between rooms"
+        },
+        {
+          "key": "C",
+          "text": "Older buildings lacked any windows"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Occupancy and window habits varied between rooms"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Two rooms in the same old hall had very different readings. One was crowded with closed windows and the other was almost empty with windows open. Age was not the only influence.",
+      "explanation_vi": "B: Phòng cùng tòa nhà có số người và cách mở cửa khác nên khác số đo.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Which measure will indicate ventilation performance?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The colour of the window frames"
+        },
+        {
+          "key": "B",
+          "text": "The number of electrical sockets"
+        },
+        {
+          "key": "C",
+          "text": "Carbon-dioxide changes during occupied periods"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Carbon-dioxide changes during occupied periods"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "We are not assessing furniture or decoration. Track carbon-dioxide changes while rooms are occupied, together with the number of people and whether windows are open.",
+      "explanation_vi": "A: Dùng biến thiên CO2 khi có người cùng dữ liệu số người và cửa sổ.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why will the team exclude one extreme value?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A sensor was placed beside an open window"
+        },
+        {
+          "key": "B",
+          "text": "A student disliked the reading"
+        },
+        {
+          "key": "C",
+          "text": "The value was numerically too high"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A sensor was placed beside an open window"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "One exceptionally low reading came from a sensor beside a wide-open window, contrary to the placement protocol. We must flag the measurement error, not remove it simply for being unusual.",
+      "explanation_vi": "C: Giá trị bất thường do đặt cảm biến sai cạnh cửa mở.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What does the tutor suggest for the sampling schedule?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sample only during cleaning"
+        },
+        {
+          "key": "B",
+          "text": "Measure rooms at comparable occupancy times"
+        },
+        {
+          "key": "C",
+          "text": "Measure each room on a different weekday"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Measure rooms at comparable occupancy times"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "If we visit one hall at breakfast and another in the evening, the occupancy patterns will not match. Choose comparable occupied periods for the repeated measurements.",
+      "explanation_vi": "A: Lấy mẫu trong các khoảng có người tương đương.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What is the recommended next action?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Close all windows during winter"
+        },
+        {
+          "key": "B",
+          "text": "Replace every window across campus"
+        },
+        {
+          "key": "C",
+          "text": "Pilot maintenance checks in rooms with persistently poor readings"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Pilot maintenance checks in rooms with persistently poor readings"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T20"
+      ],
+      "evidence_excerpt_en": "A campus-wide window replacement would be disproportionate. Start with targeted maintenance checks where repeated readings remain poor after accounting for occupancy.",
+      "explanation_vi": "B: Thử kiểm tra bảo dưỡng có mục tiêu ở phòng liên tục có chỉ số kém.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the core repeated dataset"
+        },
+        {
+          "key": "B",
+          "text": "Refer to a ventilation manufacturer"
+        },
+        {
+          "key": "C",
+          "text": "Illustrate the building layout only"
+        },
+        {
+          "key": "D",
+          "text": "Exclude because the protocol was broken"
+        },
+        {
+          "key": "E",
+          "text": "Retake after changing the sampling schedule"
+        },
+        {
+          "key": "F",
+          "text": "Retain with incomplete-record warning"
+        },
+        {
+          "key": "G",
+          "text": "Anonymise location identifiers"
+        }
+      ]
+    },
+    {
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "C: Tưởng ký túc xá cũ thông gió kém nhất nhưng số đo không phản ánh vậy.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "735f7eb65a557327110ec259a295711a409a3d9039863411ba3925422cbbf3aa",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.15,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

@@ -1,0 +1,622 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-110",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M20 – mixed_conversations",
+  "title": "Workplace handover and deadlines",
+  "learning_objectives_vi": [
+    "Nghe thứ tự ưu tiên, người phụ trách và thời hạn trong công việc.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Speaker 1",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Speaker 2",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Before you finish today, can we go over the handover?",
+      "translation_vi": "Trước khi bạn kết thúc hôm nay, ta rà bàn giao nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "handover",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bàn giao",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Sure. The customer report is already in the shared folder.",
+      "translation_vi": "Được. Báo cáo khách hàng đã ở thư mục chung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "shared folder",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thư mục chung",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Has the finance team approved the new figures?",
+      "translation_vi": "Bộ phận tài chính đã duyệt các số liệu mới chưa?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "finance team",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bộ phận tài chính",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Not yet. They're reviewing the final page now.",
+      "translation_vi": "Chưa. Họ đang xem trang cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "final page",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trang cuối",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Then we shouldn't send the report to clients today.",
+      "translation_vi": "Vậy hôm nay chưa nên gửi báo cáo cho khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "shouldn't send",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "không nên gửi",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Agreed. I'll mark it as pending approval.",
+      "translation_vi": "Đồng ý. Tôi sẽ đánh dấu đang chờ duyệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "pending approval",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đang chờ duyệt",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Who can answer questions while you're away?",
+      "translation_vi": "Ai sẽ trả lời thắc mắc khi bạn vắng mặt?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "while you're away",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "khi bạn vắng mặt",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Mina is covering urgent requests until Tuesday.",
+      "translation_vi": "Mina phụ trách yêu cầu khẩn đến thứ Ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "Mina",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "Mina",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "When does the updated report need to go out?",
+      "translation_vi": "Khi nào phải gửi báo cáo cập nhật?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "updated report",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "báo cáo cập nhật",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "By Wednesday at noon, once finance signs off.",
+      "translation_vi": "Trước trưa thứ Tư, khi tài chính ký duyệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "handover_priorities",
+        "mixed_conversations"
+      ],
+      "target_value": "Wednesday at noon",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trưa thứ Tư",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Before you finish today, can we go over the handover?"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Before you finish today, can we go over the handover? Nghĩa: Trước khi bạn kết thúc hôm nay, ta rà bàn giao nhé?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Sure. The customer report is already in the shared folder."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Sure. The customer report is already in the shared folder. Nghĩa: Được. Báo cáo khách hàng đã ở thư mục chung.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Has the finance team approved the new figures?"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Has the finance team approved the new figures? Nghĩa: Bộ phận tài chính đã duyệt các số liệu mới chưa?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Not yet. They're reviewing the final page now."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Not yet. They're reviewing the final page now. Nghĩa: Chưa. Họ đang xem trang cuối.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Then we shouldn't send the report to clients today."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Then we shouldn't send the report to clients today. Nghĩa: Vậy hôm nay chưa nên gửi báo cáo cho khách.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Agreed. I'll mark it as pending approval."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: Agreed. I'll mark it as pending approval. Nghĩa: Đồng ý. Tôi sẽ đánh dấu đang chờ duyệt.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Who can answer questions while you're away?"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Who can answer questions while you're away? Nghĩa: Ai sẽ trả lời thắc mắc khi bạn vắng mặt?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Mina is covering urgent requests until Tuesday."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Mina is covering urgent requests until Tuesday. Nghĩa: Mina phụ trách yêu cầu khẩn đến thứ Ba.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "When does the updated report need to go out?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: When does the updated report need to go out? Nghĩa: Khi nào phải gửi báo cáo cập nhật?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "By Wednesday at noon, once finance signs off."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: By Wednesday at noon, once finance signs off. Nghĩa: Trước trưa thứ Tư, khi tài chính ký duyệt.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “đang chờ duyệt”.",
+      "correct_answers": [
+        "pending approval"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “pending approval” trong câu: Agreed. I'll mark it as pending approval. Nghĩa: Đồng ý. Tôi sẽ đánh dấu đang chờ duyệt.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “khi bạn vắng mặt”.",
+      "correct_answers": [
+        "while you're away"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “while you're away” trong câu: Who can answer questions while you're away? Nghĩa: Ai sẽ trả lời thắc mắc khi bạn vắng mặt?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Ai sẽ phụ trách các yêu cầu khẩn trong lúc người nói vắng mặt?",
+      "correct_answers": [
+        "Mina"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “Mina” trong câu: Mina is covering urgent requests until Tuesday. Nghĩa: Mina phụ trách yêu cầu khẩn đến thứ Ba.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 3,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “báo cáo cập nhật”.",
+      "correct_answers": [
+        "updated report"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “updated report” trong câu: When does the updated report need to go out? Nghĩa: Khi nào phải gửi báo cáo cập nhật?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “trưa thứ Tư”.",
+      "correct_answers": [
+        "Wednesday at noon"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “Wednesday at noon” trong câu: By Wednesday at noon, once finance signs off. Nghĩa: Trước trưa thứ Tư, khi tài chính ký duyệt.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "handover",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "bàn giao",
+      "example_en": "Before you finish today, can we go over the handover?",
+      "example_vi": "Trước khi bạn kết thúc hôm nay, ta rà bàn giao nhé?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "shared folder",
+      "pos": "phrase",
+      "meaning_vi": "thư mục chung",
+      "example_en": "Sure. The customer report is already in the shared folder.",
+      "example_vi": "Được. Báo cáo khách hàng đã ở thư mục chung.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "finance team",
+      "pos": "phrase",
+      "meaning_vi": "bộ phận tài chính",
+      "example_en": "Has the finance team approved the new figures?",
+      "example_vi": "Bộ phận tài chính đã duyệt các số liệu mới chưa?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "final page",
+      "pos": "phrase",
+      "meaning_vi": "trang cuối",
+      "example_en": "Not yet. They're reviewing the final page now.",
+      "example_vi": "Chưa. Họ đang xem trang cuối.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "shouldn't send",
+      "pos": "phrase",
+      "meaning_vi": "không nên gửi",
+      "example_en": "Then we shouldn't send the report to clients today.",
+      "example_vi": "Vậy hôm nay chưa nên gửi báo cáo cho khách.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "pending approval",
+      "pos": "phrase",
+      "meaning_vi": "đang chờ duyệt",
+      "example_en": "Agreed. I'll mark it as pending approval.",
+      "example_vi": "Đồng ý. Tôi sẽ đánh dấu đang chờ duyệt.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "handover_priorities",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "mixed_conversations",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-110-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "ff6caa55d9deb63feda99c92845451fbdb910914e34677a9e81e0d5d2108693e"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe thứ tự ưu tiên, người phụ trách và thời hạn trong công việc.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "We said Monday first, but Tuesday is confirmed.",
+        "written_value": "Tuesday",
+        "teacher_note_vi": "Thông tin sau từ but mới là lựa chọn cuối cùng."
+      },
+      {
+        "spoken_example": "Is that fifteen or fifty? I mean fifteen.",
+        "written_value": "fifteen",
+        "teacher_note_vi": "Phải nghe câu sửa để không lấy thông tin ban đầu."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": false,
+    "phonetic_note": "Kiểm tra rõ lượt thoại và diễn biến hội thoại trên audio thật."
+  }
+}

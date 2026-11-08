@@ -1,0 +1,652 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-023",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M17 – Numbers",
+  "title": "Telephone numbers: digit groups",
+  "learning_objectives_vi": [
+    "Nghe chính xác telephone numbers: digit groups.",
+    "Đọc từng chữ số từ trái sang phải; giữ cả số 0 ở đầu",
+    "Chuyển lời đọc thành chữ số/mã chính xác, không đoán theo ý nghĩa."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "My contact number is zero seven seven zero zero, nine zero zero, three two one.",
+      "translation_vi": "Số liên hệ của tôi là 07700 900321.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "07700900321",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "For bookings, call zero seven seven zero zero, nine zero zero, four six eight.",
+      "translation_vi": "Để đặt chỗ, hãy gọi 07700 900468.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "07700900468",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "You can reach the office on zero two zero, seven nine four six, zero eight two five.",
+      "translation_vi": "Bạn có thể liên hệ văn phòng theo số 020 7946 0825.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "02079460825",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please use zero one six three two, nine six zero, two eight zero.",
+      "translation_vi": "Hãy dùng số 01632 960280.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "01632960280",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The support number is zero one six three two, nine six zero, four two nine.",
+      "translation_vi": "Số hỗ trợ là 01632 960429.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "01632960429",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "My work number is zero seven seven zero zero, nine zero zero, seven two four.",
+      "translation_vi": "Số điện thoại công việc của tôi là 07700 900724.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "07700900724",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The clinic number is zero one six three two, nine six zero, three nine one.",
+      "translation_vi": "Số phòng khám là 01632 960391.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "01632960391",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Call the library on zero two zero, seven nine four six, zero zero two nine.",
+      "translation_vi": "Hãy gọi thư viện theo số 020 7946 0029.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "02079460029",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Her mobile is zero seven seven zero zero, nine zero zero, zero nine three.",
+      "translation_vi": "Số di động của cô ấy là 07700 900093.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "07700900093",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The final number is zero one six three two, nine six zero, one seven five.",
+      "translation_vi": "Số cuối cùng là 01632 960175.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_digits",
+        "digit_string"
+      ],
+      "target_value": "01632960175",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "My contact number is zero seven seven zero zero, nine zero zero, three two one."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Số liên hệ của tôi là 07700 900321.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "T01: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "07700900321"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 07700900321. Ngữ cảnh: Số liên hệ của tôi là 07700 900321.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "For bookings, call zero seven seven zero zero, nine zero zero, four six eight."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Để đặt chỗ, hãy gọi 07700 900468.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "T02: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "07700900468"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 07700900468. Ngữ cảnh: Để đặt chỗ, hãy gọi 07700 900468.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "You can reach the office on zero two zero, seven nine four six, zero eight two five."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Bạn có thể liên hệ văn phòng theo số 020 7946 0825.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "T03: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "02079460825"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 02079460825. Ngữ cảnh: Bạn có thể liên hệ văn phòng theo số 020 7946 0825.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please use zero one six three two, nine six zero, two eight zero."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Hãy dùng số 01632 960280.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "T04: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "01632960280"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 01632960280. Ngữ cảnh: Hãy dùng số 01632 960280.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The support number is zero one six three two, nine six zero, four two nine."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Số hỗ trợ là 01632 960429.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "T05: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "01632960429"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 01632960429. Ngữ cảnh: Số hỗ trợ là 01632 960429.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "My work number is zero seven seven zero zero, nine zero zero, seven two four."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Số điện thoại công việc của tôi là 07700 900724.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The clinic number is zero one six three two, nine six zero, three nine one."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Số phòng khám là 01632 960391.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Call the library on zero two zero, seven nine four six, zero zero two nine."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Hãy gọi thư viện theo số 020 7946 0029.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Her mobile is zero seven seven zero zero, nine zero zero, zero nine three."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Số di động của cô ấy là 07700 900093.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The final number is zero one six three two, nine six zero, one seven five."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe phone_digits. Nghĩa: Số cuối cùng là 01632 960175.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_digits"
+      ],
+      "max_replays_practice": 5
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "07700900321",
+      "pos": "digit_string",
+      "meaning_vi": "07700900321 (digit_string)",
+      "example_en": "My contact number is zero seven seven zero zero, nine zero zero, three two one.",
+      "example_vi": "Số liên hệ của tôi là 07700 900321.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "07700900468",
+      "pos": "digit_string",
+      "meaning_vi": "07700900468 (digit_string)",
+      "example_en": "For bookings, call zero seven seven zero zero, nine zero zero, four six eight.",
+      "example_vi": "Để đặt chỗ, hãy gọi 07700 900468.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "02079460825",
+      "pos": "digit_string",
+      "meaning_vi": "02079460825 (digit_string)",
+      "example_en": "You can reach the office on zero two zero, seven nine four six, zero eight two five.",
+      "example_vi": "Bạn có thể liên hệ văn phòng theo số 020 7946 0825.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "01632960280",
+      "pos": "digit_string",
+      "meaning_vi": "01632960280 (digit_string)",
+      "example_en": "Please use zero one six three two, nine six zero, two eight zero.",
+      "example_vi": "Hãy dùng số 01632 960280.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "01632960429",
+      "pos": "digit_string",
+      "meaning_vi": "01632960429 (digit_string)",
+      "example_en": "The support number is zero one six three two, nine six zero, four two nine.",
+      "example_vi": "Số hỗ trợ là 01632 960429.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "07700900724",
+      "pos": "digit_string",
+      "meaning_vi": "07700900724 (digit_string)",
+      "example_en": "My work number is zero seven seven zero zero, nine zero zero, seven two four.",
+      "example_vi": "Số điện thoại công việc của tôi là 07700 900724.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "01632960391",
+      "pos": "digit_string",
+      "meaning_vi": "01632960391 (digit_string)",
+      "example_en": "The clinic number is zero one six three two, nine six zero, three nine one.",
+      "example_vi": "Số phòng khám là 01632 960391.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "02079460029",
+      "pos": "digit_string",
+      "meaning_vi": "02079460029 (digit_string)",
+      "example_en": "Call the library on zero two zero, seven nine four six, zero zero two nine.",
+      "example_vi": "Hãy gọi thư viện theo số 020 7946 0029.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "07700900093",
+      "pos": "digit_string",
+      "meaning_vi": "07700900093 (digit_string)",
+      "example_en": "Her mobile is zero seven seven zero zero, nine zero zero, zero nine three.",
+      "example_vi": "Số di động của cô ấy là 07700 900093.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "01632960175",
+      "pos": "digit_string",
+      "meaning_vi": "01632960175 (digit_string)",
+      "example_en": "The final number is zero one six three two, nine six zero, one seven five.",
+      "example_vi": "Số cuối cùng là 01632 960175.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "micro_skill_id": "phone_digits",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_distinct_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Đọc từng chữ số từ trái sang phải; giữ cả số 0 ở đầu"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "8063dd5ef86265adf9c328580c5899f8c16dc743eb028872fe72d82a1e3bffd6",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft; numeric normalization and pronunciation require teacher/audio QA.",
+      "Fictional UK phone number ranges used for instructional safety; do not dial."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Số điện thoại đọc theo chuỗi; số 0 ở đầu là dữ liệu, không được bỏ.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "zero five six",
+        "written_value": "056",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      },
+      {
+        "spoken_example": "zero eight three",
+        "written_value": "083",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      }
+    ],
+    "learning_steps": [
+      "Xem quy tắc và hai ví dụ bên dưới trước khi bắt đầu.",
+      "Nghe mỗi câu một lần, chép toàn câu hoặc nhập thông tin số theo yêu cầu.",
+      "Đối chiếu chữ/số và vị trí sai sau khi nộp; nghe lại từng câu khi cần.",
+      "Kiểm tra bằng 2 câu mới chưa xuất hiện trong nội dung luyện."
+    ],
+    "common_mistakes": [
+      "Không biến chuỗi số thành số nguyên vì sẽ mất số 0 đầu.",
+      "Không dùng lại câu quen thuộc để chứng minh độ vững của kỹ năng."
+    ],
+    "before_audio_question": "Thông tin cần nghe là số lượng, số điện thoại, giờ, tiền hay mã chữ-số?"
+  }
+}

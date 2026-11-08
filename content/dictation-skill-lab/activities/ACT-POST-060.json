@@ -1,0 +1,246 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-060",
+  "activity_id": "ACT-POST-060",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 3,
+  "title": "Analysing a Local Flood-Warning Trial — Sửa lỗi sau bài thi",
+  "source_bank": "section_simulation",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M27",
+  "source_package": "English_Skill_Lab_Dictation_M27_Section_3_Exam_Simulation_20_Full_Content.zip",
+  "source_entry_path": "ESL_Dictation_M27_Section3_Exam_Simulation/01_LESSONS_SERVER_ONLY/S3-SIM-020.json",
+  "source_test_id": null,
+  "source_lesson_id": "S3-SIM-020",
+  "source_part_id": null,
+  "reuse_parent_id": "S3-SIM-020",
+  "source_question_id": "Q05",
+  "source_audio_id": "assessment/section_simulation/S3-SIM-020",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T04",
+    "T05",
+    "T11"
+  ],
+  "segment_timing": {
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "87d83bbdb3556f26bbe68003846e9803746658f61b46566306f241d0c059c77b"
+    },
+    "T05": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "5db8d7d490c9da6964336fea9f000096b74ab4d492dacddab6d1a241ed495b66"
+    },
+    "T11": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "bf337f0d2bd12925d248cdc74679d79f4a6e7483e691f77b2ded7db3af66adec"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "abd4611948b784224604a93a913e9b4e707ed965bc7e71717c196c2b8d3c1ad4",
+  "anchor_turn_id": "T11",
+  "teacher_only_evidence_text_en": "Ask a qualified translator to check the draft intended for households using the second language. A literal translation may obscure the action.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-060-01",
+      "phase": "guided_relisten",
+      "mode": "single_choice",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Untranslated warning draft",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Retain with prior-experience caveat"
+        },
+        {
+          "key": "B",
+          "text": "Use only as campaign background"
+        },
+        {
+          "key": "C",
+          "text": "Use as the comprehension outcome"
+        },
+        {
+          "key": "D",
+          "text": "Repeat a practical evacuation drill"
+        },
+        {
+          "key": "E",
+          "text": "Exclude because the audio is lost"
+        },
+        {
+          "key": "F",
+          "text": "Seek professional language verification"
+        },
+        {
+          "key": "G",
+          "text": "Remove household identifiers"
+        }
+      ],
+      "correct_option": "F",
+      "correct_answers": [
+        "F"
+      ],
+      "spoken_answer": null,
+      "word_limit": null,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q05",
+      "source_question_type": "matching",
+      "play_turn_ids": [
+        "T11"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "teacher_explanation_vi": "A: Cần người dịch có chuyên môn duyệt bản tin ngôn ngữ thứ hai.",
+      "feedback_vi": "Đáp án gốc: F. Đối chiếu với các lượt thoại T11; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-060-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q05",
+      "source_question_prompt_en": "Untranslated warning draft",
+      "choices": [
+        {
+          "key": "T05",
+          "excerpt_en": "Keep the experience survey, but use it to flag the possibility that prior floods affected people’s decisions.",
+          "source_turn_id": "T05"
+        },
+        {
+          "key": "T11",
+          "excerpt_en": "Ask a qualified translator to check the draft intended for households using the second language. A literal translation may obscure the action.",
+          "source_turn_id": "T11"
+        },
+        {
+          "key": "T04",
+          "excerpt_en": "The choices participants made in the scenario are our main measure of understanding the warning.",
+          "source_turn_id": "T04"
+        }
+      ],
+      "correct_answers": [
+        "T11"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_text_sha256": "bf337f0d2bd12925d248cdc74679d79f4a6e7483e691f77b2ded7db3af66adec",
+      "play_turn_ids": [
+        "T05",
+        "T11",
+        "T04"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T11. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-060-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "…A  [____]  action.…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "literal translation may obscure the"
+      ],
+      "play_turn_ids": [
+        "T11"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "source_excerpt_exact": "literal translation may obscure the",
+      "evidence_char_start": 99,
+      "evidence_char_end": 134,
+      "source_turn_sha256": "bf337f0d2bd12925d248cdc74679d79f4a6e7483e691f77b2ded7db3af66adec",
+      "feedback_vi": "Cụm nghe-chép chính xác là “literal translation may obscure the”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "F"
+    ],
+    "original_correct_option": "F",
+    "evidence_turn_ids": [
+      "T11"
+    ],
+    "raw_question_evidence_excerpt_en": "Ask a qualified translator to check the draft intended for households using the second language. A literal translation may obscure the action.",
+    "original_explanation_vi": "A: Cần người dịch có chuyên môn duyệt bản tin ngôn ngữ thứ hai."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_3",
+    "matching",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q05",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "S3-SIM-020",
+    "gate_kind": "section_simulation_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

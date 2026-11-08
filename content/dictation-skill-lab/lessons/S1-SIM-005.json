@@ -1,0 +1,832 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-005",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Registering for a museum science trail",
+  "title": "Family Science Trail Registration",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "family_event",
+    "opening_times",
+    "booking",
+    "equipment",
+    "preferences"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Science centre receptionist",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Parent",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Discovery Dock Science Centre, hello. I'm Lucy. Are you booking a school visit or one of our family trail activities?",
+      "translation_vi": "Trung tâm Khoa học Discovery Dock xin chào, tôi là Lucy. Anh đặt cho trường học hay hoạt động gia đình?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "A family trail. My son is nine and likes experiments, but he can get impatient in a long guided tour.",
+      "translation_vi": "Một hành trình gia đình. Con tôi chín tuổi và thích thí nghiệm nhưng dễ mất kiên nhẫn trong tour hướng dẫn dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Then try the Energy Quest trail. It's self-guided, with short experiments at different stations, rather than a single talk.",
+      "translation_vi": "Vậy hãy thử Energy Quest. Đây là hành trình tự khám phá với thí nghiệm ngắn ở các trạm thay vì một buổi nói chuyện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "That sounds more flexible. Does it include the big wind tunnel? He remembers seeing it on a school trip last year.",
+      "translation_vi": "Nghe linh hoạt. Có đường hầm gió lớn không? Cháu nhớ thấy nó trong chuyến đi cùng trường năm ngoái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes, the wind tunnel is the final station. The older Space Quest trail has been closed while we update its computer displays.",
+      "translation_vi": "Có, đường hầm gió ở trạm cuối. Hành trình Space Quest cũ đã đóng để nâng cấp màn hình máy tính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I saw both names on the leaflet, so I'll note Energy Quest. What time can families start the trail on Sunday?",
+      "translation_vi": "Tôi thấy hai tên trong tờ rơi, nên sẽ ghi Energy Quest. Gia đình có thể bắt đầu lúc nào ngày Chủ nhật?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Doors open at ten, but trail kits are handed out from ten thirty. Please don't arrive early expecting to collect one.",
+      "translation_vi": "Cửa mở lúc mười giờ, nhưng bộ dụng cụ phát từ mười rưỡi. Đừng tới sớm với hy vọng nhận ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We'll get there just before ten thirty, then. Is there a time limit? We may need a break for lunch.",
+      "translation_vi": "Chúng tôi sẽ đến trước mười rưỡi một chút. Có giới hạn thời gian không? Có thể cần nghỉ ăn trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Allow about ninety minutes to complete the trail. You can pause halfway, and your wristband lets you return after lunch.",
+      "translation_vi": "Hãy dành khoảng chín mươi phút để hoàn thành. Có thể nghỉ giữa chừng, vòng đeo tay cho phép quay lại sau trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Great. Is the trail suitable for his little sister too? She's six and can read short instructions with help.",
+      "translation_vi": "Tuyệt. Em gái cháu đi được không? Bé sáu tuổi có thể đọc hướng dẫn ngắn nếu có trợ giúp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The recommended minimum age is seven, mainly because some instructions include measurements. Younger children may accompany an adult but need help.",
+      "translation_vi": "Tuổi khuyến nghị tối thiểu là bảy, do có chỉ dẫn đo lường. Trẻ nhỏ hơn được đi cùng người lớn nhưng cần hỗ trợ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll help her. Do children use tablets for the experiments, or is there something physical they take around?",
+      "translation_vi": "Tôi sẽ giúp bé. Các cháu dùng máy tính bảng hay có vật dụng mang theo?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Each group collects a green activity booklet. Pencils are provided; the tablet screens are optional and not needed for the main tasks.",
+      "translation_vi": "Mỗi nhóm nhận một sổ hoạt động xanh lá. Có bút chì; máy tính bảng tùy chọn, không cần cho nhiệm vụ chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Perfect. I need three admissions: one adult and two children. Do I have to pay separately for the trail?",
+      "translation_vi": "Tốt. Tôi cần ba vé: một người lớn và hai trẻ. Có phải trả riêng phí hành trình không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "No separate trail fee. The family ticket is twenty-eight pounds and covers one adult with up to three children.",
+      "translation_vi": "Không có phí hành trình riêng. Vé gia đình giá hai mươi tám bảng, gồm một người lớn và tối đa ba trẻ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I'll take that. Could I reserve it under Porter, P O R T E R? I sometimes book under my partner's surname by mistake.",
+      "translation_vi": "Tôi lấy vé đó. Có thể đặt dưới họ Porter, P O R T E R không? Đôi lúc tôi lỡ đặt dưới họ bạn đời.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "Porter, noted. You'll get a QR code by email, but if your phone battery dies we can look up the booking at reception.",
+      "translation_vi": "Porter, đã ghi. Anh nhận mã QR qua email, nhưng nếu hết pin chúng tôi có thể tra đặt vé tại quầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "That's useful. My son also wants to watch the robotics show. Does the family ticket give us reserved seats for that?",
+      "translation_vi": "Hữu ích quá. Con tôi muốn xem chương trình robot. Vé gia đình có ghế đặt trước không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "The robotics show is first come, first served. The ticket includes entry, but we cannot guarantee seats if you arrive late.",
+      "translation_vi": "Chương trình robot ai đến trước chọn ghế trước. Vé bao gồm vào cửa nhưng không bảo đảm chỗ nếu đến muộn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "He'll be disappointed if we miss it. Perhaps we'll do the trail first, then go straight to the show queue.",
+      "translation_vi": "Cháu sẽ buồn nếu bỏ lỡ. Có lẽ chúng tôi đi hành trình trước rồi xếp hàng xem.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "That's the best plan. Please leave large bags in the free lockers near reception; the experiment area has narrow walkways.",
+      "translation_vi": "Đó là kế hoạch tốt. Hãy để túi lớn trong tủ miễn phí gần quầy; khu thí nghiệm có lối đi hẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "No problem. I'll bring a small backpack and make sure we collect our green booklet at ten thirty.",
+      "translation_vi": "Không vấn đề. Tôi mang ba lô nhỏ và sẽ lấy sổ xanh lá lúc mười rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Name of the chosen trail: ____",
+      "correct_answers": [
+        "Energy Quest"
+      ],
+      "spoken_answer": "Energy Quest",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Hành trình được chọn là Energy Quest.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Energy Quest trail",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Last station on the trail: wind ____",
+      "correct_answers": [
+        "tunnel"
+      ],
+      "spoken_answer": "tunnel",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Trạm cuối là đường hầm gió.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "wind tunnel is the final station",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Time kits become available: ____",
+      "correct_answers": [
+        "ten thirty"
+      ],
+      "spoken_answer": "ten thirty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Bộ dụng cụ được phát từ 10:30.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "from ten thirty",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Expected trail duration: ____ minutes",
+      "correct_answers": [
+        "ninety",
+        "90"
+      ],
+      "spoken_answer": "ninety",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Thời gian dự kiến là 90 phút.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "ninety minutes",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Recommended minimum age: ____",
+      "correct_answers": [
+        "seven",
+        "7"
+      ],
+      "spoken_answer": "seven",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tuổi khuyến nghị tối thiểu là 7.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "minimum age is seven",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Colour of activity booklet: ____",
+      "correct_answers": [
+        "green"
+      ],
+      "spoken_answer": "green",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Sổ hoạt động màu xanh lá.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "green activity booklet",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What does the family ticket cover?",
+      "correct_answers": [
+        "One adult and up to three children"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Two adults and one child"
+        },
+        {
+          "key": "B",
+          "text": "One adult and up to three children"
+        },
+        {
+          "key": "C",
+          "text": "Three adults without children"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Vé gia đình gồm một người lớn và tối đa ba trẻ.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "one adult with up to three children",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What can the receptionist do if the visitor's phone runs out of power?",
+      "correct_answers": [
+        "Find the booking at reception"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Print a new trail map only"
+        },
+        {
+          "key": "B",
+          "text": "Transfer the ticket to another day"
+        },
+        {
+          "key": "C",
+          "text": "Find the booking at reception"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Quầy có thể tra cứu mã đặt vé.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "look up the booking at reception",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What does the parent learn about the robotics show?",
+      "correct_answers": [
+        "Seats are not guaranteed"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Seats are not guaranteed"
+        },
+        {
+          "key": "B",
+          "text": "All seats must be booked online"
+        },
+        {
+          "key": "C",
+          "text": "The show is not included in admission"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Vé gồm quyền vào nhưng chỗ ngồi không bảo đảm.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "cannot guarantee seats if you arrive late",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Why must visitors leave large bags in lockers?",
+      "correct_answers": [
+        "Walkways in the experiment area are narrow"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Bags damage the electronic wristbands"
+        },
+        {
+          "key": "B",
+          "text": "Walkways in the experiment area are narrow"
+        },
+        {
+          "key": "C",
+          "text": "The centre is closing the café"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Lối đi trong khu thí nghiệm hẹp.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "experiment area has narrow walkways",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "family_event",
+        "opening_times",
+        "booking",
+        "equipment",
+        "preferences"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T13",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "0e27a930308924979199a274f848f73c88e1751da65832995adb9cde12680aab",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.33,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

@@ -1,0 +1,658 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-030",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M17 – Numbers",
+  "title": "Mixed-number corrections: booking calls",
+  "learning_objectives_vi": [
+    "Nghe chính xác mixed-number corrections: booking calls.",
+    "Kết hợp giờ, giá, mã và số điện thoại trong cùng cuộc hội thoại",
+    "Chuyển lời đọc thành chữ số/mã chính xác, không đoán theo ý nghĩa."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Caller",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Agent",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Is our booking for twelve thirty?",
+      "translation_vi": "A: Lịch đặt chỗ của chúng ta lúc 12 giờ 30 phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "time"
+      ],
+      "target_value": "12:30",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "It was, but the new time is twelve forty.",
+      "translation_vi": "B: Trước đây là vậy, nhưng giờ mới là 12 giờ 40.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "time"
+      ],
+      "target_value": "12:40",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I wrote the fee as thirty pounds.",
+      "translation_vi": "A: Tôi ghi phí là 30 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "currency"
+      ],
+      "target_value": "£30",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "It is thirteen pounds per person, not thirty.",
+      "translation_vi": "B: Là 13 bảng mỗi người, không phải 30.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "currency"
+      ],
+      "target_value": "£13",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I have room three oh five on my email.",
+      "translation_vi": "A: Trong email của tôi ghi phòng 305.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "integer"
+      ],
+      "target_value": "305",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "The organiser moved us to room three oh nine.",
+      "translation_vi": "B: Ban tổ chức chuyển chúng ta sang phòng 309.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "integer"
+      ],
+      "target_value": "309",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Does the reference end in seven one four?",
+      "translation_vi": "A: Mã tham chiếu kết thúc bằng 714 phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "digit_string"
+      ],
+      "target_value": "714",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "No, it ends in seven one five.",
+      "translation_vi": "B: Không, nó kết thúc bằng 715.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "digit_string"
+      ],
+      "target_value": "715",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "And the contact number finishes with double eight four?",
+      "translation_vi": "A: Và số liên lạc kết thúc bằng 884 phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "digit_string"
+      ],
+      "target_value": "884",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Correct. The final digits are double eight four.",
+      "translation_vi": "B: Đúng. Các chữ số cuối là 884.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "mixed_number_corrections",
+        "digit_string"
+      ],
+      "target_value": "884",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Is our booking for twelve thirty?"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: A: Lịch đặt chỗ của chúng ta lúc 12 giờ 30 phải không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "T01: Nghe lượt này rồi ghi giờ theo dạng HH:MM, dùng đồng hồ 12 giờ nếu không có AM/PM.",
+      "correct_answers": [
+        "12:30"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 12:30. Ngữ cảnh: A: Lịch đặt chỗ của chúng ta lúc 12 giờ 30 phải không?",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "time"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "time",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "It was, but the new time is twelve forty."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: B: Trước đây là vậy, nhưng giờ mới là 12 giờ 40.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "T02: Nghe lượt này rồi ghi giờ theo dạng HH:MM, dùng đồng hồ 12 giờ nếu không có AM/PM.",
+      "correct_answers": [
+        "12:40"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 12:40. Ngữ cảnh: B: Trước đây là vậy, nhưng giờ mới là 12 giờ 40.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "time"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "time",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I wrote the fee as thirty pounds."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: A: Tôi ghi phí là 30 bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "T03: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£30"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £30. Ngữ cảnh: A: Tôi ghi phí là 30 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "It is thirteen pounds per person, not thirty."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: B: Là 13 bảng mỗi người, không phải 30.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "T04: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£13"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £13. Ngữ cảnh: B: Là 13 bảng mỗi người, không phải 30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I have room three oh five on my email."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: A: Trong email của tôi ghi phòng 305.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "T05: Nghe lượt này rồi nhập con số bằng chữ số.",
+      "correct_answers": [
+        "305"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 305. Ngữ cảnh: A: Trong email của tôi ghi phòng 305.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "integer"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "integer",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The organiser moved us to room three oh nine."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: B: Ban tổ chức chuyển chúng ta sang phòng 309.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Does the reference end in seven one four?"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: A: Mã tham chiếu kết thúc bằng 714 phải không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "No, it ends in seven one five."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: B: Không, nó kết thúc bằng 715.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "And the contact number finishes with double eight four?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: A: Và số liên lạc kết thúc bằng 884 phải không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Correct. The final digits are double eight four."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe mixed_number_corrections. Nghĩa: B: Đúng. Các chữ số cuối là 884.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "mixed_number_corrections"
+      ],
+      "max_replays_practice": 5
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "12:30",
+      "pos": "time",
+      "meaning_vi": "12:30 (time)",
+      "example_en": "Is our booking for twelve thirty?",
+      "example_vi": "A: Lịch đặt chỗ của chúng ta lúc 12 giờ 30 phải không?",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "12:40",
+      "pos": "time",
+      "meaning_vi": "12:40 (time)",
+      "example_en": "It was, but the new time is twelve forty.",
+      "example_vi": "B: Trước đây là vậy, nhưng giờ mới là 12 giờ 40.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "£30",
+      "pos": "currency",
+      "meaning_vi": "£30 (currency)",
+      "example_en": "I wrote the fee as thirty pounds.",
+      "example_vi": "A: Tôi ghi phí là 30 bảng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "£13",
+      "pos": "currency",
+      "meaning_vi": "£13 (currency)",
+      "example_en": "It is thirteen pounds per person, not thirty.",
+      "example_vi": "B: Là 13 bảng mỗi người, không phải 30.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "305",
+      "pos": "integer",
+      "meaning_vi": "305 (integer)",
+      "example_en": "I have room three oh five on my email.",
+      "example_vi": "A: Trong email của tôi ghi phòng 305.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "309",
+      "pos": "integer",
+      "meaning_vi": "309 (integer)",
+      "example_en": "The organiser moved us to room three oh nine.",
+      "example_vi": "B: Ban tổ chức chuyển chúng ta sang phòng 309.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "714",
+      "pos": "digit_string",
+      "meaning_vi": "714 (digit_string)",
+      "example_en": "Does the reference end in seven one four?",
+      "example_vi": "A: Mã tham chiếu kết thúc bằng 714 phải không?",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "715",
+      "pos": "digit_string",
+      "meaning_vi": "715 (digit_string)",
+      "example_en": "No, it ends in seven one five.",
+      "example_vi": "B: Không, nó kết thúc bằng 715.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "884",
+      "pos": "digit_string",
+      "meaning_vi": "884 (digit_string)",
+      "example_en": "And the contact number finishes with double eight four?",
+      "example_vi": "A: Và số liên lạc kết thúc bằng 884 phải không?",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "884",
+      "pos": "digit_string",
+      "meaning_vi": "884 (digit_string)",
+      "example_en": "Correct. The final digits are double eight four.",
+      "example_vi": "B: Đúng. Các chữ số cuối là 884.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "micro_skill_id": "mixed_number_corrections",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "5_correction_pairs",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Kết hợp giờ, giá, mã và số điện thoại trong cùng cuộc hội thoại"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "e80d6a32447aa562a9b2cd91183007477d650840f68a441885e71b330b380fe7",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft; numeric normalization and pronunciation require teacher/audio QA.",
+      "Fictional UK phone number ranges used for instructional safety; do not dial."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Thông tin cuối cùng có thể là thay đổi của giờ, giá, phòng, mã hoặc điện thoại. Theo dõi loại dữ liệu trước khi ghi.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "room four oh one → four oh five",
+        "written_value": "405",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      },
+      {
+        "spoken_example": "ten pounds → twelve pounds",
+        "written_value": "£12",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      }
+    ],
+    "learning_steps": [
+      "Xem quy tắc và hai ví dụ bên dưới trước khi bắt đầu.",
+      "Nghe mỗi câu một lần, chép toàn câu hoặc nhập thông tin số theo yêu cầu.",
+      "Đối chiếu chữ/số và vị trí sai sau khi nộp; nghe lại từng câu khi cần.",
+      "Kiểm tra bằng 2 câu mới chưa xuất hiện trong nội dung luyện."
+    ],
+    "common_mistakes": [
+      "Nghe đúng một con số nhưng sai trạng thái: số cũ hay số mới.",
+      "Không dùng lại câu quen thuộc để chứng minh độ vững của kỹ năng."
+    ],
+    "before_audio_question": "Thông tin cần nghe là số lượng, số điện thoại, giờ, tiền hay mã chữ-số?"
+  }
+}

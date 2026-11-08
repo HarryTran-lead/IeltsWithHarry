@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-002",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "Short /e/ versus /æ/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt short /e/ versus /æ/.",
+    "/e/ như pen khác /æ/ như pan; chú ý độ mở hàm",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "A blue pen is on the table.",
+      "translation_vi": "Một cây bút xanh ở trên bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "pen",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A blue pan is on the table.",
+      "translation_vi": "Một cái chảo xanh ở trên bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "pan",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The bed needs a clean sheet.",
+      "translation_vi": "Chiếc giường cần một tấm ga sạch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "bed",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The bad weather ruined our plans.",
+      "translation_vi": "Thời tiết xấu làm hỏng kế hoạch của chúng tôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "bad",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Three men are waiting outside.",
+      "translation_vi": "Ba người đàn ông đang đợi bên ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "men",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "One man is waiting outside.",
+      "translation_vi": "Một người đàn ông đang đợi bên ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "man",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please send the parcel tomorrow.",
+      "translation_vi": "Hãy gửi bưu kiện vào ngày mai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "send",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "There is sand inside my shoes.",
+      "translation_vi": "Có cát ở trong giày của tôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "sand",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "My head hurts after the journey.",
+      "translation_vi": "Tôi đau đầu sau chuyến đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "head",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "We had lunch before the meeting.",
+      "translation_vi": "Chúng tôi đã ăn trưa trước cuộc họp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "short_e_short_a"
+      ],
+      "target_word": "had",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A blue pen is on the table."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe pen / pan (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Một cây bút xanh ở trên bàn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pen / pan (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A blue pan is on the table."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe pen / pan (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Một cái chảo xanh ở trên bàn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pen / pan (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bed needs a clean sheet."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe bed / bad (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Chiếc giường cần một tấm ga sạch.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "bed / bad (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bad weather ruined our plans."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe bed / bad (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Thời tiết xấu làm hỏng kế hoạch của chúng tôi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "bed / bad (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Three men are waiting outside."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe men / man (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Ba người đàn ông đang đợi bên ngoài.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "men / man (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "One man is waiting outside."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe men / man (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Một người đàn ông đang đợi bên ngoài.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "men / man (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please send the parcel tomorrow."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe send / sand (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Hãy gửi bưu kiện vào ngày mai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "send / sand (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "There is sand inside my shoes."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe send / sand (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Có cát ở trong giày của tôi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "send / sand (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "My head hurts after the journey."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe head / had (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Tôi đau đầu sau chuyến đi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "head / had (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We had lunch before the meeting."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe head / had (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm). Nghĩa: Chúng tôi đã ăn trưa trước cuộc họp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "head / had (/e/ như pen khác /æ/ như pan; chú ý độ mở hàm)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "pen"
+      ],
+      "options": [
+        "pen",
+        "pan"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt pen và pan. /e/ như pen khác /æ/ như pan; chú ý độ mở hàm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "short_e_short_a"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "bad"
+      ],
+      "options": [
+        "bad",
+        "bed"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt bed và bad. /e/ như pen khác /æ/ như pan; chú ý độ mở hàm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "short_e_short_a"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "men"
+      ],
+      "options": [
+        "men",
+        "man"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt men và man. /e/ như pen khác /æ/ như pan; chú ý độ mở hàm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "short_e_short_a"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "sand"
+      ],
+      "options": [
+        "sand",
+        "send"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt send và sand. /e/ như pen khác /æ/ như pan; chú ý độ mở hàm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "short_e_short_a"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "head"
+      ],
+      "options": [
+        "head",
+        "had"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt head và had. /e/ như pen khác /æ/ như pan; chú ý độ mở hàm. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "short_e_short_a"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "pen",
+      "pos": "target",
+      "meaning_vi": "bút",
+      "example_en": "A blue pen is on the table.",
+      "example_vi": "Một cây bút xanh ở trên bàn.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "short_e_short_a"
+    },
+    {
+      "term": "pan",
+      "pos": "target",
+      "meaning_vi": "chảo",
+      "example_en": "A blue pan is on the table.",
+      "example_vi": "Một cái chảo xanh ở trên bàn.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "short_e_short_a"
+    },
+    {
+      "term": "bed",
+      "pos": "target",
+      "meaning_vi": "giường",
+      "example_en": "The bed needs a clean sheet.",
+      "example_vi": "Chiếc giường cần một tấm ga sạch.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "short_e_short_a"
+    },
+    {
+      "term": "bad",
+      "pos": "target",
+      "meaning_vi": "xấu",
+      "example_en": "The bad weather ruined our plans.",
+      "example_vi": "Thời tiết xấu làm hỏng kế hoạch của chúng tôi.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "short_e_short_a"
+    },
+    {
+      "term": "men",
+      "pos": "target",
+      "meaning_vi": "những người đàn ông",
+      "example_en": "Three men are waiting outside.",
+      "example_vi": "Ba người đàn ông đang đợi bên ngoài.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "short_e_short_a"
+    },
+    {
+      "term": "man",
+      "pos": "target",
+      "meaning_vi": "người đàn ông",
+      "example_en": "One man is waiting outside.",
+      "example_vi": "Một người đàn ông đang đợi bên ngoài.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "short_e_short_a"
+    },
+    {
+      "term": "send",
+      "pos": "target",
+      "meaning_vi": "gửi",
+      "example_en": "Please send the parcel tomorrow.",
+      "example_vi": "Hãy gửi bưu kiện vào ngày mai.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "short_e_short_a"
+    },
+    {
+      "term": "sand",
+      "pos": "target",
+      "meaning_vi": "cát",
+      "example_en": "There is sand inside my shoes.",
+      "example_vi": "Có cát ở trong giày của tôi.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "short_e_short_a"
+    },
+    {
+      "term": "head",
+      "pos": "target",
+      "meaning_vi": "đầu",
+      "example_en": "My head hurts after the journey.",
+      "example_vi": "Tôi đau đầu sau chuyến đi.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "short_e_short_a"
+    },
+    {
+      "term": "had",
+      "pos": "target",
+      "meaning_vi": "đã có/đã ăn",
+      "example_en": "We had lunch before the meeting.",
+      "example_vi": "Chúng tôi đã ăn trưa trước cuộc họp.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "short_e_short_a"
+    }
+  ],
+  "micro_skill_id": "short_e_short_a",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "pen",
+        "pan"
+      ],
+      [
+        "bed",
+        "bad"
+      ],
+      [
+        "men",
+        "man"
+      ],
+      [
+        "send",
+        "sand"
+      ],
+      [
+        "head",
+        "had"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "/e/ như pen khác /æ/ như pan; chú ý độ mở hàm"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "f986d992ebafd9d096741f5ff034f37266df410db20f81885d454e0af139b052",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Trong giọng Anh, /e/ ở pen có độ mở miệng nhỏ hơn /æ/ ở pan.",
+    "worked_contrasts": [
+      {
+        "contrast": "pen / pan",
+        "meaning_vi": "bút / chảo",
+        "teacher_note_vi": "Trong giọng Anh, /e/ ở pen có độ mở miệng nhỏ hơn /æ/ ở pan."
+      },
+      {
+        "contrast": "bed / bad",
+        "meaning_vi": "giường / xấu",
+        "teacher_note_vi": "Trong giọng Anh, /e/ ở pen có độ mở miệng nhỏ hơn /æ/ ở pan."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Nhầm chữ e với a chỉ vì nội dung câu quá dễ đoán.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

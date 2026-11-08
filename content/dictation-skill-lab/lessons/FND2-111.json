@@ -1,0 +1,431 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-111",
+  "status": "draft_pending_audio_teacher_review",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M20 – unseen_mastery",
+  "title": "Mastery 1 – Numbers under pressure",
+  "learning_objectives_vi": [
+    "Đánh giá nghe số và thông tin được sửa khi chỉ nghe một lần.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "protected_unseen_dictation_assessment",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Speaker 1",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Speaker 2",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We originally ordered sixty cartons, but the warehouse sent sixteen.",
+      "translation_vi": "Ban đầu chúng ta đặt sáu mươi thùng, nhưng kho gửi mười sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The supplier says thirty-eight cartons are ready for collection.",
+      "translation_vi": "Nhà cung cấp nói có ba mươi tám thùng đã sẵn sàng để lấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please check the invoice number: four seven one nine, not four seven nine one.",
+      "translation_vi": "Vui lòng kiểm tra số hóa đơn: bốn bảy một chín, không phải bốn bảy chín một.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "The morning delivery weighs one hundred and forty kilos in total.",
+      "translation_vi": "Chuyến giao hàng buổi sáng nặng tổng cộng một trăm bốn mươi ki-lô-gam.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We can store eighty-five boxes safely, but not a hundred and five.",
+      "translation_vi": "Chúng ta có thể lưu trữ an toàn tám mươi lăm hộp, nhưng không phải một trăm lẻ năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I counted twenty-nine labels and found three without a product code.",
+      "translation_vi": "Tôi đếm được hai mươi chín nhãn và phát hiện ba nhãn không có mã sản phẩm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The revised order is for fifty-four units, not forty-five.",
+      "translation_vi": "Đơn hàng sửa đổi là năm mươi bốn sản phẩm, không phải bốn mươi lăm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Could you repeat the batch number slowly before I submit the form?",
+      "translation_vi": "Bạn có thể đọc lại mã lô hàng chậm rãi trước khi tôi gửi biểu mẫu không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes, it begins with two zeros and ends with the digits six eight.",
+      "translation_vi": "Được, mã bắt đầu bằng hai số không và kết thúc bằng các chữ số sáu tám.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Good, I will send the corrected quantities to the depot this afternoon.",
+      "translation_vi": "Tốt, tôi sẽ gửi số lượng đã chỉnh sửa cho kho vào chiều nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mastery_unseen",
+        "accurate_transcription",
+        "integrated_listening"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "We originally ordered sixty cartons, but the warehouse sent sixteen."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T01 sau khi nộp: We originally ordered sixty cartons, but the warehouse sent sixteen.",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "The supplier says thirty-eight cartons are ready for collection."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T02 sau khi nộp: The supplier says thirty-eight cartons are ready for collection.",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Please check the invoice number: four seven one nine, not four seven nine one."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T03 sau khi nộp: Please check the invoice number: four seven one nine, not four seven nine one.",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "The morning delivery weighs one hundred and forty kilos in total."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T04 sau khi nộp: The morning delivery weighs one hundred and forty kilos in total.",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "We can store eighty-five boxes safely, but not a hundred and five."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T05 sau khi nộp: We can store eighty-five boxes safely, but not a hundred and five.",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "I counted twenty-nine labels and found three without a product code."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T06 sau khi nộp: I counted twenty-nine labels and found three without a product code.",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "The revised order is for fifty-four units, not forty-five."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T07 sau khi nộp: The revised order is for fifty-four units, not forty-five.",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Could you repeat the batch number slowly before I submit the form?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T08 sau khi nộp: Could you repeat the batch number slowly before I submit the form?",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Yes, it begins with two zeros and ends with the digits six eight."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T09 sau khi nộp: Yes, it begins with two zeros and ends with the digits six eight.",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Good, I will send the corrected quantities to the depot this afternoon."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Đối chiếu nguyên văn lượt T10 sau khi nộp: Good, I will send the corrected quantities to the depot this afternoon.",
+      "scoring_policy": "dictation_exact_with_editorial_punctuation_normalization",
+      "question_tags": [
+        "foundation_mastery",
+        "one_listen",
+        "unseen"
+      ],
+      "max_replays_practice": 0
+    }
+  ],
+  "vocabulary": [],
+  "micro_skill_id": "mastery_numbers",
+  "bank_role": "protected_assessment",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 0,
+    "mastery_requires_unseen": true,
+    "category": "unseen_mastery",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-111-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true,
+    "protected_assessment_id": "FND2-111-MASTERY",
+    "playback_mode": "one_listen_per_segment",
+    "attempt_lock": "server",
+    "display_questions_before_play": true,
+    "return_transcript_before_submit": false,
+    "replay_for_mastery": 0,
+    "no_prior_exposure": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "866f6e4040dfc73d189b315d12fb67d21bced61ae1f2c7c19e3d963350776ac3"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 mastery shell had no turns/questions; this is newly authored M49L protected unseen content. Independent editorial review required."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "editorial_rebuild": "M49L-FND2-PROTECTED-REBUILD-2026-11-08"
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1,
+    "published": false
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Bài kiểm tra chưa gặp. Nghe từng lượt đúng một lần rồi trả lời; không mở trước transcript, đáp án hay bản dịch.",
+    "worked_contrasts": [],
+    "learning_steps": [
+      "Không có bài luyện thử lấy từ nội dung của bài này.",
+      "Mỗi lượt âm thanh chỉ phát một lần, câu hỏi được đưa ra trước khi nghe.",
+      "Sau khi nộp sẽ được xem phản hồi và các lỗi trọng tâm."
+    ],
+    "common_mistakes": [
+      "Nhận nhầm thông tin ban đầu thành thông tin đã chốt.",
+      "Phỏng đoán dựa trên câu hỏi thay vì nghe dữ kiện."
+    ]
+  }
+}

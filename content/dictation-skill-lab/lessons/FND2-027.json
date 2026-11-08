@@ -1,0 +1,652 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-027",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M17 – Numbers",
+  "title": "Money: pounds and pence",
+  "learning_objectives_vi": [
+    "Nghe chính xác money: pounds and pence.",
+    "Nghe đúng đồng bảng và số xu; tránh tính toán khi audio chỉ cho một giá",
+    "Chuyển lời đọc thành chữ số/mã chính xác, không đoán theo ý nghĩa."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The coffee is two pounds fifty.",
+      "translation_vi": "Cà phê giá 2 bảng 50 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£2.50",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "This ticket costs four pounds seventy-five.",
+      "translation_vi": "Vé này giá 4 bảng 75 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£4.75",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The sandwich is three pounds twenty.",
+      "translation_vi": "Bánh sandwich giá 3 bảng 20 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£3.20",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The entry fee is twelve pounds ninety.",
+      "translation_vi": "Phí vào cửa là 12 bảng 90 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£12.90",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A postcard costs eighty pence.",
+      "translation_vi": "Một bưu thiếp giá 80 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£0.80",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The charger is nine pounds ninety-nine.",
+      "translation_vi": "Bộ sạc giá 9 bảng 99 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£9.99",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The bus fare is one pound sixty.",
+      "translation_vi": "Giá vé xe buýt là 1 bảng 60 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£1.60",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The deposit is twenty pounds fifty.",
+      "translation_vi": "Tiền đặt cọc là 20 bảng 50 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£20.50",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The bottle of water costs sixty-five pence.",
+      "translation_vi": "Chai nước giá 65 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£0.65",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The repair costs thirty-one pounds forty.",
+      "translation_vi": "Việc sửa chữa giá 31 bảng 40 xu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "currency_decimals",
+        "currency"
+      ],
+      "target_value": "£31.40",
+      "target_kind": "currency",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The coffee is two pounds fifty."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Cà phê giá 2 bảng 50 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "T01: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£2.50"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £2.50. Ngữ cảnh: Cà phê giá 2 bảng 50 xu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "This ticket costs four pounds seventy-five."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Vé này giá 4 bảng 75 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "T02: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£4.75"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £4.75. Ngữ cảnh: Vé này giá 4 bảng 75 xu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The sandwich is three pounds twenty."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Bánh sandwich giá 3 bảng 20 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "T03: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£3.20"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £3.20. Ngữ cảnh: Bánh sandwich giá 3 bảng 20 xu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The entry fee is twelve pounds ninety."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Phí vào cửa là 12 bảng 90 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "T04: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£12.90"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £12.90. Ngữ cảnh: Phí vào cửa là 12 bảng 90 xu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A postcard costs eighty pence."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Một bưu thiếp giá 80 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "T05: Nghe lượt này rồi nhập giá tiền đã đọc (gồm £ và phần thập phân nếu có).",
+      "correct_answers": [
+        "£0.80"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kết quả cần ghi: £0.80. Ngữ cảnh: Một bưu thiếp giá 80 xu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "currency"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "currency",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The charger is nine pounds ninety-nine."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Bộ sạc giá 9 bảng 99 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bus fare is one pound sixty."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Giá vé xe buýt là 1 bảng 60 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The deposit is twenty pounds fifty."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Tiền đặt cọc là 20 bảng 50 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bottle of water costs sixty-five pence."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Chai nước giá 65 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The repair costs thirty-one pounds forty."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe currency_decimals. Nghĩa: Việc sửa chữa giá 31 bảng 40 xu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "currency_decimals"
+      ],
+      "max_replays_practice": 5
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "£2.50",
+      "pos": "currency",
+      "meaning_vi": "£2.50 (currency)",
+      "example_en": "The coffee is two pounds fifty.",
+      "example_vi": "Cà phê giá 2 bảng 50 xu.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "£4.75",
+      "pos": "currency",
+      "meaning_vi": "£4.75 (currency)",
+      "example_en": "This ticket costs four pounds seventy-five.",
+      "example_vi": "Vé này giá 4 bảng 75 xu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "£3.20",
+      "pos": "currency",
+      "meaning_vi": "£3.20 (currency)",
+      "example_en": "The sandwich is three pounds twenty.",
+      "example_vi": "Bánh sandwich giá 3 bảng 20 xu.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "£12.90",
+      "pos": "currency",
+      "meaning_vi": "£12.90 (currency)",
+      "example_en": "The entry fee is twelve pounds ninety.",
+      "example_vi": "Phí vào cửa là 12 bảng 90 xu.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "£0.80",
+      "pos": "currency",
+      "meaning_vi": "£0.80 (currency)",
+      "example_en": "A postcard costs eighty pence.",
+      "example_vi": "Một bưu thiếp giá 80 xu.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "£9.99",
+      "pos": "currency",
+      "meaning_vi": "£9.99 (currency)",
+      "example_en": "The charger is nine pounds ninety-nine.",
+      "example_vi": "Bộ sạc giá 9 bảng 99 xu.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "£1.60",
+      "pos": "currency",
+      "meaning_vi": "£1.60 (currency)",
+      "example_en": "The bus fare is one pound sixty.",
+      "example_vi": "Giá vé xe buýt là 1 bảng 60 xu.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "£20.50",
+      "pos": "currency",
+      "meaning_vi": "£20.50 (currency)",
+      "example_en": "The deposit is twenty pounds fifty.",
+      "example_vi": "Tiền đặt cọc là 20 bảng 50 xu.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "£0.65",
+      "pos": "currency",
+      "meaning_vi": "£0.65 (currency)",
+      "example_en": "The bottle of water costs sixty-five pence.",
+      "example_vi": "Chai nước giá 65 xu.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "£31.40",
+      "pos": "currency",
+      "meaning_vi": "£31.40 (currency)",
+      "example_en": "The repair costs thirty-one pounds forty.",
+      "example_vi": "Việc sửa chữa giá 31 bảng 40 xu.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "micro_skill_id": "currency_decimals",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_distinct_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Nghe đúng đồng bảng và số xu; tránh tính toán khi audio chỉ cho một giá"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "dc1611e3f19c3c10eec388e4eedf4d8616c59fd5bfc4290868a8f07a1ea05ec9",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft; numeric normalization and pronunciation require teacher/audio QA.",
+      "Fictional UK phone number ranges used for instructional safety; do not dial."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Two pounds fifty được viết £2.50; eighty pence viết £0.80.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "one pound twenty",
+        "written_value": "£1.20",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      },
+      {
+        "spoken_example": "seventy pence",
+        "written_value": "£0.70",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      }
+    ],
+    "learning_steps": [
+      "Xem quy tắc và hai ví dụ bên dưới trước khi bắt đầu.",
+      "Nghe mỗi câu một lần, chép toàn câu hoặc nhập thông tin số theo yêu cầu.",
+      "Đối chiếu chữ/số và vị trí sai sau khi nộp; nghe lại từng câu khi cần.",
+      "Kiểm tra bằng 2 câu mới chưa xuất hiện trong nội dung luyện."
+    ],
+    "common_mistakes": [
+      "Không nhầm phần pence với bảng và không bỏ số 0 phần thập phân.",
+      "Không dùng lại câu quen thuộc để chứng minh độ vững của kỹ năng."
+    ],
+    "before_audio_question": "Thông tin cần nghe là số lượng, số điện thoại, giờ, tiền hay mã chữ-số?"
+  }
+}

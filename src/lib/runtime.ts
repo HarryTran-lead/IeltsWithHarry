@@ -29,6 +29,8 @@ export function lockedLearnerPath(pathname: string) {
   if (!releaseLocks) return false;
   if (["/app/reading", "/app/reading/live", "/app/reading/vocabulary", "/app/listening"].includes(pathname)) return false;
   if (/^\/app\/question-bank\/(?:exam|attempt|result)\/[^/]+$/.test(pathname)) return false;
+  // Listening mock tests open per test once their audio exists; the rest of Listening stays locked.
+  if (/^\/app\/listening\/mock(?:\/M\d{2}-LISTENING-MOCK-\d{2})?$/.test(pathname)) return false;
   if (pathname === "/app/learn" || (pathname.startsWith("/app/learn/") && learnStageAvailable(pathname.slice("/app/learn/".length)))) return false;
   if (/^\/app\/lesson\/b2-[a-z0-9-]+$/.test(pathname)) return false;
   return /^\/app\/(reading|listening|writing|speaking|question-bank|learn)(?:\/|$)/.test(pathname)

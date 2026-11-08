@@ -43,7 +43,8 @@
 .dq-source{border-radius:7px;background:#eef4f8;color:#4c6a82;padding:3px 8px;font-size:11px;font-weight:800}
 
 /* Dictation home: "Hôm nay" shortcuts */
-.voa-today{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:4px 0 22px}
+.voa-today{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:4px 0 22px}
+.voa-today-card.is-mock{border-color:#c9b8f0;background:linear-gradient(135deg,#f5f1ff,#fff)}
 .voa-lab .voa-today-card{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:118px;padding:16px;text-align:left;text-decoration:none;color:var(--voa-ink)}
 .voa-lab .voa-today-card:hover{border-color:#64b9c1;box-shadow:0 12px 28px #173e5c17}
 .voa-today-card strong{font-size:16px}

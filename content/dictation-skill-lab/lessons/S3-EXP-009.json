@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-009",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Transport design and inclusive fieldwork",
+  "title": "Studying Public Transport Accessibility",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "accessibility_evaluation",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The transport authority wants a student report on accessibility at three stations. Remember that counting ramps is not the same as understanding whether a complete journey is usable. What will your method capture?",
+      "translation_vi": "Cơ quan giao thông muốn báo cáo khả năng tiếp cận ở ba ga. Đếm đường dốc không đồng nghĩa biết cả hành trình có dùng được không; phương pháp sẽ đo gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Our checklist records lifts, ramps and tactile paving. It is simple to complete, but a lift can exist on the station map and still be out of service when someone arrives.",
+      "translation_vi": "Danh sách kiểm tra có thang máy, dốc và gạch dẫn đường. Dễ dùng, nhưng thang máy có trên bản đồ vẫn có thể hỏng khi khách tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Perhaps we could walk complete routes, including the connection from the bus stop. A station with an accessible entrance is not much help if there is no safe crossing outside.",
+      "translation_vi": "Có lẽ nên đi thử cả tuyến, gồm đoạn từ trạm xe buýt. Cổng ga tiếp cận được cũng vô ích nếu bên ngoài không có chỗ qua đường an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Yes, use route-based audits rather than just inventories of equipment. But do not simulate a wheelchair user's experience and present it as equivalent to the knowledge of someone who actually uses one.",
+      "translation_vi": "Đúng, kiểm tra theo hành trình thay vì chỉ kiểm kê thiết bị. Nhưng đừng giả trải nghiệm xe lăn rồi coi tương đương kinh nghiệm người thực sự dùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We can invite people with different access needs to comment on the route, provided participation is voluntary and their time is recognised. I worry about treating a single person's experience as universal.",
+      "translation_vi": "Ta có thể mời người có nhu cầu tiếp cận khác nhau nhận xét tuyến, tự nguyện và được ghi nhận thời gian; nhưng đừng coi kinh nghiệm một người là phổ quát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Then use a range of accounts rather than one testimonial. We can present differing experiences side by side and explain which features caused difficulty, without forcing everyone into a single rating.",
+      "translation_vi": "Hãy dùng nhiều câu chuyện thay vì một lời chứng. Trình bày trải nghiệm khác nhau cạnh nhau và giải thích đặc điểm gây khó, không ép chung một điểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Good. Include temporary disruptions such as maintenance work in your observations. A journey may become impossible if an accessible entrance is blocked for even a short period.",
+      "translation_vi": "Tốt. Ghi các gián đoạn tạm thời như sửa chữa. Hành trình có thể bất khả thi nếu lối vào phù hợp bị chặn dù chỉ một lúc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "For the pilot, I suggest tracing one full route at each station at two different times of day. That would reveal whether crowding changes how usable the route feels.",
+      "translation_vi": "Em đề xuất thử một hành trình đầy đủ mỗi ga ở hai giờ khác nhau, để xem đông người thay đổi tính sử dụng tuyến không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I will contact the accessibility office and arrange voluntary feedback sessions with appropriate support. We should ask what accommodations people need before inviting them to a meeting.",
+      "translation_vi": "Thầy sẽ liên hệ bộ phận tiếp cận và tổ chức buổi phản hồi tự nguyện có hỗ trợ; phải hỏi nhu cầu hỗ trợ trước khi mời họp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "C",
+      "text_en": "I'll produce route diagrams that show the bus connection and crossings, not just facilities inside the stations. The diagrams should be clear enough to discuss without revealing participants' private journeys.",
+      "translation_vi": "Em sẽ vẽ sơ đồ có nối xe buýt và lối qua đường, không chỉ tiện ích trong ga; đủ rõ để bàn mà không lộ hành trình cá nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll build the audit checklist with separate fields for availability and working condition. Otherwise a broken lift would score the same as one that works reliably.",
+      "translation_vi": "Em sẽ làm phiếu có cột thiết bị tồn tại và hoạt động thực tế; thang máy hỏng không thể chấm bằng thang máy tốt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "I'll compare the published travel information with what we see on site, especially when signs direct visitors towards entrances that are temporarily closed.",
+      "translation_vi": "Em sẽ đối chiếu thông tin hành trình công khai với thực địa, nhất là biển chỉ tới lối vào đang tạm đóng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Bring a report that identifies barriers and suggests practical changes, not a simplistic ranking of the three stations. Real accessibility depends on the whole connected journey.",
+      "translation_vi": "Hãy nộp báo cáo xác định rào cản và cải thiện thiết thực, không xếp hạng ba ga đơn giản. Khả năng tiếp cận phụ thuộc cả hành trình liên thông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "accessibility_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What weakness is identified in the initial checklist?",
+      "correct_answers": [
+        "It may count equipment that is not working"
+      ],
+      "options": [
+        "It ignores ticket prices",
+        "It asks travellers too many personal questions",
+        "It may count equipment that is not working"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Our checklist records lifts, ramps and tactile paving. It is simple to complete, but a lift can exist on the station map and still be out of service when someone arrives.",
+      "explanation_vi": "Có thiết bị nhưng có thể đang hỏng.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "accessibility_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What kind of assessment does the tutor prefer?",
+      "correct_answers": [
+        "An audit of complete routes"
+      ],
+      "options": [
+        "An audit of complete routes",
+        "A count of lifts alone",
+        "A simulated wheelchair experiment claimed as authentic"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Yes, use route-based audits rather than just inventories of equipment. But do not simulate a wheelchair user's experience and present it as equivalent to the knowledge of someone who actually uses one.",
+      "explanation_vi": "Kiểm tra toàn tuyến, không chỉ số thiết bị.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "accessibility_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "How should the findings from participants be presented?",
+      "correct_answers": [
+        "Show a range of experiences"
+      ],
+      "options": [
+        "Reduce all comments to one testimonial",
+        "Show a range of experiences",
+        "Exclude accounts that differ"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Then use a range of accounts rather than one testimonial. We can present differing experiences side by side and explain which features caused difficulty, without forcing everyone into a single rating.",
+      "explanation_vi": "Trình bày nhiều trải nghiệm, tránh suy rộng từ một người.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "accessibility_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What factor motivates checking routes twice a day?",
+      "correct_answers": [
+        "Changes in crowding"
+      ],
+      "options": [
+        "The station cleaning schedule",
+        "Different train ticket colours",
+        "Changes in crowding"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "For the pilot, I suggest tracing one full route at each station at two different times of day. That would reveal whether crowding changes how usable the route feels.",
+      "explanation_vi": "Đông đúc theo giờ có thể ảnh hưởng tuyến di chuyển.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "accessibility_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: organise supported, voluntary feedback?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I will contact the accessibility office and arrange voluntary feedback sessions with appropriate support. We should ask what accommodations people need before inviting them to a meeting.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "accessibility_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: draw diagrams covering external transport links?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll produce route diagrams that show the bus connection and crossings, not just facilities inside the stations. The diagrams should be clear enough to discuss without revealing participants' private journeys.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "accessibility_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: record whether access equipment actually works?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll build the audit checklist with separate fields for availability and working condition. Otherwise a broken lift would score the same as one that works reliably.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "accessibility_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: compare official directions with actual conditions?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll compare the published travel information with what we see on site, especially when signs direct visitors towards entrances that are temporarily closed.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "accessibility_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "Perhaps we could walk complete routes, including the connection from the bus stop. A station with an accessible entrance is not much help if there is no safe crossing outside."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Perhaps we could walk complete routes, including the connection from the bus stop. A station with an accessible entrance is not much help if there is no safe crossing outside.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "accessibility_evaluation"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "We can invite people with different access needs to comment on the route, provided participation is voluntary and their time is recognised. I worry about treating a single person's experience as universal."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "We can invite people with different access needs to comment on the route, provided participation is voluntary and their time is recognised. I worry about treating a single person's experience as universal.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "accessibility_evaluation"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "Good. Include temporary disruptions such as maintenance work in your observations. A journey may become impossible if an accessible entrance is blocked for even a short period."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Good. Include temporary disruptions such as maintenance work in your observations. A journey may become impossible if an accessible entrance is blocked for even a short period.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "accessibility_evaluation"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói B.",
+      "correct_answers": [
+        "I'll build the audit checklist with separate fields for availability and working condition. Otherwise a broken lift would score the same as one that works reliably."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll build the audit checklist with separate fields for availability and working condition. Otherwise a broken lift would score the same as one that works reliably.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "accessibility_evaluation"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: The transport authority wants a student report on ____ at three stations. Remember that counting ramps is not the same as understanding whether a complete journey is usable. What will your method capture?",
+      "correct_answers": [
+        "accessibility"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The transport authority wants a student report on accessibility at three stations. Remember that counting ramps is not the same as understanding whether a complete journey is usable. What will your method capture?",
+      "explanation_vi": "Cụm nghe được là “accessibility” (khả năng tiếp cận); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "accessibility_evaluation"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T02 và điền cụm bị thiếu: Our checklist records lifts, ramps and ____. It is simple to complete, but a lift can exist on the station map and still be out of service when someone arrives.",
+      "correct_answers": [
+        "tactile paving"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Our checklist records lifts, ramps and tactile paving. It is simple to complete, but a lift can exist on the station map and still be out of service when someone arrives.",
+      "explanation_vi": "Cụm nghe được là “tactile paving” (gạch dẫn hướng); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "accessibility_evaluation"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-009-V01",
+      "expression_en": "accessibility",
+      "meaning_vi": "khả năng tiếp cận",
+      "part_of_speech": "noun phrase",
+      "example_en": "The transport authority wants a student report on accessibility at three stations. Remember that counting ramps is not the same as understanding whether a complete journey is usable. What will your method capture?",
+      "example_vi": "Cơ quan giao thông muốn báo cáo khả năng tiếp cận ở ba ga. Đếm đường dốc không đồng nghĩa biết cả hành trình có dùng được không; phương pháp sẽ đo gì?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-009-V02",
+      "expression_en": "tactile paving",
+      "meaning_vi": "gạch dẫn hướng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Our checklist records lifts, ramps and tactile paving. It is simple to complete, but a lift can exist on the station map and still be out of service when someone arrives.",
+      "example_vi": "Danh sách kiểm tra có thang máy, dốc và gạch dẫn đường. Dễ dùng, nhưng thang máy có trên bản đồ vẫn có thể hỏng khi khách tới.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-009-V03",
+      "expression_en": "route-based audit",
+      "meaning_vi": "kiểm tra theo tuyến",
+      "part_of_speech": "noun phrase",
+      "example_en": "Yes, use route-based audits rather than just inventories of equipment. But do not simulate a wheelchair user's experience and present it as equivalent to the knowledge of someone who actually uses one.",
+      "example_vi": "Đúng, kiểm tra theo hành trình thay vì chỉ kiểm kê thiết bị. Nhưng đừng giả trải nghiệm xe lăn rồi coi tương đương kinh nghiệm người thực sự dùng.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-009-V04",
+      "expression_en": "testimonial",
+      "meaning_vi": "lời chứng cá nhân",
+      "part_of_speech": "noun phrase",
+      "example_en": "Then use a range of accounts rather than one testimonial. We can present differing experiences side by side and explain which features caused difficulty, without forcing everyone into a single rating.",
+      "example_vi": "Hãy dùng nhiều câu chuyện thay vì một lời chứng. Trình bày trải nghiệm khác nhau cạnh nhau và giải thích đặc điểm gây khó, không ép chung một điểm.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-009-V05",
+      "expression_en": "temporary disruptions",
+      "meaning_vi": "gián đoạn tạm thời",
+      "part_of_speech": "noun phrase",
+      "example_en": "Good. Include temporary disruptions such as maintenance work in your observations. A journey may become impossible if an accessible entrance is blocked for even a short period.",
+      "example_vi": "Tốt. Ghi các gián đoạn tạm thời như sửa chữa. Hành trình có thể bất khả thi nếu lối vào phù hợp bị chặn dù chỉ một lúc.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-009-V06",
+      "expression_en": "barriers",
+      "meaning_vi": "rào cản",
+      "part_of_speech": "noun phrase",
+      "example_en": "Bring a report that identifies barriers and suggests practical changes, not a simplistic ranking of the three stations. Real accessibility depends on the whole connected journey.",
+      "example_vi": "Hãy nộp báo cáo xác định rào cản và cải thiện thiết thực, không xếp hạng ba ga đơn giản. Khả năng tiếp cận phụ thuộc cả hành trình liên thông.",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "74ffa10bac02ade26175529210f0948bc2b35fbe1bc2e3f51f9a7b2d147b1fe1",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 377,
+    "estimated_audio_minutes_at_135_wpm": 2.79,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

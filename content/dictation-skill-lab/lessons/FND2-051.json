@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-051",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Spelling",
+  "title": "Website addresses and domains",
+  "learning_objectives_vi": [
+    "Nghe được website addresses and domains trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (domain_spelling).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The course details are at courses dot example dot org.",
+      "translation_vi": "Thông tin khóa học ở courses.example.org.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "courses.example.org",
+      "target_kind": "domain",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Visit tickets dot example dot com to check availability.",
+      "translation_vi": "Truy cập tickets.example.com để kiểm tra chỗ còn trống.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "tickets.example.com",
+      "target_kind": "domain",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our help page is support dot example dot net.",
+      "translation_vi": "Trang trợ giúp của chúng tôi là support.example.net.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "support.example.net",
+      "target_kind": "domain",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The gallery website is gallery dot example dot org.",
+      "translation_vi": "Website phòng tranh là gallery.example.org.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "gallery.example.org",
+      "target_kind": "domain",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "You can find the timetable at buses dot example dot com.",
+      "translation_vi": "Bạn có thể xem lịch xe ở buses.example.com.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "buses.example.com",
+      "target_kind": "domain",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The online form is at forms dot example dot net.",
+      "translation_vi": "Mẫu đơn trực tuyến nằm ở forms.example.net.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "forms.example.net",
+      "target_kind": "domain",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Check the notice at updates dot example dot org.",
+      "translation_vi": "Xem thông báo tại updates.example.org.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "updates.example.org",
+      "target_kind": "domain",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The virtual tour is on museum dot example dot com.",
+      "translation_vi": "Tour ảo ở museum.example.com.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "museum.example.com",
+      "target_kind": "domain",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Our student resources are at study dot example dot net.",
+      "translation_vi": "Tài liệu sinh viên ở study.example.net.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "study.example.net",
+      "target_kind": "domain",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The volunteer page is community dot example dot org.",
+      "translation_vi": "Trang tình nguyện là community.example.org.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "domain_spelling",
+        "domain"
+      ],
+      "target_value": "community.example.org",
+      "target_kind": "domain",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The course details are at courses dot example dot org."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The course details are at courses dot example dot org. Nghĩa: Thông tin khóa học ở courses.example.org. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Visit tickets dot example dot com to check availability."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Visit tickets dot example dot com to check availability. Nghĩa: Truy cập tickets.example.com để kiểm tra chỗ còn trống. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our help page is support dot example dot net."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Our help page is support dot example dot net. Nghĩa: Trang trợ giúp của chúng tôi là support.example.net. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The gallery website is gallery dot example dot org."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The gallery website is gallery dot example dot org. Nghĩa: Website phòng tranh là gallery.example.org. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "You can find the timetable at buses dot example dot com."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: You can find the timetable at buses dot example dot com. Nghĩa: Bạn có thể xem lịch xe ở buses.example.com. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The online form is at forms dot example dot net."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The online form is at forms dot example dot net. Nghĩa: Mẫu đơn trực tuyến nằm ở forms.example.net. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Check the notice at updates dot example dot org."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Check the notice at updates dot example dot org. Nghĩa: Xem thông báo tại updates.example.org. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The virtual tour is on museum dot example dot com."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The virtual tour is on museum dot example dot com. Nghĩa: Tour ảo ở museum.example.com. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our student resources are at study dot example dot net."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Our student resources are at study dot example dot net. Nghĩa: Tài liệu sinh viên ở study.example.net. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The volunteer page is community dot example dot org."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The volunteer page is community dot example dot org. Nghĩa: Trang tình nguyện là community.example.org. Lưu ý: Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "domain_spelling"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập tên miền được xác nhận trong câu.",
+      "correct_answers": [
+        "forms.example.net"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: forms.example.net. Nội dung: Mẫu đơn trực tuyến nằm ở forms.example.net.",
+      "scoring_policy": "canonical_domain_server",
+      "target_kind": "domain",
+      "question_tags": [
+        "short_answer",
+        "domain_spelling",
+        "domain"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập tên miền được xác nhận trong câu.",
+      "correct_answers": [
+        "updates.example.org"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: updates.example.org. Nội dung: Xem thông báo tại updates.example.org.",
+      "scoring_policy": "canonical_domain_server",
+      "target_kind": "domain",
+      "question_tags": [
+        "short_answer",
+        "domain_spelling",
+        "domain"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập tên miền được xác nhận trong câu.",
+      "correct_answers": [
+        "museum.example.com"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: museum.example.com. Nội dung: Tour ảo ở museum.example.com.",
+      "scoring_policy": "canonical_domain_server",
+      "target_kind": "domain",
+      "question_tags": [
+        "short_answer",
+        "domain_spelling",
+        "domain"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập tên miền được xác nhận trong câu.",
+      "correct_answers": [
+        "study.example.net"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: study.example.net. Nội dung: Tài liệu sinh viên ở study.example.net.",
+      "scoring_policy": "canonical_domain_server",
+      "target_kind": "domain",
+      "question_tags": [
+        "short_answer",
+        "domain_spelling",
+        "domain"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập tên miền được xác nhận trong câu.",
+      "correct_answers": [
+        "community.example.org"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: community.example.org. Nội dung: Trang tình nguyện là community.example.org.",
+      "scoring_policy": "canonical_domain_server",
+      "target_kind": "domain",
+      "question_tags": [
+        "short_answer",
+        "domain_spelling",
+        "domain"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "website",
+      "pos": "n",
+      "meaning_vi": "trang web",
+      "example_en": "The gallery website is gallery dot example dot org.",
+      "example_vi": "Website phòng tranh là gallery.example.org.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "web address",
+      "pos": "n",
+      "meaning_vi": "địa chỉ trang web",
+      "example_en": "Type the web address exactly as spoken.",
+      "example_vi": "Hãy nhập địa chỉ web chính xác như lời đọc.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "domain",
+      "pos": "n",
+      "meaning_vi": "tên miền",
+      "example_en": "Check the domain after the at sign.",
+      "example_vi": "Kiểm tra tên miền sau ký hiệu @.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "timetable",
+      "pos": "n",
+      "meaning_vi": "lịch trình",
+      "example_en": "You can find the timetable at buses dot example dot com.",
+      "example_vi": "Bạn có thể xem lịch xe ở buses.example.com.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "online form",
+      "pos": "n",
+      "meaning_vi": "mẫu đơn trực tuyến",
+      "example_en": "The online form is at forms dot example dot net.",
+      "example_vi": "Mẫu đơn trực tuyến nằm ở forms.example.net.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "support page",
+      "pos": "n",
+      "meaning_vi": "trang hỗ trợ",
+      "example_en": "The support page lists common problems.",
+      "example_vi": "Trang hỗ trợ liệt kê các vấn đề thường gặp.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "domain_spelling",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+    "category": "spelling",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-051-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "582b22bbe54505bc4fbd5b1c7f9253996372b9ec306ec2ca53b5e98dcd0c16d0",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe dấu chấm, subdomain và đường dẫn; không biến 'dot' thành dấu gạch.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "news dot example dot org",
+        "written_value": "news.example.org",
+        "teacher_note_vi": "Dấu chấm phân tách các phần của tên miền."
+      },
+      {
+        "spoken_example": "help dot example dot net",
+        "written_value": "help.example.net",
+        "teacher_note_vi": "Không thêm www nếu audio không đọc."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn quy tắc nhận diện chữ cái và dấu câu, đọc hai ví dụ.",
+      "Nghe chuỗi được đánh vần, ghi lại từng ký tự ngay khi nghe.",
+      "Chỉ xem transcript/đáp án sau khi nộp, rà từng chữ/dấu nối.",
+      "Dùng hai câu chưa gặp để kiểm tra trong một lần nghe với giọng khác."
+    ],
+    "common_mistakes": [
+      "Suy đoán cách viết tên theo phát âm thay vì ký tự đánh vần.",
+      "Bỏ chữ lặp, dấu gạch nối, dấu nháy hoặc số 0 trong mã."
+    ],
+    "before_audio_question": "Người nói đang đọc tên, mã chữ-số, email, tên miền hay postcode? Có từ double, hyphen, underscore không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

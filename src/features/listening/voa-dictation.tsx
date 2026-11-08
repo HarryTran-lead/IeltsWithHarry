@@ -120,10 +120,10 @@ export function VoaDictation() {
     let alive = true;
     // Skill Lab lessons live in content files; only count lessons with complete audio.
     void fetch("/api/dictation/skill-lab").then(async (response) => {
-      const data = response.ok ? await response.json().catch(() => null) as { lessons?: { lesson_id: string; audio_ready: boolean; turns: number }[] } | null : null;
+      const data = response.ok ? await response.json().catch(() => null) as { lessons?: { lesson_id: string; audio_ready: boolean; turns: number; stage?: string; level?: string }[] } | null : null;
       if (!alive) return;
       const counts = Object.fromEntries(skillLabStages.map((stage) => [stage.id, 0]));
-      for (const lesson of data?.lessons ?? []) if (lesson.audio_ready) counts[skillLabStageOf(lesson.lesson_id)] = (counts[skillLabStageOf(lesson.lesson_id)] ?? 0) + 1;
+      for (const lesson of data?.lessons ?? []) if (lesson.audio_ready) counts[skillLabStageOf(lesson)] = (counts[skillLabStageOf(lesson)] ?? 0) + 1;
       setSkillLabCounts(counts);
       // Personal progress per stage (lessons whose every sentence passed) and the placement suggestion.
       const [dictation, placement] = await Promise.all([listPracticeResults("skill-lab-dictation:"), listPracticeResults("skill-lab-placement:")]).catch(() => [{}, {}] as const);
@@ -131,7 +131,7 @@ export function VoaDictation() {
       const done: Record<string, number> = {};
       for (const lesson of data?.lessons ?? []) {
         const row = (dictation as Record<string, { correct: number }>)[`skill-lab-dictation:${lesson.lesson_id}`];
-        if (lesson.audio_ready && row && row.correct >= lesson.turns) done[skillLabStageOf(lesson.lesson_id)] = (done[skillLabStageOf(lesson.lesson_id)] ?? 0) + 1;
+        if (lesson.audio_ready && row && row.correct >= lesson.turns) done[skillLabStageOf(lesson)] = (done[skillLabStageOf(lesson)] ?? 0) + 1;
       }
       setSkillLabDone(done);
       const latest = Object.entries(placement as Record<string, { updatedAt?: string }>).sort(([, a], [, b]) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""))[0];
@@ -324,6 +324,7 @@ export function VoaDictation() {
           <header className="voa-bank-hero"><div><span className="voa-eyebrow">DICTATION LIBRARY</span><h1>Luyện nghe chép</h1><p>Đi theo lộ trình IELTS, luyện nhanh một kỹ năng, hoặc ôn lại những câu chưa đạt.</p></div>
             <button type="button" className="voa-primary-button" onClick={() => router.push(lastSkillLab ? `/app/dictation/banks/skill-lab/${lastSkillLab}` : "/app/dictation/banks/skill-lab")}>{lastSkillLab ? "Tiếp tục lộ trình IELTS" : "Bắt đầu lộ trình IELTS"} <ArrowRight size={17} /></button></header>
           <section className="voa-today" aria-label="Hôm nay">
+            <Link className="voa-today-card voa-surface is-mock" href="/app/listening/mock"><strong>Đề Listening thi thử</strong><span>Đề 4 phần, 40 câu như phòng thi: đọc đề, nghe một lần, nộp bài xem điểm và transcript.</span><small>Vào phòng thi →</small></Link>
             <Link className="voa-today-card voa-surface is-primary" href="/app/dictation/practice"><strong>Luyện nhanh 5 phút</strong><span>10 câu theo một kỹ năng: số và giờ, đánh vần, ngày tháng, chỉ đường…</span><small>Chọn kỹ năng →</small></Link>
             <Link className="voa-today-card voa-surface" href="/app/dictation/review"><strong>Sổ câu sai</strong><span>Các câu chưa đạt ở mọi kho, chép lại đến khi đạt.</span><small>Ôn câu sai →</small></Link>
             <button type="button" className="voa-today-card voa-surface" disabled={plannerState === "saving" || plannerState === "added"} onClick={async () => {

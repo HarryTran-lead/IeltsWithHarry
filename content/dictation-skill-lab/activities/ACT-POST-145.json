@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-145",
+  "activity_id": "ACT-POST-145",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 1,
+  "title": "Registering for the Mobile Library Service — Sửa lỗi sau bài thi",
+  "source_bank": "full_mock_part",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M32",
+  "source_package": "English_Skill_Lab_Dictation_M32_Full_Listening_Mocks_16-20.zip",
+  "source_entry_path": "ESL_Dictation_M32_Full_Mocks_16_20/01_TESTS_SERVER_ONLY/M32-LISTENING-MOCK-17.SERVER_ONLY.json",
+  "source_test_id": "M32-LISTENING-MOCK-17",
+  "source_lesson_id": null,
+  "source_part_id": "M32-LISTENING-MOCK-17-P1",
+  "reuse_parent_id": "M32-LISTENING-MOCK-17-P1",
+  "source_question_id": "Q01",
+  "source_audio_id": "assessment/full_mock_part/M32-LISTENING-MOCK-17-P1",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": "M32-AUD-17-P1",
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T06",
+    "T09",
+    "T14"
+  ],
+  "segment_timing": {
+    "T06": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "252e9fc72f687779378d9ddada8b267fdd8d93b6199e403129591bd21a14d1ec"
+    },
+    "T09": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "603f1ff6f5ce714ad08dc460c41259489eef795d3d5581f99482a75617721b74"
+    },
+    "T14": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "715d37642027dce4f6c5615559e17620e4e023d5a5bdc7cb5223f8f90b85d5db"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "bd62dfffbbb32bd62c128d9eb3b565321156d30e885ad2a7a26ad52300325263",
+  "anchor_turn_id": "T06",
+  "teacher_only_evidence_text_en": "The standard borrowing card is for customers who visit the van. My father needs the home delivery category because he cannot reliably walk to the stop.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-145-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Membership category: ____",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "home delivery"
+      ],
+      "spoken_answer": "home delivery",
+      "word_limit": 3,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q01",
+      "source_question_type": "form_completion",
+      "play_turn_ids": [
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "teacher_explanation_vi": "Đáp án biên soạn: home delivery. Giáo viên phải nghe âm thanh, đối chiếu câu nói T06 và kiểm tra tính duy nhất của câu trả lời.",
+      "feedback_vi": "Đáp án gốc: home delivery. Đối chiếu với các lượt thoại T06; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-145-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q01",
+      "source_question_prompt_en": "Membership category: ____",
+      "choices": [
+        {
+          "key": "T14",
+          "excerpt_en": "The fourteenth of August is the usual second round, but his first delivery is arranged for 7 August.",
+          "source_turn_id": "T14"
+        },
+        {
+          "key": "T09",
+          "excerpt_en": "The address was once printed as Birch Road, but the delivery district is Birch Lane, the small street beside the allotments.",
+          "source_turn_id": "T09"
+        },
+        {
+          "key": "T06",
+          "excerpt_en": "The standard borrowing card is for customers who visit the van. My father needs the home delivery category because he cannot reliably walk to the stop.",
+          "source_turn_id": "T06"
+        }
+      ],
+      "correct_answers": [
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_text_sha256": "252e9fc72f687779378d9ddada8b267fdd8d93b6199e403129591bd21a14d1ec",
+      "play_turn_ids": [
+        "T14",
+        "T09",
+        "T06"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T06. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-145-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "…My father  [____]  because he cannot reliably walk to the stop.…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "needs the home delivery category"
+      ],
+      "play_turn_ids": [
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "source_excerpt_exact": "needs the home delivery category",
+      "evidence_char_start": 74,
+      "evidence_char_end": 106,
+      "source_turn_sha256": "252e9fc72f687779378d9ddada8b267fdd8d93b6199e403129591bd21a14d1ec",
+      "feedback_vi": "Cụm nghe-chép chính xác là “needs the home delivery category”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "home delivery"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T06"
+    ],
+    "raw_question_evidence_excerpt_en": "The standard borrowing card is for customers who visit the van. My father needs the home delivery category because he cannot reliably walk to the stop.",
+    "original_explanation_vi": "Đáp án biên soạn: home delivery. Giáo viên phải nghe âm thanh, đối chiếu câu nói T06 và kiểm tra tính duy nhất của câu trả lời."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_1",
+    "form_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q01",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "M32-LISTENING-MOCK-17",
+    "gate_kind": "whole_mock_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}
