@@ -128,7 +128,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
 
   const showLibrary = !demoMode && Boolean(bankSkill);
   if (showLibrary && bankSkill && (skill === "reading" || skill === "listening")) {
-    return <main className={`ielts-dashboard ielts-dashboard-${config.tone} has-library ${skill === "listening" ? "has-listening-page" : ""}`}>
+    return <main className={`ielts-dashboard ielts-dashboard-${config.tone} has-library`}>
       <div className="ielts-dashboard-titlebar">
         <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
         <h1>{config.title}</h1>
@@ -136,7 +136,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
         {skill === "listening" && <Link className="ielts-dashboard-start" href="/app/listening/vocabulary">Học 1.200 từ IELTS Listening <ArrowRight size={17} /></Link>}
         {skill === "reading" && <Link className="ielts-dashboard-start" href="/app/reading/vocabulary">Học 607 từ IELTS Reading <ArrowRight size={17} /></Link>}
       </div>
-      <BankLibrary skill={bankSkill} standaloneListening={skill === "listening"} />
+      <BankLibrary skill={bankSkill} />
     </main>;
   }
   return <main className={`ielts-dashboard ielts-dashboard-${config.tone} ${bankSkill ? "has-library" : ""}`}>
