@@ -30,9 +30,9 @@ export default async function GuestHome() {
         <p>Khám phá lộ trình từ nền tảng đến IELTS, luyện sáu kỹ năng bằng bài học soạn sẵn và giữ từ mới, ghi chú, lịch sử học trong một cuốn sổ tay.</p>
         <div className="guest-actions">
           <Link href="/register" className="button primary">Bắt đầu học <ArrowRight size={17} /></Link>
-          <Link href="/courses" className="button subtle">Xem lộ trình</Link>
+          <Link href="/app/dashboard" className="button subtle">Xem student portal</Link>
         </div>
-        <small>Khách có thể xem khóa học. Đăng nhập để luyện tập và lưu tiến độ.</small>
+        <small>Khách có thể xem student portal và khóa học. Đăng nhập để luyện tập và lưu tiến độ.</small>
         <dl className="guest-facts">
           <div><dt>4</dt><dd>chặng học, hướng tới band 7.5</dd></div>
           <div><dt>6</dt><dd>kỹ năng IELTS trong một nơi</dd></div>

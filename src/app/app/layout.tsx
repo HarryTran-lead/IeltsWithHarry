@@ -2,7 +2,6 @@ import "../news.css";
 import "../community.css";
 import "../study-room.css";
 import "../learning-journey.css";
-import { redirect } from "next/navigation";
 import { SuspendedNotice } from "@/components/account/suspended-notice";
 import { StudyPresenceProvider } from "@/features/study-room/study-presence";
 import { StudyRoomLayer } from "@/features/study-room/study-room-layer";
@@ -14,7 +13,7 @@ import { getViewerRole } from "@/lib/viewer-role";
 export default async function StudentLayout({ children }: { children: React.ReactNode }) {
   if (!demoMode && !supabaseConfigured) return children;
   const role = await getViewerRole();
-  if (role === "guest") redirect("/login");
+  if (role === "guest") return children;
   if (!demoMode && role === "student") {
     // An admin can suspend a learner; the portal stays closed until the suspension ends.
     const supabase = await createClient();

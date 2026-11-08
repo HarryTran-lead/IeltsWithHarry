@@ -2,9 +2,11 @@ import { notFound, redirect } from "next/navigation";
 import { CourseAssessment } from "@/features/learning/course-assessment";
 import { createClient } from "@/lib/supabase/server";
 import { learnStageAvailable } from "@/lib/runtime";
+import { getViewerRole } from "@/lib/viewer-role";
 
 export default async function CheckPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if ((await getViewerRole()) === "guest") redirect(`/login?next=${encodeURIComponent(`/app/check/${slug}`)}`);
   const supabase = await createClient();
   const { data: claims } = await supabase.auth.getClaims();
   if (!claims?.claims) redirect("/login");

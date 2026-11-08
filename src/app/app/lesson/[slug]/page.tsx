@@ -11,9 +11,11 @@ import { skillMaterialSchema } from "@/lib/skill-material";
 
 export default async function LessonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const role = await getViewerRole();
+  if (role === "guest") redirect(`/login?next=${encodeURIComponent(`/app/lesson/${slug}`)}`);
   const isBook2Lesson = book2Catalog.units.some((unit) => unit.lessons.some((item) => item.slug === slug));
   if (demoMode && isBook2Lesson) return <Book2LessonRoute slug={slug} canManage={false} />;
-  if (demoMode) return <Portal canManage={(await getViewerRole()) === "admin"} />;
+  if (demoMode) return <Portal canManage={role === "admin"} />;
   if (!supabaseConfigured) return <main className="setup-notice"><h1>Backend setup required</h1><p>Connect Supabase to see published lessons.</p></main>;
   const supabase = await createClient();
   const { data: claims } = await supabase.auth.getClaims();

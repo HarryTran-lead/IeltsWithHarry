@@ -1,0 +1,47 @@
+.guest-portal { min-height: 100vh; display: grid; grid-template-columns: 244px minmax(0, 1fr); grid-template-rows: 64px minmax(0, 1fr); color: var(--navy); }
+.guest-portal-header { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; padding: 0 24px; background: #fff; border-bottom: 1px solid var(--line); z-index: 2; }
+.guest-portal-brand { display: inline-flex; align-items: center; gap: 9px; font-size: 19px; font-weight: 700; white-space: nowrap; }
+.guest-portal-brand b { color: var(--teal-strong); }
+.guest-portal-badge { border-radius: 99px; padding: 5px 10px; background: var(--sun-soft); color: #8a6015; font-size: 12px; font-weight: 700; }
+.guest-portal-header-actions { margin-left: auto; display: flex; align-items: center; gap: 18px; font-size: 13px; font-weight: 700; }
+.guest-portal-header-actions > a:first-child:hover { color: var(--teal-strong); }
+.guest-portal-sidebar { grid-column: 1; grid-row: 2; position: sticky; top: 0; height: calc(100vh - 64px); overflow-y: auto; background: #fff; border-right: 1px solid var(--line); padding: 20px 12px; }
+.guest-portal-sidebar nav { display: grid; gap: 20px; }
+.guest-portal-nav-group { display: grid; gap: 3px; }
+.guest-portal-nav-group > span { padding: 0 11px 7px; color: var(--subtle); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.guest-portal-nav-group a { display: flex; align-items: center; gap: 11px; min-height: 39px; padding: 8px 11px; border-radius: 11px; font-size: 13px; font-weight: 650; color: var(--ink); }
+.guest-portal-nav-group a:hover, .guest-portal-nav-group a[aria-current="page"] { background: var(--teal-soft); color: var(--teal-strong); }
+.guest-portal-sidebar-note { margin-top: 28px; padding: 16px; background: var(--sun-soft); border-radius: 16px; font-size: 13px; }
+.guest-portal-sidebar-note p { margin: 7px 0 12px; color: var(--muted); line-height: 1.5; }
+.guest-portal-sidebar-note a { display: inline-flex; gap: 5px; align-items: center; color: var(--teal-strong); font-weight: 800; }
+.guest-portal-main { grid-column: 2; grid-row: 2; min-width: 0; padding: 35px clamp(20px, 4vw, 60px) 64px; background: var(--dot-grid) 0 0 / 22px 22px, var(--paper); }
+.guest-portal-main > * { max-width: 1100px; margin-left: auto; margin-right: auto; }
+.guest-portal-intro > span, .guest-portal-banner span, .guest-portal-gate > span { color: var(--teal-strong); font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+.guest-portal-intro h1 { font-size: clamp(30px, 4vw, 45px); line-height: 1.1; margin: 7px 0 9px; }
+.guest-portal-intro p { margin: 0 0 25px; color: var(--muted); }
+.guest-portal-banner { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: clamp(23px, 4vw, 42px); border-radius: 22px; background: linear-gradient(115deg, #e2f5f4, #fff8e3); border: 1px solid #d9ebe5; box-shadow: var(--shadow); }
+.guest-portal-banner h2 { font-size: clamp(22px, 3vw, 32px); line-height: 1.2; margin: 8px 0; }
+.guest-portal-banner p { max-width: 610px; margin: 0 0 18px; color: var(--ink); line-height: 1.6; }
+.guest-portal-banner > svg { flex: none; }
+.guest-portal-card { margin-top: 20px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: clamp(22px, 3vw, 32px); box-shadow: var(--shadow); }
+.guest-portal-card h2 { font-size: 21px; margin: 0 0 7px; }
+.guest-portal-card > p, .guest-portal-locked p { color: var(--muted); margin: 0 0 18px; }
+.guest-portal-quicklinks { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 18px; }
+.guest-portal-quicklinks a { display: flex; align-items: center; gap: 9px; padding: 15px; border: 1px solid var(--line); border-radius: 13px; }
+.guest-portal-quicklinks a:hover { border-color: var(--teal); background: var(--teal-soft); }
+.guest-portal-quicklinks a svg:last-child { margin-left: auto; }
+.guest-portal-features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.guest-portal-features > div { min-height: 140px; padding: 19px; border-radius: 15px; background: var(--surface-2); }
+.guest-portal-features span { display: block; color: var(--teal-strong); font-size: 12px; font-weight: 800; margin-bottom: 12px; }
+.guest-portal-features strong { display: block; }
+.guest-portal-features p { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 7px 0 0; }
+.guest-portal-public-link { display: inline-flex; align-items: center; gap: 5px; color: var(--teal-strong); font-weight: 750; margin-top: 20px; }
+.guest-portal-locked { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.guest-portal-locked p { margin: 0; }
+.guest-portal-locked > div:last-child, .guest-portal-gate > div { display: flex; gap: 10px; flex-wrap: wrap; }
+.guest-portal-gate { margin-top: 8vh; padding: clamp(30px, 5vw, 58px); }
+.guest-portal-gate h1 { font-size: clamp(29px, 4vw, 42px); margin: 8px 0 10px; }
+.guest-portal-gate p { max-width: 560px; color: var(--muted); line-height: 1.6; }
+.guest-portal-menu-button, .guest-portal-close, .guest-portal-backdrop { display: none; }
+@media (max-width: 800px) { .guest-portal { display: block; } .guest-portal-header { height: 64px; padding: 0 14px; } .guest-portal-menu-button { display: inline-grid; place-items: center; } .guest-portal-sidebar { position: fixed; z-index: 11; inset: 0 auto 0 0; width: min(290px, 85vw); height: 100vh; translate: -105% 0; transition: translate .25s ease; box-shadow: 15px 0 35px #10233f22; } .guest-portal-sidebar.open { translate: 0 0; } .guest-portal-close { display: grid; margin-left: auto; margin-bottom: 12px; } .guest-portal-backdrop { display: block; position: fixed; z-index: 10; inset: 0; background: #10233f66; } .guest-portal-main { min-height: calc(100vh - 64px); } }
+@media (max-width: 620px) { .guest-portal-badge { display: none; } .guest-portal-header-actions { gap: 8px; } .guest-portal-header-actions .button { display: none; } .guest-portal-brand { font-size: 16px; } .guest-portal-brand svg { width: 30px; } .guest-portal-banner > svg { display: none; } .guest-portal-features { grid-template-columns: 1fr; } .guest-portal-features > div { min-height: 0; } .guest-portal-locked { align-items: flex-start; flex-direction: column; } }
