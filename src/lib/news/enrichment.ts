@@ -199,12 +199,13 @@ function geminiModels() {
  * configured model; anything else fails the request.
  */
 export type GeminiPart = { text: string } | { inlineData: { mimeType: string; data: string } };
-export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4 }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number } = {}): Promise<{ model: string; data: T }> {
+export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean } = {}): Promise<{ model: string; data: T }> {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw new Error("GEMINI_API_KEY is not configured");
   const request = JSON.stringify({
     systemInstruction: { parts: [{ text: system }] },
     contents: [{ role: "user", parts: typeof user === "string" ? [{ text: user }] : user }],
+    ...(googleSearch ? { tools: [{ googleSearch: {} }] } : {}),
     generationConfig: { maxOutputTokens, temperature, responseFormat: { text: { mimeType: "APPLICATION_JSON", schema } } },
   });
   let lastError: Error = new Error("AI service unavailable");
@@ -569,6 +570,12 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
     if (translated.error) result.errors.push(`Translation: ${translated.error}`);
     if (translated.quotaLimited) result.quotaLimited = true;
     if (translated.checked) return result;
+  }
+  // Separate scheduled slots search independently sourced facts for press-discovered events.
+  if (!scheduled || new Date().getUTCMinutes() % 20 === 15) {
+    const { discoverPressFacts } = await import("./press-discovery");
+    await discoverPressFacts(db, result, settings);
+    if (result.rewritesChecked) return result;
   }
   // On scheduled runs, give the available AI capacity to recent article images
   // first. Quiz work uses the other ten-minute slots.
