@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { rankStories, readHotSignals, rewriteLengthPlan, storyText, verifyRewrite, writeVietnamArticle, type RewriteSentence, type StoryCandidate } from "../src/lib/news/rewrite";
+import { prioritizeDiverseStories, rankStories, readHotSignals, rewriteLengthPlan, storyText, verifyRewrite, writeVietnamArticle, type RewriteSentence, type StoryCandidate } from "../src/lib/news/rewrite";
 import { choiceTypes, gapTypes, typesForKey } from "../src/lib/news/ielts-passage";
 import { newsHash, type NewsSource } from "../src/lib/news/providers";
 
@@ -41,6 +41,18 @@ describe("choosing the hottest story for young readers", () => {
     ], new Map(), now);
     expect(ranked).toHaveLength(1);
     expect(ranked[0].hot).toBe(20);
+  });
+  it("favors a less represented subject and publisher while retaining popularity as a signal", () => {
+    const business = story("https://e.vnexpress.net/news/business/economy/rice-exports-1000003.html", "Rice exports rise in third quarter", 2);
+    const culture = story("https://news.tuoitre.vn/new-film-festival-103261025000000001.htm", "Young filmmakers open a new festival", 2, ttSource);
+    culture.item.category = "Culture";
+    const ranked = rankStories([business, culture], new Map([
+      [business.item.canonical_hash, { mostRead: 1, top: true }],
+      [culture.item.canonical_hash, { mostRead: 2 }],
+    ]), now);
+    expect(ranked[0].item.category).toBe("World News");
+    expect(prioritizeDiverseStories(ranked, Array.from({ length: 3 }, () => ({ category: "World News", source_id: vnSource.id })))[0].item.category).toBe("Culture");
+    expect(prioritizeDiverseStories(ranked, [])[0].item.category).toBe("World News");
   });
 });
 
@@ -127,8 +139,8 @@ describe("AI rewrite pipeline", () => {
   };
   const reply = (value: unknown) => new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] }), { status: 200 });
   const sentenceCount = 26;
-  /** Answers the writer, the fact-checker and the quiz request by their prompts. */
-  async function run(verdict: (index: number) => string, writers: unknown[] = [writerReply]) {
+  /** Answers the writer, fact-checker, originality reviewer and quiz by their prompts. */
+  async function run(verdict: (index: number) => string, writers: unknown[] = [writerReply], originality: unknown = { decision: "APPROVE", reason: "Independent structure and wording" }) {
     const previous = process.env.GEMINI_API_KEY; process.env.GEMINI_API_KEY = "test-key";
     const requests: string[] = [];
     let drafts = 0;
@@ -136,6 +148,7 @@ describe("AI rewrite pipeline", () => {
       const body = String(init?.body); requests.push(body);
       if (body.includes("Truth rules")) return reply(writers[Math.min(drafts++, writers.length - 1)]);
       if (body.includes("strict fact-checker")) return reply({ verdicts: Array.from({ length: sentenceCount }, (_, i) => ({ index: i + 1, verdict: verdict(i + 1) })) });
+      if (body.includes("conservative editorial screen")) return reply(originality);
       return reply(quizReply);
     };
     try { return { result: await writeVietnamArticle(story, fetcher as typeof fetch), requests }; }
@@ -144,21 +157,26 @@ describe("AI rewrite pipeline", () => {
   const supported = (index: number) => index === 1 ? "BACKGROUND" : "SUPPORTED";
   const invented = { ...writerReply, sentences: [...writerReply.sentences, { paragraph: 5, text: "The rescue cost 900 dollars, officials in Hanoi said later.", source_quote: cited[0].source_quote }] };
 
-  it("writes and fact-checks in three requests, leaving an invalid quiz for the worker", async () => {
+  it("screens facts and originality before requesting a quiz", async () => {
     const { result, requests } = await run(supported);
-    expect(requests).toHaveLength(3);
+    expect(requests).toHaveLength(4);
     expect(requests[0]).toContain("Truth rules");
     expect(requests[1]).toContain("strict fact-checker");
-    expect(requests[2]).toContain("IELTS Academic Reading");
-    expect(requests[2]).not.toContain("SOURCE");
+    expect(requests[2]).toContain("conservative editorial screen");
+    expect(requests[3]).toContain("IELTS Academic Reading");
+    expect(requests[3]).not.toContain("SOURCE");
     expect(result.questions).toHaveLength(0);
     expect(requests[0]).not.toContain("TARGET: Passage");
-    expect(requests[2]).not.toContain("target band");
+    expect(requests[3]).not.toContain("target band");
     expect(result.body.split(/\s+/).length).toBeGreaterThanOrEqual(280);
     expect(result.imageQuery).toBe("");
   });
   it("rejects the article when the fact-checker finds an unsupported sentence", async () => {
     await expect(run((index) => index === 7 ? "UNSUPPORTED" : "SUPPORTED")).rejects.toThrow(/Fact-check UNSUPPORTED/);
+  });
+  it("fails closed when the originality reviewer rejects or omits approval", async () => {
+    await expect(run(supported, [writerReply], { decision: "REJECT", reason: "Same narrative sequence" })).rejects.toThrow(/Originality review rejected/);
+    await expect(run(supported, [writerReply], { decision: "APPROVE" })).rejects.toThrow(/Originality review rejected/);
   });
   it("stops when the story is unsuitable or both drafts fail the code checks", async () => {
     await expect(run(supported, [{ ...writerReply, suitable: false }])).rejects.toThrow(/unsuitable/);
@@ -166,7 +184,7 @@ describe("AI rewrite pipeline", () => {
   });
   it("gives a rejected draft one revision with the reason and leaves the quiz to the worker", async () => {
     const { result, requests } = await run(supported, [invented, writerReply]);
-    expect(requests).toHaveLength(3);
+    expect(requests).toHaveLength(4);
     expect(requests[1]).toContain("previous draft was rejected");
     expect(requests[1]).toMatch(/Number 900|Name/);
     expect(result.questions).toHaveLength(0);
