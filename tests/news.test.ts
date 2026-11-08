@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
-import { assertApprovedFeedUrl, canonicalUrl, fetchGovUkBody, fetchOceanServiceBody, gdeltProvider, parseGlobalVoicesBodies, nasaArticleText, newsHash, normalizeGdelt, oceanServiceArticleText, parseNasaNewsBodies, parseNoaaNewsBodies, parsePublishedDate, parseRss, parseRssImages, rssProvider, type NewsSource } from "../src/lib/news/providers";
+import { assertApprovedFeedUrl, canonicalUrl, fetchGovUkBody, fetchOceanServiceBody, gdeltProvider, interestTopicsForTitle, parseGlobalVoicesBodies, nasaArticleText, newsHash, normalizeGdelt, oceanServiceArticleText, parseNasaNewsBodies, parseNoaaNewsBodies, parsePublishedDate, parseRss, parseRssImages, rssProvider, type NewsSource } from "../src/lib/news/providers";
 import { nextWordReview } from "../src/lib/news/review";
 import { recommendReadings } from "../src/lib/news/recommend";
 
@@ -86,6 +86,8 @@ describe("news providers", () => {
     expect(parseGlobalVoicesBodies(`<rss><channel>${item('<p class="originally-published">Originally published on Global Voices</p>')}</channel></rss>`, gv)).toHaveLength(1);
     expect(parseGlobalVoicesBodies(`<rss><channel>${item("<p>This article was originally published by Partner Media and is republished as part of a content-sharing agreement.</p>")}</channel></rss>`, gv)).toHaveLength(0);
     expect(parseGlobalVoicesBodies(`<rss><channel>${item()}</channel></rss>`, source)).toHaveLength(0);
+    expect(parseGlobalVoicesBodies(`<rss><channel>${item()}</channel></rss>`, { ...gv, feed_url: "https://globalvoices.org/-/topics/film/feed/" })).toHaveLength(1);
+    expect(interestTopicsForTitle("A film festival brings good news")).toEqual(["entertainment", "curious"]);
   });
   it("reads GOV.UK article text through the Content API and stops at notes to editors", async () => {
     const paragraph = "The new guidance helps schools support pupils who need extra help with reading and writing in English. ";

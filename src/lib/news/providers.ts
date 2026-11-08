@@ -5,8 +5,8 @@ import { load } from "cheerio";
 import { NEWS_CATEGORIES, type NewsCategory } from "./constants";
 
 export { NEWS_CATEGORIES };
-export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number; archive_next_page: number | null };
-export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
+export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; origin_region?: "vietnam" | "international"; interest_topic?: "conflict" | "entertainment" | "curious" | null; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number; archive_next_page: number | null };
+export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; origin_region: "vietnam" | "international"; interest_topics: string[]; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
 export type NewsBodyCandidate = { canonical_hash: string; body_text: string; rights_basis: string; source_url: string; image_url: string | null; image_alt: string | null; image_credit: string | null; image_rights_basis: string | null; byline?: string | null };
 export type NewsImageCandidate = { canonical_hash: string; source_url: string; image_url: string; image_alt: string; image_credit: string; image_rights_basis: string };
 /** `summaries` holds RSS descriptions in memory only, as fact evidence for AI-written articles; they are never stored. */
@@ -14,6 +14,13 @@ export type FetchResult = { items: NewsItem[]; bodies?: NewsBodyCandidate[]; ima
 export interface NewsProvider { readonly kind: NewsSource["provider"]; fetch(source: NewsSource, fetcher?: typeof fetch, archivePage?: number): Promise<FetchResult> }
 
 const sensitive = /\b(killed|murder|shooting|bomb|war|attack|assault|graphic|suicide|abuse)\b/i;
+export function interestTopicsForTitle(title: string): string[] {
+  const topics: string[] = [];
+  if (/\b(war|conflict|invasion|ceasefire|military|airstrike|battle|refugees?)\b/i.test(title)) topics.push("conflict");
+  if (/\b(film|movie|cinema|music|concert|actor|actress|celebrity|drama|television|festival)\b/i.test(title)) topics.push("entertainment");
+  if (/\b(humou?r|funny|quirky|unusual|good news|uplifting|heartwarming|surprise)\b/i.test(title)) topics.push("curious");
+  return topics;
+}
 const cleanText = (value: unknown, max: number) => String(value ?? "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim().slice(0, max);
 export function parsePublishedDate(value: unknown): string | null {
   if (!value) return null;
@@ -40,8 +47,8 @@ function makeItem(source: NewsSource, raw: { url: unknown; title: unknown; date:
   if (!canonical_url || title.length < 5 || !published_at || !/^(en|english)$/i.test(language)) return null;
   const flagged = sensitive.test(title);
   return { source_id: source.id, provider: source.provider, external_id: raw.externalId ? cleanText(raw.externalId, 400) : null,
-    canonical_hash: newsHash(canonical_url), canonical_url, title, publisher: cleanText(raw.publisher || source.name, 150), language: "English",
-    category: source.category, published_at, publication_status: source.auto_publish && !flagged && source.reviewed_basis.length >= 12 && ["METADATA_ONLY","FULL_REUSE_ALLOWED"].includes(source.policy_status) ? "published" : "review",
+    canonical_hash: newsHash(canonical_url), canonical_url, title, publisher: cleanText(raw.publisher || (source.name.startsWith("Global Voices") ? "Global Voices" : source.name), 150), language: "English",
+    category: source.category, origin_region: source.origin_region ?? "international", interest_topics: [...new Set([...interestTopicsForTitle(title), ...(source.interest_topic ? [source.interest_topic] : [])])], published_at, publication_status: source.auto_publish && !flagged && source.reviewed_basis.length >= 12 && ["METADATA_ONLY","FULL_REUSE_ALLOWED"].includes(source.policy_status) ? "published" : "review",
     attribution_text: source.attribution_text, sensitive: flagged, metadata: {} };
 }
 
@@ -103,7 +110,7 @@ export function parseRss(xml: string, source: NewsSource): NewsItem[] {
   return entries.map((row) => {
     return makeItem(source, { url: rss ? xmlText(row.link) : atomLink(row.link), title: xmlText(row.title),
       date: row.pubDate ?? row["dc:date"] ?? row.published ?? row.updated,
-      publisher: source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
+      publisher: source.name.startsWith("Global Voices") ? "Global Voices" : source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
   }).filter((item): item is NewsItem => item !== null);
 }
 
@@ -275,7 +282,7 @@ export const globalVoicesFeedUrl = "https://globalvoices.org/feed/";
 const globalVoicesRightsBasis = "Global Voices Republishing Guidelines: content created by Global Voices is licensed CC BY 3.0; credit the author and link to the original at the top; third-party works excluded. https://globalvoices.org/about/global-voices-attribution-policy/";
 /** Global Voices full text with its author byline; partner and third-party pieces stay link-only. */
 export function parseGlobalVoicesBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
-  if (source.feed_url !== globalVoicesFeedUrl || hasUnsafeXmlDeclaration(xml)) return [];
+  if (!source.feed_url || !/^https:\/\/globalvoices\.org\/(?:feed\/|\-\/topics\/(?:war-conflict|film|humor|good-news)\/feed\/)$/i.test(source.feed_url) || hasUnsafeXmlDeclaration(xml)) return [];
   const { rss, entries } = rssEntries(xml);
   if (!rss) return [];
   return entries.slice(0, 50).flatMap((row) => {

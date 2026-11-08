@@ -33,12 +33,20 @@ async function ingest(db: AdminClient, response: FetchResult, requireBody: boole
   for (const group of batches(unique)) {
     const hashes = group.map((item) => item.canonical_hash);
     const [{ data: existing, error: existingError }, { data: skipped, error: skippedError }] = await Promise.all([
-      db.from("news_articles").select("canonical_hash").in("canonical_hash", hashes),
+      db.from("news_articles").select("id,canonical_hash,interest_topics").in("canonical_hash", hashes),
       db.from("news_skipped_urls").select("canonical_hash").in("canonical_hash", hashes),
     ]);
     if (existingError) throw existingError;
     if (skippedError) throw skippedError;
     const known = new Set([...(existing ?? []), ...(skipped ?? [])].map((row) => row.canonical_hash));
+    for (const article of existing ?? []) {
+      const incoming = group.find((item) => item.canonical_hash === article.canonical_hash)?.interest_topics ?? [];
+      const merged = [...new Set([...(article.interest_topics ?? []), ...incoming])];
+      if (merged.length > (article.interest_topics ?? []).length) {
+        const { error } = await db.from("news_articles").update({ interest_topics: merged }).eq("id", article.id);
+        if (error) throw error;
+      }
+    }
     const fresh = group.filter((item) => !known.has(item.canonical_hash));
     if (fresh.length) {
       const { error } = await db.from("news_articles").upsert(fresh, { onConflict: "canonical_hash", ignoreDuplicates: true });

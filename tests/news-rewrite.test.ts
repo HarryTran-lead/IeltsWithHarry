@@ -9,7 +9,7 @@ describe("choosing the hottest story for young readers", () => {
   const ttSource = { ...vnSource, id: "s2", name: "Tuoi Tre News", feed_url: "https://news.tuoitre.vn/rss" } as NewsSource;
   const story = (url: string, title: string, hoursAgo: number, source = vnSource, summary = ""): StoryCandidate => ({
     source, summary, item: { source_id: source.id, provider: "rss", external_id: null, canonical_hash: newsHash(url), canonical_url: url, title, publisher: source.name, language: "English",
-      category: "World News", published_at: new Date(now - hoursAgo * 3600000).toISOString(), publication_status: "published", attribution_text: "", sensitive: false, metadata: {} },
+      category: "World News", origin_region: "vietnam", interest_topics: [], published_at: new Date(now - hoursAgo * 3600000).toISOString(), publication_status: "published", attribution_text: "", sensitive: false, metadata: {} },
   });
   const homepage = `<div class="item-topstory item-top1"><a href="https://e.vnexpress.net/news/news/top-story-1000001.html">Top</a></div>
     <div class="content_tab content_tab_most_read"><div class="item_most_read"><a href="https://e.vnexpress.net/news/life/trend/students-flock-to-cafes-1000002.html">A</a></div><div class="item_most_read"><a href="https://e.vnexpress.net/news/business/economy/rice-exports-1000003.html">B</a></div></div>
