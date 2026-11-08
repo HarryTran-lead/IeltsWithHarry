@@ -21,5 +21,6 @@ export const factDossierSchema = z.object({
 }).superRefine((dossier, ctx) => {
   const unique = new Set(dossier.facts.map((fact) => fact.claim.toLocaleLowerCase("en").replace(/\W+/g, " ")));
   if (unique.size < 8) ctx.addIssue({ code: "custom", message: "At least eight distinct verified facts are required", path: ["facts"] });
+  if (new Set(dossier.facts.map((fact) => fact.source_url)).size > 4) ctx.addIssue({ code: "custom", message: "Use at most four primary or open source pages per article", path: ["facts"] });
 });
 export type FactDossier = z.infer<typeof factDossierSchema>;

@@ -34,7 +34,7 @@ export function AdminNewsFacts() {
   }
 
   return <section className="card admin-news-panel"><h2>Tạo bài từ hồ sơ dữ kiện</h2>
-    <p>Chỉ nhập các dữ kiện ngắn đã kiểm tra từ nguồn gốc hoặc nguồn mở được duyệt. Mỗi dòng: dữ kiện | URL HTTPS. Không dán toàn văn, tiêu đề, đoạn trích hoặc ảnh của báo. Thiếu tám dữ kiện riêng biệt thì bỏ tin.</p>
+    <p>Chỉ nhập các dữ kiện ngắn từ nguồn gốc hoặc nguồn mở được duyệt. Mỗi dòng: dữ kiện | URL HTTPS. Hệ thống đọc tối đa bốn trang nguồn để kiểm tra từng dữ kiện trước khi viết. Không dán toàn văn, tiêu đề, đoạn trích hoặc ảnh của báo. Thiếu tám dữ kiện riêng biệt thì bỏ tin.</p>
     <form className="admin-news-form" onSubmit={(event) => void submit(event)}>
       <label className="wide">Chủ đề do biên tập viên đặt<input required minLength={12} maxLength={160} value={topic} onChange={(event) => setTopic(event.target.value)} /></label>
       <label>Danh mục<select value={category} onChange={(event) => setCategory(event.target.value as typeof category)}>{NEWS_CATEGORIES.map((item) => <option key={item}>{item}</option>)}</select></label>
