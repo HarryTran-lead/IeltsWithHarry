@@ -118,6 +118,25 @@ begin
 end;
 $$;
 
+create function public.news_fact_dossier_body_guard() returns trigger
+language plpgsql security definer set search_path = '' as $$
+declare v_article_id uuid; v_live boolean;
+begin
+  v_article_id := old.article_id;
+  if not exists (select 1 from public.news_fact_dossiers where article_id = v_article_id) then
+    return case when TG_OP = 'DELETE' then old else new end;
+  end if;
+  if TG_OP = 'UPDATE' and new.body_text is not distinct from old.body_text
+    and new.source_url is not distinct from old.source_url then return new; end if;
+  select publication_status = 'published' into v_live from public.news_articles where id = v_article_id;
+  if v_live then raise exception 'Unpublish and re-review the fact dossier before changing the original article'; end if;
+  update public.news_fact_dossiers set reviewed_by = null, reviewed_at = null where article_id = v_article_id;
+  return case when TG_OP = 'DELETE' then old else new end;
+end;
+$$;
+create trigger news_fact_dossier_body_guard before update or delete on public.news_article_bodies
+for each row execute function public.news_fact_dossier_body_guard();
+
 -- Primary-source search and verification can require several bounded model calls.
 select cron.schedule('ieltswithharry-news-enrich-10m', '5,15,25,35,45,55 * * * *', $cron$
   select net.http_post(
