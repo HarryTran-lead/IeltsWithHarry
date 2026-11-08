@@ -19,6 +19,7 @@ export function AdminRightsEvidence() {
   const [author, setAuthor] = useState("");
   const [holder, setHolder] = useState("");
   const [documentRef, setDocumentRef] = useState("");
+  const [uploading, setUploading] = useState(false);
   const [scope, setScope] = useState("");
   const [web, setWeb] = useState(false);
   const [commercial, setCommercial] = useState(false);
@@ -26,6 +27,22 @@ export function AdminRightsEvidence() {
   const [records, setRecords] = useState<RecordRow[]>([]);
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
+
+  async function uploadDocument(file: File | undefined) {
+    if (!file) return;
+    setMessage("");
+    if (!uuid.test(id)) { setMessage("Nhập ID nội dung trước khi tải văn bản."); return; }
+    const allowed: Record<string, string> = { "application/pdf": "pdf", "text/plain": "txt", "image/png": "png", "image/jpeg": "jpg" };
+    const extension = allowed[file.type];
+    if (!extension || file.size > 5 * 1024 * 1024) { setMessage("Chỉ nhận PDF, TXT, PNG hoặc JPG tối đa 5 MB."); return; }
+    setUploading(true);
+    const path = `${kind}/${id}/${crypto.randomUUID()}.${extension}`;
+    const result = await db.storage.from("rights-evidence").upload(path, file, { contentType: file.type, upsert: false });
+    setUploading(false);
+    if (result.error) { setMessage(`Không tải được văn bản: ${result.error.message}`); return; }
+    setDocumentRef(`rights-evidence/${path}`);
+    setMessage("Đã lưu văn bản trong kho riêng. Hoàn tất thông tin bên dưới để ghi hồ sơ quyền.");
+  }
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -73,7 +90,7 @@ export function AdminRightsEvidence() {
   }
 
   return <section className="card admin-news-panel"><h2>Hồ sơ quyền nội dung</h2>
-    <p>Mỗi bài hoặc gói đề cần hồ sơ phần chữ. Thêm một hồ sơ riêng cho từng URL audio và ảnh. Lưu văn bản cho phép trong kho riêng, rồi ghi đường dẫn cố định tại đây.</p>
+    <p>Mỗi bài hoặc gói đề cần hồ sơ phần chữ. Thêm một hồ sơ riêng cho từng URL audio và ảnh. Tải văn bản cho phép vào kho riêng; URL giấy phép công khai chỉ dùng khi điều khoản cho phép đúng phạm vi bên dưới. Đường dẫn bài báo không phải bằng chứng cho phép.</p>
     <form className="admin-news-form" onSubmit={(event) => void save(event)}>
       <label>Loại nội dung<select value={kind} onChange={(event) => setKind(event.target.value as Kind)}><option value="ielts_exam">Đề IELTS</option><option value="course">Khóa học</option><option value="lesson">Bài học</option><option value="news_article">Tin Daily News</option><option value="news_learning">Bài học Daily News</option></select></label>
       <label>ID nội dung<input required value={id} onChange={(event) => setId(event.target.value.trim())} placeholder="UUID của bản nháp" /></label>
@@ -83,7 +100,8 @@ export function AdminRightsEvidence() {
       <label>SHA-256 gói ZIP<input value={packageHash} onChange={(event) => setPackageHash(event.target.value)} /></label>
       <label>Tác giả<input required minLength={2} value={author} onChange={(event) => setAuthor(event.target.value)} /></label>
       <label>Chủ sở hữu quyền<input required minLength={2} value={holder} onChange={(event) => setHolder(event.target.value)} /></label>
-      <label className="wide">Văn bản cho phép / đường dẫn hồ sơ<input required minLength={12} value={documentRef} onChange={(event) => setDocumentRef(event.target.value)} placeholder="rights-evidence/... hoặc HTTPS" /></label>
+      <label className="wide">Tải văn bản cho phép hoặc giấy tờ chứng minh quyền<input type="file" accept=".pdf,.txt,.png,.jpg,.jpeg" disabled={uploading} onChange={(event) => void uploadDocument(event.target.files?.[0])} /></label>
+      <label className="wide">Đường dẫn văn bản đã lưu hoặc URL giấy phép công khai<input required minLength={12} value={documentRef} onChange={(event) => setDocumentRef(event.target.value)} placeholder="rights-evidence/... hoặc https://..." /></label>
       <label className="wide">Phạm vi cho phép<textarea required minLength={20} rows={3} value={scope} onChange={(event) => setScope(event.target.value)} /></label>
       <label className="admin-check"><input type="checkbox" checked={web} onChange={(event) => setWeb(event.target.checked)} /> Cho đăng trên web</label>
       <label className="admin-check"><input type="checkbox" checked={commercial} onChange={(event) => setCommercial(event.target.checked)} /> Cho dùng thương mại</label>
