@@ -5,7 +5,7 @@ const httpUrl = z.string().url().refine((value) => /^https?:\/\//i.test(value), 
 const httpsUrl = z.string().url().refine((value) => value.startsWith("https://"), "Audio must use HTTPS");
 export const newsSourceSchema = z.object({
   name: z.string().trim().min(2).max(100),
-  provider: z.enum(["gdelt", "rss"]),
+  provider: z.enum(["gdelt", "rss", "ai_rewrite"]),
   feed_url: z.string().url().nullable(),
   category: z.enum(NEWS_CATEGORIES),
   policy_status: z.enum(["METADATA_ONLY", "FULL_REUSE_ALLOWED", "MANUAL_PERMISSION_REQUIRED", "DISABLED"]),
@@ -14,6 +14,7 @@ export const newsSourceSchema = z.object({
   auto_publish: z.boolean(),
   min_interval_minutes: z.number().int().min(30).max(1440),
 }).superRefine((value, ctx) => {
+  if (value.provider === "ai_rewrite" && (value.enabled || value.auto_publish)) ctx.addIssue({ code: "custom", message: "Single-publisher AI rewrites are disabled", path: ["enabled"] });
   if (value.provider === "rss" && (!value.feed_url || !value.feed_url.startsWith("https://"))) ctx.addIssue({ code: "custom", message: "RSS feed must use HTTPS", path: ["feed_url"] });
   if (value.enabled && (!(["METADATA_ONLY", "FULL_REUSE_ALLOWED"].includes(value.policy_status)) || value.reviewed_basis.trim().length < 12)) ctx.addIssue({ code: "custom", message: "Review and record the metadata-use basis before enabling", path: ["reviewed_basis"] });
   if (value.auto_publish && !value.enabled) ctx.addIssue({ code: "custom", message: "Enable the source before automatic publication", path: ["auto_publish"] });
