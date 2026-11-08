@@ -23,6 +23,7 @@
 .voa-lab .voa-stage-card{min-height:150px;padding:16px}
 .voa-stage-code{display:inline-flex;align-items:center;min-height:27px;padding:3px 8px;border-radius:7px;background:#e8f6f5;color:#087f89;font-size:12px;font-weight:850}
 .voa-stage-card strong{margin-top:12px}
+.voa-stage-audio-count{color:var(--voa-muted);font-size:12px;margin-top:8px}
 .voa-stage-card:disabled{opacity:.65}
 .voa-bank-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#e9f7f6;color:#008c98;font-size:21px}
 .voa-bank-status{position:absolute;right:18px;top:18px;color:#087c86;background:#e8f6f4;border-radius:7px;padding:5px 8px;font-size:11px;font-weight:750}

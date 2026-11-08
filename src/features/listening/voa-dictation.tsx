@@ -339,6 +339,7 @@ export function VoaDictation() {
               const done = skillLabDone[stage.id] ?? 0;
               return <button type="button" key={stage.id} className={`voa-bank-card voa-surface voa-stage-card${suggestedStage === stage.id ? " is-suggested" : ""}`} disabled={skillLabCounts !== null && count === 0} onClick={() => router.push(skillLabStageUrl(stage.id))}>
                 <span className="voa-stage-code">{stage.id}</span>{suggestedStage === stage.id && <span className="voa-stage-suggested">Gợi ý cho bạn</span>}<strong>{stage.label} IELTS</strong><span>{stage.detail}</span>
+                {count > 0 && <span className="voa-stage-audio-count">{count} bài có audio</span>}
                 {count > 0 && <span className="voa-stage-meter" aria-hidden><span style={{ width: `${Math.round(100 * done / count)}%` }} /></span>}
                 <span className="voa-bank-foot">{skillLabCounts === null ? "Đang tải bài…" : count === 0 ? "Đang tạo audio" : `${done}/${count} bài xong`}{count > 0 && <ArrowRight size={18} />}</span>
               </button>;
