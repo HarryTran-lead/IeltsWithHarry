@@ -21,9 +21,6 @@
 .news-home #news-archive .news-section-heading{margin-bottom:.65rem}
 .news-home #news-archive .news-section-heading h2{font-size:1.45rem}
 .news-home #news-archive .news-section-heading p{font-size:.85rem}
-.news-home #news-archive .news-categories{padding-bottom:.45rem}
-.news-home #news-archive .news-categories button{padding:.45rem .75rem;font-size:.82rem}
-.news-region-tabs,.news-interest-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}.news-region-tabs button,.news-interest-tabs button{border:1px solid #d4e5e9;border-radius:999px;background:#fff;color:#345a6e;padding:8px 13px;font-size:13px;font-weight:800;cursor:pointer}.news-region-tabs button[aria-pressed=true]{background:#123d54;border-color:#123d54;color:#fff}.news-interest-tabs button[aria-pressed=true]{background:#e4f8f6;border-color:#21a8aa;color:#126a70}
 .news-origin-label{font-style:normal;color:#187c83}
 .news-home #news-archive .news-toolbar{margin:.2rem 0 .55rem}
 .news-home-stats{margin:1rem 0}
