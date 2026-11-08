@@ -14,7 +14,7 @@ const StudyRoom = dynamic(() => import("./study-room").then((module) => module.S
 });
 
 type Bounds = { x: number; y: number; width: number; height: number };
-type Gesture = { kind: "drag" | "resize"; startX: number; startY: number; bounds: Bounds };
+type Gesture = { kind: "drag" | "resize" | "resize-width"; startX: number; startY: number; bounds: Bounds };
 type PipMode = "full" | "chat" | "clock";
 
 const small = { width: 500, height: 800 };
@@ -50,6 +50,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   const [bounds, setBounds] = useState<Bounds | null>(null);
   const gesture = useRef<Gesture | null>(null);
   const previousBounds = useRef<Bounds | null>(null);
+  const clockWidth = useRef<number | null>(null);
   const [videoMode, setVideoMode] = useState<"youtube" | "harry">("youtube");
   const [streamId, setStreamId] = useState<string>(liveStreams[0].id);
   const [musicPlaying, setMusicPlaying] = useState(false);
@@ -118,10 +119,19 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   if (!inRoom && (!entered || !visible)) return null;
 
   function begin(event: React.PointerEvent<HTMLElement>, kind: Gesture["kind"]) {
-    if (inRoom || !bounds || event.button !== 0 || (kind === "resize" && pipMode === "clock") || (event.target as HTMLElement).closest("button,a,input")) return;
+    if (inRoom || !bounds || event.button !== 0 || (kind === "resize" && pipMode === "clock") || (kind === "resize-width" && pipMode !== "clock") || (event.target as HTMLElement).closest("button,a,input")) return;
     gesture.current = { kind, startX: event.clientX, startY: event.clientY, bounds };
     event.currentTarget.setPointerCapture(event.pointerId);
     event.preventDefault();
+  }
+
+  function resizeClockWidth(width: number) {
+    setBounds((current) => {
+      if (!current) return null;
+      const next = clampBounds({ ...current, width: Math.max(Math.min(300, window.innerWidth - 16), width) });
+      clockWidth.current = next.width;
+      return next;
+    });
   }
 
   function move(event: React.PointerEvent<HTMLElement>) {
@@ -129,6 +139,10 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
     if (!current) return;
     const dx = event.clientX - current.startX;
     const dy = event.clientY - current.startY;
+    if (current.kind === "resize-width") {
+      resizeClockWidth(current.bounds.width + dx);
+      return;
+    }
     setBounds(clampBounds(current.kind === "drag"
       ? { ...current.bounds, x: current.bounds.x + dx, y: current.bounds.y + dy }
       : { ...current.bounds, width: Math.max(280, current.bounds.width + dx), height: Math.max(310, current.bounds.height + dy) }));
@@ -152,7 +166,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
       if (!current) return null;
       if (next === "full") return clampBounds({ ...(previousBounds.current ?? current), x: current.x, y: current.y });
       const base = pipMode === "full" ? current : previousBounds.current ?? current;
-      return clampBounds({ ...current, width: Math.max(base.width, Math.min(530, window.innerWidth - 16)), height: next === "clock" ? 47 : Math.min(base.height, 500) });
+      return clampBounds({ ...current, width: next === "clock" ? clockWidth.current ?? Math.max(base.width, Math.min(530, window.innerWidth - 16)) : base.width, height: next === "clock" ? 47 : Math.min(base.height, 500) });
     });
     setPipMode(next);
   }
@@ -173,6 +187,24 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
       <Link href="/app/study-together" aria-label="Mở phòng học đầy đủ" title="Mở phòng học"><Maximize2 size={16} /></Link>
       <button type="button" onClick={() => { setVisible(false); setSessionActive(false); void player.current?.stop(); player.current = null; setMusicPlaying(false); }} aria-label="Đóng cửa sổ cùng học" title="Đóng"><X size={16} /></button>
     </div>}
+    {!inRoom && pipMode === "clock" && <div
+      className="study-pip-width-resize"
+      role="separator"
+      tabIndex={0}
+      aria-orientation="vertical"
+      aria-label="Đổi chiều ngang thanh cùng học"
+      aria-valuetext={`${bounds?.width ?? 530} pixel`}
+      title="Kéo để rút ngắn hoặc kéo dài thanh"
+      onPointerDown={(event) => { event.stopPropagation(); begin(event, "resize-width"); }}
+      onPointerMove={(event) => { event.stopPropagation(); move(event); }}
+      onPointerUp={(event) => { event.stopPropagation(); end(event); }}
+      onPointerCancel={(event) => { event.stopPropagation(); end(event); }}
+      onKeyDown={(event) => {
+        if (!bounds || (event.key !== "ArrowLeft" && event.key !== "ArrowRight")) return;
+        event.preventDefault();
+        resizeClockWidth(bounds.width + (event.key === "ArrowLeft" ? -20 : 20));
+      }}
+    />}
     <StudyRoom canManage={canManage} showVideo={inRoom || pipMode === "full"} videoMode={videoMode} streamId={streamId} musicPlaying={musicPlaying} volume={volume} onToggleMusic={toggleAudio} onVolumeChange={changeVolume} onSelectVideo={selectVideo} onSelectStream={selectStream} />
     {!inRoom && pipMode !== "clock" && <div className="study-pip-resize" role="separator" aria-label="Kéo để đổi kích thước cửa sổ" onPointerDown={(event) => begin(event, "resize")} onPointerMove={move} onPointerUp={end} onPointerCancel={end} />}
   </div>;
