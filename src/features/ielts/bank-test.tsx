@@ -5,42 +5,10 @@ import { AArrowDown, AArrowUp, ChevronLeft, ChevronRight, Eraser, Highlighter, N
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import { RichText, type BankExam } from "./bank-exam";
 import { groupQuestions, QuestionGroupView, type AnswerProps } from "./bank-questions";
+import { encodeReadingMarks, rangeAt, savedReadingMarks, textOffset, type ReadingMark } from "./reading-highlights";
 import "./bank-test.css";
 
-type Mark = { section: string; paragraph: number; start: number; end: number };
-function savedMarks(value: string | undefined): Mark[] {
-  if (!value) return [];
-  try {
-    const parsed: unknown = JSON.parse(value);
-    if (!Array.isArray(parsed)) return [];
-    return parsed.filter((item): item is [string, number, number, number] => Array.isArray(item) && item.length === 4 && typeof item[0] === "string" && item.slice(1).every((part) => Number.isInteger(part) && part >= 0) && item[3] > item[2])
-      .map(([section, paragraph, start, end]) => ({ section, paragraph, start, end }));
-  } catch { return []; }
-}
 const canHighlight = () => typeof window !== "undefined" && "Highlight" in window && Boolean((CSS as unknown as { highlights?: unknown }).highlights);
-
-/** Text offset of a point inside a paragraph element, counting only text nodes. */
-function offsetIn(root: Node, node: Node, offset: number) {
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-  let total = 0;
-  for (let current = walker.nextNode(); current; current = walker.nextNode()) {
-    if (current === node) return total + offset;
-    total += current.textContent?.length ?? 0;
-  }
-  return total;
-}
-function rangeAt(root: Node, start: number, end: number) {
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-  const range = document.createRange();
-  let total = 0, began = false;
-  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
-    const length = node.textContent?.length ?? 0;
-    if (!began && start <= total + length) { range.setStart(node, start - total); began = true; }
-    if (began && end <= total + length) { range.setEnd(node, end - total); return range; }
-    total += length;
-  }
-  return null;
-}
 
 function printedListeningLayout(passage: string, numbers: number[], flowChart = false) {
   const block = passage.split(/(?=\*\*Questions\s+\d+[–-]\d+\*\*)/).find((chunk) => {
@@ -110,16 +78,18 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const [scale, setScale] = useState(1);
   const [notesOpen, setNotesOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [highlightEnabled, setHighlightEnabled] = useState(true);
   const [markError, setMarkError] = useState("");
   const [navigationError, setNavigationError] = useState("");
-  const marks = useMemo(() => savedMarks(notes.reading_highlights), [notes.reading_highlights]);
-  const setMarks = useCallback((next: Mark[] | ((previous: Mark[]) => Mark[])) => {
+  const marks = useMemo(() => savedReadingMarks(notes.reading_highlights), [notes.reading_highlights]);
+  const setMarks = useCallback((next: ReadingMark[] | ((previous: ReadingMark[]) => ReadingMark[])) => {
     const updated = typeof next === "function" ? next(marks) : next;
-    const encoded = JSON.stringify(updated.map(({ section, paragraph, start, end }) => [section, paragraph, start, end]));
-    if (encoded.length <= 1900) { setNotes({ ...notes, reading_highlights: encoded }); setMarkError(""); }
+    const encoded = encodeReadingMarks(updated);
+    if (encoded.length <= 14000) { setNotes((current) => ({ ...current, reading_highlights: encoded })); setMarkError(""); }
     else setMarkError("Đã đạt giới hạn tô sáng cho bài này. Xóa vài đoạn để tiếp tục.");
-  }, [marks, notes, setNotes]);
+  }, [marks, setNotes]);
   const passage = useRef<HTMLDivElement>(null);
+  const questionPane = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
   const section = sections[Math.min(part, sections.length - 1)];
   const groups = useMemo(() => groupQuestions(section?.questions ?? []), [section]);
@@ -144,37 +114,59 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     }, 60);
   }, [listening, notes, part, section]);
 
-  // Paint saved highlights for the visible passage with the CSS Custom Highlight API (no DOM changes).
+  // Paint saved highlights in both panes without changing the answer controls' DOM.
   useEffect(() => {
-    if (!canHighlight() || !passage.current || !section) return;
-    const paragraphs = passage.current.querySelectorAll<HTMLElement>("[data-paragraph]");
-    const ranges = marks.filter((mark) => mark.section === section.id).map((mark) => paragraphs[mark.paragraph] ? rangeAt(paragraphs[mark.paragraph], mark.start, mark.end) : null).filter((range): range is Range => Boolean(range));
+    if (!canHighlight() || !passage.current || !questionPane.current || !section) return;
+    const blocks = {
+      passage: passage.current.querySelectorAll<HTMLElement>("[data-paragraph]"),
+      questions: questionPane.current.querySelectorAll<HTMLElement>("[data-highlight-block]"),
+    };
+    const ranges = marks.filter((mark) => mark.section === section.id).map((mark) => {
+      const block = blocks[mark.pane][mark.block];
+      return block ? rangeAt(block, mark.start, mark.end) : null;
+    }).filter((range): range is Range => Boolean(range));
     const registry = (CSS as unknown as { highlights: Map<string, unknown> }).highlights;
     registry.set("bank-mark", new (window as unknown as { Highlight: new (...ranges: Range[]) => unknown }).Highlight(...ranges));
     return () => { registry.delete("bank-mark"); };
-  }, [marks, section, scale]);
+  }, [marks, section, scale, answers]);
 
-  const captureSelection = useCallback(() => {
-    if (!canMark) return;
+  const captureSelection = useCallback((force = false) => {
+    if (!canMark || (!highlightEnabled && !force)) return;
     const chosen = window.getSelection();
-    if (!chosen || chosen.isCollapsed || !passage.current || !section) return;
+    if (!chosen || chosen.isCollapsed || !passage.current || !questionPane.current || !section) return;
     const range = chosen.getRangeAt(0);
-    const paragraph = (range.startContainer.parentElement?.closest("[data-paragraph]") as HTMLElement | null);
-    if (!paragraph || !passage.current.contains(paragraph) || !paragraph.contains(range.endContainer)) return;
-    const start = offsetIn(paragraph, range.startContainer, range.startOffset), end = offsetIn(paragraph, range.endContainer, range.endOffset);
-    if (end <= start) return;
+    const pane = passage.current.contains(range.commonAncestorContainer) ? "passage" : questionPane.current.contains(range.commonAncestorContainer) ? "questions" : null;
+    if (!pane) return;
     if (!canHighlight()) { setMarkError("Trình duyệt này chưa hỗ trợ tô sáng. Hãy cập nhật trình duyệt rồi thử lại."); return; }
-    const mark = { section: section.id, paragraph: Number(paragraph.dataset.paragraph), start, end };
-    setMarks((previous) => previous.some((item) => item.section === mark.section && item.paragraph === mark.paragraph && item.start === mark.start && item.end === mark.end) ? previous : [...previous, mark]);
+    const blocks = (pane === "passage" ? passage.current : questionPane.current).querySelectorAll<HTMLElement>(pane === "passage" ? "[data-paragraph]" : "[data-highlight-block]");
+    const captured: ReadingMark[] = [];
+    blocks.forEach((block, index) => {
+      if (!range.intersectsNode(block)) return;
+      const contents = document.createRange();
+      contents.selectNodeContents(block);
+      const portion = range.cloneRange();
+      if (portion.compareBoundaryPoints(Range.START_TO_START, contents) < 0) portion.setStart(contents.startContainer, contents.startOffset);
+      if (portion.compareBoundaryPoints(Range.END_TO_END, contents) > 0) portion.setEnd(contents.endContainer, contents.endOffset);
+      const start = textOffset(block, portion.startContainer, portion.startOffset);
+      const end = textOffset(block, portion.endContainer, portion.endOffset);
+      if (end > start) captured.push({ section: section.id, pane, block: index, start, end, quote: pane === "questions" ? portion.toString().slice(0, 180) : undefined });
+    });
+    if (!captured.length) return;
+    setMarks((previous) => [...previous, ...captured.filter((mark) => !previous.some((item) => item.section === mark.section && item.pane === mark.pane && item.block === mark.block && item.start === mark.start && item.end === mark.end))]);
     chosen.removeAllRanges();
-  }, [canMark, section, setMarks]);
+  }, [canMark, highlightEnabled, section, setMarks]);
 
   useEffect(() => {
     if (!canMark) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.altKey || event.ctrlKey || event.metaKey || (event.target as HTMLElement)?.closest("input,textarea,select,button")) return;
+      const target = event.target as HTMLElement;
+      if (event.altKey || event.ctrlKey || event.metaKey || target.isContentEditable || target.closest("textarea,select,input:not([type=radio]):not([type=checkbox])")) return;
       const key = event.key.toLowerCase();
-      if (key === "h" && !window.getSelection()?.isCollapsed) { event.preventDefault(); captureSelection(); }
+      if (key === "h") {
+        event.preventDefault();
+        if (window.getSelection() && !window.getSelection()?.isCollapsed) { setHighlightEnabled(true); captureSelection(true); }
+        else setHighlightEnabled((enabled) => !enabled);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -206,8 +198,8 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     </div></div>
 
     <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${showRail ? "has-tools" : ""}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
-      {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" title="Bôi đen đoạn văn để tô sáng ngay" onMouseDown={(event) => event.preventDefault()} onClick={captureSelection}><Highlighter size={19} />Tô sáng<small>Chọn chữ</small></button></aside>}
-      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={captureSelection}>
+      {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" className={highlightEnabled ? "is-on" : ""} aria-pressed={highlightEnabled} title="Bật hoặc tắt bút tô sáng (H)" onMouseDown={(event) => event.preventDefault()} onClick={() => { if (window.getSelection() && !window.getSelection()?.isCollapsed) { setHighlightEnabled(true); captureSelection(true); } else setHighlightEnabled((enabled) => !enabled); }}><Highlighter size={19} />Tô sáng<small>{highlightEnabled ? "H · Đang bật" : "H · Đã tắt"}</small></button></aside>}
+      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={() => captureSelection()}>
         <h2>{section.title}</h2>
         {section.passage.split(/\n\s*\n/).map((paragraph, index) => <p key={index} data-paragraph={index}><RichText text={paragraph} /></p>)}
       </article>}
@@ -215,7 +207,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
         onPointerDown={(event) => { if (window.matchMedia("(min-width: 901px)").matches) { event.currentTarget.setPointerCapture(event.pointerId); resize(event.clientX); } }}
         onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }}
         onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>}
-      <div className="bt-questions">
+      <div className="bt-questions" ref={questionPane} onMouseUp={() => captureSelection()}>
         {listening && <header className="bt-part-head"><span>{label(part)}</span><h2>{section.title}</h2></header>}
         {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} printed={listening && (group.kind === "gap" || /flow[_-]?chart[_-]completion/.test(group.type)) ? printedListeningLayout(section.passage, group.questions.map((question) => question.number), group.kind === "pick") : undefined} />)}
         <div className="bt-part-end">{part + 1 < sections.length ? <button type="button" className="bx-next" onClick={() => goTo(part + 1)}>Sang {label(part + 1)} <ChevronRight size={17} /></button> : <button type="button" className="bx-submit" onClick={onFinish}>Hoàn thành & nộp bài</button>}</div>

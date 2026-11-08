@@ -252,16 +252,19 @@ export async function reviewExam(examId: string, action: "ready" | "publish" | "
   if (logError) throw new Error(logError.message);
   return { status };
 }
-export async function submitAttempt(attemptId: string, userId: string, answers: Record<string, string>, state: "submitted" | "expired", difficulty?: "easy" | "balanced" | "hard") {
+export async function submitAttempt(attemptId: string, userId: string, answers: Record<string, string>, state: "submitted" | "expired", input?: { notes?: Record<string, string>; flags?: string[]; difficulty?: "easy" | "balanced" | "hard" }) {
   const client = bankClient();
   const { data: attempt, error } = await client.from("ielts_attempts").select("*,ielts_exam_versions(content),ielts_exams(duration_minutes,skill)").eq("id", attemptId).eq("user_id", userId).single();
   if (error || !attempt || attempt.state !== "in_progress") throw new Error("Attempt unavailable");
   const version = Array.isArray(attempt.ielts_exam_versions) ? attempt.ielts_exam_versions[0] : attempt.ielts_exam_versions;
   const content = contentSchema.parse(version.content) as ExamContent;
-  const result = scoreAnswers(attemptContent(content, attempt.notes), answers);
+  const savedNotes = (attempt.notes || {}) as Record<string, string>;
+  const notes = input?.notes ? { ...savedNotes, ...input.notes, ...Object.fromEntries(Object.entries(savedNotes).filter(([key]) => key.startsWith("__"))) } : savedNotes;
+  const result = scoreAnswers(attemptContent(content, notes), answers);
   const exam = Array.isArray(attempt.ielts_exams) ? attempt.ielts_exams[0] : attempt.ielts_exams;
-  const expired = Date.now() > new Date(attempt.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, attempt.notes) * 60000;
-  const { data: updated, error: updateError } = await client.from("ielts_attempts").update({ answers, state: expired ? "expired" : state, score: result.total ? result.score : null, total: result.total || null, submitted_at: new Date().toISOString(), ...(difficulty && exam.skill === "Reading" ? { notes: { ...attempt.notes, reading_difficulty: difficulty } } : {}) }).eq("id", attemptId).eq("state", "in_progress").select("id").single();
+  const expired = Date.now() > new Date(attempt.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, notes) * 60000;
+  const finalNotes = input?.difficulty && exam.skill === "Reading" ? { ...notes, reading_difficulty: input.difficulty } : notes;
+  const { data: updated, error: updateError } = await client.from("ielts_attempts").update({ answers, flags: input?.flags ?? attempt.flags, notes: finalNotes, state: expired ? "expired" : state, score: result.total ? result.score : null, total: result.total || null, submitted_at: new Date().toISOString() }).eq("id", attemptId).eq("state", "in_progress").select("id").single();
   if (updateError || !updated) throw new Error("Attempt already submitted");
   await client.from("study_tasks").update({ completed: true }).eq("user_id", userId).eq("lesson_slug", `ielts:${attempt.exam_id}`).eq("completed", false);
   return result;

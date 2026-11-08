@@ -3,17 +3,18 @@ import { bankClient, requestError, submitAttempt, viewer } from "@/lib/ielts-ban
 import { attemptContent, attemptMinutes, contentSchema, publicContent, listeningFullMinutes, listeningPartMinutes, readingFullMinutes, readingPassageMinutes, scoreAnswers } from "@/lib/ielts-bank/schema";
 import { learnerSkillAvailable, releaseLocks } from "@/lib/runtime";
 import readingEvidence from "@/data/ielts-reading-evidence.json";
+import { evidenceFromExplanation } from "@/lib/ielts-bank/reading-evidence";
 export const runtime = "nodejs";
 const unavailable = () => Response.json({ error: "Question bank is not available yet." }, { status: 404 });
 function withEvidence(result: ReturnType<typeof scoreAnswers>) {
-  return { ...result, review: result.review.map((question) => ({ ...question, evidence: readingEvidence[question.id as keyof typeof readingEvidence] || null })) };
+  return { ...result, review: result.review.map((question) => ({ ...question, evidence: readingEvidence[question.id as keyof typeof readingEvidence] || evidenceFromExplanation(question.explanation) })) };
 }
 
 const bodySchema = z.discriminatedUnion("action", [
   z.object({ action: z.literal("start"), examId: z.uuid(), sectionId: z.string().min(1).max(100).optional(), view: z.enum(["practice", "exam"]).optional(), minutes: z.number().int().optional() }),
   z.object({ action: z.literal("schedule"), examId: z.uuid(), dueDate: z.iso.date() }),
-  z.object({ action: z.literal("save"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(2000)).optional() }),
-  z.object({ action: z.literal("submit"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), expired: z.boolean().optional(), difficulty: z.enum(["easy", "balanced", "hard"]).optional() }),
+  z.object({ action: z.literal("save"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(16000)).optional() }),
+  z.object({ action: z.literal("submit"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(16000)).optional(), expired: z.boolean().optional(), difficulty: z.enum(["easy", "balanced", "hard"]).optional() }),
 ]);
 export async function POST(request: Request) {
   try {
@@ -55,7 +56,7 @@ export async function POST(request: Request) {
       if (existingError || !existing) throw new Error("Attempt unavailable");
       const linkedExam = Array.isArray(existing.ielts_exams) ? existing.ielts_exams[0] : existing.ielts_exams;
       if (!learnerSkillAvailable(linkedExam?.skill)) return unavailable();
-      if (Date.now() > new Date(existing.started_at).getTime() + attemptMinutes(linkedExam.skill, linkedExam.duration_minutes, existing.notes) * 60000) return Response.json(withEvidence(await submitAttempt(body.attemptId, user.id, body.answers, "expired")));
+      if (Date.now() > new Date(existing.started_at).getTime() + attemptMinutes(linkedExam.skill, linkedExam.duration_minutes, existing.notes) * 60000) return Response.json(withEvidence(await submitAttempt(body.attemptId, user.id, body.answers, "expired", { notes: body.notes, flags: body.flags })));
       const fixed = existing.notes as Record<string, string> | null;
       const notes = { ...(body.notes || {}), ...Object.fromEntries(Object.entries(fixed || {}).filter(([key]) => key.startsWith("__"))) };
       const { data, error } = await client.from("ielts_attempts").update({ answers: body.answers, flags: body.flags || [], notes }).eq("id", body.attemptId).eq("user_id", user.id).eq("state", "in_progress").select("id").single();
@@ -68,7 +69,7 @@ export async function POST(request: Request) {
       const linkedExam = Array.isArray(existing.ielts_exams) ? existing.ielts_exams[0] : existing.ielts_exams;
       if (!learnerSkillAvailable(linkedExam?.skill)) return unavailable();
     }
-    return Response.json(withEvidence(await submitAttempt(body.attemptId, user.id, body.answers, body.expired ? "expired" : "submitted", body.difficulty)));
+    return Response.json(withEvidence(await submitAttempt(body.attemptId, user.id, body.answers, body.expired ? "expired" : "submitted", { notes: body.notes, flags: body.flags, difficulty: body.difficulty })));
   } catch (error) { return requestError(error); }
 }
 export async function GET(request: Request) {

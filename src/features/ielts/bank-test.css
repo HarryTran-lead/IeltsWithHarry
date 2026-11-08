@@ -234,6 +234,8 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 .bx-exam-mode .bt-tool-rail { position: absolute; top: 0; bottom: 0; left: 0; z-index: 5; display: flex; flex-direction: column; gap: 10px; width: 82px; padding: 24px 8px; border-right: 1px solid #dde5e5; background: #fafbf9; }
 .bx-exam-mode .bt-tool-rail button { display: grid; justify-items: center; gap: 3px; padding: 8px 2px; border: 1px solid #bee0d6; border-radius: 7px; background: #fff; color: #087d68; font: 700 11px Arial, sans-serif; cursor: pointer; }
 .bx-exam-mode .bt-tool-rail button small { color: #637c77; font-size: 10px; }
+.bx-exam-mode .bt-tool-rail button.is-on { border-color: #24966f; background: #e8f7ee; box-shadow: inset 0 0 0 1px #24966f; }
+.bx-exam-mode .bt-tool-rail button:focus-visible { outline: 3px solid #e5aa36; outline-offset: 2px; }
 .bx-exam-mode .bt-body.has-tools .bt-passage { padding-left: 106px; }
 .bx-exam-mode .bt-context-copy strong { color: #25344a; font-size: 15px; }
 .bx-exam-mode .bt-tools { justify-content: flex-end; flex-wrap: nowrap; gap: 5px; }

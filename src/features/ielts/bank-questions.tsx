@@ -81,13 +81,13 @@ function richBlocks(text: string, gap: (key: string, number?: number) => ReactNo
         index++;
       }
       index--;
-      out.push(<div className="bq-table-wrap" key={`t${index}`}><table className="bq-table"><tbody>{rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => rowIndex === 0 ? <th key={cellIndex}>{inline(cell)}</th> : <td key={cellIndex}>{inline(cell)}</td>)}</tr>)}</tbody></table></div>);
+      out.push(<div className="bq-table-wrap" key={`t${index}`}><table className="bq-table"><tbody>{rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => rowIndex === 0 ? <th data-highlight-block key={cellIndex}>{inline(cell)}</th> : <td data-highlight-block key={cellIndex}>{inline(cell)}</td>)}</tr>)}</tbody></table></div>);
     } else if (/^\s*[-•]\s+/.test(line)) {
       const items: string[] = [];
       while (index < lines.length && /^\s*[-•]\s+/.test(lines[index])) { items.push(lines[index].replace(/^\s*[-•]\s+/, "")); index++; }
       index--;
-      out.push(<ul className="bq-bullets" key={`u${index}`}>{items.map((item, itemIndex) => <li key={itemIndex}>{inline(item)}</li>)}</ul>);
-    } else if (line.trim()) out.push(<p key={`p${index}`}>{inline(line)}</p>);
+      out.push(<ul className="bq-bullets" key={`u${index}`}>{items.map((item, itemIndex) => <li data-highlight-block key={itemIndex}>{inline(item)}</li>)}</ul>);
+    } else if (line.trim()) out.push(<p data-highlight-block key={`p${index}`}>{inline(line)}</p>);
   }
   return out;
 }
@@ -151,7 +151,7 @@ function ChoiceList({ question, props, options, many = false }: { question: Exam
       const on = picked.includes(option.key);
       return <label key={option.key} className={on ? "is-on" : ""}>
         <input type={many ? "checkbox" : "radio"} name={`q-${question.id}`} checked={on} onChange={() => props.setAnswer(question.id, many ? (on ? picked.filter((item) => item !== option.key) : [...picked, option.key]).sort().join(",") : option.key)} />
-        {option.key !== option.label && <b>{option.key}</b>}<span>{option.label}</span>
+        {option.key !== option.label && <b>{option.key}</b>}<span data-highlight-block>{option.label}</span>
       </label>;
     })}</div>
   </div>;
@@ -176,9 +176,9 @@ function ManyGroup({ group, props }: { group: QuestionGroup; props: AnswerProps 
       questions.forEach((question, index) => props.setAnswer(question.id, next[index] || ""));
     };
     return <fieldset className="bq-many-set" key={questions[0].id}>
-      <legend>{questions[0].prompt}</legend>
+      <legend data-highlight-block>{questions[0].prompt}</legend>
       <p>Chọn {questions.length} đáp án cho câu {props.numberOf(questions[0].id)}–{props.numberOf(questions.at(-1)!.id)}.</p>
-      <div className="bq-many-options">{options.map((option) => <label key={option.key} className={picked.includes(option.key) ? "is-on" : ""}><input type="checkbox" checked={picked.includes(option.key)} onChange={() => choose(option.key)} /><b>{option.key}</b><span>{option.label}</span></label>)}</div>
+      <div className="bq-many-options">{options.map((option) => <label key={option.key} className={picked.includes(option.key) ? "is-on" : ""}><input type="checkbox" checked={picked.includes(option.key)} onChange={() => choose(option.key)} /><b>{option.key}</b><span data-highlight-block>{option.label}</span></label>)}</div>
     </fieldset>;
   })}</div>;
 }
@@ -188,11 +188,11 @@ function Matrix({ group, props }: { group: QuestionGroup; props: AnswerProps }) 
   const keys = group.options.map(optionKey);
   const legend = group.options.filter((option) => optionLabel(option) !== optionKey(option) && !/^paragraph\s+[a-z]$/i.test(optionLabel(option)));
   return <div className="bq-matrix-wrap">
-    {legend.length > 0 && <ul className="bq-legend">{legend.map((option) => <li key={option}><b>{optionKey(option)}</b> {optionLabel(option)}</li>)}</ul>}
+    {legend.length > 0 && <ul className="bq-legend">{legend.map((option) => <li data-highlight-block key={option}><b>{optionKey(option)}</b> {optionLabel(option)}</li>)}</ul>}
     <div className="bq-table-wrap"><table className="bq-matrix">
       <thead><tr><th />{keys.map((key) => <th key={key}>{key}</th>)}</tr></thead>
       <tbody>{group.questions.map((question) => <tr key={question.id} id={`q-${question.id}`} className={props.answers[question.id] ? "is-answered" : ""}>
-        <th><span className="bq-matrix-q"><NumberBadge number={props.numberOf(question.id)} flagged={props.flags.includes(question.id)} onFlag={() => props.toggleFlag(question.id)} /><span>{question.prompt}</span></span></th>
+        <th><span className="bq-matrix-q"><NumberBadge number={props.numberOf(question.id)} flagged={props.flags.includes(question.id)} onFlag={() => props.toggleFlag(question.id)} /><span data-highlight-block>{question.prompt}</span></span></th>
         {keys.map((key) => <td key={key}><label className="bq-cell"><input type="radio" name={`q-${question.id}`} checked={props.answers[question.id] === key} onChange={() => props.setAnswer(question.id, key)} aria-label={`Câu ${props.numberOf(question.id)}: ${key}`} /></label></td>)}
       </tr>)}</tbody>
     </table></div>
@@ -235,7 +235,7 @@ function PickGroup({ group, props, printed }: { group: QuestionGroup; props: Ans
         className={`bq-chip ${held === option.key ? "is-held" : ""} ${used.has(option.key) ? "is-used" : ""}`}
         onClick={() => setHeld(held === option.key ? null : option.key)}
         aria-pressed={held === option.key}
-      ><b>{option.key}</b>{option.label !== option.key && <span>{option.label}</span>}</button>)}</div>
+      ><b>{option.key}</b>{option.label !== option.key && <span data-highlight-block>{option.label}</span>}</button>)}</div>
     </div>
   </div>;
 }
@@ -251,7 +251,7 @@ export function groupRange(group: QuestionGroup, numberOf: (id: string) => numbe
 export function QuestionGroupView({ group, props, printed }: { group: QuestionGroup; props: AnswerProps; printed?: string }) {
   const media = group.questions.find((question) => question.mediaUrl);
   return <section className="bq-group" aria-label={groupRange(group, props.numberOf)}>
-    <h3>{groupRange(group, props.numberOf)}</h3>
+    <h3 data-highlight-block>{groupRange(group, props.numberOf)}</h3>
     {group.instructions && <div className="bq-instructions">{richBlocks(group.instructions, () => <span className="bq-blank" />)}</div>}
     {media?.mediaUrl && <figure className="bq-media"><a href={media.mediaUrl} target="_blank" rel="noreferrer" aria-label="Mở sơ đồ hoặc bản đồ cỡ lớn"><img src={media.mediaUrl} alt={media.mediaReference || `Sơ đồ cho ${groupRange(group, props.numberOf)}`} loading="lazy" /></a><figcaption>Bấm vào hình để xem cỡ lớn.</figcaption></figure>}
     {group.kind === "gap" ? printed ? <PrintedGapGroup group={group} props={props} printed={printed} /> : <GapGroup group={group} props={props} />

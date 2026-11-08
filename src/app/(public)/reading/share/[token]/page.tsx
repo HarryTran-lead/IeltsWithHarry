@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { ReadingReview } from "@/features/ielts/bank-reading-review";
 import readingEvidence from "@/data/ielts-reading-evidence.json";
+import { evidenceFromExplanation } from "@/lib/ielts-bank/reading-evidence";
 import { bankClient } from "@/lib/ielts-bank/server";
 import { attemptContent, contentSchema, scoreAnswers } from "@/lib/ielts-bank/schema";
 
@@ -20,6 +21,6 @@ export default async function SharedReadingPage({ params }: { params: Promise<{ 
   const notes = (attempt.notes || {}) as Record<string, string>;
   const content = attemptContent(contentSchema.parse(version.content), notes);
   const result = scoreAnswers(content, (attempt.answers || {}) as Record<string, string>);
-  const review = result.review.map((question) => ({ ...question, evidence: readingEvidence[question.id as keyof typeof readingEvidence] || null }));
+  const review = result.review.map((question) => ({ ...question, evidence: readingEvidence[question.id as keyof typeof readingEvidence] || evidenceFromExplanation(question.explanation) }));
   return <ReadingReview title={exam.title} content={content} review={review} format={exam.format} attribution={exam.attribution} startedAt={attempt.started_at} submittedAt={attempt.submitted_at || undefined} backHref="/" />;
 }
