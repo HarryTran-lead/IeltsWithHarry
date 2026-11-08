@@ -296,6 +296,15 @@ describe("M49L add-only import", () => {
 });
 
 describe("Listening mock tests", () => {
+  it("exposes the two voiced tests with four illustrated sections each", () => {
+    const ready = mockCatalog().filter((entry) => entry.audio_ready);
+    expect(ready.map((entry) => entry.test_id)).toEqual(["M29-LISTENING-MOCK-01", "M30-LISTENING-MOCK-06"]);
+    for (const test of ready) {
+      expect(test.parts).toHaveLength(4);
+      expect(test.parts.map((part) => part.question_count)).toEqual([10, 10, 10, 10]);
+      expect(test.parts.map((part) => part.cover_url)).toEqual([1, 2, 3, 4].map((part) => `/listening-mocks/covers/mock-${String(test.number).padStart(2, "0")}/part-${part}.webp`));
+    }
+  });
   it("loads 20 tests of 4 parts and 40 questions", () => {
     expect(mockCatalog()).toHaveLength(20);
     const test = getStoredMock("M29-LISTENING-MOCK-01")!;

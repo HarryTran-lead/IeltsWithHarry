@@ -43,7 +43,8 @@ export type PublicMock = {
     }[];
   }[];
 };
-export type MockCatalogEntry = { test_id: string; number: number; title: string; audio_ready: boolean; cover_url: string; part_titles: string[]; duration_ms: number };
+export type MockCatalogEntry = { test_id: string; number: number; title: string; audio_ready: boolean; cover_url: string; part_titles: string[]; duration_ms: number;
+  parts: { number: number; title: string; cover_url: string; duration_ms: number; question_types: string[]; question_count: number }[] };
 export type MockResult = GradeResult & {
   question_id: string; part_number: number; number: number; accepted_answers: string[]; explanation_vi: string;
   evidence: { turn_id: string; text_en: string }[];
@@ -90,6 +91,9 @@ export function mockCatalog(): MockCatalogEntry[] {
     test_id: test.test_id, number: testNumber(test.test_id), title: `Listening Mock ${testNumber(test.test_id)}`,
     audio_ready: mockAudioReady(test), cover_url: coverUrl(test.test_id, 1), part_titles: test.parts.map((part) => part.title),
     duration_ms: test.parts.reduce((sum, part) => sum + part.turns.reduce((total, turn) => total + (clip(part, turn.turn_id)?.duration_ms ?? 0), 0), 0),
+    parts: test.parts.map((part) => ({ number: part.part_number, title: part.title, cover_url: coverUrl(test.test_id, part.part_number),
+      duration_ms: part.turns.reduce((sum, turn) => sum + (clip(part, turn.turn_id)?.duration_ms ?? 0), 0),
+      question_types: [...new Set(part.questions.map((question) => question.question_type))], question_count: part.questions.length })),
   }));
 }
 

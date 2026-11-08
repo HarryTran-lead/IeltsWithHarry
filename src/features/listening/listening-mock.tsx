@@ -5,7 +5,7 @@
  * Audio is one clip per turn played back to back; answers come from the server after submitting.
  */
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, Check, Clock3, Headphones, Info, Pause, Play, Send, X } from "lucide-react";
 import { celebrate } from "@/lib/celebrate";
@@ -15,18 +15,20 @@ import "./voa-dictation.css";
 import "./listening-mock.css";
 
 const BASE = "/app/listening/mock";
-const draftKey = (id: string) => `listening-mock:v1:${id}`;
+const draftKey = (id: string, part: number) => `listening-mock:v1:${id}${part ? `:part-${part}` : ""}`;
 const clock = (ms: number) => `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, "0")}`;
 type Transcript = { part_number: number; turns: { turn_id: string; speaker: string; text_en: string }[] }[];
 type Outcome = { correct: number; total: number; results: MockResult[]; transcript: Transcript };
 type Draft = { answers: Record<string, string>; outcome?: Outcome | null; startedAt?: number };
 
-function readDraft(id: string): Draft | null { try { return JSON.parse(window.localStorage.getItem(draftKey(id)) ?? "null") as Draft | null; } catch { return null; } }
-function writeDraft(id: string, draft: Draft) { try { window.localStorage.setItem(draftKey(id), JSON.stringify(draft)); } catch { /* optional */ } }
+function readDraft(id: string, part = 0): Draft | null { try { return JSON.parse(window.localStorage.getItem(draftKey(id, part)) ?? "null") as Draft | null; } catch { return null; } }
+function writeDraft(id: string, draft: Draft, part = 0) { try { window.localStorage.setItem(draftKey(id, part), JSON.stringify(draft)); } catch { /* optional */ } }
 
 export function ListeningMock() {
   const id = usePathname().split("/")[4];
-  return id ? <MockExam key={id} testId={decodeURIComponent(id)} /> : <MockList />;
+  const partValue = Number(useSearchParams().get("part"));
+  const selectedPart = Number.isInteger(partValue) && partValue >= 1 && partValue <= 4 ? partValue : 0;
+  return id ? <MockExam key={`${id}:${selectedPart}`} testId={decodeURIComponent(id)} selectedPart={selectedPart} /> : <MockList />;
 }
 
 function MockList() {
@@ -79,7 +81,7 @@ function MockList() {
 
 type Phase = { kind: "intro" } | { kind: "reading"; part: number; left: number } | { kind: "playing"; part: number } | { kind: "review" } | { kind: "done" };
 
-function MockExam({ testId }: { testId: string }) {
+function MockExam({ testId, selectedPart }: { testId: string; selectedPart: number }) {
   const router = useRouter();
   const audio = useRef<HTMLAudioElement>(null);
   const queue = useRef<{ part: number; turn: number } | null>(null);
@@ -91,7 +93,7 @@ function MockExam({ testId }: { testId: string }) {
   const [busy, setBusy] = useState(false);
   const [startedAt, setStartedAt] = useState<number | null>(null);
   const [now, setNow] = useState(() => Date.now());
-  const [viewPart, setViewPart] = useState(1);
+  const [viewPart, setViewPart] = useState(selectedPart || 1);
   const [reviewPlaying, setReviewPlaying] = useState<string | null>(null);
   const [restored, setRestored] = useState(false);
 
@@ -102,13 +104,13 @@ function MockExam({ testId }: { testId: string }) {
       if (!alive) return;
       if (!response.ok || !data.test) { setError(data.error ?? "Không tải được đề."); return; }
       setTest(data.test);
-      const draft = readDraft(testId);
+      const draft = readDraft(testId, selectedPart);
       if (draft) { setAnswers(draft.answers ?? {}); if (draft.outcome) { setOutcome(draft.outcome); setPhase({ kind: "done" }); } }
       setRestored(true);
     });
     return () => { alive = false; };
-  }, [testId]);
-  useEffect(() => { if (restored) writeDraft(testId, { answers, outcome, startedAt: startedAt ?? undefined }); }, [restored, testId, answers, outcome, startedAt]);
+  }, [testId, selectedPart]);
+  useEffect(() => { if (restored) writeDraft(testId, { answers, outcome, startedAt: startedAt ?? undefined }, selectedPart); }, [restored, testId, selectedPart, answers, outcome, startedAt]);
   useEffect(() => {
     if (startedAt === null || phase.kind === "done") return;
     const timer = window.setInterval(() => setNow(Date.now()), 1000);
@@ -120,8 +122,9 @@ function MockExam({ testId }: { testId: string }) {
     const part = test?.parts.find((item) => item.part_number === partNumber);
     return Math.max(20, Math.min(60, part?.groups.reduce((sum, group) => sum + group.pre_read_seconds, 0) ?? 30));
   };
-  const questionCount = useMemo(() => test?.parts.reduce((sum, part) => sum + part.groups.reduce((total, group) => total + group.questions.length, 0), 0) ?? 40, [test]);
-  const answered = Object.values(answers).filter((value) => value.trim()).length;
+  const questionCount = useMemo(() => test?.parts.filter((part) => !selectedPart || part.part_number === selectedPart)
+    .reduce((sum, part) => sum + part.groups.reduce((total, group) => total + group.questions.length, 0), 0) ?? (selectedPart ? 10 : 40), [test, selectedPart]);
+  const answered = Object.entries(answers).filter(([number, value]) => value.trim() && (!selectedPart || (Number(number) > (selectedPart - 1) * 10 && Number(number) <= selectedPart * 10))).length;
 
   function playTurn(partNumber: number, index: number) {
     const part = test?.parts.find((item) => item.part_number === partNumber);
@@ -142,13 +145,14 @@ function MockExam({ testId }: { testId: string }) {
   }
   function finishPart(partNumber: number) {
     queue.current = null;
-    const next = test?.parts.find((item) => item.part_number === partNumber + 1);
+    const next = selectedPart ? undefined : test?.parts.find((item) => item.part_number === partNumber + 1);
     if (next) { setViewPart(next.part_number); setPhase({ kind: "reading", part: next.part_number, left: readingSeconds(next.part_number) }); window.scrollTo({ top: 0, behavior: "smooth" }); }
     else setPhase({ kind: "review" });
   }
   function start() {
-    setStartedAt(Date.now()); setViewPart(1); setError("");
-    setPhase({ kind: "reading", part: 1, left: readingSeconds(1) });
+    const first = selectedPart || 1;
+    setStartedAt(Date.now()); setViewPart(first); setError("");
+    setPhase({ kind: "reading", part: first, left: readingSeconds(first) });
   }
   async function submit() {
     if (!test || busy) return;
@@ -156,18 +160,18 @@ function MockExam({ testId }: { testId: string }) {
     audio.current?.pause(); queue.current = null;
     setBusy(true); setError("");
     try {
-      const response = await fetch(`/api/listening/mocks/${test.test_id}/submit`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ answers }) });
+      const response = await fetch(`/api/listening/mocks/${test.test_id}/submit`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ answers, ...(selectedPart ? { part: selectedPart } : {}) }) });
       const data = await response.json().catch(() => ({})) as Outcome & { error?: string };
       if (!response.ok || !data.results) throw new Error(data.error ?? "Không nộp được bài.");
-      setOutcome(data); setPhase({ kind: "done" }); setViewPart(1); window.scrollTo({ top: 0, behavior: "smooth" });
-      void savePracticeResult(`listening-mock:${test.test_id}`, { correct: data.correct, checked: data.total, total: data.total }).catch(() => undefined);
-      if (data.correct >= 30) celebrate(undefined, { label: `${data.correct}/40 câu đúng!` });
+      setOutcome(data); setPhase({ kind: "done" }); setViewPart(selectedPart || 1); window.scrollTo({ top: 0, behavior: "smooth" });
+      void savePracticeResult(`listening-mock:${test.test_id}${selectedPart ? `:part-${selectedPart}` : ""}`, { correct: data.correct, checked: data.total, total: data.total }).catch(() => undefined);
+      if (data.correct >= (selectedPart ? 8 : 30)) celebrate(undefined, { label: `${data.correct}/${data.total} câu đúng!` });
     } catch (failure) { setError(failure instanceof Error ? failure.message : "Không nộp được bài."); }
     finally { setBusy(false); }
   }
   function retake() {
     if (!window.confirm("Làm lại từ đầu? Bài làm và kết quả hiện tại sẽ bị xoá.")) return;
-    setAnswers({}); setOutcome(null); setStartedAt(null); setPhase({ kind: "intro" }); setViewPart(1);
+    setAnswers({}); setOutcome(null); setStartedAt(null); setPhase({ kind: "intro" }); setViewPart(selectedPart || 1);
   }
   function playReview(url: string | null, key: string) {
     const element = audio.current;
@@ -196,9 +200,9 @@ function MockExam({ testId }: { testId: string }) {
   return (
     <div className="voa-lab lm-page">
       <audio ref={audio} preload="none" onEnded={onEnded} />
-      <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href={BASE}>Đề Listening thi thử</Link><span>›</span><span>{test.title}</span></nav>
+      <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href={BASE}>Đề Listening thi thử</Link><span>›</span><span>{test.title}{selectedPart ? ` · Section ${selectedPart}` : ""}</span></nav>
       <header className="lm-head">
-        <div><span className="voa-eyebrow">IELTS LISTENING · THI THỬ</span><h1>{test.title}</h1></div>
+        <div><span className="voa-eyebrow">IELTS LISTENING · THI THỬ</span><h1>{test.title}{selectedPart ? ` · Section ${selectedPart}` : ""}</h1></div>
         <div className="lm-status">
           {phase.kind === "reading" && <span className="lm-reading"><b>{phase.left}s</b> đọc câu hỏi Part {phase.part} <button type="button" onClick={() => setPhase({ ...phase, left: 0 })}>Nghe ngay</button></span>}
           {phase.kind === "playing" && <span className="lm-live"><Headphones size={15} /> Đang phát Part {phase.part}</span>}
@@ -211,9 +215,9 @@ function MockExam({ testId }: { testId: string }) {
       {phase.kind === "intro" && <section className="voa-surface lm-intro">
         <h2>Trước khi bắt đầu</h2>
         <ul>
-          <li>Đề có 4 phần, 40 câu. Trước mỗi phần có thời gian đọc câu hỏi.</li>
+          <li>{selectedPart ? `Section ${selectedPart} có 10 câu hỏi.` : "Đề có 4 phần, 40 câu."} Trước mỗi phần có thời gian đọc câu hỏi.</li>
           <li>Mỗi đoạn audio chỉ phát <b>một lần</b>, không tua và không đổi tốc độ, giống phòng thi.</li>
-          <li>Bạn trả lời ngay trên màn hình, chuyển qua lại giữa các phần bất cứ lúc nào.</li>
+          <li>{selectedPart ? "Bạn trả lời ngay trên màn hình trong Section đã chọn." : "Bạn trả lời ngay trên màn hình, chuyển qua lại giữa các phần bất cứ lúc nào."}</li>
           <li>Ô điền từ chấm theo giới hạn số từ của đề. Đáp án, giải thích và transcript hiện sau khi nộp.</li>
         </ul>
         <button type="button" className="voa-primary-button" onClick={start}><Play size={16} /> Bắt đầu làm bài</button>
@@ -221,7 +225,7 @@ function MockExam({ testId }: { testId: string }) {
 
       {phase.kind !== "intro" && <>
         <nav className="lm-tabs" aria-label="Các phần của đề">
-          {test.parts.map((item) => <button type="button" key={item.part_id} aria-current={viewPart === item.part_number ? "page" : undefined} className={`${viewPart === item.part_number ? "active" : ""}${activePart === item.part_number ? " live" : ""}`} onClick={() => setViewPart(item.part_number)}>
+          {test.parts.filter((item) => !selectedPart || item.part_number === selectedPart).map((item) => <button type="button" key={item.part_id} aria-current={viewPart === item.part_number ? "page" : undefined} className={`${viewPart === item.part_number ? "active" : ""}${activePart === item.part_number ? " live" : ""}`} onClick={() => setViewPart(item.part_number)}>
             Part {item.part_number}{outcome ? ` · ${partScore(item.part_number)}/10` : ""}{activePart === item.part_number && <span className="lm-dot" aria-label="đang phát" />}</button>)}
         </nav>
         <section className="lm-part voa-surface">

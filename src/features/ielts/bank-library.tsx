@@ -7,6 +7,7 @@ import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, F
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
+import type { MockCatalogEntry } from "@/lib/listening-mocks/mocks";
 import "./bank-library.css";
 import { Sticker } from "@/components/stickers/stickers";
 
@@ -216,6 +217,18 @@ function LegacyBankLibraryView({ skill, exams, attempts, loading, error }: Libra
 function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryViewProps & { skill: "Reading" | "Listening" }) {
   const params = useSearchParams();
   const isReading = skill === "Reading";
+  const [mocks, setMocks] = useState<MockCatalogEntry[] | null>(isReading ? [] : null);
+  const [mockError, setMockError] = useState("");
+  useEffect(() => {
+    if (isReading) return;
+    let live = true;
+    void fetch("/api/listening/mocks", { cache: "no-store" }).then(async (response) => {
+      const data = await response.json() as { tests?: MockCatalogEntry[]; error?: string };
+      if (!response.ok) throw new Error(data.error || "Chưa tải được đề Listening thi thử.");
+      if (live) setMocks((data.tests ?? []).filter((test) => test.audio_ready));
+    }).catch((cause: Error) => { if (live) { setMockError(cause.message); setMocks([]); } });
+    return () => { live = false; };
+  }, [isReading]);
   const limit = isReading ? 3 : 4;
   const full = params.get("type") === "full_test";
   const partValue = Number(params.get("part"));
@@ -223,13 +236,23 @@ function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryVie
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(0);
   const base = catalogEntriesForSelection(exams, skill, full, part);
+  const mockEntries = (mocks ?? []).flatMap((test) => full
+    ? [{ test, part: 0, title: test.title, questionTypes: [...new Set(test.parts.flatMap((item) => item.question_types))] }]
+    : test.parts.filter((item) => !part || item.number === part).map((item) => ({ test, part: item.number, title: `${test.title} · ${item.title}`, questionTypes: item.question_types })));
   const kindCounts = new Map<string, number>();
   for (const entry of base) for (const id of catalogQuestionTypeIds(entry.questionTypes)) kindCounts.set(id, (kindCounts.get(id) ?? 0) + 1);
+  for (const entry of mockEntries) for (const id of catalogQuestionTypeIds(entry.questionTypes)) kindCounts.set(id, (kindCounts.get(id) ?? 0) + 1);
   const requestedKind = params.get("kind") ?? "";
   const selectedKind = kindCounts.has(requestedKind) ? requestedKind : "";
   const needle = query.trim().toLocaleLowerCase();
-  const filtered = base.filter((entry) => (!selectedKind || catalogQuestionTypeIds(entry.questionTypes).includes(selectedKind))
-    && (!needle || `${entry.title} ${entry.exam.title} ${entry.exam.topic ?? ""}`.toLocaleLowerCase().includes(needle)));
+  const filtered = [
+    ...mockEntries.filter((entry) => (!selectedKind || catalogQuestionTypeIds(entry.questionTypes).includes(selectedKind))
+      && (!needle || entry.title.toLocaleLowerCase().includes(needle))).map((entry) => ({ kind: "mock" as const, entry })),
+    ...base.filter((entry) => (!selectedKind || catalogQuestionTypeIds(entry.questionTypes).includes(selectedKind))
+      && (!needle || `${entry.title} ${entry.exam.title} ${entry.exam.topic ?? ""}`.toLocaleLowerCase().includes(needle))).map((entry) => ({ kind: "bank" as const, entry })),
+  ];
+  const busy = loading || mocks === null;
+  const displayError = error || mockError;
   const pageCount = Math.max(1, Math.ceil(filtered.length / 12));
   const currentPage = Math.min(page, pageCount - 1);
   const visible = filtered.slice(currentPage * 12, (currentPage + 1) * 12);
@@ -244,14 +267,35 @@ function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryVie
 
   return <section id="ngan-hang-de" className={`bl-library bl-sectioned bl-tone-${skill.toLowerCase()}`} aria-label={`Ngân hàng đề ${skill}`}>
     <div className="bl-results">
-      <div className="bl-results-head"><div><span className="bl-results-kicker">{skill.toUpperCase()} · NGÂN HÀNG ĐỀ</span><h2>{heading}</h2><p>{loading ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><div className="bl-results-controls"><label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên bài hoặc chủ đề…" aria-label={`Tìm đề ${skill}`} /></label></div></div>
-      {error && <p className="bl-state" role="alert">{error}</p>}
-      {loading && <div className="bl-grid bl-grid-sectioned">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
-      {!loading && !error && <div className="bl-grid bl-grid-sectioned">{visible.map((entry) => <ExamCard key={`${entry.exam.id}:${entry.part ?? "full"}`} exam={entry.exam} attempt={latest.get(`${entry.exam.id}:${entry.splitFromFull ? entry.part : "full"}`)} section={entry.splitFromFull && entry.part ? { part: entry.part, title: entry.title, questionTypes: entry.questionTypes, questionCount: entry.questionCount } : undefined} />)}</div>}
-      {!loading && !error && !visible.length && <p className="bl-state">Chưa có bài phù hợp. Hãy thử dạng câu hỏi khác, đổi từ khóa hoặc chọn phần khác trong sidebar.</p>}
-      {!loading && pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.getElementById("ngan-hang-de")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
+      <div className="bl-results-head"><div><span className="bl-results-kicker">{skill.toUpperCase()} · NGÂN HÀNG ĐỀ</span><h2>{heading}</h2><p>{busy ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><div className="bl-results-controls"><label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên bài hoặc chủ đề…" aria-label={`Tìm đề ${skill}`} /></label></div></div>
+      {displayError && <p className="bl-state" role="alert">{displayError}</p>}
+      {busy && <div className="bl-grid bl-grid-sectioned">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
+      {!busy && !displayError && <div className="bl-grid bl-grid-sectioned">{visible.map(({ kind, entry }) => kind === "mock"
+        ? <MockLibraryCard key={`${entry.test.test_id}:${entry.part}`} test={entry.test} part={entry.part} questionTypes={entry.questionTypes} title={entry.title} />
+        : <ExamCard key={`${entry.exam.id}:${entry.part ?? "full"}`} exam={entry.exam} attempt={latest.get(`${entry.exam.id}:${entry.splitFromFull ? entry.part : "full"}`)} section={entry.splitFromFull && entry.part ? { part: entry.part, title: entry.title, questionTypes: entry.questionTypes, questionCount: entry.questionCount } : undefined} />)}</div>}
+      {!busy && !displayError && !visible.length && <p className="bl-state">Chưa có bài phù hợp. Hãy thử dạng câu hỏi khác, đổi từ khóa hoặc chọn phần khác trong sidebar.</p>}
+      {!busy && pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.getElementById("ngan-hang-de")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
     </div>
   </section>;
+}
+
+function MockLibraryCard({ test, part, title, questionTypes }: { test: MockCatalogEntry; part: number; title: string; questionTypes: string[] }) {
+  const section = test.parts.find((item) => item.number === part);
+  const href = `/app/listening/mock/${test.test_id}${part ? `?part=${part}` : ""}`;
+  const duration = section?.duration_ms ?? test.duration_ms;
+  const types = catalogQuestionTypeIds(questionTypes).map((id) => catalogQuestionTypes.find((group) => group.id === id)?.label ?? "Other Types");
+  return <Link href={href} className="bl-card bl-card-shelf">
+    <span className="bl-thumb">
+      {section ? <figure className="bl-art">{/* eslint-disable-next-line @next/next/no-img-element -- cover supplied in the owner's package */}<img src={section.cover_url} alt="" loading="lazy" /></figure>
+        : <figure className="bl-art bl-brand-art">{/* eslint-disable-next-line @next/next/no-img-element -- local brand asset */}<img src="/ieltswithharry-mascot.webp" alt="" loading="lazy" /><span className="bl-brand-wordmark">Ielts<b>WithHarry</b></span><small>IELTS LISTENING</small></figure>}
+      <span className="bl-usage"><Clock3 size={13} /> {Math.max(1, Math.ceil(duration / 60000))} phút audio</span>
+      <b className="bl-badge">{part ? `Section ${part}` : "Full test"}</b>
+    </span>
+    <span className="bl-body"><strong className="bl-title">{title}</strong>
+      {types.length ? <ul className="bl-types">{types.slice(0, 3).map((type) => <li key={type}>{type}</li>)}</ul> : <span className="bl-types-plain">{part ? 10 : 40} câu hỏi</span>}
+      <span className="bl-foot"><span className="bl-source">English Skill Lab · bản luyện thử</span><span className="bl-cta">Luyện đề <ArrowRight size={15} /></span></span>
+    </span>
+  </Link>;
 }
 
 /** A filter button that opens a checklist under it; closes on an outside click or Escape. */

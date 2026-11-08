@@ -47,6 +47,7 @@ import { AvatarFrame } from "@/components/account/avatar-frame";
 import { levelProgress, rankForLevel } from "@/lib/gamification";
 import { useNewsUnread } from "@/features/news/news-unread";
 import { catalogQuestionTypeIds, catalogQuestionTypes, catalogEntriesForSelection, type CatalogExam } from "@/lib/ielts-bank/catalog";
+import type { MockCatalogEntry } from "@/lib/listening-mocks/mocks";
 import { HeaderSkyBackdrop, HeaderWeatherEffects, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather } from "@/components/header-weather";
 import weatherStyles from "@/components/header-weather/headerWeather.module.css";
 
@@ -204,13 +205,17 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
     .slice(0, 5);
   const section = pathname.split("/")[2] || "dashboard";
   const catalogSkill = section === "reading" ? "Reading" : section === "listening" ? "Listening" : null;
-  const [sidebarCatalog, setSidebarCatalog] = useState<{ skill: "Reading" | "Listening"; exams: CatalogExam[]; error?: string } | null>(null);
+  const [sidebarCatalog, setSidebarCatalog] = useState<{ skill: "Reading" | "Listening"; exams: CatalogExam[]; mocks: MockCatalogEntry[]; error?: string } | null>(null);
   const catalogExams = sidebarCatalog?.skill === catalogSkill ? sidebarCatalog.exams : null;
   const catalogFull = searchParams.get("type") === "full_test";
   const catalogPartValue = Number(searchParams.get("part"));
   const catalogLimit = catalogSkill === "Reading" ? 3 : 4;
   const catalogPart = !catalogFull && Number.isInteger(catalogPartValue) && catalogPartValue >= 1 && catalogPartValue <= catalogLimit ? catalogPartValue : 0;
-  const catalogEntries = catalogSkill && catalogExams ? catalogEntriesForSelection(catalogExams, catalogSkill, catalogFull, catalogPart) : [];
+  const bankEntries = catalogSkill && catalogExams ? catalogEntriesForSelection(catalogExams, catalogSkill, catalogFull, catalogPart) : [];
+  const mockEntries = catalogSkill === "Listening" && sidebarCatalog?.skill === "Listening" ? sidebarCatalog.mocks.flatMap((test) => catalogFull
+    ? [{ questionTypes: [...new Set(test.parts.flatMap((part) => part.question_types))] }]
+    : test.parts.filter((part) => !catalogPart || part.number === catalogPart).map((part) => ({ questionTypes: part.question_types }))) : [];
+  const catalogEntries = [...bankEntries, ...mockEntries];
   const catalogTypeCounts = new Map<string, number>();
   for (const entry of catalogEntries) for (const id of catalogQuestionTypeIds(entry.questionTypes)) catalogTypeCounts.set(id, (catalogTypeCounts.get(id) ?? 0) + 1);
   const catalogKind = searchParams.get("kind") ?? "";
@@ -230,13 +235,17 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   useEffect(() => {
     if (!catalogSkill || demoMode) return;
     let active = true;
-    fetch(`/api/ielts/bank/catalog?skill=${catalogSkill}`)
-      .then(async (response) => {
-        if (!response.ok) throw new Error("Không tải được dạng câu hỏi.");
-        return response.json() as Promise<{ exams: CatalogExam[] }>;
-      })
-      .then(({ exams }) => { if (active) setSidebarCatalog({ skill: catalogSkill, exams }); })
-      .catch(() => { if (active) setSidebarCatalog({ skill: catalogSkill, exams: [], error: "Không tải được dạng câu hỏi." }); });
+    const bank = fetch(`/api/ielts/bank/catalog?skill=${catalogSkill}`, { cache: "no-store" }).then(async (response) => {
+      if (!response.ok) throw new Error("Không tải được dạng câu hỏi.");
+      return response.json() as Promise<{ exams: CatalogExam[] }>;
+    });
+    const mocks = catalogSkill === "Listening" ? fetch("/api/listening/mocks", { cache: "no-store" }).then(async (response) => {
+      if (!response.ok) throw new Error("Không tải được đề Listening thi thử.");
+      return response.json() as Promise<{ tests: MockCatalogEntry[] }>;
+    }) : Promise.resolve({ tests: [] as MockCatalogEntry[] });
+    void Promise.all([bank, mocks])
+      .then(([{ exams }, { tests }]) => { if (active) setSidebarCatalog({ skill: catalogSkill, exams, mocks: tests.filter((test) => test.audio_ready) }); })
+      .catch(() => { if (active) setSidebarCatalog({ skill: catalogSkill, exams: [], mocks: [], error: "Không tải được dạng câu hỏi." }); });
     return () => { active = false; };
   }, [catalogSkill]);
 
