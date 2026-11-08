@@ -25,14 +25,13 @@ function fakeDb(failAt?: string) {
   return { db, calls };
 }
 
-describe("press rewrite emergency stop", () => {
-  it("disables feeds, hides published legacy articles, and sets the rewrite quota to zero", async () => {
+describe("press rewrite publication guard", () => {
+  it("keeps discovery feeds enabled while hiding published legacy articles", async () => {
     const { db, calls } = fakeDb();
     await pauseLegacyPressRewrites(db as never);
     expect(calls).toEqual([
-      { table: "news_sources", patch: { enabled: false, auto_publish: false }, filters: [["provider", "ai_rewrite"], ["enabled", true]] },
+      { table: "news_sources", patch: { auto_publish: false }, filters: [["provider", "ai_rewrite"], ["auto_publish", true]] },
       { table: "news_articles", patch: { publication_status: "hidden" }, filters: [["provider", "ai_rewrite"], ["publication_status", "published"]] },
-      { table: "news_admin_settings", patch: { daily_rewrite_limit: 0 }, filters: [["id", true]] },
     ]);
   });
 

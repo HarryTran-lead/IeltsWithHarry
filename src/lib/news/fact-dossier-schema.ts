@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { NEWS_CATEGORIES } from "./constants";
 
-const primaryHosts = ["nasa.gov", "noaa.gov", "gov.uk", "who.int", "un.org", "worldbank.org", "esa.int"];
+const primaryHosts = ["nasa.gov", "noaa.gov", "gov.uk", "gov.vn", "who.int", "un.org", "worldbank.org", "esa.int"];
 const openHosts = ["globalvoices.org"];
 function approvedFactualSource(raw: string) {
   try {

@@ -3,6 +3,9 @@ import { isIP } from "node:net";
 import { XMLParser } from "fast-xml-parser";
 import { load } from "cheerio";
 import { NEWS_CATEGORIES, type NewsCategory } from "./constants";
+import { pressDiscoveryFeedUrls } from "./press-feeds";
+
+export { pressDiscoveryFeedUrls } from "./press-feeds";
 
 export { NEWS_CATEGORIES };
 export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; origin_region?: "vietnam" | "international"; interest_topic?: "conflict" | "entertainment" | "curious" | null; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number; archive_next_page: number | null };
@@ -332,7 +335,7 @@ export async function fetchGovUkBody(sourceUrl: string, fetcher: typeof fetch = 
 export function assertApprovedFeedUrl(raw: string): URL {
   const url = new URL(raw);
   const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov,oceanservice.noaa.gov,www.nsf.gov,globalvoices.org,www.gov.uk,e.vnexpress.net,news.tuoitre.vn").split(",").map((host) => host.trim().toLowerCase());
-  if (url.protocol !== "https:" || url.port || url.username || url.password || isIP(url.hostname) || !allowed.includes(url.hostname.toLowerCase())) throw new Error("Feed host is not approved in NEWS_RSS_ALLOWED_HOSTS");
+  if (url.protocol !== "https:" || url.port || url.username || url.password || isIP(url.hostname) || !(allowed.includes(url.hostname.toLowerCase()) || pressDiscoveryFeedUrls.has(url.toString()))) throw new Error("Feed host is not approved in NEWS_RSS_ALLOWED_HOSTS");
   return url;
 }
 async function boundedFetch(url: URL, init: RequestInit, fetcher: typeof fetch): Promise<Response> {
@@ -398,6 +401,7 @@ export const rssProvider: NewsProvider = { kind: "rss", async fetch(source, fetc
   if (response.status === 304) return { items: [], etag: source.etag, lastModified: source.last_modified, cacheUntil: cacheUntil(response), notModified: true };
   if (!response.ok) throw new Error(`RSS HTTP ${response.status}`);
   const xml = await boundedText(response);
+  if (pressDiscoveryFeedUrls.has(source.feed_url)) return { items: parseRss(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
   return { items: parseRss(xml, source), summaries: rssSummaries(xml), bodies: [...parseNasaNewsBodies(xml, source), ...parseNoaaNewsBodies(xml, source), ...parseGlobalVoicesBodies(xml, source)], images: parseRssImages(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
 } };
 export const providers: Record<NewsSource["provider"], NewsProvider> = { gdelt: gdeltProvider, rss: rssProvider };

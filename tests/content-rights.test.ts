@@ -18,3 +18,8 @@ it("rejects an unsupported commercial or adaptation scope", () => {
   expect(() => assertPublishRightsEvidence([{ ...text, commercial_use_allowed: false }])).toThrow("text rights evidence");
   expect(() => assertPublishRightsEvidence([{ ...text, modification_translation_allowed: false }])).toThrow("text rights evidence");
 });
+
+it("accepts an original fact dossier for text but still requires image rights", () => {
+  expect(() => assertPublishRightsEvidence([], [], true)).not.toThrow();
+  expect(() => assertPublishRightsEvidence([], [{ kind: "image", url: "https://example.com/photo.jpg" }], true)).toThrow("image rights evidence");
+});

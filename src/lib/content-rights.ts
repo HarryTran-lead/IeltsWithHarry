@@ -12,7 +12,7 @@ export type RightsEvidence = {
   source_package_sha256: string | null;
 };
 
-export function assertPublishRightsEvidence(rows: RightsEvidence[], assets: { kind: "audio" | "image"; url: string | null }[] = []) {
+export function assertPublishRightsEvidence(rows: RightsEvidence[], assets: { kind: "audio" | "image"; url: string | null }[] = [], originalFactDossier = false) {
   const valid = (row: RightsEvidence) => row.author_name.trim().length >= 2
     && row.rights_holder.trim().length >= 2
     && /^(rights-evidence\/[A-Za-z0-9_./-]+|https:\/\/\S+)$/.test(row.permission_document_ref.trim())
@@ -20,7 +20,7 @@ export function assertPublishRightsEvidence(rows: RightsEvidence[], assets: { ki
     && row.web_publication_allowed && row.commercial_use_allowed && row.modification_translation_allowed
     && (Boolean(row.source_package_name) === Boolean(row.source_package_sha256))
     && (!row.source_package_sha256 || /^[0-9a-f]{64}$/.test(row.source_package_sha256));
-  if (!rows.some((row) => row.asset_kind === "text" && valid(row))) {
+  if (!originalFactDossier && !rows.some((row) => row.asset_kind === "text" && valid(row))) {
     throw new Error("Reviewed text rights evidence is required before publication");
   }
   for (const asset of assets) {
