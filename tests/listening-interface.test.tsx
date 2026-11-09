@@ -40,7 +40,8 @@ describe("Listening question layouts", () => {
     const html = renderToStaticMarkup(<QuestionGroupView group={groupQuestions(questions)[0]} props={props} />);
     expect((html.match(/Which TWO times are available\?/g) || []).length).toBe(1);
     expect((html.match(/type=\"checkbox\"/g) || []).length).toBe(5);
-    expect(html).toContain("Chọn 2 đáp án cho câu 11–12");
+    expect(html).toContain("Đã chọn 0/2");
+    expect(html).toContain("Câu 11–12");
   });
 
   it("places flow-chart answer slots inside the printed sequence", () => {

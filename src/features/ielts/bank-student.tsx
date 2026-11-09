@@ -25,6 +25,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const [exam, setExam] = useState<Exam | null>(null), [attempt, setAttempt] = useState<Attempt | null>(null), [result, setResult] = useState<Result | null>(null);
   const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0), [serverOffset, setServerOffset] = useState(0);
   const [dueDate, setDueDate] = useState(""), [scheduled, setScheduled] = useState(false);
+  const [jump, setJump] = useState<{ id: string; at: number } | null>(null);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle"), [confirming, setConfirming] = useState(false);
   const [leaving, setLeaving] = useState(false);
   const loadAttempt = useCallback(async (id: string) => { const data = await api(`attempt?id=${encodeURIComponent(id)}`); setAttempt(data.attempt); setExam(data.attempt.ielts_exams || null); setAnswers(data.attempt.answers || {}); setFlags(data.attempt.flags || []); setNotes(data.attempt.notes || {}); setResult(data.result); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); }, []);
@@ -86,13 +87,17 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const inScope = scope ? questions.filter((item) => scope.includes(item.id)) : questions;
   const answered = inScope.filter((item) => answers[item.id]).length;
   const setAnswer = (id: string, value: string) => setAnswers((current) => ({ ...current, [id]: value }));
-    const dialog = confirming && <SubmitDialog unanswered={inScope.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />;
+    const dialog = confirming && <SubmitDialog unanswered={inScope.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }}
+      answered={answered}
+      unansweredList={inScope.filter((item) => !answers[item.id]).map((item) => ({ id: item.id, number: item.number }))}
+      flaggedList={inScope.filter((item) => flags.includes(item.id)).map((item) => ({ id: item.id, number: item.number }))}
+      onJump={(id) => { setConfirming(false); setJump({ id, at: Date.now() }); }} />;
   // Reading and Listening run as a full test sheet; Writing and Speaking as studios.
   if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run bx-exam-mode ${exam.skill === "Listening" ? "bx-listening-mode" : "bx-reading-mode"} ${notes.__view !== "exam" ? "bx-practice-mode" : "bx-real-mode"} bl-tone-${toneOf(exam.skill)}`}>
     {notes.__view !== "exam" && <div className="br-practice-ribbon"><strong>Ielts<span>WithHarry</span></strong><nav aria-label="Điều hướng kỹ năng"><span>{exam.skill}</span><span>{scope ? `${exam.skill === "Listening" ? "Part" : "Passage"} ${part || 1}` : "Full test"}</span></nav><small>Giao diện luyện tập</small></div>}
     <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onExit={() => setLeaving(true)} onSubmit={() => setConfirming(true)} />
     {error && <p className="bx-error" role="alert">{error}</p>}
-    <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} />
+    <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} jumpTo={jump} />
     {dialog}
     {leaving && <div className="bx-dialog-layer"><button type="button" className="bx-dialog-backdrop" aria-label="Tiếp tục làm bài" tabIndex={-1} onClick={() => setLeaving(false)} /><section className="bx-dialog" role="dialog" aria-modal="true" aria-labelledby="bx-leave-title"><button type="button" className="bx-dialog-close" aria-label="Đóng" onClick={() => setLeaving(false)}><X size={18} /></button><h2 id="bx-leave-title">Rời bài làm?</h2><p>Bài làm hiện tại sẽ được lưu. Bạn có thể quay lại từ ngân hàng đề để tiếp tục.</p><div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={() => setLeaving(false)}>Tiếp tục làm</button><button type="button" className="bx-submit" disabled={busy} onClick={() => { void exitAttempt(); }}>{busy ? "Đang lưu…" : "Lưu và rời bài"}</button></div></section></div>}
   </main>;

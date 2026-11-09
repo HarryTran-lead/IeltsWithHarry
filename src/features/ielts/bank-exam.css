@@ -263,3 +263,21 @@ body:has(.bx-reading-launch) { overflow: hidden; }
   .bx-ring { width: 110px; height: 110px; padding-top: 36px; }
   .bx-ring b { font-size: 32px; }
 }
+
+/* Submit dialog with jump-to-question numbers. */
+.bx-dialog.is-detailed { width: min(460px, calc(100vw - 32px)); }
+.bx-submit-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 8px; margin: 4px 0 12px; text-align: center; }
+.bx-submit-stats span { display: grid; padding: 9px 6px; border-radius: 10px; font-size: 12px; }
+.bx-submit-stats b { font-size: 20px; line-height: 1.2; }
+.bx-submit-stats .is-done { background: #e3f6ea; color: #17733f; }
+.bx-submit-stats .is-empty { background: #fff4d6; color: #7a5200; }
+.bx-submit-stats .is-flag { background: #fff1e0; color: #8a3f00; }
+.bx-jump-group { display: grid; gap: 6px; margin-bottom: 10px; }
+.bx-jump-group strong { font-size: 13px; }
+.bx-jump-list { display: flex; flex-wrap: wrap; gap: 5px; max-height: 120px; overflow-y: auto; }
+.bx-jump-list button { min-width: 34px; height: 32px; padding: 0 6px; border: 1px solid #f0cf86; border-radius: 7px; background: #fffaf0; color: #213444; font: inherit; font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums; cursor: pointer; }
+.bx-jump-list button.is-flag { border: 1.5px solid #f08424; background: #fff1e0; }
+.bx-jump-list button:hover { border-color: var(--bl-accent, #df6b59); }
+.bx-jump-hint { margin: 0 0 4px; color: #5c6f80; font-size: 12.5px; }
+.br-launch-parts label span { min-width: 0; }
+.br-launch-part-title { display: block; overflow: hidden; color: #5c6f80; font-size: 12px; font-weight: 500; white-space: nowrap; text-overflow: ellipsis; }

@@ -12,6 +12,7 @@ import { RichText } from "./rich-text";
 import { ReadingShare } from "./reading-share";
 import { ListeningTranscript } from "./listening-transcript";
 import { explanationWithoutEvidence } from "@/lib/ielts-bank/reading-evidence";
+import { catalogQuestionTypeIds, catalogQuestionTypes } from "@/lib/ielts-bank/catalog";
 import { rangeAt, savedReadingMarks } from "./reading-highlights";
 import "./bank-reading-review.css";
 
@@ -50,6 +51,14 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   const evidence = evidenceReview?.evidence ?? (listeningQuote ? { quote: listeningQuote, paragraph: "transcript" } : null);
   const evidenceQuote = evidence?.quote;
   const guidedIndex = questions.findIndex((question) => question.id === active);
+  // Accuracy per question family, weakest first, so the learner knows which type to drill next.
+  const byType = [...review.reduce((map, item) => {
+    const id = catalogQuestionTypeIds([item.type ?? "other"])[0];
+    const label = catalogQuestionTypes.find((group) => group.id === id)?.label ?? (item.type ? typeLabel(item.type) : "Other Types");
+    const row = map.get(label) ?? { id, total: 0, right: 0, wrong: 0, skipped: 0 };
+    row.total++; if (item.correct) row.right++; else if (item.given) row.wrong++; else row.skipped++;
+    return map.set(label, row);
+  }, new Map<string, { id: string; total: number; right: number; wrong: number; skipped: number }>())].sort((a, b) => a[1].right / a[1].total - b[1].right / b[1].total);
   const groups = groupQuestions(section?.questions || []);
   useEffect(() => { if (evidenceQuote) document.querySelector(".br-passage .is-evidence")?.scrollIntoView({ behavior: "smooth", block: "center" }); }, [evidenceQuote, part]);
   useEffect(() => {
@@ -88,10 +97,24 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
     if (bounds) setSplit(Math.max(30, Math.min(70, Math.round(((clientX - bounds.left) / bounds.width) * 100))));
   };
 
+  // A single passage's result is named after that passage; the test name moves to the line under it.
+  const onePart = sections.length === 1 ? sections[0] : null;
+  const partTitle = onePart ? onePart.title.replace(/^(?:reading\s+)?(?:passage|part|section)\s*\d+\s*[:\-–—]\s*/i, "") : "";
+  const level = accuracy >= 75 ? "is-good" : accuracy >= 50 ? "is-mid" : "is-low";
+  const verdict = accuracy >= 75 ? "Làm tốt lắm" : accuracy >= 50 ? "Khá ổn, còn vài chỗ cần xem lại" : "Cần luyện thêm";
+  const practiceHref = (kind: string) => `/app/${skill.toLowerCase()}?type=${skill === "Reading" ? "passage" : "part"}&kind=${encodeURIComponent(kind)}`;
   if (summary) return <main className={`bx-page br-summary bl-tone-${skill.toLowerCase()}`}><nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {skill}</Link><span>/</span>Kết quả</nav>
-    <section className="br-summary-card"><span className="bx-kicker">KẾT QUẢ BÀI LÀM</span><h1>{displayTitle}</h1><p>Kiểm tra kết quả rồi mở lại bài để đối chiếu đáp án với {skill === "Listening" ? "transcript và âm thanh" : "từng đoạn đọc"}.</p>
-      <div className="br-result-hero"><strong>{uncalibrated ? `${accuracy}%` : band === null ? "—" : band.toFixed(1)}<small>{uncalibrated ? "Tỉ lệ đúng" : "Band ước tính"}</small></strong><div><span>Đã hoàn thành bài {skill}</span><b>{correct}/{review.length} câu đúng</b><small>{accuracy}% chính xác</small></div></div>
+    <section className="br-summary-card"><span className="bx-kicker">KẾT QUẢ BÀI LÀM{onePart ? ` · ${sectionLabel(0).toUpperCase()}` : ""}</span><h1>{partTitle || displayTitle}</h1><p>{partTitle ? `${displayTitle} · ` : ""}Mở lại bài để đối chiếu đáp án với {skill === "Listening" ? "transcript và âm thanh" : "từng đoạn đọc"}.</p>
+      <div className={`br-result-hero ${level}`}><strong>{uncalibrated ? `${accuracy}%` : band === null ? "—" : band.toFixed(1)}<small>{uncalibrated ? "Tỉ lệ đúng" : "Band ước tính"}</small></strong><div><span>{verdict}</span><b>{correct}/{review.length} câu đúng</b><small>{accuracy}% chính xác{skipped ? ` · ${skipped} câu bỏ trống` : ""}</small></div></div>
       <div className="br-result-table-wrap"><table className="br-result-table"><caption>Chi tiết bài làm</caption><thead><tr><th>Đề</th><th>Thời gian</th><th>Ngày nộp</th><th>Tổng câu</th><th>Đúng</th><th>Sai</th><th>Bỏ qua</th><th>Tỉ lệ đúng</th></tr></thead><tbody><tr><td>{displayTitle}</td><td>{duration === null ? "—" : `${duration} phút`}</td><td>{submittedAt ? new Date(submittedAt).toLocaleDateString("vi-VN") : "—"}</td><td>{review.length}</td><td className="is-right">{correct}</td><td className="is-wrong">{wrong}</td><td>{skipped}</td><td>{review.length ? Math.round(correct / review.length * 100) : 0}%</td></tr></tbody></table></div>
+      {byType.length > 1 && <div className="br-type-breakdown"><h2>Phân tích theo dạng câu hỏi</h2><p>Sắp xếp từ dạng làm yếu nhất. Ưu tiên luyện thêm các dạng dưới 60%.</p>
+        <ul>{byType.map(([label, row]) => { const rate = Math.round(row.right / row.total * 100); return <li key={label} className={rate >= 75 ? "is-good" : rate >= 50 ? "is-mid" : "is-low"}>
+          <span className="br-type-name">{label}</span>
+          <span className="br-type-bar" aria-hidden="true"><i style={{ width: `${rate}%` }} /></span>
+          <b>{row.right}/{row.total}</b><small>{rate}%{row.skipped ? ` · bỏ ${row.skipped}` : ""}</small>
+          {rate < 75 && row.id !== "other" ? <Link className="br-type-practice" href={practiceHref(row.id)}>Luyện dạng này →</Link> : <span />}
+        </li>; })}</ul>
+      </div>}
       <div className="br-summary-actions"><button type="button" className="bx-start" onClick={() => setSummary(false)}>Xem lại bài làm <ChevronRight size={18} /></button><button type="button" className="bx-ghost" onClick={startGuided}>Ôn từng bước</button>{onRetry ? <button type="button" className="bx-ghost" onClick={onRetry}><RotateCcw size={16} /> Làm lại</button> : retryHref && <Link href={retryHref} className="bx-ghost"><RotateCcw size={16} /> Làm lại</Link>}{skill === "Reading" && attemptId && <ReadingShare attemptId={attemptId} />}</div>
       <small>{uncalibrated ? "Đề chưa hiệu chuẩn. Kết quả chỉ phản ánh số câu đúng, chưa quy đổi thành IELTS Band." : "Band chỉ là ước tính từ bài luyện tập."}</small>
     </section></main>;
@@ -116,6 +139,6 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
         </div>;
       })}</section>)}<div className="br-next">{part + 1 < sections.length && <button type="button" onClick={() => pick(part + 1)}>Sang {sectionLabel(part + 1)} <ChevronRight size={17} /></button>}</div></div>
     </div>
-    <footer className="br-review-dock"><button type="button" disabled={part === 0} aria-label="Phần trước" onClick={() => pick(part - 1)}><ChevronLeft size={17} /></button><nav aria-label="Chọn câu hỏi">{sections.map((value, index) => <div key={value.id} className={index === part ? "is-current" : ""}><button type="button" onClick={() => pick(index)}>{sectionLabel(index)}</button>{value.questions.map((question) => { const item = result.get(question.id); return <button type="button" key={question.id} className={item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"} onClick={() => pick(index, question.id)} aria-label={`Câu ${numberOf(question.id)}: ${item?.correct ? "đúng" : item?.given ? "sai" : "bỏ qua"}`}>{numberOf(question.id)}</button>; })}</div>)}</nav><button type="button" disabled={part + 1 === sections.length} aria-label="Phần sau" onClick={() => pick(part + 1)}><ChevronRight size={17} /></button><Link href={backHref}>Bài khác</Link></footer>
+    <footer className="br-review-dock"><button type="button" disabled={part === 0} aria-label="Phần trước" onClick={() => pick(part - 1)}><ChevronLeft size={17} /></button><nav aria-label="Chọn câu hỏi">{sections.map((value, index) => { const right = value.questions.filter((question) => result.get(question.id)?.correct).length; return <div key={value.id} className={index === part ? "is-current" : "is-folded"}><button type="button" onClick={() => pick(index)} aria-label={`${sectionLabel(index)}: đúng ${right}/${value.questions.length}`}>{sectionLabel(index)}{index !== part && <small>{right}/{value.questions.length} đúng</small>}</button>{index === part && value.questions.map((question) => { const item = result.get(question.id); return <button type="button" key={question.id} className={`${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"} ${active === question.id ? "is-active" : ""}`} onClick={() => pick(index, question.id)} aria-label={`Câu ${numberOf(question.id)}: ${item?.correct ? "đúng" : item?.given ? "sai" : "bỏ qua"}`}>{numberOf(question.id)}</button>; })}</div>; })}</nav><button type="button" disabled={part + 1 === sections.length} aria-label="Phần sau" onClick={() => pick(part + 1)}><ChevronRight size={17} /></button><Link href={backHref}>Bài khác</Link></footer>
   </main>;
 }
