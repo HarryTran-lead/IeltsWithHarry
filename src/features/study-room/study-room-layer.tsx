@@ -27,8 +27,9 @@ function isQuietStudyRoute(pathname: string): boolean {
     || /^\/app\/(?:vocabulary|grammar|reading|listening|writing|speaking)\/live(?:\/|$)/.test(pathname)
     || /^\/app\/writing\/task-[12](?:\/|$)/.test(pathname)
     || /^\/app\/speaking\/part-3(?:\/|$)/.test(pathname)
-    || /^\/app\/vocabulary\/(?:study|review|listening)(?:\/|$)/.test(pathname)
-    || /^\/app\/dictation\/(?:practice|clips|banks)(?:\/|$)/.test(pathname);
+    || /^\/app\/vocabulary\/(?:study|review|listening|translation)(?:\/|$)/.test(pathname)
+    || /^\/app\/dictation\/(?:practice|clips|banks|lessons)(?:\/|$)/.test(pathname)
+    || /^\/app\/check\//.test(pathname);
 }
 
 function clampBounds(bounds: Bounds): Bounds {
