@@ -380,8 +380,8 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
 
   const readingFullCover = exam.skill === "Reading" && exam.practice_type === "full_test" && !section;
   const suppliedReadingTest = exam.skill === "Reading"
-    ? /^english-skill-lab-reading-0(0[1-7])$/i.exec(exam.external_id ?? "")?.[1]
-      ?? /^English Skill Lab · Reading Test (0[1-7])(?: \(Bản luyện thử\))?$/.exec(exam.title)?.[1]
+    ? /^english-skill-lab-reading-0(0[1-9]|10)$/i.exec(exam.external_id ?? "")?.[1]
+      ?? /^English Skill Lab · Reading Test (0[1-9]|10)(?: \(Bản luyện thử\))?$/.exec(exam.title)?.[1]
     : undefined;
   const coverUrl = readingFullCover
     ? null
@@ -426,7 +426,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   return <Link href={href} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {/* A full test shows its own three passage covers side by side, so seven tests no longer share one mascot. */}
+      {/* A full test shows its three supplied passage covers side by side. */}
       {readingFullCover && suppliedReadingTest ? <figure className="bl-art bl-collage">{[1, 2, 3].map((part) => <img key={part} src={`/images/ielts/reading/test-${suppliedReadingTest}-passage-${part}.${Number(suppliedReadingTest) >= 6 ? "webp" : "png"}`} alt="" loading="lazy" />)}</figure>
       : readingFullCover ? <figure className="bl-art bl-brand-art">
         {/* eslint-disable-next-line @next/next/no-img-element */}
