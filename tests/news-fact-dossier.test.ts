@@ -39,3 +39,28 @@ it("checks factual notes against the cited page before asking AI to write", asyn
     expect(modelCalls).toBe(1);
   } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
 });
+
+it("retries a short draft once, then reviews only a complete article", async () => {
+  const previous = process.env.GEMINI_API_KEY;
+  process.env.GEMINI_API_KEY = "test-key";
+  let drafts = 0;
+  let reviews = 0;
+  const fetcher = (async (input: RequestInfo | URL, init?: RequestInit) => {
+    if (String(input).startsWith("https://www.nasa.gov/")) return new Response(`<main>${"Official mission information. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
+    const request = JSON.parse(String(init?.body)) as { systemInstruction: { parts: { text: string }[] } };
+    const system = request.systemInstruction.parts[0].text;
+    let response: unknown;
+    if (system.startsWith("Check each atomic")) response = { evaluations: facts.map((_, index) => ({ index: index + 1, supported: true })) };
+    else if (system.startsWith("Write an original")) {
+      drafts++;
+      response = { title: "A new science mission", body: Array.from({ length: drafts === 1 ? 250 : 400 }, () => "mission").join(" ") };
+    } else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
+    return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
+  }) as typeof fetch;
+  try {
+    const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts }, fetcher);
+    expect(article.body.split(/\s+/)).toHaveLength(400);
+    expect(drafts).toBe(2);
+    expect(reviews).toBe(1);
+  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+});
