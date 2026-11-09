@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { findIndependentDossier } from "../src/lib/news/press-discovery";
+import { discoveryBudget, findIndependentDossier } from "../src/lib/news/press-discovery";
 import { pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
 
 const source: NewsSource = {
@@ -8,6 +8,13 @@ const source: NewsSource = {
   attribution_text: "", auto_publish: false, enabled: true, etag: null, last_modified: null,
   min_interval_minutes: 60, archive_next_page: null,
 };
+
+it("keeps researching after thin topics while capping attempts and completed drafts", () => {
+  expect(discoveryBudget(0, 4, 4)).toBe(true);
+  expect(discoveryBudget(0, 16, 4)).toBe(false);
+  expect(discoveryBudget(4, 0, 4)).toBe(false);
+  expect(discoveryBudget(0, 0, 0)).toBe(false);
+});
 
 it("press feeds return only event metadata even when RSS contains full prose and an image", async () => {
   expect(pressDiscoveryFeedUrls.has(source.feed_url!)).toBe(true);

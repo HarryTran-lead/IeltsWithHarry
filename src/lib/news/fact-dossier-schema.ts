@@ -1,13 +1,17 @@
 import { z } from "zod";
 import { NEWS_CATEGORIES } from "./constants";
 
-const primaryHosts = ["nasa.gov", "noaa.gov", "gov.uk", "gov.vn", "who.int", "un.org", "worldbank.org", "esa.int"];
-const openHosts = ["globalvoices.org"];
+export const factualSourceHosts = [
+  "nasa.gov", "noaa.gov", "gov.uk", "gov.vn", "chinhphu.vn",
+  "gov.sg", "gov.my", "go.th", "go.jp", "gov.au",
+  "who.int", "un.org", "unesco.org", "unicef.org", "worldbank.org",
+  "esa.int", "asean.org", "globalvoices.org",
+] as const;
 function approvedFactualSource(raw: string) {
   try {
     const url = new URL(raw);
     return url.protocol === "https:" && !url.username && !url.password
-      && [...primaryHosts, ...openHosts].some((host) => url.hostname === host || url.hostname.endsWith(`.${host}`));
+      && factualSourceHosts.some((host) => url.hostname === host || url.hostname.endsWith(`.${host}`));
   } catch { return false; }
 }
 
