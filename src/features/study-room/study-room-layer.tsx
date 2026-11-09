@@ -62,6 +62,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   const [pipMode, setPipMode] = useState<PipMode>("full");
   const [chatPeek, setChatPeek] = useState(false);
   const [chatPinned, setChatPinned] = useState(false);
+  const [headerPeek, setHeaderPeek] = useState(false);
   const [bounds, setBounds] = useState<Bounds | null>(null);
   const gesture = useRef<Gesture | null>(null);
   const previousBounds = useRef<Bounds | null>(null);
@@ -171,6 +172,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
       setPipMode("clock");
       setChatPeek(false);
       setChatPinned(false);
+      setHeaderPeek(false);
       setBounds((current) => current ? clampBounds({ ...current, width: clockWidth.current ?? Math.min(380, window.innerWidth - 16), height: 47 }) : initialBounds());
     }
     wasInRoom.current = inRoom;
@@ -230,6 +232,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
     const next = pipMode === nextMode ? "full" : nextMode;
     setChatPeek(false);
     setChatPinned(false);
+    setHeaderPeek(false);
     if (pipMode === "full" && bounds) previousBounds.current = bounds;
     setBounds((current) => {
       if (!current) return null;
@@ -243,13 +246,14 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   const clock = `${String(Math.floor(studySeconds / 60)).padStart(2, "0")}:${String(studySeconds % 60).padStart(2, "0")}`;
   const compactYoutube = !inRoom && pipMode === "clock" && videoMode === "youtube";
   const compactChatVisible = compactYoutube && (chatPeek || chatPinned);
-  const videoHeight = bounds ? Math.max(200, Math.ceil(bounds.width * 9 / 16)) + 47 : 247;
+  const videoHeight = bounds ? Math.max(headerPeek ? 200 : 208, Math.ceil(bounds.width * 9 / 16)) + (headerPeek ? 47 : 2) : 210;
   const peekHeight = compactChatVisible ? Math.max(0, Math.min(260, window.innerHeight - videoHeight - 16)) : 0;
   const windowHeight = compactYoutube ? videoHeight + peekHeight : bounds?.height;
   const windowTop = compactYoutube && bounds ? Math.min(bounds.y, window.innerHeight - (windowHeight ?? videoHeight) - 8) : bounds?.y;
   const activePlaying = videoMode === "youtube" ? youtubePlaying : musicPlaying;
   const activeVolume = videoMode === "youtube" ? youtubeVolume : volume;
-  return <div className={`study-room-host ${inRoom ? "full" : `pip pip-${pipMode}${videoMode === "youtube" ? " pip-youtube" : ""}${compactChatVisible ? " chat-peek" : ""}`}`} style={!inRoom && bounds ? { left: bounds.x, top: windowTop, width: bounds.width, height: windowHeight } : undefined} onPointerEnter={() => { if (compactYoutube) setChatPeek(true); }} onPointerLeave={() => setChatPeek(false)}>
+  return <div className={`study-room-host ${inRoom ? "full" : `pip pip-${pipMode}${videoMode === "youtube" ? " pip-youtube" : ""}${compactChatVisible ? " chat-peek" : ""}${compactYoutube && headerPeek ? " header-peek" : ""}`}`} style={!inRoom && bounds ? { left: bounds.x, top: windowTop, width: bounds.width, height: windowHeight } : undefined} onPointerEnter={() => { if (compactYoutube) { setHeaderPeek(true); setChatPeek(true); } }} onPointerLeave={() => { setHeaderPeek(false); setChatPeek(false); }} onFocusCapture={() => { if (compactYoutube) setHeaderPeek(true); }}>
+    {compactYoutube && !headerPeek && <div className="study-pip-header-trigger" aria-hidden="true" onPointerEnter={() => { setHeaderPeek(true); setChatPeek(true); }} />}
     {!inRoom && <div className="study-pip-header" onPointerDown={(event) => begin(event, "drag")} onPointerMove={move} onPointerUp={end} onPointerCancel={end}>
       <GripHorizontal size={17} aria-hidden="true" /><strong>Cùng học</strong><span className={sessionActive ? "active" : ""}>{clock}</span>
       <button type="button" onClick={() => setSessionActive(!sessionActive)} aria-label={sessionActive ? "Dừng tính thời gian học" : "Tiếp tục tính thời gian học"} title={sessionActive ? "Dừng học" : "Tiếp tục học"}>{sessionActive ? <Pause size={16} /> : <Play size={16} />}</button>

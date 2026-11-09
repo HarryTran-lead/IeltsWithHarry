@@ -50,12 +50,16 @@ body:has(.app-frame.sidebar-collapsed) .study-room-host.full{left:0}
 .study-room-host.pip-youtube .study-youtube{min-height:200px}
 .study-room-host.pip-clock.pip-youtube.chat-peek .study-room-grid{flex:1}
 .study-room-host.pip-clock.pip-youtube.chat-peek .study-chat-card{display:flex}
+.study-room-host.pip-clock.pip-youtube:not(.header-peek) .study-pip-header{height:0;padding:0;border:0;opacity:0;overflow:hidden;pointer-events:none}
+.study-room-host.pip-clock.pip-youtube:not(.header-peek) .study-youtube{min-height:208px}
+.study-pip-header-trigger{position:absolute;inset:0 0 auto;z-index:4;height:8px;background:transparent}
 @container (max-width:350px){.study-pip-header{gap:3px;padding-inline:7px}.study-pip-header>svg:first-child{display:none}}
 @container (max-width:300px){.study-pip-header .study-pip-size{display:none}}
 @container (max-width:430px){.study-pip-header>strong,.study-pip-header>a,.study-pip-header .study-pip-size{display:none}.study-pip-music input{width:45px}.study-pip-header{gap:3px}}
 .study-pip-resize{position:absolute;right:0;bottom:0;z-index:2;width:24px;height:24px;cursor:nwse-resize;touch-action:none;background:linear-gradient(135deg,transparent 57%,#53bfc0 58% 63%,transparent 64% 73%,#53bfc0 74% 79%,transparent 80%)}
 .study-pip-width-resize{position:absolute;right:0;top:0;z-index:3;width:9px;height:100%;cursor:ew-resize;touch-action:none}.study-pip-width-resize:before{content:"";position:absolute;top:16px;right:3px;width:2px;height:15px;border-radius:2px;background:#8cb8bd}.study-pip-width-resize:hover:before,.study-pip-width-resize:focus-visible:before{background:#078a83}.study-pip-width-resize:focus-visible{outline:2px solid #078a83;outline-offset:-2px}
 .study-room-host.pip-youtube .study-pip-width-resize{height:45px}
+.study-room-host.pip-clock.pip-youtube:not(.header-peek) .study-pip-width-resize{display:none}
 .study-room-host.pip .study-room-page{flex:1;width:100%;min-height:0;max-width:none;display:flex;flex-direction:column;overflow:hidden;margin:0;padding:0}
 .study-room-host.pip .study-room-heading,.study-room-host.pip .study-control-bar{display:none}
 .study-room-host.pip .study-room-grid{flex:1;width:100%;min-height:0;display:flex;flex-direction:column;align-items:stretch;gap:0;overflow:hidden}
